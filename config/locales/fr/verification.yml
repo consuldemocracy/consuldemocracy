@@ -1,112 +1,111 @@
----
 fr:
   verification:
     alert:
-      lock: Vous avez atteint le nombre maximum de tentatives. Merci de réessayer plus tard.
-    back: Revenir à mon compte
+      lock: You have reached the maximum number of attempts. Please try again later.
+    back: Return to my account
     email:
       create:
         alert:
-          failure: Un problème est survenu dans l'envoi de courriel à votre adresse.
+          failure: There was a problem with sending an email to your account
         flash:
-          success: 'Nous avons envoyé un courriel de confirmation à votre adresse %{email}'
+          success: 'We have sent a confirmation email to your account: %{email}'
       show:
         alert:
-          failure: Code de vérification incorrect
+          failure: Verification code incorrect
         flash:
-          success: Vous êtes un utilisateur vérifié
+          success: You are a verified user
     letter:
       alert:
-        unconfirmed_code: "Vous n'avez pas encore renseigné votre code de confirmation"
+        unconfirmed_code: You have not yet entered the confirmation code
       create:
         flash:
-          offices: Bureaux de conseil aux citoyens
-          success_html: "Merci d'avoir demandé votre <b>code de sécurité maximum (uniquement requis pour les votes finaux)</b>.  Dans quelques jours, nous vous enverrons un courrier vers votre adresse postale. Si vous le préférez, vous pouvez récupérer votre code dans n'importe quel %{offices}."
+          offices: Citizen Support Offices
+          success_html: Thank you for requesting your <b>maximum security code (only required for the final votes)</b>. In a few days we will send it to the address featuring in the data we have on file. Please remember that, if you prefer, you can collect your code from any of the %{offices}.
       edit:
-        see_all: Voir les propositions
-        title: Lettre requise
+        see_all: See proposals
+        title: Letter requested
       errors:
-        incorrect_code: Code de vérification incorrect
+        incorrect_code: Verification code incorrect
       new:
-        explanation: "Pour participer au vote final, vous pouvez :"
-        go_to_index: Voir les propositions
-        office: Vérifier dans n'importe quel %{office}
-        offices: Bureaux de conseil aux citoyens
-        send_letter: Envoyer une lettre avec le code
-        title: "Félicitations !"
-        user_permission_info: Avec votre compte, vous pouvez...
+        explanation: 'For participate on final voting you can:'
+        go_to_index: See proposals
+        office: Verify in any %{office}
+        offices: Citizen Support Offices
+        send_letter: Send me a letter with the code
+        title: Congratulations!
+        user_permission_info: With your account you can...
       update:
         flash:
-          success: Votre compte est vérifié
+          success: Code correct. Your account is now verified
     redirect_notices:
-      already_verified: Votre compte est déjà vérifié
-      email_already_sent: Nous vous avons envoyé un courriel avec un lien de confirmation. Si vous ne l'avez pas reçu, vous pouvez demander qu'on vous le renvoie ici.
+      already_verified: Your account is already verified
+      email_already_sent: We have already sent an email with a confirmation link. If you cannot locate the email, you can request a reissue here
     residence:
       alert:
-        unconfirmed_residency: Vous n'avez pas encore confirmé votre résidence
+        unconfirmed_residency: You have not yet confirmed your residency
       create:
         flash:
-          success: Résidence vérifiée
+          success: Residence verified
       new:
-        accept_terms_text: "J'accepte %{terms_url} du recensement."
-        accept_terms_text_title: J'accepte les termes et conditions d'accès au recensement
-        date_of_birth: Date de naissance
-        document_number: Numéro de document
-        document_number_help_title: Aide
-        document_number_help_text_html: "<strong>Carte d'identité</strong>: 12345678A<br> <strong>Passeport</strong>: AAA000001<br> <strong>Carte de résident</strong>: X1234567P"
+        accept_terms_text: I accept %{terms_url} of the Census
+        accept_terms_text_title: I accept the terms and conditions of access of the Census
+        date_of_birth: Date of birth
+        document_number: Document number
+        document_number_help_title: Help
+        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P'
         document_type:
-          passport: Passeport
-          residence_card: Carte de résident
-          spanish_id: Carte d'identité
-        document_type_label: Type de document
-        error_not_allowed_age: Vous n'avez pas l'âge requis pour participer
-        error_not_allowed_postal_code: Vous devez être enregistré pour être vérifié.
-        error_verifying_census: Le recensement n'a pas pu vérifier vos informations. Merci de confirmer que vos informations sont correctes en appelant la mairie ou en visitant n'importe quel %{offices}.
-        error_verifying_census_offices: Bureaux de conseil aux citoyens
-        form_errors: ont empêché la vérification de votre résidence
-        postal_code: Code postal
-        postal_code_note: Pour vérifier votre compte, vous devez être enregistrés.
-        terms: les termes et conditions d'accès
-        title: Vérifier la résidence
-        verify_residence: Vérifier la résidence
+          passport: Passport
+          residence_card: Residence card
+          spanish_id: DNI
+        document_type_label: Document type
+        error_not_allowed_age: You don't have the required age to participate
+        error_not_allowed_postal_code: In order to be verified, you must be registered.
+        error_verifying_census: The Census was unable to verify your information. Please confirm that your census details are correct by calling to City Council or visit one %{offices}.
+        error_verifying_census_offices: Citizen Support Office
+        form_errors: prevented the verification of your residence
+        postal_code: Postcode
+        postal_code_note: To verify your account you must be registered
+        terms: the terms and conditions of access
+        title: Verify residence
+        verify_residence: Verify residence
     sms:
       create:
         flash:
-          success: Entrer le code de confirmation envoyé par texto
+          success: Enter the confirmation code sent to you by text message
       edit:
-        confirmation_code: Entrer le code reçu sur votre mobile
-        resend_sms_link: Cliquer ici pour le renvoyer
-        resend_sms_text: Le code de confirmation n'a pas encore été reçu ?
-        submit_button: Envoyer
-        title: Confirmation du code de sécurité
+        confirmation_code: Enter the code you received on your mobile
+        resend_sms_link: Click here to send it again
+        resend_sms_text: Didn't get a text with your confirmation code?
+        submit_button: Send
+        title: Security code confirmation
       new:
-        phone: Entrez votre numéro de téléphone mobile pour recevoir le code
-        phone_format_html: "<strong><em>(Exemple: 612345678 or +34612345678)</em></strong>"
-        phone_note: Nous utiliserons uniquement votre numéro de téléphone pour vous envoyer ce code, sans jamais vous recontacter par la suite.
-        phone_placeholder: "Exemple: 612345678 or +34612345678"
-        submit_button: Envoyer
-        title: Envoyer le code de confirmation
+        phone: Enter your mobile phone number to receive the code
+        phone_format_html: '<strong><em>(Example: 612345678 or +34612345678)</em></strong>'
+        phone_note: We only user your phone for send to you a code, we never contact to you.
+        phone_placeholder: 'Example: 612345678 or +34612345678'
+        submit_button: Send
+        title: Send confirmation code
       update:
-        error: Code de vérification incorrect
+        error: Incorrect confirmation code
         flash:
           level_three:
-            success: Code correct. Votre compte est maintenant vérifié.
+            success: Code correct. Your account is now verified
           level_two:
             success: Code correct
-    step_1: Résidence
-    step_2: Code de confirmation
-    step_3: Vérification finale
-    user_permission_debates: Participer aux débats
-    user_permission_info: En vérifiant votre compte vous pourrez...
-    user_permission_proposal: Créer de nouvelles propositions
-    user_permission_support_proposal: Soutenir des propositions
-    user_permission_votes: Participer au vote final*
+    step_1: Residence
+    step_2: Confirmation code
+    step_3: Final verification
+    user_permission_debates: Participate on debates
+    user_permission_info: Verifing your information you'll be able to...
+    user_permission_proposal: Create new proposals
+    user_permission_support_proposal: Support proposals*
+    user_permission_votes: Participate on final voting*
     verified_user:
       form:
-        submit_button: Envoyer le code
+        submit_button: Send code
       show:
-        email_title: Courriels
-        explanation: Nous disposons actuellement des informations suivantes dans notre base de données. Merci de sélectionner une méthode pour l'envoi de votre code de confirmation.
-        phone_title: Numéros de téléphone
-        title: Informations disponibles
-        use_another_phone: Utiliser un autre téléphone
+        email_title: Emails
+        explanation: We currently hold the following details on the Register; please select a method for your confirmation code to be sent.
+        phone_title: Phone numbers
+        title: Available information
+        use_another_phone: Use other phone

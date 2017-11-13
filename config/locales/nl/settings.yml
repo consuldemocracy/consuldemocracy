@@ -20,6 +20,7 @@ nl:
     facebook_handle: "Facebook handle"
     youtube_handle: "Youtube handle"
     telegram_handle: "Telegram handle"
+    instagram_handle: "Instagram handle"
     blog_url: "Blog URL"
     transparency_url: "Transparency URL"
     opendata_url: "Open Data URL"
@@ -37,9 +38,18 @@ nl:
       spending_proposals: Investment projects
       spending_proposal_features:
         voting_allowed: Voting on investment projects
+      legislation: Legislation
+      user:
+        recommendations: Recommendeds
+      community: Community on proposals and investments
+      map: Proposals and budget investments geolocation
+    map_latitude: Latitude
+    map_longitude: Longitude
+    map_zoom: Zoom
     mailer_from_name: Origin email name
     mailer_from_address: Origin email address
     meta_description: "Site description (SEO)"
     meta_keywords: "Keywords (SEO)"
     verification_offices_url: Verification offices URL
     min_age_to_participate: Minimum age needed to participate
+    proposal_improvement_path: Proposal improvement info internal link

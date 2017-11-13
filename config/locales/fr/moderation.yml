@@ -1,78 +1,77 @@
----
 fr:
   moderation:
-    header:
-      title: Modération
     comments:
       index:
-        block_authors: Bloquer un auteur
-        confirm: "Êtes-vous sûr(e) ?"
-        filter: Filtrer
+        block_authors: Block authors
+        confirm: Are you sure?
+        filter: Filter
         filters:
-          all: Tous
-          pending_flag_review: En attente
-          with_ignored_flag: Marqué comme vu
+          all: All
+          pending_flag_review: Pending
+          with_ignored_flag: Marked as viewed
         headers:
-          comment: Commentaire
-          moderate: Modérer
-        hide_comments: Masquer les commentaires
-        ignore_flags: Marqué comme vu
-        order: Ordre
+          comment: Comment
+          moderate: Moderate
+        hide_comments: Hide comments
+        ignore_flags: Mark as viewed
+        order: Order
         orders:
-          flags: Les plus signalés
-          newest: Les plus récents
-        title: Commentaires
+          flags: Most flagged
+          newest: Newest
+        title: Comments
     dashboard:
       index:
-        title: Modération
+        title: Moderation
     debates:
       index:
-        block_authors: Bloquer un auteur
-        confirm: "Êtes-vous sûr(e) ?"
-        filter: Filtrer
+        block_authors: Block authors
+        confirm: Are you sure?
+        filter: Filter
         filters:
-          all: Tous
-          pending_flag_review: En attente
-          with_ignored_flag: Marqué comme vu
+          all: All
+          pending_flag_review: Pending
+          with_ignored_flag: Marked as viewed
         headers:
-          debate: Débat
-          moderate: Modérer
-        hide_debates: Masquer les débats
-        ignore_flags: Marqué comme vu
-        order: Ordre
+          debate: Debate
+          moderate: Moderate
+        hide_debates: Hide debates
+        ignore_flags: Mark as viewed
+        order: Order
         orders:
-          created_at: Les plus récents
-          flags: Les plus signalés
-        title: Débats
+          created_at: Newest
+          flags: Most flagged
+        title: Debates
+    header:
+      title: Moderation
     menu:
-      flagged_comments: Commentaires
-      flagged_debates: Débats
-      proposals: Propositions
-      users: Bloquer les utilisateurs
+      flagged_comments: Comments
+      flagged_debates: Debates
+      proposals: Proposals
+      users: Block users
     proposals:
       index:
-        block_authors: Bloquer un auteur
-        confirm: "Êtes-vous sûr(e) ?"
-        filter: Filtrer
+        block_authors: Block authors
+        confirm: Are you sure?
+        filter: Filter
         filters:
-          all: Tous
-          pending_flag_review: En attente de revue
-          with_ignored_flag: Marqué comme vu
+          all: All
+          pending_flag_review: Pending review
+          with_ignored_flag: Mark as viewed
         headers:
-          moderate: Modérer
-          proposal: Proposition
-        hide_proposals: Masquer les propositions
-        ignore_flags: Marqué comme vu
-        order: Trier par
+          moderate: Moderate
+          proposal: Proposal
+        hide_proposals: Hide proposals
+        ignore_flags: Mark as viewed
+        order: Order by
         orders:
-          created_at: Les plus récents
-          flags: Les plus signalés
-        title: Propositions
+          created_at: Most recent
+          flags: Most flagged
+        title: Proposals
     users:
       index:
-        hidden: Bloqué
-        hide: Bloquer
-        search: Rechercher
-        search_placeholder: courriel ou nom de l'utilisateur
-        title: Bloquer les utilisateurs
-      notice_hide: Utilisateur bloqué. Tous les débats et les propositions de cet utilisateur ont été masqués.
+        hidden: Blocked
+        hide: Block
+        search: Search
+        search_placeholder: email or name of user
+        title: Block users
+      notice_hide: User blocked. All of this user's debates and comments have been hidden.

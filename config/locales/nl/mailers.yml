@@ -1,4 +1,3 @@
----
 nl:
   mailers:
     no_reply: "This message was sent from an email address that does not accept replies."
@@ -23,7 +22,7 @@ nl:
       title: New response to your comment
     unfeasible_spending_proposal:
       hi: "Dear user,"
-      new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
+      new_html: 'For all these, we invite you to elaborate a <strong>new proposal</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}.'
       new_href: "new investment project"
       reconsider_html: "If you believe that the rejected proposal meets the requirements to be an investment proposal, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
       sincerely: "Sincerely"
@@ -33,14 +32,14 @@ nl:
       unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
     budget_investment_unfeasible:
       hi: "Dear user,"
-      new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
+      new_html: 'For all these, we invite you to elaborate a <strong>new investment</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}.'
       new_href: "new investment project"
-      reconsider_html: "If you believe that the rejected proposal meets the requirements to be an investment proposal, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
+      reconsider_html: "If you believe that the rejected investment meets the requirements to be an investment project, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
       sincerely: "Sincerely"
       signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
       subject: "Your investment project '%{code}' has been marked as unfeasible"
-      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
     proposal_notification_digest:
       info: "Here are the new notifications that have been published by authors of the proposals that you have supported in %{org_name}."
       title: "Proposal notifications in %{org_name}"
@@ -72,14 +71,22 @@ nl:
       follow_link: "Participatory Budgets"
       sincerely: "Sincerely,"
       signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
-      share: "Comparte tu proyecto"
-    budget_investment_unfeasible:
+      share: "Share your project"
+    budget_investment_selected:
+      subject: "Your investment project '%{code}' has been selected"
       hi: "Dear user,"
-      new_html: "For all these, we invite you to elaborate a <strong>new investment</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
-      new_href: "new investment project"
-      reconsider_html: "If you believe that the rejected investment meets the requirements to be an investment project, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
-      sincerely: "Sincerely"
+      selected_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We would like to inform you that your investment project <strong>'%{title}'</strong> has been selected for the final voting phase that will happen from <strong>May 15th to June 30th</strong>."
+      share: "Start to get votes, share your investment project on social networks. Share is essential to make it a reality."
+      share_button: "Share your investment project"
+      thanks: "Thank you again for participating."
+      sincerely: "Sincererly"
       signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
-      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
-      subject: "Your investment project '%{code}' has been marked as unfeasible"
-      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+    budget_investment_unselected:
+      subject: "Your investment project '%{code}' has not been selected"
+      hi: "Dear user,"
+      unselected_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment project <strong>'%{title}'</strong> has not been selected for the final voting phase."
+      participate_html: "You can continue participating in the final voting phase voting for investments projects from <strong>May 15th to June 30th</strong>."
+      participate_url: "participate in the final voting"
+      thanks: "Thank you again for participating."
+      sincerely: "Sincererly"
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"

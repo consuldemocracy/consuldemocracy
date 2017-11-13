@@ -1,29 +1,34 @@
----
 nl:
   flash:
     actions:
       create:
-        notice: "%{resource_name} aangemaakt."
-        debate: "Discussie is gestart."
-        direct_message: "Uw boodschap is verzonden."
-        poll: "Stemronde is aangemaakt."
-        poll_booth: "Booth is aangemaakt."
-        proposal: "Voorstel is aangemaakt."
-        proposal_notification: "Uw boodschap is verzonden."
-        spending_proposal: "Begrotingsvoorstel is aangemaakt. U kunt erbij via %{activity}"
-        budget_investment: "Budget investering is aangemaakt."
-        signature_sheet: "Handtekeningenlijst is aangemaakt."
+        notice: "%{resource_name} created successfully."
+        debate: "Debate created successfully."
+        direct_message: "You message has been sent successfully."
+        poll: "Poll created successfully."
+        poll_booth: "Booth created successfully."
+        poll_question_answer: "Answer created successfully"
+        poll_question_answer_video: "Video created successfully"
+        proposal: "Proposal created successfully."
+        proposal_notification: "Your message has been sent correctly."
+        spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"
+        budget_investment: "Budget Investment created successfully."
+        signature_sheet: "Signature sheet created successfully"
+        topic: "Topic created successfully."
       save_changes:
-        notice: Veranderingen opgeslagen
+        notice: Changes saved
       update:
-        notice: "%{resource_name} is bijgewerkt."
-        debate: "Discussie is bijgewerkt."
-        poll: "Stemronde is bijgewerkt."
-        poll_booth: "Booth is bijgewerkt."
-        proposal: "Voorstel is bijgewerkt."
-        spending_proposal: "Begrotingsvoorstel is bijgewerkt."
-        budget_investment: "Budget investering is bijgewerkt."
+        notice: "%{resource_name} updated successfully."
+        debate: "Debate updated successfully."
+        poll: "Poll updated successfully."
+        poll_booth: "Booth updated successfully."
+        proposal: "Proposal updated successfully."
+        spending_proposal: "Investment project updated succesfully."
+        budget_investment: "Investment project updated succesfully."
+        topic: "Topic updated successfully."
       destroy:
-        spending_proposal: "Begrotingsvoorstel is verwijderd."
-        budget_investment: "Budget investering is verwijderd."
-        error: "Verwijderen mislukt"
+        spending_proposal: "Spending proposal deleted succesfully."
+        budget_investment: "Investment project deleted succesfully."
+        error: "Could not delete"
+        topic: "Topic deleted successfully."
+        poll_question_answer_video: "Answer video deleted successfully."
