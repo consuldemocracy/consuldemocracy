@@ -9,18 +9,19 @@ fr:
       - ven
       - sam
     abbr_month_names:
-      1: fév
-      2: mar
-      3: avr
-      4: mai
-      5: jun
-      6: jul
-      7: aoû
-      8: sep
-      9: oct
-      10: nov
-      11: déc
-      12: Déc
+      - [ ]
+      - fév
+      - mar
+      - avr
+      - mai
+      - jun
+      - jul
+      - aoû
+      - sep
+      - oct
+      - nov
+      - déc
+      - Déc
     day_names:
       - dimanche
       - lundi
@@ -34,25 +35,92 @@ fr:
       long: "%d %B %Y"
       short: "%d %b"
     month_names:
-      1: février
-      2: mars
-      3: avril
-      4: mai
-      5: juin
-      12: Décembre
+      - [ ]
+      - février
+      - mars
+      - avril
+      - mai
+      - juin
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - Décembre
+    order:
+      - :year
+      - :month
+      - :day
   datetime:
     distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
         one: 1 minute
         other: "%{count} mois"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
       x_years:
         one: 1 an
         other: "%{count} jours"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
   errors:
     format: "%{attribute} %{message}"
     messages:
+      accepted: must be accepted
+      blank: can't be blank
+      present: must be blank
+      confirmation: doesn't match %{attribute}
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
       model_invalid: 'La validation omise : %{errors}'
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
       required: doit exister
+      taken: has already been taken
       too_long:
         one: est trop long (maximum est de 1 caractère)
         other: est trop long (maximum est %{count} caractères)
@@ -62,8 +130,18 @@ fr:
       wrong_length:
         one: est la mauvaise longueur (soit 1 caractère)
         other: est la longueur incorrecte (devrait être %{count} caractères)
+      other_than: must be other than %{count}
+    template:
+      body: 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: "%{count} errors prohibited this %{model} from being saved"
   helpers:
+    select:
+      prompt: Please select
     submit:
+      create: Create %{model}
+      submit: Save %{model}
       update: Actualiser %{model}
   number:
     currency:
@@ -90,7 +168,9 @@ fr:
           quadrillion: quadrillion
           thousand: mille
           trillion: trillion
+          unit: ''
       format:
+        delimiter: ''
         precision: 1
         significant: true
         strip_insignificant_zeros: true
@@ -106,7 +186,11 @@ fr:
           tb: TO
     percentage:
       format:
+        delimiter: ''
         format: "%n %"
+    precision:
+      format:
+        delimiter: ''
   support:
     array:
       last_word_connector: " et "
@@ -119,4 +203,5 @@ fr:
       default: "%A, %d %B %Y %H:%M:%S %z"
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
     pm: de l'après-midi
