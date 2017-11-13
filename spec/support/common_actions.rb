@@ -303,8 +303,8 @@ module CommonActions
     visit poll_path(poll)
 
     within("#poll_question_#{question.id}_answers") do
-      click_link "#{answer}"
-      expect(page).to_not have_link("#{answer}")
+      click_link answer.to_s
+      expect(page).to_not have_link(answer.to_s)
     end
   end
 

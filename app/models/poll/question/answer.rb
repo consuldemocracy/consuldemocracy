@@ -37,7 +37,7 @@ class Poll::Question::Answer < ActiveRecord::Base
   end
 
   def most_voted?
-    self.most_voted
+    most_voted
   end
 
   def total_votes_percentage
@@ -46,9 +46,9 @@ class Poll::Question::Answer < ActiveRecord::Base
 
   def set_most_voted
     answers = question.question_answers
-                  .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
-    is_most_voted = !answers.any?{ |a| a > self.total_votes }
+                      .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
+    is_most_voted = answers.none?{ |a| a > total_votes }
 
-    self.update(most_voted: is_most_voted)
+    update(most_voted: is_most_voted)
   end
 end
