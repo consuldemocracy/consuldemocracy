@@ -27,7 +27,7 @@ class Poll
 
       def total_participants_web_percentage
         stats_cache('total_participants_web_percentage') do
-          total_participants == 0 ? 0 : total_participants_web * 100 / total_participants
+          total_participants.zero? ? 0 : total_participants_web * 100 / total_participants
         end
       end
 
@@ -37,7 +37,7 @@ class Poll
 
       def total_participants_booth_percentage
         stats_cache('total_participants_booth_percentage') do
-          total_participants == 0 ? 0 : total_participants_booth * 100 / total_participants.to_f
+          total_participants.zero? ? 0 : total_participants_booth * 100 / total_participants.to_f
         end
       end
 
@@ -47,7 +47,7 @@ class Poll
 
       def valid_percentage_web
         stats_cache('valid_percentage_web') do
-          total_valid_votes == 0 ? 0 : total_web_valid * 100 / total_valid_votes.to_f
+          total_valid_votes.zero? ? 0 : total_web_valid * 100 / total_valid_votes.to_f
         end
       end
 
@@ -73,7 +73,7 @@ class Poll
 
       def valid_percentage_booth
         stats_cache('valid_percentage_booth') do
-          total_valid_votes == 0 ? 0 : total_booth_valid * 100 / total_valid_votes.to_f
+          total_valid_votes.zero? ? 0 : total_booth_valid * 100 / total_valid_votes.to_f
         end
       end
 
@@ -83,7 +83,7 @@ class Poll
 
       def white_percentage_booth
         stats_cache('white_percentage_booth') do
-          total_white_votes == 0 ? 0 : total_booth_white * 100 / total_white_votes.to_f
+          total_white_votes.zero? ? 0 : total_booth_white * 100 / total_white_votes.to_f
         end
       end
 
@@ -93,7 +93,7 @@ class Poll
 
       def null_percentage_booth
         stats_cache('null_percentage_booth') do
-          total_null_votes == 0 ? 0 : total_booth_null * 100 / total_null_votes.to_f
+          total_null_votes.zero? ? 0 : total_booth_null * 100 / total_null_votes.to_f
         end
       end
 
@@ -103,7 +103,7 @@ class Poll
 
       def total_valid_percentage
         stats_cache('total_valid_percentage') do
-          total_participants == 0 ? 0 : total_valid_votes * 100 / total_participants.to_f
+          total_participants.zero? ? 0 : total_valid_votes * 100 / total_participants.to_f
         end
       end
 
@@ -113,7 +113,7 @@ class Poll
 
       def total_white_percentage
         stats_cache('total_white_percentage') do
-          total_participants == 0 ? 0 : total_white_votes * 100 / total_participants.to_f
+          total_participants.zero? ? 0 : total_white_votes * 100 / total_participants.to_f
         end
       end
 
@@ -123,7 +123,7 @@ class Poll
 
       def total_null_percentage
         stats_cache('total_null_percentage') do
-          total_participants == 0 ? 0 : total_null_votes * 100 / total_participants.to_f
+          total_participants.zero? ? 0 : total_null_votes * 100 / total_participants.to_f
         end
       end
 
