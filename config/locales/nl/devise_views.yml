@@ -1,130 +1,129 @@
----
 nl:
   devise_views:
     confirmations:
       new:
         email_label: Email
-        submit: Stuur instructies opnieuw
-        title: Stuur bevestiging instructies opnieuw
+        submit: Re-send instructions
+        title: Re-send confirmation instructions
       show:
-        instructions_html: Bevestig het account via %{email}
-        new_password_confirmation_label: Herhaal wachtwoord
-        new_password_label: Nieuw wachtwoord
-        please_set_password: Kies een nieuw wachtwoord (voor login met email hierboven)
-        submit: Bevestig
-        title: Bevestig mijn account
+        instructions_html: Confirming the account with email %{email}
+        new_password_confirmation_label: Repeat access password
+        new_password_label: New access password
+        please_set_password: Please choose your new pasword (it will allow you to login with the email above)
+        submit: Confirm
+        title: Confirm my account
     mailer:
       confirmation_instructions:
-        confirm_link: Bevestig mijn account
-        text: 'U kunt uw email adres bevestigen via de volgende link:'
-        title: Welkom bij het Open Government Portal
-        welcome: Welkom
+        confirm_link: Confirm my account
+        text: 'You can confirm your email account at the following link:'
+        title: Welcome to the Open Government Portal
+        welcome: Welcome
       reset_password_instructions:
-        change_link: Pas mijn wachtwoord aan
-        hello: Hallo
-        ignore_text: Negeer deze mail als u geen wachtwoord aanpassing heeft aangevraagd.
-        info_text: Uw wachtwoord zal niet worden aangepast tot u dit via de link edit.
-        text: 'We hebben een verzoek tot wijziging van uw wachtwoord ontvangen. U kunt dit doen via de volgende link:'
-        title: Verander uw wachtwoord
+        change_link: Change my password
+        hello: Hello
+        ignore_text: If you did not request a password change, you can ignore this email.
+        info_text: Your password will not be changed unless you access the link and edit it.
+        text: 'We have received a request to change your password. You can do this at the following link:'
+        title: Change your password
       unlock_instructions:
-        hello: Hallo
-        info_text: Uw account is geblokkeerd vanwege een te groot aantal mislukte inlogpogingen.
-        instructions_text: 'Klik deze link om uw account te de-blokkeren:'
-        title: Uw account is geblokkeerd
-        unlock_link: De-blokkeer mijn account
+        hello: Hello
+        info_text: Your account has been blocked due to an excessive number of failed sign-in attempts.
+        instructions_text: 'Please click on this link to unlock your account:'
+        title: Your account has been locked
+        unlock_link: Unlock my account
     menu:
       login_items:
-        login: Log in
-        logout: Log out
-        signup: Aanmelden
+        login: Sign in
+        logout: Sign out
+        signup: Register
     organizations:
       registrations:
         new:
           email_label: Email
-          organization_name_label: Naam van organisatie
-          password_confirmation_label: Bevestig wachtwoord
-          password_label: Wachtwoord
-          phone_number_label: Telefoonnummer
-          responsible_name_label: Volledige naam van de vertegenwoordiger van het collectief
-          responsible_name_note: Dit is de persoon die namens de vereniging of het collectief voorstellen indient
-          submit: Aanmelden
-          title: Als organisatie of collectief aanmelden
+          organization_name_label: Name of organisation
+          password_confirmation_label: Confirm password
+          password_label: Password
+          phone_number_label: Phone number
+          responsible_name_label: Full name of the person responsible for the collective
+          responsible_name_note: This would be the person representing the association/collective in whose name the proposals are presented
+          submit: Register
+          title: Register as an organisation or collective
         success:
-          back_to_index: Begrepen; terug naar hoofdpagina
-          instructions_1_html: "<b>We nemen snel contact op</b> om te verifiëren dat u dit collectief inderdaad vertegenwoordigd."
-          instructions_2_html: Terwijl uw <b>email wordt geverifiëerd</b>, hebben we u een link gestuurd <b>ter bevestiging van uw account</b>.
-          instructions_3_html: Na bevestiging kunt us deelnemen als niet-geverifiëerd collectief.
-          thank_you_html: Dank voor uw aanmelding als collectief op deze site. We wachten nu op <b>verificatie</b>.
-          title: Aanmelden van organisatie of collectief
+          back_to_index: I understand; go back to main page
+          instructions_1_html: "<b>We will contact you soon</b> to verify that you do in fact represent this collective."
+          instructions_2_html: While your <b>email is reviewed</b>, we have sent you a <b>link to confirm your account</b>.
+          instructions_3_html: Once confirmed, you may begin to participate as an unverified collective.
+          thank_you_html: Thank you for registering your collective on the website. It is now <b>pending verification</b>.
+          title: Registration of organisation / collective
     passwords:
       edit:
-        change_submit: Verander wachtwoord
-        password_confirmation_label: Bevestig nieuw wachtwoord
-        password_label: Nieuw wachtwoord
-        title: Verander uw wachtwoord
+        change_submit: Change my password
+        password_confirmation_label: Confirm new password
+        password_label: New password
+        title: Change your password
       new:
         email_label: Email
-        send_submit: Stuur instructies
-        title: Wachtwoord vergeten?
+        send_submit: Send instructions
+        title: Forgotten password?
     sessions:
       new:
-        email_label: Email
-        password_label: Wachtwoord
-        remember_me: Onthoud mij
-        submit: Ok
-        title: Log in
+        login_label: Email or username
+        password_label: Password
+        remember_me: Remember me
+        submit: Enter
+        title: Sign in
     shared:
       links:
-        login: Log in
-        new_confirmation: Geen activeringsinstructies voor uw account ontvangen?
-        new_password: Wachtwoord vergeten?
-        new_unlock: Geen de-blokkeer instructies ontvangen?
-        signin_with_provider: Log in met %{provider}
-        signup: Geen account? %{signup_link}
-        signup_link: Aanmelden
+        login: Enter
+        new_confirmation: Haven't received instructions to activate your account?
+        new_password: Forgotten your password?
+        new_unlock: Haven't received unlocking instructions?
+        signin_with_provider: Sign in with %{provider}
+        signup: Don't have an account? %{signup_link}
+        signup_link: Sign up
     unlocks:
       new:
         email_label: Email
-        submit: Stuur de-blokker instructies opnieuw.
-        title: Stuur de-blokker instructies
+        submit: Re-send unlocking instructions
+        title: Re-sent unlocking instructions
     users:
       registrations:
         delete_form:
-          erase_reason_label: Reden
-          info: Dit kunt u niet ongedaan maken. Verifiëer dat u dit echt wilt.
-          info_reason: Wat is de reden? (optioneel)
-          submit: Verwijder mijn account
-          title: Verwijder account
+          erase_reason_label: Reason
+          info: This action can not be undone. Please make sure this is what you want.
+          info_reason: If you want, leave us a reason (optional)
+          submit: Erase my account
+          title: Erase account
         edit:
-          current_password_label: Huidig wachtwoord
-          edit: Toegangsgegevens aanpassen
+          current_password_label: Current password
+          edit: Edit
           email_label: Email
-          leave_blank: Laat leeg als u het niet wilt aanpassen
-          need_current: Uw huidige wachtwoord ter bevestiging van de veranderingen
-          password_confirmation_label: Bevestig nieuw wachtwoord
-          password_label: Nieuw wachtwoord
-          update_submit: Pas aan
-          waiting_for: 'In afwachting van bevestiging:'
+          leave_blank: Leave blank if you do not wish to modify
+          need_current: We need your current password to confirm the changes
+          password_confirmation_label: Confirm new password
+          password_label: New password
+          update_submit: Update
+          waiting_for: 'Awaiting confirmation of:'
         new:
           cancel: Cancel login
           email_label: Email
-          organization_signup: Vertegenwoordigd u een organisatie of collectief? %{signup_link}
-          organization_signup_link: Hier aanmelden
-          password_confirmation_label: Bevestig wachtwoord
-          password_label: Wachtwoord
-          redeemable_code: Verificatiecode ontvangen via email (optioneel)
-          submit: Aanmelden
-          terms: Met aanmelding accepteerd u de %{terms}
-          terms_link: voorwaarden van gebruik
-          terms_title: Met aanmelding accepteerd u de voorwaarden van gebruik
-          title: Aanmelden
-          username_is_available: "Gebruikersnaam is beschikbaar"
-          username_is_not_available: "Gebruikersnaam is bezet"
-          username_label: Gebruikersnaam
-          username_note: De naam bij uw bijdragen
+          organization_signup: Do you represent an organisation or collective? %{signup_link}
+          organization_signup_link: Sign up here
+          password_confirmation_label: Confirm password
+          password_label: Password
+          redeemable_code: Verification code received via email (optional)
+          submit: Register
+          terms: By registering you accept the %{terms}
+          terms_link: terms and conditions of use
+          terms_title: By registering you accept the terms and conditions of use
+          title: Register
+          username_is_available: Username available
+          username_is_not_available: Username already in use
+          username_label: Username
+          username_note: Name that appears next to your posts
         success:
-          back_to_index: Begrepen; terug naar hoofdpagina
-          instructions_1_html: <b>Check uw email</b> - we hebben u een <b>link ter bevestiging</b> gestuurd.
-          instructions_2_html: Na bevestiging kunt u deelnemen.
-          thank_you_html: Dank voor uw aanmelding. Uw email moet nu worden <b>bevestigd</b>.
-          title: Pas email adres aan
+          back_to_index: I understand; go back to main page
+          instructions_1_html: Please <b>check your email</b> - we have sent you a <b>link to confirm your account</b>.
+          instructions_2_html: Once confirmed, you may begin participation.
+          thank_you_html: Thank you for registering for the website. You must now <b>confirm your email address</b>.
+          title: Modify your email
