@@ -20,7 +20,7 @@ class Legislation::ProposalsController < Legislation::BaseController
 
   def show
     super
-    set_legislation_proposal_votes(@process.proposals)
+    legislation_proposal_votes(@process.proposals)
     @document = Document.new(documentable: @proposal)
     if request.path != legislation_process_proposal_path(params[:process_id], @proposal)
       redirect_to legislation_process_proposal_path(params[:process_id], @proposal),
@@ -45,7 +45,7 @@ class Legislation::ProposalsController < Legislation::BaseController
 
   def vote
     @proposal.register_vote(current_user, params[:value])
-    set_legislation_proposal_votes(@proposal)
+    legislation_proposal_votes(@proposal)
   end
 
   private
