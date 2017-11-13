@@ -1,0 +1,5 @@
+es:
+  activerecord:
+    attributes:
+      budget/investment:
+        heading_id: "¿Tu proyecto es para toda la ciudad o está ubicado en un distrito en concreto?"

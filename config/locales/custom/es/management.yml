@@ -5,3 +5,8 @@ es:
       not_in_census: Este documento no está registrado en el Padrón Municipal de Madrid.
       not_in_census_info: 'Las personas no empadronadas en Madrid pueden participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:'
       link: http://decide.madrid.es
+    print:
+      proposals_info: Haz tu propuesta en http://decide.madrid.es
+      proposals_note: Las propuestas más apoyadas serán llevadas a votación. Y si las acepta una mayoría, el Ayuntamiento las llevará a cabo.
+      proposals_title: 'Propuestas:'
+      spending_proposals_info: Participa en http://decide.madrid.es
