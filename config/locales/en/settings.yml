@@ -60,6 +60,7 @@ en:
     meta_keywords_description: 'Keywords <meta name="keywords">, used to improve SEO'
     min_age_to_participate: Minimum age needed to participate
     min_age_to_participate_description: "Users over this age can participate in all processes where a user verified account is needed"
+    postal_codes: "Postal Codes"
     proposals:
       successful_proposal_id: Successful proposal
       successful_proposal_id_description: This proposal is used as a reference for a successful proposal in supports number and will be displayed in the dashboard graph.

@@ -46,6 +46,49 @@ describe Verification::Residence do
       residence.terms_of_service = nil
       expect(residence).not_to be_valid
     end
+
+    describe "postal code" do
+      before { Setting["postal_codes"] = "28001-28100,28200" }
+
+      it "is valid with postal codes included in settings" do
+        residence.postal_code = "28012"
+        residence.valid?
+
+        expect(residence.errors[:postal_code]).to be_empty
+
+        residence.postal_code = "28001"
+        residence.valid?
+
+        expect(residence.errors[:postal_code]).to be_empty
+
+        residence.postal_code = "28100"
+        residence.valid?
+
+        expect(residence.errors[:postal_code]).to be_empty
+
+        residence.postal_code = "28200"
+        residence.valid?
+
+        expect(residence.errors[:postal_code]).to be_empty
+      end
+
+      it "is not valid with postal codes not included in settings" do
+        residence.postal_code = "12345"
+        residence.valid?
+
+        expect(residence.errors[:postal_code].size).to eq(1)
+
+        residence.postal_code = "28000"
+        residence.valid?
+
+        expect(residence.errors[:postal_code].size).to eq(1)
+
+        residence.postal_code = "28101"
+        residence.valid?
+
+        expect(residence.errors[:postal_code]).to eq ["In order to be verified, you must be registered."]
+      end
+    end
   end
 
   describe "new" do

@@ -102,7 +102,7 @@ describe "Residence" do
     select "1997", from: "residence_date_of_birth_1i"
     select "January", from: "residence_date_of_birth_2i"
     select "1", from: "residence_date_of_birth_3i"
-    fill_in "residence_postal_code", with: "12345"
+    fill_in "residence_postal_code", with: "00000"
     check "residence_terms_of_service"
 
     click_button "Verify residence"

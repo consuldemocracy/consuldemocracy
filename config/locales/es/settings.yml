@@ -60,6 +60,7 @@ es:
     meta_keywords_description: 'Palabras clave <meta name="keywords">, utilizadas para mejorar el SEO'
     min_age_to_participate: Edad mínima para participar
     min_age_to_participate_description: "Los usuarios mayores de esta edad podrán participar en todos los procesos donde se necesite una cuenta verificada"
+    postal_codes: "Códigos Postales"
     proposals:
       successful_proposal_id: Propuesta exitosa
       successful_proposal_id_description: Esta propuesta se utiliza como referencia de una propuesta exitosa en número de apoyos y se mostrará en el gráfico del panel de control
