@@ -9,19 +9,18 @@ es:
       - vie
       - sáb
     abbr_month_names:
-      - [ ]
-      - ene
-      - feb
-      - mar
-      - abr
-      - may
-      - jun
-      - jul
-      - ago
-      - sep
-      - oct
-      - nov
-      - dic
+      1: ene
+      2: feb
+      3: mar
+      4: abr
+      5: may
+      6: jun
+      7: jul
+      8: ago
+      9: sep
+      10: oct
+      11: nov
+      12: dic
     day_names:
       - domingo
       - lunes
@@ -35,19 +34,18 @@ es:
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-      - [ ]
-      - enero
-      - febrero
-      - marzo
-      - abril
-      - mayo
-      - junio
-      - julio
-      - agosto
-      - septiembre
-      - octubre
-      - noviembre
-      - diciembre
+      1: enero
+      2: febrero
+      3: marzo
+      4: abril
+      5: mayo
+      6: junio
+      7: julio
+      8: agosto
+      9: septiembre
+      10: octubre
+      11: noviembre
+      12: diciembre
     order:
       - :day
       - :mes
@@ -168,9 +166,7 @@ es:
           quadrillion: mil billones
           thousand: mil
           trillion: billón
-          unit: ''
       format:
-        delimiter: ''
         precision: 3
         significant: true
         strip_insignificant_zeros: true
@@ -186,11 +182,7 @@ es:
           tb: TB
     percentage:
       format:
-        delimiter: ''
         format: "%n%"
-    precision:
-      format:
-        delimiter: ''
   support:
     array:
       last_word_connector: " y "
@@ -203,5 +195,4 @@ es:
       default: "%A, %d de %B de %Y %H:%M:%S %z"
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
-      api: "%Y-%m-%d %H"
     pm: pm
