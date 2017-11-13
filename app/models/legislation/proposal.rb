@@ -57,8 +57,7 @@ class Legislation::Proposal < ActiveRecord::Base
       tag_list.join(' ') => 'B',
       geozone.try(:name) => 'B',
       summary            => 'C',
-      description        => 'D'
-    }
+      description        => 'D'}
   end
 
   def self.search(terms)
@@ -69,7 +68,7 @@ class Legislation::Proposal < ActiveRecord::Base
   def self.search_by_code(terms)
     matched_code = match_code(terms)
     results = where(id: matched_code[1]) if matched_code
-    return results if (results.present? && results.first.code == terms)
+    return results if results.present? && results.first.code == terms
   end
 
   def self.match_code(terms)
@@ -105,9 +104,7 @@ class Legislation::Proposal < ActiveRecord::Base
   end
 
   def register_vote(user, vote_value)
-    if votable_by?(user)
-      vote_by(voter: user, vote: vote_value)
-    end
+    vote_by(voter: user, vote: vote_value) if votable_by?(user)
   end
 
   def code

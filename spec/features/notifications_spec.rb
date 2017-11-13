@@ -14,11 +14,11 @@ feature "Notifications" do
   let(:legislation_question) { create(:legislation_question, process: process, author: administrator) }
   let(:legislation_annotation) { create(:legislation_annotation, author: author) }
 
-  let(:topic) {
+  let(:topic) do
     proposal = create(:proposal)
     community = proposal.community
     create(:topic, community: community, author: author)
-  }
+  end
 
   scenario "User commented on my debate", :js do
     create(:notification, notifiable: debate, user: author)
