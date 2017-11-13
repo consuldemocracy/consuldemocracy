@@ -48,7 +48,7 @@ es:
       12: diciembre
     order:
       - :day
-      - :mes
+      - :month
       - :year
   datetime:
     distance_in_words:
