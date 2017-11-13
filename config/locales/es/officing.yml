@@ -1,4 +1,3 @@
----
 es:
   officing:
     header:
@@ -8,14 +7,14 @@ es:
         title: Presidir mesa de votaciones
         info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
     menu:
-      voters: "Validar documento y votar"
-      total_recounts: "Recuento total y escrutinio"
+      voters: Validar documento y votar
+      total_recounts: Recuento total y escrutinio
     polls:
       final:
-        title: "Listado de votaciones finalizadas"
-        no_polls: "No tienes permiso para recuento final en ninguna votación reciente"
-        select_poll: "Selecciona votación"
-        add_results: "Añadir resultados"
+        title: Listado de votaciones finalizadas
+        no_polls: No tienes permiso para recuento final en ninguna votación reciente
+        select_poll: Selecciona votación
+        add_results: Añadir resultados
     results:
       flash:
         create: "Datos guardados"
@@ -35,12 +34,12 @@ es:
         see_results: "Ver resultados"
       index:
         no_results: "No hay resultados"
-        results: "Resultados"
+        results: Resultados
         table_answer: Respuesta
         table_votes: Votos
-        table_whites: Papeletas totalmente en blanco
-        table_nulls: Papeletas nulas
-        table_total: Papeletas totales
+        table_whites: "Papeletas totalmente en blanco"
+        table_nulls: "Papeletas nulas"
+        table_total: "Papeletas totales"
     residence:
       flash:
         create: "Documento verificado con el Padrón"
@@ -49,7 +48,7 @@ es:
         title: Validar documento
         document_number: "Número de documento (incluida letra)"
         submit: Validar documento
-        error_verifying_census: El Padrón no pudo verificar este documento.
+        error_verifying_census: "El Padrón no pudo verificar este documento."
         form_errors: evitaron verificar este documento
         no_assignments: "Hoy no tienes turno de presidente de mesa"
     voters:
@@ -60,7 +59,7 @@ es:
         table_actions: Acciones
       show:
         can_vote: Puede votar
-        error_already_voted: "Ya ha participado en esta votación"
+        error_already_voted: Ya ha participado en esta votación.
         submit: Confirmar voto
         success: "¡Voto introducido!"
       can_vote:

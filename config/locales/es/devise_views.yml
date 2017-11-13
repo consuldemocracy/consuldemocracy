@@ -1,4 +1,3 @@
----
 es:
   devise_views:
     confirmations:
@@ -42,8 +41,8 @@ es:
         new:
           email_label: Email
           organization_name_label: Nombre de la organización
-          password_confirmation_label: Confirmar contraseña
-          password_label: Contraseña
+          password_confirmation_label: Repite la contraseña anterior
+          password_label: Contraseña que utilizarás para acceder a este sitio web
           phone_number_label: Teléfono
           responsible_name_label: Nombre y apellidos de la persona responsable del colectivo
           responsible_name_note: Será la persona representante de la asociación/colectivo en cuyo nombre se presenten las propuestas
@@ -51,7 +50,7 @@ es:
           title: Registrarse como organización / colectivo
         success:
           back_to_index: Entendido, volver a la página principal
-          instructions_1_html: En breve <b>nos pondremos en contacto contigo</b> para verificar que realmente representas a este colectivo.
+          instructions_1_html: "En breve <b>nos pondremos en contacto contigo</b> para verificar que realmente representas a este colectivo."
           instructions_2_html: Mientras <b>revisa tu correo electrónico</b>, te hemos enviado un <b>enlace para confirmar tu cuenta</b>.
           instructions_3_html: Una vez confirmado, podrás empezar a participar como colectivo no verificado.
           thank_you_html: Gracias por registrar tu colectivo en la web. Ahora está <b>pendiente de verificación</b>.
@@ -65,22 +64,22 @@ es:
       new:
         email_label: Email
         send_submit: Recibir instrucciones
-        title: "¿Has olvidado tu contraseña?"
+        title: '¿Has olvidado tu contraseña?'
     sessions:
       new:
         login_label: Email o nombre de usuario
-        password_label: Contraseña
+        password_label: Contraseña que utilizarás para acceder a este sitio web
         remember_me: Recordarme
         submit: Entrar
-        title: Entrar
+        title: Iniciar sesión
     shared:
       links:
         login: Entrar
-        new_confirmation: "¿No has recibido instrucciones para confirmar tu cuenta?"
-        new_password: "¿Olvidaste tu contraseña?"
-        new_unlock: "¿No has recibido instrucciones para desbloquear?"
+        new_confirmation: '¿No has recibido instrucciones para confirmar tu cuenta?'
+        new_password: '¿Olvidaste tu contraseña?'
+        new_unlock: '¿No has recibido instrucciones para desbloquear?'
         signin_with_provider: Entrar con %{provider}
-        signup: "¿No tienes una cuenta? %{signup_link}"
+        signup: '¿No tienes una cuenta? %{signup_link}'
         signup_link: Regístrate
     unlocks:
       new:
@@ -91,13 +90,13 @@ es:
       registrations:
         delete_form:
           erase_reason_label: Razón de la baja
-          info: Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a hacer login con ella.
-          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional).
-          submit: Borrar mi cuenta
+          info: Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a entrar con ella.
+          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional)
+          submit: Darme de baja
           title: Darme de baja
         edit:
           current_password_label: Contraseña actual
-          edit: Editar
+          edit: Editar propuesta
           email_label: Email
           leave_blank: Dejar en blanco si no deseas cambiarla
           need_current: Necesitamos tu contraseña actual para confirmar los cambios
@@ -108,7 +107,7 @@ es:
         new:
           cancel: Cancelar login
           email_label: Tu correo electrónico
-          organization_signup: "¿Representas a una organización / colectivo? %{signup_link}"
+          organization_signup: '¿Representas a una organización / colectivo? %{signup_link}'
           organization_signup_link: Regístrate aquí
           password_confirmation_label: Repite la contraseña anterior
           password_label: Contraseña que utilizarás para acceder a este sitio web
@@ -118,8 +117,8 @@ es:
           terms_link: condiciones de uso
           terms_title: Al registrarte aceptas las condiciones de uso
           title: Registrarse
-          username_is_available: "Nombre de usuario disponible"
-          username_is_not_available: "Nombre de usuario ya existente"
+          username_is_available: Nombre de usuario disponible
+          username_is_not_available: Nombre de usuario ya existente
           username_label: Nombre de usuario
           username_note: Nombre público que aparecerá en tus publicaciones
         success:
