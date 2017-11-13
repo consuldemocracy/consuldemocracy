@@ -2,7 +2,6 @@ ast:
   activemodel:
     models:
       verification:
-        residence: "Residence"
         sms: "SMS"
     attributes:
       verification:
@@ -14,9 +13,5 @@ ast:
         sms:
           phone: "Teléfonu"
           confirmation_code: "Códigu de confirmación"
-        email:
-          recipient: "Email"
       officing/residence:
-        document_type: "Document type"
-        document_number: "Document number (including letters)"
         year_of_birth: "Añu de nacencia"
