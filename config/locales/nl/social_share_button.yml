@@ -1,6 +1,6 @@
 nl:
   social_share_button:
-    share_to: "Deel via %{name}"
+    share_to: "Share to %{name}"
     weibo: "Sina Weibo"
     twitter: "Twitter"
     facebook: "Facebook"
