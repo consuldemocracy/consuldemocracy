@@ -81,6 +81,8 @@ module CommonActions
                          proposal_path(commentable)
                        elsif commentable.is_a?(Debate)
                          debate_path(commentable)
+                       elsif commentable.is_a?(Topic)
+                         community_topic_path(commentable, community_id: commentable.community_id)
                        else
                          budget_investment_path(commentable, budget_id: commentable.budget_id)
                        end

@@ -115,6 +115,41 @@ feature 'Emails' do
     end
   end
 
+  context 'Topic comments' do
+    before(:each) do
+      @proposal = create(:proposal)
+    end
+
+    scenario 'Send email on topic comment', :js do
+      user = create(:user, email_on_comment: true)
+      topic = create(:topic, author: user, community: @proposal.community)
+      comment_on(topic)
+
+      email = open_last_email
+      expect(email).to have_subject('Someone has commented on your topic')
+      expect(email).to deliver_to(topic.author)
+      expect(email).to have_body_text(community_topic_path(topic, community_id: topic.community_id))
+      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text(account_path)
+    end
+
+    scenario 'Do not send email about own topic comments', :js do
+      user = create(:user, email_on_comment: true)
+      topic = create(:topic, author: user, community: @proposal.community)
+      comment_on(topic, user)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+
+    scenario 'Do not send email about topic comment unless set in preferences', :js do
+      user = create(:user, email_on_comment: false)
+      topic = create(:topic, author: user, community: @proposal.community)
+      comment_on(topic)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+  end
+
   context 'Comment replies' do
     scenario "Send email on comment reply", :js do
       user = create(:user, email_on_comment_reply: true)
