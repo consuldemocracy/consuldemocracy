@@ -2,32 +2,41 @@ fr:
   activerecord:
     models:
       activity:
-        one: "activité"
-        other: "activités"
+        one: "activity"
+        other: "activities"
       budget:
-        one: "Budget participatif"
-        other: "Budgets participatifs"
+        one: "Participatory budget"
+        other: "Participatory budgets"
       budget/investment:
-        one: "Projet d'investissement"
-        other: "Projets d'investissement"
+        one: "Investment"
+        other: "Investments"
+      budget/investment/milestone:
+        one: "milestone"
+        other: "milestones"
       comment:
-        one: "Commentaire"
-        other: "Commentaires"
+        one: "Comment"
+        other: "Comments"
       debate:
-        one: "Débat"
-        other: "Débats"
+        one: "Debate"
+        other: "Debates"
       tag:
-        one: "Étiquette"
-        other: "Étiquettes"
+        one: "Tag"
+        other: "Tags"
       user:
-        one: "Utilisateur"
-        other: "Utilisateurs"
+        one: "User"
+        other: "Users"
       moderator:
-        one: "Modérateur"
-        other: "Modérateurs"
+        one: "Moderator"
+        other: "Moderators"
       administrator:
-        one: "Administrateur"
-        other: "Administrateurs"
+        one: "Administrator"
+        other: "Administrators"
+      valuator:
+        one: "Evaluador"
+        other: "Evaluadores"
+      manager:
+        one: "Manager"
+        other: "Managers"
       vote:
         one: "Vote"
         other: "Votes"
@@ -35,166 +44,236 @@ fr:
         one: "Organisation"
         other: "Organisations"
       poll/booth:
-        one: "bureau de vote"
-        other: "bureaux de vote"
+        one: "booth"
+        other: "booths"
       poll/officer:
-        one: "président"
-        other: "présidents"
+        one: "officer"
+        other: "officers"
       proposal:
-        one: "Proposition citoyenne"
-        other: "Propositions citoyennes"
+        one: "Citizen proposal"
+        other: "Citizen proposals"
       spending_proposal:
-        one: "Proposition d'investissement"
-        other: "Propositions d'investissement"
+        one: "Spending proposal"
+        other: "Spending proposals"
       site_customization/page:
-        one: Page personnalisée
-        other: Pages personnalisées
+        one: Custom page
+        other: Custom pages
       site_customization/image:
-        one: Image personnalisée
-        other: Images personnalisées
+        one: Custom image
+        other: Custom images
       site_customization/content_block:
-        one: Bloc de contenu personnalisé
-        other: Blocs de contenu personnalisés
+        one: Custom content block
+        other: Custom content blocks
+      legislation/process:
+        one: "Process"
+        other: "Processes"
+      legislation/draft_versions:
+        one: "Draft version"
+        other: "Draft versions"
+      legislation/draft_texts:
+        one: "Draft"
+        other: "Drafts"
+      legislation/questions:
+        one: "Question"
+        other: "Questions"
+      legislation/question_options:
+        one: "Question option"
+        other: "Question options"
+      legislation/answers:
+        one: "Answer"
+        other: "Answers"
+      documents:
+        one: "Document"
+        other: "Documents"
+      images:
+        one: "Image"
+        other: "Images"
     attributes:
       budget:
-        name: "Nom"
-        description_accepting: "Description durant la phase d'acceptation"
-        description_reviewing: "Description durant la phase de revue"
-        description_selecting: "Description durant la phase de sélection"
-        description_valuating: "Description durant la phase d'évaluation"
-        description_balloting: "Description durant la phase de vote"
-        description_reviewing_ballots: "Description durant la phase de revue des votes"
-        description_finished: "Description quand le budget est finalisé"
+        name: "Name"
+        description_accepting: "Description during Accepting phase"
+        description_reviewing: "Description during Reviewing phase"
+        description_selecting: "Description during Selecting phase"
+        description_valuating: "Description during Valuating phase"
+        description_balloting: "Description during Balloting phase"
+        description_reviewing_ballots: "Description during Reviewing Ballots phase"
+        description_finished: "Description when the budget is finished"
         phase: "Phase"
-        currency_symbol: "Devise"
+        currency_symbol: "Currency"
       budget/investment:
-        heading_id: "Rubrique du budget"
-        title: "Titre"
+        heading_id: "Heading"
+        title: "Title"
         description: "Description"
-        external_url: "Lien externe"
-        location: "Lieu"
-        administrator_id: "Administrateur"
+        external_url: "Link to additional documentation"
+        location: "Location"
+        administrator_id: "Administrator"
+        organization_name: "If you are proposing in the name of a collective/organization, write its name"
+        image: "Proposal descriptive image"
+        image_title: "Image title"
+      budget/investment/milestone:
+        title: "Title"
         description: "Description"
-        external_url: "Lien vers la documentation complémentaire"
-        heading_id: "Rubrique du budget"
-        title: "Titre"
-        location: "Lieu"
-        organization_name: "Si votre proposition concerne un collectif ou une organisation, renseignez leur nom"
       comment:
-        body: "Commentaire"
-        user: "Utilisateur"
+        body: "Comment"
+        user: "User"
       debate:
-        author: "Auteur"
+        author: "Author"
         description: "Opinion"
-        terms_of_service: "Conditions d'utilisation"
-        title: "Titre"
+        terms_of_service: "Terms of service"
+        title: "Title"
       proposal:
-        author: "Auteur"
-        title: "Titre"
+        author: "Author"
+        title: "Title"
         question: "Question"
         description: "Description"
-        terms_of_service: "Conditions d'utilisation"
+        terms_of_service: "Terms of service"
       user:
-        email: "Courriel"
-        username: "Nom d'utilisateur"
-        password_confirmation: "Confirmation du mot de passe"
-        password: "Mot de passe"
-        current_password: "Mot de passe actuel"
-        phone_number: "Téléphone"
-        official_position: "Position officielle"
-        official_level: "Niveau officiel"
-        redeemable_code: "Vérification du code reçu par courriel"
+        login: "Email or username"
+        email: "Email"
+        username: "Username"
+        password_confirmation: "Password confirmation"
+        password: "Password"
+        current_password: "Current password"
+        phone_number: "Phone number"
+        official_position: "Official position"
+        official_level: "Official level"
+        redeemable_code: "Verification code received via email"
       organization:
-        name: "Nom de l'organisation"
-        responsible_name: "Personne responsable pour le groupe"
+        name: "Name of organisation"
+        responsible_name: "Person responsible for the group"
       spending_proposal:
-        administrator_id: "Administrateur"
-        association_name: "Nom de l'association"
+        administrator_id: "Administrador"
+        association_name: "Association name"
         description: "Description"
-        external_url: "Lien vers la documentation complémentaire"
-        geozone_id: "Périmètre de l'opération"
-        title: "Titre"
+        external_url: "Link to additional documentation"
+        geozone_id: "Scope of operation"
+        title: "Title"
       poll:
-        name: "Nom"
-        starts_at: "Date de début"
-        ends_at: "Date de fin"
-        geozone_restricted: "Restreint selon la zone géographique"
+        name: "Name"
+        starts_at: "Start Date"
+        ends_at: "Closing Date"
+        geozone_restricted: "Restricted by geozone"
+        summary: "Summary"
+        description: "Description"
       poll/question:
         title: "Question"
-        valid_answers: "Réponses possibles"
-        summary: "Résumé"
+        summary: "Summary"
         description: "Description"
-        external_url: "Lien vers la documentation complémentaire"
+        external_url: "Link to additional documentation"
       signature_sheet:
-        signable_type: "Type de signature"
-        signable_id: "Identifiant de la signature"
-        document_numbers: "Nombre de documents"
+        signable_type: "Signable type"
+        signable_id: "Signable ID"
+        document_numbers: "Documents numbers"
       site_customization/page:
-        content: Contenu
-        created_at: Créé le
-        subtitle: Sous-titres
+        content: Content
+        created_at: Created at
+        subtitle: Subtitle
         slug: Slug
-        status: Statut
-        title: Titre
-        updated_at: Mis-à-jour le
-        more_info_flag: Montrer dans la page Plus d'informations
-        print_content_flag: Bouton impression du contenu
-        locale: Langue
+        status: Status
+        title: Title
+        updated_at: Updated at
+        more_info_flag: Show in more information page
+        print_content_flag: Print content button
+        locale: Language
       site_customization/image:
-        name: Nom
+        name: Name
         image: Image
       site_customization/content_block:
-        name: Nom
-        locale: Langue
-        body: Contenu
+        name: Name
+        locale: locale
+        body: Body
+      legislation/process:
+        title: Process Title
+        description: Description
+        additional_info: Additional info
+        start_date: Start date
+        end_date: End date
+        debate_start_date: Debate start date
+        debate_end_date: Debate end date
+        draft_publication_date: Draft publication date
+        allegations_start_date: Allegations start date
+        allegations_end_date: Allegations end date
+        result_publication_date: Final result publication date
+      legislation/draft_version:
+        title: Version title
+        body: Text
+        changelog: Changes
+        status: Status
+        final_version: Final version
+      legislation/question:
+        title: Title
+        question_options: Options
+      legislation/question_option:
+        value: Value
+      legislation/annotation:
+        text: Comment
+      document:
+        title: Title
+        attachment: Attachment
+      image:
+        title: Title
+        attachment: Attachment
       poll/question/answer:
-        title: Réponse
+        title: Answer
         description: Description
       poll/question/answer/video:
-        title: Titre
-        url: Vidéo externe
+        title: Title
+        url: External video
     errors:
       models:
         user:
           attributes:
             email:
-              password_already_set: "Cet utilisateur a déjà un mot de passe"
+              password_already_set: "This user already has a password"
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "Le nombre d'étiquettes doit être inférieur ou égal à %{count}"
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
         direct_message:
           attributes:
             max_per_day:
-              invalid: "Vous avez atteint le nombre maximum de message privés par jour"
+              invalid: "You have reached the maximum number of private messages per day"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Image Width must be at least %{required_min_width}px"
+              min_image_height: "Image Height must be at least %{required_min_height}px"
         poll/voter:
           attributes:
             document_number:
-              not_in_census: "Ce document n'est pas dans le recensement"
-              has_voted: "L'utilisateur a déjà voté"
+              not_in_census: "Document not in census"
+              has_voted: "User has already voted"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: must be on or after the start date
+            debate_end_date:
+              invalid_date_range: must be on or after the debate start date
+            allegations_end_date:
+              invalid_date_range: must be on or after the allegations start date
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "Le nombre d'étiquettes doit être inférieur ou égal à %{count}"
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "Le nombre d'étiquettes doit être inférieur ou égal à %{count}"
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "Vous devez attendre un minimum de %{interval} jours entre les avis de proposition"
+              invalid: "You have to wait a minium of %{interval} days between notifications"
         signature:
           attributes:
             document_number:
-              not_in_census: 'Non vérifié par recensement'
-              already_voted: 'Cette proposition a déjà été votée'
+              not_in_census: 'Not verified by Census'
+              already_voted: 'Already voted this proposal'
         site_customization/page:
           attributes:
             slug:
-              slug_format: "doit être des lettres, des nombres, _ et -"
+              slug_format: "must be letters, numbers, _ and -"
         site_customization/image:
           attributes:
             image:
-              image_width: "La largeur doit être de %{required_width}px"
-              image_height: "La hauteur doit être de %{required_height}px"
+              image_width: "Width must be %{required_width}px"
+              image_height: "Height must be %{required_height}px"
