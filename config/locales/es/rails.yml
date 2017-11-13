@@ -48,7 +48,7 @@ es:
       12: diciembre
     order:
       - :day
-      - :mes
+      - :month
       - :year
   datetime:
     distance_in_words:
@@ -195,4 +195,5 @@ es:
       default: "%A, %d de %B de %Y %H:%M:%S %z"
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
+      api: "%d/%m/%Y %H"
     pm: pm
