@@ -88,6 +88,9 @@ es:
       images:
         one: "Imagen"
         other: "Imágenes"
+      topic:
+        one: "Tema"
+        other: "Temas"
     attributes:
       budget:
         name: "Nombre"
