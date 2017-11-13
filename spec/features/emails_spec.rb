@@ -150,6 +150,37 @@ feature 'Emails' do
     end
   end
 
+  context 'Poll comments' do
+    scenario 'Send email on poll comment', :js do
+      user = create(:user, email_on_comment: true)
+      poll = create(:poll, author: user)
+      comment_on(poll)
+
+      email = open_last_email
+      expect(email).to have_subject('Someone has commented on your poll')
+      expect(email).to deliver_to(poll.author)
+      expect(email).to have_body_text(poll_path(poll))
+      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text(account_path)
+    end
+
+    scenario 'Do not send email about own poll comments', :js do
+      user = create(:user, email_on_comment: true)
+      poll = create(:poll, author: user)
+      comment_on(poll, user)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+
+    scenario 'Do not send email about poll question comment unless set in preferences', :js do
+      user = create(:user, email_on_comment: false)
+      poll = create(:poll, author: user)
+      comment_on(poll)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+  end
+
   context 'Comment replies' do
     scenario "Send email on comment reply", :js do
       user = create(:user, email_on_comment_reply: true)
@@ -439,40 +470,25 @@ feature 'Emails' do
 
   context "Polls" do
 
-    scenario "Do not send email on poll comment", :js do
-      user1 = create(:user, email_on_comment: true)
-      user2 = create(:user)
-
-      poll = create(:poll, author: user1)
-      reset_mailer
-
-      login_as(user2)
-      visit poll_path(poll)
-
-      fill_in "comment-body-poll_#{poll.id}", with: 'Have you thought about...?'
-      click_button 'Publish comment'
-
-      expect(page).to have_content 'Have you thought about...?'
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
-    end
-
     scenario "Send email on poll comment reply", :js do
       user1 = create(:user, email_on_comment_reply: true)
       user2 = create(:user)
-
-      poll = create(:poll)
+      poll = create(:poll, author: create(:user))
       comment = create(:comment, commentable: poll, author: user1)
 
       login_as(user2)
       visit poll_path(poll)
 
       click_link "Reply"
+
       within "#js-comment-form-comment_#{comment.id}" do
         fill_in "comment-body-comment_#{comment.id}", with: 'It will be done next week.'
         click_button 'Publish reply'
       end
-      expect(page).to have_content 'It will be done next week.'
+
+      within "#comment_#{comment.id}" do
+        expect(page).to have_content 'It will be done next week.'
+      end
 
       email = open_last_email
       expect(email).to have_subject('Someone has responded to your comment')

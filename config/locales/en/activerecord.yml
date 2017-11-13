@@ -91,6 +91,9 @@ en:
       topic:
         one: "Topic"
         other: "Topics"
+      poll:
+        one: "Poll"
+        other: "Polls"
     attributes:
       budget:
         name: "Name"
