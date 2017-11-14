@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.9'
+gem 'rails', '4.2.10'
 
 gem 'acts-as-taggable-on', '~> 4.0.0'
 gem 'acts_as_votable', '~> 0.10.0'
@@ -37,7 +37,6 @@ gem 'paperclip', '~> 5.1.0'
 gem 'paranoia', '~> 2.3.1'
 gem 'pg', '~> 0.21.0'
 gem 'pg_search', '~> 2.0.1'
-gem 'rails-assets-markdown-it', '~> 8.2.1', source: 'https://rails-assets.org'
 gem 'redcarpet', '~> 3.4.0'
 gem 'responders', '~> 2.4.0'
 gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
@@ -53,15 +52,17 @@ gem 'turnout', '~> 2.4.0'
 gem 'uglifier', '~> 3.2.0'
 gem 'unicorn', '~> 5.3.0'
 gem 'whenever', '~> 0.9.7', require: false
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-leaflet'
+  gem 'rails-assets-markdown-it', '~> 8.2.1'
 end
 
 group :development, :test do
-  gem "bullet", '~> 5.5.1'
+  gem 'bullet', '~> 5.5.1'
   gem 'byebug', '~> 9.1.0'
   gem 'factory_girl_rails', '~> 4.8.0'
-  gem "faker", '~> 1.7.3'
+  gem 'faker', '~> 1.7.3'
   gem 'i18n-tasks', '~> 0.9.15'
   gem 'knapsack', '~> 1.13.3'
   gem 'launchy', '~> 2.4.3'
@@ -83,7 +84,7 @@ end
 group :development do
   gem 'capistrano', '~> 3.8.1', require: false
   gem 'capistrano-bundler', '~> 1.2', require: false
-  gem "capistrano-rails", '~> 1.2.3', require: false
+  gem 'capistrano-rails', '~> 1.2.3', require: false
   gem 'capistrano3-delayed-job', '~> 1.7.3'
   gem 'mdl', '~> 0.4.0', require: false
   gem 'rubocop', '~> 0.49.1', require: false
