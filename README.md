@@ -85,6 +85,12 @@ Prerequisites
 
 You should have installed Docker and Docker Compose in your machine.
 
+Also if you are going to work with docker first replace the database.yml with the preconfigured file made it to work it 
+
+
+    cp config/database-docker.yml.example config/database.yml
+
+
 The First step is to build the container
 
     sudo docker build -t consul .
