@@ -1,4 +1,6 @@
 <% provide :title do %><%= t("devise_views.users.registrations.new.title") %><% end %>
+<% provide :tracking_page_number, "24" %>
+
 <h2><%= t("devise_views.users.registrations.new.title") %></h2>
 
 <%= render 'devise/omniauth_form' %>

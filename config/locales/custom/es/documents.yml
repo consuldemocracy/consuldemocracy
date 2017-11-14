@@ -1,0 +1,3 @@
+es:
+  documents:
+    max_documents_allowed_reached_html: ¡Has alcanzado el número máximo de documentos permitidos! <strong>Tienes que eliminar uno antes de poder subir otro.</strong>

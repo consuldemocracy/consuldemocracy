@@ -1,8 +1,15 @@
 es:
   pages:
-    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
+    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado en Madrid aportando los datos indicados anteriormente, los cuales serán contrastados por la Dirección General de Participación Ciudadana con los ficheros 'Padrón Municipal de Habitantes' cuyo responsable es la Dirección General de Economía y Sector Público y 'Servicios Atención al Ciudadano' cuyo responsable es la Dirección General de Transparencia y Atención a la Ciudadanía. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados por la Dirección General de Participación Ciudadana en el fichero 'Gestión de Procesos Participativos' indicado anteriormente en las condiciones de uso del portal.
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
+    help_translate:
+      title: ¡Ayúdanos a traducir!
+      text: |-
+        Si hablas otros idiomas por favor ayúdanos a que esta web y el software que utiliza esté disponible en otros idiomas.
+
+        Escríbenos a ag.gobiernoabierto@madrid.es para que te demos acceso al sistema de traducción colaborativo.
+        Todos juntos conseguiremos que cualquier país pueda disfrutar de esta herramienta. ¡Un millón de gracias!
     more_info:
       title: "Descubre %{org_name}"
       subtitle: "Aprende todo lo que puedes hacer en esta web."
@@ -11,6 +18,7 @@ es:
         debates: "Debates"
         proposals: "Propuestas"
         budgets: "Presupuestos participativos"
+        polls: "Votaciones"
         other: "Otra información de interés"
       debates:
         title: "Debates"
@@ -22,6 +30,7 @@ es:
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
       proposals:
         title: "Propuestas"
+        detail: "Información detallada de propuestas"
         description: "Propón lo que quieres que el Ayuntamiento lleve a cabo y apoya propuestas de otras personas."
         feature_1: "Para crear una propuesta tienes que %{link}, además para apoyarlas debes verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
@@ -31,6 +40,7 @@ es:
         figcaption_html: 'Botón para "Apoyar" una propuesta.<br>Cuando alcance el número de apoyos pasará a votación.'
       budgets:
         title: "Presupuestos participativos"
+        detail: "Información detallada de presupuestos"
         description: "Los primeros seis meses de cada año puedes decidir cómo gastar parte del presupuesto."
         feature_1: "Para crear un proyecto de gasto tienes que %{link} y verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
@@ -41,11 +51,14 @@ es:
         figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
       polls:
         title: "Votaciones"
+        detail: "Información detallada de Votaciones"
         description: "Las propuestas ciudadanas que alcancen el 1% de apoyos pasarán a votación."
         feature_1: "Para participar en la próxima votación tienes que %{link} y verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
         feature_2: "Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años."
         feature_3: "Los resultados de todas las votaciones serán vinculantes para el gobierno."
+        image_alt: "Primera votación ciudadana"
+        figcaption: "Imagen de campaña de la Primera Votación Ciudadana en febrero de 2017."
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."
@@ -58,12 +71,15 @@ es:
       other:
         title: "Otra información de interés"
         how_to_use: "Utiliza %{org_name} en tu municipio"
+        world: "Participación ciudadana directa en el mundo"
+        facts: "Hechos sobre participación ciudadana y democracia directa"
+        forums: "Foros Locales"
       how_to_use:
         text: |-
           Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
-          
+
           Este Portal de Gobierno Abierto usa la [aplicación CONSUL](https://github.com/consul/consul 'github consul') que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), esto significa en palabras sencillas, que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con las modificaciones que quiera (manteniendo el que otros puedan a su vez hacer lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
-          
+
           Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación CONSUL](https://github.com/consul/consul 'github consul').
       titles:
         how_to_use: Utilízalo en tu municipio
@@ -73,6 +89,7 @@ es:
       conditions: Condiciones de uso
       more_info: "Más información sobre %{org_name}"
       privacy: Política de Privacidad
+      kit_decide: "Kit Decide: para hacer tus campañas de comunicación después de crear una propuesta"
     verify:
       code: Código que has recibido en tu carta
       email: Email

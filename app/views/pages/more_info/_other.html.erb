@@ -1,6 +1,13 @@
 <h3 id="other" data-magellan-target="other"><%= t("pages.more_info.other.title") %></h3>
 
 <ul class="features">
+  <li><%= link_to t("pages.titles.kit_decide"), kit_decide_path %></li>
+  <li><%= link_to "Hojas de firmas para recoger apoyos", more_info_proposals_path(anchor: "iii") %></li>
+  <li><%= link_to " Participación Ciudadana, Transparencia y Gobierno Abierto", participation_open_government_path %></li>
+  <li><%= link_to "¿Qué significa trabajar con enfoque de derechos humanos? ", more_info_human_rights_path %></li>
+  <li><%= link_to t("pages.more_info.other.facts"), participation_facts_path %></li>
+  <li><%= link_to t("pages.more_info.other.world"), participation_world_path %></li>
+  <li><%= link_to t("pages.more_info.other.forums"), participation_forums_path %></li>
   <li><%= link_to t("pages.more_info.other.how_to_use", org_name: setting['org_name']), how_to_use_path %></li>
 
   <% SiteCustomization::Page.with_more_info_flag.with_same_locale.each do |custom_page| %>

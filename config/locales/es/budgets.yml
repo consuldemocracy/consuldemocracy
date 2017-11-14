@@ -8,18 +8,18 @@ es:
         no_balloted_group_yet: "Todavía no has votado proyectos de este grupo, ¡vota!"
         remove: Quitar voto
         voted_html:
-          one: "Has votado <span>una</span> propuesta."
-          other: "Has votado <span>%{count}</span> propuestas."
+          one: "Has votado <span>un</span> proyecto."
+          other: "Has votado <span>%{count}</span> proyectos."
         voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
         zero: Todavía no has votado ninguna propuesta de inversión.
       reasons_for_not_balloting:
         not_logged_in: Necesitas %{signin} o %{signup} para continuar.
-        not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+        not_verified: Los proyectos de gasto sólo pueden ser apoyados por usuarios verificados, %{verify_account}.
         organization: Las organizaciones no pueden votar.
-        not_selected: No se pueden votar propuestas inviables.
+        not_selected: No se pueden votar proyectos inviables.
         not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
-        different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+        different_heading_assigned: Ya has votado proyectos de otro distrito.
         change_ballot: cambiar tus votos
     groups:
       show:
@@ -55,6 +55,8 @@ es:
         tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+        faq: "¿Qué puedes proponer?"
+        faq_link: "Mira toda la información sobre los presupuestos participativos"
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
@@ -63,10 +65,9 @@ es:
         unfeasible: Propuestas de inversión no viables
         unfeasible_text: "Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad."
         unfeasible_text_definitions: ver definiciones aquí
-        by_heading: 'Propuestas de inversión con ámbito: %{heading}'
         search_form:
           button: Buscar
-          placeholder: Buscar propuestas de inversión...
+          placeholder: Buscar proyectos de gasto...
           title: Buscar
         search_results_html:
           one: " que contiene <strong>'%{search_term}'</strong>"
@@ -74,8 +75,8 @@ es:
         sidebar:
           my_ballot: Mis votos
           voted_html:
-            one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
-            other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+            one: "<strong>Has votado una proyecto por un valor de %{amount_spent}</strong>"
+            other: "<strong>Has votado %{count} proyectos por un valor de %{amount_spent}</strong>"
           voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
           voted_info_link: cambiar tus votos
           different_heading_assigned_html: 'Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}'
@@ -84,8 +85,8 @@ es:
           zero: Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto.
           verified_only: "Para crear una nueva propuesta de inversión %{verify}."
           verify_account: "verifica tu cuenta"
-          create: "Crear propuesta de inversión"
-          not_logged_in: "Para crear una nueva propuesta de inversión debes %{sign_in} o %{sign_up}."
+          create: "Crear proyecto de gasto"
+          not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
           sign_in: "iniciar sesión"
           sign_up: "registrarte"
           by_feasibility: Por viabilidad
@@ -99,11 +100,11 @@ es:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
         unfeasibility_explanation: Informe de inviabilidad
-        code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
+        code_html: 'Código proyecto de gasto: <strong>%{code}</strong>'
         location_html: 'Ubicación: <strong>%{location}</strong>'
         organization_name_html: 'Organización: <strong>%{name}</strong>'
         share: Compartir
-        title: Propuesta de inversión
+        title: Proyecto de gasto
         supports: Apoyos
         votes: Votos
         price: Coste
@@ -152,3 +153,35 @@ es:
       accepted: 'Propuesta de inversión aceptada: '
       discarded: 'Propuesta de inversión descartada: '
       incompatibles: Incompatibles
+    stats:
+      title: Estadísticas de participación
+      link: Estadísticas
+      page_title: "%{budget} - Estadísticas de participación"
+      total_participants: Total participantes
+      total_budget_investments: Total propuestas enviadas
+      total_selected_investments: Propuestas en la fase final
+      total_unfeasible_investments: Propuestas inviables
+      total_participants_support_phase: Fase de apoyos
+      participants: Participantes
+      supports: Apoyos
+      votes: Votos
+      total_participants_vote_phase: Fase de votación
+      total: Total
+      by_gender: "Participación por género"
+      total_male_participants: Hombres
+      total_female_participants: Mujeres
+      by_age: "Participación por grupos de edad"
+      age: Edad
+      more_than: Más de
+      years: años
+      by_heading: "Participación por distritos"
+      heading: Distrito
+      investments_sent_html: "Propuestas<br>enviadas"
+      participants_support_phase: Participación fase apoyos
+      participants_voting_phase: Participación fase votación
+      participants_total: Participación total
+      percent_total_participants_html: "% <br>Total<br>Participantes"
+      percent_heading_census_html: "% <br>Censo<br>Distrito"
+      no_demographic_data: "* No se dispone de los datos demográficos de %{total} participantes."
+      participatory_disclaimer: "** Las cifras de participación total se refieren a personas que han creado, apoyado o votado propuestas."
+      heading_disclaimer: "*** Los datos de distrito se refieren al distrito en el que el usuario ha votado, no necesariamente en el que está empadronado."

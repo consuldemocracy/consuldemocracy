@@ -1,0 +1,28 @@
+<%= back_link_to %>
+
+<h2><%= t("admin.stats.user_invites.title")%></h2>
+
+<div class="stats">
+  <div class="row stats-numbers">
+    <div class="small-12 medium-3 column">
+      <p class="featured">
+        <%= t("admin.stats.user_invites.total") %><br>
+        <span id="total" class="number"><%= @user_invites %></span>
+      </p>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <p class="featured">
+        <%= t("admin.stats.user_invites.clicked_email_link") %><br>
+        <span id="clicked_email_link" class="number"><%= @clicked_email_link %></span>
+      </p>
+    </div>
+
+    <div class="small-12 medium-6 column end">
+      <p>
+        <%= t("admin.stats.user_invites.clicked_signup_button") %><br>
+        <span id="clicked_signup_button" class="number"><%= @clicked_signup_button %></span>
+      </p>
+    </div>
+  </div>
+</div>

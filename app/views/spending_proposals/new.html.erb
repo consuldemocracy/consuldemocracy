@@ -4,11 +4,23 @@
     <%= back_link_to %>
 
     <h1><%= t("spending_proposals.new.start_new") %></h1>
-    <div data-alert class="callout primary">
-      <%= link_to "/spending_proposals_info", title: t('shared.target_blank_html'), target: "_blank" do %>
-        <%= t("spending_proposals.new.more_info")%>
+    <div class="callout primary">
+      <%= link_to more_info_budgets_2016_path(anchor: "21"), title: t('shared.target_blank_html'), target: "_blank" do %>
+        <h3><%= t("spending_proposals.new.more_info")%></h3>
+
+        <p class="small"><i class="icon-check"></i>&nbsp;<strong>1. Es una inversión:</strong></p>
+        <p class="small">Algunos ejemplos de inversiones son: mobiliario urbano, alumbrado, parques, fuentes y estanques, centros de día, de mayores, centros de atención personas sin hogar, centros de servicios sociales, bibliotecas, centros culturales, instalaciones deportivas, centros de enseñanza, escuelas de música, vivienda de protección pública, compra de autobuses, vehículos para bomberos o policía, aplicaciones informáticas, propiedad intelectual, portales web, etc.</p>
+
+        <p class="small"><i class="icon-x"></i>&nbsp;<strong>NO es inversión</strong>: Construcción de institutos, colegios públicos, centros de salud (sólo es posible en el caso de centros de salud municipales) o infraestructuras de carreteras de acceso a Madrid y de ferrocarril, propuestas de inversión sobre terrenos o solares no municipales, ampliación del servicio de bicis a barrios periféricos, gastos de contratación de personal, mantenimiento y conservación de edificios, vehículos y mobiliario, contratación de empresas o autónomos para la realización de trabajos y servicios, alquileres, suministros, alimentos, subvenciones, ayudas, becas, premios, asistencia benéfica o asistencial.</p>
       <% end %>
     </div>
+
+    <p class="small"><i class="icon-check"></i>&nbsp;<strong>2. Es competencia municipal:</strong> Por ejemplo no es competencia del Ayuntamiento la construcción de un instituto, de un centro de salud (exceptuando los municipales), o el uso de solares que no son propiedad municipal. Por supuesto no hace falta que conozcas todas las competencias municipales, en caso de que no lo sea se te informará desde el Ayuntamiento.</p>
+
+    <p class="small"><i class="icon-check"></i>&nbsp;<strong>3. Individual:</strong> Intenta no mezclar diferentes proyectos en una misma propuesta. De esta forma la gente podrá decidir más claramente qué apoya, y no será rechazada en caso de que parte sea inviable. Puedes enviar cuantas propuestas quieras.</p>
+
+    <p class="small"><i class="icon-check"></i>&nbsp;<strong>4. Detallada:</strong> La propuesta debe estar bien explicada de modo que todos entendamos bien lo que solicitas. Si resulta imposible evaluarla por falta de concreción será descartada. <%= link_to "Incluso tienes la posibilidad de hacer una estimación de su coste si lo consideras oportuno", more_info_budgets_2016_path(anchor: "23b") %></p>
+
     <%= render "spending_proposals/form", form_url: spending_proposals_url %>
   </div>
 
@@ -16,7 +28,10 @@
     <span class="icon-budget float-right"></span>
     <h2><%= t("spending_proposals.new.recommendations_title") %></h2>
     <ul class="recommendations">
-      <li><%= t("spending_proposals.new.recommendation_one") %></li>
+      <li>
+        <%= t("spending_proposals.new.recommendation_one",
+        requirements: link_to(t("spending_proposals.new.recommendation_one_link"), more_info_budgets_2016_path(anchor: "20"))).html_safe %>
+      </li>
       <li><%= t("spending_proposals.new.recommendation_two") %></li>
       <li><%= t("spending_proposals.new.recommendation_three") %></li>
     </ul>

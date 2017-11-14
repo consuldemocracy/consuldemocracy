@@ -1,0 +1,449 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: service_letters_2_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <%= back_link_to %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 small-centered column">
+    <div class="float-left download">
+      <p><strong>DESCARGA ESTE DOCUMENTO</strong><br>
+        <%= link_to "Carta de Servicios: Ayuda a Domicilio <small>(DOC | 241Kb)</small>".html_safe,
+                    "/docs/carta_servicios_ayuda_a_domicilio.doc",
+                    title: "Carta de Servicios: Ayuda a Domicilio (DOC | 241Kb)" %><br>
+        <%= link_to "Carta de Servicios: Ayuda a Domicilio <small>(PPT | 5Mb)</small>".html_safe,
+                    "/docs/carta_servicios_ayuda_a_domicilio.ppt",
+                    title: "Carta de Servicios: Ayuda a Domicilio (PPT | 5Mb)" %>
+      </p>
+    </div>
+
+    <div class="float-right">
+      <p><strong>Fecha de aprobación: 28 de abril de 2011</strong><br>
+      <strong>Fecha de la última evaluación: 3 de marzo de 2016</strong></p>
+      <a class="button warning" type="button" data-toggle="annotator-help">
+        <sub><span class="icon-edit"></span></sub>&nbsp;
+        <%= t("annotator.help.title") %>
+      </a>
+
+      <div class="dropdown-pane" id="annotator-help" data-dropdown data-auto-focus="true">
+        <% if user_signed_in? %>
+          <%= t("annotator.help.alt") %>
+        <% else %>
+          <p>
+            <%= t("annotator.help.text",
+                sign_in: link_to(t("annotator.help.text_sign_in"), new_user_session_path),
+                sign_up: link_to(t("annotator.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          </p>
+        <% end %>
+
+        <%= image_tag ("annotator_help.gif"), alt: t("annotator.help.alt") %>
+      </div>
+    </div>
+
+    <section data-annotatable-type="legislation"
+             data-annotatable-id="2"
+             data-annotatable-readonly="true"
+             id="carta_servicios_body">
+
+      <h1 class="text-center">Carta de Servicios del Servicio de Ayuda a Domicilio</h1>
+
+      <h2>1. Introducción</h2>
+      <p>El Ayuntamiento de Madrid, en el marco de sus políticas de bienestar y de atención social a las personas mayores dirige, gestiona y evalúa los servicios de atención a mayores y a personas con discapacidad, entre los que se encuentran los servicios de teleasistencia domiciliaria (TAD), ayuda a domicilio, comidas a domicilio y lavandería, organiza los programas de respiro familiar y cuidar al cuidador, y pone a disposición de la ciudadanía los Centros Municipales de Mayores y los Centros de Día.</p>
+
+      <p>Esta Carta de Servicios hace referencia al servicio de Ayuda a Domicilio que tiene como objetivo proporcionar a las personas mayores y a las personas con discapacidad la posibilidad de permanecer en su medio habitual de convivencia, contribuyendo así a la mejora de su calidad de vida. Incluye una serie de atenciones o cuidados personales, domésticos, sociales y técnicos, y se presta mediante auxiliares domiciliarios de entidades colaboradoras, que acuden a los hogares de las/os usuarias/os.</p>
+
+      <p>El Ayuntamiento de Madrid se ha comprometido con la calidad en la prestación de los servicios sociales, adecuados a las diversas situaciones personales y familiares, para que se evalúen periódicamente y estén en constante mejora.</p>
+
+      <p>En estos años, además de la presente Carta, se han aprobado otras Cartas de Servicios que materializan este compromiso con la calidad: en el año 2008, la <strong>Carta de Servicios del Servicio de Teleasistencia Domiciliaria</strong>, en abril de 2010, la <strong>Carta de Servicios de Centros de Día</strong>, en julio de 2010, la <strong>Carta de Servicios de Centros de Servicios Sociales</strong>, en marzo de 2012, la <strong>Carta de Servicios de Samur Social</strong>, en marzo de 2013, la <strong>Carta de Servicios de los Centros Municipales de Mayores</strong>, en septiembre de 2013, la <strong>Carta de Servicios de los Centros de Atención a la Infancia</strong>, en enero de 2014, la <strong>Carta de Servicios de los Centros de Apoyo a las Familias</strong>, y en junio de 2014, la <strong>Carta de Servicios de Educación Social</strong>, cumpliendo los objetivos establecidos en el Plan Operativo de Gobierno.</p>
+
+      <p>Con la elaboración y la aprobación de la Carta de Servicios del Servicio de Ayuda a Domicilio, se pretende hacer aún más visible este servicio entre la ciudadanía de Madrid y las condiciones en que se presta, dar a conocer las responsabilidades y compromisos que se adquieren al prestarlo con unos determinados niveles de calidad, así como dar a conocer los derechos de la ciudadanía en relación con este servicio y las responsabilidades y obligaciones que contraen al recibirlo. El objetivo es aumentar el grado de satisfacción de la ciudadanía con este servicio y mostrar y aportar transparencia en la prestación del mismo.</p>
+
+      <p>Finalmente, se desea hacer patente el valor del trabajo de todas y cada una de las personas implicadas en la prestación del Servicio de Ayuda a Domicilio y su esfuerzo constante por mejorarlo.</p>
+
+      <p>La Carta de Servicios del Servicio de Ayuda a Domicilio se aprobó por la Junta de Gobierno de la Ciudad de Madrid en abril de 2011. Este texto corresponde a la <strong>última evaluación</strong> realizada el 3 de marzo de 2016; con ella el Ayuntamiento de Madrid manifiesta nuevamente su compromiso con la calidad y la mejora continua de sus servicios.</p>
+
+      <h2>2. Datos de carácter general</h2>
+
+      <h3>Órganos Directivos responsables</h3>
+      <p>El órgano directivo responsable del Servicio de Ayuda a Domicilio para personas mayores y personas con discapacidad es la <strong>Dirección General de Mayores, Atención Social, Inclusión Social y Atención a la Emergencia</strong> del Área de Gobierno de Equidad, Derechos Sociales y Empleo, en coordinación con los órganos responsables de los Distritos.</p>
+
+      <p>Según el Acuerdo vigente de la Junta de Gobierno de la Ciudad de Madrid, entre las competencias que corresponden a esta Dirección General están:</p>
+
+      <ul>
+
+      <li>a) Diseñar y proponer programas y servicios para las personas mayores, en especial los referidos al mantenimiento de la persona mayor en su propio hogar todo el tiempo posible y los que tienen por objeto el apoyo a las familias que cuidan a sus mayores.</li>
+
+      <li>b) Implantar y evaluar periódicamente los criterios y estándares de calidad en relación con los Programas gestionados.</li>
+
+      <li>c) Planificar, dirigir y evaluar la ayuda a domicilio dispensada a las personas mayores.</li>
+
+      <li>d) Favorecer la participación de las personas mayores en la vida social de los barrios y Distritos.</li>
+
+      <li>e) Promocionar la autonomía personal y la atención a las personas en situación de dependencia, de acuerdo con los convenios de colaboración que se suscriban con la Comunidad de Madrid.</li>
+
+      <li>f) Adoptar cuantas resoluciones resulten pertinentes en relación a los Centros de Día para Mayores, propios o concertados, Centros Residenciales y al Servicio de Ayuda a Domicilio, en las modalidades de suministro a domicilio de alimentos preparados o servicios análogos y de lavado, planchado y repaso de ropa fuera del hogar, en los términos previstos en la Ordenanza municipal por la que se regula el acceso a los servicios de Ayuda a Domicilio para mayores y/o personas con discapacidad en la modalidad de atención personal y atención doméstica, de Centros de Día, propios o concertados y Centros Residenciales, para mayores, del Ayuntamiento de Madrid.</li>
+
+      <h3>Unidad prestadora</h3>
+      <p>Las unidades gestoras del Servicio de Ayuda a Domicilio son cada uno de los Centros de Servicios Sociales distribuidos entre los 21 Distritos de la Ciudad de Madrid, y se presta mediante auxiliares domiciliarios de entidades colaboradoras, que acuden a los hogares de las/os usuarias/os.</p>
+
+      <h2>2. Normativa</h2>
+
+      <p>A continuación se relaciona la normativa, tanto general como específica, que regula el Servicio de Ayuda a Domicilio.</p>
+
+      <h3>Normativa general</h3>
+      <ul>
+        <li>Artículo 51 de la Constitución Española de 1978.</li>
+      </ul>
+
+      <h3>Leyes Orgánicas</h3>
+      <ul>
+        <li>Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.</li>
+      </ul>
+
+      <h3>Leyes y Reales Decretos</h3>
+      <ul>
+        <li>Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público que entra en vigor el 3 de octubre de 2016 (salvo alguna excepción).</li>
+        <li>Ley 39/2015, de 1 de octubre, de Procedimiento Administrativo Común de las Administraciones Públicas que entra en vigor el 3 de octubre de 2016 y expresamente deroga la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común y la Ley 11/2007, de 22 de junio, de acceso electrónico de los ciudadanos a los Servicios Públicos.</li>
+        <li>Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.</li>
+        <li>Ley 27/2013, de 27 de diciembre, de racionalización y sostenibilidad de la Administración Local.</li>
+        <li>Ley 17/2009, de 23 de noviembre, sobre el libre acceso a las actividades de servicios y su ejercicio y Ley 25/2009, de 22 de diciembre, de modificación de diversas leyes para su adaptación a la Ley sobre el libre acceso a las actividades de servicios y su ejercicio.</li>
+        <li>Ley 22/2006, de 4 de julio, de Capitalidad y de Régimen Especial de Madrid.</li>
+        <li>Real Decreto Legislativo 2/2004, de 5 de marzo, por el que se aprueba el Texto Refundido de la Ley Reguladora de las Haciendas Locales.</li>
+        <li>Ley 57/2003, de 16 de diciembre, de Medidas para la Modernización del Gobierno Local.</li>
+        <li>Ley 51/2003, de 2 de diciembre, de igualdad de oportunidades, no discriminación y accesibilidad universal de las personas con discapacidad.</li>
+        <li>Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de carácter personal y RD 1720/2007, de 21 de diciembre, por el que se aprueba el Reglamento de desarrollo de dicha ley.</li>
+        <li>Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común.</li>
+        <li>Real Decreto Legislativo 781/1986, de 18 de abril, por el que se aprueba el Texto Refundido de las Disposiciones Legales vigentes en materia de Régimen Local.</li>
+        <li>Ley 7/1985, de 2 de abril, Reguladora de las Bases de Régimen Local.</li>
+      </ul>
+
+      <h3>Normativa municipal general</h3>
+      <ul>
+        <li>Decreto de 14 de junio de 2012, de la Delegada del Área de Gobierno de Hacienda y Administración Pública por el que se aprueba la Instrucción 4/2012 relativa a la participación del Ayuntamiento de Madrid en redes y medios sociales.</li>
+        <li>Decreto de 14 de junio de 2012, de la Delegada del Área de Gobierno de Hacienda y Administración Pública por el que se aprueba la Instrucción 4/2012 relativa a la participación del Ayuntamiento de Madrid en redes y medios sociales.</li>
+        <li>Acuerdo del Pleno, de 30 de marzo de 2011, por el que se aprueba la ordenanza por la que se adaptan al ámbito de la ciudad de Madrid las previsiones contenidas en la normativa estatal y autonómica de transposición de la Directiva 2006/123/CE, del Parlamento Europeo y del Consejo, de 12 de diciembre de 2006, relativa a los servicios en el mercado interior.</li>
+        <li>Decreto de 1 de septiembre de 2010, del delegado del Área de Gobierno de Hacienda y Administración Pública, por el que se crean la sede electrónica y el Registro Electrónico del Ayuntamiento de Madrid.</li>
+        <li>Acuerdo de la Junta de Gobierno de la Ciudad de Madrid de 25 de junio de 2009, por el que se regula el Sistema de Cartas de Servicios en el Ayuntamiento de Madrid.</li>
+        <li>Decreto de 8 de noviembre de 2006, del Concejal de Gobierno de Hacienda y Administración Pública, por el que se establece el modelo organizativo de gestión del portal web municipal (munimadrid), y de la intranet del ayuntamiento de Madrid (ayre).</li>
+        <li>Decreto del Alcalde de 24 de julio de 2006, por el que se crea el Observatorio de la Ciudad.</li>
+        <li>Acuerdo de la Junta de Gobierno de la Ciudad de Madrid de 4 de diciembre de 2008, por el que se aprueba el Código de Buenas Prácticas Administrativas del Ayuntamiento de Madrid.</li>
+        <li>Decreto del Alcalde de 17 de enero de 2005, por el que se regula la Atención al Ciudadano en el Ayuntamiento de Madrid y su normativa de desarrollo.</li>
+        <li>Reglamento Orgánico de los Distritos de la Ciudad de Madrid, de 23 de diciembre de 2004.</li>
+        <li>Acuerdo del Pleno del Ayuntamiento de Madrid de 23 de julio de 2004, sobre la Comisión Especial de Sugerencias y Reclamaciones; creación, funciones y composición.</li>
+        <li>Reglamento Orgánico del Gobierno y de la Administración del Ayuntamiento de Madrid, de 31 de mayo de 2004.</li>
+        <li>Reglamento Orgánico de Participación Ciudadana del Ayuntamiento de Madrid, de 31 de mayo de 2004.</li>
+        <li>Reglamento Orgánico del Pleno del Ayuntamiento de Madrid, de 31 de mayo de 2004.</li>
+      </ul>
+
+      <h3>Normativa municipal estructura y competencias</h3>
+      <ul>
+        <li>Acuerdo en vigor de la Junta de Gobierno de la Ciudad de Madrid de organización y competencias de los Distritos.</li>
+        <li>Acuerdo en vigor de la Junta de Gobierno de la Ciudad de Madrid por el que se establece la organización del Área de Gobierno de Equidad, Derechos Sociales y Empleo y se delegan competencias en su titular y en los titulares de los órganos directivos.</li>
+        <li>Decreto en vigor de la Alcaldesa, por el que se establece el número, denominación y competencias de las Áreas en las que se estructura la Administración del Ayuntamiento de Madrid.</li>
+        <li>Decreto en vigor de la Alcaldesa de delegación y desconcentración de competencias.</li>
+      </ul>
+
+      <h3>Normativa específica</h3>
+      <ul>
+        <li>Ley 13/1982 de 7 de abril de Integración Social de los Minusválidos (LISMI).</li>
+        <li>Ley 51/2003 de 2 de diciembre, de Igualdad de Oportunidades, no Discriminación y Accesibilidad Universal de las Personas con Discapacidad.</li>
+        <li>Ley 27/2007 de 23 de octubre por la que se reconoce la lengua de signos española y se regulan los medios de apoyo a la comunicación oral de las personas sordas.</li>
+        <li>Decreto 91/1990, relativo al régimen de autorización de servicios y centros de acción social, desarrollado por la Orden 612/1990 de 6 de noviembre, de la Consejería de Integración Social.</li>
+        <li>Decreto 88/2002, de 30 de mayo, por el que se regula la prestación de Ayuda a Domicilio del Sistema de Servicios Sociales de la Comunidad de Madrid.</li>
+        <li>Orden 613/1990, de 6 de noviembre, de Creación del Registro de Entidades que desarrollan Acción Social.</li>
+      </ul>
+
+      <p>En la medida en que este servicio es una prestación incluida en el catálogo de servicios de la Ley de Dependencia, se añade la siguiente normativa:</p>
+      <ul>
+        <li>Orden 625/2010 de 21 de abril, de la Comunidad de Madrid, por la que se regulan los procedimientos para el reconocimiento de la situación de dependencia y para la elaboración del Programa Individual de Atención.</li>
+      </ul>
+
+      <h3>Normativa específica directamente relacionada con el Servicio de Ayuda a Domicilio en el Ayuntamiento de Madrid</h3>
+      <ul>
+        <li>ORDENANZA MUNICIPAL por la que se regula el Acceso a los Servicios de Ayuda a Domicilio para Mayores y/o Personas con Discapacidad en la modalidad de Atención Personal y Atención Doméstica, de Centros de Día, propios o concertados, y Centros Residenciales, para mayores, del Ayuntamiento de Madrid aprobada por el Pleno del Ayuntamiento de Madrid el 29 de julio de 2009 (BOAM número 5994 de 7 de agosto de 2009).</li>
+        <li>Pliegos Técnicos y Administrativos del Contrato de Gestión de Servicio Público para la prestación del Servicio Municipal de “Ayuda a Domicilio en la modalidad de Auxiliar Domiciliario” en la ciudad de Madrid (1 de diciembre de 2012 a 31 de marzo de 2015), y prorrogados hasta octubre de 2016.</li>
+      </ul>
+
+      <h2>4. Derechos y responsabilidades</h2>
+
+      <h3>Derechos de las/os usuarias/os</h3>
+      <ul>
+        <li>Recibir una información clara y detallada sobre la asistencia que va a recibir en relación a la modalidad y la frecuencia de las prestaciones incluidas en su servicio, así como sobre sus derechos y responsabilidades.</li>
+        <li>Tener asignado un trabajador/a social del Centro de Servicios Sociales que le corresponde, como profesional de referencia que asegure la coherencia y globalidad del proceso de atención.</li>
+        <li>Ver revisadas las condiciones de la asistencia que recibe, cuando sus circunstancias personales o familiares hayan sufrido modificaciones, y en todo caso, una vez al año.</li>
+        <li>Recibir una atención correcta y respetuosa, sin discriminación por razón de sexo, raza, religión, ideología o cualquier otra condición o circunstancia personal o social, y que preserve su intimidad.</li>
+        <li>Conocer el coste del servicio y su aportación económica al mismo, así como las modificaciones que se puedan producir.</li>
+        <li>Ser avisados, con antelación suficiente, de todos aquellos cambios que se produzcan en el servicio, especialmente en el personal asignado y en el horario previsto.</li>
+        <li>Que se mantenga la confidencialidad y protección de los datos personales conocidos con motivo de la prestación del servicio.</li>
+        <li>Hacer uso del sistema de sugerencias y reclamaciones del Ayuntamiento de Madrid concernientes al funcionamiento o mejora del servicio, así como a recibir respuesta sobre las mismas.</li>
+        <li>Darse de baja en el servicio a petición propia.</li>
+      </ul>
+
+      <h3>Responsabilidades de las/os usuarias/os</h3>
+      <ul>
+        <li>Facilitar la información que le sea requerida y resulte necesaria para mantener el derecho al servicio y una buena calidad del mismo.</li>
+        <li>Facilitar a los auxiliares de Ayuda a Domicilio el acceso a la vivienda en las condiciones adecuadas para la prestación del servicio.</li>
+        <li>Proporcionar los medios necesarios para la adecuada realización, por parte de los auxiliares, de las tareas tanto domésticas como de atención personal.</li>
+        <li>Mantener una actitud correcta y de respeto hacia la dignidad del personal que acude a su domicilio, colaborando en todo aquello que le sea posible.</li>
+        <li>Permanecer en el domicilio mientras se presta el servicio.</li>
+        <li>Comunicar con antelación suficiente sus ausencias del domicilio durante el horario de la prestación, para que el auxiliar no acuda durante la ausencia.</li>
+        <li>Informar con antelación suficiente la intención de recibir nuevamente el servicio después de una suspensión temporal del mismo.</li>
+        <li>Facilitar cuantas comprobaciones o visitas a su residencia habitual sean necesarias para verificar el cumplimiento de los requisitos y circunstancias exigidas para ser beneficiario del servicio.</li>
+        <li>Abonar la aportación económica que le corresponda en el coste del servicio.</li>
+        <li>Comunicar, en su caso, de forma inmediata al Ayuntamiento de Madrid, la resolución de reconocimiento de la situación de dependencia y del establecimiento del programa individual de atención al amparo de la Ley 39/2006 de 14 de diciembre, y cualquier otra variación de su situación con respecto a aquélla sobre la cual se concedió el servicio.</li>
+        <li>Autorizar el uso de datos personales para la gestión y evaluación del servicio.</li>
+      </ul>
+
+      <h2>5. Mecanismos y modalidades de participación</h2>
+
+      <p>El Ayuntamiento de Madrid realiza una apuesta fuerte por el desarrollo y puesta en marcha de los procesos participativos, que garanticen el <strong>derecho</strong> de la ciudadanía a participar en la toma de decisiones junto con los poderes públicos, de manera que el sentir de la totalidad de la población se tenga en cuenta con carácter previo a la adopción de decisiones que puedan afectar a un Distrito concreto o a la totalidad de la Ciudad.</p>
+
+      <p>Entre los <strong>mecanismos, instrumentos y órganos de participación</strong> establecidos por el Ayuntamiento de Madrid en su <em>Reglamento Orgánico de Participación Ciudadana</em> y normativa de desarrollo, destacan:</p>
+
+      <ul>
+        <li>Las propuestas ciudadanas: la ciudadanía realiza propuestas de actuación en asuntos de competencia municipal o interés local. Cuando alcanzan el 2% de apoyos pueden someterse a debate y votación final, decidiendo entre todas y todos las que se llevan a cabo (mayoría simple de los participantes).</li>
+        <li>Las audiencias públicas: el Ayuntamiento invita a la ciudadanía a participar en cuestiones especialmente significativas de la acción municipal y lo que se decida mayoritariamente, definirá las actuaciones a realizar.</li>
+        <li>Las iniciativas populares: iniciativas normativas e iniciativas ciudadanas para promover actividades de interés público.</li>
+        <li>Las proposiciones al Pleno y a las Juntas de Distrito y los ruegos y preguntas en las sesiones plenarias del Distrito correspondiente.</li>
+        <li>Las sugerencias y reclamaciones: la ciudadanía ejerce su derecho a presentar sugerencias relativas a la creación, ampliación o mejora de los servicios prestados por el Ayuntamiento de Madrid; reclamaciones por tardanzas, desatenciones, incidencias o cualquier otra anomalía en su funcionamiento y felicitaciones, sobre los servicios prestados por el Ayuntamiento.</li>
+        <li>El Consejo Director de la Ciudad, los Consejos Sectoriales y los Consejos Territoriales.</li>
+        <li>Los sondeos de opinión, encuestas de satisfacción, consejos y foros temáticos, y paneles ciudadanos. Entre ellos destaca la Encuesta de Calidad de Vida y Satisfacción con los Servicios Públicos, encuesta presencial de carácter bienal que tiene por objetivo analizar el grado de satisfacción de la ciudadanía madrileña con los servicios públicos municipales, así como conocer la opinión ciudadana respecto a la calidad de vida en la ciudad.</li>
+      </ul>
+
+      <p>Además, el Ayuntamiento de Madrid pone a disposición de las personas mayores otros mecanismos de participación como la página web <a href="http://www.madridmayor.es" target="_blank" title="(se abre en ventana nueva)">www.madridmayor.es</a>.</p>
+
+      <p>Para avanzar de un modo decidido hacia las fórmulas reales de participación de la ciudadanía que profundicen y den sentido al compromiso de lograr un gobierno abierto, se ha puesto en marcha la <strong>web de gobierno abierto del Ayuntamiento de Madrid</strong>, destinada a que la ciudadanía pueda promover propuestas de actuación municipal de forma libre y transparente. En ella, a través de la plataforma de participación <a href="http://www.decide.madrid.es">decide.madrid</a> se pueden presentar propuestas, someter a audiencia pública las cuestiones más relevantes del gobierno de la Ciudad y participar en la elaboración de los Presupuestos del Ayuntamiento.</p>
+
+      <h2>6. Sistema de Sugerencias y Reclamaciones</h2>
+
+      <p>El Ayuntamiento de Madrid cuenta con un Sistema de Sugerencias y Reclamaciones a través del cual la ciudadanía e instituciones públicas o privadas pueden ejercer su derecho a presentar sugerencias relativas a la creación, ampliación o mejora de los servicios prestados por el Ayuntamiento de Madrid; reclamaciones por tardanzas, desatenciones, incidencias o cualquier otra anomalía en su funcionamiento y felicitaciones.</p>
+
+      <p>Se podrán presentar sugerencias, reclamaciones y felicitaciones a través de:</p>
+      <ul>
+        <li><a href="http://www.madrid.es/contactar" target="_blank" title="(se abre en ventana nueva)">www.madrid.es/contactar</a>.</li>
+        <li>El Teléfono 010.</li>
+        <li>Las Oficinas de Atención a la Ciudadanía Línea Madrid.</li>
+        <li>Las Oficinas de Registro.</li>
+        <li>El Registro electrónico del Ayuntamiento de Madrid.</li>
+        <li>El correo postal o electrónico dirigido al órgano directivo responsable cuyos datos de localización y contacto se recogen en el apartado 9 de esta Carta.</li>
+      </ul>
+
+      <p>Las sugerencias, reclamaciones y felicitaciones se <strong>contestarán</strong> de forma adecuada y con la mayor celeridad posible, cumpliendo los compromisos asumidos en la Carta de Servicios de Sugerencias y Reclamaciones del Ayuntamiento de Madrid, aprobada el 10 de mayo de 2012.</p>
+
+      <h2>7. Servicios prestados</h2>
+
+      <p>Los servicios que se describen a continuación <strong>están dirigidos a</strong> proporcionar una atención personal y/o doméstica en el domicilio a las personas mayores y a las personas con discapacidad con el objetivo de promover su independencia y autonomía personal. Se pretende lograr el mantenimiento de las/os usuarias/os en su propio entorno y mejorar su calidad de vida, sin suplir la responsabilidad que corresponda a la familia.</p>
+
+      <p>El <strong>acceso a estos servicios</strong> se gestiona en los Centros de Servicios Sociales de la Ciudad de Madrid, que valoran, diseñan la intervención, elaboran la orden de alta, y realizan el seguimiento correspondiente. Se prestan, en el domicilio, por auxiliares domiciliarios, que llevarán uniforme con el logotipo del Ayuntamiento de Madrid, en horario de 7:00 a 22:00 h. de lunes a domingo, a través de un contrato de gestión de servicios públicos. El seguimiento del servicio y de la coordinación del personal auxiliar domiciliario se realiza por personal coordinador de la entidad, diplomado en Trabajo Social.</p>
+
+      <p>Los servicios que se concedan estarán limitados, en todo caso, por los recursos de que el Ayuntamiento disponga en cada momento.</p>
+
+      <p>En el supuesto de que exista un riesgo grave o inminente para la persona para la que se solicita el servicio, apreciado por el/la trabajador/a social, se podrá ordenar la inmediata prestación del Servicio de Ayuda a Domicilio.</p>
+
+      <p>La persona usuaria participa en el coste del servicio en función de las horas recibidas y de su capacidad económica. Dicha participación se actualiza al menos una vez al año.</p>
+
+      <h3>1. Evaluación de necesidades, control y seguimiento del servicio</h3>
+      <ul>
+        <li>Acoger a la persona que hace la demanda, informarle sobre las características del servicio y realizar la valoración inicial.</li>
+        <li>Comprobar el cumplimiento de requisitos necesarios.</li>
+        <li>Diseñar la intervención social específica del servicio de ayuda a domicilio.</li>
+        <li>Elaborar la propuesta del servicio de ayuda a domicilio consensuada con la persona atendida y sus familiares cuidadores.</li>
+        <li>Dar la orden de alta a la entidad adjudicataria para el inicio del servicio.</li>
+        <li>Realizar el seguimiento del servicio mediante entrevistas, visitas al domicilio y llamadas telefónicas, adecuando las prestaciones a los cambios detectados.</li>
+        <li>Realizar el control del servicio garantizando el cumplimiento de las condiciones establecidas.</li>
+        <li>Se podrá aportar pequeños productos de apoyo (salvo camas y grúas), como complemento a la atención personal, en los casos en que, valorado técnicamente, se considere necesario.</li>
+      </ul>
+
+      <h3>2. Atención personal</h3>
+      <ul>
+        <li>Apoyar en el aseo personal.</li>
+        <li>Prestar ayuda para el vestido, calzado y alimentación.</li>
+        <li>Apoyar en traslados y movilizaciones dentro del hogar.</li>
+        <li>Acompañar ocasionalmente fuera del hogar para la realización de diversas gestiones, como visitas médicas, tramitación de documentos y otras similares, siempre que no se disponga de apoyo familiar o de voluntariado.</li>
+        <li>Gestionar en nombre de la persona usuaria recetas y documentos relacionados con la vida diaria, siempre que no exista apoyo familiar o de voluntariado, o así lo determinen los técnicos municipales.</li>
+        <li>Ayudar en la toma de medicamentos prescritos.</li>
+        <li>Observar la evolución de la situación y poner en conocimiento de los servicios sociales los cambios e incidencias que se detecten.</li>
+      </ul>
+
+      <h3>3. Atención doméstica</h3>
+      <ul>
+        <li>Limpiar o ayudar a la limpieza cotidiana de la vivienda y a su mantenimiento en condiciones aceptables de higiene y salubridad.</li>
+        <li>Adquirir alimentos y otros productos básicos por cuenta de la persona usuaria.</li>
+        <li>Lavar, planchar y organizar la ropa dentro del hogar.</li>
+        <li>Preparar comidas en el hogar.</li>
+        <li>Realizar pequeñas tareas de mantenimiento de utensilios domésticos y de uso personal, tales como cambio de bombillas, sustitución de pilas, cambio de bolsa de aspiradora, etc.</li>
+        <li>Excepcionalmente, se realizarán limpiezas de choque, en los casos en que sea valorado técnicamente y se considere necesario.</li>
+      </ul>
+
+      <h3>8. Compromisos de calidad</h3>
+
+      <p>Los compromisos que se relacionan a continuación, con sus correspondientes indicadores y estándares, se atienen a lo establecido en la Ordenanza Municipal por la que se regula el acceso a los Servicios de Ayuda a Domicilio para mayores y/o personas con discapacidad en la modalidad de atención personal, doméstica, o mixta.</p>
+      <ol>
+        <li>Todas las personas usuarias recibirán, al ser dadas de alta, un <strong>documento informativo</strong> sobre las características del servicio, y con los detalles de la prestación en cuanto a horarios, número de horas, tareas que se incluyen, auxiliares asignados, nombre del coordinador y teléfonos de contacto.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            1.1. Porcentaje de usuarias/os de Ayuda a Domicilio dados de alta que reciben un <strong>documento informativo</strong> sobre el servicio y con los detalles de la prestación.</li>
+          </ul>
+        </li>
+
+        <li>Todos los <strong>profesionales</strong> del Servicio de Ayuda a Domicilio que prestan el servicio tienen los conocimientos y la formación adecuados. El 85% de las personas usuarias  valorará la competencia técnica de los auxiliares domiciliarios con una puntuación igual o superior a 7 y no más del 4% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            2.1. Porcentaje de coordinadores de las entidades colaboradoras en el Servicio de Ayuda a Domicilio que tiene la titulación y experiencia requeridas.<br>
+            2.2. Porcentaje de entidades colaboradoras en la Ayuda a Domicilio que cuenta con un plan de formación continua.<br>
+            2.3. Porcentaje de auxiliares domiciliarios que cuenta con la formación inicial exigida en pliego.<br>
+            2.4. Porcentaje de personas usuarias que valoran la competencia técnica de los auxiliares domiciliarios con una puntuación igual o superior a 7.<br>
+            2.5. Porcentaje de personas usuarias que valoran la competencia técnica de los auxiliares domiciliarios con una puntuación inferior a 5.<br>
+            </li>
+          </ul>
+        </li>
+
+        <li>Todo el personal que presta el servicio atiende a las personas usuarias con un <strong>trato</strong> amable y respetuoso. El 90% de las personas usuarias  valorarán el trato personal con una puntuación igual o superior a 7 y no más del 3% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicador asociado:<br>
+              3.1. Porcentaje de usuarias/os que valora el trato personal con una puntuación igual o superior a 7.<br>
+              3.2. Porcentaje de usuarias/os que valora el trato personal con una puntuación inferior a 5.</br>
+            </li>
+          </ul>
+        </li>
+
+        <li>Se realizarán todas las limpiezas de choque en aquellos casos en los que, tras evaluación técnica y en ausencia de causa de fuerza mayor que las imposibilite, se consideren necesarias.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            4.1. Porcentaje de limpiezas de choque consideradas necesarias que han sido realizadas.</li>
+          </ul>
+        </li>
+
+        <li>Las personas usuarias del Servicio de Ayuda a Domicilio recibirán una visita anual de seguimiento por parte del personal de coordinación de las entidades prestadoras del servicio. Al menos el 90% de ellas será visitada una vez al año y en ningún caso transcurrirán más de 18 meses entre las visitas.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            5.1. Porcentaje de usuarias/os visitados en el plazo de un año.<br>
+            5.2. Porcentaje de usuarias/os visitados en el plazo de 18 meses.<br>
+            </li>
+          </ul>
+        </li>
+
+        <li>Todas las entidades prestadoras del Servicio de Ayuda a Domicilio dispondrán de un canal de comunicación telefónico gratuito o de llamada local con las personas usuarias, en horario de 7 a 22 horas, para la recogida de incidencias.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            6.1. Porcentaje de entidades prestadoras del servicio que disponen de un canal de comunicación telefónico gratuito o de llamada local de 7 a 22 horas.</li>
+          </ul>
+        </li>
+
+        <li>Los cambios del servicio o incidencias registradas por las entidades prestadoras serán puestas en conocimiento de los servicios sociales municipales mediante reuniones de coordinación periódicas, garantizándose, al menos, la realización de 12 reuniones al año por distrito.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            7.1. Porcentaje de distritos que realizan al menos 12 reuniones de coordinación al año con las entidades prestadoras del servicio.</li>
+          </ul>
+        </li>
+
+        <li>El Servicio de Ayuda a Domicilio se prestará de tal forma que el 85% de las personas usuarias valoren la satisfacción global con el servicio con una puntuación igual o superior a 7 y no más del 4% lo valore por debajo de 5, en una escala de 0 a 10. El 95% lo considerará recomendable para otras personas.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            8.1. Porcentaje de usuarias/os que valora globalmente el servicio de Ayuda a Domicilio con una puntuación igual o superior a 7.<br>
+            8.2. Porcentaje de usuarias/os que valora globalmente el servicio de Ayuda a Domicilio con una puntuación inferior a 5.<br>
+            8.3. Porcentaje de usuarias/os que considera el Servicio de Ayuda a Domicilio recomendable.</li>
+          </ul>
+        </li>
+
+        <li>Se recibirán y tramitarán las <strong>sugerencias, reclamaciones y felicitaciones</strong> presentadas por la ciudadanía relativas a los servicios prestados, se contestarán de forma adecuada y con la mayor celeridad posible y a partir de ellas, se pondrán en marcha acciones de mejora del servicio. El 60% de las sugerencias, reclamaciones y felicitaciones se contestarán en un plazo máximo de 30 días naturales desde su presentación y, en ningún caso, en un plazo superior a 3 meses; aumentando, con respecto al año anterior, las contestadas en 15 días naturales  o menos desde su presentación. El tiempo medio de contestación de las sugerencias, reclamaciones y felicitaciones será igual o inferior a 30 días naturales desde su presentación.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            9.1. Sugerencias, reclamaciones y felicitaciones relativas al servicio de Ayuda a Domicilio.<br>
+            9.2. Porcentaje de sugerencias, reclamaciones y felicitaciones relativas al Servicio de Ayuda a Domicilio contestadas dentro de los 15 días naturales siguientes a su presentación.<br>
+            9.3. Porcentaje de sugerencias, reclamaciones y felicitaciones relativas al servicio de Ayuda a Domicilio contestadas en un plazo inferior a 30 días naturales  desde su presentación.<br>
+            9.4. Tiempo medio de contestación de las sugerencias, reclamaciones y felicitaciones relativas al servicio de Ayuda a Domicilio.<br>
+            9.5. Porcentaje de sugerencias, reclamaciones y felicitaciones contestadas en menos de 3 meses.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><strong>Medidas de subsanación</strong>: quienes consideren que se ha incumplido alguno de los compromisos anteriormente recogidos, podrán comunicarlo a través del Sistema de Sugerencias y Reclamaciones del Ayuntamiento de Madrid (apartado 6 de esta Carta de Servicios). En caso de incumplimiento, se les enviará un escrito informando de las causas por las que el compromiso no pudo cumplirse, así como, de las medidas adoptadas para corregir la deficiencia detectada, si fuera posible.</p>
+
+      <p><strong>Seguimiento y evaluación</strong>: los resultados de los indicadores establecidos para medir el cumplimiento de los compromisos de esta Carta de Servicios, se pueden consultar en <a href="http://www.madrid.es" target="_blank" title="(se abre en ventana nueva)">www.madrid.es</a>, en <a href="http://www-1.munimadrid.es/SBAE_263_SF_CS_Internet/carta.do?Key=26273&Value=35.-+Servicio+de+Ayuda+a+Domicilio" target="_blank" title="(se abre en ventana nueva)">Ayuntamiento / Observatorio de la Ciudad / Sistema de Cartas de Servicios</a>. Estos resultados son evaluados anualmente.</p>
+
+      <h2>9. Datos de carácter complementario</h2>
+
+      <h3>Órgano directivo responsable</h3>
+      <p>DIRECCION GENERAL DE MAYORES, ATENCION SOCIAL, INCLUSIÓN SOCIAL Y ATENCIÓN A LA EMERGENCIA<br>
+      Pº Chopera, 41, 1ª planta. 28045 Madrid<br>
+      Correo electrónico: dgmayores@madrid.es<br>
+      Teléfono: 914.801.100</p>
+
+      <h3>Horarios del servicio</h3>
+      <p>El Servicio de Ayuda a Domicilio se presta de lunes a domingo en horario de 7,00 a 22,00 horas.</p>
+
+      <p>Las/os usuarias/os del Servicio de Ayuda a Domicilio podrán contactar telefónicamente con las entidades prestadoras del mismo en el horario mencionado.</p>
+
+      <h3>Cuadro de copago del servicio de Ayuda a Domicilio 2016</h3>
+      <p>Las/os usuarias/os participan del coste del servicio, y su aportación económica variará en función de su capacidad económica y el número de horas de prestación.</p>
+
+      <h3>BAREMO SAD 2016</h3>
+
+      <p><strong>Renta Mensual Per Capita</strong></p>
+      <ul>
+        <li>Hasta 460,29 aportación por hora: 0 euros -  limite aportación sobre RMPC: 0%</li>
+        <li>Desde 460,30 hasta 537,30: 0,57 apor/h  –   límite aportación sobre RMPC: 10%</li>
+        <li>Desde 537,31 hasta 614,29: 1,12 apor/h  -    limite aportación sobre RMPC: 12%</li>
+        <li>Desde 614,30 hasta 691,29: 1,69 apor/h  -    límite aportación sobre RMPC: 14%</li>
+        <li>Desde 691,30 hasta 768,30: 2,26 apor/h  –   límite aportación sobre RMPC: 16%</li>
+        <li>Desde 768,31 hasta 84,31: 2,83 apor/h    –   limite aportación sobre RMPC: 18%</li>
+        <li>Desde 845,32  hasta 922,30: 3,36 apor/h  -   límite aportación sobre RMPC: 20%</li>
+        <li>Desde 922,31 hasta 999,32: 3,94 apor/h   -   límite aportación sobre RMPC: 22%</li>
+        <li>Desde 999,33 hasta 1.076,32: 4,49 apor/h –  límite aportación sobre RMPC: 24%</li>
+        <li>Desde 1076,33 hasta 1153,33: 5,07 apor/h – límite aportación sobre RMPC: 26%</li>
+        <li>Desde 1153,34 hasta 1230,33: 5,64 apor/h – límite aportación sobre RMPC: 28%</li>
+        <li>Desde 1230,34 hasta 1307,33: 6,19 apor/h – límite aportación sobre RMPC: 30%</li>
+        <li>Desde 1307,34 hasta 1384,35: 6,76 apor/h – límite aportación sobre RMPC: 32%</li>
+        <li>De 1384,36 euros en adelante: 7,31 apor/h -  límite aportación sobre RMPC: 34%</li>
+      </ul>
+
+      <h3>Acceso a la información del Servicio de Ayuda a domicilio, y para otros servicios sociales municipales</h3>
+      <ul>
+        <li>Centros Municipales de Servicios Sociales</li>
+        <li>Teléfono de información del Ayuntamiento de Madrid: 010</li>
+        <li>Oficinas de Atención a la Ciudadanía Línea Madrid</li>
+        <li>Internet: <a href="http://www.madrid.es" target="_blank" title="(se abre en ventana nueva)">www.madrid.es</a></li>
+        <li>Internet: <a href="http://www.madridmayor.es" target="_blank" title="(se abre en ventana nueva)">www.madridmayor.es</a></li>
+      </ul>
+
+      <p>La solicitud podrá presentarse en los <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/Ayuntamiento/Servicios-Sociales/Centros-de-Servicios-Sociales-Municipales?vgnextfmt=default&vgnextoid=51886e0cfb6da010VgnVCM100000d90ca8c0RCRD&vgnextchannel=fe8a171c30036010VgnVCM100000dc0ca8c0RCRD" target="_blank" title="(se abre en ventana nueva)">Centros Municipales de Servicios Sociales</a> de cada uno de los Distritos de la Ciudad de Madrid.</p>
+
+      <p>En las direcciones y teléfonos arriba indicados se puede obtener información sobre otros servicios del Ayuntamiento de Madrid para personas mayores y personas con discapacidad, como son:</p>
+      <ul>
+        <li>Centros Municipales de Mayores (Tarjeta madridmayor.es).</li>
+        <li>Centros residenciales.</li>
+        <li>Centros de Día:
+          <ul>
+            <li>Para mayores con deterioro cognitivo tipo Alzheimer</li>
+            <li>Para mayores con deterioro físico</li>
+            <li>Respiro familiar de fin de semana</li>
+            <li>Para personas con discapacidad</li>
+          </ul>
+        </li>
+        <li>Comidas a domicilio.</li>
+        <li>Lavandería a domicilio.</li>
+        <li>Teleasistencia Domiciliaria.</li>
+        <li>Productos de apoyo (camas y grúas).</li>
+        <li>Fisioterapia preventiva.</li>
+        <li>Adaptaciones geriátricas del domicilio (ayudas económicas).</li>
+        <li>Programas de apoyo a cuidadores familiares, prevención de la dependencia, convivencia intergeneracional, detección de mayores en situación de riesgo, ejercicio físico al aire libre.</li>
+        <li>Respiro familiar para personas con discapacidad.</li>
+        <li>Centro ocupacional para personas con discapacidad.</li>
+      </ul>
+    </section>
+  </div>
+</div>

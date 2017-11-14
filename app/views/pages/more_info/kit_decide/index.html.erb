@@ -1,0 +1,239 @@
+<% provide :title, "KIT DECIDE. Crea tu propia campaña" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: kit_decide_url,
+          social_title: "KIT DECIDE",
+          social_description: "Crea tu propia campaña" %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: kit_decide_url %>
+<% end %>
+
+<div class="kit-decide-header no-margin-top margin-bottom padding">
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <%= back_link_to more_info_path %>
+      <h1>KIT.DECIDE</h1>
+      <h2>CREA TU PROPIA CAMPAÑA</h2>
+      <p class="margin-top">Los amigos de <a href="https://twitter.com/LaCocTELLera" target="_blank" title="(se abre en ventana nueva"><span class="underline">La CocTELLera</span></a> han elaborado un kit para ayudarte a comunicar tus propuestas y que tengan el mayor éxito posible. Para que tus propuestas se aprueben es fundamental que estés detrás de ellas impulsándolas.
+      <br>¡Esperamos que te sirva!</p>
+      <%= link_to "/docs/kit_decide.pdf", class: "button hollow", title: "(se abre en ventana nueva)", target: "_blank" do %>
+        Descarga el kit en PDF <small>(280Kb)</small>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row" data-sticky-container>
+  <div class="small-12 column text-center sticky"
+       id="kit-decide"
+       data-sticky
+       data-top-anchor="kit-decide-content"
+       data-margin-top="0">
+    <ul class="number-list" data-magellan data-bar-offset="112">
+      <li><a href="#one" title="Define tus objetivos.">1 <span class="show-for-sr">Define tus objetivos.</span></a></li>
+      <li><a href="#two" title="Identifica tu público.">2 <span class="show-for-sr">Identifica tu público.</span></a></li>
+      <li><a href="#three" title="Define tu idea de fuerza.">3 <span class="show-for-sr">Define tu idea de fuerza.</span></a></li>
+      <li><a href="#four" title="Elige los canales apropiados.">4 <span class="show-for-sr">Elige los canales apropiados.</span></a></li>
+      <li><a href="#five" title="Establece calendarios.">5 <span class="show-for-sr">Establece calendarios.</span></a></li>
+      <li><a href="#six" title="Prepara los materiales.">6 <span class="show-for-sr">Prepara los materiales.</span></a></li>
+      <li><a href="#seven" title="Conecta comunidades y amplifica tu mensaje.">7 <span class="show-for-sr">Conecta comunidades y amplifica tu mensaje.</span></a></li>
+      <li><a href="#eight" title="¡Lanza tu campaña!">8 <span class="show-for-sr">¡Lanza tu campaña!</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="kit-decide-content" class="row">
+  <div class="small-12 column more-info-text kit-decide" data-equalizer data-equalize-on="medium">
+
+    <div class="hide-for-small-only medium-6 column text-center margin-top" data-equalizer-watch>
+      <%= image_tag "kit_decide/kit_decide_1.jpg", alt: "Kit decide 1: Define tus objetivos"%>
+    </div>
+    <div class="small-12 medium-6 column margin-top" data-equalizer-watch>
+      <h3 id="one" class="kit-decide margin" data-magellan-target="one">
+        <span class="number">1</span> Define tus objetivos.
+      </h3>
+
+      <p>¿Qué queremos conseguir?</p>
+
+      <ul>
+        <li>Que tu propuesta se conozca</li>
+        <li>Define el número de apoyos</li>
+        <li>Comunica cómo se puede colaborar</li>
+        <li>Diseña bien tu llamada a la acción</li>
+        <li>Estudia cómo llegar a los seguidores de las diferentes RRSS.</li>
+      </ul>
+
+      <p><small>RRSS: redes sociales.</small></p>
+    </div>
+
+    <div class="hide-for-small-only medium-6 column text-center margin-top" data-equalizer-watch>
+      <%= image_tag "kit_decide/kit_decide_2.jpg", alt: "Kit decide 2: Identifica tu público"%>
+    </div>
+    <div class="small-12 medium-6 column margin-top" data-equalizer-watch>
+
+      <h3 id="two" class="kit-decide margin" data-magellan-target="two">
+        <span class="number">2</span> Identifica tu público.
+      </h3>
+
+      <p>¿A quién nos dirigimos?</p>
+        <ul>
+          <li>edad</li>
+          <li>género</li>
+          <li>lugar de residencia</li>
+          <li>ocupación</li>
+          <li>perfil socio económico</li>
+        </ul>
+
+      <p>Es muy útil definir intereses comunes, preferencias o actitudes. El componente territorial es clave en las propuestas distritales.</p>
+    </div>
+
+    <div class="hide-for-small-only medium-6 column text-center margin-top" data-equalizer-watch>
+      <%= image_tag "kit_decide/kit_decide_3.jpg", alt: "Kit decide 3: Define tu idea de fuerza"%>
+    </div>
+    <div class="small-12 medium-6 column margin-top" data-equalizer-watch>
+      <h3 id="three" class="kit-decide margin" data-magellan-target="three">
+        <span class="number">3</span> Define tu idea de fuerza.
+      </h3>
+
+      <p>Para que se entienda en una primera lectura rápida tiene que ser: <strong>CLARA</strong>, <strong>LLAMATIVA</strong>, <strong>PROVOCADORA</strong>, <strong>INSPIRADORA</strong></p>
+
+      <p>Para campañas en las redes sociales empleamos un <em>#hashtag</em>:</p>
+
+      <ul>
+        <li><strong>CORTO</strong></li>
+        <li><strong>SUGERENTE</strong></li>
+        <li><strong>QUE DE JUEGO</strong></li>
+        <li><strong>FÁCIL DE IDENTIFICAR</strong></li>
+        <li><strong>AFIRMATIVO</strong></li>
+      </ul>
+    </div>
+
+    <div class="hide-for-small-only medium-6 column text-center margin-top" data-equalizer-watch>
+      <%= image_tag "kit_decide/kit_decide_4.jpg", alt: "Kit decide 4: Elige los canales apropiados"%>
+    </div>
+    <div class="small-12 medium-6 column margin-top" data-equalizer-watch>
+      <h3 id="four" class="kit-decide margin" data-magellan-target="four">
+        <span class="number">4</span> Elige los canales apropiados.
+      </h3>
+
+      <p>Adapta y potencia el concepto.</p>
+
+      <table>
+        <caption class="show-for-sr">Canales de comunicación</caption>
+        <thead>
+          <tr>
+            <th scope="col">¿DÓNDE?</th>
+            <th scope="col">¿QUÉ?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Espacio público</td>
+            <td>Carteles</td>
+          </tr>
+          <tr>
+            <td>Eventos</td>
+            <td>Pegatinas, octavillas</td>
+          </tr>
+          <tr>
+            <td>RRSS</td>
+            <td>memes, <em>gifs</em>, vídeos</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hide-for-small-only medium-6 column text-center margin-top" data-equalizer-watch>
+      <%= image_tag "kit_decide/kit_decide_5.jpg", alt: "Kit decide 5: Establece calendarios"%>
+    </div>
+    <div class="small-12 medium-6 column margin-top" data-equalizer-watch>
+      <h3 id="five" class="kit-decide margin" data-magellan-target="five">
+        <span class="number">5</span> Establece calendarios.
+      </h3>
+
+      <p>¿Cómo vas a mantener activa la campaña?</p>
+
+      <ul>
+          <li>AHORA<br>
+          Hay que mantener la campaña activa durante todo el proceso. Para ello es importante tener varios hitos de campaña, con sus diferentes piezas preparadas.</li>
+          <li>HITO 1</li>
+          <li>HITO 2</li>
+          <li>FECHA LÍMITE</li>
+      </ul>
+    </div>
+
+    <div class="hide-for-small-only medium-6 column text-center margin-top" data-equalizer-watch>
+      <%= image_tag "kit_decide/kit_decide_6.jpg", alt: "Kit decide 6: Prepara los materiales"%>
+    </div>
+    <div class="small-12 medium-6 column margin-top" data-equalizer-watch>
+      <h3 id="six" class="kit-decide margin" data-magellan-target="six">
+        <span class="number">6</span> Prepara los materiales.
+      </h3>
+
+      <p>¿Qué formatos vas a usar?</p>
+
+      <table>
+        <caption class="show-for-sr">Formato de los materiales de comunicación</caption>
+        <thead>
+          <tr>
+            <th scope="col">FÍSICOS</th>
+            <th scope="col">DIGITALES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Octavillas</td>
+            <td>Octavillas</td>
+          </tr>
+          <tr>
+            <td>Carteles</td>
+            <td>Carteles</td>
+          </tr>
+          <tr>
+            <td>Pegatinas</td>
+            <td>Vídeos</td>
+          </tr>
+          <tr>
+            <td>Pegatinas</td>
+            <td>Vídeos</td>
+          </tr>
+          <tr>
+            <td>Chapas</td>
+            <td>Memes / <em>gif</em></td>
+          </tr>
+          <tr>
+            <td>Fanzines</td>
+            <td>Vídeos en directo</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>¡Inventa tus propios formatos!</strong></p>
+    </div>
+
+    <div class="hide-for-small-only medium-6 column text-center margin-top" data-equalizer-watch>
+      <%= image_tag "kit_decide/kit_decide_7.jpg", alt: "Kit decide 7: Conecta comunidades y amplifica tu mensaje"%>
+    </div>
+    <div class="small-12 medium-6 column margin-top" data-equalizer-watch>
+      <h3 id="seven" class="kit-decide margin" data-magellan-target="seven">
+        <span class="number">7</span> Conecta comunidades y amplifica tu mensaje.
+      </h3>
+
+      <p>Busca aliados naturales, colectios que acojan y difundan tu campaña</p>
+
+      <p>Vincularles a tu campaña a partir del diálogo y de la apelación a intereses comunes reforzará tu campaña</p>
+
+      <p>Enrédate en <a href="https://decide.madrid.es">decide.madrid.es</a> y crea comunidad a través de comentarios y mensajes a usuarios.</p>
+    </div>
+
+    <div class="hide-for-small-only medium-6 column text-center margin-top" data-equalizer-watch>
+      <%= image_tag "kit_decide/kit_decide_8.jpg", alt: "Kit decide 8: ¡Lanza tu campaña!"%>
+    </div>
+    <div class="small-12 medium-6 column margin-top" data-equalizer-watch>
+      <h3 id="eight" class="kit-decide margin" data-magellan-target="eight">
+        <span class="number">8</span> ¡Lanza tu campaña!
+      </h3>
+    </div>
+  </div>
+</div>

@@ -146,6 +146,10 @@ $sidebar-active: #f4fcd0;
     &:hover {
       background: #f3f6f7;
     }
+
+    &.success {
+      background: $success-bg;
+    }
   }
 
   table {

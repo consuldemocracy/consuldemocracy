@@ -1,0 +1,21 @@
+<div id="nvotes-sidebar" class="small-12 medium-3 column">
+  <div class="nvotes-tablet-sidebar">
+    <p class="can-participate-info"><%= t("nvotes.can_participate") %></p>
+    <ul class="tabs vertical">
+      <% @polls.each do |poll| %>
+        <li class="<%= "is-active" if current_page?(new_officing_poll_nvote_path(poll.id)) %>">
+          <%= link_to poll.name,
+                      new_officing_poll_nvote_path(poll),
+                      data: {no_turbolink: true} %>
+        </li>
+      <% end %>
+    </ul>
+    <div class="row">
+      <div class="small-12 column padding">
+        <%= link_to t("nvotes.exit"),
+                    thanks_officing_poll_nvotes_path,
+                    class: "delete" %>
+      </div>
+    </div>
+  </div>
+</div>

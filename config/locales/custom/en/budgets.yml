@@ -1,0 +1,7 @@
+en:
+  budgets:
+    index:
+      section_footer:
+        description: With the participatory budgets the citizens decide to which projects presented by the neighbors of Madrid is destined a part of the municipal budget.
+        help_text_1: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. Any registered person in Madrid over 16 years old can propose an investment project that is preselected in a phase of citizen supports."
+        help_text_2: "The most voted projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council of Madrid once the municipal budgets of the next year are approved."

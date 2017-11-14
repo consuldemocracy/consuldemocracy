@@ -1,0 +1,33 @@
+<div class="expanded header">
+  <div class="row no-margin-top padding">
+    <div class="small-12 medium-8 column">
+      <h1>Presupuestos participativos 2017</h1>
+      <div class="small-12 medium-11">
+        <p class="lead">
+           Tú decides a qué proyectos ciudadanos se destinarán 100 millones de euros de los presupuestos municipales en la ciudad y en los distritos.
+        </p>
+      </div>
+
+      <div class="small-12">
+        <div class="row margin-top">
+          <div class="small-12 medium-6 column">
+            <%= link_to "Votar proyectos de toda la ciudad",
+                        "#{request.url}presupuestos/presupuestos-participativos-2017/toda-la-ciudad/toda-la-ciudad?filter=selected",
+                        class: "button expanded large city" %>
+          </div>
+          <div class="small-12 medium-6 column">
+            <%= link_to "Votar proyectos de un distrito",
+                        "#{request.url}presupuestos/presupuestos-participativos-2017/distritos?filter=selected",
+                        class: "button expanded large" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-12 medium-3 column margin">
+      <div class="budgets-calendar-minimal padding text-center">
+        <span class="day">Votación final<br>Último día 30 junio</span>
+      </div>
+    </div>
+  </div>
+</div>

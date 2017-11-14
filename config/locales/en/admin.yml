@@ -13,6 +13,8 @@ en:
       unmark_featured: Unmark featured
       edit: Edit
       configure: Configure
+    officing_booth:
+      title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
       index:
         title: Banners
@@ -113,6 +115,7 @@ en:
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
         tags_filter_all: All tags
+        max_per_heading: Max per heading
         filters:
           valuation_open: Open
           without_admin: Without assigned admin
@@ -142,6 +145,7 @@ en:
         table_feasibility: "Feasibility"
         table_valuation_finished: "Val. Fin."
         table_selection: "Selection"
+        table_evaluation: "Evaluation"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Assigned administrator
@@ -151,6 +155,8 @@ en:
         edit: Edit
         edit_classification: Edit classification
         by: By
+        organization_name: Representing
+        label: Label (public visibility)
         sent: Sent
         group: Grupo
         heading: Heading
@@ -181,6 +187,8 @@ en:
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update
+        label: Label (public visibility)
+        user_tags: User assigned tags
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
@@ -241,6 +249,7 @@ en:
       show:
         email: 'Email:'
         hidden_at: 'Hidden at:'
+        phone: 'Phone:'
         registered_at: 'Registered at:'
         title: Activity of user (%{user})
     legislation:
@@ -532,7 +541,7 @@ en:
         search_officer_placeholder: Search officer
         search_officer_text: Search for an officer to assign a new shift
         select_date: "Select day"
-        no_voting_days: "Los dias de votación terminaron"
+        no_voting_days: "Voting days ended"
         select_task: "Select task"
         table_shift: "Shift"
         table_email: "Email"
@@ -672,6 +681,9 @@ en:
       index:
         title: "Recounts"
         no_recounts: "There is nothing to be recounted"
+        all_booths_total: "Cumulative total from all booths:"
+        total_final: Final recounts
+        total_system: Votes (automatic)
         table_booth_name: "Booth"
         table_total_recount: "Total recount (by officer)"
         table_system_count: "Votes (automatic)"
@@ -702,6 +714,7 @@ en:
         title: "New booth"
         name: "Name"
         location: "Location"
+        physical: "Physical booth"
         submit_button: "Create booth"
       edit:
         title: "Edit booth"
@@ -823,6 +836,8 @@ en:
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
         tags_filter_all: All tags
+        max_per_geozone: Max per geozone
+        max_for_no_geozone: Max for city-wide
         filters:
           valuation_open: Open
           without_admin: Without assigned admin
@@ -845,6 +860,10 @@ en:
         assigned_valuators: Assigned valuators
         back: Back
         classification: Clasification
+        compatibility_title: Compatibility
+        compatibility:
+          "true": "Compatible"
+          "false": "Incompatible"
         heading: "Investment project %{id}"
         edit: Edit
         edit_classification: Edit classification
@@ -863,9 +882,18 @@ en:
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
+        compatibility: Compatibility
+      results:
+        title: Current final voting ranking
+        spending_proposal: Proposal title
+        ballot_lines_count: Times selected
+        hide_discarded_link: Hide discarded
+        show_all_link: Show all
+        price: Cost
+        amount_available: Available budget
+        incompatible: Incompatibles
       summary:
         title: Summary for investment projects
-        title_proposals_with_supports: Summary for investment projects with supports
         geozone_name: Scope
         finished_and_feasible_count: Finished and feasible
         finished_and_unfeasible_count: Finished and unfeasible
@@ -928,16 +956,28 @@ en:
     stats:
       show:
         stats_title: Stats
+        participatory_budget_2016: Participatory Budget 2016
+        participatory_budgets: Participatory Budgets
+        polls: Polls
+        direct_messages: Direct messages
+        proposal_notifications: Proposal notifications
+        redeemable_codes: Redeemable codes
+        user_invites: Invitations
+        external_stats: External stats
+        incomplete_verifications: Incomplete verifications
         summary:
+          ballot_line_votes: Votes in investment projects
+          ballot_votes: Budgets voted
           comment_votes: Comment votes
           comments: Comments
           debate_votes: Debate votes
           debates: Debates
           proposal_votes: Proposal votes
           proposals: Proposals
+          spending_proposal_votes: Investment project votes
+          spending_proposals: Investment projects
           budgets: Open budgets
           budget_investments: Investment projects
-          spending_proposals: Spending Proposals
           unverified_users: Unverified users
           user_level_three: Level three users
           user_level_two: Level two users
@@ -948,18 +988,81 @@ en:
           votes: Total votes
         spending_proposals_title: Spending Proposals
         budgets_title: Participatory budgeting
-        visits_title: Visits
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         incomplete_verifications: Incomplete verifications
+      graph:
+        debate_created: Debates
+        spending_proposals: Investment projects
+        visit: Visits
+        level_2_user: Level 2 users
+        proposal_created: Citizen proposals
+        participatory_budget: Participatory Budget
+        user_voted_budgets: Users that have voted
+        user_supported_budgets: Users that have voted
+        unverified_users: Unverified users
+      spending_proposals:
+        title: Participatory Budgets
+        districts: District
+        users: Users
+        users_city_total: Users who voted for city-wide proposals
+        users_district_total: Users who voted for district-wide proposals
+        users_city_only: Users who voted ONLY for city-wide proposals
+        users_district_only: Users who voted ONLY for district-wide proposals
+        users_both_total:  Users who voted for BOTH
+      budgets:
+        title: "Participatory Budgets - Participation stats"
+        supporting_phase: Supporting phase
+        balloting_phase: Final voting
+      budget_balloting:
+        title: "Final voting stats"
+        vote_count: Votes
+        participant_count: Participants
+        users_city_total: Users who voted for city-wide proposals
+        users_district_total: Users who voted for district-wide proposals
+        users_both_total:  Users who voted for BOTH
+        votes_per_heading: Votes per heading
+        participants_per_district: Participants per district
+      budget_supporting:
+        title: "Supporting phase stats"
+        headings: Headings
+        users: Users
+        users_city_total: Users who voted for city-wide proposals
+        users_district_total: Users who voted for district-wide proposals
+        users_city_only: Users who voted ONLY for city-wide proposals
+        users_district_only: Users who voted ONLY for district-wide proposals
+        users_both_total:  Users who voted for BOTH
+        vote_count: Votes
+        participant_count: Participants
       direct_messages:
         title: Direct messages
         total: Total
         users_who_have_sent_message: Users that have sent a private message
+      polls:
+        title: Poll Stats
+        all: Polls
+        web_participants: Web participants
+        total_participants: Total Participants
+        poll_questions: "Questions from poll: %{poll}"
+        table:
+          poll_name: Poll
+          question_name: Question
+          origin_web: Web participants
+          origin_total: Total participants
       proposal_notifications:
         title: Proposal notifications
         total: Total
         proposals_with_notifications: Proposals with notifications
+        not_available: Proposal not available
+      reedemable_codes:
+        title: Redeemable codes
+        total: Total
+        campaign: After sending 400.000 letters
+      user_invites:
+        title: Invitations from Linea Madrid
+        total: Total
+        clicked_email_link: Clicked email link
+        clicked_signup_button: Clicked signup button
     tags:
       create: Create topic
       destroy: Destroy topic

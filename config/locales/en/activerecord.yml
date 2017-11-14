@@ -53,8 +53,8 @@ en:
         one: "Citizen proposal"
         other: "Citizen proposals"
       spending_proposal:
-        one: "Spending proposal"
-        other: "Spending proposals"
+        one: "Investment project"
+        other: "Investment projects"
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -71,8 +71,8 @@ en:
         one: "Draft version"
         other: "Draft versions"
       legislation/draft_texts:
-          one: "Draft"
-          other: "Drafts"
+        one: "Draft"
+        other: "Drafts"
       legislation/questions:
         one: "Question"
         other: "Questions"
@@ -89,6 +89,60 @@ en:
         one: "Image"
         other: "Images"
     attributes:
+      volunteer_poll:
+        email: "Email"
+        first_name: "First Name"
+        last_name: "Last name"
+        document_number: "Document number"
+        phone: "Phone"
+        monday_13_morning: monday 13 morning
+        monday_13_afternoon: monday_13_afternoon
+        tuesday_14_morning: tuesday 14 morning
+        tuesday_14_afternoon: tuesday 14 afternoon
+        wednesday_15_morning: wednesday 15 morning
+        wednesday_15_afternoon: wednesday 15 afternoon
+        thursday_16_morning: thursday 16 morning
+        thursday_16_afternoon: thursday 16 afternoon
+        friday_17_morning: friday 17 morning
+        friday_17_afternoon: friday 17 afternoon
+        saturday_18_morning: saturday 18 morning
+        saturday_18_afternoon: saturday 18 afternoon
+        sunday_19_morning: sunday 19 morning
+        sunday_19_afternoon: sunday 19 afternoon
+        monday_20_morning: monday 20 morning
+        monday_20_afternoon: monday 20 afternoon
+        turns: "turns"
+        any_district: "Any district"
+        arganzuela: "Arganzuela"
+        barajas: "Barajas"
+        carabanchel: "Carabanchel"
+        centro: "Centro"
+        chamartin: "Chamartín"
+        chamberi: "Chamberí"
+        ciudad_lineal: "Ciudad Lineal"
+        fuencarral_el_pardo: "Fuencarral-El Pardo"
+        hortaleza: "Hortaleza"
+        latina: "Latina"
+        moncloa_aravaca: "Moncola-Aravaca"
+        moratalaz: "Moratalaz"
+        puente_de_vallecas: "Puente de Vallecas"
+        retiro: "Retiro"
+        salamanca: "Salamanca"
+        san_blas_canillejas: "San Blas Canillejas"
+        tetuan: "Tetuán"
+        usera: "Usera"
+        vicalvaro: "Vicálvaro"
+        villa_de_vallecas: "Villa de Vallecas"
+        villaverde: "Villaverde"
+      budget_poll:
+        name: "First and last name"
+        email: "Email (optional)"
+        preferred_subject: "Preferred subject"
+        collective: "Collective"
+        public_worker: "Public Worker"
+        proposal_author: "Proposal author"
+        selected_proposal_author: "Selected proposal author"
+        help: "I want to help"
       budget:
         name: "Name"
         description_accepting: "Description during Accepting phase"
@@ -109,9 +163,9 @@ en:
         administrator_id: "Administrator"
         description: "Description"
         external_url: "Link to additional documentation"
-        heading_id: "Heading"
+        heading_id: "Is your project for the whole city or is it located in a specific district?"
         title: "Title"
-        location: "Location"
+        location: "Location (optional)"
         organization_name: "If you are proposing in the name of a collective/organization, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
