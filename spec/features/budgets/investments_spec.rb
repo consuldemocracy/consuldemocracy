@@ -207,7 +207,7 @@ feature 'Budget Investments' do
       expect(current_url).to include('order=confidence_score')
       expect(current_url).to include('page=1')
     end
-    
+
     scenario 'Each user as a different and consistent random budget investment order', :js do
       12.times { create(:budget_investment, heading: heading) }
 
@@ -224,28 +224,26 @@ feature 'Budget Investments' do
       expect(@first_user_investments_order).not_to eq(@second_user_investments_order)
 
       in_browser(:one) do
-        visit budget_investments_path(budget, heading: heading)
-#        click_link 'Next'
-#        expect(page).to have_content "You're on page 2"
-#
-#        click_link 'Previous'
-#        expect(page).to have_content "You're on page 1"        
-#        
+        click_link 'Next'
+        expect(page).to have_content "You're on page 2"
+
+        click_link 'Previous'
+        expect(page).to have_content "You're on page 1"
+
         expect(investments_order).to eq(@first_user_investments_order)
       end
 
       in_browser(:two) do
-        visit budget_investments_path(budget, heading: heading)
-#        click_link 'Next'
-#        expect(page).to have_content "You're on page 2"
-#
-#        click_link 'Previous'
-#        expect(page).to have_content "You're on page 1"   
-#        
+        click_link 'Next'
+        expect(page).to have_content "You're on page 2"
+
+        click_link 'Previous'
+        expect(page).to have_content "You're on page 1"
+
         expect(investments_order).to eq(@second_user_investments_order)
       end
     end
-    
+
     def investments_order
       all(".budget-investment h3").collect {|i| i.text }
     end
