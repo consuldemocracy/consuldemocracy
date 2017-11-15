@@ -25,6 +25,14 @@ class Legislation::Question < ActiveRecord::Base
   def first_question_id
     @first_question_id ||= process.questions.sorted.limit(1).pluck(:id).first
   end
+  
+  def previous_question_id
+    @previous_question_id ||= process.questions.where("id < ?", id).sorted.limit(1).pluck(:id).first    
+  end
+  
+  def last_question_id
+    @last_question_id ||= process.questions.sorted.limit(1).pluck(:id).last    
+  end
 
   def answer_for_user(user)
     answers.where(user: user).first

@@ -165,7 +165,8 @@
     margin-bottom: $line-height;
 
     .quiz-title,
-    .quiz-next {
+    .quiz-next,
+    .quiz-previous {
       padding: $line-height;
 
       @include breakpoint(medium) {
@@ -192,7 +193,8 @@
       }
     }
 
-    .quiz-next-link {
+    .quiz-next-link,
+    .quiz-previous-link {
       display: block;
 
       &:hover,
@@ -201,7 +203,8 @@
       }
     }
 
-    .quiz-next {
+    .quiz-next,
+    .quiz-previous {
       background: #ccdbe5;
       color: $brand;
       font-size: $small-font-size;
@@ -211,6 +214,10 @@
       transition: background 0.25s ease-out, background 0.25s ease-out;
 
       .icon-angle-right {
+        vertical-align: middle;
+      }
+
+      .icon-angle-left {
         vertical-align: middle;
       }
 
