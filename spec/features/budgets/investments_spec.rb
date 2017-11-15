@@ -170,6 +170,25 @@ feature 'Budget Investments' do
       expect(order).to eq(new_order)
     end
 
+    scenario "Investments are not repeated with random order", :js do
+      12.times { create(:budget_investment, heading: heading) }
+      # 12 instead of per_page + 2 because in each page there are 10 (in this case), not 25
+
+      visit budget_investments_path(budget, order: 'random')
+
+      first_page_investments = all(".budget-investment h3").collect {|i| i.text }
+
+      click_link 'Next'
+      expect(page).to have_content "You're on page 2"
+
+      second_page_investments = all(".budget-investment h3").collect {|i| i.text }
+
+      common_values = first_page_investments & second_page_investments
+
+      expect(common_values.length).to eq(0)
+
+    end
+
     scenario 'Proposals are ordered by confidence_score', :js do
       create(:budget_investment, heading: heading, title: 'Best proposal').update_column(:confidence_score, 10)
       create(:budget_investment, heading: heading, title: 'Worst proposal').update_column(:confidence_score, 2)
