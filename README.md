@@ -80,51 +80,62 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Working with Docker
 
-Prerequisites
--------------
+### Prerequisites
 
 You should have installed Docker and Docker Compose in your machine.
 
-Also if you are going to work with docker first replace the database.yml with the preconfigured file made it to work it 
+On macos just:
 
+```bash
+brew install docker
+brew install docker-compose
+```
 
-    cp config/database-docker.yml.example config/database.yml
+### Installation
 
+Then lets create our secrets and database config files based on examples:
 
-The First step is to build the container
+```bash
+cp config/secrets.yml.example config/secrets.yml
+cp config/database-docker.yml.example config/database.yml
+```
 
-    sudo docker build -t consul .
-  Then run 
-  
+Then you'll have to build the container with:
+```bash
+sudo docker build -t consul .
+```
 
-    sudo docker-compose up -d database
-   to create your application and database images.
+Create your app database images:
 
-Once built you can initialize your development DB and populate it with
+```bash
+sudo docker-compose up -d database
+```
 
-    sudo docker-compose run app rake db:create
-    sudo docker-compose run app rake db:migrate
-    sudo docker-compose run app rake db:seed
-    sudo docker-compose run app rake db:dev_seed
+Once built you can initialize your development DB and populate it with:
+```
+sudo docker-compose run app rake db:create
+sudo docker-compose run app rake db:migrate
+sudo docker-compose run app rake db:seed
+sudo docker-compose run app rake db:dev_seed
+```
 
-If you want to run the rails console just run in another terminal:
+### Running local CONSUL with Docker
 
+Now we can finally run the application with:
+```bash
+sudo docker-compose up 
+```
 
-  `sudo docker-compose run app rails console`
-    
+And you'll be able to acces it at your browser visiting [http://localhost:3000](http://localhost:3000)
 
-Now we can finally run the application with
+Additionally, if you want to run the rails console just run in another terminal:
 
-
-    sudo docker-compose up 
+```bash
+sudo docker-compose run app rails console
+``` 
 
 To verify the containers are up execute **sudo docker ps .** You should see output similar to this:
 
 ![enter image description here](https://i.imgur.com/ASvzXrd.png)
 
-now you can enter to localhost:3000 
-
-to verify that CONSUL is running 
-
-![enter image description here](https://i.imgur.com/Fl3XOIg.png)
 

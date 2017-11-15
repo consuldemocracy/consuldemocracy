@@ -93,5 +93,4 @@ group :development do
   gem 'web-console', '~> 3.3.0'
 end
 
-#this is crashing with the Dockerfile
 eval_gemfile './Gemfile_custom'
