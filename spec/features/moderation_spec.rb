@@ -93,17 +93,27 @@ feature 'Moderation' do
     expect(page).to_not have_link('Valuation')
   end
 
-  scenario 'Moderation dashboard' do
-    create(:moderator, user: user)
-    login_as(user)
-    visit root_path
+  context 'Moderation dashboard' do
+    background do
+      Setting['org_name'] = 'OrgName'
+    end
 
-    click_link 'Moderation'
+    after do
+      Setting['org_name'] = 'CONSUL'
+    end
 
-    expect(current_path).to eq(moderation_root_path)
-    expect(page).to have_css('#moderation_menu')
-    expect(page).to_not have_css('#admin_menu')
-    expect(page).to_not have_css('#valuation_menu')
+    scenario 'Contains correct elements' do
+      create(:moderator, user: user)
+      login_as(user)
+      visit root_path
+
+      click_link 'Moderation'
+
+      expect(page).to have_link('Go back to OrgName')
+      expect(current_path).to eq(moderation_root_path)
+      expect(page).to have_css('#moderation_menu')
+      expect(page).to_not have_css('#admin_menu')
+      expect(page).to_not have_css('#valuation_menu')
+    end
   end
-
 end
