@@ -105,6 +105,13 @@ Once built you can initialize your development DB and populate it with
     sudo docker-compose run app rake db:create
     sudo docker-compose run app rake db:migrate
     sudo docker-compose run app rake db:seed
+    sudo docker-compose run app rake db:dev_seed
+
+If you want to run the rails console just run in another terminal:
+
+
+  `sudo docker-compose run app rails console`
+    
 
 Now we can finally run the application with
 
