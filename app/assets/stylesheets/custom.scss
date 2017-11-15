@@ -2146,6 +2146,41 @@ a.show-hidden-projects {
   }
 }
 
+.legislation-proposals {
+
+  &.results {
+
+    h3 {
+      margin: $line-height 0;
+    }
+
+    a {
+      color: $text;
+    }
+
+    small {
+      color: #bfbfbf;
+    }
+
+    .panel {
+      margin-bottom: $line-height / 2;
+      min-height: $line-height * 6;
+      padding-bottom: $line-height;
+    }
+
+    .total-votes {
+
+      @include breakpoint(medium down) {
+        padding-top: $line-height;
+      }
+    }
+
+    hr {
+      max-width: none;
+    }
+  }
+}
+
 // 08. Spending proposals votes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
