@@ -1,0 +1,104 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: faq_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="menu small-12 medium-3 column">
+    <%= back_link_to more_info_path %>
+
+    <ul class="menu vertical margin-top">
+      <li><a href="#1"><strong>No me funciona la verificación de residencia.</strong></a></li>
+      <li><a href="#2"><strong>No estoy empadronado en Madrid ¿por qué no puedo participar?</strong></a></li>
+      <li><a href="#3"><strong>¿Para qué sirve verificar mi cuenta? ¿qué es esto de la carta con un código que me vais a mandar?</strong></a></li>
+      <li><a href="#4"><strong>¿Necesito teléfono móvil o acceso a Internet para poder participar?</strong></a></li>
+      <li><a href="#5"><strong>¿Cómo creo y verifico mi cuenta?</strong></a></li>
+      <li><a href="#6"><strong>¿Cómo puedo enviar una propuesta al Ayuntamiento? ¿Puedo mandaros directamente mi propuesta a alguno de los correos electrónico que aparecen en la web de participación?</strong></a></li>
+      <li><a href="#7"><strong>Hay muchas propuestas parecidas, ¿no se podrían unificar?</strong></a></li>
+      <li><a href="#8"><strong>Me he olvidado de mi contraseña o no me funciona ¿qué puedo hacer?</strong></a></li>
+      <li><a href="#9"><strong>No consigo crear mi cuenta correctamente.</strong></a></li>
+      <li><a href="#10"><strong>¿Cómo puedo cambiar mi correo electrónico, mi nombre de usuario, mi contraseña o activar/desactivar las notificaciones que me llegan al correo electrónico?</strong></a></li>
+    </ul>
+  </div>
+
+  <div class="text small-12 medium-9 column">
+    <h1 class="clear">Soluciones a problemas técnicos (FAQ)</h1>
+    <p>Te presentamos una lista de las soluciones a los problemas y dudas técnicas más frecuentes del Portal de Gobierno Abierto. Si esto no resuelve tu problema, puedes llamar al 010 (o a su versión gratuita 915298210) o acercarte a cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> que tienes en Madrid.</p>
+
+    <h2 id="1">No me funciona la verificación de residencia.</h2>
+    <p>Comprueba las siguientes posibilidades:</p>
+    <ul>
+      <li>¿Has puesto el DNI o documento con todos los caracteres juntos, incluyendo la letra al final?</li>
+      <li>¿Estás seguro de que estás empadronado en el <strong>municipio</strong> de Madrid? (el municipio es geográficamente más pequeño que la Comunidad de Madrid).</li>
+      <li>Puede que haya algún problema en el registro de empadronamiento con tus datos. Por favor llama al 010 (o a su versión grauita 915298210) y confirma que tu información de Padrón es correcta.</li>
+      <li>Si todo lo anterior no soluciona el problema, puedes acercarte a cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> que hay por todo Madrid, y te lo resolverán en el acto.</li>
+    </ul>
+
+    <h2 id="2">No estoy empadronado en Madrid ¿por qué no puedo participar?</h2>
+    <p>El apoyo y votación de propuestas está limitado a la gente empadronada en Madrid, ya que se trata de tomar decisiones que afectarán al municipio y a los que viven en él, y por tanto nos parece que son ellos los que tienen que tomar la decisión final. Es cierto que hay personas que no están empadronadas en Madrid y que aun así les pueden afectar esas decisiones, pero el Padrón es el censo más amplio del que disponemos que nos permite que el proceso de participación sea seguro y lleguemos al máximo posible de personas. No obstante, sí que es posible participar aunque no se esté empadronado. La sección de debates está abierta a todo el mundo, y también es posible lanzar una propuesta, o comentar las propuestas existentes sin necesidad de estar empadronado. Sólo la decisión sobre las propuestas (apoyos y votaciones) están limitadas a la gente empadronada.</p>
+
+    <h2 id="3">¿Para qué sirve verificar mi cuenta? ¿qué es esto de la carta con un código que me vais a mandar?</h2>
+    <p>Para usar la web necesitamos una cuenta de usuario, que podrá hacer más o menos cosas según esté más o menos verificada:</p>
+    <ul>
+      <li>Si nos <a href="<%= request.url %>users/sign_up">registramos</a> en la web con nuestro correo electrónico y no damos ningún dato más (no hacemos el proceso de verificación de residencia) podremos:</li>
+    </ul>
+
+    <p><span class="icon-check"></span> Participar en debates</p>
+    <p><span class="icon-check"></span> Crear propuestas</p>
+
+    <ul>
+      <li>Si despues de registrarnos realizamos la verificación básica (a través de la web consiste en verificar la residencia y dar un móvil para que nos manden un código de confirmación; ver información detallada del proceso en la sección <a href="#5">"¿Cómo creo y verifico mi cuenta?"</a> será posible:</li>
+    </ul>
+
+    <p><span class="icon-check"></span> Participar en debates</p>
+    <p><span class="icon-check"></span> Crear propuestas</p>
+    <p><span class="icon-check"></span> Apoyar propuestas</p>
+
+    <ul>
+      <li>Si realizamos la verificación completa de nuestra cuenta (esto se puede realizar presencialmente en cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> que hay por todo Madrid, o después de realizar la verificación básica pulsando en el enlace "Solicitar una carta por correo postal" que nos mandará a casa una carta con un código y unas instrucciones muy sencillas para terminar de verificarnos completamente) nos será posible realizar todas las acciones:</li>
+    </ul>
+
+    <p><span class="icon-check"></span> Participar en debates</p>
+    <p><span class="icon-check"></span> Crear propuestas</p>
+    <p><span class="icon-check"></span> Apoyar propuestas</p>
+    <p><span class="icon-check"></span> Votar propuestas</p>
+
+    <p><strong>Recuerda</strong> que la votación de propuestas es un proceso muy concreto que sólo ocurre durante una semana una vez las propuestas han llegado al 1% de apoyos, por lo tanto por lo general será posible realizar todas las acciones en la web con la verificación básica de nuestra cuenta.</p>
+
+    <p>También es importante recalcar que podemos crear y verificar completamente nuestra cuenta sin pasar por Internet, realizando el proceso completamente de manera presencial en cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> que hay por todo Madrid.
+
+    <h2 id="4">¿Necesito teléfono móvil o acceso a Internet para poder participar?</h2>
+    <p>No. Todas las acciones relacionadas con las propuestas, tanto crearlas, como apoyarlas, votarlas o informarnos sobre ellas, es algo que podemos hacer presencialmente en cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> que hay por todo Madrid, simplemente presentando nuestro DNI, pasaporte o tarjeta de residencia (recuerda que para apoyar o votar propuestas es necesario estar empadronado en Madrid). Además podremos presentar hojas de firmas para apoyar una propuesta concreta. También podremos crearnos una cuenta de usuario completamente verificada, en caso de que optemos en algún momento por utilizar la web directamente.
+    </p>
+
+    <h2 id="5">¿Cómo creo y verifico mi cuenta?</h2>
+    <ul>
+      <li>Lo primero es crear una cuenta básica. Para ello hacemos clic en el enlace <a href="<%= request.url %>users/sign_up">Registrarse</a> y rellenamos los datos que nos piden. Es un requisito marcar la casilla de aceptación de las condiciones de uso. Al crear una cuenta nos llegará un correo electrónico a la dirección que hayamos especificado, y tendremos que hacer click en el enlace que contiene (el enlace que pone "Confirmar mi cuenta") para terminar de crear la cuenta.</li>
+      <li>Una vez creada la cuenta básica, y tras <a href="<%= request.url %>users/sign_in">entrar</a> con nuestro correo y contraseña, el sistema nos dará la opción de realizar una verificación básica de la misma. Tanto este paso como el siguiente se pueden realizar presencialmente en cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> que hay por todo Madrid. Si preferimos hacerlo a través de la web, hacemos click en el enlace <a href="<%= request.url %>account">"Mi cuenta"</a> de la parte superior derecha, y luego en el botón "Verificar mi cuenta". Lo primero que se nos pedirá es que introduzcamos nuestros datos de residencia, para verificar que estamos empadronados en el municipio de Madrid (es importante introducir el número de documento con la letra; y marcar la casilla de aceptación de acceso al Padrón). Si los datos son correctos, se nos pedirá un teléfono móvil para mandarnos un código de confirmación, que introduciremos en la siguiente página que se nos presente. Este móvil no se utilizará para contactarnos ni para enviarnos nada en ningún momento, sólo es una medida de seguridad. Si preferimos no dar ningún teléfono móvil, podemos realizar el proceso sin necesidad de él en las Oficinas de Atención al Ciudadano, como comentamos anteriormente. Una vez introducido correctamente el código de confirmación, nuestra cuenta nos permitirá apoyar propuestas.</li>
+      <li>Para poder acceder a las votaciones finales de las propuestas, tendremos que verificar completamente nuestra cuenta. No obstante recuerda que la votación de propuestas es un proceso muy concreto que sólo ocurre durante una semana una vez las propuestas han llegado al 1% de apoyos, por lo tanto por lo general será posible realizar todas las acciones en la web con la anterior verificación básica de nuestracuenta. Para verificar completamente nuestra cuenta, podemos hacerlo presencialmente en cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a>, o bien a través de la web <a href="<%= request.url %>users/sign_in">entrando</a> con nuestro correo y contraseña, hacer clic en el enlace <a href="<%= request.url %>account">"Mi cuenta"</a> de la parte superior derecha, pulsar el botón "Finalizar verificación", y finalmente hacer click en "Solicitar el envío de un correo postal". Una vez solicitado, nos llegará a nuestra dirección de empadronamiento una carta, con un código de seguridad y unas sencillas instrucciones para realizar la verificación.</li>
+    </ul>
+
+    <h2 id="6">¿Cómo puedo enviar una propuesta al Ayuntamiento? ¿Puedo mandaros directamente mi propuesta a alguno de los correos electrónico que aparecen en la web de participación?</h2>
+    <p>El camino correcto para hacer una propuesta es añadirla uno mismo directamente en la web de participación dentro de la sección <a href="<%= request.url %>proposals">"Propuestas"</a> (para ello es necesario primero crear una cuenta haciendo click en el enlace <a href="<%= request.url %>users/sign_up">Registrarse</a>, y una vez creada, hacer click en el botón "Crear propuesta" de la sección "Propuestas"), o presencialmente a través de cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> que hay por todo Madrid. En caso de que lo que queremos presentar sea una sugerencia o reclamación, la información para presentarlas se encuentra <a href="https://sede.madrid.es/portal/site/tramites/menuitem.1f3361415fda829be152e15284f1a5a0/?vgnextoid=32eddd9d6baed010VgnVCM2000000c205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">en esta página</a>.
+
+    <h2 id="7">Hay muchas propuestas parecidas, ¿no se podrían unificar?</h2>
+    <p>En breve implementaremos una nueva funcionalidad de la web que permitirá marcar propuestas similares como tales, y que se muestren al visualizar cualquiera de ellas. De esta forma la gente podrá decidir cuál de ellas apoyar tras compararlas, y ayudará a que no se dispersen tanto los apoyos y no se repitan tanto las mismas propuestas. También implementaremos un sistema que cuando creemos nuestra propuesta nos mostrará propuestas similares, por si la idea que queremos lanzar ya existiera en el portal de participación.</p>
+
+    <p>Sobre la posibilidad de unificar propuestas, lo que pueden parecer pequeñas diferencias entre dos propuestas similares, pueden marcar grandes diferencias a la hora de hacerlas realidad. Por ello hay personas que pueden querer apoyar una de ellas y no otras. Es por eso que debemos respetar los apoyos particulares que haya dado la gente, y no unificar las propuestas. Esto es independiente de que los autores de las propuestas quieran unirlas. Una vez las propuestas están recibiendo apoyos pasan a ser tanto de la gente que las apoya como de sus autores.</p>
+
+    <h2 id="8">Me he olvidado de mi contraseña o no me funciona ¿qué puedo hacer?</h2>
+    <ul>
+      <li>Puedes hacer <a href="<%= request.url %>users/password/new">solicitar un nueva contraseña</a> para que se te envíe una nueva contraseña a tu correo electrónico.</li>
+      <li>Si la anterior solución no funcionan, puedes acercarte a cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> que hay por todo Madrid, donde te resolverán el problema presencialmente solucionando el problema asociado a tu cuenta o creándote una cuenta nueva.</li>
+    </ul>
+
+    <h2 id="9">No consigo crear mi cuenta correctamente.</h2>
+    <ul>
+      <li>Revisa por favor la sección <a href="#1">"No me funciona la verificación de residencia"</a>, por si el problema estuviera en ese paso, que suele ser el problema más frecuente.</li>
+      <li>Si no se ha solucionado, revisa la sección <a href="#5">"¿Cómo creo y verifico mi cuenta?"</a>, para asegurarte de que estás siguiendo los pasos adecuadamente.</li>
+      <li>Si todavía se mantiene el problema, acércate a cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> que hay por todo Madrid, donde te resolverán el problema presencialmente.</li>
+    </ul>
+
+    <h2 id="10">¿Cómo puedo cambiar mi correo electrónico, mi nombre de usuario, mi contraseña, darme de baja o activar/desactivar las notificaciones que me llegan al correo electrónico?</h2>
+    <p>Haz click en el enlace <a href="<%= request.url %>users/sign_in">"Entrar"</a>, introduce tu correo electrónico y tu contraseña, y pulsa el botón "Entrar". Una vez hecho esto, haz click en el enlace <a href="<%= request.url %>account">"Mi cuenta"</a> donde encontrarás todas las opciones que te permitirán cambiar tu correo electrónico, nombre de usuario, contraseña, darte de baja o activar/desactivar las notificaciones. Una vez realizado el cambio adecuado asegúrate de hacer click en el botón "Guardar cambios".</p>
+  </div>
+</div>

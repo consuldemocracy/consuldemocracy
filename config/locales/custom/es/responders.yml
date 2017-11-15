@@ -3,5 +3,6 @@ es:
     actions:
       create:
         spending_proposal: "Propuesta de inversión creada correctamente. Puedes acceder a ella desde %{activity}"
+        representative: "Has actualizado tu representante"
       update:
         budget_investment: "Proyecto de gasto actualizado correctamente"

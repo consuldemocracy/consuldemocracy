@@ -1,4 +1,3 @@
----
 en:
   pages:
     census_terms: To confirm the account, you must be 16 or older and be registered as resident in Madrid, having provided the information requested previously, which the Directorate-General of Civil Participation will verify against the files 'Municipal Census of Inhabitants', for which the Directorate-General for Statistics is responsible, and the 'Citizen Support Services', for which the Directorate-General for Quality and Citizen Services is responsible. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed by the Directorate-General for Civil Participation in the file 'Management of Participatory Activities' mentioned previously in the terms and conditions of use for the Portal.
@@ -64,6 +63,11 @@ en:
         title: "Technical problems?"
         description: "Read the FAQs and solve your questions."
         button: "View frequently asked questions"
+        page:
+          title: "Frequently Asked Questions"
+          description: "Use this page to resolve the common FAQs to the users of site."
+          faq_1_title: "Question 1"
+          faq_1_description: "This is an example for the description of question one."
       other:
         title: "Other information of interest"
         how_to_use: "Use %{org_name} in your city"

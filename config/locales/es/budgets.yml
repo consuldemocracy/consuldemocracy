@@ -11,7 +11,7 @@ es:
           one: "Has votado <span>un</span> proyecto."
           other: "Has votado <span>%{count}</span> proyectos."
         voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
-        zero: "Todavía no has votado ningún proyecto de gasto."
+        zero: Todavía no has votado ninguna propuesta de inversión.
       reasons_for_not_balloting:
         not_logged_in: Necesitas %{signin} o %{signup} para continuar.
         not_verified: Los proyectos de gasto sólo pueden ser apoyados por usuarios verificados, %{verify_account}.
@@ -51,9 +51,9 @@ es:
         help_text_4: "Para conseguir el mayor número de apoyos y votos posible, elige un titular descriptivo y comprensible de tu proyecto. Después tienes un espacio para desarrollar el planteamiento de tu propuesta. Aporta todos los datos y explicaciones, e incluso documentos e imágenes, para ayudar a otras personas participantes a entender mejor lo que planteas."
     investments:
       form:
-        tags_instructions: "Etiqueta este proyecto. Puedes elegir entre las categorías propuestas o introducir las que desees"
-        tags_label: Temas
         tag_category_label: "Categorías"
+        tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
+        tags_label: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
         faq: "¿Qué puedes proponer?"
         faq_link: "Mira toda la información sobre los presupuestos participativos"
@@ -62,10 +62,9 @@ es:
         map_remove_marker: "Eliminar el marcador"
       index:
         title: Presupuestos participativos
-        unfeasible: Proyectos de gasto no viables
-        unfeasible_text: Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declarados viables y llegar hasta la fase de votación final. Todos los proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad.
+        unfeasible: Propuestas de inversión no viables
+        unfeasible_text: "Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad."
         unfeasible_text_definitions: ver definiciones aquí
-        by_heading_html: "Proyectos de gasto con ámbito:<br>%{heading}"
         search_form:
           button: Buscar
           placeholder: Buscar proyectos de gasto...
@@ -80,10 +79,10 @@ es:
             other: "<strong>Has votado %{count} proyectos por un valor de %{amount_spent}</strong>"
           voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
           voted_info_link: cambiar tus votos
-          different_heading_assigned_html: "Ya apoyaste propuestas de otro distrito: %{heading_link}"
+          different_heading_assigned_html: 'Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}'
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
           check_ballot_link: "revisar mis votos"
-          zero: "Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto."
+          zero: Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto.
           verified_only: "Para crear una nueva propuesta de inversión %{verify}."
           verify_account: "verifica tu cuenta"
           create: "Crear proyecto de gasto"
@@ -116,22 +115,22 @@ es:
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         add: Votar
-        already_added: "Ya has añadido este proyecto de gasto"
-        already_supported: Ya has apoyado este proyecto. ¡Compártelo!
-        support_title: Apoyar este proyecto
-        confirm_group: "Sólo puedes apoyar proyectos en un distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
+        already_added: Ya has añadido esta propuesta de inversión
+        already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
+        support_title: Apoyar esta propuesta
+        confirm_group: "Sólo puedes apoyar propuestas en un distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
         supports:
+          zero: Sin apoyos
           one: 1 apoyo
           other: "%{count} apoyos"
-          zero: Sin apoyos
         give_support: Apoyar
       header:
         check_ballot: Revisar mis votos
-        different_heading_assigned_html: "Ya has votado proyectos de otro distrito: %{heading_link}"
+        different_heading_assigned_html: 'Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}'
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar mis votos"
     progress_bar:
-      available: "Disponible: "
+      available: 'Disponible: '
     show:
       group: Grupo
       phase: Fase actual
@@ -149,10 +148,10 @@ es:
       ballot_lines_count: Votos
       hide_discarded_link: Ocultar descartadas
       show_all_link: Mostrar todas
-      price: Coste
+      price: Coste total
       amount_available: Presupuesto disponible
-      accepted: "Propuesta de inversión aceptada: "
-      discarded: "Propuesta de inversión descartada: "
+      accepted: 'Propuesta de inversión aceptada: '
+      discarded: 'Propuesta de inversión descartada: '
       incompatibles: Incompatibles
     stats:
       title: Estadísticas de participación

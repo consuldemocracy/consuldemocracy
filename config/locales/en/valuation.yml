@@ -1,4 +1,3 @@
----
 en:
   valuation:
     header:
@@ -124,5 +123,3 @@ en:
         save: Save changes
       notice:
         valuate: "Dossier updated"
-
-

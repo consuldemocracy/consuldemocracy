@@ -1,7 +1,15 @@
----
 es:
   admin:
     legislation:
       proposals:
         form:
           custom_categories_placeholder: Escribe las etiquetas que desees separadas por una coma (,) y entrecomilladas ("")
+    budget_investments:
+      show:
+        info: "%{budget_name} - Grupo: %{group_name} - Proyecto de gasto %{id}"
+    spending_proposals:
+      show:
+        compatibility_title: Compatibilidad
+        compatibility:
+          "true": "Compatible"
+          "false": "Incompatible"
