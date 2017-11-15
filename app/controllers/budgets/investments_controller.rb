@@ -94,7 +94,8 @@ module Budgets
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          params[:random_seed] ||= rand(1..9)
+          seed = rand(10..99) / 10.0
+          params[:random_seed] ||= Float(seed) rescue 0
         else
           params[:random_seed] = nil
         end
