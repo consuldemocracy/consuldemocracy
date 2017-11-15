@@ -93,4 +93,4 @@ group :development do
 end
 
 #this is crashing with the Dockerfile
-#eval_gemfile './Gemfile_custom'
+eval_gemfile './Gemfile_custom'
