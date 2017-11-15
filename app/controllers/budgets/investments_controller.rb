@@ -28,8 +28,8 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = @investments.apply_filters_and_search(@budget, params, @current_filter)
-                                 .send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
+      @investments = investments.page(params[:page]).per(10).for_render
+
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
@@ -94,9 +94,7 @@ module Budgets
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          params[:random_seed] ||= rand(99) / 100.0
-          seed = Float(params[:random_seed]) rescue 0
-          Budget::Investment.connection.execute("select setseed(#{seed})")
+          params[:random_seed] ||= rand(9)
         else
           params[:random_seed] = nil
         end
@@ -129,6 +127,17 @@ module Budgets
 
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
+      end
+
+      def investments
+        case @current_order
+        when 'random'
+          @investments.apply_filters_and_search(@budget, params, @current_filter)
+                      .send("sort_by_#{@current_order}", params[:random_seed])
+        else
+          @investments.apply_filters_and_search(@budget, params, @current_filter)
+                      .send("sort_by_#{@current_order}")
+        end
       end
 
   end
