@@ -242,8 +242,8 @@ he:
         one: הצעה להשקעה כספית
         other: הצעות  להשקעה כספית
       site_customization/page:
-        one: התאמה אישית לדף
-        other: התאמה אישית לדפים
+        one: דף מתואם אישית
+        other: דפים בהתאמה אישית
       site_customization/image:
         one: תמונה מותאמת אישית
         other: תמונות מותאמות אישית
@@ -269,8 +269,8 @@ he:
         one: תשובה
         other: תשובות
       budget/investment/milestone:
-        one: 
-        other: 
+        one: ציון דרך
+        other: ציוני דרך
     attributes:
       budget:
         name: שם
@@ -351,7 +351,7 @@ he:
         updated_at: עודכן ב-
         more_info_flag: לצפייה במידע נוסף
         print_content_flag: לחצן להדפסה
-        locale: 
+        locale: שפה
       site_customization/image:
         name: שם
         image: תמונה
@@ -360,7 +360,7 @@ he:
         locale: איזור גאוגרפי
         body: גוף
       legislation/process:
-        title: כותרת התהליך
+        title: כותרת הדיון המקצועי
         description: תיאור
         additional_info: עזרה
         start_date: תאריך התחלה
@@ -385,8 +385,8 @@ he:
       legislation/annotation:
         text: תגובה
       budget/investment/milestone:
-        title: 
-        description: 
+        title: כותרת
+        description: תיאור
   datetime:
     distance_in_words:
       half_a_minute: חצי דקה
@@ -448,8 +448,8 @@ he:
       one_page:
         display_entries:
           zero: "%{entry_name} לא נמצא"
-          one: קיים  <strong>1 %{entry_name}</strong>
-          other: קיימים  <strong>%{count} %{entry_name}</strong>
+          one: קיימת  <strong>1 %{entry_name}</strong>
+          other: קיימות  <strong>%{count} %{entry_name}</strong>
       more_pages:
         display_entries: מציג <strong>%{first}&nbsp;-&nbsp;%{last}</strong> מתוך<strong>%{total}
           %{entry_name}</strong>
@@ -534,7 +534,7 @@ he:
         tree_translate: Google Translate a tree to root locales
         unused: show unused translations
         xlsx_report: save missing and unused translations to an Excel file
-        check_normalized: 
+        check_normalized: verify that all translation data is normalized
       encourage:
       - Good job! סחטיין עליך!
       - Well done! שאפו!
@@ -590,8 +590,8 @@ he:
       none: No key usages found.
   devise:
     confirmations:
-      confirmed: חשבונך אושר בהצלחה. כעת הנך מחובר/ת.
-      send_instructions: בדקות הקרובות תגיע אליך הודעה בדואר האלקטרוני עם הנחיות כיצד
+      confirmed: שלב האבטחה הסתיים בהצלחה. כעת הנך מאושר/ת.
+      send_instructions: בדקות הקרובות תגיע אליך הודעה בדואר אלקטרוני עם הנחיות כיצד
         לאשר את הרשמתך.
       send_paranoid_instructions: אם הדואר האלקטרוני שלך קיים במאגר, עוד כמה דקות
         נשלח לך הודעה עם קישור לאיפוס סיסמה.
@@ -829,11 +829,11 @@ he:
         no_heading: לקבוצה זו לא הוקצתה כותרת
         table_heading: כותרת
         table_amount: כמות
-        population: 
-        table_population: 
+        population: Population
+        table_population: Population
       winners:
-        calculate: 
-        calculated: 
+        calculate: Calculate Winner Investments
+        calculated: Winners being calculated, it may take a minute.
     budget_investments:
       index:
         heading_filter_all: כל הכותרות
@@ -849,7 +849,7 @@ he:
           valuation_finished_feasible: בר ביצוע
           selected: נבחר
           all: הכל
-          winners: 
+          winners: Winners
         title: מיזמים להשקעה
         assigned_admin: מנהל/ת שהוקצה למיזם
         no_admin_assigned: לא הוקצה מנהל/ת
@@ -870,7 +870,7 @@ he:
         table_valuation_finished: ערך סופי
         table_selection: בחירה
         table_winner: זוכה
-        table_incompatible: 
+        table_incompatible: Incompatible
       show:
         assigned_admin: מנהל/ת שהוקצה למיזם
         assigned_valuators: מעריכים/ות שהוקצו
@@ -886,20 +886,20 @@ he:
         edit_dossier: עריכת מסמכים נלווים
         tags: תגיות
         undefined: אינו מוגדר
-        milestone: 
-        new_milestone: 
+        milestone: ציון דרך
+        new_milestone: יצירת ציון דרך חדש
         compatibility:
-          title: 
-          'true': 
-          'false': 
+          title: Compatibility
+          'true': Incompatible
+          'false': Compatible
         selection:
-          title: 
-          'true': 
-          'false': 
+          title: Selection
+          'true': Selected
+          'false': Not selected
         winner:
-          title: 
-          'true': 
-          'false': 
+          title: Winner
+          'true': 'Yes'
+          'false': 'No'
       edit:
         classification: סיווג
         assigned_valuators: מעריכים/ות
@@ -908,10 +908,10 @@ he:
         tags: תגיות
         tags_placeholder: הזנת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)
         undefined: לא הוגדר
-        compatibility: 
-        mark_as_incompatible: 
-        selection: 
-        mark_as_selected: 
+        compatibility: Compatibility
+        mark_as_incompatible: Mark as incompatible
+        selection: Selection
+        mark_as_selected: Mark as selected
       search_unfeasible: חיפוש מיזמים שאינם ברי יישום
     comments:
       index:
@@ -968,18 +968,18 @@ he:
           enabled: אפשר
           process: תהליך
           debate_phase: שלב דיון ציבורי
-          allegations_phase: שלב הטענות
+          allegations_phase: הוספת תגובות
           start: פתיחת
           end: סיום
           use_markdown: השתמש בסימון כדי לעצב את המלל
-          title_placeholder: כותרת התהליך
+          title_placeholder: כותרת הדיון המקצועי
           summary_placeholder: סיכום קצר של התיאור
           description_placeholder: הוספת תיאור של התהליך
           additional_info_placeholder: הוספת מידע מועיל נוסף
         index:
           create: התהליך הבא
           delete: מחק
-          title: חקיקה השתתפותית
+          title: דיון מיקצועי
           filters:
             open: פתוח
             next: הבא
@@ -987,7 +987,7 @@ he:
             all: הכל
         new:
           back: חזרה
-          title: יצירת תהליך חקיקה השתתפותית חדש
+          title: יצירת דיון מקצועי חדש
           submit_button: יצירת תהליך
         process:
           title: תהליך
@@ -1123,7 +1123,7 @@ he:
       stats: סטטיסטיקות
       signature_sheets: גליונות חתימה
       site_customization:
-        pages: התאמה אישית לדף
+        pages: דף מותאם אישית
         images: תמונות מותאמות אישית
         content_blocks: התאמה אישית לבלוקי התוכן
       title_categories: תחומים
@@ -1133,7 +1133,7 @@ he:
       title_profiles: פרופילים
       title_banners: מודעות גרפיות
       title_site_customization: התאמה אישית של המערכת
-      legislation: חקיקה השתתפותית
+      legislation: דיון מקצועי
       users: משתמשים/ות
     administrators:
       index:
@@ -1655,7 +1655,7 @@ he:
         index:
           create: יצירת דף חדש
           delete: מחיקת דף
-          title: התאם/י אישית את הדף
+          title: התאמה אישית של הדף
           see_page: צפייה בדף
         new:
           title: יצירת דף מותאם אישית חדש
@@ -1666,25 +1666,25 @@ he:
           updated_at: עודכן ב-
           status_draft: טיוטה
           status_published: פורסם
-          locale: 
+          locale: שפה
     milestones:
       index:
-        table_id: 
-        table_title: 
-        table_description: 
-        table_actions: 
-        delete: 
-        no_milestones: 
+        table_id: ID
+        table_title: כותרת
+        table_description: Description
+        table_actions: Actions
+        delete: מחיקת ציון הדרך
+        no_milestones: אין ציוני דרך מוגדרים
       new:
-        creating: 
+        creating: צור ציון דרך
       edit:
-        title: 
+        title: עריכת ציון הדרך
       create:
-        notice: 
+        notice: ציון דרך חדש נוצר בהצלחה
       update:
-        notice: 
+        notice: עדכון ציון הדרך בוצע בהצלחה
       delete:
-        notice: 
+        notice: ציון הדרך נמחק
   budgets:
     ballots:
       show:
@@ -1729,7 +1729,7 @@ he:
     investments:
       form:
         tag_category_label: תחומים
-        tags_instructions: תיוג הצעה זו. ניתן לבחור תחום קיים או להוסיף חדש
+        tags_instructions: תיוג הצעה זו. ניתן לבחור תחום קיים או להוסיף תגית חדשה
         tags_label: תגיות
         tags_placeholder: הזנת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)
       index:
@@ -1746,8 +1746,8 @@ he:
           placeholder: חיפוש מיזמים  להשקעה...
           title: חיפוש
         search_results_html:
-          one: " הכוללים את המונח <strong>'%{search_term}'</strong>"
-          other: "  הכוללים את המונח <strong>'%{search_term}'</strong>"
+          one: " הכוללות את המונח <strong>'%{search_term}'</strong>"
+          other: "  הכוללות את המונח <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: ההצבעה שלי
           voted_html:
@@ -1786,10 +1786,10 @@ he:
         supports: תמיכה
         votes: הצבעות
         price: מחיר
-        comments_tab: 
-        milestones_tab: 
-        no_milestones: 
-        milestone_publish_date: 
+        comments_tab: תגובות
+        milestones_tab: ציוני דרך
+        no_milestones: אין ציוני דרך מוגדרים
+        milestone_publish_date: פורסם%{publish_date}
       wrong_price_format: רק בסכומים שלמים
       investment:
         add: הצבעה
@@ -1831,9 +1831,9 @@ he:
       amount_available: תקציב זמין
       accepted: 'הצעה להשקעה כספית שהתקבלה:'
       discarded: 'הצעה להשקעה כספית שהושלמה:'
-      link: 
-      heading_selection_title: 
-      incompatibles: 
+      link: תוצאות
+      heading_selection_title: לפי אזור הגאוגרפי
+      incompatibles: אינם תואמים
   devise_views:
     confirmations:
       new:
@@ -1971,8 +1971,8 @@ he:
   account:
     show:
       change_credentials_link: שינוי ההרשאות שלי
-      email_on_comment_label: הודיעו לי בדואר אלקטרוני בכל פעם שמתקבלת תגובה להצעות
-        או לדיונים שלי
+      email_on_comment_label: הודיעו לי בדוא"ל בכל פעם שמתקבלת תגובה לדיונים ציבוריים
+        או להצעות שלי
       email_on_comment_reply_label: הודיעו לי בדואר אלקטרוני בכל פעם שמתקבלת תגובה
         על ההערות שלי
       erase_account_link: מחק את החשבון שלי
@@ -1986,25 +1986,26 @@ he:
       save_changes_submit: שמור שינויים
       subscription_to_website_newsletter_label: ארצה לקבל בדואר אלקטרוני מידע מהאתר
       email_on_direct_message_label: לקבל הודעות על פניות אישיות בדואר אלקטרוני
-      email_digest_label: לקבל סיכום התראות הקשורות להצעה
+      email_digest_label: לקבל סיכום התראות הקשורות להצעה שתמכתי בה
       official_position_badge_label: הצג את אות הדירוג הרשמי שלי
       title: החשבון שלי
       user_permission_debates: להשתתף בדיונים
       user_permission_info: עם החשבון שלך תוכל/י...
       user_permission_proposal: ליצור הצעות חדשות
-      user_permission_support_proposal: לתמוך בהצעות
+      user_permission_support_proposal: לתמוך בהצעות (למתפקדים בלבד).
       user_permission_title: השתתפות
       user_permission_verify: לבצע את כל הפעולות הנדרשות לאימות החשבון
-      user_permission_verify_info: "* רק עבור משתמשים/ות רשומים/ות"
-      user_permission_votes: להשתתף בהצבעות סופיות
+      user_permission_verify_info: "* רק עבור מתפקדים/ות רשומים/ות"
+      user_permission_votes: "* להשתתף בהצבעות סופיות"
       username_label: שם משתמש/ת
       verified_account: החשבון זוהה בהצלחה
       verify_my_account: אימות חשבון
-      public_interests_label: 
-      public_interests_my_title_list: 
-      public_interests_user_title_list: 
-      public_interests_my_empty_list: 
-      public_interests_user_empty_list: 
+      public_interests_label: השאר את האינטרס הציבורי שלי גלוי
+      public_interests_my_title_list: רשימת אינטרסים (תגיות שהנך עוקב/ת אחריהן)
+      public_interests_user_title_list: רשימת אינטרסים (תגיות שמשתמש/ת זה/זו עוקב/ת
+        אחריהן)
+      public_interests_my_empty_list: אינך עוקב/ת אחר אף מרכיב
+      public_interests_user_empty_list: משתמש/ת זה/זו אינו/ה עוקב/ת אחר אף מרכיב כרגע
   application:
     close: סגירה
     menu: תפריט
@@ -2084,8 +2085,8 @@ he:
         placeholder: חיפוש דיונים ציבוריים...
         title: חיפוש
       search_results_html:
-        one: " הכוללים את המונח <strong>'%{search_term}'</strong>"
-        other: "  הכוללים את המונח <strong>'%{search_term}'</strong>"
+        one: " הכוללות את המונח <strong>'%{search_term}'</strong>"
+        other: "  הכוללות את המונח <strong>'%{search_term}'</strong>"
       select_order: סדר לפי
       start_debate: פתיחת דיון ציבורי חדש
       title: דיונים ציבוריים
@@ -2202,7 +2203,7 @@ he:
       see_all: צפייה בהצעות
       budgets: תקצוב השתתפותי
       spending_proposals: הצעות להשקעה כספית
-      administration_menu: 
+      administration_menu: מנהל/ת מערכת
     admin:
       watch_form_message: יש לך שינויים שלא נשמרו, האם את/ה מאשר/ת את היציאה מדף?
         (נתונים לא ישמרו)
@@ -2218,7 +2219,7 @@ he:
   notifications:
     index:
       comments_on:
-        one: יש תגובה אחת על
+        one: ישנה תגובה אחת על
         other: ישנן %{count} תגובות חדשות על
       empty_notifications: אין לך הודעות חדשות
       mark_all_as_read: סימון נקראו על כל התגובות
@@ -2230,7 +2231,7 @@ he:
         other: יש %{count} תגובות חדשות להערה שלך לגבי
       title: הודעות
   map:
-    title: שכונות
+    title: אזור גאוגרפי
     proposal_for_district: העלאת הצעה בנוגע לאזור הגיאורפי שלך
     select_district: היקף הפעילות
     start_proposal: הצעה חדשה
@@ -2327,8 +2328,8 @@ he:
         placeholder: חיפוש הצעות ...
         title: חיפוש
       search_results_html:
-        one: "  הכוללים את המונח <strong>'%{search_term}'</strong>"
-        other: "  הכוללים את המונח <strong>'%{search_term}'</strong>"
+        one: "  הכוללות את התגית <strong>'%{search_term}'</strong>"
+        other: "  הכוללות את התגיות <strong>'%{search_term}'</strong>"
       select_order: סדר לפי
       select_order_long: 'ההצעות מוצגות לך על-פי סדר:'
       start_proposal: העל/י הצעה חדשה
@@ -2520,9 +2521,9 @@ he:
         see_all: ראה הכל
       proposal:
         found:
-          one: כבר קיימת הצעה הכוללת את המונח '%{query}' תוכל/י להוסיף את דעתך שם
+          one: כבר קיימת הצעה הכוללת את התגית '%{query}' תוכל/י להוסיף את דעתך שם
             במקום ליצור הצעה חדשה
-          other: כבר קיימות הצעות הכוללות את המונח '%{query}' תוכל/י להוסיף את דעתך
+          other: כבר קיימות הצעות הכוללות את התגית '%{query}' תוכל/י להוסיף את דעתך
             שם במקום ליצור הצעה חדשה
         message: מציג %{limit} מתוך %{count} הצעות הכוללות את המונח '%{query}'
         see_all: הצג הכל
@@ -2540,21 +2541,24 @@ he:
       budget: תקצוב השתתפותי
       searcher: חיפוש
     go_to_page: עבור אל הדף של
-    follow: 
-    follow_entity: 
+    follow: עקוב אחר
+    follow_entity: עקוב אחר%{entity}
     followable:
       budget_investment:
         create:
-          notice_html: 
+          notice_html: כעת הנך עוקב/ת אחרי מיזם השקעה זה </br> אנו נודיע לך על שינויים
+            והתקדמות המיזם כך שתשאר/י מעודכן/ת.
         destroy:
-          notice_html: 
+          notice_html: הפסקת לעקוב אחרי מיזם השקעה זה </br> לא ישלחו התראות נוספות
+            לגביו.
       proposal:
         create:
-          notice_html: 
+          notice_html: כעת הנך עוקב/ת אחרי הצעה זו </br> אנו נודיע לך על שינויים והתקדמות
+            ההצעה כדי שתשאר/י מעודכן/ת.
         destroy:
-          notice_html: 
-    unfollow: 
-    unfollow_entity: 
+          notice_html: הפסקת לעקוב אחרי הצעה זו </br> לא ישלחו התראות נוספות לגביה.
+    unfollow: הפסק לעקוב
+    unfollow_entity: הפסק לעקוב%{entity}
   social:
     blog: "%{org} בלוג"
     facebook: "%{org} פייסבוק"
@@ -2585,7 +2589,7 @@ he:
         title: חיפוש
       search_results:
         one: " הכולל את המונח '%{search_term}'"
-        other: " הכוללים את המונח '%{search_term}'"
+        other: " הכוללות את המונח '%{search_term}'"
       sidebar:
         geozones: היקף הפעילות
         feasibility: סבירות לביצוע
@@ -2664,8 +2668,8 @@ he:
           one: השקעה 1
           other: "%{count} השקעות"
         follows:
-          one: 
-          other: 
+          one: עוקב/ת 1
+          other: "%{count} עוקבים/ות"
       no_activity: למשתמש/ת זה/ו אין פעילות ציבורית
       no_private_messages: משתמש/ת זה/זו אינו/ה מקבל/ת פניות אישיות.
       private_activity: משתמש/ת זה/ו בחר/ה לשמור בפרטי את רשימת הפעילויות שלו/ה
@@ -2772,7 +2776,7 @@ he:
         see_text: ראה מלל של טיוטה
       show:
         loading_comments: טוען תגובות
-        seeing_version: הנך צופה בגרסת טיוטה
+        seeing_version: הנך צופה בטיוטה בנושא
         select_draft_version: בחר/י טיוטה
         select_version_submit: צפייה ב
         updated_at: עודכן בתאריך %{date}
@@ -2788,9 +2792,9 @@ he:
         empty_questions: אין שאלות
         participate: השתתפות בדיון
       header_full:
-        title: להשתתף
+        title: להשתתף בדיון מקצועי על
         description: תיאור
-        more_info: למידע נוסף והקשרים
+        more_info: הדרכה על הוספת תגובה
       index:
         filters:
           open: תהליכים פתוחים
@@ -3057,8 +3061,8 @@ he:
       print:
         print_button: הדפסה
       search_results:
-        one: הכוללים את המונח '%{search_term}'
-        other: הכוללים את המונח '%{search_term}'
+        one: הכוללות את המונח '%{search_term}'
+        other: הכוללות את המונח '%{search_term}'
     spending_proposals:
       alert:
         unverified_user: המשתמש/ת אינו/ה מאומת/ת
@@ -3069,8 +3073,8 @@ he:
       print:
         print_button: הדפסה
       search_results:
-        one: הכוללים את המונח '%{search_term}'
-        other: " הכוללים את המונח '%{search_term}'"
+        one: הכוללות את המונח '%{search_term}'
+        other: " הכוללות את המונח '%{search_term}'"
     sessions:
       signed_out: יצאת בהצלחה, להתראות.
       signed_out_managed_user: יצאת בהצלחה משם המשתמש/ת.
@@ -3100,7 +3104,7 @@ he:
       create:
         success_html: "<strong>%{count} הזמנות </strong> נשלחו."
         title: הזמנות של המשתמש/ת
-    date_of_birth: 
+    date_of_birth: תאריך לידה
   moderation:
     header:
       title: הנחייה
@@ -3117,8 +3121,8 @@ he:
           comment: תגובה
           moderate: הנחה דיון ציבורי
         hide_comments: הסתר תגובות
-        ignore_flags: סמנו כנראה
-        order: הזמינו
+        ignore_flags: סמן כנצפה
+        order: להזמין
         orders:
           flags: הנצפה ביותר
           newest: החדש ביותר
@@ -3191,7 +3195,7 @@ he:
     polls:
       index:
         title: Poll list
-        no_polls: 
+        no_polls: You are not officing in any active poll
         select_poll: Select poll
         add_recount: Add recount
       final:
@@ -3248,7 +3252,7 @@ he:
         ballots_white: Blank ballots
         ballots_null: Invalid ballots
         submit: Save
-        results_list: 
+        results_list: התוצאות שלך
         see_results: See resultsSee results
       index:
         no_results: No results
@@ -3424,8 +3428,8 @@ he:
     verification_offices_url: Verification offices URL
     min_age_to_participate: Minimum age needed to participate
     proposal_improvement_path: Proposal improvement info internal link
-    per_page_code_head: 
-    per_page_code_body: 
+    per_page_code_head: Code to be included on every page (<head>)
+    per_page_code_body: Code to be included on every page (<body>)
   valuation:
     header:
       title: הערכה
@@ -3596,12 +3600,12 @@ he:
         אינך מצליח/ה לאתר את ההודעה, ניתן לבקש שוב הנפקת קישור, בהודעה חוזרת כאן
     residence:
       alert:
-        unconfirmed_residency: טרם אומת אזור מגוריך
+        unconfirmed_residency: טרם אומתו פרטיך
       create:
         flash:
-          success: אזור מגוריך אומת
+          success: חשבונך אומת
       new:
-        accept_terms_text: אני מסכים/ה לכל %{terms_url} של המערכת
+        accept_terms_text: קראתי ואני מסכים/ה על ה%{terms_url}
         accept_terms_text_title: קראתי ואני מסכים/ה על כל הכללים ותנאי שימוש
         date_of_birth: תאריך לידה
         document_number: מספר תעודה מזהה
@@ -3614,16 +3618,16 @@ he:
           spanish_id: תעודת זהות
         document_type_label: סוג תעודה מזהה
         error_not_allowed_age: אינך בגיל הנדרש כדי להשתתף כמשתמש/ת מאומת/ת במערכת.
-        error_not_allowed_postal_code: כדי לאמת את חשבונך עליך קודם להרשם
+        error_not_allowed_postal_code: לא חובה למלא נתון זה
         error_verifying_census: המערכת לא הצליחה לאמת את המידע שנתת. נא לוודא שמלאת
           את פרטיך נכון על ידי התקשרות עם מזכירות קול העם %{offices}.
         error_verifying_census_offices: מזכירות קול העם
-        form_errors: נתון זה מונע את אימות מקום מגוריך
-        postal_code: מיקוד
-        postal_code_note: כדי לאמת את חשבונך עליך קודם להרשם
+        form_errors: במילוי נתון זה מונעת את אימות החשבון
+        postal_code: מספר טופס התפקדות
+        postal_code_note: נמסר לך בשלב ההתפקדות באתר קול העם
         terms: כללים ותנאי שימוש
-        title: נא לאמת את כתובת המגורים
-        verify_residence: אמת את כתובת המגורים
+        title: נא למלא את הפרטים כדי שנוכל לאמת החשבון
+        verify_residence: אמת את הפרטים
     sms:
       create:
         flash:
@@ -3652,7 +3656,7 @@ he:
     step_2: אישור קוד האבטחה
     step_3: אימות נתונים אחרון
     user_permission_debates: להשתתף בדיונים
-    user_permission_info: אנו מאמתים את הפרטים שלך כדי שתוכל/י ...
+    user_permission_info: 'דרך טופס אישור זה אנו מאמתים את הפרטיך כדי שתוכל/י:'
     user_permission_proposal: ליצור הצעות חדשות
     user_permission_support_proposal: "* לתמוך בהצעות"
     user_permission_votes: להשתתף בהצבעות סופיות (*למתפקדים/ות קול העם בלבד)

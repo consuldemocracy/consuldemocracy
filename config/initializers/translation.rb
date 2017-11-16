@@ -1,7 +1,7 @@
 TranslationIO.configure do |config|
 config.api_key        = 'a3d3b67333704c368b791ba6b98f98f7'
 config.source_locale  = 'en'
-config.target_locales = ['he']
+config.target_locales =[ 'he']
 config.disable_gettext = true
 
 

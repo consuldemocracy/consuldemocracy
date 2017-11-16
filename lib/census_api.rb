@@ -2,13 +2,18 @@ include DocumentParser
 
 class CensusApi
 
-  def call(document_type, document_number)
+  def call(document_type, document_number,user)
     response = nil
     get_document_number_variants(document_type, document_number).each do |variant|
-      response = Response.new(get_response_body(document_type, variant))
-      Rails.logger.info response
-      Rails.logger.info "valid" if response.valid?
-      return response if response.valid?
+      data = get_response_body(document_type, variant,user)
+     
+      response = Response.new(data)
+      Rails.logger.info data
+      Rails.logger.info  data.class 
+      if response.valid?
+        Rails.logger.info "valid"
+	return response
+      end
     end
     Rails.logger.info "invalid" 
     response
@@ -20,7 +25,7 @@ class CensusApi
     end
 
     def valid?
-      data.class == Hash  && [:last_order].present?
+      data.class == Hash  && data.has_key?("last_order")
     end
 
     def date_of_birth
@@ -52,9 +57,9 @@ class CensusApi
 
   private
 
-    def get_response_body(document_type, document_number)
-      Rails.logger.info  "get_response_body"
-      all  = client.get("customers?per_page=100").parsed_response #client.call(:get_habita_datos, message: request(document_type, document_number)).bodyi
+    def get_response_body(document_type, document_number,user)
+      Rails.logger.info  "get_response_body " + user.email
+      all  = client.get("customers?email=" + user.email).parsed_response #client.call(:get_habita_datos, message: request(document_type, document_number)).bodyi
       all.each do |a|
         Rails.logger.info document_number.to_s
         Rails.logger.info  a["billing"]["company"].to_s

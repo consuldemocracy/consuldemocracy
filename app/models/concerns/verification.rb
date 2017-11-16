@@ -35,7 +35,7 @@ module Verification
   end
 
   def level_three_verified?
-    verified_at.present?
+    residence_verified?#verified_at.present?
   end
 
   def level_two_or_three_verified?

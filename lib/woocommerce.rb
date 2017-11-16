@@ -11,10 +11,15 @@ woocommerce = WooCommerce::API.new(
   }
 )
 
-all =  woocommerce.get("customers?per_page=100").parsed_response
+email = "chonorly@gmail.com"
+puts woocommerce.get("customers/28").parsed_response
+puts woocommerce.get("customers?search=" + email).parsed_response
+all =  woocommerce.get("customers?per_page=100&orderby=id").parsed_response
+puts all.length
 puts all
 all.each do |a|
-  print a["billing"]["company"]
-  print " "
-  puts "025085515" ==  a["billing"]["company"]
+  print a["billing"]["company"] 
+  print " " + a["id"].to_s  + " " 
+  print  a["email"] + " "
+  puts "032843104" ==  a["billing"]["company"]
 end

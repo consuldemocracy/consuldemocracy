@@ -25,7 +25,7 @@ module Consul
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'custom', '**', '*.{rb,yml}')]
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
-
+    config.web_console.whitelisted_ips = '79.176.8.114'
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 

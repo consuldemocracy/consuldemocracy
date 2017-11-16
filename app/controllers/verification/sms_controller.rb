@@ -8,7 +8,9 @@ class Verification::SmsController < ApplicationController
   skip_authorization_check
 
   def new
-    redirect_to_next_path
+    #redirect_to new_letter_path, notice: t('verification.sms.update.flash.level_two.success')
+    redirect_to account_path, notice: t('verification.sms.update.flash.level_three.success')
+    #redirect_to_next_path
     @sms = Verification::Sms.new(phone: params[:phone])
   end
 
