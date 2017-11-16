@@ -101,7 +101,9 @@ es:
       show:
         answer_question: Enviar respuesta
         next_question: Siguiente pregunta
+        previous_question: Pregunta anterior
         first_question: Primera pregunta
+        last_question: Última pregunta
         share: Compartir
         title: Proceso de legislación colaborativa
       participation:

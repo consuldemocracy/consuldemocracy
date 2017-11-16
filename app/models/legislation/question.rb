@@ -17,6 +17,7 @@ class Legislation::Question < ActiveRecord::Base
   validates :title, presence: true
 
   scope :sorted, -> { order('id ASC') }
+  scope :reverse_sorted, -> { reorder('id DESC') }
 
   def next_question_id
     @next_question_id ||= process.questions.where("id > ?", id).sorted.limit(1).pluck(:id).first
@@ -25,13 +26,13 @@ class Legislation::Question < ActiveRecord::Base
   def first_question_id
     @first_question_id ||= process.questions.sorted.limit(1).pluck(:id).first
   end
-  
+
   def previous_question_id
-    @previous_question_id ||= process.questions.where("id < ?", id).sorted.limit(1).pluck(:id).first    
+    @previous_question_id ||= process.questions.where("id < ?", id).sorted.limit(1).pluck(:id).first
   end
-  
+
   def last_question_id
-    @last_question_id ||= process.questions.sorted.limit(1).pluck(:id).last    
+    @last_question_id ||= process.questions.reverse_sorted.limit(1).pluck(:id).last
   end
 
   def answer_for_user(user)

@@ -203,29 +203,38 @@
       }
     }
 
-    .quiz-next,
-    .quiz-previous {
+    %quiz {
       background: #ccdbe5;
       color: $brand;
       font-size: $small-font-size;
       font-weight: bold;
-      text-align: right;
       text-transform: uppercase;
       transition: background 0.25s ease-out, background 0.25s ease-out;
-
-      .icon-angle-right {
-        vertical-align: middle;
-      }
-
-      .icon-angle-left {
-        vertical-align: middle;
-      }
 
       &:hover,
       &:active {
         background: $brand;
         color: #fff;
         text-decoration: none;
+      }
+    }
+
+    .quiz-next {
+      @extend %quiz;
+      text-align: right;
+
+      .icon-angle-right {
+        vertical-align: middle;
+      }
+    }
+
+    .quiz-previous {
+      @extend %quiz;
+      text-align: left;
+
+      .icon-angle-left {
+        vertical-align: middle;
+        color: $brand;
       }
     }
   }

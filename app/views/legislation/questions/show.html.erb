@@ -6,15 +6,15 @@
       <% if @question.previous_question_id %>
         <%= link_to legislation_process_question_path(@process, @question.previous_question_id), class: "quiz-previous-link" do %>
           <%= content_tag :div, class: "quiz-previous" do %>
+            <%= t('.previous_question') %>
             <span class="icon-angle-left" aria-hidden="true">
-            <%= t('.next_question') %>
           <% end %>
         <% end %>
       <% elsif @question.last_question_id %>
         <%= link_to legislation_process_question_path(@process, @question.last_question_id), class: "quiz-previous-link" do %>
-          <%= content_tag :div, class: "quiz-next" do %>
+          <%= content_tag :div, class: "quiz-previous" do %>
+            <%= t('.last_question') %>
             <span class="icon-angle-left" aria-hidden="true">
-            <%= t('.next_question') %>
           <% end %>
         <% end %>     
       <% end %>

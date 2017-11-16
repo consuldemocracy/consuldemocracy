@@ -101,7 +101,9 @@ en:
       show:
         answer_question: Submit answer
         next_question: Next question
+        previous_question: Previous question
         first_question: First question
+        last_question: Last question
         share: Share
         title: Collaborative legislation process
       participation:
