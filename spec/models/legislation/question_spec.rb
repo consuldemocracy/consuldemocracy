@@ -54,6 +54,20 @@ describe Legislation::Question do
     end
   end
 
+  describe "#previous_question_id" do
+    let!(:question1) { create(:legislation_question) }
+    let!(:question2) { create(:legislation_question, legislation_process_id: question1.legislation_process_id) }
+    let!(:question3) { create(:legislation_question, legislation_process_id: question1.legislation_process_id) }
+
+    it "should return the previous question" do
+      expect(question3.previous_question_id).to eq(question2.id)
+    end
+
+    it "should return nil" do
+      expect(question1.previous_question_id).to be_nil
+    end
+  end
+
   describe "#first_question_id" do
     let!(:question1) { create(:legislation_question) }
     let!(:question2) { create(:legislation_question, legislation_process_id: question1.legislation_process_id) }
@@ -68,4 +82,15 @@ describe Legislation::Question do
     it_behaves_like 'notifiable'
   end
 
+  describe "#last_question_id" do
+    let!(:question1) { create(:legislation_question) }
+    let!(:question2) { create(:legislation_question, legislation_process_id: question1.legislation_process_id) }
+    let!(:question3) { create(:legislation_question, legislation_process_id: question1.legislation_process_id) }
+
+    it "should return the last question" do
+      expect(question1.last_question_id).to eq(question3.id)
+      expect(question2.last_question_id).to eq(question3.id)
+      expect(question3.last_question_id).to eq(question3.id)
+    end
+  end
 end

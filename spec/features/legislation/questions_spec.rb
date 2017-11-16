@@ -22,16 +22,31 @@ feature 'Legislation' do
 
       expect(page).to have_content("Question 1")
       expect(page).to have_content("Next question")
+      expect(page).not_to have_content("Previous question")
 
       click_link "Next question"
 
       expect(page).to have_content("Question 2")
       expect(page).to have_content("Next question")
+      expect(page).to have_content("Previous question")
 
       click_link "Next question"
 
       expect(page).to have_content("Question 3")
       expect(page).not_to have_content("Next question")
+      expect(page).to have_content("Previous question")
+
+      click_link "Previous question"
+
+      expect(page).to have_content("Question 2")
+      expect(page).to have_content("Next question")
+      expect(page).to have_content("Previous question")
+
+      click_link "Previous question"
+
+      expect(page).to have_content("Question 1")
+      expect(page).to have_content("Next question")
+      expect(page).not_to have_content("Previous question")
     end
 
     scenario 'shows question page' do
@@ -56,6 +71,23 @@ feature 'Legislation' do
 
       expect(page).to have_content("Question 3")
       expect(page).not_to have_content("Next question")
+    end
+
+    scenario 'shows previous question link in question page' do
+      visit legislation_process_question_path(@process, @process.questions.first)
+
+      expect(page).to have_content("Question 1")
+      expect(page).to_not have_content("Previous question")
+
+      click_link "Next question"
+
+      expect(page).to have_content("Question 2")
+      expect(page).to have_content("Previous question")
+
+      click_link "Next question"
+
+      expect(page).to have_content("Question 3")
+      expect(page).to have_content("Previous question")
     end
 
     scenario 'answer question' do

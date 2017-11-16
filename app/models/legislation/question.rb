@@ -28,7 +28,7 @@ class Legislation::Question < ActiveRecord::Base
   end
 
   def previous_question_id
-    @previous_question_id ||= process.questions.where("id < ?", id).sorted.limit(1).pluck(:id).first
+    @previous_question_id ||= process.questions.where("id < ?", id).reverse_sorted.limit(1).pluck(:id).first
   end
 
   def last_question_id
