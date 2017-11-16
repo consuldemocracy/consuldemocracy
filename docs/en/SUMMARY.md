@@ -14,7 +14,7 @@
   * [Linux](getting_started/prerequisites/linux.md)
   * [macOS](getting_started/prerequisites/macos.md)
   * [Windows](getting_started/prerequisites/windows.md)
-* [Local installation](getting_started/installation.md)
+* [Local installation](getting_started/local_installation.md)
   * [Development Mail Server](getting_started/dev_mailserver.md)
 * [Production and Test servers](getting_started/servers.md)
 * [Recomendations](getting_started/recomendations.md)
