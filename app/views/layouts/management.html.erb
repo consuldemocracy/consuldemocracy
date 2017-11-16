@@ -29,6 +29,19 @@
               </li>
             </ul>
           </div>
+          <% if current_administrator? %>
+            <div id="responsive_menu">
+
+              <div class="top-bar-right">
+                <ul class="menu" data-responsive-menu="medium-dropdown">
+                  <%= render "admin/shared/admin_shortcuts" %>
+                  <%= render "shared/admin_login_items" %>
+                  <%= render "devise/menu/login_items" %>
+                </ul>
+              </div>
+
+            </div>
+          <% end %>
         </div>
       </div>
     </header>
