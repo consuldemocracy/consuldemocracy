@@ -9,6 +9,7 @@
 * [Comunicación](forks/communication.md)
 
 ### Instalación
+* [Docker](getting_started/docker.md)
 * [Prerrequisitos](getting_started/prerequisites/README.md)
   * [Linux](getting_started/prerequisites/linux.md)
   * [macOS](getting_started/prerequisites/macos.md)
