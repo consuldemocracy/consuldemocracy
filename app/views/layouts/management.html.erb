@@ -29,14 +29,14 @@
               </li>
             </ul>
           </div>
-          <% if current_administrator? %>
+          <% if user_signed_in.administrator? %>
             <div id="responsive_menu">
 
               <div class="top-bar-right">
                 <ul class="menu" data-responsive-menu="medium-dropdown">
-                  <%= render "admin/shared/admin_shortcuts" %>
-                  <%= render "shared/admin_login_items" %>
-                  <%= render "devise/menu/login_items" %>
+                  <%= render "admin/shared/admin_shortcuts", current_user: user_signed_in %>
+                  <%= render "shared/admin_login_items", current_user: user_signed_in %>
+                  <%= render "devise/menu/login_items", current_user: user_signed_in %>
                 </ul>
               </div>
 
