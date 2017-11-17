@@ -1,83 +1,63 @@
 he:
   pages:
-    census_terms: To confirm the account, you must be 16 or older and be registered, having provided the information requested previously, will verify. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed in a file mentioned previously in the terms and conditions of use for the Portal.
-    conditions: Terms and conditions of use
-    general_terms: Terms and Conditions
+    census_terms: כדי לאשר את החשבון, עליך להיות בגיל 18 ומעלה ולהיות רשום/ה במערכת. לאחר שסיפקת את המידע המבוקש בטופס האישור, המידע יאומת. בהסכמתך לתהליך האימות, את/ה גם מצהיר/ה שהמידע שנתת אינו כוזב, ומאמת גם את פרטי יצירת הקשר שמלאת בטפסים אלה. המידע שסופק יאומת בשיטה המפורטת קודם לכן בדף כללים ותנאי שימוש של אתר זה
+    conditions: כללים ותנאי שימוש
+    general_terms: כללים ותנאים
     more_info:
-      title: "Discover %{org_name}"
-      subtitle: "Learn everything you can do on this website."
-      guide: 'This guide explains each section of %{org_name}. You can expand the information on "Detailed information" links.'
+      title: "למד על %{org_name}"
+      subtitle: "ללמוד כל מה שניתן לעשות באתר זה"
+      guide: 'מדריך זה מסביר כל סעיף של האתר. ניתן להרחיב את המידע בקישור  '
       menu:
-        debates: "Debates"
-        proposals: "Proposals"
-        budgets: "Participatory budgets"
-        other: "Other information of interest"
+        debates: "דיונים"
+        proposals: "הצעות"
+        budgets: "תקציבים השתתפותיים"
+        other: "מידע נוסף שעשוי לעניין אותך"
       debates:
-        title: "Debates"
-        description: "Create a thread where you can discuss any topic you want to share with other people in your city."
-        feature_1: "To create a debate you have to %{link}"
-        feature_1_link: "sign up on %{org_name}"
-        feature_2_html: "Debates can be rated using the <strong>I agree</strong> or <strong>I disagree</strong> buttons you'll find on each of them."
-        image_alt: "Buttons to rate the debates"
-        figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
-      proposals:
-        title: "Proposals"
-        description: "Propose what you want the City Council to do and support proposals from other people."
-        feature_1: "To create a proposal you have to %{link}, in addition to support you must verify your account."
-        feature_1_link: "sign up on %{org_name}"
-        feature_2_html: "Proposals that get <strong>support from 1% of people</strong> will be voted on."
-        feature_3_html: "If there are more people in favor than against, <strong>the City Council will publish their plan to accomplish</strong> the proposal and you can track its progress."
-        image_alt: "Button to support a proposal"
-        figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
+        title: "דיונים"
+        description: "יצירת שרשור שבו אפשר לדון בכל נושא שברצונך לשתף עם אנשים אחרים בעיר שלך"
+        feature_1: "כדי ליצור דיון נדרש לך %{link}"
+        feature_1_link: "להירשם ב %{org_name}"
+        feature_2_html: "דיונים ניתן לדרג באמצעות הקשה על לחצן <strong>אני מסכים/ה </strong> או <strong>לא מסכים/ה</strong> שנמצאים לצד כל דיון"
+        image_alt: "לחצנים לדרג את הדיונים"
+        figcaption: '"אני מסכים/ה" ו "לא מסכים/ה" לחצנים המדרגים את הדיונים'
       budgets:
-        title: "Participatory Budgeting"
-        description: "The first six months of each year you can decide how to spend part of the budget."
-        feature_1: "To submit an investment project you have to %{link} and verify your account."
-        feature_1_link: "sign up on %{org_name}"
-        feature_2_html: "The first is the <strong>submit phase</strong> of investment projects."
-        feature_3_html: "Then there is a <strong>support phase</strong> to prioritize the most interesting, the most supported are evaluated by the City to see if they are viable and how much they are worth."
-        feature_4_html: "At the end there is a <strong>vote phase </strong> and you decide which of the approved projects to spend the budget on."
-        image_alt: "Different phases of a participatory budget"
-        figcaption_html: '"Support" and "Voting" phases of participatory budgets.'
+        title: "תקציב השתתפותי"
+        description: "בששת החודשים הראשונים של כל שנה ניתן להחליט על מה להוציא חלק מהתקציב"
+        feature_1: "כדי להגיש פרויקט להשקעה נדרש %{link} וגם לאמת את חשבונך"
+        feature_1_link: "להרשם ל %{org_name}"
+        feature_2_html: "השלב הראשון הוא <strong>להגיש</strong> של פרויקטים להשקעה"
+        feature_3_html: "ואז יש את <strong>שלב התמיכה</strong> כדי לתעדף את המעניין ביותר, נתמך ביותר או המוערך ביותר על ידי העיר כדי לראות אם הם ברי קיימא וכמה הם שווים"
+        feature_4_html: "בשלב השלישי האחרון יש<strong>הצבעה </strong> בה יוחלט סכום התקציב שיוקצה"
+        image_alt: "שלבים שונים של התקציב ההשתתפותי"
+        figcaption_html: '“שלב התמיכה ושלב ההצבעה על התקציב ההשתתפותי”'
       polls:
-        title: "Polls"
-        description: "Citizen proposals that reach 1% of support will be put to a vote."
-        feature_1: "To participate in the next poll you have to %{link} and verify your account."
-        feature_1_link: "sign up on %{org_name}"
-        feature_2: "All verified users over 16 years old can vote."
-        feature_3: "The results of all votes shall be binding on the government."
+        title: "סקרים"
+        description: "הצעת אזרח/ית שהגיעה ל- 1% של תמיכה תעבור להצבעה"
+        feature_1: "כדי להשתתף בסקר הבא עליך %{link} ולאמת את חשבונך"
+        feature_1_link: "להרשם ל %{org_name}"
+        feature_2: "כל המשתמשים/ות המאומתים/ות מעל גיל 18 יכולים/ות להצביע"
+        feature_3: "תוצאות כל ההצבעות יהיו מחייבות לביצוע על ידי הממשל"
       faq:
-        title: "Technical problems?"
-        description: "Read the FAQs and solve your questions."
-        button: "View frequently asked questions"
-        page:
-          title: "Frequently Asked Questions"
-          description: "Use this page to resolve the common FAQs to the users of site."
-          faq_1_title: "Question 1"
-          faq_1_description: "This is an example for the description of question one."
+        title: "נתקלת בבעיות טכניות?"
+        description: "נא להיכנס ולקרוא תשובות לשאלות נפוצות שאולי יפתרו את הבעיות בהן נתקלת"
+        button: "הצגת שאלות נפוצות"
       other:
-        title: "Other information of interest"
-        how_to_use: "Use %{org_name} in your city"
+        how_to_use: "שימוש %{org_name} בעירך"
       how_to_use:
         text: |-
-          Use it in your local government or help us to improve it, it is free software.
-          
-          This Open Government Portal use the [CONSUL app](https://github.com/consul/consul 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the word with the modifications he wants (allowing others to do the same). Because we think culture is better and richer when it is released.
-          
-          If you are a programmer, you can see the code and help us to improve it at [CONSUL app](https://github.com/consul/consul 'consul github').
+          זו היא תוכנה חופשית, ניתן להשתמש בה בממשל המקומי או לעזור לנו לשפר אותה
       titles:
-        how_to_use: Use it in your local government
+        how_to_use: ניתן להשתמש בה בממשל המקומי שלך
     privacy: Privacy Policy
     titles:
-      accessibility: Accessibility
-      conditions: Terms of use
-      more_info: "More information about %{org_name}"
-      privacy: Privacy Policy
+      accessibility: נגישות
+      conditions: תנאי שימוש
+      more_info: "מידע נוסף על %{org_name}"
+      privacy: מדיניות הפרטיות
     verify:
-      code: Code you received in letter
-      email: Email
-      info: 'For verufy your account introduce your access data:'
-      info_code: 'Now introduce the code you received in letter:'
-      password: Password
-      submit: Verify my account
-      title: Verify your account
+      code: הקוד אותו קיבלת בדואר אלקטרוני
+      email: דואר אלקטרוני
+      info: 'כדי לאמת את חשבונך נא להכניס את נתוני הגישה שלך:'
+      info_code: 'עכשיו יש להכניס את הקוד שקיבלת בדואר אלקטרוני:'
+      submit: אמת את החשבון שלי
+      title: אימות החשבון
