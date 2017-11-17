@@ -1,92 +1,67 @@
 he:
   mailers:
-    no_reply: "This message was sent from an email address that does not accept replies."
+    no_reply: "נא לא לענות לכתובת דואר זו."
     comment:
-      hi: Hi
-      new_comment_by_html: There is a new comment from <b>%{commenter}</b>
-      subject: Someone has commented on your %{commentable}
-      title: New comment
+      hi: שלום
+      new_comment_by_html: ישנה הערה חדשה מ  <b>%{commenter}</b>
+      subject: ישנה הערה חדשה %{commentable}
+      title: הערה חדשה
     config:
-      manage_email_subscriptions: To stop receiving these emails change your settings in
-    email_verification:
-      click_here_to_verify: this link
-      instructions_2_html: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
-      instructions_html: To complete the verification of your user account in the Open Government Portal, you must click %{verification_link}.
-      subject: Confirm your email
-      thanks: Thank you very much.
-      title: Confirm your account using the following link
+      manage_email_subscriptions: כדי להפסיק לקבל דואר דומה עליכם לשנות את הגדרות הדואר
     reply:
-      hi: Hi
-      new_reply_by_html: There is a new response from <b>%{commenter}</b> to your comment on
-      subject: Someone has responded to your comment
-      title: New response to your comment
+      hi: שלום
+      new_reply_by_html: ישנה התייחסות חדשה מ <b>%{commenter}</b> לתגובתך בנושא
+      subject: ישנה תגובה להערות שלך
+      title: התקבלה תגובה חדשה להערות שלך
     unfeasible_spending_proposal:
-      hi: "Dear user,"
-      new_html: 'For all these, we invite you to elaborate a <strong>new proposal</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}.'
-      new_href: "new investment project"
-      reconsider_html: "If you believe that the rejected proposal meets the requirements to be an investment proposal, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
-      sincerely: "Sincerely"
-      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
-      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
-      subject: "Your investment project '%{code}' has been marked as unfeasible"
-      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+      hi: "משתמש/ת יקר/ה,"
+      new_html: 'מסיבות אלה, אנו מזמינים אותך לפתוח <strong>הצעה חדשה</strong> שתתקן את התנאים של היוזמה שנדחתה. אפשר לעשות זאת בקישור: %{url}.'
+      new_href: "הצעת השקעה חדשה"
+      reconsider_html: "אם לדעתך ההצעה שנדחתה כן עומדת בתנאים של הצעת השקעה, אפשר להודיע זאת, תוך 48 שעות, בדואר אלקטרוני לכתובת examples@consul.es. שיכלול את הקוד%{code} בנושא של ההודעה"
+      sincerely: "בברכה,"
+      signatory: "המחלקה לשיתוף הציבור"
+      sorry: "אנו מצטערים על האי-נוחות ומודים לך שוב על השתתפותך החשובה."
+      subject: "פרויקט ההשקעה שלך '%{code}' סומן כאינו בר ביצוע"
+      unfeasible_html: "אנו במועצת העיר מודים לך על ההשתתפות בהצעת <strong>תקצוב שיתופי</strong>. צר לנו להודיע לך שההצעה <strong>'%{title}'</strong> תוסר מתהליך הבקשות להוצאה כספית בשל הסיבה הבאה:"
     budget_investment_unfeasible:
-      hi: "Dear user,"
-      new_html: 'For all these, we invite you to elaborate a <strong>new investment</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}.'
-      new_href: "new investment project"
-      reconsider_html: "If you believe that the rejected investment meets the requirements to be an investment project, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
-      sincerely: "Sincerely"
-      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
-      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
-      subject: "Your investment project '%{code}' has been marked as unfeasible"
-      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+      hi: "משתמש/ת יקר/ה,"
+      new_html: 'מסיבות אלה, אנו מזמינים אותך לפתוח <strong>יוזמת השקעה חדשה</strong> tשתתאים לתנאים של תהליך זה. תוכל/י לעשות זאת בקישור: %{url}.'
+      new_href: "פרויקט השקעה חדש"
+      reconsider_html: "אם לדעתך ההצעת ההשקעה שנדחתה עומדת בתנאים של הצעת השקעה תקינה, תוכל/י להודיע על כך, בתוך 48 שעות, על-ידי שליחת דואר אלקטרוני לכתובת examples@consul.es. שיכלול את הקוד %{code} בנושא ההודעה."
+      sincerely: "בברכה,"
+      signatory: "המחלקה לשיתוף הציבור"
+      sorry: "אנו מתנצלים על האי-נוחות ומודים לך שוב על השתתפותך החשובה."
+      subject: "פרויקט ההשקעה שלך '%{code}' סומן כאינו בר ביצוע"
+      unfeasible_html: "אנו במועצת העיר מודים לך על ההשתתפות בהצעת <strong>תקצוב שיתופי</strong>. צר לנו להודיע לך שההצעה <strong>'%{title}'</strong> תוסר מתהליך הבקשות להוצאה כספית בגלל הסיבה הבאה:"
     proposal_notification_digest:
-      info: "Here are the new notifications that have been published by authors of the proposals that you have supported in %{org_name}."
-      title: "Proposal notifications in %{org_name}"
-      share: Share proposal
-      comment: Comment proposal
-      unsubscribe: "If you don't want receive proposal's notification, visit %{account} and unckeck 'Receive a summary of proposal notifications'."
-      unsubscribe_account: My account
+      info: "הנה ההודעות החדשות שפורסמו בידי כותבי ההצעות שתמכת בהן ב-%{org_name}."
+      title: "הודעות ההצעות ב-%{org_name}"
+      share: לשיתוף ההצעה
+      comment: לתגובה על ההצעה
+      unsubscribe: "אם אין ברצונך לקבל עדכונים על ההצעה, גש/י אל %{account} והסר/י את הסימון במשבצת 'לקבל סיכום ההודעות על הצעות'."
+      unsubscribe_account: החשבון שלי
     direct_message_for_receiver:
-      subject: "You have received a new private message"
+      subject: "התקבלה הודעה פרטית חדשה"
       reply: Reply to %{sender}
-      unsubscribe: "If you don't want receive direct messages, visit %{account} and unckeck 'Receive emails about direct messages'."
-      unsubscribe_account: My account
+      unsubscribe: "אם אינך רוצה לקבל הודעות ישירות, גש/י אל %{account} והסר/י את הסימון במשבצת 'לקבל בדואר אלקטרוני איתות על הודעות ישירות'."
+      unsubscribe_account: החשבון שלי
     direct_message_for_sender:
-      subject: "You have send a new private message"
-      title_html: "You have send a new private message to <strong>%{receiver}</strong> with the content:"
+      subject: "שלחת הודעה פרטית חדשה"
+      title_html: "שלחת הודעה פרטית אל <strong>%{receiver}</strong> שהתוכן בה:"
     user_invite:
-      ignore: "If you have not requested this invitation don't worry, you can ignore this email."
-      text: "Thank you for applying to join %{org}! In seconds you can start to decide the city you want, just fill the form below:"
-      thanks: "Thank you very much."
-      title: "Welcome to %{org}"
-      button: Complete registration
-      subject: "Invitation to %{org_name}"
+      ignore: "אם לא את/ה ביקשת את ההזמנה הזו, אין בעיה, תוכל/י פשוט להתעלם מהודעת הדואר האלקטרוני הזו."
+      text: "תודה שביקשת להצטרף אל %{org}! בתוך כמה שניות גם את/ה יכול/ה להתחיל לקבוע איך תתנהל העיר שלך. עליך רק למלא את הטופס הבא:"
+      thanks: "תודה מכל הלב."
+      title: "ברוכים הבאים אל %{org}"
+      button: להשלמת רישום
+      subject: "הזמנה ל-%{org_name}"
     budget_investment_created:
-      subject: "Thank you for creating an investment!"
-      title: "Thank you for creating an investment!"
-      intro_html: "Hi <strong>%{author}</strong>,"
-      text_html: "Thank you for creating your investment <strong>%{investment}</strong> for Participatory Budgets <strong>%{budget}</strong>."
-      follow_html: "We will inform you about how the process progresses, which you can also follow on <strong>%{link}</strong>."
-      follow_link: "Participatory Budgets"
-      sincerely: "Sincerely,"
-      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
-      share: "Share your project"
-    budget_investment_selected:
-      subject: "Your investment project '%{code}' has been selected"
-      hi: "Dear user,"
-      selected_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We would like to inform you that your investment project <strong>'%{title}'</strong> has been selected for the final voting phase that will happen from <strong>May 15th to June 30th</strong>."
-      share: "Start to get votes, share your investment project on social networks. Share is essential to make it a reality."
-      share_button: "Share your investment project"
-      thanks: "Thank you again for participating."
-      sincerely: "Sincererly"
-      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
-    budget_investment_unselected:
-      subject: "Your investment project '%{code}' has not been selected"
-      hi: "Dear user,"
-      unselected_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment project <strong>'%{title}'</strong> has not been selected for the final voting phase."
-      participate_html: "You can continue participating in the final voting phase voting for investments projects from <strong>May 15th to June 30th</strong>."
-      participate_url: "participate in the final voting"
-      thanks: "Thank you again for participating."
-      sincerely: "Sincererly"
-      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+      subject: "תודה על ההשקעה שיצרת!"
+      title: "תודה על ההשקעה!"
+      intro_html: "שלום <strong>%{author}</strong>,"
+      text_html: "תודה שיצרת את ההשקעה <strong>%{investment}</strong> בתקצוב השיתופי <strong>%{budget}</strong>."
+      follow_html: "אנו נודיע לך על התקדמות התהליך, ותוכל/י גם לצפות בו בקישור <strong>%{link}</strong>."
+      follow_link: "תקציבים שיתופיים"
+      sincerely: "בברכה,"
+      signatory: "המחלקה לשיתוף הציבור"
+      share: "לשיתוף"
