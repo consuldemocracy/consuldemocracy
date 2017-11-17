@@ -2,128 +2,126 @@ he:
   devise_views:
     confirmations:
       new:
-        email_label: Email
-        submit: Re-send instructions
-        title: Re-send confirmation instructions
+        email_label: דואר אלקטרוני
+        submit: שליחת הוראות שוב
+        title: שליחה חוזרת של אישור הוראות
       show:
-        instructions_html: Confirming the account with email %{email}
-        new_password_confirmation_label: Repeat access password
-        new_password_label: New access password
-        please_set_password: Please choose your new pasword (it will allow you to login with the email above)
-        submit: Confirm
-        title: Confirm my account
+        instructions_html: מאשרים את החשבון בדואר אלקטרוני %{email}
+        new_password_label: הכנסת סיסמה חדשה
+        please_set_password: לבחור בבקשה סיסמה חדשה (זה יאפשר לך להתחבר עם הדואר האלקטרוני שלמעלה)
+        submit: אישור
+        title: נא לאשר את חשבוני
     mailer:
       confirmation_instructions:
-        confirm_link: Confirm my account
-        text: 'You can confirm your email account at the following link:'
-        title: Welcome to the Open Government Portal
-        welcome: Welcome
+        confirm_link: מאשר/ת את חשבוני
+        text: 'ניתן לאשר את חשבון הדואר האלקטרוני שלך בקישור  הבא:'
+        title: ברוכים\ות הבאים\ות לקול העם
+        welcome: ברוכים/ות הבאים/ות
       reset_password_instructions:
-        change_link: Change my password
-        hello: Hello
-        ignore_text: If you did not request a password change, you can ignore this email.
-        info_text: Your password will not be changed unless you access the link and edit it.
-        text: 'We have received a request to change your password. You can do this at the following link:'
-        title: Change your password
+        change_link: שנה את הסיסמה שלי
+        hello: שלום
+        ignore_text: אם לא ביקשת לשנות סיסמה, בבקשה להתעלם מההודעה
+        info_text: סיסמתך לא תשונה אלא אם תיכנס/י לקישור ותערוך/י אותו
+        text: 'קיבלנו בקשה לשנות את הסיסמה. הנך יכול/ה לעשות זאת בקישור הבא:'
+        title: שנה  את הסיסמה
       unlock_instructions:
-        hello: Hello
-        info_text: Your account has been blocked due to an excessive number of failed sign-in attempts.
-        instructions_text: 'Please click on this link to unlock your account:'
-        title: Your account has been locked
-        unlock_link: Unlock my account
+        hello: שלום
+        info_text: חשבונך נחסם בגלל מספר כשלונות גדול בניסינות כניסה לחשבון
+        instructions_text: 'נא להקיש על הקישור הזה לביטול נעילת החשבון:'
+        title: חשבונך נחסם
+        unlock_link: שחררו את נעילת חשבוני
     menu:
       login_items:
-        login: Sign in
-        logout: Sign out
-        signup: Register
+        login: התחברות
+        logout: יציאה
+        signup: הרשמה
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Name of organisation
-          password_confirmation_label: Confirm password
-          password_label: Password
-          phone_number_label: Phone number
-          responsible_name_label: Full name of the person responsible for the collective
-          responsible_name_note: This would be the person representing the association/collective in whose name the proposals are presented
-          submit: Register
-          title: Register as an organisation or collective
+          email_label: דואר אלקטרוני
+          organization_name_label: שם הארגון
+          password_confirmation_label: אישור הסיסמה
+          password_label: סיסמה
+          phone_number_label: מספר טלפון
+          responsible_name_label: שם מלא של אחראי/ת הקבוצה
+          responsible_name_note: זה יהיה האיש/ה המייצג את הקבוצה/ארגון ובשמו/ה יוצגו ההצעות
+          submit: הרשמה
+          title: הרשמה כארגון או כקבוצה
         success:
-          back_to_index: I understand; go back to main page
-          instructions_1_html: "<b>We will contact you soon</b> to verify that you do in fact represent this collective."
-          instructions_2_html: While your <b>email is reviewed</b>, we have sent you a <b>link to confirm your account</b>.
-          instructions_3_html: Once confirmed, you may begin to participate as an unverified collective.
-          thank_you_html: Thank you for registering your collective on the website. It is now <b>pending verification</b>.
-          title: Registration of organisation / collective
+          back_to_index: חזרה לדף הראשי
+          instructions_1_html: "<b>ניצור איתך קשר בקרוב</b>כדי לוודא שאת/ה מייצג/ת את הקבוצה"
+          instructions_2_html: אנו בודקים  <b>את הדואר האלקטרוני שלך</b>, שלחנו לך <b>קישור לאימות חשבונך</b>.
+          instructions_3_html: לאחר האישור, ניתן להתחיל להשתתף כקבוצה לא מאושרת
+          thank_you_html: תודה על הרשמת קבוצתך באתר. הקבוצה <b>ממתינה לאישור</b>.
+          title: הרשמה של ארגונים וקבוצות
     passwords:
       edit:
-        change_submit: Change my password
-        password_confirmation_label: Confirm new password
-        password_label: New password
-        title: Change your password
+        change_submit: שנו את הסיסמה שלי
+        password_confirmation_label: נא לאשר את הסיסמה החדשה
+        password_label: סיסמה חדשה
+        title: שנה את הסיסמה
       new:
-        email_label: Email
-        send_submit: Send instructions
-        title: Forgotten password?
+        email_label: דואר אלקטרוני
+        send_submit: שלח הנחיות
+        title: שכחת את הסיסמה?
     sessions:
       new:
-        login_label: Email or username
-        password_label: Password
-        remember_me: Remember me
-        submit: Enter
-        title: Sign in
+        password_label: סיסמה
+        remember_me: זכור אותי
+        submit: הקש/י לאישור
+        title: התחברות
     shared:
       links:
-        login: Enter
-        new_confirmation: Haven't received instructions to activate your account?
-        new_password: Forgotten your password?
-        new_unlock: Haven't received unlocking instructions?
-        signin_with_provider: Sign in with %{provider}
-        signup: Don't have an account? %{signup_link}
-        signup_link: Sign up
+        login: הקש/י לאישור
+        new_confirmation: לא קיבלת הוראות להפעלת החשבון שלך?
+        new_password: שכחת את הסיסמה?
+        new_unlock: לא קיבלת הוראות לביטול נעילה?
+        signin_with_provider: הרשמה עם %{provider}
+        signup: אין לך חשבון? %{signup_link}
+        signup_link: הרשמה
     unlocks:
       new:
-        email_label: Email
-        submit: Re-send unlocking instructions
-        title: Re-sent unlocking instructions
+        email_label: דואר אלקטרוני
+        submit: שלחו אלי בבקשה מחדש הוראות לביטול נעילה
+        title: נשלחו מחדש הוראות שחרור נעילה
     users:
       registrations:
         delete_form:
-          erase_reason_label: Reason
-          info: This action can not be undone. Please make sure this is what you want.
-          info_reason: If you want, leave us a reason (optional)
-          submit: Erase my account
-          title: Erase account
+          erase_reason_label: סיבה
+          info: פעולה זו  ל א  ניתנת לביטול. נא לוודא שזה מה שברצונך לעשות.
+          info_reason: (אם ברצונך, הסבר/י את הסיבה (אופציה
+          submit: מחקו את החשבון שלי
+          title: החשבון נמחק
         edit:
-          current_password_label: Current password
-          edit: Edit
-          email_label: Email
-          leave_blank: Leave blank if you do not wish to modify
-          need_current: We need your current password to confirm the changes
-          password_confirmation_label: Confirm new password
-          password_label: New password
-          update_submit: Update
-          waiting_for: 'Awaiting confirmation of:'
+          current_password_label: הסיסמה הנוכחית
+          edit: ערוך
+          email_label: דואר אלקטרוני
+          leave_blank: השאר/י ריק אם אינך רוצה לשנות
+          need_current: אנו זקוקים לסיסמה שלך כדי לאשר את השינויים
+          password_confirmation_label: הסיסמה החדשה שלך  אושרה
+          password_label: סיסמה חדשה
+          update_submit: עודכן
+          waiting_for: '‘הסיבה ממתין לאישור של:’'
         new:
-          cancel: Cancel login
-          email_label: Email
-          organization_signup: Do you represent an organisation or collective? %{signup_link}
-          organization_signup_link: Sign up here
-          password_confirmation_label: Confirm password
-          password_label: Password
-          redeemable_code: Verification code received via email (optional)
-          submit: Register
-          terms: By registering you accept the %{terms}
-          terms_link: terms and conditions of use
-          terms_title: By registering you accept the terms and conditions of use
-          title: Register
-          username_is_available: Username available
-          username_is_not_available: Username already in use
-          username_label: Username
-          username_note: Name that appears next to your posts
+          cancel: הכניסה בוטלה
+          email_label: דואר אלקטרוני
+          organization_signup: האם את/ה מייצג קבוצה או ארגון? %{signup_link}
+          organization_signup_link: הרשם/י כאן
+          password_confirmation_label: אשר/י סיסמה
+          password_label: סיסמה
+          redeemable_code: (קבלת קוד אימות בדואר אלקטרוני (אופציה
+          submit: הרשמה
+          terms: בהרשמה הנך מסכים/ה ל %{terms}
+          terms_link: תנאים והתניות לשימוש באתר
+          terms_title: בהרשמה את/ה מסכים/ה לתנאים והתניות השימוש באתר
+          title: הרשמה
+          username_is_available: שם משתמש זמין
+          username_is_not_available: שם משתמש לא זמין
+          username_label: שם משתמש/ת
+          username_note: השם שיופיע ליד הפוסטים שלך
         success:
-          back_to_index: I understand; go back to main page
-          instructions_1_html: Please <b>check your email</b> - we have sent you a <b>link to confirm your account</b>.
-          instructions_2_html: Once confirmed, you may begin participation.
-          thank_you_html: Thank you for registering for the website. You must now <b>confirm your email address</b>.
-          title: Modify your email
+          back_to_index: הבנתי ; חזור לדף הבית
+          instructions_1_html: בבקשה <b>בדוק/י את הדואר האלקטרוני</b> - שלחנו לך <b>קישור לאישור חשבונך</b>.
+          instructions_2_html: לאחר האישור, יהיה אפשרי להתחיל להשתתף.
+          thank_you_html: תודה על הרשמתך לאתר. בבקשה <b>לאשר את כתובת הדואר האלקטרוני שלך</b>.
+          title: נא לבדוק את הדואר האלקטרוני שלך
