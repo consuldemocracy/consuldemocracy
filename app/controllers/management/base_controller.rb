@@ -6,6 +6,7 @@ class Management::BaseController < ActionController::Base
 
   helper_method :managed_user
   helper_method :current_user
+  helper_method :user_signed_in
 
   private
 
@@ -22,7 +23,10 @@ class Management::BaseController < ActionController::Base
     end
 
     def managed_user
-      @managed_user ||= Verification::Management::ManagedUser.find(session[:document_type], session[:document_number])
+      @managed_user ||= Verification::Management::ManagedUser.find(
+        session[:document_type],
+        session[:document_number]
+      )
     end
 
     def check_verified_user(alert_msg)
@@ -49,4 +53,11 @@ class Management::BaseController < ActionController::Base
     def clear_password
       session[:new_password] = nil
     end
+
+    def user_signed_in
+      if current_manager
+        @user_signed_in = User.find(session[:manager]["login"].last(1))
+      end
+    end
+
 end
