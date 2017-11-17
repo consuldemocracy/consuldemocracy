@@ -2,25 +2,17 @@ he:
   helpers:
     page_entries_info:
       entry:
-        zero: Entries
-        one: Entry
-        two: Entries
-        many: Entries
-        other: Entries
+        zero: אין כניסות
       more_pages:
-        display_entries: Displaying <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
+        display_entries: מציג <b>%{first}&nbsp;-&nbsp;%{last}</b> מתוך<b>%{total}</b> %{entry_name}
       one_page:
         display_entries:
-          zero: "%{entry_name} cannot be found"
-          one: There is <strong>1 %{entry_name}</strong>
-          two: There are <strong>%{count} %{entry_name}</strong>
-          many: There are <strong>%{count} %{entry_name}</strong>
-          other: There are <strong>%{count} %{entry_name}</strong>
+          zero: "%{entry_name} לא נמצא"
   views:
     pagination:
-      current: You're on page
-      first: First
-      last: Last
-      next: Next
-      previous: Previous
+      current: את/ה נמצא/ת בדף
+      first: לראשון
+      last: לאחרון
+      next: הבא
+      previous: הקודם
       truncate: "&hellip;"
