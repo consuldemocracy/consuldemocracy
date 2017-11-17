@@ -37,5 +37,4 @@ module DocumentablesHelper
   def max_documents_allowed?(documentable)
     documentable.documents.count >= documentable.class.max_documents_allowed
   end
-
 end

@@ -1,0 +1,51 @@
+ca:
+  activerecord:
+    models:
+      activity:
+        one: "activitat"
+        other: "activitats"
+      budget:
+        one: "Pressupost participatiu"
+        other: "Pressupostos participatius"
+      budget/investment/milestone:
+        one: "fita"
+        other: "fites"
+      comment:
+        one: "Comentari"
+        other: "Comentaris"
+      debate:
+        one: "Debat"
+        other: "Debats"
+      tag:
+        one: "Eriqueta"
+        other: "Etiquetes"
+      user:
+        one: "Usuari"
+        other: "Usuaris"
+      moderator:
+        one: "Moderador"
+        other: "Moderadors"
+      administrator:
+        one: "Administrador"
+        other: "Administradors"
+      vote:
+        one: "Vot"
+        other: "Vots"
+      organization:
+        one: "Organització"
+        other: "Organitzacions"
+      poll/booth:
+        one: "urna"
+        other: "urnes"
+      poll/officer:
+        one: "president de taula"
+        other: "presidents de taula"
+      proposal:
+        one: "Proposta ciutadana"
+        other: "Propostes ciutadanes"
+      spending_proposal:
+        one: "Proposta d'inversió"
+        other: "Propostes d'inversió"
+    attributes:
+      spending_proposal:
+        administrator_id: "Administrador"

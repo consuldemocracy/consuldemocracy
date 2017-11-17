@@ -20,10 +20,12 @@ class Legislation::ProposalsController < Legislation::BaseController
 
   def show
     super
-    set_legislation_proposal_votes(@process.proposals)
+    legislation_proposal_votes(@process.proposals)
     @document = Document.new(documentable: @proposal)
-    redirect_to legislation_process_proposal_path(params[:process_id], @proposal),
-                status: :moved_permanently if request.path != legislation_process_proposal_path(params[:process_id], @proposal)
+    if request.path != legislation_process_proposal_path(params[:process_id], @proposal)
+      redirect_to legislation_process_proposal_path(params[:process_id], @proposal),
+                  status: :moved_permanently
+    end
   end
 
   def create
@@ -43,16 +45,16 @@ class Legislation::ProposalsController < Legislation::BaseController
 
   def vote
     @proposal.register_vote(current_user, params[:value])
-    set_legislation_proposal_votes(@proposal)
+    legislation_proposal_votes(@proposal)
   end
 
   private
 
     def proposal_params
       params.require(:legislation_proposal).permit(:legislation_process_id, :title,
-                    :question, :summary, :description,  :video_url, :tag_list,
+                    :question, :summary, :description, :video_url, :tag_list,
                     :terms_of_service, :geozone_id,
-                    documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id] )
+                    documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id])
     end
 
     def resource_model

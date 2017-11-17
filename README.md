@@ -76,3 +76,8 @@ Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt)
 ## Contributions
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+
+## Local development with Docker
+
+Please check the documentation at https://consul_docs.gitbooks.io/docs/content
