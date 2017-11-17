@@ -2,76 +2,73 @@ he:
   moderation:
     comments:
       index:
-        block_authors: Block authors
-        confirm: Are you sure?
-        filter: Filter
+        block_authors: משתמש/ת חסום/ה
+        confirm: האם את/ה בטוח/ה?
+        filter: מסנן
         filters:
-          all: All
-          pending_flag_review: Pending
-          with_ignored_flag: Marked as viewed
+          all: כולם
+          pending_flag_review: ממתין לאישור
+          with_ignored_flag: סמנו כנראה
         headers:
-          comment: Comment
-          moderate: Moderate
-        hide_comments: Hide comments
-        ignore_flags: Mark as viewed
-        order: Order
+          comment: הערות
+          moderate: הנחה דיון
+        hide_comments: הסתר הערות
+        ignore_flags: סמנו כנראה
+        order: הזמינו
         orders:
-          flags: Most flagged
-          newest: Newest
-        title: Comments
+          flags: הנצפה ביותר
+          newest: החדש ביותר
+        title: הערות
     dashboard:
       index:
-        title: Moderation
+        title: הנחייה
     debates:
       index:
-        block_authors: Block authors
-        confirm: Are you sure?
-        filter: Filter
+        block_authors: חסום משתמש
+        confirm: האם את/ה בטוח/ה?
+        filter: מסנן
         filters:
-          all: All
-          pending_flag_review: Pending
-          with_ignored_flag: Marked as viewed
+          all: כולם
+          pending_flag_review: ממתין לאישור
+          with_ignored_flag: סומנו שנראו
         headers:
-          debate: Debate
-          moderate: Moderate
-        hide_debates: Hide debates
-        ignore_flags: Mark as viewed
-        order: Order
+          debate: דיון
+          moderate: הנחה דיון
+        hide_debates: הסתירו את הדיון
+        ignore_flags: סמן שהחומר נראה
+        order: הזמן
         orders:
-          created_at: Newest
-          flags: Most flagged
-        title: Debates
-    header:
-      title: Moderation
+          created_at: החדש ביותר
+          flags: הנצפה ביותר
+        title: דיונים
     menu:
-      flagged_comments: Comments
-      flagged_debates: Debates
-      proposals: Proposals
-      users: Block users
+      flagged_comments: הערות
+      flagged_debates: דיונים
+      users: חסימת משתמשים/ות
     proposals:
       index:
-        block_authors: Block authors
-        confirm: Are you sure?
-        filter: Filter
+        block_authors: חסימת הכותב/ת
+        confirm: האם את/ה בטוח/ה?
+        filter: מסנן
         filters:
-          all: All
-          pending_flag_review: Pending review
-          with_ignored_flag: Mark as viewed
+          all: הכל
+          pending_flag_review: צפיות בהמתנה
+          with_ignored_flag: סמנו כמסמך שנצפה
         headers:
-          moderate: Moderate
-          proposal: Proposal
-        hide_proposals: Hide proposals
-        ignore_flags: Mark as viewed
-        order: Order by
+          moderate: מנחה
+          proposal: הצעה
+        hide_proposals: הסתרת הצעות
+        ignore_flags: סימון כמסמך שנצפה
+        order: הזמנה באמצעות
         orders:
-          created_at: Most recent
-          flags: Most flagged
-        title: Proposals
+          created_at: האחרון
+          flags: הנצפה ביותר
+        title: הצעות
     users:
       index:
-        hidden: Blocked
-        hide: Block
-        search: Search
-        search_placeholder: email or name of user
-        title: Block users
-      notice_hide: User blocked. All of this user's debates and comments have been hidden.
+        hidden: מוסתרים
+        hide: הסתרה
+        search: חיפוש
+        search_placeholder: חיפוש דואר אלקטרוני או שם המשתמש
+        title: חסימת משתמשים
+      notice_hide: המשתמש/ת נחסם/ה. כל הדיונים וההערות של המשתמש/ת הוסתרו.
