@@ -4,7 +4,7 @@
 <% if @partial_results.present? %>
   <div class="callout primary">
     <h3>
-      <%= @booth_assignment.booth.name %> - <%= l @partial_results.first.date, format: :long %>
+      <%= @booth_assignment.booth.name %> - <%= l @partial_results.first.created_at, format: :long %>
     </h3>
   </div>
 

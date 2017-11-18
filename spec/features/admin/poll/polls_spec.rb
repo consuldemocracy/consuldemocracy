@@ -224,7 +224,7 @@ feature 'Admin polls' do
         3.times do |i|
           create(:poll_recount,
                  booth_assignment: booth_assignment,
-                 date: poll.starts_at + i.days,
+                 created_at: poll.starts_at + i.days,
                  total_amount: 21)
         end
 
@@ -232,7 +232,7 @@ feature 'Admin polls' do
 
         create(:poll_recount,
                booth_assignment: booth_assignment_final_recounted,
-               date: poll.ends_at,
+               created_at: poll.ends_at,
                total_amount: 55555)
 
         visit admin_poll_path(poll)

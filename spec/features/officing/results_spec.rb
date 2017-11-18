@@ -82,15 +82,16 @@ feature 'Officing Results' do
 
   scenario 'Edit result' do
     partial_result = create(:poll_partial_result,
-                      officer_assignment: @officer_assignment,
-                      booth_assignment: @officer_assignment.booth_assignment,
-                      date: Date.current,
-                      question: @question_1,
-                      answer: @question_1.question_answers.first.title,
-                      author: @poll_officer.user,
-                      amount: 7777)
+                     officer_assignment: @officer_assignment,
+                     booth_assignment: @officer_assignment.booth_assignment,
+                     question: @question_1,
+                     answer: @question_1.question_answers.first.title,
+                     author: @poll_officer.user,
+                     amount: 7777)
 
-    visit officing_poll_results_path(@poll, date: I18n.l(partial_result.date), booth_assignment_id: partial_result.booth_assignment_id)
+    visit officing_poll_results_path(@poll,
+                                     date: I18n.l(partial_result.created_at),
+                                     booth_assignment_id: partial_result.booth_assignment_id)
 
     within("#question_#{@question_1.id}_0_result") { expect(page).to have_content('7777') }
 
@@ -107,8 +108,8 @@ feature 'Officing Results' do
 
     click_button 'Save'
 
-    within("#results_#{partial_result.booth_assignment_id}_#{partial_result.date.strftime('%Y%m%d')}") do
-      expect(page).to have_content(I18n.l(partial_result.date, format: :long))
+    within("#results_#{partial_result.booth_assignment_id}_#{partial_result.created_at.strftime('%Y%m%d')}") do
+      expect(page).to have_content(I18n.l(partial_result.created_at, format: :long))
       expect(page).to have_content(partial_result.booth_assignment.booth.name)
       click_link "See results"
     end
@@ -123,18 +124,19 @@ feature 'Officing Results' do
 
   scenario 'Index lists all questions and answers' do
     partial_result = create(:poll_partial_result,
-                      officer_assignment: @officer_assignment,
-                      booth_assignment: @officer_assignment.booth_assignment,
-                      date: @poll.ends_at,
-                      question: @question_1,
-                      amount: 33)
+                     officer_assignment: @officer_assignment,
+                     booth_assignment: @officer_assignment.booth_assignment,
+                     created_at: @poll.ends_at,
+                     question: @question_1,
+                     amount: 33)
+
     poll_recount = create(:poll_recount,
-                      officer_assignment: @officer_assignment,
-                      booth_assignment: @officer_assignment.booth_assignment,
-                      date: @poll.ends_at,
-                      white_amount: 21,
-                      null_amount: 44,
-                      total_amount: 66)
+                   officer_assignment: @officer_assignment,
+                   booth_assignment: @officer_assignment.booth_assignment,
+                   created_at: @poll.ends_at,
+                   white_amount: 21,
+                   null_amount: 44,
+                   total_amount: 66)
 
     visit officing_poll_results_path(@poll,
                                      date: I18n.l(@poll.ends_at.to_date),
