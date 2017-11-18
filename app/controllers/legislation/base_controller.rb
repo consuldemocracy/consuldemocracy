@@ -3,7 +3,7 @@ class Legislation::BaseController < ApplicationController
 
   feature_flag :legislation
 
-  def set_legislation_proposal_votes(proposals)
+  def legislation_proposal_votes(proposals)
     @legislation_proposal_votes = current_user ? current_user.legislation_proposal_votes(proposals) : {}
   end
 end

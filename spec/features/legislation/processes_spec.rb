@@ -115,6 +115,14 @@ feature 'Legislation' do
   context 'process page' do
     context "show" do
       include_examples "not published permissions", :legislation_process_path
+
+      scenario '#show view has document present' do
+        process = create(:legislation_process)
+        document = create(:document, documentable: process)
+        visit legislation_process_path(process)
+
+        expect(page).to have_content(document.title)
+      end
     end
 
     context 'debate phase' do
