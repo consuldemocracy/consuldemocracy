@@ -282,3 +282,8 @@ en:
             image:
               image_width: "Width must be %{required_width}px"
               image_height: "Height must be %{required_height}px"
+      messages:
+        record_invalid: "Validation failed: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Cannot delete record because a dependent %{record} exists"
+          has_many: "Cannot delete record because dependent %{record} exist"
