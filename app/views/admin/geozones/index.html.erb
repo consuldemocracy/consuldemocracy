@@ -6,7 +6,7 @@
 <table>
   <thead>
     <tr>
-      <th><%= t("admin.geozones.geozone.name") %></th>
+      <th><%= t("admin.shared.labels.name") %></th>
       <th><%= t("admin.geozones.geozone.external_code") %></th>
       <th><%= t("admin.geozones.geozone.census_code") %></th>
       <th><%= t("admin.geozones.geozone.coordinates") %></th>
@@ -22,10 +22,15 @@
         <td><%= geozone.census_code %></td>
         <td class="break"><%= geozone.html_map_coordinates %></td>
         <td>
-          <%= link_to t("admin.geozones.index.edit"), edit_admin_geozone_path(geozone), class: 'edit-banner button hollow' %>
+          <%= link_to t("admin.geozones.index.edit"),
+                      edit_admin_geozone_path(geozone),
+                      class: "edit-banner button hollow" %>
         </td>
         <td>
-          <%= link_to t("admin.geozones.index.delete"), admin_geozone_path(geozone), method: :delete, class: 'button hollow alert' %>
+          <%= link_to t("admin.geozones.index.delete"),
+                      admin_geozone_path(geozone),
+                      method: :delete,
+                      class: "button hollow alert" %>
         </td>
       </tr>
     <% end %>

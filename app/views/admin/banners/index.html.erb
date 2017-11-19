@@ -1,5 +1,6 @@
 <%= link_to t("admin.banners.index.create"),
-              new_admin_banner_path, class: "button success float-right" %>
+            new_admin_banner_path,
+            class: "button success float-right" %>
 
 <h2 class="inline-block"><%= t("admin.banners.index.title") %></h2>
 
@@ -13,7 +14,7 @@
       <tr id="<%= dom_id(banner) %>">
         <th scope="col"><%= t("admin.banners.banner.post_started_at")%></th>
         <th scope="col"><%= t("admin.banners.banner.post_ended_at")%></th>
-        <th scope="col" class="text-center"><%= t("admin.actions.actions")%></th>
+        <th scope="col" class="text-center"><%= t("admin.shared.labels.actions")%></th>
       </tr>
     </thead>
     <tbody>
@@ -22,13 +23,15 @@
         <td><%= banner.post_ended_at %></td>
         <td class="text-right">
           <div class="small-12 medium-6 column">
-            <%= link_to t("admin.banners.index.edit"), edit_admin_banner_path(banner),
-                        class: 'button hollow expanded' %>
+            <%= link_to t("admin.banners.index.edit"),
+                        edit_admin_banner_path(banner),
+                        class: "button hollow expanded" %>
           </div>
           <div class="small-12 medium-6 column">
-            <%= link_to t("admin.banners.index.delete"), admin_banner_path(banner),
+            <%= link_to t("admin.banners.index.delete"),
+                        admin_banner_path(banner),
                         method: :delete,
-                        class: 'button hollow alert expanded' %>
+                        class: "button hollow alert expanded" %>
           </div>
         </td>
       </tr>

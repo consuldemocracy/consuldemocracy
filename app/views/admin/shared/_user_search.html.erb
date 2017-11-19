@@ -1,9 +1,9 @@
 <div class="small-12 medium-6">
   <%= form_for(User.new, url: url, as: :user, method: :get) do |f| %>
     <div class="input-group">
-        <%= text_field_tag :name_or_email, "", placeholder: t("admin.shared.user_search.placeholder") %>
+        <%= text_field_tag :name_or_email, "", placeholder: t("admin.shared.placeholders.users") %>
       <div class="input-group-button">
-        <%= f.submit t("admin.shared.user_search.button"), class: "button" %>
+        <%= f.submit t("admin.shared.buttons.search"), class: "button" %>
       </div>
     </div>
   <% end %>

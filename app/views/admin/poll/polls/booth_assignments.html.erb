@@ -3,9 +3,9 @@
 <% if @polls.any? %>
   <table>
     <thead>
-      <th class="medium-6"><%= t("admin.polls.index.name") %></th>
+      <th class="medium-6"><%= t("admin.shared.labels.name") %></th>
       <th><%= t("admin.polls.index.dates") %></th>
-      <th class="text-right"><%= t("admin.actions.actions") %></th>
+      <th class="text-right"><%= t("admin.shared.labels.actions") %></th>
     </thead>
     <tbody>
       <% @polls.each do |poll| %>

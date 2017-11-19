@@ -68,7 +68,7 @@ feature 'Incomplete verifications' do
     visit admin_verifications_path
 
     within "#user_#{incompletely_verified_user.id}" do
-      expect(page).to have_content 'Has not confirmed the sms code'
+      expect(page).to have_content 'Has not confirmed the SMS code'
     end
   end
 

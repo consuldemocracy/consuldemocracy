@@ -31,7 +31,7 @@ feature 'Admin legislation processes' do
       visit admin_root_path
 
       within('#side_menu') do
-        click_link "Collaborative Legislation"
+        click_link "Collaborative legislation"
       end
 
       expect(page).to_not have_content 'An example legislation process'
@@ -81,7 +81,7 @@ feature 'Admin legislation processes' do
       visit admin_root_path
 
       within('#side_menu') do
-        click_link "Collaborative Legislation"
+        click_link "Collaborative legislation"
       end
 
       click_link "An example legislation process"
@@ -108,7 +108,7 @@ feature 'Admin legislation processes' do
       visit admin_root_path
 
       within('#side_menu') do
-        click_link "Collaborative Legislation"
+        click_link "Collaborative legislation"
       end
 
       click_link "An example legislation process"

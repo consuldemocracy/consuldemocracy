@@ -3,7 +3,6 @@ en:
     header:
       title: Administration
     actions:
-      actions: Actions
       confirm: Are you sure?
       confirm_hide: Confirm
       hide: Hide
@@ -25,9 +24,7 @@ en:
           with_inactive: Inactive
         preview: Preview
       banner:
-        title: Title
-        description:  Description
-        target_url:  Link
+        target_url: Link
         style: Style
         image: Image
         post_started_at: Post started at
@@ -40,7 +37,7 @@ en:
         form:
           error:
             one: "error prevented this banner from being saved"
-            other: 'errors prevented this banner from being saved'
+            other: "errors prevented this banner from being saved"
       new:
         creating: Create banner
     activity:
@@ -71,7 +68,6 @@ en:
           current: Open
           finished: Finished
         budget_investments: See budget investments
-        table_name: Name
         table_phase: Phase
         table_investments: Investments
         table_edit_groups: Headings groups
@@ -83,13 +79,13 @@ en:
       update:
         notice: Participatory budget updated successfully
       edit:
-        title: Edit Participatory budget
+        title: Edit participatory budget
       new:
         title: New participatory budget
       show:
         groups:
-          one: 1 Group of budget headings
-          other: "%{count} Groups of budget headings"
+          one: 1 group of budget headings
+          other: "%{count} groups of budget headings"
       form:
         group: Group name
         no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
@@ -105,7 +101,7 @@ en:
         table_amount: Amount
         table_population: Population
       winners:
-        calculate: Calculate Winner Investments
+        calculate: Calculate winner investments
         calculated: Winners being calculated, it may take a minute.
     budget_investments:
       index:
@@ -133,8 +129,6 @@ en:
           undecided: "Undecided"
         selected: "Selected"
         select: "Select"
-        table_id: "ID"
-        table_title: "Title"
         table_supports: "Supports"
         table_admin: "Administrator"
         table_valuator: "Valuator"
@@ -152,7 +146,7 @@ en:
         edit_classification: Edit classification
         by: By
         sent: Sent
-        group: Grupo
+        group: Group
         heading: Heading
         dossier: Dossier
         edit_dossier: Edit dossier
@@ -189,10 +183,6 @@ en:
       search_unfeasible: Search unfeasible
     milestones:
       index:
-        table_id: "ID"
-        table_title: "Title"
-        table_description: "Description"
-        table_actions: "Actions"
         delete: "Delete milestone"
         no_milestones: "Don't have defined milestones"
       new:
@@ -322,7 +312,7 @@ en:
         edit:
           back: Back
           submit_button: Save changes
-          warning: You've edited the text, don't forget to click on Save to permanently save the changes.
+          warning: You've edited the text, don't forget to click on 'Save' to permanently save the changes.
         errors:
           form:
             error: Error
@@ -332,7 +322,7 @@ en:
           close_text_editor: Close text editor
           use_markdown: Use Markdown to format the text
           hints:
-            final_version: This version will be published as Final Result for this process. Comments won't be allowed in this version.
+            final_version: This version will be published as 'Final Result' for this process. Comments won't be allowed in this version.
             status:
               draft: You can preview as admin, no one else can see it
               published: Visible for everybody
@@ -352,7 +342,6 @@ en:
           draft: Draft
           published: Published
         table:
-          title: Title
           created_at: Created at
           comments: Comments
           final_version: Final version
@@ -387,7 +376,6 @@ en:
           title: Create new question
           submit_button: Create question
         table:
-          title: Title
           question_options: Question options
           answers_count: Answers count
           comments_count: Comments count
@@ -396,12 +384,9 @@ en:
     managers:
       index:
         title: Managers
-        name: Name
-        email: Email
         no_managers: There are no managers.
-      manager:
-        add: Add
-        delete: Delete
+      buttons:
+        add: Add as Manager
       search:
         title: 'Managers: User search'
     menu:
@@ -424,17 +409,17 @@ en:
       poll_officers: Poll officers
       polls: Polls
       poll_booths: Booths location
-      poll_booth_assignments: Booths Assignments
+      poll_booth_assignments: Booths assignments
       poll_shifts: Manage shifts
       officials: Officials
-      organizations: Organisations
+      organizations: Organizations
       settings: Configuration settings
       spending_proposals: Spending proposals
       stats: Statistics
-      signature_sheets: Signature Sheets
+      signature_sheets: Signature sheets
       site_customization:
-        pages: Custom Pages
-        images: Custom Images
+        pages: Custom pages
+        images: Custom images
         content_blocks: Custom content blocks
       title_categories: Categories
       title_moderated_content: Moderated content
@@ -443,29 +428,24 @@ en:
       title_profiles: Profiles
       title_banners: Banners
       title_site_customization: Site customization
-      legislation: Collaborative Legislation
+      legislation: Collaborative legislation
       users: Users
     administrators:
       index:
         title: Administrators
-        name: Name
-        email: Email
         no_administrators: There are no administrators.
       administrator:
-        add: Add
-        delete: Delete
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
+      buttons:
+        add: Add as Administrator
       search:
         title: "Administrators: User search"
     moderators:
       index:
         title: Moderators
-        name: Name
-        email: Email
         no_moderators: There are no moderators.
-      moderator:
-        add: Add
-        delete: Delete
+      buttons:
+        add: Add as Moderator
       search:
         title: 'Moderators: User search'
     newsletters:
@@ -475,14 +455,12 @@ en:
     valuators:
       index:
         title: Valuators
-        name: Name
-        email: Email
-        description: Description
         no_description: No description
         no_valuators: There are no valuators.
       valuator:
         description_placeholder: 'Description (optional)'
-        add: Add to valuators
+      buttons:
+        add: Add as Valuator
       search:
         title: 'Valuators: User search'
       summary:
@@ -498,21 +476,17 @@ en:
       index:
         title: Poll officers
       officer:
-        add: Add
-        delete: Delete position
-        name: Name
-        email: Email
         entry_name: officer
+      buttons:
+        add: Add as Poll Officer
+        delete: Delete position
       search:
         email_placeholder: Search user by email
-        search: Search
         user_not_found: User not found
     poll_officer_assignments:
       index:
         officers_title: "List of officers"
         no_officers: "There are no officers assigned to this poll."
-        table_name: "Name"
-        table_email: "Email"
       by_officer:
         date: "Date"
         booth: "Booth"
@@ -530,20 +504,17 @@ en:
         no_shifts: "This booth has no shifts"
         officer: "Officer"
         remove_shift: "Remove"
-        search_officer_button: Search
         search_officer_placeholder: Search officer
         search_officer_text: Search for an officer to assign a new shift
         select_date: "Select day"
-        no_voting_days: "Los dias de votación terminaron"
+        no_voting_days: "Voting days ended"
         select_task: "Select task"
         table_shift: "Shift"
-        table_email: "Email"
-        table_name: "Name"
       flash:
         create: "Shift added"
         destroy: "Shift removed"
         date_missing: "A date must be selected"
-      vote_collection: Collect Votes
+      vote_collection: Collect votes
       recount_scrutiny: Recount & Scrutiny
     booth_assignments:
       manage_assignments: Manage assignments
@@ -560,10 +531,9 @@ en:
       flash:
         destroy: "Booth not assigned anymore"
         create: "Booth assigned"
-        error_destroy: "An error ocurred when removing booth assignment"
-        error_create: "An error ocurred when assigning booth to the poll"
+        error_destroy: "An error occurred when removing booth assignment"
+        error_create: "An error occurred when assigning booth to the poll"
       show:
-        location: "Location"
         officers: "Officers"
         officers_list: "Officer list for this booth"
         no_officers: "There are no officers for this booth"
@@ -572,19 +542,16 @@ en:
         results: "Results"
         date: "Date"
         count_final: "Final recount (by officer)"
-        count_by_system:  "Votes (automatic)"
+        count_by_system: "Votes (automatic)"
         total_system: Total votes (automatic)
       index:
         booths_title: "List of booths"
         no_booths: "There are no booths assigned to this poll."
-        table_name: "Name"
-        table_location: "Location"
     polls:
       index:
         title: "List of polls"
         no_polls: "There are no polls."
         create: "Create poll"
-        name: "Name"
         dates: "Dates"
         geozone_restricted: "Restricted to districts"
       new:
@@ -605,7 +572,6 @@ en:
         results_tab: Results
         no_questions: "There are no questions assigned to this poll."
         questions_title: "List of questions"
-        table_title: "Title"
       flash:
         question_added: "Question added to this poll"
         error_on_question_added: "Question could not be assigned to this poll"
@@ -614,8 +580,8 @@ en:
         title: "Questions"
         create: "Create question"
         no_questions: "There are no questions."
-        filter_poll: Filter by Poll
-        select_poll: Select Poll
+        filter_poll: Filter by poll
+        select_poll: Select poll
         questions_tab: "Questions"
         successful_proposals_tab: "Successful proposals"
         create_question: "Create question"
@@ -632,7 +598,6 @@ en:
           save_image: "Save image"
       show:
         proposal: Original proposal
-        author: Author
         question: Question
         edit_question: Edit question
         valid_answers: Valid answers
@@ -640,23 +605,14 @@ en:
         video_url: External video
         answers:
           title: Answer
-          description: Description
           videos: Videos
           video_list: Video list
-          images: Images
-          images_list: Images list
           documents: Documents
           documents_list: Documents list
-          document_title: Title
-          document_actions: Actions
     answers:
       new:
         title: New answer
       show:
-        title: Title
-        description: Description
-        images: Images
-        images_list: Images list
         edit: Edit answer
       edit:
         title: Edit answer
@@ -664,7 +620,6 @@ en:
         index:
           title: Videos
           add_video: Add video
-          video_title: Title
           video_url: External video
         new:
           title: New video
@@ -697,19 +652,13 @@ en:
         title: "List of booths"
         no_booths: "There are no booths."
         add_booth: "Add booth"
-        name: "Name"
-        location: "Location"
-        no_location: "No Location"
+        no_location: "No location"
       new:
         title: "New booth"
-        name: "Name"
-        location: "Location"
         submit_button: "Create booth"
       edit:
         title: "Edit booth"
         submit_button: "Update booth"
-      show:
-        location: "Location"
       booth:
         shifts: "Manage shifts"
         edit: "Edit booth"
@@ -723,7 +672,6 @@ en:
       index:
         title: Officials
         no_officials: There are no officials.
-        name: Nombre
         official_position: Official position
         official_level: Level
       level_0: Not official
@@ -746,24 +694,21 @@ en:
           rejected: Rejected
           verified: Verified
         hidden_count_html:
-          one: There is also <strong>one organisation</strong> with no users or with a hidden user.
-          other: There are <strong>%{count} organisations</strong> with no users or with a hidden user.
-        name: Name
-        email: Email
+          one: There is also <strong>one organization</strong> with no users or with a hidden user.
+          other: There are <strong>%{count} organizations</strong> with no users or with a hidden user.
         phone_number: Phone
         responsible_name: Responsible
         status: Status
         no_organizations: There are no organizations.
         reject: Reject
         rejected: Rejected
-        search: Search
         search_placeholder: Name, email or phone number
-        title: Organisations
+        title: Organizations
         verified: Verified
         verify: Verify
         pending: Pending
       search:
-        title: Search Organisations
+        title: Search organizations
         no_results: No organizations found.
     proposals:
       index:
@@ -778,8 +723,8 @@ en:
       flash:
         updated: Value updated
       index:
-        banners: Estilos de banners
-        banner_imgs: Imágenes para los banners
+        banners: Banners styles
+        banner_images: Banners images
         title: Configuration settings
         update_setting: Update
         feature_flags: Features
@@ -796,29 +741,29 @@ en:
           form:
             submit: Update
     shared:
-      booths_search:
-        button: Search
-        placeholder: Search booth by name
-      poll_officers_search:
-        button: Search
-        placeholder: Search poll officers
-      poll_questions_search:
-        button: Search
-        placeholder: Search poll questions
-      proposal_search:
-        button: Search
-        placeholder: Search proposals by title, code, description or question
-      spending_proposal_search:
-        button: Search
-        placeholder: Search spending proposals by title or description
-      user_search:
-        button: Search
-        placeholder: Search user by name or email
+      buttons:
+        delete: Delete
+        search: Search
+      labels:
+        actions: Actions
+        author: Author
+        description: Description
+        email: Email
+        id: ID
+        images: Images
+        images_list: Images list
+        location: Location
+        name: Name
+        title: Title
+      placeholders:
+        booths: Search booth by name
+        poll_officers: Search poll officers
+        poll_questions: Search poll questions
+        proposals: Search proposals by title, code, description or question
+        spending_proposals: Search spending proposals by title or description
+        users: Search user by name or email
       search_results: "Search results"
       no_search_results: "No results found."
-      actions: Actions
-      title: Title
-      description: Description
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -882,7 +827,6 @@ en:
         edit: Edit
         delete: Delete
       geozone:
-        name: Name
         external_code: External code
         census_code: Census code
         coordinates: Coordinates
@@ -903,9 +847,7 @@ en:
         success: Geozone successfully deleted
         error: This geozone can't be deleted since there are elements attached to it
     signature_sheets:
-      author: Author
       created_at: Creation date
-      name: Name
       no_signature_sheets: "There are not signature_sheets"
       index:
         title: Signature sheets
@@ -916,7 +858,6 @@ en:
         submit: Create signature sheet
       show:
         created_at: Created
-        author: Author
         documents: Documents
         document_count: "Number of documents:"
         verified:
@@ -973,8 +914,6 @@ en:
         placeholder: Type the name of the topic
     users:
       columns:
-        name: Name
-        email: Email
         document_number: Document number
         roles: Roles
         verification_level: Verification level
@@ -987,7 +926,7 @@ en:
     verifications:
       index:
         phone_not_given: Phone not given
-        sms_code_not_confirmed: Has not confirmed the sms code
+        sms_code_not_confirmed: Has not confirmed the SMS code
         title: Incomplete verifications
     site_customization:
       content_blocks:
@@ -1017,7 +956,6 @@ en:
           title: Create new content block
         content_block:
           body: Body
-          name: Name
       images:
         index:
           title: Custom images
@@ -1056,7 +994,6 @@ en:
         page:
           created_at: Created at
           status: Status
-          title: Title
           updated_at: Updated at
           status_draft: Draft
           status_published: Published

@@ -2,7 +2,10 @@
   Admin - <%= t("admin.menu.site_customization.pages") %>
 <% end %>
 
-<%= link_to t("admin.site_customization.pages.index.create"), new_admin_site_customization_page_path, class: "button float-right" %>
+<%= link_to t("admin.site_customization.pages.index.create"),
+            new_admin_site_customization_page_path,
+            class: "button float-right" %>
+
 <h2 class="inline-block"><%= t("admin.site_customization.pages.index.title") %></h2>
 
 <% if @pages.any? %>
@@ -11,38 +14,39 @@
   <table class="cms-page-list">
     <thead>
       <tr>
-        <th><%= t("admin.site_customization.pages.page.title") %></th>
+        <th><%= t("admin.shared.labels.title") %></th>
         <th><%= t("admin.site_customization.pages.page.created_at") %></th>
         <th><%= t("admin.site_customization.pages.page.updated_at") %></th>
         <th><%= t("admin.site_customization.pages.page.status") %></th>
         <th><%= t("admin.site_customization.pages.page.locale") %></th>
-        <th colspan="2"><%= t("admin.actions.actions") %></th>
+        <th colspan="2"><%= t("admin.shared.labels.actions") %></th>
       </tr>
     </thead>
     <tbody>
-    <% @pages.each do |page| %>
-      <tr id="<%= dom_id(page) %>">
-        <td>
-          <%= link_to page.title, edit_admin_site_customization_page_path(page) %>
-        </td>
-        <td><%= I18n.l page.created_at, format: :short %></td>
-        <td><%= I18n.l page.created_at, format: :short %></td>
-        <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
-        <td><%= name_for_locale(page.locale) %></td>
-        <td class="small">
-          <span class="icon-eye"></span>
-          <% if page.status == "published" %>
-            <%= link_to t("admin.site_customization.pages.index.see_page"), page.url, target: "_blank" %>
-          <% else %>
-            <%= t("admin.site_customization.pages.index.see_page") %>
-          <% end %>
-        </td>
-        <td class="small delete">
-          <span class="icon-x"></span>
-          <%= link_to t("admin.site_customization.pages.index.delete"), admin_site_customization_page_path(page), method: :delete, class: "delete" %>
-        </td>
-      </tr>
-    <% end %>
+      <% @pages.each do |page| %>
+        <tr id="<%= dom_id(page) %>">
+          <td><%= link_to page.title, edit_admin_site_customization_page_path(page) %></td>
+          <td><%= I18n.l page.created_at, format: :short %></td>
+          <td><%= I18n.l page.created_at, format: :short %></td>
+          <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
+          <td><%= name_for_locale(page.locale) %></td>
+          <td class="small">
+            <span class="icon-eye"></span>
+            <% if page.status == "published" %>
+              <%= link_to t("admin.site_customization.pages.index.see_page"), page.url, target: "_blank" %>
+            <% else %>
+              <%= t("admin.site_customization.pages.index.see_page") %>
+            <% end %>
+          </td>
+          <td class="small delete">
+            <span class="icon-x"></span>
+            <%= link_to t("admin.site_customization.pages.index.delete"),
+                        admin_site_customization_page_path(page),
+                        method: :delete,
+                        class: "delete" %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 

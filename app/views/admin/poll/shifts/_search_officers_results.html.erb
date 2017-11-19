@@ -1,35 +1,31 @@
 <% if @officers.blank? %>
   <div class="callout alert margin-bottom">
-    <%= t('admin.shared.no_search_results') %>
+    <%= t("admin.shared.no_search_results") %>
   </div>
 <% else %>
-  <h3><%= t('admin.shared.search_results') %></h3>
+  <h3><%= t("admin.shared.search_results") %></h3>
 
   <table>
     <thead>
       <tr>
-        <th><%= t("admin.poll_shifts.new.table_name") %></th>
-        <th><%= t("admin.poll_shifts.new.table_email") %></th>
+        <th><%= t("admin.shared.labels.name") %></th>
+        <th><%= t("admin.shared.labels.email") %></th>
         <th class="text-right">
           <%= t("admin.poll_shifts.new.table_shift") %>
         </th>
       </tr>
     </thead>
     <tbody>
-      <% @officers.each do |user| %>
-      <tr>
-        <td>
-          <%= user.name %>
-        </td>
-        <td>
-          <%= user.email %>
-        </td>
-        <td class="text-right">
-          <%= link_to t("admin.poll_shifts.new.edit_shifts"),
-                      new_admin_booth_shift_path(officer_id: user.poll_officer.id),
-                      class: "button hollow" %>
-        </td>
-      </tr>
+      <% @officers.each do |officer| %>
+        <tr>
+          <td><%= officer.name %></td>
+          <td><%= officer.email %></td>
+          <td class="text-right">
+            <%= link_to t("admin.poll_shifts.new.edit_shifts"),
+                        new_admin_booth_shift_path(officer_id: officer.poll_officer.id),
+                        class: "button hollow" %>
+          </td>
+        </tr>
       <% end %>
     </tbody>
   </table>

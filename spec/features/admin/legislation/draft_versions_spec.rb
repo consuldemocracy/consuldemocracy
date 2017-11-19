@@ -41,7 +41,7 @@ feature 'Admin legislation draft versions' do
       visit admin_root_path
 
       within('#side_menu') do
-        click_link "Collaborative Legislation"
+        click_link "Collaborative legislation"
       end
 
       click_link "All"
@@ -74,7 +74,7 @@ feature 'Admin legislation draft versions' do
       visit admin_root_path
 
       within('#side_menu') do
-        click_link "Collaborative Legislation"
+        click_link "Collaborative legislation"
       end
 
       click_link "All"

@@ -7,28 +7,26 @@
 
   <table>
     <thead>
-      <th scope="col"><%= t("admin.officials.index.name") %></th>
+      <th scope="col"><%= t("admin.shared.labels.name") %></th>
       <th scope="col"><%= t("admin.officials.index.official_position") %></th>
       <th scope="col"><%= t("admin.officials.index.official_level") %></th>
-      <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      <th scope="col" class="small-3"><%= t("admin.shared.labels.actions") %></th>
     </thead>
     <tbody>
       <% @officials.each do |official| %>
         <tr>
-          <td>
-            <%= link_to official.name, edit_admin_official_path(official) %>
-          </td>
+          <td><%= link_to official.name, edit_admin_official_path(official) %></td>
           <td>
             <span class="label level-<%= official.official_level %>">
               <%= official.official_position %>
             </span>
           </td>
+          <td><%= t("admin.officials.level_#{official.official_level}") %></td>
           <td>
-            <%= t("admin.officials.level_#{official.official_level}") %>
-          </td>
-          <td>
-            <%= link_to official.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"),
-                        edit_admin_official_path(official), class: "button hollow expanded" %>
+            <%= link_to official.official? ? t("admin.officials.search.edit_official") :
+                                             t("admin.officials.search.make_official"),
+                                             edit_admin_official_path(official),
+                                             class: "button hollow expanded" %>
           </td>
         </tr>
       <% end %>

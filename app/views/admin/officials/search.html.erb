@@ -3,22 +3,19 @@
 <%= render 'admin/shared/user_search', url: search_admin_officials_path %>
 
 <% if @users.any? %>
-
   <h3><%= page_entries_info @users %></h3>
 
   <table>
     <thead>
-        <th scope="col"><%= t("admin.officials.index.name") %></th>
-        <th scope="col"><%= t("admin.officials.index.official_position") %></th>
-        <th scope="col"><%= t("admin.officials.index.official_level") %></th>
-        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      <th scope="col"><%= t("admin.shared.labels.name") %></th>
+      <th scope="col"><%= t("admin.officials.index.official_position") %></th>
+      <th scope="col"><%= t("admin.officials.index.official_level") %></th>
+      <th scope="col" class="small-3"><%= t("admin.shared.labels.actions") %></th>
     </thead>
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td>
-            <%= link_to user.name, edit_admin_official_path(user) %>
-          </td>
+          <td><%= link_to user.name, edit_admin_official_path(user) %></td>
           <td>
             <% if user.official? %>
               <span class="label round level-<%= user.official_level %>">
@@ -28,14 +25,12 @@
               <%= t("admin.officials.level_0") %>
             <% end %>
           </td>
-          <td>
-            <%= t("admin.officials.level_#{user.official_level}") %>
-          </td>
+          <td><%= t("admin.officials.level_#{user.official_level}") %></td>
           <td>
             <% if user.official? %>
-              <%= link_to  t("admin.officials.search.edit_official"),
-                           edit_admin_official_path(user),
-                           class: "button hollow expanded" %>
+              <%= link_to t("admin.officials.search.edit_official"),
+                          edit_admin_official_path(user),
+                          class: "button hollow expanded" %>
             <% else %>
               <%= link_to t("admin.officials.search.make_official"),
                           edit_admin_official_path(user),

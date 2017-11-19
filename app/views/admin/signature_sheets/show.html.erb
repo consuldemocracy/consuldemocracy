@@ -4,7 +4,7 @@
   <%= t("admin.signature_sheets.show.created_at") %>
   <strong><%= l(@signature_sheet.created_at, format: :short) %></strong>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <%= t("admin.signature_sheets.show.author") %>
+  <%= t("admin.shared.labels.author") %>
   <strong><%= @signature_sheet.author.name %></strong>
 </div>
 
@@ -17,7 +17,6 @@
   <p><strong><%= t("admin.signature_sheets.show.documents") %></strong></p>
   <%= simple_format @signature_sheet.document_numbers %>
 </div>
-
 
 <div id="verified_signatures" class="callout success">
   <strong>

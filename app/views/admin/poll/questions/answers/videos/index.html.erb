@@ -15,10 +15,10 @@
   <table>
     <thead>
       <tr>
-        <th><%= t("admin.answers.videos.index.video_title") %></th>
+        <th><%= t("admin.shared.labels.title") %></th>
         <th><%= t("admin.answers.videos.index.video_url") %></th>
         <th class="text-right">
-          <%= t("admin.actions.actions") %>
+          <%= t("admin.shared.labels.actions") %>
         </th>
       </tr>
     </thead>
@@ -29,10 +29,9 @@
           <td><%= video.title %></td>
           <td><%= link_to "#{video.url}", video.url %></td>
           <td class="text-right">
-
             <%= link_to t("shared.edit"),
-                          edit_admin_video_path(video),
-                          class: "button hollow" %>
+                        edit_admin_video_path(video),
+                        class: "button hollow" %>
 
             <%= link_to t("shared.delete"),
                         admin_video_path(video),

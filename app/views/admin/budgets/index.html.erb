@@ -11,7 +11,7 @@
 <table>
   <thead>
     <tr>
-      <th><%= t("admin.budgets.index.table_name") %></th>
+      <th><%= t("admin.shared.labels.name") %></th>
       <th><%= t("admin.budgets.index.table_phase") %></th>
       <th><%= t("admin.budgets.index.table_investments") %></th>
       <th><%= t("admin.budgets.index.table_edit_groups") %></th>
@@ -21,14 +21,11 @@
   <tbody>
     <% @budgets.each do |budget| %>
       <tr id="<%= dom_id(budget) %>" class="budget">
-        <td>
-          <%= budget.name %>
-        </td>
+        <td><%= budget.name %></td>
+        <td class="small"><%= t("budgets.phase.#{budget.phase}") %></td>
         <td class="small">
-          <%= t("budgets.phase.#{budget.phase}") %>
-        </td>
-        <td class="small">
-          <%= link_to t("admin.budgets.index.budget_investments"), admin_budget_budget_investments_path(budget_id: budget.id) %>
+          <%= link_to t("admin.budgets.index.budget_investments"),
+                      admin_budget_budget_investments_path(budget_id: budget.id) %>
         </td>
         <td class="small">
           <%= link_to t("admin.budgets.index.edit_groups"), admin_budget_path(budget) %>

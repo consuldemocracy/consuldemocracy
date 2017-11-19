@@ -20,7 +20,7 @@ feature 'Admin moderators' do
     click_button 'Search'
 
     expect(page).to have_content @user.name
-    click_link 'Add'
+    click_link 'Add as Moderator'
     within("#moderators") do
       expect(page).to have_content @user.name
     end

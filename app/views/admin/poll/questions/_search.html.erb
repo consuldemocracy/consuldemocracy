@@ -1,10 +1,9 @@
 <%= form_tag(admin_questions_path, method: :get) do |f| %>
   <div class="input-group">
-    <%= text_field_tag :search,
-                       @search,
-                       placeholder: t("admin.shared.poll_questions_search.placeholder") %>
+    <%= text_field_tag :search, @search,
+                       placeholder: t("admin.shared.placeholders.poll_questions") %>
     <div class="input-group-button">
-      <%= submit_tag t("admin.shared.poll_questions_search.button"), class: "button" %>
+      <%= submit_tag t("admin.shared.buttons.search"), class: "button" %>
     </div>
   </div>
 <% end %>

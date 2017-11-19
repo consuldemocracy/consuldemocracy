@@ -8,11 +8,9 @@
 </ul>
 
 <div class="poll-question-form">
-  <%= form_for(Poll::Question::Answer.new,
-              url: admin_answer_path(@answer),
-              method: :put) do |f| %>
+  <%= form_for(Poll::Question::Answer.new, url: admin_answer_path(@answer), method: :put) do |f| %>
 
-    <%= render 'shared/errors', resource: @answer %>
+    <%= render "shared/errors", resource: @answer %>
 
     <div class="row">
       <div class="small-12 column">
@@ -31,25 +29,26 @@
 
   <% if @answer.documents.present? %>
     <table>
-      <tr>
-        <th scope="col"><%= t("admin.questions.show.answers.document_title") %></th>
-        <th scope="col" class="text-right"><%= t("admin.questions.show.answers.document_actions") %></th>
-      </tr>
-
-      <% @answer.documents.each do |document| %>
+      <thead>
         <tr>
-          <td>
-            <%= link_to document.title, document.attachment.url %>
-          </td>
-          <td class="text-right">
-            <%= link_to t('documents.buttons.download_document'),
-                        document.attachment.url,
-                        target: "_blank",
-                        rel: "nofollow",
-                        class: 'button hollow' %>
-          </td>
+          <th scope="col"><%= t("admin.shared.labels.title") %></th>
+          <th scope="col" class="text-right"><%= t("admin.shared.labels.actions") %></th>
         </tr>
-      <% end %>
+      </thead>
+      <tbody>
+        <% @answer.documents.each do |document| %>
+          <tr>
+            <td><%= link_to document.title, document.attachment.url %></td>
+            <td class="text-right">
+              <%= link_to t('documents.buttons.download_document'),
+                          document.attachment.url,
+                          target: "_blank",
+                          rel: "nofollow",
+                          class: "button hollow" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
   <% end %>
 </div>

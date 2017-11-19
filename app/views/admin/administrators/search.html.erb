@@ -1,6 +1,6 @@
 <h2><%= t("admin.administrators.search.title") %></h2>
 
-<%= render 'admin/shared/user_search', url: search_admin_administrators_path %>
+<%= render "admin/shared/user_search", url: search_admin_administrators_path %>
 
 <div id="administrators">
   <% if @users.any? %>
@@ -8,9 +8,9 @@
 
     <table>
       <thead>
-        <th scope="col"><%= t("admin.administrators.index.name") %></th>
-        <th scope="col"><%= t("admin.administrators.index.email") %></th>
-        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+        <th scope="col"><%= t("admin.shared.labels.name") %></th>
+        <th scope="col"><%= t("admin.shared.labels.email") %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.labels.actions") %></th>
       </thead>
       <tbody>
         <% @users.each do |user| %>
@@ -19,12 +19,12 @@
             <td><%= user.email %></td>
             <td class="text-right">
               <% if user.administrator? && user.administrator.persisted? %>
-                <%= link_to t('admin.administrators.administrator.delete'),
+                <%= link_to t("admin.shared.buttons.delete"),
                             admin_administrator_path(user),
                             method: :delete,
                             class: "button hollow alert expanded" %>
               <% else %>
-                <%= link_to t('admin.administrators.administrator.add'),
+                <%= link_to t("admin.administrators.buttons.add"),
                             { controller: "admin/administrators",
                               action: :create,
                               user_id: user },

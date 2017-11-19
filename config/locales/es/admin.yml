@@ -3,8 +3,8 @@ es:
     header:
       title: Administración
     actions:
+      confirm: "¿Estás seguro?"
       actions: Acciones
-      confirm: '¿Estás seguro?'
       confirm_hide: Confirmar
       hide: Ocultar
       hide_author: Bloquear al autor
@@ -35,7 +35,7 @@ es:
       edit:
         editing: Editar el banner
         form:
-          submit_button: Guardar Cambios
+          submit_button: Guardar cambios
       errors:
         form:
           error:
@@ -59,7 +59,7 @@ es:
           on_debates: Debates
           on_proposals: Propuestas
           on_users: Usuarios
-        title: Actividad de los Moderadores
+        title: Actividad de moderadores
         type: Tipo
         no_activity: No hay actividad de moderadores.
     budgets:
@@ -71,7 +71,6 @@ es:
           current: Abiertos
           finished: Terminados
         budget_investments: Ver propuestas de inversión
-        table_name: Nombre
         table_phase: Fase
         table_investments: Propuestas de inversión
         table_edit_groups: Grupos de partidas
@@ -88,8 +87,8 @@ es:
         title: Nuevo presupuesto ciudadano
       show:
         groups:
-          one: 1 Grupo de partidas presupuestarias
-          other: "%{count} Grupos de partidas presupuestarias"
+          one: 1 grupo de partidas presupuestarias
+          other: "%{count} grupos de partidas presupuestarias"
       form:
         group: Nombre del grupo
         no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
@@ -133,8 +132,6 @@ es:
           undecided: "Sin decidir"
         selected: "Seleccionada"
         select: "Seleccionar"
-        table_id: "ID"
-        table_title: "Título"
         table_supports: "Apoyos"
         table_admin: "Administrador"
         table_valuator: "Evaluador"
@@ -189,10 +186,6 @@ es:
       search_unfeasible: Buscar inviables
     milestones:
       index:
-        table_id: "ID"
-        table_title: "Título"
-        table_description: "Descripción"
-        table_actions: "Acciones"
         delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
       new:
@@ -200,7 +193,7 @@ es:
       edit:
         title: Editar hito
       create:
-        notice: Nuevo hito creado con éxito!
+        notice: ¡Nuevo hito creado con éxito!
       update:
         notice: Hito actualizado
       delete:
@@ -239,7 +232,7 @@ es:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
         user: Usuario
-        no_hidden_users: No hay uusarios bloqueados.
+        no_hidden_users: No hay usuarios bloqueados.
       show:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
@@ -322,7 +315,7 @@ es:
         edit:
           back: Volver
           submit_button: Guardar cambios
-          warning: Ojo, has editado el texto. Para conservar de forma permanente los cambios, no te olvides de hacer click en Guardar.
+          warning: Ojo, has editado el texto. Para conservar de forma permanente los cambios, no te olvides de hacer click en 'Guardar'.
         errors:
           form:
             error: Error
@@ -332,7 +325,7 @@ es:
           close_text_editor: Cerrar editor de texto
           use_markdown: Usa Markdown para formatear el texto
           hints:
-            final_version: Será la versión que se publique en Publicación de Resultados. Esta versión no se podrá comentar
+            final_version: Será la versión que se publique en 'Publicación de Resultados'. Esta versión no se podrá comentar
             status:
               draft: Podrás previsualizarlo como logueado, nadie más lo podrá ver
               published: Será visible para todo el mundo
@@ -352,7 +345,6 @@ es:
           draft: Borrador
           published: Publicado
         table:
-          title: Título
           created_at: Creado
           comments: Comentarios
           final_version: Versión final
@@ -387,21 +379,27 @@ es:
           title: Crear nueva pregunta
           submit_button: Crear pregunta
         table:
-          title: Título
           question_options: Opciones de respuesta
           answers_count: Número de respuestas
           comments_count: Número de comentarios
         question_option_fields:
           remove_option: Eliminar
+    administrators:
+      index:
+        title: Administradores
+        no_administrators: No hay administradores.
+      administrator:
+        restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
+      buttons:
+        add: Añadir como Administrador
+      search:
+        title: "Administradores: Búsqueda de usuarios"
     managers:
       index:
         title: Gestores
-        name: Nombre
-        email: Email
         no_managers: No hay gestores.
-      manager:
+      buttons:
         add: Añadir como Gestor
-        delete: Borrar
       search:
         title: 'Gestores: Búsqueda de usuarios'
     menu:
@@ -460,12 +458,9 @@ es:
     moderators:
       index:
         title: Moderadores
-        name: Nombre
-        email: Email
         no_moderators: No hay moderadores.
-      moderator:
+      buttons:
         add: Añadir como Moderador
-        delete: Borrar
       search:
         title: 'Moderadores: Búsqueda de usuarios'
     newsletters:
@@ -475,14 +470,12 @@ es:
     valuators:
       index:
         title: Evaluadores
-        name: Nombre
-        email: Email
-        description: Descripción
         no_description: Sin descripción
         no_valuators: No hay evaluadores.
       valuator:
-        description_placeholder: 'Descripción (opcional)'
-        add: Añadir como evaluador
+        description_placeholder: "Descripción (opcional)"
+      buttons:
+        add: Añadir como Evaluador
       search:
         title: 'Evaluadores: Búsqueda de usuarios'
       summary:
@@ -498,21 +491,17 @@ es:
       index:
         title: Presidentes de mesa
       officer:
+        entry_name: presidente de mesa
+      buttons:
         add: Añadir como Presidente de mesa
         delete: Eliminar cargo
-        name: Nombre
-        email: Email
-        entry_name: presidente de mesa
       search:
         email_placeholder: Buscar usuario por email
-        search: Buscar
         user_not_found: Usuario no encontrado
     poll_officer_assignments:
       index:
         officers_title: "Listado de presidentes de mesa asignados"
         no_officers: "No hay presidentes de mesa asignados a esta votación."
-        table_name: "Nombre"
-        table_email: "Email"
       by_officer:
         date: "Fecha"
         booth: "Urna"
@@ -530,20 +519,17 @@ es:
         no_shifts: "Esta urna no tiene turnos asignados"
         officer: "Presidente de mesa"
         remove_shift: "Eliminar turno"
-        search_officer_button: Buscar
         search_officer_placeholder: Buscar presidentes de mesa
         search_officer_text: Busca al presidente de mesa para asignar un turno
         select_date: "Seleccionar día"
-        no_voting_days: "Voting days ended"
+        no_voting_days: "Los días de votación terminaron"
         select_task: "Seleccionar tarea"
         table_shift: "Turno"
-        table_email: "Email"
-        table_name: "Nombre"
       flash:
         create: "Añadido turno de presidente de mesa"
         destroy: "Eliminado turno de presidente de mesa"
         date_missing: "Debe seleccionarse una fecha"
-      vote_collection: Recoger Votos
+      vote_collection: Recoger votos
       recount_scrutiny: Recuento & Escrutinio
     booth_assignments:
       manage_assignments: Gestionar asignaciones
@@ -563,7 +549,6 @@ es:
         error_destroy: "Se ha producido un error al desasignar la urna"
         error_create: "Se ha producido un error al intentar asignar la urna"
       show:
-        location: "Ubicación"
         officers: "Presidentes de mesa"
         officers_list: "Lista de presidentes de mesa asignados a esta urna"
         no_officers: "No hay presidentes de mesa para esta urna"
@@ -573,18 +558,15 @@ es:
         date: "Fecha"
         count_final: "Recuento final (presidente de mesa)"
         count_by_system: "Votos (automático)"
-        total_system: Votos totales acumulados(automático)
+        total_system: "Votos totales acumulados (automático)"
       index:
         booths_title: "Listado de urnas asignadas"
         no_booths: "No hay urnas asignadas a esta votación."
-        table_name: "Nombre"
-        table_location: "Ubicación"
     polls:
       index:
         title: "Listado de votaciones"
         no_polls: "No hay ninguna votación."
         create: "Crear votación"
-        name: "Nombre"
         dates: "Fechas"
         geozone_restricted: "Restringida a los distritos"
       new:
@@ -605,7 +587,6 @@ es:
         results_tab: Resultados
         no_questions: "No hay preguntas asignadas a esta votación."
         questions_title: "Listado de preguntas asignadas"
-        table_title: "Título"
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"
@@ -632,7 +613,6 @@ es:
           save_image: "Guardar imagen"
       show:
         proposal: Propuesta ciudadana original
-        author: Autor
         question: Pregunta
         edit_question: Editar pregunta
         valid_answers: Respuestas válidas
@@ -640,23 +620,14 @@ es:
         video_url: Video externo
         answers:
           title: Respuesta
-          description: Descripción
           videos: Vídeos
           video_list: Lista de vídeos
-          images: Imágenes
-          images_list: Lista de imágenes
           documents: Documentos
           documents_list: Lista de documentos
-          document_title: Título
-          document_actions: Acciones
     answers:
       new:
         title: Nueva respuesta
       show:
-        title: Título
-        description: Descripción
-        images: Imágenes
-        images_list: Lista de imágenes
         edit: Editar respuesta
       edit:
         title: Editar respuesta
@@ -697,33 +668,26 @@ es:
         title: "Lista de urnas"
         no_booths: "No hay urnas."
         add_booth: "Añadir urna"
-        name: "Nombre"
-        location: "Ubicación"
-        no_location: "Sin Ubicación"
+        no_location: "Sin ubicación"
       new:
         title: "Nueva urna"
-        name: "Nombre"
-        location: "Ubicación"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"
         submit_button: "Actualizar urna"
-      show:
-        location: "Ubicación"
       booth:
         shifts: "Asignar turnos"
         edit: "Editar urna"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
-        title: 'Cargos Públicos: Editar usuario'
+        title: 'Cargos públicos: Editar usuario'
       flash:
         official_destroyed: 'Datos guardados: el usuario ya no es cargo público'
         official_updated: Datos del cargo público guardados
       index:
-        title: Cargos Públicos
+        title: Cargos públicos
         no_officials: No hay cargos públicos.
-        name: Nombre
         official_position: Cargo público
         official_level: Nivel
       level_0: No es cargo público
@@ -735,7 +699,7 @@ es:
       search:
         edit_official: Editar cargo público
         make_official: Convertir en cargo público
-        title: 'Cargos Públicos: Búsqueda de usuarios'
+        title: 'Cargos públicos: Búsqueda de usuarios'
         no_results: No se han encontrado cargos públicos.
     organizations:
       index:
@@ -748,22 +712,19 @@ es:
         hidden_count_html:
           one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
           other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
-        name: Nombre
-        email: Email
         phone_number: Teléfono
         responsible_name: Responsable
         status: Estado
         no_organizations: No hay organizaciones.
         reject: Rechazar
         rejected: Rechazada
-        search: Buscar
         search_placeholder: Nombre, email o teléfono
         title: Organizaciones
         verified: Verificada
         verify: Verificar
         pending: Pendiente
       search:
-        title: Buscar Organizaciones
+        title: Buscar organizaciones
         no_results: No se han encontrado organizaciones.
     proposals:
       index:
@@ -778,8 +739,8 @@ es:
       flash:
         updated: Valor actualizado
       index:
-        banners: Banner style
-        banner_imgs: Banner images
+        banners: Estilos de banners
+        banner_images: Imágenes para los banners
         title: Configuración global
         update_setting: Actualizar
         feature_flags: Funcionalidades
@@ -796,24 +757,27 @@ es:
           form:
             submit: Actualizar
     shared:
-      booths_search:
-        button: Buscar
-        placeholder: Buscar urna por nombre
-      poll_officers_search:
-        button: Buscar
-        placeholder: Buscar presidentes de mesa
-      poll_questions_search:
-        button: Buscar
-        placeholder: Buscar preguntas
-      proposal_search:
-        button: Buscar
-        placeholder: Buscar propuestas por título, código, descripción o pregunta
-      spending_proposal_search:
-        button: Buscar
-        placeholder: Buscar propuestas por título o descripción
-      user_search:
-        button: Buscar
-        placeholder: Buscar usuario por nombre o email
+      buttons:
+        delete: Eliminar
+        search: Buscar
+      labels:
+        actions: Acciones
+        author: Autor
+        description: Descripción
+        email: Correo electrónico
+        id: ID
+        images: Imágenes
+        images_list: Lista de imágenes
+        location: Ubicación
+        name: Nombre
+        title: Título
+      placeholders:
+        booths: Buscar urna por nombre
+        poll_officers: Buscar presidentes de mesa
+        poll_questions: Buscar preguntas
+        proposals: Buscar propuesta por título, código, descripción o pregunta
+        spending_proposals: Buscar propuestas por título o descripción
+        users: Buscar usuario por nombre o correo electrónico
       search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
@@ -882,7 +846,6 @@ es:
         edit: Editar
         delete: Borrar
       geozone:
-        name: Nombre
         external_code: Código externo
         census_code: Código del censo
         coordinates: Coordenadas
@@ -903,9 +866,7 @@ es:
         success: Distrito borrado correctamente
         error: No se puede borrar el distrito porque ya tiene elementos asociados
     signature_sheets:
-      author: Autor
       created_at: Fecha de creación
-      name: Nombre
       no_signature_sheets: "No existen hojas de firmas"
       index:
         title: Hojas de firmas
@@ -916,7 +877,6 @@ es:
         submit: Crear hoja de firmas
       show:
         created_at: Creado
-        author: Autor
         documents: Documentos
         document_count: "Número de documentos:"
         verified:
@@ -973,8 +933,6 @@ es:
         placeholder: Escribe el nombre del tema
     users:
       columns:
-        name: Nombre
-        email: Correo electrónico
         document_number: DNI/Pasaporte/Tarjeta de residencia
         roles: Roles
         verification_level: Nivel de verficación
@@ -1017,7 +975,6 @@ es:
           title: Crear nuevo bloque
         content_block:
           body: Contenido
-          name: Nombre
       images:
         index:
           title: Personalizar imágenes
@@ -1056,7 +1013,6 @@ es:
         page:
           created_at: Creada
           status: Estado
-          title: Título
           updated_at: Última actualización
           status_draft: Borrador
           status_published: Publicada

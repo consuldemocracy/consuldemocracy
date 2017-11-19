@@ -8,30 +8,27 @@
   <table>
     <thead>
       <th scope="col" class="small-9"><%= t("admin.hidden_users.index.user") %></th>
-      <th scope="col"><%= t("admin.shared.actions") %></th>
+      <th scope="col"><%= t("admin.shared.labels.actions") %></th>
     </thead>
     <tbody>
-    <% @users.each do |user| %>
-      <tr id="<%= dom_id(user) %>">
-        <td>
-          <p><%= link_to user.name, admin_hidden_user_path(user) %></p>
-        </td>
-
-        <td>
-          <%= link_to t("admin.actions.restore"),
-                restore_admin_hidden_user_path(user, request.query_parameters),
-                method: :put,
-                data: { confirm: t("admin.actions.confirm") },
-                class: "button hollow warning" %>
-          <% unless user.confirmed_hide? %>
-            <%= link_to t("admin.actions.confirm_hide"),
-                confirm_hide_admin_hidden_user_path(user, request.query_parameters),
-                method: :put,
-                class: "button" %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
+      <% @users.each do |user| %>
+        <tr id="<%= dom_id(user) %>">
+          <td><p><%= link_to user.name, admin_hidden_user_path(user) %></p></td>
+          <td>
+            <%= link_to t("admin.actions.restore"),
+                        restore_admin_hidden_user_path(user, request.query_parameters),
+                        method: :put,
+                        data: { confirm: t("admin.actions.confirm") },
+                        class: "button hollow warning" %>
+            <% unless user.confirmed_hide? %>
+              <%= link_to t("admin.actions.confirm_hide"),
+                          confirm_hide_admin_hidden_user_path(user, request.query_parameters),
+                          method: :put,
+                          class: "button" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 

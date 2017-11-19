@@ -1,7 +1,9 @@
 <h2 class="inline-block"><%= t("admin.booths.index.title") %></h2>
 
 <% if controller_name == "booths" && action_name != "available" %>
-  <%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path, class: "button success float-right" %>
+  <%= link_to t("admin.booths.index.add_booth"),
+              new_admin_booth_path,
+              class: "button success float-right" %>
 <% end %>
 
 <% if @booths.empty? %>
@@ -14,14 +16,14 @@
   <h3><%= page_entries_info @booths %></h3>
   <table>
     <thead>
-      <th><%= t("admin.booths.index.name") %></th>
-      <th><%= t("admin.booths.index.location") %></th>
-      <th class="text-right"><%= t("admin.actions.actions") %></th>
+      <th><%= t("admin.shared.labels.name") %></th>
+      <th><%= t("admin.shared.labels.location") %></th>
+      <th class="text-right"><%= t("admin.shared.labels.actions") %></th>
     </thead>
     <tbody>
-    <% @booths.each do |booth| %>
-      <%= render partial: "booth", locals: { booth: booth } %>
-    <% end %>
+      <% @booths.each do |booth| %>
+        <%= render partial: "booth", locals: { booth: booth } %>
+      <% end %>
     </tbody>
   </table>
 

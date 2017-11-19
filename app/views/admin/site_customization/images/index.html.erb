@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th><%= t("admin.site_customization.images.index.image") %></th>
-      <th><%= t("admin.actions.actions") %></th>
+      <th><%= t("admin.shared.labels.actions") %></th>
     </tr>
   </thead>
   <tbody>
@@ -21,7 +21,12 @@
             </div>
             <div class="small-12 medium-6 large-6 column">
               <%= f.submit(t('admin.site_customization.images.index.update'), class: "button hollow") %>
-              <%= link_to t('admin.site_customization.images.index.delete'), admin_site_customization_image_path(image), method: :delete, class: "button hollow alert" if image.image.exists? %>
+                <% if image.image.exists? %>
+                  <%= link_to t('admin.site_customization.images.index.delete'),
+                              admin_site_customization_image_path(image),
+                              method: :delete,
+                              class: "button hollow alert" %>
+                <% end %>
             </div>
           <% end %>
         </td>
