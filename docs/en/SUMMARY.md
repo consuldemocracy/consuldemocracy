@@ -17,7 +17,6 @@
 * [Local installation](getting_started/local_installation.md)
   * [Development Mail Server](getting_started/dev_mailserver.md)
 * [Production and Test servers](getting_started/servers.md)
-* [Recomendations](getting_started/recomendations.md)
 
 ### Customization
 * [Introduction](customization/introduction.md)
