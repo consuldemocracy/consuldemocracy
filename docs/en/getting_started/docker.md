@@ -48,6 +48,11 @@ Pending to be completed... Contributions Welcome!
 
 ## Installation
 
+Clone the repo on your computer and enter the folder:
+```bash
+git clone git@github.com:consul/consul.git
+cd consul
+```
 ### macOS & Linux
 
 Then lets create our secrets and database config files based on examples:
