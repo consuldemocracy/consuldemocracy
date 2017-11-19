@@ -59,6 +59,6 @@ module ApplicationHelper
   end
 
   def kaminari_path(url)
-    "#{root_url}#{url.delete('/')}"
+    "#{root_url.chomp("\/")}#{url}"
   end
 end
