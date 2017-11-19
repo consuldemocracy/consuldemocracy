@@ -157,6 +157,7 @@ en:
         dossier: Dossier
         edit_dossier: Edit dossier
         tags: Tags
+        user_tags: User tags
         undefined: Undefined
         milestone: Milestone
         new_milestone: Create new milestone
@@ -181,6 +182,7 @@ en:
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update
+        user_tags: User assigned tags
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
