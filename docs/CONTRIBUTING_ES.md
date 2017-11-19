@@ -12,7 +12,7 @@ Si has visto alguna sección incompleta o ausente, te animamos a [abrir una inci
 
 Para comunicaciones más informales, contacta con nosotros a través del [gitter de consul](https://gitter.im/consul/consul)
 
-Antes de hacerlo, **por favor tómate un tiempo para comprobar los [issues ya existentes](https://github.com/consul/dics/issues) y asegúrate de que lo que estás a punto de reportar no ha sido reportado previamente** por otra persona. De ser así, si tienes más detalles acerca de la incidencia puedes escribir un comentario en la página ‑¡un poco de ayuda puede marcar una gran diferencia!
+Antes de hacerlo, **por favor tómate un tiempo para comprobar los [issues ya existentes](https://github.com/consul/docs/issues) y asegúrate de que lo que estás a punto de reportar no ha sido reportado previamente** por otra persona. De ser así, si tienes más detalles acerca de la incidencia puedes escribir un comentario en la página ‑¡un poco de ayuda puede marcar una gran diferencia!
 
 Para escribir un nuevo issue, ten en cuenta estas recomendaciones para hacerlo más fácil de leer y comprender:
 
