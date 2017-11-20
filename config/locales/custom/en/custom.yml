@@ -170,36 +170,18 @@ en:
       title: "Results of the public consultation Eleven Squares"
       text: "Citizens have decided to remodel the eleven spaces that are put to a vote. Check out winning projects and participation statistics."
       button: "See Results"
-    green_areas:
-      label: "Previous debate"
-      title: "Green areas of Madrid"
-      text: "Debate about green spaces and trees of the city until October 25th."
-      link: "View previous debate"
-      alt: "Image of one of the green areas of the city of Madrid"
     budgets_results:
       label: "Results 2017"
       title: "Participatory Budgeting"
       text: "Check out the winning projects that will take place from 2018."
       link: "View results for participatory budgets"
       alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
-    consulcon:
-      label: "CONGRESS"
-      title: "CONSULCON 2017"
-      text: "Conferences about CONSUL, Decide Madrid platform's free software. Join us 16th-17th November."
-      link: "More information about CONSULCon17"
-      alt: "Image of two participants in a hackaton"
     ess:
       label: "Debate"
       title: "Social and Solidarity Economy Strategy"
       text: "Choose and propose actions so that the City Council makes the economy of the city more human, democratic, inclusive and sustainable."
       link: "See Social and Solidarity Economy Strategy"
       alt: "Image of a map of Madrid"
-    open_plenary:
-      label: "Participate"
-      title: "Open Plenary 2017"
-      text: "On November 18 you ask Manuela Carmena and the municipal political groups in your plenary session."
-      link: "See Open Plenary 2017"
-      alt: "Poster image of the Open Plenary 2017"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"

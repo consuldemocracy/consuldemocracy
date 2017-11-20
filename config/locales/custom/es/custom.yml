@@ -173,36 +173,18 @@ es:
       title: "Resultados de la consulta ciudadana Once Plazas"
       text: "La ciudadanía ha decidido que se remodelen los once espacios sometidos a votación. Consulta los proyectos ganadores y las estadísticas de participación."
       button: "Ver resultados"
-    green_areas:
-      label: "Debate previo"
-      title: "Zonas verdes de Madrid"
-      text: "Opina sobre las zonas verdes y el arbolado de la ciudad hasta el 25 de octubre."
-      link: "Ver debate previo"
-      alt: "Imagen de una de las zonas de verdes de la ciudad de Madrid"
     budgets_results:
       label: "Resultados 2017"
       title: "Presupuestos participativos"
       text: "Consulta los proyectos ganadores que se llevarán a cabo a partir de 2018."
       link: "Ver resultados de los presupuestos participativos"
       alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
-    consulcon:
-      label: "Congreso"
-      title: "CONSULCON 2017"
-      text: "Ven el 16 y 17 de noviembre a las conferencias sobre CONSUL, el software libre de la plataforma Decide Madrid."
-      link: "Más información sobre la CONSULCon17"
-      alt: "Imagen de dos participantes en un hackaton"
     ess:
       label: "Debate"
       title: "Estrategia de Economía Social y Solidaria"
       text: "Elige y propón acciones para que el Ayuntamiento haga la economía de la ciudad más humana, democrática, inclusiva y sostenible."
       link: "Ver Estrategia de Economía Social y Solidaria"
       alt: "Imagen de un mapa de Madrid"
-    open_plenary:
-      label: "Participa"
-      title: "Pleno Abierto 2017"
-      text: "El 18 de noviembre tú preguntas a Manuela Carmena y a los grupos políticos municipales en tu pleno."
-      link: "Ver Pleno Abierto 2017"
-      alt: "Imagen del cartel del Pleno Abierto 2017"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
