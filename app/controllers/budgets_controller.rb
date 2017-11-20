@@ -1,6 +1,7 @@
 class BudgetsController < ApplicationController
   include FeatureFlags
   include BudgetsHelper
+  include Search
   feature_flag :budgets
 
   load_and_authorize_resource
