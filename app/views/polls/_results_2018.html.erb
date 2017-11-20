@@ -1,6 +1,6 @@
 <%- poll.questions.each do |question| %>
   <% most_voted_answer_id = question.most_voted_answer_id %>
-  <h4 id="<%= question.title.parameterize %>"><%= question.title %></h4>
+  <h4 id="<%= question.title.parameterize %>_<%= question.id %>"><%= question.title %></h4>
   <table id="question_<%= question.id %>_results_table">
     <thead>
       <tr>
