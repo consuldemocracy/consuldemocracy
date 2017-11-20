@@ -50,6 +50,7 @@ git fetch upstream
 Y por fin puedes elegir entre:
 
 A. Actualizar con los últimos cambios de la rama **master** usando `git merge upstream/master`
+
 B. Sólo actualizar hasta cierta versión (en el caso de que prefieras actualizar de forma incremental, si estas varias versiones por detrás). Por ejemplo para actualizarte a la versión [v0.9](https://github.com/consul/consul/releases/tag/v0.9) utilizamos el tag asociado: `git merge v0.9`
 
 ## Fusionando cambios

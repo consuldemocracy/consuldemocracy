@@ -49,6 +49,7 @@ git fetch upstream
 And then you can choose to either:
 
 A. Get all the latest changes on CONSUL's **master** branch with `git merge upstream/master`
+
 B. Just update up to an specific release tag (so you can do incremental updates if you're more than one release behind). For example to update up to [v0.9](https://github.com/consul/consul/releases/tag/v0.9) release just: `git merge v0.9`
 
 ## Merging changes
