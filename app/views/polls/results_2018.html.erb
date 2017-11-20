@@ -1,15 +1,26 @@
 <%= provide :title, t("once_plazas.results.title") %>
 <%= provide :meta_description, t("once_plazas.results.description") %>
-<%= provide :social_media_meta_tags do %>
-  <%= render "shared/social_media_meta_tags",
-              social_url: once_plazas_results_url,
-              social_title: t("once_plazas.results.title"),
-              social_description: t("once_plazas.results.social") %>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@decidemadrid" />
+<meta name="twitter:title" content="<%= t("once_plazas.results.title") %>" />
+<meta name="twitter:description" content="<%= t("once_plazas.results.social") %>" />
+<meta name="twitter:image" content="<%= root_url %>social_media_resultados_once_plazas_twitter.jpg" />
+<!-- Facebook OG -->
+<meta id="ogtitle" property="og:title" content="<%= t("once_plazas.results.title") %>"/>
+<% if setting['url'] %>
+  <meta property="article:publisher" content=<%= setting['url'] %>/>
 <% end %>
-<%= provide :social_media_meta_tags do %>
-  <meta name="twitter:image" content="<%= root_url %>social_media_resultados_once_plazas_twitter.jpg" />
-  <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_resultados_once_plazas.jpg"/>
+<% if setting['facebook_handle'] %>
+  <meta property="article:author" content="https://www.facebook.com/<%= setting['facebook_handle'] %>"/>
 <% end %>
+<meta property="og:type" content="article"/>
+<meta id="ogurl" property="og:url" content="<%= once_plazas_results_url %>"/>
+<meta id="ogimage" property="og:image" content="<%= root_url %>social_media_resultados_once_plazas.jpg"/>
+<meta property="og:site_name" content="<%= setting['org_name'] %>"/>
+<meta id="ogdescription" property="og:description" content="<%= t("once_plazas.results.social") %>"/>
+<meta property="fb:app_id" content="<%= Rails.application.secrets.facebook_key %>"/>
 
 <div class="expanded no-margin-top polls-show-header once-plazas">
   <div class="row">
