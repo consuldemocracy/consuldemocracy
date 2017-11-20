@@ -4,8 +4,10 @@
 
 <p>
   <strong><%= t("admin.hidden_users.show.email") %></strong> <%= @user.email %> |
-  <strong><%= t("admin.hidden_users.show.registered_at") %></strong> <%= @user.confirmed_at %> |
-  <strong><%= t("admin.hidden_users.show.hidden_at") %></strong> <%= @user.hidden_at %>
+  <strong><%= t("admin.hidden_users.show.phone") %></strong> <%= @user.phone %> |
+  <strong><%= t("admin.hidden_users.show.registered_at") %></strong>
+  <%= l @user.confirmed_at, format: :long %> |
+  <strong><%= t("admin.hidden_users.show.hidden_at") %></strong> <%= @user.hidden_at || "No" %>
 </p>
 
 <% if @debates.present? %>

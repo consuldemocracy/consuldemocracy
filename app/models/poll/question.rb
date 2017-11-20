@@ -14,9 +14,11 @@ class Poll::Question < ActiveRecord::Base
   has_many :partial_results
   belongs_to :proposal
 
+  accepts_nested_attributes_for :question_answers
+
   validates :title, presence: true
   validates :author, presence: true
-  validates :poll_id, presence: true
+  # validates :poll_id, presence: true
 
   validates :title, length: { minimum: 4 }
 
@@ -56,7 +58,10 @@ class Poll::Question < ActiveRecord::Base
   end
 
   def answers_total_votes
-    question_answers.map { |a| Poll::Answer.where(question_id: self, answer: a.title).count }.sum
+    question_answers.inject(0) { |total, question_answer| total + question_answer.total_votes }
   end
 
+  def most_voted_answer_id
+    question_answers.max_by {|answer| answer.total_votes }.id
+  end
 end

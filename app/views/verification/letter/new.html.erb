@@ -1,5 +1,4 @@
 <div class="verification account row">
-  <%track_event(category: "verification", action: "success_sms" )%>
   <div class="small-12 column">
 
     <div class="text-center">
@@ -18,10 +17,11 @@
       </div>
     </div>
 
-    <div class="small-12 medium-4 column">
+    <%= back_link_to account_path, t("verification.back") %>
+  </div>
 
-      <%= back_link_to account_path, t("verification.back") %>
-
+  <div class="row">
+    <div class="small-12 medium-6 text-center small-centered column">
       <h1><%= t("verification.letter.new.title") %></h1>
 
       <div class="user-permissions">
@@ -32,28 +32,13 @@
           <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
           <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
           <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_support_proposal") %></li>
-          <li><span class="icon-x"></span>&nbsp;<%= t("verification.user_permission_votes") %></li>
+          <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_votes") %></li>
         </ul>
       </div>
 
-      <%= link_to t("verification.letter.new.go_to_index"), root_path, class: "button warning" %>
-    </div>
-    <div class="small-12 medium-8 column final-votes-info">
-
-      <span class="icon-box"></span>
-
-      <p><strong><%= t("verification.letter.new.explanation") %></strong></p>
-
-      <ul>
-        <li>
-          <%= t("verification.letter.new.office",
-          office: link_to(t("verification.letter.new.offices"), setting['verification_offices_url'],
-          target: "blank")).html_safe %>
-        </li>
-        <li>
-          <%= link_to t("verification.letter.new.send_letter"), letter_path, method: :post %>
-        </li>
-      </ul>
+      <div class="small-12 medium-6 small-centered">
+        <%= link_to t("verification.letter.new.go_to_index"), more_info_path, class: "button expanded" %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,507 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: service_letters_3_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <%= back_link_to %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 small-centered column">
+    <div class="float-left download">
+      <p><strong>DESCARGA ESTE DOCUMENTO</strong><br>
+        <%= link_to "Carta de Servicios: Centros de día <small>(DOC | 323Kb)</small>".html_safe,
+                    "/docs/carta_servicios_centros_de_dia.doc",
+                    title: "Carta de Servicios: Centros de día (DOC | 323Kb)" %><br>
+        <%= link_to "Carta de Servicios: Centros de día <small>(PPT | 7Mb)</small>".html_safe,
+                    "/docs/carta_servicios_centros_de_dia.ppt",
+                    title: "Carta de Servicios: Centros de día (PPT | 7Mb)" %>
+      </p>
+    </div>
+
+    <div class="float-right">
+      <p><strong>Fecha de aprobación: 8 de abril de 2010</strong><br>
+      <strong>Fecha de la última evaluación: 10 de marzo de 2016</strong></p>
+      <a class="button warning" type="button" data-toggle="annotator-help">
+        <sub><span class="icon-edit"></span></sub>&nbsp;
+        <%= t("annotator.help.title") %>
+      </a>
+
+      <div class="dropdown-pane" id="annotator-help" data-dropdown data-auto-focus="true">
+        <% if user_signed_in? %>
+          <%= t("annotator.help.alt") %>
+        <% else %>
+          <p>
+            <%= t("annotator.help.text",
+                sign_in: link_to(t("annotator.help.text_sign_in"), new_user_session_path),
+                sign_up: link_to(t("annotator.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          </p>
+        <% end %>
+
+        <%= image_tag ("annotator_help.gif"), alt: t("annotator.help.alt") %>
+      </div>
+    </div>
+
+    <section data-annotatable-type="legislation"
+             data-annotatable-id="3"
+             data-annotatable-readonly="true"
+             id="carta_servicios_body">
+
+      <h1 class="text-center">Carta de Servicios de los Centros de Día del Ayuntamiento de Madrid</h1>
+
+      <h2>1. Introducción</h2>
+      <p>El Ayuntamiento de Madrid, en el marco de sus políticas de bienestar y de atención social a las personas mayores dirige, gestiona y evalúa los servicios de atención a las personas mayores, entre los que se encuentran los servicios de teleasistencia domiciliaria (TAD), ayuda a domicilio, comidas a domicilio, lavandería, organiza los programas de respiro familiar y cuidar al cuidador, y pone a disposición de la ciudadanía los Centros Municipales de Mayores y los Centros de Día.</p>
+
+      <p>Esta Carta de Servicios hace referencia a los <strong>Centros de Día</strong> que son servicios dirigidos a proporcionar una atención integral, en régimen diurno, a las personas mayores de 65 años con deterioro físico y relacional, y sin límite de edad, a las personas con enfermedad de Alzheimer u otras demencias.</p>
+
+      <p>El Ayuntamiento de Madrid se ha comprometido con la calidad en la prestación de los servicios a las personas mayores, adecuados a las diversas situaciones personales y familiares, para que se evalúen periódicamente y estén en constante mejora.</p>
+
+      <p>Tras la aprobación de esta Carta de Servicios, han sido varias las elaboradas en esta área, como la <strong>Carta de Servicios de Teleasistencia Domiciliaria</strong> aprobada en julio de 2008, la <strong>Carta de Servicios de Centros de Servicios Sociales</strong>, en julio de 2010, la <strong>Carta de Servicios del Servicio de Ayuda a Domicilio</strong>, en abril de 2011, la <strong>Carta de Servicios de los Centros Municipales de Mayores</strong> en marzo de 2013, la <strong>Carta de Servicios de los Centros de Atención a la Infancia</strong>, en septiembre de 2013, la <strong>Carta Servicios de los Centros de Apoyo a las Familias</strong>, en enero de 2014, así como la <strong>Carta de Servicios de Educación Social</strong>, en junio de 2014, cumpliendo los objetivos establecidos en el Plan Operativo de Gobierno.</p>
+
+      <p>Con esta Carta de Servicios el Ayuntamiento de Madrid pretende hacer más visible el Servicio de Centros de Día entre la ciudadanía de Madrid y las condiciones en que se presta, dar a conocer las responsabilidades y compromisos que se adquieren al prestarlo con unos determinados niveles de calidad, así como difundir los derechos de la ciudadanía en relación con este servicio y las responsabilidades y obligaciones que contraen al recibirlo.</p>
+
+      <p>Por otra parte, el objetivo es aumentar el grado de satisfacción de la ciudadanía con este servicio y mostrar y aportar transparencia en la prestación del mismo.</p>
+
+      <p>Finalmente, se desea hacer patente el valor del trabajo de todas y cada una de las personas implicadas en la prestación del Servicio de Centros de Día y su esfuerzo constante por mejorarlo.</p>
+
+      <p>La Carta de Servicios de los Centros de Día se aprobó por la Junta de Gobierno de la Ciudad de Madrid en abril de 2010. Este texto corresponde a la <strong>quinta evaluación</strong> realizada el 10 de marzo de 2016; con ella el Ayuntamiento de Madrid manifiesta nuevamente su compromiso con la calidad y la mejora continua de sus servicios.</p>
+
+      <h2>2. Datos de carácter general</h2>
+
+      <h3>Órgano Directivo responsable</h3>
+
+      <p>El Órgano directivo responsable del Servicio de Centros de Día es la Dirección General de Mayores, Atención Social, Inclusión Social y Atención a la Emergencia del Área de Gobierno de Equidad, Derechos Sociales y Empleo.</p>
+
+      <p>Según el Acuerdo vigente de la Junta de Gobierno de la Ciudad de Madrid, entre las competencias que corresponden a esta Dirección General están:</p>
+      <ul>
+        <li>a) Diseñar y proponer programas y servicios para las personas mayores, en especial los referidos al mantenimiento de la persona mayor en su propio hogar todo el tiempo posible y los que tienen por objeto el apoyo a las familias que cuidan a sus mayores.</li>
+        <li>b) Implantar y evaluar periódicamente los criterios y estándares de calidad en relación con los Programas gestionados.</li>
+        <li>c) Planificar, dirigir y evaluar la ayuda a domicilio dispensada a las personas mayores.</li>
+        <li>d) Favorecer la participación de las personas mayores en la vida social de los barrios y Distritos.</li>
+        <li>e) Promocionar la autonomía personal y la atención a las personas en situación de dependencia, de acuerdo con los convenios de colaboración que se suscriban con la Comunidad de Madrid.</li>
+        <li>f) Adoptar cuantas resoluciones resulten pertinentes en relación a los Centros de Día para Mayores, propios o concertados, Centros Residenciales y al Servicio de Ayuda a Domicilio, en las modalidades de suministro a domicilio de alimentos preparados o servicios análogos y de lavado, planchado y repaso de ropa fuera del hogar, en los términos previstos en la Ordenanza municipal por la que se regula el acceso a los servicios de Ayuda a Domicilio para mayores y/o personas con discapacidad en la modalidad de atención personal y atención doméstica, de Centros de Día, propios o concertados y Centros Residenciales, para mayores, del Ayuntamiento de Madrid.</li>
+      </ul>
+
+      <p>Los Centros de Día son equipamientos diurnos de atención sociosanitaria donde las personas mayores con algún grado de deterioro físico o cognitivo (tipo Alzheimer), reciben atención especializada con una finalidad preventiva y rehabilitadora. Disponen de seguimiento individualizado y actividades programadas en función de sus necesidades.</p>
+
+      <p>El Servicio de Centros de Día se presta en centros municipales y privados, a través de entidades colaboradoras, adjudicatarias de contratos de gestión de servicio público.</p>
+
+      <h3>Unidad prestadora</h3>
+      <p>Las unidades prestadoras del servicio son cada uno de los Centros de Día, distribuidos entre los 21 Distritos de la ciudad de Madrid.</p>
+
+      <p>El Departamento de Centros de Día y Residenciales, de la Dirección General de Mayores, Atención Social, Inclusión Social y Atención a la Emergencia, es la unidad responsable de la gestión, control y seguimiento de estos centros.</p>
+
+      <h2>3. Normativa</h2>
+
+      <p>A continuación se relaciona la normativa, tanto general como específica, que regula el Servicio de Centros de Día.</p>
+
+      <h3>Normativa general</h3>
+      <ul>
+        <li>Artículo 51 de la Constitución Española de 1978.</li>
+      </ul>
+
+      <h3>Leyes Orgánicas</h3>
+      <ul>
+        <li>Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.</li>
+      </ul>
+
+      <h3>Leyes y Reales Decretos</h3>
+      <ul>
+        <li>Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público que entra en vigor el 3 de octubre de 2016 (salvo alguna excepción).</li>
+        <li>Ley 39/2015, de 1 de octubre, de Procedimiento Administrativo Común de las Administraciones Públicas que entra en vigor el 3 de octubre de 2016 y expresamente deroga la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común y la Ley 11/2007, de 22 de junio, de acceso electrónico de los ciudadanos a los Servicios Públicos.</li>
+        <li>Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.</li>
+        <li>Ley 27/2013, de 27 de diciembre, de racionalización y sostenibilidad de la Administración Local. Ley 17/2009, de 23 de noviembre, sobre el libre acceso a las actividades de servicios y su ejercicio y Ley 25/2009, de 22 de diciembre, de modificación de diversas leyes para su adaptación a la Ley sobre el libre acceso a las actividades de servicios y su ejercicio.</li>
+        <li>Ley 39/2006, de 14 de diciembre, de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia.</li>
+        <li>Ley 22/2006, de 4 de julio, de Capitalidad y de Régimen Especial de Madrid.</li>
+        <li>Real Decreto Legislativo 2/2004, de 5 de marzo, por el que se aprueba el Texto Refundido de la Ley Reguladora de las Haciendas Locales.</li>
+        <li>Ley 57/2003, de 16 de diciembre, de Medidas para la Modernización del Gobierno Local.</li>
+        <li>Ley 51/2003, de 2 de diciembre, de igualdad de oportunidades, no discriminación y accesibilidad universal de las personas con discapacidad.</li>
+        <li>Ley 11/2003, de 27 de marzo, de Servicios Sociales de la Comunidad de Madrid.</li>
+        <li>Real Decreto Legislativo 781/1986, de 18 de abril, por el que se aprueba el Texto Refundido de las Disposiciones Legales vigentes en materia de Régimen Local.</li>
+        <li>Ley 7/1985, de 2 de abril, Reguladora de las Bases de Régimen Local.</li>
+      </ul>
+
+      <h3>Normativa municipal general</h3>
+      <ul>
+        <li>Acuerdo del Pleno, de 30 de marzo de 2011, por el que se aprueba la ordenanza por la que se adaptan al ámbito de la ciudad de Madrid las previsiones contenidas en la normativa estatal y autonómica de transposición de la Directiva 2006/123/CE, del Parlamento Europeo y del Consejo, de 12 de diciembre de 2006, relativa a los servicios en el mercado interior.</li>
+        <li>Acuerdo de la Junta de Gobierno de la Ciudad de Madrid de 25 de junio de 2009, por el que se regula el Sistema de Cartas de Servicios en el Ayuntamiento de Madrid.</li>
+        <li>Acuerdo de la Junta de Gobierno de la Ciudad de Madrid de 4 de diciembre de 2008, por el que se aprueba el Código de Buenas Prácticas Administrativas del Ayuntamiento de Madrid.</li>
+        <li>Decreto del Alcalde de 17 de enero de 2005, por el que se regula la Atención al Ciudadano en el Ayuntamiento de Madrid y su normativa de desarrollo.</li>
+        <li>Reglamento Orgánico de los Distritos de la Ciudad de Madrid, de 23 de diciembre de 2004.</li>
+        <li>Reglamento Orgánico del Gobierno y de la Administración del Ayuntamiento de Madrid, de 31 de mayo de 2004.</li>
+        <li>Reglamento Orgánico de Participación Ciudadana del Ayuntamiento de Madrid, de 31 de mayo de 2004.</li>
+      </ul>
+
+      <h3>Normativa municipal estructura y competencias</h3>
+      <ul>
+        <li>Acuerdo en vigor de la Junta de Gobierno de la Ciudad de Madrid de organización y competencias de los Distritos.</li>
+        <li>Acuerdo en vigor de la Junta de Gobierno de la Ciudad de Madrid por el que se establece la organización del Área de Gobierno de Equidad, Derechos Sociales y Empleo y se delegan competencias en su titular y en los titulares de los órganos directivos.</li>
+        <li>Decreto en vigor de la Alcaldesa, por el que se establece el número, denominación y competencias de las Áreas en las que se estructura la Administración del Ayuntamiento de Madrid.</li>
+        <li>Decreto en vigor de la Alcaldesa de delegación y desconcentración de competencias.</li>
+      </ul>
+
+      <h3>Normativa Específica</h3>
+      <ul>
+        <li>Ley 11/2002, de 18 de diciembre, de ordenación de la Actividad de los Centros y Servicios de Acción Social y de Mejora de la Calidad en la Prestación de los Servicios Sociales de la Comunidad de Madrid.</li>
+        <li>Decreto 72/2001, de 31 de mayo, del Consejo de Gobierno de la Comunidad de Madrid, por el que se regula el Régimen Jurídico Básico del Servicio Público de Atención a Personas Mayores en Residencias, Centros de Atención de Día y Pisos Tutelados.</li>
+        <li>Orden 613/1990, de 6 de noviembre, de la Consejería de Servicios Sociales de la Comunidad de Madrid, de Creación del Registro de Entidades que desarrollan Acción Social.</li>
+        <li>Orden 597/1999, de 23 de diciembre de la Consejería de Servicios Sociales de la Comunidad de Madrid por la que se regula la Naturaleza y Objetivos del Servicio Público de Atención a Personas Mayores en Centro de Día y Aprueba el Procedimiento para la Tramitación de Solicitudes de Adjudicación de Plazas en dichos Centros.</li>
+        <li>Orden 2386/2008, de 17 de diciembre, de la Consejería de Familia y Asuntos Sociales, por la que se regulan los procedimientos para el reconocimiento de la situación de dependencia, para la elaboración del programa individual de atención, las prestaciones económicas y servicios y el régimen de incompatibilidades.</li>
+      </ul>
+
+      <h3>Normativa específica directamente relacionada con el servicio de Centros de Día en el Ayuntamiento de Madrid</h3>
+      <ul>
+        <li>Ordenanza Municipal por la que se regula el Acceso a los Servicios de Ayuda a Domicilio para Mayores y/o Personas con Discapacidad en la modalidad de Atención Personal y Atención Doméstica, de Centros de Día, propios o concertados, y Centros Residenciales, para mayores, del Ayuntamiento de Madrid aprobada por el Pleno del Ayuntamiento de Madrid el 29 de julio de 2009 (BOAM número 5994 de 7 de agosto de 2009).</li>
+        <li>Pliegos Técnicos y Administrativos que han de regir el contrato de gestión de servicio público en la modalidad de concierto denominado: concierto de 1.733 plazas en centros de día para la atención sociosanitaria de personas mayores con deterioro físico, relacional, cognitivo, Alzheimer y otras demencias, del 1 de enero de 2008 al 31 de mayo de 2013, prorrogados hasta mayo de 2014 y segunda prórroga para el periodo comprendido entre el 1 de junio de 2014 y el 31 de diciembre de 2015. Nueva prórroga hasta el 30 noviembre de 2017.</li>
+        <li>Pliegos Técnicos y Administrativos que han de regir el contrato de gestión del servicio público de equipamientos y servicios municipales de atención a mayores (01/01/2011 – 30/09/2013) a adjudicar por procedimiento abierto, prorrogados hasta el 30 de septiembre de 2014 y aprobada una segunda prórroga y modificación, que abarca desde el 1 de octubre de 2014 hasta el 31 de diciembre de 2015. Nueva prórroga hasta el 30 de septiembre de 2017.</li>
+      </ul>
+
+      <h2>4. Derechos y responsabilidades</h2>
+
+      <h3>Derechos de las/os usuarias/os</h3>
+      <ul>
+        <li>a) A ser informados de las características del servicio. Este derecho se ejerce recibiendo, al ingresar, la documentación sobre el funcionamiento, el objeto, los requisitos, y las responsabilidades en el Centro de Día.</li>
+        <li>b) A la atención correcta y respetuosa que precise, sin discriminación por razón de sexo, raza, religión, ideología o cualquier otra condición o circunstancia personal o social.</li>
+        <li>c) A participar en el diseño de su Plan de Atención Personalizado, así como en cualquier otro asunto que le afecte.</li>
+        <li>d) A que su historial y evolución en el centro quede reflejado, de manera confidencial, en su expediente personal y a recibir un informe pormenorizado siempre que lo requiera.</li>
+        <li>e) A presentar, a la dirección del centro, propuestas o reclamaciones concernientes al funcionamiento o a la mejora de los servicios, así como a recibir respuesta sobre las mismas.</li>
+        <li>f) A cesar en la utilización de los servicios o en la permanencia en el centro por voluntad propia.</li>
+        <li>g) A que la información que se facilite, tanto verbal como por escrito, sea en un lenguaje fácilmente inteligible.</li>
+        <li>h) A que le sea reservada la plaza durante dos meses de ausencia al año por vacaciones. El primero sin aportación económica y el segundo aportando el 50% del importe mensual, previa comunicación al centro.</li>
+        <li>i) A que le sea reservada la plaza durante períodos de quince días a un mes por enfermedad, debidamente justificada mediante informe médico, sin aportación económica.</li>
+        <li>j) A ser atendido con carácter prioritario en un Centro de Día para enfermos de Alzheimer, cuando estando en un Centro de Día para personas mayores con deterioro físico, presente un grado de deterioro cognitivo que así lo aconsejen y siempre que haya plazas disponibles. Este derecho requerirá un informe escrito de los profesionales del centro en el que se justifique la necesidad.</li>
+        <li>k) A la confidencialidad y protección de datos respecto a la información, datos clínicos o personales, o intervención profesional proporcionada que se desarrollen en un Centro de Día.</li>
+      </ul>
+
+      <h3>Responsabilidades de las/os usuarias/os</h3>
+      <ul>
+        <li>a) Conocer y cumplir las normas de funcionamiento del Centro.</li>
+        <li>b) Mostrar una conducta adecuada y basada en el respeto a los demás usuarias/os y a los profesionales.</li>
+        <li>c) Utilizar y cuidar las instalaciones y materiales del Centro.</li>
+        <li>d) Colaborar en el cumplimiento del Plan de Atención Personalizado acordado.</li>
+        <li>e) Abonar el precio establecido por la utilización de los servicios del Centro.</li>
+        <li>f) Entregar en el Centro de Día el material de higiene y uso personal, así como la medicación que deba utilizar durante su estancia en el Centro de Día.</li>
+        <li>g) Acudir al Centro de Día, la familia, cuidador y/o representante legal, cuando sean citados por los profesionales.</li>
+        <li>h) Aceptar el cambio a un Centro de Día para enfermos de Alzheimer, cuando el grado deterioro que padezca u otras circunstancias así lo aconsejen. Este cambio exige la existencia de un informe escrito de los profesionales del Centro que justifique la necesidad.</li>
+        <li>i) Informar sobre las circunstancias personales, familiares, clínicas (informe médico) y sociales que puedan afectar a la atención que se da en el Centro, así como de los cambios que se produzcan a lo largo del tiempo de estancia.</li>
+      </ul>
+
+      <h2>5. Mecanismos y modalidades de participación</h2>
+
+      <p>El Ayuntamiento de Madrid realiza una apuesta fuerte por el desarrollo y puesta en marcha de los procesos participativos, que garanticen el <strong>derecho</strong> de la ciudadanía a participar en la toma de decisiones junto con los poderes públicos, de manera que el sentir de la totalidad de la población se tenga en cuenta con carácter previo a la adopción de decisiones que puedan afectar a un Distrito concreto o a la totalidad de la Ciudad.</p>
+
+      <p>Entre los <strong>mecanismos, instrumentos y órganos de participación</strong> establecidos por el Ayuntamiento de Madrid en su <em>Reglamento Orgánico de Participación Ciudadana</em> y normativa de desarrollo, destacan:</p>
+
+      <ul>
+        <li>Las propuestas ciudadanas: la ciudadanía realiza propuestas de actuación en asuntos de competencia municipal o interés local. Cuando alcanzan el 2% de apoyos pueden someterse a debate y votación final, decidiendo entre todas y todos las que se llevan a cabo (mayoría simple de los participantes).</li>
+        <li>Las audiencias públicas: el Ayuntamiento invita a la ciudadanía a participar en cuestiones especialmente significativas de la acción municipal y lo que se decida mayoritariamente, definirá las actuaciones a realizar.</li>
+        <li>Las iniciativas populares: iniciativas normativas e iniciativas ciudadanas para promover actividades de interés público.</li>
+        <li>Las proposiciones al Pleno y a las Juntas de Distrito y los ruegos y preguntas en las sesiones plenarias del Distrito correspondiente.</li>
+        <li>Las sugerencias y reclamaciones: la ciudadanía ejerce su derecho a presentar sugerencias relativas a la creación, ampliación o mejora de los servicios prestados por el Ayuntamiento de Madrid; reclamaciones por tardanzas, desatenciones, incidencias o cualquier otra anomalía en su funcionamiento y felicitaciones, sobre los servicios prestados por el Ayuntamiento.</li>
+        <li>El Consejo Director de la Ciudad, los Consejos Sectoriales y los Consejos Territoriales.</li>
+        <li>Los sondeos de opinión, encuestas de satisfacción de los servicios, consejos y foros temáticos, y paneles ciudadanos. Entre ellos destaca la Encuesta de Calidad de Vida y Satisfacción con los Servicios Públicos, encuesta presencial de carácter bienal que tiene por objetivo analizar el grado de satisfacción de la ciudadanía madrileña con los servicios públicos municipales, así como conocer la opinión ciudadana respecto a la calidad de vida en la ciudad.</li>
+      </ul>
+
+      <p>Además, el Ayuntamiento de Madrid pone a disposición de las personas mayores otros mecanismos de participación como la página web <a href="http://www.madridmayor.es" target="_blank" title="(se abre en ventana nueva)">www.madridmayor.es</a>.</p>
+
+      <p>Para avanzar de un modo decidido hacia las fórmulas reales de participación de la ciudadanía que profundicen y den sentido al compromiso de lograr un gobierno abierto, se ha puesto en marcha la <strong>web de gobierno abierto del Ayuntamiento de Madrid</strong>, destinada a que la ciudadanía pueda promover propuestas de actuación municipal de forma libre y transparente. En ella, a través de la plataforma de participación <a href="http://decide.madrid.es">decide.madrid</a> se pueden presentar propuestas, someter a audiencia pública las cuestiones más relevantes del gobierno de la Ciudad y participar en la elaboración de los Presupuestos del Ayuntamiento.</p>
+
+      <h2>6. Sistema de Sugerencias y Reclamaciones</h2>
+
+      <p>El Ayuntamiento de Madrid cuenta con un Sistema de Sugerencias y Reclamaciones a través del cual la ciudadanía e instituciones públicas o privadas pueden ejercer su derecho a presentar sugerencias relativas a la creación, ampliación o mejora de los servicios prestados por el Ayuntamiento de Madrid; reclamaciones por tardanzas, desatenciones, incidencias o cualquier otra anomalía en su funcionamiento y felicitaciones.</p>
+
+      <p>Se podrán presentar sugerencias, reclamaciones y felicitaciones a través de:</p>
+      <ul>
+        <li><a href="http://www.madrid.es/contactar" target="_blank" title="(se abre en ventana nueva)">www.madrid.es/contactar</a>.</li>
+        <li>El Teléfono 010.</li>
+        <li>Las Oficinas de Atención a la Ciudadanía Línea Madrid.</li>
+        <li>Las Oficinas de Registro.</li>
+        <li>El Registro electrónico del Ayuntamiento de Madrid.</li>
+        <li>Los buzones que estuvieran instalados en los Centros de Día.</li>
+        <li>El correo postal o electrónico dirigido al órgano directivo responsable o unidad prestadora del servicio, cuyos datos de localización y contacto se recogen en el apartado 9 de esta Carta.</li>
+      </ul>
+
+      <p>Las sugerencias, reclamaciones y felicitaciones se <strong>contestarán</strong> de forma adecuada y con la mayor celeridad posible, cumpliendo los compromisos asumidos en la Carta de Servicios de Sugerencias y Reclamaciones del Ayuntamiento de Madrid, aprobada el 10 de mayo de 2012.</p>
+
+      <h2>7. Servicios prestados</h2>
+
+      <p>Los servicios que a continuación se describen están dirigidos a proporcionar una atención integral, en régimen diurno, a las personas mayores de 65 años o excepcionalmente menores de dicha edad.</p>
+
+      <p>El acceso a estos servicios se solicita en los Centros de Servicios Sociales de la ciudad de Madrid.</p>
+
+      <p>El trabajador/a social del Centro de Servicios Sociales correspondiente al domicilio del solicitante, realizará un estudio previo de las necesidades individuales de la persona mayor, así como comprobará el cumplimiento de los requisitos necesarios, para derivarle al Centro que mejor se adecue a sus circunstancias: Centro de Día para enfermos de Alzheimer, o Centro de Día para mayores con deterioro físico (incluyendo deficiencias visuales, auditivas, y de la movilidad) o relacional, y elaborará un Plan de Atención Personalizado, consensuado por el equipo multidisciplinar con la persona atendida y su familia o cuidadores.</p>
+
+      <p>Todos los Centros de Día contarán con un equipo multidisciplinar, que contará con la titulación exigida para el desempeño de sus funciones. Este equipo estará formado por: Diplomado/a en Trabajador Social con funciones de Coordinador/a, Diplomado/a en Enfermería, Diplomado/a en Terapia Ocupacional, Diplomado/a en Fisioterapia, Auxiliares de Geriatría/Clínica y en los Centros de Día de Alzheimer tendrán además Licenciado/a en Medicina y Licenciado/a en Psicología. Para el servicio de transporte, contarán además con conductor y auxiliar de ruta.</p>
+
+      <p>Estos servicios se prestan siempre con el objetivo de promover la independencia y autonomía personal. Se pretende lograr el mantenimiento de las personas mayores en su medio habitual, retrasando o evitando el ingreso en un Centro residencial.</p>
+
+      <h3>Requisitos para ser beneficiario del servicio</h3>
+      <ul>
+        <li>Estar empadronado en el municipio de Madrid.</li>
+        <li>No padecer enfermedad infecto-contagiosa.</li>
+        <li>Presentar algún tipo de deterioro físico o relacional que haga aconsejable su asistencia a un Centro de Día y cuyas capacidades permitan su traslado a las dependencias del Centro.</li>
+        <li>No padecer trastornos mentales o de conducta que dificulten gravemente la convivencia en el Centro, ni cualquier otra patología que requiera atención continuada o permanente en un centro hospitalario.</li>
+      </ul>
+
+      <p>El servicio se suspenderá por deseo expreso de las personas usuarias, baja en el padrón municipal, cambio o pérdida de las condiciones que motivaron su concesión, la ausencia prolongada durante más de tres meses, no superar el periodo de adaptación o por incumplimiento de sus obligaciones.</p>
+
+      <p>La usuaria/o participa del coste de los servicios del Centro de Día, y su aportación económica variará en función de los días de asistencia y de si utiliza o no transporte adaptado. Por otra parte, su aportación se calcula en función de la capacidad económica y se actualiza anualmente. Se adjunta cuadro relativo a copago de las/os usuarias/os en el apartado de Datos Complementarios.</p>
+
+      <h3>Relación de servicios prestados:</h3>
+      <h4>1.- Atención social, sanitaria, preventiva y rehabilitadora.</h4>ç
+      <ul>
+        <li>Este Servicio incluye como principales actividades:</li>
+        <li>Acoger en el Centro e informar del funcionamiento del mismo.</li>
+        <li>Realizar una valoración integral de la situación personal y familiar.</li>
+        <li>Detectar situaciones de riesgo socio-sanitario.</li>
+        <li>Realizar un seguimiento de patologías crónicas (diabetes, hipertensión arterial).</li>
+        <li>Educación para la salud.</li>
+        <li>Fisioterapia grupal.</li>
+        <li>Entrenamiento para las actividades de la vida diaria.</li>
+        <li>Entrenamiento de las capacidades intelectuales (memoria, atención,...).</li>
+        <li>Apoyo, información y asesoramiento social sobre otros recursos que permitan mejorar su atención.</li>
+        <li>Realizar actividades culturales, recreativas y de relación social.</li>
+        <li>Seguimiento de la evolución del usuario.</li>
+      </ul>
+
+      <h4>2.- Apoyo a la familia.</h4>
+      <p>Este Servicio incluye como principales actividades:</p>
+      <ul>
+        <li>Apoyar el proceso de cuidado y atención que presta la familia o cuidador al mayor en el domicilio.</li>º
+        <li>Realizar actividades formativas e informativas sobre temas vinculados a la atención que se presta en el Centro de Día.</li>
+        <li>Ofrecer a la familia la posibilidad de participar en las actividades del Centro (fiestas, celebraciones, excursiones,…).</li>
+        <li>Promover la participación en los programas municipales de atención a la familia: “Respiro Familiar de fin de semana” y “Cuidar al Cuidador”.</li>
+      </ul>
+
+      <h4>3.- Aseo y cuidado personal.</h4>
+      <p>Incluye como principal actividad la ayuda en el aseo y cuidado personal siempre que lo necesite. Todos los Centros de Día disponen de aseos adaptados y baños geriátricos para facilitar el adecuado servicio de aseo y cuidado personal.</p>
+
+      <h4>4.- Transporte adaptado.</h4>
+      <p>Este Servicio incluye como principales actividades:</p>
+      <ul>
+        <li>Realizar el traslado en vehículo desde el domicilio hasta el Centro de Día y viceversa de las personas usuarias que lo demanden y dentro del horario establecido.</li>
+        <li>Ayudarles a subir, bajar y a situarse en el vehículo.</li>
+      </ul>
+
+      <h4>5.- Alimentación y nutrición.</h4>
+      <p>Este Servicio incluye el proporcionar desayuno, comida y merienda, adaptados a las necesidades nutricionales, con menú ordinario y, en caso necesario, dietas especiales (sin sal, para diabéticos, astringente, triturada, para celiacos, etc.).</p>
+
+      <h4>6.- Control y seguridad.</h4>
+      <ul>
+        <li>En aquellos casos en que puedan preverse situaciones de riesgo para la integridad de las personas usuarias, se establecerán las medidas de control necesarias, con previo aviso y autorización de los mismos, en caso necesario, de sus familiares / cuidadores principales.</li>
+        <li>Todos los Centros de Día para personas con Alzheimer u otras demencias cuentan con medidas de seguridad en las puertas de acceso (sistema de control electrónico) para la protección de las/os usuarias/os.</li>
+      </ul>
+
+      <h3>8. Compromisos de calidad</h3>
+
+      <p>El Ayuntamiento se compromete a mejorar la calidad del servicio de Centros de Día de forma permanente, a través de los siguientes compromisos, y sus correspondientes indicadores, que permitirán medir el cumplimiento de los estándares y compromisos establecidos en la presente Carta.</p>
+
+      <p>Los compromisos que se relacionan a continuación se refieren a los servicios que se prestan desde el momento en que las personas mayores se incorporan al Centro de Día y durante el período de permanencia en el mismo.</p>
+
+      <ol>
+        <li>Para cada una de las personas usuarias se elabora un <strong>Plan de Atención Personalizado</strong> adaptado a sus necesidades, que incluye los servicios contemplados en la atención social, sanitaria, preventiva y rehabilitadora y se va adaptando a la evolución de aquellas. El Plan de Atención Personalizado de cada usuario se <strong>revisará</strong>, al menos cada seis meses, en reunión interdisciplinar y dejando constancia por escrito. Esta información se remitirá por escrito al usuario/familia o cuidador.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+              1. Porcentaje de usuarias/os de los Centros de Día con Plan de Atención Personalizado.<br>
+              2. Porcentaje de usuarias/os con su Plan de Atención Personalizado revisado.<br>
+              3. Porcentaje de usuarias/os y/o familiares y/o cuidadores a los que se remite la revisión de su Plan de Atención Personalizado.
+            </li>
+          </ul>
+        </li>
+
+        <li>Todo el personal que presta el servicio <strong>atiende</strong> de una manera adecuada, amable y respetuosa, utilizando un lenguaje comprensible. El 95% de las personas usuarias valorará el <strong>trato recibido</strong> con una puntuación igual o superior a 7 y no más del 2% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+              2.1. Porcentaje de usuarias/os que valora el trato recibido con una puntuación igual o superior a 7.<br>
+              2.2. Porcentaje de usuarias/os que valora el trato recibido con una puntuación inferior a inferior a 5.
+            </li>
+          </ul>
+        </li>
+
+        <li>Todos los Centros dispondrán de una <strong>planificación anual de actividades</strong> formativas e informativas dirigidas a las familias de las personas usurarias.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            3.1. Porcentaje de Centros que tienen una planificación anual de estas actividades.</li>
+          </ul>
+        </li>
+
+        <li>El servicio se presta en un <strong>horario</strong> conveniente para responder de manera personalizada y flexible a las necesidades de las personas usuarias y sus familias. El 95% de  ellas  valorará la satisfacción con el horario con una puntuación igual o superior a 7 y no más del 2% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            4.1. Porcentaje de usuarias/os que valora el horario con una puntuación igual o superior a 7.<br>
+            4.2. Porcentaje de usuarias/os que valora el horario con una puntuación inferior a 5.
+            </li>
+          </ul>
+        </li>
+
+        <li>El <strong>equipamiento</strong> y la confortabilidad de las <strong>instalaciones</strong> físicas de todos los Centros de Día son adecuados para el servicio que se presta. El 95% de usuarias/os valorará la satisfacción con el equipamiento y la confortabilidad de las instalaciones con una puntuación igual o superior a 7 y no más del 2% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            5.1. Porcentaje de usuarias/os que valora el equipamiento y confortabilidad con una puntuación igual o superior a 7.<br>
+            5.2. Porcentaje de usuarias/os que valora el equipamiento y confortabilidad con una puntuación inferior a 5.
+            </li>
+          </ul>
+        </li>
+
+        <li>Los <strong>menús</strong> de todos los Centros de Día son nutricionalmente adecuados y están adaptados a las necesidades personales de cada una de las personas usuarias.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            6.1. Porcentaje de Centros de Día que ofrecen menús adaptados a las necesidades personales de usuarias/os.</li>
+          </ul>
+        </li>
+
+        <li>Todos los <strong>vehículos</strong> destinados al traslado de las personas usuarias de todos los Centros de Día están adaptados para facilitar el acceso a los mismos y su seguridad durante el trayecto.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            7.1. Porcentaje de vehículos adaptados para el traslado de las personas usuarias a los Centros de Día.</li>
+          </ul>
+        </li>
+
+        <li>Todo el <strong>personal</strong> que presta los diferentes servicios del Centro de Día llevará en lugar visible la correspondiente tarjeta de identificación.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            8.1. Porcentaje de personal de los Centros de Día con tarjeta de identificación.</li>
+          </ul>
+        </li>
+
+        <li>El servicio de Centros de Día se prestará de tal forma que las personas usuarias <strong>estén satisfechas</strong> con el mismo. El 95% de ellas valorará la satisfacción global con el servicio de Centros de Día con una puntuación igual o superior a 7 y no más del 2% lo valorará por debajo de 5, en una escala de 0 a 10. Al menos el 90% lo considerará recomendable para otras personas.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            9.1. Porcentaje de usuarias/os que valora globalmente el servicio de Centros de Día con una puntuación igual o superior a 7.<br>
+            9.2. Porcentaje de usuarias/as que valora globalmente el servicio de Centros de Día con una puntuación inferior a 5.<br>
+            9.3. Usuarias/os que consideran el servicio de Centros de Día recomendable para otras personas.</li>
+          </ul>
+        </li>
+
+        <li>Se recibirán y tramitarán las <strong>sugerencias, reclamaciones y felicitaciones</strong> presentadas por la ciudadanía relativas a los servicios prestados, se contestarán de forma adecuada y con la mayor celeridad posible y a partir de ellas, se pondrán en marcha acciones de mejora del servicio. El 60% de las sugerencias, reclamaciones y felicitaciones se contestarán en un plazo máximo de 30 días naturales desde su presentación y, en ningún caso, en un plazo superior a 3 meses; aumentando, con respecto al año anterior, las contestadas en 15 días naturales  o menos desde su presentación.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            10.1. Sugerencias, reclamaciones y felicitaciones tramitadas anualmente en relación a los servicios prestados.<br>
+            10.2. Porcentaje de sugerencias, reclamaciones y felicitaciones contestadas en 15 días o menos.<br>
+            10.3. Porcentaje de sugerencias, reclamaciones y felicitaciones contestadas en un plazo inferior a 30 días desde su presentación.<br>
+            10.4. Tiempo medio de contestación de las sugerencias, reclamaciones y felicitaciones desde su presentación.<br>
+            10.5. Porcentaje de sugerencias, reclamaciones y felicitaciones contestadas en menos de 3 meses.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><strong>Medidas de subsanación</strong>: quienes consideren que se ha incumplido alguno de los compromisos anteriormente recogidos, podrán comunicarlo a través del Sistema de Sugerencias y Reclamaciones del Ayuntamiento de Madrid (apartado 6 de esta Carta de Servicios). En caso de incumplimiento, se les enviará un escrito informando de las causas por las que el compromiso no pudo cumplirse, así como, de las medidas adoptadas para corregir la deficiencia detectada, si fuera posible.</p>
+
+      <p><strong>Seguimiento y evaluación</strong>: los resultados de los indicadores establecidos para medir el cumplimiento de los compromisos de esta Carta de Servicios, se pueden consultar en <a href="http://www.madrid.es" target="_blank" title="(se abre en ventana nueva)">www.madrid.es</a>, en <a href="http://www-1.munimadrid.es/SBAE_263_SF_CS_Internet/carta.do?Key=24801&Value=29.-+Centros+de+D%C3%Ada" target="_blank" title="(se abre en ventana nueva)">Ayuntamiento / Observatorio de la Ciudad / Sistema de Cartas de Servicios</a>. Estos resultados son evaluados anualmente.</p>
+
+      <h2>9. Datos de carácter complementario
+
+      <h3>Órgano directivo responsable</h3>
+      <p>DIRECCIÓN GENERAL DE MAYORES, ATENCIÓN SOCIAL, INCLUSIÓN SOCIAL Y ATENCIÓN A LA EMERGENCIA<br>
+      Pº Chopera, 41, 1ª planta. 28045 Madrid<br>
+      Correo electrónico: dgmayores@madrid.es<br>
+      Teléfono: 914.801.100</p>
+
+      <h3>Horario del servicio</h3>
+      <p>El horario de los Centros de Día es, con carácter general, de lunes a viernes de 8,15 a 18 horas, si bien se podrá acceder a los Centros entre las 8,15 y 11 horas y salir entre las 16,30 y 18 horas.</p>
+
+      <p>Dentro del horario establecido y contemplado anteriormente se puede establecer flexibilidad en el horario de asistencia de aquellas personas usuarias que así lo demanden. Esta flexibilidad se establecerá por la mañana (entrada) o por la tarde (salida), garantizando que las horas de permanencia en el Centro de Día permitan al usuario hacer uso y aprovechar las actividades que en él se ofertan. La utilización de esta flexibilidad no tendrá consecuencias en lo que respecta a la aportación que le corresponda efectuar al usuario de acuerdo a la modalidad y días de asistencia fijados.</p>
+
+      <p>Se le podrá proporcionar servicio de transporte cuando coincida con el horario de entrada o salida del Centro. La hora de salida del Centro, con o sin transporte, se efectuará entre las 16,30 y las 18 horas.</p>
+
+      <h3>Baremo de copago del servicio del Centro de Día según la Renta Mensual Per Cápita (RMPC)</h3>
+
+      <h4>CON TRANSPORTE Y 5 DIAS SEMANALES:</h4>
+      <p>Hasta 544,01 limite aportacion un 32,00%</p>
+      <p>Desde 544,02 euros hasta 725,36 euros un 37%</p>
+      <p>Desde 725,37 euros en adelante 43%</p>
+      <ul>
+        <li>Aportación mínima: 93,53 euros/mes</li>
+        <li>Aportación máxima: 664,92 euros/mes para FISICOS y 797,88 euros/mes para ALZHEIMER</li>
+      </ul>
+
+      <h4>CON TRANSPORTE Y 3 DIAS SEMANALES:</h4>
+      <p>Hasta 544,01 limite aportacion un 19,20%</p>
+      <p>Desde 544,02 euros hasta 725,36 euros un 22,20%</p>
+      <p>Desde 725,37 euros en adelante 25,80%</p>
+      <ul>
+        <li>Aportación mínima: 56,11 euros/mes</li>
+        <li>Aportación máxima: 398,94 euros/mes para FISICOS y 478,72 euros/mes para ALZHEIMER</li>
+      </ul>
+
+      <h4>CON TRANSPORTE Y 2 DIAS SEMANALES:</h4>
+      <p>Hasta 544,01 limite aportacion un 12,80%</p>
+      <p>Desde 544,02 euros hasta 725,36 euros un 14,80%</p>
+      <p>Desde 725,37 euros en adelante 17,20%</p>
+      <ul>
+        <li>Aportación mínima: 37,41 euros/mes</li>
+        <li>Aportación máxima: 265,95 euros/mes para FISICOS y 319,15 euros/mes para ALZHEIMER</li>
+      </ul>
+
+      <h4>SIN TRANSPORTE Y 5 DIAS SEMANALES:</h4>
+      <p>Hasta 544,01 limite aportacion un 16%</p>
+      <p>Desde 544,02 euros hasta 725,36 euros un 18%</p>
+      <p>Desde 725,37 euros en adelante 20%</p>
+      <ul>
+        <li>Aportación mínima: 93,53 euros/mes</li>
+        <li>Aportación máxima: 471,49 euros/mes para FISICOS y 568,21 euros/mes para ALZHEIMER</li>
+      </ul>
+
+      <h4>SIN TRANSPORTE Y 3 DIAS SEMANALES:</h4>
+      <p>Hasta 544,01 limite aportacion un 9,60%</p>
+      <p>Desde 544,02 euros hasta 725,36 euros un 10,80%</p>
+      <p>Desde 725,37 euros en adelante 12%</p>
+      <ul>
+        <li>Aportación mínima: 56,11 euros/mes</li>
+        <li>Aportación máxima: 282,89 euros/mes para FISICOS y 340,91 euros/mes para ALZHEIMER</li>
+      </ul>
+
+      <h4>SIN TRANSPORTE Y 2 DIAS SEMANALES:</h4>
+      <p>Hasta 544,01 limite aportacion un 6,40%</p>
+      <p>Desde 544,02 euros hasta 725,36 euros un 7,20%</p>
+      <p>Desde 725,37 euros en adelante 8%</p>
+      <ul>
+        <li>Aportación mínima: 37,41 euros/mes</li>
+        <li>Aportación máxima: 188,59 euros/mes para FISICOS y 227,28 euros/mes para ALZHEIMER</li>
+      </ul>
+
+      <h3>Acceso a la información del Servicio de Centros de Día y para otros servicios sociales municipales</h3>
+      <ul>
+        <li>Centros Municipales de Servicios Sociales</li>
+        <li>Teléfono de información del Ayuntamiento de Madrid: 010</li>
+        <li>Oficinas de Atención a la Ciudadanía Línea Madrid</li>
+        <li>Internet: <a href="http://www.madrid.es" target="_blank" title="(se abre en ventana nueva)">www.madrid.es</a></li>
+        <li>Internet: <a href="http://www.madridmayor.es" target="_blank" title="(se abre en ventana nueva)">www.madridmayor.es</a></li>
+      </ul>
+
+      <p>La solicitud podrá presentarse en los <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/Ayuntamiento/Servicios-Sociales/Centros-de-Servicios-Sociales-Municipales?vgnextfmt=default&vgnextoid=51886e0cfb6da010VgnVCM100000d90ca8c0RCRD&vgnextchannel=fe8a171c30036010VgnVCM100000dc0ca8c0RCRD" target="_blank" title="(se abre en ventana nueva)">Centros Municipales de Servicios Sociales</a> de cada uno de los Distritos de la Ciudad de Madrid.</p>
+
+      <p>En las direcciones y teléfonos arriba indicados se puede obtener información sobre otros servicios del Ayuntamiento de Madrid para personas mayores y personas con discapacidad, como son:</p>
+      <ul>
+        <li>Centros Municipales de Mayores (Tarjeta madridmayor.es).</li>
+        <li>Centros residenciales.</li>
+        <li>Servicios de Ayuda a Domicilio:
+          <ul>
+            <li>Auxiliar domiciliario</li>
+            <li>Lavandería domiciliaria</li>
+            <li>Comidas a domicilio</li>
+            <li>Productos de apoyo (camas articuladas y grúas geriátricas)</li>
+          </ul>
+        </li>
+        <li>Teleasistencia Domiciliaria.</li>
+        <li>Fisioterapia preventiva.</li>
+        <li>Adaptaciones geriátricas del domicilio (ayudas económicas).</li>
+        <li>Programas de apoyo a cuidadores familiares, prevención de la dependencia, convivencia intergeneracional, detección de mayores en situación de riesgo, ejercicio físico al aire libre.</li>
+        <li>Respiro familiar para personas con discapacidad.</li>
+        <li>Centro ocupacional para personas con discapacidad.</li>
+      </ul>
+    </section>
+  </div>
+</div>

@@ -8,11 +8,16 @@ module CommentsHelper
     end
   end
 
-  def leave_comment_text(commentable)
+  def leave_comment_text(commentable, parent_id=nil)
     if commentable.class == Legislation::Question
       t("legislation.questions.comments.form.leave_comment")
     else
-      t("comments.form.leave_comment")
+      comment_kind = find_comment_kind(commentable)
+      if parent_id.present?
+        comment_label_for_reply
+      else
+        t("#{comment_kind.pluralize}.form.leave_comment")
+      end
     end
   end
 
@@ -24,7 +29,8 @@ module CommentsHelper
     if commentable.class == Legislation::Question
       parent_id.present? ? t("comments_helper.reply_button") : t("legislation.questions.comments.comment_button")
     else
-      parent_id.present? ? t("comments_helper.reply_button") : t("comments_helper.comment_button")
+      comment_kind = find_comment_kind(commentable)
+      parent_id.present?  ? t("#{comment_kind.pluralize}_helper.reply_button") : t("#{comment_kind.pluralize}_helper.comment_button")
     end
   end
 
@@ -46,6 +52,10 @@ module CommentsHelper
     case comment.commentable_type
     when "Budget::Investment"
       budget_investment_path(commentable.budget_id, commentable)
+    when "Poll::Question"
+      question_path(comment.commentable)
+    when "ProbeOption"
+      probe_probe_option_path(probe_id: comment.commentable.probe.codename, id: comment.commentable.id)
     when "Legislation::Question"
       legislation_process_question_path(commentable.process, commentable)
     when "Legislation::Annotation"

@@ -8,7 +8,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
   def index
     @spending_proposals = SpendingProposal.scoped_filter(params, @current_filter)
-                                          .order(cached_votes_up: :desc, created_at: :desc)
+                                          .order(confidence_score: :desc, created_at: :desc)
                                           .page(params[:page])
   end
 
@@ -33,17 +33,27 @@ class Admin::SpendingProposalsController < Admin::BaseController
     end
   end
 
+  def results
+    @delegated_ballots = Forum.delegated_ballots
+    @spending_proposals = SpendingProposal.feasible.compatible.valuation_finished.by_geozone(params[:geozone_id])
+    @spending_proposals = SpendingProposal.sort_by_delegated_ballots_and_price(@spending_proposals, @delegated_ballots)
+    @spending_proposals = Kaminari.paginate_array(@spending_proposals).page(params[:page]).per(300)
+
+    load_geozone
+    @initial_budget = Ballot.initial_budget(@geozone)
+    @incompatibles = SpendingProposal.incompatible.by_geozone(params[:geozone_id])
+  end
+
   def summary
-    @spending_proposals = SpendingProposal.group(:geozone).sum(:price).sort_by{|geozone, count| geozone.present? ? geozone.name : "z"}
-    @spending_proposals_with_supports = SpendingProposal.with_supports.group(:geozone).sum(:price)
-                                                        .sort_by{|geozone, count| geozone.present? ? geozone.name : "z"}
+    @spending_proposals = SpendingProposal.limit_results(SpendingProposal, params).group(:geozone).sum(:price)
+                                          .sort_by{|geozone, count| geozone.present? ? geozone.name : "ZZ"}
   end
 
   private
 
     def spending_proposal_params
       params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name,
-                                                :administrator_id, :tag_list, valuator_ids: [])
+                                                :administrator_id, :tag_list, :compatible, valuator_ids: [])
     end
 
     def load_admins
@@ -56,6 +66,10 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
     def load_tags
       @tags = ActsAsTaggableOn::Tag.spending_proposal_tags
+    end
+
+    def load_geozone
+      @geozone = params[:geozone_id].blank? || params[:geozone_id] == 'all' ? nil : Geozone.find(params[:geozone_id])
     end
 
 end

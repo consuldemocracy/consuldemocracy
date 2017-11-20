@@ -8,6 +8,7 @@ en:
         info: Here you can validate user documents and store voting results
     menu:
       voters: Validate document
+      letters: "Validate document"
       total_recounts: Total recounts and results
     polls:
       final:
@@ -15,6 +16,13 @@ en:
         no_polls: You are not officing final recounts in any active poll
         select_poll: Select poll
         add_results: Add results
+    booth:
+      new:
+        title: "Choose your booth"
+    sessions:
+      create:
+        flash:
+          wrong_password: "Wrong password"
     results:
       flash:
         create: "Results saved"
@@ -50,7 +58,9 @@ en:
         submit: Validate document
         error_verifying_census: "The Census was unable to verify this document."
         form_errors: prevented the verification of this document
-        no_assignments: "You don't have officing shifts today"
+    letter:
+      new:
+        alredy_voted: "Vote Reformulated"
     voters:
       new:
         title: Polls

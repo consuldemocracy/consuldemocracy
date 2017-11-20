@@ -1,0 +1,92 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: plaza_url %>
+<% end %>
+
+<%= render "probes/#{@probe.codename}/header" %>
+
+<%= render "shared/plaza_espana_header" %>
+
+<div class="row survey-results">
+  <div class="small-12 column">
+    <h2 id="title_0" class="subtitle">Finalistas</h2>
+
+    <div class="row ">
+      <div class="small-12 medium-6 column">
+        <%= image_tag "landings/first_voting_project_x.jpg", alt: "Project X" %>
+        <h3 class="margin">
+          <%= link_to "Proyecto X: Welcome mother Nature", plaza_probe_option_path(38) %>
+        </h3>
+      </div>
+      <div class="small-12 medium-6 column">
+        <%= image_tag "landings/first_voting_project_y.jpg", alt: "Project Y" %>
+        <h3 class="margin">
+          <%= link_to "Proyecto Y: UN PASEO POR LA CORNISA", plaza_probe_option_path(22) %>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 column">
+    <ul class="expanded menu text-center border-bottom border-top">
+      <li><a href="#title_1"><strong>Seleccionados en la preselección</strong></a></li>
+      <li><a href="#title_2"><strong>Resultado de la preselección ciudadana</strong></a></li>
+      <li><a href="#title_3"><strong>Resultado de la encuesta</strong></a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row survey-results">
+
+  <div class="small-12 column">
+
+    <h2 id="title_1" class="subtitle">Seleccionados en la preselección</h2>
+
+    <div class="small-12 medium-9">
+      <p>La selección de los finalistas realizada por el jurado ha tenido en cuenta la votación ciudadana según lo especificado en las bases del concurso, otorgando de 5 a 1 puntos a los 5 proyectos más votados.</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Proyecto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% finalists = ["03", "10", "28", "30", "68"] %>
+        <% finalists.each do |code| %>
+          <% finalist_probe = ProbeOption.where(code: code).first %>
+          <tr>
+            <td>
+              <strong>
+                <%= link_to finalist_probe.name, plaza_probe_option_path(finalist_probe.to_param) %>
+              </strong>
+              (<abbr title="Código de Referencia">REF</abbr>: <%= finalist_probe.code %>)
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <hr class="double">
+
+    <h2 id="title_2" class="subtitle">Resultado de la preselección ciudadana</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Proyecto</th>
+          <th scope="col" class="text-center">Número de votos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: '/custom/probes/plaza/plaza_option', collection: @probe_options %>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <%= render '/pages/plaza_espana/results_answers' %>
+</div>

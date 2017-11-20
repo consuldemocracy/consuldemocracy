@@ -1,0 +1,141 @@
+// Welcome page
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.welcome {
+
+  .cards {
+    background: #fafafa;
+
+    .panel {
+
+      [class^="icon-"] {
+        left: 0;
+        position: absolute;
+        top: 2px;
+      }
+    }
+
+    p {
+
+      &.info {
+        min-height: rem-calc(140);
+      }
+
+      &.info-date {
+        color: $brand;
+        font-size: $small-font-size;
+        padding-left: rem-calc(16);
+        position: relative;
+      }
+    }
+  }
+
+  .features {
+    padding: $line-height 0;
+
+    .panel {
+      border: 0;
+      margin-bottom: $line-height;
+      padding-left: 0;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .header {
+    background: $budget;
+    padding: $line-height * 2 0;
+
+    .lead-title {
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(40);
+      font-weight: bold;
+      line-height: rem-calc(40);
+      text-transform: uppercase;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(60);
+        line-height: rem-calc(60);
+      }
+    }
+
+    .label {
+      background: #b11618;
+      color: #fff;
+      display: inline-block;
+      font-size: rem-calc(20);
+      line-height: $line-height;
+      margin-bottom: $line-height / 2;
+      padding: $line-height / 4 $line-height / 2;
+    }
+
+    .button {
+      background: #000;
+      color: #fff;
+      font-weight: bold;
+
+      &.hollow {
+        background: none;
+        border-color: #000;
+        color: #000;
+      }
+    }
+
+    a:not(.button) {
+      text-decoration: underline;
+    }
+  }
+
+  .icon-external {
+    display: inline-block;
+    line-height: $line-height;
+    padding-top: $line-height / 4;
+    vertical-align: middle;
+  }
+}
+
+@include breakpoint(medium) {
+
+  .typewriter .lead-title {
+    overflow: hidden;
+    border-right: 2px solid #5a6175;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+
+    from,
+    to {
+      border-color: transparent;
+    }
+
+    50% {
+      border-color: #5a6175;
+    }
+  }
+}
+
+.see-all {
+  margin-top: $line-height / 2;
+
+  .icon-angle-right {
+    display: inline-block;
+    height: rem-calc(17);
+    vertical-align: middle;
+  }
+}

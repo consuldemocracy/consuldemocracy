@@ -1,0 +1,66 @@
+<%= provide :title, t("once_plazas.results.title") %>
+<%= provide :meta_description, t("once_plazas.results.description") %>
+<%= provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: once_plazas_results_url,
+              social_title: t("once_plazas.results.title"),
+              social_description: t("once_plazas.results.social") %>
+<% end %>
+<%= provide :social_media_meta_tags do %>
+  <meta name="twitter:image" content="<%= root_url %>social_media_resultados_once_plazas_twitter.jpg" />
+  <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_resultados_once_plazas.jpg"/>
+<% end %>
+
+<div class="expanded no-margin-top polls-show-header once-plazas">
+  <div class="row">
+    <div class="small-12 medium-9 column padding">
+      <h2 class="uppercase">
+        <%= t("once_plazas.title_results") %>
+        <span><%= t("once_plazas.title") %></span>
+        <span><%= t("once_plazas.date") %></span>
+      </h2>
+      <p><%= t("once_plazas.results.description") %></p>
+    </div>
+
+    <div class="small-12 medium-3 column text-right margin">
+      <%= link_to t("once_plazas.more_info"), more_info_polls_october_path, class: "small" %>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="menu simple clear">
+      <li class="active">
+        <h2><%= t("polls.show.results.tab") %></h2>
+      </li>
+      <li>
+        <%= link_to t("polls.show.stats.tab"), once_plazas_stats_path %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="polls-results-stats">
+  <div class="row margin-top" data-equalizer data-equalize-on="medium">
+    <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+      <p><strong><%= t("polls.show.stats.polls") %></strong></p>
+      <ul class="menu vertical margin-top">
+        <% @polls.each do |poll| %>
+          <li><a href="#poll_<%= poll.id %>"><%= poll.name %></a></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-9 column" data-equalizer-watch>
+      <% @polls.each do |poll| %>
+        <div class="margin-bottom">
+          <h3 id="poll_<%= poll.id %>"><%= poll.name %></h3>
+          <br>
+          <%= link_to t("polls.show.results.more_info", poll: poll.name), poll_path(poll.slug) %>
+        </div>
+
+  	   <%= render "results_2018", poll: poll %>
+    <hr>
+  <% end %>
+</div>

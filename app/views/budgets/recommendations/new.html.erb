@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="small-12 column">
+    <% if Budget.current.present? %>
+      <%= link_to t("delegation.view_list"),
+                  budget_recommendations_path(budget_id: Budget.current.last.slug, user_id: @current_user.id),
+                  class: "float-right" %>
+    <% end %>
+    <h1 class="inline-block"><%= t("delegation.title") %></h1>
+    <p><%= t("delegation.info") %></p>
+    <p>
+      <strong><%= t("delegation.instructions") %></strong><br>
+      <%= t("delegation.text_html") %><br>
+      <%= t("delegation.help_html") %>
+    </p>
+  </div>
+
+  <div class="small-12 medium-6 column">
+    <%= form_tag(budget_recommendations_path, {id: "new_budget_recommendation_form"}) do %>
+      <label>ID de proyecto de gasto</label>
+
+      <%= text_field_tag "recommendation[investment_id]" %>
+      <input type="submit" value="<%= t('delegation.form_submit') %>" class="button">
+    <% end %>
+  </div>
+  <div class="small-12 column">
+    <% if @recommendations.any? %>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">
+              <%= t("delegation.table_head") %>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @recommendations.each do |recommendation| %>
+            <tr>
+              <td>
+                <%= link_to recommendation.investment.title, budget_investment_path(recommendation.budget, recommendation.investment) %>
+              </td>
+              <td class="text-right">
+                <%= link_to t("delegation.delete"),
+                            budget_recommendation_path(budget_id: recommendation.budget, id: recommendation.id),
+                            method: :delete,
+                            class: "delete" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="callout primary">
+        <%= t("delegation.no_recommendations", phase: t("delegation.phase.#{@phase}")) %>
+      </div>
+    <% end %>
+    <div class="margin-top">
+     <p>
+        <%= t("delegation.share") %><br>
+        <strong>
+          <%= link_to budget_recommendations_url(budget_id: Budget.current.last.slug, user_id: @current_user.id),
+                      budget_recommendations_url(budget_id: Budget.current.last.slug, user_id: @current_user.id) %>
+        </strong>
+      </p>
+  </div>
+</div>

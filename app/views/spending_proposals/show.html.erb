@@ -3,6 +3,7 @@
 <section class="investment-project-show">
   <div id="<%= dom_id(@spending_proposal) %>" class="row">
     <div class="small-12 medium-9 column">
+      <%= back_link_to %>
 
       <h1><%= @spending_proposal.title %></h1>
 
@@ -29,23 +30,46 @@
         </div>
       <% end %>
 
+      <% if @spending_proposal.unfeasible? && @spending_proposal.feasible_explanation.present? %>
+        <h2><%= t('spending_proposals.show.unfeasibility_explanation') %></h2>
+        <p><%= @spending_proposal.feasible_explanation %></p>
+      <% end %>
+
+      <% if @spending_proposal.feasible? && @spending_proposal.price_explanation.present? %>
+        <h2><%= t('spending_proposals.show.price_explanation') %></h2>
+        <p><%= @spending_proposal.price_explanation %></p>
+      <% end %>
     </div>
 
     <aside class="small-12 medium-3 column">
-      <div class="sidebar-divider"></div>
-      <h3><%= t("votes.supports") %></h3>
-      <div class="text-center">
-        <div id="<%= dom_id(@spending_proposal) %>_votes">
-          <%= render 'votes',
-                      { spending_proposal: @spending_proposal, vote_url: vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
+      <% if spending_proposal_votable_in_show?(@spending_proposal) %>
+        <div class="sidebar-divider"></div>
+        <% if feature?("spending_proposal_features.final_voting_allowed") %>
+          <h3><%= t("votes.supports") %></h3>
+        <% end %>
+        <div class="text-center">
+          <% if feature?("spending_proposal_features.phase2") %>
+            <div id="<%= dom_id(@spending_proposal) %>_votes">
+              <%= render 'votes',
+                          { spending_proposal: @spending_proposal, vote_url:   vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
+            </div>
+          <% elsif feature?("spending_proposal_features.phase3") %>
+            <div id="<%= dom_id(@spending_proposal) %>_ballot">
+              <%= render 'ballot', spending_proposal: @spending_proposal %>
+            </div>
+          <% end %>
         </div>
-      </div>
+      <% end %>
+
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("spending_proposals.show.share"),
         title: @spending_proposal.title,
         url: spending_proposal_url(@spending_proposal)
       } %>
     </aside>
-
   </div>
 </section>
+
+<% unless namespace == 'management' %>
+  <%= render "spending_proposals/comments" %>
+<% end %>

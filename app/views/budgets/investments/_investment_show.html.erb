@@ -17,6 +17,10 @@
 
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= l investment.created_at.to_date %>
+        <% if investment.label.present? %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <span class="label round is-author"><%= investment.label %></span>
+        <% end %>
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= investment.heading.name %>
       </div>

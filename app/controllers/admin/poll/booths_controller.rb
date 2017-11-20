@@ -38,7 +38,7 @@ class Admin::Poll::BoothsController < Admin::Poll::BaseController
   private
 
     def booth_params
-      params.require(:poll_booth).permit(:name, :location)
+      params.require(:poll_booth).permit(:name, :location, :physical)
     end
 
 end

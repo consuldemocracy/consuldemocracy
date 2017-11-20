@@ -1,5 +1,10 @@
 <% provide :title do %>
-  <%= t("layouts.header.collaborative_legislation") %> - <%= t("legislation.processes.index.filters.#{@current_filter}") %>
+  <%= t("meta_tags.processes.title") %> - <%= t("legislation.processes.index.filters.#{@current_filter}") %>
+<% end %>
+<% provide :meta_description, t("meta_tags.processes.description") %>
+<% provide :tracking_page_number, "32" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: processes_url %>
 <% end %>
 
 <%= render "shared/section_header", i18n_namespace: "legislation.processes.index.section_header", image: "legislation_processes" %>
@@ -17,6 +22,10 @@
         <div class="callout primary margin-top">
           <%= t(".no_#{@current_filter}_processes") %>
         </div>
+      <% end %>
+
+      <% if @current_filter == "past" %>
+        <%= render "custom/legislation/processes_archived" %>
       <% end %>
 
       <div id="section_help" class="margin" data-magellan-target="section_help">

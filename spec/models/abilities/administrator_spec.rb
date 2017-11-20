@@ -20,6 +20,8 @@ describe "Abilities::Administrator" do
   let(:budget_investment_document) { build(:document, documentable: budget_investment) }
   let(:poll_question_document) { build(:document, documentable: poll_question) }
 
+  let(:probe_option) { create(:probe_option) }
+  let(:spending_proposal) { create(:spending_proposal) }
   let(:proposal_image) { build(:image, imageable: proposal) }
   let(:budget_investment_image) { build(:image, imageable: budget_investment) }
 
@@ -60,15 +62,41 @@ describe "Abilities::Administrator" do
   it { should be_able_to(:comment_as_administrator, proposal) }
   it { should_not be_able_to(:comment_as_moderator, proposal) }
 
+  it { should be_able_to(:comment_as_administrator, probe_option) }
+  it { should_not be_able_to(:comment_as_moderator, probe_option) }
+
+  it { should be_able_to(:comment_as_administrator, spending_proposal) }
+  it { should_not be_able_to(:comment_as_moderator, spending_proposal) }
+
   it { should be_able_to(:comment_as_administrator, legislation_question) }
   it { should_not be_able_to(:comment_as_moderator, legislation_question) }
 
   it { should be_able_to(:manage, Annotation) }
 
   it { should be_able_to(:read, SpendingProposal) }
+  it { should be_able_to(:edit, SpendingProposal) }
   it { should be_able_to(:update, SpendingProposal) }
+  it { should be_able_to(:summary, SpendingProposal) }
+
+  describe "valuation open" do
+
+    before(:each) do
+      Setting['feature.spending_proposal_features.valuation_allowed'] = true
+    end
+
+    it { should be_able_to(:destroy, SpendingProposal) }
+  end
+
+  describe "valuation finished" do
+
+    before(:each) do
+      Setting['feature.spending_proposal_features.valuation_allowed'] = nil
+    end
+
+    it { should_not be_able_to(:destroy, SpendingProposal) }
+  end
+
   it { should be_able_to(:valuate, SpendingProposal) }
-  it { should be_able_to(:destroy, SpendingProposal) }
 
   it { should be_able_to(:create, Budget) }
   it { should be_able_to(:update, Budget) }

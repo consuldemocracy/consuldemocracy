@@ -1,0 +1,96 @@
+<% provide :title, "Plan de Derechos Humanos" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_human_rights"),
+          social_title: t("pages.processes.index.process_5_title"),
+          social_description: t("pages.processes.index.process_5_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: human_rights_page_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-7 column">
+      <%= back_link_to %>
+      <h1 class="margin-bottom">
+        <%= t("pages.processes.index.process_5_title") %>
+      </h1>
+      <p>El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan que será el instrumento para el desarrollo de sus políticas públicas con un <%= link_to "enfoque transversal", human_rights_page_path(anchor: "3"), class: "white" %> que afecte a toda la actuación municipal. <%= link_to "Más información", human_rights_page_path, class: "white" %>
+      </p>
+    </div>
+
+    <div class="show-for-medium medium-5 column relative">
+      <%= image_tag "processes_human_rights.png", class: "human-rights-img", alt: "Plan de Derechos Humanos" %>
+    </div>
+  </div>
+</div>
+
+<div class="expanded timeline">
+  <div class="row">
+    <div class="small-12 medium-4 column text-center">
+      <span>Propuestas y debates</span>
+    </div>
+    <div class="small-12 medium-4 column text-center">
+      <span>Análisis de la información</span>
+    </div>
+    <div class="small-12 medium-4 column text-center">
+      <span>Priorización</span>
+    </div>
+  </div>
+</div>
+
+<div class="row margin">
+  <div class="small-12 medium-8 column small-centered">
+    <% if feature?("human_rights.accepting") %>
+      <p>Existe un gran número de tratados internacionales de derechos humanos ratificados por España que tienen que ser tenidos en cuenta a la hora de desarrollar cualquier política municipal. Sin embargo desconocemos el grado de cumplimiento del Ayuntamiento de Madrid con esta legislación internacional.</p>
+
+      <p>Por esta razón este equipo de gobierno quiere poner en marcha un Plan Municipal de Derechos Humanos que ponga de relieve tanto los logros del Ayuntamiento como los problemas a los que se enfrenta en esta materia, y dicte las líneas de acción para garantizar el cumplimiento de todas las obligaciones municipales desde el marco de los Derechos Humanos.
+      </p>
+
+    <% elsif feature?("human_rights.voting") %>
+      <p>Tras un amplio proceso de diagnóstico y consulta con diversos actores (ciudadanía, personal del Ayuntamiento, entidades y organizaciones sociales, grupos políticos municipales...) para la elaboración del Plan de Derechos Humanos de la ciudad de Madrid, ponemos a disposición de todo el mundo el primer borrador del mismo para su socialización y contraste.</p>
+
+      <p>Puedes priorizar cuáles deben ser las líneas de acción prioritarias por las que el Ayuntamiento debería comenzar la implementación del Plan o acceder al borrador completo del mismo y realizar comentarios de modo directo y transparente en la web. <%= link_to "Más información", human_rights_page_path(anchor: "4") %>.
+      </p>
+
+      <div class="row">
+        <div class="small-6 column">
+          <%= link_to "Ver medidas", human_rights_proposals_path, class: "button expanded" %>
+        </div>
+        <div class="small-6 column">
+          <%= link_to "Ver borrador", human_rights_plan_path, class: "button expanded" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% if feature?("human_rights.accepting") %>
+  <div class="row" data-equalizer>
+    <div class="small-12 column text-center padding">
+      <h2>Haz tus propuestas para el Plan de Derechos Humanos</h2>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <div class="panel category subcategory" data-equalizer-watch>
+        <h4>¿Cuáles consideras que son los principales problemas de Derechos Humanos que existen hoy en la ciudad de Madrid?</h4>
+        <%= link_to "Contestar pregunta", new_answer_path, class: "button hollow" %>
+      </div>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <div class="panel category subcategory" data-equalizer-watch>
+        <h4>Selecciona aquellos derechos que te interesan/preocupan más y propón medidas concretas de actuación municipal para la defensa de los mismos.</h4>
+        <%= link_to "Crear propuesta", 'processes/human_rights_question_2', class: "button hollow" %>
+      </div>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <div class="panel category subcategory" data-equalizer-watch>
+        <h4>¿Qué propondrías para que la ciudadanía madrileña pueda conocer y defender mejor sus derechos?</h4>
+        <%= link_to "Crear propuesta", 'processes/human_rights_question_3', class: "button hollow" %>
+      </div>
+    </div>
+  </div>
+<% end %>

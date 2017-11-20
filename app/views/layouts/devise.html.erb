@@ -10,9 +10,12 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
+    <%= setting['per_page_code_head'].try(:html_safe) %>
   </head>
 
   <body class="auth-page">
+    <%= setting['per_page_code_body'].try(:html_safe) %>
+
     <div class="wrapper">
       <div class="auth-image small-12 medium-3 column">
         <h1 class="logo margin">
@@ -41,5 +44,8 @@
     <div class="footer">
       <%= render 'layouts/footer' %>
     </div>
+    <span id="analytics">
+      <%= render "layouts/analytics" %>
+    </span>
   </body>
 </html>

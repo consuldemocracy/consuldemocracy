@@ -2,10 +2,11 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
+      delegation: Delegation
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
-      finish_verification: Complete verification
+      finish_verification: "Add a double verification check to your account"
       notifications: Notifications
       organization_name_label: Name of organization
       organization_responsible_name_placeholder: Representative of the organization/collective
@@ -29,14 +30,21 @@ en:
       user_permission_support_proposal: Support proposals
       user_permission_title: Participation
       user_permission_verify: To perform all the actions verify your account.
-      user_permission_verify_info: "* Only for users on Census."
-      user_permission_votes: Participate on final voting
+      user_permission_verify_info: "* Only for users on Madrid City Census."
+      user_permission_create_budget_investments: Create budget investments*
+      user_permission_votes: Participate on polls*
       username_label: Username
       verified_account: Account verified
       verify_my_account: Verify my account
   application:
     close: Close
     menu: Menu
+  answers:
+    index:
+      title: Respuesta enviada
+      sent: Tu respuesta ha sido enviada. Gracias por participar.
+    new:
+      send: Send answer
   comments:
     comments_closed: Comments are closed
     verified_only: To participate %{verify_account}
@@ -59,6 +67,7 @@ en:
       comment_as_admin: Comment as admin
       comment_as_moderator: Comment as moderator
       leave_comment: Leave your comment
+      leave_reply: Leave your reply
     orders:
       most_voted: Most voted
       newest: Newest first
@@ -67,12 +76,23 @@ en:
     select_order: Sort by
     show:
       return_to_commentable: 'Go back to '
+  questions:
+    form:
+      leave_comment: Leave your question
   comments_helper:
     comment_button: Publish comment
     comment_link: Comment
     comments_title: Comments
     reply_button: Publish reply
     reply_link: Reply
+  questions_helper:
+    comment_button: Publish question
+    comment_link: Question
+    reply_button: Publish reply
+    reply_link: Reply
+  comment_kinds:
+    comment: Comment
+    question: Question
   debates:
     create:
       form:
@@ -92,6 +112,8 @@ en:
         submit_button: Save changes
       show_link: View debate
     form:
+      comment_kind_instructions: Comment kind
+      comment_kind_label: Choose the comment kind
       debate_text: Initial debate text
       debate_title: Debate title
       tags_instructions: Tag this debate.
@@ -152,7 +174,12 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
+      questions:
+        one: 1 question
+        other: "%{count} questions"
+        zero: No questions
       comments_title: Comments
+      questions_title: Questions
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
@@ -177,6 +204,7 @@ en:
     policy: Privacy Policy
     proposal: Proposal
     proposal_notification: "Notification"
+    signature_sheet: Signature sheet
     spending_proposal: Spending proposal
     budget/investment: Investment
     poll/shift: Shift
@@ -189,7 +217,6 @@ en:
     image: Image
   geozones:
     none: All city
-    all: All scopes
   layouts:
     application:
       chrome: Google Chrome
@@ -209,23 +236,26 @@ en:
       open_data_title: Open data
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decide how to shape the city you want to live in.
+      participation_text: Decide how to shape the Madrid you want to live in.
       participation_title: Participation
       privacy: Privacy Policy
-      transparency_text: Find out anything about the city.
+      transparency_text: Find out anything about the Madrid City Council.
       transparency_title: Transparency
-      transparency_url: https://transparency.consul
+      transparency_url: http://transparencia.madrid.es
     header:
       administration_menu: Admin
       administration: Administration
       available_locales: Available languages
-      collaborative_legislation: Legislation processes
+      collaborative_legislation: Processes
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
-      external_link_opendata_url: https://opendata.consul
+      external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparency
-      external_link_transparency_url: https://transparency.consul
+      external_link_transparency_url: http://transparencia.madrid.es
+      forums: "Local Forums"
+      help_translate: Help us translate
+      help_translate_info: How to help
       locale: 'Language:'
       logo: CONSUL logo
       management: Management
@@ -241,12 +271,14 @@ en:
         other: You have %{count} new notifications
       no_notifications: "You don't have new notifications"
       open: open
-      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_title: Love the city, and it will become a city you love
+      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_gov: Open government
       proposals: Proposals
+      spending_proposals: Participatory budgeting
       poll_questions: Voting
       budgets: Participatory budgeting
+      delegation: Delegation
       spending_proposals: Spending Proposals
     admin:
       watch_form_message: 'You have unsaved changes. Do you confirm to leave the page?'
@@ -276,7 +308,7 @@ en:
     title: "Districts"
     proposal_for_district: "Start a proposal for your district"
     select_district: Scope of operation
-    start_proposal: Create a proposal
+    start_proposal: Create proposal
   omniauth:
     facebook:
       sign_in: Sign in with Facebook
@@ -323,21 +355,20 @@ en:
       other: Other
     form:
       geozone: Scope of operation
+      sub_proceeding: Human right
       proposal_external_url: Link to additional documentation
-      proposal_question: Proposal question
-      proposal_question_example_html: "Must be summarised in one question with a Yes or No answer. <br>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'"
       proposal_responsible_name: Full name of the person submitting the proposal
       proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
       proposal_summary: Proposal summary
       proposal_summary_note: "(maximum 200 characters)"
       proposal_text: Proposal text
+      proposal_type: Proposal type
       proposal_title: Proposal title
       proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
-      tag_category_label: "Categories"
       tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
-      tags_label: Tags
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+      tags_label: Tags
       map_location: "Map location"
       map_location_instructions: "Navigate the map to the location and place the marker."
       map_remove_marker: "Remove map marker"
@@ -375,8 +406,7 @@ en:
         other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
       select_order_long: 'You are viewing proposals according to:'
-      start_proposal: Create a proposal
-      title: Proposals
+      start_proposal: Create proposal
       top: Top weekly
       top_link_proposals: The most supported proposals by category
       section_header:
@@ -525,6 +555,7 @@ en:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
       voted_token: "You can write down this vote identifier, to check your vote on the final results:"
+      vote_error: "Something went wrong and your vote couldn't be registered. Please check if your browser supports Javascript and try again later."
   proposal_notifications:
     new:
       title: "Send message"
@@ -536,6 +567,9 @@ en:
     show:
       back: "Go back to my activity"
   shared:
+    comments:
+      title: 'Comments'
+      login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'
     edit: 'Edit'
     save: 'Save'
     delete: 'Delete'
@@ -562,6 +596,7 @@ en:
     delete: Delete
     author_info:
       author_deleted: User deleted
+      forum: District discussion space
     back: Go back
     check: Select
     check_all: All
@@ -613,6 +648,7 @@ en:
     target_blank_html: " (link opens in new window)"
     you_are_in: "You are in"
     unflag: Unflag
+    probe_plaza_banner: "#RemodelingPlazaEspaña"
     unfollow: "Unfollow"
     unfollow_entity: "Unfollow %{entity}"
     outline:
@@ -637,14 +673,17 @@ en:
       association_name: 'Association name'
       description: Description
       external_url: Link to additional documentation
-      geozone: Scope of operation
+      geozone: Choose if a proposed citywide or district
       submit_buttons:
         create: Create
         new: Create
       title: Spending proposal title
     index:
+      available: "Available:"
       title: Participatory budgeting
       unfeasible: Unfeasible investment projects
+      unfeasible_text: "The proposals must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All proposals don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
+      unfeasible_text_definitions: see definitions here
       by_geozone: "Investment projects with scope: %{geozone}"
       search_form:
         button: Search
@@ -654,31 +693,123 @@ en:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"
       sidebar:
-        geozones: Scope of operation
-        feasibility: Feasibility
-        unfeasible: Unfeasible
-      start_spending_proposal: Create an investment project
+        back: Back to select page
+        district: District
+        my_ballot: My ballot
+        remember_city: You can also vote %{city} investment projects.
+        remember_city_link_html: <strong>city-wide</strong>
+        remember_district: You can also vote investment projects for %{district}.
+        remember_district_link_html: <strong>a district</strong>
+        voted_html:
+          one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
+          other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+        voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money
+        votes: Supports remaining
+        votes_district: "You can only vote in the district %{district}"
+        zero: You have not voted any investment project.
+      orders:
+        random: random
+        confidence_score: highest rated
+        price: by price
+    welcome:
+      city_link: Vote city proposals
+      city_link_close: City proposals
+      contact_html: If you have any doubt %{contact_faq} or send us an email at <strong>preparticipativos@madrid.es</strong>
+      contact_faq: check the faqs
+      delegation: Vote Delegation
+      delegation_closed: See vote delegations
+      delegation_info_html: "If you activate vote delegation on any local space, proposals decided by that space will automaticaly receive your votes"
+      delegation_meetings: local debate spaces
+      delegation_text: Delegate your votes to the proposals decided at any of the %{meetings}
+      delegation_text_closed: You can see what the %{meetings} have decided
+      delegation_title: Vote delegation
+      districts: Districts
+      districts_link: Vote district proposals
+      districts_link_close: District proposals
+      in_two_minutes: All information about participatory budgets
+      title: "You already can vote investment projects!"
+      title_close: "Participatory budgeting"
+      title_results: "Participatory budgeting"
+      text_first_html: "From <strong>May 15th</strong> to <strong>June 30th</strong> you can vote proposals for the 2016 participatory budget."
+      text_first_close_html: "Voting on proposals for this year's participatory budgeting campaign ended. Voting term closed on <strong>June the 30th</strong>."
+      text_first_results_html: "Voting on proposals for this year's participatory budgeting campaign ended. Voting term closed on <strong>June the 30th</strong>."
+      text_second_html: "You can vote for as many proposals as you want with a budget limit for both <strong>city-wide and district-wide</strong> proposals."
+      text_second_close_html: "Results we'll be ready soon."
+      text_second_results_html: "You can already see the results."
+      text_long_html: "Madrid has reserved <strong>60 million euros</strong> for investments assigned to the next year budget for the people to decide what to do with them. Citizens can propose and vote. Madrid government will assume the results and include them in the city's budget for 2017."
+      text_long_close_html: "Madrid has reserved <strong>60 million euros</strong> for investments assigned to the next year budget for the people to decide what to do with them. Citizens have created proposals and voted. Madrid government will assume the results and include them in the city's budget for 2017."
+      text_long_results_html: "Madrid has reserved <strong>60 million euros</strong> for investments assigned to the next year budget for the people to decide what to do with them. Citizens have created proposals and voted. Madrid government will assume the results and include them in the city's budget for 2017."
+      unfeasible_link: See unfeasible investment projects
+      see_results: See results
     new:
-      more_info: How do participatory budgeting works?
-      recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
+      back_link: Back
+      more_info: "Important, not to be ruled out your proposal must comply:"
+      recommendation_one: See the %{requirements}.
+      recommendation_one_link: requirements to be met by a proposal
       recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
-      recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
+      recommendation_two: Each proposal must be submitted separately. You can make as many want.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
     show:
       author_deleted: User deleted
-      code: 'Proposal code:'
+      price_explanation: Price explanation
+      unfeasibility_explanation: Unfeasibility explanation
+      code: 'Investment project code:'
       share: Share
     wrong_price_format: Only integer numbers
     spending_proposal:
       spending_proposal: Investment project
+      add: Add
+      already_added: You have already added this investment project
       already_supported: You have already supported this. Share it!
-      support: Support
+      forum: District discussion space
       support_title: Support this project
       supports:
         one: 1 support
         other: "%{count} supports"
         zero: No supports
+      vote: Vote
+    header:
+      check_ballot: Check my ballot
+      different_district_active: "You have active votes in another district:"
+      different_district_active_info: "(If you remove all votes of this district you can select another one)"
+    results:
+      page_title: "Participatory budget | Results"
+      heading: "PARTICIPATORY BUDGET"
+      results_link: Results
+      stats_link: "Participation stats"
+      geozone_selection_title: "By district"
+      spending_proposal: Proposal title
+      ballot_lines_count: Times selected
+      hide_discarded_link: Hide discarded
+      show_all_link: Show all
+      price: Cost
+      amount_available: Available budget
+      incompatible: Incompatibles
+      accepted: "Accepted spending proposal: "
+      discarded: "Discarded spending proposal: "
+    stats:
+      page_title: "Participatory budget | Participation stats"
+      heading: "PARTICIPATORY BUDGET"
+      results_link: Results
+      stats_link: "Participation stats"
+  ballots:
+    show:
+      city_link: Vote city proposals
+      city_wide: City Wide
+      districts_link: Vote district proposals
+      district_wide: District Wide
+      title: Your ballot
+      amount_spent: Amount spent
+      remaining_city_html: "You are <span>%{amount_city}</span> to invest citywide."
+      remaining_district_html: "You are <span>%{amount_district}</span> to invest on <span>%{geozone}</span>."
+      remove: Remove vote
+      social_share: I've decided where to invest %{amount} for %{geozone}
+      voted_html:
+        one: "You voted <span>one</span> proposal."
+        other: "You voted <span>%{count}</span> proposals."
+      voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
+      zero: You have not voted any investment project.
   stats:
     index:
       visits: Visits
@@ -730,9 +861,13 @@ en:
         proposals:
           one: 1 Proposal
           other: "%{count} Proposals"
+        spending_proposals:
+          one: 1 Spending proposal
+          other: "%{count} Spending proposals"
         budget_investments:
           one: 1 Investment
           other: "%{count} Investments"
+        ballot: Participatory budget
         follows:
           one: 1 Following
           other: "%{count} Following"
@@ -740,6 +875,7 @@ en:
       no_private_messages: "This user doesn't accept private messages."
       private_activity: This user decided to keep the activity list private.
       send_private_message: "Send private message"
+      delegation: List of recommended investments projects
     proposals:
       send_notification: "Send notification"
       retire: "Retire"
@@ -760,9 +896,17 @@ en:
     spending_proposals:
       not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on proposals; %{verify_account}.
-      organization: Organizations are not permitted to vote
+      organization: Organisations are not permitted to vote.
       unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
+      no_city_supports_available: You have already used all your city-wide supports.
+      no_district_supports_available: You have already used all your district-wide supports.
+      different_district_assigned: You have already supported other district proposals.
+      different_geozone_assigned: You have already supported other district proposals. %{my_geozone}.
+      not_enough_money: "This proposal's price is more than the available amount left"
+      confirm_first_vote_on_district: "Everyone can support the proposal of the city and one district of their choice, If you accept you support this proposal and only can support the proposals for %{district}. This district can't change later. Do you want support this proposal and select this district?"
+      confirm_discard_delegation: "If you vote you will stop delegating. "
+      no_ballots_allowed: No ballots allowed
     budget_investments:
       not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on proposals; %{verify_account}.
@@ -799,14 +943,14 @@ en:
       question: Do you already have an account in %{org_name}?
       title: Account verification
     welcome:
-      go_to_index: See proposals and debates
+      go_to_index: Not now, start to participate
       title: Participate
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
       user_permission_proposal: Create new proposals
       user_permission_support_proposal: Support proposals*
       user_permission_verify: To perform all the actions verify your account.
-      user_permission_verify_info: "* Only for users on Census."
+      user_permission_verify_info: "* Only for users on Madrid Census."
       user_permission_verify_my_account: Verify my account
       user_permission_votes: Participate on final voting
   invisible_captcha:

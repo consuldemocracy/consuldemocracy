@@ -1,0 +1,27 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: transparency_ordinance_url %>
+<% end %>
+
+<div class="expanded jumbo-featured no-margin-top">
+  <div class="row">
+    <div class="small-12 medium-8 column">
+      <%= link_to "/processes", class: "left back" do %>
+        <i class="icon-angle-left left"></i>
+        <%= t("pages.processes.back") %>
+      <% end %>
+
+      <h1><%= t("pages.processes.process_1.title") %></h1>
+    </div>
+    <div class="show-for-medium medium-4 column">
+      <%= image_tag "processes_ordinance.png" %>
+    </div>
+  </div>
+</div>
+
+<div class="process row margin-bottom">
+  <div class="small-12 medium-6 column">
+    <%= markdown t("pages.processes.process_1.text",
+    comment: link_to(t("pages.processes.process_1.comment"), transparency_ordinance_path)).html_safe %>
+    <%= link_to t("pages.processes.process_1.button"), transparency_ordinance_draft_path, class: "button large" %>
+  </div>
+</div>

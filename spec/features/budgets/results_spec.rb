@@ -54,7 +54,7 @@ feature 'Results' do
     other_heading = create(:budget_heading, group: group)
     other_investment = create(:budget_investment, :winner, heading: other_heading)
 
-    visit budget_results_path(budget)
+    visit custom_budget_results_path(budget)
 
     within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
@@ -67,7 +67,7 @@ feature 'Results' do
     visit budget_path(budget)
     expect(page).not_to have_link "See results"
 
-    visit budget_results_path(budget, heading_id: budget.headings.first)
+    visit custom_budget_heading_result_path(budget, heading_id: budget.headings.first)
     expect(page).to have_content "You do not have permission to carry out the action"
   end
 

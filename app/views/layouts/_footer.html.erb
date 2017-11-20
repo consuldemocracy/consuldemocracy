@@ -22,12 +22,14 @@
       </div>
 
       <div class="small-12 medium-4 column">
-        <%= link_to t("layouts.footer.transparency_title"), setting['transparency_url'].presence || t("layouts.footer.transparency_url"), class: "title", rel: "nofollow" %>
+        <%= link_to t("layouts.footer.transparency_title"), setting['transparency_url'].presence || t("layouts.footer.transparency_url"),
+                    target: "_blank", title: t('shared.target_blank_html'), class: "title" %>
         <p><%= t("layouts.footer.transparency_text") %></p>
       </div>
 
       <div class="small-12 medium-4 column">
-        <%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url"), class: "title", rel: "nofollow" %>
+        <%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url"),
+                    target: "_blank", title: t('shared.target_blank_html'), class: "title" %>
         <p><%= t("layouts.footer.open_data_text") %></p>
       </div>
     </div>
@@ -37,9 +39,9 @@
     <div class="small-12 medium-8 column">
       <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
       <ul class="no-bullet inline-block">
-        <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path('privacy') %>&nbsp;|</li>
-        <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path('conditions') %>&nbsp;|</li>
-        <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), page_path('accessibility') %></li>
+        <li class="inline-block"><%= link_to t("layouts.footer.privacy"), privacy_path %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.conditions"), conditions_path %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), accessibility_path %></li>
       </ul>
     </div>
 

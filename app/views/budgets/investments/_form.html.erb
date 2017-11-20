@@ -2,7 +2,7 @@
   <%= render 'shared/errors', resource: @investment %>
 
   <div class="row">
-    <div class="small-12 medium-8 column">
+    <div class="small-12 medium-9 column">
       <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: true, } %>
     </div>
 
@@ -21,9 +21,11 @@
       <%= f.text_field :external_url %>
     </div>
 
-    <div class="images small-12 column">
-      <%= render 'images/nested_image', imageable: @investment, f: f %>
-    </div>
+    <% if feature?(:allow_images) %>
+      <div class="images small-12 column">
+        <%= render 'images/nested_image', imageable: @investment, f: f %>
+      </div>
+    <% end %>
 
     <div class="documents small-12 column">
       <%= render 'documents/nested_documents', documentable: @investment, f: f %>
