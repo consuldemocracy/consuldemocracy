@@ -5,6 +5,19 @@ module SearchHelper
                        params[:advanced_search].try(:[], :official_level))
   end
 
+  def budget_phases_search_options
+    selected = params[:advanced_search].nil? ? '' : params[:advanced_search][:budget_phase]
+    options_for_select([
+      [t("budgets.phase.accepting"), 'accepting'],
+      [t("budgets.phase.reviewing"), 'reviewing'],
+      [t("budgets.phase.selecting"), 'selecting'],
+      [t("budgets.phase.valuating"), 'valuating'],
+      [t("budgets.phase.balloting"), 'balloting'],
+      [t("budgets.phase.reviewing_ballots"), 'reviewing_ballots'],
+      [t("budgets.phase.finished"), 'finished']],
+      selected)
+  end
+
   def date_range_options
     options_for_select([
       [t("shared.advanced_search.date_1"), 1],

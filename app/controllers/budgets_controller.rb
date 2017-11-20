@@ -1,6 +1,7 @@
 class BudgetsController < ApplicationController
   include FeatureFlags
   include BudgetsHelper
+  include Search
   feature_flag :budgets
 
   before_action :load_budget

@@ -169,21 +169,175 @@ feature 'Budgets' do
     end
   end
 
+  context "Advanced search" do
+
+    context "Search by phase type" do
+
+      scenario "Accepting Budget", :js do
+        budget = create(:budget, :accepting)
+        budget2 = create(:budget, :reviewing)
+        visit budgets_path
+        click_link "js-advanced-search-title"
+        select('Accepting projects', from: 'advanced_search_budget_phase')
+        click_button "Filter"
+        within "#budgets" do
+          expect(page).to have_content(budget.translated_phase)
+          expect(page).to_not have_content(budget2.translated_phase)
+        end
+      end
+
+      scenario "Reviewing Budget", :js do
+        budget = create(:budget, :reviewing)
+        budget2 = create(:budget, :accepting)
+        visit budgets_path
+        click_link "js-advanced-search-title"
+        select('Reviewing projects', from: 'advanced_search_budget_phase')
+        click_button "Filter"
+        within "#budgets" do
+          expect(page).to have_content(budget.translated_phase)
+          expect(page).to_not have_content(budget2.translated_phase)
+        end
+      end
+
+      scenario "Selecting Budget", :js do
+        budget = create(:budget, :selecting)
+        budget2 = create(:budget, :reviewing)
+        visit budgets_path
+        click_link "js-advanced-search-title"
+        select('Selecting projects', from: 'advanced_search_budget_phase')
+        click_button "Filter"
+        within "#budgets" do
+          expect(page).to have_content(budget.translated_phase)
+          expect(page).to_not have_content(budget2.translated_phase)
+        end
+      end
+
+      scenario "Valuating Budget", :js do
+        budget = create(:budget, :valuating)
+        budget2 = create(:budget, :reviewing)
+        visit budgets_path
+        click_link "js-advanced-search-title"
+        select('Valuating projects', from: 'advanced_search_budget_phase')
+        click_button "Filter"
+        within "#budgets" do
+          expect(page).to have_content(budget.translated_phase)
+          expect(page).to_not have_content(budget2.translated_phase)
+        end
+      end
+
+      scenario "Balloting Budget", :js do
+        budget = create(:budget, :balloting)
+        budget2 = create(:budget, :reviewing)
+        visit budgets_path
+        click_link "js-advanced-search-title"
+        select('Balloting projects', from: 'advanced_search_budget_phase')
+        click_button "Filter"
+        within "#budgets" do
+          expect(page).to have_content(budget.translated_phase)
+          expect(page).to_not have_content(budget2.translated_phase)
+        end
+      end
+
+      scenario "Reviewing Ballots", :js do
+        budget = create(:budget, :reviewing_ballots)
+        budget2 = create(:budget, :reviewing)
+        visit budgets_path
+        click_link "js-advanced-search-title"
+        select('Reviewing Ballots', from: 'advanced_search_budget_phase')
+        click_button "Filter"
+        within "#budgets" do
+          expect(page).to have_content(budget.translated_phase)
+          expect(page).to_not have_content(budget2.translated_phase)
+        end
+      end
+
+      scenario "Finished Ballots", :js do
+        budget  = create(:budget, :finished)
+        budget2 = create(:budget, :reviewing)
+        visit budgets_path
+        click_link "js-advanced-search-title"
+        select('Finished budget', from: 'advanced_search_budget_phase')
+        click_button "Filter"
+        within "#budgets" do
+          expect(page).to have_content(budget.translated_phase)
+          expect(page).to_not have_content(budget2.translated_phase)
+        end
+      end
+    end
+  end
+
+  context "Search by date" do
+
+    context "Predefined date ranges" do
+
+      scenario "Last day", :js do
+        budget = create(:budget, :accepting, created_at: 1.day.ago)
+        budget2 = create(:budget, :reviewing, created_at: 2.days.ago)
+        visit budgets_path
+        click_link "js-advanced-search-title"
+        select "Last 24 hours", from: "js-advanced-search-date-min"
+        click_button "Filter"
+        within "#budgets" do
+          expect(page).to have_content(budget.translated_phase)
+          expect(page).to_not have_content(budget2.translated_phase)
+        end
+      end
+
+      scenario "Search by multiple filters", :js do
+        budget = create(:budget, :accepting, created_at: 1.day.ago)
+        budget2 = create(:budget, :selecting, created_at: 2.days.ago)
+        visit budgets_path
+        click_link "js-advanced-search-title"
+        select('Accepting projects', from: 'advanced_search_budget_phase')
+        select "Last 24 hours", from: "js-advanced-search-date-min"
+        click_button "Filter"
+        within "#budgets" do
+          expect(page).to have_content(budget.translated_phase)
+          expect(page).to_not have_content(budget2.translated_phase)
+        end
+      end
+
+      scenario "Maintain advanced search criteria", :js do
+        visit budgets_path
+        click_link "js-advanced-search-title"
+        select('Accepting projects', from: 'advanced_search_budget_phase')
+        select "Last 24 hours", from: "js-advanced-search-date-min"
+        click_button "Filter"
+        within "#js-advanced-search" do
+          expect(page).to have_select('advanced_search[budget_phase]', selected: 'Accepting projects')
+          expect(page).to have_select('advanced_search[date_min]', selected: 'Last 24 hours')
+        end
+      end
+
+      scenario "Maintain custom date search criteria", :js do
+        visit budgets_path
+        click_link "js-advanced-search-title"
+        select "Customized", from: "js-advanced-search-date-min"
+        fill_in "advanced_search_date_min", with: 7.days.ago
+        fill_in "advanced_search_date_max", with: 1.day.ago
+        click_button "Filter"
+        within "#js-advanced-search" do
+          expect(page).to have_select('advanced_search[date_min]', selected: 'Customized')
+          expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%Y-%m-%d')}']")
+          expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%Y-%m-%d')}']")
+        end
+      end
+
+    end
+  end
+
   context 'Show' do
 
     scenario "List all groups" do
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
-
       visit budget_path(budget)
-
       budget.groups.each {|group| expect(page).to have_link(group.name)}
     end
 
     scenario "Links to unfeasible and selected if balloting or later" do
       budget = create(:budget, :selecting)
       group = create(:budget_group, budget: budget)
-
       visit budget_path(budget)
 
       expect(page).not_to have_link "See unfeasible investments"
@@ -195,26 +349,17 @@ feature 'Budgets' do
       expect(page).not_to have_link "See investments not selected for balloting phase"
 
       budget.update(phase: :balloting)
-
       visit budget_path(budget)
-
       expect(page).to have_link "See unfeasible investments"
       expect(page).to have_link "See investments not selected for balloting phase"
-
       click_link group.name
-
       expect(page).to have_link "See unfeasible investments"
       expect(page).to have_link "See investments not selected for balloting phase"
-
       budget.update(phase: :finished)
-
       visit budget_path(budget)
-
       expect(page).to have_link "See unfeasible investments"
       expect(page).to have_link "See investments not selected for balloting phase"
-
       click_link group.name
-
       expect(page).to have_link "See unfeasible investments"
       expect(page).to have_link "See investments not selected for balloting phase"
     end
@@ -308,25 +453,21 @@ feature 'Budgets' do
         login_as(level_two_user)
 
         visit budget_path(budget)
-
         expect(page).to have_link "Create a budget investment"
+
       end
 
       scenario "Unverified user" do
         user = create(:user)
         login_as(user)
-
         visit budget_path(budget)
-
         expect(page).to have_content "To create a new budget investment verify your account."
       end
 
       scenario "user not logged in" do
         visit budget_path(budget)
-
         expect(page).to have_content "To create a new budget investment you must sign in or sign up."
       end
-
     end
   end
 end
