@@ -84,7 +84,7 @@ class CensusApi
     end
 
     def stubbed_response(document_type, document_number)
-      if document_number == "12345678Z" && document_type == "1"
+      if (document_number == "12345678Z" || document_number == "12345678Y") && document_type == "1"
         stubbed_valid_response
       else
         stubbed_invalid_response
@@ -119,7 +119,7 @@ class CensusApi
       {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {}, datos_vivienda: {}}}}
     end
 
-    def is_dni?(document_type)
+    def dni?(document_type)
       document_type.to_s == "1"
     end
 

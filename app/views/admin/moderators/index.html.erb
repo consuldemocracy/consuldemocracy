@@ -2,47 +2,51 @@
 
 <h2 class="inline-block"><%= t("admin.moderators.index.title") %></h2>
 
-<div class="row">
-  <%= form_tag search_admin_moderators_path, method: :get, remote: true  do %>
-    <div class="small-12 medium-6 column">
-      <%= text_field_tag :email, '', placeholder: t('admin.moderators.search.email_placeholder') %>
-    </div>
-    <div class="small-12 medium-6 column">
-      <%= submit_tag t('admin.moderators.search.search'), class: 'button' %>
+<%= render 'admin/shared/user_search', url: search_admin_moderators_path %>
+
+<div id="moderators">
+  <% if @moderators.any? %>
+    <h3 class="margin"><%= page_entries_info @moderators %></h3>
+
+    <table>
+      <thead>
+        <th scope="col"><%= t("admin.moderators.index.name") %></th>
+        <th scope="col" class="small-6"><%= t("admin.moderators.index.email") %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+        <% @moderators.each do |moderator| %>
+          <tr>
+            <td>
+              <%= moderator.name %>
+            </td>
+            <td>
+              <%= moderator.email %>
+            </td>
+            <td>
+              <% if moderator.persisted? %>
+                <%= link_to t('admin.moderators.moderator.delete'),
+                            admin_moderator_path(moderator),
+                            method: :delete,
+                            class: "button hollow alert expanded"
+                %>
+              <% else %>
+                <%= link_to t('admin.moderators.moderator.add'),
+                            { controller: "admin/moderators", action: :create,
+                              user_id: moderator.user_id },
+                              method: :post,
+                              class: "button success expanded" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @moderators %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.moderators.index.no_moderators") %>
     </div>
   <% end %>
 </div>
-
-<div id="search-result" class="row"></div>
-
-<h3><%= page_entries_info @moderators %></h3>
-
-<table id="moderators">
-  <% @moderators.each do |moderator| %>
-    <tr>
-      <td>
-        <%= moderator.name %>
-      </td>
-      <td>
-        <%= moderator.email %>
-      </td>
-      <td class="text-right">
-        <% if moderator.persisted? %>
-          <%= link_to t('admin.moderators.moderator.delete'),
-                      admin_moderator_path(moderator),
-                      method: :delete,
-                      class: "button hollow alert"
-          %>
-        <% else %>
-          <%= link_to t('admin.moderators.moderator.add'),
-                      { controller: "admin/moderators", action: :create,
-                        user_id: moderator.user_id },
-                      method: :post,
-                      class: "button success" %>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-<%= paginate @moderators %>

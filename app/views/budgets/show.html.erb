@@ -36,7 +36,7 @@
         <% end %>
       <% end %>
 
-      <% if @budget.finished? %>
+      <% if @budget.finished? || (@budget.balloting? && can?(:read_results, @budget)) %>
         <%= link_to t("budgets.show.see_results"),
                     budget_results_path(@budget, heading_id: @budget.headings.first),
                     class: "button margin-top expanded" %>

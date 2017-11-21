@@ -1,0 +1,22 @@
+en:
+  images:
+    remove_image: Remove image
+    form:
+      title: Descriptive image
+      title_placeholder: Add a descriptive title for the image
+      attachment_label: Choose image
+      delete_button: Remove image
+      note: "You can upload one image of following content types: %{accepted_content_types}, up to %{max_file_size} MB."
+      add_new_image: Add image
+      title_placeholder: Add a descriptive title for the image
+      admin_title: "Main image of the poll"
+      admin_alt_text: "Alternative text for the image"
+    actions:
+      destroy:
+        notice: Image was deleted successfully.
+        alert: Cannot destroy image.
+        confirm: Are you sure you want to delete the image? This action cannot be undone!
+    errors:
+      messages:
+        in_between: must be in between %{min} and %{max}
+        wrong_content_type: content type %{content_type} does not match any of accepted content types %{accepted_content_types}

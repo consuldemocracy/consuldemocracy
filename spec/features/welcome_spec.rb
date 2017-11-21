@@ -33,7 +33,7 @@ feature "Welcome screen" do
 
     login_through_form_as(user)
 
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path)
   end
 
   scenario 'is not shown to organizations' do
@@ -41,7 +41,7 @@ feature "Welcome screen" do
 
     login_through_form_as(organization.user)
 
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path)
   end
 
   scenario 'it is not shown to level-2 users' do
@@ -49,7 +49,7 @@ feature "Welcome screen" do
 
     login_through_form_as(user)
 
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path)
   end
 
   scenario 'it is not shown to level-3 users' do
@@ -57,7 +57,7 @@ feature "Welcome screen" do
 
     login_through_form_as(user)
 
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path)
   end
 
   scenario 'is not shown to administrators' do
@@ -65,7 +65,7 @@ feature "Welcome screen" do
 
     login_through_form_as(administrator.user)
 
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path)
   end
 
 end

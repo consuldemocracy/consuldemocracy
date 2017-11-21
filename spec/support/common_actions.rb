@@ -24,6 +24,17 @@ module CommonActions
     click_button 'Enter'
   end
 
+  def login_through_form_as_officer(user)
+    visit root_path
+    click_link 'Sign in'
+
+    fill_in 'user_login', with: user.email
+    fill_in 'user_password', with: user.password
+
+    click_button 'Enter'
+    visit new_officing_residence_path
+  end
+
   def login_as_authenticated_manager
     expected_response = {login: login, user_key: user_key, date: date}.with_indifferent_access
     login, user_key, date = "JJB042", "31415926", Time.current.strftime("%Y%m%d%H%M%S")
@@ -152,14 +163,15 @@ module CommonActions
     expect(page).to have_content 'Document verified with Census'
   end
 
-  def confirm_phone
+  def confirm_phone(user = nil)
+    user ||= User.last
+
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
 
     expect(page).to have_content 'Enter the confirmation code sent to you by text message'
 
-    user = User.last.reload
-    fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
+    fill_in 'sms_confirmation_code', with: user.reload.sms_confirmation_code
     click_button 'Send'
 
     expect(page).to have_content 'Code correct'
@@ -285,6 +297,27 @@ module CommonActions
       find('.add a').trigger('click')
       expect(page).to have_content "Remove"
     end
+  end
+
+  def vote_for_poll_via_web(poll, question, answer)
+    visit poll_path(poll)
+
+    within("#poll_question_#{question.id}_answers") do
+      click_link answer.to_s
+      expect(page).to_not have_link(answer.to_s)
+    end
+  end
+
+  def vote_for_poll_via_booth
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    expect(page).to have_content poll.name
+
+    first(:button, "Confirm vote").click
+    expect(page).to have_content "Vote introduced!"
+
+    expect(Poll::Voter.count).to eq(1)
   end
 
 end

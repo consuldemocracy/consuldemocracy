@@ -28,4 +28,65 @@ feature 'Admin settings' do
     expect(page).to have_content 'Value updated'
   end
 
+  describe "Update map" do
+
+    scenario "Should not be able when map feature deactivated" do
+      Setting['feature.map'] = false
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+
+      expect(page).not_to have_content "Map configuration"
+    end
+
+    scenario "Should be able when map feature activated" do
+      Setting['feature.map'] = true
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+
+      expect(page).to have_content "Map configuration"
+    end
+
+    scenario "Should show successful notice" do
+      Setting['feature.map'] = true
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+
+      within "#map-form" do
+        click_on "Update"
+      end
+
+      expect(page).to have_content "Map configuration updated succesfully"
+    end
+
+    scenario "Should display marker by default", :js do
+      Setting['feature.map'] = true
+      admin = create(:administrator).user
+      login_as(admin)
+
+      visit admin_settings_path
+
+      expect(find("#latitude", visible: false).value).to eq "51.48"
+      expect(find("#longitude", visible: false).value).to eq "0.0"
+    end
+
+    scenario "Should update marker", :js do
+      Setting['feature.map'] = true
+      admin = create(:administrator).user
+      login_as(admin)
+
+      visit admin_settings_path
+      find("#admin-map").click
+      within "#map-form" do
+        click_on "Update"
+      end
+
+      expect(find("#latitude", visible: false).value).not_to eq "51.48"
+      expect(page).to have_content "Map configuration updated succesfully"
+    end
+
+  end
+
 end

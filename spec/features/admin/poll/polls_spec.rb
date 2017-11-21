@@ -58,6 +58,12 @@ feature 'Admin polls' do
     fill_in "poll_name", with: "Upcoming poll"
     fill_in 'poll_starts_at', with: start_date.strftime("%d/%m/%Y")
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
+    fill_in 'poll_summary', with: "Upcoming poll's summary. This poll..."
+    fill_in 'poll_description', with: "Upcomming poll's description. This poll..."
+
+    expect(page).to_not have_css("#poll_results_enabled")
+    expect(page).to_not have_css("#poll_stats_enabled")
+
     click_button "Create poll"
 
     expect(page).to have_content "Poll created successfully"
@@ -68,19 +74,34 @@ feature 'Admin polls' do
 
   scenario "Edit" do
     poll = create(:poll)
+    create(:image, imageable: poll)
 
     visit admin_poll_path(poll)
-    click_link "Edit"
+    click_link "Edit poll"
 
     end_date = 1.year.from_now
 
+    expect(page).to have_css("img[alt='#{poll.image.title}']")
+
+    expect(page).to have_css("#poll_results_enabled")
+    expect(page).to have_css("#poll_stats_enabled")
+
     fill_in "poll_name", with: "Next Poll"
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
+    check 'poll_results_enabled'
+    check 'poll_stats_enabled'
+
     click_button "Update poll"
 
     expect(page).to have_content "Poll updated successfully"
     expect(page).to have_content "Next Poll"
     expect(page).to have_content I18n.l(end_date.to_date)
+
+    click_link "Edit poll"
+
+    expect(page).to have_field('poll_results_enabled', checked: true)
+    expect(page).to have_field('poll_stats_enabled', checked: true)
+
   end
 
   scenario 'Edit from index' do
@@ -181,54 +202,6 @@ feature 'Admin polls' do
         expect(page).to_not have_content "There are no questions assigned to this poll"
       end
 
-      scenario 'Add question to poll', :js do
-        poll = create(:poll)
-        question = create(:poll_question, title: 'Should we rebuild the city?')
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (0)'
-        expect(page).to have_content 'There are no questions assigned to this poll'
-
-        fill_in 'search-questions', with: 'rebuild'
-        click_button 'Search'
-
-        within('#search-questions-results') do
-          click_link 'Include question'
-        end
-
-        expect(page).to have_content 'Question added to this poll'
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (1)'
-        expect(page).to_not have_content 'There are no questions assigned to this poll'
-        expect(page).to have_content question.title
-      end
-
-      scenario 'Remove question from poll', :js do
-        poll = create(:poll)
-        question = create(:poll_question, poll: poll)
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (1)'
-        expect(page).to_not have_content 'There are no questions assigned to this poll'
-        expect(page).to have_content question.title
-
-        within("#poll_question_#{question.id}") do
-          click_link 'Remove question from poll'
-        end
-
-        expect(page).to have_content 'Question removed from this poll'
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (0)'
-        expect(page).to have_content 'There are no questions assigned to this poll'
-        expect(page).to_not have_content question.title
-      end
-
     end
   end
 
@@ -249,18 +222,18 @@ feature 'Admin polls' do
         booth_assignment_final_recounted = create(:poll_booth_assignment, poll: poll)
 
         3.times do |i|
-          create(:poll_total_result,
+          create(:poll_recount,
                  booth_assignment: booth_assignment,
                  date: poll.starts_at + i.days,
-                 amount: 21)
+                 total_amount: 21)
         end
 
         2.times { create(:poll_voter, booth_assignment: booth_assignment_final_recounted) }
 
-        create(:poll_total_result,
+        create(:poll_recount,
                booth_assignment: booth_assignment_final_recounted,
                date: poll.ends_at,
-               amount: 55555)
+               total_amount: 55555)
 
         visit admin_poll_path(poll)
 
@@ -303,8 +276,13 @@ feature 'Admin polls' do
         booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
         booth_assignment_3 = create(:poll_booth_assignment, poll: poll)
 
-        question_1 = create(:poll_question, poll: poll, valid_answers: "Yes,No")
-        question_2 = create(:poll_question, poll: poll, valid_answers: "Today,Tomorrow")
+        question_1 = create(:poll_question, poll: poll)
+        create(:poll_question_answer, title: 'Yes', question: question_1)
+        create(:poll_question_answer, title: 'No', question: question_1)
+
+        question_2 = create(:poll_question, poll: poll)
+        create(:poll_question_answer, title: 'Today', question: question_2)
+        create(:poll_question_answer, title: 'Tomorrow', question: question_2)
 
         [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
           create(:poll_partial_result,
@@ -318,35 +296,72 @@ feature 'Admin polls' do
                   answer: 'Tomorrow',
                   amount: 5)
         end
-        create(:poll_white_result,
+        create(:poll_recount,
                booth_assignment: booth_assignment_1,
-               amount: 21)
-        create(:poll_null_result,
-               booth_assignment: booth_assignment_3,
-               amount: 44)
+               white_amount: 21,
+               null_amount: 44,
+               total_amount: 66)
 
         visit admin_poll_path(poll)
 
         click_link "Results"
 
         expect(page).to have_content(question_1.title)
-        question_1.valid_answers.each_with_index do |answer, i|
+        question_1.question_answers.each_with_index do |answer, i|
           within("#question_#{question_1.id}_#{i}_result") do
-            expect(page).to have_content(answer)
+            expect(page).to have_content(answer.title)
             expect(page).to have_content([33, 0][i])
           end
         end
 
         expect(page).to have_content(question_2.title)
-        question_2.valid_answers.each_with_index do |answer, i|
+        question_2.question_answers.each_with_index do |answer, i|
           within("#question_#{question_2.id}_#{i}_result") do
-            expect(page).to have_content(answer)
+            expect(page).to have_content(answer.title)
             expect(page).to have_content([0, 15][i])
           end
         end
 
         within('#white_results') { expect(page).to have_content('21') }
         within('#null_results') { expect(page).to have_content('44') }
+        within('#total_results') { expect(page).to have_content('66') }
+      end
+
+      scenario "Link to results by booth" do
+        poll = create(:poll)
+        booth_assignment1 = create(:poll_booth_assignment, poll: poll)
+        booth_assignment2 = create(:poll_booth_assignment, poll: poll)
+
+        question = create(:poll_question, poll: poll)
+        create(:poll_question_answer, title: 'Yes', question: question)
+        create(:poll_question_answer, title: 'No', question: question)
+
+        create(:poll_partial_result,
+               booth_assignment: booth_assignment1,
+               question: question,
+               answer: 'Yes',
+               amount: 5)
+
+        create(:poll_partial_result,
+               booth_assignment: booth_assignment2,
+               question: question,
+               answer: 'Yes',
+               amount: 6)
+
+        visit admin_poll_path(poll)
+
+        click_link "Results"
+
+        expect(page).to have_link("See results", count: 2)
+
+        within("#booth_assignment_#{booth_assignment1.id}_result") do
+          click_link "See results"
+        end
+
+        expect(page).to have_content booth_assignment1.booth.name
+        expect(page).to have_content "Results"
+        expect(page).to have_content "Yes"
+        expect(page).to have_content "5"
       end
     end
   end

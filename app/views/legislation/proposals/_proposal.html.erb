@@ -1,0 +1,59 @@
+<div id="<%= dom_id(proposal) %>"
+     class="proposal clear <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
+     data-type="proposal">
+  <div class="panel">
+    <div class="icon-successful"></div>
+    <div class="row">
+
+      <div class="small-12 medium-9 column">
+        <div class="proposal-content">
+          <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
+            <h3><%= link_to proposal.title, legislation_process_proposal_path(proposal.legislation_process_id, proposal) %></h3>
+            <p class="proposal-info">
+              <span class="icon-comments"></span>&nbsp;
+              <%= link_to t("proposals.proposal.comments", count: proposal.comments_count), legislation_process_proposal_path(proposal.legislation_process_id, proposal, anchor: "comments") %>
+
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <%= l proposal.created_at.to_date %>
+
+              <% if proposal.author.hidden? || proposal.author.erased? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= t("proposals.show.author_deleted") %>
+                </span>
+              <% else %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= proposal.author.name %>
+                </span>
+                <% if proposal.author.display_official_position_badge? %>
+                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                  <span class="label round level-<%= proposal.author.official_level %>">
+                    <%= proposal.author.official_position %>
+                  </span>
+                <% end %>
+              <% end %>
+
+              <% if proposal.author.verified_organization? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="label round is-association">
+                  <%= t("shared.collective") %>
+                </span>
+              <% end %>
+            </p>
+            <div class="proposal-description">
+              <p><%= proposal.summary %></p>
+              <div class="truncate"></div>
+            </div>
+            <%= render "shared/tags", taggable: proposal, limit: 5 %>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
+        <%= render 'legislation/proposals/votes',
+                  { proposal: proposal, vote_url: vote_legislation_process_proposal_path(proposal.legislation_process_id, proposal, value: 'yes') } %>
+      </div>
+    </div>
+  </div>
+</div>

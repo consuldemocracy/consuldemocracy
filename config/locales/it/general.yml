@@ -1,0 +1,756 @@
+it:
+  account:
+    show:
+      email_on_comment_label: ""
+      email_on_comment_reply_label: ""
+      erase_account_link: ""
+      finish_verification: ""
+      notifications: ""
+      organization_name_label: ""
+      organization_responsible_name_placeholder: ""
+      personal: ""
+      phone_number_label: ""
+      public_activity_label: ""
+      public_interests_label: ""
+      public_interests_my_title_list: ""
+      public_interests_user_title_list: ""
+      public_interests_my_empty_list: ""
+      public_interests_user_empty_list: ""
+      save_changes_submit: ""
+      subscription_to_website_newsletter_label: ""
+      email_on_direct_message_label: ""
+      email_digest_label: ""
+      official_position_badge_label: ""
+      title: ""
+      user_permission_debates: ""
+      user_permission_info: ""
+      user_permission_proposal: ""
+      user_permission_support_proposal: ""
+      user_permission_title: ""
+      user_permission_verify: ""
+      user_permission_verify_info: ""
+      user_permission_votes: ""
+      username_label: ""
+      verified_account: ""
+      verify_my_account: ""
+  application:
+    close: ""
+    menu: ""
+  comments:
+    comments_closed: ""
+    verified_only: ""
+    verify_account: ""
+    comment:
+      admin: ""
+      author: ""
+      deleted: ""
+      moderator: ""
+      responses:
+        one: ""
+        other: ""
+      user_deleted: ""
+      votes:
+        one: ""
+        other: ""
+    form:
+      comment_as_admin: ""
+      comment_as_moderator: ""
+      leave_comment: ""
+    orders:
+      most_voted: ""
+      newest: ""
+      oldest: ""
+      most_commented: ""
+    select_order: ""
+    show:
+      return_to_commentable: ''
+  comments_helper:
+    comment_button: ""
+    comment_link: ""
+    comments_title: ""
+    reply_button: ""
+    reply_link: ""
+  debates:
+    create:
+      form:
+        submit_button: ""
+    debate:
+      comments:
+        one: ""
+        other: ""
+      votes:
+        one: ""
+        other: ""
+    edit:
+      editing: ""
+      form:
+        submit_button: ""
+      show_link: ""
+    form:
+      debate_text: ""
+      debate_title: ""
+      tags_instructions: ""
+      tags_label: ""
+      tags_placeholder: ""
+    index:
+      featured_debates: ""
+      filter_topic:
+        one: ""
+        other: ""
+      orders:
+        confidence_score: ""
+        created_at: ""
+        hot_score: ""
+        most_commented: ""
+        relevance: ""
+      search_form:
+        button: ""
+        placeholder: ""
+        title: ""
+      search_results_html:
+        one: ""
+        other: ""
+      select_order: ""
+      start_debate: ""
+      title: ""
+      section_header:
+        icon_alt: ""
+        title: ""
+        help: ""
+      section_footer:
+        title: ""
+        description: ""
+        help_text_1: ""
+        help_text_2: ''
+        help_text_3: ""
+        proposals_link: ""
+        budget_link: ""
+    new:
+      form:
+        submit_button: ""
+      info: ""
+      info_link: ""
+      more_info: ""
+      recommendation_four: ""
+      recommendation_one: ""
+      recommendation_three: ""
+      recommendation_two: ""
+      recommendations_title: ""
+      start_new: ""
+    show:
+      author_deleted: ""
+      comments:
+        one: ""
+        other: ""
+      comments_title: ""
+      edit_debate_link: ""
+      flag: ""
+      login_to_comment: ""
+      share: ""
+    update:
+      form:
+        submit_button: ""
+  errors:
+    messages:
+      user_not_found: ""
+      invalid_date_range: ""
+  form:
+    accept_terms: ""
+    accept_terms_title: ""
+    conditions: ""
+    debate: ""
+    direct_message: ""
+    error: ""
+    errors: ""
+    not_saved: ''
+    policy: ""
+    proposal: ""
+    proposal_notification: ""
+    spending_proposal: ""
+    budget/investment: ""
+    poll/shift: ""
+    user: ""
+    verification/sms: ""
+    signature_sheet: ""
+    document: ""
+    topic: ""
+  geozones:
+    none: ""
+    all: ""
+  layouts:
+    application:
+      chrome: ""
+      firefox: ""
+      ie: ""
+      ie_title: ""
+    footer:
+      accessibility: ""
+      conditions: ""
+      consul: ""
+      consul_url: ""
+      contact_us: ""
+      copyright: ""
+      description: ""
+      faq: ""
+      open_data_text: ""
+      open_data_title: ""
+      open_source: ""
+      open_source_url: ""
+      participation_text: ""
+      participation_title: ""
+      privacy: ""
+      transparency_text: ""
+      transparency_title: ""
+      transparency_url: ""
+    header:
+      administration_menu: ""
+      administration: ""
+      available_locales: ""
+      collaborative_legislation: ""
+      debates: ""
+      external_link_blog: ""
+      external_link_opendata: ""
+      external_link_opendata_url: ""
+      external_link_transparency: ""
+      external_link_transparency_url: ""
+      locale: ''
+      logo: ""
+      management: ""
+      moderation: ""
+      valuation: ""
+      officing: ""
+      more_info: ""
+      my_account_link: ""
+      my_activity_link: ""
+      notifications: ""
+      new_notifications:
+        one: ""
+        other: ""
+      no_notifications: ""
+      open: ""
+      open_city_slogan_html: ""
+      open_city_title: ""
+      open_gov: ""
+      proposals: ""
+      poll_questions: ""
+      budgets: ""
+      spending_proposals: ""
+    admin:
+      watch_form_message: ''
+  legacy_legislation:
+    help:
+      alt: ""
+      text: ""
+      text_sign_in: ""
+      text_sign_up: ""
+      title: ""
+  locale: ""
+  notifications:
+    index:
+      comments_on:
+        one: ""
+        other: ""
+      empty_notifications: ""
+      mark_all_as_read: ""
+      proposal_notification:
+        one: ""
+        other: ""
+      replies_to:
+        one: ""
+        other: ""
+      title: ""
+  map:
+    title: ""
+    proposal_for_district: ""
+    select_district: ""
+    start_proposal: ""
+  omniauth:
+    facebook:
+      sign_in: ""
+      sign_up: ""
+      name: ""
+    finish_signup:
+      title: ""
+      username_warning: ""
+    google_oauth2:
+      sign_in: ""
+      sign_up: ""
+      name: ""
+    twitter:
+      sign_in: ""
+      sign_up: ""
+      name: ""
+    info_sign_in: ""
+    info_sign_up: ""
+    or_fill: ""
+  proposals:
+    create:
+      form:
+        submit_button: ""
+    edit:
+      editing: ""
+      form:
+        submit_button: ""
+      show_link: ""
+    retire_form:
+      title: ""
+      warning: ""
+      retired_reason_label: ""
+      retired_reason_blank: ""
+      retired_explanation_label: ""
+      retired_explanation_placeholder: ""
+      submit_button: ""
+    retire_options:
+      duplicated: ""
+      started: ""
+      unfeasible: ""
+      done: ""
+      other: ""
+    form:
+      geozone: ""
+      proposal_external_url: ""
+      proposal_question: ""
+      proposal_question_example_html: ""
+      proposal_responsible_name: ""
+      proposal_responsible_name_note: ""
+      proposal_summary: ""
+      proposal_summary_note: ""
+      proposal_text: ""
+      proposal_title: ""
+      proposal_video_url: ""
+      proposal_video_url_note: ""
+      tag_category_label: ""
+      tags_instructions: ""
+      tags_label: ""
+      tags_placeholder: ""
+    index:
+      featured_proposals: ""
+      filter_topic:
+        one: ""
+        other: ""
+      orders:
+        confidence_score: ""
+        created_at: ""
+        hot_score: ""
+        most_commented: ""
+        relevance: ""
+        archival_date: ""
+      retired_proposals: ""
+      retired_proposals_link: ""
+      retired_links:
+        all: ""
+        duplicated: ""
+        started: ""
+        unfeasible: ""
+        done: ""
+        other: ""
+      search_form:
+        button: ""
+        placeholder: ""
+        title: ""
+      search_results_html:
+        one: ""
+        other: ""
+      select_order: ""
+      select_order_long: ''
+      start_proposal: ""
+      title: ""
+      top: ""
+      top_link_proposals: ""
+      section_header:
+        icon_alt: ""
+        title: ""
+        help: ""
+      section_footer:
+        title: ""
+        description: ""
+        help_text_1: ""
+        help_text_2: ""
+        help_text_3: ""
+    new:
+      form:
+        submit_button: ""
+      more_info: ""
+      recommendation_one: ""
+      recommendation_three: ""
+      recommendation_two: ""
+      recommendations_title: ""
+      start_new: ""
+    notice:
+      retired: ""
+    proposal:
+      created: ""
+      share:
+        guide: ""
+        edit: ""
+        view_proposal: ""
+      improve_info: ""
+      improve_info_link: ""
+      already_supported: ""
+      comments:
+        one: ""
+        other: ""
+      reason_for_supports_necessary: ""
+      support: ""
+      support_title: ""
+      supports:
+        one: ""
+        other: ""
+      supports_necessary: ""
+      total_percent: ""
+      archived: ""
+      successful: ""
+      voting: ""
+    show:
+      author_deleted: ""
+      code: ''
+      comments:
+        one: ""
+        other: ""
+      comments_tab: ""
+      edit_proposal_link: ""
+      flag: ""
+      login_to_comment: ""
+      notifications_tab: ""
+      retired_warning: ""
+      retired_warning_link_to_explanation: ""
+      retired: ""
+      share: ""
+      send_notification: ""
+      no_notifications: ""
+      embed_video_title: ""
+      title_external_url: ""
+      title_video_url: ""
+      author: ""
+    update:
+      form:
+        submit_button: ""
+  polls:
+    all: ""
+    no_dates: ""
+    dates: ""
+    final_date: ""
+    index:
+      filters:
+        current: ""
+        incoming: ""
+        expired: ""
+      title: ""
+      participate_button: ""
+      participate_button_incoming: ""
+      participate_button_expired: ""
+      no_geozone_restricted: ""
+      geozone_restricted: ""
+      geozone_info: ""
+      can_answer: ""
+      cant_answer: ""
+      cant_answer_not_logged_in: ""
+      cant_answer_verify: ""
+      already_answer: ""
+      section_header:
+        icon_alt: ""
+        title: ""
+        help: ""
+      section_footer:
+        title: ""
+        description: ""
+        help_text_1: ""
+        help_text_2: ""
+    show:
+      dates_title: ""
+      cant_answer_not_logged_in: ""
+      signin: ""
+      signup: ""
+      cant_answer_verify_html: ""
+      verify_link: ""
+      cant_answer_incoming: ""
+      cant_answer_expired: ""
+  poll_questions:
+    create_question: ""
+    default_valid_answers: ""
+    show:
+      answer_this_question: ""
+      original_proposal: ""
+      author: ""
+      dates_title: ""
+      more_info: ""
+      not_logged_in: ""
+      signin: ""
+      signup: ""
+      cant_answer_verify_html: ""
+      verify_link: ""
+      cant_answer_incoming: ""
+      cant_answer_expired: ""
+      cant_answer_wrong_geozone: ""
+      vote_answer: ""
+      voted: ""
+      poll: ""
+  proposal_notifications:
+    new:
+      title: ""
+      title_label: ""
+      body_label: ""
+      submit_button: ""
+      info_about_receivers_html: ""
+      proposal_page: ""
+    show:
+      back: ""
+  shared:
+    edit: ''
+    save: ''
+    delete: ""
+    comments:
+      title: ''
+      login_to_comment: ''
+    "yes": ""
+    "no": ""
+    search_results: ""
+    advanced_search:
+      author_type: ''
+      author_type_blank: ''
+      date: ''
+      date_placeholder: ''
+      date_range_blank: ''
+      date_1: ''
+      date_2: ''
+      date_3: ''
+      date_4: ''
+      date_5: ''
+      from: ''
+      general: ''
+      general_placeholder: ''
+      search: ''
+      title: ''
+      to: ''
+    author_info:
+      author_deleted: ""
+    back: ""
+    check: ""
+    check_all: ""
+    check_none: ""
+    collective: ""
+    flag: ""
+    follow: ""
+    follow_entity: ""
+    followable:
+      budget_investment:
+        create:
+          notice_html: ""
+        destroy:
+          notice_html: ""
+      proposal:
+        create:
+          notice_html: ""
+        destroy:
+          notice_html: ""
+    hide: ""
+    print:
+      print_button: ""
+    search: ""
+    show: ""
+    suggest:
+      debate:
+        found:
+          one: ""
+          other: ""
+        message: ""
+        see_all: ""
+      budget_investment:
+        found:
+          one: ""
+          other: ""
+        message: ""
+        see_all: ""
+      proposal:
+        found:
+          one: ""
+          other: ""
+        message: ""
+        see_all: ""
+    tags_cloud:
+      tags: ""
+      districts: ""
+      districts_list: ""
+      categories: ""
+    target_blank_html: ""
+    you_are_in: ""
+    unflag: ""
+    unfollow: ""
+    unfollow_entity: ""
+    outline:
+      budget: ""
+      searcher: ""
+    go_to_page: ""
+  social:
+    blog: ""
+    facebook: ""
+    twitter: ""
+    youtube: ""
+    whatsapp: ""
+    telegram: ""
+    instagram: ""
+  spending_proposals:
+    form:
+      association_name_label: ''
+      association_name: ''
+      description: ""
+      external_url: ""
+      geozone: ""
+      submit_buttons:
+        create: ""
+        new: ""
+      title: ""
+    index:
+      title: ""
+      unfeasible: ""
+      by_geozone: ""
+      search_form:
+        button: ""
+        placeholder: ""
+        title: ""
+      search_results:
+        one: ""
+        other: ""
+      sidebar:
+        geozones: ""
+        feasibility: ""
+        unfeasible: ""
+      start_spending_proposal: ""
+    new:
+      more_info: ""
+      recommendation_one: ""
+      recommendation_three: ""
+      recommendation_two: ""
+      recommendations_title: ""
+      start_new: ""
+    show:
+      author_deleted: ""
+      code: ''
+      share: ""
+    wrong_price_format: ""
+    spending_proposal:
+      spending_proposal: ""
+      already_supported: ""
+      support: ""
+      support_title: ""
+      supports:
+        one: ""
+        other: ""
+  stats:
+    index:
+      visits: ""
+      debates: ""
+      proposals: ""
+      comments: ""
+      proposal_votes: ""
+      debate_votes: ""
+      comment_votes: ""
+      votes: ""
+      verified_users: ""
+      unverified_users: ""
+  unauthorized:
+    default: ""
+    manage:
+      all: ""
+  users:
+    direct_messages:
+      new:
+        body_label: ""
+        direct_messages_bloqued: ""
+        submit_button: ""
+        title: ""
+        title_label: ""
+        verified_only: ""
+        verify_account: ""
+        authenticate: ""
+        signin: ""
+        signup: ""
+      show:
+        receiver: ""
+    show:
+      deleted: ""
+      deleted_debate: ""
+      deleted_proposal: ""
+      deleted_budget_investment: ""
+      filters:
+        comments:
+          one: ""
+          other: ""
+        debates:
+          one: ""
+          other: ""
+        proposals:
+          one: ""
+          other: ""
+        budget_investments:
+          one: ""
+          other: ""
+        follows:
+          one: ""
+          other: ""
+      no_activity: ""
+      no_private_messages: ""
+      private_activity: ""
+      send_private_message: ""
+    proposals:
+      send_notification: ""
+      retire: ""
+      retired: ""
+      see: ""
+  votes:
+    agree: ""
+    anonymous: ""
+    comment_unauthenticated: ""
+    disagree: ""
+    organizations: ""
+    signin: ""
+    signup: ""
+    supports: ""
+    unauthenticated: ""
+    verified_only: ""
+    verify_account: ""
+    spending_proposals:
+      not_logged_in: ""
+      not_verified: ""
+      organization: ""
+      unfeasible: ""
+      not_voting_allowed: ""
+    budget_investments:
+      not_logged_in: ""
+      not_verified: ""
+      organization: ""
+      unfeasible: ""
+      not_voting_allowed: ""
+      different_heading_assigned: ""
+  welcome:
+    debates:
+      description: ""
+      title: ""
+    decide:
+      description: ""
+      title: ""
+    do:
+      description: ""
+      title: ""
+    proposal:
+      description: ""
+      title: ""
+    verification:
+      i_dont_have_an_account: ""
+      i_have_an_account: ""
+      question: ""
+      title: ""
+    welcome:
+      go_to_index: ""
+      title: ""
+      user_permission_debates: ""
+      user_permission_info: ""
+      user_permission_proposal: ""
+      user_permission_support_proposal: ""
+      user_permission_verify: ""
+      user_permission_verify_info: ""
+      user_permission_verify_my_account: ""
+      user_permission_votes: ""
+  invisible_captcha:
+    sentence_for_humans: ""
+    timestamp_error_message: ""

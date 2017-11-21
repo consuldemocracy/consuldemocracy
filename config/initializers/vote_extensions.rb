@@ -9,6 +9,10 @@ ActsAsVotable::Vote.class_eval do
     where(votable_type: 'Proposal', votable_id: proposals)
   end
 
+  def self.for_legislation_proposals(proposals)
+    where(votable_type: 'Legislation::Proposal', votable_id: proposals)
+  end
+
   def self.for_spending_proposals(spending_proposals)
     where(votable_type: 'SpendingProposal', votable_id: spending_proposals)
   end

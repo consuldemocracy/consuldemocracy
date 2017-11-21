@@ -1,0 +1,24 @@
+<% image_fields ||= :image %>
+
+<%= f.label image_fields, t("images.form.title") %>
+<p class="help-text"><%= imageables_note(imageable) %></p>
+
+<div id="nested-image">
+  <%= f.fields_for image_fields do |image_builder| %>
+    <%= render 'images/image_fields', f: image_builder, imageable: imageable %>
+  <% end %>
+</div>
+
+<%= link_to_add_association t('images.form.add_new_image'), f, image_fields,
+                            force_non_association_create: true,
+                            partial: "images/image_fields",
+                            id: "new_image_link",
+                            class: "button hollow
+                                    #{"hide" if image_fields == :image && imageable.image.present?}",
+                            render_options: {
+                              locals: { imageable: imageable }
+                            },
+                            data: {
+                              association_insertion_node: "#nested-image",
+                              association_insertion_method: "append"
+                            } %>

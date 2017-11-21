@@ -687,12 +687,12 @@ describe Debate do
   describe "#last_week" do
     it "should return debates created this week" do
       debate = create(:debate)
-      expect(Debate.last_week.all).to include (debate)
+      expect(Debate.last_week.all).to include debate
     end
 
     it "should not show debates created more than a week ago" do
       debate = create(:debate, created_at: 8.days.ago)
-      expect(Debate.last_week.all).to_not include (debate)
+      expect(Debate.last_week.all).to_not include debate
     end
   end
 
@@ -714,4 +714,53 @@ describe Debate do
     end
   end
 
+  describe "#recommendations" do
+
+    let(:user)     { create(:user) }
+
+    it "Should not return any debates when user has not interests" do
+      create(:debate)
+
+      expect(Debate.recommendations(user).size).to eq 0
+    end
+
+    it "Should return debates ordered by cached_votes_total" do
+      debate1 =  create(:debate, cached_votes_total: 1, tag_list: "Sport")
+      debate2 =  create(:debate, cached_votes_total: 5, tag_list: "Sport")
+      debate3 =  create(:debate, cached_votes_total: 10, tag_list: "Sport")
+      proposal = create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal, user: user)
+
+      result = Debate.recommendations(user).sort_by_recommendations
+
+      expect(result.first).to eq debate3
+      expect(result.second).to eq debate2
+      expect(result.third).to eq debate1
+    end
+
+    it "Should return debates related with user interests" do
+      debate1 =  create(:debate, tag_list: "Sport")
+      debate2 =  create(:debate, tag_list: "Politics")
+      proposal1 = create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal1, user: user)
+
+      result = Debate.recommendations(user)
+
+      expect(result.size).to eq 1
+      expect(result).to eq [debate1]
+    end
+
+    it "Should not return debates when user is the author" do
+      debate1 =  create(:debate, author: user, tag_list: "Sport")
+      debate2 =  create(:debate, tag_list: "Sport")
+      proposal = create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal, user: user)
+
+      result = Debate.recommendations(user)
+
+      expect(result.size).to eq 1
+      expect(result).to eq [debate2]
+    end
+
+  end
 end

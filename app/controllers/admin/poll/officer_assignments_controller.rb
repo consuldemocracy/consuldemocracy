@@ -18,14 +18,16 @@ class Admin::Poll::OfficerAssignmentsController < Admin::Poll::BaseController
     @officer = ::Poll::Officer.includes(:user).find(officer_assignment_params[:officer_id])
     @officer_assignments = ::Poll::OfficerAssignment.
                            joins(:booth_assignment).
-                           includes(:total_results, booth_assignment: :booth).
+                           includes(:recounts, booth_assignment: :booth).
                            where("officer_id = ? AND poll_booth_assignments.poll_id = ?", @officer.id, @poll.id).
                            order(:date)
   end
 
   def search_officers
     load_search
-    @officers = User.joins(:poll_officer).search(@search).order(username: :asc)
+
+    poll_officers = User.where(id: @poll.officers.pluck(:user_id))
+    @officers = poll_officers.search(@search).order(username: :asc)
 
     respond_to do |format|
       format.js
