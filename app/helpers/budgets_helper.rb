@@ -1,5 +1,23 @@
 module BudgetsHelper
 
+  def csv_params
+    csv_params = params.clone.merge(format: :csv)
+    csv_params.delete(:page)
+    csv_params
+  end
+
+  def investment_selected_link_options(investment)
+    if investment.selected?
+      {link_class: "button small expanded",
+       text: t("admin.budget_investments.index.selected") }
+    elsif investment.feasible? && investment.valuation_finished?
+      {link_class: "button small hollow expanded",
+       text: t("admin.budget_investments.index.select")}
+    else
+      {}
+    end
+  end
+
   def budget_phases_select_options
     Budget::PHASES.map { |ph| [ t("budgets.phase.#{ph}"), ph ] }
   end
