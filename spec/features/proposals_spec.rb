@@ -38,12 +38,28 @@ feature 'Proposals' do
 
       within("ul.pagination") do
         expect(page).to have_content("1")
-        expect(page).to have_content("2")
+        expect(page).to have_link('2', href: 'http://www.example.com/proposals?page=2')
         expect(page).to_not have_content("3")
         click_link "Next", exact: false
       end
 
       expect(page).to have_selector('#proposals .proposal', count: 2)
+    end
+
+    scenario 'Index should show proposal descriptive image only when is defined' do
+      featured_proposals = create_featured_proposals
+      proposal = create(:proposal)
+      proposal_with_image = create(:proposal)
+      image = create(:image, imageable: proposal_with_image)
+
+      visit proposals_path(proposal)
+
+      within("#proposal_#{proposal.id}") do
+        expect(page).to have_css("div.no-image")
+      end
+      within("#proposal_#{proposal_with_image.id}") do
+        expect(page).to have_css("img[alt='#{proposal_with_image.image.title}']")
+      end
     end
   end
 
@@ -540,7 +556,7 @@ feature 'Proposals' do
 
     visit edit_proposal_path(proposal)
     expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path)
     expect(page).to have_content 'You do not have permission'
   end
 
@@ -555,7 +571,7 @@ feature 'Proposals' do
     visit edit_proposal_path(proposal)
 
     expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path)
     expect(page).to have_content 'You do not have permission'
     Setting["max_votes_for_proposal_edit"] = 1000
   end
@@ -646,6 +662,69 @@ feature 'Proposals' do
 
       expect(current_url).to include('order=created_at')
       expect(current_url).to include('page=1')
+    end
+
+    context 'Recommendations' do
+
+      before do
+        Setting['feature.user.recommendations'] = true
+        create(:proposal, title: 'Best',   cached_votes_up: 10, tag_list: "Sport")
+        create(:proposal, title: 'Medium', cached_votes_up: 5, tag_list: "Sport")
+        create(:proposal, title: 'Worst',  cached_votes_up: 1, tag_list: "Sport")
+      end
+
+      after do
+        Setting['feature.user.recommendations'] = nil
+      end
+
+      scenario 'Proposals can not ordered by recommendations when there is not an user logged', :js do
+        visit proposals_path
+
+        expect(page).not_to have_selector('a', text: 'recommendations')
+      end
+
+      scenario 'Should display text when there are not recommendeds results', :js do
+        user = create(:user)
+        proposal = create(:proposal, tag_list: "Distinct_to_sport")
+        create(:follow, followable: proposal, user: user)
+        login_as(user)
+        visit proposals_path
+
+        click_link 'recommendations'
+
+        expect(page).to have_content "There are not proposals related to your interests"
+      end
+
+      scenario 'Should display text when user has not related interests', :js do
+        user = create(:user)
+        login_as(user)
+        visit proposals_path
+
+        click_link 'recommendations'
+
+        expect(page).to have_content "Follow proposals so we can give you recommendations"
+      end
+
+      scenario 'Proposals are ordered by recommendations when there is an user logged', :js do
+        user = create(:user)
+        proposal = create(:proposal, tag_list: "Sport")
+        create(:follow, followable: proposal, user: user)
+        login_as(user)
+
+        visit proposals_path
+
+        click_link 'recommendations'
+
+        expect(page).to have_selector('a.active', text: 'recommendations')
+
+        within '#proposals-list' do
+          expect('Best').to appear_before('Medium')
+          expect('Medium').to appear_before('Worst')
+        end
+
+        expect(current_url).to include('order=recommendations')
+        expect(current_url).to include('page=1')
+      end
     end
   end
 
@@ -1182,6 +1261,32 @@ feature 'Proposals' do
       end
     end
 
+    scenario "Reorder by recommendations results maintaing search", :js do
+      Setting['feature.user.recommendations'] = true
+      user = create(:user)
+      login_as(user)
+      proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  tag_list: "Sport")
+      proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   tag_list: "Sport")
+      proposal3 = create(:proposal, title: "Do not display with same tag", cached_votes_up: 100, tag_list: "Sport")
+      proposal4 = create(:proposal, title: "Do not display",    cached_votes_up: 1)
+      proposal5 = create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal5, user: user)
+
+      visit proposals_path
+      fill_in "search", with: "Show you got"
+      click_button "Search"
+      click_link 'recommendations'
+      expect(page).to have_selector("a.active", text: "recommendations")
+
+      within("#proposals") do
+        expect(all(".proposal")[0].text).to match "Show you got"
+        expect(all(".proposal")[1].text).to match "Show what you got"
+        expect(page).to_not have_content "Do not display with same tag"
+        expect(page).to_not have_content "Do not display"
+      end
+      Setting['feature.user.recommendations'] = nil
+    end
+
     scenario 'After a search do not show featured proposals' do
       featured_proposals = create_featured_proposals
       proposal = create(:proposal, title: "Abcdefghi")
@@ -1274,23 +1379,51 @@ feature 'Proposals' do
 
   it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }
 
-  it_behaves_like "documentable", "proposal", "proposal_path", { "id": "id" }
+  it_behaves_like "imageable", "proposal", "proposal_path", { "id": "id" }
 
-  it_behaves_like "nested documentable",
+  it_behaves_like "nested imageable",
                   "proposal",
                   "new_proposal_path",
                   { },
-                  "fill_new_valid_proposal",
+                  "imageable_fill_new_valid_proposal",
                   "Create proposal",
                   "Proposal created successfully"
 
-  it_behaves_like "nested documentable",
+  it_behaves_like "nested imageable",
                   "proposal",
                   "edit_proposal_path",
                   { "id": "id" },
                   nil,
                   "Save changes",
                   "Proposal updated successfully"
+
+  it_behaves_like "documentable", "proposal", "proposal_path", { "id": "id" }
+
+  it_behaves_like "nested documentable",
+                  "user",
+                  "proposal",
+                  "new_proposal_path",
+                  { },
+                  "documentable_fill_new_valid_proposal",
+                  "Create proposal",
+                  "Proposal created successfully"
+
+  it_behaves_like "nested documentable",
+                  "user",
+                  "proposal",
+                  "edit_proposal_path",
+                  { "id": "id" },
+                  nil,
+                  "Save changes",
+                  "Proposal updated successfully"
+
+  it_behaves_like "mappable",
+                  "proposal",
+                  "proposal",
+                  "new_proposal_path",
+                  "edit_proposal_path",
+                  "proposal_path",
+                  { }
 
   scenario 'Erased author' do
     user = create(:user)
@@ -1390,7 +1523,7 @@ feature 'Proposals' do
       check "proposal_terms_of_service"
 
       within('div#js-suggest') do
-        expect(page).to have_content ("You are seeing 5 of 6 proposals containing the term 'search'")
+        expect(page).to have_content "You are seeing 5 of 6 proposals containing the term 'search'"
       end
     end
 
@@ -1406,7 +1539,7 @@ feature 'Proposals' do
       check "proposal_terms_of_service"
 
       within('div#js-suggest') do
-        expect(page).to_not have_content ('You are seeing')
+        expect(page).to_not have_content 'You are seeing'
       end
     end
   end

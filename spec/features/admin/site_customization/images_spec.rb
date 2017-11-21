@@ -20,7 +20,7 @@ feature "Admin custom images" do
     end
 
     expect(page).to have_css("tr.logo_header img[src*='logo_header.png']")
-    expect(page).to have_css("img[src*='logo_header.png']", count: 2) # one in the admin form an one in the page header
+    expect(page).to have_css("img[src*='logo_header.png']", count: 1)
   end
 
   scenario "Upload invalid image" do

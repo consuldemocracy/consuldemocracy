@@ -43,6 +43,18 @@ module ActsAsTaggableOn
             Tagging.public_for_api.pluck('DISTINCT taggings.tag_id'))
     end
 
+    include PgSearch
+
+    pg_search_scope :pg_search, against: :name,
+                                using: {
+                                  tsearch: {prefix: true}
+                                },
+                                ignoring: :accents
+
+    def self.search(term)
+      pg_search(term)
+    end
+
     def increment_custom_counter_for(taggable_type)
       Tag.increment_counter(custom_counter_field_name_for(taggable_type), id)
     end
@@ -78,6 +90,7 @@ module ActsAsTaggableOn
     end
 
     private
+
       def custom_counter_field_name_for(taggable_type)
         "#{taggable_type.underscore.pluralize}_count"
       end

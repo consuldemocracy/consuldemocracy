@@ -20,6 +20,22 @@
   </div>
 
   <div class="row">
+    <div class="small-12 column">
+      <%=f.text_area :summary, rows: 4%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%=f.text_area :description, rows: 8%>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= render 'images/admin_image', imageable: @poll, f: f %>
+  </div>
+
+  <div class="row">
     <div class="small-6 medium-6 column">
       <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
     </div>
@@ -36,6 +52,17 @@
       <% end %>
     </div>
   </div>
+
+  <% if controller_name == "polls" && action_name == "edit" %>
+    <div class="row">
+      <fieldset class="fieldset">
+        <legend><%= t('admin.polls.new.show_results_and_stats') %></legend>
+        <%= f.check_box :results_enabled, checked: @poll.results_enabled?, label: t('admin.polls.new.show_results') %>
+        <%= f.check_box :stats_enabled, checked: @poll.stats_enabled?, label: t('admin.polls.new.show_stats') %>
+        <p class="small"><%= t('admin.polls.new.results_and_stats_reminder') %></p>
+      </fieldset>
+    </div>
+  <% end %>
 
   <div class="row">
     <div class="small-12 medium-4 column">

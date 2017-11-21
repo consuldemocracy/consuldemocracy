@@ -22,11 +22,13 @@ App.PreventDoubleSubmission =
 
   initialize: ->
     $('form').on('submit', (event) ->
-      buttons = $(this).find(':button, :submit')
-      App.PreventDoubleSubmission.disable_buttons(buttons)
-    ).on('ajax:success', ->
-      buttons = $(this).find(':button, :submit')
-      App.PreventDoubleSubmission.reset_buttons(buttons)
+      unless event.target.id == "new_officing_voter"
+        buttons = $(this).find(':button, :submit')
+        App.PreventDoubleSubmission.disable_buttons(buttons)
+    ).on('ajax:success', (event) ->
+      unless event.target.id == "new_officing_voter"
+        buttons = $(this).find(':button, :submit')
+        App.PreventDoubleSubmission.reset_buttons(buttons)
     )
 
     false

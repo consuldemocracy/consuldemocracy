@@ -4,7 +4,7 @@ class Management::DocumentVerificationsController < Management::BaseController
   before_action :set_document, only: :check
 
   def index
-    @document_verification = Verification::Management::Document.new()
+    @document_verification = Verification::Management::Document.new
   end
 
   def check

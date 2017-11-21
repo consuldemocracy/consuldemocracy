@@ -1,0 +1,19 @@
+<%= form_for(@answer, url: form_url) do |f| %>
+
+  <%= render 'shared/errors', resource: @answer %>
+
+  <%= f.hidden_field :question_id, value: @answer.question_id || @question.id %>
+
+  <%= f.text_field :title %>
+
+  <div class="ckeditor">
+    <%= f.cktext_area :description,
+                      maxlength: Poll::Question.description_max_length,
+                      ckeditor: { language: I18n.locale } %>
+  </div>
+
+  <div class="small-12 medium-6 large-4 margin-top">
+    <%= f.submit(class: "button expanded", value: t("shared.save")) %>
+  </div>
+
+<% end %>
