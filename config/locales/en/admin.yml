@@ -491,6 +491,7 @@ en:
       valuator:
         description_placeholder: 'Description (optional)'
         add: Add to valuators
+        delete: Delete
       search:
         title: 'Valuators: User search'
       summary:
