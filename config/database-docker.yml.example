@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  #host: localhost
+  host: database #<--the name of the db in the docker-compose
+  pool: 5
+  port: 5432
+  username: postgres
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+development: &development
+  <<: *default
+  database: consul_development
+
+# The staging, preproduction and production dbs are only needed
+# for running rake assets:precompile locally before deploying
+staging:
+  <<: *development
+
+preproduction:
+  <<: *development
+
+production:
+  <<: *development
+
+test:
+  <<: *default
+  database: consul_test

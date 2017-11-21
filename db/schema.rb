@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107123626) do
+ActiveRecord::Schema.define(version: 20171115164152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -635,7 +635,7 @@ ActiveRecord::Schema.define(version: 20171107123626) do
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
-    t.datetime "locked_until", default: '2000-01-01 00:01:01', null: false
+    t.datetime "locked_until", default: '2000-01-01 01:01:01', null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -1218,7 +1218,7 @@ ActiveRecord::Schema.define(version: 20171107123626) do
     t.boolean  "email_digest",                                                default: true
     t.boolean  "email_on_direct_message",                                     default: true
     t.boolean  "official_position_badge",                                     default: false
-    t.datetime "password_changed_at",                                         default: '2015-01-01 00:01:01', null: false
+    t.datetime "password_changed_at",                                         default: '2015-01-01 01:01:01', null: false
     t.boolean  "created_from_signature",                                      default: false
     t.integer  "failed_email_digests_count",                                  default: 0
     t.boolean  "officing_voter",                                              default: false

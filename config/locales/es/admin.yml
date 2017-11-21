@@ -164,6 +164,7 @@ es:
         dossier: Informe
         edit_dossier: Editar informe
         tags: Etiquetas
+        user_tags: Etiquetas del usuario
         undefined: Sin definir
         milestone: Seguimiento
         new_milestone: Crear nuevo hito
