@@ -282,15 +282,16 @@ describe 'ConsulSchema' do
   end
 
   describe 'Comments' do
-    it 'only returns comments from proposals and debates' do
+    it 'only returns comments from proposals, debates and polls' do
       proposal_comment          = create(:comment, commentable: create(:proposal))
       debate_comment            = create(:comment, commentable: create(:debate))
+      poll_comment              = create(:comment, commentable: create(:poll))
       spending_proposal_comment = build(:comment, commentable: create(:spending_proposal)).save(skip_validation: true)
 
       response = execute('{ comments { edges { node { commentable_type } } } }')
       received_commentables = extract_fields(response, 'comments', 'commentable_type')
 
-      expect(received_commentables).to match_array ['Proposal', 'Debate']
+      expect(received_commentables).to match_array ['Proposal', 'Debate', 'Poll']
     end
 
     it 'displays comments of authors even if public activity is set to false' do
@@ -355,6 +356,19 @@ describe 'ConsulSchema' do
       expect(received_comments).to match_array [visible_debate_comment.body]
     end
 
+    it 'does not include comments from hidden polls' do
+      visible_poll = create(:poll)
+      hidden_poll  = create(:poll, hidden_at: Time.current)
+
+      visible_poll_comment = create(:comment, commentable: visible_poll)
+      hidden_poll_comment  = create(:comment, commentable: hidden_poll)
+
+      response = execute('{ comments { edges { node { body } } } }')
+      received_comments = extract_fields(response, 'comments', 'body')
+
+      expect(received_comments).to match_array [visible_poll_comment.body]
+    end
+
     it 'does not include comments of debates that are not public' do
       not_public_debate = create(:debate, :hidden)
       not_public_debate_comment = create(:comment, commentable: not_public_debate)
@@ -375,6 +389,17 @@ describe 'ConsulSchema' do
       received_comments = extract_fields(response, 'comments', 'body')
 
       expect(received_comments).to_not include(not_public_proposal_comment.body)
+    end
+
+    it 'does not include comments of polls that are not public' do
+      not_public_poll = create(:poll)
+      not_public_poll_comment = create(:comment, commentable: not_public_poll)
+      allow(Comment).to receive(:public_for_api).and_return([])
+
+      response = execute('{ comments { edges { node { body } } } }')
+      received_comments = extract_fields(response, 'comments', 'body')
+
+      expect(received_comments).to_not include(not_public_poll_comment.body)
     end
 
     it 'only returns date and hour for created_at' do
