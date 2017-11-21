@@ -75,6 +75,7 @@ es:
     verification_offices_url: URL oficinas verificación
     proposal_improvement_path: Link a información para mejorar propuestas
     feature:
+      api: "API"
       budgets: "Presupuestos participativos"
       budgets_description: "Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal"
       twitter_login: "Registro con Twitter"

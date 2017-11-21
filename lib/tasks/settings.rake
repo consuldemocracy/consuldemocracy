@@ -20,4 +20,9 @@ namespace :settings do
     Setting['feature.user.recommendations_on_proposals'] = true
   end
 
+  desc "Add setting for enabling/disabling the API"
+  task add_feature_api: :environment do
+    Settings['feature.api'] = true
+  end
+
 end

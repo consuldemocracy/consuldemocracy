@@ -4,9 +4,11 @@ class GraphqlController < ApplicationController
   skip_authorization_check
 
   class QueryStringError < StandardError; end
+  class APIDisabledError < StandardError; end
 
   def query
     begin
+      if api_is_disabled? then raise GraphqlController::APIDisabledError end
       if query_string.nil? then raise GraphqlController::QueryStringError end
       response = consul_schema.execute query_string, variables: query_variables
       render json: response, status: :ok
@@ -16,6 +18,8 @@ class GraphqlController < ApplicationController
       render json: { message: 'Error parsing JSON' }, status: :bad_request
     rescue GraphQL::ParseError
       render json: { message: 'Query string is not valid JSON' }, status: :bad_request
+    rescue GraphqlController::APIDisabledError
+      render json: { message: 'The API has been disabled' }
     rescue
       unless Rails.env.production? then raise end
     end
@@ -48,5 +52,9 @@ class GraphqlController < ApplicationController
       else
         JSON.parse(params[:variables])
       end
+    end
+
+    def api_is_disabled?
+      Setting['feature.api'].blank? ? true : false
     end
 end

@@ -88,4 +88,24 @@ describe GraphqlController, type: :request do
       expect(response).to have_http_status(:ok)
     end
   end
+
+  describe "handles enabled/disabled API correctly" do
+    let(:query_string) { "{ proposal(id: #{proposal.id}) { title } }" }
+
+    it "retrieves data if API is enabled" do
+      get '/graphql', query: query_string
+
+      expect(response).to have_http_status(:ok)
+      expect(JSON.parse(response.body)['data']['proposal']['title']).to eq(proposal.title)
+    end
+
+    it "shows message if API is disabled" do
+      Setting['feature.api'] = nil
+
+      get '/graphql', query: query_string
+
+      expect(response).to have_http_status(:ok)
+      expect(JSON.parse(response.body)['message']).to eq("The API has been disabled")
+    end
+  end
 end

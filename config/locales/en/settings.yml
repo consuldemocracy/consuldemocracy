@@ -75,6 +75,7 @@ en:
     verification_offices_url: Verification offices URL
     proposal_improvement_path: Proposal improvement info internal link
     feature:
+      api: "API"
       budgets: "Participatory budgeting"
       budgets_description: "With participatory budgets, citizens decide which projects presented by their neighbours will receive a part of the municipal budget"
       twitter_login: "Twitter login"
