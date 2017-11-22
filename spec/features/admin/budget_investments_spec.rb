@@ -630,8 +630,8 @@ feature 'Admin budget investments' do
   context "Selecting csv" do
 
     scenario "Downloading CSV file" do
-      create(:budget_investment, :unfeasible, budget: @budget)
-      create(:budget_investment, :feasible, budget: @budget)
+      investment1 = create(:budget_investment, :unfeasible, budget: @budget)
+      investment2 = create(:budget_investment, :feasible, budget: @budget)
 
       visit admin_budget_budget_investments_path(@budget, format: :csv)
 
@@ -639,8 +639,8 @@ feature 'Admin budget investments' do
       header.should match /^attachment/
       header.should match /filename="budget_investments.csv"$/
 
-      expect(page).to have_content "Budget Investment 1 title"
-      expect(page).to have_content "Budget Investment 2 title"
+      expect(page).to have_content investment2.title
+      expect(page).to have_content investment1.title
     end
   end
 
