@@ -65,19 +65,19 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       csv_string = CSV.generate(headers: true) do |csv|
         csv << attributes
         @investments.each do |investment|
-          id    = investment.id.to_s
+          id = investment.id.to_s
           title = investment.title
           total_votes = investment.total_votes.to_s
-          if investment.administrator.present?
-            administrator = investment.administrator.name
-          else
-            administrator = t("admin.budget_investments.index.no_admin_assigned")
-          end
-          if investment.valuators.empty?
-            valuators = t("admin.budget_investments.index.no_valuators_assigned")
-          else
-            valuators = investment.valuators.collect(&:description_or_name).join(', ')
-          end
+          administrator = if investment.administrator.present?
+                            investment.administrator.name
+                          else
+                            t("admin.budget_investments.index.no_admin_assigned")
+                          end
+          valuators = if investment.valuators.empty?
+                        t("admin.budget_investments.index.no_valuators_assigned")
+                      else
+                        investment.valuators.collect(&:description_or_name).join(', ')
+                      end
           heading_name = investment.heading.name
           price = t("admin.budget_investments.index.feasibility.#{investment.feasibility}", price: investment.formatted_price)
           valuation_finished = investment.valuation_finished? ? t('shared.yes') : t('shared.no')
