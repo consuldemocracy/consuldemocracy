@@ -7,9 +7,9 @@
     <div id='js-advanced-search' data-advanced-search-terms=<%= @advanced_search_terms.present? %> style="display: none">
 
       <div class="small-12 large-3 column">
-        <label for="advanced_search_budget_phase"><%= t("shared.advanced_search.author_type") %></label>
+        <label for="advanced_search_budget_phase"><%= t("shared.advanced_search.phase") %></label>
         <%= select_tag('advanced_search[budget_phase]', budget_phases_search_options,
-                      include_blank: t("shared.advanced_search.author_type_blank")) %>
+                      include_blank: t("shared.advanced_search.phase_blank")) %>
       </div>
 
       <div class="small-12 large-9">
