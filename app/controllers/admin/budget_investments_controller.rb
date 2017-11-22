@@ -79,7 +79,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
                         investment.valuators.collect(&:description_or_name).join(', ')
                       end
           heading_name = investment.heading.name
-          price = t("admin.budget_investments.index.feasibility.#{investment.feasibility}", price: investment.formatted_price)
+          feasibility_string = "admin.budget_investments.index.feasibility.#{investment.feasibility}"
+          price = t(feasibility_string, price: investment.formatted_price)
           valuation_finished = investment.valuation_finished? ? t('shared.yes') : t('shared.no')
           csv << [id, title, total_votes, administrator, valuators, heading_name, price, valuation_finished]
         end
