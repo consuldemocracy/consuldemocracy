@@ -80,6 +80,30 @@ feature 'Admin moderators' do
       expect(page).to have_content(@moderator2.email)
       expect(page).not_to have_content(@moderator1.email)
     end
+
+    scenario 'search by email with space' do
+      expect(page).to have_content(@moderator1.email)
+      expect(page).to have_content(@moderator2.email)
+
+      fill_in 'name_or_email', with: "#{@moderator2.email} "
+      click_button 'Search'
+
+      expect(page).to have_content('Moderators: User search')
+      expect(page).to have_content(@moderator2.email)
+      expect(page).not_to have_content(@moderator1.email)
+    end
+
+    scenario 'search by name with space' do
+      expect(page).to have_content(@moderator1.name)
+      expect(page).to have_content(@moderator2.name)
+
+      fill_in 'name_or_email', with: "#{@moderator2.name} "
+      click_button 'Search'
+
+      expect(page).to have_content('Moderators: User search')
+      expect(page).to have_content(@moderator2.name)
+      expect(page).not_to have_content(@moderator1.name)
+    end
   end
 
 end

@@ -101,6 +101,30 @@ feature 'Admin valuators' do
       expect(page).to have_content(@valuator2.email)
       expect(page).not_to have_content(@valuator1.email)
     end
+
+    scenario 'search by name with space' do
+      expect(page).to have_content(@valuator1.name)
+      expect(page).to have_content(@valuator2.name)
+
+      fill_in 'name_or_email', with: 'Foster '
+      click_button 'Search'
+
+      expect(page).to have_content('Valuators: User search')
+      expect(page).to have_content(@valuator1.name)
+      expect(page).not_to have_content(@valuator2.name)
+    end
+
+    scenario 'search by email with space' do
+      expect(page).to have_content(@valuator1.email)
+      expect(page).to have_content(@valuator2.email)
+
+      fill_in 'name_or_email', with: "#{@valuator2.email} "
+      click_button 'Search'
+
+      expect(page).to have_content('Valuators: User search')
+      expect(page).to have_content(@valuator2.email)
+      expect(page).not_to have_content(@valuator1.email)
+    end
   end
 
 end

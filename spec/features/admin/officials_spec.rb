@@ -75,4 +75,36 @@ feature 'Admin officials' do
     expect(page).not_to have_content @citizen.name
     expect(page).not_to have_content @official.name
   end
+
+  context 'Search' do
+
+    background do
+      @official2 = create(:user, official_position: "Mayor", official_level: 5)
+      visit admin_officials_path
+    end
+
+    scenario "search by email with space" do
+      expect(page).to have_content(@official.name)
+      expect(page).to have_content(@official2.name)
+
+      fill_in 'name_or_email', with: "#{@official2.email} "
+      click_button 'Search'
+
+      expect(page).to have_content('Official positions: User search')
+      expect(page).to have_content(@official2.name)
+      expect(page).not_to have_content(@official.name)
+    end
+
+    scenario "search by name with space" do
+      expect(page).to have_content(@official.name)
+      expect(page).to have_content(@official2.name)
+
+      fill_in 'name_or_email', with: "#{@official2.name} "
+      click_button 'Search'
+
+      expect(page).to have_content('Official positions: User search')
+      expect(page).to have_content(@official2.name)
+      expect(page).not_to have_content(@official.name)
+    end
+  end
 end

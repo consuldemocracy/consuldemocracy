@@ -88,6 +88,30 @@ feature 'Admin administrators' do
       expect(page).to have_content(@administrator2.email)
       expect(page).not_to have_content(@administrator1.email)
     end
+
+    scenario 'search by email with space' do
+      expect(page).to have_content(@administrator1.email)
+      expect(page).to have_content(@administrator2.email)
+
+      fill_in 'name_or_email', with: "#{@administrator2.email} "
+      click_button 'Search'
+
+      expect(page).to have_content('Administrators: User search')
+      expect(page).to have_content(@administrator2.email)
+      expect(page).not_to have_content(@administrator1.email)
+    end
+
+    scenario 'search by name with space' do
+      expect(page).to have_content(@administrator1.name)
+      expect(page).to have_content(@administrator2.name)
+
+      fill_in 'name_or_email', with: "#{@administrator2.name} "
+      click_button 'Search'
+
+      expect(page).to have_content('Administrators: User search')
+      expect(page).to have_content(@administrator2.name)
+      expect(page).not_to have_content(@administrator1.name)
+    end
   end
 
 end
