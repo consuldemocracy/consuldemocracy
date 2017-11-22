@@ -472,6 +472,8 @@ nl:
     "yes": "Ja"
     "no": "Nee"
     advanced_search:
+      phase: 'Op projectstatus'
+      phase_blank: 'Selecteer een staat'
       author_type: 'Op auteur categorie'
       author_type_blank: 'Selecteer een categorie'
       date: 'Op datum'

@@ -569,6 +569,8 @@ es:
     "no": "No"
     search_results: "Resultados de la búsqueda"
     advanced_search:
+      phase: 'Por estado del proyecto'
+      phase_blank: 'Elige una estado'
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
       date: 'Por fecha'

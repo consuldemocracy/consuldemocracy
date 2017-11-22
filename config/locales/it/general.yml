@@ -506,6 +506,8 @@ it:
     "no": ""
     search_results: ""
     advanced_search:
+      phase: ''
+      phase_blank: ''
       author_type: ''
       author_type_blank: ''
       date: ''
