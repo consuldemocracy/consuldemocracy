@@ -1,6 +1,6 @@
 <h2><%= t("admin.valuators.index.title") %></h2>
 
-<%= render 'admin/shared/user_search', url: search_admin_valuators_path %>
+<%= render "admin/shared/user_search", url: search_admin_valuators_path %>
 
 <div id="valuators">
   <% if @valuators.any? %>
@@ -11,22 +11,25 @@
         <th scope="col"><%= t("admin.valuators.index.name") %></th>
         <th scope="col"><%= t("admin.valuators.index.email") %></th>
         <th scope="col"><%= t("admin.valuators.index.description") %></th>
+        <th scope="col"><%= t("admin.actions.actions") %></th>
       </thead>
       <tbody>
         <% @valuators.each do |valuator| %>
           <tr>
-            <td>
-              <%= valuator.name %>
-            </td>
-            <td>
-              <%= valuator.email %>
-            </td>
+            <td><%= valuator.name %></td>
+            <td><%= valuator.email %></td>
             <td>
               <% if valuator.description.present? %>
                 <%= valuator.description %>
               <% else %>
                 <%= t("admin.valuators.index.no_description") %>
               <% end %>
+            </td>
+            <td>
+              <%= link_to t("admin.valuators.valuator.delete"),
+                          admin_valuator_path(valuator),
+                          method: :delete,
+                          class: "button hollow alert expanded" %>
             </td>
           </tr>
         <% end %>
