@@ -642,6 +642,19 @@ feature 'Admin budget investments' do
       expect(page).to have_content investment2.title
       expect(page).to have_content investment1.title
     end
+
+    scenario "Downloading CSV file with applied filter" do
+      investment1 = create(:budget_investment, :unfeasible, budget: @budget, title: 'compatible')
+      investment2 = create(:budget_investment, :finished, budget: @budget, title: 'valuation_finished')
+      visit admin_budget_budget_investments_path(@budget, format: :csv, filter: :valuation_finished)
+
+      header = page.response_headers['Content-Disposition']
+      header.should match(/^attachment/)
+      header.should match(/filename="budget_investments.csv"$/)
+
+      expect(page).to have_content investment2.title
+      expect(page).to_not have_content investment1.title
+    end
   end
 
 end
