@@ -625,7 +625,23 @@ feature 'Admin budget investments' do
         expect(page).not_to have_link('Selected')
       end
     end
+  end
 
+  context "Selecting csv" do
+
+    scenario "Downloading CSV file" do
+      create(:budget_investment, :unfeasible, budget: @budget)
+      create(:budget_investment, :feasible, budget: @budget)
+
+      visit admin_budget_budget_investments_path(@budget, format: :csv)
+
+      header = page.response_headers['Content-Disposition']
+      header.should match /^attachment/
+      header.should match /filename="budget_investments.csv"$/
+
+      expect(page).to have_content "Budget Investment 1 title"
+      expect(page).to have_content "Budget Investment 2 title"
+    end
   end
 
 end
