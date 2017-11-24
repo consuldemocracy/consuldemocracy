@@ -55,6 +55,7 @@ section "Creating Settings" do
   Setting.create(key: 'comments_body_max_length', value: '1000')
   Setting.create(key: 'mailer_from_name', value: 'CONSUL')
   Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')
+  Setting.create(key: 'meta_title', value: 'CONSUL')
   Setting.create(key: 'meta_description', value: 'Citizen Participation and Open Government Application')
   Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
   Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
