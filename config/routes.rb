@@ -79,6 +79,7 @@ Rails.application.routes.draw do
     member do
       get :results
       get :stats
+      get :progress
     end
     resources :groups, controller: "budgets/groups", only: [:show]
     resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do

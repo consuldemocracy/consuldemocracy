@@ -31,3 +31,6 @@ es:
     total: TOTAL
     years: años
     more_than: Más de
+
+  progress:
+    progress_link: 'Informe de estado nº 1'

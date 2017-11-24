@@ -1,0 +1,31 @@
+<div class="expanded no-margin-top padding">
+  <div class="row">
+    <div class="small-12 column">
+      <h1><%= t('budgets.index.title') %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="tabs">
+      <li class="tabs-title is-active">
+        <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
+        <%= link_to t("results.results_link"), results_budget_path(@budget) %>
+      </li>
+      <li class="tabs-title">
+        <%= link_to t("stats.stats_link"), stats_budget_path(@budget) %>
+      </li>
+      <li class="tabs-title">
+        <%= link_to t("progress.progress_link"), progress_budget_path(@budget), class: "is-active" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= image_tag "estat_presupostos_1_#{I18n.locale}.png" %>
+  </div>
+
+</div>

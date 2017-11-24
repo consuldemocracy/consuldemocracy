@@ -52,6 +52,9 @@ class BudgetsController < ApplicationController
     @stats = stats
   end
 
+  def progress
+  end
+
   private
 
   def participants
