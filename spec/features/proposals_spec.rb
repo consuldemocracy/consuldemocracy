@@ -123,6 +123,13 @@ feature 'Proposals' do
       visit proposal_path(proposal)
       expect(page).not_to have_content "Access the community"
     end
+
+    scenario 'When proposal deleted/hidden' do
+      proposal = create(:proposal)
+      proposal.hide
+      visit proposal_path(proposal)
+      expect(page).to have_content "This item was deleted"
+    end
   end
 
   context "Embedded video" do
