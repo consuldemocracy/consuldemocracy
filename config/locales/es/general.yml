@@ -449,6 +449,7 @@ es:
       title_external_url: "Documentación adicional"
       title_video_url: "Vídeo externo"
       author: Autor
+      proposals: Propuestas
     update:
       form:
         submit_button: Guardar cambios
@@ -534,9 +535,11 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
+    homepage: 'Página principal'
     edit: 'Editar'
     save: 'Guardar'
     delete: Borrar
+    deleted_item: "Esta entrada fue eliminada. Puedes explorar otras %{resource} o ir a la %{home_page} de %{org}."
     "yes": "Si"
     "no": "No"
     search_results: "Resultados de la búsqueda"

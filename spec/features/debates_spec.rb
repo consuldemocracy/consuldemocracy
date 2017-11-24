@@ -89,6 +89,13 @@ feature 'Debates' do
       expect(current_path).to_not eq(old_path)
       expect(current_path).to eq(right_path)
     end
+
+    scenario 'When debate deleted/hidden' do
+      debate = create(:debate)
+      debate.hide
+      visit debate_path(debate)
+      expect(page).to have_content "This item was deleted"
+    end
   end
 
   scenario 'Create' do

@@ -1,6 +1,7 @@
 class ProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
+  include ItemDeleted
 
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]

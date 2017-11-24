@@ -536,6 +536,7 @@ en:
     show:
       back: "Go back to my activity"
   shared:
+    homepage: 'Homepage'    
     edit: 'Edit'
     save: 'Save'
     delete: 'Delete'
@@ -560,6 +561,7 @@ en:
       title: 'Advanced search'
       to: 'To'
     delete: Delete
+    deleted_item: "This item was deleted. You may explore other %{resource} or go to the %{home_page} of %{org}."
     author_info:
       author_deleted: User deleted
     back: Go back

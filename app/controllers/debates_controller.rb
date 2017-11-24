@@ -2,6 +2,7 @@ class DebatesController < ApplicationController
   include FeatureFlags
   include CommentableActions
   include FlagActions
+  include ItemDeleted  
 
   before_action :parse_tag_filter, only: :index
   before_action :authenticate_user!, except: [:index, :show, :map]
