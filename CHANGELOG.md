@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.10.0] - 2017-07-05
+### Added
+- Milestones on Budget Investment's
+- Feature flag to enable/disable Legislative Processes
+- Locale site pages customization
+- Incompatible investments
+
+### Changed
+- Localization files reorganization. Check migration instruction at https://github.com/consul/consul/releases/tag/v0.10
+- Rails 4.2.9
+
 ## [0.9.0] - 2017-06-15
 ### Added
 - Budgets
