@@ -38,4 +38,14 @@ describe RelatedContent do
     end
   end
 
+  describe 'relationable destroy' do
+    let(:parent_relationable) { create(:proposal) }
+    let(:child_relationable) { create(:debate) }
+
+    it 'destroys both related contents involved' do
+      related_content = create(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable)
+      expect { related_content.parent_relationable.destroy }.to change { RelatedContent.all.count }.by(-2)
+      expect(child_relationable.related_contents).to be_empty
+    end
+  end
 end

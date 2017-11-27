@@ -10,6 +10,7 @@ class RelatedContent < ActiveRecord::Base
   validates :parent_relationable_id, uniqueness: { scope: [:parent_relationable_type, :child_relationable_id, :child_relationable_type] }
 
   after_create :create_opposite_related_content, unless: proc { opposite_related_content.present? }
+  after_destroy :destroy_opposite_related_content, if: proc { opposite_related_content.present? }
 
   private
 
@@ -18,4 +19,7 @@ class RelatedContent < ActiveRecord::Base
     self.opposite_related_content = related_content
   end
 
+  def destroy_opposite_related_content
+    opposite_related_content.destroy
+  end
 end
