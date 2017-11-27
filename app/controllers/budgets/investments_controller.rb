@@ -160,6 +160,7 @@ module Budgets
           @view = "minimal"
         else
           @view = "default"
+        end
       end
 
       def investments
@@ -172,7 +173,5 @@ module Budgets
                       .send("sort_by_#{@current_order}")
         end
       end
-
   end
-
 end
