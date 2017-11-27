@@ -59,13 +59,13 @@
         <iframe src="https://www.google.com/maps/d/embed?mid=1lf155NMY1TmVElqka-UEw5qrvEo" height="480" style="border:0; width:100%; margin-top: 24px;" allowfullscreen title="Mapa de propuestas localizables geográficamente de los presupuestos participativos 2017"></iframe>
       </div>
 
-      <%= link_to "#{request.url}presupuestos/presupuestos-participativos-2017" do %>
+      <%= link_to budget_url(Budget.last) do %>
         <small>Ver lista completa de propuestas</small>
       <% end %><br>
-      <%= link_to "#{request.url}presupuestos/presupuestos-participativos-2017?filter=unfeasible" do %>
+      <%= link_to budget_url(Budget.last, filter: :unfeasible) do %>
         <small>Ver lista de propuestas inviables</small>
       <% end %><br>
-      <%= link_to "#{request.url}presupuestos/presupuestos-participativos-2017?filter=unselected" do %>
+      <%= link_to budget_url(Budget.last, filter: :unselected) do %>
         <small>Ver lista de propuestas no seleccionadas para la votación final</small>
       <% end %>
     </div>
