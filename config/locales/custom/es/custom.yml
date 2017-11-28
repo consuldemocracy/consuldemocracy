@@ -169,22 +169,29 @@ es:
     share: "Comparte tu lista de proyectos recomendados con este enlace:"
   welcome:
     header:
-      label: "Fin de la votación ciudadana"
-      title: "Resultados de la consulta ciudadana Once Plazas"
-      text: "La ciudadanía ha decidido que se remodelen los once espacios sometidos a votación. Consulta los proyectos ganadores y las estadísticas de participación."
-      button: "Ver resultados"
-    budgets_results:
-      label: "Resultados 2017"
-      title: "Presupuestos participativos"
-      text: "Consulta los proyectos ganadores que se llevarán a cabo a partir de 2018."
-      link: "Ver resultados de los presupuestos participativos"
-      alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
-    ess:
-      label: "Debate"
-      title: "Estrategia de Economía Social y Solidaria"
-      text: "Elige y propón acciones para que el Ayuntamiento haga la economía de la ciudad más humana, democrática, inclusiva y sostenible."
-      link: "Ver Estrategia de Economía Social y Solidaria"
-      alt: "Imagen de un mapa de Madrid"
+      label: "Haz tu propuesta ciudadana"
+      title: "¿Tienes una idea para cambiar Madrid?"
+      text: "El Ayuntamiento de Madrid llevará a cabo tu propuesta si consigues que pase a votación ciudadana. Necesitas 27.064 apoyos en Decide Madrid, el 1% de la población con derecho a voto."
+      button: "Crea una propuesta"
+    citizenship:
+      label: "Consulta pública"
+      title: "Nuevo Reglamento de Atención a la Ciudadanía"
+      text: "Aporta tus ideas para el nuevo Reglamento de Atención a la Ciudadanía y Administración Electrónica."
+      link: "Participa en el nuevo Reglamento de Atención a la Ciudadanía"
+      alt: "Oficina de Atención a la Ciudadanía en Madrid"
+    home_help:
+      label: "Consulta pública"
+      title: "Nueva Ordenanza del Servicio de Ayuda a Domicilio"
+      text: "Participa en la creación de una nueva ordenanza que afecta a personas mayores, con discapacidad, centros de día y residencias."
+      link: "Participa en la nueva ordenanza del servicio de ayuda a domicilio"
+      alt: "Auxiliar ayudando a una persona mayor"
+    proposals:
+      label: "Propuestas"
+      title: "¿Qué es y cómo se crea una propuesta ciudadana?"
+      text: "Es un mecanismo de participación para que la ciudadanía decida de forma directa las políticas municipales."
+      link: "Más información sobre cómo crear propuestas ciudadanas"
+      url: "https://diario.madrid.es/decidemadrid/2017/09/05/las-propuestas-ciudadanas-de-decide-madrid-paso-a-paso/"
+      alt: "Creación de una propuesta en Decide Madrid"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"

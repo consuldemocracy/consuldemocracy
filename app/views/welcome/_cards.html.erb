@@ -1,37 +1,55 @@
 <div class="row">
   <div class="small-12 medium-6 column margin-bottom">
     <figure class="figure-card">
-      <%= link_to "#{request.url}legislation/processes/26/proposals", title: t("welcome.ess.link") do %>
-        <%= image_tag "welcome/ess.jpg", alt: t("welcome.ess.alt") %>
+      <%= link_to t("welcome.proposals.url"), title: t("welcome.proposals.link") + t("shared.target_blank_html"), target: "_blank" do %>
+        <%= image_tag "welcome/proposals.jpg", alt: t("welcome.proposals.alt") %>
       <% end %>
       <figcaption>
-        <%= link_to "#{request.url}legislation/processes/26/proposals", title: t("welcome.ess.link") do %>
-          <span><%= t("welcome.ess.label") %></span><br>
-          <p class="title"><%= t("welcome.ess.title") %></p>
+        <%= link_to t("welcome.proposals.url"), title: t("welcome.proposals.link") + t("shared.target_blank_html"), target: "_blank" do %>
+          <span><%= t("welcome.proposals.label") %></span><br>
+          <p class="title"><%= t("welcome.proposals.title") %></p>
         <% end %>
       </figcaption>
     </figure>
-    <p><%= t("welcome.ess.text") %></p>
+    <p><%= t("welcome.proposals.text") %></p>
     <p>
-      <%= link_to t("welcome.ess.link"), "#{request.url}legislation/processes/26/proposals" %>
+      <%= link_to t("welcome.proposals.link"), t("welcome.proposals.url"), title: t("shared.target_blank_html"), target: "_blank", class: "external-link" %>
     </p>
   </div>
 
   <div class="small-12 medium-6 column margin-bottom">
     <figure class="figure-card">
-      <%= link_to "#{request.url}presupuestos/presupuestos-participativos-2017/resultados", title: t("welcome.budgets_results.link") do %>
-        <%= image_tag "welcome/budgets_results.jpg", alt: t("welcome.budgets_results.alt") %>
+      <%= link_to "#{request.url}legislation/processes/34/debate", title: t("welcome.citizenship.link") do %>
+        <%= image_tag "welcome/citizenship.jpg", alt: t("welcome.citizenship.alt") %>
       <% end %>
       <figcaption>
-        <%= link_to "#{request.url}presupuestos/presupuestos-participativos-2017/resultados", title: t("welcome.budgets_results.link") do %>
-          <span><%= t("welcome.budgets_results.label") %></span><br>
-          <p class="title"><%= t("welcome.budgets_results.title") %></p>
+        <%= link_to "#{request.url}legislation/processes/34/debate", title: t("welcome.citizenship.link") do %>
+          <span><%= t("welcome.citizenship.label") %></span><br>
+          <p class="title"><%= t("welcome.citizenship.title") %></p>
         <% end %>
       </figcaption>
     </figure>
-    <p><%= t("welcome.budgets_results.text") %></p>
+    <p><%= t("welcome.citizenship.text") %></p>
     <p>
-      <%= link_to t("welcome.budgets_results.link"), "#{request.url}presupuestos/presupuestos-participativos-2017/resultados" %>
+      <%= link_to t("welcome.citizenship.link"), "#{request.url}legislation/processes/34/debate" %>
+    </p>
+  </div>
+
+  <div class="small-12 medium-6 column margin-bottom end">
+    <figure class="figure-card">
+      <%= link_to "#{request.url}legislation/processes/27/debate", title: t("welcome.home_help.link") do %>
+        <%= image_tag "welcome/home_help.jpg", alt: t("welcome.home_help.alt") %>
+      <% end %>
+      <figcaption>
+        <%= link_to "#{request.url}legislation/processes/27/debate", title: t("welcome.home_help.link") do %>
+          <span><%= t("welcome.home_help.label") %></span><br>
+          <p class="title"><%= t("welcome.home_help.title") %></p>
+        <% end %>
+      </figcaption>
+    </figure>
+    <p><%= t("welcome.home_help.text") %></p>
+    <p>
+      <%= link_to t("welcome.home_help.link"), "#{request.url}legislation/processes/27/debate" %>
     </p>
   </div>
 
