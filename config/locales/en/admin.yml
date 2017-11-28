@@ -106,6 +106,7 @@ en:
         table_heading: Heading
         table_amount: Amount
         table_population: Population
+        population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
@@ -566,6 +567,8 @@ en:
           assign: Assign booth
           unassign: Unassign booth
     poll_booth_assignments:
+      alert:
+        shifts: "There are shifts associated to this booth. If you remove the booth assignment, the shifts will be also deleted. Continue?"
       flash:
         destroy: "Booth not assigned anymore"
         create: "Booth assigned"

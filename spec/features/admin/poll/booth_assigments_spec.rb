@@ -106,6 +106,41 @@ feature 'Admin booths assignments' do
       expect(page).to have_content 'There are no booths assigned to this poll.'
       expect(page).not_to have_content booth.name
     end
+    
+    scenario 'Unassing booth whith associated shifts', :js do
+      assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+      officer = create(:poll_officer)
+      create(:poll_officer_assignment, officer: officer, booth_assignment: assignment)
+      create(:poll_shift, booth: booth, officer: officer)
+      
+      visit manage_admin_poll_booth_assignments_path(poll)
+      
+      within("#poll_booth_#{booth.id}") do
+        expect(page).to have_content(booth.name)
+        expect(page).to have_content "Assigned"
+
+        click_link 'Unassign booth'
+        
+        expect(page).to have_content "Unassigned"
+        expect(page).not_to have_content "Assigned"
+        expect(page).to have_link "Assign booth"
+      end      
+    end
+      
+    scenario "Cannot unassing booth if poll is expired" do
+      poll_expired = create(:poll, :expired)
+      create(:poll_booth_assignment, poll: poll_expired, booth: booth)
+
+      visit manage_admin_poll_booth_assignments_path(poll_expired)
+      
+      within("#poll_booth_#{booth.id}") do
+        expect(page).to have_content(booth.name)
+        expect(page).to have_content "Assigned"
+
+        expect(page).not_to have_link 'Unassign booth'
+      end
+
+    end
   end
 
   feature 'Show' do
