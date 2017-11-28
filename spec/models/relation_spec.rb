@@ -60,4 +60,17 @@ describe RelatedContent do
     end
   end
 
+  describe '#relationed_contents' do
+    before do
+      create(:related_content, parent_relationable: parent_relationable, child_relationable: create(:proposal), times_reported: 6)
+      create(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable)
+    end
+
+    it 'returns not hidden by reports related contents' do
+      expect(parent_relationable.relationed_contents.count).to eq(1)
+      expect(parent_relationable.relationed_contents.first.class.name).to eq(child_relationable.class.name)
+      expect(parent_relationable.relationed_contents.first.id).to eq(child_relationable.id)
+    end
+  end
+
 end
