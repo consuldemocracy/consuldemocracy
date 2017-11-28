@@ -5,7 +5,7 @@ App.Votes =
       'mouseenter focus': ->
         $("div.participation-not-allowed", this).show()
         $("div.participation-allowed", this).hide()
-      mouseleave: ->
+      'mouseleave blur': ->
         $("div.participation-not-allowed", this).hide()
         $("div.participation-allowed", this).show()
     }, votes
