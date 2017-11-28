@@ -1,4 +1,6 @@
 class RelatedContent < ActiveRecord::Base
+  RELATED_CONTENTS_REPORT_THRESHOLD = Setting['related_contents_report_threshold'].to_i
+
   belongs_to :parent_relationable, polymorphic: true
   belongs_to :child_relationable, polymorphic: true
   has_one :opposite_related_content, class_name: 'RelatedContent', foreign_key: :related_content_id
@@ -11,6 +13,12 @@ class RelatedContent < ActiveRecord::Base
 
   after_create :create_opposite_related_content, unless: proc { opposite_related_content.present? }
   after_destroy :destroy_opposite_related_content, if: proc { opposite_related_content.present? }
+
+  scope :not_hidden, -> { where('times_reported <= ?', RELATED_CONTENTS_REPORT_THRESHOLD) }
+
+  def hidden_by_reports?
+    times_reported > RELATED_CONTENTS_REPORT_THRESHOLD
+  end
 
   private
 
