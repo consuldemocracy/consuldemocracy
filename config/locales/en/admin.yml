@@ -558,6 +558,8 @@ en:
           assign: Assign booth
           unassign: Unassign booth
     poll_booth_assignments:
+      alert:
+        shifts: "There are shifts associated to this booth. If you remove the booth assignment, the shifts will be also deleted. Continue?"
       flash:
         destroy: "Booth not assigned anymore"
         create: "Booth assigned"
