@@ -1,0 +1,488 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: service_letters_5_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <%= back_link_to %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 small-centered column">
+    <div class="float-left download">
+      <p><strong>DESCARGA ESTE DOCUMENTO</strong><br>
+        <%= link_to "Carta de Servicios: Teleasistencia domiciliaria <small>(DOC | 414Kb)</small>".html_safe,
+                    "/docs/carta_servicios_teleasistencia.doc",
+                    title: "Carta de Servicios: Teleasistencia domiciliaria (DOC | 414Kb)" %><br>
+        <%= link_to "Carta de Servicios: Teleasistencia domiciliaria <small>(PPT | 6Mb)</small>".html_safe,
+                    "/docs/carta_servicios_teleasistencia.ppt",
+                    title: "Carta de Servicios: Teleasistencia domiciliaria (PPT | 6Mb)" %>
+      </p>
+    </div>
+
+    <div class="float-right">
+      <p><strong>Fecha de aprobación: 10 de julio de 2008</strong><br>
+      <strong>Fecha de la última evaluación: 10 de marzo de 2016</strong></p>
+      <a class="button warning" type="button" data-toggle="annotator-help">
+        <sub><span class="icon-edit"></span></sub>&nbsp;
+        <%= t("annotator.help.title") %>
+      </a>
+
+      <div class="dropdown-pane" id="annotator-help" data-dropdown data-auto-focus="true">
+        <% if user_signed_in? %>
+          <%= t("annotator.help.alt") %>
+        <% else %>
+          <p>
+            <%= t("annotator.help.text",
+                sign_in: link_to(t("annotator.help.text_sign_in"), new_user_session_path),
+                sign_up: link_to(t("annotator.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          </p>
+        <% end %>
+
+        <%= image_tag ("annotator_help.gif"), alt: t("annotator.help.alt") %>
+      </div>
+    </div>
+
+    <section data-annotatable-type="legislation"
+             data-annotatable-id="5"
+             data-annotatable-readonly="true"
+             id="carta_servicios_body">
+
+      <h1 class="text-center">Carta de Servicios del Servicio de Teleasistencia Domiciliaria</h1>
+
+      <h2>1. Introducción</h2>
+      <p>El Ayuntamiento de Madrid, en el marco de sus políticas de bienestar y de atención social a las personas mayores, dirige, gestiona y evalúa los servicios de atención a los mayores, entre los que se encuentran los servicios de teleasistencia domiciliaria (TAD), ayuda a domicilio, comidas a domicilio, lavandería, productos de apoyo, organiza los programas de respiro familiar y cuidar al cuidador, y pone a disposición de la ciudadanía los Centros Municipales de Mayores y los Centros de Día.</p>
+
+      <p>Esta Carta de Servicios hace referencia al Servicio de Teleasistencia Domiciliaria que, a través de una línea telefónica fija compatible con el sistema, y con un equipamiento de comunicaciones e informático específico, permite a las personas mayores (65 y más años) ponerse en comunicación con un Centro de Atención de llamadas, con personal especializado, para dar una respuesta adecuada a la demanda planteada, bien por sí mismo o movilizando otros recursos humanos y materiales.</p>
+
+      <p>El Ayuntamiento de Madrid se ha comprometido con la calidad en la prestación de los servicios a las personas mayores, adecuados a las diversas situaciones personales y familiares, para que se evalúen periódicamente y estén en constante mejora.</p>
+
+      <p>Tras la aprobación de esta Carta de Servicios, han sido varias las elaboradas en esta área, como la <strong>Carta de Servicios de Centros de Día</strong>, en abril de 2010, la <strong>Carta de Servicios de Centros de Servicios Sociales</strong>, en julio de 2010, la <strong>Carta de Servicios del Servicio de Ayuda a Domicilio</strong>, en abril de 2011, la <strong>Carta de Servicios de Samur Social</strong>, en marzo de 2012, la <strong>Carta de Servicios de los Centros Municipales de Mayores</strong>, en marzo de 2013, la <strong>Carta de Servicios de los Centros de Atención a la Infancia</strong>, en septiembre de 2013, la <strong>Carta de Servicios de los Centros de Apoyo a las Familias</strong>, en enero de 2014, así como la <strong>Carta de Servicios de Educación Social</strong>, en junio de 2014, cumpliendo los objetivos establecidos en el Programa Operativo de Gobierno.</p>
+
+      <p>Con la elaboración y la aprobación de la Carta de Servicios del Servicio de Teleasistencia Domiciliaria, el Ayuntamiento de Madrid pretende hacer aún más visible este servicio entre la ciudadanía de Madrid y las condiciones en que se presta, dar a conocer las responsabilidades y compromisos que se adquieren al prestarlo con unos determinados niveles de calidad, así como dar a conocer los derechos de la ciudadanía en relación con este servicio y las responsabilidades y obligaciones que contraen al recibirlo.</p>
+
+      <p>Por otra parte, el objetivo es aumentar el grado de satisfacción de la ciudadanía con este servicio y mostrar y aportar transparencia en su prestación.</p>
+
+      <p>Finalmente, se desea hacer patente el valor del trabajo de todas y cada una de las personas implicadas en la prestación del Servicio de Teleasistencia Domiciliaria y su esfuerzo constante por mejorarlo.</p>
+
+      <p>Esta Carta de Servicios de Teleasistencia Domiciliaria <strong>se aprobó</strong> por la Junta de Gobierno de la Ciudad de Madrid el 10 de julio de 2008. Este texto corresponde a la <strong>octava evaluación</strong> realizada en marzo de 2016, con ella el Ayuntamiento de Madrid manifiesta nuevamente su compromiso con la calidad y la mejora continua de sus servicios.</p>
+
+      <h2>2. Datos de carácter General</h2>
+
+      <h3>Órgano Directivo responsable</h3>
+
+      <p>El Órgano directivo responsable del Servicio de Teleasistencia Domiciliaria es la <strong>Dirección General de Mayores, Atención Social, Inclusión Social y Atención a la Emergencia</strong>, del Área de Gobierno de Equidad, Derechos Sociales y Empleo.</p>
+
+      <p>Según el Acuerdo vigente de la Junta de Gobierno de la Ciudad de Madrid, entre las competencias que corresponden a esta Dirección General están:</p>
+      <ul>
+        <li>a) Diseñar y proponer programas y servicios para las personas mayores, en especial los referidos al mantenimiento de la persona mayor en su propio hogar todo el tiempo posible y los que tienen por objeto el apoyo a las familias que cuidan a sus mayores.</li>
+        <li>b) Implantar y evaluar periódicamente los criterios y estándares de calidad en relación con los Programas gestionados.</li>
+        <li>c) Planificar, dirigir y evaluar la ayuda a domicilio dispensada a las personas mayores.</li>
+        <li>d) Favorecer la participación de las personas mayores en la vida social de los barrios y Distritos.</li>
+        <li>e) Promocionar la autonomía personal y la atención a las personas en situación de dependencia, de acuerdo con los convenios de colaboración que se suscriban con la Comunidad de Madrid.</li>
+        <li>f) Adoptar cuantas resoluciones resulten pertinentes en relación a los Centros de Día para Mayores, propios o concertados, Centros Residenciales y al Servicio de Ayuda a Domicilio, en las modalidades de suministro a domicilio de alimentos preparados o servicios análogos y de lavado, planchado y repaso de ropa fuera del hogar, en los términos previstos en la Ordenanza municipal por la que se regula el acceso a los servicios de Ayuda a Domicilio para mayores y/o personas con discapacidad en la modalidad de atención personal y atención doméstica, de Centros de Día, propios o concertados y Centros Residenciales, para mayores, del Ayuntamiento de Madrid.</li>
+      </ul>
+
+      <h3>Unidad prestadora</h3>
+      <p>El Servicio de Teleasistencia Domiciliaria se presta mediante gestión indirecta, a través de varias entidades colaboradoras, adjudicatarias del contrato de gestión del servicio público de teleasistencia domiciliaria.</p>
+
+      <h2>3. Normativa</h2>
+
+      <p>A continuación se relaciona la normativa, tanto general como específica, que regula el Servicio de Teleasistencia Domiciliaria.</p>
+
+      <h3>Normativa general</h3>
+      <ul>
+        <li>Artículo 51 de la Constitución Española de 1978.</li>
+      </ul>
+
+      <h3>Leyes Orgánicas</h3>
+      <ul>
+        <li>Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.</li>
+      </ul>
+
+      <h3>Leyes y Reales Decretos</h3>
+      <ul>
+        <li>Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público que entra en vigor el 3 de octubre de 2016 (salvo alguna excepción).</li>
+        <li>Ley 39/2015, de 1 de octubre, de Procedimiento Administrativo Común de las Administraciones Públicas que entra en vigor el 3 de octubre de 2016 y expresamente deroga la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común y la Ley 11/2007, de 22 de junio, de acceso electrónico de los ciudadanos a los Servicios Públicos.</li>
+        <li>Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.</li>
+        <li>Ley 27/2013, de 27 de diciembre, de racionalización y sostenibilidad de la Administración Local.</li>
+        <li>Ley 17/2009, de 23 de noviembre, sobre el libre acceso a las actividades de servicios y su ejercicio y Ley 25/2009, de 22 de diciembre, de modificación de diversas leyes para su adaptación a la Ley sobre el libre acceso a las actividades de servicios y su ejercicio.</li>
+        <li>Ley 39/2006, de 14 de diciembre, de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia.</li>
+        <li>Ley 22/2006, de 4 de julio, de Capitalidad y de Régimen Especial de Madrid.</li>
+        <li>Real Decreto Legislativo 2/2004, de 5 de marzo, por el que se aprueba el Texto Refundido de la Ley Reguladora de las Haciendas Locales.</li>
+        <li>Ley 57/2003, de 16 de diciembre, de Medidas para la Modernización del Gobierno Local.</li>
+        <li>Ley 51/2003, de 2 de diciembre, de igualdad de oportunidades, no discriminación y accesibilidad universal de las personas con discapacidad.</li>
+        <li>Ley 11/2003, de 27 de marzo, de Servicios Sociales de la Comunidad de Madrid.</li>
+        <li>Real Decreto Legislativo 781/1986, de 18 de abril, por el que se aprueba el Texto Refundido de las Disposiciones Legales vigentes en materia de Régimen Local.</li>
+        <li>Ley 7/1985, de 2 de abril, Reguladora de las Bases de Régimen Local.</li>
+      </ul>
+
+      <h3>Normativa municipal general</h3>
+      <ul>
+        <li>Acuerdo del Pleno, de 30 de marzo de 2011, por el que se aprueba la ordenanza por la que se adaptan al ámbito de la ciudad de Madrid las previsiones contenidas en la normativa estatal y autonómica de transposición de la Directiva 2006/123/CE, del Parlamento Europeo y del Consejo, de 12 de diciembre de 2006, relativa a los servicios en el mercado interior.</li>
+        <li>Acuerdo de la Junta de Gobierno de la Ciudad de Madrid de 25 de junio de 2009, por el que se regula el Sistema de Cartas de Servicios en el Ayuntamiento de Madrid.</li>
+        <li>Acuerdo de la Junta de Gobierno de la Ciudad de Madrid de 4 de diciembre de 2008, por el que se aprueba el Código de Buenas Prácticas Administrativas del Ayuntamiento de Madrid.</li>
+        <li>Decreto del Alcalde de 17 de enero de 2005, por el que se regula la Atención al Ciudadano en el Ayuntamiento de Madrid y su normativa de desarrollo.</li>
+        <li>Reglamento Orgánico de los Distritos de la Ciudad de Madrid, de 23 de diciembre de 2004.</li>
+        <li>Reglamento Orgánico del Gobierno y de la Administración del Ayuntamiento de Madrid, de 31 de mayo de 2004.</li>
+        <li>Reglamento Orgánico de Participación Ciudadana del Ayuntamiento de Madrid, de 31 de mayo de 2004.</li>
+      </ul>
+
+      <h3>Normativa municipal estructura y competencias</h3>
+      <ul>
+        <li>Acuerdo en vigor de la Junta de Gobierno de la Ciudad de Madrid de organización y competencias de los Distritos.</li>
+        <li>Acuerdo en vigor de la Junta de Gobierno de la Ciudad de Madrid por el que se establece la organización del Área de Gobierno de Equidad, Derechos Sociales y Empleo y se delegan competencias en su titular y en los titulares de los órganos directivos.</li>
+        <li>Decreto en vigor de la Alcaldesa, por el que se establece el número, denominación y competencias de las Áreas en las que se estructura la Administración del Ayuntamiento de Madrid.</li>
+        <li>Decreto en vigor de la Alcaldesa de delegación y desconcentración de competencias.</li>
+      </ul>
+
+      <h3>Normativa Específica:</h3>
+      <ul>
+        <li>Pliegos Técnicos y Administrativos del Contrato de Gestión de Servicio Público para la prestación del Servicio Municipal de Teleasistencia Domiciliaria en la ciudad de Madrid, y prórroga con modificación vigente en la actualidad.</li>
+        <li>Declaración de Servicio Público por el Pleno del Ayuntamiento de Madrid, sesión ordinaria del 20 de febrero de 2004.</li>
+      </ul>
+
+      <h2>4. Derechos y responsabilidades</h2>
+
+      <h3>Derechos de las/os usuarias/os</h3>
+      <p>Las/os usuarias/os del Servicio de Teleasistencia Domiciliaria en la ciudad de Madrid, tienen derecho a:</p>
+      <ul>
+        <li>a) Recibir información clara y sencilla sobre:
+          <ul>
+            <li>Requisitos de acceso al servicio</li>
+            <li>Modalidades de servicios</li>
+            <li>Funcionamiento de los aparatos y limitaciones tecnológicas</li>
+            <li>Prestaciones no incluidas</li>
+          </ul>
+        </li>
+        <li>b) Ser atendidos por personal especializado y cualificado.</li>
+        <li>c) Conocer las tarifas que les corresponde aportar al servicio.</li>
+        <li>d) Tener garantizada la protección de sus datos personales, así como el derecho al acceso, rectificación, cancelación y oposición respecto a sus datos personales.</li>
+        <li>e) Tener garantizada la seguridad en la custodia de las llaves del domicilio.</li>
+        <li>f) Ser avisados con anticipo de posibles visitas domiciliarias relacionadas con el Servicio de Teleasistencia.</li>
+        <li>g) Hacer uso del sistema de reclamaciones y sugerencias.</li>
+        <li>h) Darse de baja en el servicio a petición propia.</li>
+      </ul>
+
+      <h3>Responsabilidades de las/os usuarias/os</h3>
+      <ul>
+        <li>a) Facilitar y comunicar información sobre los cambios en su situación (personal, social, de salud) que afecten al uso del servicio.</li>
+        <li>b) Permitir la instalación del terminal de teleasistencia en su domicilio.</li>
+        <li>c) Autorizar el uso de datos personales para la gestión y evaluación del servicio.</li>
+        <li>d) Autorizar el acceso al domicilio de personal autorizado, en relación con este servicio.</li>
+        <li>e) Abonar la cuota correspondiente, en su caso.</li>
+        <li>f) Reponer el aparato, si su avería o rotura se debe a un mal uso.</li>
+        <li>g) Facilitar la retirada del aparato cuando se produzca baja en el servicio.</li>
+        <li>h) Hacer buen uso del Servicio de Teleasistencia</li>
+      </ul>
+
+      <h2>5. Mecanismos y modalidades de participación</h2>
+
+      <p>El Ayuntamiento de Madrid realiza una apuesta fuerte por el desarrollo y puesta en marcha de los procesos participativos, que garanticen el <strong>derecho</strong> de la ciudadanía a participar en la toma de decisiones junto con los poderes públicos, de manera que el sentir de la totalidad de la población se tenga en cuenta con carácter previo a la adopción de decisiones que puedan afectar a un Distrito concreto o a la totalidad de la Ciudad.</p>
+
+      <p>Entre los <strong>mecanismos, instrumentos y órganos de participación</strong> establecidos por el Ayuntamiento de Madrid en su <em>Reglamento Orgánico de Participación Ciudadana</em> y normativa de desarrollo, destacan:</p>
+      <ul>
+        <li>Las propuestas ciudadanas: la ciudadanía realiza propuestas de actuación en asuntos de competencia municipal o interés local. Cuando alcanzan el 2% de apoyos pueden someterse a debate y votación final, decidiendo entre todas y todos las que se llevan a cabo (mayoría simple de los participantes).</li>
+        <li>Las audiencias públicas: el Ayuntamiento invita a la ciudadanía a participar en cuestiones especialmente significativas de la acción municipal y lo que se decida mayoritariamente, definirá las actuaciones a realizar.</li>
+        <li>Las iniciativas populares: iniciativas normativas e iniciativas ciudadanas para promover actividades de interés público.</li>
+        <li>Las proposiciones al Pleno y a las Juntas de Distrito y los ruegos y preguntas en las sesiones plenarias del Distrito correspondiente.</li>
+        <li>Las sugerencias y reclamaciones: la ciudadanía ejerce su derecho a presentar sugerencias relativas a la creación, ampliación o mejora de los servicios prestados por el Ayuntamiento de Madrid; reclamaciones por tardanzas, desatenciones, incidencias o cualquier otra anomalía en su funcionamiento y felicitaciones, sobre los servicios prestados por el Ayuntamiento.</li>
+        <li>El Consejo Director de la Ciudad, los Consejos Sectoriales y los Consejos Territoriales.</li>
+        <li>Los sondeos de opinión, encuestas de satisfacción, consejos y foros temáticos, y paneles ciudadanos. Entre ellos destaca la Encuesta de Calidad de Vida y Satisfacción con los Servicios Públicos, encuesta presencial de carácter bienal que tiene por objetivo analizar el grado de satisfacción de la ciudadanía madrileña con los servicios públicos municipales, así como conocer su opinión ciudadana respecto a la calidad de vida en la ciudad.</li>
+      </ul>
+
+      <p>Además, el Ayuntamiento de Madrid pone a disposición de las personas mayores otros mecanismos de participación como la página web <a href="http://www.madridmayor.es" target="_blank" title="(se abre en ventana nueva)">www.madridmayor.es</a>.</p>
+
+      <p>Para avanzar de un modo decidido hacia las fórmulas reales de participación de la ciudadanía que profundicen y den sentido al compromiso de lograr un gobierno abierto, se ha puesto en marcha la <strong>web de gobierno abierto del Ayuntamiento de Madrid</strong>, destinada a que la ciudadanía pueda promover propuestas de actuación municipal de forma libre y transparente. En ella, a través de la plataforma de participación <a href="http://decide.madrid.es">decide.madrid</a> se pueden presentar propuestas, someter a audiencia pública las cuestiones más relevantes del gobierno de la Ciudad y participar en la elaboración de los Presupuestos del Ayuntamiento.</p>
+
+
+      <h2>6. Sistema de Sugerencias y Reclamaciones</h2>
+
+      <p>El Ayuntamiento de Madrid cuenta con un Sistema de Sugerencias y Reclamaciones a través del cual la ciudadanía e instituciones públicas o privadas pueden ejercer su derecho a presentar sugerencias relativas a la creación, ampliación o mejora de los servicios prestados por el Ayuntamiento de Madrid; reclamaciones por tardanzas, desatenciones, incidencias o cualquier otra anomalía en su funcionamiento y felicitaciones.</p>
+
+      <p>Se podrán presentar sugerencias, reclamaciones y felicitaciones a través de:</p>
+
+      <ul>
+        <li><a href="http://www.madrid.es/contactar" target="_blank" title="(se abre en ventana nueva)">www.madrid.es/contactar</a>.</li>
+        <li>El Teléfono 010.</li>
+        <li>Las Oficinas de Atención a la Ciudadanía Línea Madrid.</li>
+        <li>Las Oficinas de Registro.</li>
+        <li>El Registro electrónico del Ayuntamiento de Madrid.</li>
+        <li>El correo postal o electrónico dirigido al órgano directivo responsable o unidad prestadora del servicio, cuyos datos de localización y contacto se recogen en el apartado 9 de esta Carta.</li>
+      </ul>
+
+      <p>Las sugerencias, reclamaciones y felicitaciones se <strong>contestarán</strong> de forma adecuada y con la mayor celeridad posible, cumpliendo los compromisos asumidos en la Carta de Servicios de Sugerencias y Reclamaciones del Ayuntamiento de Madrid, aprobada el 10 de mayo de 2012.</p>
+
+      <h2>7. Servicios prestados</h2>
+
+      <h3>Descripción del Servicio de Teleasistencia Domiciliaria</h3>
+
+      <p>Es un servicio social de atención telefónica permanente las 24 horas del día que, a través de un dispositivo tecnológico o terminal, conectado a la red telefónica y/o eléctrica, permite la comunicación desde el domicilio con un Centro de Atención de llamadas, atendido por profesionales especializados, proporcionando compañía, seguridad y tranquilidad a la persona mayor y a sus familiares.
+      Además, en los casos en los que el Centro de Atención de llamadas valore necesaria una atención presencial, el servicio desplazará al domicilio a personal de apoyo para atender la situación producida.</p>
+
+      <p>El terminal se complementa con una unidad de control remoto en forma de colgante o pulsera, que al ser pulsado lanza una señal al Centro de Atención de llamadas, que de forma automática identifica y atiende al usuario/a que ha pulsado.</p>
+
+      <p>El servicio ofrece, dispositivos periféricos de tecnología avanzada (detectores de gas, detectores de humo, sensores de apertura de microondas y frigoríficos, sensores de ocupación de cama o sillón, dispensadores de medicación, equipos de deficiencias auditivas, detectores de caídas) destinados a personas con especiales necesidades para prevenir y detectar situaciones de riesgo.</p>
+
+      <h3>Destinatarios</h3>
+      <ul>
+        <li>Preferentemente personas mayores de 65 años, y en especial las mayores de 80 años, que por su edad, estado de salud, soledad o aislamiento, precisen de este servicio para garantizar su atención, compañía y seguridad.</li>
+        <li>También tendrán acceso a este servicio las personas con un grado de discapacidad del 65% o más, que vivan solas, aunque no hayan cumplido los 65 años.</li>
+        <li>Asimismo, tendrán acceso todas aquellas personas menores de 65 años, que habiendo sido reconocidas como dependientes, tengan el Servicio de Teleasistencia incluido en su PIA (Plan Individualizado de Atención).</li>
+        <li>El servicio no se instalará a personas con alteraciones psíquicas que les dificulte la comprensión y el razonamiento, sin embargo se puede valorar su instalación como apoyo a cuidadores con sobrecarga.</li>
+      </ul>
+
+      <h3>Requisitos para ser beneficiario del servicio</h3>
+      <ul>
+        <li>Estar empadronado en la Ciudad de Madrid.</li>
+        <li>Disponer en el domicilio de línea telefónica fija y en activo, compatible con el Servicio de Teleasistencia municipal.</li>
+        <li>No padecer enfermedad psíquica o discapacidad sensorial que impida la utilización del dispositivo.</li>
+      </ul>
+
+      <h3>Objetivos del Servicio de Teleasistencia Domiciliaria</h3>
+      <ul>
+        <li>Proporcionar compañía, seguridad y tranquilidad al beneficiario y sus familiares.</li>
+        <li>Garantizar la comunicación interpersonal las 24 horas del día.</li>
+        <li>Potenciar la autonomía personal.</li>
+        <li>Prevenir situaciones de riesgo por razones de edad, discapacidad, dependencia o soledad.</li>
+        <li>Proporcionar una atención inmediata y adecuada ante situaciones de emergencia, en coordinación con recursos especializados.</li>
+      </ul>
+
+      <p>Estará garantizada en la prestación del servicio su continuidad en el tiempo. Éste no se suspenderá salvo deseo expreso de la persona usuaria, baja en el padrón municipal, cambio en las condiciones que motivaron la concesión, o incumplimiento de sus obligaciones.</p>
+
+      <h3>El Servicio de Teleasistencia Domiciliaria incluye:</h3>
+      <ol>
+        <li>Soporte Técnico:
+          <ul>
+            <li>Instalación de un dispositivo de teleasistencia en el domicilio de la persona usuaria, que permite la comunicación entre la persona y el Centro de Atención de llamadas.</li>
+            <li>Entrega de una Unidad de Control Remoto, de tipo colgante o pulsera, con botón pulsador para comunicaciones.</li>
+            <li>Instalación en los domicilios, en su caso, de dispositivos periféricos, que podrán ser:
+              <ul>
+                <li>Detector de caídas</li>
+                <li>Detector de gas</li>
+                <li>Detector de humos</li>
+                <li>Dispensador de medicación</li>
+                <li>Sensor de ocupación de sillón</li>
+                <li>Sensor de apertura de frigorífico/microondas</li>
+                <li>Dispositivo adaptado a deficiencias sensoriales</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><strong>Atención personal telefónica:</strong> comunicaciones entre las personas usuarias y el Centro de Atención personal y de seguimiento, que podrán ser:
+          <ul>
+            <li>Llamadas de seguimiento, de acuerdo con el nivel de riesgo social</li>
+            <li>Llamadas de cortesía</li>
+            <li>Llamadas de mantenimiento de agenda (medicación, citas médicas)</li>
+            <li>Informativas, sobre diversos asuntos de interés para las personas mayores y de promoción del envejecimiento activo y saludable, ofreciendo la participación en actividades culturales, lúdicas o de ocio, deportivas, charlas o talleres, favoreciendo las relaciones interpersonales y redes de apoyo.</li>
+            <li>Por demandas y necesidades de las personas usuarias, y situaciones de crisis personal, social y sanitaria que puedan manifestar en su llamada.</li>
+          </ul>
+        </li>
+
+        <li><strong>Atención presencial en el domicilio</strong>, a través de la unidad de apoyo domiciliaria; si es necesario se realiza apertura de puertas. La unidad de apoyo tiene por objeto ayudar ante situaciones de emergencia (domésticas, psicosociales, sanitarias, etc.) para la resolución del problema. Su movilización estará condicionada a la gravedad de la situación, siendo complementaria a la movilización y coordinación con otros recursos públicos o privados (propios o ajenos al usuario/a, servicios sanitarios o sociales, etc.). En ningún caso, el personal del Servicio de Teleasistencia que acuda a los domicilios por desplazamiento de UMO asumirá funciones que correspondan a los servicios sanitarios (atención médica, traslado a centros de salud u hospitalarios). Además, el servicio no dispone de ambulancias.</li>
+
+        <li><strong>Servicio de información y asesoramiento telefónico</strong> en materia económica, social, jurídica y psicológica atendido por profesionales especializados en la materia.</li>
+
+        <li><strong>Coordinación con otros servicios</strong>: Policía, Samur Social, 112, Bomberos, médico de salud, etc., para atender las necesidades y situaciones de emergencia que precisen de la actuación de los profesionales mencionados.</li>
+
+        <li><strong>Actuaciones que facilitan el envejecimiento activo</strong>: actividades socioculturales, información y acceso a recursos dirigidos a personas mayores, etc.</li>
+      </ol>
+
+      <h2>8. Compromisos de calidad</h2>
+
+      <p>El Ayuntamiento de Madrid se compromete a mejorar la calidad del Servicio de Teleasistencia de forma permanente, a través de los siguientes compromisos, y a evaluar las mejoras a través de los indicadores que se detallan para cada uno:</p>
+      <ol>
+        <li>Siempre que el caso se considere <strong>prioritario</strong> por parte del personal municipal, la instalación del dispositivo de teleasistencia se hará en un plazo máximo de <strong>3 días naturales</strong>.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            1.1. Porcentaje de instalaciones prioritarias que se realizan en un plazo máximo de 3 días naturales.</li>
+          </ul>
+        </li>
+
+        <li>El 95% de las <strong>llamadas</strong> serán <strong>atendidas</strong> por el Servicio de Teleasistencia en menos de 1 minuto, siendo el tiempo máximo de respuesta de 3 minutos.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            2.1. Porcentaje de llamadas atendidas en menos de un minuto.<br>
+            2.2. Porcentaje de llamadas atendidas en menos de 3 minutos.</li>
+          </ul>
+        </li>
+
+        <li>Cuando la llamada sea por un caso de necesidad, y siempre que el/la usuario/a esté solo o acompañado de alguien sin capacidad para resolver la situación, personal de apoyo <strong>se desplazará</strong> al domicilio para acompañarle y asegurar la llegada, en su caso, de otros recursos necesarios para la resolución del problema.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            3.1. Porcentaje de desplazamientos en relación con las llamadas que cumplan los requisitos.</li>
+          </ul>
+        </li>
+
+        <li>El correcto funcionamiento de todos los dispositivos de teleasistencia se <strong>comprobará cada 15 días</strong>. El 95% de las averías que impidan la comunicación se repararán en 48 horas o menos, siendo el tiempo máximo de resolución de las averías de 3 días naturales.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            4.1. Porcentaje de terminales comprobados cada 15 días.<br>
+            4.2. Porcentaje de averías que se reparan en 48 horas o menos.<br>
+            4.3. Porcentaje de averías que se reparan en un tiempo máximo de 3 días naturales.</li>
+          </ul>
+        </li>
+
+        <li>Todas las personas usuarias de Teleasistencia con perfil de <strong>riesgo severo</strong> (viven solos, no salen del domicilio habitualmente y cuentan con escaso apoyo social) recibirán al menos 2 llamadas de seguimiento semanales.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            5.1. Porcentaje de usuarias/os con perfil de riesgo severo que recibe al menos 2 <strong>llamadas de seguimiento</strong> semanales.</li>
+          </ul>
+        </li>
+
+        <li>Quienes usando la Teleasistencia soliciten el servicio de asesoramiento telefónico en materia jurídica, económica, social y psicológica, serán atendidos.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            6.1. Porcentaje de usuarias/os de Teleasistencia que, habiendo solicitado el servicio de asesoramiento, han sido atendidos.</li>
+          </ul>
+        </li>
+
+        <li>Todo el personal que trabaja en el Servicio de Teleasistencia domiciliaria tendrá la <strong>titulación exigida</strong> y <strong>recibirá</strong> (salvo motivo de baja laboral o causas de fuerza mayor) una <strong>formación específica</strong> de al menos 7 horas anuales para las funciones que realiza.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            7.1. Porcentaje de profesionales con la titulación exigida.<br>
+            7.2. Porcentaje de trabajadoras/es que han recibido (salvo motivo de baja laboral o causas de fuerza mayor) formación específica durante al menos 7 horas anuales.</li>
+          </ul>
+        </li>
+
+        <li>Todo el personal que presta el servicio atenderá con <strong>un trato amable y respetuoso</strong>. El 95% de usuarias/os valorará el trato recibido con una puntuación igual o superior a 7 y no más del 1% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            8.1. Porcentaje de usuarias/os que valora el trato recibido con una puntuación igual o superior a 7.<br>
+            8.2. Porcentaje de usuarias/os que valora el trato recibido con una puntuación inferior a 5.</li>
+          </ul>
+        </li>
+
+        <li>El Servicio de Teleasistencia se prestará de tal forma que las personas usuarias <strong>estén satisfechos</strong> con el mismo. El 90% valorará la satisfacción global con el Servicio de Teleasistencia con una puntuación igual o superior a 7 y no más del 2% lo valorará por debajo de 5, en una escala de 0 a 10. Al menos el 95% lo considerará recomendable para otras personas.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            9.1. Porcentaje de usuarias/os que valora globalmente el Servicio de Teleasistencia con una puntuación igual o superior a 7.<br>
+            9.2. Porcentaje de usuarias/os que valora globalmente el Servicio de Teleasistencia con una puntuación inferior a 5.<br>
+            9.3. Porcentaje de usuarias/os que considera recomendable el Servicio para personas en similares circunstancias a las suyas.</li>
+          </ul>
+        </li>
+
+        <li>Se recibirán y tramitarán las <strong>sugerencias, reclamaciones y felicitaciones</strong> presentadas por la ciudadanía relativas a los servicios prestados por el Servicio de Teleasistencia, se contestarán de forma adecuada y con la mayor celeridad posible y a partir de ellas, se pondrán en marcha acciones de mejora del servicio. El 60% de las sugerencias, reclamaciones y felicitaciones se contestarán en un plazo  máximo de 30 días hábiles desde su presentación y, en ningún caso, en un plazo superior a 3 meses; aumentando, con respecto al año anterior, las contestadas en 15 días hábiles o menos desde su presentación.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            10.1. Sugerencias, reclamaciones y felicitaciones relativas a los servicios prestados por el Servicio de Teleasistencia.<br>
+            10.2. Porcentaje de sugerencias, reclamaciones y felicitaciones contestadas en un plazo menor o igual a 30 días hábiles desde su presentación.<br>
+            10.3. Porcentaje de sugerencias, reclamaciones y felicitaciones contestadas en menos de 3 meses.<br>
+            10.4. Porcentaje de sugerencias, reclamaciones y felicitaciones contestadas dentro de los 15 días hábiles siguientes a su presentación.<br>
+            10.5. Tiempo medio de contestación de las sugerencias, reclamaciones y felicitaciones relativas al Servicio de Teleasistencia.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><strong>Medidas de subsanación</strong>: quienes consideren que se ha incumplido alguno de los compromisos anteriormente recogidos, podrán comunicarlo a través del Sistema de Sugerencias y Reclamaciones del Ayuntamiento de Madrid (apartado 6 de esta Carta de Servicios). En caso de incumplimiento, se les enviará un escrito informando de las causas por las que el compromiso no pudo cumplirse, así como, de las medidas adoptadas para corregir la deficiencia detectada, si fuera posible.</p>
+
+      <p><strong>Seguimiento y evaluación</strong>: los resultados de los indicadores establecidos para medir el cumplimiento de los compromisos de esta Carta de Servicios, se pueden consultar en <a href="http://www.madrid.es" target="_blank" title="(se abre en ventana nueva)">www.madrid.es</a>, en <a href="www-1.munimadrid.es/SBAE_263_SF_CS_Internet/carta.do?Key=16842&Value=19.-+Servicio+de+Teleasistencia+Domiciliaria+" target="_blank" title="(se abre en ventana nueva)">Ayuntamiento / Observatorio de la Ciudad / Sistema de Cartas de Servicios</a>. Estos resultados son evaluados anualmente.</p>
+
+      <h2>9. Datos de carácter complementario</h2>
+
+      <h3>Órgano directivo responsable</h3>
+      <p>Dirección General de Mayores, Atención Social, Inclusión Social y Atención a la Emergencia<br>
+      Pº Chopera, 41, 1ª planta. 28045 Madrid<br>
+      Correo electrónico: dgmayores@madrid.es<br>
+      Teléfono: 91 480 11 00</p>
+
+      <h3>Horario de atención de los Centros de Atención de llamadas de Teleasistencia</h3>
+      <p>El servicio permanecerá en funcionamiento las 24 horas del día, los 365 días del año.</p>
+
+      <h3>Personal que presta el Servicio de Teleasistencia</h3>
+      <p>Para la prestación de la Teleasistencia Domiciliaria, el servicio cuenta con diferentes perfiles profesionales. <strong>El/la coordinador/a</strong> debe ser diplomado/a en Trabajo Social o Terapia Ocupacional, <strong>los/as teleoperadores/as</strong> deben contar con titulación de bachiller o equivalente, <strong>el personal encargado del asesoramiento y apoyo</strong> en las llamadas de emergencia deberá ser Diplomado Universitario en Enfermería, <strong>los/as oficiales de Unidad Móvil</strong> deben tener titulación de bachiller o equivalente, y, por último, <strong>los/as instaladores/as</strong> deberán contar con la formación técnica adecuada.</p>
+
+      <p>Para garantizar la seguridad y la tranquilidad de las/os usuarias/os, las/os trabajadoras/es que acudan al domicilio estarán <strong>perfectamente identificados, portando el logotipo del Ayuntamiento de Madrid en lugar bien visible</strong>.</p>
+
+      <h3>Coste del Servicio de Teleasistencia</h3>
+      <p>La aportación de las personas usuarias al coste del servicio estará en función de la Renta Mensual Per Cápita (RMPC), es decir, de su capacidad económica. Para el cálculo de la RMPC se tendrán en cuenta los ingresos de todos los miembros de la unidad familiar. La suma de dichos ingresos anuales divididos por el número de miembros (ó por 1,5 en el caso de personas que vivan solas) dará como resultado la Renta Mensual Per Cápita, que será la base para determinar la aportación de cada familia.</p>
+
+      <p>Se establece por tanto una <strong>cuota única por domicilio</strong>, independientemente del número de beneficiarios del servicio.</p>
+
+      <p>El baremo de aportación es el siguiente:</p>
+
+      <h4>Renta mensual per cápita</h4>
+      <ul>
+        <li>Hasta 614,29 euros: aportación 0 euros</li>
+        <li>De 614,30 a 768,30 euros: aportación 6 euros</li>
+        <li>De 768,31 a 999,32 euros: aportación 9 euros</li>
+        <li>Desde 999,33 euros: aportación 12 euros</li>
+      </ul>
+
+      <h4>Ingresos mensuales de la unidad familiar</h4>
+
+      <p>UNIDAD FAMILIAR COMPUESTA DE <u>UNA SOLA PERSONA</u>:</p>
+      <ul>
+        <li>Si los ingresos mensuales son hasta 921,43: aportación de 0 euros.</li>
+        <li>Si los ingresos mensuales son de 921, 44 a 1.152,40: aportación de 6 euros</li>
+        <li>Si los ingresos mensuales son de 1.152,41 a 1.498,98: aportación de 9 euros</li>
+        <li>Si los ingresos mensuales son desde 1.498,98: la aportación de 12 euros</li>
+      </ul>
+
+      <p>UNIDAD FAMILIAR COMPUESTA DE <u>DOS PERSONAS</u>:</p>
+      <ul>
+        <li>Si los ingresos mensuales son hasta 1.228,58: aportación de 0 euros.</li>
+        <li>Si los ingresos mensuales son de 1.228,59 a 1.536,59: aportación de 6 euros</li>
+        <li>Si los ingresos mensuales son de 1.536,60 a 1.998,64: aportación de 9 euros</li>
+        <li>Si los ingresos mensuales son desde 1.998,65: aportación de 12 euros</li>
+      </ul>
+
+      <p>El servicio de asesoramiento telefónico se presta de forma gratuita.</p>
+      <p>Las llamadas que emiten las/os usuarias/os al Centro de Atención de llamadas son a su cargo.</p>
+
+      <h3>Acceso a la información y solicitud del Servicio de Teleasistencia Municipal</h3>
+
+      <p>La <strong>información</strong> está disponible en:</p>
+      <ul>
+        <li>Teléfono de información del Ayuntamiento de Madrid: 010</li>
+        <li>Internet: <a href="http://www.madrid.es" target="_blank" title="(se abre en ventana nueva)">www.madrid.es</a></li>
+        <li>Internet: <a href="http://www.madridmayor.es" target="_blank" title="(se abre en ventana nueva)">www.madridmayor.es</a></li>
+      </ul>
+
+      <p>El <strong>servicio puede solicitarse</strong> de forma presencial en los Centros Municipales de Servicios Sociales de cada uno de los distritos de la ciudad de Madrid. También puede solicitarse en línea en la página web <a href="http://www.madrid.es" target="_blank" title="(se abre en ventana nueva)">www.madrid.es</a>, a través del enlace al Registro Electrónico disponible en el apartado <em>Tramitar - En línea</em>, o en cualquier registro.</p>
+
+      <p>Con carácter excepcional, las personas mayores de 65 años que vivan solos pueden solicitarlo a través del Teléfono 010, siempre que autoricen la consulta de sus ingresos a la Agencia Tributaria, o en las Oficinas de Atención a la Ciudadanía de Línea Madrid.</p>
+
+      <p><a href="www.madrid.es/portales/munimadrid/es/Inicio/Ayuntamiento/Servicios-Sociales/Centros-de-Servicios-Sociales-Municipales?vgnextfmt=default&vgnextoid=51886e0cfb6da010VgnVCM100000d90ca8c0RCRD&vgnextchannel=fe8a171c30036010VgnVCM100000dc0ca8c0RCRD" target="_blank" title="(se abre en ventana nueva)">Los 21 Centros Municipales de Servicios Sociales del municipio de Madrid</a></p>
+
+      <p>En las direcciones y teléfonos de los centros de Servicios Sociales se puede obtener información sobre otros servicios del Ayuntamiento de Madrid para personas mayores y personas con discapacidad, como son:</p>
+      <ul>
+        <li>Centros Municipales de Mayores (Tarjeta madridmayor.es).</li>
+        <li>Centros residenciales.</li>
+        <li>Centros de Día:
+          <ul>
+            <li>Para mayores con deterioro cognitivo tipo Alzheimer</li>
+            <li>Para mayores con deterioro físico</li>
+            <li>Respiro familiar de fin de semana</li>
+            <li>Para personas con discapacidad</li>
+          </ul>
+        </li>
+        <li>Servicios de Ayuda a Domicilio:
+          <ul>
+            <li>Auxiliar domiciliario</li>
+            <li>Lavandería domiciliaria</li>
+            <li>Comidas a domicilio</li>
+            <li>Productos de apoyo (camas articuladas y grúas geriátricas).</li>
+          </ul>
+        </li>
+        <li>Fisioterapia preventiva.</li>
+        <li>Adaptaciones geriátricas del domicilio (ayudas económicas).</li>
+        <li>Programas de apoyo a cuidadores familiares, prevención de la dependencia, convivencia intergeneracional, detección de mayores en situación de riesgo, ejercicio físico al aire libre.</li>
+        <li>Respiro familiar para personas con discapacidad.</li>
+        <li>Centro ocupacional para personas con discapacidad.</li>
+      </ul>
+    </section>
+  </div>
+</div>

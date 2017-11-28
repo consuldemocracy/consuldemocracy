@@ -5,6 +5,7 @@ module Budgets
     include FlagActions
 
     before_action :authenticate_user!, except: [:index, :show]
+    before_action :load_budget
 
     load_and_authorize_resource :budget
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
@@ -15,6 +16,7 @@ module Budgets
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
+    before_action :set_view, only: :index
 
     feature_flag :budgets
 
@@ -29,10 +31,8 @@ module Budgets
 
     def index
       @investments = investments.page(params[:page]).per(10).for_render
-
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
-      @tag_cloud = tag_cloud
     end
 
     def new
@@ -88,15 +88,24 @@ module Budgets
         "budget_investment"
       end
 
+      def load_investments
+        @investments = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}")
+        if @view == "default"
+          @investments = @investments.page(params[:page]).per(10).for_render
+        end
+      end
+
       def load_investment_votes(investments)
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
       end
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          seed = rand(10..99) / 10.0
+          seed = params[:random_seed] || session[:random_seed] || rand(10..99) / 10.0
           params[:random_seed] ||= Float(seed) rescue 0
+          session[:random_seed] = params[:random_seed]
         else
+          session[:random_seed] = nil
           params[:random_seed] = nil
         end
       end
@@ -117,9 +126,22 @@ module Budgets
 
       def load_heading
         if params[:heading_id].present?
-          @heading = @budget.headings.find(params[:heading_id])
-          @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+          load_heading_from_slug
+          load_assigned_heading
+          set_heading_id_from_slug
         end
+      end
+
+      def load_heading_from_slug
+        @heading = @budget.headings.find_by(slug: params[:heading_id]) || @budget.headings.find_by(id: params[:heading_id])
+      end
+
+      def load_assigned_heading
+        @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+      end
+
+      def set_heading_id_from_slug
+        params[:heading_id] = @heading.try(:id)
       end
 
       def load_categories
@@ -128,6 +150,18 @@ module Budgets
 
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
+      end
+
+      def load_budget
+        @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      end
+
+      def set_view
+        if params[:view] == "minimal"
+          @view = "minimal"
+        else
+          @view = "default"
+        end
       end
 
       def investments
@@ -140,7 +174,5 @@ module Budgets
                       .send("sort_by_#{@current_order}")
         end
       end
-
   end
-
 end

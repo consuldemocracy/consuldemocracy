@@ -109,6 +109,70 @@ feature 'Debates' do
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
   end
 
+  scenario 'Create (predefined tag in url)' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path(tag: "open-plenary")
+    fill_in_debate
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate created successfully.'
+    within "#tags_debate_#{Debate.last.id}" do
+      expect(page).to have_content "open-plenary"
+    end
+  end
+
+  scenario 'Create (debate for questions as admin)' do
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    visit new_debate_path(tag: "open-plenary")
+    fill_in_debate
+    select 'Question', from: 'debate_comment_kind'
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate created successfully.'
+    within("#debate_#{Debate.last.id}") do
+      expect(page).to have_content "No questions"
+    end
+
+    within("#comments") do
+      expect(page).to have_content "Questions (0)"
+      expect(page).to have_content "Leave your question"
+      expect(page).to have_button "Publish question"
+    end
+  end
+
+  scenario 'Create (debate for comments as admin)' do
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    visit new_debate_path(tag: "open-plenary")
+    fill_in_debate
+    select 'Comment', from: 'debate_comment_kind'
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate created successfully.'
+    within("#debate_#{Debate.last.id}") do
+      expect(page).to have_content "No comments"
+    end
+
+    within("#comments") do
+      expect(page).to have_content "Comments (0)"
+      expect(page).to have_content "Leave your comment"
+      expect(page).to have_button "Publish comment"
+    end
+  end
+
+  scenario 'Create (debate for questions as user)' do
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    visit new_debate_path(tag: "open-plenary")
+    expect(page).to_not have_css 'debate_comment_kind'
+  end
+
   scenario 'Create with invisible_captcha honeypot field' do
     author = create(:user)
     login_as(author)

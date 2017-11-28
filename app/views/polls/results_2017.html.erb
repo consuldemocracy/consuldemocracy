@@ -1,0 +1,156 @@
+<% provide :title,             t("first_2017_poll.results.title") %>
+<% provide :meta_description,  t("first_2017_poll.results.description") %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: first_voting_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+  <!-- Facebook -->
+  <meta property="og:url"            content="<%= first_voting_url %>" />
+  <meta property="og:title"          content="<%= t("first_2017_poll.results.title") %>" />
+  <meta property="og:image"          content="<%= image_url '/social_media_polls_results.png' %>" />
+  <meta property="og:description"    content="<%= t("first_2017_poll.results.description") %>" />
+  <!-- Twitter -->
+  <meta name="twitter:card"          content="summary" />
+  <meta name="twitter:site"          content="@DecideMadrid" />
+  <meta name="twitter:title"         content="<%= t("first_2017_poll.results.title") %>" />
+  <meta name="twitter:image"         content="<%= image_url '/social_media_polls_results_twitter.png' %>" />
+  <meta name="twitter:description"   content="<%= t("first_2017_poll.results.description") %>" />
+<% end %>
+
+<div class="polls-results">
+  <div class="header no-margin-top">
+    <div class="row">
+      <div class="small-12 column">
+        <h1 class="inline-block">
+          <%= t("polls.results").upcase %>
+          <span><%= t("first_2017_poll.title") %></span>
+          <span><%= t("first_2017_poll.date") %></span>
+        </h1>
+
+        <div class="more-info">
+          <p><%= t("polls.full_recount_results") %></p>
+          <div class="text-right">
+            <%= link_to t("polls.more_poll_info"), more_info_polls_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 column margin-bottom">
+      <h2 class="reports">Informes técnicos</h2>
+    </div>
+    <div class="small-12 medium-6 column">
+      <figure class="figure-card pdf">
+        <%= link_to "/docs/informe_tecnico_100_sostenible.pdf", target: "_blank",
+                    title: t("polls_reports.label") + ' - ' + t("polls_reports.title_1") + ' - ' + 'PDF 712kb' do %>
+          <%= image_tag "landings/first_voting_sustainable_report.jpg", alt: t("polls_reports.img_alt_1") %>
+        <% end %>
+        <figcaption>
+          <%= link_to "/docs/informe_tecnico_100_sostenible.pdf", target: "_blank",
+                      title: t("polls_reports.label") + ' - ' + t("polls_reports.title_1") + ' - ' + 'PDF 712kb' do %>
+            <span><%= t("polls_reports.label") %></span><br>
+            <p class="title"><%= t("polls_reports.title_1") %></p>
+          <% end %>
+        </figcaption>
+      </figure>
+      <p><%= t("polls_reports.description_1_html") %></p>
+      <p>
+        <%= link_to t("polls_reports.button"), "/docs/informe_tecnico_100_sostenible.pdf", target: "_blank",
+                    title: t("polls_reports.label") + ' - ' + t("polls_reports.title_1") + ' - ' + 'PDF 712kb',
+                    class: "button hollow" %>
+      </p>
+    </div>
+    <div class="small-12 medium-6 column">
+      <figure class="figure-card pdf">
+        <%= link_to "/docs/informe_tecnico_billete_unico.pdf", target: "_blank",
+                      title: t("polls_reports.label") + ' - ' + t("polls_reports.title_2") + ' - ' + 'PDF 514kb' do %>
+          <%= image_tag "landings/first_voting_transport_report.jpg", alt: t("polls_reports.img_alt_2") %>
+        <% end %>
+        <figcaption>
+          <%= link_to "/docs/informe_tecnico_billete_unico.pdf", target: "_blank",
+                        title: t("polls_reports.label") + ' - ' + t("polls_reports.title_2") + ' - ' + 'PDF 514kb' do %>
+            <span><%= t("polls_reports.label") %></span><br>
+            <p class="title"><%= t("polls_reports.title_2") %></p>
+          <% end %>
+        </figcaption>
+      </figure>
+      <p><%= t("polls_reports.description_2_html") %></p>
+      <p>
+        <%= link_to t("polls_reports.button"), "/docs/informe_tecnico_billete_unico.pdf", target: "_blank",
+                    title: t("polls_reports.label") + ' - ' + t("polls_reports.title_2") + ' - ' + 'PDF 514kb',
+                    class: "button hollow" %>
+      </p>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 column">
+      <ul class="tabs">
+        <li class="tabs-title is-active">
+          <span class="is-active">Resultados</span>
+        </li>
+        <li class="tabs-title">
+          <%= link_to "Estadísticas", primera_votacion_stats_path %>
+        </li>
+        <li class="tabs-title">
+          <%= link_to "Información", primera_votacion_info_path %>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-3 column sidebar">
+      <p>TODA LA CIUDAD</p>
+
+      <ul class="menu vertical margin-top">
+        <li><a href="#1">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</a></li>
+        <li><a href="#2">Gran Vía</a></li>
+      </ul>
+
+      <p>DISTRITOS</p>
+      <ul class="menu vertical margin-top">
+        <li><a href="#3">Prioriza el Plan Participativo de Actuación Territorial de Barajas</a></li>
+        <li><a href="#4">Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas</a></li>
+        <li><a href="#5">Nombre de distrito y Parque Felipe VI en Hortaleza</a></li>
+        <li><a href="#6">Nombres de centros culturales en Retiro</a></li>
+        <li><a href="#7">¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?</a></li>
+        <li><a href="#8">¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-9 column">
+      <h2 class="show-for-sr">TODA LA CIUDAD</h2>
+
+      <% cache ["results:polls_2017:rake_task:#{Stat.named('polls_2017_cache', 'keys', 'stats').value}"] do %>
+        <!-- Propuestas y Plaza de España -->
+        <%= render "polls/results_2017/poll_1" %>
+
+        <!-- Gran Vía -->
+        <%= render "polls/results_2017/poll_2" %>
+
+        <h2 class="show-for-sr">DISTRITOS</h2>
+
+        <!-- Barajas -->
+        <%= render "polls/results_2017/poll_3" %>
+
+        <!-- San Blas - Canillejas -->
+        <%= render "polls/results_2017/poll_4" %>
+
+        <!-- Hortaleza -->
+        <%= render "polls/results_2017/poll_5" %>
+
+        <!-- Retiro -->
+        <%= render "polls/results_2017/poll_6" %>
+
+        <!-- Salamanca -->
+        <%= render "polls/results_2017/poll_7" %>
+
+        <!-- Vicálvaro -->
+        <%= render "polls/results_2017/poll_8" %>
+      <% end %>
+    </div>
+  </div>
+</div>

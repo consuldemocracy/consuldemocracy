@@ -13,14 +13,14 @@ module Budgets
     private
 
       def load_budget
-        @budget = Budget.find_by(id: params[:budget_id])
+        @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:id]) || Budget.first
       end
 
       def load_heading
         @heading = if params[:heading_id].present?
-                     @budget.headings.find(params[:heading_id])
+                     @budget.headings.find_by(slug: params[:heading_id])
                    else
-                     @budget.headings.first
+                     @heading = @budget.headings.first
                    end
       end
 

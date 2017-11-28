@@ -10,5 +10,8 @@ class Budget
     validates :name, presence: true, uniqueness: { scope: :budget }
     validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
 
+    def to_param
+      name.parameterize
+    end
   end
 end

@@ -13,6 +13,8 @@ es:
       unmark_featured: Quitar destacado
       edit: Editar
       configure: Configurar
+    officing_booth:
+      title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
       index:
         title: Banners
@@ -70,10 +72,10 @@ es:
         filters:
           current: Abiertos
           finished: Terminados
-        budget_investments: Ver propuestas de inversión
+        budget_investments: Ver proyectos de gasto
         table_name: Nombre
         table_phase: Fase
-        table_investments: Propuestas de inversión
+        table_investments: Proyectos de gasto
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
@@ -114,17 +116,19 @@ es:
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
+        max_per_heading: Corte por partida
         filters:
-          valuation_open: Abiertas
+          valuation_open: Abiertos
           without_admin: Sin administrador
           managed: Gestionando
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
           valuation_finished_feasible: Viables
+          selected: Seleccionados
           selected: Seleccionadas
           winners: Ganadoras
           all: Todas
-        title: Propuestas de inversión
+        title: Proyectos de gasto
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
@@ -132,7 +136,7 @@ es:
           feasible: "Viable (%{price})"
           unfeasible: "Inviable"
           undecided: "Sin decidir"
-        selected: "Seleccionada"
+        selected: "Seleccionado"
         select: "Seleccionar"
         table_id: "ID"
         table_title: "Título"
@@ -143,6 +147,7 @@ es:
         table_feasibility: "Viabilidad"
         table_valuation_finished: "Ev. Fin."
         table_selection: "Selección"
+        table_evaluation: "Evaluación"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignado
@@ -152,6 +157,8 @@ es:
         edit: Editar
         edit_classification: Editar clasificación
         by: Autor
+        organization_name: En nombre de
+        label: Chapa (visible públicamente)
         sent: Fecha
         group: Grupo
         heading: Partida
@@ -183,6 +190,7 @@ es:
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
+        label: Chapa (visible públicamente)
         user_tags: Etiquetas asignadas por el usuario
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
@@ -244,6 +252,7 @@ es:
       show:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
+        phone: 'Teléfono:'
         registered_at: 'Fecha de alta:'
         title: Actividad del usuario (%{user})
     legislation:
@@ -488,11 +497,11 @@ es:
       search:
         title: 'Evaluadores: Búsqueda de usuarios'
       summary:
-        title: Resumen de evaluación de propuestas de inversión
+        title: Resumen de evaluación de proyectos de gasto
         valuator_name: Evaluador
-        finished_and_feasible_count: Finalizadas viables
-        finished_and_unfeasible_count: Finalizadas inviables
-        finished_count: Finalizadas
+        finished_and_feasible_count: Finalizados viables
+        finished_and_unfeasible_count: Finalizados inviables
+        finished_count: Finalizados
         in_evaluation_count: En evaluación
         total_count: Total
         cost: Coste total
@@ -536,7 +545,7 @@ es:
         search_officer_placeholder: Buscar presidentes de mesa
         search_officer_text: Busca al presidente de mesa para asignar un turno
         select_date: "Seleccionar día"
-        no_voting_days: "Voting days ended"
+        no_voting_days: "Los dias de votación terminaron"
         select_task: "Seleccionar tarea"
         table_shift: "Turno"
         table_email: "Email"
@@ -678,6 +687,9 @@ es:
       index:
         title: "Recuentos"
         no_recounts: "No hay nada de lo que hacer recuento"
+        all_booths_total: "Acumulado en todas las urnas:"
+        total_final: Recuentos finales
+        total_system: Votos (automático)
         table_booth_name: "Urna"
         table_total_recount: "Recuento total (presidente de mesa)"
         table_system_count: "Votos (automático)"
@@ -708,6 +720,7 @@ es:
         title: "Nueva urna"
         name: "Nombre"
         location: "Ubicación"
+        physical: "Urna física"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"
@@ -829,6 +842,8 @@ es:
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
+        max_per_geozone: Corte por distrito
+        max_for_no_geozone: Corte por ciudad
         filters:
           valuation_open: Abiertas
           without_admin: Sin administrador
@@ -869,9 +884,18 @@ es:
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
+        compatibility: Compatibilidad
+      results:
+        title: Ranking actual de propuestas - Votaciones finales
+        spending_proposal: Título
+        ballot_lines_count: Votos
+        hide_discarded_link: Ocultar descartadas
+        show_all_link: Mostrar todas
+        price: Coste
+        amount_available: Presupuesto disponible
+        incompatible: Incompatibles
       summary:
         title: Resumen de propuestas de inversión
-        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
         geozone_name: Ámbito de ciudad
         finished_and_feasible_count: Finalizadas viables
         finished_and_unfeasible_count: Finalizadas inviables
@@ -934,16 +958,28 @@ es:
     stats:
       show:
         stats_title: Estadísticas
+        participatory_budget_2016: Presupuestos Participativos 2016
+        participatory_budgets: Presupuestos Participativos
+        polls: Votaciones
+        direct_messages: Mensajes directos
+        proposal_notifications: Notificaciones de propuestas
+        redeemable_codes: Códigos enviados por carta
+        user_invites: Invitaciones Linea Madrid
+        external_stats: Estadísticas externas
+        incomplete_verifications: Verificaciones incompletas
         summary:
+          ballot_line_votes: Votos en inversión
+          ballot_votes: Presupuestos votados
           comment_votes: Votos en comentarios
           comments: Comentarios
           debate_votes: Votos en debates
           debates: Debates
           proposal_votes: Votos en propuestas
           proposals: Propuestas
+          spending_proposal_votes: Votos Propuesta Inversión
+          spending_proposals: Propuestas de inversión
           budgets: Presupuestos abiertos
           budget_investments: Propuestas de inversión
-          spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos
@@ -954,18 +990,81 @@ es:
           votes: Votos
         spending_proposals_title: Propuestas de inversión
         budgets_title: Presupuestos participativos
-        visits_title: Visitas
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
+      graph:
+        debate_created: Debates
+        spending_proposals: Propuestas de inversión
+        visit: Visitas
+        level_2_user: Usuarios nivel 2
+        proposal_created: Propuestas Ciudadanas
+        participatory_budget: Presupuestos Participativos
+        user_voted_budgets: Usuarios que han votado
+        user_supported_budgets: Usuarios que han votado
+        unverified_users: Usuarios sin verificar
+      spending_proposals:
+        title: Presupuestos participativos
+        districts: Distrito
+        users: Usuarios
+        users_city_total: Usuarios que han votado propuestas de ciudad
+        users_district_total: Usuarios que han votado propuestas de distrito
+        users_city_only: Usuarios que han votado SOLO propuestas de CIUDAD
+        users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
+        users_both_total: Usuarios que han votado AMBAS
+      budgets:
+        title: "Presupuestos participativos - Estadisticas de participación"
+        supporting_phase: Fase de apoyos
+        balloting_phase: Votación final
+      budget_balloting:
+        title: "Estadísticas votación final"
+        vote_count: Votos
+        participant_count: Participantes
+        users_city_total: Usuarios que han votado propuestas de ciudad
+        users_district_total: Usuarios que han votado propuestas de distrito
+        users_both_total: Usuarios que han votado AMBAS
+        votes_per_heading: Votos por partida
+        participants_per_district: Participantes por distrito
+      budget_supporting:
+        title: "Estadísticas fase de apoyos"
+        headings: Partidas
+        users: Usuarios
+        users_city_total: Usuarios que han apoyado propuestas de ciudad
+        users_district_total: Usuarios que han apoyado propuestas de distrito
+        users_city_only: Usuarios que han apoyado SOLO propuestas de CIUDAD
+        users_district_only: Usuarios que han apoyado SOLO propuestas de DISTRITO
+        users_both_total: Usuarios que han apoyado AMBAS
+        vote_count: Votos
+        participant_count: Participantes
       direct_messages:
         title: Mensajes directos
         total: Total
         users_who_have_sent_message: Usuarios que han enviado un mensaje privado
+      polls:
+        title: Estadísticas de votaciones
+        all: Votaciones
+        web_participants: Participantes en Web
+        total_participants: Participantes totales
+        poll_questions: "Preguntas de votación: %{poll}"
+        table:
+          poll_name: Votación
+          question_name: Pregunta
+          origin_web: Participantes Web
+          origin_total: Participantes Totales
       proposal_notifications:
         title: Notificaciones de propuestas
         total: Total
         proposals_with_notifications: Propuestas con notificaciones
+        not_available: Esta propuesta ya no está disponible
+      reedemable_codes:
+        title: Códigos enviados por carta
+        total: Total
+        campaign: Después de las 400.000 cartas
+      user_invites:
+        title: Invitaciones Linea Madrid
+        total: Total
+        clicked_email_link: Link del email clickado
+        clicked_signup_button: Botón de registrarse clickado
     tags:
       create: Crear tema
       destroy: Eliminar tema

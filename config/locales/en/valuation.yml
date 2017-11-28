@@ -105,6 +105,7 @@ en:
         responsibles: Responsibles
         assigned_admin: Assigned admin
         assigned_valuators: Assigned valuators
+        vote_count: Votes
       edit:
         dossier: Dossier
         price_html: "Price (%{currency})"

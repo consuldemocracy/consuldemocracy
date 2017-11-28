@@ -1,0 +1,93 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: open_government_doc_url %>
+<% end %>
+
+<div class="row margin">
+  <div class="small-12 column">
+    <%= back_link_to %>
+
+    <div class="float-right legislation">
+      <a class="button warning" type="button" data-toggle="annotator-help">
+        <sub><span class="icon-edit"></span></sub>&nbsp;
+        <%= t("annotator.help.title") %>
+      </a>
+
+      <div class="dropdown-pane" id="annotator-help" data-dropdown data-auto-focus="true">
+        <% if user_signed_in? %>
+          <%= t("annotator.help.alt") %>
+        <% else %>
+          <p>
+            <%= t("annotator.help.text",
+                sign_in: link_to(t("annotator.help.text_sign_in"), new_user_session_path),
+                sign_up: link_to(t("annotator.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          </p>
+        <% end %>
+
+        <%= image_tag ("annotator_help.gif"), alt: t("annotator.help.alt") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-10 small-centered column">
+    <section data-annotatable-type="legislation"
+             data-annotatable-id="8"
+             data-annotatable-readonly="true"
+             id="open_government_body">
+
+      <h1 class="text-center">Primer Plan de acción de la Ciudad de Madrid para el OGP</h1>
+
+      <h2>Índice</h2>
+      <ul class="no-bullet">
+        <li><a href="#1">1. Creación de un registro de lobbies obligatorio</a></li>
+        <li><a href="#2">2. Desarrollo de un nuevo portal de transparencia para el Ayuntamiento de Madrid</a></li>
+        <li><a href="#3">3. Desarrollo de los presupuestos participativos</a></li>
+        <li><a href="#4">4. Extensión de la política de participación ciudadana</a></li>
+        <li><a href="#5">5. Desarrollo de mecanismos eficaces de legislación colaborativa.</a></li>
+      </ul>
+
+      <h2 id="1">1. Creación de un registro de lobbies obligatorio</h2>
+
+      <p>La Ordenanza de Transparencia de la Ciudad de Madrid, aprobada el 27  de julio de 2016 por el Pleno del Ayuntamiento de Madrid, incluye en su articulado la creación de un Registro de lobbies obligatorio. Con la intención de hacer de esta obligación legal una realidad lo antes posible el Ayuntamiento de Madrid se compromete a:</p>
+      <ul>
+        <li>Crear y poner en marcha el Registro de lobbies durante el año 2017.</li>
+        <li>Establecer un sistema de registro que sea sencillo y que no suponga una carga excesiva para aquellos obligados a la inscripción. Este sistema será digital (aunque también se dará la opción de un registro presencial) y deberá poder completarse de manera rápida y sin la necesidad de presentar ninguna documentación de manera presencial.</li>
+        <li>Establecer un sistema de promoción del registro de Lobbies a través del cual aquellos inscritos puedan beneficiarse de algunas medidas tales como: la inscripción voluntaria en un sistema de alertas por temas donde se informará sobre procesos de toma de decisión o la posibilidad de solicitar reuniones con cualquier área del Ayuntamiento de Madrid a través de la web del Registro de Lobbies.</li>
+      </ul>
+
+      <h2 id="2">2. Desarrollo de un nuevo portal de transparencia para el Ayuntamiento de Madrid</h2>
+      <p>La Ordenanza de Transparencia de la Ciudad de Madrid, aprobada el 27  de julio de 2016 por el Pleno del Ayuntamiento de Madrid, incluye entre sus medidas una ampliación ambiciosa de las obligaciones de publicidad activa del Ayuntamiento de Madrid, superando con creces lo establecido en la Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.</p>
+
+      <p>Además de este compromiso legal, el Ayuntamiento de Madrid plantea la creación de un nuevo portal de transparencia que permita mejorar la accesibilidad de la información que ofrece. En concreto este nuevo portal incluirá:</p>
+      <ul>
+        <li>Toda la información contemplada en la Ordenanza de Transparencia.</li>
+        <li>La publicación de la información en formatos abiertos.</li>
+        <li>El uso de visualizaciones que permitan la mejor comprensión de la información que se ofrece.</li>
+        <li>Un espacio donde poder consultar las solicitudes de información que ha recibido el Ayuntamiento de Madrid así como las repuestas que este ha dado a las mismas.</li>
+      </ul>
+
+      <h2 id="3">3. Desarrollo de los presupuestos participativos</h2>
+      <p>Durante el año 2016 se realizó el primer proceso de presupuestos participativos de la Ciudad de Madrid. El Ayuntamiento de Madrid se compromete a ampliar el alcance del proceso, y profundizar en los mecanismos de participación y transparencia del mismo a través de las siguientes medidas:</p>
+      <ul>
+        <li>Ampliar el presupuesto del Ayuntamiento decidido por los vecinos de manera relevante en comparación con la cantidad dispuesta en el primer año.</li>
+        <li>Crear un sistema de seguimiento de los proyectos, que permita conocer de manera abierta y sencilla el estado posterior de cada proyecto aprobado hasta su ejecución final y a través de cada fase intermedia por la que pase.</li>
+        <li>Crear mecanismos de participación que permitan la participación colectiva en la definición posterior de los proyectos seleccionados antes de su ejecución o ayuden a la participación colectiva en su definición inicial</li>
+      </ul>
+
+      <h2 id="4">4. Extensión de la política de participación ciudadana</h2>
+      <p>Desde el Ayuntamiento de Madrid se trabaja para que los mecanismos y medios de participación se extiendan a otros ayuntamientos, especialmente desarrollando toda la tecnología en software libre para que sea fácilmente accesibles para todos, pero también compartiendo conocimiento en torno a estos procesos. Actualmente se comparte la plataforma de participación con algunas de las ciudades más grandes del país como Barcelona y Valencia, y otras ciudades están interesadas en sumarse a esta red. El Ayuntamiento de Madrid se compromete a:</p>
+      <ul>
+        <li>Extender el modelo de participación directa a un número relevante de ciudades en comparación con las que actualmente comparten el modelo.</li>
+        <li>Poner en marcha mecanismos que faciliten esta extensión permitiendo un crecimiento más rápido y una menor necesidad de uso de recursos por parte de las otras ciudades tanto para la puesta en marcha como para el desarrollo de los procesos participativos.</li>
+      </ul>
+
+      <h2 id="5">5. Desarrollo de mecanismos eficaces de legislación colaborativa</h2>
+      <p>Desde el Ayuntamiento de Madrid se han puesto en marcha prototipos iniciales de mecanismos de elaboración de normativa de manera colaborativa con la ciudadanía. El Ayuntamiento se compromete a desarrollar dicho sistema a través del siguiente compromiso:</p>
+      <ul>
+        <li>Desarrollo de un sistema que permita a los ciudadanos participar de manera regular y abierta en el desarrollo de textos normativos, tanto en espacios de debate iniciales que orienten la escritura de los textos, como comentando las propuestas de texto concretas. Dicho sistema estaría disponible para todas las áreas y distritos del Ayuntamiento y se impulsaría el que se use de manera regular para la elaboración de cualquier normativa.</li>
+      </ul>
+    </section>
+  </div>
+</div>
+

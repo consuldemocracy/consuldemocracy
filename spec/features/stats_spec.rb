@@ -37,9 +37,9 @@ feature 'Stats' do
     end
 
     scenario 'Users' do
-      1.times { create(:user, :level_three) }
-      2.times { create(:user, :level_two) }
-      2.times { create(:user) }
+      create_list(:user, 2)
+      create_list(:user, 2, :level_two)
+      create(:user, :level_three)
 
       visit stats_path
 

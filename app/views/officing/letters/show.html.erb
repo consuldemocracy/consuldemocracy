@@ -1,0 +1,19 @@
+<h2><%= t("officing.residence.new.title") %></h2>
+
+<div class="callout">
+  <p>Documento: <strong><%= @log.document_number %></strong>
+
+  <% if @log.postal_code == "-1" %>
+    <br>Nombre: <strong>Incorrecto</strong></p>
+  <% else %>
+    <br>Código Postal: <strong><%= @log.postal_code %></strong></p>
+  <% end %>
+</div>
+
+<div class="callout text-center <%= ::Poll::LetterOfficerLog::VALID_MESSAGES.invert[@log.message] %>">
+  <h3><%= @log.message %></h3>
+</div>
+
+<div class="small-12 medium-8 large-6 small-centered">
+  <%= link_to "Introducir nuevo documento", new_officing_letter_path, class: "button expanded" %>
+</div>

@@ -23,13 +23,15 @@ feature 'Budget Investments' do
     investments.each do |investment|
       within('#budget-investments') do
         expect(page).to have_content investment.title
-        expect(page).to have_css("a[href='#{budget_investment_path(budget_id: budget.id, id: investment.id)}']", text: investment.title)
+        expect(page).to have_css("a[href='#{budget_investment_path(budget, id: investment.id)}']", text: investment.title)
         expect(page).to_not have_content(unfeasible_investment.title)
       end
     end
   end
 
   scenario 'Index should show investment descriptive image only when is defined' do
+    Setting['feature.allow_images'] = true
+
     investment = create(:budget_investment, heading: heading)
     investment_with_image = create(:budget_investment, heading: heading)
     image = create(:image, imageable: investment_with_image)
@@ -42,6 +44,8 @@ feature 'Budget Investments' do
     within("#budget_investment_#{investment_with_image.id}") do
       expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
     end
+
+    Setting['feature.allow_images'] = nil
   end
 
   context("Search") do
@@ -99,7 +103,7 @@ feature 'Budget Investments' do
 
       click_link "All City"
 
-      expected_path = budget_investments_path(budget, heading_id: heading.id, filter: "unfeasible")
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading.to_param, filter: "unfeasible")
       expect(page).to have_current_path(expected_path)
     end
 
@@ -116,7 +120,7 @@ feature 'Budget Investments' do
       click_link 'Districts'
       click_link 'Carabanchel'
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unfeasible")
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading1.to_param, filter: "unfeasible")
       expect(page).to have_current_path(expected_path)
     end
   end
@@ -125,8 +129,7 @@ feature 'Budget Investments' do
     before(:each) { budget.update(phase: 'selecting') }
 
     scenario "Default order is random" do
-      per_page = Kaminari.config.default_per_page
-      (per_page + 100).times { create(:budget_investment) }
+      10.times { create(:budget_investment) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
       order = all(".budget-investment h3").collect {|i| i.text }
@@ -138,8 +141,7 @@ feature 'Budget Investments' do
     end
 
     scenario "Random order after another order" do
-      per_page = Kaminari.config.default_per_page
-      (per_page + 2).times { create(:budget_investment) }
+      10.times { create(:budget_investment) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link "highest rated"
@@ -171,6 +173,20 @@ feature 'Budget Investments' do
       expect(order).to eq(new_order)
     end
 
+    scenario 'Random order maintained when going back from show' do
+      10.times { |i| create(:budget_investment, heading: heading) }
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      order = all(".budget-investment h3").collect {|i| i.text }
+
+      click_link Budget::Investment.first.title
+      click_link "Go back"
+
+      new_order = all(".budget-investment h3").collect {|i| i.text }
+      expect(order).to eq(new_order)
+    end
+
     scenario "Investments are not repeated with random order", :js do
       12.times { create(:budget_investment, heading: heading) }
       # 12 instead of per_page + 2 because in each page there are 10 (in this case), not 25
@@ -187,7 +203,6 @@ feature 'Budget Investments' do
       common_values = first_page_investments & second_page_investments
 
       expect(common_values.length).to eq(0)
-
     end
 
     scenario 'Proposals are ordered by confidence_score', :js do
@@ -267,7 +282,7 @@ feature 'Budget Investments' do
 
       expect(page.status_code).to eq(200)
       expect(page.html).to be_empty
-      expect(current_path).to eq(budget_investments_path(budget_id: budget.id))
+      expect(current_path).to eq(budget_investments_path(budget))
     end
 
     scenario 'Create budget investment too fast' do
@@ -399,6 +414,7 @@ feature 'Budget Investments' do
     expect(page).to have_content(investment.description)
     expect(page).to have_content(investment.author.name)
     expect(page).to have_content(investment.heading.name)
+
     within("#investment_code") do
       expect(page).to have_content(investment.id)
     end
@@ -599,6 +615,7 @@ feature 'Budget Investments' do
         carabanchel_investment = create(:budget_investment, :selected, heading: carabanchel)
         salamanca_investment   = create(:budget_investment, :selected, heading: salamanca)
 
+        login_as(author)
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
         within("#budget_investment_#{carabanchel_investment.id}") do
@@ -624,19 +641,33 @@ feature 'Budget Investments' do
       end
 
       scenario "When supporting in another group", :js do
-        carabanchel     = create(:budget_heading, group: group)
-        another_heading = create(:budget_heading, group: create(:budget_group, budget: budget))
+        carabanchel = create(:budget_heading, group: group)
+
+        group2 = create(:budget_group, budget: budget)
+        another_heading1 = create(:budget_heading, group: group2)
+        another_heading2 = create(:budget_heading, group: group2)
 
         carabanchel_investment   = create(:budget_investment, heading: carabanchel)
-        another_group_investment = create(:budget_investment, heading: another_heading)
+        another_group_investment = create(:budget_investment, heading: another_heading1)
 
         create(:vote, votable: carabanchel_investment, voter: author)
 
         login_as(author)
-        visit budget_investments_path(budget, heading_id: another_heading.id)
+        visit budget_investments_path(budget, heading_id: another_heading1.id)
 
         within("#budget_investment_#{another_group_investment.id}") do
           expect(page).to have_css(".in-favor a[data-confirm]")
+        end
+      end
+
+      scenario "When supporting in a group with a single heading", :js do
+        all_city_investment = create(:budget_investment, heading: heading)
+
+        login_as(author)
+        visit budget_investments_path(budget, heading_id: heading.id)
+
+        within("#budget_investment_#{all_city_investment.id}") do
+          expect(page).to_not have_css(".in-favor a[data-confirm]")
         end
       end
     end
@@ -707,10 +738,7 @@ feature 'Budget Investments' do
       sp2 = create(:budget_investment, :selected, heading: heading, price: 20000)
 
       login_as(user)
-      visit root_path
-
-      first(:link, "Participatory budgeting").click
-      click_link budget.name
+      visit budget_path(budget)
       click_link "Health"
 
       within("#budget_investment_#{sp1.id}") do
@@ -865,7 +893,7 @@ feature 'Budget Investments' do
 
       click_link "All City"
 
-      expected_path = budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading.to_param, filter: "unselected")
       expect(page).to have_current_path(expected_path)
     end
 
@@ -881,7 +909,7 @@ feature 'Budget Investments' do
       click_link 'Districts'
       click_link 'Carabanchel'
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unselected")
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading1.to_param, filter: "unselected")
       expect(page).to have_current_path(expected_path)
     end
 
@@ -949,5 +977,74 @@ feature 'Budget Investments' do
       end
 
     end
+  end
+
+  context "Navigation" do
+
+    scenario "Back from show" do
+      heading2 = create(:budget_heading, group: group)
+
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading2)
+
+      visit budget_investment_path(budget, investment1)
+      click_link "Go back"
+
+      expect(page).to     have_content investment1.title
+      expect(page).to_not have_content investment2.title
+    end
+
+  end
+
+  context "Minimal view" do
+    let!(:investment1) { create(:budget_investment, heading: heading, tag_list: "Parks") }
+    let!(:investment2) { create(:budget_investment, heading: heading, tag_list: "Parks") }
+    let!(:investment3) { create(:budget_investment, heading: heading, tag_list: "Parks") }
+
+    background do
+      visit budget_path(budget)
+      click_link "Health"
+    end
+
+    scenario "Change to mininal view" do
+      within(".budgets-minimal-selector") do
+        first("a").click
+      end
+
+      expect(page).to have_css(".budget-investment.minimal", count: 3)
+
+      within("#budget_investment_#{investment1.id}") do
+        expect(page).to have_content investment1.title
+
+        expect(page).to_not have_content investment1.author.username
+        expect(page).to_not have_content investment1.description
+        expect(page).to_not have_content investment1.heading.name
+        expect(page).to_not have_content investment1.tag_list.first
+      end
+    end
+
+    scenario "Switch between minimal and default views" do
+      within(".budgets-minimal-selector") do
+        first("a").click
+      end
+
+      expect(page).to have_css(".budget-investment.minimal", count: 3)
+
+      within(".budgets-minimal-selector") do
+        first("a").click
+      end
+
+      expect(page).to have_css(".budget-investment.minimal", count: 0)
+
+      within("#budget_investment_#{investment1.id}") do
+        expect(page).to have_content investment1.title
+
+        expect(page).to have_content investment1.author.username
+        expect(page).to have_content investment1.description
+        expect(page).to have_content investment1.heading.name
+        expect(page).to have_content investment1.tag_list.first
+      end
+    end
+
   end
 end

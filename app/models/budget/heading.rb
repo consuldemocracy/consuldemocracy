@@ -20,9 +20,12 @@ class Budget
       "#{group.name}: #{name}"
     end
 
+    def to_param
+      name.parameterize
+    end
+
     def name_exists_in_budget_headings
       group.budget.headings.where(name: name).any?
     end
-
   end
 end
