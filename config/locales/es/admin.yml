@@ -106,6 +106,7 @@ es:
         table_heading: Partida
         table_amount: Cantidad
         table_population: Población
+        population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.
@@ -567,6 +568,8 @@ es:
           assign: Asignar urna
           unassign: Asignar urna
     poll_booth_assignments:
+      alert:
+        shifts: "Hay turnos asignados para esta urna. Si la desasignas, esos turnos se eliminarán. ¿Deseas continuar?"
       flash:
         destroy: "Urna desasignada"
         create: "Urna asignada"
