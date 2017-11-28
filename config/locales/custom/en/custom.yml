@@ -189,6 +189,18 @@ en:
       link: "More information about how to create citizen proposals"
       url: "https://diario.madrid.es/decidemadrid/2017/09/05/las-propuestas-ciudadanas-de-decide-madrid-paso-a-paso/"
       alt: "Creation of a proposal on Decide Madrid"
+    once_plazas:
+      label: "Voting results"
+      title: "Citizens approve the remodeling of eleven squares"
+      text: "In October took place a citizen vote took in which it was decided to change the public spaces of eleven districts of Madrid."
+      link: "Participa en la nueva ordenanza del servicio de ayuda a domicilio"
+      alt: "Volunteer at one of the polling stations"
+    budgets:
+      label: "2016 results"
+      title: "Participatory budgets"
+      text: "Check the status of the winning projects of the first edition of participatory budgets."
+      link: "Download 2016 results"
+      alt: "Basketball court"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"

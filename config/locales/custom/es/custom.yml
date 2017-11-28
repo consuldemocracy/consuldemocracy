@@ -192,6 +192,18 @@ es:
       link: "Más información sobre cómo crear propuestas ciudadanas"
       url: "https://diario.madrid.es/decidemadrid/2017/09/05/las-propuestas-ciudadanas-de-decide-madrid-paso-a-paso/"
       alt: "Creación de una propuesta en Decide Madrid"
+    once_plazas:
+      label: "Resultados votación"
+      title: "La ciudadanía aprueba remodelar once plazas"
+      text: "En octubre tuvo lugar una votación ciudadana en la que se decidió cambiar los espacios públicos de once distritos de Madrid."
+      link: "Ver resultados Once plazas"
+      alt: "Voluntaria en una de las mesas de votación"
+    budgets:
+      label: "Resultados 2016"
+      title: "Presupuestos participativos"
+      text: "Consulta el estado de los proyectos ganadores de la primera edición de presupuestos participativos."
+      link: "Descargar los Resultados 2016"
+      alt: "Cancha de baloncesto"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
