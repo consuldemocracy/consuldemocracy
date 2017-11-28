@@ -43,7 +43,7 @@ class Budget
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
-    scope :sort_by_random,           -> { reorder("RANDOM()") }
+    scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed || 1}, budget_investments.id") }
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }

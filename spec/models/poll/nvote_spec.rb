@@ -198,7 +198,7 @@ describe Poll::Nvote do
       expect(Poll::Voter.count).to eq(0)
     end
 
-    it "stores demografic information of a poll voter", :focus do
+    it "stores demografic information of a poll voter" do
       skip "Deal with validation for web requiring token"
 
       geozone = create(:geozone, :in_census)
