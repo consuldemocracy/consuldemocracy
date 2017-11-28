@@ -501,6 +501,17 @@ table {
   }
 }
 
+.external-link {
+  position: relative;
+
+  &::after {
+    content: '\46';
+    font-family: 'icons';
+    margin-left: $line-height / 4;
+    position: absolute;
+  }
+}
+
 @import 'motion-ui/motion-ui';
 @include foundation-orbit;
 @include motion-ui-transitions;
