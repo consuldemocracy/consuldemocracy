@@ -65,6 +65,7 @@ Setting["org_name"] = "CONSUL"
 Setting["place_name"] = "CONSUL-land"
 
 # Meta tags for SEO
+Setting["meta_title"] = nil
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 

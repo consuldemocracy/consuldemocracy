@@ -153,8 +153,8 @@ feature 'Proposals' do
     proposal = create(:proposal)
 
     visit proposal_path(proposal)
-    expect(page.html).to include "<meta name=\"twitter:title\" content=\"#{proposal.title}\" />"
-    expect(page.html).to include "<meta id=\"ogtitle\" property=\"og:title\" content=\"#{proposal.title}\"/>"
+    expect(page).to have_css "meta[name='twitter:title'][content=\"#{proposal.title}\"]", visible: false
+    expect(page).to have_css "meta[property='og:title'][content=\"#{proposal.title}\"]", visible: false
   end
 
   scenario 'Create' do

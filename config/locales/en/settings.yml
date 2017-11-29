@@ -48,6 +48,7 @@ en:
     map_zoom: Zoom
     mailer_from_name: Origin email name
     mailer_from_address: Origin email address
+    meta_title: "Site title (SEO)"
     meta_description: "Site description (SEO)"
     meta_keywords: "Keywords (SEO)"
     verification_offices_url: Verification offices URL
