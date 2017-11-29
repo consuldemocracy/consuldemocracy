@@ -65,6 +65,7 @@ Setting["org_name"] = "Decide Madrid"
 Setting["place_name"] = "Madrid"
 
 # Meta tags for SEO
+Setting["meta_title"] = nil
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
