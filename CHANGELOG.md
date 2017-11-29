@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased](https://github.com/consul/consul/compare/v0.10...consul:master)
 
 ### Added
-- Allow social media image meta tags to be overwritten https://github.com/consul/consul/pull/1756
+- Allow social media image meta tags to be overwritten https://github.com/consul/consul/pull/1756 & https://github.com/consul/consul/pull/2153
 - Allow users to verify their account against a local Census https://github.com/consul/consul/pull/1752
 - Make Proposals & Budgets Investments followable by users https://github.com/consul/consul/pull/1727
 - Show user followable activity on public user page https://github.com/consul/consul/pull/1750
@@ -34,12 +34,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Legislation processes documents https://github.com/consul/consul/pull/2084
 - Poll results https://github.com/consul/consul/pull/2082
 - Poll stats https://github.com/consul/consul/pull/2075
+- Poll stats on admin panel https://github.com/consul/consul/pull/2102
 - Added investment user tags admin interface https://github.com/consul/consul/pull/2068
 - Added Poll comments to GraphQL API https://github.com/consul/consul/pull/2148
 - Added option to unassign Valuator role https://github.com/consul/consul/pull/2110
 - Added search by name/email on several Admin sections https://github.com/consul/consul/pull/2105
 - Added Docker support https://github.com/consul/consul/pull/2127 & documentation https://consul_docs.gitbooks.io/docs/content/en/getting_started/docker.html
-- Added population restriction validation on Budget Headings #2115
+- Added population restriction validation on Budget Headings https://github.com/consul/consul/pull/2115
 
 ### Changed
 - Gem versions locked & cleanup https://github.com/consul/consul/pull/1730
