@@ -65,7 +65,7 @@ feature 'Polls' do
 
       visit polls_path
 
-      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll))
+      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll.slug))
     end
 
     scenario "Poll title link to results if enabled" do
@@ -73,7 +73,7 @@ feature 'Polls' do
 
       visit polls_path
 
-      expect(page).to have_link("Poll with results", href: results_poll_path(poll))
+      expect(page).to have_link("Poll with results", href: results_poll_path(poll.slug))
     end
   end
 
@@ -481,6 +481,12 @@ feature 'Polls' do
   context "Results and stats" do
     scenario "Show poll results and stats if enabled and poll expired" do
       poll = create(:poll, :expired, results_enabled: true, stats_enabled: true)
+      question1 = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question1, title: 'Han Solo')
+      create(:poll_question_answer, question: question1, title: 'Chewbacca')
+      question2 = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question2, title: 'Leia')
+      create(:poll_question_answer, question: question2, title: 'Luke')
       user = create(:user)
 
       login_as user
@@ -532,6 +538,12 @@ feature 'Polls' do
 
     scenario "Show poll results and stats if user is administrator" do
       poll = create(:poll, :current, results_enabled: false, stats_enabled: false)
+      question1 = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question1, title: 'Han Solo')
+      create(:poll_question_answer, question: question1, title: 'Chewbacca')
+      question2 = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question2, title: 'Leia')
+      create(:poll_question_answer, question: question2, title: 'Luke')
       user = create(:administrator).user
 
       login_as user
