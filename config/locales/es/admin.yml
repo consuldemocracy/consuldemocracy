@@ -492,6 +492,7 @@ es:
       valuator:
         description_placeholder: 'Descripción (opcional)'
         add: Añadir como evaluador
+        delete: Borrar
       search:
         title: 'Evaluadores: Búsqueda de usuarios'
       summary:

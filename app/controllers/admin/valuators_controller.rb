@@ -19,6 +19,11 @@ class Admin::ValuatorsController < Admin::BaseController
     redirect_to admin_valuators_path
   end
 
+  def destroy
+    @valuator.destroy
+    redirect_to admin_valuators_path
+  end
+
   def summary
     @valuators = Valuator.order(spending_proposals_count: :desc)
   end

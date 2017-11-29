@@ -30,8 +30,8 @@ module Budgets
     respond_to :html, :js
 
     def index
-      load_investments
-      @investment_ids = @investments.map(&:id)
+      @investments = investments.page(params[:page]).per(10).for_render
+      @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
     end
 
@@ -101,11 +101,9 @@ module Budgets
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          seed = params[:random_seed] || session[:random_seed] || (rand(99)/100.0)
-          seed = Float(seed) rescue 0
-          session[:random_seed] = seed
-          params[:random_seed] = seed
-          Budget::Investment.connection.execute("select setseed(#{seed})")
+          seed = params[:random_seed] || session[:random_seed] || rand(10..99) / 10.0
+          params[:random_seed] ||= Float(seed) rescue 0
+          session[:random_seed] = params[:random_seed]
         else
           session[:random_seed] = nil
           params[:random_seed] = nil
@@ -166,6 +164,15 @@ module Budgets
         end
       end
 
+      def investments
+        case @current_order
+        when 'random'
+          @investments.apply_filters_and_search(@budget, params, @current_filter)
+                      .send("sort_by_#{@current_order}", params[:random_seed])
+        else
+          @investments.apply_filters_and_search(@budget, params, @current_filter)
+                      .send("sort_by_#{@current_order}")
+        end
+      end
   end
-
 end
