@@ -1,5 +1,5 @@
 <% provide :title, t("meta_tags.welcome_index.title") %>
-<% provide :meta_description, t("meta_tags.welcome_index.description") %>
+<% provide :meta_description, Setting['meta_description'] %>
 <% provide :tracking_page_number, "23" %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: root_url %>
