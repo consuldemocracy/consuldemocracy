@@ -3,7 +3,9 @@
     <div class="small-12 medium-9 column">
       <div class="callout primary">
         <%= t("shared.deleted_item",
-              resource: link_to(t("layouts.header.#{@resource.class.to_s.downcase.pluralize}"), proposals_path, class: "probe-message"),
+              resource: link_to(t("layouts.header.#{@resource.class.to_s.downcase.pluralize}"),
+                send("#{@resource.class.to_s.downcase.pluralize}_path"),
+                class: "probe-message"),
               home_page: link_to(t("shared.homepage"), root_path, class: "probe-message"),
               org: setting['org_name']).html_safe %>
       </div>
