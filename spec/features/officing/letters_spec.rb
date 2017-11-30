@@ -188,6 +188,8 @@ feature 'Letters' do
     end
 
     scenario "Admins can access letter interface" do
+      skip "feature currently disabled, test won't work with redirection to home page"
+
       admin = create(:administrator)
 
       login_as(admin.user)
