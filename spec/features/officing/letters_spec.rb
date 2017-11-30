@@ -207,6 +207,8 @@ feature 'Letters' do
   end
 
   scenario "Going back after getting lost" do
+    skip "this feature is disabled and this test goal is not well defined"
+
     visit root_path
     click_link "Polling officers"
 
