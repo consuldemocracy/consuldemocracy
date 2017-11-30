@@ -451,6 +451,7 @@ en:
       title_external_url: "Additional documentation"
       title_video_url: "External video"
       author: Author
+      proposals: Proposals
     update:
       form:
         submit_button: Save changes
@@ -536,7 +537,7 @@ en:
     show:
       back: "Go back to my activity"
   shared:
-    homepage: 'Homepage'    
+    homepage: 'Homepage'
     edit: 'Edit'
     save: 'Save'
     delete: 'Delete'
