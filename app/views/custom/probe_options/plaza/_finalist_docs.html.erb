@@ -1,6 +1,6 @@
 <% if project_x?(@probe_option) %>
   <h3><%= t("probes.show.documents_finalist") %></h3>
-  <%= link_to "#{request.url}system/30_memoria_finalista_welcome_mother_nature_good_bye_mr_ford.pdf",
+  <%= link_to root_url+"system/30_memoria_finalista_welcome_mother_nature_good_bye_mr_ford.pdf",
             title: "PDF #{@probe_option.name} finalista | (165Mb)",
             target: "_blank", class: "button hollow",
             rel: "nofollow" do %>

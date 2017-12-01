@@ -70,9 +70,7 @@
   </table>
 
   <p>
-      <a href="<%= request.url %>proceso/plaza-espana/proyectos/38">
-        Ir a "Proyecto X: Welcome mother Nature"
-</a>      <br>
-      <a href="<%= request.url %>proceso/plaza-espana/proyectos/22">
-        Ir a "Proyecto Y: UN PASEO POR LA CORNISA"
-</a>  </p>
+    <%= link_to 'Ir a "Proyecto X: Welcome mother Nature"', plaza_probe_option_path(38) %>
+    <br>
+    <%= link_to 'Ir a "Proyecto Y: UN PASEO POR LA CORNISA""', plaza_probe_option_path(22) %>
+  </p>
