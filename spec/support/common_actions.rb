@@ -468,6 +468,10 @@ module CommonActions
     end
   end
 
+  def csv_path_for(table)
+    "system/api/#{table}.csv"
+  end
+
   def vote_for_poll_via_web(poll, question, answer)
     visit poll_path(poll)
 

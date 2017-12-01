@@ -260,8 +260,11 @@ describe :poll do
     it "returns true if the user has already voted in booth" do
       user = create(:user, :level_two)
       poll = create(:poll)
+      booth = create(:poll_booth)
+      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+      officer_assignment = create(:poll_officer_assignment, booth_assignment: booth_assignment)
 
-      create(:poll_voter, poll: poll, user: user, origin: "booth")
+      create(:poll_voter, poll: poll, user: user, booth_assignment: booth_assignment, officer_assignment: officer_assignment, origin: "booth")
 
       expect(poll.voted_in_booth?(user)).to be
     end
