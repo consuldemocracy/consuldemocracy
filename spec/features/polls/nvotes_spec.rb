@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'Nvotes' do
 
+  before do
+    skip "this feature is currently disabled"
+  end
+
   scenario "Send vote", :selenium do
     user = create(:user, :level_two, id: rand(9999999))
     poll = create(:poll, published: true, nvotes_poll_id: 128)
