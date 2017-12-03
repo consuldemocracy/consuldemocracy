@@ -43,13 +43,11 @@ he:
      email_already_sent: נשלחה כבר הודעת דואר אלקטרוני עם קישור לאימות חשבונך. אם אינך מצליח/ה לאתר את ההודעה, ניתן לבקש שוב הנפקת בהודעה חוזרת כאן
    residence:
      alert:
-       unconfirmed_residency: טרם אומת אזור מגוריך
+       unconfirmed_residency: טרם אומת חשבונך 
      create:
        flash:
          success: אזור מגוריך אומת
      new:
-       accept_terms_text: אני מסכים/ה על %{terms_url} תנאי מפקד האוכלוסין
-       accept_terms_text_title: אני מסכים/ה על התנאים וכללי השימוש במפקד האוכלוסין
        date_of_birth: תאריך לידה
        document_number: מספר תעודה מזהה
        document_number_help_title: עזרה
@@ -65,10 +63,10 @@ he:
        error_verifying_census_offices: משרד סיוע לאזרחים
        form_errors: נתון זה מונע את אימות מגוריך
        postal_code: מיקוד
-       postal_code_note: כדי לאמת את חשבונך עליך קודם להרשם
+       postal_code_note: נא למלא את המיקוד איתו התפקדת 
        terms: תנאים וכללי הגישה
-       title: נא לאמת את כתובת המגורים
-       verify_residence: אמת את כתובת המגורים
+       title: נא לאמת את החשבון
+       verify_residence: נא לאמת את החשבון
    sms:
      create:
        flash:
@@ -97,7 +95,9 @@ he:
    step_2: אישור קוד האבטחה
    step_3: אימות נתונים סופית
    user_permission_debates: להשתתף בדיונים
-   user_permission_info: אנו מאמתים את הפרטים שלך כדי שתוכל/י ...
+   user_permission_info: ראשית יש להתפקד למפלגה בקישור
+   user_permission_info2: "ואז למלא את הטופס למטה על מנת:"
+   user_permission_link: http://www.kolhaam.org.il/product/register/
    user_permission_proposal: ליצור הצעות חדשות
    user_permission_support_proposal: לתמוך בהצעות
    user_permission_votes: להשתתף בהצבעות (למתפקדים בלבד).
