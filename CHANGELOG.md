@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/consul/consul/compare/v0.10...consul:master)
+## [Unreleased](https://github.com/consul/consul/compare/v0.11...consul:master)
+
+## [0.11.0](https://github.com/consul/consul/compare/v0.10...v0.11) - 2017-12-05
 
 ### Added
 - Allow social media image meta tags to be overwritten https://github.com/consul/consul/pull/1756 & https://github.com/consul/consul/pull/2153
@@ -41,6 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added search by name/email on several Admin sections https://github.com/consul/consul/pull/2105
 - Added Docker support https://github.com/consul/consul/pull/2127 & documentation https://consul_docs.gitbooks.io/docs/content/en/getting_started/docker.html
 - Added population restriction validation on Budget Headings https://github.com/consul/consul/pull/2115
+- Added a `/consul.json` route that returns installation details (current release version and feature flags status) for a future dashboard app https://github.com/consul/consul/pull/2164
 
 ### Changed
 - Gem versions locked & cleanup https://github.com/consul/consul/pull/1730
