@@ -61,10 +61,14 @@ class ProbesController < ApplicationController
     end
 
     def set_random_seed
-      seed = params[:random_seed] || session[:random_seed] || (rand(99)/100.0)
-      seed = Float(params[:random_seed]) rescue 0
-      session[:random_seed] = seed
-      params[:random_seed] = seed
+      seed = params[:random_seed] || session[:random_seed] || (rand(99) / 100.0)
+      seed = begin
+               Float(params[:random_seed])
+             rescue
+               0
+             end
+      seed = (-1..1).cover?(seed) ? seed : 1
+      session[:random_seed], params[:random_seed] = seed
       ProbeOption.connection.execute "select setseed(#{seed})"
     end
 end
