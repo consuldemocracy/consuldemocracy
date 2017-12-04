@@ -62,8 +62,8 @@ class HumanRightsController < ApplicationController
   end
 
   def load_subproceedings
-    @subproceedings = @human_right_proposals.distinct.pluck(:sub_proceeding).
-    select { |sub_proceeding| official_human_rights_subproceedings.include?(sub_proceeding) }.sort
+    @subproceedings = @human_right_proposals.distinct.pluck(:sub_proceeding)
+                                            .select { |sub_proceeding| official_human_rights_subproceedings.include?(sub_proceeding) }.sort
   end
 
   def paginate_results
@@ -76,8 +76,13 @@ class HumanRightsController < ApplicationController
 
   def set_random_seed
     if params[:order] == 'random' || params[:order].blank?
-      session[:random_seed] ||= rand(99)/100.0
-      seed = Float(params[:random_seed]) rescue 0
+      session[:random_seed] ||= rand(99) / 100.0
+      seed = begin
+               Float(params[:random_seed])
+             rescue
+               0
+             end
+      seed = (-1..1).cover?(seed) ? seed : 1
       Proposal.connection.execute "select setseed(#{seed})"
     else
       session[:random_seed] = nil

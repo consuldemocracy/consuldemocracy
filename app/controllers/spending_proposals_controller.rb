@@ -140,6 +140,7 @@ class SpendingProposalsController < ApplicationController
                rescue
                  0
                end
+        seed = (-1..1).cover?(seed) ? seed : 1
         SpendingProposal.connection.execute "select setseed(#{seed})"
       else
         params[:random_seed] = nil
