@@ -4,11 +4,9 @@
   <%= render "shared/social_media_meta_tags",
               social_url: once_plazas_results_url,
               social_title: t("once_plazas.results.title"),
-              social_description: t("once_plazas.results.social") %>
-<% end %>
-<%= provide :social_media_meta_tags do %>
-  <meta name="twitter:image" content="<%= root_url %>social_media_resultados_once_plazas_twitter.jpg" />
-  <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_resultados_once_plazas.jpg"/>
+              social_description: t("once_plazas.results.social"),
+              twitter_image_url: "social_media_resultados_once_plazas_twitter.jpg",
+              og_image_url: "social_media_resultados_once_plazas.jpg" %>
 <% end %>
 
 <div class="expanded no-margin-top polls-show-header once-plazas">

@@ -19,11 +19,11 @@
 
   <div class="small-12 medium-6 column margin-bottom">
     <figure class="figure-card">
-      <%= link_to "#{request.url}legislation/processes/34/debate", title: t("welcome.citizenship.link") do %>
+      <%= link_to debate_legislation_process_url(34), title: t("welcome.citizenship.link") do %>
         <%= image_tag "welcome/citizenship.jpg", alt: t("welcome.citizenship.alt") %>
       <% end %>
       <figcaption>
-        <%= link_to "#{request.url}legislation/processes/34/debate", title: t("welcome.citizenship.link") do %>
+        <%= link_to debate_legislation_process_url(34), title: t("welcome.citizenship.link") do %>
           <span><%= t("welcome.citizenship.label") %></span><br>
           <p class="title"><%= t("welcome.citizenship.title") %></p>
         <% end %>
@@ -31,17 +31,17 @@
     </figure>
     <p><%= t("welcome.citizenship.text") %></p>
     <p>
-      <%= link_to t("welcome.citizenship.link"), "#{request.url}legislation/processes/34/debate" %>
+      <%= link_to t("welcome.citizenship.link"), debate_legislation_process_url(34) %>
     </p>
   </div>
 
   <div class="small-12 medium-6 column margin-bottom end">
     <figure class="figure-card">
-      <%= link_to "#{request.url}legislation/processes/27/debate", title: t("welcome.home_help.link") do %>
+      <%= link_to debate_legislation_process_url(27), title: t("welcome.home_help.link") do %>
         <%= image_tag "welcome/home_help.jpg", alt: t("welcome.home_help.alt") %>
       <% end %>
       <figcaption>
-        <%= link_to "#{request.url}legislation/processes/27/debate", title: t("welcome.home_help.link") do %>
+        <%= link_to debate_legislation_process_url(27), title: t("welcome.home_help.link") do %>
           <span><%= t("welcome.home_help.label") %></span><br>
           <p class="title"><%= t("welcome.home_help.title") %></p>
         <% end %>
@@ -49,7 +49,7 @@
     </figure>
     <p><%= t("welcome.home_help.text") %></p>
     <p>
-      <%= link_to t("welcome.home_help.link"), "#{request.url}legislation/processes/27/debate" %>
+      <%= link_to t("welcome.home_help.link"), debate_legislation_process_url(27) %>
     </p>
   </div>
 
@@ -76,11 +76,11 @@
 
   <div class="small-12 medium-6 column margin-bottom">
     <figure class="figure-card">
-      <%= link_to "#{request.url}system/budgets/2016/estado_propuestas_2016_b.xlsx", title: t("welcome.budgets.link") do %>
+      <%= link_to root_url + "/system/budgets/2016/estado_propuestas_2016_b.xlsx", title: t("welcome.budgets.link") do %>
         <%= image_tag "welcome/budgets.jpg", alt: t("welcome.budgets.alt") %>
       <% end %>
       <figcaption>
-        <%= link_to "#{request.url}system/budgets/2016/estado_propuestas_2016_b.xlsx", title: t("welcome.budgets.link") do %>
+        <%= link_to root_url + "/system/budgets/2016/estado_propuestas_2016_b.xlsx", title: t("welcome.budgets.link") do %>
           <span><%= t("welcome.budgets.label") %></span><br>
           <p class="title"><%= t("welcome.budgets.title") %></p>
         <% end %>
@@ -88,7 +88,7 @@
     </figure>
     <p><%= t("welcome.budgets.text") %></p>
     <p>
-      <%= link_to t("welcome.budgets.link"), "#{request.url}system/budgets/2016/estado_propuestas_2016_b.xlsx", class: "external-link" %>
+      <%= link_to t("welcome.budgets.link"), root_url + "/system/budgets/2016/estado_propuestas_2016_b.xlsx", class: "external-link" %>
     </p>
   </div>
 </div>

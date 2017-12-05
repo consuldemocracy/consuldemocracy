@@ -64,12 +64,12 @@
       <div class="small-12 medium-6 large-4 column figure-box end">
         <div class="figure-container-card" data-equalizer-watch>
           <figure class="figure-card">
-            <%= link_to "#{request.url}legislation/processes/#{process_id}/debate",
+            <%= link_to "/legislation/processes/#{process_id}/debate",
                          title: "Ver proceso de #{name}" do %>
               <%= image_tag "once_plazas/#{slug}.jpg", alt: "" %>
             <% end %>
             <figcaption>
-              <%= link_to "#{request.url}legislation/processes/#{process_id}/debate",
+              <%= link_to "/legislation/processes/#{process_id}/debate",
                          title: "Ver proceso de #{name}" do %>
                 <span><%= district %></span><br>
                 <h3><%= name %></h3>
@@ -84,7 +84,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#{request.url}legislation/processes/#{process_id}/debate",
+              <%= link_to "/legislation/processes/#{process_id}/debate",
                           class: "button hollow expanded text-center margin-top",
                           title: "Ver proceso de #{name}" do %>
                   Ver proceso <%= name %>
