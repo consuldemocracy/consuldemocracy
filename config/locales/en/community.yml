@@ -37,8 +37,8 @@ en:
       create: Create a topic
       edit: Edit Topic
       form:
-        topic_title: Topic title
-        topic_text: Topic text
+        topic_title: Title
+        topic_text: Initial text
         new:
           submit_button: Create topic
         edit:
