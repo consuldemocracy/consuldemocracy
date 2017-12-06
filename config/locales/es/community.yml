@@ -37,8 +37,8 @@ es:
       create: Crear un tema
       edit: Editar tema
       form:
-        topic_title: Título del tema
-        topic_description: Texto del tema
+        topic_title: Título
+        topic_text: Texto inicial
         new:
           submit_button: Crear tema
         edit:
