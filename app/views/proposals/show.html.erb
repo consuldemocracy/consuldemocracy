@@ -69,7 +69,9 @@
         <%= safe_html_with_links @proposal.description %>
 
         <% if feature?(:map) && map_location_available?(@proposal.map_location) %>
-          <%= render_map(@proposal.map_location, "proposal", false, nil) %>
+          <div class="margin">
+            <%= render_map(@proposal.map_location, "proposal", false, nil) %>
+          </div>
         <% end %>
 
         <% if @proposal.external_url.present? %>
