@@ -270,6 +270,11 @@ $sidebar-active: #f4fcd0;
   }
 }
 
+.sortable thead th:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 // 02. Sidebar
 // -----------
 

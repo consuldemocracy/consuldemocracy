@@ -25,4 +25,23 @@ describe Budget::Heading do
     end
   end
 
+  describe "Save population" do
+    it "Allows population == nil" do
+      expect(create(:budget_heading, group: group, name: 'Population is nil', population: nil)).to be_valid
+    end
+
+    it "Doesn't allow population <= 0" do
+      heading = create(:budget_heading, group: group, name: 'Population is > 0')
+      
+      heading.population = 0
+      expect(heading).not_to be_valid
+      
+      heading.population = -10
+      expect(heading).not_to be_valid
+      
+      heading.population = 10
+      expect(heading).to be_valid
+    end 
+  end
+
 end
