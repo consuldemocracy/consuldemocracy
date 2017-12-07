@@ -17,6 +17,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   end
 
   def create
+    @poll = Poll.new(poll_params.merge(author: current_user))
     if @poll.save
       redirect_to [:admin, @poll], notice: t("flash.actions.create.poll")
     else

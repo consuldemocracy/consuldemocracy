@@ -77,10 +77,20 @@ module CommonActions
     user ||= create(:user)
 
     login_as(user)
-    commentable_path = commentable.is_a?(Proposal) ? proposal_path(commentable) : debate_path(commentable)
+    commentable_path = if commentable.is_a?(Proposal)
+                         proposal_path(commentable)
+                       elsif commentable.is_a?(Debate)
+                         debate_path(commentable)
+                       elsif commentable.is_a?(Topic)
+                         community_topic_path(commentable, community_id: commentable.community_id)
+                       elsif commentable.is_a?(Poll)
+                         poll_path(commentable)
+                       else
+                         budget_investment_path(commentable, budget_id: commentable.budget_id)
+                       end
     visit commentable_path
 
-    fill_in "comment-body-#{commentable.class.name.underscore}_#{commentable.id}", with: 'Have you thought about...?'
+    fill_in "comment-body-#{commentable.class.name.gsub(/::/, '_').downcase}_#{commentable.id}", with: 'Have you thought about...?'
     click_button 'Publish comment'
 
     expect(page).to have_content 'Have you thought about...?'
