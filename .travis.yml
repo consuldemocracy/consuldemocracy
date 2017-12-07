@@ -10,10 +10,10 @@ before_script:
   - bundle exec rake db:setup
 script:
   - "bundle exec rake assets:precompile RAILS_ENV=test"
-  - "bundle exec rake knapsack:rspec"
+  - "bin/knapsack_pro_rspec"
 env:
   global:
-    - CI_NODE_TOTAL=2
+    - KNAPSACK_PRO_CI_NODE_TOTAL=2
   matrix:
-    - CI_NODE_INDEX=0
-    - CI_NODE_INDEX=1
+    - KNAPSACK_PRO_CI_NODE_INDEX=0
+    - KNAPSACK_PRO_CI_NODE_INDEX=1

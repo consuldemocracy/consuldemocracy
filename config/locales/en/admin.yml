@@ -104,6 +104,7 @@ en:
         table_heading: Heading
         table_amount: Amount
         table_population: Population
+        population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
@@ -157,6 +158,7 @@ en:
         dossier: Dossier
         edit_dossier: Edit dossier
         tags: Tags
+        user_tags: User tags
         undefined: Undefined
         milestone: Milestone
         new_milestone: Create new milestone
@@ -181,6 +183,7 @@ en:
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update
+        user_tags: User assigned tags
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
@@ -481,6 +484,7 @@ en:
       valuator:
         description_placeholder: 'Description (optional)'
         add: Add to valuators
+        delete: Delete
       search:
         title: 'Valuators: User search'
       summary:
@@ -555,6 +559,8 @@ en:
           assign: Assign booth
           unassign: Unassign booth
     poll_booth_assignments:
+      alert:
+        shifts: "There are shifts associated to this booth. If you remove the booth assignment, the shifts will be also deleted. Continue?"
       flash:
         destroy: "Booth not assigned anymore"
         create: "Booth assigned"
@@ -952,6 +958,7 @@ en:
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         incomplete_verifications: Incomplete verifications
+        polls: Polls
       direct_messages:
         title: Direct messages
         total: Total
@@ -960,6 +967,17 @@ en:
         title: Proposal notifications
         total: Total
         proposals_with_notifications: Proposals with notifications
+      polls:
+        title: Poll Stats
+        all: Polls
+        web_participants: Web participants
+        total_participants: Total Participants
+        poll_questions: "Questions from poll: %{poll}"
+        table:
+          poll_name: Poll
+          question_name: Question
+          origin_web: Web participants
+          origin_total: Total participants
     tags:
       create: Create topic
       destroy: Destroy topic

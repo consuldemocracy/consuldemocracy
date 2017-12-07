@@ -4,6 +4,11 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: root_url %>
+<% end %>
+
 <div class="jumbo highlight">
   <div class="row">
     <div class="small-12 medium-9 small-centered column text-center">

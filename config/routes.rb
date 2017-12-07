@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#welcome'
   get '/cuentasegura', to: 'welcome#verification', as: :cuentasegura
 
+  get '/consul.json', to: "installation#details"
+
   resources :debates do
     member do
       post :vote
@@ -272,7 +274,7 @@ Rails.application.routes.draw do
       get :search, on: :collection
     end
 
-    resources :valuators, only: [:index, :create] do
+    resources :valuators, only: [:index, :create, :destroy] do
       get :search, on: :collection
       get :summary, on: :collection
     end
@@ -339,6 +341,7 @@ Rails.application.routes.draw do
     resource :stats, only: :show do
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection
+      get :polls, on: :collection
     end
 
     namespace :legislation do
