@@ -611,7 +611,6 @@ es:
     target_blank_html: " (se abre en ventana nueva)"
     you_are_in: "Estás en"
     unflag: Deshacer denuncia
-    unfollow: "Dejar de seguir"
     unfollow_entity: "Dejar de seguir %{entity}"
     outline:
       budget: Presupuestos participativos

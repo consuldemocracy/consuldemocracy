@@ -614,7 +614,6 @@ en:
     target_blank_html: " (link opens in new window)"
     you_are_in: "You are in"
     unflag: Unflag
-    unfollow: "Unfollow"
     unfollow_entity: "Unfollow %{entity}"
     outline:
       budget: Participatory budget
