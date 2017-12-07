@@ -15,8 +15,6 @@ es:
       public_interests_label: Mostrar públicamente mis intereses
       public_interests_my_title_list: Etiquetas de los elementos que sigues
       public_interests_user_title_list: Etiquetas de los elementos que sigue este usuario
-      public_interests_my_empty_list: Aún no sigues ningún elemento.
-      public_interests_user_empty_list: Este usuario no sigue ningún elemento todavía.
       save_changes_submit: Guardar cambios
       subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
       email_on_direct_message_label: Recibir emails con mensajes privados
