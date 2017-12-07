@@ -566,6 +566,7 @@ es:
     collective: Colectivo
     flag: Denunciar como inapropiado
     follow: "Seguir"
+    following: "Siguiendo"
     follow_entity: "Seguir %{entity}"
     followable:
       budget_investment:

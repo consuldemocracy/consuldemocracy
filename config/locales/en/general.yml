@@ -569,6 +569,7 @@ en:
     collective: Collective
     flag: Flag as inappropriate
     follow: "Follow"
+    following: "Following"
     follow_entity: "Follow %{entity}"
     followable:
       budget_investment:
