@@ -2,6 +2,16 @@ require 'rails_helper'
 
 feature 'Moderate proposals' do
 
+  scenario 'Disabled with a feature flag' do
+    Setting['feature.proposals'] = nil
+    moderator = create(:moderator)
+    login_as(moderator.user)
+
+    expect{ visit moderation_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+
+    Setting['feature.proposals'] = true
+  end
+
   scenario 'Hide', :js do
     citizen = create(:user)
     moderator = create(:moderator)

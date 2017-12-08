@@ -77,6 +77,7 @@
 //= require polls
 //= require sortable
 //= require legislation_proposals
+//= require table_sortable
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -118,6 +119,7 @@ var initialize_modules = function() {
   App.Polls.initialize();
   App.Sortable.initialize();
   App.LegislationProposals.initialize();
+  App.TableSortable.initialize();
 };
 
 $(function(){

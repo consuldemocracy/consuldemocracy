@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 feature 'Officing Nvotes', :selenium do
+
+  before do
+    skip "this feature is currently disabled"
+  end
+
   let(:officer) { create(:poll_officer) }
 
   background do

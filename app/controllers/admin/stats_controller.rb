@@ -136,4 +136,5 @@ class Admin::StatsController < Admin::BaseController
   def city_heading(budget)
     budget.headings.where(name: "Toda la ciudad").first
   end
+
 end

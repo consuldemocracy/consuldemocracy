@@ -18,6 +18,7 @@ class Proposal < ActiveRecord::Base
                max_file_size: 3.megabytes,
                accepted_content_types: [ "application/pdf" ]
   include EmbedVideosHelper
+  include Relationable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
