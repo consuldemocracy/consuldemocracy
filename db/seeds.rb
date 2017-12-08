@@ -71,6 +71,7 @@ Setting["meta_keywords"] = nil
 
 # Feature flags
 Setting['feature.debates'] = true
+Setting['feature.proposals'] = true
 Setting['feature.spending_proposals'] = nil
 Setting['feature.polls'] = true
 Setting['feature.twitter_login'] = true
