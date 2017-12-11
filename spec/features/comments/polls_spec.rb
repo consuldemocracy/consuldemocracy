@@ -3,7 +3,7 @@ include ActionView::Helpers::DateHelper
 
 feature 'Commenting polls' do
   let(:user) { create :user }
-  let(:poll) { create :poll }
+  let(:poll) { create(:poll, author: create(:user)) }
 
   scenario 'Index' do
     3.times { create(:comment, commentable: poll) }

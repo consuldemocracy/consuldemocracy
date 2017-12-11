@@ -71,6 +71,7 @@ Setting["meta_keywords"] = nil
 
 # Feature flags
 Setting['feature.debates'] = true
+Setting['feature.proposals'] = true
 Setting['feature.spending_proposals'] = nil
 Setting['feature.polls'] = true
 Setting['feature.twitter_login'] = true
@@ -124,3 +125,6 @@ Setting['proposal_improvement_path'] = nil
 Setting['map_latitude'] = 51.48
 Setting['map_longitude'] = 0.0
 Setting['map_zoom'] = 10
+
+# Related content
+Setting['related_contents_report_threshold'] = 5

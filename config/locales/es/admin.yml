@@ -566,7 +566,7 @@ es:
           unassigned: No asignada
         actions:
           assign: Asignar urna
-          unassign: Asignar urna
+          unassign: Desasignar urna
     poll_booth_assignments:
       alert:
         shifts: "Hay turnos asignados para esta urna. Si la desasignas, esos turnos se eliminarán. ¿Deseas continuar?"
@@ -993,6 +993,7 @@ es:
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
+        polls: Votaciones
       graph:
         debate_created: Debates
         spending_proposals: Propuestas de inversión
@@ -1065,6 +1066,17 @@ es:
         total: Total
         clicked_email_link: Link del email clickado
         clicked_signup_button: Botón de registrarse clickado
+      polls:
+        title: Estadísticas de votaciones
+        all: Votaciones
+        web_participants: Participantes en Web
+        total_participants: Participantes totales
+        poll_questions: "Preguntas de votación: %{poll}"
+        table:
+          poll_name: Votación
+          question_name: Pregunta
+          origin_web: Participantes Web
+          origin_total: Participantes Totales
     tags:
       create: Crear tema
       destroy: Eliminar tema

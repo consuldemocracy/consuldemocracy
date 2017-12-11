@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115164152) do
+ActiveRecord::Schema.define(version: 20171127230716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -996,6 +996,7 @@ ActiveRecord::Schema.define(version: 20171115164152) do
   add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
   add_index "proposals", ["tsv"], name: "index_proposals_on_tsv", using: :gin
 
+
   create_table "redeemable_codes", force: :cascade do |t|
     t.string   "token"
     t.datetime "created_at", null: false
@@ -1003,6 +1004,22 @@ ActiveRecord::Schema.define(version: 20171115164152) do
   end
 
   add_index "redeemable_codes", ["token"], name: "index_redeemable_codes_on_token", using: :btree
+
+  create_table "related_contents", force: :cascade do |t|
+    t.integer  "parent_relationable_id"
+    t.string   "parent_relationable_type"
+    t.integer  "child_relationable_id"
+    t.string   "child_relationable_type"
+    t.integer  "related_content_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "times_reported",           default: 0
+  end
+
+  add_index "related_contents", ["child_relationable_type", "child_relationable_id"], name: "index_related_contents_on_child_relationable", using: :btree
+  add_index "related_contents", ["parent_relationable_id", "parent_relationable_type", "child_relationable_id", "child_relationable_type"], name: "unique_parent_child_related_content", unique: true, using: :btree
+  add_index "related_contents", ["parent_relationable_type", "parent_relationable_id"], name: "index_related_contents_on_parent_relationable", using: :btree
+  add_index "related_contents", ["related_content_id"], name: "opposite_related_content", using: :btree
 
   create_table "settings", force: :cascade do |t|
     t.string "key"
