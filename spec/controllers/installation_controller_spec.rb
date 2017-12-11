@@ -18,7 +18,15 @@ describe InstallationController, type: :request do
         'user.recommendations' => nil,
         'community' => nil,
         'map' => 't',
-        'spending_proposal_features.voting_allowed' => 't'
+        'allow_images' => nil,
+        'proposals' => 't',
+        'spending_proposal_features.voting_allowed' => 't',
+        'spending_proposal_features.final_voting_allowed' => 't',
+        'spending_proposal_features.open_results_page' => nil,
+        'spending_proposal_features.phase1' => 't',
+        'spending_proposal_features.phase2' => nil,
+        'spending_proposal_features.phase3' => nil,
+        'spending_proposal_features.valuation_allowed' => nil,
       }
     end
 
