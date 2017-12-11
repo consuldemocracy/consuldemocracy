@@ -264,6 +264,7 @@ en:
         one: Someone commented on
         other: There are %{count} new comments on
       empty_notifications: You don't have new notifications.
+      notifiable_hidden: This resource is not available anymore.
       mark_all_as_read: Mark all as read
       proposal_notification:
         one: There is one new notification on
