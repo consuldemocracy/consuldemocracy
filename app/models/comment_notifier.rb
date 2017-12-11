@@ -22,8 +22,11 @@ class CommentNotifier
   end
 
   def email_on_comment?
-    commentable_author = @comment.commentable.author
-    commentable_author != @author && commentable_author.email_on_comment?
+    commentable_author = @comment.commentable.try(:author)
+
+    commentable_author.present? &&
+    commentable_author != @author &&
+    commentable_author.email_on_comment?
   end
 
   def email_on_comment_reply?
