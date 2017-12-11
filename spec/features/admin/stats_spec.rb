@@ -615,7 +615,7 @@ feature 'Stats' do
 
       visit admin_stats_path
 
-      within("#stats") do
+      within(".stats") do
         click_link "Polls"
       end
 
@@ -631,7 +631,7 @@ feature 'Stats' do
 
       visit admin_stats_path
 
-      within("#stats") do
+      within(".stats") do
         click_link "Polls"
       end
 
@@ -651,7 +651,7 @@ feature 'Stats' do
 
       visit admin_stats_path
 
-      within("#stats") do
+      within(".stats") do
         click_link "Polls"
       end
 
@@ -683,7 +683,7 @@ feature 'Stats' do
 
       visit admin_stats_path
 
-      within("#stats") do
+      within(".stats") do
         click_link "Polls"
       end
 
@@ -701,4 +701,5 @@ feature 'Stats' do
     end
 
   end
+
 end

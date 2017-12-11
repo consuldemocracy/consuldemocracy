@@ -3,6 +3,12 @@ require 'rails_helper'
 
 feature 'Proposals' do
 
+  scenario 'Disabled with a feature flag' do
+    Setting['feature.proposals'] = nil
+    expect{ visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    Setting['feature.proposals'] = true
+  end
+
   context 'Index' do
     scenario 'Lists featured and regular proposals' do
       featured_proposals = create_featured_proposals

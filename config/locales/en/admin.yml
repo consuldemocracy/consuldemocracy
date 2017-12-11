@@ -996,6 +996,7 @@ en:
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         incomplete_verifications: Incomplete verifications
+        polls: Polls
       graph:
         debate_created: Debates
         spending_proposals: Investment projects
@@ -1058,7 +1059,7 @@ en:
         title: Proposal notifications
         total: Total
         proposals_with_notifications: Proposals with notifications
-        not_available: Proposal not available
+        not_available: Proposal not available        
       reedemable_codes:
         title: Redeemable codes
         total: Total
@@ -1068,6 +1069,17 @@ en:
         total: Total
         clicked_email_link: Clicked email link
         clicked_signup_button: Clicked signup button
+      polls:
+        title: Poll Stats
+        all: Polls
+        web_participants: Web participants
+        total_participants: Total Participants
+        poll_questions: "Questions from poll: %{poll}"
+        table:
+          poll_name: Poll
+          question_name: Question
+          origin_web: Web participants
+          origin_total: Total participants
     tags:
       create: Create topic
       destroy: Destroy topic
