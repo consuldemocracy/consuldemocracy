@@ -1,4 +1,4 @@
-<% report = [965, 15290, 16182, 15235, 15237, 15262, 15276] %>
+<% report = [9, 105, 199, 417, 965, 15290, 16182, 15235, 15237, 15262, 15276] %>
 
 <% if report.include?(@proposal.id) %>
   <div class="document-link">
@@ -6,6 +6,34 @@
       <span class="icon-document"></span>&nbsp;
       <strong><%= t('proposals.show.title_external_url') %></strong>
     </p>
+<% end %>
+
+<% if @proposal.id == 9 %>
+  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2015_09_9.pdf" do %>
+    Informe de competencia <small>(PDF | 82Kb)</small>
+  <% end %>
+  </div>
+<% end %>
+
+<% if @proposal.id == 105 %>
+  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2015_09_105.pdf" do %>
+    Informe de competencia <small>(PDF | 817Kb)</small>
+  <% end %>
+  </div>
+<% end %>
+
+<% if @proposal.id == 199 %>
+  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2015_09_199.pdf" do %>
+    Informe de competencia <small>(PDF | 86Kb)</small>
+  <% end %>
+  </div>
+<% end %>
+
+<% if @proposal.id == 417 %>
+  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2015_09_417.pdf" do %>
+    Informe de competencia <small>(PDF | 64Kb)</small>
+  <% end %>
+  </div>
 <% end %>
 
 <% if @proposal.id == 965 %>
