@@ -298,7 +298,6 @@ feature "Notifications" do
     end
 
     pending "group notifications for the same proposal"
-
   end
 
   context "mark as read" do
@@ -332,6 +331,19 @@ feature "Notifications" do
       expect(current_path).to eq(notifications_path)
     end
 
+  end
+
+  scenario "Notifiable hidden", :js do
+    create(:notification, notifiable: debate, user: author)
+    debate.hide
+
+    login_as author
+    visit root_path
+    find(".icon-notification").click
+
+    expect(page).to have_css ".notification", count: 1
+    expect(page).to have_content "This resource is not available anymore"
+    expect(page).to_not have_xpath "//a[@href='#{notification_path(Notification.last)}']"
   end
 
   scenario "no notifications" do
