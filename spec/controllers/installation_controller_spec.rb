@@ -8,6 +8,7 @@ describe InstallationController, type: :request do
         'debates' => nil,
         'spending_proposals' => 't',
         'polls' => nil,
+        'proposals' => 't',
         'twitter_login' => nil,
         'facebook_login' => nil,
         'google_login' => nil,
