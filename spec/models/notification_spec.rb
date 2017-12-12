@@ -48,33 +48,51 @@ describe Notification do
   end
 
   describe "#notification_action" do
+    it "returns correct text when someone comments on your commentable" do
+      debate = create(:debate)
+      notification = create(:notification, notifiable: debate)
 
-    context "when action was comment on a debate" do
-      it "returns correct text when someone comments on your debate" do
-        debate = create(:debate)
-        notification = create :notification, notifiable: debate
-
-        expect(notification.notifiable_action).to eq "comments_on"
-      end
+      expect(notification.notifiable_action).to eq "comments_on"
     end
 
-    context "when action was comment on a debate" do
-      it "returns correct text when someone replies to your comment" do
-        debate = create(:debate)
-        debate_comment = create :comment, commentable: debate
-        notification = create :notification, notifiable: debate_comment
+    it "returns correct text when someone replies to your comment" do
+      debate = create(:debate)
+      debate_comment = create(:comment, commentable: debate)
+      notification = create(:notification, notifiable: debate_comment)
 
-        expect(notification.notifiable_action).to eq "replies_to"
-      end
+      expect(notification.notifiable_action).to eq "replies_to"
     end
 
-    context "when action was proposal notification" do
-      it "returns correct text when the author created a proposal notification" do
-        proposal_notification = create(:proposal_notification)
-        notification = create :notification, notifiable: proposal_notification
+    it "returns correct text when the author created a proposal notification" do
+      proposal_notification = create(:proposal_notification)
+      notification = create(:notification, notifiable: proposal_notification)
 
-        expect(notification.notifiable_action).to eq "proposal_notification"
-      end
+      expect(notification.notifiable_action).to eq "proposal_notification"
+    end
+  end
+
+  describe "#notification_title" do
+    it "returns the commentable title when it's a root comment" do
+      debate = create(:debate, title: "Save the whales")
+      notification = create(:notification, notifiable: debate)
+
+      expect(notification.notifiable_title).to eq "Save the whales"
+    end
+
+    it "returns the commentable title when it's a reply to a root comment" do
+      debate = create(:debate, title: "Save the whales")
+      debate_comment = create(:comment, commentable: debate)
+      notification = create(:notification, notifiable: debate_comment)
+
+      expect(notification.notifiable_title).to eq "Save the whales"
+    end
+
+    it "returns the commentable title when it's an author's proposals notification" do
+      proposal = create(:proposal, title: "Save the whales")
+      proposal_notification = create(:proposal_notification, proposal: proposal)
+      notification = create(:notification, notifiable: proposal_notification)
+
+      expect(notification.notifiable_title).to eq "Save the whales"
     end
   end
 
