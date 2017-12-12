@@ -1,5 +1,5 @@
-<% if notification.notifiable.present? %>
-  <li id="<%= dom_id(notification) %>" class="notification">
+<li id="<%= dom_id(notification) %>" class="notification">
+  <% if notification.notifiable.present? %>
     <%= link_to notification do %>
       <p>
         <em>
@@ -11,13 +11,11 @@
 
       <p class="time"><%= l notification.timestamp, format: :datetime %></p>
     <% end %>
-  </li>
-<% else %>
-  <li id="<%= dom_id(notification) %>" class="notification">
+  <% else %>
     <p>
       <strong>
         <%= t("notifications.index.notifiable_hidden") %>
       </strong>
     </p>
-  </li>
-<% end %>
+  <% end %>
+</li>
