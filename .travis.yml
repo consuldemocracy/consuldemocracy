@@ -13,6 +13,7 @@ script:
   - "bin/knapsack_pro_rspec"
 env:
   global:
+    - KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true
     - KNAPSACK_PRO_CI_NODE_TOTAL=2
   matrix:
     - KNAPSACK_PRO_CI_NODE_INDEX=0
