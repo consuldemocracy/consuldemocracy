@@ -1,86 +1,58 @@
-<% report = [9, 105, 199, 417, 965, 15290, 16182, 15235, 15237, 15262, 15276] %>
+<% reports = {
+                9 => {
+                  file: '2015_09_9',
+                  size: '82Kb'
+                },
+                105 => {
+                  file: '2015_09_105',
+                  size: '817Kb'
+                },
+                199 => {
+                  file: '2015_09_199',
+                  size: '86Kb'
+                },
+                417 => {
+                  file: '2015_09_417',
+                  size: '64Kb'
+                },
+                965 => {
+                  file: '2015_09_965',
+                  size: '81Kb'
+                },
+                15290 => {
+                  file: '2017_01_02_15290_16182',
+                  size: '59Kb'
+                },
+                16182 => {
+                  file: '2017_01_02_15290_16182',
+                  size: '59Kb'
+                },
+                15235 => {
+                  file: '2017_01_15235',
+                  size: '56Kb'
+                },
+                15237 => {
+                  file: '2017_01_15237',
+                  size: '81Kb'
+                },
+                15262 => {
+                  file: '2017_01_15262',
+                  size: '63Kb'
+                },
+                15276 => {
+                  file: '2017_01_15276',
+                  size: '53Kb'
+                }
+              } %>
 
-<% if report.include?(@proposal.id) %>
+<% if reports.keys.include?(@proposal.id) %>
   <div class="document-link">
     <p>
       <span class="icon-document"></span>&nbsp;
       <strong><%= t('proposals.show.title_external_url') %></strong>
     </p>
-<% end %>
-
-<% if @proposal.id == 9 %>
-  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2015_09_9.pdf" do %>
-    Informe de competencia <small>(PDF | 82Kb)</small>
-  <% end %>
-  </div>
-<% end %>
-
-<% if @proposal.id == 105 %>
-  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2015_09_105.pdf" do %>
-    Informe de competencia <small>(PDF | 817Kb)</small>
-  <% end %>
-  </div>
-<% end %>
-
-<% if @proposal.id == 199 %>
-  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2015_09_199.pdf" do %>
-    Informe de competencia <small>(PDF | 86Kb)</small>
-  <% end %>
-  </div>
-<% end %>
-
-<% if @proposal.id == 417 %>
-  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2015_09_417.pdf" do %>
-    Informe de competencia <small>(PDF | 64Kb)</small>
-  <% end %>
-  </div>
-<% end %>
-
-<% if @proposal.id == 965 %>
-  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2015_09_965.pdf" do %>
-    Informe de competencia <small>(PDF | 81Kb)</small>
-  <% end %>
-  </div>
-<% end %>
-
-<% if @proposal.id == 15290 %>
-  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2017_01_02_15290_16182.pdf" do %>
-    Informe de competencia <small>(PDF | 59Kb)</small>
-  <% end %>
-  </div>
-<% end %>
-
-<% if @proposal.id == 16182 %>
-  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2017_01_02_15290_16182.pdf" do %>
-    Informe de competencia <small>(PDF | 59Kb)</small>
-  <% end %>
-  </div>
-<% end %>
-
-<% if @proposal.id == 15235 %>
-  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2017_01_15235.pdf" do %>
-    Informe de competencia <small>(PDF | 56Kb)</small>
-  <% end %>
-  </div>
-<% end %>
-
-<% if @proposal.id == 15237 %>
-  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2017_01_15237.pdf" do %>
-    Informe de competencia <small>(PDF | 81Kb)</small>
-  <% end %>
-  </div>
-<% end %>
-
-<% if @proposal.id == 15262 %>
-  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2017_01_15262.pdf" do %>
-    Informe de competencia <small>(PDF | 63Kb)</small>
-  <% end %>
-  </div>
-<% end %>
-
-<% if @proposal.id == 15276 %>
-  <%= link_to "https://decide.madrid.es/system/proposals/MAD_2017_01_15276.pdf" do %>
-    Informe de competencia <small>(PDF | 53Kb)</small>
-  <% end %>
+    <%= link_to "https://decide.madrid.es/system/proposals/MAD_#{reports[@proposal.id][:file]}.pdf" do %>
+      Informe de competencia <small>(PDF | <%= reports[@proposal.id][:size] %>)</small>
+    <% end %>
   </div>
 <% end %>
