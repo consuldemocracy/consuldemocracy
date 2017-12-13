@@ -123,6 +123,22 @@ feature 'Proposals' do
       visit proposal_path(proposal)
       expect(page).not_to have_content "Access the community"
     end
+
+    scenario 'related contents are listed' do
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      related_content = create(:related_content, parent_relationable: proposal1, child_relationable: proposal2)
+
+      visit proposal_path(proposal1)
+      within("#related-content-list") do
+        expect(page).to have_content(proposal2.title)
+      end
+
+      visit proposal_path(proposal2)
+      within("#related-content-list") do
+        expect(page).to have_content(proposal1.title)
+      end
+    end
   end
 
   context "Embedded video" do
