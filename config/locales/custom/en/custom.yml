@@ -170,18 +170,6 @@ en:
       title: "Do you have an idea to change Madrid?"
       text: "Madrid City Council will carry out your proposal if it reaches a citizen voting. You need 27,064 supports in Decide Madrid, the 1% of the population with the right to vote."
       button: "Create a proposal"
-    citizenship:
-      label: "Public consultation"
-      title: "New Regulation of Attention to Citizenship"
-      text: "Give your ideas for the new Regulation on Attention to Citizenship and e-Administration."
-      link: "Participate on new regulation of attention to citizenship"
-      alt: "Office of Attention to the Citizenship in Madrid"
-    home_help:
-      label: "Public consultation"
-      title: "New Home Help Service Ordinance"
-      text: "Participate to create a new ordinance that affects elderly, disabled, day centers and residences."
-      link: "Participate on new home help service ordinance"
-      alt: "Auxiliary helping an older person"
     proposals:
       label: "Proposals"
       title: "What is it and how to create a citizen proposal?"
