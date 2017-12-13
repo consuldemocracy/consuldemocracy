@@ -816,6 +816,14 @@ LOREM_IPSUM
     user
   end
 
+  factory :legislation_proposal, class: 'Legislation::Proposal' do
+    title "Example proposal for a legislation"
+    summary "This law should include..."
+    terms_of_service '1'
+    process factory: :legislation_process
+    author factory: :user
+  end
+
   factory :site_customization_page, class: 'SiteCustomization::Page' do
     slug "example-page"
     title "Example page"
