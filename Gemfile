@@ -53,6 +53,8 @@ gem 'uglifier', '~> 3.2.0'
 gem 'unicorn', '~> 5.3.0'
 gem 'whenever', '~> 0.9.7', require: false
 
+gem 'letter_opener_web', '~> 1.3.1'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-leaflet'
   gem 'rails-assets-markdown-it', '~> 8.2.1'
@@ -66,7 +68,6 @@ group :development, :test do
   gem 'i18n-tasks', '~> 0.9.15'
   gem 'knapsack_pro', '~> 0.53.0'
   gem 'launchy', '~> 2.4.3'
-  gem 'letter_opener_web', '~> 1.3.1'
   gem 'quiet_assets', '~> 1.1.0'
   gem 'spring', '~> 2.0.1'
   gem 'spring-commands-rspec', '~> 1.0.4'
