@@ -48,8 +48,8 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       within "##{dom_id(followable)}" do
         click_link("Follow #{followable.model_name.human.downcase}")
 
-        expect(page).not_to have_link "Follow"
-        expect(page).to have_link "Unfollow"
+        expect(page).not_to have_link("Follow")
+        expect(page).to have_link("Following")
       end
     end
 
@@ -72,7 +72,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
 
       visit send(followable_path, arguments)
 
-      expect(page).to have_link("Unfollow")
+      expect(page).to have_link("Following")
     end
 
     scenario "Should update follow button and show destroy notice after user clicks on unfollow button", :js do
@@ -84,7 +84,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       within "##{dom_id(followable)}" do
         click_link("Unfollow #{followable.model_name.human.downcase}")
 
-        expect(page).not_to have_link "Unfollow"
+        expect(page).not_to have_link("Unfollow")
         expect(page).to have_link("Follow #{followable.model_name.human.downcase}")
       end
     end
