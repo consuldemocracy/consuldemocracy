@@ -62,10 +62,13 @@ feature 'Admin budget investment milestones' do
   context "Edit" do
     scenario "Change title and description" do
       milestone = create(:budget_investment_milestone, investment: @investment)
+      create(:image, imageable: milestone)
 
       visit admin_budget_budget_investment_path(@investment.budget, @investment)
 
       click_link milestone.title
+
+      expect(page).to have_css("img[alt='#{milestone.image.title}']")
 
       fill_in 'budget_investment_milestone_title', with: 'Changed title'
       fill_in 'budget_investment_milestone_description', with: 'Changed description'
@@ -74,6 +77,7 @@ feature 'Admin budget investment milestones' do
 
       expect(page).to have_content 'Changed title'
       expect(page).to have_content 'Changed description'
+      expect(page).to have_link 'Show image'
     end
   end
 

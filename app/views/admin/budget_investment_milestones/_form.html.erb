@@ -2,6 +2,7 @@
 
   <%= f.text_field :title, maxlength: Budget::Investment::Milestone.title_max_length %>
   <%= f.text_area :description, rows: 5 %>
+  <%= render 'images/admin_image', imageable: @milestone, f: f %>
 
   <%= f.submit nil, class: "button success" %>
 <% end %>
