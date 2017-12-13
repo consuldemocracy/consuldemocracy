@@ -817,3 +817,7 @@ es:
     help: "Puedes introducir cualquier enlace que esté dentro de %{org}."
     submit: "Añadir"
     error: "Enlace no válido. Recuerda que debe empezar por %{url}."
+    success: "Has añadido un nuevo contenido relacionado"
+    content_title:
+      proposal: "Propuesta"
+      debate: "Debate"
