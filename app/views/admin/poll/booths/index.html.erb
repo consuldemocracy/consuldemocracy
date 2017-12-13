@@ -1,7 +1,8 @@
 <h2 class="inline-block"><%= t("admin.booths.index.title") %></h2>
 
-<%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path,
-            class: "button success float-right" %>
+<% if controller_name == "booths" && action_name != "available" %>
+  <%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path, class: "button success float-right" %>
+<% end %>
 
 <% if @booths.empty? %>
   <div class="callout primary">
@@ -15,7 +16,7 @@
     <thead>
       <th><%= t("admin.booths.index.name") %></th>
       <th><%= t("admin.booths.index.location") %></th>
-      <th>&nbsp;</th>
+      <th class="text-right"><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
     <% @booths.each do |booth| %>

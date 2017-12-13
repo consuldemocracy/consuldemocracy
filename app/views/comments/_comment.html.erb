@@ -26,9 +26,9 @@
         <div class="comment-info">
 
           <% if comment.as_administrator? %>
-            <span class="user-name"><%= t("comments.comment.admin") %> #<%= comment.administrator_id%></span>
+            <span class="user-name"><%= t("comments.comment.admin") %> #<%= comment.administrator_id %></span>
           <% elsif comment.as_moderator? %>
-            <span class="user-name"><%= t("comments.comment.moderator") %> #<%= comment.moderator_id%></span>
+            <span class="user-name"><%= t("comments.comment.moderator") %> #<%= comment.moderator_id %></span>
           <% else %>
 
             <% if comment.user.hidden? || comment.user.erased? %>
@@ -72,7 +72,7 @@
           </div>
 
           <% if comment.children.size > 0 %>
-            <%= link_to "#{dom_id(comment)}", class: "js-toggle-children relative", data:  {'id': "#{dom_id(comment)}"} do %>
+            <%= link_to "", class: "js-toggle-children relative", data: {'id': "#{dom_id(comment)}"} do %>
               <span class="show-for-sr js-child-toggle" style="display: none;"><%= t("shared.show") %></span>
               <span class="show-for-sr js-child-toggle"><%= t("shared.hide") %></span>
               <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span> <%= t("comments.comment.responses", count: comment.children.size) %>
@@ -93,6 +93,7 @@
         </div>
       <% end %>
     </li>
+    <% unless child_comments_of(comment).empty? %>
     <li>
       <ul id="<%= dom_id(comment) %>_children" class="no-bullet comment-children">
         <% child_comments_of(comment).each do |child| %>
@@ -102,5 +103,6 @@
         <% end %>
       </ul>
     </li>
+    <% end %>
   </ul>
 <% end %>

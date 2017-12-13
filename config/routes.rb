@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#welcome'
   get '/cuentasegura', to: 'welcome#verification', as: :cuentasegura
 
+  get '/consul.json', to: "installation#details"
+
   resources :debates do
     member do
       post :vote
@@ -83,7 +85,9 @@ Rails.application.routes.draw do
     end
     resources :groups, controller: "budgets/groups", only: [:show]
     resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do
-      member     { post :vote }
+      member do
+        post :vote
+      end
       collection { get :suggest }
     end
     resource :ballot, only: :show, controller: "budgets/ballots" do
@@ -100,6 +104,13 @@ Rails.application.routes.draw do
 
   resources :follows, only: [:create, :destroy]
 
+  resources :documents, only: [:destroy]
+
+  resources :images, only: [:destroy]
+
+  resources :direct_uploads, only: [:create]
+  delete "direct_uploads/destroy", to: "direct_uploads#destroy", as: :direct_upload_destroy
+
   resources :stats, only: [:index]
 
   resources :legacy_legislations, only: [:show], path: 'legislations'
@@ -109,7 +120,11 @@ Rails.application.routes.draw do
   end
 
   resources :polls, only: [:show, :index] do
-    resources :questions, only: [:show], controller: 'polls/questions', shallow: true do
+    member do
+      get :stats
+      get :results
+    end
+    resources :questions, controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
   end
@@ -121,9 +136,21 @@ Rails.application.routes.draw do
         get :draft_publication
         get :allegations
         get :result_publication
+        get :proposals
       end
       resources :questions, only: [:show] do
         resources :answers, only: [:create]
+      end
+      resources :proposals do
+        member do
+          post :vote
+          put :flag
+          put :unflag
+        end
+        collection do
+          get :map
+          get :suggest
+        end
       end
       resources :draft_versions, only: [:show] do
         get :go_to_version, on: :collection
@@ -153,12 +180,22 @@ Rails.application.routes.draw do
 
   resource :verification, controller: "verification", only: [:show]
 
+  resources :communities, only: [:show] do
+    resources :topics
+  end
+
   scope module: :verification do
     resource :residence, controller: "residence", only: [:new, :create]
     resource :sms, controller: "sms", only: [:new, :create, :edit, :update]
     resource :verified_user, controller: "verified_user", only: [:show]
     resource :email, controller: "email", only: [:new, :show, :create]
     resource :letter, controller: "letter", only: [:new, :create, :show, :edit, :update]
+  end
+
+  resources :tags do
+    collection do
+      get :suggest
+    end
   end
 
   namespace :admin do
@@ -236,11 +273,13 @@ Rails.application.routes.draw do
     end
 
     resources :settings, only: [:index, :update]
+    put :update_map, to: "settings#update_map"
+
     resources :moderators, only: [:index, :create, :destroy] do
       get :search, on: :collection
     end
 
-    resources :valuators, only: [:index, :create] do
+    resources :valuators, only: [:index, :create, :destroy] do
       get :search, on: :collection
       get :summary, on: :collection
     end
@@ -257,12 +296,12 @@ Rails.application.routes.draw do
 
     scope module: :poll do
       resources :polls do
-        get :search_questions, on: :member
+        get :booth_assignments, on: :collection
         patch :add_question, on: :member
-        patch :remove_question, on: :member
 
         resources :booth_assignments, only: [:index, :show, :create, :destroy] do
           get :search_booths, on: :collection
+          get :manage, on: :collection
         end
 
         resources :officer_assignments, only: [:index, :create, :destroy] do
@@ -278,8 +317,22 @@ Rails.application.routes.draw do
         get :search, on: :collection
       end
 
-      resources :booths
-      resources :questions
+      resources :booths do
+        get :available, on: :collection
+
+        resources :shifts do
+          get :search_officers, on: :collection
+        end
+      end
+
+      resources :questions, shallow: true do
+        resources :answers, except: [:index, :destroy], controller: 'questions/answers', shallow: true do
+          resources :images, controller: 'questions/answers/images'
+          resources :videos, controller: 'questions/answers/videos'
+          get :documents, to: 'questions/answers#documents'
+        end
+        post '/answers/order_answers', to: 'questions/answers#order_answers'
+      end
     end
 
     resources :verifications, controller: :verifications, only: :index do
@@ -293,11 +346,13 @@ Rails.application.routes.draw do
     resource :stats, only: :show do
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection
+      get :polls, on: :collection
     end
 
     namespace :legislation do
       resources :processes do
         resources :questions
+        resources :proposals
         resources :draft_versions
       end
     end
@@ -414,7 +469,6 @@ Rails.application.routes.draw do
     resources :polls, only: [:index] do
       get :final, on: :collection
 
-      resources :final_recounts, only: [:new, :create]
       resources :results, only: [:new, :create, :index]
     end
     resource :residence, controller: "residence", only: [:new, :create]

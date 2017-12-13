@@ -362,7 +362,6 @@ pt-BR:
     - Sex
     - Sab
     abbr_month_names:
-    -
     - Jan
     - Fev
     - Mar
@@ -1212,7 +1211,7 @@ pt-BR:
       how_to_use:
         text: "Use este programa em seu governo local ou nos ajude a melhorá-lo, ele
           é um software livre.\r\n\r\nEste Portal de Governo Aberto usa o [app Consul]
-          (https://github.com/ayuntamientomadrid 'cônsul github'), que é um software
+          (https://github.com/consul/consul 'cônsul github'), que é um software
           livre, com [licença AGPLv3] (http://www.gnu.org/licenses/agpl- 3.0.html
           'AGPLv3 gnu'), o que significa, em palavras simples que qualquer um pode
           usar o código livremente, copiá-lo, vê-lo em detalhes, modificá-lo e redistribuí-lo
@@ -1223,7 +1222,7 @@ pt-BR:
           Madrid, o tanto quanto possível para fazê-lo, por isso, se você estiver
           interessado escreva-nos: <a href = \"mailto: ag.gobiernoabierto@consul.dev
           '> ag.gobiernoabierto@consul.dev </a>\r\n\r\nSe você é um programador, você
-          pode ver o código e nos ajudar a melhorá-lo em [app Consul] (https://github.com/ayuntamientomadrid
+          pode ver o código e nos ajudar a melhorá-lo em [app Consul] (https://github.com/consul/consul
           'cônsul github')."
       titles:
         faq: Solução para problemas técnicos (FAQ)

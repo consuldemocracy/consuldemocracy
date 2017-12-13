@@ -299,16 +299,16 @@ feature 'Votes' do
     end
   end
 
-  # scenario 'Not logged user trying to vote comments in debates', :js do
-  #   debate = create(:debate)
-  #   comment = create(:comment, commentable: debate)
-  #
-  #   visit comment_path(debate)
-  #   within("#comment_#{comment.id}") do
-  #     find("div.votes").hover
-  #     expect_message_you_need_to_sign_in_to_vote_comments
-  #   end
-  # end
+  scenario 'Not logged user trying to vote comments in debates', :js do
+    debate = create(:debate)
+    comment = create(:comment, commentable: debate)
+
+    visit comment_path(comment)
+    within("#comment_#{comment.id}") do
+      find("div.votes").hover
+      expect_message_you_need_to_sign_in_to_vote_comments
+    end
+  end
 
   scenario 'Not logged user trying to vote comments in proposals', :js do
     proposal = create(:proposal)

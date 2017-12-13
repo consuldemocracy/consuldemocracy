@@ -2,7 +2,9 @@
 
 <%= render 'legislation/processes/header', process: @process, header: :small %>
 
-<%= render 'legislation/processes/key_dates', process: @process, phase: :allegations %>
+<%= render 'documents/additional_documents', documents: @process.documents %>
+
+<%= render 'legislation/processes/key_dates', process: @process, phase: :allegations_phase %>
 
 <div class="column row">
   <div class="draft-panels small-12 column row">
@@ -15,7 +17,7 @@
             <%= submit_tag t('.select_version_submit'), class: "button" %>
           <% end %>
           <% if @draft_version.changelog.present? %>
-            <span><%= link_to t('.see_changes'), legislation_process_draft_version_changes_path(@process, @draft_version) %></span>
+            <span><%= link_to t('.see_changes'), legislation_process_draft_version_changes_path(@process, @draft_version), class: "see-changes" %></span>
           <% end %>
         </div>
         <span><%= t('.updated_at', date: format_date(@draft_version.updated_at)) %></span>

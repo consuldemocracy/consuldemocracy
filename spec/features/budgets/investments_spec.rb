@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'sessions_helper'
 
 feature 'Budget Investments' do
 
@@ -25,6 +26,21 @@ feature 'Budget Investments' do
         expect(page).to have_css("a[href='#{budget_investment_path(budget_id: budget.id, id: investment.id)}']", text: investment.title)
         expect(page).to_not have_content(unfeasible_investment.title)
       end
+    end
+  end
+
+  scenario 'Index should show investment descriptive image only when is defined' do
+    investment = create(:budget_investment, heading: heading)
+    investment_with_image = create(:budget_investment, heading: heading)
+    image = create(:image, imageable: investment_with_image)
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    within("#budget_investment_#{investment.id}") do
+      expect(page).to have_css("div.no-image")
+    end
+    within("#budget_investment_#{investment_with_image.id}") do
+      expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
     end
   end
 
@@ -155,6 +171,25 @@ feature 'Budget Investments' do
       expect(order).to eq(new_order)
     end
 
+    scenario "Investments are not repeated with random order", :js do
+      12.times { create(:budget_investment, heading: heading) }
+      # 12 instead of per_page + 2 because in each page there are 10 (in this case), not 25
+
+      visit budget_investments_path(budget, order: 'random')
+
+      first_page_investments = investments_order
+
+      click_link 'Next'
+      expect(page).to have_content "You're on page 2"
+
+      second_page_investments = investments_order
+
+      common_values = first_page_investments & second_page_investments
+
+      expect(common_values.length).to eq(0)
+
+    end
+
     scenario 'Proposals are ordered by confidence_score', :js do
       create(:budget_investment, heading: heading, title: 'Best proposal').update_column(:confidence_score, 10)
       create(:budget_investment, heading: heading, title: 'Worst proposal').update_column(:confidence_score, 2)
@@ -171,6 +206,46 @@ feature 'Budget Investments' do
 
       expect(current_url).to include('order=confidence_score')
       expect(current_url).to include('page=1')
+    end
+
+    scenario 'Each user as a different and consistent random budget investment order', :js do
+      12.times { create(:budget_investment, heading: heading) }
+
+      in_browser(:one) do
+        visit budget_investments_path(budget, heading: heading)
+        @first_user_investments_order = investments_order
+      end
+
+      in_browser(:two) do
+        visit budget_investments_path(budget, heading: heading)
+        @second_user_investments_order = investments_order
+      end
+
+      expect(@first_user_investments_order).not_to eq(@second_user_investments_order)
+
+      in_browser(:one) do
+        click_link 'Next'
+        expect(page).to have_content "You're on page 2"
+
+        click_link 'Previous'
+        expect(page).to have_content "You're on page 1"
+
+        expect(investments_order).to eq(@first_user_investments_order)
+      end
+
+      in_browser(:two) do
+        click_link 'Next'
+        expect(page).to have_content "You're on page 2"
+
+        click_link 'Previous'
+        expect(page).to have_content "You're on page 1"
+
+        expect(investments_order).to eq(@second_user_investments_order)
+      end
+    end
+
+    def investments_order
+      all(".budget-investment h3").collect {|i| i.text }
     end
 
   end
@@ -264,7 +339,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "search"
 
         within("div#js-suggest") do
-          expect(page).to have_content ("You are seeing 5 of 6 investments containing the term 'search'")
+          expect(page).to have_content "You are seeing 5 of 6 investments containing the term 'search'"
         end
       end
 
@@ -279,7 +354,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "item"
 
         within('div#js-suggest') do
-          expect(page).to_not have_content ('You are seeing')
+          expect(page).to_not have_content 'You are seeing'
         end
       end
 
@@ -294,7 +369,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "search"
 
         within('div#js-suggest') do
-          expect(page).to_not have_content ('You are seeing')
+          expect(page).to_not have_content 'You are seeing'
         end
       end
     end
@@ -327,6 +402,24 @@ feature 'Budget Investments' do
     within("#investment_code") do
       expect(page).to have_content(investment.id)
     end
+  end
+
+  scenario 'Can access the community' do
+    Setting['feature.community'] = true
+
+    investment = create(:budget_investment, heading: heading)
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    expect(page).to have_content "Access the community"
+
+    Setting['feature.community'] = false
+  end
+
+  scenario 'Can not access the community' do
+    Setting['feature.community'] = false
+
+    investment = create(:budget_investment, heading: heading)
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    expect(page).not_to have_content "Access the community"
   end
 
   scenario "Don't display flaggable buttons" do
@@ -429,7 +522,36 @@ feature 'Budget Investments' do
     end
   end
 
-  it_behaves_like "followable", "budget_investment", "budget_investment_path", {"budget_id": "budget_id", "id": "id"}
+  it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+
+  it_behaves_like "imageable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+
+  it_behaves_like "nested imageable",
+                  "budget_investment",
+                  "new_budget_investment_path",
+                  { "budget_id": "budget_id" },
+                  "imageable_fill_new_valid_budget_investment",
+                  "Create Investment",
+                  "Budget Investment created successfully."
+
+  it_behaves_like "documentable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+
+  it_behaves_like "nested documentable",
+                  "user",
+                  "budget_investment",
+                  "new_budget_investment_path",
+                  { "budget_id": "budget_id" },
+                  "documentable_fill_new_valid_budget_investment",
+                  "Create Investment",
+                  "Budget Investment created successfully."
+
+  it_behaves_like "mappable",
+                  "budget_investment",
+                  "investment",
+                  "new_budget_investment_path",
+                  "",
+                  "budget_investment_path",
+                  { "budget_id": "budget_id" }
 
   context "Destroy" do
 

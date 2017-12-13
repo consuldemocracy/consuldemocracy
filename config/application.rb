@@ -35,7 +35,7 @@ module Consul
     config.time_zone = 'Madrid'
     config.active_job.queue_adapter = :delayed_job
 
-    # Consul specific custom overrides
+    # CONSUL specific custom overrides
     # Read more on documentation:
     # * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md
     # * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md

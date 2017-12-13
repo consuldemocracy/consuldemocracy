@@ -5,8 +5,9 @@
 * Raimond García [github](https://github.com/voodoorai2000) | [twitter](https://twitter.com/voodoorai2000)
 * Juanjo Bazán [github](https://github.com/xuanxu) | [twitter](https://twitter.com/xuanxu)
 * Enrique García Cota [github](https://github.com/kikito) | [twitter](https://twitter.com/otikik)
-* Alberto García Cabeza [github](https://github.com/decabeza) | [twitter](https://twitter.com/decabeza)
+* Alberto García Cabeza [github](https://github.com/decabeza)
 * Alberto Calderón [github](https://github.com/bertocq) | [twitter](https://twitter.com/bertocq)
+* Maria Checa [github](https://github.com/MariaCheca)
 
 ## Código de conducta
 

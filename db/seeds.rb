@@ -39,10 +39,10 @@ Setting["months_to_archive_proposals"] = 12
 Setting["email_domain_for_officials"] = ''
 
 # Code to be included at the top (inside <head>) of every page (useful for tracking)
-Setting['per_page_code_head'] =  ''
+Setting['per_page_code_head'] = ''
 
 # Code to be included at the top (inside <body>) of every page
-Setting['per_page_code_body'] =  ''
+Setting['per_page_code_body'] = ''
 
 # Social settings
 Setting["twitter_handle"] = nil
@@ -65,6 +65,7 @@ Setting["org_name"] = "Ayuntamiento de Castellón de la Plana"
 Setting["place_name"] = "Castellón de la Plana"
 
 # Meta tags for SEO
+Setting["meta_title"] = nil
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
@@ -80,6 +81,9 @@ Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 Setting['feature.proposals'] = true
 Setting['feature.legislation'] = true
+Setting['feature.user.recommendations'] = true
+Setting['feature.community'] = true
+Setting['feature.map'] = nil
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
@@ -132,4 +136,9 @@ Setting['proposal_improvement_path'] = nil
 #
 #  end
 
- Setting['proposal_improvement_path'] = true
+Setting['proposal_improvement_path'] = true
+Setting['map_longitude'] = 0.0
+Setting['map_zoom'] = 10
+
+# Related content
+Setting['related_contents_report_threshold'] = 5

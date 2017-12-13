@@ -5,23 +5,19 @@ class Polls::QuestionsController < ApplicationController
 
   has_orders %w{most_voted newest oldest}, only: :show
 
-  def show
-    @commentable = @question.proposal.present? ? @question.proposal : @question
-    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
-    set_comment_flags(@comment_tree.comments)
-
-    question_answer = @question.answers.where(author_id: current_user.try(:id)).first
-    @answers_by_question_id = {@question.id => question_answer.try(:answer)}
-  end
-
   def answer
     answer = @question.answers.find_or_initialize_by(author: current_user)
+    token = params[:token]
 
     answer.answer = params[:answer]
+    answer.touch if answer.persisted?
     answer.save!
-    answer.record_voter_participation
+    answer.record_voter_participation(token)
+    @question.question_answers.where(question_id: @question).each do |question_answer|
+      question_answer.set_most_voted
+    end
 
-    @answers_by_question_id = {@question.id => params[:answer]}
+    @answers_by_question_id = { @question.id => params[:answer] }
   end
 
 end

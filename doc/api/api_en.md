@@ -30,7 +30,7 @@
 
 ## GraphQL
 
-The Consul API uses GraphQL [http://graphql.org](http://graphql.org), the [Ruby implementation](http://graphql-ruby.org/), to be specific. If you're not familiar with this kind of APIs, it's recommended to make some research about GraphQL before.
+The CONSUL API uses GraphQL [http://graphql.org](http://graphql.org), the [Ruby implementation](http://graphql-ruby.org/), to be specific. If you're not familiar with this kind of APIs, it's recommended to make some research about GraphQL before.
 
 One of the characteristics that differentiates a REST API from a GraphQL one is that with the last one it's possible for the client to build its own *custom queries*, so the server will only return information in which we're interested.
 
@@ -68,7 +68,7 @@ Responses are formatted in JSON:
 
 ## Making API requests
 
-Following [the official recommendations](http://graphql.org/learn/serving-over-http/), the Consul API supports the following kind of requests:
+Following [the official recommendations](http://graphql.org/learn/serving-over-http/), the CONSUL API supports the following kind of requests:
 
 * GET requests, with the query inside the *query string*.
 * POST requests
@@ -115,7 +115,7 @@ The query must be located inside a valid JSON document, as the value of the `"qu
 
 Sure you can use any HTTP library available for most programming languages.
 
-**IMPORTANT**: Due to security protocols from the Madrid City Council servers, it's necessary to include a *User Agent* header from a web browser so the request is not rejected. For example: 
+**IMPORTANT**: Due to security protocols from the Madrid City Council servers, it's necessary to include a *User Agent* header from a web browser so the request is not rejected. For example:
 
 `User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36`
 

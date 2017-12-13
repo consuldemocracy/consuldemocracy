@@ -13,27 +13,31 @@ module AdminHelper
   end
 
   def menu_tags?
-    ["tags"].include? controller_name
+    ["tags"].include?(controller_name)
   end
 
   def menu_moderated_content?
-    ["proposals", "debates", "comments", "hidden_users"].include? controller_name
+    ["proposals", "debates", "comments", "hidden_users"].include?(controller_name) && controller.class.parent != Admin::Legislation
   end
 
   def menu_budget?
-    ["spending_proposals"].include? controller_name
+    ["spending_proposals"].include?(controller_name)
   end
 
   def menu_polls?
-    ["polls", "questions", "officers", "booths", "officer_assignments", "booth_assignments", "recounts", "results"].include? controller_name
+    %w[polls questions officers booths officer_assignments booth_assignments recounts results shifts questions answers].include?(controller_name)
   end
 
   def menu_profiles?
-    ["administrators", "organizations", "officials", "moderators", "valuators", "managers", "users"].include? controller_name
+    %w[administrators organizations officials moderators valuators managers users activity].include?(controller_name)
   end
 
   def menu_banners?
-    ["banners"].include? controller_name
+    ["banners"].include?(controller_name)
+  end
+
+  def menu_customization?
+    ["pages", "images", "content_blocks"].include?(controller_name)
   end
 
   def official_level_options

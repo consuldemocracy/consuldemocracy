@@ -37,6 +37,7 @@ module Budgets
                        .per(10)
                        .for_render
       end
+      #@investments = investments.page(params[:page]).per(10).for_render
 
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
@@ -102,9 +103,8 @@ module Budgets
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          params[:random_seed] ||= rand(99) / 100.0
-          seed = Float(params[:random_seed]) rescue 0
-          Budget::Investment.connection.execute("select setseed(#{seed})")
+          seed = rand(-100..100) / 100.0
+          params[:random_seed] ||= Float(seed) rescue 0
         else
           params[:random_seed] = nil
         end
@@ -113,7 +113,12 @@ module Budgets
       def investment_params
         params[:budget_investment][:tag_list] = locate(params[:budget_investment][:tag_list])
         params[:budget_investment][:tag_list] = add_organization(params[:budget_investment][:tag_list])
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list, :organization_name, :location, :terms_of_service)
+        params.require(:budget_investment)
+              .permit(:title, :description, :external_url, :heading_id, :tag_list,
+                      :organization_name, :location, :terms_of_service,
+                      image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                      documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                      map_location_attributes: [:latitude, :longitude, :zoom])
       end
 
       def load_ballot
@@ -150,6 +155,16 @@ module Budgets
         array_tags = tag_string.split(',').collect(&:strip)
         array_tags << 'Asociaciones' unless array_tags.include?('Asociaciones')
         array_tags.join(',')
+      end
+
+      def investments
+        if @current_order == 'random'
+          @investments.apply_filters_and_search(@budget, params, @current_filter)
+                      .send("sort_by_#{@current_order}", params[:random_seed])
+        else
+          @investments.apply_filters_and_search(@budget, params, @current_filter)
+                      .send("sort_by_#{@current_order}")
+        end
       end
 
   end

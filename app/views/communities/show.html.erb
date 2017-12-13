@@ -1,0 +1,39 @@
+<div class="communities-show">
+
+  <div class="jumbo light">
+    <div class="row">
+      <div class="small-12 column">
+        <%= back_link_to community_back_link_path(@community) %>
+        <h2><%= community_text(@community) %></h2>
+        <p class="lead"> <%= community_title(@community) %> </p>
+        <p><%= community_description(@community) %> </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <aside class="show-for-small-only small-12 column">
+      <div class="sidebar-divider"></div>
+      <h2><%= t("community.show.sidebar.participate") %></h2>
+      <%= link_to t("community.show.sidebar.new_topic"), new_community_topic_path(@community.id), class: "button expanded #{disabled_create_topic}" %>
+    </aside>
+
+    <div class="small-12 medium-9 column">
+      <div id="topics" class="topics-list">
+        <%= render "topics/topics", topics: @topics %>
+      </div>
+      <%= paginate @topics %>
+    </div>
+
+    <aside class="small-12 medium-3 hide-for-small-only column">
+      <div class="sidebar-divider"></div>
+      <h2><%= t("community.show.sidebar.participate") %></h2>
+      <%= link_to t("community.show.sidebar.new_topic"), new_community_topic_path(@community.id), class: "button expanded #{disabled_create_topic}", title: "#{disabled_info_title}" %>
+    </aside>
+
+  </div>
+
+</div>
+
+<%= render 'participants' %>

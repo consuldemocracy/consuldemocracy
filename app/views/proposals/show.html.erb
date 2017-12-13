@@ -16,17 +16,6 @@
       <div class="small-12 medium-9 column">
         <%= back_link_to %>
 
-        <% if author_of?(@proposal, current_user) %>
-          <%= link_to t("proposals.show.send_notification"), new_proposal_notification_path(proposal_id: @proposal.id),
-                      class: 'button hollow float-right' %>
-        <% end %>
-
-        <% if current_user && @proposal.editable_by?(current_user) %>
-          <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow float-right' do %>
-            <%= t("proposals.show.edit_proposal_link") %>
-          <% end %>
-        <% end %>
-
         <h1><%= @proposal.title %></h1>
         <% if @proposal.retired? %>
           <div data-alert class="callout alert margin-top proposal-retired">
@@ -52,10 +41,14 @@
 
           <% if current_user %>
             <span class="bullet">&nbsp;&bull;&nbsp;</span>
-            <%= render 'proposals/flag_actions', proposal: @proposal %>
+            <span class="js-flag-actions">
+              <%= render 'proposals/flag_actions', proposal: @proposal %>
+            </span>
           <% end %>
 
         </div>
+
+        <%= render_image(@proposal.image, :large, true) if @proposal.image.present? %>
 
         <br>
         <p>
@@ -75,16 +68,29 @@
 
         <%= safe_html_with_links @proposal.description %>
 
+        <% if feature?(:map) && map_location_available?(@proposal.map_location) %>
+          <%= render_map(@proposal.map_location, "proposal", false, nil) %>
+        <% end %>
+
         <% if @proposal.external_url.present? %>
           <div class="document-link">
-            <%= text_with_links @proposal.external_url %>
+            <p>
+              <span class="icon-document"></span>&nbsp;
+              <strong><%= t('proposals.show.title_external_url') %></strong>
+            </p>
+              <%= text_with_links @proposal.external_url %>
           </div>
         <% end %>
 
         <% if @proposal.video_url.present? %>
           <div class="video-link">
+            <p>
+              <span class="icon-video"></span>&nbsp;
+              <strong><%= t('proposals.show.title_video_url') %></strong>
+            </p>
             <%= text_with_links @proposal.video_url %>
           </div>
+
         <% end %>
 
         <h4><%= @proposal.question %></h4>
@@ -106,6 +112,39 @@
       </div>
 
       <aside class="small-12 medium-3 column">
+        <% if author_of_proposal?(@proposal) || current_editable?(@proposal) || can_destroy_image?(@proposal) %>
+          <div class="sidebar-divider"></div>
+          <h2><%= t("proposals.show.author") %></h2>
+          <div class="show-actions-menu">
+
+            <% if current_editable?(@proposal) %>
+              <%= link_to edit_proposal_path(@proposal), class: 'button hollow expanded' do %>
+                          <span class="icon-edit"></span>
+                          <%= t("proposals.show.edit_proposal_link") %>
+              <% end %>
+            <% end %>
+
+            <% if author_of_proposal?(@proposal) %>
+              <%= link_to new_proposal_notification_path(proposal_id: @proposal.id),
+                          class: 'button hollow expanded' do %>
+                          <span class="icon-no-notification"></span>
+                          <%= t("proposals.show.send_notification") %>
+              <% end %>
+            <% end %>
+
+            <% if can_destroy_image?(@proposal) %>
+              <%= link_to image_path(@proposal.image, from: request.url),
+                          method: :delete,
+                          class: 'button hollow alert expanded',
+                          data: { confirm: t('images.actions.destroy.confirm') } do %>
+                          <span class="icon-image"></span>
+                          <%= t("images.remove_image") %>
+              <% end %>
+            <% end %>
+
+          </div>
+        <% end %>
+
         <div class="sidebar-divider"></div>
         <h2><%= t("votes.supports") %></h2>
         <div id="<%= dom_id(@proposal) %>_votes">
@@ -144,6 +183,8 @@
           <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, @proposal)  %>
         <% end %>
 
+        <%= render 'communities/access_button', community: @proposal.community %>
+
       </aside>
     </div>
   </div>
@@ -155,5 +196,11 @@
 
   <div class="tabs-panel is-active" id="tab-comments">
     <%= render "proposals/comments" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-documents">
+    <%= render 'documents/documents',
+                documents: @proposal.documents,
+                max_documents_allowed: Proposal.max_documents_allowed %>
   </div>
 </div>

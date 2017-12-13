@@ -84,6 +84,103 @@ feature 'Emails' do
     end
   end
 
+  context 'Budget investments comments' do
+    scenario 'Send email on budget investment comment', :js do
+      user = create(:user, email_on_comment: true)
+      investment = create(:budget_investment, author: user, budget: create(:budget))
+      comment_on(investment)
+
+      email = open_last_email
+      expect(email).to have_subject('Someone has commented on your investment')
+      expect(email).to deliver_to(investment.author)
+      expect(email).to have_body_text(budget_investment_path(investment, budget_id: investment.budget_id))
+      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text(account_path)
+    end
+
+    scenario 'Do not send email about own budget investments comments', :js do
+      user = create(:user, email_on_comment: true)
+      investment = create(:budget_investment, author: user, budget: create(:budget))
+      comment_on(investment, user)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+
+    scenario 'Do not send email about budget investment comment unless set in preferences', :js do
+      user = create(:user, email_on_comment: false)
+      investment = create(:budget_investment, author: user, budget: create(:budget))
+      comment_on(investment)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+  end
+
+  context 'Topic comments' do
+    before(:each) do
+      @proposal = create(:proposal)
+    end
+
+    scenario 'Send email on topic comment', :js do
+      user = create(:user, email_on_comment: true)
+      topic = create(:topic, author: user, community: @proposal.community)
+      comment_on(topic)
+
+      email = open_last_email
+      expect(email).to have_subject('Someone has commented on your topic')
+      expect(email).to deliver_to(topic.author)
+      expect(email).to have_body_text(community_topic_path(topic, community_id: topic.community_id))
+      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text(account_path)
+    end
+
+    scenario 'Do not send email about own topic comments', :js do
+      user = create(:user, email_on_comment: true)
+      topic = create(:topic, author: user, community: @proposal.community)
+      comment_on(topic, user)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+
+    scenario 'Do not send email about topic comment unless set in preferences', :js do
+      user = create(:user, email_on_comment: false)
+      topic = create(:topic, author: user, community: @proposal.community)
+      comment_on(topic)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+  end
+
+  context 'Poll comments' do
+    scenario 'Send email on poll comment', :js do
+      user = create(:user, email_on_comment: true)
+      poll = create(:poll, author: user)
+      comment_on(poll)
+
+      email = open_last_email
+      expect(email).to have_subject('Someone has commented on your poll')
+      expect(email).to deliver_to(poll.author)
+      expect(email).to have_body_text(poll_path(poll))
+      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text(account_path)
+    end
+
+    scenario 'Do not send email about own poll comments', :js do
+      user = create(:user, email_on_comment: true)
+      poll = create(:poll, author: user)
+      comment_on(poll, user)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+
+    scenario 'Do not send email about poll question comment unless set in preferences', :js do
+      user = create(:user, email_on_comment: false)
+      poll = create(:poll, author: user)
+      comment_on(poll)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+  end
+
   context 'Comment replies' do
     scenario "Send email on comment reply", :js do
       user = create(:user, email_on_comment_reply: true)
@@ -210,7 +307,7 @@ feature 'Emails' do
       email_digest.mark_as_emailed
 
       email = open_last_email
-      expect(email).to have_subject("Proposal notifications in Consul")
+      expect(email).to have_subject("Proposal notifications in CONSUL")
       expect(email).to deliver_to(user.email)
 
       expect(email).to have_body_text(proposal1.title)
@@ -257,7 +354,7 @@ feature 'Emails' do
       expect(unread_emails_for("isable@example.com").count).to eq 1
 
       email = open_last_email
-      expect(email).to have_subject("Invitation to Consul")
+      expect(email).to have_subject("Invitation to CONSUL")
       expect(email).to have_body_text(/#{new_user_registration_path}/)
     end
 
@@ -335,9 +432,9 @@ feature 'Emails' do
       reset_mailer
       budget.email_selected
 
-      expect(find_email investment1.author.email).to be
-      expect(find_email investment2.author.email).to be
-      expect(find_email investment3.author.email).to_not be
+      expect(find_email(investment1.author.email)).to be
+      expect(find_email(investment2.author.email)).to be
+      expect(find_email(investment3.author.email)).to_not be
 
       email = open_last_email
       investment = investment2
@@ -358,15 +455,48 @@ feature 'Emails' do
       reset_mailer
       budget.email_unselected
 
-      expect(find_email investment1.author.email).to be
-      expect(find_email investment2.author.email).to be
-      expect(find_email investment3.author.email).to_not be
+      expect(find_email(investment1.author.email)).to be
+      expect(find_email(investment2.author.email)).to be
+      expect(find_email(investment3.author.email)).to_not be
 
       email = open_last_email
       investment = investment2
       expect(email).to have_subject("Your investment project '#{investment.code}' has not been selected")
       expect(email).to deliver_to(investment.author.email)
       expect(email).to have_body_text(investment.title)
+    end
+
+  end
+
+  context "Polls" do
+
+    scenario "Send email on poll comment reply", :js do
+      user1 = create(:user, email_on_comment_reply: true)
+      user2 = create(:user)
+      poll = create(:poll, author: create(:user))
+      comment = create(:comment, commentable: poll, author: user1)
+
+      login_as(user2)
+      visit poll_path(poll)
+
+      click_link "Reply"
+
+      within "#js-comment-form-comment_#{comment.id}" do
+        fill_in "comment-body-comment_#{comment.id}", with: 'It will be done next week.'
+        click_button 'Publish reply'
+      end
+
+      within "#comment_#{comment.id}" do
+        expect(page).to have_content 'It will be done next week.'
+      end
+
+      email = open_last_email
+      expect(email).to have_subject('Someone has responded to your comment')
+      expect(email).to deliver_to(user1)
+      expect(email).to_not have_body_text(poll_path(poll))
+      expect(email).to have_body_text(comment_path(Comment.last))
+      expect(email).to have_body_text(I18n.t("mailers.config.manage_email_subscriptions"))
+      expect(email).to have_body_text(account_path)
     end
 
   end

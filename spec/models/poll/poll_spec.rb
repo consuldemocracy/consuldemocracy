@@ -62,19 +62,49 @@ describe :poll do
     end
   end
 
-  describe "#document_has_voted?" do
-    it "returns true if Poll::Voter with document exists" do
-      poll = create(:poll)
-      voter = create(:poll_voter, :valid_document, poll: poll)
+  describe "#current_or_incoming" do
+    it "returns current or incoming polls" do
+      current = create(:poll, :current)
+      incoming = create(:poll, :incoming)
+      expired = create(:poll, :expired)
 
-      expect(poll.document_has_voted?(voter.document_number, voter.document_type)).to eq(true)
+      current_or_incoming = Poll.current_or_incoming
+
+      expect(current_or_incoming).to include(current)
+      expect(current_or_incoming).to include(incoming)
+      expect(current_or_incoming).to_not include(expired)
     end
+  end
 
-    it "returns false if Poll::Voter with document does not exists" do
-      poll_2 = create(:poll)
-      voter = create(:poll_voter, :valid_document, poll: poll_2)
+  describe "#recounting" do
+    it "returns polls in recount & scrutiny phase" do
+      current = create(:poll, :current)
+      incoming = create(:poll, :incoming)
+      expired = create(:poll, :expired)
+      recounting = create(:poll, :recounting)
 
-      expect(poll.document_has_voted?(voter.document_number, voter.document_type)).to eq(false)
+      recounting_polls = Poll.recounting
+
+      expect(recounting_polls).to_not include(current)
+      expect(recounting_polls).to_not include(incoming)
+      expect(recounting_polls).to_not include(expired)
+      expect(recounting_polls).to include(recounting)
+    end
+  end
+
+  describe "#current_or_recounting_or_incoming" do
+    it "returns current or recounting or incoming polls" do
+      current = create(:poll, :current)
+      incoming = create(:poll, :incoming)
+      expired = create(:poll, :expired)
+      recounting = create(:poll, :recounting)
+
+      current_or_recounting_or_incoming = Poll.current_or_recounting_or_incoming
+
+      expect(current_or_recounting_or_incoming).to include(current)
+      expect(current_or_recounting_or_incoming).to include(recounting)
+      expect(current_or_recounting_or_incoming).to include(incoming)
+      expect(current_or_recounting_or_incoming).to_not include(expired)
     end
   end
 
@@ -139,5 +169,34 @@ describe :poll do
         expect(list.to_a).to eq([current_poll, current_restricted_poll])
       end
     end
+  end
+
+  describe "#voted_in_booth?" do
+
+    it "returns true if the user has already voted in booth" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      create(:poll_voter, poll: poll, user: user, origin: "booth")
+
+      expect(poll.voted_in_booth?(user)).to be
+    end
+
+    it "returns false if the user has not already voted in a booth" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      expect(poll.voted_in_booth?(user)).to_not be
+    end
+
+    it "returns false if the user has voted in web" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      create(:poll_voter, poll: poll, user: user, origin: "web")
+
+      expect(poll.voted_in_booth?(user)).to_not be
+    end
+
   end
 end

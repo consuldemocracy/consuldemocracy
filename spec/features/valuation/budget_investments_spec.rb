@@ -271,20 +271,20 @@ feature 'Valuation budget investments' do
       visit valuation_budget_budget_investment_path(@budget, @investment)
       click_link 'Edit dossier'
 
-      expect(find "#budget_investment_feasibility_undecided").to be_checked
+      expect(find("#budget_investment_feasibility_undecided")).to be_checked
       choose 'budget_investment_feasibility_feasible'
       click_button 'Save changes'
 
       visit edit_valuation_budget_budget_investment_path(@budget, @investment)
 
-      expect(find "#budget_investment_feasibility_undecided").to_not be_checked
-      expect(find "#budget_investment_feasibility_feasible").to be_checked
+      expect(find("#budget_investment_feasibility_undecided")).to_not be_checked
+      expect(find("#budget_investment_feasibility_feasible")).to be_checked
 
       choose 'budget_investment_feasibility_undecided'
       click_button 'Save changes'
 
       visit edit_valuation_budget_budget_investment_path(@budget, @investment)
-      expect(find "#budget_investment_feasibility_undecided").to be_checked
+      expect(find("#budget_investment_feasibility_undecided")).to be_checked
     end
 
     scenario 'Feasibility selection makes proper fields visible', :js do
@@ -295,7 +295,7 @@ feature 'Valuation budget investments' do
 
       visit edit_valuation_budget_budget_investment_path(@budget, @investment)
 
-      expect(find "#budget_investment_feasibility_undecided").to be_checked
+      expect(find("#budget_investment_feasibility_undecided")).to be_checked
 
       undecided_fields.each do |field|
         expect(page).to have_content(field)
@@ -325,7 +325,7 @@ feature 'Valuation budget investments' do
 
       visit edit_valuation_budget_budget_investment_path(@budget, @investment)
 
-      expect(find "#budget_investment_feasibility_unfeasible").to be_checked
+      expect(find("#budget_investment_feasibility_unfeasible")).to be_checked
       feasible_fields.each do |field|
         expect(page).to_not have_content(field)
       end

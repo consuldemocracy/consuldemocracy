@@ -34,7 +34,6 @@
       <%= f.cktext_area :description, maxlength: Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 
-
     <div class="small-12 column">
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
       <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
@@ -47,10 +46,32 @@
       <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
     </div>
 
+    <div class="images small-12 column">
+      <%= render 'images/nested_image', imageable: @proposal, f: f %>
+    </div>
+
+    <div class="documents small-12 column">
+      <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
+    </div>
+
     <div class="small-12 medium-6 column">
       <%= f.label :geozone_id,  t("proposals.form.geozone") %>
       <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
     </div>
+
+    <% if feature?(:map) %>
+      <div class="small-12 column">
+
+        <%= render 'map_locations/form_fields',
+                   form:     f,
+                   map_location: @proposal.map_location || MapLocation.new,
+                   label:    t("proposals.form.map_location"),
+                   help:     t("proposals.form.map_location_instructions"),
+                   remove_marker_label: t("proposals.form.map_remove_marker"),
+                   parent_class: "proposal" %>
+
+      </div>
+    <% end %>
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("proposals.form.tags_label") %>
@@ -67,8 +88,9 @@
       <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
                         label: false,
                         placeholder: t("proposals.form.tags_placeholder"),
-                        class: 'js-tag-list',
-                        aria: {describedby: "tag-list-help-text"} %>
+                        class: 'js-tag-list tag-autocomplete',
+                        aria: {describedby: "tag-list-help-text"},
+                        data: {js_url: suggest_tags_path} %>
     </div>
 
     <% if current_user.unverified? %>

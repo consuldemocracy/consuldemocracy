@@ -1,4 +1,3 @@
----
 en:
   flash:
     actions:
@@ -8,11 +7,14 @@ en:
         direct_message: "You message has been sent successfully."
         poll: "Poll created successfully."
         poll_booth: "Booth created successfully."
+        poll_question_answer: "Answer created successfully"
+        poll_question_answer_video: "Video created successfully"
         proposal: "Proposal created successfully."
         proposal_notification: "Your message has been sent correctly."
         spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"
         budget_investment: "Budget Investment created successfully."
         signature_sheet: "Signature sheet created successfully"
+        topic: "Topic created successfully."
       save_changes:
         notice: Changes saved
       update:
@@ -23,7 +25,10 @@ en:
         proposal: "Proposal updated successfully."
         spending_proposal: "Investment project updated succesfully."
         budget_investment: "Investment project updated succesfully."
+        topic: "Topic updated successfully."
       destroy:
         spending_proposal: "Spending proposal deleted succesfully."
         budget_investment: "Investment project deleted succesfully."
         error: "Could not delete"
+        topic: "Topic deleted successfully."
+        poll_question_answer_video: "Answer video deleted successfully."

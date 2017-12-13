@@ -1,0 +1,24 @@
+es:
+  documents:
+    tab: Documentos
+    no_documents: No hay documentos subidos
+    max_documents_allowed_reached_html: '¡Has alcanzado el número máximo de documentos permitidos! <strong>Tienes que eliminar uno antes de poder subir otro.</strong>'
+    form:
+      title: Documentos
+      title_placeholder: Añade un título descriptivo para el documento
+      attachment_label: Selecciona un documento
+      delete_button: Eliminar documento
+      note: 'Puedes subir hasta un máximo de %{max_documents_allowed} documentos en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo.'
+      add_new_document: Añadir nuevo documento
+    actions:
+      destroy:
+        notice: El documento se ha eliminado correctamente.
+        alert: El documento no se ha podido eliminar.
+        confirm: '¿Está seguro de que desea eliminar el documento? Esta acción no se puede deshacer!'
+    buttons:
+      download_document: Descargar archivo
+      destroy_document: Eliminar
+    errors:
+      messages:
+        in_between: debe estar entre %{min} y %{max}
+        wrong_content_type: El tipo de contenido %{content_type} del archivo no coincide con ninguno de los tipos de contenido aceptados %{accepted_content_types}

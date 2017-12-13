@@ -3,10 +3,8 @@
 <%= link_to t('admin.questions.index.create'), new_admin_question_path,
             class: "button success float-right" %>
 
-<div class="row">
-  <div class="small-12 medium-6 column">
-    <%= render 'search' %>
-  </div>
+<div class="small-12 medium-6">
+  <%= render 'search' %>
 </div>
 
 <div class="tabs-content" data-tabs-content="questions-tabs">

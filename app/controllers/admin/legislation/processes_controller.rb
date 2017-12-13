@@ -19,8 +19,10 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
 
   def update
     if @process.update(process_params)
+      set_tag_list
+
       link = legislation_process_path(@process).html_safe
-      redirect_to edit_admin_legislation_process_path(@process), notice: t('admin.legislation.processes.update.notice', link: link)
+      redirect_to :back, notice: t('admin.legislation.processes.update.notice', link: link)
     else
       flash.now[:error] = t('admin.legislation.processes.update.error')
       render :edit
@@ -47,12 +49,23 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :draft_publication_date,
         :allegations_start_date,
         :allegations_end_date,
+        :proposals_phase_start_date,
+        :proposals_phase_end_date,
         :result_publication_date,
         :debate_phase_enabled,
         :allegations_phase_enabled,
+        :proposals_phase_enabled,
         :draft_publication_enabled,
         :result_publication_enabled,
-        :published
+        :published,
+        :proposals_description,
+        :custom_list,
+        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
       )
+    end
+
+    def set_tag_list
+      @process.set_tag_list_on(:customs, process_params[:custom_list])
+      @process.save
     end
 end

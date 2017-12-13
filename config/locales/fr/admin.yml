@@ -301,8 +301,8 @@ fr:
         no_assignments: "Cet utilisateur n'a pas d'affectation pour ce vote."
         recounts: "Dépouillement journalier"
         recount: "Dépouillement journalier (par président)"
-        final_recounts: "Dépouillement final"
-        final_recount: "Dépouillement final (par président)"
+        total_recounts: "Dépouillement final"
+        total_recount: "Dépouillement final (par président)"
     poll_booth_assignments:
       flash:
         destroy: "Ce bureau de vote n'est plus affecté"
@@ -319,7 +319,7 @@ fr:
         no_recounts: "Il n'y a pas encore de dépouillements journaliers pour ce bureau de vote."
         date: "Date"
         count_by_officer: "Dépouillement journalier (par président)"
-        count_final: "Dépouillement final (par président)"
+        total_count: "Dépouillement final (par président)"
         count_by_system:  "Votes (automatique)"
       index:
         booths_title: "Liste des bureaux de vote"
@@ -377,21 +377,46 @@ fr:
       new:
         title: "Créer une question"
         poll_label: "Vote"
-        valid_answers_note: "Saisir les réponses séparées par des virgules (,)"
       show:
         proposal: Proposition originale
         author: Auteur
         title: Titre
         valid_answers: Réponses valides
-        description: Description
+        add_answer: Ajouter une réponse
+        documents: Documents (1)
         preview: Voir l'aperçu
+        answers:
+          title: Réponse
+          description: Description
+          videos: Vidéos
+          video_list: Liste des vidéos
+    answers:
+      show:
+        title: Titre
+        description: Description
+        images: Images
+        images_list: Liste des images
+      new:
+        title: Nouvelle réponse
+      edit:
+        title: Modifier réponse
+      videos:
+        index:
+          title: Vidéos
+          add_video: Ajouter une vidéo
+          video_title: Titre
+          video_url: Vidéo externe
+        new:
+          title: Nouveau vidéo
+        edit:
+          title: Modifier la vidéo
     recounts:
       index:
         title: "Dépouillements"
         no_recounts: "Il n'y a rien à dépouiller"
         table_booth_name: "Bureau de vote"
         table_recounts: "Accumulation des dépouillements journaliers (par président)"
-        table_final_recount: "Dépouillement final (par président)"
+        table_total_recount: "Dépouillement final (par président)"
         table_system_count: "Votes (automatique)"
     results:
       index:

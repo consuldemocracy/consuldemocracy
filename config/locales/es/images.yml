@@ -1,0 +1,21 @@
+es:
+  images:
+    remove_image: Eliminar imagen
+    form:
+      title: Imagen descriptiva
+      title_placeholder: Añade un título descriptivo para la imagen
+      attachment_label: Selecciona una imagen
+      delete_button: Eliminar imagen
+      note: 'Puedes subir una imagen en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo.'
+      add_new_image: Añadir imagen
+      admin_title: "Imagen principal de la votación"
+      admin_alt_text: "Texto alternativo para la imagen"
+    actions:
+      destroy:
+        notice: La imagen se ha eliminado correctamente.
+        alert: La imagen no se ha podido eliminar.
+        confirm: '¿Está seguro de que desea eliminar la imagen? Esta acción no se puede deshacer!'
+    errors:
+      messages:
+        in_between: debe estar entre %{min} y %{max}
+        wrong_content_type: El tipo de contenido %{content_type} de la imagen no coincide con ninguno de los tipos de contenido aceptados %{accepted_content_types}

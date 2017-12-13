@@ -5,7 +5,7 @@ class Officing::ResultsController < Officing::BaseController
   before_action :load_partial_results, only: :new
 
   before_action :load_officer_assignment, only: :create
-  before_action :check_booth_and_date, only: :create
+  before_action :check_officer_assignment, only: :create
   before_action :build_results, only: :create
 
   def new
@@ -26,20 +26,15 @@ class Officing::ResultsController < Officing::BaseController
       @partial_results = ::Poll::PartialResult.includes(:question).
                                             where(booth_assignment_id: index_params[:booth_assignment_id]).
                                             where(date: index_params[:date])
-      @whites = ::Poll::WhiteResult.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
-      @nulls  = ::Poll::NullResult.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
+      @recounts = ::Poll::Recount.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date])
     end
   end
 
   private
 
-    def check_booth_and_date
+    def check_officer_assignment
       if @officer_assignment.blank?
         go_back_to_new(t("officing.results.flash.error_wrong_booth"))
-      elsif results_params[:date].blank? ||
-              Date.parse(results_params[:date]) < @poll.starts_at.to_date ||
-              Date.parse(results_params[:date]) > @poll.ends_at.to_date
-         go_back_to_new(t("officing.results.flash.error_wrong_date"))
       end
     end
 
@@ -51,53 +46,41 @@ class Officing::ResultsController < Officing::BaseController
         go_back_to_new if question.blank?
 
         results.each_pair do |answer_index, count|
-          if count.present?
-            answer = question.valid_answers[answer_index.to_i]
-            go_back_to_new if question.blank?
+          next if count.blank?
+          answer = question.question_answers.where(given_order: answer_index.to_i + 1).first.title
+          go_back_to_new if question.blank?
 
-            partial_result = ::Poll::PartialResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                                 date: results_params[:date],
-                                                                 question_id: question_id,
-                                                                 answer: answer)
-            partial_result.officer_assignment_id = @officer_assignment.id
-            partial_result.amount = count.to_i
-            partial_result.author = current_user
-            partial_result.origin = 'booth'
-            @results << partial_result
-          end
+          partial_result = ::Poll::PartialResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
+                                                                       date: Date.current,
+                                                                       question_id: question_id,
+                                                                       answer: answer)
+          partial_result.officer_assignment_id = @officer_assignment.id
+          partial_result.amount = count.to_i
+          partial_result.author = current_user
+          partial_result.origin = 'booth'
+          @results << partial_result
         end
       end
 
-      build_white_results
-      build_null_results
+      build_recounts
     end
 
-    def build_white_results
-      if results_params[:whites].present?
-        white_result = ::Poll::WhiteResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                  date: results_params[:date])
-        white_result.officer_assignment_id = @officer_assignment.id
-        white_result.amount = results_params[:whites].to_i
-        white_result.author = current_user
-        white_result.origin = 'booth'
-        @results << white_result
+    def build_recounts
+      recount = ::Poll::Recount.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
+                                                      date: Date.current)
+      recount.officer_assignment_id = @officer_assignment.id
+      recount.author = current_user
+      recount.origin = 'booth'
+      [:whites, :nulls, :total].each do |recount_type|
+        if results_params[recount_type].present?
+          recount["#{recount_type.to_s.singularize}_amount"] = results_params[recount_type].to_i
+        end
       end
-    end
-
-    def build_null_results
-      if results_params[:nulls].present?
-        null_result = ::Poll::NullResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                  date: results_params[:date])
-        null_result.officer_assignment_id = @officer_assignment.id
-        null_result.amount = results_params[:nulls].to_i
-        null_result.author = current_user
-        null_result.origin = 'booth'
-        @results << null_result
-      end
+      @results << recount
     end
 
     def go_back_to_new(alert = nil)
-      params[:d] = results_params[:date]
+      params[:d] = Date.current
       params[:oa] = results_params[:officer_assignment_id]
       flash.now[:alert] = (alert || t("officing.results.flash.error_create"))
       load_officer_assignments
@@ -106,7 +89,7 @@ class Officing::ResultsController < Officing::BaseController
     end
 
     def load_poll
-      @poll = ::Poll.expired.includes(:questions).find(params[:poll_id])
+      @poll = ::Poll.includes(:questions).find(params[:poll_id])
     end
 
     def load_officer_assignment
@@ -121,7 +104,7 @@ class Officing::ResultsController < Officing::BaseController
                   final.
                   where(id: current_user.poll_officer.officer_assignment_ids).
                   where("poll_booth_assignments.poll_id = ?", @poll.id).
-                  order(date: :asc)
+                  where(date: Date.current)
     end
 
     def load_partial_results
@@ -132,7 +115,7 @@ class Officing::ResultsController < Officing::BaseController
     end
 
     def results_params
-      params.permit(:officer_assignment_id, :date, :questions, :whites, :nulls)
+      params.permit(:officer_assignment_id, :questions, :whites, :nulls, :total)
     end
 
     def index_params

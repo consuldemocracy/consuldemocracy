@@ -1,0 +1,58 @@
+es:
+  community:
+    sidebar:
+      title: Comunidad
+      description:
+        proposal: Participa en la comunidad de usuarios de esta propuesta.
+        investment: Participa en la comunidad de usuarios de este proyecto de inversión.
+      button_to_access: Acceder a la comunidad
+    show:
+      title:
+        proposal: Comunidad de la propuesta
+        investment: Comunidad del presupuesto participativo
+      description:
+        proposal: Participa en la comunidad de esta propuesta. Una comunidad activa puede ayudar a mejorar el contenido de la propuesta así como a dinamizar su difusión para conseguir más apoyos.
+        investment: Participa en la comunidad de este proyecto de inversión. Una comunidad activa puede ayudar a mejorar el contenido del proyecto de inversión así como a dinamizar su difusión para conseguir más apoyos.
+      create_first_community_topic:
+        first_theme_not_logged_in: Aún no hay ningun tema disponible, participa creando el primero. Haz click en el botón crear nuevo tema.
+        first_theme: Crea el primer tema de la comunidad
+        sub_first_theme: Para crear un tema tienes que %{link}
+        sign_link: "acceder a %{org_name}"
+      tab:
+        participants: Participantes
+      sidebar:
+        participate: Participa
+        new_topic: Crea un tema
+        disabled_info_title: Necesitas estar logueado para crear un nuevo tema
+      topic:
+        edit_button: Editar
+        destroy_button: Eliminar
+        comments:
+          zero: Sin comentarios
+          one: 1 Comentario
+          other: "%{count} Comentarios"
+    topic:
+      create: Crear un tema
+      edit: Editar tema
+      form:
+        topic_title: Titulo del tema
+        topic_description: Descripción
+        new:
+          submit_button: Crear tema
+        edit:
+          submit_button: Guardar cambios
+        create:
+          submit_button: Crear tema
+        update:
+          submit_button: Actualizar tema
+      show:
+        tab:
+          comments_tab: Comentarios
+      sidebar:
+        recommendations_title: Recomendaciones para crear un tema
+        recommendation_one: No escribas el título del tema o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
+        recommendation_two: Cualquier tema o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios del tema, todo lo demás está permitido.
+        recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo
+  topics:
+    show:
+      login_to_comment: Necesitas %{signin} o %{signup} para comentar.

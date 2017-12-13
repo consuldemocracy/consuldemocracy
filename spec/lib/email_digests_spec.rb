@@ -78,7 +78,7 @@ describe EmailDigest do
       email_digest.deliver
 
       email = open_last_email
-      expect(email).to have_subject("Proposal notifications in Consul")
+      expect(email).to have_subject("Proposal notifications in CONSUL")
     end
 
     it "does not deliver email if no notifications pending" do

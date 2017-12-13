@@ -1,4 +1,4 @@
-class Admin::Poll::BoothsController < Admin::BaseController
+class Admin::Poll::BoothsController < Admin::Poll::BaseController
   load_and_authorize_resource class: 'Poll::Booth'
 
   def index
@@ -28,6 +28,11 @@ class Admin::Poll::BoothsController < Admin::BaseController
     else
       render :edit
     end
+  end
+
+  def available
+    @booths = Poll::Booth.available.order(name: :asc).page(params[:page])
+    render :index
   end
 
   private

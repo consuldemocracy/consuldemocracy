@@ -1,0 +1,33 @@
+<% if documents.any? %>
+
+  <% if documents.size == max_documents_allowed && can?(:destroy, Document) %>
+    <div class="row documents-list">
+      <div class="small-12 column">
+        <div class="callout warning text-center">
+          <%= t "documents.max_documents_allowed_reached_html" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row documents-list">
+    <div class="small-12 column">
+      <table>
+        <tbody>
+          <%= render partial: "documents/document", collection: documents %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<% else %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <div class="callout primary text-center">
+        <%= t('documents.no_documents') %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

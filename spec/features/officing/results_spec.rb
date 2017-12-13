@@ -7,8 +7,13 @@ feature 'Officing Results' do
     @officer_assignment = create(:poll_officer_assignment, :final, officer: @poll_officer)
     @poll = @officer_assignment.booth_assignment.poll
     @poll.update(ends_at: 1.day.ago)
-    @question_1 = create(:poll_question, poll: @poll, valid_answers: "Yes,No")
-    @question_2 = create(:poll_question, poll: @poll, valid_answers: "Today,Tomorrow")
+    @question_1 = create(:poll_question, poll: @poll)
+    create(:poll_question_answer, title: 'Yes', question: @question_1)
+    create(:poll_question_answer, title: 'No', question: @question_1)
+    @question_2 = create(:poll_question, poll: @poll)
+    create(:poll_question_answer, title: 'Today', question: @question_2)
+    create(:poll_question_answer, title: 'Tomorrow', question: @question_2)
+
     login_as(@poll_officer.user)
   end
 
@@ -26,7 +31,7 @@ feature 'Officing Results' do
 
     expect(page).to have_content('Poll officing')
     within('#side_menu') do
-      click_link 'Final recounts and results'
+      click_link 'Total recounts and results'
     end
 
     expect(page).to_not have_content(not_allowed_poll_1.name)
@@ -42,7 +47,7 @@ feature 'Officing Results' do
     visit officing_root_path
 
     within('#side_menu') do
-      click_link 'Final recounts and results'
+      click_link 'Total recounts and results'
     end
 
     within("#poll_#{@poll.id}") do
@@ -53,9 +58,7 @@ feature 'Officing Results' do
     expect(page).to_not have_content('Your results')
 
     booth_name = @officer_assignment.booth_assignment.booth.name
-    date = I18n.l(@poll.starts_at.to_date, format: :long)
     select booth_name, from: 'officer_assignment_id'
-    select date, from: 'date'
 
     fill_in "questions[#{@question_1.id}][0]", with: '100'
     fill_in "questions[#{@question_1.id}][1]", with: '200'
@@ -65,13 +68,14 @@ feature 'Officing Results' do
 
     fill_in "whites", with: '66'
     fill_in "nulls",  with: '77'
+    fill_in "total",  with: '88'
 
     click_button 'Save'
 
     expect(page).to have_content('Your results')
 
-    within("#results_#{@officer_assignment.booth_assignment_id}_#{@poll.starts_at.to_date.strftime('%Y%m%d')}") do
-      expect(page).to have_content(date)
+    within("#results_#{@officer_assignment.booth_assignment_id}_#{Date.current.strftime('%Y%m%d')}") do
+      expect(page).to have_content(I18n.l(Date.current, format: :long))
       expect(page).to have_content(booth_name)
     end
   end
@@ -80,9 +84,9 @@ feature 'Officing Results' do
     partial_result = create(:poll_partial_result,
                       officer_assignment: @officer_assignment,
                       booth_assignment: @officer_assignment.booth_assignment,
-                      date: @poll.starts_at,
+                      date: Date.current,
                       question: @question_1,
-                      answer: @question_1.valid_answers[0],
+                      answer: @question_1.question_answers.first.title,
                       author: @poll_officer.user,
                       amount: 7777)
 
@@ -93,14 +97,13 @@ feature 'Officing Results' do
     visit new_officing_poll_result_path(@poll)
 
     booth_name = partial_result.booth_assignment.booth.name
-    date = I18n.l(partial_result.date, format: :long)
     select booth_name, from: 'officer_assignment_id'
-    select date, from: 'date'
 
     fill_in "questions[#{@question_1.id}][0]", with: '5555'
     fill_in "questions[#{@question_1.id}][1]", with: '200'
     fill_in "whites", with: '6'
     fill_in "nulls",  with: '7'
+    fill_in "total",  with: '8'
 
     click_button 'Save'
 
@@ -113,6 +116,7 @@ feature 'Officing Results' do
     expect(page).to_not have_content('7777')
     within("#white_results") { expect(page).to have_content('6') }
     within("#null_results")  { expect(page).to have_content('7') }
+    within("#total_results") { expect(page).to have_content('8') }
     within("#question_#{@question_1.id}_0_result") { expect(page).to have_content('5555') }
     within("#question_#{@question_1.id}_1_result") { expect(page).to have_content('200') }
   end
@@ -124,16 +128,13 @@ feature 'Officing Results' do
                       date: @poll.ends_at,
                       question: @question_1,
                       amount: 33)
-    white_result = create(:poll_white_result,
+    poll_recount = create(:poll_recount,
                       officer_assignment: @officer_assignment,
                       booth_assignment: @officer_assignment.booth_assignment,
                       date: @poll.ends_at,
-                      amount: 21)
-    null_result = create(:poll_null_result,
-                      officer_assignment: @officer_assignment,
-                      booth_assignment: @officer_assignment.booth_assignment,
-                      date: @poll.ends_at,
-                      amount: 44)
+                      white_amount: 21,
+                      null_amount: 44,
+                      total_amount: 66)
 
     visit officing_poll_results_path(@poll,
                                      date: I18n.l(@poll.ends_at.to_date),
@@ -143,17 +144,18 @@ feature 'Officing Results' do
     expect(page).to have_content(@officer_assignment.booth_assignment.booth.name)
 
     expect(page).to have_content(@question_1.title)
-    @question_1.valid_answers.each_with_index do |answer, i|
-      within("#question_#{@question_1.id}_#{i}_result") { expect(page).to have_content(answer) }
+    @question_1.question_answers.each_with_index do |answer, i|
+      within("#question_#{@question_1.id}_#{i}_result") { expect(page).to have_content(answer.title) }
     end
 
     expect(page).to have_content(@question_2.title)
-    @question_2.valid_answers.each_with_index do |answer, i|
-      within("#question_#{@question_2.id}_#{i}_result") { expect(page).to have_content(answer) }
+    @question_2.question_answers.each_with_index do |answer, i|
+      within("#question_#{@question_2.id}_#{i}_result") { expect(page).to have_content(answer.title) }
     end
 
     within('#white_results') { expect(page).to have_content('21') }
     within('#null_results') { expect(page).to have_content('44') }
+    within('#total_results') { expect(page).to have_content('66') }
   end
 
 end

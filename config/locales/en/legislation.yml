@@ -1,4 +1,3 @@
----
 en:
   legislation:
     annotations:
@@ -49,11 +48,12 @@ en:
     processes:
       header:
         view_process_information: View process information
+      proposals:
+        empty_proposals: There are no proposals
       debate:
         empty_questions: There aren't any questions
         participate: Participate in the debate
       header_full:
-        title: Participate
         description: Description
         more_info: More information and context
       index:
@@ -64,6 +64,16 @@ en:
         no_open_processes: There aren't open processes
         no_next_processes: There aren't planned processes
         no_past_processes: There aren't past processes
+        section_header:
+          icon_alt: Legislation processes icon
+          title: Legislation processes
+          help: Help about legislation processes
+        section_footer:
+          title: Help about legislation processes
+          description: Participate in the debates and processes prior to the approval of a ordinance or a municipal action. Your opinion will be consider by the City Council.
+          help_text_1: "In participatory processes, the City Council offers to its citizens the opportunity to participate in the drafting and modification of regulations, affecting the city and to be able to give their opinion on certain actions that it plans to carry out."
+          help_text_2: "People registered in %{org} can participate with contributions in the public consultation of new ordinances, regulations and guidelines, among others. Your comments are analyzed by the corresponding area and considered for the final drafting of the ordinances."
+          help_text_3: "The City Council also opens processes to receive contributions and opinions on municipal actions."
       phase_not_open:
         not_open: This phase is not open yet
       phase_empty:
@@ -77,6 +87,7 @@ en:
         draft_publication_date: Draft publication
         allegations_dates: Allegations
         result_publication_date: Final result publication
+        proposals_dates: Proposals
     questions:
       comments:
         comment_button: Publish answer
@@ -108,3 +119,8 @@ en:
     shared:
       share: Share
       share_comment: Comment on %{version_name} from process draft %{process_name}
+    proposals:
+      form:
+        tags_label: "Categories"
+      not_verified: "For vote proposals %{verify_account}."
+      closed: "This process has been closed and can not receive votes."

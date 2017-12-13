@@ -52,6 +52,12 @@ FactoryGirl.define do
     trait :verified do
       verified_at Time.current
     end
+
+    trait :in_census do
+      document_number "12345678Z"
+      document_type "1"
+      verified_at Time.current
+    end
   end
 
   factory :identity do
@@ -155,7 +161,7 @@ FactoryGirl.define do
     description          'Proposal description'
     question             'Proposal question'
     external_url         'http://external_documention.es'
-    video_url            'http://video_link.com'
+    video_url            'https://youtu.be/nhuNb0XtRhQ'
     responsible_name     'John Snow'
     terms_of_service     '1'
     association :author, factory: :user
@@ -318,6 +324,21 @@ FactoryGirl.define do
       feasibility "feasible"
       valuation_finished true
     end
+
+  end
+
+  factory :image do
+    attachment { File.new("spec/fixtures/files/clippy.jpg") }
+    title "Lorem ipsum dolor sit amet"
+    association :user, factory: :user
+
+    trait :proposal_image do
+      association :imageable, factory: :proposal
+    end
+
+    trait :budget_investment_image do
+      association :imageable, factory: :budget_investment
+    end
   end
 
   factory :budget_ballot, class: 'Budget::Ballot' do
@@ -365,6 +386,24 @@ FactoryGirl.define do
 
     trait :followed_investment do
       association :followable, factory: :budget_investment
+    end
+  end
+
+  factory :document do
+    sequence(:title) { |n| "Document title #{n}" }
+    association :user, factory: :user
+    attachment { File.new("spec/fixtures/files/empty.pdf") }
+
+    trait :proposal_document do
+      association :documentable, factory: :proposal
+    end
+
+    trait :budget_investment_document do
+      association :documentable, factory: :budget_investment
+    end
+
+    trait :poll_question_document do
+      association :documentable, factory: :poll_question
     end
   end
 
@@ -435,6 +474,11 @@ FactoryGirl.define do
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }
 
+    trait :current do
+      starts_at { 2.days.ago }
+      ends_at { 2.days.from_now }
+    end
+
     trait :incoming do
       starts_at { 2.days.from_now }
       ends_at { 1.month.from_now }
@@ -443,6 +487,11 @@ FactoryGirl.define do
     trait :expired do
       starts_at { 1.month.ago }
       ends_at { 15.days.ago }
+    end
+
+    trait :recounting do
+      starts_at { 1.month.ago }
+      ends_at { Date.current }
     end
 
     trait :published do
@@ -454,8 +503,25 @@ FactoryGirl.define do
     poll
     association :author, factory: :user
     sequence(:title) { |n| "Question title #{n}" }
-    sequence(:description) { |n| "Question description #{n}" }
-    valid_answers { Faker::Lorem.words(3).join(', ') }
+
+    trait :with_answers do
+      after(:create) do |question, _evaluator|
+        create(:poll_question_answer, question: question, title: "Yes")
+        create(:poll_question_answer, question: question, title: "No")
+      end
+    end
+  end
+
+  factory :poll_question_answer, class: 'Poll::Question::Answer' do
+    association :question, factory: :poll_question
+    sequence(:title) { |n| "Answer title #{n}" }
+    sequence(:description) { |n| "Answer description #{n}" }
+  end
+
+  factory :poll_answer_video, class: 'Poll::Question::Answer::Video' do
+    association :answer, factory: :poll_question_answer
+    title "Sample video title"
+    url "https://youtu.be/nhuNb0XtRhQ"
   end
 
   factory :poll_booth, class: 'Poll::Booth' do
@@ -478,16 +544,25 @@ FactoryGirl.define do
     end
   end
 
-  factory :poll_final_recount, class: 'Poll::FinalRecount' do
-    association :officer_assignment, factory: [:poll_officer_assignment, :final]
-    association :booth_assignment, factory: :poll_booth_assignment
-    count (1..100).to_a.sample
-    date (1.month.ago.to_datetime..1.month.from_now.to_datetime).to_a.sample
+  factory :poll_shift, class: 'Poll::Shift' do
+    association :booth, factory: :poll_booth
+    association :officer, factory: :poll_officer
+    date Date.current
+
+    trait :vote_collection_task do
+      task 0
+    end
+
+    trait :recount_scrutiny_task do
+      task 1
+    end
   end
 
   factory :poll_voter, class: 'Poll::Voter' do
     poll
     association :user, :level_two
+    association :officer, factory: :poll_officer
+    origin "web"
 
     trait :from_booth do
       association :booth_assignment, factory: :poll_booth_assignment
@@ -505,24 +580,19 @@ FactoryGirl.define do
   end
 
   factory :poll_answer, class: 'Poll::Answer' do
-    association :question, factory: :poll_question
+    association :question, factory: [:poll_question, :with_answers]
     association :author, factory: [:user, :level_two]
-    answer { question.valid_answers.sample }
+    answer { question.question_answers.sample.title }
   end
 
   factory :poll_partial_result, class: 'Poll::PartialResult' do
-    association :question, factory: :poll_question
+    association :question, factory: [:poll_question, :with_answers]
     association :author, factory: :user
     origin { 'web' }
-    answer { question.valid_answers.sample }
+    answer { question.question_answers.sample.title }
   end
 
-  factory :poll_white_result, class: 'Poll::WhiteResult' do
-    association :author, factory: :user
-    origin { 'web' }
-  end
-
-  factory :poll_null_result, class: 'Poll::NullResult' do
+  factory :poll_recount, class: 'Poll::Recount' do
     association :author, factory: :user
     origin { 'web' }
   end
@@ -770,4 +840,49 @@ LOREM_IPSUM
     locale "en"
     body "Some top links content"
   end
+
+  factory :topic do
+    sequence(:title) { |n| "Topic title #{n}" }
+    sequence(:description) { |n| "Description as comment #{n}" }
+    association :author, factory: :user
+  end
+
+  factory :direct_upload do
+    user
+
+    trait :proposal do
+      resource_type "Proposal"
+    end
+    trait :budget_investment do
+      resource_type "Budget::Investment"
+    end
+
+    trait :documents do
+      resource_relation "documents"
+      attachment { File.new("spec/fixtures/files/empty.pdf") }
+    end
+    trait :image do
+      resource_relation "image"
+      attachment { File.new("spec/fixtures/files/clippy.jpg") }
+    end
+    initialize_with { new(attributes) }
+  end
+
+  factory :map_location do
+    latitude 51.48
+    longitude 0.0
+    zoom 10
+
+    trait :proposal_map_location do
+      proposal
+    end
+
+    trait :budget_investment_map_location do
+      association :investment, factory: :budget_investment
+    end
+  end
+
+  factory :related_content do
+  end
+
 end

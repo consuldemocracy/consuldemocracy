@@ -67,6 +67,18 @@ describe Proposal do
     end
   end
 
+  describe "#video_url" do
+    it "should not be valid when URL is not from Youtube or Vimeo" do
+      proposal.video_url = "https://twitter.com"
+      expect(proposal).to_not be_valid
+    end
+
+    it "should be valid when URL is from Youtube or Vimeo" do
+      proposal.video_url = "https://vimeo.com/112681885"
+      expect(proposal).to be_valid
+    end
+  end
+
   describe "#responsible_name" do
     it "should be mandatory" do
       proposal.responsible_name = nil
@@ -876,6 +888,65 @@ describe Proposal do
       create(:vote, voter: voter_and_follower, votable: proposal)
 
       expect(proposal.users_to_notify).to eq([voter_and_follower])
+    end
+
+  end
+
+  describe "#recommendations" do
+
+    let(:user)     { create(:user) }
+
+    it "Should not return any proposals when user has not interests" do
+      create(:proposal)
+
+      expect(Proposal.recommendations(user).size).to eq 0
+    end
+
+    it "Should return proposals ordered by cached_votes_up" do
+      proposal1 = create(:proposal, cached_votes_up: 1,  tag_list: "Sport")
+      proposal2 = create(:proposal, cached_votes_up: 5,  tag_list: "Sport")
+      proposal3 = create(:proposal, cached_votes_up: 10, tag_list: "Sport")
+      proposal4 = create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal4, user: user)
+
+      result = Proposal.recommendations(user).sort_by_recommendations
+
+      expect(result.first).to eq proposal3
+      expect(result.second).to eq proposal2
+      expect(result.third).to eq proposal1
+    end
+
+    it "Should return proposals related with user interests" do
+      proposal1 =  create(:proposal, tag_list: "Sport")
+      proposal2 =  create(:proposal, tag_list: "Sport")
+      proposal3 =  create(:proposal, tag_list: "Politics")
+      create(:follow, followable: proposal1, user: user)
+
+      result = Proposal.recommendations(user)
+
+      expect(result.size).to eq 1
+      expect(result).to eq [proposal2]
+    end
+
+    it "Should not return proposals when user is follower" do
+      proposal1 =  create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal1, user: user)
+
+      result = Proposal.recommendations(user)
+
+      expect(result.size).to eq 0
+    end
+
+    it "Should not return proposals when user is the author" do
+      proposal1 =  create(:proposal, author: user, tag_list: "Sport")
+      proposal2 =  create(:proposal, tag_list: "Sport")
+      proposal3 =  create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal3, user: user)
+
+      result = Proposal.recommendations(user)
+
+      expect(result.size).to eq 1
+      expect(result).to eq [proposal2]
     end
 
   end

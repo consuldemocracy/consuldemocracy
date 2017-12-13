@@ -1,0 +1,36 @@
+<% if current_user && current_user.administrator? ||
+  (@poll.expired? && (@poll.results_enabled? || @poll.stats_enabled?)) %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <ul class="menu simple clear">
+        <% if current_user && current_user.administrator? || @poll.results_enabled? %>
+          <% if controller_name == "polls" && action_name == "results" %>
+            <li class="active">
+              <h2><%= t("polls.show.results_menu") %></h2>
+            </li>
+          <% else %>
+            <li><%= link_to t("polls.show.results_menu"), results_poll_path(@poll) %></li>
+          <% end %>
+        <% end %>
+
+        <% if current_user && current_user.administrator? || @poll.stats_enabled? %>
+          <% if controller_name == "polls" && action_name == "stats" %>
+            <li class="active">
+              <h2><%= t("polls.show.stats_menu") %></h2>
+            </li>
+          <% else %>
+            <li><%= link_to t("polls.show.stats_menu"), stats_poll_path(@poll) %></li>
+          <% end %>
+        <% end %>
+
+        <% if controller_name == "polls" && action_name == "show" %>
+          <li class="active">
+            <h2><%= t("polls.show.info_menu") %></h2>
+          </li>
+        <% else %>
+          <li><%= link_to t("polls.show.info_menu"), poll_path(@poll) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

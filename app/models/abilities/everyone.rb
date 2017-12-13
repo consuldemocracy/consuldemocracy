@@ -12,6 +12,12 @@ module Abilities
       can :read, Budget::Investment
 
       can :read, Poll
+      can :results, Poll do |poll|
+        poll.expired? && poll.results_enabled?
+      end
+      can :stats, Poll do |poll|
+        poll.expired? && poll.stats_enabled?
+      end
       can :read, Poll::Question
       can :read, SpendingProposal
       can :read, LegacyLegislation
@@ -22,10 +28,10 @@ module Abilities
       can [:read, :print], Budget::Investment
       can :read_results, Budget, phase: "finished"
       can :new, DirectMessage
-      can [:read, :debate, :draft_publication, :allegations, :result_publication], Legislation::Process, published: true
+      can [:read, :debate, :draft_publication, :allegations, :result_publication, :proposals], Legislation::Process, published: true
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
-      can [:create], Legislation::Answer
+      can [:read, :map, :share], Legislation::Proposal
       can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
     end
   end

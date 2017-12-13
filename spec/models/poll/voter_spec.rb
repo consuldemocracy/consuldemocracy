@@ -76,11 +76,69 @@ describe :voter do
 
     it "should not be valid if the user has voted via web" do
       answer = create(:poll_answer)
-      answer.record_voter_participation
+      answer.record_voter_participation('token')
 
       voter = build(:poll_voter, poll: answer.question.poll, user: answer.author)
       expect(voter).to_not be_valid
       expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
+    end
+
+    context "origin" do
+
+      it "should not be valid without an origin" do
+        voter.origin = nil
+        expect(voter).to_not be_valid
+      end
+
+      it "should not be valid without a valid origin" do
+        voter.origin = "invalid_origin"
+        expect(voter).to_not be_valid
+      end
+
+      it "should be valid with a booth origin" do
+        voter.origin = "booth"
+        expect(voter).to be_valid
+      end
+
+      it "should be valid with a web origin" do
+        voter.origin = "web"
+        expect(voter).to be_valid
+      end
+
+    end
+
+  end
+
+  describe "scopes" do
+
+    describe "#web" do
+      it "returns voters with a web origin" do
+        voter1 = create(:poll_voter, origin: "web")
+        voter2 = create(:poll_voter, origin: "web")
+        voter3 = create(:poll_voter, origin: "booth")
+
+        web_voters = Poll::Voter.web
+
+        expect(web_voters.count).to eq(2)
+        expect(web_voters).to     include(voter1)
+        expect(web_voters).to     include(voter2)
+        expect(web_voters).to_not include(voter3)
+      end
+    end
+
+    describe "#booth" do
+      it "returns voters with a booth origin" do
+        voter1 = create(:poll_voter, origin: "booth")
+        voter2 = create(:poll_voter, origin: "booth")
+        voter3 = create(:poll_voter, origin: "web")
+
+        booth_voters = Poll::Voter.booth
+
+        expect(booth_voters.count).to eq(2)
+        expect(booth_voters).to     include(voter1)
+        expect(booth_voters).to     include(voter2)
+        expect(booth_voters).to_not include(voter3)
+      end
     end
 
   end
@@ -104,11 +162,12 @@ describe :voter do
 
     it "sets user info" do
       user = create(:user, document_number: "1234A", document_type: "1")
-      voter = build(:poll_voter, user: user)
+      voter = build(:poll_voter, user: user, token: "1234abcd")
       voter.save
 
       expect(voter.document_number).to eq("1234A")
       expect(voter.document_type).to eq("1")
+      expect(voter.token).to eq("1234abcd")
     end
   end
 end

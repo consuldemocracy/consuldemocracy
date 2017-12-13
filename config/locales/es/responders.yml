@@ -1,4 +1,3 @@
----
 es:
   flash:
     actions:
@@ -8,22 +7,28 @@ es:
         direct_message: "Tu mensaje ha sido enviado correctamente."
         poll: "Votación creada correctamente."
         poll_booth: "Urna creada correctamente."
+        poll_question_answer: "Respuesta creada correctamente"
+        poll_question_answer_video: "Vídeo creado correctamente"
         proposal: "Propuesta creada correctamente."
-        proposal_notification: "Tu message ha sido enviado correctamente."
+        proposal_notification: "Tu mensaje ha sido enviado correctamente."
         spending_proposal: "Propuesta de inversión creada correctamente. Puedes acceder a ella desde %{activity}"
         budget_investment: "Propuesta de inversión creada correctamente."
         signature_sheet: "Hoja de firmas creada correctamente"
+        topic: "Tema creado correctamente."
       save_changes:
         notice: Cambios guardados
       update:
         notice: "%{resource_name} actualizado correctamente."
         debate: "Debate actualizado correctamente."
-        proposal: "Propuesta actualizada correctamente."
         poll: "Votación actualizada correctamente."
         poll_booth: "Urna actualizada correctamente."
+        proposal: "Propuesta actualizada correctamente."
         spending_proposal: "Propuesta de inversión actualizada correctamente."
         budget_investment: "Propuesta de inversión actualizada correctamente"
+        topic: "Tema actualizado correctamente."
       destroy:
         spending_proposal: "Propuesta de inversión eliminada."
         budget_investment: "Propuesta de inversión eliminada."
         error: "No se pudo borrar"
+        topic: "Tema eliminado."
+        poll_question_answer_video: "Vídeo de respuesta eliminado."

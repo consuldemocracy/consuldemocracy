@@ -7,6 +7,16 @@ feature 'Admin proposals' do
     login_as(admin.user)
   end
 
+  scenario 'Disabled with a feature flag' do
+    Setting['feature.proposals'] = nil
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    expect{ visit admin_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+
+    Setting['feature.proposals'] = true
+  end
+
   scenario 'List shows all relevant info' do
     proposal = create(:proposal, :hidden)
     visit admin_proposals_path

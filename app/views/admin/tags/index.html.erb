@@ -1,39 +1,40 @@
 <h2><%= t("admin.tags.index.add_tag") %></h2>
 
 <%= form_for(@tag, url: admin_tags_path, as: :tag) do |f| %>
-
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.label :name, t("admin.tags.name.placeholder") %>
-      <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder"), label: false  %>
-    </div>
-
+  <div class="small-12 medium-6">
+    <%= f.label :name, t("admin.tags.name.placeholder") %>
+    <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder"), label: false  %>
   </div>
 
   <%= f.submit(t("admin.tags.create"), class: "button success") %>
-
 <% end %>
 
-<h3><%= t("admin.tags.index.title") %>: <%= page_entries_info @tags %></h3>
+<hr>
+<h3 class="margin"><%= t("admin.tags.index.title") %>: <%= page_entries_info @tags %></h3>
 
 <table>
+  <thead>
+    <th scope="col" class="small-9"><%= t("admin.tags.index.topic") %></th>
+    <th scope="col"><%= t("admin.actions.actions") %></th>
+  </thead>
+  <tbody>
   <% @tags.each do |tag| %>
     <tr>
       <td>
         <%= form_for(tag,
             url: admin_tag_path(tag),
             as: :tag,
-            html: { id: "edit_tag_#{tag.id}", class: "text-right"}) do |f| %>
+            html: { id: "edit_tag_#{tag.id}"}) do |f| %>
 
-            <span class="float-left text-left">
-              <strong><%= tag.name %></strong>
-            </span>
-
-            <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: "button hollow alert on-hover" %>
+            <strong><%= tag.name %></strong>
         <% end %>
+      </td>
+      <td id="tag_<%= tag.id %>">
+        <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: "button hollow alert" %>
       </td>
     </tr>
   <% end %>
+  </tbody>
 </table>
 
 <%= paginate @tags %>

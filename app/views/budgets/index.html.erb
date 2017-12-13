@@ -1,14 +1,9 @@
+<% provide :title do %><%= t('budgets.index.title') %><% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
 <% end %>
 
-<div class="expanded budget no-margin-top padding">
-  <div class="row">
-    <div class="small-12 column">
-      <h1><%= t('budgets.index.title') %></h1>
-    </div>
-  </div>
-</div>
+<%= render "shared/section_header", i18n_namespace: "budgets.index.section_header", image: "budgets" %>
 
 <div class="row margin-top">
   <div class="small-12 medium-9 column">
@@ -32,5 +27,17 @@
       <% end %>
       </tbody>
     </table>
+
+    <div id="section_help" class="margin" data-magellan-target="section_help">
+      <p class="lead">
+        <strong><%= t("budgets.index.section_footer.title") %></strong>
+      </p>
+      <p><%= t("budgets.index.section_footer.description") %></p>
+      <p><%= t("budgets.index.section_footer.help_text_1") %></p>
+      <p><%= t("budgets.index.section_footer.help_text_2") %></p>
+      <p><%= t("budgets.index.section_footer.help_text_3",
+                org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
+      <p><%= t("budgets.index.section_footer.help_text_4") %></p>
+    </div>
   </div>
 </div>

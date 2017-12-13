@@ -18,10 +18,6 @@
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
         <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
 
-          <button class="close-button" aria-label="Close menu" type="button" data-close>
-            <span aria-hidden="true">&times;</span>
-          </button>
-
           <div class="show-for-small-only">
             <%= side_menu %>
           </div>
@@ -30,7 +26,7 @@
         <div class="off-canvas-content" data-off-canvas-content>
           <%= render 'layouts/admin_header' %>
 
-          <div class="no-margin-top row no-max-width collapse" data-equalizer>
+          <div class="no-margin-top row expanded collapse" data-equalizer>
             <div class="small-12 medium-3 column" data-equalizer-watch>
 
               <div class="show-for-small-only">

@@ -1,6 +1,6 @@
-![Logotipo de Consul](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
+![Logotipo de CONSUL](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
-# Consul
+# CONSUL
 
 Aplicación de Participación Ciudadana y Gobierno Abierto
 
@@ -17,22 +17,17 @@ Aplicación de Participación Ciudadana y Gobierno Abierto
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3APRs-welcome)
 
-Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana Consul, creada originariamente por el Ayuntamiento de Madrid.
+Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana CONSUL, creada originariamente por el Ayuntamiento de Madrid.
 
 ## Estado del proyecto
 
 El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6) y el código fue puesto en producción el día 7 de Septiembre de 2015 en [decide.madrid.es](https://decide.madrid.es). Desde entonces se le añaden mejoras y funcionalidades constantemente. Las funcionalidades actuales se pueden consultar en [características](http://www.decide.es/es/) o en la [documentación](https://github.com/consul/consul/tree/master/doc) y las siguientes funcionaliades en la lista de [tareas por hacer](https://github.com/consul/consul/issues). Para conocer el estado actual de las próximas caracteristicas, vaya a [Roadmap](https://github.com/consul/consul/projects/6)
 
-## Tecnología
-
-El backend de esta aplicación se desarrolla con el lenguaje de programación [Ruby](https://www.ruby-lang.org/) sobre el *framework* [Ruby on Rails](http://rubyonrails.org/).
-Las herramientas utilizadas para el frontend no están cerradas aún. Los estilos de la página usan [SCSS](http://sass-lang.com/) sobre [Foundation](http://foundation.zurb.com/)
-
 ## Configuración para desarrollo y tests
 
-**NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://github.com/consul/consul/tree/master/doc/es/dev_test_setup.md)
+**NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://github.com/consul/docs/tree/master/es/getting_started/prerequisites)
 
-Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler`, ghostscript y PostgreSQL (9.4 o superior).
+Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler` y PostgreSQL (9.4 o superior).
 
 ```
 
@@ -41,7 +36,8 @@ cd consul
 bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
-bin/rake db:setup
+bin/rake db:create
+bin/rake db:migrate
 bin/rake db:dev_seed
 RAILS_ENV=test rake db:setup
 ```
@@ -60,20 +56,6 @@ Para ejecutar los tests:
 bin/rspec
 ```
 
-Si añades código SCSS puedes revisarlo con:
-
-```
-scss-lint
-```
-
-Para mantener el nivel de accesibilidad, si añades colores nuevos utiliza un [Comprobador de contraste de color](http://webaim.org/resources/contrastchecker/) (WCAG AA es obligatorio, WCAG AAA es recomendable)
-
-Si trabajas en código coffeescript puedes revisarlo con [coffeelint](http://www.coffeelint.org/) (instalalo con `npm install -g coffeelint`) :
-
-```
-coffeelint .
-```
-
 Puedes usar el usuario administrador por defecto del fichero seeds:
 
  **user:** admin@consul.dev
@@ -84,15 +66,9 @@ Pero para ciertas acciones, como apoyar, necesitarás un usuario verificado, el 
  **user:** verified@consul.dev
  **pass:** 12345678
 
-### Customización
+## Documentación
 
-Ver fichero [CUSTOMIZE_ES.md](CUSTOMIZE_ES.md)
-
-### OAuth
-
-Para probar los servicios de autenticación mediante proveedores externos OAuth — en este momento Twitter, Facebook y Google —, necesitas crear una "aplicación" en cada una de las plataformas soportadas y configurar la *key* y el *secret* proporcionados en tu *secrets.yml*
-
-En el caso de Google, comprueba que las APIs *Contacts API* y *Google+ API* están habilitadas para la aplicación.
+Por favor visita la documentación que está siendo completada en https://consul_docs.gitbooks.io/docs/content/ para conocer más sobre este proyecto, como comenzar tu propio fork, instalarlo, customizarlo y usarlo como administrador/mantenedor. Puedes colaborar en ella en https://github.com/consul/docs
 
 ## Licencia
 

@@ -9,42 +9,8 @@
       <%= t("admin.results.index.no_results") %>
     </div>
   <% else %>
-
-    <table class="margin">
-      <thead>
-        <th><%= t("admin.results.index.table_whites") %></th>
-        <th><%= t("admin.results.index.table_nulls") %></th>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="white_results"><%= @poll.white_results.sum(:amount) %></td>
-          <td id="null_results"><%= @poll.null_results.sum(:amount) %></td>
-        </tr>
-      </tbody>
-    </table>
-
-
-    <% by_question = @partial_results.group_by(&:question_id) %>
-    <% @poll.questions.each do |question| %>
-      <h3><%= question.title %></h3>
-      <table class="margin">
-        <thead>
-          <tr>
-            <th><%= t("admin.results.index.table_answer") %></th>
-            <th class="text-center"><%= t("admin.results.index.table_votes") %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% question.valid_answers.each_with_index do |answer, i| %>
-            <% by_answer = by_question[question.id].present? ? by_question[question.id].group_by(&:answer) : {} %>
-            <tr id="question_<%= question.id %>_<%= i %>_result">
-              <td><%= answer %></td>
-              <td class="text-center"><%= by_answer[answer].present? ? by_answer[answer].sum(&:amount) : 0 %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% end %>
-
+    <%= render "recount", resource: @poll %>
+    <%= render "result" %>
+    <%= render "results_by_booth" %>
   <% end %>
 </div>

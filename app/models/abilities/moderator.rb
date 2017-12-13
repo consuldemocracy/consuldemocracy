@@ -12,7 +12,7 @@ module Abilities
       can :create, DirectMessage
       can :show, DirectMessage, sender_id: user.id
       can :comment_as_moderator, [Debate, Comment, Proposal, Budget::Investment, Poll::Question,
-                                  Legislation::Question, Legislation::Annotation]
+                                  Legislation::Question, Legislation::Annotation, Legislation::Proposal, Topic]
       can [:valuate], Budget::Investment
       can [:hide], Budget::Investment
 

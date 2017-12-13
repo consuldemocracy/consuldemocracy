@@ -1,4 +1,4 @@
-class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
+class Admin::Poll::OfficerAssignmentsController < Admin::Poll::BaseController
 
   before_action :load_poll
   before_action :redirect_if_blank_required_params, only: [:by_officer]
@@ -18,47 +18,20 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
     @officer = ::Poll::Officer.includes(:user).find(officer_assignment_params[:officer_id])
     @officer_assignments = ::Poll::OfficerAssignment.
                            joins(:booth_assignment).
-                           includes(:final_recounts, booth_assignment: :booth).
+                           includes(:recounts, booth_assignment: :booth).
                            where("officer_id = ? AND poll_booth_assignments.poll_id = ?", @officer.id, @poll.id).
                            order(:date)
   end
 
   def search_officers
     load_search
-    @officers = User.joins(:poll_officer).search(@search).order(username: :asc)
+
+    poll_officers = User.where(id: @poll.officers.pluck(:user_id))
+    @officers = poll_officers.search(@search).order(username: :asc)
 
     respond_to do |format|
       format.js
     end
-  end
-
-  def create
-    @officer_assignment = ::Poll::OfficerAssignment.new(booth_assignment: @booth_assignment,
-                                                        officer_id: create_params[:officer_id],
-                                                        date: create_params[:date])
-    @officer_assignment.final = true if @officer_assignment.date > @booth_assignment.poll.ends_at.to_date
-
-    if @officer_assignment.save
-      notice = t("admin.poll_officer_assignments.flash.create")
-    else
-      notice = t("admin.poll_officer_assignments.flash.error_create")
-    end
-
-    redirect_params = { poll_id: create_params[:poll_id], officer_id: create_params[:officer_id] }
-    redirect_to by_officer_admin_poll_officer_assignments_path(redirect_params), notice: notice
-  end
-
-  def destroy
-    @officer_assignment = ::Poll::OfficerAssignment.includes(:booth_assignment).find(params[:id])
-
-    if @officer_assignment.destroy
-      notice = t("admin.poll_officer_assignments.flash.destroy")
-    else
-      notice = t("admin.poll_officer_assignments.flash.error_destroy")
-    end
-
-    redirect_params = { poll_id: @officer_assignment.poll_id, officer_id: @officer_assignment.officer_id }
-    redirect_to by_officer_admin_poll_officer_assignments_path(redirect_params), notice: notice
   end
 
   private

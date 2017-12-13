@@ -390,12 +390,9 @@ feature 'Admin budget investments' do
 
       budget_investment2 = create(:budget_investment)
 
-      visit admin_budget_budget_investment_path(budget_investment2.budget, budget_investment2)
-      click_link 'Edit classification'
+      visit edit_admin_budget_budget_investment_path(budget_investment2.budget, budget_investment2)
 
       find('.js-add-tag-link', text: 'Education').click
-
-      fill_in 'budget_investment_title', with: 'Updated title'
 
       click_button 'Update'
 
@@ -424,20 +421,37 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Only displays valuation tags" do
+    scenario "Changes valuation and user generated tags" do
       budget_investment = create(:budget_investment, tag_list: 'Park')
       budget_investment.set_tag_list_on(:valuation, 'Education')
       budget_investment.save
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
-      expect(page).to     have_content "Education"
-      expect(page).to_not have_content "Park"
+      within("#user-tags") do
+        expect(page).to_not have_content "Education"
+        expect(page).to have_content "Park"
+      end
 
       click_link 'Edit classification'
 
-      expect(page).to     have_content "Education"
-      expect(page).to_not have_content "Park"
+      fill_in 'budget_investment_tag_list', with: 'Park, Trees'
+      fill_in 'budget_investment_valuation_tag_list', with: 'Education, Environment'
+      click_button 'Update'
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+
+      within("#user-tags") do
+        expect(page).to_not have_content "Education"
+        expect(page).to_not have_content "Environment"
+        expect(page).to have_content "Park, Trees"
+      end
+
+      within("#tags") do
+        expect(page).to have_content "Education, Environment"
+        expect(page).to_not have_content "Park"
+        expect(page).to_not have_content "Trees"
+      end
     end
 
     scenario "Maintains user tags" do

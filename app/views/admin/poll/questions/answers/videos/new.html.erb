@@ -1,0 +1,9 @@
+<%= back_link_to admin_answer_videos_path(@answer) %>
+
+<h2>
+  <%= t('admin.answers.videos.new.title') %>
+</h2>
+
+<div class="poll-question-answer-video-form">
+  <%= render "form", form_url: admin_answer_videos_path %>
+</div>

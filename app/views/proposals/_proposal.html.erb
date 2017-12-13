@@ -1,11 +1,21 @@
 <div id="<%= dom_id(proposal) %>"
      class="proposal clear <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
      data-type="proposal">
-  <div class="panel">
+  <div class="panel with-image">
     <div class="icon-successful"></div>
-    <div class="row">
+    <div class="row" data-equalizer>
 
-      <div class="small-12 medium-9 column">
+      <div class="small-12 medium-3 large-2 column text-center">
+        <div data-equalizer-watch>
+          <% if proposal.image.present? %>
+            <%= image_tag proposal.image_url(:thumb), alt: proposal.image.title %>
+          <% else %>
+            <div class="no-image"></div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-6 large-7 column">
         <div class="proposal-content">
           <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
             <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
@@ -50,7 +60,7 @@
         </div>
       </div>
 
-      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column supports-container">
+      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column supports-container" data-equalizer-watch>
         <% if proposal.successful? %>
           <div class="padding text-center">
 
