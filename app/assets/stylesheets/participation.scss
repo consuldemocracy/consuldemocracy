@@ -315,7 +315,8 @@
 .poll-question-form,
 .legislation-process-new,
 .legislation-process-edit,
-.milestone-new {
+.milestone-new,
+.milestone-edit {
   @include direct-uploads;
 }
 
