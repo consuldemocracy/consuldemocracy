@@ -1,6 +1,8 @@
 class Budget
   class Investment
     class Milestone < ActiveRecord::Base
+      include Imageable
+
       belongs_to :investment
 
       validates :title, presence: true
