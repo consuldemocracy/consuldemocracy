@@ -18,7 +18,8 @@ describe InstallationController, type: :request do
         'user.recommendations' => nil,
         'community' => nil,
         'map' => 't',
-        'spending_proposal_features.voting_allowed' => 't'
+        'spending_proposal_features.voting_allowed' => 't',
+        'allow_images' => 't'
       }
     end
 
@@ -41,6 +42,7 @@ describe InstallationController, type: :request do
       Setting['feature.community'] = true
       Setting['feature.map'] = nil
       Setting['feature.spending_proposal_features.voting_allowed'] = nil
+      Setting['feature.allow_images'] = true
     end
 
     specify "with query string inside query params" do
