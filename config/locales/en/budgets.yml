@@ -110,7 +110,7 @@ en:
         comments_tab: Comments
         milestones_tab: Milestones
         no_milestones: Don't have defined milestones
-        milestone_publish_date: "Published %{publish_date}"
+        milestone_publication_date: "Published %{publication_date}"
       wrong_price_format: Only integer numbers
       investment:
         add: Vote
