@@ -362,6 +362,7 @@ FactoryGirl.define do
     association :investment, factory: :budget_investment
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
+    publication_date     Time.zone.today
   end
 
   factory :vote do
