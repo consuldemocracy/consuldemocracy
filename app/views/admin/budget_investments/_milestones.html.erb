@@ -22,7 +22,7 @@
             <%= milestone.description %>
           </td>
           <td class="small">
-            <%= link_to 'Ver imagen', milestone.image_url(:large), target: :_blank if milestone.image.present? %>
+            <%= link_to t("admin.milestones.index.show_image"), milestone.image_url(:large), target: :_blank if milestone.image.present? %>
           </td>
           <td>
             <%= link_to t("admin.milestones.index.delete"), admin_budget_budget_investment_budget_investment_milestone_path(@investment.budget, @investment, milestone),
