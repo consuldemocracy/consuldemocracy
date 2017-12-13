@@ -289,6 +289,7 @@ es:
         one: Hay un nuevo comentario en
         other: Hay %{count} comentarios nuevos en
       empty_notifications: No tienes notificaciones nuevas.
+      notifiable_hidden: Este elemento ya no está disponible.
       mark_all_as_read: Marcar todas como leídas
       proposal_notification:
         one: Hay una nueva notificación en
