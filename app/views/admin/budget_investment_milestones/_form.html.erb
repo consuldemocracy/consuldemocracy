@@ -2,6 +2,10 @@
 
   <%= f.text_field :title, maxlength: Budget::Investment::Milestone.title_max_length %>
   <%= f.text_area :description, rows: 5 %>
+  <%= f.text_field :publication_date,
+                   value: @milestone.publication_date.present? ? l(@milestone.publication_date.to_date) : nil,
+                   class: "js-calendar-full" %>
+
   <%= render 'images/admin_image', imageable: @milestone, f: f %>
 
   <%= f.submit nil, class: "button success" %>
