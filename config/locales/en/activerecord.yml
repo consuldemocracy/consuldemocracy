@@ -124,6 +124,7 @@ en:
       budget/investment/milestone:
         title: "Title"
         description: "Description"
+        publication_date: "Publication date"
       comment:
         body: "Comment"
         user: "User"
