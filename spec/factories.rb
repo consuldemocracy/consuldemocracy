@@ -709,7 +709,7 @@ FactoryGirl.define do
     start_date Date.current - 5.days
     end_date Date.current + 5.days
     debate_start_date Date.current - 5.days
-    debate_end_date Date.current - 2.days
+    debate_end_date Date.current + 2.days
     draft_publication_date Date.current - 1.day
     allegations_start_date Date.current
     allegations_end_date Date.current + 3.days
