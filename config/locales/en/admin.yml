@@ -203,6 +203,8 @@ en:
         table_actions: "Actions"
         delete: "Delete milestone"
         no_milestones: "Don't have defined milestones"
+        image: "Image"
+        show_image: "Show image"
       new:
         creating: Create milestone
       edit:
