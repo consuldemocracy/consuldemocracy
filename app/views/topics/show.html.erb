@@ -12,7 +12,7 @@
         <%= render '/shared/author_info', resource: @topic %>
 
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
-        <%= l @topic.created_at.to_date %>
+        <%= l(@topic.created_at.to_date) %>
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <span class="icon-comments"></span>&nbsp;
         <%= link_to t("community.show.topic.comments", count: @topic.comments_count),
