@@ -3,6 +3,10 @@ require 'rails_helper'
 describe Topic do
   let(:topic) { build(:topic) }
 
+  describe "Concerns" do
+    it_behaves_like "notifiable"
+  end
+
   it "should be valid" do
     expect(topic).to be_valid
   end
@@ -71,4 +75,7 @@ describe Topic do
 
   end
 
+  describe "notifications" do
+    it_behaves_like 'notifiable'
+  end
 end
