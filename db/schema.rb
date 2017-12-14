@@ -119,10 +119,11 @@ ActiveRecord::Schema.define(version: 20171212193323) do
 
   create_table "budget_investment_milestones", force: :cascade do |t|
     t.integer  "investment_id"
-    t.string   "title",         limit: 80
+    t.string   "title",            limit: 80
     t.text     "description"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.datetime "publication_date"
   end
 
   create_table "budget_investments", force: :cascade do |t|
