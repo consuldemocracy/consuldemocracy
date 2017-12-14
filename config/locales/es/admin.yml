@@ -199,6 +199,7 @@ es:
         no_milestones: "No hay hitos definidos"
         image: "Imagen"
         show_image: "Ver imagen"
+        documents: "Documentos"
       new:
         creating: Crear hito
       edit:

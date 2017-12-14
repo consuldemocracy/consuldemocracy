@@ -8,5 +8,10 @@
 
   <%= render 'images/admin_image', imageable: @milestone, f: f %>
 
+  <hr>
+  <div class="documents">
+    <%= render 'documents/nested_documents', documentable: @milestone, f: f %>
+  </div>
+
   <%= f.submit nil, class: "button success" %>
 <% end %>

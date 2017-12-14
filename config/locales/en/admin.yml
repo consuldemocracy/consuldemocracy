@@ -199,6 +199,7 @@ en:
         no_milestones: "Don't have defined milestones"
         image: "Image"
         show_image: "Show image"
+        documents: "Documents"
       new:
         creating: Create milestone
       edit:

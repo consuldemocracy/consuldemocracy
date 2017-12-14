@@ -503,6 +503,7 @@ feature 'Budget Investments' do
     investment = create(:budget_investment)
     milestone = create(:budget_investment_milestone, investment: investment, title: "New text to show")
     image = create(:image, imageable: milestone)
+    document = create(:document, documentable: milestone)
 
     login_as(user)
     visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
@@ -514,6 +515,7 @@ feature 'Budget Investments' do
       expect(page).to have_content(milestone.description)
       expect(page).to have_content(Time.zone.today.to_date)
       expect(page.find("#image_#{milestone.id}")['alt']).to have_content image.title
+      expect(page).to have_link document.title
     end
   end
 
