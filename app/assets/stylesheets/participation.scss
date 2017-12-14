@@ -657,41 +657,12 @@
 .budget-investments-list .budget-investment,
 .proposals-list .proposal {
 
-  .no-image {
-    background: $brand;
-  }
-}
-
-.budget-investments-list .budget-investment,
-.proposals-list .proposal {
-
-  @include breakpoint(small) {
-
-    .no-image {
-      width: 100%;
-      max-width: rem-calc(300);
-      margin: 0 auto;
-
-      &::before {
-        content: '';
-        display: block;
-        padding-top: 100%;
-      }
-    }
-  }
-
   @include breakpoint(medium) {
 
     .panel {
 
       &.with-image {
         padding: 0 $line-height / 2 0 0;
-      }
-
-      .no-image {
-        height: 100%;
-        min-height: rem-calc(245);
-        width: rem-calc(140);
       }
     }
 

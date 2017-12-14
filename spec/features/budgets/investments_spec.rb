@@ -9,6 +9,14 @@ feature 'Budget Investments' do
   let(:group) { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
+  before do
+    Setting['feature.allow_images'] = true
+  end
+
+  after do
+    Setting['feature.allow_images'] = nil
+  end
+
   scenario 'Index' do
     investments = [create(:budget_investment, heading: heading),
                    create(:budget_investment, heading: heading),
@@ -39,7 +47,7 @@ feature 'Budget Investments' do
     visit budget_investments_path(budget, heading_id: heading.id)
 
     within("#budget_investment_#{investment.id}") do
-      expect(page).to have_css("div.no-image")
+      expect(page).to_not have_css("div.with-image")
     end
     within("#budget_investment_#{investment_with_image.id}") do
       expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
