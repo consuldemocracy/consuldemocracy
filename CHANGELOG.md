@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Design improvements https://github.com/consul/consul/pull/2170
 - Adds timestamps to polls https://github.com/consul/consul/pull/2180 (Run `rake polls:initialize_timestamps` to initialize attributes created_at and updated_at with the current time for all existing polls, or manually through console set correct values)
+- Improved Community design https://github.com/consul/consul/pull/1904
 
 ### Deprecated
 
