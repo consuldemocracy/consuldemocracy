@@ -46,7 +46,9 @@
       <%= safe_html_with_links investment.description.html_safe %>
 
       <% if feature?(:map) && map_location_available?(@investment.map_location) %>
-        <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
+        <div class="margin">
+          <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
+        </div>
       <% end %>
 
       <% if investment.external_url.present? %>
@@ -129,6 +131,9 @@
       } %>
 
       <% if current_user %>
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-title"><%= t("shared.follow") %></p>
+
         <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, investment) %>
       <% end %>
 
