@@ -143,6 +143,7 @@ feature 'Proposals' do
     scenario 'related contents can be added' do
       proposal1 = create(:proposal)
       proposal2 = create(:proposal)
+      debate1 = create(:debate)
 
       visit proposal_path(proposal1)
 
@@ -164,6 +165,30 @@ feature 'Proposals' do
       within("#related-content-list") do
         expect(page).to have_content(proposal1.title)
       end
+
+      within("#related_content") do
+        fill_in 'url', with: "#{Setting['url']}/debates/#{debate1.to_param}"
+        click_button "Add"
+      end
+
+      within("#related-content-list") do
+        expect(page).to have_content(debate1.title)
+      end
+    end
+
+    scenario 'if related content URL is invalid returns error' do
+      proposal1 = create(:proposal)
+
+      visit proposal_path(proposal1)
+
+      click_on("Add related content")
+
+      within("#related_content") do
+        fill_in 'url', with: "http://invalidurl.com"
+        click_button "Add"
+      end
+
+      expect(page).to have_content("Link not valid. Remember to start with #{Setting[:url]}.")
     end
   end
 
