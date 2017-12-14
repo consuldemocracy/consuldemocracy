@@ -78,4 +78,79 @@ describe ProposalNotification do
 
   end
 
+  describe "notifications in-app" do
+
+    let(:notifiable) { create(model_name(described_class)) }
+    let(:proposal) { notifiable.proposal }
+
+    describe "#notification_title" do
+
+      it "returns the proposal title" do
+        notification = create(:notification, notifiable: notifiable)
+
+        expect(notification.notifiable_title).to eq notifiable.proposal.title
+      end
+
+    end
+
+    describe "#notification_action" do
+
+      it "returns the correct action" do
+        notification = create(:notification, notifiable: notifiable)
+
+        expect(notification.notifiable_action).to eq "proposal_notification"
+      end
+
+    end
+
+    describe "notifiable_available?" do
+
+      it "returns true when the proposal is available" do
+        notification = create(:notification, notifiable: notifiable)
+
+        expect(notification.notifiable_available?).to be(true)
+      end
+
+      it "returns false when the proposal is not available" do
+        notification = create(:notification, notifiable: notifiable)
+
+        notifiable.proposal.destroy
+
+        expect(notification.notifiable_available?).to be(false)
+      end
+
+    end
+
+    describe "check_availability" do
+
+      it "returns true if the resource is present, not hidden, nor retired" do
+        notification = create(:notification, notifiable: notifiable)
+
+        expect(notification.check_availability(proposal)).to be(true)
+      end
+
+      it "returns false if the resource is not present" do
+        notification = create(:notification, notifiable: notifiable)
+
+        notifiable.proposal.really_destroy!
+        expect(notification.check_availability(proposal)).to be(false)
+      end
+
+      it "returns false if the resource is hidden" do
+        notification = create(:notification, notifiable: notifiable)
+
+        notifiable.proposal.hide
+        expect(notification.check_availability(proposal)).to be(false)
+      end
+
+      it "returns false if the resource is retired" do
+        notification = create(:notification, notifiable: notifiable)
+
+        notifiable.proposal.update(retired_at: Time.now)
+        expect(notification.check_availability(proposal)).to be(false)
+      end
+
+    end
+
+  end
 end
