@@ -1,5 +1,4 @@
 class RelatedContentsController < ApplicationController
-  RELATIONABLE_MODELS = %w{proposals debates}
   VALID_URL = /#{Setting['url']}\/.*\/.*/
 
   skip_authorization_check
@@ -31,7 +30,7 @@ class RelatedContentsController < ApplicationController
       if valid_url?
         url = params[:url]
 
-        related_klass = url.match(/\/(#{RELATIONABLE_MODELS.join("|")})\//)[0].gsub("/", "")
+        related_klass = url.match(/\/(#{RelatedContent::RELATIONABLE_MODELS.join("|")})\//)[0].gsub("/", "")
         related_id = url.match(/\/[0-9]+/)[0].gsub("/", "")
 
         @related = (related_klass.singularize.camelize.constantize).find_by_id(related_id)

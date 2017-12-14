@@ -2,7 +2,7 @@
     <label><%= t("related_content.label") %></label>
 
     <p class="help-text" id="related_content_help_text">
-      <%= t("related_content.help", org: setting['org_name']) %>
+      <%= t("related_content.help", models: t('related_content.content_title').values.to_sentence, org: setting['org_name']) %>
     </p>
 
     <div class="input-group">
