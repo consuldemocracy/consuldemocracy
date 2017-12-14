@@ -1,5 +1,5 @@
 <ul class="related-content-list" id="related-content-list">
-  <% relationable.relationed_contents.each do |related| %>
+  <% @related_contents.each do |related| %>
     <li>
       <a href="#" class="float-right flag">
         <span class="icon-flag"></span> <!-- This should be similar to comments/flag_actions -->
@@ -13,4 +13,4 @@
   <% end %>
 </ul>
 
-<!-- Add pagination here -->
+<%= paginate @related_contents %>
