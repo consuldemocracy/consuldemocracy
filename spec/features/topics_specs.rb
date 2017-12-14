@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'Topics' do
 
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Topic
+  end
+
   context 'New' do
 
     scenario 'Should display disabled button to new topic page without user logged', :js do

@@ -1,8 +1,12 @@
 require 'rails_helper'
 
-describe :poll do
+describe Poll do
 
   let(:poll) { build(:poll) }
+
+  describe "Concerns" do
+    it_behaves_like "notifiable"
+  end
 
   describe "validations" do
     it "should be valid" do
@@ -199,4 +203,5 @@ describe :poll do
     end
 
   end
+
 end
