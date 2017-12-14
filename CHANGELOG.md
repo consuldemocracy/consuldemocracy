@@ -6,6 +6,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased](https://github.com/consul/consul/compare/v0.11...consul:master)
 
+### Added
+- Added Images to Budget Investment's Milestones https://github.com/consul/consul/pull/2186
+- New setting `feature.allow_images` to allow upload and show images for both (proposals and budget investment projects). Set it manually through console with `Setting['feature.allow_images'] = true`
+- Related Content List https://github.com/consul/consul/pull/2184
+
+### Changed
+- Design improvements https://github.com/consul/consul/pull/2170
+- Adds timestamps to polls https://github.com/consul/consul/pull/2180 (Run `rake polls:initialize_timestamps` to initialize attributes created_at and updated_at with the current time for all existing polls, or manually through console set correct values)
+
+### Deprecated
+
+### Removed
+
+### Fixed
+- Notifications for hidden resources https://github.com/consul/consul/pull/2172
+
+### Security
+
 ## [0.11.0](https://github.com/consul/consul/compare/v0.10...v0.11) - 2017-12-05
 
 ### Added

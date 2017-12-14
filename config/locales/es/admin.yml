@@ -204,6 +204,8 @@ es:
         table_actions: "Acciones"
         delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
+        image: "Imagen"
+        show_image: "Ver imagen"
       new:
         creating: Crear hito
       edit:
