@@ -208,4 +208,9 @@ desc "Create Poll Question Answer for each Poll Question still with valid_answer
       end
     end
   end
+
+desc "Adds created_at and updated_at values to existing polls"
+	task initialize_timestamps: :environment do
+		Poll.update_all(created_at: Time.current, updated_at: Time.current)
+	end
 end
