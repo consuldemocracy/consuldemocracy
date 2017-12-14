@@ -3,6 +3,10 @@ require 'sessions_helper'
 
 feature 'Budget Investments' do
 
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Budget::Investment
+  end
+
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:other_budget) { create(:budget, name: "What a Budget!") }
