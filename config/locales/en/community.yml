@@ -14,29 +14,31 @@ en:
         proposal: Participate in the community of this proposal. An active community can help to improve the content of the proposal and boost its dissemination to get more support.
         investment: Participate in the community of this budget investment. An active community can help to improve the content of the budget investment and boost its dissemination to get more support.
       create_first_community_topic:
-        first_theme_not_logged_in: No issue yet available, participate creating the first one. Click on the create new topic button.
+        first_theme_not_logged_in: No issue available, participate creating the first one.
         first_theme: Create the first community topic
-        sub_first_theme: To create a theme you have to %{link}
-        sign_link: "access %{org_name}"
+        sub_first_theme: "To create a theme you must to %{sign_in} o %{sign_up}."
+        sign_in: "sign in"
+        sign_up: "sign up"
       tab:
         participants: Participants
       sidebar:
         participate: Participate
         new_topic: Create topic
-        disabled_info_title: You need to be logged to create a new topic
       topic:
-        edit_button: Edit
-        destroy_button: Destroy
+        edit: Edit topic
+        destroy: Destroy topic
         comments:
           one: 1 comment
           other: "%{count} comments"
           zero: No comments
+      author: Author
+      back: Back to %{community} %{proposal}
     topic:
       create: Create a topic
       edit: Edit Topic
       form:
-        topic_title: Topic Title
-        topic_description: Description
+        topic_title: Title
+        topic_text: Initial text
         new:
           submit_button: Create topic
         edit:
