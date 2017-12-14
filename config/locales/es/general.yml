@@ -814,7 +814,7 @@ es:
     add: "Añadir contenido relacionado"
     label: "Enlace a contenido relacionado"
     placeholder: "%{url}"
-    help: "Puedes introducir cualquier enlace que esté dentro de %{org}."
+    help: "Puedes introducir cualquier enlace de %{models} que esté dentro de %{org}."
     submit: "Añadir"
     error: "Enlace no válido. Recuerda que debe empezar por %{url}."
     success: "Has añadido un nuevo contenido relacionado"
