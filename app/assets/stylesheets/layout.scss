@@ -310,7 +310,7 @@ a {
 .icon-angle-left {
   clear: both;
   color: $text-medium;
-  float: left;
+  display: inline-block;
 }
 
 .back:not([class^="icon-"]) {
