@@ -50,8 +50,8 @@ describe MigrateSpendingProposalsToInvestments do
       inv2 = importer.import(sp2)
 
       expect(inv2.heading).to eq(inv1.heading)
-      expect(inv1.label).to eq(sp1.id.to_s)
-      expect(inv2.label).to eq(sp2.id.to_s)
+      expect(inv1.unfeasibility_explanation).to eq(sp1.id.to_s)
+      expect(inv2.unfeasibility_explanation).to eq(sp2.id.to_s)
     end
 
     it "Imports feasibility correctly" do

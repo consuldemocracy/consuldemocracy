@@ -33,7 +33,7 @@ class MigrateSpendingProposalsToInvestments
       price: sp.price,
       feasibility: feasibility,
       price_explanation: sp.price_explanation,
-      unfeasibility_explanation: '-', # MIGRATE THIS
+      unfeasibility_explanation: sp.id, # MIGRATE THIS correctly
       internal_comments: sp.internal_comments,
       valuation_finished: sp.valuation_finished,
       valuator_assignments_count: sp.valuation_assignments_count,
@@ -55,7 +55,7 @@ class MigrateSpendingProposalsToInvestments
       location: nil, # FIND VALUE FOR THIS ONE
       organization_name: sp.association_name,
       unfeasible_email_sent_at: sp.unfeasible_email_sent_at,
-      label: sp.id, # TEMP VALUE FOR COMING BACK LATER
+      label: nil,
       previous_heading_id: nil, # FIND VALUE FOR THIS ONE
       visible_to_valuators: false, # FIND VALUE FOR THIS ONE
       ballot_lines_count: sp.ballot_lines_count,
