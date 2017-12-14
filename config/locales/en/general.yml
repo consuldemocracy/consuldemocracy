@@ -649,7 +649,6 @@ en:
     you_are_in: "You are in"
     unflag: Unflag
     probe_plaza_banner: "#RemodelingPlazaEspaña"
-    unfollow: "Unfollow"
     unfollow_entity: "Unfollow %{entity}"
     outline:
       budget: Participatory budget
