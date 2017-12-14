@@ -44,7 +44,7 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
   def milestone_params
     params.require(:budget_investment_milestone)
           .permit(:title, :description, :publication_date, :budget_investment_id,
-                  image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]),
+                  image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                   documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy])
   end
 
