@@ -201,11 +201,13 @@ es:
         table_id: "ID"
         table_title: "Título"
         table_description: "Descripción"
+        table_publication_date: "Fecha de publicación"
         table_actions: "Acciones"
         delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
         image: "Imagen"
         show_image: "Ver imagen"
+        documents: "Documentos"
       new:
         creating: Crear hito
       edit:
