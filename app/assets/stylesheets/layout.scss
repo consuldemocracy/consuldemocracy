@@ -306,7 +306,7 @@ a {
 .icon-angle-left {
   clear: both;
   color: $text-medium;
-  float: left;
+  display: inline-block;
 }
 
 .back:not([class^="icon-"]) {
@@ -2043,36 +2043,6 @@ table {
 
 .activity {
 
-  .accordion li {
-    margin-bottom: $line-height / 2;
-
-    .accordion-title {
-      border-bottom: 1px solid $border;
-      background: #f8f9fb;
-      font-size: $small-font-size;
-      padding: $line-height / 2;
-    }
-
-    .accordion-content {
-      padding: 0;
-    }
-  }
-
-  .accordion .title {
-    display: block;
-    line-height: $line-height;
-  }
-
-  .accordion .icon {
-    font-size: rem-calc(20);
-    float: left;
-    margin-right: $line-height / 3;
-
-    &.icon-debates {
-      margin-top: rem-calc(3);
-    }
-  }
-
   .retired {
     text-decoration: line-through;
   }
@@ -2082,6 +2052,45 @@ table {
 
   li {
     margin-right: $line-height / 4;
+
+    span {
+      background: none;
+      border: 1px solid #ececec;
+    }
+  }
+}
+
+.following {
+
+  .follow-list {
+    list-style-type: circle;
+    padding: $line-height / 2;
+
+    li {
+      margin-bottom: $line-height / 2;
+      margin-left: $line-height;
+    }
+  }
+
+  h3 {
+    font-size: rem-calc(24);
+    margin-top: $line-height;
+    padding-left: rem-calc(30);
+    position: relative;
+
+    span {
+      left: 0;
+      position: absolute;
+      top: 2px;
+    }
+  }
+
+  .interests {
+
+    @include breakpoint(medium) {
+      border-left: 1px solid #ececec;
+      padding-left: $line-height;
+    }
   }
 }
 

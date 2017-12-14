@@ -21,9 +21,11 @@
       <%= f.text_field :external_url %>
     </div>
 
-    <div class="images small-12 column">
-      <%= render 'images/nested_image', imageable: @investment, f: f %>
-    </div>
+    <% if feature?(:allow_images) %>
+      <div class="images small-12 column">
+        <%= render 'images/nested_image', imageable: @investment, f: f %>
+      </div>
+    <% end %>
 
     <div class="documents small-12 column">
       <%= render 'documents/nested_documents', documentable: @investment, f: f %>
