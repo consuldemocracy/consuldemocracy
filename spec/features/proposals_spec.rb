@@ -139,6 +139,32 @@ feature 'Proposals' do
         expect(page).to have_content(proposal1.title)
       end
     end
+
+    scenario 'related contents can be added' do
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+
+      visit proposal_path(proposal1)
+
+      expect(page).to have_selector('#related_content', visible: false)
+      click_on("Add related content")
+      expect(page).to have_selector('#related_content', visible: true)
+
+      within("#related_content") do
+        fill_in 'url', with: "#{Setting['url']}/proposals/#{proposal2.to_param}"
+        click_button "Add"
+      end
+
+      within("#related-content-list") do
+        expect(page).to have_content(proposal2.title)
+      end
+
+      visit proposal_path(proposal2)
+
+      within("#related-content-list") do
+        expect(page).to have_content(proposal1.title)
+      end
+    end
   end
 
   context "Embedded video" do
