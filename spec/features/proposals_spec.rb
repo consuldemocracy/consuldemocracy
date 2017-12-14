@@ -9,6 +9,10 @@ feature 'Proposals' do
     Setting['feature.proposals'] = true
   end
 
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Proposal
+  end
+
   context 'Index' do
     scenario 'Lists featured and regular proposals' do
       featured_proposals = create_featured_proposals
