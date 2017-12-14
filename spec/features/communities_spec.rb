@@ -24,7 +24,6 @@ feature 'Communities' do
       expect(page).to have_content proposal.title
       expect(page).to have_content "Participate in the community of this proposal"
       expect(page).to have_link("Create topic", href: new_community_topic_path(community))
-      expect(page).not_to have_selector(".button.disabled", text: "Create topic")
     end
 
     scenario 'Should display without_topics_text and participants when there are not topics' do
