@@ -17,7 +17,7 @@
     <aside class="small-12 column show-for-small-only">
       <div class="sidebar-divider"></div>
       <h2><%= t("community.show.sidebar.participate") %></h2>
-      <%= link_to t("community.show.sidebar.new_topic"), new_community_topic_path(@community.id), class: "button expanded" %>
+      <%= link_to t("community.show.sidebar.new_topic"), create_topic_link(@community) , class: "button expanded" %>
     </aside>
 
     <div class="small-12 medium-9 column">
@@ -30,7 +30,7 @@
     <aside class="small-12 medium-3 column hide-for-small-only">
       <div class="sidebar-divider"></div>
       <h2><%= t("community.show.sidebar.participate") %></h2>
-      <%= link_to t("community.show.sidebar.new_topic"), new_community_topic_path(@community.id), class: "button expanded" %>
+      <%= link_to t("community.show.sidebar.new_topic"), create_topic_link(@community) , class: "button expanded" %>
     </aside>
   </div>
 </div>
