@@ -1,7 +1,7 @@
 class MigrateSpendingProposalsToInvestments
 
   def import(sp)
-    budget = Budget.find_or_create_by(name: '2016', currency_symbol: "€")
+    budget = Budget.find_or_create_by(name: '2016', phase: 'finished', currency_symbol: "€")
 
     group = nil
     heading = nil
