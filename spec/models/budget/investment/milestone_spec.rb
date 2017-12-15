@@ -14,6 +14,11 @@ describe "Budget::Investment::Milestone" do
       expect(milestone).to_not be_valid
     end
 
+    it "Should not be valid without a description" do
+      milestone.description = nil
+      expect(milestone).to_not be_valid
+    end
+
     it "Should not be valid without an investment" do
       milestone.investment_id = nil
       expect(milestone).to_not be_valid
