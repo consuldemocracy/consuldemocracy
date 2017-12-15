@@ -515,7 +515,6 @@ feature 'Budget Investments' do
     find("#tab-milestones-label").trigger('click')
 
     within("#tab-milestones") do
-      expect(page).to have_content(milestone.title)
       expect(page).to have_content(milestone.description)
       expect(page).to have_content(Time.zone.today.to_date)
       expect(page.find("#image_#{milestone.id}")['alt']).to have_content image.title
