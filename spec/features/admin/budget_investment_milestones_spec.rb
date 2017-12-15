@@ -39,15 +39,13 @@ feature 'Admin budget investment milestones' do
 
       click_link 'Create new milestone'
 
-      fill_in 'budget_investment_milestone_title', with: 'New title milestone'
       fill_in 'budget_investment_milestone_description', with: 'New description milestone'
-      fill_in 'budget_investment_milestone_publication_date', with: Time.zone.today.to_date
+      fill_in 'budget_investment_milestone_publication_date', with: Time.zone.today
 
       click_button 'Create milestone'
 
-      expect(page).to have_content 'New title milestone'
       expect(page).to have_content 'New description milestone'
-      expect(page).to have_content Time.zone.today.to_date
+      expect(page).to have_content Time.zone.today
     end
 
     scenario "Show validation errors on milestone form" do
@@ -60,7 +58,7 @@ feature 'Admin budget investment milestones' do
       click_button 'Create milestone'
 
       within "#new_budget_investment_milestone" do
-        expect(page).to have_content "can't be blank", count: 2
+        expect(page).to have_content "can't be blank", count: 1
         expect(page).to have_content 'New description milestone'
       end
     end
@@ -79,14 +77,12 @@ feature 'Admin budget investment milestones' do
 
       expect(page).to have_css("img[alt='#{milestone.image.title}']")
 
-      fill_in 'budget_investment_milestone_title', with: 'Changed title'
       fill_in 'budget_investment_milestone_description', with: 'Changed description'
       fill_in 'budget_investment_milestone_publication_date', with: Time.zone.today.to_date
       fill_in 'budget_investment_milestone_documents_attributes_0_title', with: 'New document title'
 
       click_button 'Update milestone'
 
-      expect(page).to have_content 'Changed title'
       expect(page).to have_content 'Changed description'
       expect(page).to have_content Time.zone.today.to_date
       expect(page).to have_link 'Show image'

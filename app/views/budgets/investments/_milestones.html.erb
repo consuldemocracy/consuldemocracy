@@ -11,7 +11,6 @@
           <% @investment.milestones.each do |milestone| %>
             <li>
               <div class="milestone-content">
-                <h3><%= milestone.title %></h3>
                 <% if milestone.publication_date.present? %>
                   <span class="milestone-date">
                     <strong><%= t("budgets.investments.show.milestone_publication_date",
