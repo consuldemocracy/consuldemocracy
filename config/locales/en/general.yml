@@ -817,7 +817,7 @@ en:
     add: "Add related content"
     label: "Link to related content"
     placeholder: "%{url}"
-    help: "You can add any link inside of %{org}."
+    help: "You can add links of %{models} inside of %{org}."
     submit: "Add"
     error: "Link not valid. Remember to start with %{url}."
     success: "You added a new related content"
