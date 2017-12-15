@@ -230,6 +230,24 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).to have_content "Documents (#{documentable.class.max_documents_allowed})"
     end
 
+    scenario "Should let the user upload more than 1 file at the same time", :js do
+      login_as user_to_login
+      visit send(path, arguments)
+
+      expect(page).to have_css "#new_document_link", visible: true
+
+      puts fill_resource_method_name
+
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(documentable_factory_name, 1, "spec/fixtures/files/empty.pdf")
+
+      # documentable_attach_new_file(documentable_factory_name, 2, "spec/fixtures/files/empty.pdf")
+      send(fill_resource_method_name) if fill_resource_method_name
+
+      click_on submit_button
+      expect(page).to have_content documentable_success_notice
+    end
+
     if path.include? "edit"
 
       scenario "Should show persisted documents and remove nested_field" do
