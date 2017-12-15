@@ -1844,22 +1844,6 @@ tr th {
       padding: 0;
     }
 
-    &::after {
-      background: $border;
-      border-radius: rem-calc(20);
-      bottom: -24px;
-      content: none;
-      height: rem-calc(20);
-      left: 50%;
-      margin-left: rem-calc(-10);
-      position: absolute;
-      width: rem-calc(20);
-
-      @include breakpoint(medium) {
-        content: ' ';
-      }
-    }
-
     &.active {
       font-weight: bold;
 
