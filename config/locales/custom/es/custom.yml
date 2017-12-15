@@ -173,18 +173,6 @@ es:
       title: "¿Tienes una idea para cambiar Madrid?"
       text: "El Ayuntamiento de Madrid llevará a cabo tu propuesta si consigues que pase a votación ciudadana. Necesitas 27.064 apoyos en Decide Madrid, el 1% de la población con derecho a voto."
       button: "Crea una propuesta"
-    citizenship:
-      label: "Consulta pública"
-      title: "Nuevo Reglamento de Atención a la Ciudadanía"
-      text: "Aporta tus ideas para el nuevo Reglamento de Atención a la Ciudadanía y Administración Electrónica."
-      link: "Participa en el nuevo Reglamento de Atención a la Ciudadanía"
-      alt: "Oficina de Atención a la Ciudadanía en Madrid"
-    home_help:
-      label: "Consulta pública"
-      title: "Nueva Ordenanza del Servicio de Ayuda a Domicilio"
-      text: "Participa en la creación de una nueva ordenanza que afecta a personas mayores, con discapacidad, centros de día y residencias."
-      link: "Participa en la nueva ordenanza del servicio de ayuda a domicilio"
-      alt: "Auxiliar ayudando a una persona mayor"
     proposals:
       label: "Propuestas"
       title: "¿Qué es y cómo se crea una propuesta ciudadana?"
