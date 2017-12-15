@@ -15,6 +15,7 @@
 // 12. Nvotes
 // 13. Kit Decide
 // 14. Figure cards style
+// 15. User recommendations
 //
 
 // 00. Others
@@ -3330,5 +3331,61 @@ h3.kit-decide {
       font-size: $base-font-size;
       padding: rem-calc(4) rem-calc(8);
     }
+  }
+}
+
+// 15. User recommendations
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.section-recommended {
+  border-top: 1px solid $border;
+  padding: $line-height 0;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: $line-height * 2;
+  }
+
+  .card .card-section {
+    max-width: none;
+    padding: 0;
+
+    p {
+      font-size: $base-font-size;
+    }
+  }
+
+  .debates-inner,
+  .proposals-inner,
+  .budget-investments-inner {
+    border-top: 0;
+
+    h4 {
+      margin-bottom: $line-height;
+      margin-top: 0;
+      min-height: 0;
+    }
+  }
+}
+
+.carousel-image {
+
+  .debates,
+  .proposals {
+
+    a {
+      display: block;
+      margin-top: $line-height;
+    }
+  }
+
+  .debates-inner,
+  .proposals-inner {
+    border: 1px solid $border;
+    padding: $line-height;
+    margin-right: $line-height;
   }
 }
