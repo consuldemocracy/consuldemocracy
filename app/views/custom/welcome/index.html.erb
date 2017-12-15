@@ -18,6 +18,12 @@
 
   <%= render "cards" %>
 
+  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+    <%= render "recommended",
+                recommended_debates: @recommended_debates,
+                recommended_proposals: @recommended_proposals %>
+  <% end %>
+
   <%= render "features" %>
 
 </div>

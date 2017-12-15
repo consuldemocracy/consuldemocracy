@@ -87,6 +87,13 @@
         <%= paginate @proposals %>
 
         <% unless @search_terms || @advanced_search_terms || @tag_filter %>
+
+          <% if @current_order == "recommendations" %>
+            <p class="margin">
+              *<%= t("welcome.recommended.help") %>
+            </p>
+          <% end %>
+
           <div id="section_help" class="margin" data-magellan-target="section_help">
             <p class="lead">
               <strong><%= t("proposals.index.section_footer.title") %></strong>

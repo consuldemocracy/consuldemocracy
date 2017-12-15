@@ -171,3 +171,9 @@ es:
         text: "Tu propones y decides en que se gasta el presupuesto municipal."
         link: Ver proyectos de inversión
         alt_image: "Generic image related with budgets of the City of Madrid."
+    recommended:
+      help: "Estas recomendaciones se generan por las etiquetas de los debates y propuestas que estás siguiendo."
+      debates:
+        btn_text_link: Ver todos los debates recomendados
+      proposals:
+        btn_text_link: Ver todas las propuestas recomendadas
