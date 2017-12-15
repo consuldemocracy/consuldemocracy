@@ -12,7 +12,7 @@ en:
       personal: Personal details
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
-      public_interests_label: Keep my interests public
+      public_interests_label: Keep the labels of the elements I follow public
       public_interests_my_title_list: Tags of elements you follow
       public_interests_user_title_list: Tags of elements this user follows
       save_changes_submit: Save changes
@@ -282,7 +282,8 @@ en:
       sign_up: Sign up with Facebook
       name: Facebook
     finish_signup:
-      title: Add your email address
+      title: "Additional details"
+      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
     google_oauth2:
       sign_in: Sign in with Google
       sign_up: Sign up with Google
@@ -294,9 +295,6 @@ en:
     info_sign_in: "Sign in with:"
     info_sign_up: "Sign up with:"
     or_fill: "Or fill the following form:"
-    finish_signup:
-      title: "Additional details"
-      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
   proposals:
     create:
       form:
@@ -622,6 +620,7 @@ en:
     orbit:
       previous_slide: Previous Slide
       next_slide: Next Slide
+    documentation: Additional documentation
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"
