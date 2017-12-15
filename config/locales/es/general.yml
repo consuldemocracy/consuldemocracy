@@ -13,7 +13,7 @@ es:
       personal: Datos personales
       phone_number_label: Teléfono
       public_activity_label: Mostrar públicamente mi lista de actividades
-      public_interests_label: Mostrar públicamente mis intereses
+      public_interests_label: Mostrar públicamente las etiquetas de los elementos que sigo
       public_interests_my_title_list: Etiquetas de los elementos que sigues
       public_interests_user_title_list: Etiquetas de los elementos que sigue este usuario
       save_changes_submit: Guardar cambios
@@ -647,6 +647,7 @@ es:
     orbit:
       previous_slide: Imagen anterior
       next_slide: Siguiente imagen
+    documentation: Documentación adicional
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"

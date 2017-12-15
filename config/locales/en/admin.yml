@@ -209,6 +209,7 @@ en:
         documents: "Documents"
       new:
         creating: Create milestone
+        date: Date
       edit:
         title: Edit milestone
       create:
