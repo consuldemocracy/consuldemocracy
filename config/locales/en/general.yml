@@ -12,7 +12,7 @@ en:
       personal: Personal details
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
-      public_interests_label: Keep my interests public
+      public_interests_label: Keep the labels of the elements I follow public
       public_interests_my_title_list: Tags of elements you follow
       public_interests_user_title_list: Tags of elements this user follows
       save_changes_submit: Save changes
