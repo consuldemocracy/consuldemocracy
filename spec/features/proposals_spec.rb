@@ -144,6 +144,73 @@ feature 'Proposals' do
       visit proposal_path(proposal)
       expect(page).not_to have_content "Access the community"
     end
+
+    scenario 'related contents are listed' do
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      related_content = create(:related_content, parent_relationable: proposal1, child_relationable: proposal2)
+
+      visit proposal_path(proposal1)
+      within("#related-content-list") do
+        expect(page).to have_content(proposal2.title)
+      end
+
+      visit proposal_path(proposal2)
+      within("#related-content-list") do
+        expect(page).to have_content(proposal1.title)
+      end
+    end
+
+    scenario 'related contents can be added' do
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      debate1 = create(:debate)
+
+      visit proposal_path(proposal1)
+
+      expect(page).to have_selector('#related_content', visible: false)
+      click_on("Add related content")
+      expect(page).to have_selector('#related_content', visible: true)
+
+      within("#related_content") do
+        fill_in 'url', with: "#{Setting['url']}/proposals/#{proposal2.to_param}"
+        click_button "Add"
+      end
+
+      within("#related-content-list") do
+        expect(page).to have_content(proposal2.title)
+      end
+
+      visit proposal_path(proposal2)
+
+      within("#related-content-list") do
+        expect(page).to have_content(proposal1.title)
+      end
+
+      within("#related_content") do
+        fill_in 'url', with: "#{Setting['url']}/debates/#{debate1.to_param}"
+        click_button "Add"
+      end
+
+      within("#related-content-list") do
+        expect(page).to have_content(debate1.title)
+      end
+    end
+
+    scenario 'if related content URL is invalid returns error' do
+      proposal1 = create(:proposal)
+
+      visit proposal_path(proposal1)
+
+      click_on("Add related content")
+
+      within("#related_content") do
+        fill_in 'url', with: "http://invalidurl.com"
+        click_button "Add"
+      end
+
+      expect(page).to have_content("Link not valid. Remember to start with #{Setting[:url]}.")
+    end
   end
 
   context "Embedded video" do
