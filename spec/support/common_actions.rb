@@ -506,4 +506,32 @@ module CommonActions
   def remove_token_from_vote_link
     page.execute_script("$('.js-question-answer')[0]['href'] = $('.js-question-answer')[0]['href'].match(/.+?(?=token)/)[0] + 'token='")
   end
+
+  def model_name(described_class)
+    return :proposal_notification if described_class == ProposalNotification
+
+    described_class.name.gsub("::", "_").downcase.to_sym
+  end
+
+  def comment_body(resource)
+    "comment-body-#{resource.class.name.gsub("::", "_").downcase.to_sym}_#{resource.id}"
+  end
+
+  def path_for(resource)
+    nested_path_for(resource) || url_for([resource, only_path: true])
+  end
+
+  def nested_path_for(resource)
+    case resource.class.name
+    when "Legislation::Question"
+      legislation_process_question_path(resource.process, resource)
+    when "Legislation::Proposal"
+      legislation_process_proposal_path(resource.process, resource)
+    when "Budget::Investment"
+      budget_investment_path(resource.budget, resource)
+    else
+      false
+    end
+  end
+
 end

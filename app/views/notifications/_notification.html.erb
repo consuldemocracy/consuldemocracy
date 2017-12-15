@@ -1,5 +1,5 @@
 <li id="<%= dom_id(notification) %>" class="notification">
-  <% if notification.notifiable.present? %>
+  <% if notification.notifiable_available? %>
     <%= link_to notification do %>
       <p>
         <em>

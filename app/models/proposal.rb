@@ -13,6 +13,7 @@ class Proposal < ActiveRecord::Base
   include Communitable
   include Imageable
   include Mappable
+  include Notifiable
   include Documentable
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,

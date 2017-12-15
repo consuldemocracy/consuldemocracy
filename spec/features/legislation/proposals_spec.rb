@@ -2,6 +2,11 @@ require 'rails_helper'
 require 'sessions_helper'
 
 feature 'Legislation Proposals' do
+
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Legislation::Proposal
+  end
+
   let(:user) { create(:user) }
   let(:user2) { create(:user) }
   let(:process) { create(:legislation_process) }
@@ -55,4 +60,5 @@ feature 'Legislation Proposals' do
   def legislation_proposals_order
     all("[id^='legislation_proposal_']").collect { |e| e[:id] }
   end
+
 end

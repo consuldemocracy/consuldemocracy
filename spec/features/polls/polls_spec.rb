@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'Polls' do
 
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Poll
+  end
+
   context '#index' do
 
     scenario 'Polls can be listed' do

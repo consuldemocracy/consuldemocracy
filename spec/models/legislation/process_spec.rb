@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Legislation::Process, type: :model do
+describe Legislation::Process do
   let(:process) { create(:legislation_process) }
 
   it "should be valid" do
@@ -115,4 +115,5 @@ RSpec.describe Legislation::Process, type: :model do
       expect(process.status).to eq(:open)
     end
   end
+
 end
