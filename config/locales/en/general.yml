@@ -620,6 +620,7 @@ en:
     orbit:
       previous_slide: Previous Slide
       next_slide: Next Slide
+    documentation: Additional documentation
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"
