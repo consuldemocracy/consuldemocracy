@@ -20,6 +20,7 @@
 // 18. Banners
 // 19. Recommended Section Home
 // 20. Documents
+// 21. Related content
 //
 
 // 01. Global styles
@@ -2390,4 +2391,57 @@ table {
 .document-divider {
   background: #fafafa;
   border-bottom: 1px solid #eee;
+}
+
+// 21. Related content
+// -------------------
+
+.related-content {
+  border-top: 1px solid $border;
+
+  h2 {
+    font-size: rem-calc(24);
+
+    span {
+      color: #4f4f4f;
+      font-weight: normal;
+    }
+  }
+}
+
+.add-related-content {
+  display: block;
+
+  @include breakpoint(medium) {
+    float: right;
+  }
+}
+
+.related-content-list {
+  list-style-type: none;
+  margin-left: 0;
+
+  li {
+    border-bottom: 1px solid $border;
+    padding: $line-height / 4;
+
+    &:first-child {
+      border-top: 1px solid $border;
+    }
+  }
+
+  h3 {
+    font-size: $base-font-size;
+    font-weight: normal;
+  }
+
+  span {
+    color: #4f4f4f;
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+  }
+
+  .flag {
+    margin-top: $line-height / 2;
+  }
 }
