@@ -1,6 +1,6 @@
 class ProposalNotification < ActiveRecord::Base
-
   include Graphqlable
+  include Notifiable
 
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   belongs_to :proposal
@@ -33,6 +33,10 @@ class ProposalNotification < ActiveRecord::Base
     return false if proposal.hidden?
     return false unless proposal.public_for_api?
     return true
+  end
+
+  def notifiable
+    proposal
   end
 
 end

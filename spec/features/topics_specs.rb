@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'Topics' do
 
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Topic
+  end
+
   context 'New' do
 
     scenario 'Create new topic link should redirect to sign up for anonymous users', :js do

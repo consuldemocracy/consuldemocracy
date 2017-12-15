@@ -4,7 +4,10 @@ require 'rails_helper'
 describe Proposal do
   let(:proposal) { build(:proposal) }
 
-  it_behaves_like "has_public_author"
+  describe "Concerns" do
+    it_behaves_like "has_public_author"
+    it_behaves_like "notifiable"
+  end
 
   it "should be valid" do
     expect(proposal).to be_valid
@@ -953,4 +956,5 @@ describe Proposal do
     end
 
   end
+
 end
