@@ -13,14 +13,14 @@ describe MigrateSpendingProposalsToInvestments do
       expect(Budget.count).to eq(1)
     end
 
-    it "Creates the and returns investments" do
+    it "Creates the budget and returns investments" do
       inv = nil
       sp = create(:spending_proposal)
       expect { inv = importer.import(sp) }.to change{ Budget::Investment.count }.from(0).to(1)
       expect(inv).to be_kind_of(Budget::Investment)
     end
 
-    it "Imports a city spending proposal" do
+    it "Imports a non georestricted spending proposal" do
       sp = create(:spending_proposal)
 
       inv = importer.import(sp)
@@ -31,7 +31,7 @@ describe MigrateSpendingProposalsToInvestments do
       expect(inv.heading.group.name).to eq("Toda la ciudad")
     end
 
-    it "Imports a city spending proposal" do
+    it "Imports a georestricted spending proposal" do
       sp = create(:spending_proposal, geozone: create(:geozone, name: "Bel Air"))
 
       inv = importer.import(sp)
@@ -39,7 +39,7 @@ describe MigrateSpendingProposalsToInvestments do
       expect(inv.author).to eq(sp.author)
       expect(inv.title).to eq(sp.title)
       expect(inv.heading.name).to eq("Bel Air")
-      expect(inv.heading.group.name).to eq("Barrios")
+      expect(inv.heading.group.name).to eq("Distritos")
     end
 
     it "Uses existing budgets, headings and groups instead of creating new ones" do
@@ -50,6 +50,8 @@ describe MigrateSpendingProposalsToInvestments do
       inv2 = importer.import(sp2)
 
       expect(inv2.heading).to eq(inv1.heading)
+      expect(inv1.unfeasibility_explanation).to eq(sp1.id.to_s)
+      expect(inv2.unfeasibility_explanation).to eq(sp2.id.to_s)
     end
 
     it "Imports feasibility correctly" do
@@ -87,6 +89,15 @@ describe MigrateSpendingProposalsToInvestments do
       imported_votes = ActsAsVotable::Vote.where(votable_type: "Budget::Investment", votable_id: inv.id)
 
       expect(imported_votes.map(&:voter).sort_by(&:id)).to eq(voters)
+    end
+
+    it "Imports comments" do
+      sp = create(:spending_proposal)
+      comment = create(:comment, commentable: sp, subject: 'Wadus stuff')
+      comment = create(:comment, commentable: sp, subject: 'More wadus')
+      inv = importer.import(sp)
+
+      expect(inv.comments_count).to eq(2)
     end
   end
 end
