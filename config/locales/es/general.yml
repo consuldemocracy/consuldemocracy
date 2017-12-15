@@ -619,6 +619,7 @@ es:
     orbit:
       previous_slide: Imagen anterior
       next_slide: Siguiente imagen
+    documentation: Documentación adicional
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
