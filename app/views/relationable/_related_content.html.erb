@@ -13,6 +13,8 @@
 
   <%= render 'relationable/form', relationable: relationable %>
 
-  <%= render 'relationable/related_list', relationable: relationable %>
+  <% if @related_contents.present? %>
+    <%= render 'relationable/related_list', relationable: relationable %>
+  <% end %>
 
 </div>

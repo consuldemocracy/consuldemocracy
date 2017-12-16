@@ -21,6 +21,7 @@
 // 19. Recommended Section Home
 // 20. Documents
 // 21. Related content
+// 22. Images
 //
 
 // 01. Global styles
@@ -2452,4 +2453,11 @@ table {
   .flag {
     margin-top: $line-height / 2;
   }
+}
+
+// 22. Images
+// -----------------
+
+.images .button {
+  margin-top: $line-height / 2;
 }

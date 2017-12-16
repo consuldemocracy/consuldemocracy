@@ -161,6 +161,13 @@ feature 'Proposals' do
       end
     end
 
+    scenario 'related contents list is not rendered if there are no relations' do
+      proposal = create(:proposal)
+
+      visit proposal_path(proposal)
+      expect(page).to_not have_css("#related-content-list")
+    end
+
     scenario 'related contents can be added' do
       proposal1 = create(:proposal)
       proposal2 = create(:proposal)

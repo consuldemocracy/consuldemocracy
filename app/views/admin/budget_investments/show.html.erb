@@ -61,5 +61,7 @@
 <%= render 'admin/budget_investments/milestones' %>
 
 <p>
-  <%= link_to t("admin.budget_investments.show.new_milestone"), new_admin_budget_budget_investment_budget_investment_milestone_path(@budget, @investment) %>
+  <%= link_to t("admin.budget_investments.show.new_milestone"),
+              new_admin_budget_budget_investment_budget_investment_milestone_path(@budget, @investment),
+              class: "button hollow" %>
 </p>
