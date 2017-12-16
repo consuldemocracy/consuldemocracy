@@ -218,6 +218,16 @@ describe 'ConsulSchema' do
       expect(received_tags).to match_array ['Parks', 'Health']
     end
 
+    it 'returns nested votes for a proposal' do
+      proposal = create(:proposal)
+      2.times { create(:vote, votable: proposal) }
+
+      response = execute("{ proposal(id: #{proposal.id}) { votes_for { edges { node { public_created_at } } } } }")
+
+      votes = response["data"]["proposal"]["votes_for"]["edges"]
+      expect(votes.count).to eq(2)
+    end
+
   end
 
   describe 'Debates' do
