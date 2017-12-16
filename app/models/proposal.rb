@@ -30,8 +30,8 @@ class Proposal < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
-  has_many :proposal_notifications
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :proposal_notifications, dependent: :destroy
 
   validates :title, presence: true
   validates :summary, presence: true
@@ -53,8 +53,8 @@ class Proposal < ActiveRecord::Base
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
-  scope :for_render, -> { includes(:tags) }
-  scope :sort_by_hot_score, -> { reorder(hot_score: :desc) }
+  scope :for_render,               -> { includes(:tags) }
+  scope :sort_by_hot_score,        -> { reorder(hot_score: :desc) }
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
@@ -73,12 +73,15 @@ class Proposal < ActiveRecord::Base
   scope :public_for_api,           -> { where('proposals.proceeding IS NULL or proposals.proceeding = ?', 'Derechos Humanos') }
   scope :proceedings,              -> { where.not(proceeding: nil) }
   scope :not_proceedings,          -> { where(proceeding: nil) }
+  scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
 
   def self.recommendations(user)
     tagged_with(user.interests, any: true)
       .where("author_id != ?", user.id)
       .unsuccessful
       .not_followed_by_user(user)
+      .not_archived
+      .not_supported_by_user(user)
   end
 
   def self.not_followed_by_user(user)
