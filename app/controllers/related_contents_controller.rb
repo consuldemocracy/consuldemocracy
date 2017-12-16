@@ -22,21 +22,19 @@ class RelatedContentsController < ApplicationController
   end
 
   def relationable_object
-    @relationable = (params[:relationable_klass].singularize.camelize.constantize).find_by_id(params[:relationable_id])
+    @relationable = params[:relationable_klass].singularize.camelize.constantize.find_by(id: params[:relationable_id])
   end
 
   def related_object
-    begin
       if valid_url?
         url = params[:url]
 
-        related_klass = url.match(/\/(#{RelatedContent::RELATIONABLE_MODELS.join("|")})\//)[0].gsub("/", "")
-        related_id = url.match(/\/[0-9]+/)[0].gsub("/", "")
+        related_klass = url.match(/\/(#{RelatedContent::RELATIONABLE_MODELS.join("|")})\//)[0].delete("/")
+        related_id = url.match(/\/[0-9]+/)[0].delete("/")
 
-        @related = (related_klass.singularize.camelize.constantize).find_by_id(related_id)
+        @related = related_klass.singularize.camelize.constantize.find_by(id: related_id)
       end
-    rescue
+  rescue
       nil
-    end
   end
 end
