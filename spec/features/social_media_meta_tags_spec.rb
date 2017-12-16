@@ -36,12 +36,12 @@ feature 'Social media meta tags' do
 
       visit root_path
 
-      expect(page).to have_css 'meta[name="keywords"][content="'+ meta_keywords + '"]', visible: false
-      expect(page).to have_css 'meta[name="twitter:site"][content="'+ twitter_handle + '"]', visible: false
-      expect(page).to have_css 'meta[name="twitter:title"][content="'+ meta_title + '"]', visible: false
+      expect(page).to have_css 'meta[name="keywords"][content="' + meta_keywords + '"]', visible: false
+      expect(page).to have_css 'meta[name="twitter:site"][content="' + twitter_handle + '"]', visible: false
+      expect(page).to have_css 'meta[name="twitter:title"][content="' + meta_title + '"]', visible: false
       expect(page).to have_css 'meta[name="twitter:description"][content="' + meta_description + '"]', visible: false
       expect(page).to have_css 'meta[name="twitter:image"][content="http://www.example.com/social_media_icon_twitter.png"]', visible: false
-      expect(page).to have_css 'meta[property="og:title"][content="'+ meta_title + '"]', visible: false
+      expect(page).to have_css 'meta[property="og:title"][content="' + meta_title + '"]', visible: false
       expect(page).to have_css 'meta[property="article:publisher"][content="' + url + '"]', visible: false
       expect(page).to have_css 'meta[property="article:author"][content="https://www.facebook.com/' + facebook_handle + '"]', visible: false
       expect(page).to have_css 'meta[property="og:url"][content="http://www.example.com/"]', visible: false

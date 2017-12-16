@@ -514,7 +514,7 @@ module CommonActions
   end
 
   def comment_body(resource)
-    "comment-body-#{resource.class.name.gsub("::", "_").downcase.to_sym}_#{resource.id}"
+    "comment-body-#{resource.class.name.parameterize('_').to_sym}_#{resource.id}"
   end
 
   def path_for(resource)
