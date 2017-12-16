@@ -25,8 +25,8 @@ module Notifiable
 
   def check_availability(resource)
     resource.present? &&
-    resource.try(:hidden_at) == nil &&
-    resource.try(:retired_at) == nil
+      resource.try(:hidden_at).nil? &&
+      resource.try(:retired_at).nil?
   end
 
   def linkable_resource
