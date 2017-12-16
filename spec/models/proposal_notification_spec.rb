@@ -146,7 +146,7 @@ describe ProposalNotification do
       it "returns false if the resource is retired" do
         notification = create(:notification, notifiable: notifiable)
 
-        notifiable.proposal.update(retired_at: Time.now)
+        notifiable.proposal.update(retired_at: Time.current)
         expect(notification.check_availability(proposal)).to be(false)
       end
 
