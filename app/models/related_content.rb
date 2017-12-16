@@ -1,6 +1,6 @@
 class RelatedContent < ActiveRecord::Base
   RELATED_CONTENTS_REPORT_THRESHOLD = Setting['related_contents_report_threshold'].to_i
-  RELATIONABLE_MODELS = %w{proposals debates}
+  RELATIONABLE_MODELS = %w{proposals debates}.freeze
 
   belongs_to :parent_relationable, polymorphic: true
   belongs_to :child_relationable, polymorphic: true
