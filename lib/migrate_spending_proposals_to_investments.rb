@@ -80,6 +80,8 @@ class MigrateSpendingProposalsToInvestments
     # Spending proposals have ballot_lines in Madrid, but not in consul, so we
     # can not test this either
 
+    sp.update_column(:explanations_log, investment.id) # Backwards reference to unfeasibility_explanation
+
     investment
   end
 

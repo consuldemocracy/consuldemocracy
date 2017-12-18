@@ -752,4 +752,20 @@ feature 'Admin budget investments' do
     end
   end
 
+  context "Redirects old Spending Proposal urls to correct Budget Investment" do
+
+    let(:spending_proposal) { create(:spending_proposal) }
+    let(:budget_investment) { create(:budget_investment) }
+
+    before do
+      budget_investment.update_column(:unfeasibility_explanation, spending_proposal.id)
+    end
+
+    scenario "Spending Proposal with associated Budget Investment" do
+      visit "/participatory_budget/investment_projects/#{spending_proposal.id}"
+
+      expect(current_path).to eq("/presupuestos/#{budget_investment.budget.slug}/proyecto/#{budget_investment.id}")
+    end
+
+  end
 end
