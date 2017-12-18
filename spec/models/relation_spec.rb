@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe RelatedContent do
 
-  let(:parent_relationable) { create([:proposal, :debate, :budget_investment].sample) }
-  let(:child_relationable) { create([:proposal, :debate, :budget_investment].sample) }
+  let(:parent_relationable) { create([:proposal, :debate].sample) }
+  let(:child_relationable) { create([:proposal, :debate].sample) }
 
   it "should allow relationables from various classes" do
     expect(build(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable)).to be_valid

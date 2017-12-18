@@ -11,6 +11,7 @@ feature 'Debates' do
 
   context "Concerns" do
     it_behaves_like 'notifiable in-app', Debate
+    it_behaves_like 'relationable', Debate
   end
 
   scenario 'Index' do
