@@ -51,6 +51,7 @@ FactoryGirl.define do
     end
 
     trait :verified do
+      residence_verified_at Time.current
       verified_at Time.current
     end
 
@@ -398,6 +399,7 @@ FactoryGirl.define do
     association :investment, factory: :budget_investment
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
+    publication_date     Time.zone.today
   end
 
   factory :vote do
@@ -792,7 +794,7 @@ FactoryGirl.define do
     start_date Date.current - 5.days
     end_date Date.current + 5.days
     debate_start_date Date.current - 5.days
-    debate_end_date Date.current - 2.days
+    debate_end_date Date.current + 2.days
     draft_publication_date Date.current - 1.day
     allegations_start_date Date.current
     allegations_end_date Date.current + 3.days
@@ -916,13 +918,12 @@ LOREM_IPSUM
   end
 
   factory :legislation_proposal, class: 'Legislation::Proposal' do
-    association :process, factory: :legislation_process
-    association :author, factory: :user
-    title 'Legislation Proposal Title'
-    description 'Legislation Proposal Description as long as you want'
-    summary 'Legislation Proposal Summary'
-    proposal_type 'proposal'
+    title "Example proposal for a legislation"
+    summary "This law should include..."
     terms_of_service '1'
+    process factory: :legislation_process
+    author factory: :user
+    proposal_type 'proposal'
   end
 
   factory :site_customization_page, class: 'SiteCustomization::Page' do

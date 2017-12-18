@@ -4,7 +4,10 @@ require 'rails_helper'
 describe Debate do
   let(:debate) { build(:debate) }
 
-  it_behaves_like "has_public_author"
+  describe "Concerns" do
+    it_behaves_like "has_public_author"
+    it_behaves_like "notifiable"
+  end
 
   it "should be valid" do
     expect(debate).to be_valid
@@ -800,4 +803,5 @@ describe Debate do
     end
 
   end
+
 end

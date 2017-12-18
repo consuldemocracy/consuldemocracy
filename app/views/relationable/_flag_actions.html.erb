@@ -1,0 +1,19 @@
+<span class="flag-content">
+  <% if show_flag_action? related %>
+    <a id="flag-expand-related-<%= related.id %>" data-toggle="flag-drop-related-<%= related.id %>" title="<%= t('shared.flag') %>" class="float-right flag">
+      <span class="icon-flag flag-disable"></span>
+    </a>
+    <span class="dropdown-pane" id="flag-drop-related-<%= related.id %>" data-dropdown data-auto-focus="true">
+      <%= link_to t('shared.flag'), flag_related_content_path(related), method: :put, remote: true, id: "flag-related-#{ related.id }" %>
+    </span>
+  <% end %>
+
+  <% if show_unflag_action? related %>
+    <a id="unflag-expand-related-<%= related.id %>" data-toggle="unflag-drop-related-<%= related.id %>" title="<%= t('shared.unflag') %>" class="float-right flag">
+      <span class="icon-flag flag-active"></span>
+    </a>
+    <span class="dropdown-pane" id="unflag-drop-related-<%= related.id %>" data-dropdown data-auto-focus="true">
+      <%= link_to t('shared.unflag'), unflag_related_content_path(related), method: :put, remote: true, id: "unflag-related-#{ related.id }" %>
+    </span>
+  <% end %>
+</span>

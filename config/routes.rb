@@ -556,6 +556,13 @@ Rails.application.routes.draw do
     root to: "dashboard#index"
   end
 
+  resources :related_contents, only: [:create] do
+    member do
+      put :flag
+      put :unflag
+    end
+  end
+
   # GraphQL
   get '/graphql', to: 'graphql#query'
   post '/graphql', to: 'graphql#query'

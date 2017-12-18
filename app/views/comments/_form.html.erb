@@ -8,7 +8,7 @@
       <%= f.hidden_field :commentable_id, value: commentable.id %>
       <%= f.hidden_field :parent_id, value: parent_id %>
 
-      <%= f.submit comment_button_text(parent_id, commentable), class: "button" %>
+      <%= f.submit comment_button_text(parent_id, commentable), class: "button", id: "publish_comment" %>
 
       <% if can? :comment_as_moderator, commentable %>
         <div class="float-right">

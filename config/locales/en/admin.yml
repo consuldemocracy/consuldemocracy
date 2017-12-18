@@ -200,11 +200,16 @@ en:
         table_id: "ID"
         table_title: "Title"
         table_description: "Description"
+        table_publication_date: "Publication date"
         table_actions: "Actions"
         delete: "Delete milestone"
         no_milestones: "Don't have defined milestones"
+        image: "Image"
+        show_image: "Show image"
+        documents: "Documents"
       new:
         creating: Create milestone
+        date: Date
       edit:
         title: Edit milestone
       create:

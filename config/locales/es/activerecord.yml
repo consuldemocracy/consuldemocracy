@@ -173,6 +173,7 @@ es:
       budget/investment/milestone:
         title: "Título"
         description: "Descripción"
+        publication_date: "Fecha de publicación"
       comment:
         body: "Comentario"
         user: "Usuario"

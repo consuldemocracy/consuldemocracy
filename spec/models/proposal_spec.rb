@@ -4,7 +4,10 @@ require 'rails_helper'
 describe Proposal do
   let(:proposal) { build(:proposal) }
 
-  it_behaves_like "has_public_author"
+  describe "Concerns" do
+    it_behaves_like "has_public_author"
+    it_behaves_like "notifiable"
+  end
 
   it "should be valid" do
     expect(proposal).to be_valid
@@ -952,5 +955,29 @@ describe Proposal do
       expect(result).to eq [proposal2]
     end
 
+    it "should not return archived proposals" do
+      proposal1 = create(:proposal, cached_votes_up: 5, tag_list: "Sport")
+      proposal2 = create(:proposal, cached_votes_up: 5, tag_list: "Sport")
+      archived_proposal = create(:proposal, :archived)
+      create(:follow, followable: proposal1, user: user)
+
+      result = Proposal.recommendations(user)
+      expect(result.size).to eq(1)
+      expect(result).to eq([proposal2])
+    end
+
+    it "should not return already supported proposals" do
+      proposal1 = create(:proposal, cached_votes_up: 5, tag_list: "Health")
+      proposal2 = create(:proposal, cached_votes_up: 5, tag_list: "Health")
+      proposal3 = create(:proposal, cached_votes_up: 5, tag_list: "Health")
+      create(:vote, votable: proposal1, voter: user)
+      create(:follow, followable: proposal2, user: user)
+
+      result = Proposal.recommendations(user)
+      expect(result.size).to eq(1)
+      expect(result).to eq([proposal3])
+    end
+
   end
+
 end

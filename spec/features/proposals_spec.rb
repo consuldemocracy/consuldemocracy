@@ -9,7 +9,20 @@ feature 'Proposals' do
     Setting['feature.proposals'] = true
   end
 
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Proposal
+  end
+
   context 'Index' do
+
+    before do
+      Setting['feature.allow_images'] = true
+    end
+
+    after do
+      Setting['feature.allow_images'] = nil
+    end
+
     scenario 'Lists featured and regular proposals' do
       featured_proposals = create_featured_proposals
       proposals = [create(:proposal), create(:proposal), create(:proposal)]
@@ -62,7 +75,7 @@ feature 'Proposals' do
       visit proposals_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        expect(page).to have_css("div.no-image")
+        expect(page).to_not have_css("div.with-image")
       end
       within("#proposal_#{proposal_with_image.id}") do
         expect(page).to have_css("img[alt='#{proposal_with_image.image.title}']")
@@ -130,6 +143,120 @@ feature 'Proposals' do
       proposal = create(:proposal)
       visit proposal_path(proposal)
       expect(page).not_to have_content "Access the community"
+    end
+
+    scenario 'related contents are listed' do
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      related_content = create(:related_content, parent_relationable: proposal1, child_relationable: proposal2)
+
+      visit proposal_path(proposal1)
+      within("#related-content-list") do
+        expect(page).to have_content(proposal2.title)
+      end
+
+      visit proposal_path(proposal2)
+      within("#related-content-list") do
+        expect(page).to have_content(proposal1.title)
+      end
+    end
+
+    scenario 'related contents list is not rendered if there are no relations' do
+      proposal = create(:proposal)
+
+      visit proposal_path(proposal)
+      expect(page).to_not have_css("#related-content-list")
+    end
+
+    scenario 'related contents can be added' do
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      debate1 = create(:debate)
+
+      visit proposal_path(proposal1)
+
+      expect(page).to have_selector('#related_content', visible: false)
+      click_on("Add related content")
+      expect(page).to have_selector('#related_content', visible: true)
+
+      within("#related_content") do
+        fill_in 'url', with: "#{Setting['url']}/proposals/#{proposal2.to_param}"
+        click_button "Add"
+      end
+
+      within("#related-content-list") do
+        expect(page).to have_content(proposal2.title)
+      end
+
+      visit proposal_path(proposal2)
+
+      within("#related-content-list") do
+        expect(page).to have_content(proposal1.title)
+      end
+
+      within("#related_content") do
+        fill_in 'url', with: "#{Setting['url']}/debates/#{debate1.to_param}"
+        click_button "Add"
+      end
+
+      within("#related-content-list") do
+        expect(page).to have_content(debate1.title)
+      end
+    end
+
+    scenario 'if related content URL is invalid returns error' do
+      proposal1 = create(:proposal)
+
+      visit proposal_path(proposal1)
+
+      click_on("Add related content")
+
+      within("#related_content") do
+        fill_in 'url', with: "http://invalidurl.com"
+        click_button "Add"
+      end
+
+      expect(page).to have_content("Link not valid. Remember to start with #{Setting[:url]}.")
+    end
+
+    scenario 'related content can be flagged', :js do
+      user = create(:user)
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      related_content = create(:related_content, parent_relationable: proposal1, child_relationable: proposal2)
+
+      login_as(user)
+      visit proposal_path(proposal1)
+
+      within("#related-content-list") do
+        expect(page).to have_css("#flag-expand-related-2")
+        find('#flag-expand-related-2').click
+        expect(page).to have_css("#flag-drop-related-2", visible: true)
+        click_link("flag-related-2")
+
+        expect(page).to have_css("#unflag-expand-related-2")
+      end
+
+      expect(related_content.reload.flags_count).to eq(1)
+      expect(related_content.opposite_related_content.flags_count).to eq(1)
+    end
+
+    scenario 'if related content has been flagged more than 5 times it will be hidden', :js do
+      user = create(:user)
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      related_content = create(:related_content, parent_relationable: proposal1, child_relationable: proposal2)
+
+      related_content.flags_count = Setting['related_contents_report_threshold'].to_i + 1
+      related_content.opposite_related_content.flags_count = related_content.flags_count
+
+      related_content.save
+      related_content.opposite_related_content.save
+
+      login_as(user)
+      visit proposal_path(proposal1)
+
+      expect(page).to_not have_css("#related-content-list")
     end
   end
 

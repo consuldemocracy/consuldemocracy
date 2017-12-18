@@ -3,25 +3,22 @@
            <%= css_for_human_rights_user(proposal) %>
            <%= css_for_successfull_proposal(proposal) %>"
      data-type="proposal">
-  <div class="panel <%= 'with-image' if feature?(:allow_images) %>">
+  <div class="panel <%= ('with-image' if feature?(:allow_images) && proposal.image.present?) %>">
     <div class="icon-successful"></div>
     <div class="icon-human-rights"></div>
 
-    <div class="row" <%= "data-equalizer" if feature?(:allow_images) %>>
+    <% if feature?(:allow_images) && proposal.image.present? %>
+      <div class="row" data-equalizer>
 
-      <% if feature?(:allow_images) %>
         <div class="small-12 medium-3 large-2 column text-center">
           <div data-equalizer-watch>
-            <% if proposal.image.present? %>
-              <%= image_tag proposal.image_url(:thumb), alt: proposal.image.title %>
-            <% else %>
-              <div class="no-image"></div>
-            <% end %>
+            <%= image_tag proposal.image_url(:thumb), alt: proposal.image.title %>
           </div>
         </div>
 
         <div class="small-12 medium-6 large-7 column">
-      <% else %>
+    <% else %>
+      <div class="row">
         <div class="small-12 medium-9 column">
       <% end %>
         <div class="proposal-content">
@@ -71,8 +68,9 @@
         </div>
       </div>
 
-      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column supports-container"
-           <%= "data-equalizer-watch" if feature?(:allow_images) %>>
+      <div id="<%= dom_id(proposal) %>_votes"
+           class="small-12 medium-3 column supports-container"
+           <%= 'data-equalizer-watch' if feature?(:allow_images) && proposal.image.present? %>>
         <% if proposal.successful? %>
           <div class="padding text-center">
 

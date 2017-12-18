@@ -67,7 +67,7 @@ section "Creating Settings" do
   Setting.create(key: 'feature.community', value: "true")
   Setting.create(key: 'feature.map', value: "true")
   Setting.create(key: 'feature.allow_images', value: "true")
-
+  Setting.create(key: 'feature.public_stats', value: "true")
   Setting.create(key: 'per_page_code_head', value: "")
   Setting.create(key: 'per_page_code_body', value: "")
   Setting.create(key: 'comments_body_max_length', value: '1000')
@@ -904,13 +904,36 @@ section "Creating Poll Shifts for Poll Officers" do
   end
 end
 
-section "Commenting Poll Questions" do
+section "Creating Communities" do
+  Proposal.all.each { |proposal| proposal.update(community: Community.create) }
+  Budget::Investment.all.each { |investment| investment.update(community: Community.create) }
+end
+
+section "Creating Communities Topics" do
+  Community.all.each do |community|
+    Topic.create(community: community, author: User.all.sample,
+                 title: Faker::Lorem.sentence(3).truncate(60), description: Faker::Lorem.sentence)
+  end
+end
+
+section "Commenting Polls" do
   30.times do
     author = User.all.sample
-    question = Poll::Question.all.sample
+    poll = Poll.all.sample
     Comment.create!(user: author,
-                    created_at: rand(question.created_at..Time.current),
-                    commentable: question,
+                    created_at: rand(poll.created_at..Time.current),
+                    commentable: poll,
+                    body: Faker::Lorem.sentence)
+  end
+end
+
+section "Commenting Community Topics" do
+  30.times do
+    author = User.all.sample
+    topic = Topic.all.sample
+    Comment.create!(user: author,
+                    created_at: rand(topic.created_at..Time.current),
+                    commentable: topic,
                     body: Faker::Lorem.sentence)
   end
 end

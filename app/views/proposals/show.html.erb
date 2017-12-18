@@ -79,7 +79,9 @@
         <%= safe_html_with_links @proposal.description %>
 
         <% if feature?(:map) && map_location_available?(@proposal.map_location) %>
-          <%= render_map(@proposal.map_location, "proposal", false, nil) %>
+          <div class="margin">
+            <%= render_map(@proposal.map_location, "proposal", false, nil) %>
+          </div>
         <% end %>
 
         <% if @proposal.external_url.present? %>
@@ -120,6 +122,8 @@
         <% unless @proposal.proceeding? %>
           <%= render 'shared/geozone', geozonable: @proposal %>
         <% end %>
+
+        <%= render 'relationable/related_content', relationable: @proposal %>
 
         <div class="js-moderator-proposal-actions margin">
           <%= render 'proposals/actions', proposal: @proposal %>
@@ -196,6 +200,9 @@
         } %>
 
         <% if current_user %>
+          <div class="sidebar-divider"></div>
+          <p class="sidebar-title"><%= t("shared.follow") %></p>
+
           <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, @proposal)  %>
         <% end %>
 
