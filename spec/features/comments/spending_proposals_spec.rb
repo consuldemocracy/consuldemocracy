@@ -6,6 +6,8 @@ feature 'Commenting spending_proposals' do
   let(:spending_proposal) { create :spending_proposal }
 
   background do
+    skip 'Spending Proposals now redirects to its associated Budget Investment'
+
     Setting["feature.spending_proposals"] = true
     Setting['feature.spending_proposal_features.voting_allowed'] = true
   end
