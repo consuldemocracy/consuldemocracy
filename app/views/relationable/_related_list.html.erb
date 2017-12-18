@@ -1,9 +1,9 @@
 <ul class="related-content-list" id="related-content-list">
   <% @related_contents.each do |related| %>
     <li>
-      <a href="#" class="float-right flag">
-        <span class="icon-flag"></span> <!-- This should be similar to comments/flag_actions -->
-      </a>
+      <span id="<%= dom_id(related.relate_content(relationable)) %>" class="js-flag-actions">
+        <%= render 'relationable/flag_actions', related: related.relate_content(relationable) %>
+      </span>
 
       <span><%= t("related_content.content_title.#{related.class.name.downcase}") %></span><br>
       <h3 class="inline-block">
