@@ -67,9 +67,9 @@ class MigrateSpendingProposalsToInvestments
 
     investment.valuators = sp.valuation_assignments.map(&:valuator)
 
-    votes = ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: sp.id)
-
-    votes.each {|v| investment.vote_by(voter: v.voter, vote: 'yes') }
+    # For now we avoind replicating votes
+    # votes = ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: sp.id)
+    # votes.each {|v| investment.vote_by(voter: v.voter, vote: 'yes') }
 
     # Spending proposals are not commentable in Consul so we can not test this
     Comment.where(commentable_type: 'SpendingProposal', commentable_id: sp.id).update_all(
@@ -79,6 +79,8 @@ class MigrateSpendingProposalsToInvestments
 
     # Spending proposals have ballot_lines in Madrid, but not in consul, so we
     # can not test this either
+
+    sp.update_column(:explanations_log, investment.id) # Backwards reference to unfeasibility_explanation
 
     investment
   end

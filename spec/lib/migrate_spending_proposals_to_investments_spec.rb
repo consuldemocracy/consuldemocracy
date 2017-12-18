@@ -52,6 +52,8 @@ describe MigrateSpendingProposalsToInvestments do
       expect(inv2.heading).to eq(inv1.heading)
       expect(inv1.unfeasibility_explanation).to eq(sp1.id.to_s)
       expect(inv2.unfeasibility_explanation).to eq(sp2.id.to_s)
+      expect(sp1.explanations_log).to eq(inv1.id)
+      expect(sp2.explanations_log).to eq(inv2.id)
     end
 
     it "Imports feasibility correctly" do
@@ -78,6 +80,7 @@ describe MigrateSpendingProposalsToInvestments do
     end
 
     it "Imports votes" do
+      skip
       sp = create(:spending_proposal)
       votes = create_list(:vote, 4, votable: sp)
       voters = votes.map(&:voter).sort_by(&:id)

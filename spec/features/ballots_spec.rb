@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'Ballots' do
 
   background do
+    skip 'Spending Proposals now redirects to its associated Budget Investment'
     Setting["feature.spending_proposals"] = true
     Setting['feature.spending_proposal_features.phase3'] = true
     Setting['feature.spending_proposal_features.final_voting_allowed'] ||= true

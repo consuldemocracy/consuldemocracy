@@ -376,6 +376,8 @@ feature 'Votes' do
 
     context "Verified User" do
       background do
+        skip 'Spending Proposals now redirects to its associated Budget Investment'
+
         login_as(@manuela)
         Setting["feature.spending_proposal_features.phase2"] = true
       end
@@ -455,6 +457,8 @@ feature 'Votes' do
     context "Forum" do
 
       background do
+        skip 'Spending Proposals now redirects to its associated Budget Investment'
+
         @user = create(:user)
         forum = create(:forum, user: @user)
 

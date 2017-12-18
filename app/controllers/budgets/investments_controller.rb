@@ -7,8 +7,9 @@ module Budgets
     before_action :authenticate_user!, except: [:index, :show]
     before_action :load_budget
 
-    load_and_authorize_resource :budget
-    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
+    load_and_authorize_resource :budget, except: :redirect_to_new_url
+    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment", except: :redirect_to_new_url
+    skip_authorization_check only: :redirect_to_new_url
 
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
@@ -76,6 +77,11 @@ module Budgets
       @resource_path_method = :namespaced_budget_investment_path
       @resource_relation    = resource_model.where(budget: @budget).apply_filters_and_search(@budget, params, @current_filter)
       super
+    end
+
+    def redirect_to_new_url
+      investment = Budget::Investment.where(unfeasibility_explanation: params['id']).first
+      redirect_to budget_investment_path(investment.budget, investment) if investment.present?
     end
 
     private
