@@ -2444,7 +2444,7 @@ table {
     font-weight: normal;
   }
 
-  span {
+  span:not(.icon-flag) {
     color: #4f4f4f;
     font-size: rem-calc(12);
     text-transform: uppercase;

@@ -218,6 +218,46 @@ feature 'Proposals' do
 
       expect(page).to have_content("Link not valid. Remember to start with #{Setting[:url]}.")
     end
+
+    scenario 'related content can be flagged', :js do
+      user = create(:user)
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      related_content = create(:related_content, parent_relationable: proposal1, child_relationable: proposal2)
+
+      login_as(user)
+      visit proposal_path(proposal1)
+
+      within("#related-content-list") do
+        expect(page).to have_css("#flag-expand-related-2")
+        find('#flag-expand-related-2').click
+        expect(page).to have_css("#flag-drop-related-2", visible: true)
+        click_link("flag-related-2")
+
+        expect(page).to have_css("#unflag-expand-related-2")
+      end
+
+      expect(related_content.reload.flags_count).to eq(1)
+      expect(related_content.opposite_related_content.flags_count).to eq(1)
+    end
+
+    scenario 'if related content has been flagged more than 5 times it will be hidden', :js do
+      user = create(:user)
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      related_content = create(:related_content, parent_relationable: proposal1, child_relationable: proposal2)
+
+      related_content.flags_count = Setting['related_contents_report_threshold'].to_i + 1
+      related_content.opposite_related_content.flags_count = related_content.flags_count
+
+      related_content.save
+      related_content.opposite_related_content.save
+
+      login_as(user)
+      visit proposal_path(proposal1)
+
+      expect(page).to_not have_css("#related-content-list")
+    end
   end
 
   context "Embedded video" do
