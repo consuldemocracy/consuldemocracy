@@ -1,9 +1,11 @@
 class RelatedContent < ActiveRecord::Base
+  include Flaggable
+
   RELATED_CONTENTS_REPORT_THRESHOLD = Setting['related_contents_report_threshold'].to_i
   RELATIONABLE_MODELS = %w{proposals debates}.freeze
 
-  belongs_to :parent_relationable, polymorphic: true
-  belongs_to :child_relationable, polymorphic: true
+  belongs_to :parent_relationable, polymorphic: true, touch: true
+  belongs_to :child_relationable, polymorphic: true, touch: true
   has_one :opposite_related_content, class_name: 'RelatedContent', foreign_key: :related_content_id
 
   validates :parent_relationable_id, presence: true
@@ -15,10 +17,10 @@ class RelatedContent < ActiveRecord::Base
   after_create :create_opposite_related_content, unless: proc { opposite_related_content.present? }
   after_destroy :destroy_opposite_related_content, if: proc { opposite_related_content.present? }
 
-  scope :not_hidden, -> { where('times_reported <= ?', RELATED_CONTENTS_REPORT_THRESHOLD) }
+  scope :not_hidden, -> { where('flags_count <= ?', RELATED_CONTENTS_REPORT_THRESHOLD) }
 
   def hidden_by_reports?
-    times_reported > RELATED_CONTENTS_REPORT_THRESHOLD
+    flags_count > RELATED_CONTENTS_REPORT_THRESHOLD
   end
 
   private

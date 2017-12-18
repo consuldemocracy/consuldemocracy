@@ -51,18 +51,18 @@ describe RelatedContent do
 
   # TODO: Move this into a Relationable shared context
   describe '#report_related_content' do
-    it 'increments both relation and opposite relation times_reported counters' do
+    it 'increments both relation and opposite relation flags_count counters' do
       related_content = create(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable)
       parent_relationable.report_related_content(child_relationable)
 
-      expect(related_content.reload.times_reported).to eq(1)
-      expect(related_content.reload.opposite_related_content.times_reported).to eq(1)
+      expect(related_content.reload.flags_count).to eq(1)
+      expect(related_content.reload.opposite_related_content.flags_count).to eq(1)
     end
   end
 
   describe '#relationed_contents' do
     before do
-      create(:related_content, parent_relationable: parent_relationable, child_relationable: create(:proposal), times_reported: 6)
+      create(:related_content, parent_relationable: parent_relationable, child_relationable: create(:proposal), flags_count: 6)
       create(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable)
     end
 
