@@ -105,9 +105,10 @@ Rails.application.routes.draw do
 
   get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
   get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget_group'
+  get "participatory_budget/investment_projects/:id", to: "budgets/investments#redirect_to_new_url", as: 'spending_proposals_to_budget_investments'
 
   scope '/participatory_budget' do
-    resources :spending_proposals, only: [:index, :show, :destroy], path: 'investment_projects' do #[:new, :create] temporary disabled
+    resources :spending_proposals, only: [:index, :destroy], path: 'investment_projects', controller: "budgets/investments" do #[:new, :create] temporary disabled
       get :welcome, on: :collection
       get :stats, on: :collection
       post :vote, on: :member

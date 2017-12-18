@@ -15,6 +15,7 @@ feature 'Spending proposals' do
   end
 
   scenario 'Index' do
+    skip 'Spending Proposals now redirects to its associated Budget Investment'
     spending_proposals = [create(:spending_proposal), create(:spending_proposal), create(:spending_proposal, feasible: true)]
     unfeasible_spending_proposal = create(:spending_proposal, feasible: false)
 
@@ -31,6 +32,10 @@ feature 'Spending proposals' do
   end
 
   context("Search") do
+    before do
+      skip 'Spending Proposals now redirects to its associated Budget Investment'
+    end
+
     scenario 'Search by text' do
       spending_proposal1 = create(:spending_proposal, title: "Get Schwifty")
       spending_proposal2 = create(:spending_proposal, title: "Schwifty Hello")
@@ -54,6 +59,10 @@ feature 'Spending proposals' do
   end
 
   context("Filters") do
+    before do
+      skip 'Spending Proposals now redirects to its associated Budget Investment'
+    end
+
     scenario 'by unfeasibility' do
       geozone1 = create(:geozone)
       spending_proposal1 = create(:spending_proposal, feasible: false, valuation_finished: true)
@@ -76,6 +85,9 @@ feature 'Spending proposals' do
   end
 
   context("Orders") do
+    before do
+      skip 'Spending Proposals now redirects to its associated Budget Investment'
+    end
 
     scenario "Default order is random" do
       per_page = Kaminari.config.default_per_page
@@ -205,6 +217,7 @@ feature 'Spending proposals' do
   end
 
   scenario "Show" do
+    skip 'Spending Proposals now redirects to its associated Budget Investment'
     spending_proposal = create(:spending_proposal,
                                 geozone: create(:geozone),
                                 association_name: 'People of the neighbourhood')
@@ -222,6 +235,7 @@ feature 'Spending proposals' do
   end
 
   scenario "Show (feasible spending proposal)" do
+    skip 'Spending Proposals now redirects to its associated Budget Investment'
     user = create(:user)
     login_as(user)
 
@@ -238,6 +252,8 @@ feature 'Spending proposals' do
   end
 
   scenario "Show (unfeasible spending proposal)" do
+    skip 'Spending Proposals now redirects to its associated Budget Investment'
+
     user = create(:user)
     login_as(user)
 
@@ -270,6 +286,9 @@ feature 'Spending proposals' do
   end
 
   context "Badge" do
+    before do
+      skip 'Spending Proposals now redirects to its associated Budget Investment'
+    end
 
     scenario "Spending proposal created by a Foum" do
       forum = create(:forum)
@@ -302,6 +321,7 @@ feature 'Spending proposals' do
   context "Phase 3 - Final Voting" do
 
     background do
+      skip 'Spending Proposals now redirects to its associated Budget Investment'
       Setting["feature.spending_proposal_features.phase3"] = true
     end
 
@@ -619,6 +639,7 @@ feature 'Spending proposals' do
   context "Stats" do
 
     before(:each) do
+      skip 'Spending Proposals now redirects to its associated Budget Investment'
       Setting["feature.spending_proposal_features.open_results_page"] = true
     end
 
