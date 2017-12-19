@@ -2,12 +2,12 @@
   <% @related_contents.each do |related| %>
     <li>
       <% if current_user %>
-        <span id="<%= dom_id(related.relate_content(relationable)) %>" class="js-score-actions float-right">
+        <span id="<%= dom_id(related.relate_content(relationable)) %>" class="js-score-actions score-actions float-right">
           <%= render 'relationable/score', related: related.relate_content(relationable) %>
         </span>
       <% end %>
 
-      <span><%= t("related_content.content_title.#{related.class.name.downcase}") %></span><br>
+      <span class="related-content-title"><%= t("related_content.content_title.#{related.class.name.downcase}") %></span><br>
       <h3 class="inline-block">
         <%= link_to related.title, eval("#{related.class.name.downcase}_path(related)") %>
       </h3>
