@@ -758,7 +758,7 @@ feature 'Admin budget investments' do
     let(:budget_investment) { create(:budget_investment) }
 
     before do
-      budget_investment.update_column(:unfeasibility_explanation, spending_proposal.id)
+      budget_investment.update_column(:original_spending_proposal_id, spending_proposal.id)
     end
 
     scenario "Spending Proposal with associated Budget Investment" do

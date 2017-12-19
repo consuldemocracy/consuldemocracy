@@ -33,7 +33,7 @@ class MigrateSpendingProposalsToInvestments
       price: sp.price,
       feasibility: feasibility,
       price_explanation: sp.price_explanation,
-      unfeasibility_explanation: sp.id, # MIGRATE THIS correctly
+      unfeasibility_explanation: nil, # FIND VALUE FOR THIS ONE
       internal_comments: sp.internal_comments,
       valuation_finished: sp.valuation_finished,
       valuator_assignments_count: sp.valuation_assignments_count,
@@ -62,7 +62,8 @@ class MigrateSpendingProposalsToInvestments
       winner: false, # FIND VALUE FOR THIS ONE
       incompatible: !sp.compatible, # Is it really the opposite?
       community_id: community.id,
-      terms_of_service: "1"
+      terms_of_service: "1",
+      original_spending_proposal_id: sp.id
     )
 
     investment.valuators = sp.valuation_assignments.map(&:valuator)

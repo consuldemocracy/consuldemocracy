@@ -30,7 +30,7 @@
       <%= render_image(investment.image, :large, true) if investment.image.present? %>
 
       <p id="investment_code">
-        <%= t("budgets.investments.show.code_html", code: investment.id) %>
+        <%= t("budgets.investments.show.code_html", code: investment.original_spending_proposal_id || investment.id) %>
       </p>
 
       <% if investment.location.present? %>

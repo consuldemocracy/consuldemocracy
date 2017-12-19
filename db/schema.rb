@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171215152244) do
+ActiveRecord::Schema.define(version: 20171219110528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -163,38 +163,39 @@ ActiveRecord::Schema.define(version: 20171215152244) do
     t.string   "title"
     t.text     "description"
     t.string   "external_url"
-    t.integer  "price",                      limit: 8
-    t.string   "feasibility",                limit: 15, default: "undecided"
+    t.integer  "price",                         limit: 8
+    t.string   "feasibility",                   limit: 15, default: "undecided"
     t.text     "price_explanation"
     t.text     "unfeasibility_explanation"
     t.text     "internal_comments"
-    t.boolean  "valuation_finished",                    default: false
-    t.integer  "valuator_assignments_count",            default: 0
-    t.integer  "price_first_year",           limit: 8
+    t.boolean  "valuation_finished",                       default: false
+    t.integer  "valuator_assignments_count",               default: 0
+    t.integer  "price_first_year",              limit: 8
     t.string   "duration"
     t.datetime "hidden_at"
-    t.integer  "cached_votes_up",                       default: 0
-    t.integer  "comments_count",                        default: 0
-    t.integer  "confidence_score",                      default: 0,           null: false
-    t.integer  "physical_votes",                        default: 0
+    t.integer  "cached_votes_up",                          default: 0
+    t.integer  "comments_count",                           default: 0
+    t.integer  "confidence_score",                         default: 0,           null: false
+    t.integer  "physical_votes",                           default: 0
     t.tsvector "tsv"
-    t.datetime "created_at",                                                  null: false
-    t.datetime "updated_at",                                                  null: false
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
     t.integer  "heading_id"
     t.string   "responsible_name"
     t.integer  "budget_id"
     t.integer  "group_id"
-    t.boolean  "selected",                              default: false
+    t.boolean  "selected",                                 default: false
     t.string   "location"
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
     t.string   "label"
     t.integer  "previous_heading_id"
-    t.boolean  "visible_to_valuators",                  default: false
-    t.integer  "ballot_lines_count",                    default: 0
-    t.boolean  "winner",                                default: false
-    t.boolean  "incompatible",                          default: false
+    t.boolean  "visible_to_valuators",                     default: false
+    t.integer  "ballot_lines_count",                       default: 0
+    t.boolean  "winner",                                   default: false
+    t.boolean  "incompatible",                             default: false
     t.integer  "community_id"
+    t.integer  "original_spending_proposal_id"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
