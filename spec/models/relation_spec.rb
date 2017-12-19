@@ -38,31 +38,9 @@ describe RelatedContent do
     end
   end
 
-  describe 'relationable destroy' do
-    let(:parent_relationable) { create(:proposal) }
-    let(:child_relationable) { create(:debate) }
-
-    it 'destroys both related contents involved' do
-      related_content = create(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable)
-      expect { related_content.parent_relationable.destroy }.to change { RelatedContent.all.count }.by(-2)
-      expect(child_relationable.related_contents).to be_empty
-    end
-  end
-
-  # TODO: Move this into a Relationable shared context
-  describe '#report_related_content' do
-    it 'increments both relation and opposite relation flags_count counters' do
-      related_content = create(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable)
-      parent_relationable.report_related_content(child_relationable)
-
-      expect(related_content.reload.flags_count).to eq(1)
-      expect(related_content.reload.opposite_related_content.flags_count).to eq(1)
-    end
-  end
-
   describe '#relationed_contents' do
     before do
-      create(:related_content, parent_relationable: parent_relationable, child_relationable: create(:proposal), flags_count: 6)
+      create(:related_content, parent_relationable: parent_relationable, child_relationable: create(:proposal), positive_score: 6, negative_score: 20)
       create(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable)
     end
 
