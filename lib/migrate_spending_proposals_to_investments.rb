@@ -33,7 +33,7 @@ class MigrateSpendingProposalsToInvestments
       price: sp.price,
       feasibility: feasibility,
       price_explanation: sp.price_explanation,
-      unfeasibility_explanation: nil, # FIND VALUE FOR THIS ONE
+      unfeasibility_explanation: '-', # FIND VALUE FOR THIS ONE
       internal_comments: sp.internal_comments,
       valuation_finished: sp.valuation_finished,
       valuator_assignments_count: sp.valuation_assignments_count,
