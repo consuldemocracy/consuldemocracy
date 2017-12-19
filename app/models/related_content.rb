@@ -1,7 +1,5 @@
 class RelatedContent < ActiveRecord::Base
-  include Flaggable
-
-  RELATED_CONTENTS_REPORT_THRESHOLD = Setting['related_contents_report_threshold'].to_i
+  RELATED_CONTENTS_REPORT_THRESHOLD = Setting['related_contents_report_threshold'].to_f
   RELATIONABLE_MODELS = %w{proposals debates}.freeze
 
   belongs_to :parent_relationable, polymorphic: true, touch: true
@@ -17,20 +15,12 @@ class RelatedContent < ActiveRecord::Base
   after_create :create_opposite_related_content, unless: proc { opposite_related_content.present? }
   after_destroy :destroy_opposite_related_content, if: proc { opposite_related_content.present? }
 
-  scope :not_hidden, -> { where('flags_count <= ?', RELATED_CONTENTS_REPORT_THRESHOLD) }
-
-  def hidden_by_reports?
-    flags_count > RELATED_CONTENTS_REPORT_THRESHOLD
-  end
+  scope :not_hidden, -> { where('positive_score - negative_score / LEAST(nullif(positive_score + negative_score, 0), 1) >= ?', RELATED_CONTENTS_REPORT_THRESHOLD) }
 
   private
 
   def create_opposite_related_content
     related_content = RelatedContent.create!(opposite_related_content: self, parent_relationable: child_relationable, child_relationable: parent_relationable)
     self.opposite_related_content = related_content
-  end
-
-  def destroy_opposite_related_content
-    opposite_related_content.destroy
   end
 end

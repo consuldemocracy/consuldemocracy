@@ -12,12 +12,4 @@ module Relationable
   def relationed_contents
     related_contents.not_hidden.map { |related_content| related_content.child_relationable }
   end
-
-  def report_related_content(relationable)
-    related_content = related_contents.find_by(child_relationable: relationable)
-    if related_content.present?
-      related_content.increment!(:flags_count)
-      related_content.opposite_related_content.increment!(:flags_count)
-    end
-  end
 end
