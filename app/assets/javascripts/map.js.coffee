@@ -7,6 +7,10 @@ App.Map =
       $.each maps, (index, map) ->
         App.Map.initializeMap map
 
+    $('.js-toggle-map').on
+        click: ->
+          App.Map.toogleMap()
+
   initializeMap: (element) ->
 
     mapCenterLatitude        = $(element).data('map-center-latitude')
@@ -76,3 +80,7 @@ App.Map =
       $(removeMarkerSelector).on 'click', removeMarker
       map.on    'zoomend', updateFormfields
       map.on    'click',   moveOrPlaceMarker
+
+  toogleMap: ->
+      $('.map').toggle()
+      $('.location-map-remove-marker-button').toggle()
