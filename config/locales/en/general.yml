@@ -819,6 +819,9 @@ en:
     submit: "Add"
     error: "Link not valid. Remember to start with %{url}."
     success: "You added a new related content"
+    is_related: "¿Is it related content?"
+    score_positive: "Yes"
+    score_negative: "No"
     content_title:
       proposal: "Proposal"
       debate: "Debate"
