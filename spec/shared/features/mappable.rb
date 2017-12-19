@@ -56,6 +56,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       send("fill_in_#{mappable_factory_name}_form")
       expect(page).to have_css ".map_location"
+      check "#{mappable_factory_name}_skip_map"
       send("submit_#{mappable_factory_name}_form")
 
       expect(page).not_to have_css(".map_location")
@@ -71,6 +72,41 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       send("submit_#{mappable_factory_name}_form")
 
       expect(page).not_to have_css(".map_location")
+    end
+
+    scenario 'Errors on create' do
+      login_as user
+      visit send(mappable_new_path, arguments)
+
+      send("submit_#{mappable_factory_name}_form")
+
+      expect(page).to have_content "Map location can't be blank"
+    end
+
+    scenario 'Skip map', :js do
+      login_as user
+      visit send(mappable_new_path, arguments)
+
+      send("fill_in_#{mappable_factory_name}_form")
+      check "#{mappable_factory_name}_skip_map"
+      send("submit_#{mappable_factory_name}_form")
+
+      expect(page).to_not have_content "Map location can't be blank"
+    end
+
+    scenario 'Toggle map', :js do
+      login_as user
+      visit send(mappable_new_path, arguments)
+
+      check "#{mappable_factory_name}_skip_map"
+
+      expect(page).to_not have_css(".map")
+      expect(page).to_not have_content("Remove map marker")
+
+      uncheck "#{mappable_factory_name}_skip_map"
+
+      expect(page).to have_css(".map")
+      expect(page).to have_content("Remove map marker")
     end
 
   end
@@ -122,6 +158,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       visit send(mappable_edit_path, id: mappable.id)
       click_link "Remove map marker"
+      check "#{mappable_factory_name}_skip_map"
       click_on "Save changes"
 
       expect(page).not_to have_css(".map_location")
@@ -136,6 +173,27 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       click_on("Save changes")
 
       expect(page).not_to have_css(".map_location")
+    end
+
+    scenario 'Errors on update', :js do
+      login_as mappable.author
+
+      visit send(mappable_edit_path, id: mappable.id)
+      click_link "Remove map marker"
+      click_on "Save changes"
+
+      expect(page).to have_content "Map location can't be blank"
+    end
+
+    scenario 'Skip map on update' do
+      login_as mappable.author
+
+      visit send(mappable_edit_path, id: mappable.id)
+      click_link "Remove map marker"
+      check "#{mappable_factory_name}_skip_map"
+      click_on "Save changes"
+
+      expect(page).to_not have_content "Map location can't be blank"
     end
 
   end
@@ -188,8 +246,11 @@ def submit_proposal_form
   check :proposal_terms_of_service
   click_button 'Create proposal'
 
-  click_link 'Not now, go to my proposal'
+  if page.has_content?('Not now, go to my proposal')
+    click_link 'Not now, go to my proposal'
+  end
 end
+
 
 def validate_latitude_longitude(mappable_factory_name)
   expect(find("##{mappable_factory_name}_map_location_attributes_latitude", visible: false).value).to eq "51.48"
