@@ -16,6 +16,7 @@
 // 13. Kit Decide
 // 14. Figure cards style
 // 15. User recommendations
+// 16. Proposals additional content
 //
 
 // 00. Others
@@ -3387,5 +3388,27 @@ h3.kit-decide {
     border: 1px solid $border;
     padding: $line-height;
     margin-right: $line-height;
+  }
+}
+
+// 16. Proposals additional content
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.additional-content {
+
+  .tabs {
+    background: none;
+    border: 0;
+    margin-bottom: 0;
+
+    a {
+      background: none;
+    }
+  }
+
+  .filter-subnav {
+    background: $highlight;
+    margin-bottom: $line-height;
+    padding-top: $line-height / 4;
   }
 }
