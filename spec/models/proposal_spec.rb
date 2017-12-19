@@ -7,6 +7,7 @@ describe Proposal do
   describe "Concerns" do
     it_behaves_like "has_public_author"
     it_behaves_like "notifiable"
+    it_behaves_like "map validations"
   end
 
   it "should be valid" do
