@@ -2431,8 +2431,12 @@ table {
       border-top: 1px solid $border;
     }
 
-    .score-actions {
-      display: none;
+    @include breakpoint(medium) {
+
+      .score-actions {
+        display: none;
+        float: right;
+      }
     }
 
     &:hover {
@@ -2462,7 +2466,10 @@ table {
 
 .relate-content-score {
   display: block;
-  text-align: center;
+
+  @include breakpoint(medium) {
+    text-align: center;
+  }
 
   a {
     font-weight: bold;
