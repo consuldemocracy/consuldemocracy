@@ -21,6 +21,8 @@ module FlagsHelper
   def own_flaggable?(flaggable)
     if flaggable.is_a? Comment
       flaggable.user_id == current_user.id
+    elsif flaggable.is_a? RelatedContent
+      false
     else
       flaggable.author_id == current_user.id
     end

@@ -3,6 +3,8 @@ class RelatedContentsController < ApplicationController
 
   skip_authorization_check
 
+  respond_to :html, :js
+
   def create
     if relationable_object && related_object
       @relationable.relate_content(@related)
@@ -13,6 +15,24 @@ class RelatedContentsController < ApplicationController
     end
 
     redirect_to @relationable
+  end
+
+  def flag
+    @related = RelatedContent.find_by(id: params[:id])
+
+    Flag.flag(current_user, @related)
+    Flag.flag(current_user, @related.opposite_related_content)
+
+    render template: 'relationable/_refresh_flag_actions'
+  end
+
+  def unflag
+    @related = RelatedContent.find_by(id: params[:id])
+
+    Flag.unflag(current_user, @related)
+    Flag.unflag(current_user, @related.opposite_related_content)
+
+    render template: 'relationable/_refresh_flag_actions'
   end
 
   private
