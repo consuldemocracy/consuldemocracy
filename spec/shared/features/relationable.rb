@@ -25,6 +25,7 @@ shared_examples "relationable" do |relationable_model_name|
   end
 
   scenario 'related contents can be added' do
+    login_as(user)
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
 
     expect(page).to have_selector('#related_content', visible: false)
@@ -57,6 +58,7 @@ shared_examples "relationable" do |relationable_model_name|
   end
 
   scenario 'if related content URL is invalid returns error' do
+    login_as(user)
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
 
     click_on("Add related content")
@@ -76,6 +78,7 @@ shared_examples "relationable" do |relationable_model_name|
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
 
     within("#related-content-list") do
+      find("#related-content-#{related_content.opposite_related_content.id}").hover
       find("#score-positive-related-#{related_content.opposite_related_content.id}").click
       expect(page).to_not have_css("#score-positive-related-#{related_content.opposite_related_content.id}")
     end
@@ -91,6 +94,7 @@ shared_examples "relationable" do |relationable_model_name|
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
 
     within("#related-content-list") do
+      find("#related-content-#{related_content.opposite_related_content.id}").hover
       find("#score-negative-related-#{related_content.opposite_related_content.id}").click
       expect(page).to_not have_css("#score-negative-related-#{related_content.opposite_related_content.id}")
     end
