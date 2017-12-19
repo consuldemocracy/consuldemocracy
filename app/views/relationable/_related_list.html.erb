@@ -1,9 +1,11 @@
 <ul class="related-content-list" id="related-content-list">
   <% @related_contents.each do |related| %>
     <li>
-      <span id="<%= dom_id(related.relate_content(relationable)) %>" class="js-flag-actions">
-        <%= render 'relationable/flag_actions', related: related.relate_content(relationable) %>
-      </span>
+      <% if current_user %>
+        <span id="<%= dom_id(related.relate_content(relationable)) %>" class="js-score-actions float-right">
+          <%= render 'relationable/score', related: related.relate_content(relationable) %>
+        </span>
+      <% end %>
 
       <span><%= t("related_content.content_title.#{related.class.name.downcase}") %></span><br>
       <h3 class="inline-block">
