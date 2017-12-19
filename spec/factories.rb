@@ -165,6 +165,7 @@ FactoryGirl.define do
     video_url            'https://youtu.be/nhuNb0XtRhQ'
     responsible_name     'John Snow'
     terms_of_service     '1'
+    skip_map             '1'
     association :author, factory: :user
 
     trait :hidden do
@@ -279,6 +280,7 @@ FactoryGirl.define do
     price                10
     unfeasibility_explanation ''
     external_url         'http://external_documention.org'
+    skip_map             '1'
     terms_of_service     '1'
     incompatible          false
 
