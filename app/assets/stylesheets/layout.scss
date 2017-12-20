@@ -2424,10 +2424,27 @@ table {
 
   li {
     border-bottom: 1px solid $border;
-    padding: $line-height / 4;
+    margin-bottom: 0 !important;
+    padding: $line-height / 2;
 
     &:first-child {
       border-top: 1px solid $border;
+    }
+
+    @include breakpoint(medium) {
+
+      .score-actions {
+        display: none;
+        float: right;
+      }
+    }
+
+    &:hover {
+      background: #f9f9f9;
+
+      .score-actions {
+        display: block;
+      }
     }
   }
 
@@ -2436,7 +2453,7 @@ table {
     font-weight: normal;
   }
 
-  span:not(.icon-flag) {
+  .related-content-title {
     color: #4f4f4f;
     font-size: rem-calc(12);
     text-transform: uppercase;
@@ -2444,6 +2461,47 @@ table {
 
   .flag {
     margin-top: $line-height / 2;
+  }
+}
+
+.relate-content-score {
+  display: block;
+
+  @include breakpoint(medium) {
+    text-align: center;
+  }
+
+  a {
+    font-weight: bold;
+    margin-right: $line-height;
+    padding-left: rem-calc(20);
+    position: relative;
+    text-decoration: none;
+
+    &.score-positive:before,
+    &.score-negative:before {
+      font-family: 'icons';
+      left: 0;
+      position: absolute;
+    }
+
+    &.score-positive {
+      color: $color-success;
+
+      &:before {
+        color: $color-success;
+        content: '\6c';
+      }
+    }
+
+    &.score-negative {
+      color: $color-alert;
+
+      &:before {
+        color: $color-alert;
+        content: '\76';
+      }
+    }
   }
 }
 

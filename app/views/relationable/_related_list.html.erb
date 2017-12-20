@@ -1,11 +1,14 @@
 <ul class="related-content-list" id="related-content-list">
   <% @related_contents.each do |related| %>
-    <li>
-      <span id="<%= dom_id(related.relate_content(relationable)) %>" class="js-flag-actions">
-        <%= render 'relationable/flag_actions', related: related.relate_content(relationable) %>
-      </span>
+    <li id="related-content-<%= related.find_related_content(relationable).id %>">
+      <% related_content = related.find_related_content(relationable) %>
+      <% if current_user && related_content.author != current_user && !related_content.scored_by_user?(current_user)%>
+        <span id="<%= dom_id(related.find_related_content(relationable)) %>" class="js-score-actions score-actions">
+          <%= render 'relationable/score', related: related_content %>
+        </span>
+      <% end %>
 
-      <span><%= t("related_content.content_title.#{related.class.name.downcase}") %></span><br>
+      <span class="related-content-title"><%= t("related_content.content_title.#{related.class.name.downcase}") %></span><br>
       <h3 class="inline-block">
         <%= link_to related.title, eval("#{related.class.name.downcase}_path(related)") %>
       </h3>

@@ -1,13 +1,11 @@
 class RelatedContentsController < ApplicationController
-  VALID_URL = /#{Setting['url']}\/.*\/.*/
-
   skip_authorization_check
 
   respond_to :html, :js
 
   def create
     if relationable_object && related_object
-      @relationable.relate_content(@related)
+      RelatedContent.create(parent_relationable: @relationable, child_relationable: @related, author: current_user)
 
       flash[:success] = t('related_content.success')
     else
@@ -17,28 +15,25 @@ class RelatedContentsController < ApplicationController
     redirect_to @relationable
   end
 
-  def flag
-    @related = RelatedContent.find_by(id: params[:id])
-
-    Flag.flag(current_user, @related)
-    Flag.flag(current_user, @related.opposite_related_content)
-
-    render template: 'relationable/_refresh_flag_actions'
+  def score_positive
+    score(:positive)
   end
 
-  def unflag
-    @related = RelatedContent.find_by(id: params[:id])
-
-    Flag.unflag(current_user, @related)
-    Flag.unflag(current_user, @related.opposite_related_content)
-
-    render template: 'relationable/_refresh_flag_actions'
+  def score_negative
+    score(:negative)
   end
 
   private
 
+  def score(action)
+    @related = RelatedContent.find_by(id: params[:id])
+    @related.send("score_#{action}", current_user)
+
+    render template: 'relationable/_refresh_score_actions'
+  end
+
   def valid_url?
-    params[:url].match(VALID_URL)
+    params[:url].start_with?(Setting['url'])
   end
 
   def relationable_object
