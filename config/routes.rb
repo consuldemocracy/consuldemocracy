@@ -559,8 +559,8 @@ Rails.application.routes.draw do
 
   resources :related_contents, only: [:create] do
     member do
-      put :flag
-      put :unflag
+      put :score_positive
+      put :score_negative
     end
   end
 
