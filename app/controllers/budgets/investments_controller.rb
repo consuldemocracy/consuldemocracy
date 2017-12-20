@@ -4,8 +4,9 @@ module Budgets
     include CommentableActions
     include FlagActions
 
-    before_action :authenticate_user!, except: [:index, :show]
-    before_action :load_budget
+    before_action :authenticate_user!, except: [:index, :show, :redirect_to_new_url]
+    before_action :load_budget, except: :redirect_to_new_url
+    before_action :load_investment, only: [:show]
 
     load_and_authorize_resource :budget, except: :redirect_to_new_url
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment", except: :redirect_to_new_url
@@ -81,7 +82,7 @@ module Budgets
 
     def redirect_to_new_url
       investment = Budget::Investment.where(original_spending_proposal_id: params['id']).first
-      redirect_to budget_investment_path(investment.budget, investment) if investment.present?
+      redirect_to budget_investment_path(investment.budget, params['id']) if investment.present?
     end
 
     private
@@ -123,6 +124,11 @@ module Budgets
                       image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                       map_location_attributes: [:latitude, :longitude, :zoom])
+      end
+
+      def load_investment
+        @investment = @budget.investments.where(original_spending_proposal_id: params['id']).first
+        @investment ||= @budget.investments.find(params['id'])
       end
 
       def load_ballot
