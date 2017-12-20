@@ -25,9 +25,15 @@ class RelatedContent < ActiveRecord::Base
 
   def score(value, user)
     score_with_opposite(value, user)
+    hide_with_opposite if (related_content_scores.sum(:value) / self.related_content_scores_count) < RELATED_CONTENT_SCORE_THRESHOLD
   end
 
   private
+
+  def hide_with_opposite
+    self.hide
+    opposite_related_content.hide
+  end
 
   def create_opposite_related_content
     related_content = RelatedContent.create!(opposite_related_content: self, parent_relationable: child_relationable, child_relationable: parent_relationable)
