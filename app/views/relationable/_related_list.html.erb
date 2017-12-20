@@ -1,9 +1,9 @@
 <ul class="related-content-list" id="related-content-list">
   <% @related_contents.each do |related| %>
-    <li id="related-content-<%= related.relate_content(relationable).id %>">
+    <li id="related-content-<%= related.find_related_content(relationable).id %>">
       <% if current_user %>
-        <span id="<%= dom_id(related.relate_content(relationable)) %>" class="js-score-actions score-actions">
-          <%= render 'relationable/score', related: related.relate_content(relationable) %>
+        <span id="<%= dom_id(related.find_related_content(relationable)) %>" class="js-score-actions score-actions">
+          <%= render 'relationable/score', related: related.find_related_content(relationable) %>
         </span>
       <% end %>
 

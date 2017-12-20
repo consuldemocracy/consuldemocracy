@@ -5,8 +5,8 @@ module Relationable
     has_many :related_contents, as: :parent_relationable, dependent: :destroy
   end
 
-  def relate_content(relationable)
-    RelatedContent.find_or_create_by(parent_relationable: self, child_relationable: relationable)
+  def find_related_content(relationable)
+    RelatedContent.where(parent_relationable: self, child_relationable: relationable).first
   end
 
   def relationed_contents
