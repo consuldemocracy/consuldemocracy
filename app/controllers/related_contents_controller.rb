@@ -1,6 +1,4 @@
 class RelatedContentsController < ApplicationController
-  VALID_URL = /#{Setting['url']}\/.*\/.*/
-
   skip_authorization_check
 
   respond_to :html, :js
@@ -35,7 +33,7 @@ class RelatedContentsController < ApplicationController
   end
 
   def valid_url?
-    params[:url].match(VALID_URL)
+    params[:url].start_with?(Setting['url'])
   end
 
   def relationable_object
