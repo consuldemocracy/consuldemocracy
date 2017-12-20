@@ -7,7 +7,7 @@ class RelatedContentsController < ApplicationController
 
   def create
     if relationable_object && related_object
-      RelatedContent.create(parent_relationable: @relationable, child_relationable: @related)
+      RelatedContent.create(parent_relationable: @relationable, child_relationable: @related, author: current_user)
 
       flash[:success] = t('related_content.success')
     else
@@ -28,7 +28,8 @@ class RelatedContentsController < ApplicationController
   private
 
   def score(value)
-    RelatedContent.find_by(id: params[:id]).score(value, current_user)
+    @related = RelatedContent.find_by(id: params[:id])
+    @related.score(value, current_user)
 
     render template: 'relationable/_refresh_score_actions'
   end
