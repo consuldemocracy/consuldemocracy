@@ -18,18 +18,18 @@ class RelatedContentsController < ApplicationController
   end
 
   def score_positive
-    score(1)
+    score(:positive)
   end
 
   def score_negative
-    score(-1)
+    score(:negative)
   end
 
   private
 
-  def score(value)
+  def score(action)
     @related = RelatedContent.find_by(id: params[:id])
-    @related.score(value, current_user)
+    @related.send("score_#{action}", current_user)
 
     render template: 'relationable/_refresh_score_actions'
   end
