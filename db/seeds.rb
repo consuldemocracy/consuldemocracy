@@ -120,4 +120,4 @@ Setting['map_longitude'] = 0.0
 Setting['map_zoom'] = 10
 
 # Related content
-Setting['related_contents_report_threshold'] = -0.3
+Setting['related_content_score_threshold'] = -0.3
