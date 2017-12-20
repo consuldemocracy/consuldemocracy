@@ -23,22 +23,19 @@ class RelatedContent < ActiveRecord::Base
   scope :not_hidden, -> { where('positive_score - negative_score / LEAST(nullif(positive_score + negative_score, 0), 1) >= ?', RELATED_CONTENT_SCORE_THRESHOLD) }
   scope :not_hidden, -> { where(hidden_at: nil) }
 
-  def score(value, user)
-    score_with_opposite(value, user)
-    hide_with_opposite if (related_content_scores.sum(:value) / self.related_content_scores_count) < RELATED_CONTENT_SCORE_THRESHOLD
+  def score_positive(user)
+    score(RelatedContentScore::SCORES[:POSITIVE], user)
+  end
+
+  def score_negative(user)
+    score(RelatedContentScore::SCORES[:NEGATIVE], user)
   end
 
   def scored_by_user?(user)
-    related_content_scores.where(user: user).count > 0
+    related_content_scores.exists?(user: user)
   end
-
 
   private
-
-  def hide_with_opposite
-    self.hide
-    opposite_related_content.hide
-  end
 
   def create_opposite_related_content
     related_content = RelatedContent.create!(opposite_related_content: self, parent_relationable: child_relationable,
@@ -46,8 +43,18 @@ class RelatedContent < ActiveRecord::Base
     self.opposite_related_content = related_content
   end
 
+  def score(value, user)
+    score_with_opposite(value, user)
+    hide_with_opposite if (related_content_scores.sum(:value) / related_content_scores_count) < RELATED_CONTENT_SCORE_THRESHOLD
+  end
+
+  def hide_with_opposite
+    hide
+    opposite_related_content.hide
+  end
+
   def create_author_score
-    score(1, author)
+    score_positive(author)
   end
 
   def score_with_opposite(value, user)
