@@ -45,7 +45,7 @@ class RelatedContent < ActiveRecord::Base
   end
 
   def score_with_opposite(value, user)
-    RelatedContentsScore.create(user: user, related_content: self, score: value)
-    RelatedContentsScore.create(user: user, related_content: opposite_related_content, score: value)
+    RelatedContentScore.create(user: user, related_content: self, score: value)
+    RelatedContentScore.create(user: user, related_content: opposite_related_content, score: value)
   end
 end
