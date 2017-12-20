@@ -1061,4 +1061,38 @@ feature 'Budget Investments' do
     end
 
   end
+
+  context "Spending Proposal url redirection to associated Budget Investment" do
+    let!(:investment_with_same_id) { create(:budget_investment, id: 9999, title: 'Investment with same Spending ID Proposal') }
+    let!(:spending_proposal) { create(:spending_proposal, id: 9999, title: 'Le Spending Proposal') }
+    let!(:associated_budget_investment) do
+      create(:budget_investment, id: 8888, title: 'Budget Investment child', original_spending_proposal_id: spending_proposal.id)
+    end
+
+    scenario "Old Spending Proposal url redirects to associated Budget Investment with original spending proposal ID" do
+      visit "/participatory_budget/investment_projects/#{spending_proposal.id}"
+
+      expect(current_path).to eq("/presupuestos/#{associated_budget_investment.budget.slug}/proyecto/#{spending_proposal.id}")
+      expect(page).to have_content("Investment project code: #{spending_proposal.id}")
+      expect(page).to have_content("Budget Investment child")
+    end
+
+    scenario "New Budget Investment url with original spending proposal ID shows correctly" do
+      visit "/presupuestos/#{associated_budget_investment.budget.slug}/proyecto/#{spending_proposal.id}"
+
+      expect(current_path).to eq("/presupuestos/#{associated_budget_investment.budget.slug}/proyecto/#{spending_proposal.id}")
+      expect(page).to have_content("Investment project code: #{spending_proposal.id}")
+      expect(page).to have_content("Budget Investment child")
+    end
+
+    scenario "Budget Investment not associated to an Spending, and with same ID as migrated Spending proposal shows correctly" do
+      visit "/presupuestos/#{investment_with_same_id.budget.slug}/proyecto/#{investment_with_same_id.id}"
+
+      expect(current_path).to eq("/presupuestos/#{investment_with_same_id.budget.slug}/proyecto/#{investment_with_same_id.id}")
+      expect(page).to have_content("Investment project code: #{investment_with_same_id.id}")
+      expect(page).to have_content("Investment with same Spending ID Proposal")
+    end
+
+  end
+
 end
