@@ -83,8 +83,19 @@ shared_examples "relationable" do |relationable_model_name|
       expect(page).to_not have_css("#score-positive-related-#{related_content.opposite_related_content.id}")
     end
 
-    expect(related_content.reload.positive_score).to eq(2)
-    expect(related_content.opposite_related_content.reload.positive_score).to eq(2)
+    expect(
+      RelatedContentsReport.where(
+        user_id: current_user.id,
+        related_content_id: related_content.id
+      ).first.score
+    ).to eq(true)
+    expect(
+      RelatedContentsReport.where(
+        user_id: current_user.id,
+        related_content_id: related_content.opposite_related_content.id
+      ).first.score
+    ).to eq(true)
+
   end
 
   scenario 'related content can be scored negatively', :js do
