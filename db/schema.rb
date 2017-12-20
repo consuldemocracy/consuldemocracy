@@ -873,9 +873,11 @@ ActiveRecord::Schema.define(version: 20171220002802) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "related_content_scores_count", default: 0
+    t.datetime "hidden_at"
   end
 
   add_index "related_contents", ["child_relationable_type", "child_relationable_id"], name: "index_related_contents_on_child_relationable", using: :btree
+  add_index "related_contents", ["hidden_at"], name: "index_related_contents_on_hidden_at", using: :btree
   add_index "related_contents", ["parent_relationable_id", "parent_relationable_type", "child_relationable_id", "child_relationable_type"], name: "unique_parent_child_related_content", unique: true, using: :btree
   add_index "related_contents", ["parent_relationable_type", "parent_relationable_id"], name: "index_related_contents_on_parent_relationable", using: :btree
   add_index "related_contents", ["related_content_id"], name: "opposite_related_content", using: :btree
