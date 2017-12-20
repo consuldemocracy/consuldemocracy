@@ -1,9 +1,10 @@
 <ul class="related-content-list" id="related-content-list">
   <% @related_contents.each do |related| %>
     <li id="related-content-<%= related.find_related_content(relationable).id %>">
-      <% if current_user %>
+      <% related_content = related.find_related_content(relationable) %>
+      <% if current_user && related_content.author != current_user && !related_content.scored_by_user?(current_user)%>
         <span id="<%= dom_id(related.find_related_content(relationable)) %>" class="js-score-actions score-actions">
-          <%= render 'relationable/score', related: related.find_related_content(relationable) %>
+          <%= render 'relationable/score', related: related_content %>
         </span>
       <% end %>
 
