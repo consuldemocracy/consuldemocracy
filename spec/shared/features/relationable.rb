@@ -6,7 +6,7 @@ shared_examples "relationable" do |relationable_model_name|
   let(:user) { create(:user) }
 
   scenario 'related contents are listed' do
-    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1)
+    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
     within("#related-content-list") do
@@ -25,6 +25,7 @@ shared_examples "relationable" do |relationable_model_name|
   end
 
   scenario 'related contents can be added' do
+    login_as(user)
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
 
     expect(page).to have_selector('#related_content', visible: false)
@@ -57,6 +58,7 @@ shared_examples "relationable" do |relationable_model_name|
   end
 
   scenario 'if related content URL is invalid returns error' do
+    login_as(user)
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
 
     click_on("Add related content")
@@ -69,35 +71,52 @@ shared_examples "relationable" do |relationable_model_name|
     expect(page).to have_content("Link not valid. Remember to start with #{Setting[:url]}.")
   end
 
-  scenario 'related content can be flagged', :js do
-    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1)
+  scenario 'related content can be scored positively', :js do
+    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
 
     within("#related-content-list") do
-      expect(page).to have_css("#flag-expand-related-#{related_content.opposite_related_content.id}")
-      find("#flag-expand-related-#{related_content.opposite_related_content.id}").click
-      expect(page).to have_css("#flag-drop-related-#{related_content.opposite_related_content.id}", visible: true)
-      click_link("flag-related-#{related_content.opposite_related_content.id}")
-
-      expect(page).to have_css("#unflag-expand-related-#{related_content.opposite_related_content.id}")
+      find("#related-content-#{related_content.opposite_related_content.id}").hover
+      find("#score-positive-related-#{related_content.opposite_related_content.id}").click
+      expect(page).to_not have_css("#score-positive-related-#{related_content.opposite_related_content.id}")
     end
 
-    expect(related_content.reload.flags_count).to eq(1)
-    expect(related_content.opposite_related_content.flags_count).to eq(1)
+    expect(related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.id).value).to eq(1)
+    expect(related_content.opposite_related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.opposite_related_content.id).value).to eq(1)
+
   end
 
-  scenario 'if related content has been flagged more than 5 times it will be hidden', :js do
-    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1)
-
-    related_content.flags_count = Setting['related_contents_report_threshold'].to_i + 1
-    related_content.opposite_related_content.flags_count = related_content.flags_count
-
-    related_content.save
-    related_content.opposite_related_content.save
+  scenario 'related content can be scored negatively', :js do
+    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)
+    visit eval("#{relationable.class.name.downcase}_path(relationable)")
+
+    within("#related-content-list") do
+      find("#related-content-#{related_content.opposite_related_content.id}").hover
+      find("#score-negative-related-#{related_content.opposite_related_content.id}").click
+      expect(page).to_not have_css("#score-negative-related-#{related_content.opposite_related_content.id}")
+    end
+
+    expect(related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.id).value).to eq(-1)
+    expect(related_content.opposite_related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.opposite_related_content.id).value).to eq(-1)
+  end
+
+  scenario 'if related content has negative score it will be hidden' do
+    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
+
+    2.times do
+      related_content.send("score_positive", build(:user))
+    end
+
+    6.times do
+      related_content.send("score_negative", build(:user))
+    end
+
+    login_as(user)
+
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
 
     expect(page).to_not have_css("#related-content-list")

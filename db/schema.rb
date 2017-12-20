@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171219202827) do
+ActiveRecord::Schema.define(version: 20171220010000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1008,6 +1008,16 @@ ActiveRecord::Schema.define(version: 20171219202827) do
 
   add_index "redeemable_codes", ["token"], name: "index_redeemable_codes_on_token", using: :btree
 
+  create_table "related_content_scores", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "related_content_id"
+    t.integer "value"
+  end
+
+  add_index "related_content_scores", ["related_content_id"], name: "index_related_content_scores_on_related_content_id", using: :btree
+  add_index "related_content_scores", ["user_id", "related_content_id"], name: "unique_user_related_content_scoring", unique: true, using: :btree
+  add_index "related_content_scores", ["user_id"], name: "index_related_content_scores_on_user_id", using: :btree
+
   create_table "related_contents", force: :cascade do |t|
     t.integer  "parent_relationable_id"
     t.string   "parent_relationable_type"
@@ -1016,10 +1026,13 @@ ActiveRecord::Schema.define(version: 20171219202827) do
     t.integer  "related_content_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "flags_count",              default: 0
+    t.datetime "hidden_at"
+    t.integer  "related_content_scores_count", default: 0
+    t.integer  "author_id"
   end
 
   add_index "related_contents", ["child_relationable_type", "child_relationable_id"], name: "index_related_contents_on_child_relationable", using: :btree
+  add_index "related_contents", ["hidden_at"], name: "index_related_contents_on_hidden_at", using: :btree
   add_index "related_contents", ["parent_relationable_id", "parent_relationable_type", "child_relationable_id", "child_relationable_type"], name: "unique_parent_child_related_content", unique: true, using: :btree
   add_index "related_contents", ["parent_relationable_type", "parent_relationable_id"], name: "index_related_contents_on_parent_relationable", using: :btree
   add_index "related_contents", ["related_content_id"], name: "opposite_related_content", using: :btree
@@ -1420,6 +1433,8 @@ ActiveRecord::Schema.define(version: 20171219202827) do
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "probe_options", "debates"
   add_foreign_key "proposals", "communities"
+  add_foreign_key "related_content_scores", "related_contents"
+  add_foreign_key "related_content_scores", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end
