@@ -5,6 +5,7 @@ class RelatedContent < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   belongs_to :parent_relationable, polymorphic: true, touch: true
   belongs_to :child_relationable, polymorphic: true, touch: true
   has_one :opposite_related_content, class_name: 'RelatedContent', foreign_key: :related_content_id
