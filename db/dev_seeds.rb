@@ -628,6 +628,7 @@ section "Open plenary proposal" do
                                 created_at: Date.parse("20-04-2016"),
                                 terms_of_service: "1",
                                 tag_list: 'plenoabierto',
+                                skip_map: "1",
                                 cached_votes_up: rand(1000))
   end
 end
@@ -808,6 +809,7 @@ section "Creating Proposals for Human Right Proceeding" do
                                 created_at: rand((Time.now - 1.week)..Time.now),
                                 tag_list: tags.sample(3).join(','),
                                 geozone: Geozone.reorder("RANDOM()").first,
+                                skip_map: "1",
                                 terms_of_service: "1",
                                 proceeding: "Derechos Humanos",
                                 sub_proceeding: subproceedings.sample)
