@@ -17,6 +17,11 @@ class RelatedContent < ActiveRecord::Base
 
   scope :not_hidden, -> { where('positive_score - negative_score / LEAST(nullif(positive_score + negative_score, 0), 1) >= ?', RELATED_CONTENT_SCORE_THRESHOLD) }
 
+  def score(value)
+    RelatedContentsScore.create(user_id: current_user, related_content_id: self, score: value)
+    RelatedContentsScore.create(user_id: current_user, related_content_id: opposite_related_content, score: value)
+  end
+
   private
 
   def create_opposite_related_content

@@ -18,22 +18,20 @@ class RelatedContentsController < ApplicationController
   end
 
   def score_positive
-    @related = RelatedContent.find_by(id: params[:id])
-    @related.increment!(:positive_score)
-    @related.opposite_related_content.increment!(:positive_score)
-
-    render template: 'relationable/_refresh_score_actions'
+    score(1)
   end
 
   def score_negative
-    @related = RelatedContent.find_by(id: params[:id])
-    @related.increment!(:negative_score)
-    @related.opposite_related_content.increment!(:negative_score)
-
-    render template: 'relationable/_refresh_score_actions'
+    score(-1)
   end
 
   private
+
+  def score(value)
+    RelatedContent.find_by(id: params[:id]).score(value)
+
+    render template: 'relationable/_refresh_score_actions'
+  end
 
   def valid_url?
     params[:url].match(VALID_URL)
