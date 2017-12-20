@@ -7,7 +7,7 @@ class RelatedContentsController < ApplicationController
 
   def create
     if relationable_object && related_object
-      @relationable.relate_content(@related)
+      RelatedContent.create(parent_relationable: @relationable, child_relationable: @related)
 
       flash[:success] = t('related_content.success')
     else
