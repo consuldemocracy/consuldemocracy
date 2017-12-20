@@ -862,8 +862,6 @@ ActiveRecord::Schema.define(version: 20171219111046) do
     t.integer  "related_content_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "positive_score",           default: 1
-    t.integer  "negative_score",           default: 0
   end
 
   add_index "related_contents", ["child_relationable_type", "child_relationable_id"], name: "index_related_contents_on_child_relationable", using: :btree
