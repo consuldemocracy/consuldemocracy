@@ -84,17 +84,18 @@ shared_examples "relationable" do |relationable_model_name|
     end
 
     expect(
-      RelatedContentsReport.where(
-        user_id: current_user.id,
-        related_content_id: related_content.id
-      ).first.score
-    ).to eq(true)
+      RelatedContentScores.where(
+        user: current_user,
+        related_content: related_content
+      ).first.value
+    ).to eq(1)
+
     expect(
-      RelatedContentsReport.where(
-        user_id: current_user.id,
-        related_content_id: related_content.opposite_related_content.id
-      ).first.score
-    ).to eq(true)
+      RelatedContentScores.where(
+        user: current_user,
+        related_content: related_content.opposite_related_content
+      ).first.value
+    ).to eq(1)
 
   end
 
