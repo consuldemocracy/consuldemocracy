@@ -20,7 +20,6 @@ class RelatedContent < ActiveRecord::Base
   after_create :create_opposite_related_content, unless: proc { opposite_related_content.present? }
   after_create :create_author_score
 
-  scope :not_hidden, -> { where('positive_score - negative_score / LEAST(nullif(positive_score + negative_score, 0), 1) >= ?', RELATED_CONTENT_SCORE_THRESHOLD) }
   scope :not_hidden, -> { where(hidden_at: nil) }
 
   def score_positive(user)

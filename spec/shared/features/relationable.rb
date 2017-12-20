@@ -6,7 +6,7 @@ shared_examples "relationable" do |relationable_model_name|
   let(:user) { create(:user) }
 
   scenario 'related contents are listed' do
-    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1)
+    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
     within("#related-content-list") do
@@ -72,7 +72,7 @@ shared_examples "relationable" do |relationable_model_name|
   end
 
   scenario 'related content can be scored positively', :js do
-    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1)
+    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
@@ -83,24 +83,13 @@ shared_examples "relationable" do |relationable_model_name|
       expect(page).to_not have_css("#score-positive-related-#{related_content.opposite_related_content.id}")
     end
 
-    expect(
-      RelatedContentScores.where(
-        user: current_user,
-        related_content: related_content
-      ).first.value
-    ).to eq(1)
-
-    expect(
-      RelatedContentScores.where(
-        user: current_user,
-        related_content: related_content.opposite_related_content
-      ).first.value
-    ).to eq(1)
+    expect(related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.id).value).to eq(1)
+    expect(related_content.opposite_related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.opposite_related_content.id).value).to eq(1)
 
   end
 
   scenario 'related content can be scored negatively', :js do
-    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1)
+    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)
     visit eval("#{relationable.class.name.downcase}_path(relationable)")
@@ -111,20 +100,20 @@ shared_examples "relationable" do |relationable_model_name|
       expect(page).to_not have_css("#score-negative-related-#{related_content.opposite_related_content.id}")
     end
 
-    expect(related_content.reload.negative_score).to eq(1)
-    expect(related_content.opposite_related_content.reload.negative_score).to eq(1)
+    expect(related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.id).value).to eq(-1)
+    expect(related_content.opposite_related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.opposite_related_content.id).value).to eq(-1)
   end
 
   scenario 'if related content has negative score it will be hidden' do
-    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1)
+    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
-    related_content.positive_score = 4
-    related_content.negative_score = 20
-    related_content.opposite_related_content.positive_score = 4
-    related_content.opposite_related_content.negative_score = 20
+    2.times do
+      related_content.send("score_positive", build(:user))
+    end
 
-    related_content.save
-    related_content.opposite_related_content.save
+    6.times do
+      related_content.send("score_negative", build(:user))
+    end
 
     login_as(user)
 
