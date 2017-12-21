@@ -38,5 +38,13 @@ FactoryBot.define do
   end
 
   factory :related_content do
+    association :author, factory: :user
+    association :parent_relationable, factory: [:proposal, :debate].sample
+    association :child_relationable, factory: [:proposal, :debate].sample
+  end
+
+  factory :related_content_score do
+    association :user
+    association :related_content
   end
 end
