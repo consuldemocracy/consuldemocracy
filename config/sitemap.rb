@@ -34,6 +34,11 @@ SitemapGenerator::Sitemap.create do
     add poll_path(poll), lastmod: poll.starts_at
   end
 
+  add legislation_processes_path, priority: 0.7, changefreq: "daily"
+  Legislation::Process.find_each do |process|
+    add legislation_process_path(process), lastmod: process.start_date
+  end
+
   # budgets
   add budgets_welcome_path
 
@@ -110,4 +115,5 @@ SitemapGenerator::Sitemap.create do
   add proposals_path(search: "Sostenibilidad")
   add proposals_path(search: "Transparencia")
   add proposals_path(search: "Urbanismo")
+
 end
