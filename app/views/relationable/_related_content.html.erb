@@ -4,11 +4,13 @@
     <h2 class="inline-block">
       <%= t("related_content.title") %>&nbsp;<span>(<%= relationable.relationed_contents.count %>)</span>
     </h2>
-    <a>
-      <button type="button" data-toggle="related_content" class="add-related-content" id="add-related-content">
-        <%= t("related_content.add") %>
-      </button>
-    </a>
+    <% if current_user %>
+      <a>
+        <button type="button" data-toggle="related_content" class="add-related-content" id="add-related-content">
+          <%= t("related_content.add") %>
+        </button>
+      </a>
+    <% end %>
   </div>
 
   <%= render 'relationable/form', relationable: relationable %>

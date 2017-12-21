@@ -338,6 +338,7 @@ es:
       map_location: "Ubicación en el mapa"
       map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
       map_remove_marker: "Eliminar el marcador"
+      map_skip_checkbox: "Esta propuesta no tiene una ubicación concreta o no la conozco."
     index:
       featured_proposals: Destacadas
       filter_topic:
@@ -818,6 +819,9 @@ es:
     submit: "Añadir"
     error: "Enlace no válido. Recuerda que debe empezar por %{url}."
     success: "Has añadido un nuevo contenido relacionado"
+    is_related: "¿Es contenido relacionado?"
+    score_positive: "Sí"
+    score_negative: "No"
     content_title:
       proposal: "Propuesta"
       debate: "Debate"
