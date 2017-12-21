@@ -42,4 +42,10 @@ SitemapGenerator::Sitemap.create do
   Poll.find_each do |poll|
     add poll_path(poll), lastmod: poll.starts_at
   end
+
+  add legislation_processes_path, priority: 0.7, changefreq: "daily"
+  Legislation::Process.find_each do |process|
+    add legislation_process_path(process), lastmod: process.start_date
+  end
+
 end
