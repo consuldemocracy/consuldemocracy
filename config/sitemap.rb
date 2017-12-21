@@ -116,4 +116,27 @@ SitemapGenerator::Sitemap.create do
   add proposals_path(search: "Transparencia")
   add proposals_path(search: "Urbanismo")
 
+  # proposals search by district
+  add proposals_path(search: "Arganzuela")
+  add proposals_path(search: "Barajas")
+  add proposals_path(search: "Carabanchel")
+  add proposals_path(search: "Centro")
+  add proposals_path(search: "Chamartín")
+  add proposals_path(search: "Chamberí")
+  add proposals_path(search: "Ciudad Lineal")
+  add proposals_path(search: "Fuencarral-El Pardo")
+  add proposals_path(search: "Hortaleza")
+  add proposals_path(search: "Latina")
+  add proposals_path(search: "Moncloa-Aravaca")
+  add proposals_path(search: "Moratalaz")
+  add proposals_path(search: "Puente de Vallecas")
+  add proposals_path(search: "Retiro")
+  add proposals_path(search: "Salamanca")
+  add proposals_path(search: "San Blas-Canillejas")
+  add proposals_path(search: "Tetuán")
+  add proposals_path(search: "Usera")
+  add proposals_path(search: "Vicálvaro")
+  add proposals_path(search: "Villa de Vallecas")
+  add proposals_path(search: "Villaverde")
+
 end
