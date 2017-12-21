@@ -9,11 +9,7 @@ SitemapGenerator::Sitemap.default_host = Setting["url"]
 
 # sitemap generator
 SitemapGenerator::Sitemap.create do
-  pages = ["accessibility",
-           "census_terms",
-           "conditions",
-           "general_terms",
-           "privacy"]
+  pages = ["general_terms"]
   pages.each do |page|
     add page_path(id: page)
   end
