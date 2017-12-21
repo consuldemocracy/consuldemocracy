@@ -42,7 +42,7 @@ SitemapGenerator::Sitemap.create do
   # budgets
   add budgets_welcome_path
 
-  # processes
+  # old processes
   add processes_path
   add urbanistic_licenses_path
   add open_government_path
@@ -97,7 +97,7 @@ SitemapGenerator::Sitemap.create do
   add more_info_human_rights_path
   add participation_open_government_path
 
-  # search by category
+  # proposals search by category
   add proposals_path(search: "Asociaciones")
   add proposals_path(search: "Cultura")
   add proposals_path(search: "Deportes")
