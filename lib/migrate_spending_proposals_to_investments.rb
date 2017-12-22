@@ -63,7 +63,8 @@ class MigrateSpendingProposalsToInvestments
       incompatible: !sp.compatible, # Is it really the opposite?
       community_id: community.id,
       terms_of_service: "1",
-      original_spending_proposal_id: sp.id
+      original_spending_proposal_id: sp.id,
+      skip_map: '1'
     )
 
     investment.valuators = sp.valuation_assignments.map(&:valuator)
