@@ -104,7 +104,8 @@ en:
         heading: Heading name
         add_heading: Add heading
         amount: Amount
-        population: Population
+        population: "Population (optional)"
+        population_help_text: "This data is used exclusively to calculate the participation statistics"
         save_heading: Save heading
         no_heading: This group has no assigned heading.
         table_heading: Heading

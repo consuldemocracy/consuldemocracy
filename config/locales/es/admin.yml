@@ -105,7 +105,8 @@ es:
         heading: Nombre de la partida
         add_heading: Añadir partida
         amount: Cantidad
-        population: Población
+        population: "Población (opcional)"
+        population_help_text: "Este dato se utiliza exclusivamente para calcular las estadísticas de participación"
         save_heading: Guardar partida
         no_heading: Este grupo no tiene ninguna partida asignada.
         table_heading: Partida
