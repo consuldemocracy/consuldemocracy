@@ -97,91 +97,23 @@ SitemapGenerator::Sitemap.create do
   add more_info_human_rights_path
   add participation_open_government_path
 
+  category_names = ActsAsTaggableOn::Tag.category.order(:name).pluck(:name)
+  district_names = Geozone.pluck(:name)
+
   # proposals search by category
-  add proposals_path(search: "Asociaciones")
-  add proposals_path(search: "Cultura")
-  add proposals_path(search: "Deportes")
-  add proposals_path(search: "Derechos Sociales")
-  add proposals_path(search: "Distritos")
-  add proposals_path(search: "Economía")
-  add proposals_path(search: "Empleo")
-  add proposals_path(search: "Equidad")
-  add proposals_path(search: "Medio Ambiente")
-  add proposals_path(search: "Medios")
-  add proposals_path(search: "Movilidad")
-  add proposals_path(search: "Participación")
-  add proposals_path(search: "Salud")
-  add proposals_path(search: "Seguridad y Emergencias")
-  add proposals_path(search: "Sostenibilidad")
-  add proposals_path(search: "Transparencia")
-  add proposals_path(search: "Urbanismo")
+  category_names.each { |category_name| add proposals_path(search: category_name) }
 
   # proposals search by district
-  add proposals_path(search: "Arganzuela")
-  add proposals_path(search: "Barajas")
-  add proposals_path(search: "Carabanchel")
-  add proposals_path(search: "Centro")
-  add proposals_path(search: "Chamartín")
-  add proposals_path(search: "Chamberí")
-  add proposals_path(search: "Ciudad Lineal")
-  add proposals_path(search: "Fuencarral-El Pardo")
-  add proposals_path(search: "Hortaleza")
-  add proposals_path(search: "Latina")
-  add proposals_path(search: "Moncloa-Aravaca")
-  add proposals_path(search: "Moratalaz")
-  add proposals_path(search: "Puente de Vallecas")
-  add proposals_path(search: "Retiro")
-  add proposals_path(search: "Salamanca")
-  add proposals_path(search: "San Blas-Canillejas")
-  add proposals_path(search: "Tetuán")
-  add proposals_path(search: "Usera")
-  add proposals_path(search: "Vicálvaro")
-  add proposals_path(search: "Villa de Vallecas")
-  add proposals_path(search: "Villaverde")
+  district_names.each { |district_name| add proposals_path(search: district_name) }
 
   # budgets 2017
-  budget_investments_path("presupuestos-participativos-2017")
+  budgets_2017_name = 'presupuestos-participativos-2017'
+  add budget_investments_path(budgets_2017_name)
 
   # budgets 2017 search by category
-  budget_investments_path("presupuestos-participativos-2017", search: "Asociaciones")
-  budget_investments_path("presupuestos-participativos-2017", search: "Cultura")
-  budget_investments_path("presupuestos-participativos-2017", search: "Deportes")
-  budget_investments_path("presupuestos-participativos-2017", search: "Derechos Sociales")
-  budget_investments_path("presupuestos-participativos-2017", search: "Distritos")
-  budget_investments_path("presupuestos-participativos-2017", search: "Economía")
-  budget_investments_path("presupuestos-participativos-2017", search: "Empleo")
-  budget_investments_path("presupuestos-participativos-2017", search: "Equidad")
-  budget_investments_path("presupuestos-participativos-2017", search: "Medio Ambiente")
-  budget_investments_path("presupuestos-participativos-2017", search: "Medios")
-  budget_investments_path("presupuestos-participativos-2017", search: "Movilidad")
-  budget_investments_path("presupuestos-participativos-2017", search: "Participación")
-  budget_investments_path("presupuestos-participativos-2017", search: "Salud")
-  budget_investments_path("presupuestos-participativos-2017", search: "Seguridad y Emergencias")
-  budget_investments_path("presupuestos-participativos-2017", search: "Sostenibilidad")
-  budget_investments_path("presupuestos-participativos-2017", search: "Transparencia")
-  budget_investments_path("presupuestos-participativos-2017", search: "Urbanismo")
+  category_names.each { |category_name| add budget_investments_path(budgets_2017_name, search: category_name) }
 
   # budgets 2017 search by district
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Arganzuela")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Barajas")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Carabanchel")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Centro")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Chamartín")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Chamberí")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Ciudad Lineal")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Fuencarral-El Pardo")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Hortaleza")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Latina")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Moncloa-Aravaca")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Moratalaz")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Puente de Vallecas")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Retiro")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Salamanca")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "San Blas-Canillejas")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Tetuán")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Usera")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Vicálvaro")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Villa de Vallecas")
-  custom_budget_investments_path("presupuestos-participativos-2017", id: "distritos", heading_id: "Villaverde")
+  district_names.each { |district_name| add custom_budget_investments_path(budgets_2017_name, id: 'distritos', heading_id: district_name) }
 
 end
