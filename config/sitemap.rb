@@ -107,13 +107,16 @@ SitemapGenerator::Sitemap.create do
   district_names.each { |district_name| add proposals_path(search: district_name) }
 
   # budgets 2017
-  budgets_2017_name = 'presupuestos-participativos-2017'
-  add budget_investments_path(budgets_2017_name)
+  budgets_2017_slug = 'presupuestos-participativos-2017'
+
+  Budget.where(slug: budgets_2017_slug).first.investments.each do |budget_investment|
+    add budget_investment_path(budgets_2017_slug, budget_investment), lastmod: budget_investment.created_at
+  end
 
   # budgets 2017 search by category
-  category_names.each { |category_name| add budget_investments_path(budgets_2017_name, search: category_name) }
+  category_names.each { |category_name| add budget_investments_path(budgets_2017_slug, search: category_name) }
 
   # budgets 2017 search by district
-  district_names.each { |district_name| add custom_budget_investments_path(budgets_2017_name, id: 'distritos', heading_id: district_name) }
+  district_names.each { |district_name| add custom_budget_investments_path(budgets_2017_slug, id: 'distritos', heading_id: district_name) }
 
 end
