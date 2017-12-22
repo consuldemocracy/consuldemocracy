@@ -11,14 +11,15 @@
 <% end %>
 
 <%= form_for [:admin, @budget, Budget::Group.new], html: {id: "new-group-form", style: "display:none"}, remote: true do |f| %>
+
+  <%= f.label :name, t("admin.budgets.form.group") %>
+
   <div class="input-group">
-    <span class="input-group-label">
-      <label><%= f.label :name,t("admin.budgets.form.group") %></label>
-    </span>
     <%= f.text_field :name,
                       label: false,
                       maxlength: 50,
-                        placeholder: t("admin.budgets.form.group") %>
+                      placeholder: t("admin.budgets.form.group"),
+                      class: "input-group-field" %>
     <div class="input-group-button">
       <%= f.submit t("admin.budgets.form.create_group"), class: "button success" %>
     </div>
