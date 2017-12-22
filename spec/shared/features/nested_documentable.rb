@@ -234,14 +234,9 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      expect(page).to have_css "#new_document_link", visible: true
-
-      puts fill_resource_method_name
-
       documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
       documentable_attach_new_file(documentable_factory_name, 1, "spec/fixtures/files/empty.pdf")
 
-      # documentable_attach_new_file(documentable_factory_name, 2, "spec/fixtures/files/empty.pdf")
       send(fill_resource_method_name) if fill_resource_method_name
 
       click_on submit_button
