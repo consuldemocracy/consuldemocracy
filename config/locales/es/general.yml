@@ -171,7 +171,7 @@ es:
     direct_message: el mensaje privado
     error: error
     errors: errores
-    not_saved: 'impidieron guardar %{resource}:'
+    not_saved_html: "impidieron guardar %{resource}. <br>Por favor revisa los campos marcados para saber cómo corregirlos:"
     policy: Política de privacidad
     proposal: la propuesta
     proposal_notification: "la notificación"
