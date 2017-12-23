@@ -252,7 +252,6 @@ def submit_proposal_form
   end
 end
 
-
 def validate_latitude_longitude(mappable_factory_name)
   expect(find("##{mappable_factory_name}_map_location_attributes_latitude", visible: false).value).to eq "51.48"
   expect(find("##{mappable_factory_name}_map_location_attributes_longitude", visible: false).value).to eq "0.0"
