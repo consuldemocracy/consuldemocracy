@@ -39,8 +39,8 @@ module Verification
   end
 
   def level_two_or_three_verified?
-    true
-    #level_two_verified? || level_three_verified?
+    #true
+    level_two_verified? || level_three_verified?
   end
 
   def unverified?

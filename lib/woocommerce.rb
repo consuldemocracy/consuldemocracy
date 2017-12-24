@@ -11,9 +11,10 @@ woocommerce = WooCommerce::API.new(
   }
 )
 
-email = "chonorly@gmail.com"
-puts woocommerce.get("customers/28").parsed_response
+email = "yoav.lip@gmail.com"
+#puts woocommerce.get("customers/28").parsed_response
 puts woocommerce.get("customers?search=" + email).parsed_response
+puts "all ----------"
 all =  woocommerce.get("customers?per_page=100&orderby=id").parsed_response
 puts all.length
 puts all

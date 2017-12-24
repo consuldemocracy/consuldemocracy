@@ -289,7 +289,7 @@ he:
         description: תיאור
         external_url: קישור למסמכים נוספים
         location: מיקום
-        administrator_id: מנהל/ת המערכת
+        administrator_id: מנהל/ת מערכת
         organization_name: אם ההצעה היא בשם קבוצה או ארגון כתבו את שמם
       comment:
         body: תגובה
@@ -362,7 +362,7 @@ he:
       legislation/process:
         title: כותרת הדיון המקצועי
         description: תיאור
-        additional_info: עזרה
+        additional_info: מידע נוסף
         start_date: תאריך התחלה
         end_date: תאריך סיום
         debate_start_date: תאריך תחילת הדיון
@@ -448,8 +448,8 @@ he:
       one_page:
         display_entries:
           zero: "%{entry_name} לא נמצא"
-          one: קיימת  <strong>1 %{entry_name}</strong>
-          other: קיימות  <strong>%{count} %{entry_name}</strong>
+          one: קיימת <strong>1 %{entry_name}</strong>
+          other: קיימות <strong>%{count} %{entry_name}</strong>
       more_pages:
         display_entries: מציג <strong>%{first}&nbsp;-&nbsp;%{last}</strong> מתוך<strong>%{total}
           %{entry_name}</strong>
@@ -1101,7 +1101,7 @@ he:
       admin: תפריט מנהל/ת מערכת
       banner: ניהול מודעות גרפיות
       poll_questions: שאלות להצבעות סופיות
-      proposals_topics: נושאי הצעות
+      proposals_topics: תגיות נושאי הצעות
       budgets: תקצובים שיתופיים
       geozones: ניהול אזור
       hidden_comments: תגובות מוסתרות
@@ -1126,8 +1126,8 @@ he:
         pages: דף מותאם אישית
         images: תמונות מותאמות אישית
         content_blocks: התאמה אישית לבלוקי התוכן
-      title_categories: תחומים
-      title_moderated_content: תיווך תוכן
+      title_categories: תגיות נושא
+      title_moderated_content: בקרת תוכן
       title_budgets: תקצובים
       title_polls: הצבעות סופיות
       title_profiles: פרופילים
@@ -1565,14 +1565,14 @@ he:
         total: סך הכל
         proposals_with_notifications: הצעות המאפשרות הודעות
     tags:
-      create: יצירת נושא
-      destroy: מחיקת הנושא
+      create: יצירת תגית נושא חדשה
+      destroy: מחיקת תגית נושא
       index:
         add_tag: הצעת נושא לדיון חדש
         title: נושאים לדיון
       mark_as_featured: נושא מומלץ עבור יצירת ההצעה
       name:
-        placeholder: הקלד/י את שם הנושא
+        placeholder: הקלד/י את שם תגית הנושא
       update: נושא מעודכן
     users:
       columns:
@@ -1728,7 +1728,7 @@ he:
       title: תקצובים שיתופיים
     investments:
       form:
-        tag_category_label: תחומים
+        tag_category_label: תגיות נושא
         tags_instructions: תיוג הצעה זו. ניתן לבחור תחום קיים או להוסיף תגית חדשה
         tags_label: תגיות
         tags_placeholder: הזנת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)
@@ -1971,10 +1971,10 @@ he:
   account:
     show:
       change_credentials_link: שינוי ההרשאות שלי
-      email_on_comment_label: הודיעו לי בדוא"ל בכל פעם שמתקבלת תגובה לדיונים ציבוריים
-        או להצעות שלי
-      email_on_comment_reply_label: הודיעו לי בדואר אלקטרוני בכל פעם שמתקבלת תגובה
-        על ההערות שלי
+      email_on_comment_label: הודיעו לי בדוא"ל כשמתקבלת תגובה לדיונים ציבוריים או
+        להצעות שלי
+      email_on_comment_reply_label: הודיעו לי בדואר אלקטרוני כשמתקבלת תגובה על ההערות
+        שלי
       erase_account_link: מחק את החשבון שלי
       finish_verification: נא לאמת את החשבון
       notifications: הודעות
@@ -2000,7 +2000,7 @@ he:
       username_label: שם משתמש/ת
       verified_account: החשבון זוהה בהצלחה
       verify_my_account: אימות חשבון
-      public_interests_label: השאר את האינטרס הציבורי שלי גלוי
+      public_interests_label: השאר את נושאי ההתעניינות שלי גלויים
       public_interests_my_title_list: רשימת אינטרסים (תגיות שהנך עוקב/ת אחריהן)
       public_interests_user_title_list: רשימת אינטרסים (תגיות שמשתמש/ת זה/זו עוקב/ת
         אחריהן)
@@ -2095,7 +2095,7 @@ he:
         submit_button: פתיחת דיון ציבורי חדש
       info: אם ברצונך להציע הצעה, לא כאן המקום. עבר/י אל %{info_link}.
       info_link: הצעה חדשה
-      more_info: עזרה
+      more_info: מידע נוסף
       recommendation_four: אנו מזמינים אותך ליהנות מהמרחב הזה ומהקולות הנשמעים בו,
         הוא שייך גם לך
       recommendation_one: בכתיבה נבקשך לשמור על שיח ענייני ומכבד, להמנע מהתקפות אישיות
@@ -2123,7 +2123,7 @@ he:
         submit_button: שמירת שינויים
   form:
     accept_terms: אני מאשר/ת את %{policy} ואת %{conditions}
-    accept_terms_title: אני מאשר/ת שקראתי והסכמתי למדיניות הפרטיות, לכללים ותנאי השימוש
+    accept_terms_title: אני מאשר/ת שקראתי והסכמתי לתנאים וכללי הגישה
     conditions: כללים ותנאי שימוש
     debate: דיון ציבורי
     direct_message: פנייה אישית
@@ -2184,7 +2184,7 @@ he:
       moderation: הנחיה
       valuation: הערכה
       officing: משתמשים/ות בתפקיד רשמי בהצבעה סופית
-      more_info: עזרה
+      more_info: מידע נוסף
       my_account_link: החשבון שלי
       my_activity_link: הפעילות שלי
       notifications: הודעות
@@ -2203,7 +2203,7 @@ he:
       see_all: צפייה בהצעות
       budgets: תקצוב השתתפותי
       spending_proposals: הצעות להשקעה כספית
-      administration_menu: מנהל/ת מערכת
+      administration_menu: ניהול המערכת
     admin:
       watch_form_message: יש לך שינויים שלא נשמרו, האם את/ה מאשר/ת את היציאה מדף?
         (נתונים לא ישמרו)
@@ -2288,7 +2288,7 @@ he:
         [כן] או [לא]. <em>- למשל 'האם לדעתך צריך חוק להגבלת כהונת ראש ממשלה בישראל?'</em>
       proposal_responsible_name: שם ושם משפחה מלא של מציע/ת ההצעה
       proposal_responsible_name_note: "(כאדם פרטי או כנציג/ה של התאגדות תושבים. השם
-        יישמר חסוי מפני שאר המשתמשים)"
+        יישמר חסוי בפני שאר המשתמשים)"
       proposal_summary: תקציר ההצעה
       proposal_summary_note: "(200 תווים לכל היותר)"
       proposal_text: מלל ההצעה
@@ -2297,8 +2297,8 @@ he:
       proposal_video_url_note: ניתן להדביק קישור ל-YouTube או Vimeo
       tag_category_label: נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',')
         מפריד ביניהן
-      tags_instructions: תייג/י את התחומים להם שייכת הצעה זו והנושאים בהם היא עוסקת.
-        ניתן לבחור תחומים מרשימה או להוסיף תחומים משלך
+      tags_instructions: הוספת תגיות נושא בתחום הנוגע להצעה זו. ניתן לבחור תגית קיימת
+        מהרשימה או להוסיף תגית משלך
       tags_label: תגיות
       tags_placeholder: נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד
         ביניהן
@@ -2402,7 +2402,7 @@ he:
   polls:
     all: הכל
     no_dates: לא הוקצה תאריך
-    dates: מ %{open_at} ל %{closed_at}
+    dates: מ %{open_at} עד ל %{closed_at}
     final_date: סיכום תוצאות סופיות
     index:
       filters:
@@ -2411,12 +2411,12 @@ he:
         expired: לא בתוקף
       title: הצבעות
       participate_button: השתתפות בהצבעה זו
-      participate_button_incoming: עזרה
+      participate_button_incoming: מידע נוסף
       participate_button_expired: ההצבעה הסתיימה
       no_geozone_restricted: בכל הערים/הרשויות
       geozone_restricted: מחוזות
       geozone_info: 'יכולים להשתתף אזרחים מ: '
-      can_answer: תוכל/י להשתתף בהצבעה זו!
+      can_answer: תוכל/י להשתתף בהצבעה זו !
       cant_answer: הצבעה זו אינה זמינה באזור מגוריך
       cant_answer_not_logged_in: נדרשת התחברות או הרשמה בכדי להשתתף
       cant_answer_verify: עליך לאמת את חשבונך על מנת להגיב
@@ -2438,7 +2438,7 @@ he:
       original_proposal: ההצעה המקורית
       author: נוצרה על ידי
       dates_title: תאריכי השתתפות
-      more_info: עזרה
+      more_info: תוכן ההצעה
       not_logged_in: נדרשת %{signin} או %{signup} בכדי להשתתף
       signin: התחברות
       signup: הרשמה
@@ -2496,7 +2496,7 @@ he:
     check_all: הכל
     check_none: שום דבר
     collective: קבוצתי
-    flag: סמן כתוכן לא-ראוי
+    flag: סמן כתוכן לא ראוי
     hide: הסתר
     print:
       print_button: הדפסה
@@ -2513,7 +2513,7 @@ he:
         see_all: הצג הכל
       budget_investment:
         found:
-          one: כבר קיימות השקעה הכוללת את המונח '%{query}', תוכל/י להוסיף את הצעתך
+          one: כבר קיימת השקעה הכוללת את המונח '%{query}', תוכל/י להוסיף את הצעתך
             שם במקום ליצור השקעה חדשה.
           other: כבר קיימות השקעות הכוללות את המונח '%{query}', תוכל/י להוסיף את הצעתך
             שם במקום ליצור השקעה חדשה.
@@ -2531,7 +2531,7 @@ he:
       tags: נושאים חמים
       districts: באזור הגאוגרפי שלי
       districts_list: רשימת אזורים גאוגרפים
-      categories: תחומים
+      categories: תגיות נושא
     target_blank_html: " (הקישור יפתח בחלון חדש)"
     you_are_in: הנך נמצא/ת ב-
     unflag: הסרת הסימן
@@ -3606,7 +3606,8 @@ he:
           success: חשבונך אומת
       new:
         accept_terms_text: קראתי ואני מסכים/ה על ה%{terms_url}
-        accept_terms_text_title: קראתי ואני מסכים/ה על כל הכללים ותנאי שימוש
+        accept_terms_text_title: קראתי ואני מסכים/ה על כל הכללים ותנאי השימוש באתר
+          המערכת
         date_of_birth: תאריך לידה
         document_number: מספר תעודה מזהה
         document_number_help_title: עזרה
