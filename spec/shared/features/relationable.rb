@@ -1,6 +1,6 @@
 shared_examples "relationable" do |relationable_model_name|
 
-  let(:relationable) { create(relationable_model_name) }
+  let(:relationable) { create(relationable_model_name.name.downcase.to_sym) }
   let(:related1) { create([:proposal, :debate].sample) }
   let(:related2) { create([:proposal, :debate].sample) }
   let(:user) { create(:user) }
