@@ -9,11 +9,7 @@ SitemapGenerator::Sitemap.default_host = Setting["url"]
 
 # sitemap generator
 SitemapGenerator::Sitemap.create do
-  pages = ["accessibility",
-           "census_terms",
-           "conditions",
-           "general_terms",
-           "privacy"]
+  pages = ["general_terms"]
   pages.each do |page|
     add page_path(id: page)
   end
@@ -38,10 +34,15 @@ SitemapGenerator::Sitemap.create do
     add poll_path(poll), lastmod: poll.starts_at
   end
 
+  add legislation_processes_path, priority: 0.7, changefreq: "daily"
+  Legislation::Process.find_each do |process|
+    add legislation_process_path(process), lastmod: process.start_date
+  end
+
   # budgets
   add budgets_welcome_path
 
-  # processes
+  # old processes
   add processes_path
   add urbanistic_licenses_path
   add open_government_path
@@ -96,22 +97,26 @@ SitemapGenerator::Sitemap.create do
   add more_info_human_rights_path
   add participation_open_government_path
 
-  # search by category
-  add proposals_path(search: "Asociaciones")
-  add proposals_path(search: "Cultura")
-  add proposals_path(search: "Deportes")
-  add proposals_path(search: "Derechos Sociales")
-  add proposals_path(search: "Distritos")
-  add proposals_path(search: "Economía")
-  add proposals_path(search: "Empleo")
-  add proposals_path(search: "Equidad")
-  add proposals_path(search: "Medio Ambiente")
-  add proposals_path(search: "Medios")
-  add proposals_path(search: "Movilidad")
-  add proposals_path(search: "Participación")
-  add proposals_path(search: "Salud")
-  add proposals_path(search: "Seguridad y Emergencias")
-  add proposals_path(search: "Sostenibilidad")
-  add proposals_path(search: "Transparencia")
-  add proposals_path(search: "Urbanismo")
+  category_names = ActsAsTaggableOn::Tag.category.order(:name).pluck(:name)
+  district_names = Geozone.pluck(:name)
+
+  # proposals search by category
+  category_names.each { |category_name| add proposals_path(search: category_name) }
+
+  # proposals search by district
+  district_names.each { |district_name| add proposals_path(search: district_name) }
+
+  # budgets 2017
+  budgets_2017_slug = 'presupuestos-participativos-2017'
+
+  Budget.where(slug: budgets_2017_slug).first.investments.each do |budget_investment|
+    add budget_investment_path(budgets_2017_slug, budget_investment), lastmod: budget_investment.created_at
+  end
+
+  # budgets 2017 search by category
+  category_names.each { |category_name| add budget_investments_path(budgets_2017_slug, search: category_name) }
+
+  # budgets 2017 search by district
+  district_names.each { |district_name| add custom_budget_investments_path(budgets_2017_slug, id: 'distritos', heading_id: district_name) }
+
 end

@@ -910,6 +910,9 @@ es:
     submit: "Añadir"
     error: "Enlace no válido. Recuerda que debe empezar por %{url}."
     success: "Has añadido un nuevo contenido relacionado"
+    is_related: "¿Es contenido relacionado?"
+    score_positive: "Sí"
+    score_negative: "No"
     content_title:
       proposal: "Propuesta"
       debate: "Debate"
