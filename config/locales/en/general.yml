@@ -198,7 +198,7 @@ en:
     direct_message: private message
     error: error
     errors: errors
-    not_saved: 'prevented this %{resource} from being saved:'
+    not_saved_html: "prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
     policy: Privacy Policy
     proposal: Proposal
     proposal_notification: "Notification"

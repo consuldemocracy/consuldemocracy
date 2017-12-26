@@ -11,13 +11,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added Documents to Budget Investment's Milestones https://github.com/consul/consul/pull/2191
 - Added Publication Date Budget Investment's Milestones https://github.com/consul/consul/pull/2188
 - New setting `feature.allow_images` to allow upload and show images for both (proposals and budget investment projects). Set it manually through console with `Setting['feature.allow_images'] = true`
-- Related Content feature https://github.com/consul/consul/pull/2183
+- Related Content feature. Now Debates & Proposals can be related https://github.com/consul/consul/issues/1164
+- Map validations https://github.com/consul/consul/pull/2207
+- Added spec for 'rake db:dev_seed' taskhttps://github.com/consul/consul/pull/2201
+- Adds timestamps to polls https://github.com/consul/consul/pull/2180 (Run `rake polls:initialize_timestamps` to initialize attributes created_at and updated_at with the current time for all existing polls, or manually through console set correct values)
 
 ### Changed
 - Some general Design improvements https://github.com/consul/consul/pull/2170 https://github.com/consul/consul/pull/2198
-- Adds timestamps to polls https://github.com/consul/consul/pull/2180 (Run `rake polls:initialize_timestamps` to initialize attributes created_at and updated_at with the current time for all existing polls, or manually through console set correct values)
 - Improved Communities design https://github.com/consul/consul/pull/1904
-- Made Milestones description required & hide title usage https://github.com/consul/consul/pull/2195
+- Made Milestones description required & hided title usage https://github.com/consul/consul/pull/2195
+- Improved generic error message https://github.com/consul/consul/pull/2217
+- Improved Sitemap for SEO https://github.com/consul/consul/pull/2215
 
 ### Deprecated
 
@@ -25,7 +29,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 - Notifications for hidden resources https://github.com/consul/consul/pull/2172
-- Notifications exceptiosn https://github.com/consul/consul/pull/2187
+- Notifications exceptions https://github.com/consul/consul/pull/2187
+- Fixed map location update https://github.com/consul/consul/pull/2213
 
 ### Security
 
