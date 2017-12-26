@@ -170,7 +170,7 @@ module CommonActions
 
   def error_message(resource_model = nil)
     resource_model ||= "(.*)"
-    /\d errors? prevented this #{resource_model} from being saved:/
+    /\d errors? prevented this #{resource_model} from being saved. Please check the marked fields to know how to correct them:/
   end
 
   def expect_to_be_signed_in
