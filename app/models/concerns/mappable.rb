@@ -7,7 +7,7 @@ module Mappable
     has_one :map_location, dependent: :destroy
     accepts_nested_attributes_for :map_location, allow_destroy: true
 
-    validate :map_must_be_valid, if: :feature_maps?
+    validate :map_must_be_valid, on: :create, if: :feature_maps?
 
     def map_must_be_valid
       return true if skip_map?
