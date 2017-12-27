@@ -350,7 +350,7 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
-        archival_date: Archived
+        archival_date: archived
         recommendations: recommendations
       recommendations:
         without_results: There are not proposals related to your interests
