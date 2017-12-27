@@ -6,7 +6,7 @@ En este ejemplo usamos a [Mailgun](https://www.mailgun.com/).
 
 ## Crear una cuenta en Mailgun
 
-![Creando una cuenta en Mailgun](../../img/mailgun-create-account.png)
+![Creando una cuenta en Mailgun](../../img/mailserver/mailgun-create-account.png)
 
 * Omita el formulario de tarjeta de crédito
 * Y active su cuenta con el enlace enviado por correo electrónico
@@ -14,11 +14,11 @@ En este ejemplo usamos a [Mailgun](https://www.mailgun.com/).
 
 ## Configuración del domain
 * Ve a la sección domain:
-![Mailgun sección domain](../../img/mailgun-domains.png)
+![Mailgun sección domain](../../img/mailserver/mailgun-domains.png)
 
 * Como todavía no tienes un domain, debes hacer clic en el sandbox que ya está creado;
 * Recuerde las próximas credenciales:
-![Mailgun sandbox](../../img/mailgun-sandbox.png)
+![Mailgun sandbox](../../img/mailserver/mailgun-sandbox.png)
 
 ## Configuración de correo del Consul para el entorno de desarrollo
 * Vaya al archivo `config/environments/development.rb`;
@@ -41,7 +41,7 @@ En este ejemplo usamos a [Mailgun](https://www.mailgun.com/).
 
 * Rellene, `address`, `domain`, `user_name`, `password` con su información. El archivo se vería así:
 
-![archivo development.rb](../../img/development.rb.png)
+![archivo development.rb](../../img/mailserver/development.rb.png)
 
 ## Configuración de correo de Consul para el entorno de producción
 
