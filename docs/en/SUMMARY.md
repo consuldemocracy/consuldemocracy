@@ -30,9 +30,12 @@
 * [Overwritting Application](customization/overwritting.md)
 * [Adding new features](customization/new_features.md)
 
-### Features
+### Technical Features
 * [OAuth](features/oauth.md)
 * [GraphQL](features/graphql.md)
+
+## User Features
+* [Recommendations](features/recommendations.md)
 
 ### Open Source project
 * [Code of conduct](open_source/code_of_conduct.md)
