@@ -19,7 +19,7 @@
                     community_topic_path(@community, @topic, anchor: "comments") %>
       </div>
       <br>
-      <p><%= @topic.description %></p>
+      <p><%= text_with_links(@topic.description).gsub("\n", '<br/>').html_safe %></p>
     </div>
 
     <% if @topic.author == current_user %>

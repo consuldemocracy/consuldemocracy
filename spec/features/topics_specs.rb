@@ -125,6 +125,18 @@ feature 'Topics' do
       expect(page).to have_content topic.title
     end
 
+    scenario "Topic description with clickable URL" do
+      proposal = create(:proposal)
+      community = proposal.community
+      topic = create(:topic, community: community, description: "This is a description with a link to https://google.es")
+
+      visit community_topic_path(community, topic)
+
+      expect(page).to have_content community.proposal.title
+      expect(page).to have_content topic.title
+      expect(page).to have_link "https://google.es"
+    end
+
   end
 
   context 'Destroy' do
