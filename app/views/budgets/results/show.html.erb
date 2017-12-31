@@ -37,21 +37,20 @@
 
 <div class="row">
   <div class="small-12 medium-3 large-2 column">
-    <div class="row">
-      <ul class="menu vertical no-margin-top no-padding-top">
-        <h3>
-          <%= t("budgets.results.heading_selection_title") %>
-        </h3>
+    <h3 class="margin-bottom">
+      <%= t("budgets.results.heading_selection_title") %>
+    </h3>
+    <ul class="menu vertical no-margin-top no-padding-top">
 
-        <% @budget.headings.order('id ASC').each do |heading| %>
-          <li>
-            <%= link_to heading.name,
-                        budget_results_path(@budget, heading_id: heading.to_param),
-                        class: heading.to_param == @heading.to_param ? 'active' : '' %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+
+      <% @budget.headings.order('id ASC').each do |heading| %>
+        <li>
+          <%= link_to heading.name,
+                      budget_results_path(@budget, heading_id: heading.to_param),
+                      class: heading.to_param == @heading.to_param ? 'active' : '' %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <span class="float-right"><%= link_to t("budgets.results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("budgets.results.hide_discarded_link")} %></span>

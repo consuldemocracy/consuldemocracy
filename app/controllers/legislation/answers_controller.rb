@@ -30,7 +30,7 @@ class Legislation::AnswersController < Legislation::BaseController
 
     def answer_params
       params.require(:legislation_answer).permit(
-        :legislation_question_option_id,
+        :legislation_question_option_id
       )
     end
 

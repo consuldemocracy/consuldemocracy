@@ -1,8 +1,5 @@
----
 en:
   moderation:
-    header:
-      title: Moderation
     comments:
       index:
         block_authors: Block authors
@@ -44,6 +41,8 @@ en:
           created_at: Newest
           flags: Most flagged
         title: Debates
+    header:
+      title: Moderation
     menu:
       flagged_comments: Comments
       flagged_debates: Debates
@@ -75,5 +74,4 @@ en:
         search: Search
         search_placeholder: email or name of user
         title: Block users
-      notice_hide: User blocked. All of this user's debates and comments have been
-        hidden.
+      notice_hide: User blocked. All of this user's debates and comments have been hidden.

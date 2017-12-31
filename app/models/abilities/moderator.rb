@@ -6,7 +6,7 @@ module Abilities
       merge Abilities::Moderation.new(user)
 
       can :comment_as_moderator, [Debate, Comment, Proposal, Budget::Investment, Poll::Question,
-                                  Legislation::Question, Legislation::Annotation]
+                                  Legislation::Question, Legislation::Annotation, Legislation::Proposal, Topic]
     end
   end
 end

@@ -32,6 +32,12 @@ en:
       administrator:
         one: Administrator
         other: Administrators
+      valuator:
+        one: "Evaluador"
+        other: "Evaluadores"
+      manager:
+        one: "Manager"
+        other: "Managers"
       vote:
         one: Vote
         other: Votes
@@ -77,6 +83,18 @@ en:
       legislation/answers:
         one: Answer
         other: Answers
+      documents:
+        one: "Document"
+        other: "Documents"
+      images:
+        one: "Image"
+        other: "Images"
+      topic:
+        one: "Topic"
+        other: "Topics"
+      poll:
+        one: "Poll"
+        other: "Polls"
     attributes:
       budget:
         name: Name
@@ -101,9 +119,12 @@ en:
         title: "Title"
         location: "Location"
         organization_name: "If you are proposing in the name of a collective/organization, write its name"
+        image: "Proposal descriptive image"
+        image_title: "Image title"
       budget/investment/milestone:
         title: "Title"
         description: "Description"
+        publication_date: "Publication date"
       comment:
         body: Comment
         user: User
@@ -144,6 +165,8 @@ en:
         starts_at: Start Date
         ends_at: Closing Date
         geozone_restricted: Restricted by geozone
+        summary: "Summary"
+        description: "Description"
       poll/question:
         title: Question
         valid_answers: Posibles answers
@@ -197,6 +220,18 @@ en:
         value: Value
       legislation/annotation:
         text: Comment
+      document:
+        title: Title
+        attachment: Attachment
+      image:
+        title: Title
+        attachment: Attachment
+      poll/question/answer:
+        title: Answer
+        description: Description
+      poll/question/answer/video:
+        title: Title
+        url: External video
     errors:
       models:
         user:
@@ -212,6 +247,15 @@ en:
             max_per_day:
               invalid: You have reached the maximum number of private messages per
                 day
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Image Width must be at least %{required_min_width}px"
+              min_image_height: "Image Height must be at least %{required_min_height}px"
+        map_location:
+          attributes:
+            map:
+              invalid: Map location can't be blank. Place a marker or select the checkbox if geolocalization is not needed
         poll/voter:
           attributes:
             document_number:
@@ -249,5 +293,10 @@ en:
         site_customization/image:
           attributes:
             image:
-              image_width: Width must be %{required_width}px
-              image_height: Height must be %{required_height}px
+              image_width: "Width must be %{required_width}px"
+              image_height: "Height must be %{required_height}px"
+      messages:
+        record_invalid: "Validation failed: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Cannot delete record because a dependent %{record} exists"
+          has_many: "Cannot delete record because dependent %{record} exist"

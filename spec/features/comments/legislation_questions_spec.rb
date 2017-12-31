@@ -2,6 +2,11 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting legislation questions' do
+
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Legislation::Question
+  end
+
   let(:user) { create :user, :level_two }
   let(:process) { create :legislation_process, :in_debate_phase }
   let(:legislation_question) { create :legislation_question, process: process }
@@ -35,6 +40,10 @@ feature 'Commenting legislation questions' do
     expect(page).to have_content second_child.body
 
     expect(page).to have_link "Go back to #{legislation_question.title}", href: href
+
+    expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
+    expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
+    expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
   scenario 'Collapsable comments', :js do

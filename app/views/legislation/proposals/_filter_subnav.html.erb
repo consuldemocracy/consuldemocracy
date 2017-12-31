@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="small-12 column">
+    <ul class="tabs" data-tabs id="proposals-tabs">
+      <li class="tabs-title is-active">
+        <%= link_to "#tab-comments" do %>
+          <h3>
+            <%= t("proposals.show.comments_tab") %>
+            <span class="js-comments-count">(<%= @proposal.comments_count %>)</span>
+          </h3>
+        <% end %>
+      </li>
+      <li class="tabs-title">
+        <%= link_to "#tab-documents" do %>
+          <h3>
+            <%= t("documents.tab") %>
+            (<%= @proposal.documents.count %>)
+          </h3>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

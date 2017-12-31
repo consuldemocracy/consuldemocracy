@@ -1,0 +1,78 @@
+<%= form_for(@proposal, url: form_url) do |f| %>
+  <%= render 'shared/errors', resource: @proposal %>
+
+  <%= f.hidden_field(:legislation_process_id, :value => params[:process_id]) %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.label :title, t("proposals.form.proposal_title") %>
+      <%= f.text_field :title, maxlength: Legislation::Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false %>
+    </div>
+
+    <%= f.invisible_captcha :subtitle %>
+
+    <div class="small-12 column">
+      <%= f.label :summary, t("proposals.form.proposal_summary") %>
+      <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
+      <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
+                      placeholder: t('proposals.form.proposal_summary'),
+                      aria: {describedby: "summary-help-text"} %>
+    </div>
+
+    <div class="ckeditor small-12 column">
+      <%= f.label :description, t("proposals.form.proposal_text") %>
+      <%= f.cktext_area :description, maxlength: Legislation::Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
+      <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
+      <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false,
+                                   aria: {describedby: "video-url-help-text"} %>
+    </div>
+
+    <div class="documents small-12 column" data-max-documents="<%= Legislation::Proposal.max_documents_allowed %>">
+      <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <%= f.label :geozone_id,  t("proposals.form.geozone") %>
+      <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :tag_list, t("legislation.proposals.form.tags_label") %>
+      <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
+
+      <div id="category_tags" class="tags">
+        <% @process.tag_list_on(:customs).each do |tag| %>
+          <a class="js-add-tag-link"><%= tag %></a>
+        <% end %>
+      </div>
+
+      <br>
+      <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
+                        label: false,
+                        placeholder: t("proposals.form.tags_placeholder"),
+                        class: 'js-tag-list',
+                        aria: {describedby: "tag-list-help-text"} %>
+    </div>
+
+    <div class="small-12 column">
+      <% if @proposal.new_record? %>
+        <%= f.label :terms_of_service do %>
+          <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
+          <span class="checkbox">
+            <%= t("form.accept_terms",
+                policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button")) %>
+    </div>
+  </div>
+<% end %>

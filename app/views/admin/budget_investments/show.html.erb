@@ -19,7 +19,7 @@
 <p id="tags">
   <strong><%= t("admin.budget_investments.show.tags") %>:</strong>
 
-  <%= @investment.tags_on(:valuation).pluck(:name).join(', ') %>
+  <%= @investment.tags_on(:valuation).pluck(:name).sort.join(', ') %>
 </p>
 
 <p id="assigned_valuators">
@@ -54,5 +54,7 @@
 <%= render 'admin/budget_investments/milestones' %>
 
 <p>
-  <%= link_to t("admin.budget_investments.show.new_milestone"), new_admin_budget_budget_investment_budget_investment_milestone_path(@budget, @investment) %>
+  <%= link_to t("admin.budget_investments.show.new_milestone"),
+              new_admin_budget_budget_investment_budget_investment_milestone_path(@budget, @investment),
+              class: "button hollow" %>
 </p>

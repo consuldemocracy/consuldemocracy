@@ -1,0 +1,24 @@
+<div class="proposal-form row">
+
+  <div class="small-12 medium-9 column">
+    <%= back_link_to %>
+
+    <h1><%= t("proposals.new.start_new") %></h1>
+    <div data-alert class="callout primary">
+      <%= link_to more_info_path(anchor: "proposals") ,title: t('shared.target_blank_html'), target: "_blank" do %>
+        <%= t("proposals.new.more_info")%>
+      <% end %>
+    </div>
+    <%= render "legislation/proposals/form", form_url: legislation_process_proposals_url, id: @proposal.id %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <span class="icon-proposals float-right"></span>
+    <h2><%= t("proposals.new.recommendations_title") %></h2>
+    <ul class="recommendations">
+      <li><%= t("proposals.new.recommendation_one") %></li>
+      <li><%= t("proposals.new.recommendation_two") %></li>
+      <li><%= t("proposals.new.recommendation_three") %></li>
+    </ul>
+  </div>
+</div>

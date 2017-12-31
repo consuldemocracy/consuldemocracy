@@ -17,6 +17,14 @@
           </h3>
         <% end %>
       </li>
+      <li class="tabs-title">
+        <%= link_to "#tab-documents" do %>
+          <h3>
+            <%= t("documents.tab") %>
+            (<%= @investment.documents.count %>)
+          </h3>
+        <% end %>
+      </li>
     </ul>
   </div>
 </div>

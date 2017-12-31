@@ -33,6 +33,10 @@ feature 'Commenting debates' do
     expect(page).to have_content second_child.body
 
     expect(page).to have_link "Go back to #{debate.title}", href: debate_path(debate)
+
+    expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
+    expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
+    expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
   scenario 'Collapsable comments', :js do

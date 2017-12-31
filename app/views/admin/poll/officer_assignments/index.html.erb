@@ -11,11 +11,10 @@
       <%= t("admin.poll_officer_assignments.index.no_officers") %>
     </div>
   <% else %>
-    <table class="fixed margin">
+    <table class="fixed margin" id="officer_assignments">
       <thead>
         <th><%= t("admin.poll_officer_assignments.index.table_name") %></th>
         <th><%= t("admin.poll_officer_assignments.index.table_email") %></th>
-        <th class="text-right"><%= t("admin.actions.actions") %></th>
       </thead>
       <tbody>
         <% @officers.each do |officer| %>
@@ -27,11 +26,6 @@
             </td>
             <td>
               <%= officer.email %>
-            </td>
-            <td class="text-right">
-              <%= link_to t("admin.poll_officer_assignments.index.edit_officer_assignments"),
-                          by_officer_admin_poll_officer_assignments_path(@poll, officer_id: officer.id),
-                          class: "button hollow" %>
             </td>
           </tr>
         <% end %>

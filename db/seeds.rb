@@ -39,10 +39,10 @@ Setting["months_to_archive_proposals"] = 12
 Setting["email_domain_for_officials"] = ''
 
 # Code to be included at the top (inside <head>) of every page (useful for tracking)
-Setting['per_page_code_head'] =  ''
+Setting['per_page_code_head'] = ''
 
 # Code to be included at the top (inside <body>) of every page
-Setting['per_page_code_body'] =  ''
+Setting['per_page_code_body'] = ''
 
 # Social settings
 Setting["twitter_handle"] = nil
@@ -58,18 +58,20 @@ Setting["opendata_url"] = "/opendata"
 # Public-facing URL of the app.
 Setting["url"] = "http://example.com"
 
-# Consul installation's organization name
-Setting["org_name"] = "Consul"
+# CONSUL installation's organization name
+Setting["org_name"] = "CONSUL"
 
-# Consul installation place name (City, Country...)
-Setting["place_name"] = "Consul-land"
+# CONSUL installation place name (City, Country...)
+Setting["place_name"] = "CONSUL-land"
 
 # Meta tags for SEO
+Setting["meta_title"] = nil
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
 # Feature flags
 Setting['feature.debates'] = true
+Setting['feature.proposals'] = true
 Setting['feature.spending_proposals'] = nil
 Setting['feature.polls'] = true
 Setting['feature.twitter_login'] = true
@@ -79,6 +81,10 @@ Setting['feature.public_stats'] = true
 Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 Setting['feature.legislation'] = true
+Setting['feature.user.recommendations'] = true
+Setting['feature.community'] = true
+Setting['feature.map'] = nil
+Setting['feature.allow_images'] = true
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
@@ -98,7 +104,7 @@ Setting['proposal_notification_minimum_interval_in_days'] = 3
 Setting['direct_message_max_per_day'] = 3
 
 # Email settings
-Setting['mailer_from_name'] = 'Consul'
+Setting['mailer_from_name'] = 'CONSUL'
 Setting['mailer_from_address'] = 'noreply@consul.dev'
 
 # Verification settings
@@ -107,3 +113,11 @@ Setting['min_age_to_participate'] = 16
 
 # Proposal improvement url path ('/more-information/proposal-improvement')
 Setting['proposal_improvement_path'] = nil
+
+# City map feature default configuration (Greenwich)
+Setting['map_latitude'] = 51.48
+Setting['map_longitude'] = 0.0
+Setting['map_zoom'] = 10
+
+# Related content
+Setting['related_content_score_threshold'] = -0.3

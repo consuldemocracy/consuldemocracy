@@ -1,16 +1,24 @@
 class Budget
   class Investment < ActiveRecord::Base
-
     include Measurable
     include Sanitizable
     include Taggable
     include Searchable
     include Reclassification
     include Followable
+    include Communitable
+    include Imageable
+    include Mappable
+    include Documentable
+    documentable max_documents_allowed: 3,
+                 max_file_size: 3.megabytes,
+                 accepted_content_types: [ "application/pdf" ]
 
     acts_as_votable
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
+    include Relationable
+    include Notifiable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -37,7 +45,7 @@ class Budget
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
-    scope :sort_by_random,           -> { reorder("RANDOM()") }
+    scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f&.positive? ? seed : 1}, budget_investments.id") }
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }

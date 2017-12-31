@@ -1196,7 +1196,7 @@ fr:
       how_to_use:
         text: "Utilisez cet outil dans votre collectivité ou aidez-nous àl'améliorer,
           c'est un logiciel libre.\r\n\r\nCe portail de gouvernement ouvert utilise
-          cette [application Consul ](https://github.com/ayuntamientomadrid 'consul
+          cette [application Consul ](https://github.com/consul/consul 'consul
           github') qui est un logiciel libre, avec une [license AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html
           'AGPLv3 gnu' ), ce qui signifie en fait que n'importe qui peut utiliser
           le code librement, le copier, l'étudier en détail, le modifier et le redistribuer
@@ -1207,7 +1207,7 @@ fr:
           la Mairie de Madrid autant que possible pour le faire. Si vous êtes intéressé,
           n'hésitez pas à nous contacter : <a href='mailto:ag.gobiernoabierto@consul.dev'>ag.gobiernoabierto@consul.dev</a>\r\n\r\nSi
           vous êtes développeur, vous pouvez voir le code et nous aider à l'améliorer
-          sur [Consul app](https://github.com/ayuntamientomadrid 'consul github '
+          sur [Consul app](https://github.com/consul/consul 'consul github '
           )."
       titles:
         faq: Solution pour les problèmes techniques (FAQ)

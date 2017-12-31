@@ -62,6 +62,8 @@ class User < ActiveRecord::Base
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :public_for_api, -> { all }
+  scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).uniq }
+  scope :by_authors,     ->(author_ids) { where("users.id IN (?)", author_ids) }
 
   before_validation :clean_document_number
 
@@ -86,12 +88,17 @@ class User < ActiveRecord::Base
   end
 
   def debate_votes(debates)
-    voted = votes.for_debates(debates)
+    voted = votes.for_debates(Array(debates).map(&:id))
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
   def proposal_votes(proposals)
-    voted = votes.for_proposals(proposals)
+    voted = votes.for_proposals(Array(proposals).map(&:id))
+    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
+  end
+
+  def legislation_proposal_votes(proposals)
+    voted = votes.for_legislation_proposals(proposals)
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 

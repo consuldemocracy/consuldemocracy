@@ -19,4 +19,11 @@
                                                             comment_flags: @comment_flags,
                                                             display_comments_count: false } %>
   </div>
+
+  <div class="tabs-panel" id="tab-documents">
+    <%= render 'documents/documents',
+                documents: @investment.documents,
+                max_documents_allowed: Budget::Investment.max_documents_allowed %>
+  </div>
+
 </div>

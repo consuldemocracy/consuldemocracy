@@ -48,34 +48,21 @@ describe Notification do
   end
 
   describe "#notification_action" do
+    let(:notifiable) { create(:proposal) }
 
-    context "when action was comment on a debate" do
-      it "returns correct text when someone comments on your debate" do
-        debate = create(:debate)
-        notification = create :notification, notifiable: debate
+    it "returns correct action when someone comments on your commentable" do
+      notification = create(:notification, notifiable: notifiable)
 
-        expect(notification.notifiable_action).to eq "comments_on"
-      end
+      expect(notification.notifiable_action).to eq "comments_on"
     end
 
-    context "when action was comment on a debate" do
-      it "returns correct text when someone replies to your comment" do
-        debate = create(:debate)
-        debate_comment = create :comment, commentable: debate
-        notification = create :notification, notifiable: debate_comment
+    it "returns correct action when someone replies to your comment" do
+      comment = create(:comment, commentable: notifiable)
+      notification = create(:notification, notifiable: comment)
 
-        expect(notification.notifiable_action).to eq "replies_to"
-      end
+      expect(notification.notifiable_action).to eq "replies_to"
     end
 
-    context "when action was proposal notification" do
-      it "returns correct text when the author created a proposal notification" do
-        proposal_notification = create(:proposal_notification)
-        notification = create :notification, notifiable: proposal_notification
-
-        expect(notification.notifiable_action).to eq "proposal_notification"
-      end
-    end
   end
 
 end

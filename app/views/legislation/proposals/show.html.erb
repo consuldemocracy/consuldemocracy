@@ -1,0 +1,121 @@
+<% provide :title do %><%= @proposal.title %><% end %>
+<% content_for :meta_description do %><%= @proposal.summary %><% end %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: proposal_url(@proposal),
+            social_title: @proposal.title,
+            social_description: @proposal.summary %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: proposal_url(@proposal) %>
+<% end %>
+
+<% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @legislation_proposal_votes] do %>
+  <div class="proposal-show">
+    <div id="<%= dom_id(@proposal) %>" class="row">
+      <div class="small-12 medium-9 column">
+        <%= back_link_to legislation_process_proposals_path(process_id: @process) %>
+
+        <h1><%= @proposal.title %></h1>
+        <% if @proposal.conflictive? %>
+          <div data-alert class="callout alert margin-top">
+            <strong><%= t("proposals.show.flag") %></strong>
+          </div>
+        <% end %>
+
+        <div class="proposal-info">
+          <%= render '/shared/author_info', resource: @proposal %>
+
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= l @proposal.created_at.to_date %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <span class="icon-comments"></span>&nbsp;
+          <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
+
+          <% if current_user %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <%= render 'proposals/flag_actions', proposal: @proposal %>
+          <% end %>
+
+        </div>
+
+        <br>
+        <p>
+          <%= t("proposals.show.code") %>
+          <strong><%= @proposal.code %></strong>
+        </p>
+
+        <blockquote><%= @proposal.summary %></blockquote>
+
+        <% if @proposal.video_url.present? %>
+          <div class="small-12 medium-7 small-centered">
+            <div class="flex-video">
+              <div id="js-embedded-video" data-video-code="<%= embedded_video_code %>"></div>
+            </div>
+          </div>
+        <% end %>
+
+        <%= safe_html_with_links @proposal.description %>
+
+        <% if @proposal.external_url.present? %>
+          <div class="document-link">
+            <p>
+              <span class="icon-document"></span>&nbsp;
+              <strong><%= t('proposals.show.title_external_url') %></strong>
+            </p>
+              <%= text_with_links @proposal.external_url %>
+          </div>
+        <% end %>
+
+        <% if @proposal.video_url.present? %>
+          <div class="video-link">
+            <p>
+              <span class="icon-video"></span>&nbsp;
+              <strong><%= t('proposals.show.title_video_url') %></strong>
+            </p>
+            <%= text_with_links @proposal.video_url %>
+          </div>
+
+        <% end %>
+
+        <h4><%= @proposal.question %></h4>
+
+        <%= render 'shared/tags', taggable: @proposal %>
+
+        <%= render 'shared/geozone', geozonable: @proposal %>
+
+        <div class="js-moderator-proposal-actions margin">
+          <%= render 'proposals/actions', proposal: @proposal %>
+        </div>
+      </div>
+
+      <aside class="small-12 medium-3 column">
+        <div class="sidebar-divider"></div>
+        <h2><%= t("votes.supports") %></h2>
+        <div id="<%= dom_id(@proposal) %>_votes">
+          <%= render 'votes',
+                    { proposal: @proposal, vote_url: vote_legislation_process_proposal_path(@proposal.legislation_process_id, @proposal, value: 'yes') } %>
+        </div>
+        <%= render partial: 'shared/social_share', locals: {
+          share_title: t("proposals.show.share"),
+          title: @proposal.title,
+          url: proposal_url(@proposal)
+        } %>
+      </aside>
+    </div>
+  </div>
+<% end %>
+
+<div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
+  <%= render "legislation/proposals/filter_subnav" %>
+
+  <div class="tabs-panel is-active" id="tab-comments">
+    <%= render "legislation/proposals/comments" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-documents">
+    <%= render 'documents/documents',
+                documents: @proposal.documents,
+                max_documents_allowed: Proposal.max_documents_allowed %>
+  </div>
+</div>

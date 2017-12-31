@@ -18,6 +18,10 @@
 // 16. Flags
 // 17. Activity
 // 18. Banners
+// 19. Recommended Section Home
+// 20. Documents
+// 21. Related content
+// 22. Images
 //
 
 // 01. Global styles
@@ -91,6 +95,11 @@ a {
   color: $link;
 }
 
+.button.hollow.error {
+  border-color: $alert-border;
+  color: $color-alert;
+}
+
 .postfix.button {
   padding: 0;
 }
@@ -148,6 +157,10 @@ a {
   margin-bottom: $line-height;
 }
 
+.margin-left {
+  margin-left: $line-height;
+}
+
 .margin-right {
   margin-right: $line-height;
 }
@@ -199,26 +212,48 @@ a {
 
 .menu.simple {
   border-bottom: 1px solid $border;
-  margin: $line-height 0;
+  clear: both;
+  margin-bottom: $line-height / 2;
 
   li {
-    padding-bottom: rem-calc(7);
+    font-size: $base-font-size;
+    margin-bottom: 0;
+    margin-right: $line-height / 2;
+
+    @include breakpoint(medium) {
+      margin-right: $line-height * 1.5;
+    }
 
     a {
-      color: $text-medium;
+      color: $text;
+      display: inline-block;
+      font-weight: bold;
+      position: relative;
+      text-align: left;
+
+      &:hover {
+        color: $link;
+      }
     }
 
     &.active {
       border-bottom: 2px solid $brand;
       color: $brand;
     }
+
+    &:not(.active) {
+      margin-bottom: $line-height / 3;
+    }
+  }
+
+  h2 {
+    font-size: $base-font-size;
   }
 }
 
 .menu.vertical {
-  background: #fff;
   margin: $line-height 0;
-  padding: $line-height;
+  padding: $line-height 0;
 
   li {
     margin-bottom: $line-height;
@@ -273,7 +308,11 @@ a {
 .icon-angle-left {
   clear: both;
   color: $text-medium;
-  float: left;
+  display: inline-block;
+}
+
+.back:not([class^="icon-"]) {
+  text-decoration: underline;
 }
 
 .tabs-content {
@@ -281,12 +320,15 @@ a {
 }
 
 .tabs {
-  border: {
-    left: 0;
-    right: 0;
-    top: 0;
-  };
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
   margin-bottom: $line-height;
+
+  .tabs-title {
+    font-size: $base-font-size;
+    margin-bottom: 0;
+  }
 
   .tabs-title > a {
     color: $text-medium;
@@ -307,16 +349,42 @@ a {
   }
 }
 
-.no-max-width {
-  max-width: none;
-}
-
 .button.float-right ~ .button.float-right {
   margin: 0 $line-height / 2;
 }
 
 .pagination .current {
   background: $brand;
+}
+
+.truncate-horizontal-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.align-top {
+  vertical-align: top;
+}
+
+.aling-middle {
+  vertical-align: middle;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.off-canvas-content {
+  box-shadow: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 // 02. Header
@@ -362,7 +430,11 @@ header {
 
   .top-bar-title a {
     @include logo;
-    line-height: rem-calc(80) !important;
+    line-height: rem-calc(80);
+
+    @include breakpoint(medium) {
+      line-height: rem-calc(80);
+    }
 
     &:hover {
       text-decoration: none;
@@ -416,6 +488,7 @@ header {
   .menu {
 
     &.is-dropdown-submenu {
+      background: #fff;
       margin: 0;
       margin-top: rem-calc(-24);
       padding: 0;
@@ -581,7 +654,7 @@ header {
     text-align: left;
 
     @include breakpoint(medium) {
-      margin-right: $line-height * 1.5;
+      margin-right: $line-height;
     }
 
     &:hover {
@@ -1077,8 +1150,13 @@ form {
     color: #ecf00b;
     font-size: rem-calc(10);
     position: absolute;
-    right: 8px;
+    left: 12px;
     top: 6px;
+
+    @include breakpoint(medium) {
+      left: auto;
+      right: 8px;
+    }
   }
 }
 
@@ -1822,6 +1900,7 @@ table {
 
     .divider {
       color: $text-light;
+      display: inline-block;
     }
 
     form {
@@ -1966,94 +2045,55 @@ table {
 // ------------
 
 .activity {
-  margin-bottom: $line-height * 2;
 
-  .accordion li {
-    margin-bottom: $line-height / 2;
-
-    .accordion-title {
-      border-bottom: 1px solid $border;
-      background: #f8f9fb;
-      font-size: $small-font-size;
-      padding: $line-height / 2;
-    }
-
-    .accordion-content {
-      padding: 0;
-    }
-  }
-
-  .accordion .title {
-    display: block;
-    line-height: $line-height;
-  }
-
-  .accordion .icon {
-    font-size: rem-calc(20);
-    float: left;
-    margin-right: $line-height / 3;
-
-    &.icon-debates {
-      margin-top: rem-calc(3);
-    }
-  }
-
-  table {
-    border: 0;
-    margin-bottom: 0;
-  }
-
-  td {
-    position: relative;
-
-    &:first-child {
-      padding-left: $line-height * 1.5;
-      width: 75%;
-    }
-
-    &::before {
-      color: $brand;
-      font-family: "icons" !important;
-      font-size: rem-calc(24);
-      left: 4px;
-      position: absolute;
-    }
-  }
-
-  .activity-comments td:first-child::before {
-    content: 'e';
-    top: 18px;
-  }
-
-  .activity-debates td:first-child::before {
-    content: 'i';
-    top: 14px;
-  }
-
-  .activity-proposals {
-
-    td:first-child::before {
-      content: 'h';
-      top: 18px;
-    }
-
-    .retired {
-      text-decoration: line-through;
-    }
-  }
-
-  .activity-investment-projects td:first-child::before,
-  .activity-ballot td:first-child::before {
-    content: '\53';
-    top: 10px;
+  .retired {
+    text-decoration: line-through;
   }
 }
 
 .public-interests {
-  margin-top: $line-height;
 
-  .column {
-    padding-left: 0;
+  li {
+    margin-right: $line-height / 4;
+
+    span {
+      background: none;
+      border: 1px solid #ececec;
+    }
+  }
+}
+
+.following {
+
+  .follow-list {
+    list-style-type: circle;
+    padding: $line-height / 2;
+
+    li {
+      margin-bottom: $line-height / 2;
+      margin-left: $line-height;
+    }
+  }
+
+  h3 {
+    font-size: rem-calc(24);
+    margin-top: $line-height;
+    padding-left: rem-calc(30);
+    position: relative;
+
+    span {
+      left: 0;
+      position: absolute;
+      top: 2px;
+    }
+  }
+
+  .interests {
+
+    @include breakpoint(medium) {
+      border-left: 1px solid #ececec;
+      padding-left: $line-height;
+    }
   }
 }
 
@@ -2128,4 +2168,347 @@ table {
     color: #eaeaf2 !important;
     text-decoration: none;
   }
+}
+
+// 19. Recommended Section Home
+// ----------------------------
+
+.home-page {
+
+  .push {
+    display: none;
+  }
+}
+
+.section-recommended {
+  padding: $line-height * 2 0;
+
+  h2 {
+    margin-bottom: $line-height * 2;
+  }
+
+  .debates,
+  .proposals,
+  .budget-investments {
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+
+    @include breakpoint(small) {
+      margin-bottom: $line-height;
+    }
+
+    .button.hollow {
+      margin-top: rem-calc(15);
+    }
+  }
+
+  .card {
+
+    .card-section {
+      padding: $line-height 0;
+      max-width: rem-calc(300);
+      margin: 0 auto;
+
+      p {
+        font-size: rem-calc(15);
+        text-align: left;
+      }
+    }
+
+    .orbit {
+      height: rem-calc(300);
+
+      .orbit-wrapper {
+        max-height: rem-calc(250);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .orbit-bullets {
+        @include orbit-bullets;
+        width: 100%;
+      }
+    }
+  }
+
+  .card .orbit .orbit-wrapper .truncate {
+    background: image-url('truncate.png');
+    background-repeat: repeat-x;
+    bottom: 0;
+    height: rem-calc(20);
+    position: absolute;
+    width: 100%;
+  }
+
+  .debates-inner {
+    border-top: 4px solid $debates;
+  }
+
+  .proposals-inner {
+    border-top: 4px solid $proposals;
+  }
+
+  .budget-investments-inner {
+    border-top: 4px solid $budget;
+  }
+
+  .debates-inner,
+  .proposals-inner,
+  .budget-investments-inner {
+    background: #fff;
+    max-height: rem-calc(350);
+
+    @include breakpoint(small) {
+      max-height: rem-calc(400);
+    }
+
+    h4 {
+      margin-top: $line-height;
+      margin-bottom: 0;
+      font-size: rem-calc(18);
+      min-height: rem-calc(50);
+    }
+
+    h5 {
+      font-size: $small-font-size;
+      text-align: left;
+    }
+  }
+
+  .carousel-image {
+
+    .card .orbit {
+      height: rem-calc(480);
+
+      .orbit-wrapper {
+        max-height: rem-calc(450);
+      }
+    }
+
+    .debates-inner,
+    .proposals-inner,
+    .budget-investments-inner {
+      max-height: rem-calc(500);
+
+      @include breakpoint(small) {
+        max-height: rem-calc(600);
+      }
+    }
+  }
+
+  .carousel-image .orbit-wrapper img {
+    display: block;
+
+    @include breakpoint(small) {
+      margin: 0 auto;
+    }
+  }
+}
+
+// 20. Documents
+// -------------
+
+.documents-list {
+
+  table {
+    border: 0;
+  }
+
+  td {
+    position: relative;
+
+    @include breakpoint(small) {
+      float: left;
+      width: 100%;
+    }
+
+    @include breakpoint(medium) {
+      float: none;
+    }
+
+    a {
+      width: 100%;
+    }
+
+    &:first-child {
+      padding-left: $line-height * 1.5;
+
+      @include breakpoint(small) {
+        width: 100%;
+      }
+
+      @include breakpoint(medium) {
+        width: 70%;
+      }
+
+      @include breakpoint(large) {
+        width: 80%;
+      }
+    }
+
+    &:first-child::before {
+      color: #007bb7;
+      content: 'G';
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: rem-calc(6);
+      position: absolute;
+      top: 0;
+
+      @include breakpoint(small) {
+        padding-top: rem-calc(12);
+      }
+
+      @include breakpoint(medium) {
+        padding-top: rem-calc(22);
+      }
+
+    }
+  }
+}
+
+.additional-document-link {
+  background: $highlight-soft;
+  border: 1px solid $highlight;
+  display: block;
+  margin: $line-height / 2 0;
+  padding: $line-height / 2;
+  position: relative;
+
+  a {
+    word-wrap: break-word;
+  }
+
+  .icon-document {
+    color: #007bb7;
+    display: inline-block;
+    font-size: rem-calc(24);
+    line-height: $line-height;
+    vertical-align: middle;
+  }
+}
+
+.document-divider {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+}
+
+// 21. Related content
+// -------------------
+
+.related-content {
+  border-top: 1px solid $border;
+
+  h2 {
+    font-size: rem-calc(24);
+
+    span {
+      color: #4f4f4f;
+      font-weight: normal;
+    }
+  }
+}
+
+.add-related-content {
+  display: block;
+
+  @include breakpoint(medium) {
+    float: right;
+  }
+}
+
+.related-content-list {
+  list-style-type: none;
+  margin-left: 0;
+
+  li {
+    border-bottom: 1px solid $border;
+    margin-bottom: 0 !important;
+    padding: $line-height / 2;
+
+    &:first-child {
+      border-top: 1px solid $border;
+    }
+
+    @include breakpoint(medium) {
+
+      .score-actions {
+        display: none;
+        float: right;
+      }
+    }
+
+    &:hover {
+      background: #f9f9f9;
+
+      .score-actions {
+        display: block;
+      }
+    }
+  }
+
+  h3 {
+    font-size: $base-font-size;
+    font-weight: normal;
+  }
+
+  .related-content-title {
+    color: #4f4f4f;
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+  }
+
+  .flag {
+    margin-top: $line-height / 2;
+  }
+}
+
+.relate-content-score {
+  display: block;
+
+  @include breakpoint(medium) {
+    text-align: center;
+  }
+
+  a {
+    font-weight: bold;
+    margin-right: $line-height;
+    padding-left: rem-calc(20);
+    position: relative;
+    text-decoration: none;
+
+    &.score-positive:before,
+    &.score-negative:before {
+      font-family: 'icons';
+      left: 0;
+      position: absolute;
+    }
+
+    &.score-positive {
+      color: $color-success;
+
+      &:before {
+        color: $color-success;
+        content: '\6c';
+      }
+    }
+
+    &.score-negative {
+      color: $color-alert;
+
+      &:before {
+        color: $color-alert;
+        content: '\76';
+      }
+    }
+  }
+}
+
+// 22. Images
+// -----------------
+
+.images .button {
+  margin-top: $line-height / 2;
 }

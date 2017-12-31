@@ -1,10 +1,12 @@
 <% if local_assigns[:share_title].present? %>
-<div id="social-share" class="sidebar-divider"></div>
-<p class="sidebar-title"><%= share_title %></p>
+  <div id="social-share" class="sidebar-divider"></div>
+  <p class="sidebar-title"><%= share_title %></p>
 <% end %>
 <div class="social-share-full">
-  <%= social_share_button_tag("#{title} #{setting['twitter_hashtag']}") %>
-  <a href="whatsapp://send?text=<%= title.gsub(/\s/, '%20') %>&nbsp;<%= url %>"
+  <%= social_share_button_tag("#{title} #{setting['twitter_hashtag']}",
+                              :url => local_assigns[:url],
+                              :image => local_assigns[:image_url].present? ? local_assigns[:image_url] : '' ) %>
+  <a href="whatsapp://send?text=<%= CGI.escape(title) %>&nbsp;<%= url %>"
      class="show-for-small-only" data-action="share/whatsapp/share">
     <span class="icon-whatsapp whatsapp"></span>
     <span class="show-for-sr"><%= t("social.whatsapp") %></span>

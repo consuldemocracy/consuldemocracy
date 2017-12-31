@@ -9,6 +9,8 @@ class Debate < ActiveRecord::Base
   include Filterable
   include HasPublicAuthor
   include Graphqlable
+  include Relationable
+  include Notifiable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -37,13 +39,20 @@ class Debate < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
+  scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
   scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
   scope :featured,                 -> { where("featured_at is not null")}
   scope :public_for_api,           -> { all }
+
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
 
   attr_accessor :link_required
+
+  def self.recommendations(user)
+    tagged_with(user.interests, any: true)
+      .where("author_id != ?", user.id)
+  end
 
   def searchable_values
     { title              => 'A',
@@ -88,7 +97,7 @@ class Debate < ActiveRecord::Base
 
   def register_vote(user, vote_value)
     if votable_by?(user)
-      Debate.increment_counter(:cached_anonymous_votes_total, id) if (user.unverified? && !user.voted_for?(self))
+      Debate.increment_counter(:cached_anonymous_votes_total, id) if user.unverified? && !user.voted_for?(self)
       vote_by(voter: user, vote: vote_value)
     end
   end
@@ -135,4 +144,9 @@ class Debate < ActiveRecord::Base
     featured_at.present?
   end
 
+  def self.debates_orders(user)
+    orders = %w{hot_score confidence_score created_at relevance}
+    orders << "recommendations" if user.present?
+    orders
+  end
 end

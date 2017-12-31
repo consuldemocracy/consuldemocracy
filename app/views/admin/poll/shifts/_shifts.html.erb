@@ -1,0 +1,26 @@
+<h3><%= t("admin.poll_shifts.new.shifts") %></h3>
+<table class="fixed">
+  <thead>
+    <tr>
+      <th><%= t("admin.poll_shifts.new.date") %></th>
+      <th><%= t("admin.poll_shifts.new.officer") %></th>
+      <th><%= t("admin.poll_shifts.new.task") %></th>
+      <th class="text-right"><%= t("admin.poll_shifts.new.shift") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @shifts.each do |shift| %>
+      <tr id="shift_<%= shift.id %>" class="shift">
+        <td><%= l(shift.date.to_date, format: :long) %></td>
+        <td><%= shift.officer_name %></td>
+        <td><%= t("admin.poll_shifts.#{shift.task}") %></td>
+        <td class="text-right">
+          <%= link_to t("admin.poll_shifts.new.remove_shift"),
+                      admin_booth_shift_path(@booth, shift),
+                      method: :delete,
+                      class: "button hollow alert" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

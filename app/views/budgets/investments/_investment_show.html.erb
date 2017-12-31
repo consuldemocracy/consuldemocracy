@@ -4,8 +4,14 @@
     <div class="small-12 medium-9 column">
       <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
-      <h1><%= investment.title %></h1>
+      <% if can_destroy_image?(investment) %>
+        <%= link_to t("images.remove_image"),
+                    image_path(investment.image, from: request.url),
+                    method: :delete,
+                    class: 'button hollow float-right' %>
+      <% end %>
 
+      <h1><%= investment.title %></h1>
       <div class="budget-investment-info">
         <%= render '/shared/author_info', resource: investment %>
 
@@ -16,6 +22,9 @@
       </div>
 
       <br>
+
+      <%= render_image(investment.image, :large, true) if investment.image.present? %>
+
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
       </p>
@@ -36,6 +45,12 @@
 
       <%= safe_html_with_links investment.description.html_safe %>
 
+      <% if feature?(:map) && map_location_available?(@investment.map_location) %>
+        <div class="margin">
+          <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
+        </div>
+      <% end %>
+
       <% if investment.external_url.present? %>
         <div class="document-link">
           <%= text_with_links investment.external_url %>
@@ -51,6 +66,7 @@
         <h2><%= t('budgets.investments.show.price_explanation') %></h2>
         <p><%= investment.price_explanation %></p>
       <% end %>
+
     </div>
 
     <aside class="small-12 medium-3 column">
@@ -110,12 +126,18 @@
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("budgets.investments.show.share"),
         title: investment.title,
+        image_url: image_absolute_url(investment.image, :thumb),
         url: budget_investment_url(budget_id: investment.budget_id, id: investment.id)
       } %>
 
       <% if current_user %>
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-title"><%= t("shared.follow") %></p>
+
         <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, investment) %>
       <% end %>
+
+      <%= render 'communities/access_button', community: investment.community %>
 
      </aside>
   </div>

@@ -1,0 +1,24 @@
+en:
+  documents:
+    tab: Documents
+    no_documents: Don't have uploaded documents
+    max_documents_allowed_reached_html: You have reached the maximum number of documents allowed! <strong>You have to delete one before you can upload another.</strong>
+    form:
+      title: Documents
+      title_placeholder: Add a descriptive title for the document
+      attachment_label: Choose document
+      delete_button: Remove document
+      note: "You can upload up to a maximum of %{max_documents_allowed} documents of following content types: %{accepted_content_types}, up to %{max_file_size} MB per file."
+      add_new_document: Add new document
+    actions:
+      destroy:
+        notice: Document was deleted successfully.
+        alert: Cannot destroy document.
+        confirm: Are you sure you want to delete the document? This action cannot be undone!
+    buttons:
+      download_document: Dowload file
+      destroy_document: Destroy
+    errors:
+      messages:
+        in_between: must be in between %{min} and %{max}
+        wrong_content_type: content type %{content_type} does not match any of accepted content types %{accepted_content_types}

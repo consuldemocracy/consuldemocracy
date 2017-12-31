@@ -9,8 +9,6 @@
 <% end %>
 
 <main>
-  <h1 class="show-for-sr"><%= t("shared.outline.debates") %></h1>
-
   <% if @search_terms || @advanced_search_terms || @tag_filter %>
     <div class="highlight no-margin-top padding margin-bottom">
       <div class="row">
@@ -33,6 +31,8 @@
         </div>
       </div>
     </div>
+  <% else %>
+    <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
   <% end %>
 
   <div class="row">
@@ -54,8 +54,28 @@
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button expanded' %>
       </div>
 
-      <%= render @debates %>
+      <% if @debates.any? || current_user.blank? %>
+        <%= render @debates %>
+      <% else %>
+        <%= empty_recommended_debates_message_text(current_user) %>
+      <% end %>
       <%= paginate @debates %>
+
+      <% unless @search_terms || @advanced_search_terms || @tag_filter %>
+        <div id="section_help" class="margin" data-magellan-target="section_help">
+          <p class="lead">
+            <strong><%= t("debates.index.section_footer.title") %></strong>
+          </p>
+          <p><%= t("debates.index.section_footer.description") %></p>
+          <p><%= t("debates.index.section_footer.help_text_1") %></p>
+          <p><%= t("debates.index.section_footer.help_text_2",
+                    org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
+          <p><%= t("debates.index.section_footer.help_text_3",
+                    proposal: link_to(t("debates.index.section_footer.proposals_link"), proposals_path),
+                    budget: link_to(t("debates.index.section_footer.budget_link"), budgets_path)).html_safe %>
+          </p>
+        </div>
+      <% end %>
     </div>
 
     <div class="small-12 medium-3 column">

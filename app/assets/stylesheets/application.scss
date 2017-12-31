@@ -9,9 +9,14 @@
 @import 'pages';
 @import 'legislation';
 @import 'legislation_process';
+@import 'community';
 @import 'custom';
 @import 'c3';
 @import 'annotator.min';
 @import 'annotator_overrides';
 @import 'jquery-ui/datepicker';
 @import 'datepicker_overrides';
+@import 'jquery-ui/autocomplete';
+@import 'autocomplete_overrides';
+@import 'jquery-ui/sortable';
+@import 'leaflet';

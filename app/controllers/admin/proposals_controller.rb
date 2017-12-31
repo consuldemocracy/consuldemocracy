@@ -1,5 +1,9 @@
 class Admin::ProposalsController < Admin::BaseController
+  include FeatureFlags
+
   has_filters %w{without_confirmed_hide all with_confirmed_hide}, only: :index
+
+  feature_flag :proposals
 
   before_action :load_proposal, only: [:confirm_hide, :restore]
 

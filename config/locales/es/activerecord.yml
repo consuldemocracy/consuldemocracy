@@ -31,21 +31,27 @@ es:
       administrator:
         one: "Administrador"
         other: "Administradores"
+      valuator:
+        one: "Evaluador"
+        other: "Evaluadores"
+      manager:
+        one: "Gestor"
+        other: "Gestores"
       vote:
         one: "Voto"
         other: "Votos"
       organization:
         one: "Organización"
         other: "Organizaciones"
-      proposal:
-        one: "Propuesta ciudadana"
-        other: "Propuestas ciudadanas"
       poll/booth:
         one: "urna"
         other: "urnas"
       poll/officer:
         one: "presidente de mesa"
         other: "presidentes de mesa"
+      proposal:
+        one: "Propuesta ciudadana"
+        other: "Propuestas ciudadanas"
       spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
@@ -59,11 +65,11 @@ es:
         one: Bloque
         other: Bloques
       legislation/process:
-          one: "Proceso"
-          other: "Procesos"
+        one: "Proceso"
+        other: "Procesos"
       legislation/draft_versions:
-          one: "Versión borrador"
-          other: "Versiones borrador"
+        one: "Versión borrador"
+        other: "Versiones borrador"
       legislation/draft_texts:
         one: "Borrador"
         other: "Borradores"
@@ -76,6 +82,18 @@ es:
       legislation/answers:
         one: "Respuesta"
         other: "Respuestas"
+      documents:
+        one: "Documento"
+        other: "Documentos"
+      images:
+        one: "Imagen"
+        other: "Imágenes"
+      topic:
+        one: "Tema"
+        other: "Temas"
+      poll:
+        one: "Votación"
+        other: "Votaciones"
     attributes:
       budget:
         name: "Nombre"
@@ -89,19 +107,22 @@ es:
         phase: "Fase"
         currency_symbol: "Divisa"
       budget/investment:
-        administrator_id: "Administrador"
-        description: "Descripción"
-        external_url: "Enlace a documentación adicional"
         heading_id: "Partida presupuestaria"
         title: "Título"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
         location: "Ubicación"
+        administrator_id: "Administrador"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
-      comment:
-        body: "Comentario"
-        user: "Usuario"
+        image: "Imagen descriptiva de la propuesta de inversión"
+        image_title: "Título de la imagen"
       budget/investment/milestone:
         title: "Título"
         description: "Descripción"
+        publication_date: "Fecha de publicación"
+      comment:
+        body: "Comentario"
+        user: "Usuario"
       debate:
         author: "Autor"
         description: "Opinión"
@@ -114,7 +135,7 @@ es:
         description: "Descripción"
         terms_of_service: "Términos de servicio"
       user:
-        login: Email o nombre de usuario
+        login: "Email o nombre de usuario"
         email: "Correo electrónico"
         username: "Nombre de usuario"
         password_confirmation: "Confirmación de contraseña"
@@ -139,9 +160,10 @@ es:
         starts_at: "Fecha de apertura"
         ends_at: "Fecha de cierre"
         geozone_restricted: "Restringida por zonas"
+        summary: "Resumen"
+        description: "Descripción"
       poll/question:
         title: "Pregunta"
-        valid_answers: "Posibles respuestas"
         summary: "Resumen"
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
@@ -192,6 +214,18 @@ es:
         value: Valor
       legislation/annotation:
         text: Comentario
+      document:
+        title: Título
+        attachment: Archivo adjunto
+      image:
+        title: Título
+        attachment: Archivo adjunto
+      poll/question/answer:
+        title: Respuesta
+        description: Descripción
+      poll/question/answer/video:
+        title: Título
+        url: Vídeo externo
     errors:
       models:
         user:
@@ -206,6 +240,15 @@ es:
           attributes:
             max_per_day:
               invalid: "Has llegado al número máximo de mensajes privados por día"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "La imagen debe tener al menos %{required_min_width}px de largo"
+              min_image_height: "La imagen debe tener al menos %{required_min_height}px de alto"
+        map_location:
+          attributes:
+            map:
+              invalid: El mapa no puede estar en blanco. Añade un punto al mapa o marca la casilla si no hace falta un mapa.
         poll/voter:
           attributes:
             document_number:
@@ -245,3 +288,8 @@ es:
             image:
               image_width: "Debe tener %{required_width}px de ancho"
               image_height: "Debe tener %{required_height}px de alto"
+      messages:
+        record_invalid: "La validación falló: %{errors}"
+        restrict_dependent_destroy:
+          has_one: No se puede eliminar el registro porque existe un %{record} dependiente
+          has_many: No se puede eliminar el registro porque existen %{record} dependientes

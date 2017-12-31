@@ -1,0 +1,23 @@
+<div class="documents-list">
+  <%= f.label :documents, t("documents.form.title") %>
+  <p class="help-text"><%= documentables_note(documentable) %></p>
+
+  <div id="nested-documents" data-max-documents-allowed="<%= documentable.class.max_documents_allowed%>">
+    <%= f.fields_for :documents do |documents_builder| %>
+      <%= render 'documents/document_fields', f: documents_builder %>
+    <% end %>
+  </div>
+
+  <%= link_to_add_association t('documents.form.add_new_document'), f, :documents,
+                              partial: "documents/document_fields",
+                              id: "new_document_link",
+                              class: "button hollow  #{"hide" if documentable.documents.count >= documentable.class.max_documents_allowed}",
+                              data: {
+                                association_insertion_node: "#nested-documents",
+                                association_insertion_method: "append"
+                              } %>
+
+  <div id="max-documents-notice" class="max-documents-notice callout warning text-center <%= "hide" unless max_documents_allowed?(documentable) %>">
+    <%= t "documents.max_documents_allowed_reached_html" %>
+  </div>
+</div>

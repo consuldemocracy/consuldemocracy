@@ -1,35 +1,40 @@
 <% provide :title do %><%= t("polls.index.title") %><% end %>
-<% content_for :wrapper_class, "light" %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: polls_url %>
 <% end %>
 
-<div class="expanded no-margin-top dark-heading">
-  <div class="row">
-    <div class="small-12 medium-6 column padding">
-      <h1><%= t("polls.index.title") %></h1>
-    </div>
-  </div>
-</div>
+<%= render "shared/section_header", i18n_namespace: "polls.index.section_header", image: "polls" %>
 
 <div class="row">
-  <div class="small-12 medium-3 column">
-    <%= render 'shared/filter_subnav_vertical', i18n_namespace: "polls.index" %>
-  </div>
+  <div class="small-12 column">
+    <%= render 'shared/filter_subnav', i18n_namespace: "polls.index" %>
 
-  <div class="small-12 medium-9 column margin-top">
     <% polls_by_geozone_restriction = @polls.group_by(&:geozone_restricted) %>
 
     <% if polls_by_geozone_restriction[false].present? %>
-      <h3 class="section-title-divider"><%= t("polls.index.no_geozone_restricted") %></h3>
+      <h3 class="section-title-divider">
+        <span><%= t("polls.index.no_geozone_restricted") %></span>
+      </h3>
       <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[false]} %>
     <% end %>
 
     <% if polls_by_geozone_restriction[true].present? %>
-      <h3 class="section-title-divider"><%= t("polls.index.geozone_restricted") %></h3>
+      <h3 class="section-title-divider">
+        <span><%= t("polls.index.geozone_restricted") %></span>
+      </h3>
       <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[true]} %>
     <% end %>
 
     <%= paginate @polls %>
+
+    <div id="section_help" class="margin" data-magellan-target="section_help">
+      <p class="lead">
+        <strong><%= t("polls.index.section_footer.title") %></strong>
+      </p>
+      <p><%= t("polls.index.section_footer.description") %></p>
+      <p><%= t("polls.index.section_footer.help_text_1") %></p>
+      <p><%= t("polls.index.section_footer.help_text_2",
+                org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
+    </div>
   </div>
 </div>

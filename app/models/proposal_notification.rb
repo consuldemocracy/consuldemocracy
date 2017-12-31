@@ -1,6 +1,6 @@
 class ProposalNotification < ActiveRecord::Base
-
   include Graphqlable
+  include Notifiable
 
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   belongs_to :proposal
@@ -19,6 +19,10 @@ class ProposalNotification < ActiveRecord::Base
     if proposal.notifications.last.created_at > minimum_interval
       errors.add(:title, I18n.t('activerecord.errors.models.proposal_notification.attributes.minimum_interval.invalid', interval: interval))
     end
+  end
+
+  def notifiable
+    proposal
   end
 
 end

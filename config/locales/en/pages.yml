@@ -1,4 +1,3 @@
----
 en:
   pages:
     census_terms: To confirm the account, you must be 16 or older and be registered, having provided the information requested previously, will verify. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed in a file mentioned previously in the terms and conditions of use for the Portal.
@@ -63,9 +62,9 @@ en:
         text: |-
           Use it in your local government or help us to improve it, it is free software.
 
-          This Open Government Portal use the [Consul app](https://github.com/ayuntamientomadrid 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the word with the modifications he wants (allowing others to do the same). Because we think culture is better and richer when it is released.
+          This Open Government Portal use the [CONSUL app](https://github.com/consul/consul 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the word with the modifications he wants (allowing others to do the same). Because we think culture is better and richer when it is released.
 
-          If you are a programmer, you can see the code and help us to improve it at [Consul app](https://github.com/ayuntamientomadrid 'consul github').
+          If you are a programmer, you can see the code and help us to improve it at [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Use it in your local government
     privacy: Privacy Policy

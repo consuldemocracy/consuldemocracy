@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-es
+//= require jquery-ui/widgets/autocomplete
+//= require jquery-ui/widgets/sortable
+//= require jquery-fileupload/basic
 //= require foundation
 //= require turbolinks
 //= require ckeditor/loader
@@ -59,8 +62,18 @@
 //= require legislation_annotatable
 //= require watch_form_changes
 //= require followable
+//= require flaggable
+//= require documentable
+//= require imageable
 //= require tree_navigator
 //= require custom
+//= require tag_autocomplete
+//= require polls_admin
+//= require leaflet
+//= require map
+//= require polls
+//= require sortable
+//= require table_sortable
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -94,10 +107,18 @@ var initialize_modules = function() {
     App.LegislationAnnotatable.initialize();
   App.WatchFormChanges.initialize();
   App.TreeNavigator.initialize();
+  App.Documentable.initialize();
+  App.Imageable.initialize();
+  App.TagAutocomplete.initialize();
+  App.PollsAdmin.initialize();
+  App.Map.initialize();
+  App.Polls.initialize();
+  App.Sortable.initialize();
+  App.TableSortable.initialize();
 };
 
 $(function(){
-  Turbolinks.enableProgressBar()
+  Turbolinks.enableProgressBar();
 
   $(document).ready(initialize_modules);
   $(document).on('page:load', initialize_modules);

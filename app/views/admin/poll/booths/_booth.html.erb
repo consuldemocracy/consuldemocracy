@@ -6,8 +6,14 @@
     <%= booth.location %>
   </td>
   <td class="text-right">
-    <%= link_to t("admin.actions.edit"),
-                edit_admin_booth_path(booth),
-                class: "button hollow" %>
+    <% if controller_name == "shifts" || controller_name == "booths" && action_name == "available" %>
+      <%= link_to t("admin.booths.booth.shifts"),
+                  new_admin_booth_shift_path(booth),
+                  class: "button hollow" %>
+    <% else %>
+      <%= link_to t("admin.booths.booth.edit"),
+                  edit_admin_booth_path(booth),
+                  class: "button hollow" %>
+    <% end %>
   </td>
 </tr>

@@ -1,4 +1,3 @@
----
 en:
   account:
     show:
@@ -13,11 +12,9 @@ en:
       personal: Personal details
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
-      public_interests_label: Keep my interests public
-      public_interests_my_title_list: List of interests (Tags of elements you follow)
-      public_interests_user_title_list: List of interests (Tags of elements this user follows)
-      public_interests_my_empty_list: You do not follow any elements yet.
-      public_interests_user_empty_list: This user does not follow any elements yet.
+      public_interests_label: Keep the labels of the elements I follow public
+      public_interests_my_title_list: Tags of elements you follow
+      public_interests_user_title_list: Tags of elements this user follows
       save_changes_submit: Save changes
       subscription_to_website_newsletter_label: Receive by email website relevant information
       email_on_direct_message_label: Receive emails about direct messages
@@ -64,6 +61,7 @@ en:
       most_voted: Most voted
       newest: Newest first
       oldest: Oldest first
+      most_commented: Most commented
     select_order: Sort by
     show:
       return_to_commentable: 'Go back to '
@@ -108,6 +106,10 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
+        recommendations: recommendations
+      recommendations:
+        without_results: There are not debates related to your interests
+        without_interests: Follow proposals so we can give you recommendations
       search_form:
         button: Search
         placeholder: Search debates...
@@ -118,6 +120,18 @@ en:
       select_order: Order by
       start_debate: Start a debate
       title: Debates
+      section_header:
+        icon_alt: Debates icon
+        title: Debates
+        help: Help about debates
+      section_footer:
+        title: Help about debates
+        description: Start a debate to share opinions with others about the topics you are concerned about.
+        help_text_1: "The space for citizen debates is aimed at anyone who can expose issues of their concern and those who want to share opinions with other people."
+        help_text_2: 'To open a debate you need to sign up on %{org}. Users can also comment on open debates and rate them with the "I agree" or "I disagree" buttons found in each of them.'
+        help_text_3: "Keep in mind that a debate does not start any specific action. If you want to make a %{proposal} for the city or raise a investment project of %{budget} when the phase is open, go to the corresponding section."
+        proposals_link: proposal
+        budget_link: participatory budgeting
     new:
       form:
         submit_button: Start a debate
@@ -141,6 +155,7 @@ en:
       flag: This debate has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
       share: Share
+      author: Author
     update:
       form:
         submit_button: Save changes
@@ -156,15 +171,20 @@ en:
     direct_message: private message
     error: error
     errors: errors
-    not_saved: 'prevented this %{resource} from being saved:'
+    not_saved_html: "prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
     policy: Privacy Policy
     proposal: Proposal
     proposal_notification: "Notification"
     spending_proposal: Spending proposal
     budget/investment: Investment
+    poll/shift: Shift
+    poll/question/answer: Answer
     user: Account
     verification/sms: phone
     signature_sheet: Signature sheet
+    document: Document
+    topic: Topic
+    image: Image
   geozones:
     none: All city
     all: All scopes
@@ -177,10 +197,10 @@ en:
     footer:
       accessibility: Accessibility
       conditions: Terms and conditions of use
-      consul: Consul application
+      consul: CONSUL application
       consul_url: https://github.com/consul/consul
       contact_us: For technical assistance enters
-      copyright: Consul, %{year}
+      copyright: CONSUL, %{year}
       description: This portal uses the %{consul} which is %{open_source}.
       faq: technical assistance
       open_data_text: Every detail about the City Council is yours to access.
@@ -205,7 +225,7 @@ en:
       external_link_transparency: Transparency
       external_link_transparency_url: https://transparency.consul
       locale: 'Language:'
-      logo: Consul logo
+      logo: CONSUL logo
       management: Management
       moderation: Moderation
       valuation: Valuation
@@ -220,11 +240,10 @@ en:
       no_notifications: "You don't have new notifications"
       open: open
       open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
-      open_city_title: Love the city, and it will become a city you love.
+      open_city_title: Love the city, and it will become a city you love
       open_gov: Open government
       proposals: Proposals
       poll_questions: Voting
-      see_all: See proposals
       budgets: Participatory budgeting
       spending_proposals: Spending Proposals
     admin:
@@ -243,6 +262,7 @@ en:
         one: Someone commented on
         other: There are %{count} new comments on
       empty_notifications: You don't have new notifications.
+      notifiable_hidden: This resource is not available anymore.
       mark_all_as_read: Mark all as read
       proposal_notification:
         one: There is one new notification on
@@ -262,7 +282,8 @@ en:
       sign_up: Sign up with Facebook
       name: Facebook
     finish_signup:
-      title: Add your email address
+      title: "Additional details"
+      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
     google_oauth2:
       sign_in: Sign in with Google
       sign_up: Sign up with Google
@@ -274,9 +295,6 @@ en:
     info_sign_in: "Sign in with:"
     info_sign_up: "Sign up with:"
     or_fill: "Or fill the following form:"
-    finish_signup:
-      title: "Additional details"
-      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
   proposals:
     create:
       form:
@@ -317,6 +335,10 @@ en:
       tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
       tags_label: Tags
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+      map_location: "Map location"
+      map_location_instructions: "Navigate the map to the location and place the marker."
+      map_remove_marker: "Remove map marker"
+      map_skip_checkbox: "This proposal doesn't have a concrete location or I'm not aware of it."
     index:
       featured_proposals: Featured
       filter_topic:
@@ -328,7 +350,11 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
-        archival_date: Archived
+        archival_date: archived
+        recommendations: recommendations
+      recommendations:
+        without_results: There are not proposals related to your interests
+        without_interests: Follow proposals so we can give you recommendations
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
       retired_links:
@@ -351,6 +377,16 @@ en:
       title: Proposals
       top: Top weekly
       top_link_proposals: The most supported proposals by category
+      section_header:
+        icon_alt: Proposals icon
+        title: Proposals
+        help: Help about proposals
+      section_footer:
+        title: Help about proposals
+        description: Make a citizen proposal. If it gets enough supports it will go to voting phase, so you can get all the citizens to decide how they want their city to be.
+        help_text_1: "The citizen proposals are an opportunity for neighbours and collectives to decide directly how they want to shape their city. Any person can make a proposal about a topic or concern of their interest, for the City Council to make it, after it gets enough supports to be put to a citizens vote."
+        help_text_2: "To create a proposal, you must sign up on %{org}. The proposals that get the support of 1% of the users in the web, goes to voting phase. To support proposals it is necessary to have a verified account."
+        help_text_3: "A citizen vote is celebrated when the proposals get the necessary supports. Once celebrated, if there are more people in favor than against, the City Council assumes the proposal and carries it out."
     new:
       form:
         submit_button: Create proposal
@@ -382,6 +418,10 @@ en:
         one: 1 support
         other: "%{count} supports"
         zero: No supports
+      votes:
+        one: 1 vote
+        other: "%{count} votes"
+        zero: No votes
       supports_necessary: "%{number} supports needed"
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
@@ -406,6 +446,9 @@ en:
       send_notification: Send notification
       no_notifications: "This proposal has any notifications."
       embed_video_title: "Video on %{proposal}"
+      title_external_url: "Additional documentation"
+      title_video_url: "External video"
+      author: Author
     update:
       form:
         submit_button: Save changes
@@ -426,30 +469,23 @@ en:
       no_geozone_restricted: "All city"
       geozone_restricted: "Districts"
       geozone_info: "Can participate people in the Census of: "
-      can_answer: "You can participate in this poll!"
-      cant_answer: "This poll is not available on your geozone"
-      cant_answer_not_logged_in: "You must sign in or sign up to participate"
-      cant_answer_verify: "You must verify your account in order to answer"
       already_answer: "You already have participated in this poll"
+      section_header:
+        icon_alt: Voting icon
+        title: Voting
+        help: Help about voting
+      section_footer:
+        title: Help about voting
+        description: Sign up to vote on citizen proposals and questions the City Council ask to the neighbors. Make municipal decisions directly.
+        help_text_1: "Voting takes place when a citizen proposal supports reaches 1% of the census with voting rights. Voting can also include questions that the City Council ask to the citizens decision."
+        help_text_2: "To participate in the next vote you have to sign up on %{org} and verify your account. All registered voters in the city over 16 years old can vote. The results of all votes are binding on the government."
     show:
-      dates_title: "Participation dates"
+      already_voted_in_booth: "You have already participated in a physical booth. You can not participate again."
+      already_voted_in_web: "You have already participated in this poll. If you vote again it will be overwritten."
+      back: Back to voting
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
-      signin: Sign in
-      signup: Sign up
-      cant_answer_verify_html: "You must %{verify_link} in order to answer."
-      verify_link: "verify your account"
-      cant_answer_incoming: "This poll has not yet started."
-      cant_answer_expired: "This poll has finished."
-  poll_questions:
-    create_question: "Create question"
-    default_valid_answers: "Yes, No"
-    show:
-      answer_this_question: "Answer this question"
-      original_proposal: "Original proposal"
-      author: "Created by"
-      dates_title: "Participation dates"
-      more_info: "More information"
-      not_logged_in: "You must %{signin} or %{signup} to participate."
+      comments_tab: Comments
+      login_to_comment: You must %{signin} or %{signup} to leave a comment.
       signin: Sign in
       signup: Sign up
       cant_answer_verify_html: "You must %{verify_link} in order to answer."
@@ -457,9 +493,36 @@ en:
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "This question is not available on your geozone."
+      more_info_title: "More information"
+      documents: Documents
+      zoom_plus: Expand image
+      read_more: "Read more about %{answer}"
+      read_less: "Read less about %{answer}"
+      participate_in_other_polls: Participate in other polls
+      videos: "External video"
+      info_menu: "Information"
+      stats_menu: "Participation statistics"
+      results_menu: "Poll results"
+      stats:
+        title: "Participation data"
+        total_participation: "Total participation"
+        total_votes: "Total amount of given votes"
+        votes: "VOTES"
+        web: "WEB"
+        booth: "BOOTH"
+        total: "TOTAL"
+        valid: "Valid"
+        white: "White votes"
+        null_votes: "Invalid"
+      results:
+        title: "Questions"
+        most_voted_answer: "Most voted answer: "
+  poll_questions:
+    create_question: "Create question"
+    show:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
-      poll: "Poll"
+      voted_token: "You can write down this vote identifier, to check your vote on the final results:"
   proposal_notifications:
     new:
       title: "Send message"
@@ -474,9 +537,6 @@ en:
     edit: 'Edit'
     save: 'Save'
     delete: 'Delete'
-    comments:
-      title: 'Comments'
-      login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'
     "yes": "Yes"
     "no": "No"
     search_results: "Search results"
@@ -507,6 +567,7 @@ en:
     collective: Collective
     flag: Flag as inappropriate
     follow: "Follow"
+    following: "Following"
     follow_entity: "Follow %{entity}"
     followable:
       budget_investment:
@@ -551,14 +612,16 @@ en:
     target_blank_html: " (link opens in new window)"
     you_are_in: "You are in"
     unflag: Unflag
-    unfollow: "Unfollow"
     unfollow_entity: "Unfollow %{entity}"
     outline:
-      debates: Debates
-      proposals: Proposals
       budget: Participatory budget
       searcher: Searcher
     go_to_page: "Go to page of "
+    share: Share
+    orbit:
+      previous_slide: Previous Slide
+      next_slide: Next Slide
+    documentation: Additional documentation
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"
@@ -650,7 +713,12 @@ en:
       deleted: Deleted
       deleted_debate: This debate has been deleted
       deleted_proposal: This proposal has been deleted
-      deleted_budget_investment: This investment has been deleted
+      deleted_budget_investment: This investment project has been deleted
+      proposals: Proposals
+      debates: Debates
+      budget_investments: Budget investments
+      comments: Comments
+      actions: Actions
       filters:
         comments:
           one: 1 Comment
@@ -669,12 +737,13 @@ en:
           other: "%{count} Following"
       no_activity: User has no public activity
       no_private_messages: "This user doesn't accept private messages."
-      private_activity: This user decided to keep the activity list private
+      private_activity: This user decided to keep the activity list private.
       send_private_message: "Send private message"
     proposals:
       send_notification: "Send notification"
       retire: "Retire"
-      retired: "Retired"
+      retired: "Retired proposal"
+      see: "See proposal"
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
@@ -713,6 +782,16 @@ en:
     proposal:
       description: Open space for citizen proposals about the kind of city we want to live in.
       title: You propose
+    recommended:
+      title: Recommendations that may interest you
+      debates:
+        title: Recommended debates
+        btn_text_link: All recommended debates
+      proposals:
+        title: Recommended proposals
+        btn_text_link: All recommended proposals
+      budget_investments:
+        title: Recommended investments
     verification:
       i_dont_have_an_account: I don't have an account
       i_have_an_account: I already have an account
@@ -732,3 +811,18 @@ en:
   invisible_captcha:
     sentence_for_humans: "If you are human, ignore this field"
     timestamp_error_message: "Sorry, that was too quick! Please resubmit."
+  related_content:
+    title: "Related content"
+    add: "Add related content"
+    label: "Link to related content"
+    placeholder: "%{url}"
+    help: "You can add links of %{models} inside of %{org}."
+    submit: "Add"
+    error: "Link not valid. Remember to start with %{url}."
+    success: "You added a new related content"
+    is_related: "¿Is it related content?"
+    score_positive: "Yes"
+    score_negative: "No"
+    content_title:
+      proposal: "Proposal"
+      debate: "Debate"
