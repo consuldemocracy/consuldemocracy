@@ -185,7 +185,8 @@ section "Creating Users" do
   level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1")
 
   verified = create_user('verified@madrid.es', 'verified')
-  verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
+  verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                  verified_at: Time.current, document_number: "3333333333")
 
   (1..10).each do |i|
     org_name = Faker::Company.name
