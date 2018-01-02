@@ -1,5 +1,3 @@
-
----
 va:
   activemodel:
     models:
@@ -18,3 +16,7 @@ va:
           confirmation_code: "Codi de confirmació"
         email:
           recipient: "Email"
+      officing/residence:
+        document_type: "Tipus de document"
+        document_number: "Número de document (inclosa letra)"
+        year_of_birth: "Any de naixement"

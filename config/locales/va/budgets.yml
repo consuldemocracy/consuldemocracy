@@ -1,19 +1,21 @@
----
 va:
   budgets:
     button_text: Participa en els pressupostos de la teua ciutat
     ballots:
       show:
-        title: Els meus vots
-        amount_spent: Cost total
-        remaining: "Et queden <span>%{amount}</span> per a invertir"
-        remove: Llevar vot
+        title: Mis votos
+        amount_spent: Coste total
+        remaining: "Te quedan <span>%{amount}</span> para invertir"
+        no_balloted_group_yet: "Todavía no has votado proyectos de este grupo, ¡vota!"
+        remove: Quitar voto
         voted_html:
-          one: "Has votat <span>una</span> proposta."
-          other: "Has votat <span>%{count}</span> propostes."
-        voted_info_html: "Pots canviar els teus vots en qualsevol moment fins al tancament d'aquesta fase.<br> No fa falta que invertisques tots els diners disponibles."
-        zero: "Encara no has votat cap proposta d'inversió."
+          one: "Has votado <span>una</span> propuesta."
+          other: "Has votado <span>%{count}</span> propuestas."
+        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
+        zero: Todavía no has votado ninguna propuesta de inversión.
       reasons_for_not_balloting:
+        not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
+        change_ballot: cambiar tus votos
         not_logged_in: Necessites %{signin} o %{signup} per a continuar.
         not_verified: Les propostes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
         organization: Les organitzacions no poden votar.
@@ -26,6 +28,8 @@ va:
         title: Selecciona una opció
         unfeasible_title: Propostes inviables
         unfeasible: Veure propostes inviables
+        #unselected_title: Propuestas no seleccionadas para la votación final
+        #unselected: Ver las propuestas no seleccionadas para la votación final
     phase:
       accepting: Acceptant propostes
       reviewing: Revisant propostes
@@ -36,12 +40,27 @@ va:
       finished: Presupost finalitzat
     index:
       title: Pressupostos participatius
+      section_header:
+        icon_alt: Icono de Presupuestos participativos
+        title: Presupuestos participativos
+        help: Ayuda sobre presupuestos participativos
+      section_footer:
+        title: Ayuda sobre presupuestos participativos
+        description: Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal.
+        help_text_1: "Los presupuestos participativos son unos procesos en los que la ciudadanía decide de forma directa en qué se gasta una parte del presupuesto municipal. Cualquier persona empadronada mayor de 16 años puede proponer un proyecto de gasto que se preselecciona en una fase de apoyos ciudadanos."
+        help_text_2: "Los proyectos más votados se evalúan y pasan a una votación final en la que se deciden las actuaciones que llevará a cabo el Ayuntamiento una vez se aprueben los presupuestos municipales del año próximo."
+        help_text_3: "La presentación de proyectos de presupuestos participativos se lleva a cabo desde enero y a lo largo de un periodo de mes y medio, aproximadamente. Para participar y plantear propuestas para toda la ciudad y/ los distritos hay que registrarse en %{org} y verificar la cuenta."
+        help_text_4: "Para conseguir el mayor número de apoyos y votos posible, elige un titular descriptivo y comprensible de tu proyecto. Después tienes un espacio para desarrollar el planteamiento de tu propuesta. Aporta todos los datos y explicaciones, e incluso documentos e imágenes, para ayudar a otras personas participantes a entender mejor lo que planteas."
     investments:
       form:
         tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
         tags_label: Temes
         tag_category_label: "Categories"
         tags_placeholder: "Escriu les etiquetes que desitges separades per una coma (',')"
+        tag_category_label: "Categoríes"
+        map_location: "Ubicació en el mapa"
+        map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
+        map_remove_marker: "Eliminar el marcador"
       index:
         title: Pressupostos participatius
         unfeasible: Propostes d'inversió no viables
@@ -52,7 +71,7 @@ va:
           button: Cercar
           placeholder: Cercar propostes d'inversió...
           title: Cercar
-        search_results:
+        search_results_html:
           one: " que conté '%{search_term}'"
           other: " que contenen '%{search_term}'"
         sidebar:
@@ -77,7 +96,14 @@ va:
           random: Aleatòries
           confidence_score: Millor valorades
           price: Per cost
+
+
+
+
+
+
       show:
+
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost
         unfeasibility_explanation: Informe de inviabilitat
@@ -88,7 +114,14 @@ va:
         title: Proposta d'inversió
         supports: Avals
         votes: Vots
-      wrong_price_format: Solament pot incloure caràcters numèrics
+        price: Coste
+        comments_tab: Comentarios
+        milestones_tab: Seguimiento
+        no_milestones: No hay hitos definidos
+        milestone_publish_date: "Publicado el %{publish_date}"
+      wrong_price_format: Solo puede incluir caracteres numéricos
+
+
       investment:
         title: Proposta d'inversió
         add: Afegir
@@ -101,16 +134,38 @@ va:
           other: "%{count} avals"
           zero: Sense avals
         give_support: Avalar
+
       header:
-        check_ballot: Revisar els meus vots
-        different_heading_assigned_html: "Ja vas avalar propostes d'una altra secció del pressupost: %{heading_link}"
+        check_ballot: Revisar mis votos
+        different_heading_assigned_html: 'Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}'
+        change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
+        check_ballot_link: "revisar mis votos"
     progress_bar:
-      available: "Disponible: "
+      available: 'Disponible: '
     show:
-      group: Grup
+      group: Grupo
       phase: Fase actual
-      unfeasible_title: Propostes inviables
-      unfeasible: Veure les propostes inviables
+      unfeasible_title: Propuestas inviables
+      unfeasible: Ver las propuestas inviables
+      unselected_title: Propuestas no seleccionadas para la votación final
+      unselected: Ver las propuestas no seleccionadas para la votación final
+      see_results: Ver resultados
+    results:
+      link: Resultados
+      page_title: "%{budget} - Resultados"
+      heading: "Resultados presupuestos participativos"
+      heading_selection_title: "Ámbito de actuación"
+      spending_proposal: Título
+      ballot_lines_count: Votos
+      hide_discarded_link: Ocultar descartadas
+      show_all_link: Mostrar todas
+      price: Coste total
+      amount_available: Presupuesto disponible
+      accepted: 'Propuesta de inversión aceptada: '
+      discarded: 'Propuesta de inversión descartada: '
+      incompatibles: Incompatibles
+
+
 
     index_title: Presenta la teua proposta d'inversió
     index_timeline: Els pressupostos participatius en 2 minuts

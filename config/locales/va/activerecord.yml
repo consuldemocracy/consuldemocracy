@@ -1,0 +1,302 @@
+va:
+  activerecord:
+    models:
+      activity:
+        one: "activitat"
+        other: "activitats"
+      budget:
+        one: "Pressupost participatiu"
+        other: "Pressupostos participatius"
+      budget/investment/milestone:
+        one: "Proposta d'inversió"
+        other: "Propostes d'inversió"
+      comment:
+        one: "Comentari"
+        other: "Comentaris"
+      debate:
+        one: "Debat"
+        other: "Debats"
+      tag:
+        one: "Tema"
+        other: "Temes"
+      user:
+        one: "Usuari"
+        other: "Usuaris"
+      moderator:
+        one: "Moderador"
+        other: "Moderadors"
+      administrator:
+        one: "Administrador"
+        other: "Administradors"
+      valuator:
+        one: "Evaluador"
+        other: "Evaluadors"
+      manager:
+        one: "Gestor"
+        other: "Gestors"
+      vote:
+        one: "Vot"
+        other: "Vots"
+      organization:
+        one: "Associació"
+        other: "Associacions"
+      poll/booth:
+        one: "urna"
+        other: "urnes"
+      poll/officer:
+        one: "president de taula"
+        other: "presidents de taula"
+      proposal:
+        one: "Proposta ciutadana"
+        other: "Propostes ciutadanes"
+      spending_proposal:
+        one: "Proposta d'inversió"
+        other: "Propostes d'inversió"
+      site_customization/page:
+        one: Página
+        other: Páginas
+      site_customization/image:
+        one: Imagen
+        other: Imágenes
+      site_customization/content_block:
+        one: Bloque
+        other: Bloques
+      legislation/process:
+        one: "Proceso"
+        other: "Procesos"
+      legislation/draft_versions:
+        one: "Versión borrador"
+        other: "Versiones borrador"
+      legislation/draft_texts:
+        one: "Borrador"
+        other: "Borradores"
+      legislation/questions:
+        one: "Pregunta"
+        other: "Preguntas"
+      legislation/question_options:
+        one: "Opción de respuesta cerrada"
+        other: "Opciones de respuesta cerrada"
+      legislation/answers:
+        one: "Respuesta"
+        other: "Respuestas"
+      documents:
+        one: "Documento"
+        other: "Documentos"
+      images:
+        one: "Imagen"
+        other: "Imágenes"
+      topic:
+        one: "Tema"
+        other: "Temas"
+      poll:
+        one: "Votación"
+        other: "Votaciones"
+    attributes:
+      budget:
+        name: "Nom"
+        description_accepting: "Descripció durant la fase d'aceptació"
+        description_reviewing: "Descripció durant la fase de revisió"
+        description_selecting: "Descripció durant la fase de selecció"
+        description_valuating: "Descripció durant la fase de evaluació"
+        description_balloting: "Descripció durant la fase de votació"
+        description_reviewing_ballots: "Descripció durant la fase de revisió de vots"
+        description_finished: "Descripció quan el pressupost ha finalitzat"
+        phase: "Fase"
+        currency_symbol: "Divisa"
+      budget/investment:
+        heading_id: "Partida presupuestaria"
+        title: "Títol"
+        description: "Descripció"
+        external_url: "Enllaç a documentació adicional"
+        location: "Ubicació"
+        administrator_id: "Administrador"
+        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
+        image: "Imagen descriptiva de la propuesta de inversión"
+        image_title: "Títol de la imatge"
+      budget/investment/milestone:
+        title: "Títol"
+        description: "Descripció"
+      comment:
+        body: "Comentari"
+        user: "Usuari"
+      debate:
+        author: "Autor"
+        description: "Opinió"
+        terms_of_service: "Termes de servei"
+        title: "Títol"
+      proposal:
+        author: "Autor"
+        title: "Títol"
+        question: "Pregunta"
+        description: "Descripció"
+        terms_of_service: "Termes de servei"
+      user:
+        login: Correu o nom d'usuari
+        email: "Correu electrònic"
+        username: "Nom d'usuari"
+        password_confirmation: "Confirmació de contrasenya"
+        password: "Contrasenya"
+        current_password: "Contrasenya actual"
+        phone_number: "Telèfon"
+        official_position: "Càrrec públic"
+        official_level: "Nivell del càrrec"
+        redeemable_code: "Codi de verificació per carta (opcional)"
+      organization:
+        name: "Nom de l'associació"
+        responsible_name: "Persona responsable de l'associació"
+      spending_proposal:
+        administrator_id: "Administrador"
+        association_name: "Nom de l'associació"
+        description: "Descripció"
+        external_url: "Enllaç a documentació addicional"
+        geozone_id: "Àmbit d'actuació"
+        title: "Títol"
+      spending_proposal:
+        administrator_id: "Administrador"
+        association_name: "Nombre de la asociación"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+        geozone_id: "Ámbito de actuación"
+        title: "Título"
+      signature_sheet:
+        signable_type: "Tipo de hoja de firmas"
+        signable_id: "ID Propuesta ciudadana/Propuesta inversión"
+        document_numbers: "Números de documentos"
+      site_customization/page:
+        content: Contenido
+        created_at: Creada
+        subtitle: Subtítulo
+        slug: Slug
+        status: Estado
+        title: Título
+        updated_at: última actualización
+        more_info_flag: Mostrar en la página de más información
+        print_content_flag: Botón de imprimir contenido
+        locale: Idioma
+      site_customization/image:
+        name: Nombre
+        image: Imagen
+      site_customization/content_block:
+        name: Nombre
+        locale: Idioma
+        body: Contenido
+      legislation/process:
+        title: Título del proceso
+        description: En qué consiste
+        additional_info: Información adicional
+        start_date: Fecha de inicio del proceso
+        end_date: Fecha de fin del proceso
+        debate_start_date: Fecha de inicio del debate
+        debate_end_date: Fecha de fin del debate
+        draft_publication_date: Fecha de publicación del borrador
+        allegations_start_date: Fecha de inicio de alegaciones
+        allegations_end_date: Fecha de fin de alegaciones
+        result_publication_date: Fecha de publicación del resultado final
+      legislation/draft_version:
+        title: Título de la version
+        body: Texto
+        changelog: Cambios
+        status: Estado
+        final_version: Versión final
+      legislation/question:
+        title: Título
+        question_options: Respuestas
+      legislation/question_option:
+        value: Valor
+      legislation/annotation:
+        text: Comentario
+      document:
+        title: Título
+        attachment: Archivo adjunto
+      image:
+        title: Título
+        attachment: Archivo adjunto
+      poll/question/answer:
+        title: Respuesta
+        description: Descripción
+      poll/question/answer/video:
+        title: Título
+        url: Vídeo externo
+      poll:
+        name: "Nombre"
+        starts_at: "Fecha de apertura"
+        ends_at: "Fecha de cierre"
+        geozone_restricted: "Restringida por zonas"
+        summary: "Resumen"
+        description: "Descripción"
+      poll/question:
+        title: "Pregunta"
+        summary: "Resumen"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+      signature_sheet:
+        signable_type: "Tipus de fulla de signatures"
+        signable_id: "ID Proposta ciutadana/Proposada inversió"
+        document_numbers: "Nombres de documents"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Aquest usuari ja té una clau associada"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "els temes han de ser menor o igual que %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Has arribat al nombre màxim de missatges privats per dia"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "La imagen debe tener al menos %{required_min_width}px de largo"
+              min_image_height: "La imagen debe tener al menos %{required_min_height}px de alto"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Este documento no aparece en el censo"
+              has_voted: "Este usuario ya ha votado"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio
+            debate_end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del debate
+            allegations_end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de las alegaciones
+
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "els temes han de ser menor o igual que %{count}"
+
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
+
+
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Has d'esperar un mínim de %{interval} dies entre notificacions"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'No verificat per Padró'
+              already_voted: 'Ja ha votat aquesta proposta'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "deber ser letras, números, _ y -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Debe tener %{required_width}px de ancho"
+              image_height: "Debe tener %{required_height}px de alto"
+      messages:
+        record_invalid: 'La validació ha fallat: %{errors}'
+        restrict_dependent_destroy:
+          has_one: No se puede eliminar el registro porque existe un %{record} dependiente
+          has_many: No se puede eliminar el registro porque existen %{record} dependientes
