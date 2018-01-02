@@ -51,6 +51,7 @@ section "Creating Settings" do
   Setting.create(key: 'feature.user.recommendations', value: "true")
   Setting.create(key: 'feature.community', value: "true")
   Setting.create(key: 'feature.map', value: "true")
+  Setting.create(key: 'feature.allow_images', value: "true")
   Setting.create(key: 'feature.public_stats', value: "true")
   Setting.create(key: 'per_page_code_head', value: "")
   Setting.create(key: 'per_page_code_body', value: "")
@@ -66,7 +67,7 @@ section "Creating Settings" do
   Setting.create(key: 'map_latitude', value: 51.48)
   Setting.create(key: 'map_longitude', value: 0.0)
   Setting.create(key: 'map_zoom', value: 10)
-  Setting.create(key: 'related_contents_report_threshold', value: 2)
+  Setting.create(key: 'related_content_score_threshold', value: -0.3)
 end
 
 section "Creating Geozones" do
@@ -130,6 +131,7 @@ section "Creating Users" do
                  document_number: unique_document_number, document_type: "1")
 
   verified = create_user('verified@consul.dev', 'verified')
+
   verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                   verified_at: Time.current, document_number: unique_document_number)
 
@@ -226,6 +228,7 @@ section "Creating Proposals" do
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(','),
                                 geozone: Geozone.all.sample,
+                                skip_map: "1",
                                 terms_of_service: "1")
   end
 end
@@ -244,6 +247,7 @@ section "Creating Archived Proposals" do
                                 description: description,
                                 tag_list: tags.sample(3).join(','),
                                 geozone: Geozone.all.sample,
+                                skip_map: "1",
                                 terms_of_service: "1",
                                 created_at: Setting["months_to_archive_proposals"].to_i.months.ago)
   end
@@ -264,6 +268,7 @@ section "Creating Successful Proposals" do
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(','),
                                 geozone: Geozone.all.sample,
+                                skip_map: "1",
                                 terms_of_service: "1",
                                 cached_votes_up: Setting["votes_for_proposal_success"])
   end
@@ -282,6 +287,7 @@ section "Creating Successful Proposals" do
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(','),
                                 geozone: Geozone.all.sample,
+                                skip_map: "1",
                                 terms_of_service: "1")
   end
 end
@@ -440,6 +446,7 @@ section "Creating Investments" do
       valuation_finished: [false, true].sample,
       tag_list: tags.sample(3).join(','),
       price: rand(1..100) * 100000,
+      skip_map: "1",
       terms_of_service: "1"
     )
   end
@@ -468,6 +475,7 @@ section "Winner Investments" do
       valuation_finished: true,
       selected: true,
       price: rand(10000..heading.price),
+      skip_map: "1",
       terms_of_service: "1"
     )
   end
@@ -613,13 +621,36 @@ section "Creating Poll Shifts for Poll Officers" do
   end
 end
 
-section "Commenting Poll Questions" do
+section "Creating Communities" do
+  Proposal.all.each { |proposal| proposal.update(community: Community.create) }
+  Budget::Investment.all.each { |investment| investment.update(community: Community.create) }
+end
+
+section "Creating Communities Topics" do
+  Community.all.each do |community|
+    Topic.create(community: community, author: User.all.sample,
+                 title: Faker::Lorem.sentence(3).truncate(60), description: Faker::Lorem.sentence)
+  end
+end
+
+section "Commenting Polls" do
   30.times do
     author = User.all.sample
-    question = Poll::Question.all.sample
+    poll = Poll.all.sample
     Comment.create!(user: author,
-                    created_at: rand(question.created_at..Time.current),
-                    commentable: question,
+                    created_at: rand(poll.created_at..Time.current),
+                    commentable: poll,
+                    body: Faker::Lorem.sentence)
+  end
+end
+
+section "Commenting Community Topics" do
+  30.times do
+    author = User.all.sample
+    topic = Topic.all.sample
+    Comment.create!(user: author,
+                    created_at: rand(topic.created_at..Time.current),
+                    commentable: topic,
                     body: Faker::Lorem.sentence)
   end
 end

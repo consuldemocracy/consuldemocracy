@@ -12,11 +12,9 @@ en:
       personal: Personal details
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
-      public_interests_label: Keep my interests public
-      public_interests_my_title_list: List of interests (tags of elements you follow)
-      public_interests_user_title_list: List of interests (tags of elements this user follows)
-      public_interests_my_empty_list: You do not follow any elements yet.
-      public_interests_user_empty_list: This user does not follow any elements yet.
+      public_interests_label: Keep the labels of the elements I follow public
+      public_interests_my_title_list: Tags of elements you follow
+      public_interests_user_title_list: Tags of elements this user follows
       save_changes_submit: Save changes
       subscription_to_website_newsletter_label: Receive by email website relevant information
       email_on_direct_message_label: Receive emails about direct messages
@@ -173,7 +171,7 @@ en:
     direct_message: private message
     error: error
     errors: errors
-    not_saved: 'prevented this %{resource} from being saved:'
+    not_saved_html: "prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
     policy: Privacy Policy
     proposal: Proposal
     proposal_notification: "Notification"
@@ -284,7 +282,8 @@ en:
       sign_up: Sign up with Facebook
       name: Facebook
     finish_signup:
-      title: Add your email address
+      title: "Additional details"
+      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
     google_oauth2:
       sign_in: Sign in with Google
       sign_up: Sign up with Google
@@ -296,9 +295,6 @@ en:
     info_sign_in: "Sign in with:"
     info_sign_up: "Sign up with:"
     or_fill: "Or fill the following form:"
-    finish_signup:
-      title: "Additional details"
-      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
   proposals:
     create:
       form:
@@ -342,6 +338,7 @@ en:
       map_location: "Map location"
       map_location_instructions: "Navigate the map to the location and place the marker."
       map_remove_marker: "Remove map marker"
+      map_skip_checkbox: "This proposal doesn't have a concrete location or I'm not aware of it."
     index:
       featured_proposals: Featured
       filter_topic:
@@ -353,7 +350,7 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
-        archival_date: Archived
+        archival_date: archived
         recommendations: recommendations
       recommendations:
         without_results: There are not proposals related to your interests
@@ -570,6 +567,7 @@ en:
     collective: Collective
     flag: Flag as inappropriate
     follow: "Follow"
+    following: "Following"
     follow_entity: "Follow %{entity}"
     followable:
       budget_investment:
@@ -614,7 +612,6 @@ en:
     target_blank_html: " (link opens in new window)"
     you_are_in: "You are in"
     unflag: Unflag
-    unfollow: "Unfollow"
     unfollow_entity: "Unfollow %{entity}"
     outline:
       budget: Participatory budget
@@ -624,6 +621,7 @@ en:
     orbit:
       previous_slide: Previous Slide
       next_slide: Next Slide
+    documentation: Additional documentation
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"
@@ -813,3 +811,18 @@ en:
   invisible_captcha:
     sentence_for_humans: "If you are human, ignore this field"
     timestamp_error_message: "Sorry, that was too quick! Please resubmit."
+  related_content:
+    title: "Related content"
+    add: "Add related content"
+    label: "Link to related content"
+    placeholder: "%{url}"
+    help: "You can add links of %{models} inside of %{org}."
+    submit: "Add"
+    error: "Link not valid. Remember to start with %{url}."
+    success: "You added a new related content"
+    is_related: "¿Is it related content?"
+    score_positive: "Yes"
+    score_negative: "No"
+    content_title:
+      proposal: "Proposal"
+      debate: "Debate"

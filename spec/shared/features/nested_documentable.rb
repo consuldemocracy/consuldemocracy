@@ -85,7 +85,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(0, "spec/fixtures/files/empty.pdf")
 
       expect_document_has_title(0, "empty.pdf")
     end
@@ -109,7 +109,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(0, "spec/fixtures/files/empty.pdf")
 
       expect(page).to have_css ".loading-bar.complete"
     end
@@ -118,7 +118,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png", false)
+      documentable_attach_new_file(0, "spec/fixtures/files/logo_header.png", false)
 
       expect(page).to have_css ".loading-bar.errors"
     end
@@ -127,7 +127,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(0, "spec/fixtures/files/empty.pdf")
 
       expect_document_has_cached_attachment(0, ".pdf")
     end
@@ -136,7 +136,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png", false)
+      documentable_attach_new_file(0, "spec/fixtures/files/logo_header.png", false)
 
       expect_document_has_cached_attachment(0, "")
     end
@@ -157,7 +157,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(0, "spec/fixtures/files/empty.pdf")
       click_link "Remove document"
 
       expect(page).not_to have_css("#nested-documents .document")
@@ -178,7 +178,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(0, "spec/fixtures/files/empty.pdf")
       click_on submit_button
 
       expect(page).to have_content documentable_success_notice
@@ -189,7 +189,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(0, "spec/fixtures/files/empty.pdf")
       click_on submit_button
 
       documentable_redirected_to_resource_show_or_navigate_to
@@ -282,7 +282,7 @@ rescue
   return
 end
 
-def documentable_attach_new_file(_documentable_factory_name, index, path, success = true)
+def documentable_attach_new_file(index, path, success = true)
   click_link "Add new document"
   document = all(".document")[index]
   document_input = document.find("input[type=file]", visible: false)

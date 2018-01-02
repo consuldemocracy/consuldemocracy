@@ -3,11 +3,23 @@ require 'sessions_helper'
 
 feature 'Budget Investments' do
 
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Budget::Investment
+  end
+
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:other_budget) { create(:budget, name: "What a Budget!") }
   let(:group) { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
+
+  before do
+    Setting['feature.allow_images'] = true
+  end
+
+  after do
+    Setting['feature.allow_images'] = nil
+  end
 
   scenario 'Index' do
     investments = [create(:budget_investment, heading: heading),
@@ -37,7 +49,7 @@ feature 'Budget Investments' do
     visit budget_investments_path(budget, heading_id: heading.id)
 
     within("#budget_investment_#{investment.id}") do
-      expect(page).to have_css("div.no-image")
+      expect(page).to_not have_css("div.with-image")
     end
     within("#budget_investment_#{investment_with_image.id}") do
       expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
@@ -493,8 +505,9 @@ feature 'Budget Investments' do
   scenario "Show milestones", :js do
     user = create(:user)
     investment = create(:budget_investment)
-    milestone = create(:budget_investment_milestone, investment: investment, title: "New text to show",
-                                                     created_at: DateTime.new(2015, 9, 19).utc)
+    milestone = create(:budget_investment_milestone, investment: investment, title: "New text to show")
+    image = create(:image, imageable: milestone)
+    document = create(:document, documentable: milestone)
 
     login_as(user)
     visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
@@ -502,9 +515,10 @@ feature 'Budget Investments' do
     find("#tab-milestones-label").trigger('click')
 
     within("#tab-milestones") do
-      expect(page).to have_content(milestone.title)
       expect(page).to have_content(milestone.description)
-      expect(page).to have_content("Published 2015-09-19")
+      expect(page).to have_content(Time.zone.today.to_date)
+      expect(page.find("#image_#{milestone.id}")['alt']).to have_content image.title
+      expect(page).to have_link document.title
     end
   end
 

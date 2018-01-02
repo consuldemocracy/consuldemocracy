@@ -9,6 +9,11 @@ feature 'Debates' do
     Setting['feature.debates'] = true
   end
 
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Debate
+    it_behaves_like 'relationable', Debate
+  end
+
   scenario 'Index' do
     debates = [create(:debate), create(:debate), create(:debate)]
 
@@ -1047,4 +1052,5 @@ feature 'Debates' do
       expect(page).to_not have_content("Featured")
     end
   end
+
 end

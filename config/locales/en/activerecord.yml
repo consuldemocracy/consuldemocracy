@@ -124,6 +124,7 @@ en:
       budget/investment/milestone:
         title: "Title"
         description: "Description"
+        publication_date: "Publication date"
       comment:
         body: "Comment"
         user: "User"
@@ -249,6 +250,10 @@ en:
             attachment:
               min_image_width: "Image Width must be at least %{required_min_width}px"
               min_image_height: "Image Height must be at least %{required_min_height}px"
+        map_location:
+          attributes:
+            map:
+              invalid: Map location can't be blank. Place a marker or select the checkbox if geolocalization is not needed
         poll/voter:
           attributes:
             document_number:

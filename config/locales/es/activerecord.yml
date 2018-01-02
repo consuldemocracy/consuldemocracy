@@ -119,6 +119,7 @@ es:
       budget/investment/milestone:
         title: "Título"
         description: "Descripción"
+        publication_date: "Fecha de publicación"
       comment:
         body: "Comentario"
         user: "Usuario"
@@ -244,6 +245,10 @@ es:
             attachment:
               min_image_width: "La imagen debe tener al menos %{required_min_width}px de largo"
               min_image_height: "La imagen debe tener al menos %{required_min_height}px de alto"
+        map_location:
+          attributes:
+            map:
+              invalid: El mapa no puede estar en blanco. Añade un punto al mapa o marca la casilla si no hace falta un mapa.
         poll/voter:
           attributes:
             document_number:

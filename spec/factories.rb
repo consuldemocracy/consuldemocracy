@@ -50,6 +50,7 @@ FactoryGirl.define do
     end
 
     trait :verified do
+      residence_verified_at Time.current
       verified_at Time.current
     end
 
@@ -164,6 +165,7 @@ FactoryGirl.define do
     video_url            'https://youtu.be/nhuNb0XtRhQ'
     responsible_name     'John Snow'
     terms_of_service     '1'
+    skip_map             '1'
     association :author, factory: :user
 
     trait :hidden do
@@ -278,6 +280,7 @@ FactoryGirl.define do
     price                10
     unfeasibility_explanation ''
     external_url         'http://external_documention.org'
+    skip_map             '1'
     terms_of_service     '1'
     incompatible          false
 
@@ -361,6 +364,7 @@ FactoryGirl.define do
     association :investment, factory: :budget_investment
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
+    publication_date     Time.zone.today
   end
 
   factory :vote do
@@ -708,7 +712,7 @@ FactoryGirl.define do
     start_date Date.current - 5.days
     end_date Date.current + 5.days
     debate_start_date Date.current - 5.days
-    debate_end_date Date.current - 2.days
+    debate_end_date Date.current + 2.days
     draft_publication_date Date.current - 1.day
     allegations_start_date Date.current
     allegations_end_date Date.current + 3.days
@@ -814,6 +818,14 @@ LOREM_IPSUM
     question factory: :legislation_question
     question_option factory: :legislation_question_option
     user
+  end
+
+  factory :legislation_proposal, class: 'Legislation::Proposal' do
+    title "Example proposal for a legislation"
+    summary "This law should include..."
+    terms_of_service '1'
+    process factory: :legislation_process
+    author factory: :user
   end
 
   factory :site_customization_page, class: 'SiteCustomization::Page' do

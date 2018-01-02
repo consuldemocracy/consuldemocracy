@@ -84,6 +84,7 @@ Setting['feature.legislation'] = true
 Setting['feature.user.recommendations'] = true
 Setting['feature.community'] = true
 Setting['feature.map'] = nil
+Setting['feature.allow_images'] = true
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
@@ -141,4 +142,4 @@ Setting['map_longitude'] = 0.0
 Setting['map_zoom'] = 10
 
 # Related content
-Setting['related_contents_report_threshold'] = 5
+Setting['related_content_score_threshold'] = -0.3

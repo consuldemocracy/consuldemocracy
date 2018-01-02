@@ -9,7 +9,21 @@ feature 'Proposals' do
     Setting['feature.proposals'] = true
   end
 
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Proposal
+    it_behaves_like 'relationable', Proposal
+  end
+
   context 'Index' do
+
+    before do
+      Setting['feature.allow_images'] = true
+    end
+
+    after do
+      Setting['feature.allow_images'] = nil
+    end
+
     scenario 'Lists featured and regular proposals' do
       featured_proposals = create_featured_proposals
       proposals = [create(:proposal), create(:proposal), create(:proposal)]
@@ -61,7 +75,7 @@ feature 'Proposals' do
       visit proposals_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        expect(page).to have_css("div.no-image")
+        expect(page).to_not have_css("div.with-image")
       end
       within("#proposal_#{proposal_with_image.id}") do
         expect(page).to have_css("img[alt='#{proposal_with_image.image.title}']")
