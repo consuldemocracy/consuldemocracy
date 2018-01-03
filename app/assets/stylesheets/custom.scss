@@ -34,3 +34,9 @@ body{direction:rtl}
 
 .notification::before {    right: -26px;}
 .notifications-list::before{right:-3px}
+
+@media screen and (min-width: 40em){
+    .row .row {
+            display: inline;
+    }
+}
