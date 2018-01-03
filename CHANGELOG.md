@@ -4,7 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/consul/consul/compare/v0.11...consul:master)
+## [Unreleased](https://github.com/consul/consul/compare/v0.12...consul:master)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.12.0](https://github.com/consul/consul/compare/v0.11...v0.12) - 2018-01-03
 
 ### Added
 - Added Images to Budget Investment's Milestones https://github.com/consul/consul/pull/2186
@@ -23,16 +32,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improved generic error message https://github.com/consul/consul/pull/2217
 - Improved Sitemap for SEO https://github.com/consul/consul/pull/2215
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 - Notifications for hidden resources https://github.com/consul/consul/pull/2172
 - Notifications exceptions https://github.com/consul/consul/pull/2187
 - Fixed map location update https://github.com/consul/consul/pull/2213
-
-### Security
 
 ## [0.11.0](https://github.com/consul/consul/compare/v0.10...v0.11) - 2017-12-05
 
