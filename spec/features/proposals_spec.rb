@@ -821,7 +821,7 @@ feature 'Proposals' do
         expect(page).to_not have_content(archived_proposal.title)
       end
 
-      click_link "Archived"
+      click_link "archived"
 
       within("#featured-proposals") do
         expect(page).to have_content(featured_proposal.title)
