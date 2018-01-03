@@ -2,10 +2,10 @@ class Document < ActiveRecord::Base
   include DocumentsHelper
   include DocumentablesHelper
   has_attached_file :attachment, url: "/system/:class/:prefix/:style/:hash.:extension",
-                                 hash_data: ":class/:style",
+                                 hash_data: ":class/:style/:custom_hash_data",
                                  use_timestamp: false,
                                  hash_secret: Rails.application.secrets.secret_key_base
-  attr_accessor :cached_attachment
+  attr_accessor :cached_attachment, :remove, :original_filename
 
   belongs_to :user
   belongs_to :documentable, polymorphic: true
@@ -44,12 +44,27 @@ class Document < ActiveRecord::Base
     attachment.instance.prefix(attachment, style)
   end
 
+  Paperclip.interpolates :custom_hash_data do |attachment, _style|
+    attachment.instance.custom_hash_data(attachment)
+  end
+
   def prefix(attachment, _style)
     if !attachment.instance.persisted?
       "cached_attachments/user/#{attachment.instance.user_id}"
     else
       ":attachment/:id_partition"
     end
+  end
+
+  def custom_hash_data(attachment)
+    original_filename = if !attachment.instance.persisted? && attachment.instance.remove
+      attachment.instance.original_filename
+                        elsif !attachment.instance.persisted?
+      attachment.instance.attachment_file_name
+                        else
+      attachment.instance.title
+                        end
+    "#{attachment.instance.user_id}/#{original_filename}"
   end
 
   def humanized_content_type
@@ -89,7 +104,9 @@ class Document < ActiveRecord::Base
     def remove_cached_attachment
       document = Document.new(documentable: documentable,
                               cached_attachment: cached_attachment,
-                              user: user)
+                              user: user,
+                              remove: true,
+                              original_filename: title)
       document.set_attachment_from_cached_attachment
       document.attachment.destroy
     end
