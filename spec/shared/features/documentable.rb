@@ -22,7 +22,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#tab-documents" do
-        expect(page).to have_link("Dowload file")
+        expect(page).to have_link("Download file")
       end
     end
 
@@ -30,7 +30,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#tab-documents" do
-        expect(page).to have_selector("a[target=_blank]", text: "Dowload file")
+        expect(page).to have_selector("a[target=_blank]", text: "Download file")
       end
     end
 
@@ -38,7 +38,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#tab-documents" do
-        expect(page).to have_selector("a[rel=nofollow]", text: "Dowload file")
+        expect(page).to have_selector("a[rel=nofollow]", text: "Download file")
       end
     end
 
