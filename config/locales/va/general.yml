@@ -1,39 +1,40 @@
 va:
   account:
     show:
-      change_credentials_link: Cambiar mis datos de acceso
-      email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
-      email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
-      erase_account_link: Darme de baja
-      finish_verification: Finalizar verificación
-      notifications: Notificaciones
-      organization_name_label: Nombre de la organización
-      organization_responsible_name_placeholder: Representante de la asociación/colectivo
-      personal: Datos personales
-      phone_number_label: Teléfono
-      public_activity_label: Mostrar públicamente mi lista de actividades
+      change_credentials_link: Canviar les meues dades d'accés
+      email_on_comment_label: Rebre un email quan algú comenta en les meues propostes o debats
+      email_on_comment_reply_label: Rebre un email quan algú contesta als meus comentaris
+      erase_account_link: "Donar-me de baixa"
+      finish_verification: "Finalitzar verificació"
+      notifications: "Notificacions"
+      organization_name_label: "Nom de l'associació"
+      organization_responsible_name_placeholder: "Representant de l'associació"
+      personal: "Dades personals"
+      phone_number_label: "Telèfon"
+      public_activity_label: "Mostrar públicament la meua llista d'activitats"
+      save_changes_submit: "Guardar canvis"
+      subscription_to_website_newsletter_label: "Rebre emails amb informació interessant sobre la web"
+      email_on_direct_message_label: "Rebre emails amb missatges privats"
+      email_digest_label: "Rebre resum de notificacions sobre propostes"
+      official_position_badge_label: "Mostrar etiqueta de tipus d'usuari"
       public_interests_label: Mostrar públicamente mis intereses
       public_interests_my_title_list: Lista de intereses (etiquetas de los elementos que sigues)
       public_interests_user_title_list: Lista de intereses (etiquetas de los elementos seguidos este usuario)
       public_interests_my_empty_list: Aún no sigues ningún elemento.
       public_interests_user_empty_list: Este usuario no sigue ningún elemento todavía.
-      save_changes_submit: Guardar cambios
-      subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
-      email_on_direct_message_label: Recibir emails con mensajes privados
-      email_digest_label: Recibir resumen de notificaciones sobre propuestas
-      official_position_badge_label: Mostrar etiqueta de tipo de usuario
-      title: Mi cuenta
-      user_permission_debates: Participar en debates
-      user_permission_info: Con tu cuenta ya puedes...
-      user_permission_proposal: Crear nuevas propuestas
-      user_permission_support_proposal: Apoyar propuestas*
-      user_permission_title: Participación
-      user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados."
-      user_permission_votes: Participar en las votaciones finales*
-      username_label: Nombre de usuario
-      verified_account: Cuenta verificada
-      verify_my_account: Verificar mi cuenta
+      title: "El meu compte"
+      user_permission_debates: "Participar en debats"
+      user_permission_info: "Amb el teu compte ja pots..."
+      user_permission_proposal: "Crear noves propostes"
+      user_permission_support_proposal: Avalar propostes*
+      user_permission_title: "Participació"
+      user_permission_verify: "Per a poder realitzar totes les accions verifica el teu compte."
+      user_permission_verify_info: "* Només usuaris empadronats."
+      user_permission_votes: Participar en les votacions finals*
+      username_label: "Nom d'usuari"
+      verified_account: "Compte verificat"
+      verify_my_account: "Verificar el meu compte"
+
   application:
     close: Cerrar
     menu: Menú
