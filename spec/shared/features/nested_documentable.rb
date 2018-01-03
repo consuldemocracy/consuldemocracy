@@ -205,25 +205,13 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
     end
 
     scenario "Should show resource with new document after successful creation with maximum allowed uploaded files", :js do
-      skip "due to weird behaviour"
-      page.driver.resize_window 1200, 2500
       login_as user_to_login
       visit send(path, arguments)
 
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable.class.max_documents_allowed.times.each do
-        click_link "Add new document"
-      end
+      documentable.class.max_documents_allowed.times { documentable_attach_new_file(cycle(Dir.glob('spec/fixtures/files/*.pdf'))) }
 
-      documents = all(".document")
-      documents.each_with_index do |document, index|
-        document_input = document.find("input[type=file]", visible: false)
-        attach_file(document_input[:id], "spec/fixtures/files/empty.pdf", make_visible: true)
-        within all(".document")[index] do
-          expect(page).to have_css ".loading-bar.complete"
-        end
-      end
       click_on submit_button
       documentable_redirected_to_resource_show_or_navigate_to
 
