@@ -755,7 +755,7 @@ feature 'Proposals' do
       archived_proposals = create_archived_proposals
 
       visit proposals_path
-      click_link 'Archived'
+      click_link 'archived'
 
       within("#proposals-list") do
         archived_proposals.each do |proposal|
@@ -839,7 +839,7 @@ feature 'Proposals' do
       create(:proposal, :archived, title: "Some votes").update_column(:confidence_score, 25)
 
       visit proposals_path
-      click_link 'Archived'
+      click_link 'archived'
 
       within("#proposals-list") do
         expect(all(".proposal")[0].text).to match "Most voted"
