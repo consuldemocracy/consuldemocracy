@@ -1,14 +1,14 @@
 <div class="row margin-bottom">
   <div class="small-12 column relative">
 
-    <h1 class="float-left"><%= t("notifications.index.title") %></h1>
+    <h1 class="float-right"><%= t("notifications.index.title") %></h1>
 
     <% if @notifications.empty? %>
       <div data-alert class="callout primary margin-top clear">
         <%= t("notifications.index.empty_notifications") %>
       </div>
     <% else %>
-      <div class="float-right margin-top">
+      <div class="float-left margin-top">
         <%= link_to t("notifications.index.mark_all_as_read"),
                     mark_all_as_read_notifications_path, method: :put %>
       </div>

@@ -31,3 +31,6 @@ body{direction:rtl}
     margin-top: 1.5rem;
 }
 .wide-order-selector .float-left{float:right !important}
+
+.notification::before {    right: -26px;}
+.notifications-list::before{right:-3px}
