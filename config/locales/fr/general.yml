@@ -873,7 +873,7 @@ fr:
       external_link_transparency: Transparence
       external_link_transparency_url: https://transparency.consul
       locale: 'Langue :'
-      logo: Consul logo
+      logo: Consul
       moderation: Modération
       more_info: Plus d'information
       my_account_link: Mon compte
@@ -1347,8 +1347,7 @@ fr:
     official_level_3_name: Niveau 3 personne officielle
     official_level_4_name: Niveau 4 personne officielle
     official_level_5_name: Niveau 5 personne officielle
-    per_page_code_head: "Code à inclure dans chaque page (<head>)"
-    per_page_code_body: "Code à inclure dans chaque page (<body>)"
+    per_page_code: Code à inclure dans chaque page
     proposal_code_prefix: Préfixe pour les codes de propositions
     votes_for_proposal_success: Nombre de votes nécessaires pour l'approbation d'une
       proposition

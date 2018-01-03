@@ -1,0 +1,110 @@
+he:
+  budgets:
+    ballots:
+      show:
+        title: ההצבעה שלך
+        amount_spent: הסכום שהושקע
+        remaining: "עדיין צריך <span>%{amount}</span> סכום להשקעה"
+        remove: הסרת הצבעה
+        voted_html:
+          one: "צריך להצביע <span>one</span> על ההצעה."
+          other: "צריך להצביע <span>%{count}</span> על ההצעות."
+        voted_info_html: " ניתן לשנות את ההצבעה בכל זמן עד לסגירת שלב זה.<br> אין צורך להשקיע את כל הכסף הזמין"
+        zero: לא נעשתה כל הצבעה על פרויקט להשקעה
+      reasons_for_not_balloting:
+        not_logged_in: חובה שיהיו %{signin} או %{signup} בכדי להמשיך
+        not_verified: רק משתמשים שרישומם אומת יכולים להצביע על ההצעות; %{verify_account}.
+        organization: מעלי ההצעה אינם רשאים להצביע
+        not_selected: לא ניתן לתמוך/להשקיע בפרויקטים שלא נבחרו
+        not_enough_money: " המחיר גבוה מהסכום שנותר"
+        no_ballots_allowed: שלב הבחירה נסגר
+        different_heading_assigned: נעשתה כבר הצבעה על כותרת אחרת
+      show:
+        title: בחר/י אפשרות
+        unfeasible_title: Unfeasible investments השקעות שאינן ברות ביצוע
+        unfeasible:  צפייה בהשקעות שאינן ברות ביצוע 
+    phase:
+      accepting: קבלת ההצעות
+      reviewing: reviewing proposals  צפייה בהצעות
+      selecting: בחירת ההצעות
+      valuating: הערכת ההצעות
+      balloting: הצבעה על הצעות
+      reviewing_ballots: סקירת הקולות
+      finished: תקציב סגור
+    index:
+      title: Participatory budgets תקציבים השתתפותים
+    investments:
+      form:
+        tag_category_label: "קטגוריות"
+        tags_instructions: "תיוג הצעה זו. ניתן לבחור קטגוריה קיימת או להוסיף חדשה"
+        tags_label: תגיות
+        tags_placeholder: "
+הזנת תגיות, ניתן להוסיף מספר תגיות מופרדות באמצעות פסיקים
+ (',')"
+      index:
+        title: תקצוב השתתפותי
+        unfeasible: השקעה בפרויקט שאינו בר ביצוע
+        unfeasible_text: "ההצעה צריכה לעמוד במספר קריטריונים (חוקיות, מעשיות, באחריותה של העירייה, לא לעבור את מגבלת התקציב); %{definitions}) לקבל אישור מעשיות ולהגיע לשלב ההצבעה הסופית. כל ההצעות שלא יעמדו בקריטריונים האלה יסומנו כלא ישימים ויודפסו ברשימה הבאה, עם פירוט הסיבות לפסילתן."
+        unfeasible_text_definitions: ראו הגדרות כאן
+        by_heading: "הקפי השקעה בפרויקטים:%{heading}"
+        search_form:
+          button: Search
+          placeholder: חיפוש פרויקטים להשקעה...
+          title: Search
+        search_results:
+          one: "כולל את המילה '%{search_term}'"
+          other: "כולל את המילה '%{search_term}'"
+        sidebar:
+          my_ballot: ההצבעה שלי 
+          voted_html:
+            one: "<strong>הצבעת עבור הצעה אחת שעלותה %{amount_spent}</strong>"
+            other: "<strong>הצבעת עבור %{count} הצעות שעלותן %{amount_spent}</strong>"
+          voted_info: ניתן לשנות את ההצבעה בכל זמן עד סגירת השלב  
+          zero: לא נעשתה הצבעה עבור פרויקט השקעה.
+          verified_only: "ליצירת פרויקט השקעה חדש %{verify}."
+          verify_account: "אמתו את חשבונכם"
+          create: "צרו תקציב השקעות"
+          not_logged_in: "חובה נדרשת ליצירת תקציב, השקעה של%{sign_in} או%{sign_up}."
+          sign_in: "כניסה לחשבון"
+          sign_up: "יצירת חשבון"
+          by_feasibility: על פי ההיתכנות
+          feasible: פרויקטים ברי ביצוע
+          unfeasible: פרויקטים שאינם ברי ביצוע
+        orders:
+          random: אקראי
+          confidence_score: דרוג גבוה ביותר 
+          price: לפי מחיר
+      show:
+        author_deleted: משתמש/ת נמחק/ה
+        price_explanation: פירוט למחיר
+        unfeasibility_explanation: אין סבירות שניתן לביצוע
+        code_html: 'קוד פרויקט ההשקעה: <strong>%{code}</strong>'
+        location_html: 'מיקום: <strong>%{location}</strong>'
+        organization_name_html: 'ארגון: <strong>%{name}</strong>'
+        share: שתף
+        title: פרויקט השקעה
+        supports: תמיכה
+        votes: הצבעות
+      wrong_price_format: רק בסכומים שלמים
+      investment:
+        title: פרויקט להשקעה
+        add: Add
+        already_added: כבר הוספת את פרויקט ההשקעות הזה
+        already_supported: כבר תמכת בזה. שתף!
+        support_title: תמיכה בפרויקט הזה
+        confirm_group: "ניתן לתמוך בהשקעות באזור אחד. אחרי לחיצה על המשך, אין אפשרות לשנות את דעתך. האם את/ה בטוח/ה?"
+        supports:
+          one: תומך 1
+          zero: אין תומכים
+        give_support: תמיכה
+      header:
+        check_ballot: בדוק את מצב ההצבעות
+        different_heading_assigned_html: "ישנן הצבעות פתוחות בנושאים אחרים: %{heading_link}"
+    progress_bar:
+      available: "קיים"
+    show:
+      group: קבוצה
+      phase: שלב נוכחי
+      unfeasible_title: השקעות שאינן ברות ביצוע
+      unfeasible: צפיה בהשקעות שאינן ברות ביצוע
+

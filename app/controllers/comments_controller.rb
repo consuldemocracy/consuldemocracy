@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   before_action :authenticate_user!, only: :create
   before_action :load_commentable, only: :create
-  before_action :verify_resident_for_commentable!, only: :create
+#  before_action :verify_resident_for_commentable!, only: :create
   before_action :verify_comments_open!, only: [:create, :vote]
   before_action :build_comment, only: :create
 

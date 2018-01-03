@@ -15,7 +15,7 @@
   <%= render 'shared/filter_subnav', i18n_namespace: "admin.legislation.processes.index" %>
 
   <% if @processes.any? %>
-    <h3><%= page_entries_info @processes %></h3>
+    <h3><%= page_entries_info @processes, :entry_name => 'process' %></h3>
 
     <table class="stack">
       <thead>
@@ -49,7 +49,7 @@
     <%= paginate @processes %>
   <% else %>
     <div class="callout primary">
-      <%= page_entries_info @processes %>
+      <%= page_entries_info @processes, :entry_name => 'process' %>
     </div>
   <% end %>
 

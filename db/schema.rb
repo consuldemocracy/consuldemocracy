@@ -119,10 +119,10 @@ ActiveRecord::Schema.define(version: 20171220010000) do
 
   create_table "budget_investment_milestones", force: :cascade do |t|
     t.integer  "investment_id"
-    t.string   "title",            limit: 80
+    t.string   "title",         limit: 80
     t.text     "description"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.datetime "publication_date"
   end
 
@@ -989,13 +989,13 @@ ActiveRecord::Schema.define(version: 20171220010000) do
   add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string  "name",                        limit: 40
-    t.integer "taggings_count",                         default: 0
-    t.integer "debates_count",                          default: 0
-    t.integer "proposals_count",                        default: 0
-    t.integer "spending_proposals_count",               default: 0
+    t.string  "name",                     limit: 40
+    t.integer "taggings_count",                      default: 0
+    t.integer "debates_count",                       default: 0
+    t.integer "proposals_count",                     default: 0
+    t.integer "spending_proposals_count",            default: 0
     t.string  "kind"
-    t.integer "budget/investments_count",               default: 0
+    t.integer "budget/investments_count",            default: 0
     t.integer "legislation/proposals_count",            default: 0
     t.integer "legislation/processes_count",            default: 0
   end
@@ -1074,7 +1074,7 @@ ActiveRecord::Schema.define(version: 20171220010000) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2015-01-01 01:01:01', null: false
+    t.datetime "password_changed_at",                       default: '2016-11-02 13:51:14', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
@@ -1204,6 +1204,7 @@ ActiveRecord::Schema.define(version: 20171220010000) do
   add_foreign_key "proposals", "communities"
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
+  add_foreign_key "proposals", "users", column: "author_id", name: "proposals_author_id_fkey"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

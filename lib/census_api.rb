@@ -1,12 +1,21 @@
 include DocumentParser
+
 class CensusApi
 
-  def call(document_type, document_number)
+  def call(document_type, document_number,user)
     response = nil
     get_document_number_variants(document_type, document_number).each do |variant|
-      response = Response.new(get_response_body(document_type, variant))
-      return response if response.valid?
+      data = get_response_body(document_type, variant,user)
+     
+      response = Response.new(data)
+      Rails.logger.info data
+      Rails.logger.info  data.class 
+      if response.valid?
+        Rails.logger.info "valid"
+	return response
+      end
     end
+    Rails.logger.info "invalid" 
     response
   end
 
@@ -16,56 +25,65 @@ class CensusApi
     end
 
     def valid?
-      data[:datos_habitante][:item].present?
+      data.class == Hash  && data.has_key?("last_order")
     end
 
     def date_of_birth
-      str = data[:datos_habitante][:item][:fecha_nacimiento_string]
-      day, month, year = str.match(/(\d\d?)\D(\d\d?)\D(\d\d\d?\d?)/)[1..3]
-      return nil unless day.present? && month.present? && year.present?
-      Date.new(year.to_i, month.to_i, day.to_i)
+      nil
     end
 
     def postal_code
-      data[:datos_vivienda][:item][:codigo_postal]
+      data["billing"]["postcode"]
     end
 
     def district_code
-      data[:datos_vivienda][:item][:codigo_distrito]
+      nil#nil#nil#data["billing"]["postcode"]
     end
 
     def gender
-      case data[:datos_habitante][:item][:descripcion_sexo]
-      when "Varón"
-        "male"
-      when "Mujer"
-        "female"
-      end
+      nil
     end
 
     def name
-      "#{data[:datos_habitante][:item][:nombre]} #{data[:datos_habitante][:item][:apellido1]}"
+      "#{data['first_name']} #{data['last_name']}"
     end
 
     private
 
       def data
-        @body[:get_habita_datos_response][:get_habita_datos_return]
+        @body#[:get_habita_datos_response][:get_habita_datos_return]
       end
   end
 
   private
 
-    def get_response_body(document_type, document_number)
-      if end_point_available?
-        client.call(:get_habita_datos, message: request(document_type, document_number)).body
-      else
-        stubbed_response(document_type, document_number)
+    def get_response_body(document_type, document_number,user)
+      Rails.logger.info  "get_response_body " + user.email
+      all  = client.get("customers?email=" + user.email).parsed_response #client.call(:get_habita_datos, message: request(document_type, document_number)).bodyi
+      all.each do |a|
+        Rails.logger.info document_number.to_s
+        Rails.logger.info  a["billing"]["company"].to_s
+        if document_number.to_s ==  a["billing"]["company"].to_s
+          Rails.logger.info a
+          return a
+        end
       end
     end
 
     def client
-      @client = Savon.client(wsdl: Rails.application.secrets.census_api_end_point)
+      #@client = Savon.client(wsdl: Rails.application.secrets.census_api_end_point)
+
+
+      @client = WooCommerce::API.new(
+        "http://www.kolhaam.org.il",
+        "ck_1ef0696d317d1272b2d3fa3152f50155ad72ecb5",
+        "cs_778561b003ad3bd565428e3ffea465de7a65136b",
+        {
+          wp_api: true,
+          version: "wc/v1",
+         verify_ssl: false 
+        }
+      )
     end
 
     def request(document_type, document_number)
@@ -120,7 +138,7 @@ class CensusApi
     end
 
     def dni?(document_type)
-      document_type.to_s == "1"
+      false #document_type.to_s == "1"
     end
 
 end

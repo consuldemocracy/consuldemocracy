@@ -12,8 +12,8 @@ class Verification::Residence
   validates :date_of_birth, presence: true
   validates :postal_code, presence: true
   validates :terms_of_service, acceptance: { allow_nil: false }
-  validates :postal_code, length: { is: 5 }
-
+  #validates :postal_code, length: { is: 5 }
+  validate :residency_valid?
   validate :allowed_age
   validate :document_number_uniqueness
 
@@ -25,15 +25,21 @@ class Verification::Residence
   end
 
   def save
-    return false unless valid?
+    retrieve_census_data
+    Rails.logger.info "validi" if residency_valid?
+    #raise "valido" if valid? 
+    #return false
+    #if not @census_data.valid?
+    #  errors.add(:document_number, I18n.t('errors.messages.taken')) 
+    #end 
+    return false unless valid? and @census_data.valid?
 
     user.take_votes_if_erased_document(document_number, document_type)
 
     user.update(document_number:       document_number,
                 document_type:         document_type,
-                geozone:               geozone,
                 date_of_birth:         date_of_birth.to_datetime,
-                gender:                gender,
+                gender:                nil,
                 residence_verified_at: Time.current)
   end
 
@@ -71,13 +77,14 @@ class Verification::Residence
   private
 
     def retrieve_census_data
-      @census_data = CensusCaller.new.call(document_type, document_number)
+      @census_data = CensusCaller.new.call(document_type, document_number, user)
     end
 
     def residency_valid?
-      @census_data.valid? &&
-        @census_data.postal_code == postal_code &&
-        @census_data.date_of_birth == date_of_birth
+      errors.add(:document_number, I18n.t('errors.messages.model_invalid')) if not @census_data.valid?
+      @census_data.valid? #&&
+        #@census_data.postal_code == postal_code &&
+        #@census_data.date_of_birth == date_of_birth
     end
 
     def clean_document_number

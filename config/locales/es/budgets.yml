@@ -29,13 +29,13 @@ es:
         unselected_title: Propuestas no seleccionadas para la votación final
         unselected: Ver las propuestas no seleccionadas para la votación final
     phase:
-      accepting: Presentación de proyectos
-      reviewing: Revisión interna de proyectos
-      selecting: Fase de apoyos
-      valuating: Evaluación de proyectos
-      balloting: Votación final
-      reviewing_ballots: Votación finalizada
-      finished: Resultados
+      accepting: Aceptando propuestas
+      reviewing: Revisando propuestas
+      selecting: Selección de propuestas
+      valuating: Evaluación de propuestas
+      balloting: Votación de propuestas
+      reviewing_ballots: Contando resultados
+      finished: Presupuesto terminado
     index:
       title: Presupuestos participativos
       section_header:

@@ -77,7 +77,7 @@ en:
       phase_not_open:
         not_open: This phase is not open yet
       phase_empty:
-          empty: Nothing published yet
+        empty: Nothing published yet
       process:
         see_latest_comments: See latest comments
         see_latest_comments_title: Comment on this process
@@ -115,7 +115,8 @@ en:
         unauthenticated: You must %{signin} or %{signup} to participate.
         verified_only: Only verified users can participate, %{verify_account}.
         verify_account: verify your account
-        debate_phase_not_open: Debate phase has finished and answers are not accepted anymore
+        debate_phase_not_open: Debate phase has finished and answers are not accepted
+          anymore
     shared:
       share: Share
       share_comment: Comment on %{version_name} from process draft %{process_name}

@@ -1,12 +1,13 @@
+---
 en:
   activerecord:
     models:
       activity:
-        one: "activity"
-        other: "activities"
+        one: activity
+        other: activities
       budget:
-        one: "Participatory budget"
-        other: "Participatory budgets"
+        one: Participatory budget
+        other: Participatory budgets
       budget/investment:
         one: "Investment"
         other: "Investments"
@@ -14,23 +15,23 @@ en:
         one: "milestone"
         other: "milestones"
       comment:
-        one: "Comment"
-        other: "Comments"
+        one: Comment
+        other: Comments
       debate:
-        one: "Debate"
-        other: "Debates"
+        one: Debate
+        other: Debates
       tag:
-        one: "Tag"
-        other: "Tags"
+        one: Tag
+        other: Tags
       user:
-        one: "User"
-        other: "Users"
+        one: User
+        other: Users
       moderator:
-        one: "Moderator"
-        other: "Moderators"
+        one: Moderator
+        other: Moderators
       administrator:
-        one: "Administrator"
-        other: "Administrators"
+        one: Administrator
+        other: Administrators
       valuator:
         one: "Evaluador"
         other: "Evaluadores"
@@ -38,23 +39,23 @@ en:
         one: "Manager"
         other: "Managers"
       vote:
-        one: "Vote"
-        other: "Votes"
+        one: Vote
+        other: Votes
       organization:
-        one: "Organisation"
-        other: "Organisations"
+        one: Organisation
+        other: Organisations
       poll/booth:
-        one: "booth"
-        other: "booths"
+        one: booth
+        other: booths
       poll/officer:
-        one: "officer"
-        other: "officers"
+        one: officer
+        other: officers
       proposal:
-        one: "Citizen proposal"
-        other: "Citizen proposals"
+        one: Citizen proposal
+        other: Citizen proposals
       spending_proposal:
-        one: "Spending proposal"
-        other: "Spending proposals"
+        one: Spending proposal
+        other: Spending proposals
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -65,23 +66,23 @@ en:
         one: Custom content block
         other: Custom content blocks
       legislation/process:
-        one: "Process"
-        other: "Processes"
+        one: Process
+        other: Processes
       legislation/draft_versions:
-        one: "Draft version"
-        other: "Draft versions"
+        one: Draft version
+        other: Draft versions
       legislation/draft_texts:
-          one: "Draft"
-          other: "Drafts"
+        one: Draft
+        other: Drafts
       legislation/questions:
-        one: "Question"
-        other: "Questions"
+        one: Question
+        other: Questions
       legislation/question_options:
-        one: "Question option"
-        other: "Question options"
+        one: Question option
+        other: Question options
       legislation/answers:
-        one: "Answer"
-        other: "Answers"
+        one: Answer
+        other: Answers
       documents:
         one: "Document"
         other: "Documents"
@@ -96,26 +97,25 @@ en:
         other: "Polls"
     attributes:
       budget:
-        name: "Name"
-        description_accepting: "Description during Accepting phase"
-        description_reviewing: "Description during Reviewing phase"
-        description_selecting: "Description during Selecting phase"
-        description_valuating: "Description during Valuating phase"
-        description_balloting: "Description during Balloting phase"
-        description_reviewing_ballots: "Description during Reviewing Ballots phase"
-        description_finished: "Description when the budget is finished"
-        phase: "Phase"
-        currency_symbol: "Currency"
+        name: Name
+        description_accepting: Description during Accepting phase
+        description_reviewing: Description during Reviewing phase
+        description_selecting: Description during Selecting phase
+        description_valuating: Description during Valuating phase
+        description_balloting: Description during Balloting phase
+        description_reviewing_ballots: Description during Reviewing Ballots phase
+        description_finished: Description when the budget is finished
+        phase: Phase
+        currency_symbol: Currency
       budget/investment:
-        heading_id: "Sección de presupuesto"
-        title: "Title"
-        description: "Description"
-        external_url: "External url"
-        location: "Location"
-        administrator_id: "Administrator"
-        description: "Description"
-        external_url: "Link to additional documentation"
-        heading_id: "Heading"
+        heading_id: Heading
+        title: Title
+        description: Description
+        external_url: Link to additional documentation
+        location: Location
+        administrator_id: Administrator
+        organization_name: If you are proposing in the name of a collective/organization,
+          write its name
         title: "Title"
         location: "Location"
         organization_name: "If you are proposing in the name of a collective/organization, write its name"
@@ -126,56 +126,57 @@ en:
         description: "Description"
         publication_date: "Publication date"
       comment:
-        body: "Comment"
-        user: "User"
+        body: Comment
+        user: User
       debate:
-        author: "Author"
-        description: "Opinion"
-        terms_of_service: "Terms of service"
-        title: "Title"
+        author: Author
+        description: Opinion
+        terms_of_service: Terms of service
+        title: Title
       proposal:
-        author: "Author"
-        title: "Title"
-        question: "Question"
-        description: "Description"
-        terms_of_service: "Terms of service"
+        author: Author
+        title: Title
+        question: Question
+        description: Description
+        terms_of_service: Terms of service
       user:
-        login: "Email or username"
-        email: "Email"
-        username: "Username"
-        password_confirmation: "Password confirmation"
-        password: "Password"
-        current_password: "Current password"
-        phone_number: "Phone number"
-        official_position: "Official position"
-        official_level: "Official level"
-        redeemable_code: "Verification code received via email"
+        login: Email or username
+        email: Email
+        username: Username
+        password_confirmation: Password confirmation
+        password: Password
+        current_password: Current password
+        phone_number: Phone number
+        official_position: Official position
+        official_level: Official level
+        redeemable_code: Verification code received via email
       organization:
-        name: "Name of organisation"
-        responsible_name: "Person responsible for the group"
+        name: Name of organisation
+        responsible_name: Person responsible for the group
       spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Association name"
-        description: "Description"
-        external_url: "Link to additional documentation"
-        geozone_id: "Scope of operation"
-        title: "Title"
+        administrator_id: Administrador
+        association_name: Association name
+        description: Description
+        external_url: Link to additional documentation
+        geozone_id: Scope of operation
+        title: Title
       poll:
-        name: "Name"
-        starts_at: "Start Date"
-        ends_at: "Closing Date"
-        geozone_restricted: "Restricted by geozone"
+        name: Name
+        starts_at: Start Date
+        ends_at: Closing Date
+        geozone_restricted: Restricted by geozone
         summary: "Summary"
         description: "Description"
       poll/question:
-        title: "Question"
-        summary: "Summary"
-        description: "Description"
-        external_url: "Link to additional documentation"
+        title: Question
+        valid_answers: Posibles answers
+        summary: Summary
+        description: Description
+        external_url: Link to additional documentation
       signature_sheet:
-        signable_type: "Signable type"
-        signable_id: "Signable ID"
-        document_numbers: "Documents numbers"
+        signable_type: Signable type
+        signable_id: Signable ID
+        document_numbers: Documents numbers
       site_customization/page:
         content: Content
         created_at: Created at
@@ -236,15 +237,16 @@ en:
         user:
           attributes:
             email:
-              password_already_set: "This user already has a password"
+              password_already_set: This user already has a password
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: tags must be less than or equal to %{count}
         direct_message:
           attributes:
             max_per_day:
-              invalid: "You have reached the maximum number of private messages per day"
+              invalid: You have reached the maximum number of private messages per
+                day
         image:
           attributes:
             attachment:
@@ -257,8 +259,8 @@ en:
         poll/voter:
           attributes:
             document_number:
-              not_in_census: "Document not in census"
-              has_voted: "User has already voted"
+              not_in_census: Document not in census
+              has_voted: User has already voted
         legislation/process:
           attributes:
             end_date:
@@ -270,24 +272,24 @@ en:
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: tags must be less than or equal to %{count}
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: tags must be less than or equal to %{count}
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "You have to wait a minium of %{interval} days between notifications"
+              invalid: You have to wait a minium of %{interval} days between notifications
         signature:
           attributes:
             document_number:
-              not_in_census: 'Not verified by Census'
-              already_voted: 'Already voted this proposal'
+              not_in_census: Not verified by Census
+              already_voted: Already voted this proposal
         site_customization/page:
           attributes:
             slug:
-              slug_format: "must be letters, numbers, _ and -"
+              slug_format: must be letters, numbers, _ and -
         site_customization/image:
           attributes:
             image:

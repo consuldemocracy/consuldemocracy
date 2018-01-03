@@ -78,11 +78,10 @@ module CommentsHelper
   end
 
   def require_verified_resident_for_commentable?(commentable, current_user)
-    return false if current_user.administrator? || current_user.moderator?
+    # bypass verification - ouri, 7/1/17
+    return false  if current_user.administrator? || current_user.moderator?
 
-    commentable.respond_to?(:comments_for_verified_residents_only?) &&
-      commentable.comments_for_verified_residents_only? &&
-      !current_user.residence_verified?
+    commentable.respond_to?(:comments_for_verified_residents_only?) && commentable.comments_for_verified_residents_only? && !current_user.residence_verified?
   end
 
   def comments_closed_for_commentable?(commentable)

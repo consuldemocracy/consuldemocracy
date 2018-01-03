@@ -444,7 +444,7 @@ Rails.application.routes.draw do
         get :support_investments
         get :print_investments
       end
-      resources :investments, only: [:index, :new, :create, :show, :destroy], controller: 'budgets/investments' do
+      resources :investments, only: [:index, :new, :create, :show], controller: 'budgets/investments' do
         post :vote, on: :member
         get :print, on: :collection
       end

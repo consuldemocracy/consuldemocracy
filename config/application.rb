@@ -19,14 +19,13 @@ module Consul
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.default_locale = :es
-    config.i18n.available_locales = [:en, :es, :fr, :nl, 'pt-BR']
-    config.i18n.fallbacks = {'fr' => 'es', 'pt-br' => 'es', 'nl' => 'en'}
+    config.i18n.default_locale = :he
+    config.i18n.available_locales = [:en, :he]
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'custom', '**', '*.{rb,yml}')]
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
-
+    config.web_console.whitelisted_ips = '79.176.8.114'
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 

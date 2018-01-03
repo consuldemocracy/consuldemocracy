@@ -59,13 +59,27 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
-
-  # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+  
+  # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
-  config.action_mailer.asset_host = "https://#{Rails.application.secrets.server_name}"
+  config.action_mailer.default_url_options = { host: 'vote.kolhaam.org.il', port: 80 }
+  config.action_mailer.asset_host = "vote.kolhaam.org.il/"
 
+  # Deliver emails to a development mailbox at /letter_opener
+  config.action_mailer.asset_host = "postmaster@www.kolhaam.org.il"
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.mandrillapp.com",
+   :port                 => 2525,
+   :domain               => "vote.kolaam.org.il",
+   :user_name            => "tinytap@tinytap.it",
+   :password             => "-eODuzjjxO75fTBBKR7R_w",
+   :authentication       => "plain",
+  :enable_starttls_auto => true
+  }
+
+# Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true

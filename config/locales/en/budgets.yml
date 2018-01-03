@@ -29,11 +29,11 @@ en:
         unselected_title: Investments not selected for balloting phase
         unselected: See investments not selected for balloting phase
     phase:
-      accepting: Accepting projects
-      reviewing: Reviewing projects
-      selecting: Selecting projects
-      valuating: Valuating projects
-      balloting: Balloting projects
+      accepting: Accepting proposals
+      reviewing: Reviewing proposals
+      selecting: Selecting proposals
+      valuating: Valuating proposals
+      balloting: Balloting proposals
       reviewing_ballots: Reviewing Ballots
       finished: Finished budget
     index:

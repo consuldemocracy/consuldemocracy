@@ -3,3 +3,40 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+.top-links,.top-bar ,.top-bar-title a {color:#5A1252 }
+/*header,.top-bar{background-color:#C5CCDF}*/
+body{direction:rtl}
+.close-button{left:1rem}
+.advanced-search{float:left;left:0;direction:ltr}
+.column{float:right}
+.banner-style-one{ background-color:#B5A0B3}
+.banner-style-two {background-color:#5A1252}
+.banner-style-three{ background-color:#3875A2 }
+.banner-style-four {background-color:#0b8a7a}
+.banner-style-five {background-color:#C5CCDF}
+.banner-style-six {background-color:#C5CCDF}
+.top-bar .top-bar-title a img {
+    height: 52px;
+    margin-right: 0.75rem;
+    margin-top: 15px;
+    width: 52px;
+}
+
+.top-bar-title{font-family: 'Open Sans', sans-serif;}
+.featured-proposals{background-color:#B5A0B3!important}
+.wide-order-selector {
+
+    margin-top: 1.5rem;
+}
+.wide-order-selector .float-left{float:right !important}
+
+.notification::before {    right: -26px;}
+.notifications-list::before{right:-3px}
+
+@media screen and (min-width: 40em){
+    .row .row {
+            display: inline;
+    }
+}
