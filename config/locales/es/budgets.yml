@@ -108,6 +108,7 @@ es:
         organization_name_html: 'Organización: <strong>%{name}</strong>'
         share: Compartir
         title: Proyecto de gasto
+        title: Proyecto de inversión
         supports: Apoyos
         votes: Votos
         price: Precio
@@ -120,9 +121,9 @@ es:
       investment:
         add: Votar
         already_added: Ya has añadido esta propuesta de inversión
-        already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
+        already_supported: Ya has apoyado este proyecto de inversión. ¡Compártelo!
         support_title: Apoyar esta propuesta
-        confirm_group: "Sólo puedes apoyar propuestas en un distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
+        confirm_group: "Sólo puedes apoyar proyectos de una partida. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
         supports:
           zero: Sin apoyos
           one: 1 apoyo
