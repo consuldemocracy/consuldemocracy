@@ -73,7 +73,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara', '~> 2.14.0'
+  gem 'capybara', '~> 2.17.0'
   gem 'coveralls', '~> 0.8.21', require: false
   gem 'database_cleaner', '~> 1.6.1'
   gem 'email_spec', '~> 2.1.0'
