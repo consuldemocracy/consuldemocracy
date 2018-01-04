@@ -13,13 +13,6 @@
     <div class="small-12 medium-9 column">
       <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
-      <% if can_destroy_image?(investment) %>
-        <%= link_to t("images.remove_image"),
-                    image_path(investment.image, from: request.url),
-                    method: :delete,
-                    class: 'button hollow float-right' %>
-      <% end %>
-
       <h1><%= investment.title %></h1>
       <div class="budget-investment-info">
         <%= render '/shared/author_info', resource: investment %>
@@ -83,6 +76,19 @@
     </div>
 
     <aside class="small-12 medium-3 column">
+      <% if can_destroy_image?(investment) %>
+        <div class="sidebar-divider"></div>
+        <h2><%= t("budgets.investments.show.author") %></h2>
+        <div class="show-actions-menu">
+          <%= link_to image_path(investment.image, from: request.url),
+                      method: :delete,
+                      class: 'button hollow alert expanded' do %>
+              <span class="icon-image"></span>
+              <%= t("images.remove_image") %>
+          <% end %>
+        </div>
+      <% end %>
+
       <% if investment.should_show_aside? %>
         <% if investment.should_show_votes? %>
           <div class="sidebar-divider"></div>
