@@ -107,7 +107,6 @@ es:
         location_html: 'Ubicación: <strong>%{location}</strong>'
         organization_name_html: 'Organización: <strong>%{name}</strong>'
         share: Compartir
-        title: Proyecto de gasto
         title: Proyecto de inversión
         supports: Apoyos
         votes: Votos
