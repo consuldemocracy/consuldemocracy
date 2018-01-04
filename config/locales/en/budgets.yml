@@ -113,6 +113,7 @@ en:
         milestones_tab: Milestones
         no_milestones: Don't have defined milestones
         milestone_publication_date: "Published %{publication_date}"
+        author: Author
       wrong_price_format: Only integer numbers
       investment:
         add: Vote
