@@ -1145,6 +1145,12 @@
     color: #fff;
   }
 
+  .tagline {
+    display: block;
+    font-size: $small-font-size;
+    font-weight: normal;
+  }
+
   .callout.warning {
     font-size: $base-font-size;
 
