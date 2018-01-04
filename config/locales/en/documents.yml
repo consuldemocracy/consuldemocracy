@@ -16,7 +16,7 @@ en:
         alert: Cannot destroy document.
         confirm: Are you sure you want to delete the document? This action cannot be undone!
     buttons:
-      download_document: Dowload file
+      download_document: Download file
       destroy_document: Destroy
     errors:
       messages:

@@ -4,7 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/consul/consul/compare/v0.11...consul:master)
+## [Unreleased](https://github.com/consul/consul/compare/v0.12...consul:master)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.12.0](https://github.com/consul/consul/compare/v0.11...v0.12) - 2018-01-03
 
 ### Added
 - Added Images to Budget Investment's Milestones https://github.com/consul/consul/pull/2186
@@ -13,7 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - New setting `feature.allow_images` to allow upload and show images for both (proposals and budget investment projects). Set it manually through console with `Setting['feature.allow_images'] = true`
 - Related Content feature. Now Debates & Proposals can be related https://github.com/consul/consul/issues/1164
 - Map validations https://github.com/consul/consul/pull/2207
-- Added spec for 'rake db:dev_seed' taskhttps://github.com/consul/consul/pull/2201
+- Added spec for 'rake db:dev_seed' task https://github.com/consul/consul/pull/2201
 - Adds timestamps to polls https://github.com/consul/consul/pull/2180 (Run `rake polls:initialize_timestamps` to initialize attributes created_at and updated_at with the current time for all existing polls, or manually through console set correct values)
 
 ### Changed
@@ -23,16 +32,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improved generic error message https://github.com/consul/consul/pull/2217
 - Improved Sitemap for SEO https://github.com/consul/consul/pull/2215
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 - Notifications for hidden resources https://github.com/consul/consul/pull/2172
 - Notifications exceptions https://github.com/consul/consul/pull/2187
 - Fixed map location update https://github.com/consul/consul/pull/2213
-
-### Security
 
 ## [0.11.0](https://github.com/consul/consul/compare/v0.10...v0.11) - 2017-12-05
 
