@@ -118,7 +118,7 @@ GEM
       thor (~> 0.19.4)
       tins (~> 1.6)
     crass (1.0.3)
-    daemons (1.2.4)
+    daemons (1.2.6)
     dalli (2.7.6)
     database_cleaner (1.6.1)
     debug_inspector (0.0.3)
