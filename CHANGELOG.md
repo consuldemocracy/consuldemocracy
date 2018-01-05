@@ -7,7 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased](https://github.com/consul/consul/compare/v0.12...consul:master)
 
 ### Added
+
 ### Changed
+- Updated multiple minor & patch gem versions:
+  https://github.com/consul/consul/pull/2227
+  https://github.com/consul/consul/pull/2228
+  https://github.com/consul/consul/pull/2229
+  https://github.com/consul/consul/pull/2230
+  https://github.com/consul/consul/pull/2235
+  https://github.com/consul/consul/pull/2236
+  https://github.com/consul/consul/pull/2237
+  https://github.com/consul/consul/pull/2238
+  https://github.com/consul/consul/pull/2239
+
 ### Deprecated
 ### Removed
 ### Fixed
