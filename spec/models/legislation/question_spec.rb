@@ -7,7 +7,7 @@ describe Legislation::Question do
     it_behaves_like "notifiable"
   end
 
-  it "should be valid" do
+  it "is valid" do
     expect(question).to be_valid
   end
 
@@ -45,11 +45,11 @@ describe Legislation::Question do
     let!(:question1) { create(:legislation_question) }
     let!(:question2) { create(:legislation_question, legislation_process_id: question1.legislation_process_id) }
 
-    it "should return the next question" do
+    it "returns the next question" do
       expect(question1.next_question_id).to eq(question2.id)
     end
 
-    it "should return nil" do
+    it "returns nil" do
       expect(question2.next_question_id).to be_nil
     end
   end
@@ -58,7 +58,7 @@ describe Legislation::Question do
     let!(:question1) { create(:legislation_question) }
     let!(:question2) { create(:legislation_question, legislation_process_id: question1.legislation_process_id) }
 
-    it "should return the first question" do
+    it "returns the first question" do
       expect(question1.first_question_id).to eq(question1.id)
       expect(question2.first_question_id).to eq(question1.id)
     end

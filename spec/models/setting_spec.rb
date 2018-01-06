@@ -5,32 +5,32 @@ describe Setting do
     described_class["official_level_1_name"] = 'Stormtrooper'
   end
 
-  it "should return the overriden setting" do
+  it "returns the overriden setting" do
     expect(described_class['official_level_1_name']).to eq('Stormtrooper')
   end
 
-  it "should should return nil" do
+  it "shoulds return nil" do
     expect(described_class['undefined_key']).to eq(nil)
   end
 
-  it "should persist a setting on the db" do
+  it "persists a setting on the db" do
     expect(described_class.where(key: 'official_level_1_name', value: 'Stormtrooper')).to exist
   end
 
   describe "#feature_flag?" do
-    it "should be true if key starts with 'feature.'" do
+    it "is true if key starts with 'feature.'" do
       setting = described_class.create(key: 'feature.whatever')
       expect(setting.feature_flag?).to eq true
     end
 
-    it "should be false if key does not start with 'feature.'" do
+    it "is false if key does not start with 'feature.'" do
       setting = described_class.create(key: 'whatever')
       expect(setting.feature_flag?).to eq false
     end
   end
 
   describe "#enabled?" do
-    it "should be true if feature_flag and value present" do
+    it "is true if feature_flag and value present" do
       setting = described_class.create(key: 'feature.whatever', value: 1)
       expect(setting.enabled?).to eq true
 
@@ -41,7 +41,7 @@ describe Setting do
       expect(setting.enabled?).to eq true
     end
 
-    it "should be false if feature_flag and value blank" do
+    it "is false if feature_flag and value blank" do
       setting = described_class.create(key: 'feature.whatever')
       expect(setting.enabled?).to eq false
 
@@ -49,31 +49,31 @@ describe Setting do
       expect(setting.enabled?).to eq false
     end
 
-    it "should be false if not feature_flag" do
+    it "is false if not feature_flag" do
       setting = described_class.create(key: 'whatever', value: "whatever")
       expect(setting.enabled?).to eq false
     end
   end
 
   describe "#banner_style?" do
-    it "should be true if key starts with 'banner-style.'" do
+    it "is true if key starts with 'banner-style.'" do
       setting = described_class.create(key: 'banner-style.whatever')
       expect(setting.banner_style?).to eq true
     end
 
-    it "should be false if key does not start with 'banner-style.'" do
+    it "is false if key does not start with 'banner-style.'" do
       setting = described_class.create(key: 'whatever')
       expect(setting.banner_style?).to eq false
     end
   end
 
   describe "#banner_img?" do
-    it "should be true if key starts with 'banner-img.'" do
+    it "is true if key starts with 'banner-img.'" do
       setting = described_class.create(key: 'banner-img.whatever')
       expect(setting.banner_img?).to eq true
     end
 
-    it "should be false if key does not start with 'banner-img.'" do
+    it "is false if key does not start with 'banner-img.'" do
       setting = described_class.create(key: 'whatever')
       expect(setting.banner_img?).to eq false
     end

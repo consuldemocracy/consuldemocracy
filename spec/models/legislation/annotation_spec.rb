@@ -4,7 +4,7 @@ RSpec.describe Legislation::Annotation, type: :model do
   let(:draft_version) { create(:legislation_draft_version) }
   let(:annotation) { create(:legislation_annotation, draft_version: draft_version) }
 
-  it "should be valid" do
+  it "is valid" do
     expect(draft_version).to be_valid
     expect(annotation).to be_valid
   end

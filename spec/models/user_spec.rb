@@ -74,37 +74,37 @@ describe User do
 
   describe 'preferences' do
     describe 'email_on_comment' do
-      it 'should be false by default' do
+      it 'is false by default' do
         expect(subject.email_on_comment).to eq(false)
       end
     end
 
     describe 'email_on_comment_reply' do
-      it 'should be false by default' do
+      it 'is false by default' do
         expect(subject.email_on_comment_reply).to eq(false)
       end
     end
 
     describe 'subscription_to_website_newsletter' do
-      it 'should be true by default' do
+      it 'is true by default' do
         expect(subject.newsletter).to eq(true)
       end
     end
 
     describe 'email_digest' do
-      it 'should be true by default' do
+      it 'is true by default' do
         expect(subject.email_digest).to eq(true)
       end
     end
 
     describe 'email_on_direct_message' do
-      it 'should be true by default' do
+      it 'is true by default' do
         expect(subject.email_on_direct_message).to eq(true)
       end
     end
 
     describe 'official_position_badge' do
-      it 'should be false by default' do
+      it 'is false by default' do
         expect(subject.official_position_badge).to eq(false)
       end
     end
@@ -415,17 +415,17 @@ describe User do
   describe "cache" do
     let(:user) { create(:user) }
 
-    it "should expire cache with becoming a moderator" do
+    it "expires cache with becoming a moderator" do
       expect { create(:moderator, user: user) }
       .to change { user.updated_at}
     end
 
-    it "should expire cache with becoming an admin" do
+    it "expires cache with becoming an admin" do
       expect { create(:administrator, user: user) }
       .to change { user.updated_at}
     end
 
-    it "should expire cache with becoming a veridied organization" do
+    it "expires cache with becoming a veridied organization" do
       create(:organization, user: user)
       expect { user.organization.verify }
       .to change { user.reload.updated_at}
@@ -433,13 +433,13 @@ describe User do
   end
 
   describe "document_number" do
-    it "should upcase document number" do
+    it "upcases document number" do
       user = described_class.new(document_number: "x1234567z")
       user.valid?
       expect(user.document_number).to eq("X1234567Z")
     end
 
-    it "should remove all characters except numbers and letters" do
+    it "removes all characters except numbers and letters" do
       user = described_class.new(document_number: " 12.345.678 - B")
       user.valid?
       expect(user.document_number).to eq("12345678B")
@@ -660,14 +660,14 @@ describe User do
   describe "#interests" do
     let(:user) { create(:user) }
 
-    it "should return followed object tags" do
+    it "returns followed object tags" do
       proposal = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal, user: user)
 
       expect(user.interests).to eq ["Sport"]
     end
 
-    it "should discard followed objects duplicated tags" do
+    it "discards followed objects duplicated tags" do
       proposal1 = create(:proposal, tag_list: "Sport")
       proposal2 = create(:proposal, tag_list: "Sport")
       budget_investment = create(:budget_investment, tag_list: "Sport")

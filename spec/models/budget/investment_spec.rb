@@ -7,27 +7,27 @@ describe Budget::Investment do
     it_behaves_like "notifiable"
   end
 
-  it "should be valid" do
+  it "is valid" do
     expect(investment).to be_valid
   end
 
-  it "should not be valid without an author" do
+  it "is not valid without an author" do
     investment.author = nil
     expect(investment).to_not be_valid
   end
 
   describe "#title" do
-    it "should not be valid without a title" do
+    it "is not valid without a title" do
       investment.title = nil
       expect(investment).to_not be_valid
     end
 
-    it "should not be valid when very short" do
+    it "is not valid when very short" do
       investment.title = "abc"
       expect(investment).to_not be_valid
     end
 
-    it "should not be valid when very long" do
+    it "is not valid when very long" do
       investment.title = "a" * 81
       expect(investment).to_not be_valid
     end
@@ -61,20 +61,20 @@ describe Budget::Investment do
   end
 
   describe "#unfeasibility_explanation blank" do
-    it "should be valid if valuation not finished" do
+    it "is valid if valuation not finished" do
       investment.unfeasibility_explanation = ""
       investment.valuation_finished = false
       expect(investment).to be_valid
     end
 
-    it "should be valid if valuation finished and feasible" do
+    it "is valid if valuation finished and feasible" do
       investment.unfeasibility_explanation = ""
       investment.feasibility = "feasible"
       investment.valuation_finished = true
       expect(investment).to be_valid
     end
 
-    it "should not be valid if valuation finished and unfeasible" do
+    it "is not valid if valuation finished and unfeasible" do
       investment.unfeasibility_explanation = ""
       investment.feasibility = "unfeasible"
       investment.valuation_finished = true
@@ -83,13 +83,13 @@ describe Budget::Investment do
   end
 
   describe "#price blank" do
-    it "should be valid if valuation not finished" do
+    it "is valid if valuation not finished" do
       investment.price = ""
       investment.valuation_finished = false
       expect(investment).to be_valid
     end
 
-    it "should be valid if valuation finished and unfeasible" do
+    it "is valid if valuation finished and unfeasible" do
       investment.price = ""
       investment.unfeasibility_explanation = "reason"
       investment.feasibility = "unfeasible"
@@ -97,7 +97,7 @@ describe Budget::Investment do
       expect(investment).to be_valid
     end
 
-    it "should not be valid if valuation finished and feasible" do
+    it "is not valid if valuation finished and feasible" do
       investment.price = ""
       investment.feasibility = "feasible"
       investment.valuation_finished = true
@@ -228,7 +228,7 @@ describe Budget::Investment do
   end
 
   describe "by_admin" do
-    it "should return investments assigned to specific administrator" do
+    it "returns investments assigned to specific administrator" do
       investment1 = create(:budget_investment, administrator_id: 33)
       create(:budget_investment)
 
@@ -240,7 +240,7 @@ describe Budget::Investment do
   end
 
   describe "by_valuator" do
-    it "should return investments assigned to specific valuator" do
+    it "returns investments assigned to specific valuator" do
       investment1 = create(:budget_investment)
       investment2 = create(:budget_investment)
       investment3 = create(:budget_investment)
@@ -261,7 +261,7 @@ describe Budget::Investment do
 
   describe "scopes" do
     describe "valuation_open" do
-      it "should return all investments with false valuation_finished" do
+      it "returns all investments with false valuation_finished" do
         investment1 = create(:budget_investment, valuation_finished: true)
         investment2 = create(:budget_investment)
 
@@ -273,7 +273,7 @@ describe Budget::Investment do
     end
 
     describe "without_admin" do
-      it "should return all open investments without assigned admin" do
+      it "returns all open investments without assigned admin" do
         investment1 = create(:budget_investment, valuation_finished: true)
         investment2 = create(:budget_investment, administrator: create(:administrator))
         investment3 = create(:budget_investment)
@@ -286,7 +286,7 @@ describe Budget::Investment do
     end
 
     describe "managed" do
-      it "should return all open investments with assigned admin but without assigned valuators" do
+      it "returns all open investments with assigned admin but without assigned valuators" do
         investment1 = create(:budget_investment, administrator: create(:administrator))
         investment2 = create(:budget_investment, administrator: create(:administrator), valuation_finished: true)
         investment3 = create(:budget_investment, administrator: create(:administrator))
@@ -300,7 +300,7 @@ describe Budget::Investment do
     end
 
     describe "valuating" do
-      it "should return all investments with assigned valuator but valuation not finished" do
+      it "returns all investments with assigned valuator but valuation not finished" do
         investment1 = create(:budget_investment)
         investment2 = create(:budget_investment)
         investment3 = create(:budget_investment, valuation_finished: true)
@@ -316,7 +316,7 @@ describe Budget::Investment do
     end
 
     describe "valuation_finished" do
-      it "should return all investments with valuation finished" do
+      it "returns all investments with valuation finished" do
         investment1 = create(:budget_investment)
         investment2 = create(:budget_investment)
         investment3 = create(:budget_investment, valuation_finished: true)
@@ -332,7 +332,7 @@ describe Budget::Investment do
     end
 
     describe "feasible" do
-      it "should return all feasible investments" do
+      it "returns all feasible investments" do
         feasible_investment = create(:budget_investment, :feasible)
         create(:budget_investment)
 
@@ -341,7 +341,7 @@ describe Budget::Investment do
     end
 
     describe "unfeasible" do
-      it "should return all unfeasible investments" do
+      it "returns all unfeasible investments" do
         unfeasible_investment = create(:budget_investment, :unfeasible)
         create(:budget_investment, :feasible)
 
@@ -350,7 +350,7 @@ describe Budget::Investment do
     end
 
     describe "not_unfeasible" do
-      it "should return all feasible and undecided investments" do
+      it "returns all feasible and undecided investments" do
         unfeasible_investment = create(:budget_investment, :unfeasible)
         undecided_investment = create(:budget_investment, :undecided)
         feasible_investment = create(:budget_investment, :feasible)
@@ -360,7 +360,7 @@ describe Budget::Investment do
     end
 
     describe "undecided" do
-      it "should return all undecided investments" do
+      it "returns all undecided investments" do
         unfeasible_investment = create(:budget_investment, :unfeasible)
         undecided_investment = create(:budget_investment, :undecided)
         feasible_investment = create(:budget_investment, :feasible)
@@ -370,7 +370,7 @@ describe Budget::Investment do
     end
 
     describe "selected" do
-      it "should return all selected investments" do
+      it "returns all selected investments" do
         selected_investment = create(:budget_investment, :selected)
         unselected_investment = create(:budget_investment, :unselected)
 
@@ -379,7 +379,7 @@ describe Budget::Investment do
     end
 
     describe "unselected" do
-      it "should return all unselected not_unfeasible investments" do
+      it "returns all unselected not_unfeasible investments" do
         selected_investment = create(:budget_investment, :selected)
         unselected_unfeasible_investment = create(:budget_investment, :unselected, :unfeasible)
         unselected_undecided_investment = create(:budget_investment, :unselected, :undecided)
@@ -580,7 +580,7 @@ describe Budget::Investment do
   describe "Order" do
     describe "#sort_by_confidence_score" do
 
-      it "should order by confidence_score" do
+      it "orders by confidence_score" do
         least_voted = create(:budget_investment, cached_votes_up: 1)
         most_voted = create(:budget_investment, cached_votes_up: 10)
         some_votes = create(:budget_investment, cached_votes_up: 5)
@@ -590,7 +590,7 @@ describe Budget::Investment do
         expect(described_class.sort_by_confidence_score.third).to eq least_voted
       end
 
-      it "should order by confidence_score and then by id" do
+      it "orders by confidence_score and then by id" do
         least_voted  = create(:budget_investment, cached_votes_up: 1)
         most_voted   = create(:budget_investment, cached_votes_up: 10)
         most_voted2  = create(:budget_investment, cached_votes_up: 10)
@@ -637,7 +637,7 @@ describe Budget::Investment do
   end
 
   describe "#with_supports" do
-    it "should return proposals with supports" do
+    it "returns proposals with supports" do
       inv1 = create(:budget_investment)
       inv2 = create(:budget_investment)
       create(:vote, votable: inv1)

@@ -6,11 +6,11 @@ describe Signature do
 
   describe "validations" do
 
-    it "should be valid" do
+    it "is valid" do
       expect(signature).to be_valid
     end
 
-    it "should not be valid without a document number" do
+    it "is not valid without a document number" do
       signature.document_number = nil
       expect(signature).to_not be_valid
 
@@ -21,7 +21,7 @@ describe Signature do
       expect(signature).to_not be_valid
     end
 
-    it "should not be valid without an associated signature sheet" do
+    it "is not valid without an associated signature sheet" do
       signature.signature_sheet = nil
       expect(signature).to_not be_valid
     end
