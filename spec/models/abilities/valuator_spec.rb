@@ -11,6 +11,7 @@ describe Abilities::Valuator do
   before(:each) { assigned_investment.valuators << valuator }
 
   let(:finished_assigned_investment) { create(:budget_investment, budget: create(:budget, phase: 'finished')) }
+
   before(:each) { finished_assigned_investment.valuators << valuator }
 
   it { should be_able_to(:read, SpendingProposal) }

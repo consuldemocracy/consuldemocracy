@@ -125,6 +125,7 @@ describe Budget do
 
   describe "investments_orders" do
     let(:budget) { create(:budget) }
+
     it "is random when accepting and reviewing" do
       budget.phase = 'accepting'
       expect(budget.investments_orders).to eq(['random'])

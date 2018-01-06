@@ -63,3 +63,6 @@ RSpec/DescribeSymbol:
 
 RSpec/DescribedClass:
   Enabled: true
+
+RSpec/EmptyExampleGroup:
+  Enabled: true
