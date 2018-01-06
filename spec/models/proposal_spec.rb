@@ -162,6 +162,7 @@ describe Proposal do
 
   describe "#editable?" do
     let(:proposal) { create(:proposal) }
+
     before(:each) {Setting["max_votes_for_proposal_edit"] = 5}
     after(:each) {Setting["max_votes_for_proposal_edit"] = 1000}
 

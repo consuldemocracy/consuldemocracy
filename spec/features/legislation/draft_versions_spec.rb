@@ -140,6 +140,7 @@ feature 'Legislation Draft Versions' do
 
   context 'Annotations', :js do
     let(:user) { create(:user) }
+
     background { login_as user }
 
     scenario 'Visit as anonymous' do
@@ -218,6 +219,7 @@ feature 'Legislation Draft Versions' do
   context "Merged annotations", :js do
 
     let(:user) { create(:user) }
+
     background { login_as user }
 
     scenario 'View annotations and comments in an included range' do

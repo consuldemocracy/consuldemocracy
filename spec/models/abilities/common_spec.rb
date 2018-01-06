@@ -157,6 +157,7 @@ describe Abilities::Common do
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
 
     let(:own_direct_message) { create(:direct_message, sender: user) }
+
     before{ user.update(residence_verified_at: Time.current, confirmed_phone: "1") }
 
     describe "Proposal" do
@@ -239,6 +240,7 @@ describe Abilities::Common do
   describe "when level 3 verified" do
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
     let(:own_direct_message) { create(:direct_message, sender: user) }
+
     before{ user.update(verified_at: Time.current) }
 
     it { should be_able_to(:vote, Proposal)          }

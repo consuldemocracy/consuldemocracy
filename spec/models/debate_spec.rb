@@ -88,6 +88,7 @@ describe Debate do
 
   describe "#editable?" do
     let(:debate) { create(:debate) }
+
     before(:each) { Setting["max_votes_for_debate_edit"] = 3 }
     after(:each) { Setting["max_votes_for_debate_edit"] = 1000 }
 
@@ -111,6 +112,7 @@ describe Debate do
 
   describe "#editable_by?" do
     let(:debate) { create(:debate) }
+
     before(:each) { Setting["max_votes_for_debate_edit"] = 1 }
     after(:each) { Setting["max_votes_for_debate_edit"] = 1000 }
 
