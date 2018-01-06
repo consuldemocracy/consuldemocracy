@@ -11,7 +11,7 @@ describe Poll::Stats do
       3.times {create(:poll_voter, poll: poll, origin: 'booth')}
       create(:poll_voter, poll: poll)
       create(:poll_recount, origin: 'booth', white_amount: 1, null_amount: 0, total_amount: 2, booth_assignment_id: booth_assignment.id)
-      stats = Poll::Stats.new(poll).generate
+      stats = described_class.new(poll).generate
 
       expect(stats[:total_participants]).to eq(5)
       expect(stats[:total_participants_web]).to eq(2)

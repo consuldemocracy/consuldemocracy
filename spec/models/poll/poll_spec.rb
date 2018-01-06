@@ -72,7 +72,7 @@ describe Poll do
       incoming = create(:poll, :incoming)
       expired = create(:poll, :expired)
 
-      current_or_incoming = Poll.current_or_incoming
+      current_or_incoming = described_class.current_or_incoming
 
       expect(current_or_incoming).to include(current)
       expect(current_or_incoming).to include(incoming)
@@ -87,7 +87,7 @@ describe Poll do
       expired = create(:poll, :expired)
       recounting = create(:poll, :recounting)
 
-      recounting_polls = Poll.recounting
+      recounting_polls = described_class.recounting
 
       expect(recounting_polls).to_not include(current)
       expect(recounting_polls).to_not include(incoming)
@@ -103,7 +103,7 @@ describe Poll do
       expired = create(:poll, :expired)
       recounting = create(:poll, :recounting)
 
-      current_or_recounting_or_incoming = Poll.current_or_recounting_or_incoming
+      current_or_recounting_or_incoming = described_class.current_or_recounting_or_incoming
 
       expect(current_or_recounting_or_incoming).to include(current)
       expect(current_or_recounting_or_incoming).to include(recounting)
@@ -159,16 +159,16 @@ describe Poll do
 
     describe 'class method' do
       it "returns no polls for non-users and level 1 users" do
-        expect(Poll.answerable_by(nil)).to be_empty
-        expect(Poll.answerable_by(level1)).to be_empty
+        expect(described_class.answerable_by(nil)).to be_empty
+        expect(described_class.answerable_by(level1)).to be_empty
       end
 
       it "returns unrestricted polls for level 2 users" do
-        expect(Poll.answerable_by(level2).to_a).to eq([current_poll])
+        expect(described_class.answerable_by(level2).to_a).to eq([current_poll])
       end
 
       it "returns restricted & unrestricted polls for level 2 users of the correct geozone" do
-        list = Poll.answerable_by(level2_from_geozone)
+        list = described_class.answerable_by(level2_from_geozone)
                    .order(:geozone_restricted)
         expect(list.to_a).to eq([current_poll, current_restricted_poll])
       end

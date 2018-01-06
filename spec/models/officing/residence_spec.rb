@@ -28,13 +28,13 @@ describe Officing::Residence do
 
     describe "allowed age" do
       it "should not be valid if user is under allowed age" do
-        allow_any_instance_of(Officing::Residence).to receive(:date_of_birth).and_return(15.years.ago)
+        allow_any_instance_of(described_class).to receive(:date_of_birth).and_return(15.years.ago)
         expect(residence).to_not be_valid
         expect(residence.errors[:year_of_birth]).to include("You don't have the required age to participate")
       end
 
       it "should be valid if user is above allowed age" do
-        allow_any_instance_of(Officing::Residence).to receive(:date_of_birth).and_return(16.years.ago)
+        allow_any_instance_of(described_class).to receive(:date_of_birth).and_return(16.years.ago)
         expect(residence).to be_valid
         expect(residence.errors[:year_of_birth]).to be_empty
       end
@@ -44,12 +44,12 @@ describe Officing::Residence do
 
   describe "new" do
     it "should upcase document number" do
-      residence = Officing::Residence.new(document_number: "x1234567z")
+      residence = described_class.new(document_number: "x1234567z")
       expect(residence.document_number).to eq("X1234567Z")
     end
 
     it "should remove all characters except numbers and letters" do
-      residence = Officing::Residence.new(document_number: " 12.345.678 - B")
+      residence = described_class.new(document_number: " 12.345.678 - B")
       expect(residence.document_number).to eq("12345678B")
     end
   end

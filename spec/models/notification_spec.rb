@@ -5,7 +5,7 @@ describe Notification do
   describe "#unread (scope)" do
     it "returns only unread notifications" do
       2.times { create :notification }
-      expect(Notification.unread.size).to be 2
+      expect(described_class.unread.size).to be 2
     end
   end
 
@@ -14,7 +14,7 @@ describe Notification do
       old_notification = create :notification
       new_notification = create :notification
 
-      sorted_notifications = Notification.recent
+      sorted_notifications = described_class.recent
       expect(sorted_notifications.size).to be 2
       expect(sorted_notifications.first).to eq new_notification
       expect(sorted_notifications.last).to eq old_notification
@@ -23,8 +23,8 @@ describe Notification do
 
   describe "#for_render (scope)" do
     it "returns notifications including notifiable and user" do
-      expect(Notification).to receive(:includes).with(:notifiable).exactly(:once)
-      Notification.for_render
+      expect(described_class).to receive(:includes).with(:notifiable).exactly(:once)
+      described_class.for_render
     end
   end
 
@@ -40,10 +40,10 @@ describe Notification do
   describe "#mark_as_read" do
     it "destroys notification" do
       notification = create :notification
-      expect(Notification.unread.size).to eq 1
+      expect(described_class.unread.size).to eq 1
 
       notification.mark_as_read
-      expect(Notification.unread.size).to eq 0
+      expect(described_class.unread.size).to eq 0
     end
   end
 
