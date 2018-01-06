@@ -24,3 +24,6 @@ Metrics/LineLength:
 
 Layout/IndentationConsistency:
   EnforcedStyle: rails
+
+RSpec/BeforeAfterAll:
+  Enabled: true
