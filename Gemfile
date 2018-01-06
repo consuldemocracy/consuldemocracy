@@ -61,7 +61,7 @@ end
 group :development, :test do
   gem 'bullet', '~> 5.7.0'
   gem 'byebug', '~> 9.1.0'
-  gem 'factory_girl_rails', '~> 4.8.0'
+  gem 'factory_girl_rails', '~> 4.9.0'
   gem 'faker', '~> 1.8.7'
   gem 'i18n-tasks', '~> 0.9.15'
   gem 'knapsack_pro', '~> 0.53.0'
