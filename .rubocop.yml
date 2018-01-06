@@ -54,3 +54,9 @@ RSpec/ContextWording:
 
 RSpec/DescribeClass:
   Enabled: true
+
+RSpec/DescribeMethod:
+  Enabled: true
+
+RSpec/DescribeSymbol:
+  Enabled: true
