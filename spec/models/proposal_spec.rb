@@ -10,96 +10,96 @@ describe Proposal do
     it_behaves_like "map validations"
   end
 
-  it "should be valid" do
+  it "is valid" do
     expect(proposal).to be_valid
   end
 
-  it "should not be valid without an author" do
+  it "is not valid without an author" do
     proposal.author = nil
     expect(proposal).to_not be_valid
   end
 
-  it "should not be valid without a summary" do
+  it "is not valid without a summary" do
     proposal.summary = nil
     expect(proposal).to_not be_valid
   end
 
   describe "#title" do
-    it "should not be valid without a title" do
+    it "is not valid without a title" do
       proposal.title = nil
       expect(proposal).to_not be_valid
     end
 
-    it "should not be valid when very short" do
+    it "is not valid when very short" do
       proposal.title = "abc"
       expect(proposal).to_not be_valid
     end
 
-    it "should not be valid when very long" do
+    it "is not valid when very long" do
       proposal.title = "a" * 81
       expect(proposal).to_not be_valid
     end
   end
 
   describe "#description" do
-    it "should be sanitized" do
+    it "is sanitized" do
       proposal.description = "<script>alert('danger');</script>"
       proposal.valid?
       expect(proposal.description).to eq("alert('danger');")
     end
 
-    it "should not be valid when very long" do
+    it "is not valid when very long" do
       proposal.description = "a" * 6001
       expect(proposal).to_not be_valid
     end
   end
 
   describe "#question" do
-    it "should not be valid without a question" do
+    it "is not valid without a question" do
       proposal.question = nil
       expect(proposal).to_not be_valid
     end
 
-    it "should not be valid when very short" do
+    it "is not valid when very short" do
       proposal.question = "abc"
       expect(proposal).to_not be_valid
     end
 
-    it "should not be valid when very long" do
+    it "is not valid when very long" do
       proposal.question = "a" * 141
       expect(proposal).to_not be_valid
     end
   end
 
   describe "#video_url" do
-    it "should not be valid when URL is not from Youtube or Vimeo" do
+    it "is not valid when URL is not from Youtube or Vimeo" do
       proposal.video_url = "https://twitter.com"
       expect(proposal).to_not be_valid
     end
 
-    it "should be valid when URL is from Youtube or Vimeo" do
+    it "is valid when URL is from Youtube or Vimeo" do
       proposal.video_url = "https://vimeo.com/112681885"
       expect(proposal).to be_valid
     end
   end
 
   describe "#responsible_name" do
-    it "should be mandatory" do
+    it "is mandatory" do
       proposal.responsible_name = nil
       expect(proposal).to_not be_valid
     end
 
-    it "should not be valid when very short" do
+    it "is not valid when very short" do
       proposal.responsible_name = "abc"
       expect(proposal).to_not be_valid
     end
 
-    it "should not be valid when very long" do
+    it "is not valid when very long" do
       proposal.responsible_name = "a" * 61
       expect(proposal).to_not be_valid
     end
 
-    it "should be the document_number if level two user" do
+    it "is the document_number if level two user" do
       author = create(:user, :level_two, document_number: "12345678Z")
       proposal.author = author
       proposal.responsible_name = nil
@@ -108,7 +108,7 @@ describe Proposal do
       proposal.responsible_name = "12345678Z"
     end
 
-     it "should be the document_number if level two user" do
+     it "is the document_number if level two user" do
       author = create(:user, :level_three, document_number: "12345678Z")
       proposal.author = author
       proposal.responsible_name = nil
@@ -117,7 +117,7 @@ describe Proposal do
       proposal.responsible_name = "12345678Z"
      end
 
-    it "should not be updated when the author is deleted" do
+    it "is not updated when the author is deleted" do
       author = create(:user, :level_three, document_number: "12345678Z")
       proposal.author = author
       proposal.save
@@ -130,29 +130,29 @@ describe Proposal do
   end
 
   describe "tag_list" do
-    it "should sanitize the tag list" do
+    it "sanitizes the tag list" do
       proposal.tag_list = "user_id=1"
       proposal.valid?
       expect(proposal.tag_list).to eq(['user_id1'])
     end
 
-    it "should not be valid with a tag list of more than 6 elements" do
+    it "is not valid with a tag list of more than 6 elements" do
       proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
       expect(proposal).to_not be_valid
     end
 
-    it "should be valid with a tag list of up to 6 elements" do
+    it "is valid with a tag list of up to 6 elements" do
       proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
       expect(proposal).to be_valid
     end
   end
 
-  it "should not be valid without accepting terms of service" do
+  it "is not valid without accepting terms of service" do
     proposal.terms_of_service = nil
     expect(proposal).to_not be_valid
   end
 
-  it "should have a code" do
+  it "has a code" do
     Setting["proposal_code_prefix"] = "TEST"
     proposal = create(:proposal)
     expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%m')}-#{proposal.id}"
@@ -166,18 +166,18 @@ describe Proposal do
     before(:each) {Setting["max_votes_for_proposal_edit"] = 5}
     after(:each) {Setting["max_votes_for_proposal_edit"] = 1000}
 
-    it "should be true if proposal has no votes yet" do
+    it "is true if proposal has no votes yet" do
       expect(proposal.total_votes).to eq(0)
       expect(proposal.editable?).to be true
     end
 
-    it "should be true if proposal has less than limit votes" do
+    it "is true if proposal has less than limit votes" do
       create_list(:vote, 4, votable: proposal)
       expect(proposal.total_votes).to eq(4)
       expect(proposal.editable?).to be true
     end
 
-    it "should be false if proposal has more than limit votes" do
+    it "is false if proposal has more than limit votes" do
       create_list(:vote, 6, votable: proposal)
       expect(proposal.total_votes).to eq(6)
       expect(proposal.editable?).to be false
@@ -187,17 +187,17 @@ describe Proposal do
   describe "#votable_by?" do
     let(:proposal) { create(:proposal) }
 
-    it "should be true for level two verified users" do
+    it "is true for level two verified users" do
       user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
       expect(proposal.votable_by?(user)).to be true
     end
 
-    it "should be true for level three verified users" do
+    it "is true for level three verified users" do
       user = create(:user, verified_at: Time.current)
       expect(proposal.votable_by?(user)).to be true
     end
 
-    it "should be false for anonymous users" do
+    it "is false for anonymous users" do
       user = create(:user)
       expect(proposal.votable_by?(user)).to be false
     end
@@ -207,27 +207,27 @@ describe Proposal do
     let(:proposal) { create(:proposal) }
 
     describe "from level two verified users" do
-      it "should register vote" do
+      it "registers vote" do
         user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
         expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(1)
       end
     end
 
     describe "from level three verified users" do
-      it "should register vote" do
+      it "registers vote" do
         user = create(:user, verified_at: Time.current)
         expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(1)
       end
     end
 
     describe "from anonymous users" do
-      it "should not register vote" do
+      it "does not register vote" do
         user = create(:user)
         expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(0)
       end
     end
 
-    it "should not register vote for archived proposals" do
+    it "does not register vote for archived proposals" do
       user = create(:user, verified_at: Time.current)
       archived_proposal = create(:proposal, :archived)
 
@@ -239,7 +239,7 @@ describe Proposal do
 
     describe "with deprecated long tag list" do
 
-      it "should increase number of cached_total_votes" do
+      it "increases number of cached_total_votes" do
         proposal = create(:proposal)
 
         tag_list = ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7"]
@@ -349,47 +349,47 @@ describe Proposal do
   describe "cache" do
     let(:proposal) { create(:proposal) }
 
-    it "should expire cache when it has a new comment" do
+    it "expires cache when it has a new comment" do
       expect { create(:comment, commentable: proposal) }
       .to change { proposal.updated_at }
     end
 
-    it "should expire cache when it has a new vote" do
+    it "expires cache when it has a new vote" do
       expect { create(:vote, votable: proposal) }
       .to change { proposal.updated_at }
     end
 
-    it "should expire cache when it has a new flag" do
+    it "expires cache when it has a new flag" do
       expect { create(:flag, flaggable: proposal) }
       .to change { proposal.reload.updated_at }
     end
 
-    it "should expire cache when it has a new tag" do
+    it "expires cache when it has a new tag" do
       expect { proposal.update(tag_list: "new tag") }
       .to change { proposal.updated_at }
     end
 
-    it "should expire cache when hidden" do
+    it "expires cache when hidden" do
       expect { proposal.hide }
       .to change { proposal.updated_at }
     end
 
-    it "should expire cache when the author is hidden" do
+    it "expires cache when the author is hidden" do
       expect { proposal.author.hide }
       .to change { [proposal.reload.updated_at, proposal.author.updated_at] }
     end
 
-    it "should expire cache when the author is erased" do
+    it "expires cache when the author is erased" do
       expect { proposal.author.erase }
       .to change { [proposal.reload.updated_at, proposal.author.updated_at] }
     end
 
-    it "should expire cache when its author changes" do
+    it "expires cache when its author changes" do
       expect { proposal.author.update(username: "Eva") }
       .to change { [proposal.reload.updated_at, proposal.author.updated_at] }
     end
 
-    it "should expire cache when the author's organization get verified" do
+    it "expires cache when the author's organization get verified" do
       create(:organization, user: proposal.author)
       expect { proposal.author.organization.verify }
       .to change { [proposal.reload.updated_at, proposal.author.updated_at] }
@@ -588,7 +588,7 @@ describe Proposal do
 
     context "reorder" do
 
-      it "should be able to reorder by hot_score after searching" do
+      it "is able to reorder by hot_score after searching" do
         lowest_score  = create(:proposal,  title: 'stop corruption', cached_votes_up: 1)
         highest_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 2)
         average_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 3)
@@ -610,7 +610,7 @@ describe Proposal do
         expect(results.third).to eq(lowest_score)
       end
 
-      it "should be able to reorder by confidence_score after searching" do
+      it "is able to reorder by confidence_score after searching" do
         lowest_score  = create(:proposal,  title: 'stop corruption', cached_votes_up: 1)
         highest_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 2)
         average_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 3)
@@ -632,7 +632,7 @@ describe Proposal do
         expect(results.third).to eq(lowest_score)
       end
 
-      it "should be able to reorder by created_at after searching" do
+      it "is able to reorder by created_at after searching" do
         recent  = create(:proposal,  title: 'stop corruption', cached_votes_up: 1, created_at: 1.week.ago)
         newest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 2, created_at: Time.current)
         oldest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 3, created_at: 1.month.ago)
@@ -650,7 +650,7 @@ describe Proposal do
         expect(results.third).to eq(oldest)
       end
 
-      it "should be able to reorder by most commented after searching" do
+      it "is able to reorder by most commented after searching" do
         least_commented = create(:proposal,  title: 'stop corruption',  cached_votes_up: 1, comments_count: 1)
         most_commented  = create(:proposal,  title: 'stop corruption',  cached_votes_up: 2, comments_count: 100)
         some_comments   = create(:proposal,  title: 'stop corruption',  cached_votes_up: 3, comments_count: 10)
@@ -704,12 +704,12 @@ describe Proposal do
   end
 
   describe "#last_week" do
-    it "should return proposals created this week" do
+    it "returns proposals created this week" do
       proposal = create(:proposal)
       expect(described_class.last_week).to include(proposal)
     end
 
-    it "should not return proposals created more than a week ago" do
+    it "does not return proposals created more than a week ago" do
       proposal = create(:proposal, created_at: 8.days.ago)
       expect(described_class.last_week).to_not include(proposal)
     end
@@ -719,14 +719,14 @@ describe Proposal do
 
     context "categories" do
 
-      it "should return proposals tagged with a category" do
+      it "returns proposals tagged with a category" do
         create(:tag, :category, name: 'culture')
         proposal = create(:proposal, tag_list: 'culture')
 
         expect(described_class.for_summary.values.flatten).to include(proposal)
       end
 
-      it "should not return proposals tagged without a category" do
+      it "does not return proposals tagged without a category" do
         create(:tag, :category, name: 'culture')
         proposal = create(:proposal, tag_list: 'parks')
 
@@ -736,14 +736,14 @@ describe Proposal do
 
     context "districts" do
 
-      it "should return proposals with a geozone" do
+      it "returns proposals with a geozone" do
         california = create(:geozone, name: 'california')
         proposal   = create(:proposal, geozone: california)
 
         expect(described_class.for_summary.values.flatten).to include(proposal)
       end
 
-      it "should not return proposals without a geozone" do
+      it "does not return proposals without a geozone" do
         create(:geozone, name: 'california')
         proposal = create(:proposal)
 
@@ -751,19 +751,19 @@ describe Proposal do
       end
     end
 
-    it "should return proposals created this week" do
+    it "returns proposals created this week" do
       create(:tag, :category, name: 'culture')
       proposal = create(:proposal, tag_list: 'culture')
       expect(described_class.for_summary.values.flatten).to include(proposal)
     end
 
-    it "should not return proposals created more than a week ago" do
+    it "does not return proposals created more than a week ago" do
       create(:tag, :category, name: 'culture')
       proposal = create(:proposal, tag_list: 'culture', created_at: 8.days.ago)
       expect(described_class.for_summary.values.flatten).to_not include(proposal)
     end
 
-    it "should order proposals by votes" do
+    it "orders proposals by votes" do
       create(:tag, :category, name: 'culture')
       create(:proposal,  tag_list: 'culture').update_column(:confidence_score, 2)
       create(:proposal, tag_list: 'culture').update_column(:confidence_score, 10)
@@ -776,7 +776,7 @@ describe Proposal do
       expect(results.third.confidence_score).to  be(2)
     end
 
-    it "should order groups alphabetically" do
+    it "orders groups alphabetically" do
       create(:tag, :category, name: 'health')
       create(:tag, :category, name: 'culture')
       create(:tag, :category, name: 'social services')
@@ -792,7 +792,7 @@ describe Proposal do
       expect(results.third).to  eq(social_proposal)
     end
 
-    it "should return proposals grouped by tag" do
+    it "returns proposals grouped by tag" do
       create(:tag, :category, name: 'culture')
       create(:tag, :category, name: 'health')
 
@@ -809,7 +809,7 @@ describe Proposal do
   end
 
   describe "#to_param" do
-    it "should return a friendly url" do
+    it "returns a friendly url" do
       expect(proposal.to_param).to eq "#{proposal.id} #{proposal.title}".parameterize
     end
   end
@@ -876,7 +876,7 @@ describe Proposal do
 
   describe "#user_to_notify" do
 
-    it "should return voters and followers" do
+    it "returns voters and followers" do
       proposal = create(:proposal)
       voter = create(:user, :level_two)
       follower = create(:user, :level_two)
@@ -886,7 +886,7 @@ describe Proposal do
       expect(proposal.users_to_notify).to eq([voter, follower])
     end
 
-    it "should return voters and followers discarding duplicates" do
+    it "returns voters and followers discarding duplicates" do
       proposal = create(:proposal)
       voter_and_follower = create(:user, :level_two)
       follow = create(:follow, user: voter_and_follower, followable: proposal)
@@ -901,13 +901,13 @@ describe Proposal do
 
     let(:user)     { create(:user) }
 
-    it "Should not return any proposals when user has not interests" do
+    it "does not return any proposals when user has not interests" do
       create(:proposal)
 
       expect(described_class.recommendations(user).size).to eq 0
     end
 
-    it "Should return proposals ordered by cached_votes_up" do
+    it "returns proposals ordered by cached_votes_up" do
       proposal1 = create(:proposal, cached_votes_up: 1,  tag_list: "Sport")
       proposal2 = create(:proposal, cached_votes_up: 5,  tag_list: "Sport")
       proposal3 = create(:proposal, cached_votes_up: 10, tag_list: "Sport")
@@ -921,7 +921,7 @@ describe Proposal do
       expect(result.third).to eq proposal1
     end
 
-    it "Should return proposals related with user interests" do
+    it "returns proposals related with user interests" do
       proposal1 =  create(:proposal, tag_list: "Sport")
       proposal2 =  create(:proposal, tag_list: "Sport")
       proposal3 =  create(:proposal, tag_list: "Politics")
@@ -933,7 +933,7 @@ describe Proposal do
       expect(result).to eq [proposal2]
     end
 
-    it "Should not return proposals when user is follower" do
+    it "does not return proposals when user is follower" do
       proposal1 =  create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal1, user: user)
 
@@ -942,7 +942,7 @@ describe Proposal do
       expect(result.size).to eq 0
     end
 
-    it "Should not return proposals when user is the author" do
+    it "does not return proposals when user is the author" do
       proposal1 =  create(:proposal, author: user, tag_list: "Sport")
       proposal2 =  create(:proposal, tag_list: "Sport")
       proposal3 =  create(:proposal, tag_list: "Sport")
@@ -954,7 +954,7 @@ describe Proposal do
       expect(result).to eq [proposal2]
     end
 
-    it "should not return archived proposals" do
+    it "does not return archived proposals" do
       proposal1 = create(:proposal, cached_votes_up: 5, tag_list: "Sport")
       proposal2 = create(:proposal, cached_votes_up: 5, tag_list: "Sport")
       archived_proposal = create(:proposal, :archived)
@@ -965,7 +965,7 @@ describe Proposal do
       expect(result).to eq([proposal2])
     end
 
-    it "should not return already supported proposals" do
+    it "does not return already supported proposals" do
       proposal1 = create(:proposal, cached_votes_up: 5, tag_list: "Health")
       proposal2 = create(:proposal, cached_votes_up: 5, tag_list: "Health")
       proposal3 = create(:proposal, cached_votes_up: 5, tag_list: "Health")

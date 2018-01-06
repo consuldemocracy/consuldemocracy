@@ -72,3 +72,6 @@ RSpec/EmptyLineAfterSubject:
 
 RSpec/ExampleLength:
   Enabled: false
+
+RSpec/ExampleWording:
+  Enabled: true

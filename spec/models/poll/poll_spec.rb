@@ -9,26 +9,26 @@ describe Poll do
   end
 
   describe "validations" do
-    it "should be valid" do
+    it "is valid" do
       expect(poll).to be_valid
     end
 
-    it "should not be valid without a name" do
+    it "is not valid without a name" do
       poll.name = nil
       expect(poll).to_not be_valid
     end
 
-    it "should not be valid without a start date" do
+    it "is not valid without a start date" do
       poll.starts_at = nil
       expect(poll).to_not be_valid
     end
 
-    it "should not be valid without an end date" do
+    it "is not valid without an end date" do
       poll.ends_at = nil
       expect(poll).to_not be_valid
     end
 
-    it "should not be valid without a proper start/end date range" do
+    it "is not valid without a proper start/end date range" do
       poll.starts_at = 1.week.ago
       poll.ends_at = 2.months.ago
       expect(poll).to_not be_valid

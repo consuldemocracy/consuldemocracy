@@ -2,14 +2,14 @@ require 'rails_helper'
 
 describe Activity do
 
-  it "should be valid for different actionables" do
+  it "is valid for different actionables" do
     expect(build(:activity, actionable: create(:proposal))).to be_valid
     expect(build(:activity, actionable: create(:debate))).to be_valid
     expect(build(:activity, actionable: create(:comment))).to be_valid
     expect(build(:activity, actionable: create(:user))).to be_valid
   end
 
-  it "should be a valid only with allowed actions" do
+  it "is a valid only with allowed actions" do
     expect(build(:activity, action: "hide")).to be_valid
     expect(build(:activity, action: "block")).to be_valid
     expect(build(:activity, action: "restore")).to be_valid
@@ -17,7 +17,7 @@ describe Activity do
   end
 
   describe "log" do
-    it "should create an activity entry" do
+    it "creates an activity entry" do
       user = create(:user)
       proposal = create(:proposal)
 
@@ -31,7 +31,7 @@ describe Activity do
   end
 
   describe "on" do
-    it "should list all activity on an actionable object" do
+    it "lists all activity on an actionable object" do
       proposal  = create(:proposal)
       activity1 = create(:activity, action: "hide", actionable: proposal)
       activity2 = create(:activity, action: "restore", actionable: proposal)
@@ -49,7 +49,7 @@ describe Activity do
   end
 
   describe "by" do
-    it "should list all activity of a user" do
+    it "lists all activity of a user" do
       user1 = create(:user)
       activity1 = create(:activity, user: user1)
       activity2 = create(:activity, user: user1, action: "restore", actionable: create(:debate))
@@ -68,7 +68,7 @@ describe Activity do
   end
 
   describe "scopes by actionable" do
-    it "should filter by actionable type" do
+    it "filters by actionable type" do
       on_proposal   = create(:activity, actionable: create(:proposal))
       on_debate     = create(:activity, actionable: create(:debate))
       on_comment    = create(:activity, actionable: create(:comment))

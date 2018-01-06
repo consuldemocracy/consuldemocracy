@@ -15,18 +15,18 @@ describe Ahoy::DataSource do
       create :ahoy_event, name: 'bar', time: time_3
     end
 
-    it 'should work without data sources' do
+    it 'works without data sources' do
       ds = described_class.new
       expect(ds.build).to eq x: []
     end
 
-    it 'should work with single data sources' do
+    it 'works with single data sources' do
       ds = described_class.new
       ds.add 'foo', Ahoy::Event.where(name: 'foo').group_by_day(:time).count
       expect(ds.build).to eq :x => ["2015-01-01", "2015-01-02"], "foo" => [2, 1]
     end
 
-    it 'should combine data sources' do
+    it 'combines data sources' do
       ds = described_class.new
       ds.add 'foo', Ahoy::Event.where(name: 'foo').group_by_day(:time).count
       ds.add 'bar', Ahoy::Event.where(name: 'bar').group_by_day(:time).count
