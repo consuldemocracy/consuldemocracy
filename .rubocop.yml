@@ -11,57 +11,15 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
   TargetRubyVersion: 2.3
+  # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
+  # to ignore them, so only the ones explicitly set in this file are enabled.
+  DisabledByDefault: true
 
 Rails:
   Enabled: true
-
-Documentation:
-  Enabled: false
 
 Metrics/LineLength:
   Max: 140
 
 Layout/IndentationConsistency:
   EnforcedStyle: rails
-
-Style/EmptyMethod:
-  Enabled: false
-
-Style/StringLiterals:
-  Enabled: false
-
-Style/SymbolProc:
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
-Style/PercentLiteralDelimiters:
-  Enabled: false
-
-Style/SymbolArray:
-  Enabled: false
-
-Layout/EmptyLinesAroundClassBody:
-  Enabled: false
-
-Layout/EmptyLinesAroundBlockBody:
-  Enabled: false
-
-Layout/EmptyLinesAroundModuleBody:
-  Enabled: false
-
-Layout/SpaceBeforeBlockBraces:
-  Enabled: false
-
-Layout/SpaceInsideHashLiteralBraces:
-  Enabled: false
-
-Layout/SpaceInsideBlockBraces:
-  Enabled: false
-
-Layout/TrailingBlankLines:
-  Enabled: false
-
-Rails/ApplicationRecord:
-  Enabled: false
