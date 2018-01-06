@@ -48,3 +48,15 @@ Capybara/CurrentPathExpectation:
 
 Capybara/FeatureMethods:
   Enabled: true
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: true
+
+RSpec/DescribeMethod:
+  Enabled: true
+
+RSpec/DescribeSymbol:
+  Enabled: true

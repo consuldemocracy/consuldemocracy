@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe :shift do
+describe Poll::Shift do
   let(:poll) { create(:poll) }
   let(:booth) { create(:poll_booth) }
   let(:user) { create(:user, username: "Ana", email: "ana@example.com") }

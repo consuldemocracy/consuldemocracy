@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Budget::Investment::Milestone" do
+describe Budget::Investment::Milestone do
 
   describe "Validations" do
     let(:milestone) { build(:budget_investment_milestone) }

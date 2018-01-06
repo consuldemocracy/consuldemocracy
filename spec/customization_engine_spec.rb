@@ -3,7 +3,7 @@ require 'rails_helper'
 # This module tests functionality related with custom application files
 # TODO test models, controllers, etc...
 
-describe 'CustomizationEngine' do
+describe 'Customization Engine' do
 
   let(:test_key) { I18n.t('account.show.change_credentials_link') }
   let!(:default_path) { I18n.load_path }

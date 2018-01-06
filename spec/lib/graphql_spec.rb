@@ -35,7 +35,7 @@ def extract_fields(response, collection_name, field_chain)
   end.compact
 end
 
-describe 'ConsulSchema' do
+describe 'Consul Schema' do
   let(:user) { create(:user) }
   let(:proposal) { create(:proposal, author: user) }
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe :officer do
+describe Poll::Officer do
 
   describe "#voting_days_assigned_polls" do
     it "should return all polls with this officer assigned during voting days" do
