@@ -221,7 +221,7 @@ feature 'Budget Investments' do
     end
 
     scenario 'Each user as a different and consistent random budget investment order', :js do
-      12.times { create(:budget_investment, heading: heading) }
+      (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
         visit budget_investments_path(budget, heading: heading)
