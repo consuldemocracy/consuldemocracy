@@ -1092,7 +1092,15 @@ feature 'Budget Investments' do
       expect(page).to have_content("Investment project code: #{investment_with_same_id.id}")
       expect(page).to have_content("Investment with same Spending ID Proposal")
     end
-
   end
 
+  context "Wrong budget investment URL" do
+    let(:investment) { create(:budget_investment, budget: budget) }
+
+    it 'Trying to visit an investment with a wrong budget slug' do
+      wrong_url = budget_investment_path(budget_id: budget.slug, id: investment.id).gsub(budget.slug, 'wrong_budget_slug')
+
+      expect { visit wrong_url }.to raise_error(ActionController::RoutingError)
+    end
+  end
 end
