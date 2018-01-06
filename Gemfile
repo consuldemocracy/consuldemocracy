@@ -51,7 +51,7 @@ gem 'turbolinks', '~> 2.5.3'
 gem 'turnout', '~> 2.4.0'
 gem 'uglifier', '~> 3.2.0'
 gem 'unicorn', '~> 5.4.0'
-gem 'whenever', '~> 0.9.7', require: false
+gem 'whenever', '~> 0.10.0', require: false
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-leaflet'
