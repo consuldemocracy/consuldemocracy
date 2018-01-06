@@ -45,3 +45,9 @@ RSpec/BeforeAfterAll:
 
 Capybara/CurrentPathExpectation:
   Enabled: true
+
+Capybara/FeatureMethods:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
