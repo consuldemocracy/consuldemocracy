@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Verification::Letter' do
+describe Verification::Letter do
 
   let(:user) { create(:user) }
 

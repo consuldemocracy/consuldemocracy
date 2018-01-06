@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe :voter do
+describe Poll::Voter do
 
   let(:poll) { create(:poll) }
   let(:booth) { create(:poll_booth) }
