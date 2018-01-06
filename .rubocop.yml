@@ -66,3 +66,6 @@ RSpec/DescribedClass:
 
 RSpec/EmptyExampleGroup:
   Enabled: true
+
+RSpec/EmptyLineAfterSubject:
+  Enabled: true

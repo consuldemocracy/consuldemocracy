@@ -3,6 +3,7 @@ require 'cancan/matchers'
 
 describe Abilities::Common do
   subject(:ability) { Ability.new(user) }
+
   let(:geozone)     { create(:geozone)  }
 
   let(:user) { create(:user, geozone: geozone) }

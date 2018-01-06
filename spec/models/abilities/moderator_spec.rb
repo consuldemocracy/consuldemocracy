@@ -3,6 +3,7 @@ require 'cancan/matchers'
 
 describe Abilities::Moderator do
   subject(:ability) { Ability.new(user) }
+
   let(:user) { moderator.user }
   let(:moderator) { create(:moderator) }
 
