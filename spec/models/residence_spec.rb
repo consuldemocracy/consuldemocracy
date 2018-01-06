@@ -13,19 +13,19 @@ describe Verification::Residence do
 
     describe "dates" do
       it "should be valid with a valid date of birth" do
-        residence = Verification::Residence.new("date_of_birth(3i)" => "1", "date_of_birth(2i)" => "1", "date_of_birth(1i)" => "1980")
+        residence = described_class.new("date_of_birth(3i)" => "1", "date_of_birth(2i)" => "1", "date_of_birth(1i)" => "1980")
         expect(residence.errors[:date_of_birth].size).to eq(0)
       end
 
       it "should not be valid without a date of birth" do
-        residence = Verification::Residence.new("date_of_birth(3i)" => "", "date_of_birth(2i)" => "", "date_of_birth(1i)" => "")
+        residence = described_class.new("date_of_birth(3i)" => "", "date_of_birth(2i)" => "", "date_of_birth(1i)" => "")
         expect(residence).to_not be_valid
         expect(residence.errors[:date_of_birth]).to include("can't be blank")
       end
     end
 
     it "should validate user has allowed age" do
-      residence = Verification::Residence.new("date_of_birth(3i)" => "1",
+      residence = described_class.new("date_of_birth(3i)" => "1",
                                               "date_of_birth(2i)" => "1",
                                               "date_of_birth(1i)" => 5.years.ago.year.to_s)
       expect(residence).to_not be_valid
@@ -52,12 +52,12 @@ describe Verification::Residence do
 
   describe "new" do
     it "should upcase document number" do
-      residence = Verification::Residence.new(document_number: "x1234567z")
+      residence = described_class.new(document_number: "x1234567z")
       expect(residence.document_number).to eq("X1234567Z")
     end
 
     it "should remove all characters except numbers and letters" do
-      residence = Verification::Residence.new(document_number: " 12.345.678 - B")
+      residence = described_class.new(document_number: " 12.345.678 - B")
       expect(residence.document_number).to eq("12345678B")
     end
   end

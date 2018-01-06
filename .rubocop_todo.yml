@@ -784,7 +784,7 @@ Style/WordArray:
   EnforcedStyle: percent
   MinSize: 8
 
-# Offense count: 9
+# Offense count: 10
 RSpec/DescribeClass:
   Exclude:
     - 'spec/customization_engine_spec.rb'
@@ -797,3 +797,11 @@ RSpec/DescribeClass:
     - 'spec/lib/tasks/settings_spec.rb'
     - 'spec/models/abilities/organization_spec.rb'
     - 'spec/views/welcome/index.html.erb_spec.rb'
+
+# Offense count: 2
+# Configuration parameters: SkipBlocks, EnforcedStyle.
+# SupportedStyles: described_class, explicit
+RSpec/DescribedClass:
+  Exclude:
+    - 'spec/controllers/concerns/has_filters_spec.rb'
+    - 'spec/controllers/concerns/has_orders_spec.rb'

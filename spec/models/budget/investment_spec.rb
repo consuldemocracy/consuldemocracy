@@ -232,7 +232,7 @@ describe Budget::Investment do
       investment1 = create(:budget_investment, administrator_id: 33)
       create(:budget_investment)
 
-      by_admin = Budget::Investment.by_admin(33)
+      by_admin = described_class.by_admin(33)
 
       expect(by_admin.size).to eq(1)
       expect(by_admin.first).to eq(investment1)
@@ -252,7 +252,7 @@ describe Budget::Investment do
       investment2.valuators << valuator2
       investment3.valuators << [valuator1, valuator2]
 
-      by_valuator = Budget::Investment.by_valuator(valuator1.id)
+      by_valuator = described_class.by_valuator(valuator1.id)
 
       expect(by_valuator.size).to eq(2)
       expect(by_valuator.sort).to eq([investment1, investment3].sort)
@@ -265,7 +265,7 @@ describe Budget::Investment do
         investment1 = create(:budget_investment, valuation_finished: true)
         investment2 = create(:budget_investment)
 
-        valuation_open = Budget::Investment.valuation_open
+        valuation_open = described_class.valuation_open
 
         expect(valuation_open.size).to eq(1)
         expect(valuation_open.first).to eq(investment2)
@@ -278,7 +278,7 @@ describe Budget::Investment do
         investment2 = create(:budget_investment, administrator: create(:administrator))
         investment3 = create(:budget_investment)
 
-        without_admin = Budget::Investment.without_admin
+        without_admin = described_class.without_admin
 
         expect(without_admin.size).to eq(1)
         expect(without_admin.first).to eq(investment3)
@@ -292,7 +292,7 @@ describe Budget::Investment do
         investment3 = create(:budget_investment, administrator: create(:administrator))
         investment1.valuators << create(:valuator)
 
-        managed = Budget::Investment.managed
+        managed = described_class.managed
 
         expect(managed.size).to eq(1)
         expect(managed.first).to eq(investment3)
@@ -308,7 +308,7 @@ describe Budget::Investment do
         investment2.valuators << create(:valuator)
         investment3.valuators << create(:valuator)
 
-        valuating = Budget::Investment.valuating
+        valuating = described_class.valuating
 
         expect(valuating.size).to eq(1)
         expect(valuating.first).to eq(investment2)
@@ -324,7 +324,7 @@ describe Budget::Investment do
         investment2.valuators << create(:valuator)
         investment3.valuators << create(:valuator)
 
-        valuation_finished = Budget::Investment.valuation_finished
+        valuation_finished = described_class.valuation_finished
 
         expect(valuation_finished.size).to eq(1)
         expect(valuation_finished.first).to eq(investment3)
@@ -336,7 +336,7 @@ describe Budget::Investment do
         feasible_investment = create(:budget_investment, :feasible)
         create(:budget_investment)
 
-        expect(Budget::Investment.feasible).to eq [feasible_investment]
+        expect(described_class.feasible).to eq [feasible_investment]
       end
     end
 
@@ -345,7 +345,7 @@ describe Budget::Investment do
         unfeasible_investment = create(:budget_investment, :unfeasible)
         create(:budget_investment, :feasible)
 
-        expect(Budget::Investment.unfeasible).to eq [unfeasible_investment]
+        expect(described_class.unfeasible).to eq [unfeasible_investment]
       end
     end
 
@@ -355,7 +355,7 @@ describe Budget::Investment do
         undecided_investment = create(:budget_investment, :undecided)
         feasible_investment = create(:budget_investment, :feasible)
 
-        expect(Budget::Investment.not_unfeasible.sort).to eq [undecided_investment, feasible_investment].sort
+        expect(described_class.not_unfeasible.sort).to eq [undecided_investment, feasible_investment].sort
       end
     end
 
@@ -365,7 +365,7 @@ describe Budget::Investment do
         undecided_investment = create(:budget_investment, :undecided)
         feasible_investment = create(:budget_investment, :feasible)
 
-        expect(Budget::Investment.undecided).to eq [undecided_investment]
+        expect(described_class.undecided).to eq [undecided_investment]
       end
     end
 
@@ -374,7 +374,7 @@ describe Budget::Investment do
         selected_investment = create(:budget_investment, :selected)
         unselected_investment = create(:budget_investment, :unselected)
 
-        expect(Budget::Investment.selected).to eq [selected_investment]
+        expect(described_class.selected).to eq [selected_investment]
       end
     end
 
@@ -385,7 +385,7 @@ describe Budget::Investment do
         unselected_undecided_investment = create(:budget_investment, :unselected, :undecided)
         unselected_feasible_investment = create(:budget_investment, :unselected, :feasible)
 
-        expect(Budget::Investment.unselected.sort).to eq [unselected_undecided_investment, unselected_feasible_investment].sort
+        expect(described_class.unselected.sort).to eq [unselected_undecided_investment, unselected_feasible_investment].sort
       end
     end
   end
@@ -399,7 +399,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :feasible,   budget: budget)
       investment3 = create(:budget_investment, :unfeasible, budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, {}, :feasible)
+      results = described_class.apply_filters_and_search(budget, {}, :feasible)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
@@ -411,7 +411,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :unfeasible, budget: budget)
       investment3 = create(:budget_investment, :feasible,   budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, {}, :unfeasible)
+      results = described_class.apply_filters_and_search(budget, {}, :unfeasible)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
@@ -425,7 +425,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :feasible, :selected,   budget: budget)
       investment3 = create(:budget_investment, :feasible, :unselected, budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, {}, :selected)
+      results = described_class.apply_filters_and_search(budget, {}, :selected)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
@@ -439,7 +439,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :feasible, :unselected, budget: budget)
       investment3 = create(:budget_investment, :feasible, :selected,   budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, {}, :unselected)
+      results = described_class.apply_filters_and_search(budget, {}, :unselected)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
@@ -456,7 +456,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, heading: heading1, budget: budget)
       investment3 = create(:budget_investment, heading: heading2, budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, heading_id: heading1.id)
+      results = described_class.apply_filters_and_search(budget, heading_id: heading1.id)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
@@ -468,7 +468,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, title: "improved health", budget: budget)
       investment3 = create(:budget_investment, title: "finance",         budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, search: "health")
+      results = described_class.apply_filters_and_search(budget, search: "health")
 
       expect(results).to     include investment1
       expect(results).to     include investment2
@@ -482,10 +482,10 @@ describe Budget::Investment do
       it "searches by tags" do
         investment = create(:budget_investment, tag_list: 'Latina')
 
-        results = Budget::Investment.search('Latina')
+        results = described_class.search('Latina')
         expect(results.first).to eq(investment)
 
-        results = Budget::Investment.search('Latin')
+        results = described_class.search('Latin')
         expect(results.first).to eq(investment)
       end
     end
@@ -585,9 +585,9 @@ describe Budget::Investment do
         most_voted = create(:budget_investment, cached_votes_up: 10)
         some_votes = create(:budget_investment, cached_votes_up: 5)
 
-        expect(Budget::Investment.sort_by_confidence_score.first).to eq most_voted
-        expect(Budget::Investment.sort_by_confidence_score.second).to eq some_votes
-        expect(Budget::Investment.sort_by_confidence_score.third).to eq least_voted
+        expect(described_class.sort_by_confidence_score.first).to eq most_voted
+        expect(described_class.sort_by_confidence_score.second).to eq some_votes
+        expect(described_class.sort_by_confidence_score.third).to eq least_voted
       end
 
       it "should order by confidence_score and then by id" do
@@ -596,10 +596,10 @@ describe Budget::Investment do
         most_voted2  = create(:budget_investment, cached_votes_up: 10)
         least_voted2 = create(:budget_investment, cached_votes_up: 1)
 
-        expect(Budget::Investment.sort_by_confidence_score.first).to eq most_voted2
-        expect(Budget::Investment.sort_by_confidence_score.second).to eq most_voted
-        expect(Budget::Investment.sort_by_confidence_score.third).to eq least_voted2
-        expect(Budget::Investment.sort_by_confidence_score.fourth).to eq least_voted
+        expect(described_class.sort_by_confidence_score.first).to eq most_voted2
+        expect(described_class.sort_by_confidence_score.second).to eq most_voted
+        expect(described_class.sort_by_confidence_score.third).to eq least_voted2
+        expect(described_class.sort_by_confidence_score.fourth).to eq least_voted
       end
     end
   end
@@ -642,8 +642,8 @@ describe Budget::Investment do
       inv2 = create(:budget_investment)
       create(:vote, votable: inv1)
 
-      expect(Budget::Investment.with_supports).to include(inv1)
-      expect(Budget::Investment.with_supports).to_not include(inv2)
+      expect(described_class.with_supports).to include(inv1)
+      expect(described_class.with_supports).to_not include(inv2)
     end
   end
 
