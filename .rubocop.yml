@@ -42,3 +42,6 @@ RSpec/BeEql:
 
 RSpec/BeforeAfterAll:
   Enabled: true
+
+Capybara/CurrentPathExpectation:
+  Enabled: true

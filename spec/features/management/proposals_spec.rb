@@ -42,7 +42,7 @@ feature 'Proposals' do
       expect(page).to have_content user.name
       expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
 
-      expect(current_path).to eq(management_proposal_path(Proposal.last))
+      expect(page).to have_current_path(management_proposal_path(Proposal.last))
     end
 
     scenario "Should not allow unverified users to create proposals" do
@@ -65,7 +65,7 @@ feature 'Proposals' do
       right_path = management_proposal_path(proposal)
       visit right_path
 
-      expect(current_path).to eq(right_path)
+      expect(page).to have_current_path(right_path)
     end
 
     scenario 'When path does not match the friendly url' do
@@ -78,8 +78,8 @@ feature 'Proposals' do
       old_path = "#{management_proposals_path}/#{proposal.id}-something-else"
       visit old_path
 
-      expect(current_path).to_not eq(old_path)
-      expect(current_path).to eq(right_path)
+      expect(page).not_to have_current_path(old_path)
+      expect(page).to have_current_path(right_path)
     end
   end
 
@@ -95,7 +95,7 @@ feature 'Proposals' do
     fill_in "search", with: "what you got"
     click_button "Search"
 
-    expect(current_path).to eq(management_proposals_path)
+    expect(page).to have_current_path(management_proposals_path, only_path: true)
 
     within(".proposals-list") do
       expect(page).to have_css('.proposal', count: 1)
@@ -115,7 +115,7 @@ feature 'Proposals' do
 
     click_link "Support proposals"
 
-    expect(current_path).to eq(management_proposals_path)
+    expect(page).to have_current_path(management_proposals_path)
 
     within(".account-info") do
       expect(page).to have_content "Identified as"
@@ -149,7 +149,7 @@ feature 'Proposals' do
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this proposal. Share it!"
       end
-      expect(current_path).to eq(management_proposals_path)
+      expect(page).to have_current_path(management_proposals_path)
     end
 
     scenario 'Voting proposals on behalf of someone in show view', :js do
@@ -167,7 +167,7 @@ feature 'Proposals' do
       find('.in-favor a').click
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this proposal. Share it!"
-      expect(current_path).to eq(management_proposal_path(proposal))
+      expect(page).to have_current_path(management_proposal_path(proposal))
     end
 
     scenario "Should not allow unverified users to vote proposals" do

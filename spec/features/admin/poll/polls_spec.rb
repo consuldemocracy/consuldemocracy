@@ -112,7 +112,7 @@ feature 'Admin polls' do
       click_link "Edit"
     end
 
-    expect(current_path).to eq(edit_admin_poll_path(poll))
+    expect(page).to have_current_path(edit_admin_poll_path(poll))
   end
 
   context "Booths" do

@@ -159,7 +159,7 @@ feature 'Managed User' do
     expect(page).to have_content "User session signed out successfully."
     expect(page).to_not have_content "Identified as"
     expect(page).to_not have_content user.username.to_s
-    expect(current_path).to eq(management_root_path)
+    expect(page).to have_current_path(management_root_path)
   end
 
 end

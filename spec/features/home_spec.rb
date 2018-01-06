@@ -103,7 +103,7 @@ feature "Home" do
         visit root_path
         click_on debate.title
 
-        expect(current_path).to eq debate_path(debate)
+        expect(page).to have_current_path(debate_path(debate))
       end
 
       scenario 'Do not display recommended section when there are not debates and proposals' do
