@@ -3,6 +3,7 @@ require 'cancan/matchers'
 
 describe Abilities::Valuator do
   subject(:ability) { Ability.new(user) }
+
   let(:user) { valuator.user }
   let(:valuator) { create(:valuator) }
   let(:non_assigned_investment) { create(:budget_investment) }

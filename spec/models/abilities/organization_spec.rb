@@ -3,6 +3,7 @@ require 'cancan/matchers'
 
 describe 'Abilities::Organization' do
   subject(:ability) { Ability.new(user) }
+
   let(:user) { organization.user }
   let(:organization) { create(:organization) }
   let(:debate) { create(:debate) }
