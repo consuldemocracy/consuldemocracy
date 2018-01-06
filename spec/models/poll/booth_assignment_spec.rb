@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe :booth_assignment do
+describe Poll::BoothAssignment do
   let(:poll){create(:poll)}
   let(:booth){create(:poll_booth)}
   let(:booth1){create(:poll_booth)}

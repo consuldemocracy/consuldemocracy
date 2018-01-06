@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'cancan/matchers'
 
-describe "Abilities::Common" do
+describe Abilities::Common do
   subject(:ability) { Ability.new(user) }
   let(:geozone)     { create(:geozone)  }
 

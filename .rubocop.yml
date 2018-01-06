@@ -51,3 +51,6 @@ Capybara/FeatureMethods:
 
 RSpec/ContextWording:
   Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: true

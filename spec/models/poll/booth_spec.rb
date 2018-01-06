@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe :booth do
+describe Poll::Booth do
 
   let(:booth) { build(:poll_booth) }
 
