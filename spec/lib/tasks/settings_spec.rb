@@ -15,10 +15,6 @@ describe 'Settings Rake' do
       Rake.application.invoke_task 'settings:per_page_code_migration'
     end
 
-    after(:all) do
-      Setting['per_page_code_head'] = ''
-    end
-
     context 'Neither per_page_code_head or per_page_code Settings exist' do
       before do
         Setting.where(key: 'per_page_code').first&.destroy
