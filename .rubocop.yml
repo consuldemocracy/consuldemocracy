@@ -54,9 +54,6 @@ Layout/EmptyLinesAroundModuleBody:
 Layout/SpaceBeforeBlockBraces:
   Enabled: false
 
-Layout/SpaceInsideBrackets:
-  Enabled: false
-
 Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 
