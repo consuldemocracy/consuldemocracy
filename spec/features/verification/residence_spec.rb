@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-feature 'Residence' do
+describe 'Residence' do
 
-  background { create(:geozone) }
+  before { create(:geozone) }
 
-  scenario 'Verify resident' do
+  it 'Verify resident' do
     user = create(:user)
     login_as(user)
 
@@ -22,7 +22,7 @@ feature 'Residence' do
     expect(page).to have_content 'Residence verified'
   end
 
-  scenario 'When trying to verify a deregistered account old votes are reassigned' do
+  it 'When trying to verify a deregistered account old votes are reassigned' do
     erased_user = create(:user, document_number: '12345678Z', document_type: '1', erased_at: Time.current)
     vote = create(:vote, voter: erased_user)
     new_user = create(:user)
@@ -47,7 +47,7 @@ feature 'Residence' do
     expect(new_user.reload.document_number).to eq('12345678Z')
   end
 
-  scenario 'Error on verify' do
+  it 'Error on verify' do
     user = create(:user)
     login_as(user)
 
@@ -59,7 +59,7 @@ feature 'Residence' do
     expect(page).to have_content(/\d errors? prevented the verification of your residence/)
   end
 
-  scenario 'Error on postal code not in census' do
+  it 'Error on postal code not in census' do
     user = create(:user)
     login_as(user)
 
@@ -79,7 +79,7 @@ feature 'Residence' do
     expect(page).to have_content 'In order to be verified, you must be registered'
   end
 
-  scenario 'Error on census' do
+  it 'Error on census' do
     user = create(:user)
     login_as(user)
 
@@ -99,7 +99,7 @@ feature 'Residence' do
     expect(page).to have_content 'The Census was unable to verify your information'
   end
 
-  scenario '5 tries allowed' do
+  it '5 tries allowed' do
     user = create(:user)
     login_as(user)
 

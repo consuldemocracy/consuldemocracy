@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-feature 'Admin legislation questions' do
+describe 'Admin legislation questions' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
   context "Feature flag" do
 
-    background do
+    before do
       Setting['feature.legislation'] = nil
     end
 
@@ -17,7 +17,7 @@ feature 'Admin legislation questions' do
       Setting['feature.legislation'] = true
     end
 
-    scenario 'Disabled with a feature flag' do
+    it 'Disabled with a feature flag' do
       process = create(:legislation_process)
       expect{ visit admin_legislation_process_questions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
@@ -26,7 +26,7 @@ feature 'Admin legislation questions' do
 
   context "Index" do
 
-    scenario 'Displaying legislation process questions' do
+    it 'Displaying legislation process questions' do
       process = create(:legislation_process, title: 'An example legislation process')
       question = create(:legislation_question, process: process, title: 'Question 1')
       question = create(:legislation_question, process: process, title: 'Question 2')
@@ -42,7 +42,7 @@ feature 'Admin legislation questions' do
   end
 
   context 'Create' do
-    scenario 'Valid legislation question' do
+    it 'Valid legislation question' do
       process = create(:legislation_process, title: 'An example legislation process')
 
       visit admin_root_path
@@ -68,7 +68,7 @@ feature 'Admin legislation questions' do
   end
 
   context 'Update' do
-    scenario 'Valid legislation question', :js do
+    it 'Valid legislation question', :js do
       process = create(:legislation_process, title: 'An example legislation process')
       question = create(:legislation_question, title: 'Question 2', process: process)
 
@@ -95,7 +95,7 @@ feature 'Admin legislation questions' do
   end
 
   context 'Delete' do
-    scenario 'Legislation question', :js do
+    it 'Legislation question', :js do
       process = create(:legislation_process, title: 'An example legislation process')
       create(:legislation_question, title: 'Question 1', process: process)
       question = create(:legislation_question, title: 'Question 2', process: process)

@@ -45,3 +45,6 @@ RSpec/BeforeAfterAll:
 
 Capybara/CurrentPathExpectation:
   Enabled: true
+
+Capybara/FeatureMethods:
+  Enabled: true

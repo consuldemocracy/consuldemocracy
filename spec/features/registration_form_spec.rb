@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Registration form' do
+describe 'Registration form' do
 
-  scenario 'username is not available', :js do
+  it 'username is not available', :js do
     user = create(:user)
 
     visit new_user_registration_path
@@ -14,7 +14,7 @@ feature 'Registration form' do
     expect(page).to have_content I18n.t("devise_views.users.registrations.new.username_is_not_available")
   end
 
-  scenario 'username is available', :js do
+  it 'username is available', :js do
     visit new_user_registration_path
     expect(page).to_not have_content I18n.t("devise_views.users.registrations.new.username_is_available")
 
@@ -24,7 +24,7 @@ feature 'Registration form' do
     expect(page).to have_content I18n.t("devise_views.users.registrations.new.username_is_available")
   end
 
-  scenario 'do not save blank redeemable codes' do
+  it 'do not save blank redeemable codes' do
     visit new_user_registration_path(use_redeemable_code: 'true')
 
     fill_in 'user_username',              with: "NewUserWithCode77"
@@ -43,7 +43,7 @@ feature 'Registration form' do
     expect(new_user.redeemable_code).to be_nil
   end
 
-  scenario 'Create with invisible_captcha honeypot field' do
+  it 'Create with invisible_captcha honeypot field' do
     visit new_user_registration_path
 
     fill_in 'user_username',              with: "robot"
@@ -60,7 +60,7 @@ feature 'Registration form' do
     expect(page).to have_current_path(user_registration_path)
   end
 
-  scenario 'Create organization too fast' do
+  it 'Create organization too fast' do
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
     visit new_user_registration_path
 

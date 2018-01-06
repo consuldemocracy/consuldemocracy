@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature "Custom Pages" do
+describe "Custom Pages" do
   context "Override existing page" do
-    scenario "See default content when custom page is not published" do
+    it "See default content when custom page is not published" do
       custom_page = create(:site_customization_page,
         slug: "conditions",
         title: "Custom conditions",
@@ -19,7 +19,7 @@ feature "Custom Pages" do
       expect(page).to have_content("Print this info")
     end
 
-    scenario "See custom content when custom page is published" do
+    it "See custom content when custom page is published" do
       custom_page = create(:site_customization_page, :published,
         slug: "conditions",
         title: "Custom conditions",
@@ -39,7 +39,7 @@ feature "Custom Pages" do
 
   context "New custom page" do
     context "Draft" do
-      scenario "See page" do
+      it "See page" do
         custom_page = create(:site_customization_page,
           slug: "other-slug",
           title: "Custom page",
@@ -55,7 +55,7 @@ feature "Custom Pages" do
     end
 
     context "Published" do
-      scenario "See page" do
+      it "See page" do
         custom_page = create(:site_customization_page, :published,
           slug: "other-slug",
           title: "Custom page",
@@ -72,7 +72,7 @@ feature "Custom Pages" do
         expect(page).to_not have_content("Print this info")
       end
 
-      scenario "Listed in more information page" do
+      it "Listed in more information page" do
         custom_page = create(:site_customization_page, :published,
           slug: "another-slug", title: "Another custom page",
           subtitle: "Subtitle for custom page",
@@ -85,7 +85,7 @@ feature "Custom Pages" do
         expect(page).to have_content("Another custom page")
       end
 
-      scenario "Not listed in more information page" do
+      it "Not listed in more information page" do
         custom_page = create(:site_customization_page, :published,
           slug: "another-slug", title: "Another custom page",
           subtitle: "Subtitle for custom page",
@@ -104,7 +104,7 @@ feature "Custom Pages" do
         expect(page).to have_content("Subtitle for custom page")
       end
 
-      scenario "Not listed in more information page due to different locale" do
+      it "Not listed in more information page due to different locale" do
         custom_page = create(:site_customization_page, :published,
           slug: "another-slug", title: "Ce texte est en français",
           subtitle: "Subtitle for custom page",

@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-feature 'Localization' do
+describe 'Localization' do
 
-  background do
+  before do
     login_as_manager
   end
 
-  scenario 'Wrong locale' do
+  it 'Wrong locale' do
     visit management_root_path(locale: :es)
     visit management_root_path(locale: :klingon)
 
     expect(page).to have_text('Gestión')
   end
 
-  scenario 'Available locales appear in the locale switcher' do
+  it 'Available locales appear in the locale switcher' do
     visit management_root_path
 
     within('.locale-form .js-location-changer') do
@@ -22,13 +22,13 @@ feature 'Localization' do
     end
   end
 
-  scenario 'The current locale is selected' do
+  it 'The current locale is selected' do
     visit management_root_path
     expect(page).to have_select('locale-switcher', selected: 'English')
     expect(page).to have_text('Management')
   end
 
-  scenario 'Changing the locale', :js do
+  it 'Changing the locale', :js do
     visit management_root_path
     expect(page).to have_content('Language')
 
@@ -38,7 +38,7 @@ feature 'Localization' do
     expect(page).to have_select('locale-switcher', selected: 'Español')
   end
 
-  scenario 'Locale switcher not present if only one locale' do
+  it 'Locale switcher not present if only one locale' do
     expect(I18n).to receive(:available_locales).and_return([:en])
 
     visit management_root_path

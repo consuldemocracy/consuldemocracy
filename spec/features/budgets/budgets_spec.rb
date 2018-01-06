@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Budgets' do
+describe 'Budgets' do
 
-  scenario 'Index' do
+  it 'Index' do
     budgets = create_list(:budget, 3)
     visit budgets_path
     budgets.each {|budget| expect(page).to have_link(budget.name)}
@@ -10,7 +10,7 @@ feature 'Budgets' do
 
   context 'Show' do
 
-    scenario "List all groups" do
+    it "List all groups" do
       budget = create(:budget)
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
@@ -20,7 +20,7 @@ feature 'Budgets' do
       budget.groups.each {|group| expect(page).to have_link(group.name)}
     end
 
-    scenario "Links to unfeasible and selected if balloting or later" do
+    it "Links to unfeasible and selected if balloting or later" do
       budget = create(:budget, :selecting)
       group = create(:budget_group, budget: budget)
 
@@ -65,13 +65,13 @@ feature 'Budgets' do
 
     let(:budget) { create(:budget) }
 
-    background do
+    before do
       budget.update(phase: 'accepting')
     end
 
     context "Permissions" do
 
-      scenario "Verified user" do
+      it "Verified user" do
         user = create(:user, :level_two)
         login_as(user)
 
@@ -80,7 +80,7 @@ feature 'Budgets' do
         expect(page).to have_link "Create budget investment"
       end
 
-      scenario "Unverified user" do
+      it "Unverified user" do
         user = create(:user)
         login_as(user)
 
@@ -89,7 +89,7 @@ feature 'Budgets' do
         expect(page).to have_content "To create a new budget investment verify your account."
       end
 
-      scenario "user not logged in" do
+      it "user not logged in" do
         visit budget_path(budget)
 
         expect(page).to have_content "To create a new budget investment you must sign in or sign up."

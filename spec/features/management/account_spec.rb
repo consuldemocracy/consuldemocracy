@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-feature 'Account' do
+describe 'Account' do
 
-  background do
+  before do
     login_as_manager
   end
 
-  scenario "Should not allow unverified users to create spending proposals" do
+  it "Should not allow unverified users to create spending proposals" do
     user = create(:user)
     login_managed_user(user)
 
@@ -15,7 +15,7 @@ feature 'Account' do
     expect(page).to have_content "No verified user logged in yet"
   end
 
-  scenario 'Delete a user account', :js do
+  it 'Delete a user account', :js do
     user = create(:user, :level_two)
     login_managed_user(user)
 

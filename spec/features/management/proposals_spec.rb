@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-feature 'Proposals' do
+describe 'Proposals' do
 
-  background do
+  before do
     login_as_manager
   end
 
   context "Create" do
 
-    scenario 'Creating proposals on behalf of someone' do
+    it 'Creating proposals on behalf of someone' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
@@ -45,7 +45,7 @@ feature 'Proposals' do
       expect(page).to have_current_path(management_proposal_path(Proposal.last))
     end
 
-    scenario "Should not allow unverified users to create proposals" do
+    it "Should not allow unverified users to create proposals" do
       user = create(:user)
       login_managed_user(user)
 
@@ -56,7 +56,7 @@ feature 'Proposals' do
   end
 
   context "Show" do
-    scenario 'When path matches the friendly url' do
+    it 'When path matches the friendly url' do
       proposal = create(:proposal)
 
       user = create(:user, :level_two)
@@ -68,7 +68,7 @@ feature 'Proposals' do
       expect(page).to have_current_path(right_path)
     end
 
-    scenario 'When path does not match the friendly url' do
+    it 'When path does not match the friendly url' do
       proposal = create(:proposal)
 
       user = create(:user, :level_two)
@@ -83,7 +83,7 @@ feature 'Proposals' do
     end
   end
 
-  scenario "Searching" do
+  it "Searching" do
     proposal1 = create(:proposal, title: "Show me what you got")
     proposal2 = create(:proposal, title: "Get Schwifty")
 
@@ -106,7 +106,7 @@ feature 'Proposals' do
     end
   end
 
-  scenario "Listing" do
+  it "Listing" do
     proposal1 = create(:proposal, title: "Show me what you got")
     proposal2 = create(:proposal, title: "Get Schwifty")
 
@@ -135,7 +135,7 @@ feature 'Proposals' do
 
   context "Voting" do
 
-    scenario 'Voting proposals on behalf of someone in index view', :js do
+    it 'Voting proposals on behalf of someone in index view', :js do
       proposal = create(:proposal)
 
       user = create(:user, :level_two)
@@ -152,7 +152,7 @@ feature 'Proposals' do
       expect(page).to have_current_path(management_proposals_path)
     end
 
-    scenario 'Voting proposals on behalf of someone in show view', :js do
+    it 'Voting proposals on behalf of someone in show view', :js do
       proposal = create(:proposal)
 
       user = create(:user, :level_two)
@@ -170,7 +170,7 @@ feature 'Proposals' do
       expect(page).to have_current_path(management_proposal_path(proposal))
     end
 
-    scenario "Should not allow unverified users to vote proposals" do
+    it "Should not allow unverified users to vote proposals" do
       proposal = create(:proposal)
 
       user = create(:user)
@@ -184,7 +184,7 @@ feature 'Proposals' do
 
   context "Printing" do
 
-    scenario 'Printing proposals' do
+    it 'Printing proposals' do
       6.times { create(:proposal) }
 
       click_link "Print proposals"
@@ -193,7 +193,7 @@ feature 'Proposals' do
       expect(page).to have_css("a[href='javascript:window.print();']", text: 'Print')
     end
 
-    scenario "Filtering proposals to be printed", :js do
+    it "Filtering proposals to be printed", :js do
       create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
       create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
       create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)

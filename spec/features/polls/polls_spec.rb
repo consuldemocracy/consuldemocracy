@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Polls' do
+describe 'Polls' do
 
   context "Concerns" do
     it_behaves_like 'notifiable in-app', Poll
@@ -8,7 +8,7 @@ feature 'Polls' do
 
   context '#index' do
 
-    scenario 'Polls can be listed' do
+    it 'Polls can be listed' do
       polls = create_list(:poll, 3)
       create(:image, imageable: polls[0])
       create(:image, imageable: polls[1])
@@ -23,7 +23,7 @@ feature 'Polls' do
       end
     end
 
-    scenario 'Filtering polls' do
+    it 'Filtering polls' do
       create(:poll, name: "Current poll")
       create(:poll, :incoming, name: "Incoming poll")
       create(:poll, :expired, name: "Expired poll")
@@ -47,7 +47,7 @@ feature 'Polls' do
       expect(page).to have_link('Poll ended')
     end
 
-    scenario "Current filter is properly highlighted" do
+    it "Current filter is properly highlighted" do
       visit polls_path
       expect(page).to_not have_link('Open')
       expect(page).to have_link('Incoming')
@@ -64,7 +64,7 @@ feature 'Polls' do
       expect(page).to_not have_link('Expired')
     end
 
-    scenario "Poll title link to stats if enabled" do
+    it "Poll title link to stats if enabled" do
       poll = create(:poll, name: "Poll with stats", stats_enabled: true)
 
       visit polls_path
@@ -72,7 +72,7 @@ feature 'Polls' do
       expect(page).to have_link("Poll with stats", href: stats_poll_path(poll))
     end
 
-    scenario "Poll title link to results if enabled" do
+    it "Poll title link to results if enabled" do
       poll = create(:poll, name: "Poll with results", stats_enabled: true, results_enabled: true)
 
       visit polls_path
@@ -85,7 +85,7 @@ feature 'Polls' do
     let(:geozone) { create(:geozone) }
     let(:poll) { create(:poll, summary: "Summary", description: "Description") }
 
-    scenario 'Show answers with videos' do
+    it 'Show answers with videos' do
       question = create(:poll_question, poll: poll)
       answer = create(:poll_question_answer, question: question, title: 'Chewbacca')
       video = create(:poll_answer_video, answer: answer, title: "Awesome project video", url: "https://www.youtube.com/watch?v=123")
@@ -95,7 +95,7 @@ feature 'Polls' do
       expect(page).to have_link("Awesome project video", href: "https://www.youtube.com/watch?v=123")
     end
 
-    scenario 'Lists questions from proposals as well as regular ones' do
+    it 'Lists questions from proposals as well as regular ones' do
       normal_question = create(:poll_question, poll: poll)
       proposal_question = create(:poll_question, poll: poll, proposal: create(:proposal))
 
@@ -108,7 +108,7 @@ feature 'Polls' do
       expect(page).to have_content(proposal_question.title)
     end
 
-    scenario "Question answers appear in the given order" do
+    it "Question answers appear in the given order" do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, title: 'First', question: question, given_order: 2)
       answer2 = create(:poll_question_answer, title: 'Second', question: question, given_order: 1)
@@ -120,7 +120,7 @@ feature 'Polls' do
       end
     end
 
-    scenario "More info answers appear in the given order" do
+    it "More info answers appear in the given order" do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, title: 'First', question: question, given_order: 2)
       answer2 = create(:poll_question_answer, title: 'Second', question: question, given_order: 1)
@@ -132,7 +132,7 @@ feature 'Polls' do
       end
     end
 
-    scenario 'Non-logged in users' do
+    it 'Non-logged in users' do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, question: question, title: 'Han Solo')
       answer2 = create(:poll_question_answer, question: question, title: 'Chewbacca')
@@ -147,7 +147,7 @@ feature 'Polls' do
       expect(page).to_not have_link('Chewbacca')
     end
 
-    scenario 'Level 1 users' do
+    it 'Level 1 users' do
       visit polls_path
       expect(page).to_not have_selector('.already-answer')
 
@@ -170,7 +170,7 @@ feature 'Polls' do
       expect(page).to_not have_link('Chewbacca')
     end
 
-    scenario 'Level 2 users in an incoming poll' do
+    it 'Level 2 users in an incoming poll' do
       incoming_poll = create(:poll, :incoming, geozone_restricted: true)
       incoming_poll.geozones << geozone
 
@@ -190,7 +190,7 @@ feature 'Polls' do
       expect(page).to have_content('This poll has not yet started')
     end
 
-    scenario 'Level 2 users in an expired poll' do
+    it 'Level 2 users in an expired poll' do
       expired_poll = create(:poll, :expired, geozone_restricted: true)
       expired_poll.geozones << geozone
 
@@ -210,7 +210,7 @@ feature 'Polls' do
       expect(page).to have_content('This poll has finished')
     end
 
-    scenario 'Level 2 users in a poll with questions for a geozone which is not theirs' do
+    it 'Level 2 users in a poll with questions for a geozone which is not theirs' do
       poll.update(geozone_restricted: true)
       poll.geozones << create(:geozone)
 
@@ -228,7 +228,7 @@ feature 'Polls' do
       expect(page).to_not have_link('Palpatine')
     end
 
-    scenario 'Level 2 users reading a same-geozone poll' do
+    it 'Level 2 users reading a same-geozone poll' do
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
 
@@ -243,7 +243,7 @@ feature 'Polls' do
       expect(page).to have_link('Chewbacca')
     end
 
-    scenario 'Level 2 users reading a all-geozones poll' do
+    it 'Level 2 users reading a all-geozones poll' do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, question: question, title: 'Han Solo')
       answer2 = create(:poll_question_answer, question: question, title: 'Chewbacca')
@@ -255,7 +255,7 @@ feature 'Polls' do
       expect(page).to have_link('Chewbacca')
     end
 
-    scenario 'Level 2 users who have already answered' do
+    it 'Level 2 users who have already answered' do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, question: question, title: 'Han Solo')
       answer2 = create(:poll_question_answer, question: question, title: 'Chewbacca')
@@ -269,7 +269,7 @@ feature 'Polls' do
       expect(page).to have_link('Chewbacca')
     end
 
-    scenario 'Level 2 users answering', :js do
+    it 'Level 2 users answering', :js do
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
 
@@ -288,7 +288,7 @@ feature 'Polls' do
       expect(page).to have_link('Chewbacca')
     end
 
-    scenario 'Level 2 users changing answer', :js do
+    it 'Level 2 users changing answer', :js do
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
 
@@ -312,7 +312,7 @@ feature 'Polls' do
       expect(page).to have_link('Han Solo')
     end
 
-    scenario 'Level 2 votes, signs out, signs in, votes again', :js do
+    it 'Level 2 votes, signs out, signs in, votes again', :js do
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
 
@@ -353,7 +353,7 @@ feature 'Polls' do
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
 
-    scenario 'Already voted on booth cannot vote on website', :js do
+    it 'Already voted on booth cannot vote on website', :js do
 
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
@@ -389,7 +389,7 @@ feature 'Polls' do
   end
 
   context "Results and stats" do
-    scenario "Show poll results and stats if enabled and poll expired" do
+    it "Show poll results and stats if enabled and poll expired" do
       poll = create(:poll, :expired, results_enabled: true, stats_enabled: true)
       user = create(:user)
 
@@ -406,7 +406,7 @@ feature 'Polls' do
       expect(page).to have_content("Participation data")
     end
 
-    scenario "Don't show poll results and stats if not enabled" do
+    it "Don't show poll results and stats if not enabled" do
       poll = create(:poll, :expired, results_enabled: false, stats_enabled: false)
       user = create(:user)
 
@@ -423,7 +423,7 @@ feature 'Polls' do
       expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
     end
 
-    scenario "Don't show poll results and stats if is not expired" do
+    it "Don't show poll results and stats if is not expired" do
       poll = create(:poll, :current, results_enabled: true, stats_enabled: true)
       user = create(:user)
 
@@ -440,7 +440,7 @@ feature 'Polls' do
       expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
     end
 
-    scenario "Show poll results and stats if user is administrator" do
+    it "Show poll results and stats if user is administrator" do
       poll = create(:poll, :current, results_enabled: false, stats_enabled: false)
       user = create(:administrator).user
 

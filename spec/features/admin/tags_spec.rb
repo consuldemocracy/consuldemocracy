@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Admin tags' do
+describe 'Admin tags' do
 
-  background do
+  before do
     @tag1 = create(:tag, :category)
     login_as(create(:administrator).user)
   end
 
-  scenario 'Index' do
+  it 'Index' do
     debate = create(:debate)
     debate.tag_list.add(create(:tag, :category, name: "supertag"))
     visit admin_tags_path
@@ -16,7 +16,7 @@ feature 'Admin tags' do
     expect(page).to have_content 'supertag'
   end
 
-  scenario 'Create' do
+  it 'Create' do
     visit admin_tags_path
 
     expect(page).to_not have_content 'important issues'
@@ -31,7 +31,7 @@ feature 'Admin tags' do
     expect(page).to have_content 'important issues'
   end
 
-  scenario 'Delete' do
+  it 'Delete' do
     tag2 = create(:tag, :category, name: "bad tag")
     create(:debate, tag_list: tag2.name)
     visit admin_tags_path
@@ -48,7 +48,7 @@ feature 'Admin tags' do
     expect(page).to_not have_content tag2.name
   end
 
-  scenario 'Delete tag with hidden taggables' do
+  it 'Delete tag with hidden taggables' do
     tag2 = create(:tag, :category, name: "bad tag")
     debate = create(:debate, tag_list: tag2.name)
     debate.hide
@@ -68,7 +68,7 @@ feature 'Admin tags' do
   end
 
   context "Manage only tags of kind category" do
-    scenario "Index shows only categories" do
+    it "Index shows only categories" do
       not_category_tag = create(:tag, name: "Not a category")
       visit admin_tags_path
 
@@ -76,7 +76,7 @@ feature 'Admin tags' do
       expect(page).to_not have_content "Not a category"
     end
 
-    scenario "Create instanciates tags of correct kind" do
+    it "Create instanciates tags of correct kind" do
       visit admin_tags_path
 
       within("form.new_tag") do

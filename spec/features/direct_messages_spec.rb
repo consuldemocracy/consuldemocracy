@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-feature 'Direct messages' do
+describe 'Direct messages' do
 
-  background do
+  before do
     Setting[:direct_message_max_per_day] = 3
   end
 
-  scenario "Create" do
+  it "Create" do
     sender   = create(:user, :level_two)
     receiver = create(:user, :level_two)
 
@@ -28,7 +28,7 @@ feature 'Direct messages' do
 
   context "Permissions" do
 
-    scenario "Do not display link to send message to myself" do
+    it "Do not display link to send message to myself" do
       sender = create(:user, :level_two)
 
       login_as(sender)
@@ -37,7 +37,7 @@ feature 'Direct messages' do
       expect(page).to_not have_link "Send private message"
     end
 
-    scenario "Do not display link if direct message for user not allowed" do
+    it "Do not display link if direct message for user not allowed" do
       sender   = create(:user, :level_two)
       receiver = create(:user, :level_two, email_on_direct_message: false)
 
@@ -48,7 +48,7 @@ feature 'Direct messages' do
       expect(page).to_not have_link "Send private message"
     end
 
-    scenario "Unverified user" do
+    it "Unverified user" do
       sender = create(:user)
       receiver = create(:user)
 
@@ -59,7 +59,7 @@ feature 'Direct messages' do
       expect(page).to_not have_link "Send private message"
     end
 
-    scenario "User not logged in" do
+    it "User not logged in" do
       sender = create(:user)
       receiver = create(:user)
 
@@ -69,7 +69,7 @@ feature 'Direct messages' do
       expect(page).to_not have_link "Send private message"
     end
 
-    scenario "Accessing form directly" do
+    it "Accessing form directly" do
       sender   = create(:user, :level_two)
       receiver = create(:user, :level_two, email_on_direct_message: false)
 
@@ -82,7 +82,7 @@ feature 'Direct messages' do
 
   end
 
-  scenario "Error messages" do
+  it "Error messages" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -96,7 +96,7 @@ feature 'Direct messages' do
 
   context "Limits" do
 
-    scenario "Can only send a maximum number of direct messages per day" do
+    it "Can only send a maximum number of direct messages per day" do
       sender   = create(:user, :level_two)
       receiver = create(:user, :level_two)
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Admin moderators' do
-  background do
+describe 'Admin moderators' do
+  before do
     @admin = create(:administrator)
     @user  = create(:user, username: 'Jose Luis Balbin')
     @moderator = create(:moderator)
@@ -9,13 +9,13 @@ feature 'Admin moderators' do
     visit admin_moderators_path
   end
 
-  scenario 'Index' do
+  it 'Index' do
     expect(page).to have_content @moderator.name
     expect(page).to have_content @moderator.email
     expect(page).to_not have_content @user.name
   end
 
-  scenario 'Create Moderator', :js do
+  it 'Create Moderator', :js do
     fill_in 'name_or_email', with: @user.email
     click_button 'Search'
 
@@ -26,7 +26,7 @@ feature 'Admin moderators' do
     end
   end
 
-  scenario 'Delete Moderator' do
+  it 'Delete Moderator' do
     click_link 'Delete'
 
     within("#moderators") do
@@ -36,7 +36,7 @@ feature 'Admin moderators' do
 
   context 'Search' do
 
-    background do
+    before do
       user  = create(:user, username: 'Elizabeth Bathory', email: 'elizabeth@bathory.com')
       user2 = create(:user, username: 'Ada Lovelace', email: 'ada@lovelace.com')
       @moderator1 = create(:moderator, user: user)
@@ -44,7 +44,7 @@ feature 'Admin moderators' do
       visit admin_moderators_path
     end
 
-    scenario 'returns no results if search term is empty' do
+    it 'returns no results if search term is empty' do
       expect(page).to have_content(@moderator1.name)
       expect(page).to have_content(@moderator2.name)
 
@@ -57,7 +57,7 @@ feature 'Admin moderators' do
       expect(page).to_not have_content(@moderator2.name)
     end
 
-    scenario 'search by name' do
+    it 'search by name' do
       expect(page).to have_content(@moderator1.name)
       expect(page).to have_content(@moderator2.name)
 
@@ -69,7 +69,7 @@ feature 'Admin moderators' do
       expect(page).to_not have_content(@moderator2.name)
     end
 
-    scenario 'search by email' do
+    it 'search by email' do
       expect(page).to have_content(@moderator1.email)
       expect(page).to have_content(@moderator2.email)
 

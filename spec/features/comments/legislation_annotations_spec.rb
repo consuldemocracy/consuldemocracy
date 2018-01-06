@@ -1,11 +1,11 @@
 require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
-feature 'Commenting legislation questions' do
+describe 'Commenting legislation questions' do
   let(:user) { create :user }
   let(:legislation_annotation) { create :legislation_annotation, author: user }
 
-  scenario 'Index' do
+  it 'Index' do
     3.times { create(:comment, commentable: legislation_annotation) }
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
@@ -22,7 +22,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Show' do
+  it 'Show' do
     parent_comment = create(:comment, commentable: legislation_annotation)
     first_child    = create(:comment, commentable: legislation_annotation, parent: parent_comment)
     second_child   = create(:comment, commentable: legislation_annotation, parent: parent_comment)
@@ -44,7 +44,7 @@ feature 'Commenting legislation questions' do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
-  scenario 'Collapsable comments', :js do
+  it 'Collapsable comments', :js do
     parent_comment = legislation_annotation.comments.first
     child_comment  = create(:comment, body: "First subcomment", commentable: legislation_annotation, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: legislation_annotation, parent: child_comment)
@@ -72,7 +72,7 @@ feature 'Commenting legislation questions' do
     expect(page).to_not have_content grandchild_comment.body
   end
 
-  scenario 'Comment order' do
+  it 'Comment order' do
     c1 = create(:comment, :with_confidence_score, commentable: legislation_annotation, cached_votes_up: 100,
                                                   cached_votes_total: 120, created_at: Time.current - 2)
     c2 = create(:comment, :with_confidence_score, commentable: legislation_annotation, cached_votes_up: 10,
@@ -105,7 +105,7 @@ feature 'Commenting legislation questions' do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  xscenario 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
+  xit 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
     old_root = create(:comment, commentable: legislation_annotation, created_at: Time.current - 10)
     new_root = create(:comment, commentable: legislation_annotation, created_at: Time.current)
     old_child = create(:comment, commentable: legislation_annotation, parent_id: new_root.id, created_at: Time.current - 10)
@@ -136,7 +136,7 @@ feature 'Commenting legislation questions' do
     expect(old_child.body).to appear_before(new_child.body)
   end
 
-  scenario 'Turns links into html links' do
+  it 'Turns links into html links' do
     create :comment, commentable: legislation_annotation, body: 'Built with http://rubyonrails.org/'
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
@@ -151,7 +151,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Sanitizes comment body for security' do
+  it 'Sanitizes comment body for security' do
     create :comment, commentable: legislation_annotation,
                      body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
@@ -166,7 +166,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Paginated comments' do
+  it 'Paginated comments' do
     per_page = 10
     (per_page + 2).times { create(:comment, commentable: legislation_annotation)}
 
@@ -185,8 +185,8 @@ feature 'Commenting legislation questions' do
     expect(page).to have_css('.comment', count: 3)
   end
 
-  feature 'Not logged user' do
-    scenario 'can not see comments forms' do
+  describe 'Not logged user' do
+    it 'can not see comments forms' do
       create(:comment, commentable: legislation_annotation)
       visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                               legislation_annotation.draft_version,
@@ -200,7 +200,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Create', :js do
+  it 'Create', :js do
     login_as(user)
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                             legislation_annotation.draft_version,
@@ -215,7 +215,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Errors on create', :js do
+  it 'Errors on create', :js do
     login_as(user)
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                             legislation_annotation.draft_version,
@@ -226,7 +226,7 @@ feature 'Commenting legislation questions' do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario 'Reply', :js do
+  it 'Reply', :js do
     citizen = create(:user, username: 'Ana')
     manuela = create(:user, username: 'Manuela')
     legislation_annotation = create(:legislation_annotation, author: citizen)
@@ -251,7 +251,7 @@ feature 'Commenting legislation questions' do
     expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
-  scenario 'Errors on reply', :js do
+  it 'Errors on reply', :js do
     comment = legislation_annotation.comments.first
 
     login_as(user)
@@ -268,7 +268,7 @@ feature 'Commenting legislation questions' do
 
   end
 
-  scenario "N replies", :js do
+  it "N replies", :js do
     parent = create(:comment, commentable: legislation_annotation)
 
     7.times do
@@ -283,7 +283,7 @@ feature 'Commenting legislation questions' do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
+  it "Flagging as inappropriate", :js do
     comment = create(:comment, commentable: legislation_annotation)
 
     login_as(user)
@@ -301,7 +301,7 @@ feature 'Commenting legislation questions' do
     expect(Flag.flagged?(user, comment)).to be
   end
 
-  scenario "Undoing flagging as inappropriate", :js do
+  it "Undoing flagging as inappropriate", :js do
     comment = create(:comment, commentable: legislation_annotation)
     Flag.flag(user, comment)
 
@@ -320,7 +320,7 @@ feature 'Commenting legislation questions' do
     expect(Flag.flagged?(user, comment)).to_not be
   end
 
-  scenario "Flagging turbolinks sanity check", :js do
+  it "Flagging turbolinks sanity check", :js do
     legislation_annotation = create(:legislation_annotation, text: "Should we change the world?")
     comment = create(:comment, commentable: legislation_annotation)
 
@@ -335,7 +335,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario "Erasing a comment's author" do
+  it "Erasing a comment's author" do
     legislation_annotation = create(:legislation_annotation)
     comment = create(:comment, commentable: legislation_annotation, body: 'this should be visible')
     comment.user.erase
@@ -350,7 +350,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Submit button is disabled after clicking', :js do
+  it 'Submit button is disabled after clicking', :js do
     legislation_annotation = create(:legislation_annotation)
     login_as(user)
 
@@ -368,8 +368,8 @@ feature 'Commenting legislation questions' do
     expect(page).to have_content('Testing submit button!')
   end
 
-  feature "Moderators" do
-    scenario "can create comment as a moderator", :js do
+  describe "Moderators" do
+    it "can create comment as a moderator", :js do
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -389,7 +389,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    it "can create reply as a moderator", :js do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       moderator = create(:moderator, user: manuela)
@@ -419,7 +419,7 @@ feature 'Commenting legislation questions' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as an administrator" do
+    it "can not comment as an administrator" do
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -431,8 +431,8 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  feature "Administrators" do
-    scenario "can create comment as an administrator", :js do
+  describe "Administrators" do
+    it "can create comment as an administrator", :js do
       admin = create(:administrator)
 
       login_as(admin.user)
@@ -452,7 +452,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    scenario "can create reply as an administrator", :js do
+    it "can create reply as an administrator", :js do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       admin   = create(:administrator, user: manuela)
@@ -482,7 +482,7 @@ feature 'Commenting legislation questions' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as a moderator" do
+    it "can not comment as a moderator" do
       admin = create(:administrator)
 
       login_as(admin.user)
@@ -494,8 +494,8 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  feature 'Voting comments' do
-    background do
+  describe 'Voting comments' do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @legislation_annotation = create(:legislation_annotation)
@@ -504,7 +504,7 @@ feature 'Commenting legislation questions' do
       login_as(@manuela)
     end
 
-    scenario 'Show' do
+    it 'Show' do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
@@ -525,7 +525,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    scenario 'Create', :js do
+    it 'Create', :js do
       visit legislation_process_draft_version_annotation_path(@legislation_annotation.draft_version.process,
                                                               @legislation_annotation.draft_version,
                                                               @legislation_annotation)
@@ -545,7 +545,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    scenario 'Update', :js do
+    it 'Update', :js do
       visit legislation_process_draft_version_annotation_path(@legislation_annotation.draft_version.process,
                                                               @legislation_annotation.draft_version,
                                                               @legislation_annotation)
@@ -566,7 +566,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    xscenario 'Trying to vote multiple times', :js do
+    xit 'Trying to vote multiple times', :js do
       visit legislation_process_draft_version_annotation_path(@legislation_annotation.draft_version.process,
                                                               @legislation_annotation.draft_version,
                                                               @legislation_annotation)
@@ -592,7 +592,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  feature "Merged comment threads", :js do
+  describe "Merged comment threads", :js do
     let!(:draft_version) { create(:legislation_draft_version, :published) }
     let!(:annotation1) do
       create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
@@ -603,7 +603,7 @@ feature 'Commenting legislation questions' do
                                       ranges: [{"start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10}])
     end
 
-    background do
+    before do
       login_as user
 
       visit legislation_process_draft_version_path(draft_version.process, draft_version)
@@ -617,7 +617,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    scenario 'View comments of annotations in an included range' do
+    it 'View comments of annotations in an included range' do
       within("#annotation-link") do
         first(:css, "a").trigger('click')
       end
@@ -627,7 +627,7 @@ feature 'Commenting legislation questions' do
       expect(page).to have_content("my other annotation")
     end
 
-    scenario "Reply on a single annotation thread and display it in the merged annotation thread" do
+    it "Reply on a single annotation thread and display it in the merged annotation thread" do
       within(".comment-box #annotation-#{annotation1.id}-comments") do
         first(:link, "0 replies").click
       end
@@ -664,7 +664,7 @@ feature 'Commenting legislation questions' do
       expect(page).to have_content("replying in single annotation thread")
     end
 
-    scenario "Reply on a multiple annotation thread and display it in the single annotation thread" do
+    it "Reply on a multiple annotation thread and display it in the single annotation thread" do
       within("#annotation-link") do
         first(:css, "a").trigger('click')
       end

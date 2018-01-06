@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Verify email' do
+describe 'Verify email' do
 
-  scenario 'Verify' do
+  it 'Verify' do
     user = create(:user,
                   residence_verified_at: Time.current,
                   document_number:       '12345678Z',
@@ -33,7 +33,7 @@ feature 'Verify email' do
     expect(page).to have_content "Account verified"
   end
 
-  scenario "Errors on token verification" do
+  it "Errors on token verification" do
     user = create(:user, residence_verified_at: Time.current)
 
     login_as(user)
@@ -42,7 +42,7 @@ feature 'Verify email' do
     expect(page).to have_content "Verification code incorrect"
   end
 
-  scenario "Errors on sending confirmation email" do
+  it "Errors on sending confirmation email" do
     user = create(:user,
                   residence_verified_at: Time.current,
                   document_number:       '12345678Z',

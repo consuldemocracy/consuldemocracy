@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-feature 'Admin poll questions' do
+describe 'Admin poll questions' do
 
-  background do
+  before do
     login_as(create(:administrator).user)
   end
 
-  scenario 'Index' do
+  it 'Index' do
     question1 = create(:poll_question)
     question2 = create(:poll_question)
 
@@ -16,7 +16,7 @@ feature 'Admin poll questions' do
     expect(page).to have_content(question2.title)
   end
 
-  scenario 'Show' do
+  it 'Show' do
     geozone = create(:geozone)
     poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
     question = create(:poll_question, poll: poll)
@@ -27,7 +27,7 @@ feature 'Admin poll questions' do
     expect(page).to have_content(question.author.name)
   end
 
-  scenario 'Create' do
+  it 'Create' do
     poll = create(:poll, name: 'Movies')
     title = "Star Wars: Episode IV - A New Hope"
     description = %{
@@ -51,7 +51,7 @@ feature 'Admin poll questions' do
     expect(page).to have_content(video_url)
   end
 
-  scenario 'Create from successful proposal index' do
+  it 'Create from successful proposal index' do
     poll = create(:poll, name: 'Proposals')
     proposal = create(:proposal, :successful)
 
@@ -72,7 +72,7 @@ feature 'Admin poll questions' do
 
   pending "Create from successul proposal show"
 
-  scenario 'Update' do
+  it 'Update' do
     question1 = create(:poll_question)
 
     visit admin_questions_path
@@ -95,7 +95,7 @@ feature 'Admin poll questions' do
     expect(page).to_not have_content(old_title)
   end
 
-  scenario 'Destroy' do
+  it 'Destroy' do
     question1 = create(:poll_question)
     question2 = create(:poll_question)
 

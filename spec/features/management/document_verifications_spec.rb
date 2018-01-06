@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-feature 'DocumentVerifications' do
+describe 'DocumentVerifications' do
 
-  background do
+  before do
     login_as_manager
   end
 
-  scenario 'Verifying a level 3 user shows an "already verified" page' do
+  it 'Verifying a level 3 user shows an "already verified" page' do
     user = create(:user, :level_three)
 
     visit management_document_verifications_path
@@ -16,7 +16,7 @@ feature 'DocumentVerifications' do
     expect(page).to have_content "already verified"
   end
 
-  scenario 'Verifying a level 2 user displays the verification form' do
+  it 'Verifying a level 2 user displays the verification form' do
 
     user = create(:user, :level_two)
 
@@ -33,7 +33,7 @@ feature 'DocumentVerifications' do
     expect(user.reload).to be_level_three_verified
   end
 
-  scenario 'Verifying a user which does not exist and is not in the census shows an error' do
+  it 'Verifying a user which does not exist and is not in the census shows an error' do
 
     expect_any_instance_of(Verification::Management::Document).to receive(:in_census?).and_return(false)
 
@@ -44,7 +44,7 @@ feature 'DocumentVerifications' do
     expect(page).to have_content "This document is not registered"
   end
 
-  scenario 'Verifying a user which does exists in the census but not in the db redirects allows sending an email' do
+  it 'Verifying a user which does exists in the census but not in the db redirects allows sending an email' do
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '12345678Z'
@@ -53,7 +53,7 @@ feature 'DocumentVerifications' do
     expect(page).to have_content "Please introduce the email used on the account"
   end
 
-  scenario 'Document number is format-standarized' do
+  it 'Document number is format-standarized' do
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '12345 - h'
@@ -62,7 +62,7 @@ feature 'DocumentVerifications' do
     expect(page).to have_content "Document number: 12345H"
   end
 
-  scenario 'User age is checked' do
+  it 'User age is checked' do
     expect_any_instance_of(Verification::Management::Document).to receive(:under_age?).and_return(true)
 
     visit management_document_verifications_path

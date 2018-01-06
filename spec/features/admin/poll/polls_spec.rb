@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Admin polls' do
+describe 'Admin polls' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario 'Index empty', :js do
+  it 'Index empty', :js do
     visit admin_root_path
 
     click_link "Polls"
@@ -18,7 +18,7 @@ feature 'Admin polls' do
     expect(page).to have_content "There are no polls"
   end
 
-  scenario 'Index', :js do
+  it 'Index', :js do
     3.times { create(:poll) }
 
     visit admin_root_path
@@ -39,7 +39,7 @@ feature 'Admin polls' do
     expect(page).to_not have_content "There are no polls"
   end
 
-  scenario 'Show' do
+  it 'Show' do
     poll = create(:poll)
 
     visit admin_polls_path
@@ -48,7 +48,7 @@ feature 'Admin polls' do
     expect(page).to have_content poll.name
   end
 
-  scenario "Create" do
+  it "Create" do
     visit admin_polls_path
     click_link "Create poll"
 
@@ -72,7 +72,7 @@ feature 'Admin polls' do
     expect(page).to have_content I18n.l(end_date.to_date)
   end
 
-  scenario "Edit" do
+  it "Edit" do
     poll = create(:poll)
     create(:image, imageable: poll)
 
@@ -104,7 +104,7 @@ feature 'Admin polls' do
 
   end
 
-  scenario 'Edit from index' do
+  it 'Edit from index' do
     poll = create(:poll)
     visit admin_polls_path
 
@@ -119,7 +119,7 @@ feature 'Admin polls' do
 
     context "Poll show" do
 
-      scenario "No booths" do
+      it "No booths" do
         poll = create(:poll)
         visit admin_poll_path(poll)
         click_link "Booths (0)"
@@ -127,7 +127,7 @@ feature 'Admin polls' do
         expect(page).to have_content "There are no booths assigned to this poll."
       end
 
-      scenario "Booth list" do
+      it "Booth list" do
         poll = create(:poll)
         3.times { create(:poll_booth, polls: [poll]) }
 
@@ -151,7 +151,7 @@ feature 'Admin polls' do
 
     context "Poll show" do
 
-      scenario "No officers", :js do
+      it "No officers", :js do
         poll = create(:poll)
         visit admin_poll_path(poll)
         click_link "Officers (0)"
@@ -159,7 +159,7 @@ feature 'Admin polls' do
         expect(page).to have_content "There are no officers assigned to this poll"
       end
 
-      scenario "Officer list", :js do
+      it "Officer list", :js do
         poll = create(:poll)
         booth = create(:poll_booth, polls: [poll])
 
@@ -189,7 +189,7 @@ feature 'Admin polls' do
 
     context "Poll show" do
 
-      scenario "Question list", :js do
+      it "Question list", :js do
         poll = create(:poll)
         question = create(:poll_question, poll: poll)
         other_question = create(:poll_question)
@@ -207,7 +207,7 @@ feature 'Admin polls' do
 
   context "Recounting" do
     context "Poll show" do
-      scenario "No recounts", :js do
+      it "No recounts", :js do
         poll = create(:poll)
         visit admin_poll_path(poll)
         click_link "Recounting"
@@ -215,7 +215,7 @@ feature 'Admin polls' do
         expect(page).to have_content "There is nothing to be recounted"
       end
 
-      scenario "Recounts list", :js do
+      it "Recounts list", :js do
         poll = create(:poll)
         booth_assignment = create(:poll_booth_assignment, poll: poll)
         booth_assignment_recounted = create(:poll_booth_assignment, poll: poll)
@@ -262,7 +262,7 @@ feature 'Admin polls' do
 
   context "Results" do
     context "Poll show" do
-      scenario "No results", :js do
+      it "No results", :js do
         poll = create(:poll)
         visit admin_poll_path(poll)
         click_link "Results"
@@ -270,7 +270,7 @@ feature 'Admin polls' do
         expect(page).to have_content "There are no results"
       end
 
-      scenario "Results by answer", :js do
+      it "Results by answer", :js do
         poll = create(:poll)
         booth_assignment_1 = create(:poll_booth_assignment, poll: poll)
         booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
@@ -327,7 +327,7 @@ feature 'Admin polls' do
         within('#total_results') { expect(page).to have_content('66') }
       end
 
-      scenario "Link to results by booth" do
+      it "Link to results by booth" do
         poll = create(:poll)
         booth_assignment1 = create(:poll_booth_assignment, poll: poll)
         booth_assignment2 = create(:poll_booth_assignment, poll: poll)

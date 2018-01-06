@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Organizations' do
+describe 'Organizations' do
 
-  scenario 'Organizations can be created' do
+  it 'Organizations can be created' do
     user = User.organizations.where(email: 'green@peace.com').first
     expect(user).to_not be
 
@@ -23,7 +23,7 @@ feature 'Organizations' do
     expect(user.organization).to_not be_verified
   end
 
-  scenario 'Create with invisible_captcha honeypot field' do
+  it 'Create with invisible_captcha honeypot field' do
     visit new_organization_registration_path
 
     fill_in 'user_organization_attributes_name',  with: 'robot'
@@ -42,7 +42,7 @@ feature 'Organizations' do
     expect(page).to have_current_path(organization_registration_path)
   end
 
-  scenario 'Create organization too fast' do
+  it 'Create organization too fast' do
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
     visit new_organization_registration_path
     fill_in 'user_organization_attributes_name', with: 'robot'
@@ -58,7 +58,7 @@ feature 'Organizations' do
     expect(page).to have_current_path(new_organization_registration_path)
   end
 
-  scenario 'Errors on create' do
+  it 'Errors on create' do
     visit new_organization_registration_path
 
     click_button 'Register'
@@ -66,7 +66,7 @@ feature 'Organizations' do
     expect(page).to have_content error_message
   end
 
-  scenario 'Shared links' do
+  it 'Shared links' do
     # visit new_user_registration_path
     # expect(page).to have_link "Sign up as an organization / collective"
 

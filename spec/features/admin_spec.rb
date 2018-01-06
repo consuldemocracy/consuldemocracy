@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Admin' do
+describe 'Admin' do
   let(:user) { create(:user) }
   let(:administrator) do
     create(:administrator, user: user)
     user
   end
 
-  scenario 'Access as regular user is not authorized' do
+  it 'Access as regular user is not authorized' do
     login_as(user)
     visit admin_root_path
 
@@ -16,7 +16,7 @@ feature 'Admin' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as moderator is not authorized' do
+  it 'Access as moderator is not authorized' do
     create(:moderator, user: user)
     login_as(user)
     visit admin_root_path
@@ -26,7 +26,7 @@ feature 'Admin' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as valuator is not authorized' do
+  it 'Access as valuator is not authorized' do
     create(:valuator, user: user)
     login_as(user)
     visit admin_root_path
@@ -36,7 +36,7 @@ feature 'Admin' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as manager is not authorized' do
+  it 'Access as manager is not authorized' do
     create(:manager, user: user)
     login_as(user)
     visit admin_root_path
@@ -46,7 +46,7 @@ feature 'Admin' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as poll officer is not authorized' do
+  it 'Access as poll officer is not authorized' do
     create(:poll_officer, user: user)
     login_as(user)
     visit admin_root_path
@@ -56,7 +56,7 @@ feature 'Admin' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as administrator is authorized' do
+  it 'Access as administrator is authorized' do
     login_as(administrator)
     visit admin_root_path
 
@@ -64,7 +64,7 @@ feature 'Admin' do
     expect(page).to_not have_content "You do not have permission to access this page"
   end
 
-  scenario "Admin access links" do
+  it "Admin access links" do
     Setting["feature.spending_proposals"] = true
 
     login_as(administrator)
@@ -78,7 +78,7 @@ feature 'Admin' do
     Setting['feature.spending_proposals'] = nil
   end
 
-  scenario 'Admin dashboard' do
+  it 'Admin dashboard' do
     login_as(administrator)
     visit root_path
 

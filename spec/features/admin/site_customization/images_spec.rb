@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature "Admin custom images" do
+describe "Admin custom images" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario "Upload valid image" do
+  it "Upload valid image" do
     visit admin_root_path
 
     within("#side_menu") do
@@ -23,7 +23,7 @@ feature "Admin custom images" do
     expect(page).to have_css("img[src*='logo_header.png']", count: 1)
   end
 
-  scenario "Upload invalid image" do
+  it "Upload invalid image" do
     visit admin_root_path
 
     within("#side_menu") do
@@ -39,7 +39,7 @@ feature "Admin custom images" do
     expect(page).to have_content("Height must be 240px")
   end
 
-  scenario "Delete image" do
+  it "Delete image" do
     visit admin_root_path
 
     within("#side_menu") do

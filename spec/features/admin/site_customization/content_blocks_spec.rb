@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature "Admin custom content blocks" do
+describe "Admin custom content blocks" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario "Index" do
+  it "Index" do
     block = create(:site_customization_content_block)
     visit admin_site_customization_content_blocks_path
 
@@ -16,7 +16,7 @@ feature "Admin custom content blocks" do
   end
 
   context "Create" do
-    scenario "Valid custom block" do
+    it "Valid custom block" do
       visit admin_root_path
 
       within("#side_menu") do
@@ -37,7 +37,7 @@ feature "Admin custom content blocks" do
       expect(page).to have_content "Some custom content"
     end
 
-    scenario "Invalid custom block" do
+    it "Invalid custom block" do
       block = create(:site_customization_content_block)
 
       visit admin_root_path
@@ -62,7 +62,7 @@ feature "Admin custom content blocks" do
   end
 
   context "Update" do
-    scenario "Valid custom block" do
+    it "Valid custom block" do
       block = create(:site_customization_content_block)
       visit admin_root_path
 
@@ -81,7 +81,7 @@ feature "Admin custom content blocks" do
   end
 
   context "Delete" do
-    scenario "From index page" do
+    it "From index page" do
       block = create(:site_customization_content_block)
       visit   admin_site_customization_content_blocks_path
 
@@ -94,7 +94,7 @@ feature "Admin custom content blocks" do
       expect(page).to_not have_content(block.body)
     end
 
-    scenario "From edit page" do
+    it "From edit page" do
       block = create(:site_customization_content_block)
       visit edit_admin_site_customization_content_block_path(block)
 

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Admin budget investment milestones' do
+describe 'Admin budget investment milestones' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
 
@@ -10,7 +10,7 @@ feature 'Admin budget investment milestones' do
   end
 
   context "Index" do
-    scenario 'Displaying milestones' do
+    it 'Displaying milestones' do
       milestone = create(:budget_investment_milestone, investment: @investment)
       create(:image, imageable: milestone)
       document = create(:document, documentable: milestone)
@@ -25,7 +25,7 @@ feature 'Admin budget investment milestones' do
       expect(page).to have_link document.title
     end
 
-    scenario 'Displaying no_milestones text' do
+    it 'Displaying no_milestones text' do
       visit admin_budget_budget_investment_path(@investment.budget, @investment)
 
       expect(page).to have_content("Milestone")
@@ -34,7 +34,7 @@ feature 'Admin budget investment milestones' do
   end
 
   context "New" do
-    scenario "Add milestone" do
+    it "Add milestone" do
       visit admin_budget_budget_investment_path(@investment.budget, @investment)
 
       click_link 'Create new milestone'
@@ -48,7 +48,7 @@ feature 'Admin budget investment milestones' do
       expect(page).to have_content Time.zone.today
     end
 
-    scenario "Show validation errors on milestone form" do
+    it "Show validation errors on milestone form" do
       visit admin_budget_budget_investment_path(@investment.budget, @investment)
 
       click_link 'Create new milestone'
@@ -65,7 +65,7 @@ feature 'Admin budget investment milestones' do
   end
 
   context "Edit" do
-    scenario "Change title, description and document names" do
+    it "Change title, description and document names" do
       milestone = create(:budget_investment_milestone, investment: @investment)
       create(:image, imageable: milestone)
       document = create(:document, documentable: milestone)
@@ -91,7 +91,7 @@ feature 'Admin budget investment milestones' do
   end
 
   context "Delete" do
-    scenario "Remove milestone" do
+    it "Remove milestone" do
       milestone = create(:budget_investment_milestone, investment: @investment, title: "Title will it remove")
 
       visit admin_budget_budget_investment_path(@investment.budget, @investment)

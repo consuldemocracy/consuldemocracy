@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-feature 'Residence' do
+describe 'Residence' do
   let(:officer) { create(:poll_officer) }
 
-  feature "Officers without assignments" do
+  describe "Officers without assignments" do
 
-    scenario "Can not access residence verification" do
+    it "Can not access residence verification" do
       login_as(officer.user)
       visit officing_root_path
 
@@ -24,15 +24,15 @@ feature 'Residence' do
 
   end
 
-  feature "Assigned officers" do
+  describe "Assigned officers" do
 
-    background do
+    before do
       create(:poll_officer_assignment, officer: officer)
       login_as(officer.user)
       visit officing_root_path
     end
 
-    scenario "Verify voter" do
+    it "Verify voter" do
       within("#side_menu") do
         click_link "Validate document"
       end
@@ -46,7 +46,7 @@ feature 'Residence' do
       expect(page).to have_content 'Document verified with Census'
     end
 
-    scenario "Error on verify" do
+    it "Error on verify" do
       within("#side_menu") do
         click_link "Validate document"
       end
@@ -55,7 +55,7 @@ feature 'Residence' do
       expect(page).to have_content(/\d errors? prevented the verification of this document/)
     end
 
-    scenario "Error on Census (document number)" do
+    it "Error on Census (document number)" do
       initial_failed_census_calls_count = officer.failed_census_calls_count
       within("#side_menu") do
         click_link "Validate document"
@@ -77,7 +77,7 @@ feature 'Residence' do
       expect(officer.failed_census_calls_count).to eq(initial_failed_census_calls_count + 1)
     end
 
-    scenario "Error on Census (year of birth)" do
+    it "Error on Census (year of birth)" do
       within("#side_menu") do
         click_link "Validate document"
       end

@@ -16,7 +16,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 
-    scenario "Should not show marker by default on create #{mappable_factory_name}", :js do
+    it "Should not show marker by default on create #{mappable_factory_name}", :js do
       login_as user
       visit send(mappable_new_path, arguments)
 
@@ -27,7 +27,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       end
     end
 
-    scenario "Should show marker on create #{mappable_factory_name} when click on map", :js do
+    it "Should show marker on create #{mappable_factory_name} when click on map", :js do
       login_as user
       visit send(mappable_new_path, arguments)
 
@@ -39,7 +39,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       end
     end
 
-    scenario "Should create #{mappable_factory_name} with map", :js do
+    it "Should create #{mappable_factory_name} with map", :js do
       login_as user
       visit send(mappable_new_path, arguments)
 
@@ -50,7 +50,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to have_css(".map_location")
     end
 
-    scenario "Can not display map on #{mappable_factory_name} when not fill marker on map", :js do
+    it "Can not display map on #{mappable_factory_name} when not fill marker on map", :js do
       login_as user
       visit send(mappable_new_path, arguments)
 
@@ -62,7 +62,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario "Can not display map on #{mappable_factory_name} when feature.map is disabled", :js do
+    it "Can not display map on #{mappable_factory_name} when feature.map is disabled", :js do
       Setting['feature.map'] = false
       login_as user
       visit send(mappable_new_path, arguments)
@@ -74,7 +74,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario 'Errors on create' do
+    it 'Errors on create' do
       login_as user
       visit send(mappable_new_path, arguments)
 
@@ -83,7 +83,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to have_content "Map location can't be blank"
     end
 
-    scenario 'Skip map', :js do
+    it 'Skip map', :js do
       login_as user
       visit send(mappable_new_path, arguments)
 
@@ -94,7 +94,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to_not have_content "Map location can't be blank"
     end
 
-    scenario 'Toggle map', :js do
+    it 'Toggle map', :js do
       login_as user
       visit send(mappable_new_path, arguments)
 
@@ -118,7 +118,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
     before { skip } if mappable_edit_path.blank?
 
-    scenario "Should edit map on #{mappable_factory_name} and contain default values", :js do
+    it "Should edit map on #{mappable_factory_name} and contain default values", :js do
       login_as mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -127,7 +127,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       validate_latitude_longitude(mappable_factory_name)
     end
 
-    scenario "Should edit default values from map on #{mappable_factory_name} edit page", :js do
+    it "Should edit default values from map on #{mappable_factory_name} edit page", :js do
       login_as mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -140,7 +140,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to have_selector(".map_location[data-marker-latitude='#{mappable.map_location.latitude}']")
     end
 
-    scenario "Should edit mappable on #{mappable_factory_name} without change map", :js do
+    it "Should edit mappable on #{mappable_factory_name} without change map", :js do
       login_as mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -153,7 +153,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to have_selector(".map_location[data-marker-latitude='#{mappable.map_location.latitude}']")
     end
 
-    scenario "Can not display map on #{mappable_factory_name} edit when remove map marker", :js do
+    it "Can not display map on #{mappable_factory_name} edit when remove map marker", :js do
       login_as mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -164,7 +164,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario "Can not display map on #{mappable_factory_name} edit when feature.map is disabled", :js do
+    it "Can not display map on #{mappable_factory_name} edit when feature.map is disabled", :js do
       Setting['feature.map'] = false
       login_as mappable.author
 
@@ -175,7 +175,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario 'No errors on update', :js do
+    it 'No errors on update', :js do
       skip ""
       login_as mappable.author
 
@@ -186,7 +186,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to_not have_content "Map location can't be blank"
     end
 
-    scenario 'No need to skip map on update' do
+    it 'No need to skip map on update' do
       login_as mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -206,7 +206,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 
-    scenario "Should display map on #{mappable_factory_name} show page", :js do
+    it "Should display map on #{mappable_factory_name} show page", :js do
       arguments[:id] = mappable.id
 
       visit send(mappable_show_path, arguments)
@@ -214,7 +214,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to have_css(".map_location")
     end
 
-    scenario "Should not display map on #{mappable_factory_name} show when marker is not defined", :js do
+    it "Should not display map on #{mappable_factory_name} show when marker is not defined", :js do
       mappable_without_map = create(mappable_factory_name.to_s.to_sym)
       set_arguments(arguments, mappable_without_map, mappable_path_arguments)
       arguments[:id] = mappable_without_map.id
@@ -224,7 +224,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario "Should not display map on #{mappable_factory_name} show page when feature.map is disable", :js do
+    it "Should not display map on #{mappable_factory_name} show page when feature.map is disable", :js do
       Setting['feature.map'] = false
       arguments[:id] = mappable.id
 

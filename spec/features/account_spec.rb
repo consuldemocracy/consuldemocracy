@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Account' do
+describe 'Account' do
 
-  background do
+  before do
     @user = create(:user, username: "Manuela Colau")
     login_as(@user)
   end
 
-  scenario 'Show' do
+  it 'Show' do
     visit root_path
 
     click_link "My account"
@@ -18,7 +18,7 @@ feature 'Account' do
     expect(page).to have_selector(avatar('Manuela Colau'), count: 1)
   end
 
-  scenario 'Show organization' do
+  it 'Show organization' do
     create(:organization, user: @user, name: "Manuela Corp")
 
     visit account_path
@@ -29,7 +29,7 @@ feature 'Account' do
     expect(page).to have_selector(avatar('Manuela Corp'), count: 1)
   end
 
-  scenario 'Edit' do
+  it 'Edit' do
     visit account_path
 
     fill_in 'account_username', with: 'Larry Bird'
@@ -50,7 +50,7 @@ feature 'Account' do
     expect(find("#account_email_on_direct_message")).to_not be_checked
   end
 
-  scenario 'Edit Organization' do
+  it 'Edit Organization' do
     create(:organization, user: @user, name: "Manuela Corp")
     visit account_path
 
@@ -71,7 +71,7 @@ feature 'Account' do
 
   context "Option to display badge for official position" do
 
-    scenario "Users with official position of level 1" do
+    it "Users with official position of level 1" do
       official_user = create(:user, official_level: 1)
 
       login_as(official_user)
@@ -85,7 +85,7 @@ feature 'Account' do
       expect(find("#account_official_position_badge")).to be_checked
     end
 
-    scenario "Users with official position of level 2 and above" do
+    it "Users with official position of level 2 and above" do
       official_user2 = create(:user, official_level: 2)
       official_user3 = create(:user, official_level: 3)
 
@@ -102,7 +102,7 @@ feature 'Account' do
 
   end
 
-  scenario "Errors on edit" do
+  it "Errors on edit" do
     visit account_path
 
     fill_in 'account_username', with: ''
@@ -111,7 +111,7 @@ feature 'Account' do
     expect(page).to have_content error_message
   end
 
-  scenario 'Errors editing credentials' do
+  it 'Errors editing credentials' do
     visit root_path
 
     click_link 'My account'
@@ -125,7 +125,7 @@ feature 'Account' do
     expect(page).to have_content error_message
   end
 
-  scenario 'Erasing account' do
+  it 'Erasing account' do
     visit account_path
 
     click_link 'Erase my account'

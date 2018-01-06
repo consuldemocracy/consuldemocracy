@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-feature 'Admin geozones' do
+describe 'Admin geozones' do
 
-  background do
+  before do
     login_as(create(:administrator).user)
   end
 
-  scenario 'Show list of geozones' do
+  it 'Show list of geozones' do
     chamberi = create(:geozone, name: 'Chamberí')
     retiro = create(:geozone, name: 'Retiro')
 
@@ -16,7 +16,7 @@ feature 'Admin geozones' do
     expect(page).to have_content(retiro.name)
   end
 
-  scenario 'Create new geozone' do
+  it 'Create new geozone' do
     visit admin_root_path
 
     within('#side_menu') { click_link 'Manage geozones' }
@@ -36,7 +36,7 @@ feature 'Admin geozones' do
     expect(page).to have_content 'Fancy District'
   end
 
-  scenario 'Edit geozone with no associated elements' do
+  it 'Edit geozone with no associated elements' do
     geozone = create(:geozone, name: 'Edit me!', census_code: '012')
 
     visit admin_geozones_path
@@ -54,7 +54,7 @@ feature 'Admin geozones' do
     end
   end
 
-  scenario 'Edit geozone with associated elements' do
+  it 'Edit geozone with associated elements' do
     geozone = create(:geozone, name: 'Edit me!')
     create(:proposal, title: 'Proposal with geozone', geozone: geozone)
 
@@ -71,7 +71,7 @@ feature 'Admin geozones' do
     end
   end
 
-  scenario 'Delete geozone with no associated elements' do
+  it 'Delete geozone with no associated elements' do
     geozone = create(:geozone, name: 'Delete me!')
 
     visit admin_geozones_path
@@ -83,7 +83,7 @@ feature 'Admin geozones' do
     expect(Geozone.where(id: geozone.id)).to be_empty
   end
 
-  scenario 'Delete geozone with associated element' do
+  it 'Delete geozone with associated element' do
     geozone = create(:geozone, name: 'Delete me!')
     create(:proposal, geozone: geozone)
 

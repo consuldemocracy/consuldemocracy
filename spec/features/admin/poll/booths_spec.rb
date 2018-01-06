@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Admin booths' do
+describe 'Admin booths' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario 'Index empty' do
+  it 'Index empty' do
     visit admin_root_path
 
     within('#side_menu') do
@@ -17,7 +17,7 @@ feature 'Admin booths' do
     expect(page).to have_content "There are no booths"
   end
 
-  scenario 'Index' do
+  it 'Index' do
     3.times { create(:poll_booth) }
 
     visit admin_root_path
@@ -36,7 +36,7 @@ feature 'Admin booths' do
     expect(page).to_not have_content "There are no booths"
   end
 
-  scenario "Available" do
+  it "Available" do
     booth_for_current_poll  = create(:poll_booth)
     booth_for_incoming_poll = create(:poll_booth)
     booth_for_expired_poll  = create(:poll_booth)
@@ -63,7 +63,7 @@ feature 'Admin booths' do
     expect(page).to_not have_link "Edit booth"
   end
 
-  scenario 'Show' do
+  it 'Show' do
     booth = create(:poll_booth)
 
     visit admin_booths_path
@@ -72,7 +72,7 @@ feature 'Admin booths' do
     expect(page).to have_content booth.location
   end
 
-  scenario "Create" do
+  it "Create" do
     visit admin_booths_path
     click_link "Add booth"
 
@@ -87,7 +87,7 @@ feature 'Admin booths' do
     expect(page).to have_content "39th Street, number 2, ground floor"
   end
 
-  scenario "Edit" do
+  it "Edit" do
     poll = create(:poll, :current)
     booth = create(:poll_booth)
     assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
@@ -113,7 +113,7 @@ feature 'Admin booths' do
     end
   end
 
-  scenario "Back link go back to available list when manage shifts" do
+  it "Back link go back to available list when manage shifts" do
     poll = create(:poll, :current)
     booth = create(:poll_booth)
     assignment = create(:poll_booth_assignment, poll: poll, booth: booth)

@@ -1,9 +1,9 @@
 # coding: utf-8
 require 'rails_helper'
 
-feature 'Debates' do
+describe 'Debates' do
 
-  scenario 'Disabled with a feature flag' do
+  it 'Disabled with a feature flag' do
     Setting['feature.debates'] = nil
     expect{ visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     Setting['feature.debates'] = true
@@ -14,7 +14,7 @@ feature 'Debates' do
     it_behaves_like 'relationable', Debate
   end
 
-  scenario 'Index' do
+  it 'Index' do
     debates = [create(:debate), create(:debate), create(:debate)]
 
     visit debates_path
@@ -29,7 +29,7 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Paginated Index' do
+  it 'Paginated Index' do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times { create(:debate) }
 
@@ -47,7 +47,7 @@ feature 'Debates' do
     expect(page).to have_selector('#debates .debate', count: 2)
   end
 
-  scenario 'Show' do
+  it 'Show' do
     debate = create(:debate)
 
     visit debate_path(debate)
@@ -64,7 +64,7 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Show: "Back" link directs to previous page', :js do
+  it 'Show: "Back" link directs to previous page', :js do
     debate = create(:debate, title: 'Test Debate 1')
 
     visit debates_path(order: :hot_score, page: 1)
@@ -75,7 +75,7 @@ feature 'Debates' do
   end
 
   context "Show" do
-    scenario 'When path matches the friendly url' do
+    it 'When path matches the friendly url' do
       debate = create(:debate)
 
       right_path = debate_path(debate)
@@ -84,7 +84,7 @@ feature 'Debates' do
       expect(page).to have_current_path(right_path)
     end
 
-    scenario 'When path does not match the friendly url' do
+    it 'When path does not match the friendly url' do
       debate = create(:debate)
 
       right_path = debate_path(debate)
@@ -96,7 +96,7 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Create' do
+  it 'Create' do
     author = create(:user)
     login_as(author)
 
@@ -114,7 +114,7 @@ feature 'Debates' do
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
   end
 
-  scenario 'Create with invisible_captcha honeypot field' do
+  it 'Create with invisible_captcha honeypot field' do
     author = create(:user)
     login_as(author)
 
@@ -131,7 +131,7 @@ feature 'Debates' do
     expect(page).to have_current_path(debates_path)
   end
 
-  scenario 'Create debate too fast' do
+  it 'Create debate too fast' do
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
 
     author = create(:user)
@@ -149,7 +149,7 @@ feature 'Debates' do
     expect(page).to have_current_path(new_debate_path)
   end
 
-  scenario 'Errors on create' do
+  it 'Errors on create' do
     author = create(:user)
     login_as(author)
 
@@ -158,7 +158,7 @@ feature 'Debates' do
     expect(page).to have_content error_message
   end
 
-  scenario 'JS injection is prevented but safe html is respected' do
+  it 'JS injection is prevented but safe html is respected' do
     author = create(:user)
     login_as(author)
 
@@ -176,7 +176,7 @@ feature 'Debates' do
     expect(page.html).to_not include '&lt;p&gt;This is'
   end
 
-  scenario 'Autolinking is applied to description' do
+  it 'Autolinking is applied to description' do
     author = create(:user)
     login_as(author)
 
@@ -192,7 +192,7 @@ feature 'Debates' do
     expect(page).to have_link('www.example.org', href: 'http://www.example.org')
   end
 
-  scenario 'JS injection is prevented but autolinking is respected' do
+  it 'JS injection is prevented but autolinking is respected' do
     author = create(:user)
     js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
     login_as(author)
@@ -217,7 +217,7 @@ feature 'Debates' do
     expect(page.html).to_not include "<script>alert('hey')</script>"
   end
 
-  scenario 'Update should not be posible if logged user is not the author' do
+  it 'Update should not be posible if logged user is not the author' do
     debate = create(:debate)
     expect(debate).to be_editable
     login_as(create(:user))
@@ -228,7 +228,7 @@ feature 'Debates' do
     expect(page).to have_content "You do not have permission to carry out the action 'edit' on debate."
   end
 
-  scenario 'Update should not be posible if debate is not editable' do
+  it 'Update should not be posible if debate is not editable' do
     debate = create(:debate)
     Setting["max_votes_for_debate_edit"] = 2
     3.times { create(:vote, votable: debate) }
@@ -243,7 +243,7 @@ feature 'Debates' do
     expect(page).to have_content 'You do not have permission to'
   end
 
-  scenario 'Update should be posible for the author of an editable debate' do
+  it 'Update should be posible for the author of an editable debate' do
     debate = create(:debate)
     login_as(debate.author)
 
@@ -260,7 +260,7 @@ feature 'Debates' do
     expect(page).to have_content "Let's do something to end child poverty"
   end
 
-  scenario 'Errors on update' do
+  it 'Errors on update' do
     debate = create(:debate)
     login_as(debate.author)
 
@@ -271,7 +271,7 @@ feature 'Debates' do
     expect(page).to have_content error_message
   end
 
-  scenario "Flagging", :js do
+  it "Flagging", :js do
     user = create(:user)
     debate = create(:debate)
 
@@ -288,7 +288,7 @@ feature 'Debates' do
     expect(Flag.flagged?(user, debate)).to be
   end
 
-  scenario "Unflagging", :js do
+  it "Unflagging", :js do
     user = create(:user)
     debate = create(:debate)
     Flag.flag(user, debate)
@@ -306,9 +306,9 @@ feature 'Debates' do
     expect(Flag.flagged?(user, debate)).to_not be
   end
 
-  feature 'Debate index order filters' do
+  describe 'Debate index order filters' do
 
-    scenario 'Default order is hot_score', :js do
+    it 'Default order is hot_score', :js do
       create(:debate, title: 'Best').update_column(:hot_score, 10)
       create(:debate, title: 'Worst').update_column(:hot_score, 2)
       create(:debate, title: 'Medium').update_column(:hot_score, 5)
@@ -319,7 +319,7 @@ feature 'Debates' do
       expect('Medium').to appear_before('Worst')
     end
 
-    scenario 'Debates are ordered by confidence_score', :js do
+    it 'Debates are ordered by confidence_score', :js do
       create(:debate, title: 'Best').update_column(:confidence_score, 10)
       create(:debate, title: 'Worst').update_column(:confidence_score, 2)
       create(:debate, title: 'Medium').update_column(:confidence_score, 5)
@@ -338,7 +338,7 @@ feature 'Debates' do
       expect(current_url).to include('page=1')
     end
 
-    scenario 'Debates are ordered by newest', :js do
+    it 'Debates are ordered by newest', :js do
       create(:debate, title: 'Best',   created_at: Time.current)
       create(:debate, title: 'Medium', created_at: Time.current - 1.hour)
       create(:debate, title: 'Worst',  created_at: Time.current - 1.day)
@@ -359,7 +359,7 @@ feature 'Debates' do
 
     context 'Recommendations' do
 
-      background do
+      before do
         Setting['feature.user.recommendations'] = true
         create(:debate, title: 'Best',   cached_votes_total: 10, tag_list: "Sport")
         create(:debate, title: 'Medium', cached_votes_total: 5,  tag_list: "Sport")
@@ -370,13 +370,13 @@ feature 'Debates' do
         Setting['feature.user.recommendations'] = nil
       end
 
-      scenario 'Debates can not ordered by recommendations when there is not an user logged', :js do
+      it 'Debates can not ordered by recommendations when there is not an user logged', :js do
         visit debates_path
 
         expect(page).not_to have_selector('a', text: 'recommendations')
       end
 
-      scenario 'Should display text when there are not recommendeds results', :js do
+      it 'Should display text when there are not recommendeds results', :js do
         user = create(:user)
         proposal = create(:proposal, tag_list: "Distinct_to_sport")
         create(:follow, followable: proposal, user: user)
@@ -388,7 +388,7 @@ feature 'Debates' do
         expect(page).to have_content "There are not debates related to your interests"
       end
 
-      scenario 'Should display text when user has not related interests', :js do
+      it 'Should display text when user has not related interests', :js do
         user = create(:user)
         login_as(user)
         visit debates_path
@@ -398,7 +398,7 @@ feature 'Debates' do
         expect(page).to have_content "Follow proposals so we can give you recommendations"
       end
 
-      scenario 'Debates are ordered by recommendations when there is a user logged', :js do
+      it 'Debates are ordered by recommendations when there is a user logged', :js do
         proposal = create(:proposal, tag_list: "Sport")
         user = create(:user)
         create(:follow, followable: proposal, user: user)
@@ -425,7 +425,7 @@ feature 'Debates' do
 
     context "Basic search" do
 
-      scenario 'Search by text' do
+      it 'Search by text' do
         debate1 = create(:debate, title: "Get Schwifty")
         debate2 = create(:debate, title: "Schwifty Hello")
         debate3 = create(:debate, title: "Do not show me")
@@ -446,7 +446,7 @@ feature 'Debates' do
         end
       end
 
-      scenario "Maintain search criteria" do
+      it "Maintain search criteria" do
         visit debates_path
 
         within(".expanded #search_form") do
@@ -461,7 +461,7 @@ feature 'Debates' do
 
     context "Advanced search" do
 
-      scenario "Search by text", :js do
+      it "Search by text", :js do
         debate1 = create(:debate, title: "Get Schwifty")
         debate2 = create(:debate, title: "Schwifty Hello")
         debate3 = create(:debate, title: "Do not show me")
@@ -483,7 +483,7 @@ feature 'Debates' do
 
       context "Search by author type" do
 
-        scenario "Public employee", :js do
+        it "Public employee", :js do
           ana = create :user, official_level: 1
           john = create :user, official_level: 2
 
@@ -506,7 +506,7 @@ feature 'Debates' do
           end
         end
 
-        scenario "Municipal Organization", :js do
+        it "Municipal Organization", :js do
           ana = create :user, official_level: 2
           john = create :user, official_level: 3
 
@@ -529,7 +529,7 @@ feature 'Debates' do
           end
         end
 
-        scenario "General director", :js do
+        it "General director", :js do
           ana = create :user, official_level: 3
           john = create :user, official_level: 4
 
@@ -552,7 +552,7 @@ feature 'Debates' do
           end
         end
 
-        scenario "City councillor", :js do
+        it "City councillor", :js do
           ana = create :user, official_level: 4
           john = create :user, official_level: 5
 
@@ -575,7 +575,7 @@ feature 'Debates' do
           end
         end
 
-        scenario "Mayoress", :js do
+        it "Mayoress", :js do
           ana = create :user, official_level: 5
           john = create :user, official_level: 4
 
@@ -604,7 +604,7 @@ feature 'Debates' do
 
         context "Predefined date ranges" do
 
-          scenario "Last day", :js do
+          it "Last day", :js do
             debate1 = create(:debate, created_at: 1.minute.ago)
             debate2 = create(:debate, created_at: 1.hour.ago)
             debate3 = create(:debate, created_at: 2.days.ago)
@@ -624,7 +624,7 @@ feature 'Debates' do
             end
           end
 
-          scenario "Last week", :js do
+          it "Last week", :js do
             debate1 = create(:debate, created_at: 1.day.ago)
             debate2 = create(:debate, created_at: 5.days.ago)
             debate3 = create(:debate, created_at: 8.days.ago)
@@ -644,7 +644,7 @@ feature 'Debates' do
             end
           end
 
-          scenario "Last month", :js do
+          it "Last month", :js do
             debate1 = create(:debate, created_at: 10.days.ago)
             debate2 = create(:debate, created_at: 20.days.ago)
             debate3 = create(:debate, created_at: 33.days.ago)
@@ -664,7 +664,7 @@ feature 'Debates' do
             end
           end
 
-          scenario "Last year", :js do
+          it "Last year", :js do
             debate1 = create(:debate, created_at: 300.days.ago)
             debate2 = create(:debate, created_at: 350.days.ago)
             debate3 = create(:debate, created_at: 370.days.ago)
@@ -686,7 +686,7 @@ feature 'Debates' do
 
         end
 
-        scenario "Search by custom date range", :js do
+        it "Search by custom date range", :js do
           debate1 = create(:debate, created_at: 2.days.ago)
           debate2 = create(:debate, created_at: 3.days.ago)
           debate3 = create(:debate, created_at: 9.days.ago)
@@ -708,7 +708,7 @@ feature 'Debates' do
           end
         end
 
-        scenario "Search by custom invalid date range", :js do
+        it "Search by custom invalid date range", :js do
           debate1 = create(:debate, created_at: 2.years.ago)
           debate2 = create(:debate, created_at: 3.days.ago)
           debate3 = create(:debate, created_at: 9.days.ago)
@@ -730,7 +730,7 @@ feature 'Debates' do
           end
         end
 
-        scenario "Search by multiple filters", :js do
+        it "Search by multiple filters", :js do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
 
@@ -753,7 +753,7 @@ feature 'Debates' do
           end
         end
 
-        scenario "Maintain advanced search criteria", :js do
+        it "Maintain advanced search criteria", :js do
           visit debates_path
           click_link "Advanced search"
 
@@ -770,7 +770,7 @@ feature 'Debates' do
           end
         end
 
-        scenario "Maintain custom date search criteria", :js do
+        it "Maintain custom date search criteria", :js do
           visit debates_path
           click_link "Advanced search"
 
@@ -789,7 +789,7 @@ feature 'Debates' do
       end
     end
 
-    scenario "Order by relevance by default", :js do
+    it "Order by relevance by default", :js do
       debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10)
       debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1)
       debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100)
@@ -807,7 +807,7 @@ feature 'Debates' do
       end
     end
 
-    scenario "Reorder results maintaing search", :js do
+    it "Reorder results maintaing search", :js do
       debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
       debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
       debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
@@ -827,7 +827,7 @@ feature 'Debates' do
       end
     end
 
-    scenario "Reorder by recommendations results maintaing search", :js do
+    it "Reorder by recommendations results maintaing search", :js do
       Setting['feature.user.recommendations'] = true
       user = create(:user)
       login_as(user)
@@ -853,7 +853,7 @@ feature 'Debates' do
       Setting['feature.user.recommendations'] = nil
     end
 
-    scenario 'After a search do not show featured debates' do
+    it 'After a search do not show featured debates' do
       featured_debates = create_featured_debates
       debate = create(:debate, title: "Abcdefghi")
 
@@ -869,7 +869,7 @@ feature 'Debates' do
 
   end
 
-  scenario 'Conflictive' do
+  it 'Conflictive' do
     good_debate = create(:debate)
     conflictive_debate = create(:debate, :conflictive)
 
@@ -880,7 +880,7 @@ feature 'Debates' do
     expect(page).to_not have_content "This debate has been flagged as inappropriate by several users."
   end
 
-  scenario 'Erased author' do
+  it 'Erased author' do
     user = create(:user)
     debate = create(:debate, author: user)
     user.erase
@@ -896,7 +896,7 @@ feature 'Debates' do
 
     context "By geozone" do
 
-      background do
+      before do
         @california = Geozone.create(name: "California")
         @new_york   = Geozone.create(name: "New York")
 
@@ -956,7 +956,7 @@ feature 'Debates' do
   end
 
   context 'Suggesting debates' do
-    scenario 'Shows up to 5 suggestions', :js do
+    it 'Shows up to 5 suggestions', :js do
       author = create(:user)
       login_as(author)
 
@@ -977,7 +977,7 @@ feature 'Debates' do
       end
     end
 
-    scenario 'No found suggestions', :js do
+    it 'No found suggestions', :js do
       author = create(:user)
       login_as(author)
 
@@ -994,7 +994,7 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Mark/Unmark a debate as featured' do
+  it 'Mark/Unmark a debate as featured' do
     admin = create(:administrator)
     login_as(admin.user)
 
@@ -1027,7 +1027,7 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Index include featured debates' do
+  it 'Index include featured debates' do
     admin = create(:administrator)
     login_as(admin.user)
 
@@ -1040,7 +1040,7 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Index do not show featured debates if none is marked as featured' do
+  it 'Index do not show featured debates if none is marked as featured' do
     admin = create(:administrator)
     login_as(admin.user)
 

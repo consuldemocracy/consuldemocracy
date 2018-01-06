@@ -5,7 +5,7 @@ shared_examples "relationable" do |relationable_model_name|
   let(:related2) { create([:proposal, :debate].sample) }
   let(:user) { create(:user) }
 
-  scenario 'related contents are listed' do
+  it 'related contents are listed' do
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     visit send("#{relationable.class.name.downcase}_path", relationable)
@@ -19,12 +19,12 @@ shared_examples "relationable" do |relationable_model_name|
     end
   end
 
-  scenario 'related contents list is not rendered if there are no relations' do
+  it 'related contents list is not rendered if there are no relations' do
     visit send("#{relationable.class.name.downcase}_path", relationable)
     expect(page).to_not have_css("#related-content-list")
   end
 
-  scenario 'related contents can be added' do
+  it 'related contents can be added' do
     login_as(user)
     visit send("#{relationable.class.name.downcase}_path", relationable)
 
@@ -57,7 +57,7 @@ shared_examples "relationable" do |relationable_model_name|
     end
   end
 
-  scenario 'if related content URL is invalid returns error' do
+  it 'if related content URL is invalid returns error' do
     login_as(user)
     visit send("#{relationable.class.name.downcase}_path", relationable)
 
@@ -71,7 +71,7 @@ shared_examples "relationable" do |relationable_model_name|
     expect(page).to have_content("Link not valid. Remember to start with #{Setting[:url]}.")
   end
 
-  scenario 'related content can be scored positively', :js do
+  it 'related content can be scored positively', :js do
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)
@@ -88,7 +88,7 @@ shared_examples "relationable" do |relationable_model_name|
 
   end
 
-  scenario 'related content can be scored negatively', :js do
+  it 'related content can be scored negatively', :js do
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)
@@ -104,7 +104,7 @@ shared_examples "relationable" do |relationable_model_name|
     expect(related_content.opposite_related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.opposite_related_content.id).value).to eq(-1)
   end
 
-  scenario 'if related content has negative score it will be hidden' do
+  it 'if related content has negative score it will be hidden' do
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     2.times do

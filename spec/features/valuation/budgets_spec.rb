@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Valuation budgets' do
+describe 'Valuation budgets' do
 
-  background do
+  before do
     @valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
     login_as(@valuator.user)
   end
 
-  scenario 'Disabled with a feature flag' do
+  it 'Disabled with a feature flag' do
     Setting['feature.budgets'] = nil
     expect{ visit valuation_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
 
@@ -16,14 +16,14 @@ feature 'Valuation budgets' do
 
   context 'Index' do
 
-    scenario 'Displaying budgets' do
+    it 'Displaying budgets' do
       budget = create(:budget)
       visit valuation_budgets_path
 
       expect(page).to have_content(budget.name)
     end
 
-    scenario 'Filters by phase' do
+    it 'Filters by phase' do
       budget1 = create(:budget)
       budget2 = create(:budget, :accepting)
       budget3 = create(:budget, :selecting)

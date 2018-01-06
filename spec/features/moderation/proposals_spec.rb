@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Moderate proposals' do
+describe 'Moderate proposals' do
 
-  scenario 'Disabled with a feature flag' do
+  it 'Disabled with a feature flag' do
     Setting['feature.proposals'] = nil
     moderator = create(:moderator)
     login_as(moderator.user)
@@ -12,7 +12,7 @@ feature 'Moderate proposals' do
     Setting['feature.proposals'] = true
   end
 
-  scenario 'Hide', :js do
+  it 'Hide', :js do
     citizen = create(:user)
     moderator = create(:moderator)
 
@@ -33,7 +33,7 @@ feature 'Moderate proposals' do
     expect(page).to have_css('.proposal', count: 0)
   end
 
-  scenario 'Can not hide own proposal' do
+  it 'Can not hide own proposal' do
     moderator = create(:moderator)
     proposal = create(:proposal, author: moderator.user)
 
@@ -46,16 +46,16 @@ feature 'Moderate proposals' do
     end
   end
 
-  feature '/moderation/ screen' do
+  describe '/moderation/ screen' do
 
-    background do
+    before do
       moderator = create(:moderator)
       login_as(moderator.user)
     end
 
-    feature 'moderate in bulk' do
-      feature "When a proposal has been selected for moderation" do
-        background do
+    describe 'moderate in bulk' do
+      describe "When a proposal has been selected for moderation" do
+        before do
           @proposal = create(:proposal)
           visit moderation_proposals_path
           within('.menu.simple') do
@@ -69,21 +69,21 @@ feature 'Moderate proposals' do
           expect(page).to_not have_css("proposal_#{@proposal.id}")
         end
 
-        scenario 'Hide the proposal' do
+        it 'Hide the proposal' do
           click_on "Hide proposals"
           expect(page).to_not have_css("proposal_#{@proposal.id}")
           expect(@proposal.reload).to be_hidden
           expect(@proposal.author).to_not be_hidden
         end
 
-        scenario 'Block the author' do
+        it 'Block the author' do
           click_on "Block authors"
           expect(page).to_not have_css("proposal_#{@proposal.id}")
           expect(@proposal.reload).to be_hidden
           expect(@proposal.author).to be_hidden
         end
 
-        scenario 'Ignore the proposal' do
+        it 'Ignore the proposal' do
           click_button "Mark as viewed"
           expect(page).to_not have_css("proposal_#{@proposal.id}")
           expect(@proposal.reload).to be_ignored_flag
@@ -92,7 +92,7 @@ feature 'Moderate proposals' do
         end
       end
 
-      scenario "select all/none", :js do
+      it "select all/none", :js do
         create_list(:proposal, 2)
 
         visit moderation_proposals_path
@@ -110,7 +110,7 @@ feature 'Moderate proposals' do
         end
       end
 
-      scenario "remembering page, filter and order" do
+      it "remembering page, filter and order" do
         create_list(:proposal, 52)
 
         visit moderation_proposals_path(filter: 'all', page: '2', order: 'created_at')
@@ -125,7 +125,7 @@ feature 'Moderate proposals' do
       end
     end
 
-    scenario "Current filter is properly highlighted" do
+    it "Current filter is properly highlighted" do
       visit moderation_proposals_path
       expect(page).to_not have_link('Pending')
       expect(page).to have_link('All')
@@ -153,7 +153,7 @@ feature 'Moderate proposals' do
       end
     end
 
-    scenario "Filtering proposals" do
+    it "Filtering proposals" do
       create(:proposal, title: "Regular proposal")
       create(:proposal, :flagged, title: "Pending proposal")
       create(:proposal, :hidden, title: "Hidden proposal")
@@ -178,7 +178,7 @@ feature 'Moderate proposals' do
       expect(page).to have_content('Ignored proposal')
     end
 
-    scenario "sorting proposals" do
+    it "sorting proposals" do
       create(:proposal, title: "Flagged proposal", created_at: Time.current - 1.day, flags_count: 5)
       create(:proposal, title: "Flagged newer proposal", created_at: Time.current - 12.hours, flags_count: 3)
       create(:proposal, title: "Newer proposal", created_at: Time.current)

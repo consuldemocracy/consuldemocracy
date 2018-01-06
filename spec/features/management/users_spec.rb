@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-feature 'Users' do
+describe 'Users' do
 
-  background do
+  before do
     login_as_manager
   end
 
-  scenario 'Create a level 3 user with email from scratch' do
+  it 'Create a level 3 user with email from scratch' do
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '12345678Z'
     click_button 'Check'
@@ -46,7 +46,7 @@ feature 'Users' do
     expect(page).to have_content "Your account has been confirmed."
   end
 
-  scenario 'Create a level 3 user without email from scratch' do
+  it 'Create a level 3 user without email from scratch' do
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '12345678Z'
     click_button 'Check'
@@ -72,7 +72,7 @@ feature 'Users' do
     expect(user.date_of_birth).to have_content Date.new(1980, 12, 31)
   end
 
-  scenario 'Delete a level 2 user account from document verification page', :js do
+  it 'Delete a level 2 user account from document verification page', :js do
     level_2_user = create(:user, :level_two, document_number: "12345678Z")
 
     visit management_document_verifications_path

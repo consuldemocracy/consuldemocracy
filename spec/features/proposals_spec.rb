@@ -1,9 +1,9 @@
 # coding: utf-8
 require 'rails_helper'
 
-feature 'Proposals' do
+describe 'Proposals' do
 
-  scenario 'Disabled with a feature flag' do
+  it 'Disabled with a feature flag' do
     Setting['feature.proposals'] = nil
     expect{ visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     Setting['feature.proposals'] = true
@@ -24,7 +24,7 @@ feature 'Proposals' do
       Setting['feature.allow_images'] = nil
     end
 
-    scenario 'Lists featured and regular proposals' do
+    it 'Lists featured and regular proposals' do
       featured_proposals = create_featured_proposals
       proposals = [create(:proposal), create(:proposal), create(:proposal)]
 
@@ -48,7 +48,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario 'Pagination' do
+    it 'Pagination' do
       per_page = Kaminari.config.default_per_page
       (per_page + 5).times { create(:proposal) }
 
@@ -66,7 +66,7 @@ feature 'Proposals' do
       expect(page).to have_selector('#proposals .proposal', count: 2)
     end
 
-    scenario 'Index should show proposal descriptive image only when is defined' do
+    it 'Index should show proposal descriptive image only when is defined' do
       featured_proposals = create_featured_proposals
       proposal = create(:proposal)
       proposal_with_image = create(:proposal)
@@ -83,7 +83,7 @@ feature 'Proposals' do
     end
   end
 
-  scenario 'Show' do
+  it 'Show' do
     proposal = create(:proposal)
 
     visit proposal_path(proposal)
@@ -106,7 +106,7 @@ feature 'Proposals' do
   end
 
   context "Show" do
-    scenario 'When path matches the friendly url' do
+    it 'When path matches the friendly url' do
       proposal = create(:proposal)
 
       right_path = proposal_path(proposal)
@@ -115,7 +115,7 @@ feature 'Proposals' do
       expect(page).to have_current_path(right_path)
     end
 
-    scenario 'When path does not match the friendly url' do
+    it 'When path does not match the friendly url' do
       proposal = create(:proposal)
 
       right_path = proposal_path(proposal)
@@ -126,7 +126,7 @@ feature 'Proposals' do
       expect(page).to have_current_path(right_path)
     end
 
-    scenario 'Can access the community' do
+    it 'Can access the community' do
       Setting['feature.community'] = true
 
       proposal = create(:proposal)
@@ -136,7 +136,7 @@ feature 'Proposals' do
       Setting['feature.community'] = false
     end
 
-    scenario 'Can not access the community' do
+    it 'Can not access the community' do
       Setting['feature.community'] = false
 
       proposal = create(:proposal)
@@ -147,21 +147,21 @@ feature 'Proposals' do
 
   context "Embedded video" do
 
-    scenario "Show YouTube video" do
+    it "Show YouTube video" do
       proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
       visit proposal_path(proposal)
       expect(page).to have_selector("div[id='js-embedded-video']")
       expect(page.html).to include 'https://www.youtube.com/embed/a7UFm6ErMPU'
     end
 
-    scenario "Show Vimeo video" do
+    it "Show Vimeo video" do
       proposal = create(:proposal, video_url: "https://vimeo.com/7232823")
       visit proposal_path(proposal)
       expect(page).to have_selector("div[id='js-embedded-video']")
       expect(page.html).to include 'https://player.vimeo.com/video/7232823'
     end
 
-    scenario "Dont show video" do
+    it "Dont show video" do
       proposal = create(:proposal, video_url: nil)
 
       visit proposal_path(proposal)
@@ -169,7 +169,7 @@ feature 'Proposals' do
     end
   end
 
-  scenario 'Social Media Cards' do
+  it 'Social Media Cards' do
     proposal = create(:proposal)
 
     visit proposal_path(proposal)
@@ -177,7 +177,7 @@ feature 'Proposals' do
     expect(page).to have_css "meta[property='og:title'][content=\"#{proposal.title}\"]", visible: false
   end
 
-  scenario 'Create' do
+  it 'Create' do
     author = create(:user)
     login_as(author)
 
@@ -212,7 +212,7 @@ feature 'Proposals' do
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
-  scenario 'Create with proposal improvement info link' do
+  it 'Create with proposal improvement info link' do
     Setting['proposal_improvement_path'] = '/more-information/proposal-improvement'
     author = create(:user)
     login_as(author)
@@ -240,7 +240,7 @@ feature 'Proposals' do
     Setting['proposal_improvement_path'] = nil
   end
 
-  scenario 'Create with invisible_captcha honeypot field' do
+  it 'Create with invisible_captcha honeypot field' do
     author = create(:user)
     login_as(author)
 
@@ -261,7 +261,7 @@ feature 'Proposals' do
     expect(page).to have_current_path(proposals_path)
   end
 
-  scenario 'Create proposal too fast' do
+  it 'Create proposal too fast' do
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
 
     author = create(:user)
@@ -283,7 +283,7 @@ feature 'Proposals' do
     expect(page).to have_current_path(new_proposal_path)
   end
 
-  scenario 'Responsible name is stored for anonymous users' do
+  it 'Responsible name is stored for anonymous users' do
     author = create(:user)
     login_as(author)
 
@@ -306,7 +306,7 @@ feature 'Proposals' do
     expect(Proposal.last.responsible_name).to eq('Isabel Garcia')
   end
 
-  scenario 'Responsible name field is not shown for verified users' do
+  it 'Responsible name field is not shown for verified users' do
     author = create(:user, :level_two)
     login_as(author)
 
@@ -328,7 +328,7 @@ feature 'Proposals' do
     expect(Proposal.last.responsible_name).to eq(author.document_number)
   end
 
-  scenario 'Errors on create' do
+  it 'Errors on create' do
     author = create(:user)
     login_as(author)
 
@@ -338,7 +338,7 @@ feature 'Proposals' do
     expect(page).to have_content error_message
   end
 
-  scenario 'JS injection is prevented but safe html is respected' do
+  it 'JS injection is prevented but safe html is respected' do
     author = create(:user)
     login_as(author)
 
@@ -363,7 +363,7 @@ feature 'Proposals' do
     expect(page.html).to_not include '&lt;p&gt;This is'
   end
 
-  scenario 'Autolinking is applied to description' do
+  it 'Autolinking is applied to description' do
     author = create(:user)
     login_as(author)
 
@@ -385,7 +385,7 @@ feature 'Proposals' do
     expect(page).to have_link('www.example.org', href: 'http://www.example.org')
   end
 
-  scenario 'JS injection is prevented but autolinking is respected' do
+  it 'JS injection is prevented but autolinking is respected' do
     author = create(:user)
     js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
     login_as(author)
@@ -418,7 +418,7 @@ feature 'Proposals' do
 
   context 'Geozones' do
 
-    scenario "Default whole city" do
+    it "Default whole city" do
       author = create(:user)
       login_as(author)
 
@@ -444,7 +444,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario "Specific geozone" do
+    it "Specific geozone" do
       geozone = create(:geozone, name: 'California')
       geozone = create(:geozone, name: 'New York')
       author = create(:user)
@@ -476,7 +476,7 @@ feature 'Proposals' do
   end
 
   context 'Retired proposals' do
-    scenario 'Retire' do
+    it 'Retire' do
       proposal = create(:proposal)
       login_as(proposal.author)
 
@@ -500,7 +500,7 @@ feature 'Proposals' do
       expect(page).to have_content 'There are three other better proposals with the same subject'
     end
 
-    scenario 'Fields are mandatory' do
+    it 'Fields are mandatory' do
       proposal = create(:proposal)
       login_as(proposal.author)
 
@@ -512,7 +512,7 @@ feature 'Proposals' do
       expect(page).to have_content "can't be blank", count: 2
     end
 
-    scenario 'Index do not list retired proposals by default' do
+    it 'Index do not list retired proposals by default' do
       create_featured_proposals
       not_retired = create(:proposal)
       retired = create(:proposal, retired_at: Time.current)
@@ -526,7 +526,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario 'Index has a link to retired proposals list' do
+    it 'Index has a link to retired proposals list' do
       create_featured_proposals
       not_retired = create(:proposal)
       retired = create(:proposal, retired_at: Time.current)
@@ -540,7 +540,7 @@ feature 'Proposals' do
       expect(page).to_not have_content not_retired.title
     end
 
-    scenario 'Retired proposals index interface elements' do
+    it 'Retired proposals index interface elements' do
       visit proposals_path(retired: 'all')
 
       expect(page).to_not have_content 'Advanced search'
@@ -548,7 +548,7 @@ feature 'Proposals' do
       expect(page).to_not have_content 'Districts'
     end
 
-    scenario 'Retired proposals index has links to filter by retired_reason' do
+    it 'Retired proposals index has links to filter by retired_reason' do
       unfeasible = create(:proposal, retired_at: Time.current, retired_reason: 'unfeasible')
       duplicated = create(:proposal, retired_at: Time.current, retired_reason: 'duplicated')
 
@@ -569,7 +569,7 @@ feature 'Proposals' do
     end
   end
 
-  scenario 'Update should not be posible if logged user is not the author' do
+  it 'Update should not be posible if logged user is not the author' do
     proposal = create(:proposal)
     expect(proposal).to be_editable
     login_as(create(:user))
@@ -580,7 +580,7 @@ feature 'Proposals' do
     expect(page).to have_content 'You do not have permission'
   end
 
-  scenario 'Update should not be posible if proposal is not editable' do
+  it 'Update should not be posible if proposal is not editable' do
     proposal = create(:proposal)
     Setting["max_votes_for_proposal_edit"] = 10
     11.times { create(:vote, votable: proposal) }
@@ -596,7 +596,7 @@ feature 'Proposals' do
     Setting["max_votes_for_proposal_edit"] = 1000
   end
 
-  scenario 'Update should be posible for the author of an editable proposal' do
+  it 'Update should be posible for the author of an editable proposal' do
     proposal = create(:proposal)
     login_as(proposal.author)
 
@@ -618,7 +618,7 @@ feature 'Proposals' do
     expect(page).to have_content "Let's do something to end child poverty"
   end
 
-  scenario 'Errors on update' do
+  it 'Errors on update' do
     proposal = create(:proposal)
     login_as(proposal.author)
 
@@ -629,9 +629,9 @@ feature 'Proposals' do
     expect(page).to have_content error_message
   end
 
-  feature 'Proposal index order filters' do
+  describe 'Proposal index order filters' do
 
-    scenario 'Default order is hot_score', :js do
+    it 'Default order is hot_score', :js do
       create_featured_proposals
 
       create(:proposal, title: 'Best proposal').update_column(:hot_score, 10)
@@ -644,7 +644,7 @@ feature 'Proposals' do
       expect('Medium proposal').to appear_before('Worst proposal')
     end
 
-    scenario 'Proposals are ordered by confidence_score', :js do
+    it 'Proposals are ordered by confidence_score', :js do
       create_featured_proposals
 
       create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
@@ -664,7 +664,7 @@ feature 'Proposals' do
       expect(current_url).to include('page=1')
     end
 
-    scenario 'Proposals are ordered by newest', :js do
+    it 'Proposals are ordered by newest', :js do
       create_featured_proposals
 
       create(:proposal, title: 'Best proposal',   created_at: Time.current)
@@ -697,13 +697,13 @@ feature 'Proposals' do
         Setting['feature.user.recommendations'] = nil
       end
 
-      scenario 'Proposals can not ordered by recommendations when there is not an user logged', :js do
+      it 'Proposals can not ordered by recommendations when there is not an user logged', :js do
         visit proposals_path
 
         expect(page).not_to have_selector('a', text: 'recommendations')
       end
 
-      scenario 'Should display text when there are not recommendeds results', :js do
+      it 'Should display text when there are not recommendeds results', :js do
         user = create(:user)
         proposal = create(:proposal, tag_list: "Distinct_to_sport")
         create(:follow, followable: proposal, user: user)
@@ -715,7 +715,7 @@ feature 'Proposals' do
         expect(page).to have_content "There are not proposals related to your interests"
       end
 
-      scenario 'Should display text when user has not related interests', :js do
+      it 'Should display text when user has not related interests', :js do
         user = create(:user)
         login_as(user)
         visit proposals_path
@@ -725,7 +725,7 @@ feature 'Proposals' do
         expect(page).to have_content "Follow proposals so we can give you recommendations"
       end
 
-      scenario 'Proposals are ordered by recommendations when there is an user logged', :js do
+      it 'Proposals are ordered by recommendations when there is an user logged', :js do
         user = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
         create(:follow, followable: proposal, user: user)
@@ -748,9 +748,9 @@ feature 'Proposals' do
     end
   end
 
-  feature 'Archived proposals' do
+  describe 'Archived proposals' do
 
-    scenario 'show on archived tab' do
+    it 'show on archived tab' do
       create_featured_proposals
       archived_proposals = create_archived_proposals
 
@@ -764,7 +764,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario 'do not show in other index tabs' do
+    it 'do not show in other index tabs' do
       create_featured_proposals
       archived_proposal = create(:proposal, :archived)
 
@@ -784,7 +784,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario 'do not show support buttons in index' do
+    it 'do not show support buttons in index' do
       create_featured_proposals
       archived_proposals = create_archived_proposals
 
@@ -799,14 +799,14 @@ feature 'Proposals' do
       end
     end
 
-    scenario 'do not show support buttons in show' do
+    it 'do not show support buttons in show' do
       archived_proposal = create(:proposal, :archived)
 
       visit proposal_path(archived_proposal)
       expect(page).to have_content "This proposal has been archived and can't collect supports"
     end
 
-    scenario 'do not show in featured proposals section' do
+    it 'do not show in featured proposals section' do
       featured_proposal = create(:proposal, :with_confidence_score, cached_votes_up: 100)
       archived_proposal = create(:proposal, :archived, :with_confidence_score, cached_votes_up: 10000)
 
@@ -833,7 +833,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario "Order by votes" do
+    it "Order by votes" do
       create(:proposal, :archived, title: "Least voted").update_column(:confidence_score, 10)
       create(:proposal, :archived, title: "Most voted").update_column(:confidence_score, 50)
       create(:proposal, :archived, title: "Some votes").update_column(:confidence_score, 25)
@@ -854,7 +854,7 @@ feature 'Proposals' do
 
     context "Basic search" do
 
-      scenario 'Search by text' do
+      it 'Search by text' do
         proposal1 = create(:proposal, title: "Get Schwifty")
         proposal2 = create(:proposal, title: "Schwifty Hello")
         proposal3 = create(:proposal, title: "Do not show me")
@@ -875,7 +875,7 @@ feature 'Proposals' do
         end
       end
 
-      scenario 'Search by proposal code' do
+      it 'Search by proposal code' do
         proposal1 = create(:proposal, title: "Get Schwifty")
         proposal2 = create(:proposal, title: "Schwifty Hello")
 
@@ -894,7 +894,7 @@ feature 'Proposals' do
         end
       end
 
-      scenario "Maintain search criteria" do
+      it "Maintain search criteria" do
         visit proposals_path
 
         within(".expanded #search_form") do
@@ -909,7 +909,7 @@ feature 'Proposals' do
 
     context "Advanced search" do
 
-      scenario "Search by text", :js do
+      it "Search by text", :js do
         proposal1 = create(:proposal, title: "Get Schwifty")
         proposal2 = create(:proposal, title: "Schwifty Hello")
         proposal3 = create(:proposal, title: "Do not show me")
@@ -932,7 +932,7 @@ feature 'Proposals' do
 
       context "Search by author type" do
 
-        scenario "Public employee", :js do
+        it "Public employee", :js do
           ana = create :user, official_level: 1
           john = create :user, official_level: 2
 
@@ -955,7 +955,7 @@ feature 'Proposals' do
           end
         end
 
-        scenario "Municipal Organization", :js do
+        it "Municipal Organization", :js do
           ana = create :user, official_level: 2
           john = create :user, official_level: 3
 
@@ -978,7 +978,7 @@ feature 'Proposals' do
           end
         end
 
-        scenario "General director", :js do
+        it "General director", :js do
           ana = create :user, official_level: 3
           john = create :user, official_level: 4
 
@@ -1001,7 +1001,7 @@ feature 'Proposals' do
           end
         end
 
-        scenario "City councillor", :js do
+        it "City councillor", :js do
           ana = create :user, official_level: 4
           john = create :user, official_level: 5
 
@@ -1024,7 +1024,7 @@ feature 'Proposals' do
           end
         end
 
-        scenario "Mayoress", :js do
+        it "Mayoress", :js do
           ana = create :user, official_level: 5
           john = create :user, official_level: 4
 
@@ -1053,7 +1053,7 @@ feature 'Proposals' do
 
         context "Predefined date ranges" do
 
-          scenario "Last day", :js do
+          it "Last day", :js do
             proposal1 = create(:proposal, created_at: 1.minute.ago)
             proposal2 = create(:proposal, created_at: 1.hour.ago)
             proposal3 = create(:proposal, created_at: 2.days.ago)
@@ -1073,7 +1073,7 @@ feature 'Proposals' do
             end
           end
 
-          scenario "Last week", :js do
+          it "Last week", :js do
             proposal1 = create(:proposal, created_at: 1.day.ago)
             proposal2 = create(:proposal, created_at: 5.days.ago)
             proposal3 = create(:proposal, created_at: 8.days.ago)
@@ -1093,7 +1093,7 @@ feature 'Proposals' do
             end
           end
 
-          scenario "Last month", :js do
+          it "Last month", :js do
             proposal1 = create(:proposal, created_at: 10.days.ago)
             proposal2 = create(:proposal, created_at: 20.days.ago)
             proposal3 = create(:proposal, created_at: 33.days.ago)
@@ -1113,7 +1113,7 @@ feature 'Proposals' do
             end
           end
 
-          scenario "Last year", :js do
+          it "Last year", :js do
             proposal1 = create(:proposal, created_at: 300.days.ago)
             proposal2 = create(:proposal, created_at: 350.days.ago)
             proposal3 = create(:proposal, created_at: 370.days.ago)
@@ -1135,7 +1135,7 @@ feature 'Proposals' do
 
         end
 
-        scenario "Search by custom date range", :js do
+        it "Search by custom date range", :js do
           proposal1 = create(:proposal, created_at: 2.days.ago)
           proposal2 = create(:proposal, created_at: 3.days.ago)
           proposal3 = create(:proposal, created_at: 9.days.ago)
@@ -1157,7 +1157,7 @@ feature 'Proposals' do
           end
         end
 
-        scenario "Search by custom invalid date range", :js do
+        it "Search by custom invalid date range", :js do
           proposal1 = create(:proposal, created_at: 2.days.ago)
           proposal2 = create(:proposal, created_at: 3.days.ago)
           proposal3 = create(:proposal, created_at: 9.days.ago)
@@ -1179,7 +1179,7 @@ feature 'Proposals' do
           end
         end
 
-        scenario "Search by multiple filters", :js do
+        it "Search by multiple filters", :js do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
 
@@ -1203,7 +1203,7 @@ feature 'Proposals' do
           end
         end
 
-        scenario "Maintain advanced search criteria", :js do
+        it "Maintain advanced search criteria", :js do
           visit proposals_path
           click_link "Advanced search"
 
@@ -1222,7 +1222,7 @@ feature 'Proposals' do
           end
         end
 
-        scenario "Maintain custom date search criteria", :js do
+        it "Maintain custom date search criteria", :js do
           visit proposals_path
           click_link "Advanced search"
 
@@ -1243,7 +1243,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario "Order by relevance by default", :js do
+    it "Order by relevance by default", :js do
       proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10)
       proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1)
       proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100)
@@ -1261,7 +1261,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario "Reorder results maintaing search", :js do
+    it "Reorder results maintaing search", :js do
       proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
       proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
       proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
@@ -1281,7 +1281,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario "Reorder by recommendations results maintaing search", :js do
+    it "Reorder by recommendations results maintaing search", :js do
       Setting['feature.user.recommendations'] = true
       user = create(:user)
       login_as(user)
@@ -1307,7 +1307,7 @@ feature 'Proposals' do
       Setting['feature.user.recommendations'] = nil
     end
 
-    scenario 'After a search do not show featured proposals' do
+    it 'After a search do not show featured proposals' do
       featured_proposals = create_featured_proposals
       proposal = create(:proposal, title: "Abcdefghi")
 
@@ -1323,7 +1323,7 @@ feature 'Proposals' do
 
   end
 
-  scenario 'Conflictive' do
+  it 'Conflictive' do
     good_proposal = create(:proposal)
     conflictive_proposal = create(:proposal, :conflictive)
 
@@ -1334,7 +1334,7 @@ feature 'Proposals' do
     expect(page).to_not have_content "This proposal has been flagged as inappropriate by several users."
   end
 
-  scenario "Flagging", :js do
+  it "Flagging", :js do
     user = create(:user)
     proposal = create(:proposal)
 
@@ -1351,7 +1351,7 @@ feature 'Proposals' do
     expect(Flag.flagged?(user, proposal)).to be
   end
 
-  scenario "Unflagging", :js do
+  it "Unflagging", :js do
     user = create(:user)
     proposal = create(:proposal)
     Flag.flag(user, proposal)
@@ -1369,7 +1369,7 @@ feature 'Proposals' do
     expect(Flag.flagged?(user, proposal)).to_not be
   end
 
-  scenario 'Flagging/Unflagging AJAX', :js do
+  it 'Flagging/Unflagging AJAX', :js do
     user = create(:user)
     proposal = create(:proposal)
 
@@ -1445,7 +1445,7 @@ feature 'Proposals' do
                   "proposal_path",
                   { }
 
-  scenario 'Erased author' do
+  it 'Erased author' do
     user = create(:user)
     proposal = create(:proposal, author: user)
     user.erase
@@ -1466,7 +1466,7 @@ feature 'Proposals' do
 
     context "By geozone" do
 
-      background do
+      before do
         @california = Geozone.create(name: "California")
         @new_york   = Geozone.create(name: "New York")
 
@@ -1475,7 +1475,7 @@ feature 'Proposals' do
         @proposal3 = create(:proposal, geozone: @new_york)
       end
 
-      scenario "From map" do
+      it "From map" do
         visit proposals_path
 
         click_link "map"
@@ -1492,7 +1492,7 @@ feature 'Proposals' do
         end
       end
 
-      scenario "From geozone list" do
+      it "From geozone list" do
         visit proposals_path
 
         click_link "map"
@@ -1507,7 +1507,7 @@ feature 'Proposals' do
         end
       end
 
-      scenario "From proposal" do
+      it "From proposal" do
         visit proposal_path(@proposal1)
 
         within("#geozone") do
@@ -1526,7 +1526,7 @@ feature 'Proposals' do
   end
 
   context 'Suggesting proposals' do
-    scenario 'Show up to 5 suggestions', :js do
+    it 'Show up to 5 suggestions', :js do
       author = create(:user)
       login_as(author)
 
@@ -1547,7 +1547,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario 'No found suggestions', :js do
+    it 'No found suggestions', :js do
       author = create(:user)
       login_as(author)
 
@@ -1566,7 +1566,7 @@ feature 'Proposals' do
 
   context "Summary" do
 
-    scenario "Displays proposals grouped by category" do
+    it "Displays proposals grouped by category" do
       create(:tag, :category, name: 'Culture')
       create(:tag, :category, name: 'Social Services')
 
@@ -1589,7 +1589,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario "Displays proposals grouped by district" do
+    it "Displays proposals grouped by district" do
       california = create(:geozone, name: 'California')
       new_york   = create(:geozone, name: 'New York')
 
@@ -1610,7 +1610,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario "Displays a maximum of 3 proposals per category" do
+    it "Displays a maximum of 3 proposals per category" do
       create(:tag, :category, name: 'culture')
       4.times { create(:proposal, tag_list: 'culture') }
 
@@ -1619,7 +1619,7 @@ feature 'Proposals' do
       expect(page).to have_css(".proposal", count: 3)
     end
 
-    scenario "Orders proposals by votes" do
+    it "Orders proposals by votes" do
       create(:tag, :category, name: 'culture')
       create(:proposal, title: 'Best',   tag_list: 'culture').update_column(:confidence_score, 10)
       create(:proposal, title: 'Worst',  tag_list: 'culture').update_column(:confidence_score, 2)
@@ -1631,7 +1631,7 @@ feature 'Proposals' do
       expect('Medium').to appear_before('Worst')
     end
 
-    scenario "Displays proposals from last week" do
+    it "Displays proposals from last week" do
       create(:tag, :category, name: 'culture')
       proposal1 = create(:proposal, tag_list: 'culture', created_at: 1.day.ago)
       proposal2 = create(:proposal, tag_list: 'culture', created_at: 5.days.ago)
@@ -1652,9 +1652,9 @@ feature 'Proposals' do
 
 end
 
-feature 'Successful proposals' do
+describe 'Successful proposals' do
 
-  scenario 'Successful proposals do not show support buttons in index' do
+  it 'Successful proposals do not show support buttons in index' do
     successful_proposals = create_successful_proposals
 
     visit proposals_path
@@ -1667,7 +1667,7 @@ feature 'Successful proposals' do
     end
   end
 
-  scenario 'Successful proposals do not show support buttons in show' do
+  it 'Successful proposals do not show support buttons in show' do
     successful_proposals = create_successful_proposals
 
     successful_proposals.each do |proposal|
@@ -1679,7 +1679,7 @@ feature 'Successful proposals' do
     end
   end
 
-  scenario 'Successful proposals show create question button to admin users' do
+  it 'Successful proposals show create question button to admin users' do
     successful_proposals = create_successful_proposals
 
     visit proposals_path

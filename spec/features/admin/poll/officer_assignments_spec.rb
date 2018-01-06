@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Officer Assignments' do
+describe 'Officer Assignments' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario "Index" do
+  it "Index" do
     poll = create(:poll)
     booth = create(:poll_booth)
 
@@ -32,7 +32,7 @@ feature 'Officer Assignments' do
     end
   end
 
-  scenario "Search", :js do
+  it "Search", :js do
     poll = create(:poll)
     booth = create(:poll_booth)
 

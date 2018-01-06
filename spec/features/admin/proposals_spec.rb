@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Admin proposals' do
+describe 'Admin proposals' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario 'Disabled with a feature flag' do
+  it 'Disabled with a feature flag' do
     Setting['feature.proposals'] = nil
     admin = create(:administrator)
     login_as(admin.user)
@@ -17,7 +17,7 @@ feature 'Admin proposals' do
     Setting['feature.proposals'] = true
   end
 
-  scenario 'List shows all relevant info' do
+  it 'List shows all relevant info' do
     proposal = create(:proposal, :hidden)
     visit admin_proposals_path
 
@@ -29,7 +29,7 @@ feature 'Admin proposals' do
     expect(page).to have_content(proposal.video_url)
   end
 
-  scenario 'Restore' do
+  it 'Restore' do
     proposal = create(:proposal, :hidden)
     visit admin_proposals_path
 
@@ -41,7 +41,7 @@ feature 'Admin proposals' do
     expect(proposal).to be_ignored_flag
   end
 
-  scenario 'Confirm hide' do
+  it 'Confirm hide' do
     proposal = create(:proposal, :hidden)
     visit admin_proposals_path
 
@@ -54,7 +54,7 @@ feature 'Admin proposals' do
     expect(proposal.reload).to be_confirmed_hide
   end
 
-  scenario "Current filter is properly highlighted" do
+  it "Current filter is properly highlighted" do
     visit admin_proposals_path
     expect(page).to_not have_link('Pending')
     expect(page).to have_link('All')
@@ -76,7 +76,7 @@ feature 'Admin proposals' do
     expect(page).to_not have_link('Confirmed')
   end
 
-  scenario "Filtering proposals" do
+  it "Filtering proposals" do
     create(:proposal, :hidden, title: "Unconfirmed proposal")
     create(:proposal, :hidden, :with_confirmed_hide, title: "Confirmed proposal")
 
@@ -93,7 +93,7 @@ feature 'Admin proposals' do
     expect(page).to have_content('Confirmed proposal')
   end
 
-  scenario "Action links remember the pagination setting and the filter" do
+  it "Action links remember the pagination setting and the filter" do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times { create(:proposal, :hidden, :with_confirmed_hide) }
 

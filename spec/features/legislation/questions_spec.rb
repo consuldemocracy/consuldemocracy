@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Legislation' do
+describe 'Legislation' do
   context 'process debate page' do
     before(:each) do
       @process = create(:legislation_process, debate_start_date: Date.current - 3.days, debate_end_date: Date.current + 2.days)
@@ -9,7 +9,7 @@ feature 'Legislation' do
       create(:legislation_question, process: @process, title: "Question 3")
     end
 
-    scenario 'shows question list' do
+    it 'shows question list' do
       visit legislation_process_path(@process)
 
       expect(page).to have_content("Participate in the debate")
@@ -34,14 +34,14 @@ feature 'Legislation' do
       expect(page).to_not have_content("Next question")
     end
 
-    scenario 'shows question page' do
+    it 'shows question page' do
       visit legislation_process_question_path(@process, @process.questions.first)
 
       expect(page).to have_content("Question 1")
       expect(page).to have_content("Open answers (0)")
     end
 
-    scenario 'shows next question link in question page' do
+    it 'shows next question link in question page' do
       visit legislation_process_question_path(@process, @process.questions.first)
 
       expect(page).to have_content("Question 1")
@@ -58,7 +58,7 @@ feature 'Legislation' do
       expect(page).to_not have_content("Next question")
     end
 
-    scenario 'answer question' do
+    it 'answer question' do
       question = @process.questions.first
       create(:legislation_question_option, question: question, value: "Yes")
       create(:legislation_question_option, question: question, value: "No")
@@ -88,7 +88,7 @@ feature 'Legislation' do
       expect(option.reload.answers_count).to eq(1)
     end
 
-    scenario 'cannot answer question when phase not open' do
+    it 'cannot answer question when phase not open' do
       @process.update_attribute(:debate_end_date, Date.current - 1.day)
       question = @process.questions.first
       create(:legislation_question_option, question: question, value: "Yes")

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Admin::Organizations' do
+describe 'Admin::Organizations' do
 
-  background do
+  before do
     administrator = create(:user)
     create(:administrator, user: administrator)
 
@@ -10,7 +10,7 @@ feature 'Admin::Organizations' do
   end
 
   context "Index" do
-    scenario "shows info on organizations with hidden users" do
+    it "shows info on organizations with hidden users" do
       troll = create(:user, email: "trol@troller.com")
       create(:organization, user: troll, name: "Greentroll")
       org = create(:organization, name: "Human Rights")
@@ -28,12 +28,12 @@ feature 'Admin::Organizations' do
 
   context "Search" do
 
-    background do
+    before do
       @user = create(:user, email: "marley@humanrights.com", phone_number: "6764440002")
       create(:organization, user: @user, name: "Get up, Stand up")
     end
 
-    scenario "returns no results if search term is empty" do
+    it "returns no results if search term is empty" do
       visit admin_organizations_path
       expect(page).to have_content("Get up, Stand up")
 
@@ -46,7 +46,7 @@ feature 'Admin::Organizations' do
       end
     end
 
-    scenario "finds by name" do
+    it "finds by name" do
       visit search_admin_organizations_path
       expect(page).to_not have_content("Get up, Stand up")
 
@@ -58,7 +58,7 @@ feature 'Admin::Organizations' do
       end
     end
 
-    scenario "finds by users email" do
+    it "finds by users email" do
       visit search_admin_organizations_path
       expect(page).to_not have_content("Get up, Stand up")
 
@@ -70,7 +70,7 @@ feature 'Admin::Organizations' do
       end
     end
 
-    scenario "finds by users phone number" do
+    it "finds by users phone number" do
       visit search_admin_organizations_path
       expect(page).to_not have_content("Get up, Stand up")
 
@@ -83,7 +83,7 @@ feature 'Admin::Organizations' do
     end
   end
 
-  scenario "Pending organizations have links to verify and reject" do
+  it "Pending organizations have links to verify and reject" do
     organization = create(:organization)
 
     visit admin_organizations_path
@@ -100,7 +100,7 @@ feature 'Admin::Organizations' do
     expect(organization.reload.verified?).to eq(true)
   end
 
-  scenario "Verified organizations have link to reject" do
+  it "Verified organizations have link to reject" do
     organization = create(:organization, :verified)
 
     visit admin_organizations_path
@@ -124,7 +124,7 @@ feature 'Admin::Organizations' do
     expect(organization.reload.rejected?).to eq(true)
   end
 
-  scenario "Rejected organizations have link to verify" do
+  it "Rejected organizations have link to verify" do
     organization = create(:organization, :rejected)
 
     visit admin_organizations_path
@@ -145,7 +145,7 @@ feature 'Admin::Organizations' do
     expect(organization.reload.verified?).to eq(true)
   end
 
-  scenario "Current filter is properly highlighted" do
+  it "Current filter is properly highlighted" do
     visit admin_organizations_path
     expect(page).to_not have_link('Pending')
     expect(page).to have_link('All')
@@ -177,7 +177,7 @@ feature 'Admin::Organizations' do
     expect(page).to_not have_link('Rejected')
   end
 
-  scenario "Filtering organizations" do
+  it "Filtering organizations" do
     create(:organization, name: "Pending Organization")
     create(:organization, :rejected, name: "Rejected Organization")
     create(:organization, :verified, name: "Verified Organization")
@@ -203,7 +203,7 @@ feature 'Admin::Organizations' do
     expect(page).to_not have_content('Verified Organization')
   end
 
-  scenario "Verifying organization links remember the pagination setting and the filter" do
+  it "Verifying organization links remember the pagination setting and the filter" do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times { create(:organization) }
 

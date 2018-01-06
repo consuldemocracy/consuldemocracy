@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Admin budget investments' do
+describe 'Admin budget investments' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
 
@@ -11,7 +11,7 @@ feature 'Admin budget investments' do
 
   context "Feature flag" do
 
-    background do
+    before do
       Setting['feature.budgets'] = nil
     end
 
@@ -19,7 +19,7 @@ feature 'Admin budget investments' do
       Setting['feature.budgets'] = true
     end
 
-    scenario 'Disabled with a feature flag' do
+    it 'Disabled with a feature flag' do
       expect{ visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
 
@@ -27,7 +27,7 @@ feature 'Admin budget investments' do
 
   context "Index" do
 
-    scenario 'Displaying investments' do
+    it 'Displaying investments' do
       budget_investment = create(:budget_investment, budget: @budget, cached_votes_up: 77)
       visit admin_budget_budget_investments_path(budget_id: @budget.id)
       expect(page).to have_content(budget_investment.title)
@@ -36,7 +36,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content(budget_investment.total_votes)
     end
 
-    scenario 'Displaying assignments info' do
+    it 'Displaying assignments info' do
       budget_investment1 = create(:budget_investment, budget: @budget)
       budget_investment2 = create(:budget_investment, budget: @budget)
       budget_investment3 = create(:budget_investment, budget: @budget)
@@ -68,7 +68,7 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Filtering by budget heading", :js do
+    it "Filtering by budget heading", :js do
       group1 = create(:budget_group, name: "Streets", budget: @budget)
       group2 = create(:budget_group, name: "Parks", budget: @budget)
 
@@ -111,7 +111,7 @@ feature 'Admin budget investments' do
       expect(page).to_not have_link("Plant trees")
     end
 
-    scenario "Filtering by admin", :js do
+    it "Filtering by admin", :js do
       user = create(:user, username: 'Admin 1')
       administrator = create(:administrator, user: user)
 
@@ -140,7 +140,7 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Realocate visitors")
     end
 
-    scenario "Filtering by valuator", :js do
+    it "Filtering by valuator", :js do
       user = create(:user)
       valuator = create(:valuator, user: user, description: 'Valuator 1')
 
@@ -171,7 +171,7 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Realocate visitors")
     end
 
-    scenario "Current filter is properly highlighted" do
+    it "Current filter is properly highlighted" do
       filters_links = {'valuation_open' => 'Open',
                        'without_admin' => 'Without assigned admin',
                        'managed' => 'Managed',
@@ -195,7 +195,7 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Filtering by assignment status" do
+    it "Filtering by assignment status" do
       assigned = create(:budget_investment, title: "Assigned idea", budget: @budget, administrator: create(:administrator))
       valuating = create(:budget_investment, title: "Evaluating...", budget: @budget)
       valuating.valuators << create(:valuator)
@@ -216,7 +216,7 @@ feature 'Admin budget investments' do
       expect(page).to_not have_content("Evaluating...")
     end
 
-    scenario "Filtering by valuation status" do
+    it "Filtering by valuation status" do
       valuating = create(:budget_investment, budget: @budget, title: "Ongoing valuation")
       valuated = create(:budget_investment, budget: @budget, title: "Old idea", valuation_finished: true)
       valuating.valuators << create(:valuator)
@@ -242,7 +242,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content("Old idea")
     end
 
-    scenario "Filtering by tag" do
+    it "Filtering by tag" do
       create(:budget_investment, budget: @budget, title: 'Educate the children', tag_list: 'Education')
       create(:budget_investment, budget: @budget, title: 'More schools',         tag_list: 'Education')
       create(:budget_investment, budget: @budget, title: 'More hospitals',       tag_list: 'Health')
@@ -262,7 +262,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content("More schools")
     end
 
-    scenario "Filtering by tag, display only valuation tags" do
+    it "Filtering by tag, display only valuation tags" do
       investment1 = create(:budget_investment, budget: @budget, tag_list: 'Education')
       investment2 = create(:budget_investment, budget: @budget, tag_list: 'Health')
 
@@ -279,7 +279,7 @@ feature 'Admin budget investments' do
 
   end
 
-  scenario 'Show' do
+  it 'Show' do
     administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
     valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
     budget_investment = create(:budget_investment,
@@ -311,7 +311,7 @@ feature 'Admin budget investments' do
 
   context "Edit" do
 
-    scenario "Change title, incompatible, description or heading" do
+    it "Change title, incompatible, description or heading" do
       budget_investment = create(:budget_investment, :incompatible)
       create(:budget_heading, group: budget_investment.group, name: "Barbate")
 
@@ -333,7 +333,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content 'Selected'
     end
 
-    scenario "Compatible non-winner can't edit incompatibility" do
+    it "Compatible non-winner can't edit incompatibility" do
       budget_investment = create(:budget_investment, :selected)
       create(:budget_heading, group: budget_investment.group, name: "Tetuan")
 
@@ -344,7 +344,7 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content 'Mark as incompatible'
     end
 
-    scenario "Add administrator" do
+    it "Add administrator" do
       budget_investment = create(:budget_investment)
       administrator = create(:administrator, user: create(:user, username: 'Marta', email: 'marta@admins.org'))
 
@@ -358,7 +358,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content 'Assigned administrator: Marta'
     end
 
-    scenario "Add valuators" do
+    it "Add valuators" do
       budget_investment = create(:budget_investment)
 
       valuator1 = create(:valuator, user: create(:user, username: 'Valentina', email: 'v1@valuators.org'))
@@ -383,7 +383,7 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Adds existing valuation tags", :js do
+    it "Adds existing valuation tags", :js do
       budget_investment1 = create(:budget_investment)
       budget_investment1.set_tag_list_on(:valuation, 'Education, Health')
       budget_investment1.save
@@ -404,7 +404,7 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Adds non existent valuation tags" do
+    it "Adds non existent valuation tags" do
       budget_investment = create(:budget_investment)
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
@@ -421,7 +421,7 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Changes valuation and user generated tags" do
+    it "Changes valuation and user generated tags" do
       budget_investment = create(:budget_investment, tag_list: 'Park')
       budget_investment.set_tag_list_on(:valuation, 'Education')
       budget_investment.save
@@ -454,7 +454,7 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Maintains user tags" do
+    it "Maintains user tags" do
       budget_investment = create(:budget_investment, tag_list: 'Park')
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
@@ -471,7 +471,7 @@ feature 'Admin budget investments' do
       expect(page).to_not have_content "Refugees, Solidarity"
     end
 
-    scenario "Errors on update" do
+    it "Errors on update" do
       budget_investment = create(:budget_investment)
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
@@ -494,7 +494,7 @@ feature 'Admin budget investments' do
     let!(:selected_bi)    { create(:budget_investment, :selected, budget: @budget, title: "Selected project") }
     let!(:winner_bi)      { create(:budget_investment, :winner, budget: @budget, title: "Winner project") }
 
-    scenario "Filtering by valuation and selection" do
+    it "Filtering by valuation and selection" do
       visit admin_budget_budget_investments_path(@budget)
 
       within('#filter-subnav') { click_link 'Valuation finished' }
@@ -526,7 +526,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content(winner_bi.title)
     end
 
-    scenario "Showing the selection buttons", :js do
+    it "Showing the selection buttons", :js do
       visit admin_budget_budget_investments_path(@budget)
       within('#filter-subnav') { click_link 'All' }
 
@@ -551,7 +551,7 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Selecting an investment", :js do
+    it "Selecting an investment", :js do
       visit admin_budget_budget_investments_path(@budget)
       within('#filter-subnav') { click_link 'All' }
 
@@ -568,7 +568,7 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Unselecting an investment", :js do
+    it "Unselecting an investment", :js do
       visit admin_budget_budget_investments_path(@budget)
       within('#filter-subnav') { click_link 'Selected' }
 

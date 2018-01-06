@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Level three verification' do
-  scenario 'Verification with residency and verified sms' do
+describe 'Level three verification' do
+  it 'Verification with residency and verified sms' do
     create(:geozone)
     user = create(:user)
 
@@ -33,7 +33,7 @@ feature 'Level three verification' do
     expect(page).to have_content "Account verified"
   end
 
-  scenario 'Verification with residency and verified email' do
+  it 'Verification with residency and verified email' do
     create(:geozone)
     user = create(:user)
 
@@ -64,7 +64,7 @@ feature 'Level three verification' do
     expect(page).to have_content "Account verified"
   end
 
-  scenario 'Verification with residency and sms and letter' do
+  it 'Verification with residency and sms and letter' do
     create(:geozone)
     user = create(:user)
     login_as(user)

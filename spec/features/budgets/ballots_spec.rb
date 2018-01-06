@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Ballots' do
+describe 'Ballots' do
 
   let!(:user)       { create(:user, :level_two) }
   let!(:budget)     { create(:budget, phase: "balloting") }
@@ -10,7 +10,7 @@ feature 'Ballots' do
 
   context "Voting" do
 
-    background do
+    before do
       login_as(user)
       visit budget_path(budget)
     end
@@ -20,14 +20,14 @@ feature 'Ballots' do
 
     context "Group and Heading Navigation" do
 
-      scenario "Groups" do
+      it "Groups" do
         visit budget_path(budget)
 
         expect(page).to have_link "City"
         expect(page).to have_link "Districts"
       end
 
-      scenario "Headings" do
+      it "Headings" do
         city_heading1     = create(:budget_heading, group: city,      name: "Investments Type1")
         city_heading2     = create(:budget_heading, group: city,      name: "Investments Type2")
         district_heading1 = create(:budget_heading, group: districts, name: "District 1")
@@ -47,7 +47,7 @@ feature 'Ballots' do
 
       end
 
-      scenario "Investments" do
+      it "Investments" do
         city_heading1     = create(:budget_heading, group: city,      name: "Investments Type1")
         city_heading2     = create(:budget_heading, group: city,      name: "Investments Type2")
         district_heading1 = create(:budget_heading, group: districts, name: "District 1")
@@ -84,7 +84,7 @@ feature 'Ballots' do
         expect(page).to have_content district2_investment1.title
       end
 
-      scenario "Redirect to first heading if there is only one" do
+      it "Redirect to first heading if there is only one" do
         city_heading      = create(:budget_heading, group: city,      name: "City")
         district_heading1 = create(:budget_heading, group: districts, name: "District 1")
         district_heading2 = create(:budget_heading, group: districts, name: "District 2")
@@ -101,7 +101,7 @@ feature 'Ballots' do
 
     context "Adding and Removing Investments" do
 
-      scenario "Add a investment", :js do
+      it "Add a investment", :js do
         investment1 = create(:budget_investment, :selected, heading: new_york, price: 10000)
         investment2 = create(:budget_investment, :selected, heading: new_york, price: 20000)
 
@@ -130,7 +130,7 @@ feature 'Ballots' do
         end
       end
 
-      scenario "Removing a investment", :js do
+      it "Removing a investment", :js do
         investment = create(:budget_investment, :selected, heading: new_york, price: 10000)
         ballot = create(:budget_ballot, user: user, budget: budget)
         ballot.investments << investment
@@ -166,7 +166,7 @@ feature 'Ballots' do
     #Break up or simplify with helpers
     context "Balloting in multiple headings" do
 
-      scenario "Independent progress bar for headings", :js do
+      it "Independent progress bar for headings", :js do
         city_heading      = create(:budget_heading, group: city,      name: "All city",   price: 10000000)
         district_heading1 = create(:budget_heading, group: districts, name: "District 1", price: 1000000)
         district_heading2 = create(:budget_heading, group: districts, name: "District 2", price: 2000000)
@@ -230,7 +230,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario "Display progress bar after first vote", :js do
+    it "Display progress bar after first vote", :js do
       investment = create(:budget_investment, :selected, heading: new_york, price: 10000)
 
       visit budget_investments_path(budget, heading_id: new_york.id)
@@ -248,9 +248,9 @@ feature 'Ballots' do
 
     let!(:investment) { create(:budget_investment, :selected, heading: california) }
 
-    background { login_as(user) }
+    before { login_as(user) }
 
-    scenario 'Select my heading', :js do
+    it 'Select my heading', :js do
       visit budget_path(budget)
       click_link "States"
       click_link "California"
@@ -264,7 +264,7 @@ feature 'Ballots' do
       expect(page).to have_css("#budget_heading_#{california.id}.active")
     end
 
-    scenario 'Change my heading', :js do
+    it 'Change my heading', :js do
       investment1 = create(:budget_investment, :selected, heading: california)
       investment2 = create(:budget_investment, :selected, heading: new_york)
 
@@ -287,7 +287,7 @@ feature 'Ballots' do
       expect(page).to_not have_css("#budget_heading_#{california.id}.active")
     end
 
-    scenario 'View another heading' do
+    it 'View another heading' do
       investment = create(:budget_investment, :selected, heading: california)
 
       ballot = create(:budget_ballot, user: user, budget: budget)
@@ -303,7 +303,7 @@ feature 'Ballots' do
   end
 
   context 'Showing the ballot' do
-    scenario "Do not display heading name if there is only one heading in the group (example: group city)" do
+    it "Do not display heading name if there is only one heading in the group (example: group city)" do
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
       visit budget_path(budget)
@@ -313,7 +313,7 @@ feature 'Ballots' do
       expect(page).to have_current_path(budget_investments_path(budget), only_path: true)
     end
 
-    scenario 'Displaying the correct group, heading, count & amount' do
+    it 'Displaying the correct group, heading, count & amount' do
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
 
@@ -350,7 +350,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Display links to vote on groups with no investments voted yet' do
+    it 'Display links to vote on groups with no investments voted yet' do
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, name: "District 1", group: group, price: 100)
 
@@ -364,7 +364,7 @@ feature 'Ballots' do
 
   end
 
-  scenario 'Removing investments from ballot', :js do
+  it 'Removing investments from ballot', :js do
     investment = create(:budget_investment, :selected, price: 10, heading: new_york)
     ballot = create(:budget_ballot, user: user, budget: budget)
     ballot.investments << investment
@@ -382,7 +382,7 @@ feature 'Ballots' do
     expect(page).to have_content("You have voted 0 investments")
   end
 
-  scenario 'Removing investments from ballot (sidebar)', :js do
+  it 'Removing investments from ballot (sidebar)', :js do
     investment1 = create(:budget_investment, :selected, price: 10000, heading: new_york)
     investment2 = create(:budget_investment, :selected, price: 20000, heading: new_york)
 
@@ -419,7 +419,7 @@ feature 'Ballots' do
     end
   end
 
-  scenario 'Back link after removing an investment from Ballot', :js do
+  it 'Back link after removing an investment from Ballot', :js do
     investment = create(:budget_investment, :selected, heading: new_york, price: 10)
 
     login_as(user)
@@ -443,7 +443,7 @@ feature 'Ballots' do
 
   context 'Permissions' do
 
-    scenario 'User not logged in', :js do
+    it 'User not logged in', :js do
       investment = create(:budget_investment, :selected, heading: new_york)
 
       visit budget_investments_path(budget, heading_id: new_york.id)
@@ -455,7 +455,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'User not verified', :js do
+    it 'User not verified', :js do
       unverified_user = create(:user)
       investment = create(:budget_investment, :selected, heading: new_york)
 
@@ -469,7 +469,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'User is organization', :js do
+    it 'User is organization', :js do
       org = create(:organization)
       investment = create(:budget_investment, :selected, heading: new_york)
 
@@ -482,7 +482,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Unselected investments' do
+    it 'Unselected investments' do
       investment = create(:budget_investment, heading: new_york, title: "WTF asdfasfd")
 
       login_as(user)
@@ -493,7 +493,7 @@ feature 'Ballots' do
       expect(page).to_not have_css("#budget_investment_#{investment.id}")
     end
 
-    scenario 'Investments with feasibility undecided are not shown' do
+    it 'Investments with feasibility undecided are not shown' do
       investment = create(:budget_investment, feasibility: "undecided", heading: new_york)
 
       login_as(user)
@@ -507,7 +507,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Different district', :js do
+    it 'Different district', :js do
       bi1 = create(:budget_investment, :selected, heading: california)
       bi2 = create(:budget_investment, :selected, heading: new_york)
 
@@ -524,7 +524,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Insufficient funds (on page load)', :js do
+    it 'Insufficient funds (on page load)', :js do
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
@@ -541,7 +541,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Insufficient funds (added after create)', :js do
+    it 'Insufficient funds (added after create)', :js do
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
@@ -564,7 +564,7 @@ feature 'Ballots' do
 
     end
 
-    scenario 'Insufficient funds (removed after destroy)', :js do
+    it 'Insufficient funds (removed after destroy)', :js do
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
@@ -592,7 +592,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Insufficient funds (removed after destroying from sidebar)', :js do
+    it 'Insufficient funds (removed after destroying from sidebar)', :js do
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
@@ -621,7 +621,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario "Edge case voting a non-elegible investment", :js do
+    it "Edge case voting a non-elegible investment", :js do
       investment1 = create(:budget_investment, :selected, heading: new_york, price: 10000)
 
       login_as(user)
@@ -644,7 +644,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario "Balloting is disabled when budget isn't in the balotting phase", :js do
+    it "Balloting is disabled when budget isn't in the balotting phase", :js do
       budget.update(phase: 'accepting')
 
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
