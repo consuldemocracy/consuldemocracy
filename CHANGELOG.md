@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased](https://github.com/consul/consul/compare/v0.12...consul:master)
 
 ### Added
+
 ### Changed
+- Updated multiple minor & patch gem versions
+
 ### Deprecated
 ### Removed
 ### Fixed
