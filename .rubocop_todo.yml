@@ -257,7 +257,7 @@ Lint/InheritException:
     - 'app/controllers/concerns/feature_flags.rb'
 
 # Offense count: 1
-Lint/LiteralInCondition:
+Lint/LiteralAsCondition:
   Exclude:
     - 'app/models/budget/investment.rb'
 
@@ -412,7 +412,7 @@ Rails/SkipsModelValidations:
   Enabled: false
 
 # Offense count: 10
-Style/AccessorMethodName:
+Naming/AccessorMethodName:
   Exclude:
     - 'app/controllers/application_controller.rb'
     - 'app/controllers/concerns/commentable_actions.rb'
@@ -466,7 +466,7 @@ Style/DoubleNegation:
 # Offense count: 2
 # Configuration parameters: ExpectMatchingDefinition, Regex, IgnoreExecutableScripts, AllowedAcronyms.
 # AllowedAcronyms: CLI, DSL, ACL, API, ASCII, CPU, CSS, DNS, EOF, GUID, HTML, HTTP, HTTPS, ID, IP, JSON, LHS, QPS, RAM, RHS, RPC, SLA, SMTP, SQL, SSH, TCP, TLS, TTL, UDP, UI, UID, UUID, URI, URL, UTF8, VM, XML, XMPP, XSRF, XSS
-Style/FileName:
+Naming/FileName:
   Exclude:
     - 'Capfile'
     - 'Gemfile'
@@ -571,7 +571,7 @@ Style/ParallelAssignment:
 # NamePrefix: is_, has_, have_
 # NamePrefixBlacklist: is_, has_, have_
 # NameWhitelist: is_a?
-Style/PredicateName:
+Naming/PredicateName:
   Exclude:
     - 'spec/**/*'
     - 'app/controllers/concerns/has_filters.rb'
@@ -628,7 +628,7 @@ Style/SafeNavigation:
 # Offense count: 93
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: snake_case, normalcase, non_integer
-Style/VariableNumber:
+Naming/VariableNumber:
   Enabled: false
 
 # Offense count: 34
