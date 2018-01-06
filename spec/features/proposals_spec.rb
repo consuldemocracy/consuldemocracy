@@ -112,7 +112,7 @@ feature 'Proposals' do
       right_path = proposal_path(proposal)
       visit right_path
 
-      expect(current_path).to eq(right_path)
+      expect(page).to have_current_path(right_path)
     end
 
     scenario 'When path does not match the friendly url' do
@@ -122,8 +122,8 @@ feature 'Proposals' do
       old_path = "#{proposals_path}/#{proposal.id}-something-else"
       visit old_path
 
-      expect(current_path).to_not eq(old_path)
-      expect(current_path).to eq(right_path)
+      expect(page).not_to have_current_path(old_path)
+      expect(page).to have_current_path(right_path)
     end
 
     scenario 'Can access the community' do
@@ -258,7 +258,7 @@ feature 'Proposals' do
 
     expect(page.status_code).to eq(200)
     expect(page.html).to be_empty
-    expect(current_path).to eq(proposals_path)
+    expect(page).to have_current_path(proposals_path)
   end
 
   scenario 'Create proposal too fast' do
@@ -280,7 +280,7 @@ feature 'Proposals' do
 
     expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
 
-    expect(current_path).to eq(new_proposal_path)
+    expect(page).to have_current_path(new_proposal_path)
   end
 
   scenario 'Responsible name is stored for anonymous users' do
@@ -411,7 +411,7 @@ feature 'Proposals' do
 
     click_link 'Edit'
 
-    expect(current_path).to eq edit_proposal_path(Proposal.last)
+    expect(page).to have_current_path(edit_proposal_path(Proposal.last))
     expect(page).not_to have_link('click me')
     expect(page.html).to_not include "<script>alert('hey')</script>"
   end
@@ -484,7 +484,7 @@ feature 'Proposals' do
       within("#proposal_#{proposal.id}") do
         click_link 'Retire'
       end
-      expect(current_path).to eq(retire_form_proposal_path(proposal))
+      expect(page).to have_current_path(retire_form_proposal_path(proposal))
 
       select 'Duplicated', from: 'proposal_retired_reason'
       fill_in 'proposal_retired_explanation', with: 'There are three other better proposals with the same subject'
@@ -575,8 +575,8 @@ feature 'Proposals' do
     login_as(create(:user))
 
     visit edit_proposal_path(proposal)
-    expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(edit_proposal_path(proposal))
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content 'You do not have permission'
   end
 
@@ -590,8 +590,8 @@ feature 'Proposals' do
     login_as(proposal.author)
     visit edit_proposal_path(proposal)
 
-    expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(edit_proposal_path(proposal))
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content 'You do not have permission'
     Setting["max_votes_for_proposal_edit"] = 1000
   end
@@ -601,7 +601,7 @@ feature 'Proposals' do
     login_as(proposal.author)
 
     visit edit_proposal_path(proposal)
-    expect(current_path).to eq(edit_proposal_path(proposal))
+    expect(page).to have_current_path(edit_proposal_path(proposal))
 
     fill_in 'proposal_title', with: "End child poverty"
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'

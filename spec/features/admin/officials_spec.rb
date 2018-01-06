@@ -22,7 +22,7 @@ feature 'Admin officials' do
     visit admin_officials_path
     click_link @official.name
 
-    expect(current_path).to eq(edit_admin_official_path(@official))
+    expect(page).to have_current_path(edit_admin_official_path(@official))
 
     expect(page).to_not have_content @citizen.name
     expect(page).to have_content @official.name
@@ -46,7 +46,7 @@ feature 'Admin officials' do
     fill_in 'name_or_email', with: @citizen.email
     click_button 'Search'
 
-    expect(current_path).to eq(search_admin_officials_path)
+    expect(page).to have_current_path(search_admin_officials_path, only_path: true)
     expect(page).to_not have_content @official.name
 
     click_link @citizen.name
@@ -71,7 +71,7 @@ feature 'Admin officials' do
     click_link "Remove 'Official' status"
 
     expect(page).to have_content 'Details saved: the user is no longer an official'
-    expect(current_path).to eq(admin_officials_path)
+    expect(page).to have_current_path(admin_officials_path, only_path: true)
     expect(page).to_not have_content @citizen.name
     expect(page).to_not have_content @official.name
   end

@@ -81,7 +81,7 @@ feature 'Debates' do
       right_path = debate_path(debate)
       visit right_path
 
-      expect(current_path).to eq(right_path)
+      expect(page).to have_current_path(right_path)
     end
 
     scenario 'When path does not match the friendly url' do
@@ -91,8 +91,8 @@ feature 'Debates' do
       old_path = "#{debates_path}/#{debate.id}-something-else"
       visit old_path
 
-      expect(current_path).to_not eq(old_path)
-      expect(current_path).to eq(right_path)
+      expect(page).not_to have_current_path(old_path)
+      expect(page).to have_current_path(right_path)
     end
   end
 
@@ -128,7 +128,7 @@ feature 'Debates' do
 
     expect(page.status_code).to eq(200)
     expect(page.html).to be_empty
-    expect(current_path).to eq(debates_path)
+    expect(page).to have_current_path(debates_path)
   end
 
   scenario 'Create debate too fast' do
@@ -146,7 +146,7 @@ feature 'Debates' do
 
     expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
 
-    expect(current_path).to eq(new_debate_path)
+    expect(page).to have_current_path(new_debate_path)
   end
 
   scenario 'Errors on create' do
@@ -212,7 +212,7 @@ feature 'Debates' do
 
     click_link 'Edit'
 
-    expect(current_path).to eq edit_debate_path(Debate.last)
+    expect(page).to have_current_path(edit_debate_path(Debate.last))
     expect(page).not_to have_link('click me')
     expect(page.html).to_not include "<script>alert('hey')</script>"
   end
@@ -223,8 +223,8 @@ feature 'Debates' do
     login_as(create(:user))
 
     visit edit_debate_path(debate)
-    expect(current_path).not_to eq(edit_debate_path(debate))
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(edit_debate_path(debate))
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to carry out the action 'edit' on debate."
   end
 
@@ -238,8 +238,8 @@ feature 'Debates' do
 
     visit edit_debate_path(debate)
 
-    expect(current_path).not_to eq(edit_debate_path(debate))
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(edit_debate_path(debate))
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content 'You do not have permission to'
   end
 
@@ -248,7 +248,7 @@ feature 'Debates' do
     login_as(debate.author)
 
     visit edit_debate_path(debate)
-    expect(current_path).to eq(edit_debate_path(debate))
+    expect(page).to have_current_path(edit_debate_path(debate))
 
     fill_in 'debate_title', with: "End child poverty"
     fill_in 'debate_description', with: "Let's do something to end child poverty"

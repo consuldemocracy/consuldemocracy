@@ -310,7 +310,7 @@ feature 'Ballots' do
       click_link group.name
       # No need to click on the heading name
       expect(page).to have_content("Investment projects with scope: #{heading.name}")
-      expect(current_path).to eq(budget_investments_path(budget))
+      expect(page).to have_current_path(budget_investments_path(budget), only_path: true)
     end
 
     scenario 'Displaying the correct group, heading, count & amount' do
@@ -378,7 +378,7 @@ feature 'Ballots' do
       find(".remove-investment-project").trigger('click')
     end
 
-    expect(current_path).to eq(budget_ballot_path(budget))
+    expect(page).to have_current_path(budget_ballot_path(budget))
     expect(page).to have_content("You have voted 0 investments")
   end
 
