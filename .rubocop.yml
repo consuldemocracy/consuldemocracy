@@ -159,3 +159,6 @@ RSpec/PredicateMatcher:
 
 RSpec/RepeatedDescription:
   Enabled: true
+
+RSpec/RepeatedExample:
+  Enabled: true
