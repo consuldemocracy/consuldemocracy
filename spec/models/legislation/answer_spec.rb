@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Legislation::Answer, type: :model do
   let(:legislation_answer) { build(:legislation_answer) }
 
-  it "should be valid" do
+  it "is valid" do
     expect(legislation_answer).to be_valid
   end
 

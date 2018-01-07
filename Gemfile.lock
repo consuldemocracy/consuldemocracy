@@ -36,8 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (4.0.0)
-      activerecord (>= 4.0)
+    acts-as-taggable-on (5.0.0)
+      activerecord (>= 4.2.8)
     acts_as_votable (0.11.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
@@ -57,8 +57,8 @@ GEM
     akami (1.3.1)
       gyoku (>= 0.4.0)
       nokogiri
-    ancestry (2.2.2)
-      activerecord (>= 3.0.0)
+    ancestry (3.0.1)
+      activerecord (>= 3.2.0)
     animate-rails (1.0.10)
       rails
     arel (6.0.4)
@@ -74,7 +74,7 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.10.0)
     byebug (9.1.0)
-    cancancan (1.16.0)
+    cancancan (2.1.2)
     capistrano (3.10.1)
       airbrussh (>= 1.0.0)
       i18n
@@ -431,9 +431,9 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    sitemap_generator (5.3.1)
+    sitemap_generator (6.0.0)
       builder (~> 3.0)
-    social-share-button (0.10.0)
+    social-share-button (1.1.0)
       coffee-rails
     socksify (1.7.1)
     spring (2.0.2)
@@ -495,7 +495,7 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
-    whenever (0.9.7)
+    whenever (0.10.0)
       chronic (>= 0.6.3)
     xpath (3.0.0)
       nokogiri (~> 1.8)
@@ -504,15 +504,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on (~> 4.0.0)
+  acts-as-taggable-on (~> 5.0.0)
   acts_as_votable (~> 0.11.1)
   ahoy_matey (~> 1.6.0)
-  ancestry (~> 2.2.2)
+  ancestry (~> 3.0.1)
   animate-rails (~> 1.0.10)
   browser (~> 2.5.2)
   bullet (~> 5.7.0)
   byebug (~> 9.1.0)
-  cancancan (~> 1.16.0)
+  cancancan (~> 2.1.2)
   capistrano (~> 3.10.1)
   capistrano-bundler (~> 1.2)
   capistrano-rails (~> 1.3.1)
@@ -575,8 +575,8 @@ DEPENDENCIES
   savon (~> 2.11.1)
   scss_lint (~> 0.54.0)
   selenium-webdriver (~> 3.0.5)
-  sitemap_generator (~> 5.3.1)
-  social-share-button (~> 0.10)
+  sitemap_generator (~> 6.0.0)
+  social-share-button (~> 1.1)
   spring (~> 2.0.1)
   spring-commands-rspec (~> 1.0.4)
   sprockets (~> 3.7.1)
@@ -586,7 +586,7 @@ DEPENDENCIES
   uglifier (~> 3.2.0)
   unicorn (~> 5.4.0)
   web-console (~> 3.3.0)
-  whenever (~> 0.9.7)
+  whenever (~> 0.10.0)
 
 BUNDLED WITH
    1.16.0

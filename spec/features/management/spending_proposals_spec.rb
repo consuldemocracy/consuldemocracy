@@ -70,7 +70,7 @@ feature 'Spending Proposals' do
       within("#investment-projects") do
         expect(page).to have_css('.investment-project', count: 1)
         expect(page).to have_content(spending_proposal1.title)
-        expect(page).to_not have_content(spending_proposal2.title)
+        expect(page).not_to have_content(spending_proposal2.title)
         expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal1)}']", text: spending_proposal1.title)
         expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal1)}']", text: spending_proposal1.description)
       end
@@ -92,7 +92,7 @@ feature 'Spending Proposals' do
 
       within("#investment-projects") do
         expect(page).to have_css('.investment-project', count: 1)
-        expect(page).to_not have_content(spending_proposal1.title)
+        expect(page).not_to have_content(spending_proposal1.title)
         expect(page).to have_content(spending_proposal2.title)
         expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal2)}']", text: spending_proposal2.title)
         expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal2)}']", text: spending_proposal2.description)
@@ -207,9 +207,9 @@ feature 'Spending Proposals' do
 
       within '#investment-projects' do
         expect(page).to have_content('Add new districts to the city')
-        expect(page).to_not have_content('Change district 9')
-        expect(page).to_not have_content('Destroy district 9')
-        expect(page).to_not have_content('Nuke district 9')
+        expect(page).not_to have_content('Change district 9')
+        expect(page).not_to have_content('Destroy district 9')
+        expect(page).not_to have_content('Nuke district 9')
       end
 
       select 'District Nine', from: 'geozone'
@@ -218,7 +218,7 @@ feature 'Spending Proposals' do
       expect(current_url).to include("geozone=#{district_9.id}")
 
       within '#investment-projects' do
-        expect(page).to_not have_content('Add new districts to the city')
+        expect(page).not_to have_content('Add new districts to the city')
         expect('Destroy district 9').to appear_before('Change district 9')
         expect('Change district 9').to appear_before('Nuke district 9')
       end

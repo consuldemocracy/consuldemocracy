@@ -9,7 +9,7 @@ feature 'Tracking' do
       scenario 'Anonymous' do
         visit "/"
 
-        expect(page).to_not have_css("span[data-track-user-id]")
+        expect(page).not_to have_css("span[data-track-user-id]")
       end
 
       scenario 'Logged in' do
@@ -28,7 +28,7 @@ feature 'Tracking' do
       scenario 'Anonymous' do
         visit "/"
 
-        expect(page).to_not have_css("span[data-track-verification-level]")
+        expect(page).not_to have_css("span[data-track-verification-level]")
       end
 
       scenario 'Level 1' do
@@ -235,7 +235,7 @@ feature 'Tracking' do
 
       click_link 'Han Solo'
 
-      expect(page).to_not have_link('Han Solo')
+      expect(page).not_to have_link('Han Solo')
 
       expect(page).to have_css("span[data-track-event-category]")
       expect(page).to have_css("span[data-track-event-category='Votación']")

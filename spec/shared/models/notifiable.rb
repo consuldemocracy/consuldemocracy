@@ -40,7 +40,7 @@ shared_examples "notifiable" do
       notifiable.hide
       notification.reload
 
-      expect(notification.notifiable_available?).to_not be(true)
+      expect(notification.notifiable_available?).not_to be(true)
     end
 
     it "returns false when it's a reply to comment and the commentable has been hidden" do

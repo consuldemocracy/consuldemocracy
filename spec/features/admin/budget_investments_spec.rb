@@ -88,8 +88,8 @@ feature 'Admin budget investments' do
 
       select "Parks: Central Park", from: "heading_id"
 
-      expect(page).to_not have_link("Realocate visitors")
-      expect(page).to_not have_link("Change name")
+      expect(page).not_to have_link("Realocate visitors")
+      expect(page).not_to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
       select "All headings", from: "heading_id"
@@ -101,14 +101,14 @@ feature 'Admin budget investments' do
       select "Streets: Main Avenue", from: "heading_id"
 
       expect(page).to have_link("Realocate visitors")
-      expect(page).to_not have_link("Change name")
-      expect(page).to_not have_link("Plant trees")
+      expect(page).not_to have_link("Change name")
+      expect(page).not_to have_link("Plant trees")
 
       select "Streets: Mercy Street", from: "heading_id"
 
-      expect(page).to_not have_link("Realocate visitors")
+      expect(page).not_to have_link("Realocate visitors")
       expect(page).to have_link("Change name")
-      expect(page).to_not have_link("Plant trees")
+      expect(page).not_to have_link("Plant trees")
     end
 
     scenario "Filtering by admin", :js do
@@ -125,7 +125,7 @@ feature 'Admin budget investments' do
       select "Admin 1", from: "administrator_id"
 
       expect(page).to have_content('There is 1 investment')
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "All administrators", from: "administrator_id"
@@ -136,7 +136,7 @@ feature 'Admin budget investments' do
 
       select "Admin 1", from: "administrator_id"
       expect(page).to have_content('There is 1 investment')
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
     end
 
@@ -156,7 +156,7 @@ feature 'Admin budget investments' do
       select "Valuator 1", from: "valuator_id"
 
       expect(page).to have_content('There is 1 investment')
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "All valuators", from: "valuator_id"
@@ -167,7 +167,7 @@ feature 'Admin budget investments' do
 
       select "Valuator 1", from: "valuator_id"
       expect(page).to have_content('There is 1 investment')
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
     end
 
@@ -181,13 +181,13 @@ feature 'Admin budget investments' do
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 
-      expect(page).to_not have_link(filters_links.values.first)
+      expect(page).not_to have_link(filters_links.values.first)
       filters_links.keys.drop(1).each { |filter| expect(page).to have_link(filters_links[filter]) }
 
       filters_links.each_pair do |current_filter, link|
         visit admin_budget_budget_investments_path(budget_id: budget.id, filter: current_filter)
 
-        expect(page).to_not have_link(link)
+        expect(page).not_to have_link(link)
 
         (filters_links.keys - [current_filter]).each do |filter|
           expect(page).to have_link(filters_links[filter])
@@ -208,12 +208,12 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'without_admin')
 
       expect(page).to have_content("Evaluating...")
-      expect(page).to_not have_content("Assigned idea")
+      expect(page).not_to have_content("Assigned idea")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'managed')
 
       expect(page).to have_content("Assigned idea")
-      expect(page).to_not have_content("Evaluating...")
+      expect(page).not_to have_content("Evaluating...")
     end
 
     scenario "Filtering by valuation status" do
@@ -225,16 +225,16 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'valuation_open')
 
       expect(page).to have_content("Ongoing valuation")
-      expect(page).to_not have_content("Old idea")
+      expect(page).not_to have_content("Old idea")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'valuating')
 
       expect(page).to have_content("Ongoing valuation")
-      expect(page).to_not have_content("Old idea")
+      expect(page).not_to have_content("Old idea")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'valuation_finished')
 
-      expect(page).to_not have_content("Ongoing valuation")
+      expect(page).not_to have_content("Ongoing valuation")
       expect(page).to have_content("Old idea")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'all')
@@ -256,7 +256,7 @@ feature 'Admin budget investments' do
 
       visit admin_budget_budget_investments_path(budget_id: budget.id, tag_name: 'Education')
 
-      expect(page).to_not have_content("More hospitals")
+      expect(page).not_to have_content("More hospitals")
       expect(page).to have_css(".budget_investment", count: 2)
       expect(page).to have_content("Educate the children")
       expect(page).to have_content("More schools")
@@ -315,9 +315,9 @@ feature 'Admin budget investments' do
       select "5", from: "max_per_heading"
 
       expect(page).to have_content('There are 15 investments')
-      expect(page).to_not have_link "Park with 2 supports"
-      expect(page).to_not have_link "Road with 21 supports"
-      expect(page).to_not have_link "Street with 3 supports"
+      expect(page).not_to have_link "Park with 2 supports"
+      expect(page).not_to have_link "Road with 21 supports"
+      expect(page).not_to have_link "Street with 3 supports"
 
       [4, 90, 100, 200, 300].each do |n|
         expect(page).to have_link "Park with #{n} supports"
@@ -451,8 +451,8 @@ feature 'Admin budget investments' do
       within('#assigned_valuators') do
         expect(page).to have_content('Valentina (v1@valuators.org)')
         expect(page).to have_content('Val (v3@valuators.org)')
-        expect(page).to_not have_content('Undefined')
-        expect(page).to_not have_content('Valerian (v2@valuators.org)')
+        expect(page).not_to have_content('Undefined')
+        expect(page).not_to have_content('Valerian (v2@valuators.org)')
       end
     end
 
@@ -473,7 +473,7 @@ feature 'Admin budget investments' do
 
       within "#tags" do
         expect(page).to have_content 'Education'
-        expect(page).to_not have_content 'Health'
+        expect(page).not_to have_content 'Health'
       end
     end
 
@@ -502,7 +502,7 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
       within("#user-tags") do
-        expect(page).to_not have_content "Education"
+        expect(page).not_to have_content "Education"
         expect(page).to have_content "Park"
       end
 
@@ -515,15 +515,15 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
       within("#user-tags") do
-        expect(page).to_not have_content "Education"
-        expect(page).to_not have_content "Environment"
+        expect(page).not_to have_content "Education"
+        expect(page).not_to have_content "Environment"
         expect(page).to have_content "Park, Trees"
       end
 
       within("#tags") do
         expect(page).to have_content "Education, Environment"
-        expect(page).to_not have_content "Park"
-        expect(page).to_not have_content "Trees"
+        expect(page).not_to have_content "Park"
+        expect(page).not_to have_content "Trees"
       end
     end
 
@@ -541,7 +541,7 @@ feature 'Admin budget investments' do
 
       visit budget_investment_path(budget_investment.budget, budget_investment)
       expect(page).to have_content "Park"
-      expect(page).to_not have_content "Refugees, Solidarity"
+      expect(page).not_to have_content "Refugees, Solidarity"
     end
 
     scenario "Errors on update" do
@@ -571,31 +571,31 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(budget)
 
       within('#filter-subnav') { click_link 'Valuation finished' }
-      expect(page).to_not have_content(unfeasible_bi.title)
-      expect(page).to_not have_content(feasible_bi.title)
+      expect(page).not_to have_content(unfeasible_bi.title)
+      expect(page).not_to have_content(feasible_bi.title)
       expect(page).to have_content(feasible_vf_bi.title)
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
       within('#filter-subnav') { click_link 'Val. fin. Feasible' }
-      expect(page).to_not have_content(unfeasible_bi.title)
-      expect(page).to_not have_content(feasible_bi.title)
+      expect(page).not_to have_content(unfeasible_bi.title)
+      expect(page).not_to have_content(feasible_bi.title)
       expect(page).to have_content(feasible_vf_bi.title)
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
       within('#filter-subnav') { click_link 'Selected' }
-      expect(page).to_not have_content(unfeasible_bi.title)
-      expect(page).to_not have_content(feasible_bi.title)
-      expect(page).to_not have_content(feasible_vf_bi.title)
+      expect(page).not_to have_content(unfeasible_bi.title)
+      expect(page).not_to have_content(feasible_bi.title)
+      expect(page).not_to have_content(feasible_vf_bi.title)
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
       within('#filter-subnav') { click_link 'Winners' }
-      expect(page).to_not have_content(unfeasible_bi.title)
-      expect(page).to_not have_content(feasible_bi.title)
-      expect(page).to_not have_content(feasible_vf_bi.title)
-      expect(page).to_not have_content(selected_bi.title)
+      expect(page).not_to have_content(unfeasible_bi.title)
+      expect(page).not_to have_content(feasible_bi.title)
+      expect(page).not_to have_content(feasible_vf_bi.title)
+      expect(page).not_to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
     end
 
@@ -604,22 +604,22 @@ feature 'Admin budget investments' do
       within('#filter-subnav') { click_link 'All' }
 
       within("#budget_investment_#{unfeasible_bi.id}") do
-        expect(page).to_not have_link('Select')
-        expect(page).to_not have_link('Selected')
+        expect(page).not_to have_link('Select')
+        expect(page).not_to have_link('Selected')
       end
 
       within("#budget_investment_#{feasible_bi.id}") do
-        expect(page).to_not have_link('Select')
-        expect(page).to_not have_link('Selected')
+        expect(page).not_to have_link('Select')
+        expect(page).not_to have_link('Selected')
       end
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
         expect(page).to have_link('Select')
-        expect(page).to_not have_link('Selected')
+        expect(page).not_to have_link('Selected')
       end
 
       within("#budget_investment_#{selected_bi.id}") do
-        expect(page).to_not have_link('Select')
+        expect(page).not_to have_link('Select')
         expect(page).to have_link('Selected')
       end
     end
@@ -636,7 +636,7 @@ feature 'Admin budget investments' do
       within('#filter-subnav') { click_link 'Selected' }
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
-        expect(page).to_not have_link('Select')
+        expect(page).not_to have_link('Select')
         expect(page).to have_link('Selected')
       end
     end
@@ -651,14 +651,14 @@ feature 'Admin budget investments' do
         click_link('Selected')
       end
 
-      expect(page).to_not have_content(selected_bi.title)
+      expect(page).not_to have_content(selected_bi.title)
       expect(page).to have_content('There is 1 investment')
 
       within('#filter-subnav') { click_link 'All' }
 
       within("#budget_investment_#{selected_bi.id}") do
         expect(page).to have_link('Select')
-        expect(page).to_not have_link('Selected')
+        expect(page).not_to have_link('Selected')
       end
     end
 
@@ -692,7 +692,7 @@ feature 'Admin budget investments' do
       end
 
       expect(page).to     have_content investment1.title
-      expect(page).to_not have_content investment2.title
+      expect(page).not_to have_content investment2.title
     end
 
     scenario "Unmark as visible to valuator", :js do
@@ -736,7 +736,7 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(budget)
       within('#filter-subnav') { click_link 'All' }
 
-      expect(page).to_not have_css("#budget_investment_visible_to_valuators")
+      expect(page).not_to have_css("#budget_investment_visible_to_valuators")
 
       within('#filter-subnav') { click_link 'Under valuation' }
 
@@ -747,7 +747,7 @@ feature 'Admin budget investments' do
 
       within("#budget_investment_#{investment2.id}") do
         valuating_checkbox = find('#budget_investment_visible_to_valuators')
-        expect(valuating_checkbox).to_not be_checked
+        expect(valuating_checkbox).not_to be_checked
       end
     end
   end

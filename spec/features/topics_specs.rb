@@ -17,7 +17,7 @@ feature 'Topics' do
       click_link "Create topic"
 
       expect(page).to have_content "Sign in with:"
-      expect(current_path).to eq(new_user_session_path)
+      expect(page).to have_current_path(new_user_session_path)
     end
 
     scenario 'Can access to new topic page with user logged', :js do
@@ -66,7 +66,7 @@ feature 'Topics' do
       click_button "Create topic"
 
       expect(page).to have_content "New topic title"
-      expect(current_path).to eq(community_path(community))
+      expect(page).to have_current_path(community_path(community))
     end
 
     scenario 'Can not create a new topic when user not logged', :js do
@@ -95,7 +95,7 @@ feature 'Topics' do
       click_button "Edit topic"
 
       expect(page).to have_content "Edit topic title"
-      expect(current_path).to eq(community_path(community))
+      expect(page).to have_current_path(community_path(community))
     end
 
     scenario 'Can not edit a topic when user logged is not an author' do
@@ -141,7 +141,7 @@ feature 'Topics' do
 
       expect(page).to have_content "Topic deleted successfully."
       expect(page).not_to have_content topic.title
-      expect(current_path).to eq(community_path(community))
+      expect(page).to have_current_path(community_path(community))
     end
 
     scenario 'Can not destroy a topic when user logged is not an author' do

@@ -27,11 +27,11 @@ feature 'Voters' do
     click_button "Confirm vote"
 
     expect(page).to have_content "Vote introduced!"
-    expect(page).to_not have_button "Confirm vote"
+    expect(page).not_to have_button "Confirm vote"
 
     page.evaluate_script("window.location.reload()")
     expect(page).to have_content "Has already participated in this poll"
-    expect(page).to_not have_button "Confirm vote"
+    expect(page).not_to have_button "Confirm vote"
 
     expect(Poll::Voter.last.officer_id).to eq(officer.id)
   end
@@ -48,7 +48,7 @@ feature 'Voters' do
 
     within("#poll_#{poll.id}") do
       expect(page).to have_content "Has already participated in this poll"
-      expect(page).to_not have_button "Confirm vote"
+      expect(page).not_to have_button "Confirm vote"
     end
 
     within("#poll_#{poll2.id}") do
@@ -58,7 +58,7 @@ feature 'Voters' do
 
   scenario "Had already verified his residence, but is not level 2 yet", :js do
     user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
-    expect(user).to_not be_level_two_verified
+    expect(user).not_to be_level_two_verified
 
     visit root_path
     click_link "Sign out"
@@ -71,7 +71,7 @@ feature 'Voters' do
     expect(page).to have_content poll.name
 
     # user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
-    # expect(user).to_not be_level_two_verified
+    # expect(user).not_to be_level_two_verified
     # poll = create(:poll_officer_assignment, officer: officer).booth_assignment.poll
 
     # visit root_path
@@ -135,7 +135,7 @@ feature 'Voters' do
 
      within("#poll_#{poll1.id}") do
        expect(page).to have_content "Has already participated in this poll"
-       expect(page).to_not have_button "Confirm vote"
+       expect(page).not_to have_button "Confirm vote"
      end
 
      within("#poll_#{poll2.id}") do
@@ -146,7 +146,7 @@ feature 'Voters' do
      visit poll_path(poll1)
      expect(page).to have_content "You already have participated in this poll."
      visit poll_path(poll2)
-     expect(page).to_not have_content "You already have participated in this poll."
+     expect(page).not_to have_content "You already have participated in this poll."
    end
 
    scenario "Store officer and booth information", :js do
@@ -206,7 +206,7 @@ feature 'Voters' do
        officing_verify_residence
 
        expect(page).to     have_button "Confirm vote"
-       expect(page).to_not have_link "Vote on tablet"
+       expect(page).not_to have_link "Vote on tablet"
      end
 
      xscenario "Digital booth", :js do
@@ -223,7 +223,7 @@ feature 'Voters' do
        visit new_officing_residence_path
        officing_verify_residence
 
-       expect(page).to_not have_button "Confirm vote"
+       expect(page).not_to have_button "Confirm vote"
        expect(page).to     have_link "Vote on tablet"
      end
 
@@ -244,7 +244,7 @@ feature 'Voters' do
        visit new_officing_residence_path
        officing_verify_residence
 
-       expect(page).to_not have_link "Vote on tablet"
+       expect(page).not_to have_link "Vote on tablet"
        expect(page).to     have_content "Ya ha participado en todas las votaciones."
      end
 
@@ -268,7 +268,7 @@ feature 'Voters' do
      expect(page).to have_content poll2.name
 
      within("#poll_#{poll2.id}") do
-       expect(page).to_not have_content "Vote introduced!"
+       expect(page).not_to have_content "Vote introduced!"
      end
    end
 

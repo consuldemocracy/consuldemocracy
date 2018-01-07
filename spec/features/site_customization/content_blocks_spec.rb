@@ -8,12 +8,12 @@ feature "Custom content blocks" do
     visit "/?locale=en"
 
     expect(page).to have_content("content for top links")
-    expect(page).to_not have_content("contenido para top links")
+    expect(page).not_to have_content("contenido para top links")
 
     visit "/?locale=es"
 
     expect(page).to have_content("contenido para top links")
-    expect(page).to_not have_content("content for top links")
+    expect(page).not_to have_content("content for top links")
   end
 
   scenario "footer" do
@@ -23,11 +23,11 @@ feature "Custom content blocks" do
     visit "/?locale=en"
 
     expect(page).to have_content("content for footer")
-    expect(page).to_not have_content("contenido para footer")
+    expect(page).not_to have_content("contenido para footer")
 
     visit "/?locale=es"
 
     expect(page).to have_content("contenido para footer")
-    expect(page).to_not have_content("content for footer")
+    expect(page).not_to have_content("content for footer")
   end
 end

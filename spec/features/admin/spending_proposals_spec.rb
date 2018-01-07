@@ -81,7 +81,7 @@ feature 'Admin spending proposals' do
       select "All city", from: "geozone_id"
 
       expect(page).to have_link("Destroy the city")
-      expect(page).to_not have_link("Realocate visitors")
+      expect(page).not_to have_link("Realocate visitors")
 
       select "All zones", from: "geozone_id"
       expect(page).to have_link("Realocate visitors")
@@ -89,24 +89,24 @@ feature 'Admin spending proposals' do
 
       select "District 9", from: "geozone_id"
 
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       click_link("Realocate visitors")
       click_link("Back")
 
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       click_link("Realocate visitors")
       click_link("Edit classification")
       expect(page).to have_button("Update")
       click_link("Back")
-      expect(page).to_not have_button("Update")
+      expect(page).not_to have_button("Update")
       expect(page).to have_link("Back")
       click_link("Back")
 
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
     end
 
@@ -124,7 +124,7 @@ feature 'Admin spending proposals' do
       select "Admin 1", from: "administrator_id"
 
       expect(page).to have_content('There is 1 investment project')
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "All administrators", from: "administrator_id"
@@ -139,7 +139,7 @@ feature 'Admin spending proposals' do
       click_link("Back")
 
       expect(page).to have_content('There is 1 investment project')
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       click_link("Realocate visitors")
@@ -147,12 +147,12 @@ feature 'Admin spending proposals' do
       expect(page).to have_button("Update")
       expect(page).to have_link("Back")
       click_link("Back")
-      expect(page).to_not have_button("Update")
+      expect(page).not_to have_button("Update")
       expect(page).to have_link("Back")
       click_link("Back")
 
       expect(page).to have_content('There is 1 investment project')
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
     end
@@ -173,7 +173,7 @@ feature 'Admin spending proposals' do
       select "Valuator 1", from: "valuator_id"
 
       expect(page).to have_content('There is 1 investment project')
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "All valuators", from: "valuator_id"
@@ -188,7 +188,7 @@ feature 'Admin spending proposals' do
       click_link("Back")
 
       expect(page).to have_content('There is 1 investment project')
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       click_link("Realocate visitors")
@@ -196,12 +196,12 @@ feature 'Admin spending proposals' do
       expect(page).to have_button("Update")
       expect(page).to have_link("Back")
       click_link("Back")
-      expect(page).to_not have_button("Update")
+      expect(page).not_to have_button("Update")
       expect(page).to have_link("Back")
       click_link("Back")
 
       expect(page).to have_content('There is 1 investment project')
-      expect(page).to_not have_link("Destroy the city")
+      expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
     end
 
@@ -215,13 +215,13 @@ feature 'Admin spending proposals' do
 
       visit admin_spending_proposals_path
 
-      expect(page).to_not have_link(filters_links.values.first)
+      expect(page).not_to have_link(filters_links.values.first)
       filters_links.keys.drop(1).each { |filter| expect(page).to have_link(filters_links[filter]) }
 
       filters_links.each_pair do |current_filter, link|
         visit admin_spending_proposals_path(filter: current_filter)
 
-        expect(page).to_not have_link(link)
+        expect(page).not_to have_link(link)
 
         (filters_links.keys - [current_filter]).each do |filter|
           expect(page).to have_link(filters_links[filter])
@@ -242,12 +242,12 @@ feature 'Admin spending proposals' do
       visit admin_spending_proposals_path(filter: 'without_admin')
 
       expect(page).to have_content("Evaluating...")
-      expect(page).to_not have_content("Assigned idea")
+      expect(page).not_to have_content("Assigned idea")
 
       visit admin_spending_proposals_path(filter: 'managed')
 
       expect(page).to have_content("Assigned idea")
-      expect(page).to_not have_content("Evaluating...")
+      expect(page).not_to have_content("Evaluating...")
     end
 
     scenario "Filtering by valuation status" do
@@ -259,16 +259,16 @@ feature 'Admin spending proposals' do
       visit admin_spending_proposals_path(filter: 'valuation_open')
 
       expect(page).to have_content("Ongoing valuation")
-      expect(page).to_not have_content("Old idea")
+      expect(page).not_to have_content("Old idea")
 
       visit admin_spending_proposals_path(filter: 'valuating')
 
       expect(page).to have_content("Ongoing valuation")
-      expect(page).to_not have_content("Old idea")
+      expect(page).not_to have_content("Old idea")
 
       visit admin_spending_proposals_path(filter: 'valuation_finished')
 
-      expect(page).to_not have_content("Ongoing valuation")
+      expect(page).not_to have_content("Ongoing valuation")
       expect(page).to have_content("Old idea")
 
       visit admin_spending_proposals_path(filter: 'all')
@@ -290,7 +290,7 @@ feature 'Admin spending proposals' do
 
       visit admin_spending_proposals_path(tag_name: 'Education')
 
-      expect(page).to_not have_content("More hospitals")
+      expect(page).not_to have_content("More hospitals")
       expect(page).to have_css(".spending_proposal", count: 2)
       expect(page).to have_content("Educate the children")
       expect(page).to have_content("More schools")
@@ -298,7 +298,7 @@ feature 'Admin spending proposals' do
       click_link("Educate the children")
       click_link("Back")
 
-      expect(page).to_not have_content("More hospitals")
+      expect(page).not_to have_content("More hospitals")
       expect(page).to have_content("Educate the children")
       expect(page).to have_content("More schools")
 
@@ -306,10 +306,10 @@ feature 'Admin spending proposals' do
       click_link("Edit classification")
       expect(page).to have_button("Update")
       click_link("Back")
-      expect(page).to_not have_button("Update")
+      expect(page).not_to have_button("Update")
       click_link("Back")
 
-      expect(page).to_not have_content("More hospitals")
+      expect(page).not_to have_content("More hospitals")
       expect(page).to have_content("Educate the children")
       expect(page).to have_content("More schools")
     end
@@ -334,8 +334,8 @@ feature 'Admin spending proposals' do
         select "5", from: "max_per_geozone"
 
         expect(page).to have_content('There are 10 investment projects')
-        expect(page).to_not have_link "Cali with 2 supports"
-        expect(page).to_not have_link "NY voted 2 times"
+        expect(page).not_to have_link "Cali with 2 supports"
+        expect(page).not_to have_link "NY voted 2 times"
       end
 
       scenario "Limiting the proposals with no geozone", :js do
@@ -352,7 +352,7 @@ feature 'Admin spending proposals' do
         select "5", from: "max_for_no_geozone"
 
         expect(page).to have_content('There are 5 investment projects')
-        expect(page).to_not have_link "2 supports!"
+        expect(page).not_to have_link "2 supports!"
       end
 
       scenario "Limiting both", :js do
@@ -374,11 +374,11 @@ feature 'Admin spending proposals' do
 
         expect(page).to have_content('There are 3 investment projects')
         expect(page).to have_link "Skane with 99 supports"
-        expect(page).to_not have_link "Skane with 20 supports"
-        expect(page).to_not have_link "Skane with 10 supports"
+        expect(page).not_to have_link "Skane with 20 supports"
+        expect(page).not_to have_link "Skane with 10 supports"
         expect(page).to have_link "No geozone, 99 supports"
         expect(page).to have_link "No geozone, 20 supports"
-        expect(page).to_not have_link "No geozone, 10 supports"
+        expect(page).not_to have_link "No geozone, 10 supports"
       end
     end
 
@@ -475,8 +475,8 @@ feature 'Admin spending proposals' do
       within('#assigned_valuators') do
         expect(page).to have_content('Valentina (v1@valuators.org)')
         expect(page).to have_content('Val (v3@valuators.org)')
-        expect(page).to_not have_content('Undefined')
-        expect(page).to_not have_content('Valerian (v2@valuators.org)')
+        expect(page).not_to have_content('Undefined')
+        expect(page).not_to have_content('Valerian (v2@valuators.org)')
       end
     end
 
@@ -808,10 +808,10 @@ feature 'Admin spending proposals' do
           expect(page).to have_content @proposal1.title
           expect(page).to have_content @proposal2.title
           expect(page).to have_content @proposal3.title
-          expect(page).to_not have_content @proposal4.title
-          expect(page).to_not have_content @proposal5.title
-          expect(page).to_not have_content @proposal6.title
-          expect(page).to_not have_content @proposal7.title
+          expect(page).not_to have_content @proposal4.title
+          expect(page).not_to have_content @proposal5.title
+          expect(page).not_to have_content @proposal6.title
+          expect(page).not_to have_content @proposal7.title
 
           within("#spending_proposal_#{@proposal1.id}") { expect(page).to have_content "20" }
           within("#spending_proposal_#{@proposal2.id}") { expect(page).to have_content "60" }
@@ -826,13 +826,13 @@ feature 'Admin spending proposals' do
         visit results_admin_spending_proposals_path(geozone_id: @california.id)
 
         within("#spending-proposals-results") do
-          expect(page).to_not have_content @proposal1.title
-          expect(page).to_not have_content @proposal2.title
-          expect(page).to_not have_content @proposal3.title
+          expect(page).not_to have_content @proposal1.title
+          expect(page).not_to have_content @proposal2.title
+          expect(page).not_to have_content @proposal3.title
           expect(page).to have_content @proposal4.title
           expect(page).to have_content @proposal5.title
           expect(page).to have_content @proposal6.title
-          expect(page).to_not have_content @proposal7.title
+          expect(page).not_to have_content @proposal7.title
 
           expect(@proposal5.title).to appear_before(@proposal4.title)
           expect(@proposal4.title).to appear_before(@proposal6.title)
@@ -853,7 +853,7 @@ feature 'Admin spending proposals' do
             expect(page).to have_content compatible_proposal1.title
             expect(page).to have_content compatible_proposal2.title
 
-            expect(page).to_not have_content incompatible_proposal.title
+            expect(page).not_to have_content incompatible_proposal.title
           end
         end
 
@@ -869,7 +869,7 @@ feature 'Admin spending proposals' do
             expect(page).to have_content incompatible_proposal1.title
             expect(page).to have_content incompatible_proposal2.title
 
-            expect(page).to_not have_content compatible_proposal.title
+            expect(page).not_to have_content compatible_proposal.title
           end
         end
 
@@ -907,9 +907,9 @@ feature 'Admin spending proposals' do
 
       within("#spending-proposals-results") do
         expect(page).to have_content proposal1.title
-        expect(page).to_not have_content proposal2.title
-        expect(page).to_not have_content proposal3.title
-        expect(page).to_not have_content proposal4.title
+        expect(page).not_to have_content proposal2.title
+        expect(page).not_to have_content proposal3.title
+        expect(page).not_to have_content proposal4.title
       end
     end
 
@@ -935,9 +935,9 @@ feature 'Admin spending proposals' do
         expect(page).to have_css("#spending_proposal_#{proposal1.id}.success")
         expect(page).to have_css("#spending_proposal_#{proposal4.id}.success")
         expect(page).to have_css("#spending_proposal_#{proposal6.id}.success")
-        expect(page).to_not have_css("#spending_proposal_#{proposal2.id}.success")
-        expect(page).to_not have_css("#spending_proposal_#{proposal3.id}.success")
-        expect(page).to_not have_css("#spending_proposal_#{proposal5.id}.success")
+        expect(page).not_to have_css("#spending_proposal_#{proposal2.id}.success")
+        expect(page).not_to have_css("#spending_proposal_#{proposal3.id}.success")
+        expect(page).not_to have_css("#spending_proposal_#{proposal5.id}.success")
       end
     end
 
@@ -958,9 +958,9 @@ feature 'Admin spending proposals' do
         expect(page).to have_content(proposal4.author.email)
         expect(page).to have_content(proposal6.author.email)
 
-        expect(page).to_not have_content(proposal2.author.email)
-        expect(page).to_not have_content(proposal3.author.email)
-        expect(page).to_not have_content(proposal5.author.email)
+        expect(page).not_to have_content(proposal2.author.email)
+        expect(page).not_to have_content(proposal3.author.email)
+        expect(page).not_to have_content(proposal5.author.email)
       end
     end
 
@@ -988,9 +988,9 @@ feature 'Admin spending proposals' do
         expect(page).to have_content(proposal4.author.confirmed_phone)
         expect(page).to have_content(proposal6.author.confirmed_phone)
 
-        expect(page).to_not have_content(proposal2.author.confirmed_phone)
-        expect(page).to_not have_content(proposal3.author.confirmed_phone)
-        expect(page).to_not have_content(proposal5.author.confirmed_phone)
+        expect(page).not_to have_content(proposal2.author.confirmed_phone)
+        expect(page).not_to have_content(proposal3.author.confirmed_phone)
+        expect(page).not_to have_content(proposal5.author.confirmed_phone)
       end
 
       within("#spending-proposals-results") do
@@ -998,9 +998,9 @@ feature 'Admin spending proposals' do
         expect(page).to have_link proposal4.author.name, href: admin_user_path(proposal4.author)
         expect(page).to have_link proposal6.author.name, href: admin_user_path(proposal6.author)
 
-        expect(page).to_not have_link proposal2.author.name
-        expect(page).to_not have_link proposal3.author.name
-        expect(page).to_not have_link proposal5.author.name
+        expect(page).not_to have_link proposal2.author.name
+        expect(page).not_to have_link proposal3.author.name
+        expect(page).not_to have_link proposal5.author.name
       end
     end
   end

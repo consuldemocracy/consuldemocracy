@@ -15,7 +15,7 @@ describe ProbeSelection do
     expect(ProbeSelection.new(probe: @probe,
                               probe_option: @probe_option,
                               user: @user)
-          ).to_not be_valid
+          ).not_to be_valid
 
     expect(ProbeSelection.new(probe: Probe.create(codename: 'New'),
                               probe_option: @probe_option,
