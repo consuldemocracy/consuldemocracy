@@ -156,3 +156,6 @@ RSpec/OverwritingSetup:
 
 RSpec/PredicateMatcher:
   Enabled: true
+
+RSpec/RepeatedDescription:
+  Enabled: true
