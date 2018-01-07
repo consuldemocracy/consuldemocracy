@@ -109,7 +109,7 @@ SitemapGenerator::Sitemap.create do
   # budgets 2017
   budgets_2017_slug = 'presupuestos-participativos-2017'
 
-  Budget.where(slug: budgets_2017_slug).first.investments.each do |budget_investment|
+  Budget.where(slug: budgets_2017_slug).first&.investments.try(:each) do |budget_investment|
     add budget_investment_path(budgets_2017_slug, budget_investment), lastmod: budget_investment.created_at
   end
 
