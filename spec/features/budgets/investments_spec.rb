@@ -3,9 +3,6 @@ require 'sessions_helper'
 
 feature 'Budget Investments' do
 
-  context "Concerns" do
-    it_behaves_like 'notifiable in-app', Budget::Investment
-  end
 
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
@@ -19,6 +16,10 @@ feature 'Budget Investments' do
 
   after do
     Setting['feature.allow_images'] = nil
+  end
+
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Budget::Investment
   end
 
   scenario 'Index' do

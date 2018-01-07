@@ -3,13 +3,13 @@ include ActionView::Helpers::DateHelper
 
 feature 'Commenting legislation questions' do
 
-  context "Concerns" do
-    it_behaves_like 'notifiable in-app', Legislation::Question
-  end
-
   let(:user) { create :user, :level_two }
   let(:process) { create :legislation_process, :in_debate_phase }
   let(:legislation_question) { create :legislation_question, process: process }
+
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Legislation::Question
+  end
 
   scenario 'Index' do
     3.times { create(:comment, commentable: legislation_question) }
