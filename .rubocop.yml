@@ -121,3 +121,6 @@ RSpec/LetBeforeExamples:
 
 RSpec/LetSetup:
   Enabled: true
+
+RSpec/MessageChain:
+  Enabled: true
