@@ -183,3 +183,6 @@ RSpec/SubjectStub:
 
 RSpec/VerifiedDoubles:
   Enabled: true
+
+RSpec/VoidExpect:
+  Enabled: true
