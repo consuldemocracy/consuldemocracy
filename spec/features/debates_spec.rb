@@ -309,20 +309,26 @@ feature 'Debates' do
   feature 'Debate index order filters' do
 
     scenario 'Default order is hot_score', :js do
-      create(:debate, title: 'Best').update_column(:hot_score, 10)
-      create(:debate, title: 'Worst').update_column(:hot_score, 2)
-      create(:debate, title: 'Medium').update_column(:hot_score, 5)
+      best_debate = create(:debate, title: 'Best')
+      best_debate.update_column(:hot_score, 10)
+      worst_debate = create(:debate, title: 'Worst')
+      worst_debate.update_column(:hot_score, 2)
+      medium_debate = create(:debate, title: 'Medium')
+      medium_debate.update_column(:hot_score, 5)
 
       visit debates_path
 
-      expect('Best').to appear_before('Medium')
-      expect('Medium').to appear_before('Worst')
+      expect(best_debate.title).to appear_before(medium_debate.title)
+      expect(medium_debate.title).to appear_before(worst_debate.title)
     end
 
     scenario 'Debates are ordered by confidence_score', :js do
-      create(:debate, title: 'Best').update_column(:confidence_score, 10)
-      create(:debate, title: 'Worst').update_column(:confidence_score, 2)
-      create(:debate, title: 'Medium').update_column(:confidence_score, 5)
+      best_debate = create(:debate, title: 'Best')
+      best_debate.update_column(:confidence_score, 10)
+      worst_debate = create(:debate, title: 'Worst')
+      worst_debate.update_column(:confidence_score, 2)
+      medium_debate = create(:debate, title: 'Medium')
+      medium_debate.update_column(:confidence_score, 5)
 
       visit debates_path
       click_link 'highest rated'
@@ -330,8 +336,8 @@ feature 'Debates' do
       expect(page).to have_selector('a.active', text: 'highest rated')
 
       within '#debates' do
-        expect('Best').to appear_before('Medium')
-        expect('Medium').to appear_before('Worst')
+        expect(best_debate.title).to appear_before(medium_debate.title)
+        expect(medium_debate.title).to appear_before(worst_debate.title)
       end
 
       expect(current_url).to include('order=confidence_score')
@@ -339,9 +345,9 @@ feature 'Debates' do
     end
 
     scenario 'Debates are ordered by newest', :js do
-      create(:debate, title: 'Best',   created_at: Time.current)
-      create(:debate, title: 'Medium', created_at: Time.current - 1.hour)
-      create(:debate, title: 'Worst',  created_at: Time.current - 1.day)
+      best_debate = create(:debate, title: 'Best',   created_at: Time.current)
+      medium_debate = create(:debate, title: 'Medium', created_at: Time.current - 1.hour)
+      worst_debate = create(:debate, title: 'Worst',  created_at: Time.current - 1.day)
 
       visit debates_path
       click_link 'newest'
@@ -349,8 +355,8 @@ feature 'Debates' do
       expect(page).to have_selector('a.active', text: 'newest')
 
       within '#debates' do
-        expect('Best').to appear_before('Medium')
-        expect('Medium').to appear_before('Worst')
+        expect(best_debate.title).to appear_before(medium_debate.title)
+        expect(medium_debate.title).to appear_before(worst_debate.title)
       end
 
       expect(current_url).to include('order=created_at')
@@ -359,11 +365,12 @@ feature 'Debates' do
 
     context 'Recommendations' do
 
+      let!(:best_debate) { create(:debate, title: 'Best', cached_votes_total: 10, tag_list: "Sport") }
+      let!(:medium_debate) { create(:debate, title: 'Medium', cached_votes_total: 5, tag_list: "Sport") }
+      let!(:worst_debate) { create(:debate, title: 'Worst', cached_votes_total: 1, tag_list: "Sport") }
+
       background do
         Setting['feature.user.recommendations'] = true
-        create(:debate, title: 'Best',   cached_votes_total: 10, tag_list: "Sport")
-        create(:debate, title: 'Medium', cached_votes_total: 5,  tag_list: "Sport")
-        create(:debate, title: 'Worst',  cached_votes_total: 1,  tag_list: "Sport")
       end
 
       after do
@@ -411,8 +418,8 @@ feature 'Debates' do
         expect(page).to have_selector('a.active', text: 'recommendations')
 
         within '#debates' do
-          expect('Best').to appear_before('Medium')
-          expect('Medium').to appear_before('Worst')
+          expect(best_debate.title).to appear_before(medium_debate.title)
+          expect(medium_debate.title).to appear_before(worst_debate.title)
         end
 
         expect(current_url).to include('order=recommendations')

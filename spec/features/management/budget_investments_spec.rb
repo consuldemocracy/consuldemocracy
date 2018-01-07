@@ -275,10 +275,10 @@ feature 'Budget Investments' do
 
     scenario "Filtering budget investments by heading to be printed", :js do
       district_9 = create(:budget_heading, group: @group, name: "District Nine")
-      create(:budget_investment, budget: @budget, title: 'Change district 9', heading: district_9, cached_votes_up: 10)
-      create(:budget_investment, budget: @budget, title: 'Destroy district 9', heading: district_9, cached_votes_up: 100)
-      create(:budget_investment, budget: @budget, title: 'Nuke district 9', heading: district_9, cached_votes_up: 1)
-      create(:budget_investment, budget: @budget, title: 'Add new districts to the city')
+      low_investment = create(:budget_investment, budget: @budget, title: 'Nuke district 9', heading: district_9, cached_votes_up: 1)
+      mid_investment = create(:budget_investment, budget: @budget, title: 'Change district 9', heading: district_9, cached_votes_up: 10)
+      top_investment = create(:budget_investment, budget: @budget, title: 'Destroy district 9', heading: district_9, cached_votes_up: 100)
+      unvoted_investment = create(:budget_investment, budget: @budget, title: 'Add new districts to the city')
 
       user = create(:user, :level_two)
       login_managed_user(user)
@@ -290,19 +290,19 @@ feature 'Budget Investments' do
       end
 
       within '#budget-investments' do
-        expect(page).to have_content('Add new districts to the city')
-        expect(page).to have_content('Change district 9')
-        expect(page).to have_content('Destroy district 9')
-        expect(page).to have_content('Nuke district 9')
+        expect(page).to have_content(unvoted_investment.title)
+        expect(page).to have_content(mid_investment.title)
+        expect(page).to have_content(top_investment.title)
+        expect(page).to have_content(low_investment.title)
       end
 
       select 'Whole city: District Nine', from: 'heading_id'
       click_button("Search")
 
       within '#budget-investments' do
-        expect(page).to_not have_content('Add new districts to the city')
-        expect('Destroy district 9').to appear_before('Change district 9')
-        expect('Change district 9').to appear_before('Nuke district 9')
+        expect(page).to_not have_content(unvoted_investment.title)
+        expect(top_investment.title).to appear_before(mid_investment.title)
+        expect(mid_investment.title).to appear_before(low_investment.title)
       end
     end
 

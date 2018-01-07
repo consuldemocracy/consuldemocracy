@@ -75,3 +75,6 @@ RSpec/ExampleLength:
 
 RSpec/ExampleWording:
   Enabled: true
+
+RSpec/ExpectActual:
+  Enabled: true
