@@ -127,3 +127,7 @@ RSpec/MessageChain:
 
 RSpec/MessageExpectation:
   Enabled: true
+
+RSpec/MessageSpies:
+  Enabled: true
+  EnforcedStyle: receive
