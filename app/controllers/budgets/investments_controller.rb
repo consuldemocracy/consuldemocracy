@@ -97,9 +97,7 @@ module Budgets
 
       def load_investments
         @investments = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}")
-        if @view == "default"
-          @investments = @investments.page(params[:page]).per(10).for_render
-        end
+        @investments = @investments.page(params[:page]).per(10).for_render if @view == "default"
       end
 
       def load_investment_votes(investments)
@@ -166,6 +164,7 @@ module Budgets
 
       def load_budget
         @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+        raise ActionController::RoutingError, 'Not Found' if @budget.blank?
       end
 
       def set_view
