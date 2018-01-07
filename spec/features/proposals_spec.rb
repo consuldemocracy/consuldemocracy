@@ -1628,9 +1628,9 @@ feature 'Proposals' do
 
     scenario "Orders proposals by votes" do
       create(:tag, :category, name: 'culture')
-      best_proposal = create(:proposal, title: 'Best',   tag_list: 'culture')
+      best_proposal = create(:proposal, title: 'Best', tag_list: 'culture')
       best_proposal.update_column(:confidence_score, 10)
-      worst_proposal = create(:proposal, title: 'Worst',  tag_list: 'culture')
+      worst_proposal = create(:proposal, title: 'Worst', tag_list: 'culture')
       worst_proposal.update_column(:confidence_score, 2)
       medium_proposal = create(:proposal, title: 'Medium', tag_list: 'culture')
       medium_proposal.update_column(:confidence_score, 5)

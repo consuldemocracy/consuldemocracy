@@ -345,9 +345,9 @@ feature 'Debates' do
     end
 
     scenario 'Debates are ordered by newest', :js do
-      best_debate = create(:debate, title: 'Best',   created_at: Time.current)
+      best_debate = create(:debate, title: 'Best', created_at: Time.current)
       medium_debate = create(:debate, title: 'Medium', created_at: Time.current - 1.hour)
-      worst_debate = create(:debate, title: 'Worst',  created_at: Time.current - 1.day)
+      worst_debate = create(:debate, title: 'Worst', created_at: Time.current - 1.day)
 
       visit debates_path
       click_link 'newest'
