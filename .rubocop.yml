@@ -131,3 +131,6 @@ RSpec/MessageExpectation:
 RSpec/MessageSpies:
   Enabled: true
   EnforcedStyle: receive
+
+RSpec/MultipleDescribes:
+  Enabled: true
