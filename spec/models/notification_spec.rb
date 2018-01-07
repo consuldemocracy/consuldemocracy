@@ -23,7 +23,7 @@ describe Notification do
 
   describe "#for_render (scope)" do
     it "returns notifications including notifiable and user" do
-      expect(described_class).to receive(:includes).with(:notifiable).exactly(:once)
+      allow(described_class).to receive(:includes).with(:notifiable).exactly(:once)
       described_class.for_render
     end
   end

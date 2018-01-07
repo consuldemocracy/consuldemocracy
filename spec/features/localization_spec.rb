@@ -34,7 +34,7 @@ feature 'Localization' do
   end
 
   scenario 'Locale switcher not present if only one locale' do
-    expect(I18n).to receive(:available_locales).and_return([:en])
+    allow(I18n).to receive(:available_locales).and_return([:en])
 
     visit '/'
     expect(page).to_not have_content('Language')
