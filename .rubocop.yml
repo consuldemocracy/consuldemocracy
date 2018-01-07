@@ -165,3 +165,6 @@ RSpec/RepeatedExample:
 
 RSpec/ReturnFromStub:
   Enabled: true
+
+RSpec/ScatteredLet:
+  Enabled: true
