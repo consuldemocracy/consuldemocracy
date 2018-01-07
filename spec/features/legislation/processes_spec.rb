@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'Legislation' do
 
   let!(:administrator) { create(:administrator).user }
+
   shared_examples "not published permissions" do |path|
 
     let(:not_published_process) { create(:legislation_process, :not_published, title: "Process not published") }

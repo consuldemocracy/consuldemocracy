@@ -5,19 +5,19 @@ describe RelatedContent do
   let(:parent_relationable) { create([:proposal, :debate].sample) }
   let(:child_relationable) { create([:proposal, :debate].sample) }
 
-  it "should allow relationables from various classes" do
+  it "allows relationables from various classes" do
     expect(build(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable)).to be_valid
     expect(build(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable)).to be_valid
     expect(build(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable)).to be_valid
   end
 
-  it "should not allow empty relationables" do
+  it "does not allow empty relationables" do
     expect(build(:related_content)).not_to be_valid
     expect(build(:related_content, parent_relationable: parent_relationable)).not_to be_valid
     expect(build(:related_content, child_relationable: child_relationable)).not_to be_valid
   end
 
-  it "should not allow repeated related contents" do
+  it "does not allow repeated related contents" do
     related_content = create(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable, author: build(:user))
     new_related_content = build(:related_content, parent_relationable: related_content.parent_relationable, child_relationable: related_content.child_relationable)
     expect(new_related_content).not_to be_valid
@@ -29,7 +29,7 @@ describe RelatedContent do
     let(:related_content) { build(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable, author: build(:user)) }
 
     it 'creates an opposite related_content' do
-      expect { related_content.save }.to change { RelatedContent.count }.by(2)
+      expect { related_content.save }.to change { described_class.count }.by(2)
       expect(related_content.opposite_related_content.child_relationable_id).to eq(parent_relationable.id)
       expect(related_content.opposite_related_content.child_relationable_type).to eq(parent_relationable.class.name)
       expect(related_content.opposite_related_content.parent_relationable_id).to eq(child_relationable.id)

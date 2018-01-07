@@ -60,3 +60,18 @@ RSpec/DescribeMethod:
 
 RSpec/DescribeSymbol:
   Enabled: true
+
+RSpec/DescribedClass:
+  Enabled: true
+
+RSpec/EmptyExampleGroup:
+  Enabled: true
+
+RSpec/EmptyLineAfterSubject:
+  Enabled: true
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/ExampleWording:
+  Enabled: true

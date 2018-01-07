@@ -4,6 +4,7 @@ describe Verification::Management::Email do
 
   describe "#user" do
     subject { described_class.new(document_type: "1", document_number: "1234", email: "inexisting@gmail.com") }
+
     it "returns nil/false when the user does not exist" do
       expect(subject.user).to be_nil
       expect(subject.user?).to_not be

@@ -10,7 +10,7 @@ describe Legislation::AnswersController do
       @user = create(:user, :level_two)
     end
 
-    it 'should create an ahoy event' do
+    it 'creates an ahoy event' do
       sign_in @user
 
       post :create, process_id: @process.id, question_id: @question.id,
@@ -19,7 +19,7 @@ describe Legislation::AnswersController do
       expect(Ahoy::Event.last.properties['legislation_answer_id']).to eq Legislation::Answer.last.id
     end
 
-    it 'should create an answer if the process debate phase is open' do
+    it 'creates an answer if the process debate phase is open' do
       sign_in @user
 
       expect do
@@ -28,7 +28,7 @@ describe Legislation::AnswersController do
       end.to change { @question.reload.answers_count }.by(1)
     end
 
-    it 'should not create an answer if the process debate phase is not open' do
+    it 'does not create an answer if the process debate phase is not open' do
       sign_in @user
       @process.update_attribute(:debate_end_date, Date.current - 1.day)
 
