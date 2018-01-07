@@ -84,3 +84,6 @@ RSpec/ExpectInHook:
 
 RSpec/ExpectOutput:
   Enabled: true
+
+RSpec/FilePath:
+  Enabled: true
