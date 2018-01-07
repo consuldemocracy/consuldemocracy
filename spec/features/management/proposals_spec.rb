@@ -194,9 +194,12 @@ feature 'Proposals' do
     end
 
     scenario "Filtering proposals to be printed", :js do
-      create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
-      create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
-      create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
+      worst_proposal = create(:proposal, title: 'Worst proposal')
+      worst_proposal.update_column(:confidence_score, 2)
+      best_proposal = create(:proposal, title: 'Best proposal')
+      best_proposal.update_column(:confidence_score, 10)
+      medium_proposal = create(:proposal, title: 'Medium proposal')
+      medium_proposal.update_column(:confidence_score, 5)
 
       user = create(:user, :level_two)
       login_managed_user(user)
@@ -206,8 +209,8 @@ feature 'Proposals' do
       expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
 
       within(".proposals-list") do
-        expect('Best proposal').to appear_before('Medium proposal')
-        expect('Medium proposal').to appear_before('Worst proposal')
+        expect(best_proposal.title).to appear_before(medium_proposal.title)
+        expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
       select 'newest', from: 'order-selector'
@@ -218,8 +221,8 @@ feature 'Proposals' do
       expect(current_url).to include('page=1')
 
       within(".proposals-list") do
-        expect('Medium proposal').to appear_before('Best proposal')
-        expect('Best proposal').to appear_before('Worst proposal')
+        expect(medium_proposal.title).to appear_before(best_proposal.title)
+        expect(best_proposal.title).to appear_before(worst_proposal.title)
       end
     end
 

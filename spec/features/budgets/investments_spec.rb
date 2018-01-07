@@ -203,17 +203,20 @@ feature 'Budget Investments' do
     end
 
     scenario 'Proposals are ordered by confidence_score', :js do
-      create(:budget_investment, heading: heading, title: 'Best proposal').update_column(:confidence_score, 10)
-      create(:budget_investment, heading: heading, title: 'Worst proposal').update_column(:confidence_score, 2)
-      create(:budget_investment, heading: heading, title: 'Medium proposal').update_column(:confidence_score, 5)
+      best_proposal = create(:budget_investment, heading: heading, title: 'Best proposal')
+      best_proposal.update_column(:confidence_score, 10)
+      worst_proposal = create(:budget_investment, heading: heading, title: 'Worst proposal')
+      worst_proposal.update_column(:confidence_score, 2)
+      medium_proposal = create(:budget_investment, heading: heading, title: 'Medium proposal')
+      medium_proposal.update_column(:confidence_score, 5)
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link 'highest rated'
       expect(page).to have_selector('a.active', text: 'highest rated')
 
       within '#budget-investments' do
-        expect('Best proposal').to appear_before('Medium proposal')
-        expect('Medium proposal').to appear_before('Worst proposal')
+        expect(best_proposal.title).to appear_before(medium_proposal.title)
+        expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
       expect(current_url).to include('order=confidence_score')
@@ -739,9 +742,11 @@ feature 'Budget Investments' do
     end
 
     scenario 'Order by cost (only when balloting)' do
-      create(:budget_investment, :selected, heading: heading, title: 'Build a nice house', price: 1000).update_column(:confidence_score, 10)
-      create(:budget_investment, :selected, heading: heading, title: 'Build an ugly house', price: 1000).update_column(:confidence_score, 5)
-      create(:budget_investment, :selected, heading: heading, title: 'Build a skyscraper', price: 20000)
+      mid_investment = create(:budget_investment, :selected, heading: heading, title: 'Build a nice house', price: 1000)
+      mid_investment.update_column(:confidence_score, 10)
+      low_investment = create(:budget_investment, :selected, heading: heading, title: 'Build an ugly house', price: 1000)
+      low_investment.update_column(:confidence_score, 5)
+      high_investment = create(:budget_investment, :selected, heading: heading, title: 'Build a skyscraper', price: 20000)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -749,8 +754,8 @@ feature 'Budget Investments' do
       expect(page).to have_selector('a.active', text: 'by price')
 
       within '#budget-investments' do
-        expect('Build a skyscraper').to appear_before('Build a nice house')
-        expect('Build a nice house').to appear_before('Build an ugly house')
+        expect(high_investment.title).to appear_before(mid_investment.title)
+        expect(mid_investment.title).to appear_before(low_investment.title)
       end
 
       expect(current_url).to include('order=price')
