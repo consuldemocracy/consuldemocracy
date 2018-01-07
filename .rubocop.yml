@@ -103,3 +103,6 @@ RSpec/InstanceSpy:
 
 RSpec/InstanceVariable:
   Enabled: false
+
+RSpec/InvalidPredicateMatcher:
+  Enabled: true
