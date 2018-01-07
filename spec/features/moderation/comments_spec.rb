@@ -90,9 +90,7 @@ feature 'Moderate comments' do
 
         within('.js-check') { click_on 'All' }
 
-        all('input[type=checkbox]').each do |checkbox|
-          expect(checkbox).to be_checked
-        end
+        expect(all('input[type=checkbox]')).to all(be_checked)
 
         within('.js-check') { click_on 'None' }
 

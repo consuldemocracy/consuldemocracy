@@ -109,3 +109,6 @@ RSpec/InvalidPredicateMatcher:
 
 RSpec/ItBehavesLike:
   Enabled: true
+
+RSpec/IteratedExpectation:
+  Enabled: true
