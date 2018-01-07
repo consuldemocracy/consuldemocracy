@@ -177,3 +177,6 @@ RSpec/SharedContext:
 
 RSpec/SingleArgumentMessageChain:
   Enabled: true
+
+RSpec/SubjectStub:
+  Enabled: true
