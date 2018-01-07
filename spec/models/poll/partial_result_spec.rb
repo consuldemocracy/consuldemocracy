@@ -13,7 +13,7 @@ describe Poll::PartialResult do
       expect(build(:poll_partial_result, question: question, answer: 'Two')).to be_valid
       expect(build(:poll_partial_result, question: question, answer: 'Three')).to be_valid
 
-      expect(build(:poll_partial_result, question: question, answer: 'Four')).to_not be_valid
+      expect(build(:poll_partial_result, question: question, answer: 'Four')).not_to be_valid
     end
   end
 

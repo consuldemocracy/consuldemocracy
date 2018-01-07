@@ -13,7 +13,7 @@ feature 'Admin officials' do
     visit admin_officials_path
 
     expect(page).to have_content @official.name
-    expect(page).to_not have_content @citizen.name
+    expect(page).not_to have_content @citizen.name
     expect(page).to have_content @official.official_position
     expect(page).to have_content @official.official_level
   end
@@ -24,7 +24,7 @@ feature 'Admin officials' do
 
     expect(page).to have_current_path(edit_admin_official_path(@official))
 
-    expect(page).to_not have_content @citizen.name
+    expect(page).not_to have_content @citizen.name
     expect(page).to have_content @official.name
     expect(page).to have_content @official.email
 
@@ -47,7 +47,7 @@ feature 'Admin officials' do
     click_button 'Search'
 
     expect(page).to have_current_path(search_admin_officials_path, only_path: true)
-    expect(page).to_not have_content @official.name
+    expect(page).not_to have_content @official.name
 
     click_link @citizen.name
 
@@ -72,7 +72,7 @@ feature 'Admin officials' do
 
     expect(page).to have_content 'Details saved: the user is no longer an official'
     expect(page).to have_current_path(admin_officials_path, only_path: true)
-    expect(page).to_not have_content @citizen.name
-    expect(page).to_not have_content @official.name
+    expect(page).not_to have_content @citizen.name
+    expect(page).not_to have_content @official.name
   end
 end

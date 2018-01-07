@@ -39,13 +39,13 @@ shared_examples "map validations" do
      mappable.map_location = nil
      mappable.skip_map = nil
 
-     expect(mappable).to_not be_valid
+     expect(mappable).not_to be_valid
     end
 
     it "is not valid without accepting that the mappable has no map" do
      mappable.skip_map = nil
 
-     expect(mappable).to_not be_valid
+     expect(mappable).not_to be_valid
     end
 
   end

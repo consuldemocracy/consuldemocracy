@@ -26,7 +26,7 @@ feature 'Legislation Draft Versions' do
       within('select#draft_version_id') do
         expect(page).to have_content("Version 1")
         expect(page).to have_content("Version 2")
-        expect(page).to_not have_content("Version 3")
+        expect(page).not_to have_content("Version 3")
       end
     end
 
@@ -51,7 +51,7 @@ feature 'Legislation Draft Versions' do
       select("Version 2")
       click_button "see"
 
-      expect(page).to_not have_content("Body of the first version")
+      expect(page).not_to have_content("Body of the first version")
       expect(page).to have_content("Body of the second version")
     end
 
@@ -61,7 +61,7 @@ feature 'Legislation Draft Versions' do
 
       select("Version 2")
 
-      expect(page).to_not have_content("Body of the first version")
+      expect(page).not_to have_content("Body of the first version")
       expect(page).to have_content("Body of the second version")
     end
 
@@ -73,8 +73,8 @@ feature 'Legislation Draft Versions' do
         visit legislation_process_draft_version_path(@process, final_version)
 
         expect(page).to have_content("Final body")
-        expect(page).to_not have_content("See all comments")
-        expect(page).to_not have_content("Comments")
+        expect(page).not_to have_content("See all comments")
+        expect(page).not_to have_content("Comments")
       end
     end
   end
@@ -98,7 +98,7 @@ feature 'Legislation Draft Versions' do
       within('select#draft_version_id') do
         expect(page).to have_content("Version 1")
         expect(page).to have_content("Version 2")
-        expect(page).to_not have_content("Version 3")
+        expect(page).not_to have_content("Version 3")
       end
     end
 
@@ -123,7 +123,7 @@ feature 'Legislation Draft Versions' do
       select("Version 2")
       click_button "see"
 
-      expect(page).to_not have_content("Changes for first version")
+      expect(page).not_to have_content("Changes for first version")
       expect(page).to have_content("Changes for second version")
     end
 
@@ -133,7 +133,7 @@ feature 'Legislation Draft Versions' do
 
       select("Version 2")
 
-      expect(page).to_not have_content("Changes for first version")
+      expect(page).not_to have_content("Changes for first version")
       expect(page).to have_content("Changes for second version")
     end
   end
@@ -151,7 +151,7 @@ feature 'Legislation Draft Versions' do
 
       page.find(:css, ".legislation-annotatable").double_click
       page.find(:css, ".annotator-adder button").click
-      expect(page).to_not have_css('#legislation_annotation_text')
+      expect(page).not_to have_css('#legislation_annotation_text')
       expect(page).to have_content "You must Sign in or Sign up to leave a comment."
     end
 
@@ -279,7 +279,7 @@ feature 'Legislation Draft Versions' do
         select("Version 2")
         click_button "see"
 
-        expect(page).to_not have_content("quote for version 1")
+        expect(page).not_to have_content("quote for version 1")
         expect(page).to have_content("quote for version 2")
       end
 
@@ -289,7 +289,7 @@ feature 'Legislation Draft Versions' do
 
         select("Version 2")
 
-        expect(page).to_not have_content("quote for version 1")
+        expect(page).not_to have_content("quote for version 1")
         expect(page).to have_content("quote for version 2")
       end
     end
@@ -307,8 +307,8 @@ feature 'Legislation Draft Versions' do
     scenario "See one annotation with replies for a draft version" do
       visit legislation_process_draft_version_annotation_path(@draft_version.process, @draft_version, @annotation)
 
-      expect(page).to_not have_content "ipsum"
-      expect(page).to_not have_content "my annotation"
+      expect(page).not_to have_content "ipsum"
+      expect(page).not_to have_content "my annotation"
 
       expect(page).to have_content "audiam"
       expect(page).to have_content "my other annotation"

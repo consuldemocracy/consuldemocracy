@@ -59,7 +59,7 @@ feature 'Proposals' do
       within("ul.pagination") do
         expect(page).to have_content("1")
         expect(page).to have_link('2', href: 'http://www.example.com/proposals?page=2')
-        expect(page).to_not have_content("3")
+        expect(page).not_to have_content("3")
         click_link "Next", exact: false
       end
 
@@ -75,7 +75,7 @@ feature 'Proposals' do
       visit proposals_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        expect(page).to_not have_css("div.with-image")
+        expect(page).not_to have_css("div.with-image")
       end
       within("#proposal_#{proposal_with_image.id}") do
         expect(page).to have_css("img[alt='#{proposal_with_image.image.title}']")
@@ -165,7 +165,7 @@ feature 'Proposals' do
       proposal = create(:proposal, video_url: nil)
 
       visit proposal_path(proposal)
-      expect(page).to_not have_selector("div[id='js-embedded-video']")
+      expect(page).not_to have_selector("div[id='js-embedded-video']")
     end
   end
 
@@ -311,7 +311,7 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
-    expect(page).to_not have_selector('#proposal_responsible_name')
+    expect(page).not_to have_selector('#proposal_responsible_name')
 
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
@@ -359,8 +359,8 @@ feature 'Proposals' do
 
     expect(page).to have_content 'Testing an attack'
     expect(page.html).to include '<p>This is alert("an attack");</p>'
-    expect(page.html).to_not include '<script>alert("an attack");</script>'
-    expect(page.html).to_not include '&lt;p&gt;This is'
+    expect(page.html).not_to include '<script>alert("an attack");</script>'
+    expect(page.html).not_to include '&lt;p&gt;This is'
   end
 
   scenario 'Autolinking is applied to description' do
@@ -407,13 +407,13 @@ feature 'Proposals' do
     expect(page).to have_content 'Testing auto link'
     expect(page).to have_link('http://example.org', href: 'http://example.org')
     expect(page).not_to have_link('click me')
-    expect(page.html).to_not include "<script>alert('hey')</script>"
+    expect(page.html).not_to include "<script>alert('hey')</script>"
 
     click_link 'Edit'
 
     expect(page).to have_current_path(edit_proposal_path(Proposal.last))
     expect(page).not_to have_link('click me')
-    expect(page.html).to_not include "<script>alert('hey')</script>"
+    expect(page.html).not_to include "<script>alert('hey')</script>"
   end
 
   context 'Geozones' do
@@ -508,7 +508,7 @@ feature 'Proposals' do
 
       click_button 'Retire proposal'
 
-      expect(page).to_not have_content 'Proposal retired'
+      expect(page).not_to have_content 'Proposal retired'
       expect(page).to have_content "can't be blank", count: 2
     end
 
@@ -522,7 +522,7 @@ feature 'Proposals' do
       expect(page).to have_selector('#proposals .proposal', count: 1)
       within('#proposals') do
         expect(page).to have_content not_retired.title
-        expect(page).to_not have_content retired.title
+        expect(page).not_to have_content retired.title
       end
     end
 
@@ -533,19 +533,19 @@ feature 'Proposals' do
 
       visit proposals_path
 
-      expect(page).to_not have_content retired.title
+      expect(page).not_to have_content retired.title
       click_link 'Proposals retired by the author'
 
       expect(page).to have_content retired.title
-      expect(page).to_not have_content not_retired.title
+      expect(page).not_to have_content not_retired.title
     end
 
     scenario 'Retired proposals index interface elements' do
       visit proposals_path(retired: 'all')
 
-      expect(page).to_not have_content 'Advanced search'
-      expect(page).to_not have_content 'Categories'
-      expect(page).to_not have_content 'Districts'
+      expect(page).not_to have_content 'Advanced search'
+      expect(page).not_to have_content 'Categories'
+      expect(page).not_to have_content 'Districts'
     end
 
     scenario 'Retired proposals index has links to filter by retired_reason' do
@@ -565,7 +565,7 @@ feature 'Proposals' do
       click_link 'Unfeasible'
 
       expect(page).to have_content unfeasible.title
-      expect(page).to_not have_content duplicated.title
+      expect(page).not_to have_content duplicated.title
     end
   end
 
@@ -585,7 +585,7 @@ feature 'Proposals' do
     Setting["max_votes_for_proposal_edit"] = 10
     11.times { create(:vote, votable: proposal) }
 
-    expect(proposal).to_not be_editable
+    expect(proposal).not_to be_editable
 
     login_as(proposal.author)
     visit edit_proposal_path(proposal)
@@ -778,7 +778,7 @@ feature 'Proposals' do
       visit proposals_path
 
       within("#proposals-list") do
-        expect(page).to_not have_content archived_proposal.title
+        expect(page).not_to have_content archived_proposal.title
       end
 
       orders = %w{hot_score confidence_score created_at relevance}
@@ -786,7 +786,7 @@ feature 'Proposals' do
         visit proposals_path(order: order)
 
         within("#proposals-list") do
-          expect(page).to_not have_content archived_proposal.title
+          expect(page).not_to have_content archived_proposal.title
         end
       end
     end
@@ -821,21 +821,21 @@ feature 'Proposals' do
 
       within("#featured-proposals") do
         expect(page).to have_content(featured_proposal.title)
-        expect(page).to_not have_content(archived_proposal.title)
+        expect(page).not_to have_content(archived_proposal.title)
       end
       within("#proposals-list") do
-        expect(page).to_not have_content(featured_proposal.title)
-        expect(page).to_not have_content(archived_proposal.title)
+        expect(page).not_to have_content(featured_proposal.title)
+        expect(page).not_to have_content(archived_proposal.title)
       end
 
       click_link "archived"
 
       within("#featured-proposals") do
         expect(page).to have_content(featured_proposal.title)
-        expect(page).to_not have_content(archived_proposal.title)
+        expect(page).not_to have_content(archived_proposal.title)
       end
       within("#proposals-list") do
-        expect(page).to_not have_content(featured_proposal.title)
+        expect(page).not_to have_content(featured_proposal.title)
         expect(page).to have_content(archived_proposal.title)
       end
     end
@@ -878,7 +878,7 @@ feature 'Proposals' do
 
           expect(page).to have_content(proposal1.title)
           expect(page).to have_content(proposal2.title)
-          expect(page).to_not have_content(proposal3.title)
+          expect(page).not_to have_content(proposal3.title)
         end
       end
 
@@ -897,7 +897,7 @@ feature 'Proposals' do
           expect(page).to have_css('.proposal', count: 1)
 
           expect(page).to have_content(proposal1.title)
-          expect(page).to_not have_content(proposal2.title)
+          expect(page).not_to have_content(proposal2.title)
         end
       end
 
@@ -933,7 +933,7 @@ feature 'Proposals' do
 
           expect(page).to have_content(proposal1.title)
           expect(page).to have_content(proposal2.title)
-          expect(page).to_not have_content(proposal3.title)
+          expect(page).not_to have_content(proposal3.title)
         end
       end
 
@@ -958,7 +958,7 @@ feature 'Proposals' do
           within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
-            expect(page).to_not have_content(proposal3.title)
+            expect(page).not_to have_content(proposal3.title)
           end
         end
 
@@ -981,7 +981,7 @@ feature 'Proposals' do
           within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
-            expect(page).to_not have_content(proposal3.title)
+            expect(page).not_to have_content(proposal3.title)
           end
         end
 
@@ -1004,7 +1004,7 @@ feature 'Proposals' do
           within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
-            expect(page).to_not have_content(proposal3.title)
+            expect(page).not_to have_content(proposal3.title)
           end
         end
 
@@ -1027,7 +1027,7 @@ feature 'Proposals' do
           within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
-            expect(page).to_not have_content(proposal3.title)
+            expect(page).not_to have_content(proposal3.title)
           end
         end
 
@@ -1050,7 +1050,7 @@ feature 'Proposals' do
           within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
-            expect(page).to_not have_content(proposal3.title)
+            expect(page).not_to have_content(proposal3.title)
           end
         end
 
@@ -1076,7 +1076,7 @@ feature 'Proposals' do
             within("#proposals") do
               expect(page).to have_content(proposal1.title)
               expect(page).to have_content(proposal2.title)
-              expect(page).to_not have_content(proposal3.title)
+              expect(page).not_to have_content(proposal3.title)
             end
           end
 
@@ -1096,7 +1096,7 @@ feature 'Proposals' do
             within("#proposals") do
               expect(page).to have_content(proposal1.title)
               expect(page).to have_content(proposal2.title)
-              expect(page).to_not have_content(proposal3.title)
+              expect(page).not_to have_content(proposal3.title)
             end
           end
 
@@ -1116,7 +1116,7 @@ feature 'Proposals' do
             within("#proposals") do
               expect(page).to have_content(proposal1.title)
               expect(page).to have_content(proposal2.title)
-              expect(page).to_not have_content(proposal3.title)
+              expect(page).not_to have_content(proposal3.title)
             end
           end
 
@@ -1136,7 +1136,7 @@ feature 'Proposals' do
             within("#proposals") do
               expect(page).to have_content(proposal1.title)
               expect(page).to have_content(proposal2.title)
-              expect(page).to_not have_content(proposal3.title)
+              expect(page).not_to have_content(proposal3.title)
             end
           end
 
@@ -1160,7 +1160,7 @@ feature 'Proposals' do
           within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
-            expect(page).to_not have_content(proposal3.title)
+            expect(page).not_to have_content(proposal3.title)
           end
         end
 
@@ -1284,7 +1284,7 @@ feature 'Proposals' do
         expect(all(".proposal")[0].text).to match "Show you got"
         expect(all(".proposal")[1].text).to match "Show you got"
         expect(all(".proposal")[2].text).to match "Show what you got"
-        expect(page).to_not have_content "Do not display"
+        expect(page).not_to have_content "Do not display"
       end
     end
 
@@ -1308,8 +1308,8 @@ feature 'Proposals' do
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show you got"
         expect(all(".proposal")[1].text).to match "Show what you got"
-        expect(page).to_not have_content "Do not display with same tag"
-        expect(page).to_not have_content "Do not display"
+        expect(page).not_to have_content "Do not display with same tag"
+        expect(page).not_to have_content "Do not display"
       end
       Setting['feature.user.recommendations'] = nil
     end
@@ -1324,8 +1324,8 @@ feature 'Proposals' do
         click_button "Search"
       end
 
-      expect(page).to_not have_selector('#proposals .proposal-featured')
-      expect(page).to_not have_selector('#featured-proposals')
+      expect(page).not_to have_selector('#proposals .proposal-featured')
+      expect(page).not_to have_selector('#featured-proposals')
     end
 
   end
@@ -1338,7 +1338,7 @@ feature 'Proposals' do
     expect(page).to have_content "This proposal has been flagged as inappropriate by several users."
 
     visit proposal_path(good_proposal)
-    expect(page).to_not have_content "This proposal has been flagged as inappropriate by several users."
+    expect(page).not_to have_content "This proposal has been flagged as inappropriate by several users."
   end
 
   scenario "Flagging", :js do
@@ -1373,7 +1373,7 @@ feature 'Proposals' do
       expect(page).to have_css("#flag-expand-proposal-#{proposal.id}")
     end
 
-    expect(Flag.flagged?(user, proposal)).to_not be
+    expect(Flag.flagged?(user, proposal)).not_to be
   end
 
   scenario 'Flagging/Unflagging AJAX', :js do
@@ -1401,7 +1401,7 @@ feature 'Proposals' do
       expect(page).to have_css("#flag-expand-proposal-#{proposal.id}")
     end
 
-    expect(Flag.flagged?(user, proposal)).to_not be
+    expect(Flag.flagged?(user, proposal)).not_to be
   end
 
   it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }
@@ -1495,7 +1495,7 @@ feature 'Proposals' do
           expect(page).to have_css('.proposal', count: 2)
           expect(page).to have_content(@proposal1.title)
           expect(page).to have_content(@proposal2.title)
-          expect(page).to_not have_content(@proposal3.title)
+          expect(page).not_to have_content(@proposal3.title)
         end
       end
 
@@ -1510,7 +1510,7 @@ feature 'Proposals' do
           expect(page).to have_css('.proposal', count: 2)
           expect(page).to have_content(@proposal1.title)
           expect(page).to have_content(@proposal2.title)
-          expect(page).to_not have_content(@proposal3.title)
+          expect(page).not_to have_content(@proposal3.title)
         end
       end
 
@@ -1525,7 +1525,7 @@ feature 'Proposals' do
           expect(page).to have_css('.proposal', count: 2)
           expect(page).to have_content(@proposal1.title)
           expect(page).to have_content(@proposal2.title)
-          expect(page).to_not have_content(@proposal3.title)
+          expect(page).not_to have_content(@proposal3.title)
         end
       end
 
@@ -1566,7 +1566,7 @@ feature 'Proposals' do
       check "proposal_terms_of_service"
 
       within('div#js-suggest') do
-        expect(page).to_not have_content 'You are seeing'
+        expect(page).not_to have_content 'You are seeing'
       end
     end
   end
@@ -1654,7 +1654,7 @@ feature 'Proposals' do
 
         expect(page).to have_content(proposal1.title)
         expect(page).to have_content(proposal2.title)
-        expect(page).to_not have_content(proposal3.title)
+        expect(page).not_to have_content(proposal3.title)
       end
     end
 
@@ -1671,7 +1671,7 @@ feature 'Successful proposals' do
 
     successful_proposals.each do |proposal|
       within("#proposal_#{proposal.id}_votes") do
-        expect(page).to_not have_css(".supports")
+        expect(page).not_to have_css(".supports")
         expect(page).to have_content "This proposal has reached the required supports"
       end
     end
@@ -1683,7 +1683,7 @@ feature 'Successful proposals' do
     successful_proposals.each do |proposal|
       visit proposal_path(proposal)
       within("#proposal_#{proposal.id}_votes") do
-        expect(page).to_not have_css(".supports")
+        expect(page).not_to have_css(".supports")
         expect(page).to have_content "This proposal has reached the required supports"
       end
     end
@@ -1696,7 +1696,7 @@ feature 'Successful proposals' do
 
     successful_proposals.each do |proposal|
       within("#proposal_#{proposal.id}_votes") do
-        expect(page).to_not have_link "Create question"
+        expect(page).not_to have_link "Create question"
       end
     end
 

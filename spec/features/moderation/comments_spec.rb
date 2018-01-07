@@ -20,8 +20,8 @@ feature 'Moderate comments' do
     visit debate_path(comment.commentable)
 
     expect(page).to have_css('.comment', count: 1)
-    expect(page).to_not have_content('This comment has been deleted')
-    expect(page).to_not have_content('SPAM')
+    expect(page).not_to have_content('This comment has been deleted')
+    expect(page).not_to have_content('SPAM')
   end
 
   scenario 'Can not hide own comment' do
@@ -32,8 +32,8 @@ feature 'Moderate comments' do
     visit debate_path(comment.commentable)
 
     within("#comment_#{comment.id}") do
-      expect(page).to_not have_link('Hide')
-      expect(page).to_not have_link('Block author')
+      expect(page).not_to have_link('Hide')
+      expect(page).not_to have_link('Block author')
     end
   end
 
@@ -57,29 +57,29 @@ feature 'Moderate comments' do
             check "comment_#{@comment.id}_check"
           end
 
-          expect(page).to_not have_css("comment_#{@comment.id}")
+          expect(page).not_to have_css("comment_#{@comment.id}")
         end
 
         scenario 'Hide the comment' do
           click_on "Hide comments"
-          expect(page).to_not have_css("comment_#{@comment.id}")
+          expect(page).not_to have_css("comment_#{@comment.id}")
           expect(@comment.reload).to be_hidden
-          expect(@comment.user).to_not be_hidden
+          expect(@comment.user).not_to be_hidden
         end
 
         scenario 'Block the user' do
           click_on "Block authors"
-          expect(page).to_not have_css("comment_#{@comment.id}")
+          expect(page).not_to have_css("comment_#{@comment.id}")
           expect(@comment.reload).to be_hidden
           expect(@comment.user).to be_hidden
         end
 
         scenario 'Ignore the comment' do
           click_on "Mark as viewed"
-          expect(page).to_not have_css("comment_#{@comment.id}")
+          expect(page).not_to have_css("comment_#{@comment.id}")
           expect(@comment.reload).to be_ignored_flag
-          expect(@comment.reload).to_not be_hidden
-          expect(@comment.user).to_not be_hidden
+          expect(@comment.reload).not_to be_hidden
+          expect(@comment.user).not_to be_hidden
         end
       end
 
@@ -95,7 +95,7 @@ feature 'Moderate comments' do
         within('.js-check') { click_on 'None' }
 
         all('input[type=checkbox]').each do |checkbox|
-          expect(checkbox).to_not be_checked
+          expect(checkbox).not_to be_checked
         end
       end
 
@@ -116,13 +116,13 @@ feature 'Moderate comments' do
 
     scenario "Current filter is properly highlighted" do
       visit moderation_comments_path
-      expect(page).to_not have_link('Pending')
+      expect(page).not_to have_link('Pending')
       expect(page).to have_link('All')
       expect(page).to have_link('Marked as viewed')
 
       visit moderation_comments_path(filter: 'all')
       within('.menu.simple') do
-        expect(page).to_not have_link('All')
+        expect(page).not_to have_link('All')
         expect(page).to have_link('Pending')
         expect(page).to have_link('Marked as viewed')
       end
@@ -130,7 +130,7 @@ feature 'Moderate comments' do
       visit moderation_comments_path(filter: 'pending_flag_review')
       within('.menu.simple') do
         expect(page).to have_link('All')
-        expect(page).to_not have_link('Pending')
+        expect(page).not_to have_link('Pending')
         expect(page).to have_link('Marked as viewed')
       end
 
@@ -138,7 +138,7 @@ feature 'Moderate comments' do
       within('.menu.simple') do
         expect(page).to have_link('All')
         expect(page).to have_link('Pending')
-        expect(page).to_not have_link('Marked as viewed')
+        expect(page).not_to have_link('Marked as viewed')
       end
     end
 
@@ -151,19 +151,19 @@ feature 'Moderate comments' do
       visit moderation_comments_path(filter: 'all')
       expect(page).to have_content('Regular comment')
       expect(page).to have_content('Pending comment')
-      expect(page).to_not have_content('Hidden comment')
+      expect(page).not_to have_content('Hidden comment')
       expect(page).to have_content('Ignored comment')
 
       visit moderation_comments_path(filter: 'pending_flag_review')
-      expect(page).to_not have_content('Regular comment')
+      expect(page).not_to have_content('Regular comment')
       expect(page).to have_content('Pending comment')
-      expect(page).to_not have_content('Hidden comment')
-      expect(page).to_not have_content('Ignored comment')
+      expect(page).not_to have_content('Hidden comment')
+      expect(page).not_to have_content('Ignored comment')
 
       visit moderation_comments_path(filter: 'with_ignored_flag')
-      expect(page).to_not have_content('Regular comment')
-      expect(page).to_not have_content('Pending comment')
-      expect(page).to_not have_content('Hidden comment')
+      expect(page).not_to have_content('Regular comment')
+      expect(page).not_to have_content('Pending comment')
+      expect(page).not_to have_content('Hidden comment')
       expect(page).to have_content('Ignored comment')
     end
 

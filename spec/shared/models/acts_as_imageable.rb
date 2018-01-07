@@ -12,14 +12,14 @@ shared_examples "acts as imageable" do |imageable_factory|
     it "is not valid with '.png' extension" do
       image.attachment = File.new("spec/fixtures/files/clippy.png")
 
-      expect(image).to_not be_valid
+      expect(image).not_to be_valid
       expect(image.errors[:attachment].size).to eq(1)
     end
 
     it "is not valid with '.gif' extension" do
       image.attachment = File.new("spec/fixtures/files/clippy.gif")
 
-      expect(image).to_not be_valid
+      expect(image).not_to be_valid
       expect(image.errors[:attachment].size).to eq(1)
     end
 
@@ -49,19 +49,19 @@ shared_examples "acts as imageable" do |imageable_factory|
     it "is not valid when correct image attached but no image title provided" do
       image.title = ''
 
-      expect(image).to_not be_valid
+      expect(image).not_to be_valid
     end
 
     it "is not valid when image title is too short" do
       image.title = 'a' * 3
 
-      expect(image).to_not be_valid
+      expect(image).not_to be_valid
     end
 
     it "is not valid when image title is too long" do
       image.title = 'a' * 81
 
-      expect(image).to_not be_valid
+      expect(image).not_to be_valid
     end
 
   end

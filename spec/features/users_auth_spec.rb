@@ -87,7 +87,7 @@ feature 'Users' do
         fill_in 'user_password', with: 'symbiote'
         click_button 'Enter'
 
-        expect(page).to_not have_content 'You have been signed in successfully.'
+        expect(page).not_to have_content 'You have been signed in successfully.'
         expect(page).to have_content 'Invalid login or password.'
 
         fill_in 'user_login',    with: 'venom@nyc.dev'
@@ -377,7 +377,7 @@ feature 'Users' do
     login_as(admin.user)
     visit root_path
 
-    expect(page).to_not have_content "Your password is expired"
+    expect(page).not_to have_content "Your password is expired"
   end
 
   scenario 'Sign in, user with password expired' do
@@ -386,7 +386,7 @@ feature 'Users' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_content "Your password is expired"
+    expect(page).not_to have_content "Your password is expired"
   end
 
   scenario 'Admin with password expired trying to use same password' do

@@ -10,7 +10,7 @@ describe Admin::Api::StatsController do
         sign_in user
         get :show
 
-        expect(response).to_not be_ok
+        expect(response).not_to be_ok
         expect(response.status).to eq 400
       end
     end

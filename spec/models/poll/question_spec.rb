@@ -6,7 +6,7 @@ RSpec.describe Poll::Question, type: :model do
   describe "#poll_question_id" do
     it "is invalid if a poll is not selected" do
       poll_question.poll_id = nil
-      expect(poll_question).to_not be_valid
+      expect(poll_question).not_to be_valid
     end
 
     it "is valid if a poll is selected" do

@@ -16,28 +16,28 @@ describe Proposal do
 
   it "is not valid without an author" do
     proposal.author = nil
-    expect(proposal).to_not be_valid
+    expect(proposal).not_to be_valid
   end
 
   it "is not valid without a summary" do
     proposal.summary = nil
-    expect(proposal).to_not be_valid
+    expect(proposal).not_to be_valid
   end
 
   describe "#title" do
     it "is not valid without a title" do
       proposal.title = nil
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
 
     it "is not valid when very short" do
       proposal.title = "abc"
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
 
     it "is not valid when very long" do
       proposal.title = "a" * 81
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
   end
 
@@ -50,31 +50,31 @@ describe Proposal do
 
     it "is not valid when very long" do
       proposal.description = "a" * 6001
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
   end
 
   describe "#question" do
     it "is not valid without a question" do
       proposal.question = nil
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
 
     it "is not valid when very short" do
       proposal.question = "abc"
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
 
     it "is not valid when very long" do
       proposal.question = "a" * 141
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
   end
 
   describe "#video_url" do
     it "is not valid when URL is not from Youtube or Vimeo" do
       proposal.video_url = "https://twitter.com"
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
 
     it "is valid when URL is from Youtube or Vimeo" do
@@ -86,17 +86,17 @@ describe Proposal do
   describe "#responsible_name" do
     it "is mandatory" do
       proposal.responsible_name = nil
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
 
     it "is not valid when very short" do
       proposal.responsible_name = "abc"
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
 
     it "is not valid when very long" do
       proposal.responsible_name = "a" * 61
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
 
     it "is the document_number if level two user" do
@@ -138,7 +138,7 @@ describe Proposal do
 
     it "is not valid with a tag list of more than 6 elements" do
       proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
-      expect(proposal).to_not be_valid
+      expect(proposal).not_to be_valid
     end
 
     it "is valid with a tag list of up to 6 elements" do
@@ -149,7 +149,7 @@ describe Proposal do
 
   it "is not valid without accepting terms of service" do
     proposal.terms_of_service = nil
-    expect(proposal).to_not be_valid
+    expect(proposal).not_to be_valid
   end
 
   it "has a code" do
@@ -409,7 +409,7 @@ describe Proposal do
 
       expect(proposal.voters).to include(voter1)
       expect(proposal.voters).to include(voter2)
-      expect(proposal.voters).to_not include(voter3)
+      expect(proposal.voters).not_to include(voter3)
     end
 
     it "does not return users that have been erased" do
@@ -422,7 +422,7 @@ describe Proposal do
       voter2.erase
 
       expect(proposal.voters).to include(voter1)
-      expect(proposal.voters).to_not include(voter2)
+      expect(proposal.voters).not_to include(voter2)
     end
 
     it "does not return users that have been blocked" do
@@ -435,7 +435,7 @@ describe Proposal do
       voter2.block
 
       expect(proposal.voters).to include(voter1)
-      expect(proposal.voters).to_not include(voter2)
+      expect(proposal.voters).not_to include(voter2)
     end
 
   end
@@ -711,7 +711,7 @@ describe Proposal do
 
     it "does not return proposals created more than a week ago" do
       proposal = create(:proposal, created_at: 8.days.ago)
-      expect(described_class.last_week).to_not include(proposal)
+      expect(described_class.last_week).not_to include(proposal)
     end
   end
 
@@ -730,7 +730,7 @@ describe Proposal do
         create(:tag, :category, name: 'culture')
         proposal = create(:proposal, tag_list: 'parks')
 
-        expect(described_class.for_summary.values.flatten).to_not include(proposal)
+        expect(described_class.for_summary.values.flatten).not_to include(proposal)
       end
     end
 
@@ -747,7 +747,7 @@ describe Proposal do
         create(:geozone, name: 'california')
         proposal = create(:proposal)
 
-        expect(described_class.for_summary.values.flatten).to_not include(proposal)
+        expect(described_class.for_summary.values.flatten).not_to include(proposal)
       end
     end
 
@@ -760,7 +760,7 @@ describe Proposal do
     it "does not return proposals created more than a week ago" do
       create(:tag, :category, name: 'culture')
       proposal = create(:proposal, tag_list: 'culture', created_at: 8.days.ago)
-      expect(described_class.for_summary.values.flatten).to_not include(proposal)
+      expect(described_class.for_summary.values.flatten).not_to include(proposal)
     end
 
     it "orders proposals by votes" do
@@ -870,7 +870,7 @@ describe Proposal do
 
     it 'does not return hidden proposals' do
       proposal = create(:proposal, :hidden)
-      expect(described_class.public_for_api).to_not include(proposal)
+      expect(described_class.public_for_api).not_to include(proposal)
     end
   end
 

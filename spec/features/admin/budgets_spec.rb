@@ -45,13 +45,13 @@ feature 'Admin budgets' do
       expect(page).to have_content(budget2.name)
       expect(page).to have_content(budget3.name)
       expect(page).to have_content(budget4.name)
-      expect(page).to_not have_content(budget5.name)
+      expect(page).not_to have_content(budget5.name)
 
       click_link 'Finished'
-      expect(page).to_not have_content(budget1.name)
-      expect(page).to_not have_content(budget2.name)
-      expect(page).to_not have_content(budget3.name)
-      expect(page).to_not have_content(budget4.name)
+      expect(page).not_to have_content(budget1.name)
+      expect(page).not_to have_content(budget2.name)
+      expect(page).not_to have_content(budget3.name)
+      expect(page).not_to have_content(budget4.name)
       expect(page).to have_content(budget5.name)
 
       click_link 'Open'
@@ -59,7 +59,7 @@ feature 'Admin budgets' do
       expect(page).to have_content(budget2.name)
       expect(page).to have_content(budget3.name)
       expect(page).to have_content(budget4.name)
-      expect(page).to_not have_content(budget5.name)
+      expect(page).not_to have_content(budget5.name)
     end
 
     scenario 'Open filter is properly highlighted' do
@@ -67,13 +67,13 @@ feature 'Admin budgets' do
 
       visit admin_budgets_path
 
-      expect(page).to_not have_link(filters_links.values.first)
+      expect(page).not_to have_link(filters_links.values.first)
       filters_links.keys.drop(1).each { |filter| expect(page).to have_link(filters_links[filter]) }
 
       filters_links.each_pair do |current_filter, link|
         visit admin_budgets_path(filter: current_filter)
 
-        expect(page).to_not have_link(link)
+        expect(page).not_to have_link(link)
 
         (filters_links.keys - [current_filter]).each do |filter|
           expect(page).to have_link(filters_links[filter])
@@ -103,7 +103,7 @@ feature 'Admin budgets' do
       visit new_admin_budget_path
       click_button 'Create Participatory budget'
 
-      expect(page).to_not have_content 'New participatory budget created successfully!'
+      expect(page).not_to have_content 'New participatory budget created successfully!'
       expect(page).to have_css("label.error", text: "Name")
     end
 
@@ -158,7 +158,7 @@ feature 'Admin budgets' do
       expect(page).to have_content '1 Group of budget headings'
       expect(page).to have_content 'Health'
       expect(page).to have_content 'Yearly participatory budget'
-      expect(page).to_not have_content 'No groups created yet.'
+      expect(page).not_to have_content 'No groups created yet.'
 
       visit admin_budgets_path
       within("#budget_#{budget.id}") do
@@ -168,7 +168,7 @@ feature 'Admin budgets' do
       expect(page).to have_content '1 Group of budget headings'
       expect(page).to have_content 'Health'
       expect(page).to have_content 'Yearly participatory budget'
-      expect(page).to_not have_content 'No groups created yet.'
+      expect(page).not_to have_content 'No groups created yet.'
     end
 
     scenario 'Create heading', :js do
@@ -187,11 +187,11 @@ feature 'Admin budgets' do
         click_button 'Save heading'
       end
 
-      expect(page).to_not have_content 'This group has no assigned heading.'
+      expect(page).not_to have_content 'This group has no assigned heading.'
 
       visit admin_budget_path(budget)
       within("#budget_group_#{group.id}") do
-        expect(page).to_not have_content 'This group has no assigned heading.'
+        expect(page).not_to have_content 'This group has no assigned heading.'
 
         expect(page).to have_content 'District 9 reconstruction'
         expect(page).to have_content '6785'

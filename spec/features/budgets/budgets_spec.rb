@@ -26,13 +26,13 @@ feature 'Budgets' do
 
       visit budget_path(budget)
 
-      expect(page).to_not have_link "See unfeasible investments"
-      expect(page).to_not have_link "See investments not selected for balloting phase"
+      expect(page).not_to have_link "See unfeasible investments"
+      expect(page).not_to have_link "See investments not selected for balloting phase"
 
       click_link group.name
 
-      expect(page).to_not have_link "See unfeasible investments"
-      expect(page).to_not have_link "See investments not selected for balloting phase"
+      expect(page).not_to have_link "See unfeasible investments"
+      expect(page).not_to have_link "See investments not selected for balloting phase"
 
       budget.update(phase: :balloting)
 

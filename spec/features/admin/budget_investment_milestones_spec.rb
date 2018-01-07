@@ -98,7 +98,7 @@ feature 'Admin budget investment milestones' do
 
       click_link "Delete milestone"
 
-      expect(page).to_not have_content 'Title will it remove'
+      expect(page).not_to have_content 'Title will it remove'
     end
   end
 

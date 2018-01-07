@@ -13,17 +13,17 @@ describe Topic do
 
   it "is not valid without an author" do
     topic.author = nil
-    expect(topic).to_not be_valid
+    expect(topic).not_to be_valid
   end
 
   it "is not valid without a title" do
     topic.title = nil
-    expect(topic).to_not be_valid
+    expect(topic).not_to be_valid
   end
 
   it "is not valid without a description" do
     topic.description = nil
-    expect(topic).to_not be_valid
+    expect(topic).not_to be_valid
   end
 
   context "order" do

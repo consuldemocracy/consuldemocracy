@@ -9,17 +9,17 @@ describe ProposalNotification do
 
   it "is not valid without a title" do
     notification.title = nil
-    expect(notification).to_not be_valid
+    expect(notification).not_to be_valid
   end
 
   it "is not valid without a body" do
     notification.body = nil
-    expect(notification).to_not be_valid
+    expect(notification).not_to be_valid
   end
 
   it "is not valid without an associated proposal" do
     notification.proposal = nil
-    expect(notification).to_not be_valid
+    expect(notification).not_to be_valid
   end
 
   describe "public_for_api scope" do
@@ -57,7 +57,7 @@ describe ProposalNotification do
       notification2 = build(:proposal_notification, proposal: proposal)
 
       proposal.reload
-      expect(notification2).to_not be_valid
+      expect(notification2).not_to be_valid
     end
 
     it "is valid if notifications above minium interval" do

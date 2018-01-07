@@ -92,7 +92,7 @@ feature 'Admin poll questions' do
     visit admin_questions_path
 
     expect(page).to have_content(new_title)
-    expect(page).to_not have_content(old_title)
+    expect(page).not_to have_content(old_title)
   end
 
   scenario 'Destroy' do
@@ -105,7 +105,7 @@ feature 'Admin poll questions' do
       click_link "Delete"
     end
 
-    expect(page).to_not have_content(question1.title)
+    expect(page).not_to have_content(question1.title)
     expect(page).to have_content(question2.title)
   end
 

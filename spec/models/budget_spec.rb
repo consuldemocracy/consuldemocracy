@@ -36,7 +36,7 @@ describe Budget do
       end
 
       budget.phase = 'inexisting'
-      expect(budget).to_not be_valid
+      expect(budget).not_to be_valid
     end
 
     it "produces auxiliary methods" do
@@ -64,39 +64,39 @@ describe Budget do
 
     it "on_hold?" do
       budget.phase = "accepting"
-      expect(budget).to_not be_on_hold
+      expect(budget).not_to be_on_hold
 
       budget.phase = "reviewing"
       expect(budget).to be_on_hold
 
       budget.phase = "selecting"
-      expect(budget).to_not be_on_hold
+      expect(budget).not_to be_on_hold
 
       budget.phase = "valuating"
       expect(budget).to be_on_hold
 
       budget.phase = "balloting"
-      expect(budget).to_not be_on_hold
+      expect(budget).not_to be_on_hold
 
       budget.phase = "reviewing_ballots"
       expect(budget).to be_on_hold
 
       budget.phase = "finished"
-      expect(budget).to_not be_on_hold
+      expect(budget).not_to be_on_hold
     end
 
     it "balloting_or_later?" do
       budget.phase = "accepting"
-      expect(budget).to_not be_balloting_or_later
+      expect(budget).not_to be_balloting_or_later
 
       budget.phase = "reviewing"
-      expect(budget).to_not be_balloting_or_later
+      expect(budget).not_to be_balloting_or_later
 
       budget.phase = "selecting"
-      expect(budget).to_not be_balloting_or_later
+      expect(budget).not_to be_balloting_or_later
 
       budget.phase = "valuating"
-      expect(budget).to_not be_balloting_or_later
+      expect(budget).not_to be_balloting_or_later
 
       budget.phase = "balloting"
       expect(budget).to be_balloting_or_later

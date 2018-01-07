@@ -61,7 +61,7 @@ feature 'Admin' do
     visit admin_root_path
 
     expect(page).to have_current_path(admin_root_path)
-    expect(page).to_not have_content "You do not have permission to access this page"
+    expect(page).not_to have_content "You do not have permission to access this page"
   end
 
   scenario "Admin access links" do
@@ -86,8 +86,8 @@ feature 'Admin' do
 
     expect(page).to have_current_path(admin_root_path)
     expect(page).to have_css('#admin_menu')
-    expect(page).to_not have_css('#moderation_menu')
-    expect(page).to_not have_css('#valuation_menu')
+    expect(page).not_to have_css('#moderation_menu')
+    expect(page).not_to have_css('#valuation_menu')
   end
 
 end

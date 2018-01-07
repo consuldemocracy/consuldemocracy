@@ -108,7 +108,7 @@ feature 'Admin legislation questions' do
 
       expect(page).to have_content 'Questions'
       expect(page).to have_content 'Question 1'
-      expect(page).to_not have_content 'Question 2'
+      expect(page).not_to have_content 'Question 2'
     end
   end
 end
