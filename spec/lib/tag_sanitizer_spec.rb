@@ -14,9 +14,9 @@ describe TagSanitizer do
     end
 
     it 'sets up a max length for each tag' do
-      long_tag = '1' * (TagSanitizer.tag_max_length + 100)
+      long_tag = '1' * (described_class.tag_max_length + 100)
 
-      expect(subject.sanitize_tag(long_tag).size).to eq(TagSanitizer.tag_max_length)
+      expect(subject.sanitize_tag(long_tag).size).to eq(described_class.tag_max_length)
     end
   end
 

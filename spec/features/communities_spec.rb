@@ -142,7 +142,7 @@ feature 'Communities' do
 
       visit community_path(community)
 
-      expect(current_path).to eq(root_path)
+      expect(page).to have_current_path(root_path)
     end
 
   end

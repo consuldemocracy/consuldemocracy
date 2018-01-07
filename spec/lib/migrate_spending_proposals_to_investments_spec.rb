@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe MigrateSpendingProposalsToInvestments do
 
-  let(:importer) { MigrateSpendingProposalsToInvestments.new }
+  let(:importer) { described_class.new }
 
   describe '#import' do
 

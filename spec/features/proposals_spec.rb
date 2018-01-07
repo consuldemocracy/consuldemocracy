@@ -114,7 +114,7 @@ feature 'Proposals' do
       right_path = proposal_path(proposal)
       visit right_path
 
-      expect(current_path).to eq(right_path)
+      expect(page).to have_current_path(right_path)
     end
 
     scenario 'When path does not match the friendly url' do
@@ -124,8 +124,8 @@ feature 'Proposals' do
       old_path = "#{proposals_path}/#{proposal.id}-something-else"
       visit old_path
 
-      expect(current_path).to_not eq(old_path)
-      expect(current_path).to eq(right_path)
+      expect(page).not_to have_current_path(old_path)
+      expect(page).to have_current_path(right_path)
     end
 
     scenario 'Can access the community' do
@@ -278,7 +278,7 @@ feature 'Proposals' do
 
     expect(page.status_code).to eq(200)
     expect(page.html).to be_empty
-    expect(current_path).to eq(proposals_path)
+    expect(page).to have_current_path(proposals_path)
   end
 
   scenario 'Create proposal too fast' do
@@ -293,7 +293,7 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
-    expect(current_path).to eq(new_proposal_path)
+    expect(page).to have_current_path(new_proposal_path)
   end
 
   scenario 'Responsible name is stored for anonymous users' do
@@ -408,7 +408,7 @@ feature 'Proposals' do
 
     click_link 'Edit'
 
-    expect(current_path).to eq edit_proposal_path(Proposal.last)
+    expect(page).to have_current_path(edit_proposal_path(Proposal.last))
     expect(page).not_to have_link('click me')
     expect(page.html).to_not include "<script>alert('hey')</script>"
   end
@@ -537,7 +537,7 @@ feature 'Proposals' do
       within("#proposal_#{proposal.id}") do
         click_link 'Retire'
       end
-      expect(current_path).to eq(retire_form_proposal_path(proposal))
+      expect(page).to have_current_path(retire_form_proposal_path(proposal))
 
       select 'Duplicated', from: 'proposal_retired_reason'
       fill_in 'proposal_retired_explanation', with: 'There are three other better proposals with the same subject'
@@ -628,8 +628,8 @@ feature 'Proposals' do
     login_as(create(:user))
 
     visit edit_proposal_path(proposal)
-    expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(edit_proposal_path(proposal))
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content 'You do not have permission'
   end
 
@@ -643,8 +643,8 @@ feature 'Proposals' do
     login_as(proposal.author)
     visit edit_proposal_path(proposal)
 
-    expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(edit_proposal_path(proposal))
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content 'You do not have permission'
     Setting["max_votes_for_proposal_edit"] = 1000
   end
@@ -654,7 +654,7 @@ feature 'Proposals' do
     login_as(proposal.author)
 
     visit edit_proposal_path(proposal)
-    expect(current_path).to eq(edit_proposal_path(proposal))
+    expect(page).to have_current_path(edit_proposal_path(proposal))
 
     fill_in 'proposal_title', with: "End child poverty"
     fill_in 'proposal_summary', with: 'Basically...'
@@ -686,30 +686,36 @@ feature 'Proposals' do
     scenario 'Default order is hot_score', :js do
       create_featured_proposals
 
-      create(:proposal, title: 'Best proposal').update_column(:hot_score, 10)
-      create(:proposal, title: 'Worst proposal').update_column(:hot_score, 2)
-      create(:proposal, title: 'Medium proposal').update_column(:hot_score, 5)
+      best_proposal = create(:proposal, title: 'Best proposal')
+      best_proposal.update_column(:hot_score, 10)
+      worst_proposal = create(:proposal, title: 'Worst proposal')
+      worst_proposal.update_column(:hot_score, 2)
+      medium_proposal = create(:proposal, title: 'Medium proposal')
+      medium_proposal.update_column(:hot_score, 5)
 
       visit proposals_path
 
-      expect('Best proposal').to appear_before('Medium proposal')
-      expect('Medium proposal').to appear_before('Worst proposal')
+      expect(best_proposal.title).to appear_before(medium_proposal.title)
+      expect(medium_proposal.title).to appear_before(worst_proposal.title)
     end
 
     scenario 'Proposals are ordered by confidence_score', :js do
       create_featured_proposals
 
-      create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
-      create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
-      create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
+      best_proposal = create(:proposal, title: 'Best proposal')
+      best_proposal.update_column(:confidence_score, 10)
+      worst_proposal = create(:proposal, title: 'Worst proposal')
+      worst_proposal.update_column(:confidence_score, 2)
+      medium_proposal = create(:proposal, title: 'Medium proposal')
+      medium_proposal.update_column(:confidence_score, 5)
 
       visit proposals_path
       click_link 'highest rated'
       expect(page).to have_selector('a.active', text: 'highest rated')
 
       within '#proposals' do
-        expect('Best proposal').to appear_before('Medium proposal')
-        expect('Medium proposal').to appear_before('Worst proposal')
+        expect(best_proposal.title).to appear_before(medium_proposal.title)
+        expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
       expect(current_url).to include('order=confidence_score')
@@ -719,17 +725,17 @@ feature 'Proposals' do
     scenario 'Proposals are ordered by newest', :js do
       create_featured_proposals
 
-      create(:proposal, title: 'Best proposal',   created_at: Time.current)
-      create(:proposal, title: 'Medium proposal', created_at: Time.current - 1.hour)
-      create(:proposal, title: 'Worst proposal',  created_at: Time.current - 1.day)
+      best_proposal = create(:proposal, title: 'Best proposal', created_at: Time.current)
+      medium_proposal = create(:proposal, title: 'Medium proposal', created_at: Time.current - 1.hour)
+      worst_proposal = create(:proposal, title: 'Worst proposal', created_at: Time.current - 1.day)
 
       visit proposals_path
       click_link 'newest'
       expect(page).to have_selector('a.active', text: 'newest')
 
       within '#proposals' do
-        expect('Best proposal').to appear_before('Medium proposal')
-        expect('Medium proposal').to appear_before('Worst proposal')
+        expect(best_proposal.title).to appear_before(medium_proposal.title)
+        expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
       expect(current_url).to include('order=created_at')
@@ -738,11 +744,12 @@ feature 'Proposals' do
 
     context 'Recommendations' do
 
+      let!(:best_proposal) { create(:proposal, title: 'Best', cached_votes_up: 10, tag_list: "Sport") }
+      let!(:medium_proposal) { create(:proposal, title: 'Medium', cached_votes_up: 5, tag_list: "Sport") }
+      let!(:worst_proposal) { create(:proposal, title: 'Worst', cached_votes_up: 1, tag_list: "Sport") }
+
       before do
         Setting['feature.user.recommendations'] = true
-        create(:proposal, title: 'Best',   cached_votes_up: 10, tag_list: "Sport")
-        create(:proposal, title: 'Medium', cached_votes_up: 5, tag_list: "Sport")
-        create(:proposal, title: 'Worst',  cached_votes_up: 1, tag_list: "Sport")
       end
 
       after do
@@ -790,8 +797,8 @@ feature 'Proposals' do
         expect(page).to have_selector('a.active', text: 'recommendations')
 
         within '#proposals-list' do
-          expect('Best').to appear_before('Medium')
-          expect('Medium').to appear_before('Worst')
+          expect(best_proposal.title).to appear_before(medium_proposal.title)
+          expect(medium_proposal.title).to appear_before(worst_proposal.title)
         end
 
         expect(current_url).to include('order=recommendations')
@@ -1673,14 +1680,17 @@ feature 'Proposals' do
 
     scenario "Orders proposals by votes" do
       create(:tag, :category, name: 'culture')
-      create(:proposal, title: 'Best',   tag_list: 'culture').update_column(:confidence_score, 10)
-      create(:proposal, title: 'Worst',  tag_list: 'culture').update_column(:confidence_score, 2)
-      create(:proposal, title: 'Medium', tag_list: 'culture').update_column(:confidence_score, 5)
+      best_proposal = create(:proposal, title: 'Best', tag_list: 'culture')
+      best_proposal.update_column(:confidence_score, 10)
+      worst_proposal = create(:proposal, title: 'Worst', tag_list: 'culture')
+      worst_proposal.update_column(:confidence_score, 2)
+      medium_proposal = create(:proposal, title: 'Medium', tag_list: 'culture')
+      medium_proposal.update_column(:confidence_score, 5)
 
       visit summary_proposals_path
 
-      expect('Best').to appear_before('Medium')
-      expect('Medium').to appear_before('Worst')
+      expect(best_proposal.title).to appear_before(medium_proposal.title)
+      expect(medium_proposal.title).to appear_before(worst_proposal.title)
     end
 
     scenario "Displays proposals from last week" do

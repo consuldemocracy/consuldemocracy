@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Legislation::Process do
   let(:process) { create(:legislation_process) }
 
-  it "should be valid" do
+  it "is valid" do
     expect(process).to be_valid
   end
 
@@ -69,7 +69,7 @@ describe Legislation::Process do
   end
 
   describe "filter scopes" do
-    before(:each) do
+    before do
       @process_1 = create(:legislation_process, start_date: Date.current - 2.days, end_date: Date.current + 1.day)
       @process_2 = create(:legislation_process, start_date: Date.current + 1.day, end_date: Date.current + 3.days)
       @process_3 = create(:legislation_process, start_date: Date.current - 4.days, end_date: Date.current - 3.days)
@@ -101,17 +101,17 @@ describe Legislation::Process do
   end
 
   describe "#status" do
-    it "should detect planned phase" do
+    it "detects planned phase" do
       process.update_attributes(start_date: Date.current + 2.days)
       expect(process.status).to eq(:planned)
     end
 
-    it "should detect closed phase" do
+    it "detects closed phase" do
       process.update_attributes(end_date: Date.current - 2.days)
       expect(process.status).to eq(:closed)
     end
 
-    it "should detect open phase" do
+    it "detects open phase" do
       expect(process.status).to eq(:open)
     end
   end

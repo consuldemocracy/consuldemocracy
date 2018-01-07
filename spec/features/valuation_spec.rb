@@ -20,8 +20,8 @@ feature 'Valuation' do
     expect(page).to_not have_link("Valuation")
     visit valuation_root_path
 
-    expect(current_path).not_to eq(valuation_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(valuation_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -33,8 +33,8 @@ feature 'Valuation' do
     expect(page).to_not have_link("Valuation")
     visit valuation_root_path
 
-    expect(current_path).not_to eq(valuation_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(valuation_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -46,8 +46,8 @@ feature 'Valuation' do
     expect(page).to_not have_link("Valuation")
     visit valuation_root_path
 
-    expect(current_path).not_to eq(valuation_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(valuation_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -59,8 +59,8 @@ feature 'Valuation' do
     expect(page).to_not have_link("Valuation")
     visit valuation_root_path
 
-    expect(current_path).not_to eq(valuation_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(valuation_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -72,7 +72,7 @@ feature 'Valuation' do
     expect(page).to have_link("Valuation")
     click_on "Valuation"
 
-    expect(current_path).to eq(valuation_root_path)
+    expect(page).to have_current_path(valuation_root_path)
     expect(page).to_not have_content "You do not have permission to access this page"
   end
 
@@ -84,7 +84,7 @@ feature 'Valuation' do
     expect(page).to have_link("Valuation")
     click_on "Valuation"
 
-    expect(current_path).to eq(valuation_root_path)
+    expect(page).to have_current_path(valuation_root_path)
     expect(page).to_not have_content "You do not have permission to access this page"
   end
 
@@ -105,7 +105,7 @@ feature 'Valuation' do
 
     click_link 'Valuation'
 
-    expect(current_path).to eq(valuation_root_path)
+    expect(page).to have_current_path(valuation_root_path)
     expect(page).to have_css('#valuation_menu')
     expect(page).to_not have_css('#admin_menu')
     expect(page).to_not have_css('#moderation_menu')

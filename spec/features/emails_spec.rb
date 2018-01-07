@@ -116,7 +116,7 @@ feature 'Emails' do
   end
 
   context 'Topic comments' do
-    before(:each) do
+    before do
       @proposal = create(:proposal)
     end
 

@@ -783,3 +783,25 @@ Style/SafeNavigation:
 Style/WordArray:
   EnforcedStyle: percent
   MinSize: 8
+
+# Offense count: 10
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/customization_engine_spec.rb'
+    - 'spec/i18n_spec.rb'
+    - 'spec/lib/acts_as_paranoid_aliases_spec.rb'
+    - 'spec/lib/cache_spec.rb'
+    - 'spec/lib/graphql_spec.rb'
+    - 'spec/lib/tasks/communities_spec.rb'
+    - 'spec/lib/tasks/dev_seed_spec.rb'
+    - 'spec/lib/tasks/settings_spec.rb'
+    - 'spec/models/abilities/organization_spec.rb'
+    - 'spec/views/welcome/index.html.erb_spec.rb'
+
+# Offense count: 2
+# Configuration parameters: SkipBlocks, EnforcedStyle.
+# SupportedStyles: described_class, explicit
+RSpec/DescribedClass:
+  Exclude:
+    - 'spec/controllers/concerns/has_filters_spec.rb'
+    - 'spec/controllers/concerns/has_orders_spec.rb'

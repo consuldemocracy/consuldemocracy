@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'ActsAsTaggableOn' do
+describe ActsAsTaggableOn do
 
   describe 'Tagging' do
     describe "when tagging debates or proposals" do

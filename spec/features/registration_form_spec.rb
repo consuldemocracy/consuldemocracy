@@ -57,7 +57,7 @@ feature 'Registration form' do
 
     expect(page.status_code).to eq(200)
     expect(page.html).to be_empty
-    expect(current_path).to eq(user_registration_path)
+    expect(page).to have_current_path(user_registration_path)
   end
 
   scenario 'Create organization too fast' do
@@ -75,7 +75,7 @@ feature 'Registration form' do
 
     expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
 
-    expect(current_path).to eq(new_user_registration_path)
+    expect(page).to have_current_path(new_user_registration_path)
   end
 
 end

@@ -125,7 +125,7 @@ feature 'Admin booths' do
     end
 
     click_link "Go back"
-    expect(current_path).to eq(available_admin_booths_path)
+    expect(page).to have_current_path(available_admin_booths_path)
   end
 
   context "Booth type" do

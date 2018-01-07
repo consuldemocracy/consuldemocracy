@@ -11,8 +11,8 @@ feature 'Poll Officing' do
     expect(page).to_not have_link("Polling officers")
     visit officing_root_path
 
-    expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -24,8 +24,8 @@ feature 'Poll Officing' do
     expect(page).to_not have_link("Polling officers")
     visit officing_root_path
 
-    expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -37,8 +37,8 @@ feature 'Poll Officing' do
     expect(page).to_not have_link("Polling officers")
     visit officing_root_path
 
-    expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -50,8 +50,8 @@ feature 'Poll Officing' do
     expect(page).to_not have_link("Polling officers")
     visit officing_root_path
 
-    expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -64,8 +64,8 @@ feature 'Poll Officing' do
     expect(page).to_not have_link("Polling officers")
     visit officing_root_path
 
-    expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -79,7 +79,7 @@ feature 'Poll Officing' do
     expect(page).to have_link("Polling officers")
     click_on "Polling officers"
 
-    expect(current_path).to eq(officing_root_path)
+    expect(page).to have_current_path(officing_root_path)
     expect(page).to_not have_content "You do not have permission to access this page"
   end
 
@@ -91,6 +91,9 @@ feature 'Poll Officing' do
 
     expect(page).to_not have_link("Polling officers")
     visit officing_root_path
+
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
 
     expect(current_path).not_to eq(officing_root_path)
     expect(current_path).to eq(root_path)
@@ -117,7 +120,7 @@ feature 'Poll Officing' do
 
     click_link 'Polling officers'
 
-    expect(current_path).to eq(officing_root_path)
+    expect(page).to have_current_path(officing_root_path)
     expect(page).to have_css('#officing_menu')
     expect(page).to_not have_css('#valuation_menu')
     expect(page).to_not have_css('#admin_menu')

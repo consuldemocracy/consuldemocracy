@@ -99,9 +99,7 @@ feature 'Moderate proposals' do
 
         within('.js-check') { click_on 'All' }
 
-        all('input[type=checkbox]').each do |checkbox|
-          expect(checkbox).to be_checked
-        end
+        expect(all('input[type=checkbox]')).to all(be_checked)
 
         within('.js-check') { click_on 'None' }
 
@@ -179,27 +177,27 @@ feature 'Moderate proposals' do
     end
 
     scenario "sorting proposals" do
-      create(:proposal, title: "Flagged proposal", created_at: Time.current - 1.day, flags_count: 5)
-      create(:proposal, title: "Flagged newer proposal", created_at: Time.current - 12.hours, flags_count: 3)
-      create(:proposal, title: "Newer proposal", created_at: Time.current)
+      flagged_proposal = create(:proposal, title: "Flagged proposal", created_at: Time.current - 1.day, flags_count: 5)
+      flagged_new_proposal = create(:proposal, title: "Flagged new proposal", created_at: Time.current - 12.hours, flags_count: 3)
+      newer_proposal = create(:proposal, title: "Newer proposal", created_at: Time.current)
 
       visit moderation_proposals_path(order: 'created_at')
 
-      expect("Flagged newer proposal").to appear_before("Flagged proposal")
+      expect(flagged_new_proposal.title).to appear_before(flagged_proposal.title)
 
       visit moderation_proposals_path(order: 'flags')
 
-      expect("Flagged proposal").to appear_before("Flagged newer proposal")
+      expect(flagged_proposal.title).to appear_before(flagged_new_proposal.title)
 
       visit moderation_proposals_path(filter: 'all', order: 'created_at')
 
-      expect("Newer proposal").to appear_before("Flagged newer proposal")
-      expect("Flagged newer proposal").to appear_before("Flagged proposal")
+      expect(newer_proposal.title).to appear_before(flagged_new_proposal.title)
+      expect(flagged_new_proposal.title).to appear_before(flagged_proposal.title)
 
       visit moderation_proposals_path(filter: 'all', order: 'flags')
 
-      expect("Flagged proposal").to appear_before("Flagged newer proposal")
-      expect("Flagged newer proposal").to appear_before("Newer proposal")
+      expect(flagged_proposal.title).to appear_before(flagged_new_proposal.title)
+      expect(flagged_new_proposal.title).to appear_before(newer_proposal.title)
     end
   end
 end

@@ -90,9 +90,7 @@ feature 'Moderate comments' do
 
         within('.js-check') { click_on 'All' }
 
-        all('input[type=checkbox]').each do |checkbox|
-          expect(checkbox).to be_checked
-        end
+        expect(all('input[type=checkbox]')).to all(be_checked)
 
         within('.js-check') { click_on 'None' }
 
@@ -170,27 +168,27 @@ feature 'Moderate comments' do
     end
 
     scenario "sorting comments" do
-      create(:comment, body: "Flagged comment", created_at: Time.current - 1.day, flags_count: 5)
-      create(:comment, body: "Flagged newer comment", created_at: Time.current - 12.hours, flags_count: 3)
-      create(:comment, body: "Newer comment", created_at: Time.current)
+      flagged_comment = create(:comment, body: "Flagged comment", created_at: Time.current - 1.day, flags_count: 5)
+      flagged_new_comment = create(:comment, body: "Flagged new comment", created_at: Time.current - 12.hours, flags_count: 3)
+      newer_comment = create(:comment, body: "Newer comment", created_at: Time.current)
 
       visit moderation_comments_path(order: 'newest')
 
-      expect("Flagged newer comment").to appear_before("Flagged comment")
+      expect(flagged_new_comment.body).to appear_before(flagged_comment.body)
 
       visit moderation_comments_path(order: 'flags')
 
-      expect("Flagged comment").to appear_before("Flagged newer comment")
+      expect(flagged_comment.body).to appear_before(flagged_new_comment.body)
 
       visit moderation_comments_path(filter: 'all', order: 'newest')
 
-      expect("Newer comment").to appear_before("Flagged newer comment")
-      expect("Flagged newer comment").to appear_before("Flagged comment")
+      expect(newer_comment.body).to appear_before(flagged_new_comment.body)
+      expect(flagged_new_comment.body).to appear_before(flagged_comment.body)
 
       visit moderation_comments_path(filter: 'all', order: 'flags')
 
-      expect("Flagged comment").to appear_before("Flagged newer comment")
-      expect("Flagged newer comment").to appear_before("Newer comment")
+      expect(flagged_comment.body).to appear_before(flagged_new_comment.body)
+      expect(flagged_new_comment.body).to appear_before(newer_comment.body)
     end
 
     context "Commentables" do

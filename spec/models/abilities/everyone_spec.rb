@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'cancan/matchers'
 
-describe "Abilities::Everyone" do
+describe Abilities::Everyone do
   subject(:ability) { Ability.new(user) }
 
   let(:user) { nil }
