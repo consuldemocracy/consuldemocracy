@@ -112,3 +112,6 @@ RSpec/ItBehavesLike:
 
 RSpec/IteratedExpectation:
   Enabled: true
+
+RSpec/LeadingSubject:
+  Enabled: true
