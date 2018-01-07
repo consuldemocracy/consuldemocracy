@@ -29,13 +29,13 @@ feature 'Moderate users' do
     end
 
     expect(page).to have_current_path(debates_path)
-    expect(page).to_not have_content(debate1.title)
-    expect(page).to_not have_content(debate2.title)
+    expect(page).not_to have_content(debate1.title)
+    expect(page).not_to have_content(debate2.title)
     expect(page).to have_content(debate3.title)
 
     visit debate_path(debate3)
 
-    expect(page).to_not have_content(comment3.body)
+    expect(page).not_to have_content(comment3.body)
 
     click_link("Sign out")
 

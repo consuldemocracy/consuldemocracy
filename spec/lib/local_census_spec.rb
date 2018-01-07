@@ -48,7 +48,7 @@ describe LocalCensus do
       allow(api).to receive(:get_record).with(1, "0123456").and_return(invalid_body)
       response = api.call(1, "123456")
 
-      expect(response).to_not be_valid
+      expect(response).not_to be_valid
     end
   end
 

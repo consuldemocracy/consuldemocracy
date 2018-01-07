@@ -29,7 +29,7 @@ feature 'Localization' do
 
     select('Español', from: 'locale-switcher')
     expect(page).to have_content('Idioma')
-    expect(page).to_not have_content('Language')
+    expect(page).not_to have_content('Language')
     expect(page).to have_select('locale-switcher', selected: 'Español')
   end
 
@@ -37,7 +37,7 @@ feature 'Localization' do
     allow(I18n).to receive(:available_locales).and_return([:en])
 
     visit '/'
-    expect(page).to_not have_content('Language')
-    expect(page).to_not have_css('div.locale')
+    expect(page).not_to have_content('Language')
+    expect(page).not_to have_css('div.locale')
   end
 end

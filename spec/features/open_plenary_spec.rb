@@ -32,8 +32,8 @@ feature 'Open Plenary' do
       expect(page).to have_content(proposal.title)
       expect(page).to have_content('Pleno Abierto')
 
-      expect(page).to_not have_content "0% / 100%"
-      expect(page).to_not have_content('supports needed')
+      expect(page).not_to have_content "0% / 100%"
+      expect(page).not_to have_content('supports needed')
     end
   end
 
@@ -46,8 +46,8 @@ feature 'Open Plenary' do
       expect(page).to have_content(proposal.title)
       expect(page).to have_content('Pleno Abierto')
 
-      expect(page).to_not have_content "0% / 100%"
-      expect(page).to_not have_content('supports needed')
+      expect(page).not_to have_content "0% / 100%"
+      expect(page).not_to have_content('supports needed')
     end
   end
 

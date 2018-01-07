@@ -37,7 +37,7 @@ feature 'Budget Investments' do
       within('#budget-investments') do
         expect(page).to have_content investment.title
         expect(page).to have_css("a[href='#{budget_investment_path(budget, id: investment.id)}']", text: investment.title)
-        expect(page).to_not have_content(unfeasible_investment.title)
+        expect(page).not_to have_content(unfeasible_investment.title)
       end
     end
   end
@@ -52,7 +52,7 @@ feature 'Budget Investments' do
     visit budget_investments_path(budget, heading_id: heading.id)
 
     within("#budget_investment_#{investment.id}") do
-      expect(page).to_not have_css("div.with-image")
+      expect(page).not_to have_css("div.with-image")
     end
     within("#budget_investment_#{investment_with_image.id}") do
       expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
@@ -80,7 +80,7 @@ feature 'Budget Investments' do
 
         expect(page).to have_content(investment1.title)
         expect(page).to have_content(investment2.title)
-        expect(page).to_not have_content(investment3.title)
+        expect(page).not_to have_content(investment3.title)
       end
     end
 
@@ -100,9 +100,9 @@ feature 'Budget Investments' do
         expect(page).to have_css('.budget-investment', count: 1)
 
         expect(page).to have_content(investment1.title)
-        expect(page).to_not have_content(investment2.title)
-        expect(page).to_not have_content(investment3.title)
-        expect(page).to_not have_content(investment4.title)
+        expect(page).not_to have_content(investment2.title)
+        expect(page).not_to have_content(investment3.title)
+        expect(page).not_to have_content(investment4.title)
       end
     end
 
@@ -150,7 +150,7 @@ feature 'Budget Investments' do
       visit budget_investments_path(budget, heading_id: heading.id)
       new_order = eq(all(".budget-investment h3").collect {|i| i.text })
 
-      expect(order).to_not eq(new_order)
+      expect(order).not_to eq(new_order)
     end
 
     scenario "Random order after another order" do
@@ -165,7 +165,7 @@ feature 'Budget Investments' do
       visit budget_investments_path(budget, heading_id: heading.id)
       new_order = eq(all(".budget-investment h3").collect {|i| i.text })
 
-      expect(order).to_not eq(new_order)
+      expect(order).not_to eq(new_order)
     end
 
     scenario 'Random order maintained with pagination', :js do
@@ -385,7 +385,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "item"
 
         within('div#js-suggest') do
-          expect(page).to_not have_content 'You are seeing'
+          expect(page).not_to have_content 'You are seeing'
         end
       end
 
@@ -400,7 +400,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "search"
 
         within('div#js-suggest') do
-          expect(page).to_not have_content 'You are seeing'
+          expect(page).not_to have_content 'You are seeing'
         end
       end
     end
@@ -410,10 +410,10 @@ feature 'Budget Investments' do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      expect(page).to_not have_link('Check my ballot')
-      expect(page).to_not have_css('#progress_bar')
+      expect(page).not_to have_link('Check my ballot')
+      expect(page).not_to have_css('#progress_bar')
       within('#sidebar') do
-        expect(page).to_not have_content('My ballot')
+        expect(page).not_to have_content('My ballot')
       end
     end
   end
@@ -490,9 +490,9 @@ feature 'Budget Investments' do
       budget.update(phase: "selecting")
       visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
-      expect(page).to_not have_content("Unfeasibility explanation")
-      expect(page).to_not have_content("Price explanation")
-      expect(page).to_not have_content(investment.price_explanation)
+      expect(page).not_to have_content("Unfeasibility explanation")
+      expect(page).not_to have_content("Price explanation")
+      expect(page).not_to have_content(investment.price_explanation)
     end
 
     scenario "Budget in balloting phase" do
@@ -598,7 +598,7 @@ feature 'Budget Investments' do
       visit user_path(user)
 
       within("#budget_investment_#{investment.id}") do
-        expect(page).to_not have_link "Delete"
+        expect(page).not_to have_link "Delete"
       end
     end
 
@@ -654,7 +654,7 @@ feature 'Budget Investments' do
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
         within("#budget_investment_#{carabanchel_investment.id}") do
-          expect(page).to_not have_css(".in-favor a[data-confirm]")
+          expect(page).not_to have_css(".in-favor a[data-confirm]")
         end
       end
 
@@ -685,7 +685,7 @@ feature 'Budget Investments' do
         visit budget_investments_path(budget, heading_id: heading.id)
 
         within("#budget_investment_#{all_city_investment.id}") do
-          expect(page).to_not have_css(".in-favor a[data-confirm]")
+          expect(page).not_to have_css(".in-favor a[data-confirm]")
         end
       end
     end
@@ -858,8 +858,8 @@ feature 'Budget Investments' do
         expect(page).to have_content sp2.title
         expect(page).to have_content sp2.price
 
-        expect(page).to_not have_content sp3.title
-        expect(page).to_not have_content sp3.price
+        expect(page).not_to have_content sp3.title
+        expect(page).not_to have_content sp3.price
       end
 
       within("#budget_group_#{group.id}") do
@@ -869,8 +869,8 @@ feature 'Budget Investments' do
         expect(page).to have_content sp5.title
         expect(page).to have_content "€10,000"
 
-        expect(page).to_not have_content sp6.title
-        expect(page).to_not have_content "€100,000"
+        expect(page).not_to have_content sp6.title
+        expect(page).not_to have_content "€100,000"
       end
     end
 
@@ -898,9 +898,9 @@ feature 'Budget Investments' do
         expect(page).to have_css('.budget-investment', count: 1)
 
         expect(page).to have_content(investment1.title)
-        expect(page).to_not have_content(investment2.title)
-        expect(page).to_not have_content(investment3.title)
-        expect(page).to_not have_content(investment4.title)
+        expect(page).not_to have_content(investment2.title)
+        expect(page).not_to have_content(investment3.title)
+        expect(page).not_to have_content(investment4.title)
       end
     end
 
@@ -939,7 +939,7 @@ feature 'Budget Investments' do
       visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unselected")
 
       expect(page).to have_content investment.title
-      expect(page).to_not have_link("Vote")
+      expect(page).not_to have_link("Vote")
     end
 
     scenario "Do not display vote button for unselected investments in show" do
@@ -948,7 +948,7 @@ feature 'Budget Investments' do
       visit budget_investment_path(budget, investment)
 
       expect(page).to have_content investment.title
-      expect(page).to_not have_link("Vote")
+      expect(page).not_to have_link("Vote")
     end
 
     feature "Reclassification" do
@@ -1011,7 +1011,7 @@ feature 'Budget Investments' do
       click_link "Go back"
 
       expect(page).to     have_content investment1.title
-      expect(page).to_not have_content investment2.title
+      expect(page).not_to have_content investment2.title
     end
 
   end
@@ -1036,10 +1036,10 @@ feature 'Budget Investments' do
       within("#budget_investment_#{investment1.id}") do
         expect(page).to have_content investment1.title
 
-        expect(page).to_not have_content investment1.author.username
-        expect(page).to_not have_content investment1.description
-        expect(page).to_not have_content investment1.heading.name
-        expect(page).to_not have_content investment1.tag_list.first
+        expect(page).not_to have_content investment1.author.username
+        expect(page).not_to have_content investment1.description
+        expect(page).not_to have_content investment1.heading.name
+        expect(page).not_to have_content investment1.tag_list.first
       end
     end
 

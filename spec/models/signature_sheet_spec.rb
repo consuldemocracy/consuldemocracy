@@ -20,22 +20,22 @@ describe SignatureSheet do
 
     it "is not valid without signable" do
       signature_sheet.signable = nil
-      expect(signature_sheet).to_not be_valid
+      expect(signature_sheet).not_to be_valid
     end
 
     it "is not valid without a valid signable" do
       signature_sheet.signable = create(:comment)
-      expect(signature_sheet).to_not be_valid
+      expect(signature_sheet).not_to be_valid
     end
 
     it "is not valid without document numbers" do
       signature_sheet.document_numbers = nil
-      expect(signature_sheet).to_not be_valid
+      expect(signature_sheet).not_to be_valid
     end
 
     it "is not valid without an author" do
       signature_sheet.author = nil
-      expect(signature_sheet).to_not be_valid
+      expect(signature_sheet).not_to be_valid
     end
   end
 

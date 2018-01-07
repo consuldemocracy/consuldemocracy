@@ -13,7 +13,7 @@ describe Activity do
     expect(build(:activity, action: "hide")).to be_valid
     expect(build(:activity, action: "block")).to be_valid
     expect(build(:activity, action: "restore")).to be_valid
-    expect(build(:activity, action: "dissapear")).to_not be_valid
+    expect(build(:activity, action: "dissapear")).not_to be_valid
   end
 
   describe "log" do

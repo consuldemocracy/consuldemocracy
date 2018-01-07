@@ -15,23 +15,23 @@ describe Debate do
 
   it "is not valid without an author" do
     debate.author = nil
-    expect(debate).to_not be_valid
+    expect(debate).not_to be_valid
   end
 
   describe "#title" do
     it "is not valid without a title" do
       debate.title = nil
-      expect(debate).to_not be_valid
+      expect(debate).not_to be_valid
     end
 
     it "is not valid when very short" do
       debate.title = "abc"
-      expect(debate).to_not be_valid
+      expect(debate).not_to be_valid
     end
 
     it "is not valid when very long" do
       debate.title = "a" * 81
-      expect(debate).to_not be_valid
+      expect(debate).not_to be_valid
     end
 
     it "should be valid with a comment kind of comment" do
@@ -46,14 +46,14 @@ describe Debate do
 
     it "should not be valid with a wrong comment kind" do
       debate.comment_kind = 'misc'
-      expect(debate).to_not be_valid
+      expect(debate).not_to be_valid
     end
   end
 
   describe "#description" do
     it "is not valid without a description" do
       debate.description = nil
-      expect(debate).to_not be_valid
+      expect(debate).not_to be_valid
     end
 
     it "is sanitized" do
@@ -69,12 +69,12 @@ describe Debate do
 
     it "is not valid when very short" do
       debate.description = "abc"
-      expect(debate).to_not be_valid
+      expect(debate).not_to be_valid
     end
 
     it "is not valid when very long" do
       debate.description = "a" * 20001
-      expect(debate).to_not be_valid
+      expect(debate).not_to be_valid
     end
   end
 
@@ -87,7 +87,7 @@ describe Debate do
 
     it "is not valid with a tag list of more than 6 elements" do
       debate.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
-      expect(debate).to_not be_valid
+      expect(debate).not_to be_valid
     end
 
     it "is valid with a tag list of 6 elements" do
@@ -98,7 +98,7 @@ describe Debate do
 
   it "is not valid without accepting terms of service" do
     debate.terms_of_service = nil
-    expect(debate).to_not be_valid
+    expect(debate).not_to be_valid
   end
 
   describe "#editable?" do
@@ -203,7 +203,7 @@ describe Debate do
 
       it "does not increase anonymous votes counter " do
         user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
-        expect {debate.register_vote(user, 'yes')}.to_not change{debate.reload.cached_anonymous_votes_total}
+        expect {debate.register_vote(user, 'yes')}.not_to change{debate.reload.cached_anonymous_votes_total}
       end
     end
 
@@ -215,7 +215,7 @@ describe Debate do
 
       it "does not increase anonymous votes counter " do
         user = create(:user, verified_at: Time.current)
-        expect {debate.register_vote(user, 'yes')}.to_not change{debate.reload.cached_anonymous_votes_total}
+        expect {debate.register_vote(user, 'yes')}.not_to change{debate.reload.cached_anonymous_votes_total}
       end
     end
 
@@ -238,12 +238,12 @@ describe Debate do
 
       it "does not register vote " do
         user = create(:user)
-        expect {debate.register_vote(user, 'yes')}.to_not change {debate.reload.votes_for.size}
+        expect {debate.register_vote(user, 'yes')}.not_to change {debate.reload.votes_for.size}
       end
 
       it "does not increase anonymous votes counter " do
         user = create(:user)
-        expect {debate.register_vote(user, 'yes')}.to_not change {debate.reload.cached_anonymous_votes_total}
+        expect {debate.register_vote(user, 'yes')}.not_to change {debate.reload.cached_anonymous_votes_total}
       end
     end
   end
@@ -440,25 +440,25 @@ describe Debate do
     it "returns false when it has less than or equal to 1 flag for 5 positive votes" do
       debate.update(cached_votes_up: 5)
       debate.update(flags_count: 1)
-      expect(debate).to_not be_conflictive
+      expect(debate).not_to be_conflictive
 
       debate.update(cached_votes_up: 10)
       debate.update(flags_count: 2)
-      expect(debate).to_not be_conflictive
+      expect(debate).not_to be_conflictive
 
       debate.update(cached_votes_up: 100)
       debate.update(flags_count: 2)
-      expect(debate).to_not be_conflictive
+      expect(debate).not_to be_conflictive
     end
 
     it "returns false when it has no flags" do
       debate.update(flags_count: 0)
-      expect(debate).to_not be_conflictive
+      expect(debate).not_to be_conflictive
     end
 
     it "returns false when it has not votes up" do
       debate.update(cached_votes_up: 0)
-      expect(debate).to_not be_conflictive
+      expect(debate).not_to be_conflictive
     end
 
   end
@@ -719,7 +719,7 @@ describe Debate do
 
     it "does not show debates created more than a week ago" do
       debate = create(:debate, created_at: 8.days.ago)
-      expect(described_class.last_week.all).to_not include debate
+      expect(described_class.last_week.all).not_to include debate
     end
   end
 
@@ -740,7 +740,7 @@ describe Debate do
       probe.probe_options.create(debate: debate2)
 
       expect(Debate.not_probe).to include(debate3)
-      expect(Debate.not_probe).to_not include(debate1, debate2)
+      expect(Debate.not_probe).not_to include(debate1, debate2)
     end
   end
 
@@ -752,7 +752,7 @@ describe Debate do
 
     it 'does not return hidden debates' do
       debate = create(:debate, :hidden)
-      expect(described_class.public_for_api).to_not include(debate)
+      expect(described_class.public_for_api).not_to include(debate)
     end
   end
 

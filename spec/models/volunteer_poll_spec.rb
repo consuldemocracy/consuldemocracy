@@ -11,27 +11,27 @@ describe VolunteerPoll do
 
     it "should not be valid with an email" do
       volunteer.email = nil
-      expect(volunteer).to_not be_valid
+      expect(volunteer).not_to be_valid
     end
 
     it "should not be valid with a first name" do
       volunteer.first_name = nil
-      expect(volunteer).to_not be_valid
+      expect(volunteer).not_to be_valid
     end
 
     it "should not be valid with a last name" do
       volunteer.last_name = nil
-      expect(volunteer).to_not be_valid
+      expect(volunteer).not_to be_valid
     end
 
     it "should not be valid with a document number" do
       volunteer.document_number = nil
-      expect(volunteer).to_not be_valid
+      expect(volunteer).not_to be_valid
     end
 
     it "should not be valid with a phone" do
       volunteer.phone = nil
-      expect(volunteer).to_not be_valid
+      expect(volunteer).not_to be_valid
     end
   end
 

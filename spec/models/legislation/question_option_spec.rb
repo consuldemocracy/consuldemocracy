@@ -13,6 +13,6 @@ RSpec.describe Legislation::QuestionOption, type: :model do
 
     invalid_question_option = build(:legislation_question_option, question: question, value: "uno")
 
-    expect(invalid_question_option).to_not be_valid
+    expect(invalid_question_option).not_to be_valid
   end
 end

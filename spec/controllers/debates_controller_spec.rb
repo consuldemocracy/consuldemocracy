@@ -43,7 +43,7 @@ describe DebatesController do
 
       expect do
         xhr :post, :vote, id: debate.id, value: 'yes'
-      end.to_not change { debate.reload.votes_for.size }
+      end.not_to change { debate.reload.votes_for.size }
     end
   end
 end

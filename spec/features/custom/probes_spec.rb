@@ -21,7 +21,7 @@ feature 'Probes' do
         expect(page).to have_content 'Selecciona el proyecto que quieres votar'
         expect(page).to have_content 'First Option'
         expect(page).to have_content 'Second Option'
-        expect(page).to_not have_content 'Enviar voto'
+        expect(page).not_to have_content 'Enviar voto'
       end
 
       scenario 'User selects an option' do
@@ -50,7 +50,7 @@ feature 'Probes' do
       visit probe_path(id: @probe.codename)
 
       expect(@probe_option_2.name).to appear_before(@probe_option_1.name)
-      expect(page).to_not have_content 'Enviar voto'
+      expect(page).not_to have_content 'Enviar voto'
     end
   end
 
@@ -108,8 +108,8 @@ feature 'Probes' do
         expect(page).to have_content 'You must Sign in or Sign up to participate'
         expect(page).to have_content 'Plaza Option 1'
         expect(page).to have_content 'Plaza Option II'
-        expect(page).to_not have_css("#probe_option_#{@probe_option_1.id}_form")
-        expect(page).to_not have_css("#probe_option_#{@probe_option_2.id}_form")
+        expect(page).not_to have_css("#probe_option_#{@probe_option_1.id}_form")
+        expect(page).not_to have_css("#probe_option_#{@probe_option_2.id}_form")
 
         login_as(create(:user))
 
@@ -118,8 +118,8 @@ feature 'Probes' do
         expect(page).to have_content 'To participate in this process you need to verify your account'
         expect(page).to have_content 'Plaza Option 1'
         expect(page).to have_content 'Plaza Option II'
-        expect(page).to_not have_css("#probe_option_#{@probe_option_1.id}_form")
-        expect(page).to_not have_css("#probe_option_#{@probe_option_2.id}_form")
+        expect(page).not_to have_css("#probe_option_#{@probe_option_1.id}_form")
+        expect(page).not_to have_css("#probe_option_#{@probe_option_2.id}_form")
       end
 
       scenario 'User selects an option' do
@@ -165,8 +165,8 @@ feature 'Probes' do
 
         visit debates_path
 
-        expect(page).to_not have_content @probe_option_1.debate.title
-        expect(page).to_not have_content @probe_option_2.debate.title
+        expect(page).not_to have_content @probe_option_1.debate.title
+        expect(page).not_to have_content @probe_option_2.debate.title
       end
     end
 

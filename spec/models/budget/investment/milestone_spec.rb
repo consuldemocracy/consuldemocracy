@@ -11,17 +11,17 @@ describe Budget::Investment::Milestone do
 
     it "is not valid without a title" do
       milestone.title = nil
-      expect(milestone).to_not be_valid
+      expect(milestone).not_to be_valid
     end
 
     it "is not valid without a description" do
       milestone.description = nil
-      expect(milestone).to_not be_valid
+      expect(milestone).not_to be_valid
     end
 
     it "is not valid without an investment" do
       milestone.investment_id = nil
-      expect(milestone).to_not be_valid
+      expect(milestone).not_to be_valid
     end
   end
 

@@ -40,7 +40,7 @@ feature 'Debates' do
     within("ul.pagination") do
       expect(page).to have_content("1")
       expect(page).to have_content("2")
-      expect(page).to_not have_content("3")
+      expect(page).not_to have_content("3")
       click_link "Next", exact: false
     end
 
@@ -175,7 +175,7 @@ feature 'Debates' do
     login_as(admin.user)
 
     visit new_debate_path(tag: "open-plenary")
-    expect(page).to_not have_css 'debate_comment_kind'
+    expect(page).not_to have_css 'debate_comment_kind'
   end
 
   scenario 'Create with invisible_captcha honeypot field' do
@@ -236,8 +236,8 @@ feature 'Debates' do
     expect(page).to have_content 'Debate created successfully.'
     expect(page).to have_content 'Testing an attack'
     expect(page.html).to include '<p>This is alert("an attack");</p>'
-    expect(page.html).to_not include '<script>alert("an attack");</script>'
-    expect(page.html).to_not include '&lt;p&gt;This is'
+    expect(page.html).not_to include '<script>alert("an attack");</script>'
+    expect(page.html).not_to include '&lt;p&gt;This is'
   end
 
   scenario 'Autolinking is applied to description' do
@@ -272,13 +272,13 @@ feature 'Debates' do
     expect(page).to have_content 'Testing auto link'
     expect(page).to have_link('http://example.org', href: 'http://example.org')
     expect(page).not_to have_link('click me')
-    expect(page.html).to_not include "<script>alert('hey')</script>"
+    expect(page.html).not_to include "<script>alert('hey')</script>"
 
     click_link 'Edit'
 
     expect(page).to have_current_path(edit_debate_path(Debate.last))
     expect(page).not_to have_link('click me')
-    expect(page.html).to_not include "<script>alert('hey')</script>"
+    expect(page.html).not_to include "<script>alert('hey')</script>"
   end
 
   scenario 'Update should not be posible if logged user is not the author' do
@@ -297,7 +297,7 @@ feature 'Debates' do
     Setting["max_votes_for_debate_edit"] = 2
     3.times { create(:vote, votable: debate) }
 
-    expect(debate).to_not be_editable
+    expect(debate).not_to be_editable
     login_as(debate.author)
 
     visit edit_debate_path(debate)
@@ -367,7 +367,7 @@ feature 'Debates' do
       expect(page).to have_css("#flag-expand-debate-#{debate.id}")
     end
 
-    expect(Flag.flagged?(user, debate)).to_not be
+    expect(Flag.flagged?(user, debate)).not_to be
   end
 
   feature 'Debate index order filters' do
@@ -513,7 +513,7 @@ feature 'Debates' do
 
           expect(page).to have_content(debate1.title)
           expect(page).to have_content(debate2.title)
-          expect(page).to_not have_content(debate3.title)
+          expect(page).not_to have_content(debate3.title)
         end
       end
 
@@ -548,7 +548,7 @@ feature 'Debates' do
         within("#debates") do
           expect(page).to have_content(debate1.title)
           expect(page).to have_content(debate2.title)
-          expect(page).to_not have_content(debate3.title)
+          expect(page).not_to have_content(debate3.title)
         end
       end
 
@@ -573,7 +573,7 @@ feature 'Debates' do
           within("#debates") do
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
-            expect(page).to_not have_content(debate3.title)
+            expect(page).not_to have_content(debate3.title)
           end
         end
 
@@ -596,7 +596,7 @@ feature 'Debates' do
           within("#debates") do
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
-            expect(page).to_not have_content(debate3.title)
+            expect(page).not_to have_content(debate3.title)
           end
         end
 
@@ -619,7 +619,7 @@ feature 'Debates' do
           within("#debates") do
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
-            expect(page).to_not have_content(debate3.title)
+            expect(page).not_to have_content(debate3.title)
           end
         end
 
@@ -642,7 +642,7 @@ feature 'Debates' do
           within("#debates") do
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
-            expect(page).to_not have_content(debate3.title)
+            expect(page).not_to have_content(debate3.title)
           end
         end
 
@@ -665,7 +665,7 @@ feature 'Debates' do
           within("#debates") do
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
-            expect(page).to_not have_content(debate3.title)
+            expect(page).not_to have_content(debate3.title)
           end
         end
 
@@ -691,7 +691,7 @@ feature 'Debates' do
 
               expect(page).to have_content(debate1.title)
               expect(page).to have_content(debate2.title)
-              expect(page).to_not have_content(debate3.title)
+              expect(page).not_to have_content(debate3.title)
             end
           end
 
@@ -711,7 +711,7 @@ feature 'Debates' do
 
               expect(page).to have_content(debate1.title)
               expect(page).to have_content(debate2.title)
-              expect(page).to_not have_content(debate3.title)
+              expect(page).not_to have_content(debate3.title)
             end
           end
 
@@ -731,7 +731,7 @@ feature 'Debates' do
 
               expect(page).to have_content(debate1.title)
               expect(page).to have_content(debate2.title)
-              expect(page).to_not have_content(debate3.title)
+              expect(page).not_to have_content(debate3.title)
             end
           end
 
@@ -751,7 +751,7 @@ feature 'Debates' do
 
               expect(page).to have_content(debate1.title)
               expect(page).to have_content(debate2.title)
-              expect(page).to_not have_content(debate3.title)
+              expect(page).not_to have_content(debate3.title)
             end
           end
 
@@ -775,7 +775,7 @@ feature 'Debates' do
 
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
-            expect(page).to_not have_content(debate3.title)
+            expect(page).not_to have_content(debate3.title)
           end
         end
 
@@ -894,7 +894,7 @@ feature 'Debates' do
         expect(all(".debate")[0].text).to match "Show you got"
         expect(all(".debate")[1].text).to match "Show you got"
         expect(all(".debate")[2].text).to match "Show what you got"
-        expect(page).to_not have_content "Do not display"
+        expect(page).not_to have_content "Do not display"
       end
     end
 
@@ -918,8 +918,8 @@ feature 'Debates' do
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
         expect(all(".debate")[1].text).to match "Show what you got"
-        expect(page).to_not have_content "Do not display with same tag"
-        expect(page).to_not have_content "Do not display"
+        expect(page).not_to have_content "Do not display with same tag"
+        expect(page).not_to have_content "Do not display"
       end
       Setting['feature.user.recommendations'] = nil
     end
@@ -934,8 +934,8 @@ feature 'Debates' do
         click_button "Search"
       end
 
-      expect(page).to_not have_selector('#debates .debate-featured')
-      expect(page).to_not have_selector('#featured-debates')
+      expect(page).not_to have_selector('#debates .debate-featured')
+      expect(page).not_to have_selector('#featured-debates')
     end
 
   end
@@ -948,7 +948,7 @@ feature 'Debates' do
     expect(page).to have_content "This debate has been flagged as inappropriate by several users."
 
     visit debate_path(good_debate)
-    expect(page).to_not have_content "This debate has been flagged as inappropriate by several users."
+    expect(page).not_to have_content "This debate has been flagged as inappropriate by several users."
   end
 
   scenario 'Erased author' do
@@ -989,7 +989,7 @@ feature 'Debates' do
           expect(page).to have_css('.debate', count: 2)
           expect(page).to have_content(@debate1.title)
           expect(page).to have_content(@debate2.title)
-          expect(page).to_not have_content(@debate3.title)
+          expect(page).not_to have_content(@debate3.title)
         end
       end
 
@@ -1004,7 +1004,7 @@ feature 'Debates' do
           expect(page).to have_css('.debate', count: 2)
           expect(page).to have_content(@debate1.title)
           expect(page).to have_content(@debate2.title)
-          expect(page).to_not have_content(@debate3.title)
+          expect(page).not_to have_content(@debate3.title)
         end
       end
 
@@ -1019,7 +1019,7 @@ feature 'Debates' do
           expect(page).to have_css('.debate', count: 2)
           expect(page).to have_content(@debate1.title)
           expect(page).to have_content(@debate2.title)
-          expect(page).to_not have_content(@debate3.title)
+          expect(page).not_to have_content(@debate3.title)
         end
       end
 
@@ -1060,7 +1060,7 @@ feature 'Debates' do
       check "debate_terms_of_service"
 
       within('div#js-suggest') do
-        expect(page).to_not have_content 'You are seeing'
+        expect(page).not_to have_content 'You are seeing'
       end
     end
   end
@@ -1073,7 +1073,7 @@ feature 'Debates' do
 
     visit debates_path
     within('#debates') do
-      expect(page).to_not have_content 'Featured'
+      expect(page).not_to have_content 'Featured'
     end
 
     click_link debate.title
@@ -1094,7 +1094,7 @@ feature 'Debates' do
     click_link 'Unmark featured'
 
     within('#debates') do
-      expect(page).to_not have_content 'Featured'
+      expect(page).not_to have_content 'Featured'
     end
   end
 
@@ -1120,7 +1120,7 @@ feature 'Debates' do
 
     visit debates_path
     within('#debates') do
-      expect(page).to_not have_content("Featured")
+      expect(page).not_to have_content("Featured")
     end
   end
 

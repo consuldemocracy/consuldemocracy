@@ -19,7 +19,7 @@ describe ProbeOption do
 
     it 'should not register selection if selecting is not allowed' do
       @probe.update!(selecting_allowed: false)
-      expect{ @probe_option.select(@user) }.to_not change { ProbeSelection.count }
+      expect{ @probe_option.select(@user) }.not_to change { ProbeSelection.count }
     end
 
     it 'removes previous user selection in the same probe' do

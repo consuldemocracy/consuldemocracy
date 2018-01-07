@@ -52,7 +52,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_proposal.title)
-      expect(csv).to_not include(hidden_proposal.title)
+      expect(csv).not_to include(hidden_proposal.title)
     end
 
     scenario "Only include proposals of the Human Rights proceeding" do
@@ -67,7 +67,7 @@ feature 'CSV Exporter' do
 
       expect(csv).to include(proposal.title)
       expect(csv).to include(human_rights_proposal.title)
-      expect(csv).to_not include(other_proceeding_proposal.title)
+      expect(csv).not_to include(other_proceeding_proposal.title)
     end
 
     scenario "Displays proposals of authors even if public activity is set to false" do
@@ -94,7 +94,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to     include(/#{created_at.strftime("%Y-%m-%d %H")}/)
-      expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
+      expect(csv).not_to include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
     end
 
     scenario "Leave dates other than created_at untouched" do
@@ -146,7 +146,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_debate.title)
-      expect(csv).to_not include(hidden_debate.title)
+      expect(csv).not_to include(hidden_debate.title)
     end
 
     scenario "Displays debates of authors even if public activity is set to false" do
@@ -173,7 +173,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to     include(/#{created_at.strftime("%Y-%m-%d %H")}/)
-      expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
+      expect(csv).not_to include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
     end
 
   end
@@ -214,7 +214,7 @@ feature 'CSV Exporter' do
 
       expect(csv).to include(proposal_comment.body)
       expect(csv).to include(debate_comment.body)
-      expect(csv).to_not include(spending_proposal_comment.body)
+      expect(csv).not_to include(spending_proposal_comment.body)
     end
 
     scenario "Displays comments of authors even if public activity is set to false" do
@@ -241,7 +241,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_comment.body)
-      expect(csv).to_not include(hidden_comment.body)
+      expect(csv).not_to include(hidden_comment.body)
     end
 
     scenario "Do not include comments from hidden proposals" do
@@ -256,7 +256,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_proposal_comment.body)
-      expect(csv).to_not include(hidden_proposal_comment.body)
+      expect(csv).not_to include(hidden_proposal_comment.body)
     end
 
     scenario "Do not include comments from hidden debates" do
@@ -271,7 +271,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_debate_comment.body)
-      expect(csv).to_not include(hidden_debate_comment.body)
+      expect(csv).not_to include(hidden_debate_comment.body)
     end
 
     scenario "Do not include comments of debates that are not public" do
@@ -282,7 +282,7 @@ feature 'CSV Exporter' do
       visit csv_path_for("comments")
       csv = parse_csv(page.html).flatten
 
-      expect(csv).to_not include(not_public_debate_comment.body)
+      expect(csv).not_to include(not_public_debate_comment.body)
     end
 
     scenario "Do not include comments of proposals that are not public" do
@@ -293,7 +293,7 @@ feature 'CSV Exporter' do
       visit csv_path_for("comments")
       csv = parse_csv(page.html).flatten
 
-      expect(csv).to_not include(not_public_proposal_comment.body)
+      expect(csv).not_to include(not_public_proposal_comment.body)
     end
 
     scenario "Only display date and hour for created_at" do
@@ -305,7 +305,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to     include(/#{created_at.strftime("%Y-%m-%d %H")}/)
-      expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
+      expect(csv).not_to include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
     end
 
   end
@@ -358,7 +358,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_proposal_notification.title)
-      expect(csv).to_not include(hidden_proposal_notification.title)
+      expect(csv).not_to include(hidden_proposal_notification.title)
     end
 
     scenario "Do not include proposal notifications for proposals that are not public" do
@@ -369,7 +369,7 @@ feature 'CSV Exporter' do
       visit csv_path_for("proposal_notifications")
       csv = parse_csv(page.html).flatten
 
-      expect(csv).to_not include(not_public_proposal_notification.title)
+      expect(csv).not_to include(not_public_proposal_notification.title)
     end
 
     scenario "Only display date and hour for created_at" do
@@ -381,7 +381,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to     include(/#{created_at.strftime("%Y-%m-%d %H")}/)
-      expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
+      expect(csv).not_to include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
     end
 
   end
@@ -422,7 +422,7 @@ feature 'CSV Exporter' do
 
       expect(csv).to include("Parks")
       expect(csv).to include("Health")
-      expect(csv).to_not include("Admin tag")
+      expect(csv).not_to include("Admin tag")
     end
 
     scenario "Uppercase and lowercase tags work ok together for proposals" do
@@ -463,7 +463,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to include("Health")
-      expect(csv).to_not include("SPAM")
+      expect(csv).not_to include("SPAM")
     end
 
     scenario "Do not display tags for hidden debates" do
@@ -476,7 +476,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to include("Health")
-      expect(csv).to_not include("SPAM")
+      expect(csv).not_to include("SPAM")
     end
 
     scenario "Do not display tags for proceeding's proposals" do
@@ -490,7 +490,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to include("Health")
-      expect(csv).to_not include("Animals")
+      expect(csv).not_to include("Animals")
     end
 
     scenario "Do not display tags for taggings that are not public" do
@@ -507,11 +507,11 @@ feature 'CSV Exporter' do
       visit csv_path_for("tags")
       csv = parse_csv(page.html).flatten
 
-      expect(csv).to_not include("Hidden") # Used only on a hidden proposal
+      expect(csv).not_to include("Hidden") # Used only on a hidden proposal
       expect(csv).to include("Ok") # Used on a public proposal, nil kind
-      expect(csv).to_not include("Special") # Used on a public proposal, special kind
+      expect(csv).not_to include("Special") # Used on a public proposal, special kind
       expect(csv).to include("Category") # Used on a public proposal, category kind
-      expect(csv).to_not include("NotPorD") # Not used on proposals or debates
+      expect(csv).not_to include("NotPorD") # Not used on proposals or debates
     end
 
   end
@@ -550,7 +550,7 @@ feature 'CSV Exporter' do
 
       expect(csv).to include(proposal_tagging.taggable_type)
       expect(csv).to include(debate_tagging.taggable_type)
-      expect(csv).to_not include(spending_proposal_tagging.taggable_type)
+      expect(csv).not_to include(spending_proposal_tagging.taggable_type)
     end
 
     scenario "Do not include taggings for hidden debates" do
@@ -568,7 +568,7 @@ feature 'CSV Exporter' do
       taggable_ids = csv.collect {|element| element[1]}
 
       expect(taggable_ids).to include(visible_debate_tagging.taggable_id.to_s)
-      expect(taggable_ids).to_not include(hidden_debate_tagging.taggable_id.to_s)
+      expect(taggable_ids).not_to include(hidden_debate_tagging.taggable_id.to_s)
     end
 
     scenario "Do not include taggings for hidden proposals" do
@@ -586,7 +586,7 @@ feature 'CSV Exporter' do
       taggable_ids = csv.collect {|element| element[1]}
 
       expect(taggable_ids).to include(visible_proposal_tagging.taggable_id.to_s)
-      expect(taggable_ids).to_not include(hidden_proposal_tagging.taggable_id.to_s)
+      expect(taggable_ids).not_to include(hidden_proposal_tagging.taggable_id.to_s)
     end
 
     scenario "Only display tagging for a tag kind nil or category" do
@@ -602,7 +602,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_tag_tagging.taggable_type)
-      expect(csv).to_not include(hidden_tag_tagging.taggable_type)
+      expect(csv).not_to include(hidden_tag_tagging.taggable_type)
     end
 
     scenario "Do not include taggings for proposals that are not public" do
@@ -616,7 +616,7 @@ feature 'CSV Exporter' do
 
       taggable_ids = csv.collect {|element| element[1]}
 
-      expect(taggable_ids).to_not include(not_public_proposal_tagging.taggable_id.to_s)
+      expect(taggable_ids).not_to include(not_public_proposal_tagging.taggable_id.to_s)
     end
 
     scenario "Do not include taggings for debates that are not public" do
@@ -630,7 +630,7 @@ feature 'CSV Exporter' do
 
       taggable_ids = csv.collect {|element| element[1]}
 
-      expect(taggable_ids).to_not include(not_public_debate_tagging.taggable_id.to_s)
+      expect(taggable_ids).not_to include(not_public_debate_tagging.taggable_id.to_s)
     end
 
   end
@@ -672,7 +672,7 @@ feature 'CSV Exporter' do
       expect(csv).to include(proposal_vote.votable_type)
       expect(csv).to include(debate_vote.votable_type)
       expect(csv).to include(comment_vote.votable_type)
-      expect(csv).to_not include(spending_proposal_vote.votable_type)
+      expect(csv).not_to include(spending_proposal_vote.votable_type)
     end
 
     scenario "Do not include votes of a hidden debates" do
@@ -689,7 +689,7 @@ feature 'CSV Exporter' do
       votable_ids = csv.collect {|element| element[0]}
 
       expect(votable_ids).to include(visible_debate_vote.votable_id.to_s)
-      expect(votable_ids).to_not include(hidden_debate_vote.votable_id.to_s)
+      expect(votable_ids).not_to include(hidden_debate_vote.votable_id.to_s)
     end
 
     scenario "Do not include votes of a hidden proposals" do
@@ -706,7 +706,7 @@ feature 'CSV Exporter' do
       votable_ids = csv.collect {|element| element[0]}
 
       expect(votable_ids).to include(visible_proposal_vote.votable_id.to_s)
-      expect(votable_ids).to_not include(hidden_proposal_vote.votable_id.to_s)
+      expect(votable_ids).not_to include(hidden_proposal_vote.votable_id.to_s)
     end
 
     scenario "Do not include votes of a hidden comments" do
@@ -723,7 +723,7 @@ feature 'CSV Exporter' do
       votable_ids = csv.collect {|element| element[0]}
 
       expect(votable_ids).to include(visible_comment_vote.votable_id.to_s)
-      expect(votable_ids).to_not include(hidden_comment_vote.votable_id.to_s)
+      expect(votable_ids).not_to include(hidden_comment_vote.votable_id.to_s)
     end
 
     scenario "Do not include votes of comments from a hidden proposal" do
@@ -743,7 +743,7 @@ feature 'CSV Exporter' do
       votable_ids = csv.collect {|element| element[0]}
 
       expect(votable_ids).to include(visible_proposal_comment_vote.votable_id.to_s)
-      expect(votable_ids).to_not include(hidden_proposal_comment_vote.votable_id.to_s)
+      expect(votable_ids).not_to include(hidden_proposal_comment_vote.votable_id.to_s)
     end
 
     scenario "Do not include votes of comments from a hidden debate" do
@@ -763,7 +763,7 @@ feature 'CSV Exporter' do
       votable_ids = csv.collect {|element| element[0]}
 
       expect(votable_ids).to include(visible_debate_comment_vote.votable_id.to_s)
-      expect(votable_ids).to_not include(hidden_debate_comment_vote.votable_id.to_s)
+      expect(votable_ids).not_to include(hidden_debate_comment_vote.votable_id.to_s)
     end
 
     scenario "Do not include votes of debates that are not public" do
@@ -776,7 +776,7 @@ feature 'CSV Exporter' do
 
       votable_ids = csv.collect {|element| element[0]}
 
-      expect(votable_ids).to_not include(not_public_debate_vote.votable_id.to_s)
+      expect(votable_ids).not_to include(not_public_debate_vote.votable_id.to_s)
     end
 
     scenario "Do not include votes of a hidden proposals" do
@@ -789,7 +789,7 @@ feature 'CSV Exporter' do
 
       votable_ids = csv.collect {|element| element[0]}
 
-      expect(votable_ids).to_not include(not_public_proposal_vote.votable_id.to_s)
+      expect(votable_ids).not_to include(not_public_proposal_vote.votable_id.to_s)
     end
 
     scenario "Do not include votes of a hidden comments" do
@@ -802,7 +802,7 @@ feature 'CSV Exporter' do
 
       votable_ids = csv.collect {|element| element[0]}
 
-      expect(votable_ids).to_not include(not_public_comment_vote.votable_id.to_s)
+      expect(votable_ids).not_to include(not_public_comment_vote.votable_id.to_s)
     end
 
     scenario "Only display date and hour for created_at" do
@@ -814,7 +814,7 @@ feature 'CSV Exporter' do
       csv = parse_csv(page.html).flatten
 
       expect(csv).to     include(/#{created_at.strftime("%Y-%m-%d %H")}/)
-      expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
+      expect(csv).not_to include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
     end
 
   end

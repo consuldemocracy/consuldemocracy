@@ -41,7 +41,7 @@ describe User do
       flagged = user.comment_flags([comment1, comment2, comment3])
 
       expect(flagged[comment1.id]).to be
-      expect(flagged[comment2.id]).to_not be
+      expect(flagged[comment2.id]).not_to be
       expect(flagged[comment3.id]).to be
     end
   end
@@ -55,7 +55,7 @@ describe User do
   describe "#terms" do
     it "is not valid without accepting the terms of service" do
       subject.terms_of_service = nil
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
   end
 
@@ -190,14 +190,14 @@ describe User do
 
   describe "verified_organization?" do
     it "is falsy when the user is not an organization" do
-      expect(subject).to_not be_verified_organization
+      expect(subject).not_to be_verified_organization
     end
 
     describe 'when it is an organization' do
       before { create(:organization, user: subject) }
 
       it "is false when the user is not a verified organization" do
-        expect(subject).to_not be_verified_organization
+        expect(subject).not_to be_verified_organization
       end
 
       it "is true when the user is a verified organization" do
@@ -221,7 +221,7 @@ describe User do
       expect(subject).to be_valid
 
       subject.organization.name = nil
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
   end
 
@@ -355,7 +355,7 @@ describe User do
 
         expect(described_class.active).to include(user1)
         expect(described_class.active).to include(user2)
-        expect(described_class.active).to_not include(user3)
+        expect(described_class.active).not_to include(user3)
       end
 
       it "returns users that have not been blocked" do
@@ -366,7 +366,7 @@ describe User do
 
         expect(described_class.active).to include(user1)
         expect(described_class.active).to include(user2)
-        expect(described_class.active).to_not include(user3)
+        expect(described_class.active).not_to include(user3)
       end
 
     end
@@ -380,7 +380,7 @@ describe User do
 
         expect(described_class.erased).to include(user1)
         expect(described_class.erased).to include(user2)
-        expect(described_class.erased).to_not include(user3)
+        expect(described_class.erased).not_to include(user3)
       end
 
     end
@@ -497,7 +497,7 @@ describe User do
 
       user.erase('an identity test')
 
-      expect(Identity.exists?(identity.id)).to_not be
+      expect(Identity.exists?(identity.id)).not_to be
     end
 
   end

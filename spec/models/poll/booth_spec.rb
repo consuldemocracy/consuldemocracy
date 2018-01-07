@@ -10,7 +10,7 @@ describe Poll::Booth do
 
   it "is not valid without a name" do
     booth.name = nil
-    expect(booth).to_not be_valid
+    expect(booth).not_to be_valid
   end
 
   describe "#search" do
@@ -41,7 +41,7 @@ describe Poll::Booth do
 
       expect(described_class.available).to include(booth_for_current_poll)
       expect(described_class.available).to include(booth_for_incoming_poll)
-      expect(described_class.available).to_not include(booth_for_expired_poll)
+      expect(described_class.available).not_to include(booth_for_expired_poll)
     end
 
   end

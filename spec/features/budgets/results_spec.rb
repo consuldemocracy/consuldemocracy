@@ -60,7 +60,7 @@ feature 'Results' do
 
     within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
-      expect(page).to_not have_content other_investment.title
+      expect(page).not_to have_content other_investment.title
     end
   end
 

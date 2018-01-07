@@ -38,13 +38,13 @@ feature 'Recommendations' do
     visit budget_recommendations_path(budget, user_id: user.id)
 
     expect(page).to have_content investment_to_select.title
-    expect(page).to_not have_content investment_to_ballot.title
+    expect(page).not_to have_content investment_to_ballot.title
 
     budget.update!(phase: 'balloting')
     visit budget_recommendations_path(budget, user_id: user.id)
 
     expect(page).to have_content investment_to_ballot.title
-    expect(page).to_not have_content investment_to_select.title
+    expect(page).not_to have_content investment_to_select.title
   end
 
   scenario "Create (errors)" do
@@ -60,7 +60,7 @@ feature 'Recommendations' do
     click_button "Add to my list"
 
     expect(page).to have_content "Invalid ID"
-    expect(page).to_not have_content investment.title
+    expect(page).not_to have_content investment.title
   end
 
   scenario "Index" do
@@ -86,7 +86,7 @@ feature 'Recommendations' do
     expect(page).to have_content recommendation1.investment.title
     expect(page).to have_content recommendation2.investment.title
 
-    expect(page).to_not have_content recommendation3.investment.title
+    expect(page).not_to have_content recommendation3.investment.title
   end
 
   scenario "Support another person's recommendation", :js do
@@ -145,7 +145,7 @@ feature 'Recommendations' do
     click_link "Delete from my list"
 
     expect(page).to have_content "Investment project removed from the list"
-    expect(page).to_not have_content investment.title
+    expect(page).not_to have_content investment.title
   end
 
 end

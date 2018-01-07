@@ -10,23 +10,23 @@ describe SpendingProposal do
 
   it "should not be valid without an author" do
     spending_proposal.author = nil
-    expect(spending_proposal).to_not be_valid
+    expect(spending_proposal).not_to be_valid
   end
 
   describe "#title" do
     it "should not be valid without a title" do
       spending_proposal.title = nil
-      expect(spending_proposal).to_not be_valid
+      expect(spending_proposal).not_to be_valid
     end
 
     it "should not be valid when very short" do
       spending_proposal.title = "abc"
-      expect(spending_proposal).to_not be_valid
+      expect(spending_proposal).not_to be_valid
     end
 
     it "should not be valid when very long" do
       spending_proposal.title = "a" * 81
-      expect(spending_proposal).to_not be_valid
+      expect(spending_proposal).not_to be_valid
     end
   end
 
@@ -44,7 +44,7 @@ describe SpendingProposal do
 
     it "should not be valid when very long" do
       spending_proposal.description = "a" * 10001
-      expect(spending_proposal).to_not be_valid
+      expect(spending_proposal).not_to be_valid
     end
   end
 
@@ -66,7 +66,7 @@ describe SpendingProposal do
       spending_proposal.feasible_explanation = ""
       spending_proposal.feasible = false
       spending_proposal.valuation_finished = true
-      expect(spending_proposal).to_not be_valid
+      expect(spending_proposal).not_to be_valid
     end
   end
 
@@ -77,7 +77,7 @@ describe SpendingProposal do
       sp3 = create(:spending_proposal, compatible: false)
 
       expect(SpendingProposal.compatible).to include(sp1, sp2)
-      expect(SpendingProposal.compatible).to_not include(sp3)
+      expect(SpendingProposal.compatible).not_to include(sp3)
     end
   end
 
@@ -88,7 +88,7 @@ describe SpendingProposal do
       sp3 = create(:spending_proposal, compatible: true)
 
       expect(SpendingProposal.incompatible).to include(sp1, sp2)
-      expect(SpendingProposal.incompatible).to_not include(sp3)
+      expect(SpendingProposal.incompatible).not_to include(sp3)
     end
   end
 
@@ -156,7 +156,7 @@ describe SpendingProposal do
       let(:spending_proposal) { create(:spending_proposal) }
 
       it "sets the time when the unfeasible email was sent" do
-        expect(spending_proposal.unfeasible_email_sent_at).to_not be
+        expect(spending_proposal.unfeasible_email_sent_at).not_to be
         spending_proposal.send_unfeasible_email
         expect(spending_proposal.unfeasible_email_sent_at).to be
       end
@@ -412,19 +412,19 @@ describe SpendingProposal do
       it "allows voting on city-wide if the counter is not too low" do
         expect(city_sp.votable_by?(user)).to be
         user.city_wide_spending_proposals_supported_count = 0
-        expect(city_sp.votable_by?(user)).to_not be
+        expect(city_sp.votable_by?(user)).not_to be
       end
 
       it "allows voting on district-wide if the counter is not too low" do
         expect(district_sp.votable_by?(user)).to be
         user.district_wide_spending_proposals_supported_count = 0
-        expect(district_sp.votable_by?(user)).to_not be
+        expect(district_sp.votable_by?(user)).not_to be
       end
 
       it "does now allow voting if the district is already set up" do
         expect(district_sp.votable_by?(user)).to be
         user.supported_spending_proposals_geozone_id = district.id + 1
-        expect(district_sp.votable_by?(user)).to_not be
+        expect(district_sp.votable_by?(user)).not_to be
       end
     end
   end
@@ -579,7 +579,7 @@ describe SpendingProposal do
       create(:vote, votable: sp1)
 
       expect(SpendingProposal.with_supports).to include(sp1)
-      expect(SpendingProposal.with_supports).to_not include(sp2)
+      expect(SpendingProposal.with_supports).not_to include(sp2)
     end
   end
 

@@ -31,7 +31,7 @@ feature 'Valuation budget investments' do
     visit valuation_budget_budget_investments_path(@budget)
 
     expect(page).to have_content(investment1.title)
-    expect(page).to_not have_content(investment2.title)
+    expect(page).not_to have_content(investment2.title)
   end
 
   scenario 'Index shows no budget investment to admins no valuators' do
@@ -44,8 +44,8 @@ feature 'Valuation budget investments' do
     login_as create(:administrator).user
     visit valuation_budget_budget_investments_path(@budget)
 
-    expect(page).to_not have_content(investment1.title)
-    expect(page).to_not have_content(investment2.title)
+    expect(page).not_to have_content(investment1.title)
+    expect(page).not_to have_content(investment2.title)
   end
 
   scenario 'Index orders budget investments by votes' do
@@ -76,7 +76,7 @@ feature 'Valuation budget investments' do
     within("ul.pagination") do
       expect(page).to have_content("1")
       expect(page).to have_content("2")
-      expect(page).to_not have_content("3")
+      expect(page).not_to have_content("3")
       click_link "Next", exact: false
     end
 
@@ -104,12 +104,12 @@ feature 'Valuation budget investments' do
     click_link "District 9", exact: false
 
     expect(page).to have_link("Realocate visitors")
-    expect(page).to_not have_link("Destroy the city")
+    expect(page).not_to have_link("Destroy the city")
 
     click_link "Down to the river", exact: false
 
     expect(page).to have_link("Destroy the city")
-    expect(page).to_not have_link("Realocate visitors")
+    expect(page).not_to have_link("Realocate visitors")
 
     click_link "All headings", exact: false
     expect(page).to have_link("Realocate visitors")
@@ -122,13 +122,13 @@ feature 'Valuation budget investments' do
 
     visit valuation_budget_budget_investments_path(@budget)
 
-    expect(page).to_not have_link(filters_links.values.first)
+    expect(page).not_to have_link(filters_links.values.first)
     filters_links.keys.drop(1).each { |filter| expect(page).to have_link(filters_links[filter]) }
 
     filters_links.each_pair do |current_filter, link|
       visit valuation_budget_budget_investments_path(@budget, filter: current_filter)
 
-      expect(page).to_not have_link(link)
+      expect(page).not_to have_link(link)
 
       (filters_links.keys - [current_filter]).each do |filter|
         expect(page).to have_link(filters_links[filter])
@@ -145,16 +145,16 @@ feature 'Valuation budget investments' do
     visit valuation_budget_budget_investments_path(@budget)
 
     expect(page).to have_content("Ongoing valuation")
-    expect(page).to_not have_content("Old idea")
+    expect(page).not_to have_content("Old idea")
 
     visit valuation_budget_budget_investments_path(@budget, filter: 'valuating')
 
     expect(page).to have_content("Ongoing valuation")
-    expect(page).to_not have_content("Old idea")
+    expect(page).not_to have_content("Old idea")
 
     visit valuation_budget_budget_investments_path(@budget, filter: 'valuation_finished')
 
-    expect(page).to_not have_content("Ongoing valuation")
+    expect(page).not_to have_content("Ongoing valuation")
     expect(page).to have_content("Old idea")
   end
 
@@ -257,8 +257,8 @@ feature 'Valuation budget investments' do
       within('#price_first_year') { expect(page).to have_content('Undefined') }
       within('#duration') { expect(page).to have_content('Undefined') }
       within('#feasibility') { expect(page).to have_content('Undecided') }
-      expect(page).to_not have_content('Valuation finished')
-      expect(page).to_not have_content('Internal comments')
+      expect(page).not_to have_content('Valuation finished')
+      expect(page).not_to have_content('Internal comments')
     end
 
     scenario 'Edit dossier' do
@@ -285,7 +285,7 @@ feature 'Valuation budget investments' do
       expect(page).to have_content('Very cheap idea')
       within('#duration') { expect(page).to have_content('19 months') }
       within('#feasibility') { expect(page).to have_content('Feasible') }
-      expect(page).to_not have_content('Valuation finished')
+      expect(page).not_to have_content('Valuation finished')
       expect(page).to have_content('Internal comments')
       expect(page).to have_content('Should be double checked by the urbanism area')
     end
@@ -300,7 +300,7 @@ feature 'Valuation budget investments' do
 
       visit edit_valuation_budget_budget_investment_path(@budget, @investment)
 
-      expect(find("#budget_investment_feasibility_undecided")).to_not be_checked
+      expect(find("#budget_investment_feasibility_undecided")).not_to be_checked
       expect(find("#budget_investment_feasibility_feasible")).to be_checked
 
       choose 'budget_investment_feasibility_undecided'
@@ -327,7 +327,7 @@ feature 'Valuation budget investments' do
       choose 'budget_investment_feasibility_feasible'
 
       unfeasible_fields.each do |field|
-        expect(page).to_not have_content(field)
+        expect(page).not_to have_content(field)
       end
 
       (feasible_fields + any_feasibility_fields).each do |field|
@@ -337,7 +337,7 @@ feature 'Valuation budget investments' do
       choose 'budget_investment_feasibility_unfeasible'
 
       feasible_fields.each do |field|
-        expect(page).to_not have_content(field)
+        expect(page).not_to have_content(field)
       end
 
       (unfeasible_fields + any_feasibility_fields).each do |field|
@@ -350,7 +350,7 @@ feature 'Valuation budget investments' do
 
       expect(find("#budget_investment_feasibility_unfeasible")).to be_checked
       feasible_fields.each do |field|
-        expect(page).to_not have_content(field)
+        expect(page).not_to have_content(field)
       end
 
       (unfeasible_fields + any_feasibility_fields).each do |field|
@@ -372,7 +372,7 @@ feature 'Valuation budget investments' do
       click_button 'Save changes'
 
       visit valuation_budget_budget_investments_path(@budget)
-      expect(page).to_not have_content @investment.title
+      expect(page).not_to have_content @investment.title
       click_link 'Valuation finished'
 
       expect(page).to have_content @investment.title

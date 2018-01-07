@@ -16,7 +16,7 @@ describe BallotLine do
         sp = create(:spending_proposal, price: 25000000)
         ballot_line = build(:ballot_line, spending_proposal: sp)
 
-        expect(ballot_line).to_not be_valid
+        expect(ballot_line).not_to be_valid
       end
 
       it "should not be valid if insufficient funds (district-wide)" do
@@ -26,7 +26,7 @@ describe BallotLine do
         ballot = create(:ballot, geozone: geozone)
         ballot_line = build(:ballot_line, ballot: ballot, spending_proposal: sp)
 
-        expect(ballot_line).to_not be_valid
+        expect(ballot_line).not_to be_valid
       end
 
       it "should be valid if sufficient funds (city-wide)" do
@@ -83,7 +83,7 @@ describe BallotLine do
         ballot = create(:ballot, geozone: geozone2)
         ballot_line = build(:ballot_line, ballot: ballot, spending_proposal: sp)
 
-        expect(ballot_line).to_not be_valid
+        expect(ballot_line).not_to be_valid
       end
 
       it "should be valid for the the right geozone" do
@@ -127,14 +127,14 @@ describe BallotLine do
         sp = create(:spending_proposal, price: 20000, feasible: false)
         ballot_line = build(:ballot_line, spending_proposal: sp)
 
-        expect(ballot_line).to_not be_valid
+        expect(ballot_line).not_to be_valid
       end
 
       it "should not be valid if spending proposal feasibility is undecided" do
         sp = create(:spending_proposal, price: 20000, feasible: nil)
         ballot_line = build(:ballot_line, spending_proposal: sp)
 
-        expect(ballot_line).to_not be_valid
+        expect(ballot_line).not_to be_valid
       end
 
       it "should be valid if spending proposal is feasible" do

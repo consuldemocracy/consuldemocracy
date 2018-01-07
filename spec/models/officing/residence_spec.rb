@@ -13,23 +13,23 @@ describe Officing::Residence do
 
     it "is not valid without a document number" do
       residence.document_number = nil
-      expect(residence).to_not be_valid
+      expect(residence).not_to be_valid
     end
 
     it "is not valid without a document type" do
       residence.document_type = nil
-      expect(residence).to_not be_valid
+      expect(residence).not_to be_valid
     end
 
     it "is not valid without a year of birth" do
       residence.year_of_birth = nil
-      expect(residence).to_not be_valid
+      expect(residence).not_to be_valid
     end
 
     describe "allowed age" do
       it "is not valid if user is under allowed age" do
         allow_any_instance_of(described_class).to receive(:date_of_birth).and_return(15.years.ago)
-        expect(residence).to_not be_valid
+        expect(residence).not_to be_valid
         expect(residence.errors[:year_of_birth]).to include("You don't have the required age to participate")
       end
 
@@ -51,7 +51,7 @@ describe Officing::Residence do
       it "should not be valid without a postal code if validating a letter vote" do
         residence.letter = true
         residence.postal_code = nil
-        expect(residence).to_not be_valid
+        expect(residence).not_to be_valid
       end
 
       it "should be valid without a year of birth if validating a letter vote" do
@@ -71,7 +71,7 @@ describe Officing::Residence do
         allow_any_instance_of(Officing::Residence).
         to receive(:letter_poll).and_return(poll)
 
-        expect(residence).to_not be_valid
+        expect(residence).not_to be_valid
         expect(residence.errors[:document_number]).to eq(["Vote Reformulated"])
       end
     end

@@ -19,7 +19,7 @@ describe Verification::Residence do
 
       it "is not valid without a date of birth" do
         residence = described_class.new("date_of_birth(3i)" => "", "date_of_birth(2i)" => "", "date_of_birth(1i)" => "")
-        expect(residence).to_not be_valid
+        expect(residence).not_to be_valid
         expect(residence.errors[:date_of_birth]).to include("can't be blank")
       end
     end
@@ -28,7 +28,7 @@ describe Verification::Residence do
       residence = described_class.new("date_of_birth(3i)" => "1",
                                       "date_of_birth(2i)" => "1",
                                       "date_of_birth(1i)" => 5.years.ago.year.to_s)
-      expect(residence).to_not be_valid
+      expect(residence).not_to be_valid
       expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
     end
 
@@ -68,7 +68,7 @@ describe Verification::Residence do
 
     it "validates census terms" do
       residence.terms_of_service = nil
-      expect(residence).to_not be_valid
+      expect(residence).not_to be_valid
     end
 
   end

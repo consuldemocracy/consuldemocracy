@@ -14,7 +14,7 @@ describe Verification::Letter do
 
     it "is not valid without a user" do
       letter.user = nil
-      expect(letter).to_not be_valid
+      expect(letter).not_to be_valid
     end
 
   end

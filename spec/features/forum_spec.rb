@@ -73,7 +73,7 @@ feature "Forum" do
       forum = create(:forum)
       visit forum_path(forum)
 
-      expect(page).to_not have_css("#city")
+      expect(page).not_to have_css("#city")
       expect(page).to have_content "This Forum has not supported any investment project"
     end
 
@@ -106,7 +106,7 @@ feature "Forum" do
         within("#city") do
           expect(page).to have_css(".forum_vote", count: 1)
           expect(page).to have_content sp1.title
-          expect(page).to_not have_content sp2.title
+          expect(page).not_to have_content sp2.title
         end
 
         within("#district") do

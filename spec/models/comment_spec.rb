@@ -185,7 +185,7 @@ describe Comment do
     it 'does not return comments with no commentable' do
       comment = build(:comment, commentable: nil).save!(validate: false)
 
-      expect(described_class.public_for_api).to_not include(comment)
+      expect(described_class.public_for_api).not_to include(comment)
     end
   end
 end

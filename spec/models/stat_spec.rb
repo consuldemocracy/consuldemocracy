@@ -29,7 +29,7 @@ describe Stat do
   describe ".named" do
     it "should return a new Stat if non existent" do
       stat = Stat.named("testing", "test", "spec")
-      expect(stat).to_not be_persisted
+      expect(stat).not_to be_persisted
     end
 
     it "should return existent Stat with same namespace/group/name" do

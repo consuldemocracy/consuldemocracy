@@ -11,18 +11,18 @@ describe Poll::Nvote do
 
     it "should not be valid without a user" do
       nvote.user = nil
-      expect(nvote).to_not be_valid
+      expect(nvote).not_to be_valid
     end
 
     it "should not be valid without a poll" do
       nvote.poll = nil
-      expect(nvote).to_not be_valid
+      expect(nvote).not_to be_valid
     end
 
     it "should not be valid without a voter_hash" do
       nvote.save
       nvote.voter_hash = nil
-      expect(nvote).to_not be_valid
+      expect(nvote).not_to be_valid
     end
 
     it "should not be valid if already voted" do
@@ -38,7 +38,7 @@ describe Poll::Nvote do
 
       expect(nvote1).to be_valid
       expect(nvote2).to be_valid
-      expect(nvote3).to_not be_valid
+      expect(nvote3).not_to be_valid
     end
   end
 

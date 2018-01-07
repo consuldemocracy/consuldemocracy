@@ -14,22 +14,22 @@ describe DirectMessage do
 
   it "is not valid without a title" do
     direct_message.title = nil
-    expect(direct_message).to_not be_valid
+    expect(direct_message).not_to be_valid
   end
 
   it "is not valid without a body" do
     direct_message.body = nil
-    expect(direct_message).to_not be_valid
+    expect(direct_message).not_to be_valid
   end
 
   it "is not valid without an associated sender" do
     direct_message.sender = nil
-    expect(direct_message).to_not be_valid
+    expect(direct_message).not_to be_valid
   end
 
   it "is not valid without an associated receiver" do
     direct_message.receiver = nil
-    expect(direct_message).to_not be_valid
+    expect(direct_message).not_to be_valid
   end
 
   describe "maximum number of direct messages per day" do
@@ -41,7 +41,7 @@ describe DirectMessage do
       direct_message3 = create(:direct_message, sender: sender)
 
       direct_message4 = build(:direct_message, sender: sender)
-      expect(direct_message4).to_not be_valid
+      expect(direct_message4).not_to be_valid
     end
 
     it "is valid if below maximum" do

@@ -44,7 +44,7 @@ describe Flag do
 
   describe '.flagged?' do
     it 'returns false when the user has not flagged the comment' do
-      expect(described_class.flagged?(user, comment)).to_not be
+      expect(described_class.flagged?(user, comment)).not_to be
     end
 
     it 'returns true when the user has flagged the comment' do

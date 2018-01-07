@@ -26,7 +26,7 @@ feature 'Spending proposals' do
       within('#investment-projects') do
         expect(page).to have_content spending_proposal.title
         expect(page).to have_css("a[href='#{spending_proposal_path(spending_proposal)}']", text: spending_proposal.title)
-        expect(page).to_not have_content(unfeasible_spending_proposal.title)
+        expect(page).not_to have_content(unfeasible_spending_proposal.title)
       end
     end
   end
@@ -53,7 +53,7 @@ feature 'Spending proposals' do
 
         expect(page).to have_content(spending_proposal1.title)
         expect(page).to have_content(spending_proposal2.title)
-        expect(page).to_not have_content(spending_proposal3.title)
+        expect(page).not_to have_content(spending_proposal3.title)
       end
     end
   end
@@ -77,9 +77,9 @@ feature 'Spending proposals' do
         expect(page).to have_css('.investment-project', count: 2)
 
         expect(page).to have_content(spending_proposal1.title)
-        expect(page).to_not have_content(spending_proposal2.title)
-        expect(page).to_not have_content(spending_proposal3.title)
-        expect(page).to_not have_content(spending_proposal4.title)
+        expect(page).not_to have_content(spending_proposal2.title)
+        expect(page).not_to have_content(spending_proposal3.title)
+        expect(page).not_to have_content(spending_proposal4.title)
       end
     end
   end
@@ -99,7 +99,7 @@ feature 'Spending proposals' do
       visit spending_proposals_path
       new_order = eq(all(".investment-project h3").collect {|i| i.text })
 
-      expect(order).to_not eq(new_order)
+      expect(order).not_to eq(new_order)
     end
 
     scenario "Random order after another order" do
@@ -115,7 +115,7 @@ feature 'Spending proposals' do
       visit spending_proposals_path
       new_order = eq(all(".investment-project h3").collect {|i| i.text })
 
-      expect(order).to_not eq(new_order)
+      expect(order).not_to eq(new_order)
     end
 
 
@@ -279,7 +279,7 @@ feature 'Spending proposals' do
 
       visit user_path(user)
       within("#spending_proposal_#{spending_proposal.id}") do
-        expect(page).to_not have_link "Delete"
+        expect(page).not_to have_link "Delete"
       end
     end
 
@@ -308,11 +308,11 @@ feature 'Spending proposals' do
       user_spending_proposal = create(:spending_proposal)
 
       visit spending_proposal_path(user_spending_proposal)
-      expect(page).to_not have_css "is-forum"
+      expect(page).not_to have_css "is-forum"
 
       visit spending_proposals_path(user_spending_proposal)
       within "#spending_proposal_#{user_spending_proposal.id}" do
-        expect(page).to_not have_css "is-forum"
+        expect(page).not_to have_css "is-forum"
       end
     end
 
@@ -419,8 +419,8 @@ feature 'Spending proposals' do
         expect(page).to have_content sp2.title
         expect(page).to have_content sp2.price
 
-        expect(page).to_not have_content sp3.title
-        expect(page).to_not have_content sp3.price
+        expect(page).not_to have_content sp3.title
+        expect(page).not_to have_content sp3.price
       end
 
       within("#district_wide") do
@@ -430,8 +430,8 @@ feature 'Spending proposals' do
         expect(page).to have_content sp5.title
         expect(page).to have_content "$10,000"
 
-        expect(page).to_not have_content sp6.title
-        expect(page).to_not have_content "$100,000"
+        expect(page).not_to have_content sp6.title
+        expect(page).not_to have_content "$100,000"
       end
     end
 
@@ -473,10 +473,10 @@ feature 'Spending proposals' do
           expect(page).to have_content @proposal1.title
           expect(page).to have_content @proposal2.title
           expect(page).to have_content @proposal3.title
-          expect(page).to_not have_content @proposal4.title
-          expect(page).to_not have_content @proposal5.title
-          expect(page).to_not have_content @proposal6.title
-          expect(page).to_not have_content @proposal7.title
+          expect(page).not_to have_content @proposal4.title
+          expect(page).not_to have_content @proposal5.title
+          expect(page).not_to have_content @proposal6.title
+          expect(page).not_to have_content @proposal7.title
 
           within("#spending_proposal_#{@proposal1.id}") { expect(page).to have_content "20" }
           within("#spending_proposal_#{@proposal2.id}") { expect(page).to have_content "60" }
@@ -492,13 +492,13 @@ feature 'Spending proposals' do
         click_link "Show all"
 
         within("#spending-proposals-results") do
-          expect(page).to_not have_content @proposal1.title
-          expect(page).to_not have_content @proposal2.title
-          expect(page).to_not have_content @proposal3.title
+          expect(page).not_to have_content @proposal1.title
+          expect(page).not_to have_content @proposal2.title
+          expect(page).not_to have_content @proposal3.title
           expect(page).to have_content @proposal4.title
           expect(page).to have_content @proposal5.title
           expect(page).to have_content @proposal6.title
-          expect(page).to_not have_content @proposal7.title
+          expect(page).not_to have_content @proposal7.title
 
           expect(@proposal5.title).to appear_before(@proposal4.title)
           expect(@proposal4.title).to appear_before(@proposal6.title)
@@ -519,7 +519,7 @@ feature 'Spending proposals' do
             expect(page).to have_content compatible_proposal1.title
             expect(page).to have_content compatible_proposal2.title
 
-            expect(page).to_not have_content incompatible_proposal.title
+            expect(page).not_to have_content incompatible_proposal.title
           end
         end
 
@@ -536,7 +536,7 @@ feature 'Spending proposals' do
             expect(page).to have_content incompatible_proposal1.title
             expect(page).to have_content incompatible_proposal2.title
 
-            expect(page).to_not have_content compatible_proposal.title
+            expect(page).not_to have_content compatible_proposal.title
           end
         end
 
@@ -552,8 +552,8 @@ feature 'Spending proposals' do
           within("#spending-proposals-results") do
             expect(proposal1.title).to appear_before(proposal3.title)
 
-            expect(page).to_not have_content(proposal2.title)
-            expect(page).to_not have_content(incompatible_proposal.title)
+            expect(page).not_to have_content(proposal2.title)
+            expect(page).not_to have_content(incompatible_proposal.title)
           end
 
           click_link "Show all"
@@ -600,9 +600,9 @@ feature 'Spending proposals' do
 
       within("#spending-proposals-results") do
         expect(page).to have_content proposal1.title
-        expect(page).to_not have_content proposal2.title
-        expect(page).to_not have_content proposal3.title
-        expect(page).to_not have_content proposal4.title
+        expect(page).not_to have_content proposal2.title
+        expect(page).not_to have_content proposal3.title
+        expect(page).not_to have_content proposal4.title
       end
     end
 
@@ -629,9 +629,9 @@ feature 'Spending proposals' do
         expect(page).to have_css("#spending_proposal_#{proposal1.id}.success")
         expect(page).to have_css("#spending_proposal_#{proposal4.id}.success")
         expect(page).to have_css("#spending_proposal_#{proposal6.id}.success")
-        expect(page).to_not have_css("#spending_proposal_#{proposal2.id}.success")
-        expect(page).to_not have_css("#spending_proposal_#{proposal3.id}.success")
-        expect(page).to_not have_css("#spending_proposal_#{proposal5.id}.success")
+        expect(page).not_to have_css("#spending_proposal_#{proposal2.id}.success")
+        expect(page).not_to have_css("#spending_proposal_#{proposal3.id}.success")
+        expect(page).not_to have_css("#spending_proposal_#{proposal5.id}.success")
       end
     end
   end

@@ -31,7 +31,7 @@ feature 'Legislation' do
       click_link "Next question"
 
       expect(page).to have_content("Question 3")
-      expect(page).to_not have_content("Next question")
+      expect(page).not_to have_content("Next question")
     end
 
     scenario 'shows question page' do
@@ -55,7 +55,7 @@ feature 'Legislation' do
       click_link "Next question"
 
       expect(page).to have_content("Question 3")
-      expect(page).to_not have_content("Next question")
+      expect(page).not_to have_content("Next question")
     end
 
     scenario 'answer question' do
@@ -79,10 +79,10 @@ feature 'Legislation' do
 
       within(:css, "label.active") do
         expect(page).to have_content("I don't know")
-        expect(page).to_not have_content("Yes")
-        expect(page).to_not have_content("No")
+        expect(page).not_to have_content("Yes")
+        expect(page).not_to have_content("No")
       end
-      expect(page).to_not have_selector(:link_or_button, "Submit answer")
+      expect(page).not_to have_selector(:link_or_button, "Submit answer")
 
       expect(question.reload.answers_count).to eq(1)
       expect(option.reload.answers_count).to eq(1)
@@ -104,7 +104,7 @@ feature 'Legislation' do
       expect(page).to have_selector(:radio_button, "No", disabled: true)
       expect(page).to have_selector(:radio_button, "I don't know", disabled: true)
 
-      expect(page).to_not have_selector(:link_or_button, "Submit answer")
+      expect(page).not_to have_selector(:link_or_button, "Submit answer")
     end
   end
 end

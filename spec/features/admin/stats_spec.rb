@@ -310,7 +310,7 @@ feature 'Stats' do
         create(:budget_ballot_line, ballot: ballot_1, investment: investment_2)
         create(:budget_ballot_line, ballot: ballot_2, investment: investment_2)
 
-        expect { Rake::Task['budgets:stats:balloting'].execute }.to_not raise_exception
+        expect { Rake::Task['budgets:stats:balloting'].execute }.not_to raise_exception
 
         visit admin_stats_path
         click_link "Participatory Budgets"
@@ -333,7 +333,7 @@ feature 'Stats' do
         create(:budget_ballot_line, ballot: ballot_1, investment: @investment)
         create(:budget_ballot_line, ballot: ballot_2, investment: @investment)
 
-        expect { Rake::Task['budgets:stats:balloting'].execute }.to_not raise_exception
+        expect { Rake::Task['budgets:stats:balloting'].execute }.not_to raise_exception
 
         visit admin_stats_path
         click_link "Participatory Budgets"

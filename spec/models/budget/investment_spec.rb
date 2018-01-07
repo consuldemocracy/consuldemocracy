@@ -13,23 +13,23 @@ describe Budget::Investment do
 
   it "is not valid without an author" do
     investment.author = nil
-    expect(investment).to_not be_valid
+    expect(investment).not_to be_valid
   end
 
   describe "#title" do
     it "is not valid without a title" do
       investment.title = nil
-      expect(investment).to_not be_valid
+      expect(investment).not_to be_valid
     end
 
     it "is not valid when very short" do
       investment.title = "abc"
-      expect(investment).to_not be_valid
+      expect(investment).not_to be_valid
     end
 
     it "is not valid when very long" do
       investment.title = "a" * 81
-      expect(investment).to_not be_valid
+      expect(investment).not_to be_valid
     end
   end
 
@@ -95,7 +95,7 @@ describe Budget::Investment do
       investment.unfeasibility_explanation = ""
       investment.feasibility = "unfeasible"
       investment.valuation_finished = true
-      expect(investment).to_not be_valid
+      expect(investment).not_to be_valid
     end
   end
 
@@ -118,7 +118,7 @@ describe Budget::Investment do
       investment.price = ""
       investment.feasibility = "feasible"
       investment.valuation_finished = true
-      expect(investment).to_not be_valid
+      expect(investment).not_to be_valid
     end
   end
 
@@ -139,7 +139,7 @@ describe Budget::Investment do
     let(:investment) { create(:budget_investment) }
 
     it "sets the time when the unfeasible email was sent" do
-      expect(investment.unfeasible_email_sent_at).to_not be
+      expect(investment.unfeasible_email_sent_at).not_to be
       investment.send_unfeasible_email
       expect(investment.unfeasible_email_sent_at).to be
     end
@@ -420,7 +420,7 @@ describe Budget::Investment do
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
 
     it "returns unfeasible investments" do
@@ -432,7 +432,7 @@ describe Budget::Investment do
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
 
     it "returns selected investments" do
@@ -446,7 +446,7 @@ describe Budget::Investment do
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
 
     it "returns unselected investments" do
@@ -460,7 +460,7 @@ describe Budget::Investment do
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
 
     it "returns investmens by heading" do
@@ -477,7 +477,7 @@ describe Budget::Investment do
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
 
     it "returns investments by search string" do
@@ -489,7 +489,7 @@ describe Budget::Investment do
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
   end
 
@@ -752,7 +752,7 @@ describe Budget::Investment do
       create(:vote, votable: inv1)
 
       expect(described_class.with_supports).to include(inv1)
-      expect(described_class.with_supports).to_not include(inv2)
+      expect(described_class.with_supports).not_to include(inv2)
     end
   end
 

@@ -4,7 +4,7 @@ feature 'Organizations' do
 
   scenario 'Organizations can be created' do
     user = User.organizations.where(email: 'green@peace.com').first
-    expect(user).to_not be
+    expect(user).not_to be
 
     visit new_organization_registration_path
 
@@ -20,7 +20,7 @@ feature 'Organizations' do
     user = User.organizations.where(email: 'green@peace.com').first
     expect(user).to be
     expect(user).to be_organization
-    expect(user.organization).to_not be_verified
+    expect(user.organization).not_to be_verified
   end
 
   scenario 'Create with invisible_captcha honeypot field' do
@@ -76,6 +76,6 @@ feature 'Organizations' do
     visit new_user_session_path
 
     expect(page).to have_link "Sign up"
-    expect(page).to_not have_link "Sign up as an organization"
+    expect(page).not_to have_link "Sign up as an organization"
   end
 end

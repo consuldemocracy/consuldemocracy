@@ -13,13 +13,13 @@ shared_examples "image validations" do |imageable_factory|
   it "is not valid without a title" do
     image.title = nil
 
-    expect(image).to_not be_valid
+    expect(image).not_to be_valid
   end
 
   it "is not valid without an attachment" do
     image.attachment = nil
 
-    expect(image).to_not be_valid
+    expect(image).not_to be_valid
   end
 
   it "is valid for all accepted content types" do
@@ -43,28 +43,28 @@ shared_examples "image validations" do |imageable_factory|
   it "is not valid for attachments larger than imageable max_file_size definition" do
     allow(image).to receive(:attachment_file_size).and_return(Image::MAX_IMAGE_SIZE + 1.byte)
 
-    expect(image).to_not be_valid
+    expect(image).not_to be_valid
     expect(image.errors[:attachment]).to include "must be in between 0 Bytes and 1 MB"
   end
 
   it "is not valid without a user_id" do
     image.user_id = nil
 
-    expect(image).to_not be_valid
+    expect(image).not_to be_valid
   end
 
   it "is not valid without a imageable_id" do
     image.save
     image.imageable_id = nil
 
-    expect(image).to_not be_valid
+    expect(image).not_to be_valid
   end
 
   it "is not valid without a imageable_type" do
     image.save
     image.imageable_type = nil
 
-    expect(image).to_not be_valid
+    expect(image).not_to be_valid
   end
 
 end

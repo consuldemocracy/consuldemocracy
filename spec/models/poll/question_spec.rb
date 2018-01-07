@@ -8,7 +8,7 @@ describe Poll::Question do
       skip "make it work with rake polls:setup"
 
       poll_question.poll_id = nil
-      expect(poll_question).to_not be_valid
+      expect(poll_question).not_to be_valid
     end
 
     it "is valid if a poll is selected" do
