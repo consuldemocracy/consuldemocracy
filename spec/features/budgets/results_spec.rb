@@ -11,7 +11,9 @@ feature 'Results' do
   let!(:investment3) { create(:budget_investment, :incompatible, heading: heading, price: 500, ballot_lines_count: 700) }
   let!(:investment4) { create(:budget_investment, :selected, heading: heading, price: 600, ballot_lines_count: 600) }
 
-  let!(:results) { Budget::Result.new(budget, heading).calculate_winners }
+  background do
+    Budget::Result.new(budget, heading).calculate_winners
+  end
 
   scenario "Diplays winner investments" do
     create(:budget_heading, group: group)

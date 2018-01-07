@@ -118,3 +118,6 @@ RSpec/LeadingSubject:
 
 RSpec/LetBeforeExamples:
   Enabled: true
+
+RSpec/LetSetup:
+  Enabled: true
