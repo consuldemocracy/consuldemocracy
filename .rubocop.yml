@@ -153,3 +153,6 @@ RSpec/NotToNot:
 
 RSpec/OverwritingSetup:
   Enabled: true
+
+RSpec/PredicateMatcher:
+  Enabled: true
