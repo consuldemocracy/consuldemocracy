@@ -1,10 +1,11 @@
 shared_examples "documentable" do |documentable_factory_name, documentable_path, documentable_path_arguments|
   include ActionView::Helpers
 
-  let!(:administrator)          { create(:user) }
-  let!(:user)                   { create(:user) }
-  let!(:arguments)              { {} }
-  let!(:documentable)           { create(documentable_factory_name, author: user) }
+  let(:administrator)          { create(:user) }
+  let(:user)                   { create(:user) }
+  let(:arguments)              { {} }
+  let(:documentable)           { create(documentable_factory_name, author: user) }
+  let!(:document)              { create(:document, documentable: documentable, user: documentable.author) }
 
   before do
     create(:administrator, user: administrator)
@@ -15,8 +16,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
   end
 
   context "Show documents tab" do
-
-    let!(:document) { create(:document, documentable: documentable, user: documentable.author)}
 
     scenario "Download action should be able to anyone" do
       visit send(documentable_path, arguments)
@@ -75,8 +74,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
   end
 
   context "Destroy" do
-
-    let!(:document) { create(:document, documentable: documentable, user: documentable.author) }
 
     scenario "Should show success notice after successfull document upload" do
       login_as documentable.author
