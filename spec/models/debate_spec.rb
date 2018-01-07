@@ -721,7 +721,7 @@ describe Debate do
 
   describe "#recommendations" do
 
-    let(:user)     { create(:user) }
+    let(:user) { create(:user) }
 
     it "does not return any debates when user has not interests" do
       create(:debate)

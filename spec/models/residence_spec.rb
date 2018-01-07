@@ -26,8 +26,8 @@ describe Verification::Residence do
 
     it "validates user has allowed age" do
       residence = described_class.new("date_of_birth(3i)" => "1",
-                                              "date_of_birth(2i)" => "1",
-                                              "date_of_birth(1i)" => 5.years.ago.year.to_s)
+                                      "date_of_birth(2i)" => "1",
+                                      "date_of_birth(1i)" => 5.years.ago.year.to_s)
       expect(residence).to_not be_valid
       expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
     end
