@@ -14,8 +14,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added rubocop-rspec gem, enabled cops one by one fixing offenses.
 
 ### Deprecated
+
 ### Removed
+- Spending Proposals urls from sitemap, that model is getting entirely deprecated soon.
+
 ### Fixed
+
 ### Security
 
 ## [0.12.0](https://github.com/consul/consul/compare/v0.11...v0.12) - 2018-01-03
