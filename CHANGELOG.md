@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - Updated multiple minor & patch gem versions
+- Updated rubocop version and ignored all cops by default
+- Added rubocop-rspec gem, enabled cops one by one fixing offenses.
 
 ### Deprecated
 ### Removed
