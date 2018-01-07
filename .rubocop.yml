@@ -106,3 +106,6 @@ RSpec/InstanceVariable:
 
 RSpec/InvalidPredicateMatcher:
   Enabled: true
+
+RSpec/ItBehavesLike:
+  Enabled: true
