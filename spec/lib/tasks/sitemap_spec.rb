@@ -39,10 +39,9 @@ feature 'rake sitemap:create' do
     expect(sitemap).to include(budgets_path)
     expect(sitemap).to include(debates_path)
     expect(sitemap).to include(proposals_path)
-    expect(sitemap).to include(spending_proposals_path)
     expect(sitemap).to include(legislation_processes_path)
 
-    expect(sitemap).to have_content('0.7', count: 6)
-    expect(sitemap).to have_content('daily', count: 6)
+    expect(sitemap).to have_content('0.7', count: 5)
+    expect(sitemap).to have_content('daily', count: 5)
   end
 end
