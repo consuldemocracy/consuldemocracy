@@ -9,13 +9,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 ### Changed
-- Updated multiple minor & patch gem versions
+- Updated multiple minor & patch gem versions thanks to [Depfu](https://depfu.com)
 - Updated rubocop version and ignored all cops by default
 - Added rubocop-rspec gem, enabled cops one by one fixing offenses.
 
 ### Deprecated
+
 ### Removed
+- Spending Proposals urls from sitemap, that model is getting entirely deprecated soon.
+
 ### Fixed
+
 ### Security
 
 ## [0.12.0](https://github.com/consul/consul/compare/v0.11...v0.12) - 2018-01-03
@@ -178,7 +182,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rails 4.2.6
 - Ruby 2.2.3
 
-[Unreleased]: https://github.com/consul/consul/compare/v0.10...consul:master
+[Unreleased]: https://github.com/consul/consul/compare/v0.12...consul:master
+[0.12.0]: https://github.com/consul/consul/compare/v0.11...v0.12
+[0.11.0]: https://github.com/consul/consul/compare/v0.10...v0.11
 [0.10.0]: https://github.com/consul/consul/compare/v0.9...v0.10
 [0.9.0]: https://github.com/consul/consul/compare/v0.8...v0.9
 [0.8.0]: https://github.com/consul/consul/compare/v0.7...v0.8
