@@ -180,3 +180,6 @@ RSpec/SingleArgumentMessageChain:
 
 RSpec/SubjectStub:
   Enabled: true
+
+RSpec/VerifiedDoubles:
+  Enabled: true
