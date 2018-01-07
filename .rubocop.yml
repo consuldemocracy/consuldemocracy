@@ -168,3 +168,6 @@ RSpec/ReturnFromStub:
 
 RSpec/ScatteredLet:
   Enabled: true
+
+RSpec/ScatteredSetup:
+  Enabled: true
