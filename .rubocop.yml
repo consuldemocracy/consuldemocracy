@@ -78,3 +78,9 @@ RSpec/ExampleWording:
 
 RSpec/ExpectActual:
   Enabled: true
+
+RSpec/ExpectInHook:
+  Enabled: true
+
+RSpec/ExpectOutput:
+  Enabled: true
