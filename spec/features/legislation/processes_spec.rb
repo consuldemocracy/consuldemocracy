@@ -26,7 +26,7 @@ feature 'Legislation' do
 
   context 'processes home page' do
 
-    scenario 'Processes can be listed' do
+    scenario 'No processes to be listed' do
       visit legislation_processes_path
       expect(page).to have_text "There aren't open processes"
 

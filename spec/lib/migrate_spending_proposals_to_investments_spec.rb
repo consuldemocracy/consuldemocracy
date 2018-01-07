@@ -31,7 +31,7 @@ describe MigrateSpendingProposalsToInvestments do
       expect(inv.heading.group.name).to eq("Toda la ciudad")
     end
 
-    it "Imports a city spending proposal" do
+    it "Imports a district spending proposal" do
       sp = create(:spending_proposal, geozone: create(:geozone, name: "Bel Air"))
 
       inv = importer.import(sp)

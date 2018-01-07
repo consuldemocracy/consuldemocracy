@@ -108,7 +108,7 @@ describe Proposal do
       proposal.responsible_name = "12345678Z"
     end
 
-     it "is the document_number if level two user" do
+     it "is the document_number if level three user" do
       author = create(:user, :level_three, document_number: "12345678Z")
       proposal.author = author
       proposal.responsible_name = nil
@@ -854,7 +854,7 @@ describe Proposal do
       expect(archived.first).to eq(archived_proposal)
     end
 
-    it "scope archived" do
+    it "scope not archived" do
       not_archived = described_class.not_archived
 
       expect(not_archived.size).to eq(1)
