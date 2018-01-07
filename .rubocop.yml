@@ -150,3 +150,6 @@ RSpec/NestedGroups:
 
 RSpec/NotToNot:
   Enabled: true
+
+RSpec/OverwritingSetup:
+  Enabled: true
