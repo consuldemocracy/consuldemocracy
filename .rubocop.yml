@@ -171,3 +171,6 @@ RSpec/ScatteredLet:
 
 RSpec/ScatteredSetup:
   Enabled: true
+
+RSpec/SharedContext:
+  Enabled: true
