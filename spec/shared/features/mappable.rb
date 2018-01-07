@@ -2,17 +2,16 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
   include ActionView::Helpers
 
-  let!(:user) { create(:user, :level_two) }
+  let!(:user)         { create(:user, :level_two) }
+  let!(:arguments)    { {} }
+  let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
+  let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
   before do
     Setting['feature.map'] = true
   end
 
   describe "At #{mappable_new_path}" do
-
-    let!(:arguments)    { {} }
-    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
-    let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 
@@ -113,9 +112,6 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
   describe "At #{mappable_edit_path}" do
 
-    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
-    let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
-
     before { skip } if mappable_edit_path.blank?
 
     scenario "Should edit map on #{mappable_factory_name} and contain default values", :js do
@@ -199,10 +195,6 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
   end
 
   describe "At #{mappable_show_path}" do
-
-    let!(:arguments)    { {} }
-    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
-    let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 

@@ -185,7 +185,7 @@ describe Signature do
       it "calls assign_vote_to_user" do
         signature = create(:signature, document_number: "12345678Z")
 
-        expect(signature).to receive(:assign_vote_to_user)
+        allow(signature).to receive(:assign_vote_to_user)
         signature.verify
       end
 
