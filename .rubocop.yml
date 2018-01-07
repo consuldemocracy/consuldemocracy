@@ -134,3 +134,6 @@ RSpec/MessageSpies:
 
 RSpec/MultipleDescribes:
   Enabled: true
+
+RSpec/MultipleExpectations:
+  Enabled: false
