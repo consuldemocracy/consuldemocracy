@@ -3,11 +3,11 @@ require 'rails_helper'
 describe DebatesController do
 
   describe 'POST create' do
-    before(:each) do
+    before do
       InvisibleCaptcha.timestamp_enabled = false
     end
 
-    after(:each) do
+    after do
       InvisibleCaptcha.timestamp_enabled = true
     end
 

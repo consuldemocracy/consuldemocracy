@@ -46,7 +46,7 @@ describe ProposalNotification do
 
   describe "minimum interval between notifications" do
 
-    before(:each) do
+    before do
       Setting[:proposal_notification_minimum_interval_in_days] = 3
     end
 

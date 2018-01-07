@@ -30,7 +30,7 @@ describe DirectMessage do
 
   describe "maximum number of direct messages per day" do
     context "when set" do
-      before(:each) do
+      before do
         Setting[:direct_message_max_per_day] = 3
       end
 
@@ -61,7 +61,7 @@ describe DirectMessage do
     end
 
     context "when unset" do
-      before(:each) do
+      before do
         Setting[:direct_message_max_per_day] = nil
       end
 

@@ -176,7 +176,7 @@ describe User do
     end
 
     describe 'when it is an organization' do
-      before(:each) { create(:organization, user: subject) }
+      before { create(:organization, user: subject) }
 
       it "is true when the user is an organization" do
         expect(subject.organization?).to be true
@@ -194,7 +194,7 @@ describe User do
     end
 
     describe 'when it is an organization' do
-      before(:each) { create(:organization, user: subject) }
+      before { create(:organization, user: subject) }
 
       it "is false when the user is not a verified organization" do
         expect(subject).to_not be_verified_organization
@@ -208,7 +208,7 @@ describe User do
   end
 
   describe "organization_attributes" do
-    before(:each) { subject.organization_attributes = {name: 'org', responsible_name: 'julia'} }
+    before { subject.organization_attributes = {name: 'org', responsible_name: 'julia'} }
 
     it "triggers the creation of an associated organization" do
       expect(subject.organization).to be

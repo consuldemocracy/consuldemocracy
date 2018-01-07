@@ -30,7 +30,7 @@ describe Flag do
     end
 
     describe 'when the flag already exists' do
-      before(:each) { described_class.flag(user, comment) }
+      before { described_class.flag(user, comment) }
 
       it 'removes an existing flag' do
         expect { described_class.unflag(user, comment) }.to change{ described_class.count }.by(-1)

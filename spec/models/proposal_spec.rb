@@ -163,8 +163,8 @@ describe Proposal do
   describe "#editable?" do
     let(:proposal) { create(:proposal) }
 
-    before(:each) {Setting["max_votes_for_proposal_edit"] = 5}
-    after(:each) {Setting["max_votes_for_proposal_edit"] = 1000}
+    before {Setting["max_votes_for_proposal_edit"] = 5}
+    after {Setting["max_votes_for_proposal_edit"] = 1000}
 
     it "is true if proposal has no votes yet" do
       expect(proposal.total_votes).to eq(0)

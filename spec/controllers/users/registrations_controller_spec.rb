@@ -4,7 +4,7 @@ describe Users::RegistrationsController do
 
   describe "POST check_username" do
 
-    before(:each) do
+    before do
       @request.env["devise.mapping"] = Devise.mappings[:user]
     end
 

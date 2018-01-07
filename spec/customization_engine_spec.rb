@@ -21,7 +21,7 @@ describe 'Customization Engine' do
     expect(test_key).to eq 'Not overriden string with custom locales'
   end
 
-  after(:each) do
+  after do
     I18n.load_path = default_path
     I18n.reload!
   end
