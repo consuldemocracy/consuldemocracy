@@ -100,3 +100,6 @@ RSpec/ImplicitExpect:
 
 RSpec/InstanceSpy:
   Enabled: true
+
+RSpec/InstanceVariable:
+  Enabled: false
