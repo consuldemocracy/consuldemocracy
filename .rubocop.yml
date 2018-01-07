@@ -174,3 +174,6 @@ RSpec/ScatteredSetup:
 
 RSpec/SharedContext:
   Enabled: true
+
+RSpec/SingleArgumentMessageChain:
+  Enabled: true
