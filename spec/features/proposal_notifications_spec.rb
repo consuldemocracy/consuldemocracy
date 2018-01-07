@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Proposal Notifications' do
+describe 'Proposal Notifications' do
 
-  scenario "Send a notification" do
+  it "Send a notification" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -24,7 +24,7 @@ feature 'Proposal Notifications' do
     expect(page).to have_content "Please share it with others so we can make it happen!"
   end
 
-  scenario "Send a notification (Active voter)" do
+  it "Send a notification (Active voter)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -36,7 +36,7 @@ feature 'Proposal Notifications' do
     expect(Notification.count).to eq(1)
   end
 
-  scenario "Send a notification (Follower)" do
+  it "Send a notification (Follower)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
     user_follower = create(:user)
@@ -47,7 +47,7 @@ feature 'Proposal Notifications' do
     expect(Notification.count).to eq(1)
   end
 
-  scenario "Send a notification (Follower and Voter)" do
+  it "Send a notification (Follower and Voter)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -63,7 +63,7 @@ feature 'Proposal Notifications' do
     expect(Notification.count).to eq(2)
   end
 
-  scenario "Send a notification (Blocked voter)" do
+  it "Send a notification (Blocked voter)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -76,7 +76,7 @@ feature 'Proposal Notifications' do
     expect(Notification.count).to eq(0)
   end
 
-  scenario "Send a notification (Erased voter)" do
+  it "Send a notification (Erased voter)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -89,7 +89,7 @@ feature 'Proposal Notifications' do
     expect(Notification.count).to eq(0)
   end
 
-  scenario "Show notifications" do
+  it "Show notifications" do
     proposal = create(:proposal)
     notification1 = create(:proposal_notification, proposal: proposal, title: "Hey guys", body: "Just wanted to let you know that...")
     notification2 = create(:proposal_notification, proposal: proposal, title: "Another update",
@@ -104,7 +104,7 @@ feature 'Proposal Notifications' do
     expect(page).to have_content "We are almost there please share with your peoples!"
   end
 
-  scenario "Message about receivers (Voters)" do
+  it "Message about receivers (Voters)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -117,7 +117,7 @@ feature 'Proposal Notifications' do
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
   end
 
-  scenario "Message about receivers (Followers)" do
+  it "Message about receivers (Followers)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -130,7 +130,7 @@ feature 'Proposal Notifications' do
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
   end
 
-  scenario "Message about receivers (Disctinct Followers and Voters)" do
+  it "Message about receivers (Disctinct Followers and Voters)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -144,7 +144,7 @@ feature 'Proposal Notifications' do
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
   end
 
-  scenario "Message about receivers (Same Followers and Voters)" do
+  it "Message about receivers (Same Followers and Voters)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -161,7 +161,7 @@ feature 'Proposal Notifications' do
 
   context "Permissions" do
 
-    scenario "Link to send the message" do
+    it "Link to send the message" do
       user = create(:user)
       author = create(:user)
       proposal = create(:proposal, author: author)
@@ -181,7 +181,7 @@ feature 'Proposal Notifications' do
       end
     end
 
-    scenario "Accessing form directly" do
+    it "Accessing form directly" do
       user = create(:user)
       author = create(:user)
       proposal = create(:proposal, author: author)
@@ -197,7 +197,7 @@ feature 'Proposal Notifications' do
 
   context "In-app notifications from the proposal's author" do
 
-    scenario "Voters should receive a notification", :js do
+    it "Voters should receive a notification", :js do
       author = create(:user)
 
       user1 = create(:user)
@@ -254,7 +254,7 @@ feature 'Proposal Notifications' do
       expect(page).to have_css ".notification", count: 0
     end
 
-    scenario "Followers should receive a notification", :js do
+    it "Followers should receive a notification", :js do
       author = create(:user)
 
       user1 = create(:user)
@@ -308,7 +308,7 @@ feature 'Proposal Notifications' do
       expect(page).to have_css ".notification", count: 0
     end
 
-    scenario "Proposal hidden", :js do
+    it "Proposal hidden", :js do
       author = create(:user)
       user = create(:user)
 
@@ -342,7 +342,7 @@ feature 'Proposal Notifications' do
       expect(page).to_not have_xpath "//a[@href='#{notification_path(notification_for_user)}']"
     end
 
-    scenario "Proposal retired by author", :js do
+    it "Proposal retired by author", :js do
       author = create(:user)
       user = create(:user)
 
@@ -359,7 +359,7 @@ feature 'Proposal Notifications' do
     pending "group notifications for the same proposal"
   end
 
-  scenario "Error messages" do
+  it "Error messages" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 

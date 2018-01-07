@@ -58,13 +58,13 @@ describe Organization do
       expect(search.first).to eq organization
     end
 
-    scenario "finds by users email" do
+    it "finds by users email" do
       search = described_class.search(organization.user.email)
       expect(search.size).to eq 1
       expect(search.first).to eq organization
     end
 
-    scenario "finds by users phone number" do
+    it "finds by users phone number" do
       search = described_class.search(organization.user.phone_number)
       expect(search.size).to eq 1
       expect(search.first).to eq organization

@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Admin banners magement' do
+describe 'Admin banners magement' do
 
-  background do
+  before do
     login_as(create(:administrator).user)
   end
 
   context "Index" do
-    background do
+    before do
       @banner1 = create(:banner, title: "Banner number one",
                   description:  "This is the text of banner number one and is not active yet",
                   target_url:  "http://www.url.com",
@@ -49,23 +49,23 @@ feature 'Admin banners magement' do
                   post_ended_at:   (DateTime.current + 10.days))
     end
 
-    scenario 'Index show active banners' do
+    it 'Index show active banners' do
       visit admin_banners_path(filter: 'with_active')
       expect(page).to have_content("There are 3 banners")
     end
 
-    scenario 'Index show inactive banners' do
+    it 'Index show inactive banners' do
       visit admin_banners_path(filter: 'with_inactive')
       expect(page).to have_content("There are 2 banners")
     end
 
-    scenario 'Index show all banners' do
+    it 'Index show all banners' do
       visit admin_banners_path
       expect(page).to have_content("There are 5 banners")
     end
   end
 
-  scenario 'Banners publication is listed on admin menu' do
+  it 'Banners publication is listed on admin menu' do
     visit admin_root_path
 
     within('#side_menu') do
@@ -73,7 +73,7 @@ feature 'Admin banners magement' do
     end
   end
 
-  scenario 'Publish a banner' do
+  it 'Publish a banner' do
     visit admin_root_path
 
     within('#side_menu') do
@@ -102,7 +102,7 @@ feature 'Admin banners magement' do
     expect(page).to have_link 'Such banner many text wow link', href: 'https://www.url.com'
   end
 
-  scenario 'Edit banner with live refresh', :js do
+  it 'Edit banner with live refresh', :js do
     banner1 = create(:banner, title: 'Hello',
                               description: 'Wrong text',
                               target_url:  'http://www.url.com',
@@ -140,7 +140,7 @@ feature 'Admin banners magement' do
     expect(page).to_not have_content 'Wrong text'
   end
 
-  scenario 'Delete a banner' do
+  it 'Delete a banner' do
     create(:banner, title: 'Ugly banner',
                     description: 'Bad text',
                     target_url:  'http://www.url.com',

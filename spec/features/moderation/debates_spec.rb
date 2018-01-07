@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Moderate debates' do
+describe 'Moderate debates' do
 
-  scenario 'Disabled with a feature flag' do
+  it 'Disabled with a feature flag' do
     Setting['feature.debates'] = nil
     moderator = create(:moderator)
     login_as(moderator.user)
@@ -12,7 +12,7 @@ feature 'Moderate debates' do
     Setting['feature.debates'] = true
   end
 
-  scenario 'Hide', :js do
+  it 'Hide', :js do
     citizen = create(:user)
     moderator = create(:moderator)
 
@@ -33,7 +33,7 @@ feature 'Moderate debates' do
     expect(page).to have_css('.debate', count: 0)
   end
 
-  scenario 'Can not hide own debate' do
+  it 'Can not hide own debate' do
     moderator = create(:moderator)
     debate = create(:debate, author: moderator.user)
 
@@ -46,16 +46,16 @@ feature 'Moderate debates' do
     end
   end
 
-  feature '/moderation/ screen' do
+  describe '/moderation/ screen' do
 
-    background do
+    before do
       moderator = create(:moderator)
       login_as(moderator.user)
     end
 
-    feature 'moderate in bulk' do
-      feature "When a debate has been selected for moderation" do
-        background do
+    describe 'moderate in bulk' do
+      describe "When a debate has been selected for moderation" do
+        before do
           @debate = create(:debate)
           visit moderation_debates_path
           within('.menu.simple') do
@@ -69,21 +69,21 @@ feature 'Moderate debates' do
           expect(page).to_not have_css("debate_#{@debate.id}")
         end
 
-        scenario 'Hide the debate' do
+        it 'Hide the debate' do
           click_on "Hide debates"
           expect(page).to_not have_css("debate_#{@debate.id}")
           expect(@debate.reload).to be_hidden
           expect(@debate.author).to_not be_hidden
         end
 
-        scenario 'Block the author' do
+        it 'Block the author' do
           click_on "Block authors"
           expect(page).to_not have_css("debate_#{@debate.id}")
           expect(@debate.reload).to be_hidden
           expect(@debate.author).to be_hidden
         end
 
-        scenario 'Ignore the debate' do
+        it 'Ignore the debate' do
           click_on "Mark as viewed"
           expect(page).to_not have_css("debate_#{@debate.id}")
           expect(@debate.reload).to be_ignored_flag
@@ -92,7 +92,7 @@ feature 'Moderate debates' do
         end
       end
 
-      scenario "select all/none", :js do
+      it "select all/none", :js do
         create_list(:debate, 2)
 
         visit moderation_debates_path
@@ -110,7 +110,7 @@ feature 'Moderate debates' do
         end
       end
 
-      scenario "remembering page, filter and order" do
+      it "remembering page, filter and order" do
         create_list(:debate, 52)
 
         visit moderation_debates_path(filter: 'all', page: '2', order: 'created_at')
@@ -125,7 +125,7 @@ feature 'Moderate debates' do
       end
     end
 
-    scenario "Current filter is properly highlighted" do
+    it "Current filter is properly highlighted" do
       visit moderation_debates_path
       expect(page).to_not have_link('Pending')
       expect(page).to have_link('All')
@@ -153,7 +153,7 @@ feature 'Moderate debates' do
       end
     end
 
-    scenario "Filtering debates" do
+    it "Filtering debates" do
       create(:debate, title: "Regular debate")
       create(:debate, :flagged, title: "Pending debate")
       create(:debate, :hidden, title: "Hidden debate")
@@ -178,7 +178,7 @@ feature 'Moderate debates' do
       expect(page).to have_content('Ignored debate')
     end
 
-    scenario "sorting debates" do
+    it "sorting debates" do
       create(:debate, title: "Flagged debate", created_at: Time.current - 1.day, flags_count: 5)
       create(:debate, title: "Flagged newer debate", created_at: Time.current - 12.hours, flags_count: 3)
       create(:debate, title: "Newer debate", created_at: Time.current)

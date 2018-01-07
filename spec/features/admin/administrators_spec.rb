@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Admin administrators' do
-  background do
+describe 'Admin administrators' do
+  before do
     @admin = create(:administrator)
     @user  = create(:user, username: 'Jose Luis Balbin')
     @administrator = create(:administrator)
@@ -9,13 +9,13 @@ feature 'Admin administrators' do
     visit admin_administrators_path
   end
 
-  scenario 'Index' do
+  it 'Index' do
     expect(page).to have_content @administrator.name
     expect(page).to have_content @administrator.email
     expect(page).to_not have_content @user.name
   end
 
-  scenario 'Create Administrator', :js do
+  it 'Create Administrator', :js do
     fill_in 'name_or_email', with: @user.email
     click_button 'Search'
 
@@ -26,7 +26,7 @@ feature 'Admin administrators' do
     end
   end
 
-  scenario 'Delete Administrator' do
+  it 'Delete Administrator' do
     find(:xpath, "//tr[contains(.,'#{@administrator.name}')]/td/a", text: 'Delete').click
 
     within("#administrators") do
@@ -34,7 +34,7 @@ feature 'Admin administrators' do
     end
   end
 
-  scenario 'Delete Administrator when its the current user' do
+  it 'Delete Administrator when its the current user' do
     find(:xpath, "//tr[contains(.,'#{@admin.name}')]/td/a", text: 'Delete').click
 
     within("#error") do
@@ -44,7 +44,7 @@ feature 'Admin administrators' do
 
   context 'Search' do
 
-    background do
+    before do
       user  = create(:user, username: 'Bernard Sumner', email: 'bernard@sumner.com')
       user2 = create(:user, username: 'Tony Soprano', email: 'tony@soprano.com')
       @administrator1 = create(:administrator, user: user)
@@ -52,7 +52,7 @@ feature 'Admin administrators' do
       visit admin_administrators_path
     end
 
-    scenario 'returns no results if search term is empty' do
+    it 'returns no results if search term is empty' do
       expect(page).to have_content(@administrator1.name)
       expect(page).to have_content(@administrator2.name)
 
@@ -65,7 +65,7 @@ feature 'Admin administrators' do
       expect(page).to_not have_content(@administrator2.name)
     end
 
-    scenario 'search by name' do
+    it 'search by name' do
       expect(page).to have_content(@administrator1.name)
       expect(page).to have_content(@administrator2.name)
 
@@ -77,7 +77,7 @@ feature 'Admin administrators' do
       expect(page).to_not have_content(@administrator2.name)
     end
 
-    scenario 'search by email' do
+    it 'search by email' do
       expect(page).to have_content(@administrator1.email)
       expect(page).to have_content(@administrator2.email)
 

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Tags' do
+describe 'Tags' do
 
-  scenario 'Index' do
+  it 'Index' do
     create_featured_proposals
     earth = create(:proposal, tag_list: 'Medio Ambiente')
     money = create(:proposal, tag_list: 'Economía')
@@ -18,7 +18,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Index shows up to 5 tags per proposal' do
+  it 'Index shows up to 5 tags per proposal' do
     create_featured_proposals
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
     create :proposal, tag_list: tag_list
@@ -30,7 +30,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Index featured proposals does not show tags' do
+  it 'Index featured proposals does not show tags' do
     featured_proposals = create_featured_proposals
     proposal = create(:proposal, tag_list: "123")
 
@@ -40,7 +40,7 @@ feature 'Tags' do
     expect(page).to_not have_selector('#featured-proposals')
   end
 
-  scenario 'Index shows 3 tags with no plus link' do
+  it 'Index shows 3 tags with no plus link' do
     create_featured_proposals
     tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
     create :proposal, tag_list: tag_list
@@ -55,7 +55,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Show' do
+  it 'Show' do
     proposal = create(:proposal, tag_list: 'Hacienda, Economía')
 
     visit proposal_path(proposal)
@@ -64,7 +64,7 @@ feature 'Tags' do
     expect(page).to have_content "Hacienda"
   end
 
-  scenario 'Create with custom tags' do
+  it 'Create with custom tags' do
     user = create(:user)
     login_as(user)
 
@@ -87,7 +87,7 @@ feature 'Tags' do
     expect(page).to have_content 'Hacienda'
   end
 
-  scenario 'Category with category tags', :js do
+  it 'Category with category tags', :js do
     user = create(:user)
     login_as(user)
 
@@ -118,7 +118,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Create with too many tags' do
+  it 'Create with too many tags' do
     user = create(:user)
     login_as(user)
 
@@ -135,7 +135,7 @@ feature 'Tags' do
     expect(page).to have_content 'tags must be less than or equal to 6'
   end
 
-  scenario 'Create with dangerous strings' do
+  it 'Create with dangerous strings' do
     author = create(:user)
     login_as(author)
 
@@ -163,7 +163,7 @@ feature 'Tags' do
     expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
   end
 
-  scenario 'Update' do
+  it 'Update' do
     proposal = create(:proposal, tag_list: 'Economía')
 
     login_as(proposal.author)
@@ -181,7 +181,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Delete' do
+  it 'Delete' do
     proposal = create(:proposal, tag_list: 'Economía')
 
     login_as(proposal.author)
@@ -196,7 +196,7 @@ feature 'Tags' do
 
   context "Filter" do
 
-    scenario "From index" do
+    it "From index" do
       create_featured_proposals
       proposal1 = create(:proposal, tag_list: 'Education')
       proposal2 = create(:proposal, tag_list: 'Health')
@@ -213,7 +213,7 @@ feature 'Tags' do
       end
     end
 
-    scenario "From show" do
+    it "From show" do
       proposal1 = create(:proposal, tag_list: 'Education')
       proposal2 = create(:proposal, tag_list: 'Health')
 
@@ -231,7 +231,7 @@ feature 'Tags' do
 
   context 'Tag cloud' do
 
-    scenario 'Display user tags' do
+    it 'Display user tags' do
       earth = create(:proposal, tag_list: 'Medio Ambiente')
       money = create(:proposal, tag_list: 'Economía')
 
@@ -243,7 +243,7 @@ feature 'Tags' do
       end
     end
 
-    scenario "Filter by user tags" do
+    it "Filter by user tags" do
       proposal1 = create(:proposal, tag_list: 'Medio Ambiente')
       proposal2 = create(:proposal, tag_list: 'Medio Ambiente')
       proposal3 = create(:proposal, tag_list: 'Economía')
@@ -264,7 +264,7 @@ feature 'Tags' do
 
   context "Categories" do
 
-    scenario 'Display category tags' do
+    it 'Display category tags' do
       create(:tag, :category, name: 'Medio Ambiente')
       create(:tag, :category, name: 'Economía')
 
@@ -279,7 +279,7 @@ feature 'Tags' do
       end
     end
 
-    scenario "Filter by category tags" do
+    it "Filter by category tags" do
       create(:tag, :category, name: 'Medio Ambiente')
       create(:tag, :category, name: 'Economía')
 

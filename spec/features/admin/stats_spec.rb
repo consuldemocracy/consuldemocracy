@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Stats' do
+describe 'Stats' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
     visit root_path
@@ -10,7 +10,7 @@ feature 'Stats' do
 
   context 'Summary' do
 
-    scenario 'General' do
+    it 'General' do
       create(:debate)
       2.times { create(:proposal) }
       3.times { create(:comment, commentable: Debate.first) }
@@ -24,7 +24,7 @@ feature 'Stats' do
       expect(page).to have_content "Visits 4"
     end
 
-    scenario 'Votes' do
+    it 'Votes' do
       debate = create(:debate)
       create(:vote, votable: debate)
 
@@ -46,7 +46,7 @@ feature 'Stats' do
 
   context "Users" do
 
-    scenario 'Summary' do
+    it 'Summary' do
       1.times { create(:user, :level_three) }
       2.times { create(:user, :level_two) }
       3.times { create(:user) }
@@ -60,7 +60,7 @@ feature 'Stats' do
       expect(page).to have_content "Total users 7"
     end
 
-    scenario "Do not count erased users" do
+    it "Do not count erased users" do
       1.times { create(:user, :level_three, erased_at: Time.current) }
       2.times { create(:user, :level_two, erased_at: Time.current) }
       3.times { create(:user, erased_at: Time.current) }
@@ -74,7 +74,7 @@ feature 'Stats' do
       expect(page).to have_content "Total users 1"
     end
 
-    scenario "Do not count hidden users" do
+    it "Do not count hidden users" do
       1.times { create(:user, :level_three, hidden_at: Time.current) }
       2.times { create(:user, :level_two, hidden_at: Time.current) }
       3.times { create(:user, hidden_at: Time.current) }
@@ -88,7 +88,7 @@ feature 'Stats' do
       expect(page).to have_content "Total users 1"
     end
 
-    scenario 'Level 2 user Graph' do
+    it 'Level 2 user Graph' do
       create(:geozone)
       visit account_path
       click_link 'Verify my account'
@@ -104,7 +104,7 @@ feature 'Stats' do
 
   context "Proposal notifications" do
 
-    scenario "Summary stats" do
+    it "Summary stats" do
       proposal = create(:proposal)
 
       create(:proposal_notification, proposal: proposal)
@@ -123,7 +123,7 @@ feature 'Stats' do
       end
     end
 
-    scenario "Index" do
+    it "Index" do
       3.times { create(:proposal_notification) }
 
       visit admin_stats_path
@@ -141,7 +141,7 @@ feature 'Stats' do
 
   context "Direct messages" do
 
-    scenario "Summary stats" do
+    it "Summary stats" do
       sender = create(:user, :level_two)
 
       create(:direct_message, sender: sender)
@@ -164,7 +164,7 @@ feature 'Stats' do
 
   context "Polls" do
 
-    scenario "Total participants by origin" do
+    it "Total participants by origin" do
       oa = create(:poll_officer_assignment)
       3.times { create(:poll_voter, origin: "web") }
 
@@ -179,7 +179,7 @@ feature 'Stats' do
       end
     end
 
-    scenario "Total participants" do
+    it "Total participants" do
       user = create(:user, :level_two)
       3.times { create(:poll_voter, user: user) }
       create(:poll_voter)
@@ -195,7 +195,7 @@ feature 'Stats' do
       end
     end
 
-    scenario "Participants by poll" do
+    it "Participants by poll" do
       oa = create(:poll_officer_assignment)
 
       poll1 = create(:poll)
@@ -223,7 +223,7 @@ feature 'Stats' do
       end
     end
 
-    scenario "Participants by poll question" do
+    it "Participants by poll question" do
       user1 = create(:user, :level_two)
       user2 = create(:user, :level_two)
 

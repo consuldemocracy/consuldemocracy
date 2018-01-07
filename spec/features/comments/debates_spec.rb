@@ -1,11 +1,11 @@
 require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
-feature 'Commenting debates' do
+describe 'Commenting debates' do
   let(:user)   { create :user }
   let(:debate) { create :debate }
 
-  scenario 'Index' do
+  it 'Index' do
     3.times { create(:comment, commentable: debate) }
 
     visit debate_path(debate)
@@ -20,7 +20,7 @@ feature 'Commenting debates' do
     end
   end
 
-  scenario 'Show' do
+  it 'Show' do
     parent_comment = create(:comment, commentable: debate)
     first_child    = create(:comment, commentable: debate, parent: parent_comment)
     second_child   = create(:comment, commentable: debate, parent: parent_comment)
@@ -39,7 +39,7 @@ feature 'Commenting debates' do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
-  scenario 'Collapsable comments', :js do
+  it 'Collapsable comments', :js do
     parent_comment = create(:comment, body: "Main comment", commentable: debate)
     child_comment  = create(:comment, body: "First subcomment", commentable: debate, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: debate, parent: child_comment)
@@ -65,7 +65,7 @@ feature 'Commenting debates' do
     expect(page).to_not have_content grandchild_comment.body
   end
 
-  scenario 'Comment order' do
+  it 'Comment order' do
     c1 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 100,
                                                   cached_votes_total: 120, created_at: Time.current - 2)
     c2 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 10,
@@ -89,7 +89,7 @@ feature 'Commenting debates' do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
+  it 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
     old_root = create(:comment, commentable: debate, created_at: Time.current - 10)
     new_root = create(:comment, commentable: debate, created_at: Time.current)
     old_child = create(:comment, commentable: debate, parent_id: new_root.id, created_at: Time.current - 10)
@@ -111,7 +111,7 @@ feature 'Commenting debates' do
     expect(old_child.body).to appear_before(new_child.body)
   end
 
-  scenario 'Turns links into html links' do
+  it 'Turns links into html links' do
     create :comment, commentable: debate, body: 'Built with http://rubyonrails.org/'
 
     visit debate_path(debate)
@@ -124,7 +124,7 @@ feature 'Commenting debates' do
     end
   end
 
-  scenario 'Sanitizes comment body for security' do
+  it 'Sanitizes comment body for security' do
     create :comment, commentable: debate,
                      body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
@@ -137,7 +137,7 @@ feature 'Commenting debates' do
     end
   end
 
-  scenario 'Paginated comments' do
+  it 'Paginated comments' do
     per_page = 10
     (per_page + 2).times { create(:comment, commentable: debate)}
 
@@ -154,8 +154,8 @@ feature 'Commenting debates' do
     expect(page).to have_css('.comment', count: 2)
   end
 
-  feature 'Not logged user' do
-    scenario 'can not see comments forms' do
+  describe 'Not logged user' do
+    it 'can not see comments forms' do
       create(:comment, commentable: debate)
       visit debate_path(debate)
 
@@ -167,7 +167,7 @@ feature 'Commenting debates' do
     end
   end
 
-  scenario 'Create', :js do
+  it 'Create', :js do
     login_as(user)
     visit debate_path(debate)
 
@@ -180,7 +180,7 @@ feature 'Commenting debates' do
     end
   end
 
-  scenario 'Errors on create', :js do
+  it 'Errors on create', :js do
     login_as(user)
     visit debate_path(debate)
 
@@ -189,7 +189,7 @@ feature 'Commenting debates' do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario 'Reply', :js do
+  it 'Reply', :js do
     citizen = create(:user, username: 'Ana')
     manuela = create(:user, username: 'Manuela')
     comment = create(:comment, commentable: debate, user: citizen)
@@ -211,7 +211,7 @@ feature 'Commenting debates' do
     expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
-  scenario 'Errors on reply', :js do
+  it 'Errors on reply', :js do
     comment = create(:comment, commentable: debate, user: user)
 
     login_as(user)
@@ -226,7 +226,7 @@ feature 'Commenting debates' do
 
   end
 
-  scenario "N replies", :js do
+  it "N replies", :js do
     parent = create(:comment, commentable: debate)
 
     7.times do
@@ -238,7 +238,7 @@ feature 'Commenting debates' do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
+  it "Flagging as inappropriate", :js do
     comment = create(:comment, commentable: debate)
 
     login_as(user)
@@ -254,7 +254,7 @@ feature 'Commenting debates' do
     expect(Flag.flagged?(user, comment)).to be
   end
 
-  scenario "Undoing flagging as inappropriate", :js do
+  it "Undoing flagging as inappropriate", :js do
     comment = create(:comment, commentable: debate)
     Flag.flag(user, comment)
 
@@ -271,7 +271,7 @@ feature 'Commenting debates' do
     expect(Flag.flagged?(user, comment)).to_not be
   end
 
-  scenario "Flagging turbolinks sanity check", :js do
+  it "Flagging turbolinks sanity check", :js do
     debate = create(:debate, title: "Should we change the world?")
     comment = create(:comment, commentable: debate)
 
@@ -285,7 +285,7 @@ feature 'Commenting debates' do
     end
   end
 
-  scenario "Erasing a comment's author" do
+  it "Erasing a comment's author" do
     debate = create(:debate)
     comment = create(:comment, commentable: debate, body: 'this should be visible')
     comment.user.erase
@@ -297,7 +297,7 @@ feature 'Commenting debates' do
     end
   end
 
-  scenario 'Submit button is disabled after clicking', :js do
+  it 'Submit button is disabled after clicking', :js do
     debate = create(:debate)
     login_as(user)
     visit debate_path(debate)
@@ -312,8 +312,8 @@ feature 'Commenting debates' do
     expect(page).to have_content('Testing submit button!')
   end
 
-  feature "Moderators" do
-    scenario "can create comment as a moderator", :js do
+  describe "Moderators" do
+    it "can create comment as a moderator", :js do
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -331,7 +331,7 @@ feature 'Commenting debates' do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    it "can create reply as a moderator", :js do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       moderator = create(:moderator, user: manuela)
@@ -358,7 +358,7 @@ feature 'Commenting debates' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as an administrator" do
+    it "can not comment as an administrator" do
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -368,8 +368,8 @@ feature 'Commenting debates' do
     end
   end
 
-  feature "Administrators" do
-    scenario "can create comment as an administrator", :js do
+  describe "Administrators" do
+    it "can create comment as an administrator", :js do
       admin = create(:administrator)
 
       login_as(admin.user)
@@ -387,7 +387,7 @@ feature 'Commenting debates' do
       end
     end
 
-    scenario "can create reply as an administrator", :js do
+    it "can create reply as an administrator", :js do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       admin   = create(:administrator, user: manuela)
@@ -414,7 +414,7 @@ feature 'Commenting debates' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as a moderator" do
+    it "can not comment as a moderator" do
       admin = create(:administrator)
 
       login_as(admin.user)
@@ -424,8 +424,8 @@ feature 'Commenting debates' do
     end
   end
 
-  feature 'Voting comments' do
-    background do
+  describe 'Voting comments' do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @debate = create(:debate)
@@ -434,7 +434,7 @@ feature 'Commenting debates' do
       login_as(@manuela)
     end
 
-    scenario 'Show' do
+    it 'Show' do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
@@ -453,7 +453,7 @@ feature 'Commenting debates' do
       end
     end
 
-    scenario 'Create', :js do
+    it 'Create', :js do
       visit debate_path(@debate)
 
       within("#comment_#{@comment.id}_votes") do
@@ -471,7 +471,7 @@ feature 'Commenting debates' do
       end
     end
 
-    scenario 'Update', :js do
+    it 'Update', :js do
       visit debate_path(@debate)
 
       within("#comment_#{@comment.id}_votes") do
@@ -490,7 +490,7 @@ feature 'Commenting debates' do
       end
     end
 
-    xscenario 'Trying to vote multiple times', :js do
+    xit 'Trying to vote multiple times', :js do
       visit debate_path(@debate)
 
       within("#comment_#{@comment.id}_votes") do

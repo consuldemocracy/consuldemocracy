@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature "Admin custom pages" do
+describe "Admin custom pages" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario "Index" do
+  it "Index" do
     custom_page = create(:site_customization_page)
     visit admin_site_customization_pages_path
 
@@ -15,7 +15,7 @@ feature "Admin custom pages" do
   end
 
   context "Create" do
-    scenario "Valid custom page" do
+    it "Valid custom page" do
       visit admin_root_path
 
       within("#side_menu") do
@@ -39,7 +39,7 @@ feature "Admin custom pages" do
   end
 
   context "Update" do
-    scenario "Valid custom page" do
+    it "Valid custom page" do
       create(:site_customization_page, title: "An example custom page")
       visit admin_root_path
 
@@ -59,7 +59,7 @@ feature "Admin custom pages" do
     end
   end
 
-  scenario "Delete" do
+  it "Delete" do
     custom_page = create(:site_customization_page, title: "An example custom page")
     visit edit_admin_site_customization_page_path(custom_page)
 

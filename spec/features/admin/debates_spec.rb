@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Admin debates' do
+describe 'Admin debates' do
 
-  scenario 'Disabled with a feature flag' do
+  it 'Disabled with a feature flag' do
     Setting['feature.debates'] = nil
     admin = create(:administrator)
     login_as(admin.user)
@@ -12,12 +12,12 @@ feature 'Admin debates' do
     Setting['feature.debates'] = true
   end
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario 'Restore' do
+  it 'Restore' do
     debate = create(:debate, :hidden)
     visit admin_debates_path
 
@@ -29,7 +29,7 @@ feature 'Admin debates' do
     expect(debate).to be_ignored_flag
   end
 
-  scenario 'Confirm hide' do
+  it 'Confirm hide' do
     debate = create(:debate, :hidden)
     visit admin_debates_path
 
@@ -42,7 +42,7 @@ feature 'Admin debates' do
     expect(debate.reload).to be_confirmed_hide
   end
 
-  scenario "Current filter is properly highlighted" do
+  it "Current filter is properly highlighted" do
     visit admin_debates_path
     expect(page).to_not have_link('Pending')
     expect(page).to have_link('All')
@@ -64,7 +64,7 @@ feature 'Admin debates' do
     expect(page).to_not have_link('Confirmed')
   end
 
-  scenario "Filtering debates" do
+  it "Filtering debates" do
     create(:debate, :hidden, title: "Unconfirmed debate")
     create(:debate, :hidden, :with_confirmed_hide, title: "Confirmed debate")
 
@@ -81,7 +81,7 @@ feature 'Admin debates' do
     expect(page).to have_content('Confirmed debate')
   end
 
-  scenario "Action links remember the pagination setting and the filter" do
+  it "Action links remember the pagination setting and the filter" do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times { create(:debate, :hidden, :with_confirmed_hide) }
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Admin managers' do
-  background do
+describe 'Admin managers' do
+  before do
     @admin = create(:administrator)
     @user  = create(:user)
     @manager = create(:manager)
@@ -9,13 +9,13 @@ feature 'Admin managers' do
     visit admin_managers_path
   end
 
-  scenario 'Index' do
+  it 'Index' do
     expect(page).to have_content @manager.name
     expect(page).to have_content @manager.email
     expect(page).to_not have_content @user.name
   end
 
-  scenario 'Create Manager', :js do
+  it 'Create Manager', :js do
     fill_in 'name_or_email', with: @user.email
     click_button 'Search'
 
@@ -26,7 +26,7 @@ feature 'Admin managers' do
     end
   end
 
-  scenario 'Delete Manager' do
+  it 'Delete Manager' do
     click_link 'Delete'
 
     within("#managers") do
@@ -36,7 +36,7 @@ feature 'Admin managers' do
 
   context 'Search' do
 
-    background do
+    before do
       user  = create(:user, username: 'Taylor Swift', email: 'taylor@swift.com')
       user2 = create(:user, username: 'Stephanie Corneliussen', email: 'steph@mrrobot.com')
       @manager1 = create(:manager, user: user)
@@ -44,7 +44,7 @@ feature 'Admin managers' do
       visit admin_managers_path
     end
 
-    scenario 'returns no results if search term is empty' do
+    it 'returns no results if search term is empty' do
       expect(page).to have_content(@manager1.name)
       expect(page).to have_content(@manager2.name)
 
@@ -57,7 +57,7 @@ feature 'Admin managers' do
       expect(page).to_not have_content(@manager2.name)
     end
 
-    scenario 'search by name' do
+    it 'search by name' do
       expect(page).to have_content(@manager1.name)
       expect(page).to have_content(@manager2.name)
 
@@ -69,7 +69,7 @@ feature 'Admin managers' do
       expect(page).to_not have_content(@manager2.name)
     end
 
-    scenario 'search by email' do
+    it 'search by email' do
       expect(page).to have_content(@manager1.email)
       expect(page).to have_content(@manager2.email)
 

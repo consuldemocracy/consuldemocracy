@@ -1,10 +1,10 @@
 require 'rails_helper'
 require 'sessions_helper'
 
-feature 'Poll Officing' do
+describe 'Poll Officing' do
   let(:user) { create(:user) }
 
-  scenario 'Access as regular user is not authorized' do
+  it 'Access as regular user is not authorized' do
     login_as(user)
     visit root_path
 
@@ -16,7 +16,7 @@ feature 'Poll Officing' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as moderator is not authorized' do
+  it 'Access as moderator is not authorized' do
     create(:moderator, user: user)
     login_as(user)
     visit root_path
@@ -29,7 +29,7 @@ feature 'Poll Officing' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as manager is not authorized' do
+  it 'Access as manager is not authorized' do
     create(:manager, user: user)
     login_as(user)
     visit root_path
@@ -42,7 +42,7 @@ feature 'Poll Officing' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as a valuator is not authorized' do
+  it 'Access as a valuator is not authorized' do
     create(:valuator, user: user)
     login_as(user)
     visit root_path
@@ -55,7 +55,7 @@ feature 'Poll Officing' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as an administrator is not authorized' do
+  it 'Access as an administrator is not authorized' do
     create(:administrator, user: user)
     create(:poll)
     login_as(user)
@@ -69,7 +69,7 @@ feature 'Poll Officing' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as an administrator with poll officer role is authorized' do
+  it 'Access as an administrator with poll officer role is authorized' do
     create(:administrator, user: user)
     create(:poll_officer, user: user)
     create(:poll)
@@ -83,7 +83,7 @@ feature 'Poll Officing' do
     expect(page).to_not have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as an poll officer is authorized' do
+  it 'Access as an poll officer is authorized' do
     create(:poll_officer, user: user)
     create(:poll)
     login_as(user)
@@ -96,7 +96,7 @@ feature 'Poll Officing' do
     expect(page).to_not have_content "You do not have permission to access this page"
   end
 
-  scenario "Poll officer access links" do
+  it "Poll officer access links" do
     create(:poll_officer, user: user)
     login_as(user)
     visit root_path
@@ -107,7 +107,7 @@ feature 'Poll Officing' do
     expect(page).to_not have_link('Moderation')
   end
 
-  scenario 'Officing dashboard' do
+  it 'Officing dashboard' do
     create(:poll_officer, user: user)
     create(:poll)
     login_as(user)
@@ -122,7 +122,7 @@ feature 'Poll Officing' do
     expect(page).to_not have_css('#moderation_menu')
   end
 
-  scenario 'Officing dashboard available for multiple sessions', :js do
+  it 'Officing dashboard available for multiple sessions', :js do
     poll = create(:poll)
     booth = create(:poll_booth)
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)

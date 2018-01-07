@@ -13,7 +13,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
 
   context "Show" do
 
-    scenario "Should not display follow button when there is no logged user" do
+    it "Should not display follow button when there is no logged user" do
       visit send(followable_path, arguments)
 
       within "##{dom_id(followable)}" do
@@ -21,7 +21,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       end
     end
 
-    scenario "Should display follow button when user is logged in" do
+    it "Should display follow button when user is logged in" do
       user = create(:user)
       login_as(user)
 
@@ -32,7 +32,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       end
     end
 
-    scenario "Should display follow button when user is logged and is not following" do
+    it "Should display follow button when user is logged and is not following" do
       user = create(:user)
       login_as(user)
 
@@ -40,7 +40,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       expect(page).to have_link("Follow #{followable.model_name.human.downcase}")
     end
 
-    scenario "Should display unfollow after user clicks on follow button", :js do
+    it "Should display unfollow after user clicks on follow button", :js do
       user = create(:user)
       login_as(user)
 
@@ -53,7 +53,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       end
     end
 
-    scenario "Should display new follower notice after user clicks on follow button", :js do
+    it "Should display new follower notice after user clicks on follow button", :js do
       user = create(:user)
       login_as(user)
 
@@ -65,7 +65,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       expect(page).to have_content strip_tags(t("shared.followable.#{followable_class_name}.create.notice_html"))
     end
 
-    scenario "Display unfollow button when user already following" do
+    it "Display unfollow button when user already following" do
       user = create(:user)
       follow = create(:follow, user: user, followable: followable)
       login_as(user)
@@ -75,7 +75,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       expect(page).to have_link("Following")
     end
 
-    scenario "Should update follow button and show destroy notice after user clicks on unfollow button", :js do
+    it "Should update follow button and show destroy notice after user clicks on unfollow button", :js do
       user = create(:user)
       follow = create(:follow, user: user, followable: followable)
       login_as(user)
@@ -89,7 +89,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       end
     end
 
-    scenario "Should display destroy follower notice after user clicks on unfollow button", :js do
+    it "Should display destroy follower notice after user clicks on unfollow button", :js do
       user = create(:user)
       follow = create(:follow, user: user, followable: followable)
       login_as(user)

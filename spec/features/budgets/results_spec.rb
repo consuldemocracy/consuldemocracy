@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Results' do
+describe 'Results' do
 
   let(:budget)  { create(:budget, phase: "finished") }
   let(:group)   { create(:budget_group, budget: budget) }
@@ -13,7 +13,7 @@ feature 'Results' do
 
   let!(:results) { Budget::Result.new(budget, heading).calculate_winners }
 
-  scenario "Diplays winner investments" do
+  it "Diplays winner investments" do
     create(:budget_heading, group: group)
 
     visit budget_path(budget)
@@ -31,7 +31,7 @@ feature 'Results' do
     end
   end
 
-  scenario "Show non winner & incomaptible investments", :js do
+  it "Show non winner & incomaptible investments", :js do
     visit budget_path(budget)
     click_link "See results"
     click_link "Show all"
@@ -50,7 +50,7 @@ feature 'Results' do
     end
   end
 
-  scenario "Load first budget heading if not specified" do
+  it "Load first budget heading if not specified" do
     other_heading = create(:budget_heading, group: group)
     other_investment = create(:budget_investment, :winner, heading: other_heading)
 
@@ -62,7 +62,7 @@ feature 'Results' do
     end
   end
 
-  scenario "If budget is in a phase different from finished results can't be accessed" do
+  it "If budget is in a phase different from finished results can't be accessed" do
     budget.update phase: (Budget::PHASES - ["finished"]).sample
     visit budget_path(budget)
     expect(page).not_to have_link "See results"
@@ -71,7 +71,7 @@ feature 'Results' do
     expect(page).to have_content "You do not have permission to carry out the action"
   end
 
-  scenario "No incompatible investments", :js do
+  it "No incompatible investments", :js do
     investment3.incompatible = false
     investment3.save
 

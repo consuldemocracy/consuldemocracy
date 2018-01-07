@@ -18,7 +18,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
 
     let!(:document) { create(:document, documentable: documentable, user: documentable.author)}
 
-    scenario "Download action should be able to anyone" do
+    it "Download action should be able to anyone" do
       visit send(documentable_path, arguments)
 
       within "#tab-documents" do
@@ -26,7 +26,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       end
     end
 
-    scenario "Download file link should have blank target attribute" do
+    it "Download file link should have blank target attribute" do
       visit send(documentable_path, arguments)
 
       within "#tab-documents" do
@@ -34,7 +34,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       end
     end
 
-    scenario "Download file links should have rel attribute setted to no follow" do
+    it "Download file links should have rel attribute setted to no follow" do
       visit send(documentable_path, arguments)
 
       within "#tab-documents" do
@@ -44,7 +44,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
 
     describe "Destroy action" do
 
-      scenario "Should not be able when no user logged in" do
+      it "Should not be able when no user logged in" do
         visit send(documentable_path, arguments)
 
         within "#tab-documents" do
@@ -52,7 +52,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
         end
       end
 
-      scenario "Should be able when documentable author is logged in" do
+      it "Should be able when documentable author is logged in" do
         login_as documentable.author
         visit send(documentable_path, arguments)
 
@@ -61,7 +61,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
         end
       end
 
-      scenario "Should be able when any administrator logged in" do
+      it "Should be able when any administrator logged in" do
         login_as administrator
         visit send(documentable_path, arguments)
 
@@ -78,7 +78,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
 
     let!(:document) { create(:document, documentable: documentable, user: documentable.author) }
 
-    scenario "Should show success notice after successfull document upload" do
+    it "Should show success notice after successfull document upload" do
       login_as documentable.author
 
       visit send(documentable_path, arguments)
@@ -91,7 +91,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       expect(page).to have_content "Document was deleted successfully."
     end
 
-    scenario "Should update documents tab count after successful deletion" do
+    it "Should update documents tab count after successful deletion" do
       login_as documentable.author
 
       visit send(documentable_path, arguments)
@@ -104,7 +104,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       expect(page).to have_link "Documents (0)"
     end
 
-    scenario "Should redirect to documentable path after successful deletion" do
+    it "Should redirect to documentable path after successful deletion" do
       login_as documentable.author
 
       visit send(documentable_path, arguments)

@@ -1,11 +1,11 @@
 require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
-feature 'Commenting polls' do
+describe 'Commenting polls' do
   let(:user) { create :user }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  scenario 'Index' do
+  it 'Index' do
     3.times { create(:comment, commentable: poll) }
 
     visit poll_path(poll)
@@ -20,7 +20,7 @@ feature 'Commenting polls' do
     end
   end
 
-  scenario 'Show' do
+  it 'Show' do
     skip "Feature not implemented yet, review soon"
 
     parent_comment = create(:comment, commentable: poll)
@@ -40,7 +40,7 @@ feature 'Commenting polls' do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
-  scenario 'Collapsable comments', :js do
+  it 'Collapsable comments', :js do
     parent_comment = create(:comment, body: "Main comment", commentable: poll)
     child_comment  = create(:comment, body: "First subcomment", commentable: poll, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: poll, parent: child_comment)
@@ -66,7 +66,7 @@ feature 'Commenting polls' do
     expect(page).to_not have_content grandchild_comment.body
   end
 
-  scenario 'Comment order' do
+  it 'Comment order' do
     c1 = create(:comment, :with_confidence_score, commentable: poll, cached_votes_up: 100,
                                                   cached_votes_total: 120, created_at: Time.current - 2)
     c2 = create(:comment, :with_confidence_score, commentable: poll, cached_votes_up: 10,
@@ -90,7 +90,7 @@ feature 'Commenting polls' do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario 'Creation date works differently in roots and in child comments, when sorting by confidence_score' do
+  it 'Creation date works differently in roots and in child comments, when sorting by confidence_score' do
    old_root = create(:comment, commentable: poll, created_at: Time.current - 10)
    new_root = create(:comment, commentable: poll, created_at: Time.current)
    old_child = create(:comment, commentable: poll, parent_id: new_root.id, created_at: Time.current - 10)
@@ -112,7 +112,7 @@ feature 'Commenting polls' do
    expect(old_child.body).to appear_before(new_child.body)
   end
 
-  scenario 'Turns links into html links' do
+  it 'Turns links into html links' do
     create :comment, commentable: poll, body: 'Built with http://rubyonrails.org/'
 
     visit poll_path(poll)
@@ -125,7 +125,7 @@ feature 'Commenting polls' do
     end
   end
 
-  scenario 'Sanitizes comment body for security' do
+  it 'Sanitizes comment body for security' do
     create :comment, commentable: poll,
                      body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
@@ -138,7 +138,7 @@ feature 'Commenting polls' do
     end
   end
 
-  scenario 'Paginated comments' do
+  it 'Paginated comments' do
     per_page = 10
     (per_page + 2).times { create(:comment, commentable: poll)}
 
@@ -155,8 +155,8 @@ feature 'Commenting polls' do
     expect(page).to have_css('.comment', count: 2)
   end
 
-  feature 'Not logged user' do
-    scenario 'can not see comments forms' do
+  describe 'Not logged user' do
+    it 'can not see comments forms' do
       create(:comment, commentable: poll)
       visit poll_path(poll)
 
@@ -168,7 +168,7 @@ feature 'Commenting polls' do
     end
   end
 
-  scenario 'Create', :js do
+  it 'Create', :js do
     login_as(user)
     visit poll_path(poll)
 
@@ -184,7 +184,7 @@ feature 'Commenting polls' do
     end
   end
 
-  scenario 'Errors on create', :js do
+  it 'Errors on create', :js do
     login_as(user)
     visit poll_path(poll)
 
@@ -193,7 +193,7 @@ feature 'Commenting polls' do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario 'Reply', :js do
+  it 'Reply', :js do
     citizen = create(:user, username: 'Ana')
     manuela = create(:user, username: 'Manuela')
     comment = create(:comment, commentable: poll, user: citizen)
@@ -215,7 +215,7 @@ feature 'Commenting polls' do
     expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
-  scenario 'Errors on reply', :js do
+  it 'Errors on reply', :js do
     comment = create(:comment, commentable: poll, user: user)
 
     login_as(user)
@@ -230,7 +230,7 @@ feature 'Commenting polls' do
 
   end
 
-  scenario "N replies", :js do
+  it "N replies", :js do
     parent = create(:comment, commentable: poll)
 
     7.times do
@@ -242,7 +242,7 @@ feature 'Commenting polls' do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
+  it "Flagging as inappropriate", :js do
     skip "Feature not implemented yet, review soon"
 
     comment = create(:comment, commentable: poll)
@@ -260,7 +260,7 @@ feature 'Commenting polls' do
     expect(Flag.flagged?(user, comment)).to be
   end
 
-  scenario "Undoing flagging as inappropriate", :js do
+  it "Undoing flagging as inappropriate", :js do
     skip "Feature not implemented yet, review soon"
 
     comment = create(:comment, commentable: poll)
@@ -279,7 +279,7 @@ feature 'Commenting polls' do
     expect(Flag.flagged?(user, comment)).to_not be
   end
 
-  scenario "Flagging turbolinks sanity check", :js do
+  it "Flagging turbolinks sanity check", :js do
     skip "Feature not implemented yet, review soon"
 
     poll = create(:poll, title: "Should we change the world?")
@@ -295,7 +295,7 @@ feature 'Commenting polls' do
     end
   end
 
-  scenario "Erasing a comment's author" do
+  it "Erasing a comment's author" do
     poll = create(:poll)
     comment = create(:comment, commentable: poll, body: "this should be visible")
     comment.user.erase
@@ -307,9 +307,9 @@ feature 'Commenting polls' do
     end
   end
 
-  feature "Moderators" do
+  describe "Moderators" do
 
-    scenario "can create comment as a moderator", :js do
+    it "can create comment as a moderator", :js do
       skip "Feature not implemented yet, review soon"
 
       moderator = create(:moderator)
@@ -329,7 +329,7 @@ feature 'Commenting polls' do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    it "can create reply as a moderator", :js do
       skip "Feature not implemented yet, review soon"
 
       citizen = create(:user, username: "Ana")
@@ -358,7 +358,7 @@ feature 'Commenting polls' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as an administrator" do
+    it "can not comment as an administrator" do
       skip "Feature not implemented yet, review soon"
 
       moderator = create(:moderator)
@@ -370,8 +370,8 @@ feature 'Commenting polls' do
     end
   end
 
-  feature "Administrators" do
-    scenario "can create comment as an administrator", :js do
+  describe "Administrators" do
+    it "can create comment as an administrator", :js do
       skip "Feature not implemented yet, review soon"
 
       admin = create(:administrator)
@@ -391,7 +391,7 @@ feature 'Commenting polls' do
       end
     end
 
-    scenario "can create reply as an administrator", :js do
+    it "can create reply as an administrator", :js do
       skip "Feature not implemented yet, review soon"
 
       citizen = create(:user, username: "Ana")
@@ -420,7 +420,7 @@ feature 'Commenting polls' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as a moderator" do
+    it "can not comment as a moderator" do
       skip "Feature not implemented yet, review soon"
 
       admin = create(:administrator)
@@ -432,9 +432,9 @@ feature 'Commenting polls' do
     end
   end
 
-  feature 'Voting comments' do
+  describe 'Voting comments' do
 
-    background do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @poll = create(:poll)
@@ -443,7 +443,7 @@ feature 'Commenting polls' do
       login_as(@manuela)
     end
 
-    scenario 'Show' do
+    it 'Show' do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
@@ -462,7 +462,7 @@ feature 'Commenting polls' do
       end
     end
 
-    scenario 'Create', :js do
+    it 'Create', :js do
       visit poll_path(@poll)
 
       within("#comment_#{@comment.id}_votes") do
@@ -480,7 +480,7 @@ feature 'Commenting polls' do
       end
     end
 
-    scenario 'Update', :js do
+    it 'Update', :js do
       visit poll_path(@poll)
 
       within("#comment_#{@comment.id}_votes") do
@@ -499,7 +499,7 @@ feature 'Commenting polls' do
       end
     end
 
-    scenario 'Trying to vote multiple times', :js do
+    it 'Trying to vote multiple times', :js do
       visit poll_path(@poll)
 
       within("#comment_#{@comment.id}_votes") do

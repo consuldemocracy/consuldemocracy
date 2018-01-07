@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Admin valuators' do
-  background do
+describe 'Admin valuators' do
+  before do
     @admin    = create(:administrator)
     @user     = create(:user, username: 'Jose Luis Balbin')
     @valuator = create(:valuator)
@@ -9,13 +9,13 @@ feature 'Admin valuators' do
     visit admin_valuators_path
   end
 
-  scenario 'Index' do
+  it 'Index' do
     expect(page).to have_content(@valuator.name)
     expect(page).to have_content(@valuator.email)
     expect(page).to_not have_content(@user.name)
   end
 
-  scenario 'Create Valuator', :js do
+  it 'Create Valuator', :js do
     fill_in 'name_or_email', with: @user.email
     click_button 'Search'
 
@@ -29,7 +29,7 @@ feature 'Admin valuators' do
     end
   end
 
-  scenario 'Delete Valuator' do
+  it 'Delete Valuator' do
     click_link 'Delete'
 
     within('#valuators') do
@@ -39,7 +39,7 @@ feature 'Admin valuators' do
 
   context 'Search' do
 
-    background do
+    before do
       user  = create(:user, username: 'David Foster Wallace', email: 'david@wallace.com')
       user2 = create(:user, username: 'Steven Erikson', email: 'steven@erikson.com')
       @valuator1 = create(:valuator, user: user)
@@ -47,7 +47,7 @@ feature 'Admin valuators' do
       visit admin_valuators_path
     end
 
-    scenario 'returns no results if search term is empty' do
+    it 'returns no results if search term is empty' do
       expect(page).to have_content(@valuator1.name)
       expect(page).to have_content(@valuator2.name)
 
@@ -60,7 +60,7 @@ feature 'Admin valuators' do
       expect(page).to_not have_content(@valuator2.name)
     end
 
-    scenario 'search by name' do
+    it 'search by name' do
       expect(page).to have_content(@valuator1.name)
       expect(page).to have_content(@valuator2.name)
 
@@ -72,7 +72,7 @@ feature 'Admin valuators' do
       expect(page).to_not have_content(@valuator2.name)
     end
 
-    scenario 'search by email' do
+    it 'search by email' do
       expect(page).to have_content(@valuator1.email)
       expect(page).to have_content(@valuator2.email)
 

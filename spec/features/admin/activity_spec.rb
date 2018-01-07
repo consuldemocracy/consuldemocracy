@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-feature 'Admin activity' do
+describe 'Admin activity' do
 
-  background do
+  before do
     @admin = create(:administrator)
     login_as(@admin.user)
   end
 
   context "Proposals" do
-    scenario "Shows moderation activity on proposals", :js do
+    it "Shows moderation activity on proposals", :js do
       proposal = create(:proposal)
 
       visit proposal_path(proposal)
@@ -26,7 +26,7 @@ feature 'Admin activity' do
       end
     end
 
-    scenario "Shows moderation activity from moderation screen" do
+    it "Shows moderation activity from moderation screen" do
       proposal1 = create(:proposal)
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
@@ -50,7 +50,7 @@ feature 'Admin activity' do
       expect(page).to have_content(proposal3.title)
     end
 
-    scenario "Shows admin restores" do
+    it "Shows admin restores" do
       proposal = create(:proposal, :hidden)
 
       visit admin_proposals_path
@@ -70,7 +70,7 @@ feature 'Admin activity' do
   end
 
   context "Debates" do
-    scenario "Shows moderation activity on debates", :js do
+    it "Shows moderation activity on debates", :js do
       debate = create(:debate)
 
       visit debate_path(debate)
@@ -88,7 +88,7 @@ feature 'Admin activity' do
       end
     end
 
-    scenario "Shows moderation activity from moderation screen" do
+    it "Shows moderation activity from moderation screen" do
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
@@ -112,7 +112,7 @@ feature 'Admin activity' do
       expect(page).to have_content(debate3.title)
     end
 
-    scenario "Shows admin restores" do
+    it "Shows admin restores" do
       debate = create(:debate, :hidden)
 
       visit admin_debates_path
@@ -132,7 +132,7 @@ feature 'Admin activity' do
   end
 
   context "Comments" do
-    scenario "Shows moderation activity on comments", :js do
+    it "Shows moderation activity on comments", :js do
       debate = create(:debate)
       comment = create(:comment, commentable: debate)
 
@@ -151,7 +151,7 @@ feature 'Admin activity' do
       end
     end
 
-    scenario "Shows moderation activity from moderation screen" do
+    it "Shows moderation activity from moderation screen" do
       comment1 = create(:comment, body: "SPAM")
       comment2 = create(:comment)
       comment3 = create(:comment, body: "Offensive!")
@@ -175,7 +175,7 @@ feature 'Admin activity' do
       expect(page).to have_content(comment3.body)
     end
 
-    scenario "Shows admin restores" do
+    it "Shows admin restores" do
       comment = create(:comment, :hidden)
 
       visit admin_comments_path
@@ -195,7 +195,7 @@ feature 'Admin activity' do
   end
 
   context "User" do
-    scenario "Shows moderation activity on users" do
+    it "Shows moderation activity on users" do
       proposal = create(:proposal)
 
       visit proposal_path(proposal)
@@ -215,7 +215,7 @@ feature 'Admin activity' do
       end
     end
 
-    scenario "Shows moderation activity from moderation screen" do
+    it "Shows moderation activity from moderation screen" do
       user = create(:user)
 
       visit moderation_users_path(name_or_email: user.username)
@@ -233,7 +233,7 @@ feature 'Admin activity' do
       end
     end
 
-    scenario "Shows moderation activity from proposals moderation screen" do
+    it "Shows moderation activity from proposals moderation screen" do
       proposal1 = create(:proposal)
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
@@ -259,7 +259,7 @@ feature 'Admin activity' do
       expect(page).to_not have_content(proposal2.author.username)
     end
 
-    scenario "Shows moderation activity from debates moderation screen" do
+    it "Shows moderation activity from debates moderation screen" do
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
@@ -285,7 +285,7 @@ feature 'Admin activity' do
       expect(page).to_not have_content(debate2.author.username)
     end
 
-    scenario "Shows moderation activity from comments moderation screen" do
+    it "Shows moderation activity from comments moderation screen" do
       comment1 = create(:comment, body: "SPAM")
       comment2 = create(:comment)
       comment3 = create(:comment, body: "Offensive!")
@@ -311,7 +311,7 @@ feature 'Admin activity' do
       expect(page).to_not have_content(comment2.author.username)
     end
 
-    scenario "Shows admin restores" do
+    it "Shows admin restores" do
       user = create(:user, :hidden)
 
       visit admin_hidden_users_path

@@ -1,11 +1,11 @@
 require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
-feature 'Commenting topics from proposals' do
+describe 'Commenting topics from proposals' do
   let(:user) { create :user }
   let(:proposal) { create :proposal }
 
-  scenario 'Index', :js do
+  it 'Index', :js do
 
     community = proposal.community
     topic = create(:topic, community: community)
@@ -23,7 +23,7 @@ feature 'Commenting topics from proposals' do
     end
   end
 
-  scenario 'Show', :js do
+  it 'Show', :js do
     community = proposal.community
     topic = create(:topic, community: community)
     parent_comment = create(:comment, commentable: topic)
@@ -40,7 +40,7 @@ feature 'Commenting topics from proposals' do
     expect(page).to have_link "Go back to #{topic.title}", href: community_topic_path(community, topic)
   end
 
-  scenario 'Collapsable comments', :js do
+  it 'Collapsable comments', :js do
     community = proposal.community
     topic = create(:topic, community: community)
     parent_comment = create(:comment, body: "Main comment", commentable: topic)
@@ -68,7 +68,7 @@ feature 'Commenting topics from proposals' do
     expect(page).to_not have_content grandchild_comment.body
   end
 
-  scenario 'Comment order' do
+  it 'Comment order' do
     community = proposal.community
     topic = create(:topic, community: community)
     c1 = create(:comment, :with_confidence_score, commentable: topic, cached_votes_up: 100,
@@ -94,7 +94,7 @@ feature 'Commenting topics from proposals' do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario 'Creation date works differently in roots and in child comments, when sorting by confidence_score' do
+  it 'Creation date works differently in roots and in child comments, when sorting by confidence_score' do
     community = proposal.community
     topic = create(:topic, community: community)
     old_root = create(:comment, commentable: topic, created_at: Time.current - 10)
@@ -118,7 +118,7 @@ feature 'Commenting topics from proposals' do
     expect(old_child.body).to appear_before(new_child.body)
   end
 
-  scenario 'Turns links into html links' do
+  it 'Turns links into html links' do
     community = proposal.community
     topic = create(:topic, community: community)
     create :comment, commentable: topic, body: 'Built with http://rubyonrails.org/'
@@ -133,7 +133,7 @@ feature 'Commenting topics from proposals' do
     end
   end
 
-  scenario 'Sanitizes comment body for security' do
+  it 'Sanitizes comment body for security' do
     community = proposal.community
     topic = create(:topic, community: community)
     create :comment, commentable: topic,
@@ -148,7 +148,7 @@ feature 'Commenting topics from proposals' do
     end
   end
 
-  scenario 'Paginated comments' do
+  it 'Paginated comments' do
     community = proposal.community
     topic = create(:topic, community: community)
     per_page = 10
@@ -167,8 +167,8 @@ feature 'Commenting topics from proposals' do
     expect(page).to have_css('.comment', count: 2)
   end
 
-  feature 'Not logged user' do
-    scenario 'can not see comments forms' do
+  describe 'Not logged user' do
+    it 'can not see comments forms' do
       community = proposal.community
       topic = create(:topic, community: community)
       create(:comment, commentable: topic)
@@ -183,7 +183,7 @@ feature 'Commenting topics from proposals' do
     end
   end
 
-  scenario 'Create', :js do
+  it 'Create', :js do
     login_as(user)
     community = proposal.community
     topic = create(:topic, community: community)
@@ -201,7 +201,7 @@ feature 'Commenting topics from proposals' do
     end
   end
 
-  scenario 'Errors on create', :js do
+  it 'Errors on create', :js do
     login_as(user)
     community = proposal.community
     topic = create(:topic, community: community)
@@ -212,7 +212,7 @@ feature 'Commenting topics from proposals' do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario 'Reply', :js do
+  it 'Reply', :js do
     community = proposal.community
     topic = create(:topic, community: community)
     citizen = create(:user, username: 'Ana')
@@ -236,7 +236,7 @@ feature 'Commenting topics from proposals' do
     expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
-  scenario 'Errors on reply', :js do
+  it 'Errors on reply', :js do
     community = proposal.community
     topic = create(:topic, community: community)
     comment = create(:comment, commentable: topic, user: user)
@@ -253,7 +253,7 @@ feature 'Commenting topics from proposals' do
 
   end
 
-  scenario "N replies", :js do
+  it "N replies", :js do
     community = proposal.community
     topic = create(:topic, community: community)
     parent = create(:comment, commentable: topic)
@@ -267,7 +267,7 @@ feature 'Commenting topics from proposals' do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
+  it "Flagging as inappropriate", :js do
     community = proposal.community
     topic = create(:topic, community: community)
     comment = create(:comment, commentable: topic)
@@ -285,7 +285,7 @@ feature 'Commenting topics from proposals' do
     expect(Flag.flagged?(user, comment)).to be
   end
 
-  scenario "Undoing flagging as inappropriate", :js do
+  it "Undoing flagging as inappropriate", :js do
     community = proposal.community
     topic = create(:topic, community: community)
     comment = create(:comment, commentable: topic)
@@ -304,7 +304,7 @@ feature 'Commenting topics from proposals' do
     expect(Flag.flagged?(user, comment)).to_not be
   end
 
-  scenario "Flagging turbolinks sanity check", :js do
+  it "Flagging turbolinks sanity check", :js do
     Setting['feature.community'] = true
 
     community = proposal.community
@@ -323,7 +323,7 @@ feature 'Commenting topics from proposals' do
     Setting['feature.community'] = nil
   end
 
-  scenario "Erasing a comment's author" do
+  it "Erasing a comment's author" do
     community = proposal.community
     topic = create(:topic, community: community)
     comment = create(:comment, commentable: topic, body: "this should be visible")
@@ -337,8 +337,8 @@ feature 'Commenting topics from proposals' do
     end
   end
 
-  feature "Moderators" do
-    scenario "can create comment as a moderator", :js do
+  describe "Moderators" do
+    it "can create comment as a moderator", :js do
       community = proposal.community
       topic = create(:topic, community: community)
       moderator = create(:moderator)
@@ -358,7 +358,7 @@ feature 'Commenting topics from proposals' do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    it "can create reply as a moderator", :js do
       community = proposal.community
       topic = create(:topic, community: community)
       citizen = create(:user, username: "Ana")
@@ -387,7 +387,7 @@ feature 'Commenting topics from proposals' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as an administrator" do
+    it "can not comment as an administrator" do
       community = proposal.community
       topic = create(:topic, community: community)
       moderator = create(:moderator)
@@ -399,8 +399,8 @@ feature 'Commenting topics from proposals' do
     end
   end
 
-  feature "Administrators" do
-    scenario "can create comment as an administrator", :js do
+  describe "Administrators" do
+    it "can create comment as an administrator", :js do
       community = proposal.community
       topic = create(:topic, community: community)
       admin = create(:administrator)
@@ -420,7 +420,7 @@ feature 'Commenting topics from proposals' do
       end
     end
 
-    scenario "can create reply as an administrator", :js do
+    it "can create reply as an administrator", :js do
       community = proposal.community
       topic = create(:topic, community: community)
       citizen = create(:user, username: "Ana")
@@ -449,7 +449,7 @@ feature 'Commenting topics from proposals' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as a moderator" do
+    it "can not comment as a moderator" do
       community = proposal.community
       topic = create(:topic, community: community)
       admin = create(:administrator)
@@ -461,9 +461,9 @@ feature 'Commenting topics from proposals' do
     end
   end
 
-  feature 'Voting comments' do
+  describe 'Voting comments' do
 
-    background do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @proposal = create(:proposal)
@@ -473,7 +473,7 @@ feature 'Commenting topics from proposals' do
       login_as(@manuela)
     end
 
-    scenario 'Show' do
+    it 'Show' do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
@@ -492,7 +492,7 @@ feature 'Commenting topics from proposals' do
       end
     end
 
-    scenario 'Create', :js do
+    it 'Create', :js do
       visit community_topic_path(@proposal.community, @topic)
 
       within("#comment_#{@comment.id}_votes") do
@@ -510,7 +510,7 @@ feature 'Commenting topics from proposals' do
       end
     end
 
-    scenario 'Update', :js do
+    it 'Update', :js do
       visit community_topic_path(@proposal.community, @topic)
 
       within("#comment_#{@comment.id}_votes") do
@@ -529,7 +529,7 @@ feature 'Commenting topics from proposals' do
       end
     end
 
-    scenario 'Trying to vote multiple times', :js do
+    it 'Trying to vote multiple times', :js do
       visit community_topic_path(@proposal.community, @topic)
 
       within("#comment_#{@comment.id}_votes") do
@@ -551,11 +551,11 @@ feature 'Commenting topics from proposals' do
 
 end
 
-feature 'Commenting topics from budget investments' do
+describe 'Commenting topics from budget investments' do
   let(:user) { create :user }
   let(:investment) { create :budget_investment }
 
-  scenario 'Index', :js do
+  it 'Index', :js do
 
     community = investment.community
     topic = create(:topic, community: community)
@@ -573,7 +573,7 @@ feature 'Commenting topics from budget investments' do
     end
   end
 
-  scenario 'Show', :js do
+  it 'Show', :js do
     community = investment.community
     topic = create(:topic, community: community)
     parent_comment = create(:comment, commentable: topic)
@@ -590,7 +590,7 @@ feature 'Commenting topics from budget investments' do
     expect(page).to have_link "Go back to #{topic.title}", href: community_topic_path(community, topic)
   end
 
-  scenario 'Collapsable comments', :js do
+  it 'Collapsable comments', :js do
     community = investment.community
     topic = create(:topic, community: community)
     parent_comment = create(:comment, body: "Main comment", commentable: topic)
@@ -618,7 +618,7 @@ feature 'Commenting topics from budget investments' do
     expect(page).to_not have_content grandchild_comment.body
   end
 
-  scenario 'Comment order' do
+  it 'Comment order' do
     community = investment.community
     topic = create(:topic, community: community)
     c1 = create(:comment, :with_confidence_score, commentable: topic, cached_votes_up: 100,
@@ -644,7 +644,7 @@ feature 'Commenting topics from budget investments' do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario 'Creation date works differently in roots and in child comments, when sorting by confidence_score' do
+  it 'Creation date works differently in roots and in child comments, when sorting by confidence_score' do
     community = investment.community
     topic = create(:topic, community: community)
     old_root = create(:comment, commentable: topic, created_at: Time.current - 10)
@@ -668,7 +668,7 @@ feature 'Commenting topics from budget investments' do
     expect(old_child.body).to appear_before(new_child.body)
   end
 
-  scenario 'Turns links into html links' do
+  it 'Turns links into html links' do
     community = investment.community
     topic = create(:topic, community: community)
     create :comment, commentable: topic, body: 'Built with http://rubyonrails.org/'
@@ -683,7 +683,7 @@ feature 'Commenting topics from budget investments' do
     end
   end
 
-  scenario 'Sanitizes comment body for security' do
+  it 'Sanitizes comment body for security' do
     community = investment.community
     topic = create(:topic, community: community)
     create :comment, commentable: topic,
@@ -698,7 +698,7 @@ feature 'Commenting topics from budget investments' do
     end
   end
 
-  scenario 'Paginated comments' do
+  it 'Paginated comments' do
     community = investment.community
     topic = create(:topic, community: community)
     per_page = 10
@@ -717,8 +717,8 @@ feature 'Commenting topics from budget investments' do
     expect(page).to have_css('.comment', count: 2)
   end
 
-  feature 'Not logged user' do
-    scenario 'can not see comments forms' do
+  describe 'Not logged user' do
+    it 'can not see comments forms' do
       community = investment.community
       topic = create(:topic, community: community)
       create(:comment, commentable: topic)
@@ -733,7 +733,7 @@ feature 'Commenting topics from budget investments' do
     end
   end
 
-  scenario 'Create', :js do
+  it 'Create', :js do
     login_as(user)
     community = investment.community
     topic = create(:topic, community: community)
@@ -751,7 +751,7 @@ feature 'Commenting topics from budget investments' do
     end
   end
 
-  scenario 'Errors on create', :js do
+  it 'Errors on create', :js do
     login_as(user)
     community = investment.community
     topic = create(:topic, community: community)
@@ -762,7 +762,7 @@ feature 'Commenting topics from budget investments' do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario 'Reply', :js do
+  it 'Reply', :js do
     community = investment.community
     topic = create(:topic, community: community)
     citizen = create(:user, username: 'Ana')
@@ -786,7 +786,7 @@ feature 'Commenting topics from budget investments' do
     expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
-  scenario 'Errors on reply', :js do
+  it 'Errors on reply', :js do
     community = investment.community
     topic = create(:topic, community: community)
     comment = create(:comment, commentable: topic, user: user)
@@ -803,7 +803,7 @@ feature 'Commenting topics from budget investments' do
 
   end
 
-  scenario "N replies", :js do
+  it "N replies", :js do
     community = investment.community
     topic = create(:topic, community: community)
     parent = create(:comment, commentable: topic)
@@ -817,7 +817,7 @@ feature 'Commenting topics from budget investments' do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
+  it "Flagging as inappropriate", :js do
     community = investment.community
     topic = create(:topic, community: community)
     comment = create(:comment, commentable: topic)
@@ -835,7 +835,7 @@ feature 'Commenting topics from budget investments' do
     expect(Flag.flagged?(user, comment)).to be
   end
 
-  scenario "Undoing flagging as inappropriate", :js do
+  it "Undoing flagging as inappropriate", :js do
     community = investment.community
     topic = create(:topic, community: community)
     comment = create(:comment, commentable: topic)
@@ -854,7 +854,7 @@ feature 'Commenting topics from budget investments' do
     expect(Flag.flagged?(user, comment)).to_not be
   end
 
-  scenario "Flagging turbolinks sanity check", :js do
+  it "Flagging turbolinks sanity check", :js do
     Setting['feature.community'] = true
 
     community = investment.community
@@ -873,7 +873,7 @@ feature 'Commenting topics from budget investments' do
     Setting['feature.community'] = nil
   end
 
-  scenario "Erasing a comment's author" do
+  it "Erasing a comment's author" do
     community = investment.community
     topic = create(:topic, community: community)
     comment = create(:comment, commentable: topic, body: "this should be visible")
@@ -887,8 +887,8 @@ feature 'Commenting topics from budget investments' do
     end
   end
 
-  feature "Moderators" do
-    scenario "can create comment as a moderator", :js do
+  describe "Moderators" do
+    it "can create comment as a moderator", :js do
       community = investment.community
       topic = create(:topic, community: community)
       moderator = create(:moderator)
@@ -908,7 +908,7 @@ feature 'Commenting topics from budget investments' do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    it "can create reply as a moderator", :js do
       community = investment.community
       topic = create(:topic, community: community)
       citizen = create(:user, username: "Ana")
@@ -937,7 +937,7 @@ feature 'Commenting topics from budget investments' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as an administrator" do
+    it "can not comment as an administrator" do
       community = investment.community
       topic = create(:topic, community: community)
       moderator = create(:moderator)
@@ -949,8 +949,8 @@ feature 'Commenting topics from budget investments' do
     end
   end
 
-  feature "Administrators" do
-    scenario "can create comment as an administrator", :js do
+  describe "Administrators" do
+    it "can create comment as an administrator", :js do
       community = investment.community
       topic = create(:topic, community: community)
       admin = create(:administrator)
@@ -970,7 +970,7 @@ feature 'Commenting topics from budget investments' do
       end
     end
 
-    scenario "can create reply as an administrator", :js do
+    it "can create reply as an administrator", :js do
       community = investment.community
       topic = create(:topic, community: community)
       citizen = create(:user, username: "Ana")
@@ -999,7 +999,7 @@ feature 'Commenting topics from budget investments' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as a moderator" do
+    it "can not comment as a moderator" do
       community = investment.community
       topic = create(:topic, community: community)
       admin = create(:administrator)
@@ -1011,9 +1011,9 @@ feature 'Commenting topics from budget investments' do
     end
   end
 
-  feature 'Voting comments' do
+  describe 'Voting comments' do
 
-    background do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @investment = create(:budget_investment)
@@ -1023,7 +1023,7 @@ feature 'Commenting topics from budget investments' do
       login_as(@manuela)
     end
 
-    scenario 'Show' do
+    it 'Show' do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
@@ -1042,7 +1042,7 @@ feature 'Commenting topics from budget investments' do
       end
     end
 
-    scenario 'Create', :js do
+    it 'Create', :js do
       visit community_topic_path(@investment.community, @topic)
 
       within("#comment_#{@comment.id}_votes") do
@@ -1060,7 +1060,7 @@ feature 'Commenting topics from budget investments' do
       end
     end
 
-    scenario 'Update', :js do
+    it 'Update', :js do
       visit community_topic_path(@investment.community, @topic)
 
       within("#comment_#{@comment.id}_votes") do
@@ -1079,7 +1079,7 @@ feature 'Commenting topics from budget investments' do
       end
     end
 
-    scenario 'Trying to vote multiple times', :js do
+    it 'Trying to vote multiple times', :js do
       visit community_topic_path(@investment.community, @topic)
 
       within("#comment_#{@comment.id}_votes") do

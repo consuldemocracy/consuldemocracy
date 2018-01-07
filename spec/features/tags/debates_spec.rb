@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Tags' do
+describe 'Tags' do
 
-  scenario 'Index' do
+  it 'Index' do
     earth = create(:debate, tag_list: 'Medio Ambiente')
     money = create(:debate, tag_list: 'Economía')
 
@@ -17,7 +17,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Index shows up to 5 tags per proposal' do
+  it 'Index shows up to 5 tags per proposal' do
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
     create :debate, tag_list: tag_list
 
@@ -28,7 +28,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Index shows 3 tags with no plus link' do
+  it 'Index shows 3 tags with no plus link' do
     tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
     create :debate, tag_list: tag_list
 
@@ -42,7 +42,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Index tag does not show featured debates' do
+  it 'Index tag does not show featured debates' do
     featured_debates = create_featured_debates
     debates = create(:debate, tag_list: "123")
 
@@ -52,7 +52,7 @@ feature 'Tags' do
     expect(page).to_not have_selector('#featured-debates')
   end
 
-  scenario 'Show' do
+  it 'Show' do
     debate = create(:debate, tag_list: 'Hacienda, Economía')
 
     visit debate_path(debate)
@@ -61,7 +61,7 @@ feature 'Tags' do
     expect(page).to have_content "Hacienda"
   end
 
-  scenario 'Create' do
+  it 'Create' do
     user = create(:user)
     login_as(user)
 
@@ -80,7 +80,7 @@ feature 'Tags' do
     expect(page).to have_content 'Impuestos'
   end
 
-  scenario 'Create with too many tags' do
+  it 'Create with too many tags' do
     user = create(:user)
     login_as(user)
 
@@ -97,7 +97,7 @@ feature 'Tags' do
     expect(page).to have_content 'tags must be less than or equal to 6'
   end
 
-  scenario 'Create with dangerous strings' do
+  it 'Create with dangerous strings' do
     user = create(:user)
     login_as(user)
 
@@ -118,7 +118,7 @@ feature 'Tags' do
     expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
   end
 
-  scenario 'Update' do
+  it 'Update' do
     debate = create(:debate, tag_list: 'Economía')
 
     login_as(debate.author)
@@ -136,7 +136,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Delete' do
+  it 'Delete' do
     debate = create(:debate, tag_list: 'Economía')
 
     login_as(debate.author)
@@ -151,7 +151,7 @@ feature 'Tags' do
 
   context "Filter" do
 
-    scenario "From index" do
+    it "From index" do
       debate1 = create(:debate, tag_list: 'Education')
       debate2 = create(:debate, tag_list: 'Health')
 
@@ -167,7 +167,7 @@ feature 'Tags' do
       end
     end
 
-    scenario "From show" do
+    it "From show" do
       debate1 = create(:debate, tag_list: 'Education')
       debate2 = create(:debate, tag_list: 'Health')
 
@@ -185,7 +185,7 @@ feature 'Tags' do
 
   context 'Tag cloud' do
 
-    scenario 'Display user tags' do
+    it 'Display user tags' do
       earth = create(:debate, tag_list: 'Medio Ambiente')
       money = create(:debate, tag_list: 'Economía')
 
@@ -197,7 +197,7 @@ feature 'Tags' do
       end
     end
 
-    scenario "Filter by user tags" do
+    it "Filter by user tags" do
       debate1 = create(:debate, tag_list: 'Medio Ambiente')
       debate2 = create(:debate, tag_list: 'Medio Ambiente')
       debate3 = create(:debate, tag_list: 'Economía')

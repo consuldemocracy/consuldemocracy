@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-feature 'Emails' do
+describe 'Emails' do
 
-  background do
+  before do
     reset_mailer
   end
 
-  scenario "Signup Email" do
+  it "Signup Email" do
     sign_up
 
     email = open_last_email
@@ -15,7 +15,7 @@ feature 'Emails' do
     expect(email).to have_body_text(user_confirmation_path)
   end
 
-  scenario "Reset password" do
+  it "Reset password" do
     reset_password
 
     email = open_last_email
@@ -25,7 +25,7 @@ feature 'Emails' do
   end
 
   context 'Proposal comments' do
-    scenario "Send email on proposal comment", :js do
+    it "Send email on proposal comment", :js do
       user = create(:user, email_on_comment: true)
       proposal = create(:proposal, author: user)
       comment_on(proposal)
@@ -36,7 +36,7 @@ feature 'Emails' do
       expect(email).to have_body_text(proposal_path(proposal))
     end
 
-    scenario 'Do not send email about own proposal comments', :js do
+    it 'Do not send email about own proposal comments', :js do
       user = create(:user, email_on_comment: true)
       proposal = create(:proposal, author: user)
       comment_on(proposal, user)
@@ -44,7 +44,7 @@ feature 'Emails' do
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
 
-    scenario 'Do not send email about proposal comment unless set in preferences', :js do
+    it 'Do not send email about proposal comment unless set in preferences', :js do
       user = create(:user, email_on_comment: false)
       proposal = create(:proposal, author: user)
       comment_on(proposal)
@@ -54,7 +54,7 @@ feature 'Emails' do
   end
 
   context 'Debate comments' do
-    scenario "Send email on debate comment", :js do
+    it "Send email on debate comment", :js do
       user = create(:user, email_on_comment: true)
       debate = create(:debate, author: user)
       comment_on(debate)
@@ -67,7 +67,7 @@ feature 'Emails' do
       expect(email).to have_body_text(account_path)
     end
 
-    scenario 'Do not send email about own debate comments', :js do
+    it 'Do not send email about own debate comments', :js do
       user = create(:user, email_on_comment: true)
       debate = create(:debate, author: user)
       comment_on(debate, user)
@@ -75,7 +75,7 @@ feature 'Emails' do
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
 
-    scenario 'Do not send email about debate comment unless set in preferences', :js do
+    it 'Do not send email about debate comment unless set in preferences', :js do
       user = create(:user, email_on_comment: false)
       debate = create(:debate, author: user)
       comment_on(debate)
@@ -85,7 +85,7 @@ feature 'Emails' do
   end
 
   context 'Budget investments comments' do
-    scenario 'Send email on budget investment comment', :js do
+    it 'Send email on budget investment comment', :js do
       user = create(:user, email_on_comment: true)
       investment = create(:budget_investment, author: user, budget: create(:budget))
       comment_on(investment)
@@ -98,7 +98,7 @@ feature 'Emails' do
       expect(email).to have_body_text(account_path)
     end
 
-    scenario 'Do not send email about own budget investments comments', :js do
+    it 'Do not send email about own budget investments comments', :js do
       user = create(:user, email_on_comment: true)
       investment = create(:budget_investment, author: user, budget: create(:budget))
       comment_on(investment, user)
@@ -106,7 +106,7 @@ feature 'Emails' do
       expect { open_last_email }.to raise_error 'No email has been sent!'
     end
 
-    scenario 'Do not send email about budget investment comment unless set in preferences', :js do
+    it 'Do not send email about budget investment comment unless set in preferences', :js do
       user = create(:user, email_on_comment: false)
       investment = create(:budget_investment, author: user, budget: create(:budget))
       comment_on(investment)
@@ -120,7 +120,7 @@ feature 'Emails' do
       @proposal = create(:proposal)
     end
 
-    scenario 'Send email on topic comment', :js do
+    it 'Send email on topic comment', :js do
       user = create(:user, email_on_comment: true)
       topic = create(:topic, author: user, community: @proposal.community)
       comment_on(topic)
@@ -133,7 +133,7 @@ feature 'Emails' do
       expect(email).to have_body_text(account_path)
     end
 
-    scenario 'Do not send email about own topic comments', :js do
+    it 'Do not send email about own topic comments', :js do
       user = create(:user, email_on_comment: true)
       topic = create(:topic, author: user, community: @proposal.community)
       comment_on(topic, user)
@@ -141,7 +141,7 @@ feature 'Emails' do
       expect { open_last_email }.to raise_error 'No email has been sent!'
     end
 
-    scenario 'Do not send email about topic comment unless set in preferences', :js do
+    it 'Do not send email about topic comment unless set in preferences', :js do
       user = create(:user, email_on_comment: false)
       topic = create(:topic, author: user, community: @proposal.community)
       comment_on(topic)
@@ -151,7 +151,7 @@ feature 'Emails' do
   end
 
   context 'Poll comments' do
-    scenario 'Send email on poll comment', :js do
+    it 'Send email on poll comment', :js do
       user = create(:user, email_on_comment: true)
       poll = create(:poll, author: user)
       comment_on(poll)
@@ -164,7 +164,7 @@ feature 'Emails' do
       expect(email).to have_body_text(account_path)
     end
 
-    scenario 'Do not send email about own poll comments', :js do
+    it 'Do not send email about own poll comments', :js do
       user = create(:user, email_on_comment: true)
       poll = create(:poll, author: user)
       comment_on(poll, user)
@@ -172,7 +172,7 @@ feature 'Emails' do
       expect { open_last_email }.to raise_error 'No email has been sent!'
     end
 
-    scenario 'Do not send email about poll question comment unless set in preferences', :js do
+    it 'Do not send email about poll question comment unless set in preferences', :js do
       user = create(:user, email_on_comment: false)
       poll = create(:poll, author: user)
       comment_on(poll)
@@ -182,7 +182,7 @@ feature 'Emails' do
   end
 
   context 'Comment replies' do
-    scenario "Send email on comment reply", :js do
+    it "Send email on comment reply", :js do
       user = create(:user, email_on_comment_reply: true)
       reply_to(user)
 
@@ -195,14 +195,14 @@ feature 'Emails' do
       expect(email).to have_body_text(account_path)
     end
 
-    scenario "Do not send email about own replies to own comments", :js do
+    it "Do not send email about own replies to own comments", :js do
       user = create(:user, email_on_comment_reply: true)
       reply_to(user, user)
 
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
 
-    scenario "Do not send email about comment reply unless set in preferences", :js do
+    it "Do not send email about comment reply unless set in preferences", :js do
       user = create(:user, email_on_comment_reply: false)
       reply_to(user)
 
@@ -210,7 +210,7 @@ feature 'Emails' do
     end
   end
 
-  scenario "Email depending on user's locale" do
+  it "Email depending on user's locale" do
     sign_up
 
     email = open_last_email
@@ -219,7 +219,7 @@ feature 'Emails' do
     expect(email).to have_body_text(user_confirmation_path)
   end
 
-  scenario "Email on unfeasible spending proposal" do
+  it "Email on unfeasible spending proposal" do
     Setting["feature.spending_proposals"] = true
 
     spending_proposal = create(:spending_proposal)
@@ -251,7 +251,7 @@ feature 'Emails' do
 
   context "Direct Message" do
 
-    scenario "Receiver email" do
+    it "Receiver email" do
       sender   = create(:user, :level_two)
       receiver = create(:user, :level_two)
 
@@ -266,7 +266,7 @@ feature 'Emails' do
       expect(email).to have_body_text(/#{user_path(direct_message.sender_id)}/)
     end
 
-    scenario "Sender email" do
+    it "Sender email" do
       sender   = create(:user, :level_two)
       receiver = create(:user, :level_two)
 
@@ -286,7 +286,7 @@ feature 'Emails' do
 
   context "Proposal notification digest" do
 
-    scenario "notifications for proposals that I have supported" do
+    it "notifications for proposals that I have supported" do
       user = create(:user, email_digest: true)
 
       proposal1 = create(:proposal)
@@ -340,7 +340,7 @@ feature 'Emails' do
 
   context "User invites" do
 
-    scenario "Send an invitation" do
+    it "Send an invitation" do
       login_as_manager
       visit new_management_user_invite_path
 
@@ -362,7 +362,7 @@ feature 'Emails' do
 
   context "Budgets" do
 
-    background do
+    before do
       Setting["feature.budgets"] = true
     end
 
@@ -371,7 +371,7 @@ feature 'Emails' do
     let(:group)    { create(:budget_group, name: "Health", budget: budget) }
     let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
-    scenario "Investment created" do
+    it "Investment created" do
       login_as(author)
       visit new_budget_investment_path(budget_id: budget.id)
 
@@ -395,7 +395,7 @@ feature 'Emails' do
       expect(email).to have_body_text(budget_path(budget))
     end
 
-    scenario "Unfeasible investment" do
+    it "Unfeasible investment" do
       investment = create(:budget_investment, author: author, budget: budget)
 
       valuator = create(:valuator)
@@ -420,7 +420,7 @@ feature 'Emails' do
       expect(email).to have_body_text(investment.unfeasibility_explanation)
     end
 
-    scenario "Selected investment" do
+    it "Selected investment" do
       author1 = create(:user)
       author2 = create(:user)
       author3 = create(:user)
@@ -443,7 +443,7 @@ feature 'Emails' do
       expect(email).to have_body_text(investment.title)
     end
 
-    scenario "Unselected investment" do
+    it "Unselected investment" do
       author1 = create(:user)
       author2 = create(:user)
       author3 = create(:user)
@@ -470,7 +470,7 @@ feature 'Emails' do
 
   context "Polls" do
 
-    scenario "Send email on poll comment reply", :js do
+    it "Send email on poll comment reply", :js do
       user1 = create(:user, email_on_comment_reply: true)
       user2 = create(:user)
       poll = create(:poll, author: create(:user))
@@ -502,7 +502,7 @@ feature 'Emails' do
   end
 
   context "Users without email" do
-    scenario "should not receive emails", :js do
+    it "should not receive emails", :js do
       user = create(:user, :verified, email_on_comment: true)
       proposal = create(:proposal, author: user)
       user.update(email: nil)

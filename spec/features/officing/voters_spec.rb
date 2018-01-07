@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-feature 'Voters' do
+describe 'Voters' do
 
   let(:poll) { create(:poll, :current) }
   let(:booth) { create(:poll_booth) }
   let(:officer) { create(:poll_officer) }
 
-  background do
+  before do
     login_as(officer.user)
     create(:geozone, :in_census)
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
@@ -14,7 +14,7 @@ feature 'Voters' do
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
   end
 
-  scenario "Can vote", :js do
+  it "Can vote", :js do
     visit new_officing_residence_path
     officing_verify_residence
 
@@ -33,7 +33,7 @@ feature 'Voters' do
     expect(Poll::Voter.last.officer_id).to eq(officer.id)
   end
 
-  scenario "Already voted", :js do
+  it "Already voted", :js do
     poll2 = create(:poll, :current)
     booth_assignment = create(:poll_booth_assignment, poll: poll2, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
@@ -53,7 +53,7 @@ feature 'Voters' do
     end
   end
 
-  scenario "Had already verified his residence, but is not level 2 yet", :js do
+  it "Had already verified his residence, but is not level 2 yet", :js do
     user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
     expect(user).to_not be_level_two_verified
 
@@ -64,7 +64,7 @@ feature 'Voters' do
     expect(page).to have_content poll.name
   end
 
-  scenario "Display only current polls on which officer has a voting shift today, and user can answer", :js do
+  it "Display only current polls on which officer has a voting shift today, and user can answer", :js do
     poll_current = create(:poll, :current)
     second_booth = create(:poll_booth)
     booth_assignment = create(:poll_booth_assignment, poll: poll_current, booth: second_booth)

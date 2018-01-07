@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-feature 'Users' do
+describe 'Users' do
 
   context 'Regular authentication' do
     context 'Sign up' do
 
-      scenario 'Success' do
+      it 'Success' do
         message = "You have been sent a message containing a verification link. Please click on this link to activate your account."
         visit '/'
         click_link 'Register'
@@ -25,7 +25,7 @@ feature 'Users' do
         expect(page).to have_content "Your account has been confirmed."
       end
 
-      scenario 'Errors on sign up' do
+      it 'Errors on sign up' do
         visit '/'
         click_link 'Register'
         click_button 'Register'
@@ -37,7 +37,7 @@ feature 'Users' do
 
     context 'Sign in' do
 
-      scenario 'sign in with email' do
+      it 'sign in with email' do
         create(:user, email: 'manuela@consul.dev', password: 'judgementday')
 
         visit '/'
@@ -49,7 +49,7 @@ feature 'Users' do
         expect(page).to have_content 'You have been signed in successfully.'
       end
 
-      scenario 'Sign in with username' do
+      it 'Sign in with username' do
         create(:user, username: '👻👽👾🤖', email: 'ash@nostromo.dev', password: 'xenomorph')
 
         visit '/'
@@ -61,7 +61,7 @@ feature 'Users' do
         expect(page).to have_content 'You have been signed in successfully.'
       end
 
-      scenario 'Avoid username-email collisions' do
+      it 'Avoid username-email collisions' do
         u1 = create(:user, username: 'Spidey', email: 'peter@nyc.dev', password: 'greatpower')
         u2 = create(:user, username: 'peter@nyc.dev', email: 'venom@nyc.dev', password: 'symbiote')
 
@@ -120,7 +120,7 @@ feature 'Users' do
         }
       end
 
-      scenario 'Sign up when Oauth provider has a verified email' do
+      it 'Sign up when Oauth provider has a verified email' do
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_verified_email)
 
         visit '/'
@@ -137,7 +137,7 @@ feature 'Users' do
         expect(page).to have_field('user_email', with: 'manuelacarmena@example.com')
       end
 
-      scenario 'Sign up when Oauth provider has an unverified email' do
+      it 'Sign up when Oauth provider has an unverified email' do
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_email)
 
         visit '/'
@@ -163,7 +163,7 @@ feature 'Users' do
         expect(page).to have_field('user_email', with: 'manuelacarmena@example.com')
       end
 
-      scenario 'Sign up, when no email was provided by OAuth provider' do
+      it 'Sign up, when no email was provided by OAuth provider' do
         OmniAuth.config.add_mock(:twitter, twitter_hash)
 
         visit '/'
@@ -191,7 +191,7 @@ feature 'Users' do
         expect(page).to have_field('user_email', with: 'manueladelascarmenas@example.com')
       end
 
-      scenario 'Cancelling signup' do
+      it 'Cancelling signup' do
         OmniAuth.config.add_mock(:twitter, twitter_hash)
 
         visit '/'
@@ -205,7 +205,7 @@ feature 'Users' do
         expect_to_not_be_signed_in
       end
 
-      scenario 'Sign in, user was already signed up with OAuth' do
+      it 'Sign in, user was already signed up with OAuth' do
         user = create(:user, email: 'manuela@consul.dev', password: 'judgementday')
         create(:identity, uid: '12345', provider: 'twitter', user: user)
         OmniAuth.config.add_mock(:twitter, twitter_hash)
@@ -224,7 +224,7 @@ feature 'Users' do
 
       end
 
-      scenario 'Try to register with the username of an already existing user' do
+      it 'Try to register with the username of an already existing user' do
         create(:user, username: 'manuela', email: 'manuela@consul.dev', password: 'judgementday')
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_verified_email)
 
@@ -252,7 +252,7 @@ feature 'Users' do
         expect(page).to have_field('user_email', with: 'manuelacarmena@example.com')
       end
 
-      scenario 'Try to register with the email of an already existing user, when no email was provided by oauth' do
+      it 'Try to register with the email of an already existing user, when no email was provided by oauth' do
         create(:user, username: 'peter', email: 'manuela@example.com')
         OmniAuth.config.add_mock(:twitter, twitter_hash)
 
@@ -287,7 +287,7 @@ feature 'Users' do
         expect(page).to have_field('user_email', with: 'somethingelse@example.com')
       end
 
-      scenario 'Try to register with the email of an already existing user, when an unconfirmed email was provided by oauth' do
+      it 'Try to register with the email of an already existing user, when an unconfirmed email was provided by oauth' do
         create(:user, username: 'peter', email: 'manuelacarmena@example.com')
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_email)
 
@@ -320,7 +320,7 @@ feature 'Users' do
     end
   end
 
-  scenario 'Sign out' do
+  it 'Sign out' do
     user = create(:user)
     login_as(user)
 
@@ -330,7 +330,7 @@ feature 'Users' do
     expect(page).to have_content 'You have been signed out successfully.'
   end
 
-  scenario 'Reset password' do
+  it 'Reset password' do
     create(:user, email: 'manuela@consul.dev')
 
     visit '/'
@@ -352,7 +352,7 @@ feature 'Users' do
     expect(page).to have_content "Your password has been changed successfully."
   end
 
-  scenario 'Sign in, admin with password expired' do
+  it 'Sign in, admin with password expired' do
     user = create(:user, password_changed_at: Time.current - 1.year)
     admin = create(:administrator, user: user)
 
@@ -370,7 +370,7 @@ feature 'Users' do
     expect(page).to have_content "Password successfully updated"
   end
 
-  scenario 'Sign in, admin without password expired' do
+  it 'Sign in, admin without password expired' do
     user = create(:user, password_changed_at: Time.current - 360.days)
     admin = create(:administrator, user: user)
 
@@ -380,7 +380,7 @@ feature 'Users' do
     expect(page).to_not have_content "Your password is expired"
   end
 
-  scenario 'Sign in, user with password expired' do
+  it 'Sign in, user with password expired' do
     user = create(:user, password_changed_at: Time.current - 1.year)
 
     login_as(user)
@@ -389,7 +389,7 @@ feature 'Users' do
     expect(page).to_not have_content "Your password is expired"
   end
 
-  scenario 'Admin with password expired trying to use same password' do
+  it 'Admin with password expired trying to use same password' do
     user = create(:user, password_changed_at: Time.current - 1.year, password: '123456789')
     admin = create(:administrator, user: user)
 

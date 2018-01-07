@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Admin poll officers' do
+describe 'Admin poll officers' do
 
-  background do
+  before do
     @admin = create(:administrator)
     @user  = create(:user, username: 'Pedro Jose Garcia')
     @officer = create(:poll_officer)
@@ -10,13 +10,13 @@ feature 'Admin poll officers' do
     visit admin_officers_path
   end
 
-  scenario 'Index' do
+  it 'Index' do
     expect(page).to have_content @officer.name
     expect(page).to have_content @officer.email
     expect(page).to_not have_content @user.name
   end
 
-  scenario 'Create', :js do
+  it 'Create', :js do
     fill_in 'email', with: @user.email
     click_button 'Search'
 
@@ -27,7 +27,7 @@ feature 'Admin poll officers' do
     end
   end
 
-  scenario 'Delete' do
+  it 'Delete' do
     click_link 'Delete position'
 
     expect(page).to_not have_css '#officers'

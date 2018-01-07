@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-feature 'Tracking' do
+describe 'Tracking' do
 
   context 'Custom variable' do
 
-     scenario 'Usertype anonymous' do
+     it 'Usertype anonymous' do
       visit proposals_path
 
       expect(page.html).to include "anonymous"
      end
 
-    scenario 'Usertype level_1_user' do
+    it 'Usertype level_1_user' do
       create(:geozone)
       user = create(:user)
       login_as(user)
@@ -20,7 +20,7 @@ feature 'Tracking' do
       expect(page.html).to include "level_1_user"
     end
 
-    scenario 'Usertype level_2_user' do
+    it 'Usertype level_2_user' do
       create(:geozone)
       user = create(:user)
       login_as(user)
@@ -42,7 +42,7 @@ feature 'Tracking' do
   end
 
   context 'Tracking events' do
-    scenario 'Verification: start census' do
+    it 'Verification: start census' do
       user = create(:user)
       login_as(user)
 
@@ -53,7 +53,7 @@ feature 'Tracking' do
       expect(page.html).to include "data-track-event-action=start_census"
     end
 
-    scenario 'Verification: success census' do
+    it 'Verification: success census' do
       create(:geozone)
       user = create(:user)
       login_as(user)
@@ -70,7 +70,7 @@ feature 'Tracking' do
       expect(page.html).to include "data-track-event-action=start_sms"
     end
 
-    scenario 'Verification: start sms' do
+    it 'Verification: start sms' do
       create(:geozone)
       user = create(:user)
       login_as(user)
@@ -87,7 +87,7 @@ feature 'Tracking' do
       expect(page.html).to include "data-track-event-action=start_sms"
     end
 
-    scenario 'Verification: success sms' do
+    it 'Verification: success sms' do
       create(:geozone)
       user = create(:user)
       login_as(user)
@@ -108,7 +108,7 @@ feature 'Tracking' do
       expect(page.html).to include "data-track-event-action=success_sms"
     end
 
-    scenario 'Verification: letter' do
+    it 'Verification: letter' do
       create(:geozone)
       user = create(:user)
       login_as(user)

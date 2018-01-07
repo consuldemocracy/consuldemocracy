@@ -1,7 +1,7 @@
 require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
-feature 'Commenting legislation questions' do
+describe 'Commenting legislation questions' do
 
   context "Concerns" do
     it_behaves_like 'notifiable in-app', Legislation::Question
@@ -11,7 +11,7 @@ feature 'Commenting legislation questions' do
   let(:process) { create :legislation_process, :in_debate_phase }
   let(:legislation_question) { create :legislation_question, process: process }
 
-  scenario 'Index' do
+  it 'Index' do
     3.times { create(:comment, commentable: legislation_question) }
 
     visit legislation_process_question_path(legislation_question.process, legislation_question)
@@ -26,7 +26,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Show' do
+  it 'Show' do
     parent_comment = create(:comment, commentable: legislation_question)
     first_child    = create(:comment, commentable: legislation_question, parent: parent_comment)
     second_child   = create(:comment, commentable: legislation_question, parent: parent_comment)
@@ -46,7 +46,7 @@ feature 'Commenting legislation questions' do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
-  scenario 'Collapsable comments', :js do
+  it 'Collapsable comments', :js do
     parent_comment = create(:comment, body: "Main comment", commentable: legislation_question)
     child_comment  = create(:comment, body: "First subcomment", commentable: legislation_question, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: legislation_question, parent: child_comment)
@@ -72,7 +72,7 @@ feature 'Commenting legislation questions' do
     expect(page).to_not have_content grandchild_comment.body
   end
 
-  scenario 'Comment order' do
+  it 'Comment order' do
     c1 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 100,
                                                   cached_votes_total: 120, created_at: Time.current - 2)
     c2 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 10,
@@ -96,7 +96,7 @@ feature 'Commenting legislation questions' do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
+  it 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
     old_root = create(:comment, commentable: legislation_question, created_at: Time.current - 10)
     new_root = create(:comment, commentable: legislation_question, created_at: Time.current)
     old_child = create(:comment, commentable: legislation_question, parent_id: new_root.id, created_at: Time.current - 10)
@@ -118,7 +118,7 @@ feature 'Commenting legislation questions' do
     expect(old_child.body).to appear_before(new_child.body)
   end
 
-  scenario 'Turns links into html links' do
+  it 'Turns links into html links' do
     create :comment, commentable: legislation_question, body: 'Built with http://rubyonrails.org/'
 
     visit legislation_process_question_path(legislation_question.process, legislation_question)
@@ -131,7 +131,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Sanitizes comment body for security' do
+  it 'Sanitizes comment body for security' do
     create :comment, commentable: legislation_question,
                      body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
@@ -144,7 +144,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Paginated comments' do
+  it 'Paginated comments' do
     per_page = 10
     (per_page + 2).times { create(:comment, commentable: legislation_question)}
 
@@ -161,8 +161,8 @@ feature 'Commenting legislation questions' do
     expect(page).to have_css('.comment', count: 2)
   end
 
-  feature 'Not logged user' do
-    scenario 'can not see comments forms' do
+  describe 'Not logged user' do
+    it 'can not see comments forms' do
       create(:comment, commentable: legislation_question)
       visit legislation_process_question_path(legislation_question.process, legislation_question)
 
@@ -174,7 +174,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Create', :js do
+  it 'Create', :js do
     login_as(user)
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
@@ -187,7 +187,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Errors on create', :js do
+  it 'Errors on create', :js do
     login_as(user)
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
@@ -196,7 +196,7 @@ feature 'Commenting legislation questions' do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario "Unverified user can't create comments", :js do
+  it "Unverified user can't create comments", :js do
     unverified_user = create :user
     login_as(unverified_user)
 
@@ -205,7 +205,7 @@ feature 'Commenting legislation questions' do
     expect(page).to have_content "To participate verify your account"
   end
 
-  scenario "Can't create comments if debate phase is not open", :js do
+  it "Can't create comments if debate phase is not open", :js do
     process.update_attributes(debate_start_date: Date.current - 2.days, debate_end_date: Date.current - 1.day)
     login_as(user)
 
@@ -214,7 +214,7 @@ feature 'Commenting legislation questions' do
     expect(page).to have_content "Closed phase"
   end
 
-  scenario 'Reply', :js do
+  it 'Reply', :js do
     citizen = create(:user, username: 'Ana')
     manuela = create(:user, :level_two, username: 'Manuela')
     comment = create(:comment, commentable: legislation_question, user: citizen)
@@ -236,7 +236,7 @@ feature 'Commenting legislation questions' do
     expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
-  scenario 'Errors on reply', :js do
+  it 'Errors on reply', :js do
     comment = create(:comment, commentable: legislation_question, user: user)
 
     login_as(user)
@@ -251,7 +251,7 @@ feature 'Commenting legislation questions' do
 
   end
 
-  scenario "N replies", :js do
+  it "N replies", :js do
     parent = create(:comment, commentable: legislation_question)
 
     7.times do
@@ -263,7 +263,7 @@ feature 'Commenting legislation questions' do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
+  it "Flagging as inappropriate", :js do
     comment = create(:comment, commentable: legislation_question)
 
     login_as(user)
@@ -279,7 +279,7 @@ feature 'Commenting legislation questions' do
     expect(Flag.flagged?(user, comment)).to be
   end
 
-  scenario "Undoing flagging as inappropriate", :js do
+  it "Undoing flagging as inappropriate", :js do
     comment = create(:comment, commentable: legislation_question)
     Flag.flag(user, comment)
 
@@ -296,7 +296,7 @@ feature 'Commenting legislation questions' do
     expect(Flag.flagged?(user, comment)).to_not be
   end
 
-  scenario "Flagging turbolinks sanity check", :js do
+  it "Flagging turbolinks sanity check", :js do
     legislation_question = create(:legislation_question, process: process, title: "Should we change the world?")
     comment = create(:comment, commentable: legislation_question)
 
@@ -310,7 +310,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario "Erasing a comment's author" do
+  it "Erasing a comment's author" do
     comment = create(:comment, commentable: legislation_question, body: 'this should be visible')
     comment.user.erase
 
@@ -321,7 +321,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Submit button is disabled after clicking', :js do
+  it 'Submit button is disabled after clicking', :js do
     login_as(user)
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
@@ -335,8 +335,8 @@ feature 'Commenting legislation questions' do
     expect(page).to have_content('Testing submit button!')
   end
 
-  feature "Moderators" do
-    scenario "can create comment as a moderator", :js do
+  describe "Moderators" do
+    it "can create comment as a moderator", :js do
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -354,7 +354,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    it "can create reply as a moderator", :js do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       moderator = create(:moderator, user: manuela)
@@ -381,7 +381,7 @@ feature 'Commenting legislation questions' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as an administrator" do
+    it "can not comment as an administrator" do
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -391,8 +391,8 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  feature "Administrators" do
-    scenario "can create comment as an administrator", :js do
+  describe "Administrators" do
+    it "can create comment as an administrator", :js do
       admin = create(:administrator)
 
       login_as(admin.user)
@@ -410,7 +410,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    scenario "can create reply as an administrator", :js do
+    it "can create reply as an administrator", :js do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       admin   = create(:administrator, user: manuela)
@@ -437,7 +437,7 @@ feature 'Commenting legislation questions' do
       expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as a moderator" do
+    it "can not comment as a moderator" do
       admin = create(:administrator)
 
       login_as(admin.user)
@@ -447,8 +447,8 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  feature 'Voting comments' do
-    background do
+  describe 'Voting comments' do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @legislation_question = create(:legislation_question)
@@ -457,7 +457,7 @@ feature 'Commenting legislation questions' do
       login_as(@manuela)
     end
 
-    scenario 'Show' do
+    it 'Show' do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
@@ -476,7 +476,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    scenario 'Create', :js do
+    it 'Create', :js do
       visit legislation_process_question_path(@legislation_question.process, @legislation_question)
 
       within("#comment_#{@comment.id}_votes") do
@@ -494,7 +494,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    scenario 'Update', :js do
+    it 'Update', :js do
       visit legislation_process_question_path(@legislation_question.process, @legislation_question)
 
       within("#comment_#{@comment.id}_votes") do
@@ -513,7 +513,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    xscenario 'Trying to vote multiple times', :js do
+    xit 'Trying to vote multiple times', :js do
       visit legislation_process_question_path(@legislation_question.process, @legislation_question)
 
       within("#comment_#{@comment.id}_votes") do

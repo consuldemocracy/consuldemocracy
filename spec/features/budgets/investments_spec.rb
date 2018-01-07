@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'sessions_helper'
 
-feature 'Budget Investments' do
+describe 'Budget Investments' do
 
   context "Concerns" do
     it_behaves_like 'notifiable in-app', Budget::Investment
@@ -21,7 +21,7 @@ feature 'Budget Investments' do
     Setting['feature.allow_images'] = nil
   end
 
-  scenario 'Index' do
+  it 'Index' do
     investments = [create(:budget_investment, heading: heading),
                    create(:budget_investment, heading: heading),
                    create(:budget_investment, :feasible, heading: heading)]
@@ -41,7 +41,7 @@ feature 'Budget Investments' do
     end
   end
 
-  scenario 'Index should show investment descriptive image only when is defined' do
+  it 'Index should show investment descriptive image only when is defined' do
     investment = create(:budget_investment, heading: heading)
     investment_with_image = create(:budget_investment, heading: heading)
     image = create(:image, imageable: investment_with_image)
@@ -58,7 +58,7 @@ feature 'Budget Investments' do
 
   context("Search") do
 
-    scenario 'Search by text' do
+    it 'Search by text' do
       investment1 = create(:budget_investment, heading: heading, title: "Get Schwifty")
       investment2 = create(:budget_investment, heading: heading, title: "Schwifty Hello")
       investment3 = create(:budget_investment, heading: heading, title: "Do not show me")
@@ -83,7 +83,7 @@ feature 'Budget Investments' do
 
   context("Filters") do
 
-    scenario 'by unfeasibility' do
+    it 'by unfeasibility' do
       investment1 = create(:budget_investment, :unfeasible, heading: heading, valuation_finished: true)
       investment2 = create(:budget_investment, :feasible, heading: heading)
       investment3 = create(:budget_investment, heading: heading)
@@ -101,7 +101,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "by unfeasibilty link for group with one heading" do
+    it "by unfeasibilty link for group with one heading" do
       budget.update(phase: :balloting)
       group   = create(:budget_group,   name: 'All City', budget: budget)
       heading = create(:budget_heading, name: "Madrid",   group: group)
@@ -115,7 +115,7 @@ feature 'Budget Investments' do
       expect(page).to have_current_path(expected_path)
     end
 
-    scenario "by unfeasibilty link for group with many headings" do
+    it "by unfeasibilty link for group with many headings" do
       budget.update(phase: :balloting)
       group = create(:budget_group, name: 'Districts', budget: budget)
       heading1 = create(:budget_heading, name: 'Carabanchel', group: group)
@@ -136,7 +136,7 @@ feature 'Budget Investments' do
   context("Orders") do
     before(:each) { budget.update(phase: 'selecting') }
 
-    scenario "Default order is random" do
+    it "Default order is random" do
       per_page = Kaminari.config.default_per_page
       (per_page + 100).times { create(:budget_investment) }
 
@@ -149,7 +149,7 @@ feature 'Budget Investments' do
       expect(order).to_not eq(new_order)
     end
 
-    scenario "Random order after another order" do
+    it "Random order after another order" do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:budget_investment) }
 
@@ -165,7 +165,7 @@ feature 'Budget Investments' do
       expect(order).to_not eq(new_order)
     end
 
-    scenario 'Random order maintained with pagination', :js do
+    it 'Random order maintained with pagination', :js do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:budget_investment, heading: heading) }
 
@@ -183,7 +183,7 @@ feature 'Budget Investments' do
       expect(order).to eq(new_order)
     end
 
-    scenario "Investments are not repeated with random order", :js do
+    it "Investments are not repeated with random order", :js do
       12.times { create(:budget_investment, heading: heading) }
       # 12 instead of per_page + 2 because in each page there are 10 (in this case), not 25
 
@@ -202,7 +202,7 @@ feature 'Budget Investments' do
 
     end
 
-    scenario 'Proposals are ordered by confidence_score', :js do
+    it 'Proposals are ordered by confidence_score', :js do
       create(:budget_investment, heading: heading, title: 'Best proposal').update_column(:confidence_score, 10)
       create(:budget_investment, heading: heading, title: 'Worst proposal').update_column(:confidence_score, 2)
       create(:budget_investment, heading: heading, title: 'Medium proposal').update_column(:confidence_score, 5)
@@ -220,7 +220,7 @@ feature 'Budget Investments' do
       expect(current_url).to include('page=1')
     end
 
-    scenario 'Each user as a different and consistent random budget investment order', :js do
+    it 'Each user as a different and consistent random budget investment order', :js do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
@@ -265,7 +265,7 @@ feature 'Budget Investments' do
   context 'Phase I - Accepting' do
     before(:each) { budget.update(phase: 'accepting') }
 
-    scenario 'Create with invisible_captcha honeypot field' do
+    it 'Create with invisible_captcha honeypot field' do
       login_as(author)
       visit new_budget_investment_path(budget_id: budget.id)
 
@@ -282,7 +282,7 @@ feature 'Budget Investments' do
       expect(page).to have_current_path(budget_investments_path(budget_id: budget.id))
     end
 
-    scenario 'Create budget investment too fast' do
+    it 'Create budget investment too fast' do
       allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
 
       login_as(author)
@@ -299,7 +299,7 @@ feature 'Budget Investments' do
       expect(page).to have_current_path(new_budget_investment_path(budget_id: budget.id))
     end
 
-    scenario 'Create' do
+    it 'Create' do
       login_as(author)
 
       visit new_budget_investment_path(budget_id: budget.id)
@@ -328,7 +328,7 @@ feature 'Budget Investments' do
       expect(page).to have_content 'Build a skyscraper'
     end
 
-    scenario 'Errors on create' do
+    it 'Errors on create' do
       login_as(author)
 
       visit new_budget_investment_path(budget_id: budget.id)
@@ -339,7 +339,7 @@ feature 'Budget Investments' do
     context 'Suggest' do
       factory = :budget_investment
 
-      scenario 'Show up to 5 suggestions', :js do
+      it 'Show up to 5 suggestions', :js do
         login_as(author)
 
         %w(first second third fourth fifth sixth).each do |ordinal|
@@ -355,7 +355,7 @@ feature 'Budget Investments' do
         end
       end
 
-      scenario 'No found suggestions', :js do
+      it 'No found suggestions', :js do
         login_as(author)
 
         %w(first second third fourth fifth sixth).each do |ordinal|
@@ -370,7 +370,7 @@ feature 'Budget Investments' do
         end
       end
 
-      scenario "Don't show suggestions from a different budget", :js do
+      it "Don't show suggestions from a different budget", :js do
         login_as(author)
 
         %w(first second third fourth fifth sixth).each do |ordinal|
@@ -386,7 +386,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario 'Ballot is not visible' do
+    it 'Ballot is not visible' do
       login_as(author)
 
       visit budget_investments_path(budget, heading_id: heading.id)
@@ -399,7 +399,7 @@ feature 'Budget Investments' do
     end
   end
 
-  scenario "Show" do
+  it "Show" do
     user = create(:user)
     login_as(user)
 
@@ -416,7 +416,7 @@ feature 'Budget Investments' do
     end
   end
 
-  scenario 'Can access the community' do
+  it 'Can access the community' do
     Setting['feature.community'] = true
 
     investment = create(:budget_investment, heading: heading)
@@ -426,7 +426,7 @@ feature 'Budget Investments' do
     Setting['feature.community'] = false
   end
 
-  scenario 'Can not access the community' do
+  it 'Can not access the community' do
     Setting['feature.community'] = false
 
     investment = create(:budget_investment, heading: heading)
@@ -434,7 +434,7 @@ feature 'Budget Investments' do
     expect(page).not_to have_content "Access the community"
   end
 
-  scenario "Don't display flaggable buttons" do
+  it "Don't display flaggable buttons" do
     investment = create(:budget_investment, heading: heading)
 
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
@@ -442,7 +442,7 @@ feature 'Budget Investments' do
     expect(page).not_to have_selector ".js-follow"
   end
 
-  scenario "Show back link contains heading id" do
+  it "Show back link contains heading id" do
     investment = create(:budget_investment, heading: heading)
     visit budget_investment_path(budget, investment)
 
@@ -461,12 +461,12 @@ feature 'Budget Investments' do
              price_explanation: 'Every wheel is 4 euros, so total is 16')
     end
 
-    background do
+    before do
       user = create(:user)
       login_as(user)
     end
 
-    scenario "Budget in selecting phase" do
+    it "Budget in selecting phase" do
       budget.update(phase: "selecting")
       visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
@@ -475,7 +475,7 @@ feature 'Budget Investments' do
       expect(page).to_not have_content(investment.price_explanation)
     end
 
-    scenario "Budget in balloting phase" do
+    it "Budget in balloting phase" do
       budget.update(phase: "balloting")
       visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
@@ -484,7 +484,7 @@ feature 'Budget Investments' do
     end
   end
 
-  scenario "Show (unfeasible budget investment)" do
+  it "Show (unfeasible budget investment)" do
     user = create(:user)
     login_as(user)
 
@@ -502,7 +502,7 @@ feature 'Budget Investments' do
     expect(page).to have_content(investment.unfeasibility_explanation)
   end
 
-  scenario "Show milestones", :js do
+  it "Show milestones", :js do
     user = create(:user)
     investment = create(:budget_investment)
     milestone = create(:budget_investment_milestone, investment: investment, title: "New text to show")
@@ -522,7 +522,7 @@ feature 'Budget Investments' do
     end
   end
 
-  scenario "Show no_milestones text", :js do
+  it "Show no_milestones text", :js do
     user = create(:user)
     investment = create(:budget_investment)
 
@@ -569,7 +569,7 @@ feature 'Budget Investments' do
 
   context "Destroy" do
 
-    scenario "Admin cannot destroy budget investments" do
+    it "Admin cannot destroy budget investments" do
       admin = create(:administrator)
       user = create(:user, :level_two)
       investment = create(:budget_investment, heading: heading, author: user)
@@ -582,7 +582,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "Author can destroy while on the accepting phase" do
+    it "Author can destroy while on the accepting phase" do
       user = create(:user, :level_two)
       sp1 = create(:budget_investment, heading: heading, price: 10000, author: user)
 
@@ -600,13 +600,13 @@ feature 'Budget Investments' do
 
   context "Selecting Phase" do
 
-    background do
+    before do
       budget.update(phase: "selecting")
     end
 
     context "Popup alert to vote only in one heading per group" do
 
-      scenario "When supporting in the first heading group", :js do
+      it "When supporting in the first heading group", :js do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
@@ -620,7 +620,7 @@ feature 'Budget Investments' do
         end
       end
 
-      scenario "When already supported in the group", :js do
+      it "When already supported in the group", :js do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
@@ -637,7 +637,7 @@ feature 'Budget Investments' do
         end
       end
 
-      scenario "When supporting in another group", :js do
+      it "When supporting in another group", :js do
         carabanchel     = create(:budget_heading, group: group)
         another_heading = create(:budget_heading, group: create(:budget_group, budget: budget))
 
@@ -655,7 +655,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "Sidebar in show should display support text" do
+    it "Sidebar in show should display support text" do
       investment = create(:budget_investment, budget: budget)
       visit budget_investment_path(budget, investment)
 
@@ -668,11 +668,11 @@ feature 'Budget Investments' do
 
   context "Evaluating Phase" do
 
-    background do
+    before do
       budget.update(phase: "valuating")
     end
 
-    scenario "Sidebar in show should display support text and count" do
+    it "Sidebar in show should display support text and count" do
       investment = create(:budget_investment, :selected, budget: budget)
       create(:vote, votable: investment)
 
@@ -684,7 +684,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "Index should display support count" do
+    it "Index should display support count" do
       investment = create(:budget_investment, budget: budget, heading: heading)
       create(:vote, votable: investment)
 
@@ -695,7 +695,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "Show should display support text and count" do
+    it "Show should display support text and count" do
       investment = create(:budget_investment, budget: budget, heading: heading)
       create(:vote, votable: investment)
 
@@ -711,11 +711,11 @@ feature 'Budget Investments' do
 
   context "Balloting Phase" do
 
-    background do
+    before do
       budget.update(phase: "balloting")
     end
 
-    scenario "Index" do
+    it "Index" do
       user = create(:user, :level_two)
       sp1 = create(:budget_investment, :selected, heading: heading, price: 10000)
       sp2 = create(:budget_investment, :selected, heading: heading, price: 20000)
@@ -738,7 +738,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario 'Order by cost (only when balloting)' do
+    it 'Order by cost (only when balloting)' do
       create(:budget_investment, :selected, heading: heading, title: 'Build a nice house', price: 1000).update_column(:confidence_score, 10)
       create(:budget_investment, :selected, heading: heading, title: 'Build an ugly house', price: 1000).update_column(:confidence_score, 5)
       create(:budget_investment, :selected, heading: heading, title: 'Build a skyscraper', price: 20000)
@@ -757,7 +757,7 @@ feature 'Budget Investments' do
       expect(current_url).to include('page=1')
     end
 
-    scenario "Show" do
+    it "Show" do
       user = create(:user, :level_two)
       sp1 = create(:budget_investment, :selected, heading: heading, price: 10000)
 
@@ -769,7 +769,7 @@ feature 'Budget Investments' do
       expect(page).to have_content "€10,000"
     end
 
-    scenario "Sidebar in show should display vote text" do
+    it "Sidebar in show should display vote text" do
       investment = create(:budget_investment, :selected, budget: budget)
       visit budget_investment_path(budget, investment)
 
@@ -778,7 +778,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "Confirm", :js do
+    it "Confirm", :js do
       budget.update(phase: 'balloting')
       user = create(:user, :level_two)
 
@@ -840,7 +840,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario 'Ballot is visible' do
+    it 'Ballot is visible' do
       login_as(author)
 
       visit budget_investments_path(budget, heading_id: heading.id)
@@ -852,7 +852,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario 'Show unselected budget investments' do
+    it 'Show unselected budget investments' do
       investment1 = create(:budget_investment, :unselected, :feasible, heading: heading, valuation_finished: true)
       investment2 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
       investment3 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
@@ -870,7 +870,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "Shows unselected link for group with one heading" do
+    it "Shows unselected link for group with one heading" do
       group   = create(:budget_group,   name: 'All City', budget: budget)
       heading = create(:budget_heading, name: "Madrid",   group: group)
 
@@ -883,7 +883,7 @@ feature 'Budget Investments' do
       expect(page).to have_current_path(expected_path)
     end
 
-    scenario "Shows unselected link for group with many headings" do
+    it "Shows unselected link for group with many headings" do
       group = create(:budget_group, name: 'Districts', budget: budget)
       heading1 = create(:budget_heading, name: 'Carabanchel', group: group)
       heading2 = create(:budget_heading, name: 'Barajas',     group: group)
@@ -899,7 +899,7 @@ feature 'Budget Investments' do
       expect(page).to have_current_path(expected_path)
     end
 
-    scenario "Do not display vote button for unselected investments in index" do
+    it "Do not display vote button for unselected investments in index" do
       investment = create(:budget_investment, :unselected, heading: heading)
 
       visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unselected")
@@ -908,7 +908,7 @@ feature 'Budget Investments' do
       expect(page).to_not have_link("Vote")
     end
 
-    scenario "Do not display vote button for unselected investments in show" do
+    it "Do not display vote button for unselected investments in show" do
       investment = create(:budget_investment, :unselected, heading: heading)
 
       visit budget_investment_path(budget, investment)
@@ -917,9 +917,9 @@ feature 'Budget Investments' do
       expect(page).to_not have_link("Vote")
     end
 
-    feature "Reclassification" do
+    describe "Reclassification" do
 
-      scenario "Due to heading change" do
+      it "Due to heading change" do
         user = create(:user, :level_two)
         investment = create(:budget_investment, :selected, heading: heading)
         heading2 = create(:budget_heading, group: group)
@@ -940,7 +940,7 @@ feature 'Budget Investments' do
         expect(page).to have_content("You have voted 0 investment")
       end
 
-      scenario "Due to being unfeasible" do
+      it "Due to being unfeasible" do
         user = create(:user, :level_two)
         investment = create(:budget_investment, :selected, heading: heading)
         heading2 = create(:budget_heading, group: group)

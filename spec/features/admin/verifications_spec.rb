@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Incomplete verifications' do
+describe 'Incomplete verifications' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario 'Index' do
+  it 'Index' do
     incompletely_verified_user1 = create(:user, :incomplete_verification)
     incompletely_verified_user2 = create(:user, :incomplete_verification)
     never_tried_to_verify_user = create(:user)
@@ -21,7 +21,7 @@ feature 'Incomplete verifications' do
     expect(page).to_not have_content(verified_user.username)
   end
 
-  scenario 'Search' do
+  it 'Search' do
     verified_user = create(:user, :level_two, username: "Juan Carlos")
     unverified_user = create(:user, :incomplete_verification, username: "Juan_anonymous")
     unverified_user = create(:user, :incomplete_verification, username: "Isabel_anonymous")
@@ -36,7 +36,7 @@ feature 'Incomplete verifications' do
     expect(page).to_not have_content("Isabel_anonymous")
   end
 
-  scenario "Residence unverified" do
+  it "Residence unverified" do
     incompletely_verified_user = create(:user, :incomplete_verification)
 
     visit admin_verifications_path
@@ -49,7 +49,7 @@ feature 'Incomplete verifications' do
     end
   end
 
-  scenario "Phone not given" do
+  it "Phone not given" do
     incompletely_verified_user = create(:user, residence_verified_at: Time.current, unconfirmed_phone: nil)
 
     visit admin_verifications_path
@@ -59,7 +59,7 @@ feature 'Incomplete verifications' do
     end
   end
 
-  scenario "SMS code not confirmed" do
+  it "SMS code not confirmed" do
     incompletely_verified_user = create(:user, residence_verified_at: Time.current,
                                                unconfirmed_phone:     "611111111",
                                                sms_confirmation_code: "1234",

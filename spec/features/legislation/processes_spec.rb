@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Legislation' do
+describe 'Legislation' do
 
   let!(:administrator) { create(:administrator).user }
 
@@ -26,7 +26,7 @@ feature 'Legislation' do
 
   context 'processes home page' do
 
-    scenario 'Processes can be listed' do
+    it 'Processes can be listed' do
       visit legislation_processes_path
       expect(page).to have_text "There aren't open processes"
 
@@ -37,7 +37,7 @@ feature 'Legislation' do
       expect(page).to have_text "There aren't past processes"
     end
 
-    scenario 'Processes can be listed' do
+    it 'Processes can be listed' do
       processes = create_list(:legislation_process, 3)
 
       visit legislation_processes_path
@@ -47,7 +47,7 @@ feature 'Legislation' do
       end
     end
 
-    scenario 'Filtering processes' do
+    it 'Filtering processes' do
       create(:legislation_process, title: "Process open")
       create(:legislation_process, :next, title: "Process next")
       create(:legislation_process, :past, title: "Process past")
@@ -117,7 +117,7 @@ feature 'Legislation' do
     context "show" do
       include_examples "not published permissions", :legislation_process_path
 
-      scenario '#show view has document present' do
+      it '#show view has document present' do
         process = create(:legislation_process)
         document = create(:document, documentable: process)
         visit legislation_process_path(process)
@@ -127,7 +127,7 @@ feature 'Legislation' do
     end
 
     context 'debate phase' do
-      scenario 'not open' do
+      it 'not open' do
         process = create(:legislation_process, debate_start_date: Date.current + 1.day, debate_end_date: Date.current + 2.days)
 
         visit legislation_process_path(process)
@@ -135,7 +135,7 @@ feature 'Legislation' do
         expect(page).to have_content("This phase is not open yet")
       end
 
-      scenario 'open' do
+      it 'open' do
         process = create(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
 
         visit legislation_process_path(process)
@@ -147,7 +147,7 @@ feature 'Legislation' do
     end
 
     context 'draft publication phase' do
-      scenario 'not open' do
+      it 'not open' do
         process = create(:legislation_process, draft_publication_date: Date.current + 1.day)
 
         visit draft_publication_legislation_process_path(process)
@@ -155,7 +155,7 @@ feature 'Legislation' do
         expect(page).to have_content("This phase is not open yet")
       end
 
-      scenario 'open' do
+      it 'open' do
         process = create(:legislation_process, draft_publication_date: Date.current)
 
         visit draft_publication_legislation_process_path(process)
@@ -167,7 +167,7 @@ feature 'Legislation' do
     end
 
     context 'allegations phase' do
-      scenario 'not open' do
+      it 'not open' do
         process = create(:legislation_process, allegations_start_date: Date.current + 1.day, allegations_end_date: Date.current + 2.days)
 
         visit allegations_legislation_process_path(process)
@@ -175,7 +175,7 @@ feature 'Legislation' do
         expect(page).to have_content("This phase is not open yet")
       end
 
-      scenario 'open' do
+      it 'open' do
         process = create(:legislation_process, allegations_start_date: Date.current - 1.day, allegations_end_date: Date.current + 2.days)
 
         visit allegations_legislation_process_path(process)
@@ -187,7 +187,7 @@ feature 'Legislation' do
     end
 
     context 'final version publication phase' do
-      scenario 'not open' do
+      it 'not open' do
         process = create(:legislation_process, result_publication_date: Date.current + 1.day)
 
         visit result_publication_legislation_process_path(process)
@@ -195,7 +195,7 @@ feature 'Legislation' do
         expect(page).to have_content("This phase is not open yet")
       end
 
-      scenario 'open' do
+      it 'open' do
         process = create(:legislation_process, result_publication_date: Date.current)
 
         visit result_publication_legislation_process_path(process)

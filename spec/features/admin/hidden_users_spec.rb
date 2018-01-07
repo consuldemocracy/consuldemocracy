@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Admin hidden users' do
+describe 'Admin hidden users' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario 'Show user activity' do
+  it 'Show user activity' do
     user = create(:user, :hidden)
 
     debate1 = create(:debate, :hidden, author: user)
@@ -23,7 +23,7 @@ feature 'Admin hidden users' do
     expect(page).to have_content(comment2.body)
   end
 
-  scenario 'Restore' do
+  it 'Restore' do
     user = create(:user, :hidden)
     visit admin_hidden_users_path
 
@@ -34,7 +34,7 @@ feature 'Admin hidden users' do
     expect(user.reload).to_not be_hidden
   end
 
-  scenario 'Confirm hide' do
+  it 'Confirm hide' do
     user = create(:user, :hidden)
     visit admin_hidden_users_path
 
@@ -47,7 +47,7 @@ feature 'Admin hidden users' do
     expect(user.reload).to be_confirmed_hide
   end
 
-  scenario "Current filter is properly highlighted" do
+  it "Current filter is properly highlighted" do
     visit admin_hidden_users_path
     expect(page).to_not have_link('Pending')
     expect(page).to have_link('All')
@@ -69,7 +69,7 @@ feature 'Admin hidden users' do
     expect(page).to_not have_link('Confirmed')
   end
 
-  scenario "Filtering users" do
+  it "Filtering users" do
     create(:user, :hidden, username: "Unconfirmed")
     create(:user, :hidden, :with_confirmed_hide, username: "Confirmed user")
 
@@ -82,7 +82,7 @@ feature 'Admin hidden users' do
     expect(page).to have_content('Confirmed user')
   end
 
-  scenario "Action links remember the pagination setting and the filter" do
+  it "Action links remember the pagination setting and the filter" do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times { create(:user, :hidden, :with_confirmed_hide) }
 

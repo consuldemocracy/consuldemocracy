@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-feature 'Admin settings' do
+describe 'Admin settings' do
 
-  background do
+  before do
     @setting1 = create(:setting)
     @setting2 = create(:setting)
     @setting3 = create(:setting)
     login_as(create(:administrator).user)
   end
 
-  scenario 'Index' do
+  it 'Index' do
     visit admin_settings_path
 
     expect(page).to have_content @setting1.key
@@ -17,7 +17,7 @@ feature 'Admin settings' do
     expect(page).to have_content @setting3.key
   end
 
-  scenario 'Update' do
+  it 'Update' do
     visit admin_settings_path
 
     within("#edit_setting_#{@setting2.id}") do
@@ -30,7 +30,7 @@ feature 'Admin settings' do
 
   describe "Update map" do
 
-    scenario "Should not be able when map feature deactivated" do
+    it "Should not be able when map feature deactivated" do
       Setting['feature.map'] = false
       admin = create(:administrator).user
       login_as(admin)
@@ -39,7 +39,7 @@ feature 'Admin settings' do
       expect(page).not_to have_content "Map configuration"
     end
 
-    scenario "Should be able when map feature activated" do
+    it "Should be able when map feature activated" do
       Setting['feature.map'] = true
       admin = create(:administrator).user
       login_as(admin)
@@ -48,7 +48,7 @@ feature 'Admin settings' do
       expect(page).to have_content "Map configuration"
     end
 
-    scenario "Should show successful notice" do
+    it "Should show successful notice" do
       Setting['feature.map'] = true
       admin = create(:administrator).user
       login_as(admin)
@@ -61,7 +61,7 @@ feature 'Admin settings' do
       expect(page).to have_content "Map configuration updated succesfully"
     end
 
-    scenario "Should display marker by default", :js do
+    it "Should display marker by default", :js do
       Setting['feature.map'] = true
       admin = create(:administrator).user
       login_as(admin)
@@ -72,7 +72,7 @@ feature 'Admin settings' do
       expect(find("#longitude", visible: false).value).to eq "0.0"
     end
 
-    scenario "Should update marker", :js do
+    it "Should update marker", :js do
       Setting['feature.map'] = true
       admin = create(:administrator).user
       login_as(admin)
