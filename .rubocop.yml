@@ -137,3 +137,6 @@ RSpec/MultipleDescribes:
 
 RSpec/MultipleExpectations:
   Enabled: false
+
+RSpec/MultipleSubjects:
+  Enabled: true
