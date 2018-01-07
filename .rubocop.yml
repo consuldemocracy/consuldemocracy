@@ -140,3 +140,6 @@ RSpec/MultipleExpectations:
 
 RSpec/MultipleSubjects:
   Enabled: true
+
+RSpec/NamedSubject:
+  Enabled: false
