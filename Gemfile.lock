@@ -423,7 +423,7 @@ GEM
     simplecov-html (0.10.1)
     sitemap_generator (5.3.1)
       builder (~> 3.0)
-    social-share-button (0.10.0)
+    social-share-button (1.1.0)
       coffee-rails
     socksify (1.7.1)
     spring (2.0.2)
@@ -562,7 +562,7 @@ DEPENDENCIES
   savon (~> 2.11.1)
   scss_lint (~> 0.54.0)
   sitemap_generator (~> 5.3.1)
-  social-share-button (~> 0.10)
+  social-share-button (~> 1.1)
   spring (~> 2.0.1)
   spring-commands-rspec (~> 1.0.4)
   sprockets (~> 3.7.1)
