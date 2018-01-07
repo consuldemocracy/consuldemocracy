@@ -15,7 +15,7 @@ describe EmailDigest do
       email_digest = described_class.new(user1)
 
       expect(email_digest.notifications).to include(notification1)
-      expect(email_digest.notifications).to_not include(notification2)
+      expect(email_digest.notifications).not_to include(notification2)
     end
 
     it "returns only proposal notifications" do
@@ -30,7 +30,7 @@ describe EmailDigest do
       email_digest = described_class.new(user)
 
       expect(email_digest.notifications).to include(notification1)
-      expect(email_digest.notifications).to_not include(notification2)
+      expect(email_digest.notifications).not_to include(notification2)
     end
 
   end
@@ -54,13 +54,13 @@ describe EmailDigest do
       notification = create(:notification, notifiable: proposal_notification, user: user, emailed_at: Time.current)
 
       email_digest = described_class.new(user)
-      expect(email_digest.pending_notifications?).to_not be
+      expect(email_digest.pending_notifications?).not_to be
     end
 
     it "returns false when there are no notifications for a user" do
       user = create(:user)
       email_digest = described_class.new(user)
-      expect(email_digest.pending_notifications?).to_not be
+      expect(email_digest.pending_notifications?).not_to be
     end
 
   end
@@ -107,9 +107,9 @@ describe EmailDigest do
       notification2 = create(:notification, notifiable: proposal_notification, user: user1)
       notification3 = create(:notification, notifiable: proposal_notification, user: user2)
 
-      expect(notification1.emailed_at).to_not be
-      expect(notification2.emailed_at).to_not be
-      expect(notification3.emailed_at).to_not be
+      expect(notification1.emailed_at).not_to be
+      expect(notification2.emailed_at).not_to be
+      expect(notification3.emailed_at).not_to be
 
       email_digest = described_class.new(user1)
       email_digest.mark_as_emailed
@@ -119,7 +119,7 @@ describe EmailDigest do
       notification3.reload
       expect(notification1.emailed_at).to be
       expect(notification2.emailed_at).to be
-      expect(notification3.emailed_at).to_not be
+      expect(notification3.emailed_at).not_to be
     end
 
     it "resets the failed_email_digests_count flag" do

@@ -11,23 +11,23 @@ describe Budget::ReclassifiedVote do
 
     it "is not valid without a user" do
       reclassified_vote.user_id = nil
-      expect(reclassified_vote).to_not be_valid
+      expect(reclassified_vote).not_to be_valid
     end
 
     it "is not valid without an investment" do
       reclassified_vote.investment_id = nil
-      expect(reclassified_vote).to_not be_valid
+      expect(reclassified_vote).not_to be_valid
     end
 
     it "is not valid without a valid reason" do
       reclassified_vote.reason = nil
-      expect(reclassified_vote).to_not be_valid
+      expect(reclassified_vote).not_to be_valid
 
       reclassified_vote.reason = ""
-      expect(reclassified_vote).to_not be_valid
+      expect(reclassified_vote).not_to be_valid
 
       reclassified_vote.reason = "random"
-      expect(reclassified_vote).to_not be_valid
+      expect(reclassified_vote).not_to be_valid
 
       reclassified_vote.reason = "heading_changed"
       expect(reclassified_vote).to be_valid

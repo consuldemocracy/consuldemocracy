@@ -89,7 +89,7 @@ describe Vote do
       comment_on_hidden_proposal = create(:comment, commentable: hidden_proposal)
       vote = create(:vote, votable: comment_on_hidden_proposal)
 
-      expect(described_class.public_for_api).to_not include(vote)
+      expect(described_class.public_for_api).not_to include(vote)
     end
 
     it 'blocks votes on comments on hidden debates' do
@@ -97,7 +97,7 @@ describe Vote do
       comment_on_hidden_debate = create(:comment, commentable: hidden_debate)
       vote = create(:vote, votable: comment_on_hidden_debate)
 
-      expect(described_class.public_for_api).to_not include(vote)
+      expect(described_class.public_for_api).not_to include(vote)
     end
 
     it 'blocks any other kind of votes' do

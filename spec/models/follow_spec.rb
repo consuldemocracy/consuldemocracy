@@ -10,17 +10,17 @@ describe Follow do
 
   it "is not valid without a user_id" do
     follow.user_id = nil
-    expect(follow).to_not be_valid
+    expect(follow).not_to be_valid
   end
 
   it "is not valid without a followable_id" do
     follow.followable_id = nil
-    expect(follow).to_not be_valid
+    expect(follow).not_to be_valid
   end
 
   it "is not valid without a followable_type" do
     follow.followable_type = nil
-    expect(follow).to_not be_valid
+    expect(follow).not_to be_valid
   end
 
 end

@@ -41,8 +41,8 @@ feature 'Moderate proposals' do
     visit proposal_path(proposal)
 
     within("#proposal_#{proposal.id}") do
-      expect(page).to_not have_link('Hide')
-      expect(page).to_not have_link('Block author')
+      expect(page).not_to have_link('Hide')
+      expect(page).not_to have_link('Block author')
     end
   end
 
@@ -66,29 +66,29 @@ feature 'Moderate proposals' do
             check "proposal_#{@proposal.id}_check"
           end
 
-          expect(page).to_not have_css("proposal_#{@proposal.id}")
+          expect(page).not_to have_css("proposal_#{@proposal.id}")
         end
 
         scenario 'Hide the proposal' do
           click_on "Hide proposals"
-          expect(page).to_not have_css("proposal_#{@proposal.id}")
+          expect(page).not_to have_css("proposal_#{@proposal.id}")
           expect(@proposal.reload).to be_hidden
-          expect(@proposal.author).to_not be_hidden
+          expect(@proposal.author).not_to be_hidden
         end
 
         scenario 'Block the author' do
           click_on "Block authors"
-          expect(page).to_not have_css("proposal_#{@proposal.id}")
+          expect(page).not_to have_css("proposal_#{@proposal.id}")
           expect(@proposal.reload).to be_hidden
           expect(@proposal.author).to be_hidden
         end
 
         scenario 'Ignore the proposal' do
           click_button "Mark as viewed"
-          expect(page).to_not have_css("proposal_#{@proposal.id}")
+          expect(page).not_to have_css("proposal_#{@proposal.id}")
           expect(@proposal.reload).to be_ignored_flag
-          expect(@proposal.reload).to_not be_hidden
-          expect(@proposal.author).to_not be_hidden
+          expect(@proposal.reload).not_to be_hidden
+          expect(@proposal.author).not_to be_hidden
         end
       end
 
@@ -104,7 +104,7 @@ feature 'Moderate proposals' do
         within('.js-check') { click_on 'None' }
 
         all('input[type=checkbox]').each do |checkbox|
-          expect(checkbox).to_not be_checked
+          expect(checkbox).not_to be_checked
         end
       end
 
@@ -125,13 +125,13 @@ feature 'Moderate proposals' do
 
     scenario "Current filter is properly highlighted" do
       visit moderation_proposals_path
-      expect(page).to_not have_link('Pending')
+      expect(page).not_to have_link('Pending')
       expect(page).to have_link('All')
       expect(page).to have_link('Mark as viewed')
 
       visit moderation_proposals_path(filter: 'all')
       within('.menu.simple') do
-        expect(page).to_not have_link('All')
+        expect(page).not_to have_link('All')
         expect(page).to have_link('Pending review')
         expect(page).to have_link('Mark as viewed')
       end
@@ -139,7 +139,7 @@ feature 'Moderate proposals' do
       visit moderation_proposals_path(filter: 'pending_flag_review')
       within('.menu.simple') do
         expect(page).to have_link('All')
-        expect(page).to_not have_link('Pending')
+        expect(page).not_to have_link('Pending')
         expect(page).to have_link('Mark as viewed')
       end
 
@@ -147,7 +147,7 @@ feature 'Moderate proposals' do
       within('.menu.simple') do
         expect(page).to have_link('All')
         expect(page).to have_link('Pending review')
-        expect(page).to_not have_link('Marked as viewed')
+        expect(page).not_to have_link('Marked as viewed')
       end
     end
 
@@ -160,19 +160,19 @@ feature 'Moderate proposals' do
       visit moderation_proposals_path(filter: 'all')
       expect(page).to have_content('Regular proposal')
       expect(page).to have_content('Pending proposal')
-      expect(page).to_not have_content('Hidden proposal')
+      expect(page).not_to have_content('Hidden proposal')
       expect(page).to have_content('Ignored proposal')
 
       visit moderation_proposals_path(filter: 'pending_flag_review')
-      expect(page).to_not have_content('Regular proposal')
+      expect(page).not_to have_content('Regular proposal')
       expect(page).to have_content('Pending proposal')
-      expect(page).to_not have_content('Hidden proposal')
-      expect(page).to_not have_content('Ignored proposal')
+      expect(page).not_to have_content('Hidden proposal')
+      expect(page).not_to have_content('Ignored proposal')
 
       visit moderation_proposals_path(filter: 'with_ignored_flag')
-      expect(page).to_not have_content('Regular proposal')
-      expect(page).to_not have_content('Pending proposal')
-      expect(page).to_not have_content('Hidden proposal')
+      expect(page).not_to have_content('Regular proposal')
+      expect(page).not_to have_content('Pending proposal')
+      expect(page).not_to have_content('Hidden proposal')
       expect(page).to have_content('Ignored proposal')
     end
 

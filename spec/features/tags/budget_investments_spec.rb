@@ -95,7 +95,7 @@ feature 'Tags' do
 
     within "#tags_budget_investment_#{Budget::Investment.last.id}" do
       expect(page).to have_content tag_economia.name
-      expect(page).to_not have_content tag_medio_ambiente.name
+      expect(page).not_to have_content tag_medio_ambiente.name
     end
   end
 
@@ -135,7 +135,7 @@ feature 'Tags' do
     expect(page).to have_content 'user_id1'
     expect(page).to have_content 'a3'
     expect(page).to have_content 'scriptalert("hey");script'
-    expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
+    expect(page.html).not_to include 'user_id=1, &a=3, <script>alert("hey");</script>'
   end
 
   context "Filter" do
@@ -214,7 +214,7 @@ feature 'Tags' do
         expect(page).to have_css ".budget-investment", count: 2
         expect(page).to have_content investment1.title
         expect(page).to have_content investment2.title
-        expect(page).to_not have_content investment3.title
+        expect(page).not_to have_content investment3.title
       end
     end
 
@@ -259,7 +259,7 @@ feature 'Tags' do
         expect(page).to have_css ".budget-investment", count: 2
         expect(page).to have_content investment1.title
         expect(page).to have_content investment2.title
-        expect(page).to_not have_content investment3.title
+        expect(page).not_to have_content investment3.title
       end
     end
   end
@@ -274,7 +274,7 @@ feature 'Tags' do
       visit budget_investment_path(budget, investment)
 
       expect(page).to     have_content 'Park'
-      expect(page).to_not have_content 'Education'
+      expect(page).not_to have_content 'Education'
     end
 
     scenario "Valuators do not see user tags" do
@@ -289,7 +289,7 @@ feature 'Tags' do
       click_link 'Edit classification'
 
       expect(page).to     have_content 'Education'
-      expect(page).to_not have_content 'Park'
+      expect(page).not_to have_content 'Park'
     end
 
   end

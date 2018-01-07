@@ -9,22 +9,22 @@ describe Legislation::Proposal do
 
   it "is not valid without a process" do
     proposal.process = nil
-    expect(proposal).to_not be_valid
+    expect(proposal).not_to be_valid
   end
 
   it "is not valid without an author" do
     proposal.author = nil
-    expect(proposal).to_not be_valid
+    expect(proposal).not_to be_valid
   end
 
   it "is not valid without a title" do
     proposal.title = nil
-    expect(proposal).to_not be_valid
+    expect(proposal).not_to be_valid
   end
 
   it "is not valid without a summary" do
     proposal.summary = nil
-    expect(proposal).to_not be_valid
+    expect(proposal).not_to be_valid
   end
 
 end

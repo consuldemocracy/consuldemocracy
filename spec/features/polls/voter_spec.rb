@@ -26,7 +26,7 @@ feature "Voter" do
 
       within("#poll_question_#{question.id}_answers") do
         click_link answer_yes.title
-        expect(page).to_not have_link(answer_yes.title)
+        expect(page).not_to have_link(answer_yes.title)
       end
 
       find(:css, ".js-token-message").should be_visible
@@ -45,12 +45,12 @@ feature "Voter" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to_not have_link(answer_yes.title, href: "/questions/#{question.id}/answer?answer=#{answer_yes.title}&token=")
-        expect(page).to_not have_link(answer_no.title, href: "/questions/#{question.id}/answer?answer=#{answer_no.title}&token=")
+        expect(page).not_to have_link(answer_yes.title, href: "/questions/#{question.id}/answer?answer=#{answer_yes.title}&token=")
+        expect(page).not_to have_link(answer_no.title, href: "/questions/#{question.id}/answer?answer=#{answer_no.title}&token=")
       end
 
       expect(page).to have_content("You must verify your account in order to answer")
-      expect(page).to_not have_content("You have already participated in this poll. If you vote again it will be overwritten")
+      expect(page).not_to have_content("You have already participated in this poll. If you vote again it will be overwritten")
     end
 
     scenario "Voting in booth", :js do
@@ -65,7 +65,7 @@ feature "Voter" do
 
       within("#poll_#{poll.id}") do
         click_button("Confirm vote")
-        expect(page).to_not have_button("Confirm vote")
+        expect(page).not_to have_button("Confirm vote")
         expect(page).to have_button('Wait, confirming vote...', disabled: true)
         expect(page).to have_content "Vote introduced!"
       end
@@ -94,7 +94,7 @@ feature "Voter" do
         officing_verify_residence
 
         expect(page).to have_content poll.name
-        expect(page).to_not have_button "Confirm vote"
+        expect(page).not_to have_button "Confirm vote"
         expect(page).to have_content "Has already participated in this poll"
       end
 
@@ -109,7 +109,7 @@ feature "Voter" do
         login_as user
         visit poll_path(poll)
 
-        expect(page).to_not have_link(answer_yes.title)
+        expect(page).not_to have_link(answer_yes.title)
         expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
         expect(Poll::Voter.count).to eq(1)
       end
@@ -121,11 +121,11 @@ feature "Voter" do
 
         visit poll_path(poll)
 
-        expect(page).to_not have_selector('.js-token-message')
+        expect(page).not_to have_selector('.js-token-message')
 
         expect(page).to have_content "You have already participated in this poll. If you vote again it will be overwritten."
         within("#poll_question_#{question.id}_answers") do
-          expect(page).to_not have_link(answer_yes.title)
+          expect(page).not_to have_link(answer_yes.title)
         end
 
         click_link "Sign out"
@@ -158,7 +158,7 @@ feature "Voter" do
 
       visit poll_path(poll)
 
-      expect(page).to_not have_link(answer_yes.title)
+      expect(page).not_to have_link(answer_yes.title)
       expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
       expect(Poll::Voter.count).to eq(1)
     end

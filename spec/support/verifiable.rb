@@ -8,7 +8,7 @@ shared_examples_for "verifiable" do
         user2 = create(:user, verified_at: nil)
 
         expect(model.level_three_verified).to include(user1)
-        expect(model.level_three_verified).to_not include(user2)
+        expect(model.level_three_verified).not_to include(user2)
       end
     end
 
@@ -20,8 +20,8 @@ shared_examples_for "verifiable" do
         user4 = create(:user, level_two_verified_at: Time.current)
 
         expect(model.level_two_verified).to include(user1)
-        expect(model.level_two_verified).to_not include(user2)
-        expect(model.level_two_verified).to_not include(user3)
+        expect(model.level_two_verified).not_to include(user2)
+        expect(model.level_two_verified).not_to include(user3)
         expect(model.level_two_verified).to include(user4)
       end
     end
@@ -36,8 +36,8 @@ shared_examples_for "verifiable" do
 
         expect(model.level_two_or_three_verified).to include(user1)
         expect(model.level_two_or_three_verified).to include(user2)
-        expect(model.level_two_or_three_verified).to_not include(user3)
-        expect(model.level_two_or_three_verified).to_not include(user4)
+        expect(model.level_two_or_three_verified).not_to include(user3)
+        expect(model.level_two_or_three_verified).not_to include(user4)
         expect(model.level_two_or_three_verified).to include(user5)
       end
     end
@@ -53,8 +53,8 @@ shared_examples_for "verifiable" do
         expect(model.unverified).to include(user1)
         expect(model.unverified).to include(user2)
         expect(model.unverified).to include(user3)
-        expect(model.unverified).to_not include(user4)
-        expect(model.unverified).to_not include(user5)
+        expect(model.unverified).not_to include(user4)
+        expect(model.unverified).not_to include(user5)
       end
     end
 
@@ -70,8 +70,8 @@ shared_examples_for "verifiable" do
 
         expect(model.incomplete_verification).to include(user1)
         expect(model.incomplete_verification).to include(user2)
-        expect(model.incomplete_verification).to_not include(user3)
-        expect(model.incomplete_verification).to_not include(user4)
+        expect(model.incomplete_verification).not_to include(user3)
+        expect(model.incomplete_verification).not_to include(user4)
       end
     end
   end

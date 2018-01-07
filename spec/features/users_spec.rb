@@ -24,7 +24,7 @@ feature 'Users' do
     scenario 'shows only items where user has activity' do
       @user.proposals.destroy_all
 
-      expect(page).to_not have_content('0 Proposals')
+      expect(page).not_to have_content('0 Proposals')
       expect(page).to have_content('1 Debate')
       expect(page).to have_content('3 Investments')
       expect(page).to have_content('4 Comments')
@@ -36,11 +36,11 @@ feature 'Users' do
       end
 
       @user.debates.each do |debate|
-        expect(page).to_not have_content(debate.title)
+        expect(page).not_to have_content(debate.title)
       end
 
       @user.comments.each do |comment|
-        expect(page).to_not have_content(comment.body)
+        expect(page).not_to have_content(comment.body)
       end
     end
 
@@ -78,11 +78,11 @@ feature 'Users' do
       end
 
       @user.proposals.each do |proposal|
-        expect(page).to_not have_content(proposal.title)
+        expect(page).not_to have_content(proposal.title)
       end
 
       @user.comments.each do |comment|
-        expect(page).to_not have_content(comment.body)
+        expect(page).not_to have_content(comment.body)
       end
 
       click_link '4 Comments'
@@ -92,11 +92,11 @@ feature 'Users' do
       end
 
       @user.proposals.each do |proposal|
-        expect(page).to_not have_content(proposal.title)
+        expect(page).not_to have_content(proposal.title)
       end
 
       @user.debates.each do |debate|
-        expect(page).to_not have_content(debate.title)
+        expect(page).not_to have_content(debate.title)
       end
 
       click_link '2 Proposals'
@@ -106,11 +106,11 @@ feature 'Users' do
       end
 
       @user.comments.each do |comment|
-        expect(page).to_not have_content(comment.body)
+        expect(page).not_to have_content(comment.body)
       end
 
       @user.debates.each do |debate|
-        expect(page).to_not have_content(debate.title)
+        expect(page).not_to have_content(debate.title)
       end
     end
 
@@ -125,7 +125,7 @@ feature 'Users' do
       visit user_path(@user)
 
       expect(page).to have_content(@user.username)
-      expect(page).to_not have_content('activity list private')
+      expect(page).not_to have_content('activity list private')
     end
 
     scenario 'user can hide public page' do
@@ -149,7 +149,7 @@ feature 'Users' do
       click_button 'Save changes'
 
       visit user_path(@user)
-      expect(page).to_not have_content('activity list private')
+      expect(page).not_to have_content('activity list private')
     end
 
     scenario 'is always visible for admins' do
@@ -163,7 +163,7 @@ feature 'Users' do
 
       login_as(create(:administrator).user)
       visit user_path(@user)
-      expect(page).to_not have_content('activity list private')
+      expect(page).not_to have_content('activity list private')
     end
 
     scenario 'is always visible for moderators' do
@@ -177,7 +177,7 @@ feature 'Users' do
 
       login_as(create(:moderator).user)
       visit user_path(@user)
-      expect(page).to_not have_content('activity list private')
+      expect(page).not_to have_content('activity list private')
     end
 
     feature 'User email' do
@@ -188,19 +188,19 @@ feature 'Users' do
 
       scenario 'is not shown if no user logged in' do
         visit user_path(@user)
-        expect(page).to_not have_content(@user.email)
+        expect(page).not_to have_content(@user.email)
       end
 
       scenario 'is not shown if logged in user is a regular user' do
         login_as(create(:user))
         visit user_path(@user)
-        expect(page).to_not have_content(@user.email)
+        expect(page).not_to have_content(@user.email)
       end
 
       scenario 'is not shown if logged in user is moderator' do
         login_as(create(:moderator).user)
         visit user_path(@user)
-        expect(page).to_not have_content(@user.email)
+        expect(page).not_to have_content(@user.email)
       end
 
       scenario 'is shown if logged in user is admin' do
@@ -355,7 +355,7 @@ feature 'Users' do
       visit user_path(moderator)
       expect(page).to have_content("1 Comment")
       expect(page).to have_content(comment.body)
-      expect(page).to_not have_content(moderator_comment.body)
+      expect(page).not_to have_content(moderator_comment.body)
     end
 
     scenario 'comments posted as admin are not visible in user activity' do
@@ -365,7 +365,7 @@ feature 'Users' do
 
       visit user_path(admin)
       expect(page).to have_content(comment.body)
-      expect(page).to_not have_content(admin_comment.body)
+      expect(page).not_to have_content(admin_comment.body)
     end
 
     scenario 'shows only comments from active features' do

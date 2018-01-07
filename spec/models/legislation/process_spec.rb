@@ -79,24 +79,24 @@ describe Legislation::Process do
       open_processes = ::Legislation::Process.open
 
       expect(open_processes).to include(@process_1)
-      expect(open_processes).to_not include(@process_2)
-      expect(open_processes).to_not include(@process_3)
+      expect(open_processes).not_to include(@process_2)
+      expect(open_processes).not_to include(@process_3)
     end
 
     it "filters next" do
       next_processes = ::Legislation::Process.next
 
       expect(next_processes).to include(@process_2)
-      expect(next_processes).to_not include(@process_1)
-      expect(next_processes).to_not include(@process_3)
+      expect(next_processes).not_to include(@process_1)
+      expect(next_processes).not_to include(@process_3)
     end
 
     it "filters past" do
       past_processes = ::Legislation::Process.past
 
       expect(past_processes).to include(@process_3)
-      expect(past_processes).to_not include(@process_2)
-      expect(past_processes).to_not include(@process_1)
+      expect(past_processes).not_to include(@process_2)
+      expect(past_processes).not_to include(@process_1)
     end
   end
 

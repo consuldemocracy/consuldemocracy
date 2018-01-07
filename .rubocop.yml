@@ -147,3 +147,6 @@ RSpec/NamedSubject:
 RSpec/NestedGroups:
   Enabled: true
   Max: 4
+
+RSpec/NotToNot:
+  Enabled: true

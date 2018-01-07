@@ -8,7 +8,7 @@ feature 'Poll Officing' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Polling officers")
+    expect(page).not_to have_link("Polling officers")
     visit officing_root_path
 
     expect(page).not_to have_current_path(officing_root_path)
@@ -21,7 +21,7 @@ feature 'Poll Officing' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Polling officers")
+    expect(page).not_to have_link("Polling officers")
     visit officing_root_path
 
     expect(page).not_to have_current_path(officing_root_path)
@@ -34,7 +34,7 @@ feature 'Poll Officing' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Polling officers")
+    expect(page).not_to have_link("Polling officers")
     visit officing_root_path
 
     expect(page).not_to have_current_path(officing_root_path)
@@ -47,7 +47,7 @@ feature 'Poll Officing' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Polling officers")
+    expect(page).not_to have_link("Polling officers")
     visit officing_root_path
 
     expect(page).not_to have_current_path(officing_root_path)
@@ -61,7 +61,7 @@ feature 'Poll Officing' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Polling officers")
+    expect(page).not_to have_link("Polling officers")
     visit officing_root_path
 
     expect(page).not_to have_current_path(officing_root_path)
@@ -80,7 +80,7 @@ feature 'Poll Officing' do
     click_on "Polling officers"
 
     expect(page).to have_current_path(officing_root_path)
-    expect(page).to_not have_content "You do not have permission to access this page"
+    expect(page).not_to have_content "You do not have permission to access this page"
   end
 
   scenario 'Access as an poll officer is authorized' do
@@ -93,7 +93,7 @@ feature 'Poll Officing' do
     click_on "Polling officers"
 
     expect(page).to have_current_path(officing_root_path)
-    expect(page).to_not have_content "You do not have permission to access this page"
+    expect(page).not_to have_content "You do not have permission to access this page"
   end
 
   scenario "Poll officer access links" do
@@ -102,9 +102,9 @@ feature 'Poll Officing' do
     visit root_path
 
     expect(page).to have_link("Polling officers")
-    expect(page).to_not have_link('Valuation')
-    expect(page).to_not have_link('Administration')
-    expect(page).to_not have_link('Moderation')
+    expect(page).not_to have_link('Valuation')
+    expect(page).not_to have_link('Administration')
+    expect(page).not_to have_link('Moderation')
   end
 
   scenario 'Officing dashboard' do
@@ -117,9 +117,9 @@ feature 'Poll Officing' do
 
     expect(page).to have_current_path(officing_root_path)
     expect(page).to have_css('#officing_menu')
-    expect(page).to_not have_css('#valuation_menu')
-    expect(page).to_not have_css('#admin_menu')
-    expect(page).to_not have_css('#moderation_menu')
+    expect(page).not_to have_css('#valuation_menu')
+    expect(page).not_to have_css('#admin_menu')
+    expect(page).not_to have_css('#moderation_menu')
   end
 
   scenario 'Officing dashboard available for multiple sessions', :js do

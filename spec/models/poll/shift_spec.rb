@@ -16,28 +16,28 @@ describe Poll::Shift do
 
     it "is not valid without a booth" do
       shift.booth = nil
-      expect(shift).to_not be_valid
+      expect(shift).not_to be_valid
     end
 
     it "is not valid without an officer" do
       shift.officer = nil
-      expect(shift).to_not be_valid
+      expect(shift).not_to be_valid
     end
 
     it "is not valid without a date" do
       shift.date = nil
-      expect(shift).to_not be_valid
+      expect(shift).not_to be_valid
     end
 
     it "is not valid without a task" do
       shift.task = nil
-      expect(shift).to_not be_valid
+      expect(shift).not_to be_valid
     end
 
     it "is not valid with same booth, officer, date and task" do
       recount_shift.save
 
-      expect(build(:poll_shift, booth: booth, officer: officer, date: Date.current, task: :recount_scrutiny)).to_not be_valid
+      expect(build(:poll_shift, booth: booth, officer: officer, date: Date.current, task: :recount_scrutiny)).not_to be_valid
     end
 
     it "is valid with same booth, officer and date but different task" do

@@ -9,7 +9,7 @@ describe Geozone do
 
   it "is not valid without a name" do
     geozone.name = nil
-    expect(geozone).to_not be_valid
+    expect(geozone).not_to be_valid
   end
 
   describe "#safe_to_destroy?" do

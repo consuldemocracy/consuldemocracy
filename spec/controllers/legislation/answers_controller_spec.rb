@@ -35,7 +35,7 @@ describe Legislation::AnswersController do
       expect do
         xhr :post, :create, process_id: @process.id, question_id: @question.id,
                             legislation_answer: { legislation_question_option_id: @question_option.id }
-      end.to_not change { @question.reload.answers_count }
+      end.not_to change { @question.reload.answers_count }
     end
   end
 end

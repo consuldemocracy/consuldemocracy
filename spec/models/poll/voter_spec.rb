@@ -15,12 +15,12 @@ describe Poll::Voter do
 
     it "is not valid without a user" do
       voter.user = nil
-      expect(voter).to_not be_valid
+      expect(voter).not_to be_valid
     end
 
     it "is not valid without a poll" do
       voter.poll = nil
-      expect(voter).to_not be_valid
+      expect(voter).not_to be_valid
     end
 
     it "is valid if has not voted" do
@@ -35,7 +35,7 @@ describe Poll::Voter do
       voter1 = create(:poll_voter, user: user, poll: poll)
       voter2 = build(:poll_voter, user: user, poll: poll)
 
-      expect(voter2).to_not be_valid
+      expect(voter2).not_to be_valid
       expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
@@ -45,7 +45,7 @@ describe Poll::Voter do
       voter1 = create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
       voter2 = build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
 
-      expect(voter2).to_not be_valid
+      expect(voter2).not_to be_valid
       expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
@@ -58,7 +58,7 @@ describe Poll::Voter do
       voter1 = create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment1)
       voter2 = build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment2)
 
-      expect(voter2).to_not be_valid
+      expect(voter2).not_to be_valid
       expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
@@ -79,7 +79,7 @@ describe Poll::Voter do
       answer.record_voter_participation('token')
 
       voter = build(:poll_voter, poll: answer.question.poll, user: answer.author)
-      expect(voter).to_not be_valid
+      expect(voter).not_to be_valid
       expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
@@ -87,12 +87,12 @@ describe Poll::Voter do
 
       it "is not valid without an origin" do
         voter.origin = nil
-        expect(voter).to_not be_valid
+        expect(voter).not_to be_valid
       end
 
       it "is not valid without a valid origin" do
         voter.origin = "invalid_origin"
-        expect(voter).to_not be_valid
+        expect(voter).not_to be_valid
       end
 
       it "is valid with a booth origin" do
@@ -122,7 +122,7 @@ describe Poll::Voter do
         expect(web_voters.count).to eq(2)
         expect(web_voters).to     include(voter1)
         expect(web_voters).to     include(voter2)
-        expect(web_voters).to_not include(voter3)
+        expect(web_voters).not_to include(voter3)
       end
     end
 
@@ -137,7 +137,7 @@ describe Poll::Voter do
         expect(booth_voters.count).to eq(2)
         expect(booth_voters).to     include(voter1)
         expect(booth_voters).to     include(voter2)
-        expect(booth_voters).to_not include(voter3)
+        expect(booth_voters).not_to include(voter3)
       end
     end
 
