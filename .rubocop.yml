@@ -124,3 +124,6 @@ RSpec/LetSetup:
 
 RSpec/MessageChain:
   Enabled: true
+
+RSpec/MessageExpectation:
+  Enabled: true
