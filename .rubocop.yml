@@ -97,3 +97,6 @@ RSpec/HookArgument:
 RSpec/ImplicitExpect:
   Enabled: true
   EnforcedStyle: should
+
+RSpec/InstanceSpy:
+  Enabled: true
