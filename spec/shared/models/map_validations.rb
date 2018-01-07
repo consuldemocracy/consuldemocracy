@@ -4,11 +4,11 @@ shared_examples "map validations" do
 
   describe "validations" do
 
-    before(:each) do
+    before do
       Setting["feature.map"] = true
     end
 
-    after(:each) do
+    after do
      Setting["feature.map"] = nil
     end
 

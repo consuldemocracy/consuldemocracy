@@ -16,7 +16,7 @@ describe Admin::Api::StatsController do
     end
 
     context 'events present' do
-      before :each do
+      before do
         time_1 = DateTime.parse("2015-01-01").in_time_zone
         time_2 = DateTime.parse("2015-01-02").in_time_zone
         time_3 = DateTime.parse("2015-01-03").in_time_zone

@@ -89,8 +89,8 @@ describe Debate do
   describe "#editable?" do
     let(:debate) { create(:debate) }
 
-    before(:each) { Setting["max_votes_for_debate_edit"] = 3 }
-    after(:each) { Setting["max_votes_for_debate_edit"] = 1000 }
+    before { Setting["max_votes_for_debate_edit"] = 3 }
+    after { Setting["max_votes_for_debate_edit"] = 1000 }
 
     it "is true if debate has no votes yet" do
       expect(debate.total_votes).to eq(0)
@@ -113,8 +113,8 @@ describe Debate do
   describe "#editable_by?" do
     let(:debate) { create(:debate) }
 
-    before(:each) { Setting["max_votes_for_debate_edit"] = 1 }
-    after(:each) { Setting["max_votes_for_debate_edit"] = 1000 }
+    before { Setting["max_votes_for_debate_edit"] = 1 }
+    after { Setting["max_votes_for_debate_edit"] = 1000 }
 
     it "is true if user is the author and debate is editable" do
       expect(debate.editable_by?(debate.author)).to be true
@@ -133,7 +133,7 @@ describe Debate do
   describe "#votable_by?" do
     let(:debate) { create(:debate) }
 
-    before(:each) do
+    before do
       Setting["max_ratio_anon_votes_on_debates"] = 50
     end
 
@@ -169,7 +169,7 @@ describe Debate do
   describe "#register_vote" do
     let(:debate) { create(:debate) }
 
-    before(:each) do
+    before do
       Setting["max_ratio_anon_votes_on_debates"] = 50
     end
 
@@ -198,7 +198,7 @@ describe Debate do
     end
 
     describe "from anonymous users when anonymous votes are allowed" do
-      before(:each) {debate.update(cached_anonymous_votes_total: 42, cached_votes_total: 100)}
+      before {debate.update(cached_anonymous_votes_total: 42, cached_votes_total: 100)}
 
       it "registers vote" do
         user = create(:user)
@@ -212,7 +212,7 @@ describe Debate do
     end
 
     describe "from anonymous users when there are too many anonymous votes" do
-      before(:each) {debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)}
+      before {debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)}
 
       it "does not register vote " do
         user = create(:user)

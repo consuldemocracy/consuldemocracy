@@ -134,7 +134,7 @@ feature 'Budget Investments' do
   end
 
   context("Orders") do
-    before(:each) { budget.update(phase: 'selecting') }
+    before { budget.update(phase: 'selecting') }
 
     scenario "Default order is random" do
       per_page = Kaminari.config.default_per_page
@@ -266,7 +266,7 @@ feature 'Budget Investments' do
   end
 
   context 'Phase I - Accepting' do
-    before(:each) { budget.update(phase: 'accepting') }
+    before { budget.update(phase: 'accepting') }
 
     scenario 'Create with invisible_captcha honeypot field' do
       login_as(author)

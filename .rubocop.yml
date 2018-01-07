@@ -90,3 +90,6 @@ RSpec/FilePath:
 
 RSpec/Focus:
   Enabled: true
+
+RSpec/HookArgument:
+  Enabled: true

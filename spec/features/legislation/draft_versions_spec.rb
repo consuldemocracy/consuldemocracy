@@ -8,7 +8,7 @@ feature 'Legislation Draft Versions' do
   end
 
   context "See draft text page" do
-    before(:each) do
+    before do
       @process = create(:legislation_process)
       @draft_version_1 = create(:legislation_draft_version, process: @process, title: "Version 1",
                                                             body: "Body of the first version", status: "published")
@@ -80,7 +80,7 @@ feature 'Legislation Draft Versions' do
   end
 
   context "See changes page" do
-    before(:each) do
+    before do
       @process = create(:legislation_process)
       @draft_version_1 = create(:legislation_draft_version, process: @process, title: "Version 1", body: "Body of the first version",
                                                             changelog: "Changes for first version", status: "published")
