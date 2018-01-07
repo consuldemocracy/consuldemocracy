@@ -805,3 +805,9 @@ RSpec/DescribedClass:
   Exclude:
     - 'spec/controllers/concerns/has_filters_spec.rb'
     - 'spec/controllers/concerns/has_orders_spec.rb'
+
+# Offense count: 1
+# Configuration parameters: IgnoreSymbolicNames.
+RSpec/VerifiedDoubles:
+  Exclude:
+    - 'spec/models/verification/management/email_spec.rb'
