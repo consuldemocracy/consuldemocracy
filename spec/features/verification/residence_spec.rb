@@ -68,7 +68,7 @@ feature 'Residence' do
 
     click_button 'Verify residence'
 
-    expect(page).to have_content 'Your account is verified'
+    expect(page).to have_content 'Your account is already verified'
   end
 
   scenario 'When trying to verify a deregistered account old votes are reassigned' do
