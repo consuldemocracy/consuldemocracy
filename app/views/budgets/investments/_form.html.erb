@@ -17,10 +17,6 @@
       <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
     </div>
 
-    <div class="small-12 column">
-      <%= f.text_field :external_url %>
-    </div>
-
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
         <%= render 'images/nested_image', imageable: @investment, f: f %>
