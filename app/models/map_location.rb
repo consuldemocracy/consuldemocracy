@@ -3,6 +3,8 @@ class MapLocation < ActiveRecord::Base
   belongs_to :proposal, touch: true
   belongs_to :investment, class_name: Budget::Investment, touch: true
 
+  validates :longitude, :latitude, :zoom, presence: true
+
   def available?
     latitude.present? && longitude.present? && zoom.present?
   end

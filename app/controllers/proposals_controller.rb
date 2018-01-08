@@ -7,6 +7,7 @@ class ProposalsController < ApplicationController
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
+  before_action :destroy_map_location_association, only: :update
 
   feature_flag :proposals
 
@@ -155,8 +156,14 @@ class ProposalsController < ApplicationController
       @proposal_successful_exists = Proposal.successful.exists?
     end
 
+    def destroy_map_location_association
+      map_location = params[:proposal][:map_location_attributes]
+      if map_location && (map_location[:longitude] && map_location[:latitude]).blank? && !map_location[:id].blank?
+        MapLocation.destroy(map_location[:id])
+      end
+    end
+
     def load_rank
       @proposal_rank ||= Proposal.rank(@proposal)
     end
-
 end
