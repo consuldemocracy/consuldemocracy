@@ -231,6 +231,10 @@ FactoryBot.define do
     description_reviewing_ballots "This budget is reviewing ballots"
     description_finished "This budget is finished"
 
+    trait :drafting do
+      phase 'drafting'
+    end
+
     trait :accepting do
       phase 'accepting'
     end
