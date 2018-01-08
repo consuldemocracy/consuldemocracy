@@ -16,14 +16,16 @@
       </thead>
       <tbody>
       <% @budgets.each do |budget| %>
-        <tr>
-          <td>
-            <%= link_to budget.name, budget %>
-          </td>
-          <td>
-            <%= budget.translated_phase %>
-          </td>
-        </tr>
+        <% if budget_published?(budget) %>
+          <tr>
+            <td>
+              <%= link_to budget.name, budget %>
+            </td>
+            <td>
+              <%= budget.translated_phase %>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
       </tbody>
     </table>
