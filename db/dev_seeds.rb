@@ -98,6 +98,11 @@ section "Creating Users" do
     "#{@document_number}#{[*'A'..'Z'].sample}"
   end
 
+  def construct_map(mappable, should_skip)
+    mappable.skip_map = should_skip  ? "1" : "0"
+    mappable.map_location = should_skip  ? nil : MapLocation.create( latitude: Faker::Address.latitude, longitude: Faker::Address.longitude, zoom: 10)
+  end
+
   admin = create_user('admin@consul.dev', 'admin')
   admin.create_administrator
   admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
@@ -215,9 +220,10 @@ end
 
 section "Creating Proposals" do
   tags = Faker::Lorem.words(25)
-  30.times do
+  30.times do |i|
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    should_skip = (i % 2 == 0)
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
                                 question: Faker::Lorem.sentence(3) + "?",
@@ -228,16 +234,18 @@ section "Creating Proposals" do
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(','),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
-                                terms_of_service: "1")
+                                terms_of_service: "1") do |mappable|
+                                  construct_map(mappable, should_skip)
+                                end
   end
 end
 
 section "Creating Archived Proposals" do
   tags = Faker::Lorem.words(25)
-  5.times do
+  5.times do |i|
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    should_skip = (i % 2 == 0)
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
                                 question: Faker::Lorem.sentence(3) + "?",
@@ -247,17 +255,20 @@ section "Creating Archived Proposals" do
                                 description: description,
                                 tag_list: tags.sample(3).join(','),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
                                 terms_of_service: "1",
-                                created_at: Setting["months_to_archive_proposals"].to_i.months.ago)
+                                created_at: Setting["months_to_archive_proposals"].to_i.months.ago) do |mappable|
+                                  construct_map(mappable, should_skip)
+                                end
   end
 end
 
+
 section "Creating Successful Proposals" do
   tags = Faker::Lorem.words(25)
-  10.times do
+  10.times do |i|
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    should_skip = (i % 2 == 0)
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
                                 question: Faker::Lorem.sentence(3) + "?",
@@ -268,15 +279,17 @@ section "Creating Successful Proposals" do
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(','),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
                                 terms_of_service: "1",
-                                cached_votes_up: Setting["votes_for_proposal_success"])
+                                cached_votes_up: Setting["votes_for_proposal_success"]) do |mappable|
+                                  construct_map(mappable, should_skip)
+                                end
   end
 
   tags = ActsAsTaggableOn::Tag.where(kind: 'category')
-  30.times do
+  30.times do |i|
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    should_skip = (i % 2 == 0)
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(4).truncate(60),
                                 question: Faker::Lorem.sentence(6) + "?",
@@ -287,8 +300,9 @@ section "Creating Successful Proposals" do
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(','),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
-                                terms_of_service: "1")
+                                terms_of_service: "1") do |mappable|
+                                  construct_map(mappable, should_skip)
+                                end
   end
 end
 
@@ -429,9 +443,9 @@ end
 
 section "Creating Investments" do
   tags = Faker::Lorem.words(10)
-  100.times do
+  100.times do |i|
     heading = Budget::Heading.all.sample
-
+    should_skip = (i % 2 == 0)
     investment = Budget::Investment.create!(
       author: User.all.sample,
       heading: heading,
@@ -446,9 +460,10 @@ section "Creating Investments" do
       valuation_finished: [false, true].sample,
       tag_list: tags.sample(3).join(','),
       price: rand(1..100) * 100000,
-      skip_map: "1",
       terms_of_service: "1"
-    )
+    ) do |mappable|
+      construct_map(mappable, should_skip)
+    end
   end
 end
 
@@ -460,8 +475,9 @@ end
 
 section "Winner Investments" do
   budget = Budget.where(phase: "finished").last
-  100.times do
+  100.times do |i|
     heading = budget.headings.all.sample
+    should_skip = (i % 2 == 0)
     investment = Budget::Investment.create!(
       author: User.all.sample,
       heading: heading,
@@ -475,9 +491,10 @@ section "Winner Investments" do
       valuation_finished: true,
       selected: true,
       price: rand(10000..heading.price),
-      skip_map: "1",
       terms_of_service: "1"
-    )
+    ) do |mappable|
+      construct_map(mappable, should_skip)
+    end
   end
   budget.headings.each do |heading|
     Budget::Result.new(budget, heading).calculate_winners
