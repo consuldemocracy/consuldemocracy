@@ -743,7 +743,7 @@ FactoryBot.define do
 
   factory :ballot_line do
     ballot
-    spending_proposal { FactoryGirl.build(:spending_proposal, feasible: true) }
+    spending_proposal { build(:spending_proposal, feasible: true) }
   end
 
   factory :banner do
