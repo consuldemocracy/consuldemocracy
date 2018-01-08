@@ -2,6 +2,8 @@ require 'rails_helper'
 
 feature 'Budgets' do
 
+  let(:budget) { create(:budget) }
+
   scenario 'Index' do
     budgets = create_list(:budget, 3)
     visit budgets_path
@@ -11,7 +13,6 @@ feature 'Budgets' do
   context 'Show' do
 
     scenario "List all groups" do
-      budget = create(:budget)
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
 
@@ -62,8 +63,6 @@ feature 'Budgets' do
   end
 
   context 'Accepting' do
-
-    let(:budget) { create(:budget) }
 
     background do
       budget.update(phase: 'accepting')
