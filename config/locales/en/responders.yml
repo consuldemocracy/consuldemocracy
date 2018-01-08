@@ -9,6 +9,7 @@ en:
         poll_booth: "Booth created successfully."
         poll_question_answer: "Answer created successfully"
         poll_question_answer_video: "Video created successfully"
+        poll_question_answer_image: "Image uploaded successfully"
         proposal: "Proposal created successfully."
         spending_proposal: "Investment project created successfully. You can access it from %{activity}"
         representative: "You have updated your representative"
