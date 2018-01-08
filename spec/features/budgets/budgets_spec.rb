@@ -63,6 +63,58 @@ feature 'Budgets' do
 
   end
 
+  context "In Drafting phase" do
+
+    let(:admin) { create(:administrator).user }
+
+    background do
+      logout
+      budget.update(phase: 'drafting')
+    end
+
+    context "Listed" do
+      scenario "Not listed to guest users at the public budgets list" do
+        visit budgets_path
+
+        expect(page).not_to have_content(budget.name)
+      end
+
+      scenario "Not listed to logged users at the public budgets list" do
+        login_as(level_two_user)
+        visit budgets_path
+
+        expect(page).not_to have_content(budget.name)
+      end
+
+      scenario "Is listed to admins at the public budgets list" do
+        login_as(admin)
+        visit budgets_path
+
+        expect(page).to have_content(budget.name)
+      end
+    end
+
+    context "Shown" do
+      scenario "Not accesible to guest users" do
+        expect { visit budget_path(budget) }.to raise_error(ActionController::RoutingError)
+      end
+
+      scenario "Not accesible to logged users" do
+        login_as(level_two_user)
+
+        expect { visit budget_path(budget) }.to raise_error(ActionController::RoutingError)
+      end
+
+      scenario "Is accesible to admin users" do
+        login_as(admin)
+        visit budget_path(budget)
+
+        expect(page.status_code).to eq(200)
+      end
+    end
+
+  end
+
   context 'Accepting' do
 
     background do
