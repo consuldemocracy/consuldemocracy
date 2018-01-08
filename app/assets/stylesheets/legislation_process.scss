@@ -39,10 +39,6 @@ $border-dark:  darken($border, 10%);
     }
   }
 
-  .legislation-debate-show {
-    display: none;
-  }
-
   .debate-add-info {
     border-top: 1px solid $border-dark;
     margin-top: $line-height;
@@ -356,10 +352,6 @@ $border-dark:  darken($border, 10%);
 
 .legislation-allegation {
   padding-top: 1rem;
-
-  .legislation-debate-show {
-    margin-top: 2rem;
-  }
 
   .headline {
     margin-bottom: 0;
