@@ -186,6 +186,7 @@ feature 'Tags' do
       Budget::PHASES.each do |phase|
         budget.update(phase: phase)
 
+        login_as(admin) if budget.drafting?
         visit budget_investments_path(budget, heading_id: heading.id)
 
         within "#tag-cloud" do
@@ -205,6 +206,7 @@ feature 'Tags' do
           end
         end
 
+        login_as(admin) if budget.drafting?
         visit budget_path(budget)
         click_link group.name
 
@@ -231,6 +233,7 @@ feature 'Tags' do
       Budget::PHASES.each do |phase|
         budget.update(phase: phase)
 
+        login_as(admin) if budget.drafting?
         visit budget_investments_path(budget, heading_id: heading.id)
 
         within "#categories" do
@@ -250,6 +253,7 @@ feature 'Tags' do
           end
         end
 
+        login_as(admin) if budget.drafting?
         visit budget_path(budget)
         click_link group.name
 
