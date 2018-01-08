@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'Budgets' do
 
   let(:budget) { create(:budget) }
+  let(:level_two_user) { create(:user, :level_two) }
 
   scenario 'Index' do
     budgets = create_list(:budget, 3)
@@ -71,8 +72,7 @@ feature 'Budgets' do
     context "Permissions" do
 
       scenario "Verified user" do
-        user = create(:user, :level_two)
-        login_as(user)
+        login_as(level_two_user)
 
         visit budget_path(budget)
 
