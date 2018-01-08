@@ -10,7 +10,7 @@ describe RedeemableCode do
     token = RedeemableCode.generate_token
     RedeemableCode.create!(token: token)
 
-    expect(RedeemableCode.new(token: token)).to_not be_valid
+    expect(RedeemableCode.new(token: token)).not_to be_valid
   end
 
   describe "#redeemable?" do
@@ -23,7 +23,7 @@ describe RedeemableCode do
     end
 
     it "is false if a code doesn't exist" do
-      expect(RedeemableCode.redeemable?(token)).to_not be
+      expect(RedeemableCode.redeemable?(token)).not_to be
     end
   end
 
@@ -32,18 +32,18 @@ describe RedeemableCode do
     let(:user)    { create(:user) }
 
     it "when not redeemable, it returns false" do
-      expect(RedeemableCode.redeem(token, user)).to_not be
+      expect(RedeemableCode.redeem(token, user)).not_to be
 
       user.reload
       expect(user.redeemable_code).to be_nil
-      expect(user).to_not be_level_three_verified
+      expect(user).not_to be_level_three_verified
     end
 
     it "when redeemable, it deletes the code and updates the user" do
       RedeemableCode.create!(token: token)
 
       expect(RedeemableCode.redeem(token, user)).to be
-      expect(RedeemableCode.redeemable?(token)).to_not be
+      expect(RedeemableCode.redeemable?(token)).not_to be
 
       user.reload
       expect(user.redeemable_code).to eq(token)

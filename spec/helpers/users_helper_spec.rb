@@ -3,7 +3,7 @@ require 'rails_helper'
 describe UsersHelper do
 
   describe '#humanize_document_type' do
-    it "should return a humanized document type" do
+    it "returns a humanized document type" do
       expect(humanize_document_type("1")).to eq "DNI"
       expect(humanize_document_type("2")).to eq "Passport"
       expect(humanize_document_type("3")).to eq "Residence card"
@@ -11,7 +11,7 @@ describe UsersHelper do
   end
 
   describe '#deleted_commentable_text' do
-    it "should return the appropriate message for deleted debates" do
+    it "returns the appropriate message for deleted debates" do
       debate = create(:debate)
       comment = create(:comment, commentable: debate)
 
@@ -21,7 +21,7 @@ describe UsersHelper do
                                                        '</del> <span class="small">(This debate has been deleted)</span>')
     end
 
-    it "should return the appropriate message for deleted proposals" do
+    it "returns the appropriate message for deleted proposals" do
       proposal = create(:proposal)
       comment = create(:comment, commentable: proposal)
 
@@ -31,7 +31,7 @@ describe UsersHelper do
                                                        '</del> <span class="small">(This proposal has been deleted)</span>')
     end
 
-    it "should return the appropriate message for deleted budget investment" do
+    it "returns the appropriate message for deleted budget investment" do
       investment = create(:budget_investment)
       comment = create(:comment, commentable: investment)
 
@@ -43,12 +43,12 @@ describe UsersHelper do
   end
 
   describe '#comment_commentable_title' do
-    it "should return a link to the comment" do
+    it "returns a link to the comment" do
       comment = create(:comment)
       expect(comment_commentable_title(comment)).to eq link_to comment.commentable.title, comment
     end
 
-    it "should return a hint if the commentable has been deleted" do
+    it "returns a hint if the commentable has been deleted" do
       comment = create(:comment)
       comment.commentable.hide
       expect(comment_commentable_title(comment)).to eq('<del>' + comment.commentable.title +

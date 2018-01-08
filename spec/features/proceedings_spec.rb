@@ -58,7 +58,7 @@ feature 'Proceedings' do
     visit proposals_path
 
     expect(page).to have_content("A test proposal")
-    expect(page).to_not have_content("Another test proposal")
+    expect(page).not_to have_content("Another test proposal")
   end
 
 end

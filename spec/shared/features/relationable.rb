@@ -21,7 +21,7 @@ shared_examples "relationable" do |relationable_model_name|
 
   scenario 'related contents list is not rendered if there are no relations' do
     visit send("#{relationable.class.name.downcase}_path", relationable)
-    expect(page).to_not have_css("#related-content-list")
+    expect(page).not_to have_css("#related-content-list")
   end
 
   scenario 'related contents can be added' do
@@ -80,7 +80,7 @@ shared_examples "relationable" do |relationable_model_name|
     within("#related-content-list") do
       find("#related-content-#{related_content.opposite_related_content.id}").hover
       find("#score-positive-related-#{related_content.opposite_related_content.id}").click
-      expect(page).to_not have_css("#score-positive-related-#{related_content.opposite_related_content.id}")
+      expect(page).not_to have_css("#score-positive-related-#{related_content.opposite_related_content.id}")
     end
 
     expect(related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.id).value).to eq(1)
@@ -97,7 +97,7 @@ shared_examples "relationable" do |relationable_model_name|
     within("#related-content-list") do
       find("#related-content-#{related_content.opposite_related_content.id}").hover
       find("#score-negative-related-#{related_content.opposite_related_content.id}").click
-      expect(page).to_not have_css("#score-negative-related-#{related_content.opposite_related_content.id}")
+      expect(page).not_to have_css("#score-negative-related-#{related_content.opposite_related_content.id}")
     end
 
     expect(related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.id).value).to eq(-1)
@@ -119,6 +119,6 @@ shared_examples "relationable" do |relationable_model_name|
 
     visit send("#{relationable.class.name.downcase}_path", relationable)
 
-    expect(page).to_not have_css("#related-content-list")
+    expect(page).not_to have_css("#related-content-list")
   end
 end

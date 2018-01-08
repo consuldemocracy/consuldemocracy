@@ -72,8 +72,8 @@ feature 'Ballots' do
         expect(page).to have_css("#amount-available", text: "$24,000,000")
 
         within("#sidebar") do
-          expect(page).to_not have_content sp1.title
-          expect(page).to_not have_content "$10,000"
+          expect(page).not_to have_content sp1.title
+          expect(page).not_to have_content "$10,000"
         end
       end
 
@@ -143,8 +143,8 @@ feature 'Ballots' do
         expect(page).to have_css("#amount-available", text: "$3,247,830")
 
         within("#sidebar") do
-          expect(page).to_not have_content sp1.title
-          expect(page).to_not have_content "$10,000"
+          expect(page).not_to have_content sp1.title
+          expect(page).not_to have_content "$10,000"
         end
       end
 
@@ -192,8 +192,8 @@ feature 'Ballots' do
           expect(page).to have_content sp2.title
           expect(page).to have_content "$20,000"
 
-          expect(page).to_not have_content sp1.title
-          expect(page).to_not have_content "$10,000"
+          expect(page).not_to have_content sp1.title
+          expect(page).not_to have_content "$10,000"
         end
 
         click_link "Spending proposals"
@@ -206,8 +206,8 @@ feature 'Ballots' do
           expect(page).to have_content sp1.title
           expect(page).to have_content "$10,000"
 
-          expect(page).to_not have_content sp2.title
-          expect(page).to_not have_content "$20,000"
+          expect(page).not_to have_content sp2.title
+          expect(page).not_to have_content "$20,000"
         end
       end
     end
@@ -278,7 +278,7 @@ feature 'Ballots' do
 
       visit select_district_path
       expect(page).to have_css("#geozone_#{new_york.id}.active")
-      expect(page).to_not have_css("#geozone_#{california.id}.active")
+      expect(page).not_to have_css("#geozone_#{california.id}.active")
     end
 
     scenario 'View another district' do
@@ -292,7 +292,7 @@ feature 'Ballots' do
 
       visit spending_proposals_path(geozone: new_york)
 
-      expect(page).to_not have_css "#progressbar"
+      expect(page).not_to have_css "#progressbar"
       expect(page).to have_content "You have active votes in another district:"
       expect(page).to have_link california.name, href: spending_proposals_path(geozone: california)
     end
@@ -368,8 +368,8 @@ feature 'Ballots' do
     expect(page).to have_css("#amount-available", text: "$23,980,000")
 
     within("#sidebar") do
-      expect(page).to_not have_content sp1.title
-      expect(page).to_not have_content "$10,000"
+      expect(page).not_to have_content sp1.title
+      expect(page).not_to have_content "$10,000"
 
       expect(page).to have_content sp2.title
       expect(page).to have_content "$20,000"
@@ -405,8 +405,8 @@ feature 'Ballots' do
     expect(page).to have_css("#amount-available", text: "$23,980,000")
 
     within("#sidebar") do
-      expect(page).to_not have_content sp1.title
-      expect(page).to_not have_content "$10,000"
+      expect(page).not_to have_content sp1.title
+      expect(page).not_to have_content "$10,000"
 
       expect(page).to have_content sp2.title
       expect(page).to have_content "$20,000"
@@ -460,7 +460,7 @@ feature 'Ballots' do
       visit spending_proposals_path(unfeasible: 1)
 
       within("#spending_proposal_#{spending_proposal.id}") do
-        expect(page).to_not have_css("div.ballot")
+        expect(page).not_to have_css("div.ballot")
       end
     end
 
@@ -472,8 +472,8 @@ feature 'Ballots' do
       visit spending_proposals_path
 
       within("#investment-projects") do
-        expect(page).to_not have_css("div.ballot")
-        expect(page).to_not have_css("#spending_proposal_#{spending_proposal.id}")
+        expect(page).not_to have_css("div.ballot")
+        expect(page).not_to have_css("#spending_proposal_#{spending_proposal.id}")
       end
     end
 
@@ -556,7 +556,7 @@ feature 'Ballots' do
 
       within("#spending_proposal_#{sp2.id}") do
         find("div.ballot").hover
-        expect(page).to_not have_content "This proposal's price is more than the available amount left"
+        expect(page).not_to have_content "This proposal's price is more than the available amount left"
         expect(page).to have_selector('.in-favor a', visible: true)
       end
     end
@@ -582,11 +582,11 @@ feature 'Ballots' do
         find('.remove-investment-project').trigger('click')
       end
 
-      expect(page).to_not have_css "#spending_proposal_#{sp1.id}_sidebar"
+      expect(page).not_to have_css "#spending_proposal_#{sp1.id}_sidebar"
 
       within("#spending_proposal_#{sp2.id}") do
         find("div.ballot").hover
-        expect(page).to_not have_content "This proposal's price is more than the available amount left"
+        expect(page).not_to have_content "This proposal's price is more than the available amount left"
         expect(page).to have_selector('.in-favor a', visible: true)
       end
     end
@@ -629,7 +629,7 @@ feature 'Ballots' do
       end
 
       visit forums_path
-      expect(page).to_not have_content("You are delegating your votes on hydra")
+      expect(page).not_to have_content("You are delegating your votes on hydra")
     end
 
   end

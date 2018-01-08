@@ -2,10 +2,10 @@ require 'rails_helper'
 
 describe Budget::Heading do
 
-  it_behaves_like "sluggable"
-
   let(:budget) { create(:budget) }
   let(:group) { create(:budget_group, budget: budget) }
+
+  it_behaves_like "sluggable"
 
   describe "name" do
     before do

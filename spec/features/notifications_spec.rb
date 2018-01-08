@@ -30,7 +30,7 @@ feature "Notifications" do
       click_link "Mark all as read"
 
       expect(page).to have_css ".notification", count: 0
-      expect(current_path).to eq(notifications_path)
+      expect(page).to have_current_path(notifications_path)
     end
 
   end

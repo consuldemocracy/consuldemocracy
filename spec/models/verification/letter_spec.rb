@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Verification::Letter' do
+describe Verification::Letter do
 
   let(:user) { create(:user) }
 
@@ -8,20 +8,20 @@ describe 'Verification::Letter' do
 
     let(:letter) { build(:verification_letter) }
 
-    it "should be valid" do
+    it "is valid" do
       expect(letter).to be_valid
     end
 
-    it "should not be valid without a user" do
+    it "is not valid without a user" do
       letter.user = nil
-      expect(letter).to_not be_valid
+      expect(letter).not_to be_valid
     end
 
   end
 
   describe "save" do
 
-    it "should update letter_requested" do
+    it "updates letter_requested" do
       letter = build(:verification_letter)
       letter.save
       expect(letter.user.letter_requested_at).to be

@@ -42,7 +42,7 @@ feature 'Representatives' do
     visit forums_path
     click_link forum.name
 
-    expect(page).to_not have_selector(:button, "Delegate on #{forum.name}")
+    expect(page).not_to have_selector(:button, "Delegate on #{forum.name}")
     expect(page).to have_content "Sign in to delegate"
   end
 
@@ -56,7 +56,7 @@ feature 'Representatives' do
     visit forums_path
     click_link forum.name
 
-    expect(page).to_not have_selector(:button, "Delegate on #{forum.name}")
+    expect(page).not_to have_selector(:button, "Delegate on #{forum.name}")
     expect(page).to have_content "Verify your account to delegate"
   end
 
@@ -73,7 +73,7 @@ feature 'Representatives' do
     scenario "Button is not shown" do
       visit forums_path
       click_link forum.name
-      expect(page).to_not have_button("Delegate on #{forum.name}")
+      expect(page).not_to have_button("Delegate on #{forum.name}")
     end
 
     scenario "Forcing the creation returns forbidden" do

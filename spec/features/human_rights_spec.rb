@@ -73,8 +73,8 @@ feature 'Human Rights' do
 
           expect(page).to have_content(proposal1.title)
           expect(page).to have_content(proposal2.title)
-          expect(page).to_not have_content(proposal3.title)
-          expect(page).to_not have_content(proposal4.title)
+          expect(page).not_to have_content(proposal3.title)
+          expect(page).not_to have_content(proposal4.title)
         end
       end
 
@@ -94,8 +94,8 @@ feature 'Human Rights' do
           expect(page).to have_css('.proposal', count: 1)
 
           expect(page).to have_content(proposal1.title)
-          expect(page).to_not have_content(proposal2.title)
-          expect(page).to_not have_content(proposal3.title)
+          expect(page).not_to have_content(proposal2.title)
+          expect(page).not_to have_content(proposal3.title)
         end
       end
 
@@ -119,8 +119,8 @@ feature 'Human Rights' do
         within("#proposals") do
           expect(page).to have_content(proposal1.title)
           expect(page).to have_content(proposal2.title)
-          expect(page).to_not have_content(proposal3.title)
-          expect(page).to_not have_content(proposal4.title)
+          expect(page).not_to have_content(proposal3.title)
+          expect(page).not_to have_content(proposal4.title)
         end
       end
 
@@ -134,7 +134,7 @@ feature 'Human Rights' do
         visit human_rights_proposals_path
         new_order = eq(all(".proposal h3").collect {|i| i.text })
 
-        expect(order).to_not eq(new_order)
+        expect(order).not_to eq(new_order)
       end
 
       scenario 'Order by most voted' do
@@ -159,7 +159,7 @@ feature 'Human Rights' do
         visit human_rights_proposals_path
 
         within("#proposal_#{proposal.id}") do
-          expect(page).to_not have_css('.in-favor a')
+          expect(page).not_to have_css('.in-favor a')
         end
       end
 
@@ -187,7 +187,7 @@ feature 'Human Rights' do
         visit human_rights_proposals_path
 
         expect(page).to     have_css("#proposal_#{proposal1.id}.human-rights")
-        expect(page).to_not have_css("#proposal_#{proposal2.id}.human-rights")
+        expect(page).not_to have_css("#proposal_#{proposal2.id}.human-rights")
       end
 
       scenario 'Do not display tag cloud' do
@@ -198,13 +198,13 @@ feature 'Human Rights' do
 
         visit human_rights_proposals_path
 
-        expect(page).to_not have_css("#tag-cloud")
+        expect(page).not_to have_css("#tag-cloud")
       end
 
       scenario 'Do not display create proposal button' do
         visit human_rights_proposals_path
 
-        expect(page).to_not have_link "Create proposal"
+        expect(page).not_to have_link "Create proposal"
       end
 
       scenario 'Only display official sub proceedings' do
@@ -215,7 +215,7 @@ feature 'Human Rights' do
 
         within "#categories" do
           expect(page).to     have_link "Derecho a la educación"
-          expect(page).to_not have_link "Derecho a ser feliz"
+          expect(page).not_to have_link "Derecho a ser feliz"
         end
       end
 
@@ -225,7 +225,7 @@ feature 'Human Rights' do
         visit human_rights_proposals_path
 
         within("#proposal_#{proposal.id}") do
-          expect(page).to_not have_content "supports needed"
+          expect(page).not_to have_content "supports needed"
         end
       end
 
@@ -250,7 +250,7 @@ feature 'Human Rights' do
         visit human_rights_proposal_path(proposal)
 
         within("#proposal_#{proposal.id}") do
-          expect(page).to_not have_css('.in-favor a')
+          expect(page).not_to have_css('.in-favor a')
         end
       end
 
@@ -260,7 +260,7 @@ feature 'Human Rights' do
         visit human_rights_proposal_path(proposal)
 
         within("#proposal_#{proposal.id}") do
-          expect(page).to_not have_content "supports needed"
+          expect(page).not_to have_content "supports needed"
         end
       end
 

@@ -41,7 +41,7 @@ feature 'Nvotes' do
 
     within("#poll_#{poll.id}") do
       expect(page).to have_content "Has already participated in this poll"
-      expect(page).to_not have_button "Confirm vote"
+      expect(page).not_to have_button "Confirm vote"
     end
   end
 

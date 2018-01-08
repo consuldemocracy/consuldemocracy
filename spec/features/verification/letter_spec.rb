@@ -36,7 +36,7 @@ feature 'Verify Letter' do
     visit new_letter_path
 
     expect(page).to have_content 'You have not yet confirmed your residency'
-    expect(current_path).to eq(new_residence_path)
+    expect(page).to have_current_path(new_residence_path)
   end
 
   scenario "Deny access unless verified phone/email" do
@@ -46,7 +46,7 @@ feature 'Verify Letter' do
     visit new_letter_path
 
     expect(page).to have_content 'You have not yet entered the confirmation code'
-    expect(current_path).to eq(new_sms_path)
+    expect(page).to have_current_path(new_sms_path)
   end
 
   context "Code verification" do
@@ -65,7 +65,7 @@ feature 'Verify Letter' do
       click_button "Verify my account"
 
       expect(page).to have_content "Code correct. Your account is now verified"
-      expect(current_path).to eq(account_path)
+      expect(page).to have_current_path(account_path)
     end
 
     scenario "Valid verification of user failing to add trailing zeros" do
@@ -82,7 +82,7 @@ feature 'Verify Letter' do
       click_button "Verify my account"
 
       expect(page).to have_content "Account verified"
-      expect(current_path).to eq(account_path)
+      expect(page).to have_current_path(account_path)
     end
 
     scenario "Valid verification user not logged in" do
@@ -98,7 +98,7 @@ feature 'Verify Letter' do
       click_button "Verify my account"
 
       expect(page).to have_content "Code correct. Your account is now verified"
-      expect(current_path).to eq(account_path)
+      expect(page).to have_current_path(account_path)
     end
 
     scenario "Error messages on authentication" do
@@ -136,7 +136,7 @@ feature 'Verify Letter' do
       end
 
       expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
-      expect(current_path).to eq(account_path)
+      expect(page).to have_current_path(account_path)
     end
 
     context "Redeeamble Code" do

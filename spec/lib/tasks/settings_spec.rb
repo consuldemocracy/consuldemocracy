@@ -22,7 +22,7 @@ describe 'Settings Rake' do
         run_rake_task
       end
 
-      it 'should have per_page_code_head setting present and no per_page_code' do
+      it 'has per_page_code_head setting present and no per_page_code' do
         expect(Setting.where(key: 'per_page_code_head').count).to eq(1)
         expect(Setting['per_page_code_head']).to eq(nil)
         expect(Setting.where(key: 'per_page_code').count).to eq(0)
@@ -36,7 +36,7 @@ describe 'Settings Rake' do
         run_rake_task
       end
 
-      it 'should have per_page_code_head setting present and no per_page_code' do
+      it 'has per_page_code_head setting present and no per_page_code' do
         expect(Setting.where(key: 'per_page_code_head').count).to eq(1)
         expect(Setting['per_page_code_head']).to eq('per_page_code_head')
         expect(Setting.where(key: 'per_page_code').count).to eq(0)
@@ -50,7 +50,7 @@ describe 'Settings Rake' do
         run_rake_task
       end
 
-      it 'should have per_page_code_head setting present and no per_page_code' do
+      it 'has per_page_code_head setting present and no per_page_code' do
         expect(Setting.where(key: 'per_page_code_head').count).to eq(1)
         expect(Setting['per_page_code_head']).to eq('per_page_code_head')
         expect(Setting.where(key: 'per_page_code').count).to eq(0)
@@ -64,7 +64,7 @@ describe 'Settings Rake' do
         run_rake_task
       end
 
-      it 'should have per_page_code_head setting present and no per_page_code' do
+      it 'has per_page_code_head setting present and no per_page_code' do
         expect(Setting.where(key: 'per_page_code_head').count).to eq(1)
         expect(Setting['per_page_code_head']).to eq('per_page_code')
         expect(Setting.where(key: 'per_page_code').count).to eq(0)
