@@ -42,7 +42,8 @@
     <% end %>
 
     <div class="small-12 column">
-      <%= f.text_field :location %>
+      <%= f.label :location, t("budgets.investments.form.location") %>
+      <%= f.text_field :location, label: false %>
     </div>
 
     <div class="small-12 column">
