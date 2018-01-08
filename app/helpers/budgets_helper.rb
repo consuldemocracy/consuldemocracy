@@ -42,4 +42,9 @@ module BudgetsHelper
   def investment_tags_select_options
     Budget::Investment.tags_on(:valuation).order(:name).select(:name).distinct
   end
+
+  def budget_published?(budget)
+    !budget.drafting? || current_user&.administrator?
+  end
+
 end
