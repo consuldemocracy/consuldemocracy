@@ -8,6 +8,14 @@ describe MapLocation do
     expect(map_location).to be_valid
   end
 
+  it "fails if longitude, latitude or zoom attributes are blank" do
+    map_location.longitude = nil
+    map_location.latitude = nil
+
+    expect(map_location).to_not be_valid
+    expect(map_location.errors.size).to eq(2)
+  end
+
   context "#available?" do
 
     it "returns true when latitude, longitude and zoom defined" do
