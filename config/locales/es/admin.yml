@@ -72,10 +72,10 @@ es:
         filters:
           current: Abiertos
           finished: Terminados
-        budget_investments: Ver proyectos de gasto
+        budget_investments: Ver proyectos de inversión
         table_name: Nombre
         table_phase: Fase
-        table_investments: Proyectos de gasto
+        table_investments: Proyectos de inversión
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
@@ -134,7 +134,7 @@ es:
           selected: Seleccionadas
           winners: Ganadoras
           all: Todas
-        title: Proyectos de gasto
+        title: Proyectos de inversión
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
@@ -991,7 +991,8 @@ es:
           spending_proposal_votes: Votos Propuesta Inversión
           spending_proposals: Propuestas de inversión
           budgets: Presupuestos abiertos
-          budget_investments: Propuestas de inversión
+          budget_investments: Proyectos de inversión
+          spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos
