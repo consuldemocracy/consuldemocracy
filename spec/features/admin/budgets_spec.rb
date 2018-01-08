@@ -109,6 +109,25 @@ feature 'Admin budgets' do
 
   end
 
+  context 'Update' do
+
+    background do
+      create(:budget)
+    end
+
+    scenario 'Update budget' do
+      visit admin_budgets_path
+      click_link 'Edit budget'
+
+      fill_in 'budget_name', with: 'More trees on the streets'
+      click_button 'Update Participatory budget'
+
+      expect(page).to have_content('More trees on the streets')
+      expect(page).to have_current_path(admin_budgets_path)
+    end
+
+  end
+
   context "Calculate Budget's Winner Investments" do
 
     scenario 'For a Budget in reviewing balloting' do
