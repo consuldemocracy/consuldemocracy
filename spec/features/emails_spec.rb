@@ -369,7 +369,6 @@ feature 'Emails' do
       select  "#{group.name}: #{heading.name}", from: 'budget_investment_heading_id'
       fill_in 'budget_investment_title', with: 'Build a hospital'
       fill_in 'budget_investment_description', with: 'We have lots of people that require medical attention'
-      fill_in 'budget_investment_external_url', with: 'http://http://hospitalsforallthepeople.com/'
       check   'budget_investment_terms_of_service'
 
       click_button 'Create Investment'

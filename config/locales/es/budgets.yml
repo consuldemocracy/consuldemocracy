@@ -59,6 +59,7 @@ es:
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
+        location: "Información adicional de la ubicación"
       index:
         title: Presupuestos participativos
         unfeasible: Propuestas de inversión no viables
