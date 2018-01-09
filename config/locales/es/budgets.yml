@@ -96,7 +96,7 @@ es:
         orders:
           random: Aleatorias
           confidence_score: Mejor valoradas
-          price: Por coste
+          price: Por precio
       show:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
@@ -108,7 +108,7 @@ es:
         title: Propuesta de inversión
         supports: Apoyos
         votes: Votos
-        price: Coste
+        price: Precio
         comments_tab: Comentarios
         milestones_tab: Seguimiento
         no_milestones: No hay hitos definidos
@@ -149,7 +149,7 @@ es:
       ballot_lines_count: Votos
       hide_discarded_link: Ocultar descartadas
       show_all_link: Mostrar todas
-      price: Coste total
+      price: Precio total
       amount_available: Presupuesto disponible
       accepted: 'Propuesta de inversión aceptada: '
       discarded: 'Propuesta de inversión descartada: '
