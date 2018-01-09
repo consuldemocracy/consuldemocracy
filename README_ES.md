@@ -21,7 +21,7 @@ Este es el repositorio de código abierto de la Aplicación de Participación Ci
 
 ## Estado del proyecto
 
-El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6) y el código fue puesto en producción el día 7 de Septiembre de 2015 en [decide.madrid.es](https://decide.madrid.es). Desde entonces se le añaden mejoras y funcionalidades constantemente. Las funcionalidades actuales se pueden consultar en [características](http://www.decide.es/es/) o en la [documentación](https://github.com/consul/consul/tree/master/doc) y las siguientes funcionaliades en la lista de [tareas por hacer](https://github.com/consul/consul/issues). Para conocer el estado actual de las próximas caracteristicas, vaya a [Roadmap](https://github.com/consul/consul/projects/6)
+El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6) y el código fue puesto en producción el día 7 de Septiembre de 2015 en [decide.madrid.es](https://decide.madrid.es). Desde entonces se le añaden mejoras y funcionalidades constantemente. Las funcionalidades actuales se pueden consultar en la [la página del projecto](http://consulproject.org/es) y las futuras funcionalidades en el [Roadmap](https://github.com/consul/consul/projects/6) y [el listado de issues](https://github.com/consul/consul/issues).
 
 ## Configuración para desarrollo y tests
 
@@ -29,8 +29,7 @@ El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://gith
 
 Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler` y PostgreSQL (9.4 o superior).
 
-```
-
+```bash
 git clone https://github.com/consul/consul.git
 cd consul
 bundle install
@@ -68,7 +67,7 @@ Pero para ciertas acciones, como apoyar, necesitarás un usuario verificado, el 
 
 ## Documentación
 
-Por favor visita la documentación que está siendo completada en https://consul_docs.gitbooks.io/docs/content/ para conocer más sobre este proyecto, como comenzar tu propio fork, instalarlo, customizarlo y usarlo como administrador/mantenedor. Puedes colaborar en ella en https://github.com/consul/docs
+Por favor visita la documentación que está siendo completada en [https://consul_docs.gitbooks.io/docs/content/](https://consul_docs.gitbooks.io/docs/content/) para conocer más sobre este proyecto, como comenzar tu propio fork, instalarlo, customizarlo y usarlo como administrador/mantenedor. Puedes colaborar en ella en [https://github.com/consul/docs](https://github.com/consul/docs)
 
 ## Licencia
 
@@ -77,3 +76,7 @@ El código de este proyecto está publicado bajo la licencia AFFERO GPL v3 (ver 
 ## Contribuciones
 
 Ver fichero [CONTRIBUTING_ES.md](CONTRIBUTING_ES.md)
+
+## Desarrollo en local con Docker
+
+Puedes leer la guía en [https://consul_docs.gitbooks.io/docs/content/es/getting_started/docker.html](https://consul_docs.gitbooks.io/docs/content/es/getting_started/docker.html)
