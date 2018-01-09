@@ -84,6 +84,11 @@ es:
         notice: Campaña de presupuestos participativos actualizada
       edit:
         title: Editar campaña de presupuestos participativos
+        delete: Borrar campaña
+      destroy:
+        success_notice: Campaña eliminada correctamente
+        unable_notice: No se pueden eliminar campañas con presupuestos asociados
+
       new:
         title: Nuevo presupuesto ciudadano
       show:
