@@ -132,6 +132,7 @@ en:
           selected: Selected
           winners: Winners
           all: All
+        no_budget_investments: "There are no investment projects."
         title: Investment projects
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned

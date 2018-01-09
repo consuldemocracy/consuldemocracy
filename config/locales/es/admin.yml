@@ -134,6 +134,7 @@ es:
           selected: Seleccionadas
           winners: Ganadoras
           all: Todas
+        no_budget_investments: "No hay proyectos de inversión."
         title: Proyectos de inversión
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
