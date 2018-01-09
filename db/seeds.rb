@@ -65,11 +65,13 @@ Setting["org_name"] = "CONSUL"
 Setting["place_name"] = "CONSUL-land"
 
 # Meta tags for SEO
+Setting["meta_title"] = nil
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
 # Feature flags
 Setting['feature.debates'] = true
+Setting['feature.proposals'] = true
 Setting['feature.spending_proposals'] = nil
 Setting['feature.polls'] = true
 Setting['feature.twitter_login'] = true
@@ -82,6 +84,7 @@ Setting['feature.legislation'] = true
 Setting['feature.user.recommendations'] = true
 Setting['feature.community'] = true
 Setting['feature.map'] = nil
+Setting['feature.allow_images'] = true
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
@@ -115,3 +118,6 @@ Setting['proposal_improvement_path'] = nil
 Setting['map_latitude'] = 51.48
 Setting['map_longitude'] = 0.0
 Setting['map_zoom'] = 10
+
+# Related content
+Setting['related_content_score_threshold'] = -0.3

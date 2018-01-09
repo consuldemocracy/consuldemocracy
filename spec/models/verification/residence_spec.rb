@@ -7,32 +7,32 @@ describe Verification::Residence do
 
   describe "validations" do
 
-    it "should be valid" do
+    it "is valid" do
       expect(residence).to be_valid
     end
 
     describe "dates" do
-      it "should be valid with a valid date of birth" do
-        residence = Verification::Residence.new("date_of_birth(3i)" => "1", "date_of_birth(2i)" => "1", "date_of_birth(1i)" => "1980")
+      it "is valid with a valid date of birth" do
+        residence = described_class.new("date_of_birth(3i)" => "1", "date_of_birth(2i)" => "1", "date_of_birth(1i)" => "1980")
         expect(residence.errors[:date_of_birth].size).to eq(0)
       end
 
-      it "should not be valid without a date of birth" do
-        residence = Verification::Residence.new("date_of_birth(3i)" => "", "date_of_birth(2i)" => "", "date_of_birth(1i)" => "")
-        expect(residence).to_not be_valid
+      it "is not valid without a date of birth" do
+        residence = described_class.new("date_of_birth(3i)" => "", "date_of_birth(2i)" => "", "date_of_birth(1i)" => "")
+        expect(residence).not_to be_valid
         expect(residence.errors[:date_of_birth]).to include("can't be blank")
       end
     end
 
-    it "should validate user has allowed age" do
-      residence = Verification::Residence.new("date_of_birth(3i)" => "1",
-                                              "date_of_birth(2i)" => "1",
-                                              "date_of_birth(1i)" => 5.years.ago.year.to_s)
-      expect(residence).to_not be_valid
+    it "validates user has allowed age" do
+      residence = described_class.new("date_of_birth(3i)" => "1",
+                                      "date_of_birth(2i)" => "1",
+                                      "date_of_birth(1i)" => 5.years.ago.year.to_s)
+      expect(residence).not_to be_valid
       expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
     end
 
-    it "should validate uniquness of document_number" do
+    it "validates uniquness of document_number" do
       user = create(:user)
       residence.user = user
       residence.save
@@ -43,28 +43,28 @@ describe Verification::Residence do
       expect(residence.errors[:document_number]).to include("has already been taken")
     end
 
-    it "should validate census terms" do
+    it "validates census terms" do
       residence.terms_of_service = nil
-      expect(residence).to_not be_valid
+      expect(residence).not_to be_valid
     end
 
   end
 
   describe "new" do
-    it "should upcase document number" do
-      residence = Verification::Residence.new(document_number: "x1234567z")
+    it "upcases document number" do
+      residence = described_class.new(document_number: "x1234567z")
       expect(residence.document_number).to eq("X1234567Z")
     end
 
-    it "should remove all characters except numbers and letters" do
-      residence = Verification::Residence.new(document_number: " 12.345.678 - B")
+    it "removes all characters except numbers and letters" do
+      residence = described_class.new(document_number: " 12.345.678 - B")
       expect(residence.document_number).to eq("12345678B")
     end
   end
 
   describe "save" do
 
-    it "should store document number, document type, geozone, date of birth and gender" do
+    it "stores document number, document type, geozone, date of birth and gender" do
       user = create(:user)
       residence.user = user
       residence.save
@@ -82,13 +82,13 @@ describe Verification::Residence do
   end
 
   describe "tries" do
-    it "should increase tries after a call to the Census" do
+    it "increases tries after a call to the Census" do
       residence.postal_code = "28011"
       residence.valid?
       expect(residence.user.lock.tries).to eq(1)
     end
 
-    it "should not increase tries after a validation error" do
+    it "does not increase tries after a validation error" do
       residence.postal_code = ""
       residence.valid?
       expect(residence.user.lock).to be nil

@@ -29,6 +29,7 @@ es:
         unselected_title: Propuestas no seleccionadas para la votación final
         unselected: Ver las propuestas no seleccionadas para la votación final
     phase:
+      drafting: Borrador (No visible para el público)
       accepting: Presentación de proyectos
       reviewing: Revisión interna de proyectos
       selecting: Fase de apoyos
@@ -58,6 +59,7 @@ es:
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
+        location: "Información adicional de la ubicación"
       index:
         title: Presupuestos participativos
         unfeasible: Propuestas de inversión no viables
@@ -110,7 +112,7 @@ es:
         comments_tab: Comentarios
         milestones_tab: Seguimiento
         no_milestones: No hay hitos definidos
-        milestone_publish_date: "Publicado el %{publish_date}"
+        milestone_publication_date: "Publicado el %{publication_date}"
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         add: Votar

@@ -1,10 +1,11 @@
 shared_examples "documentable" do |documentable_factory_name, documentable_path, documentable_path_arguments|
   include ActionView::Helpers
 
-  let!(:administrator)          { create(:user) }
-  let!(:user)                   { create(:user) }
-  let!(:arguments)              { {} }
-  let!(:documentable)           { create(documentable_factory_name, author: user) }
+  let(:administrator)          { create(:user) }
+  let(:user)                   { create(:user) }
+  let(:arguments)              { {} }
+  let(:documentable)           { create(documentable_factory_name, author: user) }
+  let!(:document)              { create(:document, documentable: documentable, user: documentable.author) }
 
   before do
     create(:administrator, user: administrator)
@@ -16,32 +17,11 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
 
   context "Show documents tab" do
 
-    let!(:document) { create(:document, documentable: documentable, user: documentable.author)}
-
-    scenario "Should not display maximum number of documents alert when reached for users without document creation permission" do
-      create_list(:document, 2, documentable: documentable)
-      visit send(documentable_path, arguments)
-
-      within "#tab-documents" do
-        expect(page).not_to have_content "You have reached the maximum number of documents allowed! You have to delete one before you can upload another."
-      end
-    end
-
-    scenario "Should display maximum number of documents alert when reached and when current user has document creation permission" do
-      login_as documentable.author
-      create_list(:document, 2, documentable: documentable)
-      visit send(documentable_path, arguments)
-
-      within "#tab-documents" do
-        expect(page).to have_content "You have reached the maximum number of documents allowed! You have to delete one before you can upload another."
-      end
-    end
-
     scenario "Download action should be able to anyone" do
       visit send(documentable_path, arguments)
 
       within "#tab-documents" do
-        expect(page).to have_link("Dowload file")
+        expect(page).to have_link("Download file")
       end
     end
 
@@ -49,7 +29,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#tab-documents" do
-        expect(page).to have_selector("a[target=_blank]", text: "Dowload file")
+        expect(page).to have_selector("a[target=_blank]", text: "Download file")
       end
     end
 
@@ -57,7 +37,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#tab-documents" do
-        expect(page).to have_selector("a[rel=nofollow]", text: "Dowload file")
+        expect(page).to have_selector("a[rel=nofollow]", text: "Download file")
       end
     end
 
@@ -94,8 +74,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
   end
 
   context "Destroy" do
-
-    let!(:document) { create(:document, documentable: documentable, user: documentable.author) }
 
     scenario "Should show success notice after successfull document upload" do
       login_as documentable.author

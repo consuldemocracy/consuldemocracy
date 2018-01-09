@@ -22,7 +22,7 @@ feature 'Admin comments' do
     end
 
     visit admin_comments_path
-    expect(page).to_not have_content("SPAM from SPAMMER")
+    expect(page).not_to have_content("SPAM from SPAMMER")
     expect(page).not_to have_content("Good Proposal!")
   end
 
@@ -32,9 +32,9 @@ feature 'Admin comments' do
 
     click_link 'Restore'
 
-    expect(page).to_not have_content(comment.body)
+    expect(page).not_to have_content(comment.body)
 
-    expect(comment.reload).to_not be_hidden
+    expect(comment.reload).not_to be_hidden
     expect(comment).to be_ignored_flag
   end
 
@@ -44,7 +44,7 @@ feature 'Admin comments' do
 
     click_link 'Confirm'
 
-    expect(page).to_not have_content(comment.body)
+    expect(page).not_to have_content(comment.body)
     click_link('Confirmed')
     expect(page).to have_content(comment.body)
 
@@ -53,24 +53,24 @@ feature 'Admin comments' do
 
   scenario "Current filter is properly highlighted" do
     visit admin_comments_path
-    expect(page).to_not have_link('Pending')
+    expect(page).not_to have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_comments_path(filter: 'Pending')
-    expect(page).to_not have_link('Pending')
+    expect(page).not_to have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_comments_path(filter: 'all')
     expect(page).to have_link('Pending')
-    expect(page).to_not have_link('All')
+    expect(page).not_to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_comments_path(filter: 'with_confirmed_hide')
     expect(page).to have_link('Pending')
     expect(page).to have_link('All')
-    expect(page).to_not have_link('Confirmed')
+    expect(page).not_to have_link('Confirmed')
   end
 
   scenario "Filtering comments" do
@@ -82,7 +82,7 @@ feature 'Admin comments' do
     expect(page).to have_content('Confirmed comment')
 
     visit admin_comments_path(filter: 'with_confirmed_hide')
-    expect(page).to_not have_content('Unconfirmed comment')
+    expect(page).not_to have_content('Unconfirmed comment')
     expect(page).to have_content('Confirmed comment')
   end
 

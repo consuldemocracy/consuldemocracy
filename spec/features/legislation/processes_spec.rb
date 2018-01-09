@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'Legislation' do
 
   let!(:administrator) { create(:administrator).user }
+
   shared_examples "not published permissions" do |path|
 
     let(:not_published_process) { create(:legislation_process, :not_published, title: "Process not published") }
@@ -12,7 +13,7 @@ feature 'Legislation' do
       visit send(path, not_published_process)
 
       expect(page).to have_content not_permission_message
-      expect(page).to_not have_content("Process not published")
+      expect(page).not_to have_content("Process not published")
     end
 
     it "is available for an administrator user" do
@@ -25,7 +26,7 @@ feature 'Legislation' do
 
   context 'processes home page' do
 
-    scenario 'Processes can be listed' do
+    scenario 'No processes to be listed' do
       visit legislation_processes_path
       expect(page).to have_text "There aren't open processes"
 
@@ -53,17 +54,17 @@ feature 'Legislation' do
 
       visit legislation_processes_path
       expect(page).to have_content('Process open')
-      expect(page).to_not have_content('Process next')
-      expect(page).to_not have_content('Process past')
+      expect(page).not_to have_content('Process next')
+      expect(page).not_to have_content('Process past')
 
       visit legislation_processes_path(filter: 'next')
-      expect(page).to_not have_content('Process open')
+      expect(page).not_to have_content('Process open')
       expect(page).to have_content('Process next')
-      expect(page).to_not have_content('Process past')
+      expect(page).not_to have_content('Process past')
 
       visit legislation_processes_path(filter: 'past')
-      expect(page).to_not have_content('Process open')
-      expect(page).to_not have_content('Process next')
+      expect(page).not_to have_content('Process open')
+      expect(page).not_to have_content('Process next')
       expect(page).to have_content('Process past')
     end
 
@@ -79,34 +80,34 @@ feature 'Legislation' do
 
       it "aren't listed" do
         visit legislation_processes_path
-        expect(page).to_not have_content('not published')
+        expect(page).not_to have_content('not published')
         expect(page).to have_content('published')
 
         login_as(administrator)
         visit legislation_processes_path
-        expect(page).to_not have_content('not published')
+        expect(page).not_to have_content('not published')
         expect(page).to have_content('published')
       end
 
       it "aren't listed with next filter" do
         visit legislation_processes_path(filter: 'next')
-        expect(page).to_not have_content('not published')
+        expect(page).not_to have_content('not published')
         expect(page).to have_content('next published')
 
         login_as(administrator)
         visit legislation_processes_path(filter: 'next')
-        expect(page).to_not have_content('not published')
+        expect(page).not_to have_content('not published')
         expect(page).to have_content('next published')
       end
 
       it "aren't listed with past filter" do
         visit legislation_processes_path(filter: 'past')
-        expect(page).to_not have_content('not published')
+        expect(page).not_to have_content('not published')
         expect(page).to have_content('past published')
 
         login_as(administrator)
         visit legislation_processes_path(filter: 'past')
-        expect(page).to_not have_content('not published')
+        expect(page).not_to have_content('not published')
         expect(page).to have_content('past published')
       end
     end

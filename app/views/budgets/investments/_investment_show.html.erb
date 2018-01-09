@@ -1,3 +1,12 @@
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: budget_investments_path(investment),
+            social_title: investment.title,
+            social_description: investment.description,
+            twitter_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil),
+            og_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil) %>
+<% end %>
+
 <section class="budget-investment-show" id="<%= dom_id(investment) %>">
 
   <div class="row">
@@ -46,7 +55,9 @@
       <%= safe_html_with_links investment.description.html_safe %>
 
       <% if feature?(:map) && map_location_available?(@investment.map_location) %>
-        <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
+        <div class="margin">
+          <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
+        </div>
       <% end %>
 
       <% if investment.external_url.present? %>
@@ -129,6 +140,9 @@
       } %>
 
       <% if current_user %>
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-title"><%= t("shared.follow") %></p>
+
         <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, investment) %>
       <% end %>
 

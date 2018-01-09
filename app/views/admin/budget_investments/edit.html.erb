@@ -19,6 +19,13 @@
     </div>
 
     <div class="small-12 column">
+      <%= f.label :tag_list, t("admin.budget_investments.edit.user_tags") %>
+      <%= f.text_field :tag_list,
+                       value: @investment.tag_list.sort.join(','),
+                       label: false %>
+    </div>
+
+    <div class="small-12 column">
       <%= f.text_field :external_url %>
     </div>
 
@@ -39,7 +46,7 @@
 
 
     <div class="small-12 column">
-      <%= f.label :tag_list, t("admin.budget_investments.edit.tags") %>
+      <%= f.label :valuation_tag_list, t("admin.budget_investments.edit.tags") %>
       <div class="tags">
         <% @tags.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>

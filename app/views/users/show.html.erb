@@ -38,8 +38,13 @@
               <% end %>
             <% end %>
           <% end %>
-          <%= t("users.show.no_activity") if @activity_counts.values.inject(&:+) == 0 %>
         </ul>
+
+        <% if @activity_counts.values.inject(&:+) == 0 %>
+          <div class="callout primary">
+            <%= t("users.show.no_activity") %>
+          </div>
+        <% end %>
 
         <%= render "activity_page" %>
       <% else %>
@@ -47,9 +52,6 @@
           <%= t('users.show.private_activity') %>
         </div>
       <% end %>
-
-      <%= render 'interests', user: @user if valid_interests_access? %>
-
     </div>
   </div>
 </main>

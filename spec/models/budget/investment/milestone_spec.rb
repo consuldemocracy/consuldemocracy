@@ -1,22 +1,27 @@
 require 'rails_helper'
 
-describe "Budget::Investment::Milestone" do
+describe Budget::Investment::Milestone do
 
   describe "Validations" do
     let(:milestone) { build(:budget_investment_milestone) }
 
-    it "Should be valid" do
+    it "is valid" do
       expect(milestone).to be_valid
     end
 
-    it "Should not be valid without a title" do
+    it "is not valid without a title" do
       milestone.title = nil
-      expect(milestone).to_not be_valid
+      expect(milestone).not_to be_valid
     end
 
-    it "Should not be valid without an investment" do
+    it "is not valid without a description" do
+      milestone.description = nil
+      expect(milestone).not_to be_valid
+    end
+
+    it "is not valid without an investment" do
       milestone.investment_id = nil
-      expect(milestone).to_not be_valid
+      expect(milestone).not_to be_valid
     end
   end
 

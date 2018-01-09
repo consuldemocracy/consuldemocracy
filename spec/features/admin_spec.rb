@@ -11,8 +11,8 @@ feature 'Admin' do
     login_as(user)
     visit admin_root_path
 
-    expect(current_path).not_to eq(admin_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(admin_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -21,8 +21,8 @@ feature 'Admin' do
     login_as(user)
     visit admin_root_path
 
-    expect(current_path).not_to eq(admin_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(admin_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -31,8 +31,8 @@ feature 'Admin' do
     login_as(user)
     visit admin_root_path
 
-    expect(current_path).not_to eq(admin_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(admin_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -41,8 +41,8 @@ feature 'Admin' do
     login_as(user)
     visit admin_root_path
 
-    expect(current_path).not_to eq(admin_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(admin_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -51,8 +51,8 @@ feature 'Admin' do
     login_as(user)
     visit admin_root_path
 
-    expect(current_path).not_to eq(admin_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(admin_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -60,8 +60,8 @@ feature 'Admin' do
     login_as(administrator)
     visit admin_root_path
 
-    expect(current_path).to eq(admin_root_path)
-    expect(page).to_not have_content "You do not have permission to access this page"
+    expect(page).to have_current_path(admin_root_path)
+    expect(page).not_to have_content "You do not have permission to access this page"
   end
 
   scenario "Admin access links" do
@@ -84,10 +84,10 @@ feature 'Admin' do
 
     click_link 'Administration'
 
-    expect(current_path).to eq(admin_root_path)
+    expect(page).to have_current_path(admin_root_path)
     expect(page).to have_css('#admin_menu')
-    expect(page).to_not have_css('#moderation_menu')
-    expect(page).to_not have_css('#valuation_menu')
+    expect(page).not_to have_css('#moderation_menu')
+    expect(page).not_to have_css('#valuation_menu')
   end
 
 end
