@@ -73,7 +73,7 @@ feature 'Budgets' do
     end
 
     context "Listed" do
-      before { skip "At madrid we're not listing budgets" }
+      before { skip "At madrid we're not listing budgets" }
 
       scenario "Not listed to guest users at the public budgets list" do
         visit budgets_path
