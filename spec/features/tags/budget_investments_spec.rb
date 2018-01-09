@@ -8,6 +8,7 @@ feature 'Tags' do
   let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
   let!(:tag_medio_ambiente) { create(:tag, :category, name: 'Medio Ambiente') }
   let!(:tag_economia) { create(:tag, :category, name: 'Economía') }
+  let(:admin) { create(:administrator).user }
 
   scenario 'Index' do
     earth = create(:budget_investment, heading: heading, tag_list: tag_medio_ambiente.name)
@@ -235,6 +236,7 @@ feature 'Tags' do
       Budget::PHASES.each do |phase|
         budget.update(phase: phase)
 
+        login_as(admin) if budget.drafting?
         visit budget_investments_path(budget, heading_id: heading.id)
 
         within "#tag-cloud" do
@@ -254,6 +256,7 @@ feature 'Tags' do
           end
         end
 
+        login_as(admin) if budget.drafting?
         visit budget_path(budget)
         click_link group.name
 
@@ -291,6 +294,7 @@ feature 'Tags' do
       Budget::PHASES.each do |phase|
         budget.update(phase: phase)
 
+        login_as(admin) if budget.drafting?
         visit budget_investments_path(budget, heading_id: heading.id)
 
         within "#categories" do
@@ -310,6 +314,7 @@ feature 'Tags' do
           end
         end
 
+        login_as(admin) if budget.drafting?
         visit budget_path(budget)
         click_link group.name
 
@@ -343,8 +348,7 @@ feature 'Tags' do
       investment.set_tag_list_on(:valuation, 'Education')
       investment.save
 
-      admin = create(:administrator)
-      login_as(admin.user)
+      login_as(admin)
 
       visit admin_budget_budget_investment_path(budget, investment)
       click_link 'Edit classification'

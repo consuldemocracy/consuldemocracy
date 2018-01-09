@@ -3,7 +3,8 @@ class Budget < ActiveRecord::Base
   include Measurable
   include Sluggable
 
-  PHASES = %w(accepting reviewing selecting valuating balloting reviewing_ballots finished).freeze
+  PHASES = %w(drafting accepting reviewing selecting valuating balloting
+              reviewing_ballots finished).freeze
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
   validates :name, presence: true, uniqueness: true
@@ -20,6 +21,7 @@ class Budget < ActiveRecord::Base
   before_validation :sanitize_descriptions
 
   scope :on_hold,   -> { where(phase: %w(reviewing valuating reviewing_ballots")) }
+  scope :drafting,  -> { where(phase: "drafting") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
   scope :selecting, -> { where(phase: "selecting") }
@@ -44,6 +46,10 @@ class Budget < ActiveRecord::Base
 
   def self.title_max_length
     80
+  end
+
+  def drafting?
+    phase == "drafting"
   end
 
   def accepting?

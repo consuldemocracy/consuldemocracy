@@ -250,6 +250,7 @@ FactoryBot.define do
     sequence(:name) { |n| "Budget #{n}" }
     currency_symbol "€"
     phase 'accepting'
+    description_drafting  "This budget is drafting"
     description_accepting "This budget is accepting"
     description_reviewing "This budget is reviewing"
     description_selecting "This budget is selecting"
@@ -257,6 +258,10 @@ FactoryBot.define do
     description_balloting "This budget is balloting"
     description_reviewing_ballots "This budget is reviewing ballots"
     description_finished "This budget is finished"
+
+    trait :drafting do
+      phase 'drafting'
+    end
 
     trait :accepting do
       phase 'accepting'
