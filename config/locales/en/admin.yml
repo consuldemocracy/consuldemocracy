@@ -152,7 +152,7 @@ en:
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
-        classification: Clasification
+        classification: Classification
         info: "%{budget_name} - Group: %{group_name} - Investment project %{id}"
         edit: Edit
         edit_classification: Edit classification
@@ -180,7 +180,7 @@ en:
           "true": "Yes"
           "false": "No"
       edit:
-        classification: Clasification
+        classification: Classification
         compatibility: Compatibility
         mark_as_incompatible: Mark as incompatible
         selection: Selection
@@ -860,7 +860,7 @@ en:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
         back: Back
-        classification: Clasification
+        classification: Classification
         heading: "Investment project %{id}"
         edit: Edit
         edit_classification: Edit classification
@@ -873,7 +873,7 @@ en:
         tags: Tags
         undefined: Undefined
       edit:
-        classification: Clasification
+        classification: Classification
         assigned_valuators: Valuators
         submit_button: Update
         tags: Tags
