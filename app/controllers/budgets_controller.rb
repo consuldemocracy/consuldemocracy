@@ -1,5 +1,6 @@
 class BudgetsController < ApplicationController
   include FeatureFlags
+  include BudgetsHelper
   feature_flag :budgets
 
   load_and_authorize_resource
@@ -9,6 +10,7 @@ class BudgetsController < ApplicationController
   respond_to :html, :js
 
   def show
+    raise ActionController::RoutingError, 'Not Found' unless budget_published?(@budget)
   end
 
   def index

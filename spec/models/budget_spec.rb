@@ -40,6 +40,9 @@ describe Budget do
     end
 
     it "produces auxiliary methods" do
+      budget.phase = "drafting"
+      expect(budget).to be_drafting
+
       budget.phase = "accepting"
       expect(budget).to be_accepting
 
@@ -63,6 +66,9 @@ describe Budget do
     end
 
     it "on_hold?" do
+      budget.phase = "drafting"
+      expect(budget).not_to be_on_hold
+
       budget.phase = "accepting"
       expect(budget).not_to be_on_hold
 
@@ -86,6 +92,9 @@ describe Budget do
     end
 
     it "balloting_or_later?" do
+      budget.phase = "drafting"
+      expect(budget).not_to be_balloting_or_later
+
       budget.phase = "accepting"
       expect(budget).not_to be_balloting_or_later
 

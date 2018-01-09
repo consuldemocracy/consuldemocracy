@@ -20,7 +20,7 @@ Rails:
   Enabled: true
 
 Metrics/LineLength:
-  Max: 140
+  Max: 100
 
 Layout/IndentationConsistency:
   EnforcedStyle: rails
