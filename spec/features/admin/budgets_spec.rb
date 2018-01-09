@@ -109,6 +109,32 @@ feature 'Admin budgets' do
 
   end
 
+  context 'Destroy' do
+
+    let!(:budget) { create(:budget) }
+    let(:heading) { create(:budget_heading, group: create(:budget_group, budget: budget)) }
+
+    scenario 'Destroy a budget without investments' do
+      visit admin_budgets_path
+      click_link 'Edit budget'
+      click_button 'Delete budget'
+
+      expect(page).to have_content('Budget deleted successfully')
+      expect(page).to have_content('participatory budgets cannot be found')
+    end
+
+    scenario 'Try to destroy a budget with investments' do
+      create(:budget_investment, heading: heading)
+
+      visit admin_budgets_path
+      click_link 'Edit budget'
+      click_button 'Delete budget'
+
+      expect(page).to have_content('You cannot destroy a Budget that has associated investments')
+      expect(page).to have_content('There is 1 participatory budget')
+    end
+  end
+  
   context 'Update' do
 
     background do

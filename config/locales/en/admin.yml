@@ -84,6 +84,10 @@ en:
         notice: Participatory budget updated successfully
       edit:
         title: Edit Participatory budget
+        delete: Delete budget
+      destroy:
+        success_notice: Budget deleted successfully
+        unable_notice: You cannot destroy a Budget that has associated investments
       new:
         title: New participatory budget
       show:
