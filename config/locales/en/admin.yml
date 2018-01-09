@@ -157,7 +157,7 @@ en:
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
-        classification: Clasification
+        classification: Classification
         info: "%{budget_name} - Group: %{group_name} - Investment project %{id}"
         edit: Edit
         edit_classification: Edit classification
@@ -187,7 +187,7 @@ en:
           "true": "Yes"
           "false": "No"
       edit:
-        classification: Clasification
+        classification: Classification
         compatibility: Compatibility
         mark_as_incompatible: Mark as incompatible
         selection: Selection
@@ -875,7 +875,7 @@ en:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
         back: Back
-        classification: Clasification
+        classification: Classification
         compatibility_title: Compatibility
         compatibility:
           "true": "Compatible"
@@ -892,7 +892,7 @@ en:
         tags: Tags
         undefined: Undefined
       edit:
-        classification: Clasification
+        classification: Classification
         assigned_valuators: Valuators
         submit_button: Update
         tags: Tags
@@ -1070,7 +1070,7 @@ en:
         title: Proposal notifications
         total: Total
         proposals_with_notifications: Proposals with notifications
-        not_available: Proposal not available        
+        not_available: Proposal not available
       reedemable_codes:
         title: Redeemable codes
         total: Total
