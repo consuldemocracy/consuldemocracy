@@ -149,7 +149,7 @@ en:
       ballot_lines_count: Times selected
       hide_discarded_link: Hide discarded
       show_all_link: Show all
-      price: Cost
+      price: Price
       amount_available: Available budget
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "
