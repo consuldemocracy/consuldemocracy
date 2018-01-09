@@ -1,7 +1,5 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
 
-  require 'csv'
-
   include FeatureFlags
   feature_flag :budgets
 
@@ -18,7 +16,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     respond_to do |format|
       format.html
       format.csv do
-        send_data set_csv, filename: 'budget_investments.csv'
+        send_data Budget::Investment.to_csv(@investments, {headers: true}),
+                  filename: 'budget_investments.csv'
       end
     end
   end
@@ -52,46 +51,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   private
 
-    def set_csv
-      attributes = [t("admin.budget_investments.index.table_id"),
-                    t("admin.budget_investments.index.table_title"),
-                    t("admin.budget_investments.index.table_supports"),
-                    t("admin.budget_investments.index.table_admin"),
-                    t("admin.budget_investments.index.table_valuator"),
-                    t("admin.budget_investments.index.table_geozone"),
-                    t("admin.budget_investments.index.table_feasibility"),
-                    t("admin.budget_investments.index.table_valuation_finished"),
-                    t("admin.budget_investments.index.table_selection")]
-      csv_string = CSV.generate(headers: true) do |csv|
-        csv << attributes
-        @investments.each do |investment|
-          id = investment.id.to_s
-          title = investment.title
-          total_votes = investment.total_votes.to_s
-          administrator = if investment.administrator.present?
-                            investment.administrator.name
-                          else
-                            t("admin.budget_investments.index.no_admin_assigned")
-                          end
-          valuators = if investment.valuators.empty?
-                        t("admin.budget_investments.index.no_valuators_assigned")
-                      else
-                        investment.valuators.collect(&:description_or_name).join(', ')
-                      end
-          heading_name = investment.heading.name
-          feasibility_string = "admin.budget_investments.index.feasibility.#{investment.feasibility}"
-          price = t(feasibility_string, price: investment.formatted_price)
-          valuation_finished = investment.valuation_finished? ? t('shared.yes') : t('shared.no')
-          csv << [id, title, total_votes, administrator, valuators, heading_name, price, valuation_finished]
-        end
-      end
-      csv_string
-    end
-
     def load_investments
       @investments = Budget::Investment.scoped_filter(params, @current_filter)
                                        .order(cached_votes_up: :desc, created_at: :desc)
-                                       .page(params[:page])
+      @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
     def budget_investment_params
