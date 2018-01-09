@@ -129,6 +129,7 @@ en:
           selected: Selected
           winners: Winners
           all: All
+        download_current_selection: "Download current selection"
         no_budget_investments: "There are no investment projects."
         title: Investment projects
         assigned_admin: Assigned administrator
