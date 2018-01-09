@@ -58,10 +58,7 @@
         <%= investment.valuation_finished? ? t('shared.yes'): t('shared.no') %>
       </td>
       <td class="small">
-        <% options = investment_selected_link_options(investment) %>
-        <%= link_to toggle_selection_admin_budget_budget_investment_path(@budget,  investment, filter: params[:filter], page: params[:page]), method: :patch, remote: true, class: options[:link_class] do %>
-          <%= options[:text] %>
-        <% end %>
+        <%= investment_selected_link(investment) %>
       </td>
       <% if params[:filter] == 'selected' %>
         <td class="small text-center">
