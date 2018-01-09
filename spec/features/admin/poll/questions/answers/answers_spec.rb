@@ -63,7 +63,7 @@ feature 'Answers' do
     visit admin_question_path(question)
 
     expect(page).to have_content(new_title)
-    expect(page).to_not have_content(old_title)
+    expect(page).not_to have_content(old_title)
 
     expect(page.body.index(new_title)).to be < page.body.index(answer2.title)
   end

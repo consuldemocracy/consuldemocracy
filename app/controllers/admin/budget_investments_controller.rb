@@ -1,4 +1,5 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
+
   include FeatureFlags
   feature_flag :budgets
 
@@ -12,6 +13,13 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   before_action :load_investments, only: [:index, :toggle_selection]
 
   def index
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data Budget::Investment.to_csv(@investments, {headers: true}),
+                  filename: 'budget_investments.csv'
+      end
+    end
   end
 
   def show
@@ -46,12 +54,12 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     def load_investments
       @investments = Budget::Investment.scoped_filter(params, @current_filter)
                                        .order(cached_votes_up: :desc, created_at: :desc)
-                                       .page(params[:page])
+      @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
     def budget_investment_params
       params.require(:budget_investment)
-            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :valuation_tag_list, :incompatible,
+            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list, :valuation_tag_list, :incompatible,
                     :selected, valuator_ids: [])
     end
 

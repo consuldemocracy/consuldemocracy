@@ -12,7 +12,7 @@ feature 'Admin administrators' do
   scenario 'Index' do
     expect(page).to have_content @administrator.name
     expect(page).to have_content @administrator.email
-    expect(page).to_not have_content @user.name
+    expect(page).not_to have_content @user.name
   end
 
   scenario 'Create Administrator', :js do
@@ -30,7 +30,7 @@ feature 'Admin administrators' do
     find(:xpath, "//tr[contains(.,'#{@administrator.name}')]/td/a", text: 'Delete').click
 
     within("#administrators") do
-      expect(page).to_not have_content @administrator.name
+      expect(page).not_to have_content @administrator.name
     end
   end
 
@@ -61,8 +61,8 @@ feature 'Admin administrators' do
 
       expect(page).to have_content('Administrators: User search')
       expect(page).to have_content('No results found')
-      expect(page).to_not have_content(@administrator1.name)
-      expect(page).to_not have_content(@administrator2.name)
+      expect(page).not_to have_content(@administrator1.name)
+      expect(page).not_to have_content(@administrator2.name)
     end
 
     scenario 'search by name' do
@@ -74,7 +74,7 @@ feature 'Admin administrators' do
 
       expect(page).to have_content('Administrators: User search')
       expect(page).to have_content(@administrator1.name)
-      expect(page).to_not have_content(@administrator2.name)
+      expect(page).not_to have_content(@administrator2.name)
     end
 
     scenario 'search by email' do
@@ -86,7 +86,7 @@ feature 'Admin administrators' do
 
       expect(page).to have_content('Administrators: User search')
       expect(page).to have_content(@administrator2.email)
-      expect(page).to_not have_content(@administrator1.email)
+      expect(page).not_to have_content(@administrator1.email)
     end
   end
 

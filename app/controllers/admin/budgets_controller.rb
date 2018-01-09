@@ -27,7 +27,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   def update
     if @budget.update(budget_params)
-      redirect_to admin_budget_path(@budget), notice: t('admin.budgets.update.notice')
+      redirect_to admin_budgets_path, notice: t('admin.budgets.update.notice')
     else
       render :edit
     end
@@ -39,6 +39,15 @@ class Admin::BudgetsController < Admin::BaseController
       redirect_to admin_budget_path(@budget), notice: t('admin.budgets.create.notice')
     else
       render :new
+    end
+  end
+
+  def destroy
+    if @budget.investments.any?
+      redirect_to admin_budgets_path, alert: t('admin.budgets.destroy.unable_notice')
+    else
+      @budget.destroy
+      redirect_to admin_budgets_path, notice: t('admin.budgets.destroy.success_notice')
     end
   end
 

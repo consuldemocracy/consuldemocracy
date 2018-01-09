@@ -87,7 +87,7 @@ feature 'Users' do
         fill_in 'user_password', with: 'symbiote'
         click_button 'Enter'
 
-        expect(page).to_not have_content 'You have been signed in successfully.'
+        expect(page).not_to have_content 'You have been signed in successfully.'
         expect(page).to have_content 'Invalid login or password.'
 
         fill_in 'user_login',    with: 'venom@nyc.dev'
@@ -145,7 +145,7 @@ feature 'Users' do
 
         click_link 'Sign up with Twitter'
 
-        expect(current_path).to eq(new_user_session_path)
+        expect(page).to have_current_path(new_user_session_path)
         expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
 
         confirm_email
@@ -170,7 +170,7 @@ feature 'Users' do
         click_link 'Register'
         click_link 'Sign up with Twitter'
 
-        expect(current_path).to eq(finish_signup_path)
+        expect(page).to have_current_path(finish_signup_path)
         fill_in 'user_email', with: 'manueladelascarmenas@example.com'
         click_button 'Register'
 
@@ -198,7 +198,7 @@ feature 'Users' do
         click_link 'Register'
         click_link 'Sign up with Twitter'
 
-        expect(current_path).to eq(finish_signup_path)
+        expect(page).to have_current_path(finish_signup_path)
         click_link 'Cancel login'
 
         visit '/'
@@ -232,13 +232,13 @@ feature 'Users' do
         click_link 'Register'
         click_link 'Sign up with Twitter'
 
-        expect(current_path).to eq(finish_signup_path)
+        expect(page).to have_current_path(finish_signup_path)
 
         expect(page).to have_field('user_username', with: 'manuela')
 
         click_button 'Register'
 
-        expect(current_path).to eq(do_finish_signup_path)
+        expect(page).to have_current_path(do_finish_signup_path)
 
         fill_in 'user_username', with: 'manuela2'
         click_button 'Register'
@@ -260,12 +260,12 @@ feature 'Users' do
         click_link 'Register'
         click_link 'Sign up with Twitter'
 
-        expect(current_path).to eq(finish_signup_path)
+        expect(page).to have_current_path(finish_signup_path)
 
         fill_in 'user_email', with: 'manuela@example.com'
         click_button 'Register'
 
-        expect(current_path).to eq(do_finish_signup_path)
+        expect(page).to have_current_path(do_finish_signup_path)
 
         fill_in 'user_email', with: 'somethingelse@example.com'
         click_button 'Register'
@@ -295,7 +295,7 @@ feature 'Users' do
         click_link 'Register'
         click_link 'Sign up with Twitter'
 
-        expect(current_path).to eq(finish_signup_path)
+        expect(page).to have_current_path(finish_signup_path)
 
         expect(page).to have_field('user_email', with: 'manuelacarmena@example.com')
         fill_in 'user_email', with: 'somethingelse@example.com'
@@ -377,7 +377,7 @@ feature 'Users' do
     login_as(admin.user)
     visit root_path
 
-    expect(page).to_not have_content "Your password is expired"
+    expect(page).not_to have_content "Your password is expired"
   end
 
   scenario 'Sign in, user with password expired' do
@@ -386,7 +386,7 @@ feature 'Users' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_content "Your password is expired"
+    expect(page).not_to have_content "Your password is expired"
   end
 
   scenario 'Admin with password expired trying to use same password' do

@@ -2,17 +2,16 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
   include ActionView::Helpers
 
-  let!(:user) { create(:user, :level_two) }
+  let!(:user)         { create(:user, :level_two) }
+  let!(:arguments)    { {} }
+  let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
+  let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
   before do
     Setting['feature.map'] = true
   end
 
   describe "At #{mappable_new_path}" do
-
-    let!(:arguments)    { {} }
-    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
-    let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 
@@ -56,6 +55,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       send("fill_in_#{mappable_factory_name}_form")
       expect(page).to have_css ".map_location"
+      check "#{mappable_factory_name}_skip_map"
       send("submit_#{mappable_factory_name}_form")
 
       expect(page).not_to have_css(".map_location")
@@ -73,12 +73,44 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css(".map_location")
     end
 
+    scenario 'Errors on create' do
+      login_as user
+      visit send(mappable_new_path, arguments)
+
+      send("submit_#{mappable_factory_name}_form")
+
+      expect(page).to have_content "Map location can't be blank"
+    end
+
+    scenario 'Skip map', :js do
+      login_as user
+      visit send(mappable_new_path, arguments)
+
+      send("fill_in_#{mappable_factory_name}_form")
+      check "#{mappable_factory_name}_skip_map"
+      send("submit_#{mappable_factory_name}_form")
+
+      expect(page).not_to have_content "Map location can't be blank"
+    end
+
+    scenario 'Toggle map', :js do
+      login_as user
+      visit send(mappable_new_path, arguments)
+
+      check "#{mappable_factory_name}_skip_map"
+
+      expect(page).not_to have_css(".map")
+      expect(page).not_to have_content("Remove map marker")
+
+      uncheck "#{mappable_factory_name}_skip_map"
+
+      expect(page).to have_css(".map")
+      expect(page).to have_content("Remove map marker")
+    end
+
   end
 
   describe "At #{mappable_edit_path}" do
-
-    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
-    let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
     before { skip } if mappable_edit_path.blank?
 
@@ -122,6 +154,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       visit send(mappable_edit_path, id: mappable.id)
       click_link "Remove map marker"
+      check "#{mappable_factory_name}_skip_map"
       click_on "Save changes"
 
       expect(page).not_to have_css(".map_location")
@@ -138,13 +171,30 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css(".map_location")
     end
 
+    scenario 'No errors on update', :js do
+      skip ""
+      login_as mappable.author
+
+      visit send(mappable_edit_path, id: mappable.id)
+      click_link "Remove map marker"
+      click_on "Save changes"
+
+      expect(page).not_to have_content "Map location can't be blank"
+    end
+
+    scenario 'No need to skip map on update' do
+      login_as mappable.author
+
+      visit send(mappable_edit_path, id: mappable.id)
+      click_link "Remove map marker"
+      click_on "Save changes"
+
+      expect(page).not_to have_content "Map location can't be blank"
+    end
+
   end
 
   describe "At #{mappable_show_path}" do
-
-    let!(:arguments)    { {} }
-    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
-    let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 
@@ -189,7 +239,9 @@ def submit_proposal_form
   check :proposal_terms_of_service
   click_button 'Create proposal'
 
-  click_link 'Not now, go to my proposal'
+  if page.has_content?('Not now, go to my proposal')
+    click_link 'Not now, go to my proposal'
+  end
 end
 
 def validate_latitude_longitude(mappable_factory_name)

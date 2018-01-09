@@ -84,6 +84,11 @@ es:
         notice: Campaña de presupuestos participativos actualizada
       edit:
         title: Editar campaña de presupuestos participativos
+        delete: Borrar campaña
+      destroy:
+        success_notice: Campaña eliminada correctamente
+        unable_notice: No se pueden eliminar campañas con presupuestos asociados
+
       new:
         title: Nuevo presupuesto ciudadano
       show:
@@ -104,6 +109,7 @@ es:
         table_heading: Partida
         table_amount: Cantidad
         table_population: Población
+        population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.
@@ -157,6 +163,7 @@ es:
         dossier: Informe
         edit_dossier: Editar informe
         tags: Etiquetas
+        user_tags: Etiquetas del usuario
         undefined: Sin definir
         milestone: Seguimiento
         new_milestone: Crear nuevo hito
@@ -181,6 +188,7 @@ es:
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
+        user_tags: Etiquetas asignadas por el usuario
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
@@ -190,11 +198,16 @@ es:
         table_id: "ID"
         table_title: "Título"
         table_description: "Descripción"
+        table_publication_date: "Fecha de publicación"
         table_actions: "Acciones"
         delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
+        image: "Imagen"
+        show_image: "Ver imagen"
+        documents: "Documentos"
       new:
         creating: Crear hito
+        date: Fecha
       edit:
         title: Editar hito
       create:
@@ -481,6 +494,7 @@ es:
       valuator:
         description_placeholder: 'Descripción (opcional)'
         add: Añadir como evaluador
+        delete: Borrar
       search:
         title: 'Evaluadores: Búsqueda de usuarios'
       summary:
@@ -553,8 +567,10 @@ es:
           unassigned: No asignada
         actions:
           assign: Asignar urna
-          unassign: Asignar urna
+          unassign: Desasignar urna
     poll_booth_assignments:
+      alert:
+        shifts: "Hay turnos asignados para esta urna. Si la desasignas, esos turnos se eliminarán. ¿Deseas continuar?"
       flash:
         destroy: "Urna desasignada"
         create: "Urna asignada"
@@ -952,6 +968,7 @@ es:
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
+        polls: Votaciones
       direct_messages:
         title: Mensajes directos
         total: Total
@@ -960,6 +977,17 @@ es:
         title: Notificaciones de propuestas
         total: Total
         proposals_with_notifications: Propuestas con notificaciones
+      polls:
+        title: Estadísticas de votaciones
+        all: Votaciones
+        web_participants: Participantes en Web
+        total_participants: Participantes totales
+        poll_questions: "Preguntas de votación: %{poll}"
+        table:
+          poll_name: Votación
+          question_name: Pregunta
+          origin_web: Participantes Web
+          origin_total: Participantes Totales
     tags:
       create: Crear tema
       destroy: Eliminar tema

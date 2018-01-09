@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115164152) do
+ActiveRecord::Schema.define(version: 20180108182839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,10 +119,11 @@ ActiveRecord::Schema.define(version: 20171115164152) do
 
   create_table "budget_investment_milestones", force: :cascade do |t|
     t.integer  "investment_id"
-    t.string   "title",         limit: 80
+    t.string   "title",            limit: 80
     t.text     "description"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.datetime "publication_date"
   end
 
   create_table "budget_investments", force: :cascade do |t|
@@ -200,6 +201,7 @@ ActiveRecord::Schema.define(version: 20171115164152) do
     t.text     "description_reviewing_ballots"
     t.text     "description_finished"
     t.string   "slug"
+    t.text     "description_drafting"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -798,6 +800,8 @@ ActiveRecord::Schema.define(version: 20171115164152) do
     t.datetime "hidden_at"
     t.boolean  "results_enabled",    default: false
     t.boolean  "stats_enabled",      default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
@@ -850,6 +854,35 @@ ActiveRecord::Schema.define(version: 20171115164152) do
   add_index "proposals", ["summary"], name: "index_proposals_on_summary", using: :btree
   add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
   add_index "proposals", ["tsv"], name: "index_proposals_on_tsv", using: :gin
+
+  create_table "related_content_scores", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "related_content_id"
+    t.integer "value"
+  end
+
+  add_index "related_content_scores", ["related_content_id"], name: "index_related_content_scores_on_related_content_id", using: :btree
+  add_index "related_content_scores", ["user_id", "related_content_id"], name: "unique_user_related_content_scoring", unique: true, using: :btree
+  add_index "related_content_scores", ["user_id"], name: "index_related_content_scores_on_user_id", using: :btree
+
+  create_table "related_contents", force: :cascade do |t|
+    t.integer  "parent_relationable_id"
+    t.string   "parent_relationable_type"
+    t.integer  "child_relationable_id"
+    t.string   "child_relationable_type"
+    t.integer  "related_content_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "hidden_at"
+    t.integer  "related_content_scores_count", default: 0
+    t.integer  "author_id"
+  end
+
+  add_index "related_contents", ["child_relationable_type", "child_relationable_id"], name: "index_related_contents_on_child_relationable", using: :btree
+  add_index "related_contents", ["hidden_at"], name: "index_related_contents_on_hidden_at", using: :btree
+  add_index "related_contents", ["parent_relationable_id", "parent_relationable_type", "child_relationable_id", "child_relationable_type"], name: "unique_parent_child_related_content", unique: true, using: :btree
+  add_index "related_contents", ["parent_relationable_type", "parent_relationable_id"], name: "index_related_contents_on_parent_relationable", using: :btree
+  add_index "related_contents", ["related_content_id"], name: "opposite_related_content", using: :btree
 
   create_table "settings", force: :cascade do |t|
     t.string "key"
@@ -1170,6 +1203,8 @@ ActiveRecord::Schema.define(version: 20171115164152) do
   add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "proposals", "communities"
+  add_foreign_key "related_content_scores", "related_contents"
+  add_foreign_key "related_content_scores", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

@@ -17,11 +17,11 @@ feature 'Valuation' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Valuation")
+    expect(page).not_to have_link("Valuation")
     visit valuation_root_path
 
-    expect(current_path).not_to eq(valuation_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(valuation_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -30,11 +30,11 @@ feature 'Valuation' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Valuation")
+    expect(page).not_to have_link("Valuation")
     visit valuation_root_path
 
-    expect(current_path).not_to eq(valuation_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(valuation_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -43,11 +43,11 @@ feature 'Valuation' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Valuation")
+    expect(page).not_to have_link("Valuation")
     visit valuation_root_path
 
-    expect(current_path).not_to eq(valuation_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(valuation_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -56,11 +56,11 @@ feature 'Valuation' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Valuation")
+    expect(page).not_to have_link("Valuation")
     visit valuation_root_path
 
-    expect(current_path).not_to eq(valuation_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(valuation_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -72,8 +72,8 @@ feature 'Valuation' do
     expect(page).to have_link("Valuation")
     click_on "Valuation"
 
-    expect(current_path).to eq(valuation_root_path)
-    expect(page).to_not have_content "You do not have permission to access this page"
+    expect(page).to have_current_path(valuation_root_path)
+    expect(page).not_to have_content "You do not have permission to access this page"
   end
 
   scenario 'Access as an administrator is authorized' do
@@ -84,8 +84,8 @@ feature 'Valuation' do
     expect(page).to have_link("Valuation")
     click_on "Valuation"
 
-    expect(current_path).to eq(valuation_root_path)
-    expect(page).to_not have_content "You do not have permission to access this page"
+    expect(page).to have_current_path(valuation_root_path)
+    expect(page).not_to have_content "You do not have permission to access this page"
   end
 
   scenario "Valuation access links" do
@@ -94,8 +94,8 @@ feature 'Valuation' do
     visit root_path
 
     expect(page).to have_link('Valuation')
-    expect(page).to_not have_link('Administration')
-    expect(page).to_not have_link('Moderation')
+    expect(page).not_to have_link('Administration')
+    expect(page).not_to have_link('Moderation')
   end
 
   scenario 'Valuation dashboard' do
@@ -105,10 +105,10 @@ feature 'Valuation' do
 
     click_link 'Valuation'
 
-    expect(current_path).to eq(valuation_root_path)
+    expect(page).to have_current_path(valuation_root_path)
     expect(page).to have_css('#valuation_menu')
-    expect(page).to_not have_css('#admin_menu')
-    expect(page).to_not have_css('#moderation_menu')
+    expect(page).not_to have_css('#admin_menu')
+    expect(page).not_to have_css('#moderation_menu')
   end
 
 end

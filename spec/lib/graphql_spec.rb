@@ -35,7 +35,7 @@ def extract_fields(response, collection_name, field_chain)
   end.compact
 end
 
-describe 'ConsulSchema' do
+describe 'Consul Schema' do
   let(:user) { create(:user) }
   let(:proposal) { create(:proposal, author: user) }
 
@@ -218,6 +218,16 @@ describe 'ConsulSchema' do
       expect(received_tags).to match_array ['Parks', 'Health']
     end
 
+    it 'returns nested votes for a proposal' do
+      proposal = create(:proposal)
+      2.times { create(:vote, votable: proposal) }
+
+      response = execute("{ proposal(id: #{proposal.id}) { votes_for { edges { node { public_created_at } } } } }")
+
+      votes = response["data"]["proposal"]["votes_for"]["edges"]
+      expect(votes.count).to eq(2)
+    end
+
   end
 
   describe 'Debates' do
@@ -282,15 +292,16 @@ describe 'ConsulSchema' do
   end
 
   describe 'Comments' do
-    it 'only returns comments from proposals and debates' do
+    it 'only returns comments from proposals, debates and polls' do
       proposal_comment          = create(:comment, commentable: create(:proposal))
       debate_comment            = create(:comment, commentable: create(:debate))
+      poll_comment              = create(:comment, commentable: create(:poll))
       spending_proposal_comment = build(:comment, commentable: create(:spending_proposal)).save(skip_validation: true)
 
       response = execute('{ comments { edges { node { commentable_type } } } }')
       received_commentables = extract_fields(response, 'comments', 'commentable_type')
 
-      expect(received_commentables).to match_array ['Proposal', 'Debate']
+      expect(received_commentables).to match_array ['Proposal', 'Debate', 'Poll']
     end
 
     it 'displays comments of authors even if public activity is set to false' do
@@ -355,6 +366,19 @@ describe 'ConsulSchema' do
       expect(received_comments).to match_array [visible_debate_comment.body]
     end
 
+    it 'does not include comments from hidden polls' do
+      visible_poll = create(:poll)
+      hidden_poll  = create(:poll, hidden_at: Time.current)
+
+      visible_poll_comment = create(:comment, commentable: visible_poll)
+      hidden_poll_comment  = create(:comment, commentable: hidden_poll)
+
+      response = execute('{ comments { edges { node { body } } } }')
+      received_comments = extract_fields(response, 'comments', 'body')
+
+      expect(received_comments).to match_array [visible_poll_comment.body]
+    end
+
     it 'does not include comments of debates that are not public' do
       not_public_debate = create(:debate, :hidden)
       not_public_debate_comment = create(:comment, commentable: not_public_debate)
@@ -363,7 +387,7 @@ describe 'ConsulSchema' do
       response = execute('{ comments { edges { node { body } } } }')
       received_comments = extract_fields(response, 'comments', 'body')
 
-      expect(received_comments).to_not include(not_public_debate_comment.body)
+      expect(received_comments).not_to include(not_public_debate_comment.body)
     end
 
     it 'does not include comments of proposals that are not public' do
@@ -374,7 +398,18 @@ describe 'ConsulSchema' do
       response = execute('{ comments { edges { node { body } } } }')
       received_comments = extract_fields(response, 'comments', 'body')
 
-      expect(received_comments).to_not include(not_public_proposal_comment.body)
+      expect(received_comments).not_to include(not_public_proposal_comment.body)
+    end
+
+    it 'does not include comments of polls that are not public' do
+      not_public_poll = create(:poll)
+      not_public_poll_comment = create(:comment, commentable: not_public_poll)
+      allow(Comment).to receive(:public_for_api).and_return([])
+
+      response = execute('{ comments { edges { node { body } } } }')
+      received_comments = extract_fields(response, 'comments', 'body')
+
+      expect(received_comments).not_to include(not_public_poll_comment.body)
     end
 
     it 'only returns date and hour for created_at' do
@@ -422,7 +457,7 @@ describe 'ConsulSchema' do
       response = execute('{ proposal_notifications { edges { node { title } } } }')
       received_notifications = extract_fields(response, 'proposal_notifications', 'title')
 
-      expect(received_notifications).to_not include(not_public_proposal_notification.title)
+      expect(received_notifications).not_to include(not_public_proposal_notification.title)
     end
 
     it 'only returns date and hour for created_at' do
@@ -528,7 +563,7 @@ describe 'ConsulSchema' do
       response = execute('{ tags { edges { node { name } } } }')
       received_tags = extract_fields(response, 'tags', 'name')
 
-      expect(received_tags).to_not include('Health')
+      expect(received_tags).not_to include('Health')
     end
 
   end
@@ -632,7 +667,7 @@ describe 'ConsulSchema' do
       response = execute('{ votes { edges { node { votable_id } } } }')
       received_votables = extract_fields(response, 'votes', 'votable_id')
 
-      expect(received_votables).to_not include(not_public_debate.id)
+      expect(received_votables).not_to include(not_public_debate.id)
     end
 
     it 'does not include votes of a hidden proposals' do
@@ -644,7 +679,7 @@ describe 'ConsulSchema' do
       response = execute('{ votes { edges { node { votable_id } } } }')
       received_votables = extract_fields(response, 'votes', 'votable_id')
 
-      expect(received_votables).to_not include(not_public_proposal.id)
+      expect(received_votables).not_to include(not_public_proposal.id)
     end
 
     it 'does not include votes of a hidden comments' do
@@ -656,7 +691,7 @@ describe 'ConsulSchema' do
       response = execute('{ votes { edges { node { votable_id } } } }')
       received_votables = extract_fields(response, 'votes', 'votable_id')
 
-      expect(received_votables).to_not include(not_public_comment.id)
+      expect(received_votables).not_to include(not_public_comment.id)
     end
 
     it 'only returns date and hour for created_at' do

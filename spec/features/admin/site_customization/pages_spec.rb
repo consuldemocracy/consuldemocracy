@@ -22,7 +22,7 @@ feature "Admin custom pages" do
         click_link "Custom Pages"
       end
 
-      expect(page).to_not have_content "An example custom page"
+      expect(page).not_to have_content "An example custom page"
 
       click_link "Create new page"
 
@@ -65,6 +65,6 @@ feature "Admin custom pages" do
 
     click_button "Delete page"
 
-    expect(page).to_not have_content("An example custom page")
+    expect(page).not_to have_content("An example custom page")
   end
 end

@@ -2,6 +2,7 @@ class Poll < ActiveRecord::Base
   include Imageable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
+  include Notifiable
 
   RECOUNT_DURATION = 1.week
 
@@ -28,6 +29,7 @@ class Poll < ActiveRecord::Base
   scope :recounting, -> { Poll.where(ends_at: (Date.current.beginning_of_day - RECOUNT_DURATION)..Date.current.beginning_of_day) }
   scope :published, -> { where('published = ?', true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
+  scope :public_for_api, -> { all }
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 

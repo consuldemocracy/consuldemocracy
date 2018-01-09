@@ -34,9 +34,9 @@ feature 'Officing Results' do
       click_link 'Total recounts and results'
     end
 
-    expect(page).to_not have_content(not_allowed_poll_1.name)
-    expect(page).to_not have_content(not_allowed_poll_2.name)
-    expect(page).to_not have_content(not_allowed_poll_3.name)
+    expect(page).not_to have_content(not_allowed_poll_1.name)
+    expect(page).not_to have_content(not_allowed_poll_2.name)
+    expect(page).not_to have_content(not_allowed_poll_3.name)
     expect(page).to have_content(@poll.name)
 
     visit new_officing_poll_result_path(not_allowed_poll_1)
@@ -55,7 +55,7 @@ feature 'Officing Results' do
       click_link 'Add results'
     end
 
-    expect(page).to_not have_content('Your results')
+    expect(page).not_to have_content('Your results')
 
     booth_name = @officer_assignment.booth_assignment.booth.name
     select booth_name, from: 'officer_assignment_id'
@@ -113,7 +113,7 @@ feature 'Officing Results' do
       click_link "See results"
     end
 
-    expect(page).to_not have_content('7777')
+    expect(page).not_to have_content('7777')
     within("#white_results") { expect(page).to have_content('6') }
     within("#null_results")  { expect(page).to have_content('7') }
     within("#total_results") { expect(page).to have_content('8') }

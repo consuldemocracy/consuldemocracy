@@ -24,11 +24,11 @@ feature 'Voters' do
     click_button "Confirm vote"
 
     expect(page).to have_content "Vote introduced!"
-    expect(page).to_not have_button "Confirm vote"
+    expect(page).not_to have_button "Confirm vote"
 
     page.evaluate_script("window.location.reload()")
     expect(page).to have_content "Has already participated in this poll"
-    expect(page).to_not have_button "Confirm vote"
+    expect(page).not_to have_button "Confirm vote"
 
     expect(Poll::Voter.last.officer_id).to eq(officer.id)
   end
@@ -45,7 +45,7 @@ feature 'Voters' do
 
     within("#poll_#{poll.id}") do
       expect(page).to have_content "Has already participated in this poll"
-      expect(page).to_not have_button "Confirm vote"
+      expect(page).not_to have_button "Confirm vote"
     end
 
     within("#poll_#{poll2.id}") do
@@ -55,7 +55,7 @@ feature 'Voters' do
 
   scenario "Had already verified his residence, but is not level 2 yet", :js do
     user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
-    expect(user).to_not be_level_two_verified
+    expect(user).not_to be_level_two_verified
 
     visit new_officing_residence_path
     officing_verify_residence

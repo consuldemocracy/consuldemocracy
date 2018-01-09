@@ -9,6 +9,8 @@ class Debate < ActiveRecord::Base
   include Filterable
   include HasPublicAuthor
   include Graphqlable
+  include Relationable
+  include Notifiable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at

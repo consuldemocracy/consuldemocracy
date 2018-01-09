@@ -1,6 +1,7 @@
 class Legislation::Question < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
+  include Notifiable
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :process, class_name: 'Legislation::Process', foreign_key: 'legislation_process_id'

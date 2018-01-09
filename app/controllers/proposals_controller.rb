@@ -1,4 +1,5 @@
 class ProposalsController < ApplicationController
+  include FeatureFlags
   include CommentableActions
   include FlagActions
 
@@ -6,6 +7,8 @@ class ProposalsController < ApplicationController
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
+
+  feature_flag :proposals
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
@@ -19,6 +22,8 @@ class ProposalsController < ApplicationController
   def show
     super
     @notifications = @proposal.notifications
+    @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
+
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
   end
 
@@ -75,7 +80,7 @@ class ProposalsController < ApplicationController
 
     def proposal_params
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
-                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id,
+                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id, :skip_map,
                                        image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                                        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                                        map_location_attributes: [:latitude, :longitude, :zoom])
