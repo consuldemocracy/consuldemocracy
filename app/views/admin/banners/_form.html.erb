@@ -61,15 +61,38 @@
   </div>
 
   <div class="row">
+    <div class="small-12 column">
+      <%= f.label :sections, t("admin.banners.banner.sections_label") %>
+      <% @banner_sections.each do |section| %>
+        <%= f.check_box :sections, {multiple: true, label: false}, section[0], nil %>
+        <%= t("admin.banners.banner.sections.#{section[1]}") %><br>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-6 column">
+      <%= f.label :sections, t("admin.banners.banner.background_color") %>
+      <%= color_field(:banner, :background_color, id: 'banner_background_color_picker') %>
+      <%= f.text_field :background_color, label: false %>
+    </div>
+    <div class="small-6 column">
+      <%= f.label :sections, t("admin.banners.banner.font_color") %>
+      <%= color_field(:banner, :font_color, id: 'banner_font_color_picker') %>
+      <%= f.text_field :font_color, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="actions small-12 medium-3 column">
       <%= f.submit(class: "button expanded", value: t("admin.banners.edit.form.submit_button")) %>
     </div>
   </div>
-  <div id="js-banner-style" class="<%= @banner.style %>">
+  <div id="js-banner-style" class="<%= @banner.style %>" style="background-color:<%= @banner.background_color %>">
     <div id="js-banner-image" class="<%= @banner.image %>">
       <%= link_to @banner.target_url do %>
-        <h2 id="js-banner-title"><%= @banner.title %></h2>
-        <h3 id="js-banner-description"><%= @banner.description %></h3>
+        <h2 id="js-banner-title" style="color:<%= @banner.font_color %>"><%= @banner.title %></h2>
+        <h3 id="js-banner-description" style="color:<%= @banner.font_color %>"><%= @banner.description %></h3>
       <% end %>
     </div>
   </div>

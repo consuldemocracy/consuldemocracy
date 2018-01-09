@@ -33,6 +33,15 @@ en:
         image: Image
         post_started_at: Post started at
         post_ended_at: Post ended at
+        sections_label: Seccions where it will appear
+        sections:
+          homepage: Homepage
+          debates: Debates
+          proposals: Proposals
+          budgets: Participatory budgeting
+          more_info: More info page
+        background_color: Background colour
+        font_color: Font colour
       edit:
         editing: Edit banner
         form:
