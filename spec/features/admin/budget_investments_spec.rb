@@ -670,8 +670,8 @@ feature 'Admin budget investments' do
                                                           filter: :valuation_finished)
 
       header = page.response_headers['Content-Disposition']
-      header.should match(/^attachment/)
-      header.should match(/filename="budget_investments.csv"$/)
+      expect(header).to match(/^attachment/)
+      expect(header).to match(/filename="budget_investments.csv"$/)
 
       expect(page).to have_content investment2.title
       expect(page).to_not have_content investment1.title
