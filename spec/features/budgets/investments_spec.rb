@@ -535,13 +535,6 @@ feature 'Budget Investments' do
       expect(page).not_to have_content(investment.price_explanation)
     end
 
-    scenario "Budget in balloting phase" do
-      budget.update(phase: "balloting")
-      visit budget_investment_path(budget_id: budget.id, id: investment.id)
-
-      expect(page).to have_content("Price explanation")
-      expect(page).to have_content(investment.price_explanation)
-    end
   end
 
   scenario "Show (unfeasible budget investment)" do
