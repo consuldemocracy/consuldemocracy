@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Display proposal and investment image when sharing in social networks https://github.com/consul/consul/pull/2202
 - Redirect admin to budget lists after edit https://github.com/consul/consul/pull/2284
 - Improve budget investment form https://github.com/consul/consul/pull/2280
+- Prevent edition of investments if budget is in the final phase https://github.com/consul/consul/pull/2223
 
 ### Deprecated
 

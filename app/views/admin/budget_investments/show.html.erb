@@ -13,7 +13,7 @@
 
 <%= link_to t("admin.budget_investments.show.edit"),
             edit_admin_budget_budget_investment_path(@budget, @investment,
-                                                Budget::Investment.filter_params(params)) %>
+                                                Budget::Investment.filter_params(params)) unless @budget.finished? %>
 
 <hr>
 
@@ -41,7 +41,7 @@
 <p>
   <%= link_to t("admin.budget_investments.show.edit_classification"),
                 edit_admin_budget_budget_investment_path(@budget, @investment,
-                                                  {anchor: 'classification'}.merge(Budget::Investment.filter_params(params))) %>
+                                                  {anchor: 'classification'}.merge(Budget::Investment.filter_params(params))) unless @budget.finished? %>
 </p>
 
 <hr>
@@ -51,7 +51,7 @@
 <%= render 'valuation/budget_investments/written_by_valuators' %>
 
 <p>
-  <%= link_to t("admin.budget_investments.show.edit_dossier"), edit_valuation_budget_budget_investment_path(@budget, @investment) %>
+  <%= link_to t("admin.budget_investments.show.edit_dossier"), edit_valuation_budget_budget_investment_path(@budget, @investment) unless @budget.finished? %>
 </p>
 
 <hr>
