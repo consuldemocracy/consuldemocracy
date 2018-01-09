@@ -326,6 +326,12 @@ FactoryBot.define do
       incompatible true
     end
 
+    trait :selected_with_price do
+      selected
+      price 1000
+      price_explanation 'Because of reasons'
+    end
+
     trait :unselected do
       selected false
       feasibility "feasible"
