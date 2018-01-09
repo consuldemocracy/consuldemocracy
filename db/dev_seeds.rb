@@ -42,7 +42,7 @@ section "Creating Settings" do
   Setting.create(key: 'place_name', value: 'City')
 
   Setting.create(key: 'feature.debates', value: "true")
-
+  Setting.create(key: 'feature.proposals', value: "true")
   Setting.create(key: 'feature.polls', value: "true")
 
   Setting.create(key: 'feature.spending_proposals', value: nil)
