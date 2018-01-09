@@ -105,6 +105,14 @@ feature 'Proposals' do
     end
   end
 
+  scenario 'Selected tab in URL anchor active', :js do
+    proposal = create(:proposal)
+
+    visit proposal_path(proposal, anchor: 'tab-notifications')
+
+    expect(page.first('ul.tabs li.is-active a').text).to eq('Notifications (0)')
+  end
+
   context "Show" do
     scenario 'When path matches the friendly url' do
       proposal = create(:proposal)

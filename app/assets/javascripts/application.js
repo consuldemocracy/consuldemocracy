@@ -74,6 +74,7 @@
 //= require polls
 //= require sortable
 //= require table_sortable
+//= require tabs
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -115,6 +116,7 @@ var initialize_modules = function() {
   App.Polls.initialize();
   App.Sortable.initialize();
   App.TableSortable.initialize();
+  App.Tabs.initialize();
 };
 
 $(function(){

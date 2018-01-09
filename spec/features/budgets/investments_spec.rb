@@ -420,6 +420,14 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario 'Selected tab in URL anchor active', :js do
+    investment = create(:budget_investment, heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id, anchor: 'tab-milestones')
+
+    expect(page.first('ul.tabs li.is-active a').text).to eq('Milestones (0)')
+  end
+
   scenario 'Can access the community' do
     Setting['feature.community'] = true
 
