@@ -275,6 +275,7 @@ feature 'Tags' do
       Budget::PHASES.each do |phase|
         budget.update(phase: phase)
 
+        login_as(admin) if budget.drafting?
         visit budget_path(budget)
         click_link group.name
 
