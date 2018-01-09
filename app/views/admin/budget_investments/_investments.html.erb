@@ -1,9 +1,9 @@
-<div class='relative'>
-  <%= link_to 'download current selecction',admin_budget_budget_investments_path(csv_params), class: 'advanced-search small' %>
-</div>
+<%= link_to t("admin.budget_investments.index.download_current_selection"),
+            admin_budget_budget_investments_path(csv_params),
+            class: "float-right small" %>
 
 <% if @investments.any? %>
-  <h3><%= page_entries_info @investments %></h3>
+  <h3 class="inline-block"><%= page_entries_info @investments %></h3>
   <table>
     <thead>
       <tr>

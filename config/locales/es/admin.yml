@@ -130,6 +130,7 @@ es:
           selected: Seleccionadas
           winners: Ganadoras
           all: Todas
+        download_current_selection: "Descargar selección actual"
         no_budget_investments: "No hay proyectos de inversión."
         title: Proyectos de inversión
         assigned_admin: Administrador asignado
