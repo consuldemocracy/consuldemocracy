@@ -535,41 +535,29 @@ end
 section "Creating polls" do
 
   Poll.create(name: "Current Poll",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "current-poll",
               starts_at: 7.days.ago,
               ends_at:   7.days.from_now,
               geozone_restricted: false)
 
   Poll.create(name: "Current Poll Geozone Restricted",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "current-poll-geozone-restricted",
               starts_at: 5.days.ago,
               ends_at:   5.days.from_now,
               geozone_restricted: true,
               geozones: Geozone.reorder("RANDOM()").limit(3))
 
   Poll.create(name: "Incoming Poll",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "incoming-poll",
               starts_at: 1.month.from_now,
               ends_at:   2.months.from_now)
 
   Poll.create(name: "Recounting Poll",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "recounting-poll",
               starts_at: 15.days.ago,
               ends_at:   2.days.ago)
 
   Poll.create(name: "Expired Poll without Stats & Results",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "expired-poll-without-stats-and-results",
               starts_at: 2.months.ago,
               ends_at:   1.month.ago)
 
   Poll.create(name: "Expired Poll with Stats & Results",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "expired-poll-with-stats-and-results",
               starts_at: 2.months.ago,
               ends_at:   1.month.ago,
               results_enabled: true,
