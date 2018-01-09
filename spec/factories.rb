@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :local_census_record, class: 'LocalCensusRecord' do
     document_number '12345678A'
     document_type 1
@@ -138,7 +138,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
       end
     end
 
@@ -152,7 +152,7 @@ FactoryGirl.define do
 
     trait :conflictive do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
         4.times { create(:vote, votable: debate) }
       end
     end
@@ -184,7 +184,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |proposal|
-        Flag.flag(FactoryGirl.create(:user), proposal)
+        Flag.flag(create(:user), proposal)
       end
     end
 
@@ -202,7 +202,7 @@ FactoryGirl.define do
 
     trait :conflictive do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
         4.times { create(:vote, votable: debate) }
       end
     end
@@ -250,6 +250,7 @@ FactoryGirl.define do
     sequence(:name) { |n| "Budget #{n}" }
     currency_symbol "€"
     phase 'accepting'
+    description_drafting  "This budget is drafting"
     description_accepting "This budget is accepting"
     description_reviewing "This budget is reviewing"
     description_selecting "This budget is selecting"
@@ -257,6 +258,10 @@ FactoryGirl.define do
     description_balloting "This budget is balloting"
     description_reviewing_ballots "This budget is reviewing ballots"
     description_finished "This budget is finished"
+
+    trait :drafting do
+      phase 'drafting'
+    end
 
     trait :accepting do
       phase 'accepting'
@@ -306,7 +311,6 @@ FactoryGirl.define do
     description          'Spend money on this'
     price                10
     unfeasibility_explanation ''
-    external_url         'http://external_documention.org'
     skip_map             '1'
     terms_of_service     '1'
     incompatible          false
@@ -467,7 +471,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
       end
     end
 
@@ -743,7 +747,7 @@ FactoryGirl.define do
 
   factory :ballot_line do
     ballot
-    spending_proposal { FactoryGirl.build(:spending_proposal, feasible: true) }
+    spending_proposal { build(:spending_proposal, feasible: true) }
   end
 
   factory :banner do
