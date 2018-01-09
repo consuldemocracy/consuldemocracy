@@ -36,6 +36,21 @@ feature 'Admin budget investments' do
       expect(page).to have_content(budget_investment.total_votes)
     end
 
+    scenario 'If budget is finished do not show "Selected" button' do
+      finished_budget = create(:budget, :finished)
+      budget_investment = create(:budget_investment, budget: finished_budget, cached_votes_up: 77)
+
+      visit admin_budget_budget_investments_path(budget_id: finished_budget.id)
+
+      within("#budget_investment_#{budget_investment.id}") do
+        expect(page).to have_content(budget_investment.title)
+        expect(page).to have_content(budget_investment.heading.name)
+        expect(page).to have_content(budget_investment.id)
+        expect(page).to have_content(budget_investment.total_votes)
+        expect(page).to_not have_link("Selected")
+      end
+    end
+
     scenario 'Displaying assignments info' do
       budget_investment1 = create(:budget_investment, budget: @budget)
       budget_investment2 = create(:budget_investment, budget: @budget)
@@ -279,33 +294,55 @@ feature 'Admin budget investments' do
 
   end
 
-  scenario 'Show' do
-    administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
-    valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
-    budget_investment = create(:budget_investment,
-                                price: 1234,
-                                price_first_year: 1000,
-                                feasibility: "unfeasible",
-                                unfeasibility_explanation: 'It is impossible',
-                                administrator: administrator)
-    budget_investment.valuators << valuator
+  context 'Show' do
+    background do
+      @administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
+    end
 
-    visit admin_budget_budget_investments_path(budget_investment.budget)
+    scenario 'Show the investment details' do
+      valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
+      budget_investment = create(:budget_investment,
+                                  price: 1234,
+                                  price_first_year: 1000,
+                                  feasibility: "unfeasible",
+                                  unfeasibility_explanation: 'It is impossible',
+                                  administrator: @administrator)
+      budget_investment.valuators << valuator
 
-    click_link budget_investment.title
+      visit admin_budget_budget_investments_path(budget_investment.budget)
 
-    expect(page).to have_content(budget_investment.title)
-    expect(page).to have_content(budget_investment.description)
-    expect(page).to have_content(budget_investment.author.name)
-    expect(page).to have_content(budget_investment.heading.name)
-    expect(page).to have_content('1234')
-    expect(page).to have_content('1000')
-    expect(page).to have_content('Unfeasible')
-    expect(page).to have_content('It is impossible')
-    expect(page).to have_content('Ana (ana@admins.org)')
+      click_link budget_investment.title
 
-    within('#assigned_valuators') do
-      expect(page).to have_content('Rachel (rachel@valuators.org)')
+      expect(page).to have_content(budget_investment.title)
+      expect(page).to have_content(budget_investment.description)
+      expect(page).to have_content(budget_investment.author.name)
+      expect(page).to have_content(budget_investment.heading.name)
+      expect(page).to have_content('1234')
+      expect(page).to have_content('1000')
+      expect(page).to have_content('Unfeasible')
+      expect(page).to have_content('It is impossible')
+      expect(page).to have_content('Ana (ana@admins.org)')
+
+      within('#assigned_valuators') do
+        expect(page).to have_content('Rachel (rachel@valuators.org)')
+      end
+    end
+
+    scenario "If budget is finished, investment cannot be edited" do
+      # Only milestones can be managed
+
+      finished_budget = create(:budget, :finished)
+      budget_investment = create(:budget_investment,
+                                  budget: finished_budget,
+                                  administrator: @administrator)
+      visit admin_budget_budget_investments_path(budget_investment.budget)
+
+      click_link budget_investment.title
+
+      expect(page).to_not have_link "Edit"
+      expect(page).to_not have_link "Edit classification"
+      expect(page).to_not have_link "Edit dossier"
+      expect(page).to have_link "Create new milestone"
     end
   end
 
