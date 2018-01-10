@@ -13,6 +13,7 @@ class DirectMessage < ActiveRecord::Base
   def max_per_day
     return if errors.any?
     max = Setting[:direct_message_max_per_day]
+    return unless max
 
     if sender.direct_messages_sent.today.count >= max.to_i
       errors.add(:title, I18n.t('activerecord.errors.models.direct_message.attributes.max_per_day.invalid'))

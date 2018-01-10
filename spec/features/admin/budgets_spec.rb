@@ -34,32 +34,32 @@ feature 'Admin budgets' do
     end
 
     scenario 'Filters by phase' do
-      budget1 = create(:budget)
-      budget2 = create(:budget, :accepting)
-      budget3 = create(:budget, :selecting)
-      budget4 = create(:budget, :balloting)
-      budget5 = create(:budget, :finished)
+      drafting_budget  = create(:budget, :drafting)
+      accepting_budget = create(:budget, :accepting)
+      selecting_budget = create(:budget, :selecting)
+      balloting_budget = create(:budget, :balloting)
+      finished_budget  = create(:budget, :finished)
 
       visit admin_budgets_path
-      expect(page).to have_content(budget1.name)
-      expect(page).to have_content(budget2.name)
-      expect(page).to have_content(budget3.name)
-      expect(page).to have_content(budget4.name)
-      expect(page).to_not have_content(budget5.name)
+      expect(page).to have_content(drafting_budget.name)
+      expect(page).to have_content(accepting_budget.name)
+      expect(page).to have_content(selecting_budget.name)
+      expect(page).to have_content(balloting_budget.name)
+      expect(page).not_to have_content(finished_budget.name)
 
       click_link 'Finished'
-      expect(page).to_not have_content(budget1.name)
-      expect(page).to_not have_content(budget2.name)
-      expect(page).to_not have_content(budget3.name)
-      expect(page).to_not have_content(budget4.name)
-      expect(page).to have_content(budget5.name)
+      expect(page).not_to have_content(drafting_budget.name)
+      expect(page).not_to have_content(accepting_budget.name)
+      expect(page).not_to have_content(selecting_budget.name)
+      expect(page).not_to have_content(balloting_budget.name)
+      expect(page).to have_content(finished_budget.name)
 
       click_link 'Open'
-      expect(page).to have_content(budget1.name)
-      expect(page).to have_content(budget2.name)
-      expect(page).to have_content(budget3.name)
-      expect(page).to have_content(budget4.name)
-      expect(page).to_not have_content(budget5.name)
+      expect(page).to have_content(drafting_budget.name)
+      expect(page).to have_content(accepting_budget.name)
+      expect(page).to have_content(selecting_budget.name)
+      expect(page).to have_content(balloting_budget.name)
+      expect(page).not_to have_content(finished_budget.name)
     end
 
     scenario 'Open filter is properly highlighted' do
@@ -67,13 +67,13 @@ feature 'Admin budgets' do
 
       visit admin_budgets_path
 
-      expect(page).to_not have_link(filters_links.values.first)
+      expect(page).not_to have_link(filters_links.values.first)
       filters_links.keys.drop(1).each { |filter| expect(page).to have_link(filters_links[filter]) }
 
       filters_links.each_pair do |current_filter, link|
         visit admin_budgets_path(filter: current_filter)
 
-        expect(page).to_not have_link(link)
+        expect(page).not_to have_link(link)
 
         (filters_links.keys - [current_filter]).each do |filter|
           expect(page).to have_link(filters_links[filter])
@@ -103,8 +103,53 @@ feature 'Admin budgets' do
       visit new_admin_budget_path
       click_button 'Create Participatory budget'
 
-      expect(page).to_not have_content 'New participatory budget created successfully!'
+      expect(page).not_to have_content 'New participatory budget created successfully!'
       expect(page).to have_css("label.error", text: "Name")
+    end
+
+  end
+
+  context 'Destroy' do
+
+    let!(:budget) { create(:budget) }
+    let(:heading) { create(:budget_heading, group: create(:budget_group, budget: budget)) }
+
+    scenario 'Destroy a budget without investments' do
+      visit admin_budgets_path
+      click_link 'Edit budget'
+      click_button 'Delete budget'
+
+      expect(page).to have_content('Budget deleted successfully')
+      expect(page).to have_content('participatory budgets cannot be found')
+    end
+
+    scenario 'Try to destroy a budget with investments' do
+      create(:budget_investment, heading: heading)
+
+      visit admin_budgets_path
+      click_link 'Edit budget'
+      click_button 'Delete budget'
+
+      expect(page).to have_content('You cannot destroy a Budget that has associated investments')
+      expect(page).to have_content('There is 1 participatory budget')
+    end
+  end
+  
+  context 'Update' do
+
+    background do
+      create(:budget)
+    end
+
+    scenario 'Update budget' do
+      visit admin_budgets_path
+      click_link 'Edit budget'
+
+      fill_in 'budget_name', with: 'More trees on the streets'
+      click_button 'Update Participatory budget'
+
+      expect(page).to have_content('More trees on the streets')
+      expect(page).to have_current_path(admin_budgets_path)
     end
 
   end
@@ -158,7 +203,7 @@ feature 'Admin budgets' do
       expect(page).to have_content '1 Group of budget headings'
       expect(page).to have_content 'Health'
       expect(page).to have_content 'Yearly participatory budget'
-      expect(page).to_not have_content 'No groups created yet.'
+      expect(page).not_to have_content 'No groups created yet.'
 
       visit admin_budgets_path
       within("#budget_#{budget.id}") do
@@ -168,7 +213,7 @@ feature 'Admin budgets' do
       expect(page).to have_content '1 Group of budget headings'
       expect(page).to have_content 'Health'
       expect(page).to have_content 'Yearly participatory budget'
-      expect(page).to_not have_content 'No groups created yet.'
+      expect(page).not_to have_content 'No groups created yet.'
     end
 
     scenario 'Create heading', :js do
@@ -187,11 +232,11 @@ feature 'Admin budgets' do
         click_button 'Save heading'
       end
 
-      expect(page).to_not have_content 'This group has no assigned heading.'
+      expect(page).not_to have_content 'This group has no assigned heading.'
 
       visit admin_budget_path(budget)
       within("#budget_group_#{group.id}") do
-        expect(page).to_not have_content 'This group has no assigned heading.'
+        expect(page).not_to have_content 'This group has no assigned heading.'
 
         expect(page).to have_content 'District 9 reconstruction'
         expect(page).to have_content '6785'

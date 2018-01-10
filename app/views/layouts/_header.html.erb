@@ -14,12 +14,12 @@
 
       <%= link_to setting['org_name'], root_path, class: "logo show-for-small-only" %>
 
-      <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
+      <span data-responsive-toggle="responsive_menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
         <%= t("application.menu")%>
       </span>
 
-      <div id="responsive-menu">
+      <div id="responsive_menu">
         <div class="top-bar-title">
           <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
             <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="top-bar-right">
-          <ul class="dropdown menu" data-dropdown-menu>
+          <ul class="menu" data-responsive-menu="medium-dropdown">
             <%= render "shared/admin_login_items" %>
             <%= render "devise/menu/login_items" %>
           </ul>

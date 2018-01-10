@@ -2,34 +2,46 @@
 
 <%= render 'shared/filter_subnav', i18n_namespace: "admin.comments.index" %>
 
-<h3><%= page_entries_info @comments %></h3>
+<% if @comments.any? %>
+  <h3 class="margin"><%= page_entries_info @comments %></h3>
 
-<table>
-  <% @comments.each do |comment| %>
-    <tr id="<%= dom_id(comment) %>">
-      <td>
-        <%= text_with_links comment.body %><br>
-        <% if comment.commentable.hidden? %>
-          (<%= t("admin.comments.index.hidden_#{comment.commentable_type.downcase}") %>: <%= comment.commentable.title %>)
-        <% else %>
-          <%= link_to comment.commentable.title, comment.commentable %>
-        <% end %>
-      </td>
-      <td class="text-right">
-        <%= link_to t("admin.actions.restore"),
-              restore_admin_comment_path(comment, request.query_parameters),
-              method: :put,
-              data: { confirm: t("admin.actions.confirm") },
-              class: "button hollow on-hover-block" %>
-        <% unless comment.confirmed_hide? %>
-          <%= link_to t("admin.actions.confirm_hide"),
-                confirm_hide_admin_comment_path(comment, request.query_parameters),
+  <table>
+    <thead>
+      <th scope="col" class="small-9"><%= t("admin.shared.description") %></th>
+      <th scope="col"><%= t("admin.shared.actions") %></th>
+    </thead>
+    <tbody>
+    <% @comments.each do |comment| %>
+      <tr id="<%= dom_id(comment) %>">
+        <td>
+          <%= text_with_links comment.body %><br>
+          <% if comment.commentable.hidden? %>
+            (<%= t("admin.comments.index.hidden_#{comment.commentable_type.downcase}") %>: <%= comment.commentable.title %>)
+          <% else %>
+            <%= link_to comment.commentable.title, comment.commentable %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to t("admin.actions.restore"),
+                restore_admin_comment_path(comment, request.query_parameters),
                 method: :put,
-                class: "button hollow warning on-hover-block" %>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+                data: { confirm: t("admin.actions.confirm") },
+                class: "button hollow warning" %>
+          <% unless comment.confirmed_hide? %>
+            <%= link_to t("admin.actions.confirm_hide"),
+                  confirm_hide_admin_comment_path(comment, request.query_parameters),
+                  method: :put,
+                  class: "button" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-<%= paginate @comments %>
+  <%= paginate @comments %>
+<% else %>
+  <div class="callout primary margin">
+    <%= t("admin.comments.index.no_hidden_comments") %>
+  </div>
+<% end %>

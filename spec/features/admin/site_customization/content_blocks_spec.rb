@@ -23,7 +23,7 @@ feature "Admin custom content blocks" do
         click_link "Custom content blocks"
       end
 
-      expect(page).to_not have_content "footer (es)"
+      expect(page).not_to have_content "footer (es)"
 
       click_link "Create new content block"
 
@@ -90,8 +90,8 @@ feature "Admin custom content blocks" do
 
       click_button "Delete block"
 
-      expect(page).to_not have_content("#{block.name} (#{block.locale})")
-      expect(page).to_not have_content(block.body)
+      expect(page).not_to have_content("#{block.name} (#{block.locale})")
+      expect(page).not_to have_content(block.body)
     end
 
     scenario "From edit page" do
@@ -100,8 +100,8 @@ feature "Admin custom content blocks" do
 
       click_button "Delete block"
 
-      expect(page).to_not have_content("#{block.name} (#{block.locale})")
-      expect(page).to_not have_content(block.body)
+      expect(page).not_to have_content("#{block.name} (#{block.locale})")
+      expect(page).not_to have_content(block.body)
     end
   end
 end

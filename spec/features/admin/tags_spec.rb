@@ -19,11 +19,11 @@ feature 'Admin tags' do
   scenario 'Create' do
     visit admin_tags_path
 
-    expect(page).to_not have_content 'important issues'
+    expect(page).not_to have_content 'important issues'
 
     within("form.new_tag") do
       fill_in "tag_name", with: 'important issues'
-      click_button 'Create Topic'
+      click_button 'Create topic'
     end
 
     visit admin_tags_path
@@ -39,13 +39,13 @@ feature 'Admin tags' do
     expect(page).to have_content @tag1.name
     expect(page).to have_content tag2.name
 
-    within("#edit_tag_#{tag2.id}") do
-      click_link 'Destroy Topic'
+    within("#tag_#{tag2.id}") do
+      click_link 'Destroy topic'
     end
 
     visit admin_tags_path
     expect(page).to have_content @tag1.name
-    expect(page).to_not have_content tag2.name
+    expect(page).not_to have_content tag2.name
   end
 
   scenario 'Delete tag with hidden taggables' do
@@ -58,13 +58,13 @@ feature 'Admin tags' do
     expect(page).to have_content @tag1.name
     expect(page).to have_content tag2.name
 
-    within("#edit_tag_#{tag2.id}") do
-      click_link 'Destroy Topic'
+    within("#tag_#{tag2.id}") do
+      click_link 'Destroy topic'
     end
 
     visit admin_tags_path
     expect(page).to have_content @tag1.name
-    expect(page).to_not have_content tag2.name
+    expect(page).not_to have_content tag2.name
   end
 
   context "Manage only tags of kind category" do
@@ -73,7 +73,7 @@ feature 'Admin tags' do
       visit admin_tags_path
 
       expect(page).to have_content @tag1.name
-      expect(page).to_not have_content "Not a category"
+      expect(page).not_to have_content "Not a category"
     end
 
     scenario "Create instanciates tags of correct kind" do
@@ -81,7 +81,7 @@ feature 'Admin tags' do
 
       within("form.new_tag") do
         fill_in "tag_name", with: "wow_category"
-        click_button 'Create Topic'
+        click_button 'Create topic'
       end
 
       expect(ActsAsTaggableOn::Tag.category.where(name: "wow_category")).to exist

@@ -136,8 +136,8 @@ feature 'Admin banners magement' do
     expect(page).to have_content 'Modified title'
     expect(page).to have_content 'Edited text'
 
-    expect(page).to_not have_content 'Hello'
-    expect(page).to_not have_content 'Wrong text'
+    expect(page).not_to have_content 'Hello'
+    expect(page).not_to have_content 'Wrong text'
   end
 
   scenario 'Delete a banner' do
@@ -160,7 +160,7 @@ feature 'Admin banners magement' do
     click_link "Delete banner"
 
     visit admin_root_path
-    expect(page).to_not have_content 'Ugly banner'
+    expect(page).not_to have_content 'Ugly banner'
   end
 
 end

@@ -44,21 +44,31 @@
       <% end %>
     </li>
 
-    <li <%= "class=active" if (controller_name == "budget_investments" && action_name == "new") ||
-                              (controller_name == "budget" && action_name == 'create_investments') %>>
-      <%= link_to create_investments_management_budgets_path do %>
-        <span class="icon-budget"></span>
-        <%= t("management.menu.create_budget_investment") %>
-      <% end %>
-    </li>
+    <% if Setting['feature.budgets'] %>
+      <li <%= "class=active" if (controller_name == "budget_investments" && action_name == "new") ||
+                                (controller_name == "budget" && action_name == 'create_investments') %>>
+        <%= link_to create_investments_management_budgets_path do %>
+          <span class="icon-budget"></span>
+          <%= t("management.menu.create_budget_investment") %>
+        <% end %>
+      </li>
 
-    <li <%= "class=active" if (controller_name == "budget_investments" && action_name == "index") ||
-                              (controller_name == "budget" && action_name == "support_investments")%>>
-      <%= link_to support_investments_management_budgets_path do %>
-        <span class="icon-like"></span>
-        <%= t("management.menu.support_budget_investments") %>
-      <% end %>
-    </li>
+      <li <%= "class=active" if (controller_name == "budget_investments" && action_name == "index") ||
+                                (controller_name == "budget" && action_name == "support_investments")%>>
+        <%= link_to support_investments_management_budgets_path do %>
+          <span class="icon-like"></span>
+          <%= t("management.menu.support_budget_investments") %>
+        <% end %>
+      </li>
+
+        <li <%= "class=active" if (controller_name == "budget_investments" && action_name == "print") ||
+            (controller_name == "budgets" && action_name == "print_investments") %>>
+          <%= link_to print_investments_management_budgets_path do %>
+              <span class="icon-print"></span>
+              <%= t("management.menu.print_budget_investments") %>
+          <% end %>
+        </li>
+    <% end %>
 
     <li <%= "class=active" if controller_name == "proposals" && action_name == "print" %>>
       <%= link_to print_management_proposals_path do %>
@@ -73,15 +83,6 @@
         <%= t("management.menu.print_spending_proposals") %>
       <% end %>
     </li>
-
-    <li <%= "class=active" if (controller_name == "budget_investments" && action_name == "print") ||
-                              (controller_name == "budgets" && action_name == "print_investments") %>>
-      <%= link_to print_investments_management_budgets_path do %>
-        <span class="icon-print"></span>
-        <%= t("management.menu.print_budget_investments") %>
-      <% end %>
-    </li>
-
 
     <li>
       <%= link_to new_management_user_invite_path do %>

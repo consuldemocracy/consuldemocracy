@@ -14,6 +14,8 @@ class Legislation::ProcessesController < Legislation::BaseController
       redirect_to legislation_process_draft_version_path(@process, draft_version)
     elsif @process.debate_phase.enabled?
       redirect_to debate_legislation_process_path(@process)
+    elsif @process.proposals_phase.enabled?
+      redirect_to proposals_legislation_process_path(@process)
     else
       redirect_to allegations_legislation_process_path(@process)
     end
@@ -76,6 +78,18 @@ class Legislation::ProcessesController < Legislation::BaseController
       else
         render :phase_empty
       end
+    else
+      render :phase_not_open
+    end
+  end
+
+  def proposals
+    set_process
+    @phase = :proposals_phase
+
+    if @process.proposals_phase.started?
+      legislation_proposal_votes(@process.proposals)
+      render :proposals
     else
       render :phase_not_open
     end

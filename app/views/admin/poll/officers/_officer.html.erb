@@ -16,7 +16,7 @@
       <td class="text-right">
         <% if officer.persisted? %>
           <%= link_to t('admin.poll_officers.officer.delete'),
-                      admin_poll_officer_path(officer),
+                      admin_officer_path(officer),
                       method: :delete,
                       class: "button hollow alert" %>
         <% else %>

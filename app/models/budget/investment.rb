@@ -1,5 +1,6 @@
 class Budget
   class Investment < ActiveRecord::Base
+    require 'csv'
     include Measurable
     include Sanitizable
     include Taggable
@@ -7,15 +8,18 @@ class Budget
     include Reclassification
     include Followable
     include Communitable
+    include Imageable
+    include Mappable
     include Documentable
     documentable max_documents_allowed: 3,
                  max_file_size: 3.megabytes,
                  accepted_content_types: [ "application/pdf" ]
-    accepts_nested_attributes_for :documents, allow_destroy: true
 
     acts_as_votable
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
+    include Relationable
+    include Notifiable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -42,7 +46,7 @@ class Budget
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
-    scope :sort_by_random,           -> { reorder("RANDOM()") }
+    scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f.nonzero? ? seed.to_f : 1}, budget_investments.id") }
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
@@ -257,6 +261,46 @@ class Budget
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments
+    end
+
+    def self.to_csv(investments, options = {})
+      attrs = [I18n.t("admin.budget_investments.index.table_id"),
+               I18n.t("admin.budget_investments.index.table_title"),
+               I18n.t("admin.budget_investments.index.table_supports"),
+               I18n.t("admin.budget_investments.index.table_admin"),
+               I18n.t("admin.budget_investments.index.table_valuator"),
+               I18n.t("admin.budget_investments.index.table_geozone"),
+               I18n.t("admin.budget_investments.index.table_feasibility"),
+               I18n.t("admin.budget_investments.index.table_valuation_finished"),
+               I18n.t("admin.budget_investments.index.table_selection")]
+      csv_string = CSV.generate(options) do |csv|
+        csv << attrs
+        investments.each do |investment|
+          id = investment.id.to_s
+          title = investment.title
+          total_votes = investment.total_votes.to_s
+          admin = if investment.administrator.present?
+                    investment.administrator.name
+                  else
+                    I18n.t("admin.budget_investments.index.no_admin_assigned")
+                  end
+          vals = if investment.valuators.empty?
+                   I18n.t("admin.budget_investments.index.no_valuators_assigned")
+                 else
+                   investment.valuators.collect(&:description_or_name).join(', ')
+                 end
+          heading_name = investment.heading.name
+          price_string = "admin.budget_investments.index.feasibility"\
+                         ".#{investment.feasibility}"
+          price = I18n.t(price_string, price: investment.formatted_price)
+          valuation_finished = investment.valuation_finished? ?
+                                         I18n.t('shared.yes') :
+                                         I18n.t('shared.no')
+          csv << [id, title, total_votes, admin, vals, heading_name, price,
+                  valuation_finished]
+        end
+      end
+      csv_string
     end
 
     private

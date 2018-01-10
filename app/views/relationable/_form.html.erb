@@ -1,0 +1,22 @@
+<%= form_tag related_contents_path, method: :post, id: "related_content", class: "hide", "data-toggler": ".hide" do %>
+    <label><%= t("related_content.label") %></label>
+
+    <p class="help-text" id="related_content_help_text">
+      <%= t("related_content.help", models: t('related_content.content_title').values.to_sentence, org: setting['org_name']) %>
+    </p>
+
+    <div class="input-group">
+      <div class="input-group-field">
+        <%= text_field_tag :url, '',
+                          "aria-describedby": "related_content_help_text",
+                          placeholder: t("related_content.placeholder", url: setting['url']) %>
+
+        <%= hidden_field_tag :relationable_klass, relationable.class.name %>
+        <%= hidden_field_tag :relationable_id, relationable.id %>
+      </div>
+
+      <div class="input-group-button">
+        <%= submit_tag t("related_content.submit"), class: "button" %>
+      </div>
+    </div>
+  <% end %>

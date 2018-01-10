@@ -1,4 +1,3 @@
----
 en:
   helpers:
     page_entries_info:
@@ -15,9 +14,9 @@ en:
           zero: "%{entry_name} cannot be found"
   views:
     pagination:
+      current: You're on page
       first: First
       last: Last
       next: Next
       previous: Previous
       truncate: "&hellip;"
-      current: You're on page

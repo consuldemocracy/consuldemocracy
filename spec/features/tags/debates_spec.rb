@@ -48,8 +48,8 @@ feature 'Tags' do
 
     visit debates_path(tag: "123")
 
-    expect(page).to_not have_selector('#debates .debate-featured')
-    expect(page).to_not have_selector('#featured-debates')
+    expect(page).not_to have_selector('#debates .debate-featured')
+    expect(page).not_to have_selector('#featured-debates')
   end
 
   scenario 'Show' do
@@ -115,7 +115,7 @@ feature 'Tags' do
     expect(page).to have_content 'user_id1'
     expect(page).to have_content 'a3'
     expect(page).to have_content 'scriptalert("hey");script'
-    expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
+    expect(page.html).not_to include 'user_id=1, &a=3, <script>alert("hey");</script>'
   end
 
   scenario 'Update' do
@@ -146,7 +146,7 @@ feature 'Tags' do
     click_button 'Save changes'
 
     expect(page).to have_content 'Debate updated successfully.'
-    expect(page).to_not have_content 'Economía'
+    expect(page).not_to have_content 'Economía'
   end
 
   context "Filter" do
@@ -211,7 +211,7 @@ feature 'Tags' do
       expect(page).to have_css ".debate", count: 2
       expect(page).to have_content debate1.title
       expect(page).to have_content debate2.title
-      expect(page).to_not have_content debate3.title
+      expect(page).not_to have_content debate3.title
     end
 
   end

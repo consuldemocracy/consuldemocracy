@@ -29,6 +29,7 @@ en:
         unselected_title: Investments not selected for balloting phase
         unselected: See investments not selected for balloting phase
     phase:
+      drafting: Draft (Not visible to the public)
       accepting: Accepting projects
       reviewing: Reviewing projects
       selecting: Selecting projects
@@ -55,6 +56,10 @@ en:
         tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
         tags_label: Tags
         tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+        map_location: "Map location"
+        map_location_instructions: "Navigate the map to the location and place the marker."
+        map_remove_marker: "Remove map marker"
+        location: "Location additional info"
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
@@ -107,7 +112,7 @@ en:
         comments_tab: Comments
         milestones_tab: Milestones
         no_milestones: Don't have defined milestones
-        milestone_publish_date: "Published %{publish_date}"
+        milestone_publication_date: "Published %{publication_date}"
       wrong_price_format: Only integer numbers
       investment:
         add: Vote
@@ -144,7 +149,7 @@ en:
       ballot_lines_count: Times selected
       hide_discarded_link: Hide discarded
       show_all_link: Show all
-      price: Cost
+      price: Price
       amount_available: Available budget
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "

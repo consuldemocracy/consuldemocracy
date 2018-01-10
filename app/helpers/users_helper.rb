@@ -52,12 +52,8 @@ module UsersHelper
     current_user && current_user.manager?
   end
 
-  def current_poll_officer?
-    current_user && current_user.poll_officer?
-  end
-
   def show_admin_menu?
-    current_administrator? || current_moderator? || current_valuator? || current_manager? || current_poll_officer?
+    current_administrator? || current_moderator? || current_valuator? || current_manager?
   end
 
   def interests_title_text(user)
@@ -65,14 +61,6 @@ module UsersHelper
       t('account.show.public_interests_my_title_list')
     else
       t('account.show.public_interests_user_title_list')
-    end
-  end
-
-  def empty_interests_message_text(user)
-    if current_user == user
-      t('account.show.public_interests_my_empty_list')
-    else
-      t('account.show.public_interests_user_empty_list')
     end
   end
 
