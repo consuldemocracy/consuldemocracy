@@ -1,0 +1,16 @@
+<%= back_link_to admin_question_path(@answer.question) %>
+
+<%= link_to t("admin.questions.answers.images.add_image"),
+            new_admin_answer_image_path(@answer),
+            class: "button hollow float-right" %>
+
+<ul class="breadcrumbs margin-top">
+  <li><%= @answer.question.title %></li>
+  <li><%= @answer.title %></li>
+</ul>
+
+<% @answer.images.each do |image| %>
+  <div class="small-12 medium-4 column end">
+    <%= render_image(image, :large, true) if image.present? %>
+  </div>
+<% end %>

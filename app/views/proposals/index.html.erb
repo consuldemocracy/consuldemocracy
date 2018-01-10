@@ -14,13 +14,13 @@
       <div class="row">
         <div class="small-12 column">
           <% if @search_terms || @advanced_search_terms %>
-          <h2><%= t("shared.search_results") %></h2>
-          <p>
-            <%= page_entries_info @proposals %>
-            <% if !@advanced_search_terms %>
-              <%= t("proposals.index.search_results_html", count: @proposals.size, search_term: @search_terms) %>
-            <% end %>
-          <p>
+            <h2><%= t("shared.search_results") %></h2>
+            <p>
+              <%= page_entries_info @proposals %>
+              <% if !@advanced_search_terms %>
+                <%= t("proposals.index.search_results_html", count: @proposals.size, search_term: @search_terms) %>
+              <% end %>
+            <p>
           <% elsif @tag_filter %>
             <h2><%= t("shared.search_results") %></h2>
             <p>
@@ -68,7 +68,11 @@
       <% end %>
 
       <div id="proposals-list">
-        <%= render partial: 'proposals/proposal', collection: @proposals %>
+        <% if @proposals.any? || current_user.blank? %>
+          <%= render partial: 'proposals/proposal', collection: @proposals %>
+        <% else %>
+          <%= empty_recommended_proposals_message_text(current_user) %>
+        <% end %>
         <%= paginate @proposals %>
 
         <% unless @search_terms || @advanced_search_terms || @tag_filter %>

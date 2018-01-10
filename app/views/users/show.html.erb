@@ -28,7 +28,7 @@
             <% if @activity_counts[filter] > 0 %>
               <% if @current_filter == filter %>
                 <li class="active">
-                  <%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %>
+                  <h2><%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %></h2>
                 </li>
               <% else %>
                 <li>
@@ -38,16 +38,20 @@
               <% end %>
             <% end %>
           <% end %>
-          <%= t("users.show.no_activity") if @activity_counts.values.inject(&:+) == 0 %>
         </ul>
+
+        <% if @activity_counts.values.inject(&:+) == 0 %>
+          <div class="callout primary">
+            <%= t("users.show.no_activity") %>
+          </div>
+        <% end %>
 
         <%= render "activity_page" %>
       <% else %>
-        <p><%= t('users.show.private_activity') %></p>
+        <div class="callout warning margin">
+          <%= t('users.show.private_activity') %>
+        </div>
       <% end %>
-
-      <%= render 'interests', user: @user if valid_interests_access? %>
-
     </div>
   </div>
 </main>

@@ -1,58 +1,55 @@
----
 es:
   date:
     abbr_day_names:
-    - dom
-    - lun
-    - mar
-    - mié
-    - jue
-    - vie
-    - sáb
+      - dom
+      - lun
+      - mar
+      - mié
+      - jue
+      - vie
+      - sáb
     abbr_month_names:
-    -
-    - ene
-    - feb
-    - mar
-    - abr
-    - may
-    - jun
-    - jul
-    - ago
-    - sep
-    - oct
-    - nov
-    - dic
+      - ene
+      - feb
+      - mar
+      - abr
+      - may
+      - jun
+      - jul
+      - ago
+      - sep
+      - oct
+      - nov
+      - dic
     day_names:
-    - domingo
-    - lunes
-    - martes
-    - miércoles
-    - jueves
-    - viernes
-    - sábado
+      - domingo
+      - lunes
+      - martes
+      - miércoles
+      - jueves
+      - viernes
+      - sábado
     formats:
       default: "%d/%m/%Y"
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-    -
-    - enero
-    - febrero
-    - marzo
-    - abril
-    - mayo
-    - junio
-    - julio
-    - agosto
-    - septiembre
-    - octubre
-    - noviembre
-    - diciembre
+      - enero
+      - febrero
+      - marzo
+      - abril
+      - mayo
+      - junio
+      - julio
+      - agosto
+      - septiembre
+      - octubre
+      - noviembre
+      - diciembre
     order:
-    - :day
-    - :month
-    - :year
+      - :day
+      - :month
+      - :year
   datetime:
     distance_in_words:
       about_x_hours:
@@ -86,6 +83,9 @@ es:
       x_months:
         one: 1 mes
         other: "%{count} meses"
+      x_years:
+        one: '%{count} año'
+        other: "%{count} años"
       x_seconds:
         one: 1 segundo
         other: "%{count} segundos"
@@ -113,24 +113,27 @@ es:
       invalid: no es válido
       less_than: debe ser menor que %{count}
       less_than_or_equal_to: debe ser menor que o igual a %{count}
+      model_invalid: 'Error de validación: %{errors}'
       not_a_number: no es un número
       not_an_integer: debe ser un entero
       odd: debe ser impar
-      record_invalid: 'La validación falló: %{errors}'
-      restrict_dependent_destroy:
-        one: No se puede eliminar el registro porque existe un %{record} dependiente
-        many: No se puede eliminar el registro porque existen %{record} dependientes
+      required: debe existir
       taken: ya está en uso
-      too_long: es demasiado largo (%{count} caracteres máximo)
-      too_short: es demasiado corto (%{count} caracteres mínimo)
-      wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
+      too_long:
+        one: es demasiado largo (máximo %{count} caracteres)
+        other: es demasiado largo (máximo %{count} caracteres)
+      too_short:
+        one: es demasiado corto (mínimo %{count} caracteres)
+        other: es demasiado corto (mínimo %{count} caracteres)
+      wrong_length:
+        one: longitud inválida (debería tener %{count} caracteres)
+        other: longitud inválida (debería tener %{count} caracteres)
       other_than: debe ser distinto de %{count}
-      invalid_date: "no es una fecha valida"
     template:
       body: 'Se encontraron problemas con los siguientes campos:'
       header:
         one: No se pudo guardar este/a %{model} porque se encontró 1 error
-        other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
+        other: "No se pudo guardar este/a %{model} porque se encontraron %{count} errores"
   helpers:
     select:
       prompt: Por favor seleccione
@@ -163,10 +166,8 @@ es:
           quadrillion: mil billones
           thousand: mil
           trillion: billón
-          unit: ''
       format:
-        delimiter: ''
-        precision: 1
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
       storage_units:
@@ -174,17 +175,14 @@ es:
         units:
           byte:
             one: Byte
-            other: Bytes
+            other: Byte
           gb: GB
           kb: KB
           mb: MB
           tb: TB
     percentage:
       format:
-        delimiter: ''
-    precision:
-      format:
-        delimiter: ''
+        format: "%n%"
   support:
     array:
       last_word_connector: " y "
@@ -193,8 +191,9 @@ es:
   time:
     am: am
     formats:
+      datetime: "%d/%m/%Y %H:%M:%S"
       default: "%A, %d de %B de %Y %H:%M:%S %z"
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
-      datetime: "%d/%m/%Y %H:%M:%S"
+      api: "%d-%m-%Y %H"
     pm: pm

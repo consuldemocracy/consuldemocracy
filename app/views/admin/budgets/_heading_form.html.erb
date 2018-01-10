@@ -21,7 +21,13 @@
       <%= f.text_field :population,
                         label: false,
                         maxlength: 8,
-                        placeholder: t("admin.budgets.form.population") %>
+                        placeholder: t("admin.budgets.form.population"),
+                        data: {toggle_focus: "population-info"} %>
+    </div>
+    <div class="small-12 medium-6 column " >
+      <div id="population-info" class="is-hidden" data-toggler="is-hidden">
+        <%= t("admin.budgets.form.population_info") %>
+      </div>
     </div>
   </div>
 

@@ -147,6 +147,12 @@ fr:
         name: Nom
         locale: Langue
         body: Contenu
+      poll/question/answer:
+        title: Réponse
+        description: Description
+      poll/question/answer/video:
+        title: Titre
+        url: Vidéo externe
     errors:
       models:
         user:

@@ -1,5 +1,31 @@
 module BudgetsHelper
 
+  def csv_params
+    csv_params = params.clone.merge(format: :csv).symbolize_keys
+    csv_params.delete(:page)
+    csv_params
+  end
+
+  def investment_selected_link(investment)
+    options = investment_selected_link_options(investment)
+    path = toggle_selection_admin_budget_budget_investment_path(@budget,
+           investment, filter: params[:filter], page: params[:page])
+    link_options = {method: :patch, remote: true, class: options[:link_class]}
+    link_to options[:text], path, link_options
+  end
+
+  def investment_selected_link_options(investment)
+    if investment.selected?
+      {link_class: "button small expanded",
+       text: t("admin.budget_investments.index.selected") }
+    elsif investment.feasible? && investment.valuation_finished?
+      {link_class: "button small hollow expanded",
+       text: t("admin.budget_investments.index.select")}
+    else
+      {}
+    end
+  end
+
   def budget_phases_select_options
     Budget::PHASES.map { |ph| [ t("budgets.phase.#{ph}"), ph ] }
   end
@@ -42,4 +68,9 @@ module BudgetsHelper
   def investment_tags_select_options
     Budget::Investment.tags_on(:valuation).order(:name).select(:name).distinct
   end
+
+  def budget_published?(budget)
+    !budget.drafting? || current_user&.administrator?
+  end
+
 end

@@ -1,11 +1,41 @@
 <ul class="menu simple clear">
-  <li <%= "class=active" if active == 'info' %>>
-    <%= link_to t("admin.legislation.processes.subnav.info"), edit_admin_legislation_process_path(process) %>
-  </li>
-    <li <%= "class=active" if active == 'questions' %>>
-    <%= link_to t("admin.legislation.processes.subnav.questions"), admin_legislation_process_questions_path(process) %>
-  </li>
-  <li <%= "class=active" if active == 'draft_versions' %>>
-    <%= link_to t("admin.legislation.processes.subnav.draft_texts"), admin_legislation_process_draft_versions_path(process) %>
-  </li>
+  <% if active == 'info' %>
+    <li class="active">
+      <h2><%= t("admin.legislation.processes.subnav.info") %></h2>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to t("admin.legislation.processes.subnav.info"), edit_admin_legislation_process_path(process) %>
+    </li>
+  <% end %>
+
+  <% if active == 'questions' %>
+    <li class="active">
+      <h2><%= t("admin.legislation.processes.subnav.questions") %></h2>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to t("admin.legislation.processes.subnav.questions"), admin_legislation_process_questions_path(process) %>
+    </li>
+  <% end %>
+
+  <% if active == 'proposals' %>
+    <li class="active">
+      <h2><%= t("admin.legislation.processes.subnav.proposals") %></h2>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to t("admin.legislation.processes.subnav.proposals"), admin_legislation_process_proposals_path(process) %>
+    </li>
+  <% end %>
+
+  <% if active == 'draft_versions' %>
+    <li class="active">
+      <h2><%= t("admin.legislation.processes.subnav.draft_texts") %></h2>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to t("admin.legislation.processes.subnav.draft_texts"), admin_legislation_process_draft_versions_path(process) %>
+    </li>
+  <% end %>
 </ul>

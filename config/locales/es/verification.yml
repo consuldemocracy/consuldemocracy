@@ -1,4 +1,3 @@
----
 es:
   verification:
     alert:
@@ -33,7 +32,7 @@ es:
         office: Verificarte presencialmente en cualquier %{office}
         offices: Oficina de Atención al Ciudadano
         send_letter: Solicitar una carta por correo postal
-        title: "¡Felicidades!"
+        title: '¡Felicidades!'
         user_permission_info: Con tu cuenta ya puedes...
       update:
         flash:
@@ -51,7 +50,7 @@ es:
         accept_terms_text: Acepto %{terms_url} al Padrón
         accept_terms_text_title: Acepto los términos de acceso al Padrón
         date_of_birth: Fecha de nacimiento
-        document_number: Número de documento
+        document_number: DNI/Pasaporte/Tarjeta de residencia
         document_number_help_title: Ayuda
         document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarjeta de residencia</strong>: X1234567P'
         document_type:
@@ -76,14 +75,14 @@ es:
       edit:
         confirmation_code: Introduce el código que has recibido en tu móvil
         resend_sms_link: Solicitar un nuevo código
-        resend_sms_text: "¿No has recibido un mensaje de texto con tu código de confirmación?"
+        resend_sms_text: '¿No has recibido un mensaje de texto con tu código de confirmación?'
         submit_button: Enviar
         title: SMS de confirmación
       new:
         phone: Introduce tu teléfono móvil para recibir el código
-        phone_format_html: "<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>"
+        phone_format_html: '<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>'
         phone_note: Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos.
-        phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
+        phone_placeholder: 'Ejemplo: 612345678 ó +34612345678'
         submit_button: Enviar
         title: SMS de confirmación
       update:
@@ -100,7 +99,7 @@ es:
     user_permission_info: Al verificar tus datos podrás...
     user_permission_proposal: Crear nuevas propuestas
     user_permission_support_proposal: Apoyar propuestas
-    user_permission_votes: Participar en las votaciones finales
+    user_permission_votes: Participar en las votaciones finales*
     verified_user:
       form:
         submit_button: Enviar código

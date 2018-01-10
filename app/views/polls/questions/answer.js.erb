@@ -1,1 +1,2 @@
-$("#<%= dom_id(@question) %>_answers").html('<%= j render("polls/questions/answers", question: @question) %>');
+<% token = poll_voter_token(@question.poll, current_user) %>
+$("#<%= dom_id(@question) %>_answers").html('<%= j render("polls/questions/answers", question: @question, token: token) %>');

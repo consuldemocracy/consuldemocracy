@@ -1,81 +1,55 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 nl:
-  time:
-    formats:
-      datetime: "%Y-%m-%d %H:%M:%S"
   date:
     abbr_day_names:
-    - zo
-    - ma
-    - di
-    - wo
-    - do
-    - vr
-    - za
+      - zo
+      - ma
+      - di
+      - wo
+      - do
+      - vr
+      - za
     abbr_month_names:
-    -
-    - jan
-    - feb
-    - mrt
-    - apr
-    - mei
-    - jun
-    - jul
-    - aug
-    - sep
-    - okt
-    - nov
-    - dec
+      - jan
+      - feb
+      - mrt
+      - apr
+      - mei
+      - jun
+      - jul
+      - aug
+      - sep
+      - okt
+      - nov
+      - dec
     day_names:
-    - zondag
-    - maandag
-    - dinsdag
-    - woensdag
-    - donderdag
-    - vrijdag
-    - zaterdag
+      - zondag
+      - maandag
+      - dinsdag
+      - woensdag
+      - donderdag
+      - vrijdag
+      - zaterdag
     formats:
       default: "%d-%m-%Y"
       long: "%e %B %Y"
       short: "%e %b"
     month_names:
-    -
-    - januari
-    - februari
-    - maart
-    - april
-    - mei
-    - juni
-    - juli
-    - augustus
-    - september
-    - oktober
-    - november
-    - december
+      - januari
+      - februari
+      - maart
+      - april
+      - mei
+      - juni
+      - juli
+      - augustus
+      - september
+      - oktober
+      - november
+      - december
     order:
-    - :day
-    - :month
-    - :year
+      - :day
+      - ': month'
+      - :year
   datetime:
     distance_in_words:
       about_x_hours:
@@ -109,6 +83,9 @@ nl:
       x_months:
         one: 1 maand
         other: "%{count} maanden"
+      x_years:
+        one: '%{count} jaar'
+        other: "%{count} jaar"
       x_seconds:
         one: 1 seconde
         other: "%{count} seconden"
@@ -136,14 +113,10 @@ nl:
       invalid: is ongeldig
       less_than: moet minder zijn dan %{count}
       less_than_or_equal_to: moet minder dan of gelijk zijn aan %{count}
-      model_invalid: "Validatie mislukt: %{errors}"
+      model_invalid: 'Validatie mislukt: %{errors}'
       not_a_number: is geen getal
       not_an_integer: moet een geheel getal zijn
       odd: moet oneven zijn
-      record_invalid: 'Validatie mislukt: %{errors}'
-      restrict_dependent_destroy:
-        one: Kan item niet verwijderen omdat %{record} afhankelijk is
-        many: Kan item niet verwijderen omdat afhankelijke %{record} bestaan
       required: moet bestaan
       taken: is al in gebruik
       too_long:
@@ -159,15 +132,15 @@ nl:
     template:
       body: 'Er zijn problemen met de volgende velden:'
       header:
-        one: "%{model} niet opgeslagen: 1 fout gevonden"
+        one: '%{model} niet opgeslagen: 1 fout gevonden'
         other: "%{model} niet opgeslagen: %{count} fouten gevonden"
   helpers:
     select:
       prompt: Maak een keuze
     submit:
-      create: "%{model} toevoegen"
-      submit: "%{model} opslaan"
-      update: "%{model} bijwerken"
+      create: '%{model} toevoegen'
+      submit: '%{model} opslaan'
+      update: '%{model} bijwerken'
   number:
     currency:
       format:
@@ -193,9 +166,7 @@ nl:
           quadrillion: biljard
           thousand: duizend
           trillion: biljoen
-          unit: ''
       format:
-        delimiter: ''
         precision: 3
         significant: true
         strip_insignificant_zeros: true
@@ -211,20 +182,17 @@ nl:
           tb: TB
     percentage:
       format:
-        delimiter: ''
         format: "%n%"
-    precision:
-      format:
-        delimiter: ''
   support:
     array:
       last_word_connector: " en "
       two_words_connector: " en "
       words_connector: ", "
   time:
-    am: "'s ochtends"
+    am: '''s ochtends'
     formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
       default: "%a %d %b %Y %H:%M:%S %Z"
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
-    pm: "'s middags"
+    pm: '''s middags'

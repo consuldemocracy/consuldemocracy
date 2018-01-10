@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :local_census_record, class: 'LocalCensusRecord' do
     document_number '12345678A'
     document_type 1
@@ -50,6 +50,13 @@ FactoryGirl.define do
     end
 
     trait :verified do
+      residence_verified_at Time.current
+      verified_at Time.current
+    end
+
+    trait :in_census do
+      document_number "12345678Z"
+      document_type "1"
       verified_at Time.current
     end
   end
@@ -129,7 +136,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
       end
     end
 
@@ -143,7 +150,7 @@ FactoryGirl.define do
 
     trait :conflictive do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
         4.times { create(:vote, votable: debate) }
       end
     end
@@ -158,6 +165,7 @@ FactoryGirl.define do
     video_url            'https://youtu.be/nhuNb0XtRhQ'
     responsible_name     'John Snow'
     terms_of_service     '1'
+    skip_map             '1'
     association :author, factory: :user
 
     trait :hidden do
@@ -174,7 +182,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |proposal|
-        Flag.flag(FactoryGirl.create(:user), proposal)
+        Flag.flag(create(:user), proposal)
       end
     end
 
@@ -192,7 +200,7 @@ FactoryGirl.define do
 
     trait :conflictive do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
         4.times { create(:vote, votable: debate) }
       end
     end
@@ -215,6 +223,7 @@ FactoryGirl.define do
     sequence(:name) { |n| "Budget #{n}" }
     currency_symbol "€"
     phase 'accepting'
+    description_drafting  "This budget is drafting"
     description_accepting "This budget is accepting"
     description_reviewing "This budget is reviewing"
     description_selecting "This budget is selecting"
@@ -222,6 +231,10 @@ FactoryGirl.define do
     description_balloting "This budget is balloting"
     description_reviewing_ballots "This budget is reviewing ballots"
     description_finished "This budget is finished"
+
+    trait :drafting do
+      phase 'drafting'
+    end
 
     trait :accepting do
       phase 'accepting'
@@ -271,7 +284,7 @@ FactoryGirl.define do
     description          'Spend money on this'
     price                10
     unfeasibility_explanation ''
-    external_url         'http://external_documention.org'
+    skip_map             '1'
     terms_of_service     '1'
     incompatible          false
 
@@ -318,6 +331,21 @@ FactoryGirl.define do
       feasibility "feasible"
       valuation_finished true
     end
+
+  end
+
+  factory :image do
+    attachment { File.new("spec/fixtures/files/clippy.jpg") }
+    title "Lorem ipsum dolor sit amet"
+    association :user, factory: :user
+
+    trait :proposal_image do
+      association :imageable, factory: :proposal
+    end
+
+    trait :budget_investment_image do
+      association :imageable, factory: :budget_investment
+    end
   end
 
   factory :budget_ballot, class: 'Budget::Ballot' do
@@ -340,6 +368,7 @@ FactoryGirl.define do
     association :investment, factory: :budget_investment
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
+    publication_date     Time.zone.today
   end
 
   factory :vote do
@@ -405,7 +434,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
       end
     end
 
@@ -468,6 +497,11 @@ FactoryGirl.define do
       ends_at { 15.days.ago }
     end
 
+    trait :recounting do
+      starts_at { 1.month.ago }
+      ends_at { Date.current }
+    end
+
     trait :published do
       published true
     end
@@ -477,8 +511,25 @@ FactoryGirl.define do
     poll
     association :author, factory: :user
     sequence(:title) { |n| "Question title #{n}" }
-    sequence(:description) { |n| "Question description #{n}" }
-    valid_answers { Faker::Lorem.words(3).join(', ') }
+
+    trait :with_answers do
+      after(:create) do |question, _evaluator|
+        create(:poll_question_answer, question: question, title: "Yes")
+        create(:poll_question_answer, question: question, title: "No")
+      end
+    end
+  end
+
+  factory :poll_question_answer, class: 'Poll::Question::Answer' do
+    association :question, factory: :poll_question
+    sequence(:title) { |n| "Answer title #{n}" }
+    sequence(:description) { |n| "Answer description #{n}" }
+  end
+
+  factory :poll_answer_video, class: 'Poll::Question::Answer::Video' do
+    association :answer, factory: :poll_question_answer
+    title "Sample video title"
+    url "https://youtu.be/nhuNb0XtRhQ"
   end
 
   factory :poll_booth, class: 'Poll::Booth' do
@@ -505,11 +556,21 @@ FactoryGirl.define do
     association :booth, factory: :poll_booth
     association :officer, factory: :poll_officer
     date Date.current
+
+    trait :vote_collection_task do
+      task 0
+    end
+
+    trait :recount_scrutiny_task do
+      task 1
+    end
   end
 
   factory :poll_voter, class: 'Poll::Voter' do
     poll
     association :user, :level_two
+    association :officer, factory: :poll_officer
+    origin "web"
 
     trait :from_booth do
       association :booth_assignment, factory: :poll_booth_assignment
@@ -527,29 +588,19 @@ FactoryGirl.define do
   end
 
   factory :poll_answer, class: 'Poll::Answer' do
-    association :question, factory: :poll_question
+    association :question, factory: [:poll_question, :with_answers]
     association :author, factory: [:user, :level_two]
-    answer { question.valid_answers.sample }
+    answer { question.question_answers.sample.title }
   end
 
   factory :poll_partial_result, class: 'Poll::PartialResult' do
-    association :question, factory: :poll_question
+    association :question, factory: [:poll_question, :with_answers]
     association :author, factory: :user
     origin { 'web' }
-    answer { question.valid_answers.sample }
+    answer { question.question_answers.sample.title }
   end
 
-  factory :poll_white_result, class: 'Poll::WhiteResult' do
-    association :author, factory: :user
-    origin { 'web' }
-  end
-
-  factory :poll_null_result, class: 'Poll::NullResult' do
-    association :author, factory: :user
-    origin { 'web' }
-  end
-
-  factory :poll_total_result, class: 'Poll::TotalResult' do
+  factory :poll_recount, class: 'Poll::Recount' do
     association :author, factory: :user
     origin { 'web' }
   end
@@ -665,7 +716,7 @@ FactoryGirl.define do
     start_date Date.current - 5.days
     end_date Date.current + 5.days
     debate_start_date Date.current - 5.days
-    debate_end_date Date.current - 2.days
+    debate_end_date Date.current + 2.days
     draft_publication_date Date.current - 1.day
     allegations_start_date Date.current
     allegations_end_date Date.current + 3.days
@@ -773,6 +824,14 @@ LOREM_IPSUM
     user
   end
 
+  factory :legislation_proposal, class: 'Legislation::Proposal' do
+    title "Example proposal for a legislation"
+    summary "This law should include..."
+    terms_of_service '1'
+    process factory: :legislation_process
+    author factory: :user
+  end
+
   factory :site_customization_page, class: 'SiteCustomization::Page' do
     slug "example-page"
     title "Example page"
@@ -802,6 +861,44 @@ LOREM_IPSUM
     sequence(:title) { |n| "Topic title #{n}" }
     sequence(:description) { |n| "Description as comment #{n}" }
     association :author, factory: :user
+  end
+
+  factory :direct_upload do
+    user
+
+    trait :proposal do
+      resource_type "Proposal"
+    end
+    trait :budget_investment do
+      resource_type "Budget::Investment"
+    end
+
+    trait :documents do
+      resource_relation "documents"
+      attachment { File.new("spec/fixtures/files/empty.pdf") }
+    end
+    trait :image do
+      resource_relation "image"
+      attachment { File.new("spec/fixtures/files/clippy.jpg") }
+    end
+    initialize_with { new(attributes) }
+  end
+
+  factory :map_location do
+    latitude 51.48
+    longitude 0.0
+    zoom 10
+
+    trait :proposal_map_location do
+      proposal
+    end
+
+    trait :budget_investment_map_location do
+      association :investment, factory: :budget_investment
+    end
+  end
+
+  factory :related_content do
   end
 
 end

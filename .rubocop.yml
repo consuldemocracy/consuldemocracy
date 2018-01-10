@@ -1,6 +1,9 @@
 inherit_from: .rubocop_todo.yml
+require: rubocop-rspec
 
 AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
   Include:
     - '**/Rakefile'
     - '**/config.ru'
@@ -9,60 +12,177 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
   TargetRubyVersion: 2.3
+  # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
+  # to ignore them, so only the ones explicitly set in this file are enabled.
+  DisabledByDefault: true
 
 Rails:
   Enabled: true
 
-Documentation:
-  Enabled: false
-
 Metrics/LineLength:
-  Max: 140
+  Max: 100
 
 Layout/IndentationConsistency:
   EnforcedStyle: rails
 
-Style/EmptyMethod:
+RSpec/AlignLeftLetBrace:
   Enabled: false
 
-Style/StringLiterals:
+RSpec/AlignRightLetBrace:
   Enabled: false
 
-Style/SymbolProc:
+RSpec/AnyInstance:
   Enabled: false
 
-Style/FrozenStringLiteralComment:
+RSpec/AroundBlock:
+  Enabled: true
+
+RSpec/BeEql:
+  Enabled: true
+
+RSpec/BeforeAfterAll:
+  Enabled: true
+
+Capybara/CurrentPathExpectation:
+  Enabled: true
+
+Capybara/FeatureMethods:
   Enabled: false
 
-Style/PercentLiteralDelimiters:
+RSpec/ContextWording:
   Enabled: false
 
-Style/SymbolArray:
+RSpec/DescribeClass:
+  Enabled: true
+
+RSpec/DescribeMethod:
+  Enabled: true
+
+RSpec/DescribeSymbol:
+  Enabled: true
+
+RSpec/DescribedClass:
+  Enabled: true
+
+RSpec/EmptyExampleGroup:
+  Enabled: true
+
+RSpec/EmptyLineAfterSubject:
+  Enabled: true
+
+RSpec/ExampleLength:
   Enabled: false
 
-Layout/EmptyLinesAroundClassBody:
+RSpec/ExampleWording:
+  Enabled: true
+
+RSpec/ExpectActual:
+  Enabled: true
+
+RSpec/ExpectInHook:
+  Enabled: true
+
+RSpec/ExpectOutput:
+  Enabled: true
+
+RSpec/FilePath:
+  Enabled: true
+
+RSpec/Focus:
+  Enabled: true
+
+RSpec/HookArgument:
+  Enabled: true
+
+RSpec/ImplicitExpect:
+  Enabled: true
+  EnforcedStyle: should
+
+RSpec/InstanceSpy:
+  Enabled: true
+
+RSpec/InstanceVariable:
   Enabled: false
 
-Layout/EmptyLinesAroundBlockBody:
+RSpec/InvalidPredicateMatcher:
+  Enabled: true
+
+RSpec/ItBehavesLike:
+  Enabled: true
+
+RSpec/IteratedExpectation:
+  Enabled: true
+
+RSpec/LeadingSubject:
+  Enabled: true
+
+RSpec/LetBeforeExamples:
+  Enabled: true
+
+RSpec/LetSetup:
+  Enabled: true
+
+RSpec/MessageChain:
+  Enabled: true
+
+RSpec/MessageExpectation:
+  Enabled: true
+
+RSpec/MessageSpies:
+  Enabled: true
+  EnforcedStyle: receive
+
+RSpec/MultipleDescribes:
+  Enabled: true
+
+RSpec/MultipleExpectations:
   Enabled: false
 
-Layout/EmptyLinesAroundModuleBody:
+RSpec/MultipleSubjects:
+  Enabled: true
+
+RSpec/NamedSubject:
   Enabled: false
 
-Layout/SpaceBeforeBlockBraces:
-  Enabled: false
+RSpec/NestedGroups:
+  Enabled: true
+  Max: 4
 
-Layout/SpaceInsideBrackets:
-  Enabled: false
+RSpec/NotToNot:
+  Enabled: true
 
-Layout/SpaceInsideHashLiteralBraces:
-  Enabled: false
+RSpec/OverwritingSetup:
+  Enabled: true
 
-Layout/SpaceInsideBlockBraces:
-  Enabled: false
+RSpec/PredicateMatcher:
+  Enabled: true
 
-Layout/TrailingBlankLines:
-  Enabled: false
+RSpec/RepeatedDescription:
+  Enabled: true
 
-Rails/ApplicationRecord:
-  Enabled: false
+RSpec/RepeatedExample:
+  Enabled: true
+
+RSpec/ReturnFromStub:
+  Enabled: true
+
+RSpec/ScatteredLet:
+  Enabled: true
+
+RSpec/ScatteredSetup:
+  Enabled: true
+
+RSpec/SharedContext:
+  Enabled: true
+
+RSpec/SingleArgumentMessageChain:
+  Enabled: true
+
+RSpec/SubjectStub:
+  Enabled: true
+
+RSpec/VerifiedDoubles:
+  Enabled: true
+
+RSpec/VoidExpect:
+  Enabled: true

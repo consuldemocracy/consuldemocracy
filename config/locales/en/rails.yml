@@ -18,8 +18,6 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
----
 en:
   date:
     abbr_day_names:
@@ -225,4 +223,5 @@ en:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
     pm: pm
