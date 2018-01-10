@@ -6,6 +6,7 @@ class Budget < ActiveRecord::Base
   PHASES = %w(drafting accepting reviewing selecting valuating publishing_prices
               balloting reviewing_ballots finished).freeze
   ON_HOLD_PHASES = %w(reviewing valuating publishing_prices reviewing_ballots).freeze
+  PUBLISHED_PRICES_PHASES = %w(publishing_prices balloting reviewing_ballots finished).freeze
 
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
@@ -80,6 +81,10 @@ class Budget < ActiveRecord::Base
 
   def finished?
     phase == "finished"
+  end
+
+  def published_prices?
+    PUBLISHED_PRICES_PHASES.include?(phase)
   end
 
   def balloting_process?
