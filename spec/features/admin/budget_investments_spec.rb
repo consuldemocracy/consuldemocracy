@@ -47,7 +47,7 @@ feature 'Admin budget investments' do
         expect(page).to have_content(budget_investment.heading.name)
         expect(page).to have_content(budget_investment.id)
         expect(page).to have_content(budget_investment.total_votes)
-        expect(page).to_not have_link("Selected")
+        expect(page).not_to have_link("Selected")
       end
     end
 
@@ -339,9 +339,9 @@ feature 'Admin budget investments' do
 
       click_link budget_investment.title
 
-      expect(page).to_not have_link "Edit"
-      expect(page).to_not have_link "Edit classification"
-      expect(page).to_not have_link "Edit dossier"
+      expect(page).not_to have_link "Edit"
+      expect(page).not_to have_link "Edit classification"
+      expect(page).not_to have_link "Edit dossier"
       expect(page).to have_link "Create new milestone"
     end
   end
@@ -680,7 +680,7 @@ feature 'Admin budget investments' do
       header.should match(/filename="budget_investments.csv"$/)
 
       expect(page).to have_content investment2.title
-      expect(page).to_not have_content investment1.title
+      expect(page).not_to have_content investment1.title
     end
   end
 
