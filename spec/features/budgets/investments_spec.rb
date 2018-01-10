@@ -418,6 +418,64 @@ feature 'Budget Investments' do
     end
   end
 
+  context "Show Investment's price & cost explanation" do
+
+    let(:investment) { create(:budget_investment, :selected_with_price, heading: heading) }
+
+    context "When investment with price is selected" do
+
+      scenario "Price & explanation is shown when Budget is on published prices phase" do
+        Budget::PUBLISHED_PRICES_PHASES.each do |phase|
+          budget.update(phase: phase)
+          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+          expect(page).to have_content(investment.formatted_price)
+          expect(page).to have_content(investment.price_explanation)
+
+          visit budget_investments_path(budget)
+
+          expect(page).to have_content(investment.formatted_price)
+        end
+      end
+
+      scenario "Price & explanation isn't shown when Budget is not on published prices phase" do
+        (Budget::PHASES - Budget::PUBLISHED_PRICES_PHASES).each do |phase|
+          budget.update(phase: phase)
+          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+          expect(page).not_to have_content(investment.formatted_price)
+          expect(page).not_to have_content(investment.price_explanation)
+
+          visit budget_investments_path(budget)
+
+          expect(page).not_to have_content(investment.formatted_price)
+        end
+      end
+    end
+
+    context "When investment with price is unselected" do
+
+      background do
+        investment.update(selected: false)
+      end
+
+      scenario "Price & explanation isn't shown for any Budget's phase" do
+        Budget::PHASES.each do |phase|
+          budget.update(phase: phase)
+          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+          expect(page).not_to have_content(investment.formatted_price)
+          expect(page).not_to have_content(investment.price_explanation)
+
+          visit budget_investments_path(budget)
+
+          expect(page).not_to have_content(investment.formatted_price)
+        end
+      end
+    end
+
+  end
+
   scenario 'Can access the community' do
     Setting['feature.community'] = true
 
@@ -477,13 +535,6 @@ feature 'Budget Investments' do
       expect(page).not_to have_content(investment.price_explanation)
     end
 
-    scenario "Budget in balloting phase" do
-      budget.update(phase: "balloting")
-      visit budget_investment_path(budget_id: budget.id, id: investment.id)
-
-      expect(page).to have_content("Price explanation")
-      expect(page).to have_content(investment.price_explanation)
-    end
   end
 
   scenario "Show (unfeasible budget investment)" do
