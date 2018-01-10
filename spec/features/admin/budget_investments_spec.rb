@@ -701,7 +701,7 @@ feature 'Admin budget investments' do
   context "Selecting csv" do
 
     scenario "Downloading CSV file" do
-      investment = create(:budget_investment, :feasible, budget: @budget,
+      investment = create(:budget_investment, :feasible, budget: budget,
                                                          price: 100)
       valuator = create(:valuator, user: create(:user, username: 'Rachel',
                                                        email: 'rachel@val.org'))
@@ -710,7 +710,7 @@ feature 'Admin budget investments' do
       admin = create(:administrator, user: create(:user, username: 'Gema'))
       investment.update(administrator_id: admin.id)
 
-      visit admin_budget_budget_investments_path(@budget)
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
       within('#filter-subnav') { click_link 'All' }
 
       click_link "Download current selection"
@@ -736,12 +736,12 @@ feature 'Admin budget investments' do
     end
 
     scenario "Downloading CSV file with applied filter" do
-      investment1 = create(:budget_investment, :unfeasible, budget: @budget,
+      investment1 = create(:budget_investment, :unfeasible, budget: budget,
                                                             title: 'compatible')
-      investment2 = create(:budget_investment, :finished, budget: @budget,
+      investment2 = create(:budget_investment, :finished, budget: budget,
                                                           title: 'finished')
 
-      visit admin_budget_budget_investments_path(@budget)
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
       within('#filter-subnav') { click_link 'Valuation finished' }
 
       click_link "Download current selection"
