@@ -33,7 +33,8 @@
         <%= link_to investment.title,
                     admin_budget_budget_investment_path(budget_id: @budget.id,
                                                         id: investment.id,
-                                                        params: Budget::Investment.filter_params(params)) %>
+                                                        params: Budget::Investment.filter_params(params)),
+                                                        target: "_blank" %>
       </td>
       <td class="text-center">
         <%= investment.total_votes %>
