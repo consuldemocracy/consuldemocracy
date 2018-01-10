@@ -639,7 +639,10 @@ feature 'Admin budget investments' do
       admin = create(:administrator, user: create(:user, username: 'Gema'))
       investment.update(administrator_id: admin.id)
 
-      visit admin_budget_budget_investments_path(@budget, format: :csv)
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'All' }
+
+      click_link "Download current selection"
 
       header = page.response_headers['Content-Disposition']
       expect(header).to match(/^attachment/)
@@ -666,8 +669,11 @@ feature 'Admin budget investments' do
                                                             title: 'compatible')
       investment2 = create(:budget_investment, :finished, budget: @budget,
                                                           title: 'finished')
-      visit admin_budget_budget_investments_path(@budget, format: :csv,
-                                                          filter: :valuation_finished)
+
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'Valuation finished' }
+
+      click_link "Download current selection"
 
       header = page.response_headers['Content-Disposition']
       header.should match(/^attachment/)
