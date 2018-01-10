@@ -245,7 +245,7 @@ class Budget
         (budget.reviewing_ballots? || budget.finished?)
     end
 
-    def should_show_price_info?
+    def should_show_price_explanation?
       feasible? &&
         price_explanation.present? &&
         (budget.balloting? || budget.reviewing_ballots? || budget.finished?)
