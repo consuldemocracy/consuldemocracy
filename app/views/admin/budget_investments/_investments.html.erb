@@ -1,5 +1,8 @@
 <div class='relative'>
-  <%= link_to 'download current selecction',admin_budget_budget_investments_path(csv_params), class: 'advanced-search small' %>
+  <%= link_to t("admin.budget_investments.index.download_current_selection"),
+              admin_budget_budget_investments_path(csv_params),
+              class: 'advanced-search small' %>
+
   <h3><%= page_entries_info @investments %></h3>
 </div>
 
