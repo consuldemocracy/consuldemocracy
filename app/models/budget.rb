@@ -3,9 +3,9 @@ class Budget < ActiveRecord::Base
   include Measurable
   include Sluggable
 
-  PHASES = %w(drafting accepting reviewing selecting valuating balloting
-              reviewing_ballots finished).freeze
-  ON_HOLD_PHASES = %w(reviewing valuating reviewing_ballots).freeze
+  PHASES = %w(drafting accepting reviewing selecting valuating publishing_prices
+              balloting reviewing_ballots finished).freeze
+  ON_HOLD_PHASES = %w(reviewing valuating publishing_prices reviewing_ballots).freeze
 
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
@@ -27,6 +27,7 @@ class Budget < ActiveRecord::Base
   scope :reviewing, -> { where(phase: "reviewing") }
   scope :selecting, -> { where(phase: "selecting") }
   scope :valuating, -> { where(phase: "valuating") }
+  scope :publishing_prices, -> { where(phase: "publishing_prices") }
   scope :balloting, -> { where(phase: "balloting") }
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
   scope :finished, -> { where(phase: "finished") }
@@ -63,6 +64,10 @@ class Budget < ActiveRecord::Base
 
   def valuating?
     phase == "valuating"
+  end
+
+  def publishing_prices?
+    phase == "publishing_prices"
   end
 
   def balloting?
@@ -120,7 +125,7 @@ class Budget < ActiveRecord::Base
     case phase
     when 'accepting', 'reviewing'
       %w{random}
-    when 'balloting', 'reviewing_ballots'
+    when 'publishing_prices', 'balloting', 'reviewing_ballots'
       %w{random price}
     else
       %w{random confidence_score}
