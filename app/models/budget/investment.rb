@@ -240,15 +240,11 @@ class Budget
     end
 
     def should_show_price?
-      feasible? &&
-        selected? &&
-        (budget.reviewing_ballots? || budget.finished?)
+      selected? && price.present? && budget.published_prices?
     end
 
     def should_show_price_explanation?
-      feasible? &&
-        price_explanation.present? &&
-        (budget.balloting? || budget.reviewing_ballots? || budget.finished?)
+      should_show_price? && price_explanation.present?
     end
 
     def formatted_price
