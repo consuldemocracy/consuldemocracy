@@ -1366,8 +1366,6 @@ pt-BR:
     votes_for_proposal_success: Número de votos necessários para aprovar uma Proposta
   shared:
     advanced_search:
-      phase: Por status do projeto
-      phase_blank: Selecione um status
       author_type: Por categoria de autor
       author_type_blank: Selecione um categoria
       date: Por data

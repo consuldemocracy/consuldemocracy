@@ -1350,8 +1350,6 @@ fr:
       proposition
   shared:
     advanced_search:
-      phase: Par statut du projet
-      phase_blank: Sélectionner une statut
       author_type: Par catégorie d'auteur
       author_type_blank: Sélectionner une catégorie
       date: Par date

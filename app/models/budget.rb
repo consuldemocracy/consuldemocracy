@@ -49,24 +49,6 @@ class Budget < ActiveRecord::Base
     phases.published.order(:id)
   end
 
-  scope :by_date_range, ->(date_range) { where(created_at: date_range) }
-
-  def self.search(terms)
-    if terms.values.delete_if(&:blank?).empty?
-      Budget.none
-    else
-      Budget.search_by_phase(terms[:phase]).by_date_range(terms[:date_range]).all
-    end
-  end
-
-  def self.search_by_phase(phase)
-    if phase.empty?
-      Budget
-    else
-      Budget.send(phase)
-    end
-  end
-
   def description
     description_for_phase(phase)
   end

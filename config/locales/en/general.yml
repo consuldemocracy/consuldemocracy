@@ -576,8 +576,6 @@ en:
     "no": "No"
     search_results: "Search results"
     advanced_search:
-      phase: "By budget's phase"
-      phase_blank: 'Select a phase'
       author_type: 'By author category'
       author_type_blank: 'Select a category'
       date: 'By date'
