@@ -30,14 +30,19 @@
         <strong><%= investment.id %></strong>
       </td>
       <td>
-        <%= link_to investment.title, admin_budget_budget_investment_path(budget_id: @budget.id, id: investment.id, params: Budget::Investment.filter_params(params)) %>
+        <%= link_to investment.title,
+                    admin_budget_budget_investment_path(budget_id: @budget.id,
+                                                        id: investment.id,
+                                                        params: Budget::Investment.filter_params(params)) %>
       </td>
       <td class="text-center">
         <%= investment.total_votes %>
       </td>
       <td class="small">
         <% if investment.administrator.present? %>
-          <span title="<%= t('admin.budget_investments.index.assigned_admin') %>"><%= investment.administrator.name %></span>
+          <span title="<%= t('admin.budget_investments.index.assigned_admin') %>">
+            <%= investment.administrator.name %>
+          </span>
         <% else %>
           <%= t("admin.budget_investments.index.no_admin_assigned") %>
         <% end %>
@@ -62,23 +67,25 @@
       </td>
       <td class="small">
         <% if investment.selected? %>
-          <%= link_to_unless investment.budget.finished?, t("admin.budget_investments.index.selected"),
-                                                          toggle_selection_admin_budget_budget_investment_path(@budget,
-                                                                           investment,
-                                                                           filter: params[:filter],
-                                                                           page: params[:page]),
-                      method: :patch,
-                      remote: true,
-                      class: "button small expanded" %>
+          <%= link_to_unless investment.budget.finished?,
+                             t("admin.budget_investments.index.selected"),
+                             toggle_selection_admin_budget_budget_investment_path(@budget,
+                                                                                  investment,
+                                                                                  filter: params[:filter],
+                                                                                  page: params[:page]),
+                             method: :patch,
+                             remote: true,
+                             class: "button small expanded" %>
         <% elsif investment.feasible? && investment.valuation_finished? %>
-          <%= link_to_unless investment.budget.finished?, t("admin.budget_investments.index.select"),
-                                                          toggle_selection_admin_budget_budget_investment_path(@budget,
-                                                                           investment,
-                                                                           filter: params[:filter],
-                                                                           page: params[:page]),
-                      method: :patch,
-                      remote: true,
-                      class: "button small hollow expanded" %>
+          <%= link_to_unless investment.budget.finished?,
+                             t("admin.budget_investments.index.select"),
+                             toggle_selection_admin_budget_budget_investment_path(@budget,
+                                                                                  investment,
+                                                                                  filter: params[:filter],
+                                                                                  page: params[:page]),
+                             method: :patch,
+                             remote: true,
+                             class: "button small hollow expanded" %>
         <% end %>
       </td>
       <% if params[:filter] == 'selected' %>
