@@ -79,18 +79,17 @@ es:
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
       create:
-        notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
+        notice: "¡Nuevo presupuesto creado con éxito!"
       update:
-        notice: Campaña de presupuestos participativos actualizada
+        notice: Presupuesto actualizado
       edit:
-        title: Editar campaña de presupuestos participativos
-        delete: Borrar campaña
+        title: Editar presupuesto
+        delete: Eliminar presupuesto
       destroy:
-        success_notice: Campaña eliminada correctamente
-        unable_notice: No se pueden eliminar campañas con presupuestos asociados
-
+        success_notice: Presupuesto eliminado correctamente
+        unable_notice: No se puede eliminar un presupuesto con proyectos asociados
       new:
-        title: Nuevo presupuesto ciudadano
+        title: Nuevo presupuesto
       show:
         groups:
           one: 1 Grupo de partidas presupuestarias
