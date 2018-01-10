@@ -46,7 +46,7 @@ feature 'Admin officials' do
     fill_in 'name_or_email', with: @citizen.email
     click_button 'Search'
 
-    expect(page).to have_current_path(search_admin_officials_path, only_path: true)
+    expect(page).to have_current_path(search_admin_officials_path, ignore_query: true)
     expect(page).not_to have_content @official.name
 
     click_link @citizen.name
@@ -71,7 +71,7 @@ feature 'Admin officials' do
     click_link "Remove 'Official' status"
 
     expect(page).to have_content 'Details saved: the user is no longer an official'
-    expect(page).to have_current_path(admin_officials_path, only_path: true)
+    expect(page).to have_current_path(admin_officials_path, ignore_query: true)
     expect(page).not_to have_content @citizen.name
     expect(page).not_to have_content @official.name
   end
