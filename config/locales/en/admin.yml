@@ -138,6 +138,7 @@ en:
           undecided: "Undecided"
         selected: "Selected"
         select: "Select"
+        download_current_selection: "Download current selection"
         table_id: "ID"
         table_title: "Title"
         table_supports: "Supports"
