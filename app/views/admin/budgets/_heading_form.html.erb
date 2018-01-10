@@ -1,4 +1,5 @@
 <%= form_for [:admin, budget, group, heading], remote: true do |f| %>
+  <%= render 'shared/errors', resource: heading %>
   <label><%= t("admin.budgets.form.heading") %></label>
   <%= f.text_field :name,
                     label: false,
@@ -25,6 +26,4 @@
   </div>
 
   <%= f.submit t("admin.budgets.form.save_heading"), class: "button success" %>
-  
-  <div id="error_explanation"></div>
 <% end %>
