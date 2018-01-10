@@ -26,15 +26,15 @@ feature 'Votes' do
 
         within("#budget-investments") do
           within("#budget_investment_#{investment1.id}_votes") do
-            expect(page).to have_content "You have already supported this. Share it!"
+            expect(page).to have_content "You have already supported this investment project. Share it!"
           end
 
           within("#budget_investment_#{investment2.id}_votes") do
-            expect(page).not_to have_content "You have already supported this. Share it!"
+            expect(page).not_to have_content "You have already supported this investment project. Share it!"
           end
 
           within("#budget_investment_#{investment3.id}_votes") do
-            expect(page).not_to have_content "You have already supported this. Share it!"
+            expect(page).not_to have_content "You have already supported this investment project. Share it!"
           end
         end
       end
@@ -48,7 +48,7 @@ feature 'Votes' do
           find('.in-favor a').click
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
+          expect(page).to have_content "You have already supported this investment project. Share it!"
         end
       end
     end
@@ -81,7 +81,7 @@ feature 'Votes' do
           find('.in-favor a').click
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
+          expect(page).to have_content "You have already supported this investment project. Share it!"
         end
       end
     end
