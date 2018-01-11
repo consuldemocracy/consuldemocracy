@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Redirect admin to budget lists after edit https://github.com/consul/consul/pull/2284
 - Improve budget investment form https://github.com/consul/consul/pull/2280
 - Prevent edition of investments if budget is in the final phase https://github.com/consul/consul/pull/2223
+- Split 'routes.rb' file into multiple small files https://github.com/consul/consul/pull/1908
 
 ### Deprecated
 
