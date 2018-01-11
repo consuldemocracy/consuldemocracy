@@ -1,7 +1,7 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3" class="with-button">
+      <th colspan="4" class="with-button">
         <%= group.name %>
         <%= link_to t("admin.budgets.form.add_heading"), "#", class: "button float-right js-toggle-link", data: { "toggle-selector" => "#group-#{group.id}-new-heading-form" } %>
       </th>
@@ -11,7 +11,7 @@
   </thead>
   <tbody>
     <tr>
-      <td colspan="3">
+      <td colspan="4">
         <div class="callout primary">
           <%= t("admin.budgets.form.no_heading") %>
         </div>
@@ -22,6 +22,7 @@
       <th><%= t("admin.budgets.form.table_heading") %></th>
       <th><%= t("admin.budgets.form.table_amount") %></th>
       <th><%= t("admin.budgets.form.table_population") %></th>
+      <th><%= t("admin.actions.actions") %></th>
     </tr>
   </thead>
   <tbody>
@@ -29,58 +30,14 @@
 
     <!-- new heading form -->
     <tr id="group-<%= group.id %>-new-heading-form" style="display:none">
-      <td colspan="3">
-        <%= form_for [:admin, @budget, group, Budget::Heading.new], remote: true do |f| %>
-          <label><%= t("admin.budgets.form.heading") %></label>
-          <%= f.text_field :name,
-                            label: false,
-                            maxlength: 50,
-                            placeholder: t("admin.budgets.form.heading") %>
-
-          <div class="row">
-            <div class="small-12 medium-6 column">
-              <label><%= t("admin.budgets.form.amount") %></label>
-              <%= f.text_field :price,
-                                label: false,
-                                maxlength: 8,
-                                placeholder: t("admin.budgets.form.amount") %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="small-12 medium-6 column">
-              <label><%= t("admin.budgets.form.population") %></label>
-              <%= f.number_field :population,
-                                label: false,
-                                maxlength: 8,
-                                min: 1,
-                                placeholder: t("admin.budgets.form.population"),
-                                data: {toggle_focus: "population-info"} %>
-            </div>
-            <div class="small-12 medium-6 column " >
-              <div id="population-info" class="is-hidden" data-toggler="is-hidden">
-                <%= t("admin.budgets.form.population_info") %>
-              </div>
-            </div>
-          </div>
-
-          <%= f.submit t("admin.budgets.form.save_heading"), class: "button success" %>
-        <% end %>
+      <td colspan="4">
+        <%= render "admin/budgets/heading_form", group: group, budget: @budget, heading: Budget::Heading.new %>
       </td>
     </tr>
     <!-- /. new heading form -->
     <!-- headings list -->
     <% headings.each do |heading| %>
-    <tr>
-      <td>
-        <%= heading.name %>
-      </td>
-      <td>
-        <%= heading.price %>
-      </td>
-      <td>
-        <%= heading.population %>
-      </td>
-    </tr>
+      <%= render "admin/budgets/heading", group: group, budget: @budget, heading: heading %>
     <% end %>
     <!-- /. headings list -->
   </tbody>
