@@ -34,6 +34,7 @@ en:
       reviewing: Reviewing projects
       selecting: Selecting projects
       valuating: Valuating projects
+      publishing_prices: Publishing projects prices
       balloting: Balloting projects
       reviewing_ballots: Reviewing Ballots
       finished: Finished budget
@@ -151,7 +152,7 @@ en:
       ballot_lines_count: Times selected
       hide_discarded_link: Hide discarded
       show_all_link: Show all
-      price: Cost
+      price: Price
       amount_available: Available budget
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "
