@@ -8,10 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 - Added Drafting phase to Budgets https://github.com/consul/consul/pull/2285
+- Added 'Publish investments price' phase to Budgets https://github.com/consul/consul/pull/2296
 - Allow admins to destroy budgets without investments https://github.com/consul/consul/pull/2283
 - Added rubocop-rspec gem, enabled cops one by one fixing offenses.
 - Added CSV download link to budget_investments https://github.com/consul/consul/pull/2147
 - Added Capistrano task to automate maintenance mode https://github.com/consul/consul/pull/1932
+- Added actions to edit and delete a budget's headings https://github.com/consul/consul/pull/1917
 
 ### Changed
 - Updated multiple minor & patch gem versions thanks to [Depfu](https://depfu.com)
@@ -21,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Redirect admin to budget lists after edit https://github.com/consul/consul/pull/2284
 - Improve budget investment form https://github.com/consul/consul/pull/2280
 - Prevent edition of investments if budget is in the final phase https://github.com/consul/consul/pull/2223
+- Split 'routes.rb' file into multiple small files https://github.com/consul/consul/pull/1908
 
 ### Deprecated
 

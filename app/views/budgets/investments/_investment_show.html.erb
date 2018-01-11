@@ -64,7 +64,7 @@
         <p><%= investment.unfeasibility_explanation %></p>
       <% end %>
 
-      <% if investment.should_show_price_info? %>
+      <% if investment.should_show_price_explanation? %>
         <h2><%= t('budgets.investments.show.price_explanation') %></h2>
         <p><%= investment.price_explanation %></p>
       <% end %>
