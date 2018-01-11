@@ -765,11 +765,11 @@ en:
       not_voting_allowed: Voting phase is closed
     budget_investments:
       not_logged_in: You must %{signin} or %{signup} to continue.
-      not_verified: Only verified users can vote on proposals; %{verify_account}.
+      not_verified: Only verified users can vote on investment projects; %{verify_account}.
       organization: Organizations are not permitted to vote
       unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
-      different_heading_assigned: You can only support proposals in one district
+      different_heading_assigned: You can only support investment projects in one heading
   welcome:
     debates:
       description: For meeting, discussing and sharing the things that matter to us in our city.
