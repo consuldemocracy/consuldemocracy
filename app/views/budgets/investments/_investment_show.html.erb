@@ -76,6 +76,7 @@
         <p><%= investment.price_explanation %></p>
       <% end %>
 
+      <%= render 'relationable/related_content', relationable: @investment %>
     </div>
 
     <aside class="small-12 medium-3 column">
