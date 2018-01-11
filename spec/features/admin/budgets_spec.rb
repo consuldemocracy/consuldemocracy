@@ -244,5 +244,43 @@ feature 'Admin budgets' do
       end
     end
 
+    scenario 'Update heading', :js do
+      budget = create(:budget, name: 'Yearly participatory budget')
+      group  = create(:budget_group, budget: budget, name: 'Districts improvments')
+      heading = create(:budget_heading, group: group, name: "District 1")
+      heading = create(:budget_heading, group: group, name: "District 3")
+
+      visit admin_budget_path(budget)
+
+      within("#heading-#{heading.id}") do
+        click_link 'Edit'
+
+        fill_in 'budget_heading_name', with: 'District 2'
+        fill_in 'budget_heading_price', with: '10000'
+        fill_in 'budget_heading_population', with: '6000'
+        click_button 'Save heading'
+      end
+
+      expect(page).to have_content 'District 2'
+      expect(page).to have_content '10000'
+      expect(page).to have_content '6000'
+    end
+
+    scenario 'Delete heading', :js do
+      budget = create(:budget, name: 'Yearly participatory budget')
+      group  = create(:budget_group, budget: budget, name: 'Districts improvments')
+      heading = create(:budget_heading, group: group, name: "District 1")
+
+      visit admin_budget_path(budget)
+
+      expect(page).to have_content 'District 1'
+
+      within("#heading-#{heading.id}") do
+        click_link 'Delete'
+      end
+
+      expect(page).to_not have_content 'District 1'
+    end
+
   end
 end
