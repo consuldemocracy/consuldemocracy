@@ -177,6 +177,7 @@ en:
     proposal_notification: "Notification"
     spending_proposal: Spending proposal
     budget/investment: Investment
+    budget/heading: Budget Heading
     poll/shift: Shift
     poll/question/answer: Answer
     user: Account

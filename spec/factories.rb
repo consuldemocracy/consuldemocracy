@@ -228,6 +228,7 @@ FactoryBot.define do
     description_reviewing "This budget is reviewing"
     description_selecting "This budget is selecting"
     description_valuating "This budget is valuating"
+    description_publishing_prices "This budget is publishing prices"
     description_balloting "This budget is balloting"
     description_reviewing_ballots "This budget is reviewing ballots"
     description_finished "This budget is finished"
@@ -250,6 +251,10 @@ FactoryBot.define do
 
     trait :valuating do
       phase 'valuating'
+    end
+
+    trait :publishing_prices do
+      phase 'publishing_prices'
     end
 
     trait :balloting do
@@ -313,7 +318,6 @@ FactoryBot.define do
       selected true
       feasibility "feasible"
       valuation_finished true
-
     end
 
     trait :winner do
@@ -324,6 +328,12 @@ FactoryBot.define do
     trait :incompatible do
       selected
       incompatible true
+    end
+
+    trait :selected_with_price do
+      selected
+      price 1000
+      price_explanation 'Because of reasons'
     end
 
     trait :unselected do

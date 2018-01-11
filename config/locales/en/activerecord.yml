@@ -125,6 +125,10 @@ en:
         title: "Title"
         description: "Description"
         publication_date: "Publication date"
+      budget/heading:
+        name: "Heading name"
+        price: "Price"
+        population: "Population"
       comment:
         body: "Comment"
         user: "User"

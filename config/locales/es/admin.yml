@@ -141,6 +141,7 @@ es:
           undecided: "Sin decidir"
         selected: "Seleccionada"
         select: "Seleccionar"
+        download_current_selection: "Descargar selección actual"
         table_id: "ID"
         table_title: "Título"
         table_supports: "Apoyos"

@@ -47,7 +47,7 @@ feature 'Admin budget investments' do
         expect(page).to have_content(budget_investment.heading.name)
         expect(page).to have_content(budget_investment.id)
         expect(page).to have_content(budget_investment.total_votes)
-        expect(page).to_not have_link("Selected")
+        expect(page).not_to have_link("Selected")
       end
     end
 
@@ -339,9 +339,9 @@ feature 'Admin budget investments' do
 
       click_link budget_investment.title
 
-      expect(page).to_not have_link "Edit"
-      expect(page).to_not have_link "Edit classification"
-      expect(page).to_not have_link "Edit dossier"
+      expect(page).not_to have_link "Edit"
+      expect(page).not_to have_link "Edit classification"
+      expect(page).not_to have_link "Edit dossier"
       expect(page).to have_link "Create new milestone"
     end
   end
@@ -639,7 +639,10 @@ feature 'Admin budget investments' do
       admin = create(:administrator, user: create(:user, username: 'Gema'))
       investment.update(administrator_id: admin.id)
 
-      visit admin_budget_budget_investments_path(@budget, format: :csv)
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'All' }
+
+      click_link "Download current selection"
 
       header = page.response_headers['Content-Disposition']
       expect(header).to match(/^attachment/)
@@ -666,15 +669,18 @@ feature 'Admin budget investments' do
                                                             title: 'compatible')
       investment2 = create(:budget_investment, :finished, budget: @budget,
                                                           title: 'finished')
-      visit admin_budget_budget_investments_path(@budget, format: :csv,
-                                                          filter: :valuation_finished)
+
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'Valuation finished' }
+
+      click_link "Download current selection"
 
       header = page.response_headers['Content-Disposition']
       header.should match(/^attachment/)
       header.should match(/filename="budget_investments.csv"$/)
 
       expect(page).to have_content investment2.title
-      expect(page).to_not have_content investment1.title
+      expect(page).not_to have_content investment1.title
     end
   end
 
