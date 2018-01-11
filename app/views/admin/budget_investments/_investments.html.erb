@@ -1,4 +1,7 @@
-<h3><%= page_entries_info @investments %></h3>
+<div class='relative'>
+  <%= link_to 'download current selecction',admin_budget_budget_investments_path(csv_params), class: 'advanced-search small' %>
+  <h3><%= page_entries_info @investments %></h3>
+</div>
 
 <table class="table-for-mobile">
   <thead>
