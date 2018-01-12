@@ -29,7 +29,7 @@ namespace :admin do
     end
   end
 
-  ### Modified in: Routes in config/routes/custom.rb
+  ### Modified in: config/routes/custom.rb
   ### ToDo: Figure out a way to maintain Consul's routes in this file,
   #         whilst modifying them in routes/custom.rb
   #         The main problem is that routes can not be duplicated
