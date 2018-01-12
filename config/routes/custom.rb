@@ -6,21 +6,21 @@ get "presupuestos/:id/resultados", to: "budgets/results#show", as: 'custom_budge
 get "presupuestos/:id/resultados/:heading_id", to: "budgets/results#show", as: 'custom_budget_heading_result'
 
 resources :budgets, only: [:show, :index], path: 'presupuestos' do
-	resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
-	resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
-		member do
-			post :vote
-		end
-		collection { get :suggest }
-	end
-	resource :ballot, only: :show, controller: "budgets/ballots" do
-		resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
-	end
+  resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
+  resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
+    member do
+      post :vote
+    end
+    collection { get :suggest }
+  end
+  resource :ballot, only: :show, controller: "budgets/ballots" do
+    resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
+  end
 
-	resources :recommendations, controller: "budgets/recommendations", only: [:index, :new, :create, :destroy]
+  resources :recommendations, controller: "budgets/recommendations", only: [:index, :new, :create, :destroy]
 
-	resource :results, only: :show, controller: "budgets/results"
-	resource :stats, only: :show, controller: "budgets/stats"
+  resource :results, only: :show, controller: "budgets/results"
+  resource :stats, only: :show, controller: "budgets/stats"
 end
 
 get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
@@ -28,31 +28,31 @@ get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget
 get "participatory_budget/investment_projects/:id", to: "budgets/investments#redirect_to_new_url", as: 'spending_proposals_to_budget_investments'
 
 scope '/participatory_budget' do
-	resources :spending_proposals, only: [:index, :destroy], path: 'investment_projects', controller: "budgets/investments" do #[:new, :create] temporary disabled
-		get :welcome, on: :collection
-		get :stats, on: :collection
-		post :vote, on: :member
-	end
+  resources :spending_proposals, only: [:index, :destroy], path: 'investment_projects', controller: "budgets/investments" do #[:new, :create] temporary disabled
+    get :welcome, on: :collection
+    get :stats, on: :collection
+    post :vote, on: :member
+  end
 
-	resource :ballot, only: [:show] do
-		resources :ballot_lines, only: [:create, :destroy], shallow: true
-	end
+  resource :ballot, only: [:show] do
+    resources :ballot_lines, only: [:create, :destroy], shallow: true
+  end
 
-	resource :budget_poll, only: [:show, :new, :create] do
-		get :thanks, on: :collection
-	end
+  resource :budget_poll, only: [:show, :new, :create] do
+    get :thanks, on: :collection
+  end
 end
 
 ### Open Plenary
 resources :open_plenaries, only: [] do
-	get :results, on: :collection
+  get :results, on: :collection
 end
 
 ### Legislations
 resources :legacy_legislations, only: [:show], path: 'legislations'
 
 resources :annotations do
-	get :search, on: :collection
+  get :search, on: :collection
 end
 
 ### Polls
@@ -62,16 +62,16 @@ get "vota/results_2018", to: "polls#results_2018", as: 'poll_results_2018'
 
 ### Arg duplicate route, figure out how to add nvotes just in one place...
 resources :polls, only: [:show, :index], path: 'vota' do
-	member do
-		get :stats
-		get :results
-	end
-	resources :questions, controller: 'polls/questions', shallow: true do
-		post :answer, on: :member
-	end
-	resources :nvotes, only: [:new], controller: 'polls/nvotes' do
-		get :token, on: :collection
-	end
+  member do
+    get :stats
+    get :results
+  end
+  resources :questions, controller: 'polls/questions', shallow: true do
+    post :answer, on: :member
+  end
+  resources :nvotes, only: [:new], controller: 'polls/nvotes' do
+    get :token, on: :collection
+  end
 end
 post "/polls/nvotes/success" => "polls/nvotes#success", as: :polls_nvotes_success
 ####
@@ -81,21 +81,21 @@ get "/verifica", to: "verification/letter#edit"
 
 ### Admin
 namespace :admin do
-	resources :probes, only: [:index, :show]
+  resources :probes, only: [:index, :show]
 
-	#Probably duplicate stats... in config/routes/custom.rb
-	resource :stats, only: :show do
-		get :spending_proposals, on: :collection
-		get :budgets, on: :collection
-		get :budget_supporting, on: :member
-		get :budget_balloting, on: :member
-		get :graph, on: :member
-		get :proposal_notifications, on: :collection
-		get :direct_messages, on: :collection
-		get :redeemable_codes, on: :collection
-		get :user_invites, on: :collection
-		get :polls, on: :collection
-	end
+  #Probably duplicate stats... in config/routes/custom.rb
+  resource :stats, only: :show do
+    get :spending_proposals, on: :collection
+    get :budgets, on: :collection
+    get :budget_supporting, on: :member
+    get :budget_balloting, on: :member
+    get :graph, on: :member
+    get :proposal_notifications, on: :collection
+    get :direct_messages, on: :collection
+    get :redeemable_codes, on: :collection
+    get :user_invites, on: :collection
+    get :polls, on: :collection
+  end
 end
 
 ### Delegation
@@ -104,12 +104,12 @@ resources :representatives, only: [:create, :destroy]
 
 ### Probes
 resources :probes, only: [:show] do
-	post :selection,  on: :collection
+  post :selection,  on: :collection
 
-	resources :probe_options, only: :show do
-		post :discard, on: :member
-		post :restore_discarded, on: :collection
-	end
+  resources :probe_options, only: :show do
+    post :discard, on: :member
+    post :restore_discarded, on: :collection
+  end
 end
 
 ### Human Rights
@@ -117,32 +117,32 @@ resources :human_rights, only: [:index, :show]
 
 ### Volunteers
 resource :volunteer_poll, only: [:new, :create] do
-	get :thanks, on: :collection
+  get :thanks, on: :collection
 end
 
 ### Officing DUPLICATE, commenting out for now... it includes all the letter voting...
 #namespace :officing do
-#	resources :polls, only: [:index] do
-#		get :final, on: :collection
+# resources :polls, only: [:index] do
+#   get :final, on: :collection
 #
-#		resources :results, only: [:new, :create, :index]
+#   resources :results, only: [:new, :create, :index]
 #
-#		resources :nvotes, only: :new do
-#			get :thanks, on: :collection
-#		end
-#	end
+#   resources :nvotes, only: :new do
+#     get :thanks, on: :collection
+#   end
+# end
 #
-#	resource :booth, controller: "booth", only: [:new, :create]
-#	resource :residence, controller: "residence", only: [:new, :create]
-#	resources :letters, only: [:new, :create, :show] do
-#		get :verify_name, on: :member
-#	end
-#	resources :voters, only: [:new, :create] do
-#		get :vote_with_tablet, on: :member
-#	end
+# resource :booth, controller: "booth", only: [:new, :create]
+# resource :residence, controller: "residence", only: [:new, :create]
+# resources :letters, only: [:new, :create, :show] do
+#   get :verify_name, on: :member
+# end
+# resources :voters, only: [:new, :create] do
+#   get :vote_with_tablet, on: :member
+# end
 #
-#	resource :session, only: [:new, :create]
-#	root to: "dashboard#index"
+# resource :session, only: [:new, :create]
+# root to: "dashboard#index"
 #end
 
 ### Named Routes
