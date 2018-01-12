@@ -1,5 +1,6 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
   include Flaggable
   include Taggable
   include Conflictable
@@ -48,6 +49,10 @@ class Debate < ActiveRecord::Base
   visitable # Ahoy will automatically assign visit_id on create
 
   attr_accessor :link_required
+
+  def url
+    debate_path(self)
+  end
 
   def self.recommendations(user)
     tagged_with(user.interests, any: true)
