@@ -50,7 +50,7 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#welcome'
   get '/consul.json', to: "installation#details"
 
-  resources :debates do
+  #resources :debates do
   #   member do
   #     post :vote
   #     put :flag
