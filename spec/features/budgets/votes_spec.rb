@@ -26,15 +26,15 @@ feature 'Votes' do
 
         within("#budget-investments") do
           within("#budget_investment_#{investment1.id}_votes") do
-            expect(page).to have_content "You have already supported this. Share it!"
+            expect(page).to have_content "You have already supported this investment project. Share it!"
           end
 
           within("#budget_investment_#{investment2.id}_votes") do
-            expect(page).to_not have_content "You have already supported this. Share it!"
+            expect(page).not_to have_content "You have already supported this investment project. Share it!"
           end
 
           within("#budget_investment_#{investment3.id}_votes") do
-            expect(page).to_not have_content "You have already supported this. Share it!"
+            expect(page).not_to have_content "You have already supported this investment project. Share it!"
           end
         end
       end
@@ -48,7 +48,7 @@ feature 'Votes' do
           find('.in-favor a').click
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
+          expect(page).to have_content "You have already supported this investment project. Share it!"
         end
       end
     end
@@ -70,7 +70,7 @@ feature 'Votes' do
           find('.in-favor a').click
           expect(page).to have_content "1 support"
 
-          expect(page).to_not have_selector ".in-favor a"
+          expect(page).not_to have_selector ".in-favor a"
         end
       end
 
@@ -81,7 +81,7 @@ feature 'Votes' do
           find('.in-favor a').click
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
+          expect(page).to have_content "You have already supported this investment project. Share it!"
         end
       end
     end
@@ -94,13 +94,13 @@ feature 'Votes' do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within("#budget_investment_#{investment.id}") do
-        expect(page).to_not have_css("budget_investment_#{investment.id}_votes")
+        expect(page).not_to have_css("budget_investment_#{investment.id}_votes")
       end
 
       visit budget_investment_path(budget, investment)
 
       within("#budget_investment_#{investment.id}") do
-        expect(page).to_not have_css("budget_investment_#{investment.id}_votes")
+        expect(page).not_to have_css("budget_investment_#{investment.id}_votes")
       end
     end
   end

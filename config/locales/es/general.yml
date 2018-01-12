@@ -177,6 +177,7 @@ es:
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
     budget/investment: la propuesta de inversión
+    budget/heading: la partida presupuestaria
     poll/shift: el turno
     poll/question/answer: la respuesta
     user: la cuenta
@@ -763,11 +764,11 @@ es:
       not_voting_allowed: El periodo de votación está cerrado.
     budget_investments:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
-      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      not_verified: Los proyectos de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
       organization: Las organizaciones no pueden votar.
-      unfeasible: No se pueden votar propuestas inviables.
+      unfeasible: No se pueden votar proyectos inviables.
       not_voting_allowed: El periodo de votación está cerrado.
-      different_heading_assigned: Sólo puedes apoyar propuestas en un distrito
+      different_heading_assigned: Sólo puedes apoyar proyectos de inversión de una partida
   welcome:
     debates:
       description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.

@@ -177,7 +177,7 @@ feature 'Proposal Notifications' do
       visit user_path(author)
 
       within("#proposal_#{proposal.id}") do
-        expect(page).to_not have_link "Send message"
+        expect(page).not_to have_link "Send message"
       end
     end
 
@@ -189,7 +189,7 @@ feature 'Proposal Notifications' do
       login_as(user)
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
-      expect(current_path).to eq(root_path)
+      expect(page).to have_current_path(root_path)
       expect(page).to have_content("You do not have permission to carry out the action")
     end
 
@@ -339,7 +339,7 @@ feature 'Proposal Notifications' do
       notification_for_user = Notification.where(user: user).first
       expect(page).to have_css ".notification", count: 1
       expect(page).to have_content "This resource is not available anymore"
-      expect(page).to_not have_xpath "//a[@href='#{notification_path(notification_for_user)}']"
+      expect(page).not_to have_xpath "//a[@href='#{notification_path(notification_for_user)}']"
     end
 
     scenario "Proposal retired by author", :js do

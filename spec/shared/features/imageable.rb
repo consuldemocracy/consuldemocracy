@@ -40,7 +40,9 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
 
   context "Destroy" do
 
-    let!(:image) { create(:image, imageable: imageable, user: imageable.author) }
+    background do
+      create(:image, imageable: imageable, user: imageable.author)
+    end
 
     scenario "Should show success notice after successfull deletion by an admin" do
       login_as administrator

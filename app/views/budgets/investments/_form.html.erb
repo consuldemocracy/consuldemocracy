@@ -16,10 +16,6 @@
       <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
     </div>
 
-    <div class="small-12 column">
-      <%= f.text_field :external_url %>
-    </div>
-
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
         <%= render 'images/nested_image', imageable: @investment, f: f %>
@@ -45,7 +41,8 @@
     <% end %>
 
     <div class="small-12 column">
-      <%= f.text_field :location %>
+      <%= f.label :location, t("budgets.investments.form.location") %>
+      <%= f.text_field :location, label: false %>
     </div>
 
     <div class="small-12 column">

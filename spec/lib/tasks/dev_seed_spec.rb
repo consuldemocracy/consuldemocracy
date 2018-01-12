@@ -13,6 +13,6 @@ describe 'rake db:dev_seed' do
   end
 
   it 'seeds the database without errors' do
-    expect { run_rake_task }.to_not raise_error
+    expect { run_rake_task }.not_to raise_error
   end
 end

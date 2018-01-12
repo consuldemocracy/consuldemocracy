@@ -29,10 +29,12 @@ en:
         unselected_title: Investments not selected for balloting phase
         unselected: See investments not selected for balloting phase
     phase:
+      drafting: Draft (Not visible to the public)
       accepting: Accepting projects
       reviewing: Reviewing projects
       selecting: Selecting projects
       valuating: Valuating projects
+      publishing_prices: Publishing projects prices
       balloting: Balloting projects
       reviewing_ballots: Reviewing Ballots
       finished: Finished budget
@@ -58,6 +60,7 @@ en:
         map_location: "Map location"
         map_location_instructions: "Navigate the map to the location and place the marker."
         map_remove_marker: "Remove map marker"
+        location: "Location additional info"
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
@@ -111,13 +114,14 @@ en:
         milestones_tab: Milestones
         no_milestones: Don't have defined milestones
         milestone_publication_date: "Published %{publication_date}"
+        author: Author
       wrong_price_format: Only integer numbers
       investment:
         add: Vote
         already_added: You have already added this investment project
-        already_supported: You have already supported this. Share it!
+        already_supported: You have already supported this investment project. Share it!
         support_title: Support this project
-        confirm_group: "You can only support investments in one district. If you continue you cannot change your decision. Are you sure?"
+        confirm_group: "You can only support investments in one heading. If you continue you cannot change your decision. Are you sure?"
         supports:
           one: 1 support
           other: "%{count} supports"
@@ -128,8 +132,10 @@ en:
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
         check_ballot_link: "check my ballot"
+        price: "This heading have a budget of"
     progress_bar:
-      available: "Available: "
+      assigned: "You have assigned: "
+      available: "Available budget: "
     show:
       group: Group
       phase: Actual phase
@@ -147,7 +153,7 @@ en:
       ballot_lines_count: Times selected
       hide_discarded_link: Hide discarded
       show_all_link: Show all
-      price: Cost
+      price: Price
       amount_available: Available budget
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "

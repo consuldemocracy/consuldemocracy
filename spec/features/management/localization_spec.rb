@@ -28,21 +28,21 @@ feature 'Localization' do
     expect(page).to have_text('Management')
   end
 
-  # scenario 'Changing the locale', :js do
-  #   visit management_root_path
-  #   expect(page).to have_content('Language')
-  #
-  #   select('Español', from: 'locale-switcher')
-  #   expect(page).to have_content('Idioma')
-  #   expect(page).to_not have_content('Language')
-  #   expect(page).to have_select('locale-switcher', selected: 'Español')
-  # end
+  scenario 'Changing the locale', :js do
+    visit management_root_path
+    expect(page).to have_content('Language')
+
+    select('Español', from: 'locale-switcher')
+    expect(page).to have_content('Idioma')
+    expect(page).not_to have_content('Language')
+    expect(page).to have_select('locale-switcher', selected: 'Español')
+  end
 
   scenario 'Locale switcher not present if only one locale' do
-    expect(I18n).to receive(:available_locales).and_return([:en])
+    allow(I18n).to receive(:available_locales).and_return([:en])
 
     visit management_root_path
-    expect(page).to_not have_content('Language')
-    expect(page).to_not have_css('div.locale')
+    expect(page).not_to have_content('Language')
+    expect(page).not_to have_css('div.locale')
   end
 end

@@ -1,7 +1,6 @@
 class Budget
   class Investment < ActiveRecord::Base
-    #TODO: Flaggable
-    include Flaggable
+    require 'csv'
     include Measurable
     include Sanitizable
     include Taggable
@@ -51,8 +50,8 @@ class Budget
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
-    scope :sort_by_random,           -> { reorder("RANDOM()") }
-    #scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f&.positive? ? seed : 1}, budget_investments.id") }
+    #scope :sort_by_random,           -> { reorder("RANDOM()") }
+    scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f.nonzero? ? seed.to_f : 1}, budget_investments.id") }
     scope :sort_by_created_at, -> {reorder(:created_at)}
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
@@ -270,15 +269,11 @@ class Budget
     end
 
     def should_show_price?
-      feasible? &&
-        selected? &&
-        (budget.reviewing_ballots? || budget.finished?)
+      selected? && price.present? && budget.published_prices?
     end
 
-    def should_show_price_info?
-      feasible? &&
-        price_explanation.present? &&
-        (budget.balloting? || budget.reviewing_ballots? || budget.finished?)
+    def should_show_price_explanation?
+      should_show_price? && price_explanation.present?
     end
 
     def formatted_price
@@ -300,18 +295,58 @@ class Budget
       investments
     end
 
+    def self.to_csv(investments, options = {})
+      attrs = [I18n.t("admin.budget_investments.index.table_id"),
+               I18n.t("admin.budget_investments.index.table_title"),
+               I18n.t("admin.budget_investments.index.table_supports"),
+               I18n.t("admin.budget_investments.index.table_admin"),
+               I18n.t("admin.budget_investments.index.table_valuator"),
+               I18n.t("admin.budget_investments.index.table_geozone"),
+               I18n.t("admin.budget_investments.index.table_feasibility"),
+               I18n.t("admin.budget_investments.index.table_valuation_finished"),
+               I18n.t("admin.budget_investments.index.table_selection")]
+      csv_string = CSV.generate(options) do |csv|
+        csv << attrs
+        investments.each do |investment|
+          id = investment.id.to_s
+          title = investment.title
+          total_votes = investment.total_votes.to_s
+          admin = if investment.administrator.present?
+                    investment.administrator.name
+                  else
+                    I18n.t("admin.budget_investments.index.no_admin_assigned")
+                  end
+          vals = if investment.valuators.empty?
+                   I18n.t("admin.budget_investments.index.no_valuators_assigned")
+                 else
+                   investment.valuators.collect(&:description_or_name).join(', ')
+                 end
+          heading_name = investment.heading.name
+          price_string = "admin.budget_investments.index.feasibility"\
+                         ".#{investment.feasibility}"
+          price = I18n.t(price_string, price: investment.formatted_price)
+          valuation_finished = investment.valuation_finished? ?
+                                         I18n.t('shared.yes') :
+                                         I18n.t('shared.no')
+          csv << [id, title, total_votes, admin, vals, heading_name, price,
+                  valuation_finished]
+        end
+      end
+      csv_string
+    end
+
     def update_cached_ballots_up
       self.cached_ballots_up = lines.size
       save
     end
+
+    private
 
     def self.regenerate_cached_ballots_up
       includes(:lines).each do |i|
         i.update_cached_ballots_up
       end
     end
-
-    private
 
     def set_denormalized_ids
       self.group_id ||= self.heading.try(:group_id)
@@ -328,7 +363,6 @@ class Budget
       max = Budget::Investment.description_max_length
       errors.add(:description, I18n.t('errors.messages.too_long', count: max)) if text.length > max
     end
-
 
   end
 end

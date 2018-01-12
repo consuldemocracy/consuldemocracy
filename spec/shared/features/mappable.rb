@@ -2,17 +2,16 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
   include ActionView::Helpers
 
-  let!(:user) { create(:user, :level_two) }
+  let!(:user)         { create(:user, :level_two) }
+  let!(:arguments)    { {} }
+  let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
+  let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
   before do
     Setting['feature.map'] = true
   end
 
   describe "At #{mappable_new_path}" do
-
-    let!(:arguments)    { {} }
-    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
-    let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 
@@ -91,7 +90,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       check "#{mappable_factory_name}_skip_map"
       send("submit_#{mappable_factory_name}_form")
 
-      expect(page).to_not have_content "Map location can't be blank"
+      expect(page).not_to have_content "Map location can't be blank"
     end
 
     scenario 'Toggle map', :js do
@@ -100,8 +99,8 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       check "#{mappable_factory_name}_skip_map"
 
-      expect(page).to_not have_css(".map")
-      expect(page).to_not have_content("Remove map marker")
+      expect(page).not_to have_css(".map")
+      expect(page).not_to have_content("Remove map marker")
 
       uncheck "#{mappable_factory_name}_skip_map"
 
@@ -112,9 +111,6 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
   end
 
   describe "At #{mappable_edit_path}" do
-
-    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
-    let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
     before { skip } if mappable_edit_path.blank?
 
@@ -183,7 +179,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       click_link "Remove map marker"
       click_on "Save changes"
 
-      expect(page).to_not have_content "Map location can't be blank"
+      expect(page).not_to have_content "Map location can't be blank"
     end
 
     scenario 'No need to skip map on update' do
@@ -193,16 +189,12 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       click_link "Remove map marker"
       click_on "Save changes"
 
-      expect(page).to_not have_content "Map location can't be blank"
+      expect(page).not_to have_content "Map location can't be blank"
     end
 
   end
 
   describe "At #{mappable_show_path}" do
-
-    let!(:arguments)    { {} }
-    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
-    let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 

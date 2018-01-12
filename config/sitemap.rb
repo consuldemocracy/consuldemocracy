@@ -28,11 +28,6 @@ SitemapGenerator::Sitemap.create do
     add proposal_path(proposal), lastmod: proposal.updated_at
   end
 
-  add spending_proposals_path, priority: 0.7, changefreq: "daily"
-  SpendingProposal.find_each do |spending_proposal|
-    add spending_proposal_path(spending_proposal), lastmod: spending_proposal.updated_at
-  end
-
   add budgets_path, priority: 0.7, changefreq: "daily"
   Budget.find_each do |budget|
     add budget_path(budget), lastmod: budget.updated_at

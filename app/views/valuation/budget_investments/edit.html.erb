@@ -103,10 +103,6 @@
 
 <%= safe_html_with_links @investment.description %>
 
-<% if @investment.external_url.present? %>
-  <p><%= text_with_links @investment.external_url %></p>
-<% end %>
-
 <h2><%= t("valuation.budget_investments.show.info") %></h2>
 
 <p><strong><%= t("valuation.budget_investments.show.by") %>:</strong>

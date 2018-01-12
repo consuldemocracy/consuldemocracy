@@ -40,7 +40,7 @@ describe 'Paranoid methods' do
 
       debate.restore
 
-      expect(debate.reload.confirmed_hide?).to_not be
+      expect(debate.reload.confirmed_hide?).not_to be
     end
   end
 

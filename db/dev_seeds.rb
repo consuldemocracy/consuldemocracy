@@ -278,8 +278,8 @@ section "Creating Successful Proposals" do
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     proposal = Proposal.create!(author: author,
-                                title: Faker::Lorem.sentence(3).truncate(60),
-                                question: Faker::Lorem.sentence(3) + "?",
+                                title: Faker::Lorem.sentence(4).truncate(60),
+                                question: Faker::Lorem.sentence(6) + "?",
                                 summary: Faker::Lorem.sentence(3),
                                 responsible_name: Faker::Name.name,
                                 external_url: Faker::Internet.url,
@@ -438,7 +438,6 @@ section "Creating Investments" do
       group: heading.group,
       budget: heading.group.budget,
       title: Faker::Lorem.sentence(3).truncate(60),
-      external_url: Faker::Internet.url,
       description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
@@ -468,7 +467,6 @@ section "Winner Investments" do
       group: heading.group,
       budget: heading.group.budget,
       title: Faker::Lorem.sentence(3).truncate(60),
-      external_url: Faker::Internet.url,
       description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: "feasible",
@@ -537,41 +535,29 @@ end
 section "Creating polls" do
 
   Poll.create(name: "Current Poll",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "current-poll",
               starts_at: 7.days.ago,
               ends_at:   7.days.from_now,
               geozone_restricted: false)
 
   Poll.create(name: "Current Poll Geozone Restricted",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "current-poll-geozone-restricted",
               starts_at: 5.days.ago,
               ends_at:   5.days.from_now,
               geozone_restricted: true,
               geozones: Geozone.reorder("RANDOM()").limit(3))
 
   Poll.create(name: "Incoming Poll",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "incoming-poll",
               starts_at: 1.month.from_now,
               ends_at:   2.months.from_now)
 
   Poll.create(name: "Recounting Poll",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "recounting-poll",
               starts_at: 15.days.ago,
               ends_at:   2.days.ago)
 
   Poll.create(name: "Expired Poll without Stats & Results",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "expired-poll-without-stats-and-results",
               starts_at: 2.months.ago,
               ends_at:   1.month.ago)
 
   Poll.create(name: "Expired Poll with Stats & Results",
-              # TODO: Uncomment when Poll get slugs
-              # slug: "expired-poll-with-stats-and-results",
               starts_at: 2.months.ago,
               ends_at:   1.month.ago,
               results_enabled: true,

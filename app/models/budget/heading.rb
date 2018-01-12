@@ -21,7 +21,11 @@ class Budget
     end
 
     def name_exists_in_budget_headings
-      group.budget.headings.where(name: name).any?
+      group.budget.headings.where(name: name).where.not(id: id).any?
+    end
+
+    def can_be_deleted?
+      investments.empty?
     end
 
   end

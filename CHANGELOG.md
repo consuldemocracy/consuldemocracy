@@ -4,7 +4,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/consul/consul/compare/v0.11...consul:master)
+## [Unreleased](https://github.com/consul/consul/compare/v0.12...consul:master)
+
+### Added
+- Added Drafting phase to Budgets https://github.com/consul/consul/pull/2285
+- Added 'Publish investments price' phase to Budgets https://github.com/consul/consul/pull/2296
+- Allow admins to destroy budgets without investments https://github.com/consul/consul/pull/2283
+- Added rubocop-rspec gem, enabled cops one by one fixing offenses.
+- Added CSV download link to budget_investments https://github.com/consul/consul/pull/2147
+- Added Capistrano task to automate maintenance mode https://github.com/consul/consul/pull/1932
+- Added actions to edit and delete a budget's headings https://github.com/consul/consul/pull/1917
+
+### Changed
+- Updated multiple minor & patch gem versions thanks to [Depfu](https://depfu.com)
+- Updated rubocop version and ignored all cops by default
+- Removed legislation section arrows and duplicate html tag  thanks to [xarlybovi](https://github.com/xarlybovi) https://github.com/consul/consul/issues/1704
+- Display proposal and investment image when sharing in social networks https://github.com/consul/consul/pull/2202
+- Redirect admin to budget lists after edit https://github.com/consul/consul/pull/2284
+- Improve budget investment form https://github.com/consul/consul/pull/2280
+- Prevent edition of investments if budget is in the final phase https://github.com/consul/consul/pull/2223
+- Split 'routes.rb' file into multiple small files https://github.com/consul/consul/pull/1908
+
+### Deprecated
+
+### Removed
+- Spending Proposals urls from sitemap, that model is getting entirely deprecated soon.
+
+### Fixed
+
+### Security
+
+## [0.12.0](https://github.com/consul/consul/compare/v0.11...v0.12) - 2018-01-03
 
 ### Added
 - Added Images to Budget Investment's Milestones https://github.com/consul/consul/pull/2186
@@ -13,7 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - New setting `feature.allow_images` to allow upload and show images for both (proposals and budget investment projects). Set it manually through console with `Setting['feature.allow_images'] = true`
 - Related Content feature. Now Debates & Proposals can be related https://github.com/consul/consul/issues/1164
 - Map validations https://github.com/consul/consul/pull/2207
-- Added spec for 'rake db:dev_seed' taskhttps://github.com/consul/consul/pull/2201
+- Added spec for 'rake db:dev_seed' task https://github.com/consul/consul/pull/2201
 - Adds timestamps to polls https://github.com/consul/consul/pull/2180 (Run `rake polls:initialize_timestamps` to initialize attributes created_at and updated_at with the current time for all existing polls, or manually through console set correct values)
 
 ### Changed
@@ -23,16 +53,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improved generic error message https://github.com/consul/consul/pull/2217
 - Improved Sitemap for SEO https://github.com/consul/consul/pull/2215
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 - Notifications for hidden resources https://github.com/consul/consul/pull/2172
 - Notifications exceptions https://github.com/consul/consul/pull/2187
 - Fixed map location update https://github.com/consul/consul/pull/2213
-
-### Security
 
 ## [0.11.0](https://github.com/consul/consul/compare/v0.10...v0.11) - 2017-12-05
 
@@ -170,7 +194,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rails 4.2.6
 - Ruby 2.2.3
 
-[Unreleased]: https://github.com/consul/consul/compare/v0.10...consul:master
+[Unreleased]: https://github.com/consul/consul/compare/v0.12...consul:master
+[0.12.0]: https://github.com/consul/consul/compare/v0.11...v0.12
+[0.11.0]: https://github.com/consul/consul/compare/v0.10...v0.11
 [0.10.0]: https://github.com/consul/consul/compare/v0.9...v0.10
 [0.9.0]: https://github.com/consul/consul/compare/v0.8...v0.9
 [0.8.0]: https://github.com/consul/consul/compare/v0.7...v0.8

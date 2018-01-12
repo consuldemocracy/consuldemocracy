@@ -3,9 +3,6 @@ require 'sessions_helper'
 
 feature 'Budget Investments' do
 
-  context "Concerns" do
-    it_behaves_like 'notifiable in-app', Budget::Investment
-  end
 
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
@@ -19,6 +16,10 @@ feature 'Budget Investments' do
 
   after do
     Setting['feature.allow_images'] = nil
+  end
+
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Budget::Investment
   end
 
   scenario 'Index' do
@@ -36,7 +37,7 @@ feature 'Budget Investments' do
       within('#budget-investments') do
         expect(page).to have_content investment.title
         expect(page).to have_css("a[href='#{budget_investment_path(budget_id: budget.id, id: investment.id)}']", text: investment.title)
-        expect(page).to_not have_content(unfeasible_investment.title)
+        expect(page).not_to have_content(unfeasible_investment.title)
       end
     end
   end
@@ -49,7 +50,7 @@ feature 'Budget Investments' do
     visit budget_investments_path(budget, heading_id: heading.id)
 
     within("#budget_investment_#{investment.id}") do
-      expect(page).to_not have_css("div.with-image")
+      expect(page).not_to have_css("div.with-image")
     end
     within("#budget_investment_#{investment_with_image.id}") do
       expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
@@ -75,7 +76,7 @@ feature 'Budget Investments' do
 
         expect(page).to have_content(investment1.title)
         expect(page).to have_content(investment2.title)
-        expect(page).to_not have_content(investment3.title)
+        expect(page).not_to have_content(investment3.title)
       end
     end
 
@@ -95,9 +96,9 @@ feature 'Budget Investments' do
         expect(page).to have_css('.budget-investment', count: 1)
 
         expect(page).to have_content(investment1.title)
-        expect(page).to_not have_content(investment2.title)
-        expect(page).to_not have_content(investment3.title)
-        expect(page).to_not have_content(investment4.title)
+        expect(page).not_to have_content(investment2.title)
+        expect(page).not_to have_content(investment3.title)
+        expect(page).not_to have_content(investment4.title)
       end
     end
 
@@ -134,7 +135,7 @@ feature 'Budget Investments' do
   end
 
   context("Orders") do
-    before(:each) { budget.update(phase: 'selecting') }
+    before { budget.update(phase: 'selecting') }
 
     scenario "Default order is random" do
       per_page = Kaminari.config.default_per_page
@@ -146,7 +147,7 @@ feature 'Budget Investments' do
       visit budget_investments_path(budget, heading_id: heading.id)
       new_order = eq(all(".budget-investment h3").collect {|i| i.text })
 
-      expect(order).to_not eq(new_order)
+      expect(order).not_to eq(new_order)
     end
 
     scenario "Random order after another order" do
@@ -162,7 +163,7 @@ feature 'Budget Investments' do
       visit budget_investments_path(budget, heading_id: heading.id)
       new_order = eq(all(".budget-investment h3").collect {|i| i.text })
 
-      expect(order).to_not eq(new_order)
+      expect(order).not_to eq(new_order)
     end
 
     scenario 'Random order maintained with pagination', :js do
@@ -203,17 +204,20 @@ feature 'Budget Investments' do
     end
 
     scenario 'Proposals are ordered by confidence_score', :js do
-      create(:budget_investment, heading: heading, title: 'Best proposal').update_column(:confidence_score, 10)
-      create(:budget_investment, heading: heading, title: 'Worst proposal').update_column(:confidence_score, 2)
-      create(:budget_investment, heading: heading, title: 'Medium proposal').update_column(:confidence_score, 5)
+      best_proposal = create(:budget_investment, heading: heading, title: 'Best proposal')
+      best_proposal.update_column(:confidence_score, 10)
+      worst_proposal = create(:budget_investment, heading: heading, title: 'Worst proposal')
+      worst_proposal.update_column(:confidence_score, 2)
+      medium_proposal = create(:budget_investment, heading: heading, title: 'Medium proposal')
+      medium_proposal.update_column(:confidence_score, 5)
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link 'highest rated'
       expect(page).to have_selector('a.active', text: 'highest rated')
 
       within '#budget-investments' do
-        expect('Best proposal').to appear_before('Medium proposal')
-        expect('Medium proposal').to appear_before('Worst proposal')
+        expect(best_proposal.title).to appear_before(medium_proposal.title)
+        expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
       expect(current_url).to include('order=confidence_score')
@@ -221,7 +225,7 @@ feature 'Budget Investments' do
     end
 
     scenario 'Each user as a different and consistent random budget investment order', :js do
-      12.times { create(:budget_investment, heading: heading) }
+      (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
         visit budget_investments_path(budget, heading: heading)
@@ -263,7 +267,7 @@ feature 'Budget Investments' do
   end
 
   context 'Phase I - Accepting' do
-    before(:each) { budget.update(phase: 'accepting') }
+    before { budget.update(phase: 'accepting') }
 
     scenario 'Create with invisible_captcha honeypot field' do
       login_as(author)
@@ -279,7 +283,7 @@ feature 'Budget Investments' do
 
       expect(page.status_code).to eq(200)
       expect(page.html).to be_empty
-      expect(current_path).to eq(budget_investments_path(budget_id: budget.id))
+      expect(page).to have_current_path(budget_investments_path(budget_id: budget.id))
     end
 
     scenario 'Create budget investment too fast' do
@@ -296,7 +300,7 @@ feature 'Budget Investments' do
       click_button 'Create Investment'
 
       expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
-      expect(current_path).to eq(new_budget_investment_path(budget_id: budget.id))
+      expect(page).to have_current_path(new_budget_investment_path(budget_id: budget.id))
     end
 
     scenario 'Create' do
@@ -307,7 +311,6 @@ feature 'Budget Investments' do
       select  'Health: More hospitals', from: 'budget_investment_heading_id'
       fill_in 'budget_investment_title', with: 'Build a skyscraper'
       fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
-      fill_in 'budget_investment_external_url', with: 'http://http://skyscraperpage.com/'
       fill_in 'budget_investment_location', with: 'City center'
       fill_in 'budget_investment_organization_name', with: 'T.I.A.'
       fill_in 'budget_investment_tag_list', with: 'Towers'
@@ -318,7 +321,6 @@ feature 'Budget Investments' do
       expect(page).to have_content 'Investment created successfully'
       expect(page).to have_content 'Build a skyscraper'
       expect(page).to have_content 'I want to live in a high tower over the clouds'
-      expect(page).to have_content 'http://http://skyscraperpage.com/'
       expect(page).to have_content 'City center'
       expect(page).to have_content 'T.I.A.'
       expect(page).to have_content 'Towers'
@@ -366,7 +368,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "item"
 
         within('div#js-suggest') do
-          expect(page).to_not have_content 'You are seeing'
+          expect(page).not_to have_content 'You are seeing'
         end
       end
 
@@ -381,7 +383,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "search"
 
         within('div#js-suggest') do
-          expect(page).to_not have_content 'You are seeing'
+          expect(page).not_to have_content 'You are seeing'
         end
       end
     end
@@ -391,10 +393,10 @@ feature 'Budget Investments' do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      expect(page).to_not have_link('Check my ballot')
-      expect(page).to_not have_css('#progress_bar')
+      expect(page).not_to have_link('Check my ballot')
+      expect(page).not_to have_css('#progress_bar')
       within('#sidebar') do
-        expect(page).to_not have_content('My ballot')
+        expect(page).not_to have_content('My ballot')
       end
     end
   end
@@ -414,6 +416,64 @@ feature 'Budget Investments' do
     within("#investment_code") do
       expect(page).to have_content(investment.id)
     end
+  end
+
+  context "Show Investment's price & cost explanation" do
+
+    let(:investment) { create(:budget_investment, :selected_with_price, heading: heading) }
+
+    context "When investment with price is selected" do
+
+      scenario "Price & explanation is shown when Budget is on published prices phase" do
+        Budget::PUBLISHED_PRICES_PHASES.each do |phase|
+          budget.update(phase: phase)
+          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+          expect(page).to have_content(investment.formatted_price)
+          expect(page).to have_content(investment.price_explanation)
+
+          visit budget_investments_path(budget)
+
+          expect(page).to have_content(investment.formatted_price)
+        end
+      end
+
+      scenario "Price & explanation isn't shown when Budget is not on published prices phase" do
+        (Budget::PHASES - Budget::PUBLISHED_PRICES_PHASES).each do |phase|
+          budget.update(phase: phase)
+          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+          expect(page).not_to have_content(investment.formatted_price)
+          expect(page).not_to have_content(investment.price_explanation)
+
+          visit budget_investments_path(budget)
+
+          expect(page).not_to have_content(investment.formatted_price)
+        end
+      end
+    end
+
+    context "When investment with price is unselected" do
+
+      background do
+        investment.update(selected: false)
+      end
+
+      scenario "Price & explanation isn't shown for any Budget's phase" do
+        Budget::PHASES.each do |phase|
+          budget.update(phase: phase)
+          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+          expect(page).not_to have_content(investment.formatted_price)
+          expect(page).not_to have_content(investment.price_explanation)
+
+          visit budget_investments_path(budget)
+
+          expect(page).not_to have_content(investment.formatted_price)
+        end
+      end
+    end
+
   end
 
   scenario 'Can access the community' do
@@ -470,18 +530,11 @@ feature 'Budget Investments' do
       budget.update(phase: "selecting")
       visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
-      expect(page).to_not have_content("Unfeasibility explanation")
-      expect(page).to_not have_content("Price explanation")
-      expect(page).to_not have_content(investment.price_explanation)
+      expect(page).not_to have_content("Unfeasibility explanation")
+      expect(page).not_to have_content("Price explanation")
+      expect(page).not_to have_content(investment.price_explanation)
     end
 
-    scenario "Budget in balloting phase" do
-      budget.update(phase: "balloting")
-      visit budget_investment_path(budget_id: budget.id, id: investment.id)
-
-      expect(page).to have_content("Price explanation")
-      expect(page).to have_content(investment.price_explanation)
-    end
   end
 
   scenario "Show (unfeasible budget investment)" do
@@ -578,7 +631,7 @@ feature 'Budget Investments' do
       visit user_path(user)
 
       within("#budget_investment_#{investment.id}") do
-        expect(page).to_not have_link "Delete"
+        expect(page).not_to have_link "Delete"
       end
     end
 
@@ -633,7 +686,7 @@ feature 'Budget Investments' do
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
         within("#budget_investment_#{carabanchel_investment.id}") do
-          expect(page).to_not have_css(".in-favor a[data-confirm]")
+          expect(page).not_to have_css(".in-favor a[data-confirm]")
         end
       end
 
@@ -739,9 +792,11 @@ feature 'Budget Investments' do
     end
 
     scenario 'Order by cost (only when balloting)' do
-      create(:budget_investment, :selected, heading: heading, title: 'Build a nice house', price: 1000).update_column(:confidence_score, 10)
-      create(:budget_investment, :selected, heading: heading, title: 'Build an ugly house', price: 1000).update_column(:confidence_score, 5)
-      create(:budget_investment, :selected, heading: heading, title: 'Build a skyscraper', price: 20000)
+      mid_investment = create(:budget_investment, :selected, heading: heading, title: 'Build a nice house', price: 1000)
+      mid_investment.update_column(:confidence_score, 10)
+      low_investment = create(:budget_investment, :selected, heading: heading, title: 'Build an ugly house', price: 1000)
+      low_investment.update_column(:confidence_score, 5)
+      high_investment = create(:budget_investment, :selected, heading: heading, title: 'Build a skyscraper', price: 20000)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -749,8 +804,8 @@ feature 'Budget Investments' do
       expect(page).to have_selector('a.active', text: 'by price')
 
       within '#budget-investments' do
-        expect('Build a skyscraper').to appear_before('Build a nice house')
-        expect('Build a nice house').to appear_before('Build an ugly house')
+        expect(high_investment.title).to appear_before(mid_investment.title)
+        expect(mid_investment.title).to appear_before(low_investment.title)
       end
 
       expect(current_url).to include('order=price')
@@ -824,8 +879,8 @@ feature 'Budget Investments' do
         expect(page).to have_content sp2.title
         expect(page).to have_content sp2.price
 
-        expect(page).to_not have_content sp3.title
-        expect(page).to_not have_content sp3.price
+        expect(page).not_to have_content sp3.title
+        expect(page).not_to have_content sp3.price
       end
 
       within("#budget_group_#{group.id}") do
@@ -835,8 +890,8 @@ feature 'Budget Investments' do
         expect(page).to have_content sp5.title
         expect(page).to have_content "€10,000"
 
-        expect(page).to_not have_content sp6.title
-        expect(page).to_not have_content "€100,000"
+        expect(page).not_to have_content sp6.title
+        expect(page).not_to have_content "€100,000"
       end
     end
 
@@ -864,9 +919,9 @@ feature 'Budget Investments' do
         expect(page).to have_css('.budget-investment', count: 1)
 
         expect(page).to have_content(investment1.title)
-        expect(page).to_not have_content(investment2.title)
-        expect(page).to_not have_content(investment3.title)
-        expect(page).to_not have_content(investment4.title)
+        expect(page).not_to have_content(investment2.title)
+        expect(page).not_to have_content(investment3.title)
+        expect(page).not_to have_content(investment4.title)
       end
     end
 
@@ -905,7 +960,7 @@ feature 'Budget Investments' do
       visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unselected")
 
       expect(page).to have_content investment.title
-      expect(page).to_not have_link("Vote")
+      expect(page).not_to have_link("Vote")
     end
 
     scenario "Do not display vote button for unselected investments in show" do
@@ -914,7 +969,7 @@ feature 'Budget Investments' do
       visit budget_investment_path(budget, investment)
 
       expect(page).to have_content investment.title
-      expect(page).to_not have_link("Vote")
+      expect(page).not_to have_link("Vote")
     end
 
     feature "Reclassification" do

@@ -69,7 +69,7 @@ feature "Custom Pages" do
         expect(page).to have_title("Custom page")
         expect(page).to have_selector("h1", text: "Custom page")
         expect(page).to have_content("Text for new custom page")
-        expect(page).to_not have_content("Print this info")
+        expect(page).not_to have_content("Print this info")
       end
 
       scenario "Listed in more information page" do
@@ -95,7 +95,7 @@ feature "Custom Pages" do
 
         visit more_info_path
 
-        expect(page).to_not have_content("Another custom page")
+        expect(page).not_to have_content("Another custom page")
 
         visit custom_page.url
 
@@ -114,7 +114,7 @@ feature "Custom Pages" do
 
         visit more_info_path
 
-        expect(page).to_not have_content("Ce texte est en français")
+        expect(page).not_to have_content("Ce texte est en français")
 
         visit custom_page.url
 

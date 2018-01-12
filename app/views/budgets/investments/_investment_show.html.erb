@@ -1,15 +1,17 @@
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: budget_investments_path(investment),
+            social_title: investment.title,
+            social_description: investment.description,
+            twitter_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil),
+            og_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil) %>
+<% end %>
+
 <section class="budget-investment-show" id="<%= dom_id(investment) %>">
 
   <div class="row">
     <div class="small-12 medium-9 column">
       <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
-
-      <% if can_destroy_image?(investment) %>
-        <%= link_to t("images.remove_image"),
-                    image_path(investment.image, from: request.url),
-                    method: :delete,
-                    class: 'button hollow float-right' %>
-      <% end %>
 
       <h1><%= investment.title %></h1>
       <div class="budget-investment-info">
@@ -29,6 +31,14 @@
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
       </p>
 
+      <%= safe_html_with_links investment.description.html_safe %>
+
+      <% if feature?(:map) && map_location_available?(@investment.map_location) %>
+        <div class="margin">
+          <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
+        </div>
+      <% end %>
+
       <% if investment.location.present? %>
         <p>
           <%= t("budgets.investments.show.location_html", location: investment.location) %>
@@ -43,14 +53,6 @@
 
       <%= render 'shared/tags', taggable: investment %>
 
-      <%= safe_html_with_links investment.description.html_safe %>
-
-      <% if feature?(:map) && map_location_available?(@investment.map_location) %>
-        <div class="margin">
-          <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
-        </div>
-      <% end %>
-
       <% if investment.external_url.present? %>
         <div class="document-link">
           <%= text_with_links investment.external_url %>
@@ -62,7 +64,7 @@
         <p><%= investment.unfeasibility_explanation %></p>
       <% end %>
 
-      <% if investment.should_show_price_info? %>
+      <% if investment.should_show_price_explanation? %>
         <h2><%= t('budgets.investments.show.price_explanation') %></h2>
         <p><%= investment.price_explanation %></p>
       <% end %>
@@ -70,6 +72,19 @@
     </div>
 
     <aside class="small-12 medium-3 column">
+      <% if can_destroy_image?(investment) %>
+        <div class="sidebar-divider"></div>
+        <h2><%= t("budgets.investments.show.author") %></h2>
+        <div class="show-actions-menu">
+          <%= link_to image_path(investment.image, from: request.url),
+                      method: :delete,
+                      class: 'button hollow alert expanded' do %>
+              <span class="icon-image"></span>
+              <%= t("images.remove_image") %>
+          <% end %>
+        </div>
+      <% end %>
+
       <% if investment.should_show_aside? %>
         <% if investment.should_show_votes? %>
           <div class="sidebar-divider"></div>
@@ -88,8 +103,10 @@
           <h2><%= t("budgets.investments.show.supports") %></h2>
           <div class="text-center">
             <span class="total-supports">
+              <strong>
                 <%= t("budgets.investments.investment.supports",
                     count: investment.total_votes) %>
+              </strong>
             </span>
           </div>
         <% elsif investment.should_show_ballots? %>

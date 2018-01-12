@@ -1,5 +1,7 @@
 <%= back_link_to admin_budgets_path %>
 
-<h2><%= t("admin.budgets.edit.title") %></h2>
+<%= button_to t("admin.budgets.edit.delete"), admin_budget_path(@budget), method: :delete, class: "button hollow alert float-right small" %>
+
+<h2 class="inline-block"><%= t("admin.budgets.edit.title") %></h2>
 
 <%= render '/admin/budgets/form' %>

@@ -57,6 +57,6 @@ feature "Admin custom images" do
       click_link "Delete"
     end
 
-    expect(page).to_not have_css("img[src*='social_media_icon.png']")
+    expect(page).not_to have_css("img[src*='social_media_icon.png']")
   end
 end

@@ -38,7 +38,7 @@ feature 'Admin booths assignments' do
       end
 
       expect(page).to have_content 'There are no booths assigned to this poll.'
-      expect(page).to_not have_content booth.name
+      expect(page).not_to have_content booth.name
 
       fill_in 'search-booths', with: booth.name
       click_button 'Search'
@@ -64,7 +64,7 @@ feature 'Admin booths assignments' do
         click_link 'Booths (1)'
       end
 
-      expect(page).to_not have_content 'There are no booths assigned to this poll.'
+      expect(page).not_to have_content 'There are no booths assigned to this poll.'
       expect(page).to have_content booth.name
     end
 
@@ -163,7 +163,7 @@ feature 'Admin booths assignments' do
       click_link 'Officers'
       within('#officers_list') do
         expect(page).to have_content officer.name
-        expect(page).to_not have_content officer_2.name
+        expect(page).not_to have_content officer_2.name
       end
     end
 
