@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 - Added Drafting phase to Budgets https://github.com/consul/consul/pull/2285
+- Added 'Publish investments price' phase to Budgets https://github.com/consul/consul/pull/2296
 - Allow admins to destroy budgets without investments https://github.com/consul/consul/pull/2283
 - Added rubocop-rspec gem, enabled cops one by one fixing offenses.
 - Added CSV download link to budget_investments https://github.com/consul/consul/pull/2147

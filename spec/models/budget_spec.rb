@@ -55,6 +55,9 @@ describe Budget do
       budget.phase = "valuating"
       expect(budget).to be_valuating
 
+      budget.phase = "publishing_prices"
+      expect(budget).to be_publishing_prices
+
       budget.phase = "balloting"
       expect(budget).to be_balloting
 
@@ -81,6 +84,9 @@ describe Budget do
       budget.phase = "valuating"
       expect(budget).to be_on_hold
 
+      budget.phase = "publishing_prices"
+      expect(budget).to be_on_hold
+
       budget.phase = "balloting"
       expect(budget).not_to be_on_hold
 
@@ -105,6 +111,9 @@ describe Budget do
       expect(budget).not_to be_balloting_or_later
 
       budget.phase = "valuating"
+      expect(budget).not_to be_balloting_or_later
+
+      budget.phase = "publishing_prices"
       expect(budget).not_to be_balloting_or_later
 
       budget.phase = "balloting"
@@ -142,6 +151,8 @@ describe Budget do
       expect(budget.investments_orders).to eq(['random'])
     end
     it "is random and price when ballotting and reviewing ballots" do
+      budget.phase = 'publishing_prices'
+      expect(budget.investments_orders).to eq(['random', 'price'])
       budget.phase = 'balloting'
       expect(budget.investments_orders).to eq(['random', 'price'])
       budget.phase = 'reviewing_ballots'
