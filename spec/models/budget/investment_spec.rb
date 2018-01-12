@@ -210,37 +210,73 @@ describe Budget::Investment do
     end
   end
 
-  describe "#should_show_price_info?" do
-    it "returns true for feasibles if phase is balloting or later and price_explanation is present" do
-      ["balloting", "reviewing_ballots", "finished"].each do |phase|
-        budget = create(:budget, phase: phase)
-        investment = create(:budget_investment, :feasible, budget: budget, price_explanation: "price explanation")
+  describe "#should_show_price?" do
+    let(:budget) { create(:budget, :publishing_prices) }
+    let(:investment) do
+      create(:budget_investment, :selected, budget: budget)
+    end
 
-        expect(investment.should_show_price_info?).to eq(true)
+    it "returns true for selected investments which budget's phase is publishing_prices or later" do
+      Budget::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update(phase: phase)
+
+        expect(investment.should_show_price?).to eq(true)
       end
     end
 
     it "returns false in any other phase" do
-      (Budget::PHASES - ["balloting", "reviewing_ballots", "finished"]).each do |phase|
-        budget = create(:budget, phase: phase)
-        investment = create(:budget_investment, :feasible, budget: budget, price_explanation: "price explanation")
+      (Budget::PHASES - Budget::PUBLISHED_PRICES_PHASES).each do |phase|
+        budget.update(phase: phase)
 
-        expect(investment.should_show_price_info?).to eq(false)
+        expect(investment.should_show_price?).to eq(false)
       end
     end
 
-    it "returns false if investment is unfeasible" do
-      budget = create(:budget, phase: "balloting")
-      investment = create(:budget_investment, :unfeasible, budget: budget, price_explanation: "price explanation")
+    it "returns false if investment is not selected" do
+      investment.selected = false
 
-      expect(investment.should_show_price_info?).to eq(false)
+      expect(investment.should_show_price?).to eq(false)
     end
 
-    it "returns false if price_explanation is blank" do
-      budget = create(:budget, phase: "balloting")
-      investment = create(:budget_investment, :unfeasible, budget: budget, price_explanation: "")
+    it "returns false if price is not present" do
+      investment.price = nil
 
-      expect(investment.should_show_price_info?).to eq(false)
+      expect(investment.should_show_price?).to eq(false)
+    end
+  end
+
+  describe "#should_show_price_explanation?" do
+    let(:budget) { create(:budget, :publishing_prices) }
+    let(:investment) do
+      create(:budget_investment, :selected, budget: budget, price_explanation: "because of reasons")
+    end
+
+    it "returns true for selected with price_explanation & budget in publishing_prices or later" do
+      Budget::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update(phase: phase)
+
+        expect(investment.should_show_price_explanation?).to eq(true)
+      end
+    end
+
+    it "returns false in any other phase" do
+      (Budget::PHASES - Budget::PUBLISHED_PRICES_PHASES).each do |phase|
+        budget.update(phase: phase)
+
+        expect(investment.should_show_price_explanation?).to eq(false)
+      end
+    end
+
+    it "returns false if investment is not selected" do
+      investment.selected = false
+
+      expect(investment.should_show_price_explanation?).to eq(false)
+    end
+
+    it "returns false if price_explanation is not present" do
+      investment.price_explanation = ""
+
+      expect(investment.should_show_price_explanation?).to eq(false)
     end
   end
 

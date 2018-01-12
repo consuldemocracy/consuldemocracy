@@ -3,8 +3,11 @@ class Budget < ActiveRecord::Base
   include Measurable
   include Sluggable
 
-  PHASES = %w(drafting accepting reviewing selecting valuating balloting
-              reviewing_ballots finished).freeze
+  PHASES = %w(drafting accepting reviewing selecting valuating publishing_prices
+              balloting reviewing_ballots finished).freeze
+  ON_HOLD_PHASES = %w(reviewing valuating publishing_prices reviewing_ballots).freeze
+  PUBLISHED_PRICES_PHASES = %w(publishing_prices balloting reviewing_ballots finished).freeze
+
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
   validates :name, presence: true, uniqueness: true
@@ -20,17 +23,18 @@ class Budget < ActiveRecord::Base
 
   before_validation :sanitize_descriptions
 
-  scope :on_hold,   -> { where(phase: %w(reviewing valuating reviewing_ballots")) }
-  scope :drafting,  -> { where(phase: "drafting") }
+  scope :on_hold, -> { where(phase: ON_HOLD_PHASES) }
+  scope :drafting, -> { where(phase: "drafting") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
   scope :selecting, -> { where(phase: "selecting") }
   scope :valuating, -> { where(phase: "valuating") }
+  scope :publishing_prices, -> { where(phase: "publishing_prices") }
   scope :balloting, -> { where(phase: "balloting") }
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
-  scope :finished,  -> { where(phase: "finished") }
+  scope :finished, -> { where(phase: "finished") }
 
-  scope :current,   -> { where.not(phase: "finished") }
+  scope :current, -> { where.not(phase: "finished") }
 
   def to_param
     name.parameterize
@@ -68,6 +72,10 @@ class Budget < ActiveRecord::Base
     phase == "valuating"
   end
 
+  def publishing_prices?
+    phase == "publishing_prices"
+  end
+
   def balloting?
     phase == "balloting"
   end
@@ -80,6 +88,10 @@ class Budget < ActiveRecord::Base
     phase == "finished"
   end
 
+  def published_prices?
+    PUBLISHED_PRICES_PHASES.include?(phase)
+  end
+
   def balloting_process?
     balloting? || reviewing_ballots?
   end
@@ -89,7 +101,7 @@ class Budget < ActiveRecord::Base
   end
 
   def on_hold?
-    reviewing? || valuating? || reviewing_ballots?
+    ON_HOLD_PHASES.include?(phase)
   end
 
   def current?
@@ -123,7 +135,7 @@ class Budget < ActiveRecord::Base
     case phase
     when 'accepting', 'reviewing'
       %w{random}
-    when 'balloting', 'reviewing_ballots'
+    when 'publishing_prices', 'balloting', 'reviewing_ballots'
       %w{random price}
     else
       %w{random confidence_score}
