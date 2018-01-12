@@ -60,6 +60,8 @@ get 'procesos',  to: 'legislation/processes#index', as: 'processes'
 get "vota/stats_2018", to: "polls#stats_2018", as: 'poll_stats_2018'
 get "vota/results_2018", to: "polls#results_2018", as: 'poll_results_2018'
 
+resources :answers, only: [:index, :new, :create]
+
 ### Arg duplicate route, figure out how to add nvotes just in one place...
 resources :polls, only: [:show, :index], path: 'vota' do
   member do
@@ -96,6 +98,16 @@ namespace :admin do
     get :user_invites, on: :collection
     get :polls, on: :collection
   end
+
+  resources :spending_proposals, only: [:index, :show, :edit, :update] do
+    member do
+      patch :assign_admin
+      patch :assign_valuators
+    end
+
+    get :summary, on: :collection
+    get :results, on: :collection
+  end
 end
 
 ### Delegation
@@ -120,30 +132,30 @@ resource :volunteer_poll, only: [:new, :create] do
   get :thanks, on: :collection
 end
 
-### Officing DUPLICATE, commenting out for now... it includes all the letter voting...
-#namespace :officing do
-# resources :polls, only: [:index] do
-#   get :final, on: :collection
-#
-#   resources :results, only: [:new, :create, :index]
-#
-#   resources :nvotes, only: :new do
-#     get :thanks, on: :collection
-#   end
-# end
-#
-# resource :booth, controller: "booth", only: [:new, :create]
-# resource :residence, controller: "residence", only: [:new, :create]
-# resources :letters, only: [:new, :create, :show] do
-#   get :verify_name, on: :member
-# end
-# resources :voters, only: [:new, :create] do
-#   get :vote_with_tablet, on: :member
-# end
-#
-# resource :session, only: [:new, :create]
-# root to: "dashboard#index"
-#end
+### Officing
+namespace :officing do
+ resources :polls, only: [:index] do
+   get :final, on: :collection
+
+   resources :results, only: [:new, :create, :index]
+
+   resources :nvotes, only: :new do
+     get :thanks, on: :collection
+   end
+ end
+
+ resource :booth, controller: "booth", only: [:new, :create]
+ resource :residence, controller: "residence", only: [:new, :create]
+ resources :letters, only: [:new, :create, :show] do
+   get :verify_name, on: :member
+ end
+ resources :voters, only: [:new, :create] do
+   get :vote_with_tablet, on: :member
+ end
+
+ resource :session, only: [:new, :create]
+ root to: "dashboard#index"
+end
 
 ### Named Routes
 get 'jornada-presupuestos-participativos', to: 'budget_polls#new'

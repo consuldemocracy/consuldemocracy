@@ -29,14 +29,20 @@ namespace :admin do
     end
   end
 
-  resources :spending_proposals, only: [:index, :show, :edit, :update] do
-    member do
-      patch :assign_admin
-      patch :assign_valuators
-    end
+  ### Modified in: Routes in config/routes/custom.rb
+  ### ToDo: Figure out a way to maintain Consul's routes in this file,
+  #         whilst modifying them in routes/custom.rb
+  #         The main problem is that routes can not be duplicated
+  ###
 
-    get :summary, on: :collection
-  end
+  #resources :spending_proposals, only: [:index, :show, :edit, :update] do
+  #  member do
+  #    patch :assign_admin
+  #    patch :assign_valuators
+  #  end
+  #
+  #  get :summary, on: :collection
+  #end
 
   resources :budgets do
     member do
