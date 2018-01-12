@@ -286,14 +286,6 @@ class Budget
       investments
     end
 
-    def self.by_heading(heading_id)
-      heading_ids = [heading_id]
-      if Budget::Heading.where(slug: heading_id).exists?
-        heading_ids << Budget::Heading.where(slug: heading_id).first.id.to_s
-      end
-      where(heading_id: heading_ids)
-    end
-
     def self.to_csv(investments, options = {})
       attrs = [I18n.t("admin.budget_investments.index.table_id"),
                I18n.t("admin.budget_investments.index.table_title"),
@@ -332,6 +324,14 @@ class Budget
         end
       end
       csv_string
+    end
+
+    def self.by_heading(heading_id)
+      heading_ids = [heading_id]
+      if Budget::Heading.where(slug: heading_id).exists?
+        heading_ids << Budget::Heading.where(slug: heading_id).first.id.to_s
+      end
+      where(heading_id: heading_ids)
     end
 
     private
