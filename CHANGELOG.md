@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added CSV download link to budget_investments https://github.com/consul/consul/pull/2147
 - Added Capistrano task to automate maintenance mode https://github.com/consul/consul/pull/1932
 - Added actions to edit and delete a budget's headings https://github.com/consul/consul/pull/1917
+- Split 'routes.rb' file into multiple small files https://github.com/consul/consul/pull/1908
 
 ### Changed
 - Updated multiple minor & patch gem versions thanks to [Depfu](https://depfu.com)
