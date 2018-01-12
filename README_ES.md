@@ -33,7 +33,7 @@ El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://gith
 
 Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler` y PostgreSQL (9.4 o superior).
 
-```bash
+```
 git clone https://github.com/ayuntamientomadrid/consul.git
 cd consul
 bundle install

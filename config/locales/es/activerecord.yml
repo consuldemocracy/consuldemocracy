@@ -170,6 +170,10 @@ es:
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
         image: "Imagen descriptiva de la propuesta de inversión"
         image_title: "Título de la imagen"
+      budget/heading:
+        name: "Nombre de la partida"
+        price: "Cantidad"
+        population: "Población"
       budget/investment/milestone:
         title: "Título"
         description: "Descripción"
