@@ -36,6 +36,21 @@ feature 'Admin budget investments' do
       expect(page).to have_content(budget_investment.total_votes)
     end
 
+    scenario 'If budget is finished do not show "Selected" button' do
+      finished_budget = create(:budget, :finished)
+      budget_investment = create(:budget_investment, budget: finished_budget, cached_votes_up: 77)
+
+      visit admin_budget_budget_investments_path(budget_id: finished_budget.id)
+
+      within("#budget_investment_#{budget_investment.id}") do
+        expect(page).to have_content(budget_investment.title)
+        expect(page).to have_content(budget_investment.heading.name)
+        expect(page).to have_content(budget_investment.id)
+        expect(page).to have_content(budget_investment.total_votes)
+        expect(page).not_to have_link("Selected")
+      end
+    end
+
     scenario 'Displaying assignments info' do
       budget_investment1 = create(:budget_investment, budget: budget)
       budget_investment2 = create(:budget_investment, budget: budget)
@@ -334,35 +349,55 @@ feature 'Admin budget investments' do
 
   end
 
-  scenario 'Show' do
-    administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
-    valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
-    budget_investment = create(:budget_investment,
-                                price: 1234,
-                                price_first_year: 1000,
-                                feasibility: "unfeasible",
-                                unfeasibility_explanation: 'It is impossible',
-                                administrator: administrator,
-                                organization_name: "ACME")
-    budget_investment.valuators << valuator
+  context 'Show' do
+    background do
+      @administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
+    end
 
-    visit admin_budget_budget_investments_path(budget_investment.budget)
+    scenario 'Show the investment details' do
+      valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
+      budget_investment = create(:budget_investment,
+                                  price: 1234,
+                                  price_first_year: 1000,
+                                  feasibility: "unfeasible",
+                                  unfeasibility_explanation: 'It is impossible',
+                                  administrator: @administrator)
+      budget_investment.valuators << valuator
 
-    click_link budget_investment.title
+      visit admin_budget_budget_investments_path(budget_investment.budget)
 
-    expect(page).to have_content(budget_investment.title)
-    expect(page).to have_content(budget_investment.description)
-    expect(page).to have_content(budget_investment.author.name)
-    expect(page).to have_content(budget_investment.heading.name)
-    expect(page).to have_content('1234')
-    expect(page).to have_content('1000')
-    expect(page).to have_content('Unfeasible')
-    expect(page).to have_content('It is impossible')
-    expect(page).to have_content('Ana (ana@admins.org)')
-    expect(page).to have_content('Representing: ACME')
+      click_link budget_investment.title
 
-    within('#assigned_valuators') do
-      expect(page).to have_content('Rachel (rachel@valuators.org)')
+      expect(page).to have_content(budget_investment.title)
+      expect(page).to have_content(budget_investment.description)
+      expect(page).to have_content(budget_investment.author.name)
+      expect(page).to have_content(budget_investment.heading.name)
+      expect(page).to have_content('1234')
+      expect(page).to have_content('1000')
+      expect(page).to have_content('Unfeasible')
+      expect(page).to have_content('It is impossible')
+      expect(page).to have_content('Ana (ana@admins.org)')
+
+      within('#assigned_valuators') do
+        expect(page).to have_content('Rachel (rachel@valuators.org)')
+      end
+    end
+
+    scenario "If budget is finished, investment cannot be edited" do
+      # Only milestones can be managed
+
+      finished_budget = create(:budget, :finished)
+      budget_investment = create(:budget_investment,
+                                  budget: finished_budget,
+                                  administrator: @administrator)
+      visit admin_budget_budget_investments_path(budget_investment.budget)
+
+      click_link budget_investment.title
+
+      expect(page).not_to have_link "Edit"
+      expect(page).not_to have_link "Edit classification"
+      expect(page).not_to have_link "Edit dossier"
+      expect(page).to have_link "Create new milestone"
     end
   end
 
@@ -661,7 +696,63 @@ feature 'Admin budget investments' do
         expect(page).not_to have_link('Selected')
       end
     end
+  end
 
+  context "Selecting csv" do
+
+    scenario "Downloading CSV file" do
+      investment = create(:budget_investment, :feasible, budget: budget,
+                                                         price: 100)
+      valuator = create(:valuator, user: create(:user, username: 'Rachel',
+                                                       email: 'rachel@val.org'))
+      investment.valuators << valuator
+
+      admin = create(:administrator, user: create(:user, username: 'Gema'))
+      investment.update(administrator_id: admin.id)
+
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
+      within('#filter-subnav') { click_link 'All' }
+
+      click_link "Download current selection"
+
+      header = page.response_headers['Content-Disposition']
+      expect(header).to match(/^attachment/)
+      expect(header).to match(/filename="budget_investments.csv"$/)
+
+      valuators = investment.valuators.collect(&:description_or_name).join(', ')
+      feasibility_string = "admin.budget_investments.index"\
+                           ".feasibility.#{investment.feasibility}"
+      price = I18n.t(feasibility_string, price: investment.formatted_price)
+
+      expect(page).to have_content investment.title
+      expect(page).to have_content investment.total_votes.to_s
+      expect(page).to have_content investment.id.to_s
+      expect(page).to have_content investment.heading.name
+
+      expect(page).to have_content investment.administrator.name
+      expect(page).to have_content valuators
+      expect(page).to have_content price
+      expect(page).to have_content I18n.t('shared.no')
+    end
+
+    scenario "Downloading CSV file with applied filter" do
+      investment1 = create(:budget_investment, :unfeasible, budget: budget,
+                                                            title: 'compatible')
+      investment2 = create(:budget_investment, :finished, budget: budget,
+                                                          title: 'finished')
+
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
+      within('#filter-subnav') { click_link 'Valuation finished' }
+
+      click_link "Download current selection"
+
+      header = page.response_headers['Content-Disposition']
+      header.should match(/^attachment/)
+      header.should match(/filename="budget_investments.csv"$/)
+
+      expect(page).to have_content investment2.title
+      expect(page).not_to have_content investment1.title
+    end
   end
 
   context "Mark as visible to valuators" do

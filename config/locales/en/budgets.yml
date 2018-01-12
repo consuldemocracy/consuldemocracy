@@ -29,10 +29,12 @@ en:
         unselected_title: Investments not selected for balloting phase
         unselected: See investments not selected for balloting phase
     phase:
+      drafting: Draft (Not visible to the public)
       accepting: Accepting projects
       reviewing: Reviewing projects
       selecting: Selecting projects
       valuating: Valuating projects
+      publishing_prices: Publishing projects prices
       balloting: Balloting projects
       reviewing_ballots: Reviewing Ballots
       finished: Finished budget
@@ -60,6 +62,7 @@ en:
         map_location: "Map location"
         map_location_instructions: "Navigate the map to the location and place the marker."
         map_remove_marker: "Remove map marker"
+        location: "Location additional info"
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
@@ -149,7 +152,7 @@ en:
       ballot_lines_count: Times selected
       hide_discarded_link: Hide discarded
       show_all_link: Show all
-      price: Cost
+      price: Price
       amount_available: Available budget
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "

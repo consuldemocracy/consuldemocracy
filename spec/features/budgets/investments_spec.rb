@@ -326,7 +326,6 @@ feature 'Budget Investments' do
       select  'Health: More hospitals', from: 'budget_investment_heading_id'
       fill_in 'budget_investment_title', with: 'Build a skyscraper'
       fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
-      fill_in 'budget_investment_external_url', with: 'http://http://skyscraperpage.com/'
       fill_in 'budget_investment_location', with: 'City center'
       fill_in 'budget_investment_organization_name', with: 'T.I.A.'
       fill_in 'budget_investment_tag_list', with: 'Towers'
@@ -337,7 +336,6 @@ feature 'Budget Investments' do
       expect(page).to have_content 'Investment created successfully'
       expect(page).to have_content 'Build a skyscraper'
       expect(page).to have_content 'I want to live in a high tower over the clouds'
-      expect(page).to have_content 'http://http://skyscraperpage.com/'
       expect(page).to have_content 'City center'
       expect(page).to have_content 'T.I.A.'
       expect(page).to have_content 'Towers'
@@ -436,6 +434,64 @@ feature 'Budget Investments' do
     end
   end
 
+  context "Show Investment's price & cost explanation" do
+
+    let(:investment) { create(:budget_investment, :selected_with_price, heading: heading) }
+
+    context "When investment with price is selected" do
+
+      scenario "Price & explanation is shown when Budget is on published prices phase" do
+        Budget::PUBLISHED_PRICES_PHASES.each do |phase|
+          budget.update(phase: phase)
+          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+          expect(page).to have_content(investment.formatted_price)
+          expect(page).to have_content(investment.price_explanation)
+
+          visit budget_investments_path(budget)
+
+          expect(page).to have_content(investment.formatted_price)
+        end
+      end
+
+      scenario "Price & explanation isn't shown when Budget is not on published prices phase" do
+        (Budget::PHASES - Budget::PUBLISHED_PRICES_PHASES).each do |phase|
+          budget.update(phase: phase)
+          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+          expect(page).not_to have_content(investment.formatted_price)
+          expect(page).not_to have_content(investment.price_explanation)
+
+          visit budget_investments_path(budget)
+
+          expect(page).not_to have_content(investment.formatted_price)
+        end
+      end
+    end
+
+    context "When investment with price is unselected" do
+
+      background do
+        investment.update(selected: false)
+      end
+
+      scenario "Price & explanation isn't shown for any Budget's phase" do
+        Budget::PHASES.each do |phase|
+          budget.update(phase: phase)
+          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+          expect(page).not_to have_content(investment.formatted_price)
+          expect(page).not_to have_content(investment.price_explanation)
+
+          visit budget_investments_path(budget)
+
+          expect(page).not_to have_content(investment.formatted_price)
+        end
+      end
+    end
+
+  end
+
   scenario 'Can access the community' do
     Setting['feature.community'] = true
 
@@ -495,13 +551,6 @@ feature 'Budget Investments' do
       expect(page).not_to have_content(investment.price_explanation)
     end
 
-    scenario "Budget in balloting phase" do
-      budget.update(phase: "balloting")
-      visit budget_investment_path(budget_id: budget.id, id: investment.id)
-
-      expect(page).to have_content("Price explanation")
-      expect(page).to have_content(investment.price_explanation)
-    end
   end
 
   scenario "Show (unfeasible budget investment)" do

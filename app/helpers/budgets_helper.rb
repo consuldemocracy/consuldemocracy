@@ -1,5 +1,11 @@
 module BudgetsHelper
 
+  def csv_params
+    csv_params = params.clone.merge(format: :csv).symbolize_keys
+    csv_params.delete(:page)
+    csv_params
+  end
+
   def budget_phases_select_options
     Budget::PHASES.map { |ph| [ t("budgets.phase.#{ph}"), ph ] }
   end
@@ -39,9 +45,14 @@ module BudgetsHelper
     Budget::Investment.tags_on(:valuation).order(:name).select(:name).distinct
   end
 
+  def budget_published?(budget)
+    !budget.drafting? || current_user&.administrator?
+  end
+
   def display_support_alert?(investment)
     current_user &&
     !current_user.voted_in_group?(investment.group) &&
     investment.group.headings.count > 1
   end
+
 end

@@ -29,10 +29,12 @@ es:
         unselected_title: Propuestas no seleccionadas para la votación final
         unselected: Ver las propuestas no seleccionadas para la votación final
     phase:
+      drafting: Borrador (No visible para el público)
       accepting: Presentación de proyectos
       reviewing: Revisión interna de proyectos
       selecting: Fase de apoyos
       valuating: Evaluación de proyectos
+      publishing_prices: Publicación de precios
       balloting: Votación final
       reviewing_ballots: Votación finalizada
       finished: Resultados
@@ -60,6 +62,7 @@ es:
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
+        location: "Información adicional de la ubicación"
       index:
         title: Presupuestos participativos
         unfeasible: Propuestas de inversión no viables
@@ -95,7 +98,7 @@ es:
         orders:
           random: Aleatorias
           confidence_score: Mejor valoradas
-          price: Por coste
+          price: Por precio
       show:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
@@ -107,7 +110,7 @@ es:
         title: Proyecto de gasto
         supports: Apoyos
         votes: Votos
-        price: Coste
+        price: Precio
         comments_tab: Comentarios
         milestones_tab: Seguimiento
         no_milestones: No hay hitos definidos
@@ -148,7 +151,7 @@ es:
       ballot_lines_count: Votos
       hide_discarded_link: Ocultar descartadas
       show_all_link: Mostrar todas
-      price: Coste total
+      price: Precio total
       amount_available: Presupuesto disponible
       accepted: 'Propuesta de inversión aceptada: '
       discarded: 'Propuesta de inversión descartada: '

@@ -86,6 +86,10 @@ en:
         notice: Participatory budget updated successfully
       edit:
         title: Edit Participatory budget
+        delete: Delete budget
+      destroy:
+        success_notice: Budget deleted successfully
+        unable_notice: You cannot destroy a Budget that has associated investments
       new:
         title: New participatory budget
       show:
@@ -137,6 +141,7 @@ en:
           undecided: "Undecided"
         selected: "Selected"
         select: "Select"
+        download_current_selection: "Download current selection"
         table_id: "ID"
         table_title: "Title"
         table_supports: "Supports"
