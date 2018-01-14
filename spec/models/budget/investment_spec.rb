@@ -551,7 +551,7 @@ describe Budget::Investment do
       end
 
       it "rejects selections when selecting is not allowed (via admin setting)" do
-        budget.phase = "on_hold"
+        budget.phase = "reviewing"
         expect(district_sp.reason_for_not_being_selectable_by(user)).to eq(:no_selecting_allowed)
       end
 
