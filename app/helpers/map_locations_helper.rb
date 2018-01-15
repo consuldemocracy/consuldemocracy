@@ -34,7 +34,7 @@ module MapLocationsHelper
   end
 
   def map_location_remove_marker(map_location, text)
-    content_tag :div, class: "text-right" do
+    content_tag :div, class: "margin-bottom" do
       content_tag :a,
                   id: map_location_remove_marker_link_id(map_location),
                   href: "#",

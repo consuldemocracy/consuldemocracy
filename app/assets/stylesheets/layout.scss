@@ -22,6 +22,7 @@
 // 20. Documents
 // 21. Related content
 // 22. Images
+// 23. Maps
 //
 
 // 01. Global styles
@@ -2510,4 +2511,22 @@ table {
 
 .images .button {
   margin-top: $line-height / 2;
+}
+
+// 23. Maps
+// -----------------
+
+.location-map-remove-marker {
+  border-bottom: 1px dotted #cf2a0e;
+  color: $delete;
+  display: inline-block;
+  margin-top: $line-height / 2;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 1px solid #cf2a0e;
+    color: #cf2a0e;
+    text-decoration: none;
+  }
 }
