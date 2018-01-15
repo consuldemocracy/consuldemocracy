@@ -25,6 +25,14 @@ class Budget
     scope :reviewing_ballots, -> { find_by_kind('reviewing_ballots')}
     scope :finished,          -> { find_by_kind('finished')}
 
+    def next_enabled_phase
+      next_phase&.enabled? ? next_phase : next_phase&.next_enabled_phase
+    end
+
+    def prev_enabled_phase
+      prev_phase&.enabled? ? prev_phase : prev_phase&.prev_enabled_phase
+    end
+
     def dates_range_valid?
       if starts_at.present? && ends_at.present? && starts_at >= ends_at
         errors.add(:starts_at, I18n.t('budgets.phases.errors.dates_range_invalid'))
