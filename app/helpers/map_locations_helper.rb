@@ -38,7 +38,7 @@ module MapLocationsHelper
       content_tag :a,
                   id: map_location_remove_marker_link_id(map_location),
                   href: "#",
-                  class: "location-map-remove-marker-button delete" do
+                  class: "js-location-map-remove-marker location-map-remove-marker" do
         text
       end
     end
