@@ -18,6 +18,7 @@ class Budget
 
     before_validation :sanitize_description
 
+    after_save :adjust_date_ranges
 
     scope :enabled,           -> { where(enabled: true) }
     scope :drafting,          -> { find_by_kind('drafting') }
@@ -36,6 +37,15 @@ class Budget
 
     def prev_enabled_phase
       prev_phase&.enabled? ? prev_phase : prev_phase&.prev_enabled_phase
+    end
+
+    def adjust_date_ranges
+      if enabled?
+        next_enabled_phase&.update_column(:starts_at, ends_at)
+        prev_enabled_phase&.update_column(:ends_at, starts_at)
+      elsif enabled_changed?
+        next_enabled_phase&.update_column(:starts_at, starts_at)
+      end
     end
 
     def dates_range_valid?
