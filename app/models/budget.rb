@@ -14,6 +14,7 @@ class Budget < ActiveRecord::Base
   has_many :ballots, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
+  has_many :phases, class_name: Budget::Phase
 
   before_validation :sanitize_descriptions
 
@@ -26,15 +27,22 @@ class Budget < ActiveRecord::Base
   scope :balloting, -> { where(phase: "balloting") }
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
   scope :finished, -> { where(phase: "finished") }
-
   scope :current, -> { where.not(phase: "finished") }
+
+  def current_phase
+    phases.send(phase)
+  end
 
   def description
     description_for_phase(phase)
   end
 
   def description_for_phase(phase)
-    send("description_#{phase}").try(:html_safe)
+    if phases.exists? && phases.send(phase).description.present?
+      phases.send(phase).description
+    else
+      send("description_#{phase}").try(:html_safe)
+    end
   end
 
   def self.title_max_length
