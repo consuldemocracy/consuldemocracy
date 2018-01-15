@@ -54,6 +54,71 @@ describe Budget::Phase do
         expect(first_phase).not_to be_valid
       end
     end
+
+    describe "#prev_phase_dates_valid?" do
+      let(:error) do
+        "Start date must be later than the start date of the previous enabled phase"\
+        " (Draft (Not visible to the public))"
+      end
+
+      it "is invalid when start date is same as previous enabled phase start date" do
+        second_phase.assign_attributes(starts_at: second_phase.prev_enabled_phase.starts_at)
+
+        expect(second_phase).not_to be_valid
+        expect(second_phase.errors.messages[:starts_at]).to include(error)
+      end
+
+      it "is invalid when start date is earlier than previous enabled phase start date" do
+        second_phase.assign_attributes(starts_at: second_phase.prev_enabled_phase.starts_at - 1.day)
+
+        expect(second_phase).not_to be_valid
+        expect(second_phase.errors.messages[:starts_at]).to include(error)
+      end
+
+      it "is valid when start date is in between previous enabled phase start & end dates" do
+        second_phase.assign_attributes(starts_at: second_phase.prev_enabled_phase.starts_at + 1.day)
+
+        expect(second_phase).to be_valid
+      end
+
+      it "is valid when start date is later than previous enabled phase end date" do
+        second_phase.assign_attributes(starts_at: second_phase.prev_enabled_phase.ends_at + 1.day)
+
+        expect(second_phase).to be_valid
+      end
+    end
+
+    describe "#next_phase_dates_valid?" do
+      let(:error) do
+        "End date must be earlier than the end date of the next enabled phase (Reviewing projects)"
+      end
+
+      it "is invalid when end date is same as next enabled phase end date" do
+        second_phase.assign_attributes(ends_at: second_phase.next_enabled_phase.ends_at)
+
+        expect(second_phase).not_to be_valid
+        expect(second_phase.errors.messages[:ends_at]).to include(error)
+      end
+
+      it "is invalid when end date is later than next enabled phase end date" do
+        second_phase.assign_attributes(ends_at: second_phase.next_enabled_phase.ends_at + 1.day)
+
+        expect(second_phase).not_to be_valid
+        expect(second_phase.errors.messages[:ends_at]).to include(error)
+      end
+
+      it "is valid when end date is in between next enabled phase start & end dates" do
+        second_phase.assign_attributes(ends_at: second_phase.next_enabled_phase.ends_at - 1.day)
+
+        expect(second_phase).to be_valid
+      end
+
+      it "is valid when end date is earlier than next enabled phase start date" do
+        second_phase.assign_attributes(ends_at: second_phase.next_enabled_phase.starts_at - 1.day)
+
+        expect(second_phase).to be_valid
+      end
+    end
   end
 
   describe "next & prev enabled phases" do

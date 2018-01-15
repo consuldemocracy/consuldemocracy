@@ -13,6 +13,8 @@ class Budget
     validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: PHASE_KINDS }
     validates :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validate :dates_range_valid?
+    validate :prev_phase_dates_valid?
+    validate :next_phase_dates_valid?
 
     before_validation :sanitize_description
 
@@ -42,6 +44,29 @@ class Budget
       end
     end
 
+    private
+
+    def prev_phase_dates_valid?
+      if enabled? && starts_at.present? && prev_enabled_phase.present?
+        prev_enabled_phase.assign_attributes(ends_at: starts_at)
+        if prev_enabled_phase.dates_range_valid?
+          phase_name = I18n.t("budgets.phase.#{prev_enabled_phase.kind}")
+          error = I18n.t('budgets.phases.errors.prev_phase_dates_invalid', phase_name: phase_name)
+          errors.add(:starts_at, error)
+        end
+      end
+    end
+
+    def next_phase_dates_valid?
+      if enabled? && ends_at.present? && next_enabled_phase.present?
+        next_enabled_phase.assign_attributes(starts_at: ends_at)
+        if next_enabled_phase.dates_range_valid?
+          phase_name = I18n.t("budgets.phase.#{next_enabled_phase.kind}")
+          error = I18n.t('budgets.phases.errors.next_phase_dates_invalid', phase_name: phase_name)
+          errors.add(:ends_at, error)
+        end
+      end
+    end
 
     def sanitize_description
       self.description = WYSIWYGSanitizer.new.sanitize(description)
