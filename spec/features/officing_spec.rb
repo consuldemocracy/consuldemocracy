@@ -149,7 +149,7 @@ feature 'Poll Officing' do
     end
 
     in_browser(:one) do
-      page.should have_content("Here you can validate user documents and store voting results")
+      expect(page).to have_content("Here you can validate user documents and store voting results")
 
       visit new_officing_residence_path
       select 'DNI', from: 'residence_document_type'
@@ -162,11 +162,11 @@ feature 'Poll Officing' do
       expect(Poll::Voter.where(document_number: '12345678Z', poll_id: poll, origin: 'booth', officer_id: officer1).count).to be(1)
 
       visit final_officing_polls_path
-      page.should have_content("Polls ready for final recounting")
+      expect(page).to have_content("Polls ready for final recounting")
     end
 
     in_browser(:two) do
-      page.should have_content("Here you can validate user documents and store voting results")
+      expect(page).to have_content("Here you can validate user documents and store voting results")
 
       visit new_officing_residence_path
       select 'DNI', from: 'residence_document_type'
@@ -179,7 +179,7 @@ feature 'Poll Officing' do
       expect(Poll::Voter.where(document_number: '12345678Y', poll_id: poll, origin: 'booth', officer_id: officer2).count).to be(1)
 
       visit final_officing_polls_path
-      page.should have_content("Polls ready for final recounting")
+      expect(page).to have_content("Polls ready for final recounting")
     end
   end
 end

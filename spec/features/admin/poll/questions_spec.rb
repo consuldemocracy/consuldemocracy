@@ -58,7 +58,7 @@ feature 'Admin poll questions' do
     visit proposals_path
     click_link "Create question"
 
-    expect(page).to have_current_path(new_admin_question_path, only_path: true)
+    expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
     expect(page).to have_field('poll_question_title', with: proposal.title)
 
     select 'Proposals', from: 'poll_question_poll_id'
