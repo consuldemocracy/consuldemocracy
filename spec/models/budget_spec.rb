@@ -68,35 +68,6 @@ describe Budget do
       expect(budget).to be_finished
     end
 
-    it "on_hold?" do
-      budget.phase = "drafting"
-      expect(budget).not_to be_on_hold
-
-      budget.phase = "accepting"
-      expect(budget).not_to be_on_hold
-
-      budget.phase = "reviewing"
-      expect(budget).to be_on_hold
-
-      budget.phase = "selecting"
-      expect(budget).not_to be_on_hold
-
-      budget.phase = "valuating"
-      expect(budget).to be_on_hold
-
-      budget.phase = "publishing_prices"
-      expect(budget).to be_on_hold
-
-      budget.phase = "balloting"
-      expect(budget).not_to be_on_hold
-
-      budget.phase = "reviewing_ballots"
-      expect(budget).to be_on_hold
-
-      budget.phase = "finished"
-      expect(budget).not_to be_on_hold
-    end
-
     it "balloting_or_later?" do
       budget.phase = "drafting"
       expect(budget).not_to be_balloting_or_later
