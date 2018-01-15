@@ -82,8 +82,6 @@ feature 'Admin banners magement' do
 
     click_link "Create banner"
 
-    select 'Banner style 1', from: 'banner_style'
-    select 'Banner image 2', from: 'banner_image'
     fill_in 'banner_title', with: 'Such banner'
     fill_in 'banner_description', with: 'many text wow link'
     fill_in 'banner_target_url', with: 'https://www.url.com'
@@ -91,6 +89,8 @@ feature 'Admin banners magement' do
     next_week = Time.current + 7.days
     fill_in 'post_started_at', with: last_week.strftime("%d/%m/%Y")
     fill_in 'post_ended_at', with: next_week.strftime("%d/%m/%Y")
+    fill_in 'banner_background_color', with: '#850000'
+    fill_in 'banner_font_color', with: '#ffb2b2'
 
     click_button 'Save changes'
 
@@ -100,6 +100,16 @@ feature 'Admin banners magement' do
 
     expect(page).to have_content 'Such banner'
     expect(page).to have_link 'Such banner many text wow link', href: 'https://www.url.com'
+  end
+
+  scenario "Update banner color when changing from color picker or text_field", :js do
+    visit new_admin_banner_path
+
+    fill_in 'banner_background_color', with: '#850000'
+    fill_in 'banner_font_color', with: '#ffb2b2'
+
+    expect(page.find_field("banner_background_color_picker").value).to eq('#850000')
+    expect(page.find_field("banner_font_color_picker").value).to eq('#ffb2b2')
   end
 
   scenario 'Edit banner with live refresh', :js do
