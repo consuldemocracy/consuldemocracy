@@ -2530,3 +2530,10 @@ table {
     text-decoration: none;
   }
 }
+
+.leaflet-bar a {
+
+  &.leaflet-disabled {
+    color: #525252 !important;
+  }
+}
