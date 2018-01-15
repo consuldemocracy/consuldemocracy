@@ -60,12 +60,12 @@
   </div>
 
   <div class="row">
-    <div class="small-6 column">
+    <div class="small-3 column">
       <%= f.label :sections, t("admin.banners.banner.background_color") %>
       <%= color_field(:banner, :background_color, id: 'banner_background_color_picker') %>
       <%= f.text_field :background_color, label: false %>
     </div>
-    <div class="small-6 column">
+    <div class="small-3 column end">
       <%= f.label :sections, t("admin.banners.banner.font_color") %>
       <%= color_field(:banner, :font_color, id: 'banner_font_color_picker') %>
       <%= f.text_field :font_color, label: false %>
