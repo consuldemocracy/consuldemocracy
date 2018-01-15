@@ -158,3 +158,6 @@ en:
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "
       incompatibles: Incompatibles
+    phases:
+      errors:
+        dates_range_invalid: "Start date can't be equal or later than End date"

@@ -158,3 +158,6 @@ es:
       accepted: 'Propuesta de inversión aceptada: '
       discarded: 'Propuesta de inversión descartada: '
       incompatibles: Incompatibles
+    phases:
+      errors:
+        dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"
