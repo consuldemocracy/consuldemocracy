@@ -676,8 +676,8 @@ feature 'Admin budget investments' do
       click_link "Download current selection"
 
       header = page.response_headers['Content-Disposition']
-      header.should match(/^attachment/)
-      header.should match(/filename="budget_investments.csv"$/)
+      expect(header).to match(/^attachment/)
+      expect(header).to match(/filename="budget_investments.csv"$/)
 
       expect(page).to have_content investment2.title
       expect(page).not_to have_content investment1.title

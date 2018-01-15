@@ -310,7 +310,7 @@ feature 'Ballots' do
       click_link group.name
       # No need to click on the heading name
       expect(page).to have_content("Investment projects with scope: #{heading.name}")
-      expect(page).to have_current_path(budget_investments_path(budget), only_path: true)
+      expect(page).to have_current_path(budget_investments_path(budget), ignore_query: true)
     end
 
     scenario 'Displaying the correct group, heading, count & amount' do
