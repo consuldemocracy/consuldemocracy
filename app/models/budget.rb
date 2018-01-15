@@ -3,8 +3,6 @@ class Budget < ActiveRecord::Base
   include Measurable
   include Sluggable
 
-  PUBLISHED_PRICES_PHASES = %w(publishing_prices balloting reviewing_ballots finished).freeze
-
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
   validates :name, presence: true, uniqueness: true
@@ -80,7 +78,7 @@ class Budget < ActiveRecord::Base
   end
 
   def published_prices?
-    PUBLISHED_PRICES_PHASES.include?(phase)
+    Budget::Phase::PUBLISHED_PRICES_PHASES.include?(phase)
   end
 
   def balloting_process?
