@@ -9,8 +9,8 @@ before_script:
 - for i in config/*.example; do cp "$i" "${i/.example}"; done
 - bundle exec rake db:setup
 script:
-- bundle exec rake assets:precompile RAILS_ENV=test
-- bin/knapsack_pro_rspec
+  - "bundle exec rake assets:precompile RAILS_ENV=test > /dev/null 2>&1"
+  - "bin/knapsack_pro_rspec"
 env:
   global:
   - KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true
