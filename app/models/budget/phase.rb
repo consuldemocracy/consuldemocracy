@@ -1,5 +1,6 @@
 class Budget
   class Phase < ActiveRecord::Base
+    DESCRIPTION_MAX_LENGTH = 2000
 
     belongs_to :budget
     belongs_to :next_phase, class_name: 'Budget::Phase', foreign_key: :next_phase_id
@@ -7,7 +8,7 @@ class Budget
 
     validates :budget, presence: true
     validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: Budget::PHASES }
-    validates :description, length: { maximum: Budget.description_max_length }
+    validates :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validate :dates_range_valid?
 
     scope :enabled,           -> { where(enabled: true) }
