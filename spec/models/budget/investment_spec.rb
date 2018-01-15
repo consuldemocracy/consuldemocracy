@@ -200,7 +200,7 @@ describe Budget::Investment do
     end
 
     it "returns true for selected investments which budget's phase is publishing_prices or later" do
-      Budget::PUBLISHED_PRICES_PHASES.each do |phase|
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
         budget.update(phase: phase)
 
         expect(investment.should_show_price?).to eq(true)
@@ -208,7 +208,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      (Budget::Phase::PHASE_KINDS - Budget::PUBLISHED_PRICES_PHASES).each do |phase|
+      (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).each do |phase|
         budget.update(phase: phase)
 
         expect(investment.should_show_price?).to eq(false)
@@ -235,7 +235,7 @@ describe Budget::Investment do
     end
 
     it "returns true for selected with price_explanation & budget in publishing_prices or later" do
-      Budget::PUBLISHED_PRICES_PHASES.each do |phase|
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
         budget.update(phase: phase)
 
         expect(investment.should_show_price_explanation?).to eq(true)
@@ -243,7 +243,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      (Budget::Phase::PHASE_KINDS - Budget::PUBLISHED_PRICES_PHASES).each do |phase|
+      (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).each do |phase|
         budget.update(phase: phase)
 
         expect(investment.should_show_price_explanation?).to eq(false)
