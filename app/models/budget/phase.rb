@@ -14,6 +14,9 @@ class Budget
     validates :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validate :dates_range_valid?
 
+    before_validation :sanitize_description
+
+
     scope :enabled,           -> { where(enabled: true) }
     scope :drafting,          -> { find_by_kind('drafting') }
     scope :accepting,         -> { find_by_kind('accepting')}
@@ -39,5 +42,9 @@ class Budget
       end
     end
 
+
+    def sanitize_description
+      self.description = WYSIWYGSanitizer.new.sanitize(description)
+    end
   end
 end
