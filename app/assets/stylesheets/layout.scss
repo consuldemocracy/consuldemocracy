@@ -2428,16 +2428,16 @@ table {
     margin-bottom: 0 !important;
     padding: $line-height / 2;
 
-    &:first-child {
-      border-top: 1px solid $border;
-    }
-
     @include breakpoint(medium) {
 
       .score-actions {
         display: none;
         float: right;
       }
+    }
+
+    &:first-child {
+      border-top: 1px solid $border;
     }
 
     &:hover {
@@ -2479,8 +2479,8 @@ table {
     position: relative;
     text-decoration: none;
 
-    &.score-positive:before,
-    &.score-negative:before {
+    &.score-positive::before,
+    &.score-negative::before {
       font-family: 'icons';
       left: 0;
       position: absolute;
@@ -2489,7 +2489,7 @@ table {
     &.score-positive {
       color: $color-success;
 
-      &:before {
+      &::before {
         color: $color-success;
         content: '\6c';
       }
@@ -2498,7 +2498,7 @@ table {
     &.score-negative {
       color: $color-alert;
 
-      &:before {
+      &::before {
         color: $color-alert;
         content: '\76';
       }
