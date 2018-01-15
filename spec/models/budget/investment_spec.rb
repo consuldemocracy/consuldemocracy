@@ -1123,4 +1123,29 @@ describe Budget::Investment do
     end
 
   end
+
+  describe "Delete" do
+
+    it "correctly destroy all associated objects" do
+      user = create(:user, :level_two)
+      sp1 = create(:budget_investment, price: 10000, author: user)
+
+      sp1.milestones << create(:budget_investment_milestone)
+      sp1.comments << create(:comment)
+      create(:valuator, user: user, description: 'Valuators')
+      Budget::ValuatorAssignment.create(investment_id: sp1.id, valuator_id: user.valuator.id)
+
+      comments_size = Comment.count
+      milestones_size = Budget::Investment::Milestone.count
+      valuator_assignments_size = Budget::ValuatorAssignment.count
+
+      sp1.destroy
+
+      expect(Comment.count).to eq (comments_size - 1)
+      expect(Budget::Investment::Milestone.count).to eq (milestones_size - 1)
+      expect(Budget::ValuatorAssignment.count).to eq (valuator_assignments_size - 1)
+
+    end
+
+  end
 end

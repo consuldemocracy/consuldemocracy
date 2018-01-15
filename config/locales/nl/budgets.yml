@@ -83,6 +83,7 @@ nl:
         title: Begrotingsvoorstel
         supports: Steunt
         votes: Stemmen
+        author: Auteur
       wrong_price_format: Alleen hele nummers
       investment:
         title: Begrotingsvoorstel

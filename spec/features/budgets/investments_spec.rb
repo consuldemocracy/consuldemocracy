@@ -1215,6 +1215,7 @@ feature 'Budget Investments' do
     scenario "Author can destroy while on the accepting phase" do
       user = create(:user, :level_two)
       sp1 = create(:budget_investment, heading: heading, price: 10000, author: user)
+      budget_investment_count = Budget::Investment.count
 
       login_as(user)
       visit user_path(user, tab: :budget_investments)
@@ -1225,6 +1226,9 @@ feature 'Budget Investments' do
       end
 
       visit user_path(user, tab: :budget_investments)
+
+      expect(Budget::Investment.count).to eq (budget_investment_count - 1)
+
     end
   end
 

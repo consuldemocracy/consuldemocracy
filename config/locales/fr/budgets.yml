@@ -90,6 +90,7 @@ fr:
         supports: Soutiens
         votes: Votes
         price: Coût
+        author: Auteur
       wrong_price_format: Nombres entiers uniquement
       investment:
         title: Proposition d'investissement
