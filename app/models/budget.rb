@@ -18,6 +18,8 @@ class Budget < ActiveRecord::Base
 
   before_validation :sanitize_descriptions
 
+  after_create :generate_phases
+
   scope :drafting, -> { where(phase: "drafting") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
@@ -154,6 +156,18 @@ class Budget < ActiveRecord::Base
     Budget::Phase::PHASE_KINDS.each do |phase|
       sanitized = s.sanitize(send("description_#{phase}"))
       send("description_#{phase}=", sanitized)
+    end
+  end
+
+  def generate_phases
+    Budget::Phase::PHASE_KINDS.each do |phase|
+      Budget::Phase.create(
+        budget: self,
+        kind: phase,
+        prev_phase: phases&.last,
+        starts_at: phases&.last&.ends_at || Date.current,
+        ends_at: (phases&.last&.ends_at || Date.current) + 1.month
+      )
     end
   end
 end
