@@ -123,6 +123,18 @@ describe Budget do
 
   end
 
+  describe "#open" do
+
+    it "returns all budgets that are not in the finished phase" do
+      phases = Budget::PHASES - ["finished"]
+      phases.each do |phase|
+        budget = create(:budget, phase: phase)
+        expect(Budget.open).to include(budget)
+      end
+    end
+
+  end
+
   describe "heading_price" do
     let(:budget) { create(:budget) }
     let(:group) { create(:budget_group, budget: budget) }
