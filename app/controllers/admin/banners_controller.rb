@@ -40,8 +40,9 @@ class Admin::BannersController < Admin::BaseController
 
     def banner_params
       attributes = [:title, :description, :target_url, :style, :image,
-                    :post_started_at, :post_ended_at, :sections,
-                    :background_color, :font_color]
+                    :post_started_at, :post_ended_at,
+                    :background_color, :font_color,
+                    web_section_ids: []]
       params.require(:banner).permit(*attributes)
     end
 
@@ -58,6 +59,6 @@ class Admin::BannersController < Admin::BaseController
     end
 
     def banner_sections
-      @banner_sections = Banner::Section.sections.map {|banner_section| [banner_section[1], banner_section[0]]} # name, value
+      @banner_sections = WebSection.all
     end
 end
