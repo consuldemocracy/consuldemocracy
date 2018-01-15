@@ -41,10 +41,6 @@ class Budget < ActiveRecord::Base
     send("description_#{phase}").try(:html_safe)
   end
 
-  def self.description_max_length
-    2000
-  end
-
   def self.title_max_length
     80
   end
