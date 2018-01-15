@@ -172,3 +172,4 @@ class Budget < ActiveRecord::Base
   end
 end
 
+

@@ -121,6 +121,83 @@ describe Budget::Phase do
     end
   end
 
+  describe "#adjust_date_ranges" do
+    let(:prev_enabled_phase) { second_phase.prev_enabled_phase }
+    let(:next_enabled_phase) { second_phase.next_enabled_phase }
+
+    describe "when enabled" do
+      it "adjusts previous enabled phase end date to its own start date" do
+        expect(prev_enabled_phase.ends_at).to eq(second_phase.starts_at)
+      end
+
+      it "adjusts next enabled phase start date to its own end date" do
+        expect(next_enabled_phase.starts_at).to eq(second_phase.ends_at)
+      end
+    end
+
+    describe "when being enabled" do
+      before do
+        second_phase.update_attributes(enabled: false,
+                                       starts_at: Date.current,
+                                       ends_at:  Date.current + 2.days)
+      end
+
+      it "adjusts previous enabled phase end date to its own start date" do
+        expect{
+          second_phase.update_attributes(enabled: true)
+        }.to change{
+          prev_enabled_phase.ends_at.to_date
+        }.to(Date.current)
+      end
+
+      it "adjusts next enabled phase start date to its own end date" do
+        expect{
+          second_phase.update_attributes(enabled: true)
+        }.to change{
+          next_enabled_phase.starts_at.to_date
+        }.to(Date.current + 2.days)
+      end
+    end
+
+    describe "when disabled" do
+      before do
+        second_phase.update_attributes(enabled: false)
+      end
+
+      it "doesn't change previous enabled phase end date" do
+        expect {
+          second_phase.update_attributes(starts_at: Date.current,
+                                         ends_at:  Date.current + 2.days)
+        }.not_to (change{ prev_enabled_phase.ends_at })
+      end
+
+      it "doesn't change next enabled phase start date" do
+        expect{
+          second_phase.update_attributes(starts_at: Date.current,
+                                         ends_at:  Date.current + 2.days)
+        }.not_to (change{ next_enabled_phase.starts_at })
+      end
+    end
+
+    describe "when being disabled" do
+      it "doesn't adjust previous enabled phase end date to its own start date" do
+        expect {
+          second_phase.update_attributes(enabled: false,
+                                         starts_at: Date.current,
+                                         ends_at:  Date.current + 2.days)
+        }.not_to (change{ prev_enabled_phase.ends_at })
+      end
+
+      it "adjusts next enabled phase start date to its own start date" do
+        expect {
+          second_phase.update_attributes(enabled: false,
+                                         starts_at: Date.current,
+                                         ends_at:  Date.current + 2.days)
+        }.to change{ next_enabled_phase.starts_at.to_date }.to(Date.current)
+      end
+    end
+  end
+
   describe "next & prev enabled phases" do
     before do
       second_phase.update_attributes(enabled: false)
