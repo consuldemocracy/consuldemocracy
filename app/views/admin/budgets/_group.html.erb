@@ -28,17 +28,14 @@
   <tbody>
   <% end %>
 
-    <!-- new heading form -->
     <tr id="group-<%= group.id %>-new-heading-form" style="display:none">
       <td colspan="4">
         <%= render "admin/budgets/heading_form", group: group, budget: @budget, heading: Budget::Heading.new %>
       </td>
     </tr>
-    <!-- /. new heading form -->
-    <!-- headings list -->
+
     <% headings.each do |heading| %>
       <%= render "admin/budgets/heading", group: group, budget: @budget, heading: heading %>
     <% end %>
-    <!-- /. headings list -->
   </tbody>
 </table>

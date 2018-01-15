@@ -18,11 +18,15 @@
   <div class="row">
     <div class="small-12 medium-6 column">
       <label><%= t("admin.budgets.form.population") %></label>
+      <p class="help-text" id="budgets-population-help-text">
+        <%= t("admin.budgets.form.population_help_text") %>
+      </p>
       <%= f.text_field :population,
                         label: false,
                         maxlength: 8,
                         placeholder: t("admin.budgets.form.population"),
-                        data: {toggle_focus: "population-info"} %>
+                        data: {toggle_focus: "population-info"},
+                        aria: {describedby: "budgets-population-help-text"} %>
     </div>
     <div class="small-12 medium-6 column " >
       <div id="population-info" class="is-hidden" data-toggler="is-hidden">

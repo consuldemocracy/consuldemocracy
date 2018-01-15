@@ -104,7 +104,8 @@ en:
         heading: Heading name
         add_heading: Add heading
         amount: Amount
-        population: Population
+        population: "Population (optional)"
+        population_help_text: "This data is used exclusively to calculate the participation statistics"
         save_heading: Save heading
         no_heading: This group has no assigned heading.
         table_heading: Heading
@@ -131,6 +132,8 @@ en:
           selected: Selected
           winners: Winners
           all: All
+        download_current_selection: "Download current selection"
+        no_budget_investments: "There are no investment projects."
         title: Investment projects
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
@@ -156,7 +159,7 @@ en:
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
-        classification: Clasification
+        classification: Classification
         info: "%{budget_name} - Group: %{group_name} - Investment project %{id}"
         edit: Edit
         edit_classification: Edit classification
@@ -186,7 +189,7 @@ en:
           "true": "Yes"
           "false": "No"
       edit:
-        classification: Clasification
+        classification: Classification
         compatibility: Compatibility
         mark_as_incompatible: Mark as incompatible
         selection: Selection
@@ -874,7 +877,7 @@ en:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
         back: Back
-        classification: Clasification
+        classification: Classification
         compatibility_title: Compatibility
         compatibility:
           "true": "Compatible"
@@ -891,7 +894,7 @@ en:
         tags: Tags
         undefined: Undefined
       edit:
-        classification: Clasification
+        classification: Classification
         assigned_valuators: Valuators
         submit_button: Update
         tags: Tags
@@ -1069,7 +1072,7 @@ en:
         title: Proposal notifications
         total: Total
         proposals_with_notifications: Proposals with notifications
-        not_available: Proposal not available        
+        not_available: Proposal not available
       reedemable_codes:
         title: Redeemable codes
         total: Total
