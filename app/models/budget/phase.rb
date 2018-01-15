@@ -1,5 +1,7 @@
 class Budget
   class Phase < ActiveRecord::Base
+    PHASE_KINDS = %w(drafting accepting reviewing selecting valuating publishing_prices balloting
+                reviewing_ballots finished).freeze
     DESCRIPTION_MAX_LENGTH = 2000
 
     belongs_to :budget
@@ -7,7 +9,7 @@ class Budget
     has_one :prev_phase, class_name: 'Budget::Phase', foreign_key: :next_phase_id
 
     validates :budget, presence: true
-    validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: Budget::PHASES }
+    validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: PHASE_KINDS }
     validates :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validate :dates_range_valid?
 
