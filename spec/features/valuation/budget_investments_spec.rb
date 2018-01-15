@@ -345,7 +345,7 @@ feature 'Valuation budget investments' do
       visit valuation_budget_budget_investment_path(@budget, @investment)
       click_link 'Edit dossier'
 
-      check 'budget_investment_valuation_finished'
+      find_field('budget_investment[valuation_finished]').click
       click_button 'Save changes'
 
       visit valuation_budget_budget_investments_path(@budget)
