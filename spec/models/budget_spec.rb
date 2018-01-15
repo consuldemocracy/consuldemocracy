@@ -18,7 +18,7 @@ describe Budget do
     it "changes depending on the phase" do
       budget = create(:budget)
 
-      Budget::PHASES.each do |phase|
+      Budget::Phase::PHASE_KINDS.each do |phase|
         budget.phase = phase
         expect(budget.description).to eq(budget.send("description_#{phase}"))
         expect(budget.description).to be_html_safe
@@ -30,7 +30,7 @@ describe Budget do
     let(:budget) { create(:budget) }
 
     it "is validated" do
-      Budget::PHASES.each do |phase|
+      Budget::Phase::PHASE_KINDS.each do |phase|
         budget.phase = phase
         expect(budget).to be_valid
       end

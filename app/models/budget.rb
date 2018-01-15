@@ -3,14 +3,12 @@ class Budget < ActiveRecord::Base
   include Measurable
   include Sluggable
 
-  PHASES = %w(drafting accepting reviewing selecting valuating publishing_prices
-              balloting reviewing_ballots finished).freeze
   PUBLISHED_PRICES_PHASES = %w(publishing_prices balloting reviewing_ballots finished).freeze
 
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
   validates :name, presence: true, uniqueness: true
-  validates :phase, inclusion: { in: PHASES }
+  validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
 
@@ -147,7 +145,7 @@ class Budget < ActiveRecord::Base
 
   def sanitize_descriptions
     s = WYSIWYGSanitizer.new
-    PHASES.each do |phase|
+    Budget::Phase::PHASE_KINDS.each do |phase|
       sanitized = s.sanitize(send("description_#{phase}"))
       send("description_#{phase}=", sanitized)
     end
