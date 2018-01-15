@@ -1,6 +1,7 @@
 class Budget
   class Investment < ActiveRecord::Base
     require 'csv'
+    include Rails.application.routes.url_helpers
     include Measurable
     include Sanitizable
     include Taggable
@@ -78,6 +79,10 @@ class Budget
     after_save :recalculate_heading_winners if :incompatible_changed?
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+
+    def url
+      budget_investment_path(budget, self)
+    end
 
     def self.filter_params(params)
       params.select{|x, _| %w{heading_id group_id administrator_id tag_name valuator_id}.include? x.to_s }

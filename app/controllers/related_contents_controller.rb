@@ -12,7 +12,7 @@ class RelatedContentsController < ApplicationController
       flash[:error] = t('related_content.error', url: Setting['url'])
     end
 
-    redirect_to @relationable
+    redirect_to @relationable.url
   end
 
   def score_positive
@@ -44,8 +44,9 @@ class RelatedContentsController < ApplicationController
       if valid_url?
         url = params[:url]
 
-        related_klass = url.match(/\/(#{RelatedContent::RELATIONABLE_MODELS.join("|")})\//)[0].delete("/")
-        related_id = url.match(/\/[0-9]+/)[0].delete("/")
+        related_klass = url.scan(/\/(#{RelatedContent::RELATIONABLE_MODELS.join("|")})\//)
+                           .flatten.map { |i| i.to_s.singularize.camelize }.join("::")
+        related_id = url.match(/\/(\d+)(?!.*\/\d)/)[1]
 
         @related = related_klass.singularize.camelize.constantize.find_by(id: related_id)
       end
