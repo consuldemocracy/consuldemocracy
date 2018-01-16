@@ -252,7 +252,7 @@ es:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
         user: Usuario
-        no_hidden_users: No hay uusarios bloqueados.
+        no_hidden_users: No hay usuarios bloqueados.
       show:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
