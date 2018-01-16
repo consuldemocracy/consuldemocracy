@@ -279,7 +279,7 @@ feature 'Admin budgets' do
         click_link 'Delete'
       end
 
-      expect(page).to_not have_content 'District 1'
+      expect(page).not_to have_content 'District 1'
     end
 
   end

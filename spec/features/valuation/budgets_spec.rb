@@ -30,8 +30,8 @@ feature 'Valuation budgets' do
 
       visit valuation_budgets_path
 
-      expect(page).to_not have_content(budget1.name)
-      expect(page).to_not have_content(budget2.name)
+      expect(page).not_to have_content(budget1.name)
+      expect(page).not_to have_content(budget2.name)
       expect(page).to have_content(budget3.name)
     end
 
