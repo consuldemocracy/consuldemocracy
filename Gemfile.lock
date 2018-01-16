@@ -177,7 +177,7 @@ GEM
       activesupport (>= 4.2.0)
     graphiql-rails (1.4.8)
       rails
-    graphql (1.7.7)
+    graphql (1.7.8)
     groupdate (3.2.0)
       activesupport (>= 3)
     gyoku (1.3.1)
