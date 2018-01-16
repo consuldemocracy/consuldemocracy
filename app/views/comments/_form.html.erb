@@ -7,6 +7,7 @@
       <%= f.hidden_field :commentable_type, value: commentable.class.name %>
       <%= f.hidden_field :commentable_id, value: commentable.id %>
       <%= f.hidden_field :parent_id, value: parent_id %>
+      <%= f.hidden_field :concealed, value: local_assigns.fetch(:concealed, false) %>
 
       <%= f.submit comment_button_text(parent_id, commentable), class: "button", id: "publish_comment" %>
 
