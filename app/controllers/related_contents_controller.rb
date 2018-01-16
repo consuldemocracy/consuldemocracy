@@ -48,6 +48,10 @@ class RelatedContentsController < ApplicationController
                            .flatten.map { |i| i.to_s.singularize.camelize }.join("::")
         related_id = url.match(/\/(\d+)(?!.*\/\d)/)[1]
 
+        if related_klass == 'Presupuesto::Proyecto'
+          related_klass = 'Budget::Investment'
+        end
+
         @related = related_klass.singularize.camelize.constantize.find_by(id: related_id)
       end
   rescue
