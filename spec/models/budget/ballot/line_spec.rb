@@ -44,6 +44,36 @@ describe Budget::Ballot::Line do
 
   end
 
+  describe "#store_user_heading" do
+
+    it "stores the heading where the user has voted" do
+      allow_any_instance_of(Budget::Ballot::Line).
+      to receive(:city_heading_id).and_return(-1)
+
+      user = create(:user, :level_two)
+      investment = create(:budget_investment, :selected)
+      ballot = create(:budget_ballot, user: user, budget: investment.budget)
+
+      create(:budget_ballot_line, ballot: ballot, investment: investment)
+
+      expect(user.balloted_heading_id).to eq(investment.heading.id)
+    end
+
+    it "does not store the heading if voting in the whole city" do
+      user = create(:user, :level_two)
+      investment = create(:budget_investment, :selected)
+      ballot = create(:budget_ballot, user: user, budget: investment.budget)
+
+      allow_any_instance_of(Budget::Ballot::Line).
+      to receive(:city_heading_id).and_return(investment.heading.id)
+
+      create(:budget_ballot_line, ballot: ballot, investment: investment)
+
+      expect(user.balloted_heading_id).to eq(nil)
+    end
+
+  end
+
   describe "scopes" do
 
     describe "by_investment" do

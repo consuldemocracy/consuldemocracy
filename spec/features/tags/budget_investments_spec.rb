@@ -79,7 +79,7 @@ feature 'Tags' do
     expect(page).to have_content tag_medio_ambiente.name
   end
 
-  scenario 'Category with category tags', :js do
+  scenario 'Create with category tags', :js do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
@@ -97,6 +97,56 @@ feature 'Tags' do
     within "#tags_budget_investment_#{Budget::Investment.last.id}" do
       expect(page).to have_content tag_economia.name
       expect(page).not_to have_content tag_medio_ambiente.name
+    end
+  end
+
+  scenario "Turbolinks sanity check from budget's show", :js do
+    login_as(author)
+
+    education = create(:tag, name: 'Education', kind: 'category')
+    health    = create(:tag, name: 'Health',    kind: 'category')
+
+    visit budget_path(budget)
+    click_link 'Create budget investment'
+
+    select  'Health: More hospitals', from: 'budget_investment_heading_id'
+    fill_in 'budget_investment_title', with: 'Build a skyscraper'
+    fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
+    check   'budget_investment_terms_of_service'
+
+    find('.js-add-tag-link', text: 'Education').click
+    click_button 'Create Investment'
+
+    expect(page).to have_content 'Investment created successfully.'
+
+    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+      expect(page).to have_content 'Education'
+      expect(page).not_to have_content 'Health'
+    end
+  end
+
+  scenario "Turbolinks sanity check from budget heading's show", :js do
+    login_as(author)
+
+    education = create(:tag, name: 'Education', kind: 'category')
+    health    = create(:tag, name: 'Health',    kind: 'category')
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+    click_link 'Create budget investment'
+
+    select  'Health: More hospitals', from: 'budget_investment_heading_id'
+    fill_in 'budget_investment_title', with: 'Build a skyscraper'
+    fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
+    check   'budget_investment_terms_of_service'
+
+    find('.js-add-tag-link', text: 'Education').click
+    click_button 'Create Investment'
+
+    expect(page).to have_content 'Investment created successfully.'
+
+    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+      expect(page).to have_content 'Education'
+      expect(page).not_to have_content 'Health'
     end
   end
 
@@ -182,7 +232,7 @@ feature 'Tags' do
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: new_tag) }
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: newer_tag) }
 
-    scenario 'Display user tags' do
+    xscenario 'Display user tags' do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
@@ -196,7 +246,7 @@ feature 'Tags' do
       end
     end
 
-    scenario "Filter by user tags" do
+    xscenario "Filter by user tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
@@ -218,6 +268,18 @@ feature 'Tags' do
         expect(page).to have_content investment1.title
         expect(page).to have_content investment2.title
         expect(page).not_to have_content investment3.title
+      end
+    end
+
+    scenario 'Do not display user tags' do
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        budget.update(phase: phase)
+
+        login_as(admin) if budget.drafting?
+        visit budget_path(budget)
+        click_link group.name
+
+        expect(page).not_to have_css("#tag-cloud")
       end
     end
 

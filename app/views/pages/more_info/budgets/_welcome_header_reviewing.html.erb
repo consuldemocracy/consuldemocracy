@@ -1,0 +1,48 @@
+<div class="expanded header">
+  <div class="row no-margin-top padding-top">
+    <div class="small-12 medium-8 column">
+      <h1>Presupuestos participativos 2017</h1>
+      <p class="lead">
+        El 30 de junio se cerró la votación final.<br> Los <strong>proyectos ganadores</strong> se darán a conocer el próximo <strong>13 de julio</strong>.
+      </p>
+    </div>
+
+    <div class="small-12 medium-3 medium-offset-1 column margin">
+      <div class="budgets-calendar-minimal padding text-center">
+        <span class="day">Resultados<br>13 julio</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <div class="row margin">
+        <div class="small-12 medium-3 column">
+          <%= link_to "Proyectos de toda la ciudad",
+                      custom_budget_investments_path(budget_id: current_budget.to_param,
+                        id: current_budget.groups.first,
+                        heading_id: current_budget.headings.first.to_param,
+                        filter: "selected"),
+                        class: "button expanded city" %>
+        </div>
+        <div class="small-12 medium-3 column">
+          <%= link_to "Proyectos de distritos",
+                      custom_budget_group_path(current_budget, 
+                        current_budget.groups.last,
+                        filter: @current_filter),
+                        class: "button expanded" %>
+        </div>
+        <div class="small-12 medium-3 column">
+          <%= link_to "Estadísticas de participación",
+                      custom_budget_stats_path(id: current_budget.to_param),
+                      class: "button expanded stats" %>
+        </div>
+        <div class="small-12 medium-3 column">
+          <%= link_to "Ejecución de proyectos 2016",
+                      "/system/budgets/2016/estado-propuestas-2016.xlsx",
+                      class: "button expanded stats" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,295 @@
+es:
+  users:
+    show:
+      deleted_budget_investment: Este proyecto de gasto ha sido eliminado
+  admin:
+    probes:
+      index:
+        title: Sondeos
+        no_results: No se creado ningún sondeo
+        status:
+          selecting: Votación en curso
+          results: Resultados publicados
+      show:
+        option: Opción
+        selects: Número de votos
+  probes:
+    codenames:
+      town_planning: 'Planificación urbana - Bancos'
+      plaza: 'Remodelación de Plaza España'
+    verified_only: La participación en este proceso está restringida a usuarios verificados, %{verify_account}.
+    verify_account: verifica tu cuenta
+    not_logged_in: Necesitas %{signin} o %{signup} para participar.
+    signin: iniciar sesión
+    signup: registrarte
+    plaza:
+      selecting:
+        code_html: '<abbr title="Referencia">REF.</abbr> %{code}'
+    back: "Volver al listado"
+    show:
+      vote: "Votar"
+      documents: "Documentación"
+      documents_finalist: "Documentación finalista"
+      share: "Compartir"
+      button: "Votar"
+      code_html: '<abbr title="Referencia">REF.</abbr> %{code}'
+  human_rights:
+    banner:
+      title: "#PlanDerechosHumanos"
+      text_html: "¡Participa hasta el <u>4 de noviembre</u>!"
+  cards:
+    button: "Más información"
+  meta_tags:
+    welcome_index:
+      title: "Decide Madrid: portal de participación ciudadana de Madrid"
+      description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
+    proposals:
+      title: "Propuestas ciudadanas de Madrid - Decide Madrid"
+      description: "Participa activamente en Decide Madrid creando y votando propuestas ciudadanas que quieras que el Ayuntamiento de Madrid lleve a cabo."
+    processes:
+      title: "Procesos participativos de Madrid - Decide Madrid"
+      description: "En el espacio de procesos participativos podrás participar en la elaboración de ordenanzas municipales y otros proyectos del Ayuntamiento de Madrid."
+    budget:
+      title: "Presupuestos participativos de Madrid"
+      description: "Participa y crea un proyecto de gasto para decidir a qué proyectos destina el Ayuntamiento de Madrid su presupuesto participativo."
+      title_reviewing: "Presupuestos participativos de Madrid"
+      description_reviewing: "El 30 de junio se cerró la votación final. Los proyectos ganadores se darán a conocer el próximo 13 de julio."
+      title_finished: "Resultados de los Presupuestos participativos de Madrid"
+      description_finished: "Mira qué proyectos ciudadanos se ejecutarán a partir de 2018 con los 100 millones de los presupuestos participativos."
+  social_share:
+    polls_show:
+      title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"
+      twitter_1: "He votado Madrid 100% sostenible, billete intermodal y la remodelación de Plaza España. ¡Vota tú también!"
+      facebook_1: "He votado las propuestas ciudadanas 'Madrid 100% sostenible' y 'Billete único para el transporte público' y el proyecto final para remodelar la Plaza de España en Decide Madrid. ¡Vota tú también!"
+      description_1: "Decide la remodelación de Plaza de España y di sí o no a las propuestas ciudadanas Madrid 100% sostenible y Billete único para el transporte público en Madrid."
+      title_2: "Votación del futuro de la Gran Vía - Decide Madrid"
+      twitter_2: "He respondido a las preguntas sobre el futuro de la Gran Vía en @DecideMadrid ¡Tú también puedes responder!"
+      facebook_2: "He respondido a las preguntas sobre el futuro de la Gran Vía en Decide Madrid. ¡Tú también puedes responder!"
+      description_2: "Tú decides cómo será la Gran Vía en el futuro. Contesta las cuatro preguntas sobre la Gran Vía en Decide Madrid."
+      title_3: "Votación del distrito de Barajas - Decide Madrid"
+      twitter_3: "He opinado sobre el Plan participativo de actuación territorial de @JMDBarajas ¡Opina tú también!"
+      facebook_3: "He opinado sobre el Plan participativo de actuación territorial de la Junta Municipal de Distrito de Barajas. ¡Opina tú también!"
+      description_3: "Decide si quieres que mejore la limpieza en Barajas y se peatonalice la Plaza Mayor. Tú decides el futuro de Barajas."
+      title_4: "Votación del distrito de San Blas-Canillejas"
+      twitter_4: "He opinado sobre el Plan participativo de actuación territorial de @JMD_SanBlas ¡Opina tú también!"
+      facebook_4: "He opinado sobre el Plan participativo de actuación territorial de la Junta Municipal de Distrito de SanBlas y Canillejas. ¡Opina tú también!"
+      description_4: "Decide si quieres que en San Blas-Canillejas se cree una oficina de empleo y que haya más atención a domicilio. Tú decides el futuro de San Blas-Canillejas."
+      title_5: "Votación del distrito de Hortaleza - Decide Madrid"
+      twitter_5: "He votado la propuesta de cambio de nombre del @JMDhortaleza en @DecideMadrid ¡Vota tú también!"
+      facebook_5: "He votado la propuesta de cambio de nombre de la Junta Municipal de Distrito de Hortaleza en Decide Madrid. ¡Vota tú también!"
+      description_5: "Vota la propuesta de cambiar el nombre de la Junta Municipal de Distrito de Hortaleza por Hortaleza-Canillas. Decide si quieres cambiar el nombre del parque Felipe VI por el de Parque Forestal de Valdebebas en Decide Madrid."
+      title_6: "Votación del distrito de Retiro - Decide Madrid"
+      twitter_6: "He votado la propuesta para dar nombre a los Centros Culturales de @JMDretiro ¡Vota tú también!"
+      facebook_6: "He votado la propuesta para dar nombre a los Centros Culturales de la Junta Municipal de Distrito de Retiro en Decide Madrid. ¡Vota tú también!"
+      description_6: "Tú decides los nombres de tres centros culturales del distrito Retiro. Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_7: "Votación del distrito de Salamanca - Decide Madrid"
+      twitter_7: "He votado la propuesta de la @JMDSalamanca de protección de edificios históricos en @DecideMadrid ¡Vota tú también!"
+      facebook_7: "He votado la propuesta de la Junta Municipal de Distrito de Salamanca de protección de edificios históricos en Decide Madrid. ¡Vota tú también!"
+      description_7: "Tú decides si quieres que se protejan más edificios históricos en el distrito de Salamanca. Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_8: "Votación del distrito de Vicálvaro - Decide Madrid"
+      twitter_8: "He votado la propuesta para dar nombre al Espacio de Igualdad del @jmdvicalvaro en @DecideMadrid. ¡Vota tú también!"
+      facebook_8: "He votado la propuesta para dar nombre al Espacio de Igualdad de la Junta Municipal de Distrito de Vicálvaro en Decide Madrid. ¡Vota tú también!"
+      description_8: "Tú decides cómo se llamará el Espacio de Igualdad de la Junta Municipal de Distrito de Vicálvaro. Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_9: "Remodelación de la Plaza de la Duquesa de Osuna (Barajas)"
+      twitter_9: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza de la Duquesa de Osuna. ¡Vota tú también!"
+      facebook_9: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza de la Duquesa de Osuna. ¡Vota tú también!"
+      description_9: "Vota la remodelación de la Plaza de la Duquesa de Osuna, en Barajas. Tú decides si quieres que cambie este espacio y cómo, elige proyecto X o proyecto Y."
+      title_10: "Remodelación de la Plaza de la Remonta (Tetuán)"
+      twitter_10: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza de la Remonta. ¡Vota tú también!"
+      facebook_10: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza de la Remonta. ¡Vota tú también!"
+      description_10: "Vota la remodelación de la Plaza de la Remonta, en Tetuán. Tú decides si quieres que cambie este espacio y cómo, elige proyecto X o proyecto Y."
+      title_11: "Remodelación de la Plaza de la Vaguada (Fuencarral - El Pardo)"
+      twitter_11: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza de la Vaguada. ¡Vota tú también!"
+      facebook_11: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza de la Vaguada. ¡Vota tú también!"
+      description_11: "Vota la remodelación de la Plaza de La Vaguada, en Fuencarral-El Pardo. Tú decides si quieres que cambie este espacio y cómo, elige proyecto X o proyecto Y."
+      title_12: "Remodelación de la Plaza Cívica de Lucero (Latina)"
+      twitter_12: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza Cívica de Lucero. ¡Vota tú también!"
+      facebook_12: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza Cívica de Lucero. ¡Vota tú también!"
+      description_12: "Vota la remodelación de la Plaza de la Cívica de Lucero, en Latina. Tú decides si quieres que cambie este espacio y cómo, elige proyecto X o proyecto Y."
+      title_13: "Remodelación de la Plaza de la Emperatriz (Carabanchel)"
+      twitter_13: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza de la Emperatriz. ¡Vota tú también!"
+      facebook_13: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza de la Emperatriz. ¡Vota tú también!"
+      description_13: "Vota la remodelación de la Plaza de la Emperatriz, en Carabanchel. Tú decides si quieres que cambie este espacio y cómo, elige proyecto X o proyecto Y."
+      title_14: "Remodelación de la Plaza del Puerto de Canfranc (Puente de Vallecas)"
+      twitter_14: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza del Puerto de Canfranc. ¡Vota tú también!"
+      facebook_14: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza del Puerto de Canfranc. ¡Vota tú también!"
+      description_14: "Vota la remodelación de la Plaza de Puerto de Canfranc, en Puente de Vallecas. Tú decides si quieres que cambie este espacio . Elige proyecto X o proyecto Y."
+      title_15: "Remodelación de la Plaza del Encuentro (Moratalaz)"
+      twitter_15: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza del Encuentro. ¡Vota tú también!"
+      facebook_15: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza del Encuentro. ¡Vota tú también!"
+      description_15: "Vota la remodelación de la Plaza del Encuentro, en Moratalaz. Tú decides si quieres que cambie este espacio y cómo, elige proyecto X o proyecto Y."
+      title_16: "Remodelación de la Plaza de los Misterios (Ciudad Lineal)"
+      twitter_16: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza de los Misterios. ¡Vota tú también!"
+      facebook_16: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza de los Misterios. ¡Vota tú también!"
+      description_16: "Vota la remodelación de la Plaza de los Misterios, en Ciudad Lineal. Tú decides si quieres que cambie este espacio y cómo, elige proyecto X o proyecto Y."
+      title_17: "Remodelación de la Plaza Cívica Mar de Cristal (Hortaleza)"
+      twitter_17: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza Cívica Mar de Cristal. ¡Vota tú también!"
+      facebook_17: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza Cívica Mar de Cristal. ¡Vota tú también!"
+      description_17: "Vota la remodelación de la Plaza Cívica Mar de Cristal, en Hortaleza. Tú decides si quieres que cambie este espacio y cómo, elige proyecto X o proyecto Y."
+      title_18: "Remodelación de la Plaza Mayor de Villaverde y Plaza de Ágata (Villaverde)"
+      twitter_18: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza Mayor de Villaverde y Plaza de Ágata. ¡Vota tú también!"
+      facebook_18: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza Mayor de Villaverde y Plaza de Ágata. ¡Vota tú también!"
+      description_18: "Vota la remodelación de la Plaza Mayor y Ágata, en Villaverde. Tú decides si quieres que cambie este espacio y cómo, elige proyecto X o proyecto Y."
+      title_19: "Remodelación de la Plaza Cívica de San Blas (San Blas - Canillejas)"
+      twitter_19: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza Cívica de San Blas. ¡Vota tú también!"
+      facebook_19: "Decide ahora qué va a hacer el Ayuntamiento con la Plaza Cívica de San Blas. ¡Vota tú también!"
+      description_19: "Vota la remodelación de la Plaza Cívica de San Blas, en San Blas-Canillejas. Tú decides si quieres que cambie este espacio. Elige proyecto X o proyecto Y."
+  type_selection:
+    title: "Estás creando..."
+    proposals_title: "Propuesta ciudadana"
+    proposals_info: "Crea una propuesta para recoger apoyos y llevarla a votación."
+    investment_title: "Proyecto de Presupuestos participativos"
+    investment_info: "Decide a qué se destina una parte del presupuesto municipal."
+  nvotes:
+    can_participate: "Puedes participar en las siguientes votaciones:"
+    thanks: "¡Muchas gracias por participar!"
+    exit: "Salir de la votación"
+    finish: "Sí, salir de la votación"
+    officer_title: "Presidente de mesa"
+    tablet: "Votar en tablet"
+    are_you_sure: "¿Estás seguro de que has terminado?"
+  delegation:
+    title: Lista de recomendaciones
+    info: Aquí puedes crear una lista con tus proyectos favoritos, para ayudar a que se apoyen y voten.
+    instructions: "Instrucciones:"
+    text_html: Selecciona los proyectos de gasto para añadir a tu lista introduciendo su ID
+    help_html: "<small><em>El ID es el número que aparece en la URL de cada proyecto de gasto, por ejemplo:<br>https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/proyecto/<strong>1234</strong></em></small>"
+    form_submit: "Añadir a mi lista"
+    table_head: "Título del proyecto de gasto"
+    delete: "Eliminar de mi lista"
+    list_title: "Proyectos de gasto recomendados por:"
+    no_recommendations: "Todavía no has añadido ningún proyecto de gasto para la fase de %{phase}."
+    phase:
+      selecting: preselección
+      balloting: votación final
+    view_list: "Ver mi lista de proyectos de gasto"
+    create_ok: "Proyecto de gasto añadido"
+    create_error: "El identificador no es válido"
+    deleted: "Proyecto eliminado de la lista"
+    share: "Comparte tu lista de proyectos recomendados con este enlace:"
+  welcome:
+    header:
+      label: "Haz tu propuesta ciudadana"
+      title: "¿Tienes una idea para cambiar Madrid?"
+      text: "El Ayuntamiento de Madrid llevará a cabo tu propuesta si consigues que pase a votación ciudadana. Necesitas 27.064 apoyos en Decide Madrid, el 1% de la población con derecho a voto."
+      button: "Crea una propuesta"
+    proposals:
+      label: "Propuestas"
+      title: "¿Qué es y cómo se crea una propuesta ciudadana?"
+      text: "Es un mecanismo de participación para que la ciudadanía decida de forma directa las políticas municipales."
+      link: "Más información sobre cómo crear propuestas ciudadanas"
+      url: "https://diario.madrid.es/decidemadrid/2017/09/05/las-propuestas-ciudadanas-de-decide-madrid-paso-a-paso/"
+      alt: "Creación de una propuesta en Decide Madrid"
+    once_plazas:
+      label: "Resultados votación"
+      title: "La ciudadanía aprueba remodelar once plazas"
+      text: "En octubre tuvo lugar una votación ciudadana en la que se decidió cambiar los espacios públicos de once distritos de Madrid."
+      link: "Ver resultados Once plazas"
+      alt: "Voluntaria en una de las mesas de votación"
+    budgets:
+      label: "Resultados 2016"
+      title: "Presupuestos participativos"
+      text: "Consulta el estado de los proyectos ganadores de la primera edición de presupuestos participativos."
+      link: "Descargar los Resultados 2016"
+      alt: "Cancha de baloncesto"
+  budgets_banner:
+    title: "100 millones para hacer Madrid"
+    date: "Del 15 de mayo al 30 de junio"
+    button: "Votar proyectos"
+    alt: "Ir a la página de presupuestos participativos 2017"
+    city_title: "VOTA PROYECTOS DE TODA LA CIUDAD"
+    city_text_html: "Recuerda que puedes votar también proyectos de <strong>toda la ciudad</strong>."
+    city_button: "Votar proyectos de toda la ciudad"
+    district_title: "VOTA PROYECTOS DE UN DISTRITO"
+    district_text_html: "Recuerda que puedes votar también proyectos de <strong>uno de los distritos</strong>."
+    district_button: "Votar proyectos de un distrito"
+  processes:
+    lobbies:
+      title: "Registro de lobbies del Ayuntamiento de Madrid"
+      description: "El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies."
+    manzanares:
+      title: "Parque Lineal del Manzanares"
+      description: "El Ayuntamiento de Madrid abre un debate público sobre el Parque Lineal del Manzanares dirigido a comenzar un proceso de participación ciudadana respecto a dicho parque y su entorno."
+    shared:
+      more_info: "Más información"
+  polls_reports:
+    label: "Informe técnico"
+    button: "Descargar informe técnico"
+    title_1: "Madrid 100% sostenible"
+    img_alt_1: "Imagen genérica relacionada con la propuesta Madrid 100% sostenible"
+    description_1_html: "Informe técnico sobre la propuesta Madrid 100% sostenible."
+    title_2: "Billete único para el transporte público"
+    img_alt_2: "Imagen genérica relacionada con la propuesta Billete único para el transporte público"
+    description_2_html: "Informe técnico sobre la competencia, legalidad, viabilidad y coste de la propuesta Billete único para el transporte público."
+  budgets_minimal_selector:
+    view: "Mostrar como tarjetas o lista"
+  mailers:
+    budget_investment_created:
+      signatory: "Área de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid"
+  annotator:
+    help:
+      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text_sign_in: iniciar sesión
+      text_sign_up: registrarte
+      title: "¿Cómo puedo comentar este documento?"
+  budgets:
+    results:
+      heading: "Resultados"
+  polls:
+    results: Resultados
+    stats: Estadísticas
+    information: Información
+    more_poll_info: Más información sobre las votaciones
+    full_recount_results: Resultados con el 100% de los votos escrutados
+    show:
+      results:
+        tab: "Resultados de la votación"
+        more_info: "Más información sobre la votación %{poll}"
+      stats:
+        tab: "Estadísticas de participación"
+        polls: "Votaciones"
+        data: "Datos de participación"
+        total: "Participación total"
+        gender: "Participación por sexo"
+        age: "Participación por grupos de edad"
+        district: "Participación por distrito"
+  first_2017_poll:
+    title: PRIMERA VOTACIÓN CIUDADANA
+    date: 13-19 DE FEBRERO 2017
+    meta_tags:
+      title: "Votaciones ciudadanas de Madrid - Decide Madrid"
+      description: "Participa en el espacio de votación ciudadana: apoya propuetas que hayan conseguido el 100% de apoyos y consulta los resultados de las votaciones."
+    results:
+      title: "Resultados de la primera votación ciudadana"
+      description: "Consulta todos los resultados y la participación de la decisión de la ciudadanía sobre el futuro de la Gran Vía y de la Plaza de España, de las propuestas ciudadanas de Madrid 100% sostenible, billete único para el transporte público y las respuestas en seis distritos."
+    stats:
+      title: "Estadísticas de la primera votación ciudadana"
+      description: "Consulta los datos completos de número de votos, participación total y por distritos de la primera votación de propuestas ciudadanas de Madrid, el futuro de la Gran Vía y de la Plaza de España y de seis preguntas en distritos."
+  once_plazas:
+    title: "Once plazas"
+    date: "8-22 de octubre de 2017"
+    title_results: "Resultados"
+    title_stats: "Estadísticas"
+    more_info: "Más información sobre las votaciones"
+    results:
+      title: "Resultados de la votación once plazas"
+      description: "Mira los resultados de la consulta ciudadana sobre la remodelación de once plazas de Madrid y los proyectos ganadores con los que se cambiarán esos espacios públicos."
+      social: "Resultados de la consulta ciudadana #Vota11Plazas: espacios que se remodelarán y proyectos arquitectónicos ganadores"
+    stats:
+      title: "Estadísticas de la votación once plazas"
+      description: "Mira las estadísticas de la consulta ciudadana sobre la remodelación de once plazas de Madrid. Entérate de la participación por sexo, por edad y cuántas personas participaron por distrito."
+      social: "Estadísticas de la participación por distrito, sexo y edad de la consulta ciudadana #Vota11Plazas"
+  legislation_proposals:
+    label_proposal: Propuesta
+    label_question: Pregunta
+    form:
+      question_title: "Escribe aquí tu pregunta"
+      question_description: "Puedes añadir una explicación sobre tu pregunta o información adicional"
+  form:
+    legislation/proposal: el formulario
+  proposals:
+    form:
+      proposal_type: Elige si quieres hacer una propuesta o una pregunta
+    index:
+      start_proposal_question: Crear propuesta o pregunta

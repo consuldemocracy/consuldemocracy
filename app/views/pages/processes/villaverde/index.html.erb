@@ -1,0 +1,91 @@
+<% provide :title, "Cambiar la denominación del Barrio San Andrés en el distrito de Villaverde" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: villaverde_url,
+          social_title: t("pages.processes.index.process_19_title"),
+          social_description: t("pages.processes.index.process_19_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: villaverde_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to %>
+      <h1>Cambiar la denominación del "Barrio San Andrés" en el distrito de Villaverde</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h2>Introducción</h2>
+
+    <p>El Ayuntamiento de Madrid somete a consulta pública la conveniencia de cambiar la denominación del "Barrio San Andrés" por el de "Villaverde Alto, Casco Histórico de Villaverde", en el Distrito de Villaverde.</p>
+
+    <p>Por el Presidente de la Asociación de Vecinos La Incolora de Villaverde Alto, se solicita el cambio de denominación  del barrio "San Andrés" por el de "Villaverde Alto, Casco Histórico de Villaverde". Se fundamenta en que la denominación actual origina confusión a los vecinos e indignación al haber perdido su identidad de origen y sin consultar a los vecinos.</p>
+
+    <p>Como consecuencia de esta iniciativa, la Junta Municipal del Distrito de Villaverde en la sesión celebrada el 3 de diciembre de 2015, aprobó la proposición presentada por la Asociación de Vecinos la Incolora, instando al órgano correspondiente a efectuar el cambio de denominación de "Barrio San Andrés" por el de "Villaverde Alto, Casco Histórico de Villaverde".</p>
+
+    <p>Los informes emitidos en materia de urbanismo ponen de manifiesto que no existe inconveniente de tipo técnico para proceder a realizar el cambio de nombre solicitado Barrio de "Villaverde Alto, Casco Histórico de Villaverde".</p>
+
+    <p>Para culminar el proceso de efectuar el cambio de denominación del barrio, es necesario que el Pleno del Ayuntamiento de Madrid acuerde la modificación del Anexo del Reglamento Orgánico de los Distritos.</p>
+
+    <p>Es por ello que el Ayuntamiento decide someter a consulta pública el cambio de denominación del barrio del Distrito de Villaverde con objeto de conocer la opinión de la ciudadanía que pudiera verse afectada.</p>
+  </div>
+
+  <div class="small-12 medium-6 large-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "/docs/procesos/consulta_previa_reglamento_organico_distritos_firmado.pdf", target: "_blank",
+                    title: "(se abre en ventana nueva)" do %>
+                    <strong>Consulta pública Distritos de la Ciudad de Madrid</strong><br>
+                    <small>(PDF | 135Kb)</small>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="process-debates">
+  <div class="row">
+    <div class="small-12 column">
+      <h3>Preguntas del debate</h3>
+
+      <p>Puedes entrar en los debates que se proponen a continuación y dar tu opinión, o valorar otras respuestas con los botones de votación que encontrarás a la derecha de cada respuesta.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Nº</th>
+            <th scope="col">Pregunta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">1</td>
+            <td>
+              <%= link_to debate_url(5142) do %>
+                <strong>
+                ¿Consideras conveniente la denominación de Barrio de "Villaverde Alto, Casco Histórico de Villaverde"?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">2</td>
+            <td>
+              <%= link_to debate_url(5143) do %>
+                <strong>
+                ¿Crees necesaria la participación de los propios Distritos en el proceso de decisión sobre la creación, modificación o cambio de denominación de sus barrios?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

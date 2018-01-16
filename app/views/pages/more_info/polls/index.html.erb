@@ -1,0 +1,47 @@
+<% provide :title do %><%= t("pages.titles.more_info", org_name: setting['org_name']) %><% end %>
+
+<% provide :tracking_page_number, "34" %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: more_info_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 medium-3 column">
+    <%= back_link_to more_info_path %>
+
+    <ul class="menu vertical margin-top">
+      <li><a href="#i"><strong>Información sobre las votaciones</strong></a></li>
+      <li><a href="#ii"><strong>Más información</strong></a></li>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-9 column more-info-text">
+    <h2 id="i">Información sobre las votaciones</h2>
+    <p>Regístrate para poder votar propuestas ciudadanas y las cuestiones que pregunta a sus vecinos el Ayuntamiento de Madrid. Toma decisiones municipales de forma directa.</p>
+
+    <p>Las votaciones se convocan cuando una propuesta ciudadana alcanza el 1% de apoyos del censo con derecho a voto, o cuando el Ayuntamiento de Madrid decide someter cuestiones a decisión directa de la ciudadanía.</p>
+
+    <p>Para participar en la próxima votación tienes que registrarte en Decide Madrid y verificar tu cuenta. Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años. Los resultados de todas las votaciones son vinculantes para el gobierno.
+
+    <p>Algunas cuestiones que se han votado son:</p>
+
+    <ul>
+      <li>Las propuestas ciudadanas "Madrid 100% sostenible" y "Billete único de transporte público"; diferentes actuaciones que se planteaban llevar a cabo en la Gran Vía como la ampliación de las aceras o la preferencia del transporte público; los proyectos finalistas para la reforma de Plaza de España; diversas cuestiones en seis distritos de Madrid como sus planes de actuación, los nombres de parques o del propio distrito, y la protección de edificios históricos.</li>
+
+      <li>La remodelación de 11 plazas periféricas de la ciudad. Respecto a cada plaza se ha decidido si se remodelaría o no y qué proyecto se llevaría a cabo entre dos finalistas en caso de remodelarse.</li>
+    </ul>
+
+    <p>Los resultados de todas las votaciones son vinculantes para el gobierno. Pueden votar todas las personas empadronadas en Madrid mayores de 16 años.</p>
+
+    <h2 id="ii">Más información</h2>
+    <ul>
+      <li>
+        <%= link_to "Explicación detallada del proceso de propuestas ciudadanas y preguntas frecuentes", more_info_proposals_path %>
+      </li>
+      <li>
+        <%= link_to "Hechos sobre participación ciudadana y democracia directa (para perderle el miedo)", participation_facts_path %>
+      </li>
+    </ul>
+  </div>
+</div>

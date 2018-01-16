@@ -1,7 +1,8 @@
 // Fonts
 //
-// 01. Source Sans Pro (https://www.google.com/fonts/specimen/Source+Sans+Pro)
-// 02. Lato (https://www.google.com/fonts/specimen/Lato)
+// 01. Source Sans Pro (https://fonts.google.com/specimen/Source+Sans+Pro)
+// 02. Lato (https://fonts.google.com/specimen/Lato)
+// 03. Rubik (https://fonts.google.com/specimen/Rubik)
 //
 
 // 01. Source Sans Pro
@@ -92,4 +93,49 @@
        font-url('lato-bold.svg#latobold') format('svg');
   font-weight: bold;
   font-style: normal;
+}
+
+// 03. Rubik
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@font-face {
+  font-family: 'Rubik';
+  src: font-url('rubik-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: font-url('rubik-italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: font-url('rubik-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: font-url('rubik-lightitalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: font-url('rubik-medium.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: font-url('rubik-mediumitalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
 }

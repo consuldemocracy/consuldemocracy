@@ -60,15 +60,16 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     def budget_investment_params
       params.require(:budget_investment)
             .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list, :valuation_tag_list, :incompatible,
-                    :selected, valuator_ids: [])
+                    :selected, :organization_name, :tag_list, :label, :visible_to_valuators, valuator_ids: [])
     end
 
     def load_budget
-      @budget = Budget.includes(:groups).find params[:budget_id]
+      @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
     end
 
     def load_investment
-      @investment = Budget::Investment.where(budget_id: @budget.id).find params[:id]
+      @investment = @budget.investments.where(original_spending_proposal_id: params[:id]).first
+      @investment ||= @budget.investments.find(params['id'])
     end
 
     def load_admins

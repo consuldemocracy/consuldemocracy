@@ -1,8 +1,15 @@
 en:
   pages:
-    census_terms: To confirm the account, you must be 16 or older and be registered, having provided the information requested previously, will verify. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed in a file mentioned previously in the terms and conditions of use for the Portal.
+    census_terms: To confirm the account, you must be 16 or older and be registered as resident in Madrid, having provided the information requested previously, which the Directorate-General of Civil Participation will verify against the files 'Municipal Census of Inhabitants', for which the Directorate-General for Statistics is responsible, and the 'Citizen Support Services', for which the Directorate-General for Quality and Citizen Services is responsible. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed by the Directorate-General for Civil Participation in the file 'Management of Participatory Activities' mentioned previously in the terms and conditions of use for the Portal.
     conditions: Terms and conditions of use
     general_terms: Terms and Conditions
+    help_translate:
+      title: Help us translate!
+      text: |-
+        If you speak other languages please help us translate this website and the software behind it.
+
+        Contact us at ag.gobiernoabierto@madrid.es We'll give you access to the collaborative translation tool.
+        Together we can make this open government tool available to any country. Thanks a million!
     more_info:
       title: "Discover %{org_name}"
       subtitle: "Learn everything you can do on this website."
@@ -11,6 +18,7 @@ en:
         debates: "Debates"
         proposals: "Proposals"
         budgets: "Participatory budgets"
+        polls: "Polls"
         other: "Other information of interest"
       debates:
         title: "Debates"
@@ -22,6 +30,7 @@ en:
         figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
       proposals:
         title: "Proposals"
+        detail: "Detailed proposals information"
         description: "Propose what you want the City Council to do and support proposals from other people."
         feature_1: "To create a proposal you have to %{link}, in addition to support you must verify your account."
         feature_1_link: "sign up on %{org_name}"
@@ -31,6 +40,7 @@ en:
         figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
       budgets:
         title: "Participatory Budgeting"
+        detail: "Detailed budgets information"
         description: "The first six months of each year you can decide how to spend part of the budget."
         feature_1: "To submit an investment project you have to %{link} and verify your account."
         feature_1_link: "sign up on %{org_name}"
@@ -41,11 +51,14 @@ en:
         figcaption_html: '"Support" and "Voting" phases of participatory budgets.'
       polls:
         title: "Polls"
+        detail: "Detailed polls information"
         description: "Citizen proposals that reach 1% of support will be put to a vote."
         feature_1: "To participate in the next poll you have to %{link} and verify your account."
         feature_1_link: "sign up on %{org_name}"
         feature_2: "All verified users over 16 years old can vote."
         feature_3: "The results of all votes shall be binding on the government."
+        image_alt: "First citizen vote"
+        figcaption: "Campaign image of the First Citizen Vote in February 2017."
       faq:
         title: "Technical problems?"
         description: "Read the FAQs and solve your questions."
@@ -58,6 +71,9 @@ en:
       other:
         title: "Other information of interest"
         how_to_use: "Use %{org_name} in your city"
+        world: "Citizen participation in the world"
+        facts: "Facts about citizen participation and direct democracy"
+        forums: "Local Forums"
       how_to_use:
         text: |-
           Use it in your local government or help us to improve it, it is free software.
@@ -67,12 +83,87 @@ en:
           If you are a programmer, you can see the code and help us to improve it at [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Use it in your local government
+        meetings: Debate's and proposal's meetings
     privacy: Privacy Policy
+    processes:
+      back: Back
+      index:
+        process_1_title: Transparency Ordinance
+        process_1_description: Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help.
+        process_1_button: More information
+        process_2_title: Remodeling of the Plaza España
+        process_2_description_close: Very soon you can choose how you would like the new Plaza España.
+        process_2_button: More information
+        process_3_title: "Pleno Abierto"
+        process_3_description: Supports proposals and questions. The five most voted will be made in person to the political groups in the Open Plenary Session of 24 April.
+        process_3_button: See proposals and questions
+        process_5_title: Plan de Derechos Humanos
+        process_5_description: El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan para el desarrollo de sus políticas públicas.
+        process_5_title_voting: Plan de Derechos Humanos
+        process_5_description_voting_html: "Hasta el 4 de noviembre los ciudadanos priorizaron las medidas y comentaron el borrador del Plan de Derechos Humanos."
+        process_5_button_voting: Más información
+        process_6_title: Cartas de Servicios
+        process_6_description: Puedes dejar tus comentarios en las Cartas de Servicios de los servicios de Ayuda a Domicilio, de los Centros de Día, de Centros Municipales de Mayores y de Teleasistencia Domiciliaria.
+        process_6_button: Ver resultados de participación
+        process_7_title: "Urbanismo: nuevos bancos"
+        process_7_description: Los ciudadanos eligieron el nuevo diseño de bancos para sentarse que les gustaría que se instalasen en la ciudad.
+        process_7_button: See the results
+        process_8_title: "Licencias urbanísticas, declaraciones responsables y comunicaciones previas"
+        process_8_description: Consulta previa sobre la regulación de la concesión de licencias urbanísticas para la realización de obras y la apertura de locales comerciales o empresariales.
+        process_8_button: "Más información"
+        process_9_title: "Alianza para el Gobierno Abierto"
+        process_9_description: "Esta organización compuesta por gobiernos y sociedad civil, ayuda a que los gobiernos desarrollen medidas relevantes y específicas para avanzar en la participación y la transparencia, y certifica el cumplimiento de las mismas por medio de evaluadores independientes."
+        process_9_button: "Más información"
+        process_10_title: "Ordenanza de subvenciones"
+        process_10_description: "El Ayuntamiento de Madrid sometió a consulta pública la necesidad de modificar la regulación del sistema de subvenciones."
+        process_10_button: "Más información"
+        process_11_title: "Borrador de Plan de Calidad de Aire y Cambio Climático"
+        process_11_description: "Información y comunicación de las medidas propuestas en el borrador del nuevo plan de calidad del aire y cambio climático de la ciudad de Madrid."
+        process_11_button: "Más información"
+        process_12_title: "Consulta pública modificación Ordenanza Reguladora de la denominación y Rotulación de Vías, Espacios Urbanos"
+        process_12_description: "En el año 2007, se aprobó la denominada Ley de Memoria Histórica que tiene por objeto reconocer y ampliar derechos así como establecer medidas en favor de quienes padecieron persecución o violencia durante la guerra civil y la dictadura."
+        process_12_button: "Más información"
+        process_13_title: "Nuevo barrio en el distrito de Villa de Vallecas"
+        process_13_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".'
+        process_13_button: "Más información"
+        process_14_title: "Atención a la ciudadanía de Línea Madrid"
+        process_14_description: 'El Proyecto Línea Madrid se enmarca dentro de uno de los principales objetivos del Ayuntamiento de Madrid como es la mejora continua en la prestación de servicios a la ciudadanía.'
+        process_14_button: "Más información"
+        process_15_title: "Nueva ordenanza de movilidad"
+        process_15_description: "Se pretende abrir un profundo debate en la ciudadanía que permita hallar soluciones eficaces y socialmente consensuadas a los problemas de la movilidad urbana presente y futura."
+        process_15_button: "Más información"
+        process_16_title: "Conservación, Rehabilitación y Estado Ruinoso de las Edificaciones"
+        process_16_description: "El Ayuntamiento de Madrid somete a consulta pública la aprobación de una nueva Ordenanza con el ánimo de proteger más eficazmente la calidad de vida de los ciudadanos en términos de sostenibilidad ambiental y cohesión social y territorial."
+        process_16_button: "Más información"
+        process_17_title: "Modificación de la ordenanza reguladora de la publicidad exterior"
+        process_17_description: "El objetivo de la modificación es conseguir una normativa más clara que facilite su aplicación, clarificando conceptos, ámbitos de aplicación y definiciones, eliminando exigencias innecesarias y referencias a normativas sectoriales."
+        process_17_button: "Más información"
+        process_18_title: "Nuevos barrios en el Distrito de Vicálvaro"
+        process_18_description: "El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear nuevos barrios en el Distrito de Vicálvaro."
+        process_18_button: "Más información"
+        process_19_title: 'Cambio de denominación  del barrio "San Andrés"'
+        process_19_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de cambiar la denominación del "Barrio San Andrés" por el de "Villaverde Alto, Casco Histórico de Villaverde", en el Distrito de Villaverde.'
+        process_19_button: "Más información"
+        process_plaza_title: Remodeling of the Plaza España
+        process_plaza_description: Select the project that you like for this new space in your city.
+        more_info_title: "See more information about the process "
+      process_1:
+        title: Help us improve transparency Ordinance of the City of Madrid
+        comment: leave your comments
+        text:  "Until next January 31 you can %{comment} to the draft Transparency Ordinance of the City of Madrid or sending an email to transparencia@madrid.es.
+
+
+                You can now see the [final draft Transparency Ordinance of the City of Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Transparency Ordinance of the City of Madrid')."
+        button: See ordinance
+      process_3:
+        view_all: See the most voted proposals and questions
+        view_questions: See all questions
     titles:
       accessibility: Accessibility
       conditions: Terms of use
       more_info: "More information about %{org_name}"
       privacy: Privacy Policy
+      kit_decide: "Kit Decide: to make your communication campaigns after you create a proposal"
     verify:
       code: Code you received in letter
       email: Email

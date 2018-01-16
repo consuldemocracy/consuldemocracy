@@ -1,9 +1,9 @@
 # i18n-tasks finds and manages missing and unused translations: https://github.com/glebm/i18n-tasks
 
 # The "main" locale.
-base_locale: en
+base_locale: es
 ## All available locales are inferred from the data by default. Alternatively, specify them explicitly:
-locales: [en]
+locales: [es, en]
 ## Reporting locale, default: en. Available: en, ru.
 # internal_locale: en
 
@@ -113,6 +113,10 @@ ignore_missing:
   - 'devise.failure.invalid'
   - 'devise.registrations.destroyed'
   - 'devise.password_expired.*'
+  - 'tracking.events.action.*'
+  - 'tracking.events.category.*'
+  - 'tracking.user_data.*'
+  - 'tracking.events.name.*'
 
 ## Consider these keys used:
 ignore_unused:
@@ -161,7 +165,13 @@ ignore_unused:
   - 'proposals.index.select_order'
   - 'proposals.index.orders.*'
   - 'proposals.index.section_header.*'
+  - 'spending_proposals.index.select_order'
+  - 'spending_proposals.index.orders.*'
   - 'spending_proposals.index.search_form.*'
+  - 'debates.show.comments*'
+  - 'debates.show.questions*'
+  - 'comments_helper.*'
+  - 'questions_helper.*'
   - '*.index.search_form.*'
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
@@ -172,6 +182,8 @@ ignore_unused:
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'
   - 'invisible_captcha.*'
+  - 'probes.codenames.*' # custom probes names
+  - 'social_share.polls_show.*' # SEO for polls
   - 'admin.site_customization.pages.page.status_*'
   - 'admin.legislation.processes.process.*'
   - 'legislation.processes.index.*'
@@ -179,6 +191,21 @@ ignore_unused:
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
 # - 'simple_form.{error_notification,required}.:'
+#### Review unused keys after merge with Budgest (both en and es)
+  - layouts.header.see_all
+  - legislation.help.alt
+  - legislation.help.text
+  - legislation.help.text_sign_in
+  - legislation.help.text_sign_up
+  - legislation.help.title
+  - users.show.confirm_deletion_spending_proposal
+  - users.show.delete_spending_proposal
+  - verification.letter.create.flash.offices_url
+  - verification.letter.new.offices_url
+  - layouts.header.open_city_title
+  - admin.stats.polls.current
+  - admin.stats.polls.expired
+####
 
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:

@@ -1,0 +1,79 @@
+<% provide :title, "Nuevo barrio en el distrito de Villa de Vallecas" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: vallecas_url,
+          social_title: t("pages.processes.index.process_13_title"),
+          social_description: t("pages.processes.index.process_13_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: vallecas_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to %>
+      <h1>Nuevo barrio en el distrito de Villa de Vallecas</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h2>Introducción</h2>
+
+    <p>El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".</p>
+
+    <p>La propuesta de creación del nuevo barrio partió de diversas asociaciones vecinales las cuales planteaban que el nuevo el PAU de Vallecas, actualmente perteneciente al barrio de Casco Histórico de Villa de Vallecas, debía constituirse como barrio y denominarse "Ensanche de Vallecas".</p>
+
+    <p>El actual PAU de Vallecas es una zona de reciente construcción, muy extensa y poblada. Posee características muy diferenciadas respecto a los barrios de Casco Histórico y Santa Eugenia por lo que es sentido como barrio diferente tanto por sus habitantes como por parte de los residentes de los barrios más antiguos del distrito.</p>
+
+    <p>Por estos motivos, la Junta Municipal del Distrito de Villa de Vallecas, con fecha 12 de noviembre de 2015, acordó instar al Área de Gobierno de Coordinación Territorial y Asociaciones a impulsar la creación de un nuevo barrio. Los informes emitidos en materia de urbanismo y estadística han sido favorables respecto a esta nueva configuración. Para culminar el proceso de creación de un nuevo barrio, es necesario que el Pleno del Ayuntamiento de Madrid acuerde la modificación del Anexo del Reglamento Orgánico de los Distritos. La división del distrito de Villa de Vallecas en barrios quedaría configurada de la siguiente forma:</p>
+
+    <ul>
+      <li>Casco Histórico de Vallecas.</li>
+      <li>Santa Eugenia.</li>
+      <li>Ensanche de Vallecas.</li>
+    </ul>
+
+    <p>Es por ello que el Ayuntamiento decide someter a consulta pública la nueva división en barrios del Distrito de Villa de Vallecas con objeto de conocer la opinión de la ciudadanía que pudiera verse afectada.</p>
+  </div>
+  <div class="small-12 medium-6 large-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "/docs/procesos/vallecas_acuerdo_junta_gobierno.pdf", target: "_blank",
+                    title: "Acuerdo de la Junta de Gobierno - Nuevo barrio en el distrito de Villa de Vallecas (Se abre en ventana nueva)" do %>
+                    <strong>Acuerdo de la Junta de Gobierno</strong><br><small>(Nuevo barrio en el distrito de Villa de Vallecas)</small>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="process-debates">
+  <div class="row">
+    <div class="small-12 column">
+      <h3>Preguntas del debate</h3>
+
+      <div class="row" data-equalizer>
+        <div class="small-12 medium-6 column margin-bottom">
+          <%= link_to debate_url(4943) do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Consideras conveniente que el PAU de Vallecas se configure como un barrio independiente denominado "Ensanche de Vallecas"?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-6 column margin-bottom">
+          <%= link_to debate_url(4944) do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Crees necesaria la participación de los propios Distritos en el proceso de decisión sobre la creación o modificación de sus barrios?
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

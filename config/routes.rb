@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
+  draw :custom
   draw :account
   draw :admin
   draw :annotation
@@ -42,7 +43,15 @@ Rails.application.routes.draw do
 
   # More info pages
   get 'more-information',                     to: 'pages#show', id: 'more_info/index',                as: 'more_info'
-  get 'more-information/how-to-use',          to: 'pages#show', id: 'more_info/how_to_use/index',     as: 'how_to_use'
+
+  ### Modified in: config/routes/custom.rb
+
+  ### ToDo: Figure out a way to maintain Consul's routes in this file,
+  #         whilst modifying them in routes/custom.rb
+  #         The main problem here is that we are using the same `as` value
+  ###
+  #get 'more-information/how-to-use',         to: 'pages#show', id: 'more_info/how_to_use/index',     as: 'how_to_use'
+
   get 'more-information/faq',                 to: 'pages#show', id: 'more_info/faq/index',            as: 'faq'
 
   # Static pages

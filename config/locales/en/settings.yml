@@ -15,6 +15,7 @@ en:
     email_domain_for_officials: "Email domain for public officials"
     per_page_code_head: "Code to be included on every page (<head>)"
     per_page_code_body: "Code to be included on every page (<body>)"
+    analytics_url: "Analytics URL"
     twitter_handle: "Twitter handle"
     twitter_hashtag: "Twitter hashtag"
     facebook_handle: "Facebook handle"
@@ -36,8 +37,17 @@ en:
       debates: Debates
       polls: Polls
       signature_sheets: Signature sheets
+      legislation: Legislation
       spending_proposals: Investment projects
       spending_proposal_features:
+        phase1: "Participatory budget: Phase 1 - Accept proposals"
+        phase2: "Participatory budget: Phase 2 - Preselect proposals"
+        phase3: "Participatory budget: Phase 3 - Invest"
+        open_results_page: "Participatory budget: Make results page public"
+        voting_allowed: Voting on investment projects - Preselection phase
+        final_voting_allowed: Voting on investment projects - Final phase
+      probe:
+        plaza: "Plaza España Probe"
         voting_allowed: Voting on investment projects
       legislation: Legislation
       user:

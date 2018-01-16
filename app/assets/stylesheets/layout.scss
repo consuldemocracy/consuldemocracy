@@ -250,6 +250,10 @@ a {
   h2 {
     font-size: $base-font-size;
   }
+
+  &.vertical li {
+    display: block;
+  }
 }
 
 .menu.vertical {
@@ -356,6 +360,10 @@ a {
 
 .pagination .current {
   background: $brand;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .truncate-horizontal-text {

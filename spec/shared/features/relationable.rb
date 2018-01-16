@@ -57,6 +57,25 @@ shared_examples "relationable" do |relationable_model_name|
     end
   end
 
+  scenario 'budget investments can be added as related content' do
+    budget_investment = create(:budget_investment)
+    login_as(user)
+    visit relationable.url
+
+    expect(page).to have_selector('#related_content', visible: false)
+    click_on("Add related content")
+    expect(page).to have_selector('#related_content', visible: true)
+
+    within("#related_content") do
+      fill_in 'url', with: "#{Setting['url'] + budget_investment.url}"
+      click_button "Add"
+    end
+
+    within("#related-content-list") do
+      expect(page).to have_content(budget_investment.title)
+    end
+  end
+
   scenario 'if related content URL is invalid returns error' do
     login_as(user)
     visit relationable.url

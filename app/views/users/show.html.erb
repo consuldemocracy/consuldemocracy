@@ -1,6 +1,13 @@
 <main>
   <div class="activity row margin-top">
     <div class="small-12 column">
+      <% if current_budget %>
+        <%= link_to budget_recommendations_path(budget_id: current_budget.slug, 
+                      user_id: @user.id), 
+                      class: "button hollow float-right delegation" do %>
+          <small><%= t("users.show.delegation") %></small>
+        <% end %>
+      <% end %>
 
       <% if @user != current_user %>
         <% if @user.email_on_direct_message? %>

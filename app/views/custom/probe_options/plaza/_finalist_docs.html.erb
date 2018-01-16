@@ -1,0 +1,37 @@
+<% if project_x?(@probe_option) %>
+  <h3><%= t("probes.show.documents_finalist") %></h3>
+  <%= link_to root_url + "system/30_memoria_finalista_welcome_mother_nature_good_bye_mr_ford.pdf",
+            title: "PDF #{@probe_option.name} finalista | (165Mb)",
+            target: "_blank", class: "button hollow",
+            rel: "nofollow" do %>
+            <%= image_tag "icon_pdf.png", alt: "PDF" %>
+            <%= "<small>Memoria Final (165Mb)</small>".html_safe %>
+  <% end %>
+  &nbsp;
+  <%= link_to @probe_option.file_path('dossier_finalista', 'pdf'),
+              title: "PDF #{@probe_option.name} finalista | #{@probe_option.file_size('dossier_finalista', 'pdf')}",
+              target: "_blank", class: "button hollow",
+              rel: "nofollow" do %>
+              <%= image_tag "icon_pdf.png", alt: "PDF" %>
+              <%= "<small>Imágenes Finales  (#{@probe_option.file_size('dossier_finalista', 'pdf')})</small>".html_safe %>
+  <% end %>
+<% end %>
+
+<% if project_y?(@probe_option) %>
+  <h3><%= t("probes.show.documents_finalist") %></h3>
+  <%= link_to @probe_option.file_path('memoria_finalista', 'pdf'),
+              title: "PDF #{@probe_option.name} finalista | #{@probe_option.file_size('memoria_finalista', 'pdf')}",
+              target: "_blank", class: "button hollow",
+              rel: "nofollow" do %>
+              <%= image_tag "icon_pdf.png", alt: "PDF" %>
+              <%= "<small>Memoria Final (#{@probe_option.file_size('memoria_finalista', 'pdf')})</small>".html_safe %>
+  <% end %>
+  &nbsp;
+  <%= link_to @probe_option.file_path('dossier_finalista', 'pdf'),
+              title: "PDF #{@probe_option.name} finalista | #{@probe_option.file_size('dossier_finalista', 'pdf')}",
+              target: "_blank", class: "button hollow",
+              rel: "nofollow" do %>
+              <%= image_tag "icon_pdf.png", alt: "PDF" %>
+              <%= "<small>Imágenes Finales  (#{@probe_option.file_size('dossier_finalista', 'pdf')})</small>".html_safe %>
+  <% end %>
+<% end %>

@@ -123,6 +123,10 @@
   <%= l @spending_proposal.created_at, format: :datetime %>
 </p>
 
+<p><strong><%= t("valuation.spending_proposals.show.vote_count") %>:</strong>
+  <%= @spending_proposal.total_votes %>
+</p>
+
 <h2><%= t("valuation.spending_proposals.show.responsibles") %></h2>
 
 <p><strong><%= t("valuation.spending_proposals.show.assigned_admin") %>:</strong>

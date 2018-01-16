@@ -18,44 +18,52 @@
                                 title: t("shared.go_to_page") + t("layouts.header.proposals") %>
       </li>
     <% end %>
+
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
-                                  polls_path,
-                                  controller_name == "polls" || (controller_name == "questions" && controller.class.parent == Polls),
+                                  "/vota",
+                                  current_page?(first_voting_path) || current_page?(primera_votacion_info_path) ||
+                                    current_page?(primera_votacion_stats_path) ||
+                                    current_page?("/vota"),
                                   accesskey: "3",
                                   title: t("shared.go_to_page") + t("layouts.header.poll_questions") %>
       </li>
     <% end %>
+
     <% if feature?(:legislation) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
-                                legislation_processes_path,
+                                processes_path,
                                 controller.class.parent == Legislation,
-                                accesskey: "l" %>
+                                accesskey: "4",
+                                title: t("shared.go_to_page") + t("layouts.header.collaborative_legislation") %>
       </li>
     <% end %>
+
     <% if feature?(:spending_proposals) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.spending_proposals"),
-                                  spending_proposals_path,
+                                  participatory_budget_path,
                                   controller_name == 'spending_proposals',
                                   accesskey: "s" %>
       </li>
     <% end %>
+
     <% if feature?(:budgets) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.budgets"),
-                                  budgets_path,
-                                  controller_name == "budgets" || controller_name == "investments",
-                                  accesskey: "4",
+                                  budgets_welcome_path,
+                                  controller_name == "budgets" || controller_name == "investments" || current_page?(budgets_welcome_path),
+                                  accesskey: "5",
                                   title: t("shared.go_to_page") + t("layouts.header.budgets") %>
       </li>
     <% end %>
+
     <li>
       <%= link_to t("layouts.header.more_info"),
                     more_info_path,
-                    accesskey: "5",
+                    accesskey: "6",
                     class: ("active" if current_page?(more_info_path)),
                     title: t("shared.go_to_page") + t("layouts.header.more_info") %>
     </li>

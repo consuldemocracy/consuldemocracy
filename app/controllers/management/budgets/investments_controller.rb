@@ -1,4 +1,5 @@
 class Management::Budgets::InvestmentsController < Management::BaseController
+  before_action :load_budget
 
   load_resource :budget
   load_resource :investment, through: :budget, class: 'Budget::Investment'
@@ -23,6 +24,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
       notice = t('flash.actions.create.notice', resource_name: Budget::Investment.model_name.human, count: 1)
       redirect_to management_budget_investment_path(@budget, @investment), notice: notice
     else
+      load_categories
       render :new
     end
   end
@@ -57,6 +59,10 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
     def only_verified_users
       check_verified_user t("management.budget_investments.alert.unverified_user")
+    end
+
+    def load_budget
+      @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
     end
 
     def load_heading

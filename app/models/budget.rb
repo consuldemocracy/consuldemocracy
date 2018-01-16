@@ -14,6 +14,7 @@ class Budget < ActiveRecord::Base
   has_many :ballots, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
+  has_many :lines, through: :ballots, class_name: 'Budget::Ballot::Line'
   has_many :phases, class_name: Budget::Phase
 
   before_validation :sanitize_descriptions
@@ -33,7 +34,11 @@ class Budget < ActiveRecord::Base
   scope :open, -> { where.not(phase: "finished") }
 
   def self.current
-    where.not(phase: "drafting").last
+    where.not(phase: "drafting").order(:created_at).last
+  end
+
+  def to_param
+    name.parameterize
   end
 
   def current_phase

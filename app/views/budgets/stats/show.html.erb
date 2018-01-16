@@ -1,0 +1,270 @@
+<% cache [@stats] do %>
+  <% provide :title do %>
+    <%= t("budgets.stats.page_title", budget: @budget.name) %>
+  <% end %>
+  <% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: budget_url(@budget),
+              social_title: @budget.name,
+              social_description: @budget.description_for_phase('finished') %>
+  <% end %>
+
+  <div class="budgets-stats">
+    <div class="expanded no-margin-top padding header">
+      <div class="row">
+        <div class="small-12 column text-center">
+          <%= back_link_to budgets_path %>
+          <h1 class="title"><%= t("budgets.stats.title") %><br><%= @budget.name %></h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-top">
+      <div class="small-12 column">
+        <ul class="tabs">
+          <% if @budget.finished? %>
+            <li class="tabs-title">
+              <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
+              <%= link_to t("budgets.results.link"), custom_budget_results_path(@budget) %>
+            </li>
+          <% end %>
+          <li class="tabs-title is-active">
+            <%= link_to t("budgets.stats.link"), custom_budget_stats_path(@budget), class: "is-active" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <div class="callout">
+          <span class="uppercase"><%= t("budgets.stats.total_participants") %></span>
+          <p id="total_participants" class="big-number-stat budget">
+            <%= @stats[:total_participants] %>
+          </p>
+
+          <span class="uppercase"><%= t("budgets.stats.total_budget_investments") %></span>
+          <p class="big-number-stat budget">
+            <%= @stats[:total_budget_investments] %>
+          </p>
+        </div>
+      </div>
+
+      <div class="small-12 medium-6 column">
+        <p>
+          <span class="label feasible"></span>&nbsp;
+          <span id="total_selected_investments">
+            <span class="uppercase"><strong><%= t("budgets.stats.total_selected_investments") %></strong></span>:
+            <%= @stats[:total_selected_investments] %><br>
+          </span>
+
+          <span class="label unfeasible"></span>&nbsp;
+          <span id="total_unfeasible_investments">
+            <span class="uppercase"><strong><%= t("budgets.stats.total_unfeasible_investments") %></strong></span>:
+            <%= @stats[:total_unfeasible_investments] %><br>
+          </span>
+
+          <br>
+
+          <span class="label supports"></span>&nbsp;
+          <span class="uppercase"><strong><%= t("budgets.stats.total_participants_support_phase") %></strong></span>:
+          <span id="total_participants_support_phase">
+            <%= @stats[:total_participants_support_phase] %> <em><%= t("budgets.stats.participants") %></em>,
+            <%= @stats[:total_supports] %> <em><%= t("budgets.stats.supports") %></em><br>
+          </span>
+
+          <span class="label balloting"></span>&nbsp;
+          <span class="uppercase"><strong><%= t("budgets.stats.total_participants_vote_phase") %></strong></span>:
+          <span id="total_participants_vote_phase">
+            <%= @stats[:total_participants_vote_phase] %> <em><%= t("budgets.stats.participants") %></em>,
+            <%= @stats[:total_votes] %> <em><%= t("budgets.stats.votes") %></em><br>
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div class="row margin">
+      <div class="small-12 column">
+        <h2 class="margin-bottom"><%= t("budgets.stats.by_gender") %></h2>
+      </div>
+
+      <div class="small-12 medium-6 column text-center">
+        <%= image_tag ('budgets/stats/gender.png') %>
+      </div>
+
+      <div class="small-12 medium-6 column">
+        <div class="small-12 medium-6 column text-right">
+          <p id="female_percentage">
+            <span class="label" style="background: #FF9E01"></span>
+            &nbsp;<%= t("budgets.stats.total_female_participants").upcase %>
+            (<%= number_to_percentage(@stats[:female_percentage],
+                                      strip_insignificant_zeros: true,
+                                      precision: 2) %>)
+          </p>
+          <p id="total_female_participants" class="big-number-stat">
+            <%= @stats[:total_female_participants] %>
+          </p>
+        </div>
+
+        <div class="small-12 medium-6 column text-left">
+          <p id="male_percentage" >
+            <span class="label" style="background: #FF6600"></span>
+            &nbsp;<%= t("budgets.stats.total_male_participants").upcase %>
+            (<%= number_to_percentage(@stats[:male_percentage],
+                                      strip_insignificant_zeros: true,
+                                      precision: 2) %>)
+          </p>
+          <p id="total_male_participants" class="big-number-stat">
+            <%= @stats[:total_male_participants] %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin">
+      <div class="small-12 column">
+        <h2 class="margin-bottom"><%= t("budgets.stats.by_age") %></h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" class="table-width border-right"><%= t("budgets.stats.age").upcase %></th>
+              <th scope="col" class="border-left"><%= t("budgets.stats.total").upcase %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% all_ages_count = @stats[:age_groups].values.sum.to_f %>
+            <% @stats[:age_groups].each do |age_group, count| %>
+              <tr id="age_group_<%= age_group.gsub(' - ', '_to_').gsub('+ ', 'up_to_') %>">
+                <td class="border-right">
+                  <%= age_group.gsub("+", t("budgets.stats.more_than")) + ' ' + t("budgets.stats.years") %>
+                </td>
+                <td class="border-left">
+                  <strong>
+                    <%
+                      percentage_age_count = all_ages_count == 0 ? 0 : (count / all_ages_count * 100)
+                      formatted_percentage_age_count = number_to_percentage(percentage_age_count,
+                                                                             strip_insignificant_zeros: true,
+                                                                             precision: 2)
+                    %>
+                    <%= count %>
+                   (<%= formatted_percentage_age_count %>)
+                  </strong>
+                  <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="<%= percentage_age_count %>" aria-valuemax="100">
+                    <span class="progress-meter" style="width: <%= number_to_percentage(percentage_age_count*5,
+                                                                             strip_insignificant_zeros: true,
+                                                                             precision: 2, locale: :en) %>;"></span>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 column">
+        <h2 class="margin-bottom"><%= t("budgets.stats.by_heading") %></h2>
+
+        <table class="stats-districts survey-districts">
+          <thead>
+            <tr>
+              <th scope="col" rowspan="2"><%= t("budgets.stats.heading") %></th>
+              <th scope="col" rowspan="2"><%= t("budgets.stats.investments_sent_html") %></th>
+              <th scope="col" colspan="3"><%= t("budgets.stats.participants_support_phase") %></th>
+              <th scope="col" colspan="3"><%= t("budgets.stats.participants_voting_phase") %></th>
+              <th scope="col" colspan="3"><%= t("budgets.stats.participants_total") %></th>
+            </tr>
+            <tr>
+              <th scope="col" class="tiny"><%= t("budgets.stats.total") %></th>
+              <th scope="col" class="tiny"><%= t("budgets.stats.percent_total_participants_html") %></th>
+              <th scope="col" class="tiny"><%= t("budgets.stats.percent_heading_census_html") %></th>
+              <th scope="col" class="tiny"><%= t("budgets.stats.total") %></th>
+              <th scope="col" class="tiny"><%= t("budgets.stats.percent_total_participants_html") %></th>
+              <th scope="col" class="tiny"><%= t("budgets.stats.percent_heading_census_html") %></th>
+              <th scope="col" class="tiny"><%= t("budgets.stats.total") %></th>
+              <th scope="col" class="tiny"><%= t("budgets.stats.percent_total_participants_html") %></th>
+              <th scope="col" class="tiny"><%= t("budgets.stats.percent_heading_census_html") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @budget.headings.order('id ASC').each do |heading| %>
+              <tr id="<%= heading.name.parameterize %>">
+                <td class="border-left">
+                  <strong><%= heading.name %></strong>
+                </td>
+                <td id="total_spending_proposals_heading_<%= heading.id %>"
+                    class="text-center border-left border-right">
+                  <%= @stats[:headings][heading.id][:total_investments_count] %>
+                </td>
+
+                <% ["support", "vote", "all"].each do |phase| %>
+                  <td id="total_participants_<%= phase %>_phase_heading_<%= heading.id %>"
+                      class="border-left text-center">
+                    <%= @stats[:headings][heading.id]["total_participants_#{phase}_phase".to_sym] %>
+                  </td>
+                  <td id="percentage_participants_<%= phase %>_phase_heading_<%= heading.id %>"
+                      class="border-left border-right text-center">
+                    <%= number_to_percentage(@stats[:headings][heading.id]["percentage_participants_#{phase}_phase".to_sym],
+                      strip_insignificant_zeros: true,
+                      precision: 2) %>
+                  </td>
+                  <td id="percentage_district_population_<%= phase %>_phase_heading_<%= heading.id %>"
+                      class="text-center border-right">
+                    <%= number_to_percentage(@stats[:headings][heading.id]["percentage_district_population_#{phase}_phase".to_sym],
+                      strip_insignificant_zeros: true,
+                      precision: 2)%>
+                  </td>
+                <% end %>
+              </tr>
+            <% end %>
+
+            <%# THIS TOTALS ROW IS JUST FOR INTERNAL DEBUGGING %>
+            <% if false %>
+              <tr id="headings_totals">
+                <td class="border-left-success success">
+                  <strong><%= t("budgets.stats.total").upcase %></strong>
+                </td>
+                <td id="total_spending_proposals_heading_total"
+                    class="text-center success">
+                  <strong><%= @stats[:headings][:total][:total_investments_count] %></strong>
+                </td>
+
+                <% ["support", "vote", "all"].each do |phase| %>
+                  <td id="total_participants_<%= phase %>_phase_heading_total"
+                      class="text-center success">
+                    <strong><%= @stats[:headings][:total]["total_participants_#{phase}_phase".to_sym] %></strong>
+                  </td>
+                  <td id="percentage_participants_<%= phase %>_phase_heading_total"
+                      class="text-center success">
+                    <strong><%= number_to_percentage(@stats[:headings][:total]["percentage_participants_#{phase}_phase".to_sym],
+                      strip_insignificant_zeros: true,
+                      precision: 2) %></strong>
+                  </td>
+                  <td class="text-center success <%= phase == 'all' ? 'border-right-success ' : '' %>"></td>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row margin">
+      <div class="small-12 column">
+        <div id="total_unknown_gender_or_age">
+          <p class="help-text">
+            <%= t("budgets.stats.no_demographic_data", total: @stats[:total_unknown_gender_or_age]) %>
+          </p>
+          <p class="help-text">
+              <%= t("budgets.stats.participatory_disclaimer") %>
+          </p>
+          <p class="help-text">
+              <%= t("budgets.stats.heading_disclaimer") %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

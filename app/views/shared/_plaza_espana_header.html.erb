@@ -1,0 +1,52 @@
+<div class="expanded jumbo-survey no-margin-top padding">
+  <div class="row">
+    <div class="small-12 medium-7 column">
+      <%= back_link_to processes_path %>
+
+      <h1 class="margin">Remodelación de Plaza España</h1>
+    </div>
+
+    <div class="small-12 medium-5 column text-right">
+      <%= image_tag "processes_plaza_espana.png", alt: "#decideplazaespaña"%>
+    </div>
+  </div>
+</div>
+
+<div class="expanded survey-timeline-line">
+  <div class="row">
+    <ul class="no-bullet">
+      <li>
+        <strong>Consulta ciudadana</strong><br>
+        <span><em>28 de enero</em></span>
+      </li>
+      <li>
+        <strong>Concurso de proyectos</strong><br>
+        <span><em>14 de junio</em></span>
+      </li>
+      <li>
+        <strong>Valoración de proyectos</strong><br>
+        <span><em>4 de octubre</em></span>
+      </li>
+      <li>
+        <strong>Votación final ciudadana del proyecto ganador</strong><br>
+        <span><em>13 - 19 de febrero</em></span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="tabs">
+      <li class="tabs-title <%= 'is-active' if current_page?(plaza_path) %>">
+        <%= link_to "Resultados", plaza_path %>
+      </li>
+      <li class="tabs-title <%= 'is-active' if current_page?(survey_plaza_path) %>">
+        <%= link_to "Estadísticas", survey_plaza_path %>
+      </li>
+      <li class="tabs-title <%= 'is-active' if current_page?(remodeling_plaza_path) %>">
+        <%= link_to "Información del proceso", remodeling_plaza_path %>
+      </li>
+    </ul>
+  </div>
+</div>

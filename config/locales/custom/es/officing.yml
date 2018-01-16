@@ -1,0 +1,19 @@
+es:
+  officing:
+    menu:
+      voters: "Validar documento y votar"
+      letters: "Validar documento"
+      total_recounts: "Recuento total y escrutinio"
+    polls:
+      final:
+        title: "Listado de votaciones finalizadas"
+        no_polls: "No tienes permiso para recuento final en ninguna votación reciente"
+        select_poll: "Selecciona votación"
+        add_results: "Añadir resultados"
+    booth:
+      new:
+        title: "Escoge tu urna"
+    sessions:
+      create:
+        flash:
+          wrong_password: "Contraseña inválida"

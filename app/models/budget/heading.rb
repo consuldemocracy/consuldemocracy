@@ -20,6 +20,10 @@ class Budget
       "#{group.name}: #{name}"
     end
 
+    def to_param
+      name.parameterize
+    end
+
     def name_exists_in_budget_headings
       group.budget.headings.where(name: name).where.not(id: id).any?
     end
@@ -27,6 +31,5 @@ class Budget
     def can_be_deleted?
       investments.empty?
     end
-
   end
 end

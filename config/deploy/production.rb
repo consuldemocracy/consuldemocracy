@@ -5,6 +5,7 @@ set :branch, :stable
 set :ssh_options, port: deploysecret(:ssh_port)
 set :stage, :production
 set :rails_env, :production
+set :keep_releases, 5
 
 #server deploysecret(:server1), user: deploysecret(:user), roles: %w(web app db importer)
 server deploysecret(:server2), user: deploysecret(:user), roles: %w(web app db importer cron background)

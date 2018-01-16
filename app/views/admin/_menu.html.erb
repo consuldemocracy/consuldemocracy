@@ -183,6 +183,31 @@
       </ul>
     </li>
 
+    <li class="section-title" <%= 'class=active' if controller_name == 'activity' %>>
+      <%= link_to admin_activity_path do %>
+        <span class="icon-eye"></span><%= t('admin.menu.activity') %>
+      <% end %>
+    </li>
+
+    <li class="section-title" <%= 'class=active' if controller_name == 'settings' %>>
+      <%= link_to admin_settings_path do %>
+        <span class="icon-settings"></span><%= t("admin.menu.settings") %>
+      <% end %>
+    </li>
+
+    <li class="section-title" <%= "class=active" if controller_name == "newsletter" %>>
+      <%= link_to admin_newsletters_path do %>
+        <span class="icon-zip"></span>
+        <%= t("admin.menu.newsletter") %>
+      <% end %>
+    </li>
+
+    <li class="section-title" <%= "class=active" if controller_name == "stats" %>>
+      <%= link_to admin_stats_path do %>
+        <span class="icon-stats"></span><%= t("admin.menu.stats") %>
+      <% end %>
+    </li>
+
     <li class="section-title <%= "active" if controller_name == "geozones" %>">
       <%= link_to admin_geozones_path do %>
         <span class="icon-map-marker"></span>
@@ -198,12 +223,5 @@
         <% end %>
       </li>
     <% end %>
-
-    <li <%= "class=active" if controller_name == "newsletter" %>>
-      <%= link_to admin_newsletters_path do %>
-        <span class="icon-zip"></span>
-        <%= t("admin.menu.newsletter") %>
-      <% end %>
-    </li>
   </ul>
 </div>

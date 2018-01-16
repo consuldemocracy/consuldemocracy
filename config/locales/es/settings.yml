@@ -15,6 +15,7 @@ es:
     email_domain_for_officials: "Dominio de email para cargos públicos"
     per_page_code_head: "Código a incluir en cada página (<head>)"
     per_page_code_body: "Código a incluir en cada página (<body>)"
+    analytics_url: "URL de estadísticas externas"
     twitter_handle: "Usuario de Twitter"
     twitter_hashtag: "Hashtag para Twitter"
     facebook_handle: "Identificador de Facebook"
@@ -36,8 +37,17 @@ es:
       debates: Debates
       polls: Votaciones
       signature_sheets: Hojas de firmas
+      legislation: Legislación
       spending_proposals: Propuestas de inversión
       spending_proposal_features:
+        phase1: "Prespuestos participativos: Fase 1 - Aceptar propuestas"
+        phase2: "Prespuestos participativos: Fase 2 - Preselección de propuestas"
+        phase3: "Prespuestos participativos: Fase 3 - Votación final"
+        open_results_page:  "Prespuestos participativos: Hacer públicos los resultados"
+        voting_allowed: Votaciones de preselección sobre propuestas de inversión.
+        final_voting_allowed: Votaciones finales en propuestas de inversión.
+      probe:
+        plaza: "Sondeo Plaza España"
         voting_allowed: Votaciones sobre propuestas de inversión
       legislation: Legislación
       user:

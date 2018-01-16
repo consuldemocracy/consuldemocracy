@@ -391,6 +391,7 @@ feature 'Users' do
 
   scenario 'Admin with password expired trying to use same password' do
     user = create(:user, password_changed_at: Time.current - 1.year, password: '123456789')
+
     admin = create(:administrator, user: user)
 
     login_as(admin.user)

@@ -1,3 +1,5 @@
+# ⚠️ WARNING ❌: DO NOT USE THIS REPO IF WANT TO INSTALL YOUR OWN CONSUL. Instead fork https://github.com/consul/consul
+
 ![CONSUL logo](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
 # CONSUL
@@ -13,6 +15,8 @@ Citizen Participation and Open Government Application
 
 [![Accessibility conformance](https://img.shields.io/badge/accessibility-WAI:AA-green.svg)](https://www.w3.org/WAI/eval/Overview)
 [![A11y issues checked with Rocket Validator](https://rocketvalidator.com/badges/checked_with_rocket_validator.svg?url=https://rocketvalidator.com)](https://rocketvalidator.com/opensource)
+[![Accessibility issues](https://rocketvalidator.com/badges/a11y_issues.svg?url=https://decide.madrid.es)](https://rocketvalidator.com/badges/link?url=https://decide.madrid.es&report=a11y)
+[![HTML issues](https://rocketvalidator.com/badges/html_issues.svg?url=https://decide.madrid.es)](https://rocketvalidator.com/badges/link?url=https://decide.madrid.es&report=html)
 
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3APRs-welcome)
@@ -30,7 +34,7 @@ Development started on [2015 July 15th](https://github.com/consul/consul/commit/
 Prerequisites: install git, Ruby 2.3.2, `bundler` gem, and PostgreSQL (>=9.4).
 
 ```bash
-git clone https://github.com/consul/consul.git
+git clone https://github.com/ayuntamientomadrid/consul.git
 cd consul
 bundle install
 cp config/database.yml.example config/database.yml

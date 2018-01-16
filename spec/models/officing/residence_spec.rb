@@ -40,6 +40,42 @@ describe Officing::Residence do
       end
     end
 
+    describe "letter" do
+      let(:poll) { create(:poll) }
+
+      before(:each) do
+        allow_any_instance_of(Officing::Residence).
+        to receive(:letter_poll).and_return(poll)
+      end
+
+      it "should not be valid without a postal code if validating a letter vote" do
+        residence.letter = true
+        residence.postal_code = nil
+        expect(residence).not_to be_valid
+      end
+
+      it "should be valid without a year of birth if validating a letter vote" do
+        residence.letter = true
+        residence.postal_code = "28013"
+        residence.year_of_birth = nil
+        expect(residence).to be_valid
+      end
+
+      it "should not be valid if already voted" do
+        residence.letter = true
+        residence.document_number = "12345678Z"
+
+        user = create(:user, document_number: "12345678Z")
+        create(:poll_voter, user: user, poll: poll)
+
+        allow_any_instance_of(Officing::Residence).
+        to receive(:letter_poll).and_return(poll)
+
+        expect(residence).not_to be_valid
+        expect(residence.errors[:document_number]).to eq(["Vote Reformulated"])
+      end
+    end
+
   end
 
   describe "new" do
@@ -101,6 +137,13 @@ describe Officing::Residence do
       expect(user.reload).to be_unverified
       residence.save
       expect(user.reload).to be_level_three_verified
+    end
+
+    it "takes the document number from the census API" do
+      residence = build(:officing_residence, document_number: "000012345678Z", year_of_birth: 1980)
+      residence.save
+      expect(residence.document_number).to eq("12345678Z")
+      expect(residence.user.document_number).to eq("12345678Z")
     end
 
     it "stores failed census calls" do

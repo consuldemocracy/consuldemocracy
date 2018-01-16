@@ -211,6 +211,120 @@ feature 'Users' do
 
     end
 
+    feature 'Spending proposals' do
+
+      background do
+        @author = create(:user, :level_two)
+        @spending_proposal = create(:spending_proposal, author: @author, title: 'Build a school')
+      end
+
+      scenario 'is not shown if no user logged in' do
+        visit user_path(@author)
+        expect(page).not_to have_content('Build a school')
+      end
+
+      scenario 'is not shown if no user logged in (filtered url)' do
+        visit user_path(@author, filter: 'spending_proposals')
+        expect(page).not_to have_content('Build a school')
+      end
+
+      scenario 'is not shown if logged in user is a regular user' do
+        login_as(create(:user))
+        visit user_path(@author)
+        expect(page).not_to have_content('Build a school')
+      end
+
+      scenario 'is not shown if logged in user is moderator' do
+        login_as(create(:moderator).user)
+        visit user_path(@author)
+        expect(page).not_to have_content('Build a school')
+      end
+
+      xscenario 'is shown if logged in user is admin' do
+        login_as(create(:administrator).user)
+        visit user_path(@author)
+        expect(page).to have_content('Build a school')
+      end
+
+      xscenario 'is shown if logged in user is author' do
+        login_as(@author)
+        visit user_path(@author)
+        expect(page).to have_content('Build a school')
+      end
+
+      xscenario 'delete button is not shown if logged in user is author' do
+        login_as(@author)
+        visit user_path(@author)
+        within("#spending_proposal_#{@spending_proposal.id}") do
+          expect(page).not_to have_content('Delete')
+        end
+      end
+
+      xscenario 'delete button is not shown if logged in user is admin' do
+        login_as(create(:administrator).user)
+        visit user_path(@author)
+        within("#spending_proposal_#{@spending_proposal.id}") do
+          expect(page).not_to have_content('Delete')
+        end
+      end
+
+    end
+
+    feature 'Ballot' do
+      background do
+        Setting["feature.spending_proposal_features.phase3"] = true
+        @author = create(:user, :level_two)
+        create(:spending_proposal, author: @author, title: 'Build a school')
+        spending_proposal = create(:spending_proposal, price: 1234567, feasible: true, valuation_finished: true)
+        create(:ballot, user: @author, spending_proposals: [spending_proposal])
+      end
+
+      scenario 'link is not shown if no user logged in' do
+        visit user_path(@author)
+        within(".activity") do
+          expect(page).not_to have_content('Participatory budget')
+        end
+      end
+
+      scenario 'is not shown if no user logged in (filtered url)' do
+        visit user_path(@author, filter: 'ballot')
+        within(".activity") do
+          expect(page).not_to have_content('Participatory budget')
+        end
+        expect(page).not_to have_content('You voted one proposal')
+      end
+
+      scenario 'is not shown if author is not the current_user' do
+        login_as(create(:user))
+        visit user_path(@author)
+        within(".activity") do
+          expect(page).not_to have_content('Participatory budget')
+        end
+
+        visit user_path(@author, filter: 'ballot')
+        expect(page).not_to have_content('You voted one proposal')
+      end
+
+      xscenario 'is shown if logged in user is author' do
+        login_as(@author)
+        visit user_path(@author)
+
+        within(".activity") do
+          click_link 'Participatory budget'
+        end
+        expect(page).to have_content('You voted one proposal')
+      end
+
+      scenario 'link is not shown if participatory budget phase 3 is not active' do
+        Setting["feature.spending_proposal_features.phase3"] = nil
+        login_as(@author)
+        visit user_path(@author)
+
+        within(".activity") do
+          expect(page).not_to have_content('Participatory budget')
+        end
+      end
+    end
   end
 
   feature 'Public interests' do

@@ -21,11 +21,6 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
 
   def valuate
     if valid_price_params? && @spending_proposal.update(valuation_params)
-
-      if @spending_proposal.unfeasible_email_pending?
-        @spending_proposal.send_unfeasible_email
-      end
-
       redirect_to valuation_spending_proposal_path(@spending_proposal), notice: t('valuation.spending_proposals.notice.valuate')
     else
       render action: :edit

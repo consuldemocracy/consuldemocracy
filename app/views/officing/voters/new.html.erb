@@ -2,28 +2,46 @@
 
 <h2><%= t("officing.voters.new.title") %></h2>
 
-<% if @polls.any? %>
-  <table>
-    <thead>
-      <tr>
-        <th><%= t("officing.voters.new.table_poll") %></th>
-        <th><%= t("officing.voters.new.table_status") %></th>
-        <th class="text-center"><%= t("officing.voters.new.table_actions") %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @polls.each do |poll| %>
-      <tr id="<%= dom_id(poll) %>">
-        <td>
-          <%= poll.name %>
-        </td>
-        <% if poll.votable_by?(@user) %>
-          <%= render "can_vote", poll: poll %>
-        <% else %>
-          <%= render "already_voted" %>
+<% if physical_booth? %>
+
+  <% if @polls.any? %>
+    <table>
+      <thead>
+        <tr>
+          <th><%= t("officing.voters.new.table_poll") %></th>
+          <th><%= t("officing.voters.new.table_status") %></th>
+          <th class="text-center"><%= t("officing.voters.new.table_actions") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @polls.each do |poll| %>
+        <tr id="<%= dom_id(poll) %>">
+          <td>
+            <%= poll.name %>
+          </td>
+          <% if poll.votable_by?(@user) %>
+            <%= render "can_vote", poll: poll %>
+          <% else %>
+            <%= render "already_voted" %>
+          <% end %>
+        </tr>
         <% end %>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  <% end %>
+
+<% else %>
+
+  <% if Poll.votable_by(@user).any? %>
+    <div class="small-12 medium-6 large-4">
+      <%= link_to t("nvotes.tablet"),
+                    vote_with_tablet_officing_voter_path(@user),
+                    class: "button expanded" %>
+    </div>
+  <% else %>
+    <div class="small-12 medium-6 large-4">
+      Ya ha participado en todas las votaciones.
+    </div>
+  <% end %>
+
 <% end %>

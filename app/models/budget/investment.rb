@@ -53,6 +53,7 @@ class Budget
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
     scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
     scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0 AND valuation_finished = ?", false) }
+    scope :visible_to_valuators,        -> { where(visible_to_valuators: true) }
     scope :valuation_finished,          -> { where(valuation_finished: true) }
     scope :valuation_finished_feasible, -> { where(valuation_finished: true, feasibility: "feasible") }
     scope :feasible,                    -> { where(feasibility: "feasible") }
@@ -67,11 +68,11 @@ class Budget
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
 
-    scope :by_group,    ->(group_id)    { where(group_id: group_id) }
-    scope :by_heading,  ->(heading_id)  { where(heading_id: heading_id) }
-    scope :by_admin,    ->(admin_id)    { where(administrator_id: admin_id) }
-    scope :by_tag,      ->(tag_name)    { tagged_with(tag_name) }
-    scope :by_valuator, ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
+    scope :by_group,    -> (group_id)    { where(group_id: group_id) }
+    scope :by_heading,  -> (heading_id)  { where(heading_id: heading_id) }
+    scope :by_admin,    -> (admin_id)    { where(administrator_id: admin_id) }
+    scope :by_tag,      -> (tag_name)    { tagged_with(tag_name) }
+    scope :by_valuator, -> (valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
 
     scope :for_render, -> { includes(:heading) }
 
@@ -79,6 +80,8 @@ class Budget
     after_save :recalculate_heading_winners if :incompatible_changed?
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+
+    before_save :calculate_confidence_score
 
     def url
       budget_investment_path(budget, self)
@@ -89,14 +92,30 @@ class Budget
     end
 
     def self.scoped_filter(params, current_filter)
-      results = Investment.where(budget_id: params[:budget_id])
-      results = results.where(group_id: params[:group_id])          if params[:group_id].present?
-      results = results.by_heading(params[:heading_id])             if params[:heading_id].present?
-      results = results.by_admin(params[:administrator_id])         if params[:administrator_id].present?
-      results = results.by_tag(params[:tag_name])                   if params[:tag_name].present?
-      results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
-      results = results.send(current_filter)                        if current_filter.present?
+      budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      results = Investment.where(budget_id: budget.id)
+      results = limit_results(results, budget, params)      if params[:max_per_heading].present?
+      results = results.where(group_id: params[:group_id])  if params[:group_id].present?
+      results = results.by_heading(params[:heading_id])     if params[:heading_id].present?
+      results = results.by_admin(params[:administrator_id]) if params[:administrator_id].present?
+      results = results.by_tag(params[:tag_name])           if params[:tag_name].present?
+      results = results.by_valuator(params[:valuator_id])   if params[:valuator_id].present?
+      results = results.send(current_filter)                if current_filter.present?
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
+    end
+
+    def self.limit_results(results, budget, params)
+      max_per_heading = params[:max_per_heading].to_i
+      return results if max_per_heading <= 0
+
+      ids = []
+      if max_per_heading > 0
+        budget.headings.pluck(:id).each do |hid|
+          ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
+        end
+      end
+
+      results.where("budget_investments.id IN (?)", ids)
     end
 
     def searchable_values
@@ -184,7 +203,12 @@ class Budget
     end
 
     def valid_heading?(user)
-      !different_heading_assigned?(user)
+      reclassification?(user) || !different_heading_assigned?(user)
+    end
+
+    def reclassification?(user)
+      headings_voted_by_user(user).count > 1 &&
+      headings_voted_by_user(user).include?(heading_id)
     end
 
     def different_heading_assigned?(user)
@@ -197,8 +221,11 @@ class Budget
     end
 
     def heading_voted_by_user?(user)
-      user.votes.for_budget_investments(budget.investments.where(group: group))
-          .votables.map(&:heading_id).first
+      headings_voted_by_user(user).first
+    end
+
+    def headings_voted_by_user(user)
+      user.votes.for_budget_investments(budget.investments.where(group: group)).votables.map(&:heading_id).uniq
     end
 
     def ballotable_by?(user)
@@ -262,6 +289,14 @@ class Budget
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments
+    end
+
+    def self.by_heading(heading_id)
+      heading_ids = [heading_id]
+      if Budget::Heading.where(slug: heading_id).exists?
+        heading_ids << Budget::Heading.where(slug: heading_id).first.id.to_s
+      end
+      where(heading_id: heading_ids)
     end
 
     def self.to_csv(investments, options = {})

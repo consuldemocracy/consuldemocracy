@@ -42,4 +42,8 @@ describe ProposalsHelper do
 
   end
 
+  describe "#no_more_city_votes_css" do
+    xit "should return minimal class when no votes left"
+  end
+
 end

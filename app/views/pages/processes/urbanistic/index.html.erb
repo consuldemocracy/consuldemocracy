@@ -1,0 +1,115 @@
+<% provide :title, "Licencias urbanísticas" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_urbanistic_licenses"),
+          social_title: t("pages.processes.index.process_8_title"),
+          social_description: t("pages.processes.index.process_8_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: urbanistic_licenses_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to %>
+      <h1>Licencias urbanísticas, declaraciones responsables y comunicaciones previas</h1>
+
+      <h2 class="margin-bottom medium-9">
+        Consulta previa sobre la regulación de la concesión de licencias urbanísticas para la realización de obras y la apertura de locales comerciales o empresariales.
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h3>Introducción</h3>
+
+    <p>El Ayuntamiento de Madrid somete a consulta pública la conveniencia de modificar la regulación del procedimiento para la autorización de obras y la apertura de locales comerciales o empresariales.</p>
+
+    <p>En la actualidad se aplica normativa diferente según se trate de autorizar obras en viviendas o en locales comerciales y empresariales, por poner dos ejemplos. El procedimiento habitual comienza con la presentación de la solicitud de una licencia, que requiere para su aprobación esperar el tiempo necesario para que el Ayuntamiento compruebe que la solicitud presentada cumple con los requisitos establecidos por la normativa vigente; sin embargo, en el caso de las actividades económicas se puede o bien presentar una declaración responsable de que se cumple con esos requisitos e iniciar inmediatamente la obra o actividad, o bien presentar una comunicación previa al inicio de la obra y realizarla a continuación.</p>
+
+    <p>Por otra parte, la normativa actual prevé la colaboración con el Ayuntamiento de las entidades colaboradoras urbanísticas (ECU), que son entidades privadas acreditadas, a las que se puede acudir para solicitar una licencia o presentar una declaración responsable a fin de iniciar una actividad económica. Se plantea si conviene mantener el sistema de colaboración con las ECU en los actuales términos o, por el contrario, si lo mejor es ampliar su ámbito de actuación a fin de que las ECUs puedan intervenir también en los procedimientos relativos a las obras que realicen los particulares en sus viviendas o establecer otro tipo de modificaciones.</p>
+
+    <p>La regulación de los actuales procedimientos de concesión de licencias urbanísticas para la realización de obras y la apertura de locales comerciales o empresariales presentan inconvenientes como la dispersión normativa y procedimental, la diversidad de criterios para casos similares, la numerosa documentación que es necesario aportar, la discriminación en las funciones que pueden realizar las ECU, y la escasa utilización de las tecnologías. La nueva ordenanza puede servir para mejorar la situación.</p>
+  </div>
+
+  <div class="small-12 medium-6 large-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "Memoria de la nueva ordenanza de intervención en actuaciones urbanísticas <small>(PDF | 95Kb)</small>".html_safe,
+                    "/docs/licencias_urbanisticas/memoria_consulta_publica_omi.pdf", target: "_blank",
+                    title: "Memoria de la nueva ordenanza de intervención en actuaciones urbanísticas (PDF | 95Kb)" %>
+      </li>
+      <li>
+        <%= link_to "Borrador de ordenanza de intervención en actuaciones urbanísticas <small>(PDF | 333Kb)</small>".html_safe,
+                    "/docs/licencias_urbanisticas/borrador_omi_audiencia_publica.pdf", target: "_blank",
+                    title: "Borrador de ordenanza de intervención en actuaciones urbanísticas (PDF | 333Kb)" %>
+      </li>
+      <li>
+        <%= link_to "Directrices de consulta pública en el procedimiento de elaboración de normas municipales <small>(PDF | 58Kb)</small>".html_safe,
+                    "/docs/licencias_urbanisticas/acuerdo_jg_consulta_publica_previa.pdf", target: "_blank",
+                    title: "Directrices de consulta pública en el procedimiento de elaboración de normas municipales (PDF | 58Kb)" %>
+      </li>
+      <li>
+        <%= link_to " Acuerdo para la consulta pública de la nueva ordenanza de intervención en actuaciones urbanísticas <small>(PDF | 44Kb)</small>".html_safe,
+                    "/docs/licencias_urbanisticas/acuerdo_jg_consulta_omi.pdf", target: "_blank",
+                    title: " Acuerdo para la consulta pública de la nueva ordenanza de intervención en actuaciones urbanísticas (PDF | 44Kb)" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="process-debates">
+  <div class="row">
+    <div class="small-12 column">
+      <h3>Preguntas del debate</h3>
+
+      <p>Puedes entrar en los debates que se proponen a continuación y dar tu opinión, o valorar otras respuestas con los botones de votación que encontrarás a la derecha de cada respuesta.</p>
+
+      <div class="row" data-equalizer>
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to debate_url(4847) do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Considera necesario realizar una nueva regulación para facilitar y simplificar las obras en viviendas, o la modificación y apertura de locales comerciales o empresariales?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to debate_url(4848) do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Está de acuerdo en ampliar el número de actuaciones que pueden tramitarse mediante declaración responsable y comunicación previa, y limitar así la exigencia de licencia urbanística?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to debate_url(4849) do %>
+            <div class="panel" data-equalizer-watch>
+              ¿En el ámbito de las autorizaciones urbanísticas, es partidario de que se modifique el papel que juegan las empresas privadas acreditadas (ECU) para que también puedan facilitar las gestiones en las obras que realicen los particulares en sus viviendas u otras actuaciones similares?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to debate_url(4850) do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Estaría dispuesto a tramitar de forma electrónica todas sus solicitudes de licencias, declaraciones responsables y comunicaciones previas?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-4 column margin-bottom end">
+          <%= link_to debate_url(4851) do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Qué medidas podría adoptar el Ayuntamiento de Madrid para facilitar y agilizar la autorización para la  realización de obras y la apertura de locales comerciales o empresariales?
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

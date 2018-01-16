@@ -32,6 +32,29 @@ describe Verification::Residence do
       expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
     end
 
+    describe "postal code" do
+      it "should be valid with postal codes starting with 280" do
+        residence.postal_code = "28012"
+        residence.valid?
+        expect(residence.errors[:postal_code].size).to eq(0)
+
+        residence.postal_code = "28023"
+        residence.valid?
+        expect(residence.errors[:postal_code].size).to eq(0)
+      end
+
+      it "should not be valid with postal codes not starting with 280" do
+        residence.postal_code = "12345"
+        residence.valid?
+        expect(residence.errors[:postal_code].size).to eq(1)
+
+        residence.postal_code = "13280"
+        residence.valid?
+        expect(residence.errors[:postal_code].size).to eq(1)
+        expect(residence.errors[:postal_code]).to include("In order to be verified, you must be registered in the municipality of Madrid.")
+      end
+    end
+
     it "validates uniquness of document_number" do
       user = create(:user)
       residence.user = user
@@ -77,6 +100,27 @@ describe Verification::Residence do
       expect(user.date_of_birth.day).to eq(31)
       expect(user.gender).to eq('male')
       expect(user.geozone).to eq(geozone)
+    end
+
+    it "ups the user to level 3 if a redeemable code exists" do
+      user = create(:user)
+      create(:redeemable_code, token: "1234")
+
+      residence.redeemable_code = "1234"
+      residence.user = user
+      residence.save
+
+      user.reload
+      expect(user).to be_level_three_verified
+    end
+
+    it "updates the document number with the Census API number" do
+      user = create(:user)
+      residence.user = user
+      residence.document_number = '00012345678Z'
+      residence.save
+      expect(residence.document_number).to eq('12345678Z')
+      expect(user.reload.document_number).to eq('12345678Z')
     end
 
   end

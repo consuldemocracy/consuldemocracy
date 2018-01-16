@@ -18,6 +18,7 @@ RSpec.configure do |config|
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
   config.include(CommonActions)
+
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
   end
@@ -55,6 +56,19 @@ RSpec.configure do |config|
       # specs, so use truncation strategy.
       DatabaseCleaner.strategy = :truncation
     end
+  end
+
+  config.before(:each, :selenium) do
+    Capybara.current_driver = :selenium
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.after(:each, :selenium) do
+    Capybara.current_driver = Capybara.default_driver
+  end
+
+  config.after(:each, :nvotes) do
+    page.driver.reset!
   end
 
   config.before do
@@ -111,3 +125,11 @@ end
 
 # Parallel build helper configuration for travis
 KnapsackPro::Adapters::RSpecAdapter.bind
+
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(
+    app,
+    browser: :firefox,
+    desired_capabilities: Selenium::WebDriver::Remote::Capabilities.firefox(marionette: false)
+  )
+end

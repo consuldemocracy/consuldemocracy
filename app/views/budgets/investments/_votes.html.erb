@@ -18,8 +18,8 @@
           class: "button button-support small expanded",
           title: t('budgets.investments.investment.support_title'),
           method: "post",
-          remote: (current_user && current_user.voted_in_group?(investment.group) ? true : false),
-          data:   (current_user && current_user.voted_in_group?(investment.group) ? nil : { confirm: t('budgets.investments.investment.confirm_group')} ),
+          remote: (display_support_alert?(investment) ? false: true ),
+          data:   (display_support_alert?(investment) ? { confirm: t('budgets.investments.investment.confirm_group')} : nil),
           "aria-hidden" => css_for_aria_hidden(reason) do %>
         <%= t("budgets.investments.investment.give_support") %>
       <% end %>

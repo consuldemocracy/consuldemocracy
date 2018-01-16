@@ -1,0 +1,129 @@
+<% provide :title, "Haz propuestas en Decide Madrid" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: blas_bonilla_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+<!-- Facebook OG -->
+<meta property="og:url"           content="<%= request.url %>haz-propuestas" />
+<meta property="og:title"         content="Haz propuestas en Decide Madrid" />
+<meta property="og:image"         content="<%= image_url '/social_media_blas.jpg' %>" />
+<meta property="og:description"   content="Haz caso a Blas Bonilla y presenta tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en https://decide.madrid.es/haz-propuestas" />
+<!-- Twitter -->
+<meta name="twitter:card"          content="summary" />
+<meta name="twitter:site"          content="@decideMadrid" />
+<meta name="twitter:title"         content="Haz propuestas en Decide Madrid" />
+<meta name="twitter:image"         content="<%= image_url '/social_media_blas.jpg' %>" />
+<meta name="twitter:description"   content="Haz caso a Blas Bonilla y presenta tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en https://decide.madrid.es/haz-propuestas" />
+
+<% end %>
+
+<div class="blas-bonilla">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 medium-9 column small-centered text-center">
+        <h1>
+          Empieza a hacer tus propuestas y vota en <%= link_to "decide.madrid.es", root_path %>
+        </h1>
+        <%= link_to "Quiero registrarme", new_user_registration_path, class: "button" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-9 column small-centered">
+      <h2 class="margin text-center">Si quieres saber cómo participar en el Ayuntamiento de Madrid, Blas Bonilla te lo cuenta</h2>
+
+      <p>Blas Bonilla es un ciudadano que ha aprendido hace poco a usar Internet y se ha topado con la página de participación del Ayuntamiento de Madrid: <%= link_to "decide.madrid.es", "https://decide.madrid.es" %>.</p>
+
+      <p>Entre otras iniciativas, cualquier persona puede crear una propuesta relacionada con nuestra ciudad y conseguir el apoyo de la ciudadanía para que se lleven a cabo. Si la apoyan y luego hay más gente a favor de la propuesta que en contra, ¡se hace! <%= link_to "Regístrate", new_user_registration_path %>, y crea tus <%= link_to "propuestas ciudadanas", more_info_proposals_path %>.</p>
+
+      <p>No te pierdas las propuestas que ha hecho Blas Bonilla. ¡Mira el vídeo y compártelo! <%= link_to "#LoDiceBlasBonilla", "https://twitter.com/search?f=tweets&q=%23LoDiceBlasBonilla", target: "_blank" %></p>
+
+      <div class="flex-video widescreen">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1m8yhyVgREc?rel=0" style="border:0" allowfullscreen></iframe>
+      </div>
+
+      <h2 class="margin text-center">También puedes ver y compartir una por una las propuestas de Blas Bonilla</h2>
+
+      <div class="row" data-equalizer>
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout video-thumbnail" data-equalizer-watch>
+            <%= link_to "https://www.youtube.com/watch?v=vVGEZriShJY", target: "_blank" do %>
+              <%= image_tag("video_1_blas_bonilla.jpg", alt: "") %>
+              Obras constantes para que la gente mayor mire y opine
+            <% end %>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout video-thumbnail" data-equalizer-watch>
+            <%= link_to "https://www.youtube.com/watch?v=Q-jhIbyAsiI", target: "_blank" do %>
+              <%= image_tag("video_2_blas_bonilla.jpg", alt: "") %>
+              Efectos de sonido para la gente que va andando por la calle
+            <% end %>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout video-thumbnail" data-equalizer-watch>
+            <%= link_to "https://www.youtube.com/watch?v=5I-dy_VwuXY", target: "_blank" do %>
+              <%= image_tag("video_3_blas_bonilla.jpg", alt: "") %>
+              Instaurar un servicio municipal de recogida de muebles y trastos viejos
+            <% end %>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout video-thumbnail" data-equalizer-watch>
+            <%= link_to "https://www.youtube.com/watch?v=X9BNC1I0qss", target: "_blank" do %>
+              <%= image_tag("video_4_blas_bonilla.jpg", alt: "") %>
+              Que los camareros hablen con la voz de Ralph Macchio
+            <% end %>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout video-thumbnail" data-equalizer-watch>
+            <%= link_to "https://www.youtube.com/watch?v=kmqWbMjd_Z8", target: "_blank" do %>
+              <%= image_tag("video_5_blas_bonilla.jpg", alt: "") %>
+              Una berenjena pintada en cada esquina
+            <% end %>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout video-thumbnail" data-equalizer-watch>
+            <%= link_to "https://www.youtube.com/watch?v=7G4uuATiR28", target: "_blank" do %>
+              <%= image_tag("video_6_blas_bonilla.jpg", alt: "") %>
+              Placas conmemorativas en edificios de los pequeños milagros de la vida
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="margin">
+        <p><%= link_to "#LoDiceBlasBonilla", "https://twitter.com/search?f=tweets&q=%23LoDiceBlasBonilla", target: "_blank" %> es una campaña del Área de Gobierno de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid en colaboración con el actor y humorista Joaquín Reyes, invitando a todas las personas que residen en Madrid a inscribirse en el sistema de participación y toma de decisiones que pone a su disposición el Ayuntamiento y colaborar activamente en construir entre todas las personas una ciudad mejor.</p>
+      </div>
+
+      <div class="text-center">
+        <!-- Compartir en Facebook -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.8";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="small-6 large-2 large-offset-4 column margin-top">
+          <div class="fb-share-button" data-href="<%= request.url %>haz-propuestas" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdecide.madrid.es%2Fhaz-propuestas&amp;src=sdkpreparse">Compartir</a></div>
+        </div>
+
+        <!-- Compartir en Twitter -->
+        <div class="small-6 large-2 column end margin-top">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= request.url %>haz-propuestas" data-text="#LoDiceBlasBonilla: Haz tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

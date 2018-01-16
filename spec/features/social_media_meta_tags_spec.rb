@@ -5,12 +5,12 @@ feature 'Social media meta tags' do
   context 'Setting social media meta tags' do
 
     let(:meta_keywords) { 'citizen, participation, open government' }
-    let(:meta_title) { 'CONSUL TEST' }
+    let(:meta_title) { 'Decide Madrid' }
     let(:meta_description) { 'Citizen Participation and Open Government Application' }
-    let(:twitter_handle) { '@consul_test' }
-    let(:url) { 'http://consul.dev' }
-    let(:facebook_handle) { 'consultest' }
-    let(:org_name) { 'CONSUL TEST' }
+    let(:twitter_handle) { '@decidemadrid' }
+    let(:url) { 'http://example.com' }
+    let(:facebook_handle) { 'decidemadrid' }
+    let(:org_name) { 'Decide Madrid' }
 
     before do
       Setting['meta_keywords'] = meta_keywords
@@ -29,7 +29,7 @@ feature 'Social media meta tags' do
       Setting['twitter_handle'] = nil
       Setting['url'] = 'http://example.com'
       Setting['facebook_handle'] = nil
-      Setting['org_name'] = 'CONSUL'
+      Setting['org_name'] = 'Decide Madrid'
     end
 
     scenario 'Social media meta tags partial render settings content' do

@@ -41,6 +41,10 @@
           </div>
 
           <div>
+            <%= link_to t("account.show.delegation"), delegation_path %>
+          </div>
+
+          <div>
             <%= f.label :public_interests do %>
               <%= f.check_box :public_interests, title: t('account.show.public_interests_label'), label: false %>
               <span class="checkbox">
@@ -48,7 +52,6 @@
               </span>
             <% end %>
           </div>
-
 
           <% if @account.email.present? %>
             <h2><%= t("account.show.notifications")%></h2>
@@ -123,22 +126,34 @@
           <ul>
             <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
             <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
+            <% if current_user.old_enough_to_participate? %>
+              <li>
+                <% if current_user.level_two_or_three_verified? %>
+                  <span class="icon-check"></span>
+                <% else %>
+                  <span class="icon-x"></span>
+                <% end %>
+                <%= t("account.show.user_permission_support_proposal") %>
+              </li>
+            <% end %>
             <li>
               <% if current_user.level_two_or_three_verified? %>
                 <span class="icon-check"></span>
               <% else %>
                 <span class="icon-x"></span>
               <% end %>
-              <%= t("account.show.user_permission_support_proposal") %>
+              <%= t("account.show.user_permission_create_budget_investments") %>
             </li>
-            <li>
-              <% if current_user.level_three_verified? %>
-                <span class="icon-check"></span>
-              <% else %>
-                <span class="icon-x"></span>
-              <% end %>
-              <%= t("account.show.user_permission_votes") %>
-            </li>
+            <% if current_user.old_enough_to_participate? %>
+              <li>
+                <% if current_user.level_two_or_three_verified? %>
+                  <span class="icon-check"></span>
+                <% else %>
+                  <span class="icon-x"></span>
+                <% end %>
+                <%= t("account.show.user_permission_votes") %>
+              </li>
+            <% end %>
           </ul>
 
           <p>
@@ -157,8 +172,13 @@
                     <%= t("account.show.verified_account") %>
                   </p>
                 <% elsif current_user.level_two_verified? %>
-                  <%= link_to t("account.show.finish_verification"), verification_path, class: "button success" %>
+                  <% unless current_user.verification_letter_sent? %>
+                  <small>
+                    <%= link_to t("account.show.finish_verification"), letter_path, method: :post %>
+                  </small>
+                  <% end %>
                 <% else %>
+                  <p><%= t("account.show.user_permission_verify") %></p>
                   <%= link_to t("account.show.verify_my_account"), verification_path, class: "button success" %>
                 <% end %>
               </span>

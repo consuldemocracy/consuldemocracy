@@ -83,20 +83,25 @@ feature 'Poll Officing' do
     expect(page).not_to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as an poll officer is authorized' do
-    create(:poll_officer, user: user)
+  scenario 'Access as an administrator is not authorized' do
+    create(:administrator, user: user)
     create(:poll)
     login_as(user)
     visit root_path
 
-    expect(page).to have_link("Polling officers")
-    click_on "Polling officers"
+    expect(page).not_to have_link("Polling officers")
+    visit officing_root_path
 
-    expect(page).to have_current_path(officing_root_path)
-    expect(page).not_to have_content "You do not have permission to access this page"
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
+
+    expect(current_path).not_to eq(officing_root_path)
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content "You do not have permission to access this page"
   end
 
   scenario "Poll officer access links" do
+    create(:poll)
     create(:poll_officer, user: user)
     login_as(user)
     visit root_path
@@ -169,14 +174,14 @@ feature 'Poll Officing' do
       expect(page).to have_content("Here you can validate user documents and store voting results")
 
       visit new_officing_residence_path
-      select 'DNI', from: 'residence_document_type'
-      fill_in 'residence_document_number', with: "12345678Y"
+      select 'Passport', from: 'residence_document_type'
+      fill_in 'residence_document_number', with: "12345678A"
       fill_in 'residence_year_of_birth', with: '1980'
       click_button 'Validate document'
       expect(page).to have_content 'Document verified with Census'
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
-      expect(Poll::Voter.where(document_number: '12345678Y', poll_id: poll, origin: 'booth', officer_id: officer2).count).to be(1)
+      expect(Poll::Voter.where(document_number: '12345678A', poll_id: poll, origin: 'booth', officer_id: officer2).count).to be(1)
 
       visit final_officing_polls_path
       expect(page).to have_content("Polls ready for final recounting")

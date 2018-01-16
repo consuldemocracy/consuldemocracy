@@ -16,7 +16,7 @@ en:
       confirmation_instructions:
         confirm_link: Confirm my account
         text: 'You can confirm your email account at the following link:'
-        title: Welcome to the Open Government Portal
+        title: Welcome to the Open Government Portal of the Madrid City Council
         welcome: Welcome
       reset_password_instructions:
         change_link: Change my password

@@ -1,0 +1,96 @@
+<div class="row ballot">
+
+  <%= back_link_to %>
+
+  <h1 class="text-center"><%= t("ballots.show.title") %></h1>
+
+  <div class="small-12 medium-8 column small-centered text-center">
+    <h2>
+      <%= t("ballots.show.voted_html",
+          count: @ballot.spending_proposals.count) %>
+    </h2>
+
+    <% if @ballot.geozone.present? && district_wide_amount_spent(@ballot) > 0 %>
+      <%= social_share_button_tag("#{t('ballots.show.social_share',
+                                        amount: format_price(district_wide_amount_spent(@ballot)),
+                                        geozone: @ballot.geozone.name)} #{setting['twitter_hashtag']}",
+                                  url: participatory_budget_url) %>
+    <% end %>
+
+    <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+      <h3>
+        <%= t("ballots.show.remaining_city_html",
+            amount_city: format_price(@ballot.amount_available(nil))) %>
+      </h3>
+
+      <% if @ballot.geozone.present? %>
+        <h3>
+          <%= t("ballots.show.remaining_district_html",
+              amount_district: format_price(@ballot.amount_available(@ballot.geozone)),
+              geozone: @ballot.geozone.name) %>
+        </h3>
+      <% end %>
+
+      <p><small><%= t("ballots.show.voted_info_html") %></small></p>
+    <% end %>
+  </div>
+
+  <hr>
+
+  <div class="margin-top">
+    <div id="city_wide" class="small-12 medium-6 column">
+      <h3 class="subtitle">
+        <%= t("ballots.show.city_wide") %>
+      </h3>
+      <% if @ballot.spending_proposals.by_geozone(nil).count > 0 %>
+        <h4 class="amount-spent text-right">
+          <%= t("ballots.show.amount_spent") %>
+          <span><%= format_price(city_wide_amount_spent(@ballot)) %></span>
+        </h4>
+      <% else %>
+        <p>
+          <%= t("ballots.show.zero") %><br>
+          <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+            <%= link_to t("ballots.show.city_link"),
+                        spending_proposals_path(geozone: 'all'),
+                        data: { no_turbolink: true } %>
+          <% end %>
+        </p>
+      <% end %>
+
+      <ul class="ballot-list">
+        <%= render partial: 'ballots/spending_proposal',
+                   collection: @ballot.spending_proposals.city_wide %>
+      </ul>
+    </div>
+
+    <div id="district_wide" class="small-12 medium-6 column">
+      <h3 class="subtitle">
+        <%= t("ballots.show.district_wide") %>
+        <span>
+          <% if @ballot.geozone.present? %>
+            (<%= @ballot.geozone.name %>)
+          <% end %>
+        </span>
+      </h3>
+      <% if @ballot.geozone.present? %>
+        <h4 class="amount-spent text-right">
+          <%= t("ballots.show.amount_spent") %>
+          <span><%= format_price(district_wide_amount_spent(@ballot)) %></span>
+        </h4>
+      <% else %>
+        <p>
+          <%= t("ballots.show.zero") %><br>
+          <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+            <%= link_to t("ballots.show.districts_link"), select_district_path %>
+          <% end %>
+        </p>
+      <% end %>
+
+      <ul class="ballot-list">
+        <%= render partial: 'ballots/spending_proposal',
+                   collection: @ballot.spending_proposals.district_wide %>
+      </ul>
+    </div>
+  </div>
+</div>

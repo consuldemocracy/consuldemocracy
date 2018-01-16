@@ -83,9 +83,11 @@ describe Abilities::Common do
   it { should     be_able_to(:index, SpendingProposal)   }
   it { should_not be_able_to(:create, SpendingProposal)  }
   it { should_not be_able_to(:destroy, SpendingProposal) }
+  it { should_not be_able_to(:vote, SpendingProposal) }
 
   it { should_not be_able_to(:comment_as_administrator, debate)   }
   it { should_not be_able_to(:comment_as_moderator, debate)       }
+
   it { should_not be_able_to(:comment_as_administrator, proposal) }
   it { should_not be_able_to(:comment_as_moderator, proposal)     }
 
@@ -155,16 +157,35 @@ describe Abilities::Common do
   end
 
   describe "when level 2 verified" do
+    let(:spending_proposal) { create(:spending_proposal) }
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
-
     let(:own_direct_message) { create(:direct_message, sender: user) }
 
-    before{ user.update(residence_verified_at: Time.current, confirmed_phone: "1") }
+    before{ user.update(residence_verified_at: Time.current, confirmed_phone: "1", date_of_birth: 20.years.ago) }
 
     describe "Proposal" do
       it { should be_able_to(:vote, Proposal) }
       it { should be_able_to(:vote_featured, Proposal) }
     end
+
+    describe "final voting allowed" do
+      before { Setting["feature.spending_proposal_features.final_voting_allowed"] = true }
+      it { should be_able_to(:create, BallotLine) }
+      it { should be_able_to(:destroy, BallotLine) }
+    end
+
+    describe "final voting not allowed" do
+      before { Setting["feature.spending_proposal_features.final_voting_allowed"] = false }
+      it { should_not be_able_to(:create, BallotLine) }
+      it { should_not be_able_to(:destroy, BallotLine) }
+    end
+
+    it { should_not be_able_to(:destroy, spending_proposal) }
+    it { should_not be_able_to(:destroy, own_spending_proposal) }
+
+    it { should be_able_to(:create, investment_in_accepting_budget) }
+    it { should_not be_able_to(:create, investment_in_selecting_budget) }
+    it { should_not be_able_to(:create, investment_in_balloting_budget) }
 
     describe "Spending Proposal" do
       it { should be_able_to(:create, SpendingProposal)                }
@@ -235,14 +256,119 @@ describe Abilities::Common do
       it { should_not be_able_to(:create, ballot_in_accepting_budget) }
       it { should_not be_able_to(:create, ballot_in_selecting_budget) }
       it { should be_able_to(:create, ballot_in_balloting_budget) }
+
+      it { should_not be_able_to(:destroy, investment_in_accepting_budget) }
+      it { should_not be_able_to(:destroy, investment_in_reviewing_budget) }
+      it { should_not be_able_to(:destroy, investment_in_selecting_budget) }
+      it { should_not be_able_to(:destroy, investment_in_balloting_budget) }
+
+      it { should be_able_to(:destroy, own_investment_in_accepting_budget) }
+      it { should be_able_to(:destroy, own_investment_in_reviewing_budget) }
+      it { should_not be_able_to(:destroy, own_investment_in_selecting_budget) }
+      it { should_not be_able_to(:destroy, investment_in_balloting_budget) }
+
+      it { should_not be_able_to(:create, ballot_in_accepting_budget) }
+      it { should_not be_able_to(:create, ballot_in_selecting_budget) }
+      it { should be_able_to(:create, ballot_in_balloting_budget) }
     end
-  end
+
+    describe "when not old enough to vote" do
+      before(:each) { user.date_of_birth = Setting['min_age_to_participate'].to_i.years.ago + 1.year }
+
+      describe "Proposal" do
+        it { should_not be_able_to(:vote, Proposal) }
+        it { should_not be_able_to(:vote_featured, Proposal) }
+      end
+
+      describe "final voting allowed" do
+        before { Setting["feature.spending_proposal_features.final_voting_allowed"] = true }
+        it { should_not be_able_to(:create, BallotLine) }
+        it { should_not be_able_to(:destroy, BallotLine) }
+      end
+
+      describe "final voting not allowed" do
+        before { Setting["feature.spending_proposal_features.final_voting_allowed"] = false }
+        it { should_not be_able_to(:create, BallotLine) }
+        it { should_not be_able_to(:destroy, BallotLine) }
+      end
+
+      it { should_not be_able_to(:destroy, spending_proposal) }
+      it { should_not be_able_to(:destroy, own_spending_proposal) }
+
+      it { should be_able_to(:create, investment_in_accepting_budget) }
+      it { should_not be_able_to(:create, investment_in_selecting_budget) }
+      it { should_not be_able_to(:create, investment_in_balloting_budget) }
+
+      describe "Spending Proposal" do
+        it { should be_able_to(:create, SpendingProposal)                }
+        it { should_not be_able_to(:destroy, create(:spending_proposal)) }
+        it { should_not be_able_to(:destroy, own_spending_proposal)      }
+      end
+
+      describe "Direct Message" do
+        it { should     be_able_to(:new,    DirectMessage)           }
+        it { should     be_able_to(:create, DirectMessage)           }
+        it { should     be_able_to(:show,   own_direct_message)      }
+        it { should_not be_able_to(:show,   create(:direct_message)) }
+      end
+
+      describe "Poll" do
+        it { should_not be_able_to(:answer, current_poll)  }
+        it { should_not be_able_to(:answer, expired_poll)  }
+        it { should_not be_able_to(:answer, incoming_poll) }
+
+        it { should_not be_able_to(:answer, poll_question_from_own_geozone)   }
+        it { should_not be_able_to(:answer, poll_question_from_all_geozones)  }
+        it { should_not be_able_to(:answer, poll_question_from_other_geozone) }
+
+        it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone)   }
+        it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones)  }
+        it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone) }
+
+        it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone)   }
+        it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones)  }
+        it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
+
+        context "without geozone" do
+          before(:each) { user.geozone = nil }
+
+          it { should_not be_able_to(:answer, poll_question_from_own_geozone)   }
+          it { should_not be_able_to(:answer, poll_question_from_all_geozones)  }
+          it { should_not be_able_to(:answer, poll_question_from_other_geozone) }
+
+          it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone)   }
+          it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones)  }
+          it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone) }
+
+          it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone)   }
+          it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones)  }
+          it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
+        end
+      end
+
+      describe "Budgets" do
+        it { should be_able_to(:create, investment_in_accepting_budget) }
+        it { should_not be_able_to(:create, investment_in_selecting_budget) }
+        it { should_not be_able_to(:create, investment_in_balloting_budget) }
+
+        it { should_not be_able_to(:vote, investment_in_accepting_budget) }
+        it { should_not be_able_to(:vote, investment_in_selecting_budget) }
+        it { should_not be_able_to(:vote, investment_in_balloting_budget) }
+
+        it { should_not be_able_to(:create, ballot_in_accepting_budget) }
+        it { should_not be_able_to(:create, ballot_in_selecting_budget) }
+        it { should_not be_able_to(:create, ballot_in_balloting_budget) }
+      end
+
+    end # not old enough to vote
+  end # level 2 verified
 
   describe "when level 3 verified" do
+    let(:spending_proposal) { create(:spending_proposal) }
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
     let(:own_direct_message) { create(:direct_message, sender: user) }
 
-    before{ user.update(verified_at: Time.current) }
+    before{ user.update(verified_at: Time.current, date_of_birth: 20.years.ago) }
 
     it { should be_able_to(:vote, Proposal)          }
     it { should be_able_to(:vote_featured, Proposal) }
@@ -286,5 +412,73 @@ describe Abilities::Common do
       it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones)  }
       it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
     end
+
+    context "when not old enough to vote" do
+      before(:each) { user.date_of_birth = Setting['min_age_to_participate'].to_i.years.ago + 1.year }
+
+      it { should_not be_able_to(:vote, Proposal)          }
+      it { should_not be_able_to(:vote_featured, Proposal) }
+
+      it { should     be_able_to(:create, SpendingProposal)                }
+      it { should_not be_able_to(:destroy, create(:spending_proposal)) }
+      it { should_not be_able_to(:destroy, own_spending_proposal)      }
+
+      it { should     be_able_to(:new, DirectMessage)            }
+      it { should     be_able_to(:create, DirectMessage)         }
+      it { should     be_able_to(:show, own_direct_message)      }
+      it { should_not be_able_to(:show, create(:direct_message)) }
+
+      it { should_not be_able_to(:answer, current_poll)  }
+      it { should_not be_able_to(:answer, expired_poll)  }
+      it { should_not be_able_to(:answer, incoming_poll) }
+
+      it { should_not be_able_to(:answer, poll_question_from_own_geozone)   }
+      it { should_not be_able_to(:answer, poll_question_from_all_geozones)  }
+      it { should_not be_able_to(:answer, poll_question_from_other_geozone) }
+
+      it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone)   }
+      it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones)  }
+      it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone) }
+
+      it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone)   }
+      it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones)  }
+      it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
+
+      context "without geozone" do
+        before(:each) { user.geozone = nil }
+        it { should_not be_able_to(:answer, poll_question_from_own_geozone)   }
+        it { should_not be_able_to(:answer, poll_question_from_all_geozones)  }
+        it { should_not be_able_to(:answer, poll_question_from_other_geozone) }
+
+        it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone)   }
+        it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones)  }
+        it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone) }
+
+        it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone)   }
+        it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones)  }
+        it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
+      end
+    end
   end
+
+  describe "when forum" do
+    let!(:forum) { create(:forum, user: user) }
+    let(:spending_proposal) { create(:spending_proposal) }
+    let(:own_spending_proposal) { create(:spending_proposal, author: user) }
+
+
+    it { should_not be_able_to(:vote, Proposal) }
+    it { should_not be_able_to(:vote_featured, Proposal) }
+
+    it { should_not be_able_to(:create, SpendingProposal) }
+
+    it { should be_able_to(:vote, SpendingProposal) }
+
+    it { should be_able_to(:create, BallotLine) }
+    it { should be_able_to(:destroy, BallotLine) }
+
+    it { should_not be_able_to(:destroy, spending_proposal) }
+    it { should_not be_able_to(:destroy, own_spending_proposal) }
+  end
+
 end

@@ -1,0 +1,257 @@
+<% provide :title,            t("first_2017_poll.meta_tags.title") %>
+<% provide :meta_description, t("first_2017_poll.meta_tags.description") %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: primera_votacion_info_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+  <!-- Facebook -->
+  <meta property="og:url"            content="<%= primera_votacion_info_url %>" />
+  <meta property="og:title"          content="<%= t("first_2017_poll.results.title") %>" />
+  <meta property="og:image"          content="<%= image_url '/social_media_polls_results.png' %>" />
+  <meta property="og:description"    content="<%= t("first_2017_poll.results.description") %>" />
+  <!-- Twitter -->
+  <meta name="twitter:card"          content="summary" />
+  <meta name="twitter:site"          content="@DecideMadrid" />
+  <meta name="twitter:title"         content="<%= t("first_2017_poll.results.title") %>" />
+  <meta name="twitter:image"         content="<%= image_url '/social_media_polls_results_twitter.png' %>" />
+  <meta name="twitter:description"   content="<%= t("first_2017_poll.results.description") %>" />
+<% end %>
+<div class="polls-results">
+  <div class="header no-margin-top">
+    <div class="row">
+      <div class="small-12 column">
+        <h1 class="inline-block">
+          <%= t("polls.information").upcase %>
+          <span><%= t("first_2017_poll.title") %></span>
+          <span><%= t("first_2017_poll.date") %></span>
+        </h1>
+
+        <div class="more-info">
+          <%= link_to t("polls.more_poll_info"), more_info_polls_february_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <ul class="tabs">
+        <li class="tabs-title">
+          <%= link_to t("polls.results"), first_voting_path %>
+        </li>
+        <li class="tabs-title">
+          <%= link_to t("polls.stats"), primera_votacion_stats_path %>
+        </li>
+        <li class="tabs-title is-active">
+          <span class="is-active"><%= t("polls.information") %></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="landing-voting">
+  <div class="expanded padding">
+    <div class="row">
+      <div class="small-12 medium-10 column small-centered text-center">
+        <p class="lead">Del 13 al 19 de febrero, decide sobre las dos primeras propuestas ciudadanas que pasan a votación, "Madrid 100% sostenible" y "Billete único para el transporte público".<br> También sobre la remodelación de Plaza de España y el futuro de la Gran Vía</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="expanded block">
+    <div class="row relative" data-equalizer data-equalize-on="medium">
+      <div class="small-12 medium-6 column" data-equalizer-watch>
+        <%= image_tag "landings/first_voting_transport.jpg", alt: "" %>
+      </div>
+      <div class="small-12 medium-6 column">
+        <div class="block-yellow-vota">
+          <div class="block-content" data-equalizer-watch>
+            <div class="text-center">Propuesta ciudadana</div>
+            <h2 class="text-center uppercase">
+              <%= link_to "Uno para todos", proposal_url(9) %>
+            </h2>
+            <h3 class="text-center">Un billete: todo el transporte</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="expanded block">
+    <div class="row relative" data-equalizer data-equalize-on="medium">
+      <div class="small-12 medium-6 column">
+        <div class="block-blue">
+          <div class="block-content" data-equalizer-watch>
+            <div class="text-center">Propuesta ciudadana</div>
+            <h2 class="text-center uppercase">
+              <%= link_to "Madrid 100% sostenible", proposal_url(199) %>
+            </h2>
+            <h3 class="text-center">Ahorro de energía, Eficiente y Renovable<br> Movilidad y Urbanismo Sostenibles</h3>
+          </div>
+        </div>
+      </div>
+      <div class="small-12 medium-6 column" data-equalizer-watch>
+        <%= image_tag "landings/first_voting_sustainable.jpg", alt: "" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="expanded plaza-espana-projects">
+    <div class="row" data-equalizer data-equalize-on="medium">
+      <div class="small-12 medium-6 column">
+        <div class="block-red" data-equalizer-watch>
+          <h2 class="text-center uppercase">
+            <%= link_to "Remodelación de plaza España", plaza_path %>
+          </h2>
+          <p class="text-center">La Plaza de España se va a reformar y tú decides cuál será el proyecto final.</p>
+          <h3 class="text-center uppercase">¿Proyecto X o Proyecto Y?</h3>
+
+          <div class="block-projects">
+            <h4 class="text-center">
+              <span class="uppercase">Proyecto X</span>:<br> Welcome mother Nature
+            </h4>
+            <h4 class="text-center">
+             <span class="uppercase">Proyecto Y</span>:<br> UN PASEO POR LA CORNISA
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="small-12 medium-6 column" data-equalizer-watch>
+        <div class="row">
+          <div class="small-12 column project-x">
+            <figure>
+              <%= image_tag "landings/first_voting_project_x.jpg", alt: "Project X" %>
+              <figcaption>
+                <%= link_to "Proyecto X", plaza_probe_option_path(38) %>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="small-12 column project-y">
+            <figure>
+              <%= image_tag "landings/first_voting_project_y.jpg", alt: "Project Y" %>
+              <figcaption>
+                <%= link_to "Proyecto Y", plaza_probe_option_path(22) %>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="expanded">
+    <div class="row relative" data-equalizer data-equalize-on="medium">
+      <div class="small-12 column">
+        <div class="block-grey">
+          <h2 class="inline-block uppercase">Gran vía</h2>
+          <p>El Ayuntamiento de Madrid plantea estas cuatro preguntas para conocer tu opinión sobre el futuro de la Gran Vía.</p>
+          <div class="block-content" data-equalizer-watch>
+            <div class="row">
+              <div class="small-12 medium-6 column">
+                <div class="question">
+                  <h3>¿Estás de acuerdo con mejorar el espacio peatonal de la Gran Vía mediante la ampliación de sus aceras?</h3>
+                  <h4>¿Sí o No?</h4>
+                </div>
+              </div>
+              <div class="small-12 medium-6 column">
+                <div class="question">
+                  <h3>¿Consideras que sería necesario incrementar el número de pasos peatonales de la Gran Vía para mejorar la comunicación peatonal?</h3>
+                  <h4>¿Sí o No?</h4>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-12 medium-6 column">
+                <div class="question">
+                  <h3>¿Consideras necesario mejorar las condiciones de las plazas traseras vinculadas a Gran Vía para que puedan ser utilizadas como espacio de descanso y/o de estancia?</h3>
+                  <h4>¿Sí o No?</h4>
+                </div>
+              </div>
+              <div class="small-12 medium-6 column">
+                <div class="question">
+                  <h3>¿Estás de acuerdo en que el transporte público colectivo debe mantener su prioridad en la circulación rodada en la Gran Vía?</h3>
+                  <h4>¿Sí o No?</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-8 small-centered text-center">
+      <h2 class="big uppercase">Votaciones de distrito</h2>
+      <p class="lead">Los habitantes de Barajas, Hortaleza, Retiro, Salamanca, San Blas-Canillejas y Vicálvaro decidirán sobre diferentes cuestiones.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <h3>Barajas</h3>
+      <ul>
+        <li>Prioriza el Plan Participativo de Actuación Territorial de Barajas. Son un total de 64 propuestas que tendrán que priorizar las vecinas y vecinos del distrito. Las 10 más apoyadas serán asumidas por la Junta Municipal de Distrito.</li>
+      </ul>
+
+      <h3>Hortaleza</h3>
+      <ul>
+        <li>¿Cambiamos el nombre del distrito de Hortaleza a Hortaleza-Canillas?</li>
+        <li>¿Debe retomar el actual Parque de Felipe VI a su nombre original Parque Forestal de Valdebebas?</li>
+      </ul>
+
+      <h3>Retiro</h3>
+      <ul>
+        <li>¿Cómo quieres que se llame el Centro Cultural situado en el Mercado de Ibiza, C/ Ibiza 8?</li>
+        <li>¿Cómo quieres que se llame el Centro Cultural situado en C/ Luis Peidró 2?</li>
+        <li>¿Cómo quieres que se llame el Centro Sociocultural situado en la Junta Municipal de Retiro, Avda. Ciudad de Barcelona 164?</li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <h3>Salamanca</h3>
+      <ul>
+        <li>¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?</li>
+      </ul>
+
+      <h3>San Blas-Canillejas</h3>
+      <ul>
+        <li>Prioriza el Plan Participativo de Actuación Territorial de San Blas-Canillejas. Son un total de 89 propuestas que tendrán que priorizar las vecinas y vecinos del distrito Las 10 más apoyadas serán asumidas por la Junta Municipal de Distrito.</li>
+      </ul>
+
+      <h3>Vicálvaro</h3>
+      <ul>
+        <li>¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="expanded how-voting">
+      <div class="row">
+        <div class="small-12 column">
+          <h2 class="uppercase">Cómo votar</h2>
+          <ul>
+            <li>En esta web después de <%= link_to "registrarte", new_user_registration_path %>.</li>
+            <li>Por carta (hasta el día 12 de febrero).</li>
+            <li>En urnas que encontrarás repartidas por los 21 distritos de Madrid (ver los siguientes mapas).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block margin-top">
+    <div class="small-12 medium-6 column">
+      <h3 class="text-center">Mesas de votación - Lunes a viernes</h3>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1T8Zl-cKVIOfu1NC-DYRKUrnNVtM&hl=es" height="480" style="border:0; width:100%;" allowfullscreen title="Mesas de votación - Lunes a viernes"></iframe>
+    </div>
+    <div class="small-12 medium-6 column">
+      <h3 class="text-center">Mesas de votación - Sábado y Domingo</h3>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1uj8eGufqUWgAKkl1SHUoMBUJ3fs&hl=es" height="480" style="border:0; width:100%;" allowfullscreen title="Mesas de votación - Sábado y Domingo"></iframe>
+    </div>
+  </div>
+</div>

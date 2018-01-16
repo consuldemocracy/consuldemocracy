@@ -1,0 +1,29 @@
+<% provide :title, t("meta_tags.welcome_index.title") %>
+<% provide :meta_description, t("meta_tags.welcome_index.description") %>
+<% provide :tracking_page_number, "23" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: root_url %>
+<% end %>
+
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: root_url %>
+<% end %>
+
+<div class="welcome">
+
+  <h1 class="show-for-sr"><%= t("welcome.title") %></h1>
+
+  <%= render "header" %>
+
+  <%= render "cards" %>
+
+  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+    <%= render "recommended",
+                recommended_debates: @recommended_debates,
+                recommended_proposals: @recommended_proposals %>
+  <% end %>
+
+  <%= render "features" %>
+
+</div>

@@ -8,7 +8,6 @@
         <div data-equalizer-watch>
           <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
         </div>
-      </div>
 
       <div class="small-12 medium-6 large-7 column">
     <% else %>
@@ -38,6 +37,10 @@
                   <span class="label round level-<%= investment.author.official_level %>">
                     <%= investment.author.official_position %>
                   </span>
+                <% end %>
+                <% if investment.label.present? %>
+                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                  <span class="label round is-author"><%= investment.label %></span>
                 <% end %>
               <% end %>
 

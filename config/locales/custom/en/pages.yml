@@ -1,0 +1,13 @@
+en:
+  pages:
+    more_info:
+      how_to_use:
+        text: |-
+          Use it in your local government or help us to improve it, it is free software.
+
+          This Open Government Portal use the [CONSUL app](https://github.com/consul/consul 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the word with the modifications he wants (allowing others to do the same). Because we think culture is better and richer when it is released.
+
+          Not only can you use freely this portal in your local government, but you also will be helped by Madrid city council as much as possible to do it, so if you are interested <a href='mailto:extension.institucional@madrid.es'>write us an email</a>.
+
+          If you are a programmer, you can see the code and help us to improve it at [Madrid's CONSUL app version](https://github.com/ayuntamientomadrid/consul 'consul github').
+

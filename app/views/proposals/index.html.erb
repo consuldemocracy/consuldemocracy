@@ -1,7 +1,10 @@
-<% provide :title do %><%= t('proposals.index.title') %><% end %>
+<% provide :title, t("meta_tags.proposals.title") %>
+<% provide :meta_description, t("meta_tags.proposals.description") %>
+<% provide :tracking_page_number, "29" %>
+
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
-             search_path: proposals_path(page: 1),
+             search_path: current_path_with_query_params(page: 1),
              i18n_namespace: "proposals.index.search_form" %>
 <% end %>
 <% content_for :canonical do %>
@@ -44,6 +47,10 @@
         <%= render "shared/banner" %>
       <% end %>
 
+      <% if Budget.balloting.any? %>
+        <%= render "budgets/banner" %>
+      <% end %>
+
       <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
@@ -57,14 +64,18 @@
         </div>
       <% end %>
 
-      <%= render("shared/advanced_search", search_path: proposals_path(page: 1)) unless params[:retired].present? %>
-
+      <% unless params[:retired].present? %>
+        <%= render "shared/advanced_search",
+                   search_path: path_to_search_proposals  %>
+      <% end %>
       <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
 
       <% if @proposals.any? %>
-        <div class="show-for-small-only">
-          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
-        </div>
+        <% if request.path != human_rights_proposals_path %>
+          <div class="show-for-small-only">
+            <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+          </div>
+        <% end %>
       <% end %>
 
       <div id="proposals-list">
@@ -76,15 +87,25 @@
         <%= paginate @proposals %>
 
         <% unless @search_terms || @advanced_search_terms || @tag_filter %>
+
+          <% if @current_order == "recommendations" %>
+            <p class="margin">
+              *<%= t("welcome.recommended.help") %>
+            </p>
+          <% end %>
+
           <div id="section_help" class="margin" data-magellan-target="section_help">
             <p class="lead">
               <strong><%= t("proposals.index.section_footer.title") %></strong>
             </p>
             <p><%= t("proposals.index.section_footer.description") %></p>
             <p><%= t("proposals.index.section_footer.help_text_1") %></p>
+            <p><%= t("proposals.index.section_footer.help_text_1b",
+                      blog: link_to(t("proposals.index.section_footer.help_text_1b_blog"), "https://diario.madrid.es/decidemadrid/2017/09/07/diez-claves-para-crear-una-propuesta-ciudadana-en-decide-madrid/", target: "_blank")).html_safe %></p>
             <p><%= t("proposals.index.section_footer.help_text_2",
                       org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
             <p><%= t("proposals.index.section_footer.help_text_3") %></p>
+            <p><%= t("proposals.index.section_footer.help_text_4") %></p>
           </div>
         <% end %>
       </div>
@@ -92,10 +113,17 @@
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-        <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+        <% if request.path != human_rights_proposals_path %>
+          <%= link_to t("proposals.index.start_proposal"),
+                      new_proposal_path,
+                      class: 'button expanded' %>
+        <% end %>
+
         <% if params[:retired].blank? %>
           <%= render 'categories' %>
-          <%= render "shared/tag_cloud", taggable: 'proposal' %>
+          <% if request.path != human_rights_proposals_path %>
+            <%= render "shared/tag_cloud", taggable: 'proposal' %>
+          <% end %>
           <%= render 'geozones' %>
           <%= render 'popular' %>
         <% end %>

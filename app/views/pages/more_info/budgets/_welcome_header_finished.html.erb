@@ -1,0 +1,27 @@
+<div class="expanded header">
+  <div class="row no-margin-top padding">
+    <div class="small-12 medium-8 column">
+      <h1>Resultados<br>Presupuestos participativos 2017</h1>
+      <div class="small-12 medium-11">
+        <p class="lead">
+           Mira qué proyectos ciudadanos se ejecutarán a partir de 2018 con los <strong>100 millones de euros</strong> de los presupuestos participativos.
+        </p>
+      </div>
+
+      <div class="small-12">
+        <div class="row margin-top">
+          <div class="small-12 medium-6 column">
+            <%= link_to t("budgets.show.see_results"),
+                        custom_budget_results_path(current_budget),
+                        class: "button expanded large city" %>
+          </div>
+          <div class="small-12 medium-6 column">
+            <%= link_to "Ejecución de proyectos 2016",
+                        "/system/budgets/2016/estado_propuestas_2016_b.xlsx",
+                        class: "button expanded large stats" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,149 @@
+<% provide :title, "Nueva Ordenanza de Movilidad" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: movilidad_url,
+          social_title: t("pages.processes.index.process_15_title"),
+          social_description: t("pages.processes.index.process_15_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: movilidad_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to %>
+      <h1>Nueva Ordenanza de Movilidad</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h2>Introducción</h2>
+
+    <p>Desde su aprobación en septiembre de 2005, la Ordenanza de Movilidad ha sido modificada en varias ocasiones. A pesar de su extensión y complejidad, el vigente texto no regula determinados ámbitos de la movilidad urbana.</p>
+
+    <p>Sin perjuicio de que este año se modificará parcialmente la Ordenanza para desarrollar las medidas del Plan de Calidad del Aire y Cambio Climático, el Ayuntamiento de Madrid plantea la posibilidad de abordar la elaboración de una nueva Ordenanza.</p>
+
+    <p>Con ello se pretende abrir un profundo debate en la ciudadanía que permita hallar soluciones eficaces y socialmente consensuadas a los problemas de la movilidad urbana presente y futura, que permita proteger mejor la salud de las personas y la calidad del aire que respiramos.</p>
+
+    <div class="process-debates">
+      <h3>Preguntas del debate</h3>
+
+      <p>Puedes entrar en los debates que se proponen a continuación y dar tu opinión, o valorar otras respuestas con los botones de votación que encontrarás a la derecha de cada respuesta.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Nº</th>
+            <th scope="col">Pregunta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">1</td>
+            <td>
+              <%= link_to debate_url(5010) do %>
+                <strong>
+                ¿Consideras adecuado mantener el vigente texto de la Ordenanza de Movilidad, la reformarías o aprobarías una nueva?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">2</td>
+            <td>
+              <%= link_to debate_url(5011) do %>
+                <strong>
+                ¿Estás de acuerdo en que se dé prioridad al transporte público colectivo sobre el individual privado? Si así fuera, ¿qué medidas propondrías?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">3</td>
+            <td>
+              <%= link_to debate_url(5012) do %>
+                <strong>
+                ¿Qué medidas propondrías para incrementar la seguridad vial y mejorar el respeto entre los distintos medios de transporte?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">4</td>
+            <td>
+              <%= link_to debate_url(5013) do %>
+                <strong>
+                ¿Qué medidas propondrías para mejorar el uso de los aparcamientos municipales de residentes, rotacionales (de uso público), mixtos y disuasorios?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">5</td>
+            <td>
+              <%= link_to debate_url(5014) do %>
+                <strong>
+                ¿Crees que la Administración debería potenciar la movilidad peatonal y ciclista? Si así fuera, ¿cómo las fomentarías?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">6</td>
+            <td>
+              <%= link_to debate_url(5015) do %>
+                <strong>
+                ¿Consideras oportuno que el Ayuntamiento de Madrid promueva el uso de vehículos poco contaminantes y la instalación de puntos de recarga de energías limpias (eléctrica, gas...)?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">7</td>
+            <td>
+              <%= link_to debate_url(5016) do %>
+                <strong>
+                ¿Por dónde consideras que deberían circular los aparatos de movilidad personal como patinetes y patinetes eléctricos: por la calzada, la acera o los carriles reservados? ¿Debería limitarse su uso en determinadas zonas de la ciudad?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="small-12 medium-6 large-4 column">
+    <h3>Informe de resultados</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "/docs/procesos/resultado_consulta_nueva_ordenanza_de_movilidad.pdf", target: "_blank",
+                    title: "Informe de resultados de la consulta pública Ordenanza Movilidad (se abre en ventana nueva)" do %>
+                    <strong>Informe de resultados de la consulta pública Ordenanza Movilidad</strong><br>
+                    <small>(PDF | 569Kb)</small>
+        <% end %>
+      </li>
+    </ul>
+
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "/docs/procesos/consulta_publica_ordenanza_movilidad_30012017.pdf", target: "_blank",
+                    title: "Consulta pública Ordenanza Movilidad (se abre en ventana nueva)" do %>
+                    <strong>Consulta pública Ordenanza Movilidad</strong><br>
+                    <small>(PDF | 159Kb)</small>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/docs/procesos/acuerdo_movilidad_13022017.pdf", target: "_blank",
+                    title: "Acuerdo para la consulta pública de la nueva ordenanza de movilidad (se abre en ventana nueva)" do %>
+                    <strong>Acuerdo para la consulta pública de la nueva ordenanza de movilidad</strong><br>
+                    <small>(PDF | 69Kb)</small>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

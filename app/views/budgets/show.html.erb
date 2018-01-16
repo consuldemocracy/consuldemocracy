@@ -1,9 +1,11 @@
+<% provide :title, @budget.name %>
+<% provide :meta_description, t("meta_tags.budget.description") %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budget_url(@budget, filter: @current_filter) %>
 <% end %>
 
 <div class="expanded budget no-margin-top">
-  <div class="row" data-equalizer data-equalizer-on="medium">
+  <div class="row" data-equalizer data-equalize-on="medium">
     <div class="small-12 medium-9 column padding" data-equalizer-watch>
       <%= back_link_to budgets_path %>
 
@@ -20,7 +22,10 @@
       <% if @budget.accepting? %>
         <% if current_user %>
           <% if current_user.level_two_or_three_verified? %>
-            <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
+            <%= link_to t("budgets.investments.index.sidebar.create"),
+                        new_budget_investment_path(@budget),
+                        class: "button margin-top expanded",
+                        data: { no_turbolink: true } %>
           <% else %>
             <div class="callout warning margin-top">
               <%= t("budgets.investments.index.sidebar.verified_only",
@@ -38,7 +43,7 @@
 
       <% if @budget.finished? || (@budget.balloting? && can?(:read_results, @budget)) %>
         <%= link_to t("budgets.show.see_results"),
-                    budget_results_path(@budget, heading_id: @budget.headings.first),
+                    custom_budget_results_path(@budget),
                     class: "button margin-top expanded" %>
       <% end %>
     </div>
@@ -54,7 +59,9 @@
     <% end %>
     <table class="table-fixed">
       <thead>
-        <th><%= t('budgets.show.group') %></th>
+        <tr>
+          <th scope="col"><%= t('budgets.show.group') %></th>
+        </tr>
       </thead>
       <tbody>
         <% @budget.groups.each do |group| %>
@@ -62,16 +69,16 @@
             <td>
               <% if group.headings.count == 1 %>
                 <%= link_to group.name,
-                            budget_investments_path(@budget,
-                              heading_id: group.headings.first.id,
-                              filter: @current_filter),
-                            data: { no_turbolink: true } %>
+                      custom_budget_investments_path(@budget, group,
+                        heading_id: group.headings.first.to_param,
+                        filter: @current_filter),
+                        data: { no_turbolink: true } %>
               <% else %>
                 <%= link_to group.name,
-                            budget_group_path(@budget, group,
-                              filter: @current_filter) %>
+                      custom_budget_group_path(@budget,
+                        group,
+                        filter: @current_filter) %>
               <% end %>
-              <br>
             </td>
           </tr>
         <% end %>

@@ -1,0 +1,41 @@
+<% provide :title, "Vídeos de proyectos de presupuestos participativos 2017" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budgets_videos_2017_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+<!-- Facebook OG -->
+<meta property="og:url"           content="<%= request.url %>presupuestos-participativos-2017-videos" />
+<meta property="og:title"         content="Vídeos de proyectos de presupuestos participativos 2017" />
+<meta property="og:image"         content="<%= image_url '/social_media_budgets_videos_2017.png' %>" />
+<meta property="og:description"   content="Las personas y colectivos que cuentan con proyectos de presupuestos participativos de 2017 en la votación final de decide.madrid.es, nos explican de primera mano en qué consisten sus propuestas" />
+<!-- Twitter -->
+<meta name="twitter:card"          content="summary" />
+<meta name="twitter:site"          content="@decideMadrid" />
+<meta name="twitter:title"         content="Vídeos de proyectos de presupuestos participativos 2017" />
+<meta name="twitter:image"         content="<%= image_url '/social_media_budgets_videos_2017.png' %>" />
+<meta name="twitter:description"   content="Las personas y colectivos que cuentan con proyectos de presupuestos participativos de 2017 en la votación final de decide.madrid.es, nos explican de primera mano en qué consisten sus propuestas" />
+<% end %>
+
+<div class="budgets-videos-2017">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <%= back_link_to budgets_welcome_path %>
+        <h1>Vídeos de proyectos de<br> presupuestos participativos 2017</h1>
+      </div>
+
+      <div class="small-12 medium-6 column">
+        <p>Las personas y colectivos que cuentan con proyectos de presupuestos participativos de 2017 en la <%= link_to "votación final de decide.madrid.es", budget_path(current_budget) %>, nos explican de primera mano en qué consisten sus propuestas.</p>
+        <p>Desde Decide Madrid se ha ofrecido la posibilidad de grabar vídeos a los <strong>más de 700 participantes</strong> con proyectos finalistas. Estos son los vídeos de las personas que han asistido a la grabación.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <div class="flex-video widescreen">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLhnvwI6F9eqVUaJCrFft9L54vp9eCFxzh&showinfo=1" style="border: 0;" title="Vídeos de proyectos de presupuestos participativos 2017" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>

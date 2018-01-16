@@ -6,6 +6,7 @@ feature 'Valuation budget investments' do
     @valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
     login_as(@valuator.user)
     @budget = create(:budget, :valuating)
+    Setting['feature.budgets.valuators_allowed'] = true
   end
 
   scenario 'Disabled with a feature flag' do
@@ -22,8 +23,8 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Index shows budget investments assigned to current valuator' do
-    investment1 = create(:budget_investment, budget: @budget)
-    investment2 = create(:budget_investment, budget: @budget)
+    investment1 = create(:budget_investment, :visible_to_valuators, budget: @budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, budget: @budget)
 
     investment1.valuators << @valuator
 
@@ -34,8 +35,8 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Index shows no budget investment to admins no valuators' do
-    investment1 = create(:budget_investment, budget: @budget)
-    investment2 = create(:budget_investment, budget: @budget)
+    investment1 = create(:budget_investment, :visible_to_valuators, budget: @budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, budget: @budget)
 
     investment1.valuators << @valuator
 
@@ -48,9 +49,9 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Index orders budget investments by votes' do
-    investment10  = create(:budget_investment, budget: @budget, cached_votes_up: 10)
-    investment100 = create(:budget_investment, budget: @budget, cached_votes_up: 100)
-    investment1   = create(:budget_investment, budget: @budget, cached_votes_up: 1)
+    investment10  = create(:budget_investment, :visible_to_valuators, budget: @budget, cached_votes_up: 10)
+    investment100 = create(:budget_investment, :visible_to_valuators, budget: @budget, cached_votes_up: 100)
+    investment1   = create(:budget_investment, :visible_to_valuators, budget: @budget, cached_votes_up: 1)
 
     investment1.valuators << @valuator
     investment10.valuators << @valuator
@@ -62,12 +63,32 @@ feature 'Valuation budget investments' do
     expect(investment10.title).to appear_before(investment1.title)
   end
 
+  scenario 'Index displays investments paginated' do
+    per_page = Kaminari.config.default_per_page
+    (per_page + 2).times do
+      investment = create(:budget_investment, :visible_to_valuators, budget: @budget)
+      investment.valuators << @valuator
+    end
+
+    visit valuation_budget_budget_investments_path(@budget)
+
+    expect(page).to have_css('.budget_investment', count: per_page)
+    within("ul.pagination") do
+      expect(page).to have_content("1")
+      expect(page).to have_content("2")
+      expect(page).not_to have_content("3")
+      click_link "Next", exact: false
+    end
+
+    expect(page).to have_css('.budget_investment', count: 2)
+  end
+
   scenario "Index filtering by heading", :js do
     group = create(:budget_group, budget: @budget)
     heading1 = create(:budget_heading, name: "District 9", group: group)
     heading2 = create(:budget_heading, name: "Down to the river", group: group)
-    investment1 = create(:budget_investment, title: "Realocate visitors", heading: heading1, group: group, budget: @budget)
-    investment2 = create(:budget_investment, title: "Destroy the city", heading: heading2, group: group, budget: @budget)
+    investment1 = create(:budget_investment, :visible_to_valuators, title: "Realocate visitors", heading: heading1, group: group, budget: @budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, title: "Destroy the city", heading: heading2, group: group, budget: @budget)
     investment1.valuators << @valuator
     investment2.valuators << @valuator
 
@@ -116,8 +137,8 @@ feature 'Valuation budget investments' do
   end
 
   scenario "Index filtering by valuation status" do
-    valuating = create(:budget_investment, budget: @budget, title: "Ongoing valuation")
-    valuated  = create(:budget_investment, budget: @budget, title: "Old idea", valuation_finished: true)
+    valuating = create(:budget_investment, :visible_to_valuators, budget: @budget, title: "Ongoing valuation")
+    valuated  = create(:budget_investment, :visible_to_valuators, budget: @budget, title: "Old idea", valuation_finished: true)
     valuating.valuators << @valuator
     valuated.valuators << @valuator
 
@@ -142,6 +163,7 @@ feature 'Valuation budget investments' do
       administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
       valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
       investment = create(:budget_investment,
+                           :visible_to_valuators,
                            budget: @budget,
                            price: 1234,
                            feasibility: 'unfeasible',
@@ -220,6 +242,7 @@ feature 'Valuation budget investments' do
   feature 'Valuate' do
     background do
       @investment = create(:budget_investment,
+                           :visible_to_valuators,
                             budget: @budget,
                             price: nil,
                             administrator: create(:administrator))
@@ -369,6 +392,41 @@ feature 'Valuation budget investments' do
 
       expect(page).to have_content('2 errors')
       expect(page).to have_content('Only integer numbers', count: 2)
+    end
+
+    scenario 'not visible to valuators unless setting enabled' do
+      Setting['feature.budgets.valuators_allowed'] = nil
+
+      investment = create(:budget_investment,
+                           :visible_to_valuators,
+                           budget: @budget)
+      investment.valuators << [@valuator]
+
+      login_as(@valuator.user)
+      visit valuation_budget_budget_investment_path(@budget, investment)
+
+      expect{ click_link 'Edit dossier' }.
+      to raise_error( ActionController::RoutingError)
+    end
+
+    scenario 'visible to admins regardless of setting enabled' do
+      Setting['feature.budgets.valuators_allowed'] = nil
+
+      user = create(:user)
+      admin = create(:administrator, user: user)
+      valuator = create(:valuator, user: user)
+
+      investment = create(:budget_investment,
+                           :visible_to_valuators,
+                           budget: @budget)
+      investment.valuators << [valuator]
+
+
+      login_as(admin.user)
+      visit valuation_budget_budget_investment_path(@budget, investment)
+      click_link 'Edit dossier'
+
+      expect(page).to have_content investment.title
     end
   end
 end

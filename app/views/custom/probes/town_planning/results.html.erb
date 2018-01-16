@@ -1,0 +1,77 @@
+<%= render "probes/#{@probe.codename}/header" %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= back_link_to %>
+
+      <h1 class="margin-bottom"><%= t("pages.processes.index.process_7_title") %></h1>
+      <p>Hasta el 27 de julio, la ciudadanía formó parte del jurado que está decidiendo cómo serán los nuevos bancos, tras un concurso público abierto entre el Área de Desarrollo Urbano Sostenible y el Colegio de Arquitectos de Madrid (COAM).</p>
+      <div class="small-12 medium-4">
+        <%= link_to "Más información",
+                    "https://diario.madrid.es/blog/2016/07/20/participa-en-la-eleccion-del-diseno-de-los-bancos-de-madrid/",
+                    target: "_blank", title: t("shared.target_blank_html"), class: "button hollow expanded" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if @probe_option.present? %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <div class="callout success">
+        Has votado el proyecto <strong><%= @probe_option.name %></strong>.
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <h2>Resultados de la votación</h2>
+    <p>Los tres bancos con mayor puntuación obtienen 3, 2 y 1 punto respectivamente, que se sumarán a los puntos del jurado para la selección final. Puedes <%= link_to "consultar toda la información", "http://www.coam.org/media/Default%20Files/servicios/concursos/concursos_ocam/2015/bancos-para-compartir/160310_pliego_administrativo.pdf", target: "_blank", title: t("shared.target_blank_html") %> sobre el jurado y el proceso.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 column">
+    <table class="probe-results">
+      <thead>
+        <tr>
+          <th scope="col">Imagen</th>
+          <th scope="col">Proyecto</th>
+          <th scope="col">Dossier</th>
+          <th scope="col" class="text-center">Número de votos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: '/custom/probes/town_planning/town_planning_option', collection: @probe_options %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <h2>Resultado final de la selección</h2>
+    <p>A continuación puedes ver las actas del resultado final del concurso con los finalmente seleccionados:</p>
+    <ul>
+      <li>
+        <%= link_to "Acto público de apertura de plicas <small>(PDF | 106Kb)</small>".html_safe,
+          "/docs/town_planning/acta_apertura_280716.pdf",
+          target: "_blank", title: t("shared.target_blank_html") %>
+      </li>
+      <li>
+        <%= link_to "Acta del jurado <small>(PDF | 304Kb)</small>".html_safe,
+          "/docs/town_planning/acta_jurado_130616.pdf",
+          target: "_blank", title: t("shared.target_blank_html") %>
+      </li>
+      <li>
+        <%= link_to "Designación miembros mesa del jurado <small>(PDF | 457Kb)</small>".html_safe,
+          "/docs/town_planning/miembros_mesa_jurado.pdf",
+          target: "_blank", title: t("shared.target_blank_html") %>
+      </li>
+    </ul>
+  </div>
+</div>

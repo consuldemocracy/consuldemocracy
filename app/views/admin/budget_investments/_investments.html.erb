@@ -15,7 +15,13 @@
         <th><%= t("admin.budget_investments.index.table_geozone") %></th>
         <th><%= t("admin.budget_investments.index.table_feasibility") %></th>
         <th class="text-center"><%= t("admin.budget_investments.index.table_valuation_finished") %></th>
-        <th class="text-center"><%= t("admin.budget_investments.index.table_selection") %></th>
+        <th class="text-center">
+          <% if params[:filter] == "valuating" %>
+            <%= t("admin.budget_investments.index.table_evaluation") %>
+          <% else %>
+            <%= t("admin.budget_investments.index.table_selection") %>
+          <% end %>
+        </th>
         <% if params[:filter] == 'selected' %>
           <th class="text-center"><%= t("admin.budget_investments.index.table_incompatible") %></th>
         <% end %>
@@ -23,14 +29,15 @@
     </thead>
 
     <% @investments.each do |investment| %>
+      <% investment_id = investment.original_spending_proposal_id || investment.id %>
       <tr id="<%= dom_id(investment) %>" class="budget_investment">
         <td class="text-right">
-          <strong><%= investment.id %></strong>
+          <strong><%= investment_id %></strong>
         </td>
         <td>
           <%= link_to investment.title,
                       admin_budget_budget_investment_path(budget_id: @budget.id,
-                                                          id: investment.id,
+                                                          id: investment_id,
                                                           params: Budget::Investment.filter_params(params)),
                                                           target: "_blank" %>
         </td>
@@ -65,26 +72,36 @@
           <%= investment.valuation_finished? ? t('shared.yes'): t('shared.no') %>
         </td>
         <td class="small">
-          <% if investment.selected? %>
-            <%= link_to_unless investment.budget.finished?,
-                               t("admin.budget_investments.index.selected"),
-                               toggle_selection_admin_budget_budget_investment_path(@budget,
-                                                                                    investment,
-                                                                                    filter: params[:filter],
-                                                                                    page: params[:page]),
-                               method: :patch,
-                               remote: true,
-                               class: "button small expanded" %>
-          <% elsif investment.feasible? && investment.valuation_finished? %>
-            <%= link_to_unless investment.budget.finished?,
-                               t("admin.budget_investments.index.select"),
-                               toggle_selection_admin_budget_budget_investment_path(@budget,
-                                                                                    investment,
-                                                                                    filter: params[:filter],
-                                                                                    page: params[:page]),
-                               method: :patch,
-                               remote: true,
-                               class: "button small hollow expanded" %>
+          <% if params[:filter] == "valuating" %>
+
+            <%= form_for [:admin, investment.budget, investment], remote: true do |f| %>
+              <%= f.check_box :visible_to_valuators,
+                              label: false,
+                              class: "js-submit-on-change" %>
+            <% end %>
+
+          <% else %>
+            <% if investment.selected? %>
+              <%= link_to_unless investment.budget.finished?,
+                                 t("admin.budget_investments.index.selected"),
+                                 toggle_selection_admin_budget_budget_investment_path(@budget,
+                                                                                      investment,
+                                                                                      filter: params[:filter],
+                                                                                      page: params[:page]),
+                                 method: :patch,
+                                 remote: true,
+                                 class: "button small expanded" %>
+            <% elsif investment.feasible? && investment.valuation_finished? %>
+              <%= link_to_unless investment.budget.finished?,
+                                 t("admin.budget_investments.index.select"),
+                                 toggle_selection_admin_budget_budget_investment_path(@budget,
+                                                                                      investment,
+                                                                                      filter: params[:filter],
+                                                                                      page: params[:page]),
+                                 method: :patch,
+                                 remote: true,
+                                 class: "button small hollow expanded" %>
+            <% end %>
           <% end %>
         </td>
         <% if params[:filter] == 'selected' %>

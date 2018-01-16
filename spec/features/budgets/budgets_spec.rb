@@ -8,7 +8,7 @@ feature 'Budgets' do
   scenario 'Index' do
     budgets = create_list(:budget, 3)
     visit budgets_path
-    budgets.each {|budget| expect(page).to have_link(budget.name)}
+    expect(page).to have_content "Los presupuestos participativos en 2 minutos"
   end
 
   context 'Show' do
@@ -73,6 +73,8 @@ feature 'Budgets' do
     end
 
     context "Listed" do
+      before { skip "At madrid we're not listing budgets" }
+
       scenario "Not listed to guest users at the public budgets list" do
         visit budgets_path
 
