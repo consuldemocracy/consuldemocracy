@@ -40,7 +40,7 @@ feature 'Admin::Organizations' do
       fill_in "term", with: "      "
       click_button "Search"
 
-      expect(page).to have_current_path(search_admin_organizations_path, only_path: true)
+      expect(page).to have_current_path(search_admin_organizations_path, ignore_query: true)
       within("#search-results") do
         expect(page).not_to have_content("Get up, Stand up")
       end
@@ -88,13 +88,13 @@ feature 'Admin::Organizations' do
 
     visit admin_organizations_path
     within("#organization_#{organization.id}") do
-      expect(page).to have_current_path(admin_organizations_path, only_path: true)
+      expect(page).to have_current_path(admin_organizations_path, ignore_query: true)
       expect(page).to have_link('Verify')
       expect(page).to have_link('Reject')
 
       click_on 'Verify'
     end
-    expect(page).to have_current_path(admin_organizations_path, only_path: true)
+    expect(page).to have_current_path(admin_organizations_path, ignore_query: true)
     expect(page).to have_content 'Verified'
 
     expect(organization.reload.verified?).to eq(true)
@@ -114,7 +114,7 @@ feature 'Admin::Organizations' do
 
       click_on 'Reject'
     end
-    expect(page).to have_current_path(admin_organizations_path, only_path: true)
+    expect(page).to have_current_path(admin_organizations_path, ignore_query: true)
     expect(page).not_to have_content organization.name
 
     click_on 'Rejected'
@@ -136,7 +136,7 @@ feature 'Admin::Organizations' do
 
       click_on 'Verify'
     end
-    expect(page).to have_current_path(admin_organizations_path, only_path: true)
+    expect(page).to have_current_path(admin_organizations_path, ignore_query: true)
     expect(page).not_to have_content organization.name
     click_on('Verified')
 

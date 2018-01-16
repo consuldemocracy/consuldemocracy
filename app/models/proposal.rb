@@ -1,5 +1,6 @@
 require 'csv'
 class Proposal < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
   include Flaggable
   include Taggable
   include Conflictable
@@ -74,6 +75,10 @@ class Proposal < ActiveRecord::Base
   scope :proceedings,              -> { where.not(proceeding: nil) }
   scope :not_proceedings,          -> { where(proceeding: nil) }
   scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
+
+  def url
+    proposal_path(self)
+  end
 
   def self.recommendations(user)
     tagged_with(user.interests, any: true)
