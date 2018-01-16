@@ -59,7 +59,7 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
-        map_remove_marker: "Eliminar el marcador"
+        map_remove_marker: "Eliminar marcador en el mapa"
         location: "Información adicional de la ubicación"
       index:
         title: Presupuestos participativos
@@ -104,7 +104,7 @@ es:
         unfeasibility_explanation: Informe de inviabilidad
         code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
         location_html: 'Ubicación: <strong>%{location}</strong>'
-        organization_name_html: 'Organización: <strong>%{name}</strong>'
+        organization_name_html: 'Propuesto en nombre de: <strong>%{name}</strong>'
         share: Compartir
         title: Proyecto de inversión
         supports: Apoyos
