@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
 
   layout :set_layout
   respond_to :html
+  helper_method :current_budget
 
   private
 
@@ -130,6 +131,10 @@ class ApplicationController < ActionController::Base
       if @budget.try(:balloting?)
         params[:filter] ||= "selected"
       end
+    end
+
+    def current_budget
+      Budget.current
     end
 
 end
