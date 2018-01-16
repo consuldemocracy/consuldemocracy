@@ -160,35 +160,8 @@ en:
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "
       incompatibles: Incompatibles
-    stats:
-      title: Participation stats
-      link: Stats
-      page_title: "%{budget} - Participation stats"
-      total_participants: Total Participants
-      total_budget_investments: Total Proposed Investments
-      total_selected_investments: Proposals on final phase
-      total_unfeasible_investments: Unfeasible proposals
-      total_participants_support_phase: Support phase
-      participants: Participants
-      supports: Supports
-      votes: Votes
-      total_participants_vote_phase: Voting Phase
-      by_gender: "Participants by gender"
-      total_male_participants: Mens
-      total_female_participants: Women
-      by_age: "Participants by age groups"
-      age: Age
-      total: Total
-      more_than: More than
-      years: years
-      by_heading: "Participants by heading"
-      heading: Heading
-      investments_sent_html: "Investment proposals sent"
-      participants_support_phase: Participants support phase
-      participants_voting_phase: Participants voting phase
-      participants_total: Total Participants
-      percent_total_participants_html: "% <br>Total<br>Participants"
-      percent_heading_census_html: "% <br>Heading<br>Census"
-      no_demographic_data: "* There is no demographic data for %{total} participants."
-      participatory_disclaimer: "** The numbers of total participation refer to persons that created, supported or voted investment proposals."
-      heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."
+    phases:
+      errors:
+        dates_range_invalid: "Start date can't be equal or later than End date"
+        prev_phase_dates_invalid: "Start date must be later than the start date of the previous enabled phase (%{phase_name})"
+        next_phase_dates_invalid: "End date must be earlier than the end date of the next enabled phase (%{phase_name})"

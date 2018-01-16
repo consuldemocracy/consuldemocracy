@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added Capistrano task to automate maintenance mode https://github.com/consul/consul/pull/1932
 - Added actions to edit and delete a budget's headings https://github.com/consul/consul/pull/1917
 - Allow Budget Investments to be Related to other content https://github.com/consul/consul/pull/2311
+- New Budget::Phase model to add dates, enabling and more https://github.com/consul/consul/pull/2323
 
 ### Changed
 - Updated multiple minor & patch gem versions thanks to [Depfu](https://depfu.com)
@@ -28,6 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Design Improvements https://github.com/consul/consul/pull/2327
 
 ### Deprecated
+- Budget's `description_*` columns will be erased from database in next release. Please run rake task `budgets:phases:generate_missing` to migrate them. Details at Warning section of https://github.com/consul/consul/pull/2323
 
 ### Removed
 - Spending Proposals urls from sitemap, that model is getting entirely deprecated soon.

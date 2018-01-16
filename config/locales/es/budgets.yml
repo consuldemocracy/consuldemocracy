@@ -159,35 +159,8 @@ es:
       accepted: 'Propuesta de inversión aceptada: '
       discarded: 'Propuesta de inversión descartada: '
       incompatibles: Incompatibles
-    stats:
-      title: Estadísticas de participación
-      link: Estadísticas
-      page_title: "%{budget} - Estadísticas de participación"
-      total_participants: Total participantes
-      total_budget_investments: Total propuestas enviadas
-      total_selected_investments: Propuestas en la fase final
-      total_unfeasible_investments: Propuestas inviables
-      total_participants_support_phase: Fase de apoyos
-      participants: Participantes
-      supports: Apoyos
-      votes: Votos
-      total_participants_vote_phase: Fase de votación
-      total: Total
-      by_gender: "Participación por género"
-      total_male_participants: Hombres
-      total_female_participants: Mujeres
-      by_age: "Participación por grupos de edad"
-      age: Edad
-      more_than: Más de
-      years: años
-      by_heading: "Participación por distritos"
-      heading: Distrito
-      investments_sent_html: "Propuestas<br>enviadas"
-      participants_support_phase: Participación fase apoyos
-      participants_voting_phase: Participación fase votación
-      participants_total: Participación total
-      percent_total_participants_html: "% <br>Total<br>Participantes"
-      percent_heading_census_html: "% <br>Censo<br>Distrito"
-      no_demographic_data: "* No se dispone de los datos demográficos de %{total} participantes."
-      participatory_disclaimer: "** Las cifras de participación total se refieren a personas que han creado, apoyado o votado propuestas."
-      heading_disclaimer: "*** Los datos de distrito se refieren al distrito en el que el usuario ha votado, no necesariamente en el que está empadronado."
+    phases:
+      errors:
+        dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"
+        prev_phase_dates_invalid: "La fecha de inicio debe ser posterior a la fecha de inicio de la anterior fase habilitada (%{phase_name})"
+        next_phase_dates_invalid: "La fecha de fin debe ser anterior a la fecha de fin de la siguiente fase habilitada (%{phase_name}) "

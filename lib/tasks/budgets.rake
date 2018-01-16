@@ -50,6 +50,24 @@ namespace :budgets do
     headers = "nombre^email^tema^colectivo^funcionario^autor^seleccionado*****"
     puts "#{headers}#{csv_string}"
   end
+
+  namespace :phases do
+    desc "Generates Phases for existing Budgets without them & migrates description_* attributes"
+    task generate_missing: :environment do
+      Budget.where.not(id: Budget::Phase.all.pluck(:budget_id).uniq.compact).each do |budget|
+        Budget::Phase::PHASE_KINDS.each do |phase|
+          Budget::Phase.create(
+            budget: budget,
+            kind: phase,
+            description: budget.send("description_#{phase}"),
+            prev_phase: phases&.last,
+            starts_at: phases&.last&.ends_at || Date.current,
+            ends_at: (phases&.last&.ends_at || Date.current) + 1.month
+          )
+        end
+      end
+    end
+  end
 end
 
 def investments_author_emails(investments)
@@ -61,11 +79,13 @@ def winner_investments
 end
 
 def selected_non_winner_investments
-  Budget::Investment.selected.where(budget: Budget.current).where.not(id: winner_investments.pluck(:id))
+  Budget::Investment.selected.where(budget: Budget.current)
+                    .where.not(id: winner_investments.pluck(:id))
 end
 
 def non_selected_non_winner_investments
-  Budget::Investment.where(budget: Budget.current).where.not(id: Budget::Investment.selected.pluck(:id))
+  Budget::Investment.where(budget: Budget.current)
+                    .where.not(id: Budget::Investment.selected.pluck(:id))
 end
 
 def winner_emails
