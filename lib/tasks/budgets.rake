@@ -3,12 +3,12 @@ namespace :budgets do
 
     desc "Sends emails to authors of selected investments"
     task selected: :environment do
-      Budget.last.email_selected
+      Budget.current.email_selected
     end
 
     desc "Sends emails to authors of unselected investments"
     task unselected: :environment do
-      Budget.last.email_unselected
+      Budget.current.email_unselected
     end
 
     desc "Get emails from last Budget's winner investments authors"
@@ -57,15 +57,15 @@ def investments_author_emails(investments)
 end
 
 def winner_investments
-  Budget::Investment.winners.where(budget: Budget.last)
+  Budget::Investment.winners.where(budget: Budget.current)
 end
 
 def selected_non_winner_investments
-  Budget::Investment.selected.where(budget: Budget.last).where.not(id: winner_investments.pluck(:id))
+  Budget::Investment.selected.where(budget: Budget.current).where.not(id: winner_investments.pluck(:id))
 end
 
 def non_selected_non_winner_investments
-  Budget::Investment.where(budget: Budget.last).where.not(id: Budget::Investment.selected.pluck(:id))
+  Budget::Investment.where(budget: Budget.current).where.not(id: Budget::Investment.selected.pluck(:id))
 end
 
 def winner_emails

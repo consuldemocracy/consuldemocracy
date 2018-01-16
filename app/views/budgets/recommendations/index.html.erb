@@ -14,8 +14,7 @@
   <meta property="article:author" content="https://www.facebook.com/<%= setting['facebook_handle'] %>"/>
 <% end %>
 <meta property="og:type" content="article"/>
-<% budget = Budget.current.last %>
-<% og_url = budget.present? ? budget_recommendations_url(budget_id: budget.slug, user_id: @user.id) : budgets_url %>
+<% og_url = current_budget.present? ? budget_recommendations_url(budget_id: current_budget.slug, user_id: @user.id) : budgets_url %>
 <meta id="ogurl" property="og:url" content="<%= og_url %>"/>
 <meta id="ogimage" property="og:image" content="<%= image_url '/social_media_budgets.png' %>"/>
 <meta property="og:site_name" content="Decide Madrid"/>
