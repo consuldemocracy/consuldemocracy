@@ -106,7 +106,7 @@ feature 'Recommendations' do
       find('.in-favor a').click
 
       expect(page).to have_content "1 support"
-      expect(page).to have_content "You have already supported this. Share it!"
+      expect(page).to have_content "You have already supported this investment project. Share it!"
     end
   end
 

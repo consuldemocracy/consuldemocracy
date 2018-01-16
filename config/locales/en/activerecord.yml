@@ -172,7 +172,7 @@ en:
         heading_id: "Is your project for the whole city or is it located in a specific district?"
         title: "Title"
         location: "Location (optional)"
-        organization_name: "If you are proposing in the name of a collective/organization, write its name"
+        organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
       budget/investment/milestone:

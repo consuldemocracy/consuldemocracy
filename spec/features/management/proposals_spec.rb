@@ -93,7 +93,7 @@ feature 'Proposals' do
     fill_in "search", with: "what you got"
     click_button "Search"
 
-    expect(page).to have_current_path(management_proposals_path, only_path: true)
+    expect(page).to have_current_path(management_proposals_path, ignore_query: true)
 
     within(".proposals-list") do
       expect(page).to have_css('.proposal', count: 1)

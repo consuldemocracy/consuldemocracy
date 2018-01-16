@@ -53,7 +53,10 @@
             <% end %>
           <% else %>
             <h1 class="margin-top"><%= @heading.name %></h1>
-            <h2><%= @budget.formatted_heading_price(@heading) %></h2>
+            <h2>
+              <span class="tagline"><%= t("budgets.investments.header.price") %></span>
+              <%= @budget.formatted_heading_price(@heading) %>
+            </h2>
           <% end %>
         </div>
       </div>

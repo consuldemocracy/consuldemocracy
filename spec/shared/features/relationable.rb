@@ -1,39 +1,39 @@
 shared_examples "relationable" do |relationable_model_name|
 
-  let(:relationable) { create(relationable_model_name.name.downcase.to_sym) }
-  let(:related1) { create([:proposal, :debate].sample) }
-  let(:related2) { create([:proposal, :debate].sample) }
+  let(:relationable) { create(relationable_model_name.name.parameterize('_').to_sym) }
+  let(:related1) { create([:proposal, :debate, :budget_investment].sample) }
+  let(:related2) { create([:proposal, :debate, :budget_investment].sample) }
   let(:user) { create(:user) }
 
   scenario 'related contents are listed' do
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
-    visit send("#{relationable.class.name.downcase}_path", relationable)
+    visit relationable.url
     within("#related-content-list") do
       expect(page).to have_content(related1.title)
     end
 
-    visit send("#{related1.class.name.downcase}_path", related1)
+    visit related1.url
     within("#related-content-list") do
       expect(page).to have_content(relationable.title)
     end
   end
 
   scenario 'related contents list is not rendered if there are no relations' do
-    visit send("#{relationable.class.name.downcase}_path", relationable)
+    visit relationable.url
     expect(page).not_to have_css("#related-content-list")
   end
 
   scenario 'related contents can be added' do
     login_as(user)
-    visit send("#{relationable.class.name.downcase}_path", relationable)
+    visit relationable.url
 
     expect(page).to have_selector('#related_content', visible: false)
     click_on("Add related content")
     expect(page).to have_selector('#related_content', visible: true)
 
     within("#related_content") do
-      fill_in 'url', with: "#{Setting['url']}/#{related1.class.name.downcase.pluralize}/#{related1.to_param}"
+      fill_in 'url', with: "#{Setting['url'] + related1.url}"
       click_button "Add"
     end
 
@@ -41,14 +41,14 @@ shared_examples "relationable" do |relationable_model_name|
       expect(page).to have_content(related1.title)
     end
 
-    visit send("#{related1.class.name.downcase}_path", related1)
+    visit related1.url
 
     within("#related-content-list") do
       expect(page).to have_content(relationable.title)
     end
 
     within("#related_content") do
-      fill_in 'url', with: "#{Setting['url']}/#{related2.class.name.downcase.pluralize}/#{related2.to_param}"
+      fill_in 'url', with: "#{Setting['url'] + related2.url}"
       click_button "Add"
     end
 
@@ -57,9 +57,28 @@ shared_examples "relationable" do |relationable_model_name|
     end
   end
 
+  scenario 'budget investments can be added as related content' do
+    budget_investment = create(:budget_investment)
+    login_as(user)
+    visit relationable.url
+
+    expect(page).to have_selector('#related_content', visible: false)
+    click_on("Add related content")
+    expect(page).to have_selector('#related_content', visible: true)
+
+    within("#related_content") do
+      fill_in 'url', with: "#{Setting['url'] + budget_investment.url}"
+      click_button "Add"
+    end
+
+    within("#related-content-list") do
+      expect(page).to have_content(budget_investment.title)
+    end
+  end
+
   scenario 'if related content URL is invalid returns error' do
     login_as(user)
-    visit send("#{relationable.class.name.downcase}_path", relationable)
+    visit relationable.url
 
     click_on("Add related content")
 
@@ -75,7 +94,7 @@ shared_examples "relationable" do |relationable_model_name|
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)
-    visit send("#{relationable.class.name.downcase}_path", relationable)
+    visit relationable.url
 
     within("#related-content-list") do
       find("#related-content-#{related_content.opposite_related_content.id}").hover
@@ -92,7 +111,7 @@ shared_examples "relationable" do |relationable_model_name|
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)
-    visit send("#{relationable.class.name.downcase}_path", relationable)
+    visit relationable.url
 
     within("#related-content-list") do
       find("#related-content-#{related_content.opposite_related_content.id}").hover
@@ -117,7 +136,7 @@ shared_examples "relationable" do |relationable_model_name|
 
     login_as(user)
 
-    visit send("#{relationable.class.name.downcase}_path", relationable)
+    visit relationable.url
 
     expect(page).not_to have_css("#related-content-list")
   end

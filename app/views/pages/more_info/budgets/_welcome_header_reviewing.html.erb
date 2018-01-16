@@ -19,21 +19,22 @@
       <div class="row margin">
         <div class="small-12 medium-3 column">
           <%= link_to "Proyectos de toda la ciudad",
-                      custom_budget_investments_path(budget_id: Budget.last.to_param,
-                        id: Budget::Group.first,
-                        heading_id: Budget::Heading.first.to_param,
+                      custom_budget_investments_path(budget_id: current_budget.to_param,
+                        id: current_budget.groups.first,
+                        heading_id: current_budget.headings.first.to_param,
                         filter: "selected"),
                         class: "button expanded city" %>
         </div>
         <div class="small-12 medium-3 column">
           <%= link_to "Proyectos de distritos",
-                      custom_budget_group_path(Budget.last, Budget::Group.last,
+                      custom_budget_group_path(current_budget, 
+                        current_budget.groups.last,
                         filter: @current_filter),
                         class: "button expanded" %>
         </div>
         <div class="small-12 medium-3 column">
           <%= link_to "Estadísticas de participación",
-                      custom_budget_stats_path(id: Budget.last.to_param),
+                      custom_budget_stats_path(id: current_budget.to_param),
                       class: "button expanded stats" %>
         </div>
         <div class="small-12 medium-3 column">

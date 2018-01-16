@@ -12,7 +12,7 @@ feature 'Account' do
 
     click_link "My account"
 
-    expect(page).to have_current_path(account_path, only_path: true)
+    expect(page).to have_current_path(account_path, ignore_query: true)
 
     expect(page).to have_selector("input[value='Manuela Colau']")
     expect(page).to have_selector(avatar('Manuela Colau'), count: 1)
@@ -116,7 +116,7 @@ feature 'Account' do
 
     click_link 'My account'
 
-    expect(page).to have_current_path(account_path, only_path: true)
+    expect(page).to have_current_path(account_path, ignore_query: true)
 
     expect(page).to have_link('Change my credentials')
     click_link 'Change my credentials'

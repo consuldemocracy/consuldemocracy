@@ -5,7 +5,6 @@ class Budget < ActiveRecord::Base
 
   PHASES = %w(drafting accepting reviewing selecting valuating publishing_prices
               balloting reviewing_ballots finished).freeze
-  ON_HOLD_PHASES = %w(reviewing valuating publishing_prices reviewing_ballots).freeze
   PUBLISHED_PRICES_PHASES = %w(publishing_prices balloting reviewing_ballots finished).freeze
 
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
@@ -23,7 +22,6 @@ class Budget < ActiveRecord::Base
 
   before_validation :sanitize_descriptions
 
-  scope :on_hold, -> { where(phase: ON_HOLD_PHASES) }
   scope :drafting, -> { where(phase: "drafting") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
@@ -33,8 +31,11 @@ class Budget < ActiveRecord::Base
   scope :balloting, -> { where(phase: "balloting") }
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
   scope :finished, -> { where(phase: "finished") }
+  scope :open, -> { where.not(phase: "finished") }
 
-  scope :current, -> { where.not(phase: "finished") }
+  def self.current
+    where.not(phase: "drafting").order(:created_at).last
+  end
 
   def to_param
     name.parameterize
@@ -98,14 +99,6 @@ class Budget < ActiveRecord::Base
 
   def balloting_or_later?
     balloting_process? || finished?
-  end
-
-  def on_hold?
-    ON_HOLD_PHASES.include?(phase)
-  end
-
-  def current?
-    !finished?
   end
 
   def heading_price(heading)

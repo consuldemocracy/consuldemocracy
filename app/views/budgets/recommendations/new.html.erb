@@ -1,8 +1,9 @@
 <div class="row">
   <div class="small-12 column">
-    <% if Budget.current.present? %>
+    <% if current_budget %>
       <%= link_to t("delegation.view_list"),
-                  budget_recommendations_path(budget_id: Budget.current.last.slug, user_id: @current_user.id),
+                  budget_recommendations_path(budget_id: current_budget.slug, 
+                                              user_id: @current_user.id),
                   class: "float-right" %>
     <% end %>
     <h1 class="inline-block"><%= t("delegation.title") %></h1>
@@ -57,8 +58,10 @@
      <p>
         <%= t("delegation.share") %><br>
         <strong>
-          <%= link_to budget_recommendations_url(budget_id: Budget.current.last.slug, user_id: @current_user.id),
-                      budget_recommendations_url(budget_id: Budget.current.last.slug, user_id: @current_user.id) %>
+          <%= link_to budget_recommendations_url(budget_id: current_budget.slug, 
+                                                 user_id: @current_user.id),
+                      budget_recommendations_url(budget_id: current_budget.slug, 
+                                                 user_id: @current_user.id) %>
         </strong>
       </p>
   </div>
