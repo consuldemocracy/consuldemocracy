@@ -34,7 +34,7 @@ class Budget < ActiveRecord::Base
   scope :open, -> { where.not(phase: "finished") }
 
   def self.current
-    where.not(phase: "drafting").last
+    where.not(phase: "drafting").order(:created_at).last
   end
 
   def to_param
