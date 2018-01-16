@@ -1,6 +1,7 @@
 class Budget
   class Investment < ActiveRecord::Base
     require 'csv'
+    include Rails.application.routes.url_helpers
     include Measurable
     include Sanitizable
     include Taggable
@@ -81,6 +82,10 @@ class Budget
     before_validation :set_denormalized_ids
 
     before_save :calculate_confidence_score
+
+    def url
+      budget_investment_path(budget, self)
+    end
 
     def self.filter_params(params)
       params.select{|x, _| %w{heading_id group_id administrator_id tag_name valuator_id}.include? x.to_s }

@@ -72,27 +72,26 @@ es:
         filters:
           current: Abiertos
           finished: Terminados
-        budget_investments: Ver proyectos de gasto
+        budget_investments: Ver proyectos de inversión
         table_name: Nombre
         table_phase: Fase
-        table_investments: Proyectos de gasto
+        table_investments: Proyectos de inversión
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
       create:
-        notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
+        notice: "¡Nuevo presupuesto creado con éxito!"
       update:
-        notice: Campaña de presupuestos participativos actualizada
+        notice: Presupuesto actualizado
       edit:
-        title: Editar campaña de presupuestos participativos
-        delete: Borrar campaña
+        title: Editar presupuesto
+        delete: Eliminar presupuesto
       destroy:
-        success_notice: Campaña eliminada correctamente
-        unable_notice: No se pueden eliminar campañas con presupuestos asociados
-
+        success_notice: Presupuesto eliminado correctamente
+        unable_notice: No se puede eliminar un presupuesto con proyectos asociados
       new:
-        title: Nuevo presupuesto ciudadano
+        title: Nuevo presupuesto
       show:
         groups:
           one: 1 Grupo de partidas presupuestarias
@@ -105,7 +104,8 @@ es:
         heading: Nombre de la partida
         add_heading: Añadir partida
         amount: Cantidad
-        population: Población
+        population: "Población (opcional)"
+        population_help_text: "Este dato se utiliza exclusivamente para calcular las estadísticas de participación"
         save_heading: Guardar partida
         no_heading: Este grupo no tiene ninguna partida asignada.
         table_heading: Partida
@@ -113,8 +113,8 @@ es:
         table_population: Población
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
       winners:
-        calculate: Calcular propuestas ganadoras
-        calculated: Calculando ganadoras, puede tardar un minuto.
+        calculate: Calcular proyectos ganadores
+        calculated: Calculando ganadores, puede tardar un minuto.
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
@@ -133,7 +133,9 @@ es:
           selected: Seleccionadas
           winners: Ganadoras
           all: Todas
-        title: Proyectos de gasto
+        download_current_selection: "Descargar selección actual"
+        no_budget_investments: "No hay proyectos de inversión."
+        title: Proyectos de inversión
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
@@ -153,7 +155,7 @@ es:
         table_feasibility: "Viabilidad"
         table_valuation_finished: "Ev. Fin."
         table_selection: "Selección"
-        table_evaluation: "Evaluación"
+        table_evaluation: "Mostrar a evaluadores"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignado
@@ -990,7 +992,8 @@ es:
           spending_proposal_votes: Votos Propuesta Inversión
           spending_proposals: Propuestas de inversión
           budgets: Presupuestos abiertos
-          budget_investments: Propuestas de inversión
+          budget_investments: Proyectos de inversión
+          spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos

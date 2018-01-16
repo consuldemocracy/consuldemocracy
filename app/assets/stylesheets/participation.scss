@@ -339,6 +339,7 @@
 .topic-show,
 .milestone-content {
 
+  h1,
   p {
     word-wrap: break-word;
   }
@@ -938,10 +939,10 @@
   }
 }
 
-.investment-project .supports .total-supports.no-button,
-.investment-project-show .supports .total-supports.no-button,
-.budget-investment .supports .total-supports.no-button,
-.budget-investment-show .supports .total-supports.no-button {
+.investment-project .no-button,
+.investment-project-show .no-button,
+.budget-investment .no-button,
+.budget-investment-show .no-button {
   display: block;
   margin-top: $line-height * 1.5;
 }
@@ -1143,6 +1144,12 @@
   p,
   a {
     color: #fff;
+  }
+
+  .tagline {
+    display: block;
+    font-size: $small-font-size;
+    font-weight: normal;
   }
 
   .callout.warning {

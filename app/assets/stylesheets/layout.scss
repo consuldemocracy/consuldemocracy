@@ -22,6 +22,7 @@
 // 20. Documents
 // 21. Related content
 // 22. Images
+// 23. Maps
 //
 
 // 01. Global styles
@@ -2435,16 +2436,16 @@ table {
     margin-bottom: 0 !important;
     padding: $line-height / 2;
 
-    &:first-child {
-      border-top: 1px solid $border;
-    }
-
     @include breakpoint(medium) {
 
       .score-actions {
         display: none;
         float: right;
       }
+    }
+
+    &:first-child {
+      border-top: 1px solid $border;
     }
 
     &:hover {
@@ -2486,8 +2487,8 @@ table {
     position: relative;
     text-decoration: none;
 
-    &.score-positive:before,
-    &.score-negative:before {
+    &.score-positive::before,
+    &.score-negative::before {
       font-family: 'icons';
       left: 0;
       position: absolute;
@@ -2496,7 +2497,7 @@ table {
     &.score-positive {
       color: $color-success;
 
-      &:before {
+      &::before {
         color: $color-success;
         content: '\6c';
       }
@@ -2505,7 +2506,7 @@ table {
     &.score-negative {
       color: $color-alert;
 
-      &:before {
+      &::before {
         color: $color-alert;
         content: '\76';
       }
@@ -2518,4 +2519,29 @@ table {
 
 .images .button {
   margin-top: $line-height / 2;
+}
+
+// 23. Maps
+// -----------------
+
+.location-map-remove-marker {
+  border-bottom: 1px dotted #cf2a0e;
+  color: $delete;
+  display: inline-block;
+  margin-top: $line-height / 2;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 1px solid #cf2a0e;
+    color: #cf2a0e;
+    text-decoration: none;
+  }
+}
+
+.leaflet-bar a {
+
+  &.leaflet-disabled {
+    color: #525252 !important;
+  }
 }

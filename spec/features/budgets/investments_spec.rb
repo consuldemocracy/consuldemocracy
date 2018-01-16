@@ -20,6 +20,7 @@ feature 'Budget Investments' do
 
   context "Concerns" do
     it_behaves_like 'notifiable in-app', Budget::Investment
+    it_behaves_like 'relationable', Budget::Investment
   end
 
   scenario 'Index' do

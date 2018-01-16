@@ -13,15 +13,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added rubocop-rspec gem, enabled cops one by one fixing offenses.
 - Added CSV download link to budget_investments https://github.com/consul/consul/pull/2147
 - Added Capistrano task to automate maintenance mode https://github.com/consul/consul/pull/1932
+- Added actions to edit and delete a budget's headings https://github.com/consul/consul/pull/1917
+- Allow Budget Investments to be Related to other content https://github.com/consul/consul/pull/2311
 
 ### Changed
 - Updated multiple minor & patch gem versions thanks to [Depfu](https://depfu.com)
 - Updated rubocop version and ignored all cops by default
-- Removed legislation section arrows and duplicate html tag  thanks to [xarlybovi](https://github.com/xarlybovi) https://github.com/consul/consul/issues/1704
+- Removed legislation section arrows and duplicate html tag thanks to [xarlybovi](https://github.com/xarlybovi) https://github.com/consul/consul/issues/1704
 - Display proposal and investment image when sharing in social networks https://github.com/consul/consul/pull/2202
 - Redirect admin to budget lists after edit https://github.com/consul/consul/pull/2284
 - Improve budget investment form https://github.com/consul/consul/pull/2280
 - Prevent edition of investments if budget is in the final phase https://github.com/consul/consul/pull/2223
+- Split 'routes.rb' file into multiple small files https://github.com/consul/consul/pull/1908
+- Design Improvements https://github.com/consul/consul/pull/2327
 
 ### Deprecated
 
@@ -29,6 +33,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Spending Proposals urls from sitemap, that model is getting entirely deprecated soon.
 
 ### Fixed
+- Fixed deprecation warning in specs https://github.com/consul/consul/pull/2293
 
 ### Security
 

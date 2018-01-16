@@ -106,7 +106,7 @@ en:
         unfeasibility_explanation: Unfeasibility explanation
         code_html: 'Investment project code: <strong>%{code}</strong>'
         location_html: 'Location: <strong>%{location}</strong>'
-        organization_name_html: 'Organization: <strong>%{name}</strong>'
+        organization_name_html: 'Proposed on behalf of: <strong>%{name}</strong>'
         share: Share
         title: Investment project
         supports: Supports
@@ -116,13 +116,14 @@ en:
         milestones_tab: Milestones
         no_milestones: Don't have defined milestones
         milestone_publication_date: "Published %{publication_date}"
+        author: Author
       wrong_price_format: Only integer numbers
       investment:
         add: Vote
         already_added: You have already added this investment project
-        already_supported: You have already supported this. Share it!
+        already_supported: You have already supported this investment project. Share it!
         support_title: Support this project
-        confirm_group: "You can only support investments in one district. If you continue you cannot change your decision. Are you sure?"
+        confirm_group: "You can only support investments in one heading. If you continue you cannot change your decision. Are you sure?"
         supports:
           one: 1 support
           other: "%{count} supports"
@@ -133,8 +134,10 @@ en:
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
         check_ballot_link: "check my ballot"
+        price: "This heading have a budget of"
     progress_bar:
-      available: "Available: "
+      assigned: "You have assigned: "
+      available: "Available budget: "
     show:
       group: Group
       phase: Actual phase
