@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109175851) do
+ActiveRecord::Schema.define(version: 20180112123641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,6 +169,22 @@ ActiveRecord::Schema.define(version: 20180109175851) do
   add_index "budget_investments", ["community_id"], name: "index_budget_investments_on_community_id", using: :btree
   add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
+
+  create_table "budget_phases", force: :cascade do |t|
+    t.integer  "budget_id"
+    t.integer  "next_phase_id"
+    t.string   "kind",                         null: false
+    t.text     "summary"
+    t.text     "description"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.boolean  "enabled",       default: true
+  end
+
+  add_index "budget_phases", ["ends_at"], name: "index_budget_phases_on_ends_at", using: :btree
+  add_index "budget_phases", ["kind"], name: "index_budget_phases_on_kind", using: :btree
+  add_index "budget_phases", ["next_phase_id"], name: "index_budget_phases_on_next_phase_id", using: :btree
+  add_index "budget_phases", ["starts_at"], name: "index_budget_phases_on_starts_at", using: :btree
 
   create_table "budget_reclassified_votes", force: :cascade do |t|
     t.integer  "user_id"
