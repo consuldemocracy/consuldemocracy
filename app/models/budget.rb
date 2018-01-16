@@ -30,8 +30,11 @@ class Budget < ActiveRecord::Base
   scope :balloting, -> { where(phase: "balloting") }
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
   scope :finished, -> { where(phase: "finished") }
+  scope :open, -> { where.not(phase: "finished") }
 
-  scope :current, -> { where.not(phase: "finished") }
+  def self.current
+    where.not(phase: "drafting").last
+  end
 
   def description
     send("description_#{phase}").try(:html_safe)
@@ -91,10 +94,6 @@ class Budget < ActiveRecord::Base
 
   def balloting_or_later?
     balloting_process? || finished?
-  end
-
-  def current?
-    !finished?
   end
 
   def heading_price(heading)
