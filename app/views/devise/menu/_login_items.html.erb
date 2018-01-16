@@ -17,9 +17,9 @@
       <% end %>
     <% end %>
   </li>
-  <% if Budget.current.any? %>
+  <% if current_budget %>
     <li>
-      <%= link_to(t("layouts.header.delegation"), new_budget_recommendation_path(budget_id: Budget.current.last.slug), accesskey: "d") %>
+      <%= link_to(t("layouts.header.delegation"), new_budget_recommendation_path(budget_id: current_budget.slug), accesskey: "d") %>
     </li>
   <% end %>
   <li>

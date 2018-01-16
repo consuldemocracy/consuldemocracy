@@ -760,8 +760,11 @@ feature 'Admin budget investments' do
     scenario "Mark as visible to valuator", :js do
       valuator = create(:valuator)
 
-      investment1 = create(:budget_investment, budget: budget)
-      investment2 = create(:budget_investment, budget: budget)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
 
       investment1.valuators << valuator
       investment2.valuators << valuator
@@ -791,8 +794,11 @@ feature 'Admin budget investments' do
 
       valuator = create(:valuator)
 
-      investment1 = create(:budget_investment, budget: budget, visible_to_valuators: true)
-      investment2 = create(:budget_investment, budget: budget, visible_to_valuators: true)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      investment1 = create(:budget_investment, heading: heading, visible_to_valuators: true)
+      investment2 = create(:budget_investment, heading: heading, visible_to_valuators: true)
 
       investment1.valuators << valuator
       investment2.valuators << valuator
