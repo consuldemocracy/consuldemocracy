@@ -117,7 +117,7 @@ en:
         external_url: "Link to additional documentation"
         heading_id: "Heading"
         title: "Title"
-        location: "Location"
+        location: "Location (optional)"
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
