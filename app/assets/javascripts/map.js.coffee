@@ -83,4 +83,4 @@ App.Map =
 
   toogleMap: ->
       $('.map').toggle()
-      $('.location-map-remove-marker-button').toggle()
+      $('.js-location-map-remove-marker').toggle()

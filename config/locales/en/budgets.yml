@@ -106,7 +106,7 @@ en:
         unfeasibility_explanation: Unfeasibility explanation
         code_html: 'Investment project code: <strong>%{code}</strong>'
         location_html: 'Location: <strong>%{location}</strong>'
-        organization_name_html: 'Organization: <strong>%{name}</strong>'
+        organization_name_html: 'Proposed on behalf of: <strong>%{name}</strong>'
         share: Share
         title: Investment project
         supports: Supports
