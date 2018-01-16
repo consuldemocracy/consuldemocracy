@@ -167,7 +167,7 @@ es:
         external_url: "Enlace a documentación adicional"
         location: "Ubicación"
         administrator_id: "Administrador"
-        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
+        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva de la propuesta de inversión"
         image_title: "Título de la imagen"
       budget/heading:
