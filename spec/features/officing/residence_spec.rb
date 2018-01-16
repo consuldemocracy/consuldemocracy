@@ -99,7 +99,7 @@ feature "Residence", :with_frozen_time do
 
     ba = create(:poll_booth_assignment, poll: poll, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: ba)
-    create(:poll_shift, officer: officer, booth: booth, date: Time.zone.today)
+    create(:poll_shift, officer: officer, booth: booth, date: Date.current)
 
     login_as(officer.user)
 
