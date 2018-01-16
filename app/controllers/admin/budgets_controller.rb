@@ -2,7 +2,7 @@ class Admin::BudgetsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
-  has_filters %w{current finished}, only: :index
+  has_filters %w{open finished}, only: :index
 
   load_and_authorize_resource
 

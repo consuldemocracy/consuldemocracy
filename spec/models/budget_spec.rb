@@ -98,6 +98,43 @@ describe Budget do
     end
   end
 
+  describe "#current" do
+
+    it "returns nil if there is only one budget and it is still in drafting phase" do
+      budget = create(:budget, phase: "drafting")
+
+      expect(Budget.current).to eq(nil)
+    end
+
+    it "returns the budget if there is only one and not in drafting phase" do
+      budget = create(:budget, phase: "accepting")
+
+      expect(Budget.current).to eq(budget)
+    end
+
+    it "returns the last budget created that is not in drafting phase" do
+      old_budget      = create(:budget, phase: "finished",  created_at: 2.years.ago)
+      previous_budget = create(:budget, phase: "accepting", created_at: 1.year.ago)
+      current_budget  = create(:budget, phase: "accepting", created_at: 1.month.ago)
+      next_budget     = create(:budget, phase: "drafting",  created_at: 1.week.ago)
+
+      expect(Budget.current).to eq(current_budget)
+    end
+
+  end
+
+  describe "#open" do
+
+    it "returns all budgets that are not in the finished phase" do
+      phases = Budget::PHASES - ["finished"]
+      phases.each do |phase|
+        budget = create(:budget, phase: phase)
+        expect(Budget.open).to include(budget)
+      end
+    end
+
+  end
+
   describe "heading_price" do
     let(:budget) { create(:budget) }
     let(:group) { create(:budget_group, budget: budget) }
