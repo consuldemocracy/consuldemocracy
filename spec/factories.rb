@@ -387,7 +387,7 @@ FactoryBot.define do
     association :investment, factory: :budget_investment
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
-    publication_date     Time.zone.today
+    publication_date     Date.current
   end
 
   factory :vote do
