@@ -586,7 +586,7 @@ feature 'Budget Investments' do
 
     within("#tab-milestones") do
       expect(page).to have_content(milestone.description)
-      expect(page).to have_content(Time.zone.today.to_date)
+      expect(page).to have_content(Date.current)
       expect(page.find("#image_#{milestone.id}")['alt']).to have_content image.title
       expect(page).to have_link document.title
     end
