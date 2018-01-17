@@ -64,6 +64,7 @@ module MapLocationsHelper
     }
     options[:marker_latitude] = map_location.latitude if map_location.latitude.present?
     options[:marker_longitude] = map_location.longitude if map_location.longitude.present?
+    options
   end
 
 end
