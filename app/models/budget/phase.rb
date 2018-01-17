@@ -21,6 +21,7 @@ class Budget
     after_save :adjust_date_ranges
 
     scope :enabled,           -> { where(enabled: true) }
+    scope :published,         -> { enabled.where.not(kind: 'drafting') }
     scope :drafting,          -> { find_by_kind('drafting') }
     scope :accepting,         -> { find_by_kind('accepting')}
     scope :reviewing,         -> { find_by_kind('reviewing')}
