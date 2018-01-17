@@ -68,7 +68,7 @@ es:
         new_link: Crear nuevo presupuesto
         filter: Filtro
         filters:
-          current: Abiertos
+          open: Abiertos
           finished: Terminados
         budget_investments: Ver propuestas de inversión
         table_name: Nombre
