@@ -442,7 +442,7 @@ feature 'Budget Investments' do
     context "When investment with price is selected" do
 
       scenario "Price & explanation is shown when Budget is on published prices phase" do
-        Budget::PUBLISHED_PRICES_PHASES.each do |phase|
+        Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
           budget.update(phase: phase)
           visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
@@ -456,7 +456,7 @@ feature 'Budget Investments' do
       end
 
       scenario "Price & explanation isn't shown when Budget is not on published prices phase" do
-        (Budget::PHASES - Budget::PUBLISHED_PRICES_PHASES).each do |phase|
+        (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).each do |phase|
           budget.update(phase: phase)
           visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
@@ -477,7 +477,7 @@ feature 'Budget Investments' do
       end
 
       scenario "Price & explanation isn't shown for any Budget's phase" do
-        Budget::PHASES.each do |phase|
+        Budget::Phase::PHASE_KINDS.each do |phase|
           budget.update(phase: phase)
           visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
@@ -586,7 +586,7 @@ feature 'Budget Investments' do
 
     within("#tab-milestones") do
       expect(page).to have_content(milestone.description)
-      expect(page).to have_content(Time.zone.today.to_date)
+      expect(page).to have_content(Date.current)
       expect(page.find("#image_#{milestone.id}")['alt']).to have_content image.title
       expect(page).to have_link document.title
     end

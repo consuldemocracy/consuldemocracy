@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe Budget do
 
+  let(:budget) { create(:budget) }
+
   it_behaves_like "sluggable"
 
   describe "name" do
@@ -15,22 +17,40 @@ describe Budget do
   end
 
   describe "description" do
-    it "changes depending on the phase" do
-      budget = create(:budget)
+    describe "Without Budget::Phase associated" do
+      before do
+        budget.phases.destroy_all
+      end
 
-      Budget::PHASES.each do |phase|
-        budget.phase = phase
-        expect(budget.description).to eq(budget.send("description_#{phase}"))
-        expect(budget.description).to be_html_safe
+      it "changes depending on the phase, falling back to budget description attributes" do
+        Budget::Phase::PHASE_KINDS.each do |phase_kind|
+          budget.phase = phase_kind
+          expect(budget.description).to eq(budget.send("description_#{phase_kind}"))
+          expect(budget.description).to be_html_safe
+        end
+      end
+    end
+
+    describe "With associated Budget::Phases" do
+      before do
+        budget.phases.each do |phase|
+          phase.description = phase.kind.humanize
+          phase.save
+        end
+      end
+
+      it "changes depending on the phase" do
+        Budget::Phase::PHASE_KINDS.each do |phase_kind|
+          budget.phase = phase_kind
+          expect(budget.description).to eq(phase_kind.humanize)
+        end
       end
     end
   end
 
   describe "phase" do
-    let(:budget) { create(:budget) }
-
     it "is validated" do
-      Budget::PHASES.each do |phase|
+      Budget::Phase::PHASE_KINDS.each do |phase|
         budget.phase = phase
         expect(budget).to be_valid
       end
@@ -103,13 +123,13 @@ describe Budget do
     it "returns nil if there is only one budget and it is still in drafting phase" do
       budget = create(:budget, phase: "drafting")
 
-      expect(Budget.current).to eq(nil)
+      expect(described_class.current).to eq(nil)
     end
 
     it "returns the budget if there is only one and not in drafting phase" do
       budget = create(:budget, phase: "accepting")
 
-      expect(Budget.current).to eq(budget)
+      expect(described_class.current).to eq(budget)
     end
 
     it "returns the last budget created that is not in drafting phase" do
@@ -118,7 +138,7 @@ describe Budget do
       current_budget  = create(:budget, phase: "accepting", created_at: 1.month.ago)
       next_budget     = create(:budget, phase: "drafting",  created_at: 1.week.ago)
 
-      expect(Budget.current).to eq(current_budget)
+      expect(described_class.current).to eq(current_budget)
     end
 
   end
@@ -126,17 +146,15 @@ describe Budget do
   describe "#open" do
 
     it "returns all budgets that are not in the finished phase" do
-      phases = Budget::PHASES - ["finished"]
-      phases.each do |phase|
+      (Budget::Phase::PHASE_KINDS - ["finished"]).each do |phase|
         budget = create(:budget, phase: phase)
-        expect(Budget.open).to include(budget)
+        expect(described_class.open).to include(budget)
       end
     end
 
   end
 
   describe "heading_price" do
-    let(:budget) { create(:budget) }
     let(:group) { create(:budget_group, budget: budget) }
 
     it "returns the heading price if the heading provided is part of the budget" do
@@ -150,8 +168,6 @@ describe Budget do
   end
 
   describe "investments_orders" do
-    let(:budget) { create(:budget) }
-
     it "is random when accepting and reviewing" do
       budget.phase = 'accepting'
       expect(budget.investments_orders).to eq(['random'])
@@ -173,5 +189,40 @@ describe Budget do
       expect(budget.investments_orders).to eq(['random', 'confidence_score'])
     end
   end
-end
 
+  describe "#generate_phases" do
+    let(:drafting_phase)          { budget.phases.drafting }
+    let(:accepting_phase)         { budget.phases.accepting }
+    let(:reviewing_phase)         { budget.phases.reviewing }
+    let(:selecting_phase)         { budget.phases.selecting }
+    let(:valuating_phase)         { budget.phases.valuating }
+    let(:publishing_prices_phase) { budget.phases.publishing_prices }
+    let(:balloting_phase)         { budget.phases.balloting }
+    let(:reviewing_ballots_phase) { budget.phases.reviewing_ballots }
+    let(:finished_phase)          { budget.phases.finished }
+
+    it "generates all phases linked in correct order" do
+      expect(budget.phases.count).to eq(Budget::Phase::PHASE_KINDS.count)
+
+      expect(drafting_phase.next_phase).to eq(accepting_phase)
+      expect(accepting_phase.next_phase).to eq(reviewing_phase)
+      expect(reviewing_phase.next_phase).to eq(selecting_phase)
+      expect(selecting_phase.next_phase).to eq(valuating_phase)
+      expect(valuating_phase.next_phase).to eq(publishing_prices_phase)
+      expect(publishing_prices_phase.next_phase).to eq(balloting_phase)
+      expect(balloting_phase.next_phase).to eq(reviewing_ballots_phase)
+      expect(reviewing_ballots_phase.next_phase).to eq(finished_phase)
+      expect(finished_phase.next_phase).to eq(nil)
+
+      expect(drafting_phase.prev_phase).to eq(nil)
+      expect(accepting_phase.prev_phase).to eq(drafting_phase)
+      expect(reviewing_phase.prev_phase).to eq(accepting_phase)
+      expect(selecting_phase.prev_phase).to eq(reviewing_phase)
+      expect(valuating_phase.prev_phase).to eq(selecting_phase)
+      expect(publishing_prices_phase.prev_phase).to eq(valuating_phase)
+      expect(balloting_phase.prev_phase).to eq(publishing_prices_phase)
+      expect(reviewing_ballots_phase.prev_phase).to eq(balloting_phase)
+      expect(finished_phase.prev_phase).to eq(reviewing_ballots_phase)
+    end
+  end
+end
