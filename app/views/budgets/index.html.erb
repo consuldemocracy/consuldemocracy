@@ -77,6 +77,10 @@
 
     <div id="map">
       <h3><%= t("budgets.index.map") %></h3>
+      <!--
+        Pending to include here the map from
+        https://github.com/consul/consul/issues/2300
+      -->
     </div>
 
     <div>
@@ -90,14 +94,10 @@
 
     <div id="all_phases">
       <h2><%= t("budgets.index.all_phases") %></h2>
-      <% @budget.phases.published.pluck(:kind) do |phase_kind| %>
-        <div class="row">
-          <div class="small-12 column <%= @budget.phase == phase_kind ? 'active' : '' %>">
-            <h4><%= t("budgets.phase.#{phase_kind}") %></h4>
-            <%= @budget.description_for_phase(phase_kind) %>
-          </div>
-        </div>
-      <% end %>
+      <!--
+        Pending to include here the list of phases from
+        https://github.com/consul/consul/issues/2289
+      -->
     </div>
 
 
