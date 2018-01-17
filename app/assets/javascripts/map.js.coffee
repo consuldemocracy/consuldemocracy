@@ -24,7 +24,7 @@ App.Map =
     longitudeInputSelector   = $(element).data('longitude-input-selector')
     zoomInputSelector        = $(element).data('zoom-input-selector')
     removeMarkerSelector     = $(element).data('marker-remove-selector')
-    addMarkerInvestemts      = $(element).data('marker-investments-coordenates')
+    addMarkerInvestments     = $(element).data('marker-investments-coordinates')
     editable                 = $(element).data('marker-editable')
     marker                   = null;
     markerIcon               = L.divIcon(
@@ -78,7 +78,7 @@ App.Map =
     map              = L.map(element.id).setView(mapCenterLatLng, zoom)
     L.tileLayer(mapTilesProvider, attribution: mapAttribution).addTo map
 
-    if markerLatitude && markerLongitude && !addMarkerInvestemts
+    if markerLatitude && markerLongitude && !addMarkerInvestments
       marker  = createMarker(markerLatitude, markerLongitude)
 
     if editable
@@ -86,8 +86,8 @@ App.Map =
       map.on    'zoomend', updateFormfields
       map.on    'click',   moveOrPlaceMarker
 
-    if addMarkerInvestemts
-      for i in addMarkerInvestemts
+    if addMarkerInvestments
+      for i in addMarkerInvestments
         add_marker=createMarker(i.lat , i.long)
         add_marker.bindPopup(contentPopup(i.investment_title, i.investment_id, i.budget_id))
 
