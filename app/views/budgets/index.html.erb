@@ -4,7 +4,7 @@
 <% end %>
 
 <%= render "shared/section_header", i18n_namespace: "budgets.index.section_header", image: "budgets" %>
-
+<%= render_map(nil, "budgets",false,nil, @budgets_coordenates) %>
 <div class="row margin-top">
   <div class="small-12 medium-9 column">
     <table>

@@ -24,11 +24,12 @@ module MapLocationsHelper
     "remove-marker-link-#{dom_id(map_location)}"
   end
 
-  def render_map(map_location, parent_class, editable, remove_marker_label)
+  def render_map(map_location, parent_class, editable, remove_marker_label,investments_coordenates=nil)
+    map_location = MapLocation.new if map_location.nil?
     map = content_tag_for :div,
                           map_location,
                           class: "map",
-                          data: prepare_map_settings(map_location, editable, parent_class)
+                          data: prepare_map_settings(map_location, editable, parent_class, investments_coordenates)
     map += map_location_remove_marker(map_location, remove_marker_label) if editable
     map
   end
@@ -44,23 +45,26 @@ module MapLocationsHelper
     end
   end
 
+
   private
 
-  def prepare_map_settings(map_location, editable, parent_class)
+  def prepare_map_settings(map_location, editable, parent_class,marker_investments_coordenates=nil)
     options = {
       map: "",
-      map_center_latitude: map_location_latitude(map_location),
-      map_center_longitude: map_location_longitude(map_location),
-      map_zoom: map_location_zoom(map_location),
       map_tiles_provider: Rails.application.secrets.map_tiles_provider,
       map_tiles_provider_attribution: Rails.application.secrets.map_tiles_provider_attribution,
       marker_editable: editable,
-      marker_latitude: map_location.latitude,
-      marker_longitude: map_location.longitude,
+      map_center_latitude: map_location_latitude(map_location),
+      map_center_longitude: map_location_longitude(map_location),
+      map_zoom: map_location_zoom(map_location),
+      marker_latitude: map_location_latitude(map_location.latitude),
+      marker_longitude: map_location_longitude(map_location.longitude),
+      marker_investments_coordenates: marker_investments_coordenates,
       marker_remove_selector: "##{map_location_remove_marker_link_id(map_location)}",
       latitude_input_selector: "##{map_location_input_id(parent_class, 'latitude')}",
       longitude_input_selector: "##{map_location_input_id(parent_class, 'longitude')}",
-      zoom_input_selector: "##{map_location_input_id(parent_class, 'zoom')}"
+      zoom_input_selector: "##{map_location_input_id(parent_class, 'zoom')}",
+      marker_investments_coordenates: marker_investments_coordenates
     }
   end
 
