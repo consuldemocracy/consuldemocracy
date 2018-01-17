@@ -401,8 +401,8 @@ section "Creating Valuation Assignments" do
 end
 
 section "Creating Budgets" do
-  Budget::PHASES.each_with_index do |phase, i|
-    descriptions = Hash[Budget::PHASES.map do |p|
+  Budget::Phase::PHASE_KINDS.each_with_index do |phase, i|
+    descriptions = Hash[Budget::Phase::PHASE_KINDS.map do |p|
       ["description_#{p}",
        "<p>#{Faker::Lorem.paragraphs(2).join('</p><p>')}</p>"]
     end]

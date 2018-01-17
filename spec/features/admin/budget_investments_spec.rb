@@ -508,6 +508,50 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content "Refugees, Solidarity"
     end
 
+    scenario "Shows alert when 'Valuation finished' is checked", :js do
+      budget_investment = create(:budget_investment)
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit dossier'
+
+      expect(page).to have_content 'Valuation finished'
+
+      find_field('budget_investment[valuation_finished]').click
+
+      page.accept_confirm("Are you sure you want to mark this report as completed? If you do it, it can no longer be modified.")
+
+      expect(page).to have_field('budget_investment[valuation_finished]', checked: true)
+    end
+
+    scenario "Shows alert with unfeasible status when 'Valuation finished' is checked", :js do
+      budget_investment = create(:budget_investment)
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit dossier'
+
+      expect(page).to have_content 'Valuation finished'
+
+      find_field('budget_investment_feasibility_unfeasible').click
+      find_field('budget_investment[valuation_finished]').click
+
+      page.accept_confirm("Are you sure you want to mark this report as completed? If you do it, it can no longer be modified.\nAn email will be sent immediately to the author of the project with the report of unfeasibility.")
+
+      expect(page).to have_field('budget_investment[valuation_finished]', checked: true)
+    end
+
+    scenario "Undoes check in 'Valuation finished' if user clicks 'cancel' on alert", :js do
+      budget_investment = create(:budget_investment)
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit dossier'
+
+      dismiss_confirm do
+        find_field('budget_investment[valuation_finished]').click
+      end
+
+      expect(page).to have_field('budget_investment[valuation_finished]', checked: false)
+    end
+
     scenario "Errors on update" do
       budget_investment = create(:budget_investment)
 
