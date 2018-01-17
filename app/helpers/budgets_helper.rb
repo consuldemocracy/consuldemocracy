@@ -7,7 +7,7 @@ module BudgetsHelper
   end
 
   def budget_phases_select_options
-    Budget::PHASES.map { |ph| [ t("budgets.phase.#{ph}"), ph ] }
+    Budget::Phase::PHASE_KINDS.map { |ph| [ t("budgets.phase.#{ph}"), ph ] }
   end
 
   def budget_currency_symbol_select_options

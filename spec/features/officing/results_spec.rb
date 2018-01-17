@@ -7,7 +7,7 @@ feature 'Officing Results' do
 
   background do
     create(:poll_booth_assignment, poll: poll, booth: booth)
-    create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth, date: Time.zone.today)
+    create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth, date: Date.current)
     @question_1 = create(:poll_question, poll: poll)
     create(:poll_question_answer, title: 'Yes', question: @question_1)
     create(:poll_question_answer, title: 'No', question: @question_1)

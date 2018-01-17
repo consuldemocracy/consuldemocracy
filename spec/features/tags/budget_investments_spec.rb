@@ -233,7 +233,7 @@ feature 'Tags' do
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: newer_tag) }
 
     xscenario 'Display user tags' do
-      Budget::PHASES.each do |phase|
+      Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
         login_as(admin) if budget.drafting?
@@ -247,7 +247,7 @@ feature 'Tags' do
     end
 
     xscenario "Filter by user tags" do
-      Budget::PHASES.each do |phase|
+      Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
         if budget.balloting?
@@ -272,7 +272,7 @@ feature 'Tags' do
     end
 
     scenario 'Do not display user tags' do
-      Budget::PHASES.each do |phase|
+      Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
         login_as(admin) if budget.drafting?
@@ -292,7 +292,7 @@ feature 'Tags' do
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: tag_economia.name) }
 
     scenario 'Display category tags' do
-      Budget::PHASES.each do |phase|
+      Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
         login_as(admin) if budget.drafting?
@@ -306,7 +306,7 @@ feature 'Tags' do
     end
 
     scenario "Filter by category tags" do
-      Budget::PHASES.each do |phase|
+      Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
         if budget.balloting?
