@@ -68,6 +68,8 @@ es:
         undefined_feasible: Sin decidir
         feasible_explanation_html: Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>
         valuation_finished: Informe finalizado
+        valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
+        not_feasible_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de inviabilidad."
         duration_html: Plazo de ejecución <small>(opcional, dato no público)</small>
         internal_comments_html: Comentarios y observaciones <small>(para responsables internos, dato no público)</small>
         save: Guardar Cambios

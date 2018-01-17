@@ -410,7 +410,7 @@ feature 'Emails' do
 
       choose 'budget_investment_feasibility_unfeasible'
       fill_in 'budget_investment_unfeasibility_explanation', with: 'This is not legal as stated in Article 34.9'
-      check 'budget_investment_valuation_finished'
+      find_field('budget_investment[valuation_finished]').click
       click_button 'Save changes'
 
       expect(page).to have_content "Dossier updated"
