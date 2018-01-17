@@ -24,6 +24,7 @@ App.Map =
     longitudeInputSelector   = $(element).data('longitude-input-selector')
     zoomInputSelector        = $(element).data('zoom-input-selector')
     removeMarkerSelector     = $(element).data('marker-remove-selector')
+    addMarkerInvestemts      = $(element).data('marker-investments-coordenates')
     editable                 = $(element).data('marker-editable')
     marker                   = null;
     markerIcon               = L.divIcon(
@@ -69,17 +70,26 @@ App.Map =
       $(zoomInputSelector).val ''
       return
 
+    contentPopup = (title,investment,budget) ->
+      content = "<a href='/budgets/#{budget}/investments/#{investment}'>#{title}</a>"
+      return  content
+
     mapCenterLatLng  = new (L.LatLng)(mapCenterLatitude, mapCenterLongitude)
     map              = L.map(element.id).setView(mapCenterLatLng, zoom)
     L.tileLayer(mapTilesProvider, attribution: mapAttribution).addTo map
 
-    if markerLatitude && markerLongitude
+    if markerLatitude && markerLongitude && !addMarkerInvestemts
       marker  = createMarker(markerLatitude, markerLongitude)
 
     if editable
       $(removeMarkerSelector).on 'click', removeMarker
       map.on    'zoomend', updateFormfields
       map.on    'click',   moveOrPlaceMarker
+
+    if addMarkerInvestemts
+      for i in addMarkerInvestemts
+        add_marker=createMarker(i.lat , i.long)
+        add_marker.bindPopup(contentPopup(i.investment_title, i.investment_id, i.budget_id))
 
   toogleMap: ->
       $('.map').toggle()
