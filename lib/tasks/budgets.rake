@@ -60,9 +60,9 @@ namespace :budgets do
             budget: budget,
             kind: phase,
             description: budget.send("description_#{phase}"),
-            prev_phase: phases&.last,
-            starts_at: phases&.last&.ends_at || Date.current,
-            ends_at: (phases&.last&.ends_at || Date.current) + 1.month
+            prev_phase: budget.phases&.last,
+            starts_at: budget.phases&.last&.ends_at || Date.current,
+            ends_at: (budget.phases&.last&.ends_at || Date.current) + 1.month
           )
         end
       end
