@@ -15,6 +15,7 @@ class BudgetsController < ApplicationController
 
   def index
     @budgets = @budgets.order(:created_at)
+    @budget = current_budget
   end
 
 end
