@@ -117,15 +117,15 @@
       </div>
 
       <div class="tabs-panel is-active" id="other_budgets">
-        <% @budgets.each do |b| %>
-          <% if budget_published?(b) %>
+        <% @budgets.each do |budget| %>
+          <% if budget_published?(budget) %>
             <div class="row">
               <div class="small-9 column">
-                <%= b.name %>
-                <%= b.description %>
+                <%= budget.name %>
+                <%= budget.description %>
               </div>
               <div class="small-3 column">
-                <%= link_to t("budgets.index.see_results"), budget_results_path(b.id) %>
+                <%= link_to t("budgets.index.see_results"), budget_results_path(budget.id) %>
               </div>
             </div>
           <% end %>
