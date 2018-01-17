@@ -2,9 +2,9 @@
 
   <%= f.text_field :name, maxlength: Budget.title_max_length %>
 
-  <% Budget::PHASES.each do |phase| %>
+  <% Budget::Phase::PHASE_KINDS.each do |phase| %>
     <div class="margin-top">
-      <%= f.cktext_area "description_#{phase}", maxlength: Budget.description_max_length, ckeditor: { language: I18n.locale } %>
+      <%= f.cktext_area "description_#{phase}", maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH, ckeditor: { language: I18n.locale } %>
     </div>
   <% end %>
 

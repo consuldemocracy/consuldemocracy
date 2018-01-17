@@ -5,6 +5,7 @@ class Management::BaseController < ActionController::Base
   before_action :set_locale
 
   helper_method :managed_user
+  helper_method :current_user
 
   private
 
@@ -40,4 +41,7 @@ class Management::BaseController < ActionController::Base
       I18n.locale = session[:locale]
     end
 
+    def current_budget
+      Budget.current
+    end
 end

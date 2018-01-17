@@ -3,14 +3,10 @@ class Budget < ActiveRecord::Base
   include Measurable
   include Sluggable
 
-  PHASES = %w(drafting accepting reviewing selecting valuating publishing_prices
-              balloting reviewing_ballots finished).freeze
-  PUBLISHED_PRICES_PHASES = %w(publishing_prices balloting reviewing_ballots finished).freeze
-
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
   validates :name, presence: true, uniqueness: true
-  validates :phase, inclusion: { in: PHASES }
+  validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
 
@@ -18,8 +14,11 @@ class Budget < ActiveRecord::Base
   has_many :ballots, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
+  has_many :phases, class_name: Budget::Phase
 
   before_validation :sanitize_descriptions
+
+  after_create :generate_phases
 
   scope :drafting, -> { where(phase: "drafting") }
   scope :accepting, -> { where(phase: "accepting") }
@@ -30,18 +29,27 @@ class Budget < ActiveRecord::Base
   scope :balloting, -> { where(phase: "balloting") }
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
   scope :finished, -> { where(phase: "finished") }
+
   scope :open, -> { where.not(phase: "finished") }
 
   def self.current
-    where.not(phase: "drafting").last
+    where.not(phase: "drafting").order(:created_at).last
+  end
+
+  def current_phase
+    phases.send(phase)
   end
 
   def description
-    send("description_#{phase}").try(:html_safe)
+    description_for_phase(phase)
   end
 
-  def self.description_max_length
-    2000
+  def description_for_phase(phase)
+    if phases.exists? && phases.send(phase).description.present?
+      phases.send(phase).description
+    else
+      send("description_#{phase}").try(:html_safe)
+    end
   end
 
   def self.title_max_length
@@ -85,7 +93,7 @@ class Budget < ActiveRecord::Base
   end
 
   def published_prices?
-    PUBLISHED_PRICES_PHASES.include?(phase)
+    Budget::Phase::PUBLISHED_PRICES_PHASES.include?(phase)
   end
 
   def balloting_process?
@@ -144,12 +152,25 @@ class Budget < ActiveRecord::Base
 
   private
 
-    def sanitize_descriptions
-      s = WYSIWYGSanitizer.new
-      PHASES.each do |phase|
-        sanitized = s.sanitize(send("description_#{phase}"))
-        send("description_#{phase}=", sanitized)
-      end
+  def sanitize_descriptions
+    s = WYSIWYGSanitizer.new
+    Budget::Phase::PHASE_KINDS.each do |phase|
+      sanitized = s.sanitize(send("description_#{phase}"))
+      send("description_#{phase}=", sanitized)
     end
+  end
+
+  def generate_phases
+    Budget::Phase::PHASE_KINDS.each do |phase|
+      Budget::Phase.create(
+        budget: self,
+        kind: phase,
+        prev_phase: phases&.last,
+        starts_at: phases&.last&.ends_at || Date.current,
+        ends_at: (phases&.last&.ends_at || Date.current) + 1.month
+      )
+    end
+  end
 end
+
 

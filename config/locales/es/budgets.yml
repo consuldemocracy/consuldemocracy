@@ -44,6 +44,14 @@ es:
         icon_alt: Icono de Presupuestos participativos
         title: Presupuestos participativos
         help: Ayuda sobre presupuestos participativos
+        all_phases: Ver todas las fases
+      all_phases: Fases de los presupuestos participativos
+      map: Propuestas de los presupuestos participativos localizables geográficamente
+      investment_proyects: Ver lista completa de proyectos de inversión
+      unfeasible_investment_proyects: Ver lista de proyectos de inversión inviables
+      not_selected_investment_proyects: Ver lista de proyectos de inversión no seleccionados para la votación final
+      finished_budgets: Presupuestos participativos terminados
+      see_results: Ver resultados
       section_footer:
         title: Ayuda sobre presupuestos participativos
         description: Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal.
@@ -158,3 +166,8 @@ es:
       accepted: 'Propuesta de inversión aceptada: '
       discarded: 'Propuesta de inversión descartada: '
       incompatibles: Incompatibles
+    phases:
+      errors:
+        dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"
+        prev_phase_dates_invalid: "La fecha de inicio debe ser posterior a la fecha de inicio de la anterior fase habilitada (%{phase_name})"
+        next_phase_dates_invalid: "La fecha de fin debe ser anterior a la fecha de fin de la siguiente fase habilitada (%{phase_name}) "

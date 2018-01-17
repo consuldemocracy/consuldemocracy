@@ -15,7 +15,8 @@ class BudgetsController < ApplicationController
 
   def index
     @budgets = @budgets.order(:created_at)
-    budgets_map_locations = Budget.where.not(phase: 'drafting').map{ |budget| budget.investments.map{|investment| investment.map_location}}.flatten.compact
+    @budget = current_budget
+    budgets_map_locations = current_budget.investments.map{ |investment| investment.map_location }.compact
     @budgets_coordinates = budgets_map_locations.map{ |ml| {lat: ml.latitude, long: ml.longitude, investment_title: ml.investment.title , investment_id: ml.investment.id, budget_id: ml.investment.budget.id}}
   end
 

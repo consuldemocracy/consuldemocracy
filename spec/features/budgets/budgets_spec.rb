@@ -7,8 +7,42 @@ feature 'Budgets' do
 
   scenario 'Index' do
     budgets = create_list(:budget, 3)
+    last_budget = budgets.last
+    group1 = create(:budget_group, budget: last_budget)
+    group2 = create(:budget_group, budget: last_budget)
+
+    heading1 = create(:budget_heading, group: group1)
+    heading2 = create(:budget_heading, group: group2)
+
     visit budgets_path
-    budgets.each {|budget| expect(page).to have_link(budget.name)}
+
+    within("#budget_heading") do
+      expect(page).to have_content(last_budget.name)
+      expect(page).to have_content(last_budget.description)
+      expect(page).to have_content("Actual phase (1/8)")
+      expect(page).to have_content("Accepting projects")
+      expect(page).to have_link 'Help about participatory budgets'
+      expect(page).to have_link 'See all phases'
+    end
+
+    last_budget.update_attributes(phase: 'publishing_prices')
+    visit budgets_path
+
+    within("#budget_heading") do
+      expect(page).to have_content("Actual phase (5/8)")
+    end
+
+    within('#budget_info') do
+      expect(page).to have_content group1.name
+      expect(page).to have_content group2.name
+      expect(page).to have_content heading1.name
+      expect(page).to have_content last_budget.formatted_heading_price(heading1)
+      expect(page).to have_content heading2.name
+      expect(page).to have_content last_budget.formatted_heading_price(heading2)
+
+      expect(page).to have_content budgets.first.name
+      expect(page).to have_content budgets[2].name
+    end
   end
 
   context 'Show' do
@@ -70,6 +104,7 @@ feature 'Budgets' do
     background do
       logout
       budget.update(phase: 'drafting')
+      create(:budget)
     end
 
     context "Listed" do
