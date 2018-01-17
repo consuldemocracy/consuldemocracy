@@ -68,7 +68,7 @@ en:
         new_link: Create new budget
         filter: Filter
         filters:
-          current: Open
+          open: Open
           finished: Finished
         budget_investments: See budget investments
         table_name: Name
