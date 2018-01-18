@@ -44,6 +44,14 @@ en:
         icon_alt: Participatory budgets icon
         title: Participatory budgets
         help: Help about participatory budgets
+        all_phases: See all phases
+      all_phases: Budget investment's phases
+      map: Budget investments' proposals located geographically
+      investment_proyects: List of all investment projects
+      unfeasible_investment_proyects: List of all unfeasible investment projects
+      not_selected_investment_proyects: List of all investment projects not selected for balloting
+      finished_budgets: Finished participatory budgets
+      see_results: See results
       section_footer:
         title: Help about participatory budgets
         description: With the participatory budgets the citizens decide to which projects presented by the neighbors is destined a part of the municipal budget.

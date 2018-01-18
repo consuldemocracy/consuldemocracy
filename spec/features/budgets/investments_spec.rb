@@ -806,8 +806,12 @@ feature 'Budget Investments' do
       sp2 = create(:budget_investment, :selected, heading: heading, price: 20000)
 
       login_as(user)
-      visit budget_path(budget)
-      click_link "Health"
+      # visit budget_path(budget)
+      # click_link "Health"
+      visit root_path
+
+      first(:link, "Participatory budgeting").click
+      click_link "More hospitals"
 
       within("#budget_investment_#{sp1.id}") do
         expect(page).to have_content sp1.title

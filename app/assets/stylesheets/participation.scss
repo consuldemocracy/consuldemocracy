@@ -5,7 +5,7 @@
 // 03. Show participation
 // 04. List participation
 // 05. Featured
-// 06. Budget
+// 06. Budgets
 // 07. Proposals successful
 // 08. Polls
 // 09. Polls results and stats
@@ -1096,31 +1096,39 @@
   }
 }
 
-// 06. Budget
-// ----------
+// 06. Budgets
+// -----------
 
-.expanded.budget {
-  background: $budget;
+.expanded {
 
-  h1,
-  h2,
-  p,
-  .back,
-  .icon-angle-left {
-    color: #fff;
-  }
+  &.budget {
+    background: $budget;
 
-  .button {
-    background: #fff;
-    color: $budget;
-  }
+    h1,
+    h2,
+    p,
+    a,
+    .back,
+    .icon-angle-left {
+      color: #fff;
+    }
 
-  .info {
-    background: #6a2a72;
+    a {
+      text-decoration: underline;
+    }
 
-    p {
-      margin-bottom: 0;
-      text-transform: uppercase;
+    .button {
+      background: #fff;
+      color: $budget;
+    }
+
+    .info {
+      background: #6a2a72;
+
+      p {
+        margin-bottom: 0;
+        text-transform: uppercase;
+      }
     }
   }
 }
@@ -1182,7 +1190,7 @@
 
   a {
     text-decoration: underline;
- }
+  }
 
   .button {
     background: #fff;
@@ -1208,6 +1216,36 @@
 
     &.social-share-button-telegram:hover {
       color: #ce3e26;
+    }
+  }
+}
+
+.groups-and-headings {
+
+  .heading {
+    border: 1px solid $border;
+    border-radius: rem-calc(3);
+    display: inline-block;
+    margin-bottom: $line-height / 2;
+
+    &:hover {
+      background: $highlight;
+      text-decoration: none;
+    }
+
+    a {
+      display: block;
+      padding: $line-height / 2;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    span {
+      color: $text;
+      display: block;
+      font-size: $small-font-size;
     }
   }
 }

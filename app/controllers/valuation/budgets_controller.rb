@@ -5,7 +5,7 @@ class Valuation::BudgetsController < Valuation::BaseController
   load_and_authorize_resource
 
   def index
-    @budget = Budget.current
+    @budget = current_budget
     if @budget.present?
       @investments_with_valuation_open = {}
       @investments_with_valuation_open = @budget.investments
