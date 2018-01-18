@@ -1472,6 +1472,63 @@
   }
 }
 
+.budget-timeline {
+  border-left: 3px solid $budget;
+  margin-left: $line-height / 2;
+  padding: $line-height $line-height / 2;
+
+  h3,
+  span,
+  p {
+    padding: 0 $line-height / 4;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  span {
+    color: $text-medium;
+    display: block;
+    font-size: $small-font-size;
+    margin-bottom: $line-height / 2;
+  }
+
+  .phase {
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: $line-height * 1.5;
+    }
+
+    &::before {
+      background-color: #fff;
+      border: 4px solid $budget;
+      border-radius: 100%;
+      content: '';
+      height: 16px;
+      left: -22px;
+      position: absolute;
+      top: 6px;
+      width: 16px;
+      z-index: 99;
+    }
+
+    &.active {
+
+      h3 {
+        background: $budget;
+        color: white;
+        display: inline-block;
+      }
+
+      &::before {
+        background-color: $budget;
+      }
+    }
+  }
+}
+
 // 07. Proposals successful
 // -------------------------
 
