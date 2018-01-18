@@ -85,6 +85,13 @@ es:
       edit:
         title: Editar campaña de presupuestos participativos
         delete: Eliminar presupuesto
+        phase: Fase
+        dates: Fechas
+        enabled: Habilitada
+        actions: Acciones
+        edit_phase: Editar fase
+        active: Activa
+        blank_dates: Sin fechas
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
@@ -113,6 +120,17 @@ es:
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.
+    budget_phases:
+      edit:
+        start_date: Fecha de Inicio
+        end_date: Fecha de fin
+        summary: Resumen
+        summary_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
+        description: Descripción
+        description_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
+        enabled: Fase habilitada
+        enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
+        save_changes: Guardar cambios
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
