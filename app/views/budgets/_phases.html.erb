@@ -1,0 +1,17 @@
+<ul class="no-bullet budget-timeline">
+  <% @budget.phases.published.each do |phase| %>
+    <li class="phase <%= 'active' if phase == @budget.current_phase %>">
+      <h3><%= t("budgets.phase.#{phase.kind}") %></h3>
+      <span>
+        <% if phase.starts_at.to_date.present? %>
+          <%= format_date(phase.starts_at) %>
+        <% end %>
+        -
+        <% if phase.ends_at.to_date.present? %>
+          <%= format_date(phase.ends_at) %>
+        <% end %>
+      </span>
+      <p><%= phase.summary %></p>
+    </li>
+  <% end %>
+</ul>
