@@ -4,7 +4,7 @@
 <meta name="twitter:site" content="@abriendomadrid" />
 <meta name="twitter:title" content="Presupuestos Participativos en Madrid" />
 <meta name="twitter:description" content="Proyectos de gasto recomendados por <%= @user.name %>" />
-<meta name="twitter:image" content="<%= image_url '/social_media_budgets_twitter.png' %>" />
+<meta name="twitter:image" content="<%= image_url 'social_media_budgets_twitter.png' %>" />
 <!-- Facebook OG -->
 <meta id="ogtitle" property="og:title" content="Presupuestos Participativos en Madrid"/>
 <% if setting['url'] %>
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article"/>
 <% og_url = current_budget.present? ? budget_recommendations_url(budget_id: current_budget.slug, user_id: @user.id) : budgets_url %>
 <meta id="ogurl" property="og:url" content="<%= og_url %>"/>
-<meta id="ogimage" property="og:image" content="<%= image_url '/social_media_budgets.png' %>"/>
+<meta id="ogimage" property="og:image" content="<%= image_url 'social_media_budgets.png' %>"/>
 <meta property="og:site_name" content="Decide Madrid"/>
 <meta id="ogdescription" property="og:description" content="Proyectos de gasto recomendados por <%= @user.name %>"/>
 <meta property="fb:app_id" content="1662598980652932"/>
