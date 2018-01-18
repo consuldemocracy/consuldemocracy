@@ -78,6 +78,7 @@
 //= require sortable
 //= require legislation_proposals
 //= require table_sortable
+//= require investment_report_alert
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -120,6 +121,7 @@ var initialize_modules = function() {
   App.Sortable.initialize();
   App.LegislationProposals.initialize();
   App.TableSortable.initialize();
+  App.InvestmentReportAlert.initialize();
 };
 
 $(function(){
