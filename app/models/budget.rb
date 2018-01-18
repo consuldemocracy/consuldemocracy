@@ -41,7 +41,7 @@ class Budget < ActiveRecord::Base
   end
 
   def published_phases
-    phases.published
+    phases.published.order(:id)
   end
 
   def description
