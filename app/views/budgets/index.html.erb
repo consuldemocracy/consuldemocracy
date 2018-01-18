@@ -79,10 +79,7 @@
 
       <div id="map">
         <h3><%= t("budgets.index.map") %></h3>
-        <!--
-          Pending to include here the map from
-          https://github.com/consul/consul/issues/2300
-        -->
+        <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
       </div>
 
       <p>
