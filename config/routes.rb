@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   draw :direct_upload
   draw :document
   draw :graphql
+  draw :guide
   draw :legislation
   draw :management
   draw :moderation

@@ -37,6 +37,7 @@ section "Creating Settings" do
   Setting.create(key: 'url', value: 'http://localhost:3000')
   Setting.create(key: 'org_name', value: 'CONSUL')
   Setting.create(key: 'place_name', value: 'City')
+
   Setting.create(key: 'feature.debates', value: "true")
   Setting.create(key: 'feature.proposals', value: "true")
   Setting.create(key: 'feature.polls', value: "true")
@@ -53,6 +54,8 @@ section "Creating Settings" do
   Setting.create(key: 'feature.map', value: "true")
   Setting.create(key: 'feature.allow_images', value: "true")
   Setting.create(key: 'feature.public_stats', value: "true")
+  Setting.create(key: 'feature.guides', value: nil)
+
   Setting.create(key: 'per_page_code_head', value: "")
   Setting.create(key: 'per_page_code_body', value: "")
   Setting.create(key: 'comments_body_max_length', value: '1000')

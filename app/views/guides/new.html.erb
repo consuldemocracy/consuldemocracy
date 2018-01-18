@@ -1,0 +1,11 @@
+<% if current_budget %>
+  <div>
+    <%= link_to t("guides.new_budget_investment"), 
+                new_budget_investment_path(current_budget) %>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to t("guides.new_proposal"), 
+              new_proposal_path %>
+</div>
