@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 - Fixed deprecation warning in specs https://github.com/consul/consul/pull/2293
+- Fix social images meta tags https://github.com/consul/consul/pull/1124
 
 ### Security
 
