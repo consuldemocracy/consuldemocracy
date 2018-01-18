@@ -811,7 +811,7 @@ feature 'Budget Investments' do
       visit root_path
 
       first(:link, "Participatory budgeting").click
-      click_link "More hospitals"
+      click_link "More hospitals €1,000,000"
 
       within("#budget_investment_#{sp1.id}") do
         expect(page).to have_content sp1.title

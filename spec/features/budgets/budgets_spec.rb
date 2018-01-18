@@ -21,14 +21,14 @@ feature 'Budgets' do
       expect(page).to have_content(last_budget.description)
       expect(page).to have_content("Actual phase (1/8)")
       expect(page).to have_content("Accepting projects")
-      expect(page).to have_link 'Help about participatory budgets'
+      expect(page).to have_link 'Help with participatory budgets'
       expect(page).to have_link 'See all phases'
     end
 
     last_budget.update_attributes(phase: 'publishing_prices')
     visit budgets_path
 
-    expect(page).to have_content "Los presupuestos participativos en 2 minutos"
+    expect(page).to have_content "Help with participatory budgets"
 
     within("#budget_heading") do
       expect(page).to have_content("Actual phase (5/8)")
