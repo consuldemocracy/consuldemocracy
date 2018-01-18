@@ -47,6 +47,71 @@ feature 'Budgets' do
     end
   end
 
+  scenario 'Index shows only published phases' do
+
+    budget.update(phase: :finished)
+
+    budget.phases.drafting.update(starts_at: '30-12-2017', ends_at: '31-12-2017', enabled: true,
+                                  description: 'Description of drafting phase',
+                                  summary: 'This is the summary for drafting phase')
+
+    budget.phases.accepting.update(starts_at: '01-01-2018', ends_at: '10-01-2018', enabled: true,
+                                   description: 'Description of accepting phase',
+                                   summary: 'This is the summary for accepting phase')
+
+    budget.phases.reviewing.update(starts_at: '11-01-2018', ends_at: '20-01-2018', enabled: false,
+                                   description: 'Description of reviewing phase',
+                                   summary: 'This is the summary for reviewing phase')
+
+    budget.phases.selecting.update(starts_at: '21-01-2018', ends_at: '01-02-2018', enabled: true,
+                                   description: 'Description of selecting phase',
+                                   summary: 'This is the summary for selecting phase')
+
+    budget.phases.valuating.update(starts_at: '10-02-2018', ends_at: '20-02-2018', enabled: false,
+                                   description: 'Description of valuating phase',
+                                   summary: 'This is the summary for valuating phase')
+
+    budget.phases.publishing_prices.update(starts_at: '21-02-2018', ends_at: '01-03-2018', enabled: false,
+                                           description: 'Description of publishing prices phase',
+                                           summary: 'This is the summary for publishing_prices phase')
+
+    budget.phases.balloting.update(starts_at: '02-03-2018', ends_at: '10-03-2018', enabled: true,
+                                   description: 'Description of balloting phase',
+                                   summary: 'This is the summary for balloting phase')
+
+    budget.phases.reviewing_ballots.update(starts_at: '11-03-2018', ends_at: '20-03-2018', enabled: false,
+                                           description: 'Description of reviewing ballots phase',
+                                           summary: 'This is the summary for reviewing_ballots phase')
+
+    budget.phases.finished.update(starts_at: '21-03-2018', ends_at: '30-03-2018', enabled: true,
+                                  description: 'Description of finished phase',
+                                  summary: 'This is the summary for finished phase')
+
+    visit budgets_path
+
+    expect(page).not_to have_content "This is the summary for drafting phase"
+    expect(page).not_to have_content "30 Dec 2017 - 31 Dec 2017"
+    expect(page).not_to have_content "This is the summary for reviewing phase"
+    expect(page).not_to have_content "11 Jan 2018 - 20 Jan 2018"
+    expect(page).not_to have_content "This is the summary for valuating phase"
+    expect(page).not_to have_content "10 Feb 2018 - 20 Feb 2018"
+    expect(page).not_to have_content "This is the summary for publishing_prices phase"
+    expect(page).not_to have_content "21 Feb 2018 - 01 Mar 2018"
+    expect(page).not_to have_content "This is the summary for reviewing_ballots phase"
+    expect(page).not_to have_content "11 Mar 2018 - 20 Mar 2018'"
+
+    expect(page).to have_content "This is the summary for accepting phase"
+    expect(page).to have_content "01 Jan 2018 - 20 Jan 2018"
+    expect(page).to have_content "This is the summary for selecting phase"
+    expect(page).to have_content "21 Jan 2018 - 01 Mar 2018"
+    expect(page).to have_content "This is the summary for balloting phase"
+    expect(page).to have_content "02 Mar 2018 - 20 Mar 2018"
+    expect(page).to have_content "This is the summary for finished phase"
+    expect(page).to have_content "21 Mar 2018 - 29 Mar 2018"
+
+    expect(page).to have_css(".phase.active", count: 1)
+  end
+
   context 'Show' do
 
     scenario "List all groups" do
