@@ -8,7 +8,7 @@ feature 'Budget Investments' do
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:other_budget) { create(:budget, name: "What a Budget!") }
   let(:group) { create(:budget_group, name: "Health", budget: budget) }
-  let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
+  let!(:heading) { create(:budget_heading, name: "More hospitals", price: 666666, group: group) }
 
   before do
     Setting['feature.allow_images'] = true
@@ -778,7 +778,8 @@ feature 'Budget Investments' do
       visit root_path
 
       first(:link, "Participatory budgeting").click
-      click_link "More hospitals"
+
+      click_link "More hospitals €666,666"
 
       within("#budget_investment_#{sp1.id}") do
         expect(page).to have_content sp1.title
