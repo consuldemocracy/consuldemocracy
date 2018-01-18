@@ -99,13 +99,13 @@ feature 'Budgets' do
     expect(page).not_to have_content "11 Mar 2018 - 20 Mar 2018'"
 
     expect(page).to have_content "This is the summary for accepting phase"
-    expect(page).to have_content "01 Jan 2018 - 21 Jan 2018"
+    expect(page).to have_content "01 Jan 2018 - 20 Jan 2018"
     expect(page).to have_content "This is the summary for selecting phase"
-    expect(page).to have_content "21 Jan 2018 - 02 Mar 2018"
+    expect(page).to have_content "21 Jan 2018 - 01 Mar 2018"
     expect(page).to have_content "This is the summary for balloting phase"
-    expect(page).to have_content "02 Mar 2018 - 21 Mar 2018"
+    expect(page).to have_content "02 Mar 2018 - 20 Mar 2018"
     expect(page).to have_content "This is the summary for finished phase"
-    expect(page).to have_content "21 Mar 2018 - 30 Mar 2018"
+    expect(page).to have_content "21 Mar 2018 - 29 Mar 2018"
 
     expect(page).to have_css(".phase.active", count: 1)
   end
