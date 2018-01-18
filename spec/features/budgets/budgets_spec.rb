@@ -228,7 +228,7 @@ feature 'Budgets' do
 
         visit budget_path(budget)
 
-        expect(page).to have_link "Create budget investment"
+        expect(page).to have_link "Create a budget investment"
       end
 
       scenario "Unverified user" do
