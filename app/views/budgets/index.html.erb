@@ -119,11 +119,11 @@
             <div class="budget-investment clear">
               <div class="panel">
                 <div class="row" data-equalizer data-equalizer-on="medium">
-                  <div class="small-9 column" data-equalizer-watch>
+                  <div class="small-12 medium-9 column" data-equalizer-watch>
                     <h3><%= budget.name %></h3>
-                    <%= budget.description %>
+                    <%= safe_html_with_links(budget.description) %>
                   </div>
-                  <div class="small-3 column table" data-equalizer-watch>
+                  <div class="small-12 medium-3 column table" data-equalizer-watch>
                     <div class="table-cell align-middle">
                       <%= link_to t("budgets.index.see_results"),
                                   budget_results_path(budget.id),
