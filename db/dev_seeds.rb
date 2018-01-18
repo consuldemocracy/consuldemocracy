@@ -68,6 +68,8 @@ section "Creating Settings" do
   Setting.create(key: 'feature.map', value: "true")
   Setting.create(key: 'feature.allow_images', value: "true")
   Setting.create(key: 'feature.public_stats', value: "true")
+  Setting.create(key: 'feature.guides', value: nil)
+
   Setting.create(key: 'per_page_code_head', value: "")
   Setting.create(key: 'per_page_code_body', value: "")
   Setting.create(key: 'comments_body_max_length', value: '1000')
