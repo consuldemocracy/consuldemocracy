@@ -40,6 +40,10 @@ class Budget < ActiveRecord::Base
     phases.send(phase)
   end
 
+  def published_phases
+    phases.published
+  end
+
   def description
     description_for_phase(phase)
   end
