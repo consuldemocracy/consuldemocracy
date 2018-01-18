@@ -83,13 +83,13 @@
       </div>
 
       <p>
-        <%= link_to budget_investments_path(@budget.id) do %>
+        <%= link_to budget_url(@budget) do %>
           <small><%= t("budgets.index.investment_proyects") %></small>
         <% end %><br>
-        <%= link_to budget_investments_path(budget_id: @budget.id, filter: 'unfeasible') do %>
+        <%= link_to budget_url(@budget, filter: 'unfeasible') do %>
           <small><%= t("budgets.index.unfeasible_investment_proyects") %></small>
         <% end %><br>
-        <%= link_to budget_investments_path(budget_id: @budget.id, filter: 'unselected') do %>
+        <%= link_to budget_url(@budget, filter: 'unselected') do %>
           <small><%= t("budgets.index.not_selected_investment_proyects") %></small>
         <% end %>
       </p>
