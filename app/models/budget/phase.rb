@@ -56,7 +56,7 @@ class Budget
     end
 
     def step_number
-      budget.published_phases.order(:id).index(self) + 1 || 0
+      budget.published_phases.index(self) + 1 || 0
     end
 
     private
