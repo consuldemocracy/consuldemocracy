@@ -9,18 +9,18 @@ nl:
       - vr
       - za
     abbr_month_names:
-      - jan
-      - feb
-      - mrt
-      - apr
-      - mei
-      - jun
-      - jul
-      - aug
-      - sep
-      - okt
-      - nov
-      - dec
+      1: jan
+      2: feb
+      3: mrt
+      4: apr
+      5: mei
+      6: jun
+      7: jul
+      8: aug
+      9: sep
+      10: okt
+      11: nov
+      12: dec
     day_names:
       - zondag
       - maandag
@@ -34,18 +34,18 @@ nl:
       long: "%e %B %Y"
       short: "%e %b"
     month_names:
-      - januari
-      - februari
-      - maart
-      - april
-      - mei
-      - juni
-      - juli
-      - augustus
-      - september
-      - oktober
-      - november
-      - december
+      1: januari
+      2: februari
+      3: maart
+      4: april
+      5: mei
+      6: juni
+      7: juli
+      8: augustus
+      9: september
+      10: oktober
+      11: november
+      12: december
     order:
       - :day
       - ': month'

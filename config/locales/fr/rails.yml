@@ -9,18 +9,18 @@ fr:
       - ven
       - sam
     abbr_month_names:
-      - fév
-      - mar
-      - avr
-      - mai
-      - jun
-      - jul
-      - aoû
-      - sep
-      - oct
-      - nov
-      - déc
-      - Déc
+      1: fév
+      2: mar
+      3: avr
+      4: mai
+      5: jun
+      6: jul
+      7: aoû
+      8: sep
+      9: oct
+      10: nov
+      11: déc
+      12: Déc
     day_names:
       - dimanche
       - lundi
@@ -34,12 +34,12 @@ fr:
       long: "%d %B %Y"
       short: "%d %b"
     month_names:
-      - février
-      - mars
-      - avril
-      - mai
-      - juin
-      - Décembre
+      1: février
+      2: mars
+      3: avril
+      4: mai
+      5: juin
+      12: Décembre
   datetime:
     distance_in_words:
       x_minutes:

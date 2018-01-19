@@ -14,22 +14,31 @@ es-PR:
         proposal: Participa en la comunidad de esta propuesta. Una comunidad activa puede ayudar a mejorar el contenido de la propuesta así como a dinamizar su difusión para conseguir más apoyos.
         investment: Participa en la comunidad de este proyecto de inversión. Una comunidad activa puede ayudar a mejorar el contenido del proyecto de inversión así como a dinamizar su difusión para conseguir más apoyos.
       create_first_community_topic:
+        first_theme_not_logged_in: No hay ningún tema disponible, participa creando el primero.
         first_theme: Crea el primer tema de la comunidad
+        sub_first_theme: "Para crear un tema debes %{sign_in} o %{sign_up}."
+        sign_in: "iniciar sesión"
+        sign_up: "registrarte"
       tab:
         participants: Participantes
       sidebar:
         participate: Participa
         new_topic: Crea un tema
       topic:
+        edit: Editar tema
+        destroy: Eliminar tema
         comments:
           zero: Sin comentarios
           one: 1 Comentario
           other: "%{count} Comentarios"
+      author: Autor
+      back: Volver a %{community} %{proposal}
     topic:
       create: Crear un tema
       edit: Editar tema
       form:
         topic_title: Título
+        topic_text: Texto inicial
         new:
           submit_button: Crear tema
         edit:

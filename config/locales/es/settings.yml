@@ -42,8 +42,8 @@ es:
       legislation: Legislación
       user:
         recommendations: Recomendaciones
-      community: Comunidad en propuestas y proyectos de gasto
-      map: Geolocalización de propuestas y proyectos de gasto
+      community: Comunidad en propuestas y proyectos de inversión
+      map: Geolocalización de propuestas y proyectos de inversión
       allow_images: Permitir subir y mostrar imágenes
     map_latitude: Latitud
     map_longitude: Longitud
