@@ -1,17 +1,12 @@
 files:
-  - source: /config/locales/es/**.yml
-    translation: /config/locales/%locale%/%original_file_name%
+  - source: /config/locales/custom/es/**.yml
+    translation: /config/locales/custom/%locale%/%original_file_name%
     languages_mapping:
       locale:
-        ar: ar
+        en: en
         ast: ast
         ca: ca
-        es-ES: es
+        eu-ES: eu
         fr: fr
         gl: gl
-        he: he
-        it: it
-        nl: nl
-        pt-PT: pt
-        ru: ru
-        en-US: en
+        val-ES: val
