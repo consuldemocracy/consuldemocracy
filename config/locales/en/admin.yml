@@ -143,6 +143,8 @@ en:
         filters:
           all: All
           without_admin: Without assigned admin
+          without_valuator: Without assigned valuator
+          under_valuation: Under valuation
           valuation_finished: Valuation finished
           feasible: Feasible
           selected: Selected
