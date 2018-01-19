@@ -308,7 +308,7 @@ en:
     title: "Districts"
     proposal_for_district: "Start a proposal for your district"
     select_district: Scope of operation
-    start_proposal: Create proposal
+    start_proposal: Create a proposal
   omniauth:
     facebook:
       sign_in: Sign in with Facebook
@@ -405,7 +405,7 @@ en:
         other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
       select_order_long: 'You are viewing proposals according to:'
-      start_proposal: Create proposal
+      start_proposal: Create a proposal
       top: Top weekly
       top_link_proposals: The most supported proposals by category
       section_header:
