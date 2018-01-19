@@ -1098,6 +1098,29 @@ feature 'Budget Investments' do
       end
     end
 
+    scenario "Maintain pagination in minimal view" do
+      per_page = 10
+      (per_page + 1).times { create(:budget_investment, heading: heading) }
+
+      visit budget_path(budget)
+      click_link heading.group.name
+
+      within(".budgets-minimal-selector") do
+        first("a").click
+      end
+
+      expect(page).to have_selector('.budget-investment', count: per_page)
+
+      within("ul.pagination") do
+        expect(page).to have_content("1")
+        expect(page).to have_link('2')
+        expect(page).not_to have_content("3")
+        click_link "Next", exact: false
+      end
+
+      expect(page).to have_selector('.budget-investment', count: 4)
+    end
+
     scenario "Switch between minimal and default views" do
       within(".budgets-minimal-selector") do
         first("a").click

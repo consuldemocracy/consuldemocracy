@@ -95,6 +95,8 @@
           <% if Budget.balloting.any? %>
             <%= render "banners" %>
           <% end %>
+
+          <%= paginate @investments %>
         </div>
 
       <% end %>
