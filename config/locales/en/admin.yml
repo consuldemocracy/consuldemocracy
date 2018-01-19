@@ -151,6 +151,7 @@ en:
           undecided: Undecided
           unfeasible: Unfeasible
           max_per_heading: Max. supports per heading
+          winners: Winners
           button: Filter
         download_current_selection: "Download current selection"
         no_budget_investments: "There are no investment projects."

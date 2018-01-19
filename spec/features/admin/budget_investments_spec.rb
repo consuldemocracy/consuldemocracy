@@ -668,12 +668,12 @@ feature 'Admin budget investments' do
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
-      # within('#filter-subnav') { click_link 'Winners' }
-      # expect(page).not_to have_content(unfeasible_bi.title)
-      # expect(page).not_to have_content(feasible_bi.title)
-      # expect(page).not_to have_content(feasible_vf_bi.title)
-      # expect(page).not_to have_content(selected_bi.title)
-      # expect(page).to have_content(winner_bi.title)
+      within('#filter-subnav') { click_link 'Winners' }
+      expect(page).not_to have_content(unfeasible_bi.title)
+      expect(page).not_to have_content(feasible_bi.title)
+      expect(page).not_to have_content(feasible_vf_bi.title)
+      expect(page).not_to have_content(selected_bi.title)
+      expect(page).to have_content(winner_bi.title)
     end
 
     scenario "Showing the selection buttons", :js do
