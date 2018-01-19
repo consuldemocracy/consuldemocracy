@@ -111,7 +111,6 @@ en:
         title: "Title"
         description: "Description"
         external_url: "External url"
-        location: "Location"
         administrator_id: "Administrator"
         description: "Description"
         external_url: "Link to additional documentation"
