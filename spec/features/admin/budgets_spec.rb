@@ -92,7 +92,7 @@ feature 'Admin budgets' do
       fill_in 'budget_name', with: 'M30 - Summer campaign'
       select 'Accepting projects', from: 'budget[phase]'
 
-      click_button 'Create Participatory budget'
+      click_button 'Create Budget'
 
       expect(page).to have_content 'New participatory budget created successfully!'
       expect(page).to have_content 'M30 - Summer campaign'
@@ -100,7 +100,7 @@ feature 'Admin budgets' do
 
     scenario 'Name is mandatory' do
       visit new_admin_budget_path
-      click_button 'Create Participatory budget'
+      click_button 'Create Budget'
 
       expect(page).not_to have_content 'New participatory budget created successfully!'
       expect(page).to have_css("label.error", text: "Name")
@@ -119,7 +119,7 @@ feature 'Admin budgets' do
       click_button 'Delete budget'
 
       expect(page).to have_content('Budget deleted successfully')
-      expect(page).to have_content('participatory budgets cannot be found')
+      expect(page).to have_content('budgets cannot be found')
     end
 
     scenario 'Try to destroy a budget with investments' do
@@ -130,7 +130,7 @@ feature 'Admin budgets' do
       click_button 'Delete budget'
 
       expect(page).to have_content('You cannot destroy a Budget that has associated investments')
-      expect(page).to have_content('There is 1 participatory budget')
+      expect(page).to have_content('There is 1 budget')
     end
   end
 
@@ -167,7 +167,7 @@ feature 'Admin budgets' do
       click_link 'Edit budget'
 
       fill_in 'budget_name', with: 'More trees on the streets'
-      click_button 'Update Participatory budget'
+      click_button 'Update Budget'
 
       expect(page).to have_content('More trees on the streets')
       expect(page).to have_current_path(admin_budgets_path)
@@ -205,7 +205,7 @@ feature 'Admin budgets' do
   context 'Manage groups and headings' do
 
     scenario 'Create group', :js do
-      budget = create(:budget, name: 'Yearly participatory budget')
+      budget = create(:budget, name: 'Yearly budget')
 
       visit admin_budgets_path
 
@@ -223,7 +223,7 @@ feature 'Admin budgets' do
 
       expect(page).to have_content '1 Group of budget headings'
       expect(page).to have_content 'Health'
-      expect(page).to have_content 'Yearly participatory budget'
+      expect(page).to have_content 'Yearly budget'
       expect(page).not_to have_content 'No groups created yet.'
 
       visit admin_budgets_path
@@ -233,12 +233,12 @@ feature 'Admin budgets' do
 
       expect(page).to have_content '1 Group of budget headings'
       expect(page).to have_content 'Health'
-      expect(page).to have_content 'Yearly participatory budget'
+      expect(page).to have_content 'Yearly budget'
       expect(page).not_to have_content 'No groups created yet.'
     end
 
     scenario 'Create heading', :js do
-      budget = create(:budget, name: 'Yearly participatory budget')
+      budget = create(:budget, name: 'Yearly budget')
       group  = create(:budget_group, budget: budget, name: 'Districts improvments')
 
       visit admin_budget_path(budget)
@@ -266,7 +266,7 @@ feature 'Admin budgets' do
     end
 
     scenario 'Update heading', :js do
-      budget = create(:budget, name: 'Yearly participatory budget')
+      budget = create(:budget, name: 'Yearly budget')
       group  = create(:budget_group, budget: budget, name: 'Districts improvments')
       heading = create(:budget_heading, group: group, name: "District 1")
       heading = create(:budget_heading, group: group, name: "District 3")
@@ -288,7 +288,7 @@ feature 'Admin budgets' do
     end
 
     scenario 'Delete heading', :js do
-      budget = create(:budget, name: 'Yearly participatory budget')
+      budget = create(:budget, name: 'Yearly budget')
       group  = create(:budget_group, budget: budget, name: 'Districts improvments')
       heading = create(:budget_heading, group: group, name: "District 1")
 
