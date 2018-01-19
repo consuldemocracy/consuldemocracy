@@ -1,0 +1,34 @@
+he:
+  activerecord:
+    attributes:
+      budget:
+        name: "Name"
+      comment:
+        body: "הערה"
+      proposal:
+        author: "מחבר/ת"
+        title: "כותרת"
+        description: "תיאור"
+        terms_of_service: "תנאי השימוש"
+      user:
+        email: "דואר אלקטרוני"
+        username: "שם משתמש/ת"
+        password: "סיסמה"
+        current_password: "סיסמה נוכחית"
+        phone_number: "מספר טלפון"
+      organization:
+        name: "שם הארגון"
+      spending_proposal:
+        description: "תיאור"
+        external_url: "קישור למסמכים נוספים"
+        title: "כותרת"
+    errors:
+      models:
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "תגיות צריכות להיות קטנות או שוות ל %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "תגיות צריכות להיות קטנות או שוות ל %{count}"

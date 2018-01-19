@@ -12,6 +12,9 @@ es-DO:
       personal: Datos personales
       phone_number_label: Teléfono
       public_activity_label: Mostrar públicamente mi lista de actividades
+      public_interests_label: Mostrar públicamente las etiquetas de los elementos que sigo
+      public_interests_my_title_list: Etiquetas de los elementos que sigues
+      public_interests_user_title_list: Etiquetas de los elementos que sigue este usuario
       save_changes_submit: Guardar cambios
       subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
       email_on_direct_message_label: Recibir emails con mensajes privados
@@ -168,11 +171,13 @@ es-DO:
     direct_message: el mensaje privado
     error: error
     errors: errores
+    not_saved_html: "impidieron guardar %{resource}. <br>Por favor revisa los campos marcados para saber cómo corregirlos:"
     policy: Política de privacidad
     proposal: la propuesta
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
     budget/investment: la propuesta de inversión
+    budget/heading: la partida presupuestaria
     poll/shift: el turno
     poll/question/answer: la respuesta
     user: la cuenta
@@ -258,6 +263,7 @@ es-DO:
         one: Hay un nuevo comentario en
         other: Hay %{count} comentarios nuevos en
       empty_notifications: No tienes notificaciones nuevas.
+      notifiable_hidden: Este elemento ya no está disponible.
       mark_all_as_read: Marcar todas como leídas
       proposal_notification:
         one: Hay una nueva notificación en
@@ -333,6 +339,7 @@ es-DO:
       map_location: "Ubicación en el mapa"
       map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
       map_remove_marker: "Eliminar el marcador"
+      map_skip_checkbox: "Esta propuesta no tiene una ubicación concreta o no la conozco."
     index:
       featured_proposals: Destacadas
       filter_topic:
@@ -344,6 +351,7 @@ es-DO:
         hot_score: Más activas hoy
         most_commented: Más comentadas
         relevance: Más relevantes
+        archival_date: Archivadas
         recommendations: Recomendaciones
       recommendations:
         without_results: No existen propuestas relacionadas con tus intereses
@@ -559,6 +567,7 @@ es-DO:
     collective: Colectivo
     flag: Denunciar como inapropiado
     follow: "Seguir"
+    following: "Siguiendo"
     follow_entity: "Seguir %{entity}"
     followable:
       budget_investment:
@@ -612,6 +621,7 @@ es-DO:
     orbit:
       previous_slide: Imagen anterior
       next_slide: Siguiente imagen
+    documentation: Documentación adicional
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
@@ -754,9 +764,11 @@ es-DO:
       not_voting_allowed: El periodo de votación está cerrado.
     budget_investments:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Los proyectos de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
       organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
+      different_heading_assigned: Sólo puedes apoyar proyectos de inversión de una partida
   welcome:
     debates:
       description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
@@ -799,3 +811,19 @@ es-DO:
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."
+  related_content:
+    title: "Contenido relacionado"
+    add: "Añadir contenido relacionado"
+    label: "Enlace a contenido relacionado"
+    placeholder: "%{url}"
+    help: "Puedes introducir cualquier enlace de %{models} que esté dentro de %{org}."
+    submit: "Añadir"
+    error: "Enlace no válido. Recuerda que debe empezar por %{url}."
+    success: "Has añadido un nuevo contenido relacionado"
+    is_related: "¿Es contenido relacionado?"
+    score_positive: "Sí"
+    score_negative: "No"
+    content_title:
+      proposal: "Propuesta"
+      debate: "Debate"
+      budget_investment: "Propuesta de inversión"
