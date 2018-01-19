@@ -1,4 +1,6 @@
-<% provide :title do %><%= t('budgets.index.title') %><% end %>
+<% provide :title, t("meta_tags.budget_2018.accepting.title") %>
+<% provide :meta_description, t("meta_tags.budget_2018.accepting.description") %>
+
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
 <% end %>
