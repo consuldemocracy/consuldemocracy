@@ -16,8 +16,7 @@
       </div>
       <div class="small-12 medium-3 column info padding" data-equalizer-watch>
         <p>
-          <% steps = "(#{@budget.current_phase.step_number}/#{@budget.published_phases.count})" %>
-          <strong><%= t('budgets.show.phase') %> <%= steps %></strong>
+          <strong><%= t('budgets.show.phase') %></strong>
         </p>
         <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
 
