@@ -55,10 +55,6 @@ class Budget
       end
     end
 
-    def step_number
-      budget.published_phases.index(self) + 1 || 0
-    end
-
     private
 
     def prev_phase_dates_valid?
