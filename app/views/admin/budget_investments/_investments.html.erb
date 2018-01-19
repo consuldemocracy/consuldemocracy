@@ -27,7 +27,7 @@
         <% end %>
       </tr>
     </thead>
-
+    <tbody>
     <% @investments.each do |investment| %>
       <% investment_id = investment.original_spending_proposal_id || investment.id %>
       <tr id="<%= dom_id(investment) %>" class="budget_investment">
@@ -106,11 +106,44 @@
         </td>
         <% if params[:filter] == 'selected' %>
           <td class="small text-center">
-            <%= investment.incompatible? ? t('shared.yes'): t('shared.no') %>
+            <%= investment.valuation_finished? ? t("shared.yes"): t("shared.no") %>
           </td>
+          <td class="small">
+            <% if investment.selected? %>
+              <%= link_to_unless investment.budget.finished?,
+                                 t("admin.budget_investments.index.selected"),
+                                 toggle_selection_admin_budget_budget_investment_path(@budget,
+                                                                                      investment,
+                                                                                      filter: params[:filter],
+                                                                                      second_filter: params[:second_filter],
+                                                                                      max_per_heading: params[:max_per_heading],
+                                                                                      page: params[:page]),
+                                 method: :patch,
+                                 remote: true,
+                                 class: "button small expanded" %>
+            <% elsif investment.feasible? && investment.valuation_finished? %>
+              <%= link_to_unless investment.budget.finished?,
+                                 t("admin.budget_investments.index.select"),
+                                 toggle_selection_admin_budget_budget_investment_path(@budget,
+                                                                                      investment,
+                                                                                      filter: params[:filter],
+                                                                                      second_filter: params[:second_filter],
+                                                                                      max_per_heading: params[:max_per_heading],
+                                                                                      page: params[:page]),
+                                 method: :patch,
+                                 remote: true,
+                                 class: "button small hollow expanded" %>
+            <% end %>
+          </td>
+          <% if params[:filter] == "selected" %>
+            <td class="small text-center">
+              <%= investment.incompatible? ? t("shared.yes"): t("shared.no") %>
+            </td>
+          <% end %>
         <% end %>
-      </tr>
-    <% end %>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 
   <%= paginate @investments %>
