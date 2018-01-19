@@ -16,6 +16,7 @@ es-SV:
         alert: El documento no se ha podido eliminar.
         confirm: '¿Está seguro de que desea eliminar el documento? Esta acción no se puede deshacer!'
     buttons:
+      download_document: Descargar archivo
       destroy_document: Eliminar
     errors:
       messages:

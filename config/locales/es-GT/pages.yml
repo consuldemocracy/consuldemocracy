@@ -1,0 +1,83 @@
+es-GT:
+  pages:
+    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
+    conditions: Condiciones de uso
+    general_terms: Términos y Condiciones
+    more_info:
+      title: "Descubre %{org_name}"
+      subtitle: "Aprende todo lo que puedes hacer en esta web."
+      guide: 'Esta guía explica cada una de las secciones de %{org_name}. Puedes ampliar la información en los enlaces de "Información detallada".'
+      menu:
+        debates: "Debates"
+        proposals: "Propuestas"
+        budgets: "Presupuestos participativos"
+        other: "Otra información de interés"
+      debates:
+        title: "Debates"
+        description: "Crea un hilo en el que debatir sobre cualquier tema que quieras compartir con el resto de gente de tu ciudad."
+        feature_1: "Para crear un debate tienes que %{link}"
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2_html: "Los debates pueden ser valorados utilizando los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong> que encontrarás en cada uno de ellos."
+        image_alt: "Botones para valorar los debates"
+        figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
+      proposals:
+        title: "Propuestas"
+        description: "Propón lo que quieres que el Ayuntamiento lleve a cabo y apoya propuestas de otras personas."
+        feature_1: "Para crear una propuesta tienes que %{link}, además para apoyarlas debes verificar tu cuenta."
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2_html: "Las propuestas que consigan <strong>el apoyo del 1% de la gente</strong> (mayor de 16 años empadronada en Madrid; 27.064 apoyos) pasan a votación."
+        feature_3_html: "Si hay más gente a favor que en contra en la votación, <strong>el Ayuntamiento asume la propuesta y se hace</strong>."
+        image_alt: "Botón para apoyar una propuesta"
+        figcaption_html: 'Botón para "Apoyar" una propuesta.<br>Cuando alcance el número de apoyos pasará a votación.'
+      budgets:
+        title: "Presupuestos participativos"
+        description: "Los primeros seis meses de cada año puedes decidir cómo gastar parte del presupuesto."
+        feature_1: "Para crear un proyecto de gasto tienes que %{link} y verificar tu cuenta."
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2_html: "En primer lugar empieza la <strong>fase de aceptación</strong> de proyectos de gasto."
+        feature_3_html: "Después hay una <strong>fase de apoyos</strong> para priorizar lo más interesante, las más apoyadas son evaluadas por el Ayuntamiento para ver si son viables y cuánto valen."
+        feature_4_html: "Al final hay una <strong>fase de votación</strong> donde se decide en cuáles se gasta esa parte del presupuesto."
+        image_alt: "Diferentes fases de un presupuesto participativo"
+        figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
+      polls:
+        title: "Votaciones"
+        description: "Las propuestas ciudadanas que alcancen el 1% de apoyos pasarán a votación."
+        feature_1: "Para participar en la próxima votación tienes que %{link} y verificar tu cuenta."
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2: "Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años."
+        feature_3: "Los resultados de todas las votaciones serán vinculantes para el gobierno."
+      faq:
+        title: "¿Problemas técnicos?"
+        description: "Lee las preguntas frecuentes y resuelve tus dudas."
+        button: "Ver preguntas frecuentes"
+        page:
+          title: "Preguntas Frecuentes"
+          description: "Utiliza esta página para resolver las Preguntas frecuentes a los usuarios del sitio."
+          faq_1_title: "Pregunta 1"
+          faq_1_description: "Este es un ejemplo para la descripción de la pregunta uno."
+      other:
+        title: "Otra información de interés"
+        how_to_use: "Utiliza %{org_name} en tu municipio"
+      how_to_use:
+        text: |-
+          Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
+          
+          Este Portal de Gobierno Abierto usa la [aplicación CONSUL](https://github.com/consul/consul 'github consul') que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), esto significa en palabras sencillas, que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con las modificaciones que quiera (manteniendo el que otros puedan a su vez hacer lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
+          
+          Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación CONSUL](https://github.com/consul/consul 'github consul').
+      titles:
+        how_to_use: Utilízalo en tu municipio
+    privacy: Política de privacidad
+    titles:
+      accessibility: Accesibilidad
+      conditions: Condiciones de uso
+      more_info: "Más información sobre %{org_name}"
+      privacy: Política de Privacidad
+    verify:
+      code: Código que has recibido en tu carta
+      email: Email
+      info: 'Para verificar tu cuenta introduce los datos con los que te registraste:'
+      info_code: 'Ahora introduce el código que has recibido en tu carta:'
+      password: Contraseña
+      submit: Verificar mi cuenta
+      title: Verifica tu cuenta
