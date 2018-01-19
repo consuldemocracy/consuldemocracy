@@ -22,6 +22,7 @@ class Budget < ActiveRecord::Base
   after_create :generate_phases
 
   scope :drafting, -> { where(phase: "drafting") }
+  scope :informing, -> { where(phase: "informing") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
   scope :selecting, -> { where(phase: "selecting") }
@@ -67,6 +68,10 @@ class Budget < ActiveRecord::Base
 
   def drafting?
     phase == "drafting"
+  end
+
+  def informing?
+    phase == "informing"
   end
 
   def accepting?

@@ -30,6 +30,7 @@ es:
         unselected: Ver los proyectos no seleccionados para la votación final
     phase:
       drafting: Borrador (No visible para el público)
+      informing: Información
       accepting: Presentación de proyectos
       reviewing: Revisión inicial de proyectos
       selecting: Fase de apoyos
