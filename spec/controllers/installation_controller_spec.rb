@@ -15,12 +15,18 @@ describe InstallationController, type: :request do
     before do
       @current_feature_settings = seeds_feature_settings.pluck(:key, :value).to_h
       seeds_feature_settings.destroy_all
-      test_feature_settings.each { |feature_name, feature_value| Setting["feature.#{feature_name}"] = feature_value }
+      test_feature_settings.each do |feature_name, feature_value|
+        Setting["feature.#{feature_name}"] = feature_value
+      end
     end
 
     after do
-      test_feature_settings.keys.each { |feature_name| Setting.find_by(key: "feature.#{feature_name}").destroy }
-      @current_feature_settings.each { |feature_name, feature_value| Setting[feature_name] = feature_value }
+      test_feature_settings.each_key do |feature_name|
+        Setting.find_by(key: "feature.#{feature_name}").destroy
+      end
+      @current_feature_settings.each do |feature_name, feature_value|
+        Setting[feature_name] = feature_value
+      end
     end
 
     specify "with query string inside query params" do
