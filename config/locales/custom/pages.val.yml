@@ -1,0 +1,456 @@
+---
+val:
+  pages:
+    cartel_magdalena_2018:
+      title: Concurs del cartell de la Magdalena 2018
+      tab_link: Cartell Magdalena 2018
+      bases_link: Bases del concurs del cartell de les festes de la Magdalena 2018
+      carteles_seleccionados: Cartells seleccionats
+      confirm_votacion: Sols es pot votar per un cartell, segur que vols votar aquest cartell?
+      already_voted: Ja has votat un altre cartell
+      vote_forbidden: No es pot votar si no s'ha iniciat sesió i verificat la residencia
+      results: Resultats
+      votos: Vots
+      lema: Lema
+      cartel: Cartell
+      total_vots: Vots totals
+      catells_seleccionats: Catells seleccionats
+      sex_participation: Participació per sexes
+      age_participation: Participació per grups d'edat
+      cartel_1:
+        lema: A un pas del cel
+      cartel_2:
+        lema: Cistella de tradició
+      cartel_3:
+        lema: Colors al vent
+      cartel_4:
+        lema: Els Festers
+      cartel_5:
+        lema: Escut de la festa
+      cartel_6:
+        lema: Festa
+      cartel_7:
+        lema: Pum pum pum
+      cartel_8:
+        lema: Simbologia de festes
+      cartel_9:
+        lema: Camino de tradiciones
+      cartel_10:
+        lema: Mone a gaudir de la vida en les colles
+
+    priv:
+      title: "Política de Privadesa"
+      subtitle: "AVÍS DE PROTECCIÓ DE DADES"
+      body: |-
+        1. La navegació per la informació disponible al Portal de Govern Obert és anònima.
+        2. Per a utilitzar els serveis continguts en el Portal de Govern Obert l'usuari haurà de donar-se d'alta i proporcionar prèviament les dades de caràcter personal segun la informació específica que consta en cada tipus d'alta.
+        3. Les dades aportades seran incorporades i tractades per l'Ajuntament d'acord amb la descripció del fitxer següent:
+          * __Nom del fitxer/tractament:__ DATOS PERSONALES WEB
+          * __Finalitat del fitxer/tractament:__ Gestionar els processos participatius per al control de l'habilitació de les persones que participen en els mateixos i recompte merament numèric i estadístic dels resultats derivats dels processos de participació ciutadana
+          * __Òrgan responsable:__ AYUNTAMIENTO DE CASTELLÓN
+        4. L'interessat podrà exercir els drets d'accés, rectificació, cancel·lació i oposició, davant l'òrgan responsable indicat tot la qual cosa s'informa en el compliment de l'article 5 de la Llei Orgànica 15/1999, de 13 de desembre, de Protecció de Dades de Caràcter Personal.
+        5. Com a principi general, aquest lloc web no comparteix ni revela informació obtinguda, excepte quan haja sigut autoritzada per l'usuari, o la informació siga requerida per l'autoritat judicial, ministeri fiscal o la policia judicial, o se de algun dels supòsits regulats en l'article 11 de la Llei Orgànica 15/1999, de 13 de desembre, de Protecció de Dades de Caràcter Personal.
+
+    census_terms: "Per a verificar el compte cal tenir 16 anys o més i estar empadronat aportant les dades indicades anteriorment, els quals seran contrastats. Acceptant el procés de verificació accepta donar el seu consentiment per a contrastar aquesta informació, així com mitjans de contacte que figuren en aquests fitxers. Les dades aportades seran incorporats i tractats en un fitxer indicat anteriorment en les condicions d'ús del portal."
+    conditions: "Condicions d'ús"
+    conditions_body: |-
+      ## AVÍS LEGAL SOBRE LES CONDICIONS D'ÚS, PRIVACITAT I PROTECCIÓ DE DADES PERSONALS DEL PORTAL DE PARTICIPACIÓ CIUTADANA DE L'AJUNTAMENT DE CASTELLÓ DE LA PLANA
+
+      ### 1.- Àmbit d'aplicació de les condicions d'ús
+
+      La participació en el Portal de Participació Ciutadana de l'Ajuntament de Castelló de la Plana Decidim Castelló es regula per les present condicions d'ús que vinculen totes les persones que participen en aquest lloc web. Qualsevol persona que desitge participar-hi haurà de registrar-se i acceptar les condicions d'ús.
+      L'Ajuntament de Castelló de la Plana es reserva la facultat de modificar les presents condicions d'ús del Portal de Participació Ciutadana (decidim.castello.es), l'última versió de les quals es publicarà en aquest lloc web.
+
+      ### 2. Objectiu de la iniciativa
+
+      A través del Portal de Participació Ciutadana, l'Ajuntament de Castelló de la Plana vol fomentar la participació dels ciutadans en la gestió de la ciutat, implicant-los en la generació d'idees i propostes noves i viables, amb l'objectiu de millorar la seua qualitat de vida. És una aposta decidida per una gestió més pròxima als ciutadans que permetrà rebre les seues propostes i, a més, crear canals directes de comunicació amb el Govern municipal, contribuint a prendre les decisions més encertades per a l'interés general.
+
+      ### 3. Qüestions generals sobre la participació en el Portal de Participació Ciutadana de l'Ajuntament de Castelló de la Plana
+
+      Podrà participar-hi qualsevol persona física a partir dels 16 anys que s'haja registrat prèviament. Per mitjà de l'acceptació d'aquestes condicions d'ús, es declara tindre 16 anys o més. Existeix la possibilitat de presentar una proposta i avalar un màxim de tres propostes per cada participant.
+
+      En introduir el títol de les propostes, es recomana escriure una descripció breu i precisa amb un màxim de 2.000 caràcters.
+
+      ### 4.- Obligacions dels usuaris del Portal de Participació Ciutadana
+
+      Com que Decidim Castellón és un punt de trobada, l'objectiu del qual és debatre, compartir i valorar propostes relacionades amb la millora de la ciutat, els usuaris estan obligats a fer un ús diligent i concorde amb aquest objectiu.
+
+      L'Ajuntament de Castelló de la Plana no és responsable de l'ús incorrecte del Portal de Participació Ciutadana pels usuaris o dels continguts localitzats en aquest, i cada usuari serà responsable del seu ús correcte i de la legalitat dels continguts i opinions que haja compartit.
+
+      L'Ajuntament de Castelló de la Plana es reserva, per tant, el dret a limitar l'accés al Portal de Participació Ciutadana d'opinions, informacions, comentaris o documents que els usuaris vulguen incorporar, podent instal·lar filtres a aquest efecte. Tot això es realitzarà únicament mentre tinga el fi de preservar l'objectiu fonamental del Portal de Participació Ciutadana.
+
+      D'acord amb la normativa legal vigent queda prohibida la utilització del Portal de Participació Ciutadana de l'Ajuntament de Castelló de la Plana amb fins diferents dels de debatre, compartir i valorar propostes, i específicament queda prohibit:
+
+      Compartir qualsevol contingut que puga ser considerat com una vulneració en qualsevol forma dels drets fonamentals a l'honor, imatge i intimitat personal i familiar de tercers o contra la dignitat de les persones.
+      Compartir imatges o fotografies que arrepleguen imatges o dades personals de tercers sense haver obtingut l'oportú consentiment dels seus titulars.
+      Compartir qualsevol contingut que vulnere el secret en les comunicacions, la infracció de drets de propietat industrial i intel·lectual o de les normes reguladores de la protecció de dades de caràcter personal.
+      Reproduir, distribuir i compartir continguts, informacions o imatges que hagen sigut posades a disposició per altres usuaris sense l'autorització expressa d'estos.
+      La seua utilització amb fins de publicitat.
+
+      La realització de qualsevol dels anteriors comportaments permetrà a l'Ajuntament de Castelló de la Plana suspendre temporalment l'activitat d'un participant, inhabilitar el seu compte o esborrar el seu contingut, sense perjuí d'altres responsabilitats que puguen ser reclamades.
+
+      En el cas que el contingut introduït pels usuaris incorpore un enllaç a un altre lloc web, l'Ajuntament de Castelló de la Plana no serà responsable pels danys o perjuís derivats de l'accés a l'enllaç o als seus continguts.
+
+      En cas de litigi de qualsevol classe o per qualsevol motiu entre els participants en el lloc web i/o un tercer, l'Ajuntament de Castelló de la Plana quedarà exempt de qualsevol responsabilitat per reclamacions, demandes o danys de qualsevol naturalesa relacionats o derivats del litigi.
+
+      ### 5. Ús del Portal de Participació Ciutadana
+
+      Els participants podran accedir i navegar pel Portal de Participació Ciutadana lliurement i de forma anònima. Només quan vulguen realitzar alguna acció que implique la creació, suport o comentari d'una proposta, o la participació en un debat, se li sol·licitarà que introduïsca les seues credencials, per a l'obtenció de les quals serà necessari registrar-se prèviament. El registre que permetrà participar comentant en qualsevol de les seccions o propostes es realitzarà introduint les dades següents:
+
+      * Nom d'usuari
+      * Adreça electrònica
+      * Acceptació de les condicions d'ús del Portal de Participació Ciutadana
+
+      Per a participar proposant o donant suport a propostes, a l'usuari se li requerirà que verifique el seu compte, per a la qual cosa es comprovarà que és major de 16 anys i que està empadronat a Castelló de la Plana. Es requerirà el DNI, la data de naixement i el codi postal. Per mitjà d'aquest procés de verificació s'autoritza expressament aquesta comprovació a l'Ajuntament de Castelló de la Plana.
+
+      ### 6. Condicions per al tractament dels continguts proporcionats pels usuaris
+
+      Les presents condicions regulen els termes aplicables al contingut remés pels usuaris d'aquesta plataforma a través del formulari corresponent (d'ara en avant, el contingut). Aquestes condicions s'apliquen tant al contingut inicialment remés al Portal de Participació Ciutadana com a qualsevol contingut que s'envie amb posterioritat o es manifeste a l'Ajuntament de Castelló de la Plana, cosa que implica el següent:
+
+      <ol class="ordered_alpha_up">
+        <li>
+          <p>No-confidencialitat: Tot el contingut remés per l'usuari a l'Ajuntament de Castelló de la Plana haurà de ser susceptible de ser conegut pel públic en general. Per tant, l'Ajuntament de Castelló de la Plana tractarà l'esmentat contingut com a informació no confidencial.</p>
+        </li>
+        <li>
+          <p>Procediment: En el cas que l'Ajuntament de Castelló de la Plana estiga interessat a ampliar o reduir el contingut remés per l'usuari, es posarà en contacte amb ell per a sol·licitar-li informació addicional. Aquesta informació tindrà, així mateix, caràcter de no confidencial, sense perjuí que en el cas que les parts consideren la necessitat d'intercanviar-se informació de caràcter confidencial se signe el corresponent Acord de Confidencialitat.</p>
+          <p>L'Ajuntament de Castelló de la Plana es reserva el dret de no contactar amb els usuaris que li hagueren remés el contingut. Tot això sense perjuí del que estableix l'apartat relatiu a "Drets de Propietat Intel·lectual i Industrial”.</p>
+          <p>En el supòsit que l'Ajuntament de Castelló de la Plana, a la seua sencera discreció, decidira contactar amb determinats usuaris, aquests coneixen i accepten que per això l'Ajuntament de Castelló de la Plana no adquireix cap compromís en relació amb la proposta d'inversió.</p>
+        </li>
+        <li>
+          <p>Publicitat o difusió dels continguts presentats: Els participants en el Portal de Participació Ciutadana de l'Ajuntament de Castelló de la Plana declaren conéixer i acceptar que la informació aportada puga ser publicada en el web www.castello.es, així com a través d'altres mitjans que l'organització considere oportuns per a donar a conéixer aquesta iniciativa.</p>
+        </li>
+        <li>
+          <p>No devolució de material: L'Ajuntament de Castelló de la Plana no té cap obligació de tornar el Contingut remés pels usuaris.</p>
+        </li>
+        <li>
+          <p>Procediment d'avís i retirada: L'Ajuntament de Castelló de la Plana processarà les peticions d'eliminació o retirada de continguts que incomplisquen les condicions d'ús que hagen afegit els participants. Així mateix, qualsevol persona, amb motius raonats si hi ha incompliment de les presents condicions d'ús, podrà sol·licitar la retirada de continguts a l'Ajuntament de Castelló de la Plana. L'Ajuntament de Castelló de la Plana es reserva el dret de fer les comprovacions o verificacions oportunes amb caràcter previ a la retirada de qualsevol contingut.</p>
+        </li>
+      </ol>
+
+      ### 7. Política de privacitat i protecció de dades
+
+      <ol class="ordered_alpha_up">
+        <li>
+          <p>Titularitat dels drets de propietat intel·lectual i industrial: L'usuari que aporta el Contingut declara, amb l'acceptació de les presents Condicions, ser titular dels drets de propietat intel·lectual i/o industrial o ostentar drets suficients sobre el contingut i que, a més, el remet a l'Ajuntament de Castelló de la Plana de forma voluntària per a la seua divulgació en el Portal de Participació Ciutadana de l'Ajuntament de Castelló de la Plana.</p>
+          <p>La titularitat de tots i cada un dels Continguts presentats que es troben protegits o siguen susceptibles de trobar-se protegits, pel Dret de la Propietat Industrial i Intel·lectual, correspon als autors i/o titulars dels mencionats Continguts.</p>
+          <p>L'Ajuntament de Castelló de la Plana no assumix cap responsabilitat, ja siga directa o indirecta, respecte de qualsevol tipus de controvèrsia, disputa i/o litigi que poguera derivar-se de la publicació, divulgació i/o difusió dels continguts aportats sense el preceptiu consentiment dels seus legítims titulars.</p>
+          <p>L'Ajuntament de Castelló de la Plana respectarà tots els Drets de Propietat Intel·lectual o Industrial sobre el contingut remés pels usuaris. Qualsevol vulneració dels Drets de Propietat Intel·lectual o Industrial serà responsabilitat de la persona que aporte el contingut.</p>
+          <p>L'Ajuntament de Castelló de la Plana, per la mera recepció del contingut, no rep de l'usuari cap llicència de propietat intel·lectual o industrial, per la qual cosa no farà ús del contingut excepte acceptació expressa del seu titular.</p>
+        </li>
+        <li>
+          <p>Protecció de dades: Les dades personals aportades pels usuaris que es registren en el Portal de Participació Ciutadana, seran tractades d'acord amb allò que s'ha exposat en l'apartat de Política de Privacitat.</p>
+          <p>Com a principi general, les dades personals no seran comunicades a tercers, excepte quan la comunicació haja sigut autoritzada per l'usuari, o la informació siga requerida per l'autoritat judicial, ministeri fiscal o policia judicial, o es done algun dels supòsits regulats en l'article 11 de la Llei orgànica 15/1999, de 13 de desembre, de protecció de dades de caràcter personal.</p>
+          <p>Els drets d'accés, rectificació, cancel·lació i oposició es podran exercitar dirigint una comunicació per escrit a l'Ajuntament de Castelló de la Plana, Participació Ciutadana.</p>
+        </li>
+      </ol>
+
+      ### 8. Normativa aplicable
+
+      Les normes de l'ordenament jurídic espanyol regixen de manera exclusiva aquestes condicions d'ús. Qualsevol disputa, controvèrsia o reclamació derivada d'aquestes condicions d'ús, o l'incompliment, rescissió o invalidació d'aquestes, es resoldrà exclusivament davant dels jutjats competents.
+
+      ### 9. Revisió de les condicions d'ús
+
+      L'Ajuntament de Castelló de la Plana es reserva el dret de revisar les presents condicions d'ús i la política de privacitat en qualsevol moment i per qualsevol raó. En aquest cas, els usuaris registrats seran avisats a través d'aquest espai en línia i, si continuen utilitzant el Portal de Participació Ciutadana, s'entendran acceptades les modificacions introduïdes.
+    general_terms: "Termes i Condicions"
+    opendata:
+      slogan: "Informació sobre Dades obertes."
+      title: Dades obertes
+    privacy: "Política de Privadesa"
+    titles:
+      concurso_cartel_magdalena: Concurs del cartell de la Magdalena 2018
+      accessibility: Accessibilitat
+      conditions: "Condicions d'ús"
+      more_information: Més informació
+      opendata: Dades obertes
+      privacy: Política de Privadesa
+    verify:
+      code: Codi que has rebut en la teua carta
+      email: Email
+      info: "Per a verificar el teu compte introdueix les dades amb els quals et vas registrar:"
+      info_code: "Ara introdueix el codi que has rebut en la teua carta:"
+      password: Contrasenya
+      submit: Verificar el meu compte
+      title: Verificar el teu compte
+    faq:
+      title: "Preguntes freqüents (FAQ)"
+      body: "Et presentem una llista de les solucions als problemes i dubtes més freqüents del Portal decidim.castello.es. Si açò no resol el teu problema, pots enviar un correu electrònic a decidim@castello.es"
+      quest_1:
+        title: No em funciona la verificació de residència.
+        response: |-
+          Comprova les següents possibilitats:
+
+          * Has posat el DNI o document amb tots els caràcters junts, incloent la lletra al final?
+          * Estàs segur que estàs empadronat al municipi de Castelló de la Plana?
+          * Pot ser que hi haja algun problema en el registre d'empadronament amb les teues dades. Per a qualsevol incidència en la verificació del seu compte pot contactar amb la Unitat d'Estadística - Gestió Padró (Telèfon 964 355 185) e-mail: padronhabitantes@castello.es
+
+      quest_2:
+        title: "Per a què serveix verificar el meu compte?"
+        response: |-
+          Per a utilitzar la web necessitem un compte d'usuari i verificar-ho. Amb la verificació de compte es podrà:
+
+          Presentar propostes
+
+          Avalar propostes
+
+          Votar propostes
+
+      quest_3:
+        title: "Com puc crear i verificar el meu compte?"
+        response: |-
+          El primer és crear un compte. Per a açò fem clic sobre l'enllaç Registrar-se i emplenem les dades que ens demanen. És un requisit marcar la casella d'acceptació de les condicions d'ús. En crear un compte ens arribarà un correu electrònic a l'adreça que hàgem especificat, i haurem de fer clic en l'enllaç que conté ( l'enllaç que posa "Confirmar el meu compte") per a acabar la crear el compte. Si no ens arriba aquest correu, hem de comprovar si s'ha guardat en la carpeta de correu no desitjat o spam.
+
+          Una vegada creat el compte i després d'entrar amb el nostre correu i contrasenya, el sistema donarà l'opció de realitzar una verificació del mateix per a comprovar que estem empadronats en la ciutat de Castelló de la Plana i que som majors de 16 anys. Una vegada verificat el compte ja podrem participar en el procés de pressupostos participatius
+
+      quest_4:
+        title: "M'he oblidat de la meua contrasenya o no em funciona, què puc fer?"
+        response: |-
+          A través de l'enllaç Has oblidat la teua contrasenya? que apareix en el formulari d'accés a la web, pots sol·licitar que se t'envie un correu electrònic amb les instruccions per a recuperar la teua contrasenya
+
+      quest_5:
+        title: "No aconseguisc crear el meu compte correctament."
+        response: |-
+          Revisa per favor la secció "No em funciona la verificació de residència", per si el problema estiguera en aqueix pas, que sol ser el problema més freqüent.
+
+          Si no s'ha solucionat, revisa la secció "Com puc crear i verificar el meu compte?", per a assegurar-te que estàs seguint els passos adequadament.
+
+      quest_6:
+        title: "Com puc canviar el meu correu electrònic, el meu nom d'usuari, la meua contrasenya, donar-me de baixa o activar/desactivar les notificacions que m'arriben al correu electrònic?"
+        response: |-
+          Fes clic sobre l'enllaç "entrar", introdueix el teu correu electrònic i la teua contrasenya, i prem el botó "entrar" Una vegada fet açò, fes clic sobre l'enllaç "el meu compte" on trobaràs totes les opcions que et permetran canviar el teu correu electrònic , nom d'usuari, contrasenya, donar-te de baixa o activar/desactivar les notificacions. Una vegada realitzat el canvi adequat asegurate de fer clic sobre el botó "Guardar canvis".
+
+    more_information:
+      item_1:
+        title: 1.- Què són els pressupostos participatius?
+        subt: ''
+        text: |-
+          Els pressupostos participatius són una ferramenta de democràcia directa que permet a la ciutadania incidir o prendre decisions referents als pressupostos públics.
+
+          La corporació municipal treballa perquè els veïns i veïnes d’aquesta ciutat puguen donar a conéixer la seua opinió sobre les polítiques i els projectes més importants que s’estan duent a terme des de l’Ajuntament i tinguen capacitat de decisió sobre aquests. Per això és voluntat de l’equip de govern posar en marxa una primera experiència, en línia, de pressupostos participatius a través de la plataforma web decidim.castello.es en què la ciutadania puga decidir en què invertir 1.650.000 euros.
+
+
+      item_2:
+        title: 2.- Sobre la plataforma decidim.castello.es
+        subt: ''
+        text: |-
+          La plataforma web decidim.castello.es és un instrument de participació promogut per les regidories de Transparència, Modernització i Participació Ciutadana, per a conéixer l’opinió de les veïnes i veïns de la ciutat, mitjançant un sistema de votació en línia, sobre assumptes d’interés públic de caràcter local que els afecten i que són de competència municipal.
+
+          Depositar en la ciutadania la capacitat de decidir sobre l’entorn en què desenvolupen les seues vides, incrementa la qualitat democràtica de les institucions públiques i suposa una millora en la gestió institucional, ja que permet construir en comú i decidir el que volem conjuntament per a la nostra ciutat.
+
+          És important assenyalar que aquest projecte de pressupostos participatius és un projecte experimental amb què iniciar un procés de diàleg de l’Administració municipal amb la ciutadania, que afavoreix el protagonisme de les ciutadanes i ciutadans en la presa de decisions respecte al seu entorn directe i promou la modernització de la gestió pública. Per tant, el procés en si mateix suposa una oportunitat d’aprenentatge compartit entre l’Ajuntament i les veïnes i veïns del municipi.
+
+      item_3:
+        title: 3.- Què és una proposta de projecte d’inversió?
+        subt: ''
+        text: |-
+          Les despeses d’inversió d’un municipi són aquelles derivades de la creació d’infraestructures i de la creació o adquisició de béns de naturalesa inventariable necessaris per al funcionament dels serveis i aquelles altres despeses que tinguen el caràcter d’amortitzables.
+          Les inversions han de reunir les característiques següents:
+          <ol class="ordered_alpha">
+            <li>Que no siguen béns fungibles, és a dir, que no es consumisquen amb l’ús.</li>
+            <li>Que tinguen una duració superior a l’exercici pressupostari, 12 mesos.</li>
+            <li>Que siguen susceptibles d’inclusió en inventari, sent aquest una relació detallada, ordenada i valorada dels elements que componen el patrimoni.</li>
+          </ol>
+
+          Exemples d’inversions:
+
+          * Creació de noves infraestructures o obres: construir itineraris de voreres i vials, enllumenat, senyalització viària, parcs, jardins, clavegueram, etc.
+          * Reposició d’infraestructures: reforma d’enllumenat, remodelació de parcs, zones verdes, remodelació de vials i de la seua senyalització.
+          * Construcció o reforma d’edificis.
+          * Adquisició d’elements de transport (autobusos, vehicle de bombers..) o de mobiliari infantil per a zones de jocs infantils (engronsadores, tobogans, palanques…)
+          * Aplicacions informàtiques: desenvolupament d’aplicacions, web, etc.
+
+          Per tant NO són inversions:
+
+          * Activitats: programes culturals, campanyes de dinamització comercial, activitats esportives, de festes…
+          * Lloguer d’edificis, vehicles, mobiliari, maquinària.
+          * Subministraments: combustibles, energia elèctrica, gas, aliments
+          * Servei de neteja
+          * Incrementar la freqüència de les línies d’autobusos o modificar les seues rutes.
+          * Despeses de personal.
+          * Subvencions i ajudes.
+          * Concessió de beques, premis.
+          * Els projectes d'inversió han d'estar vinculats a les competències municipals assenyalades en els articles 25.2 i 26 de la Llei 7/1985, de 2 d'abril, reguladora de las bases de règim local.
+
+      item_4:
+        title: 4.- Qui pot presentar propostes de projectes d’inversió?
+        subt: ''
+        text: |-
+          <ol class="ordered_alpha">
+            <li>Qualsevol veïna o veí, a títol individual, empadronada a la ciutat de Castelló de la Plana en el moment de la inscripció, major de 16 anys.
+            <li>Qualsevol entitat ciutadana amb personalitat jurídica, que tinga el seu domicili social i el seu àmbit d’actuació territorial a la ciutat de Castelló de la Plana, i que es trobe inscrita en el Registre d’Associacions.</li>
+          </ol>
+
+          Per a acreditar-se com a proponent de projectes d’inversió, cal fer-ho via telemàtica a través del formulari que a aquest efecte es disposarà en la pàgina web decidim.castello.es
+
+          Les dades que se sol·liciten per a acreditar-se com a proponent de projectes d’inversió són:
+
+          Persones físiques
+
+          * Nom usuari
+          * DNI/NIE/passaport
+          * codi postal
+          * Data de naixement
+          * Adreça electrònica
+          * Contrasenya
+
+          Persones jurídiques
+
+          * Nom de l’entitat ciutadana
+          * Nom i cognoms de la persona que realitza la proposta
+          * Telèfon
+          * Adreça electrònica
+          * Contrasenya
+
+          Una vegada acreditat es podrà accedir a omplir el formulari de projecte/proposta d’inversió. Cada persona o entitat podrà presentar una única proposta.
+
+          S’invita a presentar projectes d’inversió que redunden en la millora de la qualitat de vida de la ciutat. Les propostes de projectes d’inversió hauran de complir els requisits recollits en aquestes Bases Reguladores.
+
+
+      item_5:
+        title: 5.- Com presentar propostes de projectes d’inversió?
+        subt: 'Desde el 15 de febrero hasta el 5 de marzo de 2017'
+        text: |-
+          Les propostes de projectes d’inversió es presentaran principalment via telemàtica a través de la plataforma web decidim.castello.es i excepcionalment de forma presencial utilitzant una instància de sol·licitud general a la qual se li adjuntarà el formulari per a presentar propostes de projectes d’inversió, en qualsevol de les tinències d’Alcaldia.
+
+          El model estandarditzat per a la presentació de projectes d’inversió es pot consultar en <a href='http://www.castello.es/decidim/BASES_PRESSUPOSTOS_PARTICIPATIUS_VALENCIA.pdf' target='_blank'>aquestes Bases</a>. Vegeu Annex 1 (persones físiques)  Annex 2 (entitats).
+
+          El període per a presentar projectes d’inversió és del 15 de febrer al 5 de març de 2017 fins a les 23:59 hores.
+
+      item_6:
+        title: 6.-  Qui pot donar suport a les propostes de projectes d’inversió?
+        subt: 'Del 6 al 31 de marzo de 2017'
+        text: |-
+          Qualsevol persona major de 16 anys empadronada podrà donar suport fins a un màxim de 3 propostes de projectes d’inversió. Pot, indistintament, donar suport a propostes individuals o d’entitats ciutadanes.
+
+          Les propostes de projectes d’inversió hauran de comptar amb un mínim de 25 suports de les veïnes i veïns per a poder passar a la fase següent i ser valorades pels serveis tècnics de l’Ajuntament de Castelló de la Plana. El suport de les propostes es realitzarà a través de la plataforma decidim.castello.es, on estaran exposades les propostes presentades.
+
+          El període de suport de les propostes va del 6 al 31 de març de 2017 fins a les 23:59:hores.
+
+      item_7:
+        title: 7.- Validació i estudi de viabilitat dels projectes d’inversió.
+        subt: 'Del 1 al 30 de abril'
+        text: |-
+          Finalitzat el període de suport de les propostes, des del Negociat de Participació Ciutadana de l’Ajuntament es realitzarà un procés de validació de les propostes realitzades amb l’objectiu de comprovar que totes les propostes presentades compleixen amb els requisits establits en aquestes Bases Reguladores, admetent o no motivadament les propostes presentades.
+
+          A títol d’exemple, seran motius d'inadmissió:
+
+          No ser un projecte d’inversió
+
+          * No ser competència municipal
+          * La no disponibilitat de terrenys.
+          * Que per a la seua execució siga necessari implicar altres administracions
+          * Que la seua execució ja estiga prevista i pressupostada per l’Ajuntament
+          * Qualssevol altres anàlegs als anteriors
+
+          Superada la validació, passaran a ser estudiades pels Serveis Tècnics de l’Ajuntament implicats en la seua execució, que seran els que emetran un informe sobre la seua viabilitat jurídica, tècnica i/o pressupostària.
+
+          Els Serveis Tècnics de l’Ajuntament, en emetre un informe sobre la viabilitat jurídica, tècnica i pressupostària del projecte d’inversió, hauran de:
+
+          * Comprovar que la proposta siga competència de l’Ajuntament i que no depenga d’altres administracions.
+          * Estudiar si hi ha alguna normativa que siga contrària a dur a terme la proposta.
+          * Estimar el cost econòmic de la proposta.
+          * Estudiar si la proposta és viable tècnicament i no es preveu cap impediment perquè puga executar-se en el 2017.
+
+          Les propostes de projectes d’inversió que tinguen informes favorable dels Serveis Tècnics seran les que passaran a la fase de votació final.
+
+          Aquest procés de validació i estudi de viabilitat tècnica de les propostes es realitzarà en el període comprés entre l’1 i el 30 d’abril de 2017 fins a les 23:59 hores.
+
+      item_8:
+        title: 8. Sobre la votació ciutadana.
+        subt: 'Del 1 al 15 de mayo'
+        text: |-
+          El període de les votacions serà de l'1 al 15 de maig fins a les 23:59 hores.
+
+          Totes les persones majors de 16 anys, que estiguen empadronades en la ciutat de Castelló de la Plana i s'hagen inscrit en la plataforma web decidim.castello.es, podran participar amb el seu vot.
+
+          Es podran votar totes les propostes que es creen oportunes fins a arribar a la quantitat d'1.650.000 euros.
+
+          Hi ha dues opcions per a fer la votació:
+
+           1. De manera telemàtica mitjançant la plataforma web decidim.castello.es .<strong><a href='http://www.castello.es/decidim/manualvotacio.pdf' target='_blank'> Consulta la guia pràctica ací</a></strong>.
+
+           2. D'altra banda, per als ciutadans que no disposen d'accés a Internet, també s'han habilitat punts de votació presencial amb ordinadors i personal d'assessorament on se'ls ajudarà a fer ús de la plataforma.
+           Aquests punts de votació són els següents:
+
+             1. Tinència d'Alcaldia Nord Plaça del Primer Molí, s/n.
+             2. Tinència d'Alcaldia Sud Carrer Ricardo Català, cantó amb. J. Marquès.
+             3. Tinència d'Alcaldia Est Avinguda Germans Bou, 27.
+             4. Tinència d'Alcaldia Oest Plaça d'Espanya, 1.
+             5. Tinència d'Alcaldia Grau Passeig Buenavista, 28.
+             6. Tinència d'Alcaldia Centre Aula de Consum (quarta planta de l'Edifici Noble, plaça Major, 1).
+
+            - Les votacions presencials es faran en horari de **9:30 a 12:30** hores els següents dies:
+
+                * Tinència d'Alcaldia **Nord** Dies **2 i 8 de maig**
+                * Tinència d'Alcaldia **Sud** Dies **3 i 9 de maig**
+                * Tinència d'Alcaldia **Est** Dies **4 i 10 de maig**
+                * Tinència d'Alcaldia **Oest** Dies **5 i 12 de maig**
+                * Tinència d'Alcaldia **Grau** Dies **11 i 15 de maig**
+                * Tinència d'Alcaldia **Centre** Dies **2,3,4,5,8,9,10,11,12 i 15 de maig**
+
+            Per a votar presencialment caldrà anar proveït del **DNI, NIE o passaport**.
+
+      item_9:
+        title: 9.  Sobre els resultats de la votació.
+        subt: ''
+        text: |-
+          El resultat final del procés consultiu s’obtindrà una vegada finalitzada la votació, i totes les propostes s'ordenaran de major a menor votació, tenint en compte que cada proposta inclosa no supere el pressupost de 1.650.000 euros S'acceptaran propostes fins a arribar a l’import total. Si en acceptar una proposta se supera l’import total, s´ignora i es passarà a seleccionar la següent.
+
+          Respecte a la proposta o propostes descartades, l'equip de Govern estudiarà la possibilitat d'incorporar-la o incorporar-les en el Pressupost Municipal del 2018.
+
+          El Govern municipal es compromet a dur a terme l’execució de les inversions seleccionades, tenint en compte els resultats d'aquesta consulta ciutadana, sempre que s’atenga als criteris tècnics de viabilitat dels projectes i els límits econòmics disponibles.
+
+          Es podrà seguir el procés a través de la plataforma web decidim.castello.es
+
+      description:
+        faq: "Preguntes freqüents sobre problemes tècnics"
+        how_it_works: "Descobreix tot el que pots fer en aquesta web"
+        how_to_use: "Utilitza-ho lliurement o ajuda'ns a millorar-ho, és programari lliure"
+        participation: "Participació Ciutadana, Transparència i Govern Obert"
+        participation_facts: "Per a perdre-li la por"
+        participation_world: "Sistemes de participació ciutadana que ja existeixen al món"
+        proposals_info: "Crea les teues pròpies propostes"
+        signature_sheet: "Fulls de signatures per a arreplegar avals"
+        spending_proposals_info: "Envia les teues propostes d'inversió"
+      how_it_works:
+        i: "Participació"
+        i1: "Espai de debat"
+        i2: "Espai de propostes"
+        text: |-
+          El nou Portal de Govern Obert està dividit en tres parts: Participació, Transparència i Dades Obertes (veuràs els enllaços en la part superior dreta).
+          >**I. Participació:** On poder decidir què ciutat volem tenir (a través de propostes ciutadanes, espais de debat, pressupostos participatius, legislació col·laborativa, i molts altres processos que anirem implementant).
+           **II. Transparència:** En aquest espai es publicaran totes les dades relatives a qui i com es gestiona la ciutat (noms dels responsables, càrrecs, sous, plans de govern, contractes, agendes dels responsables...). A més és l'espai on exercir el dret d'accés a la informació, podent sol·licitar qualsevol informació sobre l'Ajuntament de manera fàcil i ràpida.
+           **III. Dades Obertes:** En aquest espai es pengen les bases de dades que té l'Ajuntament, perquè qualsevol puga usar tota la informació directament, sense necessitat ni tan sols de preguntar. També es pot sol·licitar la publicació de més bases de dades.
+
+
+          Inaugurem el nou portal amb la nova secció de Participació, i en breu afegirem les noves seccions de Transparència i Dades Obertes (així que mantenim de moment els enllaços a les pàgines sobre aquest tema que ja existien).
+          ## <a id='i'></a> I. Participació
+          L'apartat de participació comprendrà diferents mecanismes de participació: propostes ciutadanes, espais de debat, pressupostos participatius, legislació col·laborativa, entre molts uns altres. De moment presentem l'espai de debat, i molt ràpid les propostes ciutadanes.
+          ## <a id='i1'></a>I.I. Espai de debat
+          En aquest espai, qualsevol persona pot obrir un fil de discussió sobre qualsevol tema, creant un espai independent on la gent podrà debatre sobre el tema proposat. D'aquesta manera, en aquest espai digital conviuran cada dia centenars d'espais de debat diferents entre els quals la ciutadania podrà passejar-se, sumant-se als quals més els interesse.
+
+          Tant els fils, com els comentaris podran ser valorats per qualsevol, de tal manera que serà la pròpia ciutadania, i ningú en el seu nom, la que decidisca quins són els temes més importants a cada moment. Aquests seran presentats en la portada de l'espai, podent per descomptat accedir-se a tots els altres temes en pàgines posteriors, o usant altres criteris d'ordenació (els temes amb més comentaris, els més nous, els més controvertits, etc.).
+
+          Cadascun dels treballadors de l'Ajuntament té un usuari propi, que serà ressaltat com a tal, permetent que participen en els debats al mateix nivell que tots els altres ciutadans. Açò permetrà crear espais de comunicació directes entre els uns i els altres, evitant els inconvenients que implica la comunicació intervinguda, i responent a un plantejament clar per part del nou govern pel qual l'Ajuntament treballa per a la ciutadania, i davant ella ha de respondre.
+          ## <a id='i2'></a> I.I. Espai de propostes
+          En aquest espai, qualsevol persona pot proposar una iniciativa amb la intenció de recaptar els suficients avals com perquè la idea passe a ser consultada a tota la ciutadania amb caràcter vinculant.
+
+          Les propostes poden ser avalades per ciutadans empadronats que hagen verificat el seu compte en la plataforma de participació, de tal manera que serà la pròpia ciutadania, i ningú en el seu nom, la que decidisca quins són les propostes que mereixen la pena ser dutes a terme.
+
+          Una vegada que una proposta aconseguisca una quantitat de 25 avals, automàticament passa a ser estudiada per un grup de treball de l'Ajuntament i passarà a la següent fase de consulta popular, en la qual la ciutadania votarà si es duu a terme o no. El termini màxim per a recaptar els avals necessaris serà d'un mes.
+      how_to_use:
+        text: |-
+          Utilitza-ho en el teu municipi lliurement o ajuda'ns a millorar-ho, és programari lliure.
+
+          Aquest Portal de Govern Obert usa la [aplicació Consul](https://github.com/ayuntamientoCastellón de la Plana 'github consul') que és programari lliure, amb [llicència AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), açò significa en paraules senzilles, que qualsevol pugues lliurement usar el codi, copiar-ho, veure-ho detalladament, modificar-ho, i redistribuir-ho al món amb les modificacions que vulga (mantenint el que uns altres puguen al seu torn fer el mateix). Perquè creiem que la cultura és millor i més rica quan s'allibera
+
+          Si eres programador, pots veure el codi i ajudar-nos a millorar-ho en [aplicació Consul](https://github.com/ayuntamientoCastellón de la Plana 'github consul').
+      titles:
+        faq: "Solucions a problemes tècnics (FAQ)"
+        how_it_works: "Com funciona aquest Portal de Govern Obert?"
+        how_to_use: "Utilitza-ho al teu municipi"
+        participation: "Participació i Transparència - Pròximes novetats"
+        participation_facts: "Fets sobre participació ciutadana i democràcia directa"
+        participation_world: Participació ciutadana directa al món
+        proposals_info: "Com funcionen les propostes ciutadanes?"
+        signature_sheet: Fulls de signatures
+        spending_proposals_info: "Com funcionen els pressupostos participatius?"

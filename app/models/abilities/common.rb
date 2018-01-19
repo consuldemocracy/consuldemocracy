@@ -65,8 +65,13 @@ module Abilities
         can :vote, SpendingProposal
         can :create, SpendingProposal
 
+
+
+
+
+
         # TODO: no dejar crear si ya se ha creado
-        if user
+        if true || user
            .budget_investments
            .includes(:budget)
            .where(budgets: { phase: 'accepting'})
