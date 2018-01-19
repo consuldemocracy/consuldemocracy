@@ -139,3 +139,61 @@
     vertical-align: middle;
   }
 }
+
+// Budgets 2018
+
+$budget-2018-blue:     #408ea2;
+$budget-2018-pink:     #e78573;
+$budget-2018-yellow:   #fef384;
+
+.budget-home {
+  background: #000 image-url('welcome/background_budget_2018.jpg');
+  background-size: cover;
+
+  .lead-title,
+  .lead,
+  .tiny-title {
+    font-family: "Souvenir";
+  }
+
+  .lead-title {
+    color: #fff;
+    font-size: rem-calc(20);
+    font-weight: 300;
+    line-height: rem-calc(20);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(30);
+      line-height: rem-calc(30);
+    }
+  }
+
+  .lead {
+    color: $budget-2018-yellow;
+    font-size: rem-calc(30);
+    font-weight: 700;
+    line-height: rem-calc(30);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(60);
+      line-height: rem-calc(60);
+    }
+  }
+
+  .tiny-title {
+    color: $budget-2018-pink;
+    font-size: rem-calc(18);
+    font-weight: 300;
+    line-height: rem-calc(18);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(24);
+      line-height: rem-calc(24);
+    }
+  }
+
+  .button {
+    background: #fff;
+    color: #000;
+  }
+}

@@ -173,6 +173,11 @@ es:
       title: "¿Tienes una idea para cambiar Madrid?"
       text: "El Ayuntamiento de Madrid llevará a cabo tu propuesta si consigues que pase a votación ciudadana. Necesitas 27.064 apoyos en Decide Madrid, el 1% de la población con derecho a voto."
       button: "Crea una propuesta"
+    header_budget:
+      label: "Presupuestos participativos 2018"
+      title: "Decide los proyectos ciudadanos que hará el Ayuntamiento de Madrid, tienes:"
+      text: "100 millones de euros"
+      button: "Presenta tu proyecto"
     proposals:
       label: "Propuestas"
       title: "¿Qué es y cómo se crea una propuesta ciudadana?"
