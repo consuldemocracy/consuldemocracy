@@ -41,13 +41,13 @@ feature 'Guide the user to create the correct resource' do
     visit proposals_path
     click_link "Create a proposal"
 
-    expect(page).to_not have_link "I want to create a proposal"
+    expect(page).not_to have_link "I want to create a proposal"
     expect(page).to have_current_path(new_proposal_path)
 
     visit budgets_path
     click_link "Create a budget investment"
 
-    expect(page).to_not have_link "I want to create a new budget investment"
+    expect(page).not_to have_link "I want to create a new budget investment"
     expect(page).to have_current_path(new_budget_investment_path(budget))
   end
 
