@@ -152,6 +152,7 @@ es:
           undecided: Sin decidir
           unfeasible: Inviables
           max_per_heading: Corte por partida
+          winners: Ganadores
           button: Filtrar
         download_current_selection: "Descargar selección actual"
         no_budget_investments: "No hay proyectos de gasto."
