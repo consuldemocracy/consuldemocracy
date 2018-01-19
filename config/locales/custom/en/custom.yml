@@ -53,6 +53,10 @@ en:
       description_reviewing: "El 30 de junio se cerró la votación final. Los proyectos ganadores se darán a conocer el próximo 13 de julio."
       title_finished: "Resultados de los Presupuestos participativos de Madrid"
       description_finished: "Mira qué proyectos ciudadanos se ejecutarán a partir de 2018 con los 100 millones de los presupuestos participativos."
+    budget_2018:
+      accepting:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Presenta tus proyectos a los presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
   social_share:
     polls_show:
       title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"
