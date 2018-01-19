@@ -187,12 +187,11 @@ feature 'Admin budget investments' do
     end
 
     scenario "Current filter is properly highlighted" do
-      filters_links = {'valuation_open' => 'Open',
-                       'without_admin' => 'Without assigned admin',
-                       'managed' => 'Managed',
-                       'valuating' => 'Under valuation',
-                       'valuation_finished' => 'Valuation finished',
-                       'all' => 'All'}
+      filters_links = { 'all' => 'All',
+                        'without_admin' => 'Without assigned admin',
+                        'without_valuator' => 'Without assigned valuator',
+                        'under_valuation' => 'Under valuation',
+                        'valuation_finished' => 'Valuation finished' }
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 
@@ -213,7 +212,7 @@ feature 'Admin budget investments' do
     scenario "Filtering by assignment status" do
       assigned = create(:budget_investment, title: "Assigned idea", budget: budget, administrator: create(:administrator))
       valuating = create(:budget_investment, title: "Evaluating...", budget: budget)
-      valuating.valuators << create(:valuator)
+      valuating.valuators.push(create(:valuator))
 
       visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'valuation_open')
 
@@ -225,24 +224,19 @@ feature 'Admin budget investments' do
       expect(page).to have_content("Evaluating...")
       expect(page).not_to have_content("Assigned idea")
 
-      visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'managed')
+      visit admin_budget_budget_investments_path(budget_id: @budget.id, filter: 'without_valuator')
 
       expect(page).to have_content("Assigned idea")
       expect(page).not_to have_content("Evaluating...")
     end
 
     scenario "Filtering by valuation status" do
-      valuating = create(:budget_investment, budget: budget, title: "Ongoing valuation")
+      valuating = create(:budget_investment, budget: budget, title: "Ongoing valuation", administrator: create(:administrator))
       valuated = create(:budget_investment, budget: budget, title: "Old idea", valuation_finished: true)
-      valuating.valuators << create(:valuator)
-      valuated.valuators << create(:valuator)
+      valuating.valuators.push(create(:valuator))
+      valuated.valuators.push(create(:valuator))
 
-      visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'valuation_open')
-
-      expect(page).to have_content("Ongoing valuation")
-      expect(page).not_to have_content("Old idea")
-
-      visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'valuating')
+      visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'under_valuation')
 
       expect(page).to have_content("Ongoing valuation")
       expect(page).not_to have_content("Old idea")
@@ -646,7 +640,7 @@ feature 'Admin budget investments' do
     let!(:selected_bi)    { create(:budget_investment, :selected, budget: budget, title: "Selected project") }
     let!(:winner_bi)      { create(:budget_investment, :winner, budget: budget, title: "Winner project") }
 
-    scenario "Filtering by valuation and selection" do
+    scenario "Filtering by valuation and selection", :js do
       visit admin_budget_budget_investments_path(budget)
 
       within('#filter-subnav') { click_link 'Valuation finished' }
@@ -656,31 +650,34 @@ feature 'Admin budget investments' do
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
-      within('#filter-subnav') { click_link 'Val. fin. Feasible' }
+      within('#advanced-filters') { find(:css, "#second_filter[value='feasible']").set(true) }
+      click_button 'Filter'
+
       expect(page).not_to have_content(unfeasible_bi.title)
       expect(page).not_to have_content(feasible_bi.title)
       expect(page).to have_content(feasible_vf_bi.title)
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
-      within('#filter-subnav') { click_link 'Selected' }
+      within('#advanced-filters') { find(:css, "#second_filter[value='selected']").set(true) }
+      click_button 'Filter'
+
       expect(page).not_to have_content(unfeasible_bi.title)
       expect(page).not_to have_content(feasible_bi.title)
       expect(page).not_to have_content(feasible_vf_bi.title)
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
-      within('#filter-subnav') { click_link 'Winners' }
-      expect(page).not_to have_content(unfeasible_bi.title)
-      expect(page).not_to have_content(feasible_bi.title)
-      expect(page).not_to have_content(feasible_vf_bi.title)
-      expect(page).not_to have_content(selected_bi.title)
-      expect(page).to have_content(winner_bi.title)
+      # within('#filter-subnav') { click_link 'Winners' }
+      # expect(page).not_to have_content(unfeasible_bi.title)
+      # expect(page).not_to have_content(feasible_bi.title)
+      # expect(page).not_to have_content(feasible_vf_bi.title)
+      # expect(page).not_to have_content(selected_bi.title)
+      # expect(page).to have_content(winner_bi.title)
     end
 
     scenario "Showing the selection buttons", :js do
       visit admin_budget_budget_investments_path(budget)
-      within('#filter-subnav') { click_link 'All' }
 
       within("#budget_investment_#{unfeasible_bi.id}") do
         expect(page).not_to have_link('Select')
@@ -705,14 +702,14 @@ feature 'Admin budget investments' do
 
     scenario "Selecting an investment", :js do
       visit admin_budget_budget_investments_path(budget)
-      within('#filter-subnav') { click_link 'All' }
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
         click_link('Select')
         expect(page).to have_link('Selected')
       end
 
-      within('#filter-subnav') { click_link 'Selected' }
+      within('#advanced-filters') { find(:css, "#second_filter[value='selected']").set(true) }
+      click_button 'Filter'
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
         expect(page).not_to have_link('Select')
@@ -722,7 +719,9 @@ feature 'Admin budget investments' do
 
     scenario "Unselecting an investment", :js do
       visit admin_budget_budget_investments_path(budget)
-      within('#filter-subnav') { click_link 'Selected' }
+
+      within('#advanced-filters') { find(:css, "#second_filter[value='selected']").set(true) }
+      click_button 'Filter'
 
       expect(page).to have_content('There are 2 investments')
 
@@ -733,7 +732,7 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content(selected_bi.title)
       expect(page).to have_content('There is 1 investment')
 
-      within('#filter-subnav') { click_link 'All' }
+      visit admin_budget_budget_investments_path(@budget)
 
       within("#budget_investment_#{selected_bi.id}") do
         expect(page).to have_link('Select')
@@ -749,13 +748,12 @@ feature 'Admin budget investments' do
                                                          price: 100)
       valuator = create(:valuator, user: create(:user, username: 'Rachel',
                                                        email: 'rachel@val.org'))
-      investment.valuators << valuator
+      investment.valuators.push(valuator)
 
       admin = create(:administrator, user: create(:user, username: 'Gema'))
       investment.update(administrator_id: admin.id)
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
-      within('#filter-subnav') { click_link 'All' }
 
       click_link "Download current selection"
 
