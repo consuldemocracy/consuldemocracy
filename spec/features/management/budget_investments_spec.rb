@@ -17,7 +17,7 @@ feature 'Budget Investments' do
 
       login_managed_user(user)
 
-      click_link "Create budget investment"
+      click_link "Create a budget investment"
       within "#budget_#{@budget.id}" do
         click_link "Create New Investment"
       end
@@ -54,7 +54,7 @@ feature 'Budget Investments' do
       user = create(:user)
       login_managed_user(user)
 
-      click_link "Create budget investment"
+      click_link "Create a budget investment"
 
       expect(page).to have_content "User is not verified"
     end
@@ -156,7 +156,7 @@ feature 'Budget Investments' do
     user = create(:user, :level_two)
     login_managed_user(user)
 
-    click_link "Create budget investment"
+    click_link "Create a budget investment"
 
     expect(page).to have_content(accepting_budget.name)
 
@@ -187,7 +187,7 @@ feature 'Budget Investments' do
     login_managed_user(user)
     visit management_sign_in_path
 
-    click_link "Create budget investment"
+    click_link "Create a budget investment"
 
     expect(page).to have_content(accepting_budget.name)
     expect(page).to have_content(reviewing_budget.name)
