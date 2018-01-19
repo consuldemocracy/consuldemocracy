@@ -3,8 +3,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
-  has_filters(%w{valuation_open without_admin managed valuating valuation_finished
-                 valuation_finished_feasible selected winners all},
+  has_filters(%w{without_admin valuation_finished all},
               only: [:index, :toggle_selection])
 
   before_action :load_budget
@@ -65,7 +64,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_budget
-      @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      @budget = Budget.find_by(slug: params[:budget_id]).includes(:groups) || Budget.find_by(id: params[:budget_id]).includes(:groups)
     end
 
     def load_investment
@@ -78,7 +77,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_valuators
-      @valuators = Valuator.includes(:user).all.order("description ASC").order("users.email ASC")
+      @valuators = Valuator.includes(:user).all.order(description: :asc).order("users.email ASC")
     end
 
     def load_tags
@@ -94,4 +93,5 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       @investment.set_tag_list_on(:valuation, budget_investment_params[:valuation_tag_list])
       params[:budget_investment] = params[:budget_investment].except(:valuation_tag_list)
     end
+
 end

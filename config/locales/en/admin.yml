@@ -141,19 +141,14 @@ en:
         tags_filter_all: All tags
         max_per_heading: Max per heading
         filters:
-          valuation_open: Open
+          all: All
           without_admin: Without assigned admin
-          managed: Managed
-          valuating: Under valuation
           valuation_finished: Valuation finished
-          valuation_finished_feasible: Val. fin. Feasible
           feasible: Feasible
           selected: Selected
           undecided: Undecided
           unfeasible: Unfeasible
           max_per_heading: Max. supports per heading
-          winners: Winners
-          all: All
           button: Filter
         download_current_selection: "Download current selection"
         no_budget_investments: "There are no investment projects."
