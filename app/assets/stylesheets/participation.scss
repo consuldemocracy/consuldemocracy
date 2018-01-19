@@ -736,6 +736,10 @@
         color: $text;
       }
     }
+
+    &.past-budgets {
+      min-height: 0;
+    }
   }
 
   .debate-content,

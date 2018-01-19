@@ -117,11 +117,12 @@
         <% @budgets.each do |budget| %>
           <% if budget_published?(budget) %>
             <div class="budget-investment clear">
-              <div class="panel">
+              <div class="panel past-budgets">
                 <div class="row" data-equalizer data-equalizer-on="medium">
-                  <div class="small-12 medium-9 column" data-equalizer-watch>
-                    <h3><%= budget.name %></h3>
-                    <%= safe_html_with_links(budget.description) %>
+                  <div class="small-12 medium-9 column table" data-equalizer-watch>
+                    <div class="table-cell align-middle">
+                      <h3><%= budget.name %></h3>
+                    </div>
                   </div>
                   <div class="small-12 medium-3 column table" data-equalizer-watch>
                     <div class="table-cell align-middle">
