@@ -84,6 +84,10 @@ es-PE:
         notice: Campaña de presupuestos participativos actualizada
       edit:
         title: Editar campaña de presupuestos participativos
+        delete: Eliminar presupuesto
+      destroy:
+        success_notice: Presupuesto eliminado correctamente
+        unable_notice: No se puede eliminar un presupuesto con proyectos asociados
       new:
         title: Nuevo presupuesto ciudadano
       show:
@@ -98,6 +102,8 @@ es-PE:
         heading: Nombre de la partida
         add_heading: Añadir partida
         amount: Cantidad
+        population: "Población (opcional)"
+        population_help_text: "Este dato se utiliza exclusivamente para calcular las estadísticas de participación"
         save_heading: Guardar partida
         no_heading: Este grupo no tiene ninguna partida asignada.
         table_heading: Partida
@@ -123,6 +129,8 @@ es-PE:
           selected: Seleccionadas
           winners: Ganadoras
           all: Todas
+        download_current_selection: "Descargar selección actual"
+        no_budget_investments: "No hay proyectos de inversión."
         title: Propuestas de inversión
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
@@ -146,6 +154,7 @@ es-PE:
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
+        classification: Clasificación
         info: '%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}'
         edit: Editar
         edit_classification: Editar clasificación
@@ -173,6 +182,7 @@ es-PE:
           "true": "Si"
           "false": "No"
       edit:
+        classification: Clasificación
         compatibility: Compatibilidad
         mark_as_incompatible: Marcar como incompatible
         selection: Selección
@@ -852,6 +862,7 @@ es-PE:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         back: Volver
+        classification: Clasificación
         heading: "Propuesta de inversión %{id}"
         edit: Editar
         edit_classification: Editar clasificación
@@ -864,6 +875,7 @@ es-PE:
         tags: Etiquetas
         undefined: Sin definir
       edit:
+        classification: Clasificación
         assigned_valuators: Evaluadores
         submit_button: Actualizar
         tags: Etiquetas
