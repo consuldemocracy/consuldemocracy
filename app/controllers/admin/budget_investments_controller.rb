@@ -15,6 +15,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   def index
     respond_to do |format|
       format.html
+      format.js { render layout: false }
       format.csv do
         send_data Budget::Investment.to_csv(@investments, headers: true),
                   filename: 'budget_investments.csv'

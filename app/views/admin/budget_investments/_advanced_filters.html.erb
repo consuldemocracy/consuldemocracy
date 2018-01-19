@@ -1,0 +1,27 @@
+<div id="advanced-filters" class="callout primary">
+  <%= form_tag(admin_budget_budget_investments_path(budget: @budget,
+                                                    filter: params[:filter],
+                                                    second_filter: params[:second_filter],
+                                                    max_per_heading: params[:max_per_heading],
+                                                    page: 1), method: :get, remote: true, enforce_utf8: false) do %>
+
+    <%= check_box_tag :second_filter, "feasible" %>
+    <%= t("#{i18n_namespace}.filters.feasible") %>
+
+    <%= check_box_tag :second_filter, "selected" %>
+    <%= t("#{i18n_namespace}.filters.selected") %>
+
+    <%= check_box_tag :second_filter, "undecided" %>
+    <%= t("#{i18n_namespace}.filters.undecided") %>
+
+    <%= check_box_tag :second_filter, "unfeasible" %>
+    <%= t("#{i18n_namespace}.filters.unfeasible") %>
+
+    <div class="large-1">
+      <%= text_field_tag :max_per_heading %>
+      <%= t("#{i18n_namespace}.filters.max_per_heading") %>
+    </div>
+
+    <%= submit_tag t("#{i18n_namespace}.filters.button"), class: "button small float-right" %>
+  <% end %>
+</div>
