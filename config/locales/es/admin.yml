@@ -173,8 +173,8 @@ es:
         table_geozone: "Ámbito de actuación"
         table_feasibility: "Viabilidad"
         table_valuation_finished: "Ev. Fin."
-        table_selection: "Selección"
         table_evaluation: "Mostrar a evaluadores"
+        table_selection: "Seleccionado"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignado

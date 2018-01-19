@@ -173,8 +173,8 @@ en:
         table_geozone: "Scope of operation"
         table_feasibility: "Feasibility"
         table_valuation_finished: "Val. Fin."
-        table_selection: "Selection"
         table_evaluation: "Show to valuators"
+        table_selection: "Selected"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Assigned administrator
