@@ -3,7 +3,10 @@
             class: "float-right small" %>
 
 <% if @investments.any? %>
-  <h3 class="inline-block"><%= page_entries_info @investments %></h3>
+  <h3 class="inline-block"><%= page_entries_info @investments %></h3><br>
+
+  <%= render "filters_description", i18n_namespace: "admin.budget_investments.index" %>
+
   <table class="table-for-mobile">
     <thead>
       <tr>

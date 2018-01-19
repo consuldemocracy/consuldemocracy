@@ -154,6 +154,8 @@ es:
           max_per_heading: Corte por partida
           winners: Ganadores
           button: Filtrar
+          one_filter_html: "Filtro en uso: <b><em>%{filter}</em></b>"
+          two_filters_html: "Filtros en uso: <b><em>%{filter}, %{second_filter}</em></b>"
         download_current_selection: "Descargar selección actual"
         no_budget_investments: "No hay proyectos de gasto."
         title: Proyectos de gasto
