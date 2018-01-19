@@ -19,7 +19,7 @@ feature 'Budgets' do
     within("#budget_heading") do
       expect(page).to have_content(last_budget.name)
       expect(page).to have_content(last_budget.description)
-      expect(page).to have_content("Actual phase (1/8)")
+      expect(page).to have_content("Actual phase")
       expect(page).to have_content("Accepting projects")
       expect(page).to have_link 'Help with participatory budgets'
       expect(page).to have_link 'See all phases'
@@ -31,7 +31,7 @@ feature 'Budgets' do
     expect(page).to have_content "Help with participatory budgets"
 
     within("#budget_heading") do
-      expect(page).to have_content("Actual phase (5/8)")
+      expect(page).to have_content("Actual phase")
     end
 
     within('#budget_info') do

@@ -736,6 +736,10 @@
         color: $text;
       }
     }
+
+    &.past-budgets {
+      min-height: 0;
+    }
   }
 
   .debate-content,
@@ -1110,7 +1114,8 @@
     p,
     a,
     .back,
-    .icon-angle-left {
+    .icon-angle-left,
+    .description {
       color: #fff;
     }
 

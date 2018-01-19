@@ -68,7 +68,7 @@ es:
       spending_proposals_info: 'Participa en http://url.consul'
       spending_proposals_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
       budget_investments_info: 'Participa en http://url.consul'
-      budget_investments_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
+      budget_investments_note: Los presupuestos participativos se invertirán en los proyectos de gasto más apoyados.
     print_info: Imprimir esta información
     proposals:
       alert:
