@@ -144,6 +144,8 @@ es:
           valuation_open: Abiertos
           all: Todos
           without_admin: Sin administrador
+          without_valuator: Sin evaluador
+          under_valuation: En evaluación
           valuation_finished: Evaluación finalizada
           feasible: Viables
           selected: Seleccionados

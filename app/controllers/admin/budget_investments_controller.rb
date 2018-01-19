@@ -3,7 +3,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
-  has_filters(%w{without_admin valuation_finished all},
+  has_filters(%w{all without_admin without_valuator under_valuation valuation_finished},
               only: [:index, :toggle_selection])
 
   before_action :load_budget
