@@ -90,7 +90,6 @@ feature 'Admin budgets' do
       click_link 'Create new budget'
 
       fill_in 'budget_name', with: 'M30 - Summer campaign'
-      fill_in 'budget_description_accepting', with: 'Budgeting for summer 2017 maintenance and improvements of the road M-30'
       select 'Accepting projects', from: 'budget[phase]'
 
       click_button 'Create Participatory budget'
@@ -134,7 +133,29 @@ feature 'Admin budgets' do
       expect(page).to have_content('There is 1 participatory budget')
     end
   end
-  
+
+  context 'Edit' do
+    let!(:budget) { create(:budget) }
+
+    scenario 'Show phases table' do
+      visit admin_budgets_path
+      click_link 'Edit budget'
+
+      within '#budget-phases-table' do
+        budget.phases.each do |phase|
+          within "#budget_phase_#{phase.id}" do
+            expect(page).to have_content(I18n.t("budgets.phase.#{phase.kind}"))
+            expect(page).to have_content("#{phase.starts_at.to_date} - #{phase.ends_at.to_date}")
+            expect(page).to have_css('.budget-phase-enabled.enabled')
+            expect(page).to have_link('Edit phase', href: edit_admin_budget_budget_phase_path(budget, phase))
+
+            expect(page).to have_content('Active') if budget.current_phase == phase
+          end
+        end
+      end
+    end
+  end
+
   context 'Update' do
 
     background do
