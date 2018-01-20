@@ -342,7 +342,7 @@ feature 'Tracking' do
       expect(page.html).to have_content "weboConv(27);"
 
       first(:link, "Proposals").click
-      expect(page).to have_content "Create proposal"
+      expect(page).to have_content "Create a proposal"
       expect(page.html).to have_content "weboConv(29);"
     end
 
