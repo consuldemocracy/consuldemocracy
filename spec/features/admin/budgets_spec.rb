@@ -116,7 +116,7 @@ feature 'Admin budgets' do
     scenario 'Destroy a budget without investments' do
       visit admin_budgets_path
       click_link 'Edit budget'
-      click_button 'Delete budget'
+      click_link 'Delete budget'
 
       expect(page).to have_content('Budget deleted successfully')
       expect(page).to have_content('budgets cannot be found')
@@ -127,7 +127,7 @@ feature 'Admin budgets' do
 
       visit admin_budgets_path
       click_link 'Edit budget'
-      click_button 'Delete budget'
+      click_link 'Delete budget'
 
       expect(page).to have_content('You cannot destroy a Budget that has associated investments')
       expect(page).to have_content('There is 1 budget')
