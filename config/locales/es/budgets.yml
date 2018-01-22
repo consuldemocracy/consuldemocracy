@@ -166,6 +166,9 @@ es:
       accepted: 'Proyecto de gasto aceptado: '
       discarded: 'Proyecto de gasto descartado: '
       incompatibles: Incompatibles
+      investment_proyects: Ver lista completa de proyectos de gasto
+      unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
+      not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
     phases:
       errors:
         dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"
