@@ -8,7 +8,7 @@ feature 'Budget Investments' do
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:other_budget) { create(:budget, name: "What a Budget!") }
   let(:group) { create(:budget_group, name: "Health", budget: budget) }
-  let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
+  let!(:heading) { create(:budget_heading, name: "More hospitals", price: 666666, group: group) }
 
   before do
     Setting['feature.allow_images'] = true
@@ -806,8 +806,13 @@ feature 'Budget Investments' do
       sp2 = create(:budget_investment, :selected, heading: heading, price: 20000)
 
       login_as(user)
-      visit budget_path(budget)
-      click_link "Health"
+      # visit budget_path(budget)
+      # click_link "Health"
+      visit root_path
+
+      first(:link, "Participatory budgeting").click
+
+      click_link "More hospitals €666,666"
 
       within("#budget_investment_#{sp1.id}") do
         expect(page).to have_content sp1.title
@@ -1091,6 +1096,29 @@ feature 'Budget Investments' do
         expect(page).not_to have_content investment1.heading.name
         expect(page).not_to have_content investment1.tag_list.first
       end
+    end
+
+    scenario "Maintain pagination in minimal view" do
+      per_page = 10
+      (per_page + 1).times { create(:budget_investment, heading: heading) }
+
+      visit budget_path(budget)
+      click_link heading.group.name
+
+      within(".budgets-minimal-selector") do
+        first("a").click
+      end
+
+      expect(page).to have_selector('.budget-investment', count: per_page)
+
+      within("ul.pagination") do
+        expect(page).to have_content("1")
+        expect(page).to have_link('2')
+        expect(page).not_to have_content("3")
+        click_link "Next", exact: false
+      end
+
+      expect(page).to have_selector('.budget-investment', count: 4)
     end
 
     scenario "Switch between minimal and default views" do

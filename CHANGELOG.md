@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added actions to edit and delete a budget's headings https://github.com/consul/consul/pull/1917
 - Allow Budget Investments to be Related to other content https://github.com/consul/consul/pull/2311
 - New Budget::Phase model to add dates, enabling and more https://github.com/consul/consul/pull/2323
+- Add optional Guide page to help users decide between Proposal & Investment creation https://github.com/consul/consul/pull/2343
 
 ### Changed
 - Updated multiple minor & patch gem versions thanks to [Depfu](https://depfu.com)
@@ -27,6 +28,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Prevent edition of investments if budget is in the final phase https://github.com/consul/consul/pull/2223
 - Split 'routes.rb' file into multiple small files https://github.com/consul/consul/pull/1908
 - Design Improvements https://github.com/consul/consul/pull/2327
+- Change concept of current budget to account for multiple budgets https://github.com/consul/consul/pull/2322
+- Investment valuation finished alert https://github.com/consul/consul/pull/2324
+- Updated translations to other languages from Crowdin contributions https://github.com/consul/consul/pull/2347 especial mention to @ferraniki for 100% Valencian translation!
 
 ### Deprecated
 - Budget's `description_*` columns will be erased from database in next release. Please run rake task `budgets:phases:generate_missing` to migrate them. Details at Warning section of https://github.com/consul/consul/pull/2323
@@ -36,6 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 - Fixed deprecation warning in specs https://github.com/consul/consul/pull/2293
+- Fix social images meta tags https://github.com/consul/consul/pull/1124
 
 ### Security
 

@@ -19,7 +19,7 @@ class Management::BudgetsController < Management::BaseController
   end
 
   def print_investments
-    @budget = Budget.current
+    @budget = current_budget
   end
 
   private

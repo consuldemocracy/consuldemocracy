@@ -56,7 +56,7 @@
         <div class="small-12 margin-bottom">
           <div class="row">
             <div class="small-12 medium-9 column">
-              <h2><%= t("budgets.investments.index.by_heading_html", heading: @heading.name) %></h2>
+              <h2><%= t("budgets.investments.index.by_heading", heading: @heading.name) %></h2>
             </div>
             <div class="small-12 medium-3 column">
               <%= render "minimal_selector" %>
@@ -95,6 +95,8 @@
           <% if Budget.balloting.any? %>
             <%= render "banners" %>
           <% end %>
+
+          <%= paginate @investments %>
         </div>
 
       <% end %>
