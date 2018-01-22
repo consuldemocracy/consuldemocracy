@@ -22,7 +22,7 @@
         </tr>
       </thead>
 
-      <% @budget.phases.each do |phase| %>
+      <% @budget.phases.order(:id).each do |phase| %>
         <tr id="<%= dom_id(phase) %>" class="phase">
           <td>
             <%= t("budgets.phase.#{phase.kind}") %>
