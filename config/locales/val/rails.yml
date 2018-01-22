@@ -9,18 +9,18 @@ val:
       - Dv
       - Ds
     abbr_month_names:
-      1: Gen
-      2: Feb
-      3: Mar
-      4: Abr
-      5: Mai
-      6: Jun
-      7: Jul
-      8: Ago
-      9: Set
-      10: Oct
-      11: Nov
-      12: Des
+      - Gen
+      - Feb
+      - Mar
+      - Abr
+      - Mai
+      - Jun
+      - Jul
+      - Ago
+      - Set
+      - Oct
+      - Nov
+      - Des
     day_names:
       - Diumenge
       - Dilluns
@@ -34,18 +34,18 @@ val:
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-      1: Gener
-      2: Febrer
-      3: Març
-      4: Abril
-      5: Maig
-      6: Juny
-      7: Juliol
-      8: Agost
-      9: Setembre
-      10: Octubre
-      11: Novembre
-      12: Desembre
+      - Gener
+      - Febrer
+      - Març
+      - Abril
+      - Maig
+      - Juny
+      - Juliol
+      - Agost
+      - Setembre
+      - Octubre
+      - Novembre
+      - Desembre
     order:
       - :day
       - :month
