@@ -7,7 +7,7 @@
         -
         <%= format_date(phase.ends_at - 1.day) if phase.ends_at.present? %>
       </span>
-      <p><%= phase.summary %></p>
+      <p><%= safe_html_with_links(phase.summary) %></p>
     </li>
   <% end %>
 </ul>

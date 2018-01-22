@@ -53,7 +53,7 @@ feature 'Budgets' do
 
     budget.phases.drafting.update(starts_at: '30-12-2017', ends_at: '31-12-2017', enabled: true,
                                   description: 'Description of drafting phase',
-                                  summary: 'This is the summary for drafting phase')
+                                  summary: '<p>This is the summary for drafting phase</p>')
 
     budget.phases.accepting.update(starts_at: '01-01-2018', ends_at: '10-01-2018', enabled: true,
                                    description: 'Description of accepting phase',
