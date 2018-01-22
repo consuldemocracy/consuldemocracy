@@ -9,6 +9,7 @@
 // 07. Legislation
 // 08. CMS
 // 09. Map
+// 10. Budget phases
 //
 
 // 01. Global styles
@@ -1035,4 +1036,38 @@ table {
 .map-attributtion {
   visibility: hidden;
   height: 0;
+}
+
+// 10. Budget phases
+// -----------------
+.budget-phase-enabled {
+  font-weight: bold;
+  padding-left: rem-calc(20);
+  position: relative;
+  text-decoration: none;
+
+  &.enabled::before,
+  &.disabled::before {
+    font-family: 'icons';
+    left: 0;
+    position: absolute;
+  }
+
+  &.enabled {
+    color: $check;
+
+    &::before {
+      color: $check;
+      content: '\6c';
+    }
+  }
+
+  &.disabled {
+    color: #000;
+
+    &::before {
+      color: #000;
+      content: '\76';
+    }
+  }
 }
