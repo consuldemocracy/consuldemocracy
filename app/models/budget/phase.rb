@@ -41,6 +41,14 @@ class Budget
       prev_phase&.enabled? ? prev_phase : prev_phase&.prev_enabled_phase
     end
 
+    def invalid_dates_range?
+      if starts_at.present? && ends_at.present? && starts_at >= ends_at
+        errors.add(:starts_at, I18n.t('budgets.phases.errors.dates_range_invalid'))
+      end
+    end
+
+    private
+
     def adjust_date_ranges
       if enabled?
         next_enabled_phase&.update_column(:starts_at, ends_at)
@@ -49,14 +57,6 @@ class Budget
         next_enabled_phase&.update_column(:starts_at, starts_at)
       end
     end
-
-    def invalid_dates_range?
-      if starts_at.present? && ends_at.present? && starts_at >= ends_at
-        errors.add(:starts_at, I18n.t('budgets.phases.errors.dates_range_invalid'))
-      end
-    end
-
-    private
 
     def touch_budget
       budget.touch
