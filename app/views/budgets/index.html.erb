@@ -69,13 +69,11 @@
               <li class="heading small-12 medium-4 large-2">
                 <% unless @budget.informing? %>
                   <%= link_to budget_investments_path(@budget.id, heading_id: heading.id) do %>
-                    <%= heading.name %>
-                    <span><%= @budget.formatted_heading_price(heading) %></span>
+                    <%= heading_name_and_price_html(heading, @budget) %>
                   <% end %>
                 <% else %>
                   <div>
-                    <%= heading.name %>
-                    <span><%= @budget.formatted_heading_price(heading) %></span>
+                    <%= heading_name_and_price_html(heading, @budget) %>
                   </div>
                 <% end %>
               </li>

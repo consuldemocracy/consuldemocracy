@@ -26,7 +26,7 @@ class Budget
     scope :enabled,           -> { where(enabled: true) }
     scope :published,         -> { enabled.where.not(kind: 'drafting') }
     scope :drafting,          -> { find_by_kind('drafting') }
-    scope :informing,       -> { find_by_kind('informing') }
+    scope :informing,         -> { find_by_kind('informing') }
     scope :accepting,         -> { find_by_kind('accepting')}
     scope :reviewing,         -> { find_by_kind('reviewing')}
     scope :selecting,         -> { find_by_kind('selecting')}
