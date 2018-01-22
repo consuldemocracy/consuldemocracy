@@ -415,6 +415,20 @@ feature 'Budget Investments' do
         expect(page).not_to have_content('My ballot')
       end
     end
+
+    scenario "Heading options are correctly ordered" do
+      city_group = create(:budget_group, name: "Toda la ciudad", budget: budget)
+      create(:budget_heading, name: "Toda la ciudad", price: 333333, group: city_group)
+
+      login_as(author)
+
+      visit new_budget_investment_path(budget_id: budget.id)
+
+      select_options = find('#budget_investment_heading_id').all('option').collect(&:text)
+      expect(select_options.first).to eq('')
+      expect(select_options.second).to eq('Toda la ciudad: Toda la ciudad')
+      expect(select_options.third).to eq('Health: More hospitals')
+    end
   end
 
   scenario "Show" do
