@@ -310,7 +310,7 @@ feature 'Ballots' do
       click_link group.name
       # No need to click on the heading name
 
-      expect(page).to have_text("Investment projects with scope:#{heading.name}")
+      expect(page).to have_text("Investment projects with scope: #{heading.name}")
       expect(page).to have_current_path(custom_budget_investments_path(budget, group, heading), ignore_query: true)
     end
 
