@@ -56,11 +56,6 @@ es:
       description_reviewing: "El 30 de junio se cerró la votación final. Los proyectos ganadores se darán a conocer el próximo 13 de julio."
       title_finished: "Resultados de los Presupuestos participativos de Madrid"
       description_finished: "Mira qué proyectos ciudadanos se ejecutarán a partir de 2018 con los 100 millones de los presupuestos participativos."
-    budget_2018:
-      accepting:
-        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
-        description: "Presenta tus proyectos a los presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
-        social: "#ParticipativosMadrid18: Tú decides a qué proyectos ciudadanos dedicar 100 millones de euros del presupuesto municipal. Participa en http://decide.madrid.es/presupuestos"
   social_share:
     polls_show:
       title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"
@@ -178,11 +173,6 @@ es:
       title: "¿Tienes una idea para cambiar Madrid?"
       text: "El Ayuntamiento de Madrid llevará a cabo tu propuesta si consigues que pase a votación ciudadana. Necesitas 27.064 apoyos en Decide Madrid, el 1% de la población con derecho a voto."
       button: "Crea una propuesta"
-    header_budget:
-      label: "Presupuestos participativos 2018"
-      title: "Decide los proyectos ciudadanos que hará el Ayuntamiento de Madrid, tienes:"
-      text: "100 millones de euros"
-      button: "Presenta tu proyecto"
     proposals:
       label: "Propuestas"
       title: "¿Qué es y cómo se crea una propuesta ciudadana?"
