@@ -21,6 +21,7 @@ class Budget
     include ActsAsParanoidAliases
     include Relationable
     include Notifiable
+    include Filterable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -258,9 +259,10 @@ class Budget
 
     def self.apply_filters_and_search(_budget, params, current_filter = nil)
       investments = all
-      investments = investments.send(current_filter)            if current_filter.present?
-      investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
-      investments = investments.search(params[:search])         if params[:search].present?
+      investments = investments.send(current_filter)             if current_filter.present?
+      investments = investments.by_heading(params[:heading_id])  if params[:heading_id].present?
+      investments = investments.search(params[:search])          if params[:search].present?
+      investments = investments.filter(params[:advanced_search]) if params[:advanced_search].present?
       investments
     end
 

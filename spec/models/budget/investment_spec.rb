@@ -514,6 +514,23 @@ describe Budget::Investment do
 
   describe "search" do
 
+    context "attributes" do
+
+      it "searches by title" do
+        budget_investment = create(:budget_investment, title: 'save the world')
+        results = described_class.search('save the world')
+        expect(results).to eq([budget_investment])
+      end
+
+      it "searches by author name" do
+        author = create(:user, username: 'Danny Trejo')
+        budget_investment = create(:budget_investment, author: author)
+        results = described_class.search('Danny')
+        expect(results).to eq([budget_investment])
+      end
+
+    end
+
     context "tags" do
       it "searches by tags" do
         investment = create(:budget_investment, tag_list: 'Latina')
