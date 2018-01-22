@@ -49,9 +49,15 @@
 
 
       <% if @budget.finished? || (@budget.balloting? && can?(:read_results, @budget)) %>
-        <%= link_to t("budgets.show.see_results"),
+        <% if @budget.name == "Presupuestos participativos 2016" %>
+          <%= link_to t("budgets.show.see_results"),
+                    participatory_budget_results_path,
+                    class: "button margin-top expanded" %>
+        <% else %>
+          <%= link_to t("budgets.show.see_results"),
                     budget_results_path(@budget, heading_id: @budget.headings.first),
                     class: "button margin-top expanded" %>
+        <% end %>
       <% end %>
     </div>
   </div>
