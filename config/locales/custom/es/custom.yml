@@ -183,13 +183,6 @@ es:
       title: "Decide los proyectos ciudadanos que hará el Ayuntamiento de Madrid, tienes:"
       text: "100 millones de euros"
       button: "Presenta tu proyecto"
-    proposals:
-      label: "Propuestas"
-      title: "¿Qué es y cómo se crea una propuesta ciudadana?"
-      text: "Es un mecanismo de participación para que la ciudadanía decida de forma directa las políticas municipales."
-      link: "Más información sobre cómo crear propuestas ciudadanas"
-      url: "https://diario.madrid.es/decidemadrid/2017/09/05/las-propuestas-ciudadanas-de-decide-madrid-paso-a-paso/"
-      alt: "Creación de una propuesta en Decide Madrid"
     once_plazas:
       label: "Resultados votación"
       title: "La ciudadanía aprueba remodelar once plazas"
