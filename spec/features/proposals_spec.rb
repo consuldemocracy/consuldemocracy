@@ -184,8 +184,9 @@ feature 'Proposals' do
     login_as(author)
 
     visit proposals_path
+
     within('aside') do
-      click_link 'Create proposal'
+      click_link 'Create a proposal'
     end
 
     expect(current_path).to eq(new_proposal_path)
