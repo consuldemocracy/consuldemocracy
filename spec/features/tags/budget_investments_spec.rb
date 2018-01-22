@@ -107,7 +107,7 @@ feature 'Tags' do
     health    = create(:tag, name: 'Health',    kind: 'category')
 
     visit budget_path(budget)
-    click_link 'Create budget investment'
+    click_link "Create a budget investment"
 
     select  'Health: More hospitals', from: 'budget_investment_heading_id'
     fill_in 'budget_investment_title', with: 'Build a skyscraper'
@@ -132,7 +132,7 @@ feature 'Tags' do
     health    = create(:tag, name: 'Health',    kind: 'category')
 
     visit budget_investments_path(budget, heading_id: heading.id)
-    click_link 'Create budget investment'
+    click_link "Create a budget investment"
 
     select  'Health: More hospitals', from: 'budget_investment_heading_id'
     fill_in 'budget_investment_title', with: 'Build a skyscraper'

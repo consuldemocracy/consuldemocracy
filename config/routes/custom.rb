@@ -28,7 +28,7 @@ end
 
 ### Budgets
 get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
-get 'presupuestos',                        to: 'pages#show', id: 'more_info/budgets/welcome',  as: 'budgets_welcome'
+get 'presupuestos',                        to: 'budgets#index', id: 'more_info/budgets/welcome',  as: 'budgets_welcome'
 get "presupuestos/:id/estadisticas",       to: "budgets/stats#show", as: 'custom_budget_stats'
 get "presupuestos/:id/resultados",         to: "budgets/results#show", as: 'custom_budget_results'
 get "presupuestos/:id/resultados/:heading_id", to: "budgets/results#show", as: 'custom_budget_heading_result'

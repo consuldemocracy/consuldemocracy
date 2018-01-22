@@ -98,7 +98,7 @@ module Budgets
 
       def load_investments
         @investments = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}")
-        @investments = @investments.page(params[:page]).per(10).for_render if @view == "default"
+        @investments = @investments.page(params[:page]).per(10).for_render
       end
 
       def load_investment_votes(investments)

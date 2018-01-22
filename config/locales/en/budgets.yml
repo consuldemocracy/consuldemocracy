@@ -43,9 +43,17 @@ en:
       section_header:
         icon_alt: Participatory budgets icon
         title: Participatory budgets
-        help: Help about participatory budgets
+        help: Help with participatory budgets
+        all_phases: See all phases
+      all_phases: Budget investment's phases
+      map: Budget investments' proposals located geographically
+      investment_proyects: List of all investment projects
+      unfeasible_investment_proyects: List of all unfeasible investment projects
+      not_selected_investment_proyects: List of all investment projects not selected for balloting
+      finished_budgets: Finished participatory budgets
+      see_results: See results
       section_footer:
-        title: Help about participatory budgets
+        title: Help with participatory budgets
         description: With the participatory budgets the citizens decide to which projects presented by the neighbors is destined a part of the municipal budget.
         help_text_1: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. Any registered person over 16 years old can propose an investment project that is preselected in a phase of citizen supports."
         help_text_2: "The most voted projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council once the municipal budgets of the next year are approved."
@@ -68,7 +76,7 @@ en:
         unfeasible: Unfeasible investment projects
         unfeasible_text: "The investments must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All investments don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
         unfeasible_text_definitions: see definitions here
-        by_heading_html: "Investment projects with scope:<br>%{heading}"
+        by_heading: "Investment projects with scope: %{heading}"
         search_form:
           button: Search
           placeholder: Search investment projects...
@@ -89,7 +97,7 @@ en:
           zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
           verify_account: "verify your account"
-          create: "Create budget investment"
+          create: "Create a budget investment"
           not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
           sign_in: "sign in"
           sign_up: "sign up"

@@ -73,7 +73,9 @@
       <% if @proposals.any? %>
         <% if request.path != human_rights_proposals_path %>
           <div class="show-for-small-only">
-            <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+            <%= link_to t("proposals.index.start_proposal"),
+                        new_proposal_guide,
+                        class: 'button expanded' %>
           </div>
         <% end %>
       <% end %>
@@ -115,7 +117,7 @@
       <aside class="margin-bottom">
         <% if request.path != human_rights_proposals_path %>
           <%= link_to t("proposals.index.start_proposal"),
-                      new_proposal_path,
+                      new_proposal_guide,
                       class: 'button expanded' %>
         <% end %>
 

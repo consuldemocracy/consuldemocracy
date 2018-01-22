@@ -3,54 +3,24 @@ require 'rails_helper'
 describe InstallationController, type: :request do
 
   describe "consul.json" do
-    let(:feature_settings) do
+    let(:test_feature_settings) do
       {
-        'debates' => nil,
-        'spending_proposals' => 't',
-        'polls' => nil,
-        'proposals' => 't',
-        'twitter_login' => nil,
-        'facebook_login' => nil,
-        'google_login' => nil,
-        'public_stats' => nil,
-        'budgets' => nil,
-        'signature_sheets' => nil,
-        'legislation' => nil,
-        'user.recommendations' => nil,
-        'community' => nil,
-        'map' => 't',
-        'allow_images' => nil,
-        'proposals' => 't',
-        'spending_proposal_features.voting_allowed' => 't',
-        'spending_proposal_features.final_voting_allowed' => 't',
-        'spending_proposal_features.open_results_page' => nil,
-        'spending_proposal_features.phase1' => 't',
-        'spending_proposal_features.phase2' => nil,
-        'spending_proposal_features.phase3' => nil,
-        'spending_proposal_features.valuation_allowed' => nil,
+        'disabled_feature' => nil,
+        'enabled_feature' => 't'
       }
     end
 
+    let(:seeds_feature_settings) { Setting.where("key LIKE 'feature.%'") }
+
     before do
-      feature_settings.each { |feature_name, feature_value| Setting["feature.#{feature_name}"] = feature_value }
+      @current_feature_settings = seeds_feature_settings.pluck(:key, :value).to_h
+      seeds_feature_settings.destroy_all
+      test_feature_settings.each { |feature_name, feature_value| Setting["feature.#{feature_name}"] = feature_value }
     end
 
     after do
-      Setting['feature.debates'] = true
-      Setting['feature.spending_proposals'] = nil
-      Setting['feature.polls'] = true
-      Setting['feature.twitter_login'] = true
-      Setting['feature.facebook_login'] = true
-      Setting['feature.google_login'] = true
-      Setting['feature.public_stats'] = true
-      Setting['feature.budgets'] = true
-      Setting['feature.signature_sheets'] = true
-      Setting['feature.legislation'] = true
-      Setting['feature.user.recommendations'] = true
-      Setting['feature.community'] = true
-      Setting['feature.map'] = nil
-      Setting['feature.spending_proposal_features.voting_allowed'] = nil
-      Setting['feature.allow_images'] = nil
+      test_feature_settings.keys.each { |feature_name| Setting.find_by(key: "feature.#{feature_name}").destroy }
+      @current_feature_settings.each { |feature_name, feature_value| Setting[feature_name] = feature_value }
     end
 
     specify "with query string inside query params" do
@@ -58,7 +28,7 @@ describe InstallationController, type: :request do
 
       expect(response).to have_http_status(:ok)
       expect(JSON.parse(response.body)['release']).not_to be_empty
-      expect(JSON.parse(response.body)['features']).to eq(feature_settings)
+      expect(JSON.parse(response.body)['features']).to eq(test_feature_settings)
     end
   end
 end

@@ -4,13 +4,8 @@
 
       <div class="row">
         <div class="small-12 column">
-          <% if @heading.group.headings.count == 1 %>
-            <%= back_link_to budget_path(@budget, unfeasible: params[:unfeasible]) %>
-          <% else %>
-            <%= back_link_to budget_group_path(@budget,
-                    @heading.group,
-                    unfeasible: params[:unfeasible]) %>
-          <% end %>
+          <%= back_link_to budgets_path %>
+
           <% if can? :show, @ballot %>
             <%= link_to t("budgets.investments.header.check_ballot"),
                         budget_ballot_path(@budget),
