@@ -1,31 +1,14 @@
-<% if current_budget %>
-  <div class="expanded jumbo budget-home text-center">
-    <div class="row">
-      <div class="small-12 medium-9 column small-centered">
-        <span class="tiny-title"><%= t("welcome.header_budget.label") %></span>
-        <p class="lead-title margin-top"><%= t("welcome.header_budget.title") %></p>
-        <p class="lead"><%= t("welcome.header_budget.text") %></p>
-        <div class="small-12 medium-6 large-4 column small-centered">
-          <%= link_to t("welcome.header_budget.button"),
-                      budgets_path,
-                      class: "button expanded large", title: t("welcome.header_budget.button") %>
-        </div>
+<div class="expanded jumbo header text-center">
+  <div class="row">
+    <div class="small-12 medium column small-centered">
+      <span class="label"><%= t("welcome.header.label") %></span>
+      <p class="lead-title"><%= t("welcome.header.title") %></p>
+      <p class="lead"><%= t("welcome.header.text") %></p>
+      <div class="small-12 medium-6 large-4 column small-centered">
+        <%= link_to t("welcome.header.button"),
+                    new_proposal_path,
+                    class: "button expanded large", title: t("welcome.header.button") %>
       </div>
     </div>
   </div>
-<% else %>
-  <div class="expanded jumbo header text-center">
-    <div class="row">
-      <div class="small-12 column small-centered">
-        <span class="label"><%= t("welcome.header.label") %></span>
-        <p class="lead-title"><%= t("welcome.header.title") %></p>
-        <p class="lead"><%= t("welcome.header.text") %></p>
-        <div class="small-12 medium-6 large-4 column small-centered">
-          <%= link_to t("welcome.header.button"),
-                      new_proposal_path,
-                      class: "button expanded large", title: t("welcome.header.button") %>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
+</div>
