@@ -30,7 +30,7 @@ feature 'Admin budgets' do
       visit admin_budgets_path
 
       expect(page).to have_content(budget.name)
-      expect(page).to have_content(I18n.t("budgets.phase.#{budget.phase}"))
+      expect(page).to have_content(translated_phase_name(phase_kind: budget.phase))
     end
 
     scenario 'Filters by phase' do
@@ -142,13 +142,23 @@ feature 'Admin budgets' do
       click_link 'Edit budget'
 
       within '#budget-phases-table' do
+
+        Budget::Phase::PHASE_KINDS.each do |phase_kind|
+          phase_index = Budget::Phase::PHASE_KINDS.index(phase_kind)
+          break if phase_kind == Budget::Phase::PHASE_KINDS.last
+          next_phase_kind = Budget::Phase::PHASE_KINDS[phase_index + 1]
+          next_phase_name = translated_phase_name(phase_kind: next_phase_kind)
+          expect(translated_phase_name(phase_kind: phase_kind)).to appear_before(next_phase_name)
+        end
+
         budget.phases.each do |phase|
+          edit_phase_link = edit_admin_budget_budget_phase_path(budget, phase)
+
           within "#budget_phase_#{phase.id}" do
-            expect(page).to have_content(I18n.t("budgets.phase.#{phase.kind}"))
+            expect(page).to have_content(translated_phase_name(phase_kind: phase.kind))
             expect(page).to have_content("#{phase.starts_at.to_date} - #{phase.ends_at.to_date}")
             expect(page).to have_css('.budget-phase-enabled.enabled')
-            expect(page).to have_link('Edit phase', href: edit_admin_budget_budget_phase_path(budget, phase))
-
+            expect(page).to have_link('Edit phase', href: edit_phase_link)
             expect(page).to have_content('Active') if budget.current_phase == phase
           end
         end
@@ -304,4 +314,8 @@ feature 'Admin budgets' do
     end
 
   end
+end
+
+def translated_phase_name(phase_kind: phase_kind)
+  I18n.t("budgets.phase.#{phase_kind}")
 end
