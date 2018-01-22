@@ -13,5 +13,9 @@ class Budget
     def to_param
       name.parameterize
     end
+
+    def single_heading_group?
+      headings.count == 1
+    end
   end
 end

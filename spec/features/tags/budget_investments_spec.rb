@@ -65,7 +65,7 @@ feature 'Tags' do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  "#{group.name}: #{heading.name}", from: 'budget_investment_heading_id'
+    select  heading.name, from: 'budget_investment_heading_id'
     fill_in 'budget_investment_title', with: 'Build a skyscraper'
     fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
     check   'budget_investment_terms_of_service'
@@ -84,7 +84,7 @@ feature 'Tags' do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  "#{group.name}: #{heading.name}", from: 'budget_investment_heading_id'
+    select  heading.name, from: 'budget_investment_heading_id'
     fill_in 'budget_investment_title', with: 'Build a skyscraper'
     fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
     check 'budget_investment_terms_of_service'
@@ -109,7 +109,7 @@ feature 'Tags' do
     visit budget_path(budget)
     click_link "Create a budget investment"
 
-    select  'Health: More hospitals', from: 'budget_investment_heading_id'
+    select  heading.name, from: 'budget_investment_heading_id'
     fill_in 'budget_investment_title', with: 'Build a skyscraper'
     fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
     check   'budget_investment_terms_of_service'
@@ -134,7 +134,7 @@ feature 'Tags' do
     visit budget_investments_path(budget, heading_id: heading.id)
     click_link "Create a budget investment"
 
-    select  'Health: More hospitals', from: 'budget_investment_heading_id'
+    select  heading.name, from: 'budget_investment_heading_id'
     fill_in 'budget_investment_title', with: 'Build a skyscraper'
     fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
     check   'budget_investment_terms_of_service'
@@ -155,7 +155,7 @@ feature 'Tags' do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  "#{group.name}: #{heading.name}", from: 'budget_investment_heading_id'
+    select  heading.name, from: 'budget_investment_heading_id'
     fill_in 'budget_investment_title', with: 'Build a skyscraper'
     fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
     check   'budget_investment_terms_of_service'
@@ -173,7 +173,7 @@ feature 'Tags' do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  "#{group.name}: #{heading.name}", from: 'budget_investment_heading_id'
+    select  heading.name, from: 'budget_investment_heading_id'
     fill_in 'budget_investment_title', with: 'Build a skyscraper'
     fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
     check   'budget_investment_terms_of_service'
