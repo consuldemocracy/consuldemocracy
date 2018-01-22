@@ -16,22 +16,26 @@ feature 'Budgets' do
       heading1 = create(:budget_heading, group: group1)
       heading2 = create(:budget_heading, group: group2)
 
+      last_budget.update_attributes(phase: 'informing')
+
       visit budgets_path
+
 
       within("#budget_heading") do
         expect(page).to have_content(last_budget.name)
         expect(page).to have_content(last_budget.description)
-        expect(page).to have_content("Actual phase (2/9)")
-        expect(page).to have_content("Accepting projects")
+        expect(page).to have_content(I18n.t('budgets.phase.informing'))
         expect(page).to have_link 'Help about participatory budgets'
         expect(page).to have_link 'See all phases'
       end
+
+      expect(page).to have_content("Accepting projects")
 
       last_budget.update_attributes(phase: 'publishing_prices')
       visit budgets_path
 
       within("#budget_heading") do
-        expect(page).to have_content("Actual phase (6/9)")
+        expect(page).to have_content(I18n.t('budgets.phase.publishing_prices'))
       end
 
       within('#budget_info') do
