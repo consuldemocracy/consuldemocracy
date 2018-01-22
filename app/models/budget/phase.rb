@@ -21,6 +21,7 @@ class Budget
     before_validation :sanitize_description
 
     after_save :adjust_date_ranges
+    after_save :touch_budget
 
     scope :enabled,           -> { where(enabled: true) }
     scope :published,         -> { enabled.where.not(kind: 'drafting') }
@@ -58,6 +59,10 @@ class Budget
     end
 
     private
+
+    def touch_budget
+      budget.touch
+    end
 
     def prev_phase_dates_valid?
       if enabled? && starts_at.present? && prev_enabled_phase.present?
