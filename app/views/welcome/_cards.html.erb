@@ -1,23 +1,5 @@
 <div class="row">
-  <div class="small-12 medium-4 column margin-bottom">
-    <figure class="figure-card">
-      <%= link_to t("welcome.proposals.url"), title: t("welcome.proposals.link") + t("shared.target_blank_html"), target: "_blank" do %>
-        <%= image_tag "welcome/proposals.jpg", alt: t("welcome.proposals.alt") %>
-      <% end %>
-      <figcaption>
-        <%= link_to t("welcome.proposals.url"), title: t("welcome.proposals.link") + t("shared.target_blank_html"), target: "_blank" do %>
-          <span><%= t("welcome.proposals.label") %></span><br>
-          <p class="title"><%= t("welcome.proposals.title") %></p>
-        <% end %>
-      </figcaption>
-    </figure>
-    <p><%= t("welcome.proposals.text") %></p>
-    <p>
-      <%= link_to t("welcome.proposals.link"), t("welcome.proposals.url"), title: t("shared.target_blank_html"), target: "_blank", class: "external-link" %>
-    </p>
-  </div>
-
-  <div class="small-12 medium-4 column margin-bottom">
+  <div class="small-12 medium-6 column margin-bottom">
     <figure class="figure-card">
       <%= link_to once_plazas_results_path, title: t("welcome.once_plazas.link") do %>
         <%= image_tag "welcome/once_plazas.jpg", alt: t("welcome.once_plazas.alt") %>
@@ -35,7 +17,7 @@
     </p>
   </div>
 
-  <div class="small-12 medium-4 column margin-bottom">
+  <div class="small-12 medium-6 column margin-bottom">
     <figure class="figure-card">
       <%= link_to root_url + "/system/budgets/2016/estado_propuestas_2016_b.xlsx", title: t("welcome.budgets.link") do %>
         <%= image_tag "welcome/budgets.jpg", alt: t("welcome.budgets.alt") %>
