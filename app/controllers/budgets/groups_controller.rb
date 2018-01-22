@@ -18,7 +18,7 @@ module Budgets
     end
 
     def load_group
-      @group = Budget::Group.find_by(slug: params[:id]) || Budget.find_by(id: params[:id])
+      @group = @budget.groups.find_by(slug: params[:id]) || @budget.groups.find_by(id: params[:id])
     end
 
   end
