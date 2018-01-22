@@ -235,7 +235,6 @@ feature 'Valuation budget investments' do
       within('#duration') { expect(page).to have_content('Undefined') }
       within('#feasibility') { expect(page).to have_content('Undecided') }
       expect(page).not_to have_content('Valuation finished')
-      expect(page).not_to have_content('Internal comments')
     end
 
     scenario 'Edit dossier' do
@@ -249,7 +248,6 @@ feature 'Valuation budget investments' do
       fill_in 'budget_investment_price_explanation', with: 'Very cheap idea'
       choose  'budget_investment_feasibility_feasible'
       fill_in 'budget_investment_duration', with: '19 months'
-      fill_in 'budget_investment_internal_comments', with: 'Should be double checked by the urbanism area'
       click_button 'Save changes'
 
       expect(page).to have_content "Dossier updated"
@@ -263,8 +261,6 @@ feature 'Valuation budget investments' do
       within('#duration') { expect(page).to have_content('19 months') }
       within('#feasibility') { expect(page).to have_content('Feasible') }
       expect(page).not_to have_content('Valuation finished')
-      expect(page).to have_content('Internal comments')
-      expect(page).to have_content('Should be double checked by the urbanism area')
     end
 
     scenario 'Feasibility can be marked as pending' do
@@ -290,7 +286,7 @@ feature 'Valuation budget investments' do
     scenario 'Feasibility selection makes proper fields visible', :js do
       feasible_fields = ['Price (€)', 'Cost during the first year (€)', 'Price explanation', 'Time scope']
       unfeasible_fields = ['Feasibility explanation']
-      any_feasibility_fields = ['Valuation finished', 'Internal comments']
+      any_feasibility_fields = ['Valuation finished']
       undecided_fields = feasible_fields + unfeasible_fields + any_feasibility_fields
 
       visit edit_valuation_budget_budget_investment_path(@budget, @investment)
