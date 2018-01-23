@@ -180,19 +180,6 @@ feature 'Budgets' do
 
       expect(page).to_not have_css("#budget_heading_#{heading3.id}")
       expect(page).to_not have_css("#budget_heading_#{heading4.id}")
-
-    end
-
-    scenario "Display budget's show when filter params present" do
-      visit budget_path(budget, filter: "unfeasible")
-
-      expect(page).to have_current_path(budget_path(budget, filter: "unfeasible"))
-    end
-
-    scenario "Redirect to budget's index when no filter params present" do
-      visit budget_path(budget)
-
-      expect(page).to have_current_path(budgets_path)
     end
 
   end
