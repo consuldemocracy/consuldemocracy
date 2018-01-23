@@ -134,26 +134,31 @@
 
       <div class="budget-investments-list">
         <% @budgets.finished.each do |budget| %>
-          <% if budget_published?(budget) %>
-            <div class="budget-investment clear">
-              <div class="panel past-budgets">
-                <div class="row" data-equalizer data-equalizer-on="medium">
-                  <div class="small-12 medium-9 column table" data-equalizer-watch>
-                    <div class="table-cell align-middle">
-                      <h3><%= budget.name %></h3>
-                    </div>
+          <div class="budget-investment clear">
+            <div class="panel past-budgets">
+              <div class="row" data-equalizer data-equalizer-on="medium">
+                <div class="small-12 medium-9 column table" data-equalizer-watch>
+                  <div class="table-cell align-middle">
+                    <h3><%= budget.name %></h3>
                   </div>
-                  <div class="small-12 medium-3 column table" data-equalizer-watch>
-                    <div class="table-cell align-middle">
+                </div>
+                <div class="small-12 medium-3 column table" data-equalizer-watch>
+                  <div id="budget_<%= budget.id %>_results"
+                       class="table-cell align-middle">
+                    <% if budget.name == "Presupuestos Participativos 2016" %>
+                      <%= link_to t("budgets.index.see_results"),
+                                    participatory_budget_results_path,
+                                    class: "button expanded" %>
+                    <% else %>
                       <%= link_to t("budgets.index.see_results"),
                                   budget_results_path(budget.id),
                                   class: "button expanded" %>
-                    </div>
+                    <% end %>
                   </div>
                 </div>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
       </div>
     </div>
