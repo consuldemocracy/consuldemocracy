@@ -68,7 +68,6 @@
                     budget_results_path(@budget),
                     class: "button hollow margin-left" %>
       <% end %>
-
       <% if @budget.persisted? %>
         <%= link_to t("admin.budgets.edit.delete"),
             admin_budget_path(@budget),

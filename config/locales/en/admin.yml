@@ -124,6 +124,7 @@ en:
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
+        recalculate: Recalculate Winner Investments
     budget_phases:
       edit:
         start_date: Start date
@@ -190,6 +191,7 @@ en:
         table_selection: "Selected"
         table_evaluation: "Show to valuators"
         table_incompatible: "Incompatible"
+        cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
