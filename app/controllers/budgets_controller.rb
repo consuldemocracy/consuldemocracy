@@ -15,7 +15,7 @@ class BudgetsController < ApplicationController
 
   def index
     @finished_budgets = @budgets.finished.order(created_at: :desc)
-    @budget = current_budget
+    @current_budget = current_budget
     @budgets_coordinates = current_budget_map_locations
   end
 
