@@ -107,7 +107,7 @@ class CensusApi
             datos_vivienda: {
               item: {
                 codigo_postal: "28013",
-                codigo_distrito: "01"
+                codigo_distrito: %w(01 02 03 04).sample
               }
             }
           }
