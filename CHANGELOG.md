@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add optional Guide page to help users decide between Proposal & Investment creation https://github.com/consul/consul/pull/2343
 - Add advanced search menu to investments list https://github.com/consul/consul/pull/2142
 - Allow admins to edit Budget phases https://github.com/consul/consul/pull/2353
+- Budget new Information phase https://github.com/consul/consul/pull/2349
 
 ### Changed
 - Updated multiple minor & patch gem versions thanks to [Depfu](https://depfu.com)
@@ -34,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Investment valuation finished alert https://github.com/consul/consul/pull/2324
 - Updated translations to other languages from Crowdin contributions https://github.com/consul/consul/pull/2347 especial mention to @ferraniki for 100% Valencian translation!
 - Finished budgets list order https://github.com/consul/consul/pull/2355
+- Improvements for Admin::Budget::Investment filters https://github.com/consul/consul/pull/2344
 
 ### Deprecated
 - Budget's `description_*` columns will be erased from database in next release. Please run rake task `budgets:phases:generate_missing` to migrate them. Details at Warning section of https://github.com/consul/consul/pull/2323
