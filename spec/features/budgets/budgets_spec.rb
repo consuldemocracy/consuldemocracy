@@ -80,42 +80,42 @@ feature 'Budgets' do
   scenario 'Index shows only published phases' do
 
     budget.update(phase: :finished)
+    phases = budget.phases
+    phases.drafting.update(starts_at: '30-12-2017', ends_at: '31-12-2017', enabled: true,
+                           description: 'Description of drafting phase',
+                           summary: '<p>This is the summary for drafting phase</p>')
 
-    budget.phases.drafting.update(starts_at: '30-12-2017', ends_at: '31-12-2017', enabled: true,
-                                  description: 'Description of drafting phase',
-                                  summary: '<p>This is the summary for drafting phase</p>')
+    phases.accepting.update(starts_at: '01-01-2018', ends_at: '10-01-2018', enabled: true,
+                            description: 'Description of accepting phase',
+                            summary: 'This is the summary for accepting phase')
 
-    budget.phases.accepting.update(starts_at: '01-01-2018', ends_at: '10-01-2018', enabled: true,
-                                   description: 'Description of accepting phase',
-                                   summary: 'This is the summary for accepting phase')
+    phases.reviewing.update(starts_at: '11-01-2018', ends_at: '20-01-2018', enabled: false,
+                            description: 'Description of reviewing phase',
+                            summary: 'This is the summary for reviewing phase')
 
-    budget.phases.reviewing.update(starts_at: '11-01-2018', ends_at: '20-01-2018', enabled: false,
-                                   description: 'Description of reviewing phase',
-                                   summary: 'This is the summary for reviewing phase')
+    phases.selecting.update(starts_at: '21-01-2018', ends_at: '01-02-2018', enabled: true,
+                            description: 'Description of selecting phase',
+                            summary: 'This is the summary for selecting phase')
 
-    budget.phases.selecting.update(starts_at: '21-01-2018', ends_at: '01-02-2018', enabled: true,
-                                   description: 'Description of selecting phase',
-                                   summary: 'This is the summary for selecting phase')
+    phases.valuating.update(starts_at: '10-02-2018', ends_at: '20-02-2018', enabled: false,
+                            description: 'Description of valuating phase',
+                            summary: 'This is the summary for valuating phase')
 
-    budget.phases.valuating.update(starts_at: '10-02-2018', ends_at: '20-02-2018', enabled: false,
-                                   description: 'Description of valuating phase',
-                                   summary: 'This is the summary for valuating phase')
+    phases.publishing_prices.update(starts_at: '21-02-2018', ends_at: '01-03-2018', enabled: false,
+                                    description: 'Description of publishing prices phase',
+                                    summary: 'This is the summary for publishing_prices phase')
 
-    budget.phases.publishing_prices.update(starts_at: '21-02-2018', ends_at: '01-03-2018', enabled: false,
-                                           description: 'Description of publishing prices phase',
-                                           summary: 'This is the summary for publishing_prices phase')
+    phases.balloting.update(starts_at: '02-03-2018', ends_at: '10-03-2018', enabled: true,
+                            description: 'Description of balloting phase',
+                            summary: 'This is the summary for balloting phase')
 
-    budget.phases.balloting.update(starts_at: '02-03-2018', ends_at: '10-03-2018', enabled: true,
-                                   description: 'Description of balloting phase',
-                                   summary: 'This is the summary for balloting phase')
+    phases.reviewing_ballots.update(starts_at: '11-03-2018', ends_at: '20-03-2018', enabled: false,
+                                    description: 'Description of reviewing ballots phase',
+                                    summary: 'This is the summary for reviewing_ballots phase')
 
-    budget.phases.reviewing_ballots.update(starts_at: '11-03-2018', ends_at: '20-03-2018', enabled: false,
-                                           description: 'Description of reviewing ballots phase',
-                                           summary: 'This is the summary for reviewing_ballots phase')
-
-    budget.phases.finished.update(starts_at: '21-03-2018', ends_at: '30-03-2018', enabled: true,
-                                  description: 'Description of finished phase',
-                                  summary: 'This is the summary for finished phase')
+    phases.finished.update(starts_at: '21-03-2018', ends_at: '30-03-2018', enabled: true,
+                           description: 'Description of finished phase',
+                           summary: 'This is the summary for finished phase')
 
     visit budgets_path
 
@@ -261,7 +261,7 @@ feature 'Budgets' do
       scenario "user not logged in" do
         visit budget_path(budget)
 
-        expect(page).to have_content "To create a new budget investment you must sign in or sign up."
+        expect(page).to have_content "To create a new budget investment you must sign in or sign up"
       end
 
     end
