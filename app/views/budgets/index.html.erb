@@ -65,7 +65,7 @@
         <% @budget.groups.each do |group| %>
           <h2><%= group.name %></h2>
           <ul class="no-bullet">
-            <% group.headings.each do |heading| %>
+            <% group.headings.order(name: :asc).each do |heading| %>
               <li class="heading small-12 medium-4 large-2">
                 <%= link_to budget_investments_path(@budget.id, heading_id: heading.id) do %>
                   <%= heading.name %>
