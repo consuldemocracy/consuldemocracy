@@ -10,7 +10,7 @@ require 'capybara/rails'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 
-I18n.default_locale = :en
+I18n.default_locale = :val
 
 include Warden::Test::Helpers
 Warden.test_mode!

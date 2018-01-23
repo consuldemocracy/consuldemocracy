@@ -24,7 +24,7 @@
     <%
       results = []
       answers = votacion.questions.first.answers.to_a
-      votacion.questions.first.valid_answers.each do |va|
+      votacion.questions.first.answers.each do |va|
         votos =  answers.select { |a| a.answer == va }.size
         porcentaje = votos * 100.0 / answers.size
          results << {
@@ -52,7 +52,7 @@
               <%= link_to image_tag("/system/concurso_cartel_magdalena/cartel_#{r[:respuesta]}_p.jpg"), asset_path("/system/concurso_cartel_magdalena/cartel_#{r[:respuesta]}.jpg"), target: "_blank" %>
             </td>
             <td>
-              <%= t("pages.cartel_magdalena_2018.cartel_#{r[:respuesta]}.lema") %>
+              <%= t("pages.cartel_magdalena_2018.cartel_#{r[:respuesta].answer}.lema") %>
 
             </td>
             <td class="text-right"><%= r[:votos] %></td>

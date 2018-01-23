@@ -1,0 +1,56 @@
+---
+es:
+  budgets:
+    button_text: Participa en los presupuestos de tu ciudad
+    index_title: Presenta tu propuesta de inversión
+    index_timeline: Los presupuestos participativos en 2 minutos
+    header_title: Presupuestos participativos
+    header_body_principal_1: |-
+      Los presupuestos participativos son un mecanismo de participación ciudadana que contribuye a que las vecinas y vecinos de la ciudad se involucren en la toma de decisiones respecto a la ejecución del presupuesto municipal. Tú decides en qué invertir 1.650.000 euros.
+    header_body_principal_2: |-
+      Los presupuestos participativos están circunscritos al capítulo de inversión del presupuesto del ayuntamiento. Los gastos de inversión abarcan las “infraestructuras-obras”, tanto nuevas, como de mantenimiento de las que ya existen (por ejemplo construir itinerarios accesibles de aceras y viales o la mejora de un parque). También contemplan las adquisiciones de bienes permanentes del ayuntamiento (por ejemplo la compra de columpios).
+
+    header_body_secondary: |-
+      No sería una propuesta de inversión, por ejemplo:
+      * actividades (programas culturales, festejos...)
+      * servicios locales, (aumentar el servicio de limpieza, incrementar la frecuencia de autobuses)
+      * subvenciones, premios.
+      * alquileres
+    fases:
+      fase_1: Presentación de propuestas
+      fase_1_subtitle: Del 15 de febrero al 5 de marzo de 2017
+      fase_1_timeline_title: Presentación de propuestas
+      fase_1_timeline_body: |-
+        Las personas mayores de 16 años empadronadas en Castellón de la Plana pueden proponer alguna inversión para la ciudad. También todas aquellas entidades ciudadanas que tengan su domicilio  social y ámbito territorial en la ciudad.
+
+        Las propuestas se presentarán de forma individual, o en representación de una organización, grupo o colectivo. Cada persona o entidad podrá presentar una única propuesta.
+
+        Las propuestas se harán preferiblemente a través de la web decidim.castello.es. y   excepcionalmente se podrán presentar en las Tenencias de Alcaldía del Ayuntamiento.
+
+      fase_2: Recogida de avales de las propuestas
+      fase_2_subtitle: Del 6 al 31 de marzo de 2017
+      fase_2_timeline_title: Aval de las propuestas
+      fase_2_timeline_body: |-
+        Las propuestas presentadas deberán contar con el apoyo de 25 avales, para pasar a la siguiente fase. Los avales de las propuestas se recogerá a través de la plataforma web decidim.castello.es
+
+        La ciudadanía empadronada tienen la posibilidad de apoyar con su aval hasta un máximo de 3 propuestas.
+
+      fase_3: Evaluación de las propuestas
+      fase_3_subtitle: Del 1 al 30 de abril de 2017
+      fase_3_timeline_title: Evaluación de las propuestas
+      fase_3_timeline_body: |-
+        Las propuestas con avales suficientes, serán estudiadas por los servicios técnicos del Ayuntamiento, quienes valorarán que cada una cumpla con los requisitos necesarios para que sean propuestas de inversión viables, legales y presupuestarán el coste de llevarlas a cabo.
+
+      fase_4: Votación ciudadana
+      fase_4_subtitle: Del 1 al 15 de mayo 2017.
+      fase_4_timeline_title: Votación ciudadana
+      fase_4_timeline_body: |-
+        Podrán votar todas las personas mayores de 16 años y empadronadas en el municipio de Castellón de la Plana. Se podrá votar todas las propuestas que se estime oportuno mientras se tenga presupuesto disponible, aunque no hará falta gastarlo todo.
+
+        La votación se realizará de forma telemática a través de la plataforma web: decidim.castello.es. Se habilitará unos “puntos de votación”, con acceso a internet donde se dará apoyo presencial a las personas que quieran votar. Se publicitará en la plataforma web el listado de sedes de “puntos de votación” en fechas próximas a la fase de votación.
+
+      results: Resultados
+      results_body: |-
+        El resultado del proceso consultivo se obtendrá, una vez finalizada la votación, ordenando las propuestas de mayor a menor votación., siempre que el coste total de las  propuestas  no supere el presupuesto de 1.650.000 euros.
+
+        Puedes consultar toda la información del proceso participativo en la página web decidim.castello.es

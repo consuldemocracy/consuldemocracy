@@ -1,0 +1,36 @@
+---
+val:
+  results:
+    button_title: Resultats
+    results_link: Resultats
+    show_all_link: Mostrar totes
+    hide_discarded_link: Ocultar descartades
+    heading_selection_title: Ámbit d'actuació
+    investment:
+      suports: Avals
+      ballots: Vots
+      price: Cost
+
+  stats:
+    stats_link: Estadístiques
+    page_title: Estadístiques
+    total_participants: TOTAL PARTICIPANTS
+    total_budgets_investments_send: TOTAL PROPOSTES ENVIADES
+    budget_investments_final_phase: PROPOSTES EN LA FASE FINAL
+    budget_investments_unfeasibles: PROPOSTES INVIABLES
+    support_phase: FASE D'AVALS
+    ballot_phase: FASE DE VOTACIÓ
+    participantes: Participants
+    ballots: Vots
+    supports: Avals
+    sex_participation: Participació per sexe
+    males: HOMES
+    females: DONES
+    age_participation: Participació per grups d'edat
+    age: EDAT
+    total: TOTAL
+    years: anys
+    more_than: Més de
+
+  progress:
+    progress_link: Informe d'estat nº 1

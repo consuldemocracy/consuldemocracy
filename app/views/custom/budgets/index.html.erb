@@ -12,7 +12,7 @@
       <% if @current_budget.present? %>
         <%= link_to t('budgets.button_text'), budget_path(@current_budget), class: "button" %>
       <% elsif @last_budget.present? %>
-        <%= link_to "#{t('results.button_title')} #{@last_budget.name}", results_budget_path(@last_budget), class: "button" %>
+        <%= link_to "#{t('results.button_title')} #{@last_budget.name}", budget_results_path(@last_budget), class: "button" %>
       <% end %>
       <%= markdown t('budgets.header_body_principal_2') %>
   </div>

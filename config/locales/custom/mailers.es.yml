@@ -1,0 +1,113 @@
+---
+es:
+  mailers:
+    no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
+    comment:
+      hi: Hola
+      new_comment_by_html: Hay un nuevo comentario de <b>%{commenter}</b> en
+      subject: Alguien ha comentado en tu %{commentable}
+      title: Nuevo comentario
+    config:
+      manage_email_subscriptions: Puedes dejar de recibir estos emails cambiando tu configuración en
+    email_verification:
+      click_here_to_verify: en este enlace
+      instructions_2_html: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
+      instructions_html: Para terminar de verificar tu cuenta de usuario en el Portal de Gobierno Abierto, necesitamos que pulses %{verification_link}.
+      subject: Verifica tu email
+      thanks: Muchas gracias.
+      title: Verifica tu cuenta con el siguiente enlace
+    reply:
+      hi: Hola
+      new_reply_by_html: Hay una nueva respuesta de <b>%{commenter}</b> a tu comentario en
+      subject: Alguien ha respondido a tu comentario
+      title: Nueva respuesta a tu comentario
+    unfeasible_spending_proposal:
+      hi: "Estimado usuario,"
+      new_html: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
+      new_href: "nueva propuesta de inversión"
+      reconsider_html: "Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, al correo example@consul.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
+      sincerely: "Atentamente"
+      signatory: "CONCEJALÍA DE PARTICIPACIÓN CIUDADANA"
+      sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
+      subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
+      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
+    proposal_notification_digest:
+      info: "A continuación te mostramos las nuevas notificaciones que han publicado los autores de las propuestas que estás apoyando en %{org_name}."
+      title: "Notificaciones de propuestas en %{org_name}"
+      share: Compartir propuesta
+      comment: Comentar propuesta
+      unsubscribe: "Si no quieres recibir notificaciones de propuestas, puedes entrar en %{account} y desmarcar la opción 'Recibir resumen de notificaciones sobre propuestas'."
+      unsubscribe_account: Mi cuenta
+    direct_message_for_receiver:
+      subject: "Has recibido un nuevo mensaje privado"
+      reply: Responder a %{sender}
+      unsubscribe: "Si no quieres recibir mensajes privados, puedes entrar en %{account} y desmarcar la opción 'Recibir emails con mensajes privados'."
+      unsubscribe_account: Mi cuenta
+    direct_message_for_sender:
+      subject: "Has enviado un nuevo mensaje privado"
+      title_html: "Has enviado un nuevo mensaje privado a <strong>%{receiver}</strong> con el siguiente contenido:"
+    user_invite:
+      ignore: "Si no has solicitado esta invitación no te preocupes, puedes ignorar este correo."
+      text: "¡Gracias por solicitar unirte a %{org}! En unos segundos podrás empezar a decidir la ciudad que quieres, sólo tienes que rellenar el siguiente formulario:"
+      thanks: "Muchas gracias."
+      title: "Bienvenido a %{org}"
+      button: Completar registro
+      subject: "Invitación a %{org_name}"
+    budget_investment_created:
+      subject: "¡Gracias por crear una propuesta de inversión!"
+      title: "¡Gracias por crear una propuesta de inversión!"
+      intro_html: "Hola <strong>%{author}</strong>,"
+      text_html: "Muchas gracias por crear tu propuesta de inversión <strong>%{investment}</strong> para los Presupuestos Participativos <strong>%{budget}</strong>."
+      follow_html: "Te informaremos de cómo avanza el proceso, que también puedes seguir en la página de <strong>%{link}</strong>."
+      follow_link: "Presupuestos participativos"
+      sincerely: "Atentamente,"
+      signatory: "CONCEJALÍA DE PARTICIPACIÓN CIUDADANA"
+      share: "Comparte tu propuesta de inversión"
+    budget_investment_unfeasible:
+      hi: "Estimado usuario,"
+      new_html: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta de inversión</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
+      new_href: "nueva propuesta de inversión"
+      reconsider_html: "Si consideras que la propuesta de inversión rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, al correo example@consul.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta de inversión."
+      sincerely: "Atentamente"
+      signatory: "CONCEJALÍA DE PARTICIPACIÓN CIUDADANA"
+      sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
+      subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
+      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu propuesta de inversión <strong>'%{title}'</strong> quedará excluido de este proceso participativo por el siguiente motivo:"
+    budget_investment_moderate_hide:
+      subject: "Tu propuesta '%{title}' ha sido exluida"
+      content: |-
+        Estimado usuario,
+
+        desde el Ayuntamiento queremos agradecer tu participación en los __Presupuestos Participativos__.
+
+        Te informamos que tu propuesta de inversión __%{title}__ ha sido excluida de este proceso participativo por el siguiente motivo:
+
+        *%{moderation_text}*
+
+        Puedes consultar las normas de uso en el siguiente enlace <a href="https://decidim.castello.es/conditions">Condiciones</a>.
+
+        Atentament,
+
+        ÀREA DE GOVERN OBERT
+        REGIDORIA DE PARTICIPACIÓ CIUTADANA
+    budget_investment_moderate_unfeasible:
+      subject: "Tu propuesta '%{title}' ha sido marcada como inviable"
+      content: |-
+        Estimado usuario,
+
+        desde el Ayuntamiento queremos agradecer tu participación en los __Presupuestos Participativos__.
+
+        Te informamos que tu propuesta de inversión __%{title}__ quedará excluida de este proceso participativo por el siguiente motivo:
+
+        *%{moderation_text}*
+
+        Por todo esto, te invitamos a que elabores una nueva propuesta de inversión que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: <a href="https://decidim.castello.es/budgets/1/investments/new">nueva propuesta de inversión</a>.
+
+        Tienes que tener en cuenta que el plazo para hacer propuestas de inversión nuevas finaliza el día 5 de marzo.
+
+        Si consideras que la propuesta de inversión rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo lo antes posible al correo decidim@castello.es, indicando necesariamente para su tramitación el código de la propuesta de inversión %{code} como asunto del correo, así como la justificación y tu teléfono.
+
+        Atentamente,
+
+        ÁREA DE GOBIERNO ABIERTO
+        CONCEJALÍA DE PARTICIPACIÓN CIUDADANA
