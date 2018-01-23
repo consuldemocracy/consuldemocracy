@@ -80,7 +80,7 @@
                        } %>
           <% end %>
 
-          <%= render "banners" %>
+          <%= render "banners" if @budget.balloting? %>
           <%= paginate @investments %>
         </div>
 
@@ -92,9 +92,7 @@
                        locals: { investment: investment } %>
           <% end %>
 
-          <% if Budget.balloting.any? %>
-            <%= render "banners" %>
-          <% end %>
+          <%= render "banners" if @budget.balloting? %>
 
           <%= paginate @investments %>
         </div>
