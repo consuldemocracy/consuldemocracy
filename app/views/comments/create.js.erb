@@ -1,4 +1,4 @@
-var comment_html = "<%= j(render @comment) %>"
+var comment_html = "<%= j(render @comment, concealed: @comment.concealed) %>"
 
 <% if @comment.root? -%>
   var commentable_id = '<%= dom_id(@commentable) %>';

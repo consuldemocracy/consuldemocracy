@@ -1,4 +1,6 @@
 <% comment_flags ||= @comment_flags %>
+<% concealed = local_assigns.fetch(:concealed, false)%>
+
 <% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (comment_flags[comment.id] if comment_flags)] do %>
   <ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12">
     <li class="comment-body">
@@ -88,7 +90,7 @@
 
             <%= render 'comments/actions', comment: comment %>
 
-            <%= render 'comments/form', {commentable: comment.commentable, parent_id: comment.id, toggeable: true} %>
+            <%= render 'comments/form', {commentable: comment.commentable, parent_id: comment.id, toggeable: true, concealed: concealed} %>
           <% end %>
         </div>
       <% end %>
@@ -98,7 +100,7 @@
       <ul id="<%= dom_id(comment) %>_children" class="no-bullet comment-children">
         <% child_comments_of(comment).each do |child| %>
           <li>
-            <%= render 'comments/comment', comment: child %>
+            <%= render 'comments/comment', comment: child, concealed: concealed %>
           </li>
         <% end %>
       </ul>

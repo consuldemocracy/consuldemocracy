@@ -4,21 +4,25 @@ class CommentTree
 
   attr_accessor :root_comments, :comments, :commentable, :page, :order
 
-  def initialize(commentable, page, order = 'confidence_score')
+  def initialize(commentable, page, order = 'confidence_score', concealed = false)
     @commentable = commentable
     @page = page
     @order = order
 
-    @comments = root_comments + root_descendants
+    @comments = root_comments(concealed) + root_descendants(concealed)
   end
 
-  def root_comments
-    commentable.comments.roots.send("sort_by_#{order}").page(page).per(ROOT_COMMENTS_PER_PAGE).for_render
+  def root_comments(concealed = false)
+    commentable.comments.where(concealed: concealed).
+                roots.send("sort_by_#{order}").page(page).
+                per(ROOT_COMMENTS_PER_PAGE).for_render
   end
 
-  def root_descendants
-    root_comments.each_with_object([]) do |root, array|
-      array.concat(Comment.descendants_of(root).send("sort_descendants_by_#{order}").for_render.to_a)
+  def root_descendants(concealed = false)
+    root_comments(concealed).each_with_object([]) do |root, array|
+      array.concat(Comment.where(concealed: concealed).
+                          descendants_of(root).send("sort_descendants_by_#{order}").
+                          for_render.to_a)
     end
   end
 

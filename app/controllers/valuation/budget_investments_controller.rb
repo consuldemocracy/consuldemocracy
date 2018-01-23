@@ -7,6 +7,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   before_action :load_investment, only: [:show, :edit, :valuate]
 
   has_filters %w{valuating valuation_finished}, only: :index
+  has_orders %w{most_voted newest oldest}, only: :show
 
   load_and_authorize_resource :investment, class: "Budget::Investment"
 
@@ -19,6 +20,13 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
                    else
                      Budget::Investment.none.page(params[:page])
                    end
+  end
+
+  def show
+    @concealed = true
+    @commentable = @investment
+    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order, @concealed)
+    set_comment_flags(@comment_tree.comments)
   end
 
   def valuate

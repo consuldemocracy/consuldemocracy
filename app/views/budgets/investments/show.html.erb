@@ -17,7 +17,8 @@
   <div class="tabs-panel is-active" id="tab-comments">
     <%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree,
                                                             comment_flags: @comment_flags,
-                                                            display_comments_count: false } %>
+                                                            display_comments_count: false,
+                                                            concealed: false } %>
   </div>
 
   <div class="tabs-panel" id="tab-documents">

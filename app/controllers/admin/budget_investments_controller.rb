@@ -12,6 +12,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   before_action :load_ballot, only: [:show, :index]
   before_action :load_investments, only: [:index, :toggle_selection]
 
+  has_orders %w{most_voted newest oldest}, only: :show
+
   def index
     respond_to do |format|
       format.html
@@ -23,6 +25,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def show
+    @concealed = true
+    @commentable = @investment
+    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order, @concealed)
+    set_comment_flags(@comment_tree.comments)
   end
 
   def edit

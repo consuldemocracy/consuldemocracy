@@ -44,11 +44,13 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comment).permit(:commentable_type, :commentable_id, :parent_id, :body, :as_moderator, :as_administrator)
+      params.require(:comment).permit(:commentable_type, :commentable_id, :parent_id,
+                                      :body, :as_moderator, :as_administrator, :concealed)
     end
 
     def build_comment
-      @comment = Comment.build(@commentable, current_user, comment_params[:body], comment_params[:parent_id].presence)
+      @comment = Comment.build(@commentable, current_user, comment_params[:body],
+                               comment_params[:parent_id].presence, comment_params[:concealed])
       check_for_special_comments
     end
 
