@@ -80,8 +80,8 @@ section "Creating Settings" do
   Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
   Setting.create(key: 'min_age_to_participate', value: '16')
   Setting.create(key: 'proposal_improvement_path', value: nil)
-  Setting.create(key: 'map_latitude', value: 40.41)
-  Setting.create(key: 'map_longitude', value: -3.7)
+  Setting.create(key: 'map_latitude', value: 40.4332002)
+  Setting.create(key: 'map_longitude', value: -3.7009591)
   Setting.create(key: 'map_zoom', value: 10)
 
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
