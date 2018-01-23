@@ -1,5 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
 // or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
@@ -74,6 +72,7 @@
 //= require polls
 //= require sortable
 //= require table_sortable
+//= require investment_report_alert
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -115,6 +114,8 @@ var initialize_modules = function() {
   App.Polls.initialize();
   App.Sortable.initialize();
   App.TableSortable.initialize();
+  App.InvestmentReportAlert.initialize();
+
 
   $("#columna_2").css({height: $('div.expanded.budget.jumbo-budget.budget-heading').height()});
 };

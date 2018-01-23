@@ -341,7 +341,16 @@ FactoryBot.define do
       feasibility "feasible"
       valuation_finished true
     end
+  end
 
+  factory :budget_phase, class: 'Budget::Phase' do
+    budget
+    kind        :balloting
+    summary     Faker::Lorem.sentence(3)
+    description Faker::Lorem.sentence(10)
+    starts_at   Date.yesterday
+    ends_at     Date.tomorrow
+    enabled     true
   end
 
   factory :image do
@@ -378,7 +387,7 @@ FactoryBot.define do
     association :investment, factory: :budget_investment
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
-    publication_date     Time.zone.today
+    publication_date     Date.current
   end
 
   factory :vote do

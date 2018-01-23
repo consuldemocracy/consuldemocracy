@@ -43,9 +43,17 @@ en:
       section_header:
         icon_alt: Participatory budgets icon
         title: Participatory budgets
-        help: Help about participatory budgets
+        help: Help with participatory budgets
+        all_phases: See all phases
+      all_phases: Budget investment's phases
+      map: Budget investments' proposals located geographically
+      investment_proyects: List of all investment projects
+      unfeasible_investment_proyects: List of all unfeasible investment projects
+      not_selected_investment_proyects: List of all investment projects not selected for balloting
+      finished_budgets: Finished participatory budgets
+      see_results: See results
       section_footer:
-        title: Help about participatory budgets
+        title: Help with participatory budgets
         description: With the participatory budgets the citizens decide to which projects presented by the neighbors is destined a part of the municipal budget.
         help_text_1: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. Any registered person over 16 years old can propose an investment project that is preselected in a phase of citizen supports."
         help_text_2: "The most voted projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council once the municipal budgets of the next year are approved."
@@ -87,7 +95,7 @@ en:
           zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
           verify_account: "verify your account"
-          create: "Create budget investment"
+          create: "Create a budget investment"
           not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
           sign_in: "sign in"
           sign_up: "sign up"
@@ -104,7 +112,7 @@ en:
         unfeasibility_explanation: Unfeasibility explanation
         code_html: 'Investment project code: <strong>%{code}</strong>'
         location_html: 'Location: <strong>%{location}</strong>'
-        organization_name_html: 'Organization: <strong>%{name}</strong>'
+        organization_name_html: 'Proposed on behalf of: <strong>%{name}</strong>'
         share: Share
         title: Investment project
         supports: Supports
@@ -158,3 +166,11 @@ en:
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "
       incompatibles: Incompatibles
+      investment_proyects: List of all investment projects
+      unfeasible_investment_proyects: List of all unfeasible investment projects
+      not_selected_investment_proyects: List of all investment projects not selected for balloting
+    phases:
+      errors:
+        dates_range_invalid: "Start date can't be equal or later than End date"
+        prev_phase_dates_invalid: "Start date must be later than the start date of the previous enabled phase (%{phase_name})"
+        next_phase_dates_invalid: "End date must be earlier than the end date of the next enabled phase (%{phase_name})"

@@ -37,6 +37,7 @@ section "Creating Settings" do
   Setting.create(key: 'url', value: 'http://localhost:3000')
   Setting.create(key: 'org_name', value: 'CONSUL')
   Setting.create(key: 'place_name', value: 'City')
+
   Setting.create(key: 'feature.debates', value: "true")
   Setting.create(key: 'feature.proposals', value: "true")
   Setting.create(key: 'feature.polls', value: "true")
@@ -53,27 +54,44 @@ section "Creating Settings" do
   Setting.create(key: 'feature.map', value: "true")
   Setting.create(key: 'feature.allow_images', value: "true")
   Setting.create(key: 'feature.public_stats', value: "true")
+  Setting.create(key: 'feature.guides', value: nil)
+
   Setting.create(key: 'per_page_code_head', value: "")
   Setting.create(key: 'per_page_code_body', value: "")
   Setting.create(key: 'comments_body_max_length', value: '1000')
   Setting.create(key: 'mailer_from_name', value: 'CONSUL')
   Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')
   Setting.create(key: 'meta_title', value: 'CONSUL')
-  Setting.create(key: 'meta_description', value: 'Citizen Participation and Open Government Application')
+  Setting.create(key: 'meta_description', value: 'Citizen Participation & Open Gov Application')
   Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
   Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
   Setting.create(key: 'min_age_to_participate', value: '16')
   Setting.create(key: 'proposal_improvement_path', value: nil)
-  Setting.create(key: 'map_latitude', value: 51.48)
-  Setting.create(key: 'map_longitude', value: 0.0)
+  Setting.create(key: 'map_latitude', value: 40.41)
+  Setting.create(key: 'map_longitude', value: -3.7)
   Setting.create(key: 'map_zoom', value: 10)
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
 end
 
 section "Creating Geozones" do
-  Geozone.create(name: "city")
-  Geozone.create(name: "Existent District", census_code: "01")
-  ('A'..'Z').each { |i| Geozone.create(name: "District #{i}", external_code: i.ord, census_code: i.ord) }
+  Geozone.create(name: "North District", external_code: "001", census_code: "01",
+                 html_map_coordinates: "30,139,45,153,77,148,107,165,138,201,146,218,186,198,216,"\
+                 "196,233,203,240,215,283,194,329,185,377,184,388,165,369,126,333,113,334,84,320,"\
+                 "66,286,73,258,65,265,57,249,47,207,58,159,84,108,85,72,101,51,114")
+  Geozone.create(name: "West District", external_code: "002", census_code: "02",
+                 html_map_coordinates: "42,153,31,176,24,202,20,221,44,235,59,249,55,320,30,354,"\
+                 "31,372,52,396,64,432,89,453,116,432,149,419,162,412,165,377,172,357,189,352,228,"\
+                 "327,246,313,262,297,234,291,210,284,193,284,176,294,158,303,154,310,146,289,140,"\
+                 "268,138,246,135,236,139,222,151,214,136,197,120,179,99,159,85,149,65,149,56,149")
+  Geozone.create(name: "East District", external_code: "003", census_code: "03",
+                 html_map_coordinates: "175,353,162,378,161,407,153,416,167,432,184,447,225,426,"\
+                 "250,409,283,390,298,369,344,363,351,334,356,296,361,267,376,245,378,185,327,188,"\
+                 "281,195,239,216,245,221,245,232,261,244,281,238,300,242,304,251,285,262,278,277,"\
+                 "267,294,249,312,219,333,198,346,184,353")
+  Geozone.create(name: "Central District", external_code: "004", census_code: "04",
+                 html_map_coordinates: "152,308,137,258,133,235,147,216,152,214,186,194,210,196,"\
+                 "228,202,240,216,241,232,263,243,293,241,301,245,302,254,286,265,274,278,267,296,"\
+                 "243,293,226,289,209,285,195,283,177,297")
 end
 
 section "Creating Users" do
@@ -100,7 +118,8 @@ section "Creating Users" do
 
   admin = create_user('admin@consul.dev', 'admin')
   admin.create_administrator
-  admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  admin.update(residence_verified_at: Time.current,
+               confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                verified_at: Time.current, document_number: unique_document_number)
 
   moderator = create_user('mod@consul.dev', 'mod')
@@ -111,28 +130,33 @@ section "Creating Users" do
 
   valuator = create_user('valuator@consul.dev', 'valuator')
   valuator.create_valuator
-  valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  valuator.update(residence_verified_at: Time.current,
+                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                   verified_at: Time.current, document_number: unique_document_number)
 
   poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
   poll_officer.create_poll_officer
-  poll_officer.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  poll_officer.update(residence_verified_at: Time.current,
+                      confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                       verified_at: Time.current, document_number: unique_document_number)
 
   poll_officer2 = create_user('poll_officer2@consul.dev', 'Pauline M. Espinosa')
   poll_officer2.create_poll_officer
-  poll_officer2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  poll_officer2.update(residence_verified_at: Time.current,
+                       confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                        verified_at: Time.current, document_number: unique_document_number)
 
   create_user('unverified@consul.dev', 'unverified')
 
   level_2 = create_user('leveltwo@consul.dev', 'level 2')
-  level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number,
+  level_2.update(residence_verified_at: Time.current,
+                 confirmed_phone: Faker::PhoneNumber.phone_number,
                  document_number: unique_document_number, document_type: "1")
 
   verified = create_user('verified@consul.dev', 'verified')
 
-  verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  verified.update(residence_verified_at: Time.current,
+                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                   verified_at: Time.current, document_number: unique_document_number)
 
   (1..10).each do |i|
@@ -158,8 +182,11 @@ section "Creating Users" do
     user = create_user("user#{i}@consul.dev")
     level = [1, 2, 3].sample
     if level >= 2
-      user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number,
-                  document_number: unique_document_number, document_type: "1", geozone: Geozone.all.sample)
+      user.update(residence_verified_at: Time.current,
+                  confirmed_phone: Faker::PhoneNumber.phone_number,
+                  document_number: unique_document_number,
+                  document_type: "1",
+                  geozone: Geozone.all.sample)
     end
     if level == 3
       user.update(verified_at: Time.current, document_number: unique_document_number)
@@ -371,27 +398,27 @@ section "Flagging Debates & Comments" do
 end
 
 section "Creating Spending Proposals" do
-tags = Faker::Lorem.words(10)
-60.times do
-  geozone = Geozone.all.sample
-  author = User.all.sample
-  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-  feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-  valuation_finished = [true, false].sample
-  feasible = [true, false].sample
-  spending_proposal = SpendingProposal.create!(author: author,
-                                               title: Faker::Lorem.sentence(3).truncate(60),
-                                               external_url: Faker::Internet.url,
-                                               description: description,
-                                               created_at: rand((Time.current - 1.week)..Time.current),
-                                               geozone: [geozone, nil].sample,
-                                               feasible: feasible,
-                                               feasible_explanation: feasible_explanation,
-                                               valuation_finished: valuation_finished,
-                                               tag_list: tags.sample(3).join(','),
-                                               price: rand(1000000),
-                                               terms_of_service: "1")
-end
+  tags = Faker::Lorem.words(10)
+  60.times do
+    geozone = Geozone.all.sample
+    author = User.all.sample
+    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    valuation_finished = [true, false].sample
+    feasible = [true, false].sample
+    spending_proposal = SpendingProposal.create!(author: author,
+                                                 title: Faker::Lorem.sentence(3).truncate(60),
+                                                 external_url: Faker::Internet.url,
+                                                 description: description,
+                                                 created_at: rand((Time.current - 1.week)..Time.current),
+                                                 geozone: [geozone, nil].sample,
+                                                 feasible: feasible,
+                                                 feasible_explanation: feasible_explanation,
+                                                 valuation_finished: valuation_finished,
+                                                 tag_list: tags.sample(3).join(','),
+                                                 price: rand(1000000),
+                                                 terms_of_service: "1")
+  end
 end
 
 section "Creating Valuation Assignments" do
@@ -401,29 +428,36 @@ section "Creating Valuation Assignments" do
 end
 
 section "Creating Budgets" do
-  Budget::PHASES.each_with_index do |phase, i|
-    descriptions = Hash[Budget::PHASES.map do |p|
-      ["description_#{p}",
-       "<p>#{Faker::Lorem.paragraphs(2).join('</p><p>')}</p>"]
-    end]
-    budget = Budget.create!(
-      descriptions.merge(
-        name: (Date.current - 10 + i).to_s,
-        currency_symbol: "€",
-        phase: phase
-      )
-    )
+  Budget.create(
+    name: "Budget #{Date.current.year - 1}",
+    currency_symbol: "€",
+    phase: 'finished'
+  )
+  Budget.create(
+    name: "Budget #{Date.current.year}",
+    currency_symbol: "€",
+    phase: 'accepting'
+  )
 
-    (1..([1, 2, 3].sample)).each do |k|
-      group = budget.groups.create!(name: "#{Faker::StarWars.planet} #{k}")
+  Budget.all.each do |budget|
+    city_group = budget.groups.create!(name: "All City")
+    city_group.headings.create!(name: 'All City',
+                                price: 1000000,
+                                population: 1000000)
 
-      geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
-      geozones.each do |geozone|
-        group.headings << group.headings.create!(name: "#{geozone.name} #{k}",
-                                                 price: rand(1..100) * 100000,
-                                                 population: rand(1..50) * 10000)
-      end
-    end
+    districts_group = budget.groups.create!(name: "Districts")
+    districts_group.headings.create!(name: "North District",
+                                     price: rand(5..10) * 100000,
+                                     population: 350000)
+    districts_group.headings.create!(name: "West District",
+                                     price: rand(5..10) * 100000,
+                                     population: 300000)
+    districts_group.headings.create!(name: "East District",
+                                     price: rand(5..10) * 100000,
+                                     population: 200000)
+    districts_group.headings.create!(name: "Central District",
+                                     price: rand(5..10) * 100000,
+                                     population: 150000)
   end
 end
 
@@ -451,17 +485,28 @@ section "Creating Investments" do
   end
 end
 
+section "Geolocating Investments" do
+  Budget.all.each do |budget|
+    budget.investments.each do |investment|
+      MapLocation.create(latitude: Setting['map_latitude'].to_f + rand(-10..10)/100.to_f,
+                         longitude: Setting['map_longitude'].to_f + rand(-10..10)/100.to_f,
+                         zoom: Setting['map_zoom'],
+                         investment_id: investment.id)
+    end
+  end
+end
+
 section "Balloting Investments" do
-  Budget.balloting.last.investments.each do |investment|
+  Budget.finished.first.investments.last(20).each do |investment|
     investment.update(selected: true, feasibility: "feasible")
   end
 end
 
 section "Winner Investments" do
-  budget = Budget.where(phase: "finished").last
-  100.times do
+  budget = Budget.finished.first
+  50.times do
     heading = budget.headings.all.sample
-    investment = Budget::Investment.create!(
+    Budget::Investment.create!(
       author: User.all.sample,
       heading: heading,
       group: heading.group,

@@ -1,0 +1,26 @@
+he:
+  budgets:
+    index:
+      title: Participatory budgets תקציבים השתתפותים
+    investments:
+      form:
+        tag_category_label: "קטגוריות"
+        tags_label: תגיות
+      index:
+        title: תקצוב השתתפותי
+        search_form:
+          button: Search
+          title: Search
+        sidebar:
+          zero: לא נעשתה הצבעה עבור פרויקט השקעה.
+      show:
+        supports: תמיכה
+        votes: הצבעות
+      investment:
+        supports:
+          zero: אין תומכים
+      header:
+        different_heading_assigned_html: 'ישנן הצבעות פתוחות בנושאים אחרים: %{heading_link}'
+    show:
+      unfeasible_title: השקעות שאינן ברות ביצוע
+      unfeasible: צפיה בהשקעות שאינן ברות ביצוע

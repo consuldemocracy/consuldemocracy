@@ -25,7 +25,7 @@ es:
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
         assigned_to: "Asignadas a %{valuator}"
-        title: Propuestas de inversión
+        title: Proyectos de gasto
         edit: Editar informe
         valuators_assigned:
           one: Evaluador asignado
@@ -37,14 +37,14 @@ es:
         table_actions: Acciones
       show:
         back: Volver
-        title: Propuesta de inversión
+        title: Proyecto de gasto
         info: Datos de envío
         by: Enviada por
         sent: Fecha de creación
         heading: Partida
         dossier: Informe
         edit_dossier: Editar informe
-        price: Precio
+        price: Coste
         price_first_year: Coste en el primer año
         currency: "€"
         feasibility: Viabilidad
@@ -59,7 +59,7 @@ es:
         assigned_valuators: Evaluadores asignados
       edit:
         dossier: Informe
-        price_html: "Precio (%{currency}) <small>(dato público)</small>"
+        price_html: "Coste (%{currency}) <small>(dato público)</small>"
         price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, dato no público)</small>"
         price_explanation_html: Informe de coste <small>(opcional, dato público)</small>
         feasibility: Viabilidad
@@ -68,6 +68,8 @@ es:
         undefined_feasible: Sin decidir
         feasible_explanation_html: Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>
         valuation_finished: Informe finalizado
+        valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
+        not_feasible_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de inviabilidad."
         duration_html: Plazo de ejecución <small>(opcional, dato no público)</small>
         internal_comments_html: Comentarios y observaciones <small>(para responsables internos, dato no público)</small>
         save: Guardar Cambios
@@ -92,7 +94,7 @@ es:
         geozone: Ámbito
         dossier: Informe
         edit_dossier: Editar informe
-        price: Precio
+        price: Coste
         price_first_year: Coste en el primer año
         currency: "€"
         feasibility: Viabilidad
@@ -107,7 +109,7 @@ es:
         assigned_valuators: Evaluadores asignados
       edit:
         dossier: Informe
-        price_html: "Precio (%{currency}) <small>(dato público)</small>"
+        price_html: "Coste (%{currency}) <small>(dato público)</small>"
         price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, privado)</small>"
         currency: "€"
         price_explanation_html: Informe de coste <small>(opcional, dato público)</small>

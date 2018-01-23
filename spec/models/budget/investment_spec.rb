@@ -141,7 +141,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::PHASES.reject {|phase| phase == "selecting"}.each do |phase|
+      Budget::Phase::PHASE_KINDS.reject {|phase| phase == "selecting"}.each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, budget: budget)
 
@@ -159,7 +159,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::PHASES.reject {|phase| phase == "valuating"}.each do |phase|
+      Budget::Phase::PHASE_KINDS.reject {|phase| phase == "valuating"}.each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, budget: budget)
 
@@ -184,7 +184,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::PHASES.reject {|phase| phase == "balloting"}.each do |phase|
+      Budget::Phase::PHASE_KINDS.reject {|phase| phase == "balloting"}.each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, :selected, budget: budget)
 
@@ -200,7 +200,7 @@ describe Budget::Investment do
     end
 
     it "returns true for selected investments which budget's phase is publishing_prices or later" do
-      Budget::PUBLISHED_PRICES_PHASES.each do |phase|
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
         budget.update(phase: phase)
 
         expect(investment.should_show_price?).to eq(true)
@@ -208,7 +208,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      (Budget::PHASES - Budget::PUBLISHED_PRICES_PHASES).each do |phase|
+      (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).each do |phase|
         budget.update(phase: phase)
 
         expect(investment.should_show_price?).to eq(false)
@@ -235,7 +235,7 @@ describe Budget::Investment do
     end
 
     it "returns true for selected with price_explanation & budget in publishing_prices or later" do
-      Budget::PUBLISHED_PRICES_PHASES.each do |phase|
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
         budget.update(phase: phase)
 
         expect(investment.should_show_price_explanation?).to eq(true)
@@ -243,7 +243,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      (Budget::PHASES - Budget::PUBLISHED_PRICES_PHASES).each do |phase|
+      (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).each do |phase|
         budget.update(phase: phase)
 
         expect(investment.should_show_price_explanation?).to eq(false)
@@ -514,6 +514,23 @@ describe Budget::Investment do
 
   describe "search" do
 
+    context "attributes" do
+
+      it "searches by title" do
+        budget_investment = create(:budget_investment, title: 'save the world')
+        results = described_class.search('save the world')
+        expect(results).to eq([budget_investment])
+      end
+
+      it "searches by author name" do
+        author = create(:user, username: 'Danny Trejo')
+        budget_investment = create(:budget_investment, author: author)
+        results = described_class.search('Danny')
+        expect(results).to eq([budget_investment])
+      end
+
+    end
+
     context "tags" do
       it "searches by tags" do
         investment = create(:budget_investment, tag_list: 'Latina')
@@ -551,7 +568,7 @@ describe Budget::Investment do
       end
 
       it "rejects selections when selecting is not allowed (via admin setting)" do
-        budget.phase = "on_hold"
+        budget.phase = "reviewing"
         expect(district_sp.reason_for_not_being_selectable_by(user)).to eq(:no_selecting_allowed)
       end
 
@@ -785,7 +802,7 @@ describe Budget::Investment do
       end
 
       it "returns false if budget is not balloting phase" do
-        Budget::PHASES.reject {|phase| phase == "balloting"}.each do |phase|
+        Budget::Phase::PHASE_KINDS.reject {|phase| phase == "balloting"}.each do |phase|
           budget.update(phase: phase)
           investment = create(:budget_investment, budget: budget)
 

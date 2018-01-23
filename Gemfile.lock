@@ -144,8 +144,7 @@ GEM
     docile (1.1.5)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
-    easy_translate (0.5.0)
-      json
+    easy_translate (0.5.1)
       thread
       thread_safe
     email_spec (2.1.1)
@@ -197,10 +196,10 @@ GEM
       socksify
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
-    i18n-tasks (0.9.19)
+    i18n-tasks (0.9.20)
       activesupport (>= 4.0.2)
       ast (>= 2.1.0)
-      easy_translate (>= 0.5.0)
+      easy_translate (>= 0.5.1)
       erubi
       highline (>= 1.7.3)
       i18n
@@ -406,8 +405,8 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    rubocop-rspec (1.21.0)
-      rubocop (>= 0.52.0)
+    rubocop-rspec (1.22.1)
+      rubocop (>= 0.52.1)
     ruby-progressbar (1.9.0)
     rubyzip (1.2.1)
     rvm1-capistrano3 (1.4.0)
@@ -437,7 +436,7 @@ GEM
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.2)
+    simplecov-html (0.10.1)
     sitemap_generator (6.0.1)
       builder (~> 3.0)
     social-share-button (1.1.0)
@@ -543,10 +542,10 @@ DEPENDENCIES
   foundation-rails (~> 6.2.4.0)
   foundation_rails_helper (~> 2.0.0)
   graphiql-rails (~> 1.4.1)
-  graphql (~> 1.7.7)
+  graphql (~> 1.7.8)
   groupdate (~> 3.2.0)
   html2text
-  i18n-tasks (~> 0.9.15)
+  i18n-tasks (~> 0.9.20)
   initialjs-rails (~> 0.2.0.5)
   invisible_captcha (~> 0.10.0)
   jquery-fileupload-rails
@@ -580,13 +579,13 @@ DEPENDENCIES
   rspec-autotest
   rspec-rails (~> 3.6)
   rubocop (~> 0.52.1)
-  rubocop-rspec (~> 1.21.0)
+  rubocop-rspec (~> 1.22.1)
   rubyzip (~> 1.2.0)
   rvm1-capistrano3 (~> 1.4.0)
   sass-rails (~> 5.0, >= 5.0.4)
   savon (~> 2.11.1)
   scss_lint (~> 0.54.0)
-  sitemap_generator (~> 6.0.0)
+  sitemap_generator (~> 6.0.1)
   social-share-button (~> 1.1)
   spring (~> 2.0.1)
   spring-commands-rspec (~> 1.0.4)

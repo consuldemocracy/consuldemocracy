@@ -51,6 +51,8 @@ namespace :admin do
       resources :budget_investment_milestones
       member { patch :toggle_selection }
     end
+
+    resources :budget_phases, only: [:edit, :update]
   end
 
   resources :signature_sheets, only: [:index, :new, :create, :show]

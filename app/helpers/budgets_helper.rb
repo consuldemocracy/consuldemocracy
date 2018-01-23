@@ -7,7 +7,7 @@ module BudgetsHelper
   end
 
   def budget_phases_select_options
-    Budget::PHASES.map { |ph| [ t("budgets.phase.#{ph}"), ph ] }
+    Budget::Phase::PHASE_KINDS.map { |ph| [ t("budgets.phase.#{ph}"), ph ] }
   end
 
   def budget_currency_symbol_select_options
@@ -53,7 +53,21 @@ module BudgetsHelper
     !budget.drafting? || current_user&.administrator?
   end
 
+  def current_budget_map_locations
+    current_budget.investments.map do |investment|
+      next unless investment.map_location.present?
+      {
+        lat: investment.map_location.latitude,
+        long: investment.map_location.longitude,
+        investment_title: investment.title,
+        investment_id: investment.id,
+        budget_id: current_budget.id
+      }
+    end.flatten.compact
+  end
+
   def css_for_highlight_investment_stat(phase)
     phase == "all" ? "success" : ""
   end
+
 end

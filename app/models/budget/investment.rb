@@ -1,6 +1,7 @@
 class Budget
   class Investment < ActiveRecord::Base
     require 'csv'
+    include Rails.application.routes.url_helpers
     include Measurable
     include Sanitizable
     include Taggable
@@ -20,6 +21,7 @@ class Budget
     include ActsAsParanoidAliases
     include Relationable
     include Notifiable
+    include Filterable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -104,6 +106,8 @@ class Budget
 
     def aviso_moderacion
       Mailer.budget_investment_moderated_hide(self).deliver
+    def url
+      budget_investment_path(budget, self)
     end
 
     def self.filter_params(params)
@@ -282,6 +286,7 @@ class Budget
 
     def self.apply_filters_and_search(budget, params, current_filter = nil)
       investments = all
+<<<<<<< HEAD
       investments = investments.send(current_filter)            if current_filter.present?
       if budget.balloting?
         #investments = investments.selected
@@ -292,6 +297,12 @@ class Budget
       # investments = investments.send(current_filter)            if current_filter.present?
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
+=======
+      investments = investments.send(current_filter)             if current_filter.present?
+      investments = investments.by_heading(params[:heading_id])  if params[:heading_id].present?
+      investments = investments.search(params[:search])          if params[:search].present?
+      investments = investments.filter(params[:advanced_search]) if params[:advanced_search].present?
+>>>>>>> master
       investments
     end
 

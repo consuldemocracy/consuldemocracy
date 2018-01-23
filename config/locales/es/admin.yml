@@ -70,26 +70,33 @@ es:
         filters:
           current: Abiertos
           finished: Terminados
-        budget_investments: Ver proyectos de inversión
+        budget_investments: Ver proyectos de gasto
         table_name: Nombre
         table_phase: Fase
-        table_investments: Proyectos de inversión
+        table_investments: Proyectos de gasto
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
       create:
-        notice: "¡Nuevo presupuesto creado con éxito!"
+        notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
       update:
-        notice: Presupuesto actualizado
+        notice: Campaña de presupuestos participativos actualizada
       edit:
-        title: Editar presupuesto
+        title: Editar campaña de presupuestos participativos
         delete: Eliminar presupuesto
+        phase: Fase
+        dates: Fechas
+        enabled: Habilitada
+        actions: Acciones
+        edit_phase: Editar fase
+        active: Activa
+        blank_dates: Sin fechas
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
       new:
-        title: Nuevo presupuesto
+        title: Nuevo presupuesto ciudadano
       show:
         groups:
           one: 1 Grupo de partidas presupuestarias
@@ -111,8 +118,19 @@ es:
         table_population: Población
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
       winners:
-        calculate: Calcular proyectos ganadores
-        calculated: Calculando ganadores, puede tardar un minuto.
+        calculate: Calcular propuestas ganadoras
+        calculated: Calculando ganadoras, puede tardar un minuto.
+    budget_phases:
+      edit:
+        start_date: Fecha de Inicio
+        end_date: Fecha de fin
+        summary: Resumen
+        summary_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
+        description: Descripción
+        description_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
+        enabled: Fase habilitada
+        enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
+        save_changes: Guardar cambios
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
@@ -130,8 +148,8 @@ es:
           winners: Ganadoras
           all: Todas
         download_current_selection: "Descargar selección actual"
-        no_budget_investments: "No hay proyectos de inversión."
-        title: Proyectos de inversión
+        no_budget_investments: "No hay proyectos de gasto."
+        title: Proyectos de gasto
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
@@ -141,7 +159,6 @@ es:
           undecided: "Sin decidir"
         selected: "Seleccionada"
         select: "Seleccionar"
-        download_current_selection: "Descargar selección actual"
         table_id: "ID"
         table_title: "Título"
         table_supports: "Apoyos"
@@ -156,7 +173,7 @@ es:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         classification: Clasificación
-        info: '%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}'
+        info: '%{budget_name} - Grupo: %{group_name} - Proyecto de gasto %{id}'
         edit: Editar
         edit_classification: Editar clasificación
         by: Autor
@@ -206,7 +223,7 @@ es:
         delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
         image: "Imagen"
-        show_image: "Ver imagen"
+        show_image: "Mostrar imagen"
         documents: "Documentos"
       new:
         creating: Crear hito
@@ -501,7 +518,7 @@ es:
       search:
         title: 'Evaluadores: Búsqueda de usuarios'
       summary:
-        title: Resumen de evaluación de propuestas de inversión
+        title: Resumen de evaluación de proyectos de gasto
         valuator_name: Evaluador
         finished_and_feasible_count: Finalizadas viables
         finished_and_unfeasible_count: Finalizadas inviables
@@ -570,7 +587,7 @@ es:
           unassigned: No asignada
         actions:
           assign: Asignar urna
-          unassign: Desasignar urna
+          unassign: Asignar urna
     poll_booth_assignments:
       alert:
         shifts: "Hay turnos asignados para esta urna. Si la desasignas, esos turnos se eliminarán. ¿Deseas continuar?"
@@ -955,7 +972,7 @@ es:
           proposal_votes: Votos en propuestas
           proposals: Propuestas
           budgets: Presupuestos abiertos
-          budget_investments: Proyectos de inversión
+          budget_investments: Proyectos de gasto
           spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
@@ -985,7 +1002,7 @@ es:
         all: Votaciones
         web_participants: Participantes en Web
         total_participants: Participantes totales
-        poll_questions: "Preguntas de votación: %{poll}"
+        poll_questions: 'Preguntas de votación: %{poll}'
         table:
           poll_name: Votación
           question_name: Pregunta

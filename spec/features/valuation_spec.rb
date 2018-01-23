@@ -66,6 +66,8 @@ feature 'Valuation' do
 
   scenario 'Access as a valuator is authorized' do
     create(:valuator, user: user)
+    create(:budget)
+
     login_as(user)
     visit root_path
 
@@ -78,6 +80,8 @@ feature 'Valuation' do
 
   scenario 'Access as an administrator is authorized' do
     create(:administrator, user: user)
+    create(:budget)
+
     login_as(user)
     visit root_path
 
@@ -90,6 +94,8 @@ feature 'Valuation' do
 
   scenario "Valuation access links" do
     create(:valuator, user: user)
+    create(:budget)
+
     login_as(user)
     visit root_path
 
@@ -100,6 +106,8 @@ feature 'Valuation' do
 
   scenario 'Valuation dashboard' do
     create(:valuator, user: user)
+    create(:budget)
+
     login_as(user)
     visit root_path
 

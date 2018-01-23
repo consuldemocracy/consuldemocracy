@@ -1,0 +1,1 @@
+resources :guides, only: :new
