@@ -25,7 +25,7 @@ feature 'Budgets' do
         expect(page).to have_content(last_budget.name)
         expect(page).to have_content(last_budget.description)
         expect(page).to have_content(I18n.t('budgets.phase.informing'))
-        expect(page).to have_link 'Help about participatory budgets'
+        expect(page).to have_link 'Help with participatory budgets'
         expect(page).to have_link 'See all phases'
       end
 
