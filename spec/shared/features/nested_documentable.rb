@@ -52,6 +52,13 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         click_link "Add new document"
       end
 
+      within "#nested-documents" do
+        find_all(".document input[type=file]", visible: true).each do |document|
+        attach_file(document, "spec/fixtures/files/empty.pdf", make_visible: true)
+        end
+      end
+
+      expect(page).to have_content I18n.t 'documents.buttons.destroy_document'
       expect(page).to have_css ".max-documents-notice", visible: true
     end
 
