@@ -83,4 +83,24 @@ feature 'Results' do
     expect(page).not_to have_content "Incompatibles"
   end
 
+  context "Index" do
+
+    scenario "Display links to finished budget results" do
+      (Budget::Phase::PHASE_KINDS - ['finished']).each do |phase|
+        budget = create(:budget, phase: phase)
+        expect(page).to_not have_css("#budget_#{budget.id}_results", text: "See results")
+      end
+
+      finished_budget1 = create(:budget, phase: "finished")
+      finished_budget2 = create(:budget, phase: "finished")
+      finished_budget3 = create(:budget, phase: "finished")
+
+      visit budgets_path
+
+      expect(page).to have_css("#budget_#{finished_budget1.id}_results", text: "See results")
+      expect(page).to have_css("#budget_#{finished_budget2.id}_results", text: "See results")
+      expect(page).to have_css("#budget_#{finished_budget3.id}_results", text: "See results")
+    end
+  end
+
 end
