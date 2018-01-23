@@ -96,15 +96,19 @@
       </div>
 
       <p>
+        <!--
         <%= link_to budget_url(@budget) do %>
           <small><%= t("budgets.index.investment_proyects") %></small>
         <% end %><br>
+        -->
         <%= link_to budget_url(@budget, filter: 'unfeasible') do %>
           <small><%= t("budgets.index.unfeasible_investment_proyects") %></small>
         <% end %><br>
+        <!--
         <%= link_to budget_url(@budget, filter: 'unselected') do %>
           <small><%= t("budgets.index.not_selected_investment_proyects") %></small>
         <% end %>
+        -->
       </p>
 
       <div id="all_phases">
