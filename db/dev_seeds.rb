@@ -428,29 +428,36 @@ section "Creating Valuation Assignments" do
 end
 
 section "Creating Budgets" do
-  Budget::Phase::PHASE_KINDS.each_with_index do |phase, i|
-    descriptions = Hash[Budget::Phase::PHASE_KINDS.map do |p|
-      ["description_#{p}",
-       "<p>#{Faker::Lorem.paragraphs(2).join('</p><p>')}</p>"]
-    end]
-    budget = Budget.create!(
-      descriptions.merge(
-        name: (Date.current - 10 + i).to_s,
-        currency_symbol: "€",
-        phase: phase
-      )
-    )
+  Budget.create(
+    name: "Budget #{Date.current.year - 1}",
+    currency_symbol: "€",
+    phase: 'finished'
+  )
+  Budget.create(
+    name: "Budget #{Date.current.year}",
+    currency_symbol: "€",
+    phase: 'accepting'
+  )
 
-    (1..([1, 2, 3].sample)).each do |k|
-      group = budget.groups.create!(name: "#{Faker::StarWars.planet} #{k}")
+  Budget.all.each do |budget|
+    city_group = budget.groups.create!(name: "All City")
+    city_group.headings.create!(name: 'All City',
+                                price: 1000000,
+                                population: 1000000)
 
-      geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
-      geozones.each do |geozone|
-        group.headings << group.headings.create!(name: "#{geozone.name} #{k}",
-                                                 price: rand(1..100) * 100000,
-                                                 population: rand(1..50) * 10000)
-      end
-    end
+    districts_group = budget.groups.create!(name: "Districts")
+    districts_group.headings.create!(name: "North District",
+                                     price: rand(5..10) * 100000,
+                                     population: 350000)
+    districts_group.headings.create!(name: "West District",
+                                     price: rand(5..10) * 100000,
+                                     population: 300000)
+    districts_group.headings.create!(name: "East District",
+                                     price: rand(5..10) * 100000,
+                                     population: 200000)
+    districts_group.headings.create!(name: "Central District",
+                                     price: rand(5..10) * 100000,
+                                     population: 150000)
   end
 end
 
@@ -481,25 +488,25 @@ end
 section "Geolocating Investments" do
   Budget.all.each do |budget|
     budget.investments.each do |investment|
-      MapLocation.create(latitude: 40.4167278 + rand(-10..10)/100.to_f,
-                         longitude: -3.7055274 + rand(-10..10)/100.to_f,
-                         zoom: 10,
+      MapLocation.create(latitude: Setting['map_latitude'].to_f + rand(-10..10)/100.to_f,
+                         longitude: Setting['map_longitude'].to_f + rand(-10..10)/100.to_f,
+                         zoom: Setting['map_zoom'],
                          investment_id: investment.id)
     end
   end
 end
 
 section "Balloting Investments" do
-  Budget.balloting.last.investments.each do |investment|
+  Budget.finished.first.investments.last(20).each do |investment|
     investment.update(selected: true, feasibility: "feasible")
   end
 end
 
 section "Winner Investments" do
-  budget = Budget.where(phase: "finished").last
-  100.times do
+  budget = Budget.finished.first
+  50.times do
     heading = budget.headings.all.sample
-    investment = Budget::Investment.create!(
+    Budget::Investment.create!(
       author: User.all.sample,
       heading: heading,
       group: heading.group,
