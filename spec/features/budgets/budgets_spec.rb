@@ -8,17 +8,14 @@ feature 'Budgets' do
   context 'Index' do
 
     scenario 'Show normal index with links' do
-      finished_budget = create(:budget, :finished)
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
-
       heading1 = create(:budget_heading, group: group1)
       heading2 = create(:budget_heading, group: group2)
 
       budget.update_attributes(phase: 'informing')
 
       visit budgets_path
-
 
       within("#budget_heading") do
         expect(page).to have_content(budget.name)
@@ -37,12 +34,26 @@ feature 'Budgets' do
       end
 
       within('#budget_info') do
-        expect(page).to have_content group1.name
-        expect(page).to have_content group2.name
-        expect(page).to have_content heading1.name
-        expect(page).to have_content budget.formatted_heading_price(heading1)
-        expect(page).to have_content heading2.name
-        expect(page).to have_content budget.formatted_heading_price(heading2)
+        expect(page).to have_content(group1.name)
+        expect(page).to have_content(group2.name)
+        expect(page).to have_content(heading1.name)
+        expect(page).to have_content(budget.formatted_heading_price(heading1))
+        expect(page).to have_content(heading2.name)
+        expect(page).to have_content(budget.formatted_heading_price(heading2))
+      end
+
+      expect(page).not_to have_content("#finished_budgets")
+    end
+
+    scenario 'Show finished budgets list' do
+      finished_budget = create(:budget, :finished)
+      drafting_budget = create(:budget, :drafting)
+      visit budgets_path
+
+      within("#finished_budgets") do
+        expect(page).to have_content(finished_budget.name)
+        expect(page).not_to have_content(budget.name)
+        expect(page).not_to have_content(drafting_budget.name)
       end
     end
 
