@@ -101,7 +101,7 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
-      select "Parks: Central Park", from: "heading_id"
+      select "Central Park", from: "heading_id"
 
       expect(page).not_to have_link("Realocate visitors")
       expect(page).not_to have_link("Change name")

@@ -378,7 +378,7 @@ feature 'Emails' do
       login_as(author)
       visit new_budget_investment_path(budget_id: budget.id)
 
-      select  "#{group.name}: #{heading.name}", from: 'budget_investment_heading_id'
+      select  "#{heading.name}", from: 'budget_investment_heading_id'
       fill_in 'budget_investment_title', with: 'Build a hospital'
       fill_in 'budget_investment_description', with: 'We have lots of people that require medical attention'
       check   'budget_investment_terms_of_service'
