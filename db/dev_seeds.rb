@@ -62,7 +62,7 @@ section "Creating Settings" do
   Setting.create(key: 'mailer_from_name', value: 'CONSUL')
   Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')
   Setting.create(key: 'meta_title', value: 'CONSUL')
-  Setting.create(key: 'meta_description', value: 'Citizen Participation and Open Government Application')
+  Setting.create(key: 'meta_description', value: 'Citizen Participation & Open Gov Application')
   Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
   Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
   Setting.create(key: 'min_age_to_participate', value: '16')
@@ -103,7 +103,8 @@ section "Creating Users" do
 
   admin = create_user('admin@consul.dev', 'admin')
   admin.create_administrator
-  admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  admin.update(residence_verified_at: Time.current,
+               confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                verified_at: Time.current, document_number: unique_document_number)
 
   moderator = create_user('mod@consul.dev', 'mod')
@@ -114,28 +115,33 @@ section "Creating Users" do
 
   valuator = create_user('valuator@consul.dev', 'valuator')
   valuator.create_valuator
-  valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  valuator.update(residence_verified_at: Time.current,
+                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                   verified_at: Time.current, document_number: unique_document_number)
 
   poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
   poll_officer.create_poll_officer
-  poll_officer.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  poll_officer.update(residence_verified_at: Time.current,
+                      confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                       verified_at: Time.current, document_number: unique_document_number)
 
   poll_officer2 = create_user('poll_officer2@consul.dev', 'Pauline M. Espinosa')
   poll_officer2.create_poll_officer
-  poll_officer2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  poll_officer2.update(residence_verified_at: Time.current,
+                       confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                        verified_at: Time.current, document_number: unique_document_number)
 
   create_user('unverified@consul.dev', 'unverified')
 
   level_2 = create_user('leveltwo@consul.dev', 'level 2')
-  level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number,
+  level_2.update(residence_verified_at: Time.current,
+                 confirmed_phone: Faker::PhoneNumber.phone_number,
                  document_number: unique_document_number, document_type: "1")
 
   verified = create_user('verified@consul.dev', 'verified')
 
-  verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  verified.update(residence_verified_at: Time.current,
+                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                   verified_at: Time.current, document_number: unique_document_number)
 
   (1..10).each do |i|
@@ -161,8 +167,11 @@ section "Creating Users" do
     user = create_user("user#{i}@consul.dev")
     level = [1, 2, 3].sample
     if level >= 2
-      user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number,
-                  document_number: unique_document_number, document_type: "1", geozone: Geozone.all.sample)
+      user.update(residence_verified_at: Time.current,
+                  confirmed_phone: Faker::PhoneNumber.phone_number,
+                  document_number: unique_document_number,
+                  document_type: "1",
+                  geozone: Geozone.all.sample)
     end
     if level == 3
       user.update(verified_at: Time.current, document_number: unique_document_number)
@@ -374,27 +383,27 @@ section "Flagging Debates & Comments" do
 end
 
 section "Creating Spending Proposals" do
-tags = Faker::Lorem.words(10)
-60.times do
-  geozone = Geozone.all.sample
-  author = User.all.sample
-  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-  feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-  valuation_finished = [true, false].sample
-  feasible = [true, false].sample
-  spending_proposal = SpendingProposal.create!(author: author,
-                                               title: Faker::Lorem.sentence(3).truncate(60),
-                                               external_url: Faker::Internet.url,
-                                               description: description,
-                                               created_at: rand((Time.current - 1.week)..Time.current),
-                                               geozone: [geozone, nil].sample,
-                                               feasible: feasible,
-                                               feasible_explanation: feasible_explanation,
-                                               valuation_finished: valuation_finished,
-                                               tag_list: tags.sample(3).join(','),
-                                               price: rand(1000000),
-                                               terms_of_service: "1")
-end
+  tags = Faker::Lorem.words(10)
+  60.times do
+    geozone = Geozone.all.sample
+    author = User.all.sample
+    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    valuation_finished = [true, false].sample
+    feasible = [true, false].sample
+    spending_proposal = SpendingProposal.create!(author: author,
+                                                 title: Faker::Lorem.sentence(3).truncate(60),
+                                                 external_url: Faker::Internet.url,
+                                                 description: description,
+                                                 created_at: rand((Time.current - 1.week)..Time.current),
+                                                 geozone: [geozone, nil].sample,
+                                                 feasible: feasible,
+                                                 feasible_explanation: feasible_explanation,
+                                                 valuation_finished: valuation_finished,
+                                                 tag_list: tags.sample(3).join(','),
+                                                 price: rand(1000000),
+                                                 terms_of_service: "1")
+  end
 end
 
 section "Creating Valuation Assignments" do
