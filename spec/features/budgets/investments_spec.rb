@@ -1230,6 +1230,74 @@ feature 'Budget Investments' do
       expect(Budget::Investment.count).to eq (budget_investment_count - 1)
 
     end
+
+  end
+
+  context "Check delete links" do
+
+    let(:author)  { create(:user, :level_two) }
+    let(:user)  { create(:user, :level_two) }
+    let(:budget)  { create(:budget) }
+    let(:investment) { create(:budget_investment, author: author, budget: budget) }
+    let(:delete_phases) { ['accepting','reviewing'] }
+
+    scenario 'Check delete links on budget_investment_path' do
+      login_as(author)
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        investment.budget.update(phase: phase)
+
+        visit budget_investment_path(investment.budget, investment)
+
+        if delete_phases.include? phase
+          expect(page).to have_content I18n.t("shared.delete")
+        else
+          expect(page).not_to have_content I18n.t("shared.delete")
+        end
+      end
+    end
+
+    scenario 'Check delete links not showing on not owned public investments on
+              budget_investment_path' do
+      login_as(user)
+
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        investment.budget.update(phase: phase)
+
+        visit budget_investment_path(investment.budget, investment)
+
+        expect(page).not_to have_content I18n.t("shared.delete")
+      end
+    end
+
+    scenario 'Display budget investment with link to delete when its
+              possible on user_path' do
+      login_as(author)
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        investment.budget.update(phase: phase)
+
+        visit user_path(author, filter: "budget_investments")
+
+        if delete_phases.include? phase
+          expect(page).to have_content I18n.t("shared.delete")
+        else
+          expect(page).not_to have_content I18n.t("shared.delete")
+        end
+      end
+
+    end
+
+    scenario 'Check delete links not showing on not owned public investments on
+              user_path' do
+      login_as(user)
+
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        investment.budget.update(phase: phase)
+
+        visit user_path(author, filter: "budget_investments")
+
+        expect(page).not_to have_content I18n.t("shared.delete")
+      end
+    end
   end
 
   context "Selecting Phase" do
