@@ -5,43 +5,69 @@ feature 'Budgets' do
   let(:budget) { create(:budget) }
   let(:level_two_user) { create(:user, :level_two) }
 
-  scenario 'Index' do
-    budgets = create_list(:budget, 3)
-    last_budget = budgets.last
-    group1 = create(:budget_group, budget: last_budget)
-    group2 = create(:budget_group, budget: last_budget)
+  context 'Index' do
+    let(:budgets) { create_list(:budget, 3) }
+    let(:last_budget) { budgets.last }
 
-    heading1 = create(:budget_heading, group: group1)
-    heading2 = create(:budget_heading, group: group2)
+    scenario 'Show normal index with links' do
+      group1 = create(:budget_group, budget: last_budget)
+      group2 = create(:budget_group, budget: last_budget)
 
-    visit budgets_path
+      heading1 = create(:budget_heading, group: group1)
+      heading2 = create(:budget_heading, group: group2)
 
-    within("#budget_heading") do
-      expect(page).to have_content(last_budget.name)
-      expect(page).to have_content(last_budget.description)
-      expect(page).to have_content("Actual phase")
+      last_budget.update_attributes(phase: 'informing')
+
+      visit budgets_path
+
+
+      within("#budget_heading") do
+        expect(page).to have_content(last_budget.name)
+        expect(page).to have_content(last_budget.description)
+        expect(page).to have_content(I18n.t('budgets.phase.informing'))
+        expect(page).to have_link 'Help with participatory budgets'
+        expect(page).to have_link 'See all phases'
+      end
+
       expect(page).to have_content("Accepting projects")
-      expect(page).to have_link 'Help with participatory budgets'
-      expect(page).to have_link 'See all phases'
+
+      last_budget.update_attributes(phase: 'publishing_prices')
+      visit budgets_path
+
+      within("#budget_heading") do
+        expect(page).to have_content(I18n.t('budgets.phase.publishing_prices'))
+      end
+
+      within('#budget_info') do
+        expect(page).to have_content group1.name
+        expect(page).to have_content group2.name
+        expect(page).to have_content heading1.name
+        expect(page).to have_content last_budget.formatted_heading_price(heading1)
+        expect(page).to have_content heading2.name
+        expect(page).to have_content last_budget.formatted_heading_price(heading2)
+
+        expect(page).to have_content budgets.first.name
+        expect(page).to have_content budgets[2].name
+      end
     end
 
-    last_budget.update_attributes(phase: 'publishing_prices')
-    visit budgets_path
+    scenario 'Show informing index without links' do
+      last_budget.update_attributes(phase: 'informing')
+      group = create(:budget_group, budget: last_budget)
+      heading = create(:budget_heading, group: group)
 
-    within("#budget_heading") do
-      expect(page).to have_content("Actual phase")
-    end
+      visit budgets_path
 
-    within('#budget_info') do
-      expect(page).to have_content group1.name
-      expect(page).to have_content group2.name
-      expect(page).to have_content heading1.name
-      expect(page).to have_content last_budget.formatted_heading_price(heading1)
-      expect(page).to have_content heading2.name
-      expect(page).to have_content last_budget.formatted_heading_price(heading2)
+      within('#budget_info') do
+        expect(page).not_to have_link "#{heading.name} €1,000,000"
+        expect(page).to have_content "#{heading.name} €1,000,000"
 
-      expect(page).to have_content budgets.first.name
-      expect(page).to have_content budgets[2].name
+        expect(page).not_to have_link "List of all investment projects"
+        expect(page).not_to have_link "List of all unfeasible investment projects"
+        expect(page).not_to have_link "List of all investment projects not selected for balloting"
+
+        expect(page).not_to have_css('div#map')
+      end
     end
   end
 

@@ -4,16 +4,18 @@ describe Budget::Phase do
 
   let(:budget)       { create(:budget) }
   let(:first_phase)  { budget.phases.drafting }
-  let(:second_phase) { budget.phases.accepting }
-  let(:third_phase)  { budget.phases.reviewing }
-  let(:fourth_phase) { budget.phases.selecting }
-  let(:final_phase)  { budget.phases.finished}
+  let(:second_phase)  { budget.phases.informing }
+  let(:third_phase) { budget.phases.accepting }
+  let(:fourth_phase)  { budget.phases.reviewing }
+  let(:fifth_phase) { budget.phases.selecting }
+  let(:final_phase) { budget.phases.finished}
 
   before do
     first_phase.update_attributes(starts_at: Date.current - 3.days, ends_at: Date.current - 1.day)
     second_phase.update_attributes(starts_at: Date.current - 1.days, ends_at: Date.current + 1.day)
     third_phase.update_attributes(starts_at: Date.current + 1.days, ends_at: Date.current + 3.day)
     fourth_phase.update_attributes(starts_at: Date.current + 3.days, ends_at: Date.current + 5.day)
+    fifth_phase.update_attributes(starts_at: Date.current + 5.days, ends_at: Date.current + 7.day)
   end
 
   describe "validates" do
@@ -90,7 +92,7 @@ describe Budget::Phase do
 
     describe "#next_phase_dates_valid?" do
       let(:error) do
-        "End date must be earlier than the end date of the next enabled phase (Reviewing projects)"
+        "End date must be earlier than the end date of the next enabled phase (Accepting projects)"
       end
 
       it "is invalid when end date is same as next enabled phase end date" do

@@ -30,6 +30,7 @@ en:
         unselected: See investments not selected for balloting phase
     phase:
       drafting: Draft (Not visible to the public)
+      informing: Informing
       accepting: Accepting projects
       reviewing: Reviewing projects
       selecting: Selecting projects
