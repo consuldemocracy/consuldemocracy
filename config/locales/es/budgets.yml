@@ -31,10 +31,10 @@ es:
     phase:
       drafting: Borrador (No visible para el público)
       accepting: Presentación de proyectos
-      reviewing: Revisión interna de proyectos
+      reviewing: Revisión inicial de proyectos
       selecting: Fase de apoyos
       valuating: Evaluación de proyectos
-      publishing_prices: Publicación de precios
+      publishing_prices: Revisión de costes
       balloting: Votación final
       reviewing_ballots: Votación finalizada
       finished: Resultados
