@@ -3,6 +3,7 @@ class Budget
     PHASE_KINDS = %w(drafting accepting reviewing selecting valuating publishing_prices balloting
                 reviewing_ballots finished).freeze
     PUBLISHED_PRICES_PHASES = %w(publishing_prices balloting reviewing_ballots finished).freeze
+    SUMMARY_MAX_LENGTH = 1000
     DESCRIPTION_MAX_LENGTH = 2000
 
     belongs_to :budget
@@ -11,6 +12,7 @@ class Budget
 
     validates :budget, presence: true
     validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: PHASE_KINDS }
+    validates :summary, length: { maximum: SUMMARY_MAX_LENGTH }
     validates :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validate :invalid_dates_range?
     validate :prev_phase_dates_valid?
@@ -19,6 +21,7 @@ class Budget
     before_validation :sanitize_description
 
     after_save :adjust_date_ranges
+    after_save :touch_budget
 
     scope :enabled,           -> { where(enabled: true) }
     scope :published,         -> { enabled.where.not(kind: 'drafting') }
@@ -40,6 +43,14 @@ class Budget
       prev_phase&.enabled? ? prev_phase : prev_phase&.prev_enabled_phase
     end
 
+    def invalid_dates_range?
+      if starts_at.present? && ends_at.present? && starts_at >= ends_at
+        errors.add(:starts_at, I18n.t('budgets.phases.errors.dates_range_invalid'))
+      end
+    end
+
+    private
+
     def adjust_date_ranges
       if enabled?
         next_enabled_phase&.update_column(:starts_at, ends_at)
@@ -49,13 +60,9 @@ class Budget
       end
     end
 
-    def invalid_dates_range?
-      if starts_at.present? && ends_at.present? && starts_at >= ends_at
-        errors.add(:starts_at, I18n.t('budgets.phases.errors.dates_range_invalid'))
-      end
+    def touch_budget
+      budget.touch
     end
-
-    private
 
     def prev_phase_dates_valid?
       if enabled? && starts_at.present? && prev_enabled_phase.present?

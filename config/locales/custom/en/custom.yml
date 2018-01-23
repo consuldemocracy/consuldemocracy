@@ -53,6 +53,11 @@ en:
       description_reviewing: "El 30 de junio se cerró la votación final. Los proyectos ganadores se darán a conocer el próximo 13 de julio."
       title_finished: "Resultados de los Presupuestos participativos de Madrid"
       description_finished: "Mira qué proyectos ciudadanos se ejecutarán a partir de 2018 con los 100 millones de los presupuestos participativos."
+    budget_2018:
+      accepting:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Presenta tus proyectos a los presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+        social: "#ParticipativosMadrid18: Tú decides a qué proyectos ciudadanos dedicar 100 millones de euros del presupuesto municipal."
   social_share:
     polls_show:
       title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"
@@ -170,13 +175,11 @@ en:
       title: "Do you have an idea to change Madrid?"
       text: "Madrid City Council will carry out your proposal if it reaches a citizen voting. You need 27,064 supports in Decide Madrid, the 1% of the population with the right to vote."
       button: "Create a proposal"
-    proposals:
-      label: "Proposals"
-      title: "What is it and how to create a citizen proposal?"
-      text: "It is a participation tool which citizens use to decide directly on municipal policies."
-      link: "More information about how to create citizen proposals"
-      url: "https://diario.madrid.es/decidemadrid/2017/09/05/las-propuestas-ciudadanas-de-decide-madrid-paso-a-paso/"
-      alt: "Creation of a proposal on Decide Madrid"
+    header_budget:
+      label: "Participatory budgets 2018"
+      title: "Decide the citizen projects that Madrid City Council will do, you have:"
+      text: "100 million euros"
+      button: "Send your project"
     once_plazas:
       label: "Voting results"
       title: "Citizens approve the remodeling of eleven squares"

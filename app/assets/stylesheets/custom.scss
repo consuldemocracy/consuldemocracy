@@ -2788,44 +2788,107 @@ $campaign-yellow:  #ffdb19;
 // -------------------------------
 
 $budget-custom: #5a6175 !important;
+$budget-2018-blue:     #408ea2;
+$budget-2018-pink:     #e78573;
+$budget-2018-yellow:   #fef384;
 
 .expanded.budget,
 .jumbo-budget {
+  background: #000;
 
-  h1,
-  h2,
-  p,
-  .back,
-  .icon-angle-left {
-    color: $text;
-  }
 
-  a {
-    color: $link;
-    text-decoration: none;
-  }
-
-  a.button,
-  &.button {
-    background: #000;
-    color: #fff;
+  h1 {
+    color: $budget-2018-pink;
+    font-family: "Souvenir" !important;
+    font-size: rem-calc(30);
+    font-weight: 700;
+    line-height: rem-calc(30);
   }
 
   &.budget-heading {
     min-height: $line-height * 11;
+
+    h2 {
+      color: $budget-2018-yellow;
+      font-family: "Souvenir" !important;
+      font-weight: 400;
+    }
+  }
+
+  &.budget-header {
+    background: #000;
+
+    @include breakpoint(medium) {
+      background: #000 image-url('budget_welcome/background_header.jpg');
+      background-position: 100% top;
+      background-size: contain;
+    }
   }
 
   .info {
-    background: $campaign-yellow;
+    background: #fff;
+    border-bottom: 1px solid #000;
+
+    h2,
+    a {
+      color: #000;
+    }
+
+    a.button,
+    &.button {
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+    }
 
     @include breakpoint(medium) {
-      border-top: rem-calc(6) solid $campaign-yellow;
+      border-bottom: 0;
+      border-top: rem-calc(6) solid $budget-2018-pink;
     }
 
     p {
       color: #000;
       margin-bottom: 0;
       text-transform: uppercase;
+    }
+  }
+}
+
+.budget-info {
+
+  .submenu .active {
+    border-bottom: 2px solid #000;
+    color: #000;
+  }
+
+  .budget-timeline {
+    border-left: 3px solid #000;
+
+    .phase {
+
+      &::before {
+        background: #fff;
+        border: 4px solid $budget-2018-blue;
+      }
+
+      &.active {
+
+        h3 {
+          background: #000;
+          color: $budget-2018-blue;
+        }
+
+        &::before {
+          background: #000;
+        }
+      }
+    }
+  }
+
+  .budget-investments-list {
+
+    .button {
+      background: #000;
     }
   }
 }
@@ -3061,6 +3124,58 @@ h2.map-title {
 
   @include breakpoint(medium) {
     min-width: rem-calc(100);
+  }
+}
+
+.guides {
+
+  .guide-budget {
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+
+    h2 {
+      color: $budget-2018-yellow;
+    }
+
+    &::before {
+      background: $budget-2018-yellow;
+      color: #000;
+    }
+
+    li {
+
+      &::before {
+        color: $budget-2018-blue;
+      }
+    }
+
+    .button {
+      background: $budget-2018-yellow;
+      color: #000;
+    }
+  }
+
+  .button {
+    border: 0 !important;
+  }
+
+  .guide-proposal {
+    border: 1px solid $border;
+  }
+}
+
+.groups-and-headings {
+
+  .heading {
+
+    &:hover {
+      background: white;
+    }
+
+    .heading-info {
+      padding: $line-height / 2;
+    }
   }
 }
 

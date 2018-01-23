@@ -5,8 +5,8 @@ en:
         one: "activity"
         other: "activities"
       budget:
-        one: "Participatory budget"
-        other: "Participatory budgets"
+        one: "Budget"
+        other: "Budgets"
       budget/investment:
         one: "Investment"
         other: "Investments"

@@ -123,8 +123,8 @@ Setting['min_age_to_verify'] = 16
 Setting['proposal_improvement_path'] = nil
 
 # City map feature default configuration (Greenwich)
-Setting['map_latitude'] = 51.48
-Setting['map_longitude'] = 0.0
+Setting['map_latitude'] = 40.4332002
+Setting['map_longitude'] = -3.7009591
 Setting['map_zoom'] = 10
 
 # Related content

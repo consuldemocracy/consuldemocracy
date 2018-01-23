@@ -53,7 +53,7 @@ feature 'Budgets' do
 
     budget.phases.drafting.update(starts_at: '30-12-2017', ends_at: '31-12-2017', enabled: true,
                                   description: 'Description of drafting phase',
-                                  summary: 'This is the summary for drafting phase')
+                                  summary: '<p>This is the summary for drafting phase</p>')
 
     budget.phases.accepting.update(starts_at: '01-01-2018', ends_at: '10-01-2018', enabled: true,
                                    description: 'Description of accepting phase',
@@ -90,24 +90,24 @@ feature 'Budgets' do
     visit budgets_path
 
     expect(page).not_to have_content "This is the summary for drafting phase"
-    expect(page).not_to have_content "30 Dec 2017 - 31 Dec 2017"
+    expect(page).not_to have_content "December 30, 2017 - December 31, 2017"
     expect(page).not_to have_content "This is the summary for reviewing phase"
-    expect(page).not_to have_content "11 Jan 2018 - 20 Jan 2018"
+    expect(page).not_to have_content "January 11, 2018 - January 20, 2018"
     expect(page).not_to have_content "This is the summary for valuating phase"
-    expect(page).not_to have_content "10 Feb 2018 - 20 Feb 2018"
+    expect(page).not_to have_content "February 10, 2018 - February 20, 2018"
     expect(page).not_to have_content "This is the summary for publishing_prices phase"
-    expect(page).not_to have_content "21 Feb 2018 - 01 Mar 2018"
+    expect(page).not_to have_content "February 21, 2018 - March 01, 2018"
     expect(page).not_to have_content "This is the summary for reviewing_ballots phase"
-    expect(page).not_to have_content "11 Mar 2018 - 20 Mar 2018'"
+    expect(page).not_to have_content "March 11, 2018 - March 20, 2018'"
 
     expect(page).to have_content "This is the summary for accepting phase"
-    expect(page).to have_content "01 Jan 2018 - 20 Jan 2018"
+    expect(page).to have_content "January 01, 2018 - January 20, 2018"
     expect(page).to have_content "This is the summary for selecting phase"
-    expect(page).to have_content "21 Jan 2018 - 01 Mar 2018"
+    expect(page).to have_content "January 21, 2018 - March 01, 2018"
     expect(page).to have_content "This is the summary for balloting phase"
-    expect(page).to have_content "02 Mar 2018 - 20 Mar 2018"
+    expect(page).to have_content "March 02, 2018 - March 20, 2018"
     expect(page).to have_content "This is the summary for finished phase"
-    expect(page).to have_content "21 Mar 2018 - 29 Mar 2018"
+    expect(page).to have_content "March 21, 2018 - March 29, 2018"
 
     expect(page).to have_css(".phase.active", count: 1)
   end
@@ -160,6 +160,26 @@ feature 'Budgets' do
 
       expect(page).to have_link "See unfeasible investments"
       expect(page).to have_link "See investments not selected for balloting phase"
+    end
+
+    scenario "Take into account headings with the same name from a different budget" do
+      group1 = create(:budget_group, budget: budget, name: "New York")
+      heading1 = create(:budget_heading, group: group1, name: "Brooklyn")
+      heading2 = create(:budget_heading, group: group1, name: "Queens")
+
+      budget2 = create(:budget)
+      group2 = create(:budget_group, budget: budget2, name: "New York")
+      heading3 = create(:budget_heading, group: group2, name: "Brooklyn")
+      heading4 = create(:budget_heading, group: group2, name: "Queens")
+
+      visit budget_path(budget)
+      click_link "New York"
+
+      expect(page).to have_css("#budget_heading_#{heading1.id}")
+      expect(page).to have_css("#budget_heading_#{heading2.id}")
+
+      expect(page).to_not have_css("#budget_heading_#{heading3.id}")
+      expect(page).to_not have_css("#budget_heading_#{heading4.id}")
     end
 
   end

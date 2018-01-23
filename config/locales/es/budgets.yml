@@ -31,10 +31,10 @@ es:
     phase:
       drafting: Borrador (No visible para el público)
       accepting: Presentación de proyectos
-      reviewing: Revisión interna de proyectos
+      reviewing: Revisión inicial de proyectos
       selecting: Fase de apoyos
       valuating: Evaluación de proyectos
-      publishing_prices: Publicación de precios
+      publishing_prices: Revisión de costes
       balloting: Votación final
       reviewing_ballots: Votación finalizada
       finished: Resultados
@@ -168,6 +168,9 @@ es:
       accepted: 'Propuesta de inversión aceptada: '
       discarded: 'Propuesta de inversión descartada: '
       incompatibles: Incompatibles
+      investment_proyects: Ver lista completa de proyectos de gasto
+      unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
+      not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
     phases:
       errors:
         dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"
