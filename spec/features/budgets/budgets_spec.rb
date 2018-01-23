@@ -90,24 +90,24 @@ feature 'Budgets' do
     visit budgets_path
 
     expect(page).not_to have_content "This is the summary for drafting phase"
-    expect(page).not_to have_content "30 Dec 2017 - 31 Dec 2017"
+    expect(page).not_to have_content "December 30, 2017 - December 31, 2017"
     expect(page).not_to have_content "This is the summary for reviewing phase"
-    expect(page).not_to have_content "11 Jan 2018 - 20 Jan 2018"
+    expect(page).not_to have_content "January 11, 2018 - January 20, 2018"
     expect(page).not_to have_content "This is the summary for valuating phase"
-    expect(page).not_to have_content "10 Feb 2018 - 20 Feb 2018"
+    expect(page).not_to have_content "February 10, 2018 - February 20, 2018"
     expect(page).not_to have_content "This is the summary for publishing_prices phase"
-    expect(page).not_to have_content "21 Feb 2018 - 01 Mar 2018"
+    expect(page).not_to have_content "February 21, 2018 - March 01, 2018"
     expect(page).not_to have_content "This is the summary for reviewing_ballots phase"
-    expect(page).not_to have_content "11 Mar 2018 - 20 Mar 2018'"
+    expect(page).not_to have_content "March 11, 2018 - March 20, 2018'"
 
     expect(page).to have_content "This is the summary for accepting phase"
-    expect(page).to have_content "01 Jan 2018 - 20 Jan 2018"
+    expect(page).to have_content "January 01, 2018 - January 20, 2018"
     expect(page).to have_content "This is the summary for selecting phase"
-    expect(page).to have_content "21 Jan 2018 - 01 Mar 2018"
+    expect(page).to have_content "January 21, 2018 - March 01, 2018"
     expect(page).to have_content "This is the summary for balloting phase"
-    expect(page).to have_content "02 Mar 2018 - 20 Mar 2018"
+    expect(page).to have_content "March 02, 2018 - March 20, 2018"
     expect(page).to have_content "This is the summary for finished phase"
-    expect(page).to have_content "21 Mar 2018 - 29 Mar 2018"
+    expect(page).to have_content "March 21, 2018 - March 29, 2018"
 
     expect(page).to have_css(".phase.active", count: 1)
   end
