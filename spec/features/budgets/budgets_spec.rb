@@ -205,24 +205,10 @@ feature 'Budgets' do
     end
 
     context "Listed" do
-      scenario "Not listed to guest users at the public budgets list" do
+      scenario "Not listed at public budgets list" do
         visit budgets_path
 
         expect(page).not_to have_content(budget.name)
-      end
-
-      scenario "Not listed to logged users at the public budgets list" do
-        login_as(level_two_user)
-        visit budgets_path
-
-        expect(page).not_to have_content(budget.name)
-      end
-
-      scenario "Is listed to admins at the public budgets list" do
-        login_as(admin)
-        visit budgets_path
-
-        expect(page).to have_content(budget.name)
       end
     end
 
