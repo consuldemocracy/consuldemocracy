@@ -118,7 +118,7 @@
       </ul>
 
       <div class="budget-investments-list">
-        <% @budgets.each do |budget| %>
+        <% @budgets.finished.each do |budget| %>
           <% if budget_published?(budget) %>
             <div class="budget-investment clear">
               <div class="panel past-budgets">
