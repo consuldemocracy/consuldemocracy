@@ -6,32 +6,30 @@ feature 'Budgets' do
   let(:level_two_user) { create(:user, :level_two) }
 
   context 'Index' do
-    let(:budgets) { create_list(:budget, 3) }
-    let(:last_budget) { budgets.last }
 
     scenario 'Show normal index with links' do
-      group1 = create(:budget_group, budget: last_budget)
-      group2 = create(:budget_group, budget: last_budget)
+      finished_budget = create(:budget, :finished)
+      group1 = create(:budget_group, budget: budget)
+      group2 = create(:budget_group, budget: budget)
 
       heading1 = create(:budget_heading, group: group1)
       heading2 = create(:budget_heading, group: group2)
 
-      last_budget.update_attributes(phase: 'informing')
+      budget.update_attributes(phase: 'informing')
 
       visit budgets_path
 
 
       within("#budget_heading") do
-        expect(page).to have_content(last_budget.name)
-        expect(page).to have_content(last_budget.description)
+        expect(page).to have_content(budget.name)
+        expect(page).to have_content(budget.description)
+        expect(page).to have_content("Actual phase")
         expect(page).to have_content(I18n.t('budgets.phase.informing'))
         expect(page).to have_link 'Help with participatory budgets'
         expect(page).to have_link 'See all phases'
       end
 
-      expect(page).to have_content("Accepting projects")
-
-      last_budget.update_attributes(phase: 'publishing_prices')
+      budget.update_attributes(phase: 'publishing_prices')
       visit budgets_path
 
       within("#budget_heading") do
@@ -42,18 +40,15 @@ feature 'Budgets' do
         expect(page).to have_content group1.name
         expect(page).to have_content group2.name
         expect(page).to have_content heading1.name
-        expect(page).to have_content last_budget.formatted_heading_price(heading1)
+        expect(page).to have_content budget.formatted_heading_price(heading1)
         expect(page).to have_content heading2.name
-        expect(page).to have_content last_budget.formatted_heading_price(heading2)
-
-        expect(page).to have_content budgets.first.name
-        expect(page).to have_content budgets[2].name
+        expect(page).to have_content budget.formatted_heading_price(heading2)
       end
     end
 
     scenario 'Show informing index without links' do
-      last_budget.update_attributes(phase: 'informing')
-      group = create(:budget_group, budget: last_budget)
+      budget.update_attributes(phase: 'informing')
+      group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
 
       visit budgets_path
