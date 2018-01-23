@@ -3165,6 +3165,20 @@ h2.map-title {
   }
 }
 
+.groups-and-headings {
+
+  .heading {
+
+    &:hover {
+      background: white;
+    }
+
+    .heading-info {
+      padding: $line-height / 2;
+    }
+  }
+}
+
 // 12. Nvotes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
