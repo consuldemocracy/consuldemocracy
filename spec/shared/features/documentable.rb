@@ -61,15 +61,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
         end
       end
 
-      scenario "Should be able when any administrator logged in" do
-        login_as administrator
-        visit send(documentable_path, arguments)
-
-        within "#tab-documents" do
-          expect(page).to have_link("Destroy")
-        end
-      end
-
       scenario "Administrators cannot destroy documentables they have not authored" do
         login_as(administrator)
         visit send(documentable_path, arguments)
