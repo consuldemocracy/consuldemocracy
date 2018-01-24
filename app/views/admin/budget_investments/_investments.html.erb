@@ -28,12 +28,13 @@
         <th><%= t("admin.budget_investments.index.table_feasibility") %></th>
         <th class="text-center"><%= t("admin.budget_investments.index.table_valuation_finished") %></th>
         <th class="text-center">
-          <% if params[:filter] == "valuating" %>
+          <% if params[:filter] == "under_valuation" %>
             <%= t("admin.budget_investments.index.table_evaluation") %>
           <% else %>
             <%= t("admin.budget_investments.index.table_selection") %>
           <% end %>
         </th>
+        <% if params[:filter]  == "selected" %>
           <th class="text-center"><%= t("admin.budget_investments.index.table_incompatible") %></th>
         <% end %>
       </tr>
@@ -82,7 +83,7 @@
             <%= investment.valuation_finished? ? t("shared.yes"): t("shared.no") %>
           </td>
         <td class="small text-center">
-          <% if params[:filter] == "valuating" %>
+          <% if params[:filter] == "under_valuation" %>
             <%= form_for [:admin, investment.budget, investment], remote: true do |f| %>
               <%= f.check_box :visible_to_valuators,
                               label: false,

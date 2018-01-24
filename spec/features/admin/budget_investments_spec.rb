@@ -8,8 +8,8 @@ feature 'Admin budget investments' do
   end
 
   background do
-    admin = create(:administrator)
-    login_as(admin.user)
+    @admin = create(:administrator)
+    login_as(@admin.user)
   end
 
   context "Feature flag" do
@@ -953,8 +953,8 @@ feature 'Admin budget investments' do
     scenario "Mark as visible to valuator", :js do
       valuator = create(:valuator)
 
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
+      investment1 = create(:budget_investment, heading: heading, administrator_id: @admin.id)
+      investment2 = create(:budget_investment, heading: heading, administrator_id: @admin.id)
 
       investment1.valuators << valuator
       investment2.valuators << valuator
@@ -981,8 +981,8 @@ feature 'Admin budget investments' do
     scenario "Unmark as visible to valuator", :js do
       valuator = create(:valuator)
 
-      investment1 = create(:budget_investment, heading: heading, visible_to_valuators: true)
-      investment2 = create(:budget_investment, heading: heading, visible_to_valuators: true)
+      investment1 = create(:budget_investment, heading: heading, visible_to_valuators: true, administrator_id: @admin.id)
+      investment2 = create(:budget_investment, heading: heading, visible_to_valuators: true, administrator_id: @admin.id)
 
       investment1.valuators << valuator
       investment2.valuators << valuator
@@ -1008,14 +1008,17 @@ feature 'Admin budget investments' do
     end
 
     scenario "Showing the valuating checkbox" do
-      investment1 = create(:budget_investment, heading: heading, visible_to_valuators: true)
-      investment2 = create(:budget_investment, heading: heading, visible_to_valuators: false)
+      investment1 = create(:budget_investment, heading: heading, visible_to_valuators: true, administrator_id: @admin.id)
+      investment2 = create(:budget_investment, heading: heading, visible_to_valuators: false, administrator_id: @admin.id)
 
       investment1.valuators << create(:valuator)
       investment2.valuators << create(:valuator)
 
       visit admin_budget_budget_investments_path(@budget)
-      within('#filter-subnav') { click_link 'All' }
+      within('#filter-subnav') do
+        expect(page).not_to have_link "All"
+        expect(page).to have_content "All"
+      end
 
       expect(page).not_to have_css("#budget_investment_visible_to_valuators")
       expect(page).not_to have_css("#budget_investment_visible_to_valuators")
