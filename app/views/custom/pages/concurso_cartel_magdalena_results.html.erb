@@ -1,31 +1,35 @@
-<% provide :title do %><%= t('pages.titles.concurso_cartel_magdalena') %><% end %>
+<% provide :title do %>
+  <%= t('pages.titles.concurso_cartel_magdalena') %>
+    <% end %>
 
-<% votacion = Poll.first %>
+      <% votacion = Poll.first %>
 
-<div class="expanded cartel_magdalena_2018 no-margin-top">
-  <div class="row">
-    <div class="small-12 medium-12 column padding">
-      <h1>
-        <%= t('pages.cartel_magdalena_2018.title') %>
-        <br>
-        <small>
-          <%= link_to t('pages.cartel_magdalena_2018.bases_link'), "/system/concurso_cartel_magdalena/Cartel_Magdalena_2018_Bases_#{I18n.locale}.pdf", target: '_blank' %>
-        </small>
-      </h1>
-    </div>
-  </div>
-</div>
+        <div class="expanded cartel_magdalena_2018 no-margin-top">
+          <div class="row">
+            <div class="small-12 medium-12 column padding">
+              <h1>
+                <%= t('pages.cartel_magdalena_2018.title') %>
+                  <br>
+                  <small>
+                    <%= link_to t('pages.cartel_magdalena_2018.bases_link'), "/system/concurso_cartel_magdalena/Cartel_Magdalena_2018_Bases_#{I18n.locale}.pdf", target: '_blank' %>
+                  </small>
+              </h1>
+            </div>
+          </div>
+        </div>
 
-<div class="row">
-  <div class="small-12 medium-9 column">
-    <%= render 'pages/concurso_cartel_magdalena/concurso_tabs' %>
-    <h2><%= t('pages.cartel_magdalena_2018.results') %></h2>
+        <div class="row">
+          <div class="small-12 medium-9 column">
+            <%= render 'pages/concurso_cartel_magdalena/concurso_tabs' %>
+              <h2>
+                <%= t('pages.cartel_magdalena_2018.results') %>
+              </h2>
 
-    <%
+              <%
       results = []
       answers = votacion.questions.first.answers.to_a
-      votacion.questions.first.answers.each do |va|
-        votos =  answers.select { |a| a.answer == va }.size
+      votacion.questions.first.question_answers.each do |va|
+        votos = va.total_votes
         porcentaje = votos * 100.0 / answers.size
          results << {
           respuesta: va,
@@ -36,46 +40,64 @@
       results = results.sort { |a, b| b[:votos] <=> a[:votos] }
     %>
 
-    <table class="hover">
-      <thead>
-        <tr>
-          <th><%= t('pages.cartel_magdalena_2018.cartel') %></th>
-          <th><%= t('pages.cartel_magdalena_2018.lema') %></th>
-          <th class="text-right"><%= t('pages.cartel_magdalena_2018.votos') %></th>
-          <th class="text-right">%</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% results.each do |r| %>
-          <tr>
-            <td>
-              <%= link_to image_tag("/system/concurso_cartel_magdalena/cartel_#{r[:respuesta]}_p.jpg"), asset_path("/system/concurso_cartel_magdalena/cartel_#{r[:respuesta]}.jpg"), target: "_blank" %>
-            </td>
-            <td>
-              <%= t("pages.cartel_magdalena_2018.cartel_#{r[:respuesta].answer}.lema") %>
+                <table class="hover">
+                  <thead>
+                    <tr>
+                      <th>
+                        <%= t('pages.cartel_magdalena_2018.cartel') %>
+                      </th>
+                      <th>
+                        <%= t('pages.cartel_magdalena_2018.lema') %>
+                      </th>
+                      <th class="text-right">
+                        <%= t('pages.cartel_magdalena_2018.votos') %>
+                      </th>
+                      <th class="text-right">%</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% results.each do |r| %>
+                      <tr>
+                        <td>
 
-            </td>
-            <td class="text-right"><%= r[:votos] %></td>
-            <td class="text-right"><%= number_to_percentage(r[:porcentaje], precision: 2) %></td>
-          </tr>
-        <% end %>
-      </tbody>
-      <tfoot>
-        <tr>
-          <th></th>
-          <th></th>
-          <th class="text-right"><%= answers.size %></th>
-          <th class="text-right"><%= number_to_percentage(100, precision: 2) %></th>
-        </tr>
-      </tfoot>
-    </table>
+                          <% if r[:respuesta].images.first.present? %>
+                            <%= link_to image_tag(r[:respuesta].images.first.attachment.url(:thumb)),
+                                       asset_path(r[:respuesta].images.first.attachment.url), target: "_blank" %>
+                          <% end %>
+                        </td>
+                        <td>
+                          <%= r[:respuesta].description %>
 
-  </div>
-  <aside class="small-12 medium-3 column">
-    <%= render partial: 'shared/social_share', locals: {
+                        </td>
+                        <td class="text-right">
+                          <%= r[:votos] %>
+                        </td>
+                        <td class="text-right">
+                          <%= number_to_percentage(r[:porcentaje], precision: 2) %>
+                        </td>
+                      </tr>
+                      <% end %>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th class="text-right">
+                        <%= answers.size %>
+                      </th>
+                      <th class="text-right">
+                        <%= number_to_percentage(100, precision: 2) %>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </table>
+
+          </div>
+          <aside class="small-12 medium-3 column">
+            <%= render partial: 'shared/social_share', locals: {
       share_title: t("proposals.show.share"),
       title: votacion.name,
       url: poll_url
     } %>
-  </aside>
-</div>
+          </aside>
+        </div>

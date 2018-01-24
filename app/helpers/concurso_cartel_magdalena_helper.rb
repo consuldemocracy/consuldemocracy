@@ -16,7 +16,7 @@ module ConcursoCartelMagdalenaHelper
     female_percentage = (females * 100) / total_vots
     {
       total_vots: total_vots,
-      cartells_seleccionats: question.answers.size,
+      cartells_seleccionats: question.question_answers.size,
       total_male_participants: males,
       male_percentage: male_percentage,
       total_female_participants: females,

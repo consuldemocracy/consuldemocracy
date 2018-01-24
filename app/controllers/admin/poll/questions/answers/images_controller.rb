@@ -16,6 +16,7 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
       redirect_to admin_answer_images_path(@answer),
                notice: "Image uploaded successfully"
     else
+      puts @answer.errors.full_messages.inspect
       render :new
     end
   end

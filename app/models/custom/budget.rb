@@ -12,6 +12,11 @@ class Budget < ActiveRecord::Base
     finished.last
   end
 
+  def total_amount
+    headings.map(&:price).sum
+
+  end
+
   def can_create_investment_by_user(user)
     if user.organization? && !user.organization.verified?
       return :association_not_verified

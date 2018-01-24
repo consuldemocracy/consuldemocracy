@@ -14,7 +14,7 @@
         <%= link_to t("results.results_link"), results_budget_path(@budget), class: "is-active" %>
       </li>
       <li class="tabs-title">
-        <%= link_to t("stats.stats_link"), stats_budget_path(@budget) %>
+        <%= link_to t("stats.stats_link"), budget_stats_path(@budget) %>
       </li>
       <li class="tabs-title">
         <%= link_to t("progress.progress_link"), progress_budget_path(@budget) %>
@@ -27,26 +27,17 @@
       <div class="small-12 medium-2 column">
         <ul class="menu vertical no-padding">
           <li><strong><%= t("results.heading_selection_title") %></strong></li>
-
           <% @budget.headings.each do |heading| %>
             <li><%= link_to heading.name, results_budget_path(@budget, heading_id: heading.id) %></li>
           <% end %>
-
-          <!-- <% geozone_select_options.each do |geozone| %>
-            <li><%= link_to content_tag(:strong, geozone[0]), participatory_budget_results_path(geozone_id: geozone[1]) %></li>
-          <% end %> -->
         </ul>
       </div>
 
   <div class="small-12 medium-10 column">
-
     <h2 class="inline-block"><%= @heading.nil? ? t('geozones.none') : @heading.name %></h2>
-
     <span class="float-right">
       <%= link_to t("results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("results.hide_discarded_link")} %>
     </span>
-
-
     <table class="hover">
       <thead>
         <tr>
@@ -85,15 +76,9 @@
             <td class="text-right nowrap">
               <%= number_to_currency(budget) %>
             </td>
-
           </tr>
-
-
         <% end %>
       </tbody>
-
     </table>
-
   </div>
-
 </div>

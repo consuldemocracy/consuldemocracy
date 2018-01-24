@@ -6,7 +6,7 @@ es:
     index_timeline: Los presupuestos participativos en 2 minutos
     header_title: Presupuestos participativos
     header_body_principal_1: |-
-      Los presupuestos participativos son un mecanismo de participación ciudadana que contribuye a que las vecinas y vecinos de la ciudad se involucren en la toma de decisiones respecto a la ejecución del presupuesto municipal. Tú decides en qué invertir 1.650.000 euros.
+      Los presupuestos participativos son un mecanismo de participación ciudadana que contribuye a que las vecinas y vecinos de la ciudad se involucren en la toma de decisiones respecto a la ejecución del presupuesto municipal. Tú decides en qué invertir %{amount} euros.
     header_body_principal_2: |-
       Los presupuestos participativos están circunscritos al capítulo de inversión del presupuesto del ayuntamiento. Los gastos de inversión abarcan las “infraestructuras-obras”, tanto nuevas, como de mantenimiento de las que ya existen (por ejemplo construir itinerarios accesibles de aceras y viales o la mejora de un parque). También contemplan las adquisiciones de bienes permanentes del ayuntamiento (por ejemplo la compra de columpios).
 

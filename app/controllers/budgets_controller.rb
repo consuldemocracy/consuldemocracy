@@ -32,6 +32,7 @@ class BudgetsController < ApplicationController
   end
 
   def stats
+    @budget = Budget.find(params[:budget_id])
     # @headings = @budget.headings
     stats = {}
     stats[:total_participants] = total_participants
@@ -55,6 +56,7 @@ class BudgetsController < ApplicationController
   end
 
   def progress
+    @budget = Budget.find(params[:budget_id])
   end
 
   private

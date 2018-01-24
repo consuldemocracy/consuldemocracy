@@ -8,12 +8,14 @@
 
 <div class="row margin">
   <div class="large-8 small-12 column">
-      <%= markdown t('budgets.header_body_principal_1') %>
-      <% if @current_budget.present? %>
-        <%= link_to t('budgets.button_text'), budget_path(@current_budget), class: "button" %>
+      <% if @budget.present? %>
+        <%= markdown t('budgets.header_body_principal_1', amount: @budget.total_amount) %>
+
+        <%= link_to t('budgets.button_text'), budget_path(@budget), class: "button" %>
       <% elsif @last_budget.present? %>
         <%= link_to "#{t('results.button_title')} #{@last_budget.name}", budget_results_path(@last_budget), class: "button" %>
       <% end %>
+
       <%= markdown t('budgets.header_body_principal_2') %>
   </div>
 
@@ -22,8 +24,6 @@
   </div>
 
 </div>
-
-
 
 <div class="budgets-calendar">
   <div class="row">
@@ -45,12 +45,6 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="row margin">
-  <div class="large-12 small-12 columns">
-    <h2><%= t('budgets.index_timeline') %></h2>
-  </div>
-</div> -->
 
 <div class="row margin">
   <div class="hide-for-small-only large-5 columns text-right">&nbsp;</div>
@@ -85,3 +79,42 @@
   <div class="hide-for-small-only large-2 columns text-center"><div class="circulo"></div></div>
   <div class="hide-for-small-only large-5 columns text-right">&nbsp;</div>
 </div>
+
+<div class="row margin-top">
+    <div class="small-12 medium-9 column">
+      <ul class="no-bullet submenu">
+        <li class="inline-block">
+          <%= link_to "#other_budgets", class: "active" do %>
+            <h2>
+              <%= t("budgets.index.finished_budgets") %>
+            </h2>
+          <% end %>
+        </li>
+      </ul>
+
+      <div class="budget-investments-list">
+        <% @budgets.each do |budget| %>
+          <% if budget_published?(budget) %>
+            <div class="budget-investment clear">
+              <div class="panel past-budgets">
+                <div class="row" data-equalizer data-equalizer-on="medium">
+                  <div class="small-12 medium-9 column table" data-equalizer-watch>
+                    <div class="table-cell align-middle">
+                      <h3><%= budget.name %></h3>
+                    </div>
+                  </div>
+                  <div class="small-12 medium-3 column table" data-equalizer-watch>
+                    <div class="table-cell align-middle">
+                      <%= link_to t("budgets.index.see_results"),
+                                  budget_results_path(budget.id),
+                                  class: "button expanded" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>

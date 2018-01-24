@@ -17,13 +17,13 @@
       <ul class="tabs">
         <li class="tabs-title is-active">
           <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
-          <%= link_to t("results.results_link"), results_budget_path(@budget) %>
+          <%= link_to t("results.results_link"), budget_results_path(@budget) %>
         </li>
         <li class="tabs-title">
-          <%= link_to t("stats.stats_link"), stats_budget_path(@budget), class: "is-active" %>
+          <%= link_to t("stats.stats_link"), budget_stats_path(@budget), class: "is-active" %>
         </li>
         <li class="tabs-title">
-          <%= link_to t("progress.progress_link"), progress_budget_path(@budget) %>
+          <%= link_to t("progress.progress_link"), budget_progress_path(@budget) %>
         </li>
       </ul>
     </div>

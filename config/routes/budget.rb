@@ -1,4 +1,4 @@
-resources :budgets, only: [:show, :index] do
+resources :budgets, only: [:show, :index, :stats] do
   resources :groups, controller: "budgets/groups", only: [:show]
   resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do
     member     { post :vote }
@@ -10,6 +10,10 @@ resources :budgets, only: [:show, :index] do
   end
 
   resource :results, only: :show, controller: "budgets/results"
+
+
+  get :stats
+  get :progress
 end
 
 scope '/participatory_budget' do

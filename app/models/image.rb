@@ -4,7 +4,8 @@ class Image < ActiveRecord::Base
 
   TITLE_LEGHT_RANGE = 4..80
   MIN_SIZE = 475
-  MAX_IMAGE_SIZE = 1.megabyte
+  #MAX_IMAGE_SIZE = 1.megabyte
+  MAX_IMAGE_SIZE = 6.megabytes
   ACCEPTED_CONTENT_TYPE = %w(image/jpeg image/jpg).freeze
 
   has_attached_file :attachment, styles: { large: "x#{MIN_SIZE}", medium: "300x300#", thumb: "140x245#" },
@@ -76,7 +77,7 @@ class Image < ActiveRecord::Base
 
     def validate_attachment_size
       if imageable_class &&
-         attachment_file_size > 1.megabytes
+         attachment_file_size > MAX_IMAGE_SIZE
         errors[:attachment] = I18n.t("images.errors.messages.in_between",
                                       min: "0 Bytes",
                                       max: "#{imageable_max_file_size} MB")
