@@ -138,6 +138,7 @@ es:
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
         advanced_filters: Filtros avanzados
+        placeholder: Buscar proyectos
         filters:
           all: Todos
           without_admin: Sin administrador
@@ -153,6 +154,8 @@ es:
           button: Filtrar
           one_filter_html: "Filtro en uso: <b><em>%{filter}</em></b>"
           two_filters_html: "Filtros en uso: <b><em>%{filter}, %{second_filter}</em></b>"
+        buttons:
+          search: Buscar
         download_current_selection: "Descargar selección actual"
         no_budget_investments: "No hay proyectos de gasto."
         title: Proyectos de gasto
