@@ -25,25 +25,6 @@
                      class: "js-submit-on-change" } %>
   </div>
 
-<<<<<<< HEAD
-    <div class="small-12 medium-3 column">
-      <%= select_tag :tag_name,
-                     options_for_select(investment_tags_select_options, params[:tag_name]),
-                     { prompt: t("admin.budget_investments.index.tags_filter_all"),
-                     label: false,
-                     class: "js-submit-on-change" } %>
-    </div>
-
-    <div class="small-12 medium-3 column float-right">
-      <%= select_tag :max_per_heading,
-                      numeric_range_options((1..300), 1, params[:max_per_heading]),
-                     { prompt: t("admin.budget_investments.index.max_per_heading"),
-                       label: false,
-                       class: "js-submit-on-change" } %>
-    </div>
-  <% end %>
-</div>
-=======
   <div class="small-12 medium-3 column">
     <%= select_tag :tag_name,
                    options_for_select(investment_tags_select_options, params[:tag_name]),
@@ -51,8 +32,15 @@
                      label: false,
                      class: "js-submit-on-change" } %>
   </div>
+
+  <div class="small-12 medium-3 column float-right">
+    <%= select_tag :max_per_heading,
+                    numeric_range_options((1..300), 1, params[:max_per_heading]),
+                   { prompt: t("admin.budget_investments.index.max_per_heading"),
+                     label: false,
+                     class: "js-submit-on-change" } %>
+  </div>
 <% end %>
->>>>>>> acfd49e... improves styles for budget investments advanced filters
 
 <%= render "advanced_filters", i18n_namespace: "admin.budget_investments.index" %>
 
