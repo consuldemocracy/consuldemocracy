@@ -42,15 +42,6 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
 
     let!(:image) { create(:image, imageable: imageable, user: imageable.author) }
 
-    scenario "Should show success notice after successfull deletion by an admin" do
-      login_as administrator
-
-      visit send(imageable_path, imageable_arguments)
-      click_on "Remove image"
-
-      expect(page).to have_content "Image was deleted successfully."
-    end
-
     scenario "Administrators cannot destroy imageables they have not authored" do
       login_as(administrator)
 
