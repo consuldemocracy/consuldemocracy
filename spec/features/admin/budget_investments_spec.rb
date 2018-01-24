@@ -320,6 +320,7 @@ feature 'Admin budget investments' do
         expect(page).to have_link("Street with #{n} supports")
       end
 
+      click_link 'Advanced filters'
       fill_in "max_per_heading", with: 5
       click_button 'Filter'
 
@@ -650,7 +651,8 @@ feature 'Admin budget investments' do
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
-      within('#advanced-filters') { find(:css, "#second_filter[value='feasible']").set(true) }
+      click_link 'Advanced filters'
+      within('#advanced_filters') { find(:css, "#second_filter[value='feasible']").set(true) }
       click_button 'Filter'
 
       expect(page).not_to have_content(unfeasible_bi.title)
@@ -659,7 +661,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
-      within('#advanced-filters') { find(:css, "#second_filter[value='selected']").set(true) }
+      within('#advanced_filters') { find(:css, "#second_filter[value='selected']").set(true) }
       click_button 'Filter'
 
       expect(page).not_to have_content(unfeasible_bi.title)
@@ -708,7 +710,8 @@ feature 'Admin budget investments' do
         expect(page).to have_link('Selected')
       end
 
-      within('#advanced-filters') { find(:css, "#second_filter[value='selected']").set(true) }
+      click_link 'Advanced filters'
+      within('#advanced_filters') { find(:css, "#second_filter[value='selected']").set(true) }
       click_button 'Filter'
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
@@ -719,8 +722,9 @@ feature 'Admin budget investments' do
 
     scenario "Unselecting an investment", :js do
       visit admin_budget_budget_investments_path(budget)
-
+      click_link 'Advanced filters'
       within('#advanced-filters') { find(:css, "#second_filter[value='selected']").set(true) }
+
       click_button 'Filter'
 
       expect(page).to have_content('There are 2 investments')
@@ -732,7 +736,7 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content(selected_bi.title)
       expect(page).to have_content('There is 1 investment')
 
-      visit admin_budget_budget_investments_path(@budget)
+      visit admin_budget_budget_investments_path(budget)
 
       within("#budget_investment_#{selected_bi.id}") do
         expect(page).to have_link('Select')
