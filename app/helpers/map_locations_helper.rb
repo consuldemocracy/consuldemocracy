@@ -60,15 +60,11 @@ module MapLocationsHelper
       latitude_input_selector: "##{map_location_input_id(parent_class, 'latitude')}",
       longitude_input_selector: "##{map_location_input_id(parent_class, 'longitude')}",
       zoom_input_selector: "##{map_location_input_id(parent_class, 'zoom')}",
-      marker_investments_coordinates: clean_coordinates(investments_coordinates)
+      marker_investments_coordinates: investments_coordinates
     }
     options[:marker_latitude] = map_location.latitude if map_location.latitude.present?
     options[:marker_longitude] = map_location.longitude if map_location.longitude.present?
     options
-  end
-
-  def clean_coordinates(coordinates)
-    coordinates.select {|c| [c[:lat], c[:long]].all? {|value| value.is_a? Numeric }}
   end
 
 end
