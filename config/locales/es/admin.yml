@@ -140,6 +140,7 @@ es:
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
         max_per_heading: Corte por partida
+        advanced_filters: Filtros avanzados
         filters:
           valuation_open: Abiertos
           all: Todos
