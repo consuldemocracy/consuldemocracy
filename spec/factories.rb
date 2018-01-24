@@ -738,11 +738,11 @@ FactoryBot.define do
   factory :banner do
     sequence(:title) { |n| "Banner title #{n}" }
     sequence(:description) { |n| "This is the text of Banner #{n}" }
-    style {["banner-style-one", "banner-style-two", "banner-style-three"].sample}
-    image {["banner.banner-img-one", "banner.banner-img-two", "banner.banner-img-three"].sample}
     target_url {["/proposals", "/debates" ].sample}
     post_started_at { Time.current - 7.days }
     post_ended_at { Time.current + 7.days }
+    background_color '#FF0000'
+    font_color '#FFFFFF'
   end
 
   factory :proposal_notification do

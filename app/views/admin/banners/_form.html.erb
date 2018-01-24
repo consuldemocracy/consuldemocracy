@@ -77,12 +77,10 @@
       <%= f.submit(class: "button expanded", value: t("admin.banners.edit.form.submit_button")) %>
     </div>
   </div>
-  <div id="js-banner-style" class="<%= @banner.style %> banner" style="background-color:<%= @banner.background_color %>">
-    <div id="js-banner-image" class="<%= @banner.image %>">
-      <%= link_to @banner.target_url do %>
-        <h2 id="js-banner-title" style="color:<%= @banner.font_color %>"><%= @banner.title %></h2>
-        <h3 id="js-banner-description" style="color:<%= @banner.font_color %>"><%= @banner.description %></h3>
-      <% end %>
-    </div>
+  <div id="js-banner-background" class="banner" style="background-color:<%= @banner.background_color %>">
+    <%= link_to @banner.target_url do %>
+      <h2 id="js-banner-title" style="color:<%= @banner.font_color %>"><%= @banner.title %></h2>
+      <h3 id="js-banner-description" style="color:<%= @banner.font_color %>"><%= @banner.description %></h3>
+    <% end %>
   </div>
 <% end %>
