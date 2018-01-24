@@ -359,6 +359,36 @@ feature 'Admin budget investments' do
     end
   end
 
+  context 'Sorting' do
+    background do
+      @budget = create(:budget)
+      @investment_1 = create(:budget_investment, title: "BBBB", cached_votes_up: 50, budget: @budget)
+      @investment_2 = create(:budget_investment, title: "AAAA", cached_votes_up: 25, budget: @budget)
+      @investment_3 = create(:budget_investment, title: "CCCC", cached_votes_up: 10, budget: @budget)
+    end
+
+    scenario 'Sort by ID' do
+      visit admin_budget_budget_investments_path(@budget, sort_by: 'id')
+
+      expect(@investment_1.title).to appear_before(@investment_2.title)
+      expect(@investment_2.title).to appear_before(@investment_3.title)
+    end
+
+    scenario 'Sort by title' do
+      visit admin_budget_budget_investments_path(@budget, sort_by: 'title')
+
+      expect(@investment_2.title).to appear_before(@investment_1.title)
+      expect(@investment_1.title).to appear_before(@investment_3.title)
+    end
+
+    scenario 'Sort by supports' do
+      visit admin_budget_budget_investments_path(@budget, sort_by: 'supports')
+
+      expect(@investment_3.title).to appear_before(@investment_2.title)
+      expect(@investment_2.title).to appear_before(@investment_1.title)
+    end
+  end
+
   context 'Show' do
     background do
       @administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
