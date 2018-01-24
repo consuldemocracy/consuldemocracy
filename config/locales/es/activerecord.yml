@@ -8,8 +8,8 @@ es:
         one: "Presupuesto participativo"
         other: "Presupuestos participativos"
       budget/investment:
-        one: "Proyecto de inversión"
-        other: "Proyectos de inversión"
+        one: "Proyecto de gasto"
+        other: "Proyectos de gasto"
       budget/investment/milestone:
         one: "hito"
         other: "hitos"
@@ -168,7 +168,7 @@ es:
         administrator_id: "Administrador"
         location: "Ubicación (opcional)"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
-        image: "Imagen descriptiva de la propuesta de inversión"
+        image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
       budget/investment/milestone:
         title: "Título"
@@ -227,7 +227,7 @@ es:
         external_url: "Enlace a documentación adicional"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
-        signable_id: "ID Propuesta ciudadana/Propuesta inversión"
+        signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
         document_numbers: "Números de documentos"
       site_customization/page:
         content: Contenido
