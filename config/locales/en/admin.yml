@@ -137,6 +137,7 @@ en:
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
         tags_filter_all: All tags
+        advanced_filters: Advanced filters
         filters:
           all: All
           without_admin: Without assigned admin

@@ -137,6 +137,7 @@ es:
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
+        advanced_filters: Filtros avanzados
         filters:
           all: Todos
           without_admin: Sin administrador
