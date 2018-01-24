@@ -1,5 +1,7 @@
 <h2 class="inline-block"><%= @budget.name %> - <%= t("admin.budget_investments.index.title") %></h2>
 
+<%= render 'search_form', i18n_namespace: "admin.budget_investments.index" %>
+
 <%= form_tag(admin_budget_budget_investments_path(budget: @budget), method: :get, enforce_utf8: false) do %>
   <div class="small-12 medium-3 column">
     <%= select_tag :administrator_id,

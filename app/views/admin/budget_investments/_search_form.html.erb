@@ -1,0 +1,12 @@
+<div class="small-12 medium-6">
+  <%= form_for(Budget::Investment.new, url: admin_budget_budget_investments_path(budget: @budget),
+                                       method: :get,
+                                       remote: true) do |f| %>
+    <div class="input-group">
+      <%= text_field_tag :project_title, "", placeholder: t("#{i18n_namespace}.placeholder") %>
+      <div class="input-group-button">
+        <%= f.submit t("#{i18n_namespace}.buttons.search"), class: "button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
