@@ -2,6 +2,8 @@ require 'csv'
 
 class Budget
   class Investment < ActiveRecord::Base
+    SORTING_OPTIONS = %w(id title supports).freeze
+
     include Rails.application.routes.url_helpers
     include Measurable
     include Sanitizable

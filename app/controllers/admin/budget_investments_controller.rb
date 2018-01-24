@@ -52,12 +52,20 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   private
 
+    def sort_by(params)
+      if params.present? && Budget::Investment::SORTING_OPTIONS.include?(params)
+        "#{params == 'supports' ? 'cached_votes_up' : params} ASC"
+      else
+        "cached_votes_up DESC, created_at DESC"
+      end
+    end
+
     def load_investments
       if params[:project_title].present?
         @investments = Budget::Investment.where("title ILIKE ?", "%#{params[:project_title].strip}%")
       else
         @investments = Budget::Investment.scoped_filter(params, @current_filter)
-                                         .order(cached_votes_up: :desc, created_at: :desc)
+                                         .order(sort_by(params[:sort_by]))
       end
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end

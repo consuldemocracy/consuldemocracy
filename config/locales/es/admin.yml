@@ -142,6 +142,11 @@ es:
         max_per_heading: Corte por partida
         advanced_filters: Filtros avanzados
         placeholder: Buscar proyectos
+        sort_by:
+          placeholder: Ordenar por
+          id: ID
+          title: Título
+          supports: Apoyos
         filters:
           valuation_open: Abiertos
           all: Todos
