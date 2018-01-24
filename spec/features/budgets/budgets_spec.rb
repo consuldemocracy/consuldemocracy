@@ -6,8 +6,11 @@ feature 'Budgets' do
   let(:level_two_user) { create(:user, :level_two) }
 
   scenario 'Index' do
-    budgets = create_list(:budget, 3)
-    last_budget = budgets.last
+    finished_budget1 = create(:budget, :finished)
+    finished_budget2 = create(:budget, :finished)
+    accepting_budget = create(:budget, :accepting)
+
+    last_budget = accepting_budget
     group1 = create(:budget_group, budget: last_budget)
     group2 = create(:budget_group, budget: last_budget)
 
@@ -34,6 +37,8 @@ feature 'Budgets' do
       expect(page).to have_content("Actual phase")
     end
 
+    expect(page).to have_content accepting_budget.name
+
     within('#budget_info') do
       expect(page).to have_content group1.name
       expect(page).to have_content group2.name
@@ -42,8 +47,8 @@ feature 'Budgets' do
       expect(page).to have_content heading2.name
       expect(page).to have_content last_budget.formatted_heading_price(heading2)
 
-      expect(page).to have_content budgets.first.name
-      expect(page).to have_content budgets[2].name
+      expect(page).to have_content finished_budget1.name
+      expect(page).to have_content finished_budget2.name
     end
   end
 
