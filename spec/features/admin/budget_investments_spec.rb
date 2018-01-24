@@ -338,6 +338,27 @@ feature 'Admin budget investments' do
 
   end
 
+  context 'Search' do
+    background do
+      @budget = create(:budget)
+      @investment_1 = create(:budget_investment, title: "Some investment", budget: @budget)
+      @investment_2 = create(:budget_investment, title: "Some other investment", budget: @budget)
+    end
+
+    scenario "Search investments by title" do
+      visit admin_budget_budget_investments_path(@budget)
+
+      expect(page).to have_content(@investment_1.title)
+      expect(page).to have_content(@investment_2.title)
+
+      fill_in 'project_title', with: 'Some investment'
+      click_button 'Search'
+
+      expect(page).to have_content(@investment_1.title)
+      expect(page).to_not have_content(@investment_2.title)
+    end
+  end
+
   context 'Show' do
     background do
       @administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
