@@ -270,7 +270,7 @@ feature 'Admin budgets' do
         expect(page).not_to have_content 'This group has no assigned heading.'
 
         expect(page).to have_content 'District 9 reconstruction'
-        expect(page).to have_content '6785'
+        expect(page).to have_content '€6,785'
         expect(page).to have_content '100500'
       end
     end
@@ -293,7 +293,7 @@ feature 'Admin budgets' do
       end
 
       expect(page).to have_content 'District 2'
-      expect(page).to have_content '10000'
+      expect(page).to have_content '€10,000'
       expect(page).to have_content '6000'
     end
 
