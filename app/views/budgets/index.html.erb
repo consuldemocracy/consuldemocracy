@@ -77,7 +77,7 @@
         <% end %>
       </div>
 
-      <% cache ["v1"] do %>
+      <% cache ["v2"] do %>
         <div id="map">
           <h3><%= t("budgets.index.map") %></h3>
           <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
