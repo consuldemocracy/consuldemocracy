@@ -67,8 +67,4 @@ module MapLocationsHelper
     options
   end
 
-  def clean_coordinates(coordinates)
-    coordinates.select {|c| [c[:lat], c[:long]].all? {|value| value.is_a? Numeric }}
-  end
-
 end
