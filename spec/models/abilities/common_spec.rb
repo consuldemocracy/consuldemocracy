@@ -152,6 +152,12 @@ describe Abilities::Common do
     it { should be_able_to(:edit, own_proposal)                  }
     it { should_not be_able_to(:edit, proposal)                  } # Not his
     it { should_not be_able_to(:edit, own_proposal_non_editable) }
+
+    it { should be_able_to(:destroy, own_proposal_image)         }
+    it { should be_able_to(:destroy, own_proposal_document)      }
+
+    it { should_not be_able_to(:destroy, proposal_image)         }
+    it { should_not be_able_to(:destroy, proposal_document)      }
   end
 
   describe "when level 2 verified" do
@@ -218,8 +224,8 @@ describe Abilities::Common do
       it { should_not be_able_to(:create, investment_in_selecting_budget) }
       it { should_not be_able_to(:create, investment_in_balloting_budget) }
 
-      it { should_not be_able_to(:vote, investment_in_accepting_budget) }
       it { should be_able_to(:vote, investment_in_selecting_budget) }
+      it { should_not be_able_to(:vote, investment_in_accepting_budget) }
       it { should_not be_able_to(:vote, investment_in_balloting_budget) }
 
       it { should_not be_able_to(:destroy, investment_in_accepting_budget) }
@@ -232,9 +238,15 @@ describe Abilities::Common do
       it { should_not be_able_to(:destroy, own_investment_in_selecting_budget) }
       it { should_not be_able_to(:destroy, own_investment_in_balloting_budget) }
 
+      it { should be_able_to(:create, ballot_in_balloting_budget) }
       it { should_not be_able_to(:create, ballot_in_accepting_budget) }
       it { should_not be_able_to(:create, ballot_in_selecting_budget) }
-      it { should be_able_to(:create, ballot_in_balloting_budget) }
+
+      it { should be_able_to(:destroy, own_budget_investment_image) }
+      it { should be_able_to(:destroy, own_budget_investment_document) }
+
+      it { should_not be_able_to(:destroy, budget_investment_image) }
+      it { should_not be_able_to(:destroy, budget_investment_document) }
     end
   end
 
