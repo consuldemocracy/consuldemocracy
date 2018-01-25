@@ -19,7 +19,7 @@
       <div class="small-12 column small-centered">
         <span class="label"><%= t("welcome.header.label") %></span>
         <p class="lead-title"><%= t("welcome.header.title") %></p>
-        <p class="lead"><%= t("welcome.header.text") %></p>
+        <p class="lead"><%= t("welcome.header.text", supports: setting["votes_for_proposal_success"]) %></p>
         <div class="small-12 medium-6 large-4 column small-centered">
           <%= link_to t("welcome.header.button"),
                       new_proposal_path,

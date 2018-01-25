@@ -13,7 +13,7 @@
               link: link_to(t("pages.more_info.proposals.feature_1_link", org_name: setting['org_name']),
                                new_user_registration_path)).html_safe %>
       </li>
-      <li><%= t("pages.more_info.proposals.feature_2_html") %></li>
+      <li><%= t("pages.more_info.proposals.feature_2_html", supports: setting["votes_for_proposal_success"]) %></li>
       <li><%= t("pages.more_info.proposals.feature_3_html") %></li>
     </ul>
 
