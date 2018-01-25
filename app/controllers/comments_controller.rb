@@ -79,7 +79,7 @@ class CommentsController < ApplicationController
 
     def add_notification(comment)
       notifiable = comment.reply? ? comment.parent : comment.commentable
-      unless comment.author_id == notifiable.author_id
+      if notifiable&.author_id.present? && notifiable.author_id != comment.author_id
         Notification.add(notifiable.author_id, notifiable)
       end
     end
