@@ -77,12 +77,10 @@
         <% end %>
       </div>
 
-      <% cache ["v2"] do %>
-        <div id="map">
-          <h3><%= t("budgets.index.map") %></h3>
-          <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
-        </div>
-      <% end %>
+      <div id="map">
+        <h3><%= t("budgets.index.map") %></h3>
+        <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
+      </div>
 
       <p>
         <!--<%= link_to budget_url(@budget) do %>
