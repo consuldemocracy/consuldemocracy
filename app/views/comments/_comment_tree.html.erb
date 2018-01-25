@@ -25,7 +25,9 @@
               <%= t("comments.verified_only", verify_account: link_to(t("comments.verify_account"), verification_path )).html_safe %>
             </div>
           <% else %>
-            <%= render 'comments/form', {commentable: commentable, parent_id: nil, toggeable: false} %>
+            <%= render 'comments/form', { commentable: commentable,
+                                          parent_id: nil,
+                                          toggeable: false } %>
           <% end %>
         <% else %>
           <br>
