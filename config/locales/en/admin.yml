@@ -125,9 +125,9 @@ en:
         start_date: Start date
         end_date: End date
         summary: Summary
-        summary_help_text: This text will appear in the header when the phase is active
+        summary_help_text: This text will inform the user about the phase. To show it even if the phase is not active, select the checkbox below
         description: Description
-        description_help_text: This text will inform the user about the phase. To show it even if the phase is not active, select the checkbox below
+        description_help_text: This text will appear in the header when the phase is active
         enabled: Phase enabled
         enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
         save_changes: Save changes
