@@ -114,6 +114,29 @@ feature 'Users' do
       end
     end
 
+    scenario "Show alert when user wants to delete a budget investment", :js do
+      user = create(:user, :level_two)
+      budget = create(:budget, phase: 'accepting')
+      budget_investment = create(:budget_investment, author_id: user.id, budget: budget)
+
+      login_as(user)
+      visit user_path(user)
+
+      expect(page).to have_link budget_investment.title
+
+      within("#budget_investment_#{budget_investment.id}") do
+        page.driver.browser.dismiss_confirm
+        click_link 'Delete'
+      end
+      expect(page).to have_link budget_investment.title
+
+      within("#budget_investment_#{budget_investment.id}") do
+        page.driver.browser.accept_confirm
+        click_link 'Delete'
+      end
+      expect(page).not_to have_link budget_investment.title
+    end
+
   end
 
   feature 'Public activity' do
