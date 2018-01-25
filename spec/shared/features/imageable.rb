@@ -51,7 +51,21 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       expect(page).to have_content "Image was deleted successfully."
     end
 
-    scenario "Should show success notice after successfull deletion" do
+    scenario "Administrators cannot destroy imageables they have not authored" do
+      login_as(administrator)
+
+      visit send(imageable_path, imageable_arguments)
+      expect(page).not_to have_link "Remove image"
+    end
+
+    scenario "Users cannot destroy imageables they have not authored" do
+      login_as(create(:user))
+
+      visit send(imageable_path, imageable_arguments)
+      expect(page).not_to have_link "Remove image"
+    end
+
+    scenario "Should show success notice after successful deletion" do
       login_as imageable.author
 
       visit send(imageable_path, imageable_arguments)

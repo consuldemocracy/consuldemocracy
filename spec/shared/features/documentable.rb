@@ -70,6 +70,24 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
         end
       end
 
+      scenario "Administrators cannot destroy documentables they have not authored" do
+        login_as(administrator)
+        visit send(documentable_path, arguments)
+
+        within "#tab-documents" do
+          expect(page).not_to have_link("Destroy")
+        end
+      end
+
+      scenario "Users cannot destroy documentables they have not authored" do
+        login_as(create(:user))
+        visit send(documentable_path, arguments)
+
+        within "#tab-documents" do
+          expect(page).not_to have_link("Destroy")
+        end
+      end
+
     end
 
   end
@@ -79,6 +97,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     let!(:document) { create(:document, documentable: documentable, user: documentable.author) }
 
     scenario "Should show success notice after successfull document upload" do
+
       login_as documentable.author
 
       visit send(documentable_path, arguments)
