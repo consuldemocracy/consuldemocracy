@@ -36,6 +36,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Updated translations to other languages from Crowdin contributions https://github.com/consul/consul/pull/2347 especial mention to @ferraniki for 100% Valencian translation!
 - Finished budgets list order https://github.com/consul/consul/pull/2355
 - Improvements for Admin::Budget::Investment filters https://github.com/consul/consul/pull/2344
+- Clean up Travis logs https://github.com/consul/consul/pull/2357
+- Advanced filters design https://github.com/consul/consul/pull/2379
 
 ### Deprecated
 - Budget's `description_*` columns will be erased from database in next release. Please run rake task `budgets:phases:generate_missing` to migrate them. Details at Warning section of https://github.com/consul/consul/pull/2323
