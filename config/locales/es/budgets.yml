@@ -16,7 +16,7 @@ es:
         not_logged_in: Necesitas %{signin} o %{signup} para continuar.
         not_verified: Los proyectos de gasto sólo pueden ser apoyados por usuarios verificados, %{verify_account}.
         organization: Las organizaciones no pueden votar.
-        not_selected: No se pueden votar propuestas inviables.
+        not_selected: No se pueden votar proyectos inviables.
         not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
         different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
@@ -24,10 +24,10 @@ es:
     groups:
       show:
         title: Selecciona una opción
-        unfeasible_title: Propuestas inviables
-        unfeasible: Ver propuestas inviables
-        unselected_title: Propuestas no seleccionadas para la votación final
-        unselected: Ver las propuestas no seleccionadas para la votación final
+        unfeasible_title: Proyectos inviables
+        unfeasible: Ver proyectos inviables
+        unselected_title: Proyectos no seleccionados para la votación final
+        unselected: Ver los proyectos no seleccionados para la votación final
     phase:
       drafting: Borrador (No visible para el público)
       informing: Información
@@ -86,11 +86,11 @@ es:
         sidebar:
           my_ballot: Mis votos
           voted_html:
-            one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
-            other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+            one: "<strong>Has votado un proyecto por un valor de %{amount_spent}</strong>"
+            other: "<strong>Has votado %{count} proyectos por un valor de %{amount_spent}</strong>"
           voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
           voted_info_link: cambiar tus votos
-          different_heading_assigned_html: 'Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}'
+          different_heading_assigned_html: 'Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}'
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
           check_ballot_link: "revisar mis votos"
           zero: Todavía no has votado ningún proyecto de gasto en este ámbito del presupuesto.
@@ -104,14 +104,14 @@ es:
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables
         orders:
-          random: Aleatorias
-          confidence_score: Mejor valoradas
+          random: Aleatorios
+          confidence_score: Mejor valorados
           price: Por coste
       show:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
         unfeasibility_explanation: Informe de inviabilidad
-        code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
+        code_html: 'Código proyecto de gasto: <strong>%{code}</strong>'
         location_html: 'Ubicación: <strong>%{location}</strong>'
         organization_name_html: 'Propuesto en nombre de: <strong>%{name}</strong>'
         share: Compartir
@@ -138,7 +138,7 @@ es:
         give_support: Apoyar
       header:
         check_ballot: Revisar mis votos
-        different_heading_assigned_html: 'Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}'
+        different_heading_assigned_html: 'Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}'
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar mis votos"
         price: "Esta partida tiene un presupuesto de"
@@ -148,10 +148,10 @@ es:
     show:
       group: Grupo
       phase: Fase actual
-      unfeasible_title: Propuestas inviables
-      unfeasible: Ver las propuestas inviables
-      unselected_title: Propuestas no seleccionadas para la votación final
-      unselected: Ver las propuestas no seleccionadas para la votación final
+      unfeasible_title: Proyectos inviables
+      unfeasible: Ver las proyectos inviables
+      unselected_title: Proyectos no seleccionados para la votación final
+      unselected: Ver los proyectos no seleccionados para la votación final
       see_results: Ver resultados
     results:
       link: Resultados
