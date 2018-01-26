@@ -22,21 +22,6 @@
 
     <div class="row margin-top">
       <div class="small-12 medium-12 column">
-        <%= f.label :summary, t("admin.budget_phases.edit.summary") %>
-
-        <p class="help-text" id="phase-summary-help-text">
-          <%= t("admin.budget_phases.edit.summary_help_text") %>
-        </p>
-
-        <%= f.cktext_area :summary,
-                          maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                          ckeditor: { language: I18n.locale },
-                          label: false %>
-      </div>
-    </div>
-
-    <div class="row margin-top">
-      <div class="small-12 medium-12 column">
         <%= f.label :description, t("admin.budget_phases.edit.description") %>
 
         <p class="help-text" id="phase-description-help-text">
@@ -45,6 +30,21 @@
 
         <%= f.cktext_area :description,
                           maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
+                          ckeditor: { language: I18n.locale },
+                          label: false %>
+      </div>
+    </div>
+
+    <div class="row margin-top">
+      <div class="small-12 medium-12 column">
+        <%= f.label :summary, t("admin.budget_phases.edit.summary") %>
+
+        <p class="help-text" id="phase-summary-help-text">
+          <%= t("admin.budget_phases.edit.summary_help_text") %>
+        </p>
+
+        <%= f.cktext_area :summary,
+                          maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
                           ckeditor: { language: I18n.locale },
                           label: false %>
       </div>

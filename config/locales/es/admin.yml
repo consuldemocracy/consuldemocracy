@@ -127,9 +127,9 @@ es:
         start_date: Fecha de Inicio
         end_date: Fecha de fin
         summary: Resumen
-        summary_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
+        summary_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
         description: Descripción
-        description_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
+        description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
         enabled: Fase habilitada
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
         save_changes: Guardar cambios

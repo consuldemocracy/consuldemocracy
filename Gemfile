@@ -63,7 +63,7 @@ group :development, :test do
   gem 'byebug', '~> 9.1.0'
   gem 'factory_bot_rails', '~> 4.8.2'
   gem 'faker', '~> 1.8.7'
-  gem 'i18n-tasks', '~> 0.9.15'
+  gem 'i18n-tasks', '~> 0.9.20'
   gem 'knapsack_pro', '~> 0.53.0'
   gem 'launchy', '~> 2.4.3'
   gem 'letter_opener_web', '~> 1.3.2'
@@ -88,7 +88,7 @@ group :development do
   gem 'capistrano3-delayed-job', '~> 1.7.3'
   gem 'mdl', '~> 0.4.0', require: false
   gem 'rubocop', '~> 0.52.1', require: false
-  gem 'rubocop-rspec', '~> 1.21.0', require: false
+  gem 'rubocop-rspec', '~> 1.22.1', require: false
   gem 'rvm1-capistrano3', '~> 1.4.0', require: false
   gem 'scss_lint', '~> 0.54.0', require: false
   gem 'web-console', '~> 3.3.0'

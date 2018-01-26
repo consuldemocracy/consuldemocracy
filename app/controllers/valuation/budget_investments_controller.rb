@@ -30,7 +30,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       end
 
       Activity.log(current_user, :valuate, @investment)
-      redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: t('valuation.budget_investments.notice.valuate')
+      notice = t('valuation.budget_investments.notice.valuate')
+      redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: notice
     else
       render action: :edit
     end
@@ -47,7 +48,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def heading_filters
-      investments = @budget.investments.by_valuator(current_user.valuator.try(:id)).valuation_open.select(:heading_id).all.to_a
+      investments = @budget.investments.by_valuator(current_user.valuator.try(:id))
+                           .valuation_open.select(:heading_id).all.to_a
 
       [ { name: t('valuation.budget_investments.index.headings_filter_all'),
           id: nil,
@@ -62,11 +64,13 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def params_for_current_valuator
-      Budget::Investment.filter_params(params).merge(valuator_id: current_user.valuator.id, budget_id: @budget.id)
+      Budget::Investment.filter_params(params).merge(valuator_id: current_user.valuator.id,
+                                                     budget_id: @budget.id)
     end
 
     def valuation_params
-      params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation, :feasibility, :unfeasibility_explanation,
+      params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation,
+                                                :feasibility, :unfeasibility_explanation,
                                                 :duration, :valuation_finished, :internal_comments)
     end
 
@@ -76,7 +80,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
     def restrict_access_to_assigned_items
       return if current_user.administrator? ||
-                Budget::ValuatorAssignment.exists?(investment_id: params[:id], valuator_id: current_user.valuator.id)
+                Budget::ValuatorAssignment.exists?(investment_id: params[:id],
+                                                   valuator_id: current_user.valuator.id)
       raise ActionController::RoutingError.new('Not Found')
     end
 
