@@ -1,0 +1,6 @@
+en:
+  user_group:
+    zero: There are 0 groups of valuators
+    one: There is 1 group de valuators
+    other: There are '%{count}' groups of valuators
+
