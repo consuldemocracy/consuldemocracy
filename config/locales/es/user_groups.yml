@@ -1,0 +1,6 @@
+es:
+  user_group:
+    zero: Hay 0 grupos de evaluadores
+    one: Hay 1 grupo de evaluadores
+    other: Hay '%{count}' grupos de evaluadores
+

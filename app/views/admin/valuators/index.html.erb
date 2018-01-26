@@ -2,6 +2,8 @@
 
 <%= render "admin/shared/user_search", url: search_admin_valuators_path %>
 
+<%= link_to "Grupos de evaluadores", admin_valuator_groups_path %>
+
 <div id="valuators">
   <% if @valuators.any? %>
     <h3 class="margin"><%= page_entries_info @valuators %></h3>

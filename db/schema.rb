@@ -1053,6 +1053,11 @@ ActiveRecord::Schema.define(version: 20180320104823) do
   add_index "topics", ["community_id"], name: "index_topics_on_community_id", using: :btree
   add_index "topics", ["hidden_at"], name: "index_topics_on_hidden_at", using: :btree
 
+  create_table "user_groups", force: :cascade do |t|
+    t.string "name"
+    t.string "kind"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                                     default: ""
     t.string   "encrypted_password",                        default: "",                    null: false
@@ -1126,6 +1131,10 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.integer  "spending_proposal_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "valuator_groups", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "valuators", force: :cascade do |t|

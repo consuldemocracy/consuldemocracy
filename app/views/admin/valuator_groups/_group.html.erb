@@ -1,0 +1,18 @@
+<div>
+  Name: <%= group.name %>
+</div>
+
+<div>
+  Members:
+</div>
+
+<div>
+  Edit:
+  <%= link_to "Edit", edit_admin_valuator_group_path(group) %>
+</div>
+
+<div>
+  Destoy:
+  <%= link_to "Destroy", admin_valuator_group_path(group), method: :delete %>
+</div>
+<br/>

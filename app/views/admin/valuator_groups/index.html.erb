@@ -1,0 +1,4 @@
+<%= render partial: 'group', collection: @groups %>
+
+There are <%= @groups.count %> groups of users
+<%= link_to "Nuevo", new_admin_valuator_group_path %>
