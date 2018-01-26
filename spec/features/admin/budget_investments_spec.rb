@@ -281,6 +281,23 @@ feature 'Admin budget investments' do
       expect(page).to have_select("tag_name", options: ["All tags", "Hospitals", "Teachers"])
     end
 
+    scenario "Filtering by tag, display only valuation tags of the current budget" do
+      new_budget = create(:budget)
+      investment1 = create(:budget_investment, budget: @budget, tag_list: 'Roads')
+      investment2 = create(:budget_investment, budget: new_budget, tag_list: 'Accessibility')
+
+      investment1.set_tag_list_on(:valuation, 'Roads')
+      investment2.set_tag_list_on(:valuation, 'Accessibility')
+
+      investment1.save
+      investment2.save
+
+      visit admin_budget_budget_investments_path(budget_id: @budget.id)
+
+      expect(page).to have_select("tag_name", options: ["All tags", "Roads"])
+      expect(page).not_to have_select("tag_name", options: ["All tags", "Accessibility"])
+    end
+
     scenario "Limiting by max number of investments per heading", :js do
       group_1 = create(:budget_group, budget: @budget)
       group_2 = create(:budget_group, budget: @budget)
