@@ -4,6 +4,7 @@ feature 'Budgets' do
 
   let(:budget) { create(:budget) }
   let(:level_two_user) { create(:user, :level_two) }
+  let(:allowed_phase_list) { ['balloting', 'reviewing_ballots', 'finished'] }
 
   context 'Index' do
 
@@ -84,7 +85,7 @@ feature 'Budgets' do
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
 
-      ['reviewing_ballots', 'finished'].each do |phase|
+      allowed_phase_list.each do |phase|
         budget.update(phase: phase)
 
         visit budgets_path
@@ -101,7 +102,6 @@ feature 'Budgets' do
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
       phases_without_links = ['drafting','informing']
-      allowed_phase_list = ['reviewing_ballots', 'finished']
       not_allowed_phase_list = Budget::Phase::PHASE_KINDS -
                                phases_without_links -
                                allowed_phase_list
