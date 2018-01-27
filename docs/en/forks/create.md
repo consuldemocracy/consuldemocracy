@@ -1,6 +1,6 @@
 # Creating your fork
 
-Consul git repo is hosted at Github.com, we recommend using it for your fork's repo to make things easier. But you can use any other service like Bitbucket or Gitlab if you want to, but don't forget to put a reference link back to CONSUL on the footer to comply with project's license (GPL Affero 3).
+Consul git repo is hosted at Github.com, we recommend using it for your fork's repo to make things easier. But you can use any other service like Bitbucket or Gitlab if you want to, just don't forget to put a reference link back to CONSUL on the footer to comply with project's license (GPL Affero 3).
 
 1. [Register an user account on Github](https://github.com/join) if you don't have one
 
@@ -14,7 +14,7 @@ Consul git repo is hosted at Github.com, we recommend using it for your fork's r
 
 ## Why make code public?
 
-We strongly recommend making code public vor multiple reasons:
+We strongly recommend making code public for multiple reasons:
 - **Transparency**: It should be part of the culture of public entities that adopt Consul, as well as any organization or group.
 - **Support**: If you need technical help, both community and Consul core team will be able to understand and advice by easily seeing involved code.
 - **Collaboration**: By other professionals, citizens, etc...
