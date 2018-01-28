@@ -42,7 +42,7 @@ module BudgetsHelper
   end
 
   def investment_tags_select_options(budget)
-    Budget::Investment.where(budget_id: budget).tags_on(:valuation).order(:name).select(:name).distinct
+    Budget::Investment.by_budget(budget).tags_on(:valuation).order(:name).select(:name).distinct
   end
 
   def budget_published?(budget)

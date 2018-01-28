@@ -73,6 +73,7 @@ class Budget
     scope :by_admin,    -> (admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,      -> (tag_name)    { tagged_with(tag_name) }
     scope :by_valuator, -> (valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
+    scope :by_budget,   ->(budget)       { where(budget: budget) }
 
     scope :for_render, -> { includes(:heading) }
 
