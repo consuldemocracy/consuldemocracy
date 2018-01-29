@@ -68,7 +68,7 @@ es:
         new_link: Crear nuevo presupuesto
         filter: Filtro
         filters:
-          current: Abiertos
+          open: Abiertos
           finished: Terminados
         budget_investments: Ver proyectos de gasto
         table_name: Nombre
@@ -276,7 +276,7 @@ es:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
         user: Usuario
-        no_hidden_users: No hay uusarios bloqueados.
+        no_hidden_users: No hay usuarios bloqueados.
       show:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
