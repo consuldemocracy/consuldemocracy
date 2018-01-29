@@ -53,7 +53,6 @@ en:
         undefined: Undefined
         valuation_finished: Valuation finished
         duration: Time scope
-        internal_comments: Internal comments
         responsibles: Responsibles
         assigned_admin: Assigned admin
         assigned_valuators: Assigned valuators
@@ -71,7 +70,6 @@ en:
         valuation_finished_alert: "Are you sure you want to mark this report as completed? If you do it, it can no longer be modified."
         not_feasible_alert: "An email will be sent immediately to the author of the project with the report of unfeasibility."
         duration_html: Time scope
-        internal_comments_html: Internal comments
         save: Save changes
       notice:
         valuate: "Dossier updated"
