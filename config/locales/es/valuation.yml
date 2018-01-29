@@ -53,7 +53,6 @@ es:
         undefined: Sin definir
         valuation_finished: Informe finalizado
         duration: Plazo de ejecución
-        internal_comments: Comentarios internos
         responsibles: Responsables
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
@@ -71,7 +70,6 @@ es:
         valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
         not_feasible_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de inviabilidad."
         duration_html: Plazo de ejecución <small>(opcional, dato no público)</small>
-        internal_comments_html: Comentarios y observaciones <small>(para responsables internos, dato no público)</small>
         save: Guardar Cambios
       notice:
         valuate: "Dossier actualizado"
