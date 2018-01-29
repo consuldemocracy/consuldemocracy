@@ -7,6 +7,7 @@
 <div id="advanced_filters" class="row expanded advanced-filters-content hide" data-toggler=".hide">
   <%= form_tag(admin_budget_budget_investments_path(budget: @budget,
                                                     filter: params[:filter],
+                                                    sort_by: params[:sort_by],
                                                     second_filter: params[:second_filter],
                                                     max_per_heading: params[:max_per_heading],
                                                     page: 1), method: :get, remote: true, enforce_utf8: false) do %>
@@ -38,7 +39,7 @@
     </div>
 
     <div class="small-12 medium-4 large-2 column">
-      <%= submit_tag t("#{i18n_namespace}.filters.button"), class: "button expanded" %>
+      <%= submit_tag t("admin.budget_investments.index.buttons.filter"), class: "button expanded" %>
     </div>
   <% end %>
 </div>
