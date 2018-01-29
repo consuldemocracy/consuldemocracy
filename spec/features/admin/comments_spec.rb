@@ -26,6 +26,45 @@ feature 'Admin comments' do
     expect(page).not_to have_content("Good Proposal!")
   end
 
+  scenario "Visit items with hidden comments" do
+    debate = create(:debate, title: "Debate with spam comment")
+    proposal = create(:proposal, title: "Proposal with spam comment")
+    create(:comment, :hidden, commentable: debate, body: "This is SPAM comment on debate")
+    create(:comment, :hidden, commentable: proposal, body: "This is SPAM comment on proposal")
+
+    visit admin_comments_path
+
+    expect(page).to have_content("Debate with spam comment")
+    expect(page).to have_content("Proposal with spam comment")
+    expect(page).to have_content("This is SPAM comment on debate")
+    expect(page).to have_content("This is SPAM comment on proposal")
+
+    click_link "Debate with spam comment"
+    expect(page).to have_content("Debate with spam comment")
+    expect(page).not_to have_content("This is SPAM comment on debate")
+
+    visit admin_comments_path
+
+    click_link "Proposal with spam comment"
+    expect(page).to have_content("Proposal with spam comment")
+    expect(page).not_to have_content("This is SPAM comment on proposal")
+  end
+
+  scenario "Don't show link on hidden items" do
+    debate = create(:debate, :hidden, title: "Hidden debate title")
+    proposal = create(:proposal, :hidden, title: "Hidden proposal title")
+    create(:comment, :hidden, commentable: debate, body: "This is SPAM comment on debate")
+    create(:comment, :hidden, commentable: proposal, body: "This is SPAM comment on proposal")
+
+    visit admin_comments_path
+
+    expect(page).to have_content("(Hidden proposal: Hidden proposal title)")
+    expect(page).to have_content("(Hidden debate: Hidden debate title)")
+
+    expect(page).not_to have_link("This is SPAM comment on debate")
+    expect(page).not_to have_link("This is SPAM comment on proposal")
+  end
+
   scenario "Restore" do
     comment = create(:comment, :hidden, body: 'Not really SPAM')
     visit admin_comments_path
