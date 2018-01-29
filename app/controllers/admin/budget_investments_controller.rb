@@ -65,7 +65,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_budget
-      @budget = Budget.find_by(slug: params[:budget_id]).includes(:groups) || Budget.find_by(id: params[:budget_id]).includes(:groups)
+      @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
     end
 
     def load_investment
