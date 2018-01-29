@@ -465,6 +465,10 @@ FactoryBot.define do
     trait :with_confidence_score do
       before(:save) { |d| d.calculate_confidence_score }
     end
+
+    trait :valuation do
+      valuation true
+    end
   end
 
   factory :legacy_legislation do
