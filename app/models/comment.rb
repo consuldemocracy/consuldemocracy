@@ -35,7 +35,8 @@ class Comment < ActiveRecord::Base
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
 
   scope :public_for_api, -> do
-    where(%{(comments.commentable_type = 'Debate' and comments.commentable_id in (?)) or
+    not_valuations
+      .where(%{(comments.commentable_type = 'Debate' and comments.commentable_id in (?)) or
             (comments.commentable_type = 'Proposal' and comments.commentable_id in (?)) or
             (comments.commentable_type = 'Poll' and comments.commentable_id in (?))},
           Debate.public_for_api.pluck(:id),
@@ -51,6 +52,8 @@ class Comment < ActiveRecord::Base
 
   scope :sort_by_oldest, -> { order(created_at: :asc) }
   scope :sort_descendants_by_oldest, -> { order(created_at: :asc) }
+
+  scope :not_valuations, -> { where(valuation: false) }
 
   after_create :call_after_commented
 
