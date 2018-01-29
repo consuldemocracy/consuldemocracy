@@ -52,8 +52,8 @@ module BudgetsHelper
     Budget::Ballot.where(user: current_user, budget: @budget).first
   end
 
-  def investment_tags_select_options
-    Budget::Investment.tags_on(:valuation).order(:name).select(:name).distinct
+  def investment_tags_select_options(budget)
+    Budget::Investment.where(budget_id: budget).tags_on(:valuation).order(:name).select(:name).distinct
   end
 
   def budget_published?(budget)
