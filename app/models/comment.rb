@@ -57,11 +57,12 @@ class Comment < ActiveRecord::Base
 
   after_create :call_after_commented
 
-  def self.build(commentable, user, body, p_id = nil)
-    new commentable: commentable,
+  def self.build(commentable, user, body, p_id = nil, valuation = false)
+    new(commentable: commentable,
         user_id:     user.id,
         body:        body,
-        parent_id:   p_id
+        parent_id:   p_id,
+        valuation:   valuation)
   end
 
   def self.find_commentable(c_type, c_id)
