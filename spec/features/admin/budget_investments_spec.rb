@@ -294,7 +294,7 @@ feature 'Admin budget investments' do
 
     scenario "Filtering by tag, display only valuation tags of the current budget" do
       new_budget = create(:budget)
-      investment1 = create(:budget_investment, budget: @budget, tag_list: 'Roads')
+      investment1 = create(:budget_investment, budget: budget, tag_list: 'Roads')
       investment2 = create(:budget_investment, budget: new_budget, tag_list: 'Accessibility')
 
       investment1.set_tag_list_on(:valuation, 'Roads')
@@ -303,7 +303,7 @@ feature 'Admin budget investments' do
       investment1.save
       investment2.save
 
-      visit admin_budget_budget_investments_path(budget_id: @budget.id)
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
 
       expect(page).to have_select("tag_name", options: ["All tags", "Roads"])
       expect(page).not_to have_select("tag_name", options: ["All tags", "Accessibility"])
@@ -509,11 +509,14 @@ feature 'Admin budget investments' do
     end
 
     scenario "Adds existing valuation tags", :js do
-      budget_investment1 = create(:budget_investment)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      budget_investment1 = create(:budget_investment, heading: heading)
       budget_investment1.set_tag_list_on(:valuation, 'Education, Health')
       budget_investment1.save
 
-      budget_investment2 = create(:budget_investment)
+      budget_investment2 = create(:budget_investment, heading: heading)
 
       visit edit_admin_budget_budget_investment_path(budget_investment2.budget, budget_investment2)
 
