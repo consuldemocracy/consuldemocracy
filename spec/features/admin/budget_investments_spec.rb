@@ -323,7 +323,7 @@ feature 'Admin budget investments' do
         create(:budget_investment, heading: streets, cached_votes_up: n, title: "Street with #{n} supports")
       end
 
-      visit admin_budget_budget_investments_path(budget)
+      visit admin_budget_budget_investments_path(@budget)
 
       [2, 4, 90, 100, 200, 300].each do |n|
         expect(page).to have_link("Park with #{n} supports")
