@@ -20,17 +20,17 @@ feature 'Budgets' do
       within("#budget_heading") do
         expect(page).to have_content(budget.name)
         expect(page).to have_content(budget.description)
-        expect(page).to have_content("Actual phase")
-        expect(page).to have_content(I18n.t('budgets.phase.informing'))
-        expect(page).to have_link 'Help with participatory budgets'
-        expect(page).to have_link 'See all phases'
+        expect(page).to have_content('Actual phase')
+        expect(page).to have_content('Informing')
+        expect(page).to have_link('Help with participatory budgets')
+        expect(page).to have_link('See all phases')
       end
 
       budget.update_attributes(phase: 'publishing_prices')
       visit budgets_path
 
       within("#budget_heading") do
-        expect(page).to have_content(I18n.t('budgets.phase.publishing_prices'))
+        expect(page).to have_content('Publishing projects prices')
       end
 
       within('#budget_info') do
@@ -46,12 +46,14 @@ feature 'Budgets' do
     end
 
     scenario 'Show finished budgets list' do
-      finished_budget = create(:budget, :finished)
+      finished_budget_1 = create(:budget, :finished)
+      finished_budget_2 = create(:budget, :finished)
       drafting_budget = create(:budget, :drafting)
       visit budgets_path
 
       within("#finished_budgets") do
-        expect(page).to have_content(finished_budget.name)
+        expect(page).to     have_content(finished_budget_1.name)
+        expect(page).to     have_content(finished_budget_2.name)
         expect(page).not_to have_content(budget.name)
         expect(page).not_to have_content(drafting_budget.name)
       end
@@ -60,17 +62,17 @@ feature 'Budgets' do
     scenario 'Show informing index without links' do
       budget.update_attributes(phase: 'informing')
       group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
+      heading = create(:budget_heading, group: group, name: 'Health')
 
       visit budgets_path
 
       within('#budget_info') do
-        expect(page).not_to have_link "#{heading.name} €1,000,000"
-        expect(page).to have_content "#{heading.name} €1,000,000"
+        expect(page).not_to have_link("Health €1,000,000")
+        expect(page).to     have_content("Health €1,000,000")
 
-        expect(page).not_to have_link "List of all investment projects"
-        expect(page).not_to have_link "List of all unfeasible investment projects"
-        expect(page).not_to have_link "List of all investment projects not selected for balloting"
+        expect(page).not_to have_link("List of all investment projects")
+        expect(page).not_to have_link("List of all unfeasible investment projects")
+        expect(page).not_to have_link("List of all investment projects not selected for balloting")
 
         expect(page).not_to have_css('div#map')
       end
