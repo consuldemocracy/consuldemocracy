@@ -14,10 +14,10 @@ es:
         other: "Otra información de interés"
       debates:
         title: "Debates"
-        description: "Crea un hilo en el que debatir sobre cualquier tema que quieras compartir con el resto de gente de tu ciudad."
-        feature_1: "Para crear un debate tienes que %{link}"
-        feature_1_link: "registrarte en %{org_name}"
-        feature_2_html: "Los debates pueden ser valorados utilizando los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong> que encontrarás en cada uno de ellos."
+        description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad. También es un espacio donde generar ideas que a través de las otras secciones de %{org} lleven a actuaciones concretas por parte del Ayuntamiento."
+        link: "debates ciudadanos"
+        feature_html: "Puedes abrir debates, comentarlos y valorarlos con los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong>. Para ello tienes que %{link}."
+        feature_link: "registrarte en %{org}"
         image_alt: "Botones para valorar los debates"
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
       proposals:

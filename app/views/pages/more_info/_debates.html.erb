@@ -3,14 +3,18 @@
     <h3 id="debates" data-magellan-target="debates">
       <%= t("pages.more_info.debates.title") %>
     </h3>
-    <p><%= t("pages.more_info.debates.description") %></p>
+    <p>
+      <%= t("pages.more_info.debates.description",
+          org: setting['org_name'],
+          link: link_to(t("pages.more_info.debates.link"),
+                              debates_path)).html_safe %>
+    </p>
     <ul class="features">
       <li>
-        <%= t("pages.more_info.debates.feature_1",
-              link: link_to(t("pages.more_info.debates.feature_1_link", org_name: setting['org_name']),
+        <%= t("pages.more_info.debates.feature_html",
+              link: link_to(t("pages.more_info.debates.feature_link", org: setting['org_name']),
                                new_user_registration_path)).html_safe %>
       </li>
-      <li><%= t("pages.more_info.debates.feature_2_html") %></li>
     </ul>
 
     <figure>
