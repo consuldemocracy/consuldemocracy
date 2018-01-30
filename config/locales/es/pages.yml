@@ -29,12 +29,14 @@ es:
         figcaption_html: 'Botón para "Apoyar" una propuesta.<br>Cuando alcance el número de apoyos pasará a votación.'
       budgets:
         title: "Presupuestos participativos"
-        description: "Los primeros seis meses de cada año puedes decidir cómo gastar parte del presupuesto."
-        feature_1: "Para crear un proyecto de gasto tienes que %{link} y verificar tu cuenta."
-        feature_1_link: "registrarte en %{org_name}"
-        feature_2_html: "En primer lugar empieza la <strong>fase de aceptación</strong> de proyectos de gasto."
-        feature_3_html: "Después hay una <strong>fase de apoyos</strong> para priorizar lo más interesante, las más apoyadas son evaluadas por el Ayuntamiento para ver si son viables y cuánto valen."
-        feature_4_html: "Al final hay una <strong>fase de votación</strong> donde se decide en cuáles se gasta esa parte del presupuesto."
+        description: "La sección de %{link} sirve para que la gente decida de manera directa a qué se destina una parte del presupuesto municipal."
+        link: "presupuestos participativos"
+        feature: "En este proceso cada año la gente plantea, apoya y vota proyectos. Los más votados pasan a financiarse con el presupuesto municipal."
+        phase_1_html: "Entre enero y principios de marzo, las personas registradas en %{org} pueden <strong>presentar proyectos</strong>."
+        phase_2_html: "En marzo, los proponentes tienen que recabar apoyos, a modo de <strong>fase de preselección</strong>."
+        phase_3_html: "Entre abril y comienzos de mayo los técnicos del Ayuntamiento <strong>tasan los proyectos</strong> por orden de más a menos apoyados y comprueban que son viables."
+        phase_4_html: "Finalmente, entre mayo y junio, toda la ciudadanía puede <strong>votar los proyectos</strong> que más le interesan."
+        phase_5_html: "A partir de la aprobación de los presupuestos al año siguiente el Ayuntamiento empieza a llevar a cabo los proyectos ganadores."
         image_alt: "Diferentes fases de un presupuesto participativo"
         figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
       polls:

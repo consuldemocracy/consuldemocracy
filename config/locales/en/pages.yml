@@ -29,12 +29,14 @@ en:
         figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
       budgets:
         title: "Participatory Budgeting"
-        description: "The first six months of each year you can decide how to spend part of the budget."
-        feature_1: "To submit an investment project you have to %{link} and verify your account."
-        feature_1_link: "sign up on %{org_name}"
-        feature_2_html: "The first is the <strong>submit phase</strong> of investment projects."
-        feature_3_html: "Then there is a <strong>support phase</strong> to prioritize the most interesting, the most supported are evaluated by the City to see if they are viable and how much they are worth."
-        feature_4_html: "At the end there is a <strong>vote phase </strong> and you decide which of the approved projects to spend the budget on."
+        description: "The %{link} section helps people make a direct decision on what part of the municipal budget is spent on."
+        link: "participative budgets"
+        feature: "In this process, every year people raise, support and vote on projects. The most voted votes are financed by the municipal budget."
+        phase_1_html: "Between January and early March, people registered in %{org} can <strong>present</strong>."
+        phase_2_html: "In March, proposers have to gather support, in the form of <strong>preselection</strong>."
+        phase_3_html: "Between April and the beginning of May, the experts from the <strong>City Council rate</strong> projects on an order of more or less supported and check that they are viable."
+        phase_4_html: "Finally, between May and June, all citizens can <strong>vote</strong> projects that interest them the most."
+        phase_5_html: "From the approval of the budgets the following year the City Council begins to carry out the winning projects."
         image_alt: "Different phases of a participatory budget"
         figcaption_html: '"Support" and "Voting" phases of participatory budgets.'
       polls:
