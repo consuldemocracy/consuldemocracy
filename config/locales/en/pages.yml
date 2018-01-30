@@ -14,10 +14,10 @@ en:
         other: "Other information of interest"
       debates:
         title: "Debates"
-        description: "Create a thread where you can discuss any topic you want to share with other people in your city."
-        feature_1: "To create a debate you have to %{link}"
-        feature_1_link: "sign up on %{org_name}"
-        feature_2_html: "Debates can be rated using the <strong>I agree</strong> or <strong>I disagree</strong> buttons you'll find on each of them."
+        description: "In the %{link} section you can present and share your opinion with other people on issues of concern to you related to the city. It is also a place to generate ideas that through the other sections of %{org} lead to concrete actions by the City Council."
+        link: "citizen debates"
+        feature_html: "You can open debates, comment and evaluate them with the <strong>I agree</strong> or <strong>I don't agree</strong>. For that you have to %{link}."
+        feature_link: "register in %{org}"
         image_alt: "Buttons to rate the debates"
         figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
       proposals:
