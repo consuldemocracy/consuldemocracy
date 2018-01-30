@@ -501,11 +501,12 @@ section "Creating Spending Proposals" do
     feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     valuation_finished = [true, false].sample
     feasible = [true, false].sample
+    created_at = rand((Time.current - 1.week)..Time.current)
     spending_proposal = SpendingProposal.create!(author: author,
                                                  title: Faker::Lorem.sentence(3).truncate(60),
                                                  external_url: Faker::Internet.url,
                                                  description: description,
-                                                 created_at: rand((Time.current - 1.week)..Time.current),
+                                                 created_at: created_at,
                                                  geozone: [geozone, nil].sample,
                                                  feasible: feasible,
                                                  feasible_explanation: feasible_explanation,
@@ -544,13 +545,16 @@ section "Creating banners" do
   Proposal.last(3).each do |proposal|
     title = Faker::Lorem.sentence(word_count = 3)
     description = Faker::Lorem.sentence(word_count = 12)
+    target_url = Rails.application.routes.url_helpers.proposal_path(proposal)
     banner = Banner.create!(title: title,
                             description: description,
-                            style: ["banner-style banner-style-one", "banner-style banner-style-two",
+                            style: ["banner-style banner-style-one",
+                                    "banner-style banner-style-two",
                                     "banner-style banner-style-three"].sample,
-                            image: ["banner-img banner-img-one", "banner-img banner-img-two",
+                            image: ["banner-img banner-img-one",
+                                    "banner-img banner-img-two",
                                     "banner-img banner-img-three"].sample,
-                            target_url: Rails.application.routes.url_helpers.proposal_path(proposal),
+                            target_url: target_url,
                             post_started_at: rand((Time.current - 1.week)..(Time.current - 1.day)),
                             post_ended_at:   rand((Time.current - 1.day)..(Time.current + 1.week)),
                             created_at: rand((Time.current - 1.week)..Time.current))
@@ -605,9 +609,10 @@ section "Creating Poll Questions & Answers" do
                                         title: Faker::Lorem.sentence(3).truncate(60) + '?',
                                         poll: poll)
       Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+        description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
         Poll::Question::Answer.create!(question: question,
                                        title: answer.capitalize,
-                                       description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>")
+                                       description: description)
       end
     end
   end
@@ -615,17 +620,20 @@ end
 
 section "Creating Poll Booths & BoothAssignments" do
   20.times do |i|
-    Poll::Booth.create(name: "Booth #{i}", location: Faker::Address.street_address, polls: [Poll.all.sample])
+    Poll::Booth.create(name: "Booth #{i}",
+                       location: Faker::Address.street_address,
+                       polls: [Poll.all.sample])
   end
 end
 
 section "Creating Poll Shifts for Poll Officers" do
   Poll.all.each do |poll|
     Poll::BoothAssignment.where(poll: poll).each do |booth_assignment|
+      scrutiny = (poll.ends_at.to_datetime..poll.ends_at.to_datetime + Poll::RECOUNT_DURATION)
       Poll::Officer.all.each do |poll_officer|
         {
           vote_collection: (poll.starts_at.to_datetime..poll.ends_at.to_datetime),
-          recount_scrutiny: (poll.ends_at.to_datetime..poll.ends_at.to_datetime + Poll::RECOUNT_DURATION)
+          recount_scrutiny: scrutiny
         }.each do |task_name, task_dates|
           task_dates.each do |shift_date|
             Poll::Shift.create(booth: booth_assignment.booth,
@@ -699,13 +707,17 @@ section "Creating Poll Voters" do
   def randomly_answer_questions(poll, user)
     poll.questions.each do |question|
       next unless [true, false].sample
-      Poll::Answer.create!(question_id: question.id, author: user, answer: question.question_answers.sample.title)
+      Poll::Answer.create!(question_id: question.id,
+                           author: user,
+                           answer: question.question_answers.sample.title)
     end
   end
 
   (Poll.expired + Poll.current + Poll.recounting).uniq.each do |poll|
     level_two_verified_users = User.level_two_verified
-    level_two_verified_users = level_two_verified_users.where(geozone_id: poll.geozone_ids) if poll.geozone_restricted?
+    if poll.geozone_restricted?
+      level_two_verified_users = level_two_verified_users.where(geozone_id: poll.geozone_ids)
+    end
     user_groups = level_two_verified_users.in_groups(2)
     user_groups.first.each { |user| vote_poll_on_booth(user, poll) }
     user_groups.second.compact.each { |user| vote_poll_on_web(user, poll) }
@@ -758,7 +770,9 @@ section "Creating Poll Questions from Proposals" do
     poll = Poll.current.first
     question = Poll::Question.create(poll: poll)
     Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+      Poll::Question::Answer.create!(question: question,
+                                     title: answer.capitalize,
+                                     description: Faker::ChuckNorris.fact)
     end
     question.copy_attributes_from_proposal(proposal)
     question.save!
@@ -771,7 +785,9 @@ section "Creating Successful Proposals" do
     poll = Poll.current.first
     question = Poll::Question.create(poll: poll)
     Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+      Poll::Question::Answer.create!(question: question,
+                                     title: answer.capitalize,
+                                     description: Faker::ChuckNorris.fact)
     end
     question.copy_attributes_from_proposal(proposal)
     question.save!
