@@ -41,11 +41,12 @@ en:
         figcaption_html: '"Support" and "Voting" phases of participatory budgets.'
       polls:
         title: "Polls"
-        description: "Citizen proposals that reach 1% of support will be put to a vote."
-        feature_1: "To participate in the next poll you have to %{link} and verify your account."
-        feature_1_link: "sign up on %{org_name}"
-        feature_2: "All verified users over 16 years old can vote."
-        feature_3: "The results of all votes shall be binding on the government."
+        description: "The %{link} section is activated each time a proposal reaches 1% support and goes to the vote or when the City Council proposes an issue for people to decide on."
+        link: "polls"
+        feature_1: "To participate in the voting you have to %{link} and verify your account."
+        feature_1_link: "register in %{org_name}"
+        feature_2: "All registered voters over the age of 16 can vote."
+        feature_3: "The results of all votes are binding on the municipal government."
       faq:
         title: "Technical problems?"
         description: "Read the FAQs and solve your questions."
