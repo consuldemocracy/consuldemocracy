@@ -1,13 +1,16 @@
-<% if params[:filter].present? && params[:second_filter].present? %>
+<% if params[:filter].present? && params[:advanced_filters].present? %>
   <p class="inline-block"><%= t("#{i18n_namespace}.filters.two_filters_html",
                               filter: t("#{i18n_namespace}.filters.#{params[:filter]}"),
-                              second_filter: t("#{i18n_namespace}.filters.#{params[:second_filter]}")) %></p>
+                              advanced_filters: budget_investments_advanced_filters(params[:advanced_filters])) %></p>
 
 <% elsif params[:filter].present? %>
+
   <p class="inline-block"><%= t("#{i18n_namespace}.filters.one_filter_html",
                               filter: t("#{i18n_namespace}.filters.#{params[:filter]}")) %></p>
 
-<% elsif params[:second_filter].present? %>
+<% elsif params[:advanced_filters].present? %>
+
   <p class="inline-block"><%= t("#{i18n_namespace}.filters.one_filter_html",
-                              filter: t("#{i18n_namespace}.filters.#{params[:second_filter]}")) %></p>
+                              filter: budget_investments_advanced_filters(params[:advanced_filters])) %></p>
+
 <% end %>
