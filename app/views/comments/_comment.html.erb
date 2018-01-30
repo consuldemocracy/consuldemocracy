@@ -1,5 +1,6 @@
 <% comment_flags ||= @comment_flags %>
 <% valuation = local_assigns.fetch(:valuation, false) %>
+<% allow_votes = local_assigns.fetch(:allow_votes, true) %>
 <% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (comment_flags[comment.id] if comment_flags)] do %>
   <ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12">
     <li class="comment-body">
@@ -68,9 +69,11 @@
         </div>
 
         <div id="<%= dom_id(comment) %>_reply" class="reply">
-          <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
-            <%= render 'comments/votes', comment: comment %>
-          </div>
+          <% if allow_votes %>
+            <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
+              <%= render 'comments/votes', comment: comment %>
+            </div>
+          <% end %>
 
           <% if comment.children.size > 0 %>
             <%= link_to "", class: "js-toggle-children relative", data: {'id': "#{dom_id(comment)}"} do %>
@@ -104,6 +107,7 @@
           <li>
             <%= render 'comments/comment', { comment: child,
                                              valuation: valuation } %>
+                                             allow_votes: allow_votes } %>
           </li>
         <% end %>
       </ul>
