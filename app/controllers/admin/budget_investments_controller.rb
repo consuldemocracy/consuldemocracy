@@ -3,8 +3,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
-  has_filters(%w{valuation_open without_admin managed valuating valuation_finished
-                 valuation_finished_feasible selected winners all},
+  has_filters(%w{all without_admin without_valuator under_valuation
+                 valuation_finished winners},
               only: [:index, :toggle_selection])
 
   before_action :load_budget
@@ -15,6 +15,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   def index
     respond_to do |format|
       format.html
+      format.js { render layout: false }
       format.csv do
         send_data Budget::Investment.to_csv(@investments, headers: true),
                   filename: 'budget_investments.csv'
@@ -51,9 +52,21 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   private
 
+    def sort_by(params)
+      if params.present? && Budget::Investment::SORTING_OPTIONS.include?(params)
+        "#{params == 'supports' ? 'cached_votes_up' : params} ASC"
+      else
+        "cached_votes_up DESC, created_at DESC"
+      end
+    end
+
     def load_investments
-      @investments = Budget::Investment.scoped_filter(params, @current_filter)
-                                       .order(cached_votes_up: :desc, created_at: :desc)
+      if params[:project_title].present?
+        @investments = Budget::Investment.where("title ILIKE ?", "%#{params[:project_title].strip}%")
+      else
+        @investments = Budget::Investment.scoped_filter(params, @current_filter)
+                                         .order(sort_by(params[:sort_by]))
+      end
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
@@ -77,7 +90,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_valuators
-      @valuators = Valuator.includes(:user).all.order("description ASC").order("users.email ASC")
+      @valuators = Valuator.includes(:user).all.order(description: :asc).order("users.email ASC")
     end
 
     def load_tags
@@ -93,4 +106,5 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       @investment.set_tag_list_on(:valuation, budget_investment_params[:valuation_tag_list])
       params[:budget_investment] = params[:budget_investment].except(:valuation_tag_list)
     end
+
 end

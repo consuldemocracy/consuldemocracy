@@ -3,6 +3,7 @@ require 'rake'
 
 describe 'rake db:dev_seed' do
   let :run_rake_task do
+    Rake.application.rake_require('tasks/db')
     Rake.application.invoke_task('db:dev_seed')
   end
 
