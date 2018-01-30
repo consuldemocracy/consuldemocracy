@@ -224,7 +224,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content("Evaluating...")
       expect(page).not_to have_content("Assigned idea")
 
-      visit admin_budget_budget_investments_path(budget_id: @budget.id, filter: 'without_valuator')
+      visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'without_valuator')
 
       expect(page).to have_content("Assigned idea")
       expect(page).not_to have_content("Evaluating...")
@@ -306,7 +306,7 @@ feature 'Admin budget investments' do
         create(:budget_investment, heading: streets, cached_votes_up: n, title: "Street with #{n} supports")
       end
 
-      visit admin_budget_budget_investments_path(@budget)
+      visit admin_budget_budget_investments_path(budget)
 
       [2, 4, 90, 100, 200, 300].each do |n|
         expect(page).to have_link("Park with #{n} supports")
@@ -774,7 +774,8 @@ feature 'Admin budget investments' do
     scenario "Unselecting an investment", :js do
       visit admin_budget_budget_investments_path(budget)
       click_link 'Advanced filters'
-      within('#advanced-filters') { find(:css, "#second_filter[value='selected']").set(true) }
+
+      within('#advanced_filters') { find(:css, "#second_filter[value='selected']").set(true) }
 
       click_button 'Filter'
 
@@ -783,9 +784,6 @@ feature 'Admin budget investments' do
       within("#budget_investment_#{selected_bi.id}") do
         click_link('Selected')
       end
-
-      expect(page).not_to have_content(selected_bi.title)
-      expect(page).to have_content('There is 1 investment')
 
       visit admin_budget_budget_investments_path(budget)
 
@@ -856,6 +854,7 @@ feature 'Admin budget investments' do
 
     scenario "Mark as visible to valuator", :js do
       valuator = create(:valuator)
+      admin = create(:administrator)
 
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
@@ -865,6 +864,8 @@ feature 'Admin budget investments' do
 
       investment1.valuators << valuator
       investment2.valuators << valuator
+      investment1.update(administrator: admin)
+      investment2.update(administrator: admin)
 
       visit admin_budget_budget_investments_path(budget)
       within('#filter-subnav') { click_link 'Under valuation' }
@@ -890,6 +891,7 @@ feature 'Admin budget investments' do
       Setting['feature.budgets.valuators_allowed'] = true
 
       valuator = create(:valuator)
+      admin = create(:administrator)
 
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
@@ -899,6 +901,8 @@ feature 'Admin budget investments' do
 
       investment1.valuators << valuator
       investment2.valuators << valuator
+      investment1.update(administrator: admin)
+      investment2.update(administrator: admin)
 
       visit admin_budget_budget_investments_path(budget)
       within('#filter-subnav') { click_link 'Under valuation' }

@@ -161,6 +161,7 @@ en:
           winners: Winners
           one_filter_html: "Current applied filter: <b><em>%{filter}</em></b>"
           two_filters_html: "Current applied filters: <b><em>%{filter}, %{second_filter}</em></b>"
+          valuation_open: Open
         buttons:
           search: Search
           filter: Filter
