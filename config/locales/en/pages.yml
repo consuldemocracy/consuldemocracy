@@ -4,9 +4,9 @@ en:
     conditions: Terms and conditions of use
     general_terms: Terms and Conditions
     more_info:
-      title: "Discover %{org_name}"
-      subtitle: "Learn everything you can do on this website."
-      guide: 'This guide explains each section of %{org_name}. You can expand the information on "Detailed information" links.'
+      title: "%{org} is a platform for citizen participation"
+      subtitle: "In %{org} you can make proposals, vote in citizen consultations, propose participatory budget projects, decide on municipal regulations and open debates to exchange opinions with others."
+      guide: "This guide explains what each of the %{org} sections are for and how they work."
       menu:
         debates: "Debates"
         proposals: "Proposals"
@@ -71,7 +71,7 @@ en:
     titles:
       accessibility: Accessibility
       conditions: Terms of use
-      more_info: "More information about %{org_name}"
+      more_info: "What is %{org}? - Citizen participation"
       privacy: Privacy Policy
     verify:
       code: Code you received in letter

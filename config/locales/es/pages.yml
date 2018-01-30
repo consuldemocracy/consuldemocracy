@@ -4,9 +4,9 @@ es:
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
     more_info:
-      title: "Descubre %{org_name}"
-      subtitle: "Aprende todo lo que puedes hacer en esta web."
-      guide: 'Esta guía explica cada una de las secciones de %{org_name}. Puedes ampliar la información en los enlaces de "Información detallada".'
+      title: "%{org} es una plataforma de participación ciudadana"
+      subtitle: "En %{org} se pueden hacer propuestas, votar en consultas ciudadanas, plantear proyectos de presupuestos participativos, decidir la normativa municipal y abrir debates para intercambiar opiniones con otras personas."
+      guide: 'Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}.'
       menu:
         debates: "Debates"
         proposals: "Propuestas"
@@ -71,7 +71,7 @@ es:
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      more_info: "Más información sobre %{org_name}"
+      more_info: "¿Qué es %{org}? - Participación ciudadana"
       privacy: Política de Privacidad
     verify:
       code: Código que has recibido en tu carta
