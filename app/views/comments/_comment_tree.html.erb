@@ -43,7 +43,8 @@
           <%= render 'comments/comment', { comment: comment,
                                            comment_flags: comment_flags,
                                            valuation: valuation,
-                                           allow_votes: !valuation } %>
+                                           allow_votes: !valuation,
+                                           allow_flagging: !valuation } %>
         <% end %>
         <%= paginate comment_tree.root_comments %>
       </div>
