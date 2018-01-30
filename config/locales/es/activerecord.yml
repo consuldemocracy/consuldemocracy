@@ -183,7 +183,7 @@ es:
         status: Estado
         title: Título
         updated_at: última actualización
-        more_info_flag: Mostrar en la página de más información
+        more_info_flag: Mostrar en la página de ayuda
         print_content_flag: Botón de imprimir contenido
         locale: Idioma
       site_customization/image:

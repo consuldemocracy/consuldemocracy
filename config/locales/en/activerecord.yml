@@ -187,7 +187,7 @@ en:
         status: Status
         title: Title
         updated_at: Updated at
-        more_info_flag: Show in more information page
+        more_info_flag: Show in help page
         print_content_flag: Print content button
         locale: Language
       site_customization/image:
