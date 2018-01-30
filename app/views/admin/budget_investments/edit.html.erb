@@ -26,13 +26,9 @@
     </div>
 
     <div class="small-12 column">
-      <div class="small-12 medium-6">
-        <%= f.text_field :external_url %>
-      </div>
 
-      <div class="small-12 medium-6">
-        <%= f.select :heading_id, budget_heading_select_options(@budget), include_blank: t("admin.budget_investments.edit.select_heading") %>
-      </div>
+      <%= f.select :heading_id, budget_heading_select_options(@budget), include_blank: t("admin.budget_investments.edit.select_heading") %>
+
     </div>
   </div>
 

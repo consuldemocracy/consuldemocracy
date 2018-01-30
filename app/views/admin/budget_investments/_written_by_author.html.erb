@@ -54,12 +54,6 @@
   </div>
 </div>
 
-<% if @investment.external_url.present? %>
-  <p>
-    <%= text_with_links @investment.external_url %>&nbsp;<span class="icon-external small"></span>
-  </p>
-<% end %>
-
 <%= safe_html_with_links @investment.description %>
 
 <p>

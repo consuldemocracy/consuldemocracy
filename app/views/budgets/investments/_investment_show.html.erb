@@ -68,12 +68,6 @@
 
         <%= render 'shared/tags', taggable: investment %>
 
-        <% if investment.external_url.present? %>
-          <div class="document-link">
-            <%= text_with_links investment.external_url %>
-          </div>
-        <% end %>
-
         <% if investment.should_show_unfeasibility_explanation? %>
           <h2><%= t('budgets.investments.show.unfeasibility_explanation') %></h2>
           <p><%= investment.unfeasibility_explanation %></p>
