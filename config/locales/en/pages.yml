@@ -10,7 +10,7 @@ en:
 
         Contact us at ag.gobiernoabierto@madrid.es We'll give you access to the collaborative translation tool.
         Together we can make this open government tool available to any country. Thanks a million!
-    more_info:
+    help:
       title: "%{org} is a platform for citizen participation"
       subtitle: "In %{org} you can make proposals, vote in citizen consultations, propose participatory budget projects, decide on municipal regulations and open debates to exchange opinions with others."
       guide: "This guide explains what each of the %{org} sections are for and how they work."
@@ -160,7 +160,7 @@ en:
     titles:
       accessibility: Accessibility
       conditions: Terms of use
-      more_info: "What is %{org}? - Citizen participation"
+      help: "What is %{org}? - Citizen participation"
       privacy: Privacy Policy
       kit_decide: "Kit Decide: to make your communication campaigns after you create a proposal"
     verify:
