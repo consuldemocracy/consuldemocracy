@@ -42,7 +42,8 @@
         <% comment_tree.root_comments.each do |comment| %>
           <%= render 'comments/comment', { comment: comment,
                                            comment_flags: comment_flags,
-                                           valuation: valuation } %>
+                                           valuation: valuation,
+                                           allow_votes: !valuation } %>
         <% end %>
         <%= paginate comment_tree.root_comments %>
       </div>
