@@ -3,17 +3,22 @@
     <h3 id="budgets" data-magellan-target="budgets">
       <%= t("pages.more_info.budgets.title") %>
     </h3>
-    <p><%= t("pages.more_info.budgets.description") %></p>
+    <p>
+      <%= t("pages.more_info.budgets.description",
+           link: link_to(t("pages.more_info.budgets.link"), budgets_path)).html_safe %>
+    </p>
     <ul class="features">
       <li>
-        <%= t("pages.more_info.budgets.feature_1",
-              link: link_to(t("pages.more_info.budgets.feature_1_link", org_name: setting['org_name']),
-                               new_user_registration_path)).html_safe %>
+        <%= t("pages.more_info.budgets.feature") %>
       </li>
-      <li><%= t("pages.more_info.budgets.feature_2_html") %></li>
-      <li><%= t("pages.more_info.budgets.feature_3_html") %></li>
-      <li><%= t("pages.more_info.budgets.feature_4_html") %></li>
+      <li><%= t("pages.more_info.budgets.phase_1_html",
+                org: setting['org_name']).html_safe %></li>
+      <li><%= t("pages.more_info.budgets.phase_2_html") %></li>
+      <li><%= t("pages.more_info.budgets.phase_3_html") %></li>
+      <li><%= t("pages.more_info.budgets.phase_4_html") %></li>
     </ul>
+
+    <p><%= t("pages.more_info.budgets.phase_5_html") %></p>
 
     <figure>
       <%= image_tag "more_info/budgets_#{I18n.locale}.png", alt: t("pages.more_info.budgets.image_alt") %>
