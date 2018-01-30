@@ -1,14 +1,14 @@
-<% provide :title do %><%= t("pages.titles.more_info", org_name: setting['org_name']) %><% end %>
+<% provide :title do %><%= t("pages.titles.more_info", org: setting['org_name']) %><% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: more_info_url %>
 <% end %>
 
 <div class="jumbo light">
   <div class="row">
-    <div class="small-12 column">
-      <h2><%= t("pages.more_info.title", org_name: setting['org_name']) %></h2>
-      <p class="lead"><%= t("pages.more_info.subtitle") %></p>
-      <p><%= t("pages.more_info.guide", org_name: setting['org_name']) %></p>
+    <div class="small-12 medium-9 column">
+      <h2><%= t("pages.more_info.title", org: setting['org_name']) %></h2>
+      <p><%= t("pages.more_info.subtitle", org: setting['org_name']) %></p>
+      <p><%= t("pages.more_info.guide", org: setting['org_name']) %></p>
     </div>
   </div>
 
