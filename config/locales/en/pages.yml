@@ -22,11 +22,9 @@ en:
         figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
       proposals:
         title: "Proposals"
-        description: "Propose what you want the City Council to do and support proposals from other people."
-        feature_1: "To create a proposal you have to %{link}, in addition to support you must verify your account."
-        feature_1_link: "sign up on %{org_name}"
-        feature_2_html: "Proposals that get <strong>support from 1% of people</strong> will be voted on."
-        feature_3_html: "If there are more people in favor than against, <strong>the City Council will publish their plan to accomplish</strong> the proposal and you can track its progress."
+        description: "In the %{link} section you can make proposals for the City Council to carry them out. The proposals require support, and if they reach sufficient support, they are put to a public vote. The proposals approved in these citizens' votes are accepted by the City Council and carried out."
+        link: "citizen proposals"
+        feature_html: "To create a proposal you must register in %{org}. The proposals that get the support on the website of 1% of people with the right to vote (%{supports} supports of people over 16 years old registered) go to vote. To support proposals it is necessary to verify your account."
         image_alt: "Button to support a proposal"
         figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
       budgets:
