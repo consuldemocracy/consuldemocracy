@@ -296,6 +296,10 @@ en:
             image:
               image_width: "Width must be %{required_width}px"
               image_height: "Height must be %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'You cannot comment a valuation'
       messages:
         record_invalid: "Validation failed: %{errors}"
         restrict_dependent_destroy:
