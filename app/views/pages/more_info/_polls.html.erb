@@ -4,7 +4,10 @@
     <p>
       <%= link_to t("pages.more_info.polls.detail"), more_info_polls_path, class: "small" %>
     </p>
-    <p><%= t("pages.more_info.polls.description") %></p>
+    <p>
+      <%= t("pages.more_info.polls.description",
+            link: link_to(t("pages.more_info.polls.link"), polls_path)).html_safe %>
+    </p>
     <ul class="features">
       <li>
         <%= t("pages.more_info.polls.feature_1",

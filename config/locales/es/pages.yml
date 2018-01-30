@@ -52,13 +52,12 @@ es:
       polls:
         title: "Votaciones"
         detail: "Información detallada de Votaciones"
-        description: "Las propuestas ciudadanas que alcancen el 1% de apoyos pasarán a votación."
-        feature_1: "Para participar en la próxima votación tienes que %{link} y verificar tu cuenta."
+        description: "La sección de %{link} se activa cada vez que una propuesta alcanza el 1% de apoyos y pasa a votación o cuando el Ayuntamiento propone un tema para que la gente decida sobre él."
+        link: "votaciones ciudadanas"
+        feature_1: "Para participar en las votaciones tienes que %{link} y verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
         feature_2: "Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años."
-        feature_3: "Los resultados de todas las votaciones serán vinculantes para el gobierno."
-        image_alt: "Primera votación ciudadana"
-        figcaption: "Imagen de campaña de la Primera Votación Ciudadana en febrero de 2017."
+        feature_3: "Los resultados de todas las votaciones son vinculantes para el gobierno municipal."
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."
