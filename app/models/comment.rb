@@ -21,6 +21,7 @@ class Comment < ActiveRecord::Base
   validates :commentable_type, inclusion: { in: COMMENTABLE_TYPES }
 
   validate :validate_body_length
+  validate :comment_valuation, if: -> { valuation }
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
@@ -156,4 +157,9 @@ class Comment < ActiveRecord::Base
       validator.validate(self)
     end
 
+    def comment_valuation
+      unless author.can?(:comment_valuation, commentable)
+        errors.add(:valuation, :cannot_comment_valuation)
+      end
+    end
 end
