@@ -192,7 +192,7 @@ describe Budget do
 
   describe "#generate_phases" do
     let(:drafting_phase)          { budget.phases.drafting }
-    let(:informing_phase)       { budget.phases.informing }
+    let(:informing_phase)         { budget.phases.informing }
     let(:accepting_phase)         { budget.phases.accepting }
     let(:reviewing_phase)         { budget.phases.reviewing }
     let(:selecting_phase)         { budget.phases.selecting }
