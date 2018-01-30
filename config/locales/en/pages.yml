@@ -3,7 +3,7 @@ en:
     census_terms: To confirm the account, you must be 16 or older and be registered, having provided the information requested previously, will verify. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed in a file mentioned previously in the terms and conditions of use for the Portal.
     conditions: Terms and conditions of use
     general_terms: Terms and Conditions
-    more_info:
+    help:
       title: "%{org} is a platform for citizen participation"
       subtitle: "In %{org} you can make proposals, vote in citizen consultations, propose participatory budget projects, decide on municipal regulations and open debates to exchange opinions with others."
       guide: "This guide explains what each of the %{org} sections are for and how they work."
@@ -72,7 +72,7 @@ en:
     titles:
       accessibility: Accessibility
       conditions: Terms of use
-      more_info: "What is %{org}? - Citizen participation"
+      help: "What is %{org}? - Citizen participation"
       privacy: Privacy Policy
     verify:
       code: Code you received in letter

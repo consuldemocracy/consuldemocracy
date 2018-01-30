@@ -3,7 +3,7 @@ es:
     census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
-    more_info:
+    help:
       title: "%{org} es una plataforma de participación ciudadana"
       subtitle: "En %{org} se pueden hacer propuestas, votar en consultas ciudadanas, plantear proyectos de presupuestos participativos, decidir la normativa municipal y abrir debates para intercambiar opiniones con otras personas."
       guide: 'Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}.'
@@ -72,7 +72,7 @@ es:
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      more_info: "¿Qué es %{org}? - Participación ciudadana"
+      help: "¿Qué es %{org}? - Participación ciudadana"
       privacy: Política de Privacidad
     verify:
       code: Código que has recibido en tu carta
