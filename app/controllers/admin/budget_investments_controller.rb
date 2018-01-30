@@ -61,12 +61,13 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_investments
-      if params[:project_title].present?
-        @investments = Budget::Investment.where("title ILIKE ?", "%#{params[:project_title].strip}%")
-      else
-        @investments = Budget::Investment.scoped_filter(params, @current_filter)
+      @investments = if params[:project_title].present?
+                       Budget::Investment.where("title ILIKE ?",
+                                                "%#{params[:project_title].strip}%")
+                     else
+                       Budget::Investment.scoped_filter(params, @current_filter)
                                          .order(sort_by(params[:sort_by]))
-      end
+                     end
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 

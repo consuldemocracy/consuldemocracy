@@ -372,7 +372,7 @@ feature 'Admin budget investments' do
       click_button 'Search'
 
       expect(page).to have_content(@investment_1.title)
-      expect(page).to_not have_content(@investment_2.title)
+      expect(page).not_to have_content(@investment_2.title)
     end
   end
 
