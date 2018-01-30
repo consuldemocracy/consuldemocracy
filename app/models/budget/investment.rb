@@ -104,15 +104,19 @@ class Budget
       results = results.by_heading(params[:heading_id])             if params[:heading_id].present?
       results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
       results = results.by_admin(params[:administrator_id])         if params[:administrator_id].present?
-
-      # Advanced filters
-      results = results.valuation_finished_feasible                 if params[:second_filter] == 'feasible'
-      results = results.where(selected: true)                       if params[:second_filter] == 'selected'
-      results = results.undecided                                   if params[:second_filter] == 'undecided'
-      results = results.unfeasible                                  if params[:second_filter] == 'unfeasible'
+      results = advanced_filters(params, results)                   if params[:advanced_filters].present?
 
       results = results.send(current_filter)                        if current_filter.present?
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
+    end
+
+    def self.advanced_filters(params, results)
+      ids = []
+      ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?('feasible')
+      ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?('selected')
+      ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?('undecided')
+      ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?('unfeasible')
+      results.where("budget_investments.id IN (?)", ids)
     end
 
     def self.limit_results(budget, params, results)
