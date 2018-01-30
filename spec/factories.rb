@@ -468,6 +468,12 @@ FactoryBot.define do
 
     trait :valuation do
       valuation true
+      association :commentable, factory: :budget_investment
+      before :create do |valuation|
+        valuator = create(:valuator)
+        valuation.author = valuator.user
+        valuation.commentable.valuators << valuator
+      end
     end
   end
 
