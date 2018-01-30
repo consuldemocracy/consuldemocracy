@@ -16,7 +16,6 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Display link to valuation section' do
-    Setting['feature.budgets'] = true
     visit root_path
     expect(page).to have_link "Valuation", href: valuation_root_path
   end
