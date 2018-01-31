@@ -10,7 +10,10 @@
         <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
 
         <% if user_signed_in? %>
-          <%= render 'comments/form', {commentable: @investment, parent_id: nil, toggeable: false} %>
+          <%= render 'comments/form', { commentable: @investment,
+                                        parent_id: nil,
+                                        toggeable: false,
+                                        valuation: local_assigns.fetch(:valuation, false) } %>
         <% else %>
         <br>
 
@@ -22,7 +25,8 @@
         <% end %>
 
         <% @comment_tree.root_comments.each do |comment| %>
-          <%= render 'comments/comment', comment: comment  %>
+          <%= render 'comments/comment', { comment: comment,
+                                           valuation: local_assigns.fetch(:valuation, false) }  %>
         <% end %>
         <%= paginate @comment_tree.root_comments %>
       </div>
