@@ -292,6 +292,10 @@ es:
             image:
               image_width: "Debe tener %{required_width}px de ancho"
               image_height: "Debe tener %{required_height}px de alto"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'No puedes comentar una evaluación'
       messages:
         record_invalid: 'Error de validación: %{errors}'
         restrict_dependent_destroy:

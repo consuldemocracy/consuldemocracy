@@ -1,5 +1,5 @@
 <% commentable = comment_tree.commentable %>
-
+<% valuation = local_assigns.fetch(:valuation, false) %>
 <% cache [locale_and_user_status, comment_tree.order, commentable_cache_key(commentable), comment_tree.comments, comment_tree.comment_authors, commentable.comments_count, comment_flags] do %>
   <section class="expanded comments">
     <div class="row">
@@ -27,7 +27,8 @@
           <% else %>
             <%= render 'comments/form', { commentable: commentable,
                                           parent_id: nil,
-                                          toggeable: false } %>
+                                          toggeable: false,
+                                          valuation: valuation } %>
           <% end %>
         <% else %>
           <br>
@@ -39,7 +40,11 @@
         <% end %>
 
         <% comment_tree.root_comments.each do |comment| %>
-          <%= render 'comments/comment', {comment: comment, comment_flags: comment_flags} %>
+          <%= render 'comments/comment', { comment: comment,
+                                           comment_flags: comment_flags,
+                                           valuation: valuation,
+                                           allow_votes: !valuation,
+                                           allow_flagging: !valuation } %>
         <% end %>
         <%= paginate comment_tree.root_comments %>
       </div>

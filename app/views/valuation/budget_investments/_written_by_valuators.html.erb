@@ -51,3 +51,12 @@
   <h2><%= t("valuation.budget_investments.show.internal_comments") %></h2>
   <%= explanation_field @investment.internal_comments %>
 <% end %>
+
+<div class="tabs-panel is-active" id="tab-comments">
+  <% unless @comment_tree.nil? %>
+    <%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree,
+                                                            comment_flags: @comment_flags,
+                                                            display_comments_count: false,
+                                                            valuation: true } %>
+  <% end %>
+</div>
