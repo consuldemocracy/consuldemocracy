@@ -89,6 +89,10 @@ class Budget
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
+    def comments_count
+      comments.count
+    end
+
     def url
       budget_investment_path(budget, self)
     end
