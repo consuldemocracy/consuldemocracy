@@ -1,11 +1,14 @@
 class Valuation::BudgetInvestmentsController < Valuation::BaseController
   include FeatureFlags
+  include CommentableActions
+
   feature_flag :budgets
 
   before_action :restrict_access_to_assigned_items, only: [:show, :edit, :valuate]
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :valuate]
 
+  has_orders %w{oldest}, only: [:show, :edit]
   has_filters %w{valuating valuation_finished}, only: :index
 
   load_and_authorize_resource :investment, class: "Budget::Investment"
@@ -36,7 +39,29 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
   end
 
+  def show
+    load_comments
+  end
+
+  def edit
+    load_comments
+  end
+
   private
+
+    def load_comments
+      @commentable = @investment
+      @comment_tree = CommentTree.new(@commentable, params[:page], @current_order, valuations: true)
+      set_comment_flags(@comment_tree.comments)
+    end
+
+    def resource_model
+      Budget::Investment
+    end
+
+    def resource_name
+      resource_model.parameterize('_')
+    end
 
     def load_budget
       @budget = Budget.find(params[:budget_id])

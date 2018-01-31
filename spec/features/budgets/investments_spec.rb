@@ -609,7 +609,7 @@ feature 'Budget Investments' do
       login_as(author)
       visit new_budget_investment_path(budget_id: budget.id)
 
-      select  'Health: More hospitals', from: 'budget_investment_heading_id'
+      select  heading.name, from: 'budget_investment_heading_id'
       fill_in 'budget_investment_title', with: 'I am a bot'
       fill_in 'budget_investment_subtitle', with: 'This is the honeypot'
       fill_in 'budget_investment_description', with: 'This is the description'
@@ -628,7 +628,7 @@ feature 'Budget Investments' do
       login_as(author)
       visit new_budget_investment_path(budget_id: budget.id)
 
-      select  'Health: More hospitals', from: 'budget_investment_heading_id'
+      select  heading.name, from: 'budget_investment_heading_id'
       fill_in 'budget_investment_title', with: 'I am a bot'
       fill_in 'budget_investment_description', with: 'This is the description'
       check   'budget_investment_terms_of_service'
@@ -644,7 +644,7 @@ feature 'Budget Investments' do
 
       visit new_budget_investment_path(budget_id: budget.id)
 
-      select  'Health: More hospitals', from: 'budget_investment_heading_id'
+      select  heading.name, from: 'budget_investment_heading_id'
       fill_in 'budget_investment_title', with: 'Build a skyscraper'
       fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
       fill_in 'budget_investment_location', with: 'City center'
@@ -734,6 +734,22 @@ feature 'Budget Investments' do
       within('#sidebar') do
         expect(page).not_to have_content('My ballot')
       end
+    end
+
+    scenario "Heading options are correctly ordered" do
+      city_group = create(:budget_group, name: "Toda la ciudad", budget: budget)
+      create(:budget_heading, name: "Toda la ciudad", price: 333333, group: city_group)
+      create(:budget_heading, name: "More health professionals", price: 999999, group: group)
+
+      login_as(author)
+
+      visit new_budget_investment_path(budget_id: budget.id)
+
+      select_options = find('#budget_investment_heading_id').all('option').collect(&:text)
+      expect(select_options.first).to eq('')
+      expect(select_options.second).to eq('Health: More health professionals')
+      expect(select_options.third).to eq('Health: More hospitals')
+      expect(select_options.fourth).to eq('Toda la ciudad')
     end
   end
 
@@ -1210,13 +1226,13 @@ feature 'Budget Investments' do
 
       within("#budget_group_#{global_group.id}") do
         expect(page).to have_content sp1.title
-        expect(page).to have_content sp1.price
+        expect(page).to have_content "€#{sp1.price}"
 
         expect(page).to have_content sp2.title
-        expect(page).to have_content sp2.price
+        expect(page).to have_content "€#{sp2.price}"
 
         expect(page).not_to have_content sp3.title
-        expect(page).not_to have_content sp3.price
+        expect(page).not_to have_content "#{sp3.price}"
       end
 
       within("#budget_group_#{group.id}") do

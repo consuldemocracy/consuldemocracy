@@ -231,7 +231,7 @@ en:
       moderation: Moderation
       valuation: Valuation
       officing: Polling officers
-      more_info: More information
+      help: Help
       my_account_link: My account
       my_activity_link: My activity
       notifications: Notifications
@@ -623,6 +623,7 @@ en:
       previous_slide: Previous Slide
       next_slide: Next Slide
     documentation: Additional documentation
+    more_info: More information
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"

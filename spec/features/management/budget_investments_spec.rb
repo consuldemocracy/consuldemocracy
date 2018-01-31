@@ -29,7 +29,7 @@ feature 'Budget Investments' do
         expect(page).to have_content user.document_number
       end
 
-      select "Whole city: Health", from: 'budget_investment_heading_id'
+      select "Health", from: 'budget_investment_heading_id'
       fill_in 'budget_investment_title', with: 'Build a park in my neighborhood'
       fill_in 'budget_investment_description', with: 'There is no parks here...'
       fill_in 'budget_investment_location', with: 'City center'
