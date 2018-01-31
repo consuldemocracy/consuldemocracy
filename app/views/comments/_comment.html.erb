@@ -1,7 +1,7 @@
 <% comment_flags ||= @comment_flags %>
 <% valuation = local_assigns.fetch(:valuation, false) %>
 <% allow_votes = local_assigns.fetch(:allow_votes, true) %>
-<% allow_flagging = local_assigns.fetch(:allow_flagging, true) %>
+<% allow_actions = local_assigns.fetch(:allow_actions, true) %>
 <% allow_comments = local_assigns.fetch(:allow_comments, true) %>
 <% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (comment_flags[comment.id] if comment_flags)] do %>
   <ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12">
@@ -92,8 +92,9 @@
             <%= link_to(comment_link_text(comment), "",
                         class: "js-add-comment-link", data: {'id': dom_id(comment)}) %>
 
-            <%= render 'comments/actions', { comment: comment,
-                                             allow_flagging: allow_flagging } %>
+            <% if allow_actions %>
+              <%= render 'comments/actions', { comment: comment } %>
+            <% end %>
 
             <% if allow_comments %>
               <%= render 'comments/form', {commentable: comment.commentable,
@@ -113,7 +114,7 @@
             <%= render 'comments/comment', { comment: child,
                                              valuation: valuation,
                                              allow_votes: allow_votes,
-                                             allow_flagging: allow_flagging,
+                                             allow_actions: allow_actions,
                                              allow_comments: allow_comments } %>
           </li>
         <% end %>

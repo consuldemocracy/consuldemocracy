@@ -1,8 +1,6 @@
-<% if local_assigns.fetch(:allow_flagging, true) %>
-  <span id="flag-actions-<%= dom_id(comment) %>" class="js-flag-actions">
-    <%= render 'comments/flag_actions', comment: comment %>
-  </span>
-<% end %>
+<span id="flag-actions-<%= dom_id(comment) %>" class="js-flag-actions">
+  <%= render 'comments/flag_actions', comment: comment %>
+</span>
 
 <span class='js-moderation-actions'>
   <% if can? :hide, comment %>
