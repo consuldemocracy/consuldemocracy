@@ -136,7 +136,6 @@ ActiveRecord::Schema.define(version: 20180220211105) do
     t.string   "feasibility",                limit: 15, default: "undecided"
     t.text     "price_explanation"
     t.text     "unfeasibility_explanation"
-    t.text     "internal_comments"
     t.boolean  "valuation_finished",                    default: false
     t.integer  "valuator_assignments_count",            default: 0
     t.integer  "price_first_year",           limit: 8
