@@ -268,4 +268,40 @@ feature 'Budgets' do
 
     end
   end
+
+  context "Map on index"
+
+    background do
+      user = create(:user)
+      budget = create(:budget, phase: 'accepting')
+      group = create(:budget_group, budget: budget)
+      @heading = create(:budget_heading, group: group)
+    end
+
+    scenario "Should not show the marker with invalid coordinates", :js do
+      map_location = create(:map_location, latitude: nil, longitude: -3.6883619427682)
+      budget_investment1 = create(:budget_investment, heading: @heading, map_location: map_location)
+
+      login_as @user
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).not_to have_css(".map-icon")
+      end
+    end
+
+    scenario "Should show investments markers on budget index", :js do
+      map_location = create(:map_location, latitude: 40.4098302091514, longitude: -3.6883619427682)
+      other_map_location = create(:map_location, latitude: 40.4098302091514, longitude: -3.7518310546875)
+      budget_investment1 = create(:budget_investment, heading: @heading, map_location: map_location)
+      budget_investment2 = create(:budget_investment, heading: @heading, map_location: other_map_location)
+
+      login_as @user
+      visit budgets_path
+
+      within ("#map") do
+        expect(find('.map_location')['data-marker-investments-coordinates']).to include(map_location.latitude.to_s, map_location.longitude.to_s)
+        expect(find('.map_location')['data-marker-investments-coordinates']).to include(other_map_location.latitude.to_s, other_map_location.longitude.to_s)
+      end
+  end
 end
