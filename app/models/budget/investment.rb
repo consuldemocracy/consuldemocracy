@@ -1,6 +1,10 @@
+require 'csv'
+
 class Budget
   class Investment < ActiveRecord::Base
-    require 'csv'
+
+    SORTING_OPTIONS = %w(id title supports).freeze
+
     include Rails.application.routes.url_helpers
     include Measurable
     include Sanitizable
@@ -54,11 +58,13 @@ class Budget
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
+    scope :without_valuator,            -> { valuation_open.where(valuator_assignments_count: 0) }
+    scope :under_valuation,             -> { valuation_open.where("valuator_assignments_count > 0 AND administrator_id IS NOT ?", nil) }
     scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
-    scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0 AND valuation_finished = ?", false) }
-    scope :visible_to_valuators,        -> { where(visible_to_valuators: true) }
+    scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0") }
     scope :valuation_finished,          -> { where(valuation_finished: true) }
     scope :valuation_finished_feasible, -> { where(valuation_finished: true, feasibility: "feasible") }
+    scope :visible_to_valuators,        -> { where(visible_to_valuators: true) }
     scope :feasible,                    -> { where(feasibility: "feasible") }
     scope :unfeasible,                  -> { where(feasibility: "unfeasible") }
     scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
@@ -76,6 +82,7 @@ class Budget
     scope :by_admin,    -> (admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,      -> (tag_name)    { tagged_with(tag_name) }
     scope :by_valuator, -> (valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
+    scope :by_budget,   ->(budget)       { where(budget: budget) }
 
     scope :for_render, -> { includes(:heading) }
 
@@ -93,31 +100,41 @@ class Budget
     end
 
     def self.filter_params(params)
-      params.select{|x, _| %w{heading_id group_id administrator_id tag_name valuator_id}.include? x.to_s }
+      params.select{ |x, _| %w{heading_id group_id administrator_id tag_name valuator_id}.include?(x.to_s) }
     end
 
     def self.scoped_filter(params, current_filter)
       budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       results = Investment.where(budget_id: budget.id)
-      results = limit_results(results, budget, params)      if params[:max_per_heading].present?
-      results = results.where(group_id: params[:group_id])  if params[:group_id].present?
-      results = results.by_heading(params[:heading_id])     if params[:heading_id].present?
-      results = results.by_admin(params[:administrator_id]) if params[:administrator_id].present?
-      results = results.by_tag(params[:tag_name])           if params[:tag_name].present?
-      results = results.by_valuator(params[:valuator_id])   if params[:valuator_id].present?
-      results = results.send(current_filter)                if current_filter.present?
+
+      results = limit_results(budget, params, results)              if params[:max_per_heading].present?
+      results = results.where(group_id: params[:group_id])          if params[:group_id].present?
+      results = results.by_tag(params[:tag_name])                   if params[:tag_name].present?
+      results = results.by_heading(params[:heading_id])             if params[:heading_id].present?
+      results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
+      results = results.by_admin(params[:administrator_id])         if params[:administrator_id].present?
+      results = advanced_filters(params, results)                   if params[:advanced_filters].present?
+
+      results = results.send(current_filter)                        if current_filter.present?
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
     end
 
-    def self.limit_results(results, budget, params)
+    def self.advanced_filters(params, results)
+      ids = []
+      ids += results.feasible.pluck(:id)                    if params[:advanced_filters].include?('feasible')
+      ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?('selected')
+      ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?('undecided')
+      ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?('unfeasible')
+      results.where("budget_investments.id IN (?)", ids)
+    end
+
+    def self.limit_results(budget, params, results)
       max_per_heading = params[:max_per_heading].to_i
       return results if max_per_heading <= 0
 
       ids = []
-      if max_per_heading > 0
-        budget.headings.pluck(:id).each do |hid|
-          ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
-        end
+      budget.headings.pluck(:id).each do |hid|
+        ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
       end
 
       results.where("budget_investments.id IN (?)", ids)
