@@ -1094,7 +1094,7 @@ feature 'Budget Investments' do
                         unfeasibility_explanation: 'Local government is not competent in this matter')
 
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
-
+save_and_open_page
     expect(page).not_to have_content("Unfeasibility explanation")
     expect(page).not_to have_content("Local government is not competent in this matter")
   end
