@@ -1,5 +1,41 @@
 en:
   pages:
+    help:
+      title: "%{org} is the Madrid City Council's citizen participation platform"
+      meta_description: "Madrid City Council's citizen participation platform where you can propose and decide what to spend the municipal budget on."
+      meta_keywords: "citizen participation, Madrid City Council, Madrid, participatory budgets, citizen proposals, citizen consultation"
+      debates:
+        description: "In the %{link} section you can post and share your opinion with other people on issues that concern you related to the city of Madrid. It is also a place to generate ideas that through the other sections of %{org} lead to concrete actions by the City Council."
+      proposals:
+        detail: "Frequently Asked Questions about Proposals"
+        description: "In the %{link} section you can make proposals for the Madrid City Council to carry them out. The proposals require support, and if they reach sufficient support, they are put to a public vote. The proposals approved in these citizens' votes are accepted by the City Council and carried out."
+        feature_html: "To create a proposal you must register in %{org}. The proposals that get the support on the website of 1% of people with the right to vote (%{supports} supports of people over 16 years old registered in Madrid) go to vote. To support proposals it is necessary to verify your account."
+        kit_decide: "The proposals allow people and groups in Madrid to decide directly how they want their city to be. We provide you with the %{link} so you can launch campaigns to publicize your proposals."
+        kit_link: "Decide Kit"
+      budgets:
+        detail: "Frequently Asked Questions about Participatory Budgeting"
+        feature: "In this process, every year people raise, support and vote on projects. The most voted are financed by the municipal budget. In 2017, 311 projects were selected for a total of 100 million euros."
+        feature_2: "The projects can be for the whole city (large expenditure projects or projects that affect a large part of Madrid's inhabitants) or for each of the 21 districts."
+        phase_2_html: "In March, proponents have to gather support, in the form of <strong>preselection</strong>phase. The %{link} can help you campaign and publicize your projects."
+        phase_2_link: "Decide Kit"
+        phase_3_html: "Between April and the beginning of May, the technicians of the Madrid City Council <strong> tax projects</strong> on an order of more or less supported and check that they are viable."
+        phase_4_html: "Finally, between 15th May and 30th June, all citizens of Madrid can <strong>vote on the projects</strong> they are most interested in."
+      polls:
+        detail: "Frequently Asked Questions about Voting"
+        description: "The %{link} section is activated each time a proposal reaches 1% support and goes to the vote or when the Madrid City Council proposes an issue for people to decide on."
+        feature_2: "All persons registered in Madrid over the age of 16 can vote."
+        polls_text_1_html: 'Two voting have been held so far. In February 2017, citizens approved the proposals of <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">"Madrid 100% sostenible" and "Billete único para el transporte público"</a>. It was also asked about the <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">reform of Plaza de España</a>, the mobility of <a href="https://decide.madrid.es/vota/gran-via/results">Gran Vía</a> and issues in six districts.'
+        polls_text_2_html: 'In October 2017 citizens decided on the remodelling of eleven squares in the city: <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-lucero/results">Lucero</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-san-blas/results">San Blas</a>, <a href="https://decide.madrid. es/vota/rehabilitacion-plaza-civica-mar-cristal/results">Mar de Cristal</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-duquesa-osuna/results">Duquesa de Osuna</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-emperatriz/results">Emperatriz</a>, <a href="https://decide.madrid. es/vota/rehabilitacion-plaza-remonta/results">Remonta</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-vaguada/results">La Vaguada</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-encuentro/results">El Encuentro</a>, <a href="https://decide.madrid.en/vota/rehabilitacion-plaza-misterios/results">Los Misterios</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-puerto-canfranc/results">Puerto de Canfranc</a> and <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-mayor-villaverde/results">Mayor de Villaverde y Ágata</a>.'
+      history:
+        title: "History of Decide Madrid"
+        description: "Decide Madrid's participation platform has been in operation since September 2015. Since then it has registered tens of thousands of proposals and projects, two citizen consultations have been held (in February and October 2017) and two editions of participatory budgets in which citizens have decided on how to spend 160 million euros of municipal budgets."
+        subtitle: "Decide Madrid: free software that extends to other institutions"
+        text_1_html: "Decide Madrid's citizen participation platform uses the <a href='https://github.com/consul/consul/' target='_blank' title='(opens in a new window)'>CONSUL</a>, which is free software licensed under the AGPLv3."
+        text_2: "In simple words it means that anyone can freely use the code, copy it, look at it in detail, modify it, and redistribute it to the world with whatever changes they want (keeping it for others to do the same), because we believe that culture is better and richer when it is released."
+        text_3: "Since the creation of CONSUL, the Madrid City Council has encouraged municipalities, regions and all types of institutions to use the code to promote citizen participation and direct decision-making in the world."
+        text_4: "Thus, institutions from more than 50 cities and regions are replicating the model of Decide Madrid, in places such as Buenos Aires, Paris, Turin, Jalisco, Valencia, A Coruña, among many others."
+        text_5_html: 'If you are interested in using CONSUL, from the City Council we will help you as much as possible to get it up and running. <a href="mailto:extension.institucional@madrid.es">Email us</a>.'
+        text_6_html: 'If you are a programmer, you can <a href="https://github.com/consul/consul" target="_blank" title="(opens in new window)">view the code and help us improve it</a>.'
     more_info:
       how_to_use:
         text: |-

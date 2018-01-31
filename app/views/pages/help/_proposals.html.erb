@@ -18,6 +18,11 @@
       </li>
     </ul>
 
+    <p>
+      <%= t("pages.help.proposals.kit_decide",
+              link: link_to(t("pages.help.proposals.kit_link"), kit_decide_path)).html_safe %>
+    </p>
+
     <figure>
       <%= image_tag "help/proposals_#{I18n.locale}.png", alt: t("pages.help.proposals.image_alt") %>
       <figcaption><%= t("pages.help.proposals.figcaption_html") %></figcaption>

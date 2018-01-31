@@ -1,5 +1,41 @@
 es:
   pages:
+    help:
+      title: "%{org} es la plataforma de participación ciudadana del Ayuntamiento de Madrid"
+      meta_description: "Plataforma de participación ciudadana del Ayuntamiento de Madrid donde puedes proponer y decidir en qué gastar el presupuesto municipal."
+      meta_keywords: "participación ciudadana, Ayuntamiento de Madrid, Madrid, presupuestos participativos, propuestas ciudadanas, consulta ciudadana"
+      debates:
+        description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad de Madrid. También es un espacio donde generar ideas que a través de las otras secciones de %{org} lleven a actuaciones concretas por parte del Ayuntamiento."
+      proposals:
+        detail: "Preguntas frecuentes sobre propuestas"
+        description: "En la sección de %{link} puedes plantear propuestas para que el Ayuntamiento de Madrid las lleve a cabo. Las propuestas recaban apoyos, y si alcanzan los apoyos suficientes se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Ayuntamiento y se llevan a cabo."
+        feature_html: "Para crear una propuesta hay que registrarse en %{org}. Las propuestas que consiguen el apoyo en la web del 1% de la gente con derecho a voto (%{supports} apoyos de personas mayores de 16 años empadronadas en Madrid) pasan a votación. Para apoyar propuestas es necesario verificar tu cuenta."
+        kit_decide: "Las propuestas permiten que personas y colectivos de Madrid decidan directamente cómo quieren que sea su ciudad. Te facilitamos el %{link} para que puedas poner en marcha campañas para divulgar tus propuestas."
+        kit_link: "Kit Decide"
+      budgets:
+        detail: "Preguntas frecuentes sobre presupuestos participativos"
+        feature: "En este proceso cada año la gente plantea, apoya y vota proyectos. Los más votados pasan a financiarse con el presupuesto municipal. En 2017 fueron seleccionados 311 proyectos por un total de 100 millones de euros."
+        feature_2: "Los proyectos pueden ser para toda la ciudad (proyectos de gasto de gran envergadura o que afectan a gran parte de los habitantes de Madrid) o para cada uno de los 21 distritos."
+        phase_2_html: "En marzo, los proponentes tienen que recabar apoyos, a modo de <strong>fase de preselección</strong>. El %{link} te puede ayudar a hacer campaña y divulgar tus proyectos."
+        phase_2_link: "Kit Decide"
+        phase_3_html: "Entre abril y comienzos de mayo los técnicos del Ayuntamiento de Madrid <strong>tasan los proyectos</strong> por orden de más a menos apoyados y comprueban que son viables."
+        phase_4_html: "Finalmente, entre el 15 de mayo y el 30 de junio, toda la ciudadanía madrileña puede <strong>votar los proyectos</strong> que más le interesan."
+      polls:
+        detail: "Preguntas frecuentes sobre votaciones"
+        description: "La sección de %{link} se activa cada vez que una propuesta alcanza el 1% de apoyos y pasa a votación o cuando el Ayuntamiento de Madrid propone un tema para que la gente decida sobre él."
+        feature_2: "Pueden votar todas las personas empadronadas en Madrid mayores de 16 años."
+        polls_text_1_html: 'Hasta ahora se han celebrado dos votaciones. En febrero de 2017 la ciudadanía aprobó las propuestas de <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">"Madrid 100% sostenible" y "Billete único para el transporte público"</a>. También se preguntó por la <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">reforma de Plaza de España</a>, la movilidad de <a href="https://decide.madrid.es/vota/gran-via/results">Gran Vía</a> y cuestiones en seis distritos.'
+        polls_text_2_html: 'En octubre de 2017 la ciudadanía decidió sobre la remodelación de once plazas de la ciudad: <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-lucero/results">Lucero</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-san-blas/results">San Blas</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-mar-cristal/results">Mar de Cristal</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-duquesa-osuna/results">Duquesa de Osuna</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-emperatriz/results">Emperatriz</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-remonta/results">Remonta</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-vaguada/results">La Vaguada</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-encuentro/results">El Encuentro</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-misterios/results">Los Misterios</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-puerto-canfranc/results">Puerto de Canfranc</a> y <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-mayor-villaverde/results">Mayor de Villaverde y Ágata</a>.'
+      history:
+        title: "Historia de Decide Madrid"
+        description: "La plataforma de participación de Decide Madrid lleva en marcha desde septiembre de 2015. Desde entonces ha registrado decenas de miles de propuestas y proyectos, se han celebrado dos consultas ciudadanas (en febrero y octubre de 2017) y dos ediciones de presupuestos participativos en las que la ciudadanía ha decidido en qué gastar 160 millones de euros de los presupuestos municipales."
+        subtitle: "Decide Madrid: software libre que se extiende a otras instituciones"
+        text_1_html: 'La plataforma de participación ciudadana Decide Madrid usa la aplicación <a href="https://github.com/consul/consul/" target="_blank" title="(se abre en ventana nueva)">CONSUL</a>, que es software libre con licencia AGPLv3.'
+        text_2: "En palabras sencillas significa que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con los cambios que quiera (manteniendo el que otros puedan a su vez hacer lo mismo), porque creemos que la cultura es mejor y más rica cuando se libera."
+        text_3: "Desde la creación de CONSUL, el Ayuntamiento de Madrid impulsa que municipios, regiones y todo tipo de instituciones usen el código para potenciar la participación ciudadana y la toma directa de decisiones en el mundo."
+        text_4: "Así, instituciones de más de 50 ciudades y regiones están replicando el modelo de Decide Madrid, en lugares como Buenos Aires, París, Turín, Jalisco, Valencia, A Coruña, entre muchos otros."
+        text_5_html: 'Si estás interesado en usar CONSUL, desde el Ayuntamiento vamos a ayudarte todo lo posible a que lo puedas poner en marcha. <a href="mailto:extension.institucional@madrid.es">Escríbenos un correo electrónico</a>.'
+        text_6_html: 'Si eres programador, puedes <a href="https://github.com/consul/consul" target="_blank" title="(se abre en ventana nueva)">ver el código y ayudarnos a mejorarlo</a>.'
     more_info:
       how_to_use:
         text: |-

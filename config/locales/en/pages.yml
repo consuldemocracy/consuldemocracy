@@ -30,7 +30,6 @@ en:
         figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
       proposals:
         title: "Proposals"
-        detail: "Detailed proposals information"
         description: "In the %{link} section you can make proposals for the City Council to carry them out. The proposals require support, and if they reach sufficient support, they are put to a public vote. The proposals approved in these citizens' votes are accepted by the City Council and carried out."
         link: "citizen proposals"
         feature_html: "To create a proposal you must register in %{org}. The proposals that get the support on the website of 1% of people with the right to vote (%{supports} supports of people over 16 years old registered) go to vote. To support proposals it is necessary to verify your account."
@@ -38,7 +37,6 @@ en:
         figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
       budgets:
         title: "Participatory Budgeting"
-        detail: "Detailed budgets information"
         description: "The %{link} section helps people make a direct decision on what part of the municipal budget is spent on."
         link: "participative budgets"
         feature: "In this process, every year people raise, support and vote on projects. The most voted votes are financed by the municipal budget."
@@ -51,7 +49,6 @@ en:
         figcaption_html: '"Support" and "Voting" phases of participatory budgets.'
       polls:
         title: "Polls"
-        detail: "Detailed polls information"
         description: "The %{link} section is activated each time a proposal reaches 1% support and goes to the vote or when the City Council proposes an issue for people to decide on."
         link: "polls"
         feature_1: "To participate in the voting you have to %{link} and verify your account."

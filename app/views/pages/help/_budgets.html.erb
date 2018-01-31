@@ -14,9 +14,13 @@
       <li>
         <%= t("pages.help.budgets.feature") %>
       </li>
+      <li>
+        <%= t("pages.help.budgets.feature_2") %>
+      </li>
       <li><%= t("pages.help.budgets.phase_1_html",
                 org: setting['org_name']).html_safe %></li>
-      <li><%= t("pages.help.budgets.phase_2_html") %></li>
+      <li><%= t("pages.help.budgets.phase_2_html",
+                link: link_to(t("pages.help.budgets.phase_2_link"), kit_decide_path)).html_safe %></li>
       <li><%= t("pages.help.budgets.phase_3_html") %></li>
       <li><%= t("pages.help.budgets.phase_4_html") %></li>
     </ul>
