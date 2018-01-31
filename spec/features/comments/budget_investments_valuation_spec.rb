@@ -71,8 +71,10 @@ feature 'Internal valuation comments on Budget::Investments' do
                                                     commentable: investment)
       child_comment  = create(:comment, :valuation, author: valuator_user, body: "First child",
                                                     commentable: investment, parent: parent_comment)
-      grandchild_comment = create(:comment, :valuation, author: valuator_user, parent: child_comment,
-                                                        body: "Last child", commentable: investment)
+      grandchild_comment = create(:comment, :valuation, author: valuator_user,
+                                                        parent: child_comment,
+                                                        body: "Last child",
+                                                        commentable: investment)
 
       visit valuation_budget_budget_investment_path(budget, investment)
 
@@ -183,8 +185,11 @@ feature 'Internal valuation comments on Budget::Investments' do
       click_button 'Publish comment'
 
       within "#comments" do
-        expect(page).to have_content 'Have you thought about...?'
+        expect(page).to have_content('Have you thought about...?')
       end
+
+      visit budget_investment_path(investment.budget, investment)
+      expect(page).not_to have_content('Have you thought about...?')
     end
 
     scenario 'Errors on create without comment text', :js do
@@ -195,7 +200,7 @@ feature 'Internal valuation comments on Budget::Investments' do
       expect(page).to have_content "Can't be blank"
     end
 
-    scenario 'Reply to existing comment', :js do
+    scenario 'Reply to existing valuation', :js do
       comment = create(:comment, :valuation, author: admin_user, commentable: investment)
 
       login_as(valuator_user)
@@ -213,6 +218,9 @@ feature 'Internal valuation comments on Budget::Investments' do
       end
 
       expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+
+      visit budget_investment_path(investment.budget, investment)
+      expect(page).not_to have_content('It will be done next week.')
     end
 
     scenario 'Errors on reply without comment text', :js do
