@@ -5,6 +5,7 @@ en:
       meta_description: "Madrid City Council's citizen participation platform where you can propose and decide what to spend the municipal budget on."
       meta_keywords: "citizen participation, Madrid City Council, Madrid, participatory budgets, citizen proposals, citizen consultation"
       debates:
+        detail: "Frequently Asked Questions about Debates"
         description: "In the %{link} section you can post and share your opinion with other people on issues that concern you related to the city of Madrid. It is also a place to generate ideas that through the other sections of %{org} lead to concrete actions by the City Council."
       proposals:
         detail: "Frequently Asked Questions about Proposals"

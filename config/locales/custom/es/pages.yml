@@ -5,6 +5,7 @@ es:
       meta_description: "Plataforma de participación ciudadana del Ayuntamiento de Madrid donde puedes proponer y decidir en qué gastar el presupuesto municipal."
       meta_keywords: "participación ciudadana, Ayuntamiento de Madrid, Madrid, presupuestos participativos, propuestas ciudadanas, consulta ciudadana"
       debates:
+        detail: "Preguntas frecuentes sobre debates"
         description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad de Madrid. También es un espacio donde generar ideas que a través de las otras secciones de %{org} lleven a actuaciones concretas por parte del Ayuntamiento."
       proposals:
         detail: "Preguntas frecuentes sobre propuestas"
