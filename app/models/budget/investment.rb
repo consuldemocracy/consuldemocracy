@@ -84,7 +84,9 @@ class Budget
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
-    before_save :calculate_confidence_score
+    def comments_count
+      comments.count
+    end
 
     def url
       budget_investment_path(budget, self)
