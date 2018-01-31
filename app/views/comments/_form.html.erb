@@ -1,5 +1,5 @@
 <% valuation = local_assigns.fetch(:valuation, false) %>
-<% cache [locale_and_user_status, parent_id, commentable_cache_key(commentable)] do %>
+<% cache [locale_and_user_status, parent_id, commentable_cache_key(commentable), valuation] do %>
   <% css_id = parent_or_commentable_dom_id(parent_id, commentable) %>
   <div id="js-comment-form-<%= css_id %>" <%= "style='display:none'".html_safe if toggeable %> class="comment-form">
     <%= form_for Comment.new, remote: true do |f| %>
