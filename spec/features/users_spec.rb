@@ -368,6 +368,17 @@ feature 'Users' do
       expect(page).not_to have_content(admin_comment.body)
     end
 
+    scenario 'valuation comments are not visible in user activity' do
+      admin = create(:administrator).user
+      comment = create(:comment, user: admin)
+      investment = create(:budget_investment)
+      valuation_comment = create(:comment, :valuation, user: admin, commentable: investment)
+
+      visit user_path(admin)
+      expect(page).to have_content(comment.body)
+      expect(page).not_to have_content(valuation_comment.body)
+    end
+
     scenario 'shows only comments from active features' do
       user = create(:user)
       1.times {create(:comment, user: user, commentable: create(:debate))}
