@@ -1,9 +1,9 @@
-<% provide :title do %><%= t("pages.titles.more_info", org_name: setting['org_name']) %><% end %>
+<% provide :title do %><%= t("pages.titles.polls", org_name: setting['org_name']) %><% end %>
 
 <% provide :tracking_page_number, "34" %>
 
 <% content_for :canonical do %>
-  <%= render "shared/canonical", href: more_info_url %>
+  <%= render "shared/canonical", href: more_info_polls_url %>
 <% end %>
 
 <div class="row margin-top">
