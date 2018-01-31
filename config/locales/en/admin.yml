@@ -139,7 +139,6 @@ en:
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
         tags_filter_all: All tags
-        max_per_heading: Max per heading
         advanced_filters: Advanced filters
         placeholder: Search projects
         sort_by:
