@@ -43,6 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fix social images meta tags https://github.com/consul/consul/pull/1124
 
 ### Security
+- Upgraded Paperclip version up to 5.2.1 to fix security problem https://github.com/consul/consul/pull/2393
 
 ## [0.12.0](https://github.com/consul/consul/compare/v0.11...v0.12) - 2018-01-03
 
