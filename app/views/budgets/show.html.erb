@@ -60,7 +60,7 @@
         <% @budget.groups.each do |group| %>
           <tr>
             <td>
-              <% if group.headings.count == 1 %>
+              <% if group.single_heading_group? %>
                 <%= link_to group.name,
                             budget_investments_path(@budget,
                               heading_id: group.headings.first.id,

@@ -101,7 +101,7 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
-      select "Parks: Central Park", from: "heading_id"
+      select "Central Park", from: "heading_id"
 
       expect(page).not_to have_link("Realocate visitors")
       expect(page).not_to have_link("Change name")
@@ -372,7 +372,7 @@ feature 'Admin budget investments' do
       click_button 'Search'
 
       expect(page).to have_content(@investment_1.title)
-      expect(page).to_not have_content(@investment_2.title)
+      expect(page).not_to have_content(@investment_2.title)
     end
   end
 

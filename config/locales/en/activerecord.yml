@@ -187,7 +187,7 @@ en:
         status: Status
         title: Title
         updated_at: Updated at
-        more_info_flag: Show in more information page
+        more_info_flag: Show in help page
         print_content_flag: Print content button
         locale: Language
       site_customization/image:
@@ -296,6 +296,10 @@ en:
             image:
               image_width: "Width must be %{required_width}px"
               image_height: "Height must be %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'You cannot comment a valuation'
       messages:
         record_invalid: "Validation failed: %{errors}"
         restrict_dependent_destroy:
