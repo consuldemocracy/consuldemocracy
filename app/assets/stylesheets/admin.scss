@@ -9,7 +9,7 @@
 // 07. Legislation
 // 08. CMS
 // 09. Map
-// 10. Budget phases
+// 10. Budgets
 //
 
 // 01. Global styles
@@ -1038,8 +1038,33 @@ table {
   height: 0;
 }
 
-// 10. Budget phases
+// 10. Budgets
 // -----------------
+
+.advanced-filters {
+  margin: $line-height 0;
+
+  @include breakpoint(medium) {
+    margin: $line-height / 2 0 0;
+  }
+}
+
+.advanced-filters-content {
+  background: $highlight;
+  clear: both;
+  padding: $line-height / 2;
+  margin: $line-height 0;
+
+  .filter {
+    display: inline-block;
+    margin: 0 $line-height / 2;
+  }
+
+  .button {
+    margin-top: $line-height / 2;
+  }
+}
+
 .budget-phase-enabled {
   font-weight: bold;
   padding-left: rem-calc(20);
