@@ -451,9 +451,11 @@ feature 'Admin budget investments' do
       within('#assigned_valuators') do
         expect(page).to have_content('Rachel (rachel@valuators.org)')
       end
+
+      expect(page).to have_button "Publish comment"
     end
 
-    scenario "If budget is finished, investment cannot be edited" do
+    scenario "If budget is finished, investment cannot be edited or valuation comments created" do
       # Only milestones can be managed
 
       finished_budget = create(:budget, :finished)
@@ -468,6 +470,8 @@ feature 'Admin budget investments' do
       expect(page).not_to have_link "Edit classification"
       expect(page).not_to have_link "Edit dossier"
       expect(page).to have_link "Create new milestone"
+
+      expect(page).not_to have_button "Publish comment"
     end
   end
 
