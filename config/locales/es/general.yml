@@ -231,7 +231,7 @@ es:
       moderation: Moderar
       valuation: Evaluación
       officing: Presidentes de mesa
-      more_info: Más información
+      help: Ayuda
       my_account_link: Mi cuenta
       my_activity_link: Mi actividad
       notifications: Notificaciones
@@ -622,6 +622,7 @@ es:
       previous_slide: Imagen anterior
       next_slide: Siguiente imagen
     documentation: Documentación adicional
+    more_info: Más información
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
