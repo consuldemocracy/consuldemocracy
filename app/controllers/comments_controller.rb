@@ -21,7 +21,11 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find(params[:id])
-    set_comment_flags(@comment.subtree)
+    if @comment.valuation && @comment.author != current_user
+      raise ActiveRecord::RecordNotFound
+    else
+      set_comment_flags(@comment.subtree)
+    end
   end
 
   def vote
