@@ -121,7 +121,7 @@ class Budget
 
     def self.advanced_filters(params, results)
       ids = []
-      ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?('feasible')
+      ids += results.feasible.pluck(:id)                    if params[:advanced_filters].include?('feasible')
       ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?('selected')
       ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?('undecided')
       ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?('unfeasible')
