@@ -141,6 +141,7 @@ class Comment < ActiveRecord::Base
   end
 
   def public_for_api?
+    return false if valuation
     return false unless commentable.present?
     return false if commentable.hidden?
     return false unless ["Proposal", "Debate"].include? commentable_type
