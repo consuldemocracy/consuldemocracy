@@ -75,6 +75,7 @@
 //= require sortable
 //= require table_sortable
 //= require investment_report_alert
+//= require leaflet.markercluster-src
 
 var initialize_modules = function() {
   App.Comments.initialize();
