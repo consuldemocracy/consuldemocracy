@@ -1,8 +1,10 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
-
   include FeatureFlags
+  include CommentableActions
+
   feature_flag :budgets
 
+  has_orders %w{oldest}, only: [:show, :edit]
   has_filters(%w{valuation_open without_admin managed valuating valuation_finished
                  valuation_finished_feasible selected winners all},
               only: [:index, :toggle_selection])
@@ -23,6 +25,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def show
+    load_comments
   end
 
   def edit
@@ -50,6 +53,28 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   private
+
+    def load_comments
+      @commentable = @investment
+      @comment_tree = CommentTree.new(@commentable, params[:page], @current_order, valuations: true)
+      set_comment_flags(@comment_tree.comments)
+    end
+
+    def resource_model
+      Budget::Investment
+    end
+
+    def resource_name
+      resource_model.parameterize('_')
+    end
+
+    def sort_by(params)
+      if params.present? && Budget::Investment::SORTING_OPTIONS.include?(params)
+        "#{params == 'supports' ? 'cached_votes_up' : params} ASC"
+      else
+        "cached_votes_up DESC, created_at DESC"
+      end
+    end
 
     def load_investments
       @investments = Budget::Investment.scoped_filter(params, @current_filter)
