@@ -2,6 +2,7 @@
 <% valuation = local_assigns.fetch(:valuation, false) %>
 <% allow_votes = local_assigns.fetch(:allow_votes, true) %>
 <% allow_flagging = local_assigns.fetch(:allow_flagging, true) %>
+<% allow_comments = local_assigns.fetch(:allow_comments, true) %>
 <% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (comment_flags[comment.id] if comment_flags)] do %>
   <ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12">
     <li class="comment-body">
@@ -94,10 +95,12 @@
             <%= render 'comments/actions', { comment: comment,
                                              allow_flagging: allow_flagging } %>
 
-            <%= render 'comments/form', {commentable: comment.commentable,
-                                         parent_id: comment.id,
-                                         toggeable: true,
-                                         valuation: valuation } %>
+            <% if allow_comments %>
+              <%= render 'comments/form', {commentable: comment.commentable,
+                                           parent_id: comment.id,
+                                           toggeable: true,
+                                           valuation: valuation } %>
+            <% end %>
           <% end %>
         </div>
       <% end %>
@@ -110,7 +113,8 @@
             <%= render 'comments/comment', { comment: child,
                                              valuation: valuation,
                                              allow_votes: allow_votes,
-                                             allow_flagging: allow_flagging } %>
+                                             allow_flagging: allow_flagging,
+                                             allow_comments: allow_comments } %>
           </li>
         <% end %>
       </ul>
