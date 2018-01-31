@@ -42,9 +42,9 @@ Rails.application.routes.draw do
   resources :follows, only: [:create, :destroy]
 
   # More info pages
-  get 'more-information',                     to: 'pages#show', id: 'more_info/index',                as: 'more_info'
-  get 'more-information/how-to-use',          to: 'pages#show', id: 'more_info/how_to_use/index',     as: 'how_to_use'
-  get 'more-information/faq',                 to: 'pages#show', id: 'more_info/faq/index',            as: 'faq'
+  get 'help',             to: 'pages#show', id: 'help/index',             as: 'help'
+  get 'help/how-to-use',  to: 'pages#show', id: 'help/how_to_use/index',  as: 'how_to_use'
+  get 'help/faq',         to: 'pages#show', id: 'help/faq/index',         as: 'faq'
 
   # Static pages
   get '/blog' => redirect("http://blog.consul/")
