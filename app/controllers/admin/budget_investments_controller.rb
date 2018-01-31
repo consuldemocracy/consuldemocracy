@@ -15,7 +15,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   def index
     respond_to do |format|
       format.html
-      format.js { render layout: false }
+      format.js
       format.csv do
         send_data Budget::Investment.to_csv(@investments, headers: true),
                   filename: 'budget_investments.csv'
@@ -48,6 +48,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   def toggle_selection
     @investment.toggle :selected
     @investment.save
+    load_investments
   end
 
   private
