@@ -3,5 +3,6 @@
   <%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree,
                                                           comment_flags: @comment_flags,
                                                           display_comments_count: false,
-                                                          valuation: true } %>
+                                                          valuation: true,
+                                                          allow_comments: !@budget.finished? } %>
 <% end %>
