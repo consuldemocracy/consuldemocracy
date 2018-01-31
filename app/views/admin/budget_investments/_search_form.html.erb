@@ -3,7 +3,7 @@
                                        method: :get,
                                        remote: true) do |f| %>
     <div class="input-group">
-      <%= text_field_tag :project_title, "", placeholder: t("admin.budget_investments.index.placeholder") %>
+      <%= text_field_tag :title_or_id, "", placeholder: t("admin.budget_investments.index.placeholder") %>
       <div class="input-group-button">
         <%= f.submit t("admin.budget_investments.index.buttons.search"), class: "button" %>
       </div>
