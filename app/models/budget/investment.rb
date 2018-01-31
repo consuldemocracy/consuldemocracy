@@ -102,7 +102,7 @@ class Budget
     end
 
     def self.scoped_filter(params, current_filter)
-      budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      budget  = Budget.find_by(id: params[:budget_id]) || Budget.find_by(slug: params[:budget_id])
       results = Investment.where(budget_id: budget.id)
 
       results = limit_results(budget, params, results)              if params[:max_per_heading].present?
@@ -136,6 +136,13 @@ class Budget
       end
 
       results.where("budget_investments.id IN (?)", ids)
+    end
+
+    def self.search_by_title_or_id(params)
+      results = Investment.where(budget_id: params[:budget_id])
+
+      return results.where(id: params[:title_or_id]) if params[:title_or_id] =~ /\A[0-9]+\z/
+      results.where("title ILIKE ?", "%#{params[:title_or_id].strip}%")
     end
 
     def searchable_values

@@ -368,11 +368,24 @@ feature 'Admin budget investments' do
       expect(page).to have_content(@investment_1.title)
       expect(page).to have_content(@investment_2.title)
 
-      fill_in 'project_title', with: 'Some investment'
+      fill_in 'title_or_id', with: 'Some investment'
       click_button 'Search'
 
       expect(page).to have_content(@investment_1.title)
       expect(page).not_to have_content(@investment_2.title)
+    end
+
+    scenario 'Search investments by ID' do
+      visit admin_budget_budget_investments_path(@budget)
+
+      expect(page).to have_content(@investment_1.title)
+      expect(page).to have_content(@investment_2.title)
+
+      fill_in 'title_or_id', with: @investment_2.id
+      click_button 'Search'
+
+      expect(page).to have_content(@investment_2.title)
+      expect(page).not_to have_content(@investment_1.title)
     end
   end
 
