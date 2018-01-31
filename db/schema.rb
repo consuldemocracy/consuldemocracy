@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112123641) do
+ActiveRecord::Schema.define(version: 20180129190950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -288,7 +288,7 @@ ActiveRecord::Schema.define(version: 20180112123641) do
     t.string   "commentable_type"
     t.text     "body"
     t.string   "subject"
-    t.integer  "user_id",                        null: false
+    t.integer  "user_id",                            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "hidden_at"
@@ -301,7 +301,8 @@ ActiveRecord::Schema.define(version: 20180112123641) do
     t.integer  "cached_votes_down",  default: 0
     t.datetime "confirmed_hide_at"
     t.string   "ancestry"
-    t.integer  "confidence_score",   default: 0, null: false
+    t.integer  "confidence_score",   default: 0,     null: false
+    t.boolean  "valuation",          default: false
   end
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree
@@ -311,6 +312,7 @@ ActiveRecord::Schema.define(version: 20180112123641) do
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
   add_index "comments", ["hidden_at"], name: "index_comments_on_hidden_at", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+  add_index "comments", ["valuation"], name: "index_comments_on_valuation", using: :btree
 
   create_table "communities", force: :cascade do |t|
     t.datetime "created_at", null: false

@@ -46,8 +46,3 @@
     <strong><%= t("valuation.budget_investments.show.valuation_finished") %></strong>
   </p>
 <% end %>
-
-<% if @investment.internal_comments.present? %>
-  <h2><%= t("valuation.budget_investments.show.internal_comments") %></h2>
-  <%= explanation_field @investment.internal_comments %>
-<% end %>

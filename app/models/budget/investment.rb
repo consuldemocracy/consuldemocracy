@@ -34,7 +34,10 @@ class Budget
 
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
-    has_many :comments, as: :commentable
+
+    has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: 'Comment'
+    has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: 'Comment'
+
     has_many :milestones
 
     validates :title, presence: true
@@ -88,7 +91,9 @@ class Budget
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
-    before_save :calculate_confidence_score
+    def comments_count
+      comments.count
+    end
 
     def url
       budget_investment_path(budget, self)
