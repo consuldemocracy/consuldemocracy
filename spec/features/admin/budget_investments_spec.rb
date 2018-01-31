@@ -738,6 +738,7 @@ feature 'Admin budget investments' do
     let!(:feasible_vf_bi) { create(:budget_investment, :feasible, :finished, budget: budget, title: "Feasible, VF project") }
     let!(:selected_bi)    { create(:budget_investment, :selected, budget: budget, title: "Selected project") }
     let!(:winner_bi)      { create(:budget_investment, :winner, budget: budget, title: "Winner project") }
+    let!(:undecided_bi)   { create(:budget_investment, :undecided, budget: budget, title: "Undecided project") }
 
     scenario "Filtering by valuation and selection", :js do
       visit admin_budget_budget_investments_path(budget)
@@ -750,7 +751,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content(winner_bi.title)
 
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#second_filter[value='feasible']").set(true) }
+      within('#advanced_filters') { find(:css, "#advanced_filters_[value='feasible']").set(true) }
       click_button 'Filter'
 
       expect(page).not_to have_content(unfeasible_bi.title)
@@ -759,7 +760,8 @@ feature 'Admin budget investments' do
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
-      within('#advanced_filters') { find(:css, "#second_filter[value='selected']").set(true) }
+      within('#advanced_filters') { find(:css, "#advanced_filters_[value='selected']").set(true) }
+      within('#advanced_filters') { find(:css, "#advanced_filters_[value='feasible']").set(false) }
       click_button 'Filter'
 
       expect(page).not_to have_content(unfeasible_bi.title)
@@ -774,6 +776,31 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content(feasible_vf_bi.title)
       expect(page).not_to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
+    end
+
+    scenario "Aggregating results", :js do
+      visit admin_budget_budget_investments_path(budget)
+
+      click_link 'Advanced filters'
+      within('#advanced_filters') { find(:css, "#advanced_filters_[value='undecided']").set(true) }
+      click_button 'Filter'
+
+      expect(page).to have_content(undecided_bi.title)
+      expect(page).not_to have_content(winner_bi.title)
+      expect(page).not_to have_content(selected_bi.title)
+      expect(page).not_to have_content(feasible_bi.title)
+      expect(page).not_to have_content(unfeasible_bi.title)
+      expect(page).not_to have_content(feasible_vf_bi.title)
+
+      within('#advanced_filters') { find(:css, "#advanced_filters_[value='unfeasible']").set(true) }
+      click_button 'Filter'
+
+      expect(page).to have_content(undecided_bi.title)
+      expect(page).to have_content(unfeasible_bi.title)
+      expect(page).not_to have_content(winner_bi.title)
+      expect(page).not_to have_content(selected_bi.title)
+      expect(page).not_to have_content(feasible_bi.title)
+      expect(page).not_to have_content(feasible_vf_bi.title)
     end
 
     scenario "Showing the selection buttons", :js do
@@ -809,7 +836,7 @@ feature 'Admin budget investments' do
       end
 
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#second_filter[value='selected']").set(true) }
+      within('#advanced_filters') { find(:css, "#advanced_filters_[value='selected']").set(true) }
       click_button 'Filter'
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
@@ -822,7 +849,7 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(budget)
       click_link 'Advanced filters'
 
-      within('#advanced_filters') { find(:css, "#second_filter[value='selected']").set(true) }
+      within('#advanced_filters') { find(:css, "#advanced_filters_[value='selected']").set(true) }
 
       click_button 'Filter'
 
