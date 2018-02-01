@@ -44,6 +44,10 @@ es:
       title: "Debates ciudadanos en Decide Madrid"
       description: "Sección de la plataforma de participación ciudadana del Ayuntamiento de Madrid para compartir e intercambiar opiniones con otros participantes."
       keywords: "debates ciudadanos, debates, participación ciudadana, Ayuntamiento de Madrid, Madrid"
+    help_proposals:
+      title: "Propuestas ciudadanas en Decide Madrid"
+      description: "Sección de la plataforma de participación ciudadana Decide Madrid para plantear propuestas y que el Ayuntamiento las lleve a cabo."
+      keywords: "propuestas ciudadanas, propuestas, participación ciudadana, Ayuntamiento de Madrid, Madrid, consulta ciudadana, consulta"
     welcome_index:
       title: "Decide Madrid: portal de participación ciudadana de Madrid"
       description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
