@@ -5,7 +5,7 @@ module Mappable
     attr_accessor :skip_map
 
     has_one :map_location, dependent: :destroy
-    accepts_nested_attributes_for :map_location, allow_destroy: true
+    accepts_nested_attributes_for :map_location, allow_destroy: true, reject_if: :all_blank
 
     validate :map_must_be_valid, on: :create, if: :feature_maps?
 
