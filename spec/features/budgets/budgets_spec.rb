@@ -126,7 +126,7 @@ feature 'Budgets' do
       Setting['feature.map'] = true
     end
 
-    scenario "Display investment's map location markers" , :js do
+    xscenario "Display investment's map location markers" , :js do
       investment1 = create(:budget_investment, heading: heading)
       investment2 = create(:budget_investment, heading: heading)
       investment3 = create(:budget_investment, heading: heading)
