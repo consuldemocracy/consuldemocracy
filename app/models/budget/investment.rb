@@ -140,9 +140,11 @@ class Budget
 
     def self.search_by_title_or_id(params)
       results = Investment.where(budget_id: params[:budget_id])
-
-      return results.where(id: params[:title_or_id]) if params[:title_or_id] =~ /\A[0-9]+\z/
-      results.where("title ILIKE ?", "%#{params[:title_or_id].strip}%")
+      if integer?(params[:title_or_id])
+        results.where(id: params[:title_or_id])
+      else
+        results.where("title ILIKE ?", "%#{params[:title_or_id].strip}%")
+      end
     end
 
     def searchable_values
@@ -356,6 +358,12 @@ class Budget
       def set_denormalized_ids
         self.group_id = heading.try(:group_id) if heading_id_changed?
         self.budget_id ||= heading.try(:group).try(:budget_id)
+      end
+
+      def self.integer?(input)
+        Integer(input)
+      rescue ArgumentError, TypeError
+        false
       end
 
   end
