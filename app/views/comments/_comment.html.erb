@@ -1,4 +1,8 @@
 <% comment_flags ||= @comment_flags %>
+<% valuation = local_assigns.fetch(:valuation, false) %>
+<% allow_votes = local_assigns.fetch(:allow_votes, true) %>
+<% allow_actions = local_assigns.fetch(:allow_actions, true) %>
+<% allow_comments = local_assigns.fetch(:allow_comments, true) %>
 <% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (comment_flags[comment.id] if comment_flags)] do %>
   <ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12">
     <li class="comment-body">
@@ -67,9 +71,11 @@
         </div>
 
         <div id="<%= dom_id(comment) %>_reply" class="reply">
-          <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
-            <%= render 'comments/votes', comment: comment %>
-          </div>
+          <% if allow_votes %>
+            <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
+              <%= render 'comments/votes', comment: comment %>
+            </div>
+          <% end %>
 
           <% if comment.children.size > 0 %>
             <%= link_to "", class: "js-toggle-children relative", data: {'id': "#{dom_id(comment)}"} do %>
@@ -86,9 +92,16 @@
             <%= link_to(comment_link_text(comment), "",
                         class: "js-add-comment-link", data: {'id': dom_id(comment)}) %>
 
-            <%= render 'comments/actions', comment: comment %>
+            <% if allow_actions %>
+              <%= render 'comments/actions', { comment: comment } %>
+            <% end %>
 
-            <%= render 'comments/form', {commentable: comment.commentable, parent_id: comment.id, toggeable: true} %>
+            <% if allow_comments %>
+              <%= render 'comments/form', {commentable: comment.commentable,
+                                           parent_id: comment.id,
+                                           toggeable: true,
+                                           valuation: valuation } %>
+            <% end %>
           <% end %>
         </div>
       <% end %>
@@ -98,7 +111,11 @@
       <ul id="<%= dom_id(comment) %>_children" class="no-bullet comment-children">
         <% child_comments_of(comment).each do |child| %>
           <li>
-            <%= render 'comments/comment', comment: child %>
+            <%= render 'comments/comment', { comment: child,
+                                             valuation: valuation,
+                                             allow_votes: allow_votes,
+                                             allow_actions: allow_actions,
+                                             allow_comments: allow_comments } %>
           </li>
         <% end %>
       </ul>

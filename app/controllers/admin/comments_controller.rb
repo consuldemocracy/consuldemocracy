@@ -4,7 +4,8 @@ class Admin::CommentsController < Admin::BaseController
   before_action :load_comment, only: [:confirm_hide, :restore]
 
   def index
-    @comments = Comment.only_hidden.with_visible_author.send(@current_filter).order(hidden_at: :desc).page(params[:page])
+    @comments = Comment.not_valuations.only_hidden.with_visible_author
+                       .send(@current_filter).order(hidden_at: :desc).page(params[:page])
   end
 
   def confirm_hide
@@ -22,7 +23,7 @@ class Admin::CommentsController < Admin::BaseController
   private
 
     def load_comment
-      @comment = Comment.with_hidden.find(params[:id])
+      @comment = Comment.not_valuations.with_hidden.find(params[:id])
     end
 
 end

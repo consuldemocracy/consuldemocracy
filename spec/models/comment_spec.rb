@@ -187,5 +187,11 @@ describe Comment do
 
       expect(described_class.public_for_api).not_to include(comment)
     end
+
+    it "does not return internal valuation comments" do
+      valuation_comment = create(:comment, :valuation)
+
+      expect(described_class.public_for_api).not_to include(valuation_comment)
+    end
   end
 end
