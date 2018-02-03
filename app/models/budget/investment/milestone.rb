@@ -14,6 +14,8 @@ class Budget
       validates :investment, presence: true
       validates :publication_date, presence: true
 
+      default_scope { order(publication_date: :asc) }
+
       def self.title_max_length
         80
       end
