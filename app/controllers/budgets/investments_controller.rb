@@ -18,7 +18,6 @@ module Budgets
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
-    before_action :destroy_map_location_association, only: :update
     before_action :set_view, only: :index
 
     feature_flag :budgets
@@ -184,13 +183,6 @@ module Budgets
         else
           @investments.apply_filters_and_search(@budget, params, @current_filter)
                       .send("sort_by_#{@current_order}")
-        end
-      end
-
-      def destroy_map_location_association
-        map_location = params[:budget_investment][:map_location_attributes]
-        if map_location && (map_location[:longitude] && map_location[:latitude]).blank? && !map_location[:id].blank?
-          MapLocation.destroy(map_location[:id])
         end
       end
 
