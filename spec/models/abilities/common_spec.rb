@@ -262,6 +262,12 @@ describe Abilities::Common do
       it { should be_able_to(:create, ballot_in_balloting_budget) }
       it { should_not be_able_to(:create, ballot_in_accepting_budget) }
       it { should_not be_able_to(:create, ballot_in_selecting_budget) }
+
+      it { should be_able_to(:destroy, own_budget_investment_image) }
+      it { should be_able_to(:destroy, own_budget_investment_document) }
+
+      it { should_not be_able_to(:destroy, budget_investment_image) }
+      it { should_not be_able_to(:destroy, budget_investment_document) }
     end
 
     describe "when not old enough to vote" do
