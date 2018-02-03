@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add advanced search menu to investments list https://github.com/consul/consul/pull/2142
 - Allow admins to edit Budget phases https://github.com/consul/consul/pull/2353
 - Budget new Information phase https://github.com/consul/consul/pull/2349
+- Add search & sorting options to Admin's Budget Investment list https://github.com/consul/consul/pull/2378
+- Added internal valuation comment thread to replace internal_comments https://github.com/consul/consul/pull/2403
 
 ### Changed
 - Updated multiple minor & patch gem versions thanks to [Depfu](https://depfu.com)
@@ -38,6 +40,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improvements for Admin::Budget::Investment filters https://github.com/consul/consul/pull/2344
 - Clean up Travis logs https://github.com/consul/consul/pull/2357
 - Advanced filters design https://github.com/consul/consul/pull/2379
+- Order Budget group headings by name https://github.com/consul/consul/pull/2367
+- Show only current budget tags in admin budget page https://github.com/consul/consul/pull/2387
+- Correctly show finished budgets at budget index https://github.com/consul/consul/pull/2369
+- Multiple Budgets UI improvements https://github.com/consul/consul/pull/2297
+- Made English the default app locale https://github.com/consul/consul/pull/2371
+- Improved budget heading names at dropdowns https://github.com/consul/consul/pull/2373
+- Improved Admin list of budget headings https://github.com/consul/consul/pull/2370
+- Improve texts of help page https://github.com/consul/consul/pull/2405
+- Remove usage of Investment's internal_comments https://github.com/consul/consul/pull/2404
 
 ### Deprecated
 - Budget's `description_*` columns will be erased from database in next release. Please run rake task `budgets:phases:generate_missing` to migrate them. Details at Warning section of https://github.com/consul/consul/pull/2323
@@ -49,9 +60,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Fixed deprecation warning in specs https://github.com/consul/consul/pull/2293
 - Fix social images meta tags https://github.com/consul/consul/pull/1124
+- Non translated strings & typos https://github.com/consul/consul/pull/2279
 
 ### Security
 - Upgraded Paperclip version up to 5.2.1 to fix security problem https://github.com/consul/consul/pull/2393
+- Upgraded nokogiri: 1.8.1 → 1.8.2 https://github.com/consul/consul/pull/2413
 
 ## [0.12.0](https://github.com/consul/consul/compare/v0.11...v0.12) - 2018-01-03
 
