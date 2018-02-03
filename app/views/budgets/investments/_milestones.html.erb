@@ -8,7 +8,7 @@
       <% end %>
       <section class="timeline">
         <ul class="no-bullet">
-          <% @investment.milestones.each do |milestone| %>
+          <% @investment.milestones.order_by_publication_date.each do |milestone| %>
             <li>
               <div class="milestone-content">
                 <% if milestone.publication_date.present? %>
