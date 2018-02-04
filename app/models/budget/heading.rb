@@ -28,5 +28,11 @@ class Budget
       investments.empty?
     end
 
+    private
+
+    def generate_slug?
+      slug.nil? || budget.drafting?
+    end
+
   end
 end
