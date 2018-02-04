@@ -300,6 +300,10 @@ FactoryBot.define do
   factory :budget_group, class: 'Budget::Group' do
     budget
     sequence(:name) { |n| "Group #{n}" }
+
+    trait :drafting_budget do
+      association :budget, factory: [:budget, :drafting]
+    end
   end
 
   factory :budget_heading, class: 'Budget::Heading' do
@@ -307,6 +311,10 @@ FactoryBot.define do
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
     population 1234
+
+    trait :drafting_budget do
+      association :group, factory: [:budget_group, :drafting_budget]
+    end
   end
 
   factory :budget_investment, class: 'Budget::Investment' do
