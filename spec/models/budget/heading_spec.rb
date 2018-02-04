@@ -5,7 +5,7 @@ describe Budget::Heading do
   let(:budget) { create(:budget) }
   let(:group) { create(:budget_group, budget: budget) }
 
-  it_behaves_like "sluggable"
+  it_behaves_like "sluggable", updatable_slug_trait: :drafting_budget
 
   describe "name" do
     before do
