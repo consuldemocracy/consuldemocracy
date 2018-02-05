@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-feature 'Guide the user to create the correct resource' do
+describe 'Guide the user to create the correct resource' do
 
   let(:user) { create(:user, :verified)}
   let!(:budget) { create(:budget, :accepting) }
 
-  background do
+  before do
     Setting['feature.guides'] = true
   end
 
@@ -13,7 +13,7 @@ feature 'Guide the user to create the correct resource' do
     Setting['feature.guides'] = nil
   end
 
-  scenario "Proposal" do
+  it "Proposal" do
     login_as(user)
     visit proposals_path
 
@@ -23,7 +23,7 @@ feature 'Guide the user to create the correct resource' do
     expect(page).to have_current_path(new_proposal_path)
   end
 
-  scenario "Budget Investment" do
+  it "Budget Investment" do
     login_as(user)
     visit budgets_path
 
@@ -33,7 +33,7 @@ feature 'Guide the user to create the correct resource' do
     expect(page).to have_current_path(new_budget_investment_path(budget))
   end
 
-  scenario "Feature deactivated" do
+  it "Feature deactivated" do
     Setting['feature.guides'] = nil
 
     login_as(user)

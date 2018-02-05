@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Answers' do
+describe 'Answers' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as admin.user
   end
 
-  scenario 'Create' do
+  it 'Create' do
     question = create(:poll_question)
     title = 'Whatever the question may be, the answer is always 42'
     description = "The Hitchhiker's Guide To The Universe"
@@ -24,7 +24,7 @@ feature 'Answers' do
     expect(page).to have_content(description)
   end
 
-  scenario 'Create second answer and place after the first one' do
+  it 'Create second answer and place after the first one' do
     question = create(:poll_question)
     answer = create(:poll_question_answer, title: 'First', question: question, given_order: 1)
     title = 'Second'
@@ -41,7 +41,7 @@ feature 'Answers' do
     expect(page.body.index('First')).to be < page.body.index('Second')
   end
 
-  scenario 'Update' do
+  it 'Update' do
     question = create(:poll_question)
     answer = create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
     answer2 = create(:poll_question_answer, question: question, title: "Another title", given_order: 1)

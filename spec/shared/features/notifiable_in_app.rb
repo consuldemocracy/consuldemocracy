@@ -3,7 +3,7 @@ shared_examples "notifiable in-app" do |described_class|
   let(:author) { create(:user, :verified) }
   let!(:notifiable) { create(model_name(described_class), author: author) }
 
-  scenario "A user commented on my notifiable", :js do
+  it "A user commented on my notifiable", :js do
     notification = create(:notification, notifiable: notifiable, user: author)
 
     login_as author
@@ -15,7 +15,7 @@ shared_examples "notifiable in-app" do |described_class|
     expect(page).to have_xpath "//a[@href='#{notification_path(notification)}']"
   end
 
-  scenario "Multiple users commented on my notifiable", :js do
+  it "Multiple users commented on my notifiable", :js do
     3.times do
       login_as(create(:user, :verified))
 
@@ -39,7 +39,7 @@ shared_examples "notifiable in-app" do |described_class|
     expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
   end
 
-  scenario "A user replied to my comment", :js do
+  it "A user replied to my comment", :js do
     comment = create :comment, commentable: notifiable, user: author
 
     login_as(create(:user, :verified))
@@ -66,7 +66,7 @@ shared_examples "notifiable in-app" do |described_class|
     expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
   end
 
-  scenario "Multiple replies to my comment", :js do
+  it "Multiple replies to my comment", :js do
     comment = create :comment, commentable: notifiable, user: author
 
     3.times do |n|
@@ -95,7 +95,7 @@ shared_examples "notifiable in-app" do |described_class|
     expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
   end
 
-  scenario "Author commented on his own notifiable", :js do
+  it "Author commented on his own notifiable", :js do
     login_as(author)
     visit path_for(notifiable)
 
@@ -111,7 +111,7 @@ shared_examples "notifiable in-app" do |described_class|
     end
   end
 
-  scenario "Author replied to his own comment", :js do
+  it "Author replied to his own comment", :js do
     comment = create :comment, commentable: notifiable, user: author
 
     login_as author

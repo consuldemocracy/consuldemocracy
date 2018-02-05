@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Voter" do
+describe "Voter" do
 
   context "Origin" do
 
@@ -11,14 +11,14 @@ feature "Voter" do
     let!(:answer_yes) { create(:poll_question_answer, question: question, title: 'Yes') }
     let!(:answer_no) { create(:poll_question_answer, question: question, title: 'No') }
 
-    background do
+    before do
       create(:geozone, :in_census)
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
     end
 
-    scenario "Voting via web - Standard", :js do
+    it "Voting via web - Standard", :js do
       user = create(:user, :level_two)
 
       login_as user
@@ -38,7 +38,7 @@ feature "Voter" do
       expect(Poll::Voter.first.origin).to eq("web")
     end
 
-    scenario "Voting via web as unverified user", :js do
+    it "Voting via web as unverified user", :js do
       user = create(:user, :incomplete_verification)
 
       login_as user
@@ -53,7 +53,7 @@ feature "Voter" do
       expect(page).not_to have_content("You have already participated in this poll. If you vote again it will be overwritten")
     end
 
-    scenario "Voting in booth", :js do
+    it "Voting in booth", :js do
       user = create(:user, :in_census)
 
       login_through_form_as_officer(officer.user)
@@ -78,10 +78,10 @@ feature "Voter" do
 
       let!(:user) { create(:user, :in_census) }
 
-      background do
+      before do
       end
 
-      scenario "Trying to vote in web and then in booth", :js do
+      it "Trying to vote in web and then in booth", :js do
         login_as user
         vote_for_poll_via_web(poll, question, answer_yes.title)
         expect(Poll::Voter.count).to eq(1)
@@ -98,7 +98,7 @@ feature "Voter" do
         expect(page).to have_content "Has already participated in this poll"
       end
 
-      scenario "Trying to vote in booth and then in web", :js do
+      it "Trying to vote in booth and then in web", :js do
         login_through_form_as_officer(officer.user)
 
         vote_for_poll_via_booth
@@ -114,7 +114,7 @@ feature "Voter" do
         expect(Poll::Voter.count).to eq(1)
       end
 
-      scenario "Trying to vote in web again", :js do
+      it "Trying to vote in web again", :js do
         login_as user
         vote_for_poll_via_web(poll, question, answer_yes.title)
         expect(Poll::Voter.count).to eq(1)
@@ -140,7 +140,7 @@ feature "Voter" do
       end
     end
 
-    scenario "Voting in poll and then verifiying account", :js do
+    it "Voting in poll and then verifiying account", :js do
       user = create(:user)
 
       login_through_form_as_officer(officer.user)

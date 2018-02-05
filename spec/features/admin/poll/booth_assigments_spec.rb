@@ -1,18 +1,18 @@
 require 'rails_helper'
 
-feature 'Admin booths assignments' do
+describe 'Admin booths assignments' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  feature 'Admin Booth Assignment management' do
+  describe 'Admin Booth Assignment management' do
 
     let!(:poll) { create(:poll) }
     let!(:booth) { create(:poll_booth) }
 
-    scenario 'List Polls and Booths to manage', :js do
+    it 'List Polls and Booths to manage', :js do
       second_poll = create(:poll)
       second_booth = create(:poll_booth)
 
@@ -31,7 +31,7 @@ feature 'Admin booths assignments' do
       expect(page).to have_content(second_booth.name)
     end
 
-    scenario 'Assign booth to poll', :js do
+    it 'Assign booth to poll', :js do
       visit admin_poll_path(poll)
       within('#poll-resources') do
         click_link 'Booths (0)'
@@ -68,7 +68,7 @@ feature 'Admin booths assignments' do
       expect(page).to have_content booth.name
     end
 
-    scenario 'Unassign booth from poll', :js do
+    it 'Unassign booth from poll', :js do
       assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
 
       visit admin_poll_path(poll)
@@ -107,7 +107,7 @@ feature 'Admin booths assignments' do
       expect(page).not_to have_content booth.name
     end
 
-    scenario 'Unassing booth whith associated shifts', :js do
+    it 'Unassing booth whith associated shifts', :js do
       assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
       officer = create(:poll_officer)
       create(:poll_officer_assignment, officer: officer, booth_assignment: assignment)
@@ -127,7 +127,7 @@ feature 'Admin booths assignments' do
       end
     end
 
-    scenario "Cannot unassing booth if poll is expired" do
+    it "Cannot unassing booth if poll is expired" do
       poll_expired = create(:poll, :expired)
       create(:poll_booth_assignment, poll: poll_expired, booth: booth)
 
@@ -143,8 +143,8 @@ feature 'Admin booths assignments' do
     end
   end
 
-  feature 'Show' do
-    scenario 'Lists all assigned poll officers' do
+  describe 'Show' do
+    it 'Lists all assigned poll officers' do
       poll = create(:poll)
       booth = create(:poll_booth)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
@@ -167,7 +167,7 @@ feature 'Admin booths assignments' do
       end
     end
 
-    scenario 'Lists all recounts for the booth assignment' do
+    it 'Lists all recounts for the booth assignment' do
       poll = create(:poll, starts_at: 2.weeks.ago, ends_at: 1.week.ago)
       booth = create(:poll_booth)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
@@ -204,7 +204,7 @@ feature 'Admin booths assignments' do
       end
     end
 
-    scenario 'Results for a booth assignment' do
+    it 'Results for a booth assignment' do
       poll = create(:poll)
       booth_assignment = create(:poll_booth_assignment, poll: poll)
       other_booth_assignment = create(:poll_booth_assignment, poll: poll)
@@ -292,7 +292,7 @@ feature 'Admin booths assignments' do
       within('#total_results') { expect(page).to have_content('66') }
     end
 
-    scenario "No results" do
+    it "No results" do
       poll = create(:poll)
       booth_assignment = create(:poll_booth_assignment, poll: poll)
 

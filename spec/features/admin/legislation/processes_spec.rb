@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-feature 'Admin legislation processes' do
+describe 'Admin legislation processes' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
   context "Feature flag" do
 
-    scenario 'Disabled with a feature flag' do
+    it 'Disabled with a feature flag' do
       Setting['feature.legislation'] = nil
       expect{ visit admin_legislation_processes_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
@@ -18,7 +18,7 @@ feature 'Admin legislation processes' do
 
   context "Index" do
 
-    scenario 'Displaying legislation processes' do
+    it 'Displaying legislation processes' do
       process = create(:legislation_process)
       visit admin_legislation_processes_path(filter: 'all')
 
@@ -27,7 +27,7 @@ feature 'Admin legislation processes' do
   end
 
   context 'Create' do
-    scenario 'Valid legislation process' do
+    it 'Valid legislation process' do
       visit admin_root_path
 
       within('#side_menu') do
@@ -73,7 +73,7 @@ feature 'Admin legislation processes' do
   end
 
   context 'Update' do
-    scenario 'Remove summary text', js: true do
+    it 'Remove summary text', js: true do
       process = create(:legislation_process,
                        title: 'An example legislation process',
                        summary: 'Summarizing the process',
@@ -100,7 +100,7 @@ feature 'Admin legislation processes' do
       expect(page).to have_content 'Description of the process'
     end
 
-    scenario 'Deactivate draft publication', js: true do
+    it 'Deactivate draft publication', js: true do
       process = create(:legislation_process,
                        title: 'An example legislation process',
                        summary: 'Summarizing the process',

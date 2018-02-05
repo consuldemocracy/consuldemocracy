@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Moderate users' do
+describe 'Moderate users' do
 
-  scenario 'Hide' do
+  it 'Hide' do
     citizen = create(:user)
     moderator = create(:moderator)
 
@@ -50,7 +50,7 @@ feature 'Moderate users' do
     expect(page).to have_current_path(new_user_session_path)
   end
 
-  scenario 'Search and ban users' do
+  it 'Search and ban users' do
     citizen = create(:user, username: 'Wanda Maximoff')
     moderator = create(:moderator)
 

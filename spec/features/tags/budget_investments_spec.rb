@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Tags' do
+describe 'Tags' do
 
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
@@ -10,7 +10,7 @@ feature 'Tags' do
   let!(:tag_economia) { create(:tag, :category, name: 'Economía') }
   let(:admin) { create(:administrator).user }
 
-  scenario 'Index' do
+  it 'Index' do
     earth = create(:budget_investment, heading: heading, tag_list: tag_medio_ambiente.name)
     money = create(:budget_investment, heading: heading, tag_list: tag_economia.name)
 
@@ -25,7 +25,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Index shows 3 tags with no plus link' do
+  it 'Index shows 3 tags with no plus link' do
     tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
     create :budget_investment, heading: heading, tag_list: tag_list
 
@@ -39,7 +39,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Index shows up to 5 tags per proposal' do
+  it 'Index shows up to 5 tags per proposal' do
     create_featured_proposals
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
     create :budget_investment, heading: heading, tag_list: tag_list
@@ -51,7 +51,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Show' do
+  it 'Show' do
     investment = create(:budget_investment, heading: heading, tag_list: "#{tag_medio_ambiente.name}, #{tag_economia.name}")
 
     visit budget_investment_path(budget, investment)
@@ -60,7 +60,7 @@ feature 'Tags' do
     expect(page).to have_content(tag_economia.name)
   end
 
-  scenario 'Create with custom tags' do
+  it 'Create with custom tags' do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
@@ -79,7 +79,7 @@ feature 'Tags' do
     expect(page).to have_content tag_medio_ambiente.name
   end
 
-  scenario 'Category with category tags', :js do
+  it 'Category with category tags', :js do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
@@ -100,7 +100,7 @@ feature 'Tags' do
     end
   end
 
-  scenario "Turbolinks sanity check from budget's show", :js do
+  it "Turbolinks sanity check from budget's show", :js do
     login_as(author)
 
     education = create(:tag, name: 'Education', kind: 'category')
@@ -125,7 +125,7 @@ feature 'Tags' do
     end
   end
 
-  scenario "Turbolinks sanity check from budget heading's show", :js do
+  it "Turbolinks sanity check from budget heading's show", :js do
     login_as(author)
 
     education = create(:tag, name: 'Education', kind: 'category')
@@ -150,7 +150,7 @@ feature 'Tags' do
     end
   end
 
-  scenario 'Create with too many tags' do
+  it 'Create with too many tags' do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
@@ -168,7 +168,7 @@ feature 'Tags' do
     expect(page).to have_content 'tags must be less than or equal to 6'
   end
 
-  scenario 'Create with dangerous strings' do
+  it 'Create with dangerous strings' do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
@@ -191,7 +191,7 @@ feature 'Tags' do
 
   context "Filter" do
 
-    scenario "From index" do
+    it "From index" do
 
       investment1 = create(:budget_investment, heading: heading, tag_list: tag_economia.name)
       investment2 = create(:budget_investment, heading: heading, tag_list: 'Health')
@@ -208,7 +208,7 @@ feature 'Tags' do
       end
     end
 
-    scenario "From show" do
+    it "From show" do
       investment1 = create(:budget_investment, heading: heading, tag_list: tag_economia.name)
       investment2 = create(:budget_investment, heading: heading, tag_list: 'Health')
 
@@ -232,7 +232,7 @@ feature 'Tags' do
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: new_tag) }
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: newer_tag) }
 
-    scenario 'Display user tags' do
+    it 'Display user tags' do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
@@ -246,7 +246,7 @@ feature 'Tags' do
       end
     end
 
-    scenario "Filter by user tags" do
+    it "Filter by user tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
@@ -279,7 +279,7 @@ feature 'Tags' do
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: tag_medio_ambiente.name) }
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: tag_economia.name) }
 
-    scenario 'Display category tags' do
+    it 'Display category tags' do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
@@ -293,7 +293,7 @@ feature 'Tags' do
       end
     end
 
-    scenario "Filter by category tags" do
+    it "Filter by category tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
@@ -321,7 +321,7 @@ feature 'Tags' do
 
   context "Valuation" do
 
-    scenario "Users do not see valuator tags" do
+    it "Users do not see valuator tags" do
       investment = create(:budget_investment, heading: heading, tag_list: 'Park')
       investment.set_tag_list_on(:valuation, 'Education')
       investment.save
@@ -332,7 +332,7 @@ feature 'Tags' do
       expect(page).not_to have_content 'Education'
     end
 
-    scenario "Valuators do not see user tags" do
+    it "Valuators do not see user tags" do
       investment = create(:budget_investment, heading: heading, tag_list: 'Park')
       investment.set_tag_list_on(:valuation, 'Education')
       investment.save

@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Admin comments' do
+describe 'Admin comments' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario "Do not show comments from blocked users" do
+  it "Do not show comments from blocked users" do
     comment = create(:comment, :hidden, body: "SPAM from SPAMMER")
     proposal = create(:proposal, author: comment.author)
     create(:comment, commentable: proposal, user: comment.author, body: "Good Proposal!")
@@ -26,7 +26,7 @@ feature 'Admin comments' do
     expect(page).not_to have_content("Good Proposal!")
   end
 
-  scenario "Visit items with hidden comments" do
+  it "Visit items with hidden comments" do
     debate = create(:debate, title: "Debate with spam comment")
     proposal = create(:proposal, title: "Proposal with spam comment")
     create(:comment, :hidden, commentable: debate, body: "This is SPAM comment on debate")
@@ -50,7 +50,7 @@ feature 'Admin comments' do
     expect(page).not_to have_content("This is SPAM comment on proposal")
   end
 
-  scenario "Don't show link on hidden items" do
+  it "Don't show link on hidden items" do
     debate = create(:debate, :hidden, title: "Hidden debate title")
     proposal = create(:proposal, :hidden, title: "Hidden proposal title")
     create(:comment, :hidden, commentable: debate, body: "This is SPAM comment on debate")
@@ -65,7 +65,7 @@ feature 'Admin comments' do
     expect(page).not_to have_link("This is SPAM comment on proposal")
   end
 
-  scenario "Restore" do
+  it "Restore" do
     comment = create(:comment, :hidden, body: 'Not really SPAM')
     visit admin_comments_path
 
@@ -77,7 +77,7 @@ feature 'Admin comments' do
     expect(comment).to be_ignored_flag
   end
 
-  scenario "Confirm hide" do
+  it "Confirm hide" do
     comment = create(:comment, :hidden, body: 'SPAM')
     visit admin_comments_path
 
@@ -90,7 +90,7 @@ feature 'Admin comments' do
     expect(comment.reload).to be_confirmed_hide
   end
 
-  scenario "Current filter is properly highlighted" do
+  it "Current filter is properly highlighted" do
     visit admin_comments_path
     expect(page).not_to have_link('Pending')
     expect(page).to have_link('All')
@@ -112,7 +112,7 @@ feature 'Admin comments' do
     expect(page).not_to have_link('Confirmed')
   end
 
-  scenario "Filtering comments" do
+  it "Filtering comments" do
     create(:comment, :hidden, body: "Unconfirmed comment")
     create(:comment, :hidden, :with_confirmed_hide, body: "Confirmed comment")
 
@@ -125,7 +125,7 @@ feature 'Admin comments' do
     expect(page).to have_content('Confirmed comment')
   end
 
-  scenario "Action links remember the pagination setting and the filter" do
+  it "Action links remember the pagination setting and the filter" do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times { create(:comment, :hidden, :with_confirmed_hide) }
 

@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-feature "Notifications" do
+describe "Notifications" do
 
   let(:user) { create :user }
 
   context "mark as read" do
 
-    scenario "mark a single notification as read" do
+    it "mark a single notification as read" do
       notification = create :notification, user: user
 
       login_as user
@@ -20,7 +20,7 @@ feature "Notifications" do
       expect(page).to have_css ".notification", count: 0
     end
 
-    scenario "mark all notifications as read" do
+    it "mark all notifications as read" do
       2.times { create :notification, user: user }
 
       login_as user
@@ -35,7 +35,7 @@ feature "Notifications" do
 
   end
 
-  scenario "no notifications" do
+  it "no notifications" do
     login_as user
     visit notifications_path
 

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'SMS Verification' do
+describe 'SMS Verification' do
 
-  scenario 'Verify' do
+  it 'Verify' do
     user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
@@ -20,7 +20,7 @@ feature 'SMS Verification' do
     expect(page).to have_content 'Code correct'
   end
 
-  scenario 'Errors on phone number' do
+  it 'Errors on phone number' do
     user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
@@ -31,7 +31,7 @@ feature 'SMS Verification' do
     expect(page).to have_content error_message("phone")
   end
 
-  scenario 'Errors on verification code' do
+  it 'Errors on verification code' do
     user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
@@ -47,7 +47,7 @@ feature 'SMS Verification' do
     expect(page).to have_content 'Incorrect confirmation code'
   end
 
-  scenario 'Deny access unless residency verified' do
+  it 'Deny access unless residency verified' do
     user = create(:user)
     login_as(user)
 
@@ -57,7 +57,7 @@ feature 'SMS Verification' do
     expect(page).to have_current_path(new_residence_path)
   end
 
-  scenario '5 tries allowed' do
+  it '5 tries allowed' do
     user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 

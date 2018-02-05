@@ -1,11 +1,11 @@
 require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
-feature 'Commenting Budget::Investments' do
+describe 'Commenting Budget::Investments' do
   let(:user) { create :user }
   let(:investment) { create :budget_investment }
 
-  scenario 'Index' do
+  it 'Index' do
     3.times { create(:comment, commentable: investment) }
     valuation_comment = create(:comment, :valuation, commentable: investment, subject: 'Not viable')
 
@@ -23,7 +23,7 @@ feature 'Commenting Budget::Investments' do
     end
   end
 
-  scenario 'Show' do
+  it 'Show' do
     parent_comment = create(:comment, commentable: investment)
     first_child    = create(:comment, commentable: investment, parent: parent_comment)
     second_child   = create(:comment, commentable: investment, parent: parent_comment)
@@ -44,7 +44,7 @@ feature 'Commenting Budget::Investments' do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
-  scenario 'Collapsable comments', :js do
+  it 'Collapsable comments', :js do
     parent_comment = create(:comment, body: "Main comment", commentable: investment)
     child_comment  = create(:comment, body: "First subcomment", commentable: investment, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: investment, parent: child_comment)
@@ -70,7 +70,7 @@ feature 'Commenting Budget::Investments' do
     expect(page).not_to have_content grandchild_comment.body
   end
 
-  scenario 'Comment order' do
+  it 'Comment order' do
     c1 = create(:comment, :with_confidence_score, commentable: investment, cached_votes_up: 100,
                                                   cached_votes_total: 120, created_at: Time.current - 2)
     c2 = create(:comment, :with_confidence_score, commentable: investment, cached_votes_up: 10,
@@ -94,7 +94,7 @@ feature 'Commenting Budget::Investments' do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario 'Creation date works differently in roots and in child comments, when sorting by confidence_score' do
+  it 'Creation date works differently in roots and in child comments, when sorting by confidence_score' do
    old_root = create(:comment, commentable: investment, created_at: Time.current - 10)
    new_root = create(:comment, commentable: investment, created_at: Time.current)
    old_child = create(:comment, commentable: investment, parent_id: new_root.id, created_at: Time.current - 10)
@@ -116,7 +116,7 @@ feature 'Commenting Budget::Investments' do
    expect(old_child.body).to appear_before(new_child.body)
   end
 
-  scenario 'Turns links into html links' do
+  it 'Turns links into html links' do
     create :comment, commentable: investment, body: 'Built with http://rubyonrails.org/'
 
     visit budget_investment_path(investment.budget, investment)
@@ -129,7 +129,7 @@ feature 'Commenting Budget::Investments' do
     end
   end
 
-  scenario 'Sanitizes comment body for security' do
+  it 'Sanitizes comment body for security' do
     create :comment, commentable: investment,
                      body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
@@ -142,7 +142,7 @@ feature 'Commenting Budget::Investments' do
     end
   end
 
-  scenario 'Paginated comments' do
+  it 'Paginated comments' do
     per_page = 10
     (per_page + 2).times { create(:comment, commentable: investment)}
 
@@ -159,8 +159,8 @@ feature 'Commenting Budget::Investments' do
     expect(page).to have_css('.comment', count: 2)
   end
 
-  feature 'Not logged user' do
-    scenario 'can not see comments forms' do
+  describe 'Not logged user' do
+    it 'can not see comments forms' do
       create(:comment, commentable: investment)
       visit budget_investment_path(investment.budget, investment)
 
@@ -172,7 +172,7 @@ feature 'Commenting Budget::Investments' do
     end
   end
 
-  scenario 'Create', :js do
+  it 'Create', :js do
     login_as(user)
     visit budget_investment_path(investment.budget, investment)
 
@@ -188,7 +188,7 @@ feature 'Commenting Budget::Investments' do
     end
   end
 
-  scenario 'Errors on create', :js do
+  it 'Errors on create', :js do
     login_as(user)
     visit budget_investment_path(investment.budget, investment)
 
@@ -197,7 +197,7 @@ feature 'Commenting Budget::Investments' do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario 'Reply', :js do
+  it 'Reply', :js do
     citizen = create(:user, username: 'Ana')
     manuela = create(:user, username: 'Manuela')
     comment = create(:comment, commentable: investment, user: citizen)
@@ -219,7 +219,7 @@ feature 'Commenting Budget::Investments' do
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
-  scenario 'Errors on reply', :js do
+  it 'Errors on reply', :js do
     comment = create(:comment, commentable: investment, user: user)
 
     login_as(user)
@@ -234,7 +234,7 @@ feature 'Commenting Budget::Investments' do
 
   end
 
-  scenario "N replies", :js do
+  it "N replies", :js do
     parent = create(:comment, commentable: investment)
 
     7.times do
@@ -246,7 +246,7 @@ feature 'Commenting Budget::Investments' do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
+  it "Flagging as inappropriate", :js do
     comment = create(:comment, commentable: investment)
 
     login_as(user)
@@ -262,7 +262,7 @@ feature 'Commenting Budget::Investments' do
     expect(Flag.flagged?(user, comment)).to be
   end
 
-  scenario "Undoing flagging as inappropriate", :js do
+  it "Undoing flagging as inappropriate", :js do
     comment = create(:comment, commentable: investment)
     Flag.flag(user, comment)
 
@@ -279,7 +279,7 @@ feature 'Commenting Budget::Investments' do
     expect(Flag.flagged?(user, comment)).not_to be
   end
 
-  scenario "Flagging turbolinks sanity check", :js do
+  it "Flagging turbolinks sanity check", :js do
     investment = create(:budget_investment, title: "Should we change the world?")
     comment = create(:comment, commentable: investment)
 
@@ -293,7 +293,7 @@ feature 'Commenting Budget::Investments' do
     end
   end
 
-  scenario "Erasing a comment's author" do
+  it "Erasing a comment's author" do
     investment = create(:budget_investment)
     comment = create(:comment, commentable: investment, body: "this should be visible")
     comment.user.erase
@@ -305,8 +305,8 @@ feature 'Commenting Budget::Investments' do
     end
   end
 
-  feature "Moderators" do
-    scenario "can create comment as a moderator", :js do
+  describe "Moderators" do
+    it "can create comment as a moderator", :js do
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -324,7 +324,7 @@ feature 'Commenting Budget::Investments' do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    it "can create reply as a moderator", :js do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       moderator = create(:moderator, user: manuela)
@@ -351,7 +351,7 @@ feature 'Commenting Budget::Investments' do
       expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as an administrator" do
+    it "can not comment as an administrator" do
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -361,8 +361,8 @@ feature 'Commenting Budget::Investments' do
     end
   end
 
-  feature "Administrators" do
-    scenario "can create comment as an administrator", :js do
+  describe "Administrators" do
+    it "can create comment as an administrator", :js do
       admin = create(:administrator)
 
       login_as(admin.user)
@@ -380,7 +380,7 @@ feature 'Commenting Budget::Investments' do
       end
     end
 
-    scenario "can create reply as an administrator", :js do
+    it "can create reply as an administrator", :js do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       admin   = create(:administrator, user: manuela)
@@ -407,7 +407,7 @@ feature 'Commenting Budget::Investments' do
       expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario "can not comment as a moderator" do
+    it "can not comment as a moderator" do
       admin = create(:administrator)
 
       login_as(admin.user)
@@ -417,9 +417,9 @@ feature 'Commenting Budget::Investments' do
     end
   end
 
-  feature 'Voting comments' do
+  describe 'Voting comments' do
 
-    background do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @investment = create(:budget_investment)
@@ -429,7 +429,7 @@ feature 'Commenting Budget::Investments' do
       login_as(@manuela)
     end
 
-    scenario 'Show' do
+    it 'Show' do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
@@ -448,7 +448,7 @@ feature 'Commenting Budget::Investments' do
       end
     end
 
-    scenario 'Create', :js do
+    it 'Create', :js do
       visit budget_investment_path(@budget, @investment)
 
       within("#comment_#{@comment.id}_votes") do
@@ -466,7 +466,7 @@ feature 'Commenting Budget::Investments' do
       end
     end
 
-    scenario 'Update', :js do
+    it 'Update', :js do
       visit budget_investment_path(@budget, @investment)
 
       within("#comment_#{@comment.id}_votes") do
@@ -485,7 +485,7 @@ feature 'Commenting Budget::Investments' do
       end
     end
 
-    scenario 'Trying to vote multiple times', :js do
+    it 'Trying to vote multiple times', :js do
       visit budget_investment_path(@budget, @investment)
 
       within("#comment_#{@comment.id}_votes") do

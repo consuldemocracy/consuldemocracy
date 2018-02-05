@@ -47,7 +47,7 @@ Capybara/CurrentPathExpectation:
   Enabled: true
 
 Capybara/FeatureMethods:
-  Enabled: false
+  Enabled: true
 
 RSpec/ContextWording:
   Enabled: false

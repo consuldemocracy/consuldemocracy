@@ -3,7 +3,7 @@ require 'rails_helper'
 Rails.application.load_tasks
 Rake::Task.define_task(:environment)
 
-feature 'rake sitemap:create' do
+describe 'rake sitemap:create' do
   before do
     @file ||= Rails.root.join('public', 'sitemap.xml')
 

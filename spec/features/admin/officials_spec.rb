@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-feature 'Admin officials' do
+describe 'Admin officials' do
 
-  background do
+  before do
     @citizen = create(:user, username: "Citizen Kane")
     @official = create(:user, official_position: "Mayor", official_level: 5)
     @admin = create(:administrator)
     login_as(@admin.user)
   end
 
-  scenario 'Index' do
+  it 'Index' do
     visit admin_officials_path
 
     expect(page).to have_content @official.name
@@ -18,7 +18,7 @@ feature 'Admin officials' do
     expect(page).to have_content @official.official_level
   end
 
-  scenario 'Edit an official' do
+  it 'Edit an official' do
     visit admin_officials_path
     click_link @official.name
 
@@ -41,7 +41,7 @@ feature 'Admin officials' do
     expect(page).to have_content '3'
   end
 
-  scenario 'Create an official' do
+  it 'Create an official' do
     visit admin_officials_path
     fill_in 'name_or_email', with: @citizen.email
     click_button 'Search'
@@ -65,7 +65,7 @@ feature 'Admin officials' do
     expect(page).to have_content '4'
   end
 
-  scenario 'Destroy' do
+  it 'Destroy' do
     visit edit_admin_official_path(@official)
 
     click_link "Remove 'Official' status"
