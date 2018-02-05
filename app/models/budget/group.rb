@@ -13,5 +13,11 @@ class Budget
     def single_heading_group?
       headings.count == 1
     end
+
+    private
+
+    def generate_slug?
+      slug.nil? || budget.drafting?
+    end
   end
 end
