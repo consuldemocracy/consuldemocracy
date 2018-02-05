@@ -4,15 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/consul/consul/compare/v0.12...consul:master)
+## [Unreleased](https://github.com/consul/consul/compare/v0.13...consul:master)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.13.0](https://github.com/consul/consul/compare/v0.12...v0.13) - 2018-02-05
 
 ### Added
 - Added Drafting phase to Budgets https://github.com/consul/consul/pull/2285
 - Added 'Publish investments price' phase to Budgets https://github.com/consul/consul/pull/2296
 - Allow admins to destroy budgets without investments https://github.com/consul/consul/pull/2283
-- Added rubocop-rspec gem, enabled cops one by one fixing offenses.
 - Added CSV download link to budget_investments https://github.com/consul/consul/pull/2147
-- Added Capistrano task to automate maintenance mode https://github.com/consul/consul/pull/1932
 - Added actions to edit and delete a budget's headings https://github.com/consul/consul/pull/1917
 - Allow Budget Investments to be Related to other content https://github.com/consul/consul/pull/2311
 - New Budget::Phase model to add dates, enabling and more https://github.com/consul/consul/pull/2323
@@ -22,34 +29,36 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Budget new Information phase https://github.com/consul/consul/pull/2349
 - Add search & sorting options to Admin's Budget Investment list https://github.com/consul/consul/pull/2378
 - Added internal valuation comment thread to replace internal_comments https://github.com/consul/consul/pull/2403
+- Added rubocop-rspec gem, enabled cops one by one fixing offenses.
+- Added Capistrano task to automate maintenance mode https://github.com/consul/consul/pull/1932
 
 ### Changed
-- Updated multiple minor & patch gem versions thanks to [Depfu](https://depfu.com)
-- Updated rubocop version and ignored all cops by default
-- Removed legislation section arrows and duplicate html tag thanks to [xarlybovi](https://github.com/xarlybovi) https://github.com/consul/consul/issues/1704
 - Display proposal and investment image when sharing in social networks https://github.com/consul/consul/pull/2202
 - Redirect admin to budget lists after edit https://github.com/consul/consul/pull/2284
 - Improve budget investment form https://github.com/consul/consul/pull/2280
 - Prevent edition of investments if budget is in the final phase https://github.com/consul/consul/pull/2223
-- Split 'routes.rb' file into multiple small files https://github.com/consul/consul/pull/1908
 - Design Improvements https://github.com/consul/consul/pull/2327
 - Change concept of current budget to account for multiple budgets https://github.com/consul/consul/pull/2322
 - Investment valuation finished alert https://github.com/consul/consul/pull/2324
-- Updated translations to other languages from Crowdin contributions https://github.com/consul/consul/pull/2347 especial mention to @ferraniki for 100% Valencian translation!
 - Finished budgets list order https://github.com/consul/consul/pull/2355
 - Improvements for Admin::Budget::Investment filters https://github.com/consul/consul/pull/2344
-- Clean up Travis logs https://github.com/consul/consul/pull/2357
 - Advanced filters design https://github.com/consul/consul/pull/2379
 - Order Budget group headings by name https://github.com/consul/consul/pull/2367
 - Show only current budget tags in admin budget page https://github.com/consul/consul/pull/2387
 - Correctly show finished budgets at budget index https://github.com/consul/consul/pull/2369
 - Multiple Budgets UI improvements https://github.com/consul/consul/pull/2297
-- Made English the default app locale https://github.com/consul/consul/pull/2371
 - Improved budget heading names at dropdowns https://github.com/consul/consul/pull/2373
 - Improved Admin list of budget headings https://github.com/consul/consul/pull/2370
-- Improve texts of help page https://github.com/consul/consul/pull/2405
 - Remove usage of Investment's internal_comments https://github.com/consul/consul/pull/2404
+- Made English the default app locale https://github.com/consul/consul/pull/2371
+- Improve texts of help page https://github.com/consul/consul/pull/2405
 - Show error message when relating content to itself https://github.com/consul/consul/pull/2416
+- Split 'routes.rb' file into multiple small files https://github.com/consul/consul/pull/1908
+- Removed legislation section arrows and duplicate html tag thanks to [xarlybovi](https://github.com/xarlybovi) https://github.com/consul/consul/issues/1704
+- Updated multiple minor & patch gem versions thanks to [Depfu](https://depfu.com)
+- Clean up Travis logs https://github.com/consul/consul/pull/2357
+- Updated translations to other languages from Crowdin contributions https://github.com/consul/consul/pull/2347 especial mention to @ferraniki for 100% Valencian translation!
+- Updated rubocop version and ignored all cops by default
 
 ### Deprecated
 - Budget's `description_*` columns will be erased from database in next release. Please run rake task `budgets:phases:generate_missing` to migrate them. Details at Warning section of https://github.com/consul/consul/pull/2323
@@ -59,11 +68,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Spending Proposals urls from sitemap, that model is getting entirely deprecated soon.
 
 ### Fixed
-- Fixed deprecation warning in specs https://github.com/consul/consul/pull/2293
-- Fix social images meta tags https://github.com/consul/consul/pull/1124
-- Non translated strings & typos https://github.com/consul/consul/pull/2279
 - Fix Budget Investment's milestones order https://github.com/consul/consul/pull/2431
 - Only change budget slugs if its on draft phase https://github.com/consul/consul/pull/2434
+- Fixed an internal bug that allowed users to remove documents from other user's Proposals & Investments https://github.com/consul/consul/commit/97ec551178591ea9f59744f53c7aadcaad5e679a#diff-bc7e874fa3fd44e4b6f941b434d1d921
+- Fixed deprecation warning in specs https://github.com/consul/consul/pull/2293
+- Fix social images meta tags https://github.com/consul/consul/pull/2153
+- Non translated strings & typos https://github.com/consul/consul/pull/2279
 - Links to hidden comments on admin & moderation https://github.com/consul/consul/pull/2395
 
 ### Security
@@ -230,7 +240,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rails 4.2.6
 - Ruby 2.2.3
 
-[Unreleased]: https://github.com/consul/consul/compare/v0.12...consul:master
+[Unreleased]: https://github.com/consul/consul/compare/v0.13...consul:master
+[0.13.0]: https://github.com/consul/consul/compare/v0.12...v0.13
 [0.12.0]: https://github.com/consul/consul/compare/v0.11...v0.12
 [0.11.0]: https://github.com/consul/consul/compare/v0.10...v0.11
 [0.10.0]: https://github.com/consul/consul/compare/v0.9...v0.10
