@@ -12,7 +12,7 @@
                     class: 'button hollow' %>
       </td>
       <td class="text-center">
-        <% if can? :destroy, Document %>
+        <% if can?(:destroy, document) %>
           <%= link_to t('documents.buttons.destroy_document'),
                         document_path(document, from: request.url), method: :delete,
                         data: { confirm: t('documents.actions.destroy.confirm') },
