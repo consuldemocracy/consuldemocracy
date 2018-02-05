@@ -83,7 +83,7 @@ module Budgets
 
     def redirect_to_new_url
       investment = Budget::Investment.where(original_spending_proposal_id: params['id']).first
-      redirect_to budget_investment_path(investment.budget, params['id']) if investment.present?
+      redirect_to budget_investment_path(investment.budget.slug, params['id']) if investment.present?
     end
 
     private
