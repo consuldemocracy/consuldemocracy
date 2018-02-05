@@ -64,6 +64,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Non translated strings & typos https://github.com/consul/consul/pull/2279
 - Fix Budget Investment's milestones order https://github.com/consul/consul/pull/2431
 - Only change budget slugs if its on draft phase https://github.com/consul/consul/pull/2434
+- Links to hidden comments on admin & moderation https://github.com/consul/consul/pull/2395
 
 ### Security
 - Upgraded Paperclip version up to 5.2.1 to fix security problem https://github.com/consul/consul/pull/2393
