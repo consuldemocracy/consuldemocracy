@@ -6,6 +6,11 @@ feature 'Nvotes' do
     skip "this feature is currently disabled"
   end
 
+  scenario "Check correct configuration" do
+    expect(Rails.application.secrets["nvotes_shared_key"]).to eq("")
+    expect(Rails.application.secrets["nvotes_server_url"]).to eq("")
+  end
+
   scenario "Send vote", :selenium do
     user = create(:user, :level_two, id: rand(9999999))
     poll = create(:poll, published: true, nvotes_poll_id: 128)
