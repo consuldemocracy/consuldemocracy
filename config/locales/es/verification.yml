@@ -80,9 +80,9 @@ es:
         title: SMS de confirmación
       new:
         phone: Introduce tu teléfono móvil para recibir el código
-        phone_format_html: '<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>'
+        phone_format_html: "<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>"
         phone_note: Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos.
-        phone_placeholder: 'Ejemplo: 612345678 ó +34612345678'
+        phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
         submit_button: Enviar
         title: SMS de confirmación
       update:
