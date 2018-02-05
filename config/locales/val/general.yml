@@ -819,6 +819,7 @@ val:
     help: "Pots afegir enllaços de %{models} en %{org}."
     submit: "Afegir"
     error: "Enllaç no vàlid. Recorda iniciar amb %{url}."
+    error_itself: "Enllaç no vàlid. No es pot relacionar un contingut aconseguisc mateix"
     success: "Has afegit nou contingut relacionat"
     is_related: "Es contingut relacionat?"
     score_positive: "Sí"
