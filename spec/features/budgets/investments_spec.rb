@@ -910,9 +910,14 @@ feature 'Budget Investments' do
   scenario "Show milestones", :js do
     user = create(:user)
     investment = create(:budget_investment)
-    milestone = create(:budget_investment_milestone, investment: investment, title: "New text to show")
-    image = create(:image, imageable: milestone)
-    document = create(:document, documentable: milestone)
+    create(:budget_investment_milestone, investment: investment,
+                                         description: "Last milestone",
+                                         publication_date: Date.tomorrow)
+    first_milestone = create(:budget_investment_milestone, investment: investment,
+                                                           description: "First milestone",
+                                                           publication_date: Date.yesterday)
+    image = create(:image, imageable: first_milestone)
+    document = create(:document, documentable: first_milestone)
 
     login_as(user)
     visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
@@ -920,10 +925,12 @@ feature 'Budget Investments' do
     find("#tab-milestones-label").trigger('click')
 
     within("#tab-milestones") do
-      expect(page).to have_content(milestone.description)
-      expect(page).to have_content(Date.current)
-      expect(page.find("#image_#{milestone.id}")['alt']).to have_content image.title
-      expect(page).to have_link document.title
+      expect(first_milestone.description).to appear_before('Last milestone')
+      expect(page).to have_content(Date.tomorrow)
+      expect(page).to have_content(Date.yesterday)
+      expect(page).not_to have_content(Date.current)
+      expect(page.find("#image_#{first_milestone.id}")['alt']).to have_content(image.title)
+      expect(page).to have_link(document.title)
     end
   end
 
