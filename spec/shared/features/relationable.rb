@@ -71,6 +71,20 @@ shared_examples "relationable" do |relationable_model_name|
     expect(page).to have_content("Link not valid. Remember to start with #{Setting[:url]}.")
   end
 
+  scenario 'returns error when relating content URL to itself' do
+    login_as(user)
+    visit relationable.url
+
+    click_on("Add related content")
+
+    within("#related_content") do
+      fill_in 'url', with: Setting[:url] + relationable.url.to_s
+      click_button "Add"
+    end
+
+    expect(page).to have_content("Link not valid. You cannot relate a content to itself")
+  end
+
   scenario 'related content can be scored positively', :js do
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
