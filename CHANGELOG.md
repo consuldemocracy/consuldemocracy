@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased](https://github.com/consul/consul/compare/v0.11...consul:master)
 
+## [0.11.1](https://github.com/consul/consul/compare/v0.11...v0.11.1) - 2018-02-05
+
+### Fixed
+- Prevent users or admins from removing documents on Proposals & Investment they haven't authored
+
 ## [0.11.0](https://github.com/consul/consul/compare/v0.10...v0.11) - 2017-12-05
 
 ### Added
@@ -143,6 +148,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Ruby 2.2.3
 
 [Unreleased]: https://github.com/consul/consul/compare/v0.10...consul:master
+[0.11.1]: https://github.com/consul/consul/compare/v0.11...v0.11.1
+[0.11.0]: https://github.com/consul/consul/compare/v0.10...v0.11
 [0.10.0]: https://github.com/consul/consul/compare/v0.9...v0.10
 [0.9.0]: https://github.com/consul/consul/compare/v0.8...v0.9
 [0.8.0]: https://github.com/consul/consul/compare/v0.7...v0.8
