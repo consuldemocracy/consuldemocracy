@@ -62,6 +62,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fixed deprecation warning in specs https://github.com/consul/consul/pull/2293
 - Fix social images meta tags https://github.com/consul/consul/pull/1124
 - Non translated strings & typos https://github.com/consul/consul/pull/2279
+- Fix Budget Investment's milestones order https://github.com/consul/consul/pull/2431
 
 ### Security
 - Upgraded Paperclip version up to 5.2.1 to fix security problem https://github.com/consul/consul/pull/2393
