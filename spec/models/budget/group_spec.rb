@@ -4,7 +4,7 @@ describe Budget::Group do
 
   let(:budget) { create(:budget) }
 
-  it_behaves_like "sluggable"
+  it_behaves_like "sluggable", updatable_slug_trait: :drafting_budget
 
   describe "name" do
     before do

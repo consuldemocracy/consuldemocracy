@@ -33,5 +33,12 @@ class Budget
     def can_be_deleted?
       investments.empty?
     end
+
+    private
+
+    def generate_slug?
+      slug.nil? || budget.drafting?
+    end
+
   end
 end
