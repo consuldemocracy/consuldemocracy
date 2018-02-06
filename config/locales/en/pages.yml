@@ -20,6 +20,7 @@ en:
         budgets: "Participatory budgets"
         polls: "Polls"
         other: "Other information of interest"
+        processes: "Processes"
       debates:
         title: "Debates"
         description: "In the %{link} section you can present and share your opinion with other people on issues of concern to you related to the city. It is also a place to generate ideas that through the other sections of %{org} lead to concrete actions by the City Council."
@@ -55,6 +56,12 @@ en:
         feature_1_link: "register in %{org_name}"
         feature_2: "All registered voters over the age of 16 can vote."
         feature_3: "The results of all votes are binding on the municipal government."
+      processes:
+        title: "Processes"
+        description: "In the %{link} section, citizens participate in the drafting and modification of regulations affecting the city and can give their opinion on municipal policies in previous debates."
+        link: "processes"
+        feature: "To participate in a process you have to %{sign_up} and check the %{link} page periodically to see which regulations and policies are being discussed and consulted."
+        sign_up: "sign up on %{org}"
       faq:
         title: "Technical problems?"
         description: "Read the FAQs and solve your questions."

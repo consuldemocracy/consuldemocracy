@@ -194,6 +194,7 @@ get 'mas-informacion/faq',                         to: 'pages#show', id: 'help/f
 get 'mas-informacion/debates',                     to: 'pages#show', id: 'help/debates/index',          as: 'more_info_debates'
 get 'mas-informacion/propuestas',                  to: 'pages#show', id: 'help/proposals/index',        as: 'more_info_proposals'
 get 'mas-informacion/votaciones',                  to: 'pages#show', id: 'help/polls/index',            as: 'more_info_polls'
+get 'mas-informacion/procesos',                    to: 'pages#show', id: 'help/processes/index',        as: 'more_info_processes'
 get 'mas-informacion/votaciones/febrero-2017',     to: 'pages#show', id: 'help/polls/february_2017',    as: 'more_info_polls_february'
 get 'mas-informacion/votaciones/octubre-2017',     to: 'pages#show', id: 'help/polls/october_2017',     as: 'more_info_polls_october'
 get 'mas-informacion/presupuestos-participativos', to: 'pages#show', id: 'help/budgets/index',          as: 'more_info_budgets'
