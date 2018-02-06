@@ -51,7 +51,10 @@ feature 'Residence' do
         click_link "Validate document"
       end
 
-      click_button 'Validate document'
+      within("#new_residence") do
+        click_button "Validate document"
+      end
+
       expect(page).to have_content(/\d errors? prevented the verification of this document/)
     end
 
