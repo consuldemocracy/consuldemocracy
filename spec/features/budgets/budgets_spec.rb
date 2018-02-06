@@ -308,8 +308,8 @@ feature 'Budgets' do
         login_as(level_two_user)
 
         visit budget_path(budget)
-
         expect(page).to have_link "Create a budget investment"
+
       end
 
       scenario "Unverified user" do
