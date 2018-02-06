@@ -58,7 +58,7 @@ module ApplicationHelper
   end
 
   def format_price(number)
-    number_to_currency(number, precision: 0, locale: I18n.default_locale)
+    number_to_currency(number, precision: 0, locale: I18n.locale)
   end
 
   def kaminari_path(url)
