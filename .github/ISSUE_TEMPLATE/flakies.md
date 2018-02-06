@@ -3,6 +3,8 @@ Tests that fail randomly are called "flakies", this one seems to be one:
 
 **Randomized seed:** FILL_WITH_RANDOM_SEED
 
+**Travis failed build:** FILL_WITH_TRAVIS_FAILED_BUILD_LINK
+
 **Failure:**
 
 ```

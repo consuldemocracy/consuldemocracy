@@ -195,6 +195,12 @@ es:
       text: "Consulta el estado de los proyectos ganadores de la primera edición de presupuestos participativos."
       link: "Descargar los Resultados 2016"
       alt: "Cancha de baloncesto"
+    arroyofresno:
+      label: "Debate previo"
+      title: "Reforestación del Parque de Arroyofresno"
+      text: "Haz tus aportaciones a las cinco preguntas sobre el parque ubicado en Fuencarral-El Pardo."
+      link: "Participar en el debate"
+      alt: "Parque de Arroyofresno"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"

@@ -426,10 +426,11 @@ feature 'CSV Exporter' do
     end
 
     scenario "Uppercase and lowercase tags work ok together for proposals" do
-      create(:tag, name: "Health")
-      create(:tag, name: "health")
-      create(:proposal, tag_list: "health")
-      create(:proposal, tag_list: "Health")
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      proposal1.tags << create(:tag, name: "Health")
+      proposal2.tags << create(:tag, name: "health")
+
       @csv_exporter.export
 
       visit csv_path_for("tags")
@@ -440,10 +441,11 @@ feature 'CSV Exporter' do
     end
 
     scenario "Uppercase and lowercase tags work ok together for debates" do
-      create(:tag, name: "Health")
-      create(:tag, name: "health")
-      create(:debate, tag_list: "Health")
-      create(:debate, tag_list: "health")
+      debate1 = create(:debate)
+      debate2 = create(:debate)
+      debate1.tags << create(:tag, name: "Health")
+      debate2.tags << create(:tag, name: "health")
+
       @csv_exporter.export
 
       visit csv_path_for("tags")
