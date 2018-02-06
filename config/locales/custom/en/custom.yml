@@ -192,6 +192,12 @@ en:
       text: "Check the status of the winning projects of the first edition of participatory budgets."
       link: "Download 2016 results"
       alt: "Basketball court"
+    arroyofresno:
+      label: "Previous Debate"
+      title: "Reforestation of the Arroyofresno Park"
+      text: "Contribute to the five questions about the park located in Fuencarral-El Pardo."
+      link: "Participate in the debate"
+      alt: "Arroyofresno Park"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
