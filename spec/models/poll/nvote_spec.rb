@@ -92,7 +92,7 @@ describe Poll::Nvote do
 
       expect(nvote.url).to start_with("https://")
       expect(nvote.url.length).to be > 64
-      expect(nvote.url).to include "https://prevotsecdecide.madrid.es"
+      expect(nvote.url).to include "https://nvotes.madrid.es"
       expect(nvote.url).to include "booth/1234"
       expect(nvote.url).to include "vote/#{Poll::Nvote.generate_hash(nvote.generate_message)}/#{nvote.generate_message}"
     end
