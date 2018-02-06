@@ -7,8 +7,8 @@ feature 'Nvotes' do
   end
 
   scenario "Check correct configuration" do
-    expect(Rails.application.secrets["nvotes_shared_key"]).to eq("")
-    expect(Rails.application.secrets["nvotes_server_url"]).to eq("")
+    expect(Rails.application.secrets["nvotes_shared_key"]).not_to eq("")
+    expect(Rails.application.secrets["nvotes_server_url"]).not_to eq("")
   end
 
   scenario "Send vote", :selenium do
