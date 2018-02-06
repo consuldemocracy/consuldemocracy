@@ -126,14 +126,14 @@ feature 'Budgets' do
       Setting['feature.map'] = true
     end
 
-    xscenario "Display investment's map location markers" , :js do
+    scenario "Display investment's map location markers" , :js do
       investment1 = create(:budget_investment, heading: heading)
       investment2 = create(:budget_investment, heading: heading)
       investment3 = create(:budget_investment, heading: heading)
 
-      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234)
-      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235)
-      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236)
+      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
+      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
+      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
 
       visit budgets_path
 
