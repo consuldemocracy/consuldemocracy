@@ -319,6 +319,6 @@ feature 'Admin budgets' do
   end
 end
 
-def translated_phase_name(phase_kind: phase_kind)
+def translated_phase_name(phase_kind: kind)
   I18n.t("budgets.phase.#{phase_kind}")
 end
