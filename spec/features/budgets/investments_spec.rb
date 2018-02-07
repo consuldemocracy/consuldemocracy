@@ -564,12 +564,12 @@ feature 'Budget Investments' do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
-        visit budget_investments_path(budget, heading: heading)
+        visit budget_investments_path(budget, heading: heading, random_seed: '0.8')
         @first_user_investments_order = investments_order
       end
 
       in_browser(:two) do
-        visit budget_investments_path(budget, heading: heading)
+        visit budget_investments_path(budget, heading: heading, random_seed: '-0.1')
         @second_user_investments_order = investments_order
       end
 
