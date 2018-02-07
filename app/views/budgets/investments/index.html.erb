@@ -27,7 +27,7 @@
     <%= render '/budgets/investments/header' %>
   <% end %>
 
-  <% if params[:search].present? %>
+  <% if params[:search].present? || params[:advanced_search].present?  %>
     <div class="highlight no-margin-top padding margin-bottom">
       <div class="row">
         <div class="small-12 column">
@@ -64,6 +64,8 @@
           </div>
         </div>
       <% end %>
+
+      <%= render("shared/advanced_search", search_path: budget_investments_url(@budget)) %>
 
       <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 

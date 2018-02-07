@@ -119,7 +119,7 @@ Setting['verification_offices_url'] = 'http://www.madrid.es/portales/munimadrid/
 Setting['min_age_to_participate'] = 16
 Setting['min_age_to_verify'] = 16
 
-# Proposal improvement url path ('/more-information/proposal-improvement')
+# Proposal improvement url path ('/help/proposal-improvement')
 Setting['proposal_improvement_path'] = nil
 
 # City map feature default configuration (Greenwich)

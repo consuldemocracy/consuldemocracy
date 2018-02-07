@@ -333,7 +333,7 @@ feature 'Tracking' do
       visit "presupuestos"
       expect(page.html).to have_content "weboConv(33);"
 
-      visit "more-information"
+      visit help_path
       expect(page.html).to have_content "weboConv(34);"
     end
 

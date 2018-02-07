@@ -1,0 +1,35 @@
+<div class="row section-content">
+  <div class="small-12 column">
+    <h3 id="budgets" data-magellan-target="budgets">
+      <%= t("pages.help.budgets.title") %>
+    </h3>
+    <p>
+      <%= link_to t("pages.help.budgets.detail"), more_info_budgets_path, class: "small" %>
+    </p>
+    <p>
+      <%= t("pages.help.budgets.description",
+           link: link_to(t("pages.help.budgets.link"), budgets_path)).html_safe %>
+    </p>
+    <ul class="features">
+      <li>
+        <%= t("pages.help.budgets.feature") %>
+      </li>
+      <li>
+        <%= t("pages.help.budgets.feature_2") %>
+      </li>
+      <li><%= t("pages.help.budgets.phase_1_html",
+                org: setting['org_name']).html_safe %></li>
+      <li><%= t("pages.help.budgets.phase_2_html",
+                link: link_to(t("pages.help.budgets.phase_2_link"), kit_decide_path)).html_safe %></li>
+      <li><%= t("pages.help.budgets.phase_3_html") %></li>
+      <li><%= t("pages.help.budgets.phase_4_html") %></li>
+    </ul>
+
+    <p><%= t("pages.help.budgets.phase_5_html") %></p>
+
+    <figure>
+      <%= image_tag "help/budgets_#{I18n.locale}.png", alt: t("pages.help.budgets.image_alt") %>
+      <figcaption><%= t("pages.help.budgets.figcaption_html") %></figcaption>
+    </figure>
+  </div>
+</div>

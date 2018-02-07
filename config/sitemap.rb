@@ -83,7 +83,7 @@ SitemapGenerator::Sitemap.create do
   add first_voting_path
 
   # more information pages
-  add more_info_path
+  add help_path
   add how_to_use_path
   add faq_path
   add more_info_proposals_path

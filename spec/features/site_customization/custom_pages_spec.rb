@@ -82,7 +82,7 @@ feature "Custom Pages" do
           locale: "en"
         )
 
-        visit more_info_path
+        visit help_path
 
         expect(page).to have_content("Another custom page")
       end
@@ -95,7 +95,7 @@ feature "Custom Pages" do
           locale: "en"
         )
 
-        visit more_info_path
+        visit help_path
 
         expect(page).not_to have_content("Another custom page")
 
@@ -114,7 +114,7 @@ feature "Custom Pages" do
           locale: "fr"
         )
 
-        visit more_info_path
+        visit help_path
 
         expect(page).not_to have_content("Ce texte est en français")
 
