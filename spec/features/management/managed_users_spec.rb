@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-feature 'Managed User' do
+describe 'Managed User' do
 
-  background do
+  before do
     login_as_manager
   end
 
   context "Currently managed user" do
 
-    scenario "No managed user" do
+    it "No managed user" do
       visit management_document_verifications_path
       expect(page).not_to have_css ".account-info"
     end
 
-    scenario "User is already level three verified" do
+    it "User is already level three verified" do
       user = create(:user, :level_three)
 
       visit management_document_verifications_path
@@ -30,7 +30,7 @@ feature 'Managed User' do
       end
     end
 
-    scenario "User becomes verified as level three" do
+    it "User becomes verified as level three" do
       user = create(:user, :level_two)
 
       visit management_document_verifications_path
@@ -51,7 +51,7 @@ feature 'Managed User' do
       end
     end
 
-    scenario "User becomes verified as level two (pending email confirmation for level three)" do
+    it "User becomes verified as level two (pending email confirmation for level three)" do
       login_as_manager
 
       user = create(:user)
@@ -84,7 +84,7 @@ feature 'Managed User' do
       end
     end
 
-    scenario "User is created with email as level three from scratch" do
+    it "User is created with email as level three from scratch" do
       login_as_manager
 
       visit management_document_verifications_path
@@ -112,7 +112,7 @@ feature 'Managed User' do
       end
     end
 
-    scenario "User is created without email as level three from scratch" do
+    it "User is created without email as level three from scratch" do
       login_as_manager
 
       visit management_document_verifications_path
@@ -140,7 +140,7 @@ feature 'Managed User' do
     end
   end
 
-  scenario "Close the currently managed user session" do
+  it "Close the currently managed user session" do
     user = create(:user, :level_three)
 
     visit management_document_verifications_path

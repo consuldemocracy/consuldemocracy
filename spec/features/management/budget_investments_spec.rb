@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Budget Investments' do
+describe 'Budget Investments' do
 
-  background do
+  before do
     login_as_manager
     @budget = create(:budget, phase: 'selecting', name: "2033")
     @group = create(:budget_group, budget: @budget, name: 'Whole city')
@@ -12,7 +12,7 @@ feature 'Budget Investments' do
   context "Create" do
     before { @budget.update(phase: 'accepting') }
 
-    scenario 'Creating budget investments on behalf of someone, selecting a budget' do
+    it 'Creating budget investments on behalf of someone, selecting a budget' do
       user = create(:user, :level_two)
 
       login_managed_user(user)
@@ -50,7 +50,7 @@ feature 'Budget Investments' do
       expect(page).to have_content I18n.l(@budget.created_at.to_date)
     end
 
-    scenario "Should not allow unverified users to create budget investments" do
+    it "does not allow unverified users to create budget investments" do
       user = create(:user)
       login_managed_user(user)
 
@@ -62,7 +62,7 @@ feature 'Budget Investments' do
 
   context "Searching" do
 
-    scenario "by title" do
+    it "by title" do
       budget_investment1 = create(:budget_investment, budget: @budget, title: "Show me what you got")
       budget_investment2 = create(:budget_investment, budget: @budget, title: "Get Schwifty")
 
@@ -87,7 +87,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "by heading" do
+    it "by heading" do
       budget_investment1 = create(:budget_investment, budget: @budget, title: "Hey ho",
                                                       heading: create(:budget_heading, name: "District 9"))
       budget_investment2 = create(:budget_investment, budget: @budget, title: "Let's go",
@@ -115,7 +115,7 @@ feature 'Budget Investments' do
     end
   end
 
-  scenario "Listing" do
+  it "Listing" do
     budget_investment1 = create(:budget_investment, budget: @budget, title: "Show me what you got")
     budget_investment2 = create(:budget_investment, budget: @budget, title: "Get Schwifty")
 
@@ -144,7 +144,7 @@ feature 'Budget Investments' do
     end
   end
 
-  scenario "Listing - managers can see budgets in accepting phase" do
+  it "Listing - managers can see budgets in accepting phase" do
     accepting_budget = create(:budget, phase: "accepting")
     reviewing_budget = create(:budget, phase: "reviewing")
     selecting_budget = create(:budget, phase: "selecting")
@@ -168,7 +168,7 @@ feature 'Budget Investments' do
     expect(page).not_to have_content(finished.name)
   end
 
-  scenario "Listing - admins can see budgets in accepting, reviewing and selecting phases" do
+  it "Listing - admins can see budgets in accepting, reviewing and selecting phases" do
     accepting_budget = create(:budget, phase: "accepting")
     reviewing_budget = create(:budget, phase: "reviewing")
     selecting_budget = create(:budget, phase: "selecting")
@@ -201,7 +201,7 @@ feature 'Budget Investments' do
 
   context "Supporting" do
 
-    scenario 'Supporting budget investments on behalf of someone in index view', :js do
+    it 'Supporting budget investments on behalf of someone in index view', :js do
       budget_investment = create(:budget_investment, budget: @budget, heading: @heading)
 
       user = create(:user, :level_two)
@@ -223,7 +223,7 @@ feature 'Budget Investments' do
     end
 
     # This tests passes ok locally but fails on the last two lines in Travis
-    xscenario 'Supporting budget investments on behalf of someone in show view', :js do
+    xit 'Supporting budget investments on behalf of someone in show view', :js do
       budget_investment = create(:budget_investment, budget: @budget)
 
       user = create(:user, :level_two)
@@ -244,7 +244,7 @@ feature 'Budget Investments' do
       expect(page).to have_content "You have already supported this. Share it!"
     end
 
-    scenario "Should not allow unverified users to vote proposals" do
+    it "does not allow unverified users to vote proposals" do
       budget_investment = create(:budget_investment, budget: @budget)
 
       user = create(:user)
@@ -258,7 +258,7 @@ feature 'Budget Investments' do
 
   context "Printing" do
 
-    scenario 'Printing budget investments' do
+    it 'Printing budget investments' do
       16.times { create(:budget_investment, budget: @budget, heading: @heading) }
 
       click_link "Print Budget Investments"
@@ -272,7 +272,7 @@ feature 'Budget Investments' do
       expect(page).to have_css("a[href='javascript:window.print();']", text: 'Print')
     end
 
-    scenario "Filtering budget investments by heading to be printed", :js do
+    it "Filtering budget investments by heading to be printed", :js do
       district_9 = create(:budget_heading, group: @group, name: "District Nine")
       another_heading = create(:budget_heading, group: @group)
       low_investment = create(:budget_investment, budget: @budget, title: 'Nuke district 9', heading: district_9, cached_votes_up: 1)

@@ -1,22 +1,22 @@
 require 'rails_helper'
 
-feature 'Votes' do
+describe 'Votes' do
 
-  background do
+  before do
     @manuela = create(:user, verified_at: Time.current)
   end
 
-  feature 'Investments' do
+  describe 'Investments' do
 
     let(:budget)  { create(:budget, phase: "selecting") }
     let(:group)   { create(:budget_group, budget: budget) }
     let(:heading) { create(:budget_heading, group: group) }
 
-    background { login_as(@manuela) }
+    before { login_as(@manuela) }
 
-    feature 'Index' do
+    describe 'Index' do
 
-      scenario "Index shows user votes on proposals" do
+      it "Index shows user votes on proposals" do
         investment1 = create(:budget_investment, heading: heading)
         investment2 = create(:budget_investment, heading: heading)
         investment3 = create(:budget_investment, heading: heading)
@@ -39,7 +39,7 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Create from spending proposal index', :js do
+      it 'Create from spending proposal index', :js do
         investment = create(:budget_investment, heading: heading, budget: budget)
 
         visit budget_investments_path(budget, heading_id: heading.id)
@@ -53,17 +53,17 @@ feature 'Votes' do
       end
     end
 
-    feature 'Single spending proposal' do
-      background do
+    describe 'Single spending proposal' do
+      before do
         @investment = create(:budget_investment, budget: budget, heading: heading)
       end
 
-      scenario 'Show no votes' do
+      it 'Show no votes' do
         visit budget_investment_path(budget, @investment)
         expect(page).to have_content "No supports"
       end
 
-      scenario 'Trying to vote multiple times', :js do
+      it 'Trying to vote multiple times', :js do
         visit budget_investment_path(budget, @investment)
 
         within('.supports') do
@@ -74,7 +74,7 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Create from proposal show', :js do
+      it 'Create from proposal show', :js do
         visit budget_investment_path(budget, @investment)
 
         within('.supports') do
@@ -86,7 +86,7 @@ feature 'Votes' do
       end
     end
 
-    scenario 'Disable voting on spending proposals', :js do
+    it 'Disable voting on spending proposals', :js do
       login_as(@manuela)
       budget.update(phase: "reviewing")
       investment = create(:budget_investment, budget: budget, heading: heading)

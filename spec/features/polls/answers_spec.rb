@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-feature 'Answers' do
+describe 'Answers' do
 
   let(:question) { create(:poll_question) }
   let(:admin) { create(:administrator) }
 
-  background do
+  before do
     login_as(admin.user)
   end
 
-  scenario "Index" do
+  it "Index" do
     answer1 = create(:poll_question_answer, question: question, given_order: 2)
     answer2 = create(:poll_question_answer, question: question, given_order: 1)
 
@@ -24,7 +24,7 @@ feature 'Answers' do
     end
   end
 
-  scenario "Create" do
+  it "Create" do
     visit admin_question_path(question)
 
     click_link "Add answer"
@@ -38,7 +38,7 @@ feature 'Answers' do
     expect(page).to have_content "Adding more trees, creating a play area..."
   end
 
-  scenario 'Add video to answer' do
+  it 'Add video to answer' do
     answer1 = create(:poll_question_answer, question: question)
     answer2 = create(:poll_question_answer, question: question)
 

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Admin feature flags' do
+describe 'Admin feature flags' do
 
-  background do
+  before do
     Setting['feature.spending_proposals'] = true
     Setting['feature.spending_proposal_features.voting_allowed'] = true
     login_as(create(:administrator).user)
@@ -13,7 +13,7 @@ feature 'Admin feature flags' do
     Setting['feature.spending_proposal_features.voting_allowed'] = nil
   end
 
-  scenario 'Enabled features are listed on menu' do
+  it 'Enabled features are listed on menu' do
     visit admin_root_path
 
     within('#side_menu') do
@@ -22,7 +22,7 @@ feature 'Admin feature flags' do
     end
   end
 
-  scenario 'Disable a feature' do
+  it 'Disable a feature' do
     setting_id = Setting.find_by(key: 'feature.spending_proposals').id
 
     visit admin_settings_path
@@ -44,7 +44,7 @@ feature 'Admin feature flags' do
     expect{ visit admin_spending_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
-  scenario 'Enable a disabled feature' do
+  it 'Enable a disabled feature' do
     Setting['feature.spending_proposals'] = nil
     setting_id = Setting.find_by(key: 'feature.spending_proposals').id
 

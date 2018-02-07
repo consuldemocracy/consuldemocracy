@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Internal valuation comments on Budget::Investments' do
+describe 'Internal valuation comments on Budget::Investments' do
   let(:user) { create(:user) }
   let(:valuator_user) { create(:valuator).user }
   let(:admin_user) { create(:administrator).user }
   let(:budget) { create(:budget, :valuating) }
   let(:investment) { create(:budget_investment, budget: budget) }
 
-  background do
+  before do
     Setting['feature.budgets'] = true
     investment.valuators << valuator_user.valuator
     login_as(valuator_user)
@@ -19,7 +19,7 @@ feature 'Internal valuation comments on Budget::Investments' do
 
   context 'Show valuation comments' do
     context 'Show valuation comments without public comments' do
-      background do
+      before do
         public_comment = create(:comment, commentable: investment, body: 'Public comment')
         create(:comment, commentable: investment, author: valuator_user,
                          body: 'Public valuator comment')
@@ -37,7 +37,7 @@ feature 'Internal valuation comments on Budget::Investments' do
                                      body: 'Valuator Valuation response', parent: admin_response)
       end
 
-      scenario 'Valuation Show page without public comments' do
+      it 'Valuation Show page without public comments' do
         visit valuation_budget_budget_investment_path(budget, investment)
 
         expect(page).not_to have_content('Comment as admin')
@@ -50,7 +50,7 @@ feature 'Internal valuation comments on Budget::Investments' do
         expect(page).to     have_content('Valuator Valuation response')
       end
 
-      scenario 'Valuation Edit page without public comments' do
+      it 'Valuation Edit page without public comments' do
         visit edit_valuation_budget_budget_investment_path(budget, investment)
 
         expect(page).not_to have_content('Comment as admin')
@@ -64,7 +64,7 @@ feature 'Internal valuation comments on Budget::Investments' do
       end
     end
 
-    scenario 'Collapsable comments', :js do
+    it 'Collapsable comments', :js do
       parent_comment = create(:comment, :valuation, author: valuator_user, body: "Main comment",
                                                     commentable: investment)
       child_comment  = create(:comment, :valuation, author: valuator_user, body: "First child",
@@ -95,7 +95,7 @@ feature 'Internal valuation comments on Budget::Investments' do
       expect(page).not_to have_content grandchild_comment.body
     end
 
-    scenario 'Comment order' do
+    it 'Comment order' do
       create(:comment, :valuation, commentable: investment,
                                    author: valuator_user,
                                    body: 'Valuator Valuation',
@@ -110,7 +110,7 @@ feature 'Internal valuation comments on Budget::Investments' do
       expect(admin_valuation.body).to appear_before('Valuator Valuation')
     end
 
-    scenario 'Turns links into html links' do
+    it 'Turns links into html links' do
       create(:comment, :valuation, author: admin_user, commentable: investment,
                                    body: 'Check http://rubyonrails.org/')
 
@@ -124,7 +124,7 @@ feature 'Internal valuation comments on Budget::Investments' do
       end
     end
 
-    scenario 'Sanitizes comment body for security' do
+    it 'Sanitizes comment body for security' do
       comment_with_js = "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">"\
                         "click me<a/> http://www.url.com"
       create(:comment, :valuation, author: admin_user, commentable: investment,
@@ -139,7 +139,7 @@ feature 'Internal valuation comments on Budget::Investments' do
       end
     end
 
-    scenario 'Paginated comments' do
+    it 'Paginated comments' do
       per_page = 10
       (per_page + 2).times do
         create(:comment, :valuation, commentable: investment, author: valuator_user)
@@ -160,7 +160,7 @@ feature 'Internal valuation comments on Budget::Investments' do
   end
 
   context 'Valuation comment creation' do
-    scenario 'Normal users cannot create valuation comments altering public comments form', :js do
+    it 'Normal users cannot create valuation comments altering public comments form', :js do
       logout
       login_as(user)
       visit budget_investment_path(investment.budget, investment)
@@ -176,7 +176,7 @@ feature 'Internal valuation comments on Budget::Investments' do
       expect(page).not_to have_content('HACKERMAN IS HERE')
     end
 
-    scenario 'Create comment', :js do
+    it 'Create comment', :js do
       visit valuation_budget_budget_investment_path(budget, investment)
 
       fill_in "comment-body-budget_investment_#{investment.id}", with: 'Have you thought about...?'
@@ -190,7 +190,7 @@ feature 'Internal valuation comments on Budget::Investments' do
       expect(page).not_to have_content('Have you thought about...?')
     end
 
-    scenario 'Errors on create without comment text', :js do
+    it 'Errors on create without comment text', :js do
       visit valuation_budget_budget_investment_path(budget, investment)
 
       click_button 'Publish comment'
@@ -198,7 +198,7 @@ feature 'Internal valuation comments on Budget::Investments' do
       expect(page).to have_content "Can't be blank"
     end
 
-    scenario 'Reply to existing valuation', :js do
+    it 'Reply to existing valuation', :js do
       comment = create(:comment, :valuation, author: admin_user, commentable: investment)
 
       login_as(valuator_user)
@@ -221,7 +221,7 @@ feature 'Internal valuation comments on Budget::Investments' do
       expect(page).not_to have_content('It will be done next week.')
     end
 
-    scenario 'Errors on reply without comment text', :js do
+    it 'Errors on reply without comment text', :js do
       comment = create(:comment, :valuation, author: admin_user, commentable: investment)
 
       visit valuation_budget_budget_investment_path(budget, investment)
@@ -235,7 +235,7 @@ feature 'Internal valuation comments on Budget::Investments' do
 
     end
 
-    scenario "Multiple nested replies", :js do
+    it "Multiple nested replies", :js do
       parent = create(:comment, :valuation, author: valuator_user, commentable: investment)
 
       7.times do
@@ -252,7 +252,7 @@ feature 'Internal valuation comments on Budget::Investments' do
     end
   end
 
-  scenario "Erasing a comment's author" do
+  it "Erasing a comment's author" do
     comment = create(:comment, :valuation, author: valuator_user, commentable: investment,
                                            body: "this should be visible")
     comment.user.erase
@@ -264,8 +264,8 @@ feature 'Internal valuation comments on Budget::Investments' do
     end
   end
 
-  feature "Administrators" do
-    scenario "can create valuation comment as an administrator", :js do
+  describe "Administrators" do
+    it "can create valuation comment as an administrator", :js do
       login_as(admin_user)
       visit valuation_budget_budget_investment_path(budget, investment)
 
@@ -281,7 +281,7 @@ feature 'Internal valuation comments on Budget::Investments' do
       end
     end
 
-    scenario "can create valuation reply as an administrator", :js do
+    it "can create valuation reply as an administrator", :js do
       comment = create(:comment, :valuation, author: valuator_user, commentable: investment)
 
       login_as(admin_user)

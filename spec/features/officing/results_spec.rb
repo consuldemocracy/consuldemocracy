@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Officing Results' do
+describe 'Officing Results' do
 
-  background do
+  before do
     @poll_officer = create(:poll_officer)
     @officer_assignment = create(:poll_officer_assignment, :final, officer: @poll_officer)
     @poll = @officer_assignment.booth_assignment.poll
@@ -17,7 +17,7 @@ feature 'Officing Results' do
     login_as(@poll_officer.user)
   end
 
-  scenario 'Only polls where user is officer for results are accessible' do
+  it 'Only polls where user is officer for results are accessible' do
     regular_officer_assignment_1 = create(:poll_officer_assignment, officer: @poll_officer)
     regular_officer_assignment_2 = create(:poll_officer_assignment, officer: @poll_officer)
 
@@ -43,7 +43,7 @@ feature 'Officing Results' do
     expect(page).to have_content('You are allowed to add results for this poll')
   end
 
-  scenario 'Add results' do
+  it 'Add results' do
     visit officing_root_path
 
     within('#side_menu') do
@@ -80,7 +80,7 @@ feature 'Officing Results' do
     end
   end
 
-  scenario 'Edit result' do
+  it 'Edit result' do
     partial_result = create(:poll_partial_result,
                       officer_assignment: @officer_assignment,
                       booth_assignment: @officer_assignment.booth_assignment,
@@ -121,7 +121,7 @@ feature 'Officing Results' do
     within("#question_#{@question_1.id}_1_result") { expect(page).to have_content('200') }
   end
 
-  scenario 'Index lists all questions and answers' do
+  it 'Index lists all questions and answers' do
     partial_result = create(:poll_partial_result,
                       officer_assignment: @officer_assignment,
                       booth_assignment: @officer_assignment.booth_assignment,

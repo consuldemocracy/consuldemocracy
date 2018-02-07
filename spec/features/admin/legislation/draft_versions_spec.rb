@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-feature 'Admin legislation draft versions' do
+describe 'Admin legislation draft versions' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
   context "Feature flag" do
 
-    scenario 'Disabled with a feature flag' do
+    it 'Disabled with a feature flag' do
       Setting['feature.legislation'] = nil
       process = create(:legislation_process)
       expect{ visit admin_legislation_process_draft_versions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
@@ -19,7 +19,7 @@ feature 'Admin legislation draft versions' do
 
   context "Index" do
 
-    scenario 'Displaying legislation process draft versions' do
+    it 'Displaying legislation process draft versions' do
       process = create(:legislation_process, title: 'An example legislation process')
       draft_version = create(:legislation_draft_version, process: process, title: 'Version 1')
 
@@ -35,7 +35,7 @@ feature 'Admin legislation draft versions' do
   end
 
   context 'Create' do
-    scenario 'Valid legislation draft version' do
+    it 'Valid legislation draft version' do
       process = create(:legislation_process, title: 'An example legislation process')
 
       visit admin_root_path
@@ -67,7 +67,7 @@ feature 'Admin legislation draft versions' do
   end
 
   context 'Update' do
-    scenario 'Valid legislation draft version', :js do
+    it 'Valid legislation draft version', :js do
       process = create(:legislation_process, title: 'An example legislation process')
       draft_version = create(:legislation_draft_version, title: 'Version 1', process: process)
 

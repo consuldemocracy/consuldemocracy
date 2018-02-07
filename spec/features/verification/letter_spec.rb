@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Verify Letter' do
+describe 'Verify Letter' do
 
-  scenario 'Request a letter' do
+  it 'Request a letter' do
     user = create(:user, residence_verified_at: Time.current,
                          confirmed_phone:       "611111111")
 
@@ -20,7 +20,7 @@ feature 'Verify Letter' do
     expect(user.letter_verification_code).to be
   end
 
-  scenario 'Go to office instead of send letter' do
+  it 'Go to office instead of send letter' do
     Setting["verification_offices_url"] = "http://offices.consul"
     user = create(:user, residence_verified_at: Time.current,
                          confirmed_phone:       "611111111")
@@ -31,7 +31,7 @@ feature 'Verify Letter' do
     expect(page).to have_link "Citizen Support Offices", href: "http://offices.consul"
   end
 
-  scenario "Deny access unless verified residence" do
+  it "Deny access unless verified residence" do
     user = create(:user)
 
     login_as(user)
@@ -41,7 +41,7 @@ feature 'Verify Letter' do
     expect(page).to have_current_path(new_residence_path)
   end
 
-  scenario "Deny access unless verified phone/email" do
+  it "Deny access unless verified phone/email" do
     user = create(:user, residence_verified_at: Time.current)
 
     login_as(user)
@@ -53,7 +53,7 @@ feature 'Verify Letter' do
 
   context "Code verification" do
 
-    scenario "Valid verification user logged in" do
+    it "Valid verification user logged in" do
       user = create(:user, residence_verified_at: Time.current,
                            confirmed_phone:       "611111111",
                            letter_verification_code: "123456")
@@ -70,7 +70,7 @@ feature 'Verify Letter' do
       expect(page).to have_current_path(account_path)
     end
 
-    scenario "Valid verification of user failing to add trailing zeros" do
+    it "Valid verification of user failing to add trailing zeros" do
       user = create(:user, residence_verified_at: Time.current,
                            confirmed_phone:       "611111111",
                            letter_verification_code: "012345")
@@ -87,7 +87,7 @@ feature 'Verify Letter' do
       expect(page).to have_current_path(account_path)
     end
 
-    scenario "Valid verification user not logged in" do
+    it "Valid verification user not logged in" do
       user = create(:user, residence_verified_at: Time.current,
                            confirmed_phone:       "611111111",
                            letter_verification_code: "123456")
@@ -103,7 +103,7 @@ feature 'Verify Letter' do
       expect(page).to have_current_path(account_path)
     end
 
-    scenario "Error messages on authentication" do
+    it "Error messages on authentication" do
       visit edit_letter_path
 
       click_button "Verify my account"
@@ -111,7 +111,7 @@ feature 'Verify Letter' do
       expect(page).to have_content "Invalid email or password."
     end
 
-    scenario "Error messages on verification" do
+    it "Error messages on verification" do
       user = create(:user, residence_verified_at: Time.current,
                            confirmed_phone:       "611111111")
 
@@ -123,7 +123,7 @@ feature 'Verify Letter' do
       expect(page).to have_content "can't be blank"
     end
 
-    scenario '6 tries allowed' do
+    it '6 tries allowed' do
       user = create(:user, residence_verified_at:    Time.current,
                            confirmed_phone:          "611111111",
                            letter_verification_code: "123456")

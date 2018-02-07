@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-feature 'Votes' do
+describe 'Votes' do
 
-  background do
+  before do
     @manuela = create(:user, verified_at: Time.current)
     @pablo = create(:user)
   end
 
-  feature 'Debates' do
-    background { login_as(@manuela) }
+  describe 'Debates' do
+    before { login_as(@manuela) }
 
-    scenario "Index shows user votes on debates" do
+    it "Index shows user votes on debates" do
 
       debate1 = create(:debate)
       debate2 = create(:debate)
@@ -59,9 +59,9 @@ feature 'Votes' do
       end
     end
 
-    feature 'Single debate' do
+    describe 'Single debate' do
 
-      scenario 'Show no votes' do
+      it 'Show no votes' do
         visit debate_path(create(:debate))
 
         expect(page).to have_content "No votes"
@@ -79,7 +79,7 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Update', :js do
+      it 'Update', :js do
         visit debate_path(create(:debate))
 
         find('.in-favor a').click
@@ -98,7 +98,7 @@ feature 'Votes' do
         expect(page).to have_content "1 vote"
       end
 
-      scenario 'Trying to vote multiple times', :js do
+      it 'Trying to vote multiple times', :js do
         visit debate_path(create(:debate))
 
         find('.in-favor a').click
@@ -115,7 +115,7 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Show' do
+      it 'Show' do
         debate = create(:debate)
         create(:vote, voter: @manuela, votable: debate, vote_flag: true)
         create(:vote, voter: @pablo, votable: debate, vote_flag: false)
@@ -135,7 +135,7 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Create from debate show', :js do
+      it 'Create from debate show', :js do
         visit debate_path(create(:debate))
 
         find('.in-favor a').click
@@ -153,7 +153,7 @@ feature 'Votes' do
         expect(page).to have_content "1 vote"
       end
 
-      scenario 'Create in index', :js do
+      it 'Create in index', :js do
         create(:debate)
         visit debates_path
 
@@ -178,10 +178,10 @@ feature 'Votes' do
     end
   end
 
-  feature 'Proposals' do
-    background { login_as(@manuela) }
+  describe 'Proposals' do
+    before { login_as(@manuela) }
 
-    scenario "Index shows user votes on proposals" do
+    it "Index shows user votes on proposals" do
       proposal1 = create(:proposal)
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
@@ -204,17 +204,17 @@ feature 'Votes' do
       end
     end
 
-    feature 'Single proposal' do
-      background do
+    describe 'Single proposal' do
+      before do
         @proposal = create(:proposal)
       end
 
-      scenario 'Show no votes' do
+      it 'Show no votes' do
         visit proposal_path(@proposal)
         expect(page).to have_content "No supports"
       end
 
-      scenario 'Trying to vote multiple times', :js do
+      it 'Trying to vote multiple times', :js do
         visit proposal_path(@proposal)
 
         within('.supports') do
@@ -225,7 +225,7 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Show' do
+      it 'Show' do
         create(:vote, voter: @manuela, votable: @proposal, vote_flag: true)
         create(:vote, voter: @pablo, votable: @proposal, vote_flag: true)
 
@@ -236,7 +236,7 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Create from proposal show', :js do
+      it 'Create from proposal show', :js do
         visit proposal_path(@proposal)
 
         within('.supports') do
@@ -247,7 +247,7 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Create in listed proposal in index', :js do
+      it 'Create in listed proposal in index', :js do
         create_featured_proposals
         visit proposals_path
 
@@ -260,7 +260,7 @@ feature 'Votes' do
         expect(page).to have_current_path(proposals_path)
       end
 
-      scenario 'Create in featured proposal in index', :js do
+      it 'Create in featured proposal in index', :js do
         visit proposals_path
 
         within("#proposal_#{@proposal.id}") do
@@ -273,7 +273,7 @@ feature 'Votes' do
     end
   end
 
-  scenario 'Not logged user trying to vote debates', :js do
+  it 'Not logged user trying to vote debates', :js do
     debate = create(:debate)
 
     visit debates_path
@@ -283,7 +283,7 @@ feature 'Votes' do
     end
   end
 
-  scenario 'Not logged user trying to vote proposals', :js do
+  it 'Not logged user trying to vote proposals', :js do
     proposal = create(:proposal)
 
     visit proposals_path
@@ -299,7 +299,7 @@ feature 'Votes' do
     end
   end
 
-  scenario 'Not logged user trying to vote comments in debates', :js do
+  it 'Not logged user trying to vote comments in debates', :js do
     debate = create(:debate)
     comment = create(:comment, commentable: debate)
 
@@ -310,7 +310,7 @@ feature 'Votes' do
     end
   end
 
-  scenario 'Not logged user trying to vote comments in proposals', :js do
+  it 'Not logged user trying to vote comments in proposals', :js do
     proposal = create(:proposal)
     comment = create(:comment, commentable: proposal)
 
@@ -321,7 +321,7 @@ feature 'Votes' do
     end
   end
 
-  scenario 'Anonymous user trying to vote debates', :js do
+  it 'Anonymous user trying to vote debates', :js do
     user = create(:user)
     debate = create(:debate)
 
@@ -343,7 +343,7 @@ feature 'Votes' do
     end
   end
 
-  scenario "Anonymous user trying to vote proposals", :js do
+  it "Anonymous user trying to vote proposals", :js do
     user = create(:user)
     proposal = create(:proposal)
 
@@ -362,8 +362,8 @@ feature 'Votes' do
     end
   end
 
-  feature 'Spending Proposals' do
-    background do
+  describe 'Spending Proposals' do
+    before do
      Setting['feature.spending_proposals'] = true
      Setting['feature.spending_proposal_features.voting_allowed'] = true
      login_as(@manuela)
@@ -374,8 +374,8 @@ feature 'Votes' do
       Setting['feature.spending_proposal_features.voting_allowed'] = nil
     end
 
-    feature 'Index' do
-      scenario "Index shows user votes on proposals" do
+    describe 'Index' do
+      it "Index shows user votes on proposals" do
         spending_proposal1 = create(:spending_proposal)
         spending_proposal2 = create(:spending_proposal)
         spending_proposal3 = create(:spending_proposal)
@@ -398,7 +398,7 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Create from spending proposal index', :js do
+      it 'Create from spending proposal index', :js do
         spending_proposal = create(:spending_proposal)
         visit spending_proposals_path
 
@@ -411,17 +411,17 @@ feature 'Votes' do
       end
     end
 
-    feature 'Single spending proposal' do
-      background do
+    describe 'Single spending proposal' do
+      before do
         @proposal = create(:spending_proposal)
       end
 
-      scenario 'Show no votes' do
+      it 'Show no votes' do
         visit spending_proposal_path(@proposal)
         expect(page).to have_content "No supports"
       end
 
-      scenario 'Trying to vote multiple times', :js do
+      it 'Trying to vote multiple times', :js do
         visit spending_proposal_path(@proposal)
 
         within('.supports') do
@@ -432,7 +432,7 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Create from proposal show', :js do
+      it 'Create from proposal show', :js do
         visit spending_proposal_path(@proposal)
 
         within('.supports') do
@@ -444,7 +444,7 @@ feature 'Votes' do
       end
     end
 
-    scenario 'Disable voting on spending proposals', :js do
+    it 'Disable voting on spending proposals', :js do
       login_as(@manuela)
       Setting["feature.spending_proposal_features.voting_allowed"] = nil
       spending_proposal = create(:spending_proposal)

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'CKEditor' do
+describe 'CKEditor' do
 
-  scenario 'is present before & after turbolinks update page', :js do
+  it 'is present before & after turbolinks update page', :js do
     author = create(:user)
     login_as(author)
 

@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Budgets' do
+describe 'Budgets' do
 
   let(:budget) { create(:budget) }
   let(:level_two_user) { create(:user, :level_two) }
 
   context 'Index' do
 
-    scenario 'Show normal index with links' do
+    it 'Show normal index with links' do
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
       heading1 = create(:budget_heading, group: group1)
@@ -45,7 +45,7 @@ feature 'Budgets' do
       expect(page).not_to have_content("#finished_budgets")
     end
 
-    scenario 'Show finished budgets list' do
+    it 'Show finished budgets list' do
       finished_budget_1 = create(:budget, :finished)
       finished_budget_2 = create(:budget, :finished)
       drafting_budget = create(:budget, :drafting)
@@ -59,7 +59,7 @@ feature 'Budgets' do
       end
     end
 
-    scenario 'Show informing index without links' do
+    it 'Show informing index without links' do
       budget.update_attributes(phase: 'informing')
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group, name: 'Health')
@@ -79,7 +79,7 @@ feature 'Budgets' do
     end
   end
 
-  scenario 'Index shows only published phases' do
+  it 'Index shows only published phases' do
 
     budget.update(phase: :finished)
     phases = budget.phases
@@ -146,7 +146,7 @@ feature 'Budgets' do
 
   context 'Show' do
 
-    scenario "List all groups" do
+    it "List all groups" do
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
 
@@ -155,7 +155,7 @@ feature 'Budgets' do
       budget.groups.each {|group| expect(page).to have_link(group.name)}
     end
 
-    scenario "Links to unfeasible and selected if balloting or later" do
+    it "Links to unfeasible and selected if balloting or later" do
       budget = create(:budget, :selecting)
       group = create(:budget_group, budget: budget)
 
@@ -200,14 +200,14 @@ feature 'Budgets' do
 
     let(:admin) { create(:administrator).user }
 
-    background do
+    before do
       logout
       budget.update(phase: 'drafting')
       create(:budget)
     end
 
     context "Listed" do
-      scenario "Not listed at public budgets list" do
+      it "Not listed at public budgets list" do
         visit budgets_path
 
         expect(page).not_to have_content(budget.name)
@@ -215,17 +215,17 @@ feature 'Budgets' do
     end
 
     context "Shown" do
-      scenario "Not accesible to guest users" do
+      it "Not accesible to guest users" do
         expect { visit budget_path(budget) }.to raise_error(ActionController::RoutingError)
       end
 
-      scenario "Not accesible to logged users" do
+      it "Not accesible to logged users" do
         login_as(level_two_user)
 
         expect { visit budget_path(budget) }.to raise_error(ActionController::RoutingError)
       end
 
-      scenario "Is accesible to admin users" do
+      it "Is accesible to admin users" do
         login_as(admin)
         visit budget_path(budget)
 
@@ -237,13 +237,13 @@ feature 'Budgets' do
 
   context 'Accepting' do
 
-    background do
+    before do
       budget.update(phase: 'accepting')
     end
 
     context "Permissions" do
 
-      scenario "Verified user" do
+      it "Verified user" do
         login_as(level_two_user)
 
         visit budget_path(budget)
@@ -251,7 +251,7 @@ feature 'Budgets' do
 
       end
 
-      scenario "Unverified user" do
+      it "Unverified user" do
         user = create(:user)
         login_as(user)
 
@@ -260,7 +260,7 @@ feature 'Budgets' do
         expect(page).to have_content "To create a new budget investment verify your account."
       end
 
-      scenario "user not logged in" do
+      it "user not logged in" do
         visit budget_path(budget)
 
         expect(page).to have_content "To create a new budget investment you must sign in or sign up"

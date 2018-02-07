@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Moderate comments' do
+describe 'Moderate comments' do
 
-  scenario 'Hide', :js do
+  it 'Hide', :js do
     citizen = create(:user)
     moderator = create(:moderator)
 
@@ -24,7 +24,7 @@ feature 'Moderate comments' do
     expect(page).not_to have_content('SPAM')
   end
 
-  scenario 'Can not hide own comment' do
+  it 'Can not hide own comment' do
     moderator = create(:moderator)
     comment = create(:comment, user: moderator.user)
 
@@ -37,7 +37,7 @@ feature 'Moderate comments' do
     end
   end
 
-  scenario "Visit items with flagged comments" do
+  it "Visit items with flagged comments" do
     moderator = create(:moderator)
     debate = create(:debate, title: "Debate with spam comment")
     proposal = create(:proposal, title: "Proposal with spam comment")
@@ -63,16 +63,16 @@ feature 'Moderate comments' do
     expect(page).to have_content("This is SPAM comment on proposal")
   end
 
-  feature '/moderation/ screen' do
+  describe '/moderation/ screen' do
 
-    background do
+    before do
       moderator = create(:moderator)
       login_as(moderator.user)
     end
 
-    feature 'moderate in bulk' do
-      feature "When a comment has been selected for moderation" do
-        background do
+    describe 'moderate in bulk' do
+      describe "When a comment has been selected for moderation" do
+        before do
           @comment = create(:comment)
           visit moderation_comments_path
           within('.menu.simple') do
@@ -86,21 +86,21 @@ feature 'Moderate comments' do
           expect(page).not_to have_css("comment_#{@comment.id}")
         end
 
-        scenario 'Hide the comment' do
+        it 'Hide the comment' do
           click_on "Hide comments"
           expect(page).not_to have_css("comment_#{@comment.id}")
           expect(@comment.reload).to be_hidden
           expect(@comment.user).not_to be_hidden
         end
 
-        scenario 'Block the user' do
+        it 'Block the user' do
           click_on "Block authors"
           expect(page).not_to have_css("comment_#{@comment.id}")
           expect(@comment.reload).to be_hidden
           expect(@comment.user).to be_hidden
         end
 
-        scenario 'Ignore the comment' do
+        it 'Ignore the comment' do
           click_on "Mark as viewed"
           expect(page).not_to have_css("comment_#{@comment.id}")
           expect(@comment.reload).to be_ignored_flag
@@ -109,7 +109,7 @@ feature 'Moderate comments' do
         end
       end
 
-      scenario "select all/none", :js do
+      it "select all/none", :js do
         create_list(:comment, 2)
 
         visit moderation_comments_path
@@ -125,7 +125,7 @@ feature 'Moderate comments' do
         end
       end
 
-      scenario "remembering page, filter and order" do
+      it "remembering page, filter and order" do
         create_list(:comment, 52)
 
         visit moderation_comments_path(filter: 'all', page: '2', order: 'newest')
@@ -140,7 +140,7 @@ feature 'Moderate comments' do
       end
     end
 
-    scenario "Current filter is properly highlighted" do
+    it "Current filter is properly highlighted" do
       visit moderation_comments_path
       expect(page).not_to have_link('Pending')
       expect(page).to have_link('All')
@@ -168,7 +168,7 @@ feature 'Moderate comments' do
       end
     end
 
-    scenario "Filtering comments" do
+    it "Filtering comments" do
       create(:comment, body: "Regular comment")
       create(:comment, :flagged, body: "Pending comment")
       create(:comment, :hidden, body: "Hidden comment")
@@ -193,7 +193,7 @@ feature 'Moderate comments' do
       expect(page).to have_content('Ignored comment')
     end
 
-    scenario "sorting comments" do
+    it "sorting comments" do
       flagged_comment = create(:comment, body: "Flagged comment", created_at: Time.current - 1.day, flags_count: 5)
       flagged_new_comment = create(:comment, body: "Flagged new comment", created_at: Time.current - 12.hours, flags_count: 3)
       newer_comment = create(:comment, body: "Newer comment", created_at: Time.current)

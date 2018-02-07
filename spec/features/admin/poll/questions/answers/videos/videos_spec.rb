@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Videos' do
+describe 'Videos' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario "Create" do
+  it "Create" do
     question = create(:poll_question)
     answer = create(:poll_question_answer, question: question)
     video_title = "'Magical' by Junko Ohashi"

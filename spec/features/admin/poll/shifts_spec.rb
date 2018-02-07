@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Admin shifts' do
+describe 'Admin shifts' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario "Show" do
+  it "Show" do
     poll = create(:poll)
     officer = create(:poll_officer)
 
@@ -30,7 +30,7 @@ feature 'Admin shifts' do
     expect(page).to have_content officer.name
   end
 
-  scenario "Create Vote Collection Shift and Recount & Scrutiny Shift on same date", :js do
+  it "Create Vote Collection Shift and Recount & Scrutiny Shift on same date", :js do
     create(:poll)
     create(:poll, :incoming)
     poll = create(:poll, :current)
@@ -92,7 +92,7 @@ feature 'Admin shifts' do
     end
   end
 
-  scenario "Vote Collection Shift and Recount & Scrutiny Shift don't include already assigned dates to officer", :js do
+  it "Vote Collection Shift and Recount & Scrutiny Shift don't include already assigned dates to officer", :js do
     poll = create(:poll, :current)
     booth = create(:poll_booth)
     assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
@@ -123,7 +123,7 @@ feature 'Admin shifts' do
     expect(page).to have_select('shift_date_recount_scrutiny_date', options: ["Select day", *recount_scrutiny_dates])
   end
 
-  scenario "Error on create", :js do
+  it "Error on create", :js do
     poll = create(:poll, :current)
     booth = create(:poll_booth)
     assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
@@ -143,7 +143,7 @@ feature 'Admin shifts' do
     expect(page).to have_content "A date must be selected"
   end
 
-  scenario "Destroy" do
+  it "Destroy" do
     poll = create(:poll, :current)
     booth = create(:poll_booth)
     assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
@@ -166,7 +166,7 @@ feature 'Admin shifts' do
     expect(page).to have_css(".shift", count: 0)
   end
 
-  scenario "Destroy an officer" do
+  it "Destroy an officer" do
     poll = create(:poll)
     booth = create(:poll_booth)
     officer = create(:poll_officer)
@@ -180,7 +180,7 @@ feature 'Admin shifts' do
     expect(page).to have_content(officer.name)
   end
 
-  scenario "Empty" do
+  it "Empty" do
     poll = create(:poll)
     booth = create(:poll_booth)
 

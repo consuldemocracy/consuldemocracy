@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Email campaigns' do
+describe 'Email campaigns' do
 
-  background do
+  before do
     @campaign1 = create(:campaign)
     @campaign2 = create(:campaign)
 
@@ -10,7 +10,7 @@ feature 'Email campaigns' do
     login_as(admin.user)
   end
 
-  scenario "Track email templates" do
+  it "Track email templates" do
     3.times { visit root_url(track_id: @campaign1.track_id) }
     5.times { visit root_url(track_id: @campaign2.track_id) }
 
@@ -20,7 +20,7 @@ feature 'Email campaigns' do
     expect(page).to have_content "#{@campaign2.name} (5)"
   end
 
-  scenario "Do not track erroneous track_ids" do
+  it "Do not track erroneous track_ids" do
     visit root_url(track_id: @campaign1.track_id)
     visit root_url(track_id: "999")
 

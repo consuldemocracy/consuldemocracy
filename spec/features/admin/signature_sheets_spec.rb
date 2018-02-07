@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Signature sheets' do
+describe 'Signature sheets' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario "Index" do
+  it "Index" do
     3.times { create(:signature_sheet) }
 
     visit admin_signature_sheets_path
@@ -20,7 +20,7 @@ feature 'Signature sheets' do
   end
 
   context 'Create' do
-    scenario 'Proposal' do
+    it 'Proposal' do
       proposal = create(:proposal)
       visit new_admin_signature_sheet_path
 
@@ -36,7 +36,7 @@ feature 'Signature sheets' do
       expect(page).to have_content "1 support"
     end
 
-    scenario 'Budget Investment' do
+    it 'Budget Investment' do
       investment = create(:budget_investment)
       budget = investment.budget
       budget.update(phase: 'selecting')
@@ -57,7 +57,7 @@ feature 'Signature sheets' do
 
   end
 
-  scenario 'Errors on create' do
+  it 'Errors on create' do
     visit new_admin_signature_sheet_path
 
     click_button "Create signature sheet"
@@ -65,7 +65,7 @@ feature 'Signature sheets' do
     expect(page).to have_content error_message
   end
 
-  scenario 'Show' do
+  it 'Show' do
     proposal = create(:proposal)
     user = Administrator.first.user
     signature_sheet = create(:signature_sheet,

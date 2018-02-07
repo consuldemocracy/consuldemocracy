@@ -20,7 +20,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
 
   context "Show" do
 
-    scenario "Show descriptive image when exists", :js do
+    it "Show descriptive image when exists", :js do
       image = create(:image, imageable: imageable)
 
       visit send(imageable_path, imageable_arguments)
@@ -28,7 +28,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       expect(page).to have_css("img[alt='#{image.title}'][title='#{image.title}']")
     end
 
-    scenario "Show image title when image exists" do
+    it "Show image title when image exists" do
       image = create(:image, imageable: imageable)
 
       visit send(imageable_path, imageable_arguments)
@@ -40,25 +40,25 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
 
   context "Destroy" do
 
-    background do
+    before do
       create(:image, imageable: imageable, user: imageable.author)
     end
 
-    scenario "Administrators cannot destroy imageables they have not authored" do
+    it "Administrators cannot destroy imageables they have not authored" do
       login_as(administrator)
 
       visit send(imageable_path, imageable_arguments)
       expect(page).not_to have_link "Remove image"
     end
 
-    scenario "Users cannot destroy imageables they have not authored" do
+    it "Users cannot destroy imageables they have not authored" do
       login_as(create(:user))
 
       visit send(imageable_path, imageable_arguments)
       expect(page).not_to have_link "Remove image"
     end
 
-    scenario "Should show success notice after successful deletion" do
+    it "shows success notice after successful deletion" do
       login_as imageable.author
 
       visit send(imageable_path, imageable_arguments)
@@ -67,7 +67,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       expect(page).to have_content "Image was deleted successfully."
     end
 
-    scenario "Should not show image after successful deletion" do
+    it "does not show image after successful deletion" do
       login_as imageable.author
 
       visit send(imageable_path, imageable_arguments)
@@ -76,7 +76,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       expect(page).not_to have_selector "figure img"
     end
 
-    scenario "Should redirect to imageable path after successful deletion" do
+    it "redirects to imageable path after successful deletion" do
       login_as imageable.author
 
       visit send(imageable_path, imageable_arguments)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Admin budget phases' do
+describe 'Admin budget phases' do
   let(:budget) { create(:budget) }
 
   context 'Edit' do
@@ -10,7 +10,7 @@ feature 'Admin budget phases' do
       login_as(admin.user)
     end
 
-    scenario 'Update phase' do
+    it 'Update phase' do
       visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
 
       fill_in 'start_date', with: Date.current + 1.days

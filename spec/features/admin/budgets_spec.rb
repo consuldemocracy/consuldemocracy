@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-feature 'Admin budgets' do
+describe 'Admin budgets' do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
   context 'Feature flag' do
 
-    background do
+    before do
       Setting['feature.budgets'] = nil
     end
 
@@ -17,7 +17,7 @@ feature 'Admin budgets' do
       Setting['feature.budgets'] = true
     end
 
-    scenario 'Disabled with a feature flag' do
+    it 'Disabled with a feature flag' do
       expect{ visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
 
@@ -25,7 +25,7 @@ feature 'Admin budgets' do
 
   context 'Index' do
 
-    scenario 'Displaying budgets' do
+    it 'Displaying budgets' do
       budget = create(:budget)
       visit admin_budgets_path
 
@@ -33,7 +33,7 @@ feature 'Admin budgets' do
       expect(page).to have_content(translated_phase_name(phase_kind: budget.phase))
     end
 
-    scenario 'Filters by phase' do
+    it 'Filters by phase' do
       drafting_budget  = create(:budget, :drafting)
       accepting_budget = create(:budget, :accepting)
       selecting_budget = create(:budget, :selecting)
@@ -62,7 +62,7 @@ feature 'Admin budgets' do
       expect(page).not_to have_content(finished_budget.name)
     end
 
-    scenario 'Open filter is properly highlighted' do
+    it 'Open filter is properly highlighted' do
       filters_links = {'current' => 'Open', 'finished' => 'Finished'}
 
       visit admin_budgets_path
@@ -85,7 +85,7 @@ feature 'Admin budgets' do
 
   context 'New' do
 
-    scenario 'Create budget' do
+    it 'Create budget' do
       visit admin_budgets_path
       click_link 'Create new budget'
 
@@ -98,7 +98,7 @@ feature 'Admin budgets' do
       expect(page).to have_content 'M30 - Summer campaign'
     end
 
-    scenario 'Name is mandatory' do
+    it 'Name is mandatory' do
       visit new_admin_budget_path
       click_button 'Create Budget'
 
@@ -113,7 +113,7 @@ feature 'Admin budgets' do
     let!(:budget) { create(:budget) }
     let(:heading) { create(:budget_heading, group: create(:budget_group, budget: budget)) }
 
-    scenario 'Destroy a budget without investments' do
+    it 'Destroy a budget without investments' do
       visit admin_budgets_path
       click_link 'Edit budget'
       click_link 'Delete budget'
@@ -122,7 +122,7 @@ feature 'Admin budgets' do
       expect(page).to have_content('budgets cannot be found')
     end
 
-    scenario 'Try to destroy a budget with investments' do
+    it 'Try to destroy a budget with investments' do
       create(:budget_investment, heading: heading)
 
       visit admin_budgets_path
@@ -137,7 +137,7 @@ feature 'Admin budgets' do
   context 'Edit' do
     let!(:budget) { create(:budget) }
 
-    scenario 'Show phases table' do
+    it 'Show phases table' do
       visit admin_budgets_path
       click_link 'Edit budget'
 
@@ -168,11 +168,11 @@ feature 'Admin budgets' do
 
   context 'Update' do
 
-    background do
+    before do
       create(:budget)
     end
 
-    scenario 'Update budget' do
+    it 'Update budget' do
       visit admin_budgets_path
       click_link 'Edit budget'
 
@@ -187,7 +187,7 @@ feature 'Admin budgets' do
 
   context "Calculate Budget's Winner Investments" do
 
-    scenario 'For a Budget in reviewing balloting' do
+    it 'For a Budget in reviewing balloting' do
       budget = create(:budget, phase: 'reviewing_ballots')
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group, price: 4)
@@ -206,7 +206,7 @@ feature 'Admin budgets' do
       expect(page).not_to have_content selected.title
     end
 
-    scenario 'For a finished Budget' do
+    it 'For a finished Budget' do
       budget = create(:budget, phase: 'finished')
 
       visit edit_admin_budget_path(budget)
@@ -217,7 +217,7 @@ feature 'Admin budgets' do
 
   context 'Manage groups and headings' do
 
-    scenario 'Create group', :js do
+    it 'Create group', :js do
       budget = create(:budget, name: 'Yearly budget')
 
       visit admin_budgets_path
@@ -250,7 +250,7 @@ feature 'Admin budgets' do
       expect(page).not_to have_content 'No groups created yet.'
     end
 
-    scenario 'Create heading', :js do
+    it 'Create heading', :js do
       budget = create(:budget, name: 'Yearly budget')
       group  = create(:budget_group, budget: budget, name: 'Districts improvments')
 
@@ -278,7 +278,7 @@ feature 'Admin budgets' do
       end
     end
 
-    scenario 'Update heading', :js do
+    it 'Update heading', :js do
       budget = create(:budget, name: 'Yearly budget')
       group  = create(:budget_group, budget: budget, name: 'Districts improvments')
       heading = create(:budget_heading, group: group, name: "District 1")
@@ -300,7 +300,7 @@ feature 'Admin budgets' do
       expect(page).to have_content '6000'
     end
 
-    scenario 'Delete heading', :js do
+    it 'Delete heading', :js do
       budget = create(:budget, name: 'Yearly budget')
       group  = create(:budget_group, budget: budget, name: 'Districts improvments')
       heading = create(:budget_heading, group: group, name: "District 1")
