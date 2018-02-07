@@ -60,8 +60,8 @@ Rails.application.routes.draw do
 
   # more info pages
   get 'more-information',                     to: 'pages#show', id: 'more_info/index',                as: 'more_info'
-  get 'more-information/how-to-use',          to: 'pages#show', id: 'more_info/how_to_use/index',     as: 'how_to_use'
-  get 'more-information/faq',                 to: 'pages#show', id: 'more_info/faq/index',            as: 'faq'
+  # get 'more-information/how-to-use',          to: 'pages#show', id: 'more_info/how_to_use/index',     as: 'how_to_use'
+  # get 'more-information/faq',                 to: 'pages#show', id: 'more_info/faq/index',            as: 'faq'
   # More info pages
   get 'help',             to: 'pages#show', id: 'help/index',             as: 'help'
   get 'help/how-to-use',  to: 'pages#show', id: 'help/how_to_use/index',  as: 'how_to_use'

@@ -8,10 +8,10 @@
 
 <div class="row margin">
   <div class="large-8 small-12 column">
-      <% if @budget.present? %>
-        <%= markdown t('budgets.header_body_principal_1', amount: @budget.total_amount) %>
+      <% if current_budget.present? %>
+        <%= markdown t('budgets.header_body_principal_1', amount: current_budget.total_amount) %>
 
-        <%= link_to t('budgets.button_text'), budget_path(@budget), class: "button" %>
+        <%= link_to t('budgets.button_text'), budget_path(current_budget), class: "button" %>
       <% elsif @last_budget.present? %>
         <%= link_to "#{t('results.button_title')} #{@last_budget.name}", budget_results_path(@last_budget), class: "button" %>
       <% end %>
@@ -93,7 +93,7 @@
       </ul>
 
       <div class="budget-investments-list">
-        <% @budgets.each do |budget| %>
+        <% @finished_budgets.each do |budget| %>
           <% if budget_published?(budget) %>
             <div class="budget-investment clear">
               <div class="panel past-budgets">
