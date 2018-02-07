@@ -11,6 +11,7 @@ es:
         debates: "Debates"
         proposals: "Propuestas"
         budgets: "Presupuestos participativos"
+        polls: "Votaciones"
         other: "Otra información de interés"
       debates:
         title: "Debates"
