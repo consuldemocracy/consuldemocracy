@@ -7,16 +7,19 @@ feature 'Commenting Budget::Investments' do
 
   scenario 'Index' do
     3.times { create(:comment, commentable: investment) }
+    valuation_comment = create(:comment, :valuation, commentable: investment, subject: 'Not viable')
 
     visit budget_investment_path(investment.budget, investment)
 
     expect(page).to have_css('.comment', count: 3)
+    expect(page).not_to have_content('Not viable')
 
-    comment = Comment.last
-    within first('.comment') do
-      expect(page).to have_content comment.user.name
-      expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
-      expect(page).to have_content comment.body
+    within("#comments") do
+      Comment.not_valuations.last(3).each do |comment|
+        expect(page).to have_content comment.user.name
+        expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
+        expect(page).to have_content comment.body
+      end
     end
   end
 
@@ -24,6 +27,7 @@ feature 'Commenting Budget::Investments' do
     parent_comment = create(:comment, commentable: investment)
     first_child    = create(:comment, commentable: investment, parent: parent_comment)
     second_child   = create(:comment, commentable: investment, parent: parent_comment)
+    valuation_comment = create(:comment, :valuation, commentable: investment, subject: 'Not viable')
 
     visit comment_path(parent_comment)
 
@@ -31,6 +35,7 @@ feature 'Commenting Budget::Investments' do
     expect(page).to have_content parent_comment.body
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
+    expect(page).not_to have_content('Not viable')
 
     expect(page).to have_link "Go back to #{investment.title}", href: budget_investment_path(investment.budget, investment)
 

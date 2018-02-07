@@ -55,7 +55,7 @@ module Abilities
       can [:read, :create, :update, :destroy], Budget::Group
       can [:read, :create, :update, :destroy], Budget::Heading
       can [:hide, :update, :toggle_selection], Budget::Investment
-      can :valuate, Budget::Investment
+      can [:valuate, :comment_valuation], Budget::Investment
       can :create, Budget::ValuatorAssignment
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
@@ -80,8 +80,7 @@ module Abilities
       can [:manage], ::Legislation::Proposal
       cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
 
-      can [:create, :destroy], Document
-      can [:destroy], Image
+      can [:create], Document
       can [:create, :destroy], DirectUpload
     end
   end

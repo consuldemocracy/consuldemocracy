@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @investment.milestones.each do |milestone| %>
+      <% @investment.milestones.order_by_publication_date.each do |milestone| %>
         <tr id="<%= dom_id(milestone) %>" class="milestone">
           <td class="text-center"><%= milestone.id %></td>
           <td>

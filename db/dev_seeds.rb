@@ -319,114 +319,6 @@ section "Creating Successful Proposals" do
   end
 end
 
-section "Commenting Debates" do
-  100.times do
-    author = User.all.sample
-    debate = Debate.all.sample
-    Comment.create!(user: author,
-                    created_at: rand(debate.created_at..Time.current),
-                    commentable: debate,
-                    body: Faker::Lorem.sentence)
-  end
-end
-
-section "Commenting Proposals" do
-  100.times do
-    author = User.all.sample
-    proposal = Proposal.all.sample
-    Comment.create!(user: author,
-                    created_at: rand(proposal.created_at..Time.current),
-                    commentable: proposal,
-                    body: Faker::Lorem.sentence)
-  end
-end
-
-section "Commenting Comments" do
-  200.times do
-    author = User.all.sample
-    parent = Comment.all.sample
-    Comment.create!(user: author,
-                    created_at: rand(parent.created_at..Time.current),
-                    commentable_id: parent.commentable_id,
-                    commentable_type: parent.commentable_type,
-                    body: Faker::Lorem.sentence,
-                    parent: parent)
-  end
-end
-
-section "Voting Debates, Proposals & Comments" do
-  not_org_users = User.where(['users.id NOT IN(?)', User.organizations.pluck(:id)])
-  100.times do
-    voter  = not_org_users.level_two_or_three_verified.all.sample
-    vote   = [true, false].sample
-    debate = Debate.all.sample
-    debate.vote_by(voter: voter, vote: vote)
-  end
-
-  100.times do
-    voter  = not_org_users.all.sample
-    vote   = [true, false].sample
-    comment = Comment.all.sample
-    comment.vote_by(voter: voter, vote: vote)
-  end
-
-  100.times do
-    voter = not_org_users.level_two_or_three_verified.all.sample
-    proposal = Proposal.all.sample
-    proposal.vote_by(voter: voter, vote: true)
-  end
-end
-
-section "Flagging Debates & Comments" do
-  40.times do
-    debate = Debate.all.sample
-    flagger = User.where(["users.id <> ?", debate.author_id]).all.sample
-    Flag.flag(flagger, debate)
-  end
-
-  40.times do
-    comment = Comment.all.sample
-    flagger = User.where(["users.id <> ?", comment.user_id]).all.sample
-    Flag.flag(flagger, comment)
-  end
-
-  40.times do
-    proposal = Proposal.all.sample
-    flagger = User.where(["users.id <> ?", proposal.author_id]).all.sample
-    Flag.flag(flagger, proposal)
-  end
-end
-
-section "Creating Spending Proposals" do
-  tags = Faker::Lorem.words(10)
-  60.times do
-    geozone = Geozone.all.sample
-    author = User.all.sample
-    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-    feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-    valuation_finished = [true, false].sample
-    feasible = [true, false].sample
-    spending_proposal = SpendingProposal.create!(author: author,
-                                                 title: Faker::Lorem.sentence(3).truncate(60),
-                                                 external_url: Faker::Internet.url,
-                                                 description: description,
-                                                 created_at: rand((Time.current - 1.week)..Time.current),
-                                                 geozone: [geozone, nil].sample,
-                                                 feasible: feasible,
-                                                 feasible_explanation: feasible_explanation,
-                                                 valuation_finished: valuation_finished,
-                                                 tag_list: tags.sample(3).join(','),
-                                                 price: rand(1000000),
-                                                 terms_of_service: "1")
-  end
-end
-
-section "Creating Valuation Assignments" do
-  (1..17).to_a.sample.times do
-    SpendingProposal.all.sample.valuators << Valuator.first
-  end
-end
-
 section "Creating Budgets" do
   Budget.create(
     name: "Budget #{Date.current.year - 1}",
@@ -533,6 +425,104 @@ section "Creating Valuation Assignments" do
   end
 end
 
+section "Commenting Investments, Debates & Proposals" do
+  %w(Budget::Investment Debate Proposal).each do |commentable_class|
+    100.times do
+      commentable = commentable_class.constantize.all.sample
+      Comment.create!(user: User.all.sample,
+                      created_at: rand(commentable.created_at..Time.current),
+                      commentable: commentable,
+                      body: Faker::Lorem.sentence)
+    end
+  end
+end
+
+section "Commenting Comments" do
+  200.times do
+    parent = Comment.all.sample
+    Comment.create!(user: User.all.sample,
+                    created_at: rand(parent.created_at..Time.current),
+                    commentable_id: parent.commentable_id,
+                    commentable_type: parent.commentable_type,
+                    body: Faker::Lorem.sentence,
+                    parent: parent)
+  end
+end
+
+section "Voting Debates, Proposals & Comments" do
+  not_org_users = User.where(['users.id NOT IN(?)', User.organizations.pluck(:id)])
+  100.times do
+    voter  = not_org_users.level_two_or_three_verified.all.sample
+    vote   = [true, false].sample
+    debate = Debate.all.sample
+    debate.vote_by(voter: voter, vote: vote)
+  end
+
+  100.times do
+    voter  = not_org_users.all.sample
+    vote   = [true, false].sample
+    comment = Comment.all.sample
+    comment.vote_by(voter: voter, vote: vote)
+  end
+
+  100.times do
+    voter = not_org_users.level_two_or_three_verified.all.sample
+    proposal = Proposal.all.sample
+    proposal.vote_by(voter: voter, vote: true)
+  end
+end
+
+section "Flagging Debates & Comments" do
+  40.times do
+    debate = Debate.all.sample
+    flagger = User.where(["users.id <> ?", debate.author_id]).all.sample
+    Flag.flag(flagger, debate)
+  end
+
+  40.times do
+    comment = Comment.all.sample
+    flagger = User.where(["users.id <> ?", comment.user_id]).all.sample
+    Flag.flag(flagger, comment)
+  end
+
+  40.times do
+    proposal = Proposal.all.sample
+    flagger = User.where(["users.id <> ?", proposal.author_id]).all.sample
+    Flag.flag(flagger, proposal)
+  end
+end
+
+section "Creating Spending Proposals" do
+  tags = Faker::Lorem.words(10)
+  60.times do
+    geozone = Geozone.all.sample
+    author = User.all.sample
+    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    valuation_finished = [true, false].sample
+    feasible = [true, false].sample
+    created_at = rand((Time.current - 1.week)..Time.current)
+    spending_proposal = SpendingProposal.create!(author: author,
+                                                 title: Faker::Lorem.sentence(3).truncate(60),
+                                                 external_url: Faker::Internet.url,
+                                                 description: description,
+                                                 created_at: created_at,
+                                                 geozone: [geozone, nil].sample,
+                                                 feasible: feasible,
+                                                 feasible_explanation: feasible_explanation,
+                                                 valuation_finished: valuation_finished,
+                                                 tag_list: tags.sample(3).join(','),
+                                                 price: rand(1000000),
+                                                 terms_of_service: "1")
+  end
+end
+
+section "Creating Valuation Assignments" do
+  (1..17).to_a.sample.times do
+    SpendingProposal.all.sample.valuators << Valuator.first
+  end
+end
+
 section "Ignoring flags in Debates, comments & proposals" do
   Debate.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
   Comment.flagged.reorder("RANDOM()").limit(30).each(&:ignore_flag)
@@ -555,13 +545,16 @@ section "Creating banners" do
   Proposal.last(3).each do |proposal|
     title = Faker::Lorem.sentence(word_count = 3)
     description = Faker::Lorem.sentence(word_count = 12)
+    target_url = Rails.application.routes.url_helpers.proposal_path(proposal)
     banner = Banner.create!(title: title,
                             description: description,
-                            style: ["banner-style banner-style-one", "banner-style banner-style-two",
+                            style: ["banner-style banner-style-one",
+                                    "banner-style banner-style-two",
                                     "banner-style banner-style-three"].sample,
-                            image: ["banner-img banner-img-one", "banner-img banner-img-two",
+                            image: ["banner-img banner-img-one",
+                                    "banner-img banner-img-two",
                                     "banner-img banner-img-three"].sample,
-                            target_url: Rails.application.routes.url_helpers.proposal_path(proposal),
+                            target_url: target_url,
                             post_started_at: rand((Time.current - 1.week)..(Time.current - 1.day)),
                             post_ended_at:   rand((Time.current - 1.day)..(Time.current + 1.week)),
                             created_at: rand((Time.current - 1.week)..Time.current))
@@ -616,9 +609,10 @@ section "Creating Poll Questions & Answers" do
                                         title: Faker::Lorem.sentence(3).truncate(60) + '?',
                                         poll: poll)
       Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+        description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
         Poll::Question::Answer.create!(question: question,
                                        title: answer.capitalize,
-                                       description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>")
+                                       description: description)
       end
     end
   end
@@ -626,17 +620,20 @@ end
 
 section "Creating Poll Booths & BoothAssignments" do
   20.times do |i|
-    Poll::Booth.create(name: "Booth #{i}", location: Faker::Address.street_address, polls: [Poll.all.sample])
+    Poll::Booth.create(name: "Booth #{i}",
+                       location: Faker::Address.street_address,
+                       polls: [Poll.all.sample])
   end
 end
 
 section "Creating Poll Shifts for Poll Officers" do
   Poll.all.each do |poll|
     Poll::BoothAssignment.where(poll: poll).each do |booth_assignment|
+      scrutiny = (poll.ends_at.to_datetime..poll.ends_at.to_datetime + Poll::RECOUNT_DURATION)
       Poll::Officer.all.each do |poll_officer|
         {
           vote_collection: (poll.starts_at.to_datetime..poll.ends_at.to_datetime),
-          recount_scrutiny: (poll.ends_at.to_datetime..poll.ends_at.to_datetime + Poll::RECOUNT_DURATION)
+          recount_scrutiny: scrutiny
         }.each do |task_name, task_dates|
           task_dates.each do |shift_date|
             Poll::Shift.create(booth: booth_assignment.booth,
@@ -710,13 +707,17 @@ section "Creating Poll Voters" do
   def randomly_answer_questions(poll, user)
     poll.questions.each do |question|
       next unless [true, false].sample
-      Poll::Answer.create!(question_id: question.id, author: user, answer: question.question_answers.sample.title)
+      Poll::Answer.create!(question_id: question.id,
+                           author: user,
+                           answer: question.question_answers.sample.title)
     end
   end
 
   (Poll.expired + Poll.current + Poll.recounting).uniq.each do |poll|
     level_two_verified_users = User.level_two_verified
-    level_two_verified_users = level_two_verified_users.where(geozone_id: poll.geozone_ids) if poll.geozone_restricted?
+    if poll.geozone_restricted?
+      level_two_verified_users = level_two_verified_users.where(geozone_id: poll.geozone_ids)
+    end
     user_groups = level_two_verified_users.in_groups(2)
     user_groups.first.each { |user| vote_poll_on_booth(user, poll) }
     user_groups.second.compact.each { |user| vote_poll_on_web(user, poll) }
@@ -769,7 +770,9 @@ section "Creating Poll Questions from Proposals" do
     poll = Poll.current.first
     question = Poll::Question.create(poll: poll)
     Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+      Poll::Question::Answer.create!(question: question,
+                                     title: answer.capitalize,
+                                     description: Faker::ChuckNorris.fact)
     end
     question.copy_attributes_from_proposal(proposal)
     question.save!
@@ -782,7 +785,9 @@ section "Creating Successful Proposals" do
     poll = Poll.current.first
     question = Poll::Question.create(poll: poll)
     Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+      Poll::Question::Answer.create!(question: question,
+                                     title: answer.capitalize,
+                                     description: Faker::ChuckNorris.fact)
     end
     question.copy_attributes_from_proposal(proposal)
     question.save!

@@ -1,5 +1,12 @@
 module BudgetsHelper
 
+  def heading_name_and_price_html(heading, budget)
+    content_tag :div do
+      concat(heading.name + ' ')
+      concat(content_tag(:span, budget.formatted_heading_price(heading)))
+    end
+  end
+
   def csv_params
     csv_params = params.clone.merge(format: :csv).symbolize_keys
     csv_params.delete(:page)
@@ -45,8 +52,8 @@ module BudgetsHelper
     Budget::Ballot.where(user: current_user, budget: @budget).first
   end
 
-  def investment_tags_select_options
-    Budget::Investment.tags_on(:valuation).order(:name).select(:name).distinct
+  def investment_tags_select_options(budget)
+    Budget::Investment.where(budget_id: budget).tags_on(:valuation).order(:name).select(:name).distinct
   end
 
   def budget_published?(budget)

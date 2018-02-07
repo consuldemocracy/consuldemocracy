@@ -17,7 +17,7 @@ class Budget
     scope :order_by_group_name, -> { includes(:group).order('budget_groups.name', 'budget_headings.name') }
 
     def name_scoped_by_group
-      "#{group.name}: #{name}"
+      group.single_heading_group? ? name : "#{group.name}: #{name}"
     end
 
     def name_exists_in_budget_headings
@@ -26,6 +26,12 @@ class Budget
 
     def can_be_deleted?
       investments.empty?
+    end
+
+    private
+
+    def generate_slug?
+      slug.nil? || budget.drafting?
     end
 
   end

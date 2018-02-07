@@ -421,6 +421,16 @@ describe 'Consul Schema' do
 
       expect(Time.zone.parse(received_timestamps.first)).to eq Time.zone.parse("2017-12-31 9:00:00")
     end
+
+    it 'does not include valuation comments' do
+      visible_comment = create(:comment)
+      valuation_comment = create(:comment, :valuation)
+
+      response = execute('{ comments { edges { node { body } } } }')
+      received_comments = extract_fields(response, 'comments', 'body')
+
+      expect(received_comments).not_to include(valuation_comment.body)
+    end
   end
 
   describe 'Geozones' do

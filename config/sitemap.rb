@@ -14,7 +14,7 @@ SitemapGenerator::Sitemap.create do
     add page_path(id: page)
   end
 
-  add more_info_path
+  add help_path
   add how_to_use_path
   add faq_path
 

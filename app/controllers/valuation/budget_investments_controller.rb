@@ -1,11 +1,14 @@
 class Valuation::BudgetInvestmentsController < Valuation::BaseController
   include FeatureFlags
+  include CommentableActions
+
   feature_flag :budgets
 
   before_action :restrict_access_to_assigned_items, only: [:show, :edit, :valuate]
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :valuate]
 
+  has_orders %w{oldest}, only: [:show, :edit]
   has_filters %w{valuating valuation_finished}, only: :index
 
   load_and_authorize_resource :investment, class: "Budget::Investment"
@@ -29,13 +32,36 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       end
 
       Activity.log(current_user, :valuate, @investment)
-      redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: t('valuation.budget_investments.notice.valuate')
+      notice = t('valuation.budget_investments.notice.valuate')
+      redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: notice
     else
       render action: :edit
     end
   end
 
+  def show
+    load_comments
+  end
+
+  def edit
+    load_comments
+  end
+
   private
+
+    def load_comments
+      @commentable = @investment
+      @comment_tree = CommentTree.new(@commentable, params[:page], @current_order, valuations: true)
+      set_comment_flags(@comment_tree.comments)
+    end
+
+    def resource_model
+      Budget::Investment
+    end
+
+    def resource_name
+      resource_model.parameterize('_')
+    end
 
     def load_budget
       @budget = Budget.find(params[:budget_id])
@@ -46,7 +72,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def heading_filters
-      investments = @budget.investments.by_valuator(current_user.valuator.try(:id)).valuation_open.select(:heading_id).all.to_a
+      investments = @budget.investments.by_valuator(current_user.valuator.try(:id))
+                           .valuation_open.select(:heading_id).all.to_a
 
       [ { name: t('valuation.budget_investments.index.headings_filter_all'),
           id: nil,
@@ -61,17 +88,20 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def params_for_current_valuator
-      Budget::Investment.filter_params(params).merge(valuator_id: current_user.valuator.id, budget_id: @budget.id)
+      Budget::Investment.filter_params(params).merge(valuator_id: current_user.valuator.id,
+                                                     budget_id: @budget.id)
     end
 
     def valuation_params
-      params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation, :feasibility, :unfeasibility_explanation,
-                                                :duration, :valuation_finished, :internal_comments)
+      params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation,
+                                                :feasibility, :unfeasibility_explanation,
+                                                :duration, :valuation_finished)
     end
 
     def restrict_access_to_assigned_items
       return if current_user.administrator? ||
-                Budget::ValuatorAssignment.exists?(investment_id: params[:id], valuator_id: current_user.valuator.id)
+                Budget::ValuatorAssignment.exists?(investment_id: params[:id],
+                                                   valuator_id: current_user.valuator.id)
       raise ActionController::RoutingError.new('Not Found')
     end
 

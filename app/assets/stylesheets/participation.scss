@@ -1239,7 +1239,8 @@
       text-decoration: none;
     }
 
-    a {
+    a,
+    div {
       display: block;
       padding: $line-height / 2;
 
@@ -1524,7 +1525,7 @@
 
       h3 {
         background: $budget;
-        color: white;
+        color: #fff;
         display: inline-block;
       }
 

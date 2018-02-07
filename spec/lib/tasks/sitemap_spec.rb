@@ -30,7 +30,7 @@ feature 'rake sitemap:create' do
 
     # Static pages
     expect(sitemap).to include(faq_path)
-    expect(sitemap).to include(more_info_path)
+    expect(sitemap).to include(help_path)
     expect(sitemap).to include(how_to_use_path)
     expect(sitemap).to include(page_path(id: 'general_terms'))
 

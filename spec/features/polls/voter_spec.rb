@@ -29,7 +29,7 @@ feature "Voter" do
         expect(page).not_to have_link(answer_yes.title)
       end
 
-      expect(find(:css, ".js-token-message")).to be_visible
+      expect(page).to have_css(".js-token-message", visible: true)
       token = find(:css, ".js-question-answer")[:href].gsub(/.+?(?=token)/, '').gsub('token=', '')
 
       expect(page).to have_content "You can write down this vote identifier, to check your vote on the final results: #{token}"

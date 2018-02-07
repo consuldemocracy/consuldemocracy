@@ -32,17 +32,17 @@ describe PagesController do
   describe 'More info pages' do
 
     it 'includes a more info page' do
-      get :show, id: 'more_info/index'
+      get :show, id: 'help/index'
       expect(response).to be_ok
     end
 
     it 'includes a how_to_use page' do
-      get :show, id: 'more_info/how_to_use/index'
+      get :show, id: 'help/how_to_use/index'
       expect(response).to be_ok
     end
 
     it 'includes a faq page' do
-      get :show, id: 'more_info/faq/index'
+      get :show, id: 'help/faq/index'
       expect(response).to be_ok
     end
   end

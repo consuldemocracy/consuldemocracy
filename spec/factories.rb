@@ -220,10 +220,11 @@ FactoryBot.define do
   end
 
   factory :budget do
-    sequence(:name) { |n| "Budget #{n}" }
+    sequence(:name) { |n| "#{Faker::Lorem.word} #{n}" }
     currency_symbol "€"
     phase 'accepting'
     description_drafting  "This budget is drafting"
+    description_informing "This budget is informing"
     description_accepting "This budget is accepting"
     description_reviewing "This budget is reviewing"
     description_selecting "This budget is selecting"
@@ -235,6 +236,10 @@ FactoryBot.define do
 
     trait :drafting do
       phase 'drafting'
+    end
+
+    trait :informing do
+      phase 'informing'
     end
 
     trait :accepting do
@@ -273,6 +278,10 @@ FactoryBot.define do
   factory :budget_group, class: 'Budget::Group' do
     budget
     sequence(:name) { |n| "Group #{n}" }
+
+    trait :drafting_budget do
+      association :budget, factory: [:budget, :drafting]
+    end
   end
 
   factory :budget_heading, class: 'Budget::Heading' do
@@ -280,6 +289,10 @@ FactoryBot.define do
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
     population 1234
+
+    trait :drafting_budget do
+      association :group, factory: [:budget_group, :drafting_budget]
+    end
   end
 
   factory :budget_investment, class: 'Budget::Investment' do
@@ -459,6 +472,16 @@ FactoryBot.define do
 
     trait :with_confidence_score do
       before(:save) { |d| d.calculate_confidence_score }
+    end
+
+    trait :valuation do
+      valuation true
+      association :commentable, factory: :budget_investment
+      before :create do |valuation|
+        valuator = create(:valuator)
+        valuation.author = valuator.user
+        valuation.commentable.valuators << valuator
+      end
     end
   end
 

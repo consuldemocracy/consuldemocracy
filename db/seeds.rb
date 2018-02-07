@@ -112,7 +112,12 @@ Setting['mailer_from_address'] = 'noreply@castello.es'
 Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
 Setting['min_age_to_participate'] = 16
 
-Setting['proposal_improvement_path'] = nil
+# Proposal improvement url path ('/help/proposal-improvement')
+
+##Setting['proposal_improvement_path'] = nil
+
+
+
 # ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
 # ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
 # ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")

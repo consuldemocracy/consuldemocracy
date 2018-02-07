@@ -52,6 +52,8 @@ module CommentsHelper
       legislation_process_draft_version_annotation_path(commentable.draft_version.process, commentable.draft_version, commentable)
     when "Topic"
       community_topic_path(commentable.community, commentable)
+    when "Legislation::Proposal"
+      legislation_process_proposal_path(commentable.legislation_process_id, commentable)
     else
       commentable
     end
