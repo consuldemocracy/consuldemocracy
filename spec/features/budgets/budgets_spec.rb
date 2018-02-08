@@ -62,27 +62,12 @@ feature 'Budgets' do
         expect(page).not_to have_link "#{heading.name} €1,000,000"
         expect(page).to have_content "#{heading.name} €1,000,000"
 
-<<<<<<< HEAD
-    expect(page).to have_content accepting_budget.name
-
-    within('#budget_info') do
-      expect(page).to have_content group1.name
-      expect(page).to have_content group2.name
-      expect(page).to have_content heading1.name
-      expect(page).to have_content last_budget.formatted_heading_price(heading1)
-      expect(page).to have_content heading2.name
-      expect(page).to have_content last_budget.formatted_heading_price(heading2)
-
-      expect(page).to have_content finished_budget1.name
-      expect(page).to have_content finished_budget2.name
-=======
         expect(page).not_to have_link "List of all investment projects"
         expect(page).not_to have_link "List of all unfeasible investment projects"
         expect(page).not_to have_link "List of all investment projects not selected for balloting"
 
         expect(page).not_to have_css('div#map')
       end
->>>>>>> New phase "Information" added and UI modified to not show the links.
     end
   end
 
