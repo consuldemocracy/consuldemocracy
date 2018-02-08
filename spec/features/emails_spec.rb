@@ -506,11 +506,15 @@ feature 'Emails' do
   end
 
   context "Users without email" do
-    scenario "should not receive emails", :js do
+    scenario "should not receive emails" do
       user = create(:user, :verified, email_on_comment: true)
       proposal = create(:proposal, author: user)
+
+      user_commenting = create(:user)
+      comment = create(:comment, commentable: proposal, user: user_commenting)
       user.update(email: nil)
-      comment_on(proposal)
+
+      Mailer.comment(comment).deliver_now
 
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
