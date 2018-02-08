@@ -35,6 +35,9 @@ class Budget
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
 
+    has_many :valuator_group_assignments, dependent: :destroy
+    has_many :valuator_groups, through: :valuator_group_assignments
+
     has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: 'Comment'
     has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: 'Comment'
 

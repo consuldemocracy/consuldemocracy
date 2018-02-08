@@ -579,6 +579,33 @@ feature 'Admin budget investments' do
       end
     end
 
+    scenario "Add valuator group" do
+      budget_investment = create(:budget_investment)
+
+      health_group = create(:valuator_group, name: "Health")
+      economy_group = create(:valuator_group, name: "Economy")
+      culture_group = create(:valuator_group, name: "Culture")
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit classification'
+
+      check "budget_investment_valuator_group_ids_#{health_group.id}"
+      check "budget_investment_valuator_group_ids_#{culture_group.id}"
+
+      click_button 'Update'
+
+      expect(page).to have_content 'Investment project updated succesfully.'
+
+      within('#assigned_valuator_groups') do
+        expect(page).to have_content('Health')
+        expect(page).to have_content('Culture')
+        expect(page).not_to have_content('Undefined')
+        expect(page).not_to have_content('Economy')
+      end
+    end
+
+    pending "Do not display valuators of an assigned group"
+
     scenario "Adds existing valuation tags", :js do
       budget_investment1 = create(:budget_investment)
       budget_investment1.set_tag_list_on(:valuation, 'Education, Health')

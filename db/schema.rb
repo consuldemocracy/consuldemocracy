@@ -203,6 +203,11 @@ ActiveRecord::Schema.define(version: 20180320104823) do
 
   add_index "budget_valuator_assignments", ["investment_id"], name: "index_budget_valuator_assignments_on_investment_id", using: :btree
 
+  create_table "budget_valuator_group_assignments", force: :cascade do |t|
+    t.integer "valuator_group_id"
+    t.integer "investment_id"
+  end
+
   create_table "budgets", force: :cascade do |t|
     t.string   "name",                          limit: 80
     t.string   "currency_symbol",               limit: 10

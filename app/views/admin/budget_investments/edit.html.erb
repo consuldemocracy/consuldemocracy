@@ -59,6 +59,16 @@
                         class: 'js-tag-list' %>
     </div>
 
+    <p>Groups</p>
+    <div class="small-12 column">
+      <%= f.label :valuator_ids, "Groups assigned" %>
+      <%= f.collection_check_boxes :valuator_group_ids, @valuator_groups, :id, :name do |group| %>
+        
+        <%= group.label(title: group.object.name) { group.check_box + truncate(group.object.name, length: 60) } %>
+      <% end %>
+    </div>
+    
+    <p>Valuators</p>
     <div class="small-12 column">
       <%= f.label :valuator_ids, t("admin.budget_investments.edit.assigned_valuators") %>
 
@@ -67,7 +77,6 @@
       <% end %>
     </div>
   </div>
-
 
   <div class="row margin-top">
     <% if @investment.incompatible? || @investment.winner? %>

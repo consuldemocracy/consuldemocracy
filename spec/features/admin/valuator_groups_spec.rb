@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Valuator groups" do
+feature "Valuator groups", :focus do
 
   let(:admin) { create(:administrator).user }
 
