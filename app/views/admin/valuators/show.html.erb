@@ -1,0 +1,7 @@
+<div>Name: <%= @valuator.name %></div>
+<div>Description <%= @valuator.description %></div>
+<div>Email: <%= @valuator.email %></div>
+<div>Group: <%= @valuator.valuator_group.try(:name) %></div>
+
+<%= link_to "See all evaluators", admin_valuators_path %>
+<%= link_to "Edit", edit_admin_valuator_path(@valuator) %>

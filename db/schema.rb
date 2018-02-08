@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208151658) do
+ActiveRecord::Schema.define(version: 20180208163135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1309,6 +1309,7 @@ ActiveRecord::Schema.define(version: 20180208151658) do
     t.string  "description"
     t.integer "spending_proposals_count", default: 0
     t.integer "budget_investments_count", default: 0
+    t.integer "valuator_group_id"
   end
 
   add_index "valuators", ["user_id"], name: "index_valuators_on_user_id", using: :btree

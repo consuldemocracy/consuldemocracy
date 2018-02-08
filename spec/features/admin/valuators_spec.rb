@@ -9,13 +9,21 @@ feature 'Admin valuators' do
     visit admin_valuators_path
   end
 
+  scenario "Show", :focus do
+    visit admin_valuator_path(@valuator)
+
+    expect(page).to have_content @valuator.name
+    expect(page).to have_content @valuator.description
+    expect(page).to have_content @valuator.email
+  end
+
   scenario 'Index' do
     expect(page).to have_content(@valuator.name)
     expect(page).to have_content(@valuator.email)
     expect(page).not_to have_content(@user.name)
   end
 
-  scenario 'Create Valuator', :js do
+  scenario 'Create', :js do
     fill_in 'name_or_email', with: @user.email
     click_button 'Search'
 
@@ -29,7 +37,19 @@ feature 'Admin valuators' do
     end
   end
 
-  scenario 'Delete Valuator' do
+  scenario "Edit", :focus do
+    visit edit_admin_valuator_path(@valuator)
+
+    fill_in 'name_or_email', with: "john@valuators.org"
+    fill_in 'valuator_description', with: 'Valuator for health'
+    click_link "Update valuator"
+
+    expect(page).to have_content "Valuator updated successfully"
+    expect(page).to have_content "john@valuators.org"
+    expect(page).to have_content "Valuator for health"
+  end
+
+  scenario 'Destroy' do
     click_link 'Delete'
 
     within('#valuators') do
@@ -83,6 +103,50 @@ feature 'Admin valuators' do
       expect(page).to have_content(@valuator2.email)
       expect(page).not_to have_content(@valuator1.email)
     end
+  end
+
+  context "Valuator Group", :focus do
+
+    scenario "Add a valuator to a group" do
+      valuator = create(:valuator)
+      group = create(:valuator_group, name: "Health")
+
+      visit edit_admin_valuator_path(valuator)
+
+      select "Health", from: "valuator_valuator_group_id"
+      click_button "Update Evaluador"
+
+      expect(page).to have_content "Valuator updated successfully"
+      expect(page).to have_content "Health"
+    end
+
+    scenario "Update a valuator's group" do
+      valuator = create(:valuator)
+      group1 = create(:valuator_group, name: "Health")
+      group2 = create(:valuator_group, name: "Economy")
+      member = create(:valuator_group_member, valuator: valuator, valuator_group: group1)
+
+      visit edit_admin_valuator_path(valuator)
+      select "Economy", from: "valuator_valuator_group_id"
+      click_button "Update Evaluador"
+
+      expect(page).to have_content "Valuator updated successfully"
+      expect(page).to have_content "Economy"
+    end
+
+    scenario "Remove a valuator from a group" do
+      valuator = create(:valuator)
+      group1 = create(:valuator_group, name: "Health")
+      member = create(:valuator_group_member, valuator: valuator, valuator_group: group1)
+
+      visit edit_admin_valuator_path(valuator)
+      select "", from: "valuator_valuator_group_id"
+      click_button "Update Evaluador"
+
+      expect(page).to have_content "Valuator updated successfully"
+      expect(page).to_not have_content "Health"
+    end
+
   end
 
 end
