@@ -1142,6 +1142,7 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.string  "description"
     t.integer "spending_proposals_count", default: 0
     t.integer "budget_investments_count", default: 0
+    t.integer "valuator_group_id"
   end
 
   add_index "valuators", ["user_id"], name: "index_valuators_on_user_id", using: :btree

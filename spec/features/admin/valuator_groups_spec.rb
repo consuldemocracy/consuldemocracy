@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Valuator groups", :focus do
+feature "Valuator groups" do
 
   let(:admin) { create(:administrator).user }
 
@@ -62,5 +62,7 @@ feature "Valuator groups", :focus do
     expect(page).to have_content "User group destroyed successfully"
     expect(page).to have_content "There are 0 groups of users"
   end
+
+  pending "When we change the group of a Valuator we should also change the valuator_assignments"
 
 end

@@ -1,0 +1,9 @@
+<%= form_for [:admin, @valuator] do |f| %>
+  <%= f.text_field :description %>
+  <%= f.select :valuator_group_id, 
+               @valuator_groups.map {|group| [group.name, group.id] },
+               { include_blank: true } %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Go back", admin_valuator_path(@valuator) %>

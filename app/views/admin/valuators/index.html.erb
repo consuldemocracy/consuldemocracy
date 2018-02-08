@@ -13,6 +13,7 @@
         <th scope="col"><%= t("admin.valuators.index.name") %></th>
         <th scope="col"><%= t("admin.valuators.index.email") %></th>
         <th scope="col"><%= t("admin.valuators.index.description") %></th>
+        <th scope="col">Grupo</th>
         <th scope="col"><%= t("admin.actions.actions") %></th>
       </thead>
       <tbody>
@@ -28,6 +29,12 @@
               <% end %>
             </td>
             <td>
+              <%= valuator.valuator_group.try(:name) %>
+            </td>
+            <td>
+              <%= link_to "Edit",
+                          edit_admin_valuator_path(valuator),
+                          class: "button hollow expanded" %>
               <%= link_to t("admin.valuators.valuator.delete"),
                           admin_valuator_path(valuator),
                           method: :delete,

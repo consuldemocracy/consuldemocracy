@@ -1,5 +1,7 @@
 class Valuator < ActiveRecord::Base
   belongs_to :user, touch: true
+  belongs_to :valuator_group
+
   delegate :name, :email, :name_and_email, to: :user
 
   has_many :valuation_assignments, dependent: :destroy

@@ -15,4 +15,8 @@ describe Valuator do
       expect(valuator.description_or_email).to eq(valuator.email)
     end
   end
+
+  describe "Group" do
+    pending "should reasign investments when the group changes"
+  end
 end
