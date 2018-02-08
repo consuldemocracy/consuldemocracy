@@ -575,16 +575,19 @@ feature 'Budget Investments' do
       expect(current_url).to include('page=1')
     end
 
-    scenario 'Each user as a different and consistent random budget investment order', :js do
+    scenario 'Each user has a different and consistent random budget investment order when random_seed is disctint', :js do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
+      r1 = 1
+      r2 = 2
+
       in_browser(:one) do
-        visit budget_investments_path(budget, heading: heading, random_seed: '0.8')
+        visit budget_investments_path(budget, heading: heading, random_seed: r1)
         @first_user_investments_order = investments_order
       end
 
       in_browser(:two) do
-        visit budget_investments_path(budget, heading: heading, random_seed: '-0.1')
+        visit budget_investments_path(budget, heading: heading, random_seed: r2)
         @second_user_investments_order = investments_order
       end
 
@@ -609,6 +612,23 @@ feature 'Budget Investments' do
 
         expect(investments_order).to eq(@second_user_investments_order)
       end
+    end
+
+    scenario 'Each user has a equal and consistent budget investment order when the random_seed is equal', :js do
+      (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
+
+      in_browser(:one) do
+        visit budget_investments_path(budget, heading: heading, random_seed: '1')
+        @first_user_investments_order = investments_order
+      end
+
+      in_browser(:two) do
+        visit budget_investments_path(budget, heading: heading, random_seed: '1')
+        @second_user_investments_order = investments_order
+      end
+
+      expect(@first_user_investments_order).to eq(@second_user_investments_order)
+
     end
 
     def investments_order
