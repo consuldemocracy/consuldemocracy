@@ -1,0 +1,20 @@
+<div class="row section-content">
+  <div class="small-12 column">
+    <h3 id="processes" data-magellan-target="processes">
+      <%= t("pages.help.processes.title") %>
+    </h3>
+
+    <p>
+      <% link = link_to(t("pages.help.processes.link"), legislation_processes_path) %>
+      <%= t("pages.help.processes.description", link: link).html_safe %>
+    </p>
+    <ul class="features">
+      <li>
+        <% link = link_to(t("pages.help.processes.link"), legislation_processes_path) %>
+        <% sign_up_link = t("pages.help.processes.sign_up", org: setting['org_name']) %>
+        <% sign_up = link_to(sign_up_link, new_user_registration_path) %>
+        <%= t("pages.help.processes.feature", link: link, sign_up: sign_up).html_safe %>
+      </li>
+    </ul>
+  </div>
+</div>
