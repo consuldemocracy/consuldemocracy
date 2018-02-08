@@ -88,19 +88,18 @@
           <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
         </div>
 
-      <p>
-        <!--<%= link_to budget_url(@budget) do %>
-          <small><%= t("budgets.index.investment_proyects") %></small>
-        <% end %><br>-->
-
-        <%= link_to budget_url(@budget, filter: 'unfeasible') do %>
-          <small><%= t("budgets.index.unfeasible_investment_proyects") %></small>
-        <% end %><br>
-
-        <!--<%= link_to budget_url(@budget, filter: 'unselected') do %>
-          <small><%= t("budgets.index.not_selected_investment_proyects") %></small>
-        <% end %>-->
-      </p>
+        <p>
+          <%= link_to budget_investments_path(@budget.id) do %>
+            <small><%= t("budgets.index.investment_proyects") %></small>
+          <% end %><br>
+          <%= link_to budget_investments_path(budget_id: @budget.id, filter: 'unfeasible') do %>
+            <small><%= t("budgets.index.unfeasible_investment_proyects") %></small>
+          <% end %><br>
+          <%= link_to budget_investments_path(budget_id: @budget.id, filter: 'unselected') do %>
+            <small><%= t("budgets.index.not_selected_investment_proyects") %></small>
+          <% end %>
+        </p>
+      <% end %>
 
       <div id="all_phases">
         <h2><%= t("budgets.index.all_phases") %></h2>

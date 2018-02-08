@@ -45,9 +45,6 @@ feature 'Budgets' do
         expect(page).to have_content last_budget.formatted_heading_price(heading1)
         expect(page).to have_content heading2.name
         expect(page).to have_content last_budget.formatted_heading_price(heading2)
-
-        expect(page).to have_content budgets.first.name
-        expect(page).to have_content budgets[2].name
       end
     end
 
