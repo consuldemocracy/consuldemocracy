@@ -124,9 +124,15 @@ section "Creating Users" do
 
   moderator = create_user('mod@consul.dev', 'mod')
   moderator.create_moderator
+  moderator.update(residence_verified_at: Time.current,
+                   confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                   verified_at: Time.current, document_number: unique_document_number)
 
   manager = create_user('manager@consul.dev', 'manager')
   manager.create_manager
+  manager.update(residence_verified_at: Time.current,
+                 confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                 verified_at: Time.current, document_number: unique_document_number)
 
   valuator = create_user('valuator@consul.dev', 'valuator')
   valuator.create_valuator
@@ -154,7 +160,6 @@ section "Creating Users" do
                  document_number: unique_document_number, document_type: "1")
 
   verified = create_user('verified@consul.dev', 'verified')
-
   verified.update(residence_verified_at: Time.current,
                   confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                   verified_at: Time.current, document_number: unique_document_number)
