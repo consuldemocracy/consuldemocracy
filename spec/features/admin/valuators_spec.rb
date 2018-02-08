@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Admin valuators' do
+feature 'Admin valuators', :focus do
   background do
     @admin    = create(:administrator)
     @user     = create(:user, username: 'Jose Luis Balbin')
@@ -37,15 +37,14 @@ feature 'Admin valuators' do
     end
   end
 
-  scenario "Edit", :focus do
+  scenario "Edit" do
     visit edit_admin_valuator_path(@valuator)
 
-    fill_in 'name_or_email', with: "john@valuators.org"
     fill_in 'valuator_description', with: 'Valuator for health'
-    click_link "Update valuator"
+    click_button "Update Evaluador"
 
     expect(page).to have_content "Valuator updated successfully"
-    expect(page).to have_content "john@valuators.org"
+    expect(page).to have_content @valuator.email
     expect(page).to have_content "Valuator for health"
   end
 
@@ -105,7 +104,7 @@ feature 'Admin valuators' do
     end
   end
 
-  context "Valuator Group", :focus do
+  context "Valuator Group" do
 
     scenario "Add a valuator to a group" do
       valuator = create(:valuator)
@@ -124,7 +123,7 @@ feature 'Admin valuators' do
       valuator = create(:valuator)
       group1 = create(:valuator_group, name: "Health")
       group2 = create(:valuator_group, name: "Economy")
-      member = create(:valuator_group_member, valuator: valuator, valuator_group: group1)
+      valuator.update(valuator_group: group1)
 
       visit edit_admin_valuator_path(valuator)
       select "Economy", from: "valuator_valuator_group_id"
@@ -137,7 +136,7 @@ feature 'Admin valuators' do
     scenario "Remove a valuator from a group" do
       valuator = create(:valuator)
       group1 = create(:valuator_group, name: "Health")
-      member = create(:valuator_group_member, valuator: valuator, valuator_group: group1)
+      valuator.update(valuator_group: group1)
 
       visit edit_admin_valuator_path(valuator)
       select "", from: "valuator_valuator_group_id"
