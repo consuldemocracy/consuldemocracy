@@ -134,33 +134,46 @@ feature 'Admin budget investments' do
       expect(page).not_to have_link("Plant trees")
     end
 
-    scenario "Filtering by admin", :js do
-      user = create(:user, username: 'Admin 1')
-      administrator = create(:administrator, user: user)
+    context "Filtering by admin" do
+      background do
+        user = create(:user, username: 'Admin 1')
+        administrator = create(:administrator, user: user)
 
-      create(:budget_investment, title: "Realocate visitors", budget: budget, administrator: administrator)
-      create(:budget_investment, title: "Destroy the city", budget: budget)
+        create(:budget_investment, title: "Realocate visitors", budget: budget, administrator: administrator)
+        create(:budget_investment, title: "Destroy the city", budget: budget)
 
-      visit admin_budget_budget_investments_path(budget_id: budget.id)
-      expect(page).to have_link("Realocate visitors")
-      expect(page).to have_link("Destroy the city")
+        visit admin_budget_budget_investments_path(budget_id: budget.id)
+      end
 
-      select "Admin 1", from: "administrator_id"
+      scenario "Should have budgets links", :js do
 
-      expect(page).to have_content('There is 1 investment')
-      expect(page).not_to have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
+        expect(page).to have_link("Realocate visitors")
+        expect(page).to have_link("Destroy the city")
+      end
 
-      select "All administrators", from: "administrator_id"
+      scenario "Should have specific admin budgets", :js do
 
-      expect(page).to have_content('There are 2 investments')
-      expect(page).to have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
+        select "Admin 1", from: "administrator_id"
 
-      select "Admin 1", from: "administrator_id"
-      expect(page).to have_content('There is 1 investment')
-      expect(page).not_to have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
+        expect(page).to have_content('There is 1 investment')
+        expect(page).not_to have_link("Destroy the city")
+        expect(page).to have_link("Realocate visitors")
+      end
+
+      scenario "Should have all admins budgets", :js do
+
+        select "All administrators", from: "administrator_id"
+
+        expect(page).to have_content('There are 2 investments')
+        expect(page).to have_link("Destroy the city")
+        expect(page).to have_link("Realocate visitors")
+
+        select "Admin 1", from: "administrator_id"
+
+        expect(page).to have_content('There is 1 investment')
+        expect(page).not_to have_link("Destroy the city")
+        expect(page).to have_link("Realocate visitors")
+      end
     end
 
     scenario "Filtering by valuator", :js do
