@@ -51,7 +51,7 @@ feature "Valuator groups" do
     fill_in "valuator_group_name", with: "Health"
     click_button "Create valuators group"
 
-    expect(page).to have_content "User group created successfully"
+    expect(page).to have_content "Valuator group created successfully"
     expect(page).to have_content "There is 1 valuator group"
     expect(page).to have_content "Health"
   end
@@ -65,7 +65,7 @@ feature "Valuator groups" do
     fill_in "valuator_group_name", with: "Health and Sports"
     click_button "Save valuators group"
 
-    expect(page).to have_content "User group updated successfully"
+    expect(page).to have_content "Valuator group updated successfully"
     expect(page).to have_content "Health and Sports"
   end
 
@@ -75,10 +75,8 @@ feature "Valuator groups" do
     visit admin_valuator_groups_path
     click_link "Delete"
 
-    expect(page).to have_content "User group deleted successfully"
+    expect(page).to have_content "Valuator group deleted successfully"
     expect(page).to have_content "There are no valuator groups"
   end
-
-  pending "When we change the group of a Valuator we should also change the valuator_assignments"
 
 end

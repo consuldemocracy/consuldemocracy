@@ -1,6 +1,0 @@
-en:
-  user_group:
-    notice:
-      created: "User group created successfully"
-      updated: "User group updated successfully"
-      destroyed: "User group deleted successfully"

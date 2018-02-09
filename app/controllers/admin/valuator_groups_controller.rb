@@ -19,7 +19,7 @@ class Admin::ValuatorGroupsController < Admin::BaseController
   def create
     @group = ValuatorGroup.new(group_params)
     if @group.save
-      notice = t("user_group.notice.created")
+      notice = t("valuator_group.notice.created")
       redirect_to admin_valuator_groups_path, notice: notice
     else
       render :new
@@ -29,7 +29,7 @@ class Admin::ValuatorGroupsController < Admin::BaseController
   def update
     @group = ValuatorGroup.find(params[:id])
     if @group.update(group_params)
-      notice = t("user_group.notice.updated")
+      notice = t("valuator_group.notice.updated")
       redirect_to [:admin, @group], notice: notice
     else
       render :edit
@@ -39,7 +39,7 @@ class Admin::ValuatorGroupsController < Admin::BaseController
   def destroy
     @group = ValuatorGroup.find(params[:id])
     @group.destroy
-    notice = t("user_group.notice.destroyed")
+    notice = t("valuator_group.notice.destroyed")
     redirect_to admin_valuator_groups_path, notice: notice
   end
 

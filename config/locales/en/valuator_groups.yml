@@ -1,0 +1,6 @@
+en:
+  valuator_group:
+    notice:
+      created: "Valuator group created successfully"
+      updated: "Valuator group updated successfully"
+      destroyed: "Valuator group deleted successfully"
