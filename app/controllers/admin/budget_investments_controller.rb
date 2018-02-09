@@ -32,8 +32,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   def edit
     load_admins
     load_valuators
+    load_valuator_groups
     load_tags
-    @valuator_groups = ValuatorGroup.all
   end
 
   def update
@@ -111,6 +111,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def load_valuators
       @valuators = Valuator.includes(:user).all.order(description: :asc).order("users.email ASC")
+    end
+
+    def load_valuator_groups
+      @valuator_groups = ValuatorGroup.all.order(name: :asc)
     end
 
     def load_tags

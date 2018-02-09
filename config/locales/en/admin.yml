@@ -140,6 +140,7 @@ en:
         heading_filter_all: All headings
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
+        valuator_group_filter_all: All groups
         tags_filter_all: All tags
         advanced_filters: Advanced filters
         placeholder: Search projects
@@ -956,6 +957,7 @@ en:
         geozone_filter_all: All zones
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
+        valuator_group_filter_all: All groups
         tags_filter_all: All tags
         filters:
           valuation_open: Open

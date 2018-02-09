@@ -189,6 +189,39 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Realocate visitors")
     end
 
+    scenario "Filtering by valuator group", :js, :focus do
+      user = create(:user)
+      health_group = create(:valuator_group, name: "Health")
+      culture_group = create(:valuator_group, name: "Culture")
+
+      budget_investment1 = create(:budget_investment, title: "Build a hospital", budget: @budget)
+      budget_investment1.valuator_groups << health_group
+
+      budget_investment2 = create(:budget_investment, title: "Build a theatre", budget: @budget)
+      budget_investment2.valuator_groups << culture_group
+
+      visit admin_budget_budget_investments_path(budget_id: @budget.id)
+      expect(page).to have_link("Build a hospital")
+      expect(page).to have_link("Build a theatre")
+
+      select "Health", from: "valuator_group_id"
+
+      expect(page).to have_content('There is 1 investment')
+      expect(page).to have_link("Build a hospital")
+      expect(page).not_to have_link("Build a theatre")
+
+      select "All groups", from: "valuator_group_id"
+
+      expect(page).to have_content('There are 2 investments')
+      expect(page).to have_link("Build a hospital")
+      expect(page).to have_link("Build a theatre")
+
+      select "Culture", from: "valuator_group_id"
+      expect(page).to have_content('There is 1 investment')
+      expect(page).to have_link("Build a theatre")
+      expect(page).not_to have_link("Build a hospital")
+    end
+
     scenario "Current filter is properly highlighted" do
       filters_links = { 'all' => 'All',
                         'without_admin' => 'Without assigned admin',
