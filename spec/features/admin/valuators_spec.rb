@@ -41,7 +41,7 @@ feature 'Admin valuators', :focus do
     visit edit_admin_valuator_path(@valuator)
 
     fill_in 'valuator_description', with: 'Valuator for health'
-    click_button "Update Evaluador"
+    click_button "Update valuator"
 
     expect(page).to have_content "Valuator updated successfully"
     expect(page).to have_content @valuator.email
@@ -113,7 +113,7 @@ feature 'Admin valuators', :focus do
       visit edit_admin_valuator_path(valuator)
 
       select "Health", from: "valuator_valuator_group_id"
-      click_button "Update Evaluador"
+      click_button "Update valuator"
 
       expect(page).to have_content "Valuator updated successfully"
       expect(page).to have_content "Health"
@@ -127,7 +127,7 @@ feature 'Admin valuators', :focus do
 
       visit edit_admin_valuator_path(valuator)
       select "Economy", from: "valuator_valuator_group_id"
-      click_button "Update Evaluador"
+      click_button "Update valuator"
 
       expect(page).to have_content "Valuator updated successfully"
       expect(page).to have_content "Economy"
@@ -140,7 +140,7 @@ feature 'Admin valuators', :focus do
 
       visit edit_admin_valuator_path(valuator)
       select "", from: "valuator_valuator_group_id"
-      click_button "Update Evaluador"
+      click_button "Update valuator"
 
       expect(page).to have_content "Valuator updated successfully"
       expect(page).to_not have_content "Health"
