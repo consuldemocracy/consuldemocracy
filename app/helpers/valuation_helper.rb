@@ -1,23 +1,21 @@
 module ValuationHelper
 
-  def valuator_select_options(valuator = nil)
-    if valuator.present?
-      Valuator.where.not(id: valuator.id).order("description ASC").order("users.email ASC")
-              .includes(:user).collect { |v| [ v.description_or_email, v.id ] }
-              .prepend([valuator.description_or_email, valuator.id])
-    else
-      Valuator.all.order("description ASC").order("users.email ASC").includes(:user).collect { |v| [ v.description_or_email, v.id ] }
-    end
+  def valuator_or_group_select_options
+    valuator_group_select_options + valuator_select_options
   end
 
-  def valuator_group_select_options(group = nil)
-    if group.present?
-      ValuatorGroup.where.not(id: group.id).order("name ASC")
-              .collect { |g| [ g.name, g.id ] }
-              .prepend([valuator.name, valuator.id])
-    else
-      ValuatorGroup.order("name ASC").collect { |g| [ g.name, g.id ] }
-    end
+  def valuator_select_options
+    Valuator.order("description ASC").order("users.email ASC").includes(:user).
+             collect { |v| [ v.description_or_email, "valuator_#{v.id}"] }
+  end
+
+  def valuator_group_select_options
+    ValuatorGroup.order("name ASC").collect { |g| [ g.name, "group_#{g.id}"] }
+  end
+
+  def assigned_valuators(investment)
+    [investment.valuator_groups.collect(&:name) +
+     investment.valuators.collect(&:description_or_name)].flatten.join(', ')
   end
 
   def assigned_valuators_info(valuators)

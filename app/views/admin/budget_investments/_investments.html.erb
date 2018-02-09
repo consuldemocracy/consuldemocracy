@@ -24,7 +24,6 @@
         <th><%= t("admin.budget_investments.index.table_supports") %></th>
         <th><%= t("admin.budget_investments.index.table_admin") %></th>
         <th><%= t("admin.budget_investments.index.table_valuator") %></th>
-        <th><%= t("admin.budget_investments.index.table_valuator_group") %></th>
         <th><%= t("admin.budget_investments.index.table_geozone") %></th>
         <th><%= t("admin.budget_investments.index.table_feasibility") %></th>
         <th class="text-center"><%= t("admin.budget_investments.index.table_valuation_finished") %></th>
@@ -61,17 +60,10 @@
             <% end %>
           </td>
           <td class="small">
-            <% if investment.valuators.size.zero? %>
+            <% if investment.valuators.size == 0 && investment.valuator_groups.size == 0  %>
               <%= t("admin.budget_investments.index.no_valuators_assigned") %>
             <% else %>
-              <%= investment.valuators.collect(&:description_or_name).join(", ") %>
-            <% end %>
-          </td>
-          <td class="small">
-            <% if investment.valuator_groups.size.zero? %>
-              <%= t("admin.budget_investments.index.no_valuator_groups_assigned") %>
-            <% else %>
-              <%= investment.valuator_groups.collect(&:name).join(", ") %>
+              <%= assigned_valuators(investment) %>
             <% end %>
           </td>
           <td class="small">

@@ -109,7 +109,7 @@ feature 'Admin budget investments' do
       end
 
       within("#budget_investment_#{budget_investment3.id}") do
-        expect(page).to have_content("No valuator groups assigned")
+        expect(page).to have_content("No valuators assigned")
       end
     end
 
@@ -198,19 +198,19 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Realocate visitors")
       expect(page).to have_link("Destroy the city")
 
-      select "Valuator 1", from: "valuator_id"
+      select "Valuator 1", from: "valuator_or_group_id"
 
       expect(page).to have_content('There is 1 investment')
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      select "All valuators", from: "valuator_id"
+      select "All valuators", from: "valuator_or_group_id"
 
       expect(page).to have_content('There are 2 investments')
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      select "Valuator 1", from: "valuator_id"
+      select "Valuator 1", from: "valuator_or_group_id"
       expect(page).to have_content('There is 1 investment')
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
@@ -231,19 +231,19 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Build a hospital")
       expect(page).to have_link("Build a theatre")
 
-      select "Health", from: "valuator_group_id"
+      select "Health", from: "valuator_or_group_id"
 
       expect(page).to have_content('There is 1 investment')
       expect(page).to have_link("Build a hospital")
       expect(page).not_to have_link("Build a theatre")
 
-      select "All groups", from: "valuator_group_id"
+      select "All valuators", from: "valuator_or_group_id"
 
       expect(page).to have_content('There are 2 investments')
       expect(page).to have_link("Build a hospital")
       expect(page).to have_link("Build a theatre")
 
-      select "Culture", from: "valuator_group_id"
+      select "Culture", from: "valuator_or_group_id"
       expect(page).to have_content('There is 1 investment')
       expect(page).to have_link("Build a theatre")
       expect(page).not_to have_link("Build a hospital")

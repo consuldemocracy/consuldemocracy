@@ -1,6 +1,0 @@
-es:
-  user_group:
-    notice:
-      created: "Grupo de usuarios creado correctamente"
-      updated: "Grupo de usuarios actualizado correctamente"
-      destroyed: "Grupo de usuarios eliminado correctamente"

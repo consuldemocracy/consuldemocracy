@@ -62,9 +62,9 @@ class Budget
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
     scope :without_valuator,            -> { valuation_open.where(valuator_assignments_count: 0) }
-    scope :under_valuation,             -> { valuation_open.where("valuator_assignments_count > 0 AND administrator_id IS NOT ?", nil) }
+    scope :under_valuation,             -> { valuation_open.valuating.where("administrator_id IS NOT ?", nil) }
     scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
-    scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0") }
+    scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0 OR valuator_group_assignments_count > 0" ) }
     scope :valuation_finished,          -> { where(valuation_finished: true) }
     scope :valuation_finished_feasible, -> { where(valuation_finished: true, feasibility: "feasible") }
     scope :feasible,                    -> { where(feasibility: "feasible") }

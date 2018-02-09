@@ -140,7 +140,6 @@ en:
         heading_filter_all: All headings
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
-        valuator_group_filter_all: All groups
         tags_filter_all: All tags
         advanced_filters: Advanced filters
         placeholder: Search projects
@@ -172,7 +171,6 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
-        no_valuator_groups_assigned: No valuator groups assigned
         feasibility:
           feasible: "Feasible (%{price})"
           unfeasible: "Unfeasible"
@@ -184,7 +182,6 @@ en:
         table_supports: "Supports"
         table_admin: "Administrator"
         table_valuator: "Valuator"
-        table_valuator_group: "Valuator group"
         table_geozone: "Scope of operation"
         table_feasibility: "Feasibility"
         table_valuation_finished: "Val. Fin."
@@ -590,7 +587,6 @@ en:
         group: "Group"
         no_group: "No group"
       valuator:
-        description_placeholder: 'Description (optional)'
         add: Add to valuators
         delete: Delete
       search:
@@ -623,6 +619,7 @@ en:
         no_groups: "There are no valuator groups"
       show:
         title: "Valuators group: %{group}"
+        no_valuators: "There are no valuators assigned to this group"
       form:
         name: "Group name"
         new: "Create valuators group"
@@ -959,7 +956,6 @@ en:
         geozone_filter_all: All zones
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
-        valuator_group_filter_all: All groups
         tags_filter_all: All tags
         filters:
           valuation_open: Open
@@ -972,7 +968,6 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
-        no_valuator_groups_assigned: No valuator groups assigned
         summary_link: "Investment project summary"
         valuator_summary_link: "Valuator summary"
         feasibility:

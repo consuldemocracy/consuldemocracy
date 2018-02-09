@@ -16,6 +16,7 @@ en:
         budget_investment: "Budget Investment created successfully."
         signature_sheet: "Signature sheet created successfully"
         topic: "Topic created successfully."
+        valuator_group: "Valuator group created successfully"
       save_changes:
         notice: Changes saved
       update:
@@ -27,9 +28,11 @@ en:
         spending_proposal: "Investment project updated succesfully."
         budget_investment: "Investment project updated succesfully."
         topic: "Topic updated successfully."
+        valuator_group: "Valuator group updated successfully"
       destroy:
         spending_proposal: "Spending proposal deleted succesfully."
         budget_investment: "Investment project deleted succesfully."
         error: "Could not delete"
         topic: "Topic deleted successfully."
         poll_question_answer_video: "Answer video deleted successfully."
+        valuator_group: "Valuator group deleted successfully"

@@ -18,4 +18,9 @@ class Valuator < ActiveRecord::Base
   def description_or_name
     description.present? ? description : name
   end
+
+  def assigned_investment_ids
+    investment_ids + [valuator_group.try(:investment_ids)].flatten
+  end
+
 end

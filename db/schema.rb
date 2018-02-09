@@ -133,35 +133,38 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.string   "title"
     t.text     "description"
     t.string   "external_url"
-    t.integer  "price",                      limit: 8
-    t.string   "feasibility",                limit: 15, default: "undecided"
+    t.integer  "price",                            limit: 8
+    t.string   "feasibility",                      limit: 15, default: "undecided"
     t.text     "price_explanation"
     t.text     "unfeasibility_explanation"
-    t.boolean  "valuation_finished",                    default: false
-    t.integer  "valuator_assignments_count",            default: 0
-    t.integer  "price_first_year",           limit: 8
+    t.text     "internal_comments"
+    t.boolean  "valuation_finished",                          default: false
+    t.integer  "valuator_assignments_count",                  default: 0
+    t.integer  "price_first_year",                 limit: 8
     t.string   "duration"
     t.datetime "hidden_at"
-    t.integer  "cached_votes_up",                       default: 0
-    t.integer  "comments_count",                        default: 0
-    t.integer  "confidence_score",                      default: 0,           null: false
-    t.integer  "physical_votes",                        default: 0
+    t.integer  "cached_votes_up",                             default: 0
+    t.integer  "comments_count",                              default: 0
+    t.integer  "confidence_score",                            default: 0,           null: false
+    t.integer  "physical_votes",                              default: 0
     t.tsvector "tsv"
-    t.datetime "created_at",                                                  null: false
-    t.datetime "updated_at",                                                  null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
     t.integer  "heading_id"
     t.string   "responsible_name"
     t.integer  "budget_id"
     t.integer  "group_id"
-    t.boolean  "selected",                              default: false
+    t.boolean  "selected",                                    default: false
     t.string   "location"
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
     t.integer  "ballot_lines_count",                    default: 0
     t.integer  "previous_heading_id"
-    t.boolean  "winner",                                default: false
-    t.boolean  "incompatible",                          default: false
+    t.integer  "ballot_lines_count",                          default: 0
+    t.boolean  "winner",                                      default: false
+    t.boolean  "incompatible",                                default: false
     t.integer  "community_id"
+    t.integer  "valuator_group_assignments_count",            default: 0
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -185,6 +188,16 @@ ActiveRecord::Schema.define(version: 20180320104823) do
   add_index "budget_phases", ["kind"], name: "index_budget_phases_on_kind", using: :btree
   add_index "budget_phases", ["next_phase_id"], name: "index_budget_phases_on_next_phase_id", using: :btree
   add_index "budget_phases", ["starts_at"], name: "index_budget_phases_on_starts_at", using: :btree
+
+  create_table "budget_polls", force: :cascade do |t|
+    t.string  "name"
+    t.string  "email"
+    t.string  "preferred_subject"
+    t.boolean "collective"
+    t.boolean "public_worker"
+    t.boolean "proposal_author"
+    t.boolean "selected_proposal_author"
+  end
 
   create_table "budget_reclassified_votes", force: :cascade do |t|
     t.integer  "user_id"
@@ -1058,11 +1071,6 @@ ActiveRecord::Schema.define(version: 20180320104823) do
   add_index "topics", ["community_id"], name: "index_topics_on_community_id", using: :btree
   add_index "topics", ["hidden_at"], name: "index_topics_on_hidden_at", using: :btree
 
-  create_table "user_groups", force: :cascade do |t|
-    t.string "name"
-    t.string "kind"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                                     default: ""
     t.string   "encrypted_password",                        default: "",                    null: false
@@ -1139,7 +1147,8 @@ ActiveRecord::Schema.define(version: 20180320104823) do
   end
 
   create_table "valuator_groups", force: :cascade do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "budget_investments_count", default: 0
   end
 
   create_table "valuators", force: :cascade do |t|
