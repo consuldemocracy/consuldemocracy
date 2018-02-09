@@ -3,7 +3,7 @@
 <%= link_to t("admin.valuator_groups.index.new"), new_admin_valuator_group_path, class: "button float-right" %>
 
 <% if @groups.any? %>
-  <h3 class="margin">There are <%= @groups.count %> groups of users</h3>
+  <h3 class="margin"><%= page_entries_info @groups %></h3>
 
   <table>
     <thead>
@@ -16,6 +16,7 @@
     </tbody>
   </table>
 
+  <%= paginate @groups %>
 <% else %>
   <div class="callout primary">
     <%= t("admin.valuator_groups.index.no_groups") %>
