@@ -20,6 +20,14 @@
   </div>
 
   <div class="small-12 medium-3 column">
+    <%= select_tag :valuator_group_id,
+                   options_for_select(valuator_group_select_options, params[:valuator_group_id]),
+                   { prompt: t("admin.budget_investments.index.valuator_group_filter_all"),
+                     label: false,
+                     class: "js-submit-on-change" } %>
+  </div>
+
+  <div class="small-12 medium-3 column">
     <%= select_tag :heading_id,
                    options_for_select(budget_heading_select_options(@budget), params[:heading_id]),
                    { prompt: t("admin.budget_investments.index.heading_filter_all"),

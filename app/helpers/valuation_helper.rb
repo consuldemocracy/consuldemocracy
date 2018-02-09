@@ -10,6 +10,16 @@ module ValuationHelper
     end
   end
 
+  def valuator_group_select_options(group = nil)
+    if group.present?
+      ValuatorGroup.where.not(id: group.id).order("name ASC")
+              .collect { |g| [ g.name, g.id ] }
+              .prepend([valuator.name, valuator.id])
+    else
+      ValuatorGroup.order("name ASC").collect { |g| [ g.name, g.id ] }
+    end
+  end
+
   def assigned_valuators_info(valuators)
     case valuators.size
     when 0
