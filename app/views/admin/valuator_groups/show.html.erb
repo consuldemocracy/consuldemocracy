@@ -2,4 +2,11 @@
 
 <h2><%= t("admin.valuator_groups.show.title", group: @group.name) %></h2>
 
-<!-- Pending add members list -->
+<ul id="valuators">
+  <% @group.valuators.each do |valuator| %>
+    <li>
+      <%= link_to valuator.description_or_email, 
+                  admin_valuator_path(valuator) %>
+    </li>
+  <% end %>
+</ul>
