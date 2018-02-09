@@ -16,6 +16,16 @@
         <%= link_to t("pages.help.menu.budgets"), "#budgets", class: "button hollow expanded" %>
       </li>
       <% end %>
+      <% if feature?(:polls) %>
+      <li>
+        <%= link_to t("pages.help.menu.polls"), "#polls", class: "button hollow expanded" %>
+      </li>
+      <% end %>
+      <% if feature?(:legislation) %>
+      <li>
+        <%= link_to t("pages.help.menu.processes"), "#processes", class: "button hollow expanded" %>
+      </li>
+      <% end %>
       <li>
         <%= link_to t("pages.help.menu.other"), "#other", class: "button hollow expanded" %>
       </li>

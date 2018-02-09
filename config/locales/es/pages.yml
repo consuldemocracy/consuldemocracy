@@ -11,7 +11,9 @@ es:
         debates: "Debates"
         proposals: "Propuestas"
         budgets: "Presupuestos participativos"
+        polls: "Votaciones"
         other: "Otra información de interés"
+        processes: "Procesos legislativos"
       debates:
         title: "Debates"
         description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad. También es un espacio donde generar ideas que a través de las otras secciones de %{org} lleven a actuaciones concretas por parte del Ayuntamiento."
@@ -47,6 +49,12 @@ es:
         feature_1_link: "registrarte en %{org_name}"
         feature_2: "Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años."
         feature_3: "Los resultados de todas las votaciones son vinculantes para el gobierno municipal."
+      processes:
+        title: "Procesos legislativos"
+        description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad y puede dar su opinión sobre las políticas municipales en debates previos."
+        link: "procesos legislativos"
+        feature: "Para participar en un proceso hay que %{sign_up} y consultar la página de %{link} periódicamente para saber qué normativas y políticas se están debatiendo y consultando."
+        sign_up: "registrarse en %{org}"
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."
