@@ -1,6 +1,6 @@
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
-            social_url: investment.url,
+            social_url: budget_investment_url(investment.budget, investment),
             social_title: investment.title,
             social_description: investment.description,
             twitter_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil),
@@ -148,8 +148,9 @@
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("budgets.investments.show.share"),
         title: investment.title,
-        image_url: image_absolute_url(investment.image, :thumb),
-        url: investment.url
+        image_url: investment.image_url(:thumb)image_absolute_url(investment.image, :thumb),
+        url: investment.url,
+        description: investment.description
       } %>
 
       <% if current_user %>
