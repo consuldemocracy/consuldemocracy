@@ -31,6 +31,7 @@ es:
           one: Evaluador asignado
           other: "%{count} evaluadores asignados"
         no_valuators_assigned: Sin evaluador
+        no_valuator_groups_assigned: Sin grupo evaluador
         table_id: ID
         table_title: Título
         table_heading_name: Nombre de la partida
