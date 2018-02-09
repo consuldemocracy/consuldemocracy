@@ -1,15 +1,8 @@
 es:
   pages:
-    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado en Madrid aportando los datos indicados anteriormente, los cuales serán contrastados por la Dirección General de Participación Ciudadana con los ficheros 'Padrón Municipal de Habitantes' cuyo responsable es la Dirección General de Economía y Sector Público y 'Servicios Atención al Ciudadano' cuyo responsable es la Dirección General de Transparencia y Atención a la Ciudadanía. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados por la Dirección General de Participación Ciudadana en el fichero 'Gestión de Procesos Participativos' indicado anteriormente en las condiciones de uso del portal.
+    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
-    help_translate:
-      title: ¡Ayúdanos a traducir!
-      text: |-
-        Si hablas otros idiomas por favor ayúdanos a que esta web y el software que utiliza esté disponible en otros idiomas.
-
-        Escríbenos a ag.gobiernoabierto@madrid.es para que te demos acceso al sistema de traducción colaborativo.
-        Todos juntos conseguiremos que cualquier país pueda disfrutar de esta herramienta. ¡Un millón de gracias!
     help:
       title: "%{org} es una plataforma de participación ciudadana"
       subtitle: "En %{org} se pueden hacer propuestas, votar en consultas ciudadanas, plantear proyectos de presupuestos participativos, decidir la normativa municipal y abrir debates para intercambiar opiniones con otras personas."
@@ -20,7 +13,7 @@ es:
         budgets: "Presupuestos participativos"
         polls: "Votaciones"
         other: "Otra información de interés"
-        processes: "Procesos"
+        processes: "Procesos legislativos"
       debates:
         title: "Debates"
         description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad. También es un espacio donde generar ideas que a través de las otras secciones de %{org} lleven a actuaciones concretas por parte del Ayuntamiento."
@@ -57,9 +50,9 @@ es:
         feature_2: "Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años."
         feature_3: "Los resultados de todas las votaciones son vinculantes para el gobierno municipal."
       processes:
-        title: "Procesos"
+        title: "Procesos legislativos"
         description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad y puede dar su opinión sobre las políticas municipales en debates previos."
-        link: "procesos"
+        link: "procesos legislativos"
         feature: "Para participar en un proceso hay que %{sign_up} y consultar la página de %{link} periódicamente para saber qué normativas y políticas se están debatiendo y consultando."
         sign_up: "registrarse en %{org}"
       faq:
@@ -74,9 +67,6 @@ es:
       other:
         title: "Otra información de interés"
         how_to_use: "Utiliza %{org_name} en tu municipio"
-        world: "Participación ciudadana directa en el mundo"
-        facts: "Hechos sobre participación ciudadana y democracia directa"
-        forums: "Foros Locales"
       how_to_use:
         text: |-
           Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
@@ -92,7 +82,6 @@ es:
       conditions: Condiciones de uso
       help: "¿Qué es %{org}? - Participación ciudadana"
       privacy: Política de Privacidad
-      kit_decide: "Kit Decide: para hacer tus campañas de comunicación después de crear una propuesta"
     verify:
       code: Código que has recibido en tu carta
       email: Email
