@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased](https://github.com/consul/consul/compare/v0.13...consul:master)
 
 ### Added
+- Missing polls button on help page https://github.com/consul/consul/pull/2452
+- New legislation processes section on help page https://github.com/consul/consul/pull/2452
+
 ### Changed
 ### Deprecated
 ### Removed
 ### Fixed
 - Improve spec boot time and clean up logs https://github.com/consul/consul/pull/2444
+- Fix flaky spec: random investments order scenario https://github.com/consul/consul/pull/2454
 
 ### Security
 
