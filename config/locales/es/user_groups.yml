@@ -3,4 +3,7 @@ es:
     zero: Hay 0 grupos de evaluadores
     one: Hay 1 grupo de evaluadores
     other: Hay '%{count}' grupos de evaluadores
-
+    notice:
+      created: "Grupo de usuarios creado correctamente"
+      updated: "Grupo de usuarios actualizado correctamente"
+      destroyed: "Grupo de usuarios eliminado correctamente"
