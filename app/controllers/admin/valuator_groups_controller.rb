@@ -1,7 +1,7 @@
 class Admin::ValuatorGroupsController < Admin::BaseController
 
   def index
-    @groups = ValuatorGroup.all
+    @groups = ValuatorGroup.all.page(params[:page])
   end
 
   def show
