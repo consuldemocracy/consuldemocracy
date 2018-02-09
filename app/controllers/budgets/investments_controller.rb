@@ -107,7 +107,7 @@ module Budgets
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          seed = params[:random_seed] || session[:random_seed] || rand(-100..100) / 100.0
+          seed = params[:random_seed] || session[:random_seed] || rand(-100000..100000)
           params[:random_seed] ||= Float(seed) rescue 0
           session[:random_seed] = params[:random_seed]
         else
