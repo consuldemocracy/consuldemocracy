@@ -217,6 +217,24 @@ es:
       text: "Haz tus aportaciones a las cinco preguntas sobre el parque ubicado en Fuencarral-El Pardo."
       link: "Participar en el debate"
       alt: "Parque de Arroyofresno"
+    terrazas:
+      label: "Consulta pública"
+      title: "Ordenanza de terrazas de hostelería y restauración"
+      text: "Aporta tus ideas a la nueva ordenanza que va a plantear el Ayuntamiento de Madrid"
+      link: "Participar en la consulta"
+      alt: "Terraza de un bar en Madrid"
+    movilidad:
+      label: "Debate previo"
+      title: "Ordenanza de movilidad"
+      text: "Deja tus aportaciones sobre las 18 líneas maestras que se plantean para modificar esta ordenanza"
+      link: "Participar en el debate"
+      alt: "Grupo de ciclistas circulando por una calle de Madrid"
+    budgets_guide:
+      label: "Presupuestos Participativos 2018"
+      title: "Tu proyecto en 10 pasos"
+      text: "Te damos algunos consejos para publicar tu idea para mejorar la ciudad en Decide Madrid."
+      link: "Leer consejos"
+      alt: "Captura de pantalla de Presupuestos Participativos 2018"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"

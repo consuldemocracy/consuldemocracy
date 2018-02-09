@@ -214,6 +214,24 @@ en:
       text: "Contribute to the five questions about the park located in Fuencarral-El Pardo."
       link: "Participate in the debate"
       alt: "Arroyofresno Park"
+    terrazas:
+      label: "Public consultation"
+      title: "Ordinance on terraces for hotels and restaurants"
+      text: "Contribute your ideas to the new ordinance that the Madrid City Council is going to propose."
+      link: "Participate in the consultation"
+      alt: "Terrace of a bar in Madrid"
+    movilidad:
+      label: "Previous Debate"
+      title: "Mobility Ordinance"
+      text: "Leave your contributions on the 18 guidelines that are proposed to modify this ordinance."
+      link: "Participate in the debate"
+      alt: "Group of cyclists circulating on a Madrid street"
+    budgets_guide:
+      label: "Participatory Budgets 2018"
+      title: "Your project in 10 steps"
+      text: "We give you some tips to publish your idea to improve the city in Decide Madrid."
+      link: "Read advices"
+      alt: "Screenshot of Participatory Budgets 2018"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
