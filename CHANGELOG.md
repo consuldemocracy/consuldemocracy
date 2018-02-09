@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improve spec boot time and clean up logs https://github.com/consul/consul/pull/2444
 - Flaky spec: random investments order scenario https://github.com/consul/consul/pull/2454
 - Flaky spec: users without email should not receive emails https://github.com/consul/consul/pull/2453
+- Flaky spec: missing comment on legislation annotation https://github.com/consul/consul/pull/2455
 
 ### Security
 
