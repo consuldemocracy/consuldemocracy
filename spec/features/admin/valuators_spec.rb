@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Admin valuators', :focus do
+feature 'Admin valuators' do
   background do
     @admin    = create(:administrator)
     @user     = create(:user, username: 'Jose Luis Balbin')
@@ -9,7 +9,7 @@ feature 'Admin valuators', :focus do
     visit admin_valuators_path
   end
 
-  scenario "Show", :focus do
+  scenario "Show" do
     visit admin_valuator_path(@valuator)
 
     expect(page).to have_content @valuator.name

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Valuator groups", :focus do
+feature "Valuator groups" do
 
   let(:admin) { create(:administrator).user }
 
@@ -18,12 +18,20 @@ feature "Valuator groups", :focus do
     expect(page).to have_content group2.name
   end
 
-  scenario "Show" do
+  scenario "Show", :focus do
     group = create(:valuator_group)
+    valuator1 = create(:valuator, valuator_group: group)
+    valuator2 = create(:valuator, valuator_group: group)
+    valuator3 = create(:valuator, valuator_group: nil)
 
     visit admin_valuator_group_path(group)
 
     expect(page).to have_content group.name
+
+    within("#valuators") do
+      expect(page).to have_link(valuator1.email, href: admin_valuator_path(valuator1))
+      expect(page).to have_link(valuator2.email, href: admin_valuator_path(valuator2))
+    end
   end
 
   scenario "Create" do
