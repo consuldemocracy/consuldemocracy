@@ -11,11 +11,19 @@ feature "Valuator groups" do
   scenario "Index" do
     group1 = create(:valuator_group)
     group2 = create(:valuator_group)
+    3.times { create(:valuator, valuator_group: group1) }
 
     visit admin_valuator_groups_path
 
-    expect(page).to have_content group1.name
-    expect(page).to have_content group2.name
+    within("#valuator_group_#{group1.id}") do
+      expect(page).to have_content group1.name
+      expect(page).to have_content 3
+    end
+
+    within("#valuator_group_#{group2.id}") do
+      expect(page).to have_content group2.name
+      expect(page).to have_content 0
+    end
   end
 
   scenario "Show" do
