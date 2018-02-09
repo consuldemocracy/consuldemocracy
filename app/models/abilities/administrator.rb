@@ -82,6 +82,8 @@ module Abilities
 
       can [:create], Document
       can [:create, :destroy], DirectUpload
+
+      can [:deliver], Newsletter, hidden_at: nil
     end
   end
 end
