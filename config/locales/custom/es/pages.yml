@@ -1,5 +1,13 @@
 es:
   pages:
+    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado en Madrid aportando los datos indicados anteriormente, los cuales serán contrastados por la Dirección General de Participación Ciudadana con los ficheros 'Padrón Municipal de Habitantes' cuyo responsable es la Dirección General de Economía y Sector Público y 'Servicios Atención al Ciudadano' cuyo responsable es la Dirección General de Transparencia y Atención a la Ciudadanía. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados por la Dirección General de Participación Ciudadana en el fichero 'Gestión de Procesos Participativos' indicado anteriormente en las condiciones de uso del portal.
+    help_translate:
+      title: ¡Ayúdanos a traducir!
+      text: |-
+        Si hablas otros idiomas por favor ayúdanos a que esta web y el software que utiliza esté disponible en otros idiomas.
+
+        Escríbenos a ag.gobiernoabierto@madrid.es para que te demos acceso al sistema de traducción colaborativo.
+        Todos juntos conseguiremos que cualquier país pueda disfrutar de esta herramienta. ¡Un millón de gracias!
     help:
       title: "%{org} es la plataforma de participación ciudadana del Ayuntamiento de Madrid"
       meta_description: "Plataforma de participación ciudadana del Ayuntamiento de Madrid donde puedes proponer y decidir en qué gastar el presupuesto municipal."
@@ -32,6 +40,10 @@ es:
       processes:
         detail: "Preguntas frecuentes sobre procesos"
         description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad de Madrid y puede dar su opinión sobre las políticas municipales en debates previos."
+      other:
+        world: "Participación ciudadana directa en el mundo"
+        facts: "Hechos sobre participación ciudadana y democracia directa"
+        forums: "Foros Locales"
       history:
         title: "Historia de Decide Madrid"
         description: "La plataforma de participación de Decide Madrid lleva en marcha desde septiembre de 2015. Desde entonces ha registrado decenas de miles de propuestas y proyectos, se han celebrado dos consultas ciudadanas (en febrero y octubre de 2017) y dos ediciones de presupuestos participativos en las que la ciudadanía ha decidido en qué gastar 160 millones de euros de los presupuestos municipales."
@@ -56,6 +68,7 @@ es:
     privacy: Política de Privacidad
     titles:
       polls: "Preguntas frecuentes sobre votaciones"
+      kit_decide: "Kit Decide: para hacer tus campañas de comunicación después de crear una propuesta"
     processes:
       back: Volver
       index:
@@ -129,7 +142,6 @@ es:
           Este texto, en cuya elaboración ha participado un nutrido grupo de representantes de diferentes áreas de gobierno y órganos directivos municipales, surge con la vocación de convertir la transparencia en uno de los ejes inspiradores de la actuación municipal y para lograr devolver la información que genera la Administración a sus verdaderos propietarios, los ciudadanos.
 
           El proceso de consulta pública finalizó el 31 de Enero de 2016.
-
         button: Ver borrador
       process_3:
         view_all: Ver propuestas y preguntas más votadas
