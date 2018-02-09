@@ -20,7 +20,7 @@ class Admin::ValuatorGroupsController < Admin::BaseController
     @group = ValuatorGroup.new(group_params)
     if @group.save
       notice = t("user_group.notice.created")
-      redirect_to [:admin, @group], notice: notice
+      redirect_to admin_valuator_groups_path, notice: notice
     else
       render :new
     end
