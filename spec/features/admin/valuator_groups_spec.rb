@@ -29,14 +29,14 @@ feature "Valuator groups", :focus do
   scenario "Create" do
     visit admin_valuators_path
 
-    click_link "Grupos de evaluadores"
-    click_link "Nuevo"
+    click_link "Valuator Groups"
+    click_link "Create valuators group"
 
     fill_in "valuator_group_name", with: "Health"
-    click_button "Create Valuator group"
+    click_button "Create valuators group"
 
     expect(page).to have_content "User group created successfully"
-    #expect(page).to have_content "There are 1 groups of valuators"
+    expect(page).to have_content "There is 1 valuator group"
     expect(page).to have_content "Health"
   end
 
@@ -47,20 +47,20 @@ feature "Valuator groups", :focus do
     click_link "Edit"
 
     fill_in "valuator_group_name", with: "Health and Sports"
-    click_button "Update Valuator group"
+    click_button "Save valuators group"
 
     expect(page).to have_content "User group updated successfully"
     expect(page).to have_content "Health and Sports"
   end
 
-  scenario "Destroy" do
+  scenario "Delete" do
     group = create(:valuator_group)
 
     visit admin_valuator_groups_path
-    click_link "Destroy"
+    click_link "Delete"
 
-    expect(page).to have_content "User group destroyed successfully"
-    expect(page).to have_content "There are 0 groups of users"
+    expect(page).to have_content "User group deleted successfully"
+    expect(page).to have_content "There are no valuator groups"
   end
 
   pending "When we change the group of a Valuator we should also change the valuator_assignments"
