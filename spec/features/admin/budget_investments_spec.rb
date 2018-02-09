@@ -189,7 +189,7 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Realocate visitors")
     end
 
-    scenario "Filtering by valuator group", :js, :focus do
+    scenario "Filtering by valuator group", :js do
       user = create(:user)
       health_group = create(:valuator_group, name: "Health")
       culture_group = create(:valuator_group, name: "Culture")

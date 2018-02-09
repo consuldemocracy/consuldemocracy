@@ -18,7 +18,7 @@ feature "Valuator groups" do
     expect(page).to have_content group2.name
   end
 
-  scenario "Show", :focus do
+  scenario "Show" do
     group = create(:valuator_group)
     valuator1 = create(:valuator, valuator_group: group)
     valuator2 = create(:valuator, valuator_group: group)
