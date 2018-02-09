@@ -40,6 +40,9 @@ en:
       manager:
         one: "Manager"
         other: "Managers"
+      newsletter:
+        one: "Newsletter"
+        other: "Newsletters"
       vote:
         one: "Vote"
         other: "Votes"
@@ -291,6 +294,11 @@ en:
       poll/question/answer/video:
         title: Title
         url: External video
+      newsletter:
+        segment_recipient: Recipients
+        subject: Subject
+        from: From
+        body: Email content
     errors:
       models:
         user:
