@@ -172,6 +172,7 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
+        no_valuator_groups_assigned: No valuator groups assigned
         feasibility:
           feasible: "Feasible (%{price})"
           unfeasible: "Unfeasible"
@@ -183,6 +184,7 @@ en:
         table_supports: "Supports"
         table_admin: "Administrator"
         table_valuator: "Valuator"
+        table_valuator_group: "Valuator group"
         table_geozone: "Scope of operation"
         table_feasibility: "Feasibility"
         table_valuation_finished: "Val. Fin."
@@ -970,6 +972,7 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
+        no_valuator_groups_assigned: No valuator groups assigned
         summary_link: "Investment project summary"
         valuator_summary_link: "Valuator summary"
         feasibility:
