@@ -23,7 +23,7 @@
 </p>
 
 <p id="assigned_valuator_groups">
-  <strong>Valuator Groups:</strong>
+  <strong><%= t("admin.budget_investments.show.valuator_groups") %>:</strong>
   <% if @investment.valuator_groups.any? %>
     <%= @investment.valuator_groups.collect(&:name).join(', ') %>
   <% else %>

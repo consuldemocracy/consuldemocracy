@@ -1,4 +1,5 @@
-Hey there I'm group <%= @group.name %>
+<%= back_link_to admin_valuator_groups_path %>
 
-<br/>
-<%= link_to "Ver todos los grupos", admin_valuator_groups_path %>
+<h2><%= t("admin.valuator_groups.show.title", group: @group.name) %></h2>
+
+<!-- Pending add members list -->

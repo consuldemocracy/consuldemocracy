@@ -13,6 +13,7 @@ en:
       unmark_featured: Unmark featured
       edit: Edit
       configure: Configure
+      delete: Delete
     banners:
       index:
         title: Banners
@@ -176,7 +177,6 @@ en:
           undecided: "Undecided"
         selected: "Selected"
         select: "Select"
-        download_current_selection: "Download current selection"
         table_id: "ID"
         table_title: "Title"
         table_supports: "Supports"
@@ -223,6 +223,7 @@ en:
         documents: "Documents"
         see_documents: "See documents (%{count})"
         no_documents: "Without documents"
+        valuator_groups: "Valuator Groups"
       edit:
         classification: Classification
         compatibility: Compatibility
@@ -236,6 +237,7 @@ en:
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
+        user_groups: "Groups"
       search_unfeasible: Search unfeasible
     milestones:
       index:
@@ -581,6 +583,9 @@ en:
         description: Description
         no_description: No description
         no_valuators: There are no valuators.
+        valuator_groups: "Valuator Groups"
+        group: "Group"
+        no_group: "No group"
       valuator:
         description_placeholder: 'Description (optional)'
         add: Add to valuators
@@ -596,6 +601,29 @@ en:
         in_evaluation_count: In evaluation
         total_count: Total
         cost: Cost
+      form:
+        edit_title: "Valuators: Edit valuator"
+        update: "Update valuator"
+        updated: "Valuator updated successfully"
+      show:
+        description: "Description"
+        email: "Email"
+        group: "Group"
+        no_description: "Without description"
+        no_group: "Without group"
+    valuator_groups:
+      index:
+        title: "Valuator groups"
+        new: "Create valuators group"
+        name: "Name"
+        members: "Members"
+        no_groups: "There are no valuator groups"
+      show:
+        title: "Valuators group: %{group}"
+      form:
+        name: "Group name"
+        new: "Create valuators group"
+        edit: "Save valuators group"
     poll_officers:
       index:
         title: Poll officers

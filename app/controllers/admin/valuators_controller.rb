@@ -31,7 +31,7 @@ class Admin::ValuatorsController < Admin::BaseController
   def update
     @valuator = Valuator.find(params[:id])
     if @valuator.update(valuator_params)
-      notice = "Valuator updated successfully"
+      notice = t("admin.valuators.form.updated")
       redirect_to [:admin, @valuator], notice: notice
     else
       render :edit

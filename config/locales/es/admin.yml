@@ -13,6 +13,7 @@ es:
       unmark_featured: Quitar destacado
       edit: Editar
       configure: Configurar
+      delete: Borrar
     banners:
       index:
         title: Banners
@@ -222,6 +223,7 @@ es:
         documents: "Documentos"
         see_documents: "Ver documentos (%{count})"
         no_documents: "Sin documentos"
+        valuator_groups: "Grupos de evaluadores"
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
@@ -235,6 +237,7 @@ es:
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
+        user_groups: "Grupos"
       search_unfeasible: Buscar inviables
     milestones:
       index:
@@ -580,6 +583,9 @@ es:
         description: Descripción
         no_description: Sin descripción
         no_valuators: No hay evaluadores.
+        valuator_groups: "Grupo de evaluadores"
+        group: "Grupo"
+        no_group: "Sin grupo"
       valuator:
         description_placeholder: 'Descripción (opcional)'
         add: Añadir como evaluador
@@ -595,6 +601,29 @@ es:
         in_evaluation_count: En evaluación
         total_count: Total
         cost: Coste total
+      form:
+        edit_title: "Evaluadores: Editar evaluador"
+        update: "Actualizar evaluador"
+        updated: "Evaluador actualizado correctamente"
+      show:
+        description: "Descripción"
+        email: "Email"
+        group: "Grupo"
+        no_description: "Sin descripción"
+        no_group: "Sin grupo"
+    valuator_groups:
+      index:
+        title: "Grupos de evaluadores"
+        new: "Crear grupo de evaluadores"
+        name: "Nombre"
+        members: "Miembros"
+        no_groups: "No hay grupos de evaluadores"
+      show:
+        title: "Grupo de evaluadores: %{group}"
+      form:
+        name: "Nombre del grupo"
+        new: "Crear grupo de evaluadores"
+        edit: "Guardar grupo de evaluadores"
     poll_officers:
       index:
         title: Presidentes de mesa

@@ -1,9 +1,20 @@
-<%= form_for [:admin, @valuator] do |f| %>
-  <%= f.text_field :description %>
-  <%= f.select :valuator_group_id, 
-               @valuator_groups.map {|group| [group.name, group.id] },
-               { include_blank: true } %>
-  <%= f.submit %>
-<% end %>
+<%= back_link_to admin_valuators_path %>
 
-<%= link_to "Go back", admin_valuator_path(@valuator) %>
+<h2><%= t("admin.valuators.form.edit_title") %></h2>
+
+<div class="callout highlight">
+  <strong><%= @valuator.name %></strong><br>
+  <%= @valuator.email %>
+</div>
+
+<div class="margin-top">
+  <%= form_for [:admin, @valuator] do |f| %>
+    <%= f.text_field :description %>
+    <div class="small-12 medium-6">
+      <%= f.select :valuator_group_id,
+                   @valuator_groups.map {|group| [group.name, group.id] },
+                   { include_blank: true } %>
+    </div>
+    <%= f.submit t("admin.valuators.form.update"), class: "button success" %>
+  <% end %>
+</div>
