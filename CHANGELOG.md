@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 ### Fixed
 - Improve spec boot time and clean up logs https://github.com/consul/consul/pull/2444
-- Fix flaky spec: random investments order scenario https://github.com/consul/consul/pull/2454
+- Flaky spec: random investments order scenario https://github.com/consul/consul/pull/2454
 
 ### Security
 
