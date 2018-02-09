@@ -12,7 +12,7 @@ module Abilities
       valuator = user.valuator
 
       can [:read], SpendingProposal
-      can [:read, :update, :valuate, :comment_valuation], Budget::Investment, id: valuator.investment_ids + valuator.valuator_group.investment_ids
+      can [:read, :update, :valuate, :comment_valuation], Budget::Investment, id: valuator.investment_ids + [valuator.valuator_group.try(:investment_ids)].flatten
       cannot [:update, :valuate, :comment_valuation], Budget::Investment, budget: { phase: 'finished' }
     end
   end
