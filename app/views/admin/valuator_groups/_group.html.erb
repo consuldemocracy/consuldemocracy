@@ -1,9 +1,9 @@
-<tr>
+<tr id="<%= dom_id(group) %>">
   <td>
     <%= link_to group.name, admin_valuator_group_path(group) %>
   </td>
   <td>
-    <!-- Pending add members list COUNT -->
+    <%= group.valuators.count %>
   </td>
   <td>
     <%= link_to t("admin.actions.delete"),
