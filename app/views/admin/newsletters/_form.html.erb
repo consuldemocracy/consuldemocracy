@@ -1,0 +1,14 @@
+<%= form_for [:admin, @newsletter] do |f| %>
+  <%= render 'shared/errors', resource: @newsletter %>
+
+  <%= f.select :segment_recipient, options_for_select(Newsletter.segment_recipients
+                                   .collect { |k,v| [t("admin.segment_recipient.#{k}"), v] },
+                                                      @newsletter[:segment_recipient]) %>
+  <%= f.text_field :subject %>
+  <%= f.text_field :from %>
+  <%= f.cktext_area :body, ckeditor: { language: I18n.locale } %>
+
+  <div class="margin-top">
+    <%= f.submit class: "button success" %>
+  </div>
+<% end %>
