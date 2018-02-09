@@ -1,18 +1,17 @@
-<div>
-  Name: <%= group.name %>
-</div>
+<tr>
+  <td>
+    <%= link_to group.name, admin_valuator_group_path(group) %>
+  </td>
+  <td>
+    <!-- Pending add members list COUNT -->
+  </td>
+  <td>
+    <%= link_to t("admin.actions.delete"),
+                admin_valuator_group_path(group),
+                method: :delete, class: "button hollow alert" %>
 
-<div>
-  Members:
-</div>
-
-<div>
-  Edit:
-  <%= link_to "Edit", edit_admin_valuator_group_path(group) %>
-</div>
-
-<div>
-  Destoy:
-  <%= link_to "Destroy", admin_valuator_group_path(group), method: :delete %>
-</div>
-<br/>
+    <%= link_to t("admin.actions.edit"),
+                edit_admin_valuator_group_path(group),
+                class: "button hollow" %>
+  </td>
+</tr>
