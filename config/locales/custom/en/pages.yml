@@ -1,9 +1,19 @@
 en:
   pages:
+    census_terms: To confirm the account, you must be 16 or older and be registered as resident in Madrid, having provided the information requested previously, which the Directorate-General of Civil Participation will verify against the files 'Municipal Census of Inhabitants', for which the Directorate-General for Statistics is responsible, and the 'Citizen Support Services', for which the Directorate-General for Quality and Citizen Services is responsible. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed by the Directorate-General for Civil Participation in the file 'Management of Participatory Activities' mentioned previously in the terms and conditions of use for the Portal.
+    help_translate:
+      title: Help us translate!
+      text: |-
+        If you speak other languages please help us translate this website and the software behind it.
+
+        Contact us at ag.gobiernoabierto@madrid.es We'll give you access to the collaborative translation tool.
+        Together we can make this open government tool available to any country. Thanks a million!
     help:
       title: "%{org} is the Madrid City Council's citizen participation platform"
       meta_description: "Madrid City Council's citizen participation platform where you can propose and decide what to spend the municipal budget on."
       meta_keywords: "citizen participation, Madrid City Council, Madrid, participatory budgets, citizen proposals, citizen consultation"
+      menu:
+        processes: "Processes"
       debates:
         detail: "Frequently Asked Questions about Debates"
         description: "In the %{link} section you can post and share your opinion with other people on issues that concern you related to the city of Madrid. It is also a place to generate ideas that through the other sections of %{org} lead to concrete actions by the City Council."
@@ -30,8 +40,14 @@ en:
         text_1_html: 'Two voting have been held so far. In February 2017, citizens approved the proposals of <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">"Madrid 100% sostenible" and "Billete único para el transporte público"</a>. It was also asked about the <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">reform of Plaza de España</a>, the mobility of <a href="https://decide.madrid.es/vota/gran-via/results">Gran Vía</a> and issues in six districts.'
         text_2_html: 'In October 2017 citizens decided on the remodelling of eleven squares in the city: <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-lucero/results">Lucero</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-san-blas/results">San Blas</a>, <a href="https://decide.madrid. es/vota/rehabilitacion-plaza-civica-mar-cristal/results">Mar de Cristal</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-duquesa-osuna/results">Duquesa de Osuna</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-emperatriz/results">Emperatriz</a>, <a href="https://decide.madrid. es/vota/rehabilitacion-plaza-remonta/results">Remonta</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-vaguada/results">La Vaguada</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-encuentro/results">El Encuentro</a>, <a href="https://decide.madrid.en/vota/rehabilitacion-plaza-misterios/results">Los Misterios</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-puerto-canfranc/results">Puerto de Canfranc</a> and <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-mayor-villaverde/results">Mayor de Villaverde y Ágata</a>.'
       processes:
+        title: "Processes"
         detail: "Frequently Asked Questions about Processes"
         description: "In the %{link} section, citizens participate in the drafting and modification of regulations affecting the city of Madrid and can give their opinion on municipal policies in previous debates."
+        link: "processes"
+      other:
+        world: "Citizen participation in the world"
+        facts: "Facts about citizen participation and direct democracy"
+        forums: "Local Forums"
       history:
         title: "History of Decide Madrid"
         description: "Decide Madrid's participation platform has been in operation since September 2015. Since then it has registered tens of thousands of proposals and projects, two citizen consultations have been held (in February and October 2017) and two editions of participatory budgets in which citizens have decided on how to spend 160 million euros of municipal budgets."
@@ -51,5 +67,86 @@ en:
           Not only can you use freely this portal in your local government, but you also will be helped by Madrid city council as much as possible to do it, so if you are interested <a href='mailto:extension.institucional@madrid.es'>write us an email</a>.
 
           If you are a programmer, you can see the code and help us to improve it at [Madrid's CONSUL app version](https://github.com/ayuntamientomadrid/consul 'consul github').
+      titles:
+        meetings: Debate's and proposal's meetings
+    privacy: Privacy policy
     titles:
       polls: "Frequently Asked Questions about Voting"
+      kit_decide: "Kit Decide: to make your communication campaigns after you create a proposal"
+    processes:
+      back: Back
+      index:
+        process_1_title: Transparency Ordinance
+        process_1_description: Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help.
+        process_1_button: More information
+        process_2_title: Remodeling of the Plaza España
+        process_2_description_close: Very soon you can choose how you would like the new Plaza España.
+        process_2_button: More information
+        process_3_title: "Pleno Abierto"
+        process_3_description: Supports proposals and questions. The five most voted will be made in person to the political groups in the Open Plenary Session of 24 April.
+        process_3_button: See proposals and questions
+        process_5_title: Plan de Derechos Humanos
+        process_5_description: El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan para el desarrollo de sus políticas públicas.
+        process_5_title_voting: Plan de Derechos Humanos
+        process_5_description_voting_html: "Hasta el 4 de noviembre los ciudadanos priorizaron las medidas y comentaron el borrador del Plan de Derechos Humanos."
+        process_5_button_voting: Más información
+        process_6_title: Cartas de Servicios
+        process_6_description: Puedes dejar tus comentarios en las Cartas de Servicios de los servicios de Ayuda a Domicilio, de los Centros de Día, de Centros Municipales de Mayores y de Teleasistencia Domiciliaria.
+        process_6_button: Ver resultados de participación
+        process_7_title: "Urbanismo: nuevos bancos"
+        process_7_description: Los ciudadanos eligieron el nuevo diseño de bancos para sentarse que les gustaría que se instalasen en la ciudad.
+        process_7_button: See the results
+        process_8_title: "Licencias urbanísticas, declaraciones responsables y comunicaciones previas"
+        process_8_description: Consulta previa sobre la regulación de la concesión de licencias urbanísticas para la realización de obras y la apertura de locales comerciales o empresariales.
+        process_8_button: "Más información"
+        process_9_title: "Alianza para el Gobierno Abierto"
+        process_9_description: "Esta organización compuesta por gobiernos y sociedad civil, ayuda a que los gobiernos desarrollen medidas relevantes y específicas para avanzar en la participación y la transparencia, y certifica el cumplimiento de las mismas por medio de evaluadores independientes."
+        process_9_button: "Más información"
+        process_10_title: "Ordenanza de subvenciones"
+        process_10_description: "El Ayuntamiento de Madrid sometió a consulta pública la necesidad de modificar la regulación del sistema de subvenciones."
+        process_10_button: "Más información"
+        process_11_title: "Borrador de Plan de Calidad de Aire y Cambio Climático"
+        process_11_description: "Información y comunicación de las medidas propuestas en el borrador del nuevo plan de calidad del aire y cambio climático de la ciudad de Madrid."
+        process_11_button: "Más información"
+        process_12_title: "Consulta pública modificación Ordenanza Reguladora de la denominación y Rotulación de Vías, Espacios Urbanos"
+        process_12_description: "En el año 2007, se aprobó la denominada Ley de Memoria Histórica que tiene por objeto reconocer y ampliar derechos así como establecer medidas en favor de quienes padecieron persecución o violencia durante la guerra civil y la dictadura."
+        process_12_button: "Más información"
+        process_13_title: "Nuevo barrio en el distrito de Villa de Vallecas"
+        process_13_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".'
+        process_13_button: "Más información"
+        process_14_title: "Atención a la ciudadanía de Línea Madrid"
+        process_14_description: 'El Proyecto Línea Madrid se enmarca dentro de uno de los principales objetivos del Ayuntamiento de Madrid como es la mejora continua en la prestación de servicios a la ciudadanía.'
+        process_14_button: "Más información"
+        process_15_title: "Nueva ordenanza de movilidad"
+        process_15_description: "Se pretende abrir un profundo debate en la ciudadanía que permita hallar soluciones eficaces y socialmente consensuadas a los problemas de la movilidad urbana presente y futura."
+        process_15_button: "Más información"
+        process_16_title: "Conservación, Rehabilitación y Estado Ruinoso de las Edificaciones"
+        process_16_description: "El Ayuntamiento de Madrid somete a consulta pública la aprobación de una nueva Ordenanza con el ánimo de proteger más eficazmente la calidad de vida de los ciudadanos en términos de sostenibilidad ambiental y cohesión social y territorial."
+        process_16_button: "Más información"
+        process_17_title: "Modificación de la ordenanza reguladora de la publicidad exterior"
+        process_17_description: "El objetivo de la modificación es conseguir una normativa más clara que facilite su aplicación, clarificando conceptos, ámbitos de aplicación y definiciones, eliminando exigencias innecesarias y referencias a normativas sectoriales."
+        process_17_button: "Más información"
+        process_18_title: "Nuevos barrios en el Distrito de Vicálvaro"
+        process_18_description: "El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear nuevos barrios en el Distrito de Vicálvaro."
+        process_18_button: "Más información"
+        process_19_title: 'Cambio de denominación  del barrio "San Andrés"'
+        process_19_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de cambiar la denominación del "Barrio San Andrés" por el de "Villaverde Alto, Casco Histórico de Villaverde", en el Distrito de Villaverde.'
+        process_19_button: "Más información"
+        process_plaza_title: Remodeling of the Plaza España
+        process_plaza_description: Select the project that you like for this new space in your city.
+        more_info_title: "See more information about the process "
+      process_1:
+        title: Help us improve transparency Ordinance of the City of Madrid
+        comment: leave your comments
+        text: |
+          This is the text under public consultation. Soon we will publish the text of the initial draft Ordinance that is approved by the Board of Government of the City of Madrid with the citizen contributions that have been included.
+
+          The Ordinance will regulate active advertising, the right of access and the reuse of public information, as well as the registration of lobbies, from a basic principle of maximum transparency and disclosure of the information generated by the Madrid City Council and the rest of the subjects bound by the law.
+
+          This text, in which a large group of representatives of different government areas and municipal governing bodies participated in the preparation of this text, was created with the aim of turning transparency into one of the inspiring axes of municipal action and to return the information generated by the Administration to its true owners, the citizens.
+
+          The public consultation process was completed on 31 January 2016.
+        button: See ordinance
+      process_3:
+        view_all: See the most voted proposals and questions
+        view_questions: See all questions
