@@ -2,7 +2,6 @@ require 'csv'
 
 class Budget
   class Investment < ActiveRecord::Base
-
     SORTING_OPTIONS = %w(id title supports).freeze
 
     include Rails.application.routes.url_helpers
@@ -122,7 +121,7 @@ class Budget
 
     def self.advanced_filters(params, results)
       ids = []
-      ids += results.feasible.pluck(:id)                    if params[:advanced_filters].include?('feasible')
+      ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?('feasible')
       ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?('selected')
       ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?('undecided')
       ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?('unfeasible')
@@ -139,6 +138,13 @@ class Budget
       end
 
       results.where("budget_investments.id IN (?)", ids)
+    end
+
+    def self.search_by_title_or_id(params)
+      results = Investment.where(budget_id: params[:budget_id])
+
+      return results.where(id: params[:title_or_id]) if params[:title_or_id] =~ /\A[0-9]+\z/
+      results.where("title ILIKE ?", "%#{params[:title_or_id].strip}%")
     end
 
     def searchable_values

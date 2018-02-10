@@ -3,6 +3,9 @@ require 'rails_helper'
 feature 'Admin budget investments' do
 
   let(:budget) { create(:budget) }
+  let(:administrator) do
+    create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
+  end
 
   background do
     admin = create(:administrator)
@@ -307,7 +310,6 @@ feature 'Admin budget investments' do
       group_1 = create(:budget_group, budget: budget)
       group_2 = create(:budget_group, budget: budget)
       parks   = create(:budget_heading, group: group_1)
-
       roads   = create(:budget_heading, group: group_2)
       streets = create(:budget_heading, group: group_2)
 
@@ -363,60 +365,67 @@ feature 'Admin budget investments' do
 
   context 'Search' do
     background do
-      @budget = create(:budget)
-      @investment_1 = create(:budget_investment, title: "Some investment", budget: @budget)
-      @investment_2 = create(:budget_investment, title: "Some other investment", budget: @budget)
+      create(:budget_investment, title: 'Some investment', budget: budget)
+      create(:budget_investment, title: 'Some other investment', budget: budget)
     end
 
     scenario "Search investments by title" do
-      visit admin_budget_budget_investments_path(@budget)
+      visit admin_budget_budget_investments_path(budget)
 
-      expect(page).to have_content(@investment_1.title)
-      expect(page).to have_content(@investment_2.title)
+      expect(page).to have_content('Some investment')
+      expect(page).to have_content('Some other investment')
 
-      fill_in 'project_title', with: 'Some investment'
+      fill_in 'title_or_id', with: 'Some investment'
       click_button 'Search'
 
-      expect(page).to have_content(@investment_1.title)
-      expect(page).to_not have_content(@investment_2.title)
+      expect(page).to have_content('Some investment')
+      expect(page).not_to have_content('Some other investment')
+    end
+
+    scenario 'Search investments by ID' do
+      visit admin_budget_budget_investments_path(budget)
+
+      expect(page).to have_content('Some investment')
+      expect(page).to have_content('Some other investment')
+
+      fill_in 'title_or_id', with: @investment_2.id
+      click_button 'Search'
+
+      expect(page).to have_content('Some other investment')
+      expect(page).not_to have_content('Some investment')
     end
   end
 
   context 'Sorting' do
     background do
-      @budget = create(:budget)
-      @investment_1 = create(:budget_investment, title: "BBBB", cached_votes_up: 50, budget: @budget)
-      @investment_2 = create(:budget_investment, title: "AAAA", cached_votes_up: 25, budget: @budget)
-      @investment_3 = create(:budget_investment, title: "CCCC", cached_votes_up: 10, budget: @budget)
+      create(:budget_investment, title: 'First Investment', cached_votes_up: 50, budget: budget)
+      create(:budget_investment, title: 'Second Investment', cached_votes_up: 25, budget: budget)
+      create(:budget_investment, title: 'Third Investment', cached_votes_up: 10, budget: budget)
     end
 
     scenario 'Sort by ID' do
-      visit admin_budget_budget_investments_path(@budget, sort_by: 'id')
+      visit admin_budget_budget_investments_path(budget, sort_by: 'id')
 
-      expect(@investment_1.title).to appear_before(@investment_2.title)
-      expect(@investment_2.title).to appear_before(@investment_3.title)
+      expect('First Investment').to appear_before('Second Investment')
+      expect('Second Investment').to appear_before('Third Investment')
     end
 
     scenario 'Sort by title' do
-      visit admin_budget_budget_investments_path(@budget, sort_by: 'title')
+      visit admin_budget_budget_investments_path(budget, sort_by: 'title')
 
-      expect(@investment_2.title).to appear_before(@investment_1.title)
-      expect(@investment_1.title).to appear_before(@investment_3.title)
+      expect('Second Investment').to appear_before('First Investment')
+      expect('First Investment').to appear_before('Third Investment')
     end
 
     scenario 'Sort by supports' do
-      visit admin_budget_budget_investments_path(@budget, sort_by: 'supports')
+      visit admin_budget_budget_investments_path(budget, sort_by: 'supports')
 
-      expect(@investment_3.title).to appear_before(@investment_2.title)
-      expect(@investment_2.title).to appear_before(@investment_1.title)
+      expect('Third Investment').to appear_before('Second Investment')
+      expect('Second Investment').to appear_before('First Investment')
     end
   end
 
   context 'Show' do
-    background do
-      @administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
-    end
-
     scenario 'Show the investment details' do
       valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
       budget_investment = create(:budget_investment,
@@ -424,7 +433,7 @@ feature 'Admin budget investments' do
                                   price_first_year: 1000,
                                   feasibility: "unfeasible",
                                   unfeasibility_explanation: 'It is impossible',
-                                  administrator: @administrator)
+                                  administrator: administrator)
       budget_investment.valuators << valuator
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
@@ -444,15 +453,17 @@ feature 'Admin budget investments' do
       within('#assigned_valuators') do
         expect(page).to have_content('Rachel (rachel@valuators.org)')
       end
+
+      expect(page).to have_button "Publish comment"
     end
 
-    scenario "If budget is finished, investment cannot be edited" do
+    scenario "If budget is finished, investment cannot be edited or valuation comments created" do
       # Only milestones can be managed
 
       finished_budget = create(:budget, :finished)
       budget_investment = create(:budget_investment,
                                   budget: finished_budget,
-                                  administrator: @administrator)
+                                  administrator: administrator)
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
       click_link budget_investment.title
@@ -461,6 +472,8 @@ feature 'Admin budget investments' do
       expect(page).not_to have_link "Edit classification"
       expect(page).not_to have_link "Edit dossier"
       expect(page).to have_link "Create new milestone"
+
+      expect(page).not_to have_button "Publish comment"
     end
   end
 
@@ -848,7 +861,6 @@ feature 'Admin budget investments' do
     scenario "Unselecting an investment", :js do
       visit admin_budget_budget_investments_path(budget)
       click_link 'Advanced filters'
-
       within('#advanced_filters') { find(:css, "#advanced_filters_[value='selected']").set(true) }
 
       click_button 'Filter'
@@ -859,7 +871,10 @@ feature 'Admin budget investments' do
         click_link('Selected')
       end
 
-      visit admin_budget_budget_investments_path(budget)
+      expect(page).not_to have_content(selected_bi.title)
+      expect(page).to have_content('There is 1 investment')
+
+      visit admin_budget_budget_investments_path(@budget)
 
       within("#budget_investment_#{selected_bi.id}") do
         expect(page).to have_link('Select')
@@ -880,7 +895,7 @@ feature 'Admin budget investments' do
       admin = create(:administrator, user: create(:user, username: 'Gema'))
       investment.update(administrator_id: admin.id)
 
-      visit admin_budget_budget_investments_path(budget_id: budget.id)
+      visit admin_budget_budget_investments_path(budget)
 
       click_link "Download current selection"
 

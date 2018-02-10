@@ -76,6 +76,8 @@ section "Creating Settings" do
   Setting.create(key: 'mailer_from_name', value: 'Decide Madrid')
   Setting.create(key: 'mailer_from_address', value: 'noreply@madrid.es')
   Setting.create(key: 'meta_description', value: 'Citizen Participation and Open Government Application')
+  Setting.create(key: 'meta_title', value: 'Decide Madrid')
+  Setting.create(key: 'meta_description', value: 'Citizen Participation & Open Gov Application')
   Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
   Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
   Setting.create(key: 'min_age_to_participate', value: '16')
@@ -157,38 +159,60 @@ section "Creating Users" do
     )
   end
 
+  def unique_document_number
+    @document_number ||= 12345678
+    @document_number += 1
+    "#{@document_number}#{[*'A'..'Z'].sample}"
+  end
+
   admin = create_user('admin@madrid.es', 'admin')
   admin.create_administrator
-  admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "1111111111")
+  admin.update(residence_verified_at: Time.current,
+               confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+               verified_at: Time.current, document_number: unique_document_number)
   admin.create_poll_officer
 
   moderator = create_user('mod@madrid.es', 'mod')
   moderator.create_moderator
-
-  valuator = create_user('valuator@madrid.es', 'valuator')
-  valuator.create_valuator
-  valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "2111111111")
+  moderator.update(residence_verified_at: Time.current,
+                   confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                   verified_at: Time.current, document_number: unique_document_number)
 
   manager = create_user('manager@madrid.es', 'manager')
   manager.create_manager
+  manager.update(residence_verified_at: Time.current,
+                 confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                 verified_at: Time.current, document_number: unique_document_number)
+
+  valuator = create_user('valuator@madrid.es', 'valuator')
+  valuator.create_valuator
+  valuator.update(residence_verified_at: Time.current,
+                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                  verified_at: Time.current, document_number: unique_document_number)
 
   poll_officer = create_user('poll_officer@madrid.es', 'Paul O. Fisher')
   poll_officer.create_poll_officer
-  poll_officer.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "2211111111")
+  poll_officer.update(residence_verified_at: Time.current,
+                      confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                      verified_at: Time.current, document_number: unique_document_number)
 
-  poll_officer2 = create_user('poll_officer2@consul.dev', 'Pauline M. Espinosa')
+  poll_officer2 = create_user('poll_officer2@madrid.es', 'Pauline M. Espinosa')
   poll_officer2.create_poll_officer
-  poll_officer2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3311111111")
+  poll_officer2.update(residence_verified_at: Time.current,
+                       confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                       verified_at: Time.current, document_number: unique_document_number)
 
+  create_user('unverified@madrid.es', 'unverified')
 
-  create_user('unverified@consul.dev', 'unverified')
-
-  level_2 = create_user('leveltwo@consul.dev', 'level 2')
-  level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1")
+  level_2 = create_user('leveltwo@madrid.es', 'level 2')
+  level_2.update(residence_verified_at: Time.current,
+                 confirmed_phone: Faker::PhoneNumber.phone_number,
+                 document_number: unique_document_number, document_type: "1")
 
   verified = create_user('verified@madrid.es', 'verified')
-  verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
-                  verified_at: Time.current, document_number: "3333333333")
+  verified.update(residence_verified_at: Time.current,
+                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                  verified_at: Time.current, document_number: unique_document_number)
 
   (1..10).each do |i|
     org_name = Faker::Company.name
@@ -213,7 +237,11 @@ section "Creating Users" do
     user = create_user("user#{i}@madrid.es")
     level = [1, 2, 3].sample
     if level >= 2
-      user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1", geozone: Geozone.reorder("RANDOM()").first)
+      user.update(residence_verified_at: Time.current,
+                  confirmed_phone: Faker::PhoneNumber.phone_number,
+                  document_number: unique_document_number,
+                  document_type: "1",
+                  geozone: Geozone.all.sample)
     end
     if level == 3
       user.update(verified_at: Time.current, document_number: Faker::Number.number(10))
@@ -453,18 +481,16 @@ section "Creating Spending Proposals" do
 end
 
 section "Creating Budgets" do
-  Budget::Phase::PHASE_KINDS.each_with_index do |phase, i|
-    descriptions = Hash[Budget::Phase::PHASE_KINDS.map do |p|
-      ["description_#{p}",
-       "<p>#{Faker::Lorem.paragraphs(2).join('</p><p>')}</p>"]
-    end]
-    budget = Budget.create!(
-      descriptions.merge(
-        name: (Date.current - 10 + i).to_s,
-        currency_symbol: "€",
-        phase: phase
-      )
-    )
+  Budget.create(
+    name: "Budget #{Date.current.year - 1}",
+    currency_symbol: "€",
+    phase: 'finished'
+  )
+  Budget.create(
+    name: "Budget #{Date.current.year}",
+    currency_symbol: "€",
+    phase: 'accepting'
+  )
 
     (1..([1, 2, 3].sample)).each do |i|
       group = budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
@@ -510,16 +536,16 @@ end
 section "Geolocating Investments" do
   Budget.all.each do |budget|
     budget.investments.each do |investment|
-      MapLocation.create(latitude: 40.4167278 + rand(-10..10)/100.to_f,
-                         longitude: -3.7055274 + rand(-10..10)/100.to_f,
-                         zoom: 10,
+      MapLocation.create(latitude: Setting['map_latitude'].to_f + rand(-10..10)/100.to_f,
+                         longitude: Setting['map_longitude'].to_f + rand(-10..10)/100.to_f,
+                         zoom: Setting['map_zoom'],
                          investment_id: investment.id)
     end
   end
 end
 
 section "Balloting Investments" do
-  Budget.balloting.last.investments.each do |investment|
+  Budget.finished.first.investments.last(20).each do |investment|
     investment.update(selected: true, feasibility: "feasible")
   end
 end
@@ -542,11 +568,11 @@ section "Balloting Investments" do
 end
 
 section "Winner Investments" do
-  budget = Budget.where(phase: "finished").last
-  100.times do
-    heading = budget.headings.reorder("RANDOM()").first
-    investment = Budget::Investment.create!(
-      author: User.reorder("RANDOM()").first,
+  budget = Budget.finished.first
+  50.times do
+    heading = budget.headings.all.sample
+    Budget::Investment.create!(
+      author: User.all.sample,
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
@@ -649,13 +675,16 @@ section "Creating banners" do
   Proposal.last(3).each do |proposal|
     title = Faker::Lorem.sentence(word_count = 3)
     description = Faker::Lorem.sentence(word_count = 12)
+    target_url = Rails.application.routes.url_helpers.proposal_path(proposal)
     banner = Banner.create!(title: title,
                             description: description,
-                            style: ["banner-style banner-style-one", "banner-style banner-style-two",
+                            style: ["banner-style banner-style-one",
+                                    "banner-style banner-style-two",
                                     "banner-style banner-style-three"].sample,
-                            image: ["banner-img banner-img-one", "banner-img banner-img-two",
+                            image: ["banner-img banner-img-one",
+                                    "banner-img banner-img-two",
                                     "banner-img banner-img-three"].sample,
-                            target_url: Rails.application.routes.url_helpers.proposal_path(proposal),
+                            target_url: target_url,
                             post_started_at: rand((Time.current - 1.week)..(Time.current - 1.day)),
                             post_ended_at:   rand((Time.current - 1.day)..(Time.current + 1.week)),
                             created_at: rand((Time.current - 1.week)..Time.current))
@@ -876,9 +905,10 @@ section "Creating Poll Questions & Answers" do
                                         title: Faker::Lorem.sentence(3).truncate(60) + '?',
                                         poll: poll)
       Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+        description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
         Poll::Question::Answer.create!(question: question,
                                        title: answer.capitalize,
-                                       description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>")
+                                       description: description)
       end
     end
   end
@@ -886,17 +916,20 @@ end
 
 section "Creating Poll Booths & BoothAssignments" do
   20.times do |i|
-    Poll::Booth.create(name: "Booth #{i}", location: Faker::Address.street_address, polls: [Poll.all.sample])
+    Poll::Booth.create(name: "Booth #{i}",
+                       location: Faker::Address.street_address,
+                       polls: [Poll.all.sample])
   end
 end
 
 section "Creating Poll Shifts for Poll Officers" do
   Poll.all.each do |poll|
     Poll::BoothAssignment.where(poll: poll).each do |booth_assignment|
+      scrutiny = (poll.ends_at.to_datetime..poll.ends_at.to_datetime + Poll::RECOUNT_DURATION)
       Poll::Officer.all.each do |poll_officer|
         {
           vote_collection: (poll.starts_at.to_datetime..poll.ends_at.to_datetime),
-          recount_scrutiny: (poll.ends_at.to_datetime..poll.ends_at.to_datetime + Poll::RECOUNT_DURATION)
+          recount_scrutiny: scrutiny
         }.each do |task_name, task_dates|
           task_dates.each do |shift_date|
             Poll::Shift.create(booth: booth_assignment.booth,
@@ -972,13 +1005,17 @@ section "Creating Poll Voters" do
   def randomly_answer_questions(poll, user)
     poll.questions.each do |question|
       next unless [true, false].sample
-      Poll::Answer.create!(question_id: question.id, author: user, answer: question.question_answers.sample.title)
+      Poll::Answer.create!(question_id: question.id,
+                           author: user,
+                           answer: question.question_answers.sample.title)
     end
   end
 
   (Poll.expired + Poll.current + Poll.recounting).uniq.each do |poll|
     level_two_verified_users = User.level_two_verified
-    level_two_verified_users = level_two_verified_users.where(geozone_id: poll.geozone_ids) if poll.geozone_restricted?
+    if poll.geozone_restricted?
+      level_two_verified_users = level_two_verified_users.where(geozone_id: poll.geozone_ids)
+    end
     user_groups = level_two_verified_users.in_groups(2)
     user_groups.first.each { |user| vote_poll_on_booth(user, poll) }
     user_groups.second.compact.each { |user| vote_poll_on_web(user, poll) }
@@ -1031,7 +1068,9 @@ section "Creating Poll Questions from Proposals" do
     poll = Poll.current.first
     question = Poll::Question.create(poll: poll)
     Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+      Poll::Question::Answer.create!(question: question,
+                                     title: answer.capitalize,
+                                     description: Faker::ChuckNorris.fact)
     end
     question.copy_attributes_from_proposal(proposal)
     question.save!
@@ -1044,7 +1083,9 @@ section "Creating Successful Proposals" do
     poll = Poll.current.first
     question = Poll::Question.create(poll: poll)
     Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+      Poll::Question::Answer.create!(question: question,
+                                     title: answer.capitalize,
+                                     description: Faker::ChuckNorris.fact)
     end
     question.copy_attributes_from_proposal(proposal)
     question.save!

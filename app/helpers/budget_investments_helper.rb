@@ -1,4 +1,13 @@
 module BudgetInvestmentsHelper
+  def budget_investments_sorting_options
+    Budget::Investment::SORTING_OPTIONS.map do |so|
+      [t("admin.budget_investments.index.sort_by.#{so}"), so]
+    end
+  end
+
+  def budget_investments_advanced_filters(params)
+    params.map { |af| t("admin.budget_investments.index.filters.#{af}") }.join(', ')
+  end
 
   def investments_minimal_view_path
     custom_budget_investments_path(id: @heading.group.to_param,
@@ -17,13 +26,5 @@ module BudgetInvestmentsHelper
 
   def investments_secondary_view
     investments_current_view == "default" ? "minimal" : "default"
-  end
-
-  def budget_investments_sorting_options
-    Budget::Investment::SORTING_OPTIONS.map { |so| [t("admin.budget_investments.index.sort_by.#{so}"), so] }
-  end
-
-  def budget_investments_advanced_filters(params)
-    params.map { |af| t("admin.budget_investments.index.filters.#{af}") }.join(', ')
   end
 end
