@@ -25,6 +25,9 @@ Metrics/LineLength:
 Layout/IndentationConsistency:
   EnforcedStyle: rails
 
+Performance/Caller:
+  Enabled: true
+
 RSpec/AlignLeftLetBrace:
   Enabled: false
 
