@@ -141,10 +141,14 @@ class Budget
     end
 
     def self.search_by_title_or_id(params)
-      results = Investment.where(budget_id: params[:budget_id])
+      budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      return [] unless budget.present?
 
-      return results.where(id: params[:title_or_id]) if params[:title_or_id] =~ /\A[0-9]+\z/
-      results.where("title ILIKE ?", "%#{params[:title_or_id].strip}%")
+      if params[:title_or_id].to_i.to_s == params[:title_or_id]
+        budget&.investments.where(id: params[:title_or_id])
+      else
+        budget&.investments.where("title ILIKE ?", "%#{params[:title_or_id].strip}%")
+      end
     end
 
     def searchable_values
