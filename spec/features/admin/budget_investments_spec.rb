@@ -366,11 +366,7 @@ feature 'Admin budget investments' do
   context 'Search' do
     background do
       create(:budget_investment, title: 'Some investment', budget: budget)
-<<<<<<< HEAD
-      create(:budget_investment, title: 'Some other investment', budget: budget)
-=======
       create(:budget_investment, title: 'Some other investment', budget: budget, id: 999999)
->>>>>>> upstream/master
     end
 
     scenario "Search investments by title" do
@@ -929,11 +925,7 @@ feature 'Admin budget investments' do
       investment2 = create(:budget_investment, :finished, budget: budget,
                                                           title: 'finished')
 
-<<<<<<< HEAD
-      visit admin_budget_budget_investments_path(budget_id: budget.id)
-=======
       visit admin_budget_budget_investments_path(budget)
->>>>>>> upstream/master
       within('#filter-subnav') { click_link 'Valuation finished' }
 
       click_link "Download current selection"
