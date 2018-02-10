@@ -103,7 +103,7 @@ class Budget
     end
 
     def self.scoped_filter(params, current_filter)
-      budget  = Budget.find_by(id: params[:budget_id]) || Budget.find_by(slug: params[:budget_id])
+      budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       results = Investment.by_budget(budget)
 
       results = limit_results(budget, params, results)              if params[:max_per_heading].present?
