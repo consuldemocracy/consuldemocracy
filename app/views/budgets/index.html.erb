@@ -44,8 +44,8 @@
                     sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"),
                     new_user_registration_path)).html_safe %>
             </div>
+          <% end %>
         <% end %>
-      <% end %>
 
 
       <% if current_budget.finished? || (current_budget.balloting? && can?(:read_results, current_budget)) %>
