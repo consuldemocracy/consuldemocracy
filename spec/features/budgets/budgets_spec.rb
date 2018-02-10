@@ -4,6 +4,7 @@ feature 'Budgets' do
 
   let(:budget) { create(:budget) }
   let(:level_two_user) { create(:user, :level_two) }
+  let(:allowed_phase_list) { ['balloting', 'reviewing_ballots', 'finished'] }
 
   context 'Index' do
 
@@ -77,6 +78,45 @@ feature 'Budgets' do
         expect(page).not_to have_css('div#map')
       end
     end
+
+    scenario 'Show investment links only on balloting or later' do
+
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      allowed_phase_list.each do |phase|
+        budget.update(phase: phase)
+
+        visit budgets_path
+
+        expect(page).to have_content(I18n.t("budgets.index.investment_proyects"))
+        expect(page).to have_content(I18n.t("budgets.index.unfeasible_investment_proyects"))
+        expect(page).to have_content(I18n.t("budgets.index.not_selected_investment_proyects"))
+      end
+    end
+
+    scenario 'Not show investment links earlier of balloting ' do
+
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      phases_without_links = ['drafting','informing']
+      not_allowed_phase_list = Budget::Phase::PHASE_KINDS -
+                               phases_without_links -
+                               allowed_phase_list
+
+      not_allowed_phase_list.each do |phase|
+        budget.update(phase: phase)
+
+        visit budgets_path
+
+        expect(page).not_to have_content(I18n.t("budgets.index.investment_proyects"))
+        expect(page).to have_content(I18n.t("budgets.index.unfeasible_investment_proyects"))
+        expect(page).not_to have_content(I18n.t("budgets.index.not_selected_investment_proyects"))
+      end
+    end
+
   end
 
   scenario 'Index shows only published phases' do
