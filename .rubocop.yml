@@ -25,6 +25,15 @@ Metrics/LineLength:
 Layout/IndentationConsistency:
   EnforcedStyle: rails
 
+Bundler/DuplicatedGem:
+  Enabled: true
+
+Bundler/InsecureProtocolSource:
+  Enabled: true
+
+Bundler/OrderedGems:
+  Enabled: true
+
 Performance/Caller:
   Enabled: true
 
