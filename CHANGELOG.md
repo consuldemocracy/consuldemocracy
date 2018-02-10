@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - New legislation processes section on help page https://github.com/consul/consul/pull/2452
 
 ### Changed
+- Show investment links only on phase balloting or later https://github.com/consul/consul/pull/2386
+
 ### Deprecated
 ### Removed
 ### Fixed
