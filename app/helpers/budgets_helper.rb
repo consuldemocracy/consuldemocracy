@@ -1,5 +1,12 @@
 module BudgetsHelper
 
+  def heading_name_and_price_html(heading, budget)
+    content_tag :div do
+      concat(heading.name + ' ')
+      concat(content_tag(:span, budget.formatted_heading_price(heading)))
+    end
+  end
+
   def csv_params
     csv_params = params.clone.merge(format: :csv).symbolize_keys
     csv_params.delete(:page)

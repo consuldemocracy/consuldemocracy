@@ -274,6 +274,7 @@ ActiveRecord::Schema.define(version: 20180129190950) do
     t.string   "slug"
     t.text     "description_drafting"
     t.text     "description_publishing_prices"
+    t.text     "description_informing"
   end
 
   create_table "campaigns", force: :cascade do |t|
