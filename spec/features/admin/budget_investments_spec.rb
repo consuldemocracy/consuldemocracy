@@ -366,7 +366,11 @@ feature 'Admin budget investments' do
   context 'Search' do
     background do
       create(:budget_investment, title: 'Some investment', budget: budget)
+<<<<<<< HEAD
       create(:budget_investment, title: 'Some other investment', budget: budget)
+=======
+      create(:budget_investment, title: 'Some other investment', budget: budget, id: 999999)
+>>>>>>> upstream/master
     end
 
     scenario "Search investments by title" do
@@ -388,7 +392,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content('Some investment')
       expect(page).to have_content('Some other investment')
 
-      fill_in 'title_or_id', with: @investment_2.id
+      fill_in 'title_or_id', with: 999999
       click_button 'Search'
 
       expect(page).to have_content('Some other investment')
@@ -398,30 +402,30 @@ feature 'Admin budget investments' do
 
   context 'Sorting' do
     background do
-      create(:budget_investment, title: 'First Investment', cached_votes_up: 50, budget: budget)
-      create(:budget_investment, title: 'Second Investment', cached_votes_up: 25, budget: budget)
-      create(:budget_investment, title: 'Third Investment', cached_votes_up: 10, budget: budget)
+      create(:budget_investment, title: 'B First Investment', cached_votes_up: 50, budget: budget)
+      create(:budget_investment, title: 'A Second Investment', cached_votes_up: 25, budget: budget)
+      create(:budget_investment, title: 'C Third Investment', cached_votes_up: 10, budget: budget)
     end
 
     scenario 'Sort by ID' do
       visit admin_budget_budget_investments_path(budget, sort_by: 'id')
 
-      expect('First Investment').to appear_before('Second Investment')
-      expect('Second Investment').to appear_before('Third Investment')
+      expect('B First Investment').to appear_before('A Second Investment')
+      expect('A Second Investment').to appear_before('C Third Investment')
     end
 
     scenario 'Sort by title' do
       visit admin_budget_budget_investments_path(budget, sort_by: 'title')
 
-      expect('Second Investment').to appear_before('First Investment')
-      expect('First Investment').to appear_before('Third Investment')
+      expect('A Second Investment').to appear_before('B First Investment')
+      expect('B First Investment').to appear_before('C Third Investment')
     end
 
     scenario 'Sort by supports' do
       visit admin_budget_budget_investments_path(budget, sort_by: 'supports')
 
-      expect('Third Investment').to appear_before('Second Investment')
-      expect('Second Investment').to appear_before('First Investment')
+      expect('C Third Investment').to appear_before('A Second Investment')
+      expect('A Second Investment').to appear_before('B First Investment')
     end
   end
 
@@ -874,7 +878,7 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content(selected_bi.title)
       expect(page).to have_content('There is 1 investment')
 
-      visit admin_budget_budget_investments_path(@budget)
+      visit admin_budget_budget_investments_path(budget)
 
       within("#budget_investment_#{selected_bi.id}") do
         expect(page).to have_link('Select')
@@ -925,7 +929,11 @@ feature 'Admin budget investments' do
       investment2 = create(:budget_investment, :finished, budget: budget,
                                                           title: 'finished')
 
+<<<<<<< HEAD
       visit admin_budget_budget_investments_path(budget_id: budget.id)
+=======
+      visit admin_budget_budget_investments_path(budget)
+>>>>>>> upstream/master
       within('#filter-subnav') { click_link 'Valuation finished' }
 
       click_link "Download current selection"

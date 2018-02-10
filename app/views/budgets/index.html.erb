@@ -44,8 +44,8 @@
                     sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"),
                     new_user_registration_path)).html_safe %>
             </div>
+          <% end %>
         <% end %>
-      <% end %>
 
 
       <% if current_budget.finished? || (current_budget.balloting? && can?(:read_results, current_budget)) %>
@@ -57,13 +57,13 @@
   </div>
 </div>
 
-<div id="budget_info">
+<div id="budget_info" class="budget-info">
   <div class="row margin-top">
     <div class="small-12 column">
 
       <div id="groups_and_headings" class="groups-and-headings">
         <% current_budget.groups.each do |group| %>
-          <h2><%= group.name %></h2>
+          <h2 id="<%= group.name.parameterize %>"><%= group.name %></h2>
           <ul class="no-bullet">
             <% group.headings.order_by_group_name.each do |heading| %>
               <li class="heading small-12 medium-4 large-2">
