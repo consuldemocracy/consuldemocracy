@@ -85,6 +85,9 @@ Performance/RangeInclude:
 Performance/RedundantBlockCall:
   Enabled: true
 
+Performance/RedundantMatch:
+  Enabled: true
+
 Performance/RedundantMerge:
   Enabled: true
 
