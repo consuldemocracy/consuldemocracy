@@ -101,7 +101,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_investment
-      @investment = Budget::Investment.where(budget_id: @budget.id).find(params[:id])
+      @investment = Budget::Investment.by_budget(@budget).find(params[:id])
     end
 
     def load_admins
