@@ -34,6 +34,15 @@ Bundler/InsecureProtocolSource:
 Bundler/OrderedGems:
   Enabled: true
 
+Gemspec/DuplicatedAssignment:
+  Enabled: true
+
+Gemspec/OrderedDependencies:
+  Enabled: true
+
+Gemspec/RequiredRubyVersion:
+  Enabled: true
+
 Performance/Caller:
   Enabled: true
 
