@@ -79,4 +79,48 @@ feature "Valuator groups" do
     expect(page).to have_content "There are no valuator groups"
   end
 
+  context "Assign valuators to groups" do
+
+    scenario "Add a valuator to a group" do
+      valuator = create(:valuator)
+      group = create(:valuator_group, name: "Health")
+
+      visit edit_admin_valuator_path(valuator)
+
+      select "Health", from: "valuator_valuator_group_id"
+      click_button "Update valuator"
+
+      expect(page).to have_content "Valuator updated successfully"
+      expect(page).to have_content "Health"
+    end
+
+    scenario "Update a valuator's group" do
+      valuator = create(:valuator)
+      group1 = create(:valuator_group, name: "Health")
+      group2 = create(:valuator_group, name: "Economy")
+      valuator.update(valuator_group: group1)
+
+      visit edit_admin_valuator_path(valuator)
+      select "Economy", from: "valuator_valuator_group_id"
+      click_button "Update valuator"
+
+      expect(page).to have_content "Valuator updated successfully"
+      expect(page).to have_content "Economy"
+    end
+
+    scenario "Remove a valuator from a group" do
+      valuator = create(:valuator)
+      group1 = create(:valuator_group, name: "Health")
+      valuator.update(valuator_group: group1)
+
+      visit edit_admin_valuator_path(valuator)
+      select "", from: "valuator_valuator_group_id"
+      click_button "Update valuator"
+
+      expect(page).to have_content "Valuator updated successfully"
+      expect(page).to_not have_content "Health"
+    end
+
+  end
+
 end
