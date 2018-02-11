@@ -4,12 +4,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   feature_flag :budgets
 
+  has_orders %w{oldest}, only: [:show, :edit]
   has_filters(%w{all without_admin without_valuator under_valuation
                  valuation_finished winners},
-                 only: [:index, :toggle_selection])
-
-  has_orders %w{oldest}, only: [:show, :edit]
-
+              only: [:index, :toggle_selection])
 
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
@@ -40,7 +38,9 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   def update
     set_valuation_tags
     if @investment.update(budget_investment_params)
-      redirect_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params)),
+      redirect_to admin_budget_budget_investment_path(@budget,
+                                                      @investment,
+                                                      Budget::Investment.filter_params(params)),
                   notice: t("flash.actions.update.budget_investment")
     else
       load_admins
@@ -81,19 +81,20 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_investments
-      if params[:project_title].present?
-        @investments = Budget::Investment.where("title ILIKE ?", "%#{params[:project_title].strip}%")
-      else
-        @investments = Budget::Investment.scoped_filter(params, @current_filter)
+      @investments = if params[:title_or_id].present?
+                       Budget::Investment.search_by_title_or_id(params)
+                     else
+                       Budget::Investment.scoped_filter(params, @current_filter)
                                          .order(sort_by(params[:sort_by]))
-      end
+                     end
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
     def budget_investment_params
       params.require(:budget_investment)
-            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list, :valuation_tag_list, :incompatible,
-                    :selected, :organization_name, :tag_list, :label, :visible_to_valuators, valuator_ids: [])
+            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
+                    :valuation_tag_list, :incompatible, :selected, :organization_name, :label,
+                    :visible_to_valuators, valuator_ids: [])
     end
 
     def load_budget
@@ -103,7 +104,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def load_investment
       @investment = @budget.investments.where(original_spending_proposal_id: params[:id]).first
-      @investment ||= @budget.investments.find(params['id'])
+      @investment ||= @budget.investments.find(params[:id])
     end
 
     def load_admins
