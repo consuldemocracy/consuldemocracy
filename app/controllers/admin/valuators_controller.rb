@@ -1,10 +1,6 @@
 class Admin::ValuatorsController < Admin::BaseController
   load_and_authorize_resource
 
-  def show
-    @valuator = Valuator.find(params[:id])
-  end
-
   def index
     @valuators = @valuators.page(params[:page])
   end
@@ -17,25 +13,10 @@ class Admin::ValuatorsController < Admin::BaseController
   end
 
   def create
-    @valuator = Valuator.new(valuator_params)
+    @valuator = Valuator.new(create_params)
     @valuator.save
 
     redirect_to admin_valuators_path
-  end
-
-  def edit
-    @valuator = Valuator.find(params[:id])
-    @valuator_groups = ValuatorGroup.all
-  end
-
-  def update
-    @valuator = Valuator.find(params[:id])
-    if @valuator.update(valuator_params)
-      notice = t("admin.valuators.form.updated")
-      redirect_to [:admin, @valuator], notice: notice
-    else
-      render :edit
-    end
   end
 
   def destroy
@@ -49,9 +30,9 @@ class Admin::ValuatorsController < Admin::BaseController
 
   private
 
-    def valuator_params
+    def create_params
       params[:valuator][:description] = nil if params[:valuator][:description].blank?
-      params.require(:valuator).permit(:user_id, :description, :valuator_group_id)
+      params.require(:valuator).permit(:user_id, :description)
     end
 
 end
