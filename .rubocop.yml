@@ -22,6 +22,9 @@ Metrics/LineLength:
 Layout/IndentationConsistency:
   EnforcedStyle: rails
 
+Layout/EndOfLine:
+  EnforcedStyle: lf
+
 Bundler/DuplicatedGem:
   Enabled: true
 
