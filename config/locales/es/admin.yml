@@ -139,7 +139,6 @@ es:
         heading_filter_all: Todas las partidas
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
-        valuator_group_filter_all: Todos los grupos
         tags_filter_all: Todas las etiquetas
         advanced_filters: Filtros avanzados
         placeholder: Buscar proyectos
@@ -541,7 +540,6 @@ es:
         group: "Grupo"
         no_group: "Sin grupo"
       valuator:
-        description_placeholder: 'Descripción (opcional)'
         add: Añadir como evaluador
         delete: Borrar
       search:
@@ -915,7 +913,6 @@ es:
         geozone_filter_all: Todos los ámbitos de actuación
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
-        valuator_group_filter_all: Todos los grupos
         tags_filter_all: Todas las etiquetas
         max_per_geozone: Corte por distrito
         max_for_no_geozone: Corte por ciudad

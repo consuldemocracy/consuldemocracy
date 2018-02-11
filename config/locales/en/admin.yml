@@ -540,7 +540,6 @@ en:
         group: "Group"
         no_group: "No group"
       valuator:
-        description_placeholder: 'Description (optional)'
         add: Add to valuators
         delete: Delete
       search:
