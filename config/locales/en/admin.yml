@@ -576,6 +576,7 @@ en:
         no_groups: "There are no valuator groups"
       show:
         title: "Valuators group: %{group}"
+        no_valuators: "There are no valuators assigned to this group"
       form:
         name: "Group name"
         new: "Create valuators group"

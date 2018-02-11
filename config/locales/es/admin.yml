@@ -576,6 +576,7 @@ es:
         no_groups: "No hay grupos de evaluadores"
       show:
         title: "Grupo de evaluadores: %{group}"
+        no_valuators: "No hay evaluadores asigandos a este grupo"
       form:
         name: "Nombre del grupo"
         new: "Crear grupo de evaluadores"
