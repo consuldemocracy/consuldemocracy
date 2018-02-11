@@ -12,17 +12,9 @@
   </div>
 
   <div class="small-12 medium-3 column">
-    <%= select_tag :valuator_id,
-                   options_for_select(valuator_select_options, params[:valuator_id]),
+    <%= select_tag :valuator_or_group_id,
+                   options_for_select(valuator_or_group_select_options, params[:valuator_or_group_id]),
                    { prompt: t("admin.budget_investments.index.valuator_filter_all"),
-                     label: false,
-                     class: "js-submit-on-change" } %>
-  </div>
-
-  <div class="small-12 medium-3 column">
-    <%= select_tag :valuator_group_id,
-                   options_for_select(valuator_group_select_options, params[:valuator_group_id]),
-                   { prompt: t("admin.budget_investments.index.valuator_group_filter_all"),
                      label: false,
                      class: "js-submit-on-change" } %>
   </div>

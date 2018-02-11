@@ -31,7 +31,6 @@ en:
           one: Assigned valuator
           other: "%{count} valuators assigned"
         no_valuators_assigned: No valuators assigned
-        no_valuator_groups_assigned: No valuator groups assigned
         table_id: ID
         table_title: Title
         table_heading_name: Heading name
