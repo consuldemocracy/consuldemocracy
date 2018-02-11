@@ -44,3 +44,10 @@ After executing rspec you can see the seed used, add it as an option to rspec, f
 ### Other things to watch for
 - Time related issues (current time, two time or date comparisons with miliseconds/time when its not needed)
 - https://semaphoreci.com/community/tutorials/how-to-deal-with-and-eliminate-flaky-tests
+
+### Final thoughts
+The true objective of this issue is not "to fix" a flaky spec, but to change a spec that randomly fails into one that we can trust when it passes (or fails). 
+
+That means you've to think "What are we testing here?" and "Can we test the same thing in another way?" or "Are we already testing this somewhere else at least partially?".
+
+Sometimes the fix is to re-write the entire tests with a different approach, or to extend an existing spec. Tests are sometimes written without taking a look at other tests files neither near scenarios.

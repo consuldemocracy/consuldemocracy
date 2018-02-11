@@ -14,7 +14,6 @@
     <% end %>
 
     <h1><%= t("proposals.new.start_new") %></h1>
-
     <% unless @proposal.proceeding? %>
       <div data-alert class="callout primary">
         <%= link_to more_info_proposals_path, title: t('shared.target_blank_html'), target: "_blank" do %>
@@ -22,7 +21,6 @@
         <% end %>
       </div>
     <% end %>
-
     <%= render "proposals/form", form_url: proposals_url %>
   </div>
 

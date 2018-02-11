@@ -32,11 +32,8 @@ en:
         one: "Administrator"
         other: "Administrators"
       valuator:
-        one: "Valuator"
-        other: "Valuators"
-      valuator_group:
-        one: "Valuator group"
-        other: "Valuator groups"
+        one: "Evaluador"
+        other: "Evaluadores"
       manager:
         one: "Manager"
         other: "Managers"

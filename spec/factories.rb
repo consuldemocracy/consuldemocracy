@@ -62,9 +62,6 @@ FactoryBot.define do
     end
   end
 
-  factory :valuator_group, class: ValuatorGroup do
-  end
-
   factory :identity do
     user nil
     provider "Twitter"

@@ -86,11 +86,10 @@ namespace :admin do
     get :search, on: :collection
   end
 
-  resources :valuators, only: [:show, :index, :edit, :update, :create, :destroy] do
+  resources :valuators, only: [:index, :create, :destroy] do
     get :search, on: :collection
     get :summary, on: :collection
   end
-  resources :valuator_groups
 
   resources :managers, only: [:index, :create, :destroy] do
     get :search, on: :collection
