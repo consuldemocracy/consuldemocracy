@@ -104,15 +104,15 @@
         <p>
           <% show_links = show_links_to_budget_investments(current_budget) %>
           <% if show_links %>
-            <%= link_to budget_investments_path(current_budget.id) do %>
+            <%= link_to budget_url(current_budget.id) do %>
               <small><%= t("budgets.index.investment_proyects") %></small>
             <% end %><br>
           <% end %>
-          <%= link_to budget_investments_path(budget_id: current_budget.id, filter: 'unfeasible') do %>
+          <%= link_to budget_url(budget_id: current_budget.id, filter: 'unfeasible') do %>
             <small><%= t("budgets.index.unfeasible_investment_proyects") %></small>
           <% end %><br>
           <% if show_links %>
-            <%= link_to budget_investments_path(budget_id: current_budget.id, filter: 'unselected') do %>
+            <%= link_to budget_url(budget_id: current_budget.id, filter: 'unselected') do %>
               <small><%= t("budgets.index.not_selected_investment_proyects") %></small>
             <% end %>
           <% end %>
