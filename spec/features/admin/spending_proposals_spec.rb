@@ -157,54 +157,6 @@ feature 'Admin spending proposals' do
 
     end
 
-    scenario "Filtering by valuator", :js do
-      user = create(:user)
-      valuator = create(:valuator, user: user, description: 'Valuator 1')
-
-      spending_proposal = create(:spending_proposal, title: "Realocate visitors")
-      spending_proposal.valuators << valuator
-
-      create(:spending_proposal, title: "Destroy the city")
-
-      visit admin_spending_proposals_path
-      expect(page).to have_link("Realocate visitors")
-      expect(page).to have_link("Destroy the city")
-
-      select "Valuator 1", from: "valuator_id"
-
-      expect(page).to have_content('There is 1 investment project')
-      expect(page).not_to have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
-
-      select "All valuators", from: "valuator_id"
-
-      expect(page).to have_content('There are 2 investment projects')
-      expect(page).to have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
-
-      select "Valuator 1", from: "valuator_id"
-      expect(page).to have_content('There is 1 investment project')
-      click_link("Realocate visitors")
-      click_link("Back")
-
-      expect(page).to have_content('There is 1 investment project')
-      expect(page).not_to have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
-
-      click_link("Realocate visitors")
-      click_link("Edit classification")
-      expect(page).to have_button("Update")
-      expect(page).to have_link("Back")
-      click_link("Back")
-      expect(page).not_to have_button("Update")
-      expect(page).to have_link("Back")
-      click_link("Back")
-
-      expect(page).to have_content('There is 1 investment project')
-      expect(page).not_to have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
-    end
-
     scenario "Current filter is properly highlighted" do
       filters_links = {'valuation_open' => 'Open',
                        'without_admin' => 'Without assigned admin',
