@@ -246,7 +246,6 @@ fr:
       index:
         title: Évaluateurs
       valuator:
-        description_placeholder: 'Description (optionnel)'
         user_found: Utilisateur trouvé
         add: Ajouter un évaluateur
       search:
