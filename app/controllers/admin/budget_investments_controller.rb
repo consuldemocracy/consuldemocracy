@@ -46,6 +46,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     else
       load_admins
       load_valuators
+      load_valuator_groups
       load_tags
       render :edit
     end
