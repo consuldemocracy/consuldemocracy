@@ -59,6 +59,7 @@ module Abilities
         can :vote, Comment
       end
 
+      can :suggest, Budget::Investment,              budget: { phase: "accepting" }
       if user.level_two_or_three_verified?
         can :vote, Proposal
         can :vote_featured, Proposal

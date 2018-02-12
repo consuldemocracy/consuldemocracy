@@ -2,12 +2,7 @@
   <div class="row">
     <div class="small-12 medium-12 column background-principal">
       <div class="hijo">
-        <% if feature?(:concurso_cartel_magdalena) %>
-
-          <%= link_to "Participa!", page_path('concurso_cartel_magdalena'), class: "button large alert" %>
-        <% else %>
-          <%= link_to "Participa!", budgets_path, class: "button large alert" %>
-        <% end %>
+        <%= link_to "Participa!", budgets_path, class: "button large alert" %>
       </div>
     </div>
   </div>

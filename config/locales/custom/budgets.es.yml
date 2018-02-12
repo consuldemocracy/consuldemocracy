@@ -17,8 +17,8 @@ es:
       * subvenciones, premios.
       * alquileres
     fases:
-      fase_1: Presentación de propuestas
-      fase_1_subtitle: Del 15 de febrero al 5 de marzo de 2017
+      fase_1: Presentación de Propuestas
+      fase_1_subtitle: Del 15 de febrero al 28 de marzo de 2018
       fase_1_timeline_title: Presentación de propuestas
       fase_1_timeline_body: |-
         Las personas mayores de 16 años empadronadas en Castellón de la Plana pueden proponer alguna inversión para la ciudad. También todas aquellas entidades ciudadanas que tengan su domicilio  social y ámbito territorial en la ciudad.
@@ -27,24 +27,31 @@ es:
 
         Las propuestas se harán preferiblemente a través de la web decidim.castello.es. y   excepcionalmente se podrán presentar en las Tenencias de Alcaldía del Ayuntamiento.
 
-      fase_2: Recogida de avales de las propuestas
-      fase_2_subtitle: Del 6 al 31 de marzo de 2017
-      fase_2_timeline_title: Aval de las propuestas
+      fase_2: Reuniones de Distritos
+      fase_2_subtitle: Del 3 al 13 de abril de 2018
+      fase_2_timeline_title: Reuniones de distritos
       fase_2_timeline_body: |-
+        Texto de reuniones de ditritos.
+
+
+      fase_3: Recogida de avales de las propuestas
+      fase_3_subtitle: Del 18 al 30 de abril de 2017
+      fase_3_timeline_title: Aval de las propuestas
+      fase_3_timeline_body: |-
         Las propuestas presentadas deberán contar con el apoyo de 25 avales, para pasar a la siguiente fase. Los avales de las propuestas se recogerá a través de la plataforma web decidim.castello.es
 
         La ciudadanía empadronada tienen la posibilidad de apoyar con su aval hasta un máximo de 3 propuestas.
 
-      fase_3: Evaluación de las propuestas
-      fase_3_subtitle: Del 1 al 30 de abril de 2017
-      fase_3_timeline_title: Evaluación de las propuestas
-      fase_3_timeline_body: |-
+      fase_4: Evaluación de las propuestas
+      fase_4_subtitle: Del 2 al 30 de mayo de 2018
+      fase_4_timeline_title: Evaluación de las propuestas
+      fase_4_timeline_body: |-
         Las propuestas con avales suficientes, serán estudiadas por los servicios técnicos del Ayuntamiento, quienes valorarán que cada una cumpla con los requisitos necesarios para que sean propuestas de inversión viables, legales y presupuestarán el coste de llevarlas a cabo.
 
-      fase_4: Votación ciudadana
-      fase_4_subtitle: Del 1 al 15 de mayo 2017.
-      fase_4_timeline_title: Votación ciudadana
-      fase_4_timeline_body: |-
+      fase_5: Votación ciudadana
+      fase_5_subtitle: Del 11 al 25 de junio 2018.
+      fase_5_timeline_title: Votación ciudadana
+      fase_5_timeline_body: |-
         Podrán votar todas las personas mayores de 16 años y empadronadas en el municipio de Castellón de la Plana. Se podrá votar todas las propuestas que se estime oportuno mientras se tenga presupuesto disponible, aunque no hará falta gastarlo todo.
 
         La votación se realizará de forma telemática a través de la plataforma web: decidim.castello.es. Se habilitará unos “puntos de votación”, con acceso a internet donde se dará apoyo presencial a las personas que quieran votar. Se publicitará en la plataforma web el listado de sedes de “puntos de votación” en fechas próximas a la fase de votación.

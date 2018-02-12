@@ -11,7 +11,7 @@
       <% if current_budget.present? %>
         <%= markdown t('budgets.header_body_principal_1', amount: current_budget.total_amount) %>
 
-        <%= link_to t('budgets.button_text'), budget_path(current_budget), class: "button" %>
+        <%= link_to t('budgets.button_text'), custom_budget_path(current_budget), class: "button" %>
       <% elsif @last_budget.present? %>
         <%= link_to "#{t('results.button_title')} #{@last_budget.name}", budget_results_path(@last_budget), class: "button" %>
       <% end %>
@@ -27,21 +27,25 @@
 
 <div class="budgets-calendar">
   <div class="row">
-    <div class="small-6 large-3 column text-center">
+    <div class="small-6 large-2 large-offset-1 column text-center">
       <p><strong><%= t('budgets.fases.fase_1')%></strong></p>
       <p><%= t('budgets.fases.fase_1_subtitle')%></p>
     </div>
-    <div class="small-6 large-3 column text-center">
+    <div class="small-6 large-2 column text-center">
       <p><strong><%= t('budgets.fases.fase_2')%></strong></p>
       <p><%= t('budgets.fases.fase_2_subtitle')%></p>
     </div>
-    <div class="small-6 large-3 column text-center">
+    <div class="small-6 large-2 column text-center">
       <p><strong><%= t('budgets.fases.fase_3')%></strong></p>
       <p><%= t('budgets.fases.fase_3_subtitle')%></p>
     </div>
-    <div class="small-6 large-3 column text-center">
+    <div class="small-6 large-2 column text-center">
       <p><strong><%= t('budgets.fases.fase_4')%></strong></p>
       <p><%= t('budgets.fases.fase_4_subtitle')%></p>
+    </div>
+    <div class="small-6 large-2 column end text-center">
+      <p><strong><%= t('budgets.fases.fase_5')%></strong></p>
+      <p><%= t('budgets.fases.fase_5_subtitle')%></p>
     </div>
   </div>
 </div>
@@ -62,6 +66,7 @@
   <div class="hide-for-small-only large-2 columns text-center"><div class="circulo"></div></div>
   <div class="hide-for-small-only large-5 columns text-right">&nbsp;</div>
 </div>
+
 <div class="row margin">
   <div class="hide-for-small-only large-5 columns text-right">&nbsp;</div>
   <div class="hide-for-small-only large-2 columns text-center"><div class="circulo"></div></div>
@@ -78,6 +83,15 @@
   </div>
   <div class="hide-for-small-only large-2 columns text-center"><div class="circulo"></div></div>
   <div class="hide-for-small-only large-5 columns text-right">&nbsp;</div>
+</div>
+
+<div class="row margin">
+  <div class="hide-for-small-only large-5 columns text-right">&nbsp;</div>
+  <div class="hide-for-small-only large-2 columns text-center"><div class="circulo"></div></div>
+  <div class="small-12 large-5 columns">
+    <h3><%= t('budgets.fases.fase_5_timeline_title') %></h3>
+    <p><%= markdown t('budgets.fases.fase_5_timeline_body') %></p>
+  </div>
 </div>
 
 <div class="row margin-top">

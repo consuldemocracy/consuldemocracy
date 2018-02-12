@@ -1,6 +1,7 @@
 ---
 val:
   results:
+    title_html: "Resultats: "
     button_title: Resultats
     results_link: Resultats
     show_all_link: Mostrar totes

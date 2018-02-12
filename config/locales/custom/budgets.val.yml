@@ -16,28 +16,40 @@ val:
       * subvencions, premis
       * lloguers
     fases:
-      fase_1: Presentació de propostes
-      fase_1_subtitle: Del 15 de febrer al 5 de març de 2017.
+      fase_1: Presentació de Propostes
+      fase_1_subtitle: Del 15 de febrer al 28 de març de 2018.
       fase_1_timeline_title: Presentació de propostes
       fase_1_timeline_body: |-
         Les persones majors de 16 anys empadronades a Castelló de la Plana poden proposar alguna inversió per a la ciutat. També totes aquelles entitats ciutadanes que tinguen el seu domicili social i àmbit territorial a la ciutat.
         Les propostes de projectes d'inversió s'hi presentaran de forma individual, o en representació de una organització, grup o col·lectiu. Cada persona o entitat podrà presentar-hi una única proposta.
         Les propostes es faran preferiblement mitjançant la pàgina web decidim.castello.es i excepcionalment es podran presentar a les Tinències d'Alcaldia de l'Ajuntament.
-      fase_2: Suport de les propostes
-      fase_2_subtitle: Del 6 al 31 de març de 2017.
-      fase_2_timeline_title: Suport de les propostes
+
+      fase_2: Reunions de Districtes
+      fase_2_subtitle: Del 3 al 13 d'abril de 2017.
+      fase_2_timeline_title: Reunions de districtes
       fase_2_timeline_body: |-
+        Les persones majors de 16 anys empadronades a Castelló de la Plana poden proposar alguna inversió per a la ciutat. També totes aquelles entitats ciutadanes que tinguen el seu domicili social i àmbit territorial a la ciutat.
+        Les propostes de projectes d'inversió s'hi presentaran de forma individual, o en representació de una organització, grup o col·lectiu. Cada persona o entitat podrà presentar-hi una única proposta.
+        Les propostes es faran preferiblement mitjançant la pàgina web decidim.castello.es i excepcionalment es podran presentar a les Tinències d'Alcaldia de l'Ajuntament.
+
+
+      fase_3: Suport de les Propostes
+      fase_3_subtitle: Del 18 al 30 d'abril de 2017.
+      fase_3_timeline_title: Suport de les propostes
+      fase_3_timeline_body: |-
         Les propostes presentades hauran de comptar amb el suport de 25 vots, per a passar a la fase següent. El suport de les propostes es recollirà a través de la plataforma web decidim.castello.es.
         La ciutadania empadronada té la possibilitat de donar suport amb el seu vot a fins a un màxim de 3 propostes de projectes d'inversió.
-      fase_3: Avaluació de les propostes
-      fase_3_subtitle: De l’1 al 30 d’abril de 2017.
-      fase_3_timeline_title: Avaluació de les propostes
-      fase_3_timeline_body: |-
-        Les propostes amb suports suficients seran estudiades pels diferents serveis tècnics de l’Ajuntament, els quals valoraran que cada una complisca amb els requisits necessaris perquè siguen propostes d’inversió viables i legals, i pressupostaran el cost de portar-les a terme.
-      fase_4: Votació ciutadana
-      fase_4_subtitle: De l’1 al 15 de maig de 2017.
-      fase_4_timeline_title: Votació ciutadana
+
+      fase_4: Avaluació de les Propostes
+      fase_4_subtitle: Del 2 al 30 de maig de 2017.
+      fase_4_timeline_title: Avaluació de les propostes
       fase_4_timeline_body: |-
+        Les propostes amb suports suficients seran estudiades pels diferents serveis tècnics de l’Ajuntament, els quals valoraran que cada una complisca amb els requisits necessaris perquè siguen propostes d’inversió viables i legals, i pressupostaran el cost de portar-les a terme.
+
+      fase_5: Votació Ciutadana
+      fase_5_subtitle: De l’11 al 25 de juny de 2017.
+      fase_5_timeline_title: Votació ciutadana
+      fase_5_timeline_body: |-
         Podran votar totes les persones majors de 16 anys i empadronades al municipi de Castelló de la Plana. Es podran votar totes les propostes que es crega oportú mentre es tinga pressupost disponible, encara que no farà falta gastar-ho tot.
         La votació es farà de manera telemàtica a través de la plataforma web: decidim.castello.es. S’habilitaran uns “punts de votació”, amb accés a Internet on es donarà suport presencial a aquelles persones que vulguen votar i així ho sol·liciten. Es publicitarà en la plataforma web el llistat de seus de “punts de votació” en dates pròximes a la fase de votació.
       results: Resultats

@@ -1,6 +1,7 @@
 ---
 es:
   results:
+    title_html: "Resultados: "
     button_title: Resultados
     results_link: Resultados
     show_all_link: Mostrar todas
