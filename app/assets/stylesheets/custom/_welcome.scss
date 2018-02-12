@@ -3,6 +3,23 @@
 
 .welcome {
 
+  a {
+
+    p {
+
+      &.description {
+        color: $text;
+      }
+    }
+  }
+
+  a:hover {
+
+    h3 {
+      color: #fff;
+    }
+  }
+
   .cards {
     background: #fafafa;
 
