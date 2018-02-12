@@ -10,8 +10,8 @@
   <div class="large-8 small-12 column">
       <% if current_budget.present? %>
         <%= markdown t('budgets.header_body_principal_1', amount: current_budget.total_amount) %>
-
-        <%= link_to t('budgets.button_text'), custom_budget_path(current_budget), class: "button" %>
+        <%# link_to t('budgets.button_text'), custom_budget_path(current_budget), class: "button" %>
+        <%= link_to t('budgets.button_text_2018'), "#", class: "button" %>
       <% elsif @last_budget.present? %>
         <%= link_to "#{t('results.button_title')} #{@last_budget.name}", budget_results_path(@last_budget), class: "button" %>
       <% end %>

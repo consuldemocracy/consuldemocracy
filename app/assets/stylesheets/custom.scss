@@ -126,7 +126,7 @@ header {
 
 .background-principal {
   display: table;
-  background-image: asset_url('principal.png');
+  background-image: asset_url('banner_web.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
   @include breakpoint(small) {

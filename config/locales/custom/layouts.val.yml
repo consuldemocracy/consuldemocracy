@@ -54,7 +54,7 @@ val:
       open: obert
       open_city_slogan_html: "Existeixen ciutats governades directament pels seus habitants, que <strong>debaten</strong> sobre temes que els preocupen, <strong>proposen</strong> idees per a millorar les seues vides i <strong>decideixen </strong> entre totes i tots les que es duen a terme."
       open_city_title: Participa i decideix sobre els Pressupostos de la Teua Ciutat
-      open_date: Actualizar las fechas!!!
+      open_date: A partir del 15 de febrer
       open_gov: Govern %{open}
       proposals: Propostes
       proposal_ballot: Votacions

@@ -2,6 +2,7 @@
 es:
   budgets:
     button_text: Participa en los presupuestos de tu ciudad
+    button_text_2018: Participa en los presupuestos de tu ciudad a partir del 15 de febrero
     index_title: Presenta tu propuesta de inversión
     index_timeline: Los presupuestos participativos en 2 minutos
     header_title: Presupuestos participativos
@@ -62,7 +63,7 @@ es:
         La votación se realizará de forma telemática a través de la plataforma web: decicim.castello.es Se habilitará unos "puntos de votación", con acceso a internet donde se dará apoyo presencial a las personas que quieran votar. Se publicitará en la plataforma web el listado de sedes de "puntos de votación".
 
       fase_6: Resultados
-      fase_6_subtitle:
+      fase_6_subtitle: ''
       fase_6_timeline_title: Resultados
       fase_6_timeline_body: |-
         El resultado del proceso consultivo se obtendrá, una vez finalizada la votación, ordenando las propuestas de mayor a menor votación, siempre que el coste total de las propuestas no supere el presupuesto asignado a la categoría de ciudad ni a la cantidad asignada al distrito.
