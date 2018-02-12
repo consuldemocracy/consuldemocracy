@@ -329,37 +329,39 @@ val:
           Una inversió és bàsicament tot allò que l’ajuntament pot construir o adquirir i que la seua duració prevista és superior a un any.
 
           Les inversions han de reunir les següents característiques:
-          •
-          Que no siguen béns fungibles, és a dir, que no es consumisquen amb l’ús.
-          •
-          Que tinguen una duració superior l’exercici pressupostari, 12 mesos.
-          •
-          Que siguen susceptibles d’inclusió en inventari, que és una relació detallada, ordenada i valorada dels elements que componen el patrimoni.
-
+          <ul>
+            <li>
+              Que no siguen béns fungibles, és a dir, que no es consumisquen amb l’ús.
+            </li>
+            <li>
+              Que tinguen una duració superior l’exercici pressupostari, 12 mesos.
+            </li>
+            <li>
+              Que siguen susceptibles d’inclusió en inventari, que és una relació detallada, ordenada i valorada dels elements que componen el patrimoni.
+            </li>
+          </ul>
 
           A títol informatiu, son exemples d’inversions:
-          -
-          Creació de noves infraestructures o obres:
-          ,
-          construir itineraris de voreres i vials, enllumenat,
-          ,
-          senyalització vial, parcs, jardins, clavegueram, etc.
-          -
-          Reposició
-          d’infraestructures:
-          reforma
-          d’enllumenat, remodelació de parcs, zones verdes,
-          remodelació de vials i de la seua senyalització.
+          <ul>
+            <li>
+              Creació de noves infraestructures o obres: construir itineraris de voreres i vials, enllumenat, senyalització vial, parcs, jardins, clavegueram, etc.
+            </li>
+            <li>
+              Reposició d’infraestructures: reforma d’enllumenat, remodelació de parcs, zones verdes, remodelació de vials i de la seua senyalització.
+            </li>
+            <li>
+              Construcció o reforma d’edificis: biblioteques, instal·lacions esportives, centres culturals, etc.
+            </li>
+            <li>
+              Mobiliari urbà (bancs, papereres...) mobiliari infantil per a zones de jocs infantils (engrunsadores, tobogans...)
+            </li>
+            <li>
+              Aplicacions informàtiques: desenvolupament d’aplicacions, web, etc.
+            </li>
+          </ul>
 
-          Construcció o reforma d’edificis: biblioteques, instal·lacions esportives, centres culturals, etc.
-          -
-          Mobiliari urbà (bancs, papereres...) mobiliari infantil per a zones de jocs infantils (engrunsadores, tobogans...)
-          -
-          Aplicacions informàtiques: desenvolupament d’aplicacions, web, etc.
 
-          Despeses corrents són les despeses originades
-          per l'adquisició de béns que reunisquen algunes de
-          les característiques següents:
+          Despeses corrents són les despeses originades per l'adquisició de béns que reunisquen algunes de les característiques següents:
           a) Ser béns fungibles.
           b) Tenir una durada previsiblement inferior a l'exercici pressupostari.
           c) No ser susceptibles d'inclusió en inventari.
@@ -367,10 +369,14 @@ val:
 
 
           Exemples de propostes de despeses corrents en béns i serveis.
-          •
-          Activitats: programes culturals, esportius...
-          •
-          Creació de tallers i cursos. Realització d’estudis. Compra de material que no s’inventarie (per a consumir durant l’any)
+          <ul>
+            <li>
+              Activitats: programes culturals, esportius...
+            </li>
+            <li>
+              Creació de tallers i cursos. Realització d’estudis. Compra de material que no s’inventarie (per a consumir durant l’any)
+            </li>
+          </ul>
 
           Els projectes d’inversió o de despeses corrents han d’estar vinculats a les competències municipals assenyalades en els articles 25.2 i 26 de la Llei 7/1985, de 2 d’abril, Reguladora de les Bases de Règim Local i complir els requisits arreplegats en aquestes bases.
 
@@ -389,11 +395,12 @@ val:
 
 
       item_4:
-        title: 4.- Qui pot presentar propostes de projectes d’inversió?
+        title: 4.- Qui pot presentar propostes?
         subt: ''
         text: |-
+          Qualsevol veïna o veí, empadronat en la ciutat de Castelló de la Plana en el moment de la inscripció, major de 16 anys. Les propostes es presentaran de forma individual, sense perjudici que la persona que la presenta represente a una organització, grup, col·lectiu, etc.
 
-
+          Es podrà presentar una proposta per a tota la ciutat i/o una proposta per a un districte concret a la seua elecció. No és necessari ser resident en un districte per a poder presentar proposta d'aquest districte. Per a poder comprovar l'empadronament s'ha de verificar el compte de correu electrònic a través de la web decidim.castello.es
 
       item_5:
         title: 5.- Com presentar propostes de projectes d’inversió?
