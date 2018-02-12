@@ -223,183 +223,208 @@ val:
         title: 1.- Què són els pressupostos participatius?
         subt: ''
         text: |-
-          Els pressupostos participatius són una ferramenta de democràcia directa que permet a la ciutadania incidir o prendre decisions referents als pressupostos públics.
+          Els pressupostos participatius són una ferramenta de democràcia directa que permeten a la ciutadania prendre decisions referents a una part del Pressupost municipal.
 
-          La corporació municipal treballa perquè els veïns i veïnes d’aquesta ciutat puguen donar a conéixer la seua opinió sobre les polítiques i els projectes més importants que s’estan duent a terme des de l’Ajuntament i tinguen capacitat de decisió sobre aquests. Per això és voluntat de l’equip de govern posar en marxa una primera experiència, en línia, de pressupostos participatius a través de la plataforma web decidim.castello.es en què la ciutadania puga decidir en què invertir 1.650.000 euros.
+          En l’exercici 2017 l’Ajuntament de Castelló de la Plana, va posar en marxa una primera experiència en línia, de pressupostos participatius, a través de la plataforma web decidim.castello.es en la qual els veïns i veïnes d’aquesta ciutat pogueren involucrar- se de forma directa en la presa de decisions respecte al pressupost municipal. Aquest primer projecte de pressupostos participatius va suposar una oportunitat d’aprenentatge compartit entre l’ajuntament i la ciutadania. Es van presentar 239 propostes ciutadanes, de les quals 46, després de superar la fase d’avals i els estudis de viabilitat tècnica, es van sotmetre a votació ciutadana, en la que van participar 2.900 veïnes i veïns del municipi.
+
+          Per a l’equip de govern, aquesta iniciativa té gran importància, per la qual cosa resulta imprescindible buscar la manera que la ciutadania s’implique i participe en el projecte esmentat, Per això, finalitzat el procés de pressupostos participatius del 2017, amb l’objectiu de millorar edicions futures, es convida a les associacions, entitats, col·lectius i la ciutadania en general, a formar part d’un grup de treball, denominat grup motor, que ha proposat millores en la consulta ciutadana sobre els pressupostos participatius. D’ací que s’introduïsquen en aquesta convocatòria, alguns canvis que permeten, des de la coresponsabilitat, aproximar als veïns i veïnes de la ciutat en la gestió pública.
+
+          Una de les principals novetats d’aquesta convocatòria és vincular als districtes de la ciutat, de manera que els sis districtes de la ciutat puguen decidir sobre projectes que afecten el seu barri. Per això els Pressupostos participatius del 2018 es divideixen en dos grups:
+
+          <ul>
+            <li>
+              Per a un districte: propostes ciutadanes que afecten un districte concret.
+            </li>
+            <li>
+              *Per a tota la ciutat: propostes ciutadanes que no estan localitzades en un districte específic (per exemple millorar els parcs infantils de la ciutat), o que afecten uns quants districtes (per exemple un carril bici que travessa la ciutat d’est a oest).
+            </li>
+          </ul>
+
+
+
+          L’avaluació dels Pressupostos participatius del 2017, ha servit per a analitzar les propostes plantejades i comprovar que moltes d’elles van haver de ser descartades per no ser inversions reals. Per això, amb la finalitat d’introduir millores en aquest procés participatiu s’incorporen com a objecte de les propostes, (a més de mantindre els projectes d’inversió), les que corresponen a despeses arreplegades en el capítol II del Pressupost municipal “despeses corrents en béns i serveis”, sempre que les despeses siguen per a una actuació concreta o en qualsevol altre cas no s’estenga més enllà d’un any.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       item_2:
-        title: 2.- Sobre la plataforma decidim.castello.es
+        title: 2.- Compromisos del Govern Municipal
         subt: ''
         text: |-
-          La plataforma web decidim.castello.es és un instrument de participació promogut per les regidories de Transparència, Modernització i Participació Ciutadana, per a conéixer l’opinió de les veïnes i veïns de la ciutat, mitjançant un sistema de votació en línia, sobre assumptes d’interés públic de caràcter local que els afecten i que són de competència municipal.
+          Per a la consulta ciutadana sobre els pressupostos particpatius del 2018 el govern municipal destina 1.650.000 euros per a invertir en projectes proposats per la ciutadania i triats directament pels veïns i veïnes de la ciutat:
 
-          Depositar en la ciutadania la capacitat de decidir sobre l’entorn en què desenvolupen les seues vides, incrementa la qualitat democràtica de les institucions públiques i suposa una millora en la gestió institucional, ja que permet construir en comú i decidir el que volem conjuntament per a la nostra ciutat.
+          <ul>
+            <li>
+              1.050.000 euros para toda la ciutat.
+            </li>
+            <li>
+              600.000 euros para los districte.
+            </li>
+          </ul>
 
-          És important assenyalar que aquest projecte de pressupostos participatius és un projecte experimental amb què iniciar un procés de diàleg de l’Administració municipal amb la ciutadania, que afavoreix el protagonisme de les ciutadanes i ciutadans en la presa de decisions respecte al seu entorn directe i promou la modernització de la gestió pública. Per tant, el procés en si mateix suposa una oportunitat d’aprenentatge compartit entre l’Ajuntament i les veïnes i veïns del municipi.
+
+
+          La quantia destinada al total dels districtes queda distribuïda de la manera següent: 300.000 euros han sigut repartits a parts iguals entre els sis districtes, corresponent a cadascun d'ells la quantitat de 50.000 euros. El repartiment dels altres 300.000 euros és proporcional a la població. (Les dades de població per districtes estan publicats en la plataforma decidim.castello.es)
+
+          <table>
+            <tbody>
+              <tr>
+                <th>DISTRICTE SUD</th>
+                <td class="text-right">22,90%</td>
+                <td class="text-right">118.700 €</td>
+              </tr>
+
+              <tr>
+                <th>DISTRICTE EST</th>
+                <td class="text-right">22,20%</td>
+                <td class="text-right">116.000 €</td>
+              </tr>
+
+              <tr>
+                <th>DISTRICTE OEST</th>
+                <td class="text-right">15,60%</td>
+                <td class="text-right">96.800 €</td>
+              </tr>
+
+              <tr>
+                <th>DISTRICTE NORD</th>
+                <td class="text-right">15,40%</td>
+                <td class="text-right">96.200 €</td>
+              </tr>
+
+              <tr>
+                <th>DISTRICTE CENTRE</th>
+                <td class="text-right">12,90%</td>
+                <td class="text-right">88.700 €</td>
+              </tr>
+              <tr>
+                <th>DISTRICTE GRAU </th>
+                <td class="text-right">11,00%</td>
+                <td class="text-right">83.000 €</td>
+              </tr>
+            </tbody>
+          </table>
 
       item_3:
-        title: 3.- Què és una proposta de projecte d’inversió?
+        title: 3.- Quins projectes es poden presentar?
         subt: ''
         text: |-
-          Les despeses d’inversió d’un municipi són aquelles derivades de la creació d’infraestructures i de la creació o adquisició de béns de naturalesa inventariable necessaris per al funcionament dels serveis i aquelles altres despeses que tinguen el caràcter d’amortitzables.
-          Les inversions han de reunir les característiques següents:
-          <ol class="ordered_alpha">
-            <li>Que no siguen béns fungibles, és a dir, que no es consumisquen amb l’ús.</li>
-            <li>Que tinguen una duració superior a l’exercici pressupostari, 12 mesos.</li>
-            <li>Que siguen susceptibles d’inclusió en inventari, sent aquest una relació detallada, ordenada i valorada dels elements que componen el patrimoni.</li>
-          </ol>
 
-          Exemples d’inversions:
 
-          * Creació de noves infraestructures o obres: construir itineraris de voreres i vials, enllumenat, senyalització viària, parcs, jardins, clavegueram, etc.
-          * Reposició d’infraestructures: reforma d’enllumenat, remodelació de parcs, zones verdes, remodelació de vials i de la seua senyalització.
-          * Construcció o reforma d’edificis.
-          * Adquisició d’elements de transport (autobusos, vehicle de bombers..) o de mobiliari infantil per a zones de jocs infantils (engronsadores, tobogans, palanques…)
-          * Aplicacions informàtiques: desenvolupament d’aplicacions, web, etc.
 
-          Per tant NO són inversions:
 
-          * Activitats: programes culturals, campanyes de dinamització comercial, activitats esportives, de festes…
-          * Lloguer d’edificis, vehicles, mobiliari, maquinària.
-          * Subministraments: combustibles, energia elèctrica, gas, aliments
-          * Servei de neteja
-          * Incrementar la freqüència de les línies d’autobusos o modificar les seues rutes.
-          * Despeses de personal.
-          * Subvencions i ajudes.
-          * Concessió de beques, premis.
-          * Els projectes d'inversió han d'estar vinculats a les competències municipals assenyalades en els articles 25.2 i 26 de la Llei 7/1985, de 2 d'abril, reguladora de las bases de règim local.
+          Es poden proposar projectes d’inversió o projectes de despeses corrents en béns i serveis.
+
+          Una inversió és bàsicament tot allò que l’ajuntament pot construir o adquirir i que la seua duració prevista és superior a un any.
+
+          Les inversions han de reunir les següents característiques:
+          •
+          Que no siguen béns fungibles, és a dir, que no es consumisquen amb l’ús.
+          •
+          Que tinguen una duració superior l’exercici pressupostari, 12 mesos.
+          •
+          Que siguen susceptibles d’inclusió en inventari, que és una relació detallada, ordenada i valorada dels elements que componen el patrimoni.
+
+
+          A títol informatiu, son exemples d’inversions:
+          -
+          Creació de noves infraestructures o obres:
+          ,
+          construir itineraris de voreres i vials, enllumenat,
+          ,
+          senyalització vial, parcs, jardins, clavegueram, etc.
+          -
+          Reposició
+          d’infraestructures:
+          reforma
+          d’enllumenat, remodelació de parcs, zones verdes,
+          remodelació de vials i de la seua senyalització.
+
+          Construcció o reforma d’edificis: biblioteques, instal·lacions esportives, centres culturals, etc.
+          -
+          Mobiliari urbà (bancs, papereres...) mobiliari infantil per a zones de jocs infantils (engrunsadores, tobogans...)
+          -
+          Aplicacions informàtiques: desenvolupament d’aplicacions, web, etc.
+
+          Despeses corrents són les despeses originades
+          per l'adquisició de béns que reunisquen algunes de
+          les característiques següents:
+          a) Ser béns fungibles.
+          b) Tenir una durada previsiblement inferior a l'exercici pressupostari.
+          c) No ser susceptibles d'inclusió en inventari.
+          d) Ser, previsiblement, despeses reiterades.
+
+
+          Exemples de propostes de despeses corrents en béns i serveis.
+          •
+          Activitats: programes culturals, esportius...
+          •
+          Creació de tallers i cursos. Realització d’estudis. Compra de material que no s’inventarie (per a consumir durant l’any)
+
+          Els projectes d’inversió o de despeses corrents han d’estar vinculats a les competències municipals assenyalades en els articles 25.2 i 26 de la Llei 7/1985, de 2 d’abril, Reguladora de les Bases de Règim Local i complir els requisits arreplegats en aquestes bases.
+
+          Quedaran exclosos els projectes o les propostes següents:
+          • Propostes que afecten contractes ja vigents.
+          • Projectes que estiguen destinats a beneficiar una persona o entitat concreta, i no a l’interés públic.
+          • Projectes de despeses en béns corrents i serveis la despesa de les quals s’estenga més enllà de dos anys.
+          • Propostes d’inversió sobre terrenys o solars no municipals.
+
+
+
+
+
+
+
+
 
       item_4:
         title: 4.- Qui pot presentar propostes de projectes d’inversió?
         subt: ''
         text: |-
-          <ol class="ordered_alpha">
-            <li>Qualsevol veïna o veí, a títol individual, empadronada a la ciutat de Castelló de la Plana en el moment de la inscripció, major de 16 anys.
-            <li>Qualsevol entitat ciutadana amb personalitat jurídica, que tinga el seu domicili social i el seu àmbit d’actuació territorial a la ciutat de Castelló de la Plana, i que es trobe inscrita en el Registre d’Associacions.</li>
-          </ol>
 
-          Per a acreditar-se com a proponent de projectes d’inversió, cal fer-ho via telemàtica a través del formulari que a aquest efecte es disposarà en la pàgina web decidim.castello.es
-
-          Les dades que se sol·liciten per a acreditar-se com a proponent de projectes d’inversió són:
-
-          Persones físiques
-
-          * Nom usuari
-          * DNI/NIE/passaport
-          * codi postal
-          * Data de naixement
-          * Adreça electrònica
-          * Contrasenya
-
-          Persones jurídiques
-
-          * Nom de l’entitat ciutadana
-          * Nom i cognoms de la persona que realitza la proposta
-          * Telèfon
-          * Adreça electrònica
-          * Contrasenya
-
-          Una vegada acreditat es podrà accedir a omplir el formulari de projecte/proposta d’inversió. Cada persona o entitat podrà presentar una única proposta.
-
-          S’invita a presentar projectes d’inversió que redunden en la millora de la qualitat de vida de la ciutat. Les propostes de projectes d’inversió hauran de complir els requisits recollits en aquestes Bases Reguladores.
 
 
       item_5:
         title: 5.- Com presentar propostes de projectes d’inversió?
         subt: 'Desde el 15 de febrero hasta el 5 de marzo de 2017'
         text: |-
-          Les propostes de projectes d’inversió es presentaran principalment via telemàtica a través de la plataforma web decidim.castello.es i excepcionalment de forma presencial utilitzant una instància de sol·licitud general a la qual se li adjuntarà el formulari per a presentar propostes de projectes d’inversió, en qualsevol de les tinències d’Alcaldia.
 
-          El model estandarditzat per a la presentació de projectes d’inversió es pot consultar en <a href='http://www.castello.es/decidim/BASES_PRESSUPOSTOS_PARTICIPATIUS_VALENCIA.pdf' target='_blank'>aquestes Bases</a>. Vegeu Annex 1 (persones físiques)  Annex 2 (entitats).
-
-          El període per a presentar projectes d’inversió és del 15 de febrer al 5 de març de 2017 fins a les 23:59 hores.
 
       item_6:
         title: 6.-  Qui pot donar suport a les propostes de projectes d’inversió?
         subt: 'Del 6 al 31 de marzo de 2017'
         text: |-
-          Qualsevol persona major de 16 anys empadronada podrà donar suport fins a un màxim de 3 propostes de projectes d’inversió. Pot, indistintament, donar suport a propostes individuals o d’entitats ciutadanes.
-
-          Les propostes de projectes d’inversió hauran de comptar amb un mínim de 25 suports de les veïnes i veïns per a poder passar a la fase següent i ser valorades pels serveis tècnics de l’Ajuntament de Castelló de la Plana. El suport de les propostes es realitzarà a través de la plataforma decidim.castello.es, on estaran exposades les propostes presentades.
-
-          El període de suport de les propostes va del 6 al 31 de març de 2017 fins a les 23:59:hores.
 
       item_7:
         title: 7.- Validació i estudi de viabilitat dels projectes d’inversió.
         subt: 'Del 1 al 30 de abril'
         text: |-
-          Finalitzat el període de suport de les propostes, des del Negociat de Participació Ciutadana de l’Ajuntament es realitzarà un procés de validació de les propostes realitzades amb l’objectiu de comprovar que totes les propostes presentades compleixen amb els requisits establits en aquestes Bases Reguladores, admetent o no motivadament les propostes presentades.
-
-          A títol d’exemple, seran motius d'inadmissió:
-
-          No ser un projecte d’inversió
-
-          * No ser competència municipal
-          * La no disponibilitat de terrenys.
-          * Que per a la seua execució siga necessari implicar altres administracions
-          * Que la seua execució ja estiga prevista i pressupostada per l’Ajuntament
-          * Qualssevol altres anàlegs als anteriors
-
-          Superada la validació, passaran a ser estudiades pels Serveis Tècnics de l’Ajuntament implicats en la seua execució, que seran els que emetran un informe sobre la seua viabilitat jurídica, tècnica i/o pressupostària.
-
-          Els Serveis Tècnics de l’Ajuntament, en emetre un informe sobre la viabilitat jurídica, tècnica i pressupostària del projecte d’inversió, hauran de:
-
-          * Comprovar que la proposta siga competència de l’Ajuntament i que no depenga d’altres administracions.
-          * Estudiar si hi ha alguna normativa que siga contrària a dur a terme la proposta.
-          * Estimar el cost econòmic de la proposta.
-          * Estudiar si la proposta és viable tècnicament i no es preveu cap impediment perquè puga executar-se en el 2017.
-
-          Les propostes de projectes d’inversió que tinguen informes favorable dels Serveis Tècnics seran les que passaran a la fase de votació final.
-
-          Aquest procés de validació i estudi de viabilitat tècnica de les propostes es realitzarà en el període comprés entre l’1 i el 30 d’abril de 2017 fins a les 23:59 hores.
 
       item_8:
         title: 8. Sobre la votació ciutadana.
         subt: 'Del 1 al 15 de mayo'
         text: |-
-          El període de les votacions serà de l'1 al 15 de maig fins a les 23:59 hores.
-
-          Totes les persones majors de 16 anys, que estiguen empadronades en la ciutat de Castelló de la Plana i s'hagen inscrit en la plataforma web decidim.castello.es, podran participar amb el seu vot.
-
-          Es podran votar totes les propostes que es creen oportunes fins a arribar a la quantitat d'1.650.000 euros.
-
-          Hi ha dues opcions per a fer la votació:
-
-           1. De manera telemàtica mitjançant la plataforma web decidim.castello.es .<strong><a href='http://www.castello.es/decidim/manualvotacio.pdf' target='_blank'> Consulta la guia pràctica ací</a></strong>.
-
-           2. D'altra banda, per als ciutadans que no disposen d'accés a Internet, també s'han habilitat punts de votació presencial amb ordinadors i personal d'assessorament on se'ls ajudarà a fer ús de la plataforma.
-           Aquests punts de votació són els següents:
-
-             1. Tinència d'Alcaldia Nord Plaça del Primer Molí, s/n.
-             2. Tinència d'Alcaldia Sud Carrer Ricardo Català, cantó amb. J. Marquès.
-             3. Tinència d'Alcaldia Est Avinguda Germans Bou, 27.
-             4. Tinència d'Alcaldia Oest Plaça d'Espanya, 1.
-             5. Tinència d'Alcaldia Grau Passeig Buenavista, 28.
-             6. Tinència d'Alcaldia Centre Aula de Consum (quarta planta de l'Edifici Noble, plaça Major, 1).
-
-            - Les votacions presencials es faran en horari de **9:30 a 12:30** hores els següents dies:
-
-                * Tinència d'Alcaldia **Nord** Dies **2 i 8 de maig**
-                * Tinència d'Alcaldia **Sud** Dies **3 i 9 de maig**
-                * Tinència d'Alcaldia **Est** Dies **4 i 10 de maig**
-                * Tinència d'Alcaldia **Oest** Dies **5 i 12 de maig**
-                * Tinència d'Alcaldia **Grau** Dies **11 i 15 de maig**
-                * Tinència d'Alcaldia **Centre** Dies **2,3,4,5,8,9,10,11,12 i 15 de maig**
-
-            Per a votar presencialment caldrà anar proveït del **DNI, NIE o passaport**.
 
       item_9:
         title: 9.  Sobre els resultats de la votació.
         subt: ''
         text: |-
-          El resultat final del procés consultiu s’obtindrà una vegada finalitzada la votació, i totes les propostes s'ordenaran de major a menor votació, tenint en compte que cada proposta inclosa no supere el pressupost de 1.650.000 euros S'acceptaran propostes fins a arribar a l’import total. Si en acceptar una proposta se supera l’import total, s´ignora i es passarà a seleccionar la següent.
 
-          Respecte a la proposta o propostes descartades, l'equip de Govern estudiarà la possibilitat d'incorporar-la o incorporar-les en el Pressupost Municipal del 2018.
-
-          El Govern municipal es compromet a dur a terme l’execució de les inversions seleccionades, tenint en compte els resultats d'aquesta consulta ciutadana, sempre que s’atenga als criteris tècnics de viabilitat dels projectes i els límits econòmics disponibles.
-
-          Es podrà seguir el procés a través de la plataforma web decidim.castello.es
+      item_10:
+        title: 9.  Sobre els resultats de la votació.
+        subt: ''
+        text: |-
 
       description:
         faq: "Preguntes freqüents sobre problemes tècnics"

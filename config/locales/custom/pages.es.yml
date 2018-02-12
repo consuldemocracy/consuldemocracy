@@ -37,187 +37,321 @@ es:
       cartel_10:
         lema: Mone a gaudir de la vida en les colles
 
-    more_informatio:
+    more_information:
       item_1:
-        title: 1.-¿ Qué son los presupuestos participativos?
+        title: 1.-¿ Qué són los presupuestos participativos?
         subt: ''
         text: |-
-          Los presupuestos participativos son una herramienta de democracia directa que permiten a la ciudadanía incidir o tomar decisiones referentes a los presupuestos públicos.
 
-          La Corporación Municipal trabaja para que los vecinos y vecinas de esta ciudad puedan dar a conocer su opinión sobre las políticas y los proyectos más importantes que se están llevando a cabo desde el Ayuntamiento y tengan capacidad de decisión sobre ellas. Por ello es voluntad del equipo de gobierno poner en marcha una primera experiencia, on-line, de presupuestos participativos a través de la plataforma web decidim.castello.es en la que la ciudadanía pueda decidir en qué invertir 1.650.000 euros.
+          Los presupuestos participativos son una herramienta de democracia directa que permiten a la ciudadanía tomar decisiones referentes a una parte del presupuesto municipal.
+
+          En el ejercicio 2017 el Ayuntamiento de Castellón de la Plana, puso en marcha una primera experiencia on line, de presupuestos participativos, a través de la plataforma web decidim.castello.es en la que los vecinos y vecinas de esta ciudad pudiesen involucrarse de forma directa en la toma de decisiones respecto al presupuesto municipal.
+
+          Este primer proyecto de presupuestos participativos supuso una oportunidad de aprendizaje compartido entre el ayuntamiento y la ciudadanía.
+
+          Se presentaron 239 propuestas ciudadanas, de las que 46, después de superar la fase de avales y los estudios de viabilidad técnica, se sometieron a votación ciudadana, en la que participaron 2.900 vecinas y vecinos del municipio.
+
+          Para el equipo de gobierno, esta iniciativa reviste gran importancia, por lo que resulta imprescindible buscar la manera de que la ciudadanía se implique y participe en dicho proyecto, Por ello, finalizado el proceso de presupuestos participativos del 2017, con el objetivo de mejorar ediciones futuras, se invita a las asociaciones, entidades, colectivos y la ciudadanía en general, a formar parte de un grupo de trabajo, denominado grupo motor, que ha propuesto mejoras en la consulta ciudadana sobre los presupuestos participativos. De ahí que se introduzcan en esta convocatoria, algunos cambios que permitan, desde la corresponsabilidad, aproximar a los vecinos y vecinas de la ciudad en la gestión pública.
+
+          Una de las principales novedades de esta convocatoria es vincular a los distritos de la ciudad, de forma que los seis distritos de la ciudad puedan decidir sobre proyectos que afecten a su barrio.
+
+          Por ello los presupuestos participativos del 2018 se dividen en dos grupos:
+
+          Para un distrito: propuestas ciudadanas que afectan a un distrito concreto.
+
+          Para toda la ciudad: propuestas ciudadanas que no están localizadas en un distrito específico ( por ejemplo mejorar los parques infantiles de la ciudad), o que afectan a varios distritos ( por ejemplo un carril bici que atraviesa la ciudad de este a oeste).
+          La evaluación de los presupuestos participativos del 2017, ha servido para analizar las propuestas planteadas y comprobar que muchas de ellas tuvieron que ser descartadas por no ser “inversiones reales”. Por ello, con la finalidad de introducir mejoras en este proceso participativo se incorporan como objeto de las propuestas, (además de mantener los proyectos de inversión) las que corresponden a gastos recogidos en el Capítulo II del presupuesto municipal “gastos corrientes en bienes y servicios”, siempre que dichos gastos sean para una actuación concreta o en otro caso no se extiendan más allá de un año.
+
 
       item_2:
-        title: 2.- Sobre la plataforma decidim.castello.es
+        title: 2.- Compromisos del Gobierno Municipal
         subt: ''
         text: |-
-          La plataforma web decidim.castello.es es un instrumento de participación promovido por las Concejalías de Transparencia, Modernización y Participación Ciudadana, para conocer la opinión de las vecinas y vecinos de la ciudad, mediante un sistema de votación on-line, sobre asuntos de interés público de carácter local que le afectan y que son de competencia municipal.
 
-          Depositar en la ciudadanía la capacidad de decidir sobre el entorno en que desarrollan sus vidas, incrementa la calidad democrática de las instituciones públicas y supone una mejora en la gestión institucional, ya que permite construir en común y decidir lo que queremos conjuntamente para nuestra ciudad.
 
-          Es importante señalar que este proyecto de presupuestos participativos es un proyecto experimental con el que iniciar un proceso de diálogo de la administración municipal con la ciudadanía, que favorece el protagonismo de las ciudadanas y ciudadanos en la toma de decisiones respecto a su entorno directo y promueve la modernización de la gestión pública. Por lo que el proceso en si mismo, supone una oportunidad de aprendizaje compartido entre el ayuntamiento y las vecinas y vecinos del municipio.
+          Para la consulta ciudadana sobre los presupuestos participativos del 2018 el gobierno municipal destina 1.650.000 euros para invertir en proyectos propuestos por la ciudadanía y escogidos directamente por los vecinos y vecinas de la ciudad:
+
+
+          1.050.000 euros para toda la ciudad.
+
+          600.000 euros para los distritos.
+
+          La cuantía destinada al total de los distritos queda distribuida de la siguiente forma: 300.000 euros han sido repartidos a partes iguales entre los seis distritos, correspondiendo a cada uno de ellos 50.000 euros. El reparto de los otros 300.000 euros es proporcional a la población. (Los datos de población por distritios están publicados en la plataforma decidim.castello.es)
+
+
+          <table>
+            <tbody>
+              <tr>
+                <th>DISTRITO SUR</th>
+                <td class="text-right">22,90%</td>
+                <td class="text-right">118.700 €</td>
+              </tr>
+              <tr>
+                <th>DISTRITO ESTE</th>
+                <td class="text-right">22,20%</td>
+                <td class="text-right">116.600 €</td>
+              </tr>
+              <tr>
+                <th>DISTRITO OESTE</th>
+                <td class="text-right">15,60%</td>
+                <td class="text-right">96.800 €</td>
+              </tr>
+              <tr>
+                <th>DISTRITO NORTE</th>
+                <td class="text-right">15,40%</td>
+                <td class="text-right">96.200 €</td>
+              </tr>
+              <tr>
+                <th>DISTRITO CENTRO</th>
+                <td class="text-right">12,90%</td>
+                <td class="text-right">88.700 €</td>
+              </tr>
+              <tr>
+                <th>DISTRITO GRAU</th>
+                <td class="text-right">11,00%</td>
+                <td class="text-right">83.000 €</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
 
       item_3:
-        title: 3.- Qué es una propuesta de proyecto de inversión.
+        title: 3.- ¿Qué proyectos se pueden presentar?
         subt: ''
         text: |-
-          Los gastos de inversión de un municipio son aquellos derivados de la creación de infraestructuras y de la creación o adquisición de bienes de naturaleza inventariable necesarios para el funcionamiento de los servicios y aquellos otros gastos que tengan el carácter de amortizables.
+          Se puede proponer proyectos de inversión o proyectos de gasto corriente en bienes y servicios.
+          Una inversión es básicamente todo aquello que el ayuntamiento puede construir o adquirir y que su duración prevista es superior a un año.
+
           Las inversiones tienen que reunir las siguientes características:
+          <ul>
+            <li>
+              Que no sean bienes fungibles, es decir, que no se consuman con el uso.
+            </li>
 
-          <ol class="ordered_alpha">
-            <li>Que no sean bienes fungibles, es decir, que no se consuman con el uso.</li>
-            <li>Que tengan una duración superior al ejercicio presupuestario, 12 meses.</li>
-            <li>Que sean susceptibles de inclusión en inventario, siendo éste una relación detallada, ordenada y valorada de los elementos que componen el patrimonio.</li>
-          </ol>
+            <li>
+              Que tengan una duración superior al ejercicio presupuestario, 12 meses.
+            </li>
+            <li>
+              Que sean susceptibles de inclusión en inventario, siendo éste una relación detallada, ordenada y valorada de los elementos que componen el patrimonio.
+            </li>
+          </ul>
 
-          Ejemplos de inversiones:
+          A título informativo, serian ejemplos de inversiones:
+          <ul>
+            <li>
+              Creación de nuevas infraestructuras u obras: construir itinerarios de aceras y viales, alumbrado, señalización vial, parques, jardines, alcantarillado, etc...
+            </li>
+            <li>
+              Reposición de infraestructuras: reforma de alumbrado, remodelación de parques, zonas verdes, remodelación de viales y de su señalización.
+            </li>
+            <li>
+              Construcción o reforma de edificios: bibliotecas, instalaciones deportivas, centros culturales etc.
+            </li>
+            <li>
+              Mobiliario urbano (bancos, papeleras...) y mobiliario infantil para zonas de juegos infantiles (columpios, toboganes ...)
+            </li>
+            <li>
+              Aplicaciones informáticas: desarrollo de aplicaciones, web, etc.
+            </li>
+          </ul>
 
-          * Creación de nuevas infraestructuras o obras: construir itinerarios de aceras y viales, alumbrado, señalización vial, parques, jardines, alcantarillado, etc…
-          * Reposición de infraestructuras: reforma de alumbrado, remodelación de parques, zonas verdes, remodelación de viales y de su señalización.
-          * Construcción o reforma de edificios.
-          * Adquisición de elementos de trasporte ( autobuses, vehículo de bomberos..), o de mobiliario infantil para zonas de juegos infantiles ( columpios, toboganes, balances…)
-          * Aplicaciones informáticas: desarrollo de aplicaciones, web, etc.
-
-          Por lo tanto NO son inversiones:
-
-          * Actividades: programas culturales, campañas de dinamización comercial, actividades deportivas, de fiestas…
-          * Alquiler de edificios, vehículos, mobiliario, maquinaria.
-          * Suministros: combustibles, energía eléctrica, gas, alimentos
-          * Servicio de limpieza
-          * Incrementar la frecuencia de las líneas de autobuses o modificar sus rutas.
-          * Gastos de personal.
-          * Subvenciones y ayudas.
-          * Concesión de becas, premios.
-          * Los proyectos de inversión deben estar vinculados a las competencias municipales señaladas en los artículos 25.2 y 26 de la Ley 7/1985, de 2 de abril, reguladora de las Bases de Régimen Local.
+          Gastos corrientes son los gastos originados por la adquisición de bienes que reúnan algunas de las características siguientes:
+          a) Ser bienes fungibles.
+          b) Tener una duración previsiblemente inferior al ejercicio presupuestario.
+          c) No ser susceptibles de inclusión en inventario.
+          d) Ser, previsiblemente, gastos reiterados.
 
 
+          Ejemplos de propuestas de gasto corriente en bienes y servicios.
+          <ul>
+            <li>
+              Actividades: programas culturales, deportivos...
+            </li>
+            <li>
+              Creación de talleres y cursos.
+            </li>
+            <li>
+              Realización de estudios.
+            </li>
+            <li>
+              Compra de material que no se inventaríe (para consumir en el año).
+            </li>
+          </ul>
+
+
+
+          Los proyectos de inversión o de gasto corriente deben estar vinculados a las competencias municipales señaladas en los artículos 25.2 y 26 de la Ley 7/1985, de 2 de abril, reguladora de las Bases de Régimen Local y cumplir los requisitos recogidos en estas bases.
+
+
+          Quedarán excluidos los siguientes proyectos o propuestas:
+          <ul>
+            <li>
+              Propuestas que afecten a contratos ya vigentes.
+            </li>
+            <li>
+              Proyectos que vayan destinados a beneficiar a una persona o entidad concreta, y no al interés público.
+            </li>
+            <li>
+              Proyectos de gasto en bienes corrientes y servicios cuyo gasto se extienda más allá de un año.
+            </li>
+            <li>
+              Propuestas de inversión sobre terrenos o solares no municipales.
+            </li>
+          </ul>
 
       item_4:
-        title: 4.- ¿Quién puede presentar propuestas de proyectos de inversión?
+        title: 4.- ¿Quién puede presentar propuestas?
         subt: ''
         text: |-
-          <ol class="ordered_alpha">
-            <li>Cualquier vecina o vecino, a título individual, empadronada en la ciudad de Castellón de la Plana en el momento de la inscripción, mayor de 16 años.</li>
-            <li>Cualquier entidad ciudadana con personalidad jurídica, que tenga su domicilio social y su ámbito de actuación territorial en la ciudad de Castellón de la Plana, y que se encuentre inscrita en el Registro de Asociaciones.</li>
-          </ol>
+          Cualquier vecina o vecino, empadronada en la ciudad de Castellón de la Plana en el momento de la inscripción, mayor de 16 años. Las propuestas se presentarán de forma individual, sin perjuicio que la persona que la presenta represente a una organización, grupo, colectivo, etc..
 
-          Para acreditarse como proponente de proyectos de inversión se realizará vía telemática a través del formulario que a tal efecto se dispondrá en la página web decidim.castello.es
+          Se podrá presentar una propuesta para toda la ciudad y/o una propuesta para un distrito concreto a su elección. No es necesario ser residente en un distrito para poder presentar propuesta de ese distrito.
 
-          Los datos que se solicitan para acreditarse como proponente de proyectos de inversión son:
-
-          Personas Físicas
-
-          * Nombre de Usuario
-          * DNI/NIE/Pasaporte
-          * Código postal
-          * Fecha nacimiento
-          * Correo electrónico
-          * Contraseña
-
-          Personas Jurídicas
-
-          * Nombre de la entidad ciudadana
-          * Nombre y apellidos de la persona que realiza la propuesta
-          * Teléfono:
-          * Correo electrónico:
-          * Contraseña
-          * Una vez acreditado se podrá acceder a cumplimentar el formulario de proyecto/propuesta de inversión. Cada persona o entidad podrá presentar una única propuesta.
-          * Se invita a presentar proyectos de inversión que redunden en la mejora de la calidad de vida de la ciudad .Las propuestas de proyectos de inversión deberán cumplir los requisitos recogidos en estas Bases Reguladoras.
-
-
+          Para poder comprobar el empadronamiento se deberá verificar la cuenta de correo electrónico a través de la web decidim.castello.es
 
 
       item_5:
-        title: 5.- ¿Cómo presentar propuestas de proyectos de inversión?
-        subt: 'Desde el 15 de febrero hasta el 5 de marzo de 2017'
+        title: 5.- ¿Cómo presentar propuestas?
+        subt: ''
         text: |-
-          Las propuestas de proyectos de inversión se presentarán principalmente vía telemática a través de la plataforma web decidim.castello.es y excepcionalmente de forma presencial utilizando una instancia de solicitud general a la que se le adjuntará el formulario para presentar propuestas de proyectos de inversión, en cualquiera de las Tenencias de Alcaldía.
+          Las propuestas se presentarán principalmente vía telemática a través de la plataforma web decidim.castello.es y excepcionalmente de forma presencial utilizando una instancia de solicitud general a la que se le adjuntará el formulario para presentar propuestas en cualquiera de las Tenencias de Alcaldía. El modelo estandarizado para la presentación de propuestas se puede consultar en estas Bases. Ver Anexo I.
 
-          El modelo estandarizado para la presentación de proyectos de inversión se puede consultar en <a href='http://www.castello.es/decidim/BASES_PRESUPUESTOS_PARTICIPATIVOS_CASTELLANO.pdf' target='_blank'>estas Bases</a>. Ver  Anexo 1 (personas físicas)  Anexo 2 (entidades).
+          Período para presentar propuestas: desde las 14:00 horas del 15 de febrero hasta las 14:00 horas del 28 de marzo de 2018.
 
-          Período para presentar proyectos de inversión: desde el 15 de febrero hasta el 5 de marzo de 2017 hasta las 23:59 horas.
+          Durante esta primera fase de propuestas, el Negociado de Participación Ciudadana, si detecta proyectos repetidos o muy similares los recopilará. A través de un correo electrónico a los autores se les informa de un proyecto similar planteado y de las siguientes posibilidades: debatir sobre los planteamientos similares, plantear un nuevo proyecto conjunto y la posibilidad de retirar el proyecto. Si algún autor quiere mantener su proyecto a pesar de ser similar a otros, el Ayuntamiento respetará su decisión.
+
+
+
+
+
+
+
+
+
+
+
+
+
       item_6:
-        title: 6.-  Quién puede apoyar las propuestas de proyectos de inversión.
-        subt: 'Del 6 al 31 de marzo de 2017'
+        title: 6.-  Reuniones de distrito.
+        subt: ''
         text: |-
-          Cada persona mayor de 16 años empadronada, podrá apoyar hasta un máximo de 3 propuestas de proyectos de inversión. Puede apoyar, indistintamente, propuestas individuales o de entidades ciudadanas.
+          Finalizada la fase de presentación de propuestas, en coordinación con cada presidente de las Juntas de Distrito, se celebrará una reunión de distrito con el objetivo de priorizar las propuestas que estén vinculadas al propio distrito. En estos espacios se promoverá el diagnóstico, debate y consenso colectivo en la priorización de propuestas.
 
-          Las propuestas de proyectos de inversión deberán contar con un mínimo de 25 avales de las vecinas y vecinos para poder pasar a la siguiente fase y ser valoradas por los servicios técnicos del ayuntamiento de Castellón de la Plana. El aval de las propuestas se realizará a través de la plataforma decidim.castello.es , donde estarán expuestas las propuestas presentadas.
+          La primera y segunda propuesta elegidas en cada reunión de distrito pasarán directamente a la fase de validación y estudio de viabilidad de los proyectos de distrito. En el supuesto que alguna de las dos propuestas sea inviable técnicamente, siguiendo el orden de priorización, se valorará la siguiente en la lista. Las reuniones de distrito se celebrarán del 3 al 13 de abril de 2018.
 
-          El período de recogida de avales de las propuestas va desde el 6 de hasta el 31 de marzo de 2017 hasta las 23:59:horas.
 
       item_7:
-        title: 7.- Validación y estudio de viabiliad de los proyectos de inversión.
-        subt: 'Del 1 al 30 de abril'
+        title: 7.- ¿Quién puede apoyar las propuestas?
+        subt: ''
         text: |-
-          Finalizado el período de recogida de avales de las propuestas, desde el Negociado de Participación Ciudadana del ayuntamiento se realizará un proceso de validación de las propuestas realizadas con el objetivo de comprobar que todas las propuestas presentadas cumplen los con requisitos establecidos en las presentes Bases Reguladoras, admitiendo o inadmitiendo motivadamente las propuestas presentadas.
+          Cada persona mayor de 16 años empadronada, podrá apoyar hasta un máximo de 3 propuestas de proyectos de ciudad, de distrito o de ambas indistintamente.
+
+          Las propuestas deberán contar con un mínimo de 35 apoyos de las vecinas y vecinos para poder pasar a la siguiente fase y ser valoradas por los servicios técnicos del Ayuntamiento de Castellón de la Plana.
+
+          El apoyo de las propuestas se realizará a través de la plataforma decidim.castello.es donde estarán expuestas las propuestas presentadas. El período de apoyo de las propuestas va desde las 14:00 horas del 18 de abril hasta las 14:00 horas del 30 de abril de 2018.
+
+      item_8:
+        title: 8. Validación y estudio de viabilidad de los proyectos.
+        subt: ''
+        text: |-
+          Finalizado el período de apoyo de las propuestas, desde el Negociado de Participación Ciudadana del ayuntamiento se realizará un proceso de validación de las propuestas realizadas con el objetivo de comprobar que todas las propuestas presentadas cumplen con los requisitos establecidos en las presentes Bases Reguladoras, admitiendo o inadmitiendo motivadamente las propuestas presentadas.
+
 
           A título de ejemplo, serán motivos de inadmisión:
+          <ul>
+            <li>
+              No ser competencia municipal.
+            </li>
+            <li>
+              La no disponibilidad de terrenos.
+            </li>
+            <li>
+              Que para su ejecución sea necesario implicar a otras administraciones.
+            </li>
+            <li>
+              Que su ejecución ya esté prevista y presupuestada por el ayuntamiento.
+            </li>
+            <li>
+              Cualesquiera otros análogos a los anteriores.
+            </li>
 
-          * No ser un proyecto de inversión
-          * No ser competencia municipal.
-          * La no disponibilidad de terrenos.
-          * Que para su ejecución sea necesario implicar a otras administraciones.
-          * Que su ejecución ya esté prevista y presupuestada por el ayuntamiento.
-          * Cualesquiera otros análogos a los anteriores.
+          </ul>
+
 
           Superada la validación, pasarán a ser estudiadas por los Servicios Técnicos del Ayuntamiento implicados en su ejecución, que serán quienes emitan informe sobre su viabilidad jurídica, técnica y/o presupuestaria.
 
           Los Servicios Técnicos del Ayuntamiento al emitir informe sobre la viabilidad jurídica, técnica y presupuestaria del proyecto de inversión deberán:
 
-          * Comprobar que la propuesta sea competencia del Ayuntamiento, y que no dependa de otras administraciones.
-          * Estudiar si hay alguna normativa que sea contraria a llevar a cabo la propuesta.
-          * Estimar el coste económico de la propuesta.
-          * Estudiar si la propuesta es viable técnicamente y no se prevé algún impedimento para que pueda llevarse su ejecución en el 2017.
+          <ul>
+            <li>
+              Comprobar que la propuesta sea competencia del Ayuntamiento, y que no dependa de otras administraciones.
+            </li>
+            <li>
+              Estudiar si hay alguna normativa que sea contraria a llevar a cabo la propuesta.
+            </li>
+            <li>
+              Estimar el coste económico de la propuesta.
+            </li>
+            <li>
+              Estudiar si la propuesta es viable técnicamente y no se prevé algún impedimento para que pueda llevarse su ejecución.
+            </li>
+          </ul>
 
-          Las propuestas de proyectos de inversión que tengan informes favorable de los servicios Técnicos serán los que pasarán a la fase de votación final.
+          Las propuestas de proyectos que tengan informes favorable de los Servicios Técnicos serán los que pasarán a la fase de votación final. Se incorporará un informe técnico sobre el enfoque de género de cada uno de los proyectos considerados viables técnicamente. Este proceso de validación y estudio de viabilidad técnica de las propuestas se realizará en el periodo comprendido entre el 2 al 30 de mayo de 2018.
 
-          Este proceso de validación y estudio de viabilidad técnica de las propuestas se realizará en el periodo comprendido entre el 1 al 30 de abril de 2017 hasta las 23:59 horas.
 
-      item_8:
-        title: 8. Sobre la votación ciudadana.
-        subt: 'Del 1 al 15 de mayo'
-        text: |-
-          El periodo de las votaciones será del 1 al 15 de mayo hasta las 23:59 horas.
-
-          Todas las personas mayores de 16 años, que estén empadronadas en la ciudad de Castelló de la Plana y se hayan inscrito en la plataforma web decidim.castello.es, podrán participar con su voto.
-
-          Se podrán votar todas las propuestas que se crean oportunas hasta llegar a la cantidad de 1.650.000 euros.
-
-          Hay dos opciones para hacer la votación:
-
-          1. De manera telemática mediante la plataforma web decidim.castello.es . <strong><a href='http://www.castello.es/decidim/manualvotacion.pdf' target='_blank'> Consulta la guia práctica aquí</a></strong>.
-
-          2. Por otro lado, para los ciudadanos que no disponen de acceso a Internet, también se han habilitado puntos de votación presencial con ordenadores y personal de asesoramiento donde se les ayudará a hacer uso de la plataforma.
-          Estos puntos de votación son los siguientes:
-
-            1. Tenencia alcaldía Norte Plaza del Primer Molino, s/n.
-            2. Tenencia alcaldía Sur Calle Ricardo Català, lado con. J. Marqués.
-            3. Tenencia alcaldía Este Avenida Hermanos Bou, 27.
-            4. Tenencia alcaldía Oeste Plaza de España, 1.
-            5. Tenencia alcaldía Grau Paseo Buenavista, 28.
-            6. Tenencia alcaldía Centro Aula de Consumo (cuarta planta del Edificio Noble, plaza Mayor, 1).
-
-            - Las votaciones presenciales se harán en horario de **9:30 a 12:30 horas** los siguientes días:
-
-                * Tenencia alcaldía **Norte** Días **2 y 8 de mayo**
-                * Tenencia alcaldía **Sur** Días **3 y 9 de mayo**
-                * Tenencia alcaldía **Este** Días **4 y 10 de mayo**
-                * Tenencia alcaldía **Oeste** Días **5 y 12 de mayo**
-                * Tenencia alcaldía **Grau** Días **11 y 15 de mayo**
-                * Tenencia alcaldía **Centro** Días **2,3,4,5,8,9,10,11,12 i 15 de mayo**
-
-            Para votar presencialmente habrá que ir provisto del **DNI, NIE o pasaporte**.
       item_9:
-        title: 9.  Sobre los resultados de la votación.
+        title: 9.-Sobre la votación ciudadana.
         subt: ''
         text: |-
-          El resultado final del proceso consultivo se obtendrá una vez finalizada la votación, ordenando todas las propuestas de mayor a menor votación, teniendo en cuenta que cada propuesta incluida no supere el presupuesto de 1.650.000 euros Se irán aceptando propuestas hasta llegar al montante total. Si al aceptar una propuesta se supera el importe total, se ignora y se pasa a seleccionar la siguiente.
+          El periodo de las votaciones será desde las 14:00 horas del 11 de junio hasta las 14:00 horas del 25 de junio.
 
-          Con respecto a la propuesta o propuestas descartadas se estudiará por el equipo de gobierno la posibilidad de incorporarla o incorporarlas en el Presupuesto Municipal del 2018.
+          Todas las personas mayores de 16 años, que estén empadronadas en la ciudad de Castellón de la Plana y se haya inscrito en la plataforma web decidim.castello.es podrán participar con su voto.
 
-          El gobierno municipal se compromete a llevar a cabo la ejecución de las inversiones seleccionadas, teniendo en cuenta los resultados de la presente consulta ciudadana, siempre que se atienda a los criterios técnicos de viabilidad de los proyectos y los límites económicos disponibles.
+          Se puede votar las propuestas a nivel ciudad, y en un distrito de su elección (pero sólo en uno, puede ser el distrito donde está empadronado, donde trabaja, donde vive su familia...).
+
+          Se podrán votar tantas propuestas como se estime oportuno hasta llegar a la cantidad de 1.050.000 euros en la categoría de ciudad, o a la cuantía prevista en la categoría de distrito elegido.
+
+          La votación se realizará de forma telemática a través de la plataforma web decidim.castello.es. Se habilitarán unos “puntos de votación” con acceso a internet donde se dará apoyo presencial a las personas que quieran votar y así lo soliciten.
+
+          Los “puntos de votación” podrán estar en las Tenencias de Alcaldía, o en las sedes de asociaciones, entidades y/o colectivos que de forma voluntaria quieran participar. En fechas próximas a la fase de votación se publicarán en la plataforma web decidim.castello.es.
+
+
+      item_10:
+        title: 10.- Sobre los resultados de la votación.
+        subt: ''
+        text: |-
+          El resultado final del proceso consultivo se obtendrá una vez finalizada la votación, ordenando todas las propuestas de mayor a menor votación, teniendo en cuenta que cada propuesta incluida no supere el presupuesto de 1.050.000 euros en la categoría de ciudad, ni la cuantía prevista para cada uno de los distritos. Se irán aceptando propuestas hasta llegar al montante total. Si al aceptar una propuesta se supera el importe total, se ignora y se pasa a seleccionar la siguiente.
+
+          Con respecto a la propuesta o propuestas descartadas se estudiará por el equipo de gobierno la posibilidad de incorporarla o incorporarlas en el Presupuesto Municipal del 2019
+
+          El gobierno municipal se compromete a llevar a cabo la ejecución de las inversiones y propuestas de gastos corrientes y servicios seleccionadas, teniendo en cuenta los resultados de la presente consulta ciudadana, siempre que se atienda a los criterios técnicos de viabilidad de los proyectos y los límites económicos disponibles.
 
           Se podrá seguir el proceso a través de la plataforma web decidim.castello.es
+
+          La plataforma decidim.castello.es es una adaptación de la plataforma de software libre, aplicación Consul, desarrollada por el Ayuntamiento de Madrid y adaptada por el Ayuntamiento de Castelló de la Plana. Los datos aportados serán incorporados y tratados por el Ayuntamiento de acuerdo con la Ley Orgánica 15/1999, de 13 de diciembre, de Protecció de Dades de Caràcter Personal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       description:
         faq: Preguntas frecuentes sobre problemas técnicos
