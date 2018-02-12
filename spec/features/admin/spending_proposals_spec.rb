@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'Admin spending proposals' do
 
   background do
+    skip 'because spending proposals is no longer in use at madrid :)'
     Setting["feature.spending_proposals"] = true
     Setting['feature.spending_proposal_features.voting_allowed'] = true
     admin = create(:administrator)
