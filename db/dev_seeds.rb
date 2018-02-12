@@ -481,26 +481,26 @@ section "Creating Spending Proposals" do
 end
 
 section "Creating Budgets" do
-  Budget.create(
+  budget = Budget.create(
     name: "Budget #{Date.current.year - 1}",
     currency_symbol: "€",
     phase: 'finished'
   )
+
   Budget.create(
     name: "Budget #{Date.current.year}",
     currency_symbol: "€",
     phase: 'accepting'
   )
 
-    (1..([1, 2, 3].sample)).each do |i|
-      group = budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
+  (1..([1, 2, 3].sample)).each do |i|
+    group = budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
 
-      geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
-      geozones.each do |geozone|
-        group.headings << group.headings.create!(name: "#{geozone.name} #{i}",
-                                                 price: rand(1..100) * 100000,
-                                                 population: rand(1..50) * 10000)
-      end
+    geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
+    geozones.each do |geozone|
+      group.headings << group.headings.create!(name: "#{geozone.name} #{i}",
+                                               price: rand(1..100) * 100000,
+                                               population: rand(1..50) * 10000)
     end
   end
 end
