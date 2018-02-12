@@ -236,27 +236,11 @@ val:
               Per a un districte: propostes ciutadanes que afecten un districte concret.
             </li>
             <li>
-              *Per a tota la ciutat: propostes ciutadanes que no estan localitzades en un districte específic (per exemple millorar els parcs infantils de la ciutat), o que afecten uns quants districtes (per exemple un carril bici que travessa la ciutat d’est a oest).
+              Per a tota la ciutat: propostes ciutadanes que no estan localitzades en un districte específic (per exemple millorar els parcs infantils de la ciutat), o que afecten uns quants districtes (per exemple un carril bici que travessa la ciutat d’est a oest).
             </li>
           </ul>
 
-
-
           L’avaluació dels Pressupostos participatius del 2017, ha servit per a analitzar les propostes plantejades i comprovar que moltes d’elles van haver de ser descartades per no ser inversions reals. Per això, amb la finalitat d’introduir millores en aquest procés participatiu s’incorporen com a objecte de les propostes, (a més de mantindre els projectes d’inversió), les que corresponen a despeses arreplegades en el capítol II del Pressupost municipal “despeses corrents en béns i serveis”, sempre que les despeses siguen per a una actuació concreta o en qualsevol altre cas no s’estenga més enllà d’un any.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       item_2:
         title: 2.- Compromisos del Govern Municipal
@@ -273,8 +257,6 @@ val:
             </li>
           </ul>
 
-
-
           La quantia destinada al total dels districtes queda distribuïda de la manera següent: 300.000 euros han sigut repartits a parts iguals entre els sis districtes, corresponent a cadascun d'ells la quantitat de 50.000 euros. El repartiment dels altres 300.000 euros és proporcional a la població. (Les dades de població per districtes estan publicats en la plataforma decidim.castello.es)
 
           <table>
@@ -284,25 +266,21 @@ val:
                 <td class="text-right">22,90%</td>
                 <td class="text-right">118.700 €</td>
               </tr>
-
               <tr>
                 <th>DISTRICTE EST</th>
                 <td class="text-right">22,20%</td>
                 <td class="text-right">116.000 €</td>
               </tr>
-
               <tr>
                 <th>DISTRICTE OEST</th>
                 <td class="text-right">15,60%</td>
                 <td class="text-right">96.800 €</td>
               </tr>
-
               <tr>
                 <th>DISTRICTE NORD</th>
                 <td class="text-right">15,40%</td>
                 <td class="text-right">96.200 €</td>
               </tr>
-
               <tr>
                 <th>DISTRICTE CENTRE</th>
                 <td class="text-right">12,90%</td>
@@ -320,15 +298,12 @@ val:
         title: 3.- Quins projectes es poden presentar?
         subt: ''
         text: |-
-
-
-
-
           Es poden proposar projectes d’inversió o projectes de despeses corrents en béns i serveis.
 
           Una inversió és bàsicament tot allò que l’ajuntament pot construir o adquirir i que la seua duració prevista és superior a un any.
 
           Les inversions han de reunir les següents característiques:
+
           <ul>
             <li>
               Que no siguen béns fungibles, és a dir, que no es consumisquen amb l’ús.
@@ -342,6 +317,7 @@ val:
           </ul>
 
           A títol informatiu, son exemples d’inversions:
+
           <ul>
             <li>
               Creació de noves infraestructures o obres: construir itineraris de voreres i vials, enllumenat, senyalització vial, parcs, jardins, clavegueram, etc.
@@ -360,15 +336,14 @@ val:
             </li>
           </ul>
 
-
           Despeses corrents són les despeses originades per l'adquisició de béns que reunisquen algunes de les característiques següents:
           a) Ser béns fungibles.
           b) Tenir una durada previsiblement inferior a l'exercici pressupostari.
           c) No ser susceptibles d'inclusió en inventari.
           d) Ser, previsiblement, despeses reiterades.
 
-
           Exemples de propostes de despeses corrents en béns i serveis.
+
           <ul>
             <li>
               Activitats: programes culturals, esportius...
@@ -386,52 +361,122 @@ val:
           • Projectes de despeses en béns corrents i serveis la despesa de les quals s’estenga més enllà de dos anys.
           • Propostes d’inversió sobre terrenys o solars no municipals.
 
-
-
-
-
-
-
-
-
       item_4:
         title: 4.- Qui pot presentar propostes?
         subt: ''
         text: |-
           Qualsevol veïna o veí, empadronat en la ciutat de Castelló de la Plana en el moment de la inscripció, major de 16 anys. Les propostes es presentaran de forma individual, sense perjudici que la persona que la presenta represente a una organització, grup, col·lectiu, etc.
 
-          Es podrà presentar una proposta per a tota la ciutat i/o una proposta per a un districte concret a la seua elecció. No és necessari ser resident en un districte per a poder presentar proposta d'aquest districte. Per a poder comprovar l'empadronament s'ha de verificar el compte de correu electrònic a través de la web decidim.castello.es
+          Es podrà presentar una proposta per a tota la ciutat i/o una proposta per a un districte concret a la seua elecció. No és necessari ser resident en un districte per a poder presentar proposta d'aquest districte.
+
+          Per a poder comprovar l'empadronament s'ha de verificar el compte de correu electrònic a través de la web decidim.castello.es
 
       item_5:
-        title: 5.- Com presentar propostes de projectes d’inversió?
-        subt: 'Desde el 15 de febrero hasta el 5 de marzo de 2017'
+        title: 5- Com es presenten les propostes?
+        subt: ''
         text: |-
+          Les propostes es presentaran principalment via telemàtica a través de la plataforma web decidim.castello.es i excepcionalment de forma presencial utilitzant una instància de sol·licitud general a la qual se li adjuntarà el formulari per a presentar propostes en qualsevol de les Tinences d’Alcaldia. El model estandarditzat per a la presentació de propostes d’inversió es pot consultar en aquestes bases. Veure l'annex I.
 
+          Període per a presentar propostes: des de les 14:00 hores del 15 de febrer fins a les 14:00 hores del 28 de març de 2018.
+
+          Durant aquesta primera fase de propostes, el Negociat de Participació Ciutadana, si detecta projectes repetits o molt semblants els recopilarà. A través d’un correu electrònic s'informarà als autors que hi ha un projecte semblant plantejat i de les possibilitats següents: debatre sobre els plantejaments semblants, plantejar un nou projecte conjunt i de la possibilitat de retirar el projecte. Si algun autor vol mantindre el seu projecte a pesar de ser semblant a altres, l’Ajuntament respectarà la seua decisió.
 
       item_6:
-        title: 6.-  Qui pot donar suport a les propostes de projectes d’inversió?
-        subt: 'Del 6 al 31 de marzo de 2017'
+        title: 6- Reunions de districte
+        subt: ''
         text: |-
+          Una vegada finalitzada la fase de presentació de propostes, en coordinació amb cada president de les Juntes de districte es celebrarà una reunió de districte amb l’objectiu de prioritzar les propostes que estiguen vinculades al propi districte. En aquests espais es promourà el diagnòstic, debat i consens col·lectiu en la priorització de propostes.
+
+          La primera i segona proposta triades en cada reunió de districte passaran directament a la fase de validació i estudi de viabilitat dels projectes de districte. En cas de que alguna de les dues propostes siga inviable tècnicament, seguint l'ordrede priorització, es valorarà la següent en la llista. Les reunions de districte es celebraran del 3 al 13 d’abril de 2018.
 
       item_7:
-        title: 7.- Validació i estudi de viabilitat dels projectes d’inversió.
-        subt: 'Del 1 al 30 de abril'
+        title: 7.- Qui pot recolzar les propostes?
+        subt: ''
         text: |-
+          Cada persona major de 16 anys empadronada, podrà recolzar fins a un màxim de 3 propostes de projectes de ciutat, de districte o tots dos indistintament.
+
+          Les propostes hauran de comptar amb un mínim de 35 suports de les veïnes i veïns per a poder passar a la fase següent i ser valorades pels serveis tècnics de l’Ajuntament de Castelló de la Plana.
+
+          El suport de les propostes es realitzarà a través de la plataforma decidim.castello.es on estaran exposades les propostes presentades. El període de suport de les propostes serà des de les 14:00 hores del 18 d'abril fins les 14:00 horas del 30 d'abril de 2018.
 
       item_8:
-        title: 8. Sobre la votació ciutadana.
-        subt: 'Del 1 al 15 de mayo'
+        title: 8- Validació i estudi de viabilitat dels projectes.
+        subt: ''
         text: |-
+          Una vegada finalitzat el període de suport de les propostes, des del Negociat de Participació Ciutadana de l’ajuntament es realitzarà un procés de validació de les propostes realitzades amb l’objectiu de comprovar que totes les propostes presentades compleixen els requisits establits en aquestes Bases Reguladores i admetrà o inadmetrà motivadament les propostes presentades.
+
+          A títol d’exemple, seran motius d’inadmissió:
+          <ul>
+            <li>
+              Que no siguen competència municipal.
+            </li>
+            <li>
+              Que no es disposen terrenys.
+            </li>
+            <li>
+              Que per a la seua execució siga necessari implicar a altres administracions.
+            </li>
+            <li>
+              Que la seua execució ja estiga prevista i pressupostada per l’Ajuntament.
+            </li>
+            <li>
+              Qualssevol altres anàlegs als anteriors.
+            </li>
+          </ul>
+
+          Una vegada hagen superat la validació, passaran a ser estudiades pels Serveis Tècnics de l’Ajuntament implicats en la seua execució, que seran els que emeten un informe sobre la seua viabilitat jurídica, tècnica i/o pressupostària.
+
+          Els Serveis Tècnics de l’Ajuntament quan emeten un informe sobre la viabilitat jurídica, tècnica i pressupostària del projecte d’inversió hauran de:
+
+          <ul>
+            <li>
+              Comprovar que la proposta siga competència de l’Ajuntament, i que no depenga d’altres administracions.
+            </li>
+            <li>
+              Estudiar si hi ha alguna normativa que siga contrària a dur a terme la proposta.
+            </li>
+            <li>
+              Estimar el cost econòmic de la proposta.
+            </li>
+            <li>
+              Estudiar si la proposta és viable tècnicament i no es preveu cap impediment perquè puga emportar-se la seua execució.
+            </li>
+          </ul>
+
+          Les propostes de projectes que tinguen informes favorables dels Serveis Tècnics seran els que passaran a la fase de votació final. S'incorporarà un informe tècnic sobre l'enfocament de gènere de cadascun dels projectes considerats viables tècnicament. Aquest procés de validació i estudi de viabilitat tècnica de les propostes es realitzarà en el període comprés entre el 2 i el 30 de maig de 2018.
 
       item_9:
-        title: 9.  Sobre els resultats de la votació.
+        title: 9.-Sobre la votació ciutadana
+        subt: ''
+        text: |-
+          El període de les votacions serà des de les 14:00 hores de l’11 de juny fins les 14:00 hores del 25 de juny.
+
+          Totes les persones majors de 16 anys, que estiguen empadronades en la ciutat de Castelló de la Plana i s’hagen inscrit en la plataforma web decidim.castello.es podran participar amb el seu vot.
+
+          Es poden votar les propostes a nivell de ciutat, i en un districte de la seua elecció (però només en un que pot ser el districte on està empadronat, on treballa, on viu la seua família...)
+
+          Es podran votar tantes propostes com es crega oportú fins a arribar a la quantitat de 1.050.000euros en la categoria de ciutat, o a la quantitat prevista en la categoria de districte elegit.
+
+          La votació es farà de manera telemàtica a través de la plataforma web decidim.castello.es S’habilitaran uns “punts de votació” amb accés a internet on es donarà suport presencial a les persones que vulguen votar i així ho sol·liciten.
+
+          Els punts de votació podran estar en les Tinences d’Alcaldia, o en les seus d’associacions, entitats i/o col·lectius que de forma voluntària vullguen participar. En dates pròximes a la fase de votació es publicaran en la plataforma web decidim.castello.es.
+
+
+      item_10:
+        title: 10. Sobre els resultats de la votació.
         subt: ''
         text: |-
 
-      item_10:
-        title: 9.  Sobre els resultats de la votació.
-        subt: ''
-        text: |-
+
+          El resultat final del procés consultiu s’obtindrà una vegada haja finalitzat la votació i s'hagen ordenat totes les propostes de major a menor votació, tenint en compte que cada proposta inclosa no supere el pressupost de 1.050.000 euros en la categoria de ciutat, ni la quantía prevista per cadascun dels districtes. S'aniran acceptant propostes fins a arribar a l’import total. Si en acceptar una proposta se superara l’import total, s’ignorarà i es passarà a seleccionar la següent.
+
+          Respecte a la proposta o propostes descartades s’estudiarà per l’equip de govern la possibilitat d’incorporar-la o incorporar-les en el Pressupost Municipal del 2019.
+
+          El govern municipal es compromet a dur a terme l’execució de les inversions i propostes de despeses corrents serveis seleccionades, tenint en compte els resultats d'aquesta consulta ciutadana, sempre que s’atenga als criteris tècnics de viabilitat dels projectes i els límits econòmics disponibles.
+
+          Es podrà seguir el procés a través de la plataforma web decidim.castello.es.
+
+          La plataforma decidim.castello.es és una adapatació de la plataforma de programari lliure, aplicació Consul, desenvolupada per l'Ajuntament de Madrid i adaptada per l'Ajuntament de Castelló de la Plana. Les dades aportades seran incorporats i tractats per l'Ajuntament d'acord amb la Llei Orgànica 15/1999, de 13 de desembre, de Protecció de Dades de Caràcter Personal.
 
       description:
         faq: "Preguntes freqüents sobre problemes tècnics"
