@@ -481,26 +481,32 @@ section "Creating Spending Proposals" do
 end
 
 section "Creating Budgets" do
-  budget = Budget.create(
+  finished_budget = Budget.create(
     name: "Budget #{Date.current.year - 1}",
     currency_symbol: "€",
     phase: 'finished'
   )
 
-  Budget.create(
+  accepting_budget = Budget.create(
     name: "Budget #{Date.current.year}",
     currency_symbol: "€",
     phase: 'accepting'
   )
 
   (1..([1, 2, 3].sample)).each do |i|
-    group = budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
+    finished_group  = finished_budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
+    accepting_group = accepting_budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
 
     geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
     geozones.each do |geozone|
-      group.headings << group.headings.create!(name: "#{geozone.name} #{i}",
-                                               price: rand(1..100) * 100000,
-                                               population: rand(1..50) * 10000)
+      finished_group.headings << finished_group.headings.create!(name: "#{geozone.name} #{i}",
+                                                                 price: rand(1..100) * 100000,
+                                                                 population: rand(1..50) * 10000)
+
+      accepting_group.headings << accepting_group.headings.create!(name: "#{geozone.name} #{i}",
+                                                                   price: rand(1..100) * 100000,
+                                                                   population: rand(1..50) * 10000)
+
     end
   end
 end
@@ -561,7 +567,7 @@ end
 
 section "Balloting Investments" do
   100.times do
-    budget = Budget.reorder("RANDOM()").first
+    budget = Budget.finished.reorder("RANDOM()").first
     ballot = Budget::Ballot.create(user: User.reorder("RANDOM()").first, budget: budget)
     ballot.add_investment(budget.investments.reorder("RANDOM()").first)
   end
