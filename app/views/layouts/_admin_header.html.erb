@@ -7,23 +7,20 @@
 
   <div class="expanded row">
     <div class="top-bar">
-
       <span data-responsive-toggle="responsive_menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
         <%= t("application.menu")%>
       </span>
 
-
-        <div class="top-bar-title">
-          <h1>
-            <%= link_to namespaced_root_path do %>
-              <%= setting['org_name'] %>
-              <br><small><%= namespaced_header_title %></small>
-            <% end %>
-          </h1>
-        </div>
-        <div id="responsive_menu">
-
+      <div class="top-bar-title">
+        <h1>
+          <%= link_to namespaced_root_path do %>
+            <%= setting['org_name'] %>
+            <br><small><%= namespaced_header_title %></small>
+          <% end %>
+        </h1>
+      </div>
+      <div id="responsive_menu">
         <div class="top-bar-right">
           <ul class="menu" data-responsive-menu="medium-dropdown">
             <%= render "admin/shared/admin_shortcuts" %>
@@ -31,7 +28,6 @@
             <%= render "devise/menu/login_items" %>
           </ul>
         </div>
-
       </div>
     </div>
   </div>
