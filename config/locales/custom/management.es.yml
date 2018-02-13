@@ -1,0 +1,4 @@
+es:
+  management:
+    budget_investments:
+      create: Crear nueva propuesta

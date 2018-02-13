@@ -1,6 +1,10 @@
 ---
 val:
   budgets:
+    investments:
+      index:
+        sidebar:
+          create: Crear proposta
     button_text: Participa en els pressupostos de la teua ciutat
     button_text_2018: Participa en els pressupostos de la teua ciutad a partir del 15 de febrer
     index_title: Presenta la teua proposta d'inversió
