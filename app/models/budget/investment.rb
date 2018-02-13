@@ -95,6 +95,10 @@ class Budget
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
+    def to_param
+      original_spending_proposal_id || id
+    end
+
     def comments_count
       comments.count
     end
