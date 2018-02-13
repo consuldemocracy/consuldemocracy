@@ -1,9 +1,9 @@
 <div class="clear"></div>
 
-<% if false && can?(:create, Budget::Investment.new(budget: @budget)) %>
+<% if false && can?(:create, Budget::Investment.new(budget: @budget, heading: @heading)) %>
   <% if current_user && current_user.level_two_or_three_verified? %>
     <%= link_to t("budgets.investments.index.sidebar.create"),
-               new_budget_investment_path(budget_id: @budget.id), class: "button budget expanded" %>
+               new_budget_investment_path(budget_id: @budget.id, heading_id: @heading.id), class: "button budget expanded" %>
   <% else %>
     <div class="callout warning">
       <%= t("budgets.investments.index.sidebar.verified_only",

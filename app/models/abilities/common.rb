@@ -60,6 +60,7 @@ module Abilities
       end
 
       can :suggest, Budget::Investment,              budget: { phase: "accepting" }
+
       if user.level_two_or_three_verified?
         can :vote, Proposal
         can :vote_featured, Proposal
@@ -71,7 +72,7 @@ module Abilities
 
 
 
-        # TODO: no dejar crear si ya se ha creado
+        # Dejar solamente una propuesta por grupo.
         if true || user
            .budget_investments
            .includes(:budget)
@@ -79,7 +80,16 @@ module Abilities
            .where(budget_investments: { feasibility: ['undecided', 'feasible']}).count < 1
           #  .where(budget_investments: { hidden_at: nil }).count < 1
 
-          can :create, Budget::Investment, budget: { phase: "accepting" }
+          current_budget = Budget.current
+
+          can :new, Budget::Investment do |investment|
+            false && investment.budget.phase == 'accepting'
+          end
+
+          can :create, Budget::Investment do |investment|
+            # raise investment.inspect
+            true || investment.budget.phase == "accepting" && investment.group.investments.where(author_id: user.id) < 1
+          end
 
           if user.organization? && !user.organization.verified?
             cannot :create, Budget::Investment

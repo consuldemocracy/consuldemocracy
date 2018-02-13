@@ -7,7 +7,7 @@
 </div>
 
 <div class="row margin">
-  <div class="large-8 small-12 column">
+  <div class="large-12 small-12 column">
       <% if current_budget.present? %>
         <%= markdown t('budgets.header_body_principal_1', amount: number_to_currency(current_budget.total_amount)) %>
         <% if budget_published?(current_budget) %>
@@ -19,12 +19,12 @@
         <%= link_to "#{t('results.button_title')} #{@last_budget.name}", budget_results_path(@last_budget), class: "button" %>
       <% end %>
 
-      <%= markdown t('budgets.header_body_principal_2') %>
+      <%# markdown t('budgets.header_body_principal_2') %>
   </div>
 
-  <div class="large-4 small-12 column">
-      <%= markdown t('budgets.header_body_secondary') %>
-  </div>
+  <!-- <div class="large-4 small-12 column">
+      <%# markdown t('budgets.header_body_secondary') %>
+  </div> -->
 
 </div>
 
