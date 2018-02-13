@@ -946,6 +946,94 @@ feature 'Admin budget investments' do
     end
   end
 
+  context "Mark as visible to valuators" do
+    let(:group) { create(:budget_group, budget: @budget) }
+    let(:heading) { create(:budget_heading, group: group) }
+
+    scenario "Mark as visible to valuator", :js do
+      valuator = create(:valuator)
+
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+
+      investment1.valuators << valuator
+      investment2.valuators << valuator
+
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
+
+      within("#budget_investment_#{investment1.id}") do
+        check "budget_investment_visible_to_valuators"
+      end
+
+      wait_for_ajax
+
+      login_as(valuator.user)
+      visit valuation_root_path
+
+      within "#budget_#{@budget.id}" do
+        click_link "Evaluate"
+      end
+      expect(page).to     have_content investment1.title
+      expect(page).not_to have_content investment2.title
+    end
+
+    scenario "Unmark as visible to valuator", :js do
+      valuator = create(:valuator)
+
+      investment1 = create(:budget_investment, heading: heading, visible_to_valuators: true)
+      investment2 = create(:budget_investment, heading: heading, visible_to_valuators: true)
+
+      investment1.valuators << valuator
+      investment2.valuators << valuator
+
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
+
+      within("#budget_investment_#{investment1.id}") do
+        uncheck "budget_investment_visible_to_valuators"
+      end
+
+      wait_for_ajax
+
+      login_as(valuator.user)
+      visit valuation_root_path
+
+      within "#budget_#{@budget.id}" do
+        click_link "Evaluate"
+      end
+
+      expect(page).not_to have_content investment1.title
+      expect(page).to     have_content investment2.title
+    end
+
+    scenario "Showing the valuating checkbox" do
+      investment1 = create(:budget_investment, heading: heading, visible_to_valuators: true)
+      investment2 = create(:budget_investment, heading: heading, visible_to_valuators: false)
+
+      investment1.valuators << create(:valuator)
+      investment2.valuators << create(:valuator)
+
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'All' }
+
+      expect(page).not_to have_css("#budget_investment_visible_to_valuators")
+      expect(page).not_to have_css("#budget_investment_visible_to_valuators")
+
+      within('#filter-subnav') { click_link 'Under valuation' }
+
+      within("#budget_investment_#{investment1.id}") do
+        valuating_checkbox = find("#budget_investment_visible_to_valuators")
+        expect(valuating_checkbox).to be_checked
+      end
+
+      within("#budget_investment_#{investment2.id}") do
+        valuating_checkbox = find("#budget_investment_visible_to_valuators")
+        expect(valuating_checkbox).not_to be_checked
+      end
+    end
+  end
+
   context "Selecting csv" do
 
     scenario "Downloading CSV file" do
