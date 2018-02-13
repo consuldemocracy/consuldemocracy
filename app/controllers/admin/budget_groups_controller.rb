@@ -8,6 +8,14 @@ class Admin::BudgetGroupsController < Admin::BaseController
     @groups = @budget.groups.includes(:headings)
   end
 
+  def update
+    @group = Budget::Group.by_slug(params[:id]).first
+    if @group.generate_slug?
+      params[:id] = @group.generate_slug
+    end
+    @group.update(budget_group_params)
+  end
+
   private
 
     def budget_group_params
