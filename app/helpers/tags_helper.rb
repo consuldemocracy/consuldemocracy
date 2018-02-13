@@ -32,7 +32,7 @@ module TagsHelper
     when 'proposal'
       proposal_path(taggable)
     when 'budget/investment'
-      budget_investment_path(taggable.budget_id, taggable)
+      budget_investment_path(taggable.budget, taggable)
     when 'legislation/proposal'
       legislation_process_proposal_path(@process, taggable)
     else

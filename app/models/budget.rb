@@ -39,7 +39,7 @@ class Budget < ActiveRecord::Base
   end
 
   def to_param
-    name.parameterize
+    slug
   end
 
   def current_phase
