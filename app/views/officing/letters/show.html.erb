@@ -10,7 +10,8 @@
   <% end %>
 </div>
 
-<div class="callout text-center <%= ::Poll::LetterOfficerLog::VALID_MESSAGES.invert[@log.message] %>">
+<div class="callout text-center
+  <%= "#{::Poll::LetterOfficerLog::VALID_MESSAGES.invert[@log.message]}".dasherize %>">
   <h3><%= @log.message %></h3>
 </div>
 
