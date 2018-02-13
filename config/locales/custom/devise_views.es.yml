@@ -1,0 +1,7 @@
+---
+es:
+  devise_views:
+    users:
+      registrations:
+        new:
+          terms_censed: Para participar en el proceso de presupuestos participativos debe ser mayor de 16 años y debe estar empadronado en la ciudad de Castellón de la Plana.

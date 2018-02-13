@@ -2,12 +2,12 @@
 val:
   budgets:
     button_text: Participa en els pressupostos de la teua ciutat
-    button_text_2018: Participa en los pressupostos de la teua ciudad a partir del 15 de febrer
+    button_text_2018: Participa en els pressupostos de la teua ciutad a partir del 15 de febrer
     index_title: Presenta la teua proposta d'inversió
     index_timeline: Els pressupostos participatius en 2 minuts
     header_title: Pressupostos participatius
     header_body_principal_1: |-
-      Els pressupostos participatius són un mecanisme de participació ciutadana que permet que les veïnes i veïns de la ciutat s’involucren en la presa de decisions respecte a l’execució del pressupost municipal. Tu decideixes en què invertir %{amount} euros.
+      Els pressupostos participatius són un mecanisme de participació ciutadana que permet que les veïnes i veïns de la ciutat s’involucren en la presa de decisions respecte a l’execució del pressupost municipal. Tu decideixes en què invertir %{amount}.
     header_body_principal_2: |-
       Els pressupostos participatius estan circumscrits al capítol d'inversió del pressupost de l'Ajuntament. Les despeses d'inversió inclouen les infraestructures- ”obres”, tant noves com de manteniment de les que ja hi existeixen (per exemple, itineraris accessibles de voreres i vials o la millora d'un parc). També contemplen les adquisicions de béns permanents de l'Ajuntament, com per exemple, la compra de jocs infantils).
     header_body_secondary: |-

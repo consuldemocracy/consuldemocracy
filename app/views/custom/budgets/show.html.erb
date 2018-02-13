@@ -54,29 +54,36 @@
     <% end %>
 
     <div class="groups-and-headings">
-
-
-
-    <% @budget.groups.each do |group| %>
-      <h2><%= group.name %></h2>
-      <ul class="no-bullet">
-            <% group.headings.each do |heading| %>
-              <li class="heading small-12 medium-4 large-2">
-                <%= link_to budget_investments_path(@budget, heading_id: heading.id) do %>
-                  <div>
-                    <%= heading.name %>
-                    <span><%= number_to_currency(heading.price) %></span>
-                  </div>
-
-                <% end %>
-
-              </li>
-            <% end %>
-
-      </ul>
-        <% end %>
-
+      <% @budget.groups.each do |group| %>
+        <h2><%= group.name %></h2>
+        <ul class="no-bullet">
+          <% group.headings.each do |heading| %>
+            <li class="heading small-12 medium-4 large-3">
+              <%= link_to budget_investments_path(@budget, heading_id: heading.id) do %>
+                <div>
+                  <%= heading.name %>
+                  <span><%= number_to_currency(heading.price) %></span>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-12 large-12 columns">
+    <%= image_tag  "distritos_image.png" %>
+
+  </div>
+
+
+
+</div>
+
+
 <% if @budget.balloting_or_later? %>
   <% unless @current_filter == "unfeasible" %>
     <div class="row">
