@@ -53,7 +53,7 @@ App.Map =
       if marker
         marker.setLatLng(e.latlng)
       else
-        marker = createMarker(e.latlng.lat, e.latlng.lng)
+        marker = createMarker(e.latlng.lat, e.latlng.lng) if validCoordinates(e.latlng.lat, e.latlng.lng)
 
       updateFormfields()
       return
@@ -74,12 +74,18 @@ App.Map =
       content = "<a href='/budgets/#{budget}/investments/#{investment}'>#{title}</a>"
       return  content
 
+    validCoordinates = (lat, long) ->
+      isNumeric(lat) && isNumeric(long)
+
+    isNumeric = (n) ->
+      !isNaN(parseFloat(n)) && isFinite(n)
+
     mapCenterLatLng  = new (L.LatLng)(mapCenterLatitude, mapCenterLongitude)
     map              = L.map(element.id).setView(mapCenterLatLng, zoom)
     L.tileLayer(mapTilesProvider, attribution: mapAttribution).addTo map
 
     if markerLatitude && markerLongitude && !addMarkerInvestments
-      marker  = createMarker(markerLatitude, markerLongitude)
+      marker  = createMarker(markerLatitude, markerLongitude) if validCoordinates(markerLatitude , markerLongitude)
 
     if editable
       $(removeMarkerSelector).on 'click', removeMarker
@@ -87,9 +93,15 @@ App.Map =
       map.on    'click',   moveOrPlaceMarker
 
     if addMarkerInvestments
+      markers = new L.MarkerClusterGroup()
       for i in addMarkerInvestments
-        add_marker=createMarker(i.lat , i.long)
-        add_marker.bindPopup(contentPopup(i.investment_title, i.investment_id, i.budget_id))
+        if validCoordinates(i.lat , i.long)
+          add_marker = createMarker(i.lat , i.long)
+          add_marker.bindPopup(contentPopup(i.investment_title, i.investment_id, i.budget_id))
+          markers.addLayer(add_marker)
+
+      markers_bounds = markers.getBounds()
+      map.fitBounds(markers_bounds, {padding: [50,50]}) if markers_bounds.isValid()
 
   toogleMap: ->
       $('.map').toggle()
