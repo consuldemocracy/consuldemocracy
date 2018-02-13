@@ -46,49 +46,37 @@
 </div>
 
 <div class="row margin">
-  <div class="small-12 medium-9 column">
+  <div class="small-12 medium-12 large-12 column">
     <% if @current_filter == "unfeasible" %>
       <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
     <% elsif @current_filter == "unselected" %>
       <h3 class="margin-bottom"><%= t("budgets.show.unselected_title") %></h3>
     <% end %>
-    <table class="table-fixed">
-      <thead>
-        <th><%= t('budgets.show.group') %></th>
-      </thead>
-      <tbody>
-        <% @budget.groups.each do |group| %>
-          <tr>
+
+    <div class="groups-and-headings">
+
+
+
+    <% @budget.groups.each do |group| %>
+      <h2><%= group.name %></h2>
+      <ul class="no-bullet">
             <% group.headings.each do |heading| %>
-              <td>
-                <%= heading.name %>
+              <li class="heading small-12 medium-4 large-2">
+                <%= link_to budget_investments_path(@budget, heading_id: heading.id) do %>
+                  <div>
+                    <%= heading.name %>
+                    <span><%= number_to_currency(heading.price) %></span>
+                  </div>
 
+                <% end %>
 
-              </td>
-
-
+              </li>
             <% end %>
-            <td>
-              <% if group.single_heading_group? %>
-                <%= link_to group.name,
-                            budget_investments_path(@budget,
-                              heading_id: group.headings.first.id,
-                              filter: @current_filter),
-                            data: { no_turbolink: true } %>
-              <% else %>
-                <%= link_to group.name,
-                            budget_group_path(@budget, group,
-                              filter: @current_filter) %>
-              <% end %>
-              <br>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
 
+      </ul>
+        <% end %>
+
+    </div>
 <% if @budget.balloting_or_later? %>
   <% unless @current_filter == "unfeasible" %>
     <div class="row">

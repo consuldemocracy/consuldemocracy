@@ -307,20 +307,20 @@ val:
           - Aplicacions informàtiques: desenvolupament d’aplicacions, web, etc.
 
           Despeses corrents són les despeses originades per l'adquisició de béns que reunisquen algunes de les característiques següents:
-            <ol class="ordered_alpha">
-              <li>
-                Ser béns fungibles.
-              </li>
-              <li>
-                Tenir una durada previsiblement inferior a l'exercici pressupostari.
-              </li>
-              <li>
-                No ser susceptibles d'inclusió en inventari.
-              </li>
-              <li>
-                Ser, previsiblement, despeses reiterades.
-              </li>
-            </ol>
+          <ol class="ordered_alpha">
+            <li>
+              Ser béns fungibles.
+            </li>
+            <li>
+              Tenir una durada previsiblement inferior a l'exercici pressupostari.
+            </li>
+            <li>
+              No ser susceptibles d'inclusió en inventari.
+            </li>
+            <li>
+              Ser, previsiblement, despeses reiterades.
+            </li>
+          </ol>
 
           Exemples de propostes de despeses corrents en béns i serveis.
 
