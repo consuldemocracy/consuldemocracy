@@ -78,6 +78,8 @@ es:
 
           La cuantía destinada al total de los distritos queda distribuida de la siguiente forma: 300.000 euros han sido repartidos a partes iguales entre los seis distritos, correspondiendo a cada uno de ellos 50.000 euros. El reparto de los otros 300.000 euros es proporcional a la población. (Los datos de población por distritios están publicados en la plataforma decidim.castello.es)
 
+          [Distribución de población por distritos](/system/documentos/2018/dades_poblacionals_2018.pdf)
+
 
           <table>
             <tbody>
@@ -125,60 +127,39 @@ es:
           Una inversión es básicamente todo aquello que el ayuntamiento puede construir o adquirir y que su duración prevista es superior a un año.
 
           Las inversiones tienen que reunir las siguientes características:
-          <ul>
-            <li>
-              Que no sean bienes fungibles, es decir, que no se consuman con el uso.
-            </li>
-
-            <li>
-              Que tengan una duración superior al ejercicio presupuestario, 12 meses.
-            </li>
-            <li>
-              Que sean susceptibles de inclusión en inventario, siendo éste una relación detallada, ordenada y valorada de los elementos que componen el patrimonio.
-            </li>
-          </ul>
+          - Que no sean bienes fungibles, es decir, que no se consuman con el uso.
+          - Que tengan una duración superior al ejercicio presupuestario, 12 meses.
+          - Que sean susceptibles de inclusión en inventario, siendo éste una relación detallada, ordenada y valorada de los elementos que componen el patrimonio.
 
           A título informativo, serian ejemplos de inversiones:
-          <ul>
-            <li>
-              Creación de nuevas infraestructuras u obras: construir itinerarios de aceras y viales, alumbrado, señalización vial, parques, jardines, alcantarillado, etc...
-            </li>
-            <li>
-              Reposición de infraestructuras: reforma de alumbrado, remodelación de parques, zonas verdes, remodelación de viales y de su señalización.
-            </li>
-            <li>
-              Construcción o reforma de edificios: bibliotecas, instalaciones deportivas, centros culturales etc.
-            </li>
-            <li>
-              Mobiliario urbano (bancos, papeleras...) y mobiliario infantil para zonas de juegos infantiles (columpios, toboganes ...)
-            </li>
-            <li>
-              Aplicaciones informáticas: desarrollo de aplicaciones, web, etc.
-            </li>
-          </ul>
+          - Creación de nuevas infraestructuras u obras: construir itinerarios de aceras y viales, alumbrado, señalización vial, parques, jardines, alcantarillado, etc...
+          - Reposición de infraestructuras: reforma de alumbrado, remodelación de parques, zonas verdes, remodelación de viales y de su señalización.
+          - Construcción o reforma de edificios: bibliotecas, instalaciones deportivas, centros culturales etc.
+          - Mobiliario urbano (bancos, papeleras...) y mobiliario infantil para zonas de juegos infantiles (columpios, toboganes ...)
+          - Aplicaciones informáticas: desarrollo de aplicaciones, web, etc.
 
           Gastos corrientes son los gastos originados por la adquisición de bienes que reúnan algunas de las características siguientes:
-          a) Ser bienes fungibles.
-          b) Tener una duración previsiblemente inferior al ejercicio presupuestario.
-          c) No ser susceptibles de inclusión en inventario.
-          d) Ser, previsiblemente, gastos reiterados.
+          <ol class="ordered_alpha">
+            <li>
+              Ser bienes fungibles.
+            </li>
+            <li>
+              Tener una duración previsiblemente inferior al ejercicio presupuestario.
+            </li>
+            <li>
+              No ser susceptibles de inclusión en inventario.
+            </li>
+            <li>
+              Ser, previsiblemente, gastos reiterados.
+            </li>
+          </ol>
 
 
           Ejemplos de propuestas de gasto corriente en bienes y servicios.
-          <ul>
-            <li>
-              Actividades: programas culturales, deportivos...
-            </li>
-            <li>
-              Creación de talleres y cursos.
-            </li>
-            <li>
-              Realización de estudios.
-            </li>
-            <li>
-              Compra de material que no se inventaríe (para consumir en el año).
-            </li>
-          </ul>
+          - Actividades: programas culturales, deportivos...
+          - Creación de talleres y cursos.
+          - Realización de estudios.
+          - Compra de material que no se inventaríe (para consumir en el año).
 
 
 
@@ -186,20 +167,10 @@ es:
 
 
           Quedarán excluidos los siguientes proyectos o propuestas:
-          <ul>
-            <li>
-              Propuestas que afecten a contratos ya vigentes.
-            </li>
-            <li>
-              Proyectos que vayan destinados a beneficiar a una persona o entidad concreta, y no al interés público.
-            </li>
-            <li>
-              Proyectos de gasto en bienes corrientes y servicios cuyo gasto se extienda más allá de un año.
-            </li>
-            <li>
-              Propuestas de inversión sobre terrenos o solares no municipales.
-            </li>
-          </ul>
+          - Propuestas que afecten a contratos ya vigentes.
+          - Proyectos que vayan destinados a beneficiar a una persona o entidad concreta, y no al interés público.
+          - Proyectos de gasto en bienes corrientes y servicios cuyo gasto se extienda más allá de un año.
+          - Propuestas de inversión sobre terrenos o solares no municipales.
 
       item_4:
         title: 4.- ¿Quién puede presentar propuestas?
@@ -211,7 +182,6 @@ es:
 
           Para poder comprobar el empadronamiento se deberá verificar la cuenta de correo electrónico a través de la web decidim.castello.es
 
-
       item_5:
         title: 5.- ¿Cómo presentar propuestas?
         subt: ''
@@ -222,18 +192,6 @@ es:
 
           Durante esta primera fase de propuestas, el Negociado de Participación Ciudadana, si detecta proyectos repetidos o muy similares los recopilará. A través de un correo electrónico a los autores se les informa de un proyecto similar planteado y de las siguientes posibilidades: debatir sobre los planteamientos similares, plantear un nuevo proyecto conjunto y la posibilidad de retirar el proyecto. Si algún autor quiere mantener su proyecto a pesar de ser similar a otros, el Ayuntamiento respetará su decisión.
 
-
-
-
-
-
-
-
-
-
-
-
-
       item_6:
         title: 6.-  Reuniones de distrito.
         subt: ''
@@ -241,7 +199,6 @@ es:
           Finalizada la fase de presentación de propuestas, en coordinación con cada presidente de las Juntas de Distrito, se celebrará una reunión de distrito con el objetivo de priorizar las propuestas que estén vinculadas al propio distrito. En estos espacios se promoverá el diagnóstico, debate y consenso colectivo en la priorización de propuestas.
 
           La primera y segunda propuesta elegidas en cada reunión de distrito pasarán directamente a la fase de validación y estudio de viabilidad de los proyectos de distrito. En el supuesto que alguna de las dos propuestas sea inviable técnicamente, siguiendo el orden de priorización, se valorará la siguiente en la lista. Las reuniones de distrito se celebrarán del 3 al 13 de abril de 2018.
-
 
       item_7:
         title: 7.- ¿Quién puede apoyar las propuestas?
@@ -259,46 +216,22 @@ es:
         text: |-
           Finalizado el período de apoyo de las propuestas, desde el Negociado de Participación Ciudadana del ayuntamiento se realizará un proceso de validación de las propuestas realizadas con el objetivo de comprobar que todas las propuestas presentadas cumplen con los requisitos establecidos en las presentes Bases Reguladoras, admitiendo o inadmitiendo motivadamente las propuestas presentadas.
 
-
           A título de ejemplo, serán motivos de inadmisión:
-          <ul>
-            <li>
-              No ser competencia municipal.
-            </li>
-            <li>
-              La no disponibilidad de terrenos.
-            </li>
-            <li>
-              Que para su ejecución sea necesario implicar a otras administraciones.
-            </li>
-            <li>
-              Que su ejecución ya esté prevista y presupuestada por el ayuntamiento.
-            </li>
-            <li>
-              Cualesquiera otros análogos a los anteriores.
-            </li>
-
-          </ul>
+          - No ser competencia municipal.
+          - La no disponibilidad de terrenos.
+          - Que para su ejecución sea necesario implicar a otras administraciones.
+          - Que su ejecución ya esté prevista y presupuestada por el ayuntamiento.
+          - Cualesquiera otros análogos a los anteriores.
 
 
           Superada la validación, pasarán a ser estudiadas por los Servicios Técnicos del Ayuntamiento implicados en su ejecución, que serán quienes emitan informe sobre su viabilidad jurídica, técnica y/o presupuestaria.
 
           Los Servicios Técnicos del Ayuntamiento al emitir informe sobre la viabilidad jurídica, técnica y presupuestaria del proyecto de inversión deberán:
 
-          <ul>
-            <li>
-              Comprobar que la propuesta sea competencia del Ayuntamiento, y que no dependa de otras administraciones.
-            </li>
-            <li>
-              Estudiar si hay alguna normativa que sea contraria a llevar a cabo la propuesta.
-            </li>
-            <li>
-              Estimar el coste económico de la propuesta.
-            </li>
-            <li>
-              Estudiar si la propuesta es viable técnicamente y no se prevé algún impedimento para que pueda llevarse su ejecución.
-            </li>
-          </ul>
+          - Comprobar que la propuesta sea competencia del Ayuntamiento, y que no dependa de otras administraciones.
+          - Estudiar si hay alguna normativa que sea contraria a llevar a cabo la propuesta.
+          - Estimar el coste económico de la propuesta.
+          - Estudiar si la propuesta es viable técnicamente y no se prevé algún impedimento para que pueda llevarse su ejecución.
 
           Las propuestas de proyectos que tengan informes favorable de los Servicios Técnicos serán los que pasarán a la fase de votación final. Se incorporará un informe técnico sobre el enfoque de género de cada uno de los proyectos considerados viables técnicamente. Este proceso de validación y estudio de viabilidad técnica de las propuestas se realizará en el periodo comprendido entre el 2 al 30 de mayo de 2018.
 
@@ -333,25 +266,6 @@ es:
           Se podrá seguir el proceso a través de la plataforma web decidim.castello.es
 
           La plataforma decidim.castello.es es una adaptación de la plataforma de software libre, aplicación Consul, desarrollada por el Ayuntamiento de Madrid y adaptada por el Ayuntamiento de Castelló de la Plana. Los datos aportados serán incorporados y tratados por el Ayuntamiento de acuerdo con la Ley Orgánica 15/1999, de 13 de diciembre, de Protecció de Dades de Caràcter Personal.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       description:
         faq: Preguntas frecuentes sobre problemas técnicos

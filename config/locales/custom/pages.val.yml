@@ -231,14 +231,8 @@ val:
 
           Una de les principals novetats d’aquesta convocatòria és vincular als districtes de la ciutat, de manera que els sis districtes de la ciutat puguen decidir sobre projectes que afecten el seu barri. Per això els Pressupostos participatius del 2018 es divideixen en dos grups:
 
-          <ul>
-            <li>
-              Per a un districte: propostes ciutadanes que afecten un districte concret.
-            </li>
-            <li>
-              Per a tota la ciutat: propostes ciutadanes que no estan localitzades en un districte específic (per exemple millorar els parcs infantils de la ciutat), o que afecten uns quants districtes (per exemple un carril bici que travessa la ciutat d’est a oest).
-            </li>
-          </ul>
+          - Per a un districte: propostes ciutadanes que afecten un districte concret.
+          - Per a tota la ciutat: propostes ciutadanes que no estan localitzades en un districte específic (per exemple millorar els parcs infantils de la ciutat), o que afecten uns quants districtes (per exemple un carril bici que travessa la ciutat d’est a oest).
 
           L’avaluació dels Pressupostos participatius del 2017, ha servit per a analitzar les propostes plantejades i comprovar que moltes d’elles van haver de ser descartades per no ser inversions reals. Per això, amb la finalitat d’introduir millores en aquest procés participatiu s’incorporen com a objecte de les propostes, (a més de mantindre els projectes d’inversió), les que corresponen a despeses arreplegades en el capítol II del Pressupost municipal “despeses corrents en béns i serveis”, sempre que les despeses siguen per a una actuació concreta o en qualsevol altre cas no s’estenga més enllà d’un any.
 
@@ -248,16 +242,12 @@ val:
         text: |-
           Per a la consulta ciutadana sobre els pressupostos particpatius del 2018 el govern municipal destina 1.650.000 euros per a invertir en projectes proposats per la ciutadania i triats directament pels veïns i veïnes de la ciutat:
 
-          <ul>
-            <li>
-              1.050.000 euros para toda la ciutat.
-            </li>
-            <li>
-              600.000 euros para los districte.
-            </li>
-          </ul>
+          - 1.050.000 euros para toda la ciutat.
+          - 600.000 euros para los districte.
 
           La quantia destinada al total dels districtes queda distribuïda de la manera següent: 300.000 euros han sigut repartits a parts iguals entre els sis districtes, corresponent a cadascun d'ells la quantitat de 50.000 euros. El repartiment dels altres 300.000 euros és proporcional a la població. (Les dades de població per districtes estan publicats en la plataforma decidim.castello.es)
+
+          [Distribució de població per districtes](/system/documentos/2018/dades_poblacionals_2018.pdf)
 
           <table>
             <tbody>
@@ -304,62 +294,46 @@ val:
 
           Les inversions han de reunir les següents característiques:
 
-          <ul>
-            <li>
-              Que no siguen béns fungibles, és a dir, que no es consumisquen amb l’ús.
-            </li>
-            <li>
-              Que tinguen una duració superior l’exercici pressupostari, 12 mesos.
-            </li>
-            <li>
-              Que siguen susceptibles d’inclusió en inventari, que és una relació detallada, ordenada i valorada dels elements que componen el patrimoni.
-            </li>
-          </ul>
+          - Que no siguen béns fungibles, és a dir, que no es consumisquen amb l’ús.
+          - Que tinguen una duració superior l’exercici pressupostari, 12 mesos.
+          - Que siguen susceptibles d’inclusió en inventari, que és una relació detallada, ordenada i valorada dels elements que componen el patrimoni.
 
           A títol informatiu, son exemples d’inversions:
 
-          <ul>
-            <li>
-              Creació de noves infraestructures o obres: construir itineraris de voreres i vials, enllumenat, senyalització vial, parcs, jardins, clavegueram, etc.
-            </li>
-            <li>
-              Reposició d’infraestructures: reforma d’enllumenat, remodelació de parcs, zones verdes, remodelació de vials i de la seua senyalització.
-            </li>
-            <li>
-              Construcció o reforma d’edificis: biblioteques, instal·lacions esportives, centres culturals, etc.
-            </li>
-            <li>
-              Mobiliari urbà (bancs, papereres...) mobiliari infantil per a zones de jocs infantils (engrunsadores, tobogans...)
-            </li>
-            <li>
-              Aplicacions informàtiques: desenvolupament d’aplicacions, web, etc.
-            </li>
-          </ul>
+          - Creació de noves infraestructures o obres: construir itineraris de voreres i vials, enllumenat, senyalització vial, parcs, jardins, clavegueram, etc.
+          - Reposició d’infraestructures: reforma d’enllumenat, remodelació de parcs, zones verdes, remodelació de vials i de la seua senyalització.
+          - Construcció o reforma d’edificis: biblioteques, instal·lacions esportives, centres culturals, etc.
+          - Mobiliari urbà (bancs, papereres...) mobiliari infantil per a zones de jocs infantils (engrunsadores, tobogans...)
+          - Aplicacions informàtiques: desenvolupament d’aplicacions, web, etc.
 
           Despeses corrents són les despeses originades per l'adquisició de béns que reunisquen algunes de les característiques següents:
-          a) Ser béns fungibles.
-          b) Tenir una durada previsiblement inferior a l'exercici pressupostari.
-          c) No ser susceptibles d'inclusió en inventari.
-          d) Ser, previsiblement, despeses reiterades.
+            <ol class="ordered_alpha">
+              <li>
+                Ser béns fungibles.
+              </li>
+              <li>
+                Tenir una durada previsiblement inferior a l'exercici pressupostari.
+              </li>
+              <li>
+                No ser susceptibles d'inclusió en inventari.
+              </li>
+              <li>
+                Ser, previsiblement, despeses reiterades.
+              </li>
+            </ol>
 
           Exemples de propostes de despeses corrents en béns i serveis.
 
-          <ul>
-            <li>
-              Activitats: programes culturals, esportius...
-            </li>
-            <li>
-              Creació de tallers i cursos. Realització d’estudis. Compra de material que no s’inventarie (per a consumir durant l’any)
-            </li>
-          </ul>
+          - Activitats: programes culturals, esportius...
+          - Creació de tallers i cursos. Realització d’estudis. Compra de material que no s’inventarie (per a consumir durant l’any)
 
           Els projectes d’inversió o de despeses corrents han d’estar vinculats a les competències municipals assenyalades en els articles 25.2 i 26 de la Llei 7/1985, de 2 d’abril, Reguladora de les Bases de Règim Local i complir els requisits arreplegats en aquestes bases.
 
           Quedaran exclosos els projectes o les propostes següents:
-          • Propostes que afecten contractes ja vigents.
-          • Projectes que estiguen destinats a beneficiar una persona o entitat concreta, i no a l’interés públic.
-          • Projectes de despeses en béns corrents i serveis la despesa de les quals s’estenga més enllà de dos anys.
-          • Propostes d’inversió sobre terrenys o solars no municipals.
+          - Propostes que afecten contractes ja vigents.
+          - Projectes que estiguen destinats a beneficiar una persona o entitat concreta, i no a l’interés públic.
+          - Projectes de despeses en béns corrents i serveis la despesa de les quals s’estenga més enllà de dos anys.
+          - Propostes d’inversió sobre terrenys o solars no municipals.
 
       item_4:
         title: 4.- Qui pot presentar propostes?
@@ -406,42 +380,21 @@ val:
           Una vegada finalitzat el període de suport de les propostes, des del Negociat de Participació Ciutadana de l’ajuntament es realitzarà un procés de validació de les propostes realitzades amb l’objectiu de comprovar que totes les propostes presentades compleixen els requisits establits en aquestes Bases Reguladores i admetrà o inadmetrà motivadament les propostes presentades.
 
           A títol d’exemple, seran motius d’inadmissió:
-          <ul>
-            <li>
-              Que no siguen competència municipal.
-            </li>
-            <li>
-              Que no es disposen terrenys.
-            </li>
-            <li>
-              Que per a la seua execució siga necessari implicar a altres administracions.
-            </li>
-            <li>
-              Que la seua execució ja estiga prevista i pressupostada per l’Ajuntament.
-            </li>
-            <li>
-              Qualssevol altres anàlegs als anteriors.
-            </li>
-          </ul>
+
+          - Que no siguen competència municipal.
+          - Que no es disposen terrenys.
+          - Que per a la seua execució siga necessari implicar a altres administracions.
+          - Que la seua execució ja estiga prevista i pressupostada per l’Ajuntament.
+          - Qualssevol altres anàlegs als anteriors.
 
           Una vegada hagen superat la validació, passaran a ser estudiades pels Serveis Tècnics de l’Ajuntament implicats en la seua execució, que seran els que emeten un informe sobre la seua viabilitat jurídica, tècnica i/o pressupostària.
 
           Els Serveis Tècnics de l’Ajuntament quan emeten un informe sobre la viabilitat jurídica, tècnica i pressupostària del projecte d’inversió hauran de:
 
-          <ul>
-            <li>
-              Comprovar que la proposta siga competència de l’Ajuntament, i que no depenga d’altres administracions.
-            </li>
-            <li>
-              Estudiar si hi ha alguna normativa que siga contrària a dur a terme la proposta.
-            </li>
-            <li>
-              Estimar el cost econòmic de la proposta.
-            </li>
-            <li>
-              Estudiar si la proposta és viable tècnicament i no es preveu cap impediment perquè puga emportar-se la seua execució.
-            </li>
-          </ul>
+          - Comprovar que la proposta siga competència de l’Ajuntament, i que no depenga d’altres administracions.
+          - Estudiar si hi ha alguna normativa que siga contrària a dur a terme la proposta.
+          - Estimar el cost econòmic de la proposta.
+          - Estudiar si la proposta és viable tècnicament i no es preveu cap impediment perquè puga emportar-se la seua execució.
 
           Les propostes de projectes que tinguen informes favorables dels Serveis Tècnics seran els que passaran a la fase de votació final. S'incorporarà un informe tècnic sobre l'enfocament de gènere de cadascun dels projectes considerats viables tècnicament. Aquest procés de validació i estudi de viabilitat tècnica de les propostes es realitzarà en el període comprés entre el 2 i el 30 de maig de 2018.
 
