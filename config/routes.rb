@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   # devise_scope :organization do
   #   get 'organizations/sign_up/success', to: 'organizations/registrations#success'
   # end
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development? || Rails.env.staging?
 
   draw :custom
   draw :account
