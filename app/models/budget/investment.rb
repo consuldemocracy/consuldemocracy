@@ -81,6 +81,7 @@ class Budget
     scope :by_admin,    ->(admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,      ->(tag_name)    { tagged_with(tag_name) }
     scope :by_valuator, ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
+    scope :by_budget,   ->(budget)      { where(budget: budget) }
 
     scope :for_render, -> { includes(:heading) }
 
@@ -102,8 +103,8 @@ class Budget
     end
 
     def self.scoped_filter(params, current_filter)
-      budget  = Budget.find_by(id: params[:budget_id]) || Budget.find_by(slug: params[:budget_id])
-      results = Investment.where(budget_id: budget.id)
+      budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      results = Investment.by_budget(budget)
 
       results = limit_results(budget, params, results)              if params[:max_per_heading].present?
       results = results.where(group_id: params[:group_id])          if params[:group_id].present?

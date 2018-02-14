@@ -137,7 +137,8 @@ feature 'Commenting legislation questions' do
   end
 
   scenario 'Turns links into html links' do
-    create :comment, commentable: legislation_annotation, body: 'Built with http://rubyonrails.org/'
+    legislation_annotation = create :legislation_annotation, author: user
+    legislation_annotation.comments << create(:comment, body: 'Built with http://rubyonrails.org/')
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                             legislation_annotation.draft_version,
