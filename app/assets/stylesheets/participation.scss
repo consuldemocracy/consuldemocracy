@@ -753,6 +753,11 @@
 
   .tags {
     display: block;
+    margin-bottom: 0;
+
+    a {
+      font-size: $tiny-font-size;
+    }
   }
 
   .icon-debates,
