@@ -6,9 +6,9 @@ module EmbedVideosHelper
   def embedded_video_code
     link = @proposal.video_url
     title = t('proposals.show.embed_video_title', proposal: @proposal.title)
-    if link.match(/vimeo.*/)
+    if link =~ /vimeo.*/
       server = "Vimeo"
-    elsif link.match(/youtu*.*/)
+    elsif link =~ /youtu*.*/
       server = "YouTube"
     end
 

@@ -26,7 +26,7 @@
         <%= t("moderation.comments.index.headers.comment") %>
       </th>
       <th>
-       <%= t("moderation.comments.index.headers.moderate") %>
+        <%= t("moderation.comments.index.headers.moderate") %>
       </th>
     </tr>
 
@@ -34,7 +34,7 @@
       <tr id="comment_<%= comment.id %>">
         <td>
           <%= comment.commentable_type.constantize.model_name.human %> -
-           <%= link_to comment.commentable.title, commentable_path(comment) %>
+          <%= link_to comment.commentable.title, commentable_path(comment) %>
           <br>
           <span class="date"><%= l comment.updated_at.to_date %></span>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
