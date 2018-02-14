@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="small-12 medium-9 column">
-      <%= back_link_to(:back || budget_investments_path(investment.budget)) %>
+      <%= link_to(t("shared.back"), budget_investments_path(investment.budget, heading_id: investment.heading), class: 'back') %>
 
       <h1><%= investment.title %></h1>
 
