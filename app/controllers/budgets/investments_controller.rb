@@ -88,93 +88,85 @@ module Budgets
       super
     end
 
-    rescue_from CanCan::AccessDenied do |exception|
-      respond_to do |format|
-        format.html { redirect_to main_app.root_url, alert: I18n.t('budgets.investments.acces_denied') }
-        format.json { render json: {error: exception.message}, status: :forbidden }
+    private
+
+    def resource_model
+      Budget::Investment
+    end
+
+    def resource_name
+      "budget_investment"
+    end
+
+    def load_investment_votes(investments)
+      @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
+    end
+
+    def set_random_seed
+      if params[:order] == 'random' || params[:order].blank?
+        seed = rand(-100..100) / 100.0
+        params[:random_seed] ||= Float(seed) rescue 0
+      else
+        params[:random_seed] = nil
       end
     end
 
+    def investment_params
+      params[:budget_investment][:tag_list] = locate(params[:budget_investment][:tag_list])
+      params[:budget_investment][:tag_list] = add_organization(params[:budget_investment][:tag_list])
+      params.require(:budget_investment)
+            .permit(:title, :description, :heading_id, :tag_list,
+                    :organization_name, :location, :terms_of_service, :skip_map,
+                    image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                    documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                    map_location_attributes: [:latitude, :longitude, :zoom])
+    end
 
-    private
+    def load_ballot
+      query = Budget::Ballot.where(user: current_user, budget: @budget)
+      @ballot = @budget.balloting? ? query.first_or_create : query.first_or_initialize
+    end
 
-      def resource_model
-        Budget::Investment
+    def load_heading
+      if params[:heading_id].present?
+        @heading = @budget.headings.find(params[:heading_id])
+        @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+      else
+        @heading = @budget.headings.last
+        @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
       end
+    end
 
-      def resource_name
-        "budget_investment"
-      end
+    def load_categories
+      @categories = ActsAsTaggableOn::Tag.category.order(:name)
+    end
 
-      def load_investment_votes(investments)
-        @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
-      end
+    def tag_cloud
+      TagCloud.new(Budget::Investment, params[:search])
+    end
 
-      def set_random_seed
-        if params[:order] == 'random' || params[:order].blank?
-          seed = rand(-100..100) / 100.0
-          params[:random_seed] ||= Float(seed) rescue 0
-        else
-          params[:random_seed] = nil
-        end
-      end
+    def locate(tag_string)
+      array_tags = tag_string.split(',').collect(&:strip).select(&:present?)
+      array_tags.collect! { |t| I18n.translate(t, locale: :es, default: t)}
+      array_tags.join(',')
+    end
 
-      def investment_params
-        params[:budget_investment][:tag_list] = locate(params[:budget_investment][:tag_list])
-        params[:budget_investment][:tag_list] = add_organization(params[:budget_investment][:tag_list])
-        params.require(:budget_investment)
-              .permit(:title, :description, :heading_id, :tag_list,
-                      :organization_name, :location, :terms_of_service, :skip_map,
-                      image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
-                      documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
-                      map_location_attributes: [:latitude, :longitude, :zoom])
-      end
+    def add_organization(tag_string)
+      return tag_string unless params[:budget_investment][:organization_name].present?
+      array_tags = tag_string.split(',').collect(&:strip)
+      array_tags << 'Asociaciones' unless array_tags.include?('Asociaciones')
+      array_tags.join(',')
+    end
 
-      def load_ballot
-        query = Budget::Ballot.where(user: current_user, budget: @budget)
-        @ballot = @budget.balloting? ? query.first_or_create : query.first_or_initialize
+    def investments
+      if @current_order == 'random'
+        @investments.apply_filters_and_search(@budget, params, @current_filter)
+                    .send("sort_by_#{@current_order}", params[:random_seed])
+      else
+        @investments.apply_filters_and_search(@budget, params, @current_filter)
+                    .send("sort_by_#{@current_order}")
       end
-
-      def load_heading
-        if params[:heading_id].present?
-          @heading = @budget.headings.find(params[:heading_id])
-          @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
-        else
-          @heading = @budget.headings.last
-          @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
-        end
-      end
-
-      def load_categories
-        @categories = ActsAsTaggableOn::Tag.category.order(:name)
-      end
-
-      def tag_cloud
-        TagCloud.new(Budget::Investment, params[:search])
-      end
-
-      def locate(tag_string)
-        array_tags = tag_string.split(',').collect(&:strip).select(&:present?)
-        array_tags.collect! { |t| I18n.translate(t, locale: :es, default: t)}
-        array_tags.join(',')
-      end
-
-      def add_organization(tag_string)
-        return tag_string unless params[:budget_investment][:organization_name].present?
-        array_tags = tag_string.split(',').collect(&:strip)
-        array_tags << 'Asociaciones' unless array_tags.include?('Asociaciones')
-        array_tags.join(',')
-      end
-
-      def investments
-        if @current_order == 'random'
-          @investments.apply_filters_and_search(@budget, params, @current_filter)
-                      .send("sort_by_#{@current_order}", params[:random_seed])
-        else
-          @investments.apply_filters_and_search(@budget, params, @current_filter)
-                      .send("sort_by_#{@current_order}")
-        end
-      end
+    end
 
 
   end

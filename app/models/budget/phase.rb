@@ -88,7 +88,7 @@ class Budget
     end
 
     def sanitize_description
-      self.description = WYSIWYGSanitizer.new.sanitize(description)
+      self.description = WYSIWYGSanitizerPresupuestos.new.sanitize(description)
     end
   end
 end
