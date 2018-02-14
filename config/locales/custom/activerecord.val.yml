@@ -1,0 +1,6 @@
+val:
+  activerecord:
+    models:
+      budget/investment:
+        one: "Proposta"
+        other: "Propostes"

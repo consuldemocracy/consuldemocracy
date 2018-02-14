@@ -1,10 +1,18 @@
 <%= form_for(@investment, url: form_url, method: :post, html: { multipart: true }) do |f| %>
   <%= render 'shared/errors', resource: @investment %>
 
-
   <div class="row">
-    <div class="small-12 medium-8 column">
-      <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: true, } %>
+    <div class="small-10 medium-7 large-7 columns">
+      <%= f.select :heading_id, custom_budget_heading_select_options(@budget), {include_blank: true, } %>
+    </div>
+    <div class="small-2 medium-5 large-5 column">
+      <% gr = groups_not_allowed(@budget) %>
+      <% if gr.any? %>
+        <br>
+        <p>
+          <%= t('budgets.investments.form.groups_proposed', groups: gr.map(&:name).join(', ')) %>
+        </p>
+      <% end %>
     </div>
 
     <div class="small-12 column">

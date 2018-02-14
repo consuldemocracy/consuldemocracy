@@ -1,0 +1,7 @@
+es:
+  users:
+    show:
+      filters:
+        ballot_lines:
+          one: 1 Voto
+          other: "%{count} Votos"

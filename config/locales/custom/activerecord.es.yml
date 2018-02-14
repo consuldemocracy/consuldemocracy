@@ -1,0 +1,6 @@
+es:
+  activerecord:
+    models:
+      budget/investment:
+        one: "Propuesta"
+        other: "Propuestas"
