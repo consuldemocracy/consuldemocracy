@@ -2,3 +2,12 @@ es:
   management:
     budget_investments:
       create: Crear nueva propuesta
+    permissions:
+      watch_investments: Ver propuestas
+      create_investments: Crear propuestas
+      support_investments: Avalar propuestas
+      vote_investments: Votar propuestas
+    menu:
+      create_budget_investment: Crear propuestas
+      support_budget_investments: Avalar propuestas
+

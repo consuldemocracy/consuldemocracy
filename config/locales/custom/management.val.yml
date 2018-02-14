@@ -3,3 +3,11 @@ val:
   management:
     budget_investments:
       create: Crear nova proposta
+    permissions:
+      watch_investments: Vore propostes
+      create_investments: Crear propostes
+      support_investments: Avalar propostes
+      vote_investments: Votar propostes
+    menu:
+      create_budget_investment: Crear propostes
+      support_budget_investments: Avalar propostes

@@ -1,0 +1,5 @@
+val:
+  flash:
+    actions:
+      create:
+        budget_investment: Proposta creada correctament

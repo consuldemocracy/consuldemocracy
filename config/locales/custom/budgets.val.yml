@@ -3,7 +3,7 @@ val:
   budgets:
     investments:
       form:
-        groups_proposed: Ya has creat una proposta para %{groups}
+        groups_proposed: Ja has creat una proposta per a %{groups}
       index:
         sidebar:
           create: Crear proposta
