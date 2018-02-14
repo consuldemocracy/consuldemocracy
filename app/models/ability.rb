@@ -10,15 +10,20 @@ class Ability
       merge Abilities::Valuator.new(user) if user.valuator?
 
       if user.administrator?
+        puts "Soy administrador"
         merge Abilities::Administrator.new(user)
       elsif user.moderator?
+        puts "Soy moderador"
         merge Abilities::Moderator.new(user)
       else
+        puts "Soy Comun de los mortales"
         merge Abilities::Common.new(user)
       end
     else
+      puts "No soy nada"
       merge Abilities::Everyone.new(user)
     end
+
   end
 
 end

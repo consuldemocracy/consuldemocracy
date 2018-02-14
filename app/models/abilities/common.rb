@@ -80,15 +80,22 @@ module Abilities
            .where(budget_investments: { feasibility: ['undecided', 'feasible']}).count < 1
           #  .where(budget_investments: { hidden_at: nil }).count < 1
 
-          current_budget = Budget.current
 
-          can :new, Budget::Investment do |investment|
-            false && investment.budget.phase == 'accepting'
-          end
 
           can :create, Budget::Investment do |investment|
-            # raise investment.inspect
-            true || investment.budget.phase == "accepting" && investment.group.investments.where(author_id: user.id) < 1
+            if investment.heading_id
+              heading_brothers = investment.heading.group.heading_ids
+              investment_brothers_group = Budget::Investment.where(author_id: user.id).where(heading_id: heading_brothers)
+              investment.budget.phase == "accepting" && investment_brothers_group.size < 1
+            end
+
+          end
+
+          if Budget.current.investments.where(author_id: user.id).where(feasibility: ['undecided', 'feasible']).count < 2
+            can :new, Budget::Investment
+          else
+            cannot :new, Budget::Investment
+            cannot :create, Budget::Investment
           end
 
           if user.organization? && !user.organization.verified?

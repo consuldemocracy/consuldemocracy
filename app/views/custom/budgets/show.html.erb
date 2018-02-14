@@ -16,11 +16,19 @@
         <strong><%= t('budgets.show.phase') %></strong>
       </p>
       <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
+      <%= debug can?(:new, Budget::Investment) %>
+      <%= debug can?(:create, Budget::Investment) %>
 
       <% if @budget.accepting? %>
         <% if current_user %>
           <% if current_user.level_two_or_three_verified? %>
-            <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
+            <% if can?(:new, Budget::Investment) %>
+              <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
+            <% else %>
+              <div class="callout warning margin-top">
+                <%= t("budgets.investments.index.sidebar.quota_exceeded") %>
+              </div>
+            <% end %>
           <% else %>
             <div class="callout warning margin-top">
               <%= t("budgets.investments.index.sidebar.verified_only",

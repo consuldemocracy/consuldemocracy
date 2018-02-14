@@ -16,6 +16,8 @@ module Abilities
       can [:valuate], Budget::Investment
       can [:hide], Budget::Investment
 
+
+
       can :create, DirectMessage
       can :show, DirectMessage, sender_id: user.id
     end
