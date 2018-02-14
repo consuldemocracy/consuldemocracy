@@ -5,7 +5,10 @@ module Budgets
     include FlagActions
 
     before_action :authenticate_user!, except: [:index, :show]
-
+    # before_action :load_budget_by_budget_id
+    before_action :load_investment_by_id, except: [:index]
+    before_action :load_investments, only: [:index]
+    # skip_authorization_check only: [:index, :show]
     load_and_authorize_resource :budget
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
 
@@ -89,6 +92,22 @@ module Budgets
         "budget_investment"
       end
 
+      def load_budget
+        @budget = load_budget_by_param(params[:budget_id])
+      end
+
+      def load_investment
+        @investment = load_investment_by_param(params[:id])
+      end
+
+      def load_investments
+        sort_params = @current_order == 'random' ? {} : params[:random_seed]
+        @investments = @budget.investments
+        @investments = @investments.apply_filters_and_search(@budget, params, @current_filter)
+        @investments = @investments.send("sort_by_#{@current_order}", sort_params) if @current_order
+        @investments = @investments.page(params[:page]).per(10).for_render
+      end
+
       def load_investment_votes(investments)
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
       end
@@ -140,7 +159,6 @@ module Budgets
                       .send("sort_by_#{@current_order}")
         end
       end
-
   end
 
 end

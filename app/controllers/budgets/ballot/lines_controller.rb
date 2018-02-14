@@ -3,11 +3,11 @@ module Budgets
     class LinesController < ApplicationController
       before_action :authenticate_user!
       #before_action :ensure_final_voting_allowed
-      before_action :load_budget
+      before_action :load_budget_by_budget_id
+      before_action :load_investments
       before_action :load_ballot
       before_action :load_tag_cloud
       before_action :load_categories
-      before_action :load_investments
       before_action :load_ballot_referer
 
       load_and_authorize_resource :budget
@@ -15,7 +15,7 @@ module Budgets
       load_and_authorize_resource :line, through: :ballot, find_by: :investment_id, class: "Budget::Ballot::Line"
 
       def create
-        load_investment
+        load_investment_by_investment_id
         load_heading
 
         @ballot.add_investment(@investment)
@@ -39,16 +39,8 @@ module Budgets
           params.permit(:investment_id, :budget_id)
         end
 
-        def load_budget
-          @budget = Budget.find(params[:budget_id])
-        end
-
         def load_ballot
           @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create
-        end
-
-        def load_investment
-          @investment = Budget::Investment.find(params[:investment_id])
         end
 
         def load_investments

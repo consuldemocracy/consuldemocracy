@@ -125,4 +125,30 @@ class ApplicationController < ActionController::Base
     def current_budget
       Budget.current
     end
+
+    def load_budget_by_id
+      @budget = load_budget_by_param(params[:id])
+    end
+
+    def load_budget_by_budget_id
+      @budget = load_budget_by_param(params[:budget_id])
+      raise ActionController::RoutingError, 'Not Found' if @budget.blank?
+    end
+
+    def load_budget_by_param(param)
+      Budget.find_by(slug: param) || Budget.find_by(id: param)
+    end
+
+    def load_investment_by_id
+      @investment = load_investment_by_param(params[:id])
+    end
+
+    def load_investment_by_investment_id
+      @investment = load_investment_by_param(params[:investment_id])
+    end
+
+    def load_investment_by_param(param)
+      Budget::Investment.find_by(id: param)
+    end
+
 end
