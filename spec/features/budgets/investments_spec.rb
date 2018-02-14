@@ -947,7 +947,7 @@ feature 'Budget Investments' do
     user = create(:user)
     investment = create(:budget_investment)
     create(:budget_investment_milestone, investment: investment,
-                                         description: "Last milestone",
+                                         description: "Last milestone with a link to https://consul.dev",
                                          publication_date: Date.tomorrow)
     first_milestone = create(:budget_investment_milestone, investment: investment,
                                                            description: "First milestone",
@@ -961,12 +961,13 @@ feature 'Budget Investments' do
     find("#tab-milestones-label").trigger('click')
 
     within("#tab-milestones") do
-      expect(first_milestone.description).to appear_before('Last milestone')
+      expect(first_milestone.description).to appear_before('Last milestone with a link to https://consul.dev')
       expect(page).to have_content(Date.tomorrow)
       expect(page).to have_content(Date.yesterday)
       expect(page).not_to have_content(Date.current)
       expect(page.find("#image_#{first_milestone.id}")['alt']).to have_content(image.title)
       expect(page).to have_link(document.title)
+      expect(page).to have_link("https://consul.dev")
     end
   end
 
