@@ -49,7 +49,7 @@
               <%= investment.heading.name %>
             </p>
             <div class="investment-project-description">
-              <p><%= investment.description %></p>
+              <%= investment.description %>
               <div class="truncate"></div>
             </div>
             <%= render "shared/tags", taggable: investment, limit: 5 %>
