@@ -3,7 +3,7 @@
   <div class="row">
     <div class="small-12 column">
       <h2>
-        <%= t('welcome.featured.features',
+        <%= t("welcome.featured.features",
                org_name: setting['org_name']) %>
       </h2>
     </div>
@@ -11,35 +11,31 @@
 
   <div class="row margin-top">
     <div class="small-12 medium-6 column">
-      <figure class="figure-card">
-        <%= link_to proposals_path, title: t("welcome.featured.proposals.link") do %>
+      <%= link_to proposals_path, title: t("welcome.featured.proposals.link") do %>
+        <figure class="figure-card">
           <%= image_tag "welcome/featured_proposals.png", alt: t("welcome.featured.proposals.alt_image") %>
-        <% end %>
-        <figcaption>
-          <%= link_to proposals_path, title: t("welcome.featured.proposals.link") do %>
+          <figcaption>
             <span><%= t("welcome.featured.label") %></span><br>
-            <h3><%= t('welcome.featured.proposals.title') %></h3>
-          <% end %>
-        </figcaption>
-      </figure>
-      <p><%= t('welcome.featured.proposals.text') %></p>
-      <%= link_to t("welcome.featured.proposals.link"), proposals_path %>
+            <h3><%= t("welcome.featured.proposals.title") %></h3>
+          </figcaption>
+        </figure>
+        <p class="description"><%= t("welcome.featured.proposals.text") %></p>
+        <p><%= t("welcome.featured.proposals.link") %></p>
+      <% end %>
     </div>
 
     <div class="small-12 medium-6 column">
-      <figure class="figure-card">
-        <%= link_to budgets_welcome_path, title: t("welcome.featured.budgets.link") do %>
+      <%= link_to budgets_welcome_path, title: t("welcome.featured.budgets.link") do %>
+        <figure class="figure-card">
           <%= image_tag "welcome/featured_budgets.png", alt: t("welcome.featured.budgets.alt_image") %>
-        <% end %>
-        <figcaption>
-          <%= link_to budgets_welcome_path, title: t("welcome.featured.budgets.link") do %>
+          <figcaption>
             <span><%= t("welcome.featured.label") %></span><br>
             <h3><%= t('welcome.featured.budgets.title') %></h3>
-          <% end %>
-        </figcaption>
-      </figure>
-      <p><%= t('welcome.featured.budgets.text') %></p>
-      <%= link_to t("welcome.featured.budgets.link"), budgets_welcome_path %>
+          </figcaption>
+        </figure>
+        <p class="description"><%= t("welcome.featured.budgets.text") %></p>
+        <p><%= t("welcome.featured.budgets.link") %></p>
+      <% end %>
     </div>
   </div>
 </div>

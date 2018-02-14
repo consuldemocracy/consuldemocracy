@@ -3,6 +3,23 @@
 
 .welcome {
 
+  a {
+
+    p {
+
+      &.description {
+        color: $text;
+      }
+    }
+  }
+
+  a:hover {
+
+    h3 {
+      color: #fff;
+    }
+  }
+
   .cards {
     background: #fafafa;
 
@@ -153,7 +170,7 @@ $budget-2018-yellow:   #fef384;
   .lead-title,
   .lead,
   .tiny-title {
-    font-family: "Souvenir";
+    font-family: 'Souvenir';
   }
 
   .lead-title {
