@@ -60,7 +60,7 @@ val:
         document_type_label: Tipus de document
         error_not_allowed_age: No tens l'edat mínima per a participar
         error_not_allowed_postal_code: Per a verificarte has d'estar empadronat.
-        error_verifying_census: El Padró no ha pogut verificar la teua informació. Si us plaur, confirma que les teues dades d'empadronament siguen correctes cridant a l'Ajuntament o visitant una %{offices}.
+        error_verifying_census: El Padró no ha pogut verificar la teua informació. Si us plau, confirma que les teues dades d'empadronament siguen correctes cridant a l'Ajuntament o visitant una %{offices}.
         error_verifying_census_offices: Oficina d'Atenció al ciutadà
         form_errors: evitaren verificar la teua residència
         postal_code: Codi postal

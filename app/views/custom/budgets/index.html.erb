@@ -10,7 +10,7 @@
   <div class="large-12 small-12 column">
       <% if current_budget.present? %>
         <%= markdown t('budgets.header_body_principal_1', amount: number_to_currency(current_budget.total_amount)) %>
-        <% if budget_published?(current_budget) %>
+        <% if false && budget_published?(current_budget) %>
           <%= link_to t('budgets.button_text'), custom_budget_path(current_budget), class: "button" %>
         <% else %>
           <%= link_to t('budgets.button_text_2018'), "#", class: "button" %>
