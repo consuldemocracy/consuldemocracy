@@ -7,8 +7,8 @@ module Budgets
     before_action :authenticate_user!, except: [:index, :show]
 
     load_and_authorize_resource :budget
-    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
 
+    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
@@ -87,6 +87,14 @@ module Budgets
       @resource_relation    = resource_model.where(budget: @budget).apply_filters_and_search(@budget, params, @current_filter)
       super
     end
+
+    rescue_from CanCan::AccessDenied do |exception|
+      respond_to do |format|
+        format.html { redirect_to main_app.root_url, alert: I18n.t('budgets.investments.acces_denied') }
+        format.json { render json: {error: exception.message}, status: :forbidden }
+      end
+    end
+
 
     private
 
@@ -167,6 +175,7 @@ module Budgets
                       .send("sort_by_#{@current_order}")
         end
       end
+
 
   end
 
