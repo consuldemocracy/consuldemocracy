@@ -45,7 +45,7 @@ module CommentsHelper
 
     case comment.commentable_type
     when "Budget::Investment"
-      budget_investment_path(commentable.budget_id, commentable)
+      budget_investment_path(commentable.budget, commentable)
     when "Legislation::Question"
       legislation_process_question_path(commentable.process, commentable)
     when "Legislation::Annotation"
