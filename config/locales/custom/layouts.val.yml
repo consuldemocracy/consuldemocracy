@@ -1,6 +1,8 @@
 ---
 val:
   layouts:
+    subnavigation:
+      query_districte: Consulta districtes
     application:
       title: Ajuntament de Castelló
       chrome: Google Chrome

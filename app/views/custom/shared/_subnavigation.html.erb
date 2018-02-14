@@ -61,20 +61,21 @@
                                   accesskey: "2",
                                   title: t("shared.go_to_page") + t("pages.cartel_magdalena_2018.tab_link") %>
       </li>
-
     <% end %>
-    <!-- <li>
-      <%= link_to t("layouts.header.more_info"),
-                    more_info_path,
-                    accesskey: "5",
-                    class: ("active" if current_page?(more_info_path)),
-                    title: t("shared.go_to_page") + t("layouts.header.more_info") %>
-    </li> -->
     <li>
       <%= layout_menu_link_to t("layouts.footer.more_info"),
                                 page_path('more_information'),
                                 controller_name == "pages" && params[:id] == 'more_information',
                                 accesskey: "b" %>
     </li>
+
+    <li class="float_right">
+      <%= layout_menu_link_to t("layouts.subnavigation.query_districte"),
+                                "https://www.castello.es/geoportal",
+                                false,
+                                target: '_blank',
+                                accesskey: "b" %>
+    </li>
+
   </ul>
 </div>

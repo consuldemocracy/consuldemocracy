@@ -1,5 +1,7 @@
 es:
   layouts:
+    subnavigation:
+      query_districte: Consulta distritos
     application:
       title: Ayuntamiento de Castellón
       chrome: Google Chrome
