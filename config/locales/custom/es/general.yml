@@ -165,12 +165,12 @@ es:
         title: Crea propuestas ciudadanas
         text: "¿Tienes una idea para Madrid? Proponla. Si consigue el apoyo de un 1% de la población de Madrid, se hará una votación ciudadana."
         link: Ver propuestas ciudadanas
-        alt_image: "Generic image related with proposals of the City of Madrid."
+        alt_image: "Personas paseando por una calle de Madrid"
       budgets:
         title: "Decide que proyectos de inversión se llevan a cabo"
         text: "Tu propones y decides en que se gasta el presupuesto municipal."
         link: Ver proyectos de inversión
-        alt_image: "Generic image related with budgets of the City of Madrid."
+        alt_image: "Dos personas redactan una idea para los Presupuestos participativos"
     recommended:
       help: "Estas recomendaciones se generan por las etiquetas de los debates y propuestas que estás siguiendo."
       debates:

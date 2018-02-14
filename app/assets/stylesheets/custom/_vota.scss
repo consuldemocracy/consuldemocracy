@@ -263,15 +263,6 @@ $campaign-yellow: #ffdb19;
       padding: $line-height;
       text-align: center;
       width: 100%;
-
-      a {
-        color: #fff;
-        text-transform: uppercase;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
     }
 
     .project-x,
@@ -292,6 +283,15 @@ $campaign-yellow: #ffdb19;
     ul li {
       line-height: $line-height * 2;
     }
+  }
+}
+
+.block-red figcaption a {
+  color: #fff;
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
