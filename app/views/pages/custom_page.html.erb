@@ -4,12 +4,16 @@
 
   <div class="small-12 medium-9 column">
     <h1><%= @custom_page.title %></h1>
-    <h2><%= @custom_page.subtitle %></h2>
+    <% if @custom_page.subtitle.present? %>
+      <h2><%= @custom_page.subtitle%></h2>
+    <% end %>
 
-    <%= raw @custom_page.content %>
+    <%= text_with_links @custom_page.content %>
   </div>
 
-  <div class="small-12 medium-3 column">
-    <%= render '/shared/print' if @custom_page.print_content_flag %>
-  </div>
+  <% if @custom_page.print_content_flag %>
+    <div class="small-12 medium-3 column">
+      <%= render '/shared/print' %>
+    </div>
+  <% end %>
 </div>
