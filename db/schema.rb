@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129190950) do
+ActiveRecord::Schema.define(version: 20180214161527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -221,6 +221,8 @@ ActiveRecord::Schema.define(version: 20180129190950) do
     t.text     "description_publishing_prices"
     t.text     "description_informing"
   end
+
+  add_index "budgets", ["slug"], name: "index_budgets_on_slug", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
