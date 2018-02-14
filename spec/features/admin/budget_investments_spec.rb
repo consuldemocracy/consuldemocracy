@@ -947,91 +947,104 @@ feature 'Admin budget investments' do
   end
 
   context "Mark as visible to valuators" do
-    let(:group) { create(:budget_group, budget: @budget) }
+    let(:valuator) { create(:valuator) }
+    let(:admin) { create(:administrator) }
+
+    let(:group) { create(:budget_group, budget: budget) }
     let(:heading) { create(:budget_heading, group: group) }
 
+    let(:investment1) { create(:budget_investment, heading: heading) }
+    let(:investment2) { create(:budget_investment, heading: heading) }
+
     scenario "Mark as visible to valuator", :js do
-      valuator = create(:valuator)
-
-      investment1 = create(:budget_investment, heading: heading, administrator_id: @admin.id)
-      investment2 = create(:budget_investment, heading: heading, administrator_id: @admin.id)
-
       investment1.valuators << valuator
       investment2.valuators << valuator
+      investment1.update(administrator: admin)
+      investment2.update(administrator: admin)
 
-      visit admin_budget_budget_investments_path(@budget)
+      visit admin_budget_budget_investments_path(budget)
       within('#filter-subnav') { click_link 'Under valuation' }
 
       within("#budget_investment_#{investment1.id}") do
         check "budget_investment_visible_to_valuators"
       end
 
-      wait_for_ajax
+      visit admin_budget_budget_investments_path(budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
 
-      login_as(valuator.user)
-      visit valuation_root_path
+      within("#budget_investment_#{investment1.id}") do
+        expect(find("#budget_investment_visible_to_valuators")).to be_checked
+      end
+    end
 
-      within "#budget_#{@budget.id}" do
+    scenario "Shows the correct investments to valuators" do
+      investment1.update(visible_to_valuators: true)
+      investment2.update(visible_to_valuators: false)
+
+      investment1.valuators << valuator
+      investment2.valuators << valuator
+      investment1.update(administrator: admin)
+      investment2.update(administrator: admin)
+
+      login_as(valuator.user.reload)
+      visit root_path
+      click_link "Admin"
+      click_link "Valuation"
+
+      within "#budget_#{budget.id}" do
         click_link "Evaluate"
       end
+
       expect(page).to     have_content investment1.title
       expect(page).not_to have_content investment2.title
     end
 
     scenario "Unmark as visible to valuator", :js do
-      valuator = create(:valuator)
-
-      investment1 = create(:budget_investment, heading: heading, visible_to_valuators: true, administrator_id: @admin.id)
-      investment2 = create(:budget_investment, heading: heading, visible_to_valuators: true, administrator_id: @admin.id)
+      Setting['feature.budgets.valuators_allowed'] = true
 
       investment1.valuators << valuator
       investment2.valuators << valuator
+      investment1.update(administrator: admin)
+      investment2.update(administrator: admin)
 
-      visit admin_budget_budget_investments_path(@budget)
+      visit admin_budget_budget_investments_path(budget)
       within('#filter-subnav') { click_link 'Under valuation' }
 
       within("#budget_investment_#{investment1.id}") do
         uncheck "budget_investment_visible_to_valuators"
       end
 
-      wait_for_ajax
+      visit admin_budget_budget_investments_path(budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
 
-      login_as(valuator.user)
-      visit valuation_root_path
-
-      within "#budget_#{@budget.id}" do
-        click_link "Evaluate"
+      within("#budget_investment_#{investment1.id}") do
+        expect(find("#budget_investment_visible_to_valuators")).not_to be_checked
       end
-
-      expect(page).not_to have_content investment1.title
-      expect(page).to     have_content investment2.title
     end
 
     scenario "Showing the valuating checkbox" do
-      investment1 = create(:budget_investment, heading: heading, visible_to_valuators: true, administrator_id: @admin.id)
-      investment2 = create(:budget_investment, heading: heading, visible_to_valuators: false, administrator_id: @admin.id)
+      investment1 = create(:budget_investment, budget: budget, visible_to_valuators: true)
+      investment2 = create(:budget_investment, budget: budget, visible_to_valuators: false)
 
       investment1.valuators << create(:valuator)
       investment2.valuators << create(:valuator)
+      investment2.valuators << create(:valuator)
+      investment1.update(administrator: create(:administrator))
+      investment2.update(administrator: create(:administrator))
 
-      visit admin_budget_budget_investments_path(@budget)
-      within('#filter-subnav') do
-        expect(page).not_to have_link "All"
-        expect(page).to have_content "All"
-      end
+      visit admin_budget_budget_investments_path(budget)
 
-      expect(page).not_to have_css("#budget_investment_visible_to_valuators")
       expect(page).not_to have_css("#budget_investment_visible_to_valuators")
 
       within('#filter-subnav') { click_link 'Under valuation' }
 
       within("#budget_investment_#{investment1.id}") do
-        valuating_checkbox = find("#budget_investment_visible_to_valuators")
+        valuating_checkbox = find('#budget_investment_visible_to_valuators')
         expect(valuating_checkbox).to be_checked
       end
 
       within("#budget_investment_#{investment2.id}") do
-        valuating_checkbox = find("#budget_investment_visible_to_valuators")
+        valuating_checkbox = find('#budget_investment_visible_to_valuators')
         expect(valuating_checkbox).not_to be_checked
       end
     end
