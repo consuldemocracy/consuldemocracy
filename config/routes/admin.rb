@@ -156,6 +156,10 @@ namespace :admin do
     get :users, on: :collection
   end
 
+  resources :emails_download, only: :index do
+    get :generate_csv, on: :collection
+  end
+
   resource :stats, only: :show do
     get :proposal_notifications, on: :collection
     get :direct_messages, on: :collection
