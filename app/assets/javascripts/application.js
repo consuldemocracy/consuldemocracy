@@ -73,6 +73,7 @@
 //= require sortable
 //= require table_sortable
 //= require investment_report_alert
+//= require imageMapResizer
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -118,6 +119,8 @@ var initialize_modules = function() {
 
 
   $("#columna_2").css({height: $('div.expanded.budget.jumbo-budget.budget-heading').height()});
+
+  $('#distritos-map').imageMapResize();
 };
 
 $(function(){
@@ -125,7 +128,6 @@ $(function(){
 
   $(document).ready(initialize_modules);
   $(document).on('page:load', initialize_modules);
-  // $(document).on('turbolinks:load', initialize_modules);
   $(document).on('ajax:complete', initialize_modules);
 
 
