@@ -25,19 +25,30 @@ class Users::SessionsController < Devise::SessionsController
     def reverificar_residencia(resource)
       # Verificamos si el usuario sigue empadronado en Castellón
       return true if !resource.residence_verified? || Rails.env.development?
-      parametros = {
-        document_number: resource.document_number,
-        document_type: resource.document_type,
-        date_of_birth: resource.date_of_birth,
-        postal_code: '12000',
-        terms_of_service: "1"
-      }
-      residence = Verification::Residence.new(parametros.merge(user: current_user))
-      unless residence.save
+
+      respuesta_padron = PadronCastellonApi.new.call(resource.document_type, resource.document_number)
+      if !respuesta_padron.valid?
         resource.residence_verified_at = nil
         resource.verified_at = nil
         resource.save
       end
+      true
+
+      # parametros = {
+      #   document_number: resource.document_number,
+      #   document_type: resource.document_type,
+      #   date_of_birth: resource.date_of_birth,
+      #   postal_code: '12000',
+      #   terms_of_service: "1"
+      # }
+
+
+      # residence = Verification::Residence.new(parametros.merge(user: current_user))
+      # unless residence.save
+      #   resource.residence_verified_at = nil
+      #   resource.verified_at = nil
+      #   resource.save
+      # end
     end
 
 end

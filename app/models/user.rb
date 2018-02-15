@@ -327,6 +327,14 @@ class User < ActiveRecord::Base
     follows.map{|follow| follow.followable.tags.map(&:name)}.flatten.compact.uniq
   end
 
+  def self.desempadronados
+    where.not(residence_verified_at: nil).each do |u|
+
+
+
+    end
+  end
+
   private
 
     def clean_document_number
