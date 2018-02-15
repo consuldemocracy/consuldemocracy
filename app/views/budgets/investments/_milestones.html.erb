@@ -18,7 +18,7 @@
                   </span>
                 <% end %>
                 <%= image_tag(milestone.image_url(:large), { alt: milestone.image.title, class: "margin", id: "image_#{milestone.id}" }) if milestone.image.present? %>
-                <p><%= milestone.description %></p>
+                <p><%= text_with_links milestone.description %></p>
                 <% if milestone.documents.present? %>
                   <div class="document-link text-center">
                     <p>
