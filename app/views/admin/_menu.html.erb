@@ -203,9 +203,12 @@
         <span class="icon-zip"></span>
         <strong><%= t("admin.menu.emails") %></strong>
       </a>
-      <ul id="emails_menu" <%= "class=is-active" if controller_name == "newsletters" %>>
+      <ul id="emails_menu" <%= "class=is-active" if controller_name == "newsletters" || "emails_download" %>>
         <li <%= "class=active" if controller_name == "newsletters" %>>
           <%= link_to t("admin.menu.newsletters"), admin_newsletters_path %>
+        </li>
+        <li <%= "class=active" if controller_name == "emails_download" %>>
+          <%= link_to t("admin.menu.emails_download"), admin_emails_download_index_path %>
         </li>
       </ul>
     </li>
