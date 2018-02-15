@@ -137,11 +137,13 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Plant trees")
 
       select "Central Park", from: "heading_id"
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).not_to have_link("Realocate visitors")
       expect(page).not_to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
       select "All headings", from: "heading_id"
 
       expect(page).to have_link("Realocate visitors")
@@ -149,6 +151,7 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Plant trees")
 
       select "Streets: Main Avenue", from: "heading_id"
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).to have_link("Realocate visitors")
       expect(page).not_to have_link("Change name")
@@ -173,18 +176,22 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Destroy the city")
 
       select "Admin 1", from: "administrator_id"
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).to have_content('There is 1 investment')
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "All administrators", from: "administrator_id"
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).to have_content('There are 2 investments')
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "Admin 1", from: "administrator_id"
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
+
       expect(page).to have_content('There is 1 investment')
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
@@ -204,18 +211,21 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Destroy the city")
 
       select "Valuator 1", from: "valuator_or_group_id"
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).to have_content('There is 1 investment')
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "All valuators", from: "valuator_or_group_id"
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).to have_content('There are 2 investments')
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "Valuator 1", from: "valuator_or_group_id"
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
       expect(page).to have_content('There is 1 investment')
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
@@ -237,18 +247,22 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Build a theatre")
 
       select "Health", from: "valuator_or_group_id"
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).to have_content('There is 1 investment')
       expect(page).to have_link("Build a hospital")
       expect(page).not_to have_link("Build a theatre")
 
       select "All valuators", from: "valuator_or_group_id"
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).to have_content('There are 2 investments')
       expect(page).to have_link("Build a hospital")
       expect(page).to have_link("Build a theatre")
 
       select "Culture", from: "valuator_or_group_id"
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
+
       expect(page).to have_content('There is 1 investment')
       expect(page).to have_link("Build a theatre")
       expect(page).not_to have_link("Build a hospital")
@@ -418,7 +432,7 @@ feature 'Admin budget investments' do
 
       click_link 'Advanced filters'
       fill_in "max_per_heading", with: 5
-      click_button 'Filter'
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).to have_content('There are 15 investments')
       expect(page).not_to have_link("Park with 2 supports")
@@ -456,7 +470,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content('Some other investment')
 
       fill_in 'title_or_id', with: 'Some investment'
-      click_button 'Search'
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).to have_content('Some investment')
       expect(page).not_to have_content('Some other investment')
@@ -468,8 +482,13 @@ feature 'Admin budget investments' do
       expect(page).to have_content('Some investment')
       expect(page).to have_content('Some other investment')
 
+<<<<<<< HEAD
       fill_in 'title_or_id', with: first_investment.id
       click_button 'Search'
+=======
+      fill_in 'title_or_id', with: 999999
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
+>>>>>>> 901dbf6... Fixed test for the refactored form
 
       expect(page).to have_content('Some other investment')
       expect(page).not_to have_content('Some investment')
@@ -851,7 +870,7 @@ feature 'Admin budget investments' do
 
       click_link 'Advanced filters'
       within('#advanced_filters') { find(:css, "#advanced_filters_[value='feasible']").set(true) }
-      click_button 'Filter'
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).not_to have_content(unfeasible_bi.title)
       expect(page).not_to have_content(feasible_bi.title)
@@ -861,7 +880,7 @@ feature 'Admin budget investments' do
 
       within('#advanced_filters') { find(:css, "#advanced_filters_[value='selected']").set(true) }
       within('#advanced_filters') { find(:css, "#advanced_filters_[value='feasible']").set(false) }
-      click_button 'Filter'
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).not_to have_content(unfeasible_bi.title)
       expect(page).not_to have_content(feasible_bi.title)
@@ -882,7 +901,7 @@ feature 'Admin budget investments' do
 
       click_link 'Advanced filters'
       within('#advanced_filters') { find(:css, "#advanced_filters_[value='undecided']").set(true) }
-      click_button 'Filter'
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).to have_content(undecided_bi.title)
       expect(page).not_to have_content(winner_bi.title)
@@ -892,7 +911,7 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content(feasible_vf_bi.title)
 
       within('#advanced_filters') { find(:css, "#advanced_filters_[value='unfeasible']").set(true) }
-      click_button 'Filter'
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       expect(page).to have_content(undecided_bi.title)
       expect(page).to have_content(unfeasible_bi.title)
@@ -936,7 +955,7 @@ feature 'Admin budget investments' do
 
       click_link 'Advanced filters'
       within('#advanced_filters') { find(:css, "#advanced_filters_[value='selected']").set(true) }
-      click_button 'Filter'
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
         expect(page).not_to have_link('Select')
@@ -948,7 +967,12 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(budget)
       click_link 'Advanced filters'
       within('#advanced_filters') { find(:css, "#advanced_filters_[value='selected']").set(true) }
+<<<<<<< HEAD
       click_button 'Filter'
+=======
+
+      click_button I18n.t("admin.budget_investments.index.buttons.filter")
+>>>>>>> 901dbf6... Fixed test for the refactored form
 
       expect(page).to have_content('There are 2 investments')
 
