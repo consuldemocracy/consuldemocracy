@@ -477,6 +477,7 @@ en:
       moderators: Moderators
       emails: Sending of emails
       newsletters: Newsletters
+      emails_download: Emails download
       valuators: Valuators
       poll_officers: Poll officers
       polls: Polls
@@ -564,6 +565,12 @@ en:
         body: Email content
         body_help_text: This is how the users will see the email
         send_alert: Are you sure you want to send this newsletter to %{n} users?
+    emails_download:
+      index:
+        title: Emails download
+        download_segment: Download segment
+        download_segment_help_text: Download in CSV format
+        download_emails_button: Download emails list
     valuators:
       index:
         title: Valuators
