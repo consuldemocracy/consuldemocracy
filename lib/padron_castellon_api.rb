@@ -73,9 +73,6 @@ class PadronCastellonApi
   end
 
   def llamada_padron(document_type, document_hash)
-    puts "$$$$$$$$$$$$$$$$$$"
-    puts "$$$$$$$$$$$$$$$$$$"
-    puts "dentro del padron"
     url = Rails.application.secrets.census_api_end_point
     params = { params: document_hash }.merge(header_auth_token)
     default_external_encoding = Encoding.default_external

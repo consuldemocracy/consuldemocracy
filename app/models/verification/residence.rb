@@ -15,7 +15,8 @@ class Verification::Residence
   validates :postal_code, length: { is: 5 }
 
   validate :allowed_age
-  validate :document_number_uniqueness
+  #TODO: Para poder reverificar la residencia no podemos hacer esta comprobación.
+  #validate :document_number_uniqueness
 
   def initialize(attrs = {})
     self.date_of_birth = parse_date('date_of_birth', attrs)
