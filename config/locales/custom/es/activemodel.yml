@@ -1,0 +1,5 @@
+es:
+  activemodel:
+    attributes:
+      officing/residence:
+        postal_code: "Código postal"
