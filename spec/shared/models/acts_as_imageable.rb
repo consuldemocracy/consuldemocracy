@@ -69,8 +69,9 @@ shared_examples "acts as imageable" do |imageable_factory|
   it "image destroy should remove image from file storage" do
     image.save
     image_url = image.attachment.url
+    new_url = '/attachments/original/missing.png'
 
-    expect{ image.attachment.destroy }.to change{ image.attachment.url }.from(image_url).to("/attachments/original/missing.png")
+    expect{ image.attachment.destroy }.to change{ image.attachment.url }.from(image_url).to(new_url)
   end
 
 end
