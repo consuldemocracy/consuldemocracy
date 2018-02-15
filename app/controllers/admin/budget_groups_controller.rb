@@ -1,9 +1,9 @@
 class Admin::BudgetGroupsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
+  before_action :load_budget_by_budget_id
 
   def create
-    @budget = Budget.find params[:budget_id]
     @budget.groups.create(budget_group_params)
     @groups = @budget.groups.includes(:headings)
   end

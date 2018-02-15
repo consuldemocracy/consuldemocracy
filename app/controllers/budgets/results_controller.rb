@@ -1,6 +1,6 @@
 module Budgets
   class ResultsController < ApplicationController
-    before_action :load_budget
+    before_action :load_budget_by_budget_id
     before_action :load_heading
 
     load_and_authorize_resource :budget
@@ -11,10 +11,6 @@ module Budgets
     end
 
     private
-
-      def load_budget
-        @budget = Budget.find_by(id: params[:budget_id])
-      end
 
       def load_heading
         @heading = if params[:heading_id].present?

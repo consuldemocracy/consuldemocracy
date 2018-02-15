@@ -5,7 +5,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   feature_flag :budgets
 
   before_action :restrict_access_to_assigned_items, only: [:show, :edit, :valuate]
-  before_action :load_budget
+  before_action :load_budget_by_budget_id
   before_action :load_investment, only: [:show, :edit, :valuate]
 
   has_orders %w{oldest}, only: [:show, :edit]
@@ -63,12 +63,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       resource_model.parameterize('_')
     end
 
-    def load_budget
-      @budget = Budget.find(params[:budget_id])
-    end
-
     def load_investment
-      @investment = @budget.investments.find params[:id]
+      load_investment_by_id
     end
 
     def heading_filters

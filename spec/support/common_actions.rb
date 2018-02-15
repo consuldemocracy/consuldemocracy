@@ -86,7 +86,7 @@ module CommonActions
                        elsif commentable.is_a?(Poll)
                          poll_path(commentable)
                        else
-                         budget_investment_path(commentable, budget_id: commentable.budget_id)
+                         budget_investment_path(commentable.budget, commentable)
                        end
     visit commentable_path
 

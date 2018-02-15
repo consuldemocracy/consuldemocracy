@@ -9,8 +9,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
                  valuation_finished winners},
               only: [:index, :toggle_selection])
 
-  before_action :load_budget
-  before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
+  before_action :load_budget_by_budget_id
+  before_action :load_investment_by_id, only: [:show, :edit, :update, :toggle_selection]
   before_action :load_ballot, only: [:show, :index]
   before_action :load_investments, only: [:index, :toggle_selection]
 
@@ -94,14 +94,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       params.require(:budget_investment)
             .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
                     :valuation_tag_list, :incompatible, :selected, valuator_ids: [])
-    end
-
-    def load_budget
-      @budget = Budget.includes(:groups).find(params[:budget_id])
-    end
-
-    def load_investment
-      @investment = Budget::Investment.by_budget(@budget).find(params[:id])
     end
 
     def load_admins
