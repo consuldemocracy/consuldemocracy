@@ -33,8 +33,13 @@ class Verification::Residence
   private
 
     def retrieve_census_data
+
       # @census_data = CensusCaller.new.call(document_type, document_number)
+      puts "@@@@@@@@@"
+      puts "llamada a padron de castellón"
       @census_data = PadronCastellonApi.new.call(document_type, document_number)
+      puts @census_data.inspect
+
     end
 
     def residency_valid?

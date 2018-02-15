@@ -83,14 +83,6 @@ module Abilities
 
 
           can :create, Budget::Investment do |investment|
-            puts "$$$$$$$$$$$$$$$$$$$$"
-            puts "$$$$$$$$$$$$$$$$$$$$"
-            puts "$$$$$$$$$$$$$$$$$$$$"
-            puts investment.inspect
-            puts "$$$$$$$$$$$$$$$$$$$$"
-            puts "$$$$$$$$$$$$$$$$$$$$"
-            puts "$$$$$$$$$$$$$$$$$$$$"
-            puts investment.inspect
             if investment.heading_id
               heading_brothers = investment.heading.group.heading_ids
               investment_brothers_group = Budget::Investment.where(author_id: user.id).where(heading_id: heading_brothers)
