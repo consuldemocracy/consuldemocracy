@@ -877,6 +877,7 @@ en:
       private_activity: This user decided to keep the activity list private.
       send_private_message: "Send private message"
       delegation: List of recommended investments projects
+      delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
       send_notification: "Send notification"
       retire: "Retire"
