@@ -15,12 +15,6 @@
 // 01. Utils
 // ---------
 
-$grey-heading: #e6e6e6;
-$border-dark:  darken($border, 10%);
-
-.grey-heading {
-  background: $grey-heading;
-}
 
 // 02. Hero
 // --------
@@ -37,13 +31,6 @@ $border-dark:  darken($border, 10%);
       padding-right: $line-height / 4;
       vertical-align: text-bottom;
     }
-  }
-
-  .debate-add-info {
-    border-top: 1px solid $border-dark;
-    margin-top: $line-height;
-    padding-top: $line-height;
-
   }
 
   .title {
