@@ -482,13 +482,8 @@ feature 'Admin budget investments' do
       expect(page).to have_content('Some investment')
       expect(page).to have_content('Some other investment')
 
-<<<<<<< HEAD
-      fill_in 'title_or_id', with: first_investment.id
-      click_button 'Search'
-=======
       fill_in 'title_or_id', with: 999999
       click_button I18n.t("admin.budget_investments.index.buttons.filter")
->>>>>>> 901dbf6... Fixed test for the refactored form
 
       expect(page).to have_content('Some other investment')
       expect(page).not_to have_content('Some investment')
