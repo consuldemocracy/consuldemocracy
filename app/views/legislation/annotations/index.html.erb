@@ -14,7 +14,7 @@
     <% @annotations.each do |annotation| %>
       <div class="comment">
         <strong><%= t('.comments_about') %></strong>
-        <span class="pull-right">
+        <span class="float-right">
           <%= link_to legislation_process_draft_version_path(@process, @draft_version, anchor: "annotation-id-#{annotation.id}") do %>
             <span><%= t('.see_in_context') %></span> <span class="icon-expand" aria-hidden="true"></span>
           <% end %>

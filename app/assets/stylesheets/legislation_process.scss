@@ -1,22 +1,17 @@
 // Table of Contents
 //
-// 01. Utils
-// 02. Hero
-// 03. Legislation process navigation
-// 04. Debate list
-// 05. Debate quiz
-// 06. Legislation draft
-// 07. Legislation allegations
-// 08. Legislation changes
-// 09. Legislation comments
-// 10. Legislation draft comment
+// 01. Hero
+// 02. Legislation process navigation
+// 03. Debate list
+// 04. Debate quiz
+// 05. Legislation allegations
+// 06. Legislation changes
+// 07. Legislation comments
+// 08. Legislation draft comment
 //
 
-// 01. Utils
-// ---------
 
-
-// 02. Hero
+// 01. Hero
 // --------
 
 .legislation-hero {
@@ -25,11 +20,14 @@
     list-style: none;
     margin-left: 0;
 
-    li::before {
-      color: #8aa8be;
-      content: '■';
-      padding-right: $line-height / 4;
-      vertical-align: text-bottom;
+    li {
+
+      &::before {
+        color: #8aa8be;
+        content: '■';
+        padding-right: $line-height / 4;
+        vertical-align: text-bottom;
+      }
     }
   }
 
@@ -38,40 +36,12 @@
     text-transform: uppercase;
   }
 
-  .description {
-
-    li {
-
-      p {
-        display: inline;
-      }
-    }
-  }
-
-  .button-subscribe {
-    margin-top: $line-height;
-
-    @include breakpoint(medium) {
-      margin-top: $line-height * 2;
-      padding: rem-calc(10) rem-calc(20);
-    }
-
-    h3 {
-      margin-bottom: 0;
-    }
-
-    p {
-      font-size: $small-font-size;
-      margin-bottom: 0;
-    }
-
-    &:hover h3 {
-      color: #fff;
-    }
+  .description li p {
+    display: inline;
   }
 }
 
-// 03. Legislation process navigation
+// 02. Legislation process navigation
 // ----------------------------------
 
 .legislation-process-categories {
@@ -89,12 +59,12 @@
     }
 
     li {
+      border-bottom: 2px solid transparent;
       cursor: pointer;
       display: inline-block;
       margin-bottom: $line-height;
       margin-right: $line-height;
       transition: all 0.4s;
-      border-bottom: 2px solid transparent;
 
       @include breakpoint(medium) {
         margin-bottom: 0;
@@ -135,7 +105,7 @@
   }
 }
 
-// 04. Debate list
+// 03. Debate list
 // ----------------
 
 .debate-chooser {
@@ -182,7 +152,7 @@
   }
 }
 
-// 05. Debate quiz
+// 04. Debate quiz
 // ---------------
 
 .debate-questions {
@@ -311,90 +281,8 @@
   }
 }
 
-// 06. Legislation draft
-// ---------------------
-
-.debate-draft {
-  padding: rem-calc(160) rem-calc(32) rem-calc(240);
-  display: block;
-  background: #f2f2f2;
-
-  button {
-    height: rem-calc(90);
-
-    h3 {
-      margin-bottom: 0;
-    }
-
-    p {
-      margin-bottom: 0;
-      font-size: $small-font-size;
-    }
-  }
-}
-
-// 07. Legislation allegations
+// 05. Legislation allegations
 // ---------------------------
-
-.legislation-allegation {
-  padding-top: rem-calc(16);
-
-  .headline {
-    margin-bottom: 0;
-
-    .headline-small {
-      padding-top: rem-calc(12);
-    }
-  }
-
-  .button-circle {
-    line-height: 0;
-    padding: 0;
-    width: rem-calc(30);
-    height: rem-calc(30);
-    border-radius: 50%;
-
-    span {
-      padding-left: rem-calc(1);
-
-      &::before {
-        line-height: 1.55;
-      }
-    }
-  }
-
-  .icon-checkmark-circle {
-    font-size: rem-calc(24);
-    vertical-align: bottom;
-    color: $text-medium;
-    margin-right: rem-calc(8);
-  }
-
-  .button-subscribed {
-    margin-top: rem-calc(16);
-    border: 1px solid #d1d1d1;
-    background: #f2f2f2;
-
-    @include breakpoint(medium) {
-      padding: rem-calc(10) rem-calc(20);
-    }
-
-    h3 {
-      display: inline-block;
-      color: $text;
-      margin-bottom: 0;
-    }
-
-    p {
-      margin-bottom: 0;
-      font-size: $small-font-size;
-    }
-
-    &:hover h3 {
-      color: $text;
-    }
-  }
-}
 
 .draft-panels {
   position: relative;
@@ -891,7 +779,7 @@
   }
 }
 
-// 08. Legislation changes
+// 06. Legislation changes
 // -----------------
 
 .legislation-changes {
@@ -942,14 +830,10 @@
   }
 }
 
-// 09. Legislation comments
+// 07. Legislation comments
 // -----------------
 
 .legislation-comments {
-
-  .pull-right {
-    float: right;
-  }
 
   .comment-section {
     background: #fafafa;
@@ -991,17 +875,13 @@
   }
 }
 
-// 10. Legislation draft comment
+// 08. Legislation draft comment
 // -----------------
 
 .legislation-comment {
 
   .annotation-share-comment {
     margin-bottom: rem-calc(32);
-  }
-
-  .pull-right {
-    float: right;
   }
 
   .comment-section {
