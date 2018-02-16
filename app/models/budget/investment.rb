@@ -115,14 +115,15 @@ class Budget
       budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       results = Investment.by_budget(budget)
 
-      results = limit_results(budget, params, results)                if params[:max_per_heading].present?
-      results = results.where(group_id: params[:group_id])            if params[:group_id].present?
-      results = results.by_tag(params[:tag_name])                     if params[:tag_name].present?
-      results = results.by_heading(params[:heading_id])               if params[:heading_id].present?
-      results = results.by_valuator(params[:valuator_id])             if params[:valuator_id].present?
-      results = results.by_valuator_group(params[:valuator_group_id]) if params[:valuator_group_id].present?
-      results = results.by_admin(params[:administrator_id])           if params[:administrator_id].present?
-      results = advanced_filters(params, results)                     if params[:advanced_filters].present?
+      results = limit_results(budget, params, results)                     if params[:max_per_heading].present?
+      results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
+      results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
+      results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?
+      results = results.by_valuator(params[:valuator_id])                  if params[:valuator_id].present?
+      results = results.by_valuator_group(params[:valuator_group_id])      if params[:valuator_group_id].present?
+      results = results.by_admin(params[:administrator_id])                if params[:administrator_id].present?
+      results = advanced_filters(params, results)                          if params[:advanced_filters].present?
+      results = search_by_title_or_id(params[:title_or_id].strip, results) if params[:title_or_id]
 
       results = results.send(current_filter)                        if current_filter.present?
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
@@ -149,14 +150,11 @@ class Budget
       results.where("budget_investments.id IN (?)", ids)
     end
 
-    def self.search_by_title_or_id(params)
-      budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
-      return [] unless budget.present?
-
-      if params[:title_or_id].to_i.to_s == params[:title_or_id]
-        budget&.investments.where(id: params[:title_or_id])
+    def self.search_by_title_or_id(title_or_id, results)
+      if title_or_id =~ /^[0-9]+$/
+        results.where(id: title_or_id)
       else
-        budget&.investments.where("title ILIKE ?", "%#{params[:title_or_id].strip}%")
+        results.where("title ILIKE ?", "%#{title_or_id}%")
       end
     end
 
