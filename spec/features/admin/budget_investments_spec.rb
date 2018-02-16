@@ -453,6 +453,140 @@ feature 'Admin budget investments' do
       end
     end
 
+    scenario "Combination of checkbox with text search", :js do
+      user = create(:user, username: 'Admin 1')
+      administrator = create(:administrator, user: user)
+
+      create(:budget_investment, budget: budget, title: 'Educate the children',
+                                 id: 20, administrator: administrator)
+      create(:budget_investment, budget: budget, title: 'More schools',
+                                 id: 10, administrator: administrator)
+      create(:budget_investment, budget: budget, title: 'More hospitals')
+
+
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
+
+      expect(page).to have_css(".budget_investment", count: 3)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).to have_content("More hospitals")
+
+      select "Admin 1", from: "administrator_id"
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 2)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+
+      fill_in 'title_or_id', with: 20
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 1)
+      expect(page).to have_content("Educate the children")
+      expect(page).not_to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+
+      expect(page).to have_content('Selected')
+
+    end
+
+    scenario "Combination of select with text search", :js do
+      create(:budget_investment, budget: budget, title: 'Educate the children',
+                                 feasibility: 'feasible', id: 20,
+                                 valuation_finished: true)
+      create(:budget_investment, budget: budget, title: 'More schools',
+                                 feasibility: 'feasible', id: 10,
+                                 valuation_finished: true)
+      create(:budget_investment, budget: budget, title: 'More hospitals')
+
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
+
+      expect(page).to have_css(".budget_investment", count: 3)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).to have_content("More hospitals")
+
+      click_link 'Advanced filters'
+
+      page.check('advanced_filters_feasible')
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 2)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+
+      fill_in 'title_or_id', with: 20
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 1)
+      expect(page).to have_content("Educate the children")
+      expect(page).not_to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+
+      expect(page).to have_content('Selected')
+
+    end
+
+    scenario "Combination of checkbox with text search and checkbox", :js do
+      user = create(:user, username: 'Admin 1')
+      administrator = create(:administrator, user: user)
+
+      create(:budget_investment, budget: budget, title: 'Educate the children',
+                                 feasibility: 'feasible', id: 20,
+                                 valuation_finished: true,
+                                 administrator: administrator)
+      create(:budget_investment, budget: budget, title: 'More schools',
+                                 feasibility: 'feasible', id: 10,
+                                 valuation_finished: true,
+                                 administrator: administrator)
+      create(:budget_investment, budget: budget, title: 'More hospitals',
+                                 administrator: administrator)
+      create(:budget_investment, budget: budget, title: 'More hostals')
+
+
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
+
+      expect(page).to have_css(".budget_investment", count: 4)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).to have_content("More hospitals")
+      expect(page).to have_content("More hostals")
+
+      select "Admin 1", from: "administrator_id"
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 3)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).to have_content("More hospitals")
+      expect(page).not_to have_content("More hostals")
+
+      click_link 'Advanced filters'
+
+      page.check('advanced_filters_feasible')
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 2)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+      expect(page).not_to have_content("More hostals")
+
+      fill_in 'title_or_id', with: 20
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 1)
+      expect(page).to have_content("Educate the children")
+      expect(page).not_to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+      expect(page).not_to have_content("More hostals")
+
+      expect(page).to have_content('Selected')
+
+    end
+
   end
 
   context 'Search' do
