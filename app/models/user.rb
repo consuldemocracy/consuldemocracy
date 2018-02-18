@@ -64,6 +64,10 @@ class User < ActiveRecord::Base
   scope :public_for_api, -> { all }
   scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).uniq }
   scope :by_authors,     ->(author_ids) { where("users.id IN (?)", author_ids) }
+  scope :by_username_email_or_document_number, ->(search_string) do
+    string = "%#{search_string}%"
+    where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", string, string, string)
+  end
 
   before_validation :clean_document_number
 
