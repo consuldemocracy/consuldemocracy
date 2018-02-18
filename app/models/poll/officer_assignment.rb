@@ -14,6 +14,9 @@ class Poll
 
     scope :voting_days, -> { where(final: false) }
     scope :final,       -> { where(final: true) }
+    scope :by_officer_and_poll, ->(officer_id, poll_id) do
+      where("officer_id = ? AND poll_booth_assignments.poll_id = ?", officer_id, poll_id)
+    end
 
     before_create :log_user_data
 
