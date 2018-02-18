@@ -8,7 +8,8 @@ class Admin::ProposalsController < Admin::BaseController
   before_action :load_proposal, only: [:confirm_hide, :restore]
 
   def index
-    @proposals = Proposal.only_hidden.send(@current_filter).order(hidden_at: :desc).page(params[:page])
+    @proposals = Proposal.only_hidden.send(@current_filter).order(hidden_at: :desc)
+                         .page(params[:page])
   end
 
   def confirm_hide

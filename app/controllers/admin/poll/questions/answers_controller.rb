@@ -47,7 +47,9 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
   private
 
     def answer_params
-      params.require(:poll_question_answer).permit(:title, :description, :question_id, documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy])
+      documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
+      attributes = [:title, :description, :question_id, documents_attributes: documents_attributes]
+      params.require(:poll_question_answer).permit(*attributes)
     end
 
     def load_answer
