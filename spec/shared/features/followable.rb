@@ -63,7 +63,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
         click_link("Follow #{followable.model_name.human.downcase}")
       end
 
-      expect(page).to have_content strip_tags(notice_html_message)
+      expect(page).to have_content strip_tags(create_notice_message)
     end
 
     scenario "Display unfollow button when user already following" do
