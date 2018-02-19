@@ -73,7 +73,27 @@ en:
       accepting:
         title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
         description: "Presenta tus proyectos a los presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
-        social: "#ParticipativosMadrid18: Tú decides a qué proyectos ciudadanos dedicar 100 millones de euros del presupuesto municipal."
+      selecting:
+        title: "Apoya proyectos de los presupuestos participativos de Madrid"
+        description: "Entra en Decide Madrid y apoya las ideas para mejorar Madrid. Los proyectos más apoyados de presupuestos participativos pueden pasar a la votación final."
+      valuating:
+        title: "Evaluación de proyectos de los presupuestos participativos"
+        description: "La votación final de proyectos de los presupuestos participativos de Madrid empieza el 15 de mayo. ¡Prepárate para decidir el destino de 100 millones!"
+      balloting:
+        title: "Vota los proyectos finalistas de presupuestos participativos"
+        description: "Vota en Decide Madrid los proyectos que quieres que haga el Ayuntamiento en tu barrio y en Madrid. ¡Decide a qué ideas dedicar 100 millones de euros!"
+      finished:
+        title: "Resultados de los presupuestos participativos 2018"
+        description: "La ciudadanía ha decidido qué hará el Ayuntamiento con 100 millones de euros reservados a proyectos ciudadanos. Entérate de los proyectos ganadores."
+      reviewing:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+      publishing_prices:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+      reviewing_ballots:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
   social_share:
     polls_show:
       title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"
