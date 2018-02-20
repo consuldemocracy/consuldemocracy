@@ -7,7 +7,7 @@ class UserSegments
                 winner_investment_authors)
 
   def self.all_users
-    User.newsletter.active
+    User.active
   end
 
   def self.proposal_authors

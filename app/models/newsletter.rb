@@ -14,7 +14,7 @@ class Newsletter < ActiveRecord::Base
   validates_format_of :from, :with => /@/
 
   def list_of_recipients
-    UserSegments.send(segment_recipient)
+    UserSegments.send(segment_recipient).newsletter
   end
 
   def draft?
