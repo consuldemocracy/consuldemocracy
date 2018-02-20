@@ -10,7 +10,7 @@ feature "Admin newsletter emails" do
 
   scenario "Show" do
     newsletter = create(:newsletter, subject: "This is a subject",
-                                     segment_recipient: 1,
+                                     segment_recipient: 'all_users',
                                      from: "no-reply@consul.dev",
                                      body: "This is a body")
 
@@ -116,14 +116,14 @@ feature "Admin newsletter emails" do
   end
 
   scenario "Select list of users to send newsletter" do
-    Newsletter.segment_recipients.each_key do |user_group|
+    UserSegments::SEGMENTS.each do |user_segment|
       visit new_admin_newsletter_path
 
       fill_in_newsletter_form
-      select I18n.t("admin.segment_recipient.#{user_group}"), from: 'newsletter_segment_recipient'
+      select I18n.t("admin.segment_recipient.#{user_segment}"), from: 'newsletter_segment_recipient'
       click_button "Create Newsletter"
 
-      expect(page).to have_content(I18n.t("admin.segment_recipient.#{user_group}"))
+      expect(page).to have_content(I18n.t("admin.segment_recipient.#{user_segment}"))
     end
   end
 end

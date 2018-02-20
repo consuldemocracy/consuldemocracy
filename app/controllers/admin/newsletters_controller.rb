@@ -56,8 +56,6 @@ class Admin::NewslettersController < Admin::BaseController
   private
 
     def newsletter_params
-      newsletter_params = params.require(:newsletter)
-                                .permit(:subject, :segment_recipient, :from, :body)
-      newsletter_params.merge(segment_recipient: newsletter_params[:segment_recipient].to_i)
+      params.require(:newsletter).permit(:subject, :segment_recipient, :from, :body)
     end
 end
