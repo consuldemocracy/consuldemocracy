@@ -6,15 +6,11 @@ describe UserSegments do
   let(:user3) { create(:user) }
 
   describe "#all_users" do
-    it "returns all active users with newsletter enabled" do
-      active_user1 = create(:user, newsletter: true)
-      active_user2 = create(:user, newsletter: true)
-      active_user3 = create(:user, newsletter: false)
+    it "returns all active users enabled" do
+      active_user = create(:user)
       erased_user  = create(:user, erased_at: Time.current)
 
-      expect(described_class.all_users).to include active_user1
-      expect(described_class.all_users).to include active_user2
-      expect(described_class.all_users).not_to include active_user3
+      expect(described_class.all_users).to include active_user
       expect(described_class.all_users).not_to include erased_user
     end
   end
