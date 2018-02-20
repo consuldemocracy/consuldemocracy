@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Missing polls button on help page https://github.com/consul/consul/pull/2452
 - New legislation processes section on help page https://github.com/consul/consul/pull/2452
 - Add alert message when a user deletes an investment project from "My activity" https://github.com/consul/consul/pull/2385
+- Admin newsletter emails https://github.com/consul/consul/pull/2462
 
 ### Changed
 - Show investment links only on phase balloting or later https://github.com/consul/consul/pull/2386
