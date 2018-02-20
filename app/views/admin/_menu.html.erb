@@ -195,11 +195,16 @@
       <% end %>
     </li>
 
-    <li class="section-title" <%= "class=active" if controller_name == "newsletter" %>>
-      <%= link_to admin_newsletters_path do %>
+    <li class="section-title" <%= "class=active" if controller_name == "newsletters" %>>
+      <a href="#">
         <span class="icon-zip"></span>
-        <%= t("admin.menu.newsletter") %>
-      <% end %>
+        <strong><%= t("admin.menu.emails") %></strong>
+      </a>
+      <ul id="emails_menu" <%= "class=is-active" if controller_name == "newsletters" %>>
+        <li <%= "class=active" if controller_name == "newsletters" %>>
+          <%= link_to t("admin.menu.newsletters"), admin_newsletters_path %>
+        </li>
+      </ul>
     </li>
 
     <li class="section-title" <%= "class=active" if controller_name == "stats" %>>

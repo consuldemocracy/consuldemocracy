@@ -1046,4 +1046,11 @@ LOREM_IPSUM
   factory :related_content do
   end
 
+  factory :newsletter do
+    sequence(:subject) { |n| "Subject #{n}" }
+    segment_recipient [1, 2, 3, 4, 5, 6].sample
+    sequence(:from) { |n| "noreply#{n}@consul.dev" }
+    sequence(:body) { |n| "Body #{n}" }
+  end
+
 end
