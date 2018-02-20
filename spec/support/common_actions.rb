@@ -76,25 +76,8 @@ module CommonActions
   def comment_on(commentable, user = nil)
     user ||= create(:user)
 
-    login_as(user)
-    commentable_path = if commentable.is_a?(Proposal)
-                         proposal_path(commentable)
-                       elsif commentable.is_a?(Debate)
-                         debate_path(commentable)
-                       elsif commentable.is_a?(Topic)
-                         community_topic_path(commentable, community_id: commentable.community_id)
-                       elsif commentable.is_a?(Poll)
-                         poll_path(commentable)
-                       else
-                         budget_investment_path(commentable, budget_id: commentable.budget_id)
-                       end
-    visit commentable_path
-
-    comment_field = "comment-body-#{commentable.class.name.parameterize('_')}_#{commentable.id}"
-    fill_in comment_field, with: 'Have you thought about...?'
-    click_button 'Publish comment'
-
-    expect(page).to have_content 'Have you thought about...?'
+    comment = create(:comment, commentable: commentable, user: user)
+    CommentNotifier.new(comment: comment).process
   end
 
   def reply_to(original_user, manuela = nil)
