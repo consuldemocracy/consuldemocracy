@@ -56,6 +56,30 @@ en:
     welcome_index:
       title: "Decide Madrid: portal de participación ciudadana de Madrid"
       description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
+      accepting:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Apoya proyectos de los presupuestos participativos 2018 en Decide Madrid para que pasen a la votación final. Decide qué se hace con 100 millones de euros."
+      selecting:
+        title: "Participa en los presupuestos participativos de Madrid"
+        description: "Entra en Decide Madrid y apoya las ideas para mejorar Madrid. Los proyectos más apoyados de presupuestos participativos pueden pasar a la votación final."
+      valuating:
+        title: "Participa en los presupuestos participativos de Madrid"
+        description: "Prepárate para decidir el destino de 100 millones de euros del presupuesto municipal. La votación final de proyectos se abrirá el 15 de mayo de 2018."
+      balloting:
+        title: "Decide 100 millones en los presupuestos participativos"
+        description: "Estamos en la fase decisiva de los  presupuestos participativos 2018 del Ayuntamiento de Madrid. Vota los proyectos planteados por la ciudadanía."
+      finished:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "Entérate de qué proyectos se harán con los presupuestos participativos en Decide Madrid. Es la web de participación ciudadana del Ayuntamiento de Madrid. "
+      reviewing:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
+      publishing_prices:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
+      reviewing_ballots:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
     proposals:
       title: "Propuestas ciudadanas de Madrid - Decide Madrid"
       description: "Participa activamente en Decide Madrid creando y votando propuestas ciudadanas que quieras que el Ayuntamiento de Madrid lleve a cabo."

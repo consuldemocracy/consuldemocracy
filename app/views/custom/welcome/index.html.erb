@@ -1,5 +1,11 @@
-<% provide :title, t("meta_tags.welcome_index.title") %>
-<% provide :meta_description, t("meta_tags.welcome_index.description") %>
+<% if current_budget %>
+  <% provide :title, t("meta_tags.welcome_index.#{current_budget.phase}.title") %>
+  <% provide :meta_description, t("meta_tags.welcome_index.#{current_budget.phase}.description") %>
+<% else %>
+  <% provide :title, t("meta_tags.welcome_index.title") %>
+  <% provide :meta_description, t("meta_tags.welcome_index.description") %>
+<% end %>
+
 <% provide :tracking_page_number, "23" %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: root_url %>
