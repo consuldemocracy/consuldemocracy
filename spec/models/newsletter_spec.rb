@@ -17,6 +17,11 @@ describe Newsletter do
     expect(newsletter).not_to be_valid
   end
 
+  it 'is not valid with an inexistent user segment for segment_recipient' do
+    newsletter.segment_recipient = 'invalid_user_segment_name'
+    expect(newsletter).not_to be_valid
+  end
+
   it 'is not valid without a from' do
     newsletter.from = nil
     expect(newsletter).not_to be_valid
@@ -30,5 +35,18 @@ describe Newsletter do
   it 'validates from attribute email format' do
     newsletter.from = "this_is_not_an_email"
     expect(newsletter).not_to be_valid
+  end
+
+  describe '#list_of_recipients' do
+    before do
+      create(:user, newsletter: true, username: 'newsletter_user')
+      create(:user, newsletter: false)
+      newsletter.update(segment_recipient: 'all_users')
+    end
+
+    it 'returns list of recipients excluding users with disabled newsletter' do
+      expect(newsletter.list_of_recipients.count).to eq(1)
+      expect(newsletter.list_of_recipients.first.username).to eq('newsletter_user')
+    end
   end
 end
