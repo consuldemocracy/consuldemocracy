@@ -257,6 +257,10 @@ es:
             attachment:
               min_image_width: "La imagen debe tener al menos %{required_min_width}px de largo"
               min_image_height: "La imagen debe tener al menos %{required_min_height}px de alto"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "El segmento de usuarios es inválido"
         map_location:
           attributes:
             map:
