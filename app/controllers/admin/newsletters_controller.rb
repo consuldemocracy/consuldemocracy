@@ -44,15 +44,6 @@ class Admin::NewslettersController < Admin::BaseController
     redirect_to admin_newsletters_path, notice: t("admin.newsletters.delete_success")
   end
 
-  def users
-    zip = NewsletterZip.new('emails')
-    zip.create
-
-    File.open(File.join(zip.path), 'r') do |f|
-      send_data f.read, type: 'application/zip', filename: "emails.zip"
-    end
-  end
-
   def deliver
     @newsletter = Newsletter.find(params[:id])
     Mailer.newsletter(@newsletter).deliver_later
