@@ -465,7 +465,8 @@ en:
       administrators: Administrators
       managers: Managers
       moderators: Moderators
-      newsletter: Newsletters
+      emails: Sending of emails
+      newsletters: Newsletters
       valuators: Valuators
       poll_officers: Poll officers
       polls: Polls
@@ -514,10 +515,45 @@ en:
         delete: Delete
       search:
         title: 'Moderators: User search'
+    segment_recipient:
+      all_users: All users
+      proposal_authors: Proposal authors
+      investment_authors: Investment authors in the current budget
+      feasible_and_undecided_investment_authors: Authors of feasible or undecided investments in the current budget
+      selected_investment_authors: Authors of selected investments in the current budget
+      winner_investment_authors: Authors of winner investments in the current budget
     newsletters:
+      create_success: Newsletter created successfully
+      update_success: Newsletter updated successfully
+      send_success: Newsletter sent successfully
+      delete_success: Newsletter deleted successfully
       index:
         title: Newsletters
-        button: Download zip with users list
+        new_newsletter: New newsletter
+        subject: Subject
+        segment_recipient: Recipients
+        sent: Sent
+        actions: Actions
+        draft: Draft
+        edit: Edit
+        delete: Delete
+        preview: Preview
+        empty_newsletters: There are no newsletters to show
+      new:
+        title: New newsletter
+      edit:
+        title: Edit newsletter
+      show:
+        title: Newsletter preview
+        send: Send
+        affected_users: (%{n} affected users)
+        sent_at: Sent at
+        subject: Subject
+        segment_recipient: Recipients
+        from: From
+        body: Email content
+        body_help_text: This is how the users will see the email
+        send_alert: Are you sure you want to send this newsletter to %{n} users?
     valuators:
       index:
         title: Valuators
