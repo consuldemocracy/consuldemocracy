@@ -37,6 +37,9 @@ es:
       manager:
         one: "Gestor"
         other: "Gestores"
+      newsletter:
+        one: "Newsletter"
+        other: "Newsletters"
       vote:
         one: "Voto"
         other: "Votos"
@@ -230,6 +233,11 @@ es:
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
+      newsletter:
+        segment_recipient: Destinatarios
+        subject: Asunto
+        from: Enviado por
+        body: Contenido del email
     errors:
       models:
         user:

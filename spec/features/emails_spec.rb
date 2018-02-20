@@ -491,6 +491,32 @@ feature 'Emails' do
 
   end
 
+  context "Newsletter" do
+
+    scenario "Send newsletter email to selected users" do
+      admin = create(:administrator)
+      login_as(admin.user)
+
+      visit new_admin_newsletter_path
+      fill_in_newsletter_form
+      click_button "Create Newsletter"
+
+      expect(page).to have_content "Newsletter created successfully"
+
+      click_link "Send"
+
+      UserSegments.send(Newsletter.first.segment_recipient).each do |user|
+        expect(unread_emails_for(user.email).count).to eq 1
+      end
+
+      email = open_last_email
+      expect(email).to have_subject('This is a different subject')
+      expect(email).to deliver_from('no-reply@consul.dev')
+      expect(email.body.encoded).to include('This is a different body')
+    end
+
+  end
+
   context "Users without email" do
     scenario "should not receive emails" do
       user = create(:user, :verified, email_on_comment: true)
@@ -504,5 +530,6 @@ feature 'Emails' do
 
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
+
   end
 end

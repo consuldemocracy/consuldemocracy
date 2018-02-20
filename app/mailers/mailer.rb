@@ -126,6 +126,15 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def newsletter(newsletter)
+    @newsletter = newsletter
+    @email_to = newsletter.list_of_recipients
+
+    @email_to.map(&:email).uniq.each do |recipient|
+      mail(to: recipient, from: @newsletter.from, subject: @newsletter.subject)
+    end
+  end
+
   private
 
   def with_user(user, &block)
