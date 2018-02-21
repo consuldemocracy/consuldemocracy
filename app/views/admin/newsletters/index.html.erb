@@ -19,7 +19,7 @@
           <%= newsletter.subject %>
         </td>
         <td>
-          <%= t("admin.segment_recipient.#{newsletter.segment_recipient}") %>
+          <%= segment_name(newsletter.segment_recipient) %>
         </td>
         <td>
           <% if newsletter.draft? %>

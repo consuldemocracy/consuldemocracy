@@ -10,8 +10,7 @@
       <%= t('admin.emails_download.index.download_segment_help_text') %>
     </p>
 
-    <%= select_tag :users_segment, options_for_select(UserSegments::SEGMENTS
-                                   .collect { |s| [t("admin.segment_recipient.#{s}"), s] }) %>
+    <%= select_tag :users_segment, options_for_select(user_segments_options) %>
 
     <div class="margin-top">
       <%= submit_tag t('admin.emails_download.index.download_emails_button'), class: "button" %>
