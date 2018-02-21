@@ -64,25 +64,31 @@ feature 'Admin budget investments' do
       admin = create(:administrator, user: create(:user, username: 'Gema'))
 
       budget_investment1.valuators << valuator1
-      budget_investment2.valuator_ids = [valuator1.id, valuator2.id]
-      budget_investment3.update(administrator_id: admin.id)
+      budget_investment2.valuators << valuator1
+      budget_investment2.valuators << valuator2
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 
       within("#budget_investment_#{budget_investment1.id}") do
         expect(page).to have_content("No admin assigned")
         expect(page).to have_content("Valuator Olga")
+        expect(page).to have_content("Without valuation groups")
       end
 
       within("#budget_investment_#{budget_investment2.id}") do
         expect(page).to have_content("No admin assigned")
         expect(page).to have_content("Valuator Olga")
         expect(page).to have_content("Valuator Miriam")
+        expect(page).to have_content("Without valuation groups")
       end
+
+      budget_investment3.update(administrator_id: admin.id)
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
 
       within("#budget_investment_#{budget_investment3.id}") do
         expect(page).to have_content("Gema")
         expect(page).to have_content("No valuators assigned")
+        expect(page).to have_content("Without valuation groups")
       end
     end
 
@@ -109,9 +115,9 @@ feature 'Admin budget investments' do
       end
 
       within("#budget_investment_#{budget_investment3.id}") do
-        expect(page).to have_content("No valuators assigned")
+        expect(page).to have_content("Without valuation groups")
       end
-    end
+end
 
     scenario "Filtering by budget heading", :js do
       group1 = create(:budget_group, name: "Streets", budget: budget)
@@ -977,7 +983,9 @@ feature 'Admin budget investments' do
                                                          price: 100)
       valuator = create(:valuator, user: create(:user, username: 'Rachel',
                                                        email: 'rachel@val.org'))
-      investment.valuators.push(valuator)
+      group = create(:valuator_group, name: "Test name")
+
+      investment.valuator_groups << group
 
       admin = create(:administrator, user: create(:user, username: 'Gema'))
       investment.update(administrator_id: admin.id)
@@ -1002,6 +1010,7 @@ feature 'Admin budget investments' do
 
       expect(page).to have_content investment.administrator.name
       expect(page).to have_content valuators
+      expect(page).to have_content group.name
       expect(page).to have_content price
       expect(page).to have_content I18n.t('shared.no')
     end
