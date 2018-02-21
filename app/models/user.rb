@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   attr_accessor :use_redeemable_code
   attr_accessor :login
 
-  scope :administrators, -> { joins(:administrators) }
+  scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :officials,      -> { where("official_level > 0") }
