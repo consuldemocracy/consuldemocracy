@@ -517,6 +517,7 @@ es:
         title: 'Moderadores: Búsqueda de usuarios'
     segment_recipient:
       all_users: Todos los usuarios
+      administrators: Administradores
       proposal_authors: Usuarios autores de propuestas
       investment_authors: Usuarios autores de proyectos de gasto en los actuales presupuestos
       feasible_and_undecided_investment_authors: Usuarios autores de proyectos de gasto viables o sin decidir en los actuales presupuestos
