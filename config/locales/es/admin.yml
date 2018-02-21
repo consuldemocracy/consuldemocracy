@@ -535,7 +535,6 @@ es:
       selected_investment_authors: Usuarios autores de proyectos de gasto seleccionadas en los actuales presupuestos
       winner_investment_authors: Usuarios autores de proyectos de gasto ganadoras en los actuales presupuestos
       invalid_recipients_segment: "El segmento de destinatarios es inválido"
-      beta_testers: "Beta testers"
     newsletters:
       create_success: Newsletter creada correctamente
       update_success: Newsletter actualizada correctamente

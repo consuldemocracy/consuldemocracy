@@ -13,3 +13,5 @@ es:
         compatibility:
           "true": "Compatible"
           "false": "Incompatible"
+    segment_recipient:
+      beta_testers: "Beta testers"
