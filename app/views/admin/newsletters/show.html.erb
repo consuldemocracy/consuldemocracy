@@ -27,7 +27,7 @@
     <div class="row">
       <div class="small-12 column">
         <strong><%= t("admin.newsletters.show.segment_recipient") %></strong><br>
-        <%= t("admin.segment_recipient.#{@newsletter.segment_recipient}") %>
+        <%= segment_name(@newsletter.segment_recipient) %>
         <%= t("admin.newsletters.show.affected_users", n: recipients_count) %>
       </div>
     </div>
