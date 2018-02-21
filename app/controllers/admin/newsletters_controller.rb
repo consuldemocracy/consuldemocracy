@@ -46,18 +46,21 @@ class Admin::NewslettersController < Admin::BaseController
 
   def deliver
     @newsletter = Newsletter.find(params[:id])
-    Mailer.newsletter(@newsletter).deliver_later
 
-    @newsletter.update(sent_at: Time.current)
+    if @newsletter.valid?
+      Mailer.newsletter(@newsletter).deliver_later
+      @newsletter.update(sent_at: Time.current)
+      flash[:notice] = t("admin.newsletters.send_success")
+    else
+      flash[:error] = t("admin.segment_recipient.invalid_recipients_segment")
+    end
 
-    redirect_to [:admin, @newsletter], notice: t("admin.newsletters.send_success")
+    redirect_to [:admin, @newsletter]
   end
 
   private
 
     def newsletter_params
-      newsletter_params = params.require(:newsletter)
-                                .permit(:subject, :segment_recipient, :from, :body)
-      newsletter_params.merge(segment_recipient: newsletter_params[:segment_recipient].to_i)
+      params.require(:newsletter).permit(:subject, :segment_recipient, :from, :body)
     end
 end
