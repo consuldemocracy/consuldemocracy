@@ -528,12 +528,14 @@ en:
         title: 'Moderators: User search'
     segment_recipient:
       all_users: All users
+      administrators: Administrators
       proposal_authors: Proposal authors
       investment_authors: Investment authors in the current budget
       feasible_and_undecided_investment_authors: Authors of feasible or undecided investments in the current budget
       selected_investment_authors: Authors of selected investments in the current budget
       winner_investment_authors: Authors of winner investments in the current budget
       invalid_recipients_segment: "Recipients user segment is invalid"
+      beta_testers: "Beta testers"
     newsletters:
       create_success: Newsletter created successfully
       update_success: Newsletter updated successfully

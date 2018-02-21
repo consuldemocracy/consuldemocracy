@@ -15,6 +15,18 @@ describe UserSegments do
     end
   end
 
+  describe "#administrators" do
+    it "returns all active administrators users" do
+      active_user = create(:user)
+      active_admin = create(:administrator).user
+      erased_user = create(:user, erased_at: Time.current)
+
+      expect(described_class.administrators).to include active_admin
+      expect(described_class.administrators).not_to include active_user
+      expect(described_class.administrators).not_to include erased_user
+    end
+  end
+
   describe "#proposal_authors" do
     it "returns users that have created a proposal" do
       proposal = create(:proposal, author: user1)
