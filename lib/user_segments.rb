@@ -1,5 +1,6 @@
 class UserSegments
   SEGMENTS = %w(all_users
+                administrators
                 proposal_authors
                 investment_authors
                 feasible_and_undecided_investment_authors
@@ -8,6 +9,10 @@ class UserSegments
 
   def self.all_users
     User.active
+  end
+
+  def self.administrators
+    all_users.administrators
   end
 
   def self.proposal_authors
