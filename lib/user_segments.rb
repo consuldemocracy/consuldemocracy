@@ -1,4 +1,11 @@
 class UserSegments
+  SEGMENTS = %w(all_users
+                proposal_authors
+                investment_authors
+                feasible_and_undecided_investment_authors
+                selected_investment_authors
+                winner_investment_authors)
+
   def self.all_users
     User.newsletter.active
   end
