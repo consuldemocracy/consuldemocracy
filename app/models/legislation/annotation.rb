@@ -2,6 +2,10 @@ class Legislation::Annotation < ActiveRecord::Base
   COMMENTS_PAGE_SIZE = 5
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
+  include Linkable
+  nested_linkable_with [:process, :draft_version],
+                       route: 'legislation_process_draft_version_annotation'
+  has_one :process, through: :draft_version
 
   serialize :ranges, Array
 

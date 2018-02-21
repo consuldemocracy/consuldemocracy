@@ -1,6 +1,7 @@
 class Poll::Question < ActiveRecord::Base
   include Measurable
   include Searchable
+  include Linkable
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases

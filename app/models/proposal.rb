@@ -20,6 +20,7 @@ class Proposal < ActiveRecord::Base
                accepted_content_types: [ "application/pdf" ]
   include EmbedVideosHelper
   include Relationable
+  include Linkable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -71,10 +72,6 @@ class Proposal < ActiveRecord::Base
   scope :unsuccessful,             -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
   scope :public_for_api,           -> { all }
   scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
-
-  def url
-    proposal_path(self)
-  end
 
   def self.recommendations(user)
     tagged_with(user.interests, any: true)

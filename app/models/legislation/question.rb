@@ -3,6 +3,9 @@ class Legislation::Question < ActiveRecord::Base
   include ActsAsParanoidAliases
   include Notifiable
 
+  include Linkable
+  nested_linkable_with :process, route: 'legislation_process_question'
+
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :process, class_name: 'Legislation::Process', foreign_key: 'legislation_process_id'
 

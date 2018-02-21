@@ -37,7 +37,7 @@ feature 'Budget Investments' do
     investments.each do |investment|
       within('#budget-investments') do
         expect(page).to have_content investment.title
-        expect(page).to have_css("a[href='#{budget_investment_path(budget_id: budget.id, id: investment.id)}']", text: investment.title)
+        expect(page).to have_css("a[href='#{budget_investment_path(budget, investment)}']", text: investment.title)
         expect(page).not_to have_content(unfeasible_investment.title)
       end
     end
@@ -779,7 +779,7 @@ feature 'Budget Investments' do
 
     investment = create(:budget_investment, heading: heading)
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, investment)
 
     expect(page).to have_content(investment.title)
     expect(page).to have_content(investment.description)
@@ -799,7 +799,7 @@ feature 'Budget Investments' do
       scenario "Price & explanation is shown when Budget is on published prices phase" do
         Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
           budget.update(phase: phase)
-          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+          visit budget_investment_path(budget, investment)
 
           expect(page).to have_content(investment.formatted_price)
           expect(page).to have_content(investment.price_explanation)
@@ -813,7 +813,7 @@ feature 'Budget Investments' do
       scenario "Price & explanation isn't shown when Budget is not on published prices phase" do
         (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).each do |phase|
           budget.update(phase: phase)
-          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+          visit budget_investment_path(budget, investment)
 
           expect(page).not_to have_content(investment.formatted_price)
           expect(page).not_to have_content(investment.price_explanation)
@@ -834,7 +834,7 @@ feature 'Budget Investments' do
       scenario "Price & explanation isn't shown for any Budget's phase" do
         Budget::Phase::PHASE_KINDS.each do |phase|
           budget.update(phase: phase)
-          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+          visit budget_investment_path(budget, investment)
 
           expect(page).not_to have_content(investment.formatted_price)
           expect(page).not_to have_content(investment.price_explanation)
@@ -852,7 +852,7 @@ feature 'Budget Investments' do
     Setting['feature.community'] = true
 
     investment = create(:budget_investment, heading: heading)
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, investment)
     expect(page).to have_content "Access the community"
 
     Setting['feature.community'] = false
@@ -862,14 +862,14 @@ feature 'Budget Investments' do
     Setting['feature.community'] = false
 
     investment = create(:budget_investment, heading: heading)
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, investment)
     expect(page).not_to have_content "Access the community"
   end
 
   scenario "Don't display flaggable buttons" do
     investment = create(:budget_investment, heading: heading)
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, investment)
 
     expect(page).not_to have_selector ".js-follow"
   end
@@ -900,7 +900,7 @@ feature 'Budget Investments' do
 
     scenario "Budget in selecting phase" do
       budget.update(phase: "selecting")
-      visit budget_investment_path(budget_id: budget.id, id: investment.id)
+      visit budget_investment_path(budget, investment)
 
       expect(page).not_to have_content("Unfeasibility explanation")
       expect(page).not_to have_content("Price explanation")
@@ -921,7 +921,7 @@ feature 'Budget Investments' do
                         heading: heading,
                         unfeasibility_explanation: 'Local government is not competent in this matter')
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, investment)
 
     expect(page).to have_content("Unfeasibility explanation")
     expect(page).to have_content(investment.unfeasibility_explanation)
@@ -940,7 +940,7 @@ feature 'Budget Investments' do
     document = create(:document, documentable: first_milestone)
 
     login_as(user)
-    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+    visit budget_investment_path(investment.budget, investment)
 
     find("#tab-milestones-label").trigger('click')
 
@@ -960,7 +960,7 @@ feature 'Budget Investments' do
     investment = create(:budget_investment)
 
     login_as(user)
-    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+    visit budget_investment_path(investment.budget, investment)
 
     find("#tab-milestones-label").trigger('click')
 

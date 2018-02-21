@@ -6,7 +6,7 @@ class RelatedContentsController < ApplicationController
   def create
     if relationable_object && related_object
 
-      if relationable_object.url != related_object.url
+      if relationable_object.path != related_object.path
         RelatedContent.create(parent_relationable: @relationable, child_relationable: @related, author: current_user)
 
         flash[:success] = t('related_content.success')
@@ -17,7 +17,7 @@ class RelatedContentsController < ApplicationController
     else
       flash[:error] = t('related_content.error', url: Setting['url'])
     end
-    redirect_to @relationable.url
+    redirect_to @relationable.path
   end
 
   def score_positive
