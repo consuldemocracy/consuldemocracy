@@ -1,7 +1,5 @@
 require 'database_cleaner'
-
 DatabaseCleaner.clean_with :truncation
-
 @logger = Logger.new(STDOUT)
 @logger.formatter = proc { |_severity, _datetime, _progname, msg| msg }
 
@@ -14,6 +12,7 @@ end
 def log(msg)
   @logger.info "#{msg}\n"
 end
+
 
 require_relative 'dev_seeds/settings'
 require_relative 'dev_seeds/geozones'
