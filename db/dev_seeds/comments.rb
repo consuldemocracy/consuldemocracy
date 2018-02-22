@@ -21,9 +21,3 @@ section "Commenting Comments" do
                     parent: parent)
   end
 end
-
-section "Creating Valuation Assignments" do
-  (1..17).to_a.sample.times do
-    SpendingProposal.all.sample.valuators << Valuator.first
-  end
-end
