@@ -37,6 +37,16 @@ describe Newsletter do
     expect(newsletter).not_to be_valid
   end
 
+  describe '#valid_segment_recipient?' do
+    it 'is false when segment_recipient value is invalid' do
+      newsletter.update(segment_recipient: 'invalid_segment_name')
+      error = 'The user recipients segment is invalid'
+
+      expect(newsletter).not_to be_valid
+      expect(newsletter.errors.messages[:segment_recipient]).to include(error)
+    end
+  end
+
   describe '#list_of_recipients' do
     before do
       create(:user, newsletter: true, username: 'newsletter_user')
