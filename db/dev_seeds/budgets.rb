@@ -1,0 +1,105 @@
+section "Creating Budgets" do
+  Budget.create(
+    name: "#{I18n.t('seeds.budgets.budget')} #{Date.current.year - 1}",
+    currency_symbol: I18n.t('seeds.budgets.currency'),
+    phase: 'finished'
+  )
+  Budget.create(
+    name: "#{I18n.t('seeds.budgets.budget')} #{Date.current.year}",
+    currency_symbol: I18n.t('seeds.budgets.currency'),
+    phase: 'accepting'
+  )
+
+  Budget.all.each do |budget|
+    city_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.all_city'))
+    city_group.headings.create!(name: I18n.t('seeds.budgets.groups.all_city'),
+                                price: 1000000,
+                                population: 1000000)
+
+    districts_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.districts'))
+    districts_group.headings.create!(name: I18n.t('seeds.geozones.north_district'),
+                                     price: rand(5..10) * 100000,
+                                     population: 350000)
+    districts_group.headings.create!(name: I18n.t('seeds.geozones.west_district'),
+                                     price: rand(5..10) * 100000,
+                                     population: 300000)
+    districts_group.headings.create!(name: I18n.t('seeds.geozones.east_district'),
+                                     price: rand(5..10) * 100000,
+                                     population: 200000)
+    districts_group.headings.create!(name: I18n.t('seeds.geozones.central_district'),
+                                     price: rand(5..10) * 100000,
+                                     population: 150000)
+  end
+end
+
+section "Creating Investments" do
+  tags = Faker::Lorem.words(10)
+  100.times do
+    heading = Budget::Heading.all.sample
+
+    investment = Budget::Investment.create!(
+      author: User.all.sample,
+      heading: heading,
+      group: heading.group,
+      budget: heading.group.budget,
+      title: Faker::Lorem.sentence(3).truncate(60),
+      description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+      created_at: rand((Time.current - 1.week)..Time.current),
+      feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
+      unfeasibility_explanation: Faker::Lorem.paragraph,
+      valuation_finished: [false, true].sample,
+      tag_list: tags.sample(3).join(','),
+      price: rand(1..100) * 100000,
+      skip_map: "1",
+      terms_of_service: "1"
+    )
+  end
+end
+
+section "Geolocating Investments" do
+  Budget.all.each do |budget|
+    budget.investments.each do |investment|
+      MapLocation.create(latitude: Setting['map_latitude'].to_f + rand(-10..10)/100.to_f,
+                         longitude: Setting['map_longitude'].to_f + rand(-10..10)/100.to_f,
+                         zoom: Setting['map_zoom'],
+                         investment_id: investment.id)
+    end
+  end
+end
+
+section "Balloting Investments" do
+  Budget.finished.first.investments.last(20).each do |investment|
+    investment.update(selected: true, feasibility: "feasible")
+  end
+end
+
+section "Winner Investments" do
+  budget = Budget.finished.first
+  50.times do
+    heading = budget.headings.all.sample
+    Budget::Investment.create!(
+      author: User.all.sample,
+      heading: heading,
+      group: heading.group,
+      budget: heading.group.budget,
+      title: Faker::Lorem.sentence(3).truncate(60),
+      description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+      created_at: rand((Time.current - 1.week)..Time.current),
+      feasibility: "feasible",
+      valuation_finished: true,
+      selected: true,
+      price: rand(10000..heading.price),
+      skip_map: "1",
+      terms_of_service: "1"
+    )
+  end
+  budget.headings.each do |heading|
+    Budget::Result.new(budget, heading).calculate_winners
+  end
+end
+
+section "Creating Valuation Assignments" do
+  (1..50).to_a.sample.times do
+    Budget::Investment.all.sample.valuators << Valuator.first
+  end
+end

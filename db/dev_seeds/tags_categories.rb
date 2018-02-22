@@ -1,0 +1,17 @@
+section "Creating Tags Categories" do
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.associations'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.culture'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.sports'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.social_rights'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.economy'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.employment'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.equity'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.sustainability'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.participation'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.mobility'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.media'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.health'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.transparency'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.security_emergencies'))
+  ActsAsTaggableOn::Tag.category.create!(name: I18n.t('seeds.categories.environment'))
+end
