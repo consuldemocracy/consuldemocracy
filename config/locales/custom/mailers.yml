@@ -1,0 +1,18 @@
+---
+fr:
+  mailers:
+    email_verification:
+      instructions_html: Pour confirmer la vérification de votre compte sur le Conseil Départemental des Jeunes, vous devez cliquer %{verification_link}.
+    proposal_notification_digest:
+      info: "Voici les nouvelles notifications publiées par les auteurs de projets que vous avez soutenues sur le %{org_name}."
+      title: "Notifications des projets du %{org_name}"
+      share: Partager un projet
+      comment: Commenter un projet
+      unsubscribe: "Si vous ne souhaitez pas recevoir les notifications des projets, rendez-vous sur %{account} et décochez 'Recevoir un résumé des notifications de projet'."
+    user_invite:
+      ignore: "Si vous n'avez pas requis cette invitation, pas d'inquiétude, vous pouvez ignorer ce courriel."
+      text: "Merci d'avoir demandé à rejoindre le %{org}! Dans quelques secondes vous pourrez commencer à décider du département que vous souhaitez, remplissez simplement le formulaire ci-dessous :"
+      thanks: "Merci beaucoup."
+      title: "Bienvenue sur le %{org}"
+      button: Enregistrement complet
+      subject: "Invitation au %{org_name}"

@@ -6,6 +6,10 @@
 
       <h1><%= @article.title %></h1>
 
+      <% if @article.subtitle.present? %>
+        <h2><%= @article.subtitle%></h2>
+      <% end %>
+
       <div class="investment-project-info">
         <%= render '/shared/author_info', resource: @article %>
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
@@ -13,10 +17,6 @@
         <!--span class="bullet">&nbsp;&bull;&nbsp;</span-->
         <%# geozone_name(@article) %>
       </div>
-
-      <% if @article.subtitle.present? %>
-        <h2><%= @article.subtitle%></h2>
-      <% end %>
 
       <%# if @article.external_url.present? %>
         <div class="document-link">

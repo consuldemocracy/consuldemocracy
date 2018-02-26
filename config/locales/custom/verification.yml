@@ -1,0 +1,13 @@
+---
+fr:
+  verification:
+    letter:
+      new:
+        go_to_index: Voir les projets
+    sms:
+      new:
+        phone_format_html: "<strong><em>(Exemple: 612345678 or +33612345678)</em></strong>"
+        phone_placeholder: "Exemple: 612345678 or +33612345678"
+    user_permission_debates: Echanger des idées
+    user_permission_proposal: Créer de nouveaux projets
+    user_permission_support_proposal: Soutenir des projets

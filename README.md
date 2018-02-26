@@ -33,10 +33,19 @@ Voir la [page dédiée sur le site du département](https://www.aude.fr/670-cons
 
 ## Conventions pour les développeurs sur ce fork
 
+### Workflow
+
 * la branche `master` est la référence qui doit rester déployable en production à chaque instant
 * les Pull Requests sont fusionnées en faisant un **Squash and Merge** afin de garder un historique plus lisibles des évolutions qui ont eut lieux sur ce fork
   * [exemple de commit issu d'un "squash and merge"](https://github.com/CDJ11/CDJ/commit/1445a0e069b81983d85008e6941925d33bfeedf4)
 * le fork est mis à jour en suivant [le processus décrit dans la doc officielle](https://consul_docs.gitbooks.io/docs/content/en/forks/update.html)
+
+### Traductions
+
+* Les traductions sont personalisées pour le CDJ uniquement dans le dossier `config/locales/custom/'
+  * ces fichiers sont prioritaires sur tous les autres
+  * seules les clés à personaliser sont conservées dans ces fichiers
+* Les traductions officielles `fr` de Consul peuvent être importées depuis `upstream` ou depuis [Crowdin](https://crowdin.com/project/consul/fr#) pour venir écraser les traductions existantes dans `config/locales/fr/`
 
 ## Déploiements
 

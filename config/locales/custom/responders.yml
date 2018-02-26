@@ -1,0 +1,10 @@
+---
+fr:
+  flash:
+    actions:
+      create:
+        debate: "Idée créée avec succès."
+        proposal: "Projet créée avec succès."
+      update:
+        debate: "Idée mise-à-jour avec succès."
+        proposal: "Projet mis-à-jour avec succès."
