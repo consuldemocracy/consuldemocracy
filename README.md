@@ -1,8 +1,12 @@
-![CONSUL logo](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
+![CD Aude logo](https://camo.githubusercontent.com/538f2c018f62bb28bd8c580cf059491ac5d57f15/687474703a2f2f7777772e617564652e66722f696d616765732f4742495f434731312f6c6f676f2e706e67)
 
-# CONSUL
+# Conseil Departemental des Jeunes de l'Aude
+
+<http://cdj.aude.fr/>
 
 Citizen Participation and Open Government Application
+
+This is a fork of [CONSUL](http://consulproject.org/en/) the eParticipation website originally developed for the Madrid City government eParticipation website.
 
 [![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
@@ -12,16 +16,32 @@ Citizen Participation and Open Government Application
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 [![Accessibility conformance](https://img.shields.io/badge/accessibility-WAI:AA-green.svg)](https://www.w3.org/WAI/eval/Overview)
-[![A11y issues checked with Rocket Validator](https://rocketvalidator.com/badges/checked_with_rocket_validator.svg?url=https://rocketvalidator.com)](https://rocketvalidator.com/opensource)
 
-[![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3APRs-welcome)
+## À propos du Conseil Départemental des Jeunes (CDJ)
 
-This is the opensource code repository of the eParticipation website CONSUL, originally developed for the Madrid City government eParticipation website
+Voir la [page dédiée sur le site du département](https://www.aude.fr/670-conseil-departemental-des-jeunes.htm)
 
-## Current state
+## État du projet
 
-Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features at the [project's website](http://consulproject.org/) and future features at the [Roadmap](https://github.com/consul/consul/projects/6) and [open issues list](https://github.com/consul/consul/issues).
+* Le site a été lancé en Janvier 2018 sur la base d'un [autre fork](https://github.com/CDJ11/CDJ_old) réalisé par les équipes du Département de l'Aude.
+* La personalisation de la plateforme a (re)démarrée en Février 2018.
+
+## Participer à l'amélioration du logiciel
+
+* TODO - Aide à la traduction
+* TODO - Beta test des nouvelles fonctionalités
+
+## Conventions pour les développeurs sur ce fork
+
+* la branche `master` est la référence qui doit rester déployable en production à chaque instant
+* les Pull Requests sont fusionnées en faisant un **Squash and Merge** afin de garder un historique plus lisibles des évolutions qui ont eut lieux sur ce fork
+  * [exemple de commit issu d'un "squash and merge"](https://github.com/CDJ11/CDJ/commit/1445a0e069b81983d85008e6941925d33bfeedf4)
+* le fork est mis à jour en suivant [le processus décrit dans la doc officielle](https://consul_docs.gitbooks.io/docs/content/en/forks/update.html)
+
+## Déploiements
+
+Certaines releases nécessitent des actions particulières suite à une montée de version.
+Ces actions sont documentées dans [les releases](https://github.com/consul/consul/releases).
 
 ## Configuration for development and test environments
 
