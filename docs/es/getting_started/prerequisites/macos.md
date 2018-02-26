@@ -28,6 +28,20 @@ Después instala la versión de Ruby 2.3.2
 gem install bundler
 ```
 
+## Node.js
+
+Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. OS X viene con un _runtime_ integrado llamado `Apple JavaScriptCore` pero Node.js es la opción recomendada.
+
+Para instalar Node, puedes usar [n](https://github.com/tj/n)
+
+Ejecuta el siguiente comando en tu terminal:
+
+```
+curl -L https://git.io/n-install | bash -s -- -y lts
+```
+
+Y este instalará automáticamente la versión LTS (_Long Term Support_, inglés para "Soporte a largo plazo") más reciente de Node en tu directorio `$HOME` (Este comando hace uso de [n-install](https://github.com/mklement0/n-install))
+
 ## PostgreSQL (>=9.4)
 
 ```

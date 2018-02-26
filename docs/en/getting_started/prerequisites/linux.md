@@ -60,6 +60,20 @@ or there is more methods [here](https://rvm.io/integration/bundler) that should 
 gem install rubygems-bundler
 ```
 
+## Node.js
+
+To compile the assets, you'll need a JavaScript runtime. Node.js is the preferred option. As with Ruby, we don't recommend installing Node from your distro's repositories.
+
+To install it, you can use [n](https://github.com/tj/n)
+
+Run the following command on your terminal:
+
+```
+curl -L https://git.io/n-install | bash -s -- -y lts
+```
+
+And it will install the latest LTS (Long Term Support) Node version on your `$HOME` folder automatically (This makes use of [n-install](https://github.com/mklement0/n-install))
+
 ## PostgreSQL (>=9.4)
 
 PostgreSQL version 9.4 is not official in debian 7 (wheezy), in 8 it seems to be officially maintained.

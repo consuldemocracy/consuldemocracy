@@ -26,6 +26,20 @@ OS X already comes with a preinstalled Ruby version, but it's quite old and we n
 gem install bundler
 ```
 
+## Node.js
+
+To compile the assets, you'll need a JavaScript runtime. OS X comes with an integrated runtime called `Apple JavaScriptCore` but Node.js is the preferred option.
+
+To install it, you can use [n](https://github.com/tj/n)
+
+Run the following command on your terminal:
+
+```
+curl -L https://git.io/n-install | bash -s -- -y lts
+```
+
+And it will install the latest LTS (Long Term Support) Node version on your `$HOME` folder automatically (This makes use of [n-install](https://github.com/mklement0/n-install))
+
 ## PostgreSQL (>=9.4)
 
 ```

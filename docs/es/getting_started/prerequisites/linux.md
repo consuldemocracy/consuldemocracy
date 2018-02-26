@@ -60,6 +60,20 @@ hay varios métodos alternativos [aquí](https://rvm.io/integration/bundler) que
 gem install rubygems-bundler
 ```
 
+## Node.js
+
+Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. Node.js es la opción recomendada. Al igual que como ocurre con Ruby, no es recomendable instalar Node directamente de los repositorios de tu distribución Linux.
+
+Para instalar Node, puedes usar [n](https://github.com/tj/n)
+
+Ejecuta el siguiente comando en tu terminal:
+
+```
+curl -L https://git.io/n-install | bash -s -- -y lts
+```
+
+Y este instalará automáticamente la versión LTS (_Long Term Support_, inglés para "Soporte a largo plazo") más reciente de Node en tu directorio `$HOME` (Este comando hace uso de [n-install](https://github.com/mklement0/n-install))
+
 ## PostgreSQL (>=9.4)
 
 La versión 9.4 de PostgreSQL no es oficial en Debian 7 (wheezy), pero en Debian 8 parece ser mantenida oficialmente.
