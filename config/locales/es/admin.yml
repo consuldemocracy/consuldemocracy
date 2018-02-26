@@ -519,10 +519,10 @@ es:
       all_users: Todos los usuarios
       administrators: Administradores
       proposal_authors: Usuarios autores de propuestas
-      investment_authors: Usuarios autores de proyectos de gasto en los actuales presupuestos
-      feasible_and_undecided_investment_authors: Usuarios autores de proyectos de gasto viables o sin decidir en los actuales presupuestos
-      selected_investment_authors: Usuarios autores de proyectos de gasto seleccionadas en los actuales presupuestos
-      winner_investment_authors: Usuarios autores de proyectos de gasto ganadoras en los actuales presupuestos
+      investment_authors: Autores de proyectos de gasto en los actuales presupuestos
+      feasible_and_undecided_investment_authors: Autores de proyectos de gasto viables o sin decidir en los actuales presupuestos
+      selected_investment_authors: Autores de proyectos de gasto seleccionados para la votación final en los actuales presupuestos
+      winner_investment_authors: Autores de proyectos de gasto ganadoras en los actuales presupuestos
       invalid_recipients_segment: "El segmento de destinatarios es inválido"
     newsletters:
       create_success: Newsletter creada correctamente
