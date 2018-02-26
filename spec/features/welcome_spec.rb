@@ -2,12 +2,28 @@ require 'rails_helper'
 
 feature "Welcome screen" do
 
+  let(:budget) { create(:budget) }
+
   scenario 'a regular users sees it the first time he logs in' do
     user = create(:user)
 
     login_through_form_as(user)
 
     expect(page).to have_current_path(welcome_path)
+  end
+
+  scenario 'Header on welcome page shows correct content' do
+    budget.update_attributes(phase: :accepting)
+
+    visit root_path
+
+    expect(page).to have_link("Send your project")
+
+    budget.update_attributes(phase: :reviewing)
+
+    visit root_path
+
+    expect(page).to have_link("See projects")
   end
 
   scenario 'a regular user does not see it when coing to /email' do

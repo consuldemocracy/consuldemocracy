@@ -198,7 +198,10 @@ es:
       label: "Presupuestos participativos 2018"
       title: "Decide los proyectos ciudadanos que hará el Ayuntamiento de Madrid, tienes:"
       text: "100 millones de euros"
-      button: "Presenta tu proyecto"
+      accepting:
+        button: "Presenta tu proyecto"
+      reviewing:
+        button: "Ver proyectos"
     once_plazas:
       label: "Resultados votación"
       title: "La ciudadanía aprueba remodelar once plazas"

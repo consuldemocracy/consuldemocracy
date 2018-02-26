@@ -195,7 +195,10 @@ en:
       label: "Participatory budgets 2018"
       title: "Decide the citizen projects that Madrid City Council will do, you have:"
       text: "100 million euros"
-      button: "Send your project"
+      accepting:
+        button: "Send your project"
+      reviewing:
+        button: "See projects"
     once_plazas:
       label: "Voting results"
       title: "Citizens approve the remodeling of eleven squares"
