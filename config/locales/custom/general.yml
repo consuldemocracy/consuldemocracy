@@ -1,0 +1,10 @@
+---
+fr:
+  articles:
+    show:
+      share: "Partager"
+  layouts:
+    header:
+      articles: "Actualités"
+  shared:
+    go_to_page: "Aller à la page des "

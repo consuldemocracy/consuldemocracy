@@ -1,0 +1,36 @@
+<div id="<%= dom_id(article) %>" class="investment-project clear">
+  <div class="panel">
+    <div class="row">
+
+      <div class="small-12 medium-9 column">
+        <div class="investment-project-content">
+
+          <h3><%= link_to article.title, article_path(article.slug) %></h3>
+
+          <p class="investment-project-info">
+            <%= l article.created_at.to_date %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <span class="author">
+              <%= article.author.name %>
+            </span>
+            <% if article.author.display_official_position_badge? %>
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <span class="label round level-<%= article.author.official_level %>">
+                <%= article.author.official_position %>
+              </span>
+            <% end %>
+            <!--span class="bullet">&nbsp;&bull;&nbsp;</span-->
+            <%# geozone_name(article) %>
+          </p>
+
+          <div class="investment-project-description">
+            <p><%= link_to article.content, article_path(article.slug) %></p>
+            <div class="truncate"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

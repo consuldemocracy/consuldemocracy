@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220211105) do
+ActiveRecord::Schema.define(version: 20180223170224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,19 @@ ActiveRecord::Schema.define(version: 20180220211105) do
 
   add_index "annotations", ["legacy_legislation_id"], name: "index_annotations_on_legacy_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "slug",                         null: false
+    t.string   "title",                        null: false
+    t.string   "subtitle"
+    t.text     "content"
+    t.integer  "author_id"
+    t.string   "status",     default: "draft"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "articles", ["slug"], name: "index_articles_on_slug", using: :btree
 
   create_table "banners", force: :cascade do |t|
     t.string   "title",           limit: 80
