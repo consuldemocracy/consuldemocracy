@@ -51,6 +51,10 @@
         </p>
       <% end %>
 
+      <%= render 'documents/documents',
+                  documents: investment.documents,
+                  max_documents_allowed: Budget::Investment.max_documents_allowed %>
+
       <%= render 'shared/tags', taggable: investment %>
 
       <% if investment.external_url.present? %>
