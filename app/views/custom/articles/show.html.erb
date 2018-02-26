@@ -1,0 +1,40 @@
+<% provide :title do %><%= @article.title %><% end %>
+
+<section class="investment-project-show">
+  <div id="<%= dom_id(@article) %>" class="row">
+    <div class="small-12 medium-9 column">
+
+      <h1><%= @article.title %></h1>
+
+      <div class="investment-project-info">
+        <%= render '/shared/author_info', resource: @article %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= l @article.created_at.to_date %>
+        <!--span class="bullet">&nbsp;&bull;&nbsp;</span-->
+        <%# geozone_name(@article) %>
+      </div>
+
+      <% if @article.subtitle.present? %>
+        <h2><%= @article.subtitle%></h2>
+      <% end %>
+
+      <%# if @article.external_url.present? %>
+        <div class="document-link">
+          <%# text_with_links @article.external_url %>
+        </div>
+      <%# end %>
+
+      <%= safe_html_with_links @article.content.html_safe %>
+
+    </div>
+
+    <aside class="small-12 medium-3 column">
+      <%= render partial: 'shared/social_share', locals: {
+        share_title: t("articles.show.share"),
+        title: @article.title,
+        url: article_url(@article.slug)
+      } %>
+    </aside>
+
+  </div>
+</section>

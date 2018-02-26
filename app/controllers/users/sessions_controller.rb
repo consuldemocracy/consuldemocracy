@@ -6,7 +6,7 @@ class Users::SessionsController < Devise::SessionsController
       if !verifying_via_email? && resource.show_welcome_screen?
         welcome_path
       else
-        super
+        articles_path
       end
     end
 

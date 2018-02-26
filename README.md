@@ -40,6 +40,20 @@ Voir la [page dédiée sur le site du département](https://www.aude.fr/670-cons
 
 ## Déploiements
 
+```bash
+git clone https://github.com/CDJ11/CDJ.git
+cd consul
+bundle install
+cp config/database.yml.example config/database.yml
+cp config/secrets.yml.example config/secrets.yml
+bin/rake db:create
+bin/rake db:migrate
+bin/rake db:seed
+bin/rake db:custom_seed
+```
+
+En production penser à bloquer l'accès aux comptes admin et verified.
+
 Certaines releases nécessitent des actions particulières suite à une montée de version.
 Ces actions sont documentées dans [les releases](https://github.com/consul/consul/releases).
 
@@ -50,7 +64,7 @@ Ces actions sont documentées dans [les releases](https://github.com/consul/cons
 Prerequisites: install git, Ruby 2.3.2, `bundler` gem, and PostgreSQL (>=9.4).
 
 ```bash
-git clone https://github.com/consul/consul.git
+git clone https://github.com/CDJ11/CDJ.git
 cd consul
 bundle install
 cp config/database.yml.example config/database.yml
@@ -58,6 +72,7 @@ cp config/secrets.yml.example config/secrets.yml
 bin/rake db:create
 bin/rake db:migrate
 bin/rake db:dev_seed
+bin/rake db:custom_seed
 RAILS_ENV=test rake db:setup
 ```
 
