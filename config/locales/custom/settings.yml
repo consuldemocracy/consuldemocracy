@@ -1,0 +1,11 @@
+fr:
+  settings:
+    max_ratio_anon_votes_on_debates: "Pourcentage maximum de votes anonymes par idée"
+    max_votes_for_proposal_edit: "Nombre de votes maximum à partir duquel un projet ne peut plus être édité"
+    max_votes_for_debate_edit: "Nombre de votes à partir duquel une idée ne peut plus être éditée"
+    proposal_code_prefix: "Préfixe pour les codes des projets"
+    votes_for_proposal_success: "Nombre de votes nécessaires pour l'approbation d'un projet"
+    months_to_archive_proposals: "Mois pour archiver les projets"
+    feature:
+      proposals: Projets
+      debates: Idées

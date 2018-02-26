@@ -3,8 +3,289 @@ fr:
   articles:
     show:
       share: "Partager"
+  account:
+    show:
+      email_on_comment_label: Me notifier par email quand quelqu'un commente mes projets ou mes idées
+      public_interests_label: Rendre public les tags des éléments que je suis
+      public_interests_my_title_list: Tags des éléments que vous suivez
+      public_interests_user_title_list: Tags des éléments que l'utilisateur suit
+      email_digest_label: Recevoir un résumé des notifications sur le projet
+      official_position_badge_label: Afficher le badge du role officiel
+      user_permission_debates: Echanger des idées
+      user_permission_proposal: Créer des nouveaux projets
+      user_permission_support_proposal: Soutenir des projets
+      user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits"
+  debates:
+    create:
+      form:
+        submit_button: Soumettre une idée
+    edit:
+      editing: Modifier l'idée
+      show_link: Voir l'idée
+    form:
+      debate_text: De quoi veux-tu parler
+      debate_title: Donne lui un titre
+      debate_title_holder: Titre de l'idée
+      tags_label: Ajoute des tags
+      tags_placeholder: Ajoute les tags que tu aimerais utiliser, séparés par des virgules
+    index:
+      orders:
+        confidence_score: La plus aimée
+        created_at: La plus récente
+        hot_score: La plus active
+        most_commented: La plus commentée
+      recommendations:
+        without_results: Il n’y a pas d'idée liée à vos centres d’intérêt
+        without_interests: Suivez des projets afin que nous puissions vous suggérer des recommandations
+      search_form:
+        placeholder: Rechercher une idée...
+      search_results_html:
+        one: " contenant le terme <strong>'%{search_term}'</strong>"
+        other: " contenant le terme <strong>'%{search_term}'</strong>"
+      start_debate: Propose ton idée
+      title: Idées
+      section_header:
+        icon_alt: Icône des idées
+        title: Idées
+        help: Aide pour les idées
+      section_footer:
+        title: Aide pour les idées
+        description: Proposez une idée pour partager vos opinions avec d'autres sur les sujets qui vous intéressent.
+        help_text_1: "L'espace des idées s'adresse à tous les membres du CDJ qui veulent débattre à propos des sujets qui les concernent."
+        help_text_2: 'Pour proposer une idée, vous devez vous inscrire au %{org}. Les membres peuvent aussi commenter les idées existantes et voter au moyen des boutons "Je suis d''accord" et "Je ne suis pas d''accord".'
+        help_text_3: "N’oubliez pas qu’une idée ne lance pas d’action spécifique. Si votre idée reçoit un certain nombre de like, elle sera étudiée pour devenir un %{proposal}."
+        proposals_link: projet
+    new:
+      form:
+        submit_button: Soumettre mon idée
+      info: Si vous souhaitez créer un nouveau projet, vous êtez dans la mauvaise section, visiter %{info_link}.
+      info_link: Créer un nouveau projet
+      recommendation_four: Profitez de cet espace et des voix qui le remplissent. Il vous appartient aussi.
+      recommendation_one: Ne pas écrire tout en majuscules pour le titre du débat ou pour des phrases entières. Sur internet, c'est considéré comme crier. Et personne n'aime se faire crier dessus.
+      recommendation_three: La critique est la bienvenue. Ceci est un espace pour la reflexion. Nous recommandons de conserver de l'élégance et de l'intelligence. Ces qualités rendent le monde meilleur.
+      recommendation_two: Tout débat ou commentaire suggérant des actions illégales sera supprimé, de même que les commentaires ayant pour but de saboter l'espace de débat. Tout le reste est autorisé.
+      recommendations_title: Recommandations pour soumettre une idée
+      start_new: Soumettre une idée
+    show:
+      comments:
+      flag: Cette idée a été signalée comme inapproprié par plusieurs utilisateurs
+  form:
+    debate: Idée
+    proposal: Projet
+  geozones:
+    none: Tout le département
+    all: Tous les cantons
   layouts:
+    footer:
+      consul: outil Consul
+      contact_us: Pour l'assistance technique visitez la
+      copyright: Conseil Général de l'Aude, %{year}
+      description: Ce portail utilise l' %{consul} qui est un %{open_source}.
+      faq: foire aux questions
     header:
       articles: "Actualités"
+      debates: Idées
+      management: Gestion
+      moderation: Modération
+      officing: Assesseurs
+      help: "Comment faire ?"
+      open_city_slogan_html: Il existe des villes gouvernées directement par leurs habitants qui <b>discutent</b> des sujets dont ils se sentent concernés, <b>proposent</b> des idées pour améliorer leurs vies et <b>décident</b> lesquelles seront mises en oeuvre. Madrid est déjà l'une de ces villes.
+      open_city_title: Aimez la ville, et elle deviendra la ville que vous aimez
+      open_gov: Gouvernement ouvert
+      proposals: "Projets"
+  map:
+    title: "Cantons"
+    proposal_for_district: "Démarrer un projet pour votre canton"
+    start_proposal: Créer une projet
+  proposals:
+    create:
+      form:
+        submit_button: Créer un projet
+    edit:
+      editing: Modifier le projet
+      show_link: Voir les projets
+    retire_form:
+      title: Retirer le projet
+      warning: "Si vous retirez ce projet, il pourra toujours accepter des soutiens mais il sera retirée de la liste principale et un message indiquera que l'auteur ne souhaite plus que ce projet soit soutenu"
+      retired_reason_label: Raison pour retirer le projet
+      retired_explanation_placeholder: Expliquez en bref pourquoi vous pensez que ce projet ne devrait plus recevoir de soutiens
+      submit_button: Retirer le projet
+    retire_options:
+      duplicated: Duplicata d'un autre projet
+      started: Déjà en cours
+      unfeasible: Irréalisable
+      done: Réalisé
+      other: Autre
+    form:
+      proposal_responsible_name: Nom complet de la personne qui soumet le projet
+      proposal_summary: Résumé du projet
+      proposal_summary_note: "(maximum 200 caractères)"
+      proposal_text: Texte du projet
+      proposal_title: Titre ddu projet
+      tags_instructions: "Catégoriser cette proposition. Vous pouvez choisir parmi\nles catégories proposées ou ajouter la vôtre"
+      tags_label: Tags
+      tags_placeholder: "Entrez les tags que vous voudriez utiliser, séparer par des virgules (',')"
+    index:
+      filter_topic:
+        one: " avec sujet '%{topic}'"
+        other: " avec sujets '%{topic}'"
+      orders:
+        confidence_score: Le plus voté
+        created_at: Le plus récent
+        hot_score: Le plus actif
+        most_commented: Le plus commenté
+        relevance: pertinence
+        archival_date: Archivés
+        recommendations: recommandations
+      recommendations:
+        without_results: Il n’y a pas de projets liées à vos centres d’intérêt
+        without_interests: Suivez des projets afin que nous puissions vous suggérer des recommandations
+      retired_proposals: Projets retirés
+      retired_proposals_link: "Projets retirés par l'auteur"
+      search_form:
+        placeholder: Chercher des projets
+      select_order_long: 'Vous êtes en train de voir les projets en fonction de'
+      start_proposal: Créer un projet
+      title: Projets
+      top_link_proposals: Les projets les plus soutenues par catégorie
+      section_header:
+        icon_alt: Icône des projets
+        title: Projets
+        help: Aide concernant les projets
+      section_footer:
+        title: Aide concernant les projets
+        description: Créez un projet. Si il recueille suffisamment de soutiens, il passera à la phase de vote qui permettra à tous les membres du CDJ de se prononcer dessus.
+        help_text_1: "Les projets sont une opportunité pour les jeunes de décider directement de l'avenir de leur départment."
+        help_text_2: "Pour créer un projet, vous devez être membre du %{org}."
+        help_text_3: "Un vote du CDJ est organisé lorsque les projets recueillent suffisamment de soutiens."
+    new:
+      form:
+        submit_button: Créer le projet
+      more_info: Comment les projets citoyens marchent ?
+      recommendation_one: Ne pas utiliser de lettres majuscules dans tout le titre de votre projet ou des phrases entières. Sur internet, c'est considéré comme hurler sur une personne. Et personne n'aime qu'on lui crie dessus.
+      recommendation_three: Appréciez ces espaces et les voix qui le remplissent. Tout vous appartient.
+      recommendation_two: Tout projet ou commentaire suggérant une action illicite sera supprimé ainsi que ceux qui perturbent les espaces de débats. Le reste est autorisé.
+      recommendations_title: Recommendations pour créer un projet
+      start_new: Créer un nouveau projet
+    notice:
+      retired: Projet retirée
+    proposal:
+      created: "Vous venez de créer un projet !"
+      share:
+        guide: "Vous pouvez maintenant le partager pour qu'il commence à recueillir des soutiens."
+        edit: "Avant qu'il soit partagé, vous pouvez changer le texte autant que vous le désirez."
+        view_proposal: Pas maintenant, revenir au projet
+      already_supported: Vous avez déjà soutenu ce projet. Partagez-le !
+      support_title: Soutenir ce projet
+      archived: "Ce projet a été archivée et ne peut recueillir de soutiens."
+      successful: "Ce projet a atteint le nombre de soutiens requis et sera soumise au vote lors du %{voting}."
+    show:
+      code: 'Code du projet'
+      flag: Ce projet a été signalée comme inappropriée par plusieurs utilisateurs
+      retired_warning: "L’auteur considère que ce projet ne devrait pas recevoir plus de supports."
+      retired_warning_link_to_explanation: Lisez l'explication avant de le soutenir.
+      retired: Projet retirée par l'auteur
+      no_notifications: "Ce projet n'a pas de notification."
+    update:
+      form:
+        submit_button: Sauvegarder les changements
+  polls:
+    dates: "Du %{open_at} au %{closed_at}"
+    index:
+      filters:
+        current: "En cours"
+        incoming: "À venir"
+        expired: "Terminés"
+      no_geozone_restricted: "Tout le département"
+      geozone_restricted: "Cantons"
+      geozone_info: "Peuvent participer les personnes issues du recensement de : "
+      section_footer:
+        title: Aide concernant le vote
+        description: Inscrivez-vous pour voter sur les projets du CDJ. Prenez directement des décisions pour votre cadre de vie.
+        help_text_1: "Un vote a lieu lorsque une proposition citoyenne recueille suffisamment de soutiens des membres du CDJ."
+        help_text_2: "Pour participer au prochain vote, vous devez vous inscrire au %{org} et vérifier votre compte. Tous les membres vérifiés de plus de 16 ans peuvent voter."
+  proposal_notifications:
+    new:
+      info_about_receivers_html: "Ce message sera envoyé à <strong>%{count} personnes</strong> et sera visible sur %{proposal_page}.<br> Les messages ne sont pas envoyés immédiatement, les utilisateurs reçoivent périodiquement un email avec les notifications issues de l'ensemble des projets."
+      proposal_page: "la page du projet"
   shared:
     go_to_page: "Aller à la page des "
+    followable:
+      proposal:
+        create:
+          notice_html: "Vous suivez à présent ce projet ! </br>Nous vous tiendrons informé des changements au fur et à mesure."
+        destroy:
+          notice_html: "Vous avez arrêté de suivre ce projet ! </br>Vous ne recevrez plus de notifications en lien avec ce projet."
+    suggest:
+      debate:
+        found:
+          one: "Il y a une idée correspondant au terme '%{query}', vous pouvez la commenter plutôt que d'en soumettre une nouvelle."
+          other: "Il y a des idées correspondant au terme '%{query}', vous pouvez les commenter plutôt que d'en soumettre une nouvelle."
+        message: "Vous voyez %{limit} sur %{count} idées contenant le terme '%{query}'"
+        see_all: "Voir toutes"
+      proposal:
+        found:
+          one: "Il y a un projet correspondant au terme '%{query}', vous pouvez y participer plutôt que d'en ouvrir un nouveau"
+          other: "Il y a des projets correspondant au terme '%{query}', vous pouvez y participer plutôt que d'en ouvrir un nouveau"
+        message: "Vous voyez %{limit} sur %{count} projets contenant le terme '%{query}'"
+        see_all: "Voir tous"
+    tags_cloud:
+      districts: "Cantons"
+      districts_list: "Liste des cantons"
+    unflag: "Retirer mon signalement"
+  stats:
+    index:
+      debates: Idées
+      proposals: Projets
+      proposal_votes: Votes sur les projets
+      debate_votes: Votes sur les idées
+  users:
+    show:
+      deleted_debate: Cette idée a été effacée
+      deleted_proposal: Ce projet a été effacé
+      proposals: Projets
+      debates: Idées
+      filters:
+        debates:
+          one: 1 Idée
+          other: "%{count} Idées"
+        proposals:
+          one: 1 Projet
+          other: "%{count} Projets"
+    proposals:
+      retired: "Projet retirée"
+      see: "Voir le Projet"
+  votes:
+    verified_only: Seuls les utilisateurs vérifiés peuvent voter sur les projets; %{verify_account}.
+    spending_proposals:
+      not_verified: Seuls les utilisateurs vérifiés peuvent voter sur les projets; %{verify_account}.
+  welcome:
+    debates:
+      description: Partage tes idées. Discutes-en avec les autres membres et donne ton avis sur les idées existantes. Si ton idée reçoit un certain nombre de like, elle sera étudiée pour devenir un projet
+      title: 1- Idée
+    decide:
+      description: En tant que membre du CDJ, ton vote sera pris en compte pour décider quel projet doit être concrétisé
+      title: 3- Vote
+    do:
+      description: Projets votés, en cours ou finalisés, info jeunesse de ton département... Suis l'actualité du CDJ en un simple clic
+      title: 4- Actualités
+    proposal:
+      description: Tu peux choisir de soutenir les projets qui te paraissent intéressants. Les projets ayant reçus un certain nombre de soutien seront soumis au vote par tous les membres du CDJ
+      title: 2- Projet
+    recommended:
+      debates:
+        title: Idées recommandées
+        btn_text_link: Toutes les idées recommandées
+      proposals:
+        title: Projets recommandées
+        btn_text_link: Tous les projets recommandées
+    welcome:
+      go_to_index: Voir les projets et les idées
+      user_permission_debates: Echanger des idées !
+      user_permission_proposal: Créer des projets
+      user_permission_support_proposal: Soutenir des projets
+      user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits"
+  related_content:
+    content_title:
+      proposal: "Projet"
+      debate: "Idée"

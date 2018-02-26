@@ -1,0 +1,22 @@
+---
+fr:
+  management:
+    document_verifications:
+      has_no_account_html: Afin de créer un compte, aller sur le %{link} et cliquer sur <b>'S'enregistrer'</b> dans la partie en haut à droite de l'écran.
+      link: Conseil Départemental des Jeunes
+    menu:
+      create_proposal: Créer un projet
+      print_proposals: Imprimer des projets
+      support_proposals: Soutenir un projet
+    permissions:
+      create_proposals: Créer des projets
+      debates: Echanger des idées
+      support_proposals: Soutenir des projets
+      vote_proposals: Voter pour des projets
+    print:
+      proposals_info: Proposez votre projet sur http://url.consul
+      proposals_note: Les projets les plus soutenus seront soumis au vote. Si ils sont acceptés par la majorité, le CDJ pourra les implémenter.
+      proposals_title: 'Projets :'
+
+    proposals:
+      create_proposal: Créer un projet

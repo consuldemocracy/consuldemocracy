@@ -1,0 +1,29 @@
+fr:
+  activerecord:
+    models:
+      article:
+        one: "Actualité"
+        other: "Actualités"
+      debate:
+        one: "Idée"
+        other: "Idées"
+      tag:
+        one: "Tag"
+        other: "Tags"
+      proposal:
+        one: "Projet"
+        other: "Projets"
+    errors:
+      models:
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Le nombre de tags doit être inférieur ou égal à %{count}"
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Le nombre de tags doit être inférieur ou égal à %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Le nombre de tags doit être inférieur ou égal à %{count}"

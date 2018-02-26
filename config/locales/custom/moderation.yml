@@ -1,0 +1,20 @@
+---
+fr:
+  moderation:
+    debates:
+      index:
+        headers:
+          debate: Idée
+        hide_debates: Masquer les idées
+        title: Idées
+    menu:
+      flagged_debates: Idées
+      proposals: Projets
+    proposals:
+      index:
+        headers:
+          proposal: Projets
+        hide_proposals: Masquer les projets
+        title: Projets
+    users:
+      notice_hide: Utilisateur bloqué. Toutes les idées et les projets de cet utilisateur ont été masqués.
