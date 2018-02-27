@@ -195,8 +195,6 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       documentable_redirected_to_resource_show_or_navigate_to
 
       expect(page).to have_content "Documents"
-
-      find("#tab-documents-label").click
       expect(page).to have_content "empty.pdf"
 
       # Review
