@@ -42,7 +42,7 @@
   </div>
 </div>
 
-<% if @newsletter.draft? && @newsletter.valid_segment_recipient? && !Rails.env.production? %>
+<% if @newsletter.draft? && @newsletter.valid_segment_recipient? %>
   <%= link_to t("admin.newsletters.show.send"),
               deliver_admin_newsletter_path(@newsletter),
               "data-alert": t("admin.newsletters.show.send_alert", n: recipients_count),
