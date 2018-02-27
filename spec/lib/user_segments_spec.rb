@@ -70,18 +70,32 @@ describe UserSegments do
 
   describe "#feasible_and_undecided_investment_authors" do
     it "returns authors of a feasible or an undecided budget investment" do
-      feasible_investment = create(:budget_investment, :feasible, author: user1)
-      undecided_investment = create(:budget_investment, :undecided, author: user2)
-      unfeasible_investment = create(:budget_investment, :unfeasible, author: user3)
+      user4 = create(:user)
+      user5 = create(:user)
+      user6 = create(:user)
+
+      feasible_investment_finished = create(:budget_investment, :feasible, :finished, author: user1)
+      undecided_investment_finished = create(:budget_investment, :undecided, :finished, author: user2)
+      feasible_investment_unfinished = create(:budget_investment, :feasible, author: user3)
+      undecided_investment_unfinished = create(:budget_investment, :undecided, author: user4)
+      unfeasible_investment_unfinished = create(:budget_investment, :unfeasible, author: user5)
+      unfeasible_investment_finished = create(:budget_investment, :unfeasible, :finished, author: user6)
+
       budget = create(:budget)
-      feasible_investment.update(budget: budget)
-      undecided_investment.update(budget: budget)
-      unfeasible_investment.update(budget: budget)
+      feasible_investment_finished.update(budget: budget)
+      undecided_investment_finished.update(budget: budget)
+      feasible_investment_unfinished.update(budget: budget)
+      undecided_investment_unfinished.update(budget: budget)
+      unfeasible_investment_unfinished.update(budget: budget)
+      unfeasible_investment_finished.update(budget: budget)
 
       investment_authors = described_class.feasible_and_undecided_investment_authors
       expect(investment_authors).to include user1
       expect(investment_authors).to include user2
-      expect(investment_authors).not_to include user3
+      expect(investment_authors).to include user3
+      expect(investment_authors).to include user4
+      expect(investment_authors).to include user5
+      expect(investment_authors).not_to include user6
     end
 
     it "does not return duplicated users" do
