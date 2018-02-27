@@ -1,22 +1,11 @@
 <% if user_signed_in? %>
-  <li id="notifications">
-    <%= link_to notifications_path, rel: "nofollow", class: "notifications" do %>
-      <span class="show-for-sr"><%= t("layouts.header.notifications") %></span>
-      <% if current_user.notifications_count > 0 %>
-        <span class="icon-circle" aria-hidden="true"></span>
-        <span class="icon-notification" aria-hidden="true" title="<%= t('layouts.header.new_notifications', count: current_user.notifications_count).html_safe %>">
-        </span>
-        <small class="show-for-small-only">
-          <%= t('layouts.header.new_notifications', count: current_user.notifications_count).html_safe %>
-        </small>
-      <% else %>
-        <span class="icon-no-notification" aria-hidden="true" title="<%= t('layouts.header.no_notifications') %>"></span>
-        <small class="show-for-small-only">
-          <%= t('layouts.header.no_notifications') %>
-        </small>
-      <% end %>
-    <% end %>
-  </li>
+  <% if current_budget %>
+    <li>
+      <%= link_to(t("layouts.header.delegation"), 
+          new_budget_recommendation_path(budget_id: current_budget.slug), 
+                                         accesskey: "d") %>
+    </li>
+  <% end %>
   <li>
     <%= layout_menu_link_to t("layouts.header.my_activity_link"),
                               user_path(current_user),

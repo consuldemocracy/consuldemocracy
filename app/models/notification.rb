@@ -3,30 +3,48 @@ class Notification < ActiveRecord::Base
   belongs_to :user, counter_cache: true
   belongs_to :notifiable, polymorphic: true
 
-  scope :unread,      -> { all }
-  scope :recent,      -> { order(id: :desc) }
+  validates :user, presence: true
+
+  scope :read,        -> { where.not(read_at: nil).recent.for_render }
+  scope :unread,      -> { where(read_at: nil).recent.for_render }
   scope :not_emailed, -> { where(emailed_at: nil) }
+  scope :recent,      -> { order(id: :desc) }
   scope :for_render,  -> { includes(:notifiable) }
 
-  delegate :notifiable_title, :notifiable_available?, :check_availability, :linkable_resource,
-           to: :notifiable, allow_nil: true
+  delegate :notifiable_title, :notifiable_available?, :check_availability,
+           :linkable_resource, to: :notifiable, allow_nil: true
+
+  def mark_as_read
+    update(read_at: Time.current)
+  end
+
+  def mark_as_unread
+    update(read_at: nil)
+  end
+
+  def read?
+    read_at.present?
+  end
+
+  def unread?
+    read_at.nil?
+  end
 
   def timestamp
     notifiable.created_at
   end
 
-  def mark_as_read
-    destroy
+  def self.add(user, notifiable)
+    notification = Notification.existent(user, notifiable)
+    if notification.present?
+      increment_counter(:counter, notification.id)
+    else
+      create!(user: user, notifiable: notifiable)
+    end
   end
 
-  def self.add(user_id, notifiable)
-    notification = Notification.find_by(user_id: user_id, notifiable: notifiable)
-
-    if notification.present?
-      Notification.increment_counter(:counter, notification.id)
-    else
-      Notification.create!(user_id: user_id, notifiable: notifiable)
-    end
+  def self.existent(user, notifiable)
+    unread.where(user: user, notifiable: notifiable).first
   end
 
   def notifiable_action
