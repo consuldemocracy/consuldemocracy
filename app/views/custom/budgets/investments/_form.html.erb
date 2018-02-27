@@ -75,7 +75,7 @@
                         data: {js_url: suggest_tags_path} %>
     </div>
 
-    <% unless current_user.manager? %>
+    <%# unless current_user.manager? %>
       <div class="small-12 column">
         <%= f.label :terms_of_service do %>
           <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
@@ -87,7 +87,7 @@
         <% end %>
       </div>
 
-    <% end %>
+    <%# end %>
 
     <div class="actions small-12 medium-6 large-4 end column">
       <%= f.submit(nil, class: "button expanded") %>
