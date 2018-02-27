@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
 
-  validates :email, uniqueness: true
+  #validates :email, uniqueness: true
 
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
 
@@ -200,7 +200,8 @@ class User < ActiveRecord::Base
       reset_password_token: nil,
       email_verification_token: nil,
       confirmed_phone: nil,
-      unconfirmed_phone: nil
+      unconfirmed_phone: nil,
+      document_number: self.document_number + '' + Time.now.strftime("%Y%m%d%H%M%S")
     )
     identities.destroy_all
   end
