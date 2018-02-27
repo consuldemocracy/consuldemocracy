@@ -31,6 +31,7 @@ require_relative 'dev_seeds/polls'
 require_relative 'dev_seeds/communities'
 require_relative 'dev_seeds/legislation_processes'
 require_relative 'dev_seeds/newsletters'
+require_relative 'dev_seeds/notifications'
 require_relative 'dev_seeds/forums'
 require_relative 'dev_seeds/probe_options'
 
