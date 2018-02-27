@@ -3,15 +3,22 @@
 
     <h1 class="float-left"><%= t("notifications.index.title") %></h1>
 
+    <h4>
+      <%= link_to t("notifications.index.unread"), notifications_path %>
+      <%= link_to t("notifications.index.read"), read_notifications_path %>
+    </h4>
+
     <% if @notifications.empty? %>
       <div data-alert class="callout primary margin-top clear">
         <%= t("notifications.index.empty_notifications") %>
       </div>
     <% else %>
-      <div class="float-right margin-top">
-        <%= link_to t("notifications.index.mark_all_as_read"),
-                    mark_all_as_read_notifications_path, method: :put %>
-      </div>
+      <% if action_name == "index" %>
+        <div class="float-right margin-top">
+          <%= link_to t("notifications.index.mark_all_as_read"),
+                      mark_all_as_read_notifications_path, method: :put %>
+        </div>
+      <% end %>
 
       <ul class="no-bullet clear notifications-list">
         <%= render @notifications %>
