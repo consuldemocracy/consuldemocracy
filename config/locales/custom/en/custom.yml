@@ -237,11 +237,37 @@ en:
       button: "Create a proposal"
     header_budget:
       label: "Participatory budgets 2018"
-      title: "Decide the citizen projects that Madrid City Council will do, you have:"
-      text: "100 million euros"
       accepting:
+        title: "Decide the citizen projects that Madrid City Council will do, you have:"
+        text: "100 million euros"
         button: "Send your project"
       reviewing:
+        title: "Decide the citizen projects that Madrid City Council will do, you have:"
+        text: "100 million euros"
+        button: "See projects"
+      selecting:
+        title: "Choose investment projects in one district and the entire city to be voted on"
+        text: "Support citizen projects"
+        button: "See projects"
+      valuating:
+        title: "The City Council reviews and rates the most supported projects until May 15"
+        text: "Most supported projects"
+        button: "See projects"
+      publishing_prices:
+        title: "The City Council reviews and rates the most supported projects until May 15"
+        text: "Most supported projects"
+        button: "See projects"
+      balloting:
+        title: "Decides what projects the City Council will do with 100 million"
+        text: "Vote in participatory budgets"
+        button: "See projects"
+      reviewing_ballots:
+        title: "In a few days we will know the winning projects of the participatory budgets"
+        text: "Thank you for voting!"
+        button: "See projects"
+      finished:
+        title: "Look at the winning projects of the 2018 participatory budgets"
+        text: "Thank you for voting!"
         button: "See projects"
     once_plazas:
       label: "Voting results"

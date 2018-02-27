@@ -237,11 +237,37 @@ es:
       button: "Crea una propuesta"
     header_budget:
       label: "Presupuestos participativos 2018"
-      title: "Decide los proyectos ciudadanos que hará el Ayuntamiento de Madrid, tienes:"
-      text: "100 millones de euros"
       accepting:
+        title: "Decide los proyectos ciudadanos que hará el Ayuntamiento de Madrid, tienes:"
+        text: "100 millones de euros"
         button: "Presenta tu proyecto"
       reviewing:
+        title: "Decide los proyectos ciudadanos que hará el Ayuntamiento de Madrid, tienes:"
+        text: "100 millones de euros"
+        button: "Ver proyectos"
+      selecting:
+        title: "Elige los proyectos de un distrito y toda la ciudad para que pasen a votación"
+        text: "Apoya proyectos ciudadanos"
+        button: "Ver proyectos"
+      valuating:
+        title: "El Ayuntamiento revisa y tasa los proyectos más apoyados hasta el 15 de mayo"
+        text: "Proyectos más apoyados"
+        button: "Ver proyectos"
+      publishing_prices:
+        title: "El Ayuntamiento revisa y tasa los proyectos más apoyados hasta el 15 de mayo"
+        text: "Proyectos más apoyados"
+        button: "Ver proyectos"
+      balloting:
+        title: "Decide qué proyectos hará el Ayuntamiento con 100 millones"
+        text: "Vota los presupuestos participativos"
+        button: "Ver proyectos"
+      reviewing_ballots:
+        title: "En unos días conoceremos los proyectos ganadores de los presupuestos participativos"
+        text: "¡Gracias por votar!"
+        button: "Ver proyectos"
+      finished:
+        title: "Mira los proyectos ganadores de los presupuestos participativos 2018"
+        text: "¡Gracias por votar!"
         button: "Ver proyectos"
     once_plazas:
       label: "Resultados votación"
