@@ -342,12 +342,29 @@ class Budget
       where(heading_id: heading_ids)
     end
 
+    def assigned_valuators
+      if valuators.size.zero?
+        I18n.t("admin.budget_investments.index.no_valuators_assigned")
+      else
+        self.valuators.collect(&:description_or_name).compact.join(', ')
+      end
+    end
+
+    def assigned_valuation_groups
+      if valuator_groups.count.zero?
+        I18n.t("admin.budget_investments.index.no_valuation_groups")
+      else
+        self.valuator_groups.collect(&:name).compact.join(', ')
+      end
+    end
+
     def self.to_csv(investments, options = {})
       attrs = [I18n.t("admin.budget_investments.index.table_id"),
                I18n.t("admin.budget_investments.index.table_title"),
                I18n.t("admin.budget_investments.index.table_supports"),
                I18n.t("admin.budget_investments.index.table_admin"),
                I18n.t("admin.budget_investments.index.table_valuator"),
+               I18n.t("admin.budget_investments.index.table_valuation_group"),
                I18n.t("admin.budget_investments.index.table_geozone"),
                I18n.t("admin.budget_investments.index.table_feasibility"),
                I18n.t("admin.budget_investments.index.table_valuation_finished"),
@@ -363,11 +380,8 @@ class Budget
                   else
                     I18n.t("admin.budget_investments.index.no_admin_assigned")
                   end
-          vals = if investment.valuators.empty?
-                   I18n.t("admin.budget_investments.index.no_valuators_assigned")
-                 else
-                   investment.valuators.collect(&:description_or_name).join(', ')
-                 end
+          vals = investment.assigned_valuators
+          val_groups = investment.assigned_valuation_groups
           heading_name = investment.heading.name
           price_string = "admin.budget_investments.index.feasibility"\
                          ".#{investment.feasibility}"
@@ -375,8 +389,8 @@ class Budget
           valuation_finished = investment.valuation_finished? ?
                                          I18n.t('shared.yes') :
                                          I18n.t('shared.no')
-          csv << [id, title, total_votes, admin, vals, heading_name, price,
-                  valuation_finished]
+          csv << [id, title, total_votes, admin, vals, val_groups, heading_name,
+                  price, valuation_finished]
         end
       end
       csv_string
