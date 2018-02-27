@@ -149,8 +149,15 @@ namespace :admin do
 
   resource :activity, controller: :activity, only: :show
 
-  resources :newsletters, only: :index do
+  resources :newsletters do
+    member do
+      post :deliver
+    end
     get :users, on: :collection
+  end
+
+  resources :emails_download, only: :index do
+    get :generate_csv, on: :collection
   end
 
   resource :stats, only: :show do

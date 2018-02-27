@@ -130,6 +130,13 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def newsletter(newsletter, recipient)
+    @newsletter = newsletter
+    @email_to = recipient.email
+
+    mail(to: @email_to, from: @newsletter.from, subject: @newsletter.subject)
+  end
+
   private
 
   def with_user(user, &block)

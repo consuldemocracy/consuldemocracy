@@ -505,7 +505,44 @@ feature 'Emails' do
 
   end
 
+  context "Newsletter" do
+
+    scenario "Send newsletter email to selected users" do
+      user_with_newsletter_in_segment_1 = create(:user, newsletter: true)
+      user_with_newsletter_in_segment_2 = create(:user, newsletter: true)
+      user_with_newsletter_not_in_segment = create(:user, newsletter: true)
+      user_without_newsletter_in_segment = create(:user, newsletter: false)
+
+      create(:proposal, author: user_with_newsletter_in_segment_1)
+      create(:proposal, author: user_with_newsletter_in_segment_2)
+      create(:proposal, author: user_without_newsletter_in_segment)
+
+      admin = create(:administrator)
+      login_as(admin.user)
+
+      visit new_admin_newsletter_path
+      fill_in_newsletter_form(segment_recipient: 'Proposal authors')
+      click_button "Create Newsletter"
+
+      expect(page).to have_content "Newsletter created successfully"
+
+      click_link "Send"
+
+      expect(unread_emails_for(user_with_newsletter_in_segment_1.email).count).to eq 1
+      expect(unread_emails_for(user_with_newsletter_in_segment_2.email).count).to eq 1
+      expect(unread_emails_for(user_with_newsletter_not_in_segment.email).count).to eq 0
+      expect(unread_emails_for(user_without_newsletter_in_segment.email).count).to eq 0
+
+      email = open_last_email
+      expect(email).to have_subject('This is a different subject')
+      expect(email).to deliver_from('no-reply@consul.dev')
+      expect(email.body.encoded).to include('This is a different body')
+    end
+
+  end
+
   context "Users without email" do
+
     scenario "should not receive emails" do
       user = create(:user, :verified, email_on_comment: true)
       proposal = create(:proposal, author: user)
@@ -518,5 +555,6 @@ feature 'Emails' do
 
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
+
   end
 end
