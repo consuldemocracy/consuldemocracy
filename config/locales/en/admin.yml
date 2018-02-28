@@ -516,8 +516,9 @@ en:
       administrators: Administrators
       managers: Managers
       moderators: Moderators
-      emails: Sending of emails
+      newsletters_and_notifications: Newsletters & Notifications
       newsletters: Newsletters
+      admin_notifications: Notifications
       emails_download: Emails download
       valuators: Valuators
       poll_officers: Poll officers
@@ -611,6 +612,41 @@ en:
         body: Email content
         body_help_text: This is how the users will see the email
         send_alert: Are you sure you want to send this newsletter to %{n} users?
+    admin_notifications:
+      create_success: Notification created successfully
+      update_success: Notification updated successfully
+      send_success: Notification sent successfully
+      delete_success: Notification deleted successfully
+      index:
+        section_title: Notifications
+        new_notification: New notification
+        title: Title
+        segment_recipient: Recipients
+        sent: Sent
+        actions: Actions
+        draft: Draft
+        edit: Edit
+        delete: Delete
+        preview: Preview
+        view: View
+        empty_notifications: There are no notifications to show
+      new:
+        section_title: New notification
+      edit:
+        section_title: Edit notification
+      show:
+        section_title: Notification preview
+        send: Send
+        will_get_notified: (%{n} users will be notified)
+        got_notified: (%{n} users got notified)
+        sent_at: Sent at
+        title: Title
+        body: Text
+        link: Link
+        segment_recipient: Recipients
+        preview_guide: "This is how the users will see the notification:"
+        sent_guide: "This is how the users see the notification:"
+        send_alert: Are you sure you want to send this notification to %{n} users?
     emails_download:
       index:
         title: Emails download

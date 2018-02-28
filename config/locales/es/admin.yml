@@ -517,8 +517,9 @@ es:
       administrators: Administradores
       managers: Gestores
       moderators: Moderadores
-      emails: Envío de emails
+      newsletters_and_notifications: Newsletters & Notificaciones
       newsletters: Newsletters
+      admin_notifications: Notificaciones
       emails_download: Descarga de emails
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
@@ -612,6 +613,41 @@ es:
         body: Contenido del email
         body_help_text: Así es como verán el email los usuarios
         send_alert: ¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?
+    admin_notifications:
+      create_success: Notificación creada correctamente
+      update_success: Notificación actualizada correctamente
+      send_success: Notificación enviada correctamente
+      delete_success: Notificación borrada correctamente
+      index:
+        section_title: Envío de notificaciones
+        new_notification: Crear notificación
+        title: Título
+        segment_recipient: Destinatarios
+        sent: Enviado
+        actions: Acciones
+        draft: Borrador
+        edit: Editar
+        delete: Borrar
+        preview: Previsualizar
+        view: Visualizar
+        empty_notifications: No hay notificaciones para mostrar
+      new:
+        section_title: Nueva notificación
+      edit:
+        section_title: Editar notificación
+      show:
+        section_title: Vista previa de notificación
+        send: Enviar
+        will_get_notified: (%{n} usuarios serán notificados)
+        got_notified: (%{n} usuarios fueron notificados)
+        sent_at: Enviado
+        title: Título
+        body: Texto
+        link: Enlace
+        segment_recipient: Destinatarios
+        preview_guide: "Así es como los usuarios verán la notificación:"
+        sent_guide: "Así es como los usuarios ven la notificación:"
+        send_alert: ¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?
     emails_download:
       index:
         title: Descarga de emails
