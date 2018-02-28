@@ -759,6 +759,10 @@ FactoryBot.define do
   factory :notification do
     user
     association :notifiable, factory: :proposal
+
+    trait :read do
+      read_at Time.current
+    end
   end
 
   factory :probe do
