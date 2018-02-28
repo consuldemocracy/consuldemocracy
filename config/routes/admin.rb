@@ -168,6 +168,12 @@ namespace :admin do
     get :users, on: :collection
   end
 
+  resources :admin_notifications do
+    member do
+      post :deliver
+    end
+  end
+
   resources :emails_download, only: :index do
     get :generate_csv, on: :collection
   end
