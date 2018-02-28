@@ -547,4 +547,7 @@ module CommonActions
     fill_in "newsletter_body", with: (options[:body] || "This is a different body")
   end
 
+  def click_notifications_icon
+    find("#notifications a").click
+  end
 end
