@@ -174,6 +174,13 @@ a {
   margin-right: $line-height;
 }
 
+.float-right-medium {
+
+  @include breakpoint(medium) {
+    float: right !important;
+  }
+}
+
 .no-margin-top {
   margin-top: rem-calc(-24);
 }
@@ -1169,20 +1176,45 @@ form {
   }
 }
 
-.notifications-list::before {
-  background: $border;
-  content: '';
-  height: 100%;
-  left: 22px;
-  position: absolute;
-  top: 60px;
-  width: 2px;
+.notifications-list {
+  position: relative;
+
+  &::before {
+    background: $border;
+    content: '';
+    height: 100%;
+    left: 7px;
+    position: absolute;
+    top: 2px;
+    width: 2px;
+  }
 }
 
 .notification {
+  border: 1px solid $border;
   display: block;
-  padding: $line-height / 2 0 $line-height / 2 $line-height * 1.5;
+  margin-bottom: $line-height / 4;
+  margin-left: $line-height;
+  padding: $line-height / 2 $line-height;
   position: relative;
+
+  @include breakpoint(medium) {
+
+    .mark-notification {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+    }
+  }
+
+  &.unread {
+    background: $highlight-soft;
+    border: 1px solid $highlight;
+
+    &:hover {
+      background: $highlight;
+    }
+  }
 
   &:hover {
 
@@ -1204,13 +1236,19 @@ form {
     color: $brand;
     content: '\4d';
     font-family: "icons" !important;
-    left: 0;
+    font-size: $small-font-size;
+    height: rem-calc(20);
+    left: -24px;
+    line-height: rem-calc(20);
     position: absolute;
+    text-align: center;
+    width: rem-calc(20);
   }
 
   p {
     color: $text;
     margin-bottom: 0;
+    max-width: 80%;
   }
 
   .time {
