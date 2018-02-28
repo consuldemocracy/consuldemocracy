@@ -17,6 +17,7 @@
       <li><a href="#8"><strong>Me he olvidado de mi contraseña o no me funciona ¿qué puedo hacer?</strong></a></li>
       <li><a href="#9"><strong>No consigo crear mi cuenta correctamente.</strong></a></li>
       <li><a href="#10"><strong>¿Cómo puedo cambiar mi correo electrónico, mi nombre de usuario, mi contraseña o activar/desactivar las notificaciones que me llegan al correo electrónico?</strong></a></li>
+      <li><a href="#11"><strong>Me indica que mi DNI ya está en uso</strong></a></li>
     </ul>
   </div>
 
@@ -31,6 +32,7 @@
       <li>¿Estás seguro de que estás empadronado en el <strong>municipio</strong> de Madrid? (el municipio es geográficamente más pequeño que la Comunidad de Madrid).</li>
       <li>Puede que haya algún problema en el registro de empadronamiento con tus datos. Por favor llama al 010 (o a su versión grauita 915298210) y confirma que tu información de Padrón es correcta.</li>
       <li>Si todo lo anterior no soluciona el problema, puedes acercarte a cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> que hay por todo Madrid, y te lo resolverán en el acto.</li>
+      <li>Si al verificar tu cuenta te aparece un mensaje indicándote que tu DNI ya está en uso <a href="#11">visita esta sección</a>.</li>
     </ul>
 
     <h2 id="2">No estoy empadronado en Madrid ¿por qué no puedo participar?</h2>
@@ -100,5 +102,14 @@
 
     <h2 id="10">¿Cómo puedo cambiar mi correo electrónico, mi nombre de usuario, mi contraseña, darme de baja o activar/desactivar las notificaciones que me llegan al correo electrónico?</h2>
     <p>Haz click en el enlace <%= link_to "Entrar", new_user_session_path %>, introduce tu correo electrónico y tu contraseña, y pulsa el botón "Entrar". Una vez hecho esto, haz click en el enlace <%= link_to "Mi cuenta", account_path %> donde encontrarás todas las opciones que te permitirán cambiar tu correo electrónico, nombre de usuario, contraseña, darte de baja o activar/desactivar las notificaciones. Una vez realizado el cambio adecuado asegúrate de hacer click en el botón "Guardar cambios".</p>
+
+    <h2 id="11">Me indica que mi DNI ya está en uso</h2>
+    <p>Si intentas verificar tu cuenta y aparece un mensaje de error diciendo que el <strong>"DNI ya está en uso"</strong>, lo primero que tienes que revisar es si tienes otra cuenta de usuario que hayas verificado con tu DNI. Ten en cuenta que puedes tener muchas cuentas de usuario, pero sólo una con tus dato de tu DNI, que será con la que puedas apoyar y votar propuestas, lo que llamamos una cuenta verificada.</p>
+
+    <p>Si tienes otra cuenta de usuario entra con ella y comprueba si puedes apoyar o votar propuestas. Si es así entonces está solucionado. Esta cuenta será la que podrás usar para para los procesos en los que se requiera una cuenta verificada.</p>
+
+    <p>Si no estás seguro si tienes o no otras cuentas, el caso más común es que tengas más de una dirección de correo electrónico, y hayas creado cuentas de usuario con cada una de ellas. Para comprobarlo y recuperar la contraseña de cada cuenta, entra en <%= link_to "olvidé mi contraseña", new_user_password_path %>, introduce una de tus direcciones de correo electrónico y pulsa el botón "Recibir instrucciones". Repite esto para todas tus direcciones de correo electrónico. Si en algún momento se te muestra un mensaje "No se ha encontrado el correo electrónico" significa que no tienes una cuenta de usuario con ese e-mail.</p>
+
+    <p>En cada correo electrónico que hayas usado para crear una cuenta de usuario te llegará un enlace, que te permitirá restablecer tu contraseña. Alguna de esas cuentas te permitirá apoyar o votar propuestas, y por tanto será tu cuenta verificada. En ese caso puedes usar esa cuenta de ahora en adelante para los procesos en los que se requiera una cuenta verificada.</p>
   </div>
 </div>
