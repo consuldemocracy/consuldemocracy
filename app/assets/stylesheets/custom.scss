@@ -2779,7 +2779,7 @@ $budget-2018-yellow:   #fef384;
   background: #000;
 
 
-  h1 {
+  h2 {
     color: $budget-2018-pink;
     font-family: "Souvenir" !important;
     font-size: rem-calc(30);
@@ -2790,7 +2790,7 @@ $budget-2018-yellow:   #fef384;
   &.budget-heading {
     min-height: $line-height * 11;
 
-    h2 {
+    h3 {
       color: $budget-2018-yellow;
       font-family: "Souvenir" !important;
       font-weight: 400;

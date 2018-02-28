@@ -57,6 +57,7 @@ en:
         description: Description
         more_info: More information and context
       index:
+        filter: Filter
         filters:
           open: Open processes
           next: Next
