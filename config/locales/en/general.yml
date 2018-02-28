@@ -294,7 +294,7 @@ en:
     index:
       empty_notifications: You don't have new notifications.
       mark_all_as_read: Mark all as read
-      read: All notifications
+      read: Read
       title: Notifications
       unread: Unread
     notification:

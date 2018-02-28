@@ -287,7 +287,7 @@ es:
     index:
       empty_notifications: No tienes notificaciones nuevas.
       mark_all_as_read: Marcar todas como leídas
-      read: Todas
+      read: Leidas
       title: Notificaciones
       unread: Nuevas
     notification:
