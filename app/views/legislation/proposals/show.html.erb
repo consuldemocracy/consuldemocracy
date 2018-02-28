@@ -83,6 +83,10 @@
         <h4><%= @proposal.question %></h4>
 
         <% if @proposal.is_proposal? %>
+          <%= render 'documents/documents',
+                      documents: @proposal.documents,
+                      max_documents_allowed: Proposal.max_documents_allowed %>
+
           <%= render 'shared/tags', taggable: @proposal %>
 
           <%= render 'shared/geozone', geozonable: @proposal %>
@@ -124,12 +128,4 @@
   <div class="tabs-panel is-active" id="tab-comments">
     <%= render "legislation/proposals/comments" %>
   </div>
-
-  <% if @proposal.is_proposal? %>
-    <div class="tabs-panel" id="tab-documents">
-      <%= render 'documents/documents',
-                  documents: @proposal.documents,
-                  max_documents_allowed: Proposal.max_documents_allowed %>
-    </div>
-  <% end %>
 </div>

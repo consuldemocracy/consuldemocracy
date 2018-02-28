@@ -1,4 +1,7 @@
-shared_examples "nested documentable" do |login_as_name, documentable_factory_name, path, documentable_path_arguments, fill_resource_method_name, submit_button, documentable_success_notice|
+shared_examples "nested documentable" do |login_as_name, documentable_factory_name,
+                                          path, documentable_path_arguments,
+                                          fill_resource_method_name, submit_button,
+                                          documentable_success_notice|
   include ActionView::Helpers
   include DocumentsHelper
   include DocumentablesHelper
@@ -26,7 +29,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).to have_css "#new_document_link", visible: true
     end
 
-    scenario "Should not show new document link when documentable max documents allowed limit is reached", :js do
+    scenario "Should not show new document link when
+              documentable max documents allowed limit is reached", :js do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -81,7 +85,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).to have_css ".file-name", text: "empty.pdf"
     end
 
-    scenario "Should update nested document file title with file name after choosing a file when no title defined", :js do
+    scenario "Should update nested document file title with
+              file name after choosing a file when no title defined", :js do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -90,7 +95,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect_document_has_title(0, "empty.pdf")
     end
 
-    scenario "Should not update nested document file title with file name after choosing a file when title already defined", :js do
+    scenario "Should not update nested document file title with
+              file name after choosing a file when title already defined", :js do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -141,7 +147,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect_document_has_cached_attachment(0, "")
     end
 
-    scenario "Should show document errors after documentable submit with empty document fields", :js do
+    scenario "Should show document errors after documentable submit with
+              empty document fields", :js do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -163,7 +170,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).not_to have_css("#nested-documents .document")
     end
 
-    scenario "Should show successful notice when resource filled correctly without any nested documents", :js do
+    scenario "Should show successful notice when
+              resource filled correctly without any nested documents", :js do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -173,7 +181,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).to have_content documentable_success_notice
     end
 
-    scenario "Should show successful notice when resource filled correctly and after valid file uploads", :js do
+    scenario "Should show successful notice when
+              resource filled correctly and after valid file uploads", :js do
       login_as user_to_login
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
@@ -195,8 +204,6 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       documentable_redirected_to_resource_show_or_navigate_to
 
       expect(page).to have_content "Documents"
-
-      find("#tab-documents-label").click
       expect(page).to have_content "empty.pdf"
 
       # Review
@@ -204,13 +211,16 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).to have_css("a[href$='.pdf']")
     end
 
-    scenario "Should show resource with new document after successful creation with maximum allowed uploaded files", :js do
+    scenario "Should show resource with new document after successful creation with
+              maximum allowed uploaded files", :js do
       login_as user_to_login
       visit send(path, arguments)
 
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable.class.max_documents_allowed.times { documentable_attach_new_file(cycle(Dir.glob('spec/fixtures/files/*.pdf'))) }
+      documentable.class.max_documents_allowed.times {
+        documentable_attach_new_file(cycle(Dir.glob('spec/fixtures/files/*.pdf')))
+      }
 
       click_on submit_button
       documentable_redirected_to_resource_show_or_navigate_to
@@ -228,7 +238,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         expect(page).to have_css ".document", count: 1
       end
 
-      scenario "Should not show add document button when documentable has reached maximum of documents allowed", :js do
+      scenario "Should not show add document button when
+                documentable has reached maximum of documents allowed", :js do
         login_as user_to_login
         create_list(:document, documentable.class.max_documents_allowed, documentable: documentable)
         visit send(path, arguments)
