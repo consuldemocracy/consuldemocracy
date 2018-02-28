@@ -64,11 +64,15 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Show: "Back" link directs to previous page', :js do
+  scenario 'Show: "Back" link directs to previous page' do
     debate = create(:debate, title: 'Test Debate 1')
 
     visit debates_path(order: :hot_score, page: 1)
-    first(:link, debate.title).click
+
+    within("#debate_#{debate.id}") do
+      click_link debate.title
+    end
+
     link_text = find_link('Go back')[:href]
 
     expect(link_text).to include(debates_path(order: :hot_score, page: 1))
