@@ -46,7 +46,11 @@ class NotificationsController < ApplicationController
       when "Legislation::Proposal"
         legislation_process_proposal_path @notification.linkable_resource.process, @notification.linkable_resource
       else
-        url_for @notification.linkable_resource
+        if @notification.linkable_resource.is_a?(AdminNotification)
+          @notification.linkable_resource.link || notifications_path
+        else
+          url_for @notification.linkable_resource
+        end
       end
     end
 
