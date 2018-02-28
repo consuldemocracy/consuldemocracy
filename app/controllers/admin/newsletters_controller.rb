@@ -48,7 +48,10 @@ class Admin::NewslettersController < Admin::BaseController
     @newsletter = Newsletter.find(params[:id])
 
     if @newsletter.valid?
-      Mailer.newsletter(@newsletter).deliver_later
+      @newsletter.list_of_recipients.each do |recipient|
+        Mailer.newsletter(@newsletter, recipient).deliver_later
+      end
+
       @newsletter.update(sent_at: Time.current)
       flash[:notice] = t("admin.newsletters.send_success")
     else
