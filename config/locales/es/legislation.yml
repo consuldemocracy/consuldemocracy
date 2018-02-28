@@ -57,6 +57,7 @@ es:
         description: En qué consiste
         more_info: Más información y contexto
       index:
+        filter: Filtro
         filters:
           open: Procesos activos
           next: Próximamente

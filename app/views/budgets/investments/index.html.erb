@@ -53,14 +53,9 @@
           </div>
         </div>
       <% elsif @heading.present? %>
-        <div class="small-12 margin-bottom">
-          <div class="row">
-            <div class="small-12 medium-9 column">
-              <h2><%= t("budgets.investments.index.by_heading", heading: @heading.name) %></h2>
-            </div>
-            <div class="small-12 medium-3 column">
-              <%= render "minimal_selector" %>
-            </div>
+        <div class="row">
+          <div class="small-12 column">
+            <%= render "minimal_selector" %>
           </div>
         </div>
       <% end %>
