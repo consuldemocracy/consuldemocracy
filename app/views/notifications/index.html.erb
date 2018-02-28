@@ -24,7 +24,9 @@
       </div>
     <% else %>
       <ul class="no-bullet clear notifications-list">
-        <%= render @notifications %>
+        <% @notifications.each do |notification| %>
+          <%= render partial: '/notifications/notification', locals: {notification: notification} %>
+        <% end %>
       </ul>
     <% end %>
   </div>
