@@ -43,10 +43,6 @@
               definitions: link_to(t("budgets.investments.index.unfeasible_text_definitions"), "https://decide.madrid.es/participatory_budget_info#20")).html_safe %>
           </div>
         </div>
-      <% elsif @heading.present? %>
-        <div class="small-12 margin-bottom">
-          <h2><%= t("budgets.investments.index.by_heading", heading: @heading.name) %></h2>
-        </div>
       <% end %>
 
       <%= render("shared/advanced_search", search_path: budget_investments_url(@budget)) %>
