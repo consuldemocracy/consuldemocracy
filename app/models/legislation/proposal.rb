@@ -12,6 +12,9 @@ class Legislation::Proposal < ActiveRecord::Base
   include Documentable
   include Notifiable
 
+  include Linkable
+  nested_linkable_with :legislation_process_id, route: 'legislation_process_proposal'
+
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
                accepted_content_types: [ "application/pdf" ]

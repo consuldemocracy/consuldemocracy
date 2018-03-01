@@ -9,7 +9,7 @@
       <% end %>
       <span class="related-content-title"><%= t("related_content.content_title.#{related.model_name.singular}") %></span><br>
       <h3 class="inline-block">
-        <%= link_to related.title, related.url %>
+        <%= link_to related.title, related.path %>
       </h3>
     </li>
   <% end %>

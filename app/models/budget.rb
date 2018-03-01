@@ -37,6 +37,10 @@ class Budget < ActiveRecord::Base
     where.not(phase: "drafting").order(:created_at).last
   end
 
+  def to_param
+    slug
+  end
+
   def current_phase
     phases.send(phase)
   end

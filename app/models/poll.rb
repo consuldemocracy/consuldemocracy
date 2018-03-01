@@ -3,6 +3,7 @@ class Poll < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
   include Notifiable
+  include Linkable
 
   RECOUNT_DURATION = 1.week
 

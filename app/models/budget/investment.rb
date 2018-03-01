@@ -26,6 +26,9 @@ class Budget
     include Notifiable
     include Filterable
 
+    include Linkable
+    nested_linkable_with :budget_id
+
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
     belongs_to :group
@@ -92,10 +95,6 @@ class Budget
 
     def comments_count
       comments.count
-    end
-
-    def url
-      budget_investment_path(budget, self)
     end
 
     def self.filter_params(params)

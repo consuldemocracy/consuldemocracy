@@ -24,7 +24,7 @@ module CommunitiesHelper
     if community.from_proposal?
       proposal_path(community.proposal)
     else
-      budget_investment_path(community.investment.budget_id, community.investment)
+      budget_investment_path(community.investment.budget, community.investment)
     end
   end
 

@@ -8,32 +8,32 @@ shared_examples "relationable" do |relationable_model_name|
   scenario 'related contents are listed' do
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
-    visit relationable.url
+    visit relationable.path
     within("#related-content-list") do
       expect(page).to have_content(related1.title)
     end
 
-    visit related1.url
+    visit related1.path
     within("#related-content-list") do
       expect(page).to have_content(relationable.title)
     end
   end
 
   scenario 'related contents list is not rendered if there are no relations' do
-    visit relationable.url
+    visit relationable.path
     expect(page).not_to have_css("#related-content-list")
   end
 
   scenario 'related contents can be added' do
     login_as(user)
-    visit relationable.url
+    visit relationable.path
 
     expect(page).to have_selector('#related_content', visible: false)
     click_on("Add related content")
     expect(page).to have_selector('#related_content', visible: true)
 
     within("#related_content") do
-      fill_in 'url', with: "#{Setting['url'] + related1.url}"
+      fill_in 'url', with: "#{Setting['url'] + related1.path}"
       click_button "Add"
     end
 
@@ -41,14 +41,14 @@ shared_examples "relationable" do |relationable_model_name|
       expect(page).to have_content(related1.title)
     end
 
-    visit related1.url
+    visit related1.path
 
     within("#related-content-list") do
       expect(page).to have_content(relationable.title)
     end
 
     within("#related_content") do
-      fill_in 'url', with: "#{Setting['url'] + related2.url}"
+      fill_in 'url', with: "#{Setting['url'] + related2.path}"
       click_button "Add"
     end
 
@@ -59,7 +59,7 @@ shared_examples "relationable" do |relationable_model_name|
 
   scenario 'if related content URL is invalid returns error' do
     login_as(user)
-    visit relationable.url
+    visit relationable.path
 
     click_on("Add related content")
 
@@ -73,12 +73,12 @@ shared_examples "relationable" do |relationable_model_name|
 
   scenario 'returns error when relating content URL to itself' do
     login_as(user)
-    visit relationable.url
+    visit relationable.path
 
     click_on("Add related content")
 
     within("#related_content") do
-      fill_in 'url', with: Setting[:url] + relationable.url.to_s
+      fill_in 'url', with: Setting[:url] + relationable.path.to_s
       click_button "Add"
     end
 
@@ -89,7 +89,7 @@ shared_examples "relationable" do |relationable_model_name|
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)
-    visit relationable.url
+    visit relationable.path
 
     within("#related-content-list") do
       find("#related-content-#{related_content.opposite_related_content.id}").hover
@@ -106,7 +106,7 @@ shared_examples "relationable" do |relationable_model_name|
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)
-    visit relationable.url
+    visit relationable.path
 
     within("#related-content-list") do
       find("#related-content-#{related_content.opposite_related_content.id}").hover
@@ -131,7 +131,7 @@ shared_examples "relationable" do |relationable_model_name|
 
     login_as(user)
 
-    visit relationable.url
+    visit relationable.path
 
     expect(page).not_to have_css("#related-content-list")
   end

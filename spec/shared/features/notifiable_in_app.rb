@@ -19,7 +19,7 @@ shared_examples "notifiable in-app" do |described_class|
     3.times do
       login_as(create(:user, :verified))
 
-      visit path_for(notifiable)
+      visit notifiable.path
 
       fill_in comment_body(notifiable), with: "I agree"
       click_button "publish_comment"
@@ -43,7 +43,7 @@ shared_examples "notifiable in-app" do |described_class|
     comment = create :comment, commentable: notifiable, user: author
 
     login_as(create(:user, :verified))
-    visit path_for(notifiable)
+    visit notifiable.path
 
     click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do
@@ -71,7 +71,7 @@ shared_examples "notifiable in-app" do |described_class|
 
     3.times do |n|
       login_as(create(:user, :verified))
-      visit path_for(notifiable)
+      visit notifiable.path
 
       within("#comment_#{comment.id}_reply") { click_link "Reply" }
       within "#js-comment-form-comment_#{comment.id}" do
@@ -97,7 +97,7 @@ shared_examples "notifiable in-app" do |described_class|
 
   scenario "Author commented on his own notifiable", :js do
     login_as(author)
-    visit path_for(notifiable)
+    visit notifiable.path
 
     fill_in comment_body(notifiable), with: "I commented on my own notifiable"
     click_button "publish_comment"
@@ -115,7 +115,7 @@ shared_examples "notifiable in-app" do |described_class|
     comment = create :comment, commentable: notifiable, user: author
 
     login_as author
-    visit path_for(notifiable)
+    visit notifiable.path
 
     click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do
