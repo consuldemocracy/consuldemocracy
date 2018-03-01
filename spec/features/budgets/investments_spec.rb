@@ -474,7 +474,7 @@ feature 'Budget Investments' do
     end
   end
 
-  context("Orders") do
+  context "Orders" do
     before { budget.update(phase: 'selecting') }
 
     scenario "Default order is random" do
@@ -504,7 +504,7 @@ feature 'Budget Investments' do
       expect(order).not_to eq(new_order)
     end
 
-    scenario 'Random order maintained with pagination', :js do
+    scenario 'Random order maintained with pagination' do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:budget_investment, heading: heading) }
 
@@ -536,7 +536,7 @@ feature 'Budget Investments' do
       expect(order).to eq(new_order)
     end
 
-    scenario "Investments are not repeated with random order", :js do
+    scenario "Investments are not repeated with random order" do
       12.times { create(:budget_investment, heading: heading) }
       # 12 instead of per_page + 2 because in each page there are 10 (in this case), not 25
 
@@ -554,7 +554,7 @@ feature 'Budget Investments' do
       expect(common_values.length).to eq(0)
     end
 
-    scenario 'Proposals are ordered by confidence_score', :js do
+    scenario 'Proposals are ordered by confidence_score' do
       best_proposal = create(:budget_investment, heading: heading, title: 'Best proposal')
       best_proposal.update_column(:confidence_score, 10)
       worst_proposal = create(:budget_investment, heading: heading, title: 'Worst proposal')
@@ -575,7 +575,7 @@ feature 'Budget Investments' do
       expect(current_url).to include('page=1')
     end
 
-    scenario 'Each user has a different and consistent random budget investment order when random_seed is disctint', :js do
+    scenario 'Each user has a different and consistent random budget investment order when random_seed is disctint' do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       r1 = 1
@@ -614,7 +614,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario 'Each user has a equal and consistent budget investment order when the random_seed is equal', :js do
+    scenario 'Each user has a equal and consistent budget investment order when the random_seed is equal' do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
