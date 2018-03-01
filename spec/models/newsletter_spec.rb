@@ -47,21 +47,20 @@ describe Newsletter do
     end
   end
 
-  describe '#list_of_recipients' do
+  describe '#list_of_recipient_emails' do
 
     before do
       create(:user, newsletter: true, email: 'newsletter_user@consul.dev')
-      no_news_user = create(:user, newsletter: false, email: 'no_news_user@consul.dev')
-      erased_user = create(:user, email: 'erased_user@consul.dev')
-      erased_user.erase
+      create(:user, newsletter: false, email: 'no_news_user@consul.dev')
+      create(:user, email: 'erased_user@consul.dev').erase
       newsletter.update(segment_recipient: 'all_users')
     end
 
     it 'returns list of recipients excluding users with disabled newsletter' do
-      expect(newsletter.list_of_recipients.count).to eq(1)
-      expect(newsletter.list_of_recipients.map(&:email)).to include('newsletter_user@consul.dev')
-      expect(newsletter.list_of_recipients.map(&:email)).not_to include('no_news_user@consul.dev')
-      expect(newsletter.list_of_recipients.map(&:email)).not_to include('erased_user@consul.dev')
+      expect(newsletter.list_of_recipient_emails.count).to eq(1)
+      expect(newsletter.list_of_recipient_emails).to include('newsletter_user@consul.dev')
+      expect(newsletter.list_of_recipient_emails).not_to include('no_news_user@consul.dev')
+      expect(newsletter.list_of_recipient_emails).not_to include('erased_user@consul.dev')
     end
   end
 end

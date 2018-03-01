@@ -48,8 +48,8 @@ class Admin::NewslettersController < Admin::BaseController
     @newsletter = Newsletter.find(params[:id])
 
     if @newsletter.valid?
-      @newsletter.list_of_recipients.each do |recipient|
-        Mailer.newsletter(@newsletter, recipient).deliver_later
+      @newsletter.list_of_recipient_emails.each do |recipient_email|
+        Mailer.newsletter(@newsletter, recipient_email).deliver_later
       end
 
       @newsletter.update(sent_at: Time.current)
