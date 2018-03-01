@@ -72,14 +72,14 @@ feature 'Admin budget investments' do
       within("#budget_investment_#{budget_investment1.id}") do
         expect(page).to have_content("No admin assigned")
         expect(page).to have_content("Valuator Olga")
-        expect(page).to have_content("Without valuation groups")
+        expect(page).to have_content("No valuation groups assigned")
       end
 
       within("#budget_investment_#{budget_investment2.id}") do
         expect(page).to have_content("No admin assigned")
         expect(page).to have_content("Valuator Olga")
         expect(page).to have_content("Valuator Miriam")
-        expect(page).to have_content("Without valuation groups")
+        expect(page).to have_content("No valuation groups assigned")
       end
 
       budget_investment3.update(administrator_id: admin.id)
@@ -88,7 +88,7 @@ feature 'Admin budget investments' do
       within("#budget_investment_#{budget_investment3.id}") do
         expect(page).to have_content("Gema")
         expect(page).to have_content("No valuators assigned")
-        expect(page).to have_content("Without valuation groups")
+        expect(page).to have_content("No valuation groups assigned")
       end
     end
 
@@ -115,7 +115,7 @@ feature 'Admin budget investments' do
       end
 
       within("#budget_investment_#{budget_investment3.id}") do
-        expect(page).to have_content("Without valuation groups")
+        expect(page).to have_content("No valuation groups assigned")
       end
 end
 
