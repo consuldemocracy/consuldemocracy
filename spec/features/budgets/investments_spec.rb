@@ -610,7 +610,15 @@ feature 'Budget Investments' do
       end
 
       expect(@first_user_investments_order).to eq(@second_user_investments_order)
+    scenario "Convert seed to a value small enough for the modulus function to return investments in random order", :focus do
+      12.times { |i| create(:budget_investment, heading: heading, id: i) }
 
+      visit budget_investments_path(budget, heading_id: heading.id, random_seed: '12')
+
+      order = investments_order
+      orderd_by_id = Budget::Investment.order(:id).limit(10).pluck(:title)
+
+      expect(order).to_not eq(orderd_by_id)
     end
 
     def investments_order
