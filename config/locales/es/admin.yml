@@ -559,7 +559,7 @@ es:
     emails_download:
       index:
         title: Descarga de emails
-        download_segment: Descargar segmento
+        download_segment: Descargar direcciones de correo electrónico
         download_segment_help_text: Descarga en formato CSV
         download_emails_button: Descargar lista de emails
     valuators:

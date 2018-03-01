@@ -560,7 +560,7 @@ en:
     emails_download:
       index:
         title: Emails download
-        download_segment: Download segment
+        download_segment: Download email addresses
         download_segment_help_text: Download in CSV format
         download_emails_button: Download emails list
     valuators:
