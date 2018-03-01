@@ -343,19 +343,11 @@ class Budget
     end
 
     def assigned_valuators
-      if valuators.size.zero?
-        I18n.t("admin.budget_investments.index.no_valuators_assigned")
-      else
-        self.valuators.collect(&:description_or_name).compact.join(', ')
-      end
+      self.valuators.collect(&:description_or_name).compact.join(', ').presence
     end
 
     def assigned_valuation_groups
-      if valuator_groups.count.zero?
-        I18n.t("admin.budget_investments.index.no_valuation_groups")
-      else
-        self.valuator_groups.collect(&:name).compact.join(', ')
-      end
+      self.valuator_groups.collect(&:name).compact.join(', ').presence
     end
 
     def self.to_csv(investments, options = {})
@@ -380,8 +372,8 @@ class Budget
                   else
                     I18n.t("admin.budget_investments.index.no_admin_assigned")
                   end
-          vals = investment.assigned_valuators
-          val_groups = investment.assigned_valuation_groups
+          assigned_valuators = investment.assigned_valuators || '-'
+          assigned_valuation_groups = investment.assigned_valuation_groups || '-'
           heading_name = investment.heading.name
           price_string = "admin.budget_investments.index.feasibility"\
                          ".#{investment.feasibility}"
@@ -389,8 +381,8 @@ class Budget
           valuation_finished = investment.valuation_finished? ?
                                          I18n.t('shared.yes') :
                                          I18n.t('shared.no')
-          csv << [id, title, total_votes, admin, vals, val_groups, heading_name,
-                  price, valuation_finished]
+          csv << [id, title, total_votes, admin, assigned_valuators, assigned_valuation_groups,
+                  heading_name, price, valuation_finished]
         end
       end
       csv_string
