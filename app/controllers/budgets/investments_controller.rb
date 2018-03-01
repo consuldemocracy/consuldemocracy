@@ -66,6 +66,12 @@ module Budgets
 
     def vote
       @investment.register_selection(current_user)
+
+      unless @investment.heading.already_voted_in_by_user?(current_user)
+        Budget::Heading::Voter.create(user_id: current_user.id,
+                                      budget_heading_id: @investment.heading.id)
+      end
+
       load_investment_votes(@investment)
       respond_to do |format|
         format.html { redirect_to budget_investments_path(heading_id: @investment.heading.id) }
