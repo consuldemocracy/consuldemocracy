@@ -13,6 +13,6 @@ class Admin::EmailsDownloadController < Admin::BaseController
   private
 
   def users_segment_emails_csv(users_segment)
-    UserSegments.send(users_segment).newsletter.pluck(:email).to_csv
+    UserSegments.send(users_segment).newsletter.pluck(:email).compact.join(',')
   end
 end
