@@ -9,7 +9,7 @@ class Newsletter < ActiveRecord::Base
   validates_format_of :from, :with => /@/
 
   def list_of_recipients
-    UserSegments.send(segment_recipient).newsletter if valid_segment_recipient?
+    UserSegments.send(segment_recipient).newsletter.select {|user| !user.email.nil? } if valid_segment_recipient?
   end
 
   def valid_segment_recipient?
