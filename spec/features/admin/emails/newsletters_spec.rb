@@ -133,7 +133,7 @@ feature "Admin newsletter emails" do
 
       click_link "Send"
 
-      total_users = newsletter.list_of_recipients.count
+      total_users = newsletter.list_of_recipient_emails.count
       page.accept_confirm("Are you sure you want to send this newsletter to #{total_users} users?")
 
       expect(page).to have_content "Newsletter sent successfully"

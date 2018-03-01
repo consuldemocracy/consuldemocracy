@@ -2,7 +2,7 @@
 
 <h2><%= t("admin.newsletters.show.title") %></h2>
 
-<% recipients_count = @newsletter.valid_segment_recipient? ? @newsletter.list_of_recipients.count : 0 %>
+<% recipients_count = @newsletter.valid_segment_recipient? ? @newsletter.list_of_recipient_emails.count : 0 %>
 
 <div class="small-12 column">
   <div class="callout highlight">
