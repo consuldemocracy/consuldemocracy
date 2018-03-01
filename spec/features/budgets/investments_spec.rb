@@ -621,6 +621,30 @@ feature 'Budget Investments' do
       expect(order).to_not eq(orderd_by_id)
     end
 
+    scenario "Set votes for investments randomized with a seed" do
+      voter = create(:user, :level_two)
+      login_as(voter)
+
+      10.times { create(:budget_investment, heading: heading) }
+
+      voted_investments = []
+      10.times do
+        investment = create(:budget_investment, heading: heading)
+        create(:vote, votable: investment, voter: voter)
+        voted_investments << investment
+      end
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      voted_investments.each do |investment|
+        if page.has_link?(investment.title)
+          within("#budget_investment_#{investment.id}") do
+            expect(page).to have_content "You have already supported this investment"
+          end
+        end
+      end
+    end
+
     def investments_order
       all(".budget-investment h3").collect {|i| i.text }
     end
