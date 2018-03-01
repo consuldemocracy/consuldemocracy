@@ -5,6 +5,8 @@ class Budget
     belongs_to :group
 
     has_many :investments
+    has_many :budget_heading_voters, class_name: "Budget::Heading::Voter", foreign_key: :budget_heading_id
+    has_many :voters, through: :budget_heading_voters, source: :user
 
     validates :group_id, presence: true
     validates :name, presence: true, uniqueness: { if: :name_exists_in_budget_headings }
@@ -26,6 +28,10 @@ class Budget
 
     def can_be_deleted?
       investments.empty?
+    end
+
+    def already_voted_in_by_user?(user)
+      voters.include?(user)
     end
 
     private
