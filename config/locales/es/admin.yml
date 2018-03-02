@@ -109,8 +109,6 @@ es:
         no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
         add_group: Añadir nuevo grupo
         create_group: Crear grupo
-        edit_group: Editar grupo
-        submit: Guardar grupo
         heading: Nombre de la partida
         add_heading: Añadir partida
         amount: Cantidad
