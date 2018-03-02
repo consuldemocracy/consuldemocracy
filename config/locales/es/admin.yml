@@ -171,6 +171,7 @@ es:
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
+        no_valuation_groups: Sin grupos evaluadores
         feasibility:
           feasible: "Viable (%{price})"
           unfeasible: "Inviable"
@@ -182,6 +183,7 @@ es:
         table_supports: "Apoyos"
         table_admin: "Administrador"
         table_valuator: "Evaluador"
+        table_valuation_group: "Grupos evaluadores"
         table_geozone: "Ámbito de actuación"
         table_feasibility: "Viabilidad"
         table_valuation_finished: "Ev. Fin."
