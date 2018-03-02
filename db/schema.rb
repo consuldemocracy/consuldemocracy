@@ -1075,6 +1075,7 @@ ActiveRecord::Schema.define(version: 20180222120017) do
     t.integer  "related_content_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "flags_count",                  default: 0
     t.datetime "hidden_at"
     t.integer  "related_content_scores_count", default: 0
     t.integer  "author_id"
