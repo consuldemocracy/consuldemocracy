@@ -7,9 +7,10 @@ feature 'Legislation Proposals' do
     it_behaves_like 'notifiable in-app', Legislation::Proposal
   end
 
-  let(:user) { create(:user) }
-  let(:user2) { create(:user) }
-  let(:process) { create(:legislation_process) }
+  let(:user)     { create(:user) }
+  let(:user2)    { create(:user) }
+  let(:process)  { create(:legislation_process) }
+  let(:proposal) { create(:legislation_proposal) }
 
   scenario 'Each user as a different and consistent random proposals order', :js do
     create_list(:legislation_proposal, 10, process: process)
@@ -55,6 +56,14 @@ feature 'Legislation Proposals' do
 
     expect(legislation_proposals_order).to eq(first_page_proposals_order)
     expect(first_page_proposals_order & second_page_proposals_order).to eq([])
+  end
+
+  scenario "Only one menu element has 'active' CSS selector" do
+    visit legislation_process_proposal_path(proposal.process, proposal)
+
+    within('#navigation_bar') do
+      expect(page).to have_css('.active', count: 1)
+    end
   end
 
   def legislation_proposals_order
