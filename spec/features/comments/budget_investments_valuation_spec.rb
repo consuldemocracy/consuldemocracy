@@ -9,12 +9,14 @@ feature 'Internal valuation comments on Budget::Investments' do
 
   background do
     Setting['feature.budgets'] = true
+    Setting['feature.budgets.valuators_allowed'] = true
     investment.valuators << valuator_user.valuator
     login_as(valuator_user)
   end
 
   after do
     Setting['feature.budgets'] = nil
+    Setting['feature.budgets.valuators_allowed'] = nil
   end
 
   context 'Show valuation comments' do

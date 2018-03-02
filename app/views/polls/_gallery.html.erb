@@ -16,7 +16,7 @@
       </button>
     </li>
 
-    <% answer.images.reverse.each_with_index do |image, index| %>
+    <% answer.images.sort_by{|i| i.title.split(" (")[1].to_i }.each_with_index do |image, index| %>
       <li class="orbit-slide <%= active_class(index) %>">
         <%= link_to image.attachment.url(:original), target: "_blank" do %>
           <%= image_tag image.attachment.url(:original),

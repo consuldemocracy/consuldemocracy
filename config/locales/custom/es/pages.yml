@@ -1,0 +1,152 @@
+es:
+  pages:
+    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado en Madrid aportando los datos indicados anteriormente, los cuales serán contrastados por la Dirección General de Participación Ciudadana con los ficheros 'Padrón Municipal de Habitantes' cuyo responsable es la Dirección General de Economía y Sector Público y 'Servicios Atención al Ciudadano' cuyo responsable es la Dirección General de Transparencia y Atención a la Ciudadanía. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados por la Dirección General de Participación Ciudadana en el fichero 'Gestión de Procesos Participativos' indicado anteriormente en las condiciones de uso del portal.
+    help_translate:
+      title: ¡Ayúdanos a traducir!
+      text: |-
+        Si hablas otros idiomas por favor ayúdanos a que esta web y el software que utiliza esté disponible en otros idiomas.
+
+        Escríbenos a ag.gobiernoabierto@madrid.es para que te demos acceso al sistema de traducción colaborativo.
+        Todos juntos conseguiremos que cualquier país pueda disfrutar de esta herramienta. ¡Un millón de gracias!
+    help:
+      title: "%{org} es la plataforma de participación ciudadana del Ayuntamiento de Madrid"
+      meta_description: "Plataforma de participación ciudadana del Ayuntamiento de Madrid donde puedes proponer y decidir en qué gastar el presupuesto municipal."
+      meta_keywords: "participación ciudadana, Ayuntamiento de Madrid, Madrid, presupuestos participativos, propuestas ciudadanas, consulta ciudadana"
+      menu:
+        processes: "Procesos"
+      debates:
+        detail: "Preguntas frecuentes sobre debates"
+        description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad de Madrid. También es un espacio donde generar ideas que a través de las otras secciones de %{org} lleven a actuaciones concretas por parte del Ayuntamiento."
+      proposals:
+        detail: "Preguntas frecuentes sobre propuestas"
+        description: "En la sección de %{link} puedes plantear propuestas para que el Ayuntamiento de Madrid las lleve a cabo. Las propuestas recaban apoyos, y si alcanzan los apoyos suficientes se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Ayuntamiento y se llevan a cabo."
+        feature_html: "Para crear una propuesta hay que registrarse en %{org}. Las propuestas que consiguen el apoyo en la web del 1% de la gente con derecho a voto (%{supports} apoyos de personas mayores de 16 años empadronadas en Madrid) pasan a votación. Para apoyar propuestas es necesario verificar tu cuenta."
+        kit_decide: "Las propuestas permiten que personas y colectivos de Madrid decidan directamente cómo quieren que sea su ciudad. Te facilitamos el %{link} para que puedas poner en marcha campañas para divulgar tus propuestas."
+        kit_link: "Kit Decide"
+      budgets:
+        detail: "Preguntas frecuentes sobre presupuestos participativos"
+        feature: "En este proceso cada año la gente plantea, apoya y vota proyectos. Los más votados pasan a financiarse con el presupuesto municipal. En 2017 fueron seleccionados 311 proyectos por un total de 100 millones de euros."
+        feature_2: "Los proyectos pueden ser para toda la ciudad (proyectos de gasto de gran envergadura o que afectan a gran parte de los habitantes de Madrid) o para cada uno de los 21 distritos."
+        phase_2_html: "En marzo, los proponentes tienen que recabar apoyos, a modo de <strong>fase de preselección</strong>. El %{link} te puede ayudar a hacer campaña y divulgar tus proyectos."
+        phase_2_link: "Kit Decide"
+        phase_3_html: "Entre abril y comienzos de mayo los técnicos del Ayuntamiento de Madrid <strong>tasan los proyectos</strong> por orden de más a menos apoyados y comprueban que son viables."
+        phase_4_html: "Finalmente, entre el 15 de mayo y el 30 de junio, toda la ciudadanía madrileña puede <strong>votar los proyectos</strong> que más le interesan."
+      polls:
+        detail: "Preguntas frecuentes sobre votaciones"
+        description: "La sección de %{link} se activa cada vez que una propuesta alcanza el 1% de apoyos y pasa a votación o cuando el Ayuntamiento de Madrid propone un tema para que la gente decida sobre él."
+        feature_2: "Pueden votar todas las personas empadronadas en Madrid mayores de 16 años."
+        image_alt: "Primera votación ciudadana"
+        figcaption: "Imagen de campaña de la Primera Votación Ciudadana en febrero de 2017."
+        text_1_html: 'Hasta ahora se han celebrado dos votaciones. En febrero de 2017 la ciudadanía aprobó las propuestas de <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">"Madrid 100% sostenible" y "Billete único para el transporte público"</a>. También se preguntó por la <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">reforma de Plaza de España</a>, la movilidad de <a href="https://decide.madrid.es/vota/gran-via/results">Gran Vía</a> y cuestiones en seis distritos.'
+        text_2_html: 'En octubre de 2017 la ciudadanía decidió sobre la remodelación de once plazas de la ciudad: <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-lucero/results">Lucero</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-san-blas/results">San Blas</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-mar-cristal/results">Mar de Cristal</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-duquesa-osuna/results">Duquesa de Osuna</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-emperatriz/results">Emperatriz</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-remonta/results">Remonta</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-vaguada/results">La Vaguada</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-encuentro/results">El Encuentro</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-misterios/results">Los Misterios</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-puerto-canfranc/results">Puerto de Canfranc</a> y <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-mayor-villaverde/results">Mayor de Villaverde y Ágata</a>.'
+      processes:
+        title: "Procesos"
+        detail: "Preguntas frecuentes sobre procesos"
+        description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad de Madrid y puede dar su opinión sobre las políticas municipales en debates previos."
+        link: "procesos"
+      other:
+        world: "Participación ciudadana directa en el mundo"
+        facts: "Hechos sobre participación ciudadana y democracia directa"
+        forums: "Foros Locales"
+      history:
+        title: "Historia de Decide Madrid"
+        description: "La plataforma de participación de Decide Madrid lleva en marcha desde septiembre de 2015. Desde entonces ha registrado decenas de miles de propuestas y proyectos, se han celebrado dos consultas ciudadanas (en febrero y octubre de 2017) y dos ediciones de presupuestos participativos en las que la ciudadanía ha decidido en qué gastar 160 millones de euros de los presupuestos municipales."
+        subtitle: "Decide Madrid: software libre que se extiende a otras instituciones"
+        text_1_html: 'La plataforma de participación ciudadana Decide Madrid usa la aplicación <a href="https://github.com/consul/consul/" target="_blank" title="(se abre en ventana nueva)">CONSUL</a>, que es software libre con licencia AGPLv3.'
+        text_2: "En palabras sencillas significa que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con los cambios que quiera (manteniendo el que otros puedan a su vez hacer lo mismo), porque creemos que la cultura es mejor y más rica cuando se libera."
+        text_3: "Desde la creación de CONSUL, el Ayuntamiento de Madrid impulsa que municipios, regiones y todo tipo de instituciones usen el código para potenciar la participación ciudadana y la toma directa de decisiones en el mundo."
+        text_4: "Así, instituciones de más de 50 ciudades y regiones están replicando el modelo de Decide Madrid, en lugares como Buenos Aires, París, Turín, Jalisco, Valencia, A Coruña, entre muchos otros."
+        text_5_html: 'Si estás interesado en usar CONSUL, desde el Ayuntamiento vamos a ayudarte todo lo posible a que lo puedas poner en marcha. <a href="mailto:extension.institucional@madrid.es">Escríbenos un correo electrónico</a>.'
+        text_6_html: 'Si eres programador, puedes <a href="https://github.com/consul/consul" target="_blank" title="(se abre en ventana nueva)">ver el código y ayudarnos a mejorarlo</a>.'
+      how_to_use:
+        text: |-
+          Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
+
+          Este Portal de Gobierno Abierto usa la [aplicación CONSUL](https://github.com/consul/consul 'github consul') que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), esto significa en palabras sencillas, que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con las modificaciones que quiera (manteniendo el que otros puedan a su vez hacer lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
+
+          No sólo puedes utilizar libremente este portal en tu municipio, sino que desde el Ayuntamiento de Madrid vamos a ayudarte todo lo posible a que lo hagas, así que si estás interesado, escríbenos <a href='mailto:extension.institucional@madrid.es'>un correo electrónico</a>.
+
+          Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [la versión de CONSUL de Madrid](https://github.com/ayuntamientomadrid/consul 'github consul').
+      titles:
+        meetings: Espacios presenciales de debate y propuesta
+    privacy: Política de Privacidad
+    titles:
+      polls: "Preguntas frecuentes sobre votaciones"
+      kit_decide: "Kit Decide: para hacer tus campañas de comunicación después de crear una propuesta"
+    processes:
+      back: Volver
+      index:
+        process_1_title: Ordenanza de Transparencia
+        process_1_description: Madrid quiere poner en marcha un sistema de transparencia pública a la altura de los más avanzados del mundo.
+        process_1_button: Más información sobre la Ordenanza
+        process_2_title: Remodelación de Plaza España
+        process_2_description_close: La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados.
+        process_2_button: Ver resultados
+        process_3_title: "Pleno Abierto"
+        process_3_description: Apoya las propuestas y preguntas enviadas. Las cinco más votadas serán formuladas en persona a los grupos políticos en el Pleno Abierto del 24 de abril.
+        process_3_button: Ver propuestas y preguntas
+        process_5_title: Plan de Derechos Humanos
+        process_5_description: El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan para el desarrollo de sus políticas públicas.
+        process_5_title_voting: Plan de Derechos Humanos
+        process_5_description_voting_html: "Hasta el 4 de noviembre los ciudadanos priorizaron las medidas y comentaron el borrador del Plan de Derechos Humanos."
+        process_5_button_voting: Más información
+        process_6_title: Cartas de Servicios
+        process_6_description: Puedes dejar tus comentarios en las Cartas de Servicios de los servicios de Ayuda a Domicilio, de los Centros de Día, de Centros Municipales de Mayores y de Teleasistencia Domiciliaria.
+        process_6_button: Ver resultados de participación
+        process_7_title: "Urbanismo: nuevos bancos"
+        process_7_description: Los ciudadanos eligieron el nuevo diseño de bancos para sentarse que les gustaría que se instalasen en la ciudad.
+        process_7_button: Ver resultados de la votación
+        process_8_title: "Licencias urbanísticas, declaraciones responsables y comunicaciones previas"
+        process_8_description: Consulta previa sobre la regulación de la concesión de licencias urbanísticas para la realización de obras y la apertura de locales comerciales o empresariales.
+        process_8_button: "Más información"
+        process_9_title: "Alianza para el Gobierno Abierto"
+        process_9_description: "Esta organización compuesta por gobiernos y sociedad civil, ayuda a que los gobiernos desarrollen medidas relevantes y específicas para avanzar en la participación y la transparencia, y certifica el cumplimiento de las mismas por medio de evaluadores independientes."
+        process_9_button: "Más información"
+        process_10_title: "Ordenanza de subvenciones"
+        process_10_description: "El Ayuntamiento de Madrid sometió a consulta pública la necesidad de modificar la regulación del sistema de subvenciones."
+        process_10_button: "Más información"
+        process_11_title: "Borrador de Plan de Calidad de Aire y Cambio Climático"
+        process_11_description: "Información y comunicación de las medidas propuestas en el borrador del nuevo plan de calidad del aire y cambio climático de la ciudad de Madrid."
+        process_11_button: "Más información"
+        process_12_title: "Consulta pública modificación Ordenanza Reguladora de la denominación y Rotulación de Vías, Espacios Urbanos"
+        process_12_description: "En el año 2007, se aprobó la denominada Ley de Memoria Histórica que tiene por objeto reconocer y ampliar derechos así como establecer medidas en favor de quienes padecieron persecución o violencia durante la guerra civil y la dictadura."
+        process_12_button: "Más información"
+        process_13_title: "Nuevo barrio en el distrito de Villa de Vallecas"
+        process_13_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".'
+        process_13_button: "Más información"
+        process_14_title: "Atención a la ciudadanía de Línea Madrid"
+        process_14_description: 'El Proyecto Línea Madrid se enmarca dentro de uno de los principales objetivos del Ayuntamiento de Madrid como es la mejora continua en la prestación de servicios a la ciudadanía.'
+        process_14_button: "Más información"
+        process_15_title: "Nueva ordenanza de movilidad"
+        process_15_description: "Se pretende abrir un profundo debate en la ciudadanía que permita hallar soluciones eficaces y socialmente consensuadas a los problemas de la movilidad urbana presente y futura."
+        process_15_button: "Más información"
+        process_16_title: "Conservación, Rehabilitación y Estado Ruinoso de las Edificaciones"
+        process_16_description: "El Ayuntamiento de Madrid somete a consulta pública la aprobación de una nueva Ordenanza con el ánimo de proteger más eficazmente la calidad de vida de los ciudadanos en términos de sostenibilidad ambiental y cohesión social y territorial."
+        process_16_button: "Más información"
+        process_17_title: "Modificación de la ordenanza reguladora de la publicidad exterior"
+        process_17_description: "El objetivo de la modificación es conseguir una normativa más clara que facilite su aplicación, clarificando conceptos, ámbitos de aplicación y definiciones, eliminando exigencias innecesarias y referencias a normativas sectoriales."
+        process_17_button: "Más información"
+        process_18_title: "Nuevos barrios en el Distrito de Vicálvaro"
+        process_18_description: "El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear nuevos barrios en el Distrito de Vicálvaro."
+        process_18_button: "Más información"
+        process_19_title: 'Cambio de denominación  del barrio "San Andrés"'
+        process_19_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de cambiar la denominación del "Barrio San Andrés" por el de "Villaverde Alto, Casco Histórico de Villaverde", en el Distrito de Villaverde.'
+        process_19_button: "Más información"
+        process_plaza_title: Remodelación de Plaza España
+        process_plaza_description: Selecciona el proyecto que más te guste para este nuevo espacio en tu ciudad.
+        more_info_title: "Ver más información del proceso "
+      process_1:
+        title: Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid
+        comment: dejar tus comentarios
+        text: |
+          Este es el texto sometido a consulta pública. En breve publicaremos el texto del proyecto inicial de Ordenanza que apruebe la Junta de Gobierno de la Ciudad de Madrid con las aportaciones ciudadanas que se hayan incluido.
+
+          La Ordenanza regulará la publicidad activa, el derecho de acceso y la reutilización de la información pública, así como el registro de lobbies, desde un principio básico de máxima transparencia y divulgación de la información que genera el Ayuntamiento de Madrid y el resto de los sujetos obligados por la norma.
+
+          Este texto, en cuya elaboración ha participado un nutrido grupo de representantes de diferentes áreas de gobierno y órganos directivos municipales, surge con la vocación de convertir la transparencia en uno de los ejes inspiradores de la actuación municipal y para lograr devolver la información que genera la Administración a sus verdaderos propietarios, los ciudadanos.
+
+          El proceso de consulta pública finalizó el 31 de Enero de 2016.
+        button: Ver borrador
+      process_3:
+        view_all: Ver propuestas y preguntas más votadas
+        view_questions: Ver todas las preguntas enviadas

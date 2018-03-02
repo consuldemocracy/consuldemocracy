@@ -1,0 +1,451 @@
+<%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "preselection-charts", 'data-turbolinks-track' => true %>
+
+<div class="survey-results">
+  <!-- Total proyectos -->
+  <div class="row" data-equalizer>
+    <div class="small-12 medium-6 column">
+      <div class="callout" data-equalizer-watch>
+        <h3>Proyectos en preselección</h3>
+        <p class="big-number-stat">72</p>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 column" data-equalizer-watch>
+      <p>
+        <span class="legend">Total de comentarios a los proyectos</span><br>
+        <span class="number-stat">908</span>
+      </p>
+      <p>
+        <span class="legend">Total votos a comentarios proyectos</span><br>
+        <span class="number-stat">975</span>
+      </p>
+    </div>
+  </div>
+
+  <hr class="double">
+
+  <!-- Participación -->
+  <div class="row">
+    <div class="small-12 column">
+      <h3 class="subtitle">Participación</h3>
+      <p class="legend margin-top">TOTAL</p>
+      <p class="big-number-stat">7.613</p>
+    </div>
+
+    <hr>
+
+    <div class="small-12 medium-6 column show-for-medium">
+      <div class="panel text-center" data-equalizer-watch>
+        <div class="large-offset-3 large-5 padding">
+          <canvas id="preselection" width="300" height="300"></canvas>
+        </div>
+
+        <div class="large-4 column relative">
+          <ul class="chart-legend absolute">
+            <li>
+              <span class="label" style="background: #FF6600"></span>
+              <strong>Hombres</strong>:<br> 4.554 (59,82%)
+            </li>
+            <li>
+              <span class="label" style="background: #FF9E01"></span>
+              <strong>Mujeres</strong>:<br> 3.017 (39,63%)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 column">
+
+      <div class="text-center">
+        <%= image_tag ("survey_results/sex_preselection.png"), alt: "" %>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <div class="panel text-right" data-equalizer-watch>
+            <p class="legend">HOMBRES (59,82%)</p>
+            <p class="big-number-stat">4.554</p>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 column">
+          <div class="panel" data-equalizer-watch>
+            <p class="legend">MUJERES (39,63%)</p>
+            <p class="big-number-stat">3.017</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="double">
+
+  <!-- Participación por grupos de edad -->
+  <div class="row">
+    <div class="small-12 column">
+      <h3 class="subtitle">Participación por<br> grupos de edad</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-9 column small-centered">
+      <table class="age-groups">
+        <thead>
+          <tr>
+            <th class="border-right">EDAD</th>
+            <th class="border-left">TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border-right">
+              De 16 a 19 años
+            </td>
+            <td class="border-left">
+              <strong>160 (2,10%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 12.86%"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-right">
+              De 20 a 24 años
+            </td>
+            <td class="border-left">
+              <strong>634 (8,33%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 50.98%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 25 a 29 años
+            </td>
+            <td class="border-left">
+              <strong>958 (12,58%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 77.04%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 30 a 34 años
+            </td>
+            <td class="border-left">
+              <strong>1101 (14,46%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 88.54%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 35 a 39 años
+            </td>
+            <td class="border-left">
+              <strong>1119 (14,70%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 90.00%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 40 a 44 años
+            </td>
+            <td class="border-left">
+              <strong>875 (11,49%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 70.36%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 45 a 49 años
+            </td>
+            <td class="border-left">
+              <strong>631 (8,29%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 50.74%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 50 a 54 años
+            </td>
+            <td class="border-left">
+              <strong>597 (7,84%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 48%"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-right">
+              De 55 a 59 años
+            </td>
+            <td class="border-left">
+              <strong>589 (7,74%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 47.36%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 60 a 64 años
+            </td>
+            <td class="border-left">
+              <strong>423 (5,56%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 34%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 65 a 69 años
+            </td>
+            <td class="border-left">
+              <strong>261 (3,43%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 20.98%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 70 y más años
+            </td>
+            <td class="border-left">
+              <strong>223 (2,93%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 17.93%"></span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <hr class="double">
+
+  <!-- Participación por distritos -->
+  <div class="row">
+    <div class="small-12 column">
+      <h3 class="subtitle">Participación por<br> distritos</h3>
+    </div>
+
+    <div class="show-for-medium medium-6 column small-centered text-center margin-top">
+      <%= image_tag("map.jpg", usemap: "#map_preselection", alt: "Mapa de distritos de Madrid") %>
+    </div>
+
+    <map name="map_preselection" id="html_map_preselection">
+      <% Geozone.all.each do |geozone| %>
+        <area shape="poly"
+              coords="<%= geozone.html_map_coordinates %>"
+              href="#<%= geozone.name.parameterize %>-preselection"
+              title="<%= geozone.name %>"
+              alt="<%= geozone.name %>">
+      <% end %>
+    </map>
+
+    <div class="small-12 column small-centered">
+      <table class="survey-districts">
+        <thead>
+          <tr>
+            <th>DISTRITO</th>
+            <th>VOTOS</th>
+            <th>% PARTICIPACIÓN TOTAL PROYECTOS</th>
+            <th>% PARTICIPACIÓN POBLACIÓN DEL DISTRITO</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr id="arganzuela-preselection">
+          <td>
+            <strong>Arganzuela</strong>
+          </td>
+          <td class="text-center">670</td>
+          <td class="text-center">5,00%</td>
+          <td class="text-center">0,44%</td>
+        </tr>
+        <tr id="barajas-preselection">
+          <td>
+            <strong>Barajas</strong>
+          </td>
+          <td class="text-center">104</td>
+          <td class="text-center">1,37%</td>
+          <td class="text-center">0,22%</td>
+        </tr>
+        <tr id="carabanchel-preselection">
+          <td>
+            <strong>Carabanchel</strong>
+          </td>
+          <td class="text-center">341</td>
+          <td class="text-center">4,48%</td>
+          <td class="text-center">0,14%</td>
+        </tr>
+        <tr id="centro-preselection">
+          <td>
+            <strong>Centro</strong>
+          </td>
+          <td class="text-center">1050</td>
+          <td class="text-center">13,79%</td>
+          <td class="text-center">0,79%</td>
+        </tr>
+        <tr id="chamartin-preselection">
+          <td>
+            <strong>Chamartín</strong>
+          </td>
+          <td class="text-center">378</td>
+          <td class="text-center">4,97%</td>
+          <td class="text-center">0,26%</td>
+        </tr>
+        <tr id="chamberi-preselection">
+          <td>
+            <strong>Chamberí</strong>
+          </td>
+          <td class="text-center">507</td>
+          <td class="text-center">6,66%</td>
+          <td class="text-center">0,37%</td>
+        </tr>
+        <tr id="ciudad-lineal-preselection">
+          <td>
+            <strong>Ciudad Lineal</strong>
+          </td>
+          <td class="text-center">371</td>
+          <td class="text-center">4,87%</td>
+          <td class="text-center">0,17%</td>
+        </tr>
+        <tr id="fuencarral-el-pardo-preselection">
+          <td>
+            <strong>Fuencarral - El Pardo</strong>
+          </td>
+          <td class="text-center">455</td>
+          <td class="text-center">5,98%</td>
+          <td class="text-center">0,19%</td>
+        </tr>
+        <tr id="hortaleza-preselection">
+          <td>
+            <strong>Hortaleza</strong>
+          </td>
+          <td class="text-center">358</td>
+          <td class="text-center">4,70%</td>
+          <td class="text-center">0,20%</td>
+        </tr>
+        <tr id="latina-preselection">
+          <td>
+            <strong>Latina</strong>
+          </td>
+          <td class="text-center">442</td>
+          <td class="text-center">5,81%</td>
+          <td class="text-center">0,19%</td>
+        </tr>
+        <tr id="moncloa-aravaca-preselection">
+          <td>
+            <strong>Moncloa - Aravaca</strong>
+          </td>
+          <td class="text-center">581</td>
+          <td class="text-center">7,63%</td>
+          <td class="text-center">0,50%</td>
+        </tr>
+        <tr id="moratalaz-preselection">
+          <td>
+            <strong>Moratalaz</strong>
+          </td>
+          <td class="text-center">156</td>
+          <td class="text-center">2,05%</td>
+          <td class="text-center">0,17%</td>
+        </tr>
+        <tr id="puente-de-vallecas-preselection">
+          <td>
+            <strong>Puente de Vallecas</strong>
+          </td>
+          <td class="text-center">252</td>
+          <td class="text-center">3,31%</td>
+          <td class="text-center">0,11%</td>
+        </tr>
+        <tr id="retiro-preselection">
+          <td>
+            <strong>Retiro</strong>
+          </td>
+          <td class="text-center">421</td>
+          <td class="text-center">5,53%</td>
+          <td class="text-center">0,35%</td>
+        </tr>
+        <tr id="salamanca-preselection">
+          <td>
+            <strong>Salamanca</strong>
+          </td>
+          <td class="text-center">372</td>
+          <td class="text-center">4,89%</td>
+          <td class="text-center">0,26%</td>
+        </tr>
+        <tr id="san-blas-canillejas-preselection">
+          <td>
+            <strong>San Blas - Canillejas</strong>
+          </td>
+          <td class="text-center">226</td>
+          <td class="text-center">2,97%</td>
+          <td class="text-center">0,15%</td>
+        </tr>
+        <tr id="tetuan-preselection">
+          <td>
+            <strong>Tetuán</strong></td>
+           </td>
+            <td class="text-center">290</td>
+            <td class="text-center">3,81%</td>
+            <td class="text-center">0,19%</td>
+          </td>
+        </tr>
+        <tr id="usera-preselection">
+          <td>
+            <strong>Usera</strong>
+          </td>
+          <td class="text-center">174</td>
+          <td class="text-center">2,29%</td>
+          <td class="text-center">0,13%</td>
+        </tr>
+        <tr id="vicalvaro-preselection">
+          <td>
+            <strong>Vicálvaro</strong>
+          </td>
+          <td class="text-center">101</td>
+          <td class="text-center">1,33%</td>
+          <td class="text-center">0,14%</td>
+        </tr>
+        <tr id="villaverde-preselection">
+          <td>
+            <strong>Villaverde</strong>
+          </td>
+          <td class="text-center">145</td>
+          <td class="text-center">1,90%</td>
+          <td class="text-center">0,10%</td>
+        </tr>
+        <tr id="villa-de-vallecas-preselection">
+          <td>
+            <strong>Villa de Vallecas</strong>
+          </td>
+          <td class="text-center">177</td>
+          <td class="text-center">2,32%</td>
+          <td class="text-center">0,17%</td>
+        </tr>
+        </tbody>
+      </table>
+
+    <p class="margin-top"><em>* No se dispone de los datos demográficos de 42 participantes.</em></p>
+
+    <hr class="double">
+
+    </div>
+  </div>
+</div>

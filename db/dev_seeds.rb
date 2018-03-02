@@ -13,6 +13,7 @@ def log(msg)
   @logger.info "#{msg}\n"
 end
 
+
 require_relative 'dev_seeds/settings'
 require_relative 'dev_seeds/geozones'
 require_relative 'dev_seeds/users'
@@ -30,5 +31,9 @@ require_relative 'dev_seeds/polls'
 require_relative 'dev_seeds/communities'
 require_relative 'dev_seeds/legislation_processes'
 require_relative 'dev_seeds/newsletters'
+require_relative 'dev_seeds/notifications'
+require_relative 'dev_seeds/forums'
+require_relative 'dev_seeds/probe_options'
+require_relative 'dev_seeds/admin_notifications'
 
 log "All dev seeds created successfuly 👍"

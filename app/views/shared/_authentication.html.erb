@@ -1,0 +1,10 @@
+<div class="participation-not-allowed" style='display:none'>
+  <p>
+    <%= t("votes.spending_proposals.#{message}",
+          verify_account: link_to(t("votes.verify_account"), verification_path),
+          signin: link_to(t("votes.signin"), new_user_session_path),
+          signup: link_to(t("votes.signup"), new_user_registration_path),
+          my_geozone: link_to(my_geozone.try(:name), spending_proposals_path(geozone: my_geozone))
+     ).html_safe %>
+  </p>
+</div>

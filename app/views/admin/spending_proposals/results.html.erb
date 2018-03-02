@@ -1,0 +1,123 @@
+
+<h2 class="inline-block"><%= t("admin.spending_proposals.results.title") %></h2>
+
+<div class="row margin">
+  <%= form_tag results_admin_spending_proposals_path, method: :get, enforce_utf8: false do %>
+
+    <div class="small-12 medium-3 column">
+      <%= select_tag :geozone_id,
+                     options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone_id]),
+                     { label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
+
+  <% end %>
+</div>
+
+<h3 class="inline-block"><%= page_entries_info @spending_proposals %></h3>
+
+ <span class="float-right"><%= link_to t("admin.spending_proposals.results.hide_discarded_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("admin.spending_proposals.results.show_all_link")} %></span>
+
+<table id="spending-proposals-results">
+  <thead>
+    <tr>
+      <th scope="col"><%= t("admin.spending_proposals.results.spending_proposal") %></th>
+      <th scope="col"><%= t("admin.spending_proposals.results.ballot_lines_count") %></th>
+      <th scope="col"><%= t("admin.spending_proposals.results.price") %></th>
+      <th scope="col" title="<%= t("admin.spending_proposals.results.amount_available") %>">
+        <%= format_price(@initial_budget) %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% winners = [] %>
+    <% available_budget = @initial_budget.to_i %>
+    <% @spending_proposals.each do |spending_proposal| %>
+      <% initial_budget = available_budget
+         budget = available_budget - spending_proposal.price
+         available_budget = budget if budget >= 0 %>
+      <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal <%= budget >= 0 ? 'success' : 'js-discarded' %>">
+        <td>
+          <% if budget >= 0 %>
+            <span class="icon-check"></span>
+            <% winners << spending_proposal.author %>
+          <% else %>
+            <span class="icon-x"></span>
+          <% end %>
+
+          <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
+          (id: <%= spending_proposal.id %>)
+          <div>
+            <% if budget >= 0 %>
+              autor:
+              <span>
+                <%= link_to spending_proposal.author.name,
+                         admin_user_path(spending_proposal.author) %>
+              </span>
+            <% end %>
+          </div>
+          <% if budget >= 0 %>
+            teléfono:
+            <span>
+              <%= spending_proposal.author.phone %>
+            </span>
+          <% end %>
+        </td>
+        <td class="text-center">
+          <%= spending_proposal.ballot_lines_count + (@delegated_ballots[spending_proposal.id] || 0) %>
+        </td>
+        <td class="text-center">
+          <%= format_price spending_proposal.price %>
+        </td>
+        <td class="text-center small" title="<%= format_price(initial_budget) %> - <%= format_price(spending_proposal.price) %>">
+          <%= format_price budget %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @incompatibles.any? %>
+  <div class="js-discarded">
+
+    <h3 class="inline-block"><%= t("admin.spending_proposals.results.incompatible") %></h3>
+
+    <table id="incompatible-spending-proposals">
+      <thead>
+        <tr>
+          <th><%= t("admin.spending_proposals.results.spending_proposal") %></th>
+          <th class="text-center"><%= t("admin.spending_proposals.results.ballot_lines_count") %></th>
+          <th class="text-center"><%= t("admin.spending_proposals.results.price") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @incompatibles.each do |spending_proposal| %>
+          <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal">
+            <td>
+              <span class="icon-x"></span>
+              <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
+              (id: <%= spending_proposal.id %>)
+            </td>
+            <td class="text-center">
+              <%= spending_proposal.ballot_lines_count + (@delegated_ballots[spending_proposal.id] || 0) %>
+            </td>
+            <td class="text-center">
+              <%= format_price spending_proposal.price %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<div id="spending-proposals-winners">
+  <h3 class="inline-block">Ganadores</h3>
+  <div>
+    <% winners.each do |winner| %>
+      <%= winner.email %><%= winner.equal?(winners.last) ? "" : ", " %>
+    <% end %>
+  </div>
+</div>
+
+<%= paginate @spending_proposals %>

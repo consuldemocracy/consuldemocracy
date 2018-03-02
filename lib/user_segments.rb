@@ -5,7 +5,8 @@ class UserSegments
                 investment_authors
                 feasible_and_undecided_investment_authors
                 selected_investment_authors
-                winner_investment_authors)
+                winner_investment_authors
+                beta_testers)
 
   def self.all_users
     User.active
@@ -35,6 +36,16 @@ class UserSegments
 
   def self.winner_investment_authors
     author_ids(current_budget_investments.winners.pluck(:author_id).uniq)
+  end
+
+  def self.beta_testers
+    testers = %w(aranacm@madrid.es
+                 bertocq@gmail.com
+                 mariajecheca@gmail.com
+                 alberto@decabeza.es
+                 voodoorai2000@gmail.com)
+
+    User.where(email: testers)
   end
 
   private

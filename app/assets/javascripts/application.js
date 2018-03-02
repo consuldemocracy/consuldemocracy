@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-es
+//= require jquery-ui/effects/effect-shake
 //= require jquery-ui/widgets/autocomplete
 //= require jquery-ui/widgets/sortable
 //= require jquery-fileupload/basic
@@ -43,6 +44,7 @@
 //= require annotatable
 //= require advanced_search
 //= require registration_form
+//= require forms
 //= require suggest
 //= require forms
 //= require tracks
@@ -51,6 +53,7 @@
 //= require embed_video
 //= require fixed_bar
 //= require banners
+//= require probe
 //= require social_share
 //= require checkbox_toggle
 //= require markdown-it
@@ -73,9 +76,11 @@
 //= require map
 //= require polls
 //= require sortable
+//= require legislation_proposals
 //= require table_sortable
 //= require investment_report_alert
 //= require send_newsletter_alert
+//= require send_admin_notification_alert
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -116,9 +121,11 @@ var initialize_modules = function() {
   App.Map.initialize();
   App.Polls.initialize();
   App.Sortable.initialize();
+  App.LegislationProposals.initialize();
   App.TableSortable.initialize();
   App.InvestmentReportAlert.initialize();
   App.SendNewsletterAlert.initialize();
+  App.SendAdminNotificationAlert.initialize();
 };
 
 $(function(){

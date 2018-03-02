@@ -1,0 +1,19 @@
+<%= back_link_to %>
+
+<h2><%= t("probes.codenames.#{@probe.codename}") %></h2>
+
+<table class="investment-projects-summary">
+  <th scope="col"><%= t("admin.probes.show.option") %></th>
+  <th scope="col"><%= t("admin.probes.show.selects") %> (<%= @probe_options.to_a.sum(&:probe_selections_count) %>)</th>
+
+<% @probe_options.each do |probe_option| %>
+  <tr id="<%= dom_id(probe_option) %>">
+    <td class="name">
+      <%= probe_option.name %>
+    </td>
+    <td class="name">
+      <%= number_with_delimiter(probe_option.probe_selections_count) %>
+    </td>
+  </tr>
+<% end %>
+</table>

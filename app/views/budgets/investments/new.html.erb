@@ -1,6 +1,16 @@
 <div class="budget-investment-new row">
   <div class="small-12 medium-9 column">
+    <%= back_link_to %>
+
+    <%= render "custom/shared/type_selection_investment" %>
+
     <h1><%= t("management.budget_investments.create") %></h1>
+
+    <div class="callout primary">
+      <%= t("budgets.investments.form.faq") %>
+      <br>
+      <%= link_to t("budgets.investments.form.faq_link"), more_info_budgets_path(anchor: "10") %>
+    </div>
 
     <%= render '/budgets/investments/form', form_url: budget_investments_path(@budget) %>
   </div>

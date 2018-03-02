@@ -1,0 +1,15 @@
+<table class="clear activity-ballot">
+  <tr>
+    <td>
+      <% if can? :vote, SpendingProposal %>
+        <%= link_to t("users.show.ballot_link_text",
+                      count: @ballot.spending_proposals.count,
+                      amount_spent: format_price(@ballot.total_amount_spent)),
+                      ballot_path %>
+      <% else %>
+        <%= t("users.show.ballot_verified_only", verify_account: link_to(t("users.show.verify_account"), verification_path )).html_safe %>
+      <% end %>
+    </td>
+
+  </tr>
+</table>

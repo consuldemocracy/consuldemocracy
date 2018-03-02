@@ -1,0 +1,58 @@
+<% reports = {
+                9 => {
+                  file: '2015_09_9',
+                  size: '82Kb'
+                },
+                105 => {
+                  file: '2015_09_105',
+                  size: '817Kb'
+                },
+                199 => {
+                  file: '2015_09_199',
+                  size: '86Kb'
+                },
+                417 => {
+                  file: '2015_09_417',
+                  size: '64Kb'
+                },
+                965 => {
+                  file: '2015_09_965',
+                  size: '81Kb'
+                },
+                15290 => {
+                  file: '2017_01_02_15290_16182',
+                  size: '59Kb'
+                },
+                16182 => {
+                  file: '2017_01_02_15290_16182',
+                  size: '59Kb'
+                },
+                15235 => {
+                  file: '2017_01_15235',
+                  size: '56Kb'
+                },
+                15237 => {
+                  file: '2017_01_15237',
+                  size: '81Kb'
+                },
+                15262 => {
+                  file: '2017_01_15262',
+                  size: '63Kb'
+                },
+                15276 => {
+                  file: '2017_01_15276',
+                  size: '53Kb'
+                }
+              } %>
+
+<% if reports.keys.include?(@proposal.id) %>
+  <div class="document-link">
+    <p>
+      <span class="icon-document"></span>&nbsp;
+      <strong><%= t('proposals.show.title_external_url') %></strong>
+    </p>
+    <%= link_to "https://decide.madrid.es/system/proposals/MAD_#{reports[@proposal.id][:file]}.pdf" do %>
+      Informe de competencia <small>(PDF | <%= reports[@proposal.id][:size] %>)</small>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,367 @@
+<% provide :title, t("meta_tags.help_proposals.title") %>
+<% provide :meta_description, t("meta_tags.help_proposals.description") %>
+<% provide :meta_keywords, t("meta_tags.help_proposals.keywords") %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: more_info_proposals_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 medium-3 column">
+    <%= back_link_to help_path %>
+
+    <ul class="vertical menu margin-top">
+      <li><a href="#como-funcionan"><strong>¿Cómo funcionan las propuestas ciudadanas?</strong></a></li>
+      <li><a href="#explicacion-detallada"><strong>Explicación detallada del proceso</strong></a></li>
+      <li><a href="#preguntas-frecuentes"><strong>Preguntas Frecuentes</strong></a>
+        <ul class="margin-top">
+          <li>
+            <a href="#que-es-propuesta-ciudadana">
+              <strong>¿Qué es una propuesta ciudadana?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#diferencia-debates-propuestas">
+              <strong>¿Qué diferencia hay entre los debates y las propuestas?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#diferencia-presupuestos-participativos-propuestas">
+              <strong>¿Qué diferencia hay entre los proyectos de presupuestos participativos y las propuestas?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#buscar-propuestas">
+              <strong>¿Cómo puedo ver si hay propuestas anteriores sobre los temas que me interesan y/o preocupan?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#temas-propuesta">
+              <strong>¿Puedo presentar una propuesta sobre cualquier tema?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#quejas-incidencias-seccion-propuestas">
+              <strong>¿Puedo presentar quejas, sugerencias, reclamaciones o incidencias en la sección de propuestas ciudadanas?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#participar-fuera-madrid">
+              <strong>¿Cómo puede participar la gente que no esté empadronada en Madrid?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#propuestas-ciudadanas-iguales">
+              <strong>Si se presentan varias propuestas iguales, ¿se plantea la posibilidad de unificarlas para evitar que se diversifiquen los apoyos?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#como-crear-propuesta-ciudadana">
+              <strong>¿Cómo se crea una propuesta ciudadana?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#participacion-asociaciones-propuestas">
+              <strong>¿Pueden presentar propuestas asociaciones, fundaciones y ONG? ¿Y empresas?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#fotos-propuesta-ciudadana">
+              <strong>¿Puedo añadir fotos a mi propuesta?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#ubicacion-propuesta-ciudadana">
+              <strong>¿Puedo añadir la ubicación de mi propuesta?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#documentos-propuestas">
+              <strong>¿Puedo añadir documentos a mi propuesta?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#apoyar-propuesta-ciudadana">
+              <strong>¿Cómo se apoya una propuesta ciudadana?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#seguir-propuesta">
+              <strong>¿Cómo puedo informarme y seguir una propuesta ciudadana que me interesa?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#tiempo-apoyos-propuesta">
+              <strong>¿Durante cuanto tiempo se pueden recoger apoyos?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#votacion-propuesta">
+              <strong>¿Qué ocurre cuando una propuesta consigue los apoyos necesarios?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#donde-votar">
+              <strong>¿Dónde se pueden votar las propuestas que han conseguido los apoyos necesarios?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#seguridad-votacion-propuesta">
+              <strong>¿Cómo se controla que cada persona vota una única vez por propuesta?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#voto-propuestas-secreto">
+              <strong>¿El voto es secreto? ¿El Ayuntamiento de Madrid tiene acceso a los votos de la ciudadanía?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#voto-electronico-propuestas">
+              <strong>¿Al ser electrónico el voto no se aumenta el riesgo de fraude?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#votacion-propuestas-distritos">
+              <strong>¿Vota toda la gente de Madrid en cada propuesta, incluso aunque haga referencia a un único distrito?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#semana-votacion-propuesta">
+              <strong>¿Durante cuanto tiempo se vota cada propuesta?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#participacion-presencial-propuestas">
+              <strong>¿Existen mecanismos presenciales para participar? ¿Se ha planteado llegar a los ciudadanos y ciudadanas con dificultades de acceso a Internet o
+               en situación de exclusión?</strong></a>
+          </li>
+          <li>
+            <a href="#hojas-firmas-apoyos">
+              <strong>¿Qué son las hojas de firmas para recoger apoyos?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#quorum-propuestas">
+              <strong>¿Cuánta gente tiene que votar una propuesta para que sea aprobada? ¿Qué quórum mínimo se necesita para que las votaciones sean vinculantes?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#propuestas-tras-votacion">
+              <strong>¿Qué pasa con las propuestas una vez ha finalizado la votación?</strong>
+            </a>
+          </li>
+          <li>
+            <a href="#obstaculos-realizacion-propuestas">
+              <strong>¿Se lleva a cabo cualquier propuesta que se acepte por mayoría en la web, incluso aunque sean ilegales o atenten contra los derechos humanos? ¿Qué ocu
+              rre si no hay presupuesto para llevarla a cabo?</strong></a>
+          </li>
+          <li>
+            <a href="#primera-votacion-propuestas-ciudadanas">
+              <strong>¿Alguna propuesta ciudadana ha pasado el umbral de los <%= setting['votes_for_proposal_success'] %> apoyos y se ha votado?</strong>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-9 column">
+    <h1>Preguntas frecuentes sobre propuestas ciudadanas</h1>
+    <h2 id="como-funcionan">¿Cómo funcionan las propuestas ciudadanas?</h2>
+    <p>El mecanismo de propuestas ciudadanas se resume en cuatro pasos muy sencillos:</p>
+    <ol>
+      <li><strong>¡Propones!</strong> Creas una propuesta en esta web.</li>
+      <li><strong>¡Apoyas!</strong> La gente hace click en el botón de apoyar tu propuesta (necesitas el apoyo del 1% de los empadronados mayores de 16 años para pasar a la siguiente fase).</li>
+      <li><strong>¡Decides!</strong> Si has conseguido suficientes apoyos, dejamos 45 días para que la gente pueda debatir sobre la propuesta, y después durante una semana se invita a toda la gente de Madrid a decidir si están a favor o en contra de tu propuesta, en esta misma web.</li>
+      <li><strong>¡Se hace!</strong> Si hay más gente a favor de tu propuesta que en contra, el gobierno del Ayuntamiento de Madrid asumirá como propia la propuesta y la llevará a cabo.</li>
+    </ol>
+
+    <p>Además no hace falta ni que tengas Internet, todos los pasos se pueden hacer en cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> que hay por todo Madrid.</p>
+
+    <div class="flex-video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLhnvwI6F9eqWqN8vyiZtfpV8SO11ague2" style="border:0" allowfullscreen title="Vídeos del canal de YouTube de Abriendo Madrid"></iframe>
+    </div>
+
+    <h2 id="explicacion-detallada">Explicación detallada del proceso</h2>
+    <ol>
+      <li><strong>Creación de una propuesta</strong>. Cualquier persona (sin necesidad siquiera de estar empadronada en Madrid) puede crear una propuesta. Lo único que hay que hacer es pulsar el botón "Crear una propuesta" y rellenar los campos requeridos. La propuesta puede ser tan sencilla como una simple frase, pero te recomendamos detallarla todo lo posible, incluso añadiendo material adicional, para que sea más completa e interesante. Una vez creada aparecerá en esta web para que cualquiera pueda apoyarla.</li>
+      <li><strong>Apoyo de propuestas</strong>. Para apoyar una de las propuestas que aparece en la web, pulsamos el botón "apoyar esta propuesta" que aparece en cada una. Para este paso tendremos que estar empadronados en Madrid, así que al llevarlo a cabo por primera vez se nos pedirá que verifiquemos nuestra cuenta para estar seguros de este requerimiento. Se nos va a pedir que introduzcamos algunos datos para comprobar nuestra información de empadronamiento, y se nos enviará un código personal para que el proceso sea seguro. Las propuestas necesitan una cierta cantidad de apoyos para pasar a la siguiente fase; concretamente el 1% de los empadronados mayores de 16 años (que suponen <%= number_with_delimiter(Proposal.votes_needed_for_success) %> apoyos).</li>
+      <li><strong>Decisión sobre propuestas</strong>. Cuando una propuesta consigue los apoyos necesarios, se anuncia en la web. Desde ese momento se dejan 45 días para que todo el mundo pueda debatir e informarse sobre la propuesta. Todas las otras propuestas que hayan conseguido los apoyos necesarios en los primeros 30 días del tiempo de debate se agruparán junto a la primera para decidir sobre ellas al mismo tiempo. Pasados los 45 días se exponen estas propuestas en un espacio especial de votación de la web, donde durante una semana cualquier persona empadronada en Madrid y mayor de 16 años podrá decidir si está a favor o rechaza la propuesta. Para participar en este paso tendrás que tener tu cuenta de usuario verificada completamente, de tal forma que nos aseguremos que cada persona no tiene más de una cuenta y el proceso es seguro.</li>
+      <li><strong>Realización de las propuestas</strong>. En caso de que haya más gente a favor de una propuesta que rechazándola se aceptará como propuesta colectiva de la ciudadanía de Madrid, y el gobierno del Ayuntamiento de Madrid la asumirá como propia y la llevará a cabo.  Para ello en un plazo máximo de un mes, se realizarán los informes técnicos correspondientes sobre su legalidad, viabilidad y coste económico,  teniendo en cuenta a los sectores afectados y a la persona que haya lanzado la propuesta, para detallar la actuación correspondiente por parte del Ayuntamiento. Se publicarán en la web todos los informes realizados, y un seguimiento de las actuaciones que se lleven a cabo, para asegurar un correcto desarrollo de la propuesta.</li>
+    </ol>
+
+    <p>Todas las acciones relacionadas con el proceso de propuestas ciudadanas pueden realizarse a través del portal de gobierno abierto, o presencialmente en cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">26 Oficinas de Atención al Ciudadano</a> existentes en Madrid.</p>
+
+    <p>El proceso de recogida de apoyos de una propuesta puede realizarse también a través de hojas de firmas, cuyo modelo puede ser <a href="/docs/formulario_propuestas_ciudadanas.pdf" target="_blank" title="(se abre en ventana nueva)">descargado en este documento PDF</a>. Los apoyos recogidos de esta manera se sumarán a los apoyos ya existentes en el portal de gobierno abierto. Las hojas pueden ser entregadas en cualquiera de los Registros del Ayuntamiento, presentes en cada una de las Juntas de Distrito. <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/Ayuntamiento/Oposiciones-y-Empleo/Direcciones-y-telefonos/Oficinas-de-Registro-del-Ayuntamiento-de-Madrid?vgnextfmt=default&vgnextoid=adedb88db777f010VgnVCM2000000c205a0aRCRD&vgnextchannel=ddc3ca1c5a057010VgnVCM100000dc0ca8c0RCRD" target="_blank" title="(se abre en ventana nueva)">Ver la lista completa de Oficinas de Registro</a>.</p>
+
+    <p>Las directrices aprobadas por el Ayuntamiento por las que se regulan las propuestas ciudadanas son las siguientes: <a href="/docs/directrices_ejercicio_propuesta.pdf" target="_blank" title="(se abre en ventana nueva)">Directrices sobre el derecho de propuesta (documento PDF)</a>.</p>
+
+    <h2 id="preguntas-frecuentes">Preguntas Frecuentes</h2>
+    <h3 id="que-es-propuesta-ciudadana">¿Qué es una propuesta ciudadana?</h3>
+    <p>Las propuestas ciudadanas son un mecanismo de participación que permite que la ciudadanía tome de forma directa cualquier decisión municipal que crea conveniente.</p>
+
+    <p>Cualquier persona puede plantear una idea para la ciudad de Madrid. Si consigue el apoyo del 1% de las personas con derecho a voto (mayores de 16 años empadronados en Madrid, un total de <%= setting['votes_for_proposal_success'] %> apoyos), pasa a votación ciudadana.</p>
+
+    <p>En caso de aprobarse, el gobierno municipal la asumirá como propia y la llevará a cabo. En caso de que la propuesta no sea de competencia municipal, el Consistorio hará todas las acciones que estén en su mano para conseguir que se realice.</p>
+
+    <h3 id="diferencia-debates-propuestas">¿Qué diferencia hay entre los debates y las propuestas?</h3>
+    <p>Los debates no activan ningún mecanismo de actuación concreto, mientras que las propuestas pasan a una fase de decisión colectiva y en caso de que sean aprobadas, el gobierno municipal las asume como propias.</p>
+
+    <h3 id="diferencia-presupuestos-participativos-propuestas">¿Qué diferencia hay entre los proyectos de presupuestos participativos y las propuestas?</h3>
+
+    <p>Los proyectos de presupuestos participativos son ideas de cómo gastar parte del presupuesto municipal, mientras que las propuestas ciudadanas son ideas sobre cualquier acción por parte del Ayuntamiento, impliquen o no gasto (pueden ser por ejemplo modificar normativas, desarrollar planes, etc.).</p>
+
+    <p>Los presupuestos participativos son un proceso anual, y los proyectos se plantean solo a principios de año, entre enero y marzo. Luego pasan por una fase de apoyos en marzo y los más apoyados pasan a una fase de votación en mayo. Las propuestas ciudadanas se pueden realizar en cualquier momento, y necesitan el apoyo del 1% de la población para pasar a votación.</p>
+
+    <p>Por lo tanto los proyectos de presupuestos participativos están restringidos a ideas de gasto y a una cronología más cerrada, mientras que las propuestas ciudadanas pueden ser acciones de cualquier tipo y activarse en cualquier momento, aunque a cambio necesitan el apoyo inicial del 1% de la población para poder votarse.</p>
+
+    <h3 id="buscar-propuestas">¿Cómo puedo ver si hay propuestas anteriores sobre los temas que me interesan y/o preocupan?</h3>
+    <p>Antes de crear una propuesta puedes comprobar si alguna otra persona ha subido a Decide Madrid alguna idea como la que tú quieres plantear.</p>
+
+    <p>En el <%= link_to "buscador de la sección", proposals_path %> situado en la parte superior derecha de la web puedes buscar por palabras clave y si encuentras propuestas de tu interés ya creadas, puedes optar por apoyarlas para que lleguen a los apoyos necesarios en lugar de crear una nueva.</p>
+
+    <h3 id="temas-propuesta">¿Puedo presentar una propuesta sobre cualquier tema?</h3>
+    <p>Sí. Pero ten en cuenta que las propuestas no pueden incluir contenidos o propaganda de carácter racista, sexista, xenófobo, de apología del terrorismo o que atenten contra los derechos humanos o la dignidad de las personas.</p>
+
+    <p>Las propuestas tampoco pueden tener fines delictivos; contener un lenguaje insultante; atentar contra la legislación vigente en materia de derechos fundamentales y libertades públicas, especialmente en lo concerniente al derecho al honor, la intimidad y la propia imagen y, por último, tampoco se podrán iniciar propuestas que tengan carácter reiterativo o puedan considerarse como "spam".</p>
+
+    <h3 id="quejas-incidencias-seccion-propuestas">¿Puedo presentar quejas, sugerencias, reclamaciones o incidencias en la sección de propuestas ciudadanas?</h3>
+    <p>Para que el Ayuntamiento de Madrid lleve a cabo tu planteamiento a través de la sección de propuestas tiene que conseguir <%= setting['votes_for_proposal_success'] %> apoyos en la web de Decide Madrid (un 1% de las personas empadronadas en Madrid mayores de 16 años, con derecho a voto), y que posteriormente sea mayoritariamente aprobado en una votación ciudadana.</p>
+
+    <p>Existen diferentes vías para hacer llegar quejas, sugerencias, reclamaciones o incidencias al Consistorio que resultan muy eficaces para cuestiones puntuales. Se puede llamar al 010 (915 298 210), acudir a una Oficina de Atención a la Ciudadanía o usar la web municipal: <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Contactar/Sugerencias-y-reclamaciones?vgnextfmt=default&vgnextchannel=5eadc1ab4fd86210VgnVCM2000000c205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">Sugerencias y reclamaciones</a> e <a href="https://sede.madrid.es/portal/site/tramites/menuitem.1f3361415fda829be152e15284f1a5a0/?vgnextoid=c6e7bd6ec8523310VgnVCM2000000c205a0aRCRD&vgnextchannel=3476fbff20758310VgnVCM2000000c205a0aRCRD" target="_blank" title="(se abre en ventana nueva)">incidencias y peticiones sobre averías, desperfectos, riego, poda y limpieza en zonas verdes municipales y arbolado viario</a>.</p>
+
+    <h3 id="participar-fuera-madrid">¿Cómo puede participar la gente que no esté empadronada en Madrid?</h3>
+    <p>Las personas que no estén empadronadas en la ciudad de Madrid pero quieran participar en Decide Madrid pueden presentar propuestas, intervenir en los debates, comentar en todas las secciones y difundir lo que ocurra en la plataforma.</p>
+
+    <h3 id="propuestas-ciudadanas-iguales">Si se presentan varias propuestas iguales, ¿se plantea la posibilidad de unificarlas para evitar que se diversifiquen los apoyos?</h3>
+    <p>Cualquier persona puede señalar las propuestas duplicadas en Decide Madrid para que los autores las retiren o para que diferentes planteamientos se puedan trabajar de forma conjunta para no dispersar los apoyos.</p>
+
+    <p>En la página de cada propuesta encontrarás una sección llamada "Contenido relacionado". Una vez clicas puedes incluir la dirección o URL de otras propuestas (y debates) similares que hayas encontrado. El resto de propuestas relacionadas aparecerán debajo.</p>
+
+    <p>Al hacer clic en el nombre del autor de una propuesta verás a la derecha un botón titulado "Enviar un mensaje privado" donde podrás ponerte en contacto con él. Los autores pueden decidir retirar su propuestas si consideran que otras cumplen mejor su cometido.</p>
+
+    <p>En la página de cada propuesta encontrarás en la barra lateral derecha un botón para "Acceder a la comunidad" de la propuesta. Ahí tienes un espacio de debate en el que poder trabajar con otros usuarios para crear conjuntamente propuestas o proponer retirar unas en favor de otras.</p>
+
+    <p>Los autores de una propuesta son los que deben decidir si retiran o no su propuesta. En caso de que lo hagan, pueden mandar notificaciones a todos los usuarios que las han apoyado, por lo que pueden proponerles que apoyen la nueva propuesta.</p>
+
+    <h3 id="como-crear-propuesta-ciudadana">¿Cómo se crea una propuesta ciudadana?</h3>
+    <p>Para crear una propuesta ciudadana el primer paso es registrarse en Decide Madrid. Después, en la sección de <%= link_to "propuestas", proposals_path %> hay que pulsar el botón <%= link_to "Crear una propuesta", new_proposal_path %>, ubicado a la derecha de la página, y rellenar los campos requeridos.</p>
+
+    <p>La propuesta puede ser tan sencilla como una simple frase, pero te recomendamos detallarla todo lo posible, incluso añadir material adicional, para que sea más completa e interesante. Una vez creada aparece en la web de Decide Madrid para que cualquiera pueda apoyarla.</p>
+
+    <p>Consulta <a href="https://diario.madrid.es/decidemadrid/2017/09/07/diez-claves-para-crear-una-propuesta-ciudadana-en-decide-madrid/" target="_blank" title="(se abre en ventana nueva)">algunas recomendaciones</a> para ser más eficaz en la creación de propuestas, y si necesitas ayuda para difundirla, en el <%= link_to "Kit Decide", kit_decide_path %> encontrarás algunos consejos.</p>
+
+    <h3 id="participacion-asociaciones-propuestas">¿Pueden presentar propuestas asociaciones, fundaciones y ONG? ¿Y empresas?</h3>
+    <p>Las asociaciones o colectivos pueden <%= link_to "registrarse a través de este enlace", new_organization_registration_path %>. Con estas cuentas colectivas no se pueden apoyar ni votar propuestas, pero sí crearlas e intervenir en los debates, para visibilizar el origen colectivo.</p>
+
+    <h3 id="fotos-propuesta-ciudadana">¿Puedo añadir fotos a mi propuesta?</h3>
+    <p>Sí, cuando creas una propuesta ciudadana hay un apartado llamado "Imagen descriptiva" en el que puedes seleccionar una imagen relacionada con la propuesta en tu ordenador o en el móvil.</p>
+
+    <p>Es recomendable poner un título descriptivo a la foto (por defecto aparece el nombre del archivo) para ayudar a la accesibilidad. Si quisieras quitar la foto, tan solo tendrías que clicar la opción "Eliminar imagen". <a href="https://diario.madrid.es/decidemadrid/2017/12/21/como-anadir-fotos-y-ubicacion-en-el-mapa-en-las-propuestas-ciudadanas/" target="_blank" title="(se abre en ventana nueva)">Consulta algunos consejos</a> para usar correctamente la funcionalidad de imágenes.</p>
+
+    <p>Las imágenes deberán tener una altura mínimo de 475 píxeles y su tamaño no puede ser superior a 1 MB.</p>
+
+    <h3 id="ubicacion-propuesta-ciudadana">¿Puedo añadir la ubicación de mi propuesta?</h3>
+    <p>Sí, debajo del campo de imagen se encuentra el mapa en el que poder ubicar las propuestas ciudadanas. El mapa se puede ampliar hasta encontrar el lugar deseado. Para poner un punto de ubicación (marcador de color azul) solo hay que clicar una vez en el lugar preciso.</p>
+
+    <p>En caso querer modificar la ubicación hay que clicar "Eliminar el marcador" (en rojo, debajo del mapa).</p>
+
+    <p>Si no es necesario geolocalizar la propuesta, hay que marcar obligatoriamente la opción "Esta propuesta no tiene una ubicación concreta o no la conozco" (debajo del mapa, a la izquierda).</p>
+
+    <h3 id="documentos-propuestas">¿Puedo añadir documentos a mi propuesta?</h3>
+    <p>Sí, se pueden subir documentos directamente para aportar anexos que expliquen más una propuesta ciudadana o un proyecto de presupuestos participativos.</p>
+
+    <p>Con el botón de "Añadir nuevo documento" puedes subir hasta tres archivos (de un máximo de 3 MB por documento). Estos documentos también aparecen justo debajo de la propuesta.</p>
+
+    <h3 id="apoyar-propuesta-ciudadana">¿Cómo se apoya una propuesta ciudadana?</h3>
+    <p>Para apoyar las propuestas de Decide Madrid hay que pulsar el botón de "Apoyar esta propuesta" que aparece en cada una.</p>
+
+    <p>Es necesario estar empadronados en Madrid y tener más de 16 años, así que al apoyar por primera vez la web nos pide que verifiquemos nuestra cuenta. El botón de verificación está en el apartado "Mi cuenta" en la esquina superior derecha de la web.</p>
+
+    <p>Se nos va a pedir que introduzcamos algunos datos para comprobar nuestra información de empadronamiento, y se nos enviará un código personal por SMS para que el proceso sea seguro. También podemos verificar nuestra cuenta presencialmente en cualquiera de las Oficinas de Atención al Ciudadano del Ayuntamiento de Madrid.</p>
+
+    <p>Las propuestas necesitan una cierta cantidad de apoyos para pasar a la siguiente fase; concretamente el 1% de los empadronados mayores de 16 años (que suponen <%= setting['votes_for_proposal_success'] %> apoyos).</p>
+
+    <h3 id="seguir-propuesta">¿Cómo puedo informarme y seguir una propuesta ciudadana que me interesa?</h3>
+    <p>A través de la funcionalidad de seguimiento, a la que se llega a través del botón de "Seguir" que se encuentra en la página de cada propuesta. Se pueden seguir planteamientos tanto si los has apoyado como si no. Al pulsar este botón, si el autor envía un mensaje a través de Decide Madrid o si se produce algún cambio, llega un aviso.</p>
+
+    <p>Para ver la notificación tienes que acceder a "Mi actividad", en la parte superior de la página, seleccionar la opción "Siguiendo", pulsar el símbolo del "+" y te aparecerá la lista de las propuestas y proyectos que sigues.</p>
+
+    <h3 id="tiempo-apoyos-propuesta">¿Durante cuanto tiempo se pueden recoger apoyos?</h3>
+    <p>Las propuestas pueden recoger apoyos durante 12 meses. Si en ese tiempo no consiguen alcanzar el 1% de los apoyos necesarios dejan de poder recibir más apoyos y pasan a la sección de <%= link_to "propuestas archivadas", proposals_path(order: 'archival_date') %>. Tanto la persona proponente como cualquier otra pueden volver a presentar la propuesta en Decide Madrid en cualquier momento.</p>
+
+    <h3 id="votacion-propuesta">¿Qué ocurre cuando una propuesta consigue los apoyos necesarios?</h3>
+    <p>Cuando una propuesta consigue <%= setting['votes_for_proposal_success'] %> apoyos se anuncia en la web. Desde ese momento se dejan un mínimo de 3 meses para que todo el mundo pueda debatir e informarse sobre la propuesta.</p>
+
+    <p>Pasado el tiempo de debate e información se convoca una votación en la sección de <%= link_to "Votaciones", polls_path %>, donde durante una semana cualquier persona empadronada en Madrid y mayor de 16 años puede decidir si está a favor o rechaza la propuesta.</p>
+
+    <p>Para votar hay que tener una cuenta de usuario verificada completamente, de tal forma que nos aseguremos de que cada persona no tiene más de una cuenta y el proceso es seguro.</p>
+
+    <h3 id="donde-votar">¿Dónde se pueden votar las propuestas que han conseguido los apoyos necesarios?</h3>
+    <p>En la web de Decide Madrid, en la sección de <%= link_to "votaciones", polls_path %>. La posibilidad de votar está activa única y exclusivamente durante la semana de votación. Para votar hay que registrarse y tener una cuenta de usuario verificada completamente, de tal forma que nos aseguremos de que cada persona no tiene más de una cuenta y el proceso es seguro.</p>
+
+    <p>Presencialmente se puede votar en las Oficinas de Atención a la Ciudadanía, presentando el DNI y sin necesidad de facilitar un correo electrónico. También se colocan urnas por la ciudad en determinadas fechas, de lo que informa el Ayuntamiento en caso de producirse.</p>
+
+    <h3 id="seguridad-votacion-propuesta">¿Cómo se controla que cada persona vota una única vez por propuesta?</h3>
+    <p>En la votación en Decide Madrid se verifica que la cuenta de usuario corresponde a un único ciudadano o ciudadana. Para ello se contrasta la información con el padrón y se facilita un código personal seguro de verificación de la cuenta a través de un SMS que se envía al número de teléfono móvil facilitado.</p>
+
+    <p>En caso de que este medio de comunicación no esté disponibles se solicitará a la persona que acuda presencialmente a alguna de las Oficinas de Atención a la Ciudadanía (OAC). En las OAC las votaciones presenciales están controladas porque la persona tiene que presentar su DNI.</p>
+
+    <h3 id="voto-propuestas-secreto">¿El voto es secreto? ¿El Ayuntamiento de Madrid tiene acceso a los votos de la ciudadanía?</h3>
+    <p>El voto es totalmente secreto. Se encripta de manera conjunta con diferentes autoridades externas al Ayuntamiento, de tal manera que para poder conocer la identidad de un votante todas las autoridades tendrían que realizar fraude conjuntamente.</p>
+
+    <h3 id="voto-electronico-propuestas">¿Al ser electrónico el voto no se aumenta el riesgo de fraude?</h3>
+    <p>No, incluso lo reducimos. Hay una sensación subjetiva muy fuerte de diferencia de seguridad entre procesos en papel y procesos electrónicos que no se corresponde con la realidad.</p>
+
+    <p>En las elecciones generales donde el voto es en papel, después de que las mesas hayan hecho el recuento, las papeletas de los votos se tiran a la basura, y la persona responsable se dirige en persona con el recuento en la mano al centro donde se comparten los datos.</p>
+
+    <p>Si pensamos, por ejemplo, en el sistema de tarjetas de crédito y de cuentas bancarias, cada día confiamos la seguridad de nuestro dinero a un sistema electrónico. En el caso del Ayuntamiento de Madrid, la votación está asegurada mediante diferentes entidades externas, y además cualquier votante puede comprobar que su voto particular está en el recuento final y realizar el recuento completo de todos los votos por su cuenta. Dos garantías de seguridad imposibles en una votación tradicional.</p>
+
+    <h3 id="votacion-propuestas-distritos">¿Vota toda la gente de Madrid en cada propuesta, incluso aunque haga referencia a un único distrito?</h3>
+    <p>Sí. El mecanismo actual se desarrolla a nivel de toda la ciudad. Es compatible con que desde un distrito se desarrollen mecanismos de participación ciudadana que afecten únicamente a ese distrito.</p>
+
+    <h3 id="semana-votacion-propuesta">¿Durante cuanto tiempo se vota cada propuesta?</h3>
+    <p>Una vez que las propuestas reciben el apoyo del 1% pasan a la fase de decisión final donde la gente puede votar aceptando o rechazando la propuesta durante un plazo de una semana.</p>
+
+    <h3 id="participacion-presencial-propuestas">¿Existen mecanismos presenciales para participar? ¿Se ha planteado llegar a los ciudadanos y ciudadanas con dificultades de acceso a Internet o en situación de exclusión?</h3>
+    <p>Todas las acciones relacionadas con el proceso de propuestas ciudadanas pueden realizarse presencialmente en cualquiera de las 26 Oficinas de Atención a la Ciudadanía repartidas por todos los distritos de Madrid. Además, el proceso de recogida de apoyos de una propuesta puede realizarse también a través de hojas de firmas, cuyo modelo puede descargarse en <a href="https://decide.madrid.es/docs/formulario_propuestas_ciudadanas.pdf" target="_blank" title="(se abre en ventana nueva)">este documento PDF</a>.</p>
+
+    <p>Adicionalmente se ha creado en el Área de Gobierno de Participación Ciudadana, Transparencia y Gobierno Abierto el Servicio de Inclusión, Neutralidad y Privacidad que ha puesto en marcha una mesa de inclusión con personal del Ayuntamiento y asociaciones que trabajan con colectivos en situación de exclusión, para diseñar mecanismos especiales para que puedan participar.</p>
+
+    <h3 id="hojas-firmas-apoyos">¿Qué son las hojas de firmas para recoger apoyos?</h3>
+    <p>Las hojas de firmas sirven para el proceso general de propuestas y para los presupuestos participativos. El proceso de recogida de apoyos de una propuesta, además de en la web, puede realizarse a través de hojas de firmas, cuyo modelo puede ser descargado en <a href="https://decide.madrid.es/docs/formulario_propuestas_ciudadanas.pdf" target="_blank" title="(se abre en ventana nueva)">este documento PDF</a>.</p>
+
+    <p>La hoja debe contener en las casillas superiores el código de la propuesta y su título, según figura en la página web específica de la propuesta, dentro de Decide Madrid.
+
+    <p>Los apoyos recogidos de esta manera se suman a los apoyos ya existentes en la web de Decide Madrid. Las hojas se pueden entregar en cualquiera de los Registros del Ayuntamiento, presentes en cada una de las Juntas de Distrito. Ver la lista completa de <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/Ayuntamiento/Oposiciones-y-Empleo/Direcciones-y-telefonos/Oficinas-de-Registro-del-Ayuntamiento-de-Madrid?vgnextfmt=default&vgnextoid=adedb88db777f010VgnVCM2000000c205a0aRCRD&vgnextchannel=ddc3ca1c5a057010VgnVCM100000dc0ca8c0RCRD" target="_blank" title="(se abre en ventana nueva)">Oficinas de Registro</a>.</p>
+
+    <h3 id="quorum-propuestas">¿Cuánta gente tiene que votar una propuesta para que sea aprobada? ¿Qué quórum mínimo se necesita para que las votaciones sean vinculantes?</h3>
+    <p>El quórum es el mínimo de participación necesaria para considerar una votación vinculante de manera legal. Ningún reglamento del Ayuntamiento de Madrid puede hacer que este mecanismo sea vinculante jurídicamente, porque eso está en contra de la legislación española. La vinculación con el mecanismo es política y se asume de manera personal por los concejales y la alcaldesa. Por ello no se considera ningún quórum.</p>
+
+    <h3 id="propuestas-tras-votacion">¿Qué pasa con las propuestas una vez ha finalizado la votación?</h3>
+    <p>En caso de que haya más gente a favor de una propuesta que en contra, se acepta como propuesta colectiva de la ciudadanía madrileña. El gobierno del Ayuntamiento de Madrid la asume como propia y la lleva a cabo si es de su competencia o emprende actuaciones alternativas dentro de sus capacidades que intenten cumplir con la decisión de la propuesta.</p>
+
+    <p>Para ello en un plazo máximo de un mes, se realizan los informes técnicos correspondientes sobre su legalidad, viabilidad y coste económico. También se tienen en cuenta a los sectores afectados y a la persona que haya lanzado la propuesta, para detallar la actuación correspondiente por parte del Consistorio.</p>
+
+    <p>Todos los informes realizados se publican en la web y se hace seguimiento de las actuaciones que se llevan a cabo, para asegurar un correcto desarrollo de la propuesta.</p>
+
+    <h3 id="obstaculos-realizacion-propuestas">¿Se lleva a cabo cualquier propuesta que se acepte por mayoría en la web, incluso aunque sean ilegales o atenten contra los derechos humanos? ¿Qué ocurre si no hay presupuesto para llevarla a cabo?</h3>
+    <p>Se establecen una serie de criterios objetivos por los que una propuesta no podrá ser aceptada como, por ejemplo, que tenga fines delictivos o que atente contra derechos fundamentales y libertades públicas.</p>
+
+    <p>Además se excluyen del proceso las propuestas sobre otras modalidades de participación tales como presupuestos participativos, procesos revocatorios, audiencia pública o iniciativas normativas populares.</p>
+
+    <p>Este mecanismo de participación no cambia los límites ya existentes para el Ayuntamiento, lo que hace es trasladar quién toma la decisión de lo que haya que hacer, incluyendo a toda la ciudadanía en el proceso de toma de decisiones.</p>
+
+    <p>En el caso de las propuestas que quedan fuera de las competencias municipales el Ayuntamiento no podrá llevarlas a cabo, pero emprenderá actuaciones alternativas dentro de sus capacidades que intenten cumplir con la decisión de la propuesta.</p>
+
+    <p>Lo mismo sucede con el presupuesto para llevar a cabo la propuesta; el ayuntamiento utilizará los recursos necesarios en cuanto sea posible, de la misma manera que se costean las decisiones adoptadas sin participación ciudadana.</p>
+
+    <p>También puede ocurrir que la actuación requiera la aprobación del Pleno del Ayuntamiento de Madrid, por lo que el resultado dependerá del posicionamiento de todos los grupos políticos respecto a la actuación presentada.</p>
+
+    <h3 id="primera-votacion-propuestas-ciudadanas">¿Alguna propuesta ciudadana ha pasado el umbral de los <%= setting['votes_for_proposal_success'] %> apoyos y se ha votado?</h3>
+    <p>Sí, en febrero de 2017 la ciudadanía aprobó las propuestas de <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">"Madrid 100% sostenible" y "Billete único para el transporte público"</a>. También se preguntó por la <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">reforma de Plaza de España</a>, la movilidad de <a href="https://decide.madrid.es/vota/gran-via/results">Gran Vía</a> y cuestiones en seis distritos.</p>
+
+    <p>'En octubre de 2017 la ciudadanía decidió sobre la remodelación de once plazas de la ciudad: <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-lucero/results">Lucero</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-san-blas/results">San Blas</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-civica-mar-cristal/results">Mar de Cristal</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-duquesa-osuna/results">Duquesa de Osuna</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-emperatriz/results">Emperatriz</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-remonta/results">Remonta</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-vaguada/results">La Vaguada</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-encuentro/results">El Encuentro</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-misterios/results">Los Misterios</a>, <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-puerto-canfranc/results">Puerto de Canfranc</a> y <a href="https://decide.madrid.es/vota/rehabilitacion-plaza-mayor-villaverde/results">Mayor de Villaverde y Ágata</a>.</p>
+
+  </div>
+</div>

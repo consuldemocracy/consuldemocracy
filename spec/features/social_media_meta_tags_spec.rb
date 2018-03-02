@@ -37,7 +37,7 @@ feature 'Social media meta tags' do
       Setting['twitter_handle'] = nil
       Setting['url'] = 'http://example.com'
       Setting['facebook_handle'] = nil
-      Setting['org_name'] = 'CONSUL'
+      Setting['org_name'] = 'Decide Madrid'
     end
 
     scenario 'Social media meta tags partial render settings content' do

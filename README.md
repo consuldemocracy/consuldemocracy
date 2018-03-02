@@ -1,18 +1,22 @@
+# ⚠️ WARNING ❌: DO NOT USE THIS REPO IF WANT TO INSTALL YOUR OWN CONSUL. Instead fork https://github.com/consul/consul
+
 ![CONSUL logo](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
 # CONSUL
 
 Citizen Participation and Open Government Application
 
-[![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
+[![Build Status](https://travis-ci.org/AyuntamientoMadrid/consul.svg?branch=master)](https://travis-ci.org/AyuntamientoMadrid/consul)
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
-[![Dependency Status](https://gemnasium.com/consul/consul.svg)](https://gemnasium.com/consul/consul)
-[![Coverage Status](https://coveralls.io/repos/github/consul/consul/badge.svg)](https://coveralls.io/github/consul/consul?branch=master)
+[![Dependency Status](https://gemnasium.com/AyuntamientoMadrid/consul.svg)](https://gemnasium.com/AyuntamientoMadrid/consul)
+[![Coverage Status](https://coveralls.io/repos/github/AyuntamientoMadrid/consul/badge.svg)](https://coveralls.io/github/AyuntamientoMadrid/consul?branch=master)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://crowdin.com/project/consul)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 [![Accessibility conformance](https://img.shields.io/badge/accessibility-WAI:AA-green.svg)](https://www.w3.org/WAI/eval/Overview)
 [![A11y issues checked with Rocket Validator](https://rocketvalidator.com/badges/checked_with_rocket_validator.svg?url=https://rocketvalidator.com)](https://rocketvalidator.com/opensource)
+[![Accessibility issues](https://rocketvalidator.com/badges/a11y_issues.svg?url=https://decide.madrid.es)](https://rocketvalidator.com/badges/link?url=https://decide.madrid.es&report=a11y)
+[![HTML issues](https://rocketvalidator.com/badges/html_issues.svg?url=https://decide.madrid.es)](https://rocketvalidator.com/badges/link?url=https://decide.madrid.es&report=html)
 
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3APRs-welcome)
@@ -30,7 +34,7 @@ Development started on [2015 July 15th](https://github.com/consul/consul/commit/
 Prerequisites: install git, Ruby 2.3.2, `bundler` gem, Node.js and PostgreSQL (>=9.4).
 
 ```bash
-git clone https://github.com/consul/consul.git
+git clone https://github.com/ayuntamientomadrid/consul.git
 cd consul
 bundle install
 cp config/database.yml.example config/database.yml

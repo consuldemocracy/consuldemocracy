@@ -1,0 +1,5 @@
+<% if @spending_proposals.present? %>
+  <% @spending_proposals.each do |spending_proposal| %>
+    $("#<%= dom_id(spending_proposal) %>_ballot").html('<%= j render("spending_proposals/ballot", spending_proposal: spending_proposal) %>');
+  <% end %>
+<% end %>

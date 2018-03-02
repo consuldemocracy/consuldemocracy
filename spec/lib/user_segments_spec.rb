@@ -172,4 +172,20 @@ describe UserSegments do
       expect(current_budget_investments).not_to include investment2
     end
   end
+
+  describe "#beta_testers" do
+    let(:beta_testers) do
+      %w(aranacm@madrid.es bertocq@gmail.com mariajecheca@gmail.com
+       alberto@decabeza.es voodoorai2000@gmail.com)
+    end
+
+    before do
+      beta_testers.each { |beta_tester| create(:user, email: beta_tester) }
+    end
+
+    it "returns only users with specific emails" do
+      expect(described_class.beta_testers.count).to eq(5)
+      expect(described_class.beta_testers.pluck(:email)).to match_array(beta_testers)
+    end
+  end
 end

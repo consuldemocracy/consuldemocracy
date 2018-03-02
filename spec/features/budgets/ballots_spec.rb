@@ -309,8 +309,9 @@ feature 'Ballots' do
       visit budget_path(budget)
       click_link group.name
       # No need to click on the heading name
-      expect(page).to have_content("Investment projects with scope: #{heading.name}")
-      expect(page).to have_current_path(budget_investments_path(budget), ignore_query: true)
+
+      expect(page).to have_text("Investment projects with scope: #{heading.name}")
+      expect(page).to have_current_path(custom_budget_investments_path(budget, group, heading), ignore_query: true)
     end
 
     scenario 'Displaying the correct group, heading, count & amount' do
@@ -541,7 +542,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Insufficient funds (added after create)', :js do
+    xscenario 'Insufficient funds (added after create)', :js do
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 

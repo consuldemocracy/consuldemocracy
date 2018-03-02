@@ -1,0 +1,6 @@
+es:
+  verification:
+    letter:
+      new:
+        go_to_index: Empezar a participar
+        title: "¡Felicidades!"

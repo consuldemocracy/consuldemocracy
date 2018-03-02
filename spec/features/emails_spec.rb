@@ -93,7 +93,7 @@ feature 'Emails' do
       email = open_last_email
       expect(email).to have_subject('Someone has commented on your investment')
       expect(email).to deliver_to(investment.author)
-      expect(email).to have_body_text(budget_investment_path(investment, budget_id: investment.budget_id))
+      expect(email).to have_body_text(budget_investment_path(investment.budget, investment))
       expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
       expect(email).to have_body_text(account_path)
     end
@@ -210,7 +210,16 @@ feature 'Emails' do
     end
   end
 
-  scenario "Email on unfeasible spending proposal" do
+  scenario "Email depending on user's locale" do
+    sign_up
+
+    email = open_last_email
+    expect(email).to have_subject('Confirmation instructions')
+    expect(email).to deliver_to('manuela@consul.dev')
+    expect(email).to have_body_text(user_confirmation_path)
+  end
+
+  xscenario "Email on unfeasible spending proposal" do
     Setting["feature.spending_proposals"] = true
 
     spending_proposal = create(:spending_proposal)
@@ -298,7 +307,7 @@ feature 'Emails' do
       email_digest.mark_as_emailed
 
       email = open_last_email
-      expect(email).to have_subject("Proposal notifications in CONSUL")
+      expect(email).to have_subject("Proposal notifications in Decide Madrid")
       expect(email).to deliver_to(user.email)
 
       expect(email).to have_body_text(proposal1.title)
@@ -327,6 +336,9 @@ feature 'Emails' do
       expect(notification2.emailed_at).to be
     end
 
+    xscenario "Delete all Notifications included in the digest after email sent" do
+    end
+
   end
 
   context "User invites" do
@@ -345,7 +357,7 @@ feature 'Emails' do
       expect(unread_emails_for("isable@example.com").count).to eq 1
 
       email = open_last_email
-      expect(email).to have_subject("Invitation to CONSUL")
+      expect(email).to have_subject("Invitation to Decide Madrid")
       expect(email).to have_body_text(/#{new_user_registration_path}/)
     end
 
@@ -386,6 +398,8 @@ feature 'Emails' do
     end
 
     scenario "Unfeasible investment" do
+      Setting['feature.budgets.valuators_allowed'] = true
+
       investment = create(:budget_investment, author: author, budget: budget)
 
       valuator = create(:valuator)
@@ -528,6 +542,7 @@ feature 'Emails' do
   end
 
   context "Users without email" do
+
     scenario "should not receive emails" do
       user = create(:user, :verified, email_on_comment: true)
       proposal = create(:proposal, author: user)

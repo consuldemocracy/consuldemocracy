@@ -4,6 +4,13 @@
 
 <%= render 'written_by_author' %>
 
+<% if @investment.label.present? %>
+  <p id="label">
+    <strong><%= t("admin.budget_investments.show.label") %>:</strong>
+    <%= @investment.label %>
+  </p>
+<% end %>
+
 <%= link_to t("admin.budget_investments.show.edit"),
             edit_admin_budget_budget_investment_path(@budget, @investment,
                                                 Budget::Investment.filter_params(params)) unless @budget.finished? %>
@@ -20,6 +27,15 @@
   <strong><%= t("admin.budget_investments.show.tags") %>:</strong>
 
   <%= @investment.tags_on(:valuation).pluck(:name).sort.join(', ') %>
+</p>
+
+<p id="assigned_valuator_groups">
+  <strong><%= t("admin.budget_investments.show.valuator_groups") %>:</strong>
+  <% if @investment.valuator_groups.any? %>
+    <%= @investment.valuator_groups.collect(&:name).join(', ') %>
+  <% else %>
+    <%= t("admin.budget_investments.show.undefined") %>
+  <% end %>
 </p>
 
 <p id="assigned_valuators">

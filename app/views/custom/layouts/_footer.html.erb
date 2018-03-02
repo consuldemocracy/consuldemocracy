@@ -1,0 +1,103 @@
+<footer>
+  <div class="row">
+    <div class="small-12 large-4 column">
+      <h1 class="logo">
+        <%= link_to t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
+      </h1>
+
+      <p class="info">
+        <%= t("layouts.footer.description",
+          open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
+          consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow")).html_safe
+        %>
+        <%= t("layouts.footer.contact_us") %>
+        <%= link_to t("layouts.footer.faq"), faq_path %>
+      </p>
+    </div>
+
+    <div class="footer-sections small-12 large-8 column">
+      <div class="small-12 medium-4 column">
+        <%= link_to t("layouts.footer.participation_title"), root_path, class: "title" %>
+        <p><%= t("layouts.footer.participation_text") %></p>
+      </div>
+
+      <div class="small-12 medium-4 column">
+        <%= link_to t("layouts.footer.transparency_title"), setting['transparency_url'].presence || t("layouts.footer.transparency_url"),
+                    target: "_blank", title: t('shared.target_blank_html'), class: "title" %>
+        <p><%= t("layouts.footer.transparency_text") %></p>
+      </div>
+
+      <div class="small-12 medium-4 column">
+        <%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url"),
+                    target: "_blank", title: t('shared.target_blank_html'), class: "title" %>
+        <p><%= t("layouts.footer.open_data_text") %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="subfooter">
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
+        <ul class="no-bullet inline-block">
+          <li class="inline-block"><%= link_to t("layouts.footer.privacy"), privacy_path %>&nbsp;|</li>
+          <li class="inline-block"><%= link_to t("layouts.footer.conditions"), conditions_path %>&nbsp;|</li>
+          <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), accessibility_path %></li>
+        </ul>
+      </div>
+
+      <div class="small-12 medium-6 column social">
+        <div class="text-right">
+          <ul>
+            <% if setting['twitter_handle'] %>
+              <li class="inline-block">
+                <%= link_to t("social.twitter_link"),
+                              "https://twitter.com/#{setting['twitter_handle']}", target: "_blank",
+                              title: t("shared.go_to_page") + t("social.twitter", org: setting['org_name']) + t('shared.target_blank_html') %>
+              </li>
+            <% end %>
+            <% if setting['facebook_handle'] %>
+              <li class="inline-block">
+                <%= link_to t("social.facebook_link"),
+                              "https://www.facebook.com/#{setting['facebook_handle']}/", target: "_blank",
+                              title: t("shared.go_to_page") + t("social.facebook", org: setting['org_name']) + t('shared.target_blank_html') %>
+              </li>
+            <% end %>
+            <%  if setting['blog_url'] %>
+              <li class="inline-block">
+                <%= link_to t("social.blog_link"),
+                              setting['blog_url'], target: "_blank",
+                              title: t("shared.go_to_page") + t("social.blog", org: setting['org_name']) + t('shared.target_blank_html') %>
+              </li>
+            <% end %>
+            <% if setting['youtube_handle'] %>
+              <li class="inline-block">
+                <%= link_to t("social.youtube_link"),
+                              "https://www.youtube.com/#{setting['youtube_handle']}", target: "_blank",
+                              title: t("shared.go_to_page") + t("social.youtube", org: setting['org_name']) + t('shared.target_blank_html') %>
+              </li>
+            <% end %>
+            <% if setting['telegram_handle'] %>
+              <li class="inline-block">
+                <%= link_to t("social.telegram_link"),
+                              "https://www.telegram.me/#{setting['telegram_handle']}", target: "_blank",
+                              title: t("shared.go_to_page") + t("social.telegram", org: setting['org_name']) + t('shared.target_blank_html') %>
+              </li>
+            <% end %>
+            <% if setting['instagram_handle'] %>
+              <li class="inline-block">
+                <%= link_to t("social.instagram_link"),
+                              "https://www.instagram.com/#{setting['instagram_handle']}", target: "_blank",
+                              title: t("shared.go_to_page") + t("social.instagram", org: setting['org_name']) + t('shared.target_blank_html') %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= raw content_block("footer", I18n.locale) %>
+  </div>
+</footer>

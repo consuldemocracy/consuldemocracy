@@ -1,0 +1,39 @@
+en:
+  budgets:
+    index:
+      section_footer:
+        description: With the participatory budgets the citizens decide to which projects presented by the neighbors of Madrid is destined a part of the municipal budget.
+        help_text_1: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. Any registered person in Madrid over 16 years old can propose an investment project that is preselected in a phase of citizen supports."
+        help_text_2: "The most voted projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council of Madrid once the municipal budgets of the next year are approved."
+    stats:
+      title: Participation stats
+      link: Stats
+      page_title: "%{budget} - Participation stats"
+      total_participants: Total Participants
+      total_budget_investments: Total Proposed Investments
+      total_selected_investments: Proposals on final phase
+      total_unfeasible_investments: Unfeasible proposals
+      total_participants_support_phase: Support phase
+      participants: Participants
+      supports: Supports
+      votes: Votes
+      total_participants_vote_phase: Voting Phase
+      by_gender: "Participants by gender"
+      total_male_participants: Mens
+      total_female_participants: Women
+      by_age: "Participants by age groups"
+      age: Age
+      total: Total
+      more_than: More than
+      years: years
+      by_heading: "Participants by heading"
+      heading: Heading
+      investments_sent_html: "Investment proposals sent"
+      participants_support_phase: Participants support phase
+      participants_voting_phase: Participants voting phase
+      participants_total: Total Participants
+      percent_total_participants_html: "% <br>Total<br>Participants"
+      percent_heading_census_html: "% <br>Heading<br>Census"
+      no_demographic_data: "* There is no demographic data for %{total} participants."
+      participatory_disclaimer: "** The numbers of total participation refer to persons that created, supported or voted investment proposals."
+      heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."

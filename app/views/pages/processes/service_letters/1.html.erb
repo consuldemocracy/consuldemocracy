@@ -1,0 +1,524 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: service_letters_1_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <%= back_link_to %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 small-centered column">
+    <div class="float-left download">
+      <p><strong>DESCARGA ESTE DOCUMENTO</strong><br>
+        <%= link_to "Carta de Servicios: Centro de Prevención del<br> Deterioro Cognitivo <small>(DOC | 233Kb)</small>".html_safe,
+                    "/docs/carta_servicios_centro_prevencion_deterioro_cognitivo.doc",
+                    title: "Carta de Servicios: Centro de Prevención del Deterioro Cognitivo (DOC | 233Kb)" %><br>
+      </p>
+    </div>
+
+    <div class="float-right">
+      <a class="button warning" type="button" data-toggle="annotator-help">
+        <sub><span class="icon-edit"></span></sub>&nbsp;
+        <%= t("annotator.help.title") %>
+      </a>
+
+      <div class="dropdown-pane" id="annotator-help" data-dropdown data-auto-focus="true">
+        <% if user_signed_in? %>
+          <%= t("annotator.help.alt") %>
+        <% else %>
+          <p>
+            <%= t("annotator.help.text",
+                sign_in: link_to(t("annotator.help.text_sign_in"), new_user_session_path),
+                sign_up: link_to(t("annotator.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          </p>
+        <% end %>
+
+        <%= image_tag ("annotator_help.gif"), alt: t("annotator.help.alt") %>
+      </div>
+    </div>
+
+    <section data-annotatable-type="legislation"
+             data-annotatable-id="6"
+             data-annotatable-readonly="true"
+             id="carta_servicios_body">
+
+      <h1 class="text-center">Carta de Servicios del Centro de Prevención del Deterioro Cognitivo</h1>
+
+      <h2>1. Introducción</h2>
+
+      <p>El Ayuntamiento de Madrid ha venido incorporando dentro de su compromiso de modernización de la administración de la Ciudad, un conjunto de iniciativas para mejorar la gestión municipal, especialmente orientadas a satisfacer las necesidades y expectativas de la ciudadanía.</p>
+
+      <p>El Plan de Calidad del Ayuntamiento de Madrid establece como línea estratégica la mejora continua de la calidad como herramienta de gestión municipal orientada al ciudadano y como instrumento para que los servicios que se prestan sean progresivamente más eficientes y eficaces. En este sentido, el Organismo Autónomo de Madrid Salud manifiesta su compromiso permanente para alcanzar los mayores niveles de <strong>calidad en las prestaciones</strong>, fomentar la <strong>participación del ciudadano</strong> y lograr la máxima <strong>transparencia</strong> en la actividad administrativa que realiza.</p>
+
+      <p>Madrid Salud, en el marco del proyecto "Madrid, ciudad de los cuidados", enfoca básicamente su estrategia municipal en dos factores determinantes de la salud: <strong>el entorno</strong> (seguridad alimentaria, medio ambiente, entornos urbanos y protección de animales domésticos) y <strong>los estilos de vida</strong> (actividades de prevención y promoción de la salud de los madrileños e intervención en adicciones).</p>
+
+      <p>En consonancia con esta estrategia, el Ayuntamiento pone en funcionamiento el <strong>Centro de Prevención del Deterioro Cognitivo</strong> (CPDC), como centro pionero en España en la <strong>evaluación y el entrenamiento de la memoria y otras funciones cognitivas</strong>, desde la aparición de los primeros problemas de memoria asociados a la edad hasta el deterioro cognitivo leve en personas mayores que no han sido diagnosticadas de demencia. Es un centro específico que forma parte de la red de centros de prevención y promoción de la salud. Parte de su actividad es dar apoyo a esta red y a sus programas que articulan la respuesta a los principales problemas de salud de la ciudad de Madrid. El CPDC está encuadrado en la <strong>Estrategia Barrios Saludables</strong> y apoya especialmente a los programas de Envejecimiento Activo y Saludable y al de Psicohigiene.</p>
+
+      <p>En este contexto, el Ayuntamiento asume el compromiso de establecer y desarrollar la presente Carta de Servicios para hacer visibles a la ciudadanía los servicios que están a su disposición en materia de prevención del deterioro cognitivo y las condiciones en las que se realizan, así como los compromisos que se adquieren con unos determinados niveles o estándares de calidad a este respecto.</p>
+
+      <p>En el ámbito de la Salud, el Ayuntamiento de Madrid dispone en la actualidad de las siguientes Cartas de Servicios:</p>
+
+      <ul>
+        <li>Carta de Servicios del Instituto de Adicciones.</li>
+        <li>Carta de Servicios de Salud Pública en materia de Protección Animal.</li>
+        <li>Carta de Servicios de Brotes y Alertas Alimentarias en Salud Pública.</li>
+        <li>Carta de Servicios de Actividades Sanitarias para la Prevención y Protección de la Salud en el Trabajo.</li>
+        <li>Carta de Servicios de Habitabilidad y Salubridad de la Vivienda.</li>
+        <li>Carta de Servicios de Prevención y Control de Plagas.</li>
+        <li>Carta de Servicios de Consejo al Viajero y Vacunación Internacional.</li>
+      </ul>
+
+      <p>Con la elaboración de la presente Carta de Servicios del CPDC de Madrid se da continuidad al Plan de Calidad de Madrid Salud que, en el marco del Plan de Calidad del Ayuntamiento, fue aprobado por su Comité de Dirección y responde a una cultura organizativa orientada a la ciudadanía e inspirada en modelos de gestión de la calidad y participación ciudadana.</p>
+
+      <h2>2. Datos de carácter general</h2>
+
+      <h3>Órgano directivo</h3>
+
+      <p>El órgano directivo responsable del CPDC es el Organismo Autónomo Madrid Salud, adscrito al Área de Gobierno de Salud, Seguridad y Emergencias.</p>
+
+      <p>Según la Disposición Adicional cuarta del Acuerdo de 17 de enero de 2013 de la Junta de Gobierno de la Ciudad de Madrid, por el que se establece la organización y estructura del Área de Gobierno de Salud, Seguridad y Emergencias y se delegan competencias en su titular y en los titulares de los órganos directivos, corresponden al Organismo Autónomo Madrid Salud, entre otras, las siguientes competencias en materia de Salud Pública, referidas en el artículo 3 de sus estatutos:</p>
+
+      <ul>
+        <li>La dirección, gestión, supervisión y evaluación de las actividades preventivas sanitarias y asistenciales de los Centros y establecimientos sanitarios de competencia municipal.</li>
+        <li>Resolución de las cuestiones relacionadas con el desarrollo de sus actividades, coordinándolas entre sí y con las acciones de salud a cargo de las Entidades Públicas y Organismos Autónomos que ejercen funciones asistenciales, de acuerdo con la normativa que en todo momento establezca el órgano planificador del Estado y prevea la Ley General de Sanidad y el resto de la normativa aplicable.</li>
+        <li>Prevención y Promoción de la Salud y de los hábitos saludables en la población del municipio.</li>
+        <li>Dirección, gestión, control y evaluación de todos los recursos públicos relativos a Salud Pública, así como de las actividades preventivas, asistenciales e integradoras de los Centros y establecimientos sanitarios de competencia municipal, tanto los dirigidos a pacientes afectados de una adicción y a sus familias como a la población general, coordinando sus actuaciones según las directrices establecidas.</li>
+        <li>Dirección de la Oficina de Salud para Madrid en coordinación con las redes locales, autonómica, nacional y europea de Ciudades Saludables así como con la Organización Mundial de la Salud (OMS).</li>
+      </ul>
+
+      <h3>Unidad prestadora del servicio</h3>
+
+      <p>La unidad que presta los servicios objeto de esta Carta es el Centro de Prevención del Deterioro Cognitivo, cuya competencia es la prevención del deterioro cognitivo, mediante la evaluación de la memoria y otras funciones cognitivas, estimulación cognitiva, información y orientación a los usuarios y a sus familias sobre las alteraciones de memoria o el deterioro cognitivo, así como valoración y orientación social, educación para la salud, con el fin de prevenir los factores de riesgo, y la formación e investigación en estos ámbitos.</p>
+
+      <p>El CPDC cuenta, además de los despachos de los profesionales dónde se realizan las consultas individuales, con una ‘Sala Grupal’, una ‘Sala Multifuncional’ y una ‘Sala de Estimulación Cognitiva por Ordenador’ con diez ordenadores.</p>
+
+      <h2>3. Normativa</h2>
+
+      <h3>Normativa general</h3>
+
+      <ul>
+        <li>Artículos 43 y 51 de la Constitución Española de 1978.</li>
+      </ul>
+
+      <h3>Leyes Orgánicas, Leyes y Reales Decretos</h3>
+
+      <ul>
+        <li>Ley 17/2009, de 23 de noviembre, sobre el libre acceso a las actividades de servicios y su ejercicio y Ley 25/2009, de 22 de diciembre, de modificación de diversas leyes para su adaptación a la Ley sobre el libre acceso a las actividades de servicios y su ejercicio.</li>
+        <li>Ley 22/2006, de 4 de julio, de Capitalidad y de Régimen Especial de Madrid.</li>
+        <li>Real Decreto Legislativo 2/2004, de 5 de marzo, por el que se aprueba el Texto Refundido de la Ley Reguladora de las Haciendas Locales.</li>
+        <li>Ley 57/2003, de 16 de diciembre, de Medidas para la Modernización del Gobierno Local.</li>
+        <li>Ley 51/2003, de 2 de diciembre, de igualdad de oportunidades, no discriminación y accesibilidad universal de las personas con discapacidad.</li>
+        <li>Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de carácter personal.</li>
+        <li>Ley 39/2015, de 1 de octubre, de Procedimiento Administrativo Común de las Administraciones Públicas que entra en vigor el 3 de octubre de 2016 y expresamente deroga la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común y la Ley 11/2007, de 22 de junio, de acceso electrónico de los ciudadanos a los Servicios Públicos.</li>
+        <li>Real Decreto Legislativo 781/1986, de 18 de abril, por el que se aprueba el Texto Refundido de las Disposiciones Legales vigentes en materia de Régimen Local.</li>
+        <li>Ley 7/1985, de 2 de abril, Reguladora de las Bases de Régimen Local.</li>
+      </ul>
+
+      <h3>Normativa municipal general</h3>
+
+      <ul>
+        <li>Acuerdo del Pleno, de 30 de marzo de 2011, por el que se aprueba la ordenanza por la que se adaptan al ámbito de la ciudad de Madrid las previsiones contenidas en la normativa estatal y autonómica de transposición de la Directiva 2006/123/CE, del Parlamento Europeo y del Consejo, de 12 de diciembre de 2006, relativa a los servicios en el mercado interior.</li>
+        <li>Acuerdo de la Junta de Gobierno de la Ciudad de Madrid de 25 de junio de 2009, por el que se regula el Sistema de Cartas de Servicios en el Ayuntamiento de Madrid.</li>
+        <li>Acuerdo de la Junta de Gobierno de la Ciudad de Madrid de 4 de diciembre de 2008, por el que se aprueba el Código de Buenas Prácticas Administrativas del Ayuntamiento de Madrid.</li>
+        <li>Decreto del Alcalde de 17 de enero de 2005, por el que se regula la Atención al Ciudadano en el Ayuntamiento de Madrid y su normativa de desarrollo.</li>
+        <li>Reglamento Orgánico de los Distritos de la Ciudad de Madrid, de 23 de diciembre de 2004.</li>
+        <li>Reglamento Orgánico del Gobierno y de la Administración del Ayuntamiento de Madrid, de 31 de mayo de 2004.</li>
+        <li>Reglamento Orgánico de Participación Ciudadana del Ayuntamiento de Madrid, de 31 de mayo de 2004.</li>
+      </ul>
+
+      <h3>Normativa específica</h3>
+
+      <h4>Normativa estatal</h4>
+      <ul>
+        <li>Ley 14/1986, de 25 de abril, General de Sanidad.</li>
+        <li>Ley 6/1999, de 7 de julio, de Atención y Protección a las Personas Mayores.</li>
+        <li>Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.</li>
+        <li>Ley 41/2002, de 14 de noviembre, básica reguladora de la autonomía del paciente y de derechos y obligaciones en materia de información y documentación clínica.</li>
+        <li>Ley 16/2003 de 28 de mayo, de Cohesión y Calidad del Sistema Nacional de Salud.</li>
+        <li>Ley 33/2011, de 4 de octubre, General de Salud Pública.</li>
+      </ul>
+
+      <h4>Normativa autonómica</h4>
+      <ul>
+        <li>Ley 1/1983, de 13 de diciembre, de Gobierno y Administración de la Comunidad de Madrid.</li>
+        <li>Ley 11/1998, de 9 de julio, de Protección de los Consumidores y Usuarios de la Comunidad de Madrid.</li>
+        <li>Ley 12/2001, de 21 de diciembre, de Ordenación Sanitaria de la Comunidad de Madrid.</li>
+        <li>Decreto de la Comunidad de Madrid 51/2006, de 15 de junio, regulador del régimen jurídico y procedimiento de autorización y registro de los centros, servicios y establecimientos sanitarios en la Comunidad de Madrid.</li>
+      </ul>
+
+      <h4>Normativa municipal</h4>
+      <ul>
+        <li>Acuerdo de 29 de Octubre de 2015 de la Junta de Gobierno de la Ciudad de Madrid por el que se establece la  organización y competencias del Área de Gobierno de Salud, Seguridad y Emergencias.</li>
+        <li>Estatutos del organismo autónomo “Madrid Salud” aprobados en el pleno del Ayuntamiento de Madrid el 19 de noviembre de 2004.</li>
+      </ul>
+
+      <h2>4. Derechos y responsabilidades</h2>
+
+      <h3>Derechos de la ciudadanía y usuarios/as</h3>
+
+      <p>Los principales derechos de la ciudadanía en general y de los/as usuarios/as de los servicios objeto de esta Carta, recogidos básicamente en la normativa relativa a régimen jurídico de las Administraciones Públicas, procedimiento administrativo común, transparencia y protección de datos, son:</p>
+
+      <ul>
+        <li>Ser tratados con respeto y deferencia.</li>
+        <li>Recibir información sobre el servicio que se presta.</li>
+        <li>Conocer la identidad del personal bajo cuya responsabilidad se presta el servicio.</li>
+        <li>Ser objeto de una atención directa y personalizada.</li>
+        <li>Elegir el canal presencial, telefónico o electrónico a través del cual relacionarse con el Ayuntamiento (salvo que estén obligados a relacionarse a través de medios electrónicos).</li>
+        <li>Exigir responsabilidades a su Administración y personal cuando así corresponda legalmente.</li>
+        <li>Presentar sugerencias, reclamaciones y felicitaciones sobre el funcionamiento de los servicios.</li>
+        <li>A la protección de datos de carácter personal y en particular a su seguridad y confidencialidad.</li>
+      </ul>
+
+      <p>Por otra parte, el CPDC le reconoce también el derecho:</p>
+      <ul>
+        <li>A ser atendido y evaluado según el protocolo del Centro.</li>
+        <li>A tomar decisiones sobre la realización de las actividades que se le propongan.</li>
+        <li>A participar en las actividades indicadas por los profesionales del CPDC.</li>
+        <li>A tener acceso a los materiales publicados por el CPDC que los profesionales consideren adecuados.</li>
+        <li>A la confidencialidad de sus datos en todas las etapas del proceso de atención.</li>
+      </ul>
+
+      <h3>Responsabilidades de la ciudadanía y usuarios/as</h3>
+      <ul>
+        <li>Mantener siempre una actitud correcta y de respeto hacia los demás y hacia el personal de la organización.</li>
+        <li>Cumplir lo establecido en la normativa vigente y, en concreto, en la reglamentación técnica general y específica de los servicios objeto de la Carta (acreditación, plazos, documentación a aportar, ...)</li>
+        <li>Hacer adecuado uso de las instalaciones y respetar el material y los equipamientos, colaborando en su mantenimiento y limpieza.</li>
+        <li>Plantear sus sugerencias y reclamaciones con un contenido concreto y proporcionando los datos mínimos necesarios para su tramitación.</li>
+        <li>Hacer un uso adecuado de los materiales de estimulación cognitiva que se le entreguen en el Centro.</li>
+        <li>Asistir regularmente a las actividades a las que se comprometa con el profesional, salvo causa justificada.</li>
+      </ul>
+
+      <h2>5. Mecanismos y modalidades de participación</h2>
+
+      <p>El Ayuntamiento de Madrid realiza una apuesta fuerte por el desarrollo y puesta en marcha de los procesos participativos, que garanticen el <strong>derecho</strong> de la ciudadanía a participar en la toma de decisiones junto con los poderes públicos, de manera que el sentir de la totalidad de la población se tenga en cuenta con carácter previo a la adopción de decisiones que puedan afectar a un Distrito concreto o a la totalidad de la Ciudad.</p>
+
+      <p>Entre los <strong>mecanismos, instrumentos y órganos de participación</strong> establecidos por el Ayuntamiento de Madrid en su Reglamento Orgánico de Participación Ciudadana y normativa de desarrollo, destacan:</p>
+
+      <ul>
+        <li>Las propuestas ciudadanas: la ciudadanía realiza propuestas de actuación en asuntos de competencia municipal o interés local. Cuando alcanzan el 2% de apoyos pueden someterse a debate y votación final, decidiendo entre todas y todos las que se llevan a cabo (mayoría simple de los participantes).</li>
+        <li>Las audiencias públicas: el Ayuntamiento invita a la ciudadanía a participar en cuestiones especialmente significativas de la acción municipal y lo que se decida mayoritariamente, definirá las actuaciones a realizar.</li>
+        <li>Las iniciativas populares: iniciativas normativas e iniciativas ciudadanas para promover actividades de interés público.</li>
+        <li>Las proposiciones al Pleno y a las Juntas de Distrito y los ruegos y preguntas en las sesiones plenarias del Distrito correspondiente.</li>
+        <li>Las sugerencias y reclamaciones: la ciudadanía ejerce su derecho a presentar sugerencias relativas a la creación, ampliación o mejora de los servicios prestados por el Ayuntamiento de Madrid; reclamaciones por tardanzas, desatenciones, incidencias o cualquier otra anomalía en su funcionamiento y felicitaciones, sobre los servicios prestados por el Ayuntamiento.</li>
+        <li>El Consejo Director de la Ciudad, los Consejos Sectoriales y los Consejos Territoriales.</li>
+        <li>Los sondeos de opinión, encuestas de satisfacción, consejos y foros temáticos, y paneles ciudadanos. Entre ellos destaca la Encuesta de Calidad de Vida y Satisfacción con los Servicios Públicos, encuesta presencial de carácter bienal que tiene por objetivo analizar el grado de satisfacción de la ciudadanía madrileña con los servicios públicos municipales, así como conocer su opinión ciudadana respecto a la calidad de vida en la ciudad.</li>
+      </ul>
+
+      <p>Para avanzar de un modo decidido hacia las fórmulas reales de participación de la ciudadanía que profundicen y den sentido al compromiso de lograr un gobierno abierto, se ha puesto en marcha la <strong>web de gobierno abierto del Ayuntamiento de Madrid</strong>, destinada a que la ciudadanía pueda promover propuestas de actuación municipal de forma libre y transparente. En ella, a través de la plataforma de participación <a href="http://decide.madrid.es">decide.madrid</a> se pueden presentar propuestas, someter a audiencia pública las cuestiones más relevantes del gobierno de la Ciudad y participar en la elaboración de los Presupuestos del Ayuntamiento.</p>
+
+      <p>Además, disponen de los siguientes canales específicos de participación:</p>
+
+      <ul>
+        <li>Encuestas de satisfacción de carácter general y específico después de algunas actividades.</li>
+        <li>Ruegos y preguntas a través del correo electrónico del centro: <a href="mailto:mspcognitiva@madrid.es">mspcognitiva@madrid.es</a></li>
+      </ul>
+
+      <h2>6. Sistemas de Sugerencias y Reclamaciones</h2>
+
+      <p>El Ayuntamiento de Madrid cuenta con un Sistema de Sugerencias y Reclamaciones a través del cual la ciudadanía e instituciones públicas o privadas pueden ejercer su <strong>derecho</strong> a <strong>presentar sugerencias</strong> relativas a la creación, ampliación o mejora de los servicios prestados por el Ayuntamiento de Madrid; <strong>reclamaciones</strong> por tardanzas, desatenciones, incidencias o cualquier otra anomalía en su funcionamiento y <strong>felicitaciones</strong>.</p>
+
+      <p>Se podrán <strong>presentar sugerencias, reclamaciones y felicitaciones</strong> a través de:</p>
+
+      <ul>
+        <li><a href="http://www.madrid.es/contactar" target="_blank" title="<%= t("shared.target_blank_html") %>">www.madrid.es/contactar</a>.
+        <li>El Teléfono 010.</li>
+        <li>Las Oficinas de Atención a la Ciudadanía de Línea Madrid.</li>
+        <li>Las Oficinas de Registro.</li>
+        <li>El Registro electrónico del Ayuntamiento de Madrid.</li>
+        <li>El correo postal dirigido al órgano directivo responsable o unidad prestadora del servicio, cuyos datos de localización y contacto se recogen en el apartado 9 de esta Carta.</li>
+      </ul>
+
+      <p>Las <strong>sugerencias, reclamaciones y felicitaciones se contestarán</strong> de forma adecuada y con la mayor celeridad posible, cumpliendo los compromisos asumidos en la <strong>Carta de Servicios de Sugerencias y Reclamaciones del Ayuntamiento de Madrid, aprobada el 10 de mayo de 2012</strong>.</p>
+
+      <h2>7. Servicios prestados</h2>
+
+      <p>A continuación se describen los servicios prestados por el Centro de Prevención del Deterioro Cognitivo. Estos servicios se prestan a las personas mayores de 60 años del municipio de Madrid que presenten quejas de memoria u otras alteraciones cognitivas y que no estén diagnosticadas de demencia ni en tratamiento para esta enfermedad.</p>
+
+      <p>Se garantizará la atención integral de los/as usuarios/as, en función de los recursos disponibles mediante un equipo interdisciplinar de las áreas sanitaria, psicológica y social.</p>
+
+      <p>La atención se presta de forma individualizada o grupal según las distintas actividades. Al tratarse de un servicio de prevención, no realiza atenciones de urgencia.</p>
+
+      <p><strong>1. Información y recepción</strong>. Engloba las actividades derivadas de la primera atención al/la usuario/a desde que contacta presencial o telefónicamente con el centro:</p>
+
+      <ul>
+        <li>Informar a los/as usuarios/as, de forma presencial, telefónica y a través de la página Web, sobre las actividades del CPDC (consultas, charlas, estimulación grupal,...) y orientarles sobre otros recursos externos.</li>
+        <li>Atender de forma personalizada a los/as usuarios/as: registro de datos, gestión de citas y acompañamiento en el centro, si se precisa.</li>
+        <li>Recoger encuestas, sugerencias y reclamaciones.</li>
+      </ul>
+
+      <p><strong>2. Detección precoz y evaluación de problemas de memoria y otras alteraciones cognitivas</strong>. Los/as usuarios/as son atendidos en consultas individuales por los profesionales correspondientes que llevan a cabo una valoración en la que se realizan las siguientes actividades:</p>
+
+      <ul>
+        <li>Cumplimentar la historia clínica.</li>
+        <li>Evaluar la memoria y otras áreas cognitivas mediante test específicos.</li>
+        <li>Dar orientación diagnóstica, preventiva y terapéutica y entrega de informe cuando proceda según el criterio del profesional.</li>
+      </ul>
+
+      <p>Según los resultados obtenidos en las pruebas y los criterios preestablecidos, se podrá:</p>
+      <ul>
+        <li>Solicitar pruebas diagnósticas complementarias: laboratorio, neuroimagen, etc.</li>
+        <li>Derivar a intervención grupal.</li>
+        <li>Derivar a Trabajo Social del Centro.</li>
+        <li>Derivar a los Centros Madrid Salud para realizar las actividades preventivas incluidas en la Estrategia Barrios Saludables.</li>
+        <li>Derivar a SERMAS para tratamiento y seguimiento de patologías y factores de riesgo.</li>
+      </ul>
+
+      <p><strong>3. Intervención social</strong>. Si el/la usuario/a, posteriormente a la evaluación, requiere además una valoración social se le cita con el profesional de Trabajo Social donde se realizan las siguientes actividades:</p>
+
+      <ul>
+        <li>Realizar Historia Social.</li>
+        <li>Informar, orientar y derivar a los recursos sociosanitarios adecuados, tanto a los/as usuarios/as como a sus familiares.</li>
+        <li>Establecer coordinación con otros profesionales y servicios relacionados con la problemática sociosanitaria del usuario/a y su familia.</li>
+      </ul>
+
+      <p><strong>4. Intervención de memoria y cognitiva</strong>. Dependiendo del resultado de la evaluación, el profesional puede ofrecer al usuario/a realizar alguna de las siguientes intervenciones:</p>
+
+      <ul>
+        <li>Para usuarios/as con alteración de memoria por la edad y/o inicio de Deterioro Cognitivo Leve o de alto rendimiento:<ul>
+          <li>Entrenamiento de Memoria según el Método UMAM. Este método también se aplica en los Centros Madrid Salud de los distritos para personas con alteración de memoria por la edad.</li>
+          </ul>
+        </li>
+        <li>Para usuarios/as con Deterioro Cognitivo Leve:<ul>
+          <li>Grupos de entrenamiento de memoria y estimulación cognitiva (Método elaborado por el CPDC).</li>
+          <li>Estimulación Cognitiva por Ordenador.</li>
+          <li>Estimulación cognitiva en domicilio con Cuadernos de Ejercicios.</li>
+          <li>Estimulación cognitiva mediante ejercicios interactivos en la página web.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <p><strong>5. Seguimiento y revisiones periódicas de los usuarios/as</strong>. Una vez completada la valoración, se ofrece un seguimiento al/la usuario/a, que puede incluir las siguientes actividades:</p>
+
+      <ul>
+        <li>Actualizar los datos de la Historia Clínica y Social.</li>
+        <li>Evaluar el rendimiento cognitivo.</li>
+        <li>Revisar el cumplimiento y resultados de la intervención propuesta.</li>
+        <li>Indicar nuevas intervenciones.</li>
+        <li>Derivar a otros recursos sociosanitarios, si procede.</li>
+      </ul>
+
+      <p><strong>6. Educación para la salud</strong>. El centro ofrece asesoramiento a los/as usuarios/as, sus familias y entidades de su entorno, mediante las siguientes actividades:</p>
+
+      <ul>
+        <li>Realizar charlas-coloquio con los familiares de los/as usuarios/as sobre prevención y evolución del deterioro cognitivo, el trato del familiar con el/la usuario/a y el apoyo a la estimulación cognitiva en el domicilio.</li>
+        <li>Asesorar de forma personalizada al/la usuario/a y familiares sobre medidas preventivas, el trato del familiar con el/la usuario/a, hábitos de vida saludable y recursos sociales.</li>
+        <li>Realizar charlas-coloquio de Educación para la Salud en las entidades e instituciones que lo soliciten.</li>
+      </ul>
+
+      <p><strong>7. Formación de profesionales e investigación</strong>. En el Centro se desarrollan acciones formativas y proyectos de investigación en materia de prevención de deterioro cognitivo, mediante las siguientes actividades:</p>
+
+      <ul>
+        <li>Desarrollar e impartir cursos de formación en el Método UMAM para profesionales de la Subdirección General de Prevención y Promoción de la Salud.</li>
+        <li>Desarrollar e impartir cursos de formación en el Método UMAM para profesionales externos a Madrid Salud, gestionando su acreditación por la Comisión de Formación Continuada de las Profesiones Sanitarias de la Comunidad de Madrid.</li>
+        <li>Impartir docencia en cursos, másteres y ponencias y tutorizar prácticas de alumnos/as de Grado y Postgrado en Ciencias de la Salud.</li>
+        <li>Diseñar y participar en proyectos de investigación, tanto internos como externos.</li>
+        <li>Participar en congresos, jornadas y elaboración de artículos científicos.</li>
+        <li>Diseñar nuevos materiales de estimulación cognitiva para utilizar en grupo o en el domicilio.</li>
+        <li>Innovar en el campo de la evaluación e intervención cognitiva con nuevas tecnologías.</li>
+      </ul>
+
+      <h2>8. Compromisos de calidad</h2>
+
+      <p>Los compromisos que se recogen en la <strong>Carta de los Servicios del Centro de Prevención del Deterioro Cognitivo del Ayuntamiento de Madrid</strong> son:</p>
+
+      <ol>
+        <li>El Centro de Prevención de Deterioro Cognitivo se compromete a prestar un servicio global de calidad, logrando que más del 75% de los/as usuarios/as valoren su satisfacción como buena o muy buena con el servicio recibido.
+          <ul>
+            <li>Indicador asociado:<br>
+            1.1. Porcentaje de usuarios/as satisfechos/as con el servicio recibido.</li>
+          </ul>
+        </li>
+
+        <li>El Centro de Prevención de Deterioro Cognitivo contará con unas instalaciones que reúnan condiciones ambientales adecuadas al servicio que se presta (limpieza, mobiliario, temperatura) logrando que, al menos el 75% de los/as usuarios/as valoren su satisfacción como buena o muy buena en relación a las condiciones ambientales.
+          <ul>
+            <li>Indicador asociado:<br>
+              2.1. Porcentaje de usuarios/as satisfechos/as con las condiciones ambientales de las instalaciones.</li>
+          </ul>
+        </li>
+
+        <li>El personal de recepción informará a todos los/as usuarios/as en relación a las actividades del Centro, logrando que más del 75% de los/as usuarios/as valoren su satisfacción como buena o muy buena con la atención recibida.
+          <ul>
+            <li>Indicador asociado:<br>
+            3.1. Porcentaje de usuarios/as satisfechos/as con la atención recibida por el personal de recepción.</li>
+          </ul>
+        </li>
+
+        <li>Todos los/as usuarios/as del Centro serán atendidos de forma personalizada por los profesionales del Centro. El 75 % de los/as usuarios/as valorarán como bueno o muy bueno el trato, el lenguaje comprensible y la información recibida.
+          <ul>
+            <li>Indicador asociado:<br>
+            4.1. Porcentaje de usuarios/as satisfechos/as con la atención de los profesionales.</li>
+          </ul>
+        </li>
+
+        <li>Anualmente se mantendrá la oferta de los distintos tipos de actividad grupal, en función de los recursos disponibles, realizando al menos 40 grupos. Los usuarios se incluirán en los distintos grupos en función del criterio del profesional.
+          <ul>
+            <li>Indicador asociado:<br>
+            5.1. Grupos de entrenamiento de memoria y estimulación cognitiva al año.</li>
+          </ul>
+        </li>
+
+        <li>Para garantizar la calidad en los distintos grupos de entrenamiento de memoria y estimulación cognitiva, el número de participantes al inicio no será inferior a 8 ni superior a 20.
+          <ul>
+            <li>  Indicador asociado:<br>
+              6.1. Porcentaje de grupos de entrenamiento de memoria y estimulación cognitiva, con un número de participantes al inicio entre 8 y 20.</li>
+          </ul>
+        </li>
+
+        <li>Se realizarán al menos 10 charlas-coloquio (una por mes, excepto los meses de julio y agosto) con los familiares de los/as usuarios/as sobre la prevención del deterioro cognitivo, el trato del familiar con el/la usuario/a y el apoyo a la estimulación cognitiva en el domicilio.
+          <ul>
+            <li>
+              Indicador asociado:<br>
+              7.1. Charlas-coloquio que se realizan con los familiares al año.</li>
+          </ul>
+        </li>
+
+        <li>Impartir al menos 1 curso anual de formación en el Método UMAM de Evaluación y Entrenamiento de Memoria para profesionales externos a Madrid Salud, en colaboración con el Departamento de Evaluación y Calidad, siempre que haya demanda suficiente. El 75 % de los/as alumnos/as valorarán la satisfacción global del curso como buena o muy buena.
+          <ul>
+            <li>Indicador asociado:<br>
+            8.1. Cursos del Método UMAM para profesionales que se realizan al año.<br>
+            8.2. Porcentaje de alumnos/as que valoran globalmente el curso como bueno o muy bueno.</li>
+          </ul>
+        </li>
+
+        <li>Para garantizar la formación continuada de los profesionales del CPDC con vistas a la actualización de los conocimientos y técnicas necesarias para su tarea diaria, al menos el 40 % de los profesionales del Centro asistirán a una acción formativa al año (Curso, Jornada, Congreso u otras acciones formativas).
+          <ul>
+            <li>
+            Indicador asociado:<br>
+            9.1. Porcentaje de profesionales que asisten al menos a una acción formativa al año.</li>
+          </ul>
+        </li>
+
+        <li>Los profesionales del Centro de Prevención del Deterioro Cognitivo difundirán los conocimientos y los resultados de las investigaciones que lleven a cabo. Realizarán, al menos, 5 publicaciones científicas al año (comunicaciones y posters a congresos, artículos en revistas científicas, capítulos en libros especializados, cuadernos de ejercicios u otras publicaciones).
+          <ul>
+            <li>
+              Indicador asociado:<br>
+              10.1. Publicaciones científicas en los que aparezca uno o varios profesionales del Centro entre sus autores.</li>
+          </ul>
+        </li>
+
+        <li>Se recibirán y tramitarán las sugerencias, reclamaciones y felicitaciones presentadas por la ciudadanía relativas a los servicios prestados por el Centro de Prevención de Deterioro Cognitivo, se contestarán de forma adecuada y con la mayor celeridad posible para poner en marcha acciones de mejora del servicio.<br>
+
+        El 80% de las sugerencias, reclamaciones y felicitaciones se contestarán en un plazo menor o igual a 15 días naturales desde su presentación. El resto se contestarán en plazo menor o igual a 30 días naturales. El tiempo medio de contestación será de 10 días naturales desde su presentación.
+          <ul>
+            <li>Indicadores asociados:<br>
+            11.1. Sugerencias, reclamaciones y felicitaciones tramitadas relativas a los servicios prestados por Centro de Prevención de Deterioro Cognitivo.<br>
+            11.2. Porcentaje de sugerencias, reclamaciones y felicitaciones relativas a los servicios prestados por el Centro de Prevención del Deterioro Cognitivo contestadas en un plazo menor o igual a 15 días naturales desde su presentación.<br>
+            11.3. Porcentaje de sugerencias, reclamaciones y felicitaciones relativas a los servicios prestados por el Centro de Prevención del Deterioro Cognitivo contestadas en un plazo menor o igual a 30 días naturales desde su presentación.<br>
+            11.4. Tiempo medio de contestación de las sugerencias, reclamaciones y felicitaciones relativas al Centro de Prevención del Deterioro Cognitivo desde su presentación.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><strong>Medidas de subsanación</strong>: quienes consideren que se ha incumplido alguno de los compromisos anteriormente recogidos, podrán comunicarlo a través del Sistema de Sugerencias y Reclamaciones del Ayuntamiento de Madrid (apartado 6 de esta Carta de Servicios). En caso de incumplimiento, se les enviará un escrito informando de las causas por las que el compromiso no pudo cumplirse, así como de las medidas adoptadas para corregir la deficiencia detectada, si fuera posible.</p>
+
+      <p><strong>Seguimiento y evaluación</strong>: los resultados de los indicadores establecidos para medir el cumplimiento de los compromisos de esta Carta de Servicios, se pueden consultar en  <a href="http://www.madrid.es" target="_blank" title="<%= t("shared.target_blank_html") %>">www.madrid.es</a>, en <a href="http://www-1.munimadrid.es/SBAE_263_SF_CS_Internet/carta.do?Key=1201&Value=02.-+Tel%25C3%25A9fono+010+L%25C3%25ADnea+Madrid" target="_blank" title="<%= t("shared.target_blank_html") %>">Ayuntamiento /Observatorio de la Ciudad /Sistema de Cartas de Servicios</a>. Estos resultados son evaluados anualmente.</p>
+
+      <h2>9. Datos de carácter complementario</h2>
+
+      <h3>Datos de localización del órgano directivo responsable</h3>
+
+      <p>Madrid Salud. Gerencia de Madrid Salud</p>
+      <p>SG. Prevención y Promoción de la Salud</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Unidad</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th>Medios de transporte</th>
+            <th>Horario atención</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gerencia</td>
+            <td rowspan="6" class="border-left border-right">Avenida del Mediterráneo 62, 28007 Madrid</td>
+            <td>914.801.393</td>
+            <td rowspan="6" class="border-left border-right">Bus: 14, 32, 56, 63, 143, 145 y 156. Metro: Conde de Casal (Línea 6)</td>
+            <td rowspan="6">Lunes a viernes, de 9:00 a 14:00</td>
+          </tr>
+          <tr>
+            <td>SG Prevención y Promoción de la salud</td>
+            <td>914.801.387</td>
+          </tr>
+          <tr>
+            <td>Servicio de Prevención y Promoción de la salud</td>
+            <td>914.803.584</td>
+          </tr>
+          <tr>
+            <td>Departamento de Coordinación de Centros Madrid Salud I</td>
+            <td>914.800.521</td>
+          </tr>
+          <tr>
+            <td>Registro</td>
+            <td>914.804.273</td>
+          </tr>
+          <tr>
+            <td>Oficina de Atención al Ciudadano</td>
+            <td>914.804.270</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Centro de Prevención del Deterioro Cognitivo</h3>
+
+      <p>Dirección: C/ Montesa, 22 Edificio B, 28006. Madrid<br>
+      Teléfonos: 915 885 801 / 915 885 810<br>
+      e-mail: <a href="mailto:mspcognitiva@madrid.es">mspcognitiva@madrid.es</a><br>
+      Bus: 12, 56, 143, 146, 153, Circular.<br>
+      Metro: Manuel Becerra (líneas 2 y 6), Lista (línea 4), Diego de León (líneas 4, 5 y 6).<br>
+      </p>
+
+      <p><strong>Horario de atención al público</strong>:</p>
+      <ul>
+        <li>Información telefónica, lunes, miércoles y viernes, de 9:00 a 13:00 h; martes y jueves de 10:00 a 13:00 h.</li>
+        <li>Información presencial, de lunes a viernes, de 9:00 a 14:00.</li>
+      </ul>
+
+      <h3>Coste del servicio</h3>
+
+      <p>Todas las actividades y materiales que ofrece el Centro de Prevención del Deterioro Cognitivo son gratuitos, excepto el Curso de Evaluación y Entrenamiento de Memoria Método UMAM para profesionales externos a Madrid Salud que sigue la norma establecida en la ordenanza reguladora de precios públicos por la prestación de servicios o realización de actividades.</p>
+
+      <h3>Otros datos de interés</h3>
+
+      <h4>Exclusiones:</h4>
+
+      <p>Dado el carácter preventivo del Centro, no se realiza intervención en los casos de demencia (Alzheimer u otras) o de personas que tengan tratamiento para la demencia.</p>
+      <p>Asimismo, por este carácter preventivo del Centro, tampoco podrán ser atendidas aquellas personas cuya alteración cognitiva sea debida a enfermedad neurológica (traumatismo craneoencefálico, enfermedad cerebro-vascular, cirugía de cerebro, tumores, etc.) no asociada a la edad.</p>
+      <p>Entre los objetivos del Centro no se encuentra la realización de informes a demanda de Servicios Sociales o Sanitarios (informes para dependencia, segunda opinión o similares).</p>
+
+      <h4>Consultas de evaluación individual (cognitiva y social)</h4>
+
+      <p>Se realizan siempre en horario de mañana, con una duración aproximada de:</p>
+      <ul>
+        <li>Evaluación y cribado: 1 hora.</li>
+        <li>Evaluación específica de las áreas cognitivas: 1 hora.</li>
+        <li>Evaluación social: 1 hora.</li>
+        <li>Evaluación de seguimiento: 30-45 minutos.</li>
+      </ul>
+
+      <h4>Actividad grupal</h4>
+
+      <p>Se desarrolla principalmente en el horario de mañana y, excepcionalmente, se realiza estimulación grupal por la tarde.</p>
+
+      <p>La duración de los distintos grupos de entrenamiento de memoria y estimulación cognitiva son:</p>
+      <ul>
+        <li>Entrenamiento de memoria y estimulación cognitiva grupal: 90 minutos por sesión.</li>
+        <li>Estimulación cognitiva por ordenador: 40 minutos.</li>
+      </ul>
+
+      <h4>Estimulación cognitiva en domicilio</h4>
+
+      <p>Para la estimulación cognitiva en domicilio se utilizan cuadernos de ejercicios elaborados por los profesionales del CPDC. Estos cuadernos están disponibles en formato electrónico en la página web del centro a través del enlace: <a href="http://www.madridsalud.es/centros/monograficos/deterioro/actividades.php" target="_blank" title="<%= t("shared.target_blank_html")%>">http://www.madridsalud.es/centros/monograficos/deterioro/actividades.php</a>.</p>
+
+      <p>El CPDC también pone a disposición del usuario diversos ejercicios interactivos de estimulación cognitiva por ordenador a través de la página web, en el enlace: <a href="http://www.madridsalud.es/interactivos/memoria/memoria.php" target="_blank" title="<%= t("shared.target_blank_html")%>">http://www.madridsalud.es/interactivos/memoria/memoria.php</a></p>
+
+      <h4>Curso de Evaluación y Entrenamiento de memoria método UMAM</h4>
+
+      <p>Este curso es gestionado por el Departamento de Evaluación y Calidad. La información e inscripciones del curso pueden obtenerse solicitándola en <a href="mailto:msformación@madrid.es">msformación@madrid.es</a> o por correo a: Unidad Técnica de Formación e Investigación, Madrid Salud. Avda. del Mediterráneo nº 62, planta séptima. 28007 Madrid. Tfno.: 91 588 55 31/91 480 42 71.</p>
+    </section>
+  </div>
+</div>

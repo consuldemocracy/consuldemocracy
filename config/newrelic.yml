@@ -22,6 +22,10 @@ common: &default_settings
   # Logging level for log/newrelic_agent.log
   log_level: info
 
+  proxy_host: <%= Rails.application.secrets.newrelic_proxy_host %>
+  proxy_port: <%= Rails.application.secrets.newrelic_proxy_port %>
+  proxy_user: <%= Rails.application.secrets.newrelic_proxy_user %>
+  proxy_pass: <%= Rails.application.secrets.newrelic_proxy_pass %>
 
 # Environment-specific settings are in this section.
 # RAILS_ENV or RACK_ENV (as appropriate) is used to determine the environment.

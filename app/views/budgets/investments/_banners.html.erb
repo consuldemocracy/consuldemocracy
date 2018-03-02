@@ -1,0 +1,7 @@
+<% if @heading.present? %>
+  <% if @heading.group.single_heading_group? %>
+    <%= render "banner_city" %>
+  <% else %>
+    <%= render "banner_district" %>
+  <% end %>
+<% end %>

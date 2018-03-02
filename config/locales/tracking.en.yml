@@ -1,0 +1,49 @@
+---
+en:
+  tracking:
+    user_data:
+      age:
+        unknown: Desconocida
+      gender:
+        unknown: Desconocido
+        male:   Hombre
+        female: Mujer
+      district:
+        unknown: Desconocido
+      verification_level:
+        level_one: Nivel 1
+        level_two: Nivel 2
+        level_three: Nivel 3
+    events:
+      category:
+        login: Login
+        registration: Registro
+        debate: Debate
+        proposal: Propuesta
+        poll: Votación
+        verification: Verificación
+        deregister: Baja
+      action:
+        successful_login: Entrar
+        successful_registration: Registrar
+        successful_confirmation: Confirmar
+        access_registration_form: Ver formulario registro
+        create: Crear
+        vote: Votar
+        support: Apoyar
+        comment: Comentar
+        comment_reply: Responder comentario
+        census: Censo
+        sms: SMS
+        degistered: Dar de baja
+        letter_code: Introducir código de carta
+        phone_verified: Teléfono verificado
+        requested_sending_letter: Solicitado envio de código por carta
+        start_residency_verification: Inicio verificación de residencia
+        start_phone_verification: Inicio verificación de teléfono
+        residence_verified: Residencia verificada
+      name:
+        "yes": "Positivo"
+        "no": "Negativo"
+      dimension_value:
+        position: Posición

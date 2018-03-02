@@ -19,7 +19,7 @@ es:
         not_selected: No se pueden votar proyectos inviables.
         not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
-        different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+        different_heading_assigned: Ya has votado proyectos de otro distrito.
         change_ballot: cambiar tus votos
     groups:
       show:
@@ -66,6 +66,8 @@ es:
         tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+        faq: "¿Qué puedes proponer?"
+        faq_link: "Mira toda la información sobre los presupuestos participativos"
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"

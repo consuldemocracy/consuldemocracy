@@ -69,7 +69,7 @@ feature 'Polls' do
 
       visit polls_path
 
-      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll))
+      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll.slug))
     end
 
     scenario "Poll title link to results if enabled" do
@@ -77,13 +77,24 @@ feature 'Polls' do
 
       visit polls_path
 
-      expect(page).to have_link("Poll with results", href: results_poll_path(poll))
+      expect(page).to have_link("Poll with results", href: results_poll_path(poll.slug))
     end
   end
 
   context 'Show' do
     let(:geozone) { create(:geozone) }
     let(:poll) { create(:poll, summary: "Summary", description: "Description") }
+
+    scenario "Visit path with id" do
+      visit poll_path(poll.id)
+      expect(page).to have_current_path(poll_path(poll.id))
+    end
+
+    scenario "Visit path with slug" do
+      visit poll_path(poll.slug)
+      expect(page).to have_current_path(poll_path(poll.slug))
+
+    end
 
     scenario 'Show answers with videos' do
       question = create(:poll_question, poll: poll)
@@ -139,12 +150,10 @@ feature 'Polls' do
 
       visit poll_path(poll)
 
-      expect(page).to have_content('Han Solo')
-      expect(page).to have_content('Chewbacca')
       expect(page).to have_content('You must Sign in or Sign up to participate')
 
-      expect(page).not_to have_link('Han Solo')
-      expect(page).not_to have_link('Chewbacca')
+      expect(page).to have_link('Han Solo', href: new_user_session_path)
+      expect(page).to have_link('Chewbacca', href: new_user_session_path)
     end
 
     scenario 'Level 1 users' do
@@ -163,11 +172,8 @@ feature 'Polls' do
 
       expect(page).to have_content('You must verify your account in order to answer')
 
-      expect(page).to have_content('Han Solo')
-      expect(page).to have_content('Chewbacca')
-
-      expect(page).not_to have_link('Han Solo')
-      expect(page).not_to have_link('Chewbacca')
+      expect(page).to have_link('Han Solo', href: verification_path)
+      expect(page).to have_link('Chewbacca', href: verification_path)
     end
 
     scenario 'Level 2 users in an incoming poll' do
@@ -222,6 +228,7 @@ feature 'Polls' do
 
       visit poll_path(poll)
 
+      expect(page).to have_content('This question is not available on your geozone.')
       expect(page).to have_content('Vader')
       expect(page).to have_content('Palpatine')
       expect(page).not_to have_link('Vader')
@@ -239,6 +246,9 @@ feature 'Polls' do
       login_as(create(:user, :level_two, geozone: geozone))
       visit poll_path(poll)
 
+      #Nvotes
+      #expect(page).to have_selector('.booth-container')
+
       expect(page).to have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
     end
@@ -250,6 +260,9 @@ feature 'Polls' do
 
       login_as(create(:user, :level_two))
       visit poll_path(poll)
+
+      #Nvotes
+      #expect(page).to have_selector('.booth-container')
 
       expect(page).to have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
@@ -282,10 +295,91 @@ feature 'Polls' do
       login_as user
       visit poll_path(poll)
 
+      #Nvotes
+      #expect(page).to have_selector('.booth-container')
+
+      expect(page).to have_link('Han Solo')
+      expect(page).to have_link('Chewbacca')
+    end
+
+    scenario 'Level 2 users changing answer', :js do
+      poll.update(geozone_restricted: true)
+      poll.geozones << geozone
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Han Solo')
+      answer2 = create(:poll_question_answer, question: question, title: 'Chewbacca')
+
+      user = create(:user, :level_two, geozone: geozone)
+
+      login_as user
+      visit poll_path(poll)
+
       click_link 'Han Solo'
 
       expect(page).not_to have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
+
+      click_link 'Chewbacca'
+
+      expect(page).not_to have_link('Chewbacca')
+      expect(page).to have_link('Han Solo')
+    end
+
+    context "Nvotes iframe" do
+      let!(:question1) { create(:poll_question, poll: poll) }
+      let!(:question2) { create(:poll_question, poll: poll) }
+
+      scenario "Anonymous user" do
+        skip "add setting for Nvotes"
+
+        visit poll_path(poll)
+
+        within("#polls-show-header") do
+          expect(page).not_to have_content question2.title
+        end
+
+        within("#questions") do
+          expect(page).to     have_content question2.title
+          expect(page).not_to have_css(".booth-container")
+        end
+      end
+
+      scenario "Level 1 user" do
+        skip "add setting for Nvotes"
+
+        user = create(:user)
+        login_as(user)
+
+        visit poll_path(poll)
+
+        within("#polls-show-header") do
+          expect(page).not_to have_content question2.title
+        end
+
+        within("#questions") do
+          expect(page).to     have_content question2.title
+          expect(page).not_to have_css(".booth-container")
+        end
+      end
+
+      scenario "Level 2 user" do
+        skip "add setting for Nvotes"
+
+        user = create(:user, :level_two)
+        login_as(user)
+
+        visit poll_path(poll)
+
+        within("#polls-show-header") do
+          expect(page).to have_content question2.title
+        end
+
+        within("#questions") do
+          expect(page).to     have_css(".booth-container")
+          expect(page).not_to have_content question2.title
+        end
+      end
+
     end
 
     scenario 'Level 2 users changing answer', :js do
@@ -391,6 +485,12 @@ feature 'Polls' do
   context "Results and stats" do
     scenario "Show poll results and stats if enabled and poll expired" do
       poll = create(:poll, :expired, results_enabled: true, stats_enabled: true)
+      question1 = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question1, title: 'Han Solo')
+      create(:poll_question_answer, question: question1, title: 'Chewbacca')
+      question2 = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question2, title: 'Leia')
+      create(:poll_question_answer, question: question2, title: 'Luke')
       user = create(:user)
 
       login_as user
@@ -442,6 +542,12 @@ feature 'Polls' do
 
     scenario "Show poll results and stats if user is administrator" do
       poll = create(:poll, :current, results_enabled: false, stats_enabled: false)
+      question1 = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question1, title: 'Han Solo')
+      create(:poll_question_answer, question: question1, title: 'Chewbacca')
+      question2 = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question2, title: 'Leia')
+      create(:poll_question_answer, question: question2, title: 'Luke')
       user = create(:administrator).user
 
       login_as user

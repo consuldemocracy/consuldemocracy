@@ -32,8 +32,11 @@ en:
         one: "Administrator"
         other: "Administrators"
       valuator:
-        one: "Evaluador"
-        other: "Evaluadores"
+        one: "Valuator"
+        other: "Valuators"
+      valuator_group:
+        one: "Valuator group"
+        other: "Valuator groups"
       manager:
         one: "Manager"
         other: "Managers"
@@ -56,8 +59,8 @@ en:
         one: "Citizen proposal"
         other: "Citizen proposals"
       spending_proposal:
-        one: "Spending proposal"
-        other: "Spending proposals"
+        one: "Investment project"
+        other: "Investment projects"
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -74,8 +77,8 @@ en:
         one: "Draft version"
         other: "Draft versions"
       legislation/draft_texts:
-          one: "Draft"
-          other: "Drafts"
+        one: "Draft"
+        other: "Drafts"
       legislation/questions:
         one: "Question"
         other: "Questions"
@@ -110,15 +113,11 @@ en:
         phase: "Phase"
         currency_symbol: "Currency"
       budget/investment:
-        heading_id: "Sección de presupuesto"
-        title: "Title"
-        description: "Description"
-        external_url: "External url"
-        administrator_id: "Administrator"
-        description: "Description"
-        external_url: "Link to additional documentation"
         heading_id: "Heading"
         title: "Title"
+        description: "Description"
+        external_url: "Link to additional documentation"
+        administrator_id: "Administrator"
         location: "Location (optional)"
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
@@ -262,6 +261,10 @@ en:
               min_image_width: "Image Width must be at least %{required_min_width}px"
               min_image_height: "Image Height must be at least %{required_min_height}px"
         newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "The user recipients segment is invalid"
+        admin_notification:
           attributes:
             segment_recipient:
               invalid: "The user recipients segment is invalid"

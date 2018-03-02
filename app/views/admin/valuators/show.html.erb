@@ -1,0 +1,30 @@
+<%= back_link_to admin_valuators_path %>
+
+<%= link_to t("admin.actions.edit"), edit_admin_valuator_path(@valuator), class: "button hollow float-right" %>
+
+<div class="clear"></div>
+
+<h2><%= @valuator.name %></h2>
+
+<div class="callout highlight">
+  <p>
+    <strong><%= t("admin.valuators.show.email") %></strong><br>
+    <%= @valuator.email %>
+  </p>
+  <p>
+    <strong><%= t("admin.valuators.show.description") %></strong><br>
+    <% if @valuator.description.present? %>
+      <%= @valuator.description %>
+    <% else %>
+      <%= t("admin.valuators.show.no_description") %>
+    <% end %>
+  </p>
+  <p>
+    <strong><%= t("admin.valuators.show.group") %></strong><br>
+    <% if @valuator.valuator_group.present? %>
+      <%= @valuator.valuator_group.try(:name) %>
+    <% else %>
+      <%= t("admin.valuators.show.no_group") %>
+    <% end %>
+  </p>
+</div>

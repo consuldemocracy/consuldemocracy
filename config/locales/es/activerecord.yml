@@ -34,6 +34,9 @@ es:
       valuator:
         one: "Evaluador"
         other: "Evaluadores"
+      valuator_group:
+        one: "Grupo de Evaluadores"
+        other: "Grupos de Evaluadores"
       manager:
         one: "Gestor"
         other: "Gestores"
@@ -258,6 +261,10 @@ es:
               min_image_width: "La imagen debe tener al menos %{required_min_width}px de largo"
               min_image_height: "La imagen debe tener al menos %{required_min_height}px de alto"
         newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "El segmento de usuarios es inválido"
+        admin_notification:
           attributes:
             segment_recipient:
               invalid: "El segmento de usuarios es inválido"

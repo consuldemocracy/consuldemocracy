@@ -1,0 +1,139 @@
+<% provide :title, "Plan de Derechos Humanos" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_human_rights"),
+          social_title: t("pages.processes.index.process_5_title"),
+          social_description: t("pages.processes.index.process_5_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: human_rights_question_2_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= back_link_to %>
+
+      <h1 class="margin-bottom"><%= t("pages.processes.index.process_5_title") %></h1>
+      <h2>Selecciona aquellos derechos que te interesan/preocupan más y propón medidas concretas de actuación municipal para la defensa de los mismos.</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+
+    <ul class="process-collection row">
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho a la participación ciudadana en el diseño, ejecución y evaluación de las políticas" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho al acceso a la información de las administraciones públicas" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Libertad de expresión, reunión, asociación y manifestación" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho a la verdad, justicia y reparación para víctimas de crímenes internacionales (incluidas las víctimas del franquismo)" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho a una vida sin violencia machista" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho a contar con una policía municipal democrática y eficaz" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho a la salud, incluida la salud sexual y reproductiva" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho a la vivienda" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho al trabajo digno" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho a la educación" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho a la cultura" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho al cuidado, incluyendo los derechos de las personas cuidadoras" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho de las mujeres a la no discriminación" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho de las personas gays, lesbianas, transexuales, bisexuales e intersexuales a la no discriminación" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho a no sufrir racismo y derechos de las personas migrantes y refugiadas" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derechos de la infancia" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derechos de las personas con diversidad funcional" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho a la alimentación y al agua de calidad" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho a la movilidad y el buen transporte en la ciudad" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Derecho al desarrollo urbano sostenible" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "Contribución a las defensa de los derechos humanos en el mundo (cooperación)" %>
+        </div>
+      </li>
+      <li class="small-12 medium-4 column end">
+        <div class="panel">
+          <%= link_to_new_proposal_proceeding_path "Derechos Humanos", "", "Otros" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

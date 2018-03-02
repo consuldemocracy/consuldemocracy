@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="small-12 medium-9 column">
+
+    <%= back_link_to %>
+
+    <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+      <h1><%= t("forums.index.title") %></h1>
+      <p>Delega tu decisión sobre los apoyos y la votación final en lo que se decida en cualquiera de los espacios presenciales de debate.</p>
+    <% else %>
+      <h1><%= t("forums.index.title_closed") %></h1>
+    <% end %>
+
+    <div id="forums" class="row collapse">
+      <% @forums.each_slice(7) do |slice| %>
+      <div class="small-12 medium-4 column">
+        <% slice.each do |forum| %>
+          <p id="<%= dom_id(forum) %>" class="forum <%= css_for_representative(forum) %>">
+            <%= link_to forum_short_name(forum), forum %>
+          </p>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+
+    <% if current_user.try(:representative).present? %>
+      <div class="callout success inline-block">
+        <%= t("forums.index.delegating",
+            representative: current_user.representative.name).html_safe %>
+      </div>&nbsp;
+
+      <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+        <%= link_to t("forums.index.deactivate_link"),
+                    representative_url(current_user.representative),
+                    class: "delete", method: :delete %>
+      <% end %>
+    <% else %>
+      <div class="callout primary inline-block">
+        <%= t("forums.index.not_delegating") %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <h2>¿Cómo funciona la delegación?</h2>
+    <p>Si activas la delegación en cualquiera de los <%= link_to "espacios presenciales de debate", budgets_meetings_2016_path %>
+       señalados, tus apoyos y votos se realizarán automáticamente sobre las propuestas que haya decidido el espacio correspondiente.
+       Mientras dure la fase de apoyos o de votación puedes activar o desactivar la delegación de votos cuando quieras.
+       <strong>Si, tras delegar tu voto, decides votar alguna propuesta, tu delegación de voto se cancelará automáticamente</strong></p>
+  </div>
+</div>

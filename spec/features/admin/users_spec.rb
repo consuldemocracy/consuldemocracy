@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature 'Admin users' do
+
   background do
     @admin = create(:administrator)
     @user  = create(:user, username: 'Jose Luis Balbin')

@@ -31,7 +31,7 @@
   </thead>
   <tbody>
     <% @investments.each do |investment| %>
-      <tr id="<%= dom_id(investment) %>">
+      <tr id="<%= dom_id(investment) %>" class="budget_investment">
         <td>
           <strong><%= investment.id %></strong>
         </td>

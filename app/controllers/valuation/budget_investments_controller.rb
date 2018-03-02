@@ -5,6 +5,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   feature_flag :budgets
 
   before_action :restrict_access_to_assigned_items, only: [:show, :edit, :valuate]
+  before_action :restrict_access, only: [:edit, :valuate]
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :valuate]
 
@@ -16,7 +17,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   def index
     @heading_filters = heading_filters
     @investments = if current_user.valuator? && @budget.present?
-                     @budget.investments.scoped_filter(params_for_current_valuator, @current_filter)
+                     @budget.investments.visible_to_valuators.scoped_filter(params_for_current_valuator, @current_filter)
                             .order(cached_votes_up: :desc)
                             .page(params[:page])
                    else
@@ -64,7 +65,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def load_budget
-      @budget = Budget.find(params[:budget_id])
+      @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
     end
 
     def load_investment
@@ -96,6 +97,12 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation,
                                                 :feasibility, :unfeasibility_explanation,
                                                 :duration, :valuation_finished)
+    end
+
+    def restrict_access
+      unless current_user.administrator? || Setting['feature.budgets.valuators_allowed'].present?
+        raise ActionController::RoutingError.new('Not Found')
+      end
     end
 
     def restrict_access_to_assigned_items

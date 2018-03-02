@@ -374,77 +374,218 @@ feature 'Votes' do
       Setting['feature.spending_proposal_features.voting_allowed'] = nil
     end
 
-    feature 'Index' do
-      scenario "Index shows user votes on proposals" do
-        spending_proposal1 = create(:spending_proposal)
-        spending_proposal2 = create(:spending_proposal)
-        spending_proposal3 = create(:spending_proposal)
-        create(:vote, voter: @manuela, votable: spending_proposal1, vote_flag: true)
+    context "Verified User" do
+      background do
+        skip 'Spending Proposals now redirects to its associated Budget Investment'
 
-        visit spending_proposals_path
+        login_as(@manuela)
+        Setting["feature.spending_proposal_features.phase2"] = true
+      end
 
-        within("#investment-projects") do
-          within("#spending_proposal_#{spending_proposal1.id}_votes") do
+      feature 'Index' do
+        scenario "Index shows user votes on proposals" do
+          spending_proposal1 = create(:spending_proposal)
+          spending_proposal2 = create(:spending_proposal)
+          spending_proposal3 = create(:spending_proposal)
+          create(:vote, voter: @manuela, votable: spending_proposal1, vote_flag: true)
+
+          visit spending_proposals_path
+
+          within("#investment-projects") do
+            within("#spending_proposal_#{spending_proposal1.id}_votes") do
+              expect(page).to have_content "You have already supported this. Share it!"
+            end
+
+            within("#spending_proposal_#{spending_proposal2.id}_votes") do
+              expect(page).not_to have_content "You have already supported this. Share it!"
+            end
+
+            within("#spending_proposal_#{spending_proposal3.id}_votes") do
+              expect(page).not_to have_content "You have already supported this. Share it!"
+            end
+          end
+        end
+
+        scenario 'Create from spending proposal index', :js do
+          spending_proposal = create(:spending_proposal)
+          visit spending_proposals_path
+
+          within('.supports') do
+            find('.in-favor a').click
+
+            expect(page).to have_content "1 support"
+            expect(page).to have_content "You have already supported this. Share it!"
+          end
+        end
+      end
+
+      feature 'Single spending proposal' do
+        background do
+          @proposal = create(:spending_proposal)
+        end
+
+        scenario 'Show no votes' do
+          visit spending_proposal_path(@proposal)
+          expect(page).to have_content "No supports"
+        end
+
+        scenario 'Trying to vote multiple times', :js do
+          visit spending_proposal_path(@proposal)
+
+          within('.supports') do
+            find('.in-favor a').click
+            expect(page).to have_content "1 support"
+
+            expect(page).not_to have_selector ".in-favor a"
+          end
+        end
+
+        scenario 'Create from proposal show', :js do
+          visit spending_proposal_path(@proposal)
+
+          within('.supports') do
+            find('.in-favor a').click
+
+            expect(page).to have_content "1 support"
+            expect(page).to have_content "You have already supported this. Share it!"
+          end
+        end
+      end
+
+    end
+
+    context "Forum" do
+
+      background do
+        skip 'Spending Proposals now redirects to its associated Budget Investment'
+
+        @user = create(:user)
+        forum = create(:forum, user: @user)
+
+        login_as(@user)
+        Setting["feature.spending_proposal_features.phase2"] = true
+      end
+
+      feature 'Index' do
+        scenario "Index shows user votes on proposals" do
+          spending_proposal1 = create(:spending_proposal)
+          spending_proposal2 = create(:spending_proposal)
+          spending_proposal3 = create(:spending_proposal)
+          create(:vote, voter: @user, votable: spending_proposal1, vote_flag: true)
+
+          visit spending_proposals_path
+
+          within("#investment-projects") do
+            within("#spending_proposal_#{spending_proposal1.id}_votes") do
+              expect(page).to have_content "You have already supported this. Share it!"
+            end
+
+            within("#spending_proposal_#{spending_proposal2.id}_votes") do
+              expect(page).not_to have_content "You have already supported this. Share it!"
+            end
+
+            within("#spending_proposal_#{spending_proposal3.id}_votes") do
+              expect(page).not_to have_content "You have already supported this. Share it!"
+            end
+          end
+        end
+
+        scenario 'Create from spending proposal index', :js do
+          spending_proposal = create(:spending_proposal)
+          visit spending_proposals_path
+
+          within('.supports') do
+            find('.in-favor a').click
+
+            expect(page).to have_content "No supports"
+            expect(page).to have_content "You have already supported this. Share it!"
+          end
+        end
+      end
+
+      feature 'Single spending proposal' do
+        background do
+          @proposal = create(:spending_proposal)
+        end
+
+        scenario 'Show no votes' do
+          visit spending_proposal_path(@proposal)
+          expect(page).to have_content "No supports"
+        end
+
+        scenario 'Trying to vote multiple times', :js do
+          visit spending_proposal_path(@proposal)
+
+          within('.supports') do
+            find('.in-favor a').click
+            expect(page).to have_content "No supports"
+
+            expect(page).not_to have_selector ".in-favor a"
+          end
+        end
+
+        scenario 'Create from proposal show', :js do
+          visit spending_proposal_path(@proposal)
+
+          within('.supports') do
+            find('.in-favor a').click
+
+            expect(page).to have_content "No supports"
+            expect(page).to have_content "You have already supported this. Share it!"
+          end
+        end
+      end
+
+      feature 'Alert' do
+
+        scenario "accepted delegation alert", :js do
+          forum = create(:forum)
+          user = create(:user, :level_two, representative: forum)
+          proposal = create(:spending_proposal)
+
+          login_as(user)
+
+          visit spending_proposal_path(proposal)
+          within('.supports') do
+            find('.in-favor a').click
             expect(page).to have_content "You have already supported this. Share it!"
           end
 
-          within("#spending_proposal_#{spending_proposal2.id}_votes") do
-            expect(page).not_to have_content "You have already supported this. Share it!"
-          end
+          user.reload
+          expect(user.accepted_delegation_alert).to eq(true)
 
-          within("#spending_proposal_#{spending_proposal3.id}_votes") do
-            expect(page).not_to have_content "You have already supported this. Share it!"
-          end
+          visit forums_path
+          expect(page).to have_content "You are not delegating your votes"
         end
-      end
 
-      scenario 'Create from spending proposal index', :js do
-        spending_proposal = create(:spending_proposal)
-        visit spending_proposals_path
+        xscenario "accepted delegation alert multiple times", :js do
+          forum = create(:forum)
+          user = create(:user, :level_two, representative: forum)
+          proposal = create(:spending_proposal)
 
-        within('.supports') do
-          find('.in-favor a').click
+          login_as(user)
 
-          expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
+          visit spending_proposal_path(proposal)
+          within('.supports') do
+            find('.in-favor a').click
+            expect(page).to have_content "You have already supported this. Share it!"
+          end
+
+          user.reload
+          expect(user.accepted_delegation_alert).to eq(true)
+
+          visit forum_path(forum)
+          click_button "Delegate on #{forum.name}"
+
+          expect(page).to have_content "You have updated your representative"
+
+          user.reload
+          expect(user.accepted_delegation_alert).to eq(false)
         end
       end
     end
 
-    feature 'Single spending proposal' do
-      background do
-        @proposal = create(:spending_proposal)
-      end
-
-      scenario 'Show no votes' do
-        visit spending_proposal_path(@proposal)
-        expect(page).to have_content "No supports"
-      end
-
-      scenario 'Trying to vote multiple times', :js do
-        visit spending_proposal_path(@proposal)
-
-        within('.supports') do
-          find('.in-favor a').click
-          expect(page).to have_content "1 support"
-
-          expect(page).not_to have_selector ".in-favor a"
-        end
-      end
-
-      scenario 'Create from proposal show', :js do
-        visit spending_proposal_path(@proposal)
-
-        within('.supports') do
-          find('.in-favor a').click
-
-          expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
-        end
-      end
-    end
-
-    scenario 'Disable voting on spending proposals', :js do
+    xscenario 'Disable voting on spending proposals', :js do
       login_as(@manuela)
       Setting["feature.spending_proposal_features.voting_allowed"] = nil
       spending_proposal = create(:spending_proposal)
