@@ -1,9 +1,5 @@
 es:
   activerecord:
-    models:
-      valuator_group:
-        one: "Grupo de Evaluadores"
-        other: "Grupos de Evaluadores"
     attributes:
       volunteer_poll:
         email: "Email"
