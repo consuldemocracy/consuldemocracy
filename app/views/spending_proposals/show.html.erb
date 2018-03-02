@@ -43,7 +43,8 @@
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("spending_proposals.show.share"),
         title: @spending_proposal.title,
-        url: spending_proposal_url(@spending_proposal)
+        url: spending_proposal_url(@spending_proposal),
+        description: @spending_proposal.title
       } %>
     </aside>
 
