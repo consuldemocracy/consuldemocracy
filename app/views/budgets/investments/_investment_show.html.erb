@@ -63,7 +63,7 @@
         </div>
       <% end %>
 
-      <% if investment.unfeasible? && investment.unfeasibility_explanation.present? %>
+      <% if investment.should_show_unfeasibility_explanation? %>
         <h2><%= t('budgets.investments.show.unfeasibility_explanation') %></h2>
         <p><%= investment.unfeasibility_explanation %></p>
       <% end %>
