@@ -16,7 +16,7 @@ module Budgets
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
     before_action :set_random_seed, only: :index
-    before_action :load_categories, only: [:index, :new, :create]
+    before_action :load_categories, only: [:index, :new, :create, :edit]
     before_action :set_default_budget_filter, only: :index
     before_action :set_view, only: :index
 
@@ -58,6 +58,21 @@ module Budgets
                     notice: t('flash.actions.create.budget_investment')
       else
         render :new
+      end
+    end
+
+    def edit
+      redirect_to @investment unless current_user = User.first
+
+      @investment = Budget::Investment.find(params[:id])
+    end
+
+    def update
+      @investment = Budget::Investment.find(params[:id])
+      if @investment.update(investment_params)
+        redirect_to budget_investment_path(@budget, @investment), notice: "Ok"
+      else
+        render :edit
       end
     end
 
