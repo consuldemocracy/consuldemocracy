@@ -1037,16 +1037,16 @@ end
 
   context "Mark as visible to valuators" do
 
+    let(:valuator) { create(:valuator) }
+    let(:admin) { create(:administrator) }
+
+    let(:group) { create(:budget_group, budget: budget) }
+    let(:heading) { create(:budget_heading, group: group) }
+
+    let(:investment1) { create(:budget_investment, heading: heading) }
+    let(:investment2) { create(:budget_investment, heading: heading) }
+
     scenario "Mark as visible to valuator", :js do
-      valuator = create(:valuator)
-      admin = create(:administrator)
-
-      group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
-
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-
       investment1.valuators << valuator
       investment2.valuators << valuator
       investment1.update(administrator: admin)
@@ -1059,17 +1059,12 @@ end
         check "budget_investment_visible_to_valuators"
       end
 
-      login_as(valuator.user.reload)
-      visit root_path
-      click_link "Admin"
-      click_link "Valuation"
+      visit admin_budget_budget_investments_path(budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
 
-      within "#budget_#{budget.id}" do
-        click_link "Evaluate"
+      within("#budget_investment_#{investment1.id}") do
+        expect(find("#budget_investment_visible_to_valuators")).to be_checked
       end
-
-      expect(page).to     have_content investment1.title
-      expect(page).not_to have_content investment2.title
     end
 
     scenario "Unmark as visible to valuator", :js do
@@ -1096,17 +1091,12 @@ end
         uncheck "budget_investment_visible_to_valuators"
       end
 
-      login_as(valuator.user.reload)
-      visit root_path
-      click_link "Admin"
-      click_link "Valuation"
+      visit admin_budget_budget_investments_path(budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
 
-      within "#budget_#{budget.id}" do
-        click_link "Evaluate"
+      within("#budget_investment_#{investment1.id}") do
+        expect(find("#budget_investment_visible_to_valuators")).not_to be_checked
       end
-
-      expect(page).not_to have_content investment1.title
-      expect(page).to     have_content investment2.title
     end
 
     scenario "Showing the valuating checkbox" do
