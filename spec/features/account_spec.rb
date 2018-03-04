@@ -50,6 +50,40 @@ feature 'Account' do
     expect(find("#account_email_on_direct_message")).not_to be_checked
   end
 
+  scenario 'Edit email address' do
+    visit account_path
+
+    click_link "Change my credentials"
+    fill_in "user_email", with: "new_user_email@example.com"
+    fill_in "user_password", with: "new_password"
+    fill_in "user_password_confirmation", with: "new_password"
+    fill_in "user_current_password", with: "judgmentday"
+
+    click_button "Update"
+
+    notice = 'Your account has been updated successfully;'\
+             ' however, we need to verify your new email address.'\
+             ' Please check your email and click on the link to'\
+             ' complete the confirmation of your new email address.'
+    expect(page).to have_content notice
+
+    email = open_last_email
+    visit_in_email("Confirm my account")
+
+    logout
+    visit root_path
+    click_link "Sign in"
+    fill_in "user_login", with: "new_user_email@example.com"
+    fill_in "user_password", with: "new_password"
+    click_button "Enter"
+
+    expect(page).to have_content "You have been signed in successfully."
+
+    visit account_path
+    click_link "Change my credentials"
+    expect(page).to have_selector("input[value='new_user_email@example.com']")
+  end
+
   scenario 'Edit Organization' do
     create(:organization, user: @user, name: "Manuela Corp")
     visit account_path
