@@ -991,6 +991,24 @@ feature 'Budget Investments' do
     expect(page).not_to have_content("Local government is not competent in this matter")
   end
 
+  scenario "Show (unfeasible budget investment with valuation not finished)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :unfeasible,
+                        valuation_finished: false,
+                        budget: budget,
+                        group: group,
+                        heading: heading,
+                        unfeasibility_explanation: 'Local government is not competent in this matter')
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).not_to have_content("Unfeasibility explanation")
+    expect(page).not_to have_content(investment.unfeasibility_explanation)
+  end
+
   scenario "Show milestones", :js do
     user = create(:user)
     investment = create(:budget_investment)
