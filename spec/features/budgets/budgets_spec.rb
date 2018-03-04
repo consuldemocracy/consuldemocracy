@@ -66,6 +66,19 @@ feature 'Budgets' do
         expect(page).not_to have_css('div#map')
       end
     end
+
+    scenario "Use friendly urls" do
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      visit budgets_path
+
+      within("#groups_and_headings") do
+        friendly_url = "/presupuestos/#{budget.name.parameterize}/#{group.name.parameterize}/#{heading.name.parameterize}"
+        expect(page).to have_link("#{heading.name } €1,000,000", href: friendly_url)
+      end
+    end
+
   end
 
   scenario 'Index shows only published phases' do
