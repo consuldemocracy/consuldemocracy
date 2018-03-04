@@ -35,7 +35,7 @@ get "presupuestos/:id/resultados/:heading_id", to: "budgets/results#show", as: '
 
 resources :budgets, only: [:show, :index], path: 'presupuestos' do
   resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
-  resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy, :edit, :update], path: 'proyecto' do
+  resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
     member do
       post :vote
     end
