@@ -146,7 +146,7 @@ feature 'Budgets' do
     expect(page).to have_css(".phase.active", count: 1)
   end
 
-  context "Index map" do
+  xcontext "Index map" do
 
     let(:group) { create(:budget_group, budget: budget) }
     let(:heading) { create(:budget_heading, group: group) }
