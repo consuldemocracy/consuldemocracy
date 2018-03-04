@@ -81,7 +81,9 @@
             <% group.headings.order_by_group_name.each do |heading| %>
               <li class="heading small-12 medium-4 large-2">
                 <% unless current_budget.informing? %>
-                  <%= link_to budget_investments_path(current_budget.id, heading_id: heading.id) do %>
+                  <%= link_to custom_budget_investments_path(group,
+                                                             budget_id: current_budget,
+                                                             heading_id: heading) do %>
                     <%= heading_name_and_price_html(heading, current_budget) %>
                   <% end %>
                 <% else %>
