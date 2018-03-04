@@ -308,6 +308,44 @@ describe Budget::Investment do
     end
   end
 
+  describe "#by_budget" do
+
+    it "returns true for unfeasible investments with unfeasibility explanation and valuation finished" do
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update(phase: phase)
+
+        expect(investment.should_show_unfeasibility_explanation?).to eq(true)
+      end
+    end
+
+    it "returns false in valuation has not finished" do
+      investment.update(valuation_finished: false)
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update(phase: phase)
+
+        expect(investment.should_show_unfeasibility_explanation?).to eq(false)
+      end
+    end
+
+    it "returns false if not unfeasible" do
+      investment.update(feasibility: "undecided")
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update(phase: phase)
+
+        expect(investment.should_show_unfeasibility_explanation?).to eq(false)
+      end
+    end
+
+    it "returns false if unfeasibility explanation blank" do
+      investment.update(unfeasibility_explanation: "")
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update(phase: phase)
+
+        expect(investment.should_show_unfeasibility_explanation?).to eq(false)
+      end
+    end
+  end
+
   describe "#by_admin" do
     it "returns investments assigned to specific administrator" do
       investment1 = create(:budget_investment, administrator_id: 33)
