@@ -98,10 +98,12 @@
       </div>
 
       <% unless current_budget.informing? %>
-        <div id="map">
-          <h3><%= t("budgets.index.map") %></h3>
-          <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
-        </div>
+        <% if false %>
+          <div id="map">
+            <h3><%= t("budgets.index.map") %></h3>
+            <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
+          </div>
+        <% end %>
 
         <p>
           <% show_links = show_links_to_budget_investments(current_budget) %>
