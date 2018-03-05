@@ -962,6 +962,9 @@ LOREM_IPSUM
   end
 
   factory :related_content do
+    association :parent_relationable, factory: :proposal
+    association :child_relationable, factory: :debate
+
   end
 
   factory :newsletter do
