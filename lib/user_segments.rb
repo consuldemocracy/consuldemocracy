@@ -48,6 +48,10 @@ class UserSegments
     User.where(email: testers)
   end
 
+  def self.user_segment_emails(users_segment)
+    UserSegments.send(users_segment).newsletter.pluck(:email).compact
+  end
+
   private
 
   def self.current_budget_investments
