@@ -37,10 +37,7 @@
               <div class="small-12 medium-9">
                 <div class="callout warning margin-top">
                   <%= t("budgets.investments.header.different_heading_assigned_html",
-                        heading_link: link_to(
-                          @assigned_heading.name,
-                          budget_investments_path(@budget, heading_id: @assigned_heading.try(:id)))
-                       ) %>
+                        heading_link: heading_link(@assigned_heading, @budget)) %>
                   <br>
                   <small>
                     <%= t("budgets.investments.header.change_ballot",

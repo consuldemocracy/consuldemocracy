@@ -53,19 +53,13 @@
       <% change_ballot = link_to(t("budgets.ballots.reasons_for_not_balloting.change_ballot"),
                                           budget_ballot_path(@budget))%>
 
-      <% if @assigned_heading.present? %>
-        <% heading_link = link_to(@assigned_heading.name,
-                                  budget_investments_path(@budget,
-                                  heading_id: @assigned_heading.try(:id))) %>
-      <% end %>
-
       <p>
         <small>
           <%= t("budgets.ballots.reasons_for_not_balloting.#{reason}",
                 verify_account: verify_account, signin: signin,
                 signup: signup, my_heading: my_heading,
                 change_ballot: change_ballot,
-                heading_link: heading_link).html_safe %>
+                heading_link: heading_link(@assigned_heading, @budget)).html_safe %>
         </small>
       </p>
     </div>
