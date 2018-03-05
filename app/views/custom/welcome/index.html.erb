@@ -1,0 +1,63 @@
+<% content_for :body_class, "home-page" %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: root_url %>
+<% end %>
+
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: root_url %>
+<% end %>
+
+<div class="jumbo highlight">
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <h1><%= setting['org_name'] %></h1>
+      <%= t("layouts.header.open_city_slogan_html") %>
+      <div class="text-center">
+        <%= link_to "Voir les idées", debates_path, class: "button large" %>
+      </div>
+    </div>
+    <div class="small-12 medium-6 column">
+      <div class="responsive-embed widescreen">
+        <iframe width="100%" height="320" src="https://www.youtube-nocookie.com/embed/9BpWAXTi_H8?rel=0" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+  <%= render "recommended",
+              recommended_debates: @recommended_debates,
+              recommended_proposals: @recommended_proposals %>
+  <hr>
+<% end %>
+
+<% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
+  <main>
+    <div class="small-12 column text-center">
+      <div class="row margin padding">
+        <div class="small-12 medium-3 column">
+          <%= image_tag("icon_home_debates", size: "96x96", alt: "", title: t("welcome.debates.title")) %>
+          <h2><%= t("welcome.debates.title") %></h2>
+          <p><%= t("welcome.debates.description") %></p>
+        </div>
+        <div class="small-12 medium-3 column">
+          <%= image_tag("icon_home_proposals", size: "96x96", alt: "", title: t("welcome.debates.title")) %>
+          <h2><%= t("welcome.proposal.title") %></h2>
+          <p><%= t("welcome.proposal.description") %></p>
+        </div>
+        <div class="small-12 medium-3 column">
+          <%= image_tag("icon_home_polls", size: "96x96", alt: "", title: t("welcome.debates.title")) %>
+          <h2><%= t("welcome.decide.title") %></h2>
+          <p><%= t("welcome.decide.description") %></p>
+        </div>
+        <div class="small-12 medium-3 column">
+          <%= image_tag("icon_home_news", size: "96x96", alt: "", title: t("welcome.debates.title")) %>
+          <h2><%= t("welcome.do.title") %></h2>
+          <p><%= t("welcome.do.description") %></p>
+        </div>
+      </div>
+    </div>
+  </main>
+<% end %>

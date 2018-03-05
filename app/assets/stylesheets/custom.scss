@@ -1,5 +1,29 @@
 // Overrides and adds customized styles in this file
-// Read more on documentation:
-// * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
-// * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
-//
+
+.top-bar {
+  //height: 8.5rem;
+  .top-bar-title {
+    margin: 1rem;
+    .logo {
+      border-radius: 50%;
+      border: solid 3px $white;
+      height: 100px;
+      width: auto;
+    }
+  }
+  .top-bar-right {
+    margin-top: 2rem;
+    .menu {
+      .login a {
+        margin-top: 1.3rem;
+      }
+      li {
+        a {
+          font-size: 1.3rem;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+
+}
