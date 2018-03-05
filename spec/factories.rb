@@ -391,7 +391,19 @@ FactoryBot.define do
 
   factory :budget_ballot_line, class: 'Budget::Ballot::Line' do
     association :ballot, factory: :budget_ballot
-    association :investment, factory: :budget_investment
+
+    after(:build) do |ballot_line|
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      group.headings << heading
+      budget.groups << group
+
+      ballot_line.ballot = create(:budget_ballot, budget: budget)
+      ballot_line.investment = create(:budget_investment, :selected, budget: budget,
+                                                                     heading: heading)
+      ballot_line.heading = heading
+    end
   end
 
   factory :budget_reclassified_vote, class: 'Budget::ReclassifiedVote' do
