@@ -650,7 +650,7 @@ FactoryBot.define do
   factory :officing_residence, class: 'Officing::Residence' do
     user
     association :officer, factory: :poll_officer
-    document_number
+    document_number  "12345678Z"
     document_type    "1"
     year_of_birth    "1980"
 
