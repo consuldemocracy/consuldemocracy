@@ -126,9 +126,9 @@ class Mailer < ApplicationMailer
     end
   end
 
-  def newsletter(newsletter, recipient)
+  def newsletter(newsletter, recipient_email)
     @newsletter = newsletter
-    @email_to = recipient.email
+    @email_to = recipient_email
 
     mail(to: @email_to, from: @newsletter.from, subject: @newsletter.subject)
   end

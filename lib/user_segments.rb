@@ -37,6 +37,10 @@ class UserSegments
     author_ids(current_budget_investments.winners.pluck(:author_id).uniq)
   end
 
+  def self.user_segment_emails(users_segment)
+    UserSegments.send(users_segment).newsletter.pluck(:email).compact
+  end
+
   private
 
   def self.current_budget_investments
