@@ -435,6 +435,7 @@ FactoryBot.define do
 
   factory :follow do
     association :user, factory: :user
+    association :followable, factory: :proposal
 
     trait :followed_proposal do
       association :followable, factory: :proposal
