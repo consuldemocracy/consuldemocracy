@@ -364,6 +364,10 @@ FactoryBot.define do
     starts_at   Date.yesterday
     ends_at     Date.tomorrow
     enabled     true
+
+    after(:build) do |phase|
+      phase.budget.phases.send(phase.kind).destroy
+    end
   end
 
   factory :image do
