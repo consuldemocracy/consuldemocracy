@@ -1,0 +1,8 @@
+---
+fr:
+  devise_views:
+    menu:
+      login_items:
+        login: Se connecter
+        logout: Se déconnecter
+        signup: Rejoins-nous!

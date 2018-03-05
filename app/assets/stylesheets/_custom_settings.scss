@@ -1,5 +1,14 @@
 // Overrides and adds customized foundation settings in this file
-// Read more on documentation:
-// * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
-// * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
-//
+
+// CUSTOM VARIABLES
+$brand: #ED8B00;
+
+// DEPENDANT VARIABLES
+// copy/pasted from _consul_settings.scss and _settings.scss
+$dark: darken($brand, 10%);
+$link:              $brand;
+$link-hover:        darken($link, 20%);
+$debates:           $brand;
+
+$button-background: $brand;
+$button-background-hover: scale-color($button-background, $lightness: -15%);

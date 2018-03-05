@@ -31,7 +31,7 @@ Voir la [page dédiée sur le site du département](https://www.aude.fr/670-cons
 * TODO - Aide à la traduction
 * TODO - Beta test des nouvelles fonctionalités
 
-## Conventions pour les développeurs sur ce fork
+## Informations pour les développeurs sur ce fork
 
 ### Workflow
 
@@ -46,6 +46,14 @@ Voir la [page dédiée sur le site du département](https://www.aude.fr/670-cons
   * ces fichiers sont prioritaires sur tous les autres
   * seules les clés à personaliser sont conservées dans ces fichiers
 * Les traductions officielles `fr` de Consul peuvent être importées depuis `upstream` ou depuis [Crowdin](https://crowdin.com/project/consul/fr#) pour venir écraser les traductions existantes dans `config/locales/fr/`
+
+### Documentation de Foundation
+
+Le framework CSS utilisé est Foundation en version 6.2.4.
+
+[Voir la documentation sur Github](https://github.com/zurb/foundation-sites/tree/v6.2.4/docs/pages)
+car la documentation disponible sur le site web du projet correspond à une version
+plus récente.
 
 ## Déploiements
 
