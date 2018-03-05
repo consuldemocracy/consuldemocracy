@@ -75,7 +75,7 @@ FactoryBot.define do
 
   factory :verification_residence, class: Verification::Residence do
     user
-    document_number
+    document_number  "12345678Z"
     document_type    "1"
     date_of_birth    Date.new(1980, 12, 31)
     postal_code      "28013"
