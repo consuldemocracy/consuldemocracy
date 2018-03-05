@@ -924,10 +924,14 @@ LOREM_IPSUM
 
   factory :direct_upload do
     user
+    resource_type "Proposal"
+    resource_relation "documents"
+    attachment { File.new("spec/fixtures/files/empty.pdf") }
 
     trait :proposal do
       resource_type "Proposal"
     end
+
     trait :budget_investment do
       resource_type "Budget::Investment"
     end
