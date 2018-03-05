@@ -8,10 +8,9 @@ Citizen Participation and Open Government Application
 
 This is a fork of [CONSUL](http://consulproject.org/en/) the eParticipation website originally developed for the Madrid City government eParticipation website.
 
-[![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
-[![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
-[![Dependency Status](https://gemnasium.com/consul/consul.svg)](https://gemnasium.com/consul/consul)
-[![Coverage Status](https://coveralls.io/repos/github/consul/consul/badge.svg)](https://coveralls.io/github/consul/consul?branch=master)
+[![Build Status](https://travis-ci.org/CDJ11/CDJ.svg?branch=master)](https://travis-ci.org/CDJ11/CDJ)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5c7abb32f3c8f7cbd4ef/maintainability)](https://codeclimate.com/github/CDJ11/CDJ/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5c7abb32f3c8f7cbd4ef/test_coverage)](https://codeclimate.com/github/CDJ11/CDJ/test_coverage)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://crowdin.com/project/consul)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
