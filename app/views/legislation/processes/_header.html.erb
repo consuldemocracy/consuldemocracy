@@ -31,7 +31,9 @@
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("proposals.show.share"),
         title: @process.title,
-        url: legislation_process_url(@process) } %>
+        url: legislation_process_url(@process),
+        description: @process.title
+      } %>
     </aside>
   </div>
 </div>
