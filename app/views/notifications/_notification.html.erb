@@ -1,5 +1,5 @@
 <li id="<%= dom_id(notification) %>" class="notification <%= 'unread' if notification&.unread? %>">
-  <% if notification.try(:notifiable_available?) %>
+  <% if notification.notifiable.try(:notifiable_available?) %>
     <% locals = { notification: notification,
                   timestamp: notification.timestamp,
                   title: notification.notifiable_title,
