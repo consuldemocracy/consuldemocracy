@@ -73,9 +73,6 @@ Performance/FixedSize:
 Performance/FlatMap:
   Enabled: true
 
-Performance/HashEachMethods:
-  Enabled: true
-
 Performance/LstripRstrip:
   Enabled: true
 
