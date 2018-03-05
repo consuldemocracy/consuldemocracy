@@ -10,6 +10,7 @@
 // 08. Legislation changes
 // 09. Legislation comments
 // 10. Legislation draft comment
+// 11. Legislation proposals
 //
 
 // 01. Utils
@@ -1055,5 +1056,28 @@ $border-dark:  darken($border, 10%);
         text-decoration: none;
       }
     }
+  }
+}
+
+// 11. Legislation proposals
+// -------------------------
+
+.proposal-show {
+
+  &.legislation-proposal-show h1 {
+    font-size: rem-calc(24);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(36);
+    }
+  }
+}
+
+.legislation-proposals {
+  margin-top: rem-calc(-6);
+
+  .proposal h3 {
+    font-size: rem-calc(20);
+    margin-top: 0;
   }
 }
