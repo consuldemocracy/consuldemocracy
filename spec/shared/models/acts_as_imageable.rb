@@ -3,10 +3,6 @@ shared_examples "acts as imageable" do |imageable_factory|
   let!(:image)                  { build(:image, imageable_factory.to_sym) }
   let!(:imageable)              { image.imageable }
 
-  it "is valid" do
-    expect(image).to be_valid
-  end
-
   describe "file extension" do
 
     it "is not valid with '.png' extension" do

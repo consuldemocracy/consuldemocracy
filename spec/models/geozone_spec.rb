@@ -3,10 +3,6 @@ require 'rails_helper'
 describe Geozone do
   let(:geozone) { build(:geozone) }
 
-  it "is valid" do
-    expect(geozone).to be_valid
-  end
-
   it "is not valid without a name" do
     geozone.name = nil
     expect(geozone).not_to be_valid

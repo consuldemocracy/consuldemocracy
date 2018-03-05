@@ -7,10 +7,6 @@ describe Legislation::Question do
     it_behaves_like "notifiable"
   end
 
-  it "is valid" do
-    expect(question).to be_valid
-  end
-
   context "can be deleted" do
     example "when it has no options or answers" do
       question = create(:legislation_question)

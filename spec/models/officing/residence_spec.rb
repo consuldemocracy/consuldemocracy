@@ -7,10 +7,6 @@ describe Officing::Residence do
 
   describe "validations" do
 
-    it "is valid" do
-      expect(residence).to be_valid
-    end
-
     it "is not valid without a document number" do
       residence.document_number = nil
       expect(residence).not_to be_valid

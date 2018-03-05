@@ -9,10 +9,6 @@ describe Poll do
   end
 
   describe "validations" do
-    it "is valid" do
-      expect(poll).to be_valid
-    end
-
     it "is not valid without a name" do
       poll.name = nil
       expect(poll).not_to be_valid

@@ -7,10 +7,6 @@ describe Budget::Investment do
     it_behaves_like "notifiable"
   end
 
-  it "is valid" do
-    expect(investment).to be_valid
-  end
-
   it "is not valid without an author" do
     investment.author = nil
     expect(investment).not_to be_valid

@@ -10,10 +10,6 @@ describe Poll::Shift do
   describe "validations" do
     let(:shift) { build(:poll_shift) }
 
-    it "is valid" do
-      expect(shift).to be_valid
-    end
-
     it "is not valid without a booth" do
       shift.booth = nil
       expect(shift).not_to be_valid

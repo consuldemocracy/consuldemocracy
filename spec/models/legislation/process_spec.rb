@@ -3,10 +3,6 @@ require 'rails_helper'
 describe Legislation::Process do
   let(:process) { create(:legislation_process) }
 
-  it "is valid" do
-    expect(process).to be_valid
-  end
-
   describe "dates validations" do
     it "is invalid if debate_start_date is present but debate_end_date is not" do
       process = build(:legislation_process, debate_start_date: Date.current, debate_end_date: "")

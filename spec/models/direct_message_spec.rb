@@ -4,10 +4,6 @@ describe DirectMessage do
 
   let(:direct_message) { build(:direct_message) }
 
-  it "is valid" do
-    expect(direct_message).to be_valid
-  end
-
   it "is not valid without a title" do
     direct_message.title = nil
     expect(direct_message).not_to be_valid

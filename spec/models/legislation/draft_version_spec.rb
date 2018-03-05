@@ -1,11 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Legislation::DraftVersion, type: :model do
-    let(:legislation_draft_version) { build(:legislation_draft_version) }
-
-  it "is valid" do
-    expect(legislation_draft_version).to be_valid
-  end
+  let(:legislation_draft_version) { build(:legislation_draft_version) }
 
   it "renders and saves the html from the markdown body field" do
     legislation_draft_version.body = body_markdown

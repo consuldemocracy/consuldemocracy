@@ -8,10 +8,6 @@ describe Verification::Letter do
 
     let(:letter) { build(:verification_letter) }
 
-    it "is valid" do
-      expect(letter).to be_valid
-    end
-
     it "is not valid without a user" do
       letter.user = nil
       expect(letter).not_to be_valid

@@ -6,10 +6,6 @@ describe SignatureSheet do
 
   describe "validations" do
 
-    it "is valid" do
-      expect(signature_sheet).to be_valid
-    end
-
     it "is valid with a valid signable" do
       signature_sheet.signable = create(:proposal)
       expect(signature_sheet).to be_valid

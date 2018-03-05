@@ -7,10 +7,6 @@ describe Topic do
     it_behaves_like "notifiable"
   end
 
-  it "is valid" do
-    expect(topic).to be_valid
-  end
-
   it "is not valid without an author" do
     topic.author = nil
     expect(topic).not_to be_valid

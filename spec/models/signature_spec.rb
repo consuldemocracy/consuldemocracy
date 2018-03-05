@@ -6,10 +6,6 @@ describe Signature do
 
   describe "validations" do
 
-    it "is valid" do
-      expect(signature).to be_valid
-    end
-
     it "is not valid without a document number" do
       signature.document_number = nil
       expect(signature).not_to be_valid

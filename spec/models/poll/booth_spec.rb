@@ -4,10 +4,6 @@ describe Poll::Booth do
 
   let(:booth) { build(:poll_booth) }
 
-  it "is valid" do
-    expect(booth).to be_valid
-  end
-
   it "is not valid without a name" do
     booth.name = nil
     expect(booth).not_to be_valid

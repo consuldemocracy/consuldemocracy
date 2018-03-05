@@ -3,10 +3,6 @@ require 'rails_helper'
 describe ProposalNotification do
   let(:notification) { build(:proposal_notification) }
 
-  it "is valid" do
-    expect(notification).to be_valid
-  end
-
   it "is not valid without a title" do
     notification.title = nil
     expect(notification).not_to be_valid

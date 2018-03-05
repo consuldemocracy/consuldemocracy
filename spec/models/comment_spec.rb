@@ -6,10 +6,6 @@ describe Comment do
 
   it_behaves_like "has_public_author"
 
-  it "is valid" do
-    expect(comment).to be_valid
-  end
-
   it "updates cache_counter in debate after hide and restore" do
     debate  = create(:debate)
     comment = create(:comment, commentable: debate)

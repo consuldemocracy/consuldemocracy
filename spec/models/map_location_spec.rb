@@ -4,10 +4,6 @@ describe MapLocation do
 
   let(:map_location) { build(:map_location, :proposal_map_location) }
 
-  it "is valid" do
-    expect(map_location).to be_valid
-  end
-
   it "is invalid when longitude/latitude/zoom are not present" do
     map_location.longitude = nil
     map_location.latitude = nil

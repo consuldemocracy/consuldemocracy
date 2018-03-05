@@ -7,10 +7,6 @@ describe Verification::Residence do
 
   describe "validations" do
 
-    it "is valid" do
-      expect(residence).to be_valid
-    end
-
     describe "dates" do
       it "is valid with a valid date of birth" do
         residence = described_class.new("date_of_birth(3i)" => "1", "date_of_birth(2i)" => "1", "date_of_birth(1i)" => "1980")

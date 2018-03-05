@@ -4,13 +4,6 @@ describe Budget::Ballot do
 
   describe "validations" do
 
-    it "is valid" do
-      budget = create(:budget)
-      ballot = create(:budget_ballot, budget: budget)
-
-      expect(ballot).to be_valid
-    end
-
     it "is not valid with the same investment twice" do
       budget = create(:budget)
       group  = create(:budget_group, budget: budget)
