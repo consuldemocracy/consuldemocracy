@@ -1006,7 +1006,7 @@ feature 'Budget Investments' do
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
     expect(page).not_to have_content("Unfeasibility explanation")
-    expect(page).not_to have_content(investment.unfeasibility_explanation)
+    expect(page).not_to have_content("Local government is not competent in this matter")
   end
 
   scenario "Show milestones", :js do
