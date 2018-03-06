@@ -24,7 +24,7 @@
           </p>
 
           <div class="investment-project-description">
-            <p><%= link_to article.content, article_path(article.slug) %></p>
+            <p><%= link_to article.content.html_safe, article_path(article.slug) %></p>
             <div class="truncate"></div>
           </div>
 
