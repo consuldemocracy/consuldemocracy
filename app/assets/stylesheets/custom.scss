@@ -17,6 +17,9 @@
       .login a {
         margin-top: 1.3rem;
       }
+      .signup {
+        text-align: right;
+      }
       li {
         a {
           font-size: 1.3rem;
@@ -25,5 +28,17 @@
       }
     }
   }
+}
 
+.auth-page {
+  .auth-image {
+    background-image: linear-gradient($brand, $white);
+    .logo img {
+      border-radius: 50%;
+      border: solid 3px $white;
+      height: auto;
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
