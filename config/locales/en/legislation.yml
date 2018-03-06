@@ -47,15 +47,14 @@ en:
         text_comments: Comments
     processes:
       header:
-        view_process_information: View process information
+        additional_info: Additional information
+        description: Description
+        more_info: More information and context
       proposals:
         empty_proposals: There are no proposals
       debate:
         empty_questions: There aren't any questions
         participate: Participate in the debate
-      header_full:
-        description: Description
-        more_info: More information and context
       index:
         filter: Filter
         filters:
