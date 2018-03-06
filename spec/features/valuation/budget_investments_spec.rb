@@ -1,10 +1,12 @@
 require 'rails_helper'
 
 feature 'Valuation budget investments' do
+  let(:valuator) do
+    create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
+  end
 
   background do
-    @valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
-    login_as(@valuator.user)
+    login_as(valuator.user)
     @budget = create(:budget, :valuating)
     Setting['feature.budgets.valuators_allowed'] = true
   end
@@ -25,7 +27,7 @@ feature 'Valuation budget investments' do
     investment1 = create(:budget_investment, :visible_to_valuators, budget: @budget)
     investment2 = create(:budget_investment, :visible_to_valuators, budget: @budget)
 
-    investment1.valuators << @valuator
+    investment1.valuators << valuator
 
     visit valuation_budget_budget_investments_path(@budget)
 
@@ -37,7 +39,7 @@ feature 'Valuation budget investments' do
     investment1 = create(:budget_investment, :visible_to_valuators, budget: @budget)
     investment2 = create(:budget_investment, :visible_to_valuators, budget: @budget)
 
-    investment1.valuators << @valuator
+    investment1.valuators << valuator
 
     logout
     login_as create(:administrator).user
@@ -52,9 +54,9 @@ feature 'Valuation budget investments' do
     investment100 = create(:budget_investment, :visible_to_valuators, budget: @budget, cached_votes_up: 100)
     investment1   = create(:budget_investment, :visible_to_valuators, budget: @budget, cached_votes_up: 1)
 
-    investment1.valuators << @valuator
-    investment10.valuators << @valuator
-    investment100.valuators << @valuator
+    investment1.valuators << valuator
+    investment10.valuators << valuator
+    investment100.valuators << valuator
 
     visit valuation_budget_budget_investments_path(@budget)
 
@@ -66,7 +68,7 @@ feature 'Valuation budget investments' do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times do
       investment = create(:budget_investment, :visible_to_valuators, budget: @budget)
-      investment.valuators << @valuator
+      investment.valuators << valuator
     end
 
     visit valuation_budget_budget_investments_path(@budget)
@@ -88,8 +90,8 @@ feature 'Valuation budget investments' do
     heading2 = create(:budget_heading, name: "Down to the river", group: group)
     investment1 = create(:budget_investment, :visible_to_valuators, title: "Realocate visitors", heading: heading1, group: group, budget: @budget)
     investment2 = create(:budget_investment, :visible_to_valuators, title: "Destroy the city", heading: heading2, group: group, budget: @budget)
-    investment1.valuators << @valuator
-    investment2.valuators << @valuator
+    investment1.valuators << valuator
+    investment2.valuators << valuator
 
     visit valuation_budget_budget_investments_path(@budget)
 
@@ -138,8 +140,8 @@ feature 'Valuation budget investments' do
   scenario "Index filtering by valuation status" do
     valuating = create(:budget_investment, :visible_to_valuators, budget: @budget, title: "Ongoing valuation")
     valuated  = create(:budget_investment, :visible_to_valuators, budget: @budget, title: "Old idea", valuation_finished: true)
-    valuating.valuators << @valuator
-    valuated.valuators << @valuator
+    valuating.valuators << valuator
+    valuated.valuators << valuator
 
     visit valuation_budget_budget_investments_path(@budget)
 
@@ -168,7 +170,7 @@ feature 'Valuation budget investments' do
                            feasibility: 'unfeasible',
                            unfeasibility_explanation: 'It is impossible',
                            administrator: administrator)
-      investment.valuators << [@valuator, valuator2]
+      investment.valuators << [valuator, valuator2]
 
       visit valuation_budget_budget_investments_path(@budget)
 
@@ -201,7 +203,7 @@ feature 'Valuation budget investments' do
                            feasibility: 'unfeasible',
                            unfeasibility_explanation: 'It is impossible',
                            administrator: administrator)
-      investment.valuators << [@valuator, valuator2]
+      investment.valuators << [valuator, valuator2]
 
       visit valuation_budget_budget_investment_path(@budget, investment)
 
@@ -231,7 +233,7 @@ feature 'Valuation budget investments' do
                            feasibility: 'unfeasible',
                            unfeasibility_explanation: 'It is impossible',
                            administrator: create(:administrator))
-      investment.valuators << [@valuator, valuator2]
+      investment.valuators << [valuator, valuator2]
 
       expect { visit valuation_budget_budget_investment_path(@budget, investment) }.to raise_error "Not Found"
     end
@@ -245,7 +247,7 @@ feature 'Valuation budget investments' do
                             budget: @budget,
                             price: nil,
                             administrator: create(:administrator))
-      @investment.valuators << @valuator
+      @investment.valuators << valuator
     end
 
     scenario 'Dossier empty by default' do
@@ -395,9 +397,9 @@ feature 'Valuation budget investments' do
       investment = create(:budget_investment,
                            :visible_to_valuators,
                            budget: @budget)
-      investment.valuators << [@valuator]
+      investment.valuators << [valuator]
 
-      login_as(@valuator.user)
+      login_as(valuator.user)
       visit valuation_budget_budget_investment_path(@budget, investment)
 
       expect{ click_link 'Edit dossier' }.
