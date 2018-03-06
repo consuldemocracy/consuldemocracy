@@ -229,12 +229,6 @@ header,
 // Legislation proposals
 
 .legislation-proposals {
-  margin-top: rem-calc(-6);
-
-  .proposal h3 {
-    font-size: rem-calc(20);
-    margin-top: 0;
-  }
 
   .proposal-content {
 
@@ -261,17 +255,6 @@ header,
 
     &.question {
       border-left: 2px solid #003df6;
-    }
-  }
-}
-
-.proposal-show {
-
-  &.legislation-proposal-show h1 {
-    font-size: rem-calc(24);
-
-    @include breakpoint(medium) {
-      font-size: rem-calc(36);
     }
   }
 }
