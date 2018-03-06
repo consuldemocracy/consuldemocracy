@@ -1,0 +1,13 @@
+<%= form_for [:admin, @admin_notification] do |f| %>
+  <%= render 'shared/errors', resource: @admin_notification %>
+
+  <%= f.select :segment_recipient, options_for_select(user_segments_options,
+                                                      @admin_notification[:segment_recipient]) %>
+  <%= f.text_field :title %>
+  <%= f.text_field :link %>
+  <%= f.text_area :body %>
+
+  <div class="margin-top">
+    <%= f.submit class: "button success" %>
+  </div>
+<% end %>

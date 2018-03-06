@@ -1,4 +1,6 @@
-<h2><%= t("admin.valuators.index.title") %></h2>
+<h2 class="inline-block"><%= t("admin.valuators.index.title") %></h2>
+
+<%= link_to t("admin.valuators.index.valuator_groups"), admin_valuator_groups_path, class: "button hollow float-right" %>
 
 <%= render "admin/shared/user_search", url: search_admin_valuators_path %>
 
@@ -11,12 +13,13 @@
         <th scope="col"><%= t("admin.valuators.index.name") %></th>
         <th scope="col"><%= t("admin.valuators.index.email") %></th>
         <th scope="col"><%= t("admin.valuators.index.description") %></th>
+        <th scope="col"><%= t("admin.valuators.index.group") %></th>
         <th scope="col"><%= t("admin.actions.actions") %></th>
       </thead>
       <tbody>
         <% @valuators.each do |valuator| %>
           <tr>
-            <td><%= valuator.name %></td>
+            <td><%= link_to valuator.name, admin_valuator_path(valuator) %></td>
             <td><%= valuator.email %></td>
             <td>
               <% if valuator.description.present? %>
@@ -26,10 +29,20 @@
               <% end %>
             </td>
             <td>
+              <% if valuator.valuator_group.present? %>
+                <%= valuator.valuator_group.try(:name) %>
+              <% else %>
+                <%= t("admin.valuators.index.no_group") %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to t("admin.actions.edit"),
+                          edit_admin_valuator_path(valuator),
+                          class: "button hollow" %>
               <%= link_to t("admin.valuators.valuator.delete"),
                           admin_valuator_path(valuator),
                           method: :delete,
-                          class: "button hollow alert expanded" %>
+                          class: "button hollow alert" %>
             </td>
           </tr>
         <% end %>

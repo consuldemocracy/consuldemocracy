@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129190950) do
+ActiveRecord::Schema.define(version: 20180222120017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20180129190950) do
 
   add_index "activities", ["actionable_id", "actionable_type"], name: "index_activities_on_actionable_id_and_actionable_type", using: :btree
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
+
+  create_table "admin_notifications", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "link"
+    t.string   "segment_recipient"
+    t.integer  "recipients_count"
+    t.date     "sent_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "administrators", force: :cascade do |t|
     t.integer "user_id"
@@ -163,39 +174,40 @@ ActiveRecord::Schema.define(version: 20180129190950) do
     t.string   "title"
     t.text     "description"
     t.string   "external_url"
-    t.integer  "price",                         limit: 8
-    t.string   "feasibility",                   limit: 15, default: "undecided"
+    t.integer  "price",                            limit: 8
+    t.string   "feasibility",                      limit: 15, default: "undecided"
     t.text     "price_explanation"
     t.text     "unfeasibility_explanation"
     t.text     "internal_comments"
-    t.boolean  "valuation_finished",                       default: false
-    t.integer  "valuator_assignments_count",               default: 0
-    t.integer  "price_first_year",              limit: 8
+    t.boolean  "valuation_finished",                          default: false
+    t.integer  "valuator_assignments_count",                  default: 0
+    t.integer  "price_first_year",                 limit: 8
     t.string   "duration"
     t.datetime "hidden_at"
-    t.integer  "cached_votes_up",                          default: 0
-    t.integer  "comments_count",                           default: 0
-    t.integer  "confidence_score",                         default: 0,           null: false
-    t.integer  "physical_votes",                           default: 0
+    t.integer  "cached_votes_up",                             default: 0
+    t.integer  "comments_count",                              default: 0
+    t.integer  "confidence_score",                            default: 0,           null: false
+    t.integer  "physical_votes",                              default: 0
     t.tsvector "tsv"
-    t.datetime "created_at",                                                     null: false
-    t.datetime "updated_at",                                                     null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
     t.integer  "heading_id"
     t.string   "responsible_name"
     t.integer  "budget_id"
     t.integer  "group_id"
-    t.boolean  "selected",                                 default: false
+    t.boolean  "selected",                                    default: false
     t.string   "location"
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
     t.string   "label"
     t.integer  "previous_heading_id"
-    t.boolean  "visible_to_valuators",                     default: false
-    t.integer  "ballot_lines_count",                       default: 0
-    t.boolean  "winner",                                   default: false
-    t.boolean  "incompatible",                             default: false
+    t.boolean  "visible_to_valuators",                        default: false
+    t.integer  "ballot_lines_count",                          default: 0
+    t.boolean  "winner",                                      default: false
+    t.boolean  "incompatible",                                default: false
     t.integer  "community_id"
     t.integer  "original_spending_proposal_id"
+    t.integer  "valuator_group_assignments_count",            default: 0
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -203,16 +215,6 @@ ActiveRecord::Schema.define(version: 20180129190950) do
   add_index "budget_investments", ["community_id"], name: "index_budget_investments_on_community_id", using: :btree
   add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
-
-  create_table "budget_polls", force: :cascade do |t|
-    t.string  "name"
-    t.string  "email"
-    t.string  "preferred_subject"
-    t.boolean "collective"
-    t.boolean "public_worker"
-    t.boolean "proposal_author"
-    t.boolean "selected_proposal_author"
-  end
 
   create_table "budget_phases", force: :cascade do |t|
     t.integer  "budget_id"
@@ -229,6 +231,16 @@ ActiveRecord::Schema.define(version: 20180129190950) do
   add_index "budget_phases", ["kind"], name: "index_budget_phases_on_kind", using: :btree
   add_index "budget_phases", ["next_phase_id"], name: "index_budget_phases_on_next_phase_id", using: :btree
   add_index "budget_phases", ["starts_at"], name: "index_budget_phases_on_starts_at", using: :btree
+
+  create_table "budget_polls", force: :cascade do |t|
+    t.string  "name"
+    t.string  "email"
+    t.string  "preferred_subject"
+    t.boolean "collective"
+    t.boolean "public_worker"
+    t.boolean "proposal_author"
+    t.boolean "selected_proposal_author"
+  end
 
   create_table "budget_reclassified_votes", force: :cascade do |t|
     t.integer  "user_id"
@@ -258,6 +270,11 @@ ActiveRecord::Schema.define(version: 20180129190950) do
 
   add_index "budget_valuator_assignments", ["investment_id"], name: "index_budget_valuator_assignments_on_investment_id", using: :btree
 
+  create_table "budget_valuator_group_assignments", force: :cascade do |t|
+    t.integer "valuator_group_id"
+    t.integer "investment_id"
+  end
+
   create_table "budgets", force: :cascade do |t|
     t.string   "name",                          limit: 80
     t.string   "currency_symbol",               limit: 10
@@ -274,6 +291,7 @@ ActiveRecord::Schema.define(version: 20180129190950) do
     t.string   "slug"
     t.text     "description_drafting"
     t.text     "description_publishing_prices"
+    t.text     "description_informing"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -687,12 +705,23 @@ ActiveRecord::Schema.define(version: 20180129190950) do
 
   add_index "moderators", ["user_id"], name: "index_moderators_on_user_id", using: :btree
 
+  create_table "newsletters", force: :cascade do |t|
+    t.string   "subject"
+    t.string   "segment_recipient", null: false
+    t.string   "from"
+    t.text     "body"
+    t.date     "sent_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "notifiable_id"
     t.string   "notifiable_type"
     t.integer  "counter",         default: 1
     t.datetime "emailed_at"
+    t.datetime "read_at"
   end
 
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
@@ -1295,11 +1324,17 @@ ActiveRecord::Schema.define(version: 20180129190950) do
     t.datetime "updated_at",           null: false
   end
 
+  create_table "valuator_groups", force: :cascade do |t|
+    t.string  "name"
+    t.integer "budget_investments_count", default: 0
+  end
+
   create_table "valuators", force: :cascade do |t|
     t.integer "user_id"
     t.string  "description"
     t.integer "spending_proposals_count", default: 0
     t.integer "budget_investments_count", default: 0
+    t.integer "valuator_group_id"
   end
 
   add_index "valuators", ["user_id"], name: "index_valuators_on_user_id", using: :btree

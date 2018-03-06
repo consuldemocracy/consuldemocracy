@@ -1,7 +1,6 @@
 en:
   documents:
-    tab: Documents
-    no_documents: Don't have uploaded documents
+    title: Documents
     max_documents_allowed_reached_html: You have reached the maximum number of documents allowed! <strong>You have to delete one before you can upload another.</strong>
     form:
       title: Documents
@@ -17,7 +16,7 @@ en:
         confirm: Are you sure you want to delete the document? This action cannot be undone!
     buttons:
       download_document: Download file
-      destroy_document: Destroy
+      destroy_document: Destroy document
     errors:
       messages:
         in_between: must be in between %{min} and %{max}

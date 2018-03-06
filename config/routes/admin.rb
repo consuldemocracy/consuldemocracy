@@ -86,10 +86,11 @@ namespace :admin do
     get :search, on: :collection
   end
 
-  resources :valuators, only: [:index, :create, :destroy] do
+  resources :valuators, only: [:show, :index, :edit, :update, :create, :destroy] do
     get :search, on: :collection
     get :summary, on: :collection
   end
+  resources :valuator_groups
 
   resources :managers, only: [:index, :create, :destroy] do
     get :search, on: :collection
@@ -148,8 +149,21 @@ namespace :admin do
 
   resource :activity, controller: :activity, only: :show
 
-  resources :newsletters, only: :index do
+  resources :newsletters do
+    member do
+      post :deliver
+    end
     get :users, on: :collection
+  end
+
+  resources :admin_notifications do
+    member do
+      post :deliver
+    end
+  end
+
+  resources :emails_download, only: :index do
+    get :generate_csv, on: :collection
   end
 
   resource :stats, only: :show do

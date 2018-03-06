@@ -1,5 +1,16 @@
 module BudgetsHelper
 
+  def show_links_to_budget_investments(budget)
+    ['balloting', 'reviewing_ballots', 'finished'].include? budget.phase
+  end
+
+  def heading_name_and_price_html(heading, budget)
+    content_tag :div do
+      concat(heading.name + ' ')
+      concat(content_tag(:span, budget.formatted_heading_price(heading)))
+    end
+  end
+
   def csv_params
     csv_params = params.clone.merge(format: :csv).symbolize_keys
     csv_params.delete(:page)
@@ -51,8 +62,8 @@ module BudgetsHelper
 
   def display_support_alert?(investment)
     current_user &&
-    !current_user.voted_in_group?(investment.group) &&
-    investment.group.headings.count > 1
+      !current_user.voted_in_group?(investment.group) &&
+      investment.group.headings.count > 1
   end
 
   def current_budget_map_locations

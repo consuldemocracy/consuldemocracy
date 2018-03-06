@@ -4,9 +4,6 @@
       <%= t("pages.help.proposals.title") %>
     </h3>
     <p>
-      <%= link_to t("pages.help.proposals.detail"), more_info_proposals_path, class: "small" %>
-    </p>
-    <p>
       <%= t("pages.help.proposals.description",
               link: link_to(t("pages.help.proposals.link"), proposals_path)).html_safe %>
     </p>
@@ -17,11 +14,6 @@
               supports: setting['votes_for_proposal_success']).html_safe %>
       </li>
     </ul>
-
-    <p>
-      <%= t("pages.help.proposals.kit_decide",
-              link: link_to(t("pages.help.proposals.kit_link"), kit_decide_path)).html_safe %>
-    </p>
 
     <figure>
       <%= image_tag "help/proposals_#{I18n.locale}.png", alt: t("pages.help.proposals.image_alt") %>

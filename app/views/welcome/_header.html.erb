@@ -1,14 +1,17 @@
-<% if current_budget&.accepting? %>
+<% if current_budget %>
   <div class="expanded jumbo budget-home text-center">
     <div class="row">
       <div class="small-12 medium-9 column small-centered">
         <span class="tiny-title"><%= t("welcome.header_budget.label") %></span>
-        <p class="lead-title margin-top"><%= t("welcome.header_budget.title") %></p>
-        <p class="lead"><%= t("welcome.header_budget.text") %></p>
+        <p class="lead-title margin-top">
+          <%= t("welcome.header_budget.#{current_budget.phase}.title") %>
+        </p>
+        <p class="lead"><%= t("welcome.header_budget.#{current_budget.phase}.text") %></p>
         <div class="small-12 medium-6 large-4 column small-centered">
-          <%= link_to t("welcome.header_budget.button"),
+          <%= link_to t("welcome.header_budget.#{current_budget.phase}.button"),
                       budgets_path,
-                      class: "button expanded large", title: t("welcome.header_budget.button") %>
+                      title: t("welcome.header_budget.#{current_budget.phase}.button"),
+                      class: "button expanded large" %>
         </div>
       </div>
     </div>
@@ -19,7 +22,9 @@
       <div class="small-12 column small-centered">
         <span class="label"><%= t("welcome.header.label") %></span>
         <p class="lead-title"><%= t("welcome.header.title") %></p>
-        <p class="lead"><%= t("welcome.header.text", supports: setting["votes_for_proposal_success"]) %></p>
+        <p class="lead">
+          <%= t("welcome.header.text", supports: setting["votes_for_proposal_success"]) %>
+        </p>
         <div class="small-12 medium-6 large-4 column small-centered">
           <%= link_to t("welcome.header.button"),
                       new_proposal_path,

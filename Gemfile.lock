@@ -73,7 +73,7 @@ GEM
     bullet (5.7.0)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.10.0)
-    byebug (9.1.0)
+    byebug (10.0.0)
     cancancan (2.1.2)
     capistrano (3.10.1)
       airbrussh (>= 1.0.0)
@@ -510,7 +510,7 @@ DEPENDENCIES
   animate-rails (~> 1.0.10)
   browser (~> 2.5.2)
   bullet (~> 5.7.0)
-  byebug (~> 9.1.0)
+  byebug (~> 10.0.0)
   cancancan (~> 2.1.2)
   capistrano (~> 3.10.1)
   capistrano-bundler (~> 1.2)
@@ -568,7 +568,6 @@ DEPENDENCIES
   rspec-rails (~> 3.6)
   rubocop (~> 0.52.1)
   rubocop-rspec (~> 1.22.1)
-  rubyzip (~> 1.2.0)
   rvm1-capistrano3 (~> 1.4.0)
   sass-rails (~> 5.0, >= 5.0.4)
   savon (~> 2.11.1)
@@ -588,4 +587,4 @@ DEPENDENCIES
   whenever (~> 0.10.0)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

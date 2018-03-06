@@ -4,16 +4,17 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   feature_flag :budgets
 
+  has_orders %w{oldest}, only: [:show, :edit]
   has_filters(%w{all without_admin without_valuator under_valuation
                  valuation_finished winners},
                  only: [:index, :toggle_selection])
 
   has_orders %w{oldest}, only: [:show, :edit]
 
-
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
   before_action :load_ballot, only: [:show, :index]
+  before_action :parse_valuation_filters
   before_action :load_investments, only: [:index, :toggle_selection]
 
   def index
@@ -34,17 +35,21 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   def edit
     load_admins
     load_valuators
+    load_valuator_groups
     load_tags
   end
 
   def update
     set_valuation_tags
     if @investment.update(budget_investment_params)
-      redirect_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params)),
+      redirect_to admin_budget_budget_investment_path(@budget,
+                                                      @investment,
+                                                      Budget::Investment.filter_params(params)),
                   notice: t("flash.actions.update.budget_investment")
     else
       load_admins
       load_valuators
+      load_valuator_groups
       load_tags
       render :edit
     end
@@ -81,19 +86,20 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_investments
-      if params[:project_title].present?
-        @investments = Budget::Investment.where("title ILIKE ?", "%#{params[:project_title].strip}%")
-      else
-        @investments = Budget::Investment.scoped_filter(params, @current_filter)
+      @investments = if params[:title_or_id].present?
+                       Budget::Investment.search_by_title_or_id(params)
+                     else
+                       Budget::Investment.scoped_filter(params, @current_filter)
                                          .order(sort_by(params[:sort_by]))
-      end
+                     end
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
     def budget_investment_params
       params.require(:budget_investment)
-            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list, :valuation_tag_list, :incompatible,
-                    :selected, :organization_name, :tag_list, :label, :visible_to_valuators, valuator_ids: [])
+            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
+                    :valuation_tag_list, :incompatible, :selected, :organization_name, :label,
+                    :visible_to_valuators, valuator_ids: [], valuator_group_ids: [])
     end
 
     def load_budget
@@ -103,7 +109,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def load_investment
       @investment = @budget.investments.where(original_spending_proposal_id: params[:id]).first
-      @investment ||= @budget.investments.find(params['id'])
+      @investment ||= @budget.investments.find(params[:id])
     end
 
     def load_admins
@@ -112,6 +118,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def load_valuators
       @valuators = Valuator.includes(:user).all.order(description: :asc).order("users.email ASC")
+    end
+
+    def load_valuator_groups
+      @valuator_groups = ValuatorGroup.all.order(name: :asc)
     end
 
     def load_tags
@@ -126,6 +136,18 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     def set_valuation_tags
       @investment.set_tag_list_on(:valuation, budget_investment_params[:valuation_tag_list])
       params[:budget_investment] = params[:budget_investment].except(:valuation_tag_list)
+    end
+
+    def parse_valuation_filters
+      if params[:valuator_or_group_id]
+        model, id = params[:valuator_or_group_id].split("_")
+
+        if model == "group"
+          params[:valuator_group_id] = id
+        else
+          params[:valuator_id] = id
+        end
+      end
     end
 
 end

@@ -90,13 +90,19 @@
       text-align: left;
     }
 
-    th.win {
-      background: $campaign-blue;
+    th {
+
+      &.win {
+        background: $campaign-blue;
+      }
     }
 
-    td.win {
-      background: #ccedf8;
-      font-weight: bold;
+    td {
+
+      &.win {
+        background: #ccedf8;
+        font-weight: bold;
+      }
     }
   }
 }
@@ -129,7 +135,8 @@
     }
   }
 
-  table.polls-participation-age {
+
+  .polls-participation-age {
 
     .progress {
       background: #fff;
@@ -163,18 +170,21 @@
     }
   }
 
-  table.polls-participation-district {
+  table {
 
-    @include breakpoint(medium) {
+    &.polls-participation-district {
 
-      .district {
-        width: rem-calc(200);
+      @include breakpoint(medium) {
+
+        .district {
+          width: rem-calc(200);
+        }
       }
     }
   }
 }
 
-.polls-results-stats hr {
+.polls-results-stats hr {
   margin: $line-height * 2 0;
 }
 

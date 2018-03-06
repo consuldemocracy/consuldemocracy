@@ -2,9 +2,6 @@
   <div class="small-12 column">
     <h3 id="polls" data-magellan-target="polls"><%= t("pages.help.polls.title") %></h3>
     <p>
-      <%= link_to t("pages.help.polls.detail"), more_info_polls_path, class: "small" %>
-    </p>
-    <p>
       <%= t("pages.help.polls.description",
             link: link_to(t("pages.help.polls.link"), polls_path)).html_safe %>
     </p>
@@ -17,13 +14,5 @@
       <li><%= t("pages.help.polls.feature_2") %></li>
       <li><%= t("pages.help.polls.feature_3") %></li>
     </ul>
-
-    <p><%= t("pages.help.polls.text_1_html") %></p>
-    <p><%= t("pages.help.polls.text_2_html") %></p>
-
-    <figure>
-      <%= image_tag "help/vota.jpg", alt: t("pages.help.polls.image_alt") %>
-      <figcaption><%= t("pages.help.polls.figcaption") %></figcaption>
-    </figure>
   </div>
 </div>

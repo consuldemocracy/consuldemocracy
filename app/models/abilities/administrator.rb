@@ -47,7 +47,7 @@ module Abilities
 
       can [:search, :create, :index, :destroy], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator
-      can [:search, :create, :index, :destroy, :summary], ::Valuator
+      can [:search, :show, :edit, :update, :create, :index, :destroy, :summary], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager
       can [:search, :index], ::User
 
@@ -91,6 +91,8 @@ module Abilities
 
       can [:create], Document
       can [:create, :destroy], DirectUpload
+
+      can [:deliver], Newsletter, hidden_at: nil
     end
   end
 end

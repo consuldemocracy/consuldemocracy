@@ -62,6 +62,9 @@ FactoryBot.define do
     end
   end
 
+  factory :valuator_group, class: ValuatorGroup do
+  end
+
   factory :identity do
     user nil
     provider "Twitter"
@@ -251,6 +254,7 @@ FactoryBot.define do
     currency_symbol "€"
     phase 'accepting'
     description_drafting  "This budget is drafting"
+    description_informing "This budget is informing"
     description_accepting "This budget is accepting"
     description_reviewing "This budget is reviewing"
     description_selecting "This budget is selecting"
@@ -262,6 +266,10 @@ FactoryBot.define do
 
     trait :drafting do
       phase 'drafting'
+    end
+
+    trait :informing do
+      phase 'informing'
     end
 
     trait :accepting do
@@ -751,6 +759,10 @@ FactoryBot.define do
   factory :notification do
     user
     association :notifiable, factory: :proposal
+
+    trait :read do
+      read_at Time.current
+    end
   end
 
   factory :probe do
@@ -1036,6 +1048,27 @@ LOREM_IPSUM
   end
 
   factory :related_content do
+  end
+
+  factory :newsletter do
+    sequence(:subject) { |n| "Subject #{n}" }
+    segment_recipient  UserSegments::SEGMENTS.sample
+    sequence(:from)    { |n| "noreply#{n}@consul.dev" }
+    sequence(:body)    { |n| "Body #{n}" }
+  end
+
+  factory :admin_notification do
+    title             { |n| "Admin Notification title #{n}" }
+    body              { |n| "Admin Notification body #{n}" }
+    link              nil
+    segment_recipient UserSegments::SEGMENTS.sample
+    recipients_count  nil
+    sent_at           nil
+
+    trait :sent do
+      recipients_count 1
+      sent_at Time.current
+    end
   end
 
 end

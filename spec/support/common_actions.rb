@@ -113,24 +113,8 @@ module CommonActions
   def comment_on(commentable, user = nil)
     user ||= create(:user)
 
-    login_as(user)
-    commentable_path = if commentable.is_a?(Proposal)
-                         proposal_path(commentable)
-                       elsif commentable.is_a?(Debate)
-                         debate_path(commentable)
-                       elsif commentable.is_a?(Topic)
-                         community_topic_path(commentable, community_id: commentable.community_id)
-                       elsif commentable.is_a?(Poll)
-                         poll_path(commentable)
-                       else
-                         budget_investment_path(commentable, budget_id: commentable.budget_id)
-                       end
-    visit commentable_path
-
-    fill_in "comment-body-#{commentable.class.name.gsub(/::/, '_').downcase}_#{commentable.id}", with: 'Have you thought about...?'
-    click_button 'Publish comment'
-
-    expect(page).to have_content 'Have you thought about...?'
+    comment = create(:comment, commentable: commentable, user: user)
+    CommentNotifier.new(comment: comment).process
   end
 
   def reply_to(original_user, manuela = nil)
@@ -170,7 +154,8 @@ module CommonActions
 
   def error_message(resource_model = nil)
     resource_model ||= "(.*)"
-    /\d errors? prevented this #{resource_model} from being saved. Please check the marked fields to know how to correct them:/
+    field_check_message = 'Please check the marked fields to know how to correct them:'
+    /\d errors? prevented this #{resource_model} from being saved. #{field_check_message}/
   end
 
   def expect_to_be_signed_in
@@ -349,15 +334,19 @@ module CommonActions
   end
 
   def create_successful_proposals
-    [create(:proposal, title: "Winter is coming", question: "Do you speak it?", cached_votes_up: Proposal.votes_needed_for_success + 100),
-     create(:proposal, title: "Fire and blood", question: "You talking to me?", cached_votes_up: Proposal.votes_needed_for_success + 1)]
+    [create(:proposal, title: "Winter is coming", question: "Do you speak it?",
+                       cached_votes_up: Proposal.votes_needed_for_success + 100),
+     create(:proposal, title: "Fire and blood", question: "You talking to me?",
+                       cached_votes_up: Proposal.votes_needed_for_success + 1)]
   end
 
   def create_archived_proposals
     months_to_archive_proposals = Setting["months_to_archive_proposals"].to_i
     [
-      create(:proposal, title: "This is an expired proposal", created_at: months_to_archive_proposals.months.ago),
-      create(:proposal, title: "This is an oldest expired proposal", created_at: (months_to_archive_proposals + 2).months.ago)
+      create(:proposal, title: "This is an expired proposal",
+                        created_at: months_to_archive_proposals.months.ago),
+      create(:proposal, title: "This is an oldest expired proposal",
+                        created_at: (months_to_archive_proposals + 2).months.ago)
     ]
   end
 
@@ -381,8 +370,8 @@ module CommonActions
       click_link "Send notification"
     end
 
-    fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal #{proposal.title}"
-    fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen! #{proposal.summary}"
+    fill_in 'proposal_notification_title', with: "Thanks for supporting proposal: #{proposal.title}"
+    fill_in 'proposal_notification_body', with: "Please share it with others! #{proposal.summary}"
     click_button "Send message"
 
     expect(page).to have_content "Your message has been sent correctly."
@@ -532,6 +521,24 @@ module CommonActions
     else
       false
     end
+  end
+
+  def fill_in_newsletter_form(options = {})
+    fill_in "newsletter_subject", with: (options[:subject] || "This is a different subject")
+    select (options[:segment_recipient] || 'All users'), from: 'newsletter_segment_recipient'
+    fill_in "newsletter_from", with: (options[:from] || "no-reply@consul.dev")
+    fill_in "newsletter_body", with: (options[:body] || "This is a different body")
+  end
+
+  def click_notifications_icon
+    find("#notifications a").click
+  end
+
+  def fill_in_admin_notification_form(options = {})
+    select (options[:segment_recipient] || 'All users'), from: :admin_notification_segment_recipient
+    fill_in :admin_notification_title, with: (options[:title] || 'This is the notification title')
+    fill_in :admin_notification_body, with: (options[:body] || 'This is the notification body')
+    fill_in :admin_notification_link, with: (options[:link] || 'https://www.decide.madrid.es/vota')
   end
 
 end

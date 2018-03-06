@@ -1,7 +1,4 @@
 es:
-  users:
-    show:
-      deleted_budget_investment: Este proyecto de gasto ha sido eliminado
   admin:
     probes:
       index:
@@ -59,6 +56,30 @@ es:
     welcome_index:
       title: "Decide Madrid: portal de participación ciudadana de Madrid"
       description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
+      accepting:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Apoya proyectos de los presupuestos participativos 2018 en Decide Madrid para que pasen a la votación final. Decide qué se hace con 100 millones de euros."
+      selecting:
+        title: "Participa en los presupuestos participativos de Madrid"
+        description: "Entra en Decide Madrid y apoya las ideas para mejorar Madrid. Los proyectos más apoyados de presupuestos participativos pueden pasar a la votación final."
+      valuating:
+        title: "Participa en los presupuestos participativos de Madrid"
+        description: "Prepárate para decidir el destino de 100 millones de euros del presupuesto municipal. La votación final de proyectos se abrirá el 15 de mayo de 2018."
+      balloting:
+        title: "Decide 100 millones en los presupuestos participativos"
+        description: "Estamos en la fase decisiva de los  presupuestos participativos 2018 del Ayuntamiento de Madrid. Vota los proyectos planteados por la ciudadanía."
+      finished:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "Entérate de qué proyectos se harán con los presupuestos participativos en Decide Madrid. Es la web de participación ciudadana del Ayuntamiento de Madrid. "
+      reviewing:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
+      publishing_prices:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
+      reviewing_ballots:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
     proposals:
       title: "Propuestas ciudadanas de Madrid - Decide Madrid"
       description: "Participa activamente en Decide Madrid creando y votando propuestas ciudadanas que quieras que el Ayuntamiento de Madrid lleve a cabo."
@@ -76,7 +97,27 @@ es:
       accepting:
         title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
         description: "Presenta tus proyectos a los presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
-        social: "#ParticipativosMadrid18: Tú decides a qué proyectos ciudadanos dedicar 100 millones de euros del presupuesto municipal."
+      selecting:
+        title: "Apoya proyectos de los presupuestos participativos de Madrid"
+        description: "Entra en Decide Madrid y apoya las ideas para mejorar Madrid. Los proyectos más apoyados de presupuestos participativos pueden pasar a la votación final."
+      valuating:
+        title: "Evaluación de proyectos de los presupuestos participativos"
+        description: "La votación final de proyectos de los presupuestos participativos de Madrid empieza el 15 de mayo. ¡Prepárate para decidir el destino de 100 millones!"
+      balloting:
+        title: "Vota los proyectos finalistas de presupuestos participativos"
+        description: "Vota en Decide Madrid los proyectos que quieres que haga el Ayuntamiento en tu barrio y en Madrid. ¡Decide a qué ideas dedicar 100 millones de euros!"
+      finished:
+        title: "Resultados de los presupuestos participativos 2018"
+        description: "La ciudadanía ha decidido qué hará el Ayuntamiento con 100 millones de euros reservados a proyectos ciudadanos. Entérate de los proyectos ganadores."
+      reviewing:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+      publishing_prices:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+      reviewing_ballots:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
   social_share:
     polls_show:
       title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"
@@ -196,9 +237,38 @@ es:
       button: "Crea una propuesta"
     header_budget:
       label: "Presupuestos participativos 2018"
-      title: "Decide los proyectos ciudadanos que hará el Ayuntamiento de Madrid, tienes:"
-      text: "100 millones de euros"
-      button: "Presenta tu proyecto"
+      accepting:
+        title: "Decide los proyectos ciudadanos que hará el Ayuntamiento de Madrid, tienes:"
+        text: "100 millones de euros"
+        button: "Presenta tu proyecto"
+      reviewing:
+        title: "Decide los proyectos ciudadanos que hará el Ayuntamiento de Madrid, tienes:"
+        text: "100 millones de euros"
+        button: "Ver proyectos"
+      selecting:
+        title: "Elige los proyectos de un distrito y toda la ciudad para que pasen a votación"
+        text: "Apoya proyectos ciudadanos"
+        button: "Ver proyectos"
+      valuating:
+        title: "El Ayuntamiento revisa y tasa los proyectos más apoyados hasta el 15 de mayo"
+        text: "Proyectos más apoyados"
+        button: "Ver proyectos"
+      publishing_prices:
+        title: "El Ayuntamiento revisa y tasa los proyectos más apoyados hasta el 15 de mayo"
+        text: "Proyectos más apoyados"
+        button: "Ver proyectos"
+      balloting:
+        title: "Decide qué proyectos hará el Ayuntamiento con 100 millones"
+        text: "Vota los presupuestos participativos"
+        button: "Ver proyectos"
+      reviewing_ballots:
+        title: "En unos días conoceremos los proyectos ganadores de los presupuestos participativos"
+        text: "¡Gracias por votar!"
+        button: "Ver proyectos"
+      finished:
+        title: "Mira los proyectos ganadores de los presupuestos participativos 2018"
+        text: "¡Gracias por votar!"
+        button: "Ver proyectos"
     once_plazas:
       label: "Resultados votación"
       title: "La ciudadanía aprueba remodelar once plazas"
@@ -209,14 +279,26 @@ es:
       label: "Resultados 2016"
       title: "Presupuestos participativos"
       text: "Consulta el estado de los proyectos ganadores de la primera edición de presupuestos participativos."
-      link: "Descargar los Resultados 2016"
+      link: "Ver los resultados 2016"
       alt: "Cancha de baloncesto"
-    arroyofresno:
+    terrazas:
+      label: "Consulta pública"
+      title: "Ordenanza de terrazas de hostelería y restauración"
+      text: "Aporta tus ideas a la nueva ordenanza que va a plantear el Ayuntamiento de Madrid"
+      link: "Participar en la consulta"
+      alt: "Terraza de un bar en Madrid"
+    movilidad:
       label: "Debate previo"
-      title: "Reforestación del Parque de Arroyofresno"
-      text: "Haz tus aportaciones a las cinco preguntas sobre el parque ubicado en Fuencarral-El Pardo."
+      title: "Ordenanza de movilidad"
+      text: "Deja tus aportaciones sobre las 18 líneas maestras que se plantean para modificar esta ordenanza"
       link: "Participar en el debate"
-      alt: "Parque de Arroyofresno"
+      alt: "Grupo de ciclistas circulando por una calle de Madrid"
+    budgets_guide:
+      label: "Presupuestos Participativos 2018"
+      title: "Tu proyecto en 10 pasos"
+      text: "Te damos algunos consejos para publicar tu idea para mejorar la ciudad en Decide Madrid."
+      link: "Leer consejos"
+      alt: "Captura de pantalla de Presupuestos Participativos 2018"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"

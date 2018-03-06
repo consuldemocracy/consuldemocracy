@@ -20,7 +20,8 @@
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("shared.share"),
         title: @poll.name,
-        url: poll_url(@poll)
+        url: poll_url(@poll),
+        description: @poll.name
       } %>
     </aside>
   </div>

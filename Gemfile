@@ -41,7 +41,6 @@ gem 'redcarpet', '~> 3.4.0'
 gem 'responders', '~> 2.4.0'
 gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'rollbar', '~> 2.15.5'
-gem 'rubyzip', '~> 1.2.0'
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 gem 'savon', '~> 2.11.1'
 gem 'sitemap_generator', '~> 6.0.1'
@@ -60,7 +59,7 @@ end
 
 group :development, :test do
   gem 'bullet', '~> 5.7.0'
-  gem 'byebug', '~> 9.1.0'
+  gem 'byebug', '~> 10.0.0'
   gem 'factory_bot_rails', '~> 4.8.2'
   gem 'faker', '~> 1.8.7'
   gem 'i18n-tasks', '~> 0.9.20'

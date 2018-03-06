@@ -1,6 +1,6 @@
 class Budget
   class Phase < ActiveRecord::Base
-    PHASE_KINDS = %w(drafting accepting reviewing selecting valuating publishing_prices balloting
+    PHASE_KINDS = %w(drafting informing accepting reviewing selecting valuating publishing_prices balloting
                 reviewing_ballots finished).freeze
     PUBLISHED_PRICES_PHASES = %w(publishing_prices balloting reviewing_ballots finished).freeze
     SUMMARY_MAX_LENGTH = 1000
@@ -26,6 +26,7 @@ class Budget
     scope :enabled,           -> { where(enabled: true) }
     scope :published,         -> { enabled.where.not(kind: 'drafting') }
     scope :drafting,          -> { find_by_kind('drafting') }
+    scope :informing,         -> { find_by_kind('informing') }
     scope :accepting,         -> { find_by_kind('accepting')}
     scope :reviewing,         -> { find_by_kind('reviewing')}
     scope :selecting,         -> { find_by_kind('selecting')}

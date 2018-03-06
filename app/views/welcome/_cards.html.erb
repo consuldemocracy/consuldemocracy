@@ -1,55 +1,71 @@
 <div class="row">
   <div class="small-12 medium-4 column margin-bottom">
-    <figure class="figure-card">
-      <%= link_to debate_legislation_process_path(id: "36"), title: t("welcome.arroyofresno.link") do %>
-        <%= image_tag "welcome/arroyofresno.jpg", alt: t("welcome.arroyofresno.alt") %>
-      <% end %>
-      <figcaption>
-        <%= link_to debate_legislation_process_path(id: "36"), title: t("welcome.arroyofresno.link") do %>
-          <span><%= t("welcome.arroyofresno.label") %></span><br>
-          <p class="title"><%= t("welcome.arroyofresno.title") %></p>
-        <% end %>
-      </figcaption>
-    </figure>
-    <p><%= t("welcome.arroyofresno.text") %></p>
-    <p>
-      <%= link_to t("welcome.arroyofresno.link"), debate_legislation_process_path(id: "36") %>
-    </p>
+    <%= link_to page_path("como-crear-proyecto-presupuestos-participativos"), title: t("welcome.budgets_guide.link") do %>
+      <figure class="figure-card">
+        <%= image_tag "welcome/budgets_guide.jpg", alt: t("welcome.budgets_guide.alt") %>
+        <figcaption>
+          <span><%= t("welcome.budgets_guide.label") %></span><br>
+          <h3><%= t("welcome.budgets_guide.title") %></h3>
+        </figcaption>
+      </figure>
+      <p class="description"><%= t("welcome.budgets_guide.text") %></p>
+      <p><%= t("welcome.budgets_guide.link") %></p>
+    <% end %>
   </div>
 
   <div class="small-12 medium-4 column margin-bottom">
-    <figure class="figure-card">
-      <%= link_to once_plazas_results_path, title: t("welcome.once_plazas.link") do %>
+    <%= link_to legislation_process_path(id: "38"), title: t("welcome.terrazas.link") do %>
+      <figure class="figure-card">
+        <%= image_tag "welcome/terrazas.jpg", alt: t("welcome.terrazas.alt") %>
+        <figcaption>
+          <span><%= t("welcome.terrazas.label") %></span><br>
+          <h3><%= t("welcome.terrazas.title") %></h3>
+        </figcaption>
+      </figure>
+      <p class="description"><%= t("welcome.terrazas.text") %></p>
+      <p><%= t("welcome.terrazas.link") %></p>
+    <% end %>
+  </div>
+
+  <div class="small-12 medium-4 column margin-bottom">
+    <%= link_to legislation_process_path(id: "40"), title: t("welcome.movilidad.link") do %>
+      <figure class="figure-card">
+        <%= image_tag "welcome/movilidad.jpg", alt: t("welcome.movilidad.alt") %>
+        <figcaption>
+          <span><%= t("welcome.movilidad.label") %></span><br>
+          <h3><%= t("welcome.movilidad.title") %></h3>
+        </figcaption>
+      </figure>
+      <p class="description"><%= t("welcome.movilidad.text") %></p>
+      <p><%= t("welcome.movilidad.link") %></p>
+    <% end %>
+  </div>
+
+  <div class="small-12 medium-6 column margin-bottom">
+    <%= link_to once_plazas_results_path, title: t("welcome.once_plazas.link") do %>
+      <figure class="figure-card">
         <%= image_tag "welcome/once_plazas.jpg", alt: t("welcome.once_plazas.alt") %>
-      <% end %>
-      <figcaption>
-        <%= link_to once_plazas_results_path, title: t("welcome.once_plazas.link") do %>
+        <figcaption>
           <span><%= t("welcome.once_plazas.label") %></span><br>
-          <p class="title"><%= t("welcome.once_plazas.title") %></p>
-        <% end %>
-      </figcaption>
-    </figure>
-    <p><%= t("welcome.once_plazas.text") %></p>
-    <p>
-      <%= link_to t("welcome.once_plazas.link"), once_plazas_results_path %>
-    </p>
+          <h3><%= t("welcome.once_plazas.title") %></h3>
+        </figcaption>
+      </figure>
+      <p class="description"><%= t("welcome.once_plazas.text") %></p>
+      <p><%= t("welcome.once_plazas.link") %></p>
+    <% end %>
   </div>
 
-  <div class="small-12 medium-4 column margin-bottom">
-    <figure class="figure-card">
-      <%= link_to root_url + "/system/budgets/2016/estado_propuestas_2016_b.xlsx", title: t("welcome.budgets.link") do %>
+  <div class="small-12 medium-6 column margin-bottom">
+    <%= link_to participatory_budget_results_path, title: t("welcome.budgets.link") do %>
+      <figure class="figure-card">
         <%= image_tag "welcome/budgets.jpg", alt: t("welcome.budgets.alt") %>
-      <% end %>
-      <figcaption>
-        <%= link_to root_url + "/system/budgets/2016/estado_propuestas_2016_b.xlsx", title: t("welcome.budgets.link") do %>
+        <figcaption>
           <span><%= t("welcome.budgets.label") %></span><br>
-          <p class="title"><%= t("welcome.budgets.title") %></p>
-        <% end %>
-      </figcaption>
-    </figure>
-    <p><%= t("welcome.budgets.text") %></p>
-    <p>
-      <%= link_to t("welcome.budgets.link"), root_url + "/system/budgets/2016/estado_propuestas_2016_b.xlsx", class: "external-link" %>
-    </p>
+          <h3><%= t("welcome.budgets.title") %></h3>
+        </figcaption>
+      </figure>
+      <p class="description"><%= t("welcome.budgets.text") %></p>
+      <p><%= t("welcome.budgets.link") %></p>
+    <% end %>
   </div>
 </div>

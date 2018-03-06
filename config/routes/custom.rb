@@ -269,3 +269,9 @@ get 'politica-de-privacidad', to: 'pages#show', id: 'privacy',       as: 'privac
 
 # Volunteers
 get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
+
+# Presupuestos participativos 2018
+get '/presupuestos2018/1' => redirect('/presupuestos?pk_campaign=20180219_ParticipativosMadrid18&pk_source=bbdd_usuarios&pk_medium=email&pk_content=fin_plazo_presentacion_proyectos_link_footer')
+
+# Custom pages
+get '/como-crear-proyecto-presupuestos-participativos', to: 'pages#show', id: 'help/budgets/guide_2018', as: 'budgets_guide_2018'

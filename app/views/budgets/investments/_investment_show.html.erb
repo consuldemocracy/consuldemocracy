@@ -1,6 +1,6 @@
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
-            social_url: budget_investments_path(investment),
+            social_url: budget_investment_url(investment.budget, investment),
             social_title: investment.title,
             social_description: investment.description,
             twitter_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil),
@@ -55,6 +55,10 @@
         </p>
       <% end %>
 
+      <%= render 'documents/documents',
+                  documents: investment.documents,
+                  max_documents_allowed: Budget::Investment.max_documents_allowed %>
+
       <%= render 'shared/tags', taggable: investment %>
 
       <% if investment.external_url.present? %>
@@ -63,7 +67,7 @@
         </div>
       <% end %>
 
-      <% if investment.unfeasible? && investment.unfeasibility_explanation.present? %>
+      <% if investment.should_show_unfeasibility_explanation? %>
         <h2><%= t('budgets.investments.show.unfeasibility_explanation') %></h2>
         <p><%= investment.unfeasibility_explanation %></p>
       <% end %>
@@ -149,7 +153,8 @@
         share_title: t("budgets.investments.show.share"),
         title: investment.title,
         image_url: image_absolute_url(investment.image, :thumb),
-        url: budget_investment_url(budget_id: investment.budget_id, id: investment.id)
+        url: budget_investment_url(investment.budget, investment),
+        description: investment.title
       } %>
 
       <% if current_user %>
