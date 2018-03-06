@@ -220,17 +220,19 @@ feature 'Valuation budget investments' do
   end
 
   feature 'Valuate' do
+    let(:admin) { create(:administrator) }
+    let(:investment) do
+      create(:budget_investment, budget: budget, price: nil,
+                                                        administrator: admin)
+    end
+
     background do
-      @investment = create(:budget_investment,
-                            budget: budget,
-                            price: nil,
-                            administrator: create(:administrator))
-      @investment.valuators << valuator
+      investment.valuators << valuator
     end
 
     scenario 'Dossier empty by default' do
       visit valuation_budget_budget_investments_path(budget)
-      click_link @investment.title
+      click_link investment.title
 
       within('#price') { expect(page).to have_content('Undefined') }
       within('#price_first_year') { expect(page).to have_content('Undefined') }
@@ -241,7 +243,7 @@ feature 'Valuation budget investments' do
 
     scenario 'Edit dossier' do
       visit valuation_budget_budget_investments_path(budget)
-      within("#budget_investment_#{@investment.id}") do
+      within("#budget_investment_#{investment.id}") do
         click_link "Edit dossier"
       end
 
@@ -255,7 +257,7 @@ feature 'Valuation budget investments' do
       expect(page).to have_content "Dossier updated"
 
       visit valuation_budget_budget_investments_path(budget)
-      click_link @investment.title
+      click_link investment.title
 
       within('#price') { expect(page).to have_content('12345') }
       within('#price_first_year') { expect(page).to have_content('9876') }
@@ -266,14 +268,14 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Feasibility can be marked as pending' do
-      visit valuation_budget_budget_investment_path(budget, @investment)
+      visit valuation_budget_budget_investment_path(budget, investment)
       click_link 'Edit dossier'
 
       expect(find("#budget_investment_feasibility_undecided")).to be_checked
       choose 'budget_investment_feasibility_feasible'
       click_button 'Save changes'
 
-      visit edit_valuation_budget_budget_investment_path(budget, @investment)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
 
       expect(find("#budget_investment_feasibility_undecided")).not_to be_checked
       expect(find("#budget_investment_feasibility_feasible")).to be_checked
@@ -281,7 +283,7 @@ feature 'Valuation budget investments' do
       choose 'budget_investment_feasibility_undecided'
       click_button 'Save changes'
 
-      visit edit_valuation_budget_budget_investment_path(budget, @investment)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
       expect(find("#budget_investment_feasibility_undecided")).to be_checked
     end
 
@@ -291,7 +293,7 @@ feature 'Valuation budget investments' do
       any_feasibility_fields = ['Valuation finished']
       undecided_fields = feasible_fields + unfeasible_fields + any_feasibility_fields
 
-      visit edit_valuation_budget_budget_investment_path(budget, @investment)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
 
       expect(find("#budget_investment_feasibility_undecided")).to be_checked
 
@@ -321,7 +323,7 @@ feature 'Valuation budget investments' do
 
       click_button 'Save changes'
 
-      visit edit_valuation_budget_budget_investment_path(budget, @investment)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
 
       expect(find("#budget_investment_feasibility_unfeasible")).to be_checked
       feasible_fields.each do |field|
@@ -340,24 +342,24 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Finish valuation' do
-      visit valuation_budget_budget_investment_path(budget, @investment)
+      visit valuation_budget_budget_investment_path(budget, investment)
       click_link 'Edit dossier'
 
       find_field('budget_investment[valuation_finished]').click
       click_button 'Save changes'
 
       visit valuation_budget_budget_investments_path(budget)
-      expect(page).not_to have_content @investment.title
+      expect(page).not_to have_content investment.title
       click_link 'Valuation finished'
 
-      expect(page).to have_content @investment.title
-      click_link @investment.title
+      expect(page).to have_content investment.title
+      click_link investment.title
       expect(page).to have_content('Valuation finished')
     end
 
     scenario 'Validates price formats' do
       visit valuation_budget_budget_investments_path(budget)
-      within("#budget_investment_#{@investment.id}") do
+      within("#budget_investment_#{investment.id}") do
         click_link "Edit dossier"
       end
 
