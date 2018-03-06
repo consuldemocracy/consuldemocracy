@@ -352,6 +352,47 @@ feature 'Valuation budget investments' do
       expect(page).to have_content('Valuation finished')
     end
 
+    context 'Reopen valuation' do
+      background do
+        investment.update(
+          valuation_finished: true,
+          feasibility: 'feasible',
+          unfeasibility_explanation: 'Explanation is explanatory',
+          price: 999,
+          price_first_year: 666,
+          price_explanation: 'Democracy is not cheap',
+          duration: '1 light year'
+        )
+      end
+
+      scenario 'Admins can reopen & modify finished valuation' do
+        logout
+        login_as(admin.user)
+        visit edit_valuation_budget_budget_investment_path(budget, investment)
+
+        expect(page).to have_selector("input[id='budget_investment_feasibility_undecided']")
+        expect(page).to have_selector("textarea[id='budget_investment_unfeasibility_explanation']")
+        expect(page).to have_selector("input[name='budget_investment[valuation_finished]']")
+        expect(page).to have_button('Save changes')
+      end
+
+      scenario 'Valuators that are not admins cannot reopen or modify a finished valuation' do
+        visit edit_valuation_budget_budget_investment_path(budget, investment)
+
+        expect(page).not_to have_selector("input[id='budget_investment_feasibility_undecided']")
+        expect(page).not_to have_selector("textarea[id='budget_investment_unfeasibility_explanation']")
+        expect(page).not_to have_selector("input[name='budget_investment[valuation_finished]']")
+        expect(page).to have_content('Valuation finished')
+        expect(page).to have_content('Feasibility: Feasible')
+        expect(page).to have_content('Feasibility explanation: Explanation is explanatory')
+        expect(page).to have_content('Price (€): 999')
+        expect(page).to have_content('Cost during the first year: 666')
+        expect(page).to have_content('Price explanation: Democracy is not cheap')
+        expect(page).to have_content('Time scope: 1 light year')
+        expect(page).not_to have_button('Save changes')
+      end
+    end
+
     scenario 'Validates price formats' do
       visit valuation_budget_budget_investments_path(budget)
       within("#budget_investment_#{investment.id}") do
