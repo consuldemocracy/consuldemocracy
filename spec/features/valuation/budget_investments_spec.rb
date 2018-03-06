@@ -140,17 +140,23 @@ feature 'Valuation budget investments' do
   end
 
   feature 'Show' do
-    scenario 'visible for assigned valuators' do
-      administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
-      valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
-      investment = create(:budget_investment,
-                           budget: budget,
-                           price: 1234,
-                           feasibility: 'unfeasible',
-                           unfeasibility_explanation: 'It is impossible',
-                           administrator: administrator)
-      investment.valuators << [valuator, valuator2]
+    let(:administrator) do
+      create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
+    end
+    let(:second_valuator) do
+      create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
+    end
+    let(:investment) do
+      create(:budget_investment, budget: budget, price: 1234, feasibility: 'unfeasible',
+                                 unfeasibility_explanation: 'It is impossible',
+                                 administrator: administrator)
+    end
 
+    background do
+      investment.valuators << [valuator, second_valuator]
+    end
+
+    scenario 'visible for assigned valuators' do
       visit valuation_budget_budget_investments_path(budget)
 
       click_link investment.title
@@ -174,16 +180,6 @@ feature 'Valuation budget investments' do
       logout
       login_as create(:administrator).user
 
-      administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
-      valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
-      investment = create(:budget_investment,
-                           budget: budget,
-                           price: 1234,
-                           feasibility: 'unfeasible',
-                           unfeasibility_explanation: 'It is impossible',
-                           administrator: administrator)
-      investment.valuators << [valuator, valuator2]
-
       visit valuation_budget_budget_investment_path(budget, investment)
 
       expect(page).to have_content(investment.title)
@@ -204,15 +200,6 @@ feature 'Valuation budget investments' do
     scenario 'not visible for not assigned valuators' do
       logout
       login_as create(:valuator).user
-
-      valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
-      investment = create(:budget_investment,
-                           budget: budget,
-                           price: 1234,
-                           feasibility: 'unfeasible',
-                           unfeasibility_explanation: 'It is impossible',
-                           administrator: create(:administrator))
-      investment.valuators << [valuator, valuator2]
 
       expect { visit valuation_budget_budget_investment_path(budget, investment) }.to raise_error "Not Found"
     end
