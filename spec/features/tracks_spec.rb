@@ -301,40 +301,65 @@ feature 'Tracking' do
       Setting['per_page_code_head'] = '<script type="text/javascript">function weboConv(idConv){}</script>'
     end
 
-    scenario "Codes", :js do
-      visit root_path
-      expect(page.html).to have_content "weboConv(23);"
+    context "Codes", :js do
+      scenario "root_path" do
+        visit root_path
+        expect(page.html).to have_content "weboConv(23);"
+      end
 
-      visit "users/sign_up"
-      expect(page.html).to have_content "weboConv(24);"
+      scenario "users/sign_up" do
+        visit "users/sign_up"
+        expect(page.html).to have_content "weboConv(24);"
+      end
 
-      visit "users/sign_up/success"
-      expect(page.html).to have_content "weboConv(26);"
+      scenario "users/sign_up/success" do
+        visit "users/sign_up/success"
+        expect(page.html).to have_content "weboConv(26);"
+      end
 
-      visit "debates"
-      expect(page.html).to have_content "weboConv(27);"
+      scenario "debates" do
+        visit "debates"
+        expect(page.html).to have_content "weboConv(27);"
+      end
+    end
 
-      user = create(:user, :level_two)
-      login_as(user)
+    context "Codes after login", :js do
 
-      visit "debates/new"
-      expect(page.html).to have_content "weboConv(28);"
+      background do
+        user = create(:user, :level_two)
+        login_as(user)
+      end
 
-      visit "proposals"
-      expect(page.html).to have_content "weboConv(29);"
+      scenario "debates/new" do
+        visit "debates/new"
+        expect(page.html).to have_content "weboConv(28);"
+      end
 
-      visit "proposals/new"
-      expect(page.html).to have_content "weboConv(30);"
+      scenario "proposals" do
+        visit "proposals"
+        expect(page.html).to have_content "weboConv(29);"
+      end
 
-      visit "procesos"
-      expect(page.html).to have_content "weboConv(32);"
+      scenario "proposals/new" do
+        visit "proposals/new"
+        expect(page.html).to have_content "weboConv(30);"
+      end
 
-      budget = create(:budget)
-      visit "presupuestos"
-      expect(page.html).to have_content "weboConv(33);"
+      scenario "procesos" do
+        visit "procesos"
+        expect(page.html).to have_content "weboConv(32);"
+      end
 
-      visit help_path
-      expect(page.html).to have_content "weboConv(34);"
+      scenario "presupuestos" do
+        budget = create(:budget)
+        visit "presupuestos"
+        expect(page.html).to have_content "weboConv(33);"
+      end
+
+      scenario "help_path" do
+        visit help_path
+        expect(page.html).to have_content "weboConv(34);"
+      end
     end
 
     scenario "codes with turbolinks", :js do
