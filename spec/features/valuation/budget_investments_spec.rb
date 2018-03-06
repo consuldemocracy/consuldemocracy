@@ -2,16 +2,21 @@ require 'rails_helper'
 
 feature 'Valuation budget investments' do
 
+  let(:budget) { create(:budget, :valuating) }
+  let(:valuator) do
+    create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
+  end
+
   background do
-    @valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
-    login_as(@valuator.user)
-    @budget = create(:budget, :valuating)
+    login_as(valuator.user)
     Setting['feature.budgets.valuators_allowed'] = true
   end
 
   scenario 'Disabled with a feature flag' do
     Setting['feature.budgets'] = nil
-    expect{ visit valuation_budget_budget_investments_path(create(:budget)) }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect{
+      visit valuation_budget_budget_investments_path(create(:budget))
+    }.to raise_exception(FeatureFlags::FeatureDisabled)
 
     Setting['feature.budgets'] = true
   end
@@ -22,41 +27,44 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Index shows budget investments assigned to current valuator' do
-    investment1 = create(:budget_investment, :visible_to_valuators, budget: @budget)
-    investment2 = create(:budget_investment, :visible_to_valuators, budget: @budget)
+    investment1 = create(:budget_investment, :visible_to_valuators, budget: budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, budget: budget)
 
-    investment1.valuators << @valuator
+    investment1.valuators << valuator
 
-    visit valuation_budget_budget_investments_path(@budget)
+    visit valuation_budget_budget_investments_path(budget)
 
     expect(page).to have_content(investment1.title)
     expect(page).not_to have_content(investment2.title)
   end
 
   scenario 'Index shows no budget investment to admins no valuators' do
-    investment1 = create(:budget_investment, :visible_to_valuators, budget: @budget)
-    investment2 = create(:budget_investment, :visible_to_valuators, budget: @budget)
+    investment1 = create(:budget_investment, :visible_to_valuators, budget: budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, budget: budget)
 
-    investment1.valuators << @valuator
+    investment1.valuators << valuator
 
     logout
     login_as create(:administrator).user
-    visit valuation_budget_budget_investments_path(@budget)
+    visit valuation_budget_budget_investments_path(budget)
 
     expect(page).not_to have_content(investment1.title)
     expect(page).not_to have_content(investment2.title)
   end
 
   scenario 'Index orders budget investments by votes' do
-    investment10  = create(:budget_investment, :visible_to_valuators, budget: @budget, cached_votes_up: 10)
-    investment100 = create(:budget_investment, :visible_to_valuators, budget: @budget, cached_votes_up: 100)
-    investment1   = create(:budget_investment, :visible_to_valuators, budget: @budget, cached_votes_up: 1)
+    investment10  = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                      cached_votes_up: 10)
+    investment100 = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                      cached_votes_up: 100)
+    investment1   = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                      cached_votes_up: 1)
 
-    investment1.valuators << @valuator
-    investment10.valuators << @valuator
-    investment100.valuators << @valuator
+    investment1.valuators << valuator
+    investment10.valuators << valuator
+    investment100.valuators << valuator
 
-    visit valuation_budget_budget_investments_path(@budget)
+    visit valuation_budget_budget_investments_path(budget)
 
     expect(investment100.title).to appear_before(investment10.title)
     expect(investment10.title).to appear_before(investment1.title)
@@ -65,11 +73,11 @@ feature 'Valuation budget investments' do
   scenario 'Index displays investments paginated' do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times do
-      investment = create(:budget_investment, :visible_to_valuators, budget: @budget)
-      investment.valuators << @valuator
+      investment = create(:budget_investment, :visible_to_valuators, budget: budget)
+      investment.valuators << valuator
     end
 
-    visit valuation_budget_budget_investments_path(@budget)
+    visit valuation_budget_budget_investments_path(budget)
 
     expect(page).to have_css('.budget_investment', count: per_page)
     within("ul.pagination") do
@@ -83,15 +91,19 @@ feature 'Valuation budget investments' do
   end
 
   scenario "Index filtering by heading", :js do
-    group = create(:budget_group, budget: @budget)
+    group = create(:budget_group, budget: budget)
     heading1 = create(:budget_heading, name: "District 9", group: group)
     heading2 = create(:budget_heading, name: "Down to the river", group: group)
-    investment1 = create(:budget_investment, :visible_to_valuators, title: "Realocate visitors", heading: heading1, group: group, budget: @budget)
-    investment2 = create(:budget_investment, :visible_to_valuators, title: "Destroy the city", heading: heading2, group: group, budget: @budget)
-    investment1.valuators << @valuator
-    investment2.valuators << @valuator
+    investment1 = create(:budget_investment, :visible_to_valuators, title: "Realocate visitors",
+                                                                    heading: heading1, group: group,
+                                                                    budget: budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, title: "Destroy the city",
+                                                                    heading: heading2, group: group,
+                                                                    budget: budget)
+    investment1.valuators << valuator
+    investment2.valuators << valuator
 
-    visit valuation_budget_budget_investments_path(@budget)
+    visit valuation_budget_budget_investments_path(budget)
 
     expect(page).to have_link("Realocate visitors")
     expect(page).to have_link("Destroy the city")
@@ -119,13 +131,13 @@ feature 'Valuation budget investments' do
     filters_links = {'valuating' => 'Under valuation',
                      'valuation_finished' => 'Valuation finished'}
 
-    visit valuation_budget_budget_investments_path(@budget)
+    visit valuation_budget_budget_investments_path(budget)
 
     expect(page).not_to have_link(filters_links.values.first)
     filters_links.keys.drop(1).each { |filter| expect(page).to have_link(filters_links[filter]) }
 
     filters_links.each_pair do |current_filter, link|
-      visit valuation_budget_budget_investments_path(@budget, filter: current_filter)
+      visit valuation_budget_budget_investments_path(budget, filter: current_filter)
 
       expect(page).not_to have_link(link)
 
@@ -136,41 +148,51 @@ feature 'Valuation budget investments' do
   end
 
   scenario "Index filtering by valuation status" do
-    valuating = create(:budget_investment, :visible_to_valuators, budget: @budget, title: "Ongoing valuation")
-    valuated  = create(:budget_investment, :visible_to_valuators, budget: @budget, title: "Old idea", valuation_finished: true)
-    valuating.valuators << @valuator
-    valuated.valuators << @valuator
+    valuating = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                  title: "Ongoing valuation")
+    valuated  = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                  title: "Old idea",
+                                                                  valuation_finished: true)
+    valuating.valuators << valuator
+    valuated.valuators << valuator
 
-    visit valuation_budget_budget_investments_path(@budget)
-
-    expect(page).to have_content("Ongoing valuation")
-    expect(page).not_to have_content("Old idea")
-
-    visit valuation_budget_budget_investments_path(@budget, filter: 'valuating')
+    visit valuation_budget_budget_investments_path(budget)
 
     expect(page).to have_content("Ongoing valuation")
     expect(page).not_to have_content("Old idea")
 
-    visit valuation_budget_budget_investments_path(@budget, filter: 'valuation_finished')
+    visit valuation_budget_budget_investments_path(budget, filter: 'valuating')
+
+    expect(page).to have_content("Ongoing valuation")
+    expect(page).not_to have_content("Old idea")
+
+    visit valuation_budget_budget_investments_path(budget, filter: 'valuation_finished')
 
     expect(page).not_to have_content("Ongoing valuation")
     expect(page).to have_content("Old idea")
   end
 
   feature 'Show' do
-    scenario 'visible for assigned valuators' do
-      administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
-      valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
-      investment = create(:budget_investment,
-                           :visible_to_valuators,
-                           budget: @budget,
-                           price: 1234,
-                           feasibility: 'unfeasible',
-                           unfeasibility_explanation: 'It is impossible',
-                           administrator: administrator)
-      investment.valuators << [@valuator, valuator2]
+    let(:administrator) do
+      create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
+    end
+    let(:second_valuator) do
+      create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
+    end
+    let(:investment) do
+      create(:budget_investment, budget: budget, price: 1234, feasibility: 'unfeasible',
+                                 unfeasibility_explanation: 'It is impossible',
+                                 administrator: administrator)
+    end
 
-      visit valuation_budget_budget_investments_path(@budget)
+    background do
+      investment.valuators << [valuator, second_valuator]
+    end
+
+    scenario 'visible for assigned valuators' do
+      investment.update(visible_to_valuators: true)
+
+      visit valuation_budget_budget_investments_path(budget)
 
       click_link investment.title
 
@@ -193,17 +215,7 @@ feature 'Valuation budget investments' do
       logout
       login_as create(:administrator).user
 
-      administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
-      valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
-      investment = create(:budget_investment,
-                           budget: @budget,
-                           price: 1234,
-                           feasibility: 'unfeasible',
-                           unfeasibility_explanation: 'It is impossible',
-                           administrator: administrator)
-      investment.valuators << [@valuator, valuator2]
-
-      visit valuation_budget_budget_investment_path(@budget, investment)
+      visit valuation_budget_budget_investment_path(budget, investment)
 
       expect(page).to have_content(investment.title)
       expect(page).to have_content(investment.description)
@@ -224,33 +236,27 @@ feature 'Valuation budget investments' do
       logout
       login_as create(:valuator).user
 
-      valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
-      investment = create(:budget_investment,
-                           budget: @budget,
-                           price: 1234,
-                           feasibility: 'unfeasible',
-                           unfeasibility_explanation: 'It is impossible',
-                           administrator: create(:administrator))
-      investment.valuators << [@valuator, valuator2]
-
-      expect { visit valuation_budget_budget_investment_path(@budget, investment) }.to raise_error "Not Found"
+      expect{
+        visit valuation_budget_budget_investment_path(budget, investment)
+      }.to raise_error "Not Found"
     end
 
   end
 
   feature 'Valuate' do
+    let(:admin) { create(:administrator) }
+    let(:investment) do
+      create(:budget_investment, :visible_to_valuators, budget: budget, price: nil,
+                                                        administrator: admin)
+    end
+
     background do
-      @investment = create(:budget_investment,
-                           :visible_to_valuators,
-                            budget: @budget,
-                            price: nil,
-                            administrator: create(:administrator))
-      @investment.valuators << @valuator
+      investment.valuators << valuator
     end
 
     scenario 'Dossier empty by default' do
-      visit valuation_budget_budget_investments_path(@budget)
-      click_link @investment.title
+      visit valuation_budget_budget_investments_path(budget)
+      click_link investment.title
 
       within('#price') { expect(page).to have_content('Undefined') }
       within('#price_first_year') { expect(page).to have_content('Undefined') }
@@ -260,8 +266,8 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Edit dossier' do
-      visit valuation_budget_budget_investments_path(@budget)
-      within("#budget_investment_#{@investment.id}") do
+      visit valuation_budget_budget_investments_path(budget)
+      within("#budget_investment_#{investment.id}") do
         click_link "Edit dossier"
       end
 
@@ -274,8 +280,8 @@ feature 'Valuation budget investments' do
 
       expect(page).to have_content "Dossier updated"
 
-      visit valuation_budget_budget_investments_path(@budget)
-      click_link @investment.title
+      visit valuation_budget_budget_investments_path(budget)
+      click_link investment.title
 
       within('#price') { expect(page).to have_content('12345') }
       within('#price_first_year') { expect(page).to have_content('9876') }
@@ -286,14 +292,14 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Feasibility can be marked as pending' do
-      visit valuation_budget_budget_investment_path(@budget, @investment)
+      visit valuation_budget_budget_investment_path(budget, investment)
       click_link 'Edit dossier'
 
       expect(find("#budget_investment_feasibility_undecided")).to be_checked
       choose 'budget_investment_feasibility_feasible'
       click_button 'Save changes'
 
-      visit edit_valuation_budget_budget_investment_path(@budget, @investment)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
 
       expect(find("#budget_investment_feasibility_undecided")).not_to be_checked
       expect(find("#budget_investment_feasibility_feasible")).to be_checked
@@ -301,17 +307,18 @@ feature 'Valuation budget investments' do
       choose 'budget_investment_feasibility_undecided'
       click_button 'Save changes'
 
-      visit edit_valuation_budget_budget_investment_path(@budget, @investment)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
       expect(find("#budget_investment_feasibility_undecided")).to be_checked
     end
 
     scenario 'Feasibility selection makes proper fields visible', :js do
-      feasible_fields = ['Price (€)', 'Cost during the first year (€)', 'Price explanation', 'Time scope']
+      feasible_fields = ['Price (€)', 'Cost during the first year (€)', 'Price explanation',
+                         'Time scope']
       unfeasible_fields = ['Feasibility explanation']
       any_feasibility_fields = ['Valuation finished']
       undecided_fields = feasible_fields + unfeasible_fields + any_feasibility_fields
 
-      visit edit_valuation_budget_budget_investment_path(@budget, @investment)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
 
       expect(find("#budget_investment_feasibility_undecided")).to be_checked
 
@@ -341,7 +348,7 @@ feature 'Valuation budget investments' do
 
       click_button 'Save changes'
 
-      visit edit_valuation_budget_budget_investment_path(@budget, @investment)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
 
       expect(find("#budget_investment_feasibility_unfeasible")).to be_checked
       feasible_fields.each do |field|
@@ -360,24 +367,24 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Finish valuation' do
-      visit valuation_budget_budget_investment_path(@budget, @investment)
+      visit valuation_budget_budget_investment_path(budget, investment)
       click_link 'Edit dossier'
 
       find_field('budget_investment[valuation_finished]').click
       click_button 'Save changes'
 
-      visit valuation_budget_budget_investments_path(@budget)
-      expect(page).not_to have_content @investment.title
+      visit valuation_budget_budget_investments_path(budget)
+      expect(page).not_to have_content investment.title
       click_link 'Valuation finished'
 
-      expect(page).to have_content @investment.title
-      click_link @investment.title
+      expect(page).to have_content investment.title
+      click_link investment.title
       expect(page).to have_content('Valuation finished')
     end
 
     scenario 'Validates price formats' do
-      visit valuation_budget_budget_investments_path(@budget)
-      within("#budget_investment_#{@investment.id}") do
+      visit valuation_budget_budget_investments_path(budget)
+      within("#budget_investment_#{investment.id}") do
         click_link "Edit dossier"
       end
 
@@ -394,11 +401,11 @@ feature 'Valuation budget investments' do
 
       investment = create(:budget_investment,
                            :visible_to_valuators,
-                           budget: @budget)
-      investment.valuators << [@valuator]
+                           budget: budget)
+      investment.valuators << [valuator]
 
-      login_as(@valuator.user)
-      visit valuation_budget_budget_investment_path(@budget, investment)
+      login_as(valuator.user)
+      visit valuation_budget_budget_investment_path(budget, investment)
 
       expect{ click_link 'Edit dossier' }.
       to raise_error( ActionController::RoutingError)
@@ -413,12 +420,12 @@ feature 'Valuation budget investments' do
 
       investment = create(:budget_investment,
                            :visible_to_valuators,
-                           budget: @budget)
+                           budget: budget)
       investment.valuators << [valuator]
 
 
       login_as(admin.user)
-      visit valuation_budget_budget_investment_path(@budget, investment)
+      visit valuation_budget_budget_investment_path(budget, investment)
       click_link 'Edit dossier'
 
       expect(page).to have_content investment.title
