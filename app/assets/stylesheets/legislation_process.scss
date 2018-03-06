@@ -1,28 +1,17 @@
 // Table of Contents
 //
-// 01. Utils
-// 02. Hero
-// 03. Legislation process navigation
-// 04. Debate list
-// 05. Debate quiz
-// 06. Legislation draft
-// 07. Legislation allegations
-// 08. Legislation changes
-// 09. Legislation comments
-// 10. Legislation draft comment
+// 01. Hero
+// 02. Legislation process navigation
+// 03. Debate list
+// 04. Debate quiz
+// 05. Legislation allegations
+// 06. Legislation changes
+// 07. Legislation comments
+// 08. Legislation draft comment
 //
 
-// 01. Utils
-// ---------
 
-$grey-heading: #e6e6e6;
-$border-dark:  darken($border, 10%);
-
-.grey-heading {
-  background: $grey-heading;
-}
-
-// 02. Hero
+// 01. Hero
 // --------
 
 .legislation-hero {
@@ -31,19 +20,15 @@ $border-dark:  darken($border, 10%);
     list-style: none;
     margin-left: 0;
 
-    li::before {
-      color: #8aa8be;
-      content: '■';
-      padding-right: $line-height / 4;
-      vertical-align: text-bottom;
+    li {
+
+      &::before {
+        color: #8aa8be;
+        content: '■';
+        padding-right: $line-height / 4;
+        vertical-align: text-bottom;
+      }
     }
-  }
-
-  .debate-add-info {
-    border-top: 1px solid $border-dark;
-    margin-top: $line-height;
-    padding-top: $line-height;
-
   }
 
   .title {
@@ -51,40 +36,12 @@ $border-dark:  darken($border, 10%);
     text-transform: uppercase;
   }
 
-  .description {
-
-    li {
-
-      p {
-        display: inline;
-      }
-    }
-  }
-
-  .button-subscribe {
-    margin-top: $line-height;
-
-    @include breakpoint(medium) {
-      margin-top: $line-height * 2;
-      padding: 0.5em 1em;
-    }
-
-    h3 {
-      margin-bottom: 0;
-    }
-
-    p {
-      font-size: $small-font-size;
-      margin-bottom: 0;
-    }
-
-    &:hover h3 {
-      color: #fff;
-    }
+  .description li p {
+    display: inline;
   }
 }
 
-// 03. Legislation process navigation
+// 02. Legislation process navigation
 // ----------------------------------
 
 .legislation-process-categories {
@@ -92,10 +49,9 @@ $border-dark:  darken($border, 10%);
 
   .legislation-process-list {
     border-bottom: 1px solid $medium-gray;
-    margin: 0 1rem 1rem;
+    margin: 0 rem-calc(16) rem-calc(16);
 
     ul {
-
       list-style: none;
       margin: 0 auto;
       margin-bottom: 0;
@@ -103,12 +59,12 @@ $border-dark:  darken($border, 10%);
     }
 
     li {
+      border-bottom: 2px solid transparent;
       cursor: pointer;
       display: inline-block;
       margin-bottom: $line-height;
       margin-right: $line-height;
       transition: all 0.4s;
-      border-bottom: 2px solid transparent;
 
       @include breakpoint(medium) {
         margin-bottom: 0;
@@ -138,7 +94,7 @@ $border-dark:  darken($border, 10%);
         margin-bottom: 0;
 
         @include breakpoint(medium) {
-          margin-bottom: 1rem;
+          margin-bottom: rem-calc(16);
         }
       }
     }
@@ -149,20 +105,20 @@ $border-dark:  darken($border, 10%);
   }
 }
 
-// 04. Debate list
+// 03. Debate list
 // ----------------
 
 .debate-chooser {
-  padding: 2rem 1rem;
+  padding: rem-calc(32) rem-calc(16);
 
   @include breakpoint(medium) {
     .debate-chooser {
-      padding: 2rem 3rem;
+      padding: rem-calc(32) rem-calc(48);
     }
   }
 
   .debate-block {
-    margin-bottom: 2.5rem;
+    margin-bottom: rem-calc(40);
 
     .debate-type {
       text-transform: uppercase;
@@ -171,7 +127,7 @@ $border-dark:  darken($border, 10%);
       font-size: $small-font-size;
 
       .icon-debates {
-        margin-left: 0.2rem;
+        margin-left: rem-calc(3);
       }
     }
 
@@ -186,17 +142,17 @@ $border-dark:  darken($border, 10%);
     color: #6d6d6d;
 
     .icon-comments {
-      margin-right: 0.2rem;
+      margin-right: rem-calc(3);
     }
   }
 
   .debate-info {
-    padding: 1rem;
+    padding: rem-calc(16);
     background: #f4f4f4;
   }
 }
 
-// 05. Debate quiz
+// 04. Debate quiz
 // ---------------
 
 .debate-questions {
@@ -310,12 +266,12 @@ $border-dark:  darken($border, 10%);
 
     .control-indicator {
       position: absolute;
-      top: 0.95rem;
-      left: 0.95rem;
+      top: 15px;
+      left: 15px;
       display: block;
-      width: 1rem;
-      height: 1rem;
-      line-height: 1rem;
+      width: rem-calc(16);
+      height: rem-calc(16);
+      line-height: rem-calc(16);
       font-size: 65%;
       text-align: center;
       border: 2px solid #9c9c9c;
@@ -325,112 +281,30 @@ $border-dark:  darken($border, 10%);
   }
 }
 
-// 06. Legislation draft
-// ---------------------
-
-.debate-draft {
-  padding: 10rem 2rem 15rem;
-  display: block;
-  background: #f2f2f2;
-
-  button {
-    height: rem-calc(90);
-
-    h3 {
-      margin-bottom: 0;
-    }
-
-    p {
-      margin-bottom: 0;
-      font-size: $small-font-size;
-    }
-  }
-}
-
-// 07. Legislation allegations
+// 05. Legislation allegations
 // ---------------------------
-
-.legislation-allegation {
-  padding-top: 1rem;
-
-  .headline {
-    margin-bottom: 0;
-
-    .headline-small {
-      padding-top: 0.75rem;
-    }
-  }
-
-  .button-circle {
-    line-height: 0;
-    padding: 0;
-    width: rem-calc(30);
-    height: rem-calc(30);
-    border-radius: 50%;
-
-    span {
-      padding-left: rem-calc(1);
-
-      &::before {
-        line-height: 1.55;
-      }
-    }
-  }
-
-  .icon-checkmark-circle {
-    font-size: 1.5rem;
-    vertical-align: bottom;
-    color: $text-medium;
-    margin-right: 0.5rem;
-  }
-
-  .button-subscribed {
-    margin-top: 1rem;
-    border: 1px solid #d1d1d1;
-    background: #f2f2f2;
-
-    @include breakpoint(medium) {
-      padding: 0.5em 1em;
-    }
-
-    h3 {
-      display: inline-block;
-      color: $text;
-      margin-bottom: 0;
-    }
-
-    p {
-      margin-bottom: 0;
-      font-size: $small-font-size;
-    }
-
-    &:hover h3 {
-      color: $text;
-    }
-  }
-}
 
 .draft-panels {
   position: relative;
-  padding: 2rem 0;
+  padding: rem-calc(32) 0;
 
   .draft-chooser {
-    margin-bottom: 2rem;
+    margin-bottom: rem-calc(32);
 
     h3 {
       vertical-align: top;
       display: inline-block;
       font-weight: 400;
-      margin-right: 0.5rem;
+      margin-right: rem-calc(8);
     }
 
     span {
-      margin-left: 0.25rem;
+      margin-left: rem-calc(4);
       font-style: italic;
       font-size: $small-font-size;
       color: $text-medium;
       vertical-align: top;
-      line-height: 2.35rem;
+      line-height: rem-calc(37);
     }
 
     .select-box {
@@ -457,7 +331,7 @@ $border-dark:  darken($border, 10%);
     }
 
     .button {
-      margin-top: 1rem;
+      margin-top: rem-calc(16);
 
       @include breakpoint(medium) {
         margin-top: 0;
@@ -469,8 +343,8 @@ $border-dark:  darken($border, 10%);
 
     @include breakpoint(medium) {
       display: flex;
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem;
+      padding-left: rem-calc(15);
+      padding-right: rem-calc(15);
     }
 
     .calc-index {
@@ -521,42 +395,42 @@ $border-dark:  darken($border, 10%);
     .draft-panel {
       text-transform: uppercase;
       font-weight: 700;
-      padding: 0.5rem 1rem;
+      padding: rem-calc(8) rem-calc(16);
       color: #696969;
       background: #f2f2f2;
       font-size: $small-font-size;
 
       .icon-comments {
-        margin-right: 0.25rem;
+        margin-right: rem-calc(4);
       }
 
       .icon-banner {
         line-height: 0;
         color: $text-medium;
         vertical-align: sub;
-        margin-right: 0.25rem;
+        margin-right: rem-calc(4);
       }
     }
 
     .draft-index {
       ul:first-child {
-        font-size: 1rem;
+        font-size: rem-calc(16);
         text-decoration: underline;
-        margin-left: 2.25rem;
-        margin-top: 1.5rem;
+        margin-left: rem-calc(36);
+        margin-top: $line-height;
       }
 
       ul {
         list-style: none;
 
         li {
-          margin-bottom: 1rem;
+          margin-bottom: rem-calc(16);
         }
 
         .open::before {
           cursor: pointer;
           position: absolute;
-          margin-left: -1.25rem;
+          margin-left: rem-calc(-20);
           font-family: 'icons';
           content: '\58';
           -webkit-font-smoothing: antialiased;
@@ -566,7 +440,7 @@ $border-dark:  darken($border, 10%);
         .closed::before {
           cursor: pointer;
           position: absolute;
-          margin-left: -1.25rem;
+          margin-left: rem-calc(-20);
           font-family: 'icons';
           content: '\5a';
           -webkit-font-smoothing: antialiased;
@@ -577,21 +451,21 @@ $border-dark:  darken($border, 10%);
 
     .draft-text {
       position: relative;
-      padding: 1rem;
+      padding: rem-calc(16);
 
       @include breakpoint(medium) {
-        padding: 2rem 2rem 2rem 3rem;
-      };
+        padding: rem-calc(32) rem-calc(32) rem-calc(32) rem-calc(48);
+      }
 
       h2 {
         font-weight: 400;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
+        margin-bottom: rem-calc(32);
+        margin-top: rem-calc(32);
       }
 
       h3 {
         font-weight: 400;
-        margin-bottom: 1rem;
+        margin-bottom: rem-calc(16);
       }
 
       .anchor::before {
@@ -602,7 +476,7 @@ $border-dark:  darken($border, 10%);
         left: 0;
 
         @include breakpoint(medium) {
-          left: 1.5rem;
+          left: 24px;
         }
       }
 
@@ -638,12 +512,11 @@ $border-dark:  darken($border, 10%);
           text-transform: uppercase;
           font-weight: 700;
           color: #696969;
-          margin-top: 4rem;
+          margin-top: rem-calc(64);
           transform: rotate(-90deg);
           filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
         }
       }
-
     }
   }
 
@@ -687,9 +560,9 @@ $border-dark:  darken($border, 10%);
       .show-comments {
         width: 105%;
         background: #fafafa;
-        padding: 0.25rem 2.5rem 0.25rem 0.25rem;
+        padding: rem-calc(4) rem-calc(40) rem-calc(4) rem-calc(4);
         border: 1px solid $border;
-        margin-bottom: 1rem;
+        margin-bottom: rem-calc(16);
 
         p {
           margin-bottom: 0;
@@ -718,15 +591,15 @@ $border-dark:  darken($border, 10%);
 
       .comment-box {
         width: rem-calc(375);
-        padding: 1rem;
+        padding: rem-calc(4);
         background: #f9f9f9;
         border: 1px solid $border;
         display: block;
-        margin-bottom: 2rem;
+        margin-bottom: rem-calc(32);
 
         .button {
           font-size: $small-font-size;
-          padding: 0.5em 1em;
+          padding: rem-calc(10) rem-calc(20);
         }
 
         .publish-comment {
@@ -735,8 +608,8 @@ $border-dark:  darken($border, 10%);
 
         .comment-header {
           color: #838383;
-          padding-bottom: 0.5rem;
-          margin-bottom: 1rem;
+          padding-bottom: rem-calc(8);
+          margin-bottom: rem-calc(16);
           border-bottom: 1px solid $border;
 
           .comment-number {
@@ -745,7 +618,7 @@ $border-dark:  darken($border, 10%);
           }
 
           .icon-comment {
-            margin-right: 0.5rem;
+            margin-right: rem-calc(8);
           }
 
           a .icon-expand {
@@ -759,7 +632,7 @@ $border-dark:  darken($border, 10%);
           position: relative;
 
           .participation-not-allowed {
-            padding: 1.25rem 0.5rem;
+            padding: rem-calc(20) rem-calc(8);
           }
         }
 
@@ -767,17 +640,17 @@ $border-dark:  darken($border, 10%);
           position: relative;
 
           .participation-not-allowed {
-            font-size: 0.875rem;
+            font-size: rem-calc(14);
             height: rem-calc(50);
-            padding: 0.85rem 0.75rem;
+            padding: $line-height / 2;
             top: -18px;
           }
         }
 
         .comment-input {
-          padding-bottom: 4rem;
-          margin-bottom: 1rem;
-          margin-top: 1rem;
+          padding-bottom: rem-calc(64);
+          margin-bottom: rem-calc(16);
+          margin-top: rem-calc(16);
           border-bottom: 1px solid $border;
 
           .comment-advice {
@@ -785,7 +658,7 @@ $border-dark:  darken($border, 10%);
             border-right: 1px solid #d0d0d0;
             border-left: 1px solid #d0d0d0;
             width: 100%;
-            padding: 0.5rem;
+            padding: rem-calc(8);
             display: inline-block;
             font-size: $small-font-size;
             background: #dfdfdf;
@@ -808,7 +681,7 @@ $border-dark:  darken($border, 10%);
             border-left: 1px solid #d0d0d0;
             width: 100%;
             height: rem-calc(200);
-            margin-bottom: 0.5rem;
+            margin-bottom: rem-calc(8);
           }
 
           .comment-actions {
@@ -823,19 +696,19 @@ $border-dark:  darken($border, 10%);
 
         .comment {
           border-bottom: 1px solid $border;
-          padding-bottom: 0.75rem;
-          margin-bottom: 1rem;
+          padding-bottom: $line-height / 2;
+          margin-bottom: rem-calc(16);
           font-size: $small-font-size;
 
           .comment-text {
-            margin-bottom: 0.5rem;
+            margin-bottom: rem-calc(8);
 
             p {
               line-height: 1.5;
               font-size: $small-font-size;
 
               &:last-child {
-                margin-bottom: 0.5rem;
+                margin-bottom: rem-calc(8);
               }
             }
           }
@@ -865,11 +738,11 @@ $border-dark:  darken($border, 10%);
               display: inline-block;
 
               .comment-votes-number {
-                margin-right: 0.25rem;
+                margin-right: rem-calc(4);
                 display: inline-block;
 
                 &::after {
-                  margin-left: 0.25rem;
+                  margin-left: rem-calc(4);
                   content: '|';
                 }
               }
@@ -887,7 +760,7 @@ $border-dark:  darken($border, 10%);
               }
 
               .icon-like {
-                margin-right: 0.25rem;
+                margin-right: rem-calc(4);
               }
             }
           }
@@ -906,7 +779,7 @@ $border-dark:  darken($border, 10%);
   }
 }
 
-// 08. Legislation changes
+// 06. Legislation changes
 // -----------------
 
 .legislation-changes {
@@ -916,10 +789,10 @@ $border-dark:  darken($border, 10%);
     margin-left: 0;
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: rem-calc(16);
 
       &::before {
-        margin-right: 0.25rem;
+        margin-right: rem-calc(4);
         content: '—';
       }
     }
@@ -927,7 +800,7 @@ $border-dark:  darken($border, 10%);
 
   .changes-link {
     display: block;
-    margin-left: 1rem;
+    margin-left: rem-calc(16);
     font-size: $small-font-size;
 
     @include breakpoint(medium) {
@@ -945,7 +818,7 @@ $border-dark:  darken($border, 10%);
         color: #999;
         line-height: 0;
         vertical-align: sub;
-        margin-left: 0.5rem;
+        margin-left: rem-calc(8);
       }
 
       &:active,
@@ -957,25 +830,21 @@ $border-dark:  darken($border, 10%);
   }
 }
 
-// 09. Legislation comments
+// 07. Legislation comments
 // -----------------
 
 .legislation-comments {
 
-  .pull-right {
-    float: right;
-  }
-
   .comment-section {
     background: #fafafa;
-    padding: 1rem;
+    padding: rem-calc(16);
     border: 1px solid #dee0e3;
-    margin-top: 0.25rem;
-    margin-bottom: 1rem;
+    margin-top: rem-calc(4);
+    margin-bottom: rem-calc(16);
   }
 
   .comment {
-    margin-bottom: 3rem;
+    margin-bottom: rem-calc(48);
 
     a {
       span {
@@ -990,11 +859,11 @@ $border-dark:  darken($border, 10%);
       }
 
       .icon-expand {
-        margin-left: 0.25rem;
+        margin-left: rem-calc(4);
       }
 
       .icon-comments {
-        margin-right: 0.25rem;
+        margin-right: rem-calc(4);
       }
 
       &:active,
@@ -1006,25 +875,21 @@ $border-dark:  darken($border, 10%);
   }
 }
 
-// 10. Legislation draft comment
+// 08. Legislation draft comment
 // -----------------
 
 .legislation-comment {
 
   .annotation-share-comment {
-    margin-bottom: 2rem;
-  }
-
-  .pull-right {
-    float: right;
+    margin-bottom: rem-calc(32);
   }
 
   .comment-section {
     background: #fafafa;
-    padding: 1rem;
+    padding: rem-calc(16);
     border: 1px solid #dee0e3;
-    margin-top: 0.25rem;
-    margin-bottom: 1rem;
+    margin-top: rem-calc(4);
+    margin-bottom: rem-calc(16);
   }
 
   .comment {
@@ -1042,11 +907,11 @@ $border-dark:  darken($border, 10%);
       }
 
       .icon-expand {
-        margin-left: 0.25rem;
+        margin-left: rem-calc(4);
       }
 
       .icon-comments {
-        margin-right: 0.25rem;
+        margin-right: rem-calc(4);
       }
 
       &:active,
