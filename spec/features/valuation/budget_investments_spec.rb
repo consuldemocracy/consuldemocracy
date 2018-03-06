@@ -14,7 +14,9 @@ feature 'Valuation budget investments' do
 
   scenario 'Disabled with a feature flag' do
     Setting['feature.budgets'] = nil
-    expect{ visit valuation_budget_budget_investments_path(create(:budget)) }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect{
+      visit valuation_budget_budget_investments_path(create(:budget))
+    }.to raise_exception(FeatureFlags::FeatureDisabled)
 
     Setting['feature.budgets'] = true
   end
@@ -51,9 +53,12 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Index orders budget investments by votes' do
-    investment10  = create(:budget_investment, :visible_to_valuators, budget: budget, cached_votes_up: 10)
-    investment100 = create(:budget_investment, :visible_to_valuators, budget: budget, cached_votes_up: 100)
-    investment1   = create(:budget_investment, :visible_to_valuators, budget: budget, cached_votes_up: 1)
+    investment10  = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                      cached_votes_up: 10)
+    investment100 = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                      cached_votes_up: 100)
+    investment1   = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                      cached_votes_up: 1)
 
     investment1.valuators << valuator
     investment10.valuators << valuator
@@ -89,8 +94,12 @@ feature 'Valuation budget investments' do
     group = create(:budget_group, budget: budget)
     heading1 = create(:budget_heading, name: "District 9", group: group)
     heading2 = create(:budget_heading, name: "Down to the river", group: group)
-    investment1 = create(:budget_investment, :visible_to_valuators, title: "Realocate visitors", heading: heading1, group: group, budget: budget)
-    investment2 = create(:budget_investment, :visible_to_valuators, title: "Destroy the city", heading: heading2, group: group, budget: budget)
+    investment1 = create(:budget_investment, :visible_to_valuators, title: "Realocate visitors",
+                                                                    heading: heading1, group: group,
+                                                                    budget: budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, title: "Destroy the city",
+                                                                    heading: heading2, group: group,
+                                                                    budget: budget)
     investment1.valuators << valuator
     investment2.valuators << valuator
 
@@ -139,8 +148,11 @@ feature 'Valuation budget investments' do
   end
 
   scenario "Index filtering by valuation status" do
-    valuating = create(:budget_investment, :visible_to_valuators, budget: budget, title: "Ongoing valuation")
-    valuated  = create(:budget_investment, :visible_to_valuators, budget: budget, title: "Old idea", valuation_finished: true)
+    valuating = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                  title: "Ongoing valuation")
+    valuated  = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                  title: "Old idea",
+                                                                  valuation_finished: true)
     valuating.valuators << valuator
     valuated.valuators << valuator
 
@@ -161,7 +173,7 @@ feature 'Valuation budget investments' do
   end
 
   feature 'Show' do
-    let(:administrator) do
+    let(:administrator) do
       create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
     end
     let(:second_valuator) do
@@ -224,7 +236,9 @@ feature 'Valuation budget investments' do
       logout
       login_as create(:valuator).user
 
-      expect { visit valuation_budget_budget_investment_path(budget, investment) }.to raise_error "Not Found"
+      expect{
+        visit valuation_budget_budget_investment_path(budget, investment)
+      }.to raise_error "Not Found"
     end
 
   end
@@ -298,7 +312,8 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Feasibility selection makes proper fields visible', :js do
-      feasible_fields = ['Price (€)', 'Cost during the first year (€)', 'Price explanation', 'Time scope']
+      feasible_fields = ['Price (€)', 'Cost during the first year (€)', 'Price explanation',
+                         'Time scope']
       unfeasible_fields = ['Feasibility explanation']
       any_feasibility_fields = ['Valuation finished']
       undecided_fields = feasible_fields + unfeasible_fields + any_feasibility_fields
