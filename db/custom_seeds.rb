@@ -12,7 +12,7 @@ def log(msg)
 end
 
 require_relative 'custom_seeds/settings'
-#require_relative 'custom_seeds/geozones'
+require_relative 'custom_seeds/geozones'
 #require_relative 'custom_seeds/users'
 #require_relative 'custom_seeds/tags_categories'
 #require_relative 'custom_seeds/debates'
