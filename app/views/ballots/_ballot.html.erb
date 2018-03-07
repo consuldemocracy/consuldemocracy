@@ -11,10 +11,17 @@
     </h2>
 
     <% if @ballot.geozone.present? && district_wide_amount_spent(@ballot) > 0 %>
-      <%= social_share_button_tag("#{t('ballots.show.social_share',
-                                        amount: format_price(district_wide_amount_spent(@ballot)),
-                                        geozone: @ballot.geozone.name)} #{setting['twitter_hashtag']}",
-                                  url: participatory_budget_url) %>
+
+      <% ballot_title = t("ballots.show.social_share",
+                           amount: format_price(district_wide_amount_spent(@ballot)),
+                           geozone: @ballot.geozone.name) %>
+
+      <%= render partial: 'shared/social_share', locals: {
+        title: ballot_title,
+        url: participatory_budget_url,
+        description: ballot_title
+      } %>
+
     <% end %>
 
     <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>

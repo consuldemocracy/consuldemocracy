@@ -30,24 +30,19 @@
       </p>
     </div>
 
-    <div class="small-12 medium-6 large-7 column">
-      <aside>
-        <div class="sidebar-divider"></div>
-        <h3><%= t("probes.show.share") %></h3>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{@probe_option.name} #{setting['twitter_hashtag']}") %>
-          <a href="whatsapp://send?text=<%= CGI.escape(@probe_option.name) %>&nbsp;<%= plaza_probe_option_url(@probe_option) %>" data-action="share/whatsapp/share">
-            <span class="icon-whatsapp whatsapp"></span>
-            <span class="show-for-sr"><%= t("social.whatsapp") %></span>
-          </a>
-        </div>
-      </aside>
+    <aside class="small-12 medium-6 large-7 column">
+      <%= render partial: 'shared/social_share', locals: {
+        share_title: t("probes.show.share"),
+        title: @probe_option.name,
+        url: plaza_probe_option_url(@probe_option),
+        description: @probe_option.name
+      } %>
 
       <div class="callout success margin-top">
         <p>Tu voto ha sido recibido, mientras esté el proceso abierto puedes cambiarlo en cualquier momento.</p>
         <p><small>* Las cinco plazas con mayor puntuación obtienen de 5 a 1 punto respectivamente, que se sumarán a los puntos del jurado para esta primera preselección. Pasada la fase de preselección, las dos plazas finalistas serán votadas por la ciudadanía, que decidirá directamente cuál de las dos será la ganadora. Puedes <a href="http://www.coam.org/media/Default%20Files/servicios/concursos/concursos_ocam/2016/plaza_espania/160617_bases_plaza_espana.pdf" target="_blank" title="<%= t("shared.target_blank_html") %>">consultar toda la información</a> sobre el jurado y el proceso.</small></p>
         <p><small>** El jurado está evaluando que todos los proyectos cumplan los requisitos exigidos, incluyendo los criterios ciudadanos aprobados. En caso de que alguno no los cumpla y sea descalificado, se informará por correo electrónico a sus votantes. Puedes cambiar tu voto hasta el último día de votación. En ningún caso pasará a la siguiente fase ninguna propuesta que no cumpla las bases adecuadamente, se detecte previamente o no.</small></p>
       </div>
-    </div>
+    </aside>
   </div>
 <% end %>
