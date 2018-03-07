@@ -638,13 +638,13 @@ FactoryBot.define do
   factory :poll_partial_result, class: 'Poll::PartialResult' do
     association :question, factory: [:poll_question, :with_answers]
     association :author, factory: :user
-    origin { 'web' }
+    origin 'web'
     answer { question.question_answers.sample.title }
   end
 
   factory :poll_recount, class: 'Poll::Recount' do
     association :author, factory: :user
-    origin { 'web' }
+    origin 'web'
   end
 
   factory :officing_residence, class: 'Officing::Residence' do
