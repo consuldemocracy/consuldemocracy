@@ -1,5 +1,3 @@
-# can [:update, :destroy ], Image, :imageable_id => user.id, :imageable_type => 'User'
-# and add a feature like forbidden/without_role_images_spec.rb to test it
 module Imageable
   extend ActiveSupport::Concern
 

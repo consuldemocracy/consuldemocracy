@@ -68,12 +68,12 @@ es:
         new_link: Crear nuevo presupuesto
         filter: Filtro
         filters:
-          current: Abiertos
+          open: Abiertos
           finished: Terminados
-        budget_investments: Ver propuestas de inversión
+        budget_investments: Ver proyectos de gasto
         table_name: Nombre
         table_phase: Fase
-        table_investments: Propuestas de inversión
+        table_investments: Proyectos de gasto
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
@@ -84,6 +84,17 @@ es:
         notice: Campaña de presupuestos participativos actualizada
       edit:
         title: Editar campaña de presupuestos participativos
+        delete: Eliminar presupuesto
+        phase: Fase
+        dates: Fechas
+        enabled: Habilitada
+        actions: Acciones
+        edit_phase: Editar fase
+        active: Activa
+        blank_dates: Sin fechas
+      destroy:
+        success_notice: Presupuesto eliminado correctamente
+        unable_notice: No se puede eliminar un presupuesto con proyectos asociados
       new:
         title: Nuevo presupuesto ciudadano
       show:
@@ -98,32 +109,61 @@ es:
         heading: Nombre de la partida
         add_heading: Añadir partida
         amount: Cantidad
-        population: Población
+        population: "Población (opcional)"
+        population_help_text: "Este dato se utiliza exclusivamente para calcular las estadísticas de participación"
         save_heading: Guardar partida
         no_heading: Este grupo no tiene ninguna partida asignada.
         table_heading: Partida
         table_amount: Cantidad
         table_population: Población
+        population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.
+    budget_phases:
+      edit:
+        start_date: Fecha de Inicio
+        end_date: Fecha de fin
+        summary: Resumen
+        summary_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
+        description: Descripción
+        description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
+        enabled: Fase habilitada
+        enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
+        save_changes: Guardar cambios
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
+        advanced_filters: Filtros avanzados
+        placeholder: Buscar proyectos
+        sort_by:
+          placeholder: Ordenar por
+          id: ID
+          title: Título
+          supports: Apoyos
         filters:
-          valuation_open: Abiertas
+          all: Todos
           without_admin: Sin administrador
-          managed: Gestionando
-          valuating: En evaluación
+          without_valuator: Sin evaluador
+          under_valuation: En evaluación
           valuation_finished: Evaluación finalizada
-          valuation_finished_feasible: Viables
-          selected: Seleccionadas
-          winners: Ganadoras
-          all: Todas
-        title: Propuestas de inversión
+          feasible: Viables
+          selected: Seleccionados
+          undecided: Sin decidir
+          unfeasible: Inviables
+          max_per_heading: Corte por partida
+          winners: Ganadores
+          one_filter_html: "Filtros en uso: <b><em>%{filter}</em></b>"
+          two_filters_html: "Filtros en uso: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          search: Buscar
+          filter: Filtrar
+        download_current_selection: "Descargar selección actual"
+        no_budget_investments: "No hay proyectos de gasto."
+        title: Proyectos de gasto
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
@@ -141,13 +181,13 @@ es:
         table_geozone: "Ámbito de actuación"
         table_feasibility: "Viabilidad"
         table_valuation_finished: "Ev. Fin."
-        table_selection: "Selección"
+        table_selection: "Seleccionado"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         classification: Clasificación
-        info: '%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}'
+        info: '%{budget_name} - Grupo: %{group_name} - Proyecto de gasto %{id}'
         edit: Editar
         edit_classification: Editar clasificación
         by: Autor
@@ -192,11 +232,16 @@ es:
         table_id: "ID"
         table_title: "Título"
         table_description: "Descripción"
+        table_publication_date: "Fecha de publicación"
         table_actions: "Acciones"
         delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
+        image: "Imagen"
+        show_image: "Mostrar imagen"
+        documents: "Documentos"
       new:
         creating: Crear hito
+        date: Fecha
       edit:
         title: Editar hito
       create:
@@ -239,7 +284,7 @@ es:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
         user: Usuario
-        no_hidden_users: No hay uusarios bloqueados.
+        no_hidden_users: No hay usuarios bloqueados.
       show:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
@@ -419,7 +464,9 @@ es:
       administrators: Administradores
       managers: Gestores
       moderators: Moderadores
-      newsletter: Envío de Newsletters
+      emails: Envío de emails
+      newsletters: Newsletters
+      emails_download: Descarga de emails
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
       polls: Votaciones
@@ -468,10 +515,53 @@ es:
         delete: Borrar
       search:
         title: 'Moderadores: Búsqueda de usuarios'
+    segment_recipient:
+      all_users: Todos los usuarios
+      administrators: Administradores
+      proposal_authors: Usuarios autores de propuestas
+      investment_authors: Usuarios autores de proyectos de gasto en los actuales presupuestos
+      feasible_and_undecided_investment_authors: "Usuarios autores de algún proyecto de gasto en los actuales presupuestos que no cumpla: [evaluación finalizada inviable]"
+      selected_investment_authors: Usuarios autores de proyectos de gasto seleccionadas en los actuales presupuestos
+      winner_investment_authors: Usuarios autores de proyectos de gasto ganadoras en los actuales presupuestos
+      invalid_recipients_segment: "El segmento de destinatarios es inválido"
     newsletters:
+      create_success: Newsletter creada correctamente
+      update_success: Newsletter actualizada correctamente
+      send_success: Newsletter enviada correctamente
+      delete_success: Newsletter borrada correctamente
       index:
         title: Envío de newsletters
-        button: Descargar zip con lista de usuarios
+        new_newsletter: Crear newsletter
+        subject: Asunto
+        segment_recipient: Destinatarios
+        sent: Enviado
+        actions: Acciones
+        draft: Borrador
+        edit: Editar
+        delete: Borrar
+        preview: Previsualizar
+        empty_newsletters: No hay newsletters para mostrar
+      new:
+        title: Nueva newsletter
+      edit:
+        title: Editar newsletter
+      show:
+        title: Vista previa de newsletter
+        send: Enviar
+        affected_users: (%{n} usuarios afectados)
+        sent_at: Enviado
+        subject: Asunto
+        segment_recipient: Destinatarios
+        from: Enviado por
+        body: Contenido del email
+        body_help_text: Así es como verán el email los usuarios
+        send_alert: ¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?
+    emails_download:
+      index:
+        title: Descarga de emails
+        download_segment: Descargar direcciones de correo electrónico
+        download_segment_help_text: Descarga en formato CSV
+        download_emails_button: Descargar lista de emails
     valuators:
       index:
         title: Evaluadores
@@ -487,7 +577,7 @@ es:
       search:
         title: 'Evaluadores: Búsqueda de usuarios'
       summary:
-        title: Resumen de evaluación de propuestas de inversión
+        title: Resumen de evaluación de proyectos de gasto
         valuator_name: Evaluador
         finished_and_feasible_count: Finalizadas viables
         finished_and_unfeasible_count: Finalizadas inviables
@@ -558,6 +648,8 @@ es:
           assign: Asignar urna
           unassign: Asignar urna
     poll_booth_assignments:
+      alert:
+        shifts: "Hay turnos asignados para esta urna. Si la desasignas, esos turnos se eliminarán. ¿Deseas continuar?"
       flash:
         destroy: "Urna desasignada"
         create: "Urna asignada"
@@ -939,7 +1031,7 @@ es:
           proposal_votes: Votos en propuestas
           proposals: Propuestas
           budgets: Presupuestos abiertos
-          budget_investments: Propuestas de inversión
+          budget_investments: Proyectos de gasto
           spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
@@ -955,6 +1047,7 @@ es:
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
+        polls: Votaciones
       direct_messages:
         title: Mensajes directos
         total: Total
@@ -963,6 +1056,17 @@ es:
         title: Notificaciones de propuestas
         total: Total
         proposals_with_notifications: Propuestas con notificaciones
+      polls:
+        title: Estadísticas de votaciones
+        all: Votaciones
+        web_participants: Participantes en Web
+        total_participants: Participantes totales
+        poll_questions: 'Preguntas de votación: %{poll}'
+        table:
+          poll_name: Votación
+          question_name: Pregunta
+          origin_web: Participantes Web
+          origin_total: Participantes Totales
     tags:
       create: Crear tema
       destroy: Eliminar tema

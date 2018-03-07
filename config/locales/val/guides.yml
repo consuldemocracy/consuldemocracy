@@ -1,0 +1,18 @@
+val:
+  guides:
+    title: "Tens una idea per %{org}?"
+    subtitle: "Eligeix que vols crear"
+    budget_investment:
+      title: "Un projecte d'inversió"
+      feature_1_html: "Idees de com invertir part del <strong>pressupost municipal</strong>"
+      feature_2_html: "Els projectes d'inversió son acceptats <strong>entre Gener i Març</strong>"
+      feature_3_html: "Si reben avals, si son viables i competencia municipal, passen a la fase de votació"
+      feature_4_html: "Si els ciutadans aproven els projectes, es duen a terme"
+      new_button: Vull crear un pressupost participatiu
+    proposal:
+      title: "Una proposta ciutadana"
+      feature_1_html: "Idees sobre alguna acció que l'Ajuntament pot dur a terme"
+      feature_2_html: "Necessites <strong>%{votes} avals</strong> en %{org} per a passar a votació"
+      feature_3_html: "Activar en quansevol moment, tens <strong>un any</strong> per a recabar avals"
+      feature_4_html: "Si s'ha aprovat en votació, l'Ajuntament accepta la proposta"
+      new_button: Vull crear una proposta

@@ -1,6 +1,8 @@
-require 'coveralls'
-Coveralls.wear!('rails')
 ENV['RAILS_ENV'] ||= 'test'
+if ENV['TRAVIS']
+  require 'coveralls'
+  Coveralls.wear!('rails')
+end
 require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 
@@ -19,7 +21,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
-  config.after :each do
+  config.after do
     Warden.test_reset!
   end
 end

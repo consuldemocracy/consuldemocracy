@@ -24,18 +24,15 @@ feature 'Valuation budgets' do
     end
 
     scenario 'Filters by phase' do
-      budget1 = create(:budget)
-      budget2 = create(:budget, :accepting)
-      budget3 = create(:budget, :selecting)
-      budget4 = create(:budget, :balloting)
-      budget5 = create(:budget, :finished)
+      budget1 = create(:budget, :finished)
+      budget2 = create(:budget, :finished)
+      budget3 = create(:budget, :accepting)
 
       visit valuation_budgets_path
-      expect(page).to have_content(budget1.name)
-      expect(page).to have_content(budget2.name)
+
+      expect(page).not_to have_content(budget1.name)
+      expect(page).not_to have_content(budget2.name)
       expect(page).to have_content(budget3.name)
-      expect(page).to have_content(budget4.name)
-      expect(page).to_not have_content(budget5.name)
     end
 
   end

@@ -29,10 +29,13 @@ en:
         unselected_title: Investments not selected for balloting phase
         unselected: See investments not selected for balloting phase
     phase:
+      drafting: Draft (Not visible to the public)
+      informing: Informing
       accepting: Accepting projects
       reviewing: Reviewing projects
       selecting: Selecting projects
       valuating: Valuating projects
+      publishing_prices: Publishing projects prices
       balloting: Balloting projects
       reviewing_ballots: Reviewing Ballots
       finished: Finished budget
@@ -41,9 +44,17 @@ en:
       section_header:
         icon_alt: Participatory budgets icon
         title: Participatory budgets
-        help: Help about participatory budgets
+        help: Help with participatory budgets
+        all_phases: See all phases
+      all_phases: Budget investment's phases
+      map: Budget investments' proposals located geographically
+      investment_proyects: List of all investment projects
+      unfeasible_investment_proyects: List of all unfeasible investment projects
+      not_selected_investment_proyects: List of all investment projects not selected for balloting
+      finished_budgets: Finished participatory budgets
+      see_results: See results
       section_footer:
-        title: Help about participatory budgets
+        title: Help with participatory budgets
         description: With the participatory budgets the citizens decide to which projects presented by the neighbors is destined a part of the municipal budget.
         help_text_1: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. Any registered person over 16 years old can propose an investment project that is preselected in a phase of citizen supports."
         help_text_2: "The most voted projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council once the municipal budgets of the next year are approved."
@@ -58,6 +69,7 @@ en:
         map_location: "Map location"
         map_location_instructions: "Navigate the map to the location and place the marker."
         map_remove_marker: "Remove map marker"
+        location: "Location additional info"
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
@@ -84,7 +96,7 @@ en:
           zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
           verify_account: "verify your account"
-          create: "Create budget investment"
+          create: "Create a budget investment"
           not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
           sign_in: "sign in"
           sign_up: "sign up"
@@ -101,7 +113,7 @@ en:
         unfeasibility_explanation: Unfeasibility explanation
         code_html: 'Investment project code: <strong>%{code}</strong>'
         location_html: 'Location: <strong>%{location}</strong>'
-        organization_name_html: 'Organization: <strong>%{name}</strong>'
+        organization_name_html: 'Proposed on behalf of: <strong>%{name}</strong>'
         share: Share
         title: Investment project
         supports: Supports
@@ -110,14 +122,15 @@ en:
         comments_tab: Comments
         milestones_tab: Milestones
         no_milestones: Don't have defined milestones
-        milestone_publish_date: "Published %{publish_date}"
+        milestone_publication_date: "Published %{publication_date}"
+        author: Author
       wrong_price_format: Only integer numbers
       investment:
         add: Vote
         already_added: You have already added this investment project
-        already_supported: You have already supported this. Share it!
+        already_supported: You have already supported this investment project. Share it!
         support_title: Support this project
-        confirm_group: "You can only support investments in one district. If you continue you cannot change your decision. Are you sure?"
+        confirm_group: "You can only support investments in one heading. If you continue you cannot change your decision. Are you sure?"
         supports:
           one: 1 support
           other: "%{count} supports"
@@ -128,8 +141,10 @@ en:
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
         check_ballot_link: "check my ballot"
+        price: "This heading have a budget of"
     progress_bar:
-      available: "Available: "
+      assigned: "You have assigned: "
+      available: "Available budget: "
     show:
       group: Group
       phase: Actual phase
@@ -147,8 +162,16 @@ en:
       ballot_lines_count: Times selected
       hide_discarded_link: Hide discarded
       show_all_link: Show all
-      price: Cost
+      price: Price
       amount_available: Available budget
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "
       incompatibles: Incompatibles
+      investment_proyects: List of all investment projects
+      unfeasible_investment_proyects: List of all unfeasible investment projects
+      not_selected_investment_proyects: List of all investment projects not selected for balloting
+    phases:
+      errors:
+        dates_range_invalid: "Start date can't be equal or later than End date"
+        prev_phase_dates_invalid: "Start date must be later than the start date of the previous enabled phase (%{phase_name})"
+        next_phase_dates_invalid: "End date must be earlier than the end date of the next enabled phase (%{phase_name})"

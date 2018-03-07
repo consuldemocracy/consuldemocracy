@@ -29,7 +29,7 @@ feature 'Admin feature flags' do
 
     within("#edit_setting_#{setting_id}") do
       expect(page).to have_button "Disable"
-      expect(page).to_not have_button "Enable"
+      expect(page).not_to have_button "Enable"
       click_button 'Disable'
     end
 
@@ -59,7 +59,7 @@ feature 'Admin feature flags' do
 
     within("#edit_setting_#{setting_id}") do
       expect(page).to have_button "Enable"
-      expect(page).to_not have_button "Disable"
+      expect(page).not_to have_button "Disable"
       click_button 'Enable'
     end
 

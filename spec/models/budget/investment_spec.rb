@@ -3,29 +3,33 @@ require 'rails_helper'
 describe Budget::Investment do
   let(:investment) { build(:budget_investment) }
 
-  it "should be valid" do
+  describe "Concerns" do
+    it_behaves_like "notifiable"
+  end
+
+  it "is valid" do
     expect(investment).to be_valid
   end
 
-  it "should not be valid without an author" do
+  it "is not valid without an author" do
     investment.author = nil
-    expect(investment).to_not be_valid
+    expect(investment).not_to be_valid
   end
 
   describe "#title" do
-    it "should not be valid without a title" do
+    it "is not valid without a title" do
       investment.title = nil
-      expect(investment).to_not be_valid
+      expect(investment).not_to be_valid
     end
 
-    it "should not be valid when very short" do
+    it "is not valid when very short" do
       investment.title = "abc"
-      expect(investment).to_not be_valid
+      expect(investment).not_to be_valid
     end
 
-    it "should not be valid when very long" do
+    it "is not valid when very long" do
       investment.title = "a" * 81
-      expect(investment).to_not be_valid
+      expect(investment).not_to be_valid
     end
   end
 
@@ -57,35 +61,35 @@ describe Budget::Investment do
   end
 
   describe "#unfeasibility_explanation blank" do
-    it "should be valid if valuation not finished" do
+    it "is valid if valuation not finished" do
       investment.unfeasibility_explanation = ""
       investment.valuation_finished = false
       expect(investment).to be_valid
     end
 
-    it "should be valid if valuation finished and feasible" do
+    it "is valid if valuation finished and feasible" do
       investment.unfeasibility_explanation = ""
       investment.feasibility = "feasible"
       investment.valuation_finished = true
       expect(investment).to be_valid
     end
 
-    it "should not be valid if valuation finished and unfeasible" do
+    it "is not valid if valuation finished and unfeasible" do
       investment.unfeasibility_explanation = ""
       investment.feasibility = "unfeasible"
       investment.valuation_finished = true
-      expect(investment).to_not be_valid
+      expect(investment).not_to be_valid
     end
   end
 
   describe "#price blank" do
-    it "should be valid if valuation not finished" do
+    it "is valid if valuation not finished" do
       investment.price = ""
       investment.valuation_finished = false
       expect(investment).to be_valid
     end
 
-    it "should be valid if valuation finished and unfeasible" do
+    it "is valid if valuation finished and unfeasible" do
       investment.price = ""
       investment.unfeasibility_explanation = "reason"
       investment.feasibility = "unfeasible"
@@ -93,11 +97,11 @@ describe Budget::Investment do
       expect(investment).to be_valid
     end
 
-    it "should not be valid if valuation finished and feasible" do
+    it "is not valid if valuation finished and feasible" do
       investment.price = ""
       investment.feasibility = "feasible"
       investment.valuation_finished = true
-      expect(investment).to_not be_valid
+      expect(investment).not_to be_valid
     end
   end
 
@@ -118,7 +122,7 @@ describe Budget::Investment do
     let(:investment) { create(:budget_investment) }
 
     it "sets the time when the unfeasible email was sent" do
-      expect(investment.unfeasible_email_sent_at).to_not be
+      expect(investment.unfeasible_email_sent_at).not_to be
       investment.send_unfeasible_email
       expect(investment.unfeasible_email_sent_at).to be
     end
@@ -137,7 +141,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::PHASES.reject {|phase| phase == "selecting"}.each do |phase|
+      Budget::Phase::PHASE_KINDS.reject {|phase| phase == "selecting"}.each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, budget: budget)
 
@@ -155,7 +159,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::PHASES.reject {|phase| phase == "valuating"}.each do |phase|
+      Budget::Phase::PHASE_KINDS.reject {|phase| phase == "valuating"}.each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, budget: budget)
 
@@ -180,7 +184,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::PHASES.reject {|phase| phase == "balloting"}.each do |phase|
+      Budget::Phase::PHASE_KINDS.reject {|phase| phase == "balloting"}.each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, :selected, budget: budget)
 
@@ -189,46 +193,82 @@ describe Budget::Investment do
     end
   end
 
-  describe "#should_show_price_info?" do
-    it "returns true for feasibles if phase is balloting or later and price_explanation is present" do
-      ["balloting", "reviewing_ballots", "finished"].each do |phase|
-        budget = create(:budget, phase: phase)
-        investment = create(:budget_investment, :feasible, budget: budget, price_explanation: "price explanation")
+  describe "#should_show_price?" do
+    let(:budget) { create(:budget, :publishing_prices) }
+    let(:investment) do
+      create(:budget_investment, :selected, budget: budget)
+    end
 
-        expect(investment.should_show_price_info?).to eq(true)
+    it "returns true for selected investments which budget's phase is publishing_prices or later" do
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update(phase: phase)
+
+        expect(investment.should_show_price?).to eq(true)
       end
     end
 
     it "returns false in any other phase" do
-      (Budget::PHASES - ["balloting", "reviewing_ballots", "finished"]).each do |phase|
-        budget = create(:budget, phase: phase)
-        investment = create(:budget_investment, :feasible, budget: budget, price_explanation: "price explanation")
+      (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).each do |phase|
+        budget.update(phase: phase)
 
-        expect(investment.should_show_price_info?).to eq(false)
+        expect(investment.should_show_price?).to eq(false)
       end
     end
 
-    it "returns false if investment is unfeasible" do
-      budget = create(:budget, phase: "balloting")
-      investment = create(:budget_investment, :unfeasible, budget: budget, price_explanation: "price explanation")
+    it "returns false if investment is not selected" do
+      investment.selected = false
 
-      expect(investment.should_show_price_info?).to eq(false)
+      expect(investment.should_show_price?).to eq(false)
     end
 
-    it "returns false if price_explanation is blank" do
-      budget = create(:budget, phase: "balloting")
-      investment = create(:budget_investment, :unfeasible, budget: budget, price_explanation: "")
+    it "returns false if price is not present" do
+      investment.price = nil
 
-      expect(investment.should_show_price_info?).to eq(false)
+      expect(investment.should_show_price?).to eq(false)
+    end
+  end
+
+  describe "#should_show_price_explanation?" do
+    let(:budget) { create(:budget, :publishing_prices) }
+    let(:investment) do
+      create(:budget_investment, :selected, budget: budget, price_explanation: "because of reasons")
+    end
+
+    it "returns true for selected with price_explanation & budget in publishing_prices or later" do
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update(phase: phase)
+
+        expect(investment.should_show_price_explanation?).to eq(true)
+      end
+    end
+
+    it "returns false in any other phase" do
+      (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).each do |phase|
+        budget.update(phase: phase)
+
+        expect(investment.should_show_price_explanation?).to eq(false)
+      end
+    end
+
+    it "returns false if investment is not selected" do
+      investment.selected = false
+
+      expect(investment.should_show_price_explanation?).to eq(false)
+    end
+
+    it "returns false if price_explanation is not present" do
+      investment.price_explanation = ""
+
+      expect(investment.should_show_price_explanation?).to eq(false)
     end
   end
 
   describe "by_admin" do
-    it "should return investments assigned to specific administrator" do
+    it "returns investments assigned to specific administrator" do
       investment1 = create(:budget_investment, administrator_id: 33)
       create(:budget_investment)
 
-      by_admin = Budget::Investment.by_admin(33)
+      by_admin = described_class.by_admin(33)
 
       expect(by_admin.size).to eq(1)
       expect(by_admin.first).to eq(investment1)
@@ -236,7 +276,7 @@ describe Budget::Investment do
   end
 
   describe "by_valuator" do
-    it "should return investments assigned to specific valuator" do
+    it "returns investments assigned to specific valuator" do
       investment1 = create(:budget_investment)
       investment2 = create(:budget_investment)
       investment3 = create(:budget_investment)
@@ -248,7 +288,7 @@ describe Budget::Investment do
       investment2.valuators << valuator2
       investment3.valuators << [valuator1, valuator2]
 
-      by_valuator = Budget::Investment.by_valuator(valuator1.id)
+      by_valuator = described_class.by_valuator(valuator1.id)
 
       expect(by_valuator.size).to eq(2)
       expect(by_valuator.sort).to eq([investment1, investment3].sort)
@@ -257,11 +297,11 @@ describe Budget::Investment do
 
   describe "scopes" do
     describe "valuation_open" do
-      it "should return all investments with false valuation_finished" do
+      it "returns all investments with false valuation_finished" do
         investment1 = create(:budget_investment, valuation_finished: true)
         investment2 = create(:budget_investment)
 
-        valuation_open = Budget::Investment.valuation_open
+        valuation_open = described_class.valuation_open
 
         expect(valuation_open.size).to eq(1)
         expect(valuation_open.first).to eq(investment2)
@@ -269,12 +309,12 @@ describe Budget::Investment do
     end
 
     describe "without_admin" do
-      it "should return all open investments without assigned admin" do
+      it "returns all open investments without assigned admin" do
         investment1 = create(:budget_investment, valuation_finished: true)
         investment2 = create(:budget_investment, administrator: create(:administrator))
         investment3 = create(:budget_investment)
 
-        without_admin = Budget::Investment.without_admin
+        without_admin = described_class.without_admin
 
         expect(without_admin.size).to eq(1)
         expect(without_admin.first).to eq(investment3)
@@ -282,13 +322,13 @@ describe Budget::Investment do
     end
 
     describe "managed" do
-      it "should return all open investments with assigned admin but without assigned valuators" do
+      it "returns all open investments with assigned admin but without assigned valuators" do
         investment1 = create(:budget_investment, administrator: create(:administrator))
         investment2 = create(:budget_investment, administrator: create(:administrator), valuation_finished: true)
         investment3 = create(:budget_investment, administrator: create(:administrator))
         investment1.valuators << create(:valuator)
 
-        managed = Budget::Investment.managed
+        managed = described_class.managed
 
         expect(managed.size).to eq(1)
         expect(managed.first).to eq(investment3)
@@ -296,7 +336,7 @@ describe Budget::Investment do
     end
 
     describe "valuating" do
-      it "should return all investments with assigned valuator but valuation not finished" do
+      it "returns all investments with assigned valuator but valuation not finished" do
         investment1 = create(:budget_investment)
         investment2 = create(:budget_investment)
         investment3 = create(:budget_investment, valuation_finished: true)
@@ -304,7 +344,7 @@ describe Budget::Investment do
         investment2.valuators << create(:valuator)
         investment3.valuators << create(:valuator)
 
-        valuating = Budget::Investment.valuating
+        valuating = described_class.valuating
 
         expect(valuating.size).to eq(1)
         expect(valuating.first).to eq(investment2)
@@ -312,7 +352,7 @@ describe Budget::Investment do
     end
 
     describe "valuation_finished" do
-      it "should return all investments with valuation finished" do
+      it "returns all investments with valuation finished" do
         investment1 = create(:budget_investment)
         investment2 = create(:budget_investment)
         investment3 = create(:budget_investment, valuation_finished: true)
@@ -320,7 +360,7 @@ describe Budget::Investment do
         investment2.valuators << create(:valuator)
         investment3.valuators << create(:valuator)
 
-        valuation_finished = Budget::Investment.valuation_finished
+        valuation_finished = described_class.valuation_finished
 
         expect(valuation_finished.size).to eq(1)
         expect(valuation_finished.first).to eq(investment3)
@@ -328,60 +368,60 @@ describe Budget::Investment do
     end
 
     describe "feasible" do
-      it "should return all feasible investments" do
+      it "returns all feasible investments" do
         feasible_investment = create(:budget_investment, :feasible)
         create(:budget_investment)
 
-        expect(Budget::Investment.feasible).to eq [feasible_investment]
+        expect(described_class.feasible).to eq [feasible_investment]
       end
     end
 
     describe "unfeasible" do
-      it "should return all unfeasible investments" do
+      it "returns all unfeasible investments" do
         unfeasible_investment = create(:budget_investment, :unfeasible)
         create(:budget_investment, :feasible)
 
-        expect(Budget::Investment.unfeasible).to eq [unfeasible_investment]
+        expect(described_class.unfeasible).to eq [unfeasible_investment]
       end
     end
 
     describe "not_unfeasible" do
-      it "should return all feasible and undecided investments" do
+      it "returns all feasible and undecided investments" do
         unfeasible_investment = create(:budget_investment, :unfeasible)
         undecided_investment = create(:budget_investment, :undecided)
         feasible_investment = create(:budget_investment, :feasible)
 
-        expect(Budget::Investment.not_unfeasible.sort).to eq [undecided_investment, feasible_investment].sort
+        expect(described_class.not_unfeasible.sort).to eq [undecided_investment, feasible_investment].sort
       end
     end
 
     describe "undecided" do
-      it "should return all undecided investments" do
+      it "returns all undecided investments" do
         unfeasible_investment = create(:budget_investment, :unfeasible)
         undecided_investment = create(:budget_investment, :undecided)
         feasible_investment = create(:budget_investment, :feasible)
 
-        expect(Budget::Investment.undecided).to eq [undecided_investment]
+        expect(described_class.undecided).to eq [undecided_investment]
       end
     end
 
     describe "selected" do
-      it "should return all selected investments" do
+      it "returns all selected investments" do
         selected_investment = create(:budget_investment, :selected)
         unselected_investment = create(:budget_investment, :unselected)
 
-        expect(Budget::Investment.selected).to eq [selected_investment]
+        expect(described_class.selected).to eq [selected_investment]
       end
     end
 
     describe "unselected" do
-      it "should return all unselected not_unfeasible investments" do
+      it "returns all unselected not_unfeasible investments" do
         selected_investment = create(:budget_investment, :selected)
         unselected_unfeasible_investment = create(:budget_investment, :unselected, :unfeasible)
         unselected_undecided_investment = create(:budget_investment, :unselected, :undecided)
         unselected_feasible_investment = create(:budget_investment, :unselected, :feasible)
 
-        expect(Budget::Investment.unselected.sort).to eq [unselected_undecided_investment, unselected_feasible_investment].sort
+        expect(described_class.unselected.sort).to eq [unselected_undecided_investment, unselected_feasible_investment].sort
       end
     end
   end
@@ -395,11 +435,11 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :feasible,   budget: budget)
       investment3 = create(:budget_investment, :unfeasible, budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, {}, :feasible)
+      results = described_class.apply_filters_and_search(budget, {}, :feasible)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
 
     it "returns unfeasible investments" do
@@ -407,11 +447,11 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :unfeasible, budget: budget)
       investment3 = create(:budget_investment, :feasible,   budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, {}, :unfeasible)
+      results = described_class.apply_filters_and_search(budget, {}, :unfeasible)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
 
     it "returns selected investments" do
@@ -421,11 +461,11 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :feasible, :selected,   budget: budget)
       investment3 = create(:budget_investment, :feasible, :unselected, budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, {}, :selected)
+      results = described_class.apply_filters_and_search(budget, {}, :selected)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
 
     it "returns unselected investments" do
@@ -435,11 +475,11 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :feasible, :unselected, budget: budget)
       investment3 = create(:budget_investment, :feasible, :selected,   budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, {}, :unselected)
+      results = described_class.apply_filters_and_search(budget, {}, :unselected)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
 
     it "returns investmens by heading" do
@@ -452,11 +492,11 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, heading: heading1, budget: budget)
       investment3 = create(:budget_investment, heading: heading2, budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, heading_id: heading1.id)
+      results = described_class.apply_filters_and_search(budget, heading_id: heading1.id)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
 
     it "returns investments by search string" do
@@ -464,24 +504,41 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, title: "improved health", budget: budget)
       investment3 = create(:budget_investment, title: "finance",         budget: budget)
 
-      results = Budget::Investment.apply_filters_and_search(budget, search: "health")
+      results = described_class.apply_filters_and_search(budget, search: "health")
 
       expect(results).to     include investment1
       expect(results).to     include investment2
-      expect(results).to_not include investment3
+      expect(results).not_to include investment3
     end
   end
 
   describe "search" do
 
+    context "attributes" do
+
+      it "searches by title" do
+        budget_investment = create(:budget_investment, title: 'save the world')
+        results = described_class.search('save the world')
+        expect(results).to eq([budget_investment])
+      end
+
+      it "searches by author name" do
+        author = create(:user, username: 'Danny Trejo')
+        budget_investment = create(:budget_investment, author: author)
+        results = described_class.search('Danny')
+        expect(results).to eq([budget_investment])
+      end
+
+    end
+
     context "tags" do
       it "searches by tags" do
         investment = create(:budget_investment, tag_list: 'Latina')
 
-        results = Budget::Investment.search('Latina')
+        results = described_class.search('Latina')
         expect(results.first).to eq(investment)
 
-        results = Budget::Investment.search('Latin')
+        results = described_class.search('Latin')
         expect(results.first).to eq(investment)
       end
     end
@@ -511,7 +568,7 @@ describe Budget::Investment do
       end
 
       it "rejects selections when selecting is not allowed (via admin setting)" do
-        budget.phase = "on_hold"
+        budget.phase = "reviewing"
         expect(district_sp.reason_for_not_being_selectable_by(user)).to eq(:no_selecting_allowed)
       end
 
@@ -576,26 +633,26 @@ describe Budget::Investment do
   describe "Order" do
     describe "#sort_by_confidence_score" do
 
-      it "should order by confidence_score" do
+      it "orders by confidence_score" do
         least_voted = create(:budget_investment, cached_votes_up: 1)
         most_voted = create(:budget_investment, cached_votes_up: 10)
         some_votes = create(:budget_investment, cached_votes_up: 5)
 
-        expect(Budget::Investment.sort_by_confidence_score.first).to eq most_voted
-        expect(Budget::Investment.sort_by_confidence_score.second).to eq some_votes
-        expect(Budget::Investment.sort_by_confidence_score.third).to eq least_voted
+        expect(described_class.sort_by_confidence_score.first).to eq most_voted
+        expect(described_class.sort_by_confidence_score.second).to eq some_votes
+        expect(described_class.sort_by_confidence_score.third).to eq least_voted
       end
 
-      it "should order by confidence_score and then by id" do
+      it "orders by confidence_score and then by id" do
         least_voted  = create(:budget_investment, cached_votes_up: 1)
         most_voted   = create(:budget_investment, cached_votes_up: 10)
         most_voted2  = create(:budget_investment, cached_votes_up: 10)
         least_voted2 = create(:budget_investment, cached_votes_up: 1)
 
-        expect(Budget::Investment.sort_by_confidence_score.first).to eq most_voted2
-        expect(Budget::Investment.sort_by_confidence_score.second).to eq most_voted
-        expect(Budget::Investment.sort_by_confidence_score.third).to eq least_voted2
-        expect(Budget::Investment.sort_by_confidence_score.fourth).to eq least_voted
+        expect(described_class.sort_by_confidence_score.first).to eq most_voted2
+        expect(described_class.sort_by_confidence_score.second).to eq most_voted
+        expect(described_class.sort_by_confidence_score.third).to eq least_voted2
+        expect(described_class.sort_by_confidence_score.fourth).to eq least_voted
       end
     end
   end
@@ -633,13 +690,13 @@ describe Budget::Investment do
   end
 
   describe "#with_supports" do
-    it "should return proposals with supports" do
+    it "returns proposals with supports" do
       inv1 = create(:budget_investment)
       inv2 = create(:budget_investment)
       create(:vote, votable: inv1)
 
-      expect(Budget::Investment.with_supports).to include(inv1)
-      expect(Budget::Investment.with_supports).to_not include(inv2)
+      expect(described_class.with_supports).to include(inv1)
+      expect(described_class.with_supports).not_to include(inv2)
     end
   end
 
@@ -745,7 +802,7 @@ describe Budget::Investment do
       end
 
       it "returns false if budget is not balloting phase" do
-        Budget::PHASES.reject {|phase| phase == "balloting"}.each do |phase|
+        Budget::Phase::PHASE_KINDS.reject {|phase| phase == "balloting"}.each do |phase|
           budget.update(phase: phase)
           investment = create(:budget_investment, budget: budget)
 

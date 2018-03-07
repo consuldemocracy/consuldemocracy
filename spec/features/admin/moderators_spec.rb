@@ -12,7 +12,7 @@ feature 'Admin moderators' do
   scenario 'Index' do
     expect(page).to have_content @moderator.name
     expect(page).to have_content @moderator.email
-    expect(page).to_not have_content @user.name
+    expect(page).not_to have_content @user.name
   end
 
   scenario 'Create Moderator', :js do
@@ -30,7 +30,7 @@ feature 'Admin moderators' do
     click_link 'Delete'
 
     within("#moderators") do
-      expect(page).to_not have_content @moderator.name
+      expect(page).not_to have_content @moderator.name
     end
   end
 
@@ -53,8 +53,8 @@ feature 'Admin moderators' do
 
       expect(page).to have_content('Moderators: User search')
       expect(page).to have_content('No results found')
-      expect(page).to_not have_content(@moderator1.name)
-      expect(page).to_not have_content(@moderator2.name)
+      expect(page).not_to have_content(@moderator1.name)
+      expect(page).not_to have_content(@moderator2.name)
     end
 
     scenario 'search by name' do
@@ -66,7 +66,7 @@ feature 'Admin moderators' do
 
       expect(page).to have_content('Moderators: User search')
       expect(page).to have_content(@moderator1.name)
-      expect(page).to_not have_content(@moderator2.name)
+      expect(page).not_to have_content(@moderator2.name)
     end
 
     scenario 'search by email' do
@@ -78,7 +78,7 @@ feature 'Admin moderators' do
 
       expect(page).to have_content('Moderators: User search')
       expect(page).to have_content(@moderator2.email)
-      expect(page).to_not have_content(@moderator1.email)
+      expect(page).not_to have_content(@moderator1.email)
     end
   end
 

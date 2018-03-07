@@ -58,7 +58,7 @@ feature 'Admin poll questions' do
     visit proposals_path
     click_link "Create question"
 
-    expect(current_path).to eq(new_admin_question_path)
+    expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
     expect(page).to have_field('poll_question_title', with: proposal.title)
 
     select 'Proposals', from: 'poll_question_poll_id'
@@ -92,7 +92,7 @@ feature 'Admin poll questions' do
     visit admin_questions_path
 
     expect(page).to have_content(new_title)
-    expect(page).to_not have_content(old_title)
+    expect(page).not_to have_content(old_title)
   end
 
   scenario 'Destroy' do
@@ -105,7 +105,7 @@ feature 'Admin poll questions' do
       click_link "Delete"
     end
 
-    expect(page).to_not have_content(question1.title)
+    expect(page).not_to have_content(question1.title)
     expect(page).to have_content(question2.title)
   end
 

@@ -41,7 +41,7 @@ describe User do
       flagged = user.comment_flags([comment1, comment2, comment3])
 
       expect(flagged[comment1.id]).to be
-      expect(flagged[comment2.id]).to_not be
+      expect(flagged[comment2.id]).not_to be
       expect(flagged[comment3.id]).to be
     end
   end
@@ -55,7 +55,7 @@ describe User do
   describe "#terms" do
     it "is not valid without accepting the terms of service" do
       subject.terms_of_service = nil
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
   end
 
@@ -74,37 +74,37 @@ describe User do
 
   describe 'preferences' do
     describe 'email_on_comment' do
-      it 'should be false by default' do
+      it 'is false by default' do
         expect(subject.email_on_comment).to eq(false)
       end
     end
 
     describe 'email_on_comment_reply' do
-      it 'should be false by default' do
+      it 'is false by default' do
         expect(subject.email_on_comment_reply).to eq(false)
       end
     end
 
     describe 'subscription_to_website_newsletter' do
-      it 'should be true by default' do
+      it 'is true by default' do
         expect(subject.newsletter).to eq(true)
       end
     end
 
     describe 'email_digest' do
-      it 'should be true by default' do
+      it 'is true by default' do
         expect(subject.email_digest).to eq(true)
       end
     end
 
     describe 'email_on_direct_message' do
-      it 'should be true by default' do
+      it 'is true by default' do
         expect(subject.email_on_direct_message).to eq(true)
       end
     end
 
     describe 'official_position_badge' do
-      it 'should be false by default' do
+      it 'is false by default' do
         expect(subject.official_position_badge).to eq(false)
       end
     end
@@ -176,7 +176,7 @@ describe User do
     end
 
     describe 'when it is an organization' do
-      before(:each) { create(:organization, user: subject) }
+      before { create(:organization, user: subject) }
 
       it "is true when the user is an organization" do
         expect(subject.organization?).to be true
@@ -190,14 +190,14 @@ describe User do
 
   describe "verified_organization?" do
     it "is falsy when the user is not an organization" do
-      expect(subject).to_not be_verified_organization
+      expect(subject).not_to be_verified_organization
     end
 
     describe 'when it is an organization' do
-      before(:each) { create(:organization, user: subject) }
+      before { create(:organization, user: subject) }
 
       it "is false when the user is not a verified organization" do
-        expect(subject).to_not be_verified_organization
+        expect(subject).not_to be_verified_organization
       end
 
       it "is true when the user is a verified organization" do
@@ -208,7 +208,7 @@ describe User do
   end
 
   describe "organization_attributes" do
-    before(:each) { subject.organization_attributes = {name: 'org', responsible_name: 'julia'} }
+    before { subject.organization_attributes = {name: 'org', responsible_name: 'julia'} }
 
     it "triggers the creation of an associated organization" do
       expect(subject.organization).to be
@@ -221,7 +221,7 @@ describe User do
       expect(subject).to be_valid
 
       subject.organization.name = nil
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
   end
 
@@ -278,7 +278,7 @@ describe User do
       create(:user, official_position: "Manager", official_level: 5)
       2.times { create(:user) }
 
-      officials = User.officials
+      officials = described_class.officials
       expect(officials.size).to eq(4)
       officials.each do |user|
         expect(user.official_level).to be > 0
@@ -353,9 +353,9 @@ describe User do
         user2 = create(:user, erased_at: nil)
         user3 = create(:user, erased_at: Time.current)
 
-        expect(User.active).to include(user1)
-        expect(User.active).to include(user2)
-        expect(User.active).to_not include(user3)
+        expect(described_class.active).to include(user1)
+        expect(described_class.active).to include(user2)
+        expect(described_class.active).not_to include(user3)
       end
 
       it "returns users that have not been blocked" do
@@ -364,9 +364,9 @@ describe User do
         user3 = create(:user)
         user3.block
 
-        expect(User.active).to include(user1)
-        expect(User.active).to include(user2)
-        expect(User.active).to_not include(user3)
+        expect(described_class.active).to include(user1)
+        expect(described_class.active).to include(user2)
+        expect(described_class.active).not_to include(user3)
       end
 
     end
@@ -378,9 +378,9 @@ describe User do
         user2 = create(:user, erased_at: Time.current)
         user3 = create(:user, erased_at: nil)
 
-        expect(User.erased).to include(user1)
-        expect(User.erased).to include(user2)
-        expect(User.erased).to_not include(user3)
+        expect(described_class.erased).to include(user1)
+        expect(described_class.erased).to include(user2)
+        expect(described_class.erased).not_to include(user3)
       end
 
     end
@@ -390,7 +390,7 @@ describe User do
     it "find users by email" do
       user1 = create(:user, email: "larry@consul.dev")
       create(:user, email: "bird@consul.dev")
-      search = User.search("larry@consul.dev")
+      search = described_class.search("larry@consul.dev")
       expect(search.size).to eq(1)
       expect(search.first).to eq(user1)
     end
@@ -398,13 +398,13 @@ describe User do
     it "find users by name" do
       user1 = create(:user, username: "Larry Bird")
       create(:user, username: "Robert Parish")
-      search = User.search("larry")
+      search = described_class.search("larry")
       expect(search.size).to eq(1)
       expect(search.first).to eq(user1)
     end
 
     it "returns no results if no search term provided" do
-      expect(User.search("    ").size).to eq(0)
+      expect(described_class.search("    ").size).to eq(0)
     end
   end
 
@@ -415,17 +415,17 @@ describe User do
   describe "cache" do
     let(:user) { create(:user) }
 
-    it "should expire cache with becoming a moderator" do
+    it "expires cache with becoming a moderator" do
       expect { create(:moderator, user: user) }
       .to change { user.updated_at}
     end
 
-    it "should expire cache with becoming an admin" do
+    it "expires cache with becoming an admin" do
       expect { create(:administrator, user: user) }
       .to change { user.updated_at}
     end
 
-    it "should expire cache with becoming a veridied organization" do
+    it "expires cache with becoming a veridied organization" do
       create(:organization, user: user)
       expect { user.organization.verify }
       .to change { user.reload.updated_at}
@@ -433,14 +433,14 @@ describe User do
   end
 
   describe "document_number" do
-    it "should upcase document number" do
-      user = User.new(document_number: "x1234567z")
+    it "upcases document number" do
+      user = described_class.new(document_number: "x1234567z")
       user.valid?
       expect(user.document_number).to eq("X1234567Z")
     end
 
-    it "should remove all characters except numbers and letters" do
-      user = User.new(document_number: " 12.345.678 - B")
+    it "removes all characters except numbers and letters" do
+      user = described_class.new(document_number: " 12.345.678 - B")
       user.valid?
       expect(user.document_number).to eq("12345678B")
     end
@@ -497,7 +497,7 @@ describe User do
 
       user.erase('an identity test')
 
-      expect(Identity.exists?(identity.id)).to_not be
+      expect(Identity.exists?(identity.id)).not_to be
     end
 
   end
@@ -660,14 +660,14 @@ describe User do
   describe "#interests" do
     let(:user) { create(:user) }
 
-    it "should return followed object tags" do
+    it "returns followed object tags" do
       proposal = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal, user: user)
 
       expect(user.interests).to eq ["Sport"]
     end
 
-    it "should discard followed objects duplicated tags" do
+    it "discards followed objects duplicated tags" do
       proposal1 = create(:proposal, tag_list: "Sport")
       proposal2 = create(:proposal, tag_list: "Sport")
       budget_investment = create(:budget_investment, tag_list: "Sport")

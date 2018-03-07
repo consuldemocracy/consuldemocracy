@@ -1,6 +1,6 @@
 <div id="<%= dom_id(topic) %>" class="panel column">
-  
-  <div class="small-8 column">
+
+  <div class="small-12 medium-9 column">
 
     <h3><%= link_to topic.title, community_topic_path(@community, topic) %></h3>
 
@@ -14,12 +14,4 @@
     </p>
 
   </div>
-
-  <div class="small-4 column text-right">
-    <% if topic.author == current_user %>
-      <%= link_to t("community.show.topic.edit_button"), edit_community_topic_path(@community.id, topic), class: 'button small hollow' %>
-      <%= link_to t("community.show.topic.destroy_button"), community_topic_path(@community.id, topic), method: :delete, class: 'button hollow alert small' %>
-    <% end %>
-  </div>
-
 </div>

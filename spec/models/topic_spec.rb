@@ -3,23 +3,27 @@ require 'rails_helper'
 describe Topic do
   let(:topic) { build(:topic) }
 
-  it "should be valid" do
+  describe "Concerns" do
+    it_behaves_like "notifiable"
+  end
+
+  it "is valid" do
     expect(topic).to be_valid
   end
 
-  it "should not be valid without an author" do
+  it "is not valid without an author" do
     topic.author = nil
-    expect(topic).to_not be_valid
+    expect(topic).not_to be_valid
   end
 
-  it "should not be valid without a title" do
+  it "is not valid without a title" do
     topic.title = nil
-    expect(topic).to_not be_valid
+    expect(topic).not_to be_valid
   end
 
-  it "should not be valid without a description" do
+  it "is not valid without a description" do
     topic.description = nil
-    expect(topic).to_not be_valid
+    expect(topic).not_to be_valid
   end
 
   context "order" do
@@ -71,4 +75,7 @@ describe Topic do
 
   end
 
+  describe "notifications" do
+    it_behaves_like 'notifiable'
+  end
 end

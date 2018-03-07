@@ -36,12 +36,6 @@ feature "Home" do
         Setting['feature.user.recommendations'] = nil
       end
 
-      scenario 'Display recommended section' do
-        debate = create(:debate, tag_list: "Sport")
-        visit root_path
-        expect(page).to have_content "Recommendations that may interest you"
-      end
-
       scenario 'Display recommended section when feature flag recommended is active' do
         debate = create(:debate, tag_list: "Sport")
         visit root_path
@@ -103,7 +97,7 @@ feature "Home" do
         visit root_path
         click_on debate.title
 
-        expect(current_path).to eq debate_path(debate)
+        expect(page).to have_current_path(debate_path(debate))
       end
 
       scenario 'Do not display recommended section when there are not debates and proposals' do

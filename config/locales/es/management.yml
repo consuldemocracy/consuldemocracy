@@ -50,9 +50,9 @@ es:
       create_spending_proposal: Crear propuesta de inversión
       print_spending_proposals: Imprimir propts. de inversión
       support_spending_proposals: Apoyar propts. de inversión
-      create_budget_investment: Crear proyectos de inversión
-      print_budget_investments: Imprimir proyectos de inversión
-      support_budget_investments: Apoyar proyectos de inversión
+      create_budget_investment: Crear proyectos de gasto
+      print_budget_investments: Imprimir proyectos de gasto
+      support_budget_investments: Apoyar proyectos de gasto
       users: Usuarios
       edit_user_accounts: Editar cuenta de usuario
       user_invites: Invitaciones para usuarios
@@ -62,13 +62,13 @@ es:
       support_proposals: Apoyar propuestas
       vote_proposals: Participar en las votaciones finales
     print:
-      proposals_info: 'Haz tu propuesta en http://url.consul'
+      proposals_info: Haz tu propuesta en http://url.consul
       proposals_note: Las propuestas más apoyadas serán llevadas a votación. Y si las acepta una mayoría, el Ayuntamiento las llevará a cabo.
       proposals_title: 'Propuestas:'
-      spending_proposals_info: 'Participa en http://url.consul'
+      spending_proposals_info: Participa en http://url.consul
       spending_proposals_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
       budget_investments_info: 'Participa en http://url.consul'
-      budget_investments_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
+      budget_investments_note: Los presupuestos participativos se invertirán en los proyectos de gasto más apoyados.
     print_info: Imprimir esta información
     proposals:
       alert:

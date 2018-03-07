@@ -10,8 +10,6 @@
         <div class="image-container" data-equalizer-watch>
           <% if poll.image.present? %>
             <%= image_tag poll.image_url(:large), alt: poll.image.title %>
-          <% else %>
-            <div class="no-image"></div>
           <% end %>
         </div>
       </div>
@@ -59,7 +57,7 @@
         </ul>
       </div>
       <div class="small-12 medium-3 column table" data-equalizer-watch>
-        <div class="table-cell aling-middle">
+        <div class="table-cell align-middle">
           <%= link_to poll, class: "button hollow expanded" do %>
             <% if poll.expired? %>
               <%= t("polls.index.participate_button_expired") %>

@@ -21,8 +21,8 @@ feature 'Admin users' do
 
     expect(page).to have_content @user.name
     expect(page).to have_content @user.email
-    expect(page).to_not have_content @admin.name
-    expect(page).to_not have_content @admin.email
+    expect(page).not_to have_content @admin.name
+    expect(page).not_to have_content @admin.email
   end
 end
 

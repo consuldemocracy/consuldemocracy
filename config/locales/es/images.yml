@@ -8,7 +8,7 @@ es:
       delete_button: Eliminar imagen
       note: 'Puedes subir una imagen en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo.'
       add_new_image: Añadir imagen
-      admin_title: "Imagen principal de la votación"
+      admin_title: "Imagen"
       admin_alt_text: "Texto alternativo para la imagen"
     actions:
       destroy:

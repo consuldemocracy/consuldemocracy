@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'Polls' do
 
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Poll
+  end
+
   context '#index' do
 
     scenario 'Polls can be listed' do
@@ -27,37 +31,37 @@ feature 'Polls' do
       visit polls_path
       expect(page).to have_content('Current poll')
       expect(page).to have_link('Participate in this poll')
-      expect(page).to_not have_content('Incoming poll')
-      expect(page).to_not have_content('Expired poll')
+      expect(page).not_to have_content('Incoming poll')
+      expect(page).not_to have_content('Expired poll')
 
       visit polls_path(filter: 'incoming')
-      expect(page).to_not have_content('Current poll')
+      expect(page).not_to have_content('Current poll')
       expect(page).to have_content('Incoming poll')
       expect(page).to have_link('More information')
-      expect(page).to_not have_content('Expired poll')
+      expect(page).not_to have_content('Expired poll')
 
       visit polls_path(filter: 'expired')
-      expect(page).to_not have_content('Current poll')
-      expect(page).to_not have_content('Incoming poll')
+      expect(page).not_to have_content('Current poll')
+      expect(page).not_to have_content('Incoming poll')
       expect(page).to have_content('Expired poll')
       expect(page).to have_link('Poll ended')
     end
 
     scenario "Current filter is properly highlighted" do
       visit polls_path
-      expect(page).to_not have_link('Open')
+      expect(page).not_to have_link('Open')
       expect(page).to have_link('Incoming')
       expect(page).to have_link('Expired')
 
       visit polls_path(filter: 'incoming')
       expect(page).to have_link('Open')
-      expect(page).to_not have_link('Incoming')
+      expect(page).not_to have_link('Incoming')
       expect(page).to have_link('Expired')
 
       visit polls_path(filter: 'expired')
       expect(page).to have_link('Open')
       expect(page).to have_link('Incoming')
-      expect(page).to_not have_link('Expired')
+      expect(page).not_to have_link('Expired')
     end
 
     scenario "Poll title link to stats if enabled" do
@@ -139,13 +143,13 @@ feature 'Polls' do
       expect(page).to have_content('Chewbacca')
       expect(page).to have_content('You must Sign in or Sign up to participate')
 
-      expect(page).to_not have_link('Han Solo')
-      expect(page).to_not have_link('Chewbacca')
+      expect(page).not_to have_link('Han Solo')
+      expect(page).not_to have_link('Chewbacca')
     end
 
     scenario 'Level 1 users' do
       visit polls_path
-      expect(page).to_not have_selector('.already-answer')
+      expect(page).not_to have_selector('.already-answer')
 
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
@@ -162,8 +166,8 @@ feature 'Polls' do
       expect(page).to have_content('Han Solo')
       expect(page).to have_content('Chewbacca')
 
-      expect(page).to_not have_link('Han Solo')
-      expect(page).to_not have_link('Chewbacca')
+      expect(page).not_to have_link('Han Solo')
+      expect(page).not_to have_link('Chewbacca')
     end
 
     scenario 'Level 2 users in an incoming poll' do
@@ -180,8 +184,8 @@ feature 'Polls' do
 
       expect(page).to have_content('Rey')
       expect(page).to have_content('Finn')
-      expect(page).to_not have_link('Rey')
-      expect(page).to_not have_link('Finn')
+      expect(page).not_to have_link('Rey')
+      expect(page).not_to have_link('Finn')
 
       expect(page).to have_content('This poll has not yet started')
     end
@@ -200,8 +204,8 @@ feature 'Polls' do
 
       expect(page).to have_content('Luke')
       expect(page).to have_content('Leia')
-      expect(page).to_not have_link('Luke')
-      expect(page).to_not have_link('Leia')
+      expect(page).not_to have_link('Luke')
+      expect(page).not_to have_link('Leia')
 
       expect(page).to have_content('This poll has finished')
     end
@@ -220,8 +224,8 @@ feature 'Polls' do
 
       expect(page).to have_content('Vader')
       expect(page).to have_content('Palpatine')
-      expect(page).to_not have_link('Vader')
-      expect(page).to_not have_link('Palpatine')
+      expect(page).not_to have_link('Vader')
+      expect(page).not_to have_link('Palpatine')
     end
 
     scenario 'Level 2 users reading a same-geozone poll' do
@@ -280,7 +284,7 @@ feature 'Polls' do
 
       click_link 'Han Solo'
 
-      expect(page).to_not have_link('Han Solo')
+      expect(page).not_to have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
     end
 
@@ -299,12 +303,12 @@ feature 'Polls' do
 
       click_link 'Han Solo'
 
-      expect(page).to_not have_link('Han Solo')
+      expect(page).not_to have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
 
       click_link 'Chewbacca'
 
-      expect(page).to_not have_link('Chewbacca')
+      expect(page).not_to have_link('Chewbacca')
       expect(page).to have_link('Han Solo')
     end
 
@@ -322,7 +326,7 @@ feature 'Polls' do
       visit poll_path(poll)
       click_link 'Han Solo'
 
-      expect(page).to_not have_link('Han Solo')
+      expect(page).not_to have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
 
       click_link "Sign out"
@@ -330,7 +334,7 @@ feature 'Polls' do
       visit poll_path(poll)
       click_link 'Han Solo'
 
-      expect(page).to_not have_link('Han Solo')
+      expect(page).not_to have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
 
       click_link "Sign out"
@@ -338,7 +342,7 @@ feature 'Polls' do
       visit poll_path(poll)
       click_link 'Chewbacca'
 
-      expect(page).to_not have_link('Chewbacca')
+      expect(page).not_to have_link('Chewbacca')
       expect(page).to have_link('Han Solo')
     end
   end
@@ -377,8 +381,8 @@ feature 'Polls' do
         expect(page).to have_content('Han Solo')
         expect(page).to have_content('Chewbacca')
 
-        expect(page).to_not have_link('Han Solo')
-        expect(page).to_not have_link('Chewbacca')
+        expect(page).not_to have_link('Han Solo')
+        expect(page).not_to have_link('Chewbacca')
       end
     end
 
@@ -409,8 +413,8 @@ feature 'Polls' do
       login_as user
       visit poll_path(poll)
 
-      expect(page).to_not have_content("Poll results")
-      expect(page).to_not have_content("Participation statistics")
+      expect(page).not_to have_content("Poll results")
+      expect(page).not_to have_content("Participation statistics")
 
       visit results_poll_path(poll)
       expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")
@@ -426,8 +430,8 @@ feature 'Polls' do
       login_as user
       visit poll_path(poll)
 
-      expect(page).to_not have_content("Poll results")
-      expect(page).to_not have_content("Participation statistics")
+      expect(page).not_to have_content("Poll results")
+      expect(page).not_to have_content("Participation statistics")
 
       visit results_poll_path(poll)
       expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")

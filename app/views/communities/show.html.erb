@@ -3,20 +3,21 @@
   <div class="jumbo light">
     <div class="row">
       <div class="small-12 column">
-        <%= back_link_to community_back_link_path(@community) %>
-        <h2><%= community_text(@community) %></h2>
-        <p class="lead"> <%= community_title(@community) %> </p>
-        <p><%= community_description(@community) %> </p>
+        <span class="uppercase"><%= community_text(@community) %></span>
+        <h2><%= link_to community_title(@community), community_back_link_path(@community) %></h2>
+      </div>
+
+      <div class="small-12 medium-9 column end">
+        <p><%= community_description(@community) %></p>
       </div>
     </div>
   </div>
 
   <div class="row">
-
-    <aside class="show-for-small-only small-12 column">
+    <aside class="small-12 column show-for-small-only">
       <div class="sidebar-divider"></div>
       <h2><%= t("community.show.sidebar.participate") %></h2>
-      <%= link_to t("community.show.sidebar.new_topic"), new_community_topic_path(@community.id), class: "button expanded #{disabled_create_topic}" %>
+      <%= link_to t("community.show.sidebar.new_topic"), create_topic_link(@community) , class: "button expanded" %>
     </aside>
 
     <div class="small-12 medium-9 column">
@@ -26,14 +27,12 @@
       <%= paginate @topics %>
     </div>
 
-    <aside class="small-12 medium-3 hide-for-small-only column">
+    <aside class="small-12 medium-3 column hide-for-small-only">
       <div class="sidebar-divider"></div>
       <h2><%= t("community.show.sidebar.participate") %></h2>
-      <%= link_to t("community.show.sidebar.new_topic"), new_community_topic_path(@community.id), class: "button expanded #{disabled_create_topic}", title: "#{disabled_info_title}" %>
+      <%= link_to t("community.show.sidebar.new_topic"), create_topic_link(@community) , class: "button expanded" %>
     </aside>
-
   </div>
-
 </div>
 
 <%= render 'participants' %>

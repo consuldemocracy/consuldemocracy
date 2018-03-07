@@ -3,7 +3,8 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
   before_action :load_poll, except: [:create, :destroy]
 
   def index
-    @booth_assignments = @poll.booth_assignments.includes(:booth).order('poll_booths.name').page(params[:page]).per(50)
+    @booth_assignments = @poll.booth_assignments.includes(:booth).order('poll_booths.name')
+                              .page(params[:page]).per(50)
   end
 
   def search_booths
@@ -15,8 +16,8 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
   end
 
   def show
-    @booth_assignment = @poll.booth_assignments.includes(:recounts, :voters,
-                                                         officer_assignments: [officer: [:user]]).find(params[:id])
+    included_relations = [:recounts, :voters, officer_assignments: [officer: [:user]]]
+    @booth_assignment = @poll.booth_assignments.includes(*included_relations).find(params[:id])
     @voters_by_date = @booth_assignment.voters.group_by {|v| v.created_at.to_date}
     @partial_results = @booth_assignment.partial_results
     @recounts = @booth_assignment.recounts

@@ -9,13 +9,15 @@
                                 title: t("shared.go_to_page") + t("layouts.header.debates") %>
       </li>
     <% end %>
-    <li>
-      <%= layout_menu_link_to t("layouts.header.proposals"),
+    <% if feature?(:proposals) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.proposals"),
                                 proposals_path,
-                                controller_name == 'proposals' && !controller.class.parent == Legislation,
+                                controller_name == 'proposals',
                                 accesskey: "2",
                                 title: t("shared.go_to_page") + t("layouts.header.proposals") %>
-    </li>
+      </li>
+    <% end %>
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
@@ -51,11 +53,11 @@
       </li>
     <% end %>
     <li>
-      <%= link_to t("layouts.header.more_info"),
-                    more_info_path,
+      <%= link_to t("layouts.header.help"),
+                    help_path,
                     accesskey: "5",
-                    class: ("active" if current_page?(more_info_path)),
-                    title: t("shared.go_to_page") + t("layouts.header.more_info") %>
+                    class: ("active" if current_page?(help_path)),
+                    title: t("shared.go_to_page") + t("layouts.header.help") %>
     </li>
   </ul>
 </div>

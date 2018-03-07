@@ -4,6 +4,11 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: root_url %>
+<% end %>
+
 <div class="jumbo highlight">
   <div class="row">
     <div class="small-12 medium-9 small-centered column text-center">
@@ -12,7 +17,7 @@
         <%= t("layouts.header.open_city_slogan_html") %>
       </p>
       <div class="small-12 medium-6 large-4 small-centered">
-        <%= link_to t("layouts.header.more_info"), more_info_path, class: "button expanded large" %>
+        <%= link_to t("shared.more_info"), help_path, class: "button expanded large" %>
       </div>
     </div>
   </div>

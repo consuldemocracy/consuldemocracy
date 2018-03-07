@@ -46,9 +46,11 @@
       <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
     </div>
 
-    <div class="images small-12 column">
-      <%= render 'images/nested_image', imageable: @proposal, f: f %>
-    </div>
+    <% if feature?(:allow_images) %>
+      <div class="images small-12 column">
+        <%= render 'images/nested_image', imageable: @proposal, f: f %>
+      </div>
+    <% end %>
 
     <div class="documents small-12 column">
       <%= render 'documents/nested_documents', documentable: @proposal, f: f %>

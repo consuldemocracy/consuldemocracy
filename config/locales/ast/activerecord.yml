@@ -1,0 +1,5 @@
+ast:
+  activerecord:
+    attributes:
+      budget/investment:
+        external_url: "Enllaz a documentación adicional"

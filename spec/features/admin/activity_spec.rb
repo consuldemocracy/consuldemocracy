@@ -46,7 +46,7 @@ feature 'Admin activity' do
       visit admin_activity_path
 
       expect(page).to have_content(proposal1.title)
-      expect(page).to_not have_content(proposal2.title)
+      expect(page).not_to have_content(proposal2.title)
       expect(page).to have_content(proposal3.title)
     end
 
@@ -108,7 +108,7 @@ feature 'Admin activity' do
       visit admin_activity_path
 
       expect(page).to have_content(debate1.title)
-      expect(page).to_not have_content(debate2.title)
+      expect(page).not_to have_content(debate2.title)
       expect(page).to have_content(debate3.title)
     end
 
@@ -171,7 +171,7 @@ feature 'Admin activity' do
       visit admin_activity_path
 
       expect(page).to have_content(comment1.body)
-      expect(page).to_not have_content(comment2.body)
+      expect(page).not_to have_content(comment2.body)
       expect(page).to have_content(comment3.body)
     end
 
@@ -256,7 +256,7 @@ feature 'Admin activity' do
       expect(page).to have_content(proposal1.author.email)
       expect(page).to have_content(proposal3.author.username)
       expect(page).to have_content(proposal3.author.email)
-      expect(page).to_not have_content(proposal2.author.username)
+      expect(page).not_to have_content(proposal2.author.username)
     end
 
     scenario "Shows moderation activity from debates moderation screen" do
@@ -282,7 +282,7 @@ feature 'Admin activity' do
       expect(page).to have_content(debate1.author.email)
       expect(page).to have_content(debate3.author.username)
       expect(page).to have_content(debate3.author.email)
-      expect(page).to_not have_content(debate2.author.username)
+      expect(page).not_to have_content(debate2.author.username)
     end
 
     scenario "Shows moderation activity from comments moderation screen" do
@@ -308,7 +308,7 @@ feature 'Admin activity' do
       expect(page).to have_content(comment1.author.email)
       expect(page).to have_content(comment3.author.username)
       expect(page).to have_content(comment3.author.email)
-      expect(page).to_not have_content(comment2.author.username)
+      expect(page).not_to have_content(comment2.author.username)
     end
 
     scenario "Shows admin restores" do

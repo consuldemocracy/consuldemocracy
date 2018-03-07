@@ -5,10 +5,11 @@
 // 03. Show participation
 // 04. List participation
 // 05. Featured
-// 06. Budget
+// 06. Budgets
 // 07. Proposals successful
 // 08. Polls
 // 09. Polls results and stats
+// 10. Guides
 //
 
 // 01. Votes and supports
@@ -250,6 +251,7 @@
 .proposal-form,
 .budget-investment-form,
 .spending-proposal-form,
+.document-form,
 .topic-new,
 .topic-form {
 
@@ -300,6 +302,7 @@
 }
 
 .proposal-form,
+.document-form,
 .topic-form,
 .topic-new {
 
@@ -314,7 +317,9 @@
 .polls-form,
 .poll-question-form,
 .legislation-process-new,
-.legislation-process-edit {
+.legislation-process-edit,
+.milestone-new,
+.milestone-edit {
   @include direct-uploads;
 }
 
@@ -332,8 +337,10 @@
 .draft-panels,
 .debate-questions,
 .communities-show,
-.topic-show {
+.topic-show,
+.milestone-content {
 
+  h1,
   p {
     word-wrap: break-word;
   }
@@ -450,7 +457,6 @@
     line-height: rem-calc(30);
   }
 
-  .document-link,
   .video-link {
     background: $highlight-soft;
     border: 1px solid $highlight;
@@ -463,19 +469,16 @@
       word-wrap: break-word;
     }
 
-    [class^="icon-"] {
+    .icon-video {
+      color: #cc181e;
       display: inline-block;
       font-size: rem-calc(24);
       line-height: $line-height;
       vertical-align: middle;
     }
 
-    .icon-document {
-      color: #007bb7;
-    }
-
-    .icon-video {
-      color: #cc181e;
+    p {
+      margin-bottom: 0;
     }
   }
 
@@ -655,41 +658,12 @@
 .budget-investments-list .budget-investment,
 .proposals-list .proposal {
 
-  .no-image {
-    background: $brand;
-  }
-}
-
-.budget-investments-list .budget-investment,
-.proposals-list .proposal {
-
-  @include breakpoint(small) {
-
-    .no-image {
-      width: 100%;
-      max-width: rem-calc(300);
-      margin: 0 auto;
-
-      &::before {
-        content: '';
-        display: block;
-        padding-top: 100%;
-      }
-    }
-  }
-
   @include breakpoint(medium) {
 
     .panel {
 
       &.with-image {
         padding: 0 $line-height / 2 0 0;
-      }
-
-      .no-image {
-        height: 100%;
-        min-height: rem-calc(245);
-        width: rem-calc(140);
       }
     }
 
@@ -754,6 +728,10 @@
         color: $text;
       }
     }
+
+    &.past-budgets {
+      min-height: 0;
+    }
   }
 
   .debate-content,
@@ -767,6 +745,11 @@
 
   .tags {
     display: block;
+    margin-bottom: 0;
+
+    a {
+      font-size: $tiny-font-size;
+    }
   }
 
   .icon-debates,
@@ -958,10 +941,10 @@
   }
 }
 
-.investment-project .supports .total-supports.no-button,
-.investment-project-show .supports .total-supports.no-button,
-.budget-investment .supports .total-supports.no-button,
-.budget-investment-show .supports .total-supports.no-button {
+.investment-project .no-button,
+.investment-project-show .no-button,
+.budget-investment .no-button,
+.budget-investment-show .no-button {
   display: block;
   margin-top: $line-height * 1.5;
 }
@@ -1115,31 +1098,40 @@
   }
 }
 
-// 06. Budget
-// ----------
+// 06. Budgets
+// -----------
 
-.expanded.budget {
-  background: $budget;
+.expanded {
 
-  h1,
-  h2,
-  p,
-  .back,
-  .icon-angle-left {
-    color: #fff;
-  }
+  &.budget {
+    background: $budget;
 
-  .button {
-    background: #fff;
-    color: $budget;
-  }
+    h1,
+    h2,
+    p,
+    a,
+    .back,
+    .icon-angle-left,
+    .description {
+      color: #fff;
+    }
 
-  .info {
-    background: #6a2a72;
+    a {
+      text-decoration: underline;
+    }
 
-    p {
-      margin-bottom: 0;
-      text-transform: uppercase;
+    .button {
+      background: #fff;
+      color: $budget;
+    }
+
+    .info {
+      background: #6a2a72;
+
+      p {
+        margin-bottom: 0;
+        text-transform: uppercase;
+      }
     }
   }
 }
@@ -1152,17 +1144,23 @@
     min-height: $line-height * 10;
   }
 
-  h1 {
+  h2 {
     margin-bottom: 0;
   }
 
-  h1,
   h2,
+  h3,
   .back,
   .icon-angle-left,
   p,
   a {
     color: #fff;
+  }
+
+  .tagline {
+    display: block;
+    font-size: $small-font-size;
+    font-weight: normal;
   }
 
   .callout.warning {
@@ -1173,29 +1171,9 @@
     }
   }
 
-  &.welcome {
-    background: $budget image-url('spending_proposals_bg.jpg');
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    .spending-proposal-timeline {
-      padding-top: $line-height;
-    }
-
-    ul li {
-      margin-right: $line-height;
-      padding-top: $line-height / 2;
-
-      .icon-calendar {
-        display: none;
-      }
-    }
-  }
-
   a {
     text-decoration: underline;
- }
+  }
 
   .button {
     background: #fff;
@@ -1221,6 +1199,37 @@
 
     &.social-share-button-telegram:hover {
       color: #ce3e26;
+    }
+  }
+}
+
+.groups-and-headings {
+
+  .heading {
+    border: 1px solid $border;
+    border-radius: rem-calc(3);
+    display: inline-block;
+    margin-bottom: $line-height / 2;
+
+    &:hover {
+      background: $highlight;
+      text-decoration: none;
+    }
+
+    a,
+    div {
+      display: block;
+      padding: $line-height / 2;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    span {
+      color: $text;
+      display: block;
+      font-size: $small-font-size;
     }
   }
 }
@@ -1442,6 +1451,63 @@
       h1 {
         font-size: rem-calc(24);
         transition: font-size 0.3s;
+      }
+    }
+  }
+}
+
+.budget-timeline {
+  border-left: 3px solid $budget;
+  margin-left: $line-height / 2;
+  padding: $line-height $line-height / 2;
+
+  h3,
+  span,
+  p {
+    padding: 0 $line-height / 4;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  span {
+    color: $text-medium;
+    display: block;
+    font-size: $small-font-size;
+    margin-bottom: $line-height / 2;
+  }
+
+  .phase {
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: $line-height * 1.5;
+    }
+
+    &::before {
+      background-color: #fff;
+      border: 4px solid $budget;
+      border-radius: 100%;
+      content: '';
+      height: 16px;
+      left: -22px;
+      position: absolute;
+      top: 6px;
+      width: 16px;
+      z-index: 99;
+    }
+
+    &.active {
+
+      h3 {
+        background: $budget;
+        color: #fff;
+        display: inline-block;
+      }
+
+      &::before {
+        background-color: $budget;
       }
     }
   }
@@ -1859,5 +1925,96 @@
     font-size: rem-calc(60);
     font-weight: bold;
     line-height: rem-calc(60);
+  }
+}
+
+// 10. Guides
+// ----------------------
+
+.guides {
+
+  h2 {
+    margin: $line-height 0 $line-height * 2;
+  }
+
+  .guide-budget,
+  .guide-proposal {
+    border-radius: rem-calc(3);
+    margin: $line-height 0;
+    padding: $line-height;
+    position: relative;
+
+    .button {
+      color: $text;
+      font-weight: bold;
+    }
+
+    &::before {
+      border-radius: 100%;
+      color: #fff;
+      font-family: "icons" !important;
+      height: rem-calc(80);
+      left: 50%;
+      line-height: rem-calc(80);
+      margin-left: rem-calc(-40);
+      position: absolute;
+      text-align: center;
+      top: -40px;
+      width: rem-calc(80);
+      z-index: 99;
+    }
+  }
+
+  .guide-budget {
+    border: 1px solid $budget;
+
+    &::before {
+      background: $budget;
+      content: '\53';
+      font-size: rem-calc(40);
+    }
+
+    .button {
+      background: #f8f5f9;
+      border: 1px solid $budget;
+    }
+  }
+
+  .guide-proposal {
+    border: 1px solid $proposals;
+
+    &::before {
+      background: $proposals;
+      content: '\68';
+      font-size: rem-calc(40);
+    }
+
+    .button {
+      background: #fffaf4;
+      border: 1px solid $proposals;
+    }
+  }
+
+  ul {
+
+    @include breakpoint(medium) {
+      min-height: $line-height * 14;
+    }
+
+    li {
+      margin-bottom: $line-height;
+      padding-left: $line-height;
+      position: relative;
+
+      &::before {
+        color: #37af65;
+        content: '\56';
+        font-family: "icons" !important;
+        font-size: $small-font-size;
+        left: 0;
+        position: absolute;
+        top: 1px;
+      }
+    }
   }
 }

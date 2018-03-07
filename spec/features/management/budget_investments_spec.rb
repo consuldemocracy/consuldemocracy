@@ -29,10 +29,9 @@ feature 'Budget Investments' do
         expect(page).to have_content user.document_number
       end
 
-      select "Whole city: Health", from: 'budget_investment_heading_id'
+      select "Health", from: 'budget_investment_heading_id'
       fill_in 'budget_investment_title', with: 'Build a park in my neighborhood'
       fill_in 'budget_investment_description', with: 'There is no parks here...'
-      fill_in 'budget_investment_external_url', with: 'http://moarparks.com'
       fill_in 'budget_investment_location', with: 'City center'
       fill_in 'budget_investment_organization_name', with: 'T.I.A.'
       fill_in 'budget_investment_tag_list', with: 'green'
@@ -44,7 +43,6 @@ feature 'Budget Investments' do
       expect(page).to have_content 'Health'
       expect(page).to have_content 'Build a park in my neighborhood'
       expect(page).to have_content 'There is no parks here...'
-      expect(page).to have_content 'http://moarparks.com'
       expect(page).to have_content 'City center'
       expect(page).to have_content 'T.I.A.'
       expect(page).to have_content 'green'
@@ -83,7 +81,7 @@ feature 'Budget Investments' do
       within("#budget-investments") do
         expect(page).to have_css('.budget-investment', count: 1)
         expect(page).to have_content(budget_investment1.title)
-        expect(page).to_not have_content(budget_investment2.title)
+        expect(page).not_to have_content(budget_investment2.title)
         expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']",
                                  text: budget_investment1.title)
       end
@@ -109,7 +107,7 @@ feature 'Budget Investments' do
 
       within("#budget-investments") do
         expect(page).to have_css('.budget-investment', count: 1)
-        expect(page).to_not have_content(budget_investment1.title)
+        expect(page).not_to have_content(budget_investment1.title)
         expect(page).to have_content(budget_investment2.title)
         expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']",
                                  text: budget_investment2.title)
@@ -162,12 +160,12 @@ feature 'Budget Investments' do
 
     expect(page).to have_content(accepting_budget.name)
 
-    expect(page).to_not have_content(reviewing_budget.name)
-    expect(page).to_not have_content(selecting_budget.name)
-    expect(page).to_not have_content(valuating_budget.name)
-    expect(page).to_not have_content(balloting_budget.name)
-    expect(page).to_not have_content(reviewing_ballots_budget.name)
-    expect(page).to_not have_content(finished.name)
+    expect(page).not_to have_content(reviewing_budget.name)
+    expect(page).not_to have_content(selecting_budget.name)
+    expect(page).not_to have_content(valuating_budget.name)
+    expect(page).not_to have_content(balloting_budget.name)
+    expect(page).not_to have_content(reviewing_ballots_budget.name)
+    expect(page).not_to have_content(finished.name)
   end
 
   scenario "Listing - admins can see budgets in accepting, reviewing and selecting phases" do
@@ -195,10 +193,10 @@ feature 'Budget Investments' do
     expect(page).to have_content(reviewing_budget.name)
     expect(page).to have_content(selecting_budget.name)
 
-    expect(page).to_not have_content(valuating_budget.name)
-    expect(page).to_not have_content(balloting_budget.name)
-    expect(page).to_not have_content(reviewing_ballots_budget.name)
-    expect(page).to_not have_content(finished.name)
+    expect(page).not_to have_content(valuating_budget.name)
+    expect(page).not_to have_content(balloting_budget.name)
+    expect(page).not_to have_content(reviewing_ballots_budget.name)
+    expect(page).not_to have_content(finished.name)
   end
 
   context "Supporting" do
@@ -220,7 +218,7 @@ feature 'Budget Investments' do
         find('.js-in-favor a').click
 
         expect(page).to have_content "1 support"
-        expect(page).to have_content "You have already supported this. Share it!"
+        expect(page).to have_content "You have already supported this investment project. Share it!"
       end
     end
 
@@ -261,9 +259,10 @@ feature 'Budget Investments' do
   context "Printing" do
 
     scenario 'Printing budget investments' do
-      16.times { create(:budget_investment, budget: @budget) }
+      16.times { create(:budget_investment, budget: @budget, heading: @heading) }
 
       click_link "Print Budget Investments"
+
       expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
         click_link "Print Budget Investments"
@@ -275,34 +274,36 @@ feature 'Budget Investments' do
 
     scenario "Filtering budget investments by heading to be printed", :js do
       district_9 = create(:budget_heading, group: @group, name: "District Nine")
-      create(:budget_investment, budget: @budget, title: 'Change district 9', heading: district_9, cached_votes_up: 10)
-      create(:budget_investment, budget: @budget, title: 'Destroy district 9', heading: district_9, cached_votes_up: 100)
-      create(:budget_investment, budget: @budget, title: 'Nuke district 9', heading: district_9, cached_votes_up: 1)
-      create(:budget_investment, budget: @budget, title: 'Add new districts to the city')
+      another_heading = create(:budget_heading, group: @group)
+      low_investment = create(:budget_investment, budget: @budget, title: 'Nuke district 9', heading: district_9, cached_votes_up: 1)
+      mid_investment = create(:budget_investment, budget: @budget, title: 'Change district 9', heading: district_9, cached_votes_up: 10)
+      top_investment = create(:budget_investment, budget: @budget, title: 'Destroy district 9', heading: district_9, cached_votes_up: 100)
+      unvoted_investment = create(:budget_investment, budget: @budget, heading: another_heading, title: 'Add new districts to the city')
 
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Print Budget Investments"
+
       expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
         click_link "Print Budget Investments"
       end
 
       within '#budget-investments' do
-        expect(page).to have_content('Add new districts to the city')
-        expect(page).to have_content('Change district 9')
-        expect(page).to have_content('Destroy district 9')
-        expect(page).to have_content('Nuke district 9')
+        expect(page).to have_content(unvoted_investment.title)
+        expect(page).to have_content(mid_investment.title)
+        expect(page).to have_content(top_investment.title)
+        expect(page).to have_content(low_investment.title)
       end
 
       select 'Whole city: District Nine', from: 'heading_id'
       click_button("Search")
 
       within '#budget-investments' do
-        expect(page).to_not have_content('Add new districts to the city')
-        expect('Destroy district 9').to appear_before('Change district 9')
-        expect('Change district 9').to appear_before('Nuke district 9')
+        expect(page).not_to have_content(unvoted_investment.title)
+        expect(top_investment.title).to appear_before(mid_investment.title)
+        expect(mid_investment.title).to appear_before(low_investment.title)
       end
     end
 

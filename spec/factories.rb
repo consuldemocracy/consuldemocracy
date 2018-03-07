@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :local_census_record, class: 'LocalCensusRecord' do
     document_number '12345678A'
     document_type 1
@@ -50,6 +50,7 @@ FactoryGirl.define do
     end
 
     trait :verified do
+      residence_verified_at Time.current
       verified_at Time.current
     end
 
@@ -135,7 +136,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
       end
     end
 
@@ -149,7 +150,7 @@ FactoryGirl.define do
 
     trait :conflictive do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
         4.times { create(:vote, votable: debate) }
       end
     end
@@ -164,6 +165,7 @@ FactoryGirl.define do
     video_url            'https://youtu.be/nhuNb0XtRhQ'
     responsible_name     'John Snow'
     terms_of_service     '1'
+    skip_map             '1'
     association :author, factory: :user
 
     trait :hidden do
@@ -180,7 +182,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |proposal|
-        Flag.flag(FactoryGirl.create(:user), proposal)
+        Flag.flag(create(:user), proposal)
       end
     end
 
@@ -198,7 +200,7 @@ FactoryGirl.define do
 
     trait :conflictive do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
         4.times { create(:vote, votable: debate) }
       end
     end
@@ -218,16 +220,27 @@ FactoryGirl.define do
   end
 
   factory :budget do
-    sequence(:name) { |n| "Budget #{n}" }
+    sequence(:name) { |n| "#{Faker::Lorem.word} #{n}" }
     currency_symbol "€"
     phase 'accepting'
+    description_drafting  "This budget is drafting"
+    description_informing "This budget is informing"
     description_accepting "This budget is accepting"
     description_reviewing "This budget is reviewing"
     description_selecting "This budget is selecting"
     description_valuating "This budget is valuating"
+    description_publishing_prices "This budget is publishing prices"
     description_balloting "This budget is balloting"
     description_reviewing_ballots "This budget is reviewing ballots"
     description_finished "This budget is finished"
+
+    trait :drafting do
+      phase 'drafting'
+    end
+
+    trait :informing do
+      phase 'informing'
+    end
 
     trait :accepting do
       phase 'accepting'
@@ -243,6 +256,10 @@ FactoryGirl.define do
 
     trait :valuating do
       phase 'valuating'
+    end
+
+    trait :publishing_prices do
+      phase 'publishing_prices'
     end
 
     trait :balloting do
@@ -261,6 +278,10 @@ FactoryGirl.define do
   factory :budget_group, class: 'Budget::Group' do
     budget
     sequence(:name) { |n| "Group #{n}" }
+
+    trait :drafting_budget do
+      association :budget, factory: [:budget, :drafting]
+    end
   end
 
   factory :budget_heading, class: 'Budget::Heading' do
@@ -268,6 +289,10 @@ FactoryGirl.define do
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
     population 1234
+
+    trait :drafting_budget do
+      association :group, factory: [:budget_group, :drafting_budget]
+    end
   end
 
   factory :budget_investment, class: 'Budget::Investment' do
@@ -277,7 +302,7 @@ FactoryGirl.define do
     description          'Spend money on this'
     price                10
     unfeasibility_explanation ''
-    external_url         'http://external_documention.org'
+    skip_map             '1'
     terms_of_service     '1'
     incompatible          false
 
@@ -306,7 +331,6 @@ FactoryGirl.define do
       selected true
       feasibility "feasible"
       valuation_finished true
-
     end
 
     trait :winner do
@@ -319,12 +343,27 @@ FactoryGirl.define do
       incompatible true
     end
 
+    trait :selected_with_price do
+      selected
+      price 1000
+      price_explanation 'Because of reasons'
+    end
+
     trait :unselected do
       selected false
       feasibility "feasible"
       valuation_finished true
     end
+  end
 
+  factory :budget_phase, class: 'Budget::Phase' do
+    budget
+    kind        :balloting
+    summary     Faker::Lorem.sentence(3)
+    description Faker::Lorem.sentence(10)
+    starts_at   Date.yesterday
+    ends_at     Date.tomorrow
+    enabled     true
   end
 
   factory :image do
@@ -361,6 +400,7 @@ FactoryGirl.define do
     association :investment, factory: :budget_investment
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
+    publication_date     Date.current
   end
 
   factory :vote do
@@ -426,12 +466,22 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(create(:user), debate)
       end
     end
 
     trait :with_confidence_score do
       before(:save) { |d| d.calculate_confidence_score }
+    end
+
+    trait :valuation do
+      valuation true
+      association :commentable, factory: :budget_investment
+      before :create do |valuation|
+        valuator = create(:valuator)
+        valuation.author = valuator.user
+        valuation.commentable.valuators << valuator
+      end
     end
   end
 
@@ -708,7 +758,7 @@ FactoryGirl.define do
     start_date Date.current - 5.days
     end_date Date.current + 5.days
     debate_start_date Date.current - 5.days
-    debate_end_date Date.current - 2.days
+    debate_end_date Date.current + 2.days
     draft_publication_date Date.current - 1.day
     allegations_start_date Date.current
     allegations_end_date Date.current + 3.days
@@ -816,6 +866,14 @@ LOREM_IPSUM
     user
   end
 
+  factory :legislation_proposal, class: 'Legislation::Proposal' do
+    title "Example proposal for a legislation"
+    summary "This law should include..."
+    terms_of_service '1'
+    process factory: :legislation_process
+    author factory: :user
+  end
+
   factory :site_customization_page, class: 'SiteCustomization::Page' do
     slug "example-page"
     title "Example page"
@@ -880,6 +938,16 @@ LOREM_IPSUM
     trait :budget_investment_map_location do
       association :investment, factory: :budget_investment
     end
+  end
+
+  factory :related_content do
+  end
+
+  factory :newsletter do
+    sequence(:subject) { |n| "Subject #{n}" }
+    segment_recipient  UserSegments::SEGMENTS.sample
+    sequence(:from)    { |n| "noreply#{n}@consul.dev" }
+    sequence(:body)    { |n| "Body #{n}" }
   end
 
 end

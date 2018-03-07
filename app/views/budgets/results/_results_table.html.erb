@@ -1,4 +1,4 @@
-<div class="small-12 medium-9 large-10 column <%= results_type == :compatible ? 'success' : 'js-discarded' %>"
+<div class="<%= results_type == :compatible ? 'success' : 'js-discarded' %>"
      style="<%= results_type != :compatible ? 'display: none' : '' %>"
      id="<%= results_type %>-container">
 

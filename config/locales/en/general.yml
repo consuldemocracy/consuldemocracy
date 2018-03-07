@@ -12,11 +12,9 @@ en:
       personal: Personal details
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
-      public_interests_label: Keep my interests public
-      public_interests_my_title_list: List of interests (tags of elements you follow)
-      public_interests_user_title_list: List of interests (tags of elements this user follows)
-      public_interests_my_empty_list: You do not follow any elements yet.
-      public_interests_user_empty_list: This user does not follow any elements yet.
+      public_interests_label: Keep the labels of the elements I follow public
+      public_interests_my_title_list: Tags of elements you follow
+      public_interests_user_title_list: Tags of elements this user follows
       save_changes_submit: Save changes
       subscription_to_website_newsletter_label: Receive by email website relevant information
       email_on_direct_message_label: Receive emails about direct messages
@@ -173,12 +171,13 @@ en:
     direct_message: private message
     error: error
     errors: errors
-    not_saved: 'prevented this %{resource} from being saved:'
+    not_saved_html: "prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
     policy: Privacy Policy
     proposal: Proposal
     proposal_notification: "Notification"
     spending_proposal: Spending proposal
     budget/investment: Investment
+    budget/heading: Budget Heading
     poll/shift: Shift
     poll/question/answer: Answer
     user: Account
@@ -232,7 +231,7 @@ en:
       moderation: Moderation
       valuation: Valuation
       officing: Polling officers
-      more_info: More information
+      help: Help
       my_account_link: My account
       my_activity_link: My activity
       notifications: Notifications
@@ -264,6 +263,7 @@ en:
         one: Someone commented on
         other: There are %{count} new comments on
       empty_notifications: You don't have new notifications.
+      notifiable_hidden: This resource is not available anymore.
       mark_all_as_read: Mark all as read
       proposal_notification:
         one: There is one new notification on
@@ -283,7 +283,8 @@ en:
       sign_up: Sign up with Facebook
       name: Facebook
     finish_signup:
-      title: Add your email address
+      title: "Additional details"
+      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
     google_oauth2:
       sign_in: Sign in with Google
       sign_up: Sign up with Google
@@ -295,9 +296,6 @@ en:
     info_sign_in: "Sign in with:"
     info_sign_up: "Sign up with:"
     or_fill: "Or fill the following form:"
-    finish_signup:
-      title: "Additional details"
-      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
   proposals:
     create:
       form:
@@ -341,6 +339,7 @@ en:
       map_location: "Map location"
       map_location_instructions: "Navigate the map to the location and place the marker."
       map_remove_marker: "Remove map marker"
+      map_skip_checkbox: "This proposal doesn't have a concrete location or I'm not aware of it."
     index:
       featured_proposals: Featured
       filter_topic:
@@ -352,7 +351,7 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
-        archival_date: Archived
+        archival_date: archived
         recommendations: recommendations
       recommendations:
         without_results: There are not proposals related to your interests
@@ -571,6 +570,7 @@ en:
     collective: Collective
     flag: Flag as inappropriate
     follow: "Follow"
+    following: "Following"
     follow_entity: "Follow %{entity}"
     followable:
       budget_investment:
@@ -615,7 +615,6 @@ en:
     target_blank_html: " (link opens in new window)"
     you_are_in: "You are in"
     unflag: Unflag
-    unfollow: "Unfollow"
     unfollow_entity: "Unfollow %{entity}"
     outline:
       budget: Participatory budget
@@ -625,6 +624,8 @@ en:
     orbit:
       previous_slide: Previous Slide
       next_slide: Next Slide
+    documentation: Additional documentation
+    more_info: More information
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"
@@ -742,6 +743,7 @@ en:
       no_private_messages: "This user doesn't accept private messages."
       private_activity: This user decided to keep the activity list private.
       send_private_message: "Send private message"
+      delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
       send_notification: "Send notification"
       retire: "Retire"
@@ -767,11 +769,11 @@ en:
       not_voting_allowed: Voting phase is closed
     budget_investments:
       not_logged_in: You must %{signin} or %{signup} to continue.
-      not_verified: Only verified users can vote on proposals; %{verify_account}.
+      not_verified: Only verified users can vote on investment projects; %{verify_account}.
       organization: Organizations are not permitted to vote
       unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
-      different_heading_assigned: You can only support proposals in one district
+      different_heading_assigned: You can only support investment projects in one heading
   welcome:
     debates:
       description: For meeting, discussing and sharing the things that matter to us in our city.
@@ -814,3 +816,20 @@ en:
   invisible_captcha:
     sentence_for_humans: "If you are human, ignore this field"
     timestamp_error_message: "Sorry, that was too quick! Please resubmit."
+  related_content:
+    title: "Related content"
+    add: "Add related content"
+    label: "Link to related content"
+    placeholder: "%{url}"
+    help: "You can add links of %{models} inside of %{org}."
+    submit: "Add"
+    error: "Link not valid. Remember to start with %{url}."
+    error_itself: "Link not valid. You cannot relate a content to itself."
+    success: "You added a new related content"
+    is_related: "¿Is it related content?"
+    score_positive: "Yes"
+    score_negative: "No"
+    content_title:
+      proposal: "Proposal"
+      debate: "Debate"
+      budget_investment: "Budget investment"

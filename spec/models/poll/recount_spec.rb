@@ -7,7 +7,7 @@ describe Poll::Recount do
     let(:officer_assignment) { create(:poll_officer_assignment) }
     let(:poll_recount) { create(:poll_recount, author: author, officer_assignment: officer_assignment) }
 
-    it "should update white_amount_log if white_amount changes" do
+    it "updates white_amount_log if white_amount changes" do
       poll_recount.white_amount = 33
 
       expect(poll_recount.white_amount_log).to eq("")
@@ -22,7 +22,7 @@ describe Poll::Recount do
       expect(poll_recount.white_amount_log).to eq(":0:33:32")
     end
 
-    it "should update null_amount_log if null_amount changes" do
+    it "updates null_amount_log if null_amount changes" do
       poll_recount.null_amount = 33
 
       expect(poll_recount.null_amount_log).to eq("")
@@ -37,7 +37,7 @@ describe Poll::Recount do
       expect(poll_recount.null_amount_log).to eq(":0:33:32")
     end
 
-    it "should update total_amount_log if total_amount changes" do
+    it "updates total_amount_log if total_amount changes" do
       poll_recount.total_amount = 33
 
       expect(poll_recount.total_amount_log).to eq("")
@@ -52,7 +52,7 @@ describe Poll::Recount do
       expect(poll_recount.total_amount_log).to eq(":0:33:32")
     end
 
-    it "should update officer_assignment_id_log if amount changes" do
+    it "updates officer_assignment_id_log if amount changes" do
       poll_recount.white_amount = 33
 
       expect(poll_recount.white_amount_log).to eq("")
@@ -74,7 +74,7 @@ describe Poll::Recount do
       expect(poll_recount.officer_assignment_id_log).to eq(":#{officer_assignment.id}:101:102")
     end
 
-    it "should update author_id if amount changes" do
+    it "updates author_id if amount changes" do
       poll_recount.white_amount = 33
 
       expect(poll_recount.white_amount_log).to eq("")

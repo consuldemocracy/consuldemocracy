@@ -1,4 +1,5 @@
 class Proposal < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
   include Flaggable
   include Taggable
   include Conflictable
@@ -12,11 +13,13 @@ class Proposal < ActiveRecord::Base
   include Communitable
   include Imageable
   include Mappable
+  include Notifiable
   include Documentable
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
                accepted_content_types: [ "application/pdf" ]
   include EmbedVideosHelper
+  include Relationable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -26,8 +29,8 @@ class Proposal < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
-  has_many :comments, as: :commentable
-  has_many :proposal_notifications
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :proposal_notifications, dependent: :destroy
 
   validates :title, presence: true
   validates :question, presence: true
@@ -39,7 +42,7 @@ class Proposal < ActiveRecord::Base
   validates :description, length: { maximum: Proposal.description_max_length }
   validates :question, length: { in: 10..Proposal.question_max_length }
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
-  validates :retired_reason, inclusion: {in: RETIRE_OPTIONS, allow_nil: true}
+  validates :retired_reason, inclusion: { in: RETIRE_OPTIONS, allow_nil: true }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -49,8 +52,8 @@ class Proposal < ActiveRecord::Base
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
-  scope :for_render, -> { includes(:tags) }
-  scope :sort_by_hot_score, -> { reorder(hot_score: :desc) }
+  scope :for_render,               -> { includes(:tags) }
+  scope :sort_by_hot_score,        -> { reorder(hot_score: :desc) }
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
@@ -67,12 +70,19 @@ class Proposal < ActiveRecord::Base
   scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
   scope :unsuccessful,             -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
   scope :public_for_api,           -> { all }
+  scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
+
+  def url
+    proposal_path(self)
+  end
 
   def self.recommendations(user)
     tagged_with(user.interests, any: true)
       .where("author_id != ?", user.id)
       .unsuccessful
       .not_followed_by_user(user)
+      .not_archived
+      .not_supported_by_user(user)
   end
 
   def self.not_followed_by_user(user)

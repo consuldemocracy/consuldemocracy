@@ -32,4 +32,7 @@ module CommunitiesHelper
     community.from_proposal? ? t("community.sidebar.description.proposal") : t("community.sidebar.description.investment")
   end
 
+  def create_topic_link(community)
+    current_user.present? ? new_community_topic_path(community.id) : new_user_session_path
+  end
 end

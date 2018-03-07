@@ -36,7 +36,7 @@ feature 'Admin polls' do
         expect(page).to have_content poll.name
       end
     end
-    expect(page).to_not have_content "There are no polls"
+    expect(page).not_to have_content "There are no polls"
   end
 
   scenario 'Show' do
@@ -61,8 +61,8 @@ feature 'Admin polls' do
     fill_in 'poll_summary', with: "Upcoming poll's summary. This poll..."
     fill_in 'poll_description', with: "Upcomming poll's description. This poll..."
 
-    expect(page).to_not have_css("#poll_results_enabled")
-    expect(page).to_not have_css("#poll_stats_enabled")
+    expect(page).not_to have_css("#poll_results_enabled")
+    expect(page).not_to have_css("#poll_stats_enabled")
 
     click_button "Create poll"
 
@@ -112,7 +112,7 @@ feature 'Admin polls' do
       click_link "Edit"
     end
 
-    expect(current_path).to eq(edit_admin_poll_path(poll))
+    expect(page).to have_current_path(edit_admin_poll_path(poll))
   end
 
   context "Booths" do
@@ -142,7 +142,7 @@ feature 'Admin polls' do
             expect(page).to have_content ba.booth.location
           end
         end
-        expect(page).to_not have_content "There are no booths assigned to this poll."
+        expect(page).not_to have_content "There are no booths assigned to this poll."
       end
     end
   end
@@ -180,7 +180,7 @@ feature 'Admin polls' do
             expect(page).to have_content officer.email
           end
         end
-        expect(page).to_not have_content "There are no officers assigned to this poll"
+        expect(page).not_to have_content "There are no officers assigned to this poll"
       end
     end
   end
@@ -198,8 +198,8 @@ feature 'Admin polls' do
 
         expect(page).to have_content "Questions (1)"
         expect(page).to have_content question.title
-        expect(page).to_not have_content other_question.title
-        expect(page).to_not have_content "There are no questions assigned to this poll"
+        expect(page).not_to have_content other_question.title
+        expect(page).not_to have_content "There are no questions assigned to this poll"
       end
 
     end

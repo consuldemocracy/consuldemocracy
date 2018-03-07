@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'HasOrders' do
+describe HasOrders do
 
   class FakeController < ActionController::Base; end
 

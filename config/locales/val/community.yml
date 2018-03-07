@@ -1,0 +1,60 @@
+val:
+  community:
+    sidebar:
+      title: Comunitat
+      description:
+        proposal: Participa en la comunitat d'usuaris d'esta proposta.
+        investment: Participa en la comunitat d'usuaris d'aquest projecte d'inversió.
+      button_to_access: Accedir a la comunitat
+    show:
+      title:
+        proposal: Comunitat de la proposta
+        investment: Comunitat del pressupost participatiu
+      description:
+        proposal: Participa en la comunitat d'esta proposta. Una comunitat activa pot ajudar a millorar el contingut de la proposta així com a dinamitzar la seua difusió pe tal d'aconseguir més avals.
+        investment: Participa en la comunitat d'aques projecte d'inversió. Una comunitat activa pot ajudar a millorar el contingut de la proposta així com a dinamitzar la seua difusió pe tal d'aconseguir més avals.
+      create_first_community_topic:
+        first_theme_not_logged_in: Tema no disponible, participa creant el primer.
+        first_theme: Crea el primer tema de la comunitat
+        sub_first_theme: "Per a crear un nou tema has de %{sign_in} o %{sign_up}."
+        sign_in: "iniciar sessió"
+        sign_up: "registrar-te"
+      tab:
+        participants: Participants
+      sidebar:
+        participate: Participa
+        new_topic: Crea un tema
+      topic:
+        edit: Editar tema
+        destroy: Eliminar tema
+        comments:
+          zero: Sense comentaris
+          one: 1 Comentari
+          other: "%{count} comentaris"
+      author: Autor
+      back: Tornar a %{community} %{proposal}
+    topic:
+      create: Crear un tema
+      edit: Editar tema
+      form:
+        topic_title: Títol
+        topic_text: Text inicial
+        new:
+          submit_button: Crear tema
+        edit:
+          submit_button: Editar tema
+        create:
+          submit_button: Crear tema
+        update:
+          submit_button: Actualitzar tema
+      show:
+        tab:
+          comments_tab: Comentaris
+      sidebar:
+        recommendations_title: Recomanacions per a crear un tema
+        recommendation_one: No escrigues el títol del tema o frases senceres en majúscules. En internet això es considera cridar. I a ningú li agrada que li criden.
+        recommendation_two: Quansevol tema o comentari que implique una acció il·legal serà eliminada, també les que tinguen la intenció de sabotejar els espais del tema, tota la resta està permes.
+        recommendation_three: Gaudeix d'aquest espai, de les veus que l'omplin, també es teu.
+  topics:
+    show:
+      login_to_comment: Necessites %{signin} o %{signup} per comentar.

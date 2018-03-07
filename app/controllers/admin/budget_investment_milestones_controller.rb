@@ -14,7 +14,8 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
     @milestone = Budget::Investment::Milestone.new(milestone_params)
     @milestone.investment = @investment
     if @milestone.save
-      redirect_to admin_budget_budget_investment_path(@investment.budget, @investment), notice: t('admin.milestones.create.notice')
+      redirect_to admin_budget_budget_investment_path(@investment.budget, @investment),
+                  notice: t('admin.milestones.create.notice')
     else
       render :new
     end
@@ -25,7 +26,8 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
 
   def update
     if @milestone.update(milestone_params)
-      redirect_to admin_budget_budget_investment_path(@investment.budget, @investment), notice: t('admin.milestones.update.notice')
+      redirect_to admin_budget_budget_investment_path(@investment.budget, @investment),
+                  notice: t('admin.milestones.update.notice')
     else
       render :edit
     end
@@ -33,23 +35,26 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
 
   def destroy
     @milestone.destroy
-    redirect_to admin_budget_budget_investment_path(@investment.budget, @investment), notice: t('admin.milestones.delete.notice')
+    redirect_to admin_budget_budget_investment_path(@investment.budget, @investment),
+                notice: t('admin.milestones.delete.notice')
   end
 
   private
 
   def milestone_params
-    params.require(:budget_investment_milestone)
-          .permit(:title, :description, :budget_investment_id)
+    image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
+    documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
+    attributes = [:title, :description, :publication_date, :budget_investment_id,
+                  image_attributes: image_attributes, documents_attributes: documents_attributes]
+    params.require(:budget_investment_milestone).permit(*attributes)
   end
 
   def load_budget_investment
-    @investment = Budget::Investment.find params[:budget_investment_id]
+    @investment = Budget::Investment.find(params[:budget_investment_id])
   end
 
   def load_budget_investment_milestone
-    @milestone = Budget::Investment::Milestone.find params[:id]
+    @milestone = Budget::Investment::Milestone.find(params[:id])
   end
-
 
 end

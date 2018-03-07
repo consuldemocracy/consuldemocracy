@@ -10,6 +10,7 @@ class Legislation::Proposal < ActiveRecord::Base
   include Followable
   include Communitable
   include Documentable
+  include Notifiable
 
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
@@ -27,6 +28,7 @@ class Legislation::Proposal < ActiveRecord::Base
   validates :title, presence: true
   validates :summary, presence: true
   validates :author, presence: true
+  validates :process, presence: true
 
   validates :title, length: { in: 4..Legislation::Proposal.title_max_length }
   validates :description, length: { maximum: Legislation::Proposal.description_max_length }

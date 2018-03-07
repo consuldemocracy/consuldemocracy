@@ -9,7 +9,7 @@
 
       <h1><%= @budget.name %></h1>
 
-      <%= safe_html_with_links @budget.description %>
+      <%= safe_html_with_links(@budget.description) %>
     </div>
     <div class="small-12 medium-3 column info padding" data-equalizer-watch>
       <p>
@@ -60,7 +60,7 @@
         <% @budget.groups.each do |group| %>
           <tr>
             <td>
-              <% if group.headings.count == 1 %>
+              <% if group.single_heading_group? %>
                 <%= link_to group.name,
                             budget_investments_path(@budget,
                               heading_id: group.headings.first.id,

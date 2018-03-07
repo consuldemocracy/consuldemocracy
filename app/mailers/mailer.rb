@@ -126,6 +126,13 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def newsletter(newsletter, recipient_email)
+    @newsletter = newsletter
+    @email_to = recipient_email
+
+    mail(to: @email_to, from: @newsletter.from, subject: @newsletter.subject)
+  end
+
   private
 
   def with_user(user, &block)

@@ -8,11 +8,11 @@ feature 'Poll Officing' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Polling officers")
+    expect(page).not_to have_link("Polling officers")
     visit officing_root_path
 
-    expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -21,11 +21,11 @@ feature 'Poll Officing' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Polling officers")
+    expect(page).not_to have_link("Polling officers")
     visit officing_root_path
 
-    expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -34,11 +34,11 @@ feature 'Poll Officing' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Polling officers")
+    expect(page).not_to have_link("Polling officers")
     visit officing_root_path
 
-    expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -47,11 +47,11 @@ feature 'Poll Officing' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Polling officers")
+    expect(page).not_to have_link("Polling officers")
     visit officing_root_path
 
-    expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -61,11 +61,11 @@ feature 'Poll Officing' do
     login_as(user)
     visit root_path
 
-    expect(page).to_not have_link("Polling officers")
+    expect(page).not_to have_link("Polling officers")
     visit officing_root_path
 
-    expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(root_path)
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -79,8 +79,8 @@ feature 'Poll Officing' do
     expect(page).to have_link("Polling officers")
     click_on "Polling officers"
 
-    expect(current_path).to eq(officing_root_path)
-    expect(page).to_not have_content "You do not have permission to access this page"
+    expect(page).to have_current_path(officing_root_path)
+    expect(page).not_to have_content "You do not have permission to access this page"
   end
 
   scenario 'Access as an poll officer is authorized' do
@@ -92,8 +92,8 @@ feature 'Poll Officing' do
     expect(page).to have_link("Polling officers")
     click_on "Polling officers"
 
-    expect(current_path).to eq(officing_root_path)
-    expect(page).to_not have_content "You do not have permission to access this page"
+    expect(page).to have_current_path(officing_root_path)
+    expect(page).not_to have_content "You do not have permission to access this page"
   end
 
   scenario "Poll officer access links" do
@@ -102,9 +102,9 @@ feature 'Poll Officing' do
     visit root_path
 
     expect(page).to have_link("Polling officers")
-    expect(page).to_not have_link('Valuation')
-    expect(page).to_not have_link('Administration')
-    expect(page).to_not have_link('Moderation')
+    expect(page).not_to have_link('Valuation')
+    expect(page).not_to have_link('Administration')
+    expect(page).not_to have_link('Moderation')
   end
 
   scenario 'Officing dashboard' do
@@ -115,11 +115,11 @@ feature 'Poll Officing' do
 
     click_link 'Polling officers'
 
-    expect(current_path).to eq(officing_root_path)
+    expect(page).to have_current_path(officing_root_path)
     expect(page).to have_css('#officing_menu')
-    expect(page).to_not have_css('#valuation_menu')
-    expect(page).to_not have_css('#admin_menu')
-    expect(page).to_not have_css('#moderation_menu')
+    expect(page).not_to have_css('#valuation_menu')
+    expect(page).not_to have_css('#admin_menu')
+    expect(page).not_to have_css('#moderation_menu')
   end
 
   scenario 'Officing dashboard available for multiple sessions', :js do
@@ -149,7 +149,7 @@ feature 'Poll Officing' do
     end
 
     in_browser(:one) do
-      page.should have_content("Here you can validate user documents and store voting results")
+      expect(page).to have_content("Here you can validate user documents and store voting results")
 
       visit new_officing_residence_path
       select 'DNI', from: 'residence_document_type'
@@ -162,11 +162,11 @@ feature 'Poll Officing' do
       expect(Poll::Voter.where(document_number: '12345678Z', poll_id: poll, origin: 'booth', officer_id: officer1).count).to be(1)
 
       visit final_officing_polls_path
-      page.should have_content("Polls ready for final recounting")
+      expect(page).to have_content("Polls ready for final recounting")
     end
 
     in_browser(:two) do
-      page.should have_content("Here you can validate user documents and store voting results")
+      expect(page).to have_content("Here you can validate user documents and store voting results")
 
       visit new_officing_residence_path
       select 'DNI', from: 'residence_document_type'
@@ -179,7 +179,7 @@ feature 'Poll Officing' do
       expect(Poll::Voter.where(document_number: '12345678Y', poll_id: poll, origin: 'booth', officer_id: officer2).count).to be(1)
 
       visit final_officing_polls_path
-      page.should have_content("Polls ready for final recounting")
+      expect(page).to have_content("Polls ready for final recounting")
     end
   end
 end

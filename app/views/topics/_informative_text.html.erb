@@ -1,11 +1,13 @@
-<h3><%= t("community.show.create_first_community_topic.first_theme") %></h3>
+<p class="lead"><%= t("community.show.create_first_community_topic.first_theme") %></p>
 
 <% if user_signed_in? %>
-  <%= t("community.show.create_first_community_topic.first_theme_not_logged_in") %>
+  <div class="callout primary">
+    <%= t("community.show.create_first_community_topic.first_theme_not_logged_in") %>
+  </div>
 <% else %>
   <div class="callout primary">
     <%= t("community.show.create_first_community_topic.sub_first_theme",
-          link: link_to(t("community.show.create_first_community_topic.sign_link",
-          org_name: setting['org_name']), new_user_session_path)).html_safe %>
+          sign_in: link_to(t("community.show.create_first_community_topic.sign_in"), new_user_session_path),
+          sign_up: link_to(t("community.show.create_first_community_topic.sign_up"), new_user_registration_path)).html_safe %>
   </div>
 <% end %>

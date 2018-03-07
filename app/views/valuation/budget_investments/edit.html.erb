@@ -79,16 +79,13 @@
   <div class="row">
     <div class="small-12 medium-8 column">
       <%= f.label :valuation_finished do %>
-        <%= f.check_box :valuation_finished, title: t('valuation.budget_investments.edit.valuation_finished'), label: false %>
+        <%= f.check_box :valuation_finished,
+            title: t('valuation.budget_investments.edit.valuation_finished'),
+            label: false, id: 'js-investment-report-alert',
+            "data-alert": t("valuation.budget_investments.edit.valuation_finished_alert"),
+            "data-not-feasible-alert": t("valuation.budget_investments.edit.not_feasible_alert") %>
         <span class="checkbox"><%= t("valuation.budget_investments.edit.valuation_finished") %></span>
       <% end %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 column">
-      <%= f.label :internal_comments, t("valuation.budget_investments.edit.internal_comments_html") %>
-      <%= f.text_area :internal_comments, label: false, rows: 3 %>
     </div>
   </div>
 
@@ -99,13 +96,11 @@
   </div>
 <% end %>
 
+<%= render 'valuation/budget_investments/valuation_comments' %>
+
 <h1><%= @investment.title %></h1>
 
 <%= safe_html_with_links @investment.description %>
-
-<% if @investment.external_url.present? %>
-  <p><%= text_with_links @investment.external_url %></p>
-<% end %>
 
 <h2><%= t("valuation.budget_investments.show.info") %></h2>
 
@@ -127,7 +122,7 @@
   <% if @investment.administrator.present? %>
     <%= @investment.administrator.name %> (<%= @investment.administrator.email %>)
   <% else %>
-    <%= t("valuation.budget_investments.show.undefined") %></li>
+    <%= t("valuation.budget_investments.show.undefined") %>
   <% end %>
 </p>
 

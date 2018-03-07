@@ -1,89 +1,123 @@
-<h3><%= page_entries_info @investments %></h3>
+<%= form_tag(admin_budget_budget_investments_path(budget: @budget), method: :get) do %>
+  <div class="small-12 medium-3 column">
+    <%= select_tag :sort_by, options_for_select(budget_investments_sorting_options, params[:sort_by]),
+                   { prompt: t("admin.budget_investments.index.sort_by.placeholder"),
+                     label: false,
+                     class: "js-submit-on-change" } %>
+  </div>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t("admin.budget_investments.index.table_id") %></th>
-      <th><%= t("admin.budget_investments.index.table_title") %></th>
-      <th><%= t("admin.budget_investments.index.table_supports") %></th>
-      <th><%= t("admin.budget_investments.index.table_admin") %></th>
-      <th><%= t("admin.budget_investments.index.table_valuator") %></th>
-      <th><%= t("admin.budget_investments.index.table_geozone") %></th>
-      <th><%= t("admin.budget_investments.index.table_feasibility") %></th>
-      <th class="text-center"><%= t("admin.budget_investments.index.table_valuation_finished") %></th>
-      <th class="text-center"><%= t("admin.budget_investments.index.table_selection") %></th>
-      <% if params[:filter] == 'selected' %>
-        <th class="text-center"><%= t("admin.budget_investments.index.table_incompatible") %></th>
-      <% end %>
-    </tr>
-  </thead>
+<%= link_to t("admin.budget_investments.index.download_current_selection"),
+            admin_budget_budget_investments_path(csv_params),
+            class: "float-right small" %>
 
-  <% @investments.each do |investment| %>
-    <tr id="<%= dom_id(investment) %>" class="budget_investment">
-      <td class="text-right">
-        <strong><%= investment.id %></strong>
-      </td>
-      <td>
-        <%= link_to investment.title, admin_budget_budget_investment_path(budget_id: @budget.id, id: investment.id, params: Budget::Investment.filter_params(params)) %>
-      </td>
-      <td class="text-center">
-        <%= investment.total_votes %>
-      </td>
-      <td class="small">
-        <% if investment.administrator.present? %>
-          <span title="<%= t('admin.budget_investments.index.assigned_admin') %>"><%= investment.administrator.name %></span>
-        <% else %>
-          <%= t("admin.budget_investments.index.no_admin_assigned") %>
+<% if @investments.any? %>
+  <h3 class="inline-block"><%= page_entries_info @investments %></h3><br>
+
+  <%= render "filters_description", i18n_namespace: "admin.budget_investments.index" %>
+
+  <table class="table-for-mobile">
+    <thead>
+      <tr>
+        <th><%= t("admin.budget_investments.index.table_id") %></th>
+        <th><%= t("admin.budget_investments.index.table_title") %></th>
+        <th><%= t("admin.budget_investments.index.table_supports") %></th>
+        <th><%= t("admin.budget_investments.index.table_admin") %></th>
+        <th><%= t("admin.budget_investments.index.table_valuator") %></th>
+        <th><%= t("admin.budget_investments.index.table_geozone") %></th>
+        <th><%= t("admin.budget_investments.index.table_feasibility") %></th>
+        <th class="text-center"><%= t("admin.budget_investments.index.table_valuation_finished") %></th>
+        <th class="text-center"><%= t("admin.budget_investments.index.table_selection") %></th>
+        <% if params[:filter] == "selected" %>
+          <th class="text-center"><%= t("admin.budget_investments.index.table_incompatible") %></th>
         <% end %>
-      </td>
-      <td class="small">
-        <% if investment.valuators.size == 0 %>
-          <%= t("admin.budget_investments.index.no_valuators_assigned") %>
-        <% else %>
-          <%= investment.valuators.collect(&:description_or_name).join(', ') %>
-        <% end %>
-      </td>
-      <td class="small">
-        <%= investment.heading.name %>
-      </td>
-      <td class="small">
-        <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}",
-              price: investment.formatted_price)
-        %>
-      </td>
-      <td class="small text-center">
-        <%= investment.valuation_finished? ? t('shared.yes'): t('shared.no') %>
-      </td>
-      <td class="small">
-        <% if investment.selected? %>
-          <%= link_to toggle_selection_admin_budget_budget_investment_path(@budget,
-                                                                           investment,
-                                                                           filter: params[:filter],
-                                                                           page: params[:page]),
-                      method: :patch,
-                      remote: true,
-                      class: "button small expanded" do %>
-            <%= t("admin.budget_investments.index.selected") %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @investments.each do |investment| %>
+        <tr id="<%= dom_id(investment) %>" class="budget_investment">
+          <td class="text-right">
+            <strong><%= investment.id %></strong>
+          </td>
+          <td>
+            <%= link_to investment.title,
+                        admin_budget_budget_investment_path(budget_id: @budget.id,
+                                                            id: investment.id,
+                                                            params: Budget::Investment.filter_params(params)),
+                                                            target: "_blank" %>
+          </td>
+          <td class="text-center">
+            <%= investment.total_votes %>
+          </td>
+          <td class="small">
+            <% if investment.administrator.present? %>
+              <span title="<%= t('admin.budget_investments.index.assigned_admin') %>">
+                <%= investment.administrator.name %>
+              </span>
+            <% else %>
+              <%= t("admin.budget_investments.index.no_admin_assigned") %>
+            <% end %>
+          </td>
+          <td class="small">
+            <% if investment.valuators.size.zero? %>
+              <%= t("admin.budget_investments.index.no_valuators_assigned") %>
+            <% else %>
+              <%= investment.valuators.collect(&:description_or_name).join(", ") %>
+            <% end %>
+          </td>
+          <td class="small">
+            <%= investment.heading.name %>
+          </td>
+          <td class="small">
+            <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}",
+                  price: investment.formatted_price) %>
+          </td>
+          <td class="small text-center">
+            <%= investment.valuation_finished? ? t("shared.yes"): t("shared.no") %>
+          </td>
+          <td class="small">
+            <% if investment.selected? %>
+              <%= link_to_unless investment.budget.finished?,
+                                 t("admin.budget_investments.index.selected"),
+                                 toggle_selection_admin_budget_budget_investment_path(@budget,
+                                                                                      investment,
+                                                                                      filter: params[:filter],
+                                                                                      sort_by: params[:sort_by],
+                                                                                      max_per_heading: params[:max_per_heading],
+                                                                                      advanced_filters: params[:advanced_filters],
+                                                                                      page: params[:page]),
+                                 method: :patch,
+                                 remote: true,
+                                 class: "button small expanded" %>
+            <% elsif investment.feasible? && investment.valuation_finished? %>
+              <%= link_to_unless investment.budget.finished?,
+                                 t("admin.budget_investments.index.select"),
+                                 toggle_selection_admin_budget_budget_investment_path(@budget,
+                                                                                      investment,
+                                                                                      filter: params[:filter],
+                                                                                      sort_by: params[:sort_by],
+                                                                                      max_per_heading: params[:max_per_heading],
+                                                                                      advanced_filters: params[:advanced_filters],
+                                                                                      page: params[:page]),
+                                 method: :patch,
+                                 remote: true,
+                                 class: "button small hollow expanded" %>
+            <% end %>
+          </td>
+          <% if params[:filter] == "selected" %>
+            <td class="small text-center">
+              <%= investment.incompatible? ? t("shared.yes"): t("shared.no") %>
+            </td>
           <% end %>
-        <% elsif investment.feasible? && investment.valuation_finished? %>
-          <%= link_to toggle_selection_admin_budget_budget_investment_path(@budget,
-                                                                           investment,
-                                                                           filter: params[:filter],
-                                                                           page: params[:page]),
-                      method: :patch,
-                      remote: true,
-                      class: "button small hollow expanded" do %>
-            <%= t("admin.budget_investments.index.select") %>
-          <% end %>
-        <% end %>
-      </td>
-      <% if params[:filter] == 'selected' %>
-        <td class="small text-center">
-          <%= investment.incompatible? ? t('shared.yes'): t('shared.no') %>
-        </td>
+        </tr>
       <% end %>
-    </tr>
-  <% end %>
-</table>
+    </tbody>
+  </table>
 
-<%= paginate @investments %>
+  <%= paginate @investments %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.budget_investments.index.no_budget_investments") %>
+  </div>
+<% end %>

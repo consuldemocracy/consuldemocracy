@@ -29,7 +29,7 @@ feature 'Level three verification' do
 
     expect(page).to have_content "Code correct. Your account is now verified"
 
-    expect(page).to_not have_link "Verify my account"
+    expect(page).not_to have_link "Verify my account"
     expect(page).to have_content "Account verified"
   end
 
@@ -60,7 +60,7 @@ feature 'Level three verification' do
 
     expect(page).to have_content "You are a verified user"
 
-    expect(page).to_not have_link "Verify my account"
+    expect(page).not_to have_link "Verify my account"
     expect(page).to have_content "Account verified"
   end
 

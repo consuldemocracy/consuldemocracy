@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'ActsAsTaggableOn' do
+describe ActsAsTaggableOn do
 
   describe 'Tagging' do
     describe "when tagging debates or proposals" do
@@ -97,7 +97,7 @@ describe 'ActsAsTaggableOn' do
       it "blocks tags that don't have at least one tagged element" do
         tag = create(:tag)
 
-        expect(ActsAsTaggableOn::Tag.public_for_api).to_not include(tag)
+        expect(ActsAsTaggableOn::Tag.public_for_api).not_to include(tag)
       end
 
       it 'only permits tags on proposals or debates' do

@@ -1,0 +1,830 @@
+val:
+  account:
+    show:
+      change_credentials_link: Canviar les meues dades d'acces
+      email_on_comment_label: Rebre un correu electrònic quan algú comenta en les meues propostes o debats
+      email_on_comment_reply_label: Rebre un correu electrònic quant algú contesta els meus comentaris
+      erase_account_link: Eliminar el meu compte
+      finish_verification: Finalitzar verificació
+      notifications: Notificacions
+      organization_name_label: Nom de l'organització
+      organization_responsible_name_placeholder: Representant de l'asociació/colectiu
+      personal: Dades personals
+      phone_number_label: Telèfon
+      public_activity_label: Mostrar públicament la meua llista d'activitats
+      public_interests_label: Mostrar les etiquetes dels elements que segueixc públics
+      public_interests_my_title_list: Etiquetes d'elements que segueixes
+      public_interests_user_title_list: Etiquetes d'elements que segueix aquest usuari
+      save_changes_submit: Guardar canvis
+      subscription_to_website_newsletter_label: Rebre correus electrònics amb informació interesant sobre la web
+      email_on_direct_message_label: Rebre correus electrònics amb missatges privats
+      email_digest_label: Rebre un resum de notificacions sobre propostes
+      official_position_badge_label: Mostrar etiqueta de tipus d'usuari
+      title: El meu compte
+      user_permission_debates: Participar en debats
+      user_permission_info: Amb el teu compte ja pots...
+      user_permission_proposal: Crear noves propostes
+      user_permission_support_proposal: Avalar propostes
+      user_permission_title: Participació
+      user_permission_verify: Per a poder realitzar totes les accions verifica el teu compte.
+      user_permission_verify_info: "* Sols usuaris empadronats."
+      user_permission_votes: Participar en les votacions finals
+      username_label: Nom d'usuari
+      verified_account: Compte verificat
+      verify_my_account: Verificar el meu compte
+  application:
+    close: Tancar
+    menu: Menú
+  comments:
+    comments_closed: Els comentaris estan tancats
+    verified_only: Per a participar %{verify_account}
+    verify_account: verifica el teu compte
+    comment:
+      admin: Administrador
+      author: Autor
+      deleted: Este comentari ha segut eliminat
+      moderator: Moderador
+      responses:
+        zero: Sense respostes
+        one: 1 resposta
+        other: "%{count} respostes"
+      user_deleted: Usuari eliminat
+      votes:
+        zero: Sense vots
+        one: 1 vot
+        other: "%{count} vots"
+    form:
+      comment_as_admin: Comentar com administrador
+      comment_as_moderator: Comentar com moderador
+      leave_comment: Deixa el teu comentari
+    orders:
+      most_voted: Més votats
+      newest: Més nous primer
+      oldest: Més antics primer
+      most_commented: Més comentats
+    select_order: Ordenar per
+    show:
+      return_to_commentable: 'Tornar a '
+  comments_helper:
+    comment_button: Publicar comentari
+    comment_link: Comentari
+    comments_title: Comentaris
+    reply_button: Publicar resposta
+    reply_link: Respondre
+  debates:
+    create:
+      form:
+        submit_button: Iniciar un debat
+    debate:
+      comments:
+        zero: Sense comentaris
+        one: 1 Comentari
+        other: "%{count} Comentaris"
+      votes:
+        zero: Sense vots
+        one: 1 vot
+        other: "%{count} vots"
+    edit:
+      editing: Editar debat
+      form:
+        submit_button: Guardar canvis
+      show_link: Vore debat
+    form:
+      debate_text: Text inicial del debat
+      debate_title: Títol del debat
+      tags_instructions: Etiqueta aquest debat.
+      tags_label: Temes
+      tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
+    index:
+      featured_debates: Destacar
+      filter_topic:
+        one: " amb el tema '%{topic}'"
+        other: " amb el tema '%{topic}'"
+      orders:
+        confidence_score: millor valorats
+        created_at: nous
+        hot_score: més actius hui
+        most_commented: més comentats
+        relevance: més rellevants
+        recommendations: recomanacions
+      recommendations:
+        without_results: No existeixen debats relacionats amb els teus interessos
+        without_interests: Segueix propostes per a que pugam donarte recomanacions
+      search_form:
+        button: Cercar
+        placeholder: Cercar debats...
+        title: Cercar
+      search_results_html:
+        one: " que contenen <strong>'%{search_term}'</strong>"
+        other: " que contenen <strong>'%{search_term}'</strong>"
+      select_order: Ordenar per
+      start_debate: Iniciar un debat
+      title: Debats
+      section_header:
+        icon_alt: Icona de debats
+        title: Debats
+        help: Ajuda sobre els debats
+      section_footer:
+        title: Ajuda sobre els debats
+        description: Inicia un debat per a compartir punts de vista amb altres persones sobre els temes que et preocupen.
+        help_text_1: "L'espai de debats ciutadans està dirigit a que quansevol persona puga exposar temes que li preocupen i sobre els que vullga compartir punts de vista amb altres persones."
+        help_text_2: 'Per a obrir un debat es necessari registrar-se en %{org}. Els usuaris ja registrats també poden comentar els debats oberts i varlorar-los amb els botons "Estic d''acord" o "No estic d''acord" que es troben en cadascun d''ells.'
+        help_text_3: "Tin en compte que un debat no activa cap mecanisme d'actuació concret. Si vols fer una %{proposal} per a la ciutat o plantejar un projecte de %{budget} quant s'obriga la convocatoria, ves a la secció corresponent."
+        proposals_link: proposta
+        budget_link: pressupostos participatius
+    new:
+      form:
+        submit_button: Iniciar un debat
+      info: Si el que vols es fer una proposta, esta es la secció incorrecta, entra en %{info_link}.
+      info_link: crear nova proposta
+      more_info: Més informació
+      recommendation_four: Gaudeix d'aquest espai, de les veus que l'omplin, també es el teu.
+      recommendation_one: No escrigues el títol del debat o frases senceres en majuscules. En internet això es considera cridar. I a ningú li agrada que li criden.
+      recommendation_three: Les crítiques despiatades son molt benvingudes. Este es un espai de pensament. Pero et recomanem conservar l'elegancia i l'intel·ligencia. El mon es millor amb elles presents.
+      recommendation_two: Quansevol debat o comentari que implique una acció ilegal serà eliminat, també els que tinguen l'intenció de sabotejar els espais de debat, tota la resta està permés.
+      recommendations_title: Recomanacions per a crear un debat
+      start_new: Iniciar un debat
+    show:
+      author_deleted: Usuari eliminat
+      comments:
+        zero: Sense comentaris
+        one: 1 Comentari
+        other: "%{count} comentaris"
+      comments_title: Comentaris
+      edit_debate_link: Editar
+      flag: Este debat ha sigut marcat com a inapropiat per alguns usuaris.
+      login_to_comment: Necessites %{signin} o %{signup} per a comentar.
+      share: Compartir
+      author: Autor
+    update:
+      form:
+        submit_button: Guardar canvis
+  errors:
+    messages:
+      user_not_found: Usuari no trobat
+      invalid_date_range: "El rang de dates no es vàlid"
+  form:
+    accept_terms: Accepte la %{policy} i les %{conditions}
+    accept_terms_title: Accepte la Política de privacitat i les Condicions d'us
+    conditions: Termes i condicions d'us
+    debate: Debat
+    direct_message: el missatge privat
+    error: error
+    errors: errors
+    not_saved_html: "1 error impedeix salvar este %{resource}.<br>Si us plau verifica els camps marcats per a corregirlos:"
+    policy: Política de privacitat
+    proposal: Proposta
+    proposal_notification: "Notificació"
+    spending_proposal: Proposta d'inversió
+    budget/investment: Proposta d'inversió
+    budget/heading: Partida pressupostaria
+    poll/shift: El torn
+    poll/question/answer: La resposta
+    user: Compte
+    verification/sms: telèfon
+    signature_sheet: Full de signatures
+    document: Document
+    topic: Tema
+    image: Imatge
+  geozones:
+    none: Tota la ciutat
+    all: Tots els àmbits d'actuació
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Hem detectat que estàs navegant desde Internet Explorer. Per a una millor experiència et recomanem utilitzar %{firefox} o %{chrome}.
+      ie_title: Esta web no està optimitzada per al teu navegador
+    footer:
+      accessibility: Accessibilitat
+      conditions: Termes i condicions d'us
+      consul: Aplicació CONSUL
+      consul_url: https://github.com/consul/consul
+      contact_us: Per a assistencia técnica entra en
+      copyright: CONSUL, %{year}
+      description: Este portal utilitza la %{consul} que es %{open_source}.
+      faq: assistència técnica
+      open_data_text: Totes les dades del Ajuntament son teues.
+      open_data_title: Dades obertes
+      open_source: software de codi obert
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Decideix com ha de ser la ciutat que vols.
+      participation_title: Participació
+      privacy: Política de privacitat
+      transparency_text: Obtín qualsevol informació sobre la ciutat.
+      transparency_title: Transparència
+      transparency_url: https://transparency.consul
+    header:
+      administration_menu: Admin
+      administration: Administració
+      available_locales: Idiomes disponibles
+      collaborative_legislation: Processos legislatius
+      debates: Debats
+      external_link_blog: Blog
+      external_link_opendata: Dades obertes
+      external_link_opendata_url: https://opendata.consul
+      external_link_transparency: Transparència
+      external_link_transparency_url: https://transparency.consul
+      locale: 'Idioma:'
+      logo: Logo de CONSUL
+      management: Gestió
+      moderation: Moderació
+      valuation: Avaluació
+      officing: Presidents de taula
+      more_info: Més informació
+      my_account_link: El meu compte
+      my_activity_link: La meua activitat
+      notifications: Notificacions
+      new_notifications:
+        one: Tens una nova notificació
+        other: Tens %{count} notificacions
+      no_notifications: "No tens noves notificacions"
+      open: obert
+      open_city_slogan_html: Existeixen ciutats gobernades directament per els seus habitants, que <strong>debateixen</strong> sobre temes que els preocupen, <strong>proposen</strong> idees per a millorar les seues vides i <strong>decideixen</strong> entre totes i tots les que es duen a terme.
+      open_city_title: La ciutat que vols serà la ciutat que voldras
+      open_gov: Govern %{open}
+      proposals: Propostes
+      poll_questions: Votacions
+      budgets: Pressupostos participatius
+      spending_proposals: Propostes d'inversió
+    admin:
+      watch_form_message: 'Has realitzat canvis que no han sigut guardats. Segur que vols abandonar la pàgina?'
+  legacy_legislation:
+    help:
+      alt: Selecciona el text que vols comentar i polsa el botó amb el llapis.
+      text: Per a comentar este document has de %{sign_in} o %{sign_up}. Després selecciona el texte que vols comentar i polsa el botó amb el llapis.
+      text_sign_in: iniciar sessió
+      text_sign_up: registrar-te
+      title: Com puc comentar aquest document?
+  locale: Valencià
+  notifications:
+    index:
+      comments_on:
+        one: Hi ha un nou comentari en
+        other: Hi ha %{count} comentaris en
+      empty_notifications: No tens noves notificacions.
+      notifiable_hidden: Aquest recurs no esta disponible.
+      mark_all_as_read: Marcar totes como llegides
+      proposal_notification:
+        one: Hi ha una nova notificació en
+        other: Hi ha %{count} noves notificacions en
+      replies_to:
+        one: Hi ha una nova resposta al teu comentari en
+        other: Hi ha %{count} noves respostes al teu comentari en
+      title: Notificacions
+  map:
+    title: "Districtes"
+    proposal_for_district: "Crea una proposta per al teu districte"
+    select_district: Ámbit d'actuació
+    start_proposal: Crear una proposta
+  omniauth:
+    facebook:
+      sign_in: Entrar amb Facebook
+      sign_up: Registrat amb Facebook
+      name: Facebook
+    finish_signup:
+      title: "Detalls adicionals del teu compte"
+      username_warning: "Degut a que hem canviat la forma en la que ens conectem amb les xarxes socials i es possible que el teu nom ja aparega com \"ya en us\", inclus si abans podies accedir amb ell. Si es el teu cas, si us plau eligeix un nom d'usuari distint."
+    google_oauth2:
+      sign_in: Entra amb Google
+      sign_up: Regístrat amb Google
+      name: Google
+    twitter:
+      sign_in: Entra amb Twitter
+      sign_up: Regístrat amb Twitter
+      name: Twitter
+    info_sign_in: "Entra amb:"
+    info_sign_up: "Regístrat amb:"
+    or_fill: "O ompli el següent formulari:"
+  proposals:
+    create:
+      form:
+        submit_button: Crear proposta
+    edit:
+      editing: Editar proposta
+      form:
+        submit_button: Guardar canvis
+      show_link: Vore proposta
+    retire_form:
+      title: Retirar proposta
+      warning: "Si segueixes avant la teua proposta podrà seguir rebent avals, però deixarà de ser llistada en la lista principal, i apareixerà un missatge per a tots els usuaris avisant-los de que l'autor considera que esta proposta no ha de seguir rebent avals"
+      retired_reason_label: Raó per la que es retira la proposta
+      retired_reason_blank: Selecciona una opció
+      retired_explanation_label: Explicació
+      retired_explanation_placeholder: Explica breument per qué consideres que esta proposta no ha de recollir més avals
+      submit_button: Retirar proposta
+    retire_options:
+      duplicated: Duplicada
+      started: En execució
+      unfeasible: Inviable
+      done: Realitzada
+      other: Altra
+    form:
+      geozone: Ámbit d'actuació
+      proposal_external_url: Enllaç a documentació adicional
+      proposal_question: Pregunta de la proposta
+      proposal_question_example_html: "Deu ser resumida en una pregunta amb resposta Sí o No. <br>Ex. 'Està vosté d'acort en peatonalitzar el carrer Major?'"
+      proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
+      proposal_responsible_name_note: "(individualment o com representant d'un col·lectiu; no es mostrarà públicament)"
+      proposal_summary: Resum de la proposta
+      proposal_summary_note: "(màxim 200 caracters)"
+      proposal_text: Texte desenvolupat de la proposta
+      proposal_title: Títol de la proposta
+      proposal_video_url: Enllaç a video extern
+      proposal_video_url_note: Pots afegir un enllaç a Youtube o Vimeo
+      tag_category_label: "Categoríes"
+      tags_instructions: "Etiqueta esta proposta. Pots elegir entre les categories propostes o introduir les que desitges"
+      tags_label: Temes
+      tags_placeholder: "Escriu les etiquetes que desitges separades per una coma (',')"
+      map_location: "Ubicació en el mapa"
+      map_location_instructions: "Navega per el mapa fins la ubicació i deixa el marcador."
+      map_remove_marker: "Eliminar marcador"
+      map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la coneixem."
+    index:
+      featured_proposals: Destacades
+      filter_topic:
+        one: " amb el tema '%{topic}'"
+        other: " amb el tema '%{topic}'"
+      orders:
+        confidence_score: més avalades
+        created_at: noves
+        hot_score: més actives hui
+        most_commented: més comentades
+        relevance: relevancia
+        archival_date: arxivada
+        recommendations: recomanacions
+      recommendations:
+        without_results: No existeixen propostes relacionades amb els teus interessos
+        without_interests: Segueix propostes per a que pugam donar-te recomanacions
+      retired_proposals: Propostes retirades
+      retired_proposals_link: "Propostes retirades per els seus autors"
+      retired_links:
+        all: Totes
+        duplicated: Duplicades
+        started: En execució
+        unfeasible: Inviables
+        done: Realitzades
+        other: Altres
+      search_form:
+        button: Cercar
+        placeholder: Cercar propostes...
+        title: Cercar
+      search_results_html:
+        one: " que conté <strong>'%{search_term}'</strong>"
+        other: " que contenen <strong>'%{search_term}'</strong>"
+      select_order: Ordenar per
+      select_order_long: 'Estas veient les propostes en funció de:'
+      start_proposal: Crea una proposta
+      title: Propostes
+      top: Top semanal
+      top_link_proposals: Propostes més avalades per categoria
+      section_header:
+        icon_alt: Icona de Propostes
+        title: Propostes
+        help: Ajuda sobre les propostes
+      section_footer:
+        title: Ajuda sobre les propostes
+        description: Fes una proposta ciutadana. Si obté els avals suficients i pasa a votació, pots conseguir que tots els habitants decidisquen com volen que siga la nostra ciutat.
+        help_text_1: "Les propostes ciutadanes son una oportunitat per a que els veins i col·lectius decidisquen directament com volen que siga la seua ciutat. Quansevol persona pot fer una proposta sobre un tema que l'interese o preocupe per a que l'Ajuntament la duga a terme, després d'aconseguir els avals suficients i de sotmetre's a votació ciutadana."
+        help_text_2: "Per a crear una proposta cal registrar-se en %{org}. Les propostes que aconseguisquen el aval de l'1% de la gent en la web, pasen a votació. Per a avalar propostes es necessari tindre un compte verificat."
+        help_text_3: "Es convoca una votació ciutadana quant les propostes aconsegueixen els avals necesaris. Una vegada cel·lebrada, si hi ha més gent a favor que en contra, el Consistori asumeix la proposta i la du a terme."
+    new:
+      form:
+        submit_button: Crear proposta
+      more_info: Com funcionen les propostes ciutadanes?
+      recommendation_one: No escrigues el títol de la proposta o frases senceres en majuscules. En internet això es considera cridar. I a ningú li agrada que li criden.
+      recommendation_three: Gaudeix d'aquest espai, de les veus que l'omplin, també es el teu.
+      recommendation_two: Quansevol proposta o comentari que implique una acció ilegal serà eliminat, també els que tinguen l'intenció de sabotejar els espais de debat, tota la resta està permés.
+      recommendations_title: Recomanacions per a crear una proposta
+      start_new: Crear nova proposta
+    notice:
+      retired: Proposta retirada
+    proposal:
+      created: "Has creat una proposta!"
+      share:
+        guide: "Comparteix-la per a que la gent comence a avalarla."
+        edit: "Abans de publicar-se podràs modificar el text al teu gust."
+        view_proposal: Ara no, anar a la meua proposta
+      improve_info: "Millora la teua campanya i aconsegueix més avals"
+      improve_info_link: "Vore més informació"
+      already_supported: Ja has avalat aquesta proposta. Comparteixla!
+      comments:
+        zero: Sense comentaris
+        one: 1 comentari
+        other: "%{count} comentaris"
+      reason_for_supports_necessary: 1% del Cens
+      support: Avalar
+      support_title: Avalar aquesta proposta
+      supports:
+        zero: Sense avals
+        one: 1 aval
+        other: "%{count} avals"
+      votes:
+        zero: Sense vots
+        one: 1 vot
+        other: "%{count} vots"
+      supports_necessary: "%{number} avals necessaris"
+      total_percent: 100%
+      archived: "Aquesta proposta ha sigut arxivada i ja no pot recollir avals."
+      successful: "Esta proposta ha aconseguit els avals necessaris i pasarà a la %{voting}."
+      voting: "pròxima votació"
+    show:
+      author_deleted: Usuari eliminat
+      code: 'Codi de la proposta:'
+      comments:
+        zero: Sense comentaris
+        one: 1 Comentari
+        other: "%{count} comentaris"
+      comments_tab: Comentaris
+      edit_proposal_link: Editar
+      flag: Esta proposta ha sigut marcada com inapropiada per diversos usuaris.
+      login_to_comment: Necessites %{signin} o %{signup} per a comentar.
+      notifications_tab: Notificacions
+      retired_warning: "L'autor d'esta proposta considera que ja no ha de seguir recollint avals."
+      retired_warning_link_to_explanation: Revisa la seua explicació abans d'avalar-la.
+      retired: Proposta retirada per l'autor
+      share: Compartir
+      send_notification: Enviar notificació
+      no_notifications: "Esta proposta no te notificacions."
+      embed_video_title: "Vídeo en %{proposal}"
+      title_external_url: "Documentació adicional"
+      title_video_url: "Vídeo extern"
+      author: Autor
+    update:
+      form:
+        submit_button: Guardar canvis
+  polls:
+    all: "Totes"
+    no_dates: "sense data asignada"
+    dates: "Des del %{open_at} fins el %{closed_at}"
+    final_date: "Recompte final/Resultats"
+    index:
+      filters:
+        current: "Obertes"
+        incoming: "Pròximament"
+        expired: "Acabades"
+      title: "Votacions"
+      participate_button: "Participar en esta votació"
+      participate_button_incoming: "Més informació"
+      participate_button_expired: "Votació finalitzada"
+      no_geozone_restricted: "Tota la ciutat"
+      geozone_restricted: "Districtes"
+      geozone_info: 'Poden participar les persones empadronades en: '
+      already_answer: "Ja has participat en esta votació"
+      section_header:
+        icon_alt: Icona de Votacions
+        title: Votacions
+        help: Ajuda sobre les votacions
+      section_footer:
+        title: Ajuda sobre les votacions
+        description: Registra't per poder votar propostes ciutadanes i les qüestions que pregunta als veïns l'Ajuntament. Pren decisions municipals de forma directa.
+        help_text_1: "Les votacions es convoquen quant una proposta ciutadana arriba a l'1% d'avals del cens amb dret a vot. En les votacions també es poden incloure qüestions que l'Ajuntament sotmet a decisió directa de la ciutadania."
+        help_text_2: "Per participar en la pròxima votació has de regitstrar-te en %{org} i verificar el teu compte. Poden votar totes les persones empadronades en la ciutat majors de 16 anys. Els resultats de totes les votacions seran vinculants per al govern."
+    show:
+      already_voted_in_booth: "Ya has participat en esta votació en urnes presencials, no pots tornar a participar."
+      already_voted_in_web: "Ya has participat en esta votació. Si tornes a votar es sobreescriurà el teu vot anterior."
+      back: Tornar a les votacions
+      cant_answer_not_logged_in: "Necessites %{signin} o %{signup} per a participar."
+      comments_tab: Comentaris
+      login_to_comment: Necessites %{signin} o %{signup} per a comentar.
+      signin: Iniciar sessió
+      signup: Registrar-te
+      cant_answer_verify_html: "Si us plau %{verify_link} per a poder respondre."
+      verify_link: "verifica el teu compte"
+      cant_answer_incoming: "Esta votació encara no ha començat."
+      cant_answer_expired: "Esta votació ha acabat."
+      cant_answer_wrong_geozone: "Esta votació no està disponible en la teua zona."
+      more_info_title: "Més informació"
+      documents: Documents
+      zoom_plus: Ampliar imatge
+      read_more: "Llegir més sobre %{answer}"
+      read_less: "Llegir menys sobre %{answer}"
+      participate_in_other_polls: Participar en altres votacions
+      videos: "Video extern"
+      info_menu: "Informació"
+      stats_menu: "Estadístiques de participació"
+      results_menu: "Resultats de la votació"
+      stats:
+        title: "Dades de participació"
+        total_participation: "Participació total"
+        total_votes: "Nº total de vots emesos"
+        votes: "VOTS"
+        web: "WEB"
+        booth: "URNES"
+        total: "TOTAL"
+        valid: "Vàlids"
+        white: "En blanc"
+        null_votes: "Nuls"
+      results:
+        title: "Preguntes"
+        most_voted_answer: 'Resposta més votada: '
+  poll_questions:
+    create_question: "Crear pregunta"
+    show:
+      vote_answer: "Votar %{answer}"
+      voted: "Has votat %{answer}"
+      voted_token: "Pots apuntar este identificador de vot, per a comprobar la teua votació en el resultat final:"
+  proposal_notifications:
+    new:
+      title: "Enviar missatge"
+      title_label: "Títol"
+      body_label: "Missatge"
+      submit_button: "Enviar missatge"
+      info_about_receivers_html: "Este missatge s'enviarà a <strong>%{count} usuaris</strong> i es publicarà en %{proposal_page}.<br>El missatge no s'enviarà inmediatament, els usuaris rebran periòdicament un correu electrònic amb totes les notificacions de propostes."
+      proposal_page: "la pàgina de la proposta"
+    show:
+      back: "Tornar a la meua activitat"
+  shared:
+    edit: 'Editar'
+    save: 'Guardar'
+    delete: Eliminar
+    "yes": "Si"
+    "no": "No"
+    search_results: "Resultats de la cerca"
+    advanced_search:
+      author_type: 'Per categoria d''autor'
+      author_type_blank: 'Eligeix una categoria'
+      date: 'Per data'
+      date_placeholder: 'DD/MM/AAAA'
+      date_range_blank: 'Eligeix una data'
+      date_1: 'Últimes 24 hores'
+      date_2: 'Última setmana'
+      date_3: 'Últim mes'
+      date_4: 'Últim any'
+      date_5: 'Personalitzada'
+      from: 'Desde'
+      general: 'Amb el text'
+      general_placeholder: 'Escriu el text'
+      search: 'Filtrar'
+      title: 'Cerca avançada'
+      to: 'Fins'
+    author_info:
+      author_deleted: Usuari eliminat
+    back: Tornar
+    check: Seleccionar
+    check_all: Tots
+    check_none: Cap
+    collective: Col·lectiu
+    flag: Denunciar com inapropiat
+    follow: "Seguir"
+    following: "Seguint"
+    follow_entity: "Seguir %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Ara estas seguint aquest projecte d'inversió! </br> Te notificarem els canvis a mesura que es produïsquen per a que estigues al dia."
+        destroy:
+          notice_html: "Has deixat de seguir aquest projecte d'inversió </br> Ja no rebras més notificacions relacionades amb aquest projecte."
+      proposal:
+        create:
+          notice_html: "Ara estas seguint esta proposta ciutadana! </br>Te notificarem els canvis a mesura que es produïsquen per a que estigues al dia."
+        destroy:
+          notice_html: "Has deixat de seguir esta proposta ciutadana! </br> Ya no rebras més notificacions relacionades en esta proposta."
+    hide: Amagar
+    print:
+      print_button: Imprimir esta informació
+    search: Cercar
+    show: Mostrar
+    suggest:
+      debate:
+        found:
+          one: "Existeix un debat amb el terme '%{query}', pots participar en ell en compte d'obrir-ne un nou."
+          other: "Existeixen debats amb el terme '%{query}', pots participar en ells en compte d'obrir-ne un nou."
+        message: "Estas veient %{limit} de %{count} debats que contenen el terme '%{query}'"
+        see_all: "Vore tots"
+      budget_investment:
+        found:
+          one: "Existeix una proposta amb el terme '%{query}', pots participar en ell en compte d'obrir-ne una nova."
+          other: "Existeixen propostes amb el terme '%{query}', pots participar en elles en compte d'obrir-ne una nova."
+        message: "Estas veient %{limit} de %{count} propostes que contenen el terme '%{query}'"
+        see_all: "Vore totes"
+      proposal:
+        found:
+          one: "Existeix una proposta amb el terme '%{query}', pots participar en ella en compte d'obrir-ne una nova"
+          other: "Existeixen propostes amb el terme '%{query}', pots participar en elles en compte d'obrir-ne una nova"
+        message: "Estas veient %{limit} de %{count} propostes que contenen el terme '%{query}'"
+        see_all: "Vore totes"
+    tags_cloud:
+      tags: Tendencies
+      districts: "Districtes"
+      districts_list: "Llista de districtes"
+      categories: "Categoríes"
+    target_blank_html: " (s'obri en una nova finestra)"
+    you_are_in: "Estàs en"
+    unflag: Desfer denuncia
+    unfollow_entity: "Deixar de seguir %{entity}"
+    outline:
+      budget: Pressupost participatiu
+      searcher: Cercador
+    go_to_page: "Anar a la pàgina de "
+    share: Compartir
+    orbit:
+      previous_slide: Imatge anterior
+      next_slide: Imatge següent
+    documentation: Documentació adicional
+  social:
+    blog: "Blog de %{org}"
+    facebook: "Facebook de %{org}"
+    twitter: "Twitter de %{org}"
+    youtube: "YouTube de %{org}"
+    whatsapp: WhatsApp
+    telegram: "Telegram de %{org}"
+    instagram: "Instagram de %{org}"
+  spending_proposals:
+    form:
+      association_name_label: 'Si proposes en nom d''una associació o col·lectiu afegeix el nom ací'
+      association_name: 'Nom de l''associació'
+      description: Descripció
+      external_url: Enllaç a documentació adicional
+      geozone: Ámbit d'actuació
+      submit_buttons:
+        create: Crear
+        new: Crear
+      title: Títol de la proposta de despesa
+    index:
+      title: Pressupostos participatius
+      unfeasible: Propostes d'inversió no viables
+      by_geozone: 'Propostes d''inversió amb àmbit: %{geozone}'
+      search_form:
+        button: Cercar
+        placeholder: Propostes d'inversió...
+        title: Cercar
+      search_results:
+        one: " que conté '%{search_term}'"
+        other: " que contenen '%{search_term}'"
+      sidebar:
+        geozones: Ámbits d'actuació
+        feasibility: Viabilitat
+        unfeasible: Inviable
+      start_spending_proposal: Crea una proposta d'inversió
+    new:
+      more_info: Cóm funcionen els pressupostos participatius?
+      recommendation_one: Es fonamental que faça referència a una actuació pressupostable.
+      recommendation_three: Intenta detallar el màxim possible la proposta per a que l'equip de govern encarregat d'estudiar-la tinga els menors dubtes possibles.
+      recommendation_two: Quansevol proposta o comentari que implique accions il·legals serà eliminada.
+      recommendations_title: Com crear una proposta d'inversió
+      start_new: Crear proposta d'inversió
+    show:
+      author_deleted: Usuari eliminat
+      code: 'Codi de la proposta:'
+      share: Compartir
+    wrong_price_format: Solament pot incloure caràcters numèrics
+    spending_proposal:
+      spending_proposal: Proposta d'inversió
+      already_supported: Ja has avalat aquest projecte. Comparteix-lo!
+      support: Avalar
+      support_title: Avalar este projecte
+      supports:
+        zero: Sense avals
+        one: 1 aval
+        other: "%{count} avals"
+  stats:
+    index:
+      visits: Visites
+      debates: Debats
+      proposals: Propostes
+      comments: Comentaris
+      proposal_votes: Vots en propostes
+      debate_votes: Vots en debats
+      comment_votes: Vots en comentaris
+      votes: Vots
+      verified_users: Usuaris verificats
+      unverified_users: Usuaris sense verificar
+  unauthorized:
+    default: No tens permís per a accedir a aquesta pàgina.
+    manage:
+      all: "No tens permís per a realitzar l'acció '%{action}' sobre '%{subject}'."
+  users:
+    direct_messages:
+      new:
+        body_label: Missatge
+        direct_messages_bloqued: "Este usuari ha decidit no rebre missatges privats"
+        submit_button: Enviar missatge
+        title: Enviar missatge privat a %{receiver}
+        title_label: Títol
+        verified_only: Per a enviar un missatge privat %{verify_account}
+        verify_account: verifica el teu compte
+        authenticate: Necessites %{signin} o %{signup}.
+        signin: iniciar sessió
+        signup: registrar-te
+      show:
+        receiver: Missatge enviat a %{receiver}
+    show:
+      deleted: Eliminat
+      deleted_debate: Este debat ha segut eliminat
+      deleted_proposal: Esta proposta ha segut eliminada
+      deleted_budget_investment: Esta proposta d'inversió ha segut eliminada
+      proposals: Propostes
+      debates: Debats
+      budget_investments: Projectes de pressupostos participatius
+      comments: Comentaris
+      actions: Accions
+      filters:
+        comments:
+          one: 1 Comentari
+          other: "%{count} comentaris"
+        debates:
+          one: 1 Debat
+          other: "%{count} Debats"
+        proposals:
+          one: 1 Proposta
+          other: "%{count} Propostes"
+        budget_investments:
+          one: 1 Projecte de pressupostos participatius
+          other: "%{count} Projectes de pressupostos participatius"
+        follows:
+          one: 1 Seguint
+          other: "%{count} Seguint"
+      no_activity: Usuari sense activitat pública
+      no_private_messages: "Este usuari no accepta missatges privats."
+      private_activity: Este usuari ha decidit mantindre en privat la seua llista d'activitats.
+      send_private_message: "Enviar un missatge privat"
+    proposals:
+      send_notification: "Enviar notificació"
+      retire: "Retirar"
+      retired: "Proposta retirada"
+      see: "Vore proposta"
+  votes:
+    agree: Estic d'acord
+    anonymous: Massa vots anònims, per a poder votar %{verify_account}.
+    comment_unauthenticated: Necessites %{signin} o %{signup} per a votar.
+    disagree: No estic d'acord
+    organizations: Les organitzacions no poden votar
+    signin: Iniciar sessió
+    signup: Registrar-te
+    supports: Avals
+    unauthenticated: Necessites %{signin} o %{signup} per a continuar.
+    verified_only: Les propostes d'inversió només poden ser votades per usuaris verificats, %{verify_account}.
+    verify_account: verifica el teu compte
+    spending_proposals:
+      not_logged_in: Necessites %{signin} o %{signup} per a continuar.
+      not_verified: Les propostes d'inversió només poden ser votades per usuaris verificats, %{verify_account}.
+      organization: Les organitzacions no poden votar
+      unfeasible: No es poden votar propostes inviables
+      not_voting_allowed: El període de votació està tancat
+    budget_investments:
+      not_logged_in: Necessites %{signin} o %{signup} per a continuar.
+      not_verified: El projectes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
+      organization: Les organitzacions no poden votar
+      unfeasible: No es poden votar propostes inviables
+      not_voting_allowed: El període de votació està tancat
+      different_heading_assigned: Només pots avalar propostes en un districte
+  welcome:
+    debates:
+      description: Trobar-nos, debatir i compartir el que ens pareix important en la nostra ciutat.
+      title: Debats
+    decide:
+      description: La ciutadania decideix si accepta o rebutja les propostes més avalades.
+      title: Decideix
+    do:
+      description: Si la proposta es acceptada majoritariament, l'Ajuntament la asumeix com a propia i la du a terme.
+      title: Es fa
+    proposal:
+      description: Espai obert per a propostes ciutadanes sobre el tipus de ciutat en el que volem viure.
+      title: Proposes
+    recommended:
+      title: Recomanacions que et poden interessar
+      debates:
+        title: Debats recomanats
+        btn_text_link: Tots els debats recomanats
+      proposals:
+        title: Propostes recomanades
+        btn_text_link: Totes les propostes recomanades
+      budget_investments:
+        title: Pressupostos recomanats
+    verification:
+      i_dont_have_an_account: No tinc compte, vull crear-ne un i verificar-lo
+      i_have_an_account: Ja tinc un compte que vull verificar
+      question: Tens ja un compte en %{org_name}?
+      title: Verificació de compte
+    welcome:
+      go_to_index: Vore propostes i debats
+      title: Participar
+      user_permission_debates: Participar en debats
+      user_permission_info: Amb el teu compte ja pots...
+      user_permission_proposal: Crear noves propostes
+      user_permission_support_proposal: Avalar propostes*
+      user_permission_verify: Per a poder realitzar totes les accions verifica el teu compte.
+      user_permission_verify_info: "* Sols usuaris empadronats."
+      user_permission_verify_my_account: Verificar el meu compte
+      user_permission_votes: Participar en les votacions finals
+  invisible_captcha:
+    sentence_for_humans: "Si eres humà, si us plau ignora este camp"
+    timestamp_error_message: "Açò ha sigut massa ràpid. Si us plau, reenvia el formulari."
+  related_content:
+    title: "Contingut relacionat"
+    add: "Afegir contingut relacionat"
+    label: "Enllaç al contingut relacionat"
+    placeholder: "%{url}"
+    help: "Pots afegir enllaços de %{models} en %{org}."
+    submit: "Afegir"
+    error: "Enllaç no vàlid. Recorda iniciar amb %{url}."
+    error_itself: "Enllaç no vàlid. No es pot relacionar un contingut aconseguisc mateix"
+    success: "Has afegit nou contingut relacionat"
+    is_related: "Es contingut relacionat?"
+    score_positive: "Sí"
+    score_negative: "No"
+    content_title:
+      proposal: "Proposta"
+      debate: "Debat"
+      budget_investment: "Pressupost participatiu"

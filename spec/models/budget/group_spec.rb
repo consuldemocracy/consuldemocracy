@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe Budget::Group do
 
-  it_behaves_like "sluggable"
-
   let(:budget) { create(:budget) }
+
+  it_behaves_like "sluggable", updatable_slug_trait: :drafting_budget
 
   describe "name" do
     before do

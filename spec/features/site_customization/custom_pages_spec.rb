@@ -69,7 +69,46 @@ feature "Custom Pages" do
         expect(page).to have_title("Custom page")
         expect(page).to have_selector("h1", text: "Custom page")
         expect(page).to have_content("Text for new custom page")
-        expect(page).to_not have_content("Print this info")
+        expect(page).not_to have_content("Print this info")
+      end
+
+      scenario "Show all fields and text with links" do
+        custom_page = create(:site_customization_page, :published,
+          slug: "slug-with-all-fields-filled",
+          title: "Custom page",
+          subtitle: "This is my new custom page",
+          content: "Text for new custom page with a link to https://consul.dev",
+          print_content_flag: true,
+          locale: "en"
+        )
+
+        visit custom_page.url
+
+        expect(page).to have_title("Custom page")
+        expect(page).to have_selector("h1", text: "Custom page")
+        expect(page).to have_selector("h2", text: "This is my new custom page")
+        expect(page).to have_content("Text for new custom page with a link to https://consul.dev")
+        expect(page).to have_link("https://consul.dev")
+        expect(page).to have_content("Print this info")
+      end
+
+      scenario "Don't show subtitle if its blank" do
+        custom_page = create(:site_customization_page, :published,
+          slug: "slug-without-subtitle",
+          title: "Custom page",
+          subtitle: "",
+          content: "Text for new custom page",
+          print_content_flag: false,
+          locale: "en"
+        )
+
+        visit custom_page.url
+
+        expect(page).to have_title("Custom page")
+        expect(page).to have_selector("h1", text: "Custom page")
+        expect(page).to have_content("Text for new custom page")
+        expect(page).not_to have_selector("h2")
+        expect(page).not_to have_content("Print this info")
       end
 
       scenario "Listed in more information page" do
@@ -80,7 +119,7 @@ feature "Custom Pages" do
           locale: "en"
         )
 
-        visit more_info_path
+        visit help_path
 
         expect(page).to have_content("Another custom page")
       end
@@ -93,9 +132,9 @@ feature "Custom Pages" do
           locale: "en"
         )
 
-        visit more_info_path
+        visit help_path
 
-        expect(page).to_not have_content("Another custom page")
+        expect(page).not_to have_content("Another custom page")
 
         visit custom_page.url
 
@@ -112,9 +151,9 @@ feature "Custom Pages" do
           locale: "fr"
         )
 
-        visit more_info_path
+        visit help_path
 
-        expect(page).to_not have_content("Ce texte est en français")
+        expect(page).not_to have_content("Ce texte est en français")
 
         visit custom_page.url
 

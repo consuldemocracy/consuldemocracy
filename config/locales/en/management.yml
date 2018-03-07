@@ -83,7 +83,7 @@ en:
     budget_investments:
       alert:
         unverified_user: User is not verified
-      create: Create budget investment
+      create: Create a budget investment
       filters:
         heading: Concepto
         unfeasible: Unfeasible investment

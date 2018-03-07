@@ -12,7 +12,7 @@ feature 'Admin valuators' do
   scenario 'Index' do
     expect(page).to have_content(@valuator.name)
     expect(page).to have_content(@valuator.email)
-    expect(page).to_not have_content(@user.name)
+    expect(page).not_to have_content(@user.name)
   end
 
   scenario 'Create Valuator', :js do
@@ -33,7 +33,7 @@ feature 'Admin valuators' do
     click_link 'Delete'
 
     within('#valuators') do
-      expect(page).to_not have_content(@valuator.name)
+      expect(page).not_to have_content(@valuator.name)
     end
   end
 
@@ -56,8 +56,8 @@ feature 'Admin valuators' do
 
       expect(page).to have_content('Valuators: User search')
       expect(page).to have_content('No results found')
-      expect(page).to_not have_content(@valuator1.name)
-      expect(page).to_not have_content(@valuator2.name)
+      expect(page).not_to have_content(@valuator1.name)
+      expect(page).not_to have_content(@valuator2.name)
     end
 
     scenario 'search by name' do
@@ -69,7 +69,7 @@ feature 'Admin valuators' do
 
       expect(page).to have_content('Valuators: User search')
       expect(page).to have_content(@valuator1.name)
-      expect(page).to_not have_content(@valuator2.name)
+      expect(page).not_to have_content(@valuator2.name)
     end
 
     scenario 'search by email' do
@@ -81,7 +81,7 @@ feature 'Admin valuators' do
 
       expect(page).to have_content('Valuators: User search')
       expect(page).to have_content(@valuator2.email)
-      expect(page).to_not have_content(@valuator1.email)
+      expect(page).not_to have_content(@valuator1.email)
     end
   end
 

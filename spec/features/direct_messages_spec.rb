@@ -34,7 +34,7 @@ feature 'Direct messages' do
       login_as(sender)
       visit user_path(sender)
 
-      expect(page).to_not have_link "Send private message"
+      expect(page).not_to have_link "Send private message"
     end
 
     scenario "Do not display link if direct message for user not allowed" do
@@ -45,7 +45,7 @@ feature 'Direct messages' do
       visit user_path(receiver)
 
       expect(page).to have_content "This user doesn't accept private messages."
-      expect(page).to_not have_link "Send private message"
+      expect(page).not_to have_link "Send private message"
     end
 
     scenario "Unverified user" do
@@ -56,7 +56,7 @@ feature 'Direct messages' do
       visit new_user_direct_message_path(receiver)
 
       expect(page).to have_content "To send a private message verify your account"
-      expect(page).to_not have_link "Send private message"
+      expect(page).not_to have_link "Send private message"
     end
 
     scenario "User not logged in" do
@@ -66,7 +66,7 @@ feature 'Direct messages' do
       visit new_user_direct_message_path(receiver)
 
       expect(page).to have_content "You must sign in or sign up to continue."
-      expect(page).to_not have_link "Send private message"
+      expect(page).not_to have_link "Send private message"
     end
 
     scenario "Accessing form directly" do
@@ -77,7 +77,7 @@ feature 'Direct messages' do
       visit new_user_direct_message_path(receiver)
 
       expect(page).to have_content("This user has decided not to receive direct messages")
-      expect(page).to_not have_css("#direct_message_title")
+      expect(page).not_to have_css("#direct_message_title")
     end
 
   end
@@ -114,7 +114,7 @@ feature 'Direct messages' do
       click_button "Send message"
 
       expect(page).to have_content "You have reached the maximum number of private messages per day"
-      expect(page).to_not have_content "You message has been sent successfully."
+      expect(page).not_to have_content "You message has been sent successfully."
     end
 
   end

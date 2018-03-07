@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <li>
+  <li id="notifications">
     <%= link_to notifications_path, rel: "nofollow", class: "notifications" do %>
       <span class="show-for-sr"><%= t("layouts.header.notifications") %></span>
       <% if current_user.notifications_count > 0 %>

@@ -1,0 +1,6 @@
+he:
+  activemodel:
+    attributes:
+      verification:
+        email:
+          recipient: "קבלת דואר אלקטרוני"

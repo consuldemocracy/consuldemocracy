@@ -34,7 +34,7 @@ feature 'Admin legislation processes' do
         click_link "Collaborative Legislation"
       end
 
-      expect(page).to_not have_content 'An example legislation process'
+      expect(page).not_to have_content 'An example legislation process'
 
       click_link "New process"
 

@@ -3,11 +3,10 @@ class Budget < ActiveRecord::Base
   include Measurable
   include Sluggable
 
-  PHASES = %w(accepting reviewing selecting valuating balloting reviewing_ballots finished).freeze
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
   validates :name, presence: true, uniqueness: true
-  validates :phase, inclusion: { in: PHASES }
+  validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
 
@@ -15,30 +14,59 @@ class Budget < ActiveRecord::Base
   has_many :ballots, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
+  has_many :phases, class_name: Budget::Phase
 
   before_validation :sanitize_descriptions
 
-  scope :on_hold,   -> { where(phase: %w(reviewing valuating reviewing_ballots")) }
+  after_create :generate_phases
+
+  scope :drafting, -> { where(phase: "drafting") }
+  scope :informing, -> { where(phase: "informing") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
   scope :selecting, -> { where(phase: "selecting") }
   scope :valuating, -> { where(phase: "valuating") }
+  scope :publishing_prices, -> { where(phase: "publishing_prices") }
   scope :balloting, -> { where(phase: "balloting") }
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
-  scope :finished,  -> { where(phase: "finished") }
+  scope :finished, -> { where(phase: "finished") }
 
-  scope :current,   -> { where.not(phase: "finished") }
+  scope :open, -> { where.not(phase: "finished") }
 
-  def description
-    send("description_#{phase}").try(:html_safe)
+  def self.current
+    where.not(phase: "drafting").order(:created_at).last
   end
 
-  def self.description_max_length
-    2000
+  def current_phase
+    phases.send(phase)
+  end
+
+  def published_phases
+    phases.published.order(:id)
+  end
+
+  def description
+    description_for_phase(phase)
+  end
+
+  def description_for_phase(phase)
+    if phases.exists? && phases.send(phase).description.present?
+      phases.send(phase).description
+    else
+      send("description_#{phase}").try(:html_safe)
+    end
   end
 
   def self.title_max_length
     80
+  end
+
+  def drafting?
+    phase == "drafting"
+  end
+
+  def informing?
+    phase == "informing"
   end
 
   def accepting?
@@ -57,6 +85,10 @@ class Budget < ActiveRecord::Base
     phase == "valuating"
   end
 
+  def publishing_prices?
+    phase == "publishing_prices"
+  end
+
   def balloting?
     phase == "balloting"
   end
@@ -69,20 +101,16 @@ class Budget < ActiveRecord::Base
     phase == "finished"
   end
 
+  def published_prices?
+    Budget::Phase::PUBLISHED_PRICES_PHASES.include?(phase)
+  end
+
   def balloting_process?
     balloting? || reviewing_ballots?
   end
 
   def balloting_or_later?
     balloting_process? || finished?
-  end
-
-  def on_hold?
-    reviewing? || valuating? || reviewing_ballots?
-  end
-
-  def current?
-    !finished?
   end
 
   def heading_price(heading)
@@ -112,7 +140,7 @@ class Budget < ActiveRecord::Base
     case phase
     when 'accepting', 'reviewing'
       %w{random}
-    when 'balloting', 'reviewing_ballots'
+    when 'publishing_prices', 'balloting', 'reviewing_ballots'
       %w{random price}
     else
       %w{random confidence_score}
@@ -133,12 +161,29 @@ class Budget < ActiveRecord::Base
 
   private
 
-    def sanitize_descriptions
-      s = WYSIWYGSanitizer.new
-      PHASES.each do |phase|
-        sanitized = s.sanitize(send("description_#{phase}"))
-        send("description_#{phase}=", sanitized)
-      end
+  def sanitize_descriptions
+    s = WYSIWYGSanitizer.new
+    Budget::Phase::PHASE_KINDS.each do |phase|
+      sanitized = s.sanitize(send("description_#{phase}"))
+      send("description_#{phase}=", sanitized)
     end
+  end
+
+  def generate_phases
+    Budget::Phase::PHASE_KINDS.each do |phase|
+      Budget::Phase.create(
+        budget: self,
+        kind: phase,
+        prev_phase: phases&.last,
+        starts_at: phases&.last&.ends_at || Date.current,
+        ends_at: (phases&.last&.ends_at || Date.current) + 1.month
+      )
+    end
+  end
+
+  def generate_slug?
+    slug.nil? || drafting?
+  end
 end
+
 

@@ -1,4 +1,5 @@
 inherit_from: .rubocop_todo.yml
+require: rubocop-rspec
 
 AllCops:
   DisplayCopNames: true
@@ -11,60 +12,405 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
   TargetRubyVersion: 2.3
-
-Rails:
-  Enabled: true
-
-Documentation:
-  Enabled: false
+  # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
+  # to ignore them, so only the ones explicitly set in this file are enabled.
+  DisabledByDefault: true
 
 Metrics/LineLength:
-  Max: 140
+  Max: 100
 
 Layout/IndentationConsistency:
   EnforcedStyle: rails
 
-Style/EmptyMethod:
-  Enabled: false
+Layout/EndOfLine:
+  EnforcedStyle: lf
 
-Style/StringLiterals:
-  Enabled: false
+Bundler/DuplicatedGem:
+  Enabled: true
 
-Style/SymbolProc:
-  Enabled: false
+Bundler/InsecureProtocolSource:
+  Enabled: true
 
-Style/FrozenStringLiteralComment:
-  Enabled: false
+Bundler/OrderedGems:
+  Enabled: true
 
-Style/PercentLiteralDelimiters:
-  Enabled: false
+Gemspec/DuplicatedAssignment:
+  Enabled: true
 
-Style/SymbolArray:
-  Enabled: false
+Gemspec/OrderedDependencies:
+  Enabled: true
 
-Layout/EmptyLinesAroundClassBody:
-  Enabled: false
+Gemspec/RequiredRubyVersion:
+  Enabled: true
 
-Layout/EmptyLinesAroundBlockBody:
-  Enabled: false
+Performance/Caller:
+  Enabled: true
 
-Layout/EmptyLinesAroundModuleBody:
-  Enabled: false
+Performance/CaseWhenSplat:
+  Enabled: true
 
-Layout/SpaceBeforeBlockBraces:
-  Enabled: false
+Performance/Casecmp:
+  Enabled: true
 
-Layout/SpaceInsideBrackets:
-  Enabled: false
+Performance/CompareWithBlock:
+  Enabled: true
 
-Layout/SpaceInsideHashLiteralBraces:
-  Enabled: false
+Performance/Count:
+  Enabled: true
 
-Layout/SpaceInsideBlockBraces:
-  Enabled: false
+Performance/Detect:
+  Enabled: true
 
-Layout/TrailingBlankLines:
-  Enabled: false
+Performance/DoubleStartEndWith:
+  Enabled: true
+
+Performance/EndWith:
+  Enabled: true
+
+Performance/FixedSize:
+  Enabled: true
+
+Performance/FlatMap:
+  Enabled: true
+
+Performance/HashEachMethods:
+  Enabled: true
+
+Performance/LstripRstrip:
+  Enabled: true
+
+Performance/RangeInclude:
+  Enabled: true
+
+Performance/RedundantBlockCall:
+  Enabled: true
+
+Performance/RedundantMatch:
+  Enabled: true
+
+Performance/RedundantMerge:
+  Enabled: true
+
+Performance/RedundantSortBy:
+  Enabled: true
+
+Performance/RegexpMatch:
+  Enabled: true
+
+Performance/ReverseEach:
+  Enabled: true
+
+Performance/Sample:
+  Enabled: true
+
+Performance/Size:
+  Enabled: true
+
+Performance/StartWith:
+  Enabled: true
+
+Performance/StringReplacement:
+  Enabled: true
+
+Performance/TimesMap:
+  Enabled: true
+
+Performance/UnfreezeString:
+  Enabled: true
+
+Performance/UriDefaultParser:
+  Enabled: true
+
+Rails/ActionFilter:
+  Enabled: true
+
+Rails/ActiveSupportAliases:
+  Enabled: true
+
+Rails/ApplicationJob:
+  Enabled: true
 
 Rails/ApplicationRecord:
+  Enabled: true
+
+Rails/Blank:
+  Enabled: true
+
+Rails/CreateTableWithTimestamps:
+  Enabled: true
+
+Rails/Date:
+  Enabled: true
+
+Rails/Delegate:
+  Enabled: true
+
+Rails/DelegateAllowBlank:
+  Enabled: true
+
+Rails/DynamicFindBy:
+  Enabled: true
+
+Rails/EnumUniqueness:
+  Enabled: true
+
+Rails/EnvironmentComparison:
+  Enabled: true
+
+Rails/Exit:
+  Enabled: true
+
+Rails/FilePath:
+  Enabled: true
+
+Rails/FindBy:
+  Enabled: true
+
+Rails/FindEach:
+  Enabled: true
+
+Rails/HasAndBelongsToMany:
+  Enabled: true
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: true
+
+Rails/HttpPositionalArguments:
+  Enabled: true
+
+Rails/InverseOf:
+  Enabled: true
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: true
+
+Rails/NotNullColumn:
+  Enabled: true
+
+Rails/Output:
+  Enabled: true
+
+Rails/OutputSafety:
+  Enabled: true
+
+Rails/PluralizationGrammar:
+  Enabled: true
+
+Rails/Presence:
+  Enabled: true
+
+Rails/Present:
+  Enabled: true
+
+Rails/ReadWriteAttribute:
+  Enabled: true
+
+Rails/RedundantReceiverInWithOptions:
+  Enabled: true
+
+Rails/RelativeDateConstant:
+  Enabled: true
+
+Rails/RequestReferer:
+  Enabled: true
+
+Rails/ReversibleMigration:
+  Enabled: true
+
+Rails/SafeNavigation:
+  Enabled: true
+
+Rails/SaveBang:
+  Enabled: true
+
+Rails/ScopeArgs:
+  Enabled: true
+
+Rails/SkipsModelValidations:
+  Enabled: true
+
+Rails/TimeZone:
+  Enabled: true
+
+Rails/UniqBeforePluck:
+  Enabled: true
+
+Rails/UnknownEnv:
+  Enabled: true
+
+Rails/Validation:
+  Enabled: true
+
+RSpec/AlignLeftLetBrace:
   Enabled: false
+
+RSpec/AlignRightLetBrace:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/AroundBlock:
+  Enabled: true
+
+RSpec/BeEql:
+  Enabled: true
+
+RSpec/BeforeAfterAll:
+  Enabled: true
+
+Capybara/CurrentPathExpectation:
+  Enabled: true
+
+Capybara/FeatureMethods:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: true
+
+RSpec/DescribeMethod:
+  Enabled: true
+
+RSpec/DescribeSymbol:
+  Enabled: true
+
+RSpec/DescribedClass:
+  Enabled: true
+
+RSpec/EmptyExampleGroup:
+  Enabled: true
+
+RSpec/EmptyLineAfterSubject:
+  Enabled: true
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/ExampleWording:
+  Enabled: true
+
+RSpec/ExpectActual:
+  Enabled: true
+
+RSpec/ExpectInHook:
+  Enabled: true
+
+RSpec/ExpectOutput:
+  Enabled: true
+
+RSpec/FilePath:
+  Enabled: true
+
+RSpec/Focus:
+  Enabled: true
+
+RSpec/HookArgument:
+  Enabled: true
+
+RSpec/ImplicitExpect:
+  Enabled: true
+  EnforcedStyle: should
+
+RSpec/InstanceSpy:
+  Enabled: true
+
+RSpec/InstanceVariable:
+  Enabled: true
+
+RSpec/InvalidPredicateMatcher:
+  Enabled: true
+
+RSpec/ItBehavesLike:
+  Enabled: true
+
+RSpec/IteratedExpectation:
+  Enabled: true
+
+RSpec/LeadingSubject:
+  Enabled: true
+
+RSpec/LetBeforeExamples:
+  Enabled: true
+
+RSpec/LetSetup:
+  Enabled: true
+
+RSpec/MessageChain:
+  Enabled: true
+
+RSpec/MessageExpectation:
+  Enabled: true
+
+RSpec/MessageSpies:
+  Enabled: true
+  EnforcedStyle: receive
+
+RSpec/MultipleDescribes:
+  Enabled: true
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MultipleSubjects:
+  Enabled: true
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: true
+  Max: 4
+
+RSpec/NotToNot:
+  Enabled: true
+
+RSpec/OverwritingSetup:
+  Enabled: true
+
+RSpec/PredicateMatcher:
+  Enabled: true
+
+RSpec/RepeatedDescription:
+  Enabled: true
+
+RSpec/RepeatedExample:
+  Enabled: true
+
+RSpec/ReturnFromStub:
+  Enabled: true
+
+RSpec/ScatteredLet:
+  Enabled: true
+
+RSpec/ScatteredSetup:
+  Enabled: true
+
+RSpec/SharedContext:
+  Enabled: true
+
+RSpec/SingleArgumentMessageChain:
+  Enabled: true
+
+RSpec/SubjectStub:
+  Enabled: true
+
+RSpec/VerifiedDoubles:
+  Enabled: true
+
+RSpec/VoidExpect:
+  Enabled: true
+
+Security/Eval:
+  Enabled: true
+
+Security/JSONLoad:
+  Enabled: true
+
+Security/MarshalLoad:
+  Enabled: true
+
+Security/YAMLLoad:
+  Enabled: true

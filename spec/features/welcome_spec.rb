@@ -7,7 +7,7 @@ feature "Welcome screen" do
 
     login_through_form_as(user)
 
-    expect(current_path).to eq(welcome_path)
+    expect(page).to have_current_path(welcome_path)
   end
 
   scenario 'a regular user does not see it when coing to /email' do
@@ -25,7 +25,7 @@ feature "Welcome screen" do
 
     expect(page).to have_content("You are a verified user")
 
-    expect(current_path).to eq(account_path)
+    expect(page).to have_current_path(account_path)
   end
 
   scenario 'it is not shown more than once' do
@@ -33,7 +33,7 @@ feature "Welcome screen" do
 
     login_through_form_as(user)
 
-    expect(current_path).to eq(root_path)
+    expect(page).to have_current_path(root_path)
   end
 
   scenario 'is not shown to organizations' do
@@ -41,7 +41,7 @@ feature "Welcome screen" do
 
     login_through_form_as(organization.user)
 
-    expect(current_path).to eq(root_path)
+    expect(page).to have_current_path(root_path)
   end
 
   scenario 'it is not shown to level-2 users' do
@@ -49,7 +49,7 @@ feature "Welcome screen" do
 
     login_through_form_as(user)
 
-    expect(current_path).to eq(root_path)
+    expect(page).to have_current_path(root_path)
   end
 
   scenario 'it is not shown to level-3 users' do
@@ -57,7 +57,7 @@ feature "Welcome screen" do
 
     login_through_form_as(user)
 
-    expect(current_path).to eq(root_path)
+    expect(page).to have_current_path(root_path)
   end
 
   scenario 'is not shown to administrators' do
@@ -65,7 +65,7 @@ feature "Welcome screen" do
 
     login_through_form_as(administrator.user)
 
-    expect(current_path).to eq(root_path)
+    expect(page).to have_current_path(root_path)
   end
 
 end

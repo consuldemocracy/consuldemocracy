@@ -1,8 +1,9 @@
 require 'rails_helper'
 require 'cancan/matchers'
 
-describe "Abilities::Common" do
+describe Abilities::Common do
   subject(:ability) { Ability.new(user) }
+
   let(:geozone)     { create(:geozone)  }
 
   let(:user) { create(:user, geozone: geozone) }
@@ -151,12 +152,19 @@ describe "Abilities::Common" do
     it { should be_able_to(:edit, own_proposal)                  }
     it { should_not be_able_to(:edit, proposal)                  } # Not his
     it { should_not be_able_to(:edit, own_proposal_non_editable) }
+
+    it { should be_able_to(:destroy, own_proposal_image)         }
+    it { should be_able_to(:destroy, own_proposal_document)      }
+
+    it { should_not be_able_to(:destroy, proposal_image)         }
+    it { should_not be_able_to(:destroy, proposal_document)      }
   end
 
   describe "when level 2 verified" do
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
 
     let(:own_direct_message) { create(:direct_message, sender: user) }
+
     before{ user.update(residence_verified_at: Time.current, confirmed_phone: "1") }
 
     describe "Proposal" do
@@ -195,7 +203,7 @@ describe "Abilities::Common" do
       it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
 
       context "without geozone" do
-        before(:each) { user.geozone = nil }
+        before { user.geozone = nil }
 
         it { should_not be_able_to(:answer, poll_question_from_own_geozone)   }
         it { should     be_able_to(:answer, poll_question_from_all_geozones)  }
@@ -216,8 +224,8 @@ describe "Abilities::Common" do
       it { should_not be_able_to(:create, investment_in_selecting_budget) }
       it { should_not be_able_to(:create, investment_in_balloting_budget) }
 
-      it { should_not be_able_to(:vote, investment_in_accepting_budget) }
       it { should be_able_to(:vote, investment_in_selecting_budget) }
+      it { should_not be_able_to(:vote, investment_in_accepting_budget) }
       it { should_not be_able_to(:vote, investment_in_balloting_budget) }
 
       it { should_not be_able_to(:destroy, investment_in_accepting_budget) }
@@ -228,17 +236,24 @@ describe "Abilities::Common" do
       it { should be_able_to(:destroy, own_investment_in_accepting_budget) }
       it { should be_able_to(:destroy, own_investment_in_reviewing_budget) }
       it { should_not be_able_to(:destroy, own_investment_in_selecting_budget) }
-      it { should_not be_able_to(:destroy, investment_in_balloting_budget) }
+      it { should_not be_able_to(:destroy, own_investment_in_balloting_budget) }
 
+      it { should be_able_to(:create, ballot_in_balloting_budget) }
       it { should_not be_able_to(:create, ballot_in_accepting_budget) }
       it { should_not be_able_to(:create, ballot_in_selecting_budget) }
-      it { should be_able_to(:create, ballot_in_balloting_budget) }
+
+      it { should be_able_to(:destroy, own_budget_investment_image) }
+      it { should be_able_to(:destroy, own_budget_investment_document) }
+
+      it { should_not be_able_to(:destroy, budget_investment_image) }
+      it { should_not be_able_to(:destroy, budget_investment_document) }
     end
   end
 
   describe "when level 3 verified" do
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
     let(:own_direct_message) { create(:direct_message, sender: user) }
+
     before{ user.update(verified_at: Time.current) }
 
     it { should be_able_to(:vote, Proposal)          }
@@ -270,7 +285,7 @@ describe "Abilities::Common" do
     it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
 
     context "without geozone" do
-      before(:each) { user.geozone = nil }
+      before { user.geozone = nil }
       it { should_not be_able_to(:answer, poll_question_from_own_geozone)   }
       it { should     be_able_to(:answer, poll_question_from_all_geozones)  }
       it { should_not be_able_to(:answer, poll_question_from_other_geozone) }

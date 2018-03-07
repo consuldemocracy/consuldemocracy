@@ -14,7 +14,7 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
 
     if @answer.save
       redirect_to admin_answer_images_path(@answer),
-               notice: "Image uploaded successfully"
+               notice: t("flash.actions.create.poll_question_answer_image")
     else
       render :new
     end
