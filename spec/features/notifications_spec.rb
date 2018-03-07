@@ -128,6 +128,14 @@ feature "Notifications" do
     expect(page).to_not have_css("#notifications")
   end
 
+  scenario "Notification's notifiable model no longer includes Notifiable module" do
+    create(:notification, notifiable: create(:spending_proposal), user: user)
+    create(:notification, notifiable: create(:poll_question), user: user)
+
+    click_notifications_icon
+    expect(page).to have_content('This resource is not available anymore.', count: 2)
+  end
+
   context "Admin Notifications" do
     let(:admin_notification) do
       create(:admin_notification, title: 'Notification title',
