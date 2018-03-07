@@ -293,7 +293,7 @@ feature 'Ballots' do
       visit spending_proposals_path(geozone: new_york)
 
       expect(page).not_to have_css "#progressbar"
-      expect(page).to have_content "You have active votes in another district:"
+      expect(page).to have_content "You have active votes in another district: California"
       expect(page).to have_link california.name, href: spending_proposals_path(geozone: california)
     end
 

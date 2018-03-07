@@ -226,7 +226,7 @@ feature 'Ballots' do
         click_link "Districts"
         click_link "District 2"
 
-        expect(page).to have_content("You have active votes in another heading")
+        expect(page).to have_content("You have active votes in another heading: District 1")
       end
     end
 
@@ -296,7 +296,7 @@ feature 'Ballots' do
       visit budget_investments_path(budget, heading_id: new_york.id)
 
       expect(page).not_to have_css "#progressbar"
-      expect(page).to have_content "You have active votes in another heading:"
+      expect(page).to have_content "You have active votes in another heading: California"
       expect(page).to have_link california.name, href: budget_investments_path(budget, heading_id: california.id)
     end
 
