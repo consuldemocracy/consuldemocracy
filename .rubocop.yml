@@ -370,6 +370,9 @@ RSpec/OverwritingSetup:
 RSpec/PredicateMatcher:
   Enabled: true
 
+Rails/HttpStatus:
+  Enabled: true
+
 RSpec/RepeatedDescription:
   Enabled: true
 
