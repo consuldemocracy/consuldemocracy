@@ -65,15 +65,6 @@ module BudgetsHelper
   end
 
   def current_budget_map_locations
-    current_budget.investments.map do |investment|
-      next unless investment.map_location.present?
-      {
-        lat: investment.map_location.latitude,
-        long: investment.map_location.longitude,
-        investment_title: investment.title,
-        investment_id: investment.id,
-        budget_id: current_budget.id
-      }
-    end.flatten.compact
+    MapLocation.where(investment_id: current_budget.investments).map { |l| l.json_data }
   end
 end
