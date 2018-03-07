@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :local_census_record, class: 'LocalCensusRecord' do
     document_number '12345678A'
     document_type 1
-    date_of_birth Date.new(1970, 1, 31)
+    date_of_birth { Date.new(1970, 1, 31) }
     postal_code '28002'
   end
 
@@ -24,40 +24,40 @@ FactoryBot.define do
     end
 
     trait :level_two do
-      residence_verified_at Time.current
+      residence_verified_at { Time.current }
       unconfirmed_phone "611111111"
       confirmed_phone "611111111"
       sms_confirmation_code "1234"
       document_type "1"
       document_number
-      date_of_birth Date.new(1980, 12, 31)
+      date_of_birth { Date.new(1980, 12, 31) }
       gender "female"
       geozone
     end
 
     trait :level_three do
-      verified_at Time.current
+      verified_at { Time.current }
       document_type "1"
       document_number
     end
 
     trait :hidden do
-      hidden_at Time.current
+      hidden_at { Time.current }
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.current
+      confirmed_hide_at { Time.current }
     end
 
     trait :verified do
-      residence_verified_at Time.current
-      verified_at Time.current
+      residence_verified_at { Time.current }
+      verified_at { Time.current }
     end
 
     trait :in_census do
       document_number "12345678Z"
       document_type "1"
-      verified_at Time.current
+      verified_at { Time.current }
     end
   end
 
@@ -77,7 +77,7 @@ FactoryBot.define do
     user
     document_number
     document_type    "1"
-    date_of_birth    Date.new(1980, 12, 31)
+    date_of_birth    { Date.new(1980, 12, 31) }
     postal_code      "28013"
     terms_of_service '1'
 
@@ -90,7 +90,7 @@ FactoryBot.define do
     user
     document_number
     document_type 1
-    date_of_birth Date.new(1900, 1, 1)
+    date_of_birth { Date.new(1900, 1, 1) }
     postal_code '28000'
   end
 
@@ -108,7 +108,7 @@ FactoryBot.define do
   factory :lock do
     user
     tries 0
-    locked_until Time.current
+    locked_until { Time.current }
   end
 
   factory :verified_user do
@@ -123,15 +123,15 @@ FactoryBot.define do
     association :author, factory: :user
 
     trait :hidden do
-      hidden_at Time.current
+      hidden_at { Time.current }
     end
 
     trait :with_ignored_flag do
-      ignored_flag_at Time.current
+      ignored_flag_at { Time.current }
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.current
+      confirmed_hide_at { Time.current }
     end
 
     trait :flagged do
@@ -169,15 +169,15 @@ FactoryBot.define do
     association :author, factory: :user
 
     trait :hidden do
-      hidden_at Time.current
+      hidden_at { Time.current }
     end
 
     trait :with_ignored_flag do
-      ignored_flag_at Time.current
+      ignored_flag_at { Time.current }
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.current
+      confirmed_hide_at { Time.current }
     end
 
     trait :flagged do
@@ -187,7 +187,7 @@ FactoryBot.define do
     end
 
     trait :archived do
-      created_at 25.months.ago
+      created_at { 25.months.ago }
     end
 
     trait :with_hot_score do
@@ -359,10 +359,10 @@ FactoryBot.define do
   factory :budget_phase, class: 'Budget::Phase' do
     budget
     kind        :balloting
-    summary     Faker::Lorem.sentence(3)
-    description Faker::Lorem.sentence(10)
-    starts_at   Date.yesterday
-    ends_at     Date.tomorrow
+    summary     { Faker::Lorem.sentence(3) }
+    description { Faker::Lorem.sentence(10) }
+    starts_at   { Date.yesterday }
+    ends_at     { Date.tomorrow }
     enabled     true
   end
 
@@ -400,7 +400,7 @@ FactoryBot.define do
     association :investment, factory: :budget_investment
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
-    publication_date     Date.current
+    publication_date     { Date.current }
   end
 
   factory :vote do
@@ -453,15 +453,15 @@ FactoryBot.define do
     sequence(:body) { |n| "Comment body #{n}" }
 
     trait :hidden do
-      hidden_at Time.current
+      hidden_at { Time.current }
     end
 
     trait :with_ignored_flag do
-      ignored_flag_at Time.current
+      ignored_flag_at { Time.current }
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.current
+      confirmed_hide_at { Time.current }
     end
 
     trait :flagged do
@@ -587,7 +587,7 @@ FactoryBot.define do
   factory :poll_officer_assignment, class: 'Poll::OfficerAssignment' do
     association :officer, factory: :poll_officer
     association :booth_assignment, factory: :poll_booth_assignment
-    date Date.current
+    date { Date.current }
 
     trait :final do
       final true
@@ -597,7 +597,7 @@ FactoryBot.define do
   factory :poll_shift, class: 'Poll::Shift' do
     association :booth, factory: :poll_booth
     association :officer, factory: :poll_officer
-    date Date.current
+    date { Date.current }
 
     trait :vote_collection_task do
       task 0
@@ -638,13 +638,13 @@ FactoryBot.define do
   factory :poll_partial_result, class: 'Poll::PartialResult' do
     association :question, factory: [:poll_question, :with_answers]
     association :author, factory: :user
-    origin { 'web' }
+    origin 'web'
     answer { question.question_answers.sample.title }
   end
 
   factory :poll_recount, class: 'Poll::Recount' do
     association :author, factory: :user
-    origin { 'web' }
+    origin 'web'
   end
 
   factory :officing_residence, class: 'Officing::Residence' do
@@ -655,7 +655,7 @@ FactoryBot.define do
     year_of_birth    "1980"
 
     trait :invalid do
-      year_of_birth Time.current.year
+      year_of_birth { Time.current.year }
     end
   end
 
@@ -665,11 +665,11 @@ FactoryBot.define do
     sequence(:name) { |n| "org#{n}" }
 
     trait :verified do
-      verified_at Time.current
+      verified_at { Time.current }
     end
 
     trait :rejected do
-      rejected_at Time.current
+      rejected_at { Time.current }
     end
   end
 
@@ -688,13 +688,13 @@ FactoryBot.define do
 
   factory :ahoy_event, class: Ahoy::Event do
     id { SecureRandom.uuid }
-    time DateTime.current
+    time { DateTime.current }
     sequence(:name) {|n| "Event #{n} type"}
   end
 
   factory :visit  do
     id { SecureRandom.uuid }
-    started_at DateTime.current
+    started_at { DateTime.current }
   end
 
   factory :campaign do
@@ -723,8 +723,8 @@ FactoryBot.define do
     style {["banner-style-one", "banner-style-two", "banner-style-three"].sample}
     image {["banner.banner-img-one", "banner.banner-img-two", "banner.banner-img-three"].sample}
     target_url {["/proposals", "/debates" ].sample}
-    post_started_at Time.current - 7.days
-    post_ended_at Time.current + 7.days
+    post_started_at { Time.current - 7.days }
+    post_ended_at { Time.current + 7.days }
   end
 
   factory :proposal_notification do
@@ -755,14 +755,14 @@ FactoryBot.define do
     title "A collaborative legislation process"
     description "Description of the process"
     summary "Summary of the process"
-    start_date Date.current - 5.days
-    end_date Date.current + 5.days
-    debate_start_date Date.current - 5.days
-    debate_end_date Date.current + 2.days
-    draft_publication_date Date.current - 1.day
-    allegations_start_date Date.current
-    allegations_end_date Date.current + 3.days
-    result_publication_date Date.current + 5.days
+    start_date { Date.current - 5.days }
+    end_date { Date.current + 5.days }
+    debate_start_date { Date.current - 5.days }
+    debate_end_date { Date.current + 2.days }
+    draft_publication_date { Date.current - 1.day }
+    allegations_start_date { Date.current }
+    allegations_end_date { Date.current + 3.days }
+    result_publication_date { Date.current + 5.days }
     debate_phase_enabled true
     allegations_phase_enabled true
     draft_publication_enabled true
@@ -770,36 +770,36 @@ FactoryBot.define do
     published true
 
     trait :next do
-      start_date Date.current + 2.days
-      end_date Date.current + 8.days
-      debate_start_date Date.current + 2.days
-      debate_end_date Date.current + 4.days
-      draft_publication_date Date.current + 5.days
-      allegations_start_date Date.current + 5.days
-      allegations_end_date Date.current + 7.days
-      result_publication_date Date.current + 8.days
+      start_date { Date.current + 2.days }
+      end_date { Date.current + 8.days }
+      debate_start_date { Date.current + 2.days }
+      debate_end_date { Date.current + 4.days }
+      draft_publication_date { Date.current + 5.days }
+      allegations_start_date { Date.current + 5.days }
+      allegations_end_date { Date.current + 7.days }
+      result_publication_date { Date.current + 8.days }
     end
 
     trait :past do
-      start_date Date.current - 12.days
-      end_date Date.current - 2.days
-      debate_start_date Date.current - 12.days
-      debate_end_date Date.current - 9.days
-      draft_publication_date Date.current - 8.days
-      allegations_start_date Date.current - 8.days
-      allegations_end_date Date.current - 4.days
-      result_publication_date Date.current - 2.days
+      start_date { Date.current - 12.days }
+      end_date { Date.current - 2.days }
+      debate_start_date { Date.current - 12.days }
+      debate_end_date { Date.current - 9.days }
+      draft_publication_date { Date.current - 8.days }
+      allegations_start_date { Date.current - 8.days }
+      allegations_end_date { Date.current - 4.days }
+      result_publication_date { Date.current - 2.days }
     end
 
     trait :in_debate_phase do
-      start_date Date.current - 5.days
-      end_date Date.current + 5.days
-      debate_start_date Date.current - 5.days
-      debate_end_date Date.current + 1.day
-      draft_publication_date Date.current + 1.day
-      allegations_start_date Date.current + 2.days
-      allegations_end_date Date.current + 3.days
-      result_publication_date Date.current + 5.days
+      start_date { Date.current - 5.days }
+      end_date { Date.current + 5.days }
+      debate_start_date { Date.current - 5.days }
+      debate_end_date { Date.current + 1.day }
+      draft_publication_date { Date.current + 1.day }
+      allegations_start_date { Date.current + 2.days }
+      allegations_end_date { Date.current + 3.days }
+      result_publication_date { Date.current + 5.days }
     end
 
     trait :not_published do
@@ -945,7 +945,7 @@ LOREM_IPSUM
 
   factory :newsletter do
     sequence(:subject) { |n| "Subject #{n}" }
-    segment_recipient  UserSegments::SEGMENTS.sample
+    segment_recipient  { UserSegments::SEGMENTS.sample }
     sequence(:from)    { |n| "noreply#{n}@consul.dev" }
     sequence(:body)    { |n| "Body #{n}" }
   end
