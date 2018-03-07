@@ -457,7 +457,6 @@
     line-height: rem-calc(30);
   }
 
-  .document-link,
   .video-link {
     background: $highlight-soft;
     border: 1px solid $highlight;
@@ -470,19 +469,12 @@
       word-wrap: break-word;
     }
 
-    [class^="icon-"] {
+    .icon-video {
+      color: #cc181e;
       display: inline-block;
       font-size: rem-calc(24);
       line-height: $line-height;
       vertical-align: middle;
-    }
-
-    .icon-document {
-      color: #007bb7;
-    }
-
-    .icon-video {
-      color: #cc181e;
     }
 
     p {
@@ -1152,12 +1144,12 @@
     min-height: $line-height * 10;
   }
 
-  h1 {
+  h2 {
     margin-bottom: 0;
   }
 
-  h1,
   h2,
+  h3,
   .back,
   .icon-angle-left,
   p,

@@ -3,6 +3,15 @@ shared_examples "notifiable in-app" do |described_class|
   let(:author) { create(:user, :verified) }
   let!(:notifiable) { create(model_name(described_class), author: author) }
 
+  scenario "Notification icon is shown" do
+    notification = create(:notification, notifiable: notifiable, user: author)
+
+    login_as author
+    visit root_path
+
+    expect(page).to have_css ".icon-notification"
+  end
+
   scenario "A user commented on my notifiable", :js do
     notification = create(:notification, notifiable: notifiable, user: author)
 
@@ -26,13 +35,11 @@ shared_examples "notifiable in-app" do |described_class|
       within "#comments" do
         expect(page).to have_content "I agree"
       end
+      logout
     end
 
-    logout
     login_as author
-    visit root_path
-    visit root_path
-    find(".icon-notification").click
+    visit notifications_path
 
     expect(page).to have_css ".notification", count: 1
     expect(page).to have_content "There are 3 new comments on"
@@ -57,9 +64,7 @@ shared_examples "notifiable in-app" do |described_class|
 
     logout
     login_as author
-    visit root_path
-    visit root_path
-    find(".icon-notification").click
+    visit notifications_path
 
     expect(page).to have_css ".notification", count: 1
     expect(page).to have_content "Someone replied to your comment on"
@@ -86,9 +91,7 @@ shared_examples "notifiable in-app" do |described_class|
     end
 
     login_as author
-    visit root_path
-    visit root_path
-    find(".icon-notification").click
+    visit notifications_path
 
     expect(page).to have_css ".notification", count: 1
     expect(page).to have_content "There are 3 new replies to your comment on"

@@ -193,35 +193,6 @@ header,
   }
 }
 
-// Document on legislation proposal
-// - - - - - - - - - - - - - - - - -
-
-.document-link {
-  background: $highlight-soft;
-  border: 1px solid $highlight;
-  display: block;
-  margin: $line-height / 2 0;
-  padding: $line-height / 2;
-  position: relative;
-
-  a {
-    word-wrap: break-word;
-  }
-
-  .icon-document {
-    color: #007bb7;
-    display: inline-block;
-    font-size: rem-calc(24);
-    line-height: $line-height;
-    vertical-align: middle;
-  }
-}
-
-.document-divider {
-  background: #fafafa;
-  border-bottom: 1px solid #eee;
-}
-
 // Once plazas results and stats
 
 .polls-show-header {
@@ -258,12 +229,6 @@ header,
 // Legislation proposals
 
 .legislation-proposals {
-  margin-top: rem-calc(-6);
-
-  .proposal h3 {
-    font-size: rem-calc(20);
-    margin-top: 0;
-  }
 
   .proposal-content {
 
@@ -290,17 +255,6 @@ header,
 
     &.question {
       border-left: 2px solid #003df6;
-    }
-  }
-}
-
-.proposal-show {
-
-  &.legislation-proposal-show h1 {
-    font-size: rem-calc(24);
-
-    @include breakpoint(medium) {
-      font-size: rem-calc(36);
     }
   }
 }
@@ -2779,7 +2733,7 @@ $budget-2018-yellow:   #fef384;
   background: #000;
 
 
-  h1 {
+  h2 {
     color: $budget-2018-pink;
     font-family: "Souvenir" !important;
     font-size: rem-calc(30);
@@ -2790,7 +2744,7 @@ $budget-2018-yellow:   #fef384;
   &.budget-heading {
     min-height: $line-height * 11;
 
-    h2 {
+    h3 {
       color: $budget-2018-yellow;
       font-family: "Souvenir" !important;
       font-weight: 400;

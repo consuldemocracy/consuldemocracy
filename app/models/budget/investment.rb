@@ -319,6 +319,10 @@ class Budget
       should_show_price? && price_explanation.present?
     end
 
+    def should_show_unfeasibility_explanation?
+      unfeasible? && valuation_finished? && unfeasibility_explanation.present?
+    end
+
     def formatted_price
       budget.formatted_amount(price)
     end
@@ -340,12 +344,21 @@ class Budget
       where(heading_id: heading_ids)
     end
 
+    def assigned_valuators
+      self.valuators.collect(&:description_or_name).compact.join(', ').presence
+    end
+
+    def assigned_valuation_groups
+      self.valuator_groups.collect(&:name).compact.join(', ').presence
+    end
+
     def self.to_csv(investments, options = {})
       attrs = [I18n.t("admin.budget_investments.index.table_id"),
                I18n.t("admin.budget_investments.index.table_title"),
                I18n.t("admin.budget_investments.index.table_supports"),
                I18n.t("admin.budget_investments.index.table_admin"),
                I18n.t("admin.budget_investments.index.table_valuator"),
+               I18n.t("admin.budget_investments.index.table_valuation_group"),
                I18n.t("admin.budget_investments.index.table_geozone"),
                I18n.t("admin.budget_investments.index.table_feasibility"),
                I18n.t("admin.budget_investments.index.table_valuation_finished"),
@@ -361,11 +374,8 @@ class Budget
                   else
                     I18n.t("admin.budget_investments.index.no_admin_assigned")
                   end
-          vals = if investment.valuators.empty?
-                   I18n.t("admin.budget_investments.index.no_valuators_assigned")
-                 else
-                   investment.valuators.collect(&:description_or_name).join(', ')
-                 end
+          assigned_valuators = investment.assigned_valuators || '-'
+          assigned_valuation_groups = investment.assigned_valuation_groups || '-'
           heading_name = investment.heading.name
           price_string = "admin.budget_investments.index.feasibility"\
                          ".#{investment.feasibility}"
@@ -373,8 +383,8 @@ class Budget
           valuation_finished = investment.valuation_finished? ?
                                          I18n.t('shared.yes') :
                                          I18n.t('shared.no')
-          csv << [id, title, total_votes, admin, vals, heading_name, price,
-                  valuation_finished]
+          csv << [id, title, total_votes, admin, assigned_valuators, assigned_valuation_groups,
+                  heading_name, price, valuation_finished]
         end
       end
       csv_string

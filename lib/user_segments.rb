@@ -25,8 +25,9 @@ class UserSegments
   end
 
   def self.feasible_and_undecided_investment_authors
-    feasibility = %w(feasible undecided)
-    author_ids(current_budget_investments.where(feasibility: feasibility).pluck(:author_id).uniq)
+    unfeasible_and_finished_condition = "feasibility = 'unfeasible' and valuation_finished = true"
+    investments = current_budget_investments.where.not(unfeasible_and_finished_condition)
+    author_ids(investments.pluck(:author_id).uniq)
   end
 
   def self.selected_investment_authors
@@ -45,6 +46,10 @@ class UserSegments
                  voodoorai2000@gmail.com)
 
     User.where(email: testers)
+  end
+
+  def self.user_segment_emails(users_segment)
+    UserSegments.send(users_segment).newsletter.pluck(:email).compact
   end
 
   private

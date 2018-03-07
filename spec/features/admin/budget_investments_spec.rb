@@ -64,25 +64,31 @@ feature 'Admin budget investments' do
       admin = create(:administrator, user: create(:user, username: 'Gema'))
 
       budget_investment1.valuators << valuator1
-      budget_investment2.valuator_ids = [valuator1.id, valuator2.id]
-      budget_investment3.update(administrator_id: admin.id)
+      budget_investment2.valuators << valuator1
+      budget_investment2.valuators << valuator2
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 
       within("#budget_investment_#{budget_investment1.id}") do
         expect(page).to have_content("No admin assigned")
         expect(page).to have_content("Valuator Olga")
+        expect(page).to have_content("No valuation groups assigned")
       end
 
       within("#budget_investment_#{budget_investment2.id}") do
         expect(page).to have_content("No admin assigned")
         expect(page).to have_content("Valuator Olga")
         expect(page).to have_content("Valuator Miriam")
+        expect(page).to have_content("No valuation groups assigned")
       end
+
+      budget_investment3.update(administrator_id: admin.id)
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
 
       within("#budget_investment_#{budget_investment3.id}") do
         expect(page).to have_content("Gema")
         expect(page).to have_content("No valuators assigned")
+        expect(page).to have_content("No valuation groups assigned")
       end
     end
 
@@ -109,7 +115,7 @@ feature 'Admin budget investments' do
       end
 
       within("#budget_investment_#{budget_investment3.id}") do
-        expect(page).to have_content("No valuators assigned")
+        expect(page).to have_content("No valuation groups assigned")
       end
     end
 
@@ -160,37 +166,46 @@ feature 'Admin budget investments' do
       expect(page).not_to have_link("Plant trees")
     end
 
-    scenario "Filtering by admin", :js do
-      user = create(:user, username: 'Admin 1')
-      administrator = create(:administrator, user: user)
+    context "Filtering by admin" do
+      background do
+        user = create(:user, username: 'Admin 1')
+        administrator = create(:administrator, user: user)
 
-      create(:budget_investment, title: "Realocate visitors", budget: budget, administrator: administrator)
-      create(:budget_investment, title: "Destroy the city", budget: budget)
+        create(:budget_investment, title: "Realocate visitors", budget: budget, administrator: administrator)
+        create(:budget_investment, title: "Destroy the city", budget: budget)
 
-      visit admin_budget_budget_investments_path(budget_id: budget.id)
-      expect(page).to have_link("Realocate visitors")
-      expect(page).to have_link("Destroy the city")
+        visit admin_budget_budget_investments_path(budget_id: budget.id)
+      end
 
-      select "Admin 1", from: "administrator_id"
-      click_button 'Filter'
+      scenario "Should have budgets links", :js do
+        expect(page).to have_link("Realocate visitors")
+        expect(page).to have_link("Destroy the city")
+      end
 
-      expect(page).to have_content('There is 1 investment')
-      expect(page).not_to have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
+      scenario "Should have specific admin budgets", :js do
+        select "Admin 1", from: "administrator_id"
+        click_button 'Filter'
 
-      select "All administrators", from: "administrator_id"
-      click_button 'Filter'
+        expect(page).to have_content('There is 1 investment')
+        expect(page).not_to have_link("Destroy the city")
+        expect(page).to have_link("Realocate visitors")
+      end
 
-      expect(page).to have_content('There are 2 investments')
-      expect(page).to have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
+      scenario "Should have all admins budgets", :js do
+        select "All administrators", from: "administrator_id"
+        click_button 'Filter'
 
-      select "Admin 1", from: "administrator_id"
-      click_button 'Filter'
+        expect(page).to have_content('There are 2 investments')
+        expect(page).to have_link("Destroy the city")
+        expect(page).to have_link("Realocate visitors")
 
-      expect(page).to have_content('There is 1 investment')
-      expect(page).not_to have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
+        select "Admin 1", from: "administrator_id"
+        click_button 'Filter'
+
+        expect(page).to have_content('There is 1 investment')
+        expect(page).not_to have_link("Destroy the city")
+        expect(page).to have_link("Realocate visitors")
+      end
     end
 
     scenario "Filtering by valuator", :js do
@@ -867,7 +882,7 @@ feature 'Admin budget investments' do
 
       within(".tags") do
         expect(page).to have_content "Education 2017"
-        expect(page).to_not have_content "Education 2018"
+        expect(page).not_to have_content "Education 2018"
       end
     end
 
@@ -1127,7 +1142,9 @@ feature 'Admin budget investments' do
                                                          price: 100)
       valuator = create(:valuator, user: create(:user, username: 'Rachel',
                                                        email: 'rachel@val.org'))
-      investment.valuators.push(valuator)
+      group = create(:valuator_group, name: "Test name")
+
+      investment.valuator_groups << group
 
       admin = create(:administrator, user: create(:user, username: 'Gema'))
       investment.update(administrator_id: admin.id)
@@ -1152,6 +1169,7 @@ feature 'Admin budget investments' do
 
       expect(page).to have_content investment.administrator.name
       expect(page).to have_content valuators
+      expect(page).to have_content group.name
       expect(page).to have_content price
       expect(page).to have_content I18n.t('shared.no')
     end
@@ -1178,16 +1196,16 @@ feature 'Admin budget investments' do
 
   context "Mark as visible to valuators" do
 
+    let(:valuator) { create(:valuator) }
+    let(:admin) { create(:administrator) }
+
+    let(:group) { create(:budget_group, budget: budget) }
+    let(:heading) { create(:budget_heading, group: group) }
+
+    let(:investment1) { create(:budget_investment, heading: heading) }
+    let(:investment2) { create(:budget_investment, heading: heading) }
+
     scenario "Mark as visible to valuator", :js do
-      valuator = create(:valuator)
-      admin = create(:administrator)
-
-      group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
-
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-
       investment1.valuators << valuator
       investment2.valuators << valuator
       investment1.update(administrator: admin)
@@ -1200,17 +1218,12 @@ feature 'Admin budget investments' do
         check "budget_investment_visible_to_valuators"
       end
 
-      login_as(valuator.user.reload)
-      visit root_path
-      click_link "Admin"
-      click_link "Valuation"
+      visit admin_budget_budget_investments_path(budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
 
-      within "#budget_#{budget.id}" do
-        click_link "Evaluate"
+      within("#budget_investment_#{investment1.id}") do
+        expect(find("#budget_investment_visible_to_valuators")).to be_checked
       end
-
-      expect(page).to     have_content investment1.title
-      expect(page).not_to have_content investment2.title
     end
 
     scenario "Unmark as visible to valuator", :js do
@@ -1237,17 +1250,12 @@ feature 'Admin budget investments' do
         uncheck "budget_investment_visible_to_valuators"
       end
 
-      login_as(valuator.user.reload)
-      visit root_path
-      click_link "Admin"
-      click_link "Valuation"
+      visit admin_budget_budget_investments_path(budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
 
-      within "#budget_#{budget.id}" do
-        click_link "Evaluate"
+      within("#budget_investment_#{investment1.id}") do
+        expect(find("#budget_investment_visible_to_valuators")).not_to be_checked
       end
-
-      expect(page).not_to have_content investment1.title
-      expect(page).to     have_content investment2.title
     end
 
     scenario "Showing the valuating checkbox" do

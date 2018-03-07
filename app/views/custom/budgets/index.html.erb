@@ -1,5 +1,5 @@
-<% provide :title, t("meta_tags.budget_2018.accepting.title") %>
-<% provide :meta_description, t("meta_tags.budget_2018.accepting.description") %>
+<% provide :title, t("meta_tags.budget_2018.#{current_budget.phase}.title") %>
+<% provide :meta_description, t("meta_tags.budget_2018.#{current_budget.phase}.description") %>
 
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
@@ -8,8 +8,8 @@
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
               social_url: budgets_url,
-              social_title: t("meta_tags.budget_2018.accepting.title"),
-              social_description: t("meta_tags.budget_2018.accepting.social"),
+              social_title: t("meta_tags.budget_2018.#{current_budget.phase}.title"),
+              social_description: t("meta_tags.budget_2018.#{current_budget.phase}.description"),
               twitter_image_url: 'social_media_budgets_2018_twitter.png',
               og_image_url: 'social_media_budgets_2018.png' %>
 <% end %>
@@ -81,7 +81,9 @@
             <% group.headings.order_by_group_name.each do |heading| %>
               <li class="heading small-12 medium-4 large-2">
                 <% unless current_budget.informing? %>
-                  <%= link_to budget_investments_path(current_budget.id, heading_id: heading.id) do %>
+                  <%= link_to custom_budget_investments_path(group,
+                                                             budget_id: current_budget,
+                                                             heading_id: heading) do %>
                     <%= heading_name_and_price_html(heading, current_budget) %>
                   <% end %>
                 <% else %>
@@ -96,10 +98,12 @@
       </div>
 
       <% unless current_budget.informing? %>
-        <div id="map">
-          <h3><%= t("budgets.index.map") %></h3>
-          <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
-        </div>
+        <% if false %>
+          <div id="map">
+            <h3><%= t("budgets.index.map") %></h3>
+            <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
+          </div>
+        <% end %>
 
         <p>
           <% show_links = show_links_to_budget_investments(current_budget) %>

@@ -171,6 +171,7 @@ es:
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
+        no_valuation_groups: Sin grupos evaluadores
         feasibility:
           feasible: "Viable (%{price})"
           unfeasible: "Inviable"
@@ -182,6 +183,7 @@ es:
         table_supports: "Apoyos"
         table_admin: "Administrador"
         table_valuator: "Evaluador"
+        table_valuation_group: "Grupos evaluadores"
         table_geozone: "Ámbito de actuación"
         table_feasibility: "Viabilidad"
         table_valuation_finished: "Ev. Fin."
@@ -475,8 +477,9 @@ es:
       administrators: Administradores
       managers: Gestores
       moderators: Moderadores
-      emails: Envío de emails
+      newsletters_and_notifications: Newsletters & Notificaciones
       newsletters: Newsletters
+      admin_notifications: Notificaciones
       emails_download: Descarga de emails
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
@@ -531,7 +534,7 @@ es:
       administrators: Administradores
       proposal_authors: Usuarios autores de propuestas
       investment_authors: Usuarios autores de proyectos de gasto en los actuales presupuestos
-      feasible_and_undecided_investment_authors: Usuarios autores de proyectos de gasto viables o sin decidir en los actuales presupuestos
+      feasible_and_undecided_investment_authors: "Usuarios autores de algún proyecto de gasto en los actuales presupuestos que no cumpla: [evaluación finalizada inviable]"
       selected_investment_authors: Usuarios autores de proyectos de gasto seleccionadas en los actuales presupuestos
       winner_investment_authors: Usuarios autores de proyectos de gasto ganadoras en los actuales presupuestos
       invalid_recipients_segment: "El segmento de destinatarios es inválido"
@@ -567,10 +570,45 @@ es:
         body: Contenido del email
         body_help_text: Así es como verán el email los usuarios
         send_alert: ¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?
+    admin_notifications:
+      create_success: Notificación creada correctamente
+      update_success: Notificación actualizada correctamente
+      send_success: Notificación enviada correctamente
+      delete_success: Notificación borrada correctamente
+      index:
+        section_title: Envío de notificaciones
+        new_notification: Crear notificación
+        title: Título
+        segment_recipient: Destinatarios
+        sent: Enviado
+        actions: Acciones
+        draft: Borrador
+        edit: Editar
+        delete: Borrar
+        preview: Previsualizar
+        view: Visualizar
+        empty_notifications: No hay notificaciones para mostrar
+      new:
+        section_title: Nueva notificación
+      edit:
+        section_title: Editar notificación
+      show:
+        section_title: Vista previa de notificación
+        send: Enviar
+        will_get_notified: (%{n} usuarios serán notificados)
+        got_notified: (%{n} usuarios fueron notificados)
+        sent_at: Enviado
+        title: Título
+        body: Texto
+        link: Enlace
+        segment_recipient: Destinatarios
+        preview_guide: "Así es como los usuarios verán la notificación:"
+        sent_guide: "Así es como los usuarios ven la notificación:"
+        send_alert: ¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?
     emails_download:
       index:
         title: Descarga de emails
-        download_segment: Descargar segmento
+        download_segment: Descargar direcciones de correo electrónico
         download_segment_help_text: Descarga en formato CSV
         download_emails_button: Descargar lista de emails
     valuators:

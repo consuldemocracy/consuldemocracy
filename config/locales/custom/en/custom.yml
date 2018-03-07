@@ -56,6 +56,30 @@ en:
     welcome_index:
       title: "Decide Madrid: portal de participación ciudadana de Madrid"
       description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
+      accepting:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Apoya proyectos de los presupuestos participativos 2018 en Decide Madrid para que pasen a la votación final. Decide qué se hace con 100 millones de euros."
+      selecting:
+        title: "Participa en los presupuestos participativos de Madrid"
+        description: "Entra en Decide Madrid y apoya las ideas para mejorar Madrid. Los proyectos más apoyados de presupuestos participativos pueden pasar a la votación final."
+      valuating:
+        title: "Participa en los presupuestos participativos de Madrid"
+        description: "Prepárate para decidir el destino de 100 millones de euros del presupuesto municipal. La votación final de proyectos se abrirá el 15 de mayo de 2018."
+      balloting:
+        title: "Decide 100 millones en los presupuestos participativos"
+        description: "Estamos en la fase decisiva de los  presupuestos participativos 2018 del Ayuntamiento de Madrid. Vota los proyectos planteados por la ciudadanía."
+      finished:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "Entérate de qué proyectos se harán con los presupuestos participativos en Decide Madrid. Es la web de participación ciudadana del Ayuntamiento de Madrid. "
+      reviewing:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
+      publishing_prices:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
+      reviewing_ballots:
+        title: "Decide Madrid, plataforma de participación ciudadana"
+        description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
     proposals:
       title: "Propuestas ciudadanas de Madrid - Decide Madrid"
       description: "Participa activamente en Decide Madrid creando y votando propuestas ciudadanas que quieras que el Ayuntamiento de Madrid lleve a cabo."
@@ -73,7 +97,27 @@ en:
       accepting:
         title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
         description: "Presenta tus proyectos a los presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
-        social: "#ParticipativosMadrid18: Tú decides a qué proyectos ciudadanos dedicar 100 millones de euros del presupuesto municipal."
+      selecting:
+        title: "Apoya proyectos de los presupuestos participativos de Madrid"
+        description: "Entra en Decide Madrid y apoya las ideas para mejorar Madrid. Los proyectos más apoyados de presupuestos participativos pueden pasar a la votación final."
+      valuating:
+        title: "Evaluación de proyectos de los presupuestos participativos"
+        description: "La votación final de proyectos de los presupuestos participativos de Madrid empieza el 15 de mayo. ¡Prepárate para decidir el destino de 100 millones!"
+      balloting:
+        title: "Vota los proyectos finalistas de presupuestos participativos"
+        description: "Vota en Decide Madrid los proyectos que quieres que haga el Ayuntamiento en tu barrio y en Madrid. ¡Decide a qué ideas dedicar 100 millones de euros!"
+      finished:
+        title: "Resultados de los presupuestos participativos 2018"
+        description: "La ciudadanía ha decidido qué hará el Ayuntamiento con 100 millones de euros reservados a proyectos ciudadanos. Entérate de los proyectos ganadores."
+      reviewing:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+      publishing_prices:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+      reviewing_ballots:
+        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
   social_share:
     polls_show:
       title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"
@@ -193,9 +237,38 @@ en:
       button: "Create a proposal"
     header_budget:
       label: "Participatory budgets 2018"
-      title: "Decide the citizen projects that Madrid City Council will do, you have:"
-      text: "100 million euros"
-      button: "Send your project"
+      accepting:
+        title: "Decide the citizen projects that Madrid City Council will do, you have:"
+        text: "100 million euros"
+        button: "Send your project"
+      reviewing:
+        title: "Decide the citizen projects that Madrid City Council will do, you have:"
+        text: "100 million euros"
+        button: "See projects"
+      selecting:
+        title: "Choose investment projects in one district and the entire city to be voted on"
+        text: "Support citizen projects"
+        button: "See projects"
+      valuating:
+        title: "The City Council reviews and rates the most supported projects until May 15"
+        text: "Most supported projects"
+        button: "See projects"
+      publishing_prices:
+        title: "The City Council reviews and rates the most supported projects until May 15"
+        text: "Most supported projects"
+        button: "See projects"
+      balloting:
+        title: "Decides what projects the City Council will do with 100 million"
+        text: "Vote in participatory budgets"
+        button: "See projects"
+      reviewing_ballots:
+        title: "In a few days we will know the winning projects of the participatory budgets"
+        text: "Thank you for voting!"
+        button: "See projects"
+      finished:
+        title: "Look at the winning projects of the 2018 participatory budgets"
+        text: "Thank you for voting!"
+        button: "See projects"
     once_plazas:
       label: "Voting results"
       title: "Citizens approve the remodeling of eleven squares"
