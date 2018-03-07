@@ -117,7 +117,7 @@ feature 'Admin budget investments' do
       within("#budget_investment_#{budget_investment3.id}") do
         expect(page).to have_content("No valuation groups assigned")
       end
-end
+    end
 
     scenario "Filtering by budget heading", :js do
       group1 = create(:budget_group, name: "Streets", budget: budget)
@@ -138,24 +138,28 @@ end
       expect(page).to have_link("Plant trees")
 
       select "Central Park", from: "heading_id"
+      click_button 'Filter'
 
       expect(page).not_to have_link("Realocate visitors")
       expect(page).not_to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
       select "All headings", from: "heading_id"
+      click_button 'Filter'
 
       expect(page).to have_link("Realocate visitors")
       expect(page).to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
       select "Streets: Main Avenue", from: "heading_id"
+      click_button 'Filter'
 
       expect(page).to have_link("Realocate visitors")
       expect(page).not_to have_link("Change name")
       expect(page).not_to have_link("Plant trees")
 
       select "Streets: Mercy Street", from: "heading_id"
+      click_button 'Filter'
 
       expect(page).not_to have_link("Realocate visitors")
       expect(page).to have_link("Change name")
@@ -174,14 +178,13 @@ end
       end
 
       scenario "Should have budgets links", :js do
-
         expect(page).to have_link("Realocate visitors")
         expect(page).to have_link("Destroy the city")
       end
 
       scenario "Should have specific admin budgets", :js do
-
         select "Admin 1", from: "administrator_id"
+        click_button 'Filter'
 
         expect(page).to have_content('There is 1 investment')
         expect(page).not_to have_link("Destroy the city")
@@ -189,14 +192,15 @@ end
       end
 
       scenario "Should have all admins budgets", :js do
-
         select "All administrators", from: "administrator_id"
+        click_button 'Filter'
 
         expect(page).to have_content('There are 2 investments')
         expect(page).to have_link("Destroy the city")
         expect(page).to have_link("Realocate visitors")
 
         select "Admin 1", from: "administrator_id"
+        click_button 'Filter'
 
         expect(page).to have_content('There is 1 investment')
         expect(page).not_to have_link("Destroy the city")
@@ -218,18 +222,21 @@ end
       expect(page).to have_link("Destroy the city")
 
       select "Valuator 1", from: "valuator_or_group_id"
+      click_button 'Filter'
 
       expect(page).to have_content('There is 1 investment')
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "All valuators", from: "valuator_or_group_id"
+      click_button 'Filter'
 
       expect(page).to have_content('There are 2 investments')
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "Valuator 1", from: "valuator_or_group_id"
+      click_button 'Filter'
       expect(page).to have_content('There is 1 investment')
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
@@ -251,18 +258,22 @@ end
       expect(page).to have_link("Build a theatre")
 
       select "Health", from: "valuator_or_group_id"
+      click_button 'Filter'
 
       expect(page).to have_content('There is 1 investment')
       expect(page).to have_link("Build a hospital")
       expect(page).not_to have_link("Build a theatre")
 
       select "All valuators", from: "valuator_or_group_id"
+      click_button 'Filter'
 
       expect(page).to have_content('There are 2 investments')
       expect(page).to have_link("Build a hospital")
       expect(page).to have_link("Build a theatre")
 
       select "Culture", from: "valuator_or_group_id"
+      click_button 'Filter'
+
       expect(page).to have_content('There is 1 investment')
       expect(page).to have_link("Build a theatre")
       expect(page).not_to have_link("Build a hospital")
@@ -440,6 +451,140 @@ end
       end
     end
 
+    scenario "Combination of checkbox with text search", :js do
+      user = create(:user, username: 'Admin 1')
+      administrator = create(:administrator, user: user)
+
+      create(:budget_investment, budget: budget, title: 'Educate the children',
+                                 id: 20, administrator: administrator)
+      create(:budget_investment, budget: budget, title: 'More schools',
+                                 id: 10, administrator: administrator)
+      create(:budget_investment, budget: budget, title: 'More hospitals')
+
+
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
+
+      expect(page).to have_css(".budget_investment", count: 3)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).to have_content("More hospitals")
+
+      select "Admin 1", from: "administrator_id"
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 2)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+
+      fill_in 'title_or_id', with: 20
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 1)
+      expect(page).to have_content("Educate the children")
+      expect(page).not_to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+
+      expect(page).to have_content('Selected')
+
+    end
+
+    scenario "Combination of select with text search", :js do
+      create(:budget_investment, budget: budget, title: 'Educate the children',
+                                 feasibility: 'feasible', id: 20,
+                                 valuation_finished: true)
+      create(:budget_investment, budget: budget, title: 'More schools',
+                                 feasibility: 'feasible', id: 10,
+                                 valuation_finished: true)
+      create(:budget_investment, budget: budget, title: 'More hospitals')
+
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
+
+      expect(page).to have_css(".budget_investment", count: 3)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).to have_content("More hospitals")
+
+      click_link 'Advanced filters'
+
+      page.check('advanced_filters_feasible')
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 2)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+
+      fill_in 'title_or_id', with: 20
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 1)
+      expect(page).to have_content("Educate the children")
+      expect(page).not_to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+
+      expect(page).to have_content('Selected')
+
+    end
+
+    scenario "Combination of checkbox with text search and checkbox", :js do
+      user = create(:user, username: 'Admin 1')
+      administrator = create(:administrator, user: user)
+
+      create(:budget_investment, budget: budget, title: 'Educate the children',
+                                 feasibility: 'feasible', id: 20,
+                                 valuation_finished: true,
+                                 administrator: administrator)
+      create(:budget_investment, budget: budget, title: 'More schools',
+                                 feasibility: 'feasible', id: 10,
+                                 valuation_finished: true,
+                                 administrator: administrator)
+      create(:budget_investment, budget: budget, title: 'More hospitals',
+                                 administrator: administrator)
+      create(:budget_investment, budget: budget, title: 'More hostals')
+
+
+      visit admin_budget_budget_investments_path(budget_id: budget.id)
+
+      expect(page).to have_css(".budget_investment", count: 4)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).to have_content("More hospitals")
+      expect(page).to have_content("More hostals")
+
+      select "Admin 1", from: "administrator_id"
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 3)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).to have_content("More hospitals")
+      expect(page).not_to have_content("More hostals")
+
+      click_link 'Advanced filters'
+
+      page.check('advanced_filters_feasible')
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 2)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+      expect(page).not_to have_content("More hostals")
+
+      fill_in 'title_or_id', with: 20
+      click_button "Filter"
+
+      expect(page).to have_css(".budget_investment", count: 1)
+      expect(page).to have_content("Educate the children")
+      expect(page).not_to have_content("More schools")
+      expect(page).not_to have_content("More hospitals")
+      expect(page).not_to have_content("More hostals")
+
+      expect(page).to have_content('Selected')
+
+    end
+
   end
 
   context 'Search' do
@@ -455,7 +600,7 @@ end
       expect(page).to have_content('Some other investment')
 
       fill_in 'title_or_id', with: 'Some investment'
-      click_button 'Search'
+      click_button 'Filter'
 
       expect(page).to have_content('Some investment')
       expect(page).not_to have_content('Some other investment')
@@ -468,7 +613,7 @@ end
       expect(page).to have_content('Some other investment')
 
       fill_in 'title_or_id', with: 999999
-      click_button 'Search'
+      click_button 'Filter'
 
       expect(page).to have_content('Some other investment')
       expect(page).not_to have_content('Some investment')
@@ -870,7 +1015,7 @@ end
       expect(page).to have_content(winner_bi.title)
 
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#advanced_filters_[value='feasible']").set(true) }
+      within('#advanced_filters') { find(:css, "#advanced_filters_feasible").set(true) }
       click_button 'Filter'
 
       expect(page).not_to have_content(unfeasible_bi.title)
@@ -879,8 +1024,8 @@ end
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
-      within('#advanced_filters') { find(:css, "#advanced_filters_[value='selected']").set(true) }
-      within('#advanced_filters') { find(:css, "#advanced_filters_[value='feasible']").set(false) }
+      within('#advanced_filters') { find(:css, "#advanced_filters_selected").set(true) }
+      within('#advanced_filters') { find(:css, "#advanced_filters_feasible").set(false) }
       click_button 'Filter'
 
       expect(page).not_to have_content(unfeasible_bi.title)
@@ -901,7 +1046,7 @@ end
       visit admin_budget_budget_investments_path(budget)
 
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#advanced_filters_[value='undecided']").set(true) }
+      within('#advanced_filters') { find(:css, "#advanced_filters_undecided").set(true) }
       click_button 'Filter'
 
       expect(page).to have_content(undecided_bi.title)
@@ -911,7 +1056,7 @@ end
       expect(page).not_to have_content(unfeasible_bi.title)
       expect(page).not_to have_content(feasible_vf_bi.title)
 
-      within('#advanced_filters') { find(:css, "#advanced_filters_[value='unfeasible']").set(true) }
+      within('#advanced_filters') { find(:css, "#advanced_filters_unfeasible").set(true) }
       click_button 'Filter'
 
       expect(page).to have_content(undecided_bi.title)
@@ -955,7 +1100,7 @@ end
       end
 
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#advanced_filters_[value='selected']").set(true) }
+      within('#advanced_filters') { find(:css, "#advanced_filters_selected").set(true) }
       click_button 'Filter'
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
@@ -967,7 +1112,8 @@ end
     scenario "Unselecting an investment", :js do
       visit admin_budget_budget_investments_path(budget)
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#advanced_filters_[value='selected']").set(true) }
+
+      within('#advanced_filters') { find(:css, "#advanced_filters_selected").set(true) }
 
       click_button 'Filter'
 
