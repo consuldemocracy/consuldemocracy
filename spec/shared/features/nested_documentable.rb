@@ -79,7 +79,11 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       click_link "Add new document"
       within "#nested-documents" do
         document = find(".document input[type=file]", visible: false)
-        attach_file(document[:id], "spec/fixtures/files/empty.pdf", make_visible: true)
+        attach_file(
+          document[:id],
+          Rails.root.join('spec/fixtures/files/empty.pdf'),
+          make_visible: true
+        )
       end
 
       expect(page).to have_css ".file-name", text: "empty.pdf"
@@ -90,7 +94,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file("spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
 
       expect_document_has_title(0, "empty.pdf")
     end
@@ -105,7 +109,11 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         input = find("input[name$='[title]']")
         fill_in input[:id], with: "My Title"
         document_input = find("input[type=file]", visible: false)
-        attach_file(document_input[:id], "spec/fixtures/files/empty.pdf", make_visible: true)
+        attach_file(
+          document_input[:id],
+          Rails.root.join('spec/fixtures/files/empty.pdf'),
+          make_visible: true
+        )
       end
 
       expect_document_has_title(0, "My Title")
@@ -115,7 +123,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file("spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
 
       expect(page).to have_css ".loading-bar.complete"
     end
@@ -124,7 +132,10 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file("spec/fixtures/files/logo_header.png", false)
+      documentable_attach_new_file(
+        Rails.root.join('spec/fixtures/files/logo_header.png'),
+        false
+      )
 
       expect(page).to have_css ".loading-bar.errors"
     end
@@ -133,7 +144,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file("spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
 
       expect_document_has_cached_attachment(0, ".pdf")
     end
@@ -142,7 +153,10 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file("spec/fixtures/files/logo_header.png", false)
+      documentable_attach_new_file(
+        Rails.root.join('spec/fixtures/files/logo_header.png'),
+        false
+      )
 
       expect_document_has_cached_attachment(0, "")
     end
@@ -164,7 +178,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file("spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
       click_link "Remove document"
 
       expect(page).not_to have_css("#nested-documents .document")
@@ -187,7 +201,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable_attach_new_file("spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
       click_on submit_button
 
       expect(page).to have_content documentable_success_notice
@@ -198,7 +212,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable_attach_new_file("spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
       click_on submit_button
 
       documentable_redirected_to_resource_show_or_navigate_to
@@ -215,12 +229,13 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
               maximum allowed uploaded files", :js do
       login_as user_to_login
       visit send(path, arguments)
+      FILENAMES ||= %w(clippy empty logo).freeze
 
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable.class.max_documents_allowed.times {
-        documentable_attach_new_file(cycle(Dir.glob('spec/fixtures/files/*.pdf')))
-      }
+      documentable.class.max_documents_allowed.times.zip(FILENAMES).each do |_n, fn|
+        documentable_attach_new_file(Rails.root.join("spec/fixtures/files/#{fn}.pdf"))
+      end
 
       click_on submit_button
       documentable_redirected_to_resource_show_or_navigate_to
