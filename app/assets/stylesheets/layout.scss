@@ -501,6 +501,7 @@ header {
       margin: 0;
       margin-top: rem-calc(-24);
       padding: 0;
+      z-index: 9;
     }
 
     .is-submenu-item {
@@ -1013,6 +1014,10 @@ form {
     background-color: $info-bg;
     border-color: $info-border;
     color: $color-info;
+
+    a {
+      color: $link !important;
+    }
   }
 
   &.warning {
