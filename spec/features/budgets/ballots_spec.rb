@@ -634,8 +634,6 @@ feature 'Ballots' do
       within("#budget_investment_#{investment1.id}") do
         expect(page).to have_selector('.in-favor a', visible: true)
         find('.add a').click
-
-        expect(page.status_code).to eq(200)
         expect(page).not_to have_content "Remove"
         expect(page).to have_selector('.participation-not-allowed', visible: false)
         find("div.ballot").hover
