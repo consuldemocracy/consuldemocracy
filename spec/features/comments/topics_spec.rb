@@ -51,17 +51,17 @@ feature 'Commenting topics from proposals' do
 
     expect(page).to have_css('.comment', count: 3)
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 2)
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 3)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 1)
     expect(page).not_to have_content child_comment.body
@@ -601,17 +601,17 @@ feature 'Commenting topics from budget investments' do
 
     expect(page).to have_css('.comment', count: 3)
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 2)
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 3)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 1)
     expect(page).not_to have_content child_comment.body

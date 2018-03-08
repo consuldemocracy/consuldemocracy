@@ -293,7 +293,7 @@ module CommonActions
 
   def add_to_ballot(budget_investment)
     within("#budget_investment_#{budget_investment.id}") do
-      find('.add a').trigger('click')
+      find('.add a').click
       expect(page).to have_content "Remove"
     end
   end

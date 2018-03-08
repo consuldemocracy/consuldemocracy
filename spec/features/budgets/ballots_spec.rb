@@ -149,7 +149,7 @@ feature 'Ballots' do
         end
 
         within("#budget_investment_#{investment.id}") do
-          find('.remove a').trigger('click')
+          find('.remove a').click
         end
 
         expect(page).to have_css("#amount-spent", text: "€0")
@@ -274,7 +274,7 @@ feature 'Ballots' do
       visit budget_investments_path(budget, heading_id: california.id)
 
       within("#budget_investment_#{investment1.id}") do
-        find('.remove a').trigger('click')
+        find('.remove a').click
       end
 
       visit budget_investments_path(budget, heading_id: new_york.id)
@@ -375,7 +375,7 @@ feature 'Ballots' do
     expect(page).to have_content("You have voted one investment")
 
     within("#budget_investment_#{investment.id}") do
-      find(".remove-investment-project").trigger('click')
+      find(".remove-investment-project").click
     end
 
     expect(page).to have_current_path(budget_ballot_path(budget))
@@ -404,7 +404,7 @@ feature 'Ballots' do
     end
 
     within("#sidebar #budget_investment_#{investment1.id}_sidebar") do
-      find(".remove-investment-project").trigger('click')
+      find(".remove-investment-project").click
     end
 
     expect(page).to have_css("#amount-spent", text: "€20,000")
@@ -431,7 +431,7 @@ feature 'Ballots' do
     expect(page).to have_content("You have voted one investment")
 
     within("#budget_investment_#{investment.id}") do
-      find(".remove-investment-project").trigger('click')
+      find(".remove-investment-project").click
     end
 
     expect(page).to have_content("You have voted 0 investments")
@@ -581,7 +581,7 @@ feature 'Ballots' do
       end
 
       within("#budget_investment_#{bi1.id}") do
-        find('.remove a').trigger('click')
+        find('.remove a').click
         expect(page).to have_css ".add a"
       end
 
@@ -609,7 +609,7 @@ feature 'Ballots' do
       end
 
       within("#budget_investment_#{bi1.id}_sidebar") do
-        find('.remove-investment-project').trigger('click')
+        find('.remove-investment-project').click
       end
 
       expect(page).not_to have_css "#budget_investment_#{bi1.id}_sidebar"
@@ -633,7 +633,7 @@ feature 'Ballots' do
 
       within("#budget_investment_#{investment1.id}") do
         expect(page).to have_selector('.in-favor a', visible: true)
-        find('.add a').trigger('click')
+        find('.add a').click
 
         expect(page.status_code).to eq(200)
         expect(page).not_to have_content "Remove"

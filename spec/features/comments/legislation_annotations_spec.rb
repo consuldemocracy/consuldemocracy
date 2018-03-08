@@ -55,17 +55,17 @@ feature 'Commenting legislation questions' do
 
     expect(page).to have_css('.comment', count: 3)
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 2)
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 3)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 1)
     expect(page).not_to have_content child_comment.body
@@ -620,7 +620,7 @@ feature 'Commenting legislation questions' do
 
     scenario 'View comments of annotations in an included range' do
       within("#annotation-link") do
-        first(:css, "a").trigger('click')
+        first(:css, "a").click
       end
 
       expect(page).to have_css(".comment", count: 2)
@@ -656,7 +656,7 @@ feature 'Commenting legislation questions' do
       end
 
       within("#annotation-link") do
-        first(:css, "a").trigger('click')
+        first(:css, "a").click
       end
 
       expect(page).to have_css(".comment", count: 3)
@@ -667,7 +667,7 @@ feature 'Commenting legislation questions' do
 
     scenario "Reply on a multiple annotation thread and display it in the single annotation thread" do
       within("#annotation-link") do
-        first(:css, "a").trigger('click')
+        first(:css, "a").click
       end
 
       comment = annotation2.comments.first
