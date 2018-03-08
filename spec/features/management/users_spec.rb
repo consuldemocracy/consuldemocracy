@@ -83,7 +83,7 @@ feature 'Users' do
     expect(page).to have_content "This user can participate in the website with the following permissions"
 
     click_link "Delete user"
-    click_link "Delete account"
+    accept_confirm { click_link "Delete account" }
 
     expect(page).to have_content "User account deleted."
 

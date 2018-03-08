@@ -125,14 +125,12 @@ feature 'Users' do
       expect(page).to have_link budget_investment.title
 
       within("#budget_investment_#{budget_investment.id}") do
-        page.driver.browser.dismiss_confirm
-        click_link 'Delete'
+        dismiss_confirm { click_link 'Delete' }
       end
       expect(page).to have_link budget_investment.title
 
       within("#budget_investment_#{budget_investment.id}") do
-        page.driver.browser.accept_confirm
-        click_link 'Delete'
+        accept_confirm { click_link 'Delete' }
       end
       expect(page).not_to have_link budget_investment.title
     end

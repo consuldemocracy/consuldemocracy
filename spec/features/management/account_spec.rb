@@ -22,7 +22,7 @@ feature 'Account' do
     visit management_account_path
 
     click_link "Delete user"
-    click_link "Delete account"
+    accept_confirm { click_link "Delete account" }
 
     expect(page).to have_content "User account deleted."
 

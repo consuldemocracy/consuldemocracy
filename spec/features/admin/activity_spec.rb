@@ -14,7 +14,7 @@ feature 'Admin activity' do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        click_link 'Hide'
+        accept_confirm { click_link 'Hide' }
       end
 
       visit admin_activity_path
@@ -76,7 +76,7 @@ feature 'Admin activity' do
       visit debate_path(debate)
 
       within("#debate_#{debate.id}") do
-        click_link 'Hide'
+        accept_confirm { click_link 'Hide' }
       end
 
       visit admin_activity_path
@@ -139,7 +139,7 @@ feature 'Admin activity' do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}") do
-        click_link 'Hide'
+        accept_confirm { click_link 'Hide' }
       end
 
       visit admin_activity_path

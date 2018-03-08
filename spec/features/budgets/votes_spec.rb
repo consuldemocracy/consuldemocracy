@@ -45,7 +45,7 @@ feature 'Votes' do
         visit budget_investments_path(budget, heading_id: heading.id)
 
         within('.supports') do
-          find('.in-favor a').click
+          accept_confirm { find('.in-favor a').click }
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. Share it!"
@@ -67,7 +67,7 @@ feature 'Votes' do
         visit budget_investment_path(budget, @investment)
 
         within('.supports') do
-          find('.in-favor a').click
+          accept_confirm { find('.in-favor a').click }
           expect(page).to have_content "1 support"
 
           expect(page).not_to have_selector ".in-favor a"
@@ -78,7 +78,7 @@ feature 'Votes' do
         visit budget_investment_path(budget, @investment)
 
         within('.supports') do
-          find('.in-favor a').click
+          accept_confirm { find('.in-favor a').click }
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. Share it!"
@@ -122,7 +122,7 @@ feature 'Votes' do
         visit budget_investments_path(budget, heading_id: new_york.id)
 
         within("#budget_investment_#{new_york_investment.id}") do
-          find('.in-favor a').click
+          accept_confirm { find('.in-favor a').click }
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. Share it!"
@@ -144,15 +144,15 @@ feature 'Votes' do
 
           expect(page).to have_content "You can only support investment projects in 2 districts"
 
-          expect(page).to_not have_content "1 support"
-          expect(page).to_not have_content "You have already supported this investment project. Share it!"
+          expect(page).not_to have_content "1 support"
+          expect(page).not_to have_content "You have already supported this investment project. Share it!"
         end
       end
 
       scenario "From show", :js do
         visit budget_investment_path(budget, new_york_investment)
 
-        find('.in-favor a').click
+        accept_confirm { find('.in-favor a').click }
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this investment project. Share it!"
 
@@ -167,8 +167,8 @@ feature 'Votes' do
         find('.in-favor a').click
         expect(page).to have_content "You can only support investment projects in 2 districts"
 
-        expect(page).to_not have_content "1 support"
-        expect(page).to_not have_content "You have already supported this investment project. Share it!"
+        expect(page).not_to have_content "1 support"
+        expect(page).not_to have_content "You have already supported this investment project. Share it!"
       end
 
     end
