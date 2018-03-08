@@ -5,7 +5,9 @@ feature 'Internal valuation comments on Budget::Investments' do
   let(:valuator_user) { create(:valuator).user }
   let(:admin_user) { create(:administrator).user }
   let(:budget) { create(:budget, :valuating) }
-  let(:investment) { create(:budget_investment, budget: budget) }
+  let(:group) { create(:budget_group, budget: budget) }
+  let(:heading) { create(:budget_heading, group: group) }
+  let(:investment) { create(:budget_investment, budget: budget, group: group, heading: heading) }
 
   background do
     Setting['feature.budgets'] = true

@@ -399,7 +399,7 @@ feature 'Emails' do
 
     scenario "Unfeasible investment" do
       budget.update(phase: 'valuating')
-      investment = create(:budget_investment, author: author, budget: budget)
+      investment = create(:budget_investment, author: author, budget: budget, heading: heading)
 
       valuator = create(:valuator)
       investment.valuators << valuator

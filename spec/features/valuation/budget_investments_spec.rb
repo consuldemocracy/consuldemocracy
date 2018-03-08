@@ -245,7 +245,10 @@ feature 'Valuation budget investments' do
   feature 'Valuate' do
     let(:admin) { create(:administrator) }
     let(:investment) do
-      create(:budget_investment, :visible_to_valuators, budget: budget, price: nil,
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      create(:budget_investment, :visible_to_valuators, heading: heading, group: group,
+                                                        budget: budget, price: nil,
                                                         administrator: admin)
     end
 
