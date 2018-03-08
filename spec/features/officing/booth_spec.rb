@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Booth" do
+feature "Booth", :with_frozen_time do
 
   scenario "Officer with no booth assignments today" do
     officer = create(:poll_officer)
@@ -12,7 +12,7 @@ feature "Booth" do
 
   scenario "Officer with booth assignments another day" do
     officer = create(:poll_officer)
-    create(:poll_officer_assignment, officer: officer, date: 1.day.from_now)
+    create(:poll_officer_assignment, officer: officer, date: Date.current + 1.day)
 
     login_through_form_as_officer(officer.user)
 
@@ -26,7 +26,7 @@ feature "Booth" do
     booth = create(:poll_booth)
 
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment, date: Date.today)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment, date: Date.current)
 
     login_through_form_as_officer(officer.user)
 
@@ -45,8 +45,8 @@ feature "Booth" do
     ba1 = create(:poll_booth_assignment, poll: poll, booth: booth1)
     ba2 = create(:poll_booth_assignment, poll: poll, booth: booth2)
 
-    create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.today)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.today)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.current)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.current)
 
     login_through_form_as_officer(officer.user)
 
@@ -73,9 +73,9 @@ feature "Booth" do
     ba2 = create(:poll_booth_assignment, poll: poll2, booth: booth2)
     ba3 = create(:poll_booth_assignment, poll: poll2, booth: booth2)
 
-    create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.today)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.today)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: ba3, date: Date.today)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.current)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.current)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: ba3, date: Date.current)
 
     login_through_form_as_officer(officer.user)
 
