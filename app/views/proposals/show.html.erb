@@ -186,7 +186,8 @@
         <%= render partial: 'shared/social_share', locals: {
           share_title: t("proposals.show.share"),
           title: @proposal.title,
-          url: proposal_url(@proposal)
+          url: proposal_url(@proposal),
+          description: @proposal.summary
         } %>
 
         <% if current_user %>

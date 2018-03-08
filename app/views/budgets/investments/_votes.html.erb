@@ -40,7 +40,12 @@
 
   <% if user_voted_for && setting['twitter_handle'] %>
     <div class="share-supported">
-      <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}", url: budget_investment_url(budget_id: investment.budget_id, id: investment.id), via: setting['twitter_handle']) %>
+      <%= render partial: 'shared/social_share', locals: {
+        title: investment.title,
+        image_url: image_absolute_url(investment.image, :thumb),
+        url: budget_investment_url(investment.budget, investment),
+        description: investment.title
+      } %>
     </div>
   <% end %>
 </div>
