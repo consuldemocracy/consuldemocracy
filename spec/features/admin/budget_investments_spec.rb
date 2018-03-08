@@ -1259,7 +1259,7 @@ feature 'Admin budget investments' do
     end
 
     scenario "Unmark as visible to valuator", :js do
-      Setting['feature.budgets.valuators_allowed'] = true
+      budget.update(phase: 'valuating')
 
       valuator = create(:valuator)
       admin = create(:administrator)
