@@ -352,15 +352,21 @@ feature 'Polls' do
 
   context 'Booth & Website' do
 
-    let(:poll) { create(:poll, summary: "Summary", description: "Description") }
+    let(:poll) { create(:poll, summary: "Summary", description: "Description", starts_at: '2017-12-01', ends_at: '2018-02-01') }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
+
+    before do
+      allow(Date).to receive(:current).and_return Date.new(2018,1,1)
+      allow(Date).to receive(:today).and_return Date.new(2018,1,1)
+      allow(Time).to receive(:current).and_return Time.zone.parse("2018-01-01 12:00:00")
+    end
 
     scenario 'Already voted on booth cannot vote on website', :js do
 
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+      create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment, date: Date.current)
       question = create(:poll_question, poll: poll)
       create(:poll_question_answer, question: question, title: 'Han Solo')
       create(:poll_question_answer, question: question, title: 'Chewbacca')
