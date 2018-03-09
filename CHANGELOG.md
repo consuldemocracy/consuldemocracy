@@ -1,51 +1,32 @@
 # Changelog
+All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/consul/consul/compare/v0.14...consul:master)
+## [Unreleased](https://github.com/consul/consul/compare/v0.13...consul:master)
 
 ### Added
+- Missing polls button on help page https://github.com/consul/consul/pull/2452
+- New legislation processes section on help page https://github.com/consul/consul/pull/2452
+- Add alert message when a user deletes an investment project from "My activity" https://github.com/consul/consul/pull/2385
+- Admin newsletter emails https://github.com/consul/consul/pull/2462
+- Admin emails list download https://github.com/consul/consul/pull/2466
+
 ### Changed
+- Show investment links only on phase balloting or later https://github.com/consul/consul/pull/2386
+- Improved Document lists https://github.com/consul/consul/pull/2490
+
 ### Deprecated
 ### Removed
 ### Fixed
-### Security
-
-## [0.14.0](https://github.com/consul/consul/compare/v0.13...v0.14) - 2018-03-08
-
-### Added
-- Admin newsletter emails https://github.com/consul/consul/pull/2462
-- Admin emails list download https://github.com/consul/consul/pull/2466
-- Alert message when a user deletes an investment project from "My activity" https://github.com/consul/consul/pull/2385
-- Missing polls button on help page https://github.com/consul/consul/pull/2452
-- New legislation processes section on help page https://github.com/consul/consul/pull/2452
-- Docs\(readme\): Include Node.js as requirement https://github.com/consul/consul/pull/2486
-
-### Changed
-- Improved Document lists https://github.com/consul/consul/pull/2490
-- Valuators cannot reopen finished valuations https://github.com/consul/consul/pull/2518
-- Show investment links only on phase balloting or later https://github.com/consul/consul/pull/2386
-- Improve Github's Pull Request Template file https://github.com/consul/consul/pull/2515
-- List Budget Investment's milestones ordered by publication date https://github.com/consul/consul/issues/2429
-- Admin newsletter email refactor https://github.com/consul/consul/pull/2474
-
-### Removed
-- Remove empty emails from user segment usages https://github.com/consul/consul/pull/2516
-
-### Fixed
-- Improve spec boot time and clean up of test logs https://github.com/consul/consul/pull/2444
+- Improve spec boot time and clean up logs https://github.com/consul/consul/pull/2444
 - Flaky spec: random investments order scenario https://github.com/consul/consul/pull/2454
 - Flaky spec: users without email should not receive emails https://github.com/consul/consul/pull/2453
 - Flaky spec: missing comment on legislation annotation https://github.com/consul/consul/pull/2455
 - Flaky spec: Residence Assigned officers error https://github.com/consul/consul/pull/2458
-- Flaky spec fix: Debates Show: "Back" link directs to previous page https://github.com/consul/consul/pull/2513
-- Flaky spec fix: Email Spec comment random failures https://github.com/consul/consul/pull/2506
-- Expire Coveralls badge cache https://github.com/consul/consul/pull/2445
-- Fixed how newsletters controller and mailer handle recipients https://github.com/consul/consul/pull/2492
-- Fix UserSegment feasible and undecided investment authors https://github.com/consul/consul/pull/2491
-- Design minor fixes https://github.com/consul/consul/pull/2465
-- UI fixes https://github.com/consul/consul/pull/2489
+
+### Security
 
 ## [0.13.0](https://github.com/consul/consul/compare/v0.12...v0.13) - 2018-02-05
 
