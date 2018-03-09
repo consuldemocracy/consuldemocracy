@@ -231,7 +231,7 @@ val:
       moderation: Moderació
       valuation: Avaluació
       officing: Presidents de taula
-      more_info: Més informació
+      help: Help
       my_account_link: El meu compte
       my_activity_link: La meua activitat
       notifications: Notificacions
@@ -469,7 +469,7 @@ val:
       participate_button_expired: "Votació finalitzada"
       no_geozone_restricted: "Tota la ciutat"
       geozone_restricted: "Districtes"
-      geozone_info: 'Poden participar les persones empadronades en: '
+      geozone_info: "Poden participar les persones empadronades en: "
       already_answer: "Ja has participat en esta votació"
       section_header:
         icon_alt: Icona de Votacions
@@ -517,7 +517,7 @@ val:
         null_votes: "Nuls"
       results:
         title: "Preguntes"
-        most_voted_answer: 'Resposta més votada: '
+        most_voted_answer: "Resposta més votada: "
   poll_questions:
     create_question: "Crear pregunta"
     show:
@@ -622,6 +622,7 @@ val:
       previous_slide: Imatge anterior
       next_slide: Imatge següent
     documentation: Documentació adicional
+    more_info: More information
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
@@ -644,7 +645,7 @@ val:
     index:
       title: Pressupostos participatius
       unfeasible: Propostes d'inversió no viables
-      by_geozone: 'Propostes d''inversió amb àmbit: %{geozone}'
+      by_geozone: "Propostes d'inversió amb àmbit: %{geozone}"
       search_form:
         button: Cercar
         placeholder: Propostes d'inversió...
@@ -739,6 +740,7 @@ val:
       no_private_messages: "Este usuari no accepta missatges privats."
       private_activity: Este usuari ha decidit mantindre en privat la seua llista d'activitats.
       send_private_message: "Enviar un missatge privat"
+      delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
       send_notification: "Enviar notificació"
       retire: "Retirar"
@@ -819,7 +821,7 @@ val:
     help: "Pots afegir enllaços de %{models} en %{org}."
     submit: "Afegir"
     error: "Enllaç no vàlid. Recorda iniciar amb %{url}."
-    error_itself: "Enllaç no vàlid. No es pot relacionar un contingut aconseguisc mateix"
+    error_itself: "Link not valid. You cannot relate a content to itself."
     success: "Has afegit nou contingut relacionat"
     is_related: "Es contingut relacionat?"
     score_positive: "Sí"
