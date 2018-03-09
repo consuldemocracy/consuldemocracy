@@ -19,7 +19,7 @@ es:
         not_selected: No se pueden votar proyectos inviables.
         not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
-        different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+        different_heading_assigned_html: "Ya has votado proyectos de otra partida: %{heading_link}"
         change_ballot: cambiar tus votos
     groups:
       show:

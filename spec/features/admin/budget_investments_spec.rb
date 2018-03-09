@@ -359,9 +359,12 @@ feature 'Admin budget investments' do
   end
 
   context 'Search' do
+    let!(:first_investment) do
+      create(:budget_investment, title: 'Some other investment', budget: budget)
+    end
+
     background do
       create(:budget_investment, title: 'Some investment', budget: budget)
-      create(:budget_investment, title: 'Some other investment', budget: budget, id: 999999)
     end
 
     scenario "Search investments by title" do
@@ -383,7 +386,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content('Some investment')
       expect(page).to have_content('Some other investment')
 
-      fill_in 'title_or_id', with: 999999
+      fill_in 'title_or_id', with: first_investment.id
       click_button 'Search'
 
       expect(page).to have_content('Some other investment')

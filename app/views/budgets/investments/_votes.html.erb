@@ -29,18 +29,25 @@
   <% if reason.present? && !user_voted_for %>
     <div class="js-participation-not-allowed participation-not-allowed" style='display:none' aria-hidden="false">
       <p>
+        <small>
           <%= t("votes.budget_investments.#{reason}",
                 verify_account: link_to(t("votes.verify_account"), verification_path),
                 signin: link_to(t("votes.signin"), new_user_session_path),
                 signup: link_to(t("votes.signup"), new_user_registration_path)
            ).html_safe %>
+        </small>
       </p>
     </div>
   <% end %>
 
   <% if user_voted_for && setting['twitter_handle'] %>
     <div class="share-supported">
-      <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}", url: budget_investment_url(budget_id: investment.budget_id, id: investment.id), via: setting['twitter_handle']) %>
+      <%= render partial: 'shared/social_share', locals: {
+        title: investment.title,
+        image_url: image_absolute_url(investment.image, :thumb),
+        url: budget_investment_url(investment.budget, investment),
+        description: investment.title
+      } %>
     </div>
   <% end %>
 </div>

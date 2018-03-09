@@ -149,7 +149,8 @@
         share_title: t("budgets.investments.show.share"),
         title: investment.title,
         image_url: image_absolute_url(investment.image, :thumb),
-        url: budget_investment_url(budget_id: investment.budget_id, id: investment.id)
+        url: budget_investment_url(investment.budget, investment),
+        description: investment.title
       } %>
 
       <% if current_user %>

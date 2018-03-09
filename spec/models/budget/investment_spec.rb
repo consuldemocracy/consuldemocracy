@@ -756,7 +756,7 @@ describe Budget::Investment do
           ballot = create(:budget_ballot, user: user, budget: budget)
           ballot.investments << inv1
 
-          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:different_heading_assigned)
+          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:different_heading_assigned_html)
         end
 
         it "rejects proposals with price higher than current available money" do
