@@ -53,7 +53,6 @@ fr:
         undefined: Indéfini
         valuation_finished: Évaluation terminée
         duration: Délai d'exécution
-        internal_comments: Commentaires internes
         responsibles: Responsables
         assigned_admin: Administrateur assigné
         assigned_valuators: Évaluateurs assignés
@@ -68,11 +67,13 @@ fr:
         undefined_feasible: Indécis
         feasible_explanation_html: Informations sur la non-viabilité <small>(le cas échéant, données publiques)</small>
         valuation_finished: Évaluation terminée
+        valuation_finished_alert: "Are you sure you want to mark this report as completed? If you do it, it can no longer be modified."
+        not_feasible_alert: "An email will be sent immediately to the author of the project with the report of unfeasibility."
         duration_html: Délai d'exécution <small>(optionnel, données non publiques)</small>
-        internal_comments_html: Commentaires et observations <small>(pour les responsables internes, données non publiques)</small>
         save: Enregistrer les changements
       notice:
         valuate: "Rapport mis-à-jour"
+      valuation_comments: Valuation comments
     spending_proposals:
       index:
         geozone_filter_all: Tous les districts
