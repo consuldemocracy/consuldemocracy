@@ -5,8 +5,8 @@ val:
         one: "activitat"
         other: "activitats"
       budget:
-        one: "Pressupost participatiu"
-        other: "Pressupostos participatius"
+        one: "Pressupost"
+        other: "Pressupostos"
       budget/investment:
         one: "Proposta d'inversió"
         other: "Propostes d'inversió"
@@ -37,6 +37,9 @@ val:
       manager:
         one: "Gestor"
         other: "Gestors"
+      newsletter:
+        one: "Newsletter"
+        other: "Newsletters"
       vote:
         one: "Vot"
         other: "Vots"
@@ -183,7 +186,7 @@ val:
         status: Estat
         title: Títol
         updated_at: Actualitzada el
-        more_info_flag: Mostra a la pàgina de més informació
+        more_info_flag: Show in help page
         print_content_flag: Botó d'imprimir contingut
         locale: Llengua
       site_customization/image:
@@ -230,6 +233,11 @@ val:
       poll/question/answer/video:
         title: Títol
         url: Vídeo extern
+      newsletter:
+        segment_recipient: Recipients
+        subject: Subject
+        from: From
+        body: Email content
     errors:
       models:
         user:
@@ -249,6 +257,10 @@ val:
             attachment:
               min_image_width: "La imatge ha de tindre al menys %{required_min_width}px de llarg"
               min_image_height: "La imatge ha de tindre al menys %{required_min_height}px d'alt"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "The user recipients segment is invalid"
         map_location:
           attributes:
             map:
@@ -292,8 +304,12 @@ val:
             image:
               image_width: "Ha de tenir %{required_width}px d'ample"
               image_height: "Ha de tenir %{required_height}px d'alt"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'You cannot comment a valuation'
       messages:
-        record_invalid: 'Error de validació: %{errors}'
+        record_invalid: "Error de validació: %{errors}"
         restrict_dependent_destroy:
           has_one: "No es pot eliminar el registre perque existeix una %{record} dependent"
           has_many: "No es pot eliminar el registre perque existeixen %{record} dependentes"
