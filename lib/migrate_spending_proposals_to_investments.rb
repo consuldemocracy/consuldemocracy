@@ -34,7 +34,6 @@ class MigrateSpendingProposalsToInvestments
       feasibility: feasibility,
       price_explanation: sp.price_explanation,
       unfeasibility_explanation: '-', # FIND VALUE FOR THIS ONE
-      internal_comments: sp.internal_comments,
       valuation_finished: sp.valuation_finished,
       valuator_assignments_count: sp.valuation_assignments_count,
       price_first_year: sp.price_first_year,
