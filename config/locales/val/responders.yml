@@ -9,6 +9,7 @@ val:
         poll_booth: "Urna creada correctament."
         poll_question_answer: "Resposta creada correctament"
         poll_question_answer_video: "Vídeo creat correctament"
+        poll_question_answer_image: "Image uploaded successfully"
         proposal: "Proposta creada correctament."
         proposal_notification: "Missatge enviat correctament."
         spending_proposal: "Proposta d'inversió creada correctament. Pots accedir a ella desde %{activity}"
