@@ -557,7 +557,7 @@ feature 'Ballots' do
       add_to_ballot(bi1)
 
       within("#budget_investment_#{bi2.id}") do
-        find("div.ballot").trigger("mouseover")
+        find("div.ballot").hover
         expect(page).to have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: false)
       end
