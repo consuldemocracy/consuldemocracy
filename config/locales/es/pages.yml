@@ -11,7 +11,9 @@ es:
         debates: "Debates"
         proposals: "Propuestas"
         budgets: "Presupuestos participativos"
+        polls: "Polls"
         other: "Otra información de interés"
+        processes: "Processes"
       debates:
         title: "Debates"
         description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad. También es un espacio donde generar ideas que a través de las otras secciones de %{org} lleven a actuaciones concretas por parte del Ayuntamiento."
@@ -47,6 +49,12 @@ es:
         feature_1_link: "registrarte en %{org_name}"
         feature_2: "Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años."
         feature_3: "Los resultados de todas las votaciones son vinculantes para el gobierno municipal."
+      processes:
+        title: "Processes"
+        description: "In the %{link} section, citizens participate in the drafting and modification of regulations affecting the city and can give their opinion on municipal policies in previous debates."
+        link: "processes"
+        feature: "To participate in a process you have to %{sign_up} and check the %{link} page periodically to see which regulations and policies are being discussed and consulted."
+        sign_up: "sign up on %{org}"
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."
@@ -77,7 +85,7 @@ es:
     verify:
       code: Código que has recibido en tu carta
       email: Email
-      info: 'Para verificar tu cuenta introduce los datos con los que te registraste:'
+      info: 'To verify your account introduce your access data:'
       info_code: 'Ahora introduce el código que has recibido en tu carta:'
       password: Contraseña
       submit: Verificar mi cuenta
