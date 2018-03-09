@@ -41,9 +41,12 @@ he:
           created_at: החדש ביותר
           flags: הנצפה ביותר
         title: דיונים
+    header:
+      title: Moderation
     menu:
       flagged_comments: הערות
       flagged_debates: דיונים
+      proposals: Proposals
       users: חסימת משתמשים/ות
     proposals:
       index:
