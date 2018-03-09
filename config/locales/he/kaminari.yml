@@ -3,11 +3,19 @@ he:
     page_entries_info:
       entry:
         zero: אין כניסות
+        one: Entry
+        two: Entries
+        many: Entries
+        other: Entries
       more_pages:
         display_entries: מציג <b>%{first}&nbsp;-&nbsp;%{last}</b> מתוך<b>%{total}</b> %{entry_name}
       one_page:
         display_entries:
           zero: "%{entry_name} לא נמצא"
+          one: There is <strong>1 %{entry_name}</strong>
+          two: There are <strong>%{count} %{entry_name}</strong>
+          many: There are <strong>%{count} %{entry_name}</strong>
+          other: There are <strong>%{count} %{entry_name}</strong>
   views:
     pagination:
       current: את/ה נמצא/ת בדף
