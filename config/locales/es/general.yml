@@ -740,6 +740,7 @@ es:
       no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades.
       send_private_message: "Enviar un mensaje privado"
+      delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
       send_notification: "Enviar notificación"
       retire: "Retirar"
