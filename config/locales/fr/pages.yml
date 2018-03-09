@@ -3,61 +3,90 @@ fr:
     census_terms: Pour confirmer ce compte, vous devez être âgé(e) de 16 ans ou plus, et avoir été recensé avec les données indiquées ci-dessus, lesquelles seront vérifiées. En acceptant le processus de vérification, vous donnez également votre consentement au recoupement de cette information, ainsi que les moyens de communication qui figurent dans ce fichier. Les données fournies seront intégrées et traitées dans le fichier indiqué dans les conditions d'utilisations du portail.
     conditions: Conditions d'utilisation
     general_terms: Conditions générales
-    more_info:
-      title: "Découvrez %{org_name}"
-      subtitle: "Découvrez tout ce qu'il est possible de faire avec ce site"
-      guide: 'Ce guide explique chaque section de %{org_name}. Vous pouvez avoir plus d''information dans les liens ''Informations détaillées''.'
+    help:
+      title: "%{org} is a platform for citizen participation"
+      subtitle: "In %{org} you can make proposals, vote in citizen consultations, propose participatory budget projects, decide on municipal regulations and open debates to exchange opinions with others."
+      guide: "This guide explains what each of the %{org} sections are for and how they work."
       menu:
-        debates: "Débats"
-        proposals: "Propositions"
-        budgets: "Budgets participatifs"
-        other: "Autre information utile"
+        debates: "Debates"
+        proposals: "Proposals"
+        budgets: "Participatory budgets"
+        polls: "Polls"
+        other: "Other information of interest"
+        processes: "Processes"
       debates:
-        title: "Débats"
-        description: "Créer un fil de discussion où vous pouvez aborder tous sujets que vous souhaitez partager avec d'autres personnes de votre ville."
-        feature_1: "Pour créer un débat, vous devez %{link}"
-        feature_1_link: "vous inscrire sur %{org_name}"
-        feature_2_html: "Les débats peuvent être notés en utilisant les boutons <strong>Je suis d'accord</strong> ou <strong>Je ne suis pas d'accord</strong> que vous trouverez dans chacun d'eux."
-        image_alt: "Boutons pour noter les débats"
-        figcaption: 'Les boutons ''Je suis d''accord'' et ''Je ne suis pas d''accord'' pour noter les débats.'
+        title: "Debates"
+        description: "In the %{link} section you can present and share your opinion with other people on issues of concern to you related to the city. It is also a place to generate ideas that through the other sections of %{org} lead to concrete actions by the City Council."
+        link: "citizen debates"
+        feature_html: "You can open debates, comment and evaluate them with the <strong>I agree</strong> or <strong>I don't agree</strong>. For that you have to %{link}."
+        feature_link: "register in %{org}"
+        image_alt: "Buttons to rate the debates"
+        figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
       proposals:
-        title: "Propositions"
-        description: "Faites une proposition sur ce que vous souhaitez que la mairie entreprenne et soutenez les propositions d'autres personnes."
-        feature_1: "Pour créer une proposition, vous devez %{link}. De plus, pour les supporter, vous devez avoir un compte vérifié."
-        feature_1_link: "inscrivez-vous sur %{org_name}"
-        feature_2_html: "Les propositions qui auront <strong>le support d'1% des personnes</strong> seront soumises au vote."
-        feature_3_html: "S'il y a plus de personnes qui sont en faveur que contre, <strong>la mairie publiera son plan pour accomplir</strong> cette proposition et vous pourrez suivre son avancement."
-        image_alt: "Bouton pour supporter une proposition"
-        figcaption_html: 'Bouton pour "Supporter" une proposition.<br>Quand le nombre de supports requis est atteint, elle sera soumise au vote.'
+        title: "Proposals"
+        description: "In the %{link} section you can make proposals for the City Council to carry them out. The proposals require support, and if they reach sufficient support, they are put to a public vote. The proposals approved in these citizens' votes are accepted by the City Council and carried out."
+        link: "citizen proposals"
+        feature_html: "To create a proposal you must register in %{org}. The proposals that get the support on the website of 1% of people with the right to vote (%{supports} supports of people over 16 years old registered) go to vote. To support proposals it is necessary to verify your account."
+        image_alt: "Button to support a proposal"
+        figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
       budgets:
-        title: "Budgets participatifs"
-        description: "Les premiers six mois de chaque année, vous pouvez décider comment investir une partie du budget."
-        feature_1: "Pour soumettre un projet d'investissement, vous devez %{link} et avoir un compte vérifié."
-        feature_1_link: "inscrivez-vous sur %{org_name}"
-        feature_2_html: "En premier, il y a la <strong>phase de soumission</strong> des projets d'investissement."
-        feature_3_html: "Ensuite, il y a la <strong>phase de support</strong> pour prioriser les projets les plus intéressants. Ceux avec le plus de support seront évalués par la Ville pour établir s'ils sont viables et combien ils valent."
-        feature_4_html: "Enfin, il y a la <strong>phase de vote</strong> où vous décidez des projets pour lesquels dépenser le budget."
-        image_alt: "Différentes phases d'un budget participatif"
-        figcaption_html: '"Phase de support" et "phase de vote" des budgets participatifs.'
+        title: "Participatory Budgeting"
+        description: "The %{link} section helps people make a direct decision on what part of the municipal budget is spent on."
+        link: "participative budgets"
+        feature: "In this process, every year people raise, support and vote on projects. The most voted votes are financed by the municipal budget."
+        phase_1_html: "Between January and early March, people registered in %{org} can <strong>present</strong>."
+        phase_2_html: "In March, proposers have to gather support, in the form of <strong>preselection</strong>."
+        phase_3_html: "Between April and the beginning of May, the experts from the <strong>City Council rate</strong> projects on an order of more or less supported and check that they are viable."
+        phase_4_html: "Finally, between May and June, all citizens can <strong>vote</strong> projects that interest them the most."
+        phase_5_html: "From the approval of the budgets the following year the City Council begins to carry out the winning projects."
+        image_alt: "Different phases of a participatory budget"
+        figcaption_html: '"Support" and "Voting" phases of participatory budgets.'
       polls:
-        title: "Votes"
-        description: "Les propositions des citoyens ayant atteint un support de 1% seront soumises au vote."
-        feature_1: "Pour participer au prochain vote, vous devez %{link} et avoir un compte vérifié."
-        feature_1_link: "inscrivez-vous sur %{org_name}"
-        feature_2: "Tous les utilisateurs vérifiés âgés de 16 ans ou plus peuvent voter."
-        feature_3: "Les résultats de tous les votes sont contractuels pour le gouvernement."
+        title: "Polls"
+        description: "The %{link} section is activated each time a proposal reaches 1% support and goes to the vote or when the City Council proposes an issue for people to decide on."
+        link: "polls"
+        feature_1: "To participate in the voting you have to %{link} and verify your account."
+        feature_1_link: "register in %{org_name}"
+        feature_2: "All registered voters over the age of 16 can vote."
+        feature_3: "The results of all votes are binding on the municipal government."
+      processes:
+        title: "Processes"
+        description: "In the %{link} section, citizens participate in the drafting and modification of regulations affecting the city and can give their opinion on municipal policies in previous debates."
+        link: "processes"
+        feature: "To participate in a process you have to %{sign_up} and check the %{link} page periodically to see which regulations and policies are being discussed and consulted."
+        sign_up: "sign up on %{org}"
       faq:
-        title: "Problèmes techniques ?"
-        description: "Lisez la FAQ et trouvez la réponse à vos questions."
-        button: "Voir les questions fréquemment posées"
+        title: "Technical problems?"
+        description: "Read the FAQs and solve your questions."
+        button: "View frequently asked questions"
+        page:
+          title: "Frequently Asked Questions"
+          description: "Use this page to resolve the common FAQs to the users of site."
+          faq_1_title: "Question 1"
+          faq_1_description: "This is an example for the description of question one."
       other:
-        how_to_use: "Utiliser %{org_name} dans votre ville"
+        title: "Other information of interest"
+        how_to_use: "Use %{org_name} in your city"
       how_to_use:
         text: |-
-          Utilisez le librement pour votre gouvernement ou aider nous à l'améliorer, c'est un logiciel libre.
+          Use it in your local government or help us to improve it, it is free software.
           
-          Ce portail de Gouvernement Ouvert utilise l'[application Consul](https://github.com/consul/consul 'consul github') qui est un logiciel libre, sous [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), ce qui, en quelques mots, signifie que tout le monde peut utiliser le code librement, le copier, le voir en détail, le modifier et le redistribuer avec ces modifications (permettant à d'autres d'en faire de même). Car nous pensons que la culture est meilleure et plus riche quand elle est libre.
+          This Open Government Portal use the [CONSUL app](https://github.com/consul/consul 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the word with the modifications he wants (allowing others to do the same). Because we think culture is better and richer when it is released.
           
-          Si vous êtes un développeur, vous pouvez voir le code et nous aider à l'améliorer en allant sur l'[applicationConsul](https://github.com/consul/consul 'consul github').
+          If you are a programmer, you can see the code and help us to improve it at [CONSUL app](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Use it in your local government
+    privacy: Privacy Policy
+    titles:
+      accessibility: Accessibility
+      conditions: Terms of use
+      help: "What is %{org}? - Citizen participation"
+      privacy: Privacy Policy
     verify:
+      code: Code you received in letter
       email: Email
+      info: 'To verify your account introduce your access data:'
+      info_code: 'Now introduce the code you received in letter:'
+      password: Password
+      submit: Verify my account
+      title: Verify your account
