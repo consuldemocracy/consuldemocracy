@@ -70,9 +70,18 @@ App.Map =
       $(zoomInputSelector).val ''
       return
 
-    contentPopup = (title,investment,budget) ->
-      content = "<a href='/budgets/#{budget}/investments/#{investment}'>#{title}</a>"
-      return  content
+    openMarkerPopup = (e) ->
+      marker = e.target
+
+      $.ajax 'investments/' + marker.options['id'] + '/json_data',
+        type: 'GET'
+        dataType: 'json'
+        success: (data) ->
+          e.target.bindPopup(getPopupContent(data)).openPopup()
+
+    getPopupContent = (data) ->
+      content = "<a href='/budgets/#{data['budget_id']}/investments/#{data['investment_id']}'>#{data['investment_title']}</a>"
+      return content
 
     mapCenterLatLng  = new (L.LatLng)(mapCenterLatitude, mapCenterLongitude)
     map              = L.map(element.id).setView(mapCenterLatLng, zoom)
@@ -88,8 +97,11 @@ App.Map =
 
     if addMarkerInvestments
       for i in addMarkerInvestments
-        add_marker=createMarker(i.lat , i.long)
-        add_marker.bindPopup(contentPopup(i.investment_title, i.investment_id, i.budget_id))
+        if App.Map.validCoordinates(i)
+          marker = createMarker(i.lat, i.long)
+          marker.options['id'] = i.id
+
+          marker.on 'click', openMarkerPopup
 
   toogleMap: ->
       $('.map').toggle()
