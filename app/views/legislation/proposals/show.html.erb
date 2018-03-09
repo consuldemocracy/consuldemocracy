@@ -2,16 +2,16 @@
 <% content_for :meta_description do %><%= @proposal.summary %><% end %>
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
-            social_url: proposal_url(@proposal),
+            social_url: legislation_process_proposal_url(process_id: @process),
             social_title: @proposal.title,
             social_description: @proposal.summary %>
 <% end %>
 <% content_for :canonical do %>
-  <%= render "shared/canonical", href: proposal_url(@proposal) %>
+  <%= render "shared/canonical", href: legislation_process_proposal_url(process_id: @process) %>
 <% end %>
 
 <% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @legislation_proposal_votes] do %>
-  <div class="proposal-show">
+  <div class="proposal-show legislation-proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
         <%= back_link_to legislation_process_proposals_path(process_id: @process) %>
@@ -103,7 +103,7 @@
         <%= render partial: 'shared/social_share', locals: {
           share_title: t("proposals.show.share"),
           title: @proposal.title,
-          url: proposal_url(@proposal),
+          url: legislation_process_proposal_url(process_id: @process),
           description: @proposal.summary
         } %>
       </aside>

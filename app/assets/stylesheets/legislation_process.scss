@@ -8,8 +8,8 @@
 // 06. Legislation changes
 // 07. Legislation comments
 // 08. Legislation draft comment
+// 09. Legislation proposals
 //
-
 
 // 01. Hero
 // --------
@@ -920,5 +920,28 @@
         text-decoration: none;
       }
     }
+  }
+}
+
+// 09. Legislation proposals
+// -------------------------
+
+.proposal-show {
+
+  &.legislation-proposal-show h1 {
+    font-size: rem-calc(24);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(36);
+    }
+  }
+}
+
+.legislation-proposals {
+  margin-top: rem-calc(-6);
+
+  .proposal h3 {
+    font-size: rem-calc(20);
+    margin-top: 0;
   }
 }
