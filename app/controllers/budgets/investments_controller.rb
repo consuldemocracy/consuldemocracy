@@ -4,13 +4,13 @@ module Budgets
     include CommentableActions
     include FlagActions
 
-    before_action :authenticate_user!, except: [:index, :show, :redirect_to_new_url]
-    before_action :load_budget, except: :redirect_to_new_url
+    before_action :authenticate_user!, except: [:index, :show, :redirect_to_new_url, :json_data]
+    before_action :load_budget, except: [:redirect_to_new_url, :json_data]
     before_action :load_investment, only: [:show]
 
-    load_and_authorize_resource :budget, except: :redirect_to_new_url
-    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment", except: :redirect_to_new_url
-    skip_authorization_check only: :redirect_to_new_url
+    load_and_authorize_resource :budget, except: [:redirect_to_new_url, :json_data]
+    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment", except: [:redirect_to_new_url, :json_data]
+    skip_authorization_check only: [:redirect_to_new_url, :json_data]
 
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
@@ -84,6 +84,19 @@ module Budgets
     def redirect_to_new_url
       investment = Budget::Investment.where(original_spending_proposal_id: params['id']).first
       redirect_to budget_investment_path(investment.budget.slug, params['id']) if investment.present?
+    end
+
+    def json_data
+      investment =  Budget::Investment.find(params[:id])
+      data = {
+        investment_id: investment.id,
+        investment_title: investment.title,
+        budget_id: investment.budget.id
+      }.to_json
+
+      respond_to do |format|
+        format.json { render json: data }
+      end
     end
 
     private
