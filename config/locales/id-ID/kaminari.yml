@@ -1,0 +1,20 @@
+id:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Entries
+        other: Entries
+      more_pages:
+        display_entries: Displaying <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} cannot be found"
+          other: There are <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: You're on page
+      first: First
+      last: Last
+      next: Next
+      previous: Previous
+      truncate: "&hellip;"
