@@ -1,24 +1,22 @@
----
 fr:
   helpers:
     page_entries_info:
       entry:
-        one: Entrée
-        other: Entrées
-        zero: Entrées
+        zero: Entries
+        one: Entry
+        other: Entries
       more_pages:
-        display_entries: Affichage des entrées <b>%{first}&nbsp;-&nbsp;%{last}</b> sur <b>%{total}</b> %{entry_name}
+        display_entries: Displaying <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
       one_page:
         display_entries:
-          one: Il y a <b>1</b> %{entry_name}
-          other: Il y a <b> %{count}</b> %{entry_name}
-          zero: "%{entry_name} ne peut être trouvée"
+          zero: "%{entry_name} cannot be found"
+          one: There is <strong>1 %{entry_name}</strong>
+          other: There are <strong>%{count} %{entry_name}</strong>
   views:
     pagination:
-      first: Premier
-      last: Dernier
-      next: Suivant
-      previous: Précédent
+      current: You're on page
+      first: First
+      last: Last
+      next: Next
+      previous: Previous
       truncate: "&hellip;"
-      current: Vous êtes sur la page
-

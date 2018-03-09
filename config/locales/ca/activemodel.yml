@@ -14,5 +14,9 @@ ca:
         sms:
           phone: "Telèfon"
           confirmation_code: "Codi de confirmació"
+        email:
+          recipient: "Email"
       officing/residence:
+        document_type: "Document type"
+        document_number: "Document number (including letters)"
         year_of_birth: "Any de naixement"

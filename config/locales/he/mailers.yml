@@ -8,6 +8,13 @@ he:
       title: הערה חדשה
     config:
       manage_email_subscriptions: כדי להפסיק לקבל דואר דומה עליכם לשנות את הגדרות הדואר
+    email_verification:
+      click_here_to_verify: this link
+      instructions_2_html: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
+      instructions_html: To complete the verification of your user account in the Open Government Portal, you must click %{verification_link}.
+      subject: Confirm your email
+      thanks: Thank you very much.
+      title: Confirm your account using the following link
     reply:
       hi: שלום
       new_reply_by_html: ישנה התייחסות חדשה מ <b>%{commenter}</b> לתגובתך בנושא
@@ -15,7 +22,7 @@ he:
       title: התקבלה תגובה חדשה להערות שלך
     unfeasible_spending_proposal:
       hi: "משתמש/ת יקר/ה,"
-      new_html: 'מסיבות אלה, אנו מזמינים אותך לפתוח <strong>הצעה חדשה</strong> שתתקן את התנאים של היוזמה שנדחתה. אפשר לעשות זאת בקישור: %{url}.'
+      new_html: "מסיבות אלה, אנו מזמינים אותך לפתוח <strong>הצעה חדשה</strong> שתתקן את התנאים של היוזמה שנדחתה. אפשר לעשות זאת בקישור: %{url}."
       new_href: "הצעת השקעה חדשה"
       reconsider_html: "אם לדעתך ההצעה שנדחתה כן עומדת בתנאים של הצעת השקעה, אפשר להודיע זאת, תוך 48 שעות, בדואר אלקטרוני לכתובת examples@consul.es. שיכלול את הקוד%{code} בנושא של ההודעה"
       sincerely: "בברכה,"
@@ -25,7 +32,7 @@ he:
       unfeasible_html: "אנו במועצת העיר מודים לך על ההשתתפות בהצעת <strong>תקצוב שיתופי</strong>. צר לנו להודיע לך שההצעה <strong>'%{title}'</strong> תוסר מתהליך הבקשות להוצאה כספית בשל הסיבה הבאה:"
     budget_investment_unfeasible:
       hi: "משתמש/ת יקר/ה,"
-      new_html: 'מסיבות אלה, אנו מזמינים אותך לפתוח <strong>יוזמת השקעה חדשה</strong> tשתתאים לתנאים של תהליך זה. תוכל/י לעשות זאת בקישור: %{url}.'
+      new_html: "מסיבות אלה, אנו מזמינים אותך לפתוח <strong>יוזמת השקעה חדשה</strong> tשתתאים לתנאים של תהליך זה. תוכל/י לעשות זאת בקישור: %{url}."
       new_href: "פרויקט השקעה חדש"
       reconsider_html: "אם לדעתך ההצעת ההשקעה שנדחתה עומדת בתנאים של הצעת השקעה תקינה, תוכל/י להודיע על כך, בתוך 48 שעות, על-ידי שליחת דואר אלקטרוני לכתובת examples@consul.es. שיכלול את הקוד %{code} בנושא ההודעה."
       sincerely: "בברכה,"
@@ -65,3 +72,21 @@ he:
       sincerely: "בברכה,"
       signatory: "המחלקה לשיתוף הציבור"
       share: "לשיתוף"
+    budget_investment_selected:
+      subject: "Your investment project '%{code}' has been selected"
+      hi: "Dear user,"
+      selected_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We would like to inform you that your investment project <strong>'%{title}'</strong> has been selected for the final voting phase that will happen from <strong>May 15th to June 30th</strong>."
+      share: "Start to get votes, share your investment project on social networks. Share is essential to make it a reality."
+      share_button: "Share your investment project"
+      thanks: "Thank you again for participating."
+      sincerely: "Sincererly"
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+    budget_investment_unselected:
+      subject: "Your investment project '%{code}' has not been selected"
+      hi: "Dear user,"
+      unselected_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment project <strong>'%{title}'</strong> has not been selected for the final voting phase."
+      participate_html: "You can continue participating in the final voting phase voting for investments projects from <strong>May 15th to June 30th</strong>."
+      participate_url: "participate in the final voting"
+      thanks: "Thank you again for participating."
+      sincerely: "Sincererly"
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"

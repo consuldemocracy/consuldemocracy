@@ -12,6 +12,9 @@ he:
       personal: פרטים אישיים
       phone_number_label: מספר טלפון
       public_activity_label: השאר את פירוט הפעילויות שלי גלוי לציבור
+      public_interests_label: Keep the labels of the elements I follow public
+      public_interests_my_title_list: Tags of elements you follow
+      public_interests_user_title_list: Tags of elements this user follows
       save_changes_submit: שמירת השינויים
       subscription_to_website_newsletter_label: ארצה לקבל בדואר אלקטרוני מידע מהאתר
       email_on_direct_message_label: לקבל בדואר אלקטרוני על פניות אישיות
@@ -19,7 +22,7 @@ he:
       official_position_badge_label: הצג את אות הדירוג הרשמי שלי
       title: החשבון שלי
       user_permission_debates: להשתתף בדיונים
-      user_permission_info: '...עם החשבון שלך תוכל/י'
+      user_permission_info: ...עם החשבון שלך תוכל/י
       user_permission_proposal: ליצור הצעות חדשות
       user_permission_support_proposal: לתמוך בהצעות
       user_permission_title: השתתפות
@@ -33,6 +36,9 @@ he:
     close: סגירה
     menu: תפריט
   comments:
+    comments_closed: Comments are closed
+    verified_only: To participate %{verify_account}
+    verify_account: verify your account
     comment:
       admin: מנהל/ת
       author: מחבר/ת
@@ -40,9 +46,17 @@ he:
       moderator: מנחה דיון
       responses:
         zero: אין תגובות
+        one: 1 response
+        two: "%{count} responses"
+        many: "%{count} responses"
+        other: "%{count} responses"
       user_deleted: משתמש/ת זה/זו נמחק/ה
       votes:
         zero: אין הצבעות
+        one: 1 vote
+        two: "%{count} votes"
+        many: "%{count} votes"
+        other: "%{count} votes"
     form:
       comment_as_admin: הגב/י כמנהל/ת
       comment_as_moderator: הגב/י כמנה/ת הדיון
@@ -51,12 +65,14 @@ he:
       most_voted: הכי הרבה הצבעות
       newest: הכי חדשות
       oldest: הכי מוקדמות
+      most_commented: Most commented
     select_order: סדר לפי
     show:
       return_to_commentable: 'בחזרה אל'
   comments_helper:
     comment_button: פרסום התגובה
     comment_link: כתיבת תגובה
+    comments_title: Comments
     reply_button: פרסום התגובה
     reply_link: מענה לתגובה
   debates:
@@ -66,8 +82,16 @@ he:
     debate:
       comments:
         zero: אין תגובות
+        one: 1 comment
+        two: "%{count} comments"
+        many: "%{count} comments"
+        other: "%{count} comments"
       votes:
         zero: אין הצבעות
+        one: 1 vote
+        two: "%{count} votes"
+        many: "%{count} votes"
+        other: "%{count} votes"
     edit:
       editing: עריכת הדיון
       form:
@@ -81,19 +105,45 @@ he:
       tags_placeholder: "“נא לרשום את כל התגיות שברצונך להשתמש, עם פסיק (',') מפריד ביניהן\""
     index:
       featured_debates: מוצע
+      filter_topic:
+        one: " with topic '%{topic}'"
+        two: " with topic '%{topic}'"
+        many: " with topic '%{topic}'"
+        other: " with topic '%{topic}'"
       orders:
         confidence_score: הכי נתמכת
         created_at: הכי חדשה
         hot_score: הכי פעילה
         most_commented: עם הכי הרבה תגובות
         relevance: שייכת לנושא
+        recommendations: recommendations
+      recommendations:
+        without_results: There are not debates related to your interests
+        without_interests: Follow proposals so we can give you recommendations
       search_form:
         button: חיפוש
         placeholder: חיפוש דיונים...
         title: חיפוש
+      search_results_html:
+        one: " containing the term <strong>'%{search_term}'</strong>"
+        two: " containing the term <strong>'%{search_term}'</strong>"
+        many: " containing the term <strong>'%{search_term}'</strong>"
+        other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: סדר לפי
       start_debate: פתיחת דיון חדש
       title: דיונים
+      section_header:
+        icon_alt: Debates icon
+        title: Debates
+        help: Help about debates
+      section_footer:
+        title: Help about debates
+        description: Start a debate to share opinions with others about the topics you are concerned about.
+        help_text_1: "The space for citizen debates is aimed at anyone who can expose issues of their concern and those who want to share opinions with other people."
+        help_text_2: 'To open a debate you need to sign up on %{org}. Users can also comment on open debates and rate them with the "I agree" or "I disagree" buttons found in each of them.'
+        help_text_3: "Keep in mind that a debate does not start any specific action. If you want to make a %{proposal} for the city or raise a investment project of %{budget} when the phase is open, go to the corresponding section."
+        proposals_link: proposal
+        budget_link: participatory budgeting
     new:
       form:
         submit_button: פתיחת דיון חדש
@@ -110,17 +160,23 @@ he:
       author_deleted: המשתמש/ת נמחק/ה
       comments:
         zero: אין תגובות
+        one: 1 comment
+        two: "%{count} comments"
+        many: "%{count} comments"
+        other: "%{count} comments"
       comments_title: תגובות
       edit_debate_link: עריכה
       flag: דיון זה סומן כבלתי-ראוי על ידי מספר משתמשים
       login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
       share: שיתוף
+      author: Author
     update:
       form:
         submit_button: שמירת השינויים
   errors:
     messages:
       user_not_found: משתמש/ת לא נמצא/ה
+      invalid_date_range: "Invalid date range"
   form:
     accept_terms: אני מאשר/ת את %{policy} ואת %{conditions}
     accept_terms_title: אני מאשר/ת שקראתי והסכמתי למדיניות הפרטיות, לכללים ותנאי השימוש
@@ -129,14 +185,21 @@ he:
     direct_message: פנייה פרטית
     error: שגיאה זו מונעת
     errors: שגיאות אלו מונעות
+    not_saved_html: "prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
     policy: מדיניות הפרטיות
     proposal: הצעה
     proposal_notification: "התראות"
     spending_proposal: הצעה להוצאות כספים
     budget/investment: השקעה
+    budget/heading: Budget Heading
+    poll/shift: Shift
+    poll/question/answer: Answer
     user: חשבון משתמש/ת
     verification/sms: מספר טלפון
     signature_sheet: גיליון חתימה
+    document: Document
+    topic: Topic
+    image: Image
   geozones:
     none: כל הרשויות
     all: כל התחומים
@@ -166,8 +229,10 @@ he:
       transparency_title: שקיפות
       transparency_url: https://transparency.consul
     header:
+      administration_menu: Admin
       administration: ניהול
       available_locales: שפות לבחירה
+      collaborative_legislation: Legislation processes
       debates: דיונים
       external_link_blog: אתר קול העם
       external_link_opendata: מידע נגיש
@@ -179,10 +244,16 @@ he:
       management: ניהול
       moderation: הנחיה
       valuation: הערכה
-      more_info: מידע נוסף
+      officing: Polling officers
+      help: Help
       my_account_link: החשבון שלי
       my_activity_link: הפעילות שלי
       notifications: התראות
+      new_notifications:
+        one: You have a new notification
+        two: You have %{count} new notifications
+        many: You have %{count} new notifications
+        other: You have %{count} new notifications
       no_notifications: "אין לך התראות חדשות"
       open: פתיחה
       open_city_slogan_html: ערים ומדינות בעולם מתנהלות באופן ישיר בידי האזרחים, שיכולים <b>לדון</b> בנושאים שמדאיגים אותם או חשובים להם, <b>להציע</b> תכניות ורעיונות שישפרו את חייהם ואז <b>לקבוע</b> בעצמם מה ההצעות שיבוצעו בפועל. עכשיו גם בישראל
@@ -192,11 +263,36 @@ he:
       poll_questions: הצבעות
       budgets: מימון השתתפותי
       spending_proposals: הצעות להוצאת כספים
+    admin:
+      watch_form_message: 'You have unsaved changes. Do you confirm to leave the page?'
+  legacy_legislation:
+    help:
+      alt: Select the text you want to comment and press the button with the pencil.
+      text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
+      text_sign_in: login
+      text_sign_up: sign up
+      title: How I can comment this document?
   locale: עברית
   notifications:
     index:
+      comments_on:
+        one: Someone commented on
+        two: There are %{count} new comments on
+        many: There are %{count} new comments on
+        other: There are %{count} new comments on
       empty_notifications: אין לך תגובות חדשות
+      notifiable_hidden: This resource is not available anymore.
       mark_all_as_read: סימון נקראו על כל התגובות
+      proposal_notification:
+        one: There is one new notification on
+        two: There are %{count} new notifications on
+        many: There are %{count} new notifications on
+        other: There are %{count} new notifications on
+      replies_to:
+        one: Someone replied to your comment on
+        two: There are %{count} new replies to your comment on
+        many: There are %{count} new replies to your comment on
+        other: There are %{count} new replies to your comment on
       title: התראות
   map:
     title: "שכונות"
@@ -249,6 +345,7 @@ he:
       geozone: היקף הפעילות
       proposal_external_url: קישור למידע נוסף
       proposal_question: השאלה המוצעת
+      proposal_question_example_html: "Must be summarised in one question with a Yes or No answer. <br>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'"
       proposal_responsible_name: שם ושם משפחה מלא של מציע/ת ההצעה
       proposal_responsible_name_note: "“(כאדם פרטי או כנציג/ה של התאגדות תושבים. השם יישמר חסוי מפני שאר המשתמשים)\""
       proposal_summary: תקציר ההצעה
@@ -261,14 +358,28 @@ he:
       tags_instructions: "תייג/י את התחומים להם שייכת הצעה זו והנושאים בהם היא עוסקת. ניתן לבחור תחומים מרשימה או להוסיף תחומים משלך"
       tags_label: תגיות
       tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
+      map_location: "Map location"
+      map_location_instructions: "Navigate the map to the location and place the marker."
+      map_remove_marker: "Remove map marker"
+      map_skip_checkbox: "This proposal doesn't have a concrete location or I'm not aware of it."
     index:
       featured_proposals: מוצע
+      filter_topic:
+        one: " with topic '%{topic}'"
+        two: " with topic '%{topic}'"
+        many: " with topic '%{topic}'"
+        other: " with topic '%{topic}'"
       orders:
         confidence_score: הכי נתמכת
         created_at: הכי חדשה
         hot_score: הכי פעילה
         most_commented: עם הכי הרבה תגובות
         relevance: נוגעת לעניין
+        archival_date: archived
+        recommendations: recommendations
+      recommendations:
+        without_results: There are not proposals related to your interests
+        without_interests: Follow proposals so we can give you recommendations
       retired_proposals: הצעות שהוסרו
       retired_proposals_link: "הצעות שהוסרו על-ידי המחבר/ת"
       retired_links:
@@ -282,12 +393,27 @@ he:
         button: חיפוש
         placeholder: חיפוש הצעות ...
         title: חיפוש
+      search_results_html:
+        one: " containing the term <strong>'%{search_term}'</strong>"
+        two: " containing the term <strong>'%{search_term}'</strong>"
+        many: " containing the term <strong>'%{search_term}'</strong>"
+        other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: סדר לפי
       select_order_long: 'ההצעות מוצגות לך על-פי סדר:'
       start_proposal: העל/י הצעה חדשה
       title: הצעות
       top: בראש סדר-היום השבוע
       top_link_proposals: ההצעות שצברו הכי הרבה תמיכה, לפי נושא
+      section_header:
+        icon_alt: Proposals icon
+        title: Proposals
+        help: Help about proposals
+      section_footer:
+        title: Help about proposals
+        description: Make a citizen proposal. If it gets enough supports it will go to voting phase, so you can get all the citizens to decide how they want their city to be.
+        help_text_1: "The citizen proposals are an opportunity for neighbours and collectives to decide directly how they want to shape their city. Any person can make a proposal about a topic or concern of their interest, for the City Council to make it, after it gets enough supports to be put to a citizens vote."
+        help_text_2: "To create a proposal, you must sign up on %{org}. The proposals that get the support of 1% of the users in the web, goes to voting phase. To support proposals it is necessary to have a verified account."
+        help_text_3: "A citizen vote is celebrated when the proposals get the necessary supports. Once celebrated, if there are more people in favor than against, the City Council assumes the proposal and carries it out."
     new:
       form:
         submit_button: פרסום ההצעה
@@ -300,14 +426,35 @@ he:
     notice:
       retired: ההצעה הוסרה
     proposal:
+      created: "You've created a proposal!"
+      share:
+        guide: "Now you can share it so people can start supporting."
+        edit: "Before it gets shared you'll be able to change the text as you like."
+        view_proposal: Not now, go to my proposal
+      improve_info: "Improve your campaign and get more supports"
+      improve_info_link: "See more information"
       already_supported: תודה שתמכת בהצעה זו. תוכל/י לשתף
       comments:
         zero: אין תגובות עדיין
+        one: 1 comment
+        two: "%{count} comments"
+        many: "%{count} comments"
+        other: "%{count} comments"
       reason_for_supports_necessary: 1% תמיכה נדרשת
       support: בעד
       support_title: לתמיכה בהצעה זו
       supports:
         zero: אין תמיכה
+        one: 1 support
+        two: "%{count} supports"
+        many: "%{count} supports"
+        other: "%{count} supports"
+      votes:
+        zero: No votes
+        one: 1 vote
+        two: "%{count} votes"
+        many: "%{count} votes"
+        other: "%{count} votes"
       supports_necessary: "“נדרשים %{number} תומכים\""
       total_percent: 100%
       archived: "הצעה זו נגנזה ולא תוכל לצבור עוד תמיכה."
@@ -318,6 +465,10 @@ he:
       code: 'קוד ההצעה:'
       comments:
         zero: אין תגובות
+        one: 1 comment
+        two: "%{count} comments"
+        many: "%{count} comments"
+        other: "%{count} comments"
       comments_tab: תגובות
       edit_proposal_link: עריכה
       flag: הצעה זו סומנה כבלתי-ראויה בידי מספר משתמשים
@@ -329,6 +480,10 @@ he:
       share: שיתוף
       send_notification: שלח/י התראה
       no_notifications: "להצעה זו אין התראות."
+      embed_video_title: "Video on %{proposal}"
+      title_external_url: "Additional documentation"
+      title_video_url: "External video"
+      author: Author
     update:
       form:
         submit_button: שמירת השינויים
@@ -348,21 +503,61 @@ he:
       participate_button_expired: "ההצבעה הסתיימה"
       no_geozone_restricted: "בכל הערים/הרשויות"
       geozone_restricted: "מחוזות"
-      geozone_info: 'יכולים להשתתף אזרחים מ: '
+      geozone_info: "יכולים להשתתף אזרחים מ: "
       already_answer: "השתתפת כבר בהצבעה זו"
+      section_header:
+        icon_alt: Voting icon
+        title: Voting
+        help: Help about voting
+      section_footer:
+        title: Help about voting
+        description: Sign up to vote on citizen proposals and questions the City Council ask to the neighbors. Make municipal decisions directly.
+        help_text_1: "Voting takes place when a citizen proposal supports reaches 1% of the census with voting rights. Voting can also include questions that the City Council ask to the citizens decision."
+        help_text_2: "To participate in the next vote you have to sign up on %{org} and verify your account. All registered voters in the city over 16 years old can vote. The results of all votes are binding on the government."
     show:
+      already_voted_in_booth: "You have already participated in a physical booth. You can not participate again."
+      already_voted_in_web: "You have already participated in this poll. If you vote again it will be overwritten."
+      back: Back to voting
       cant_answer_not_logged_in: "נדרשת %{signin} או %{signup} בכדי להשתתף"
+      comments_tab: Comments
+      login_to_comment: You must %{signin} or %{signup} to leave a comment.
       signin: התחברות
       signup: הרשמה
       cant_answer_verify_html: "נדרש %{verify_link}על מנת להצביע."
       verify_link: "לאמת את חשבונך"
       cant_answer_incoming: "הצבעה זו טרם התחילה"
       cant_answer_expired: "הצבעה זו הסתיימה"
+      cant_answer_wrong_geozone: "This question is not available on your geozone."
+      more_info_title: "More information"
+      documents: Documents
+      zoom_plus: Expand image
+      read_more: "Read more about %{answer}"
+      read_less: "Read less about %{answer}"
+      participate_in_other_polls: Participate in other polls
+      videos: "External video"
+      info_menu: "Information"
+      stats_menu: "Participation statistics"
+      results_menu: "Poll results"
+      stats:
+        title: "Participation data"
+        total_participation: "Total participation"
+        total_votes: "Total amount of given votes"
+        votes: "VOTES"
+        web: "WEB"
+        booth: "BOOTH"
+        total: "TOTAL"
+        valid: "Valid"
+        white: "White votes"
+        null_votes: "Invalid"
+      results:
+        title: "Questions"
+        most_voted_answer: "Most voted answer: "
   poll_questions:
     create_question: "יצירת שאלה חדשה"
     show:
       vote_answer: "הצבעה %{answer}"
       voted: "עליך להצביע %{answer}"
+      voted_token: "You can write down this vote identifier, to check your vote on the final results:"
   proposal_notifications:
     new:
       title: "שליחת הודעה"
@@ -379,6 +574,7 @@ he:
     delete: מחיקה
     "yes": "כן"
     "no": "לא"
+    search_results: "Search results"
     advanced_search:
       author_type: 'לפי סוג המחבר/ת'
       author_type_blank: 'בחר/י סוג'
@@ -404,6 +600,20 @@ he:
     check_none: שום דבר
     collective: קבוצתי
     flag: סמן כתוכן לא-ראוי
+    follow: "Follow"
+    following: "Following"
+    follow_entity: "Follow %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "You are now following this investment project! </br> We will notify you of changes as they occur so that you are up-to-date."
+        destroy:
+          notice_html: "You have stopped following this investment project! </br> You will no longer receive notifications related to this project."
+      proposal:
+        create:
+          notice_html: "Now you are following this citizen proposal! </br> We will notify you of changes as they occur so that you are up-to-date."
+        destroy:
+          notice_html: "You have stopped following this citizen proposal! </br> You will no longer receive notifications related to this proposal."
     hide: הסתר
     print:
       print_button: הדפסה
@@ -411,9 +621,27 @@ he:
     show: הצג
     suggest:
       debate:
+        found:
+          one: "There is a debate with the term '%{query}', you can participate in it instead of opening a new one."
+          two: "There are debates with the term '%{query}', you can participate in them instead of opening a new one."
+          many: "There are debates with the term '%{query}', you can participate in them instead of opening a new one."
+          other: "There are debates with the term '%{query}', you can participate in them instead of opening a new one."
         message: "“מציג %{limit} מתוך %{count} דיונים הכוללים את המונח '%{query}'\""
         see_all: "הצג הכל"
+      budget_investment:
+        found:
+          one: "There is an investment with the term '%{query}', you can participate in it instead of opening a new one."
+          two: "There are investments with the term '%{query}', you can participate in them instead of opening a new one."
+          many: "There are investments with the term '%{query}', you can participate in them instead of opening a new one."
+          other: "There are investments with the term '%{query}', you can participate in them instead of opening a new one."
+        message: "You are seeing %{limit} of %{count} investments containing the term '%{query}'"
+        see_all: "See all"
       proposal:
+        found:
+          one: "There is a proposal with the term '%{query}', you can contribute to it instead of creating a new"
+          two: "There are proposals with the term '%{query}', you can contribute to them instead of creating a new"
+          many: "There are proposals with the term '%{query}', you can contribute to them instead of creating a new"
+          other: "There are proposals with the term '%{query}', you can contribute to them instead of creating a new"
         message: "“מציג %{limit} מתוך %{count} הצעות הכוללות את המונח '%{query}'\""
         see_all: "הצג הכל"
     tags_cloud:
@@ -424,9 +652,17 @@ he:
     target_blank_html: " (הקישור יפתח בחלון חדש)"
     you_are_in: "את/ה נמצא/ת ב-"
     unflag: הסרת הסימן
+    unfollow_entity: "Unfollow %{entity}"
     outline:
       budget: מימון השתתפותי
       searcher: חיפוש
+    go_to_page: "Go to page of "
+    share: Share
+    orbit:
+      previous_slide: Previous Slide
+      next_slide: Next Slide
+    documentation: Additional documentation
+    more_info: More information
   social:
     blog: "בלוג"
     facebook: "פייסבוק"
@@ -449,11 +685,16 @@ he:
     index:
       title: מימון השתתפותי
       unfeasible: פרויקטים שהשקעה בהם אינה ברת ביצוע
-      by_geozone: 'פרויקט השקעה בתחומי: %{geozone}'
+      by_geozone: "פרויקט השקעה בתחומי: %{geozone}"
       search_form:
         button: חיפוש
         placeholder: פרויקטים להשקעה...
         title: חיפוש
+      search_results:
+        one: " containing the term '%{search_term}'"
+        two: " containing the term '%{search_term}'"
+        many: " containing the term '%{search_term}'"
+        other: " containing the term '%{search_term}'"
       sidebar:
         geozones: היקף הפעילות
         feasibility: סבירות לביצוע
@@ -478,6 +719,10 @@ he:
       support_title: תמיכה בפרויקט זה
       supports:
         zero: אין תומכים עדיין
+        one: 1 support
+        two: "%{count} supports"
+        many: "%{count} supports"
+        other: "%{count} supports"
   stats:
     index:
       visits: ביקורים
@@ -514,14 +759,47 @@ he:
       deleted_debate: דיון זה נמחק
       deleted_proposal: הצעה זו נמחקה
       deleted_budget_investment: השקעה זו נמחקה
+      proposals: Proposals
+      debates: Debates
+      budget_investments: Budget investments
+      comments: Comments
+      actions: Actions
+      filters:
+        comments:
+          one: 1 Comment
+          two: "%{count} Comments"
+          many: "%{count} Comments"
+          other: "%{count} Comments"
+        debates:
+          one: 1 Debate
+          two: "%{count} Debates"
+          many: "%{count} Debates"
+          other: "%{count} Debates"
+        proposals:
+          one: 1 Proposal
+          two: "%{count} Proposals"
+          many: "%{count} Proposals"
+          other: "%{count} Proposals"
+        budget_investments:
+          one: 1 Investment
+          two: "%{count} Investments"
+          many: "%{count} Investments"
+          other: "%{count} Investments"
+        follows:
+          one: 1 Following
+          two: "%{count} Following"
+          many: "%{count} Following"
+          other: "%{count} Following"
       no_activity: למשתמש/ת זה/ו אין פעילות ציבורית
       no_private_messages: "משתמש/ת זה/זו אינו/ה מקבל/ת הודעות פרטיות"
       private_activity: משתמש/ת זה/ו בחר/ה לשמור בסוד את רשימת הפעילויות שלו/ה
       send_private_message: "שליחת הודעה פרטית"
+      delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
       send_notification: "שליחת הודעה"
       retire: "לפרוש"
       retired: "פרשת מזה"
+      see: "See proposal"
   votes:
     agree: הסכמה
     anonymous: יותר מדי קולות אנונימיים לאמת את ההצבעה %{verify_account}.
@@ -542,9 +820,11 @@ he:
       not_voting_allowed: שלב ההצבעות נסגר
     budget_investments:
       not_logged_in: נדרשת %{signin} או %{signup} בכדי להמשיך
+      not_verified: Only verified users can vote on investment projects; %{verify_account}.
       organization: ארגונים אינם רשאים להצביע
       unfeasible: לא ניתן לתמוך בפרויקטים שאינם ברי ביצוע
       not_voting_allowed: שלב ההצבעות נסגר
+      different_heading_assigned: You can only support investment projects in one heading
   welcome:
     debates:
       description: לפגישות, דיונים ודיוק הצעות לקראת הצעה סופית
@@ -558,6 +838,16 @@ he:
     proposal:
       description: המרחב הציבורי להצעות שלך לניהול המדינה
       title: ההצעות שלך
+    recommended:
+      title: Recommendations that may interest you
+      debates:
+        title: Recommended debates
+        btn_text_link: All recommended debates
+      proposals:
+        title: Recommended proposals
+        btn_text_link: All recommended proposals
+      budget_investments:
+        title: Recommended investments
     verification:
       i_dont_have_an_account: אין לי חשבון
       i_have_an_account: כבר יש לי חשבון
@@ -577,3 +867,20 @@ he:
   invisible_captcha:
     sentence_for_humans: "אם אינך רובוט/ית, אפשר בבקשה להתעלם מהשדה הזה"
     timestamp_error_message: "מצטערים, זה היה מהיר מדי, נא לשלוח שוב"
+  related_content:
+    title: "Related content"
+    add: "Add related content"
+    label: "Link to related content"
+    placeholder: "%{url}"
+    help: "You can add links of %{models} inside of %{org}."
+    submit: "Add"
+    error: "Link not valid. Remember to start with %{url}."
+    error_itself: "Link not valid. You cannot relate a content to itself."
+    success: "You added a new related content"
+    is_related: "¿Is it related content?"
+    score_positive: "Yes"
+    score_negative: "No"
+    content_title:
+      proposal: "Proposal"
+      debate: "Debate"
+      budget_investment: "Budget investment"

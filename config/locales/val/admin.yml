@@ -68,7 +68,7 @@ val:
         new_link: Crear nou pressupost
         filter: Filtre
         filters:
-          current: Oberts
+          open: Open
           finished: Finalitzats
         budget_investments: Vore propostes d'inversió
         table_name: Nom
@@ -85,6 +85,13 @@ val:
       edit:
         title: Edita campanya de pressupostos participatius
         delete: Eliminar presupost
+        phase: Fase
+        dates: Dates
+        enabled: Actiu
+        actions: Accions
+        edit_phase: Edita fase
+        active: Actius
+        blank_dates: Les dates estan en blanc
       destroy:
         success_notice: Pressupost eliminat correctament
         unable_notice: No pots eliminar un Pressupost amb propostes
@@ -113,22 +120,47 @@ val:
       winners:
         calculate: Calcular propostes guanyadores
         calculated: Calculant guanyadores, pot tardar algún minut.
+    budget_phases:
+      edit:
+        start_date: Data d'inici del procés
+        end_date: Data de fi del procés
+        summary: Resum
+        summary_help_text: This text will inform the user about the phase. To show it even if the phase is not active, select the checkbox below
+        description: Descripció
+        description_help_text: This text will appear in the header when the phase is active
+        enabled: Fase habilitada
+        enabled_help_text: Aquesta fase serà pública en el calendari de fases del pressupost, així com activa per a qualsevol altre propòsit
+        save_changes: Guardar canvis
     budget_investments:
       index:
         heading_filter_all: Totes les partides
         administrator_filter_all: Tots els administradors
         valuator_filter_all: Tots els avaluadors
         tags_filter_all: Totes les etiquetes
+        advanced_filters: Advanced filters
+        placeholder: Search projects
+        sort_by:
+          placeholder: Sort by
+          id: ID
+          title: Title
+          supports: Supports
         filters:
-          valuation_open: Obertes
-          without_admin: Sense administrador
-          managed: Gestor
-          valuating: En avaluació
-          valuation_finished: Avaluació finalitzada
-          valuation_finished_feasible: Viables
-          selected: Seleccionades
-          winners: Guanyadores
           all: Totes
+          without_admin: Sense administrador
+          without_valuator: Without assigned valuator
+          under_valuation: Under valuation
+          valuation_finished: Avaluació finalitzada
+          feasible: Feasible
+          selected: Seleccionades
+          undecided: Undecided
+          unfeasible: Unfeasible
+          max_per_heading: Max. supports per heading
+          winners: Guanyadores
+          one_filter_html: "Current applied filters: <b><em>%{filter}</em></b>"
+          two_filters_html: "Current applied filters: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          search: Search
+          filter: Filter
         download_current_selection: "Baixar la selecció actual"
         no_budget_investments: "No hi ha projectes d'inversió."
         title: Propostes d'inversió
@@ -149,18 +181,18 @@ val:
         table_geozone: "Ámbit d'actuació"
         table_feasibility: "Viabilitat"
         table_valuation_finished: "Av. Fin."
-        table_selection: "Selecció"
+        table_selection: "Selected"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignat
         assigned_valuators: Evaluadors asignats
         classification: Classificació
-        info: '%{budget_name} - Grup: %{group_name} - Proposta d''inversió %{id}'
+        info: "%{budget_name} - Grup: %{group_name} - Proposta d'inversió %{id}"
         edit: Editar
         edit_classification: Edita classificació
         by: Autor
         sent: Data
-        group: Grup
+        group: Group
         heading: Partida
         dossier: Informe
         edit_dossier: Editar informe
@@ -432,7 +464,9 @@ val:
       administrators: Administradors
       managers: Gestors
       moderators: Moderadors
-      newsletter: Enviament de Newsletters
+      emails: Sending of emails
+      newsletters: Newsletters
+      emails_download: Emails download
       valuators: Evaluadors
       poll_officers: Presidents de taula
       polls: Votacions
@@ -469,7 +503,7 @@ val:
         delete: Eliminar
         restricted_removal: "Ho sentim, no pots eliminar-te a tu mateix de la llista"
       search:
-        title: 'Administradors: Cerca d''usuaris'
+        title: "Administradors: Cerca d'usuaris"
     moderators:
       index:
         title: Moderadors
@@ -481,10 +515,53 @@ val:
         delete: Eliminar
       search:
         title: 'Moderadors: Cerca d''usuaris'
+    segment_recipient:
+      all_users: All users
+      administrators: Administrators
+      proposal_authors: Proposal authors
+      investment_authors: Investment authors in the current budget
+      feasible_and_undecided_investment_authors: "Authors of some investment in the current budget that does not comply with: [valuation finished unfesasible]"
+      selected_investment_authors: Authors of selected investments in the current budget
+      winner_investment_authors: Authors of winner investments in the current budget
+      invalid_recipients_segment: "Recipients user segment is invalid"
     newsletters:
+      create_success: Newsletter created successfully
+      update_success: Newsletter updated successfully
+      send_success: Newsletter sent successfully
+      delete_success: Newsletter deleted successfully
       index:
         title: Enviament de newsletters
-        button: Descarregar zip amb llista d'usuaris
+        new_newsletter: New newsletter
+        subject: Subject
+        segment_recipient: Recipients
+        sent: Sent
+        actions: Actions
+        draft: Draft
+        edit: Edit
+        delete: Delete
+        preview: Preview
+        empty_newsletters: There are no newsletters to show
+      new:
+        title: New newsletter
+      edit:
+        title: Edit newsletter
+      show:
+        title: Newsletter preview
+        send: Send
+        affected_users: (%{n} affected users)
+        sent_at: Sent at
+        subject: Subject
+        segment_recipient: Recipients
+        from: From
+        body: Email content
+        body_help_text: This is how the users will see the email
+        send_alert: Are you sure you want to send this newsletter to %{n} users?
+    emails_download:
+      index:
+        title: Emails download
+        download_segment: Download email addresses
+        download_segment_help_text: Download in CSV format
+        download_emails_button: Download emails list
     valuators:
       index:
         title: Avaluadors
@@ -984,7 +1061,7 @@ val:
         all: Votacions
         web_participants: Participants en la Web
         total_participants: Participants Totals
-        poll_questions: 'Preguntes de votació: %{poll}'
+        poll_questions: "Preguntes de votació: %{poll}"
         table:
           poll_name: Votació
           question_name: Pregunta
