@@ -490,7 +490,7 @@ feature 'Commenting debates' do
       end
     end
 
-    xscenario 'Trying to vote multiple times', :js do
+    scenario 'Trying to vote multiple times', :js do
       visit debate_path(@debate)
 
       within("#comment_#{@comment.id}_votes") do

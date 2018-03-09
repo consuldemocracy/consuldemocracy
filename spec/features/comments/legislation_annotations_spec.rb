@@ -567,7 +567,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    xscenario 'Trying to vote multiple times', :js do
+    scenario 'Trying to vote multiple times', :js do
       visit legislation_process_draft_version_annotation_path(@legislation_annotation.draft_version.process,
                                                               @legislation_annotation.draft_version,
                                                               @legislation_annotation)

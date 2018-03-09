@@ -513,7 +513,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    xscenario 'Trying to vote multiple times', :js do
+    scenario 'Trying to vote multiple times', :js do
       visit legislation_process_question_path(@legislation_question.process, @legislation_question)
 
       within("#comment_#{@comment.id}_votes") do
