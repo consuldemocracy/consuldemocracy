@@ -34,30 +34,6 @@ en:
       update:
         flash:
           success: Code correct. Your account is now verified
-    sms:
-      new:
-        title: "Send confirmation code"
-        phone: "Enter your mobile phone number to receive the code"
-        phone_format_html: "<strong><em>(Example: 612345678 or +34612345678)</em></strong>"
-        phone_note: "We only user your phone for send to you a code, we never contact to you."
-        phone_placeholder: "Example: 612345678 or +34612345678"
-        submit_button: "Send"
-      create:
-        flash:
-          success: Enter the confirmation code sent to you by text message
-      edit:
-        confirmation_code: Enter the code you received on your mobile
-        resend_sms_link: Click here to send it again
-        resend_sms_text: Didn't get a text with your confirmation code?
-        submit_button: Send
-        title: Security code confirmation
-      update:
-        error: Incorrect confirmation code
-        flash:
-          level_three:
-            success: Code correct. Your account is now verified
-          level_two:
-            success: Code correct
     redirect_notices:
       already_verified: Your account is already verified
       email_already_sent: We have already sent an email with a confirmation link. If you cannot locate the email, you can request a reissue here
@@ -92,6 +68,30 @@ en:
         terms: the terms and conditions of access
         title: Verify residence
         verify_residence: Verify residence
+    sms:
+      create:
+        flash:
+          success: Enter the confirmation code sent to you by text message
+      edit:
+        confirmation_code: Enter the code you received on your mobile
+        resend_sms_link: Click here to send it again
+        resend_sms_text: Didn't get a text with your confirmation code?
+        submit_button: Send
+        title: Security code confirmation
+      new:
+        phone: Enter your mobile phone number to receive the code
+        phone_format_html: "<strong><em>(Example: 612345678 or +34612345678)</em></strong>"
+        phone_note: We only use your phone to send you a code, never to contact you.
+        phone_placeholder: "Example: 612345678 or +34612345678"
+        submit_button: Send
+        title: Send confirmation code
+      update:
+        error: Incorrect confirmation code
+        flash:
+          level_three:
+            success: Code correct. Your account is now verified
+          level_two:
+            success: Code correct
     step_1: Residence
     step_2: Confirmation code
     step_3: Final verification

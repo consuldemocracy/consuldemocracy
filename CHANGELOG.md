@@ -3,15 +3,6 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/consul/consul/compare/v0.14...consul:master)
-
-### Added
-### Changed
-### Deprecated
-### Removed
-### Fixed
-### Security
-
 ## [0.14.0](https://github.com/consul/consul/compare/v0.13...v0.14) - 2018-03-08
 
 ### Added
@@ -30,11 +21,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - List Budget Investment's milestones ordered by publication date https://github.com/consul/consul/issues/2429
 - Admin newsletter email refactor https://github.com/consul/consul/pull/2474
 
-### Removed
-- Remove empty emails from user segment usages https://github.com/consul/consul/pull/2516
+### Deprecated
+- Totally remove investment's internal_comments https://github.com/consul/consul/pull/2406
 
 ### Fixed
+- Fixes social share buttons: https://github.com/consul/consul/pull/2525
+- Heading link on budgets message: https://github.com/consul/consul/pull/2528
 - Improve spec boot time and clean up of test logs https://github.com/consul/consul/pull/2444
+- Use user locale instead of default locale to format currencies https://github.com/consul/consul/pull/2443
 - Flaky spec: random investments order scenario https://github.com/consul/consul/pull/2454
 - Flaky spec: users without email should not receive emails https://github.com/consul/consul/pull/2453
 - Flaky spec: missing comment on legislation annotation https://github.com/consul/consul/pull/2455
@@ -44,8 +38,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Expire Coveralls badge cache https://github.com/consul/consul/pull/2445
 - Fixed how newsletters controller and mailer handle recipients https://github.com/consul/consul/pull/2492
 - Fix UserSegment feasible and undecided investment authors https://github.com/consul/consul/pull/2491
-- Design minor fixes https://github.com/consul/consul/pull/2465
-- UI fixes https://github.com/consul/consul/pull/2489
+- Remove empty emails from user segment usages https://github.com/consul/consul/pull/2516
+- Clean html and scss legislation proposals: https://github.com/consul/consul/pull/2527
+- UI fixes https://github.com/consul/consul/pull/2489 https://github.com/consul/consul/pull/2465
 
 ## [0.13.0](https://github.com/consul/consul/compare/v0.12...v0.13) - 2018-02-05
 
