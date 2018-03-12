@@ -507,8 +507,7 @@ $sidebar-active: #f4fcd0;
 }
 
 .account-info,
-.login-as,
-.spending-proposal-info {
+.login-as {
   background-color: #e7e7e7;
   border-radius: rem-calc(3);
   font-size: rem-calc(16);
@@ -521,8 +520,26 @@ $sidebar-active: #f4fcd0;
   }
 }
 
-.spending-proposal-info p {
-  margin-bottom: 0;
+.extra-info {
+  background: #fafafa;
+  border-bottom-left-radius: rem-calc(6);
+  border-bottom-right-radius: rem-calc(6);
+  border-top: 2px solid #000;
+  font-size: $small-font-size;
+  padding: $line-height / 2;
+}
+
+.admin-budget-investment-info {
+  background: $highlight-soft;
+  border: 2px solid $highlight;
+  border-radius: rem-calc(4);
+  margin-bottom: $line-height;
+  padding: $line-height / 2;
+
+  p {
+    font-size: $small-font-size;
+    margin-bottom: 0;
+  }
 }
 
 .admin {

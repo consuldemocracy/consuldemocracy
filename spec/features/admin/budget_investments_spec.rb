@@ -443,6 +443,8 @@ feature 'Admin budget investments' do
       expect(page).to have_content(budget_investment.description)
       expect(page).to have_content(budget_investment.author.name)
       expect(page).to have_content(budget_investment.heading.name)
+      expect(page).to have_content('Without image')
+      expect(page).to have_content('Without documents')
       expect(page).to have_content('1234')
       expect(page).to have_content('1000')
       expect(page).to have_content('Unfeasible')
@@ -454,6 +456,33 @@ feature 'Admin budget investments' do
       end
 
       expect(page).to have_button "Publish comment"
+    end
+
+    scenario 'Show image and documents on investment details' do
+      budget_investment = create(:budget_investment,
+                                  price: 1234,
+                                  price_first_year: 1000,
+                                  feasibility: "unfeasible",
+                                  unfeasibility_explanation: 'It is impossible',
+                                  administrator: administrator)
+      create(:image, imageable: budget_investment)
+      document = create(:document, documentable: budget_investment)
+
+      visit admin_budget_budget_investments_path(budget_investment.budget)
+
+      click_link budget_investment.title
+
+      expect(page).to have_content(budget_investment.title)
+      expect(page).to have_content(budget_investment.description)
+      expect(page).to have_content(budget_investment.author.name)
+      expect(page).to have_content(budget_investment.heading.name)
+      expect(page).to have_content('See image')
+      expect(page).to have_content('See documents (1)')
+      expect(page).to have_content('1234')
+      expect(page).to have_content('1000')
+      expect(page).to have_content('Unfeasible')
+      expect(page).to have_content('It is impossible')
+      expect(page).to have_content('Ana (ana@admins.org)')
     end
 
     scenario "If budget is finished, investment cannot be edited or valuation comments created" do
