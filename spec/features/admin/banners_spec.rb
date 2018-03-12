@@ -120,10 +120,10 @@ feature 'Admin banners magement' do
 
     click_link "Edit banner"
 
-    select 'Banner style 1', from: 'banner_style'
-    select 'Banner image 2', from: 'banner_image'
     fill_in 'banner_title', with: 'Modified title'
     fill_in 'banner_description', with: 'Edited text'
+    select 'Banner style 1', from: 'banner_style'
+    select 'Banner image 2', from: 'banner_image'
 
     within('div#js-banner-style') do
       expect(page).to have_selector('h2', text: 'Modified title')
