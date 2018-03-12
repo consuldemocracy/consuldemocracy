@@ -520,7 +520,7 @@ feature 'Ballots' do
 
       within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to have_content('already voted a different heading')
+        expect(page).to have_content('already voted a different district')
         expect(page).to have_selector('.in-favor a', visible: false)
       end
     end

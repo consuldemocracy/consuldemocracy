@@ -218,7 +218,7 @@
   left: 0;
   line-height: $line-height;
   min-height: 100%;
-  padding: $line-height $line-height / 2;
+  padding: $line-height / 2;
   position: absolute;
   text-align: center;
   top: 0;
@@ -1120,9 +1120,17 @@
       text-decoration: underline;
     }
 
+    .callout {
+
+      &.primary a {
+        color: $link;
+      }
+    }
+
     .button {
       background: #fff;
       color: $budget;
+      text-decoration: none;
     }
 
     .info {
@@ -1432,12 +1440,9 @@
     background-color: $budget;
     transition: height 0.3s;
 
-    h1 {
-      transition: font-size 0.3s;
-    }
-
     h2 {
-      margin-bottom: 0;
+      margin-bottom: $line-height / 2;
+      transition: font-size 0.3s;
     }
 
     &.is-fixed {
@@ -1448,7 +1453,7 @@
       top: 0;
       width: 100%;
 
-      h1 {
+      h2 {
         font-size: rem-calc(24);
         transition: font-size 0.3s;
       }
@@ -1509,6 +1514,23 @@
       &::before {
         background-color: $budget;
       }
+    }
+  }
+}
+
+.budgets-stats {
+
+  .header {
+    background: $highlight;
+  }
+
+  .big-number-stat {
+    font-size: rem-calc(60);
+    font-weight: bold;
+    line-height: rem-calc(60);
+
+    &.budget {
+      color: $budget;
     }
   }
 }

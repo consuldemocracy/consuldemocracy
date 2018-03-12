@@ -22,6 +22,17 @@
 // 00. Others
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+$campaign-black:   #605f5d;
+$campaign-blue:    #009fde;
+$campaign-brown:   #efede7;
+$campaign-red:     #e23135;
+$campaign-yellow:  #ffdb19;
+
+$budget-custom:       #5a6175 !important;
+$budget-2018-blue:    #408ea2;
+$budget-2018-pink:    #e78573;
+$budget-2018-yellow:  #fef384;
+
 // Madrid corporate identity manual
 
 $madrid-black: #000;
@@ -2118,7 +2129,7 @@ a {
   }
 
   .spent-amount-text {
-    color: #fff;
+    color: $budget-2018-pink;
     font-size: $base-font-size;
     font-weight: normal;
     position: absolute;
@@ -2128,24 +2139,25 @@ a {
     width: 100%;
 
     &::before {
-      color: #a5a1ff;
+      color: $budget-2018-pink;
       content: '\57';
       font-family: 'icons';
       font-size: $small-font-size;
       position: absolute;
-      right: -6px;
+      right: -7px;
       top: -17px;
     }
   }
 
   .total-amount {
-    color: #fff;
+    color: $budget-2018-yellow;
     font-size: rem-calc(18);
     font-weight: bold;
     float: right;
   }
 
   .amount-available {
+    color: $budget-2018-yellow;
     display: block;
     text-align: right;
 
@@ -2298,7 +2310,7 @@ ul {
   z-index: 3;
 
   @include breakpoint(large) {
-    background-color: $budget;
+    background-color: #000;
     height: rem-calc(100);
     transition: height 0.3s;
     z-index: 1;
@@ -2458,12 +2470,6 @@ ul {
 
 // 11. Budgets custom
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
-$campaign-black:   #605f5d;
-$campaign-blue:    #009fde;
-$campaign-brown:   #efede7;
-$campaign-red:     #e23135;
-$campaign-yellow:  #ffdb19;
 
 .budgets-welcome {
 
@@ -2723,15 +2729,9 @@ $campaign-yellow:  #ffdb19;
 // Overrides budgets default colors
 // -------------------------------
 
-$budget-custom: #5a6175 !important;
-$budget-2018-blue:     #408ea2;
-$budget-2018-pink:     #e78573;
-$budget-2018-yellow:   #fef384;
-
 .expanded.budget,
 .jumbo-budget {
   background: #000;
-
 
   h2 {
     color: $budget-2018-pink;
@@ -2857,20 +2857,11 @@ $budget-2018-yellow:   #fef384;
   z-index: 3;
 
   .progress {
-    background: #212033;
+    background: #1a1a1a;
   }
 
   .progress-meter {
-    background: #fdcb10;
-  }
-
-  .spent-amount-text::before {
-    color: #a5a1ff;
-    right: -7px;
-  }
-
-  .total-amount {
-    color: #fff;
+    background: $budget-2018-yellow;
   }
 }
 
@@ -2940,14 +2931,6 @@ ul {
     .remove .icon-check-circle {
       color: $budget-custom;
     }
-  }
-}
-
-.progress-votes {
-
-  .total-amount,
-  .spent-amount-text {
-    color: $budget-custom;
   }
 }
 
@@ -3050,22 +3033,27 @@ h2 {
 .budgets-stats {
 
   .header {
+    background: #000;
 
-    h1 {
-      font-family: 'Franklin Gothic' !important;
+    a,
+    .icon-angle-left {
+      color: #fff;
     }
 
-    h1,
-    .back,
-    .icon-angle-left {
-      color: #000;
+    h2 {
+      color: $budget-2018-pink;
+      font-family: "Souvenir" !important;
+
+      span {
+        color: #fff;
+      }
     }
   }
 
   .big-number-stat {
 
     &.budget {
-      color: $budget-custom;
+      color: #000;
     }
   }
 }

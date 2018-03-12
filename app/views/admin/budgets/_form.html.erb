@@ -64,7 +64,10 @@
       <% end %>
 
       <% if @budget.persisted? %>
-        <%= link_to t("admin.budgets.edit.delete"), admin_budget_path(@budget), method: :delete, class: "button hollow alert float-right" %>
+        <%= link_to t("admin.budgets.edit.delete"),
+            admin_budget_path(@budget),
+            method: :delete,
+            class: "button hollow alert float-right margin-left" %>
       <% end %>
     </div>
 

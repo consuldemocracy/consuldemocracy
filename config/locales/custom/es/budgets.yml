@@ -8,6 +8,8 @@ es:
     ballots:
       show:
         zero: "Todavía no has votado ningún proyecto de gasto."
+      reasons_for_not_balloting:
+        different_heading_assigned_html: "Ya has votado proyectos de otro distrito: %{heading_link}"
     investments:
       form:
         tags_instructions: "Etiqueta este proyecto. Puedes elegir entre las categorías propuestas o introducir las que desees"
