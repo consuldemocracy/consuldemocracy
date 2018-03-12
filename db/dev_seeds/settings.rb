@@ -37,7 +37,6 @@ section "Creating Settings" do
   Setting.create(key: 'feature.spending_proposal_features.open_results_page', value: nil)
 
   Setting.create(key: 'feature.budgets', value: "true")
-  Setting.create(key: 'feature.budgets.valuators_allowed', value: "true")
   Setting.create(key: 'feature.twitter_login', value: "true")
   Setting.create(key: 'feature.facebook_login', value: "true")
   Setting.create(key: 'feature.google_login', value: "true")

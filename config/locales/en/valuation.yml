@@ -74,6 +74,7 @@ en:
       notice:
         valuate: "Dossier updated"
       valuation_comments: Valuation comments
+      not_in_valuating_phase: Investments can only be valuated when Budget is in valuating phase
     spending_proposals:
       index:
         geozone_filter_all: All zones

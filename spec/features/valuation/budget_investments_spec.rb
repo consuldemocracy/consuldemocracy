@@ -9,7 +9,6 @@ feature 'Valuation budget investments' do
 
   background do
     login_as(valuator.user)
-    Setting['feature.budgets.valuators_allowed'] = true
   end
 
   scenario 'Disabled with a feature flag' do
@@ -246,7 +245,10 @@ feature 'Valuation budget investments' do
   feature 'Valuate' do
     let(:admin) { create(:administrator) }
     let(:investment) do
-      create(:budget_investment, :visible_to_valuators, budget: budget, price: nil,
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      create(:budget_investment, :visible_to_valuators, heading: heading, group: group,
+                                                        budget: budget, price: nil,
                                                         administrator: admin)
     end
 
@@ -437,8 +439,8 @@ feature 'Valuation budget investments' do
       expect(page).to have_content('Only integer numbers', count: 2)
     end
 
-    scenario 'not visible to valuators unless setting enabled' do
-      Setting['feature.budgets.valuators_allowed'] = nil
+    scenario 'not visible to valuators when budget is not valuating' do
+      budget.update(phase: 'publishing_prices')
 
       investment = create(:budget_investment,
                            :visible_to_valuators,
@@ -446,14 +448,13 @@ feature 'Valuation budget investments' do
       investment.valuators << [valuator]
 
       login_as(valuator.user)
-      visit valuation_budget_budget_investment_path(budget, investment)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
 
-      expect{ click_link 'Edit dossier' }.
-      to raise_error( ActionController::RoutingError)
+      expect(page).to have_content('Investments can only be valuated when Budget is in valuating phase')
     end
 
-    scenario 'visible to admins regardless of setting enabled' do
-      Setting['feature.budgets.valuators_allowed'] = nil
+    scenario 'visible to admins regardless of not being in valuating phase' do
+      budget.update(phase: 'publishing_prices')
 
       user = create(:user)
       admin = create(:administrator, user: user)
