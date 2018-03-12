@@ -222,6 +222,12 @@ en:
           "true": "Yes"
           "false": "No"
         valuator_groups: "Valuator Groups"
+        image: "Image"
+        see_image: "See image"
+        no_image: "Without image"
+        documents: "Documents"
+        see_documents: "See documents (%{count})"
+        no_documents: "Without documents"
       edit:
         classification: Classification
         compatibility: Compatibility
