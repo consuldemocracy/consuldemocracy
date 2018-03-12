@@ -398,9 +398,8 @@ feature 'Emails' do
     end
 
     scenario "Unfeasible investment" do
-      Setting['feature.budgets.valuators_allowed'] = true
-
-      investment = create(:budget_investment, author: author, budget: budget)
+      budget.update(phase: 'valuating')
+      investment = create(:budget_investment, author: author, budget: budget, heading: heading)
 
       valuator = create(:valuator)
       investment.valuators << valuator
