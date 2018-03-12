@@ -194,7 +194,7 @@ feature 'Legislation Draft Versions' do
       expect(page).to have_content "my annotation"
       expect(page).to have_content comment.body
 
-      all(".annotator-hl")[1].trigger('click')
+      all(".annotator-hl")[1].click
       expect(page).to have_content "my other annotation"
     end
 

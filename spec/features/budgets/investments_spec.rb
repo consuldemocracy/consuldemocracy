@@ -2,8 +2,6 @@ require 'rails_helper'
 require 'sessions_helper'
 
 feature 'Budget Investments' do
-
-
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:other_budget) { create(:budget, name: "What a Budget!") }
@@ -1027,7 +1025,7 @@ feature 'Budget Investments' do
     login_as(user)
     visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
 
-    find("#tab-milestones-label").trigger('click')
+    find("#tab-milestones-label").click
 
     within("#tab-milestones") do
       expect(first_milestone.description).to appear_before('Last milestone with a link to https://consul.dev')
@@ -1047,7 +1045,7 @@ feature 'Budget Investments' do
     login_as(user)
     visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
 
-    find("#tab-milestones-label").trigger('click')
+    find("#tab-milestones-label").click
 
     within("#tab-milestones") do
       expect(page).to have_content("Don't have defined milestones")
