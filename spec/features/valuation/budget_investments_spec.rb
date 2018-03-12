@@ -216,8 +216,10 @@ feature 'Valuation budget investments' do
   feature 'Valuate' do
     let(:admin) { create(:administrator) }
     let(:investment) do
-      create(:budget_investment, budget: budget, price: nil,
-                                                        administrator: admin)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      create(:budget_investment, heading: heading, group: group, budget: budget, price: nil,
+                                 administrator: admin)
     end
 
     background do
@@ -410,9 +412,7 @@ feature 'Valuation budget investments' do
     scenario 'not visible to valuators when budget is not valuating' do
       budget.update(phase: 'publishing_prices')
 
-      investment = create(:budget_investment,
-                           :visible_to_valuators,
-                           budget: budget)
+      investment = create(:budget_investment, budget: budget)
       investment.valuators << [valuator]
 
       login_as(valuator.user)
@@ -428,9 +428,7 @@ feature 'Valuation budget investments' do
       admin = create(:administrator, user: user)
       valuator = create(:valuator, user: user)
 
-      investment = create(:budget_investment,
-                           :visible_to_valuators,
-                           budget: budget)
+      investment = create(:budget_investment, budget: budget)
       investment.valuators << [valuator]
 
 
