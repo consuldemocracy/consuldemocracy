@@ -117,44 +117,43 @@ feature 'Tracking' do
       expect(page).to have_css("span[data-track-event-action='Registrar']")
     end
 
-    scenario 'Up vote a debate', :js do
-      user = create(:user)
+    scenario 'Upvote a debate', :js do
+      user   = create(:user)
       debate = create(:debate)
 
       login_as(user)
       visit debate_path(debate)
 
-
       find('.in-favor a').click
-      expect(page).to have_css("span[data-track-event-category='Debate']")
-      expect(page).to have_css("span[data-track-event-action='Votar']")
-      expect(page).to have_css("span[data-track-event-name='Positivo']")
+      expect(page).to have_css("span[data-track-event-category='Debate']", visible: false)
+      expect(page).to have_css("span[data-track-event-action='Votar']", visible: false)
+      expect(page).to have_css("span[data-track-event-name='Positivo']", visible: false)
     end
 
-    scenario 'Down vote a debate', :js do
-      user = create(:user)
+    scenario 'Downvote a debate', :js do
+      user   = create(:user)
       debate = create(:debate)
 
       login_as(user)
       visit debate_path(debate)
 
       find('.against a').click
-      expect(page).to have_css("span[data-track-event-category='Debate']")
-      expect(page).to have_css("span[data-track-event-action='Votar']")
-      expect(page).to have_css("span[data-track-event-name='Negativo']")
+      expect(page).to have_css("span[data-track-event-category='Debate']", visible: false)
+      expect(page).to have_css("span[data-track-event-action='Votar']", visible: false)
+      expect(page).to have_css("span[data-track-event-name='Negativo']", visible: false)
     end
 
     scenario 'Support a proposal', :js do
-      user = create(:user, :level_two)
+      user     = create(:user, :level_two)
       proposal = create(:proposal)
 
       login_as(user)
       visit proposal_path(proposal)
 
       find('.in-favor a').click
-      expect(page).to have_css("span[data-track-event-category='Propuesta']")
-      expect(page).to have_css("span[data-track-event-action='Apoyar']")
-      expect(page).to have_css("span[data-track-event-name='#{proposal.id}']")
+      expect(page).to have_css("span[data-track-event-category='Propuesta']", visible: false)
+      expect(page).to have_css("span[data-track-event-action='Apoyar']", visible: false)
+      expect(page).to have_css("span[data-track-event-name='#{proposal.id}']", visible: false)
     end
 
     scenario 'Proposal ranking', :js do
@@ -174,25 +173,25 @@ feature 'Tracking' do
       click_link 'Best proposal'
       find('.in-favor a').click
 
-      expect(page).to have_css("span[data-track-event-category='Propuesta']")
-      expect(page).to have_css("span[data-track-event-action='Apoyar']")
-      expect(page).to have_css("span[data-track-event-custom-value='1']")
-      expect(page).to have_css("span[data-track-event-dimension='6']")
-      expect(page).to have_css("span[data-track-event-dimension-value='1']")
+      expect(page).to have_css("span[data-track-event-category='Propuesta']", visible: false)
+      expect(page).to have_css("span[data-track-event-action='Apoyar']", visible: false)
+      expect(page).to have_css("span[data-track-event-custom-value='1']", visible: false)
+      expect(page).to have_css("span[data-track-event-dimension='6']", visible: false)
+      expect(page).to have_css("span[data-track-event-dimension-value='1']", visible: false)
 
       visit proposals_path
       click_link 'Medium proposal'
       find('.in-favor a').click
 
-      expect(page).to have_css("span[data-track-event-custom-value='2']")
-      expect(page).to have_css("span[data-track-event-dimension-value='2']")
+      expect(page).to have_css("span[data-track-event-custom-value='2']", visible: false)
+      expect(page).to have_css("span[data-track-event-dimension-value='2']", visible: false)
 
       visit proposals_path
       click_link 'Worst proposal'
       find('.in-favor a').click
 
-      expect(page).to have_css("span[data-track-event-custom-value='3']")
-      expect(page).to have_css("span[data-track-event-dimension-value='3']")
+      expect(page).to have_css("span[data-track-event-custom-value='3']", visible: false)
+      expect(page).to have_css("span[data-track-event-dimension-value='3']", visible: false)
     end
 
     scenario 'Create a proposal' do
@@ -209,7 +208,7 @@ feature 'Tracking' do
     end
 
     scenario 'Comment a proposal', :js do
-      user = create(:user)
+      user     = create(:user)
       proposal = create(:proposal)
 
       login_as(user)
@@ -218,8 +217,8 @@ feature 'Tracking' do
       fill_in "comment-body-proposal_#{proposal.id}", with: 'Have you thought about...?'
       click_button 'Publish comment'
 
-      expect(page).to have_css("span[data-track-event-category='Propuesta']")
-      expect(page).to have_css("span[data-track-event-action='Comentar']")
+      expect(page).to have_css("span[data-track-event-category='Propuesta']", visible: false)
+      expect(page).to have_css("span[data-track-event-action='Comentar']", visible: false)
     end
 
     scenario 'Vote a poll', :js do
@@ -237,9 +236,9 @@ feature 'Tracking' do
 
       expect(page).not_to have_link('Han Solo')
 
-      expect(page).to have_css("span[data-track-event-category]")
-      expect(page).to have_css("span[data-track-event-category='Votación']")
-      expect(page).to have_css("span[data-track-event-action='Votar']")
+      expect(page).to have_css("span[data-track-event-category]", visible: false)
+      expect(page).to have_css("span[data-track-event-category='Votación']", visible: false)
+      expect(page).to have_css("span[data-track-event-action='Votar']", visible: false)
     end
 
     scenario 'Verify census' do
