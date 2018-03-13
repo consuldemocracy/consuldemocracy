@@ -68,37 +68,77 @@ feature 'Valuation budget investments' do
 
   scenario "Index filtering by heading", :js do
     group = create(:budget_group, budget: budget)
-    heading1 = create(:budget_heading, name: "District 9", group: group)
-    heading2 = create(:budget_heading, name: "Down to the river", group: group)
-    investment1 = create(:budget_investment, title: "Realocate visitors", heading: heading1,
-                                             group: group, budget: budget)
-    investment2 = create(:budget_investment, title: "Destroy the city", heading: heading2,
-                                             group: group, budget: budget)
-    investment1.valuators << valuator
-    investment2.valuators << valuator
+    valuating_heading = create(:budget_heading, name: "Only Valuating", group: group)
+    valuating_finished_heading = create(:budget_heading, name: "Valuating&Finished", group: group)
+    finished_heading = create(:budget_heading, name: "Only Finished", group: group)
+    create(:budget_investment, title: "Valuating Investment ONE",
+                               heading: valuating_heading,
+                               group: group,
+                               budget: budget,
+                               valuators: [valuator])
+    create(:budget_investment, title: "Valuating Investment TWO",
+                               heading: valuating_finished_heading,
+                               group: group,
+                               budget: budget,
+                               valuators: [valuator])
+    create(:budget_investment, :finished, title: "Finished ONE",
+                                          heading: valuating_finished_heading,
+                                          group: group,
+                                          budget: budget,
+                                          valuators: [valuator])
+    create(:budget_investment, :finished, title: "Finished TWO",
+                                          heading: finished_heading,
+                                          group: group,
+                                          budget: budget,
+                                          valuators: [valuator])
 
     visit valuation_budget_budget_investments_path(budget)
 
-    expect(page).to have_link("Realocate visitors")
-    expect(page).to have_link("Destroy the city")
+    expect(page).to have_link("Valuating Investment ONE")
+    expect(page).to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
 
-    expect(page).to have_content "All headings (2)"
-    expect(page).to have_content "District 9 (1)"
-    expect(page).to have_content "Down to the river (1)"
+    expect(page).to have_link('All headings (4)')
+    expect(page).to have_link('Only Valuating (1)')
+    expect(page).to have_link('Valuating&Finished (2)')
+    expect(page).to have_link('Only Finished (1)')
 
-    click_link "District 9", exact: false
+    click_link "Only Valuating (1)", exact: false
+    expect(page).to have_link("Valuating Investment ONE")
+    expect(page).not_to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
 
-    expect(page).to have_link("Realocate visitors")
-    expect(page).not_to have_link("Destroy the city")
+    click_link 'Valuation finished'
+    expect(page).not_to have_link("Valuating Investment ONE")
+    expect(page).not_to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
 
-    click_link "Down to the river", exact: false
+    click_link "Valuating&Finished (2)", exact: false
+    expect(page).not_to have_link("Valuating Investment ONE")
+    expect(page).to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
 
-    expect(page).to have_link("Destroy the city")
-    expect(page).not_to have_link("Realocate visitors")
+    click_link 'Valuation finished'
+    expect(page).not_to have_link("Valuating Investment ONE")
+    expect(page).not_to have_link("Valuating Investment TWO")
+    expect(page).to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
 
-    click_link "All headings", exact: false
-    expect(page).to have_link("Realocate visitors")
-    expect(page).to have_link("Destroy the city")
+    click_link "Only Finished (1)", exact: false
+    expect(page).not_to have_link("Valuating Investment ONE")
+    expect(page).not_to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
+
+    click_link 'Valuation finished'
+    expect(page).not_to have_link("Valuating Investment ONE")
+    expect(page).not_to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).to have_link("Finished TWO")
   end
 
   scenario "Current filter is properly highlighted" do
