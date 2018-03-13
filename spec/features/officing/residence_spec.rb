@@ -37,6 +37,9 @@ feature 'Residence' do
         click_link "Validate document"
       end
 
+      expect(page).to have_selector('#new_residence .small-12.medium-6',
+                                    text: 'Document type')
+
       select 'DNI', from: 'residence_document_type'
       fill_in 'residence_document_number', with: "12345678Z"
       fill_in 'residence_year_of_birth', with: '1980'
@@ -52,6 +55,10 @@ feature 'Residence' do
       within("#side_menu") do
         click_link "Validate document"
       end
+
+      expect(page).to have_selector('#new_residence .small-12.medium-6',
+                                    text: 'Document type')
+
 
       select 'DNI', from: 'residence_document_type'
       fill_in 'residence_document_number', with: "00012345678Z"
@@ -84,6 +91,9 @@ feature 'Residence' do
         click_link "Validate document"
       end
 
+      expect(page).to have_selector('#new_residence .small-12.medium-6',
+                                    text: 'Document type')
+
       select 'DNI', from: 'residence_document_type'
       fill_in 'residence_document_number', with: "9999999A"
       fill_in 'residence_year_of_birth', with: '1980'
@@ -106,6 +116,9 @@ feature 'Residence' do
       within("#side_menu") do
         click_link "Validate document"
       end
+
+      expect(page).to have_selector('#new_residence .small-12.medium-6',
+                                    text: 'Document type')
 
       select 'DNI', from: 'residence_document_type'
       fill_in 'residence_document_number', with: "12345678Z"
