@@ -93,25 +93,25 @@ feature 'Valuation budget investments' do
     valuating_finished_heading = create(:budget_heading, name: "Valuating&Finished", group: group)
     finished_heading = create(:budget_heading, name: "Only Finished", group: group)
     create(:budget_investment, :visible_to_valuators, title: "Valuating Investment ONE",
-                               heading: valuating_heading,
-                               group: group,
-                               budget: budget,
-                               valuators: [valuator])
+                                                      heading: valuating_heading,
+                                                      group: group,
+                                                      budget: budget,
+                                                      valuators: [valuator])
     create(:budget_investment, :visible_to_valuators, title: "Valuating Investment TWO",
-                               heading: valuating_finished_heading,
-                               group: group,
-                               budget: budget,
-                               valuators: [valuator])
-    create(:budget_investment, :finished, :visible_to_valuators, title: "Finished ONE",
-                                          heading: valuating_finished_heading,
-                                          group: group,
-                                          budget: budget,
-                                          valuators: [valuator])
-    create(:budget_investment, :finished, :visible_to_valuators, title: "Finished TWO",
-                                          heading: finished_heading,
-                                          group: group,
-                                          budget: budget,
-                                          valuators: [valuator])
+                                                      heading: valuating_finished_heading,
+                                                      group: group,
+                                                      budget: budget,
+                                                      valuators: [valuator])
+    create(:budget_investment, :visible_to_valuators, :finished, title: "Finished ONE",
+                                                                 heading: valuating_finished_heading,
+                                                                 group: group,
+                                                                 budget: budget,
+                                                                 valuators: [valuator])
+    create(:budget_investment, :visible_to_valuators, :finished, title: "Finished TWO",
+                                                                 heading: finished_heading,
+                                                                 group: group,
+                                                                 budget: budget,
+                                                                 valuators: [valuator])
 
     visit valuation_budget_budget_investments_path(budget)
 
