@@ -39,11 +39,13 @@ section "Creating Users" do
                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                  verified_at: Time.current, document_number: unique_document_number)
 
-  valuator = create_user('valuator@madrid.es', 'valuator')
-  valuator.create_valuator
-  valuator.update(residence_verified_at: Time.current,
-                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
-                  verified_at: Time.current, document_number: unique_document_number)
+  10.times do |i|
+    valuator = create_user("valuator#{i}@madrid.es", "Valuator #{i}")
+    valuator.create_valuator
+    valuator.update(residence_verified_at: Time.current,
+                    confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                    verified_at: Time.current, document_number: unique_document_number)
+  end
 
   poll_officer = create_user('poll_officer@madrid.es', 'Paul O. Fisher')
   poll_officer.create_poll_officer

@@ -118,9 +118,26 @@ section "Winner Investments" do
   end
 end
 
-section "Creating Valuation Assignments" do
+section "Creating Valuator Groups Assignments" do
+  valuators_count = Valuator.count
+  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.culture_and_sports'),
+                       valuators: [Valuator.find(1), Valuator.find(2)])
+  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.gender_and_diversity'),
+                       valuators: [Valuator.find(3), Valuator.find(4)])
+  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.urban_development'),
+                       valuators: [Valuator.find(5), Valuator.find(6)])
+  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.equity_and_employment'),
+                       valuators: [Valuator.find(7), Valuator.find(8)])
+end
+
+section "Creating Valuation direct Assignments" do
   (1..50).to_a.sample.times do
-    Budget::Investment.all.sample.valuators << Valuator.first
+    Budget::Investment.all.sample.valuators << Valuator.all.sample
+  end
+end
+section "Creating Valuation Group Assignments" do
+  (1..50).to_a.sample.times do
+    Budget::Investment.all.sample.valuator_groups << ValuatorGroup.all.sample
   end
 end
 
