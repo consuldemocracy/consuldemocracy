@@ -22,11 +22,11 @@ class Budget
       headings.count == 1
     end
 
+    private
+
     def generate_slug?
       slug.nil? || budget.drafting?
     end
-
-    private
 
     def strip_name
       self.name = self.name.strip
