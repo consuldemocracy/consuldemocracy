@@ -231,7 +231,7 @@ feature 'Valuation budget investments' do
       investment.valuators << [valuator, second_valuator]
     end
 
-    scenario 'visible for assigned valuators' do
+    scenario 'visible for directly assigned valuators' do
       investment.update(visible_to_valuators: true)
 
       visit valuation_budget_budget_investments_path(budget)
@@ -250,6 +250,32 @@ feature 'Valuation budget investments' do
       within('#assigned_valuators') do
         expect(page).to have_content('Rachel (rachel@valuators.org)')
         expect(page).to have_content('Rick (rick@valuators.org)')
+      end
+    end
+
+    scenario 'visible for group assigned valuators' do
+      second_valuator_group = create(:valuator_group, name: 'Valuators II',
+                                                      valuators: [second_valuator])
+      investment.update(visible_to_valuators: true,
+                        valuators: [valuator],
+                        valuator_groups: [second_valuator_group])
+
+      logout
+      login_as(second_valuator.user)
+
+      visit valuation_budget_budget_investments_path(budget)
+
+      click_link investment.title
+
+      expect(page).to have_content(investment.title)
+
+      within('#assigned_valuators') do
+        expect(page).to have_content('Rachel (rachel@valuators.org)')
+        expect(page).not_to have_content('Rick (rick@valuators.org)')
+      end
+
+      within('#assigned_valuator_groups') do
+        expect(page).to have_content('Valuators II')
       end
     end
 

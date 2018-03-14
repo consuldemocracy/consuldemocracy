@@ -113,9 +113,13 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def restrict_access_to_assigned_items
+      valuator = current_user.valuator
       return if current_user.administrator? ||
                 Budget::ValuatorAssignment.exists?(investment_id: params[:id],
-                                                   valuator_id: current_user.valuator.id)
+                                                   valuator_id: valuator&.id) ||
+                Budget::ValuatorGroupAssignment.exists?(investment_id: params[:id],
+                                                        valuator_group: valuator&.valuator_group)
+
       raise ActionController::RoutingError.new('Not Found')
     end
 
