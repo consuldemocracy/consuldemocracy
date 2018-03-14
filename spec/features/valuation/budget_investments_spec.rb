@@ -6,6 +6,9 @@ feature 'Valuation budget investments' do
   let(:valuator) do
     create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
   end
+  let(:valuator_group) do
+    create(:valuator_group, name: 'The Valuators Group', valuators: [valuator])
+  end
 
   background do
     login_as(valuator.user)
@@ -27,15 +30,23 @@ feature 'Valuation budget investments' do
 
   feature 'Index' do
     scenario 'Index shows budget investments assigned to current valuator' do
-      investment1 = create(:budget_investment, :visible_to_valuators, budget: budget)
-      investment2 = create(:budget_investment, :visible_to_valuators, budget: budget)
+      individual_access = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                            valuators: [valuator])
+      individual_and_group_access = create(:budget_investment, visible_to_valuators: true,
+                                                               budget: budget,
+                                                               valuators: [valuator],
+                                                               valuator_groups: [valuator_group])
+      group_access = create(:budget_investment, visible_to_valuators: true, budget: budget,
+                                                valuator_groups: [valuator_group])
+      no_access = create(:budget_investment, :visible_to_valuators, budget: budget)
 
-      investment1.valuators << valuator
 
       visit valuation_budget_budget_investments_path(budget)
 
-      expect(page).to have_content(investment1.title)
-      expect(page).not_to have_content(investment2.title)
+      expect(page).to have_content(individual_access.title)
+      expect(page).to have_content(individual_and_group_access.title)
+      expect(page).to have_content(group_access.title)
+      expect(page).not_to have_content(no_access.title)
     end
 
     scenario 'Index shows no budget investment to admins no valuators' do
@@ -54,15 +65,14 @@ feature 'Valuation budget investments' do
 
     scenario 'Index orders budget investments by votes' do
       investment10  = create(:budget_investment, :visible_to_valuators, budget: budget,
-                                                                        cached_votes_up: 10)
+                                                                        cached_votes_up: 10,
+                                                                        valuators: [valuator])
       investment100 = create(:budget_investment, :visible_to_valuators, budget: budget,
-                                                                        cached_votes_up: 100)
+                                                                        cached_votes_up: 100,
+                                                                        valuators: [valuator])
       investment1   = create(:budget_investment, :visible_to_valuators, budget: budget,
-                                                                        cached_votes_up: 1)
-
-      investment1.valuators << valuator
-      investment10.valuators << valuator
-      investment100.valuators << valuator
+                                                                        cached_votes_up: 1,
+                                                                        valuators: [valuator])
 
       visit valuation_budget_budget_investments_path(budget)
 
@@ -73,8 +83,8 @@ feature 'Valuation budget investments' do
     scenario 'Index displays investments paginated' do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times do
-        investment = create(:budget_investment, :visible_to_valuators, budget: budget)
-        investment.valuators << valuator
+        investment = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                       valuators: [valuator])
       end
 
       visit valuation_budget_budget_investments_path(budget)
@@ -95,26 +105,19 @@ feature 'Valuation budget investments' do
       valuating_heading = create(:budget_heading, name: "Only Valuating", group: group)
       valuating_finished_heading = create(:budget_heading, name: "Valuating&Finished", group: group)
       finished_heading = create(:budget_heading, name: "Only Finished", group: group)
-      create(:budget_investment, :visible_to_valuators, title: "Valuating Investment ONE",
-                                                        heading: valuating_heading,
-                                                        group: group,
-                                                        budget: budget,
-                                                        valuators: [valuator])
-      create(:budget_investment, :visible_to_valuators, title: "Valuating Investment TWO",
-                                                        heading: valuating_finished_heading,
-                                                        group: group,
-                                                        budget: budget,
-                                                        valuators: [valuator])
-      create(:budget_investment, :visible_to_valuators, :finished, title: "Finished ONE",
-                                                                   heading: valuating_finished_heading,
-                                                                   group: group,
-                                                                   budget: budget,
-                                                                   valuators: [valuator])
-      create(:budget_investment, :visible_to_valuators, :finished, title: "Finished TWO",
-                                                                   heading: finished_heading,
-                                                                   group: group,
-                                                                   budget: budget,
-                                                                   valuators: [valuator])
+
+      create(:budget_investment, visible_to_valuators: true, title: "Valuating Investment ONE",
+                                 heading: valuating_heading, group: group, budget: budget,
+                                 valuators: [valuator])
+      create(:budget_investment, visible_to_valuators: true, title: "Valuating Investment TWO",
+                                 heading: valuating_finished_heading, group: group, budget: budget,
+                                 valuator_groups: [valuator_group])
+      create(:budget_investment, :finished, visible_to_valuators: true, title: "Finished ONE",
+                                            heading: valuating_finished_heading, group: group,
+                                            budget: budget, valuator_groups: [valuator_group])
+      create(:budget_investment, :finished, visible_to_valuators: true, title: "Finished TWO",
+                                            heading: finished_heading, group: group, budget: budget,
+                                            valuators: [valuator])
 
       visit valuation_budget_budget_investments_path(budget)
 
@@ -187,12 +190,12 @@ feature 'Valuation budget investments' do
 
     scenario "Index filtering by valuation status" do
       valuating = create(:budget_investment, :visible_to_valuators, budget: budget,
-                                                                    title: "Ongoing valuation")
+                                                                    title: "Ongoing valuation",
+                                                                    valuators: [valuator])
       valuated  = create(:budget_investment, :visible_to_valuators, budget: budget,
                                                                     title: "Old idea",
-                                                                    valuation_finished: true)
-      valuating.valuators << valuator
-      valuated.valuators << valuator
+                                                                    valuation_finished: true,
+                                                                    valuators: [valuator])
 
       visit valuation_budget_budget_investments_path(budget)
 

@@ -403,6 +403,49 @@ describe Budget::Investment do
     end
   end
 
+  describe "#accesible_by_valuator" do
+    let!(:visible_individually_assigned_investment) do
+      create(:budget_investment, :visible_to_valuators, valuators: [valuator])
+    end
+    let!(:invisible_individually_assigned_investment) do
+      create(:budget_investment, valuators: [valuator])
+    end
+    let!(:visible_group_assigned_investment) do
+      create(:budget_investment, :visible_to_valuators, valuator_groups: [valuator_group])
+    end
+    let!(:invisible_group_assigned_investment) do
+      create(:budget_investment, valuator_groups: [valuator_group])
+    end
+    let!(:visible_double_assigned_investment) do
+      create(:budget_investment, :visible_to_valuators, valuators: [valuator],
+                                                        valuator_groups: [valuator_group])
+    end
+    let!(:invisible_double_assigned_investment) do
+      create(:budget_investment, valuators: [valuator], valuator_groups: [valuator_group])
+    end
+
+    let(:valuator) { create(:valuator) }
+    let(:valuator_group) { create(:valuator_group, valuators: [valuator]) }
+
+    before do
+      second_valuator = create(:valuator)
+      second_valuator_group = create(:valuator_group, valuators: [second_valuator])
+      create(:budget_investment, :visible_to_valuators, valuators: [second_valuator],
+                                                        valuator_groups: [second_valuator_group])
+      create(:budget_investment, valuators: [second_valuator],
+                                 valuator_groups: [second_valuator_group])
+    end
+
+    it "returns investments assigned to a valuator directly or through its valuator group" do
+      accesible_by_valuator = described_class.accesible_by_valuator(valuator)
+
+      expect(accesible_by_valuator.size).to eq(3)
+      expect(accesible_by_valuator).to contain_exactly(visible_individually_assigned_investment,
+                                                       visible_double_assigned_investment,
+                                                       visible_group_assigned_investment)
+    end
+  end
+
   describe "scopes" do
     describe "valuation_open" do
       it "returns all investments with false valuation_finished" do

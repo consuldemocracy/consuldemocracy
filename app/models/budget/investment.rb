@@ -87,6 +87,11 @@ class Budget
     scope :by_tag,            ->(tag_name)          { tagged_with(tag_name) }
     scope :by_valuator,       ->(valuator_id)       { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
     scope :by_valuator_group, ->(valuator_group_id) { where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id).joins(:valuator_group_assignments) }
+    scope :accesible_by_valuator, ->(valuator) do
+      direct_access = by_valuator(valuator&.id)
+      group_access = by_valuator_group(valuator&.valuator_group_id)
+      visible_to_valuators.where(id: (direct_access.pluck(:id) + group_access.pluck(:id)).uniq)
+    end
 
     scope :for_render, -> { includes(:heading) }
 
