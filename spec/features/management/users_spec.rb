@@ -72,7 +72,7 @@ feature 'Users' do
     expect(user.date_of_birth).to have_content Date.new(1980, 12, 31)
   end
 
-  scenario 'Delete a level 2 user account from document verification page', :js do
+  scenario 'Delete a level 2 user account from document verification page', js: true do
     level_2_user = create(:user, :level_two, document_number: "12345678Z")
 
     visit management_document_verifications_path
@@ -82,8 +82,16 @@ feature 'Users' do
     expect(page).not_to have_content "This user account is already verified."
     expect(page).to have_content "This user can participate in the website with the following permissions"
 
-    click_link "Delete user"
-    accept_confirm { click_link "Delete account" }
+    within "#admin_menu" do
+      click_link "Delete account"
+    end
+
+
+    accept_alert do
+      within "#erase-account-form" do
+        click_link  "Delete account"
+      end
+    end
 
     expect(page).to have_content "User account deleted."
 
