@@ -15,14 +15,13 @@ namespace :management do
     end
   end
 
-  resource :account, controller: "account", only: [:show] do
+  resource :account, controller: "account", only: [:show, :update, :edit] do
     get :print_password
     patch :change_password
     get :reset_password
     get :edit_password_email
     get :edit_password_manually
   end
-
   resource :session, only: [:create, :destroy]
   get 'sign_in', to: 'sessions#create', as: :sign_in
 

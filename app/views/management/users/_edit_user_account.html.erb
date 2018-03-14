@@ -1,0 +1,13 @@
+<div class="edit-account-form">
+  <%= form_for managed_user, url: management_account_path do |f| %>
+    <%= hidden_field_tag :edit_email, true%>
+    <div class="small-12 medium-12 column">
+      <%= f.text_field :email,
+          label: t('management.email_label'),
+          placeholder: t('management.email_label') %>
+    </div>
+    <div class="small-12 medium-12 column">
+      <%= f.submit t("management.users.update_email"), class: "button success" %>
+    </div>
+  <% end %>
+</div>
