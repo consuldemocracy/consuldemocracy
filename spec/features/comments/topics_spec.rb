@@ -1013,15 +1013,17 @@ feature 'Commenting topics from budget investments' do
   end
 
   feature 'Voting comments' do
-
     background do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @investment = create(:budget_investment)
       @topic = create(:topic, community: @investment.community)
       @comment = create(:comment, commentable: @topic)
-
       login_as(@manuela)
+    end
+
+    after do
+      logout
     end
 
     scenario 'Show' do
