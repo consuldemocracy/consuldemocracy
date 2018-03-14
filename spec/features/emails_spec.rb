@@ -25,69 +25,64 @@ feature 'Emails' do
   end
 
   context 'Proposal comments' do
-    scenario "Send email on proposal comment" do
-      user = create(:user, email_on_comment: true)
-      proposal = create(:proposal, author: user)
+    let(:user)     { create(:user, email_on_comment: true) }
+    let(:proposal) { create(:proposal, author: user) }
+
+    scenario 'Send email on proposal comment' do
       comment_on(proposal)
 
       email = open_last_email
       expect(email).to have_subject('Someone has commented on your citizen proposal')
       expect(email).to deliver_to(proposal.author)
       expect(email).to have_body_text(proposal_path(proposal))
+      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text(account_path)
     end
 
     scenario 'Do not send email about own proposal comments' do
-      user = create(:user, email_on_comment: true)
-      proposal = create(:proposal, author: user)
       comment_on(proposal, user)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
     scenario 'Do not send email about proposal comment unless set in preferences' do
-      user = create(:user, email_on_comment: false)
-      proposal = create(:proposal, author: user)
+      user.update(email_on_comment: false)
       comment_on(proposal)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
   end
 
   context 'Debate comments' do
-    scenario "Send email on debate comment" do
-      user = create(:user, email_on_comment: true)
-      debate = create(:debate, author: user)
+    let(:user)   { create(:user, email_on_comment: true) }
+    let(:debate) { create(:debate, author: user) }
+
+    scenario 'Send email on debate comment' do
       comment_on(debate)
 
       email = open_last_email
       expect(email).to have_subject('Someone has commented on your debate')
       expect(email).to deliver_to(debate.author)
       expect(email).to have_body_text(debate_path(debate))
-      expect(email).to have_body_text(I18n.t("mailers.config.manage_email_subscriptions"))
+      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
       expect(email).to have_body_text(account_path)
     end
 
     scenario 'Do not send email about own debate comments' do
-      user = create(:user, email_on_comment: true)
-      debate = create(:debate, author: user)
       comment_on(debate, user)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
     scenario 'Do not send email about debate comment unless set in preferences' do
-      user = create(:user, email_on_comment: false)
-      debate = create(:debate, author: user)
+      user.update(email_on_comment: false)
       comment_on(debate)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
   end
 
   context 'Budget investments comments' do
+    let(:user)       { create(:user, email_on_comment: true) }
+    let(:investment) { create(:budget_investment, author: user, budget: create(:budget)) }
+
     scenario 'Send email on budget investment comment' do
-      user = create(:user, email_on_comment: true)
-      investment = create(:budget_investment, author: user, budget: create(:budget))
       comment_on(investment)
 
       email = open_last_email
@@ -99,30 +94,23 @@ feature 'Emails' do
     end
 
     scenario 'Do not send email about own budget investments comments' do
-      user = create(:user, email_on_comment: true)
-      investment = create(:budget_investment, author: user, budget: create(:budget))
       comment_on(investment, user)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
     scenario 'Do not send email about budget investment comment unless set in preferences' do
-      user = create(:user, email_on_comment: false)
-      investment = create(:budget_investment, author: user, budget: create(:budget))
+      user.update(email_on_comment: false)
       comment_on(investment)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
   end
 
   context 'Topic comments' do
-    before do
-      @proposal = create(:proposal)
-    end
+    let(:user)     { create(:user, email_on_comment: true) }
+    let(:proposal) { create(:proposal) }
+    let(:topic)    { create(:topic, author: user, community: proposal.community) }
 
     scenario 'Send email on topic comment' do
-      user = create(:user, email_on_comment: true)
-      topic = create(:topic, author: user, community: @proposal.community)
       comment_on(topic)
 
       email = open_last_email
@@ -134,26 +122,22 @@ feature 'Emails' do
     end
 
     scenario 'Do not send email about own topic comments' do
-      user = create(:user, email_on_comment: true)
-      topic = create(:topic, author: user, community: @proposal.community)
       comment_on(topic, user)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
     scenario 'Do not send email about topic comment unless set in preferences' do
-      user = create(:user, email_on_comment: false)
-      topic = create(:topic, author: user, community: @proposal.community)
+      user.update(email_on_comment: false)
       comment_on(topic)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
   end
 
   context 'Poll comments' do
+    let(:user) { create(:user, email_on_comment: true) }
+    let(:poll) { create(:poll, author: user) }
+
     scenario 'Send email on poll comment' do
-      user = create(:user, email_on_comment: true)
-      poll = create(:poll, author: user)
       comment_on(poll)
 
       email = open_last_email
@@ -165,25 +149,21 @@ feature 'Emails' do
     end
 
     scenario 'Do not send email about own poll comments' do
-      user = create(:user, email_on_comment: true)
-      poll = create(:poll, author: user)
       comment_on(poll, user)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
     scenario 'Do not send email about poll question comment unless set in preferences' do
-      user = create(:user, email_on_comment: false)
-      poll = create(:poll, author: user)
+      user.update(email_on_comment: false)
       comment_on(poll)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
   end
 
   context 'Comment replies' do
-    scenario "Send email on comment reply", :js do
-      user = create(:user, email_on_comment_reply: true)
+    let(:user) { create(:user, email_on_comment_reply: true) }
+
+    scenario 'Send email on comment reply', :js do
       reply_to(user)
 
       email = open_last_email
@@ -191,22 +171,19 @@ feature 'Emails' do
       expect(email).to deliver_to(user)
       expect(email).not_to have_body_text(debate_path(Comment.first.commentable))
       expect(email).to have_body_text(comment_path(Comment.last))
-      expect(email).to have_body_text(I18n.t("mailers.config.manage_email_subscriptions"))
+      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
       expect(email).to have_body_text(account_path)
     end
 
-    scenario "Do not send email about own replies to own comments", :js do
-      user = create(:user, email_on_comment_reply: true)
+    scenario 'Do not send email about own replies to own comments', :js do
       reply_to(user, user)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
-    scenario "Do not send email about comment reply unless set in preferences", :js do
-      user = create(:user, email_on_comment_reply: false)
+    scenario 'Do not send email about comment reply unless set in preferences', :js do
+      user.update(email_on_comment_reply: false)
       reply_to(user)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
   end
 
