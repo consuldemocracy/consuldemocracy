@@ -134,11 +134,20 @@ feature 'Residence' do
   end
 
   scenario "Verify booth", :js do
+    allow(Date).to receive_messages(
+                          :current => Date.new(2018,1,1),
+                          :today => Date.new(2018,1,1))
+    allow(Time).to receive(:current).and_return Time.zone.parse("2018-01-01 12:00:00")
+
     booth = create(:poll_booth)
     poll = create(:poll)
 
-    ba = create(:poll_booth_assignment, poll: poll, booth: booth)
-    oa = create(:poll_officer_assignment, officer: officer, booth_assignment: ba)
+    booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+    officer_assignment = create(:poll_officer_assignment,
+                officer: officer,
+                booth_assignment: booth_assignment,
+                date: Date.current)
+
     create(:poll_shift, officer: officer, booth: booth, date: Date.current)
 
     login_as(officer.user)

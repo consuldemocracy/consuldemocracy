@@ -4,7 +4,7 @@ feature "Voter" do
 
   context "Origin" do
 
-    let(:poll) { create(:poll, :current) }
+    let(:poll) { create(:poll, :current, starts_at: "2017-12-01", ends_at: "2018-02-01") }
     let(:question) { create(:poll_question, poll: poll) }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
@@ -12,11 +12,17 @@ feature "Voter" do
     let!(:answer_yes) { create(:poll_question_answer, question: question, title: 'Yes') }
     let!(:answer_no) { create(:poll_question_answer, question: question, title: 'No') }
 
+    before do
+      allow(Date).to receive(:current).and_return Date.new(2018,1,1)
+      allow(Date).to receive(:today).and_return Date.new(2018,1,1)
+      allow(Time).to receive(:current).and_return Time.zone.parse("2018-01-01 12:00:00")
+    end
+
     background do
       create(:geozone, :in_census)
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+      create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment, date: Date.current)
     end
 
     scenario "Voting via web - Standard", :js do
