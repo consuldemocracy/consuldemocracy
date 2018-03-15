@@ -3,6 +3,7 @@
     <div class="account-info">
 
       <%= link_to(t("management.account_info.change_user"), logout_management_users_path, method: :delete, class: 'float-right change-user') %>
+      <%= link_to t("management.account_info.reset_password"), edit_management_account_path(managed_user.id), class: "float-right button hollow" if current_page?(management_account_path) %>
 
       <% if managed_user.level_two_or_three_verified? %>
         <p>
