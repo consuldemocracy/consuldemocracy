@@ -173,6 +173,23 @@ describe UserSegments do
     end
   end
 
+  describe "#not_supported_on_current_budget" do
+    it "only returns users that haven't supported investments on current budget" do
+      investment1 = create(:budget_investment)
+      investment2 = create(:budget_investment)
+      budget = create(:budget)
+      investment1.vote_by(voter: user1, vote: 'yes')
+      investment2.vote_by(voter: user2, vote: 'yes')
+      investment1.update(budget: budget)
+      investment2.update(budget: budget)
+
+      not_supported_on_current_budget = described_class.not_supported_on_current_budget
+      expect(not_supported_on_current_budget).to include user3
+      expect(not_supported_on_current_budget).not_to include user1
+      expect(not_supported_on_current_budget).not_to include user2
+    end
+  end
+
   describe "#beta_testers" do
     let(:beta_testers) do
       %w(aranacm@madrid.es bertocq@gmail.com mariajecheca@gmail.com
