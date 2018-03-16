@@ -162,20 +162,10 @@ feature 'Internal valuation comments on Budget::Investments' do
   end
 
   context 'Valuation comment creation' do
-    scenario 'Normal users cannot create valuation comments altering public comments form', :js do
-      logout
-      login_as(user)
-      visit budget_investment_path(investment.budget, investment)
-
-      fill_in "comment-body-budget_investment_#{investment.id}", with: 'HACKERMAN IS HERE'
-      find(:xpath, "//input[@id='comment_valuation']", visible: false).set('true')
-      click_button 'Publish comment'
-
-      visit budget_investment_path(investment.budget, investment)
-      expect(page).not_to have_content('HACKERMAN IS HERE')
-
-      visit valuation_budget_budget_investment_path(budget, investment)
-      expect(page).not_to have_content('HACKERMAN IS HERE')
+    scenario 'Normal users cannot create valuation comments altering public comments form' do
+      comment = build(:comment, body: 'HACKERMAN IS HERE', valuation: true, author: user)
+      expect(comment).not_to be_valid
+      expect(comment.errors.size).to eq(1)
     end
 
     scenario 'Create comment', :js do
