@@ -16,8 +16,10 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
   def index
     @heading_filters = heading_filters
+
     @investments = if current_user.valuator? && @budget.present?
-                     @budget.investments.visible_to_valuators.scoped_filter(params_for_current_valuator, @current_filter)
+                     @budget.investments.accesible_by_valuator(current_user.valuator)
+                            .scoped_filter(params, @current_filter)
                             .order(cached_votes_up: :desc)
                             .page(params[:page])
                    else
@@ -73,8 +75,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def heading_filters
-      investments = @budget.investments.by_valuator(current_user.valuator.try(:id))
-                                       .visible_to_valuators.distinct
+      investments = @budget.investments.accesible_by_valuator(current_user.valuator)
       investment_headings = Budget::Heading.where(id: investments.pluck(:heading_id).uniq)
                                            .order(name: :asc)
 
@@ -96,8 +97,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def params_for_current_valuator
-      Budget::Investment.filter_params(params).merge(valuator_id: current_user.valuator.id,
-                                                     budget_id: @budget.id)
+      Budget::Investment.filter_params(params)
     end
 
     def valuation_params
@@ -113,9 +113,13 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def restrict_access_to_assigned_items
+      valuator = current_user.valuator
       return if current_user.administrator? ||
                 Budget::ValuatorAssignment.exists?(investment_id: params[:id],
-                                                   valuator_id: current_user.valuator.id)
+                                                   valuator_id: valuator&.id) ||
+                Budget::ValuatorGroupAssignment.exists?(investment_id: params[:id],
+                                                        valuator_group: valuator&.valuator_group)
+
       raise ActionController::RoutingError.new('Not Found')
     end
 
