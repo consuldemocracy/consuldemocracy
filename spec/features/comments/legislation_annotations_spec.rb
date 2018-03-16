@@ -621,7 +621,7 @@ feature 'Commenting legislation questions' do
 
     scenario 'View comments of annotations in an included range' do
       within("#annotation-link") do
-        first(:css, "a").click
+        find('.icon-expand').click
       end
 
       expect(page).to have_css(".comment", count: 2)
@@ -657,7 +657,7 @@ feature 'Commenting legislation questions' do
       end
 
       within("#annotation-link") do
-        first(:css, "a").click
+        find('.icon-expand').click
       end
 
       expect(page).to have_css(".comment", count: 3)
@@ -668,7 +668,7 @@ feature 'Commenting legislation questions' do
 
     scenario "Reply on a multiple annotation thread and display it in the single annotation thread" do
       within("#annotation-link") do
-        first(:css, "a").click
+        find('.icon-expand').click
       end
 
       comment = annotation2.comments.first
