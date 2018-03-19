@@ -468,9 +468,8 @@ feature 'Commenting polls' do
       visit poll_path(@poll)
 
       within("#comment_#{@comment.id}_votes") do
-        find(".in_favor a").click
-
         within(".in_favor") do
+          find("a").click
           expect(page).to have_content "1"
         end
 
@@ -487,11 +486,12 @@ feature 'Commenting polls' do
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
+        find('.against a').click
+
         within('.in_favor') do
           expect(page).to have_content('0')
         end
 
-        find('.against a').click
         within('.against') do
           expect(page).to have_content('1')
         end

@@ -454,9 +454,8 @@ feature 'Commenting Budget::Investments' do
       visit budget_investment_path(@budget, @investment)
 
       within("#comment_#{@comment.id}_votes") do
-        find(".in_favor a").click
-
         within(".in_favor") do
+          find("a").click
           expect(page).to have_content "1"
         end
 
@@ -473,11 +472,12 @@ feature 'Commenting Budget::Investments' do
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
+        find('.against a').click
+
         within('.in_favor') do
           expect(page).to have_content('0')
         end
 
-        find('.against a').click
         within('.against') do
           expect(page).to have_content('1')
         end

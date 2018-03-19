@@ -468,11 +468,12 @@ feature 'Commenting Probe Options' do
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
+        find('.against a').click
+
         within('.in_favor') do
           expect(page).to have_content('0')
         end
 
-        find('.against a').click
         within('.against') do
           expect(page).to have_content('1')
         end
@@ -481,16 +482,13 @@ feature 'Commenting Probe Options' do
       end
     end
 
-    xscenario 'Trying to vote multiple times', :js do
+    scenario 'Trying to vote multiple times', :js do
       visit probe_probe_option_path(probe_id: @probe.codename, id: @probe_option.id)
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
-        within('.in_favor') do
-          expect(page).to have_content "1"
-        end
-
         find('.in_favor a').click
+
         within('.in_favor') do
           expect(page).not_to have_content "2"
           expect(page).to have_content "1"

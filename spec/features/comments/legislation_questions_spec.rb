@@ -452,7 +452,6 @@ feature 'Commenting legislation questions' do
       @pablo = create(:user)
       @legislation_question = create(:legislation_question)
       @comment = create(:comment, commentable: @legislation_question)
-
       login_as(@manuela)
     end
 
@@ -479,9 +478,8 @@ feature 'Commenting legislation questions' do
       visit legislation_process_question_path(@legislation_question.process, @legislation_question)
 
       within("#comment_#{@comment.id}_votes") do
-        find(".in_favor a").click
-
         within(".in_favor") do
+          find("a").click
           expect(page).to have_content "1"
         end
 
