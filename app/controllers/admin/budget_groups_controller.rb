@@ -9,7 +9,7 @@ class Admin::BudgetGroupsController < Admin::BaseController
   end
 
   def update
-    @group = Budget::Group.by_slug(params[:id]).first
+    @group = @budget.groups.by_slug(params[:id]).first
     @group.update(budget_group_params)
   end
 
