@@ -71,6 +71,7 @@ en:
         map_location_instructions: "Navigate the map to the location and place the marker."
         map_remove_marker: "Remove map marker"
         location: "Location additional info"
+        map_skip_checkbox: "This investment doesn't have a concrete location or I'm not aware of it."
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
