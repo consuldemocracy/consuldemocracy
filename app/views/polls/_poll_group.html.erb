@@ -9,7 +9,7 @@
       <div class="small-12 medium-3 column">
         <div class="image-container" data-equalizer-watch>
           <% if poll.image.present? %>
-            <%= image_tag poll.image_url(:large), alt: poll.image.title %>
+            <%= image_tag poll.image_url(:large), alt: poll.image.title.unicode_normalize %>
           <% end %>
         </div>
       </div>
