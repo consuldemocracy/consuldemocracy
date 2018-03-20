@@ -14,6 +14,6 @@
 
 <% groups.each do |group| %>
   <div id="<%= dom_id(group) %>">
-    <%= render "admin/budgets/group", group: group, headings: group.headings %>
+    <%= render "admin/budgets/group", group: group, headings: group.headings.order(:id) %>
   </div>
 <% end %>
