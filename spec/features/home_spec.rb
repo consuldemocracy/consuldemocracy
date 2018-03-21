@@ -151,8 +151,6 @@ feature "Home" do
       visit root_path
       expect(page).not_to have_xpath(ie_alert_box_xpath, visible: false)
       expect(page.driver.request.cookies['ie_alert_closed']).to eq('true')
-
-      Capybara.current_session.driver.header('', '')
     end
 
     scenario 'non-IE visitors are not bothered with IE alerts' do
