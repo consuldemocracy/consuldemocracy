@@ -248,17 +248,18 @@ class Budget
     end
 
     def valid_heading?(user)
-      reclassification?(user) || !different_heading_assigned?(user)
+      reclassification?(user) ||
+      voted_in?([heading.id], user) ||
+      can_vote_in_another_heading?(user)
+    end
+
+    def can_vote_in_another_heading?(user)
+      headings_voted_by_user(user).count < group.max_votable_headings
     end
 
     def reclassification?(user)
       headings_voted_by_user(user).count > 1 &&
       headings_voted_by_user(user).include?(heading_id)
-    end
-
-    def different_heading_assigned?(user)
-      other_heading_ids = group.heading_ids - [heading.id]
-      voted_in?(other_heading_ids, user)
     end
 
     def voted_in?(heading_ids, user)

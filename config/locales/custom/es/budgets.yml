@@ -25,7 +25,9 @@ es:
         already_added: "Ya has añadido este proyecto de gasto"
         already_supported: Ya has apoyado este proyecto. ¡Compártelo!
         support_title: Apoyar este proyecto
-        confirm_group: "Sólo puedes apoyar proyectos en un distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
+        confirm_group: 
+          one: "Sólo puedes apoyar proyectos en %{count} distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
+          other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
       header:
         different_heading_assigned_html: "Ya has votado proyectos de otro distrito: %{heading_link}"
     stats:
@@ -62,4 +64,6 @@ es:
       heading_disclaimer: "*** Los datos de distrito se refieren al distrito en el que el usuario ha votado, no necesariamente en el que está empadronado."
   votes:
     budget_investments:
-      different_heading_assigned: "Sólo puedes apoyar proyectos de gasto de un distrito"
+      different_heading_assigned: 
+        one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito"
+        other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos"
