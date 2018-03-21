@@ -49,7 +49,8 @@
     <% end %>
 
     <% if feature?(:budgets) %>
-      <li class="section-title <%= "is-active" if controller_name == "budgets" %>">
+      <li class="section-title <%= "is-active" if controller_name == "budgets" ||
+                                                                     "budget_investment_statuses" %>">
         <%= link_to admin_budgets_path do %>
           <span class="icon-budget"></span>
           <strong><%= t("admin.menu.budgets") %></strong>
