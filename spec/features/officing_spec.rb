@@ -157,6 +157,8 @@ feature 'Poll Officing' do
       expect(page).to have_content("Here you can validate user documents and store voting results")
 
       visit new_officing_residence_path
+      expect(page).to have_selector('#residence_document_type')
+
       select 'DNI', from: 'residence_document_type'
       fill_in 'residence_document_number', with: "12345678Z"
       fill_in 'residence_year_of_birth', with: '1980'
@@ -174,6 +176,8 @@ feature 'Poll Officing' do
       expect(page).to have_content("Here you can validate user documents and store voting results")
 
       visit new_officing_residence_path
+      expect(page).to have_selector('#residence_document_type')
+
       select 'Passport', from: 'residence_document_type'
       fill_in 'residence_document_number', with: "12345678A"
       fill_in 'residence_year_of_birth', with: '1980'
