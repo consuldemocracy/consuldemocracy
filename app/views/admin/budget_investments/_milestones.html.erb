@@ -6,6 +6,7 @@
         <th><%= t("admin.milestones.index.table_title") %></th>
         <th><%= t("admin.milestones.index.table_description") %></th>
         <th><%= t("admin.milestones.index.table_publication_date") %></th>
+        <th><%= t("admin.milestones.index.table_status") %></th>
         <th><%= t("admin.milestones.index.image") %></th>
         <th><%= t("admin.milestones.index.documents") %></th>
         <th><%= t("admin.milestones.index.table_actions") %></th>
@@ -24,6 +25,9 @@
           <td class="small small-5"><%= milestone.description %></td>
           <td class="small">
             <%= l(milestone.publication_date.to_date) if milestone.publication_date.present? %>
+          </td>
+          <td class="small">
+            <%= milestone.status.present? ? milestone.status.name : '' %>
           </td>
           <td class="small">
             <%= link_to t("admin.milestones.index.show_image"),
