@@ -5,6 +5,19 @@
   <%= f.hidden_field :title, value: l(Time.current, format: :datetime),
                              maxlength: Budget::Investment::Milestone.title_max_length %>
 
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.select :status_id,
+            @statuses.collect { |s| [s.name, s.id] },
+            { include_blank: @statuses.any? ? '' : t('admin.milestones.form.no_statuses_defined') },
+            { disabled: @statuses.blank? } %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= link_to t('admin.milestones.form.admin_statuses'),
+                  admin_budget_investment_statuses_path %>
+    </div>
+  </div>
+
   <%= f.label :description, t("admin.milestones.new.description") %>
   <% @milestone.globalize_locales.each do |locale| %>
     <%= hidden_field_tag "delete_translations[#{locale}]", 0 %>
