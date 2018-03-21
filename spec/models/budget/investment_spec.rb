@@ -589,6 +589,20 @@ describe Budget::Investment do
         expect(salamanca_investment.valid_heading?(user)).to eq(false)
       end
 
+      it "accepts votes in multiple headings of the same group" do
+        group.update(max_votable_headings: 2)
+
+        carabanchel = create(:budget_heading, group: group)
+        salamanca   = create(:budget_heading, group: group)
+
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+
+        create(:vote, votable: carabanchel_investment, voter: user)
+
+        expect(salamanca_investment.valid_heading?(user)).to eq(true)
+      end
+
       it "allows votes in a group with a single heading" do
         all_city_investment = create(:budget_investment, heading: heading)
         expect(all_city_investment.valid_heading?(user)).to eq(true)
@@ -626,6 +640,35 @@ describe Budget::Investment do
         create(:vote, votable: all_city_investment, voter: user)
 
         expect(carabanchel_investment.valid_heading?(user)).to eq(true)
+      end
+
+      describe "#can_vote_in_another_heading?" do
+
+        let(:districts)   { create(:budget_group, budget: budget) }
+        let(:carabanchel) { create(:budget_heading, group: districts) }
+        let(:salamanca)   { create(:budget_heading, group: districts) }
+        let(:latina)      { create(:budget_heading, group: districts) }
+
+        let(:carabanchel_investment) { create(:budget_investment, heading: carabanchel) }
+        let(:salamanca_investment)   { create(:budget_investment, heading: salamanca) }
+        let(:latina_investment)      { create(:budget_investment, heading: latina) }
+
+        it "returns true if the user has voted in less headings than the maximum" do
+          districts.update(max_votable_headings: 2)
+
+          create(:vote, votable: carabanchel_investment, voter: user)
+
+          expect(salamanca_investment.can_vote_in_another_heading?(user)).to eq(true)
+        end
+
+        it "returns false if the user has already voted in the maximum number of headings" do
+          districts.update(max_votable_headings: 2)
+
+          create(:vote, votable: carabanchel_investment, voter: user)
+          create(:vote, votable: salamanca_investment, voter: user)
+
+          expect(latina_investment.can_vote_in_another_heading?(user)).to eq(false)
+        end
       end
     end
   end

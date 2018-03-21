@@ -19,7 +19,7 @@
           title: t('budgets.investments.investment.support_title'),
           method: "post",
           remote: (current_user && current_user.voted_in_group?(investment.group) ? true : false),
-          data:   (current_user && current_user.voted_in_group?(investment.group) ? nil : { confirm: t('budgets.investments.investment.confirm_group')} ),
+          data:   (current_user && current_user.voted_in_group?(investment.group) ? nil : { confirm: t('budgets.investments.investment.confirm_group', count: investment.group.max_votable_headings)} ),
           "aria-hidden" => css_for_aria_hidden(reason) do %>
         <%= t("budgets.investments.investment.give_support") %>
       <% end %>
@@ -31,6 +31,7 @@
       <p>
         <small>
           <%= t("votes.budget_investments.#{reason}",
+                count: investment.group.max_votable_headings,
                 verify_account: link_to(t("votes.verify_account"), verification_path),
                 signin: link_to(t("votes.signin"), new_user_session_path),
                 signup: link_to(t("votes.signup"), new_user_registration_path)

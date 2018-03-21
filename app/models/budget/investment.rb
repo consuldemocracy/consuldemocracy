@@ -231,12 +231,12 @@ class Budget
     end
 
     def valid_heading?(user)
-      !different_heading_assigned?(user)
+      voted_in?([heading.id], user) ||
+      can_vote_in_another_heading?(user)
     end
 
-    def different_heading_assigned?(user)
-      other_heading_ids = group.heading_ids - [heading.id]
-      voted_in?(other_heading_ids, user)
+    def can_vote_in_another_heading?(user)
+      headings_voted_by_user(user).count < group.max_votable_headings
     end
 
     def voted_in?(heading_ids, user)

@@ -130,7 +130,9 @@ es:
         already_added: Ya has añadido este proyecto de gasto
         already_supported: Ya has apoyado este proyecto de gasto. ¡Compártelo!
         support_title: Apoyar este proyecto
-        confirm_group: "Sólo puedes apoyar proyectos de una partida. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
+        confirm_group: 
+          one: "Sólo puedes apoyar proyectos de %{count} partida. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
+          other: "Sólo puedes apoyar proyectos de %{count} partidas. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
         supports:
           zero: Sin apoyos
           one: 1 apoyo
