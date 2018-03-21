@@ -3,6 +3,7 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
 
   before_action :load_budget_investment, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :load_budget_investment_milestone, only: [:edit, :update, :destroy]
+  before_action :load_statuses, only: [:index, :new, :create, :edit, :update]
 
   def index
   end
@@ -45,7 +46,7 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
   def milestone_params
     image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
     documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
-    attributes = [:title, :description, :publication_date, :budget_investment_id,
+    attributes = [:title, :description, :publication_date, :budget_investment_id, :status_id,
                   image_attributes: image_attributes, documents_attributes: documents_attributes]
 
     params.require(:budget_investment_milestone).permit(*attributes, translation_params(params[:budget_investment_milestone]))
@@ -69,6 +70,10 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
 
   def resource
     get_milestone
+  end
+
+  def load_statuses
+    @statuses = Budget::Investment::Status.all
   end
 
 end
