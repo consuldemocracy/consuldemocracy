@@ -272,6 +272,26 @@ es:
         notice: Hito actualizado
       delete:
         notice: Hito borrado correctamente
+    statuses:
+      index:
+        title: Estados de proyectos
+        empty_statuses: Aún no se ha creado ningún estado de proyecto
+        new_status: Crear nuevo estado de proyecto
+        table_name: Nombre
+        table_description: Descripción
+        table_actions: Acciones
+        delete: Borrar
+        edit: Editar
+      edit:
+        title: Editar estado de proyecto
+      update:
+        notice: Estado de proyecto editado correctamente
+      new:
+        title: Crear estado de proyecto
+      create:
+        notice: Estado de proyecto creado correctamente
+      delete:
+        notice: Estado de proyecto eliminado correctamente
     comments:
       index:
         filter: Filtro
