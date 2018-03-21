@@ -21,6 +21,7 @@ feature 'Admin budget investment milestones' do
       expect(page).to have_content(milestone.title)
       expect(page).to have_content(milestone.id)
       expect(page).to have_content(milestone.publication_date.to_date)
+      expect(page).to have_content(milestone.status.name)
       expect(page).to have_link 'Show image'
       expect(page).to have_link document.title
     end
@@ -35,17 +36,27 @@ feature 'Admin budget investment milestones' do
 
   context "New" do
     scenario "Add milestone" do
+      status = create(:budget_investment_status)
       visit admin_budget_budget_investment_path(@investment.budget, @investment)
 
       click_link 'Create new milestone'
 
-      fill_in 'budget_investment_milestone_description_en', with: 'New description milestone'
+      select status.name, from: 'budget_investment_milestone_status_id'
+      fill_in 'budget_investment_milestone_description', with: 'New description milestone'
       fill_in 'budget_investment_milestone_publication_date', with: Date.current
 
       click_button 'Create milestone'
 
       expect(page).to have_content 'New description milestone'
       expect(page).to have_content Date.current
+      expect(page).to have_content status.name
+    end
+
+    scenario "Status select is disabled if there are no statuses available" do
+      visit admin_budget_budget_investment_path(@investment.budget, @investment)
+
+      click_link 'Create new milestone'
+      expect(find("#budget_investment_milestone_status_id").disabled?).to be true
     end
 
     scenario "Show validation errors on milestone form" do
