@@ -1,0 +1,10 @@
+<%= form_for [:admin, @status] do |f| %>
+  <%= render 'shared/errors', resource: @status %>
+
+  <%= f.text_field :name %>
+  <%= f.text_area :description %>
+
+  <div class="margin-top">
+    <%= f.submit class: "button success" %>
+  </div>
+<% end %>
