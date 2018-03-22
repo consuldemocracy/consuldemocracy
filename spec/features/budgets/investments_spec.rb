@@ -1094,6 +1094,30 @@ feature 'Budget Investments' do
       end
     end
 
+    context "Voting an investment" do
+      scenario "saves in which budget heading the user has voted and only once" do
+        south_district = create(:budget_heading, group: group)
+        investment1 = create(:budget_investment, heading: south_district)
+        investment2 = create(:budget_investment, heading: south_district)
+
+        login_as(author)
+        visit budget_investment_path(budget, investment1)
+        within("aside") do
+          click_link "Support"
+        end
+
+        expect(Budget::Heading::Voter.count).to be(1)
+        expect(Budget::Heading::Voter.last.user_id).to be(author.id)
+        expect(Budget::Heading::Voter.last.budget_heading_id).to be(south_district.id)
+
+        visit budget_investment_path(budget, investment2)
+        within("aside") do
+          click_link "Support"
+        end
+
+        expect(Budget::Heading::Voter.count).to be(1)
+      end
+    end
   end
 
   context "Evaluating Phase" do

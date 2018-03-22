@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220211105) do
+ActiveRecord::Schema.define(version: 20180301151415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,16 @@ ActiveRecord::Schema.define(version: 20180220211105) do
   end
 
   add_index "budget_groups", ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
+
+  create_table "budget_heading_voters", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "budget_heading_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "budget_heading_voters", ["budget_heading_id"], name: "index_budget_heading_voters_on_budget_heading_id", using: :btree
+  add_index "budget_heading_voters", ["user_id"], name: "index_budget_heading_voters_on_user_id", using: :btree
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
