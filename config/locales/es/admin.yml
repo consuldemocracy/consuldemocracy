@@ -121,6 +121,7 @@ es:
         table_population: Población
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
         max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
+        current_of_max_headings: "%{current} de %{max}"
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.

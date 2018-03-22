@@ -49,6 +49,8 @@ feature 'Admin can change the groups name' do
     scenario "Defaults to 1 heading per group", :js do
       visit admin_budget_path(group.budget)
 
+      expect(page).to have_content('Maxium number of headings in which a user can vote 1 of 3')
+
       within("#budget_group_#{group.id}") do
         click_link 'Edit group'
 
@@ -67,6 +69,7 @@ feature 'Admin can change the groups name' do
       end
 
       visit admin_budget_path(group.budget)
+      expect(page).to have_content('Maxium number of headings in which a user can vote 2 of 3')
 
       within("#budget_group_#{group.id}") do
         click_link 'Edit group'
