@@ -1,6 +1,9 @@
 en:
   management:
     account:
+      menu:
+        reset_password_email: Reset password via email
+        reset_password_manually: Reset password manually
       alert:
         unverified_user: No verified user logged in yet
       show:
@@ -24,7 +27,6 @@ en:
       email_label: 'Email:'
       identified_label: 'Identified as:'
       username_label: 'Username:'
-      reset_password: Reset password
     check: Check
     dashboard:
       index:

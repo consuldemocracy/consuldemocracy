@@ -1,6 +1,9 @@
 es:
   management:
     account:
+      menu:
+        reset_password_email: Restablecer contraseña via email
+        reset_password_manually: Restablecer contraseña manualmente
       alert:
         unverified_user: Solo se pueden editar cuentas de usuarios verificados
       show:
@@ -24,7 +27,6 @@ es:
       email_label: 'Email:'
       identified_label: 'Identificado como:'
       username_label: 'Usuario:'
-      reset_password: Restablecer la contraseña
     check: Comprobar
     dashboard:
       index:

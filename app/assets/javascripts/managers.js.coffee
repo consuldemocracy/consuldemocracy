@@ -1,10 +1,10 @@
 App.Managers =
 
   generatePassword: ->
-    chars = 'aAbcdeEfghiJkmnpqrstuUvwxyz23456789$!'
+    chars = 'aAbcdeEfghiJkmnpqrstuUvwxyz23456789'
     pass = ''
     x = 0
-    while x < 8
+    while x < 12
       i = Math.floor(Math.random() * chars.length)
       pass += chars.charAt(i)
       x++
