@@ -131,8 +131,8 @@ es:
         already_supported: Ya has apoyado este proyecto de gasto. ¡Compártelo!
         support_title: Apoyar este proyecto
         confirm_group: 
-          one: "Sólo puedes apoyar proyectos de %{count} partida. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
-          other: "Sólo puedes apoyar proyectos de %{count} partidas. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
+          one: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
+          other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
         supports:
           zero: Sin apoyos
           one: 1 apoyo
