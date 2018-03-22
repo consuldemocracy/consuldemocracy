@@ -146,3 +146,10 @@ section "Marking investments as visible to valuators" do
     Budget::Investment.reorder("RANDOM()").first.update(visible_to_valuators: true)
   end
 end
+
+section "Creating default Investment Milestone Statuses" do
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.studying_project'))
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.bidding'))
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executing_project'))
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executed'))
+end
