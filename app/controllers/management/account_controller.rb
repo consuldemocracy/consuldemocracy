@@ -21,7 +21,7 @@ class Management::AccountController < Management::BaseController
       session[:new_password] = params[:user][:password]
       redirect_to print_password_management_account_path
     else
-      render :edit
+      render :edit_password_manually
     end
   end
 
