@@ -32,11 +32,10 @@ feature 'Account' do
   scenario "Send reset password email to currently managed user session" do
     user = create(:user, :level_three)
     login_managed_user(user)
-    visit management_account_path
+    visit management_root_path
 
-    click_link 'Reset password'
-
-    expect(page).to have_content 'Edit user account: Reset password'
+    click_link 'Edit user account'
+    click_link 'Reset password via email'
 
     click_link 'Send reset password email'
 
@@ -50,9 +49,10 @@ feature 'Account' do
   scenario "Manager changes the password by hand (writen by them)" do
     user = create(:user, :level_three)
     login_managed_user(user)
-    visit management_account_path
+    visit management_root_path
 
-    click_link 'Reset password'
+    click_link 'Edit user account'
+    click_link 'Reset password manually'
 
     find(:css, "input[id$='user_password']").set("new_password")
 
@@ -69,11 +69,11 @@ feature 'Account' do
 
   scenario "Manager generates random password", :js do
     user = create(:user, :level_three)
-    user.update(email: nil)
     login_managed_user(user)
-    visit management_account_path
+    visit management_root_path
 
-    click_link 'Reset password'
+    click_link 'Edit user account'
+    click_link 'Reset password manually'
     click_link 'Generate random password'
 
     new_password = find_field('user_password').value
@@ -92,9 +92,10 @@ feature 'Account' do
   scenario "The password is printed", :js do
     user = create(:user, :level_three)
     login_managed_user(user)
-    visit management_account_path
+    visit management_root_path
 
-    click_link 'Reset password'
+    click_link 'Edit user account'
+    click_link 'Reset password manually'
 
     find(:css, "input[id$='user_password']").set("another_new_password")
 
