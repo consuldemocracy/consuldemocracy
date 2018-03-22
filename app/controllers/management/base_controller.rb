@@ -44,4 +44,8 @@ class Management::BaseController < ActionController::Base
     def current_budget
       Budget.current
     end
+
+    def clear_password
+      session[:new_password] = nil
+    end
 end
