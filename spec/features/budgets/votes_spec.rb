@@ -103,5 +103,74 @@ feature 'Votes' do
         expect(page).not_to have_css("budget_investment_#{investment.id}_votes")
       end
     end
+
+    context "Voting in multiple headings of a single group" do
+
+      let(:new_york) { heading }
+      let(:san_francisco) { create(:budget_heading, group: group) }
+      let(:third_heading) { create(:budget_heading, group: group) }
+
+      let!(:new_york_investment) { create(:budget_investment, heading: new_york) }
+      let!(:san_francisco_investment) { create(:budget_investment, heading: san_francisco) }
+      let!(:third_heading_investment) { create(:budget_investment, heading: third_heading) }
+
+      background do
+        group.update(max_votable_headings: 2)
+      end
+
+      scenario "From Index", :js do
+        visit budget_investments_path(budget, heading_id: new_york.id)
+
+        within("#budget_investment_#{new_york_investment.id}") do
+          find('.in-favor a').click
+
+          expect(page).to have_content "1 support"
+          expect(page).to have_content "You have already supported this investment project. Share it!"
+        end
+
+        visit budget_investments_path(budget, heading_id: san_francisco.id)
+
+        within("#budget_investment_#{san_francisco_investment.id}") do
+          find('.in-favor a').click
+
+          expect(page).to have_content "1 support"
+          expect(page).to have_content "You have already supported this investment project. Share it!"
+        end
+
+        visit budget_investments_path(budget, heading_id: third_heading.id)
+
+        within("#budget_investment_#{third_heading_investment.id}") do
+          find('.in-favor a').click
+
+          expect(page).to have_content "You can only support investment projects in 2 districts"
+
+          expect(page).to_not have_content "1 support"
+          expect(page).to_not have_content "You have already supported this investment project. Share it!"
+        end
+      end
+
+      scenario "From show", :js do
+        visit budget_investment_path(budget, new_york_investment)
+
+        find('.in-favor a').click
+        expect(page).to have_content "1 support"
+        expect(page).to have_content "You have already supported this investment project. Share it!"
+
+        visit budget_investment_path(budget, san_francisco_investment)
+
+        find('.in-favor a').click
+        expect(page).to have_content "1 support"
+        expect(page).to have_content "You have already supported this investment project. Share it!"
+
+        visit budget_investment_path(budget, third_heading_investment)
+
+        find('.in-favor a').click
+        expect(page).to have_content "You can only support investment projects in 2 districts"
+
+        expect(page).to_not have_content "1 support"
+        expect(page).to_not have_content "You have already supported this investment project. Share it!"
+      end
+
+    end
   end
 end

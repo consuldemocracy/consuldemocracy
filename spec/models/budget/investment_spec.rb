@@ -589,6 +589,36 @@ describe Budget::Investment do
         expect(salamanca_investment.valid_heading?(user)).to eq(false)
       end
 
+      it "accepts votes in multiple headings of the same group" do
+        group.update(max_votable_headings: 2)
+
+        carabanchel = create(:budget_heading, group: group)
+        salamanca   = create(:budget_heading, group: group)
+
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+
+        create(:vote, votable: carabanchel_investment, voter: user)
+
+        expect(salamanca_investment.valid_heading?(user)).to eq(true)
+      end
+
+      it "accepts votes in any heading previously voted in" do
+        group.update(max_votable_headings: 2)
+
+        carabanchel = create(:budget_heading, group: group)
+        salamanca   = create(:budget_heading, group: group)
+
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+
+        create(:vote, votable: carabanchel_investment, voter: user)
+        create(:vote, votable: salamanca_investment, voter: user)
+
+        expect(carabanchel_investment.valid_heading?(user)).to eq(true)
+        expect(salamanca_investment.valid_heading?(user)).to eq(true)
+      end
+
       it "allows votes in a group with a single heading" do
         all_city_investment = create(:budget_investment, heading: heading)
         expect(all_city_investment.valid_heading?(user)).to eq(true)
@@ -627,7 +657,82 @@ describe Budget::Investment do
 
         expect(carabanchel_investment.valid_heading?(user)).to eq(true)
       end
+
+      describe "#can_vote_in_another_heading?" do
+
+        let(:districts)   { create(:budget_group, budget: budget) }
+        let(:carabanchel) { create(:budget_heading, group: districts) }
+        let(:salamanca)   { create(:budget_heading, group: districts) }
+        let(:latina)      { create(:budget_heading, group: districts) }
+
+        let(:carabanchel_investment) { create(:budget_investment, heading: carabanchel) }
+        let(:salamanca_investment)   { create(:budget_investment, heading: salamanca) }
+        let(:latina_investment)      { create(:budget_investment, heading: latina) }
+
+        it "returns true if the user has voted in less headings than the maximum" do
+          districts.update(max_votable_headings: 2)
+
+          create(:vote, votable: carabanchel_investment, voter: user)
+
+          expect(salamanca_investment.can_vote_in_another_heading?(user)).to eq(true)
+        end
+
+        it "returns false if the user has already voted in the maximum number of headings" do
+          districts.update(max_votable_headings: 2)
+
+          create(:vote, votable: carabanchel_investment, voter: user)
+          create(:vote, votable: salamanca_investment, voter: user)
+
+          expect(latina_investment.can_vote_in_another_heading?(user)).to eq(false)
+        end
+      end
     end
+  end
+
+  describe "#headings_voted_by_user" do
+    it "returns the headings voted by a user" do
+      user1 = create(:user)
+      user2 = create(:user)
+
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+
+      new_york = create(:budget_heading, group: group)
+      san_franciso = create(:budget_heading, group: group)
+      another_heading = create(:budget_heading, group: group)
+
+      new_york_investment = create(:budget_investment, heading: new_york)
+      san_franciso_investment = create(:budget_investment, heading: san_franciso)
+      another_investment = create(:budget_investment, heading: san_franciso)
+
+      create(:vote, votable: new_york_investment, voter: user1)
+      create(:vote, votable: san_franciso_investment, voter: user1)
+
+      expect(another_investment.headings_voted_by_user(user1)).to include(new_york.id)
+      expect(another_investment.headings_voted_by_user(user1)).to include(san_franciso.id)
+      expect(another_investment.headings_voted_by_user(user1)).to_not include(another_heading.id)
+
+      expect(another_investment.headings_voted_by_user(user2)).to_not include(new_york.id)
+      expect(another_investment.headings_voted_by_user(user2)).to_not include(san_franciso.id)
+      expect(another_investment.headings_voted_by_user(user2)).to_not include(another_heading.id)
+    end
+  end
+
+  describe "#voted_in?" do
+
+    let(:user) { create(:user) }
+    let(:investment) { create(:budget_investment) }
+
+    it "returns true if the user has voted in this heading" do
+      create(:vote, votable: investment, voter: user)
+
+      expect(investment.voted_in?(investment.heading, user)).to eq(true)
+    end
+
+    it "returns false if the user has not voted in this heading" do
+      expect(investment.voted_in?(investment.heading, user)).to eq(false)
+    end
+
   end
 
   describe "Order" do
