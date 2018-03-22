@@ -231,7 +231,7 @@ class Budget
     end
 
     def valid_heading?(user)
-      voted_in?([heading.id], user) ||
+      voted_in?(heading, user) ||
       can_vote_in_another_heading?(user)
     end
 
@@ -243,13 +243,8 @@ class Budget
       user.votes.for_budget_investments(budget.investments.where(group: group)).votables.map(&:heading_id).uniq
     end
 
-    def voted_in?(heading_ids, user)
-      heading_ids.include? heading_voted_by_user?(user)
-    end
-
-    def heading_voted_by_user?(user)
-      user.votes.for_budget_investments(budget.investments.where(group: group))
-          .votables.map(&:heading_id).first
+    def voted_in?(heading, user)
+      headings_voted_by_user(user).include?(heading.id)
     end
 
     def ballotable_by?(user)
