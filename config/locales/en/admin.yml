@@ -106,6 +106,8 @@ en:
         no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
         add_group: Add new group
         create_group: Create group
+        edit_group: Edit group
+        submit: Save group
         heading: Heading name
         add_heading: Add heading
         amount: Amount
