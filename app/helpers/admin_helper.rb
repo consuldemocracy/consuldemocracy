@@ -72,6 +72,10 @@ module AdminHelper
     user_roles(user).join(", ")
   end
 
+  def display_budget_goup_form(group)
+    group.errors.messages.size > 0 ? "" : "display:none"
+  end
+
   private
 
     def namespace
