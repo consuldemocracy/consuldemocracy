@@ -25,9 +25,6 @@ es:
         already_added: "Ya has añadido este proyecto de gasto"
         already_supported: Ya has apoyado este proyecto. ¡Compártelo!
         support_title: Apoyar este proyecto
-        confirm_group: 
-          one: "Sólo puedes apoyar proyectos en %{count} distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
-          other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
       header:
         different_heading_assigned_html: "Ya has votado proyectos de otro distrito: %{heading_link}"
     stats:
