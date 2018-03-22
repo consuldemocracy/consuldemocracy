@@ -1,8 +1,13 @@
+<% max_headings_label = t('admin.budgets.form.current_of_max_headings', current: group.max_votable_headings, max: group.headings.count ) %>
 <table>
   <thead>
     <tr>
       <th colspan="4" class="with-button">
         <%= content_tag(:span, group.name, class:"group-toggle-#{group.id}", id:"group-name-#{group.id}") %>
+        <span class="max_headings_label" style="margin-left: 10px; font-size: 0.9em; color: gray;">
+          <%= t("admin.budgets.form.max_votable_headings")%>
+          <strong style="font-weight: bold; color: black;"><%= max_headings_label %></strong>
+        </span>
         <%= render 'admin/budgets/group_form', budget: @budget, group: group, id: "group-form-#{group.id}", button_title: t("admin.budgets.form.submit"), css_class: "group-toggle-#{group.id}" %>
         <%= link_to t("admin.budgets.form.edit_group"), "#", class: "button float-right js-toggle-link hollow", data: { "toggle-selector" => ".group-toggle-#{group.id}" } %>
         <%= link_to t("admin.budgets.form.add_heading"), "#", class: "button float-right js-toggle-link", data: { "toggle-selector" => "#group-#{group.id}-new-heading-form" } %>
