@@ -2,31 +2,34 @@
   <thead>
     <tr>
       <th colspan="4" class="with-button">
-        <%= group.name %>
+        <%= content_tag(:span, group.name, class:"group-toggle-#{group.id}", id:"group-name-#{group.id}") %>
+        <%= render 'admin/budgets/group_form', budget: @budget, group: group, id: "group-form-#{group.id}", button_title: t("admin.budgets.form.submit"), css_class: "group-toggle-#{group.id}" %>
+        <%= link_to t("admin.budgets.form.edit_group"), "#", class: "button float-right js-toggle-link hollow", data: { "toggle-selector" => ".group-toggle-#{group.id}" } %>
         <%= link_to t("admin.budgets.form.add_heading"), "#", class: "button float-right js-toggle-link", data: { "toggle-selector" => "#group-#{group.id}-new-heading-form" } %>
       </th>
     </tr>
 
-  <% if headings.blank? %>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="4">
-        <div class="callout primary">
-          <%= t("admin.budgets.form.no_heading") %>
-        </div>
-      </td>
-    </tr>
-  <% else %>
+  <% if headings.present? %>
     <tr>
       <th><%= t("admin.budgets.form.table_heading") %></th>
       <th class="text-right"><%= t("admin.budgets.form.table_amount") %></th>
       <th class="text-right"><%= t("admin.budgets.form.table_population") %></th>
       <th><%= t("admin.actions.actions") %></th>
     </tr>
+  <% end %>
+
   </thead>
   <tbody>
-  <% end %>
+
+    <% if headings.blank? %>
+      <tr>
+        <td colspan="4">
+          <div class="callout primary">
+            <%= t("admin.budgets.form.no_heading") %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
 
     <tr id="group-<%= group.id %>-new-heading-form" style="display:none">
       <td colspan="4">
