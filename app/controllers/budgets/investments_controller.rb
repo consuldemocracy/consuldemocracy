@@ -147,6 +147,10 @@ module Budgets
         TagCloud.new(Budget::Investment, params[:search])
       end
 
+      def set_view
+        @view = (params[:view] == "minimal") ? "minimal" : "default"
+      end
+
       def investments
         if @current_order == 'random'
           @investments.apply_filters_and_search(@budget, params, @current_filter)
