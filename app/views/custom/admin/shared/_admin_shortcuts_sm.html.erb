@@ -1,0 +1,14 @@
+<% if current_user.administrator? %>
+  <li class="small-6 medium-4 columns">
+    <%= link_to admin_stats_path, title: t("admin.menu.stats") do %>
+      <span class="icon-stats subnavigation-icon"></span>
+      <%= t("admin.menu.stats") %>
+    <% end %>
+  </li>
+  <li class="small-6 medium-4 columns">
+    <%= link_to admin_settings_path, title: t("admin.menu.settings") do %>
+      <span class="icon-settings subnavigation-icon"></span>
+      <%= t("admin.menu.settings") %>
+    <% end %>
+  </li>
+<% end %>

@@ -89,6 +89,7 @@ fr:
       moderation: Modération
       officing: Assesseurs
       help: "Comment faire ?"
+      help_sm: Comment faire
       open_city_slogan_html:
         "Santé, loisirs, emploi, logement...
         <br>Tu as plein d'<strong>idées</strong> pour améliorer la vie des jeunes Audois.es et tu aimerais les concrétiser.
@@ -98,6 +99,8 @@ fr:
       open_city_title: Aimez la ville, et elle deviendra la ville que vous aimez
       open_gov: Gouvernement ouvert
       proposals: "Projets"
+      external_link_aude: "Aude.fr"
+      external_link_aude_url: "https://www.aude.fr/"
   map:
     title: "Cantons"
     proposal_for_district: "Démarrer un projet pour votre canton"

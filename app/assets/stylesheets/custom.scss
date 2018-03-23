@@ -1,5 +1,9 @@
 // Overrides and adds customized styles in this file
 
+///////////////////////////////////////
+// HEADER
+///////////////////////////////////////
+
 .top-bar {
   //height: 8.5rem;
   .top-bar-title {
@@ -12,18 +16,20 @@
     }
   }
   .top-bar-right {
-    margin-top: 2rem;
-    .menu {
-      .login a {
-        margin-top: 1.3rem;
-      }
-      .signup {
-        text-align: right;
-      }
-      li {
-        a {
-          font-size: 1.3rem;
-          padding: 1rem;
+    @include breakpoint(medium) {
+      margin-top: 2rem;
+      .menu {
+        .login a {
+          margin-top: 1.3rem;
+        }
+        .signup {
+          text-align: right;
+        }
+        li {
+          a {
+            font-size: 1.3rem;
+            padding: 1rem;
+          }
         }
       }
     }
@@ -41,4 +47,92 @@
       text-align: center;
     }
   }
+}
+
+$subnavigation-sm-btn-width: 130px;
+
+.subnavigation.subnavigation-sm {
+  padding-right: 0;
+  .columns:last-child {
+    float: left;
+  }
+  li {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    }
+  a {
+    width: $subnavigation-sm-btn-width;
+    height: $subnavigation-sm-btn-width;
+    padding: .5rem;
+    background-color: $dark;
+    box-shadow: 0px 1px 3px #444444;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: normal;
+    transition: all 0.4s;
+    &:hover {
+      background-color: darken($dark, 5%);
+    }
+    img {
+      height: calc(128px - 2em);
+      width: auto;
+    }
+  }
+
+}
+
+.notifications .icon-circle {
+  font-size: 1.625rem;
+  right: -10px;
+  top: -10px;
+  left: auto;
+  @include breakpoint(medium) {
+    font-size: 0.625rem;
+    left: 12px;
+    top: 6px;
+    right: auto;
+  }
+}
+
+
+
+///////////////////////////////////////
+// ADMIN
+///////////////////////////////////////
+
+.admin .top-bar-title {
+  margin: 0;
+  h1 {
+    margin: 0
+  }
+  @include breakpoint(medium) {
+    margin: 1rem;
+    h1 {
+      margin-top: $line-height / 2;
+      margin-left: $line-height / 2;
+    }
+  }
+}
+
+.admin .notifications .icon-circle {
+  color: #ecf00b;
+}
+.admin .subnavigation.subnavigation-sm {
+  a {
+    background-color: $admin-color;
+    &:hover {
+      background-color: darken($admin-color, 5%);
+    }
+  }
+}
+
+.admin .top-bar .menu.subnavigation-sm > li a {
+  color: #fff !important;
+  line-height: 1;
+}
+
+.admin .top-bar [class^="icon-"].subnavigation-icon {
+  // color: #fff;
+  font-size: 4rem;
 }

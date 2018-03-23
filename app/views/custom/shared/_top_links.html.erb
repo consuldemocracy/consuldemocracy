@@ -1,10 +1,10 @@
 <ul class="no-bullet external-links">
   <li>
-    <%= link_to "Aude.fr",
-                "https://www.aude.fr/",
+    <%= link_to t("layouts.header.external_link_aude"),
+                t("layouts.header.external_link_aude_url"),
                 target: "_blank",
                 rel: "nofollow",
-                title: "Conseil Départemental de l'Aude" %>
+                title: t("layouts.header.external_link_aude_url") %>
   </li>
   <%= raw content_block("top_links", I18n.locale) %>
 </ul>

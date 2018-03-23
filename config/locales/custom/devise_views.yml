@@ -3,6 +3,9 @@ fr:
   devise_views:
     menu:
       login_items:
-        login: Se connecter
-        logout: Se déconnecter
+        login: Connexion
+        logout: Déconnexion
         signup: Rejoins-nous!
+    sessions:
+      new:
+        login_label: Email ou nom d'utilisateur

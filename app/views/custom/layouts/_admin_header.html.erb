@@ -1,0 +1,52 @@
+<header class="header">
+  <div class="top-links">
+    <div class="expanded row">
+      <!-- <%= render 'shared/locale_switcher' %> -->
+    </div>
+  </div>
+
+  <div class="expanded row">
+    <div class="top-bar">
+
+      <span data-responsive-toggle="responsive_menu" data-hide-for="medium" class="float-right">
+        <span class="menu-icon dark" data-toggle></span>
+        <%= t("application.menu")%>
+      </span>
+
+      <div class="top-bar-title hide-for-small-only">
+        <h1>
+          <%= link_to namespaced_root_path do %>
+            <%= setting['org_name'] %>
+            <br><small><%= namespaced_header_title %></small>
+          <% end %>
+        </h1>
+      </div>
+
+      <div class="top-bar-title show-for-small-only">
+        <h1>
+          <%= link_to namespaced_root_path do %>
+            <%= 'CDJ' %> - <%= namespaced_header_title %>
+          <% end %>
+        </h1>
+      </div>
+
+      <div id="responsive_menu">
+
+        <div class="top-bar-right">
+          <ul class="menu hide-for-small-only" data-responsive-menu="medium-dropdown">
+            <%= render "admin/shared/admin_shortcuts" %>
+            <%= render "shared/admin_login_items" %>
+            <%= render "devise/menu/login_items" %>
+          </ul>
+
+          <ul class="menu show-for-small-only subnavigation subnavigation-sm" data-responsive-menu="medium-dropdown">
+            <%= render "admin/shared/admin_shortcuts_sm" %>
+            <%= render "shared/admin_login_items_sm" %>
+            <%= render "devise/menu/login_items_sm" %>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
