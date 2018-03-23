@@ -20,7 +20,7 @@
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= back_link_to @proposal.proceeding? ? human_rights_proposals_path : proposals_path %>
+        <%= back_link_to proposals_path %>
 
         <h1><%= @proposal.title %></h1>
         <% if @proposal.retired? %>
@@ -35,11 +35,6 @@
           <div data-alert class="callout alert margin-top">
             <strong><%= t("proposals.show.flag") %></strong>
           </div>
-        <% end %>
-
-        <% if @proposal.proceeding? %>
-          <h2 class="proceeding"><%= @proposal.proceeding %></h2>
-          <h3 class="sub-proceeding"><%= @proposal.sub_proceeding %></h3>
         <% end %>
 
         <div class="proposal-info">
@@ -96,8 +91,6 @@
           </div>
         <% end %>
 
-        <%= render 'proposals/custom_documents' %>
-
         <% if @proposal.video_url.present? %>
           <div class="video-link">
             <p>
@@ -108,6 +101,8 @@
           </div>
 
         <% end %>
+
+        <h4><%= @proposal.question %></h4>
 
         <% if @proposal.retired? %>
           <div id="retired_explanation" class="callout">
@@ -125,9 +120,7 @@
 
         <%= render 'shared/tags', taggable: @proposal %>
 
-        <% unless @proposal.proceeding? %>
-          <%= render 'shared/geozone', geozonable: @proposal %>
-        <% end %>
+        <%= render 'shared/geozone', geozonable: @proposal %>
 
         <%= render 'relationable/related_content', relationable: @proposal %>
 
@@ -230,8 +223,3 @@
     <%= render "proposals/comments" %>
   </div>
 </div>
-
-<span id="js-tracking"
-      data-proposal-show="true"
-      data-proposal-rank="<%= @proposal_rank %>">
-</span>
