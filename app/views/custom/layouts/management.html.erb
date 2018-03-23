@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 
   <head>
     <meta charset="utf-8" />
@@ -25,13 +25,10 @@
       <div class="expanded row">
         <div class="top-bar">
 
-          <%= link_to setting['org_name'], management_root_path, class: "logo show-for-small-only" %>
-
             <div class="top-bar-title">
               <h1>
                 <%= link_to management_root_path do %>
-                  <%= setting['org_name'] %>
-                  <br><small><%= t("management.dashboard.index.title") %></small>
+                  <%= 'CDJ' %> - <%= t("management.dashboard.index.title") %>
                 <% end %>
               </h1>
             </div>

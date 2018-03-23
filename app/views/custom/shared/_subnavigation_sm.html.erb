@@ -1,0 +1,53 @@
+
+<% if feature?(:debates) %>
+  <li class="small-6 medium-4 columns">
+    <%= link_to debates_path, accesskey: "1", class: ("active" if current_page?(debates_path)) do %>
+      <%= image_tag(image_path_for('icon_debates.png')) %>
+      <%= t("layouts.header.debates") %>
+    <% end %>
+  </li>
+<% end %>
+
+<% if feature?(:proposals) %>
+  <li class="small-6 medium-4 columns">
+    <%= link_to proposals_path, accesskey: "2", class: ("active" if current_page?(proposals_path)) do %>
+      <%= image_tag(image_path_for('icon_proposals.png')) %>
+      <%= t("layouts.header.proposals") %>
+    <% end %>
+  </li>
+<% end %>
+<% if feature?(:polls) %>
+  <li class="small-6 medium-4 columns">
+    <%= link_to polls_path, accesskey: "3", class: ("active" if current_page?(polls_path)) do %>
+      <%= image_tag(image_path_for('icon_polls.png')) %>
+      <%= t("layouts.header.poll_questions") %>
+    <% end %>
+  </li>
+<% end %>
+
+<% if feature?(:spending_proposals) %>
+  <li class="small-6 medium-4 columns">
+    <%= link_to spending_proposals_path, accesskey: "5", class: ("active" if current_page?(spending_proposals_path)) do %>
+      <%= image_tag(image_path_for('icon_news.png')) %>
+      <%= t("layouts.header.spending_proposals") %>
+    <% end %>
+  </li>
+<% end %>
+
+
+<% if feature?(:articles) %>
+  <li class="small-6 medium-4 columns">
+    <%= link_to articles_path, accesskey: "5", class: ("active" if current_page?(articles_path)) do %>
+      <%= image_tag(image_path_for('icon_news.png')) %>
+      <%= t("layouts.header.articles") %>
+    <% end %>
+  </li>
+<% end %>
+
+<li class="small-6 medium-4 columns">
+  <%= link_to help_path, accesskey: "4", class: ("active" if current_page?(help_path)),
+      title: t("shared.go_to_page") + t("layouts.header.help") do %>
+    <%= image_tag(image_path_for('icon_more_info.png')) %>
+    <%= t("layouts.header.help_sm") %>
+  <% end %>
+</li>

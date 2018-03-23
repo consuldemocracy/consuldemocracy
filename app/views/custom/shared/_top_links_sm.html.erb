@@ -1,0 +1,8 @@
+<li class="small-6 medium-4 columns">
+  <%= link_to t("layouts.header.external_link_aude_url"), target: "_blank", title: t("layouts.header.external_link_aude_url") do %>
+    <%= image_tag(image_path_for('icon_aude.png')) %>
+    <%= t("layouts.header.external_link_aude") %>
+  <% end %>
+</li>
+
+<%= raw content_block("top_links", I18n.locale) %>

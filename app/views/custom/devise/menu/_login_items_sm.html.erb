@@ -1,0 +1,52 @@
+<% if user_signed_in? %>
+  <li class="small-6 medium-4 columns" id="notifications">
+    <%= link_to notifications_path, rel: "nofollow", class: "notifications" do %>
+      <% if current_user.notifications_count > 0 %>
+        <span class="icon-circle" aria-hidden="true"></span>
+        <%= image_tag(image_path_for('icon_notifications.png'), alt: t('layouts.header.new_notifications', count: current_user.notifications_count).html_safe) %>
+      <% else %>
+        <%= image_tag(image_path_for('icon_no_notifications.png'), alt: t('layouts.header.no_notifications')) %>
+      <% end %>
+      <%= t("layouts.header.notifications") %>
+    <% end %>
+  </li>
+  <li class="small-6 medium-4 columns">
+    <%= link_to user_path(current_user), rel: "nofollow",
+      title: t("shared.go_to_page") + t("layouts.header.my_activity_link"),
+      class: ("active" if controller_name == 'users') do %>
+      <%= image_tag(image_path_for('icon_my_activity.png'), class: "show-for-small-only") %>
+      <%= t("layouts.header.my_activity_link") %>
+    <% end %>
+  </li>
+  <li class="small-6 medium-4 columns">
+    <%= link_to account_path, rel: "nofollow",
+        title: t("shared.go_to_page") + t("layouts.header.my_account_link"),
+        class: ("active" if controller_name == 'account') do %>
+      <%= image_tag(image_path_for('icon_my_account.png'), class: "show-for-small-only") %>
+      <%= t("layouts.header.my_account_link") %>
+    <% end %>
+
+  </li>
+  <li class="small-6 medium-4 columns">
+    <%= link_to destroy_user_session_path, rel: "nofollow", method: :delete do %>
+      <%= image_tag(image_path_for('icon_logout.png'), class: "show-for-small-only") %>
+      <%= t("devise_views.menu.login_items.logout") %>
+    <% end %>
+  </li>
+
+<% else %>
+
+  <li class="login small-6 medium-4 columns">
+    <%= link_to new_user_session_path, rel: "nofollow" do %>
+      <%= image_tag(image_path_for('icon_login.png'), class: "show-for-small-only") %>
+      <%= t("devise_views.menu.login_items.login") %>
+    <% end %>
+  </li>
+  <li class="signup small-6 medium-4 columns">
+    <%= link_to new_user_registration_path, rel: "nofollow", class: "show-for-small-only" do %>
+      <%= image_tag(image_path_for('icon_signup.png')) %>
+      <%= t("devise_views.menu.login_items.signup") %>
+    <% end %>
+  </li>
+
+<% end %>

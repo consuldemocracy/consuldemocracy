@@ -1,0 +1,46 @@
+<% if show_admin_menu? %>
+    <% if current_user.administrator? %>
+      <li class="small-6 medium-4 columns">
+        <%= link_to admin_root_path do %>
+          <%= image_tag(image_path_for('icon_administration.png'), class: "show-for-small-only") %>
+          <%= t("layouts.header.administration") %>
+        <% end %>
+      </li>
+    <% end %>
+
+    <% if current_user.administrator? || current_user.moderator? %>
+      <li class="small-6 medium-4 columns">
+        <%= link_to moderation_root_path do %>
+          <%= image_tag(image_path_for('icon_moderation.png'), class: "show-for-small-only") %>
+          <%= t("layouts.header.moderation") %>
+        <% end %>
+      </li>
+    <% end %>
+
+    <% if (feature?(:spending_proposals) || feature?(:budgets)) &&
+          (current_user.administrator? || current_user.valuator?) %>
+      <li class="small-6 medium-4 columns">
+        <%= link_to valuation_root_path do %>
+          <%= image_tag(image_path_for('icon_valuation.png'), class: "show-for-small-only") %>
+          <%= t("layouts.header.valuation") %>
+        <% end %>
+      </li>
+    <% end %>
+
+    <% if current_user.administrator? || current_user.manager? %>
+      <li class="small-6 medium-4 columns">
+        <%= link_to management_sign_in_path do %>
+          <%= image_tag(image_path_for('icon_management.png'), class: "show-for-small-only") %>
+          <%= t("layouts.header.management") %>
+        <% end %>
+      </li>
+    <% end %>
+<% end %>
+<% if current_user && current_user.poll_officer? %>
+  <li class="small-6 medium-4 columns">
+    <%= link_to officing_root_path, class: "show-for-small-only" do %>
+      <%= image_tag(image_path_for('icon_officing.png')) %>
+      <%= t("layouts.header.officing_light") %>
+    <% end %>
+  </li>
+<% end %>

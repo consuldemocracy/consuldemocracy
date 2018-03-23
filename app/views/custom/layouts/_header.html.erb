@@ -2,7 +2,7 @@
 
   <div class="top-links">
     <div class="row">
-      <%= render "shared/locale_switcher" %>
+      <!-- <%= render "shared/locale_switcher" %> -->
       <div class="hide-for-small-only">
         <%= render "shared/top_links" %>
       </div>
@@ -27,18 +27,18 @@
       <div id="responsive_menu">
 
         <div class="top-bar-right">
-          <ul class="menu" data-responsive-menu="medium-dropdown">
+          <ul class="menu hide-for-small-only" data-responsive-menu="medium-dropdown">
             <%= render "shared/admin_login_items" %>
             <%= render "devise/menu/login_items" %>
           </ul>
 
           <div class="show-for-small-only">
-            <div class="subnavigation row">
-              <%= render "shared/subnavigation" %>
-              <div class="small-12 column">
-                <%= render "shared/top_links" %>
-              </div>
-            </div>
+            <ul class="subnavigation row subnavigation-sm no-bullet">
+              <%= render "shared/subnavigation_sm" %>
+              <%= render "shared/admin_login_items_sm" %>
+              <%= render "devise/menu/login_items_sm" %>
+              <%= render "shared/top_links_sm" %>
+            </ul>
           </div>
         </div>
       </div>
