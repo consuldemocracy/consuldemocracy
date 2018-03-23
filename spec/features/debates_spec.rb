@@ -47,6 +47,34 @@ feature 'Debates' do
     expect(page).to have_selector('#debates .debate', count: 2)
   end
 
+  scenario 'Index view mode' do
+    debates = [create(:debate), create(:debate), create(:debate)]
+
+    visit debates_path
+
+    click_button 'View mode'
+
+    click_link 'List'
+
+    debates.each do |debate|
+      within('#debates') do
+        expect(page).to     have_link debate.title
+        expect(page).to_not have_content debate.description
+      end
+    end
+
+    click_button 'View mode'
+
+    click_link 'Cards'
+
+    debates.each do |debate|
+      within('#debates') do
+        expect(page).to have_link debate.title
+        expect(page).to have_content debate.description
+      end
+    end
+  end
+
   scenario 'Show' do
     debate = create(:debate)
 
