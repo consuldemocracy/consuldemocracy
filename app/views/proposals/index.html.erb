@@ -1,4 +1,4 @@
-<% provide :title do %><%= t('proposals.index.title') %><% end %>
+<% provide :title do %><%= t("proposals.index.title") %><% end %>
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
              search_path: proposals_path(page: 1),
