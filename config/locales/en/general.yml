@@ -631,6 +631,10 @@ en:
       next_slide: Next Slide
     documentation: Additional documentation
     more_info: More information
+    view_mode:
+      title: View mode
+      cards: Cards
+      list: List
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"

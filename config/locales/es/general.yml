@@ -630,6 +630,10 @@ es:
       next_slide: Siguiente imagen
     documentation: Documentación adicional
     more_info: Más información
+    view_mode:
+      title: Modo de vista
+      cards: Tarjetas
+      list: Lista
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
