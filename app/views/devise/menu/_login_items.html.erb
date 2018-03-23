@@ -1,11 +1,4 @@
 <% if user_signed_in? %>
-  <% if current_budget %>
-    <li>
-      <%= link_to(t("layouts.header.delegation"), 
-          new_budget_recommendation_path(budget_id: current_budget.slug), 
-                                         accesskey: "d") %>
-    </li>
-  <% end %>
   <li>
     <%= layout_menu_link_to t("layouts.header.my_activity_link"),
                               user_path(current_user),
