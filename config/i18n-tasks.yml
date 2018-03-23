@@ -164,9 +164,7 @@ ignore_unused:
   - 'proposals.index.section_header.*'
   - 'spending_proposals.index.search_form.*'
   - '*.index.search_form.*'
-  - 'notifications.index.comments_on*'
-  - 'notifications.index.replies_to*'
-  - 'notifications.index.proposal_notification*'
+  - 'notifications.notification.action.*'
   - 'legislation.processes.index.filter*'
   - 'legislation.processes.index.section_header.*'
   - 'helpers.page_entries_info.*' # kaminari

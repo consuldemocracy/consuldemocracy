@@ -234,11 +234,6 @@ en:
       help: Help
       my_account_link: My account
       my_activity_link: My activity
-      notifications: Notifications
-      new_notifications:
-        one: You have a new notification
-        other: You have %{count} new notifications
-      no_notifications: "You don't have new notifications"
       open: open
       open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_title: Love the city, and it will become a city you love
@@ -247,6 +242,12 @@ en:
       poll_questions: Voting
       budgets: Participatory budgeting
       spending_proposals: Spending Proposals
+      notification_item:
+        new_notifications:
+          one: You have a new notification
+          other: You have %{count} new notifications
+        notifications: Notifications
+        no_notifications: "You don't have new notifications"
     admin:
       watch_form_message: 'You have unsaved changes. Do you confirm to leave the page?'
   legacy_legislation:
@@ -259,19 +260,25 @@ en:
   locale: English
   notifications:
     index:
-      comments_on:
-        one: Someone commented on
-        other: There are %{count} new comments on
       empty_notifications: You don't have new notifications.
-      notifiable_hidden: This resource is not available anymore.
       mark_all_as_read: Mark all as read
-      proposal_notification:
-        one: There is one new notification on
-        other: There are %{count} new notifications on
-      replies_to:
-        one: Someone replied to your comment on
-        other: There are %{count} new replies to your comment on
+      read: All notifications
       title: Notifications
+      unread: Unread
+    notification:
+      action:
+        comments_on:
+          one: Someone commented on
+          other: There are %{count} new comments on
+        proposal_notification:
+          one: There is one new notification on
+          other: There are %{count} new notifications on
+        replies_to:
+          one: Someone replied to your comment on
+          other: There are %{count} new replies to your comment on
+      mark_as_read: Mark as read
+      mark_as_unread: Mark as unread
+      notifiable_hidden: This resource is not available anymore.
   map:
     title: "Districts"
     proposal_for_district: "Start a proposal for your district"

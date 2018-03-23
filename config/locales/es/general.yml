@@ -234,11 +234,6 @@ es:
       help: Ayuda
       my_account_link: Mi cuenta
       my_activity_link: Mi actividad
-      notifications: Notificaciones
-      new_notifications:
-        one: Tienes una nueva notificación
-        other: Tienes %{count} notificaciones nuevas
-      no_notifications: "No tienes notificaciones nuevas"
       open: abierto
       open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
       open_city_title: La ciudad que quieres será la ciudad que quieras
@@ -247,6 +242,12 @@ es:
       poll_questions: Votaciones
       budgets: Presupuestos participativos
       spending_proposals: Propuestas de inversión
+      notification_item:
+        new_notifications:
+          one: Tienes una nueva notificación
+          other: Tienes %{count} notificaciones nuevas
+        notifications: Notificaciones
+        no_notifications: "No tienes notificaciones nuevas"
     admin:
       watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
   legacy_legislation:
@@ -259,19 +260,25 @@ es:
   locale: Español
   notifications:
     index:
-      comments_on:
-        one: Hay un nuevo comentario en
-        other: Hay %{count} comentarios nuevos en
       empty_notifications: No tienes notificaciones nuevas.
-      notifiable_hidden: Este elemento ya no está disponible.
       mark_all_as_read: Marcar todas como leídas
-      proposal_notification:
-        one: Hay una nueva notificación en
-        other: Hay %{count} nuevas notificaciones en
-      replies_to:
-        one: Hay una respuesta nueva a tu comentario en
-        other: Hay %{count} nuevas respuestas a tu comentario en
+      read: Todas
       title: Notificaciones
+      unread: Nuevas
+    notification:
+      action:
+        comments_on:
+          one: Hay un nuevo comentario en
+          other: Hay %{count} comentarios nuevos en
+        proposal_notification:
+          one: Hay una nueva notificación en
+          other: Hay %{count} nuevas notificaciones en
+        replies_to:
+          one: Hay una respuesta nueva a tu comentario en
+          other: Hay %{count} nuevas respuestas a tu comentario en
+      mark_as_read: Marcar como leída
+      mark_as_unread: Marcar como no leída
+      notifiable_hidden: Este elemento ya no está disponible.
   map:
     title: "Distritos"
     proposal_for_district: "Crea una propuesta para tu distrito"

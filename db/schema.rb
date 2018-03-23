@@ -640,6 +640,7 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.string   "notifiable_type"
     t.integer  "counter",         default: 1
     t.datetime "emailed_at"
+    t.datetime "read_at"
   end
 
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
