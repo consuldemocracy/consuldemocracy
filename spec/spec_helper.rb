@@ -7,6 +7,7 @@ require 'knapsack_pro'
 Dir["./spec/models/concerns/*.rb"].each { |f| require f }
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/shared/**/*.rb"].sort.each { |f| require f }
+Dir["./spec/custom/support/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -40,8 +41,9 @@ RSpec.configure do |config|
 
   config.before do |example|
     DatabaseCleaner.strategy = :transaction
-    I18n.locale = :en
+    I18n.locale = :fr
     load Rails.root.join('db', 'seeds.rb').to_s
+    load Rails.root.join('db', 'custom_seeds.rb').to_s
   end
 
   config.before(:each, type: :feature) do
