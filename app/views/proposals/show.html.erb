@@ -16,7 +16,7 @@
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= back_link_to %>
+        <%= back_link_to proposals_path %>
 
         <h1><%= @proposal.title %></h1>
         <% if @proposal.retired? %>
