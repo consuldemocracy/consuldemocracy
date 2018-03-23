@@ -8,7 +8,7 @@ def section(section_title)
 end
 
 def log(msg)
-  @logger.info "#{msg}\n"
+  @logger.info "#{msg}\n" unless Rails.env.test?
 end
 
 require_relative 'custom_seeds/settings'
