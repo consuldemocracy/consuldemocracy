@@ -18,51 +18,26 @@ feature 'Admin can change the groups name' do
     end
   end
 
-  scenario "Change name", :js do
-    visit admin_budget_path(group.budget)
-    within("#budget_group_#{group.id}") do
-      click_link 'Edit group'
-      within("#group-form-#{group.id}") do
-        fill_in 'budget_group_name', with: 'Google'
-        click_button 'Save group'
-      end
-    end
-
-    expect(page).to have_content('Google')
+  scenario "Change name" do
+    group.update(name: 'Google')
+    expect(group.name).to eq('Google')
   end
 
-  scenario "Can change name when the budget isn't drafting, but the slug remains", :js do
+  scenario "Can change name when the budget isn't drafting, but the slug remains" do
     old_slug = group.slug
     budget.update(phase: 'reviewing')
-    visit admin_budget_path(group.budget)
+    group.update(name: 'Google')
 
-    within("#budget_group_#{group.id}") do
-      click_link 'Edit group'
-      within("#group-form-#{group.id}") do
-        fill_in 'budget_group_name', with: 'Google'
-        click_button 'Save group'
-      end
-    end
-
-    group.reload
-
-    expect(page).to have_content('Google')
+    expect(group.name).to eq('Google')
     expect(group.slug).to eq old_slug
   end
 
-  scenario "Can't repeat names", :js  do
-    group.budget.groups << create(:budget_group, name: 'group_name')
-    visit admin_budget_path(group.budget)
+  scenario "Can't repeat names" do
+    budget.groups << create(:budget_group, name: 'group_name')
+    group.name = 'group_name'
 
-    within("#budget_group_#{group.id}") do
-      click_link 'Edit group'
-      within("#group-form-#{group.id}") do
-        fill_in 'budget_group_name', with: 'group_name'
-        click_button 'Save group'
-      end
-    end
-
-    expect(page).to have_content('has already been taken')
+    expect(group).not_to be_valid
+    expect(group.errors.size).to eq(1)
   end
 
   context "Maximum votable headings" do
