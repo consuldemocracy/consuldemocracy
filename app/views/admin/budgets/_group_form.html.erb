@@ -8,6 +8,19 @@
                       maxlength: 50,
                       placeholder: t("admin.budgets.form.group"),
                       class: "input-group-field" %>
+
+    <% if group.persisted? %>
+      <div class="small-12 medium-6 large-4">
+        <%= f.label :name, t("admin.budgets.form.max_votable_headings") %>
+
+        <%= f.select :max_votable_headings,
+                     (1..group.headings.count),
+                     label: false,
+                     placeholder: t("admin.budgets.form.max_votable_headings"),
+                     class: "input-group-field" %>
+      </div>
+    <% end %>
+
     <div class="input-group-button">
       <%= f.submit button_title, class: "button success" %>
     </div>

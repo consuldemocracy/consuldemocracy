@@ -1,10 +1,25 @@
 en:
   management:
     account:
+      menu:
+        reset_password_email: Reset password via email
+        reset_password_manually: Reset password manually
       alert:
         unverified_user: No verified user logged in yet
       show:
         title: User account
+      edit:
+        title: 'Edit user account: Reset password'
+        back: Back
+        password:
+          password: Password
+          send_email: Send reset password email
+          reset_email_send: Email correctly sent.
+          reseted: Password reseted successfully
+          random: Generate random password
+          save: Save
+          print: Print password
+          print_help: You will be able to print the password when it is saved.
     account_info:
       change_user: Change user
       document_number_label: 'Document number:'

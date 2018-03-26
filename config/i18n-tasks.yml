@@ -188,6 +188,7 @@ ignore_unused:
   - 'admin.legislation.processes.process.*'
   - 'legislation.processes.index.*'
   - '*.form.map_skip_checkbox'
+  - 'votes.budget_investments.different_heading_assigned*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
@@ -203,11 +204,11 @@ ignore_unused:
   - users.show.delete_spending_proposal
   - verification.letter.create.flash.offices_url
   - verification.letter.new.offices_url
+  - votes.budget_investments.different_heading_assigned*
   - layouts.header.open_city_title
   - admin.stats.polls.current
   - admin.stats.polls.expired
 ####
-
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:
 #   all:
