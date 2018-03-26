@@ -9,4 +9,12 @@ class MapLocation < ActiveRecord::Base
     latitude.present? && longitude.present? && zoom.present?
   end
 
+  def json_data
+    {
+      id: id,
+      lat: latitude,
+      long: longitude
+    }
+  end
+
 end
