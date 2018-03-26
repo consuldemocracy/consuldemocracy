@@ -90,7 +90,7 @@
 
       <div id="proposals-list">
         <% if @proposals.any? || current_user.blank? %>
-          <% if proposals_default_view? %>
+          <% if request.path == human_rights_proposals_path || proposals_default_view? %>
             <%= render partial: 'proposals/proposal', collection: @proposals %>
           <% else %>
             <% @proposals.each do |proposal| %>
