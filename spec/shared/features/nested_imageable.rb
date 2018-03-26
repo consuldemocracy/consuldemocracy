@@ -32,13 +32,13 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(page).to have_selector "#new_image_link", visible: true
     end
 
-    scenario "Should hide new image link after add one image" do
+    scenario "Should hide new image link after adding one image" do
       login_as user
       visit send(path, arguments)
 
       click_on "Add image"
 
-      expect(page).to have_selector "#new_image_link", visible: true
+      expect(page).to have_selector "#new_image_link", visible: false
     end
 
     scenario "Should update nested image file name after choosing any file", :js do
