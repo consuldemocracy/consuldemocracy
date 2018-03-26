@@ -98,7 +98,7 @@
       </div>
 
       <% unless current_budget.informing? %>
-        <% if false %>
+        <% cache [@budgets_coordinates] do %>
           <div id="map">
             <h3><%= t("budgets.index.map") %></h3>
             <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
