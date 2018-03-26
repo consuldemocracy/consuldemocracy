@@ -10,9 +10,9 @@ feature 'Account' do
     user = create(:user)
     login_managed_user(user)
 
-    click_link "Edit user account"
+    click_link "Create budget investment"
 
-    expect(page).to have_content "No verified user logged in yet"
+    expect(page).to have_content "User is not verified"
   end
 
   scenario 'Delete a user account', :js do
