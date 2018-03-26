@@ -262,7 +262,7 @@ es:
     index:
       empty_notifications: No tienes notificaciones nuevas.
       mark_all_as_read: Marcar todas como leídas
-      read: Todas
+      read: Leídas
       title: Notificaciones
       unread: Nuevas
     notification:
@@ -777,7 +777,7 @@ es:
       organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
-      different_heading_assigned: 
+      different_heading_assigned:
         one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito"
         other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos"
   welcome:
