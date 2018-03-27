@@ -551,7 +551,6 @@ feature 'Spending proposals' do
 
           within("#spending-proposals-results") do
             expect(proposal1.title).to appear_before(proposal3.title)
-
             expect(page).not_to have_content(proposal2.title)
             expect(page).not_to have_content(incompatible_proposal.title)
           end
@@ -559,10 +558,10 @@ feature 'Spending proposals' do
           click_link "Show all"
 
           within("#spending-proposals-results") do
-            expect(proposal1.title).to appear_before(proposal2.title)
-            expect(proposal2.title).to appear_before(proposal3.title)
+            expect(page.body.index(proposal1.title)).to be < page.body.index(proposal2.title)
+            expect(page.body.index(proposal2.title)).to be < page.body.index(proposal3.title)
+            expect(page.body.index(proposal3.title)).to be < page.body.index(incompatible_proposal.title)
           end
-          expect(proposal3.title).to appear_before(incompatible_proposal.title)
         end
 
       end

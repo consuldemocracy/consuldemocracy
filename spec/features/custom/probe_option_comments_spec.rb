@@ -2,9 +2,9 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting Probe Options' do
-  let(:user)   { create :user }
-  let(:probe) { Probe.create(codename: 'plaza') }
-  let(:probe_option) { create :probe_option, probe: probe }
+  let(:user)         { create :user }
+  let(:probe)        { create :probe, codename: 'plaza' }
+  let(:probe_option) { create :probe_option, probe: probe, code: '01', name: 'mas o menos' }
 
   scenario 'Index' do
     3.times { create(:comment, commentable: probe_option) }
@@ -45,17 +45,17 @@ feature 'Commenting Probe Options' do
 
     expect(page).to have_css('.comment', count: 3)
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 2)
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 3)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 1)
     expect(page).not_to have_content child_comment.body
@@ -417,7 +417,7 @@ feature 'Commenting Probe Options' do
       @manuela = create(:user, verified_at: Time.now)
       @pablo = create(:user)
       @probe = Probe.create(codename: 'plaza')
-      @probe_option = create(:probe_option, probe: @probe)
+      @probe_option = create(:probe_option, probe: @probe, code: '55', name: 'oz')
       @comment = create(:comment, commentable: @probe_option)
       login_as(@manuela)
     end
@@ -468,11 +468,12 @@ feature 'Commenting Probe Options' do
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
+        find('.against a').click
+
         within('.in_favor') do
           expect(page).to have_content('0')
         end
 
-        find('.against a').click
         within('.against') do
           expect(page).to have_content('1')
         end
@@ -481,16 +482,13 @@ feature 'Commenting Probe Options' do
       end
     end
 
-    xscenario 'Trying to vote multiple times', :js do
+    scenario 'Trying to vote multiple times', :js do
       visit probe_probe_option_path(probe_id: @probe.codename, id: @probe_option.id)
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
-        within('.in_favor') do
-          expect(page).to have_content "1"
-        end
-
         find('.in_favor a').click
+
         within('.in_favor') do
           expect(page).not_to have_content "2"
           expect(page).to have_content "1"

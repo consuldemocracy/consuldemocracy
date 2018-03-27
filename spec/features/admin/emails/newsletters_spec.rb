@@ -130,11 +130,9 @@ feature "Admin newsletter emails" do
     scenario "Sends newsletter emails", :js do
       newsletter = create(:newsletter)
       visit admin_newsletter_path(newsletter)
-
-      click_link "Send"
-
       total_users = newsletter.list_of_recipient_emails.count
-      page.accept_confirm("Are you sure you want to send this newsletter to #{total_users} users?")
+
+      accept_confirm { click_link "Send" }
 
       expect(page).to have_content "Newsletter sent successfully"
     end

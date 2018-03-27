@@ -22,7 +22,7 @@ feature 'Moderate proposals' do
     visit proposal_path(proposal)
 
     within("#proposal_#{proposal.id}") do
-      click_link 'Hide'
+      accept_confirm { click_link 'Hide' }
     end
 
     expect(page).to have_css("#proposal_#{proposal.id}.faded")

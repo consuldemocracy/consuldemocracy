@@ -18,4 +18,4 @@ scope '/participatory_budget' do
   end
 end
 
-get 'investments/:id/json_data', to: :json_data, controller: 'budgets/investments'
+get 'investments/:id/json_data', action: :json_data, controller: 'budgets/investments'
