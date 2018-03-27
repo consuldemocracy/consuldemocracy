@@ -18,6 +18,7 @@ class Verification::Residence
 
   def save
     return false unless valid?
+
     user.update(document_number:       document_number,
                 document_type:         document_type,
                 geozone:               self.geozone,
@@ -28,18 +29,17 @@ class Verification::Residence
                 verified_at: Time.current,
                 unconfirmed_phone: '-',
                 confirmed_phone: '-')
+    unless user.valid?
+      errors.add(:document_number, I18n.t('users.errors.document_in_use'))
+      return false
+    end
   end
 
   private
 
     def retrieve_census_data
-
       # @census_data = CensusCaller.new.call(document_type, document_number)
-      puts "@@@@@@@@@"
-      puts "llamada a padron de castellón"
       @census_data = PadronCastellonApi.new.call(document_type, document_number)
-      puts @census_data.inspect
-
     end
 
     def residency_valid?

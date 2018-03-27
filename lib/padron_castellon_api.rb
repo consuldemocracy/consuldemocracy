@@ -77,7 +77,9 @@ class PadronCastellonApi
     params = { params: document_hash }.merge(header_auth_token)
     default_external_encoding = Encoding.default_external
     Encoding.default_external = Encoding::ISO_8859_1
+
     response_hash = JSON.parse(RestClient.get(url, params), symbolize_names: true)
+
     Encoding.default_external = default_external_encoding
     binding_response(document_hash, response_hash)
   end
@@ -92,7 +94,6 @@ class PadronCastellonApi
     response_hash[:target].each do |rh|
       # return rh if rh[:HABNUMIDE] == document_hash[:dni]
       a = rh[:HABNUMIDE] == document_hash[:dni]
-      puts "#{rh[:HABNUMIDE] == document_hash[:dni]}"
       return rh if a
     end
     ret
@@ -121,7 +122,7 @@ class PadronCastellonApi
           HABNOMHAB: "MIGUEL",
           HABAP1HAB: "GOMEZ",
           HABAP2HAB: "GUTIERREZ",
-          HABNUMIDE: "000000001",
+          HABNUMIDE: "00000001",
           HABCONDIG: "R",
           HABCODPOS: "12004"
         },

@@ -5,3 +5,5 @@ es:
         ballot_lines:
           one: 1 Voto
           other: "%{count} Votos"
+    errors:
+      document_in_use: El documento ya está utilizado por otra cuenta.
