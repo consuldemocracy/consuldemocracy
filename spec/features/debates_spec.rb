@@ -786,14 +786,14 @@ feature 'Debates' do
           click_link "Advanced search"
 
           select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: 7.days.ago
-          fill_in "advanced_search_date_max", with: 1.day.ago
+          fill_in "advanced_search_date_min", with: 7.days.ago.strftime('%d/%m/%Y')
+          fill_in "advanced_search_date_max", with: 1.day.ago.strftime('%d/%m/%Y')
           click_button "Filter"
 
           within "#js-advanced-search" do
             expect(page).to have_select('advanced_search[date_min]', selected: 'Customized')
-            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%Y-%m-%d')}']")
-            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%Y-%m-%d')}']")
+            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%d/%m/%Y')}']")
+            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%d/%m/%Y')}']")
           end
         end
 
