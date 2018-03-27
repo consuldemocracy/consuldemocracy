@@ -17,3 +17,5 @@ scope '/participatory_budget' do
     post :vote, on: :member
   end
 end
+
+get 'investments/:id/json_data', to: :json_data, controller: 'budgets/investments'
