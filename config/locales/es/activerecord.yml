@@ -13,6 +13,9 @@ es:
       budget/investment/milestone:
         one: "hito"
         other: "hitos"
+      budget/investment/status:
+        one: "Estado de proyecto"
+        other: "Estados de proyecto"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -126,6 +129,9 @@ es:
         title: "Título"
         description: "Descripción"
         publication_date: "Fecha de publicación"
+      budget/investment/status:
+        name: "Nombre"
+        description: "Descripción (opcional)"
       budget/heading:
         name: "Nombre de la partida"
         price: "Cantidad"
