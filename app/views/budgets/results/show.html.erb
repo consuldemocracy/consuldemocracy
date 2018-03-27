@@ -13,9 +13,12 @@
 <div class="budgets-stats">
   <div class="expanded no-margin-top padding header">
     <div class="row">
-      <div class="small-12 column text-center">
+      <div class="small-12 column">
         <%= back_link_to budgets_path %>
-        <h1 class="title"><%= t("budgets.results.heading") %><br><%= @budget.name %></h1>
+        <h2 class="margin-top">
+          <%= t("budgets.results.heading") %><br>
+          <span><%= @budget.name %></span>
+        </h2>
       </div>
     </div>
   </div>
@@ -53,9 +56,12 @@
     </ul>
   </div>
 
-  <span class="float-right"><%= link_to t("budgets.results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("budgets.results.hide_discarded_link")} %></span>
-
   <div class="small-12 medium-9 large-10 column">
+    <%= link_to t("budgets.results.show_all_link"), "#",
+                class: "js-toggle-link button hollow margin-bottom float-right-medium",
+                data: {'toggle-selector' => '.js-discarded',
+                       'toggle-text' => t("budgets.results.hide_discarded_link")} %>
+
     <%= render 'results_table', results_type: :compatible,
                                 title: @heading.name,
                                 heading_price: @heading.price,
