@@ -21,7 +21,7 @@
           remote: (current_user && current_user.voted_in_group?(investment.group) ? true : false),
           data:   (current_user && current_user.voted_in_group?(investment.group) ? nil : { confirm: t('budgets.investments.investment.confirm_group')} ),
           "aria-hidden" => css_for_aria_hidden(reason) do %>
-        <%= t("budgets.investments.investment.give_support") %>
+        <% t("budgets.investments.investment.give_support") %>
       <% end %>
     <% end %>
   </div>

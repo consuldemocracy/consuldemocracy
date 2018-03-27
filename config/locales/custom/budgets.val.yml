@@ -8,6 +8,16 @@ val:
         sidebar:
           create: Crear proposta
           quota_exceeded: Ja ha fet totes les propostes permeses en aquesta campanya
+    phase:
+      drafting: Esborrany (No visible per al públic)
+      accepting: Acceptant propostes
+      reviewing: Revisant propostes
+      selecting: Avalant propostes
+      valuating: Avaluació de propostes
+      publishing_prices: Publicació del cost dels projectes
+      balloting: Votació de propostes
+      reviewing_ballots: Votación finalitzada
+      finished: Resultats
     button_text: Participa en els pressupostos de la teua ciutat
     button_text_2018: Participa en els pressupostos de la teua ciutat a partir del 15 de febrer
     index_title: Presenta la teua proposta d'inversió

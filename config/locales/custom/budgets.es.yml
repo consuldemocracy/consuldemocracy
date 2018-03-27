@@ -8,6 +8,31 @@ es:
         sidebar:
           create: Crear propuesta
           quota_exceeded: Ya ha hecho todas las propuestas permitidas para esta campaña
+      investment:
+        already_supported: Ya has avalado este proyecto. ¡Compártelo!
+        support_title: Avalar este proyecto
+        supports:
+          zero: Sin avales
+          one: 1 aval
+          other: "%{count} avales"
+        give_support: Avalar
+
+    phase:
+      drafting: Borrador (No visible para el público)
+      informing: Información
+      accepting: Presentación de proyectos
+      reviewing: Revisión inicial de proyectos
+      selecting: Avalando propuestas
+      valuating: Evaluación de proyectos
+      publishing_prices: Revisión de costes
+      balloting: Votación final
+      reviewing_ballots: Votación finalizada
+      finished: Resultados
+
+
+
+
+
     button_text: Participa en los presupuestos de tu ciudad
     button_text_2018: Participa en los presupuestos de tu ciudad a partir del 15 de febrero
     index_title: Presenta tu propuesta de inversión
