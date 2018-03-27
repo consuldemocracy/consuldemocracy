@@ -16,7 +16,9 @@ es:
           one: 1 aval
           other: "%{count} avales"
         give_support: Avalar
-
+    ballots:
+      reasons_for_not_balloting:
+        quota_exceeded: Has excedido el número de avales permitido
     phase:
       drafting: Borrador (No visible para el público)
       informing: Información

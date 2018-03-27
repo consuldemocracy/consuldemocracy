@@ -244,8 +244,8 @@ class Budget
     def permission_problem(user)
       return :not_logged_in unless user
       return :organization  if user.organization?
-      return :quota_exeeded  if user.cannot?(:new, Budget::Investment)
-      return :not_verified  unless user.can?(:vote, Budget::Investment)
+      return :not_verified  unless user.verified_at?
+      return :quota_exceeded  if user.cannot?(:vote, Budget::Investment)
       nil
     end
 

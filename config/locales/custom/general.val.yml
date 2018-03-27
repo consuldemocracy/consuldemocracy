@@ -1,7 +1,7 @@
-es:
+val:
   spending_proposals:
     spending_proposal:
       support: Avalar
   votes:
     budget_investments:
-      quota_exceeded: Ya has avalado los proyectos permitidos
+      quota_exceeded: Ya has avalat els projectes permesos
