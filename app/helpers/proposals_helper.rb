@@ -86,4 +86,7 @@ module ProposalsHelper
     proposals_current_view == "default" ? "minimal" : "default"
   end
 
+  def human_rights?
+    controller_name == "human_rights"
+  end
 end
