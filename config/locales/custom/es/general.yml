@@ -35,8 +35,8 @@ es:
       sub_proceeding: "Derecho"
   polls:
     index:
-      title: Vota once plazas en Decide Madrid
-      description: Tú decides sobre la remodelación de once plazas de Madrid. Desde Barajas hasta Villaverde, vota cómo quieres que cambien estos espacios.
+      title: Consultas ciudadanas del Ayuntamiento Madrid
+      description: Participa en las consultas de propuestas ciudadanas e iniciativas municipales que convoca el Ayuntamiento de Madrid.
       section_header:
         title: Votaciones ciudadanas
         help: Ayuda sobre las votaciones ciudadanas
