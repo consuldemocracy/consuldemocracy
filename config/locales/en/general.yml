@@ -632,6 +632,10 @@ en:
       title: View mode
       cards: Cards
       list: List
+    recommended_index:
+        title: Recommendations
+        see_more: See more recommendations
+        hide: Hide recommendations
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"
