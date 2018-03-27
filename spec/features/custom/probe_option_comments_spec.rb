@@ -2,9 +2,9 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting Probe Options' do
-  let(:user)   { create :user }
-  let(:probe) { Probe.create(codename: 'plaza') }
-  let(:probe_option) { create :probe_option, probe: probe }
+  let(:user)         { create :user }
+  let(:probe)        { create :probe, codename: 'plaza' }
+  let(:probe_option) { create :probe_option, probe: probe, code: '01', name: 'mas o menos' }
 
   scenario 'Index' do
     3.times { create(:comment, commentable: probe_option) }
@@ -417,7 +417,7 @@ feature 'Commenting Probe Options' do
       @manuela = create(:user, verified_at: Time.now)
       @pablo = create(:user)
       @probe = Probe.create(codename: 'plaza')
-      @probe_option = create(:probe_option, probe: @probe)
+      @probe_option = create(:probe_option, probe: @probe, code: '55', name: 'oz')
       @comment = create(:comment, commentable: @probe_option)
       login_as(@manuela)
     end
