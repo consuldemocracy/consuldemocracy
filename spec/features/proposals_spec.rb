@@ -727,16 +727,33 @@ feature 'Proposals' do
 
       before do
         Setting['feature.user.recommendations'] = true
+        Setting['feature.user.recommendations_on_proposals'] = true
       end
 
       after do
         Setting['feature.user.recommendations'] = nil
+        Setting['feature.user.recommendations_on_proposals'] = nil
       end
 
       scenario 'Proposals can not ordered by recommendations when there is not an user logged', :js do
         visit proposals_path
 
         expect(page).not_to have_selector('a', text: 'recommendations')
+      end
+
+      scenario 'Show recommended proposals on index header' do
+        proposal = create(:proposal, tag_list: "Sport")
+        user = create(:user)
+        create(:follow, followable: proposal, user: user)
+        login_as(user)
+
+        visit proposals_path
+
+        expect(page).to have_css('.recommendation', count: 3)
+        expect(page).to have_link "Best"
+        expect(page).to have_link "Medium"
+        expect(page).to have_link "Worst"
+        expect(page).to have_link "See more recommendations"
       end
 
       scenario 'Should display text when there are not recommendeds results', :js do

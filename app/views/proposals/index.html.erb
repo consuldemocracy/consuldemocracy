@@ -37,6 +37,10 @@
     <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
   <% end %>
 
+  <% if feature?("user.recommendations_on_proposals") && @recommended_proposals.present? %>
+    <%= render "shared/recommended_index", recommended: @recommended_proposals %>
+  <% end %>
+
   <div class="row">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
 
