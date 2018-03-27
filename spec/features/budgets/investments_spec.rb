@@ -43,6 +43,37 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario 'Index view mode' do
+    investments = [create(:budget_investment, heading: heading),
+                   create(:budget_investment, heading: heading),
+                   create(:budget_investment, heading: heading)]
+
+    visit budget_path(budget)
+    click_link 'Health'
+
+    click_button 'View mode'
+
+    click_link 'List'
+
+    investments.each do |investment|
+      within('#budget-investments') do
+        expect(page).to     have_link investment.title
+        expect(page).to_not have_content(investment.description)
+      end
+    end
+
+    click_button 'View mode'
+
+    click_link 'Cards'
+
+    investments.each do |investment|
+      within('#budget-investments') do
+        expect(page).to have_link investment.title
+        expect(page).to have_content(investment.description)
+      end
+    end
+  end
+
   scenario 'Index should show investment descriptive image only when is defined' do
     Setting['feature.allow_images'] = true
 
@@ -1484,81 +1515,6 @@ feature 'Budget Investments' do
 
       expect(page).to     have_content investment1.title
       expect(page).not_to have_content investment2.title
-    end
-
-  end
-
-  context "Minimal view" do
-    let!(:investment1) { create(:budget_investment, heading: heading, tag_list: "Parks") }
-    let!(:investment2) { create(:budget_investment, heading: heading, tag_list: "Parks") }
-    let!(:investment3) { create(:budget_investment, heading: heading, tag_list: "Parks") }
-
-    background do
-      visit budget_path(budget)
-      click_link "Health"
-    end
-
-    scenario "Change to mininal view" do
-      within(".budgets-minimal-selector") do
-        first("a").click
-      end
-
-      expect(page).to have_css(".budget-investment.minimal", count: 3)
-
-      within("#budget_investment_#{investment1.id}") do
-        expect(page).to have_content investment1.title
-
-        expect(page).not_to have_content investment1.author.username
-        expect(page).not_to have_content investment1.description
-        expect(page).not_to have_content investment1.heading.name
-        expect(page).not_to have_content investment1.tag_list.first
-      end
-    end
-
-    scenario "Maintain pagination in minimal view" do
-      per_page = 10
-      (per_page + 1).times { create(:budget_investment, heading: heading) }
-
-      visit budget_path(budget)
-      click_link heading.group.name
-
-      within(".budgets-minimal-selector") do
-        first("a").click
-      end
-
-      expect(page).to have_selector('.budget-investment', count: per_page)
-
-      within("ul.pagination") do
-        expect(page).to have_content("1")
-        expect(page).to have_link('2')
-        expect(page).not_to have_content("3")
-        click_link "Next", exact: false
-      end
-
-      expect(page).to have_selector('.budget-investment', count: 4)
-    end
-
-    scenario "Switch between minimal and default views" do
-      within(".budgets-minimal-selector") do
-        first("a").click
-      end
-
-      expect(page).to have_css(".budget-investment.minimal", count: 3)
-
-      within(".budgets-minimal-selector") do
-        first("a").click
-      end
-
-      expect(page).to have_css(".budget-investment.minimal", count: 0)
-
-      within("#budget_investment_#{investment1.id}") do
-        expect(page).to have_content investment1.title
-
-        expect(page).to have_content investment1.author.username
-        expect(page).to have_content investment1.description
-        expect(page).to have_content investment1.heading.name
-        expect(page).to have_content investment1.tag_list.first
-      end
     end
 
   end

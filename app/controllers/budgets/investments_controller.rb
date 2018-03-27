@@ -182,11 +182,7 @@ module Budgets
       end
 
       def set_view
-        @view = if params[:view] == "minimal"
-          "minimal"
-                else
-          "default"
-                end
+        @view = (params[:view] == "minimal") ? "minimal" : "default"
       end
 
       def investments
