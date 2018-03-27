@@ -21,8 +21,11 @@
                 <% end %>
                 <% if milestone.status.present? %>
                   <p>
-                    <span class="milestone-status">
+                    <strong>
                       <%= t("budgets.investments.show.milestone_status_changed") %>
+                    </strong>
+                    <br>
+                    <span class="milestone-status">
                       <%= milestone.status.name %>
                     </span>
                   </p>
