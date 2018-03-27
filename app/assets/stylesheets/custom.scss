@@ -1755,7 +1755,7 @@ tr th {
     padding-top: $line-height;
   }
 
-  span {
+  span:not(.milestone-status) {
     display: block;
     padding: $line-height / 2 0;
     position: relative;
@@ -1773,6 +1773,11 @@ tr th {
       }
     }
   }
+}
+
+.milestone-status,
+.tab-milestones ul li::before {
+  background: #000;
 }
 
 .survey-radio-images {
