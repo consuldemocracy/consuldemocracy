@@ -336,8 +336,6 @@ es:
     title_2: "Billete único para el transporte público"
     img_alt_2: "Imagen genérica relacionada con la propuesta Billete único para el transporte público"
     description_2_html: "Informe técnico sobre la competencia, legalidad, viabilidad y coste de la propuesta Billete único para el transporte público."
-  budgets_minimal_selector:
-    view: "Mostrar como tarjetas o lista"
   mailers:
     budget_investment_created:
       signatory: "Área de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid"

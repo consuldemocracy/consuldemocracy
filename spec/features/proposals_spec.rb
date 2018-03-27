@@ -48,6 +48,35 @@ feature 'Proposals' do
       end
     end
 
+    scenario 'Index view mode' do
+      featured_proposals = create_featured_proposals
+      proposals = [create(:proposal), create(:proposal), create(:proposal)]
+
+      visit proposals_path
+
+      click_button 'View mode'
+
+      click_link 'List'
+
+      proposals.each do |proposal|
+        within('#proposals') do
+          expect(page).to     have_link proposal.title
+          expect(page).to_not have_content proposal.summary
+        end
+      end
+
+      click_button 'View mode'
+
+      click_link 'Cards'
+
+      proposals.each do |proposal|
+        within('#proposals') do
+          expect(page).to have_link proposal.title
+          expect(page).to have_content proposal.summary
+        end
+      end
+    end
+
     scenario 'Pagination' do
       per_page = Kaminari.config.default_per_page
       (per_page + 5).times { create(:proposal) }
