@@ -426,12 +426,15 @@ feature 'Commenting debates' do
 
   feature 'Voting comments' do
     background do
-      @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @debate = create(:debate)
       @comment = create(:comment, commentable: @debate)
-
+      @manuela = create(:user, verified_at: Time.current)
       login_as(@manuela)
+    end
+
+    after do
+      logout
     end
 
     scenario 'Show' do
@@ -476,17 +479,16 @@ feature 'Commenting debates' do
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
-        find('.against a').click
-
         within('.in_favor') do
-          expect(page).to have_content "0"
+          expect(page).to have_content('0')
         end
 
+        find('.against a').click
         within('.against') do
-          expect(page).to have_content "1"
+          expect(page).to have_content('1')
         end
 
-        expect(page).to have_content "1 vote"
+        expect(page).to have_content('1 vote')
       end
     end
 
