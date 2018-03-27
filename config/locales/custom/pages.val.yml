@@ -363,6 +363,49 @@ val:
 
           La primera i segona proposta triades en cada reunió de districte passaran directament a la fase de validació i estudi de viabilitat dels projectes de districte. En cas de que alguna de les dues propostes siga inviable tècnicament, seguint l'ordrede priorització, es valorarà la següent en la llista. Les reunions de districte es celebraran del 3 al 13 d’abril de 2018.
 
+          Vols participar-hi? Horari de reunions de districte
+
+          <table class="hover">
+            <thead>
+              <tr>
+                <th>Districte</th>
+                <th>Data i hora</th>
+                <th>LLoc</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SUD</td>
+                <td>4 abril a les 18h</td>
+                <td>Tinença Districte Sud. Calle Ricardo Catalá esquina J.Marqués</td>
+              </tr>
+              <tr>
+                <td>EST</td>
+                <td>5 abril a les 18h</td>
+                <td>Tinença Districte Est. Avga Germans Bou, 27</td>
+              </tr>
+              <tr>
+                <td>OEST</td>
+                <td>9 abril a les 19h</td>
+                <td>Tinença Districte Oest.</td>
+              </tr>
+              <tr>
+                <td>NORD</td>
+                <td>11 abril a les 18h</td>
+                <td>Tinença Districte Nord. Plaça del Primer Molí s/n</td>
+              </tr>
+              <tr>
+                <td>GRAU</td>
+                <td>11 abril a les 19h</td>
+                <td>Tinença Grau. Passeig Buenavista, 28</td>
+              </tr>
+              <tr>
+                <td>CENTRE</td>
+                <td>12 abril a les 19h</td>
+                <td>Tinença Districte Centre. Plaça Major, 1</td>
+              </tr>
+            </tbody>
+          </table>
+
       item_7:
         title: 7.- Qui pot recolzar les propostes?
         subt: ''
