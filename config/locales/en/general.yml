@@ -928,7 +928,7 @@ en:
       organization: Organizations are not permitted to vote
       unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
-      different_heading_assigned: 
+      different_heading_assigned:
         one: "You can only support investment projects in %{count} district"
         other: "You can only support investment projects in %{count} districts"
   welcome:

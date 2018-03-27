@@ -53,6 +53,7 @@ feature "Notifications" do
     expect(page).to have_css ".notification", count: 1
   end
 
+
   scenario "Mark as read", :js do
     notification1 = create(:notification, user: user)
     notification2 = create(:notification, user: user)

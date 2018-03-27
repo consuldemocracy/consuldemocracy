@@ -1,8 +1,8 @@
 <% if user_signed_in? %>
   <% if current_budget %>
     <li>
-      <%= link_to(t("layouts.header.delegation"), 
-          new_budget_recommendation_path(budget_id: current_budget.slug), 
+      <%= link_to(t("layouts.header.delegation"),
+          new_budget_recommendation_path(budget_id: current_budget.slug),
                                          accesskey: "d") %>
     </li>
   <% end %>
