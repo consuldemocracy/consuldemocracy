@@ -2,7 +2,6 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting legislation questions' do
-
   let(:user) { create :user, :level_two }
   let(:process) { create :legislation_process, :in_debate_phase }
   let(:legislation_question) { create :legislation_question, process: process }
@@ -55,17 +54,17 @@ feature 'Commenting legislation questions' do
 
     expect(page).to have_css('.comment', count: 3)
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 2)
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 3)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 1)
     expect(page).not_to have_content child_comment.body
@@ -453,8 +452,11 @@ feature 'Commenting legislation questions' do
       @pablo = create(:user)
       @legislation_question = create(:legislation_question)
       @comment = create(:comment, commentable: @legislation_question)
-
       login_as(@manuela)
+    end
+
+    after do
+      logout
     end
 
     scenario 'Show' do
@@ -480,9 +482,8 @@ feature 'Commenting legislation questions' do
       visit legislation_process_question_path(@legislation_question.process, @legislation_question)
 
       within("#comment_#{@comment.id}_votes") do
-        find(".in_favor a").click
-
         within(".in_favor") do
+          find("a").click
           expect(page).to have_content "1"
         end
 

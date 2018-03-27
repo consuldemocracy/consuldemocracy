@@ -80,17 +80,17 @@ feature 'Internal valuation comments on Budget::Investments' do
 
       expect(page).to have_css('.comment', count: 3)
 
-      find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+      find("#comment_#{child_comment.id}_children_arrow").click
 
       expect(page).to have_css('.comment', count: 2)
       expect(page).not_to have_content grandchild_comment.body
 
-      find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+      find("#comment_#{child_comment.id}_children_arrow").click
 
       expect(page).to have_css('.comment', count: 3)
       expect(page).to have_content grandchild_comment.body
 
-      find("#comment_#{parent_comment.id}_children_arrow").trigger('click')
+      find("#comment_#{parent_comment.id}_children_arrow").click
 
       expect(page).to have_css('.comment', count: 1)
       expect(page).not_to have_content child_comment.body
@@ -162,20 +162,10 @@ feature 'Internal valuation comments on Budget::Investments' do
   end
 
   context 'Valuation comment creation' do
-    scenario 'Normal users cannot create valuation comments altering public comments form', :js do
-      logout
-      login_as(user)
-      visit budget_investment_path(investment.budget, investment)
-
-      fill_in "comment-body-budget_investment_#{investment.id}", with: 'HACKERMAN IS HERE'
-      find(:xpath, "//input[@id='comment_valuation']", visible: false).set('true')
-      click_button 'Publish comment'
-
-      visit budget_investment_path(investment.budget, investment)
-      expect(page).not_to have_content('HACKERMAN IS HERE')
-
-      visit valuation_budget_budget_investment_path(budget, investment)
-      expect(page).not_to have_content('HACKERMAN IS HERE')
+    scenario 'Normal users cannot create valuation comments altering public comments form' do
+      comment = build(:comment, body: 'HACKERMAN IS HERE', valuation: true, author: user)
+      expect(comment).not_to be_valid
+      expect(comment.errors.size).to eq(1)
     end
 
     scenario 'Create comment', :js do

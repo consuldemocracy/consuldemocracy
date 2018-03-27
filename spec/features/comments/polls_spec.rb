@@ -49,17 +49,17 @@ feature 'Commenting polls' do
 
     expect(page).to have_css('.comment', count: 3)
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 2)
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 3)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 1)
     expect(page).not_to have_content child_comment.body
@@ -468,9 +468,8 @@ feature 'Commenting polls' do
       visit poll_path(@poll)
 
       within("#comment_#{@comment.id}_votes") do
-        find(".in_favor a").click
-
         within(".in_favor") do
+          find("a").click
           expect(page).to have_content "1"
         end
 
@@ -487,11 +486,12 @@ feature 'Commenting polls' do
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
+        find('.against a').click
+
         within('.in_favor') do
           expect(page).to have_content('0')
         end
 
-        find('.against a').click
         within('.against') do
           expect(page).to have_content('1')
         end

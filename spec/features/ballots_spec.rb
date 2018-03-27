@@ -26,7 +26,7 @@ feature 'Ballots' do
         click_link "Vote city proposals"
 
         within("#spending_proposal_#{sp1.id}") do
-          find('.add a').trigger('click')
+          find('.add a').click
         end
 
         expect(page).to have_css("#amount-spent", text: "$10,000")
@@ -38,7 +38,7 @@ feature 'Ballots' do
         end
 
         within("#spending_proposal_#{sp2.id}") do
-          find('.add a').trigger('click')
+          find('.add a').click
         end
 
         expect(page).to have_css("#amount-spent", text: "$30,000")
@@ -65,7 +65,7 @@ feature 'Ballots' do
         end
 
         within("#spending_proposal_#{sp1.id}") do
-          find('.remove a').trigger('click')
+          find('.remove a').click
         end
 
         expect(page).to have_css("#amount-spent", text: "$0")
@@ -91,7 +91,7 @@ feature 'Ballots' do
         click_link carabanchel.name
 
         within("#spending_proposal_#{sp1.id}") do
-          find('.add a').trigger('click')
+          find('.add a').click
           expect(page).to have_content "Remove"
         end
 
@@ -106,7 +106,7 @@ feature 'Ballots' do
         end
 
         within("#spending_proposal_#{sp2.id}") do
-          find('.add a').trigger('click')
+          find('.add a').click
         end
 
         expect(page).to have_css("#amount-spent", text: "$30,000")
@@ -136,7 +136,7 @@ feature 'Ballots' do
         end
 
         within("#spending_proposal_#{sp1.id}") do
-          find('.remove a').trigger('click')
+          find('.remove a').click
         end
 
         expect(page).to have_css("#amount-spent", text: "$0")
@@ -161,7 +161,7 @@ feature 'Ballots' do
         click_link "Vote city proposals"
 
         within("#spending_proposal_#{sp1.id}") do
-          find('.add a').trigger('click')
+          find('.add a').click
           expect(page).to have_content "Remove"
         end
 
@@ -179,7 +179,7 @@ feature 'Ballots' do
         expect(page).to have_css("#amount-spent", text: "$3,247,830")
 
         within("#spending_proposal_#{sp2.id}") do
-          find('.add a').trigger('click')
+          find('.add a').click
           expect(page).to have_content "Remove"
         end
 
@@ -221,7 +221,7 @@ feature 'Ballots' do
       click_link carabanchel.name
 
       within("#spending_proposal_#{sp1.id}") do
-        find('.add a').trigger('click')
+        find('.add a').click
         expect(page).to have_content "Remove"
       end
 
@@ -248,7 +248,7 @@ feature 'Ballots' do
       click_link california.name
 
       within("#spending_proposal_#{sp1.id}") do
-        find('.add a').trigger('click')
+        find('.add a').click
       end
 
       visit select_district_path
@@ -267,13 +267,13 @@ feature 'Ballots' do
       visit spending_proposals_path(geozone: california)
 
       within("#spending_proposal_#{sp1.id}") do
-        find('.remove a').trigger('click')
+        find('.remove a').click
       end
 
       visit spending_proposals_path(geozone: new_york)
 
       within("#spending_proposal_#{sp2.id}") do
-        find('.add a').trigger('click')
+        find('.add a').click
       end
 
       visit select_district_path
@@ -332,7 +332,7 @@ feature 'Ballots' do
     expect(page).to have_content("You voted one proposal")
 
     within("#spending_proposal_#{sp.id}") do
-      find(".remove-investment-project").trigger('click')
+      find(".remove-investment-project").click
     end
 
     expect(current_path).to eq(ballot_path)
@@ -361,7 +361,7 @@ feature 'Ballots' do
     end
 
     within("#sidebar #spending_proposal_#{sp1.id}_sidebar") do
-      find(".remove-investment-project").trigger('click')
+      find(".remove-investment-project").click
     end
 
     expect(page).to have_css("#amount-spent", text: "$20,000")
@@ -398,7 +398,7 @@ feature 'Ballots' do
     end
 
     within("#sidebar #spending_proposal_#{sp1.id}_sidebar") do
-      find(".remove-investment-project").trigger('click')
+      find(".remove-investment-project").click
     end
 
     expect(page).to have_css("#amount-spent", text: "$20,000")
@@ -506,7 +506,7 @@ feature 'Ballots' do
       visit spending_proposals_path(geozone: 'all')
 
       within("#spending_proposal_#{sp1.id}") do
-        find('.add a').trigger('click')
+        find('.add a').click
         expect_message_insufficient_funds
       end
     end
@@ -522,7 +522,7 @@ feature 'Ballots' do
       visit spending_proposals_path(geozone: 'all')
 
       within("#spending_proposal_#{sp1.id}") do
-        find('.add a').trigger('click')
+        find('.add a').click
         expect(page).to have_content "Remove vote"
       end
 
@@ -551,7 +551,7 @@ feature 'Ballots' do
       end
 
       within("#spending_proposal_#{sp1.id}") do
-        find('.remove a').trigger('click')
+        find('.remove a').click
       end
 
       within("#spending_proposal_#{sp2.id}") do
@@ -579,7 +579,7 @@ feature 'Ballots' do
       end
 
       within("#spending_proposal_#{sp1.id}_sidebar") do
-        find('.remove-investment-project').trigger('click')
+        find('.remove-investment-project').click
       end
 
       expect(page).not_to have_css "#spending_proposal_#{sp1.id}_sidebar"
@@ -602,7 +602,7 @@ feature 'Ballots' do
       visit spending_proposals_path(geozone: 'all')
 
       within("#spending_proposal_#{sp1.id}") do
-        find('.add a').trigger('click')
+        find('.add a').click
         expect(page).to have_content "Remove vote"
       end
 
@@ -624,7 +624,7 @@ feature 'Ballots' do
       visit spending_proposals_path(geozone: 'all')
 
       within("#spending_proposal_#{sp.id}") do
-        find('.add a').trigger('click')
+        find('.add a').click
         expect(page).to have_content "Remove vote"
       end
 

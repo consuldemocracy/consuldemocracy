@@ -12,7 +12,7 @@ feature 'Legislation Proposals' do
   let(:process)  { create(:legislation_process) }
   let(:proposal) { create(:legislation_proposal) }
 
-  scenario 'Each user as a different and consistent random proposals order', :js do
+  scenario 'Each user as a different and consistent random proposals order' do
     create_list(:legislation_proposal, 10, process: process)
 
     in_browser(:one) do
