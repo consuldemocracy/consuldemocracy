@@ -13,11 +13,16 @@
               <div class="milestone-content">
                 <% if milestone.publication_date.present? %>
                   <span class="milestone-date">
-                    <strong><%= t("budgets.investments.show.milestone_publication_date",
-                                publication_date: l(milestone.publication_date.to_date)) %></strong>
+                    <strong>
+                      <%= t("budgets.investments.show.milestone_publication_date",
+                                publication_date: l(milestone.publication_date.to_date)) %>
+                    </strong>
                   </span>
                 <% end %>
-                <%= image_tag(milestone.image_url(:large), { alt: milestone.image.title, class: "margin", id: "image_#{milestone.id}" }) if milestone.image.present? %>
+                <%= image_tag(milestone.image_url(:large),
+                             { alt: milestone.image.title.unicode_normalize,
+                               class: "margin",
+                               id: "image_#{milestone.id}" }) if milestone.image.present? %>
                 <p><%= text_with_links milestone.description %></p>
                 <% if milestone.documents.present? %>
                   <div class="document-link text-center">

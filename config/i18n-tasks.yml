@@ -187,6 +187,7 @@ ignore_unused:
   - 'admin.site_customization.pages.page.status_*'
   - 'admin.legislation.processes.process.*'
   - 'legislation.processes.index.*'
+  - '*.form.map_skip_checkbox'
   - 'votes.budget_investments.different_heading_assigned*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
