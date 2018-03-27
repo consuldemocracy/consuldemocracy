@@ -527,6 +527,7 @@ en:
       feasible_and_undecided_investment_authors: "Authors of some investment in the current budget that does not comply with: [valuation finished unfesasible]"
       selected_investment_authors: Authors of selected investments in the current budget
       winner_investment_authors: Authors of winner investments in the current budget
+      not_supported_on_current_budget: Users that haven't supported investments on current budget
       invalid_recipients_segment: "Recipients user segment is invalid"
     newsletters:
       create_success: Newsletter created successfully

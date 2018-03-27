@@ -526,6 +526,7 @@ es:
       feasible_and_undecided_investment_authors: "Usuarios autores de algún proyecto de gasto en los actuales presupuestos que no cumpla: [evaluación finalizada inviable]"
       selected_investment_authors: Usuarios autores de proyectos de gasto seleccionadas en los actuales presupuestos
       winner_investment_authors: Usuarios autores de proyectos de gasto ganadoras en los actuales presupuestos
+      not_supported_on_current_budget: Usuarios que no han apoyado proyectos de los actuales presupuestos
       invalid_recipients_segment: "El segmento de destinatarios es inválido"
     newsletters:
       create_success: Newsletter creada correctamente
