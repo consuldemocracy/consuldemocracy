@@ -13,10 +13,9 @@ feature 'Moderate proposals' do
   end
 
   scenario 'Hide', :js do
-    citizen = create(:user)
+    citizen   = create(:user)
+    proposal  = create(:proposal)
     moderator = create(:moderator)
-
-    proposal = create(:proposal)
 
     login_as(moderator.user)
     visit proposal_path(proposal)

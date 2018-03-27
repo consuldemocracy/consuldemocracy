@@ -132,7 +132,10 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/logo_header.png'), false)
+      documentable_attach_new_file(
+        Rails.root.join('spec/fixtures/files/logo_header.png'),
+        false
+      )
 
       expect(page).to have_css ".loading-bar.errors"
     end
@@ -150,7 +153,10 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/logo_header.png'), false)
+      documentable_attach_new_file(
+        Rails.root.join('spec/fixtures/files/logo_header.png'),
+        false
+      )
 
       expect_document_has_cached_attachment(0, "")
     end

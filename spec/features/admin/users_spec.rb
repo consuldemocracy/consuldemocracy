@@ -18,6 +18,7 @@ feature 'Admin users' do
 
   scenario 'The username links to their public profile' do
     click_link @user.name
+
     expect(page).to have_current_path(user_path(@user))
   end
 
