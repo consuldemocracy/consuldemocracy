@@ -216,6 +216,12 @@ es:
           title: Ganadora
           "true": "Si"
           "false": "No"
+        image: "Imagen"
+        see_image: "Ver imagen"
+        no_image: "Sin imagen"
+        documents: "Documentos"
+        see_documents: "Ver documentos (%{count})"
+        no_documents: "Sin documentos"
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
