@@ -15,7 +15,7 @@ feature "Notifications" do
     unread = create(:notification, user: user)
 
     click_notifications_icon
-    click_link "All notifications"
+    click_link "Read"
 
     expect(page).to have_css(".notification", count: 2)
     expect(page).to have_content(read1.notifiable_title)
@@ -85,7 +85,7 @@ feature "Notifications" do
     notification2 = create(:notification, user: user)
 
     click_notifications_icon
-    click_link "All notifications"
+    click_link "Read"
 
     expect(page).to have_css(".notification", count: 1)
     within("#notification_#{notification1.id}") do
