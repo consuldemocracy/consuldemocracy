@@ -7,7 +7,7 @@ feature "Welcome screen" do
 
     login_through_form_as(user)
 
-    expect(page).to have_current_path(articles_path)
+    expect(page).to have_current_path(welcome_path)
   end
 
   xscenario 'a regular user does not see it when coing to /email' do
