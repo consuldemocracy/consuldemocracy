@@ -520,7 +520,7 @@ es:
       administrators: Administradores
       proposal_authors: Usuarios autores de propuestas
       investment_authors: Usuarios autores de proyectos de gasto en los actuales presupuestos
-      feasible_and_undecided_investment_authors: Usuarios autores de proyectos de gasto viables o sin decidir en los actuales presupuestos
+      feasible_and_undecided_investment_authors: "Usuarios autores de algún proyecto de gasto en los actuales presupuestos que no cumpla: [evaluación finalizada inviable]"
       selected_investment_authors: Usuarios autores de proyectos de gasto seleccionadas en los actuales presupuestos
       winner_investment_authors: Usuarios autores de proyectos de gasto ganadoras en los actuales presupuestos
       invalid_recipients_segment: "El segmento de destinatarios es inválido"
@@ -559,7 +559,7 @@ es:
     emails_download:
       index:
         title: Descarga de emails
-        download_segment: Descargar segmento
+        download_segment: Descargar direcciones de correo electrónico
         download_segment_help_text: Descarga en formato CSV
         download_emails_button: Descargar lista de emails
     valuators:

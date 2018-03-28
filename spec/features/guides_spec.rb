@@ -13,14 +13,26 @@ feature 'Guide the user to create the correct resource' do
     Setting['feature.guides'] = nil
   end
 
-  scenario "Proposal" do
-    login_as(user)
-    visit proposals_path
+  context "Proposals" do
+    scenario "Proposal creation" do
+      login_as(user)
+      visit proposals_path
 
-    click_link "Create a proposal"
-    click_link "I want to create a proposal"
+      click_link "Create a proposal"
+      click_link "I want to create a proposal"
 
-    expect(page).to have_current_path(new_proposal_path)
+      expect(page).to have_current_path(new_proposal_path)
+    end
+
+    scenario "Proposal creation when Budget is not accepting" do
+      budget.update_attribute(:phase, :reviewing)
+      login_as(user)
+      visit proposals_path
+
+      click_link "Create a proposal"
+
+      expect(page).to have_current_path(new_proposal_path)
+    end
   end
 
   scenario "Budget Investment" do
