@@ -222,7 +222,7 @@ feature 'Budget Investments' do
       end
     end
 
-    # This tests passes ok locally but fails on the last two lines in Travis
+    # This test passes ok locally but fails on the last two lines in Travis
     xscenario 'Supporting budget investments on behalf of someone in show view', :js do
       budget_investment = create(:budget_investment, budget: @budget)
 

@@ -266,12 +266,10 @@ feature 'Admin budgets' do
         click_button 'Save heading'
       end
 
-      expect(page).not_to have_content 'This group has no assigned heading.'
-
       visit admin_budget_path(budget)
+
       within("#budget_group_#{group.id}") do
         expect(page).not_to have_content 'This group has no assigned heading.'
-
         expect(page).to have_content 'District 9 reconstruction'
         expect(page).to have_content '€6,785'
         expect(page).to have_content '100500'

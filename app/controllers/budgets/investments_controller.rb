@@ -20,6 +20,8 @@ module Budgets
     before_action :set_default_budget_filter, only: :index
     before_action :set_view, only: :index
 
+    skip_authorization_check only: :json_data
+
     feature_flag :budgets
 
     has_orders %w{most_voted newest oldest}, only: :show
