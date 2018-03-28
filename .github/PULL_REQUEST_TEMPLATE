@@ -1,29 +1,17 @@
-Where
-=====
-* **Related Issue:** LINK_OR_#_REF
-* **Related PR's:** LINK_OR_#_REF_IF_ANY
-
-What
-====
-- Whats the objective of this changes ?
-
-How
-===
-- How you implemented/achieved the objective ?
-
-Screenshots
-===========
-- If changes affect UI just show them drag&dropping images here
-- If change could affect mobile view use your browser developer console to try it & grab another screenshot.
-
-Test
-====
-- Is manual test needed or you just increased/fixed coverage?
-
-Deployment
+References
 ==========
-- Any details to remember when this feature is deployed?
+> Add references to related Issues/Pull Requests/Travis Builds/Rollbar errors/etc...
 
-Warnings
-========
-- Some caveats or important things to notice?
+Objectives
+==========
+> What are the objectives of this changes? (If there is no related Issue with an explanation)
+
+Visual Changes (if any)
+=======================
+> Any visual changes? please attach screenshots (or gifs) showing them.
+> If modified views are public (not the admin panel), try them in mobile display (with your browser's developer console) and add screenshots.
+
+Notes
+=====================
+> Mention rake tasks or actions to be done when deploying this changes to a server (if any).
+> Explain any caveats, or important things to notice like deprecations (if any).

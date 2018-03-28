@@ -1,11 +1,9 @@
-<div class="row <% 'documents-list' if documents.any? %>">
-  <div class="small-12 column">
-    <% if documents.any? %>
+<div class="documents">
+  <h2><%= t("documents.title") %>&nbsp;<span>(<%= documents.count %>)</span></h2>
+
+  <% if documents.any? %>
+    <ul class="no-bullet document-link">
       <%= render partial: "documents/document", collection: documents %>
-    <% else %>
-      <div class="callout primary text-center">
-        <%= t('documents.no_documents') %>
-      </div>
-    <% end %>
-  </div>
+    </ul>
+  <% end %>
 </div>

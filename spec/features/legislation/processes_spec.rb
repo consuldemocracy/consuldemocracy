@@ -124,6 +124,23 @@ feature 'Legislation' do
 
         expect(page).to have_content(document.title)
       end
+
+      scenario 'show additional info button' do
+        process = create(:legislation_process, additional_info: "Text for additional info of the process")
+
+        visit legislation_process_path(process)
+
+        expect(page).to have_content("Additional information")
+        expect(page).to have_content("Text for additional info of the process")
+      end
+
+      scenario 'do not show additional info button if it is empty' do
+        process = create(:legislation_process)
+
+        visit legislation_process_path(process)
+
+        expect(page).to_not have_content("Additional information")
+      end
     end
 
     context 'debate phase' do

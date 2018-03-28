@@ -89,6 +89,10 @@ a {
   &.warning:hover {
     color: #000;
   }
+
+  &.medium {
+    font-size: $small-font-size;
+  }
 }
 
 .button.hollow {
@@ -115,6 +119,10 @@ a {
 
 .inline-block {
   display: inline-block;
+}
+
+.aling-middle {
+  vertical-align: middle;
 }
 
 .sidebar-divider {
@@ -2310,61 +2318,48 @@ table {
 // 20. Documents
 // -------------
 
-.documents-list {
+.documents {
 
-  table {
-    border: 0;
+  h2 {
+    font-size: rem-calc(24);
+
+    span {
+      color: #4f4f4f;
+      font-weight: normal;
+    }
   }
 
-  td {
+  ul li {
+    padding-top: $line-height / 2;
+
+    &:not(:first-child) {
+      border-top: 1px solid $highlight;
+    }
+  }
+
+  .document-link {
+    background: $highlight-soft;
+    border: 2px solid $highlight;
+    border-radius: rem-calc(5);
+    display: block;
+    margin: $line-height / 2 0;
+    padding: 0 $line-height / 2;
     position: relative;
 
-    @include breakpoint(small) {
-      float: left;
-      width: 100%;
-    }
-
-    @include breakpoint(medium) {
-      float: none;
-    }
-
     a {
-      width: 100%;
+      word-wrap: break-word;
     }
 
-    &:first-child {
-      padding-left: $line-height * 1.5;
-
-      @include breakpoint(small) {
-        width: 100%;
-      }
-
-      @include breakpoint(medium) {
-        width: 70%;
-      }
-
-      @include breakpoint(large) {
-        width: 80%;
-      }
-    }
-
-    &:first-child::before {
+    .icon-document {
       color: #007bb7;
-      content: 'G';
-      font-family: "icons" !important;
+      display: inline-block;
       font-size: rem-calc(24);
-      left: rem-calc(6);
-      position: absolute;
-      top: 0;
+      line-height: $line-height;
+      vertical-align: middle;
+    }
 
-      @include breakpoint(small) {
-        padding-top: rem-calc(12);
-      }
-
-      @include breakpoint(medium) {
-        padding-top: rem-calc(22);
-      }
-
+    p {
+      margin-bottom: 0;
     }
   }
 }

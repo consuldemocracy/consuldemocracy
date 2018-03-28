@@ -8,8 +8,8 @@ class Newsletter < ActiveRecord::Base
 
   validates_format_of :from, :with => /@/
 
-  def list_of_recipients
-    UserSegments.send(segment_recipient).newsletter if valid_segment_recipient?
+  def list_of_recipient_emails
+    UserSegments.user_segment_emails(segment_recipient) if valid_segment_recipient?
   end
 
   def valid_segment_recipient?

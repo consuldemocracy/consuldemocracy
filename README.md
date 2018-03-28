@@ -77,7 +77,7 @@ Ces actions sont documentées dans [les releases](https://github.com/consul/cons
 
 **NOTE**: For more detailed instructions check the [docs](https://github.com/consul/docs/tree/master/en/getting_started/prerequisites)
 
-Prerequisites: install git, Ruby 2.3.2, `bundler` gem, and PostgreSQL (>=9.4).
+Prerequisites: install git, Ruby 2.3.2, `bundler` gem, Node.js and PostgreSQL (>=9.4).
 
 ```bash
 git clone https://github.com/CDJ11/CDJ.git

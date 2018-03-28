@@ -32,7 +32,6 @@ class MigrateSpendingProposalsToInvestments
       external_url: sp.external_url,
       price: sp.price,
       price_explanation: sp.price_explanation,
-      internal_comments: sp.internal_comments,
       duration: sp.time_scope,
       feasibility: feasibility,
       unfeasibility_explanation: sp.feasible_explanation,
