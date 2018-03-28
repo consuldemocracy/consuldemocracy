@@ -84,7 +84,7 @@ feature "Voter" do
       expect(page).not_to have_content("You have already participated in this poll. If you vote again it will be overwritten")
     end
 
-    scenario "Voting in booth", :js do
+    scenario 'Voting in booth', :js do
       user = create(:user, :in_census)
 
       login_through_form_as_officer(officer.user)
@@ -118,11 +118,7 @@ feature "Voter" do
     end
 
     context "Trying to vote the same poll in booth and web" do
-
       let!(:user) { create(:user, :in_census) }
-
-      background do
-      end
 
       scenario "Trying to vote in web and then in booth", :js do
         login_as user

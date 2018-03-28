@@ -253,12 +253,16 @@ en:
         table_title: "Title"
         table_description: "Description"
         table_publication_date: "Publication date"
+        table_status: Status
         table_actions: "Actions"
         delete: "Delete milestone"
         no_milestones: "Don't have defined milestones"
         image: "Image"
         show_image: "Show image"
         documents: "Documents"
+      form:
+        admin_statuses: Admin investment statuses
+        no_statuses_defined: There are no defined investment statuses yet
       new:
         creating: Create milestone
         date: Date

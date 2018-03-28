@@ -205,4 +205,5 @@ describe UserSegments do
       expect(described_class.beta_testers.pluck(:email)).to match_array(beta_testers)
     end
   end
+
 end
