@@ -8,5 +8,7 @@ module Consul
     else
       config.i18n.available_locales = [:fr]
     end
+
+    config.autoload_paths << "#{Rails.root}/app/services/custom"
   end
 end

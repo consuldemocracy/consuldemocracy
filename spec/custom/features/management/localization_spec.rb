@@ -22,6 +22,7 @@ feature 'Localization' do
     end
   end
 
+
   xscenario 'The current locale is selected' do
     visit management_root_path
     expect(page).to have_select('locale-switcher', selected: 'English')
