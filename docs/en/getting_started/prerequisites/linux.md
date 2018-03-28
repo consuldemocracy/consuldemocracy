@@ -100,4 +100,63 @@ apt-get update
 apt-get install postgresql-9.4
 ```
 
+## ChromeDriver
+
+To run E2E integration tests, we use Selenium along with Headless Chrome.
+
+On Debian-based distros, the process to get ChromeDriver up and running is not as straightforward as on Mac OS.
+
+To get it working, first install the following packages:
+
+```bash
+sudo apt-get update && sudo apt-get install libxss1 libappindicator1 libindicator7 unzip
+```
+
+Then you need either Google Chrome or Chromium installed, both are valid.
+
+You can download the former from [here](https://www.google.com/chrome/index.html), while the latter can be installed with the following command:
+
+```bash
+sudo apt-get install chromium
+```
+
+You can now proceed to install ChromeDriver. First, check out its latest version [here](https://sites.google.com/a/chromium.org/chromedriver/)
+
+Download it the following way:
+
+```bash
+wget -N http://chromedriver.storage.googleapis.com/2.37/chromedriver_linux64.zip
+```
+
+Unzip it and make it executable like this:
+
+```bash
+unzip chromedriver_linux64.zip
+chmod +x chromedriver
+```
+
+Finally, add the binary to your `$PATH`:
+
+```bash
+sudo mv -f chromedriver /usr/local/share/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+```
+
+Make sure everything's working as expected by running the following command:
+
+```bash
+chromedriver --version
+```
+
+You should receive an output with the latest version of ChromeDriver. If that's the case, you're good to go!
+
+If you happen to be on an Arch-based distro, installing `chromium` from the `extra` repo will do.
+
+There's also the option to only install ChromeDriver from AUR. If you're using `pacaur`, this will do:
+
+```bash
+pacaur -S chromedriver
+```
+
 > Now you're ready to go get Consul [installed](../installation.html)!!
