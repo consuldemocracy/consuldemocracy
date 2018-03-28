@@ -96,10 +96,10 @@ También tendrás que borrar el siguiente directorio para que no de conflictos c
 rm -rf /usr/local/var/postgres
 ```
 
-## PhantomJS
+## ChromeDriver
 
 ```
-brew install phantomjs
+brew install chromedriver
 ```
 
 ## Imagemagick

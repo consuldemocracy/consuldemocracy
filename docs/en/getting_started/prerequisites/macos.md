@@ -94,10 +94,10 @@ You'll have to delete also this directory (otherwise the new installation will g
 rm -rf /usr/local/var/postgres
 ```
 
-## PhantomJS
+## ChromeDriver
 
 ```
-brew install phantomjs
+brew install chromedriver
 ```
 
 ## Imagemagick
