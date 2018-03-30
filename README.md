@@ -35,7 +35,7 @@ Voir la [page dédiée sur le site du département](https://www.aude.fr/670-cons
 ### Workflow
 
 * la branche `master` est la référence qui doit rester déployable en production à chaque instant
-* les Pull Requests sont fusionnées en faisant un **Squash and Merge** afin de garder un historique plus lisibles des évolutions qui ont eut lieux sur ce fork
+* les Pull Requests sont automatiquement fusionnées en faisant un **Squash and Merge** afin de garder un historique plus lisibles des évolutions qui ont eut lieux sur ce fork
   * [exemple de commit issu d'un "squash and merge"](https://github.com/CDJ11/CDJ/commit/1445a0e069b81983d85008e6941925d33bfeedf4)
 * le fork est mis à jour en suivant [le processus décrit dans la doc officielle](https://consul_docs.gitbooks.io/docs/content/en/forks/update.html)
 
@@ -73,6 +73,20 @@ En production penser à bloquer l'accès aux comptes admin et verified.
 Certaines releases nécessitent des actions particulières suite à une montée de version.
 Ces actions sont documentées dans [les releases](https://github.com/consul/consul/releases).
 
+## Déploiement avec import 
+
+L'import comprend déjà les geozones et les settings de base. Les geozones ne sont donc pas à importer (provoque une erreur).
+
+Si une première version a déjà été déployée, il faut vider la base et la recréer vide pour effectuer l'import.
+
+```bash 
+bin/rake db:drop
+bin/rake db:create
+bin/rake db:migrate
+# suivant ou se trouve le dump de la base a importer
+psql cdj_production < doc/custom/extract_db_insert_180326.sql
+bin/rake db:custom_seed
+```
 ## Configuration for development and test environments
 
 **NOTE**: For more detailed instructions check the [docs](https://github.com/consul/docs/tree/master/en/getting_started/prerequisites)
