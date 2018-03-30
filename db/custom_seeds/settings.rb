@@ -28,6 +28,13 @@ section "Creating custom Settings" do
   Setting['meta_description'] = "Conseil départemental des jeunes de l'Aude"
   Setting['meta_keywords'] = 'participation, jeunes, citoyenneté'
 
+  # Settings extraient de l ancienne BDD
+  Setting['min_age_to_participate'] = '16'
+  Setting['max_age_to_participate'] = '25'
+  Setting['proposal_code_prefix'] = 'CDJ'
+  Setting['votes_for_proposal_success'] = '30'
+  Setting['votes_for_debate_success'] = '30'
+
   #Setting.create(key: 'official_level_1_name',
   #               value: I18n.t('seeds.settings.official_level_1_name'))
   #Setting.create(key: 'official_level_2_name',
