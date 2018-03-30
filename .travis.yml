@@ -8,6 +8,7 @@ bundler_args: --without development
 before_script:
   - for i in config/*.example; do cp "$i" "${i/.example}"; done
   - bundle exec rake db:setup
+  - bundle exec rake db:custom_seed
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
@@ -28,5 +29,6 @@ notifications:
   email:
     recipients:
       - emilien@happy-dev.fr
+      - claire.zuliani@happy-dev.fr
     on_failure: always
     on_success: never

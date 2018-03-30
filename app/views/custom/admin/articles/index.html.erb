@@ -17,7 +17,7 @@
     <% @articles.each do |article| %>
       <tr id="<%= dom_id(article) %>">
         <td><%= article.title %></td>
-        <td><%= article.status %></td>
+        <td><%= t("article.statuses.title.#{article.status}") %></td>
         <td><%= l article.updated_at.to_date %></td>
         <td>
           <%= link_to "Editer", edit_admin_article_path(article), class: 'edit-banner button hollow' %>

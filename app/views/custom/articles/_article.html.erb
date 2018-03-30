@@ -1,36 +1,48 @@
-<div id="<%= dom_id(article) %>" class="investment-project clear">
-  <div class="panel">
-    <div class="row">
+<div id="<%= dom_id(article) %>" class="article with-image">
 
-      <div class="small-12 medium-9 column">
-        <div class="investment-project-content">
+  <div class="row" data-equalizer data-equalize-on="medium">
 
-          <h3><%= link_to article.title, article_path(article.slug) %></h3>
+    <div class="small-12 medium-3 column">
+      <div class="image-container" data-equalizer-watch>
+        <% if article.image.present? %>
+          <%= image_tag article.image_url(:large), alt: article.image.title %>
+        <% end %>
+      </div>
+    </div>
 
-          <p class="investment-project-info">
-            <%= l article.created_at.to_date %>
-            <span class="bullet">&nbsp;&bull;&nbsp;</span>
-            <span class="author">
-              <%= article.author.name %>
-            </span>
-            <% if article.author.display_official_position_badge? %>
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <span class="label round level-<%= article.author.official_level %>">
-                <%= article.author.official_position %>
-              </span>
-            <% end %>
-            <!--span class="bullet">&nbsp;&bull;&nbsp;</span-->
-            <%# geozone_name(article) %>
-          </p>
+    <div class="small-12 medium-6 column article-main" data-equalizer-watch>
 
-          <div class="investment-project-description">
-            <p><%= link_to article.content.html_safe, article_path(article.slug) %></p>
-            <div class="truncate"></div>
-          </div>
+      <h3><%= link_to article.title, article_path(article) %></h3>
 
-        </div>
+      <p class="article-info">
+        <%= l article.created_at.to_date %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <span class="author">
+          <%= article.author.name %>
+        </span>
+        <% if article.author.display_official_position_badge? %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <span class="label round level-<%= article.author.official_level %>">
+            <%= article.author.official_position %>
+          </span>
+        <% end %>
+        <!--span class="bullet">&nbsp;&bull;&nbsp;</span-->
+        <%# geozone_name(article) %>
+      </p>
+
+      <div class="article-description">
+        <p><%= article.content.html_safe %></p>
+        <div class="truncate"></div>
       </div>
 
+    </div>
+
+    <div class="small-12 medium-3 column table article-actions" data-equalizer-watch>
+      <div class="table-cell align-middle">
+        <%= link_to article_path(article), class: "button hollow expanded" do %>
+          <%= t("articles.index.read_button") %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

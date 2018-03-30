@@ -4,3 +4,11 @@ fr:
     menu:
       articles:
         "Rédaction des actualités"
+    articles:
+      delete:
+        success: Article supprimé avec succès
+        error: Cet article ne peut pas être effacé.
+      create:
+        form:
+          submit_button: Créer l'article
+

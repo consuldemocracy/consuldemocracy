@@ -3,21 +3,14 @@
 <main>
   <div class="row">
     <%# TODO - change id and class to smth dedicated to articles %>
-    <div id="investment-projects" class="investment-projects-list small-12 medium-9 column">
+    <div id="articles" class="small-12 column">
       <% if @articles.any? %>
         <%= render partial: 'articles/article', collection: @articles %>
-        <%# paginate @articles %>
+        <%= paginate @articles %>
       <% else %>
         <%# TODO - internationalization %>
         Aucune actualité publiée
       <% end %>
     </div>
-
-    <div class="small-12 medium-3 column">
-      <aside id="sidebar" class="margin-bottom">
-        <%# render 'sidebar' %>
-      </aside>
-    </div>
-
   </div>
 </main>
