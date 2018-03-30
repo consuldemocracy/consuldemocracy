@@ -3,6 +3,8 @@ fr:
   articles:
     show:
       share: "Partager"
+    index:
+      read_button: "Lire l'article"
   account:
     show:
       email_on_comment_label: Me notifier par email quand quelqu'un commente mes projets ou mes idées

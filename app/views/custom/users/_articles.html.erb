@@ -6,7 +6,7 @@
     <% @articles.each do |article| %>
       <tr id="article_<%= article.id %>">
         <td>
-          <h4><%= link_to article.title, article_path(article.slug) %></h4>
+          <h4><%= link_to article.title, article_path(article) %></h4>
           <h5><%= article.subtitle %></h4>
           <br>
           <%= truncate(article.content, length: 300, escape: false) %>

@@ -5,11 +5,12 @@ class ArticlesController < ApplicationController
   skip_authorization_check
 
   def index
-    @articles = Article.published
+    @articles = Article.published.page(params[:page])
   end
 
   def show
-    @article = Article.published.find_by(slug: params[:id])
+    article_id = params[:id].to_s[/^(\d+)/]
+    @article = Article.published.find(article_id)
 
     if @article.present?
       render action: :show

@@ -1,0 +1,22 @@
+fr:
+  activerecord:
+    attributes:
+      article:
+        title:       Le titre
+        subtitle:    Le sous-titre
+
+
+
+  helpers:
+    label:
+      article:
+        title:      Titre
+        subtitle:   Sous-titre
+        content:    Corps
+        status:     Etat
+
+  article:
+    statuses:
+      title:
+        draft: Brouillon
+        published: Publié

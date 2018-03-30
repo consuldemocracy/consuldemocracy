@@ -34,17 +34,17 @@ class Admin::ArticlesController < Admin::BaseController
   end
 
   def destroy
-    if @article.safe_to_destroy?
-      @article.destroy
-      redirect_to admin_articles_path, notice: t('admin.geozones.delete.success')
+    if @article.destroy
+      redirect_to admin_articles_path, notice: t('admin.articles.delete.success')
     else
-      redirect_to admin_articles_path, flash: { error: t('admin.geozones.delete.error') }
+      redirect_to admin_articles_path, flash: { error: t('admin.articles.delete.error') }
     end
   end
 
   private
 
     def article_params
-      params.require(:article).permit(:title, :slug, :subtitle, :content, :status)
+      image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
+      params.require(:article).permit(:title, :subtitle, :content, :status, image_attributes: image_attributes)
     end
 end

@@ -1,0 +1,4 @@
+fr:
+  errors:
+    messages:
+      blank: ne peut être vide

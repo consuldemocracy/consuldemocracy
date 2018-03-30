@@ -1,7 +1,7 @@
 // Overrides and adds customized styles in this file
 
 ///////////////////////////////////////
-// HEADER
+// LAYOUT HEADER
 ///////////////////////////////////////
 
 .top-bar {
@@ -95,6 +95,223 @@ $subnavigation-sm-btn-width: 130px;
   }
 }
 
+
+///////////////////////////////////////
+// ARTICLES
+///////////////////////////////////////
+
+// Admin
+.article-form {
+  @include direct-uploads;
+}
+
+// Front - articles index
+.article.with-image {
+  border: 1px solid $border;
+  margin-bottom: 0.75rem;
+  padding: 0 0.75rem 0 0;
+  position: relative;
+  h3 a{
+    color: $text;
+  }
+  img {
+    height: 100%;
+    max-width: none;
+    position: absolute;
+  }
+  .article-main {
+    padding: .75rem 1.25rem 0;
+  }
+  .article-actions {
+    padding: .75rem 1.25rem 0;
+  }
+  .article-info {
+    color: $text-medium;
+    font-size: $small-font-size;
+    margin: rem-calc(6) 0 0;
+
+    .icon-comments {
+      font-size: rem-calc(16);
+      vertical-align: top;
+    }
+
+    a {
+      color: $text-medium;
+    }
+  }
+}
+
+
+// Front - article show
+.article-show {
+  h1,
+  p {
+    word-wrap: break-word;
+  }
+
+  .callout {
+    &.token-message {
+      background-color: #fff;
+      border-color: $info-border;
+      color: $color-info;
+    }
+
+    &.proposal-retired {
+      font-size: $base-font-size;
+    }
+  }
+
+  .social-share-full .social-share-button {
+    display: inline;
+  }
+
+  .whatsapp::before {
+    background-color: #43d854;
+    color: #fff;
+    display: inline-block;
+    font-size: rem-calc(30);
+    height: rem-calc(48);
+    padding-top: rem-calc(9);
+    text-align: center;
+    vertical-align: top;
+    width: rem-calc(48);
+  }
+
+  .article-info {
+    clear: both;
+    color: $text-medium;
+    font-size: $small-font-size;
+    margin-bottom: $line-height / 2;
+    position: relative;
+
+    span:not(.label) {
+      line-height: rem-calc(32); // Same as avatar height
+    }
+
+    a {
+      color: $text-medium;
+    }
+
+    p {
+      font-size: $small-font-size;
+      line-height: $line-height;
+      margin: 0;
+    }
+  }
+
+  .article-image {
+    margin-bottom: rem-calc(15);
+  }
+
+  .article-description {
+    font-size: rem-calc(15);
+    line-height: rem-calc(30);
+  }
+
+  ul,
+  ol {
+
+    li {
+      font-size: rem-calc(15);
+      margin-bottom: rem-calc(15);
+    }
+  }
+
+  .tags,
+  .geozone {
+
+    li {
+      margin-bottom: 0;
+    }
+  }
+
+  .author-photo {
+    line-height: rem-calc(32);
+    margin-right: rem-calc(6);
+    vertical-align: top;
+    width: 32px;
+  }
+
+  .author {
+    font-weight: bold;
+
+    a {
+      color: $link !important;
+    }
+  }
+
+  aside {
+
+    h2 {
+      border-top: 2px solid $brand;
+      display: inline-block;
+      font-size: rem-calc(16);
+      margin: -1px 0 rem-calc(12);
+      padding-top: rem-calc(6);
+      text-transform: uppercase;
+    }
+  }
+
+  blockquote {
+    color: #4c4c4c;
+    margin-top: rem-calc(12);
+    padding-top: 0;
+    font-size: rem-calc(15);
+    line-height: rem-calc(30);
+  }
+
+  .document-link,
+  .video-link {
+    background: $highlight-soft;
+    border: 1px solid $highlight;
+    display: block;
+    margin: $line-height / 2 0;
+    padding: $line-height / 2;
+    position: relative;
+
+    a {
+      word-wrap: break-word;
+    }
+
+    [class^="icon-"] {
+      display: inline-block;
+      font-size: rem-calc(24);
+      line-height: $line-height;
+      vertical-align: middle;
+    }
+
+    .icon-document {
+      color: #007bb7;
+    }
+
+    .icon-video {
+      color: #cc181e;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .supports {
+    @include supports;
+  }
+
+  .leave-comment {
+    display: inline-block;
+    margin-top: rem-calc(24);
+  }
+
+  .tags {
+    display: block;
+    margin-bottom: 0;
+
+    a {
+      margin-right: rem-calc(6);
+    }
+  }
+}
+
 ///////////////////////////////////////
 // ADMIN
 ///////////////////////////////////////
@@ -131,7 +348,5 @@ $subnavigation-sm-btn-width: 130px;
 }
 
 .admin .top-bar [class^="icon-"].subnavigation-icon {
-  // color: #fff;
   font-size: 4rem;
 }
-
