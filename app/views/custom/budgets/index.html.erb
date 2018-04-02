@@ -77,9 +77,9 @@
       <div id="groups_and_headings" class="groups-and-headings">
         <% current_budget.groups.each do |group| %>
           <h2 id="<%= group.name.parameterize %>"><%= group.name %></h2>
-          <ul class="no-bullet">
+          <ul class="no-bullet" data-equalizer data-equalizer-on="medium">
             <% group.headings.order_by_group_name.each do |heading| %>
-              <li class="heading small-12 medium-4 large-2">
+              <li class="heading small-12 medium-4 large-2" data-equalizer-watch>
                 <% unless current_budget.informing? %>
                   <%= link_to custom_budget_investments_path(group,
                                                              budget_id: current_budget,
