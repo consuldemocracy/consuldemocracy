@@ -31,11 +31,5 @@ require_relative 'dev_seeds/communities'
 require_relative 'dev_seeds/legislation_processes'
 require_relative 'dev_seeds/newsletters'
 require_relative 'dev_seeds/notifications'
-section "Marking investments as visible to valuators" do
-  (1..50).to_a.sample.times do
-    Budget::Investment.reorder("RANDOM()").first.update(visible_to_valuators: true)
-  end
-end
-
 
 log "All dev seeds created successfuly 👍"

@@ -362,12 +362,6 @@ module CommonActions
     fill_in "newsletter_from", with: (options[:from] || "no-reply@consul.dev")
     fill_in "newsletter_body", with: (options[:body] || "This is a different body")
   end
-  def wait_for_ajax
-    Timeout.timeout(Capybara.default_max_wait_time) do
-      loop until page.evaluate_script('jQuery.active').zero?
-    end
-  end
-
 
   def click_notifications_icon
     find("#notifications a").click

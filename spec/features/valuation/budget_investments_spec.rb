@@ -69,11 +69,11 @@ feature 'Valuation budget investments' do
   scenario 'Index displays investments paginated' do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times do
-      investment = create(:budget_investment, :visible_to_valuators, budget: @budget)
-      investment.valuators << @valuator
+      investment = create(:budget_investment, :visible_to_valuators, budget: budget)
+      investment.valuators << valuator
     end
 
-    visit valuation_budget_budget_investments_path(@budget)
+    visit valuation_budget_budget_investments_path(budget)
 
     expect(page).to have_css('.budget_investment', count: per_page)
 
@@ -92,34 +92,26 @@ feature 'Valuation budget investments' do
     valuating_heading = create(:budget_heading, name: "Only Valuating", group: group)
     valuating_finished_heading = create(:budget_heading, name: "Valuating&Finished", group: group)
     finished_heading = create(:budget_heading, name: "Only Finished", group: group)
-    create(:budget_investment, title: "Valuating Investment ONE",
+    create(:budget_investment, :visible_to_valuators, title: "Valuating Investment ONE",
                                heading: valuating_heading,
                                group: group,
                                budget: budget,
                                valuators: [valuator])
-    create(:budget_investment, title: "Valuating Investment TWO",
+    create(:budget_investment, :visible_to_valuators, title: "Valuating Investment TWO",
                                heading: valuating_finished_heading,
                                group: group,
                                budget: budget,
                                valuators: [valuator])
-    create(:budget_investment, :finished, title: "Finished ONE",
+    create(:budget_investment, :finished, :visible_to_valuators, title: "Finished ONE",
                                           heading: valuating_finished_heading,
                                           group: group,
                                           budget: budget,
                                           valuators: [valuator])
-    create(:budget_investment, :finished, title: "Finished TWO",
+    create(:budget_investment, :finished, :visible_to_valuators, title: "Finished TWO",
                                           heading: finished_heading,
                                           group: group,
                                           budget: budget,
                                           valuators: [valuator])
-    # heading1 = create(:budget_heading, name: "District 9", group: group)
-    # heading2 = create(:budget_heading, name: "Down to the river", group: group)
-    # investment1 = create(:budget_investment, :visible_to_valuators, title: "Realocate visitors",
-    #                                           heading: heading1, group: group, budget: budget)
-    # investment2 = create(:budget_investment, :visible_to_valuators, title: "Destroy the city",
-    #                                           heading: heading2, group: group, budget: budget)
-    investment1.valuators << valuator
-    investment2.valuators << valuator
 
     visit valuation_budget_budget_investments_path(budget)
 
@@ -299,6 +291,8 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Dossier empty by default' do
+      investment.update(visible_to_valuators: true)
+
       visit valuation_budget_budget_investments_path(budget)
       click_link investment.title
 
@@ -310,6 +304,7 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Edit dossier' do
+      investment.update(visible_to_valuators: true)
       visit valuation_budget_budget_investments_path(budget)
       within("#budget_investment_#{investment.id}") do
         click_link "Edit dossier"
@@ -411,6 +406,8 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Finish valuation' do
+      investment.update(visible_to_valuators: true)
+
       visit valuation_budget_budget_investment_path(budget, investment)
       click_link 'Edit dossier'
 
@@ -468,7 +465,10 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Validates price formats' do
+      investment.update(visible_to_valuators: true)
+
       visit valuation_budget_budget_investments_path(budget)
+
       within("#budget_investment_#{investment.id}") do
         click_link "Edit dossier"
       end
