@@ -108,6 +108,14 @@ feature 'Admin banners magement' do
     fill_in 'banner_background_color', with: '#850000'
     fill_in 'banner_font_color', with: '#ffb2b2'
 
+    page.find("body").click
+    # This simulates the blur event on the page. The color pickers and the text_fields has onChange events
+    # that update each one when the other changes, but this is only fired when the text_field loses the
+    # focus (color picker update when text_field changes). The first one works because when the test
+    # fills in the second one, the first loses the focus (so the onChange is fired). The second one never
+    # loses the focus, so the onChange is not been fired. page.find("body").click clicks out of the
+    # text_field and makes the field to lose the focus.
+
     expect(page.find_field("banner_background_color_picker").value).to eq('#850000')
     expect(page.find_field("banner_font_color_picker").value).to eq('#ffb2b2')
   end
@@ -145,8 +153,8 @@ feature 'Admin banners magement' do
 
     fill_in 'banner_title', with: 'Modified title'
     fill_in 'banner_description', with: 'Edited text'
-    select 'Banner style 1', from: 'banner_style'
-    select 'Banner image 2', from: 'banner_image'
+
+    page.find("body").click
 
     within('div#js-banner-background') do
       expect(page).to have_selector('h2', text: 'Modified title')
