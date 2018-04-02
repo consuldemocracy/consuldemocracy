@@ -807,6 +807,7 @@ en:
         btn_text_link: All recommended proposals
       budget_investments:
         title: Recommended investments
+      slide: "See %{title}"
     verification:
       i_dont_have_an_account: I don't have an account
       i_have_an_account: I already have an account

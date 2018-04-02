@@ -806,6 +806,7 @@ es:
         btn_text_link: Todas las propuestas recomendadas
       budget_investments:
         title: Presupuestos recomendados
+      slide: "Ver %{title}"
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar
