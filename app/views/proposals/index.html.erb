@@ -57,6 +57,12 @@
         </div>
       <% end %>
 
+      <div class="row">
+        <div class="small-12 column">
+          <%= render "view_mode" %>
+        </div>
+      </div>
+
       <% unless params[:retired].present? %>
         <%= render "shared/advanced_search",
                    search_path: path_to_search_proposals  %>
