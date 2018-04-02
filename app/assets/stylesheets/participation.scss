@@ -1255,7 +1255,8 @@
     }
 
     .callout {
-      &.primary a {
+
+      &.primary a {
         color: $link;
       }
     }
@@ -1357,8 +1358,7 @@
       text-decoration: none;
     }
 
-    a,
-    div {
+    a {
       display: block;
       padding: $line-height / 2;
 
