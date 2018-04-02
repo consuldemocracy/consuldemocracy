@@ -1,4 +1,4 @@
-<% provide :title do %><%= t('debates.index.title') %><% end %>
+<% provide :title do %><%= t("debates.index.title") %><% end %>
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
              search_path: debates_path(page: 1),
@@ -54,10 +54,10 @@
 
       <%= render "shared/advanced_search", search_path: debates_path(page: 1) %>
 
-      <%= render 'shared/order_links', i18n_namespace: "debates.index" %>
+      <%= render "shared/order_links", i18n_namespace: "debates.index" %>
 
       <div class="show-for-small-only">
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button expanded' %>
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
       </div>
 
       <% if @debates.any? || current_user.blank? %>
@@ -81,7 +81,7 @@
           <p><%= t("debates.index.section_footer.description") %></p>
           <p><%= t("debates.index.section_footer.help_text_1") %></p>
           <p><%= t("debates.index.section_footer.help_text_2",
-                    org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
+                    org: link_to(setting["org_name"], new_user_registration_path)).html_safe %></p>
           <p><%= t("debates.index.section_footer.help_text_3",
                     proposal: link_to(t("debates.index.section_footer.proposals_link"), proposals_path),
                     budget: link_to(t("debates.index.section_footer.budget_link"), budgets_path)).html_safe %>
@@ -93,8 +93,8 @@
     <div class="small-12 medium-3 column">
 
       <aside class="margin-bottom">
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button expanded' %>
-        <%= render "shared/tag_cloud", taggable: 'debate' %>
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
+        <%= render "shared/tag_cloud", taggable: "debate" %>
       </aside>
     </div>
 
