@@ -1,17 +1,128 @@
 es:
   admin:
+    officing_booth:
+      title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     legislation:
       proposals:
         form:
           custom_categories_placeholder: Escribe las etiquetas que desees separadas por una coma (,) y entrecomilladas ("")
+    segment_recipient:
+      beta_testers: "Beta testers"
     budget_investments:
       show:
-        info: "%{budget_name} - Grupo: %{group_name} - Proyecto de gasto %{id}"
+        organization_name: En nombre de
+        label: Chapa (visible públicamente)
+      edit:
+        label: Chapa (visible públicamente)
+    hidden_users:
+      show:
+        phone: 'Teléfono:'
+    recounts:
+      index:
+        all_booths_total: "Acumulado en todas las urnas:"
+        total_final: Recuentos finales
+        total_system: Votos (automático)
+    booths:
+      new:
+        physical: "Urna física"
     spending_proposals:
+      index:
+        max_per_geozone: Corte por distrito
+        max_for_no_geozone: Corte por ciudad
       show:
         compatibility_title: Compatibilidad
         compatibility:
           "true": "Compatible"
           "false": "Incompatible"
-    segment_recipient:
-      beta_testers: "Beta testers"
+      edit:
+        compatibility: Compatibilidad
+      results:
+        title: Ranking actual de propuestas - Votaciones finales
+        spending_proposal: Título
+        ballot_lines_count: Votos
+        hide_discarded_link: Ocultar descartadas
+        show_all_link: Mostrar todas
+        price: Coste
+        amount_available: Presupuesto disponible
+        incompatible: Incompatibles
+    stats:
+      show:
+        participatory_budget_2016: Presupuestos Participativos 2016
+        participatory_budgets: Presupuestos Participativos
+        polls: Votaciones
+        direct_messages: Mensajes directos
+        proposal_notifications: Notificaciones de propuestas
+        redeemable_codes: Códigos enviados por carta
+        user_invites: Invitaciones Linea Madrid
+        external_stats: Estadísticas externas
+        incomplete_verifications: Verificaciones incompletas
+        summary:
+          ballot_line_votes: Votos en inversión
+          ballot_votes: Presupuestos votados
+          spending_proposal_votes: Votos Propuesta Inversión
+          spending_proposals: Propuestas de inversión
+      graph:
+        debate_created: Debates
+        spending_proposals: Propuestas de inversión
+        visit: Visitas
+        level_2_user: Usuarios nivel 2
+        proposal_created: Propuestas Ciudadanas
+        participatory_budget: Presupuestos Participativos
+        user_voted_budgets: Usuarios que han votado
+        user_supported_budgets: Usuarios que han votado
+        unverified_users: Usuarios sin verificar
+      spending_proposals:
+        title: Presupuestos participativos
+        districts: Distrito
+        users: Usuarios
+        users_city_total: Usuarios que han votado propuestas de ciudad
+        users_district_total: Usuarios que han votado propuestas de distrito
+        users_city_only: Usuarios que han votado SOLO propuestas de CIUDAD
+        users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
+        users_both_total: Usuarios que han votado AMBAS
+      budgets:
+        title: "Presupuestos participativos - Estadisticas de participación"
+        supporting_phase: Fase de apoyos
+        balloting_phase: Votación final
+      budget_balloting:
+        title: "Estadísticas votación final"
+        vote_count: Votos
+        participant_count: Participantes
+        users_city_total: Usuarios que han votado propuestas de ciudad
+        users_district_total: Usuarios que han votado propuestas de distrito
+        users_both_total: Usuarios que han votado AMBAS
+        votes_per_heading: Votos por partida
+        participants_per_district: Participantes por distrito
+      budget_supporting:
+        title: "Estadísticas fase de apoyos"
+        headings: Partidas
+        users: Usuarios
+        users_city_total: Usuarios que han apoyado propuestas de ciudad
+        users_district_total: Usuarios que han apoyado propuestas de distrito
+        users_city_only: Usuarios que han apoyado SOLO propuestas de CIUDAD
+        users_district_only: Usuarios que han apoyado SOLO propuestas de DISTRITO
+        users_both_total: Usuarios que han apoyado AMBAS
+        vote_count: Votos
+        participant_count: Participantes
+      polls:
+        title: Estadísticas de votaciones
+        all: Votaciones
+        web_participants: Participantes en Web
+        total_participants: Participantes totales
+        poll_questions: "Preguntas de votación: %{poll}"
+        table:
+          poll_name: Votación
+          question_name: Pregunta
+          origin_web: Participantes Web
+          origin_total: Participantes Totales
+      proposal_notifications:
+        not_available: Esta propuesta ya no está disponible
+      reedemable_codes:
+        title: Códigos enviados por carta
+        total: Total
+        campaign: Después de las 400.000 cartas
+      user_invites:
+        title: Invitaciones Linea Madrid
+        total: Total
+        clicked_email_link: Link del email clickado
+        clicked_signup_button: Botón de registrarse clickado
