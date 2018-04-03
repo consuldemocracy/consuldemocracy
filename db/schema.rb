@@ -137,7 +137,6 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.string   "feasibility",                      limit: 15, default: "undecided"
     t.text     "price_explanation"
     t.text     "unfeasibility_explanation"
-    t.text     "internal_comments"
     t.boolean  "valuation_finished",                          default: false
     t.integer  "valuator_assignments_count",                  default: 0
     t.integer  "price_first_year",                 limit: 8
@@ -158,9 +157,8 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.string   "location"
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
-    t.integer  "ballot_lines_count",                    default: 0
-    t.integer  "previous_heading_id"
     t.integer  "ballot_lines_count",                          default: 0
+    t.integer  "previous_heading_id"
     t.boolean  "winner",                                      default: false
     t.boolean  "incompatible",                                default: false
     t.integer  "community_id"
@@ -188,16 +186,6 @@ ActiveRecord::Schema.define(version: 20180320104823) do
   add_index "budget_phases", ["kind"], name: "index_budget_phases_on_kind", using: :btree
   add_index "budget_phases", ["next_phase_id"], name: "index_budget_phases_on_next_phase_id", using: :btree
   add_index "budget_phases", ["starts_at"], name: "index_budget_phases_on_starts_at", using: :btree
-
-  create_table "budget_polls", force: :cascade do |t|
-    t.string  "name"
-    t.string  "email"
-    t.string  "preferred_subject"
-    t.boolean "collective"
-    t.boolean "public_worker"
-    t.boolean "proposal_author"
-    t.boolean "selected_proposal_author"
-  end
 
   create_table "budget_reclassified_votes", force: :cascade do |t|
     t.integer  "user_id"
