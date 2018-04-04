@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improve Github's Pull Request Template file https://github.com/consul/consul/pull/2515
 - List Budget Investment's milestones ordered by publication date https://github.com/consul/consul/issues/2429
 - Admin newsletter email refactor https://github.com/consul/consul/pull/2474
+- Budgets map improvements https://github.com/consul/consul/pull/2552
 
 ### Deprecated
 - Totally remove investment's internal_comments https://github.com/consul/consul/pull/2406
