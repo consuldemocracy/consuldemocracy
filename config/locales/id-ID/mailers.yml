@@ -1,0 +1,5 @@
+id:
+  mailers:
+    no_reply: "Pesan ini dikirim dari alamat email yang tidak menerima balasan."
+    comment:
+      subject: Seseorang telah berkomentar tentang anda %{commentable}

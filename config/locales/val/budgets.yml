@@ -19,7 +19,6 @@ val:
         not_selected: No es poden votar propostes inviables
         not_enough_money_html: "Ja has assignat el pressupost disponible. <br> <small>Recorda que pots %{change_ballot} en qualsevol moment</small>"
         no_ballots_allowed: El període de votació està tancat
-        different_heading_assigned: Ja vas votar en una secció diferent del pressupost
         change_ballot: canviar els teus vots
     groups:
       show:
@@ -43,7 +42,7 @@ val:
       section_header:
         icon_alt: Icona de pressupostos participatius
         title: Pressupostos participatius
-        help: Ajuda sobre pressupostos participatius
+        help: Ajuda amb els pressupostos participatius
         all_phases: Vore totes les fases
       all_phases: Fases de pressupostos participatius
       map: Propostes de pressupostos ubicades geogràficament
@@ -53,7 +52,7 @@ val:
       finished_budgets: Pressupostos participatius finalitzats
       see_results: Vore resultats
       section_footer:
-        title: Ajuda sobre pressupostos participatius
+        title: Ajuda amb els pressupostos participatius
         description: Amb els pressupostos participatius la ciutadanía decideix a quins projectes presentats per els veins i veines va destinada una part del pressupost municipal.
         help_text_1: "Els pressupostos participatius son un processos en els que la ciutadania decideix de forma directa en qué es gasten una part del pressupost municipal. Quansevol persona empadronada major de 16 anys pot proposar un projecte de despesa que es preselecciona en una fase d'avals ciutadans."
         help_text_2: "Els projectes més votats s'avaluen i pasen a una votació final en la que es decideixen les actuacions que durà a terme l'Ajuntament una vegada s'aproven els pressupostos municipals de l'any següent."
@@ -74,7 +73,7 @@ val:
         unfeasible: Propostes d'inversió no viables
         unfeasible_text: "Les propostes presentades han de complir una sèrie de criteris (legalitat, concreció, ser competència de l'Ajuntament, no superar el límit del pressupost; %{definitions}) per a ser declarades viables i arribar fins a la fase de votació final. Totes les propostes que no compleixen aquests criteris són marcades com a inviables i publicades en la següent llista, juntament amb el seu informe d'inviabilitat."
         unfeasible_text_definitions: veure definicions ací
-        by_heading: 'Propostes d''inversió amb àmbit: %{heading}'
+        by_heading: "Propostes d'inversió amb àmbit: %{heading}"
         search_form:
           button: Cercar
           placeholder: Cercar propostes d'inversió...
@@ -89,7 +88,7 @@ val:
             other: "<strong>Has votat %{count} propostes per un valor de %{amount_spent}</strong>"
           voted_info: Pots %{link} els teus vots en qualsevol moment fins al tancament d'aquesta fase. No fa falta que gastes tots els diners disponibles.
           voted_info_link: canviar el teu vot
-          different_heading_assigned_html: 'Ja vas recolzar propostes d''una altra secció del pressupost: %{heading_link}'
+          different_heading_assigned_html: "Ja vas recolzar propostes d'una altra secció del pressupost: %{heading_link}"
           change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
           check_ballot_link: "revisar els meus vots"
           zero: Encara no has votat cap proposta d'inversió en aquest àmbit del pressupost.
@@ -129,7 +128,6 @@ val:
         already_added: Ja has afegit aquesta proposta d'inversió
         already_supported: Ja has avalat aquest projecte d'inversió. Comparteixlo!
         support_title: Avalar aquesta proposta
-        confirm_group: "Sols pots avalar pressupostos en un districte. Si continues no podras canviar la teua decisió. Estas segur?"
         supports:
           zero: Sense avals
           one: 1 aval
@@ -137,13 +135,13 @@ val:
         give_support: Avalar
       header:
         check_ballot: Revisar els meus vots
-        different_heading_assigned_html: Ja vas votar propostes d'un altra secció del presupost %{heading_link}
+        different_heading_assigned_html: "Ja vas votar propostes d'un altra secció del presupost %{heading_link}"
         change_ballot: "Si canvies d'opinió pots borrar els teus vots en %{check_ballot} i tornar a començar."
         check_ballot_link: "revisar els meus vots"
         price: "Esta partida te un pressupost de"
     progress_bar:
-      assigned: 'Has sigut asignat: '
-      available: 'Pressupost disponible: '
+      assigned: "Has sigut asignat: "
+      available: "Pressupost disponible: "
     show:
       group: Grup
       phase: Fase actual
@@ -163,9 +161,12 @@ val:
       show_all_link: Mostrar totes
       price: Cost
       amount_available: Pressupost disponible
-      accepted: 'Proposta d''inversió acceptada: '
-      discarded: 'Proposta d''inversió descartada: '
+      accepted: "Proposta d'inversió acceptada: "
+      discarded: "Proposta d'inversió descartada: "
       incompatibles: Incompatibles
+      investment_proyects: Llista de totes les propostes d'inversió
+      unfeasible_investment_proyects: Llista de tots els projectes d'inversió inviables
+      not_selected_investment_proyects: Llista de tots els projectes d'inversió no seleccionats per a votació
     phases:
       errors:
         dates_range_invalid: "La data d'inici no ha de ser igual o posterior a la data de fi"

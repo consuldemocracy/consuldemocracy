@@ -1,0 +1,59 @@
+de:
+  account:
+    show:
+      change_credentials_link: Meine Anmeldeinformationen ändern
+      erase_account_link: Mein Konto löschen
+      notifications: Benachrichtigungen
+      organization_name_label: Name der Organisation
+      personal: Persönliche Daten
+      phone_number_label: Telefonnummer
+      save_changes_submit: Änderungen speichern
+      title: Mein Konto
+      user_permission_debates: An Diskussion teilnehmen
+      user_permission_info: Mit Ihrem Konto können Sie...
+      user_permission_proposal: Neue Vorschläge erstellen
+      user_permission_support_proposal: Vorschläge unterstützen
+      user_permission_title: Teilnahme
+      username_label: Benutzername
+      verified_account: Konto verifiziert
+      verify_my_account: Mein Konto verifizieren
+  application:
+    close: Schließen
+    menu: Menü
+  comments:
+    comments_closed: Kommentare sind geschlossen
+    verified_only: Zur Teilnahme %{verify_account}
+    verify_account: verifizieren Sie Ihr Konto
+    comment:
+      admin: Administrator
+      author: Autor
+      deleted: Dieser Kommentar wurde gelöscht
+      moderator: Moderator
+      responses:
+        zero: Keine Rückmeldungen
+      user_deleted: Benutzer gelöscht
+      votes:
+        zero: Keine Bewertung
+    form:
+      comment_as_admin: Als Administrator kommentieren
+      comment_as_moderator: Als Moderator kommentieren
+      leave_comment: Schreiben Sie einen Kommentar
+    orders:
+      most_voted: Am besten bewertet
+      newest: Neueste zuerst
+      oldest: Älteste zuerst
+    select_order: Sortieren nach
+  debates:
+    index:
+      search_form:
+        button: Suche
+        title: Suche
+      title: Diskussionen
+      section_header:
+        title: Diskussionen
+        help: Hilfe zu Diskussionen
+      section_footer:
+        title: Hilfe zu Diskussionen
+        proposals_link: Vorschlag
+    new:
+      info_link: neuen Vorschlag erstellen

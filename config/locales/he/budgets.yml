@@ -20,7 +20,7 @@ he:
         supports:
           zero: אין תומכים
       header:
-        different_heading_assigned_html: 'ישנן הצבעות פתוחות בנושאים אחרים: %{heading_link}'
+        different_heading_assigned_html: "ישנן הצבעות פתוחות בנושאים אחרים: %{heading_link}"
     show:
       unfeasible_title: השקעות שאינן ברות ביצוע
       unfeasible: צפיה בהשקעות שאינן ברות ביצוע

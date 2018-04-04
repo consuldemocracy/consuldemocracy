@@ -53,7 +53,6 @@ fr:
         undefined: Indéfini
         valuation_finished: Évaluation terminée
         duration: Délai d'exécution
-        internal_comments: Commentaires internes
         responsibles: Responsables
         assigned_admin: Administrateur assigné
         assigned_valuators: Évaluateurs assignés
@@ -69,7 +68,6 @@ fr:
         feasible_explanation_html: Informations sur la non-viabilité <small>(le cas échéant, données publiques)</small>
         valuation_finished: Évaluation terminée
         duration_html: Délai d'exécution <small>(optionnel, données non publiques)</small>
-        internal_comments_html: Commentaires et observations <small>(pour les responsables internes, données non publiques)</small>
         save: Enregistrer les changements
       notice:
         valuate: "Rapport mis-à-jour"

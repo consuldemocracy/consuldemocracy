@@ -1,0 +1,14 @@
+de:
+  pages:
+    help:
+      menu:
+        debates: "Diskussionen"
+        proposals: "Vorschläge"
+        polls: "Umfragen"
+        processes: "Prozesse"
+      debates:
+        title: "Diskussionen"
+        feature_link: "registrieren für %{org}"
+        image_alt: "Button, um die Diskussionen zu bewerten"
+      proposals:
+        title: "Vorschläge"

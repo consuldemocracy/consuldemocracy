@@ -8,7 +8,7 @@ val:
         alert:
           failure: Va haver-hi un problema enviant-te un email al teu compte
         flash:
-          success: Hem enviat un email de confirmació al teu compte %{email}
+          success: 'Hem enviat un email de confirmació al teu compte %{email}'
       show:
         alert:
           failure: Codi de verificació incorrecte
@@ -80,9 +80,8 @@ val:
         title: SMS de confirmació
       new:
         phone: Introdueix el teu número de movil per a rebre el codi
-        phone_format_html: '<strong><em>(Ejemple: 612345678 o +34612345678)</em></strong>'
-        phone_note: Només usarem el teu telèfon per a enviar-te un codi, mai et contactarem.
-        phone_placeholder: 'Exemple: 612345678 o +34612345678'
+        phone_format_html: "<strong><em>(Ejemple: 612345678 o +34612345678)</em></strong>"
+        phone_placeholder: "Exemple: 612345678 o +34612345678"
         submit_button: Enviar
         title: SMS de confirmació
       update:
