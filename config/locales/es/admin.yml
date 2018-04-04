@@ -231,6 +231,7 @@ es:
         documents: "Documentos"
         see_documents: "Ver documentos (%{count})"
         no_documents: "Sin documentos"
+        valuator_groups: "Grupos de evaluadores"
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
