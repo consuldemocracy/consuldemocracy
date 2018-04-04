@@ -1,0 +1,85 @@
+id:
+  admin:
+    header:
+      title: Administrasi
+    actions:
+      actions: Tindakan
+      confirm: Apakah anda yakin?
+      confirm_hide: Konfirmasi
+      edit: Mengedit
+    budgets:
+      index:
+        new_link: Buat anggaran baru
+        budget_investments: Melihat anggaran investasi
+        edit_groups: Edit judul grup
+        edit_budget: Edit anggaran
+      create:
+        notice: Anggaran partisipatif telah berhasil dibuat!
+      update:
+        notice: Partisipatif anggaran diperbarui berhasil
+      edit:
+        title: Edit Partisipatif anggaran
+        delete: Menghapus anggaran
+      destroy:
+        success_notice: Anggaran berhasil dihapus
+        unable_notice: Anda tidak bisa menghancurkan Anggaran yang telah mempunyai investasi terkait
+      new:
+        title: Anggaran partisipatif baru
+      form:
+        no_groups: Belum ada yang membuat grup. Setiap pengguna hanya bisa memilih hanya satu judul setiap grup.
+        add_group: Tambahkan grup baru
+        create_group: Membuat grup
+        population_help_text: "Data ini telah digunakan secara eksklusif untuk memperkirakan statistik partisipasi"
+        no_heading: Kelompok ini tidak mempunyai pos yang ditugaskan.
+        table_heading: Judul
+        table_amount: Jumlah
+        table_population: Populasi
+        population_info: "Bidang kependudukan Anggaran Kepala digunakan untuk keperluan statistik pada akhir Anggaran untuk ditampilkan pada setiap Pos yang mewakili area dengan populasi berapa persentase yang dipilih. Bidang ini opsional sehingga anda bisa membiarkannya kosong jika tidak berlaku."
+      winners:
+        calculate: Menghitung Pemenang Investasi
+        calculated: Pemenang dihitung, mungkin perlu waktu beberapa menit.
+    budget_phases:
+      edit:
+        start_date: Tanggal mulai
+        end_date: Tanggal akhir
+        summary: Ringkasan
+        summary_help_text: Teks ini akan memberi informasi pengguna tentang fase. Untuk menunjukkannya meski fase sesang tidak aktif, pilih kotak centang di bawah ini
+        description: Deskripsi
+        description_help_text: Teks ini akan muncul di header disaat fase aktif
+        enabled: Fase diaktifkan
+        enabled_help_text: Fase ini akan menjadi publik dalam garis waktu fase anggaran, dan juga akan aktif untuk tujuan yang lain
+        save_changes: Menyimpan perubahan
+    budget_investments:
+      index:
+        heading_filter_all: Semua judul
+        administrator_filter_all: Semua administrator
+    legislation:
+      draft_versions:
+        errors:
+          form:
+            error: Kesalahan
+        form:
+          title_html: 'Menyunting <span class="strong">%{draft_version_title}</span> dari proses <span class="strong">%{process_title}</span>'
+          launch_text_editor: Meluncurkan penyunting teks
+          close_text_editor: Tutup penyunting teks
+        index:
+          title: Versi rancangan
+          create: Membuar versi
+          delete: Hapus
+          preview: Tinjauan
+        new:
+          back: Kembali
+          title: Membuat versi baru
+          submit_button: Membuat versi
+      questions:
+        create:
+          error: Pertanyaan tidak dapat dibuat
+        update:
+          notice: 'Pertanyaan berhasil dipebarui. <a href="%{link}">Klik untuk mengunjungi</a>'
+        edit:
+          back: Kembali
+          title: "Sunting \"%{question_title}\""
+    stats:
+      polls:
+        web_participants: Peserta web
+        total_participants: Total peserta

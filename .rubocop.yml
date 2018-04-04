@@ -73,9 +73,6 @@ Performance/FixedSize:
 Performance/FlatMap:
   Enabled: true
 
-Performance/HashEachMethods:
-  Enabled: true
-
 Performance/LstripRstrip:
   Enabled: true
 
@@ -373,6 +370,9 @@ RSpec/OverwritingSetup:
 RSpec/PredicateMatcher:
   Enabled: true
 
+Rails/HttpStatus:
+  Enabled: true
+
 RSpec/RepeatedDescription:
   Enabled: true
 
@@ -402,6 +402,12 @@ RSpec/VerifiedDoubles:
 
 RSpec/VoidExpect:
   Enabled: true
+
+FactoryBot/StaticAttributeDefinedDynamically:
+  Enabled: true
+
+FactoryBot/DynamicAttributeDefinedStatically:
+  Enabled: false
 
 Security/Eval:
   Enabled: true
