@@ -4,9 +4,6 @@ ca:
       activity:
         one: "activitat"
         other: "activitats"
-      budget:
-        one: "Pressupost participatiu"
-        other: "Pressupostos participatius"
       budget/investment/milestone:
         one: "fita"
         other: "fites"
