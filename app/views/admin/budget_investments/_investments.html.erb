@@ -60,10 +60,10 @@
             <% end %>
           </td>
           <td class="small">
-            <% if investment.valuators.size.zero? %>
+            <% if investment.valuators.size == 0 && investment.valuator_groups.size == 0  %>
               <%= t("admin.budget_investments.index.no_valuators_assigned") %>
             <% else %>
-              <%= investment.valuators.collect(&:description_or_name).join(", ") %>
+              <%= assigned_valuators(investment) %>
             <% end %>
           </td>
           <td class="small">

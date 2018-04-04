@@ -7,11 +7,12 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   has_orders %w{oldest}, only: [:show, :edit]
   has_filters(%w{all without_admin without_valuator under_valuation
                  valuation_finished winners},
-              only: [:index, :toggle_selection])
+                 only: [:index, :toggle_selection])
 
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
   before_action :load_ballot, only: [:show, :index]
+  before_action :parse_valuation_filters
   before_action :load_investments, only: [:index, :toggle_selection]
 
   def index
@@ -32,6 +33,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   def edit
     load_admins
     load_valuators
+    load_valuator_groups
     load_tags
   end
 
@@ -45,6 +47,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     else
       load_admins
       load_valuators
+      load_valuator_groups
       load_tags
       render :edit
     end
@@ -93,7 +96,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     def budget_investment_params
       params.require(:budget_investment)
             .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
-                    :valuation_tag_list, :incompatible, :selected, valuator_ids: [])
+                    :valuation_tag_list, :incompatible, :selected, valuator_ids: [], valuator_group_ids: [])
     end
 
     def load_budget
@@ -112,6 +115,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       @valuators = Valuator.includes(:user).all.order(description: :asc).order("users.email ASC")
     end
 
+    def load_valuator_groups
+      @valuator_groups = ValuatorGroup.all.order(name: :asc)
+    end
+
     def load_tags
       @tags = Budget::Investment.tags_on(:valuation).order(:name).uniq
     end
@@ -124,6 +131,18 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     def set_valuation_tags
       @investment.set_tag_list_on(:valuation, budget_investment_params[:valuation_tag_list])
       params[:budget_investment] = params[:budget_investment].except(:valuation_tag_list)
+    end
+
+    def parse_valuation_filters
+      if params[:valuator_or_group_id]
+        model, id = params[:valuator_or_group_id].split("_")
+
+        if model == "group"
+          params[:valuator_group_id] = id
+        else
+          params[:valuator_id] = id
+        end
+      end
     end
 
 end

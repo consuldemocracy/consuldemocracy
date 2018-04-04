@@ -349,6 +349,20 @@ describe Budget::Investment do
         expect(valuating.size).to eq(1)
         expect(valuating.first).to eq(investment2)
       end
+
+      it "returns all investments with assigned valuator groups but valuation not finished" do
+        investment1 = create(:budget_investment)
+        investment2 = create(:budget_investment)
+        investment3 = create(:budget_investment, valuation_finished: true)
+
+        investment2.valuator_groups << create(:valuator_group)
+        investment3.valuator_groups << create(:valuator_group)
+
+        valuating = described_class.valuating
+
+        expect(valuating.size).to eq(1)
+        expect(valuating.first).to eq(investment2)
+      end
     end
 
     describe "valuation_finished" do

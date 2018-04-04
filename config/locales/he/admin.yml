@@ -179,7 +179,6 @@ he:
       index:
         title: Valuators
       valuator:
-        description_placeholder: 'Description (optional)'
         add: Add to valuators
       summary:
         title: Valuator summary for investment projects

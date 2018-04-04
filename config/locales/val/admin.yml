@@ -501,7 +501,6 @@ val:
         no_description: Sense descripció
         no_valuators: No hi ha avaluadors.
       valuator:
-        description_placeholder: 'Descripció (opcional)'
         add: Afegir com a avaluador
         delete: Borrar
       search:

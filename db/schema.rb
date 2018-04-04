@@ -133,35 +133,36 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.string   "title"
     t.text     "description"
     t.string   "external_url"
-    t.integer  "price",                      limit: 8
-    t.string   "feasibility",                limit: 15, default: "undecided"
+    t.integer  "price",                            limit: 8
+    t.string   "feasibility",                      limit: 15, default: "undecided"
     t.text     "price_explanation"
     t.text     "unfeasibility_explanation"
-    t.boolean  "valuation_finished",                    default: false
-    t.integer  "valuator_assignments_count",            default: 0
-    t.integer  "price_first_year",           limit: 8
+    t.boolean  "valuation_finished",                          default: false
+    t.integer  "valuator_assignments_count",                  default: 0
+    t.integer  "price_first_year",                 limit: 8
     t.string   "duration"
     t.datetime "hidden_at"
-    t.integer  "cached_votes_up",                       default: 0
-    t.integer  "comments_count",                        default: 0
-    t.integer  "confidence_score",                      default: 0,           null: false
-    t.integer  "physical_votes",                        default: 0
+    t.integer  "cached_votes_up",                             default: 0
+    t.integer  "comments_count",                              default: 0
+    t.integer  "confidence_score",                            default: 0,           null: false
+    t.integer  "physical_votes",                              default: 0
     t.tsvector "tsv"
-    t.datetime "created_at",                                                  null: false
-    t.datetime "updated_at",                                                  null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
     t.integer  "heading_id"
     t.string   "responsible_name"
     t.integer  "budget_id"
     t.integer  "group_id"
-    t.boolean  "selected",                              default: false
+    t.boolean  "selected",                                    default: false
     t.string   "location"
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
-    t.integer  "ballot_lines_count",                    default: 0
+    t.integer  "ballot_lines_count",                          default: 0
     t.integer  "previous_heading_id"
-    t.boolean  "winner",                                default: false
-    t.boolean  "incompatible",                          default: false
+    t.boolean  "winner",                                      default: false
+    t.boolean  "incompatible",                                default: false
     t.integer  "community_id"
+    t.integer  "valuator_group_assignments_count",            default: 0
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -202,6 +203,11 @@ ActiveRecord::Schema.define(version: 20180320104823) do
   end
 
   add_index "budget_valuator_assignments", ["investment_id"], name: "index_budget_valuator_assignments_on_investment_id", using: :btree
+
+  create_table "budget_valuator_group_assignments", force: :cascade do |t|
+    t.integer "valuator_group_id"
+    t.integer "investment_id"
+  end
 
   create_table "budgets", force: :cascade do |t|
     t.string   "name",                          limit: 80
@@ -1128,11 +1134,17 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.datetime "updated_at",           null: false
   end
 
+  create_table "valuator_groups", force: :cascade do |t|
+    t.string  "name"
+    t.integer "budget_investments_count", default: 0
+  end
+
   create_table "valuators", force: :cascade do |t|
     t.integer "user_id"
     t.string  "description"
     t.integer "spending_proposals_count", default: 0
     t.integer "budget_investments_count", default: 0
+    t.integer "valuator_group_id"
   end
 
   add_index "valuators", ["user_id"], name: "index_valuators_on_user_id", using: :btree

@@ -22,6 +22,15 @@
   <%= @investment.tags_on(:valuation).pluck(:name).sort.join(', ') %>
 </p>
 
+<p id="assigned_valuator_groups">
+  <strong><%= t("admin.budget_investments.show.valuator_groups") %>:</strong>
+  <% if @investment.valuator_groups.any? %>
+    <%= @investment.valuator_groups.collect(&:name).join(', ') %>
+  <% else %>
+    <%= t("admin.budget_investments.show.undefined") %>
+  <% end %>
+</p>
+
 <p id="assigned_valuators">
   <strong><%= t("admin.budget_investments.show.assigned_valuators") %>:</strong>
   <% if @investment.valuators.any? %>

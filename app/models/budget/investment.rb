@@ -35,6 +35,9 @@ class Budget
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
 
+    has_many :valuator_group_assignments, dependent: :destroy
+    has_many :valuator_groups, through: :valuator_group_assignments
+
     has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: 'Comment'
     has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: 'Comment'
 
@@ -59,9 +62,9 @@ class Budget
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
     scope :without_valuator,            -> { valuation_open.where(valuator_assignments_count: 0) }
-    scope :under_valuation,             -> { valuation_open.where("valuator_assignments_count > 0 AND administrator_id IS NOT ?", nil) }
+    scope :under_valuation,             -> { valuation_open.valuating.where("administrator_id IS NOT ?", nil) }
     scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
-    scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0") }
+    scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0 OR valuator_group_assignments_count > 0" ) }
     scope :valuation_finished,          -> { where(valuation_finished: true) }
     scope :valuation_finished_feasible, -> { where(valuation_finished: true, feasibility: "feasible") }
     scope :feasible,                    -> { where(feasibility: "feasible") }
@@ -76,12 +79,13 @@ class Budget
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
 
-    scope :by_group,    ->(group_id)    { where(group_id: group_id) }
-    scope :by_heading,  ->(heading_id)  { where(heading_id: heading_id) }
-    scope :by_admin,    ->(admin_id)    { where(administrator_id: admin_id) }
-    scope :by_tag,      ->(tag_name)    { tagged_with(tag_name) }
-    scope :by_valuator, ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
-    scope :by_budget,   ->(budget)      { where(budget: budget) }
+    scope :by_budget,         ->(budget)      { where(budget: budget) }
+    scope :by_group,          ->(group_id)    { where(group_id: group_id) }
+    scope :by_heading,        ->(heading_id)  { where(heading_id: heading_id) }
+    scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
+    scope :by_tag,            ->(tag_name)    { tagged_with(tag_name) }
+    scope :by_valuator,       ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
+    scope :by_valuator_group, ->(valuator_group_id) { where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id).joins(:valuator_group_assignments) }
 
     scope :for_render, -> { includes(:heading) }
 
@@ -106,13 +110,14 @@ class Budget
       budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       results = Investment.by_budget(budget)
 
-      results = limit_results(budget, params, results)              if params[:max_per_heading].present?
-      results = results.where(group_id: params[:group_id])          if params[:group_id].present?
-      results = results.by_tag(params[:tag_name])                   if params[:tag_name].present?
-      results = results.by_heading(params[:heading_id])             if params[:heading_id].present?
-      results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
-      results = results.by_admin(params[:administrator_id])         if params[:administrator_id].present?
-      results = advanced_filters(params, results)                   if params[:advanced_filters].present?
+      results = limit_results(budget, params, results)                if params[:max_per_heading].present?
+      results = results.where(group_id: params[:group_id])            if params[:group_id].present?
+      results = results.by_tag(params[:tag_name])                     if params[:tag_name].present?
+      results = results.by_heading(params[:heading_id])               if params[:heading_id].present?
+      results = results.by_valuator(params[:valuator_id])             if params[:valuator_id].present?
+      results = results.by_valuator_group(params[:valuator_group_id]) if params[:valuator_group_id].present?
+      results = results.by_admin(params[:administrator_id])           if params[:administrator_id].present?
+      results = advanced_filters(params, results)                     if params[:advanced_filters].present?
 
       results = results.send(current_filter)                        if current_filter.present?
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
