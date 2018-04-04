@@ -9,8 +9,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
                  valuation_finished winners},
                  only: [:index, :toggle_selection])
 
-  has_orders %w{oldest}, only: [:show, :edit]
-
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
   before_action :load_ballot, only: [:show, :index]
