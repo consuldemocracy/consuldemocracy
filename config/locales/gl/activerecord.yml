@@ -1,0 +1,97 @@
+gl:
+  activerecord:
+    models:
+      activity:
+        one: "actividade"
+        other: "actividades"
+      budget:
+        one: "Orzamento participativo"
+        other: "Orzamentos participativos"
+      budget/investment:
+        one: "Investimento"
+        other: "Investimentos"
+      budget/investment/milestone:
+        one: "fito"
+        other: "fitos"
+      comment:
+        one: "Comentario"
+        other: "Comentarios"
+      debate:
+        one: "Debate"
+        other: "Debates"
+      tag:
+        one: "Tema"
+        other: "Temas"
+      moderator:
+        one: "Moderador"
+        other: "Moderadores"
+      administrator:
+        one: "Administrador"
+        other: "Administradores"
+      valuator:
+        one: "Avaliador"
+        other: "Avaliadores"
+      manager:
+        one: "Xestor"
+        other: "Xestores"
+      vote:
+        one: "Voto"
+        other: "Votos"
+      organization:
+        one: "Organización"
+        other: "Organizacións"
+      poll/booth:
+        one: "urna"
+        other: "urnas"
+      poll/officer:
+        one: "presidente de mesa"
+        other: "presidentes de mesa"
+      proposal:
+        one: "Proposta cidadá"
+        other: "Propostas cidadás"
+      spending_proposal:
+        one: "Proposta de investimento"
+        other: "Propostas de investimento"
+      site_customization/page:
+        one: Páxina
+        other: Páxinas
+      site_customization/image:
+        one: Imaxe
+        other: Imaxes
+      site_customization/content_block:
+        one: Bloque
+        other: Bloques
+      legislation/process:
+        one: "Proceso"
+        other: "Procesos"
+      legislation/draft_versions:
+        one: "Versión borrador"
+        other: "Versións borrador"
+      legislation/draft_texts:
+        one: "Borrador"
+        other: "Borradores"
+      legislation/questions:
+        one: "Pregunta"
+        other: "Preguntas"
+      legislation/question_options:
+        one: "Opción de resposta pechada"
+        other: "Opcións de respostas pechadas"
+      legislation/answers:
+        one: "Resposta"
+        other: "Respostas"
+      documents:
+        one: "Documento"
+        other: "Documentos"
+      images:
+        one: "Imaxe"
+        other: "Imaxes"
+      topic:
+        one: "Tema"
+        other: "Temas"
+      poll:
+        one: "Votación"
+        other: "Votacións"
+    attributes:
+      budget:
+        name: "Nome"
+        description_accepting: "Descrición durante a fase de presentación de proxectos"
