@@ -22,8 +22,6 @@ module Budgets
 
     skip_authorization_check only: :json_data
 
-    skip_authorization_check only: :json_data
-
     feature_flag :budgets
 
     has_orders %w{most_voted newest oldest}, only: :show
