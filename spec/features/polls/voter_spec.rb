@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Voter" do
+feature "Voter", :focus do
 
   context "Origin" do
 
