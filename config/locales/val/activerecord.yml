@@ -5,8 +5,8 @@ val:
         one: "activitat"
         other: "activitats"
       budget:
-        one: "Pressupost participatiu"
-        other: "Pressupostos participatius"
+        one: "Pressupost"
+        other: "Pressupostos"
       budget/investment:
         one: "Proposta d'inversió"
         other: "Propostes d'inversió"
@@ -183,7 +183,6 @@ val:
         status: Estat
         title: Títol
         updated_at: Actualitzada el
-        more_info_flag: Mostra a la pàgina de més informació
         print_content_flag: Botó d'imprimir contingut
         locale: Llengua
       site_customization/image:
@@ -293,7 +292,7 @@ val:
               image_width: "Ha de tenir %{required_width}px d'ample"
               image_height: "Ha de tenir %{required_height}px d'alt"
       messages:
-        record_invalid: 'Error de validació: %{errors}'
+        record_invalid: "Error de validació: %{errors}"
         restrict_dependent_destroy:
           has_one: "No es pot eliminar el registre perque existeix una %{record} dependent"
           has_many: "No es pot eliminar el registre perque existeixen %{record} dependentes"

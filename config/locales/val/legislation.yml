@@ -46,16 +46,11 @@ val:
         text_body: Text
         text_comments: Comentaris
     processes:
-      header:
-        view_process_information: Vore informació del proces
       proposals:
         empty_proposals: No hi ha propostes
       debate:
         empty_questions: No hi ha preguntes
         participate: Realitza les teues aportacions al debat previ participant en els seguents temes
-      header_full:
-        description: En qué consisteix
-        more_info: Més informació y contexte
       index:
         filters:
           open: Processos actius
@@ -70,7 +65,6 @@ val:
           help: Ajuda sobre processos legislatius
         section_footer:
           title: Ajuda sobre processos legislatius
-          description: Participa en els debats y processos previs a la aprobació de una norma o de una actuació municipal. La teua opinió será tenguda en compte per l'Ajuntament.
           help_text_1: "En els processos participatius, l'Ajuntament ofereix a la ciutadania l'oportunitat de participar en l'elaboració i modificació de normativa que afecta a la ciutat i de donar la seua opinió sobre certes actuacions que te previst dur a terme."
           help_text_2: "Les persones registrades en %{org} poden participar amb aportacions en la consulta pública de noves ordenances, reglaments y directrius, entre altres. Els seus comentaris son analitzats per l'àrea corresponent y tenguts en compte de cara a la redacció final de les normes."
           help_text_3: "L'Ajuntament també obre processos per a rebre aportacions i opinions sobre les actuacions municipals."

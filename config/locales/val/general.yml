@@ -231,14 +231,8 @@ val:
       moderation: Moderació
       valuation: Avaluació
       officing: Presidents de taula
-      more_info: Més informació
       my_account_link: El meu compte
       my_activity_link: La meua activitat
-      notifications: Notificacions
-      new_notifications:
-        one: Tens una nova notificació
-        other: Tens %{count} notificacions
-      no_notifications: "No tens noves notificacions"
       open: obert
       open_city_slogan_html: Existeixen ciutats gobernades directament per els seus habitants, que <strong>debateixen</strong> sobre temes que els preocupen, <strong>proposen</strong> idees per a millorar les seues vides i <strong>decideixen</strong> entre totes i tots les que es duen a terme.
       open_city_title: La ciutat que vols serà la ciutat que voldras
@@ -259,18 +253,8 @@ val:
   locale: Valencià
   notifications:
     index:
-      comments_on:
-        one: Hi ha un nou comentari en
-        other: Hi ha %{count} comentaris en
       empty_notifications: No tens noves notificacions.
-      notifiable_hidden: Aquest recurs no esta disponible.
       mark_all_as_read: Marcar totes como llegides
-      proposal_notification:
-        one: Hi ha una nova notificació en
-        other: Hi ha %{count} noves notificacions en
-      replies_to:
-        one: Hi ha una nova resposta al teu comentari en
-        other: Hi ha %{count} noves respostes al teu comentari en
       title: Notificacions
   map:
     title: "Districtes"
@@ -469,7 +453,7 @@ val:
       participate_button_expired: "Votació finalitzada"
       no_geozone_restricted: "Tota la ciutat"
       geozone_restricted: "Districtes"
-      geozone_info: 'Poden participar les persones empadronades en: '
+      geozone_info: "Poden participar les persones empadronades en: "
       already_answer: "Ja has participat en esta votació"
       section_header:
         icon_alt: Icona de Votacions
@@ -517,7 +501,7 @@ val:
         null_votes: "Nuls"
       results:
         title: "Preguntes"
-        most_voted_answer: 'Resposta més votada: '
+        most_voted_answer: "Resposta més votada: "
   poll_questions:
     create_question: "Crear pregunta"
     show:
@@ -644,7 +628,7 @@ val:
     index:
       title: Pressupostos participatius
       unfeasible: Propostes d'inversió no viables
-      by_geozone: 'Propostes d''inversió amb àmbit: %{geozone}'
+      by_geozone: "Propostes d'inversió amb àmbit: %{geozone}"
       search_form:
         button: Cercar
         placeholder: Propostes d'inversió...
@@ -768,7 +752,6 @@ val:
       organization: Les organitzacions no poden votar
       unfeasible: No es poden votar propostes inviables
       not_voting_allowed: El període de votació està tancat
-      different_heading_assigned: Només pots avalar propostes en un districte
   welcome:
     debates:
       description: Trobar-nos, debatir i compartir el que ens pareix important en la nostra ciutat.
@@ -819,7 +802,6 @@ val:
     help: "Pots afegir enllaços de %{models} en %{org}."
     submit: "Afegir"
     error: "Enllaç no vàlid. Recorda iniciar amb %{url}."
-    error_itself: "Enllaç no vàlid. No es pot relacionar un contingut aconseguisc mateix"
     success: "Has afegit nou contingut relacionat"
     is_related: "Es contingut relacionat?"
     score_positive: "Sí"
