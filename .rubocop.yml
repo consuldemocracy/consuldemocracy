@@ -406,6 +406,9 @@ RSpec/VoidExpect:
 FactoryBot/StaticAttributeDefinedDynamically:
   Enabled: true
 
+FactoryBot/DynamicAttributeDefinedStatically:
+  Enabled: false
+
 Security/Eval:
   Enabled: true
 
