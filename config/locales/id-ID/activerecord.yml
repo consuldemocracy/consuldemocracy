@@ -1,0 +1,35 @@
+id:
+  activerecord:
+    models:
+      budget:
+        other: "Anggaran"
+      debate:
+        other: "Debat"
+      user:
+        other: "Pengguna"
+      organization:
+        other: "Organisasi"
+      legislation/process:
+        other: "Proses"
+    attributes:
+      budget/investment:
+        image_title: "Judul gambar"
+      budget/investment/milestone:
+        publication_date: "Tanggal publikasi"
+      budget/heading:
+        price: "Harga"
+        population: "Populasi"
+      debate:
+        author: "Penulis"
+      proposal:
+        question: "Pertanyaan"
+        terms_of_service: "Persayaratan layanan"
+      user:
+        username: "Nama pengguna"
+        password_confirmation: "Konfirmasi kata sandi"
+        password: "Kata sandi"
+        current_password: "Kata sandi saat ini"
+        phone_number: "Nomor telepon"
+        official_position: "Posisi resmi"
+      organization:
+        responsible_name: "Orang yang bertanggung jawab untuk kelompok"
