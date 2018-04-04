@@ -38,7 +38,17 @@
     <%= t("admin.newsletters.show.body_help_text") %>
   </p>
   <div class="newsletter-body-content">
-    <%= render file: "app/views/mailer/newsletter.html.erb", layout: '/app/views/layouts/mailer.html.erb' %>
+    <%= render file: "app/views/layouts/_mailer_header.html.erb" %>
+
+    <table cellpadding="0" cellspacing="0" border="0" style="background: #fff; margin: 0 auto; max-width: 700px; width:100%;">
+      <tbody>
+        <tr>
+          <%= render file: "app/views/mailer/newsletter.html.erb" %>
+        </tr>
+      </tbody>
+    </table>
+
+    <%= render file: "app/views/layouts/_mailer_footer.html.erb" %>
   </div>
 </div>
 
