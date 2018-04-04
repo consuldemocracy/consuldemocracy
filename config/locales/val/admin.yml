@@ -68,7 +68,6 @@ val:
         new_link: Crear nou pressupost
         filter: Filtre
         filters:
-          current: Oberts
           finished: Finalitzats
         budget_investments: Vore propostes d'inversió
         table_name: Nom
@@ -85,6 +84,13 @@ val:
       edit:
         title: Edita campanya de pressupostos participatius
         delete: Eliminar presupost
+        phase: Fase
+        dates: Dates
+        enabled: Actiu
+        actions: Accions
+        edit_phase: Edita fase
+        active: Actius
+        blank_dates: Les dates estan en blanc
       destroy:
         success_notice: Pressupost eliminat correctament
         unable_notice: No pots eliminar un Pressupost amb propostes
@@ -113,6 +119,15 @@ val:
       winners:
         calculate: Calcular propostes guanyadores
         calculated: Calculant guanyadores, pot tardar algún minut.
+    budget_phases:
+      edit:
+        start_date: Data d'inici del procés
+        end_date: Data de fi del procés
+        summary: Resum
+        description: Descripció
+        enabled: Fase habilitada
+        enabled_help_text: Aquesta fase serà pública en el calendari de fases del pressupost, així com activa per a qualsevol altre propòsit
+        save_changes: Guardar canvis
     budget_investments:
       index:
         heading_filter_all: Totes les partides
@@ -120,15 +135,11 @@ val:
         valuator_filter_all: Tots els avaluadors
         tags_filter_all: Totes les etiquetes
         filters:
-          valuation_open: Obertes
+          all: Totes
           without_admin: Sense administrador
-          managed: Gestor
-          valuating: En avaluació
           valuation_finished: Avaluació finalitzada
-          valuation_finished_feasible: Viables
           selected: Seleccionades
           winners: Guanyadores
-          all: Totes
         download_current_selection: "Baixar la selecció actual"
         no_budget_investments: "No hi ha projectes d'inversió."
         title: Propostes d'inversió
@@ -149,18 +160,16 @@ val:
         table_geozone: "Ámbit d'actuació"
         table_feasibility: "Viabilitat"
         table_valuation_finished: "Av. Fin."
-        table_selection: "Selecció"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignat
         assigned_valuators: Evaluadors asignats
         classification: Classificació
-        info: '%{budget_name} - Grup: %{group_name} - Proposta d''inversió %{id}'
+        info: "%{budget_name} - Grup: %{group_name} - Proposta d'inversió %{id}"
         edit: Editar
         edit_classification: Edita classificació
         by: Autor
         sent: Data
-        group: Grup
         heading: Partida
         dossier: Informe
         edit_dossier: Editar informe
@@ -432,7 +441,6 @@ val:
       administrators: Administradors
       managers: Gestors
       moderators: Moderadors
-      newsletter: Enviament de Newsletters
       valuators: Evaluadors
       poll_officers: Presidents de taula
       polls: Votacions
@@ -469,7 +477,7 @@ val:
         delete: Eliminar
         restricted_removal: "Ho sentim, no pots eliminar-te a tu mateix de la llista"
       search:
-        title: 'Administradors: Cerca d''usuaris'
+        title: "Administradors: Cerca d'usuaris"
     moderators:
       index:
         title: Moderadors
@@ -484,7 +492,6 @@ val:
     newsletters:
       index:
         title: Enviament de newsletters
-        button: Descarregar zip amb llista d'usuaris
     valuators:
       index:
         title: Avaluadors
@@ -984,7 +991,7 @@ val:
         all: Votacions
         web_participants: Participants en la Web
         total_participants: Participants Totals
-        poll_questions: 'Preguntes de votació: %{poll}'
+        poll_questions: "Preguntes de votació: %{poll}"
         table:
           poll_name: Votació
           question_name: Pregunta
