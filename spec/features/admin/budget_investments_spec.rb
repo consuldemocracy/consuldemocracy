@@ -119,6 +119,33 @@ feature 'Admin budget investments' do
       end
     end
 
+    scenario 'Display valuator group assignments' do
+      budget_investment1 = create(:budget_investment, budget: budget)
+      budget_investment2 = create(:budget_investment, budget: budget)
+      budget_investment3 = create(:budget_investment, budget: budget)
+
+      health_group = create(:valuator_group, name: "Health")
+      culture_group = create(:valuator_group, name: "Culture")
+
+      budget_investment1.valuator_groups << health_group
+      budget_investment2.valuator_group_ids = [health_group.id, culture_group.id]
+
+      visit admin_budget_budget_investments_path(budget_id: budget)
+
+      within("#budget_investment_#{budget_investment1.id}") do
+        expect(page).to have_content("Health")
+      end
+
+      within("#budget_investment_#{budget_investment2.id}") do
+        expect(page).to have_content("Health")
+        expect(page).to have_content("Culture")
+      end
+
+      within("#budget_investment_#{budget_investment3.id}") do
+        expect(page).to have_content("No valuators assigned")
+      end
+    end
+
     scenario "Filtering by budget heading", :js do
       group1 = create(:budget_group, name: "Streets", budget: budget)
       group2 = create(:budget_group, name: "Parks", budget: budget)
@@ -237,6 +264,7 @@ feature 'Admin budget investments' do
 
       select "Valuator 1", from: "valuator_or_group_id"
       click_button 'Filter'
+
       expect(page).to have_content('There is 1 investment')
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
@@ -253,7 +281,8 @@ feature 'Admin budget investments' do
       budget_investment2 = create(:budget_investment, title: "Build a theatre", budget: budget)
       budget_investment2.valuator_groups << culture_group
 
-      visit admin_budget_budget_investments_path(budget_id: budget.id)
+      visit admin_budget_budget_investments_path(budget_id: budget)
+
       expect(page).to have_link("Build a hospital")
       expect(page).to have_link("Build a theatre")
 

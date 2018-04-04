@@ -68,12 +68,11 @@
             <% end %>
           </td>
           <td class="small">
-            <% no_valuators_assigned = t("admin.budget_investments.index.no_valuators_assigned") %>
-            <%= investment.assigned_valuators || no_valuators_assigned %>
-          </td>
-          <td class="small">
-            <% no_valuation_groups = t("admin.budget_investments.index.no_valuation_groups") %>
-            <%= investment.assigned_valuation_groups || no_valuation_groups %>
+            <% if investment.valuators.size == 0 && investment.valuator_groups.size == 0  %>
+              <%= t("admin.budget_investments.index.no_valuators_assigned") %>
+            <% else %>
+              <%= assigned_valuators(investment) %>
+            <% end %>
           </td>
           <td class="small">
             <%= investment.heading.name %>
