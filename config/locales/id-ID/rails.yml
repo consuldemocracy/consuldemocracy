@@ -1,0 +1,16 @@
+id:
+  date:
+    day_names:
+      - Minggu
+  number:
+    currency:
+      format:
+        significant: false
+        strip_insignificant_zeros: false
+    format:
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      format:
+        significant: true
+        strip_insignificant_zeros: true
