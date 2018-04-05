@@ -62,6 +62,7 @@ FactoryBot.define do
   end
 
   factory :valuator_group, class: ValuatorGroup do
+    sequence(:name) { |n| "Valuator Group #{n}" }
   end
 
   factory :identity do
