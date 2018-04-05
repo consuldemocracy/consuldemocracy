@@ -1,5 +1,5 @@
 <div class="admin-sidebar">
-  <ul id="admin_menu">
+  <ul id="admin_menu" data-accordion-menu data-multi-open="false">
     <li <%= "class=active" if controller_name == "document_verifications" ||
                               controller_name == "email_verifications" ||
                               controller_name == "users" %>>
@@ -9,11 +9,21 @@
       <% end %>
     </li>
 
-    <li <%= "class=active" if controller_name == "account" %>>
-      <%= link_to management_account_path do %>
+    <li class="section-title">
+      <a href="#">
         <span class="icon-user"></span>
-        <%= t("management.menu.edit_user_accounts") %>
-      <% end %>
+        <strong><%= t("management.menu.edit_user_accounts") %></strong>
+      </a>
+      <ul <%= "class=is-active" if controller_name == "account" %>>
+        <% if managed_user.email %>
+          <li>
+            <%= link_to t("management.account.menu.reset_password_email"), edit_password_email_management_account_path %>
+          </li>
+        <% end %>
+        <li>
+          <%= link_to t("management.account.menu.reset_password_manually"), edit_password_manually_management_account_path %>
+        </li>
+      </ul>
     </li>
 
     <li <%= "class=active" if controller_name == "proposals" && action_name == "new" %>>
