@@ -6,13 +6,16 @@ feature 'Account' do
     login_as_manager
   end
 
-  scenario "Should not allow unverified users to create spending proposals" do
+  scenario "Should not allow unverified users to edit their account" do
     user = create(:user)
     login_managed_user(user)
 
-    click_link "Create budget investment"
+    visit management_root_path
 
-    expect(page).to have_content "User is not verified"
+    click_link 'Edit user account'
+    click_link 'Reset password via email'
+
+    expect(page).to have_content "No verified user logged in yet"
   end
 
   scenario 'Delete a user account', :js do
