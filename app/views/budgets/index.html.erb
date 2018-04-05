@@ -1,4 +1,4 @@
-<% provide :title do %><%= t('budgets.index.title') %><% end %>
+<% provide :title do %><%= t("budgets.index.title") %><% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
 <% end %>
@@ -152,23 +152,37 @@
         </div>
       </div>
     <% end %>
-
+  </div>
+<% else %>
+  <div class="expanded budget no-margin-top margin-bottom">
     <div class="row">
-      <div class="small-12 column">
-        <div id="section_help" class="margin" data-magellan-target="section_help">
-          <p class="lead">
-            <strong><%= t("budgets.index.section_footer.title") %></strong>
-          </p>
-          <p><%= t("budgets.index.section_footer.description") %></p>
-          <p><%= t("budgets.index.section_footer.help_text_1") %></p>
-          <p><%= t("budgets.index.section_footer.help_text_2") %></p>
-          <p><%= t("budgets.index.section_footer.help_text_3",
-                    org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
-          <p><%= t("budgets.index.section_footer.help_text_4") %></p>
-        </div>
+      <div class="small-12 medium-9 column padding">
+          <h1><%= t("budgets.index.title") %></h1>
       </div>
     </div>
   </div>
-<% else %>
-  <%= t("budgets.index.empty_budgets") %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <div class="callout primary">
+        <%= t("budgets.index.empty_budgets") %>
+      </div>
+    </div>
+  </div>
 <% end %>
+
+<div class="row">
+  <div class="small-12 column">
+    <div id="section_help" class="margin" data-magellan-target="section_help">
+      <p class="lead">
+        <strong><%= t("budgets.index.section_footer.title") %></strong>
+      </p>
+      <p><%= t("budgets.index.section_footer.description") %></p>
+      <p><%= t("budgets.index.section_footer.help_text_1") %></p>
+      <p><%= t("budgets.index.section_footer.help_text_2") %></p>
+      <p><%= t("budgets.index.section_footer.help_text_3",
+                org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
+      <p><%= t("budgets.index.section_footer.help_text_4") %></p>
+    </div>
+  </div>
+</div>
