@@ -52,7 +52,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
       documentable.class.max_documents_allowed.times.each do
-        documentable_attach_new_file("spec/fixtures/files/empty.pdf")
+        documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
       end
 
       expect(page).to have_css ".max-documents-notice", visible: true
