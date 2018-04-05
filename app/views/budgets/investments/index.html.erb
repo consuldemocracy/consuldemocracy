@@ -70,20 +70,12 @@
                        ballot: @ballot
                      } %>
         <% end %>
-
-        <%= render "banners" if @budget.selecting? || @budget.balloting?  %>
-        <%= paginate @investments %>
-
       <% else %>
 
         <% @investments.each do |investment| %>
           <%= render partial: '/budgets/investments/investment_minimal',
                      locals: { investment: investment } %>
         <% end %>
-
-        <%= render "banners" if @budget.selecting? || @budget.balloting?  %>
-        <%= paginate @investments %>
-
       <% end %>
 
       <%= paginate @investments %>
