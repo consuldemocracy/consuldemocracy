@@ -66,8 +66,6 @@ es:
         tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
-        faq: "¿Qué puedes proponer?"
-        faq_link: "Mira toda la información sobre los presupuestos participativos"
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
@@ -133,7 +131,7 @@ es:
         already_added: Ya has añadido este proyecto de gasto
         already_supported: Ya has apoyado este proyecto de gasto. ¡Compártelo!
         support_title: Apoyar este proyecto
-        confirm_group: 
+        confirm_group:
           one: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
           other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
         supports:

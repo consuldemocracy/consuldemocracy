@@ -66,8 +66,6 @@ en:
         tags_instructions: "Tag this investment. You can choose from proposed categories or add your own"
         tags_label: Tags
         tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
-        faq: "What can you propose?"
-        faq_link: "See all information of participatory budgets"
         map_location: "Map location"
         map_location_instructions: "Navigate the map to the location and place the marker."
         map_remove_marker: "Remove map marker"
@@ -133,7 +131,7 @@ en:
         already_added: You have already added this investment project
         already_supported: You have already supported this investment project. Share it!
         support_title: Support this project
-        confirm_group: 
+        confirm_group:
           one: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
           other: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
         supports:

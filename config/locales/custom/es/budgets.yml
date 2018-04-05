@@ -14,6 +14,8 @@ es:
       form:
         tags_instructions: "Etiqueta este proyecto. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Temas
+        faq: "¿Qué puedes proponer?"
+        faq_link: "Mira toda la información sobre los presupuestos participativos"
       index:
         unfeasible: Proyectos de gasto no viables
         unfeasible_text: Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declarados viables y llegar hasta la fase de votación final. Todos los proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad.
@@ -61,6 +63,6 @@ es:
       heading_disclaimer: "*** Los datos de distrito se refieren al distrito en el que el usuario ha votado, no necesariamente en el que está empadronado."
   votes:
     budget_investments:
-      different_heading_assigned: 
+      different_heading_assigned:
         one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito"
         other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos"
