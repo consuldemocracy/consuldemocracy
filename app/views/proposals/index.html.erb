@@ -57,6 +57,12 @@
         </div>
       <% end %>
 
+      <div class="row">
+        <div class="small-12 column">
+          <%= render "view_mode" %>
+        </div>
+      </div>
+
       <%= render("shared/advanced_search", search_path: proposals_path(page: 1)) unless params[:retired].present? %>
 
       <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
@@ -71,7 +77,13 @@
 
       <div id="proposals-list">
         <% if @proposals.any? || current_user.blank? %>
-          <%= render partial: 'proposals/proposal', collection: @proposals %>
+          <% if proposals_default_view? %>
+            <%= render partial: 'proposals/proposal', collection: @proposals %>
+          <% else %>
+            <% @proposals.each do |proposal| %>
+              <%= render partial: '/proposals/proposal_minimal', locals: { proposal: proposal } %>
+            <% end %>
+          <% end %>
         <% else %>
           <%= empty_recommended_proposals_message_text(current_user) %>
         <% end %>
