@@ -41,6 +41,7 @@ en:
       finished: Finished budget
     index:
       title: Participatory budgets
+      empty_budgets: There are no budgets
       section_header:
         icon_alt: Participatory budgets icon
         title: Participatory budgets
