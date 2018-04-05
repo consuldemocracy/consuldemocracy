@@ -41,6 +41,7 @@ es:
       finished: Resultados
     index:
       title: Presupuestos participativos
+      empty_budgets: No hay presupuestos participativos.
       section_header:
         icon_alt: Icono de Presupuestos participativos
         title: Presupuestos participativos
@@ -130,7 +131,7 @@ es:
         already_added: Ya has añadido este proyecto de gasto
         already_supported: Ya has apoyado este proyecto de gasto. ¡Compártelo!
         support_title: Apoyar este proyecto
-        confirm_group: 
+        confirm_group:
           one: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
           other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
         supports:
