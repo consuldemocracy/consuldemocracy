@@ -50,6 +50,7 @@ section "Creating Settings" do
   Setting.create(key: 'feature.community', value: "true")
   Setting.create(key: 'feature.map', value: "true")
   Setting.create(key: 'feature.allow_images', value: "true")
+  Setting.create(key: 'feature.allow_attached_documents', value: "true")
   Setting.create(key: 'feature.public_stats', value: "true")
   Setting.create(key: 'feature.guides', value: true)
 
