@@ -83,8 +83,8 @@ Si une première version a déjà été déployée, il faut vider la base et la 
 bin/rake db:drop
 bin/rake db:create
 bin/rake db:migrate
-# suivant ou se trouve le dump de la base a importer
-psql cdj_production < doc/custom/extract_db_insert_180326.sql
+# suivant nom de la base sur l environnement a deployer
+psql consul < doc/custom/extract_db_insert_180326.sql
 bin/rake db:custom_seed
 ```
 ## Configuration for development and test environments

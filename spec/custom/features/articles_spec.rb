@@ -3,6 +3,14 @@ require 'rails_helper'
 
 feature 'Articles' do
 
+  before do
+    Setting['feature.articles'] = true
+  end
+
+  after do
+    Setting['feature.articles'] = nil
+  end
+
   scenario 'Index' do
     published_articles = [create(:article, :published), create(:article, :published)]
     create(:article, :draft)
@@ -34,5 +42,4 @@ feature 'Articles' do
       expect(page.all('a').count).to be(4) # Twitter, Facebook, Google+, Telegram
     end
   end
-
 end
