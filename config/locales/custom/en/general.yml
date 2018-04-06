@@ -1,4 +1,31 @@
 en:
+  account:
+    show:
+      delegation: Delegation
+      finish_verification: "Add a double verification check to your account"
+      user_permission_verify_info: "* Only for users on Madrid City Census."
+      user_permission_create_budget_investments: Create budget investments*
+      user_permission_votes: Participate on polls*
+  comments:
+    form:
+      leave_reply: Leave your reply
+  questions:
+    form:
+      leave_comment: Leave your question
+  questions_helper:
+    comment_button: Publish question
+    comment_link: Question
+    reply_button: Publish reply
+    reply_link: Reply
+  comment_kinds:
+    comment: Comment
+    question: Question
+  answers:
+    index:
+      title: Answer sent
+      sent: Your answer has been sent. Thank you for participating.
+    new:
+      send: Send answer
   debates:
     index:
       top: Featured
@@ -12,6 +39,15 @@ en:
         title: Help about citizen debates
         description: Start a debate to share opinions with others about the topics you are concerned about of the city of Madrid.
         help_text_1: "The space for citizen debates is aimed at anyone who can expose issues of their concern and those who want to share opinions with other people, preferably related to the city of Madrid."
+    form:
+      comment_kind_instructions: Comment kind
+      comment_kind_label: Choose the comment kind
+    show:
+      questions:
+        one: 1 question
+        other: "%{count} questions"
+        zero: No questions
+      questions_title: Questions
   proposals:
     index:
       section_header:
@@ -26,6 +62,9 @@ en:
         help_text_2: "To create a proposal, you must sign up on %{org}. The proposals that get the support of 1% of the users (persons over 16 years of age registered in Madrid; 27,064 people) in the web, goes to voting phase. To support proposals it is necessary to have a verified account."
         help_text_3: "The City Council of Madrid celebrates a citizen vote when the proposals get the necessary supports. Once celebrated, if there are more people in favor than against, the City Council assumes the proposal and carries it out."
         help_text_4: 'In February 2017 occurred the first citizen vote in which were approved the proposals "Madrid 100% sostenible" and "Billete único para el transporte público".'
+    form:
+      sub_proceeding: Human right
+      proposal_type: Proposal type
   polls:
     index:
       title: Madrid City Council Citizen Consultations
@@ -48,6 +87,16 @@ en:
         random: Random
     show:
       videos: "Video"
+  poll_questions:
+    show:
+      vote_error: "Something went wrong and your vote couldn't be registered. Please check if your browser supports Javascript and try again later."
+  shared:
+    comments:
+      title: 'Comments'
+      login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'
+    author_info:
+      forum: District discussion space
+    probe_plaza_banner: "#RemodelingPlazaEspaña"
   forums:
     index:
       deactivate_link: "Deactivate"
@@ -65,6 +114,9 @@ en:
       confirm: You have already voted some investment projects. If you delegate your votes in %{forum}, your votes will be erased and you will vote whatever this forum votes.
   layouts:
     footer:
+      participation_text: Decide how to shape the Madrid you want to live in.
+      transparency_text: Find out anything about the Madrid City Council.
+      transparency_url: http://transparencia.madrid.es
       copyright: Ayuntamiento de Madrid, %{year}
       description: This portal uses the %{consul} which is %{open_source}. From Madrid out into the world.
       participation_title: Participation
@@ -75,15 +127,130 @@ en:
       transparency_text: Find out anything about the Madrid City Council.
       transparency_url: http://transparencia.madrid.es
     header:
-      logo: "Decide Madrid: portal of citizen participation of the City of Madrid."
-      external_link_opendata: Open data
+      spending_proposals: Participatory budgeting
+      delegation: Delegation
+      collaborative_legislation: Processes
       external_link_opendata_url: http://datos.madrid.es
-      external_link_transparency: Transparencia
       external_link_transparency_url: http://transparencia.madrid.es
-      external_link_blog: Blog
       forums: "Local Forums"
       help_translate: Help us translate
       help_translate_info: How to help
+      logo: "Decide Madrid: portal of citizen participation of the City of Madrid."
+      external_link_opendata: Open data
+      external_link_transparency: Transparency
+      external_link_blog: Blog
+  spending_proposals:
+    form:
+      geozone: Choose if a proposed citywide or district
+    index:
+      available: "Available:"
+      unfeasible_text: "The proposals must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All proposals don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
+      unfeasible_text_definitions: see definitions here
+      sidebar:
+        back: Back to select page
+        district: District
+        my_ballot: My ballot
+        remember_city: You can also vote %{city} investment projects.
+        remember_city_link_html: <strong>city-wide</strong>
+        remember_district: You can also vote investment projects for %{district}.
+        remember_district_link_html: <strong>a district</strong>
+        voted_html:
+          one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
+          other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+        voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money
+        votes: Supports remaining
+        votes_district: "You can only vote in the district %{district}"
+        zero: You have not voted any investment project.
+      orders:
+        random: random
+        confidence_score: highest rated
+        price: by price
+    new:
+      back_link: Back
+      more_info: "Important, not to be ruled out your proposal must comply:"
+      recommendation_one: See the %{requirements}.
+      recommendation_one_link: requirements to be met by a proposal
+      recommendation_two: Each proposal must be submitted separately. You can make as many as you want.
+    show:
+      price_explanation: Price explanation
+      unfeasibility_explanation: Unfeasibility explanation
+      code: 'Investment project code:'
+    spending_proposal:
+      add: Add
+      already_added: You have already added this investment project
+      forum: District discussion space
+      vote: Vote
+    header:
+      check_ballot: Check my ballot
+      different_district_active: "You have active votes in another district:"
+      different_district_active_info: "(If you remove all votes of this district you can select another one)"
+    results:
+      page_title: "Participatory budget | Results"
+      heading: "PARTICIPATORY BUDGET"
+      results_link: Results
+      stats_link: "Participation stats"
+      geozone_selection_title: "By district"
+      spending_proposal: Proposal title
+      ballot_lines_count: Times selected
+      hide_discarded_link: Hide discarded
+      show_all_link: Show all
+      price: Cost
+      amount_available: Available budget
+      incompatible: Incompatibles
+      accepted: "Accepted spending proposal: "
+      discarded: "Discarded spending proposal: "
+    stats:
+      page_title: "Participatory budget | Participation stats"
+      heading: "PARTICIPATORY BUDGET"
+      results_link: Results
+      stats_link: "Participation stats"
+    welcome:
+      city_link: Vote city proposals
+      city_link_close: City proposals
+      contact_html: If you have any doubt %{contact_faq} or send us an email at <strong>preparticipativos@madrid.es</strong>
+      contact_faq: check the faqs
+      delegation: Vote Delegation
+      delegation_closed: See vote delegations
+      delegation_info_html: "If you activate vote delegation on any local space, proposals decided by that space will automaticaly receive your votes"
+      delegation_meetings: local debate spaces
+      delegation_text: Delegate your votes to the proposals decided at any of the %{meetings}
+      delegation_text_closed: You can see what the %{meetings} have decided
+      delegation_title: Vote delegation
+      districts: Districts
+      districts_link: Vote district proposals
+      districts_link_close: District proposals
+      in_two_minutes: All information about participatory budgets
+      title: "You already can vote investment projects!"
+      title_close: "Participatory budgeting"
+      title_results: "Participatory budgeting"
+      text_first_html: "From <strong>May 15th</strong> to <strong>June 30th</strong> you can vote proposals for the 2016 participatory budget."
+      text_first_close_html: "Voting on proposals for this year's participatory budgeting campaign ended. Voting term closed on <strong>June the 30th</strong>."
+      text_first_results_html: "Voting on proposals for this year's participatory budgeting campaign ended. Voting term closed on <strong>June the 30th</strong>."
+      text_second_html: "You can vote for as many proposals as you want with a budget limit for both <strong>city-wide and district-wide</strong> proposals."
+      text_second_close_html: "Results we'll be ready soon."
+      text_second_results_html: "You can already see the results."
+      text_long_html: "Madrid has reserved <strong>60 million euros</strong> for investments assigned to the next year budget for the people to decide what to do with them. Citizens can propose and vote. Madrid government will assume the results and include them in the city's budget for 2017."
+      text_long_close_html: "Madrid has reserved <strong>60 million euros</strong> for investments assigned to the next year budget for the people to decide what to do with them. Citizens have created proposals and voted. Madrid government will assume the results and include them in the city's budget for 2017."
+      text_long_results_html: "Madrid has reserved <strong>60 million euros</strong> for investments assigned to the next year budget for the people to decide what to do with them. Citizens have created proposals and voted. Madrid government will assume the results and include them in the city's budget for 2017."
+      unfeasible_link: See unfeasible investment projects
+      see_results: See results
+  ballots:
+    show:
+      city_link: Vote city proposals
+      city_wide: City Wide
+      districts_link: Vote district proposals
+      district_wide: District Wide
+      title: Your ballot
+      amount_spent: Amount spent
+      remaining_city_html: "You are <span>%{amount_city}</span> to invest citywide."
+      remaining_district_html: "You are <span>%{amount_district}</span> to invest on <span>%{geozone}</span>."
+      remove: Remove vote
+      social_share: I've decided where to invest %{amount} for %{geozone}
+      voted_html:
+        one: "You voted <span>one</span> proposal."
+        other: "You voted <span>%{count}</span> proposals."
+      voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
+      zero: You have not voted any investment project.
   social:
     blog_link: "Blog"
     facebook_link: "Facebook"
@@ -93,6 +260,9 @@ en:
     instagram_link: "Instagram"
   welcome:
     title: "Decide Madrid: portal of citizen participation of the City of Madrid"
+    welcome:
+      go_to_index: Not now, start to participate
+      user_permission_verify_info: "* Only for users on Madrid Census."
     featured:
       features: "Participate on %{org_name}"
       label: "Participate"
@@ -112,6 +282,16 @@ en:
         btn_text_link: See all recommended debates
       proposals:
         btn_text_link: See all recommended proposals
+  votes:
+    spending_proposals:
+      no_city_supports_available: You have already used all your city-wide supports.
+      no_district_supports_available: You have already used all your district-wide supports.
+      different_district_assigned: You have already supported other district proposals.
+      different_geozone_assigned: You have already supported other district proposals. %{my_geozone}.
+      not_enough_money: "This proposal's price is more than the available amount left"
+      confirm_first_vote_on_district: "Everyone can support the proposal of the city and one district of their choice, If you accept you support this proposal and only can support the proposals for %{district}. This district can't change later. Do you want support this proposal and select this district?"
+      confirm_discard_delegation: "If you vote you will stop delegating. "
+      no_ballots_allowed: No ballots allowed
   users:
     show:
       delete_spending_proposal: Delete
@@ -122,3 +302,9 @@ en:
         other: You voted %{count} investments with a cost of %{amount_spent}.
       ballot_verified_only: Only verified users can vote on participatory budget, %{verify_account}.
       verify_account: verify your account
+      filters:
+        spending_proposals:
+          one: 1 Spending proposal
+          other: "%{count} Spending proposals"
+        ballot: Participatory budget
+      delegation: List of recommended investments projects
