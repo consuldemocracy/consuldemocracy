@@ -1,1 +1,2 @@
 $("#<%= dom_id(@debate) %>_votes").html('<%= j render("debates/votes", debate: @debate) %>');
+App.Tracks.render_analytics('<%= j render("/layouts/analytics") %>')

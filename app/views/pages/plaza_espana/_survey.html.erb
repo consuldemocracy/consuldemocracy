@@ -1,0 +1,375 @@
+<div class="survey-results margin">
+
+  <!-- Resultados generales -->
+  <div class="row" data-equalizer>
+    <div class="small-12 medium-6 column">
+      <div class="callout" data-equalizer-watch>
+        <h3>Total encuestas válidas</h3>
+        <p class="big-number-stat">26.961</p>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 column" data-equalizer-watch>
+      <p>
+        <span class="legend">Encuestas totales</span><br>
+        <span class="number-stat">28.249</span>
+      </p>
+      <p>
+        <span class="legend">Encuestas nulas</span><br>
+        <span class="number-stat">1.288</span><br>
+        <small>(<strong>WEB</strong>: 0, <strong>010</strong>: 1271, <strong>PAPEL</strong>: 17)</small>
+      </p>
+      <p>
+        <span class="legend">Encuestas válidas</span><br>
+        <span class="number-stat">26.961</span>
+      </p>
+    </div>
+  </div>
+
+  <hr class="double">
+
+  <!-- Canales de participación -->
+  <div class="row">
+    <div class="small-12 column">
+      <h3 class="subtitle">Canales de<br>participación</h3>
+    </div>
+
+    <hr>
+
+    <div class="show-for-medium" data-equalizer>
+      <div class="small-12 medium-6 large-4 large-offset-4 column" data-equalizer-watch>
+        <canvas id="chart-channels" width="300" height="300"></canvas>
+      </div>
+
+      <div class="small-12 medium-6 large-4 column relative" data-equalizer-watch>
+        <ul class="chart-legend absolute">
+          <li>
+            <span class="label" style="background: #00ad51"></span>
+            <strong>Web</strong>: 19.124 (70,93%)
+          </li>
+          <li>
+            <span class="label" style="background: #007dc3"></span>
+            <strong>010</strong>: 7.605 (28,21%)
+          </li>
+          <li>
+            <span class="label" style="background: #ffdc08"></span>
+            <strong>Papel</strong>: 232 (0,86%)
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="double">
+
+    <div class="clear"></div>
+
+    <div class="small-12 medium-4 column">
+      <div class="panel text-center">
+        <%= image_tag ('survey_results/channel_web.png'), alt: "" %>
+        <p>WEB (70,93%)</p>
+        <p class="big-number-stat">19.124</p>
+      </div>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <div class="panel text-center">
+        <%= image_tag ('survey_results/channel_phone.png'), alt: ""  %>
+        <p>010 (28,21%)</p>
+        <p class="big-number-stat">7.605</p>
+      </div>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <div class="panel text-center">
+        <%= image_tag ('survey_results/channel_paper.png'), alt: ""  %>
+        <p>PAPEL (0,86%)</p>
+        <p class="big-number-stat">232</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="double">
+
+  <!-- Participación por sexo -->
+  <div class="row" data-equalizer>
+    <div class="small-12 column">
+      <h3 class="subtitle">Participación<br>por sexo</h3>
+    </div>
+
+    <hr>
+
+    <div class="small-12 medium-6 column show-for-medium">
+      <div class="panel text-center" data-equalizer-watch>
+        <%= image_tag ('survey_results/sex.png') %>
+        <br>
+        <div class="large-offset-3 large-5 padding">
+          <canvas id="chart-sex" width="300" height="300"></canvas>
+        </div>
+
+        <div class="large-4 column relative">
+          <ul class="chart-legend absolute">
+            <li>
+              <span class="label" style="background: #FF6600"></span>
+              <strong>Hombres</strong>:<br> 16394 (61,03%)
+            </li>
+            <li>
+              <span class="label" style="background: #FF9E01"></span>
+              <strong>Mujeres</strong>:<br> 10466 (38,97%)
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="small-12 column show-for-small-only">
+      <div class="panel text-center">
+        <%= image_tag ('survey_results/sex.png') %>
+      </div>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <div class="panel text-right" data-equalizer-watch>
+        <p class="legend">HOMBRES (61,03%)</p>
+        <p class="big-number-stat">16.394</p>
+        <br>
+        <p><strong>WEB</strong> 11802 (62,02%)</p>
+        <p><strong>010</strong> 4482 (58,99%)</p>
+        <p><strong>PAPEL</strong> 110 (47,41%)</p>
+      </div>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <div class="panel text-left" data-equalizer-watch>
+        <p class="legend">MUJERES (38,97%)</p>
+        <p class="big-number-stat">10.466</p>
+        <br>
+        <p><strong>WEB</strong> 7228 (37,98%)</p>
+        <p><strong>010</strong> 3116 (41,01%)</p>
+        <p><strong>PAPEL</strong> 122 (52,59%)</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="double">
+
+  <!-- Participación por grupos de edad -->
+  <div class="row">
+    <div class="small-12 column">
+      <h3 class="subtitle">Participación por<br> grupos de edad</h3>
+    </div>
+
+    <%= render '/pages/plaza_espana/survey_age' %>
+  </div>
+
+  <hr class="double">
+
+  <!-- Participación por distritos -->
+  <div class="row">
+    <div class="small-12 column">
+      <h3 class="subtitle">Participación por<br> distritos</h3>
+    </div>
+
+    <div class="show-for-medium medium-6 column small-centered">
+      <%= image_tag("map.jpg", usemap: "#map_survey", alt: "Mapa de distritos de Madrid") %>
+    </div>
+
+    <map name="map_survey" id="html_map_survey">
+      <% Geozone.all.each do |geozone| %>
+        <area shape="poly"
+              coords="<%= geozone.html_map_coordinates %>"
+              href="#<%= geozone.name.parameterize %>-survey"
+              title="<%= geozone.name %>"
+              alt="<%= geozone.name %>">
+      <% end %>
+    </map>
+
+    <hr>
+
+    <div class="small-12 column">
+      <table class="survey-districts">
+        <thead>
+          <tr>
+            <th>DISTRITO</th>
+            <th>Nº ENCUESTAS</th>
+            <th>% PARTICIPACIÓN TOTAL ENCUESTAS</th>
+            <th>% PARTICIPACIÓN POBLACIÓN DEL DISTRITO</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr id="arganzuela-survey">
+          <td>
+            <strong>Arganzuela</strong>
+          </td>
+          <td>2200</td>
+          <td>8,19%</td>
+          <td>1,44%</td>
+        </tr>
+        <tr id="barajas-survey">
+          <td>
+            <strong>Barajas</strong>
+          </td>
+          <td>257</td>
+          <td>0,96%</td>
+          <td>0,55%</td>
+        </tr>
+        <tr id="carabanchel-survey">
+          <td>
+            <strong>Carabanchel</strong>
+          </td>
+          <td>1287</td>
+          <td>4,79%</td>
+          <td>0,52%</td>
+        </tr>
+        <tr id="centro-survey">
+          <td>
+            <strong>Centro</strong>
+          </td>
+          <td>4534</td>
+          <td>16,88%</td>
+          <td>3,41%</td>
+        </tr>
+        <tr id="chamartin-survey">
+          <td>
+            <strong>Chamartín</strong>
+          </td>
+          <td>1410</td>
+          <td>5,25%</td>
+          <td>0,98%</td>
+        </tr>
+        <tr id="chamberi-survey">
+          <td>
+            <strong>Chamberí</strong>
+          </td>
+          <td>1740</td>
+          <td>6,48%</td>
+          <td>1,26%</td>
+        </tr>
+        <tr id="ciudad-lineal-survey">
+          <td>
+            <strong>Ciudad Lineal</strong>
+          </td>
+          <td>1181</td>
+          <td>4,40%</td>
+          <td>0,55%</td>
+        </tr>
+        <tr id="fuencarral-el-pardo-survey">
+          <td>
+            <strong>Fuencarral - El Pardo</strong>
+          </td>
+          <td>1617</td>
+          <td>6,02%</td>
+          <td>0,68%</td>
+        </tr>
+        <tr id="hortaleza-survey">
+          <td>
+            <strong>Hortaleza</strong>
+          </td>
+          <td>1100</td>
+          <td>4,10%</td>
+          <td>0,62%</td>
+        </tr>
+        <tr id="latina-survey">
+          <td>
+            <strong>Latina</strong>
+          </td>
+          <td>1677</td>
+          <td>6,24%</td>
+          <td>0,71%</td>
+        </tr>
+        <tr id="moncloa-aravaca-survey">
+          <td>
+            <strong>Moncloa - Aravaca</strong>
+          </td>
+          <td>1610</td>
+          <td>5,99%</td>
+          <td>1,37%</td>
+        </tr>
+        <tr id="moratalaz-survey">
+          <td>
+            <strong>Moratalaz</strong>
+          </td>
+          <td>548</td>
+          <td>2,04%</td>
+          <td>0,57%</td>
+        </tr>
+        <tr id="puente-de-vallecas-survey">
+          <td>
+            <strong>Puente de Vallecas</strong>
+          </td>
+          <td>1028</td>
+          <td>3,83%</td>
+          <td>0,45%</td>
+        </tr>
+        <tr id="retiro-survey">
+          <td>
+            <strong>Retiro</strong>
+          </td>
+          <td>1283</td>
+          <td>4,78%</td>
+          <td>1,07%</td>
+        </tr>
+        <tr id="san-blas-canillejas-survey">
+          <td>
+            <strong>San Blas - Canillejas</strong>
+          </td>
+          <td>746</td>
+          <td>2,78%</td>
+          <td>0,48%</td>
+        </tr>
+        <tr id="salamanca-survey">
+          <td>
+            <strong>Salamanca</strong>
+          </td>
+          <td>1212</td>
+          <td>4,51%</td>
+          <td>0,84%</td>
+        </tr>
+        <tr id="tetuan-survey">
+          <td>
+            <strong>Tetuán</strong></td>
+            <td>1288</td>
+            <td>4,80%</td>
+            <td>0,84%</td>
+          </td>
+        </tr>
+        <tr id="usera-survey">
+          <td>
+            <strong>Usera</strong>
+          </td>
+          <td>584</td>
+          <td>2,17%</td>
+          <td>0,43%</td>
+        </tr>
+        <tr id="vicalvaro-survey">
+          <td>
+            <strong>Vicálvaro</strong>
+          </td>
+          <td>310</td>
+          <td>1,15%</td>
+          <td>0,44%</td>
+        </tr>
+        <tr id="villaverde-survey">
+          <td>
+            <strong>Villaverde</strong>
+          </td>
+          <td>594</td>
+          <td>2,21%</td>
+          <td>0,41%</td>
+        </tr>
+        <tr id="villa-de-vallecas-survey">
+          <td>
+            <strong>Villa de Vallecas</strong>
+          </td>
+          <td>654</td>
+          <td>2,43%</td>
+          <td>0,64%</td>
+        </tr>
+        </tbody>
+      </table>
+      <p>
+        <em>* No se dispone de los datos demográficos de 101 participantes.</em>
+      </p>
+    </div>
+  </div>
+</div>

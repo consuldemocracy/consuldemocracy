@@ -1,0 +1,170 @@
+<% cache ["plaza", "header"] do %>
+  <%= render partial: "probes/plaza/header" %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top margin-bottom">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= back_link_to %>
+      <h1 class="margin-bottom"><%= t("pages.processes.index.process_plaza_title") %></h1>
+      <h2>Participa hasta el <u>28 de octubre</u>. Selecciona el proyecto de Plaza de España que más te guste.</h2>
+      <%= link_to t("pages.processes.index.process_2_button"), plaza_path, class: "white" %>
+    </div>
+  </div>
+</div>
+
+  <% if @probe_option.present? %>
+    <% cache ["plaza", "selected_probe", @probe_option.id] do %>
+      <div class="row margin-top">
+        <div class="small-12 column">
+          <div class="callout success">
+            Has votado el proyecto <strong><%= link_to @probe_option.name, plaza_probe_option_path(@probe_option) %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="row">
+    <div class="float-right">
+      <small>
+        <%= link_to "Volver a mostrar los proyectos ocultos",
+                    restore_discarded_probe_probe_options_path(@probe.codename),
+                    remote: true,
+                    method: :post,
+                    class: "show-hidden-projects",
+                    id: "js-show-hidden-projects",
+                    style: css_for_link_to_display_hidden_project %>
+      </small>
+    </div>
+  </div>
+
+<% cache ["plaza", "user_status_callout", locale_and_user_status] do %>
+  <div class="row">
+    <div class="small-12 column">
+
+        <% if user_signed_in? %>
+          <% if !current_user.level_two_or_three_verified? %>
+            <div class="row">
+              <div class="small-12 column">
+                <div class="callout warning">
+                  <%= t("probes.verified_only",
+                      verify_account: link_to(t("probes.verify_account"), verification_path )).html_safe %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="row">
+            <div class="small-12 column">
+              <div class="callout primary">
+                <%= t("probes.not_logged_in",
+                    signin: link_to(t("probes.signin"), new_user_session_path),
+                    signup: link_to(t("probes.signup"), new_user_registration_path)).html_safe %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+    </div>
+  </div>
+<% end %>
+
+  <div class="row" data-equalizer>
+    <% @probe_options.each do |probe_option| %>
+      <% cache ["plaza", "probe_selection_fragment_1", probe_option.id, @discarded_probe_option_ids] do %>
+        <div id="<%= dom_id(probe_option) %>"
+             class="probe_option small-12 medium-4 large-3 column end"
+             style="<%= css_for_discarded_probe_option(probe_option) %>">
+
+          <div class="project" data-equalizer-watch>
+
+            <%= link_to plaza_probe_option_path(probe_option) do %>
+              <h4 class="probe-title">
+                <%= probe_option.name %>
+                <br>
+                (<%= t("probes.plaza.selecting.code_html", code: probe_option.code) %>)
+              </h4>
+            <% end %>
+
+            <div class="thumbnail">
+              <%= link_to plaza_probe_option_path(probe_option),
+                          class: 'project-thumbnail' do %>
+                <%= image_tag probe_option.thumb_image_url, alt: probe_option.name %>
+              <% end %>
+            </div>
+
+            <div class="probe-links">
+      <% end %>
+            <% if user_signed_in? %>
+              <% if current_user.level_two_or_three_verified? %>
+                <%= form_tag selection_probes_path, id: "#{dom_id(probe_option)}_form" do %>
+                  <input type="hidden" name="id" value="<%= @probe.codename %>">
+                  <input type="hidden" name="option_id" value="<%= probe_option.id %>">
+                  <input type="submit" value="Votar" class="button small expanded margin-top">
+                <% end %>
+              <% else %>
+                <% cache ["plaza", "user_not_verified_msg"] do %>
+                  <p class="callout warning callout-small">
+                    <%= t("probes.verified_only",
+                        verify_account: link_to(t("probes.verify_account"), verification_path, class: "probe-message")).html_safe %>
+                  </p>
+                  <p class="button small expanded secondary disabled margin-top">Votar</p>
+                <% end %>
+              <% end %>
+            <% else %>
+              <% cache ["plaza", "user_not_logged_in_msg"] do %>
+                <p class="callout primary callout-small">
+                  <small>
+                    <%= t("probes.not_logged_in",
+                        signin: link_to(t("probes.signin"), new_user_session_path, class: "probe-message"),
+                        signup: link_to(t("probes.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+                  </small>
+                </p>
+                <p class="button small expanded secondary disabled margin-top">Votar</p>
+              <% end %>
+            <% end %>
+            <% cache ["plaza", "probe_selection_fragment_2", probe_option.id] do %>
+              <%= link_to probe_option.file_path('memoria', 'pdf'),
+                          title: "PDF #{probe_option.name} | #{probe_option.file_size('memoria', 'pdf')}",
+                          target: "_blank" do %>
+                          <%= image_tag "icon_pdf.png" %>
+                          <%= "<small>Memoria (#{probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
+              <% end %>
+              &nbsp;
+              <%= link_to "#{probe_option.file_path('dossier', 'pdf')}",
+                          title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
+                          target: "_blank" do %>
+                          <%= image_tag "icon_pdf.png" %>
+                          <%= "<small>Imágenes (#{probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
+              <% end %>
+
+              <br>
+              <%= link_to plaza_probe_option_path(probe_option),
+                          title: "Ver detalles del proyecto" do %>
+                          <%= image_tag "icon_comment.png" %>
+                          <%= "<small>Ver detalles del proyecto</small>".html_safe %>
+              <% end %>
+
+              <%= link_to discard_probe_probe_option_path(@probe.codename, probe_option),
+                          remote: true,
+                          method: :post do %>
+                <%= image_tag "icon_eye_hide.png" %>
+                <small>Ocultar este proyecto</small>
+              <% end %>
+
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<% cache ["plaza", "conditions_text"] do %>
+  <div class="row">
+    <div class="small-12 column">
+    <p>* Las cinco plazas con mayor puntuación obtienen de 5 a 1 punto respectivamente, que se sumarán a los puntos del jurado para esta primera preselección. Pasada la fase de preselección, las dos plazas finalistas serán votadas por la ciudadanía, que decidirá directamente cuál de las dos será la ganadora. Puedes <a href="http://www.coam.org/media/Default%20Files/servicios/concursos/concursos_ocam/2016/plaza_espania/160617_bases_plaza_espana.pdf" target="_blank" title="<%= t("shared.target_blank_html") %>">consultar toda la información</a> sobre el jurado y el proceso.</p>
+    <p>** El jurado está evaluando que todos los proyectos cumplan los requisitos exigidos, incluyendo los criterios ciudadanos aprobados. En caso de que alguno no los cumpla y sea descalificado, se informará por correo electrónico a sus votantes. Puedes cambiar tu voto hasta el último día de votación. En ningún caso pasará a la siguiente fase ninguna propuesta que no cumpla las bases adecuadamente, se detecte previamente o no.</p>
+    </div>
+  </div>
+<% end %>

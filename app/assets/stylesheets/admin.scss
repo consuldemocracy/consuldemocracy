@@ -148,6 +148,10 @@ $sidebar-active: #f4fcd0;
     &:hover {
       background: #f3f6f7;
     }
+
+    &.success {
+      background: $success-bg;
+    }
   }
 
   table {
@@ -279,7 +283,7 @@ $sidebar-active: #f4fcd0;
 }
 
 .no-margin-bottom {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 // 02. Sidebar
@@ -1114,6 +1118,17 @@ table {
       content: '\76';
     }
   }
+}
+
+.max-headings-label {
+  color: $text-medium;
+  font-size: $small-font-size;
+  margin-left: $line-height / 2;
+}
+
+.current-of-max-headings {
+  color: #000;
+  font-weight: bold;
 }
 
 // 11. Newsletters

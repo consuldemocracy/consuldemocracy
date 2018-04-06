@@ -28,7 +28,22 @@ describe Abilities::Everyone do
   it { should be_able_to(:show, Comment) }
 
   it { should be_able_to(:index, SpendingProposal) }
+  it { should be_able_to(:welcome, SpendingProposal) }
   it { should_not be_able_to(:create, SpendingProposal) }
+
+  describe "Participatory budgeting results page is public with setting to true" do
+    before { Setting["feature.spending_proposal_features.open_results_page"] = true }
+    it { should be_able_to(:stats, SpendingProposal) }
+    it { should be_able_to(:results, SpendingProposal) }
+  end
+
+  describe "Participatory budgeting results page is public with setting to nil" do
+    before { Setting["feature.spending_proposal_features.open_results_page"] = nil }
+    it { should be_able_to(:stats, SpendingProposal) }
+    it { should be_able_to(:results, SpendingProposal) }
+  end
+
+  pending "only authors can access new and create for ProposalNotifications"
 
   it { should be_able_to(:index, Budget) }
 

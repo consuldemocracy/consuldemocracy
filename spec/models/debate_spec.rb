@@ -33,6 +33,21 @@ describe Debate do
       debate.title = "a" * 81
       expect(debate).not_to be_valid
     end
+
+    it "should be valid with a comment kind of comment" do
+      debate.comment_kind = 'comment'
+      expect(debate).to be_valid
+    end
+
+    it "should be valid with a comment kind of question" do
+      debate.comment_kind = 'comment'
+      expect(debate).to be_valid
+    end
+
+    it "should not be valid with a wrong comment kind" do
+      debate.comment_kind = 'misc'
+      expect(debate).not_to be_valid
+    end
   end
 
   describe "#description" do
@@ -58,7 +73,7 @@ describe Debate do
     end
 
     it "is not valid when very long" do
-      debate.description = "a" * 6001
+      debate.description = "a" * 20001
       expect(debate).not_to be_valid
     end
   end
@@ -162,6 +177,13 @@ describe Debate do
     it "is false for anonymous users if too many anonymous votes" do
       debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
       user = create(:user)
+      expect(debate.votable_by?(user)).to be false
+    end
+
+    it "should be false for debates associated to probe options" do
+      probe = Probe.create(codename: 'plaza')
+      probe_option = probe.probe_options.create(code: 'PL1' , name: 'Plaza Option 1', debate: debate)
+      user = create(:user, verified_at: Time.now)
       expect(debate.votable_by?(user)).to be false
     end
   end
@@ -704,6 +726,21 @@ describe Debate do
   describe "#to_param" do
     it "returns a friendly url" do
       expect(debate.to_param).to eq "#{debate.id} #{debate.title}".parameterize
+    end
+  end
+
+  describe "#not_probe" do
+    it "should return debates that are not associated to a probe" do
+      debate1 = create(:debate)
+      debate2 = create(:debate)
+      debate3 = create(:debate)
+
+      probe = Probe.create(codename: 'plaza')
+      probe.probe_options.create(debate: debate1)
+      probe.probe_options.create(debate: debate2)
+
+      expect(Debate.not_probe).to include(debate3)
+      expect(Debate.not_probe).not_to include(debate1, debate2)
     end
   end
 

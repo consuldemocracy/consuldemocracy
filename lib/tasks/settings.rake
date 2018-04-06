@@ -8,4 +8,9 @@ namespace :settings do
     per_page_code_setting.destroy if per_page_code_setting.present?
   end
 
+  desc "Create new Attached Documents feature setting"
+  task create_attached_documents_setting: :environment do
+    Setting['feature.allow_attached_documents'] = true
+  end
+
 end

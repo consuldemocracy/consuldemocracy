@@ -1,0 +1,24 @@
+<div class="row investment-projects-scope margin-bottom no-margin-top">
+  <div id="select-district" class="small-12 medium-7 column select-district">
+    <%= back_link_to participatory_budget_path %>
+
+    <h2><%= t("spending_proposals.welcome.districts") %></h2>
+
+    <div class="row">
+      <% @geozones.each_slice(7) do |slice| %>
+        <div class="small-6 medium-4 column end">
+          <% slice.each do |geozone| %>
+            <span id="<%= dom_id(geozone) %>" class="<%= css_for_ballot_geozone(geozone) %>">
+              <%= link_to geozone.name, spending_proposals_path(geozone: geozone.id),
+                        data: { no_turbolink: true } %><br>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="medium-5 column show-for-medium text-center margin-top">
+    <%= image_tag "map.jpg", alt: "Mapa de distritos de Madrid" %>
+  </div>
+</div>

@@ -67,6 +67,7 @@ class Budget
     scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0 OR valuator_group_assignments_count > 0" ) }
     scope :valuation_finished,          -> { where(valuation_finished: true) }
     scope :valuation_finished_feasible, -> { where(valuation_finished: true, feasibility: "feasible") }
+    scope :visible_to_valuators,        -> { where(visible_to_valuators: true) }
     scope :feasible,                    -> { where(feasibility: "feasible") }
     scope :unfeasible,                  -> { where(feasibility: "unfeasible") }
     scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
@@ -79,13 +80,18 @@ class Budget
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
 
-    scope :by_budget,         ->(budget)      { where(budget: budget) }
-    scope :by_group,          ->(group_id)    { where(group_id: group_id) }
-    scope :by_heading,        ->(heading_id)  { where(heading_id: heading_id) }
-    scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
-    scope :by_tag,            ->(tag_name)    { tagged_with(tag_name) }
-    scope :by_valuator,       ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
+    scope :by_budget,         ->(budget)            { where(budget: budget) }
+    scope :by_group,          ->(group_id)          { where(group_id: group_id) }
+    scope :by_heading,        ->(heading_id)        { where(heading_id: heading_id) }
+    scope :by_admin,          ->(admin_id)          { where(administrator_id: admin_id) }
+    scope :by_tag,            ->(tag_name)          { tagged_with(tag_name) }
+    scope :by_valuator,       ->(valuator_id)       { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
     scope :by_valuator_group, ->(valuator_group_id) { where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id).joins(:valuator_group_assignments) }
+    scope :accesible_by_valuator, ->(valuator) do
+      direct_access = by_valuator(valuator&.id)
+      group_access = by_valuator_group(valuator&.valuator_group_id)
+      visible_to_valuators.where(id: (direct_access.pluck(:id) + group_access.pluck(:id)).uniq)
+    end
 
     scope :for_render, -> { includes(:heading) }
 
@@ -93,6 +99,10 @@ class Budget
     after_save :recalculate_heading_winners if :incompatible_changed?
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+
+    def to_param
+      original_spending_proposal_id || id
+    end
 
     def comments_count
       comments.count
@@ -110,14 +120,15 @@ class Budget
       budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       results = Investment.by_budget(budget)
 
-      results = limit_results(budget, params, results)                if params[:max_per_heading].present?
-      results = results.where(group_id: params[:group_id])            if params[:group_id].present?
-      results = results.by_tag(params[:tag_name])                     if params[:tag_name].present?
-      results = results.by_heading(params[:heading_id])               if params[:heading_id].present?
-      results = results.by_valuator(params[:valuator_id])             if params[:valuator_id].present?
-      results = results.by_valuator_group(params[:valuator_group_id]) if params[:valuator_group_id].present?
-      results = results.by_admin(params[:administrator_id])           if params[:administrator_id].present?
-      results = advanced_filters(params, results)                     if params[:advanced_filters].present?
+      results = limit_results(budget, params, results)                     if params[:max_per_heading].present?
+      results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
+      results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
+      results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?
+      results = results.by_valuator(params[:valuator_id])                  if params[:valuator_id].present?
+      results = results.by_valuator_group(params[:valuator_group_id])      if params[:valuator_group_id].present?
+      results = results.by_admin(params[:administrator_id])                if params[:administrator_id].present?
+      results = advanced_filters(params, results)                          if params[:advanced_filters].present?
+      results = search_by_title_or_id(params[:title_or_id].strip, results) if params[:title_or_id]
 
       results = results.send(current_filter)                        if current_filter.present?
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
@@ -144,11 +155,12 @@ class Budget
       results.where("budget_investments.id IN (?)", ids)
     end
 
-    def self.search_by_title_or_id(params)
-      results = Investment.where(budget_id: params[:budget_id])
-
-      return results.where(id: params[:title_or_id]) if params[:title_or_id] =~ /\A[0-9]+\z/
-      results.where("title ILIKE ?", "%#{params[:title_or_id].strip}%")
+    def self.search_by_title_or_id(title_or_id, results)
+      if title_or_id =~ /^[0-9]+$/
+        results.where(id: title_or_id)
+      else
+        results.where("title ILIKE ?", "%#{title_or_id}%")
+      end
     end
 
     def searchable_values
@@ -236,8 +248,18 @@ class Budget
     end
 
     def valid_heading?(user)
+      reclassification?(user) ||
       voted_in?(heading, user) ||
       can_vote_in_another_heading?(user)
+    end
+
+    def can_vote_in_another_heading?(user)
+      headings_voted_by_user(user).count < group.max_votable_headings
+    end
+
+    def reclassification?(user)
+      headings_voted_by_user(user).count > 1 &&
+      headings_voted_by_user(user).include?(heading_id)
     end
 
     def can_vote_in_another_heading?(user)
@@ -320,12 +342,29 @@ class Budget
       investments
     end
 
+    def self.by_heading(heading_id)
+      heading_ids = [heading_id]
+      if Budget::Heading.where(slug: heading_id).exists?
+        heading_ids << Budget::Heading.where(slug: heading_id).first.id.to_s
+      end
+      where(heading_id: heading_ids)
+    end
+
+    def assigned_valuators
+      self.valuators.collect(&:description_or_name).compact.join(', ').presence
+    end
+
+    def assigned_valuation_groups
+      self.valuator_groups.collect(&:name).compact.join(', ').presence
+    end
+
     def self.to_csv(investments, options = {})
       attrs = [I18n.t("admin.budget_investments.index.table_id"),
                I18n.t("admin.budget_investments.index.table_title"),
                I18n.t("admin.budget_investments.index.table_supports"),
                I18n.t("admin.budget_investments.index.table_admin"),
                I18n.t("admin.budget_investments.index.table_valuator"),
+               I18n.t("admin.budget_investments.index.table_valuation_group"),
                I18n.t("admin.budget_investments.index.table_geozone"),
                I18n.t("admin.budget_investments.index.table_feasibility"),
                I18n.t("admin.budget_investments.index.table_valuation_finished"),
@@ -341,11 +380,8 @@ class Budget
                   else
                     I18n.t("admin.budget_investments.index.no_admin_assigned")
                   end
-          vals = if investment.valuators.empty?
-                   I18n.t("admin.budget_investments.index.no_valuators_assigned")
-                 else
-                   investment.valuators.collect(&:description_or_name).join(', ')
-                 end
+          assigned_valuators = investment.assigned_valuators || '-'
+          assigned_valuation_groups = investment.assigned_valuation_groups || '-'
           heading_name = investment.heading.name
           price_string = "admin.budget_investments.index.feasibility"\
                          ".#{investment.feasibility}"
@@ -353,8 +389,8 @@ class Budget
           valuation_finished = investment.valuation_finished? ?
                                          I18n.t('shared.yes') :
                                          I18n.t('shared.no')
-          csv << [id, title, total_votes, admin, vals, heading_name, price,
-                  valuation_finished]
+          csv << [id, title, total_votes, admin, assigned_valuators, assigned_valuation_groups,
+                  heading_name, price, valuation_finished]
         end
       end
       csv_string

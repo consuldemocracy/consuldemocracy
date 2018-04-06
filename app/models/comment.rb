@@ -5,7 +5,8 @@ class Comment < ActiveRecord::Base
   include Notifiable
 
   COMMENTABLE_TYPES = %w(Debate Proposal Budget::Investment Poll Topic Legislation::Question
-                        Legislation::Annotation Legislation::Proposal).freeze
+                        Legislation::Annotation Legislation::Proposal SpendingProposal
+                        Poll::Question ProbeOption).freeze
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -33,6 +34,7 @@ class Comment < ActiveRecord::Base
     where("administrator_id IS NULL").where("moderator_id IS NULL")
   end
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
+
   scope :public_for_api, -> do
     not_valuations
       .where(%{(comments.commentable_type = 'Debate' and comments.commentable_id in (?)) or
@@ -123,6 +125,28 @@ class Comment < ActiveRecord::Base
   def calculate_confidence_score
     self.confidence_score = ScoreCalculator.confidence_score(cached_votes_total,
                                                              cached_votes_up)
+  end
+
+  def self.public_columns_for_api
+    ["id",
+     "commentable_id",
+     "commentable_type",
+     "body",
+     "created_at",
+     "cached_votes_total",
+     "cached_votes_up",
+     "cached_votes_down",
+     "ancestry",
+     "confidence_score"]
+  end
+
+  def public_for_api?
+    return false if valuation
+    return false unless commentable.present?
+    return false if commentable.hidden?
+    return false unless ["Proposal", "Debate"].include? commentable_type
+    return false unless commentable.public_for_api?
+    return true
   end
 
   private

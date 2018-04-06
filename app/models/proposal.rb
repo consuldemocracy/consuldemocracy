@@ -1,3 +1,4 @@
+require 'csv'
 class Proposal < ActiveRecord::Base
   include Rails.application.routes.url_helpers
   include Flaggable
@@ -26,6 +27,7 @@ class Proposal < ActiveRecord::Base
   include ActsAsParanoidAliases
 
   RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
+  PROCEEDINGS = [ 'Derechos Humanos' ]
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
@@ -33,16 +35,16 @@ class Proposal < ActiveRecord::Base
   has_many :proposal_notifications, dependent: :destroy
 
   validates :title, presence: true
-  validates :question, presence: true
   validates :summary, presence: true
   validates :author, presence: true
   validates :responsible_name, presence: true
 
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
-  validates :question, length: { in: 10..Proposal.question_max_length }
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
   validates :retired_reason, inclusion: { in: RETIRE_OPTIONS, allow_nil: true }
+  validates :proceeding, inclusion: { in: PROCEEDINGS, allow_nil: true }
+  validates :sub_proceeding, presence: true, length: { in: 10..150 }, if: :proceeding?
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -69,7 +71,9 @@ class Proposal < ActiveRecord::Base
   scope :not_retired,              -> { where(retired_at: nil) }
   scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
   scope :unsuccessful,             -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
-  scope :public_for_api,           -> { all }
+  scope :public_for_api,           -> { where('proposals.proceeding IS NULL or proposals.proceeding = ?', 'Derechos Humanos') }
+  scope :proceedings,              -> { where.not(proceeding: nil) }
+  scope :not_proceedings,          -> { where(proceeding: nil) }
   scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
 
   def url
@@ -100,7 +104,9 @@ class Proposal < ActiveRecord::Base
       tag_list.join(' ') => 'B',
       geozone.try(:name) => 'B',
       summary            => 'C',
-      description        => 'D'
+      description        => 'D',
+      proceeding         => 'A',
+      sub_proceeding     => 'A'
     }
   end
 
@@ -156,7 +162,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def register_vote(user, vote_value)
-    if votable_by?(user) && !archived?
+    if votable_by?(user) #TMP && !archived?
       vote_by(voter: user, vote: vote_value)
     end
   end
@@ -192,6 +198,22 @@ class Proposal < ActiveRecord::Base
     Setting['votes_for_proposal_success'].to_i
   end
 
+  def open_plenary?
+    tag_list.include?('plenoabierto') &&
+    created_at >= Date.parse("18-04-2016").beginning_of_day
+  end
+
+  def self.open_plenary_winners
+    tagged_with('plenoabierto').
+    by_date_range(open_plenary_dates).
+    sort_by_confidence_score.
+    limit(5)
+  end
+
+  def self.open_plenary_dates
+    Date.parse("18-04-2016").beginning_of_day..Date.parse("21-04-2016").end_of_day
+  end
+
   def successful?
     total_votes >= Proposal.votes_needed_for_success
   end
@@ -210,8 +232,47 @@ class Proposal < ActiveRecord::Base
 
   def self.proposals_orders(user)
     orders = %w{hot_score confidence_score created_at relevance archival_date}
-    orders << "recommendations" if user.present?
+    if user.present? && Setting['feature.user.recommendations'].present?
+      orders << "recommendations"
+    end
     orders
+  end
+
+  def self.rank(proposal)
+    return 0 if proposal.blank?
+    connection.select_all(<<-SQL).first['rank']
+      SELECT ranked.rank FROM (
+        SELECT id, rank() OVER (ORDER BY confidence_score DESC)
+        FROM proposals
+      ) AS ranked
+      WHERE id = #{proposal.id}
+      SQL
+  end
+
+  def self.public_columns_for_api
+    ["id",
+     "title",
+     "description",
+     "external_url",
+     "cached_votes_up",
+     "comments_count",
+     "hot_score",
+     "confidence_score",
+     "created_at",
+     "summary",
+     "video_url",
+     "geozone_id",
+     "retired_at",
+     "retired_reason",
+     "retired_explanation",
+     "proceeding",
+     "sub_proceeding"]
+  end
+
+  def public_for_api?
+    return false if hidden?
+    return false unless ["Derechos Humanos", nil].include?(proceeding)
+    return true
   end
 
   protected

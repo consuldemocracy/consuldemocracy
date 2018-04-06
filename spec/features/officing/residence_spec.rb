@@ -28,7 +28,7 @@ feature 'Residence' do
 
     background do
       create(:poll_officer_assignment, officer: officer)
-      login_as(officer.user)
+      login_through_form_as_officer(officer.user)
       visit officing_root_path
     end
 
@@ -37,13 +37,40 @@ feature 'Residence' do
         click_link "Validate document"
       end
 
+      expect(page).to have_selector('#new_residence .small-12.medium-6',
+                                    text: 'Document type')
+
       select 'DNI', from: 'residence_document_type'
       fill_in 'residence_document_number', with: "12345678Z"
       fill_in 'residence_year_of_birth', with: '1980'
 
-      click_button 'Validate document'
+      within("#new_residence") do
+        click_button "Validate document"
+      end
 
       expect(page).to have_content 'Document verified with Census'
+    end
+
+    scenario "Document number is copied from the census API" do
+      within("#side_menu") do
+        click_link "Validate document"
+      end
+
+      expect(page).to have_selector('#new_residence .small-12.medium-6',
+                                    text: 'Document type')
+
+
+      select 'DNI', from: 'residence_document_type'
+      fill_in 'residence_document_number', with: "00012345678Z"
+      fill_in 'residence_year_of_birth', with: '1980'
+
+      within("#new_residence") do
+        click_button "Validate document"
+      end
+
+      expect(page).to have_content 'Document verified with Census'
+
+      expect(User.last.document_number).to eq('12345678Z')
     end
 
     scenario "Error on verify" do
@@ -64,11 +91,16 @@ feature 'Residence' do
         click_link "Validate document"
       end
 
+      expect(page).to have_selector('#new_residence .small-12.medium-6',
+                                    text: 'Document type')
+
       select 'DNI', from: 'residence_document_type'
       fill_in 'residence_document_number', with: "9999999A"
       fill_in 'residence_year_of_birth', with: '1980'
 
-      click_button 'Validate document'
+      within("#new_residence") do
+        click_button "Validate document"
+      end
 
       expect(page).to have_content 'The Census was unable to verify this document'
 
@@ -85,15 +117,52 @@ feature 'Residence' do
         click_link "Validate document"
       end
 
+      expect(page).to have_selector('#new_residence .small-12.medium-6',
+                                    text: 'Document type')
+
       select 'DNI', from: 'residence_document_type'
       fill_in 'residence_document_number', with: "12345678Z"
       fill_in 'residence_year_of_birth', with: '1981'
 
-      click_button 'Validate document'
+      within("#new_residence") do
+        click_button "Validate document"
+      end
 
       expect(page).to have_content 'The Census was unable to verify this document'
     end
 
+  end
+
+  scenario "Verify booth", :js do
+    allow(Date).to receive_messages(
+                          :current => Date.new(2018,1,1),
+                          :today => Date.new(2018,1,1))
+    allow(Time).to receive(:current).and_return Time.zone.parse("2018-01-01 12:00:00")
+
+    booth = create(:poll_booth)
+    poll = create(:poll)
+
+    booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+    officer_assignment = create(:poll_officer_assignment,
+                officer: officer,
+                booth_assignment: booth_assignment,
+                date: Date.current)
+
+    create(:poll_shift, officer: officer, booth: booth, date: Date.current)
+
+    login_as(officer.user)
+
+    visit new_officing_residence_path
+    within("#officing-booth") do
+      expect(page).to have_content "You are officing the booth located at #{booth.location}."
+    end
+
+    officing_verify_residence
+
+    expect(page).to have_content poll.name
+    click_button "Confirm vote"
+
+    expect(page).to have_content "Vote introduced!"
   end
 
 end

@@ -6,6 +6,7 @@ describe Poll::Voter do
   let(:booth) { create(:poll_booth) }
   let(:booth_assignment) { create(:poll_booth_assignment, poll: poll, booth: booth) }
   let(:voter) { create(:poll_voter) }
+  let(:officer_assignment) { create(:poll_officer_assignment) }
 
   describe "validations" do
 
@@ -76,15 +77,37 @@ describe Poll::Voter do
 
     it "is not valid if the user has voted via web" do
       answer = create(:poll_answer)
-      answer.record_voter_participation('token')
+
+      Poll::Voter.find_or_create_by(user: answer.author, poll: answer.poll, origin: "web", token: 'token')
 
       voter = build(:poll_voter, poll: answer.question.poll, user: answer.author)
       expect(voter).not_to be_valid
       expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
-    context "origin" do
+    it "should not be valid if token is not present via web" do
+      user = create(:user, :level_two)
+      voter = build(:poll_voter, user: user, poll: poll, origin: "web", token: '')
 
+      expect(voter).not_to be_valid
+      expect(voter.errors.messages[:token]).to eq(["can't be blank"])
+    end
+
+    it "should be valid if token is not present via booth" do
+      user = create(:user, :level_two)
+      voter = build(:poll_voter, user: user, poll: poll, officer_assignment: officer_assignment, origin: "booth", token: '')
+
+      expect(voter).to be_valid
+    end
+
+    it "should be valid if token is not present via letter" do
+      user = create(:user, :level_two)
+      voter = build(:poll_voter, user: user, poll: poll, origin: "letter", token: '')
+
+      expect(voter).to be_valid
+    end
+
+    context "origin" do
       it "is not valid without an origin" do
         voter.origin = nil
         expect(voter).not_to be_valid
@@ -97,6 +120,7 @@ describe Poll::Voter do
 
       it "is valid with a booth origin" do
         voter.origin = "booth"
+        voter.officer_assignment = officer_assignment
         expect(voter).to be_valid
       end
 
@@ -104,7 +128,27 @@ describe Poll::Voter do
         voter.origin = "web"
         expect(voter).to be_valid
       end
+    end
 
+    context "assignments" do
+      it "should not be valid without a booth_assignment_id when origin is booth" do
+        voter.origin = 'booth'
+        voter.booth_assignment_id = nil
+        expect(voter).not_to be_valid
+      end
+
+      it "should not be valid without an officer_assignment_id when origin is booth" do
+        voter.origin = 'booth'
+        voter.officer_assignment_id = nil
+        expect(voter).not_to be_valid
+      end
+
+      it "should be valid without assignments when origin is web" do
+        voter.origin = 'web'
+        voter.booth_assignment_id = nil
+        voter.officer_assignment_id = nil
+        expect(voter).to be_valid
+      end
     end
 
   end
@@ -113,9 +157,10 @@ describe Poll::Voter do
 
     describe "#web" do
       it "returns voters with a web origin" do
+        oa = create(:poll_officer_assignment)
         voter1 = create(:poll_voter, origin: "web")
         voter2 = create(:poll_voter, origin: "web")
-        voter3 = create(:poll_voter, origin: "booth")
+        voter3 = create(:poll_voter, origin: "booth", officer_assignment: oa)
 
         web_voters = described_class.web
 
@@ -128,8 +173,9 @@ describe Poll::Voter do
 
     describe "#booth" do
       it "returns voters with a booth origin" do
-        voter1 = create(:poll_voter, origin: "booth")
-        voter2 = create(:poll_voter, origin: "booth")
+        oa = create(:poll_officer_assignment)
+        voter1 = create(:poll_voter, origin: "booth", officer_assignment: oa)
+        voter2 = create(:poll_voter, origin: "booth", officer_assignment: oa)
         voter3 = create(:poll_voter, origin: "web")
 
         booth_voters = described_class.booth
@@ -141,6 +187,20 @@ describe Poll::Voter do
       end
     end
 
+    describe "#letter" do
+      it "returns voters with a letter origin" do
+        voter1 = create(:poll_voter, origin: "letter")
+        voter2 = create(:poll_voter, origin: "letter")
+        voter3 = create(:poll_voter, origin: "web")
+
+        letter_voters = Poll::Voter.letter
+
+        expect(letter_voters.count).to eq(2)
+        expect(letter_voters).to     include(voter1)
+        expect(letter_voters).to     include(voter2)
+        expect(letter_voters).not_to include(voter3)
+      end
+    end
   end
 
   describe "save" do

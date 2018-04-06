@@ -285,6 +285,23 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
     end
 
+    describe "When allow attached documents setting is disabled" do
+      before do
+        Setting['feature.allow_attached_documents'] = false
+      end
+
+      after do
+        Setting['feature.allow_attached_documents'] = true
+      end
+
+      scenario "Add new document button should not be available" do
+        login_as user_to_login
+        visit send(path, arguments)
+
+        expect(page).not_to have_content("Add new document")
+      end
+    end
+
   end
 
 end
@@ -338,7 +355,6 @@ end
 def documentable_fill_new_valid_proposal
   fill_in :proposal_title, with: "Proposal title #{rand(9999)}"
   fill_in :proposal_summary, with: "Proposal summary"
-  fill_in :proposal_question, with: "Proposal question?"
   check :proposal_terms_of_service
 end
 

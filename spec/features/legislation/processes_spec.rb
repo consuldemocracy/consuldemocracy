@@ -32,9 +32,6 @@ feature 'Legislation' do
 
       visit legislation_processes_path(filter: 'next')
       expect(page).to have_text "There aren't planned processes"
-
-      visit legislation_processes_path(filter: 'past')
-      expect(page).to have_text "There aren't past processes"
     end
 
     scenario 'Processes can be listed' do
@@ -149,15 +146,30 @@ feature 'Legislation' do
 
         visit legislation_process_path(process)
 
-        expect(page).to have_content("This phase is not open yet")
+        expect(page).to     have_content("This phase is not open yet")
+        expect(page).to_not have_content("Participate in the debate")
       end
 
-      scenario 'open' do
+      scenario 'open without questions' do
         process = create(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
 
         visit legislation_process_path(process)
 
-        expect(page).to have_content("Participate in the debate")
+        expect(page).to_not have_content("Participate in the debate")
+        expect(page).to_not have_content("This phase is not open yet")
+      end
+
+      scenario 'open with questions' do
+        process = create(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
+        create(:legislation_question, process: process, title: "Question 1")
+        create(:legislation_question, process: process, title: "Question 2")
+
+        visit legislation_process_path(process)
+
+        expect(page).to     have_content("Question 1")
+        expect(page).to     have_content("Question 2")
+        expect(page).to     have_content("Participate in the debate")
+        expect(page).to_not have_content("This phase is not open yet")
       end
 
       include_examples "not published permissions", :debate_legislation_process_path
@@ -221,6 +233,43 @@ feature 'Legislation' do
       end
 
       include_examples "not published permissions", :result_publication_legislation_process_path
+    end
+
+    context 'proposals phase' do
+      scenario 'not open' do
+        process = create(:legislation_process, :upcoming_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("This phase is not open yet")
+      end
+
+      scenario 'open' do
+        process = create(:legislation_process, :in_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("There are no proposals")
+      end
+
+      scenario 'create proposal button leads to create proposal path if user is logged in' do
+        process = create(:legislation_process, :in_proposals_phase)
+
+        login_as create(:user)
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_link("Create a proposal", href: new_legislation_process_proposal_path(process))
+      end
+
+      scenario 'create proposal button leads to register path if user is not logged in' do
+        process = create(:legislation_process, :in_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_link("Create a proposal", href: new_user_session_path)
+      end
+
+      include_examples "not published permissions", :legislation_process_proposals_path
     end
   end
 end

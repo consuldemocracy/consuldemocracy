@@ -501,8 +501,11 @@ feature 'Commenting legislation questions' do
       @pablo = create(:user)
       @legislation_annotation = create(:legislation_annotation)
       @comment = create(:comment, commentable: @legislation_annotation)
-
       login_as(@manuela)
+    end
+
+    after do
+      logout
     end
 
     scenario 'Show' do
@@ -532,9 +535,8 @@ feature 'Commenting legislation questions' do
                                                               @legislation_annotation)
 
       within("#comment_#{@comment.id}_votes") do
-        find(".in_favor a").click
-
         within(".in_favor") do
+          find('a').click
           expect(page).to have_content "1"
         end
 
@@ -556,14 +558,14 @@ feature 'Commenting legislation questions' do
         find('.against a').click
 
         within('.in_favor') do
-          expect(page).to have_content "0"
+          expect(page).to have_content('0')
         end
 
         within('.against') do
-          expect(page).to have_content "1"
+          expect(page).to have_content('1')
         end
 
-        expect(page).to have_content "1 vote"
+        expect(page).to have_content('1 vote')
       end
     end
 

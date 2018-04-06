@@ -46,8 +46,14 @@
           </div>
         </div>
 
-        <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column">
+        <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column text-center">
+          <% if debate.probe_option.present? %>
+            <div class="probe-banner">
+              <small><%= link_to t("shared.probe_plaza_banner"), plaza_path %></small>
+            </div>
+          <% else %>
             <%= render 'debates/votes', debate: debate %>
+          <% end %>
         </div>
 
       </div>

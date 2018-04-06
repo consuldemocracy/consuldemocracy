@@ -1,0 +1,5 @@
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title"><%= t("debates.index.top") %></h2>
+<br>
+<%= link_to t("debates.index.top_link_debates"),
+    debates_url(order: :created_at, search: "Túpreguntas") %>

@@ -1,6 +1,25 @@
 <%= back_link_to %>
 
 <h2><%= t("admin.valuators.summary.title") %></h2>
+<div class="row margin">
+  <%= form_tag summary_admin_valuators_path, method: :get, enforce_utf8: false do %>
+    <div class="small-12 medium-3 column float-right">
+      <%= select_tag :max_per_geozone,
+                      numeric_range_options((5..100), 5, params[:max_per_geozone]),
+                     { prompt: t("admin.spending_proposals.index.max_per_geozone"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <%= select_tag :max_for_no_geozone,
+                      numeric_range_options((5..300), 5, params[:max_for_no_geozone]),
+                     { prompt: t("admin.spending_proposals.index.max_for_no_geozone"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
+  <% end %>
+</div>
 
 <table id="spending_proposals" class="investment-projects-summary">
   <th><%= t("admin.valuators.summary.valuator_name") %></th>
@@ -17,22 +36,22 @@
         <%= valuator.description_or_email %>
       </td>
       <td class="finished-and-feasible-count">
-        <%= valuator.spending_proposals.finished_and_feasible.count %>
+        <%= spending_proposal_count_for_valuator("finished_and_feasible", valuator) %>
       </td>
       <td class="finished-and-unfeasible-count">
-        <%= valuator.spending_proposals.finished_and_unfeasible.count %>
+        <%= spending_proposal_count_for_valuator("unfeasible", valuator) %>
       </td>
       <td class="finished-count">
-        <%= valuator.spending_proposals.valuation_finished.count %>
+        <%= spending_proposal_count_for_valuator("valuation_finished", valuator) %>
       </td>
       <td class="in-evaluation-count">
-        <%= valuator.spending_proposals.valuating.count %>
+        <%= spending_proposal_count_for_valuator("valuating", valuator) %>
       </td>
       <td class="total-count">
-        <%= valuator.spending_proposals.count %>
+        <%= spending_proposal_count_for_valuator("all", valuator) %>
       </td>
       <td class="total-price text-center">
-        <%= number_to_currency(valuator.spending_proposals.sum(:price)) %>
+        <%= number_to_currency(SpendingProposal.limit_results(valuator.spending_proposals, params).sum(:price)) %>
       </td>
     </tr>
   <% end %>

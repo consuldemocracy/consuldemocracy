@@ -1,16 +1,15 @@
 class Admin::BudgetGroupsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
+  before_action :load_budget
 
   def create
-    @budget = Budget.find(params[:budget_id])
     @budget.groups.create(budget_group_params)
     @groups = @budget.groups.includes(:headings)
   end
 
   def update
-    @budget = Budget.find(params[:budget_id])
-    @group = @budget.groups.find(params[:id])
+    @group = @budget.groups.by_slug(params[:id]).first
     @group.update(budget_group_params)
   end
 
@@ -18,6 +17,10 @@ class Admin::BudgetGroupsController < Admin::BaseController
 
     def budget_group_params
       params.require(:budget_group).permit(:name, :max_votable_headings)
+    end
+
+    def load_budget
+      @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
     end
 
 end

@@ -43,10 +43,6 @@ module BudgetsHelper
     end
   end
 
-  def display_budget_countdown?(budget)
-    budget.balloting?
-  end
-
   def css_for_ballot_heading(heading)
     return '' if current_ballot.blank?
     current_ballot.has_lines_in_heading?(heading) ? 'active' : ''
@@ -62,6 +58,12 @@ module BudgetsHelper
 
   def budget_published?(budget)
     !budget.drafting? || current_user&.administrator?
+  end
+
+  def display_support_alert?(investment)
+    current_user &&
+      !current_user.voted_in_group?(investment.group) &&
+      investment.group.headings.count > 1
   end
 
   def current_budget_map_locations

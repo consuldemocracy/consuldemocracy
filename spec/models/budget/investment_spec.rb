@@ -60,6 +60,23 @@ describe Budget::Investment do
     expect(investment.group_id).to eq group_2.id
   end
 
+  it "logs previous heading value if it is changed" do
+    budget = create(:budget, phase: "balloting")
+
+    group = create(:budget_group, budget: budget)
+
+    heading_1 = create(:budget_heading, group: group)
+    heading_2 = create(:budget_heading, group: group)
+
+    investment = create(:budget_investment, heading: heading_1)
+
+    expect(investment.previous_heading_id).to eq nil
+
+    investment.update(heading: heading_2)
+
+    expect(investment.previous_heading_id).to eq heading_1.id
+  end
+
   describe "#unfeasibility_explanation blank" do
     it "is valid if valuation not finished" do
       investment.unfeasibility_explanation = ""
@@ -308,6 +325,30 @@ describe Budget::Investment do
     end
   end
 
+  describe "#by_budget" do
+
+    it "returns investments scoped by budget" do
+      budget1 = create(:budget)
+      budget2 = create(:budget)
+
+      group1 = create(:budget_group, budget: budget1)
+      group2 = create(:budget_group, budget: budget2)
+
+      heading1 = create(:budget_heading, group: group1)
+      heading2 = create(:budget_heading, group: group2)
+
+      investment1 = create(:budget_investment, heading: heading1)
+      investment2 = create(:budget_investment, heading: heading1)
+      investment3 = create(:budget_investment, heading: heading2)
+
+      investments_by_budget = Budget::Investment.by_budget(budget1)
+
+      expect(investments_by_budget).to include investment1
+      expect(investments_by_budget).to include investment2
+      expect(investments_by_budget).to_not include investment3
+    end
+  end
+
   describe "#by_admin" do
     it "returns investments assigned to specific administrator" do
       investment1 = create(:budget_investment, administrator_id: 33)
@@ -320,7 +361,7 @@ describe Budget::Investment do
     end
   end
 
-  describe "by_valuator" do
+  describe "#by_valuator" do
     it "returns investments assigned to specific valuator" do
       investment1 = create(:budget_investment)
       investment2 = create(:budget_investment)
@@ -341,7 +382,6 @@ describe Budget::Investment do
   end
 
   describe "#by_valuator_group" do
-
     it "returns investments assigned to a valuator's group" do
       valuator = create(:valuator)
       valuator_group = create(:valuator_group, valuators: [valuator])
@@ -355,6 +395,49 @@ describe Budget::Investment do
 
       expect(by_valuator_group.size).to eq(2)
       expect(by_valuator_group).to contain_exactly(assigned_investment, another_assigned_investment)
+    end
+  end
+
+  describe "#accesible_by_valuator" do
+    let!(:visible_individually_assigned_investment) do
+      create(:budget_investment, :visible_to_valuators, valuators: [valuator])
+    end
+    let!(:invisible_individually_assigned_investment) do
+      create(:budget_investment, valuators: [valuator])
+    end
+    let!(:visible_group_assigned_investment) do
+      create(:budget_investment, :visible_to_valuators, valuator_groups: [valuator_group])
+    end
+    let!(:invisible_group_assigned_investment) do
+      create(:budget_investment, valuator_groups: [valuator_group])
+    end
+    let!(:visible_double_assigned_investment) do
+      create(:budget_investment, :visible_to_valuators, valuators: [valuator],
+                                                        valuator_groups: [valuator_group])
+    end
+    let!(:invisible_double_assigned_investment) do
+      create(:budget_investment, valuators: [valuator], valuator_groups: [valuator_group])
+    end
+
+    let(:valuator) { create(:valuator) }
+    let(:valuator_group) { create(:valuator_group, valuators: [valuator]) }
+
+    before do
+      second_valuator = create(:valuator)
+      second_valuator_group = create(:valuator_group, valuators: [second_valuator])
+      create(:budget_investment, :visible_to_valuators, valuators: [second_valuator],
+                                                        valuator_groups: [second_valuator_group])
+      create(:budget_investment, valuators: [second_valuator],
+                                 valuator_groups: [second_valuator_group])
+    end
+
+    it "returns investments assigned to a valuator directly or through its valuator group" do
+      accesible_by_valuator = described_class.accesible_by_valuator(valuator)
+
+      expect(accesible_by_valuator.size).to eq(3)
+      expect(accesible_by_valuator).to contain_exactly(visible_individually_assigned_investment,
+                                                       visible_double_assigned_investment,
+                                                       visible_group_assigned_investment)
     end
   end
 
@@ -735,6 +818,30 @@ describe Budget::Investment do
         expect(carabanchel_investment.valid_heading?(user)).to eq(true)
       end
 
+      it "allows voting in investments of headings where I have already voted due to a reclassification" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+        salamanca   = create(:budget_heading, group: districts)
+        latina      = create(:budget_heading, group: districts)
+
+        all_city_investment    = create(:budget_investment, heading: heading)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+        latina_investment      = create(:budget_investment, heading: latina)
+
+        create(:vote, votable: all_city_investment, voter: user)
+        create(:vote, votable: carabanchel_investment, voter: user)
+
+        all_city_investment.group_id = districts.id
+        all_city_investment.heading_id = salamanca.id
+        all_city_investment.save
+
+        expect(all_city_investment.valid_heading?(user)).to eq(true)
+        expect(carabanchel_investment.valid_heading?(user)).to eq(true)
+        expect(salamanca_investment.valid_heading?(user)).to eq(true)
+        expect(latina_investment.valid_heading?(user)).to eq(false)
+      end
+
       describe "#can_vote_in_another_heading?" do
 
         let(:districts)   { create(:budget_group, budget: budget) }
@@ -763,6 +870,74 @@ describe Budget::Investment do
           expect(latina_investment.can_vote_in_another_heading?(user)).to eq(false)
         end
       end
+    end
+
+    describe "reclassification" do
+
+      it "returns false if I have not voted" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+
+        investment = create(:budget_investment, heading: carabanchel)
+
+        expect(investment.reclassification?(user)).to eq(false)
+      end
+
+      it "returns false if I have voted once in a single heading of a group" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+
+        investment = create(:budget_investment, heading: carabanchel)
+
+        create(:vote, votable: investment, voter: user)
+
+        expect(investment.reclassification?(user)).to eq(false)
+      end
+
+      it "returns false if I have voted twice in a single heading of a group" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+
+        investment1 = create(:budget_investment, heading: carabanchel)
+        investment2 = create(:budget_investment, heading: carabanchel)
+
+        create(:vote, votable: investment1, voter: user)
+        create(:vote, votable: investment2, voter: user)
+
+        expect(investment1.reclassification?(user)).to eq(false)
+      end
+
+      it "returns false if I have voted in two headings of the same group but I am voting in a different heading" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+        salamanca = create(:budget_heading, group: districts)
+        latina      = create(:budget_heading, group: districts)
+
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+        latina_investment   = create(:budget_investment, heading: latina)
+
+        create(:vote, votable: carabanchel_investment, voter: user)
+        create(:vote, votable: salamanca_investment, voter: user)
+
+        expect(latina_investment.reclassification?(user)).to eq(false)
+      end
+
+      it "returns true if I have voted in two headings of the same group and I am voting in one of those headings" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+        salamanca = create(:budget_heading, group: districts)
+
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+        salamanca_investment2  = create(:budget_investment, heading: salamanca)
+
+        create(:vote, votable: carabanchel_investment, voter: user)
+        create(:vote, votable: salamanca_investment, voter: user)
+
+        expect(salamanca_investment2.reclassification?(user)).to eq(true)
+      end
+
     end
   end
 
@@ -955,9 +1130,7 @@ describe Budget::Investment do
         end
 
       end
-
     end
-
   end
 
   describe "Reclassification" do

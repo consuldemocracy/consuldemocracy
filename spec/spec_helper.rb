@@ -6,7 +6,7 @@ require 'knapsack_pro'
 
 Dir["./spec/models/concerns/*.rb"].each { |f| require f }
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
-Dir["./spec/shared/**/*.rb"].sort.each { |f| require f }
+Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -18,6 +18,7 @@ RSpec.configure do |config|
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
   config.include(CommonActions)
+
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
   end
@@ -55,6 +56,19 @@ RSpec.configure do |config|
       # specs, so use truncation strategy.
       DatabaseCleaner.strategy = :truncation
     end
+  end
+
+  config.before(:each, :headless_chrome) do
+    Capybara.current_driver  = :headless_chrome
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.after(:each, :headless_chrome) do
+    Capybara.current_driver = Capybara.default_driver
+  end
+
+  config.after(:each, :nvotes) do
+    page.driver.reset!
   end
 
   config.before(:each, type: :feature) do

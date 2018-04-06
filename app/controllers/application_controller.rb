@@ -3,6 +3,7 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   include HasFilters
   include HasOrders
+  include Analytics
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
 
@@ -18,7 +19,13 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
-      format.html { redirect_to main_app.root_url, alert: exception.message }
+      format.html {
+        if current_user && current_user.officing_voter?
+          redirect_to new_officing_session_path
+        else
+          redirect_to main_app.root_url, alert: exception.message
+        end
+      }
       format.json { render json: {error: exception.message}, status: :forbidden }
     end
   end
@@ -108,6 +115,10 @@ class ApplicationController < ActionController::Base
         campaign = Campaign.where(track_id: params[:track_id]).first
         ahoy.track campaign.name if campaign.present?
       end
+
+      if params[:track_id] == "172943750183759812"
+        session[:track_signup] = true
+      end
     end
 
     def set_return_url
@@ -125,4 +136,5 @@ class ApplicationController < ActionController::Base
     def current_budget
       Budget.current
     end
+
 end

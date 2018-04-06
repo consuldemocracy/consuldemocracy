@@ -1,0 +1,101 @@
+<%= render "probes/#{@probe.codename}/header" %>
+
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= back_link_to %>
+
+      <h1 class="margin-bottom"><%= t("pages.processes.index.process_7_title") %></h1>
+      <h2>Participa hasta el <u>27 de julio</u>. Selecciona el diseño de banco que más te guste.</h2>
+    </div>
+  </div>
+</div>
+
+<% if @probe_option.present? %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <div class="callout success">
+        Has votado el proyecto <strong><%= @probe_option.name %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>27 de julio</u>.
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="row" data-equalizer>
+  <% @probe_options.each do |probe_option| %>
+    <div class="small-12 medium-4 column padding" data-equalizer-watch>
+      <div class="media-object">
+        <div class="media-object-section">
+          <div class="thumbnail">
+            <%= link_to probe_option.original_image_url, target: '_blank' do %>
+              <%= image_tag probe_option.thumb_image_url, alt: probe_option.name %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="media-object-section">
+          <h4><%= probe_option.name %></h4>
+          <%= link_to "Ver detalle", probe_option.original_image_url,
+                      title: t("shared.target_blank_html"),
+                      target: "_blank",
+                      class: "button hollow" %>
+          <br>
+          <%= link_to "Descargar dossier <small>(PDF | #{probe_option.file_size('dossier', 'pdf')})</small>".html_safe,
+                      probe_option.file_path('dossier', 'pdf'),
+                      title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
+                      target: "_blank" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="small-12 column">
+    <h3 class="margin-bottom">Selecciona el proyecto que quieres votar</h3>
+
+    <%= form_tag selection_probes_path do %>
+      <% @probe_options.in_groups_of(4).each do |probe_option_group| %>
+        <div class="small-12 medium-4 column">
+          <% probe_option_group.compact.each do |probe_option| %>
+            <label>
+              <%= radio_button_tag("option_id", probe_option.id, @probe_option.try(:id) == probe_option.id) %>
+              <span><%= probe_option.name %></span>
+            </label>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <% if current_user.level_two_or_three_verified? %>
+          <div class="row">
+            <div class="small-12 medium-4 column end text-center">
+              <input type="hidden" name="id" value="<%= @probe.codename %>">
+              <input type="submit" value="Enviar voto" class="button expanded margin-top">
+            </div>
+          </div>
+        <% else %>
+          <div class="row">
+            <div class="small-12 column">
+              <div class="callout warning">
+                <%= t("probes.verified_only",
+                    verify_account: link_to(t("probes.verify_account"), verification_path )).html_safe %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="row">
+          <div class="small-12 column">
+            <div class="callout primary">
+              <%= t("probes.not_logged_in",
+                  signin: link_to(t("probes.signin"), new_user_session_path),
+                  signup: link_to(t("probes.signup"), new_user_registration_path)).html_safe %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

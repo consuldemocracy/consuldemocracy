@@ -1,0 +1,72 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "stat_graphs", 'data-turbolinks-track' => true %>
+<% end %>
+
+<h2><%= t("admin.stats.spending_proposals.title")%></h2>
+
+<div>
+  <%= render 'graph', name: "user_voted_budgets", event: "", count: @user_count %>
+</div>
+
+<table class="investment-projects-summary">
+  <tr id="city_voters">
+    <td class="name">
+      <%= t("admin.stats.spending_proposals.users_city_total") %>
+    </td>
+    <td class="name">
+    <%= number_with_delimiter @voters_in_city %>
+    </td>
+  </tr>
+
+  <tr id="district_voters">
+    <td class="name">
+       <%= t("admin.stats.spending_proposals.users_district_total") %>
+    </td>
+    <td class="name">
+      <%= number_with_delimiter @voters_in_district %>
+    </td>
+  </tr>
+
+  <tr id="in_both_voters">
+    <td class="name">
+      <%= t("admin.stats.spending_proposals.users_both_total") %>
+    </td>
+    <td class="name">
+    <%= number_with_delimiter(@voters_in_city + @voters_in_district - @user_count) %>
+    </td>
+  </tr>
+
+  <tr id="only_district_voters">
+    <td class="name">
+       <%= t("admin.stats.spending_proposals.users_district_only") %>
+    </td>
+    <td class="name">
+      <%= number_with_delimiter(@user_count - @voters_in_city) %>
+    </td>
+  </tr>
+
+  <tr id="only_city_voters">
+    <td class="name">
+       <%= t("admin.stats.spending_proposals.users_city_only") %>
+    </td>
+    <td class="name">
+      <%= number_with_delimiter(@user_count - @voters_in_district) %>
+    </td>
+  </tr>
+</table>
+
+<table class="investment-projects-summary">
+  <th><%= t("admin.stats.spending_proposals.districts") %></th>
+  <th><%= t("admin.stats.spending_proposals.users") %></th>
+
+<% @ballots.each do |geozone, count| %>
+  <tr id="<%= geozone.present? ? dom_id(geozone) : 'geozone_all_city' %>">
+    <td class="name">
+      <%= geozone.present? ? geozone.name : t("geozones.none") %>
+    </td>
+    <td class="name">
+      <%= number_with_delimiter count %>
+    </td>
+  </tr>
+<% end %>
+</table>

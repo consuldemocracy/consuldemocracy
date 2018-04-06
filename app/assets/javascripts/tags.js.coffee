@@ -8,7 +8,7 @@ App.Tags =
 
       unless $this.data('initialized') is 'yes'
         $this.on('click', ->
-          name = $(this).text()
+          name = '"' + $(this).text() + '"'
           current_tags = $tag_input.val().split(',').filter(Boolean)
 
           if $.inArray(name, current_tags) >= 0

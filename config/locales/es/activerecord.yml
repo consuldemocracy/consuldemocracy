@@ -13,6 +13,9 @@ es:
       budget/investment/milestone:
         one: "hito"
         other: "hitos"
+      budget/investment/status:
+        one: "Estado de proyecto"
+        other: "Estados de proyecto"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -123,9 +126,13 @@ es:
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
       budget/investment/milestone:
+        status_id: "Estado actual del proyecto (opcional)"
         title: "Título"
-        description: "Descripción"
+        description: "Descripción (opcional si se ha asignado un estado de proyecto)"
         publication_date: "Fecha de publicación"
+      budget/investment/status:
+        name: "Nombre"
+        description: "Descripción (opcional)"
       budget/heading:
         name: "Nombre de la partida"
         price: "Cantidad"
@@ -261,6 +268,10 @@ es:
               min_image_width: "La imagen debe tener al menos %{required_min_width}px de largo"
               min_image_height: "La imagen debe tener al menos %{required_min_height}px de alto"
         newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "El segmento de usuarios es inválido"
+        admin_notification:
           attributes:
             segment_recipient:
               invalid: "El segmento de usuarios es inválido"

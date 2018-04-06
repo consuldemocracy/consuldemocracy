@@ -84,28 +84,26 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_investments
-      @investments = if params[:title_or_id].present?
-                       Budget::Investment.search_by_title_or_id(params)
-                     else
-                       Budget::Investment.scoped_filter(params, @current_filter)
-                                         .order(sort_by(params[:sort_by]))
-                     end
+      @investments = Budget::Investment.scoped_filter(params, @current_filter)
+                                       .order(sort_by(params[:sort_by]))
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
     def budget_investment_params
       params.require(:budget_investment)
             .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
-                    :valuation_tag_list, :incompatible, :selected, valuator_ids: [],
-                    valuator_group_ids: [])
+                    :valuation_tag_list, :incompatible, :selected, :organization_name, :label,
+                    :visible_to_valuators, valuator_ids: [], valuator_group_ids: [])
     end
 
     def load_budget
-      @budget = Budget.includes(:groups).find(params[:budget_id])
+      @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      raise ActionController::RoutingError, 'Not Found' if @budget.blank?
     end
 
     def load_investment
-      @investment = Budget::Investment.by_budget(@budget).find(params[:id])
+      @investment = @budget.investments.where(original_spending_proposal_id: params[:id]).first
+      @investment ||= @budget.investments.find(params[:id])
     end
 
     def load_admins
@@ -121,7 +119,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_tags
-      @tags = Budget::Investment.tags_on(:valuation).order(:name).uniq
+      @tags = Budget::Investment.by_budget(@budget).tags_on(:valuation).order(:name).uniq
     end
 
     def load_ballot

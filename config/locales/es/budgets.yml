@@ -67,15 +67,17 @@ es:
         tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+        faq: "¿Qué puedes proponer?"
+        faq_link: "Mira toda la información sobre los presupuestos participativos"
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
         location: "Información adicional de la ubicación"
+        map_skip_checkbox: "Este proyecto no tiene una ubicación concreta o no la conozco."
       index:
         title: Presupuestos participativos
         unfeasible: Proyectos de gasto no viables
-        unfeasible_text: "Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad."
-        unfeasible_text_definitions: ver definiciones aquí
+        unfeasible_text: "Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto) para ser declarados viables y llegar hasta la fase de votación final. Todos las proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad."
         by_heading: 'Proyectos de gasto con ámbito: %{heading}'
         search_form:
           button: Buscar
@@ -124,6 +126,7 @@ es:
         milestones_tab: Seguimiento
         no_milestones: No hay hitos definidos
         milestone_publication_date: "Publicado el %{publication_date}"
+        milestone_status_changed: El proyecto ha cambiado al estado
         author: Autor
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:

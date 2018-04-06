@@ -626,11 +626,39 @@
   }
 }
 
+.milestone-status {
+  background: $budget;
+  border-radius: rem-calc(4);
+  color: #fff;
+  display: inline-block;
+  margin-top: $line-height / 6;
+  padding: $line-height / 4 $line-height / 2;
+}
+
 .show-actions-menu {
 
   [class^="icon-"] {
     display: inline-block;
     vertical-align: middle;
+  }
+}
+
+.additional-content {
+
+  .tabs {
+    background: none;
+    border: 0;
+    margin-bottom: 0;
+
+    a {
+      background: none;
+    }
+  }
+
+  .filter-subnav {
+    background: $highlight;
+    margin-bottom: $line-height;
+    padding-top: $line-height / 4;
   }
 }
 
@@ -986,6 +1014,112 @@
   }
 }
 
+.view-mode {
+
+  ul {
+    margin-bottom: 0;
+
+    li {
+      padding: $line-height / 4 0;
+      padding-left: $line-height;
+    }
+  }
+
+  .dropdown-pane {
+    width: auto;
+  }
+
+  .button {
+    background: #eee;
+    height: rem-calc(36);
+    margin-bottom: 0;
+    padding: $line-height / 4;
+    width: rem-calc(36);
+
+    &::before {
+      color: $text;
+      font-family: 'icons';
+    }
+  }
+
+  &.default {
+
+    .button {
+
+      &::before {
+        content: '\51';
+      }
+    }
+  }
+
+  &.minimal {
+
+    .button {
+
+      &::before {
+        content: '\22';
+      }
+    }
+  }
+
+  .view-list {
+    position: relative;
+
+    &::before {
+      content: '\22';
+      font-family: 'icons';
+      left: 0;
+      position: absolute;
+      top: 6px;
+    }
+  }
+
+  .view-card {
+    position: relative;
+
+    &::before {
+      content: '\51';
+      font-family: 'icons';
+      left: 0;
+      position: absolute;
+      top: 6px;
+    }
+  }
+
+  .active {
+    color: $brand;
+
+    &::after {
+      content: '\6c';
+      font-family: 'icons';
+      font-size: $tiny-font-size;
+    }
+  }
+}
+
+.debate,
+.proposal,
+.budget-investment {
+
+  &.minimal {
+
+    .panel,
+    .debate-content,
+    .proposal-content,
+    .budget-investment-content {
+      min-height: 0;
+    }
+
+    .panel h3 {
+      margin: 0 0 $line-height / 2;
+
+      @include breakpoint(medium) {
+        margin: 0;
+      }
+    }
+  }
+}
+
 // 05. Featured
 // ------------
 
@@ -1121,7 +1255,6 @@
     }
 
     .callout {
-
       &.primary a {
         color: $link;
       }
@@ -1224,8 +1357,7 @@
       text-decoration: none;
     }
 
-    a,
-    div {
+    a {
       display: block;
       padding: $line-height / 2;
 
@@ -1686,10 +1818,6 @@
 
 .orbit-slide {
   max-height: none !important;
-
-  img {
-    image-rendering: pixelated;
-  }
 }
 
 .orbit-caption {

@@ -1,0 +1,45 @@
+<% provide :title, "Remodelación de Plaza España" %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_plaza_espana" %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: plaza_debates_url %>
+<% end %>
+
+<div class="expanded jumbo-survey no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= link_to "/processes_plaza_espana", class: "left back" do %>
+        <i class="icon-angle-left left"></i>
+        <%= t("pages.processes.back") %>
+      <% end %>
+      <div class="text-center">
+        <%= image_tag "processes_plaza_espana_debates.png", size: "580x270", alt: "#decideplazaespaña"%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="process row margin">
+  <div class="small-12 column">
+
+    <h1>Debates anteriores</h1>
+    <ul>
+      <li>
+        <strong>La plaza como ágora. Usos. Vivir la plaza como parte del barrio y de la ciudad</strong><br>
+        <em>Viernes 4 de marzo</em>&nbsp;|&nbsp;
+        <a href="https://www.youtube.com/watch?v=-wLAzQ7Bo0g" target="_blank" title="(se abre en ventana nueva)">Ver vídeo del debate</a>
+      </li>
+      <li>
+        <strong>Plaza España. Movilidad, Medio Ambiente y Energía</strong><br>
+        <em>Jueves 25 de febrero</em>&nbsp;|&nbsp;
+        <a href="https://www.youtube.com/watch?v=C_71mfvRtSE" target="_blank" title="(se abre en ventana nueva)">Ver vídeo del debate</a>
+      </li>
+      <li>
+        <strong>Pasado, presente y futuro de la plaza de España. ¿Por qué remodelarla?</strong><br>
+        <em>Jueves 11 de febrero</em>&nbsp;|&nbsp;
+        <a href="https://www.youtube.com/watch?v=RWQeKbheobY" target="_blank" title="(se abre en ventana nueva)">Ver vídeo del debate</a>
+      </li>
+    </ul>
+  </div>
+</div>
