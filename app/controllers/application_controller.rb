@@ -69,7 +69,9 @@ class ApplicationController < ActionController::Base
     end
 
     def set_layout
-      if devise_controller?
+      if devise_controller? && params[:landing]
+        "landing"
+      elsif devise_controller?
         "devise"
       else
         "application"
