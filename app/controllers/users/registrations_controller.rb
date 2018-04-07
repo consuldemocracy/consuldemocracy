@@ -64,6 +64,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                    :redeemable_code)
     end
 
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:account_update, keys: [:email])
+    end
+
     def erase_params
       params.require(:user).permit(:erase_reason)
     end
