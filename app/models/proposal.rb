@@ -1,4 +1,6 @@
 class Proposal < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
   include Flaggable
   include Taggable
   include Conflictable
@@ -17,8 +19,9 @@ class Proposal < ApplicationRecord
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone, optional: true
-  has_many :comments, as: :commentable
-  has_many :proposal_notifications
+
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :proposal_notifications, dependent: :destroy
 
   validates :title, presence: true
   validates :question, presence: true

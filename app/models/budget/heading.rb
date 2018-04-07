@@ -1,5 +1,7 @@
 class Budget
   class Heading < ApplicationRecord
+    include Sluggable
+
     belongs_to :group
 
     has_many :investments

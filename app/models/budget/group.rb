@@ -1,5 +1,7 @@
 class Budget
   class Group < ApplicationRecord
+    include Sluggable
+
     belongs_to :budget
 
     has_many :headings, dependent: :destroy

@@ -6,7 +6,7 @@
 
 <%= link_to t("admin.budget_investments.show.edit"),
             edit_admin_budget_budget_investment_path(@budget, @investment,
-                                                Budget::Investment.filter_params(params).to_h) %>
+                                                     Budget::Investment.filter_params(params).to_h) unless @budget.finished? %>
 
 <hr>
 
@@ -34,7 +34,7 @@
 <p>
   <%= link_to t("admin.budget_investments.show.edit_classification"),
                 edit_admin_budget_budget_investment_path(@budget, @investment,
-                                                  {anchor: 'classification'}.merge(Budget::Investment.filter_params(params).to_h)) %>
+                                                  { anchor: 'classification' }.merge(Budget::Investment.filter_params(params).to_h)) unless @budget.finished? %>
 </p>
 
 <hr>

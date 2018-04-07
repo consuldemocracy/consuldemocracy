@@ -12,7 +12,7 @@ RSpec.configure do |config|
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
   config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
   config.include(CommonActions)

@@ -12,8 +12,9 @@ describe Legislation::AnswersController do
 
     it 'should create an ahoy event' do
       sign_in @user
+      post :create, params: { process_id: @process.id, question_id: @question.id,
+                              legislation_answer: { legislation_question_option_id: @question_option.id }}
 
-      post :create, params: {process_id: @process.id, question_id: @question.id, legislation_answer: { legislation_question_option_id: @question_option.id }}
       expect(Ahoy::Event.where(name: :legislation_answer_created).count).to eq 1
       expect(Ahoy::Event.last.properties['legislation_answer_id']).to eq Legislation::Answer.last.id
     end
@@ -22,7 +23,9 @@ describe Legislation::AnswersController do
       sign_in @user
 
       expect do
-        post :create, params: {process_id: @process.id, question_id: @question.id, legislation_answer: { legislation_question_option_id: @question_option.id }}, xhr: true
+        post :create, params: { process_id: @process.id, question_id: @question.id,
+                                legislation_answer: { legislation_question_option_id: @question_option.id }}, xhr: true
+
       end.to change { @question.reload.answers_count }.by(1)
     end
 
@@ -31,7 +34,8 @@ describe Legislation::AnswersController do
       @process.update_attribute(:debate_end_date, Date.current - 1.day)
 
       expect do
-        post :create, params: {process_id: @process.id, question_id: @question.id, legislation_answer: { legislation_question_option_id: @question_option.id }}, xhr: true
+        post :create, params: { process_id: @process.id, question_id: @question.id,
+                                legislation_answer: { legislation_question_option_id: @question_option.id }}, xhr: true
       end.to_not change { @question.reload.answers_count }
     end
   end

@@ -1,5 +1,6 @@
 require 'numeric'
 class Debate < ApplicationRecord
+  include Rails.application.routes.url_helpers
   include Flaggable
   include Taggable
   include Conflictable

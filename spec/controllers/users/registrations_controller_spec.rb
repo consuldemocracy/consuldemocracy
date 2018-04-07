@@ -9,7 +9,8 @@ describe Users::RegistrationsController do
     end
 
     context "when username is available" do
-      it "should return true with no error message" do
+
+      it "returns true with no error message" do
         get :check_username, params: { username: "available username" }
 
         data = JSON.parse response.body, symbolize_names: true

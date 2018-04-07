@@ -8,7 +8,9 @@ class Admin::SpendingProposalsController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @spending_proposals = SpendingProposal.scoped_filter(filter_params, @current_filter).order(cached_votes_up: :desc, created_at: :desc).page(params[:page])
+    @spending_proposals = SpendingProposal.scoped_filter(filter_params, @current_filter)
+                                          .order(cached_votes_up: :desc, created_at: :desc)
+                                          .page(params[:page])
   end
 
   def show
@@ -41,6 +43,14 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
     def spending_proposal_params
       params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :administrator_id, :tag_list, valuator_ids: [])
+    end
+
+    def filter_params
+      params.permit(:geozone_id, :administrator_id, :tag_name, :valuator_id)
+    end
+
+    def load_filter_params
+      @filter_params ||= filter_params
     end
 
     def filter_params

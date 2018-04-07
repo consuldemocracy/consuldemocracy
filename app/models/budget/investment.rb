@@ -1,5 +1,6 @@
 class Budget
   class Investment < ApplicationRecord
+    SORTING_OPTIONS = %w(id title supports).freeze
 
     include Measurable
     include Sanitizable

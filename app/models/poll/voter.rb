@@ -1,5 +1,8 @@
 class Poll
   class Voter < ApplicationRecord
+
+    VALID_ORIGINS = %w{web booth}.freeze
+
     belongs_to :poll
     belongs_to :user
     belongs_to :geozone

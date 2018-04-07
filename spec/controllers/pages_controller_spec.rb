@@ -3,6 +3,7 @@ require 'rails_helper'
 describe PagesController do
 
   describe 'Static pages' do
+
     it 'should include a privacy page' do
       get :show, params: { id: :privacy }
       expect(response).to be_ok
@@ -31,27 +32,29 @@ describe PagesController do
 
   describe 'More info pages' do
 
-    it 'should include a more infor page' do
-      get :show, params: { id: 'more_info/index' }
+    it 'includes a more info page' do
+      get :show, params: { id: 'help/index' }
       expect(response).to be_ok
     end
 
-    it 'should include a how_to_use page' do
-      get :show, params: { id: 'more_info/how_to_use/index' }
+    it 'includes a how_to_use page' do
+      get :show, params: { id: 'help/how_to_use/index' }
       expect(response).to be_ok
     end
 
-    it 'should include a faq page' do
-      get :show, params: { id: 'more_info/faq/index' }
+    it 'includes a faq page' do
+      get :show, params: { id: 'help/faq/index' }
       expect(response).to be_ok
     end
 
   end
 
   describe 'Not found pages' do
-    it 'should return a 404 message' do
+
+    it 'returns a 404 message' do
       get :show, params: { id: "nonExistentPage" }
       expect(response).to be_missing
     end
+
   end
 end
