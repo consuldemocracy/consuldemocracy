@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -122,7 +122,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(FactoryBot.create(:user), debate)
       end
     end
 
@@ -136,7 +136,7 @@ FactoryGirl.define do
 
     trait :conflictive do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(FactoryBot.create(:user), debate)
         4.times { create(:vote, votable: debate) }
       end
     end
@@ -167,7 +167,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(FactoryBot.create(:user), debate)
       end
     end
 
@@ -185,7 +185,7 @@ FactoryGirl.define do
 
     trait :conflictive do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(FactoryBot.create(:user), debate)
         4.times { create(:vote, votable: debate) }
       end
     end
@@ -362,7 +362,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+        Flag.flag(FactoryBot.create(:user), debate)
       end
     end
 
