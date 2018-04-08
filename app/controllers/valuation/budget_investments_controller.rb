@@ -61,7 +61,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def resource_name
-      resource_model.parameterize("_")
+      resource_model.parameterize(separator: "_")
     end
 
     def load_budget
