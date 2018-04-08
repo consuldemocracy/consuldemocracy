@@ -414,7 +414,6 @@ GEM
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
       sshkit (>= 1.2)
-    safe_yaml (1.0.4)
     safely_block (0.2.1)
       errbase
     sass (3.4.25)
@@ -475,9 +474,6 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.8)
     tins (1.16.3)
-    tolk (2.0.0)
-      rails (>= 4.0)
-      safe_yaml (>= 0.8.6)
     tomlrb (1.2.6)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
@@ -520,13 +516,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on
-  acts_as_votable
+  acts-as-taggable-on (~> 5.0.0)
+  acts_as_votable (~> 0.11.1)
   ahoy_matey (~> 1.6.0)
   ancestry (~> 2.2.2)
-  browser
+  browser (~> 2.5.3)
   bullet (~> 5.7.0)
-  byebug
+  byebug (~> 10.0.2)
   cancancan (~> 2.0.0)
   capistrano (~> 3.10.1)
   capistrano-bundler (~> 1.2)
@@ -537,46 +533,46 @@ DEPENDENCIES
   cocoon (~> 1.2.9)
   coffee-rails (~> 4.2.1)
   coveralls (~> 0.8.21)
-  daemons
-  dalli
+  daemons (~> 1.2.6)
+  dalli (~> 2.7.7)
   database_cleaner (~> 1.6.1)
   delayed_job_active_record (~> 4.1.1)
   devise (~> 4.3.0)
-  devise-async
+  devise-async (~> 1.0.0)
   devise_security_extension!
   email_spec (~> 2.1.0)
   factory_bot_rails (~> 4.8.2)
   faker (~> 1.8.7)
   foundation-rails (~> 6.2.4.0)
   foundation_rails_helper (~> 2.0.0)
-  fuubar
+  fuubar (~> 2.3.1)
   graphiql-rails (~> 1.4.1)
   graphql (~> 1.7.8)
   groupdate (~> 3.2.0)
   i18n-tasks (~> 0.9.20)
   initialjs-rails (= 0.2.0.4)
   invisible_captcha!
-  jquery-fileupload-rails
+  jquery-fileupload-rails (~> 0.4.7)
   jquery-rails (~> 4.3.1)
-  jquery-ui-rails
+  jquery-ui-rails (~> 6.0.1)
   kaminari (~> 1.0.1)
   knapsack_pro (~> 0.53.0)
-  launchy
+  launchy (~> 2.4.3)
   letter_opener_web (~> 1.3.2)
-  mdl
+  mdl (~> 0.4.0)
   newrelic_rpm (~> 4.1.0.333)
-  omniauth
+  omniauth (~> 1.8.1)
   omniauth-facebook (~> 4.0.0)
   omniauth-google-oauth2 (~> 0.4.1)
-  omniauth-twitter
+  omniauth-twitter (~> 1.4.0)
   paperclip (~> 5.2.1)
   paranoia (~> 2.3.1)
   pg (~> 0.20.0)
-  pg_search
+  pg_search (~> 2.1.2)
   rails (= 5.0.4)
-  rails-assets-leaflet!
+  rails-assets-leaflet (~> 1.3.1)!
   rails-assets-markdown-it (~> 8.2.1)!
-  rb-readline
+  rb-readline (~> 0.5.5)
   record_tag_helper (~> 1.0)
   redcarpet (~> 3.4.0)
   responders (~> 2.4.0)
@@ -587,21 +583,20 @@ DEPENDENCIES
   rubocop-rspec (~> 1.24.0)
   rvm1-capistrano3 (~> 1.4.0)
   sass-rails (~> 5.0, >= 5.0.6)
-  savon
-  scss_lint
-  selenium-webdriver
+  savon (~> 2.12.0)
+  scss_lint (~> 0.55.0)
+  selenium-webdriver (~> 3.11.0)
   sitemap_generator (~> 5.3.1)
   social-share-button (~> 0.10)
-  spring
-  spring-commands-rspec
+  spring (~> 2.0.2)
+  spring-commands-rspec (~> 1.0.4)
   sprockets (~> 3.7.1)
-  tolk (~> 2.0.0)
   turbolinks (~> 5.0.1)
   turnout (~> 2.4.0)
   uglifier (~> 4.1.2)
   unicorn (~> 5.4.0)
-  web-console (= 3.5.1)
-  whenever
+  web-console (~> 3.5.1)
+  whenever (~> 0.10.0)
 
 BUNDLED WITH
    1.16.1
