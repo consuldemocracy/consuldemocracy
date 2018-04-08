@@ -5,11 +5,12 @@ class Management::BaseController < ActionController::Base
   before_action :set_locale
 
   helper_method :managed_user
+  helper_method :current_user
 
   private
 
     def verify_manager
-      raise ActionController::RoutingError.new('Not Found') unless current_manager.present?
+      raise ActionController::RoutingError.new('Not Found') if current_manager.blank?
     end
 
     def current_manager
@@ -40,4 +41,11 @@ class Management::BaseController < ActionController::Base
       I18n.locale = session[:locale]
     end
 
+    def current_budget
+      Budget.current
+    end
+
+    def clear_password
+      session[:new_password] = nil
+    end
 end

@@ -18,6 +18,11 @@
 // 16. Flags
 // 17. Activity
 // 18. Banners
+// 19. Recommended Section Home
+// 20. Documents
+// 21. Related content
+// 22. Images
+// 23. Maps
 //
 
 // 01. Global styles
@@ -84,11 +89,20 @@ a {
   &.warning:hover {
     color: #000;
   }
+
+  &.medium {
+    font-size: $small-font-size;
+  }
 }
 
 .button.hollow {
   border: 1px solid $link;
   color: $link;
+}
+
+.button.hollow.error {
+  border-color: $alert-border;
+  color: $color-alert;
 }
 
 .postfix.button {
@@ -105,6 +119,10 @@ a {
 
 .inline-block {
   display: inline-block;
+}
+
+.aling-middle {
+  vertical-align: middle;
 }
 
 .sidebar-divider {
@@ -148,8 +166,19 @@ a {
   margin-bottom: $line-height;
 }
 
+.margin-left {
+  margin-left: $line-height;
+}
+
 .margin-right {
   margin-right: $line-height;
+}
+
+.float-right-medium {
+
+  @include breakpoint(medium) {
+    float: right !important;
+  }
 }
 
 .no-margin-top {
@@ -199,26 +228,48 @@ a {
 
 .menu.simple {
   border-bottom: 1px solid $border;
-  margin: $line-height 0;
+  clear: both;
+  margin-bottom: $line-height / 2;
 
   li {
-    padding-bottom: rem-calc(7);
+    font-size: $base-font-size;
+    margin-bottom: 0;
+    margin-right: $line-height / 2;
+
+    @include breakpoint(medium) {
+      margin-right: $line-height * 1.5;
+    }
 
     a {
-      color: $text-medium;
+      color: $text;
+      display: inline-block;
+      font-weight: bold;
+      position: relative;
+      text-align: left;
+
+      &:hover {
+        color: $link;
+      }
     }
 
     &.active {
       border-bottom: 2px solid $brand;
       color: $brand;
     }
+
+    &:not(.active) {
+      margin-bottom: $line-height / 3;
+    }
+  }
+
+  h2 {
+    font-size: $base-font-size;
   }
 }
 
 .menu.vertical {
-  background: #fff;
   margin: $line-height 0;
-  padding: $line-height;
+  padding: $line-height 0;
 
   li {
     margin-bottom: $line-height;
@@ -226,6 +277,11 @@ a {
     a {
       color: $text-medium;
       padding: 0;
+
+      &.active {
+        font-weight: bold;
+        color: $brand;
+      }
     }
 
     h2 {
@@ -268,7 +324,11 @@ a {
 .icon-angle-left {
   clear: both;
   color: $text-medium;
-  float: left;
+  display: inline-block;
+}
+
+.back:not([class^="icon-"]) {
+  text-decoration: underline;
 }
 
 .tabs-content {
@@ -276,12 +336,15 @@ a {
 }
 
 .tabs {
-  border: {
-    left: 0;
-    right: 0;
-    top: 0;
-  };
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
   margin-bottom: $line-height;
+
+  .tabs-title {
+    font-size: $base-font-size;
+    margin-bottom: 0;
+  }
 
   .tabs-title > a {
     color: $text-medium;
@@ -302,16 +365,42 @@ a {
   }
 }
 
-.no-max-width {
-  max-width: none;
-}
-
 .button.float-right ~ .button.float-right {
   margin: 0 $line-height / 2;
 }
 
 .pagination .current {
   background: $brand;
+}
+
+.truncate-horizontal-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.align-top {
+  vertical-align: top;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.off-canvas-content {
+  box-shadow: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 // 02. Header
@@ -357,7 +446,11 @@ header {
 
   .top-bar-title a {
     @include logo;
-    line-height: rem-calc(80) !important;
+    line-height: rem-calc(80);
+
+    @include breakpoint(medium) {
+      line-height: rem-calc(80);
+    }
 
     &:hover {
       text-decoration: none;
@@ -406,6 +499,34 @@ header {
       background: #fff;
       box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
     }
+  }
+
+  .menu {
+
+    &.is-dropdown-submenu {
+      background: #fff;
+      margin: 0;
+      margin-top: rem-calc(-24);
+      padding: 0;
+      z-index: 9;
+    }
+
+    .is-submenu-item {
+      display: block;
+      height: auto;
+      margin-bottom: 0;
+
+      a {
+        color: $text;
+      }
+    }
+  }
+}
+
+.dropdown.menu > li {
+
+  &.is-dropdown-submenu-parent > a::after {
+    border-color: #fff transparent transparent;
   }
 }
 
@@ -528,6 +649,14 @@ header {
   }
 }
 
+.top-bar-right {
+
+  .active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
 .submenu {
   border-bottom: 1px solid $border;
   clear: both;
@@ -542,7 +671,7 @@ header {
     text-align: left;
 
     @include breakpoint(medium) {
-      margin-right: $line-height * 1.5;
+      margin-right: $line-height;
     }
 
     &:hover {
@@ -892,6 +1021,10 @@ form {
     background-color: $info-bg;
     border-color: $info-border;
     color: $color-info;
+
+    a {
+      color: $link !important;
+    }
   }
 
   &.warning {
@@ -1038,25 +1171,55 @@ form {
     color: #ecf00b;
     font-size: rem-calc(10);
     position: absolute;
-    right: 8px;
+    left: 12px;
     top: 6px;
+
+    @include breakpoint(medium) {
+      left: auto;
+      right: 8px;
+    }
   }
 }
 
-.notifications-list::before {
-  background: $border;
-  content: '';
-  height: 100%;
-  left: 22px;
-  position: absolute;
-  top: 60px;
-  width: 2px;
+.notifications-list {
+  position: relative;
+
+  &::before {
+    background: $border;
+    content: '';
+    height: 100%;
+    left: 7px;
+    position: absolute;
+    top: 2px;
+    width: 2px;
+  }
 }
 
 .notification {
+  border: 1px solid $border;
   display: block;
-  padding: $line-height / 2 0 $line-height / 2 $line-height * 1.5;
+  margin-bottom: $line-height / 4;
+  margin-left: $line-height;
+  padding: $line-height / 2 $line-height;
   position: relative;
+
+  @include breakpoint(medium) {
+
+    .mark-notification {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+    }
+  }
+
+  &.unread {
+    background: $highlight-soft;
+    border: 1px solid $highlight;
+
+    &:hover {
+      background: $highlight;
+    }
+  }
 
   &:hover {
 
@@ -1078,13 +1241,19 @@ form {
     color: $brand;
     content: '\4d';
     font-family: "icons" !important;
-    left: 0;
+    font-size: $small-font-size;
+    height: rem-calc(20);
+    left: -24px;
+    line-height: rem-calc(20);
     position: absolute;
+    text-align: center;
+    width: rem-calc(20);
   }
 
   p {
     color: $text;
     margin-bottom: 0;
+    max-width: 80%;
   }
 
   .time {
@@ -1107,7 +1276,6 @@ form {
     margin-top: $line-height / 4;
     position: absolute;
     right: 0;
-    z-index: 2;
   }
 }
 
@@ -1524,7 +1692,7 @@ table {
 // 13. Pages
 // ---------
 
-.more-information {
+.help {
 
   li {
     border-bottom: 1px solid $border;
@@ -1746,6 +1914,7 @@ table {
 
     [class^="icon-"] {
       font-size: $base-font-size;
+      text-decoration: none;
       vertical-align: sub;
     }
   }
@@ -1776,11 +1945,13 @@ table {
       font-size: $base-font-size;
       left: -20px;
       position: absolute;
+      text-decoration: none;
       top: -1px;
     }
 
     .divider {
       color: $text-light;
+      display: inline-block;
     }
 
     form {
@@ -1925,55 +2096,55 @@ table {
 // ------------
 
 .activity {
-  margin-bottom: $line-height * 2;
 
-  table {
-    border: 0;
+  .retired {
+    text-decoration: line-through;
+  }
+}
+
+.public-interests {
+
+  li {
+    margin-right: $line-height / 4;
+
+    span {
+      background: none;
+      border: 1px solid #ececec;
+    }
+  }
+}
+
+.following {
+
+  .follow-list {
+    list-style-type: circle;
+    padding: $line-height / 2;
+
+    li {
+      margin-bottom: $line-height / 2;
+      margin-left: $line-height;
+    }
   }
 
-  td {
+  h3 {
+    font-size: rem-calc(24);
+    margin-top: $line-height;
+    padding-left: rem-calc(30);
     position: relative;
 
-    &:first-child {
-      padding-left: $line-height * 1.5;
-      width: 75%;
-    }
-
-    &::before {
-      color: $brand;
-      font-family: "icons" !important;
-      font-size: rem-calc(24);
-      left: 4px;
+    span {
+      left: 0;
       position: absolute;
+      top: 2px;
     }
   }
 
-  .activity-comments td:first-child::before {
-    content: 'e';
-    top: 18px;
-  }
+  .interests {
 
-  .activity-debates td:first-child::before {
-    content: 'i';
-    top: 14px;
-  }
-
-  .activity-proposals {
-
-    td:first-child::before {
-      content: 'h';
-      top: 18px;
+    @include breakpoint(medium) {
+      border-left: 1px solid #ececec;
+      padding-left: $line-height;
     }
-
-    .retired {
-      text-decoration: line-through;
-    }
-  }
-
-  .activity-investment-projects td:first-child::before,
-  .activity-ballot td:first-child::before {
-    content: '\53';
-    top: 10px;
   }
 }
 
@@ -2047,5 +2218,360 @@ table {
   a:hover h3 {
     color: #eaeaf2 !important;
     text-decoration: none;
+  }
+}
+
+// 19. Recommended Section Home
+// ----------------------------
+
+.home-page {
+
+  .push {
+    display: none;
+  }
+}
+
+.section-recommended {
+  padding: $line-height * 2 0;
+
+  h2 {
+    margin-bottom: $line-height * 2;
+  }
+
+  .debates,
+  .proposals,
+  .budget-investments {
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+
+    @include breakpoint(small) {
+      margin-bottom: $line-height;
+    }
+
+    .button.hollow {
+      margin-top: rem-calc(15);
+    }
+  }
+
+  .card {
+
+    .card-section {
+      padding: $line-height 0;
+      max-width: rem-calc(300);
+      margin: 0 auto;
+
+      p {
+        font-size: rem-calc(15);
+        text-align: left;
+      }
+    }
+
+    .orbit {
+      height: rem-calc(300);
+
+      .orbit-wrapper {
+        max-height: rem-calc(250);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .orbit-bullets {
+        @include orbit-bullets;
+        width: 100%;
+      }
+    }
+  }
+
+  .card .orbit .orbit-wrapper .truncate {
+    background: image-url('truncate.png');
+    background-repeat: repeat-x;
+    bottom: 0;
+    height: rem-calc(20);
+    position: absolute;
+    width: 100%;
+  }
+
+  .debates-inner {
+    border-top: 4px solid $debates;
+  }
+
+  .proposals-inner {
+    border-top: 4px solid $proposals;
+  }
+
+  .budget-investments-inner {
+    border-top: 4px solid $budget;
+  }
+
+  .debates-inner,
+  .proposals-inner,
+  .budget-investments-inner {
+    background: #fff;
+    max-height: rem-calc(350);
+
+    @include breakpoint(small) {
+      max-height: rem-calc(400);
+    }
+
+    h4 {
+      margin-top: $line-height;
+      margin-bottom: 0;
+      font-size: rem-calc(18);
+      min-height: rem-calc(50);
+    }
+
+    h5 {
+      font-size: $small-font-size;
+      text-align: left;
+    }
+  }
+
+  .carousel-image {
+
+    .card .orbit {
+      height: rem-calc(480);
+
+      .orbit-wrapper {
+        max-height: rem-calc(450);
+      }
+    }
+
+    .debates-inner,
+    .proposals-inner,
+    .budget-investments-inner {
+      max-height: rem-calc(500);
+
+      @include breakpoint(small) {
+        max-height: rem-calc(600);
+      }
+    }
+  }
+
+  .carousel-image .orbit-wrapper img {
+    display: block;
+
+    @include breakpoint(small) {
+      margin: 0 auto;
+    }
+  }
+}
+
+// 20. Documents
+// -------------
+
+.documents {
+
+  h2 {
+    font-size: rem-calc(24);
+
+    span {
+      color: #4f4f4f;
+      font-weight: normal;
+    }
+  }
+
+  ul li {
+    padding-top: $line-height / 2;
+
+    &:not(:first-child) {
+      border-top: 1px solid $highlight;
+    }
+  }
+
+  .document-link {
+    background: $highlight-soft;
+    border: 2px solid $highlight;
+    border-radius: rem-calc(5);
+    display: block;
+    margin: $line-height / 2 0;
+    padding: 0 $line-height / 2;
+    position: relative;
+
+    a {
+      word-wrap: break-word;
+    }
+
+    .icon-document {
+      color: #007bb7;
+      display: inline-block;
+      font-size: rem-calc(24);
+      line-height: $line-height;
+      vertical-align: middle;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.additional-document-link {
+  background: $highlight-soft;
+  border: 1px solid $highlight;
+  display: block;
+  margin: $line-height / 2 0;
+  padding: $line-height / 2;
+  position: relative;
+
+  a {
+    word-wrap: break-word;
+  }
+
+  .icon-document {
+    color: #007bb7;
+    display: inline-block;
+    font-size: rem-calc(24);
+    line-height: $line-height;
+    vertical-align: middle;
+  }
+}
+
+.document-divider {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+}
+
+// 21. Related content
+// -------------------
+
+.related-content {
+  border-top: 1px solid $border;
+
+  h2 {
+    font-size: rem-calc(24);
+
+    span {
+      color: #4f4f4f;
+      font-weight: normal;
+    }
+  }
+}
+
+.add-related-content {
+  display: block;
+
+  @include breakpoint(medium) {
+    float: right;
+  }
+}
+
+.related-content-list {
+  list-style-type: none;
+  margin-left: 0;
+
+  li {
+    border-bottom: 1px solid $border;
+    margin-bottom: 0 !important;
+    padding: $line-height / 2;
+
+    @include breakpoint(medium) {
+
+      .score-actions {
+        display: none;
+        float: right;
+      }
+    }
+
+    &:first-child {
+      border-top: 1px solid $border;
+    }
+
+    &:hover {
+      background: #f9f9f9;
+
+      .score-actions {
+        display: block;
+      }
+    }
+  }
+
+  h3 {
+    font-size: $base-font-size;
+    font-weight: normal;
+  }
+
+  .related-content-title {
+    color: #4f4f4f;
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+  }
+
+  .flag {
+    margin-top: $line-height / 2;
+  }
+}
+
+.relate-content-score {
+  display: block;
+
+  @include breakpoint(medium) {
+    text-align: center;
+  }
+
+  a {
+    font-weight: bold;
+    margin-right: $line-height;
+    padding-left: rem-calc(20);
+    position: relative;
+    text-decoration: none;
+
+    &.score-positive::before,
+    &.score-negative::before {
+      font-family: 'icons';
+      left: 0;
+      position: absolute;
+    }
+
+    &.score-positive {
+      color: $color-success;
+
+      &::before {
+        color: $color-success;
+        content: '\6c';
+      }
+    }
+
+    &.score-negative {
+      color: $color-alert;
+
+      &::before {
+        color: $color-alert;
+        content: '\76';
+      }
+    }
+  }
+}
+
+// 22. Images
+// -----------------
+
+.images .button {
+  margin-top: $line-height / 2;
+}
+
+// 23. Maps
+// -----------------
+
+.location-map-remove-marker {
+  border-bottom: 1px dotted #cf2a0e;
+  color: $delete;
+  display: inline-block;
+  margin-top: $line-height / 2;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 1px solid #cf2a0e;
+    color: #cf2a0e;
+    text-decoration: none;
+  }
+}
+
+.leaflet-bar a {
+
+  &.leaflet-disabled {
+    color: #525252 !important;
   }
 }

@@ -19,7 +19,7 @@ class Management::BudgetsController < Management::BaseController
   end
 
   def print_investments
-    @budgets = Budget.current.order(created_at: :desc).page(params[:page])
+    @budget = current_budget
   end
 
   private

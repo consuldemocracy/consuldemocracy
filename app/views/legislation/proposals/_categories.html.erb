@@ -1,0 +1,14 @@
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title"><%= t("shared.tags_cloud.categories") %></h2>
+<br>
+
+<ul id="categories" class="no-bullet categories">
+  <% @process.tag_list_on(:customs).each do |tag| %>
+    <li class="inline-block">
+      <% css_class = { class: 'active' } if params[:search] == tag %>
+      <%= link_to tag,
+                  legislation_process_proposals_path(process_id: @process, search: tag),
+                  css_class || {} %>
+    </li>
+  <% end %>
+</ul>

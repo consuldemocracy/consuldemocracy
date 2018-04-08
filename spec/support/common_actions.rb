@@ -14,6 +14,16 @@ module CommonActions
     click_button 'Register'
   end
 
+  def login_through_form_with_email_and_password(email='manuela@consul.dev', password='judgementday')
+    visit root_path
+    click_link 'Sign in'
+
+    fill_in 'user_login', with: email
+    fill_in 'user_password', with: password
+
+    click_button 'Enter'
+  end
+
   def login_through_form_as(user)
     visit root_path
     click_link 'Sign in'
@@ -24,9 +34,21 @@ module CommonActions
     click_button 'Enter'
   end
 
+  def login_through_form_as_officer(user)
+    visit root_path
+    click_link 'Sign in'
+
+    fill_in 'user_login', with: user.email
+    fill_in 'user_password', with: user.password
+
+    click_button 'Enter'
+    visit new_officing_residence_path
+  end
+
   def login_as_authenticated_manager
+    expected_response = {login: login, user_key: user_key, date: date}.with_indifferent_access
     login, user_key, date = "JJB042", "31415926", Time.current.strftime("%Y%m%d%H%M%S")
-    allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return({login: login, user_key: user_key, date: date}.with_indifferent_access)
+    allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(expected_response)
     visit management_sign_in_path(login: login, clave_usuario: user_key, fecha_conexion: date)
   end
 
@@ -64,14 +86,8 @@ module CommonActions
   def comment_on(commentable, user = nil)
     user ||= create(:user)
 
-    login_as(user)
-    commentable_path = commentable.is_a?(Proposal) ? proposal_path(commentable) : debate_path(commentable)
-    visit commentable_path
-
-    fill_in "comment-body-#{commentable.class.name.underscore}_#{commentable.id}", with: 'Have you thought about...?'
-    click_button 'Publish comment'
-
-    expect(page).to have_content 'Have you thought about...?'
+    comment = create(:comment, commentable: commentable, user: user)
+    CommentNotifier.new(comment: comment).process
   end
 
   def reply_to(original_user, manuela = nil)
@@ -111,7 +127,8 @@ module CommonActions
 
   def error_message(resource_model = nil)
     resource_model ||= "(.*)"
-    /\d errors? prevented this #{resource_model} from being saved:/
+    field_check_message = 'Please check the marked fields to know how to correct them:'
+    /\d errors? prevented this #{resource_model} from being saved. #{field_check_message}/
   end
 
   def expect_to_be_signed_in
@@ -119,7 +136,7 @@ module CommonActions
   end
 
   def expect_to_not_be_signed_in
-    expect(find('.top-bar')).to_not have_content 'My account'
+    expect(find('.top-bar')).not_to have_content 'My account'
   end
 
   def select_date(values, selector)
@@ -151,14 +168,15 @@ module CommonActions
     expect(page).to have_content 'Document verified with Census'
   end
 
-  def confirm_phone
+  def confirm_phone(user = nil)
+    user ||= User.last
+
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
 
     expect(page).to have_content 'Enter the confirmation code sent to you by text message'
 
-    user = User.last.reload
-    fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
+    fill_in 'sms_confirmation_code', with: user.reload.sms_confirmation_code
     click_button 'Send'
 
     expect(page).to have_content 'Code correct'
@@ -187,12 +205,12 @@ module CommonActions
 
   def expect_message_voting_not_allowed
     expect(page).to have_content 'Voting phase is closed'
-    expect(page).to_not have_selector('.in-favor a')
+    expect(page).not_to have_selector('.in-favor a')
   end
 
   def expect_message_selecting_not_allowed
     expect(page).to have_content 'No Selecting Allowed'
-    expect(page).to_not have_selector('.in-favor a')
+    expect(page).not_to have_selector('.in-favor a')
   end
 
   def expect_message_organizations_cannot_vote
@@ -214,13 +232,20 @@ module CommonActions
   end
 
   def create_successful_proposals
-    [create(:proposal, title: "Winter is coming", question: "Do you speak it?", cached_votes_up: Proposal.votes_needed_for_success + 100),
-     create(:proposal, title: "Fire and blood", question: "You talking to me?", cached_votes_up: Proposal.votes_needed_for_success + 1)]
+    [create(:proposal, title: "Winter is coming", question: "Do you speak it?",
+                       cached_votes_up: Proposal.votes_needed_for_success + 100),
+     create(:proposal, title: "Fire and blood", question: "You talking to me?",
+                       cached_votes_up: Proposal.votes_needed_for_success + 1)]
   end
 
   def create_archived_proposals
-    [create(:proposal, title: "This is an expired proposal", created_at: Setting["months_to_archive_proposals"].to_i.months.ago),
-     create(:proposal, title: "This is an oldest expired proposal", created_at: (Setting["months_to_archive_proposals"].to_i + 2).months.ago)]
+    months_to_archive_proposals = Setting["months_to_archive_proposals"].to_i
+    [
+      create(:proposal, title: "This is an expired proposal",
+                        created_at: months_to_archive_proposals.months.ago),
+      create(:proposal, title: "This is an oldest expired proposal",
+                        created_at: (months_to_archive_proposals + 2).months.ago)
+    ]
   end
 
   def tag_names(tag_cloud)
@@ -237,8 +262,8 @@ module CommonActions
       click_link "Send notification"
     end
 
-    fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal #{proposal.title}"
-    fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen! #{proposal.summary}"
+    fill_in 'proposal_notification_title', with: "Thanks for supporting proposal: #{proposal.title}"
+    fill_in 'proposal_notification_body', with: "Please share it with others! #{proposal.summary}"
     click_button "Send message"
 
     expect(page).to have_content "Your message has been sent correctly."
@@ -271,16 +296,74 @@ module CommonActions
 
   def expect_no_badge_for(resource_name, resource)
     within("##{resource_name}_#{resource.id}") do
-      expect(page).to_not have_css ".label.round"
-      expect(page).to_not have_content "Employee"
+      expect(page).not_to have_css ".label.round"
+      expect(page).not_to have_content "Employee"
     end
   end
 
   def add_to_ballot(budget_investment)
     within("#budget_investment_#{budget_investment.id}") do
-      find('.add a').trigger('click')
+      find('.add a').click
       expect(page).to have_content "Remove"
     end
   end
 
+  def vote_for_poll_via_web(poll, question, answer)
+    visit poll_path(poll)
+
+    within("#poll_question_#{question.id}_answers") do
+      click_link answer.to_s
+      expect(page).not_to have_link(answer.to_s)
+    end
+  end
+
+  def vote_for_poll_via_booth
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    expect(page).to have_content poll.name
+
+    first(:button, "Confirm vote").click
+    expect(page).to have_content "Vote introduced!"
+
+    expect(Poll::Voter.count).to eq(1)
+  end
+
+  def model_name(described_class)
+    return :proposal_notification if described_class == ProposalNotification
+
+    described_class.name.gsub("::", "_").downcase.to_sym
+  end
+
+  def comment_body(resource)
+    "comment-body-#{resource.class.name.parameterize('_').to_sym}_#{resource.id}"
+  end
+
+  def path_for(resource)
+    nested_path_for(resource) || url_for([resource, only_path: true])
+  end
+
+  def nested_path_for(resource)
+    case resource.class.name
+    when "Legislation::Question"
+      legislation_process_question_path(resource.process, resource)
+    when "Legislation::Proposal"
+      legislation_process_proposal_path(resource.process, resource)
+    when "Budget::Investment"
+      budget_investment_path(resource.budget, resource)
+    else
+      false
+    end
+  end
+
+  def fill_in_newsletter_form(options = {})
+    fill_in "newsletter_subject", with: (options[:subject] || "This is a different subject")
+    select (options[:segment_recipient] || 'All users'), from: 'newsletter_segment_recipient'
+    fill_in "newsletter_from", with: (options[:from] || "no-reply@consul.dev")
+    fill_in "newsletter_body", with: (options[:body] || "This is a different body")
+  end
+
+  def click_notifications_icon
+    find("#notifications a").click
+  end
 end

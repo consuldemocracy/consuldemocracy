@@ -1,283 +1,131 @@
 require 'rails_helper'
 
 feature "Notifications" do
-  let(:admin_user) { create :user }
-  let(:administrator) do
-    create(:administrator, user: admin_user)
-    admin_user
-  end
-  let(:author) { create :user }
+
   let(:user) { create :user }
-  let(:debate) { create :debate, author: author }
-  let(:proposal) { create :proposal, author: author }
-  let(:process) { create :legislation_process, :in_debate_phase }
-  let(:legislation_question) { create(:legislation_question, process: process, author: administrator) }
-  let(:legislation_annotation) { create(:legislation_annotation, author: author) }
 
-  scenario "User commented on my debate", :js do
-    login_as user
-    visit debate_path debate
-
-    fill_in "comment-body-debate_#{debate.id}", with: "I commented on your debate"
-    click_button "Publish comment"
-    within "#comments" do
-      expect(page).to have_content "I commented on your debate"
-    end
-
-    logout
-    login_as author
+  background do
+    login_as(user)
     visit root_path
-
-    find(".icon-notification").click
-
-    expect(page).to have_css ".notification", count: 1
-
-    expect(page).to have_content "Someone commented on"
-    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
   end
 
-  scenario "User commented on my legislation question", :js do
-    verified_user = create(:user, :level_two)
-    login_as verified_user
-    visit legislation_process_question_path legislation_question.process, legislation_question
+  scenario "View all" do
+    read1 = create(:notification, :read, user: user)
+    read2 = create(:notification, :read, user: user)
+    unread = create(:notification, user: user)
 
-    fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I answered your question"
-    click_button "Publish answer"
-    within "#comments" do
-      expect(page).to have_content "I answered your question"
-    end
+    click_notifications_icon
+    click_link "Read"
 
-    logout
-    login_as administrator
-    visit root_path
-
-    find(".icon-notification").click
-
-    expect(page).to have_css ".notification", count: 1
-
-    expect(page).to have_content "Someone commented on"
-    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+    expect(page).to have_css(".notification", count: 2)
+    expect(page).to have_content(read1.notifiable_title)
+    expect(page).to have_content(read2.notifiable_title)
+    expect(page).to_not have_content(unread.notifiable_title)
   end
 
-  scenario "Multiple comments on my proposal", :js do
-    login_as user
-    visit proposal_path proposal
+  scenario "View unread" do
+    unread1 = create(:notification, user: user)
+    unread2 = create(:notification, user: user)
+    read = create(:notification, :read, user: user)
 
-    fill_in "comment-body-proposal_#{proposal.id}", with: "I agree"
-    click_button "Publish comment"
-    within "#comments" do
-      expect(page).to have_content "I agree"
-    end
+    click_notifications_icon
+    click_link "Unread"
 
-    logout
-    login_as create(:user)
-    visit proposal_path proposal
-
-    fill_in "comment-body-proposal_#{proposal.id}", with: "I disagree"
-    click_button "Publish comment"
-    within "#comments" do
-      expect(page).to have_content "I disagree"
-    end
-
-    logout
-    login_as author
-    visit root_path
-
-    find(".icon-notification").click
-
-    expect(page).to have_css ".notification", count: 1
-
-    expect(page).to have_content "There are 2 new comments on"
-    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+    expect(page).to have_css(".notification", count: 2)
+    expect(page).to have_content(unread1.notifiable_title)
+    expect(page).to have_content(unread2.notifiable_title)
+    expect(page).to_not have_content(read.notifiable_title)
   end
 
-  scenario "User replied to my comment", :js do
-    comment = create :comment, commentable: debate, user: author
-    login_as user
-    visit debate_path debate
+  scenario "View single notification" do
+    proposal = create(:proposal)
+    notification = create(:notification, user: user, notifiable: proposal)
 
-    click_link "Reply"
-    within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "I replied to your comment"
-      click_button "Publish reply"
-    end
+    click_notifications_icon
 
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content "I replied to your comment"
-    end
-
-    logout
-    login_as author
-    visit root_path
-
-    find(".icon-notification").click
-
-    expect(page).to have_css ".notification", count: 1
-    expect(page).to have_content "Someone replied to your comment on"
-    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
-  end
-
-  scenario "Multiple replies to my comment", :js do
-    comment = create :comment, commentable: debate, user: author
-    3.times do |n|
-      login_as create(:user)
-      visit debate_path debate
-
-      within("#comment_#{comment.id}_reply") { click_link "Reply" }
-      within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Reply number #{n}"
-        click_button "Publish reply"
-      end
-
-      within "#comment_#{comment.id}" do
-        expect(page).to have_content "Reply number #{n}"
-      end
-      logout
-    end
-
-    login_as author
-    visit root_path
-
-    find(".icon-notification").click
-
-    expect(page).to have_css ".notification", count: 1
-    expect(page).to have_content "There are 3 new replies to your comment on"
-    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
-  end
-
-  scenario "Author commented on his own debate", :js do
-    login_as author
-    visit debate_path debate
-
-    fill_in "comment-body-debate_#{debate.id}", with: "I commented on my own debate"
-    click_button "Publish comment"
-    within "#comments" do
-      expect(page).to have_content "I commented on my own debate"
-    end
-
-    find(".icon-no-notification").click
-    expect(page).to have_css ".notification", count: 0
-  end
-
-  scenario "Author replied to his own comment", :js do
-    comment = create :comment, commentable: debate, user: author
-    login_as author
-    visit debate_path debate
-
-    click_link "Reply"
-    within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "I replied to my own comment"
-      click_button "Publish reply"
-    end
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content "I replied to my own comment"
-    end
-
-    find(".icon-no-notification")
+    first(".notification a").click
+    expect(page).to have_current_path(proposal_path(proposal))
 
     visit notifications_path
     expect(page).to have_css ".notification", count: 0
+
+    visit read_notifications_path
+    expect(page).to have_css ".notification", count: 1
   end
 
-  context "Proposal notification" do
+  scenario "Mark as read", :js do
+    notification1 = create(:notification, user: user)
+    notification2 = create(:notification, user: user)
 
-    scenario "Voters should receive a notification", :js do
-      author = create(:user)
+    click_notifications_icon
 
-      user1 = create(:user)
-      user2 = create(:user)
-      user3 = create(:user)
-
-      proposal = create(:proposal, author: author)
-
-      create(:vote, voter: user1, votable: proposal, vote_flag: true)
-      create(:vote, voter: user2, votable: proposal, vote_flag: true)
-
-      login_as(author)
-      visit root_path
-
-      visit new_proposal_notification_path(proposal_id: proposal.id)
-
-      fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal"
-      fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen!"
-      click_button "Send message"
-
-      expect(page).to have_content "Your message has been sent correctly."
-
-      logout
-      login_as user1
-      visit root_path
-
-      find(".icon-notification").click
-
-      notification_for_user1 = Notification.where(user: user1).first
-      expect(page).to have_css ".notification", count: 1
-      expect(page).to have_content "There is one new notification on #{proposal.title}"
-      expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user1)}']"
-
-      logout
-      login_as user2
-      visit root_path
-
-      find(".icon-notification").click
-
-      notification_for_user2 = Notification.where(user: user2).first
-      expect(page).to have_css ".notification", count: 1
-      expect(page).to have_content "There is one new notification on #{proposal.title}"
-      expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user2)}']"
-
-      logout
-      login_as user3
-      visit root_path
-
-      find(".icon-no-notification").click
-
-      expect(page).to have_css ".notification", count: 0
+    within("#notification_#{notification1.id}") do
+      click_link "Mark as read"
     end
 
-    pending "group notifications for the same proposal"
-
+    expect(page).to have_css(".notification", count: 1)
+    expect(page).to have_content(notification2.notifiable_title)
+    expect(page).to_not have_content(notification1.notifiable_title)
   end
 
-  context "mark as read" do
+  scenario "Mark all as read" do
+    notification1 = create(:notification, user: user)
+    notification2 = create(:notification, user: user)
 
-    scenario "mark a single notification as read" do
-      user = create :user
-      notification = create :notification, user: user
+    click_notifications_icon
 
-      login_as user
-      visit notifications_path
+    expect(page).to have_css(".notification", count: 2)
+    click_link "Mark all as read"
 
-      expect(page).to have_css ".notification", count: 1
-
-      first(".notification a").click
-      visit notifications_path
-
-      expect(page).to have_css ".notification", count: 0
-    end
-
-    scenario "mark all notifications as read" do
-      user = create :user
-      2.times { create :notification, user: user }
-
-      login_as user
-      visit notifications_path
-
-      expect(page).to have_css ".notification", count: 2
-      click_link "Mark all as read"
-
-      expect(page).to have_css ".notification", count: 0
-      expect(current_path).to eq(notifications_path)
-    end
-
+    expect(page).to have_css(".notification", count: 0)
   end
 
-  scenario "no notifications" do
-    login_as user
+  scenario "Mark as unread", :js do
+    notification1 = create(:notification, :read, user: user)
+    notification2 = create(:notification, user: user)
+
+    click_notifications_icon
+    click_link "Read"
+
+    expect(page).to have_css(".notification", count: 1)
+    within("#notification_#{notification1.id}") do
+      click_link "Mark as unread"
+    end
+
+    expect(page).to have_css(".notification", count: 0)
+
     visit notifications_path
+    expect(page).to have_css(".notification", count: 2)
+    expect(page).to have_content(notification1.notifiable_title)
+    expect(page).to have_content(notification2.notifiable_title)
+  end
 
-    expect(page).to have_content "You don't have new notifications"
+  scenario "Bell" do
+    create(:notification, user: user)
+    visit root_path
+
+    within("#notifications") do
+      expect(page).to have_css(".icon-circle")
+    end
+
+    click_notifications_icon
+    first(".notification a").click
+
+    within("#notifications") do
+      expect(page).to_not have_css(".icon-circle")
+    end
+  end
+
+  scenario "No notifications" do
+    click_notifications_icon
+    expect(page).to have_content "You don't have new notifications."
+  end
+
+  scenario "User not logged in" do
+    logout
+    visit root_path
+
+    expect(page).to_not have_css("#notifications")
   end
 
 end

@@ -1,5 +1,6 @@
 <% commentable = comment_tree.commentable %>
-
+<% valuation = local_assigns.fetch(:valuation, false) %>
+<% allow_comments = local_assigns.fetch(:allow_comments, true) %>
 <% cache [locale_and_user_status, comment_tree.order, commentable_cache_key(commentable), comment_tree.comments, comment_tree.comment_authors, commentable.comments_count, comment_flags] do %>
   <section class="expanded comments">
     <div class="row">
@@ -24,8 +25,11 @@
             <div data-alert class="callout primary">
               <%= t("comments.verified_only", verify_account: link_to(t("comments.verify_account"), verification_path )).html_safe %>
             </div>
-          <% else %>
-            <%= render 'comments/form', {commentable: commentable, parent_id: nil, toggeable: false} %>
+          <% elsif allow_comments %>
+            <%= render 'comments/form', { commentable: commentable,
+                                          parent_id: nil,
+                                          toggeable: false,
+                                          valuation: valuation } %>
           <% end %>
         <% else %>
           <br>
@@ -37,7 +41,12 @@
         <% end %>
 
         <% comment_tree.root_comments.each do |comment| %>
-          <%= render 'comments/comment', {comment: comment, comment_flags: comment_flags} %>
+          <%= render 'comments/comment', { comment: comment,
+                                           comment_flags: comment_flags,
+                                           valuation: valuation,
+                                           allow_votes: !valuation,
+                                           allow_actions: !valuation,
+                                           allow_comments: allow_comments } %>
         <% end %>
         <%= paginate comment_tree.root_comments %>
       </div>

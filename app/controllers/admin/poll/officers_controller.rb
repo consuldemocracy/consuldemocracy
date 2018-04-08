@@ -1,4 +1,4 @@
-class Admin::Poll::OfficersController < Admin::BaseController
+class Admin::Poll::OfficersController < Admin::Poll::BaseController
   load_and_authorize_resource :officer, class: "Poll::Officer", except: [:edit, :show]
 
   def index

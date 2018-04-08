@@ -1,0 +1,7 @@
+fr:
+  pages:
+    census_terms: Pour confirmer ce compte, vous devez être âgé(e) de 16 ans ou plus, et avoir été recensé avec les données indiquées ci-dessus, lesquelles seront vérifiées. En acceptant le processus de vérification, vous donnez également votre consentement au recoupement de cette information, ainsi que les moyens de communication qui figurent dans ce fichier. Les données fournies seront intégrées et traitées dans le fichier indiqué dans les conditions d'utilisations du portail.
+    conditions: Conditions d'utilisation
+    general_terms: Conditions générales
+    verify:
+      email: Email

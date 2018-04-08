@@ -1,0 +1,13 @@
+<div class="poll-question-form">
+  <%= form_for(Poll::Question::Answer.new,
+  						 url: admin_answer_images_path(@answer),
+  						 method: :post) do |f| %>
+  		<%= render 'shared/errors', resource: @answer %>
+
+  	<div class="images">
+  	  <%= render 'images/nested_image', imageable: @answer, f: f, image_fields: :images %>
+  	</div>
+
+  	<%= f.submit t("admin.questions.answers.images.save_image"), class: "button success" %>
+  <% end %>
+</div>

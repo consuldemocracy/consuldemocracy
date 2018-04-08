@@ -1,0 +1,49 @@
+<% provide :title do %><%= @poll.name %><% end %>
+
+<div class="polls-results-stats">
+  <%= render "poll_header" %>
+
+  <%= render "poll_subnav" %>
+
+  <div class="row margin" data-equalizer data-equalize-on="medium">
+    <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+      <p><strong><%= t("polls.show.results.title") %></strong></p>
+      <ul class="menu vertical">
+        <%- @poll.questions.each do |question| %>
+          <li><%=link_to question.title, "##{question.title.parameterize}" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-9 column" data-equalizer-watch>
+      <%- @poll.questions.each do |question| %>
+        <table id="question_<%= question.id %>_results_table">
+          <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
+          <thead>
+            <tr>
+              <%- question.question_answers.each do |answer| %>
+                <th scope="col" <%= answer.most_voted? ? "class=win" : "" %>>
+                  <% if answer.most_voted %>
+                    <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
+                  <% end %>
+                  <%= answer.title %>
+                </th>
+              <% end %>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <%- question.question_answers.each do |answer| %>
+                <td id="answer_<%= answer.id %>_result" <%= answer.most_voted? ? "class=win" : "" %>>
+                  <%= answer.total_votes %>
+                  (<%= answer.total_votes_percentage.round(2) %>%)
+                </td>
+              <% end %>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+
+    </div>
+  </div>
+</div>

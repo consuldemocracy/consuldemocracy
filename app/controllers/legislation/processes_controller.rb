@@ -4,7 +4,7 @@ class Legislation::ProcessesController < Legislation::BaseController
 
   def index
     @current_filter ||= 'open'
-    @processes = ::Legislation::Process.send(@current_filter).page(params[:page])
+    @processes = ::Legislation::Process.send(@current_filter).published.page(params[:page])
   end
 
   def show
@@ -13,9 +13,11 @@ class Legislation::ProcessesController < Legislation::BaseController
     if @process.allegations_phase.enabled? && @process.allegations_phase.started? && draft_version.present?
       redirect_to legislation_process_draft_version_path(@process, draft_version)
     elsif @process.debate_phase.enabled?
-      redirect_to legislation_process_debate_path(@process)
+      redirect_to debate_legislation_process_path(@process)
+    elsif @process.proposals_phase.enabled?
+      redirect_to proposals_legislation_process_path(@process)
     else
-      redirect_to legislation_process_allegations_path(@process)
+      redirect_to allegations_legislation_process_path(@process)
     end
   end
 
@@ -81,9 +83,26 @@ class Legislation::ProcessesController < Legislation::BaseController
     end
   end
 
+  def proposals
+    set_process
+    @phase = :proposals_phase
+
+    if @process.proposals_phase.started?
+      legislation_proposal_votes(@process.proposals)
+      render :proposals
+    else
+      render :phase_not_open
+    end
+  end
+
   private
 
+    def member_method?
+      params[:id].present?
+    end
+
     def set_process
+      return if member_method?
       @process = ::Legislation::Process.find(params[:process_id])
     end
 end

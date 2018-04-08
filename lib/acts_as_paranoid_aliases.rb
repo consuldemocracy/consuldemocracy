@@ -2,7 +2,7 @@ module ActsAsParanoidAliases
 
   def self.included(base)
     base.extend(ClassMethods)
-    self.class_eval do
+    class_eval do
 
       def hide
         return false if hidden?

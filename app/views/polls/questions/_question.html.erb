@@ -1,9 +1,9 @@
 <div id="<%= dom_id(question) %>" class="poll-question">
   <h3>
-    <%= link_to question.title, question_path(question) %>
+    <%= question.title %>
   </h3>
 
   <div id="<%= dom_id(question) %>_answers" class="padding">
-    <%= render 'polls/questions/answers', question: question %>
+    <%= render 'polls/questions/answers', question: question, token: token %>
   </div>
 </div>

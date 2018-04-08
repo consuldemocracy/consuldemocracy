@@ -2,6 +2,8 @@
 
 <%= render 'legislation/processes/header', process: @process, header: :full %>
 
+<%= render 'documents/additional_documents', documents: @process.documents %>
+
 <%= render 'legislation/processes/key_dates', process: @process, phase: @phase %>
 
 <div class="debate-chooser">

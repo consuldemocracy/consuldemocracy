@@ -45,7 +45,7 @@ class Legislation::Annotation < ApplicationRecord
   end
 
   def create_first_comment
-    comments.create(body: self.text, user: self.author)
+    comments.create(body: text, user: author)
   end
 
   def title

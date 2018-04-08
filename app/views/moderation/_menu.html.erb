@@ -4,12 +4,14 @@
       <%= link_to t("moderation.dashboard.index.title"), moderation_root_path %>
     </li>
 
-    <li <%= "class=active" if controller_name == "proposals" %>>
-      <%= link_to moderation_proposals_path do %>
-        <span class="icon-proposals"></span>
-        <%= t("moderation.menu.proposals") %>
-      <% end %>
-    </li>
+    <% if feature?(:proposals) %>
+      <li <%= "class=active" if controller_name == "proposals" %>>
+        <%= link_to moderation_proposals_path do %>
+          <span class="icon-proposals"></span>
+          <%= t("moderation.menu.proposals") %>
+        <% end %>
+      </li>
+    <% end %>
 
     <% if feature?(:debates) %>
       <li <%= "class=active" if controller_name == "debates" %>>

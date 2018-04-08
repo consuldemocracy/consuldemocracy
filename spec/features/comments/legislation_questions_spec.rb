@@ -2,9 +2,14 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting legislation questions' do
+
   let(:user) { create :user, :level_two }
   let(:process) { create :legislation_process, :in_debate_phase }
   let(:legislation_question) { create :legislation_question, process: process }
+
+  context "Concerns" do
+    it_behaves_like 'notifiable in-app', Legislation::Question
+  end
 
   scenario 'Index' do
     3.times { create(:comment, commentable: legislation_question) }
@@ -25,6 +30,7 @@ feature 'Commenting legislation questions' do
     parent_comment = create(:comment, commentable: legislation_question)
     first_child    = create(:comment, commentable: legislation_question, parent: parent_comment)
     second_child   = create(:comment, commentable: legislation_question, parent: parent_comment)
+    href           = legislation_process_question_path(legislation_question.process, legislation_question)
 
     visit comment_path(parent_comment)
 
@@ -33,7 +39,11 @@ feature 'Commenting legislation questions' do
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
 
-    expect(page).to have_link "Go back to #{legislation_question.title}", href: legislation_process_question_path(legislation_question.process, legislation_question)
+    expect(page).to have_link "Go back to #{legislation_question.title}", href: href
+
+    expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
+    expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
+    expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
   scenario 'Collapsable comments', :js do
@@ -45,27 +55,30 @@ feature 'Commenting legislation questions' do
 
     expect(page).to have_css('.comment', count: 3)
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 2)
-    expect(page).to_not have_content grandchild_comment.body
+    expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 3)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 1)
-    expect(page).to_not have_content child_comment.body
-    expect(page).to_not have_content grandchild_comment.body
+    expect(page).not_to have_content child_comment.body
+    expect(page).not_to have_content grandchild_comment.body
   end
 
   scenario 'Comment order' do
-    c1 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.current - 2)
-    c2 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.current - 1)
-    c3 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.current)
+    c1 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 100,
+                                                  cached_votes_total: 120, created_at: Time.current - 2)
+    c2 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 10,
+                                                  cached_votes_total: 12, created_at: Time.current - 1)
+    c3 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 1,
+                                                  cached_votes_total: 2, created_at: Time.current)
 
     visit legislation_process_question_path(legislation_question.process, legislation_question, order: :most_voted)
 
@@ -119,7 +132,8 @@ feature 'Commenting legislation questions' do
   end
 
   scenario 'Sanitizes comment body for security' do
-    create :comment, commentable: legislation_question, body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+    create :comment, commentable: legislation_question,
+                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
@@ -140,7 +154,7 @@ feature 'Commenting legislation questions' do
     within("ul.pagination") do
       expect(page).to have_content("1")
       expect(page).to have_content("2")
-      expect(page).to_not have_content("3")
+      expect(page).not_to have_content("3")
       click_link "Next", exact: false
     end
 
@@ -154,8 +168,8 @@ feature 'Commenting legislation questions' do
 
       expect(page).to have_content 'You must Sign in or Sign up to leave a comment'
       within('#comments') do
-        expect(page).to_not have_content 'Write a comment'
-        expect(page).to_not have_content 'Reply'
+        expect(page).not_to have_content 'Write a comment'
+        expect(page).not_to have_content 'Reply'
       end
     end
   end
@@ -219,7 +233,7 @@ feature 'Commenting legislation questions' do
       expect(page).to have_content 'It will be done next week.'
     end
 
-    expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
   scenario 'Errors on reply', :js do
@@ -279,7 +293,7 @@ feature 'Commenting legislation questions' do
       expect(page).to have_css("#flag-expand-comment-#{comment.id}")
     end
 
-    expect(Flag.flagged?(user, comment)).to_not be
+    expect(Flag.flagged?(user, comment)).not_to be
   end
 
   scenario "Flagging turbolinks sanity check", :js do
@@ -316,7 +330,7 @@ feature 'Commenting legislation questions' do
 
     # The button's text should now be "..."
     # This should be checked before the Ajax request is finished
-    expect(page).to_not have_button 'Publish answer'
+    expect(page).not_to have_button 'Publish answer'
 
     expect(page).to have_content('Testing submit button!')
   end
@@ -364,7 +378,7 @@ feature 'Commenting legislation questions' do
         expect(page).to have_css "img.moderator-avatar"
       end
 
-      expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
     scenario "can not comment as an administrator" do
@@ -373,7 +387,7 @@ feature 'Commenting legislation questions' do
       login_as(moderator.user)
       visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-      expect(page).to_not have_content "Comment as administrator"
+      expect(page).not_to have_content "Comment as administrator"
     end
   end
 
@@ -420,7 +434,7 @@ feature 'Commenting legislation questions' do
         expect(page).to have_css "img.admin-avatar"
       end
 
-      expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
     scenario "can not comment as a moderator" do
@@ -429,7 +443,7 @@ feature 'Commenting legislation questions' do
       login_as(admin.user)
       visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-      expect(page).to_not have_content "Comment as moderator"
+      expect(page).not_to have_content "Comment as moderator"
     end
   end
 
@@ -499,7 +513,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    xscenario 'Trying to vote multiple times', :js do
+    scenario 'Trying to vote multiple times', :js do
       visit legislation_process_question_path(@legislation_question.process, @legislation_question)
 
       within("#comment_#{@comment.id}_votes") do
@@ -510,7 +524,7 @@ feature 'Commenting legislation questions' do
 
         find('.in_favor a').click
         within('.in_favor') do
-          expect(page).to_not have_content "2"
+          expect(page).not_to have_content "2"
           expect(page).to have_content "1"
         end
 

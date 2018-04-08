@@ -33,6 +33,10 @@ feature 'Commenting debates' do
     expect(page).to have_content second_child.body
 
     expect(page).to have_link "Go back to #{debate.title}", href: debate_path(debate)
+
+    expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
+    expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
+    expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
   scenario 'Collapsable comments', :js do
@@ -44,27 +48,30 @@ feature 'Commenting debates' do
 
     expect(page).to have_css('.comment', count: 3)
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 2)
-    expect(page).to_not have_content grandchild_comment.body
+    expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 3)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 1)
-    expect(page).to_not have_content child_comment.body
-    expect(page).to_not have_content grandchild_comment.body
+    expect(page).not_to have_content child_comment.body
+    expect(page).not_to have_content grandchild_comment.body
   end
 
   scenario 'Comment order' do
-    c1 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.current - 2)
-    c2 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.current - 1)
-    c3 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.current)
+    c1 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 100,
+                                                  cached_votes_total: 120, created_at: Time.current - 2)
+    c2 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 10,
+                                                  cached_votes_total: 12, created_at: Time.current - 1)
+    c3 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 1,
+                                                  cached_votes_total: 2, created_at: Time.current)
 
     visit debate_path(debate, order: :most_voted)
 
@@ -118,7 +125,8 @@ feature 'Commenting debates' do
   end
 
   scenario 'Sanitizes comment body for security' do
-    create :comment, commentable: debate, body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+    create :comment, commentable: debate,
+                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
     visit debate_path(debate)
 
@@ -139,7 +147,7 @@ feature 'Commenting debates' do
     within("ul.pagination") do
       expect(page).to have_content("1")
       expect(page).to have_content("2")
-      expect(page).to_not have_content("3")
+      expect(page).not_to have_content("3")
       click_link "Next", exact: false
     end
 
@@ -153,8 +161,8 @@ feature 'Commenting debates' do
 
       expect(page).to have_content 'You must Sign in or Sign up to leave a comment'
       within('#comments') do
-        expect(page).to_not have_content 'Write a comment'
-        expect(page).to_not have_content 'Reply'
+        expect(page).not_to have_content 'Write a comment'
+        expect(page).not_to have_content 'Reply'
       end
     end
   end
@@ -200,7 +208,7 @@ feature 'Commenting debates' do
       expect(page).to have_content 'It will be done next week.'
     end
 
-    expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
   scenario 'Errors on reply', :js do
@@ -260,7 +268,7 @@ feature 'Commenting debates' do
       expect(page).to have_css("#flag-expand-comment-#{comment.id}")
     end
 
-    expect(Flag.flagged?(user, comment)).to_not be
+    expect(Flag.flagged?(user, comment)).not_to be
   end
 
   scenario "Flagging turbolinks sanity check", :js do
@@ -299,7 +307,7 @@ feature 'Commenting debates' do
 
     # The button's text should now be "..."
     # This should be checked before the Ajax request is finished
-    expect(page).to_not have_button 'Publish comment'
+    expect(page).not_to have_button 'Publish comment'
 
     expect(page).to have_content('Testing submit button!')
   end
@@ -347,7 +355,7 @@ feature 'Commenting debates' do
         expect(page).to have_css "img.moderator-avatar"
       end
 
-      expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
     scenario "can not comment as an administrator" do
@@ -356,7 +364,7 @@ feature 'Commenting debates' do
       login_as(moderator.user)
       visit debate_path(debate)
 
-      expect(page).to_not have_content "Comment as administrator"
+      expect(page).not_to have_content "Comment as administrator"
     end
   end
 
@@ -403,7 +411,7 @@ feature 'Commenting debates' do
         expect(page).to have_css "img.admin-avatar"
       end
 
-      expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
     scenario "can not comment as a moderator" do
@@ -412,7 +420,7 @@ feature 'Commenting debates' do
       login_as(admin.user)
       visit debate_path(debate)
 
-      expect(page).to_not have_content "Comment as moderator"
+      expect(page).not_to have_content "Comment as moderator"
     end
   end
 
@@ -482,7 +490,7 @@ feature 'Commenting debates' do
       end
     end
 
-    xscenario 'Trying to vote multiple times', :js do
+    scenario 'Trying to vote multiple times', :js do
       visit debate_path(@debate)
 
       within("#comment_#{@comment.id}_votes") do
@@ -493,7 +501,7 @@ feature 'Commenting debates' do
 
         find('.in_favor a').click
         within('.in_favor') do
-          expect(page).to_not have_content "2"
+          expect(page).not_to have_content "2"
           expect(page).to have_content "1"
         end
 

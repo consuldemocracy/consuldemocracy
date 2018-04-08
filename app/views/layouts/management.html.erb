@@ -15,37 +15,32 @@
   </head>
 
   <body class="admin">
-    <header>
-      <section class="top-links">
+    <header class="header">
+      <div class="top-links">
         <div class="expanded row">
           <%= render 'shared/locale_switcher' %>
         </div>
-      </section>
+      </div>
 
       <div class="expanded row">
         <div class="top-bar">
 
           <%= link_to setting['org_name'], management_root_path, class: "logo show-for-small-only" %>
 
-          <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
-            <span class="menu-icon dark" data-toggle></span>
-            <%= t("application.menu")%>
-          </span>
-
-          <div id="responsive-menu">
             <div class="top-bar-title">
-              <%= link_to management_root_path, class: "hide-for-small-only" do %>
-                <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
-                <%= setting['org_name'] %>
-                &nbsp;|&nbsp;<%= t("management.dashboard.index.title") %>
-              <% end %>
+              <h1>
+                <%= link_to management_root_path do %>
+                  <%= setting['org_name'] %>
+                  <br><small><%= t("management.dashboard.index.title") %></small>
+                <% end %>
+              </h1>
             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <main class="no-margin-top row no-max-width collapse">
+    <main class="no-margin-top row expanded collapse">
       <div class="small-12 medium-3 column">
         <%= render "/management/menu" %>
       </div>

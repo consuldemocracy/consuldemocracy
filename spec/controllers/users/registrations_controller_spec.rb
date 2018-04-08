@@ -4,7 +4,7 @@ describe Users::RegistrationsController do
 
   describe "POST check_username" do
 
-    before(:each) do
+    before do
       @request.env["devise.mapping"] = Devise.mappings[:user]
     end
 
@@ -20,7 +20,7 @@ describe Users::RegistrationsController do
     end
 
     context "when username is not available" do
-      it "should return false with an error message" do
+      it "returns false with an error message" do
         user = create(:user)
         get :check_username, params: { username: user.username }
 

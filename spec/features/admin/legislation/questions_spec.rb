@@ -9,8 +9,15 @@ feature 'Admin legislation questions' do
 
   context "Feature flag" do
 
-    scenario 'Disabled with a feature flag' do
+    background do
       Setting['feature.legislation'] = nil
+    end
+
+    after do
+      Setting['feature.legislation'] = true
+    end
+
+    scenario 'Disabled with a feature flag' do
       process = create(:legislation_process)
       expect{ visit admin_legislation_process_questions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
@@ -101,7 +108,7 @@ feature 'Admin legislation questions' do
 
       expect(page).to have_content 'Questions'
       expect(page).to have_content 'Question 1'
-      expect(page).to_not have_content 'Question 2'
+      expect(page).not_to have_content 'Question 2'
     end
   end
 end

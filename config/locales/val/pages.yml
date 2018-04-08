@@ -1,0 +1,17 @@
+val:
+  pages:
+    census_terms: Per a verificar el compte hi ha que tindre 16 anys o més i estar empadronat aportant les dades indicades anteriorment, les quals seran contrastades. Acceptant el procés de verificació accepta donar el seu consentiment per a contrastar dita informació, així com els mitjans de contacte que figuren en els dits fitxers. Les dades aportades seran incorporades i tractades en un fitxer indicat anteriorment en les condicions d'us del portal.
+    conditions: Condicions d'us
+    general_terms: Condicions d'us
+    privacy: Política de privacitat
+    titles:
+      accessibility: Accessibilitat
+      conditions: Condicions d'us
+      privacy: Política de privacitat
+    verify:
+      code: Codi que has rebut en la teua carta
+      email: Correu electrònic
+      info_code: 'Ara introdueix el codi que has rebut en la teua carta:'
+      password: Contrasenya
+      submit: Verificar el meu compte
+      title: Verifica el teu compte

@@ -22,7 +22,9 @@
       <%= f.text_field :tag_list, value: @debate.tag_list.to_s,
                         label: false,
                         placeholder: t("debates.form.tags_placeholder"),
-                        aria: {describedby: "tag-list-help-text"} %>
+                        aria: {describedby: "tag-list-help-text"},
+                        data: {js_url: suggest_tags_path},
+                        class: 'tag-autocomplete'%>
     </div>
     <div class="small-12 column">
       <% if @debate.new_record? %>

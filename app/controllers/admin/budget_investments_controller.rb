@@ -1,25 +1,39 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
+  include CommentableActions
+
   feature_flag :budgets
 
-  has_filters(%w{valuation_open without_admin managed valuating valuation_finished
-                 valuation_finished_feasible selected winners all},
-              only: [:index, :toggle_selection])
+  has_orders %w{oldest}, only: [:show, :edit]
+  has_filters(%w{all without_admin without_valuator under_valuation
+                 valuation_finished winners},
+                 only: [:index, :toggle_selection])
 
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
   before_action :load_ballot, only: [:show, :index]
+  before_action :parse_valuation_filters
   before_action :load_investments, only: [:index, :toggle_selection]
 
   def index
+    respond_to do |format|
+      format.html
+      format.js
+      format.csv do
+        send_data Budget::Investment.to_csv(@investments, headers: true),
+                  filename: 'budget_investments.csv'
+      end
+    end
   end
 
   def show
+    load_comments
   end
 
   def edit
     load_admins
     load_valuators
+    load_valuator_groups
     load_tags
   end
 
@@ -33,6 +47,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     else
       load_admins
       load_valuators
+      load_valuator_groups
       load_tags
       render :edit
     end
@@ -41,27 +56,56 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   def toggle_selection
     @investment.toggle :selected
     @investment.save
+    load_investments
   end
 
   private
 
+    def load_comments
+      @commentable = @investment
+      @comment_tree = CommentTree.new(@commentable, params[:page], @current_order, valuations: true)
+      set_comment_flags(@comment_tree.comments)
+    end
+
+    def resource_model
+      Budget::Investment
+    end
+
+    def resource_name
+      resource_model.parameterize('_')
+    end
+
+    def sort_by(params)
+      if params.present? && Budget::Investment::SORTING_OPTIONS.include?(params)
+        "#{params == 'supports' ? 'cached_votes_up' : params} ASC"
+      else
+        "cached_votes_up DESC, created_at DESC"
+      end
+    end
+
     def load_investments
-      @investments = Budget::Investment.scoped_filter(params, @current_filter)
-                                       .order(cached_votes_up: :desc, created_at: :desc)
-                                       .page(params[:page])
+      @investments = if params[:title_or_id].present?
+                       Budget::Investment.search_by_title_or_id(params)
+                     else
+                       Budget::Investment.scoped_filter(params, @current_filter)
+                                         .order(sort_by(params[:sort_by]))
+                     end
+      @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
     def budget_investment_params
       params.require(:budget_investment)
-            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :valuation_tag_list, valuator_ids: [])
+            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
+                    :valuation_tag_list, :incompatible, :selected, valuator_ids: [],
+                    valuator_group_ids: [])
     end
 
     def load_budget
-      @budget = Budget.includes(:groups).find params[:budget_id]
+      @budget = Budget.includes(:groups).find(params[:budget_id])
     end
 
     def load_investment
-      @investment = Budget::Investment.where(budget_id: @budget.id).find params[:id]
+      @investment = Budget::Investment.by_budget(@budget).find(params[:id])
     end
 
     def load_admins
@@ -69,7 +113,11 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_valuators
-      @valuators = Valuator.includes(:user).all.order("description ASC").order("users.email ASC")
+      @valuators = Valuator.includes(:user).all.order(description: :asc).order("users.email ASC")
+    end
+
+    def load_valuator_groups
+      @valuator_groups = ValuatorGroup.all.order(name: :asc)
     end
 
     def load_tags
@@ -85,4 +133,17 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       @investment.set_tag_list_on(:valuation, budget_investment_params[:valuation_tag_list])
       params[:budget_investment] = params[:budget_investment].except(:valuation_tag_list)
     end
+
+    def parse_valuation_filters
+      if params[:valuator_or_group_id]
+        model, id = params[:valuator_or_group_id].split("_")
+
+        if model == "group"
+          params[:valuator_group_id] = id
+        else
+          params[:valuator_id] = id
+        end
+      end
+    end
+
 end

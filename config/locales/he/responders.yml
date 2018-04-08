@@ -1,0 +1,23 @@
+he:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} נוצר בהצלחה"
+        debate: "הדיון נוסף בהצלחה"
+        direct_message: "הודעתך נשלחה בהצלחה"
+        proposal: "הצעתך נוספה בהצלחה"
+        proposal_notification: "הודעתך נשלחה כראוי"
+        spending_proposal: "הצעתך לתקצוב נוצרה בהצלחה. ניתן לגשת אליה ב %{activity}"
+        budget_investment: "תקצוב ההשקעות נוצר בהצלחה"
+        signature_sheet: "גיליון חתימות נוצר בהצלחה"
+      save_changes:
+        notice: השינויים נשמרו
+      update:
+        notice: "%{resource_name} עודכן בהצלחה"
+        debate: "הדיון עודכן בהצלחה"
+        proposal: "ההצעה עודכנה בהצלחה"
+        spending_proposal: "הצעתך לתקצוב עודכנה בהצלחה"
+        budget_investment: "מיזם ההשקעות עודכן בהצלחה"
+      destroy:
+        spending_proposal: "הצעתך לתקצוב נמחקה בהצלחה"
+        budget_investment: "מיזם ההשקעות נמחק בהצלחה"

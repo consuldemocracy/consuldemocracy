@@ -6,7 +6,7 @@ class Admin::StatsController < Admin::BaseController
     @visits = Visit.count
     @debates = Debate.with_hidden.count
     @proposals = Proposal.with_hidden.count
-    @comments = Comment.with_hidden.count
+    @comments = Comment.not_valuations.with_hidden.count
 
     @debate_votes = Vote.where(votable_type: 'Debate').count
     @proposal_votes = Vote.where(votable_type: 'Proposal').count
@@ -34,6 +34,11 @@ class Admin::StatsController < Admin::BaseController
   def direct_messages
     @direct_messages = DirectMessage.count
     @users_who_have_sent_message = DirectMessage.select(:sender_id).distinct.count
+  end
+
+  def polls
+    @polls = ::Poll.current
+    @participants = ::Poll::Voter.where(poll: @polls)
   end
 
 end

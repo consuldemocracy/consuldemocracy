@@ -14,6 +14,8 @@ class Management::ProposalsController < Management::BaseController
   def show
     super
     @notifications = @proposal.notifications
+    @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
+
     redirect_to management_proposal_path(@proposal), status: :moved_permanently if request.path != management_proposal_path(@proposal)
   end
 
@@ -34,7 +36,8 @@ class Management::ProposalsController < Management::BaseController
     end
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id)
+      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
+                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id)
     end
 
     def resource_model

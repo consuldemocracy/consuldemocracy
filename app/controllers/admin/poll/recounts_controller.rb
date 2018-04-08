@@ -1,9 +1,9 @@
-class Admin::Poll::RecountsController < Admin::BaseController
+class Admin::Poll::RecountsController < Admin::Poll::BaseController
   before_action :load_poll
 
   def index
     @booth_assignments = @poll.booth_assignments.
-                              includes(:booth, :recounts, :final_recounts, :voters).
+                              includes(:booth, :recounts, :voters).
                               order("poll_booths.name").
                               page(params[:page]).per(50)
   end

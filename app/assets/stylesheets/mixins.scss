@@ -1,7 +1,9 @@
 // Table of Contents
 //
 // 01. Logo
-//
+// 02. Orbit bullets
+// 03. Direct uploads
+// ------------------
 
 // 01. Logo
 // --------
@@ -28,5 +30,110 @@
       margin-top: 0;
       width: 80px;
     }
+  }
+}
+
+// 02. Orbit bullet
+// ----------------
+
+@mixin orbit-bullets {
+  @include disable-mouse-outline;
+  position: relative;
+  margin-top: $orbit-bullet-margin-top;
+  margin-bottom: $orbit-bullet-margin-bottom;
+  text-align: center;
+
+  button {
+    width: $orbit-bullet-diameter;
+    height: $orbit-bullet-diameter;
+    margin: $orbit-bullet-margin;
+
+    border-radius: 50%;
+    background-color: $orbit-bullet-background;
+
+    &:hover {
+      background-color: $orbit-bullet-background-active;
+    }
+
+    &.is-active {
+      background-color: $orbit-bullet-background-active;
+    }
+  }
+}
+
+// 03. Direct uploads
+// ------------------
+
+@mixin direct-uploads {
+
+  .cached-image {
+    max-width: rem-calc(150);
+    max-height: rem-calc(150);
+  }
+
+  .progress-bar-placeholder {
+    display: none;
+    margin-bottom: $line-height;
+  }
+
+  .document,
+  .image {
+
+    .document-attachment,
+    .image-attachment {
+      padding-left: 0;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .attachment-errors {
+
+      > .js-image-attachment,
+      > .js-document-attachment {
+        display: none;
+
+        ~ .error {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .button {
+    font-weight: normal;
+  }
+
+  .progress-bar {
+    width: 100%;
+    background-color: $light-gray;
+  }
+
+  .file-name {
+    margin-top: 0;
+  }
+
+  .loading-bar {
+    height: 5px;
+    width: 0;
+    transition: width 500ms ease-out;
+
+    &.uploading {
+      background-color: $dark-gray;
+    }
+
+    &.complete {
+      background-color: $success-color;
+    }
+
+    &.errors {
+      background-color: $alert-color;
+      margin-top: $line-height / 2;
+    }
+  }
+
+  .loading-bar.no-transition {
+    transition: none;
   }
 }

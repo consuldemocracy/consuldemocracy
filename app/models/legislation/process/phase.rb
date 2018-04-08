@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Legislation::Process::Phase
 
   def initialize(start_date, end_date, enabled)

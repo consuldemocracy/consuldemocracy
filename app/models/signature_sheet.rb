@@ -22,7 +22,7 @@ class SignatureSheet < ApplicationRecord
 
   def verify_signatures
     parsed_document_numbers.each do |document_number|
-      signature = self.signatures.where(document_number: document_number).first_or_create
+      signature = signatures.where(document_number: document_number).first_or_create
       signature.verify
     end
     update(processed: true)

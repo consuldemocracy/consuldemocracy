@@ -1,0 +1,40 @@
+<tr id="proposal_<%= proposal.id %>">
+  <td class="small-9">
+    <strong><%= link_to proposal.title, proposal, proposal.retired? ? { class: 'retired' } : {} %></strong>
+    <br>
+    <%= proposal.summary %>
+  </td>
+
+  <% if proposal.retired? %>
+
+    <td class="text-center" colspan="2">
+      <span class="label alert"><%= t('users.proposals.retired') %></span>
+    </td>
+
+  <% elsif author?(proposal) %>
+
+    <td>
+      <%= link_to t("users.proposals.send_notification"),
+                  new_proposal_notification_path(proposal_id: proposal.id),
+                  class: 'button hollow expanded' %>
+    </td>
+
+    <td>
+      <% if proposal.retired? %>
+        <span class="label alert"><%= t('users.proposals.retired') %></span>
+      <% else %>
+        <%= link_to t('users.proposals.retire'),
+                    retire_form_proposal_path(proposal),
+                    class: 'button hollow alert expanded' %>
+      <% end %>
+    </td>
+
+  <% else %>
+
+    <td class="text-center" colspan="2">
+      <%= link_to t('users.proposals.see'), proposal, class: 'button hollow' %>
+    </td>
+
+  <% end %>
+
+</tr>

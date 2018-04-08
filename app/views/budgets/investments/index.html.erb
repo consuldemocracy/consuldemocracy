@@ -18,7 +18,7 @@
     <%= render '/budgets/investments/header' %>
   <% end %>
 
-  <% if params[:search].present? %>
+  <% if params[:search].present? || params[:advanced_search].present?  %>
     <div class="highlight no-margin-top padding margin-bottom">
       <div class="row">
         <div class="small-12 column">
@@ -43,11 +43,9 @@
               definitions: link_to(t("budgets.investments.index.unfeasible_text_definitions"), "https://decide.madrid.es/participatory_budget_info#20")).html_safe %>
           </div>
         </div>
-      <% elsif @heading.present? %>
-        <div class="small-12 margin-bottom">
-          <h2><%= t("budgets.investments.index.by_heading", heading: @heading.name) %></h2>
-        </div>
       <% end %>
+
+      <%= render("shared/advanced_search", search_path: budget_investments_url(@budget)) %>
 
       <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 

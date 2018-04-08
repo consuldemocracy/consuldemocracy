@@ -1,0 +1,27 @@
+<div id="<%= dom_id(proposal) %>" class="proposal-featured clear">
+  <div class="small-12 medium-9 column">
+    <h3><%= link_to proposal.title, proposal %></h3>
+    <div class="info">
+      <% if proposal.author.hidden? || proposal.author.erased? %>
+        <%= t("proposals.show.author_deleted") %>
+      <% else %>
+        <%= proposal.author.name %>
+      <% end %>
+
+      &nbsp;&bull;&nbsp;
+
+      <% if proposal.author.display_official_position_badge? %>
+        <span class="label round level-<%= proposal.author.official_level %>">
+          <%= proposal.author.official_position %>
+        </span>
+        &nbsp;&bull;&nbsp;
+      <% end %>
+
+      <strong><%= t("proposals.proposal.votes", count: proposal.total_votes) %></strong>
+    </div>
+  </div>
+
+  <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
+    <%= render 'featured_votes', proposal: proposal %>
+  </div>
+</div>

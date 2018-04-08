@@ -44,7 +44,7 @@ class Verification::LetterController < ApplicationController
     end
 
     def verify_phone!
-      unless current_user.confirmed_phone?
+      unless current_user.sms_verified?
         redirect_to verified_user_path, alert: t('verification.letter.alert.unconfirmed_code')
       end
     end

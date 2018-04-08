@@ -121,10 +121,10 @@ feature 'Residence' do
 
     click_button 'Verify residence'
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
-    expect(current_path).to eq(account_path)
+    expect(page).to have_current_path(account_path)
 
     visit new_residence_path
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
-    expect(current_path).to eq(account_path)
+    expect(page).to have_current_path(account_path)
   end
 end

@@ -12,14 +12,12 @@
     <table class="fixed margin">
       <thead>
         <th><%= t("admin.recounts.index.table_booth_name") %></th>
-        <th class="text-center"><%= t("admin.recounts.index.table_recounts") %></th>
-        <th class="text-center"><%= t("admin.recounts.index.table_final_recount") %></th>
+        <th class="text-center"><%= t("admin.recounts.index.table_total_recount") %></th>
         <th class="text-center"><%= t("admin.recounts.index.table_system_count") %></th>
       </thead>
       <tbody>
         <% @booth_assignments.each do |booth_assignment| %>
-          <% recount = booth_assignment_sum_recounts(booth_assignment) %>
-          <% final_recount = booth_assignment_sum_final_recounts(booth_assignment) %>
+          <% total_recounts = total_recounts_by_booth(booth_assignment) %>
           <% system_count = booth_assignment.voters.size %>
           <tr id="<%= dom_id(booth_assignment) %>_recounts" class="booth_recounts">
             <td>
@@ -27,16 +25,9 @@
                 <%= link_to booth_assignment.booth.name, admin_poll_booth_assignment_path(@poll, booth_assignment, anchor: 'tab-recounts') %>
               </strong>
             </td>
-            <td class="text-center <%= 'count-error' if recount.to_i != system_count %>">
-              <% if recount.present? %>
-                <%= recount %>
-              <% else %>
-                <span>-</span>
-              <% end %>
-            </td>
-            <td class="text-center <%= 'count-error' if final_recount.to_i != system_count %>">
-              <% if final_recount.present? %>
-                <strong><%= final_recount %></strong>
+            <td class="text-center <%= 'count-error' if total_recounts.to_i != system_count %>">
+              <% if total_recounts.present? %>
+                <strong><%= total_recounts %></strong>
               <% else %>
                 <span>-</span>
               <% end %>

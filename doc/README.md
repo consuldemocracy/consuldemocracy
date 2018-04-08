@@ -8,7 +8,7 @@
 
 ## Funcionalidades
 
-Actualmente Consul soporta:
+Actualmente CONSUL soporta:
 
 * Registro y verificación de usuarios tanto en la misma aplicación como con distintos proveedores (Twitter, Facebook, Google).
 * Distintos perfiles de usuario, tanto ciudadanos individuales como organizaciones y cargos públicos.
@@ -54,9 +54,9 @@ Dentro de su perfil ("Mi cuenta" en el menú superior) cada usuario puede config
 
 ## Perfiles de administrador, moderador y gestor
 
-Consul cuenta con tres perfiles de usuario para administrar contenidos de la web: administrador, moderador y gestor. Además tiene otros dos perfiles para gestión de procesos participativos: [evaluador y presidente de mesa](#perfiles_de_evaluador,_gestor_y_presidente_de_mesa), que se detallan más abajo.
+CONSUL cuenta con tres perfiles de usuario para administrar contenidos de la web: administrador, moderador y gestor. Además tiene otros dos perfiles para gestión de procesos participativos: [evaluador y presidente de mesa](#perfiles_de_evaluador,_gestor_y_presidente_de_mesa), que se detallan más abajo.
 
-Los usuarios con perfil de administrador pueden asignar cualquier tipo de perfil a cualquier tipo de usuario. Sin embargo, todos los perfiles tienen que ser usuarios verificados (contrastados con el padrón municipal) para poder realizar ciertas acciones (por ejemplo, los gestores necesitan estar verificados para crear propuestas de inversión).
+Los usuarios con perfil de administrador pueden asignar cualquier tipo de perfil a cualquier tipo de usuario. Sin embargo, todos los perfiles tienen que ser usuarios verificados (contrastados con el padrón municipal) para poder realizar ciertas acciones (por ejemplo, los gestores necesitan estar verificados para crear proyectos de gasto).
 
 ### Panel Administrar
 
@@ -118,7 +118,7 @@ Para añadir una urna a la lista, seleccionar "Añadir urna" y a continuación c
 
 #### Presupuestos participativos ![presupuestos participativos](imgs/icon_participatory_budgeting.png?raw=true "presupuestos participativos")
 
-Desde esta sección se puede crear un presupuesto participativo seleccionando "Crear nuevo presupuesto" o editar uno existente. Al editar se puede cambiar la fase en la que se encuentra el proceso; este cambio se reflejará en la web. También se pueden crear grupos de partidas presupuestarias y agregar propuestas de inversión que hayan sido creadas previamente por un [gestor](#panel-gestión).
+Desde esta sección se puede crear un presupuesto participativo seleccionando "Crear nuevo presupuesto" o editar uno existente. Al editar se puede cambiar la fase en la que se encuentra el proceso; este cambio se reflejará en la web. También se pueden crear grupos de partidas presupuestarias y agregar proyectos de gasto que hayan sido creadas previamente por un [gestor](#panel-gestión).
 
 #### Perfiles ![perfiles](imgs/icon_profiles.png?raw=true "perfiles")
 
@@ -168,11 +168,11 @@ Las páginas sirven para mostrar cualquier tipo de contenido estático relativo 
 
 ##### Personalizar imágenes
 
-Desde este panel se definen las imágenes de los elementos corporativos de tu Consul.
+Desde este panel se definen las imágenes de los elementos corporativos de tu CONSUL.
 
 ##### Personalizar bloques
 
-Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu Cónsul.
+Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu CONSUL.
 
 Los bloques de la cabecera (top_links) son bloques de enlaces que deben crearse con este formato:
 
@@ -190,7 +190,7 @@ Desde este menú se pueden crear los distintos distritos de un municipio con su 
 
 #### Hojas de firmas
 
-Con el fin de registrar apoyos externos a la plataforma, se pueden crear hojas de firmas de Propuestas ciudadanas o Proyectos de inversión introduciendo el ID de la propuesta en cuestión e introduciendo los números de los documentos separados por comas(,).
+Con el fin de registrar apoyos externos a la plataforma, se pueden crear hojas de firmas de Propuestas ciudadanas o Proyectos de gasto introduciendo el ID de la propuesta en cuestión e introduciendo los números de los documentos separados por comas(,).
 
 #### Estadísticas
 
@@ -238,10 +238,10 @@ Desde aquí puedes gestionar usuarios a través de las siguientes acciones:
 * Editar cuenta de usuario.
 * Crear propuesta.
 * Apoyar propuestas.
-* Crear propuesta de inversión.
-* Apoyar propts. de inversión.
+* Crear proyecto de gasto.
+* Apoyar proyectos de gasto.
 * Imprimir propuestas.
-* Imprimir propts. de inversión.
+* Imprimir proyectos de gasto.
 * Invitaciones para usuarios.
 
 ## Perfiles de evaluador y presidente de mesa

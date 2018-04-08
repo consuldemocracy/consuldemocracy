@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="small-12 column">
+    <div id="admin-map" class="map"
+                        data-map
+                        data-map-center-latitude="<%= Setting["map_latitude"] %>"
+                        data-map-center-longitude="<%= Setting["map_longitude"] %>"
+                        data-map-zoom="<%= Setting["map_zoom"] %>"
+                        data-map-tiles-provider="<%= Rails.application.secrets.map_tiles_provider %>"
+                        data-map-tiles-provider-attribution="<%= Rails.application.secrets.map_tiles_provider_attribution %>"
+                        data-marker-editable="true"
+                        data-marker-latitude="<%= Setting["map_latitude"] %>"
+                        data-marker-longitude="<%= Setting["map_longitude"] %>"
+                        data-latitude-input-selector="#latitude"
+                        data-longitude-input-selector="#longitude"
+                        data-zoom-input-selector="#zoom">
+    </div>
+
+    <%= form_tag admin_update_map_path, method: :put, id: 'map-form' do |f| %>
+
+      <%= hidden_field_tag :latitude,   Setting["map_latitude"] %>
+      <%= hidden_field_tag :longitude,  Setting["map_longitude"] %>
+      <%= hidden_field_tag :zoom,       Setting["map_zoom"] %>
+
+      <div class="small-12 medium-6 large-4 margin-top">
+        <%= submit_tag t("admin.settings.index.map.form.submit"),
+                     class: "button hollow expanded" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

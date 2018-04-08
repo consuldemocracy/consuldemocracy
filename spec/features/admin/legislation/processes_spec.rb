@@ -34,7 +34,7 @@ feature 'Admin legislation processes' do
         click_link "Collaborative Legislation"
       end
 
-      expect(page).to_not have_content 'An example legislation process'
+      expect(page).not_to have_content 'An example legislation process'
 
       click_link "New process"
 
@@ -88,6 +88,7 @@ feature 'Admin legislation processes' do
 
       expect(page).to have_selector("h2", text: "An example legislation process")
       expect(find("#legislation_process_debate_phase_enabled")).to be_checked
+      expect(find("#legislation_process_published")).to be_checked
 
       fill_in 'legislation_process_summary', with: ''
       click_button "Save changes"

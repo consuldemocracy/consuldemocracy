@@ -84,12 +84,12 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 4.8.2'
   gem 'fuubar'
   gem 'launchy'
-  gem 'letter_opener_web', '~> 1.3.1'
-  gem 'i18n-tasks', '~> 0.9.15'
   gem 'selenium-webdriver', require: false
-  gem "bullet", '~> 5.5.1'
-  gem "faker", '~> 1.7.3'
+  gem 'bullet', '~> 5.7.0'
+  gem 'faker', '~> 1.8.7'
+  gem 'i18n-tasks', '~> 0.9.20'
   gem 'knapsack_pro', '~> 0.53.0'
+  gem 'letter_opener_web', '~> 1.3.2'
 end
 
 group :test do

@@ -1,0 +1,21 @@
+<%= form_for(@video, url: form_url) do |f| %>
+
+  <%= render 'shared/errors', resource: @video %>
+
+  <%= f.hidden_field :answer_id, value: @video.answer_id || @answer.id %>
+
+  <div class="row">
+    <div class="small-12 column">
+
+      <%= f.text_field :title %>
+      <%= f.text_field :url %>
+
+      <div class="row">
+        <div class="actions small-12 medium-4 column margin-top">
+          <%= f.submit(class: "button expanded", value: t("shared.save")) %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<% end %>

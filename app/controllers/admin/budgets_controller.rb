@@ -2,7 +2,7 @@ class Admin::BudgetsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
-  has_filters %w{current finished}, only: :index
+  has_filters %w{open finished}, only: :index
 
   load_and_authorize_resource
 
@@ -20,14 +20,14 @@ class Admin::BudgetsController < Admin::BaseController
 
   def calculate_winners
     return unless @budget.balloting_process?
-    @budget.headings.each { |heading| Budget::Result.new(@budget, heading).calculate_winners }
+    @budget.headings.each { |heading| Budget::Result.new(@budget, heading).delay.calculate_winners }
     redirect_to admin_budget_budget_investments_path(budget_id: @budget.id, filter: 'winners'),
                 notice: I18n.t("admin.budgets.winners.calculated")
   end
 
   def update
     if @budget.update(budget_params)
-      redirect_to admin_budget_path(@budget), notice: t('admin.budgets.update.notice')
+      redirect_to admin_budgets_path, notice: t('admin.budgets.update.notice')
     else
       render :edit
     end
@@ -42,10 +42,19 @@ class Admin::BudgetsController < Admin::BaseController
     end
   end
 
+  def destroy
+    if @budget.investments.any?
+      redirect_to admin_budgets_path, alert: t('admin.budgets.destroy.unable_notice')
+    else
+      @budget.destroy
+      redirect_to admin_budgets_path, notice: t('admin.budgets.destroy.success_notice')
+    end
+  end
+
   private
 
     def budget_params
-      descriptions = Budget::PHASES.map{|p| "description_#{p}"}.map(&:to_sym)
+      descriptions = Budget::Phase::PHASE_KINDS.map{|p| "description_#{p}"}.map(&:to_sym)
       valid_attributes = [:name, :phase, :currency_symbol] + descriptions
       params.require(:budget).permit(*valid_attributes)
     end

@@ -12,7 +12,6 @@
       <tr>
         <th><%= t("admin.poll_booth_assignments.index.table_name") %></th>
         <th><%= t("admin.poll_booth_assignments.index.table_location") %></th>
-        <th class="text-center"><%= t("admin.poll_booth_assignments.index.table_assignment") %></th>
       </tr>
     </thead>
     <tbody>
@@ -23,14 +22,6 @@
         </td>
         <td>
           <%= booth.location %>
-        </td>
-        <td class="text-center">
-          <% unless @poll.booth_ids.include?(booth.id) %>
-            <%= link_to t("admin.poll_booth_assignments.index.add_booth"),
-                          admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
-                          method: :post,
-                          class: "button hollow" %>
-          <% end %>
         </td>
       </tr>
       <% end %>

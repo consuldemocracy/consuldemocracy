@@ -7,7 +7,7 @@
   <td>
     <%= l poll.starts_at.to_date %> - <%= l poll.ends_at.to_date %>
   </td>
-  <td>
+  <td class="text-right">
     <%= link_to t("admin.actions.edit"),
                 edit_admin_poll_path(poll),
                 class: "button hollow" %>

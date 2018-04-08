@@ -9,7 +9,6 @@
     <thead>
       <tr>
         <th><%= t('admin.polls.show.table_title') %></th>
-        <th class="text-right"><%= t('admin.polls.show.table_assignment') %></th>
       </tr>
     </thead>
     <% @poll.questions.each do |question| %>
@@ -18,12 +17,6 @@
           <strong>
             <%= link_to question.title, admin_question_path(question) %>
           </strong>
-        </td>
-        <td class="text-right">
-          <%= link_to t('admin.polls.show.remove_question'),
-                      remove_question_admin_poll_path(poll_id: @poll.id, question_id: question.id),
-                      class: "button hollow alert",
-                      method: :patch %>
         </td>
       </tr>
     <% end %>

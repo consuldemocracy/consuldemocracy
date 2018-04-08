@@ -1,32 +1,36 @@
-<% if current_user %>
-  <% if current_user.administrator? %>
-    <li>
-      <%= link_to t("layouts.header.administration"), admin_root_path %>
-    </li>
-  <% end %>
+<% if show_admin_menu? %>
+  <li>
+    <%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow", class: "hide-for-small-only" %>
+    <ul class="menu">
+      <% if current_user.administrator? %>
+        <li>
+          <%= link_to t("layouts.header.administration"), admin_root_path %>
+        </li>
+      <% end %>
 
-  <% if current_user.administrator? || current_user.moderator? %>
-    <li>
-      <%= link_to t("layouts.header.moderation"), moderation_root_path %>
-    </li>
-  <% end %>
+      <% if current_user.administrator? || current_user.moderator? %>
+        <li>
+          <%= link_to t("layouts.header.moderation"), moderation_root_path %>
+        </li>
+      <% end %>
 
-  <% if (feature?(:spending_proposals) || feature?(:budgets)) &&
-        (current_user.administrator? || current_user.valuator?) %>
-    <li>
-      <%= link_to t("layouts.header.valuation"), valuation_root_path %>
-    </li>
-  <% end %>
+      <% if (feature?(:spending_proposals) || feature?(:budgets)) &&
+            (current_user.administrator? || current_user.valuator?) %>
+        <li>
+          <%= link_to t("layouts.header.valuation"), valuation_root_path %>
+        </li>
+      <% end %>
 
-  <% if current_user.administrator? || current_user.manager? %>
-    <li>
-      <%= link_to t("layouts.header.management"), management_sign_in_path %>
-    </li>
-  <% end %>
-
-  <% if current_user.administrator? || current_user.poll_officer? %>
-    <li>
-      <%= link_to t("layouts.header.officing"), officing_root_path %>
-    </li>
-  <% end %>
+      <% if current_user.administrator? || current_user.manager? %>
+        <li>
+          <%= link_to t("layouts.header.management"), management_sign_in_path %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+<% end %>
+<% if current_user && current_user.poll_officer? %>
+  <li>
+    <%= link_to t("layouts.header.officing"), officing_root_path %>
+  </li>
 <% end %>

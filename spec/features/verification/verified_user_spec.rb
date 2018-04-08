@@ -66,7 +66,7 @@ feature 'Verified users' do
     login_as(user)
     visit verified_user_path
 
-    expect(current_path).to eq new_sms_path
+    expect(page).to have_current_path(new_sms_path)
   end
 
   scenario "Select a verified email" do
@@ -86,7 +86,7 @@ feature 'Verified users' do
     end
 
     expect(page).to have_content 'We have sent a confirmation email to your account: rock@example.com'
-    expect(current_path).to eq(account_path)
+    expect(page).to have_current_path(account_path)
   end
 
   scenario "Select a verified phone" do
@@ -122,7 +122,7 @@ feature 'Verified users' do
 
     click_link "Use other phone"
 
-    expect(current_path).to eq(new_sms_path)
+    expect(page).to have_current_path(new_sms_path)
   end
 
   scenario "No verified information" do
@@ -131,7 +131,7 @@ feature 'Verified users' do
     login_as(user)
     visit verified_user_path
 
-    expect(current_path).to eq(new_sms_path)
+    expect(page).to have_current_path(new_sms_path)
   end
 
 end

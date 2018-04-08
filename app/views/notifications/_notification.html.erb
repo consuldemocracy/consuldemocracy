@@ -1,13 +1,38 @@
-<li id="<%= dom_id(notification) %>" class="notification">
-  <%= link_to notification do %>
-    <p>
-      <em>
-        <%= t("notifications.index.#{notification.notifiable_action}",
-              count: notification.counter) %>
-      </em>
-      <strong><%= notification.notifiable_title %></strong>
-    </p>
+<li id="<%= dom_id(notification) %>" class="notification <%= "unread" if notification.unread? %>">
 
-    <p class="time"><%= l notification.timestamp, format: :datetime %></p>
+  <% if notification.notifiable_available? %>
+    <%= link_to notification do %>
+      <p>
+        <em>
+          <%= t("notifications.notification.action.#{notification.notifiable_action}",
+                count: notification.counter) %>
+        </em>
+        <strong id="<%= dom_id(notification) %>_title">
+          <%= notification.notifiable_title %>
+        </strong>
+      </p>
+
+      <p class="time">
+        <%= l notification.timestamp, format: :datetime %>
+      </p>
+    <% end %>
+  <% else %>
+    <p>
+      <strong>
+        <%= t("notifications.notification.notifiable_hidden") %>
+      </strong>
+    </p>
+  <% end %>
+
+  <% if notification.unread? %>
+    <%= link_to t("notifications.notification.mark_as_read"),
+              mark_as_read_notification_path(notification),
+              method: :put, remote: true,
+              class: "mark-notification small" %>
+  <% else %>
+    <%= link_to t("notifications.notification.mark_as_unread"),
+              mark_as_unread_notification_path(notification),
+              method: :put, remote: true,
+              class: "mark-notification small" %>
   <% end %>
 </li>

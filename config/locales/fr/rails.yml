@@ -1,0 +1,124 @@
+fr:
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    -
+    - fév
+    - mar
+    - avr
+    - mai
+    - jun
+    - jul
+    - aoû
+    - sep
+    - oct
+    - nov
+    - déc
+    - Déc
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
+    month_names:
+    -
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - Décembre
+  datetime:
+    distance_in_words:
+      x_minutes:
+        one: 1 minute
+        other: "%{count} mois"
+      x_years:
+        one: 1 an
+        other: "%{count} jours"
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      model_invalid: 'La validation omise : %{errors}'
+      required: doit exister
+      too_long:
+        one: est trop long (maximum est de 1 caractère)
+        other: est trop long (maximum est %{count} caractères)
+      too_short:
+        one: est trop long (maximum est de 1 caractère)
+        other: est trop long (maximum est %{count} caractères)
+      wrong_length:
+        one: est la mauvaise longueur (soit 1 caractère)
+        other: est la longueur incorrecte (devrait être %{count} caractères)
+  helpers:
+    submit:
+      update: Actualiser %{model}
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: "."
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: milliard
+          million: million
+          quadrillion: quadrillion
+          thousand: mille
+          trillion: trillion
+      format:
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: octet
+            other: octets
+          gb: GO
+          kb: KO
+          mb: MO
+          tb: TO
+    percentage:
+      format:
+        format: "%n %"
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+  time:
+    am: du matin
+    formats:
+      datetime: "%d/%m/%Y %H:%M:%S"
+      default: "%A, %d %B %Y %H:%M:%S %z"
+      long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: de l'après-midi

@@ -1,0 +1,46 @@
+<%= form_for @shift, as: :shift, url: admin_booth_shifts_path do |f| %>
+  <%= render "shared/errors", resource: @shift %>
+
+  <fieldset class="fieldset">
+    <legend>
+      <%= t("admin.poll_shifts.new.new_shift") %>
+    </legend>
+
+    <div class="small-12 medium-3 column highlight padding">
+      <strong><%= t("admin.poll_shifts.new.officer") %></strong>
+      <br><%= @officer.name %>
+      <%= f.hidden_field :officer_id, value: @officer.id %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <label><%= t("admin.poll_shifts.new.task") %></label>
+      <%= f.select :task,
+                    Poll::Shift.tasks.map {|k,v| [t("admin.poll_shifts.#{k}"), k]},
+                    { prompt: t("admin.poll_shifts.new.select_task"),
+                    label: false },
+                    class: 'js-poll-shifts' %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <label><%= t("admin.poll_shifts.new.date") %></label>
+      <%= select 'shift[date]', 'vote_collection_date',
+                  options_for_select(shift_vote_collection_dates(@booth, @voting_polls)),
+                  { prompt: @voting_polls.present? ? t("admin.poll_shifts.new.select_date") : t("admin.poll_shifts.new.no_voting_days"),
+                  label: false },
+                  class: 'js-shift-vote-collection-dates' %>
+      <%= select 'shift[date]', 'recount_scrutiny_date',
+                  options_for_select(shift_recount_scrutiny_dates(@booth, @recount_polls)),
+                  { prompt: t("admin.poll_shifts.new.select_date"),
+                  label: false },
+                  class: 'js-shift-recount-scrutiny-dates',
+                  hidden: 'hidden' %>
+    </div>
+
+    <%= f.hidden_field :booth_id, value: @booth.id %>
+
+    <div class="small-12 medium-3 column">
+      <%= f.submit t("admin.poll_shifts.new.add_shift"),
+                     class: "button expanded margin-top" %>
+    </div>
+  </fieldset>
+<% end %>

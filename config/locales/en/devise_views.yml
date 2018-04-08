@@ -1,0 +1,129 @@
+en:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+        submit: Re-send instructions
+        title: Re-send confirmation instructions
+      show:
+        instructions_html: Confirming the account with email %{email}
+        new_password_confirmation_label: Repeat access password
+        new_password_label: New access password
+        please_set_password: Please choose your new pasword (it will allow you to login with the email above)
+        submit: Confirm
+        title: Confirm my account
+    mailer:
+      confirmation_instructions:
+        confirm_link: Confirm my account
+        text: 'You can confirm your email account at the following link:'
+        title: Welcome to the Open Government Portal
+        welcome: Welcome
+      reset_password_instructions:
+        change_link: Change my password
+        hello: Hello
+        ignore_text: If you did not request a password change, you can ignore this email.
+        info_text: Your password will not be changed unless you access the link and edit it.
+        text: 'We have received a request to change your password. You can do this at the following link:'
+        title: Change your password
+      unlock_instructions:
+        hello: Hello
+        info_text: Your account has been blocked due to an excessive number of failed sign-in attempts.
+        instructions_text: 'Please click on this link to unlock your account:'
+        title: Your account has been locked
+        unlock_link: Unlock my account
+    menu:
+      login_items:
+        login: Sign in
+        logout: Sign out
+        signup: Register
+    organizations:
+      registrations:
+        new:
+          email_label: Email
+          organization_name_label: Name of organisation
+          password_confirmation_label: Confirm password
+          password_label: Password
+          phone_number_label: Phone number
+          responsible_name_label: Full name of the person responsible for the collective
+          responsible_name_note: This would be the person representing the association/collective in whose name the proposals are presented
+          submit: Register
+          title: Register as an organisation or collective
+        success:
+          back_to_index: I understand; go back to main page
+          instructions_1_html: "<b>We will contact you soon</b> to verify that you do in fact represent this collective."
+          instructions_2_html: While your <b>email is reviewed</b>, we have sent you a <b>link to confirm your account</b>.
+          instructions_3_html: Once confirmed, you may begin to participate as an unverified collective.
+          thank_you_html: Thank you for registering your collective on the website. It is now <b>pending verification</b>.
+          title: Registration of organisation / collective
+    passwords:
+      edit:
+        change_submit: Change my password
+        password_confirmation_label: Confirm new password
+        password_label: New password
+        title: Change your password
+      new:
+        email_label: Email
+        send_submit: Send instructions
+        title: Forgotten password?
+    sessions:
+      new:
+        login_label: Email or username
+        password_label: Password
+        remember_me: Remember me
+        submit: Enter
+        title: Sign in
+    shared:
+      links:
+        login: Enter
+        new_confirmation: Haven't received instructions to activate your account?
+        new_password: Forgotten your password?
+        new_unlock: Haven't received unlocking instructions?
+        signin_with_provider: Sign in with %{provider}
+        signup: Don't have an account? %{signup_link}
+        signup_link: Sign up
+    unlocks:
+      new:
+        email_label: Email
+        submit: Re-send unlocking instructions
+        title: Re-sent unlocking instructions
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Reason
+          info: This action can not be undone. Please make sure this is what you want.
+          info_reason: If you want, leave us a reason (optional)
+          submit: Erase my account
+          title: Erase account
+        edit:
+          current_password_label: Current password
+          edit: Edit
+          email_label: Email
+          leave_blank: Leave blank if you do not wish to modify
+          need_current: We need your current password to confirm the changes
+          password_confirmation_label: Confirm new password
+          password_label: New password
+          update_submit: Update
+          waiting_for: 'Awaiting confirmation of:'
+        new:
+          cancel: Cancel login
+          email_label: Email
+          organization_signup: Do you represent an organisation or collective? %{signup_link}
+          organization_signup_link: Sign up here
+          password_confirmation_label: Confirm password
+          password_label: Password
+          redeemable_code: Verification code received via email (optional)
+          submit: Register
+          terms: By registering you accept the %{terms}
+          terms_link: terms and conditions of use
+          terms_title: By registering you accept the terms and conditions of use
+          title: Register
+          username_is_available: Username available
+          username_is_not_available: Username already in use
+          username_label: Username
+          username_note: Name that appears next to your posts
+        success:
+          back_to_index: I understand; go back to main page
+          instructions_1_html: Please <b>check your email</b> - we have sent you a <b>link to confirm your account</b>.
+          instructions_2_html: Once confirmed, you may begin participation.
+          thank_you_html: Thank you for registering for the website. You must now <b>confirm your email address</b>.
+          title: Modify your email

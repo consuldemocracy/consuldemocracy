@@ -5,35 +5,6 @@
 
 <h2><%= @officer.name %> - <%= @officer.email %></h2>
 
-<%= form_tag(admin_poll_officer_assignments_path(@poll), {id: "officer_assignment_form"}) do %>
-  <fieldset class="fieldset">
-    <legend><%= t("admin.poll_officer_assignments.by_officer.new_assignment") %></legend>
-    <div class="small-12 medium-4 column">
-      <label><%= t("admin.poll_officer_assignments.by_officer.date") %></label>
-      <%= select_tag :date,
-                      poll_dates_select_options(@poll) + poll_final_recount_option(@poll),
-                      { prompt: t("admin.poll_officer_assignments.by_officer.select_date"),
-                        label: false } %>
-    </div>
-
-    <div class="small-12 medium-4 column">
-      <label><%= t("admin.poll_officer_assignments.by_officer.booth") %></label>
-      <%= select_tag :booth_id,
-                      poll_booths_select_options(@poll),
-                      { prompt: t("admin.poll_officer_assignments.by_officer.select_booth"),
-                        label: false } %>
-    </div>
-
-    <div class="small-12 medium-4 column">
-      <%= hidden_field_tag :officer_id, @officer.id %>
-      <%= hidden_field_tag :poll_id, @poll.id %>
-      <%= submit_tag t("admin.poll_officer_assignments.by_officer.add_assignment"),
-                     class: "button expanded hollow margin-top" %>
-    </div>
-  </fieldset>
-<% end %>
-
-
 <% if @officer_assignments.empty? %>
   <div class="callout primary margin-top">
     <%= t("admin.poll_officer_assignments.by_officer.no_assignments") %>
@@ -45,83 +16,15 @@
       <tr>
         <th><%= t("admin.poll_officer_assignments.by_officer.date") %></th>
         <th><%= t("admin.poll_officer_assignments.by_officer.booth") %></th>
-        <th class="text-right"><%= t("admin.poll_officer_assignments.by_officer.assignment") %></th>
       </tr>
     </thead>
     <tbody>
       <% @officer_assignments.each do |officer_assignment| %>
         <tr id="<%= dom_id officer_assignment %>">
-          <td><%= officer_assignment.final? ? t('polls.final_date') : l(officer_assignment.date.to_date) %></td>
+          <td><%= l(officer_assignment.date.to_date)%> <%= content_tag :strong, t('polls.final_date') if officer_assignment.final %></td>
           <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
-          <td class="text-right">
-            <%= link_to t("admin.poll_officer_assignments.by_officer.remove_assignment"),
-                        admin_poll_officer_assignment_path(@poll, officer_assignment),
-                        method: :delete,
-                        class: "button hollow alert" %>
-          </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% end %>
-
-<% voting_days_officer_assignments = @officer_assignments.select{|oa| oa.final == false} %>
-<% if voting_days_officer_assignments.any? %>
-  <h3><%= t("admin.poll_officer_assignments.by_officer.recounts") %></h3>
-  <table id="recount_list" class="fixed">
-    <thead>
-      <tr>
-        <th><%= t("admin.poll_officer_assignments.by_officer.date") %></th>
-        <th><%= t("admin.poll_officer_assignments.by_officer.booth") %></th>
-        <th class="text-right"><%= t("admin.poll_officer_assignments.by_officer.recount") %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% voting_days_officer_assignments.each do |officer_assignment| %>
-        <tr id="recount_<%= officer_assignment.date.to_date.strftime('%Y%m%d') %>">
-          <td><%= l(officer_assignment.date.to_date) %></td>
-          <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
-          <td class="text-right">
-            <% if officer_assignment.recount.present? %>
-              <%= officer_assignment.recount.count %>
-            <% else %>
-              <span>-</span>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
-
-<% final_officer_assignments = @officer_assignments.select{|oa| oa.final == true} %>
-<% if final_officer_assignments.any? %>
-  <h3><%= t("admin.poll_officer_assignments.by_officer.final_recounts") %></h3>
-  <table id="final_recount_list" class="fixed">
-    <thead>
-      <tr>
-        <th><%= t("admin.poll_officer_assignments.by_officer.date") %></th>
-        <th><%= t("admin.poll_officer_assignments.by_officer.booth") %></th>
-        <th class="text-right"><%= t("admin.poll_officer_assignments.by_officer.final_recount") %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% final_officer_assignments.each do |officer_assignment| %>
-          <tr id="final_recount_<%= officer_assignment.date.to_date.strftime('%Y%m%d') %>">
-            <td><%= l(officer_assignment.date.to_date) %></td>
-            <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
-            <td class="text-right">
-              <% if officer_assignment.final_recounts.any? %>
-                <%= officer_assignment.final_recounts.to_a.sum(&:count) %>
-              <% else %>
-                <span>-</span>
-              <% end %>
-            </td>
-          </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
-
-
-

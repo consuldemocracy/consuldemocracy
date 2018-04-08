@@ -1,17 +1,13 @@
-<table id="budget_investments_list" class="clear activity-budget-investments">
-  <% @budget_investments.each do |budget_investment| %>
-    <tr id="budget_investment_<%= budget_investment.id %>">
-      <td>
-        <%= link_to budget_investment.title, budget_investment_path(budget_investment.budget, budget_investment) %>
-      </td>
-      <td class="text-right">
-        <% if can? :destroy, budget_investment %>
-          <%= link_to t('shared.delete'), budget_investment_path(budget_investment.budget, budget_investment),
-                      method: :delete, class: "button hollow alert" %>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
+<table id="budget_investments_list" class="margin-top">
+  <thead>
+    <th scope="col"><%= t("users.show.budget_investments") %></th>
+    <th scope="col"><%= t("users.show.actions") %></th>
+  </thead>
+  <tbody>
+    <% @budget_investments.each do |budget_investment| %>
+      <%= render "budget_investment", budget_investment: budget_investment %>
+    <% end %>
+  </tbody>
 </table>
 
 <%= paginate @budget_investments %>

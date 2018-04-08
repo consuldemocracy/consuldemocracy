@@ -3,7 +3,7 @@
 
   <% @valid_filters.each do |filter| %>
     <% if @current_filter == filter %>
-      <li class="active"><%= t("#{i18n_namespace}.filters.#{filter}") %></li>
+      <li class="active"><h2><%= t("#{i18n_namespace}.filters.#{filter}") %></h2></li>
     <% else %>
       <li><%= link_to t("#{i18n_namespace}.filters.#{filter}"),
         current_path_with_query_params(filter: filter, page: 1) %></li>

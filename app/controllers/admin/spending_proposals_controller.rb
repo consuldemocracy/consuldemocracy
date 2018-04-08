@@ -8,7 +8,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @spending_proposals = SpendingProposal.scoped_filter(filter_params, @current_filter)
+    @spending_proposals = SpendingProposal.scoped_filter(params, @current_filter)ter
                                           .order(cached_votes_up: :desc, created_at: :desc)
                                           .page(params[:page])
   end
@@ -36,13 +36,15 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
   def summary
     @spending_proposals = SpendingProposal.group(:geozone).sum(:price).sort_by{|geozone, count| geozone.present? ? geozone.name : "z"}
-    @spending_proposals_with_supports = SpendingProposal.with_supports.group(:geozone).sum(:price).sort_by{|geozone, count| geozone.present? ? geozone.name : "z"}
+    @spending_proposals_with_supports = SpendingProposal.with_supports.group(:geozone).sum(:price)
+                                                        .sort_by{|geozone, count| geozone.present? ? geozone.name : "z"}
   end
 
   private
 
     def spending_proposal_params
-      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :administrator_id, :tag_list, valuator_ids: [])
+      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name,
+                                                :administrator_id, :tag_list, valuator_ids: [])
     end
 
     def filter_params

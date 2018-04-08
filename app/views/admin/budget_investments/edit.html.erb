@@ -9,7 +9,7 @@
    <%= hidden_field_tag filter_name, filter_value %>
   <% end %>
 
-  <div class="row">
+  <div class="row expanded">
     <div class="small-12 column">
       <%= f.text_field :title, maxlength: Budget::Investment.title_max_length %>
     </div>
@@ -19,27 +19,38 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.text_field :external_url %>
+      <%= f.label :tag_list, t("admin.budget_investments.edit.user_tags") %>
+      <%= f.text_field :tag_list,
+                       value: @investment.tag_list.sort.join(','),
+                       label: false %>
     </div>
 
     <div class="small-12 column">
-      <%= f.select :heading_id, budget_heading_select_options(@budget), include_blank: t("admin.budget_investments.edit.select_heading") %>
+      <div class="small-12 medium-6">
+        <%= f.text_field :external_url %>
+      </div>
+
+      <div class="small-12 medium-6">
+        <%= f.select :heading_id, budget_heading_select_options(@budget), include_blank: t("admin.budget_investments.edit.select_heading") %>
+      </div>
     </div>
   </div>
 
-  <h2 id="classification"><%= t("admin.budget_investments.edit.classification") %></h2>
-
-  <div class="row">
+  <div class="row expanded margin-top">
 
     <div class="small-12 column">
-      <%= f.select(:administrator_id,
-                     @admins.collect{ |a| [a.name_and_email, a.id ] },
-                     { include_blank: t("admin.budget_investments.edit.undefined") }) %>
+      <h2 id="classification"><%= t("admin.budget_investments.edit.classification") %></h2>
+
+      <div class="small-12 medium-6">
+        <%= f.select(:administrator_id,
+                       @admins.collect{ |a| [a.name_and_email, a.id ] },
+                       { include_blank: t("admin.budget_investments.edit.undefined") }) %>
+      </div>
     </div>
 
 
     <div class="small-12 column">
-      <%= f.label :tag_list, t("admin.budget_investments.edit.tags") %>
+      <%= f.label :valuation_tag_list, t("admin.budget_investments.edit.tags") %>
       <div class="tags">
         <% @tags.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>
@@ -52,19 +63,46 @@
                         class: 'js-tag-list' %>
     </div>
 
-    <div class="small-12 column">
-      <%= f.label :valuator_ids, t("admin.budget_investments.edit.assigned_valuators") %>
+    <div class="small-12 column margin-top">
+      <%= f.label :valuator_ids, t("admin.budget_investments.edit.user_groups") %>
+      <ul>
+      <%= f.collection_check_boxes :valuator_group_ids, @valuator_groups, :id, :name do |group| %>
+        <li><%= group.label(title: group.object.name) { group.check_box + truncate(group.object.name, length: 60) } %></li>
+      <% end %>
+      </ul>
+    </div>
 
-      <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
-          <%= b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %>
+    <div class="small-12 column">
+      <hr>
+      <%= f.label :valuator_ids, t("admin.budget_investments.edit.assigned_valuators") %>
+      <ul>
+        <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
+            <li><%= b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row expanded margin-top">
+    <% if @investment.incompatible? || @investment.winner? %>
+    <div class="small-12 medium-3 column">
+      <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
+      <%= f.label :incompatible do %>
+        <%= f.check_box :incompatible, title: t('admin.budget_investments.edit.compatibility'), label: false %>
+        <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_incompatible") %></span>
+      <% end %>
+    </div>
+    <% end %>
+    <div class="small-12 medium-3 column float-left">
+      <h2 id="selected"><%= t("admin.budget_investments.edit.selection") %></h2>
+      <%= f.label :selected do %>
+        <%= f.check_box :selected, title: t('admin.budget_investments.edit.selection'), label: false %>
+        <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_selected") %></span>
       <% end %>
     </div>
   </div>
 
-  <p class="clear">
+  <div class="small-12 column margin-top">
     <%= f.submit(class: "button", value: t("admin.budget_investments.edit.submit_button")) %>
-  </p>
+  </div>
 <% end %>
-
-<hr>
-<%# render 'valuation/budget_investments/written_by_valuators' %>

@@ -22,7 +22,7 @@ feature "Admin custom pages" do
         click_link "Custom Pages"
       end
 
-      expect(page).to_not have_content "An example custom page"
+      expect(page).not_to have_content "An example custom page"
 
       click_link "Create new page"
 
@@ -30,6 +30,7 @@ feature "Admin custom pages" do
       fill_in "site_customization_page_subtitle", with: "Page subtitle"
       fill_in "site_customization_page_slug", with: "example-page"
       fill_in "site_customization_page_content", with: "This page is about..."
+      select 'English', from:"site_customization_page_locale"
 
       click_button "Create Custom page"
 
@@ -64,6 +65,6 @@ feature "Admin custom pages" do
 
     click_button "Delete page"
 
-    expect(page).to_not have_content("An example custom page")
+    expect(page).not_to have_content("An example custom page")
   end
 end

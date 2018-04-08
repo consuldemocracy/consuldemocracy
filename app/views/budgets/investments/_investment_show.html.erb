@@ -1,3 +1,12 @@
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: budget_investments_path(investment),
+            social_title: investment.title,
+            social_description: investment.description,
+            twitter_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil),
+            og_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil) %>
+<% end %>
+
 <section class="budget-investment-show" id="<%= dom_id(investment) %>">
 
   <div class="row">
@@ -5,7 +14,6 @@
       <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
       <h1><%= investment.title %></h1>
-
       <div class="budget-investment-info">
         <%= render '/shared/author_info', resource: investment %>
 
@@ -16,9 +24,20 @@
       </div>
 
       <br>
+
+      <%= render_image(investment.image, :large, true) if investment.image.present? %>
+
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
       </p>
+
+      <%= safe_html_with_links investment.description.html_safe %>
+
+      <% if feature?(:map) && map_location_available?(@investment.map_location) %>
+        <div class="margin">
+          <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
+        </div>
+      <% end %>
 
       <% if investment.location.present? %>
         <p>
@@ -32,9 +51,11 @@
         </p>
       <% end %>
 
-      <%= render 'shared/tags', taggable: investment %>
+      <%= render 'documents/documents',
+                  documents: investment.documents,
+                  max_documents_allowed: Budget::Investment.max_documents_allowed %>
 
-      <%= safe_html_with_links investment.description.html_safe %>
+      <%= render 'shared/tags', taggable: investment %>
 
       <% if investment.external_url.present? %>
         <div class="document-link">
@@ -42,18 +63,33 @@
         </div>
       <% end %>
 
-      <% if investment.unfeasible? && investment.unfeasibility_explanation.present? %>
+      <% if investment.should_show_unfeasibility_explanation? %>
         <h2><%= t('budgets.investments.show.unfeasibility_explanation') %></h2>
         <p><%= investment.unfeasibility_explanation %></p>
       <% end %>
 
-      <% if investment.should_show_price_info? %>
+      <% if investment.should_show_price_explanation? %>
         <h2><%= t('budgets.investments.show.price_explanation') %></h2>
         <p><%= investment.price_explanation %></p>
       <% end %>
+
+      <%= render 'relationable/related_content', relationable: @investment %>
     </div>
 
     <aside class="small-12 medium-3 column">
+      <% if can_destroy_image?(investment) %>
+        <div class="sidebar-divider"></div>
+        <h2><%= t("budgets.investments.show.author") %></h2>
+        <div class="show-actions-menu">
+          <%= link_to image_path(investment.image, from: request.url),
+                      method: :delete,
+                      class: 'button hollow alert expanded' do %>
+              <span class="icon-image"></span>
+              <%= t("images.remove_image") %>
+          <% end %>
+        </div>
+      <% end %>
+
       <% if investment.should_show_aside? %>
         <% if investment.should_show_votes? %>
           <div class="sidebar-divider"></div>
@@ -72,8 +108,10 @@
           <h2><%= t("budgets.investments.show.supports") %></h2>
           <div class="text-center">
             <span class="total-supports">
+              <strong>
                 <%= t("budgets.investments.investment.supports",
                     count: investment.total_votes) %>
+              </strong>
             </span>
           </div>
         <% elsif investment.should_show_ballots? %>
@@ -110,8 +148,20 @@
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("budgets.investments.show.share"),
         title: investment.title,
-        url: budget_investment_url(budget_id: investment.budget_id, id: investment.id)
+        image_url: image_absolute_url(investment.image, :thumb),
+        url: budget_investment_url(investment.budget, investment),
+        description: investment.title
       } %>
+
+      <% if current_user %>
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-title"><%= t("shared.follow") %></p>
+
+        <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, investment) %>
+      <% end %>
+
+      <%= render 'communities/access_button', community: investment.community %>
+
      </aside>
   </div>
 </section>

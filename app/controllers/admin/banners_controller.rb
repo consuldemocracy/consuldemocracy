@@ -38,15 +38,21 @@ class Admin::BannersController < Admin::BaseController
   private
 
     def banner_params
-      params.require(:banner).permit(:title, :description, :target_url, :style, :image, :post_started_at, :post_ended_at)
+      attributes = [:title, :description, :target_url, :style, :image,
+                    :post_started_at, :post_ended_at]
+      params.require(:banner).permit(*attributes)
     end
 
     def banner_styles
-      @banner_styles = Setting.all.banner_style.map { |banner_style| [banner_style.value, banner_style.key.split('.')[1]] }
+      @banner_styles = Setting.all.banner_style.map do |banner_style|
+                         [banner_style.value, banner_style.key.split('.')[1]]
+                       end
     end
 
     def banner_imgs
-      @banner_imgs = Setting.all.banner_img.map { |banner_img| [banner_img.value, banner_img.key.split('.')[1]] }
+      @banner_imgs = Setting.all.banner_img.map do |banner_img|
+                       [banner_img.value, banner_img.key.split('.')[1]]
+                     end
     end
 
 end

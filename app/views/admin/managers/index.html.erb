@@ -1,43 +1,51 @@
 <h2><%= t("admin.managers.index.title") %></h2>
 
-<div class="row">
-  <%= form_tag search_admin_managers_path, method: :get, remote: true  do %>
-    <div class="small-12 medium-6 column">
-      <%= text_field_tag :email, '', placeholder: t('admin.managers.search.email_placeholder') %>
-    </div>
-    <div class="small-12 medium-6 column">
-      <%= submit_tag t('admin.managers.search.search'), class: 'button' %>
+<%= render 'admin/shared/user_search', url: search_admin_managers_path %>
+
+<div id="managers">
+  <% if @managers.any? %>
+    <h3 class="margin"><%= page_entries_info @managers %></h3>
+
+    <table>
+      <thead>
+        <th scope="col"><%= t("admin.managers.index.name") %></th>
+        <th scope="col"><%= t("admin.managers.index.email") %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+        <% @managers.each do |manager| %>
+          <tr>
+            <td>
+              <%= manager.name %>
+            </td>
+            <td>
+              <%= manager.email %>
+            </td>
+            <td>
+              <% if manager.persisted? %>
+                <%= link_to t('admin.managers.manager.delete'),
+                  admin_manager_path(manager),
+                  method: :delete,
+                  class: "button hollow alert expanded"
+                %>
+              <% else %>
+                <%= link_to t('admin.managers.manager.add'),
+                             { controller: "admin/managers",
+                               action: :create,
+                               user_id: manager.user_id },
+                               method: :post,
+                               class: "button success expanded" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @managers %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.managers.index.no_managers") %>
     </div>
   <% end %>
 </div>
-
-<div id="search-result" class="row"></div>
-
-<h3><%= page_entries_info @managers %></h3>
-
-<table id="managers">
-  <% @managers.each do |manager| %>
-    <tr>
-      <td>
-        <%= manager.name %>
-      </td>
-      <td>
-        <%= manager.email %>
-      </td>
-      <td class="text-right">
-        <% if manager.persisted? %>
-          <%= link_to t('admin.managers.manager.delete'),
-            admin_manager_path(manager),
-            method: :delete,
-            class: "button hollow alert"
-          %>
-        <% else %>
-          <%= link_to t('admin.managers.manager.add'),{ controller: "admin/managers", action: :create, user_id: manager.user_id },
-            method: :post, class: "button success" %>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-<%= paginate @managers %>

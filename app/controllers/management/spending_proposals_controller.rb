@@ -17,7 +17,8 @@ class Management::SpendingProposalsController < Management::BaseController
     @spending_proposal.author = managed_user
 
     if @spending_proposal.save
-      redirect_to management_spending_proposal_path(@spending_proposal), notice: t('flash.actions.create.notice', resource_name: t("activerecord.models.spending_proposal", count: 1))
+      notice = t('flash.actions.create.notice', resource_name: t("activerecord.models.spending_proposal", count: 1))
+      redirect_to management_spending_proposal_path(@spending_proposal), notice: notice
     else
       render :new
     end

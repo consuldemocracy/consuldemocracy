@@ -1,0 +1,5 @@
+id:
+  verification:
+    residence:
+      new:
+        error_not_allowed_age: Anda tidak memiliki usia yang dibutuhkan untuk berpartisipasi

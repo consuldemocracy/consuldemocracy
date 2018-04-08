@@ -16,12 +16,14 @@
           <tr>
             <th><%= t("officing.results.index.table_whites") %></th>
             <th><%= t("officing.results.index.table_nulls") %></th>
+            <th><%= t("officing.results.index.table_total") %></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td id="white_results"><%= @whites %></td>
-            <td id="null_results"><%= @nulls %></td>
+            <td id="white_results"><%= @recounts.sum(:white_amount) %></td>
+            <td id="null_results"><%= @recounts.sum(:null_amount) %></td>
+            <td id="total_results"><%= @recounts.sum(:total_amount) %></td>
           </tr>
         </tbody>
       </table>
@@ -38,11 +40,11 @@
             </tr>
           </thead>
           <tbody>
-            <% question.valid_answers.each_with_index do |answer, i| %>
+            <% question.question_answers.each_with_index do |answer, i| %>
               <% by_answer = by_question[question.id].present? ? by_question[question.id].group_by(&:answer) : {} %>
               <tr id="question_<%= question.id %>_<%= i %>_result">
-                <td><%= answer %></td>
-                <td><%= by_answer[answer].present? ? by_answer[answer].first.amount : 0 %></td>
+                <td><%= answer.title %></td>
+                <td><%= by_answer[answer.title].present? ? by_answer[answer.title].first.amount : 0 %></td>
               </tr>
             <% end %>
           </tbody>

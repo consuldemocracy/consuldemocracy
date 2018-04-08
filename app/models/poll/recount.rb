@@ -34,5 +34,10 @@ class Poll
       self.officer_assignment_id_log += ":#{officer_assignment_id_was}"
       self.author_id_log += ":#{author_id_was}"
     end
+
+    def update_officer_author
+      self.officer_assignment_id_log += ":#{officer_assignment_id_was}"
+      self.author_id_log += ":#{author_id_was}"
+    end
   end
 end

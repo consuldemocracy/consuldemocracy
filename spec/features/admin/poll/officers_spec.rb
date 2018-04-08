@@ -13,7 +13,7 @@ feature 'Admin poll officers' do
   scenario 'Index' do
     expect(page).to have_content @officer.name
     expect(page).to have_content @officer.email
-    expect(page).to_not have_content @user.name
+    expect(page).not_to have_content @user.name
   end
 
   scenario 'Create', :js do
@@ -30,7 +30,7 @@ feature 'Admin poll officers' do
   scenario 'Delete' do
     click_link 'Delete position'
 
-    expect(page).to_not have_css '#officers'
+    expect(page).not_to have_css '#officers'
   end
 
 end

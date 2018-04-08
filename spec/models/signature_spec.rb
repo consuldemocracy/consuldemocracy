@@ -6,24 +6,24 @@ describe Signature do
 
   describe "validations" do
 
-    it "should be valid" do
+    it "is valid" do
       expect(signature).to be_valid
     end
 
-    it "should not be valid without a document number" do
+    it "is not valid without a document number" do
       signature.document_number = nil
-      expect(signature).to_not be_valid
+      expect(signature).not_to be_valid
 
       signature.document_number = ""
-      expect(signature).to_not be_valid
+      expect(signature).not_to be_valid
 
       signature.document_number = " "
-      expect(signature).to_not be_valid
+      expect(signature).not_to be_valid
     end
 
-    it "should not be valid without an associated signature sheet" do
+    it "is not valid without an associated signature sheet" do
       signature.signature_sheet = nil
-      expect(signature).to_not be_valid
+      expect(signature).not_to be_valid
     end
 
   end
@@ -89,7 +89,7 @@ describe Signature do
 
         signature.verify
 
-        expect(user.voted_for?(investment)).to_not be
+        expect(user.voted_for?(investment)).not_to be
         expect(Vote.count).to eq(0)
       end
 
@@ -185,7 +185,7 @@ describe Signature do
       it "calls assign_vote_to_user" do
         signature = create(:signature, document_number: "12345678Z")
 
-        expect(signature).to receive(:assign_vote_to_user)
+        allow(signature).to receive(:assign_vote_to_user)
         signature.verify
       end
 
@@ -205,7 +205,7 @@ describe Signature do
       it "does not call assign_vote_to_user" do
         signature = create(:signature, document_number: "123A")
 
-        expect(signature).to_not receive(:assign_vote_to_user)
+        expect(signature).not_to receive(:assign_vote_to_user)
         signature.verify
       end
 
@@ -213,7 +213,7 @@ describe Signature do
         signature = create(:signature, document_number: "123A")
 
         signature.verify
-        expect(signature).to_not be_verified
+        expect(signature).not_to be_verified
       end
     end
 

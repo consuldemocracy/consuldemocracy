@@ -29,12 +29,30 @@ module ActsAsTaggableOn
 
   Tag.class_eval do
 
+    scope :category, -> { where(kind: "category") }
+
+    def category?
+      kind == "category"
+    end
+
     include Graphqlable
 
     scope :public_for_api, -> do
       where('(tags.kind IS NULL or tags.kind = ?) and tags.id in (?)',
             'category',
             Tagging.public_for_api.pluck('DISTINCT taggings.tag_id'))
+    end
+
+    include PgSearch
+
+    pg_search_scope :pg_search, against: :name,
+                                using: {
+                                  tsearch: {prefix: true}
+                                },
+                                ignoring: :accents
+
+    def self.search(term)
+      pg_search(term)
     end
 
     def increment_custom_counter_for(taggable_type)
@@ -52,7 +70,7 @@ module ActsAsTaggableOn
     end
 
     def self.category_names
-      Tag.where("kind = 'category'").pluck(:name)
+      Tag.category.pluck(:name)
     end
 
     def self.spending_proposal_tags
@@ -72,6 +90,7 @@ module ActsAsTaggableOn
     end
 
     private
+
       def custom_counter_field_name_for(taggable_type)
         "#{taggable_type.underscore.pluralize}_count"
       end

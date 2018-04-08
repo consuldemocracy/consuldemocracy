@@ -1,43 +1,104 @@
 require 'rails_helper'
 
-describe :recount do
+describe Poll::Recount do
 
-  it "should update count_log if count changes" do
-    recount = create(:poll_recount, count: 33)
+  describe "logging changes" do
+    let(:author) { create(:user) }
+    let(:officer_assignment) { create(:poll_officer_assignment) }
+    let(:poll_recount) { create(:poll_recount, author: author, officer_assignment: officer_assignment) }
 
-    expect(recount.count_log).to eq("")
+    it "updates white_amount_log if white_amount changes" do
+      poll_recount.white_amount = 33
 
-    recount.count = 33
-    recount.save
-    recount.count = 32
-    recount.save
-    recount.count = 34
-    recount.save
+      expect(poll_recount.white_amount_log).to eq("")
 
-    expect(recount.count_log).to eq(":33:32")
-  end
+      poll_recount.white_amount = 33
+      poll_recount.save
+      poll_recount.white_amount = 32
+      poll_recount.save
+      poll_recount.white_amount = 34
+      poll_recount.save
 
-  it "should update officer_assignment_id_log if count changes" do
-    recount = create(:poll_recount, count: 33)
+      expect(poll_recount.white_amount_log).to eq(":0:33:32")
+    end
 
-    expect(recount.count_log).to eq("")
+    it "updates null_amount_log if null_amount changes" do
+      poll_recount.null_amount = 33
 
-    recount.count = 33
-    poll_officer_assignment_1 = create(:poll_officer_assignment)
-    recount.officer_assignment = poll_officer_assignment_1
-    recount.save
+      expect(poll_recount.null_amount_log).to eq("")
 
-    recount.count = 32
-    poll_officer_assignment_2 = create(:poll_officer_assignment)
-    recount.officer_assignment = poll_officer_assignment_2
-    recount.save
+      poll_recount.null_amount = 33
+      poll_recount.save
+      poll_recount.null_amount = 32
+      poll_recount.save
+      poll_recount.null_amount = 34
+      poll_recount.save
 
-    recount.count = 34
-    poll_officer_assignment_3 = create(:poll_officer_assignment)
-    recount.officer_assignment = poll_officer_assignment_3
-    recount.save
+      expect(poll_recount.null_amount_log).to eq(":0:33:32")
+    end
 
-    expect(recount.officer_assignment_id_log).to eq(":#{poll_officer_assignment_1.id}:#{poll_officer_assignment_2.id}")
+    it "updates total_amount_log if total_amount changes" do
+      poll_recount.total_amount = 33
+
+      expect(poll_recount.total_amount_log).to eq("")
+
+      poll_recount.total_amount = 33
+      poll_recount.save
+      poll_recount.total_amount = 32
+      poll_recount.save
+      poll_recount.total_amount = 34
+      poll_recount.save
+
+      expect(poll_recount.total_amount_log).to eq(":0:33:32")
+    end
+
+    it "updates officer_assignment_id_log if amount changes" do
+      poll_recount.white_amount = 33
+
+      expect(poll_recount.white_amount_log).to eq("")
+      expect(poll_recount.officer_assignment_id_log).to eq("")
+
+      poll_recount.white_amount = 33
+      poll_recount.officer_assignment = create(:poll_officer_assignment, id: 101)
+      poll_recount.save
+
+      poll_recount.white_amount = 32
+      poll_recount.officer_assignment = create(:poll_officer_assignment, id: 102)
+      poll_recount.save
+
+      poll_recount.white_amount = 34
+      poll_recount.officer_assignment = create(:poll_officer_assignment, id: 103)
+      poll_recount.save
+
+      expect(poll_recount.white_amount_log).to eq(":0:33:32")
+      expect(poll_recount.officer_assignment_id_log).to eq(":#{officer_assignment.id}:101:102")
+    end
+
+    it "updates author_id if amount changes" do
+      poll_recount.white_amount = 33
+
+      expect(poll_recount.white_amount_log).to eq("")
+      expect(poll_recount.author_id_log).to eq("")
+
+      first_author = create(:poll_officer).user
+      second_author = create(:poll_officer).user
+      third_author = create(:poll_officer).user
+
+      poll_recount.white_amount = 33
+      poll_recount.author_id = first_author.id
+      poll_recount.save!
+
+      poll_recount.white_amount = 32
+      poll_recount.author_id = second_author.id
+      poll_recount.save!
+
+      poll_recount.white_amount = 34
+      poll_recount.author_id = third_author.id
+      poll_recount.save!
+
+      expect(poll_recount.white_amount_log).to eq(":0:33:32")
+      expect(poll_recount.author_id_log).to eq(":#{author.id}:#{first_author.id}:#{second_author.id}")
+    end
   end
 
 end

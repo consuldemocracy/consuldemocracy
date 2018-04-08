@@ -9,7 +9,7 @@ feature 'Verification path' do
     login_as(user)
     visit verification_path
 
-    expect(current_path).to eq account_path
+    expect(page).to have_current_path(account_path)
   end
 
   scenario "User is verified" do
@@ -18,7 +18,7 @@ feature 'Verification path' do
     login_as(user)
     visit verification_path
 
-    expect(current_path).to eq account_path
+    expect(page).to have_current_path(account_path)
     expect(page).to have_content 'Your account is already verified'
   end
 
@@ -29,7 +29,7 @@ feature 'Verification path' do
     login_as(user)
     visit verification_path
 
-    expect(current_path).to eq edit_letter_path
+    expect(page).to have_current_path(edit_letter_path)
   end
 
   scenario "User is level two verified" do
@@ -38,7 +38,7 @@ feature 'Verification path' do
     login_as(user)
     visit verification_path
 
-    expect(current_path).to eq new_letter_path
+    expect(page).to have_current_path(new_letter_path)
   end
 
   scenario "User received a verification sms" do
@@ -47,7 +47,7 @@ feature 'Verification path' do
     login_as(user)
     visit verification_path
 
-    expect(current_path).to eq edit_sms_path
+    expect(page).to have_current_path(edit_sms_path)
   end
 
   scenario "User received verification email" do
@@ -60,7 +60,7 @@ feature 'Verification path' do
 
     visit verified_user_path
 
-    expect(current_path).to eq verification_redirect
+    expect(page).to have_current_path(verification_redirect)
   end
 
   scenario "User has verified residence" do
@@ -73,7 +73,7 @@ feature 'Verification path' do
 
     visit verified_user_path
 
-    expect(current_path).to eq verification_redirect
+    expect(page).to have_current_path(verification_redirect)
   end
 
   scenario "User has not started verification process" do
@@ -82,7 +82,7 @@ feature 'Verification path' do
     login_as(user)
     visit verification_path
 
-    expect(current_path).to eq new_residence_path
+    expect(page).to have_current_path(new_residence_path)
   end
 
   scenario "A verified user can not access verification pages" do
@@ -94,7 +94,7 @@ feature 'Verification path' do
     verification_paths.each do |step_path|
       visit step_path
 
-      expect(current_path).to eq account_path
+      expect(page).to have_current_path(account_path)
       expect(page).to have_content 'Your account is already verified'
     end
   end

@@ -4,10 +4,11 @@ module Budgets
     include CommentableActions
     include FlagActions
 
-    before_action :authenticate_user!, except: [:index, :show]
+    before_action :authenticate_user!, except: [:index, :show, :json_data]
 
-    load_and_authorize_resource :budget
-    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
+    load_and_authorize_resource :budget, except: :json_data
+    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
+                                except: :json_data
 
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
@@ -15,6 +16,8 @@ module Budgets
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
+
+    skip_authorization_check only: :json_data
 
     feature_flag :budgets
 
@@ -28,7 +31,8 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
+      @investments = investments.page(params[:page]).per(10).for_render
+
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
@@ -40,6 +44,7 @@ module Budgets
     def show
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+      @related_contents = Kaminari.paginate_array(@investment.relationed_contents).page(params[:page]).per(5)
       set_comment_flags(@comment_tree.comments)
       load_investment_votes(@investment)
       @investment_ids = [@investment.id]
@@ -77,6 +82,19 @@ module Budgets
       super
     end
 
+    def json_data
+      investment =  Budget::Investment.find(params[:id])
+      data = {
+        investment_id: investment.id,
+        investment_title: investment.title,
+        budget_id: investment.budget.id
+      }.to_json
+
+      respond_to do |format|
+        format.json { render json: data }
+      end
+    end
+
     private
 
       def resource_model
@@ -93,16 +111,20 @@ module Budgets
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          params[:random_seed] ||= rand(99) / 100.0
-          seed = Float(params[:random_seed]) rescue 0
-          Budget::Investment.connection.execute("select setseed(#{seed})")
+          seed = params[:random_seed] || session[:random_seed] || rand(-100000..100000)
+          params[:random_seed] ||= Float(seed) rescue 0
         else
           params[:random_seed] = nil
         end
       end
 
       def investment_params
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list, :organization_name, :location, :terms_of_service)
+        params.require(:budget_investment)
+              .permit(:title, :description, :heading_id, :tag_list,
+                      :organization_name, :location, :terms_of_service, :skip_map,
+                      image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                      documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                      map_location_attributes: [:latitude, :longitude, :zoom])
       end
 
       def load_ballot
@@ -118,11 +140,21 @@ module Budgets
       end
 
       def load_categories
-        @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
+        @categories = ActsAsTaggableOn::Tag.category.order(:name)
       end
 
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
+      end
+
+      def investments
+        if @current_order == 'random'
+          @investments.apply_filters_and_search(@budget, params, @current_filter)
+                      .send("sort_by_#{@current_order}", params[:random_seed])
+        else
+          @investments.apply_filters_and_search(@budget, params, @current_filter)
+                      .send("sort_by_#{@current_order}")
+        end
       end
 
   end

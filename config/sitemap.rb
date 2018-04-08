@@ -9,16 +9,12 @@ SitemapGenerator::Sitemap.default_host = Setting["url"]
 
 # sitemap generator
 SitemapGenerator::Sitemap.create do
-  pages = ["accessibility",
-           "census_terms",
-           "conditions",
-           "general_terms",
-           "privacy"]
+  pages = ["general_terms"]
   pages.each do |page|
     add page_path(id: page)
   end
 
-  add more_info_path
+  add help_path
   add how_to_use_path
   add faq_path
 
@@ -32,11 +28,6 @@ SitemapGenerator::Sitemap.create do
     add proposal_path(proposal), lastmod: proposal.updated_at
   end
 
-  add spending_proposals_path, priority: 0.7, changefreq: "daily"
-  SpendingProposal.find_each do |spending_proposal|
-    add spending_proposal_path(spending_proposal), lastmod: spending_proposal.updated_at
-  end
-
   add budgets_path, priority: 0.7, changefreq: "daily"
   Budget.find_each do |budget|
     add budget_path(budget), lastmod: budget.updated_at
@@ -46,4 +37,10 @@ SitemapGenerator::Sitemap.create do
   Poll.find_each do |poll|
     add poll_path(poll), lastmod: poll.starts_at
   end
+
+  add legislation_processes_path, priority: 0.7, changefreq: "daily"
+  Legislation::Process.find_each do |process|
+    add legislation_process_path(process), lastmod: process.start_date
+  end
+
 end

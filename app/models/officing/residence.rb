@@ -4,7 +4,7 @@ class Officing::Residence
 
   attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth
 
-  before_validation :call_census_api
+  before_validation :retrieve_census_data
 
   validates :document_number, presence: true
   validates :document_type, presence: true
@@ -23,13 +23,13 @@ class Officing::Residence
 
     if user_exists?
       self.user = find_user_by_document
-      self.user.update(verified_at: Time.current)
+      user.update(verified_at: Time.current)
     else
       user_params = {
         document_number:       document_number,
         document_type:         document_type,
-        geozone:               self.geozone,
-        date_of_birth:         date_of_birth.to_datetime,
+        geozone:               geozone,
+        date_of_birth:         date_of_birth.in_time_zone.to_datetime,
         gender:                gender,
         residence_verified_at: Time.current,
         verified_at:           Time.current,
@@ -101,8 +101,8 @@ class Officing::Residence
 
   private
 
-    def call_census_api
-      @census_api_response = CensusApi.new.call(document_type, document_number)
+    def retrieve_census_data
+      @census_api_response = CensusCaller.new.call(document_type, document_number)
     end
 
     def residency_valid?
@@ -115,7 +115,7 @@ class Officing::Residence
     end
 
     def clean_document_number
-      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase if self.document_number.present?
+      self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase if document_number.present?
     end
 
     def random_password

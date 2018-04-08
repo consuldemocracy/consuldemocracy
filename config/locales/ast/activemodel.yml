@@ -1,0 +1,17 @@
+ast:
+  activemodel:
+    models:
+      verification:
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Tipu de documentu"
+          document_number: "Númberu de documentu (incluyendo lletres)"
+          date_of_birth: "Fecha de nacencia"
+          postal_code: "Códigu postal"
+        sms:
+          phone: "Teléfonu"
+          confirmation_code: "Códigu de confirmación"
+      officing/residence:
+        year_of_birth: "Añu de nacencia"

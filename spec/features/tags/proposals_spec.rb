@@ -36,8 +36,8 @@ feature 'Tags' do
 
     visit proposals_path(tag: "123")
 
-    expect(page).to_not have_selector('#proposals .proposal-featured')
-    expect(page).to_not have_selector('#featured-proposals')
+    expect(page).not_to have_selector('#proposals .proposal-featured')
+    expect(page).not_to have_selector('#featured-proposals')
   end
 
   scenario 'Index shows 3 tags with no plus link' do
@@ -91,8 +91,8 @@ feature 'Tags' do
     user = create(:user)
     login_as(user)
 
-    education = create(:tag, name: 'Education', kind: 'category')
-    health    = create(:tag, name: 'Health',    kind: 'category')
+    education = create(:tag, :category, name: 'Education')
+    health    = create(:tag, :category, name: 'Health')
 
     visit new_proposal_path
 
@@ -101,7 +101,7 @@ feature 'Tags' do
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-    fill_in 'proposal_video_url', with: 'http://youtube.com'
+    fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=Ae6gQmhaMn4'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
 
@@ -114,7 +114,7 @@ feature 'Tags' do
 
     within "#tags_proposal_#{Proposal.last.id}" do
       expect(page).to have_content 'Education'
-      expect(page).to_not have_content 'Health'
+      expect(page).not_to have_content 'Health'
     end
   end
 
@@ -160,7 +160,7 @@ feature 'Tags' do
     expect(page).to have_content 'user_id1'
     expect(page).to have_content 'a3'
     expect(page).to have_content 'scriptalert("hey");script'
-    expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
+    expect(page.html).not_to include 'user_id=1, &a=3, <script>alert("hey");</script>'
   end
 
   scenario 'Update' do
@@ -191,7 +191,7 @@ feature 'Tags' do
     click_button 'Save changes'
 
     expect(page).to have_content 'Proposal updated successfully.'
-    expect(page).to_not have_content 'Economía'
+    expect(page).not_to have_content 'Economía'
   end
 
   context "Filter" do
@@ -257,7 +257,7 @@ feature 'Tags' do
       expect(page).to have_css ".proposal", count: 2
       expect(page).to have_content proposal1.title
       expect(page).to have_content proposal2.title
-      expect(page).to_not have_content proposal3.title
+      expect(page).not_to have_content proposal3.title
     end
 
   end
@@ -265,8 +265,8 @@ feature 'Tags' do
   context "Categories" do
 
     scenario 'Display category tags' do
-      create(:tag, kind: 'category', name: 'Medio Ambiente')
-      create(:tag, kind: 'category', name: 'Economía')
+      create(:tag, :category, name: 'Medio Ambiente')
+      create(:tag, :category, name: 'Economía')
 
       earth = create(:proposal, tag_list: 'Medio Ambiente')
       money = create(:proposal, tag_list: 'Economía')
@@ -280,8 +280,8 @@ feature 'Tags' do
     end
 
     scenario "Filter by category tags" do
-      create(:tag, kind: 'category', name: 'Medio Ambiente')
-      create(:tag, kind: 'category', name: 'Economía')
+      create(:tag, :category, name: 'Medio Ambiente')
+      create(:tag, :category, name: 'Economía')
 
       proposal1 = create(:proposal, tag_list: 'Medio Ambiente')
       proposal2 = create(:proposal, tag_list: 'Medio Ambiente')
@@ -296,7 +296,7 @@ feature 'Tags' do
       expect(page).to have_css ".proposal", count: 2
       expect(page).to have_content proposal1.title
       expect(page).to have_content proposal2.title
-      expect(page).to_not have_content proposal3.title
+      expect(page).not_to have_content proposal3.title
     end
   end
 end

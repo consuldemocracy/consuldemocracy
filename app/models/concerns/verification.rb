@@ -55,10 +55,9 @@ module Verification
   end
 
   def user_type
-    case
-    when level_three_verified?
+    if level_three_verified?
       :level_3_user
-    when level_two_verified?
+    elsif level_two_verified?
       :level_2_user
     else
       :level_1_user

@@ -1,5 +1,5 @@
 module HasPublicAuthor
   def public_author
-    self.author.public_activity? ? self.author : nil
+    author.public_activity? ? author : nil
   end
 end

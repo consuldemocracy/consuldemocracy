@@ -11,7 +11,8 @@ class Mailer < ApplicationMailer
     @email_to = @commentable.author.email
 
     with_user(@commentable.author) do
-      mail(to: @email_to, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)) if @commentable.present? && @commentable.author.present?
+      subject = t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)
+      mail(to: @email_to, subject: subject) if @commentable.present? && @commentable.author.present?
     end
   end
 
@@ -123,6 +124,13 @@ class Mailer < ApplicationMailer
     with_user(@author) do
       mail(to: @email_to, subject: t('mailers.budget_investment_unselected.subject', code: @investment.code))
     end
+  end
+
+  def newsletter(newsletter, recipient_email)
+    @newsletter = newsletter
+    @email_to = recipient_email
+
+    mail(to: @email_to, from: @newsletter.from, subject: @newsletter.subject)
   end
 
   private

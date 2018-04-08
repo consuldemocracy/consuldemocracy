@@ -32,22 +32,30 @@
   padding: 0;
   z-index: 4 !important;
 
-  .ui-datepicker-prev {
-    left: 12px;
-  }
-
-  .ui-datepicker-next {
-    right: 12px;
-  }
-
   .ui-datepicker-prev,
   .ui-datepicker-next {
     color: #fff;
     cursor: pointer;
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
     font-weight: normal;
-    font-size: $small-font-size;
+    height: rem-calc(30);
     line-height: $line-height;
-    top: 0;
+    position: absolute;
+    top: 4px;
+    width: rem-calc(30);
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .ui-datepicker-prev::after {
+    content: '\62';
+  }
+
+  .ui-datepicker-next::after {
+    content: '\63';
   }
 
   table {

@@ -5,7 +5,7 @@ module DocumentParser
     document_number = document_number.to_s.gsub(/[^0-9A-Za-z]/i, '')
     variants = []
 
-    if is_dni?(document_type)
+    if dni?(document_type)
       document_number, letter = split_letter_from(document_number)
       number_variants = get_number_variants_with_leading_zeroes_from(document_number)
       letter_variants = get_letter_variants(number_variants, letter)

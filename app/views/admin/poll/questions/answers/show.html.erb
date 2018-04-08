@@ -1,0 +1,31 @@
+<%= back_link_to %>
+
+<%= link_to t("admin.answers.show.edit"), edit_admin_answer_path(@answer),
+            class: "button hollow float-right" %>
+
+<ul class="breadcrumbs margin-top">
+  <li><%= @answer.question.title %></li>
+  <li><%= @answer.title %></li>
+</ul>
+
+<div class="clear"></div>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col"><%= t("admin.answers.show.title") %></th>
+      <th scope="col"><%= t("admin.answers.show.description") %></th>
+      <th scope="col" class="text-center"><%= t("admin.answers.show.images") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @answer.title %></td>
+      <td><%= @answer.description %></td>
+      <td class="text-center">
+        (<%= @answer.images.count %>)<br>
+        <%= link_to t("admin.answers.show.images_list"), admin_answer_images_path(@answer) %>
+      </td>
+    </tr>
+  </tbody>
+</table>

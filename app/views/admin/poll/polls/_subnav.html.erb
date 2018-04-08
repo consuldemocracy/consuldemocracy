@@ -1,8 +1,10 @@
 <ul class="menu simple clear" id="assigned-resources-tabs">
   <% if controller_name == "polls" %>
     <li class="active">
+      <h2>
         <%= t("admin.polls.show.questions_tab") %>
         (<%= @poll.questions.count %>)
+      </h2>
     </li>
   <% else %>
     <li>
@@ -15,8 +17,10 @@
 
   <% if controller_name == "booth_assignments" %>
     <li class="active">
-      <%= t("admin.polls.show.booths_tab") %>
-      (<%= @poll.booth_assignments.select(:booth_id).distinct.count %>)
+      <h2>
+        <%= t("admin.polls.show.booths_tab") %>
+        (<%= @poll.booth_assignments.select(:booth_id).distinct.count %>)
+      </h2>
     </li>
   <% else %>
     <li>
@@ -29,8 +33,10 @@
 
   <% if controller_name == "officer_assignments" %>
     <li class="active">
-      <%= t("admin.polls.show.officers_tab") %>
-      (<%= @poll.officer_assignments.select(:officer_id).distinct.count %>)
+      <h2>
+        <%= t("admin.polls.show.officers_tab") %>
+        (<%= @poll.officer_assignments.select(:officer_id).distinct.count %>)
+      </h2>
     </li>
   <% else %>
     <li>
@@ -43,7 +49,9 @@
 
   <% if controller_name == "recounts" %>
     <li class="active">
-      <%= t("admin.polls.show.recounts_tab") %>
+      <h2>
+        <%= t("admin.polls.show.recounts_tab") %>
+      </h2>
     </li>
   <% else %>
     <li>
@@ -53,7 +61,9 @@
 
   <% if controller_name == "results" %>
     <li class="active">
-      <%= t("admin.polls.show.results_tab") %>
+      <h2>
+        <%= t("admin.polls.show.results_tab") %>
+      </h2>
     </li>
   <% else %>
     <li>

@@ -1,0 +1,20 @@
+<div class="row column communities-participant">
+
+  <ul class="tabs" data-tabs id="communities-show-tabs">
+
+    <li class="tabs-title is-active">
+      <%= link_to "#tab-participants" do %>
+        <h3>
+          <%= t("community.show.tab.participants") %>
+          <span class="js-comments-count">(<%= @participants.count %>)</span>
+        </h3>
+      <% end %>
+    </li>
+
+  </ul>
+
+  <% @participants.each do |participant| %>
+    <%= render 'participant', participant: participant %>
+  <% end %>
+
+</div>

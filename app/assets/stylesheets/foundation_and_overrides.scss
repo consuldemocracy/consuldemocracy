@@ -1,8 +1,10 @@
 @charset 'utf-8';
 
 @import 'settings';
+@import 'consul_settings';
 @import 'custom_settings';
 @import 'foundation';
+@import 'motion-ui/motion-ui';
 
 @include foundation-global-styles;
 @include foundation-grid;
@@ -36,3 +38,7 @@
 @include foundation-title-bar;
 @include foundation-top-bar;
 @include foundation-menu-icon;
+@include foundation-orbit;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;

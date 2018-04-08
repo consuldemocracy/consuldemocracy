@@ -1,7 +1,7 @@
 <main>
   <div class="row proposals-summary">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
-      <%= render "shared/back_link" %>
+      <%= back_link_to %>
 
       <% @proposals.each do |group_name, proposals| %>
         <div id="<%= group_name.parameterize %>">

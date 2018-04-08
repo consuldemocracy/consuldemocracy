@@ -1,0 +1,22 @@
+<div class="comment-body">
+  <div class="comment-info">
+
+    <%= avatar_image( participant, seed: participant.id, size: 32, class: 'author-photo') %>
+
+    <div class="comment-info">
+
+      <span class="user-name">
+        <%= link_to participant.name, user_path(participant)%>
+      </span>
+
+      <% if author?(@community, participant) %>
+        &nbsp;&bull;&nbsp;
+        <span class="label round is-author">
+            <%= t("comments.comment.author") %>
+        </span>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

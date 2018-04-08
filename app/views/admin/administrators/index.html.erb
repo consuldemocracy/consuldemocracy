@@ -1,46 +1,48 @@
-<h2 class="inline-block"><%= t("admin.administrators.index.title") %></h2>
+<h2><%= t("admin.administrators.index.title") %></h2>
 
-<div class="row">
-  <%= form_tag search_admin_administrators_path, method: :get, remote: true  do %>
-    <div class="small-12 medium-6 column">
-      <%= text_field_tag :email, '', placeholder: t('admin.administrators.search.email_placeholder') %>
-    </div>
-    <div class="small-12 medium-6 column">
-      <%= submit_tag t('admin.administrators.search.search'), class: 'button' %>
+<%= render 'admin/shared/user_search', url: search_admin_administrators_path %>
+
+<div id="administrators">
+  <% if @administrators.any? %>
+    <h3 class="margin"><%= page_entries_info @administrators %></h3>
+
+    <table>
+      <thead>
+        <th scope="col"><%= t("admin.administrators.index.name") %></th>
+        <th scope="col"><%= t("admin.administrators.index.email") %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <% @administrators.each do |administrator| %>
+        <tr>
+          <td>
+            <%= administrator.name %>
+          </td>
+          <td>
+            <%= administrator.email %>
+          </td>
+          <td>
+            <% if administrator.persisted? %>
+              <%= link_to t('admin.administrators.administrator.delete'),
+                          admin_administrator_path(administrator),
+                          method: :delete,
+                          class: "button hollow alert expanded"
+              %>
+            <% else %>
+              <%= link_to t('admin.administrators.administrator.add'),
+                          { controller: "admin/administrators", action: :create,
+                            user_id: administrator.user_id },
+                            method: :post,
+                            class: "button success expanded" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+
+    <%= paginate @administrators %>
+  <% else %>
+    <div class="callout primary margin">
+      <%= t("admin.administrators.index.no_administrators") %>
     </div>
   <% end %>
 </div>
-
-<div id="search-result" class="row"></div>
-
-<h3><%= page_entries_info @administrators %></h3>
-
-<table id="administrators">
-  <% @administrators.each do |administrator| %>
-    <tr>
-      <td>
-        <%= administrator.name %>
-      </td>
-      <td>
-        <%= administrator.email %>
-      </td>
-      <td class="text-right">
-        <% if administrator.persisted? %>
-          <%= link_to t('admin.administrators.administrator.delete'),
-                      admin_administrator_path(administrator),
-                      method: :delete,
-                      class: "button hollow alert"
-          %>
-        <% else %>
-          <%= link_to t('admin.administrators.administrator.add'),
-                      { controller: "admin/administrators", action: :create,
-                        user_id: administrator.user_id },
-                      method: :post,
-                      class: "button success" %>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-<%= paginate @administrators %>

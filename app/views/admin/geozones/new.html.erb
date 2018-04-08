@@ -1,10 +1,6 @@
 <div class="geozone-new row">
-
   <div class="small-12 column">
-    <%= link_to admin_geozones_path, class: "back" do %>
-      <span class="icon-angle-left"></span>
-      <%= t("admin.geozones.new.back") %>
-    <% end %>
+    <%= back_link_to admin_geozones_path, t("admin.geozones.new.back") %>
 
     <h1><%= t("admin.geozones.new.creating") %></h1>
 

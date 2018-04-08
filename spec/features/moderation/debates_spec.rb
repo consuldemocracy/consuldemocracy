@@ -22,10 +22,10 @@ feature 'Moderate debates' do
     visit debate_path(debate)
 
     within("#debate_#{debate.id}") do
-      click_link 'Hide'
+      accept_confirm { click_link 'Hide' }
     end
 
-    expect(page).to have_css("#debate_#{debate.id}.faded")
+    expect(find("div#debate_#{debate.id}.faded")).to have_text debate.title
 
     login_as(citizen)
     visit debates_path
@@ -41,8 +41,8 @@ feature 'Moderate debates' do
     visit debate_path(debate)
 
     within("#debate_#{debate.id}") do
-      expect(page).to_not have_link('Hide')
-      expect(page).to_not have_link('Block author')
+      expect(page).not_to have_link('Hide')
+      expect(page).not_to have_link('Block author')
     end
   end
 
@@ -66,29 +66,29 @@ feature 'Moderate debates' do
             check "debate_#{@debate.id}_check"
           end
 
-          expect(page).to_not have_css("debate_#{@debate.id}")
+          expect(page).not_to have_css("debate_#{@debate.id}")
         end
 
         scenario 'Hide the debate' do
           click_on "Hide debates"
-          expect(page).to_not have_css("debate_#{@debate.id}")
+          expect(page).not_to have_css("debate_#{@debate.id}")
           expect(@debate.reload).to be_hidden
-          expect(@debate.author).to_not be_hidden
+          expect(@debate.author).not_to be_hidden
         end
 
         scenario 'Block the author' do
           click_on "Block authors"
-          expect(page).to_not have_css("debate_#{@debate.id}")
+          expect(page).not_to have_css("debate_#{@debate.id}")
           expect(@debate.reload).to be_hidden
           expect(@debate.author).to be_hidden
         end
 
         scenario 'Ignore the debate' do
           click_on "Mark as viewed"
-          expect(page).to_not have_css("debate_#{@debate.id}")
+          expect(page).not_to have_css("debate_#{@debate.id}")
           expect(@debate.reload).to be_ignored_flag
-          expect(@debate.reload).to_not be_hidden
-          expect(@debate.author).to_not be_hidden
+          expect(@debate.reload).not_to be_hidden
+          expect(@debate.author).not_to be_hidden
         end
       end
 
@@ -99,14 +99,12 @@ feature 'Moderate debates' do
 
         within('.js-check') { click_on 'All' }
 
-        all('input[type=checkbox]').each do |checkbox|
-          expect(checkbox).to be_checked
-        end
+        expect(all('input[type=checkbox]')).to all(be_checked)
 
         within('.js-check') { click_on 'None' }
 
         all('input[type=checkbox]').each do |checkbox|
-          expect(checkbox).to_not be_checked
+          expect(checkbox).not_to be_checked
         end
       end
 
@@ -127,13 +125,13 @@ feature 'Moderate debates' do
 
     scenario "Current filter is properly highlighted" do
       visit moderation_debates_path
-      expect(page).to_not have_link('Pending')
+      expect(page).not_to have_link('Pending')
       expect(page).to have_link('All')
       expect(page).to have_link('Marked as viewed')
 
       visit moderation_debates_path(filter: 'all')
       within('.menu.simple') do
-        expect(page).to_not have_link('All')
+        expect(page).not_to have_link('All')
         expect(page).to have_link('Pending')
         expect(page).to have_link('Marked as viewed')
       end
@@ -141,7 +139,7 @@ feature 'Moderate debates' do
       visit moderation_debates_path(filter: 'pending_flag_review')
       within('.menu.simple') do
         expect(page).to have_link('All')
-        expect(page).to_not have_link('Pending')
+        expect(page).not_to have_link('Pending')
         expect(page).to have_link('Marked as viewed')
       end
 
@@ -149,7 +147,7 @@ feature 'Moderate debates' do
       within('.menu.simple') do
         expect(page).to have_link('All')
         expect(page).to have_link('Pending')
-        expect(page).to_not have_link('Marked as viewed')
+        expect(page).not_to have_link('Marked as viewed')
       end
     end
 
@@ -162,44 +160,44 @@ feature 'Moderate debates' do
       visit moderation_debates_path(filter: 'all')
       expect(page).to have_content('Regular debate')
       expect(page).to have_content('Pending debate')
-      expect(page).to_not have_content('Hidden debate')
+      expect(page).not_to have_content('Hidden debate')
       expect(page).to have_content('Ignored debate')
 
       visit moderation_debates_path(filter: 'pending_flag_review')
-      expect(page).to_not have_content('Regular debate')
+      expect(page).not_to have_content('Regular debate')
       expect(page).to have_content('Pending debate')
-      expect(page).to_not have_content('Hidden debate')
-      expect(page).to_not have_content('Ignored debate')
+      expect(page).not_to have_content('Hidden debate')
+      expect(page).not_to have_content('Ignored debate')
 
       visit moderation_debates_path(filter: 'with_ignored_flag')
-      expect(page).to_not have_content('Regular debate')
-      expect(page).to_not have_content('Pending debate')
-      expect(page).to_not have_content('Hidden debate')
+      expect(page).not_to have_content('Regular debate')
+      expect(page).not_to have_content('Pending debate')
+      expect(page).not_to have_content('Hidden debate')
       expect(page).to have_content('Ignored debate')
     end
 
     scenario "sorting debates" do
-      create(:debate, title: "Flagged debate", created_at: Time.current - 1.day, flags_count: 5)
-      create(:debate, title: "Flagged newer debate", created_at: Time.current - 12.hours, flags_count: 3)
-      create(:debate, title: "Newer debate", created_at: Time.current)
+      flagged_debate = create(:debate, title: "Flagged debate", created_at: Time.current - 1.day, flags_count: 5)
+      flagged_new_debate = create(:debate, title: "Flagged new debate", created_at: Time.current - 12.hours, flags_count: 3)
+      newer_debate = create(:debate, title: "Newer debate", created_at: Time.current)
 
       visit moderation_debates_path(order: 'created_at')
 
-      expect("Flagged newer debate").to appear_before("Flagged debate")
+      expect(flagged_new_debate.title).to appear_before(flagged_debate.title)
 
       visit moderation_debates_path(order: 'flags')
 
-      expect("Flagged debate").to appear_before("Flagged newer debate")
+      expect(flagged_debate.title).to appear_before(flagged_new_debate.title)
 
       visit moderation_debates_path(filter: 'all', order: 'created_at')
 
-      expect("Newer debate").to appear_before("Flagged newer debate")
-      expect("Flagged newer debate").to appear_before("Flagged debate")
+      expect(newer_debate.title).to appear_before(flagged_new_debate.title)
+      expect(flagged_new_debate.title).to appear_before(flagged_debate.title)
 
       visit moderation_debates_path(filter: 'all', order: 'flags')
 
-      expect("Flagged debate").to appear_before("Flagged newer debate")
-      expect("Flagged newer debate").to appear_before("Newer debate")
+      expect(flagged_debate.title).to appear_before(flagged_new_debate.title)
+      expect(flagged_new_debate.title).to appear_before(newer_debate.title)
     end
   end
 end

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Legislation::Process::Publication
 
   def initialize(publication_date, enabled)

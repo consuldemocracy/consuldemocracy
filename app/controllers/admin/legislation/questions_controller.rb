@@ -13,7 +13,8 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
   def create
     @question.author = current_user
     if @question.save
-      redirect_to admin_legislation_process_questions_path, notice: t('admin.legislation.questions.create.notice', link: legislation_process_question_path(@process, @question).html_safe)
+      notice = t('admin.legislation.questions.create.notice', link: question_path)
+      redirect_to admin_legislation_process_questions_path, notice: notice
     else
       flash.now[:error] = t('admin.legislation.questions.create.error')
       render :new
@@ -22,7 +23,8 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
 
   def update
     if @question.update(question_params)
-      redirect_to edit_admin_legislation_process_question_path(@process, @question), notice: t('admin.legislation.questions.update.notice', link: legislation_process_question_path(@process, @question).html_safe)
+      notice = t('admin.legislation.questions.update.notice', link: question_path)
+      redirect_to edit_admin_legislation_process_question_path(@process, @question), notice: notice
     else
       flash.now[:error] = t('admin.legislation.questions.update.error')
       render :edit
@@ -31,10 +33,15 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
 
   def destroy
     @question.destroy
-    redirect_to admin_legislation_process_questions_path, notice: t('admin.legislation.questions.destroy.notice')
+    notice = t('admin.legislation.questions.destroy.notice')
+    redirect_to admin_legislation_process_questions_path, notice: notice
   end
 
   private
+
+    def question_path
+      legislation_process_question_path(@process, @question).html_safe
+    end
 
     def question_params
       params.require(:legislation_question).permit(

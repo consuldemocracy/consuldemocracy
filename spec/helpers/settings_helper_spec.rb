@@ -21,10 +21,10 @@ RSpec.describe SettingsHelper, type: :helper do
       Setting["feature.f2"] = ""
       Setting["feature.f3"] = nil
 
-      expect(feature? "f1").to eq("active")
-      expect(feature? "f2").to eq(nil)
-      expect(feature? "f3").to eq(nil)
-      expect(feature? "f4").to eq(nil)
+      expect(feature?("f1")).to eq("active")
+      expect(feature?("f2")).to eq(nil)
+      expect(feature?("f3")).to eq(nil)
+      expect(feature?("f4")).to eq(nil)
     end
   end
 

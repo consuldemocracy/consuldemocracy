@@ -10,7 +10,7 @@ class DebatesController < ApplicationController
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
-  has_orders %w{hot_score confidence_score created_at relevance}, only: :index
+  has_orders ->(c) { Debate.debates_orders(c.current_user) }, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
 
   load_and_authorize_resource
@@ -23,6 +23,7 @@ class DebatesController < ApplicationController
 
   def show
     super
+    @related_contents = Kaminari.paginate_array(@debate.relationed_contents).page(params[:page]).per(5)
     redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
   end
 

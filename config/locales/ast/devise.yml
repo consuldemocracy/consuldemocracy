@@ -1,0 +1,8 @@
+ast:
+  devise:
+    password_expired:
+      expire_password: "Clave caducá"
+      change_required: "La to clave caducó"
+      change_password: "Camuda la to clave"
+      new_password: "Nueva clave"
+      updated: "Clave actualizá con ésitu"

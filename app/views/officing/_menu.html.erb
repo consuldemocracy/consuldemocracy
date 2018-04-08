@@ -8,17 +8,10 @@
       <% end %>
     </li>
 
-    <li <%= "class=active" if ["recounts"].include?(controller_name) || (controller_name == "polls" && action_name == "index") %>>
-      <%= link_to officing_polls_path do %>
-        <span class="icon-user"></span>
-        <%= t("officing.menu.recounts") %>
-      <% end %>
-    </li>
-
-    <li <%= "class=active" if ["final_recounts", "results"].include?(controller_name) || (controller_name == "polls" && action_name == "final") %>>
+    <li <%= "class=active" if ["results"].include?(controller_name) || (controller_name == "polls" && action_name == "final") %>>
       <%= link_to final_officing_polls_path do %>
         <span class="icon-user"></span>
-        <%= t("officing.menu.final_recounts") %>
+        <%= t("officing.menu.total_recounts") %>
       <% end %>
     </li>
   </ul>

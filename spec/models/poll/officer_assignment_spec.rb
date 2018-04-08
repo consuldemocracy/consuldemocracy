@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe :officer_assignment do
-  it "should log user data on creation" do
+describe Poll::OfficerAssignment do
+  it "logs user data on creation" do
     user = create(:user, username: "Larry Bird", email: "larry@lege.nd")
     officer = create(:poll_officer, user: user)
 

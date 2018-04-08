@@ -5,11 +5,11 @@
             class: "button success float-right" %>
 
 <% if @polls.any? %>
-  <table class="fixed">
+  <table>
     <thead>
-      <th><%= t("admin.polls.index.name") %></th>
+      <th class="medium-6"><%= t("admin.polls.index.name") %></th>
       <th><%= t("admin.polls.index.dates") %></th>
-      <th><%= t("admin.actions.actions") %></th>
+      <th class="text-right"><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
       <%= render @polls %>

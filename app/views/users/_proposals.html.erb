@@ -1,31 +1,13 @@
-<table class="clear activity-proposals">
-  <% @proposals.each do |proposal| %>
-    <tr id="proposal_<%= proposal.id %>">
-      <td>
-        <%= link_to proposal.title, proposal, proposal.retired? ? {class: 'retired'} : {} %>
-        <br>
-        <%= proposal.summary %>
-      </td>
-
-      <% if author? %>
-        <td class="text-center">
-          <%= link_to t("users.proposals.send_notification"), new_proposal_notification_path(proposal_id: proposal.id),
-            class: 'button hollow' %>
-        </td>
-
-        <td class="text-center">
-          <% if proposal.retired? %>
-            <span class="label alert"><%= t('users.proposals.retired') %></span>
-          <% else %>
-            <%= link_to t('users.proposals.retire'),
-                        retire_form_proposal_path(proposal),
-                        class: 'button hollow alert' %>
-          <% end %>
-        </td>
-      <% end %>
-
-    </tr>
-  <% end %>
+<table class="margin-top">
+  <thead>
+    <th scope="col"><%= t("users.show.proposals") %></th>
+    <th scope="col" colspan="2"><%= t("users.show.actions") %></th>
+  </thead>
+  <tbody>
+    <% @proposals.each do |proposal| %>
+      <%= render "proposal", proposal: proposal %>
+    <% end %>
+  </tbody>
 </table>
 
 <%= paginate @proposals %>

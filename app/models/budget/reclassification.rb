@@ -43,7 +43,7 @@ class Budget
     end
 
     def ballot_lines_for_investment
-      Budget::Ballot::Line.by_investment(self.id)
+      Budget::Ballot::Line.by_investment(id)
     end
 
   end

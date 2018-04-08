@@ -1,7 +1,7 @@
 <div class="row account">
   <div class="small-12 column">
     <div class="float-right text-right">
-      <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button secondary" %>
+      <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow" %>
       <br>
       <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
     </div>
@@ -14,7 +14,7 @@
       <%= render "shared/errors", resource: @account %>
 
       <div class="row">
-        <div class="small-12 medium-6 column">
+        <div class="small-12 medium-7 column">
 
           <h2><%= t("account.show.personal")%></h2>
 
@@ -39,6 +39,16 @@
               </span>
             <% end %>
           </div>
+
+          <div>
+            <%= f.label :public_interests do %>
+              <%= f.check_box :public_interests, title: t('account.show.public_interests_label'), label: false %>
+              <span class="checkbox">
+                <%= t("account.show.public_interests_label") %>
+              </span>
+            <% end %>
+          </div>
+
 
           <% if @account.email.present? %>
             <h2><%= t("account.show.notifications")%></h2>
@@ -102,10 +112,10 @@
             </div>
           <% end %>
 
-          <%= f.submit t("account.show.save_changes_submit"), class: "button" %>
+          <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>
         </div>
 
-        <div class="user-permissions small-12 medium-6 column">
+        <div class="user-permissions small-12 medium-5 column">
           <h2><%= t("account.show.user_permission_title") %></h2>
 
           <p><%= t("account.show.user_permission_info") %></p>
@@ -133,7 +143,8 @@
 
           <p>
             <span><%= t("account.show.user_permission_verify_info") %></span>
-            <br>
+          </p>
+          <p>
             <%= t("account.show.user_permission_verify") %>
           </p>
 

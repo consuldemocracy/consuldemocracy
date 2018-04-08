@@ -8,6 +8,8 @@ module TagsHelper
       proposals_path(search: tag_name)
     when 'budget/investment'
       budget_investments_path(@budget, search: tag_name)
+    when 'legislation/proposal'
+      legislation_process_proposals_path(@process, search: tag_name)
     else
       '#'
     end
@@ -22,6 +24,8 @@ module TagsHelper
       proposal_path(taggable)
     when 'budget/investment'
       budget_investment_path(taggable.budget_id, taggable)
+    when 'legislation/proposal'
+      legislation_process_proposal_path(@process, taggable)
     else
       '#'
     end

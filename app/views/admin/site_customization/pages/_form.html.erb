@@ -31,6 +31,10 @@
       <% end %>
     </div>
     <div class="small-12 medium-4 column">
+      <%= f.label :locale %>
+      <%= f.select :locale, I18n.available_locales.map { |l| [name_for_locale(l), l.to_s] }, { include_blank: true, label: false } %>
+    </div>
+    <div class="small-12 medium-4 column">
       <%= f.label :slug %>
       <%= f.text_field :slug, label: false, size: 80, maxlength: 80 %>
     </div>

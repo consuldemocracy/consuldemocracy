@@ -18,16 +18,16 @@ class Verification::Management::Document
   end
 
   def in_census?
-    response = CensusApi.new.call(document_type, document_number)
+    response = CensusCaller.new.call(document_type, document_number)
     response.valid? && valid_age?(response)
   end
 
   def valid_age?(response)
     if under_age?(response)
       errors.add(:age, true)
-      return false
+      false
     else
-      return true
+      true
     end
   end
 

@@ -1,0 +1,14 @@
+<%= back_link_to %>
+
+<ul class="breadcrumbs margin-top">
+  <li><%= @answer.title %></li>
+  <li><%= t('admin.answers.edit.title') %></li>
+</ul>
+
+<h2 class="margin-top">
+  <%= t("admin.answers.edit.title") %>
+</h2>
+
+<div class="poll-question-answer-form">
+  <%= render "form", form_url: admin_answer_path(@answer) %>
+</div>

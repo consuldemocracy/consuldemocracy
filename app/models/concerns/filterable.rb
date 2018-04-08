@@ -9,7 +9,7 @@ module Filterable
   class_methods do
 
     def filter(params)
-      resources = self.all
+      resources = all
       params.each do |filter, value|
         if allowed_filter?(filter, value)
           resources = resources.send("by_#{filter}", value)

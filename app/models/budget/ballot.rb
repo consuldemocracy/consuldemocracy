@@ -33,7 +33,7 @@ class Budget
     end
 
     def has_lines_in_group?(group)
-      self.groups.include?(group)
+      groups.include?(group)
     end
 
     def wrong_budget?(heading)
@@ -54,7 +54,7 @@ class Budget
     end
 
     def has_lines_with_heading?
-      self.heading_id.present?
+      heading_id.present?
     end
 
     def has_lines_in_heading?(heading)
@@ -62,12 +62,12 @@ class Budget
     end
 
     def has_investment?(investment)
-      self.investment_ids.include?(investment.id)
+      investment_ids.include?(investment.id)
     end
 
     def heading_for_group(group)
       return nil unless has_lines_in_group?(group)
-      self.investments.where(group: group).first.heading
+      investments.where(group: group).first.heading
     end
 
   end

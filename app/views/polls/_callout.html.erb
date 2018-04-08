@@ -18,5 +18,9 @@
     <div class="callout alert">
       <%= t('polls.show.cant_answer_expired') %>
     </div>
+  <% else %>
+    <div class="callout warning">
+      <%= t('polls.show.cant_answer_wrong_geozone') %>
+    </div>
   <% end %>
 <% end %>

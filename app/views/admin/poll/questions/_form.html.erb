@@ -4,33 +4,31 @@
 
   <%= f.hidden_field :proposal_id %>
 
-  <div class="row">
+  <div class="small-12">
+    <div class="small-12 medium-6 large-4">
+      <%= f.select :poll_id,
+                    options_for_select(Poll.pluck(:name, :id)),
+                    prompt: t("admin.questions.index.select_poll"),
+                    label: t("admin.questions.new.poll_label") %>
+    </div>
 
-    <div class="small-12 column">
-      <div class="small-12 medium-6 large-4">
-        <%= f.select :poll_id,
-                      options_for_select(Poll.pluck(:name, :id)),
-                      prompt: t("admin.questions.index.select_poll"),
-                      label: t("admin.questions.new.poll_label") %>
-      </div>
+    <%= f.text_field :title %>
 
-      <%= f.text_field :title, maxlength: Poll::Question.title_max_length %>
+    <div class="small-12">
+      <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
 
-      <%= f.label :valid_answers %>
-      <p class="help-text" id="valid-answers-help-text"><%= t("admin.questions.new.valid_answers_note") %></p>
-      <%= f.text_field :valid_answers, label: false, aria: {describedby: "valid-answers-help-text"} %>
+      <p class="help-text" id="video-url-help-text">
+        <%= t("proposals.form.proposal_video_url_note") %>
+      </p>
 
-      <div class="ckeditor">
-        <%= f.cktext_area :description,
-                          maxlength: Poll::Question.description_max_length,
-                          ckeditor: { language: I18n.locale } %>
-      </div>
+      <%= f.text_field :video_url,
+                        placeholder: t("proposals.form.proposal_video_url"),
+                        label: false,
+                        aria: {describedby: "video-url-help-text"} %>
+    </div>
 
-      <div class="row">
-        <div class="actions small-12 medium-4 column margin-top">
-          <%= f.submit(class: "button expanded", value: t("shared.save")) %>
-        </div>
-      </div>
+    <div class="small-12 medium-6 large-4 margin-top">
+      <%= f.submit(class: "button expanded", value: t("shared.save")) %>
     </div>
   </div>
 

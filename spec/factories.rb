@@ -1,5 +1,11 @@
 FactoryBot.define do
-  sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
+
+  factory :local_census_record, class: 'LocalCensusRecord' do
+    sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
+    document_type 1
+    date_of_birth Date.new(1970, 1, 31)
+    postal_code '28002'
+  end
 
   factory :user do
     sequence(:username) { |n| "Manuela#{n}" }
@@ -43,8 +49,19 @@ FactoryBot.define do
     end
 
     trait :verified do
+      residence_verified_at Time.current
       verified_at Time.current
     end
+
+    trait :in_census do
+      document_number "12345678Z"
+      document_type "1"
+      verified_at Time.current
+    end
+  end
+
+  factory :valuator_group, class: ValuatorGroup do
+    sequence(:name) { |n| "Valuator Group #{n}" }
   end
 
   factory :identity do
@@ -63,7 +80,7 @@ FactoryBot.define do
     user
     document_number
     document_type    "1"
-    date_of_birth    Date.new(1980, 12, 31)
+    date_of_birth    Time.zone.local(1980, 12, 31).to_date
     postal_code      "28013"
     terms_of_service '1'
 
@@ -148,9 +165,10 @@ FactoryBot.define do
     description          'Proposal description'
     question             'Proposal question'
     external_url         'http://external_documention.es'
-    video_url            'http://video_link.com'
+    video_url            'https://youtu.be/nhuNb0XtRhQ'
     responsible_name     'John Snow'
     terms_of_service     '1'
+    skip_map             '1'
     association :author, factory: :user
 
     trait :hidden do
@@ -166,8 +184,8 @@ FactoryBot.define do
     end
 
     trait :flagged do
-      after :create do |debate|
-        Flag.flag(FactoryBot.create(:user), debate)
+      after :create do |proposal|
+        Flag.flag(FactoryBot.create(:user), proposal)
       end
     end
 
@@ -184,8 +202,8 @@ FactoryBot.define do
     end
 
     trait :conflictive do
-      after :create do |debate|
-        Flag.flag(FactoryBot.create(:user), debate)
+      after :create do |proposal|
+        Flag.flag(FactoryBot.create(:user), proposal)
         4.times { create(:vote, votable: debate) }
       end
     end
@@ -205,16 +223,27 @@ FactoryBot.define do
   end
 
   factory :budget do
-    sequence(:name) { |n| "Budget #{n}" }
+    sequence(:name) { |n| "#{Faker::Lorem.word} #{n}" }
     currency_symbol "€"
     phase 'accepting'
+    description_drafting  "This budget is drafting"
+    description_informing "This budget is informing"
     description_accepting "This budget is accepting"
     description_reviewing "This budget is reviewing"
     description_selecting "This budget is selecting"
     description_valuating "This budget is valuating"
+    description_publishing_prices "This budget is publishing prices"
     description_balloting "This budget is balloting"
     description_reviewing_ballots "This budget is reviewing ballots"
     description_finished "This budget is finished"
+
+    trait :drafting do
+      phase 'drafting'
+    end
+
+    trait :informing do
+      phase 'informing'
+    end
 
     trait :accepting do
       phase 'accepting'
@@ -230,6 +259,10 @@ FactoryBot.define do
 
     trait :valuating do
       phase 'valuating'
+    end
+
+    trait :publishing_prices do
+      phase 'publishing_prices'
     end
 
     trait :balloting do
@@ -248,6 +281,10 @@ FactoryBot.define do
   factory :budget_group, class: 'Budget::Group' do
     budget
     sequence(:name) { |n| "Group #{n}" }
+
+    trait :drafting_budget do
+      association :budget, factory: [:budget, :drafting]
+    end
   end
 
   factory :budget_heading, class: 'Budget::Heading' do
@@ -255,6 +292,10 @@ FactoryBot.define do
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
     population 1234
+
+    trait :drafting_budget do
+      association :group, factory: [:budget_group, :drafting_budget]
+    end
   end
 
   factory :budget_investment, class: 'Budget::Investment' do
@@ -264,8 +305,9 @@ FactoryBot.define do
     description          'Spend money on this'
     price                10
     unfeasibility_explanation ''
-    external_url         'http://external_documention.org'
+    skip_map             '1'
     terms_of_service     '1'
+    incompatible          false
 
     trait :with_confidence_score do
       before(:save) { |i| i.calculate_confidence_score }
@@ -292,7 +334,6 @@ FactoryBot.define do
       selected true
       feasibility "feasible"
       valuation_finished true
-
     end
 
     trait :winner do
@@ -300,10 +341,45 @@ FactoryBot.define do
       winner true
     end
 
+    trait :incompatible do
+      selected
+      incompatible true
+    end
+
+    trait :selected_with_price do
+      selected
+      price 1000
+      price_explanation 'Because of reasons'
+    end
+
     trait :unselected do
       selected false
       feasibility "feasible"
       valuation_finished true
+    end
+  end
+
+  factory :budget_phase, class: 'Budget::Phase' do
+    budget
+    kind        :balloting
+    summary     Faker::Lorem.sentence(3)
+    description Faker::Lorem.sentence(10)
+    starts_at   Date.yesterday
+    ends_at     Date.tomorrow
+    enabled     true
+  end
+
+  factory :image do
+    attachment { File.new("spec/fixtures/files/clippy.jpg") }
+    title "Lorem ipsum dolor sit amet"
+    association :user, factory: :user
+
+    trait :proposal_image do
+      association :imageable, factory: :proposal
+    end
+
+    trait :budget_investment_image do
+      association :imageable, factory: :budget_investment
     end
   end
 
@@ -327,6 +403,7 @@ FactoryBot.define do
     association :investment, factory: :budget_investment
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
+    publication_date     Date.current
   end
 
   factory :vote do
@@ -341,6 +418,36 @@ FactoryBot.define do
   factory :flag do
     association :flaggable, factory: :debate
     association :user, factory: :user
+  end
+
+  factory :follow do
+    association :user, factory: :user
+
+    trait :followed_proposal do
+      association :followable, factory: :proposal
+    end
+
+    trait :followed_investment do
+      association :followable, factory: :budget_investment
+    end
+  end
+
+  factory :document do
+    sequence(:title) { |n| "Document title #{n}" }
+    association :user, factory: :user
+    attachment { File.new("spec/fixtures/files/empty.pdf") }
+
+    trait :proposal_document do
+      association :documentable, factory: :proposal
+    end
+
+    trait :budget_investment_document do
+      association :documentable, factory: :budget_investment
+    end
+
+    trait :poll_question_document do
+      association :documentable, factory: :poll_question
+    end
   end
 
   factory :comment do
@@ -368,6 +475,16 @@ FactoryBot.define do
 
     trait :with_confidence_score do
       before(:save) { |d| d.calculate_confidence_score }
+    end
+
+    trait :valuation do
+      valuation true
+      association :commentable, factory: :budget_investment
+      before :create do |valuation|
+        valuator = create(:valuator)
+        valuation.author = valuator.user
+        valuation.commentable.valuators << valuator
+      end
     end
   end
 
@@ -410,6 +527,11 @@ FactoryBot.define do
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }
 
+    trait :current do
+      starts_at { 2.days.ago }
+      ends_at { 2.days.from_now }
+    end
+
     trait :incoming do
       starts_at { 2.days.from_now }
       ends_at { 1.month.from_now }
@@ -418,6 +540,11 @@ FactoryBot.define do
     trait :expired do
       starts_at { 1.month.ago }
       ends_at { 15.days.ago }
+    end
+
+    trait :recounting do
+      starts_at { 1.month.ago }
+      ends_at { Date.current }
     end
 
     trait :published do
@@ -429,8 +556,25 @@ FactoryBot.define do
     poll
     association :author, factory: :user
     sequence(:title) { |n| "Question title #{n}" }
-    sequence(:description) { |n| "Question description #{n}" }
-    valid_answers { Faker::Lorem.words(3).join(', ') }
+
+    trait :with_answers do
+      after(:create) do |question, _evaluator|
+        create(:poll_question_answer, question: question, title: "Yes")
+        create(:poll_question_answer, question: question, title: "No")
+      end
+    end
+  end
+
+  factory :poll_question_answer, class: 'Poll::Question::Answer' do
+    association :question, factory: :poll_question
+    sequence(:title) { |n| "Answer title #{n}" }
+    sequence(:description) { |n| "Answer description #{n}" }
+  end
+
+  factory :poll_answer_video, class: 'Poll::Question::Answer::Video' do
+    association :answer, factory: :poll_question_answer
+    title "Sample video title"
+    url "https://youtu.be/nhuNb0XtRhQ"
   end
 
   factory :poll_booth, class: 'Poll::Booth' do
@@ -453,23 +597,25 @@ FactoryBot.define do
     end
   end
 
-  factory :poll_recount, class: 'Poll::Recount' do
-    association :officer_assignment, factory: :poll_officer_assignment
-    association :booth_assignment, factory: :poll_booth_assignment
-    count (1..100).to_a.sample
-    date (1.month.ago.to_datetime..1.month.from_now.to_datetime).to_a.sample
-  end
+  factory :poll_shift, class: 'Poll::Shift' do
+    association :booth, factory: :poll_booth
+    association :officer, factory: :poll_officer
+    date Date.current
 
-  factory :poll_final_recount, class: 'Poll::FinalRecount' do
-    association :officer_assignment, factory: [:poll_officer_assignment, :final]
-    association :booth_assignment, factory: :poll_booth_assignment
-    count (1..100).to_a.sample
-    date (1.month.ago.to_datetime..1.month.from_now.to_datetime).to_a.sample
+    trait :vote_collection_task do
+      task 0
+    end
+
+    trait :recount_scrutiny_task do
+      task 1
+    end
   end
 
   factory :poll_voter, class: 'Poll::Voter' do
     poll
     association :user, :level_two
+    association :officer, factory: :poll_officer
+    origin "web"
 
     trait :from_booth do
       association :booth_assignment, factory: :poll_booth_assignment
@@ -487,26 +633,21 @@ FactoryBot.define do
   end
 
   factory :poll_answer, class: 'Poll::Answer' do
-    association :question, factory: :poll_question
+    association :question, factory: [:poll_question, :with_answers]
     association :author, factory: [:user, :level_two]
-    answer { question.valid_answers.sample }
+    answer { question.question_answers.sample.title }
   end
 
   factory :poll_partial_result, class: 'Poll::PartialResult' do
-    association :question, factory: :poll_question
+    association :question, factory: [:poll_question, :with_answers]
     association :author, factory: :user
-    origin { 'web' }
-    answer { question.valid_answers.sample }
+    origin 'web'
+    answer { question.question_answers.sample.title }
   end
 
-  factory :poll_white_result, class: 'Poll::WhiteResult' do
+  factory :poll_recount, class: 'Poll::Recount' do
     association :author, factory: :user
-    origin { 'web' }
-  end
-
-  factory :poll_null_result, class: 'Poll::NullResult' do
-    association :author, factory: :user
-    origin { 'web' }
+    origin 'web'
   end
 
   factory :officing_residence, class: 'Officing::Residence' do
@@ -538,12 +679,8 @@ FactoryBot.define do
   factory :tag, class: 'ActsAsTaggableOn::Tag' do
     sequence(:name) { |n| "Tag #{n} name" }
 
-    trait :featured do
-      featured true
-    end
-
-    trait :unfeatured do
-      featured false
+    trait :category do
+      kind "category"
     end
   end
 
@@ -565,18 +702,22 @@ FactoryBot.define do
 
   factory :campaign do
     sequence(:name) { |n| "Campaign #{n}" }
-    sequence(:track_id) { |n| "#{n}" }
+    sequence(:track_id) { |n| n.to_s }
   end
 
   factory :notification do
     user
     association :notifiable, factory: :proposal
+
+    trait :read do
+      read_at Time.current
+    end
   end
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
-    sequence(:external_code) { |n| "#{n}" }
-    sequence(:census_code) { |n| "#{n}" }
+    sequence(:external_code) { |n| n.to_s }
+    sequence(:census_code) { |n| n.to_s }
 
     trait :in_census do
       census_code "01"
@@ -624,7 +765,7 @@ FactoryBot.define do
     start_date Date.current - 5.days
     end_date Date.current + 5.days
     debate_start_date Date.current - 5.days
-    debate_end_date Date.current - 2.days
+    debate_end_date Date.current + 2.days
     draft_publication_date Date.current - 1.day
     allegations_start_date Date.current
     allegations_end_date Date.current + 3.days
@@ -633,6 +774,7 @@ FactoryBot.define do
     allegations_phase_enabled true
     draft_publication_enabled true
     result_publication_enabled true
+    published true
 
     trait :next do
       start_date Date.current + 2.days
@@ -666,6 +808,11 @@ FactoryBot.define do
       allegations_end_date Date.current + 3.days
       result_publication_date Date.current + 5.days
     end
+
+    trait :not_published do
+      published false
+    end
+
   end
 
   factory :legislation_draft_version, class: 'Legislation::DraftVersion' do
@@ -726,6 +873,14 @@ LOREM_IPSUM
     user
   end
 
+  factory :legislation_proposal, class: 'Legislation::Proposal' do
+    title "Example proposal for a legislation"
+    summary "This law should include..."
+    terms_of_service '1'
+    process factory: :legislation_process
+    author factory: :user
+  end
+
   factory :site_customization_page, class: 'SiteCustomization::Page' do
     slug "example-page"
     title "Example page"
@@ -734,6 +889,7 @@ LOREM_IPSUM
     more_info_flag false
     print_content_flag false
     status 'draft'
+    locale 'en'
 
     trait :published do
       status "published"
@@ -749,4 +905,56 @@ LOREM_IPSUM
     locale "en"
     body "Some top links content"
   end
+
+  factory :topic do
+    sequence(:title) { |n| "Topic title #{n}" }
+    sequence(:description) { |n| "Description as comment #{n}" }
+    association :author, factory: :user
+  end
+
+  factory :direct_upload do
+    user
+
+    trait :proposal do
+      resource_type "Proposal"
+    end
+    trait :budget_investment do
+      resource_type "Budget::Investment"
+    end
+
+    trait :documents do
+      resource_relation "documents"
+      attachment { File.new("spec/fixtures/files/empty.pdf") }
+    end
+    trait :image do
+      resource_relation "image"
+      attachment { File.new("spec/fixtures/files/clippy.jpg") }
+    end
+    initialize_with { new(attributes) }
+  end
+
+  factory :map_location do
+    latitude 51.48
+    longitude 0.0
+    zoom 10
+
+    trait :proposal_map_location do
+      proposal
+    end
+
+    trait :budget_investment_map_location do
+      association :investment, factory: :budget_investment
+    end
+  end
+
+  factory :related_content do
+  end
+
+  factory :newsletter do
+    sequence(:subject) { |n| "Subject #{n}" }
+    segment_recipient  UserSegments::SEGMENTS.sample
+    sequence(:from)    { |n| "noreply#{n}@consul.dev" }
+    sequence(:body)    { |n| "Body #{n}" }
+  end
+
 end

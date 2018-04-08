@@ -1,0 +1,25 @@
+<div class="row section-content">
+  <div class="small-12 column">
+    <h3 id="debates" data-magellan-target="debates">
+      <%= t("pages.help.debates.title") %>
+    </h3>
+    <p>
+      <%= t("pages.help.debates.description",
+          org: setting['org_name'],
+          link: link_to(t("pages.help.debates.link"),
+                              debates_path)).html_safe %>
+    </p>
+    <ul class="features">
+      <li>
+        <%= t("pages.help.debates.feature_html",
+              link: link_to(t("pages.help.debates.feature_link", org: setting['org_name']),
+                               new_user_registration_path)).html_safe %>
+      </li>
+    </ul>
+
+    <figure>
+      <%= image_tag "help/debates.png", alt: t("pages.help.debates.image_alt") %>
+      <figcaption><%= t("pages.help.debates.figcaption") %></figcaption>
+    </figure>
+  </div>
+</div>

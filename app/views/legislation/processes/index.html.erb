@@ -2,12 +2,13 @@
   <%= t("layouts.header.collaborative_legislation") %> - <%= t("legislation.processes.index.filters.#{@current_filter}") %>
 <% end %>
 
-<div class="row">
-  <div class="legislation-categories small-12 medium-3 column">
-    <%= render 'shared/filter_subnav', i18n_namespace: "legislation.processes.index" %>
-  </div>
+<%= render "shared/section_header", i18n_namespace: "legislation.processes.index.section_header", image: "legislation_processes" %>
 
+<div class="row">
   <div id="legislation" class="legislation-list small-12 medium-9 column">
+
+    <%= render 'shared/filter_subnav', i18n_namespace: "legislation.processes.index" %>
+
     <div id="legislation-list">
       <% if @processes.any? %>
         <%= render @processes %>
@@ -17,6 +18,17 @@
           <%= t(".no_#{@current_filter}_processes") %>
         </div>
       <% end %>
+
+      <div id="section_help" class="margin" data-magellan-target="section_help">
+        <p class="lead">
+          <strong><%= t("legislation.processes.index.section_footer.title") %></strong>
+        </p>
+        <p><%= t("legislation.processes.index.section_footer.description") %></p>
+        <p><%= t("legislation.processes.index.section_footer.help_text_1") %></p>
+        <p><%= t("legislation.processes.index.section_footer.help_text_2",
+                  org: setting['org_name']) %></p>
+        <p><%= t("legislation.processes.index.section_footer.help_text_3") %></p>
+      </div>
     </div>
   </div>
 </div>
