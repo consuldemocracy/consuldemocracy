@@ -12,7 +12,7 @@ module BudgetsHelper
   end
 
   def csv_params
-    csv_params = params.clone.merge(format: :csv).symbolize_keys
+    csv_params = params.clone.merge(format: :csv).to_h
     csv_params.delete(:page)
     csv_params
   end
