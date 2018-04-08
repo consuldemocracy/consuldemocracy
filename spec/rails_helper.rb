@@ -8,7 +8,6 @@ require 'rspec/rails'
 require 'spec_helper'
 require 'capybara/rails'
 require 'capybara/rspec'
-require 'capybara/poltergeist'
 
 I18n.default_locale = :en
 
