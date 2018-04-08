@@ -206,7 +206,7 @@ FactoryBot.define do
     trait :conflictive do
       after :create do |proposal|
         Flag.flag(FactoryBot.create(:user), proposal)
-        4.times { create(:vote, votable: debate) }
+        4.times { create(:vote, votable: proposal) }
       end
     end
 
