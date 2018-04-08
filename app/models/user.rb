@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :public_for_api, -> { all }
-  scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).uniq }
+  scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).distinct }
   scope :by_authors,     ->(author_ids) { where("users.id IN (?)", author_ids) }
   scope :by_username_email_or_document_number, ->(search_string) do
     string = "%#{search_string}%"
