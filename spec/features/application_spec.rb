@@ -1,14 +1,10 @@
 require 'rails_helper'
 
-Rails.application.configure do
-  config.action_controller.allow_forgery_protection = true
-end
-
 feature "Application" do
 
-  let(:user)  { create(:user) }
+  let(:user) { create(:user) }
 
-  scenario 'protects from forgery on forms', :js do
+  scenario 'protects from forgery on forms', :js, with_csrf_protection: true do
     login_as(user)
     visit account_path
 
