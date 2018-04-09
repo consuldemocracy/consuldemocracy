@@ -10,13 +10,18 @@
   ballot: @ballot
 } %>
 
-<div class="tabs-content" data-tabs-content="investments-tabs" role="tablist">
-  <%= render "budgets/investments/filter_subnav" %>
-  <%= render "budgets/investments/milestones" %>
+<div class="row">
+  <div class="small-12 column">
+    <%= render "budgets/investments/filter_subnav" %>
+  </div>
+</div>
 
-  <div class="tabs-panel is-active" id="tab-comments">
+<div class="tabs-content" data-tabs-content="investments_tabs">
+  <div class="tabs-panel is-active" id="tab-comments" role="tab">
     <%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree,
                                                             comment_flags: @comment_flags,
                                                             display_comments_count: false } %>
   </div>
+
+  <%= render "budgets/investments/milestones" %>
 </div>
