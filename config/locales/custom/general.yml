@@ -69,8 +69,8 @@ fr:
       recommendations_title: Recommandations pour soumettre une idée
       start_new: Soumettre une idée
     show:
-      comments:
       flag: Cette idée a été signalée comme inapproprié par plusieurs utilisateurs
+      destroy_debate_link: Supprimer
   form:
     debate: Idée
     proposal: Projet
