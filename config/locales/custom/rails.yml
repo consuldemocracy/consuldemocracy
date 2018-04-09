@@ -2,3 +2,6 @@ fr:
   errors:
     messages:
       blank: ne peut être vide
+      too_short:
+        one: est trop court (au moins 1 caractère)
+        other: est trop court (au moins %{count} caractères)

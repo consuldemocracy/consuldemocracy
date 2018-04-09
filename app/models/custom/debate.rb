@@ -14,7 +14,15 @@ class Debate < ActiveRecord::Base
         vote_by(voter: user, vote: vote_value)
       end
     end
+  end
 
+  # inspired by editable? method
+  def destroyable?
+    self.comments.count == 0 && self.votes_for.count == 0
+  end
+
+  def destroyable_by?(user)
+    destroyable? && author == user
   end
 
 

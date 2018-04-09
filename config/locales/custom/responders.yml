@@ -8,3 +8,7 @@ fr:
       update:
         debate: "Idée mise-à-jour avec succès."
         proposal: "Projet mis-à-jour avec succès."
+      destroy:
+        debate: "Idée supprimée avec succès."
+      destroy_forbidden:
+        debate: "Cette idée ne peut être supprimée car elle a déjà des votes ou des commentaires."

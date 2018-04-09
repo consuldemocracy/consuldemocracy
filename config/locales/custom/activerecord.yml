@@ -28,6 +28,8 @@ fr:
           attributes:
             tag_list:
               less_than_or_equal_to: "Le nombre de tags doit être inférieur ou égal à %{count}"
+            terms_of_service:
+                accepted: Les conditions générales doivent être acceptées
         proposal:
           attributes:
             tag_list:
