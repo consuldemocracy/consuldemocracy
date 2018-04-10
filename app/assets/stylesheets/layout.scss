@@ -2281,6 +2281,11 @@ table {
   }
 
   .card {
+    padding: $line-height / 2;
+
+    .card {
+      border: 0;
+    }
 
     .card-section {
       margin: 0 auto;
