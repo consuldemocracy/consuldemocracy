@@ -167,7 +167,7 @@ en:
           selected: Selected
           undecided: Undecided
           unfeasible: Unfeasible
-          max_per_heading: Max. supports per heading
+          min_total_supports: Minimum supports
           winners: Winners
           one_filter_html: "Current applied filters: <b><em>%{filter}</em></b>"
           two_filters_html: "Current applied filters: <b><em>%{filter}, %{advanced_filters}</em></b>"
