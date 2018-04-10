@@ -540,6 +540,21 @@ feature 'Admin budget investments' do
 
     end
 
+    scenario "See results button appears when budget status is finished" do
+      finished_budget = create(:budget, :finished)
+      create(:budget_investment, :winner, budget: finished_budget, title: "Winner project")
+
+      visit admin_budget_budget_investments_path(budget_id: finished_budget.id)
+      expect(page).to have_content "See results"
+    end
+
+    scenario "See results button does not appear for unfinished budgets" do
+      not_finished_budget = create(:budget, :valuating)
+
+      visit admin_budget_budget_investments_path(budget_id: not_finished_budget.id)
+      expect(page).not_to have_content "See results"
+    end
+
   end
 
   context 'Search' do
@@ -588,8 +603,8 @@ feature 'Admin budget investments' do
     scenario 'Sort by ID' do
       visit admin_budget_budget_investments_path(budget, sort_by: 'id')
 
-      expect('B First Investment').to appear_before('A Second Investment')
-      expect('A Second Investment').to appear_before('C Third Investment')
+      expect('C Third Investment').to appear_before('A Second Investment')
+      expect('A Second Investment').to appear_before('B First Investment')
     end
 
     scenario 'Sort by title' do
@@ -602,8 +617,8 @@ feature 'Admin budget investments' do
     scenario 'Sort by supports' do
       visit admin_budget_budget_investments_path(budget, sort_by: 'supports')
 
-      expect('C Third Investment').to appear_before('A Second Investment')
-      expect('A Second Investment').to appear_before('B First Investment')
+      expect('B First Investment').to appear_before('A Second Investment')
+      expect('A Second Investment').to appear_before('C Third Investment')
     end
   end
 
