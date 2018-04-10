@@ -1,0 +1,14 @@
+<% I18n.available_locales.each do |locale| %>
+  <span>
+    <%= link_to name_for_locale(locale), "#",
+                style: css_to_display_translation?(@milestone, locale),
+                class: "js-globalize-locale-link",
+                data: { locale: locale },
+                remote: true %>
+  </span>
+<% end %>
+
+<%= select_tag :translation_locale, 
+               options_for_locale_select,
+               prompt: "Añadir idioma",
+               class: "js-globalize-locale" %>

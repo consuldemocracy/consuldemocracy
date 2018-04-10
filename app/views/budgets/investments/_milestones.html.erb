@@ -23,7 +23,11 @@
                              { alt: milestone.image.title.unicode_normalize,
                                class: "margin",
                                id: "image_#{milestone.id}" }) if milestone.image.present? %>
-                <p><%= text_with_links milestone.description %></p>
+                <p>
+                  <% Globalize.with_locale(locale) do %>
+                    <%= text_with_links milestone.description %>
+                  <% end %>
+                </p>
                 <% if milestone.documents.present? %>
                   <div class="document-link text-center">
                     <p>

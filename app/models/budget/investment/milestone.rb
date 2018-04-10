@@ -7,6 +7,9 @@ class Budget
                    max_file_size: 3.megabytes,
                    accepted_content_types: [ "application/pdf" ]
 
+      translates :description, touch: true
+      globalize_accessors locales: [:en, :es, :fr, :nl, :val]
+
       belongs_to :investment
 
       validates :title, presence: true

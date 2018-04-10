@@ -1,7 +1,23 @@
+<div>
+  <%= render "budgets/investments/milestones/globalize_locales" %>
+</div>
+
 <%= form_for [:admin, @investment.budget, @investment, @milestone] do |f| %>
 
-  <%= f.hidden_field :title, value: l(Time.current, format: :datetime), maxlength: Budget::Investment::Milestone.title_max_length %>
-  <%= f.text_area :description, rows: 5 %>
+  <%= f.hidden_field :title, value: l(Time.current, format: :datetime),
+                             maxlength: Budget::Investment::Milestone.title_max_length %>
+
+  <%= f.label :description, t("admin.milestones.new.description") %>
+  <% @milestone.globalize_locales.each do |locale| %>
+    <% Globalize.with_locale(locale) do %>
+      <%= f.text_area "description_#{locale}", rows: 5,
+                      class: "js-globalize-attribute",
+                      data: { locale: locale },
+                      style: display_translation?(locale),
+                      label: false %>
+    <% end %>
+  <% end %>
+
   <%= f.label :publication_date, t("admin.milestones.new.date") %>
   <%= f.text_field :publication_date,
                    value: @milestone.publication_date.present? ? l(@milestone.publication_date.to_date) : nil,

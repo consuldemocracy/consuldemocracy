@@ -1,4 +1,5 @@
 class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
+  include Translatable
 
   before_action :load_budget_investment, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :load_budget_investment_milestone, only: [:edit, :update, :destroy]
@@ -46,7 +47,8 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
     documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
     attributes = [:title, :description, :publication_date, :budget_investment_id,
                   image_attributes: image_attributes, documents_attributes: documents_attributes]
-    params.require(:budget_investment_milestone).permit(*attributes)
+
+    params.require(:budget_investment_milestone).permit(*attributes, translation_params)
   end
 
   def load_budget_investment
