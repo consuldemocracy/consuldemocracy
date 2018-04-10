@@ -388,3 +388,12 @@ es:
       proposal_type: Elige si quieres hacer una propuesta o una pregunta
     index:
       start_proposal_question: Crear propuesta o pregunta
+  landings:
+    cambia_tu_ciudad:
+      phrase_1: "Maya decidió que Madrid necesitaba puntos de carga para coches eléctricos"
+      phrase_2: "Jana decidió que había que sensibilizar a los madrileños sobre sostenibilidad"
+      phrase_3: "Huan decidió que el cole de su hijo tenía que ahorrar energía"
+      phrase_4: "Leo decidió que los edificios municipales tenían que ser más eficientes"
+      phrase_5: "Marina decidió que Madrid tenía que incentivar los coches eléctricos"
+      phrase_6: "Anuar decidió que en Madrid había que ahorrar energía"
+      phrase_7: "Daniela decidió que Madrid tenía que ser más verde"
