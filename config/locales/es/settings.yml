@@ -45,6 +45,7 @@ es:
       community: Comunidad en propuestas y proyectos de gasto
       map: Geolocalización de propuestas y proyectos de gasto
       allow_images: Permitir subir y mostrar imágenes
+      allow_attached_documents: Permitir creación de documentos adjuntos
     map_latitude: Latitud
     map_longitude: Longitud
     map_zoom: Zoom

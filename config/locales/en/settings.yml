@@ -45,6 +45,7 @@ en:
       community: Community on proposals and investments
       map: Proposals and budget investments geolocation
       allow_images: Allow upload and show images
+      allow_attached_documents: Allow upload and show of attached documents
     map_latitude: Latitude
     map_longitude: Longitude
     map_zoom: Zoom

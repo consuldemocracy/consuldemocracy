@@ -85,6 +85,7 @@ Setting['feature.user.recommendations'] = true
 Setting['feature.community'] = true
 Setting['feature.map'] = nil
 Setting['feature.allow_images'] = true
+Setting['feature.allow_attached_documents'] = true
 Setting['feature.guides'] = nil
 
 # Spending proposals feature flags

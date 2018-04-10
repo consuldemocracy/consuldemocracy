@@ -52,9 +52,11 @@
       </div>
     <% end %>
 
-    <div class="documents small-12 column">
-      <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
-    </div>
+    <% if feature?(:allow_attached_documents) %>
+      <div class="documents small-12 column">
+        <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
+      </div>
+    <% end %>
 
     <div class="small-12 medium-6 column">
       <%= f.label :geozone_id,  t("proposals.form.geozone") %>
