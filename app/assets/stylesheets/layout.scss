@@ -2288,6 +2288,11 @@ table {
   }
 
   .card {
+    padding: $line-height / 2;
+
+    .card {
+      border: 0;
+    }
 
     .card-section {
       padding: $line-height 0;
