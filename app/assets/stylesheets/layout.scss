@@ -253,12 +253,21 @@ a {
       }
     }
 
-    &.active {
-      border-bottom: 2px solid $brand;
-      color: $brand;
+    & + li {
+      margin-left: 0;
     }
 
-    &:not(.active) {
+    &.is-active {
+      border-bottom: 2px solid $brand;
+      color: $brand;
+      padding-bottom: rem-calc(1);
+
+      h2 a {
+        color: $brand;
+      }
+    }
+
+    &:not(.is-active) {
       margin-bottom: $line-height / 3;
     }
   }
