@@ -75,17 +75,9 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       resource_model.parameterize('_')
     end
 
-    def sort_by(params)
-      if params.present? && Budget::Investment::SORTING_OPTIONS.include?(params)
-        "#{params == 'supports' ? 'cached_votes_up' : params} ASC"
-      else
-        "cached_votes_up DESC, created_at DESC"
-      end
-    end
-
     def load_investments
       @investments = Budget::Investment.scoped_filter(params, @current_filter)
-                                       .order(sort_by(params[:sort_by]))
+      @investments = @investments.order_filter(params[:sort_by]) if params[:sort_by].present?
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
