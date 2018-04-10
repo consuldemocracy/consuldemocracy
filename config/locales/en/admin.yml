@@ -910,8 +910,8 @@ en:
       flash:
         updated: Value updated
       index:
-        banners: Estilos de banners
-        banner_imgs: Imágenes para los banners
+        banners: Banner styles
+        banner_imgs: Banner images
         title: Configuration settings
         update_setting: Update
         feature_flags: Features
