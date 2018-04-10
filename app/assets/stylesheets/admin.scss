@@ -702,12 +702,9 @@ table {
   }
 }
 
-.legislation-process-index {
-
-  .legislation-process-new {
-    @include breakpoint(medium) {
-      text-align: right;
-    }
+.legislation-process-new {
+  @include breakpoint(medium) {
+    text-align: right;
   }
 }
 
