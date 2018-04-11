@@ -1,5 +1,3 @@
-require 'csv'
-
 class Budget
   class Investment < ActiveRecord::Base
     SORTING_OPTIONS = %w(id title supports).freeze
@@ -320,44 +318,12 @@ class Budget
       investments
     end
 
-    def self.to_csv(investments, options = {})
-      attrs = [I18n.t("admin.budget_investments.index.table_id"),
-               I18n.t("admin.budget_investments.index.table_title"),
-               I18n.t("admin.budget_investments.index.table_supports"),
-               I18n.t("admin.budget_investments.index.table_admin"),
-               I18n.t("admin.budget_investments.index.table_valuator"),
-               I18n.t("admin.budget_investments.index.table_geozone"),
-               I18n.t("admin.budget_investments.index.table_feasibility"),
-               I18n.t("admin.budget_investments.index.table_valuation_finished"),
-               I18n.t("admin.budget_investments.index.table_selection")]
-      csv_string = CSV.generate(options) do |csv|
-        csv << attrs
-        investments.each do |investment|
-          id = investment.id.to_s
-          title = investment.title
-          total_votes = investment.total_votes.to_s
-          admin = if investment.administrator.present?
-                    investment.administrator.name
-                  else
-                    I18n.t("admin.budget_investments.index.no_admin_assigned")
-                  end
-          vals = if investment.valuators.empty?
-                   I18n.t("admin.budget_investments.index.no_valuators_assigned")
-                 else
-                   investment.valuators.collect(&:description_or_name).join(', ')
-                 end
-          heading_name = investment.heading.name
-          price_string = "admin.budget_investments.index.feasibility"\
-                         ".#{investment.feasibility}"
-          price = I18n.t(price_string, price: investment.formatted_price)
-          valuation_finished = investment.valuation_finished? ?
-                                         I18n.t('shared.yes') :
-                                         I18n.t('shared.no')
-          csv << [id, title, total_votes, admin, vals, heading_name, price,
-                  valuation_finished]
-        end
-      end
-      csv_string
+    def assigned_valuators
+      self.valuators.collect(&:description_or_name).compact.join(', ').presence
+    end
+
+    def assigned_valuation_groups
+      self.valuator_groups.collect(&:name).compact.join(', ').presence
     end
 
     private
