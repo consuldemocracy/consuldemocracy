@@ -328,7 +328,7 @@ class Budget
       self.valuator_groups.collect(&:name).compact.join(', ').presence
     end
 
-    def self.to_csv(investments, options = {})
+    def self.to_csv(investments)
       attrs = [I18n.t("admin.budget_investments.index.table_id"),
                I18n.t("admin.budget_investments.index.table_title"),
                I18n.t("admin.budget_investments.index.table_supports"),
@@ -339,7 +339,7 @@ class Budget
                I18n.t("admin.budget_investments.index.table_feasibility"),
                I18n.t("admin.budget_investments.index.table_valuation_finished"),
                I18n.t("admin.budget_investments.index.table_selection")]
-      csv_string = CSV.generate(options) do |csv|
+      csv_string = CSV.generate(headers: true) do |csv|
         csv << attrs
         investments.each do |investment|
           id = investment.id.to_s
