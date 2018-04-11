@@ -1175,16 +1175,18 @@ feature 'Admin budget investments' do
   context "Selecting csv" do
 
     scenario "Downloading CSV file" do
-      investment = create(:budget_investment, :feasible, budget: budget,
-                                                         price: 100)
-      valuator = create(:valuator, user: create(:user, username: 'Rachel',
-                                                       email: 'rachel@val.org'))
-      group = create(:valuator_group, name: "Test name")
-
-      investment.valuator_groups << group
-
-      admin = create(:administrator, user: create(:user, username: 'Gema'))
-      investment.update(administrator_id: admin.id)
+      admin = create(:administrator, user: create(:user, username: 'Admin'))
+      valuator = create(:valuator, user: create(:user, username: 'Valuator'))
+      valuator_group = create(:valuator_group, name: "Valuator Group")
+      budget_group = create(:budget_group, name: "Budget Group", budget: budget)
+      budget_heading = create(:budget_heading, group: budget_group, name: "Budget Heading")
+      investment = create(:budget_investment, :feasible, :selected, title: "Le Investment",
+                                                         budget: budget, group: budget_group,
+                                                         heading: budget_heading,
+                                                         cached_votes_up: 88, price: 99,
+                                                         valuators: [valuator],
+                                                         valuator_groups: [valuator_group],
+                                                         administrator: admin)
 
       visit admin_budget_budget_investments_path(budget)
 
@@ -1194,40 +1196,27 @@ feature 'Admin budget investments' do
       expect(header).to match(/^attachment/)
       expect(header).to match(/filename="budget_investments.csv"$/)
 
-      valuators = investment.valuators.collect(&:description_or_name).join(', ')
-      feasibility_string = "admin.budget_investments.index"\
-                           ".feasibility.#{investment.feasibility}"
-      price = I18n.t(feasibility_string, price: investment.formatted_price)
-
-      expect(page).to have_content investment.title
-      expect(page).to have_content investment.total_votes.to_s
-      expect(page).to have_content investment.id.to_s
-      expect(page).to have_content investment.heading.name
-
-      expect(page).to have_content investment.administrator.name
-      expect(page).to have_content valuators
-      expect(page).to have_content group.name
-      expect(page).to have_content price
-      expect(page).to have_content I18n.t('shared.no')
+      csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation,"\
+                     "Feasibility,Val. Fin.,Selected\n\"[\"\"#{investment.id}\"\", "\
+                     "\"\"Le Investment\"\", \"\"88\"\", \"\"Admin\"\", \"\"Valuator\"\", "\
+                     "\"\"Valuator Group\"\", \"\"Budget Heading\"\", \"\"Feasible (€99)\"\", "\
+                     "\"\"Yes\"\", \"\"Yes\"\"]\"\n"
+      expect(page.body).to eq(csv_contents)
     end
 
     scenario "Downloading CSV file with applied filter" do
-      investment1 = create(:budget_investment, :unfeasible, budget: budget,
-                                                            title: 'compatible')
-      investment2 = create(:budget_investment, :finished, budget: budget,
-                                                          title: 'finished')
+      unfeasible_investment = create(:budget_investment, :unfeasible, budget: budget,
+                                                                      title: 'Unfeasible one')
+      finished_investment = create(:budget_investment, :finished, budget: budget,
+                                                                  title: 'Finished Investment')
 
       visit admin_budget_budget_investments_path(budget)
       within('#filter-subnav') { click_link 'Valuation finished' }
 
       click_link "Download current selection"
 
-      header = page.response_headers['Content-Disposition']
-      expect(header).to match(/^attachment/)
-      expect(header).to match(/filename="budget_investments.csv"$/)
-
-      expect(page).to have_content investment2.title
-      expect(page).not_to have_content investment1.title
+      expect(page).to have_content('Finished Investment')
+      expect(page).not_to have_content('Unfeasible one')
     end
   end
 
