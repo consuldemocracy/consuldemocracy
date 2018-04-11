@@ -146,7 +146,7 @@ feature 'Human Rights' do
 
         click_link 'highest rated'
 
-        expect(page).to have_selector('a.active', text: 'highest rated')
+        expect(page).to have_selector('a.is-active', text: 'highest rated')
         expect('Best').to appear_before('Medium')
         expect('Medium').to appear_before('Worst')
       end
