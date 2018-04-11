@@ -124,7 +124,8 @@ class Budget
       budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       results = Investment.by_budget(budget)
 
-      results = limit_results(budget, params, results)                     if params[:max_per_heading].present?
+      results = results.where("cached_votes_up + physical_votes >= ?",
+                              params[:min_total_supports])                    if params[:min_total_supports].present?
       results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
       results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
       results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?
@@ -151,18 +152,6 @@ class Budget
       if sorting_param.present? && SORTING_OPTIONS.include?(sorting_param)
         send("sort_by_#{sorting_param}")
       end
-    end
-
-    def self.limit_results(budget, params, results)
-      max_per_heading = params[:max_per_heading].to_i
-      return results if max_per_heading <= 0
-
-      ids = []
-      budget.headings.pluck(:id).each do |hid|
-        ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
-      end
-
-      results.where("budget_investments.id IN (?)", ids)
     end
 
     def self.search_by_title_or_id(title_or_id, results)
