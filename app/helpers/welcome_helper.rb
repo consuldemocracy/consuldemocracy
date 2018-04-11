@@ -1,6 +1,6 @@
 module WelcomeHelper
 
-  def active_class(index)
+  def is_active_class(index)
     "is-active is-in" if index.zero?
   end
 
