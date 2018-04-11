@@ -142,7 +142,7 @@ feature 'Admin budget investments' do
       end
 
       within("#budget_investment_#{budget_investment3.id}") do
-        expect(page).to have_content("No valuators assigned")
+        expect(page).to have_content("No valuation groups assigned")
       end
     end
 
@@ -1179,14 +1179,21 @@ feature 'Admin budget investments' do
       valuator = create(:valuator, user: create(:user, username: 'Valuator'))
       valuator_group = create(:valuator_group, name: "Valuator Group")
       budget_group = create(:budget_group, name: "Budget Group", budget: budget)
-      budget_heading = create(:budget_heading, group: budget_group, name: "Budget Heading")
-      investment = create(:budget_investment, :feasible, :selected, title: "Le Investment",
+      first_budget_heading = create(:budget_heading, group: budget_group, name: "Budget Heading")
+      second_budget_heading = create(:budget_heading, group: budget_group, name: "Other Heading")
+      first_investment = create(:budget_investment, :feasible, :selected, title: "Le Investment",
                                                          budget: budget, group: budget_group,
-                                                         heading: budget_heading,
+                                                         heading: first_budget_heading,
                                                          cached_votes_up: 88, price: 99,
-                                                         valuators: [valuator],
+                                                         valuators: [],
                                                          valuator_groups: [valuator_group],
                                                          administrator: admin)
+      second_investment = create(:budget_investment, :unfeasible, title: "Alt Investment",
+                                                         budget: budget, group: budget_group,
+                                                         heading: second_budget_heading,
+                                                         cached_votes_up: 66, price: 88,
+                                                         valuators: [valuator],
+                                                         valuator_groups: [])
 
       visit admin_budget_budget_investments_path(budget)
 
@@ -1197,10 +1204,10 @@ feature 'Admin budget investments' do
       expect(header).to match(/filename="budget_investments.csv"$/)
 
       csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation,"\
-                     "Feasibility,Val. Fin.,Selected\n\"[\"\"#{investment.id}\"\", "\
-                     "\"\"Le Investment\"\", \"\"88\"\", \"\"Admin\"\", \"\"Valuator\"\", "\
-                     "\"\"Valuator Group\"\", \"\"Budget Heading\"\", \"\"Feasible (€99)\"\", "\
-                     "\"\"Yes\"\", \"\"Yes\"\"]\"\n"
+                     "Feasibility,Val. Fin.,Selected\n#{first_investment.id},Le Investment,88,"\
+                     "Admin,-,Valuator Group,Budget Heading,Feasible (€99),Yes,Yes\n"\
+                     "#{second_investment.id},Alt Investment,66,No admin assigned,Valuator,-,"\
+                     "Other Heading,Unfeasible,No,No\n"
       expect(page.body).to eq(csv_contents)
     end
 
