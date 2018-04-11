@@ -334,6 +334,7 @@ class Budget
                I18n.t("admin.budget_investments.index.table_supports"),
                I18n.t("admin.budget_investments.index.table_admin"),
                I18n.t("admin.budget_investments.index.table_valuator"),
+               I18n.t("admin.budget_investments.index.table_valuation_group"),
                I18n.t("admin.budget_investments.index.table_geozone"),
                I18n.t("admin.budget_investments.index.table_feasibility"),
                I18n.t("admin.budget_investments.index.table_valuation_finished"),
@@ -349,6 +350,8 @@ class Budget
                   else
                     I18n.t("admin.budget_investments.index.no_admin_assigned")
                   end
+          assigned_valuators = investment.assigned_valuators || '-'
+          assigned_valuation_groups = investment.assigned_valuation_groups || '-'
           vals = if investment.valuators.empty?
                    I18n.t("admin.budget_investments.index.no_valuators_assigned")
                  else
@@ -361,8 +364,8 @@ class Budget
           valuation_finished = investment.valuation_finished? ?
                                          I18n.t('shared.yes') :
                                          I18n.t('shared.no')
-          csv << [id, title, total_votes, admin, vals, heading_name, price,
-                  valuation_finished]
+          csv << [id, title, total_votes, admin, assigned_valuators, assigned_valuation_groups,
+                  heading_name, price, valuation_finished]
         end
       end
       csv_string
