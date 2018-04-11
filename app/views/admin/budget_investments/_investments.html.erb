@@ -63,7 +63,7 @@
             <% if investment.valuators.size == 0 && investment.valuator_groups.size == 0  %>
               <%= t("admin.budget_investments.index.no_valuators_assigned") %>
             <% else %>
-              <%= assigned_valuators(investment) %>
+              <%= investment.assigned_valuators %>
             <% end %>
           </td>
           <td class="small">

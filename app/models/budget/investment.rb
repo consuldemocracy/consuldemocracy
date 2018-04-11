@@ -320,6 +320,14 @@ class Budget
       investments
     end
 
+    def assigned_valuators
+      self.valuators.collect(&:description_or_name).compact.join(', ').presence
+    end
+
+    def assigned_valuation_groups
+      self.valuator_groups.collect(&:name).compact.join(', ').presence
+    end
+
     def self.to_csv(investments, options = {})
       attrs = [I18n.t("admin.budget_investments.index.table_id"),
                I18n.t("admin.budget_investments.index.table_title"),
