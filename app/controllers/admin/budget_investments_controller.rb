@@ -20,7 +20,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       format.html
       format.js
       format.csv do
-        send_data Budget::Investment.to_csv(@investments),
+        send_data Budget::Investment::Exporter.new(@investments).to_csv,
                   filename: 'budget_investments.csv'
       end
     end
