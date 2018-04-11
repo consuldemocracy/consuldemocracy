@@ -991,22 +991,18 @@ feature 'Admin budget investments' do
     end
 
     scenario "Downloading CSV file with applied filter" do
-      investment1 = create(:budget_investment, :unfeasible, budget: budget,
-                                                            title: 'compatible')
-      investment2 = create(:budget_investment, :finished, budget: budget,
-                                                          title: 'finished')
+      unfeasible_investment = create(:budget_investment, :unfeasible, budget: budget,
+                                                                      title: 'Unfeasible one')
+      finished_investment = create(:budget_investment, :finished, budget: budget,
+                                                                  title: 'Finished Investment')
 
       visit admin_budget_budget_investments_path(budget)
       within('#filter-subnav') { click_link 'Valuation finished' }
 
       click_link "Download current selection"
 
-      header = page.response_headers['Content-Disposition']
-      expect(header).to match(/^attachment/)
-      expect(header).to match(/filename="budget_investments.csv"$/)
-
-      expect(page).to have_content investment2.title
-      expect(page).not_to have_content investment1.title
+      expect(page).to have_content('Finished Investment')
+      expect(page).not_to have_content('Unfeasible one')
     end
   end
 
