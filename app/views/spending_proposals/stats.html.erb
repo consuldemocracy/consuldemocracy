@@ -1,0 +1,196 @@
+<% cache [@stats, @geozones] do %>
+  <% provide :title, t("spending_proposals.stats.page_title") %>
+  <% provide :social_media_meta_tags do %>
+    <%= render "shared/social_media_meta_tags_participatory_budget" %>
+  <% end %>
+
+  <%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "participatory-budget-charts", 'data-turbolinks-track' => true %>
+
+  <div class="expanded spending-proposals results no-margin-top">
+    <div class="row">
+      <div class="small-12 column padding text-center">
+        <%= link_to participatory_budget_path, class: "left back" do %>
+          <i class="icon-angle-left"></i>
+          <%= t("pages.processes.back") %>
+        <% end %>
+
+        <h1 class="title"><%= t("spending_proposals.stats.heading") %></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <ul class="tabs">
+        <li class="tabs-title">
+          <%= link_to t("spending_proposals.stats.results_link"), participatory_budget_results_path %>
+        </li>
+        <li class="tabs-title is-active">
+          <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
+          <%= link_to t("spending_proposals.stats.stats_link"), participatory_budget_stats_path, class: "is-active" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="survey-results">
+
+    <!-- Participantes -->
+    <div class="row">
+      <div class="small-12 column">
+        <div class="panel purple text-center">
+          <p>TOTAL PARTICIPANTES</p>
+          <p id="total_participants" class="big-number-stat">
+            <%= @stats[:total_participants] %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row" data-equalizer>
+      <!-- Resultados generales -->
+      <div class="small-12 medium-6 column text-right">
+        <div class="panel light-green" data-equalizer-watch>
+          <p>TOTAL PROPUESTAS ENVIADAS</p>
+          <p id="total_spending_proposals" class="big-number-stat">
+            <%= @stats[:total_spending_proposals] + @stats[:paper_spending_proposals] %>
+          </p>
+        </div>
+      </div>
+
+      <div class="small-12 medium-6 column">
+        <p class="chart-legend" data-equalizer-watch>
+          <span class="label" style="background: #9CC56A"></span>&nbsp;
+          <span id="total_feasible_spending_proposals">
+            <strong>PROPUESTAS EN LA FASE FINAL</strong>:
+            <%= @stats[:total_feasible_spending_proposals] %><br>
+          </span>
+
+          <span class="label" style="background: #E87461"></span>&nbsp;
+          <span id="total_unfeasible_spending_proposals">
+            <strong>PROPUESTAS INVIABLES</strong>:
+            <%= @stats[:total_unfeasible_spending_proposals] %><br>
+          </span>
+
+          <br>
+
+          <span class="label" style="background: #d0cef6"></span>&nbsp;
+          <strong>FASE DE APOYOS</strong>:
+          <span id="total_participants_support_phase">
+            <%= @stats[:total_participants_support_phase] %> <em>Participantes</em>,
+          </span>
+          <span id="total_supports">
+            <%= @stats[:total_supports] %> <em>Apoyos</em><br>
+          </span>
+
+          <span class="label" style="background: #454372"></span>&nbsp;
+          <strong>FASE DE VOTACIÓN</strong>:
+          <span id="total_participants_vote_phase">
+            <%= @stats[:total_participants_vote_phase] %> <em>Participantes</em>,
+          </span>
+          <span id="total_votes">
+            <%= @stats[:total_votes] %> <em>Votos</em><br>
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+    <hr class="double">
+
+    <div class="row" data-equalizer>
+
+      <!-- Participación por sexo -->
+      <div class="small-12 column">
+        <h2 class="subtitle">Participación<br>por sexo</h2>
+      </div>
+
+      <hr>
+
+      <div class="small-12 medium-6 column show-for-medium"  data-equalizer-watch>
+        <div class="panel text-center">
+          <%= image_tag ('participatory_budget_stats/sex.png') %>
+          <br>
+          <div class="large-offset-3 large-5 padding">
+            <canvas id="sps-chart-sex" width="300" height="300"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="small-12 medium-6 column" data-equalizer-watch>
+        <div class="small-12 medium-6 column">
+          <div class="panel text-right chart-legend">
+            <p id="male_percentage" >
+              <span class="label" style="background: #FF6600"></span>
+              &nbsp;HOMBRES
+              (<%= number_to_percentage(@stats[:male_percentage],
+                                        strip_insignificant_zeros: true,
+                                        precision: 2) %>)
+            </p>
+            <p id="total_male_participants" class="big-number-stat">
+              <%= @stats[:total_male_participants] %>
+            </p>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 column">
+          <div class="panel text-left chart-legend">
+            <p id="female_percentage">
+              <span class="label" style="background: #FF9E01"></span>
+              &nbsp;MUJERES
+              (<%= number_to_percentage(@stats[:female_percentage],
+                                        strip_insignificant_zeros: true,
+                                        precision: 2) %>)
+            </p>
+            <p id="total_female_participants" class="big-number-stat">
+              <%= @stats[:total_female_participants] %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- Participación por grupos de edad -->
+      <div class="small-12 column margin-top">
+        <h2 class="subtitle">Participación por<br> grupos de edad</h2>
+      </div>
+
+      <hr class="double">
+
+      <%= render 'spending_proposals_results_age' %>
+    </div>
+
+    <hr class="double">
+
+    <div class="row">
+
+      <!-- Participación por distritos -->
+      <div class="small-12 column">
+        <h2 class="subtitle">Participación por<br> distritos</h2>
+      </div>
+
+      <hr class="double">
+
+      <div class="show-for-medium medium-6 column small-centered">
+        <%= image_tag("map.jpg", usemap: "#html_map", alt: "Mapa de distritos de Madrid") %>
+      </div>
+
+      <map name="html_map" id="html_map">
+        <% @geozones.each do |geozone| %>
+          <area shape="poly"
+                coords="<%= geozone.html_map_coordinates %>"
+                href="#<%= geozone.name.parameterize %>"
+                title="<%= geozone.name %>"
+                alt="<%= geozone.name %>">
+        <% end %>
+      </map>
+
+      <%= render "geozone_stats" %>
+    </div>
+  </div>
+<% end %>

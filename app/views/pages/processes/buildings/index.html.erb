@@ -1,0 +1,154 @@
+<% provide :title, "Conservación, Rehabilitación y Estado Ruinoso de las Edificaciones" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: buildings_url,
+          social_title: t("pages.processes.index.process_16_title"),
+          social_description: t("pages.processes.index.process_16_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: buildings_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to %>
+      <h1>Conservación, Rehabilitación y Estado Ruinoso de las Edificaciones</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h2>Introducción</h2>
+
+    <p>La Ordenanza sobre Conservación, Rehabilitación y Estado Ruinoso de las Edificaciones de fecha 30 de noviembre de 2011 (B.O.C.M. nº 306 de 26 de diciembre de 2011) introdujo una serie de modificaciones normativas que afectaban básicamente a la delimitación de los deberes de conservar y rehabilitar a las consecuencias del incumplimiento de dichos deberes y a los procedimientos administrativos para exigir su cumplimiento y garantizar su restitución.</p>
+
+    <p>Desde entonces se han producido nuevos cambios legislativos sustanciales a nivel estatal y autonómico que amplían el contenido del deber de conservación de los edificios y, en consecuencia, modifican el procedimiento y la documentación exigida para justificar su cumplimiento. Por una parte, el Real Decreto Legislativo 7/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley de Suelo y Rehabilitación Urbana, recoge en su Título III el Informe de Evaluación de los Edificios, que unifica en un único documento la evaluación del estado de conservación de los edificios, de las condiciones básicas de accesibilidad universal para el acceso y utilización de los mismos -determinando si los edificios son susceptibles o no de incorporar ajustes razonables para satisfacerlas- y la certificación de la eficiencia energética, estableciendo además su obligatoriedad, los sujetos que han de encargarlo y el calendario para su implantación, previendo que las Comunidades Autónomas regulen algunos aspectos del mismo.</p>
+
+    <p>En cumplimiento de esta previsión, la Comunidad de Madrid ha aprobado el Decreto 103/2016 de 24 de octubre, del Consejo de Gobierno, por el que se regula el informe de evaluación de los edificios en la Comunidad de Madrid y se crea el Registro Integrado Único de Informes de Evaluación de los Edificios de la Comunidad de Madrid.</p>
+
+    <p>En virtud de lo anterior, el Ayuntamiento de Madrid somete a consulta pública la aprobación de una nueva Ordenanza sobre Conservación, Rehabilitación y Estado Ruinoso de las Edificaciones que incorpora los instrumentos y requerimientos que dichas normas han introducido en la materia, con el ánimo de proteger más eficazmente la calidad de vida de los ciudadanos en términos de sostenibilidad ambiental y cohesión social y territorial, dando cumplimiento de este modo a los objetivos de impulso de la rehabilitación edificatoria y la regeneración y renovación urbanas.</p>
+  </div>
+
+  <div class="small-12 medium-6 large-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "/docs/procesos/memoria_modificacion_OCRERE.pdf", target: "_blank",
+                    title: "Consulta pública modificación OCRERE (se abre en ventana nueva)" do %>
+                    <strong>Consulta pública modificación OCRERE</strong><br>
+                    <small>(PDF | 163Kb)</small>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/docs/procesos/acuerdo_modificacion_OCRERE.pdf", target: "_blank",
+                    title: "Acuerdo para la consulta pública de la modificación OCRERE (se abre en ventana nueva)" do %>
+                    <strong>Acuerdo para la consulta pública de la modificación OCRERE</strong><br>
+                    <small>(PDF | 160Kb)</small>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="process-debates">
+  <div class="row">
+    <div class="small-12 column">
+      <h3>Preguntas del debate</h3>
+
+      <p>Puedes entrar en los debates que se proponen a continuación y dar tu opinión, o valorar otras respuestas con los botones de votación que encontrarás a la derecha de cada respuesta.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Nº</th>
+            <th scope="col">Pregunta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">1</td>
+            <td>
+              <%= link_to debate_url(5083) do %>
+                <strong>
+                ¿Consideras que las inversiones en conservación de los edificios suponen una mejora de su calidad y de las condiciones de confort y habitabilidad?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">2</td>
+            <td>
+              <%= link_to debate_url(5084) do %>
+                <strong>
+                ¿Compartes la idea de que la falta de conservación de los edificios afecta a la seguridad del conjunto de los ciudadanos?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">3</td>
+            <td>
+              <%= link_to debate_url(5085) do %>
+                <strong>
+                ¿Sabes que el deber de conservación de los edificios corresponde a sus propietarios?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">4</td>
+            <td>
+              <%= link_to debate_url(5086) do %>
+                <strong>
+                ¿Consideras que el sistema de concienciación, anticipación y disciplina y realización de obras de conservación derivadas de la Inspección Técnica de los Edificios (ITE) ha funcionado eficazmente?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">5</td>
+            <td>
+              <%= link_to debate_url(5087) do %>
+                <strong>
+                ¿Estás de acuerdo con ampliar las comprobaciones de la Inspección Técnica de los Edificios (ITE) con pruebas y ensayos con el fin de asegurar la seguridad de todos aunque suponga un aumento de su coste?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">6</td>
+            <td>
+              <%= link_to debate_url(5088) do %>
+                <strong>
+                La ley obliga a la instalación de medidas de accesibilidad en los edificios (colocación de ascensores, rampas, etc.), ¿ves viable lograr un consenso entre los vecinos de tu edificio para lograrlo? ¿cuánto estarías dispuesto a invertir para mejorar la accesibilidad de tu vivienda?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">7</td>
+            <td>
+              <%= link_to debate_url(5089) do %>
+                <strong>
+                ¿Crees que el estado de conservación de las fachadas de los edificios afecta a la imagen de tu ciudad?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">8</td>
+            <td>
+              <%= link_to debate_url(5090) do %>
+                <strong>
+                ¿Tienes otras sugerencias para la mejora de la ordenanza?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

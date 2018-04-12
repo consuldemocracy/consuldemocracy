@@ -1,4 +1,7 @@
 class Poll < ActiveRecord::Base
+
+  AGE_STEPS = [16,20,25,30,35,40,45,50,55,60,65]
+
   include Imageable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -19,6 +22,8 @@ class Poll < ActiveRecord::Base
   has_and_belongs_to_many :geozones
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
+  accepts_nested_attributes_for :questions
+
   validates :name, presence: true
 
   validate :date_range
@@ -30,6 +35,7 @@ class Poll < ActiveRecord::Base
   scope :published, -> { where('published = ?', true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
   scope :public_for_api, -> { all }
+  scope :with_nvotes, -> { where.not(nvotes_poll_id: nil) }
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 
@@ -70,12 +76,32 @@ class Poll < ActiveRecord::Base
            .where('geozone_restricted = ? OR geozones_polls.geozone_id = ?', false, user.geozone_id)
   end
 
-  def votable_by?(user)
-    !document_has_voted?(user.document_number, user.document_type)
+  def self.votable_by(user)
+    answerable_by(user).
+    not_voted_by(user)
   end
 
-  def document_has_voted?(document_number, document_type)
-    voters.where(document_number: document_number, document_type: document_type).exists?
+  def votable_by?(user)
+    answerable_by?(user) &&
+    not_voted_by?(user)
+  end
+
+  def self.not_voted_by(user)
+    where("polls.id not in (?)", poll_ids_voted_by(user))
+  end
+
+  def self.poll_ids_voted_by(user)
+    return -1 if Poll::Voter.where(user: user).empty?
+
+    Poll::Voter.where(user: user).pluck(:poll_id)
+  end
+
+  def not_voted_by?(user)
+    Poll::Voter.where(poll: self, user: user).empty?
+  end
+
+  def voted_by?(user)
+    Poll::Voter.where(poll: self, user: user).exists?
   end
 
   def voted_in_booth?(user)
@@ -90,6 +116,14 @@ class Poll < ActiveRecord::Base
     unless starts_at.present? && ends_at.present? && starts_at <= ends_at
       errors.add(:starts_at, I18n.t('errors.messages.invalid_date_range'))
     end
+  end
+
+  def self.server_shared_key
+    Rails.application.secrets["nvotes_shared_key"] || ENV["nvotes_shared_key"]
+  end
+
+  def self.server_url
+    Rails.application.secrets["nvotes_server_url"] || ENV["nvotes_server_url"]
   end
 
 end

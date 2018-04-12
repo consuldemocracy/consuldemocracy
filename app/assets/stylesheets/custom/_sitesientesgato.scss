@@ -1,0 +1,121 @@
+// Si te sientes gato landing
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.si-te-sientes-gato {
+  font-family: 'Rubik', $body-font-family;
+  letter-spacing: 0.9px;
+  font-smoothing: subpixel-antialiased;
+  -moz-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  h1,
+  h2,
+  p,
+  a {
+    font-family: 'Rubik', $body-font-family;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #1d1d1d;
+  }
+
+  h1 {
+    font-size: rem-calc(54);
+    font-weight: 300;
+  }
+
+  h2 {
+    font-size: rem-calc(26);
+    font-weight: normal;
+  }
+
+  p {
+    color: #696969;
+    font-weight: 300;
+  }
+
+  ul li {
+    font-size: $small-font-size;
+    font-weight: 300;
+    line-height: rem-calc(28);
+  }
+
+  .header-gato {
+    position: relative;
+
+    .main-button {
+      background: rgba(0, 74, 131, 0.8) !important;
+      left: 50%;
+      margin-left: rem-calc(-72);
+      position: absolute;
+      top: 110%;
+
+      @include breakpoint(medium) {
+        top: 50%;
+      }
+    }
+  }
+
+  .info {
+    color: #696969;
+    font-size: rem-calc(15);
+    font-weight: 300;
+    line-height: rem-calc(28);
+  }
+
+  .green-link {
+    text-decoration: underline;
+  }
+
+  .lead {
+    color: #000;
+    font-size: rem-calc(26);
+    font-style: italic;
+    padding-top: $line-height * 3;
+
+    span {
+      font-style: normal;
+    }
+  }
+
+  .big-lead {
+    padding: $line-height * 4 0 $line-height * 6;
+  }
+
+  .section {
+    min-height: $line-height * 10;
+    padding: $line-height * 2 0;
+  }
+
+  .header {
+    background: #ffbd7a;
+  }
+
+  .section-1 {
+    background: #ff7ea3;
+  }
+
+  .section-2 {
+    background: #20d7c8;
+  }
+
+  .section-3 {
+    background: #ffbc79;
+  }
+
+  .social {
+
+    a {
+      display: inline-block;
+      height: 48px;
+      width: 48px;
+
+      &:hover {
+        opacity: 0.5;
+        text-decoration: none;
+      }
+    }
+  }
+}

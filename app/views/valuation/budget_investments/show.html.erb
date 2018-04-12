@@ -36,15 +36,29 @@
 <p><strong><%= t("valuation.budget_investments.show.assigned_valuators") %>:</strong></p>
 <div id="assigned_valuators">
   <ul>
-    <% @investment.valuators.each do |valuator| %>
-      <li><%= valuator.name_and_email %></li>
-    <% end %>
-
     <% if @investment.valuators.empty? %>
       <li><%= t("valuation.budget_investments.show.undefined") %></li>
+    <% else %>
+      <% @investment.valuators.each do |valuator| %>
+        <li><%= valuator.name_and_email %></li>
+      <% end %>
     <% end %>
   </ul>
 </div>
+
+<p><strong><%= t("valuation.budget_investments.show.assigned_valuator_groups") %>:</strong></p>
+<div id="assigned_valuator_groups">
+  <ul>
+    <% if @investment.valuator_groups.empty? %>
+      <li><%= t("valuation.budget_investments.show.undefined") %></li>
+    <% else %>
+      <% @investment.valuator_groups.each do |valuator_group| %>
+        <li><%= valuator_group.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
 
 <h2><%= t("valuation.budget_investments.show.dossier") %></h2>
 <p>

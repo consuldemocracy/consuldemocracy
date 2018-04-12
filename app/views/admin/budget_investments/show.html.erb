@@ -1,8 +1,16 @@
-<%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params)), data: {no_turbolink: true} do %>
-  <span class="icon-angle-left"></span> <%= t("shared.back") %>
+<%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params)),
+            class: "back", data: {no_turbolink: true} do %>
+  <span class="icon-angle-left"></span><%= t("shared.back") %>
 <% end %>
 
 <%= render 'written_by_author' %>
+
+<% if @investment.label.present? %>
+  <p id="label">
+    <strong><%= t("admin.budget_investments.show.label") %>:</strong>
+    <%= @investment.label %>
+  </p>
+<% end %>
 
 <%= link_to t("admin.budget_investments.show.edit"),
             edit_admin_budget_budget_investment_path(@budget, @investment,

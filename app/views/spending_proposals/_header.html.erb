@@ -1,0 +1,51 @@
+<% if @filter_geozone_name.present? %>
+  <section class="no-margin-top margin-bottom">
+    <div class="expanded jumbo-investment-project investment-project-geozone padding">
+
+      <div class="row">
+        <div class="small-12 column">
+          <%= back_link_to welcome_spending_proposals_path, t("pages.processes.back") %>
+
+          <% if can? :show, Ballot %>
+            <%= link_to t("spending_proposals.header.check_ballot"), ballot_path, class: "button float-right" %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row progress-votes">
+        <div class="small-12 column">
+          <div class="progress-bar-nav" data-fixed-bar>
+            <h1 class="inline-block"><%= @filter_geozone_name %></h1>
+            <div id="check-ballot" style="display: none;">
+              <% if can? :show, Ballot %>
+                <%= link_to t("spending_proposals.header.check_ballot"), ballot_path %>
+              <% end %>
+            </div>
+              <% if @geozone.present? && @ballot.geozone.present? && @ballot.geozone != @geozone %>
+              <br>
+              <p class="callout warning inline-block">
+                <%= t("spending_proposals.header.different_district_active") %>
+                <%= link_to @ballot.geozone.name, spending_proposals_path(geozone: @ballot.geozone) %>
+                <%= t("spending_proposals.header.different_district_active_info") %>
+              </p>
+              <% else %>
+              <div id="progress_bar" class="no-margin-top">
+                <%= render 'progress_bar' %>
+              </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<% else %>
+  <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
+    <div class="row">
+      <div class="small-12 column">
+        <%= back_link_to welcome_spending_proposals_path, t("pages.processes.back") %>
+
+        <h1><%= t('spending_proposals.index.title') %></h1>
+      </div>
+    </div>
+  </div>
+<% end %>

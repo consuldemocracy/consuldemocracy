@@ -1,6 +1,6 @@
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
-            social_url: budget_investments_path(investment),
+            social_url: budget_investment_url(investment.budget, investment),
             social_title: investment.title,
             social_description: investment.description,
             twitter_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil),
@@ -19,6 +19,10 @@
 
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= l investment.created_at.to_date %>
+        <% if investment.label.present? %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <span class="label round is-author"><%= investment.label %></span>
+        <% end %>
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= investment.heading.name %>
       </div>
@@ -28,7 +32,7 @@
       <%= render_image(investment.image, :large, true) if investment.image.present? %>
 
       <p id="investment_code">
-        <%= t("budgets.investments.show.code_html", code: investment.id) %>
+        <%= t("budgets.investments.show.code_html", code: investment.original_spending_proposal_id || investment.id) %>
       </p>
 
       <%= safe_html_with_links investment.description.html_safe %>

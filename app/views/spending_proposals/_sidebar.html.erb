@@ -1,15 +1,36 @@
-<div class="sidebar-divider"></div>
-<h2 class="sidebar-title"><%= t("spending_proposals.index.sidebar.geozones") %></h2>
-<br>
-<div class="geozone">
-  <%= link_to t('geozones.all'), spending_proposals_path(geozone: nil) %>
-  <%= link_to t('geozones.none'), spending_proposals_path(geozone: 'all') %>
-  <% Geozone.all.each do |geozone| %>
-    <%= link_to geozone.name, spending_proposals_path(geozone: geozone.id) %>
-  <% end %>
-</div>
+<% if @filter_geozone.present? || @ballot.geozone.present? %>
+  <%= back_link_to select_district_path, t("spending_proposals.index.sidebar.back") %>
+<% else %>
+  <%= back_link_to participatory_budget_path, t("spending_proposals.index.sidebar.back") %>
+<% end %>
 
-<div class="sidebar-divider"></div>
-<h2 class="sidebar-title"><%= t("spending_proposals.index.sidebar.feasibility") %></h2>
-<br>
-<%= link_to t('spending_proposals.index.sidebar.unfeasible'), spending_proposals_path(unfeasible: '1') %>
+<div class="clear"></div>
+
+<% if current_user && @ballot.spending_proposals.by_geozone(@geozone).count > 0 %>
+  <div class="sidebar-divider"></div>
+  <h2 class="sidebar-title"><%= t("spending_proposals.index.sidebar.my_ballot") %></h2>
+<% end %>
+
+<% if @ballot.spending_proposals.by_geozone(@geozone).count > 0 %>
+  <p>
+    <em>
+      <%= t("spending_proposals.index.sidebar.voted_html",
+          count: @ballot.spending_proposals.by_geozone(@geozone).count,
+          amount_spent: format_price(@ballot.amount_spent(@geozone))) %>
+    </em>
+  </p>
+<% else %>
+  <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+    <p><strong><%= t("spending_proposals.index.sidebar.zero") %></strong></p>
+  <% end %>
+<% end %>
+
+<ul class="ballot-list">
+  <% @ballot.spending_proposals.by_geozone(@geozone).each do |spending_proposal| %>
+    <%= render 'ballots/spending_proposal_for_sidebar', spending_proposal: spending_proposal %>
+  <% end %>
+</ul>
+
+<% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+  <p class="callout primary"><%= t("spending_proposals.index.sidebar.voted_info") %></p>
+<% end %>

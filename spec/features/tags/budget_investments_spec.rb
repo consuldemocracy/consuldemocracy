@@ -79,7 +79,7 @@ feature 'Tags' do
     expect(page).to have_content tag_medio_ambiente.name
   end
 
-  scenario 'Category with category tags', :js do
+  scenario 'Create with category tags', :js do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
@@ -232,7 +232,7 @@ feature 'Tags' do
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: new_tag) }
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: newer_tag) }
 
-    scenario 'Display user tags' do
+    xscenario 'Display user tags' do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
@@ -246,7 +246,7 @@ feature 'Tags' do
       end
     end
 
-    scenario "Filter by user tags" do
+    xscenario "Filter by user tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
@@ -268,6 +268,18 @@ feature 'Tags' do
         expect(page).to have_content investment1.title
         expect(page).to have_content investment2.title
         expect(page).not_to have_content investment3.title
+      end
+    end
+
+    scenario 'Do not display user tags' do
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        budget.update(phase: phase)
+
+        login_as(admin) if budget.drafting?
+        visit budget_path(budget)
+        click_link group.name
+
+        expect(page).not_to have_css("#tag-cloud")
       end
     end
 

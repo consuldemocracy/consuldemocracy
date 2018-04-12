@@ -1,4 +1,15 @@
-<% provide :title do %><%= @poll.name %><% end %>
+<%= provide :title,            t("social_share.polls_show.title_#{@poll.id}") %>
+<%= provide :meta_description, t("social_share.polls_show.description_#{@poll.id}") %>
+<%= provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: poll_url,
+              social_title: t("social_share.polls_show.title_#{@poll.id}"),
+              social_description: t("social_share.polls_show.facebook_#{@poll.id}") %>
+<% end %>
+<%= provide :social_media_meta_tags do %>
+  <meta name="twitter:image" content="<%= root_url %>social_media_polls_<%= @poll.id %>_twitter.jpg" />
+  <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_polls_<%= @poll.id %>.jpg"/>
+<% end %>
 
 <div class="polls-show">
   <%= render "poll_header" %>
@@ -6,7 +17,7 @@
   <%= render "poll_subnav" %>
 
   <div class="row margin">
-    <div class="small-12 medium-9 column">
+    <div id="questions-container" class="small-12 medium-9 column">
       <%= render "callout" %>
 
       <% if @poll.voted_in_booth?(current_user) %>
@@ -52,7 +63,7 @@
     </div>
   </div>
 
-  <div class="expanded poll-more-info-answers">
+  <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
     <div class="row padding">
 
       <% @poll_questions_answers.each do |answer| %>

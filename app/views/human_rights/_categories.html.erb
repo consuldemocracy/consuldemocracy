@@ -1,0 +1,9 @@
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title"><%= t("shared.tags_cloud.categories") %></h2>
+<br>
+
+<div id="categories" class="categories">
+  <% @subproceedings.each do |subproceeding| %>
+    <%= link_to subproceeding, human_rights_proposals_path(sub_proceeding: subproceeding) %>
+  <% end %>
+</div>

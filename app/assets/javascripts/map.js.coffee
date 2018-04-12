@@ -12,6 +12,7 @@ App.Map =
           App.Map.toogleMap()
 
   initializeMap: (element) ->
+    App.Map.cleanInvestmentCoordinates(element)
 
     mapCenterLatitude        = $(element).data('map-center-latitude')
     mapCenterLongitude       = $(element).data('map-center-longitude')
@@ -106,3 +107,15 @@ App.Map =
   toogleMap: ->
       $('.map').toggle()
       $('.js-location-map-remove-marker').toggle()
+
+  cleanInvestmentCoordinates: (element) ->
+    markers = $(element).attr('data-marker-investments-coordinates')
+    if markers?
+      clean_markers = markers.replace(/-?(\*+)/g, null)
+      $(element).attr('data-marker-investments-coordinates', clean_markers)
+
+  validCoordinates: (coordinates) ->
+    App.Map.isNumeric(coordinates.lat) && App.Map.isNumeric(coordinates.long)
+
+  isNumeric: (n) ->
+    !isNaN(parseFloat(n)) && isFinite(n)

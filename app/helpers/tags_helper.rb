@@ -15,6 +15,15 @@ module TagsHelper
     end
   end
 
+  def display_tag_list(resource)
+    tag_list = resource.tag_list.to_s
+
+    if resource.tag_list.count == 1
+       tag_list += ","
+    end
+    tag_list
+  end
+
   def taggable_path(taggable)
     taggable_type = taggable.class.name.underscore
     case taggable_type
@@ -23,7 +32,7 @@ module TagsHelper
     when 'proposal'
       proposal_path(taggable)
     when 'budget/investment'
-      budget_investment_path(taggable.budget_id, taggable)
+      budget_investment_path(taggable.budget, taggable)
     when 'legislation/proposal'
       legislation_process_proposal_path(@process, taggable)
     else

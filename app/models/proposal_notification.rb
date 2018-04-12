@@ -21,6 +21,20 @@ class ProposalNotification < ActiveRecord::Base
     end
   end
 
+  def self.public_columns_for_api
+    ["title",
+     "body",
+     "proposal_id",
+     "created_at"]
+  end
+
+  def public_for_api?
+    return false unless proposal.present?
+    return false if proposal.hidden?
+    return false unless proposal.public_for_api?
+    return true
+  end
+
   def notifiable
     proposal
   end

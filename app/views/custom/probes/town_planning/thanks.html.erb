@@ -1,0 +1,30 @@
+<%= render "probes/#{@probe.codename}/header" %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= back_link_to processes_path %>
+
+      <h1 class="margin-bottom">¡Gracias por participar!</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <div class="callout success">
+      Tu voto ha sido recibido, mientras esté el proceso abierto puedes cambiarlo en cualquier momento.</u>.
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 small-centered column text-center">
+    <h2>Has votado el proyecto: <%= @probe_option.name %></h2>
+      <%= image_tag @probe_option.thumb_image_url, alt: @probe_option.name %>
+      <p class="margin-top">
+        <%= link_to "Ver otros procesos", processes_path, class: "button hollow" %>
+      </p>
+    </div>
+  </div>
+</div>

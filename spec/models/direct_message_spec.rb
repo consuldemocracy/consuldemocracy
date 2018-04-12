@@ -4,6 +4,10 @@ describe DirectMessage do
 
   let(:direct_message) { build(:direct_message) }
 
+  before do
+    Setting[:direct_message_max_per_day] = 3
+  end
+
   it "is valid" do
     expect(direct_message).to be_valid
   end
@@ -29,48 +33,32 @@ describe DirectMessage do
   end
 
   describe "maximum number of direct messages per day" do
-    context "when set" do
-      before do
-        Setting[:direct_message_max_per_day] = 3
-      end
 
-      it "is not valid if above maximum" do
-        sender = create(:user)
-        direct_message1 = create(:direct_message, sender: sender)
-        direct_message2 = create(:direct_message, sender: sender)
-        direct_message3 = create(:direct_message, sender: sender)
+    it "is not valid if above maximum" do
+      sender = create(:user)
+      direct_message1 = create(:direct_message, sender: sender)
+      direct_message2 = create(:direct_message, sender: sender)
+      direct_message3 = create(:direct_message, sender: sender)
 
-        direct_message4 = build(:direct_message, sender: sender)
-        expect(direct_message4).not_to be_valid
-      end
-
-      it "is valid if below maximum" do
-        sender = create(:user)
-        direct_message1 = create(:direct_message, sender: sender)
-        direct_message2 = create(:direct_message, sender: sender)
-
-        direct_message3 = build(:direct_message)
-        expect(direct_message).to be_valid
-      end
-
-      it "is valid if no direct_messages sent" do
-        direct_message = build(:direct_message)
-
-        expect(direct_message).to be_valid
-      end
+      direct_message4 = build(:direct_message, sender: sender)
+      expect(direct_message4).not_to be_valid
     end
 
-    context "when unset" do
-      before do
-        Setting[:direct_message_max_per_day] = nil
-      end
+    it "is valid if below maximum" do
+      sender = create(:user)
+      direct_message1 = create(:direct_message, sender: sender)
+      direct_message2 = create(:direct_message, sender: sender)
 
-      it "is valid" do
-        direct_message = build(:direct_message)
-
-        expect(direct_message).to be_valid
-      end
+      direct_message3 = build(:direct_message)
+      expect(direct_message).to be_valid
     end
+
+    it "is valid if no direct_messages sent" do
+      direct_message = build(:direct_message)
+
+      expect(direct_message).to be_valid
+    end
+
   end
 
   describe "scopes" do

@@ -10,6 +10,14 @@ class Budget
     validates :name, presence: true, uniqueness: { scope: :budget }
     validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
 
+    scope :by_slug, ->(slug) { where(slug: slug) }
+
+    before_save :strip_name
+
+    def to_param
+      slug
+    end
+
     def single_heading_group?
       headings.count == 1
     end
@@ -18,6 +26,10 @@ class Budget
 
     def generate_slug?
       slug.nil? || budget.drafting?
+    end
+
+    def strip_name
+      self.name = self.name.strip
     end
 
   end

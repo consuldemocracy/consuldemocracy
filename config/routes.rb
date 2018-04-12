@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
+  draw :custom
   draw :account
   draw :admin
   draw :annotation
@@ -42,9 +43,16 @@ Rails.application.routes.draw do
   resources :follows, only: [:create, :destroy]
 
   # More info pages
-  get 'help',             to: 'pages#show', id: 'help/index',             as: 'help'
-  get 'help/how-to-use',  to: 'pages#show', id: 'help/how_to_use/index',  as: 'how_to_use'
-  get 'help/faq',         to: 'pages#show', id: 'help/faq/index',         as: 'faq'
+
+  ### Modified in: config/routes/custom.rb
+
+  ### ToDo: Figure out a way to maintain Consul's routes in this file,
+  #         whilst modifying them in routes/custom.rb
+  #         The main problem here is that we are using the same `as` value
+  ###
+  # get 'help',             to: 'pages#show', id: 'help/index',             as: 'help'
+  # get 'help/how-to-use',  to: 'pages#show', id: 'help/how_to_use/index',  as: 'how_to_use'
+  # get 'help/faq',         to: 'pages#show', id: 'help/faq/index',         as: 'faq'
 
   # Static pages
   get '/blog' => redirect("http://blog.consul/")

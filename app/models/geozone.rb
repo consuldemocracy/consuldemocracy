@@ -23,4 +23,12 @@ class Geozone < ActiveRecord::Base
       association.klass.where(geozone: self).empty?
     end
   end
+
+  def self.public_columns_for_api
+    ["id", "name"]
+  end
+
+  def public_for_api?
+    true
+  end
 end

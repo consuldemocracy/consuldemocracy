@@ -2,7 +2,7 @@
   <%= render 'shared/errors', resource: @investment %>
 
   <div class="row">
-    <div class="small-12 medium-8 column">
+    <div class="small-12 medium-9 column">
       <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: true, } %>
     </div>
 
@@ -38,7 +38,8 @@
                    label:    t("budgets.investments.form.map_location"),
                    help:     t("budgets.investments.form.map_location_instructions"),
                    remove_marker_label: t("budgets.investments.form.map_remove_marker"),
-                   parent_class: "budget_investment" %>
+                   parent_class: "budget_investment",
+                   i18n_namespace: "budgets.investments" %>
 
       </div>
     <% end %>

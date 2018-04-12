@@ -9,3 +9,5 @@ var comment_html = "<%= j(render @comment) %>"
   App.Comments.reset_and_hide_form(parent_id);
   App.Comments.add_reply(parent_id, comment_html);
 <% end -%>
+
+App.Tracks.render_analytics('<%= j render("/layouts/analytics") %>')

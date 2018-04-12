@@ -14,6 +14,7 @@ Tests that fail randomly are called "flakies", this one seems to be one:
 # How
 - [ ] Explain why the test is flaky, or under which conditions/scenario it fails randomly
 - [ ] Explain why your PR fixes it
+- [ ] Create a backport PR to consul/consul when the fixing PR is approved
 
 ## Tips for flaky hunting
 

@@ -1,44 +1,47 @@
 section "Creating Budgets" do
-  Budget.create(
-    name: "#{I18n.t('seeds.budgets.budget')} #{Date.current.year - 1}",
-    currency_symbol: I18n.t('seeds.budgets.currency'),
+  finished_budget = Budget.create(
+    name: "Budget #{Date.current.year - 1}",
+    currency_symbol: "€",
     phase: 'finished'
   )
-  Budget.create(
-    name: "#{I18n.t('seeds.budgets.budget')} #{Date.current.year}",
-    currency_symbol: I18n.t('seeds.budgets.currency'),
+
+  accepting_budget = Budget.create(
+    name: "Budget #{Date.current.year}",
+    currency_symbol: "€",
     phase: 'accepting'
   )
 
-  Budget.all.each do |budget|
-    city_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.all_city'))
-    city_group.headings.create!(name: I18n.t('seeds.budgets.groups.all_city'),
-                                price: 1000000,
-                                population: 1000000)
+  (1..([1, 2, 3].sample)).each do |i|
+    finished_group  = finished_budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
+    accepting_group = accepting_budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
 
-    districts_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.districts'))
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.north_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 350000)
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.west_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 300000)
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.east_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 200000)
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.central_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 150000)
+    geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
+    geozones.each do |geozone|
+      finished_group.headings << finished_group.headings.create!(name: "#{geozone.name} #{i}",
+                                                                 price: rand(1..100) * 100000,
+                                                                 population: rand(1..50) * 10000)
+
+      accepting_group.headings << accepting_group.headings.create!(name: "#{geozone.name} #{i}",
+                                                                   price: rand(1..100) * 100000,
+                                                                   population: rand(1..50) * 10000)
+
+    end
   end
+end
+
+
+
+section "Creating City Heading" do
+  Budget.first.groups.first.headings.create(name: "Toda la ciudad", price: 100_000_000)
 end
 
 section "Creating Investments" do
   tags = Faker::Lorem.words(10)
   100.times do
-    heading = Budget::Heading.all.sample
+    heading = Budget::Heading.reorder("RANDOM()").first
 
     investment = Budget::Investment.create!(
-      author: User.all.sample,
+      author: User.reorder("RANDOM()").first,
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
@@ -73,6 +76,23 @@ section "Balloting Investments" do
   end
 end
 
+section "Voting Investments" do
+  not_org_users = User.where(['users.id NOT IN(?)', User.organizations.pluck(:id)])
+  100.times do
+    voter = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
+    investment = Budget::Investment.reorder("RANDOM()").first
+    investment.vote_by(voter: voter, vote: true)
+  end
+end
+
+section "Balloting Investments" do
+  100.times do
+    budget = Budget.finished.reorder("RANDOM()").first
+    ballot = Budget::Ballot.create(user: User.reorder("RANDOM()").first, budget: budget)
+    ballot.add_investment(budget.investments.reorder("RANDOM()").first)
+  end
+end
+
 section "Winner Investments" do
   budget = Budget.finished.first
   50.times do
@@ -98,8 +118,38 @@ section "Winner Investments" do
   end
 end
 
-section "Creating Valuation Assignments" do
+section "Creating Valuator Groups Assignments" do
+  valuators_count = Valuator.count
+  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.culture_and_sports'),
+                       valuators: [Valuator.find(1), Valuator.find(2)])
+  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.gender_and_diversity'),
+                       valuators: [Valuator.find(3), Valuator.find(4)])
+  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.urban_development'),
+                       valuators: [Valuator.find(5), Valuator.find(6)])
+  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.equity_and_employment'),
+                       valuators: [Valuator.find(7), Valuator.find(8)])
+end
+
+section "Creating Valuation direct Assignments" do
   (1..50).to_a.sample.times do
-    Budget::Investment.all.sample.valuators << Valuator.first
+    Budget::Investment.all.sample.valuators << Valuator.all.sample
   end
+end
+section "Creating Valuation Group Assignments" do
+  (1..50).to_a.sample.times do
+    Budget::Investment.all.sample.valuator_groups << ValuatorGroup.all.sample
+  end
+end
+
+section "Marking investments as visible to valuators" do
+  (1..50).to_a.sample.times do
+    Budget::Investment.reorder("RANDOM()").first.update(visible_to_valuators: true)
+  end
+end
+
+section "Creating default Investment Milestone Statuses" do
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.studying_project'))
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.bidding'))
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executing_project'))
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executed'))
 end

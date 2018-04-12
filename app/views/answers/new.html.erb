@@ -1,0 +1,32 @@
+<% provide :title, "Plan de Derechos Humanos" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_human_rights"),
+          social_title: t("pages.processes.index.process_5_title"),
+          social_description: t("pages.processes.index.process_5_description") %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= back_link_to human_rights_page_path %>
+      <br>
+      <h1 class="margin"><%= t("pages.processes.index.process_5_title") %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <h2>¿Cuáles consideras que son los principales problemas de Derechos Humanos que existen hoy en la ciudad de Madrid?</h2>
+
+    <%= form_for @answer do |f| %>
+      <%= f.hidden_field :context, value: 'Derechos Humanos' %>
+      <%= f.text_area :text, rows: 5, label: false %>
+
+      <div class="small-12 medium-6">
+        <%= f.submit t("answers.new.send"), class: "button expanded" %>
+      </div>
+    <% end %>
+  </div>
+</div>

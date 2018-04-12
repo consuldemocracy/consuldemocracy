@@ -49,6 +49,8 @@ feature 'Admin can change the groups name' do
     scenario "Defaults to 1 heading per group", :js do
       visit admin_budget_path(group.budget)
 
+      expect(page).to have_content('Maximum number of headings in which a user can vote 1 of 3')
+
       within("#budget_group_#{group.id}") do
         click_link 'Edit group'
 
@@ -66,7 +68,7 @@ feature 'Admin can change the groups name' do
         click_button 'Save group'
       end
 
-      visit admin_budget_path(group.budget)
+      expect(page).to have_content('Maximum number of headings in which a user can vote 2 of 3')
 
       within("#budget_group_#{group.id}") do
         click_link 'Edit group'
@@ -75,13 +77,13 @@ feature 'Admin can change the groups name' do
       end
     end
 
-    scenario "Do not display maxium votable headings' select in new form", :js do
+    scenario "Do not display maximum votable headings' select in new form", :js do
       visit admin_budget_path(group.budget)
 
       click_link 'Add new group'
 
       expect(page).to have_field('budget_group_name')
-      expect(page).to_not have_field('budget_group_max_votable_headings')
+      expect(page).not_to have_field('budget_group_max_votable_headings')
     end
 
   end

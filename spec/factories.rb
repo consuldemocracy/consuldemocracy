@@ -15,6 +15,7 @@ FactoryBot.define do
     password            'judgmentday'
     terms_of_service    '1'
     confirmed_at        { Time.current }
+    date_of_birth       { 20.years.ago }
     public_activity     true
 
     trait :incomplete_verification do
@@ -123,6 +124,7 @@ FactoryBot.define do
   factory :debate do
     sequence(:title)     { |n| "Debate #{n} title" }
     description          'Debate description'
+    comment_kind         'comment'
     terms_of_service     '1'
     association :author, factory: :user
 
@@ -162,7 +164,7 @@ FactoryBot.define do
 
   factory :proposal do
     sequence(:title)     { |n| "Proposal #{n} title" }
-    sequence(:summary)   { |n| "In summary, what we want is... #{n}" }
+    sequence(:summary)   { |n| "In summary what we want is... #{n}" }
     description          'Proposal description'
     question             'Proposal question'
     external_url         'http://external_documention.es'
@@ -212,15 +214,40 @@ FactoryBot.define do
     trait :successful do
       cached_votes_up { Proposal.votes_needed_for_success + 100 }
     end
+
+    trait :human_rights do
+      proceeding     "Derechos Humanos"
+      sub_proceeding "Derecho a la vida"
+    end
+  end
+
+  factory :redeemable_code do
+    sequence(:token) { |n| "token#{n}" }
   end
 
   factory :spending_proposal do
     sequence(:title)     { |n| "Spending Proposal #{n} title" }
     description          'Spend money on this'
-    feasible_explanation 'This proposal is not viable because...'
+    feasible_explanation 'This proposal is viable because...'
     external_url         'http://external_documention.org'
     terms_of_service     '1'
     association :author, factory: :user
+
+    trait :with_confidence_score do
+      before(:save) { |sp| sp.calculate_confidence_score }
+    end
+
+    trait :feasible do
+      feasible true
+    end
+
+    trait :unfeasible do
+      feasible false
+    end
+
+    trait :finished do
+      valuation_finished true
+    end
   end
 
   factory :budget do
@@ -342,6 +369,10 @@ FactoryBot.define do
       winner true
     end
 
+    trait :visible_to_valuators do
+      visible_to_valuators true
+    end
+
     trait :incompatible do
       selected
       incompatible true
@@ -394,14 +425,26 @@ FactoryBot.define do
     association :investment, factory: :budget_investment
   end
 
+  factory :budget_recommendation, class: 'Budget::Recommendation' do
+    budget
+    association :investment, factory: :budget_investment
+    user
+  end
+
   factory :budget_reclassified_vote, class: 'Budget::ReclassifiedVote' do
     user
     association :investment, factory: :budget_investment
     reason "unfeasible"
   end
 
+  factory :budget_investment_status, class: 'Budget::Investment::Status' do
+    sequence(:name)        { |n| "Budget investment status #{n} name" }
+    sequence(:description) { |n| "Budget investment status #{n} description" }
+  end
+
   factory :budget_investment_milestone, class: 'Budget::Investment::Milestone' do
     association :investment, factory: :budget_investment
+    association :status, factory: :budget_investment_status
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
     publication_date     Date.current
@@ -524,6 +567,9 @@ FactoryBot.define do
 
   factory :poll do
     sequence(:name) { |n| "Poll #{SecureRandom.hex}" }
+    nvotes_poll_id "128"
+
+    slug "this-is-a-slug"
 
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }
@@ -617,7 +663,7 @@ FactoryBot.define do
     association :user, :level_two
     association :officer, factory: :poll_officer
     origin "web"
-
+    token SecureRandom.hex(32)
     trait :from_booth do
       association :booth_assignment, factory: :poll_booth_assignment
     end
@@ -644,6 +690,11 @@ FactoryBot.define do
     association :author, factory: :user
     origin 'web'
     answer { question.question_answers.sample.title }
+  end
+
+  factory :poll_nvote, class: 'Poll::Nvote' do
+    user
+    poll
   end
 
   factory :poll_recount, class: 'Poll::Recount' do
@@ -685,6 +736,12 @@ FactoryBot.define do
     end
   end
 
+  factory :tagging, class: 'ActsAsTaggableOn::Tagging' do
+    context "tags"
+    association :taggable, factory: :proposal
+    tag
+  end
+
   factory :setting do
     sequence(:key) { |n| "Setting Key #{n}" }
     sequence(:value) { |n| "Setting #{n} Value" }
@@ -715,6 +772,16 @@ FactoryBot.define do
     end
   end
 
+  factory :probe do
+    sequence(:codename) { |n| "probe_#{n}" }
+  end
+
+  factory :probe_option do
+    probe
+    sequence(:name) { |n| "Probe option #{n}" }
+    sequence(:code) { |n| "probe_option_#{n}" }
+  end
+
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
     sequence(:external_code) { |n| n.to_s }
@@ -723,6 +790,20 @@ FactoryBot.define do
     trait :in_census do
       census_code "01"
     end
+  end
+
+  factory :forum do
+    sequence(:name) { |n| "Forum #{n}" }
+    user
+  end
+
+  factory :ballot do
+    user
+  end
+
+  factory :ballot_line do
+    ballot
+    spending_proposal { build(:spending_proposal, feasible: true) }
   end
 
   factory :banner do
@@ -759,6 +840,15 @@ FactoryBot.define do
     sequence(:document_number) { |n| "#{n}A" }
   end
 
+  factory :volunteer_poll do
+    sequence(:email)      { |n| "volunteer#{n}@consul.dev" }
+    sequence(:first_name) { |n| "volunteer#{n} first name" }
+    sequence(:last_name)  { |n| "volunteer#{n} last name" }
+    sequence(:document_number) { |n| "12345#{n}" }
+    sequence(:phone)      { |n| "6061111#{n}" }
+    turns "3 turnos"
+  end
+
   factory :legislation_process, class: 'Legislation::Process' do
     title "A collaborative legislation process"
     description "Description of the process"
@@ -770,9 +860,12 @@ FactoryBot.define do
     draft_publication_date Date.current - 1.day
     allegations_start_date Date.current
     allegations_end_date Date.current + 3.days
+    proposals_phase_start_date Date.current
+    proposals_phase_end_date Date.current + 2.days
     result_publication_date Date.current + 5.days
     debate_phase_enabled true
     allegations_phase_enabled true
+    proposals_phase_enabled true
     draft_publication_enabled true
     result_publication_enabled true
     published true
@@ -808,6 +901,18 @@ FactoryBot.define do
       allegations_start_date Date.current + 2.days
       allegations_end_date Date.current + 3.days
       result_publication_date Date.current + 5.days
+    end
+
+    trait :in_proposals_phase do
+      proposals_phase_start_date Date.current - 1.day
+      proposals_phase_end_date Date.current + 2.days
+      proposals_phase_enabled true
+    end
+
+    trait :upcoming_proposals_phase do
+      proposals_phase_start_date Date.current + 1.day
+      proposals_phase_end_date Date.current + 2.days
+      proposals_phase_enabled true
     end
 
     trait :not_published do
@@ -880,6 +985,7 @@ LOREM_IPSUM
     terms_of_service '1'
     process factory: :legislation_process
     author factory: :user
+    proposal_type 'proposal'
   end
 
   factory :site_customization_page, class: 'SiteCustomization::Page' do
@@ -956,6 +1062,20 @@ LOREM_IPSUM
     segment_recipient  UserSegments::SEGMENTS.sample
     sequence(:from)    { |n| "noreply#{n}@consul.dev" }
     sequence(:body)    { |n| "Body #{n}" }
+  end
+
+  factory :admin_notification do
+    title             { |n| "Admin Notification title #{n}" }
+    body              { |n| "Admin Notification body #{n}" }
+    link              nil
+    segment_recipient UserSegments::SEGMENTS.sample
+    recipients_count  nil
+    sent_at           nil
+
+    trait :sent do
+      recipients_count 1
+      sent_at Time.current
+    end
   end
 
 end

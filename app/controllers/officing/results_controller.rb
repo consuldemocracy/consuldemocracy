@@ -7,6 +7,7 @@ class Officing::ResultsController < Officing::BaseController
   before_action :load_officer_assignment, only: :create
   before_action :check_officer_assignment, only: :create
   before_action :build_results, only: :create
+  before_action :verify_booth
 
   def new
   end

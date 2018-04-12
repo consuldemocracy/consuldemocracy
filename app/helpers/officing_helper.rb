@@ -16,4 +16,7 @@ module OfficingHelper
     params[:questions][question_id.to_s][answer_index.to_s]
   end
 
+  def letter_officer_valid_messages
+    ::Poll::LetterOfficerLog::VALID_MESSAGES.invert[@log.message].to_s.dasherize
+  end
 end

@@ -1,0 +1,9 @@
+<tr>
+  <td>
+      <%= link_to plaza_option.name, plaza_probe_option_path(plaza_option.id) %>
+  </td>
+
+  <td class="text-center">
+    <%= number_with_delimiter(plaza_option.probe_selections_count) %>
+  </td>
+</tr>
