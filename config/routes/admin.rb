@@ -176,7 +176,6 @@ namespace :admin do
 
   resources :system_emails, only: [:index] do
     get :view
-    get :preview
   end
 
   resources :emails_download, only: :index do

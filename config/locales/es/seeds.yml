@@ -53,18 +53,3 @@ es:
       recounting_poll: "Votación en Recuento"
       expired_poll_without_stats: "Votación Finalizada (sin Estadísticas o Resultados)"
       expired_poll_with_stats: "Votación Finalizada (con Estadísticas y Resultado)"
-    admin_notifications:
-      internal_link:
-        title: 'Tienes una propuesta?'
-        body: 'Recuerda que puedes crear propuestas y los ciudadanos las debatirán y apoyarán.'
-        link: '/proposals'
-      external_link:
-        title: 'Ayúdanos a traducir CONSUL'
-        body: 'Si dominas un idioma, ayúdanos a completar su traducción en CONSUL.'
-        link: 'https://crwd.in/consul'
-      without_link:
-        title: 'Ahora puedes geolocalizar propuestas y proyectos de inversión'
-        body: 'Cuando crees una propuesta o proyecto de inversión podrás especificar su localización en el mapa'
-      not_sent:
-        title: 'Últimos días para crear proyectos de Presupuestos Participativos'
-        body: 'Quedan pocos dias para que se cierre el plazo de presentación de proyectos de inversión para los presupuestos participativos!'
