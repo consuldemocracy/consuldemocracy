@@ -10,16 +10,16 @@ module GlobalizeHelper
 
   def locale_options
     I18n.available_locales.map do |locale|
-      [name_for_locale(locale), locale]
+      [name_for_locale(locale), neutral_locale(locale)]
     end
   end
 
   def display_translation?(locale)
-    I18n.locale == locale ? "" : "display: none"
+    neutral_locale(I18n.locale) == neutral_locale(locale) ? "" : "display: none"
   end
 
   def css_to_display_translation?(resource, locale)
-    resource.translated_locales.include?(locale) || locale == I18n.locale ? "" : "display: none"
+    resource.translated_locales.include?(neutral_locale(locale)) || locale == I18n.locale ? "" : "display: none"
   end
 
   def disable_translation?(locale)
@@ -36,6 +36,10 @@ module GlobalizeHelper
 
   def show_delete?(locale)
     I18n.locale == locale ? '' : 'display: none'
+  end
+
+  def neutral_locale(locale)
+    locale.to_s.downcase.underscore.to_sym
   end
 
 end
