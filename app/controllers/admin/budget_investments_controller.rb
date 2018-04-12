@@ -20,7 +20,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       format.html
       format.js
       format.csv do
-        send_data Budget::Investment.to_csv(@investments, headers: true),
+        send_data Budget::Investment::Exporter.new(@investments).to_csv,
                   filename: 'budget_investments.csv'
       end
     end
@@ -77,7 +77,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def load_investments
       @investments = Budget::Investment.scoped_filter(params, @current_filter)
-      @investments = @investments.order_filter(params[:sort_by]) if params[:sort_by].present?
+                                       .order_filter(params[:sort_by])
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
