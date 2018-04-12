@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320104823) do
+ActiveRecord::Schema.define(version: 20180412211025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,20 +100,24 @@ ActiveRecord::Schema.define(version: 20180320104823) do
   end
 
   create_table "budget_groups", force: :cascade do |t|
-    t.integer "budget_id"
-    t.string  "name",                 limit: 50
-    t.string  "slug"
-    t.integer "max_votable_headings",            default: 1
+    t.integer  "budget_id"
+    t.string   "name",                 limit: 50
+    t.string   "slug"
+    t.integer  "max_votable_headings",            default: 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "budget_groups", ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
 
   create_table "budget_headings", force: :cascade do |t|
-    t.integer "group_id"
-    t.string  "name",       limit: 50
-    t.integer "price",      limit: 8
-    t.integer "population"
-    t.string  "slug"
+    t.integer  "group_id"
+    t.string   "name",       limit: 50
+    t.integer  "price",      limit: 8
+    t.integer  "population"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
