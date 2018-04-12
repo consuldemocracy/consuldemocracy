@@ -9,16 +9,27 @@ App.Globalize =
 
   display_translations: (locale) ->
     $(".js-globalize-attribute").each ->
-      console.log("In standard")
-      console.log($(this))
       if $(this).data("locale") == locale
         $(this).show()
       else
         $(this).hide()
+      $('.delete-language').hide()
+      $('#delete-' + locale).show()
 
   highlight_locale: (element) ->
     $('.js-globalize-locale-link').removeClass('highlight');
     element.addClass('highlight');
+
+  remove_language: (locale) ->
+    $(".js-globalize-attribute[data-locale=" + locale + "]").val('')
+    $(".js-globalize-attribute[data-locale=" + locale + "]").hide()
+    $(".js-globalize-locale-link[data-locale=" + locale + "]").hide()
+    $("#delete-" + locale).hide()
+    next = $(".js-globalize-locale-link:visible").first()
+    App.Globalize.highlight_locale(next)
+    $(".js-globalize-attribute[data-locale=" + next.data("locale") + "]").show()
+    $("#delete-" + next.data("locale")).show()
+    $("#delete_translations_" + locale).val(1)
 
   initialize: ->
     $('.js-globalize-locale').on 'change', ->
@@ -29,3 +40,9 @@ App.Globalize =
       locale = $(this).data("locale")
       App.Globalize.display_translations(locale)
       App.Globalize.highlight_locale($(this))
+
+    $('.delete-language').on 'click', ->
+      locale = $(this).data("locale")
+      $(this).hide()
+      App.Globalize.remove_language(locale)
+

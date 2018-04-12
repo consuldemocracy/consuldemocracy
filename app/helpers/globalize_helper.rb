@@ -30,4 +30,8 @@ module GlobalizeHelper
     globalize_locale == locale ? "highlight" : ""
   end
 
+  def show_delete?(locale)
+    I18n.locale == locale ? '' : 'display: none'
+  end
+
 end

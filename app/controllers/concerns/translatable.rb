@@ -3,6 +3,7 @@ module Translatable
 
   included do
     before_action :set_translation_locale
+    before_action :delete_translations, only: [:update]
   end
 
   private
@@ -14,6 +15,17 @@ module Translatable
 
     def set_translation_locale
       Globalize.locale = I18n.locale
+    end
+
+    def delete_translations
+      locales = Budget::Investment::Milestone.globalize_locales.
+      select { |k, v| params[:delete_translations].include?(k.to_sym) && params[:delete_translations][k] == "1" }
+      milestone = Budget::Investment::Milestone.find(params[:id])
+      locales.each do |l|
+        Globalize.with_locale(l) do
+          milestone.translation.destroy
+        end
+      end
     end
 
 end
