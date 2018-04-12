@@ -2,7 +2,7 @@
   <span>
     <%= link_to name_for_locale(locale), "#",
                 style: css_to_display_translation?(@milestone, locale),
-                class: "js-globalize-locale-link",
+                class: "js-globalize-locale-link #{highlight_current?(locale)}",
                 data: { locale: locale },
                 remote: true %>
     <%= link_to t("admin.milestones.form.remove_language"), "#",
