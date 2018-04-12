@@ -4,6 +4,7 @@ App.Globalize =
     $(".js-globalize-locale-link").each ->
       if $(this).data("locale") == locale
         $(this).show()
+        App.Globalize.highlight_locale($(this))
       $(".js-globalize-locale option:selected").removeAttr("selected");
       return
 
