@@ -9,6 +9,7 @@
 
   <%= f.label :description, t("admin.milestones.new.description") %>
   <% @milestone.globalize_locales.each do |locale| %>
+    <%= hidden_field_tag "delete_translations[#{locale}]", 0 %>
     <% Globalize.with_locale(locale) do %>
       <%= f.text_area "description_#{locale}", rows: 5,
                       class: "js-globalize-attribute",

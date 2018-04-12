@@ -5,10 +5,15 @@
                 class: "js-globalize-locale-link",
                 data: { locale: locale },
                 remote: true %>
+    <%= link_to t("admin.milestones.form.remove_language"), "#",
+                id: "delete-#{locale}",
+                style: show_delete?(locale),
+                class: 'float-right delete-language',
+                data: { locale: locale } %>
   </span>
 <% end %>
 
-<%= select_tag :translation_locale, 
+<%= select_tag :translation_locale,
                options_for_locale_select,
-               prompt: "Añadir idioma",
+               prompt: t("admin.milestones.form.add_language"),
                class: "js-globalize-locale" %>
