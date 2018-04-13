@@ -9,6 +9,7 @@ val:
           create: Crear proposta
           quota_exceeded: Ja ha fet totes les propostes permeses en aquesta campanya
       investment:
+        title: Proposta d'inversió
         already_added: Ja has afegit aquesta proposta
         already_supported: Ja has avalat aquesta proposta. Comparteixla!
         support_title: Avalar aquesta proposta

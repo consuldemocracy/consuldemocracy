@@ -5,5 +5,8 @@ val:
         ballot_lines:
           one: 1 Vot
           other: "%{count} Vots"
+        votes:
+          one: 1 Aval
+          other: "%{count} Avals"
     errors:
       document_in_use: El document ja està utilitzat en un altre compte

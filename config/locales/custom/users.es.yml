@@ -3,7 +3,11 @@ es:
     show:
       filters:
         ballot_lines:
-          one: 1 Voto
-          other: "%{count} Votos"
+          one: 1 Vot
+          other: "%{count} Vots"
+      filters:
+        votes:
+          one: 1 Aval
+          other: "%{count} Avales"
     errors:
       document_in_use: El documento ya está utilizado por otra cuenta.
