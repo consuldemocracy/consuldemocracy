@@ -1,5 +1,4 @@
 <section class="budget-investment-show" id="<%= dom_id(investment) %>">
-
   <div class="row">
     <div class="small-12 medium-9 column">
       <%= link_to(t("shared.back"), budget_investments_path(investment.budget, heading_id: investment.heading), class: 'back') %>
@@ -52,9 +51,14 @@
         <p><%= investment.price_explanation %></p>
       <% end %>
     </div>
-
     <aside class="small-12 medium-3 column">
+        kkkk
       <% if investment.should_show_aside? %>
+        <%# if investment.selected? %>
+
+
+        <%# end %>
+
         <% if investment.should_show_votes? %>
           <div class="sidebar-divider"></div>
           <h2><%= t("budgets.investments.show.supports") %></h2>

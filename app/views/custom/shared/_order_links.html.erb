@@ -1,0 +1,18 @@
+<ul class="no-bullet submenu">
+  <% @valid_orders.each do |order| %>
+    <li class="inline-block">
+      <%= link_to current_path_with_query_params(order: order, filter: nil, page: 1), class: (order == params[:order] && params[:filter].blank?) ? 'active' : '' do %>
+        <%= content_tag(order == @current_order ? :h2 : :span) do %>
+          <%= t("#{i18n_namespace}.orders.#{order}") %>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+  <li class="inline-block">
+    <%= link_to current_path_with_query_params(filter: 'selected', page: 1), class: params[:filter] == 'selected' ? 'active' : '' do %>
+      <%= content_tag(true ? :h2 : :span) do %>
+        <%= t("#{i18n_namespace}.lista_seleccionadas") %>
+      <% end %>
+    <% end %>
+  </li>
+</ul>

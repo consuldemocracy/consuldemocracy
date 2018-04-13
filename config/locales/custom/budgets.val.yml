@@ -8,6 +8,7 @@ val:
         sidebar:
           create: Crear proposta
           quota_exceeded: Ja ha fet totes les propostes permeses en aquesta campanya
+        lista_seleccionadas: Propuestas seleccionadas por las juntas de distrito
       investment:
         title: Proposta d'inversió
         already_added: Ja has afegit aquesta proposta

@@ -145,7 +145,8 @@ class Budget < ActiveRecord::Base
     when 'publishing_prices', 'balloting', 'reviewing_ballots'
       %w{random price}
     else
-      %w{random confidence_score}
+      # %w{random confidence_score}
+      %w{random}
     end
   end
 
