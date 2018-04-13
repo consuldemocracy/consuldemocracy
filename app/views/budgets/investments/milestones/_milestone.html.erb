@@ -18,7 +18,7 @@
     <% end %>
 
     <p>
-      <% Globalize.with_locale(neutral_locale(locale)) do %>
+      <% globalize(neutral_locale(locale)) do %>
         <%= text_with_links milestone.description %>
       <% end %>
     </p>

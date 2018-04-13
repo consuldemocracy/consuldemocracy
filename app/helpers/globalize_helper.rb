@@ -42,4 +42,10 @@ module GlobalizeHelper
     locale.to_s.downcase.underscore.to_sym
   end
 
+  def globalize(locale, &block)
+    Globalize.with_locale(locale) do
+      yield
+    end
+  end
+
 end
