@@ -8,6 +8,7 @@ es:
         sidebar:
           create: Crear propuesta
           quota_exceeded: Ya ha hecho todas las propuestas permitidas para esta campaña
+        by_heading: 'Propuestas de inversión con ámbito: %{heading}'
       investment:
         already_supported: Ya has avalado este proyecto. ¡Compártelo!
         support_title: Avalar este proyecto

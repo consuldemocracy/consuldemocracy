@@ -5,3 +5,4 @@ es:
   votes:
     budget_investments:
       quota_exceeded: Ya has avalado los proyectos permitidos
+      not_verified: Las propuestas sólo pueden ser avaladas por usuarios verificados, %{verify_account}.

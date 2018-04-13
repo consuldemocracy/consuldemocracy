@@ -8,6 +8,16 @@ val:
         sidebar:
           create: Crear proposta
           quota_exceeded: Ja ha fet totes les propostes permeses en aquesta campanya
+      investment:
+        already_added: Ja has afegit aquesta proposta
+        already_supported: Ja has avalat aquesta proposta. Comparteixla!
+        support_title: Avalar aquesta proposta
+        confirm_group: "Sols pots avalar pressupostos en un districte. Si continues no podras canviar la teua decisió. Estas segur?"
+        supports:
+          zero: Sense avals
+          one: 1 aval
+          other: "%{count} avals"
+        give_support: Avalar
     phase:
       drafting: Esborrany (No visible per al públic)
       accepting: Acceptant propostes
@@ -18,6 +28,7 @@ val:
       balloting: Votació de propostes
       reviewing_ballots: Votación finalitzada
       finished: Resultats
+
     button_text: Participa en els pressupostos de la teua ciutat
     button_text_2018: Participa en els pressupostos de la teua ciutat a partir del 15 de febrer
     index_title: Presenta la teua proposta d'inversió
