@@ -106,10 +106,14 @@ module Abilities
 
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
+
         budgets_current = Budget.includes(:investments).where(phase: 'selecting')
         investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
-        if user.votes.for_type(Budget::Investment).where(votable_id: investment_ids).size < 3
-          can :vote,   Budget::Investment,               budget: { phase: "selecting" }
+
+        if user.votes.for_budget_investments(investment_ids).size < 3
+          can :vote,   Budget::Investment, budget: { phase: "selecting" }
+        else
+          cannot :vote, Budget::Investment
         end
 
         can :vote, Legislation::Proposal
