@@ -4,7 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><%= content_for?(:title) ? yield(:title) : "Gobierno abierto" %></title>
+    <title><%= t("landings.meta.title") %></title>
+    <% provide :meta_description, t("landings.meta.description") %>
+    <%= render "shared/social_media_meta_tags",
+            social_url: new_user_registration_url,
+            social_title: t("landings.meta.title"),
+            social_description: t("landings.meta.description"),
+            twitter_image_url: "social_media_cambia_tu_ciudad_twitter.jpg",
+            og_image_url: "social_media_cambia_tu_ciudad.jpg" %>
     <%= render "layouts/meta_tags" %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
