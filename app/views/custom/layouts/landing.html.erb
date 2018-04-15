@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title><%= t("landings.meta.title") %></title>
+    <link rel="canonical" href="<%= new_user_registration_url + "?landing=" +  params[:landing] %>">
     <% provide :meta_description, t("landings.meta.description") %>
     <%= render "shared/social_media_meta_tags",
             social_url: new_user_registration_url,

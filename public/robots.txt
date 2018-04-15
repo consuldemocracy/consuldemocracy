@@ -55,3 +55,8 @@ Allow: /*?*search=Usera
 Allow: /*?*search=Vic%C3%A1lvaro
 Allow: /*?*search=Villa+de+Vallecas
 Allow: /*?*search=Villaverde
+
+#Allow landings
+
+Allow: /users/sign_in?landing=*
+Allow: /users/sign_up?landing=*
