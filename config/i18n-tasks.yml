@@ -208,6 +208,7 @@ ignore_unused:
   - layouts.header.open_city_title
   - admin.stats.polls.current
   - admin.stats.polls.expired
+  - landings.cambia_tu_ciudad.*
 ####
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:
