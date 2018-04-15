@@ -57,4 +57,8 @@ module ApplicationHelper
   def kaminari_path(url)
     "#{root_url.chomp("\/")}#{url}"
   end
+
+  def css_for_landing
+    "landing-" + params[:landing] if params[:landing].present?
+  end
 end

@@ -33,6 +33,12 @@ feature 'Users' do
         expect(page).to have_content error_message
       end
 
+      scenario 'Sign up on Landing' do
+        visit new_user_registration_path(landing: "change-your-city")
+
+        expect(page).to have_css("body.landing-change-your-city")
+      end
+
     end
 
     context 'Sign in' do
