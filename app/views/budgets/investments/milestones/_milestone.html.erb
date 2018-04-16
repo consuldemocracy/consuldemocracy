@@ -10,18 +10,13 @@
       </span>
     <% end %>
 
-    <% if milestone.image.present? %>
-      <%= image_tag(milestone.image_url(:large),
-                   { id: "image_#{milestone.id}",
-                     alt: milestone.image.title,
-                     class: "margin" }) %>
-    <% end %>
+    <%= image_tag(milestone.image_url(:large), { id: "image_#{milestone.id}", alt: milestone.image.title, class: "margin" }) if milestone.image.present? %>
 
-    <p>
-      <% globalize(neutral_locale(locale)) do %>
+    <% globalize(neutral_locale(locale)) do %>
+      <p>
         <%= text_with_links milestone.description %>
-      <% end %>
-    </p>
+      </p>
+    <% end %>
 
     <% if milestone.documents.present? %>
       <div class="document-link text-center">

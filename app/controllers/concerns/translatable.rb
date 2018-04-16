@@ -8,9 +8,8 @@ module Translatable
 
   private
 
-    def translation_params
-      Budget::Investment::Milestone.globalize_attribute_names.
-      select { |k, v| params[:budget_investment_milestone].include?(k.to_sym) && params[:budget_investment_milestone][k].present? }
+    def translation_params(params)
+      resource_model.globalize_attribute_names.select { |k, v| params.include?(k.to_sym) && params[k].present? }
     end
 
     def set_translation_locale
@@ -18,12 +17,11 @@ module Translatable
     end
 
     def delete_translations
-      locales = Budget::Investment::Milestone.globalize_locales.
+      locales = resource_model.globalize_locales.
       select { |k, v| params[:delete_translations].include?(k.to_sym) && params[:delete_translations][k] == "1" }
-      milestone = Budget::Investment::Milestone.find(params[:id])
       locales.each do |l|
         Globalize.with_locale(l) do
-          milestone.translation.destroy
+          resource.translation.destroy
         end
       end
     end

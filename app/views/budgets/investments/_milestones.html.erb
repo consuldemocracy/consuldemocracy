@@ -9,41 +9,7 @@
       <section class="timeline">
         <ul class="no-bullet">
           <% @investment.milestones.order_by_publication_date.each do |milestone| %>
-            <li>
-              <div class="milestone-content">
-                <% if milestone.publication_date.present? %>
-                  <span class="milestone-date">
-                    <strong>
-                      <%= t("budgets.investments.show.milestone_publication_date",
-                                publication_date: l(milestone.publication_date.to_date)) %>
-                    </strong>
-                  </span>
-                <% end %>
-                <%= image_tag(milestone.image_url(:large),
-                             { alt: milestone.image.title.unicode_normalize,
-                               class: "margin",
-                               id: "image_#{milestone.id}" }) if milestone.image.present? %>
-                <p>
-                  <% globalize(neutral_locale(locale)) do %>
-                    <%= text_with_links milestone.description %>
-                  <% end %>
-                </p>
-                <% if milestone.documents.present? %>
-                  <div class="document-link text-center">
-                    <p>
-                      <span class="icon-document"></span>&nbsp;
-                      <strong><%= t("shared.documentation") %></strong>
-                    </p>
-                    <% milestone.documents.each do |document| %>
-                      <%= link_to document.title,
-                              document.attachment.url,
-                              target: "_blank",
-                              rel: "nofollow" %><br>
-                    <% end %>
-                  </div>
-                <% end %>
-              </div>
-            </li>
+            <%= render 'budgets/investments/milestones/milestone', milestone: milestone %>
           <% end %>
         </ul>
       </section>
