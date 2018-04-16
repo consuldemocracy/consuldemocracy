@@ -77,7 +77,7 @@ feature 'Legislation' do
       choose("I don't know")
       click_button "Submit answer"
 
-      within(:css, "label.active") do
+      within(:css, "label.is-active") do
         expect(page).to have_content("I don't know")
         expect(page).not_to have_content("Yes")
         expect(page).not_to have_content("No")
