@@ -22,14 +22,11 @@ App.Globalize =
     element.addClass('highlight');
 
   remove_language: (locale) ->
-    $(".js-globalize-attribute[data-locale=" + locale + "]").val('')
-    $(".js-globalize-attribute[data-locale=" + locale + "]").hide()
+    $(".js-globalize-attribute[data-locale=" + locale + "]").val('').hide()
     $(".js-globalize-locale-link[data-locale=" + locale + "]").hide()
-    $("#delete-" + locale).hide()
     next = $(".js-globalize-locale-link:visible").first()
     App.Globalize.highlight_locale(next)
-    $(".js-globalize-attribute[data-locale=" + next.data("locale") + "]").show()
-    $("#delete-" + next.data("locale")).show()
+    App.Globalize.display_translations(next.data("locale"))
     $("#delete_translations_" + locale).val(1)
 
   initialize: ->

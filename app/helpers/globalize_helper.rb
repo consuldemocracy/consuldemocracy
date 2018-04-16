@@ -1,9 +1,5 @@
 module GlobalizeHelper
 
-  def globalize_locale
-    params[:globalize_locale] || I18n.locale
-  end
-
   def options_for_locale_select
     options_for_select(locale_options, nil)
   end
@@ -15,27 +11,19 @@ module GlobalizeHelper
   end
 
   def display_translation?(locale)
-    neutral_locale(I18n.locale) == neutral_locale(locale) ? "" : "display: none"
+    same_locale?(neutral_locale(I18n.locale), neutral_locale(locale)) ? "" : "display: none"
   end
 
   def css_to_display_translation?(resource, locale)
     resource.translated_locales.include?(neutral_locale(locale)) || locale == I18n.locale ? "" : "display: none"
   end
 
-  def disable_translation?(locale)
-    locale == "en" ? "" : "disabled"
-  end
-
-  def css_for_globalize_locale(locale)
-    globalize_locale == locale ? "highlight" : ""
-  end
-
   def highlight_current?(locale)
-    I18n.locale == locale ? 'highlight' : ''
+    same_locale?(I18n.locale, locale) ? 'highlight' : ''
   end
 
   def show_delete?(locale)
-    I18n.locale == locale ? '' : 'display: none'
+    display_translation?(locale)
   end
 
   def neutral_locale(locale)
@@ -46,6 +34,10 @@ module GlobalizeHelper
     Globalize.with_locale(locale) do
       yield
     end
+  end
+
+  def same_locale?(locale1, locale2)
+    locale1 == locale2
   end
 
 end
