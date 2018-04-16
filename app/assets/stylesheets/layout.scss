@@ -413,6 +413,11 @@ a {
   text-transform: uppercase;
 }
 
+figure img {
+  height: 100%;
+  width: 100%;
+}
+
 // 02. Header
 // ----------
 
@@ -503,6 +508,7 @@ header {
     }
 
     .button {
+      background: none;
       text-align: left;
 
       @include breakpoint(medium) {
@@ -539,6 +545,18 @@ header {
       a {
         color: $text;
       }
+    }
+  }
+}
+
+.menu-icon {
+
+  &.dark {
+
+    &:hover::after,
+    &::after {
+      background: #fff;
+      box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
     }
   }
 }
