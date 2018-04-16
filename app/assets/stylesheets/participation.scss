@@ -1086,7 +1086,7 @@
     }
   }
 
-  .active {
+  .is-active {
     color: $brand;
 
     &::after {
@@ -1255,7 +1255,8 @@
     }
 
     .callout {
-      &.primary a {
+
+      &.primary a {
         color: $link;
       }
     }
@@ -1542,7 +1543,7 @@
   padding: $line-height / 4;
 }
 
-.select-district .active a {
+.select-district .is-active a {
   background: #f9f9f9;
   border-radius: rem-calc(3);
   color: $budget;
@@ -1635,7 +1636,7 @@
       z-index: 99;
     }
 
-    &.active {
+    &.is-active {
 
       h3 {
         background: $budget;

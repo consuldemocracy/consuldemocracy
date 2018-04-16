@@ -1316,7 +1316,7 @@ table {
   background: $budget;
 }
 
-.forum.active {
+.forum.is-active {
   color: $check;
   font-weight: bold;
 
@@ -1764,7 +1764,7 @@ tr th {
       padding: 0;
     }
 
-    &.active {
+    &.is-active {
       font-weight: bold;
 
       &::after {
@@ -2284,7 +2284,7 @@ ul {
   }
 }
 
-.select-district .active a {
+.select-district .is-active a {
   background: #f9f9f9;
   border-radius: rem-calc(3);
   color: $budget;
@@ -2670,7 +2670,7 @@ ul {
         border-top: 0;
       }
 
-      &.active {
+      &.is-active {
         background: $campaign-yellow;
 
         @include breakpoint(medium) {
@@ -2804,7 +2804,7 @@ ul {
 
 .budget-info {
 
-  .submenu .active {
+  .submenu .is-active {
     border-bottom: 2px solid #000;
     color: #000;
   }
@@ -2826,7 +2826,7 @@ ul {
   }
 }
 
-.budget-timeline .phase.active {
+.budget-timeline .phase.is-active {
 
   h3 {
     background: #000;
@@ -2896,7 +2896,7 @@ ul {
   }
 }
 
-.select-district .active a {
+.select-district .is-active a {
   background: $budget;
   color: $text;
 }
@@ -3308,7 +3308,7 @@ p {
     text-align: center;
     width: rem-calc(60);
 
-    &.active {
+    &.is-active {
       background: #003df6;
       color: #fff;
     }
@@ -3339,9 +3339,7 @@ h3 {
 
 .figure-card {
   display: flex;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
+  margin: 0 0 $line-height;
   position: relative;
 
   &.pdf::after {

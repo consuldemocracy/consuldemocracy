@@ -144,7 +144,7 @@ feature 'Spending proposals' do
 
       visit spending_proposals_path
       click_link 'highest rated'
-      expect(page).to have_selector('a.active', text: 'highest rated')
+      expect(page).to have_selector('a.is-active', text: 'highest rated')
 
       within '#investment-projects' do
         expect('Best proposal').to appear_before('Medium proposal')
@@ -355,7 +355,7 @@ feature 'Spending proposals' do
       visit spending_proposals_path
 
       click_link 'by price'
-      expect(page).to have_selector('a.active', text: 'by price')
+      expect(page).to have_selector('a.is-active', text: 'by price')
 
       within '#investment-projects' do
         expect('Build a skyscraper').to appear_before('Build a nice house')
