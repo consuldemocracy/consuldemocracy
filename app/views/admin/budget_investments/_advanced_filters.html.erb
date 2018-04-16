@@ -1,6 +1,7 @@
 <%= link_to "#advanced_filters_content",
             data: {toggle: "advanced_filters"},
-            class: "advanced-filters float-right clear" do %>
+            class: "advanced-filters float-right clear",
+            "data-turbolinks" => false do %>
   <%= t("admin.budget_investments.index.advanced_filters") %>
 <% end %>
 
