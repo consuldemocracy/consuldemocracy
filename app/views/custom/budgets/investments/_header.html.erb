@@ -21,9 +21,11 @@
           <% if cannot? :show, @ballot %>
             <h2><%= @heading.name %> <%= @budget.formatted_heading_price(@heading) %></h2>
           <% end %>
+
           <% if @heading.group.name == 'Districtes' %>
-            <%= link_to t('budgets.investments.index.link_lista_seleccionadas'), "#" %>
+            <%= link_to t('budgets.investments.index.link_lista_seleccionadas'), "/system/documentos/2018/Acta_districte_#{@heading.name.upcase}.pdf" %>
           <% end %>
+
         </div>
         <div id="columna_2" class="small-12 large-3 info padding column">
           <p>

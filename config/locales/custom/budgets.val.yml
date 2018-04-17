@@ -13,7 +13,7 @@ val:
       investment:
         title: Proposta d'inversió
         already_added: Ja has afegit aquesta proposta
-        already_supported: Ja has avalat aquesta proposta. Comparteixla!
+        already_supported: Ja has avalat aquesta proposta.
         support_title: Avalar aquesta proposta
         confirm_group: "Sols pots avalar pressupostos en un districte. Si continues no podras canviar la teua decisió. Estas segur?"
         supports:
