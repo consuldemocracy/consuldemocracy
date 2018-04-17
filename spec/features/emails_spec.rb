@@ -35,7 +35,7 @@ feature 'Emails' do
       expect(email).to have_subject('Someone has commented on your citizen proposal')
       expect(email).to deliver_to(proposal.author)
       expect(email).to have_body_text(proposal_path(proposal))
-      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
@@ -62,7 +62,7 @@ feature 'Emails' do
       expect(email).to have_subject('Someone has commented on your debate')
       expect(email).to deliver_to(debate.author)
       expect(email).to have_body_text(debate_path(debate))
-      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
@@ -89,7 +89,7 @@ feature 'Emails' do
       expect(email).to have_subject('Someone has commented on your investment')
       expect(email).to deliver_to(investment.author)
       expect(email).to have_body_text(budget_investment_path(investment, budget_id: investment.budget_id))
-      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
@@ -117,7 +117,7 @@ feature 'Emails' do
       expect(email).to have_subject('Someone has commented on your topic')
       expect(email).to deliver_to(topic.author)
       expect(email).to have_body_text(community_topic_path(topic, community_id: topic.community_id))
-      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
@@ -144,7 +144,7 @@ feature 'Emails' do
       expect(email).to have_subject('Someone has commented on your poll')
       expect(email).to deliver_to(poll.author)
       expect(email).to have_body_text(poll_path(poll))
-      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
@@ -171,7 +171,7 @@ feature 'Emails' do
       expect(email).to deliver_to(user)
       expect(email).not_to have_body_text(debate_path(Comment.first.commentable))
       expect(email).to have_body_text(comment_path(Comment.last))
-      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
@@ -477,7 +477,7 @@ feature 'Emails' do
       expect(email).to deliver_to(user1)
       expect(email).not_to have_body_text(poll_path(poll))
       expect(email).to have_body_text(comment_path(Comment.last))
-      expect(email).to have_body_text(I18n.t("mailers.config.manage_email_subscriptions"))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
