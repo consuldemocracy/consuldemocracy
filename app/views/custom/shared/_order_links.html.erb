@@ -1,7 +1,7 @@
 <ul class="no-bullet submenu">
   <% @valid_orders.each do |order| %>
     <li class="inline-block">
-      <%= link_to current_path_with_query_params(order: order, filter: 'unselected', page: 1), class: (order == params[:order] && params[:filter].blank?) ? 'active' : '' do %>
+      <%= link_to current_path_with_query_params(order: order, filter: 'unselected_undecided', page: 1), class: (order == params[:order] && params[:filter] == 'unselected_undecided') ? 'active' : '' do %>
         <%= content_tag(order == @current_order ? :h2 : :span) do %>
           <%= t("#{i18n_namespace}.orders.#{order}") %>
         <% end %>
@@ -10,7 +10,7 @@
   <% end %>
   <% if @heading.group.name == 'Districtes' %>
     <li class="inline-block">
-      <%= link_to current_path_with_query_params(filter: 'selected', page: 1), class: params[:filter] == 'selected' ? 'active' : '' do %>
+      <%= link_to current_path_with_query_params(filter: 'selected_undecided', page: 1), class: params[:filter] == 'selected_undecided' ? 'active' : '' do %>
         <%= content_tag(true ? :h2 : :span) do %>
           <%= t("#{i18n_namespace}.lista_seleccionadas") %>
         <% end %>

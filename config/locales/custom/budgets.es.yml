@@ -9,7 +9,7 @@ es:
           create: Crear propuesta
           quota_exceeded: Ya ha hecho todas las propuestas permitidas para esta campaña
         by_heading: 'Propuestas de inversión con ámbito: %{heading}'
-        lista_seleccionadas: seleccionadas por las juntas de distrito
+        lista_seleccionadas: Seleccionadas por las juntas de distrito
         link_lista_seleccionadas: Consulta aquí las propuestas priorizadas de este distrito que pasan directamente a la fase de validación y estudio de viabilidad
       investment:
         title: Propuesta de inversión

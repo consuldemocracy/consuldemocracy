@@ -104,7 +104,7 @@ es:
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables
         orders:
-          random: Aleatorios
+          random: Aleatorias
           confidence_score: Mejor valorados
           price: Por coste
       show:
