@@ -53,12 +53,13 @@
     </div>
     <aside class="small-12 medium-3 column">
       <% if investment.should_show_aside? %>
-        <%# if investment.selected? %>
+        <% if investment.selected? %>
+            <div class="supports js-participation">
+              <%= t("budgets.investments.investment.seleccionada_por_junta") %>
+            </div>
 
 
-        <%# end %>
-
-        <% if investment.should_show_votes? %>
+        <% elsif investment.should_show_votes? %>
           <div class="sidebar-divider"></div>
           <h2><%= t("budgets.investments.show.supports") %></h2>
           <div class="text-center">
