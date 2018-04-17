@@ -288,7 +288,7 @@ a {
       color: $text-medium;
       padding: 0;
 
-      &.active {
+      &.is-active {
         font-weight: bold;
         color: $brand;
       }
@@ -298,7 +298,7 @@ a {
       font-size: $base-font-size;
     }
 
-    &.active {
+    &.is-active {
       border-bottom: 2px solid $brand;
       color: $brand;
     }
@@ -629,7 +629,7 @@ header {
       }
     }
 
-    &.active {
+    &.is-active {
       color: #fff;
 
       @include breakpoint(medium) {
@@ -676,7 +676,7 @@ header {
 
 .top-bar-right {
 
-  .active {
+  .is-active {
     font-weight: bold;
     text-decoration: underline;
   }
@@ -704,7 +704,7 @@ header {
     }
   }
 
-  .active {
+  .is-active {
     border-bottom: 2px solid $brand;
     color: $brand;
 
@@ -808,7 +808,7 @@ footer {
   color: $link;
 
   &:hover,
-  &.active {
+  &.is-active {
     background: $brand;
     color: #fff;
   }
@@ -1822,7 +1822,7 @@ table {
       }
     }
 
-    &.active {
+    &.is-active {
       background: #43ac6a;
       color: #fff;
     }

@@ -580,7 +580,7 @@ feature 'Budget Investments' do
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link 'highest rated'
-      expect(page).to have_selector('a.active', text: 'highest rated')
+      expect(page).to have_selector('a.is-active', text: 'highest rated')
 
       within '#budget-investments' do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -1276,7 +1276,7 @@ feature 'Budget Investments' do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       click_link 'by price'
-      expect(page).to have_selector('a.active', text: 'by price')
+      expect(page).to have_selector('a.is-active', text: 'by price')
 
       within '#budget-investments' do
         expect(high_investment.title).to appear_before(mid_investment.title)

@@ -199,7 +199,7 @@ $sidebar-active: #f4fcd0;
       margin-bottom: $line-height / 3;
     }
 
-    .active {
+    .is-active {
       border-bottom: 2px solid $admin-color;
       color: $admin-color;
       font-weight: bold;
@@ -334,7 +334,7 @@ $sidebar-active: #f4fcd0;
       padding-left: $line-height / 2;
     }
 
-    &.active a {
+    &.is-active a {
       background: $sidebar-hover;
       border-left: 2px solid $sidebar-active;
       font-weight: bold;
@@ -384,7 +384,7 @@ $sidebar-active: #f4fcd0;
       font-weight: normal;
     }
 
-    .active {
+    .is-active {
       border-bottom: 0;
     }
   }
@@ -600,7 +600,7 @@ $sidebar-active: #f4fcd0;
   a {
     display: block;
 
-    &.active {
+    &.is-active {
       color: $brand;
       font-weight: bold;
       text-decoration: underline;
@@ -694,7 +694,7 @@ table {
 }
 
 .legislation-admin {
-  .menu .active > a {
+  .menu .is-active > a {
     background: none;
   }
 }

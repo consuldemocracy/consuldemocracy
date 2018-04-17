@@ -56,7 +56,7 @@
       <%= link_to t("layouts.header.help"),
                     help_path,
                     accesskey: "5",
-                    class: ("active" if current_page?(help_path)),
+                    class: ("is-active" if current_page?(help_path)),
                     title: t("shared.go_to_page") + t("layouts.header.help") %>
     </li>
   </ul>
