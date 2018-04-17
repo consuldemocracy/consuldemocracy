@@ -48,8 +48,8 @@ val:
       all_phases: Fases de pressupostos participatius
       map: Propostes de pressupostos ubicades geogràficament
       investment_proyects: Llista de totes les propostes d'inversió
-      unfeasible_investment_proyects: Llista de projectes d'inversió inviables
-      not_selected_investment_proyects: Llista de tots els projectes d'inversió no seleccionats per a votació
+      unfeasible_investment_proyects: Llista de propostes inviables
+      not_selected_investment_proyects: Llista de totes les propostes no seleccionades per a votació
       finished_budgets: Pressupostos participatius finalitzats
       see_results: Vore resultats
       section_footer:

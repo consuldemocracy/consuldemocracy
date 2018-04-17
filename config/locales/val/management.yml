@@ -50,9 +50,9 @@ val:
       create_spending_proposal: Crear proposta d'inversió
       print_spending_proposals: Imprimir propostes d'inversió
       support_spending_proposals: Avalar propostes d'inversió
-      create_budget_investment: Crear projectes d'inversió
-      print_budget_investments: Imprimir Projectes d'Inversió
-      support_budget_investments: Avalar Projectes d'Inversió
+      create_budget_investment: Crear propostes
+      print_budget_investments: Imprimir propostes
+      support_budget_investments: Avalar propostes
       users: Usuaris
       edit_user_accounts: Editar compte d'usuari
       user_invites: Invitacions per a usuaris

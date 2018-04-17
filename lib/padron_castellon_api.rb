@@ -19,7 +19,7 @@ class PadronCastellonApi
     number_variants << document_number
     number_variants.each do |nv|
       variants << { dni: nv, caracterControl: letra }
-      variants << { dni: nv, caracterControl: ' ' }
+      variants << { dni: nv, caracterControl: '' }
     end
     variants
   end

@@ -130,7 +130,7 @@ val:
           winners: Guanyadores
           all: Totes
         download_current_selection: "Baixar la selecció actual"
-        no_budget_investments: "No hi ha projectes d'inversió."
+        no_budget_investments: "No hi ha propostes."
         title: Propostes d'inversió
         assigned_admin: Administrador assignat
         no_admin_assigned: Sense admin assignat
