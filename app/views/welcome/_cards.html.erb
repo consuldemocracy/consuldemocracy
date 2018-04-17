@@ -15,7 +15,7 @@
   </div>
 
   <div class="small-12 medium-6 column margin-bottom">
-    <%= link_to new_user_registration_path, title: t("welcome.decide.link") do %>
+    <%= link_to new_user_registration_path(landing: "cambia-tu-ciudad"), title: t("welcome.decide.link") do %>
       <figure class="figure-card">
         <%= image_tag "welcome/decide.jpg", alt: t("welcome.decide.alt") %>
         <figcaption>
