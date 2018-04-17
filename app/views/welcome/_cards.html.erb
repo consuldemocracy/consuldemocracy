@@ -15,16 +15,16 @@
   </div>
 
   <div class="small-12 medium-6 column margin-bottom">
-    <%= link_to legislation_process_path(id: "43"), title: t("welcome.observatory.link") do %>
+    <%= link_to new_user_registration_path, title: t("welcome.decide.link") do %>
       <figure class="figure-card">
-        <%= image_tag "welcome/observatory.jpg", alt: t("welcome.observatory.alt") %>
+        <%= image_tag "welcome/decide.jpg", alt: t("welcome.decide.alt") %>
         <figcaption>
-          <span><%= t("welcome.observatory.label") %></span><br>
-          <h3><%= t("welcome.observatory.title") %></h3>
+          <span><%= t("welcome.decide.label") %></span><br>
+          <h3><%= t("welcome.decide.title") %></h3>
         </figcaption>
       </figure>
-      <p class="description"><%= t("welcome.observatory.text") %></p>
-      <p><%= t("welcome.observatory.link") %></p>
+      <p class="description"><%= t("welcome.decide.text") %></p>
+      <p><%= t("welcome.decide.link") %></p>
     <% end %>
   </div>
 </div>

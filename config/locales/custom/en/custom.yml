@@ -275,12 +275,12 @@ en:
       text: "The municipal civil servants review the projects that have received from more to less support."
       link: "Read more"
       alt: "Municipal civil servants reviewing projects"
-    observatory:
-      label: "Public consultation"
-      title: "A new body of participation"
-      text: "Contribute your ideas to the regulation of the City Observatory, a body of face-to-face participation."
-      link: "Participate in the consultation"
-      alt: "Working groups in front of the City Hall"
+    decide:
+      label: "Start participating"
+      title: "Decide and change your city"
+      text: "Sign up to the citizen participation platform of Madrid City Council and make Madrid more yours."
+      link: "Sign up"
+      alt: "Image of the new Decide Madrid campaign"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
