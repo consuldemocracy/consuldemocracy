@@ -21,7 +21,7 @@ val:
           one: 1 aval
           other: "%{count} avals"
         give_support: Avalar
-        alert_limit_votes: Sols pots avalar 3 propostes en total. Segur que vols continuar?
+        alert_limit_votes: Sols et queden %{votes} avals. Segur que vols continuar?
         seleccionada_por_junta: Esta proposta ja s'ha avalat per la junta de districte, pasa directament a la fase de validació i estudi.
     phase:
       drafting: Esborrany (No visible per al públic)

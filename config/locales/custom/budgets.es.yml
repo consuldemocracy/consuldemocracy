@@ -20,7 +20,7 @@ es:
           one: 1 aval
           other: "%{count} avales"
         give_support: Avalar
-        alert_limit_votes: Solo puedes avalar 3 propuestas en total. ¿Seguro que quieres continuar?
+        alert_limit_votes: Te quedan %{votes} avales. ¿Seguro que quieres continuar?
         seleccionada_por_junta: Esta propuesta ya se ha avalado por la junta de distrito, pasa directamente a la fase de validación y estudio.
     ballots:
       reasons_for_not_balloting:

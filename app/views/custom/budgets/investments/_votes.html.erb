@@ -14,12 +14,13 @@
         <%= t("budgets.investments.investment.already_supported") %>
       </div>
     <% elsif investment.should_show_votes? %>
+      <% votes = current_user && current_user.votes.for_budget_investments(investment.budget.investment_ids).size %>
       <%= link_to vote_url,
           class: "button button-support small expanded",
           title: t('budgets.investments.investment.support_title'),
           method: "post",
-          remote: (current_user && current_user.votes.for_budget_investments(investment.budget.investment_ids).empty? ? true : false),
-          data:   (current_user && current_user.votes.for_budget_investments(investment.budget.investment_ids).empty? ? { confirm: t('budgets.investments.investment.alert_limit_votes')} : nil ),
+          remote: (votes && votes < 3 ? true : false),
+          data:   (votes && votes < 3 ? { confirm: t('budgets.investments.investment.alert_limit_votes', votes: 3 - votes)} : nil ),
           "aria-hidden" => css_for_aria_hidden(reason) do %>
         <% t("budgets.investments.investment.give_support") %>
       <% end %>
