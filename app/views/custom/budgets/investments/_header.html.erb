@@ -23,7 +23,7 @@
           <% end %>
 
           <% if @heading.group.name == 'Districtes' %>
-            <%= link_to t('budgets.investments.index.link_lista_seleccionadas'), "/system/documentos/2018/Acta_districte_#{@heading.name.upcase}.pdf" %>
+            <%= link_to t('budgets.investments.index.link_lista_seleccionadas'), "/system/documentos/2018/Acta_districte_#{@heading.name.upcase}.pdf", target: '_blank' %>
           <% end %>
 
         </div>
