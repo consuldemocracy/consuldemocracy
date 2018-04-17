@@ -103,9 +103,9 @@ val:
           feasible: Veure les propostes d'inversió viables
           unfeasible: Veure les propostes d'inversió inviables
         orders:
-          random: aleatòries
-          confidence_score: millor valorades
-          price: per cost
+          random: Aleatòries
+          confidence_score: Millor valorades
+          price: Per cost
       show:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost

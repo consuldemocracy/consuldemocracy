@@ -34,10 +34,6 @@
           </h2>
         <% end %>
       </div>
-      <% if @heading.group.name == 'Districtes' %>
-        <%= link_to t('budgets.investments.index.link_lista_seleccionadas'), "#" %>
-        <hr>
-      <% end %>
 
       <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless params[:unfeasible].present? %>
 

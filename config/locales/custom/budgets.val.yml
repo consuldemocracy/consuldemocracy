@@ -8,7 +8,7 @@ val:
         sidebar:
           create: Crear proposta
           quota_exceeded: Ja ha fet totes les propostes permeses en aquesta campanya
-        lista_seleccionadas: seleccionades per les juntes de districte
+        lista_seleccionadas: Seleccionades per les juntes de districte
         link_lista_seleccionadas: Consulta aquí les propostes prioritzades d'aquest districte que passen directament a la fase de validació i estudi de viabilitat
       investment:
         title: Proposta d'inversió
