@@ -20,7 +20,7 @@ module Budgets
 
     has_orders %w{most_voted newest oldest}, only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
-    has_filters %w{not_unfeasible feasible unfeasible unselected selected}, only: [:index, :show, :suggest]
+    has_filters %w{not_unfeasible feasible unfeasible unselected selected unselected}, only: [:index, :show, :suggest]
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
