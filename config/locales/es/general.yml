@@ -101,10 +101,10 @@ es:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"
       orders:
-        confidence_score: Mejor valorados
-        created_at: Nuevos
-        hot_score: Más activos hoy
-        most_commented: Más comentados
+        confidence_score: Mejor valoradas
+        created_at: Nuevas
+        hot_score: Más activas hoy
+        most_commented: Más comentadas
         relevance: Más relevantes
         recommendations: Recomendaciones
       recommendations:
