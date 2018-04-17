@@ -275,12 +275,12 @@ es:
       text: "Los técnicos municipales revisan los proyectos que han recibido de más a menos apoyos."
       link: "Leer más"
       alt: "Técnicos municipales revisando proyectos"
-    observatory:
-      label: "Consulta pública"
-      title: "Un nuevo órgano de participación"
-      text: "Aporta ideas al reglamento del Observatorio de la Ciudad, un órgano de participación presencial."
-      link: "Participar en la consulta"
-      alt: "Grupos de trabajo frente al Ayuntamiento"
+    decide:
+      label: "Empieza a participar"
+      title: "Decídete y cambia tu ciudad"
+      text: "Apúntate a la plataforma de participación ciudadana del Ayuntamiento y haz que Madrid sea más tuyo."
+      link: "Regístrate"
+      alt: "Imagen de la nueva campaña de Decide Madrid"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
