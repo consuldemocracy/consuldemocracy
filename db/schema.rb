@@ -15,8 +15,6 @@ ActiveRecord::Schema.define(version: 20180320104823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "unaccent"
-  enable_extension "pg_trgm"
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -280,10 +278,10 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.string   "visit_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                             default: 0
-    t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
     t.integer  "cached_votes_up",                         default: 0
     t.integer  "cached_votes_down",                       default: 0
+    t.datetime "ignored_flag_at"
     t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",            default: 0
@@ -302,6 +300,7 @@ ActiveRecord::Schema.define(version: 20180320104823) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
+  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
   add_index "debates", ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
@@ -591,10 +590,10 @@ ActiveRecord::Schema.define(version: 20180320104823) do
   create_table "local_census_records", force: :cascade do |t|
     t.string   "document_number", null: false
     t.string   "document_type",   null: false
-    t.date     "date_of_birth",   null: false
-    t.string   "postal_code",     null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.date     "date_of_birth"
+    t.string   "postal_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "locks", force: :cascade do |t|
@@ -884,6 +883,7 @@ ActiveRecord::Schema.define(version: 20180320104823) do
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["community_id"], name: "index_proposals_on_community_id", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
@@ -1044,6 +1044,16 @@ ActiveRecord::Schema.define(version: 20180320104823) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
   add_index "tags", ["spending_proposals_count"], name: "index_tags_on_spending_proposals_count", using: :btree
+
+  create_table "test", id: false, force: :cascade do |t|
+    t.integer  "id",              null: false
+    t.string   "document_number", null: false
+    t.string   "document_type",   null: false
+    t.date     "date_of_birth",   null: false
+    t.string   "postal_code",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at"
+  end
 
   create_table "topics", force: :cascade do |t|
     t.string   "title",                      null: false
