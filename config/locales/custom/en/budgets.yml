@@ -12,6 +12,9 @@ en:
       index:
         unfeasible_text: "The investments must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All investments don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
         unfeasible_text_definitions: see definitions here
+      form:
+        faq: "What can you propose?"
+        faq_link: "See all information of participatory budgets"
     stats:
       title: Participation stats
       link: Stats
@@ -46,6 +49,6 @@ en:
       heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."
   votes:
     budget_investments:
-      different_heading_assigned: 
+      different_heading_assigned:
         one: "You can only support investment projects in %{count} district"
         other: "You can only support investment projects in %{count} districts"
