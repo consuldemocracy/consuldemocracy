@@ -111,7 +111,7 @@ module Abilities
         investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
 
         if user.votes.for_budget_investments(investment_ids).size < 3
-          can :vote,   Budget::Investment, budget: { phase: "selecting" }
+          can :vote, Budget::Investment, budget: { phase: "selecting" }
         else
           cannot :vote, Budget::Investment
         end
