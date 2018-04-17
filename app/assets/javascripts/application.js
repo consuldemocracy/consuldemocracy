@@ -78,7 +78,7 @@
 //= require send_newsletter_alert
 //= require managers
 
-var initialize_modules = function() {
+const initializeModules = function () {
   App.Comments.initialize();
   App.Users.initialize();
   App.Votes.initialize();
@@ -123,10 +123,8 @@ var initialize_modules = function() {
   App.Managers.initialize();
 };
 
-$(function(){
-  $(document).ready(initialize_modules);
-  $(document ).on('turbolinks:load', initialize_modules);
-  
-  $(document).on('page:load', initialize_modules);
-  $(document).on('ajax:complete', initialize_modules);
-});
+$(function () {
+  $(document).on('page:load', initializeModules)
+  $(document).on('ajax:complete', initializeModules)
+  $(document).on('turbolinks:load', initializeModules)
+})
