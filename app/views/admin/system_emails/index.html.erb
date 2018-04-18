@@ -9,17 +9,24 @@
     </tr>
   </thead>
   <tbody>
-  <% @system_emails.each do |system_email| %>
-    <tr id="<%= system_email %>" class="system_email">
+  <% @system_emails.each do |system_email_title, system_email_actions| %>
+    <tr id="<%= system_email_title %>" class="system_email">
       <td>
-        <%= t("admin.system_emails.#{system_email}.title") %>
+        <%= t("admin.system_emails.#{system_email_title}.title") %>
       </td>
       <td>
-        <%= t("admin.system_emails.#{system_email}.description") %>
+        <%= t("admin.system_emails.#{system_email_title}.description") %>
       </td>
       <td class="text-right">
-        <%= link_to t("admin.shared.view"), admin_system_email_view_path(system_email),
-                                            class: "button hollow" %>
+        <% if system_email_actions.include?('view') %>
+          <%= link_to t("admin.shared.view"), admin_system_email_view_path(system_email_title),
+                                              class: "button hollow" %>
+        <% end %>
+        <% if system_email_actions.include?('preview_pending') %>
+          <%= link_to t("admin.system_emails.preview_pending.action"),
+                      admin_system_email_preview_pending_path(system_email_title),
+                      class: "button" %>
+        <% end %>
       </td>
     </tr>
   <% end %>
