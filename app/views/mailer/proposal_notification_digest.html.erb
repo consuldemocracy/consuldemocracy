@@ -22,7 +22,7 @@
         <tr>
           <td style="padding-bottom: 20px; padding-left: 10px;">
             <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 20px;font-weight: bold;line-height: 24px; margin: 0;">
-              <%= link_to notification.notifiable.title, notification_url(notification), style: "color: #2895F1; text-decoration: none;" %>
+              <%= link_to notification.notifiable.title, proposal_url(notification.notifiable.proposal, anchor: "tab-notifications"), style: "color: #2895F1; text-decoration: none;" %>
             </p>
             <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; margin-top: 0; color: #cccccc;">
               <%= notification.notifiable.proposal.title %>&nbsp;&bull;&nbsp;
