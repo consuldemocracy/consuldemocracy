@@ -1,0 +1,33 @@
+<% if preview.proposal.present? %>
+  <div class="callout highlight">
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <strong><%= t("admin.shared.proposal") %></strong><br>
+        <%= link_to preview.proposal.title, proposal_url(preview.proposal) %>
+      </div>
+      <div class="small-12 medium-6 column">
+        <strong><%= t("admin.shared.title") %></strong><br>
+        <%= link_to preview.title, proposal_url(preview.proposal, anchor: "tab-notifications") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <strong><%= t("admin.shared.author") %></strong><br>
+        <%= preview.proposal.author&.username || '-' %>
+      </div>
+      <div class="small-12 medium-6 column">
+        <strong><%= t("admin.shared.created_at") %></strong><br>
+        <%= l(preview.created_at, format: :datetime) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <strong><%= t("admin.shared.content") %></strong>
+      <p class="help-text" id="phase-description-help-text">
+        <%= preview.body %>
+      </p>
+    </div>
+  </div>
+<% end %>
