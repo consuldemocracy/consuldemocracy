@@ -27,14 +27,16 @@ feature "System Emails" do
       proposal_notification_b = create(:proposal_notification, proposal: proposal_b,
                                                                title: 'Proposal B Title',
                                                                body: 'Proposal B Notification Body')
-      notification_a = create(:notification, notifiable: proposal_notification_a)
-      notification_b = create(:notification, notifiable: proposal_notification_b)
+      create(:notification, notifiable: proposal_notification_a)
+      create(:notification, notifiable: proposal_notification_b)
 
       visit admin_system_email_view_path('proposal_notification_digest')
 
       expect(page).to have_content('Proposal notifications in')
-      expect(page).to have_link('Proposal A Title', href: notification_url(notification_a))
-      expect(page).to have_link('Proposal B Title', href: notification_url(notification_b))
+      expect(page).to have_link('Proposal A Title', href: proposal_url(proposal_a,
+                                                    anchor: 'tab-notifications'))
+      expect(page).to have_link('Proposal B Title', href: proposal_url(proposal_b,
+                                                    anchor: 'tab-notifications'))
       expect(page).to have_content('Proposal A Notification Body')
       expect(page).to have_content('Proposal B Notification Body')
     end
