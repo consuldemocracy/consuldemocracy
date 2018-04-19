@@ -60,9 +60,9 @@ class Verification::Residence
   def geozone
     Geozone.where(census_code: district_code).first
   end
-
+    
   def district_code
-    Local_census_record.find_by(document_number: document_number).postal_code
+   #LocalCensusRecord.find_by(document_number: document_number).postal_code
   end
 
   def gender
@@ -73,13 +73,14 @@ class Verification::Residence
 
     def retrieve_census_data
       #@census_data = CensusCaller.new.call(document_number, date_of_birth)
+        #@census_data = CensusCaller.new.call(document_number, date_of_birth)
     end
 
     def residency_valid?
       #@census_data.exists? &&
         #@census_data.document_number == document_number &&
         #@census_data.date_of_birth == date_of_birth
-        Local_census_record.where(date_of_birth: date_of_birth, document_number: document_number).exists?
+        LocalCensusRecord.where(date_of_birth: date_of_birth, document_number: document_number).exists?
     end
 
     def clean_document_number
@@ -87,3 +88,4 @@ class Verification::Residence
     end
 
 end
+
