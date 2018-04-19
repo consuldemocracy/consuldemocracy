@@ -1,27 +1,40 @@
 <%= form_for [:admin, budget, group], html: {id: id, style: display_budget_goup_form(group), class: css_class}, remote: true do |f| %>
+  <div class="row expanded">
+    <div class="small-12 column">
+      <%= f.label :name, t("admin.budgets.form.group") %>
 
-  <%= f.label :name, t("admin.budgets.form.group") %>
+      <%= f.text_field :name,
+                        label: false,
+                        maxlength: 50,
+                        placeholder: t("admin.budgets.form.group"),
+                        class: "input-group-field" %>
+    </div>
+  </div>
+  <% if group.persisted? %>
+    <div class="row expanded">
+      <div class="small-12 medium-6 column">
+        <%= f.label :name, t("admin.budgets.form.max_supportable_headings") %>
 
-  <div class="input-group">
-    <%= f.text_field :name,
-                      label: false,
-                      maxlength: 50,
-                      placeholder: t("admin.budgets.form.group"),
-                      class: "input-group-field" %>
+        <%= f.select :max_supportable_headings,
+                     (1..group.headings.count),
+                     label: false,
+                     placeholder: t("admin.budgets.form.max_supportable_headings"),
+                     class: "input-group-field" %>
+      </div>
 
-    <% if group.persisted? %>
-      <div class="small-12 medium-6 large-4">
+      <div class="small-12 medium-6 column">
         <%= f.label :name, t("admin.budgets.form.max_votable_headings") %>
 
         <%= f.select :max_votable_headings,
                      (1..group.headings.count),
                      label: false,
-                     placeholder: t("admin.budgets.form.max_votable_headings"),
-                     class: "input-group-field" %>
+                     placeholder: t("admin.budgets.form.max_votable_headings") %>
       </div>
-    <% end %>
+    </div>
+  <% end %>
 
-    <div class="input-group-button">
+  <div class="row expanded">
+    <div class="small-12 column">
       <%= f.submit button_title, class: "button success" %>
     </div>
   </div>

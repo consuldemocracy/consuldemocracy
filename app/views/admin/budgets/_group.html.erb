@@ -4,23 +4,39 @@
       <th colspan="4" class="with-button">
         <%= content_tag(:span, group.name, class:"group-toggle-#{group.id}", id:"group-name-#{group.id}") %>
 
-        <%= content_tag(:span, (render 'admin/budgets/max_headings_label', current: group.max_votable_headings, max: group.headings.count, group: group if group.max_votable_headings), class:"max-headings-label group-toggle-#{group.id}", id:"max-heading-label-#{group.id}") %>
-
         <%= render 'admin/budgets/group_form', budget: @budget, group: group, id: "group-form-#{group.id}", button_title: t("admin.budgets.form.submit"), css_class: "group-toggle-#{group.id}" %>
         <%= link_to t("admin.budgets.form.edit_group"), "#", class: "button float-right js-toggle-link hollow", data: { "toggle-selector" => ".group-toggle-#{group.id}" } %>
         <%= link_to t("admin.budgets.form.add_heading"), "#", class: "button float-right js-toggle-link", data: { "toggle-selector" => "#group-#{group.id}-new-heading-form" } %>
       </th>
     </tr>
+    <% if headings.present? %>
+      <tr>
+        <th colspan="4">
+          <%= content_tag(:span, (render 'admin/budgets/max_supportable_headings_label',
+                          current: group.max_supportable_headings,
+                          max: group.headings.count, group: group if group.max_supportable_headings),
+                          class:"small group-toggle-#{group.id}",
+                          id:"max-supportable-heading-label-#{group.id}") %>
 
-  <% if headings.present? %>
-    <tr>
-      <th><%= t("admin.budgets.form.table_heading") %></th>
-      <th class="text-right"><%= t("admin.budgets.form.table_amount") %></th>
-      <th class="text-right"><%= t("admin.budgets.form.table_population") %></th>
-      <th><%= t("admin.actions.actions") %></th>
-    </tr>
-  <% end %>
-
+        </th>
+      </tr>
+      <tr>
+        <th colspan="4">
+          <%= content_tag(:span, (render 'admin/budgets/max_votable_headings_label',
+                          current: group.max_votable_headings,
+                          max: group.headings.count,
+                          group: group if group.max_votable_headings),
+                          class:"small group-toggle-#{group.id}",
+                          id:"max-votable-heading-label-#{group.id}") %>
+        </th>
+      </tr>
+      <tr>
+        <th><%= t("admin.budgets.form.table_heading") %></th>
+        <th class="text-right"><%= t("admin.budgets.form.table_amount") %></th>
+        <th class="text-right"><%= t("admin.budgets.form.table_population") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    <% end %>
   </thead>
   <tbody>
 
