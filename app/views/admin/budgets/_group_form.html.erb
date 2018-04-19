@@ -1,6 +1,5 @@
 <%= form_for [:admin, budget, group], html: {id: id, style: display_budget_goup_form(group), class: css_class}, remote: true do |f| %>
-
-  <div class="row">
+  <div class="row expanded">
     <div class="small-12 column">
       <%= f.label :name, t("admin.budgets.form.group") %>
 
@@ -11,8 +10,8 @@
                         class: "input-group-field" %>
     </div>
   </div>
-  <div class="row">
-    <% if group.persisted? %>
+  <% if group.persisted? %>
+    <div class="row expanded">
       <div class="small-12 medium-6 column">
         <%= f.label :name, t("admin.budgets.form.max_supportable_headings") %>
 
@@ -31,10 +30,10 @@
                      label: false,
                      placeholder: t("admin.budgets.form.max_votable_headings") %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
-  <div class="row">
+  <div class="row expanded">
     <div class="small-12 column">
       <%= f.submit button_title, class: "button success" %>
     </div>

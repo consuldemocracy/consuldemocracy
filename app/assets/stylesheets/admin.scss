@@ -646,16 +646,6 @@ $sidebar-active: #f4fcd0;
   font-weight: bold;
 }
 
-table {
-
-  .callout {
-    height: $line-height * 2;
-    line-height: $line-height * 2;
-    margin: 0;
-    padding: 0 $line-height / 2;
-  }
-}
-
 // 07. Legislation
 // --------------
 
@@ -1128,12 +1118,6 @@ table {
       content: '\76';
     }
   }
-}
-
-.max-headings-label {
-  color: $text-medium;
-  font-size: $small-font-size;
-  margin-left: $line-height / 2;
 }
 
 .current-of-max-headings {
