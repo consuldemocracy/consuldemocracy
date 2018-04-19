@@ -33,7 +33,7 @@ El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://gith
 
 Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler`, Node.js y PostgreSQL (9.4 o superior).
 
-```
+```bash
 git clone https://github.com/ayuntamientomadrid/consul.git
 cd consul
 bundle install
@@ -47,7 +47,7 @@ RAILS_ENV=test rake db:setup
 
 Para ejecutar la aplicación en local:
 
-```
+```bash
 bin/rails s
 ```
 
@@ -55,7 +55,7 @@ Prerequisitos para los tests: tener instalado ChromeDriver >= 2.33
 
 Para ejecutar los tests:
 
-```
+```bash
 bin/rspec
 ```
 
