@@ -5,7 +5,7 @@ class Verification::Residence
 
   attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service
 
-  #before_validation :retrieve_census_data
+  before_validation :retrieve_census_data
 
   validates :document_number, presence: true
   validates :document_type, presence: true
@@ -34,8 +34,7 @@ class Verification::Residence
                 geozone:               geozone,
                 date_of_birth:         date_of_birth.in_time_zone.to_datetime,
                 gender:                gender,
-                residence_verified_at: Time.current,
-                verified_at: Time.current)
+                residence_verified_at: Time.current)
   end
 
   def allowed_age
@@ -60,27 +59,25 @@ class Verification::Residence
   def geozone
     Geozone.where(census_code: district_code).first
   end
-    
+
   def district_code
-   #LocalCensusRecord.find_by(document_number: document_number).postal_code
+    @census_data.district_code
   end
 
   def gender
-    #@census_data.gender
+    @census_data.gender
   end
 
   private
 
     def retrieve_census_data
-      #@census_data = CensusCaller.new.call(document_number, date_of_birth)
-        #@census_data = CensusCaller.new.call(document_number, date_of_birth)
+      @census_data = CensusCaller.new.call(document_type, document_number)
     end
 
     def residency_valid?
-      #@census_data.exists? &&
-        #@census_data.document_number == document_number &&
-        #@census_data.date_of_birth == date_of_birth
-        LocalCensusRecord.where(date_of_birth: date_of_birth, document_number: document_number).exists?
+      @census_data.valid? &&
+        @census_data.postal_code == postal_code &&
+        @census_data.date_of_birth == date_of_birth
     end
 
     def clean_document_number
@@ -88,4 +85,3 @@ class Verification::Residence
     end
 
 end
-
