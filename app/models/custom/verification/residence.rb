@@ -28,14 +28,25 @@ class Verification::Residence
     return false unless valid?
 
     user.take_votes_if_erased_document(document_number, document_type)
+    
+    if LocalCensusRecord.exists?(document_number: document_number, date_of_birth: date_of_birth)
 
-    user.update(document_number:       document_number,
-                document_type:         document_type,
-                geozone:               geozone,
-                date_of_birth:         date_of_birth.in_time_zone.to_datetime,
-                gender:                gender,
-                residence_verified_at: Time.current,
-                verified_at: Time.current)
+        user.update(document_number:       document_number,
+                    document_type:         document_type,
+                    geozone:               geozone,
+                    date_of_birth:         date_of_birth.in_time_zone.to_datetime,
+                    gender:                gender,
+                    residence_verified_at: Time.current,
+                    verified_at: Time.current)
+        else
+            FailedCensusCall.create(
+            user: user,
+            document_number: document_number,
+            document_type: document_type,
+            date_of_birth: date_of_birth,
+            postal_code: postal_code
+            )
+    end
   end
 
   def allowed_age
