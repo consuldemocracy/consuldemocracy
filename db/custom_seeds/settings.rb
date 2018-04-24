@@ -48,8 +48,6 @@ section "Creating custom Settings" do
   #Setting.create(key: 'max_ratio_anon_votes_on_debates', value: '50')
   #Setting.create(key: 'max_votes_for_debate_edit', value: '1000')
   #Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
-  #Setting.create(key: 'proposal_code_prefix', value: 'MAD')
-  #Setting.create(key: 'votes_for_proposal_success', value: '100')
   #Setting.create(key: 'months_to_archive_proposals', value: '12')
   #Setting.create(key: 'comments_body_max_length', value: '1000')
 

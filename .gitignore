@@ -33,3 +33,4 @@
 
 public/sitemap.xml
 public/system/
+doc/custom/extract_db_insert_*.sql
