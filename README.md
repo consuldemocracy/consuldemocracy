@@ -62,6 +62,28 @@ cd consul
 bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
+```
+
+Puis 2 options :
+
+### Déployer avec import de la BDD originelle : 
+
+Récupérer une copie de la base de donnée à importer (dossier CDJ11_OSP) et la copier dans `doc/custom`.
+
+Personnaliser si nécessaire le script `/lib/custom/import_db.sh`, ligne 4 :
+
+  psql NOM_BASE_DESTINATION < doc/custom/NOM_FICHIER_A_IMPORTER.sql
+
+```bash
+chmod 755 lib/custom/import_db.sh #si fichier non executable
+./lib/custom/import_db.sh 
+```
+
+Le script peut renvoyer un message d'erreur en fin de parcours (`duplicate key` lors de la creation d'un utilisateur admin), qui logiquement n'empêche pas la bonne exécution de l'intégralité du script.
+
+### Déployer sans import de la BDD originelle : 
+
+```
 bin/rake db:create
 bin/rake db:migrate
 bin/rake db:seed
@@ -73,20 +95,6 @@ En production penser à bloquer l'accès aux comptes admin et verified.
 Certaines releases nécessitent des actions particulières suite à une montée de version.
 Ces actions sont documentées dans [les releases](https://github.com/consul/consul/releases).
 
-## Déploiement avec import 
-
-L'import comprend déjà les geozones et les settings de base. Les geozones ne sont donc pas à importer (provoque une erreur).
-
-Si une première version a déjà été déployée, il faut vider la base et la recréer vide pour effectuer l'import.
-
-```bash 
-bin/rake db:drop
-bin/rake db:create
-bin/rake db:migrate
-# suivant nom de la base sur l environnement a deployer
-psql consul < doc/custom/extract_db_insert_180326.sql
-bin/rake db:custom_seed
-```
 ## Configuration for development and test environments
 
 **NOTE**: For more detailed instructions check the [docs](https://github.com/consul/docs/tree/master/en/getting_started/prerequisites)
