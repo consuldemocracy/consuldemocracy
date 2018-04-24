@@ -7,7 +7,7 @@ class Debate < ActiveRecord::Base
       previous_vote_value = ::CastToBoolean.call(user.voted_as_when_voted_for(self))
       current_vote_value = ::CastToBoolean.call(vote_value)
       if previous_vote_value == current_vote_value
-        Debate.decrement_counter(:cached_anonymous_votes_total, id) if user.unverified? && user.voted_for?(self)
+        Debate.decrement_counter(:cached_anonymous_votes_total, id) if user.unverified? && !user.voted_for?(self)
         unvote voter: user
       else
         Debate.increment_counter(:cached_anonymous_votes_total, id) if user.unverified? && !user.voted_for?(self)
