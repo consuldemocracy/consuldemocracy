@@ -100,7 +100,7 @@ App.Map =
       for i in addMarkerInvestments
         if App.Map.validCoordinates(i)
           marker = createMarker(i.lat, i.long)
-          marker.options['id'] = i.id
+          marker.options['id'] = i.investment_id
 
           marker.on 'click', openMarkerPopup
 
