@@ -1519,33 +1519,36 @@ feature 'Budget Investments' do
   end
 
   context "Spending Proposal url redirection to associated Budget Investment" do
-    let!(:investment_with_same_id) { create(:budget_investment, id: 9999, title: 'Investment with same Spending ID Proposal') }
-    let!(:spending_proposal) { create(:spending_proposal, id: 9999, title: 'Le Spending Proposal') }
-    let!(:associated_budget_investment) do
-      create(:budget_investment, id: 8888, title: 'Budget Investment child', original_spending_proposal_id: spending_proposal.id)
+    before do
+      create(:spending_proposal, id: 9999, title: 'Le Spending Proposal')
+      create(:budget_investment, id: 8888, title: 'Budget Investment child',
+                                 original_spending_proposal_id: 9999,
+                                 budget: create(:budget, slug: 'spending-proposals-budget'))
+      create(:budget_investment, id: 9999, title: 'Investment with same Spending ID Proposal',
+                                 budget: create(:budget, slug: 'new-budget'))
     end
 
-    scenario "Old Spending Proposal url redirects to associated Budget Investment with original spending proposal ID" do
-      visit "/participatory_budget/investment_projects/#{spending_proposal.id}"
+    scenario "Old Spending Proposal url redirects migrated Investment url with its ID" do
+      visit "/participatory_budget/investment_projects/9999"
 
-      expect(current_path).to eq("/presupuestos/#{associated_budget_investment.budget.slug}/proyecto/#{spending_proposal.id}")
-      expect(page).to have_content("Investment project code: #{spending_proposal.id}")
+      expect(page).to have_current_path("/presupuestos/spending-proposals-budget/proyecto/8888")
+      expect(page).to have_content("Investment project code: 9999")
       expect(page).to have_content("Budget Investment child")
     end
 
-    scenario "New Budget Investment url with original spending proposal ID shows correctly" do
-      visit "/presupuestos/#{associated_budget_investment.budget.slug}/proyecto/#{spending_proposal.id}"
+    scenario "Visit Investment migrated from Spending Proposal shows migrated Investment" do
+      visit "/presupuestos/spending-proposals-budget/proyecto/8888"
 
-      expect(current_path).to eq("/presupuestos/#{associated_budget_investment.budget.slug}/proyecto/#{spending_proposal.id}")
-      expect(page).to have_content("Investment project code: #{spending_proposal.id}")
+      expect(page).to have_current_path("/presupuestos/spending-proposals-budget/proyecto/8888")
+      expect(page).to have_content("Investment project code: 9999")
       expect(page).to have_content("Budget Investment child")
     end
 
-    scenario "Budget Investment not associated to an Spending, and with same ID as migrated Spending proposal shows correctly" do
-      visit "/presupuestos/#{investment_with_same_id.budget.slug}/proyecto/#{investment_with_same_id.id}"
+    scenario "Visit Investment with same ID as migrated Spending Proposal shows that Investment" do
+      visit "/presupuestos/new-budget/proyecto/9999"
 
-      expect(current_path).to eq("/presupuestos/#{investment_with_same_id.budget.slug}/proyecto/#{investment_with_same_id.id}")
-      expect(page).to have_content("Investment project code: #{investment_with_same_id.id}")
+      expect(page).to have_current_path("/presupuestos/new-budget/proyecto/9999")
+      expect(page).to have_content("Investment project code: 9999")
       expect(page).to have_content("Investment with same Spending ID Proposal")
     end
   end
