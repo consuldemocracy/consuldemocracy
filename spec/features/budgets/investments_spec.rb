@@ -1531,7 +1531,7 @@ feature 'Budget Investments' do
     scenario "Old Spending Proposal url redirects migrated Investment url with its ID" do
       visit "/participatory_budget/investment_projects/9999"
 
-      expect(page).to have_current_path("/presupuestos/spending-proposals-budget/proyecto/8888")
+      expect(page).to have_current_path("/presupuestos/spending-proposals-budget/proyecto/9999?spending=true")
       expect(page).to have_content("Investment project code: 9999")
       expect(page).to have_content("Budget Investment child")
     end
