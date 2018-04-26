@@ -1,8 +1,9 @@
+<% investment_id = @investment.original_spending_proposal_id || @investment.id %>
 <div class="extra-info float-right">
   <%= t "admin.budget_investments.show.info",
          budget_name: @budget.name,
          group_name: @investment.group.name,
-         id: @investment.id %>
+         id: investment_id %>
 </div>
 
 <br>
