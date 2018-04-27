@@ -20,7 +20,8 @@ module Budgets
 
     has_orders %w{most_voted newest oldest}, only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
-    has_filters %w{not_unfeasible feasible unfeasible unselected selected_undecided unselected_undecided}, only: [:index, :show, :suggest]
+    #has_filters %w{not_unfeasible feasible unfeasible unselected selected_undecided unselected_undecided}, only: [:index, :show, :suggest]
+    #has_filters %w{feasible unfeasible}, only: [:index, :show, :suggest]
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
@@ -148,6 +149,7 @@ module Budgets
     end
 
     def investments
+
       if @current_order == 'random'
         @investments.apply_filters_and_search(@budget, params, @current_filter)
                     .send("sort_by_#{@current_order}", params[:random_seed])

@@ -5,11 +5,16 @@
   <div class="row margin">
     <div class="top-bar">
 
+
+
       <%# link_to setting['org_name'], root_path, class: "logo show-for-small-only text-danger" %>
       <%= link_to image_tag('logo_header_small.png', class: 'logo-small'), root_path, class: "show-for-small-only" %>
       <%= link_to image_tag('logo.svg', class: 'logo-small'), root_path, class: "show-for-small-only" %>
 
-      <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
+      <div class="show-for-small-only float-right">
+        <%= render "shared/locale_switcher" %>
+      </div>
+      <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-left">
         <span class="menu-icon dark" data-toggle></span>
         <%= t("application.menu")%>
       </span>

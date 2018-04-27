@@ -107,7 +107,7 @@ module Abilities
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
 
-        budgets_current = Budget.includes(:investments).where(phase: 'selecting')
+        budgets_current = Budget.includes(:investments).where(phase: ['selecting'])
         investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
 
         if user.votes.for_budget_investments(investment_ids).size < 3
@@ -124,8 +124,8 @@ module Abilities
         # can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         # can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
         # can :vote, Budget::Investment,                 budget: { phase: "selecting" }
-        # can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
-        # can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
+        can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
+        can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
 
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
