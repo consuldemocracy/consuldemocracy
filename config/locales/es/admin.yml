@@ -80,11 +80,11 @@ es:
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
       create:
-        notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
+        notice: "¡Presupuestos participativos creados con éxito!"
       update:
-        notice: Campaña de presupuestos participativos actualizada
+        notice: Presupuestos participativos actualizados
       edit:
-        title: Editar campaña de presupuestos participativos
+        title: Editar presupuestos participativos
         delete: Eliminar presupuesto
         phase: Fase
         dates: Fechas

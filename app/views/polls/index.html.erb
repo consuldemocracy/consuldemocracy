@@ -9,23 +9,29 @@
   <div class="small-12 column">
     <%= render 'shared/filter_subnav', i18n_namespace: "polls.index" %>
 
-    <% polls_by_geozone_restriction = @polls.group_by(&:geozone_restricted) %>
+    <% if @polls.any? %>
+      <% polls_by_geozone_restriction = @polls.group_by(&:geozone_restricted) %>
 
-    <% if polls_by_geozone_restriction[false].present? %>
-      <h3 class="section-title-divider">
-        <span><%= t("polls.index.no_geozone_restricted") %></span>
-      </h3>
-      <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[false]} %>
+      <% if polls_by_geozone_restriction[false].present? %>
+        <h3 class="section-title-divider">
+          <span><%= t("polls.index.no_geozone_restricted") %></span>
+        </h3>
+        <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[false]} %>
+      <% end %>
+
+      <% if polls_by_geozone_restriction[true].present? %>
+        <h3 class="section-title-divider">
+          <span><%= t("polls.index.geozone_restricted") %></span>
+        </h3>
+        <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[true]} %>
+      <% end %>
+
+      <%= paginate @polls %>
+    <% else %>
+      <div class="callout primary margin-top">
+        <%= t("polls.index.no_polls") %>
+      </div>
     <% end %>
-
-    <% if polls_by_geozone_restriction[true].present? %>
-      <h3 class="section-title-divider">
-        <span><%= t("polls.index.geozone_restricted") %></span>
-      </h3>
-      <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[true]} %>
-    <% end %>
-
-    <%= paginate @polls %>
 
     <div id="section_help" class="margin" data-magellan-target="section_help">
       <p class="lead">
