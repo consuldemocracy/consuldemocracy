@@ -43,6 +43,37 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario 'Index view mode' do
+    investments = [create(:budget_investment, heading: heading),
+                   create(:budget_investment, heading: heading),
+                   create(:budget_investment, heading: heading)]
+
+    visit budget_path(budget)
+    click_link 'Health'
+
+    click_button 'View mode'
+
+    click_link 'List'
+
+    investments.each do |investment|
+      within('#budget-investments') do
+        expect(page).to     have_link investment.title
+        expect(page).to_not have_content(investment.description)
+      end
+    end
+
+    click_button 'View mode'
+
+    click_link 'Cards'
+
+    investments.each do |investment|
+      within('#budget-investments') do
+        expect(page).to have_link investment.title
+        expect(page).to have_content(investment.description)
+      end
+    end
+  end
+
   scenario 'Index should show investment descriptive image only when is defined' do
     investment = create(:budget_investment, heading: heading)
     investment_with_image = create(:budget_investment, heading: heading)

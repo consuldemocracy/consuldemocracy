@@ -6,7 +6,10 @@
 <% end %>
 <% content_for :canonical do %>
   <% if @heading.present? %>
-    <%= render "shared/canonical", href: budget_investments_url(@budget, heading_id: @heading.id, filter: @current_filter) %>
+    <%= render "shared/canonical",
+                href: budget_investments_url(@budget,
+                                             heading_id: @heading.id,
+                                             filter: @current_filter) %>
   <% else %>
     <%= render "shared/canonical", href: budget_investments_url(@budget) %>
   <% end %>
@@ -25,7 +28,9 @@
           <h2><%= t("shared.search_results") %></h2>
           <p>
             <%= page_entries_info @investments %>
-            <%= t("budgets.investments.index.search_results_html", count: @investments.size, search_term: params[:search]) %>
+            <%= t("budgets.investments.index.search_results_html",
+                   count: @investments.size,
+                   search_term: params[:search]) %>
           </p>
         </div>
       </div>
@@ -39,8 +44,13 @@
         <div class="small-12 margin-bottom">
           <h2><%= t("budgets.investments.index.unfeasible") %>: <%= @heading.name %></h2>
           <div class="callout primary margin">
-              <%= t("budgets.investments.index.unfeasible_text",
-              definitions: link_to(t("budgets.investments.index.unfeasible_text_definitions"), "https://decide.madrid.es/participatory_budget_info#20")).html_safe %>
+              <%= t("budgets.investments.index.unfeasible_text") %>
+          </div>
+        </div>
+      <% elsif @heading.present? %>
+        <div class="row">
+          <div class="small-12 column">
+            <%= render "view_mode" %>
           </div>
         </div>
       <% end %>
@@ -49,13 +59,23 @@
 
       <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 
-      <% @investments.each do |investment| %>
-        <%= render partial: '/budgets/investments/investment', locals: {
-          investment: investment,
-          investment_ids: @investment_ids,
-          investment_votes: @investment_votes,
-          ballot: @ballot
-        } %>
+      <% if investments_default_view? %>
+
+        <% @investments.each do |investment| %>
+          <%= render partial: '/budgets/investments/investment',
+                     locals: {
+                       investment: investment,
+                       investment_ids: @investment_ids,
+                       investment_votes: @investment_votes,
+                       ballot: @ballot
+                     } %>
+        <% end %>
+      <% else %>
+
+        <% @investments.each do |investment| %>
+          <%= render partial: '/budgets/investments/investment_minimal',
+                     locals: { investment: investment } %>
+        <% end %>
       <% end %>
 
       <%= paginate @investments %>

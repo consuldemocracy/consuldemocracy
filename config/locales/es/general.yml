@@ -382,7 +382,7 @@ es:
       select_order: Ordenar por
       select_order_long: 'Estas viendo las propuestas'
       start_proposal: Crea una propuesta
-      title: Propuestas ciudadanas
+      title: Propuestas
       top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
       section_header:
@@ -631,6 +631,10 @@ es:
       next_slide: Siguiente imagen
     documentation: Documentación adicional
     more_info: Más información
+    view_mode:
+      title: Modo de vista
+      cards: Tarjetas
+      list: Lista
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
