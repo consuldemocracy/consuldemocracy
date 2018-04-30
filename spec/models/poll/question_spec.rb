@@ -28,3 +28,21 @@ RSpec.describe Poll::Question, type: :model do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: poll_questions
+#
+#  id                  :integer          not null, primary key
+#  proposal_id         :integer
+#  poll_id             :integer
+#  author_id           :integer
+#  author_visible_name :string
+#  title               :string
+#  comments_count      :integer
+#  hidden_at           :datetime
+#  created_at          :datetime
+#  updated_at          :datetime
+#  tsv                 :tsvector
+#  video_url           :string
+#

@@ -17,3 +17,18 @@ class Topic < ActiveRecord::Base
   scope :sort_by_most_commented, -> { reorder(comments_count: :desc) }
 
 end
+
+# == Schema Information
+#
+# Table name: topics
+#
+#  id             :integer          not null, primary key
+#  title          :string           not null
+#  description    :text
+#  author_id      :integer
+#  comments_count :integer          default(0)
+#  community_id   :integer
+#  hidden_at      :datetime
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#

@@ -69,3 +69,18 @@ describe Legislation::Question do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: legislation_questions
+#
+#  id                     :integer          not null, primary key
+#  legislation_process_id :integer
+#  title                  :text
+#  answers_count          :integer          default(0)
+#  hidden_at              :datetime
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  comments_count         :integer          default(0)
+#  author_id              :integer
+#

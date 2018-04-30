@@ -69,3 +69,15 @@ class Organization < ActiveRecord::Base
     end
 
 end
+
+# == Schema Information
+#
+# Table name: organizations
+#
+#  id               :integer          not null, primary key
+#  user_id          :integer
+#  name             :string(60)
+#  verified_at      :datetime
+#  rejected_at      :datetime
+#  responsible_name :string(60)
+#

@@ -14,3 +14,13 @@ class Poll::Question::Answer::Video < ActiveRecord::Base
     errors.add(:url, :invalid)
   end
 end
+
+# == Schema Information
+#
+# Table name: poll_question_answer_videos
+#
+#  id        :integer          not null, primary key
+#  title     :string
+#  url       :string
+#  answer_id :integer
+#

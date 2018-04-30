@@ -92,3 +92,18 @@ class Budget
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: budget_phases
+#
+#  id            :integer          not null, primary key
+#  budget_id     :integer
+#  next_phase_id :integer
+#  kind          :string           not null
+#  summary       :text
+#  description   :text
+#  starts_at     :datetime
+#  ends_at       :datetime
+#  enabled       :boolean          default(TRUE)
+#

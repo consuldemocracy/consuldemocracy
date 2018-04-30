@@ -1,4 +1,5 @@
 # coding: utf-8
+
 require 'rails_helper'
 
 describe Debate do
@@ -770,3 +771,31 @@ describe Debate do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: debates
+#
+#  id                           :integer          not null, primary key
+#  title                        :string(80)
+#  description                  :text
+#  author_id                    :integer
+#  created_at                   :datetime         not null
+#  updated_at                   :datetime         not null
+#  visit_id                     :string
+#  hidden_at                    :datetime
+#  flags_count                  :integer          default(0)
+#  ignored_flag_at              :datetime
+#  cached_votes_total           :integer          default(0)
+#  cached_votes_up              :integer          default(0)
+#  cached_votes_down            :integer          default(0)
+#  comments_count               :integer          default(0)
+#  confirmed_hide_at            :datetime
+#  cached_anonymous_votes_total :integer          default(0)
+#  cached_votes_score           :integer          default(0)
+#  hot_score                    :integer          default(0)
+#  confidence_score             :integer          default(0)
+#  geozone_id                   :integer
+#  tsv                          :tsvector
+#  featured_at                  :datetime
+#

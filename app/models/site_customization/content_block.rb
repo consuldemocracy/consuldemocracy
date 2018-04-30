@@ -9,3 +9,15 @@ class SiteCustomization::ContentBlock < ActiveRecord::Base
     find_by(name: name, locale: locale).try(:body)
   end
 end
+
+# == Schema Information
+#
+# Table name: site_customization_content_blocks
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  locale     :string
+#  body       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

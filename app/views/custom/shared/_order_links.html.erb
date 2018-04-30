@@ -1,34 +1,20 @@
-<% if @budget.balloting? %>
-  <ul class="no-bullet submenu">
-    <% @valid_orders.each do |order| %>
-      <li class="inline-block">
-        <%= link_to current_path_with_query_params(order: order, page: 1), class: order == @current_order ? 'active' : '' do %>
-          <%= content_tag(order == @current_order ? :h2 : :span) do %>
-            <%= t("#{i18n_namespace}.orders.#{order}") %>
-          <% end %>
+<ul class="no-bullet submenu">
+  <% @valid_orders.each do |order| %>
+    <li class="inline-block">
+      <%= link_to current_path_with_query_params(order: order, filter: 'unselected_by_assembly', page: 1), class: (order == params[:order] && params[:filter] == 'unselected_by_assembly') ? 'active' : '' do %>
+        <%= content_tag(order == @current_order ? :h2 : :span) do %>
+          <%= t("#{i18n_namespace}.orders.#{order}") %>
         <% end %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <ul class="no-bullet submenu">
-    <% @valid_orders.each do |order| %>
-      <li class="inline-block">
-        <%= link_to current_path_with_query_params(order: order, filter: 'unselected_undecided', page: 1), class: (order == params[:order] && params[:filter] == 'unselected_undecided') ? 'active' : '' do %>
-          <%= content_tag(order == @current_order ? :h2 : :span) do %>
-            <%= t("#{i18n_namespace}.orders.#{order}") %>
-          <% end %>
+      <% end %>
+    </li>
+  <% end %>
+  <% if @heading.group.name == 'Districtes' %>
+    <li class="inline-block">
+      <%= link_to current_path_with_query_params(filter: 'selected_by_assembly', page: 1), class: params[:filter] == 'selected_by_assembly' ? 'active' : '' do %>
+        <%= content_tag(true ? :h2 : :span) do %>
+          <%= t("#{i18n_namespace}.lista_seleccionadas") %>
         <% end %>
-      </li>
-    <% end %>
-    <% if @heading.group.name == 'Districtes' %>
-      <li class="inline-block">
-        <%= link_to current_path_with_query_params(filter: 'selected_undecided', page: 1), class: params[:filter] == 'selected_undecided' ? 'active' : '' do %>
-          <%= content_tag(true ? :h2 : :span) do %>
-            <%= t("#{i18n_namespace}.lista_seleccionadas") %>
-          <% end %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

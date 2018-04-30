@@ -52,3 +52,15 @@ class Poll::Question::Answer < ActiveRecord::Base
     update(most_voted: is_most_voted)
   end
 end
+
+# == Schema Information
+#
+# Table name: poll_question_answers
+#
+#  id          :integer          not null, primary key
+#  title       :string
+#  description :text
+#  question_id :integer
+#  given_order :integer          default(1)
+#  most_voted  :boolean          default(FALSE)
+#

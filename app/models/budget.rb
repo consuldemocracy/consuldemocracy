@@ -189,4 +189,25 @@ class Budget < ActiveRecord::Base
   end
 end
 
-
+# == Schema Information
+#
+# Table name: budgets
+#
+#  id                            :integer          not null, primary key
+#  name                          :string(80)
+#  currency_symbol               :string(10)
+#  phase                         :string(40)       default("accepting")
+#  created_at                    :datetime         not null
+#  updated_at                    :datetime         not null
+#  description_accepting         :text
+#  description_reviewing         :text
+#  description_selecting         :text
+#  description_valuating         :text
+#  description_balloting         :text
+#  description_reviewing_ballots :text
+#  description_finished          :text
+#  slug                          :string
+#  description_drafting          :text
+#  description_publishing_prices :text
+#  description_informing         :text
+#

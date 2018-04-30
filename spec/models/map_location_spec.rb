@@ -52,3 +52,15 @@ describe MapLocation do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: map_locations
+#
+#  id            :integer          not null, primary key
+#  latitude      :float
+#  longitude     :float
+#  zoom          :integer
+#  proposal_id   :integer
+#  investment_id :integer
+#

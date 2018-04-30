@@ -60,3 +60,20 @@ describe RelatedContent do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: related_contents
+#
+#  id                           :integer          not null, primary key
+#  parent_relationable_id       :integer
+#  parent_relationable_type     :string
+#  child_relationable_id        :integer
+#  child_relationable_type      :string
+#  related_content_id           :integer
+#  created_at                   :datetime
+#  updated_at                   :datetime
+#  hidden_at                    :datetime
+#  related_content_scores_count :integer          default(0)
+#  author_id                    :integer
+#

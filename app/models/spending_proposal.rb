@@ -148,3 +148,34 @@ class SpendingProposal < ActiveRecord::Base
   end
 
 end
+
+# == Schema Information
+#
+# Table name: spending_proposals
+#
+#  id                          :integer          not null, primary key
+#  title                       :string
+#  description                 :text
+#  author_id                   :integer
+#  external_url                :string
+#  created_at                  :datetime         not null
+#  updated_at                  :datetime         not null
+#  geozone_id                  :integer
+#  price                       :integer
+#  feasible                    :boolean
+#  association_name            :string
+#  price_explanation           :text
+#  feasible_explanation        :text
+#  internal_comments           :text
+#  valuation_finished          :boolean          default(FALSE)
+#  explanations_log            :text
+#  administrator_id            :integer
+#  valuation_assignments_count :integer          default(0)
+#  price_first_year            :integer
+#  time_scope                  :string
+#  unfeasible_email_sent_at    :datetime
+#  cached_votes_up             :integer          default(0)
+#  tsv                         :tsvector
+#  responsible_name            :string(60)
+#  physical_votes              :integer          default(0)
+#

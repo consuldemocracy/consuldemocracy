@@ -78,3 +78,21 @@ BODY_HTML
 TOC_HTML
   end
 end
+
+# == Schema Information
+#
+# Table name: legislation_draft_versions
+#
+#  id                     :integer          not null, primary key
+#  legislation_process_id :integer
+#  title                  :string
+#  changelog              :text
+#  status                 :string           default("draft")
+#  final_version          :boolean          default(FALSE)
+#  body                   :text
+#  hidden_at              :datetime
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  body_html              :text
+#  toc_html               :text
+#

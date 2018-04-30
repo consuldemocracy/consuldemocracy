@@ -93,3 +93,24 @@ class Poll < ActiveRecord::Base
   end
 
 end
+
+# == Schema Information
+#
+# Table name: polls
+#
+#  id                 :integer          not null, primary key
+#  name               :string
+#  starts_at          :datetime
+#  ends_at            :datetime
+#  published          :boolean          default(FALSE)
+#  geozone_restricted :boolean          default(FALSE)
+#  summary            :text
+#  description        :text
+#  comments_count     :integer          default(0)
+#  author_id          :integer
+#  hidden_at          :datetime
+#  results_enabled    :boolean          default(FALSE)
+#  stats_enabled      :boolean          default(FALSE)
+#  created_at         :datetime
+#  updated_at         :datetime
+#

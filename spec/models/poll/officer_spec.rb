@@ -122,3 +122,12 @@ describe Poll::Officer do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: poll_officers
+#
+#  id                        :integer          not null, primary key
+#  user_id                   :integer
+#  failed_census_calls_count :integer          default(0)
+#

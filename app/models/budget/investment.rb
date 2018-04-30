@@ -76,13 +76,15 @@ class Budget
     scope :undecided,                   -> { where(feasibility: "undecided") }
     scope :with_supports,               -> { where('cached_votes_up > 0') }
     scope :selected,                    -> { feasible.where(selected: true) }
-    scope :selected_undecided,          -> { where(selected: true) }
+    #scope :selected_undecided,          -> { where(selected: true) }
     scope :compatible,                  -> { where(incompatible: false) }
     scope :incompatible,                -> { where(incompatible: true) }
     scope :winners,                     -> { selected.compatible.where(winner: true) }
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :unselected_undecided,        -> { where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
+    scope :selected_by_assembly,        -> { where(selected_by_assembly: true) }
+    scope :unselected_by_assembly,        -> { where(selected_by_assembly: false) }
 
     scope :by_group,    ->(group_id)    { where(group_id: group_id) }
     scope :by_heading,  ->(heading_id)  { where(heading_id: heading_id) }
@@ -308,7 +310,7 @@ class Budget
     end
 
     def should_show_votes?
-      budget.selecting?
+      budget.selecting? && !selected_by_assembly
     end
 
     def should_show_vote_count?
@@ -421,3 +423,50 @@ class Budget
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: budget_investments
+#
+#  id                         :integer          not null, primary key
+#  author_id                  :integer
+#  administrator_id           :integer
+#  title                      :string
+#  description                :text
+#  external_url               :string
+#  price                      :integer
+#  feasibility                :string(15)       default("undecided")
+#  price_explanation          :text
+#  unfeasibility_explanation  :text
+#  internal_comments          :text
+#  valuation_finished         :boolean          default(FALSE)
+#  valuator_assignments_count :integer          default(0)
+#  price_first_year           :integer
+#  duration                   :string
+#  hidden_at                  :datetime
+#  cached_votes_up            :integer          default(0)
+#  comments_count             :integer          default(0)
+#  confidence_score           :integer          default(0), not null
+#  physical_votes             :integer          default(0)
+#  tsv                        :tsvector
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  heading_id                 :integer
+#  responsible_name           :string
+#  budget_id                  :integer
+#  group_id                   :integer
+#  selected                   :boolean          default(FALSE)
+#  location                   :string
+#  organization_name          :string
+#  unfeasible_email_sent_at   :datetime
+#  ignored_flag_at            :datetime
+#  moderation_text            :text
+#  flags_count                :integer          default(0)
+#  cached_ballots_up          :integer          default(0), not null
+#  ballot_lines_count         :integer          default(0)
+#  previous_heading_id        :integer
+#  winner                     :boolean          default(FALSE)
+#  incompatible               :boolean          default(FALSE)
+#  community_id               :integer
+#  selected_by_assembly       :boolean          default(FALSE), not null
+#

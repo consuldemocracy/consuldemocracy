@@ -1,4 +1,5 @@
 # coding: utf-8
+
 require 'rails_helper'
 
 describe Proposal do
@@ -980,3 +981,34 @@ describe Proposal do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: proposals
+#
+#  id                  :integer          not null, primary key
+#  title               :string(80)
+#  description         :text
+#  question            :string
+#  external_url        :string
+#  author_id           :integer
+#  hidden_at           :datetime
+#  flags_count         :integer          default(0)
+#  ignored_flag_at     :datetime
+#  cached_votes_up     :integer          default(0)
+#  comments_count      :integer          default(0)
+#  confirmed_hide_at   :datetime
+#  hot_score           :integer          default(0)
+#  confidence_score    :integer          default(0)
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  responsible_name    :string(60)
+#  summary             :text
+#  video_url           :string
+#  tsv                 :tsvector
+#  geozone_id          :integer
+#  retired_at          :datetime
+#  retired_reason      :string
+#  retired_explanation :text
+#  community_id        :integer
+#

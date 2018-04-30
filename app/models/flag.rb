@@ -27,3 +27,15 @@ class Flag < ActiveRecord::Base
   end
 
 end
+
+# == Schema Information
+#
+# Table name: flags
+#
+#  id             :integer          not null, primary key
+#  user_id        :integer
+#  flaggable_type :string
+#  flaggable_id   :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#

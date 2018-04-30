@@ -17,3 +17,14 @@ class Valuator < ActiveRecord::Base
     description.present? ? description : name
   end
 end
+
+# == Schema Information
+#
+# Table name: valuators
+#
+#  id                       :integer          not null, primary key
+#  user_id                  :integer
+#  description              :string
+#  spending_proposals_count :integer          default(0)
+#  budget_investments_count :integer          default(0)
+#

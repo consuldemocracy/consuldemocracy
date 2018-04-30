@@ -16,3 +16,20 @@ class SiteCustomization::Page < ActiveRecord::Base
     "/#{slug}"
   end
 end
+
+# == Schema Information
+#
+# Table name: site_customization_pages
+#
+#  id                 :integer          not null, primary key
+#  slug               :string           not null
+#  title              :string           not null
+#  subtitle           :string
+#  content            :text
+#  more_info_flag     :boolean
+#  print_content_flag :boolean
+#  status             :string           default("draft")
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  locale             :string
+#

@@ -17,3 +17,20 @@ class Banner < ActiveRecord::Base
   scope :with_inactive, -> { where("post_started_at > ? or post_ended_at < ?", Time.current, Time.current) }
 
 end
+
+# == Schema Information
+#
+# Table name: banners
+#
+#  id              :integer          not null, primary key
+#  title           :string(80)
+#  description     :string
+#  target_url      :string
+#  style           :string
+#  image           :string
+#  post_started_at :date
+#  post_ended_at   :date
+#  hidden_at       :datetime
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#

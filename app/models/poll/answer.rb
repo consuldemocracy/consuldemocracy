@@ -19,3 +19,15 @@ class Poll::Answer < ActiveRecord::Base
     Poll::Voter.find_or_create_by(user: author, poll: poll, origin: "web", token: token)
   end
 end
+
+# == Schema Information
+#
+# Table name: poll_answers
+#
+#  id          :integer          not null, primary key
+#  question_id :integer
+#  author_id   :integer
+#  answer      :string
+#  created_at  :datetime
+#  updated_at  :datetime
+#

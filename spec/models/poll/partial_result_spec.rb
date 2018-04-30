@@ -83,3 +83,21 @@ describe Poll::PartialResult do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: poll_partial_results
+#
+#  id                        :integer          not null, primary key
+#  question_id               :integer
+#  author_id                 :integer
+#  answer                    :string
+#  amount                    :integer
+#  origin                    :string
+#  date                      :date
+#  booth_assignment_id       :integer
+#  officer_assignment_id     :integer
+#  amount_log                :text             default("")
+#  officer_assignment_id_log :text             default("")
+#  author_id_log             :text             default("")
+#

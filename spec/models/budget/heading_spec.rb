@@ -57,3 +57,15 @@ describe Budget::Heading do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: budget_headings
+#
+#  id         :integer          not null, primary key
+#  group_id   :integer
+#  name       :string(50)
+#  price      :integer
+#  population :integer
+#  slug       :string
+#

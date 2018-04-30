@@ -65,7 +65,7 @@
         <ul class="no-bullet">
           <% group.headings.each do |heading| %>
             <li class="heading small-12 medium-4 large-3">
-              <%= link_to budget_investments_path(@budget, heading_id: heading.id, filter: 'unselected_undecided', order: 'random') do %>
+              <%= link_to budget_investments_path(@budget, heading_id: heading.id, filter: 'unselected_by_assembly', order: 'random') do %>
                 <div>
                   <%= heading.name %>
                   <span><%= number_to_currency(heading.price) %></span>

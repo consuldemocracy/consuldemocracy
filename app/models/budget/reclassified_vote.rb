@@ -10,3 +10,15 @@ class Budget
     validates :reason, inclusion: {in: REASONS, allow_nil: false}
   end
 end
+
+# == Schema Information
+#
+# Table name: budget_reclassified_votes
+#
+#  id            :integer          not null, primary key
+#  user_id       :integer
+#  investment_id :integer
+#  reason        :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#

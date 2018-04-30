@@ -21,3 +21,13 @@ describe Budget::Group do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: budget_groups
+#
+#  id        :integer          not null, primary key
+#  budget_id :integer
+#  name      :string(50)
+#  slug      :string
+#

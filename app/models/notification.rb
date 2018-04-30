@@ -41,3 +41,15 @@ class Notification < ActiveRecord::Base
   end
 
 end
+
+# == Schema Information
+#
+# Table name: notifications
+#
+#  id              :integer          not null, primary key
+#  user_id         :integer
+#  notifiable_id   :integer
+#  notifiable_type :string
+#  counter         :integer          default(1)
+#  emailed_at      :datetime
+#

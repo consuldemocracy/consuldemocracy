@@ -25,3 +25,16 @@ class Activity < ActiveRecord::Base
     where(user: user)
   end
 end
+
+# == Schema Information
+#
+# Table name: activities
+#
+#  id              :integer          not null, primary key
+#  user_id         :integer
+#  action          :string
+#  actionable_id   :integer
+#  actionable_type :string
+#  created_at      :datetime
+#  updated_at      :datetime
+#

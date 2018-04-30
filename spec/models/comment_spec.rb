@@ -195,3 +195,29 @@ describe Comment do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: comments
+#
+#  id                 :integer          not null, primary key
+#  commentable_id     :integer
+#  commentable_type   :string
+#  body               :text
+#  subject            :string
+#  user_id            :integer          not null
+#  created_at         :datetime
+#  updated_at         :datetime
+#  hidden_at          :datetime
+#  flags_count        :integer          default(0)
+#  ignored_flag_at    :datetime
+#  moderator_id       :integer
+#  administrator_id   :integer
+#  cached_votes_total :integer          default(0)
+#  cached_votes_up    :integer          default(0)
+#  cached_votes_down  :integer          default(0)
+#  confirmed_hide_at  :datetime
+#  ancestry           :string
+#  confidence_score   :integer          default(0), not null
+#  valuation          :boolean          default(FALSE)
+#

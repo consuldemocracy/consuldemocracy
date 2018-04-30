@@ -85,3 +85,34 @@ class Legislation::Process < ActiveRecord::Base
     end
 
 end
+
+# == Schema Information
+#
+# Table name: legislation_processes
+#
+#  id                         :integer          not null, primary key
+#  title                      :string
+#  description                :text
+#  additional_info            :text
+#  start_date                 :date
+#  end_date                   :date
+#  debate_start_date          :date
+#  debate_end_date            :date
+#  draft_publication_date     :date
+#  allegations_start_date     :date
+#  allegations_end_date       :date
+#  result_publication_date    :date
+#  hidden_at                  :datetime
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  summary                    :text
+#  debate_phase_enabled       :boolean          default(FALSE)
+#  allegations_phase_enabled  :boolean          default(FALSE)
+#  draft_publication_enabled  :boolean          default(FALSE)
+#  result_publication_enabled :boolean          default(FALSE)
+#  published                  :boolean          default(TRUE)
+#  proposals_phase_start_date :date
+#  proposals_phase_end_date   :date
+#  proposals_phase_enabled    :boolean
+#  proposals_description      :text
+#

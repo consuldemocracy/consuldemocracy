@@ -27,3 +27,14 @@ describe Poll::BoothAssignment do
     expect(Poll::Shift.all.count).to eq(0)
   end
 end
+
+# == Schema Information
+#
+# Table name: poll_booth_assignments
+#
+#  id         :integer          not null, primary key
+#  booth_id   :integer
+#  poll_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

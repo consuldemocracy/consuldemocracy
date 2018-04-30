@@ -93,3 +93,17 @@ describe SignatureSheet do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: signature_sheets
+#
+#  id               :integer          not null, primary key
+#  signable_id      :integer
+#  signable_type    :string
+#  document_numbers :text
+#  processed        :boolean          default(FALSE)
+#  author_id        :integer
+#  created_at       :datetime
+#  updated_at       :datetime
+#

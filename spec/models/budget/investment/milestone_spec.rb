@@ -26,3 +26,16 @@ describe Budget::Investment::Milestone do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: budget_investment_milestones
+#
+#  id               :integer          not null, primary key
+#  investment_id    :integer
+#  title            :string(80)
+#  description      :text
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  publication_date :datetime
+#

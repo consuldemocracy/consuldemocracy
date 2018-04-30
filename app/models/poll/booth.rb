@@ -20,3 +20,12 @@ class Poll
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: poll_booths
+#
+#  id       :integer          not null, primary key
+#  name     :string
+#  location :string
+#

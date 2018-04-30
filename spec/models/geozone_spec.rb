@@ -40,3 +40,16 @@ describe Geozone do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: geozones
+#
+#  id                   :integer          not null, primary key
+#  name                 :string
+#  html_map_coordinates :string
+#  external_code        :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  census_code          :string
+#

@@ -351,3 +351,67 @@ class User < ActiveRecord::Base
     end
 
 end
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                             :integer          not null, primary key
+#  email                          :string           default("")
+#  encrypted_password             :string           default(""), not null
+#  reset_password_token           :string
+#  reset_password_sent_at         :datetime
+#  remember_created_at            :datetime
+#  sign_in_count                  :integer          default(0), not null
+#  current_sign_in_at             :datetime
+#  last_sign_in_at                :datetime
+#  current_sign_in_ip             :string
+#  last_sign_in_ip                :string
+#  created_at                     :datetime         not null
+#  updated_at                     :datetime         not null
+#  confirmation_token             :string
+#  confirmed_at                   :datetime
+#  confirmation_sent_at           :datetime
+#  unconfirmed_email              :string
+#  email_on_comment               :boolean          default(FALSE)
+#  email_on_comment_reply         :boolean          default(FALSE)
+#  phone_number                   :string(30)
+#  official_position              :string
+#  official_level                 :integer          default(0)
+#  hidden_at                      :datetime
+#  sms_confirmation_code          :string
+#  username                       :string(60)
+#  document_number                :string
+#  document_type                  :string
+#  residence_verified_at          :datetime
+#  email_verification_token       :string
+#  verified_at                    :datetime
+#  unconfirmed_phone              :string
+#  confirmed_phone                :string
+#  letter_requested_at            :datetime
+#  confirmed_hide_at              :datetime
+#  letter_verification_code       :string
+#  failed_census_calls_count      :integer          default(0)
+#  level_two_verified_at          :datetime
+#  erase_reason                   :string
+#  erased_at                      :datetime
+#  public_activity                :boolean          default(TRUE)
+#  newsletter                     :boolean          default(TRUE)
+#  notifications_count            :integer          default(0)
+#  registering_with_oauth         :boolean          default(FALSE)
+#  locale                         :string
+#  oauth_email                    :string
+#  geozone_id                     :integer
+#  redeemable_code                :string
+#  gender                         :string(10)
+#  date_of_birth                  :datetime
+#  email_on_proposal_notification :boolean          default(TRUE)
+#  email_digest                   :boolean          default(TRUE)
+#  email_on_direct_message        :boolean          default(TRUE)
+#  official_position_badge        :boolean          default(FALSE)
+#  password_changed_at            :datetime         default(Thu, 01 Jan 2015 02:01:01 CET +01:00), not null
+#  created_from_signature         :boolean          default(FALSE)
+#  failed_email_digests_count     :integer          default(0)
+#  former_users_data_log          :text             default("")
+#  public_interests               :boolean          default(FALSE)
+#

@@ -26,3 +26,14 @@ class Poll
       end
   end
 end
+
+# == Schema Information
+#
+# Table name: poll_booth_assignments
+#
+#  id         :integer          not null, primary key
+#  booth_id   :integer
+#  poll_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

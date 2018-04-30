@@ -70,3 +70,17 @@ describe Budget::Ballot::Line do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: budget_ballot_lines
+#
+#  id            :integer          not null, primary key
+#  ballot_id     :integer
+#  investment_id :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  budget_id     :integer
+#  group_id      :integer
+#  heading_id    :integer
+#

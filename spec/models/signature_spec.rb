@@ -220,3 +220,16 @@ describe Signature do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: signatures
+#
+#  id                 :integer          not null, primary key
+#  signature_sheet_id :integer
+#  user_id            :integer
+#  document_number    :string
+#  verified           :boolean          default(FALSE)
+#  created_at         :datetime
+#  updated_at         :datetime
+#

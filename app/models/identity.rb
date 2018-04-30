@@ -8,3 +8,15 @@ class Identity < ActiveRecord::Base
     where(uid: auth.uid, provider: auth.provider).first_or_create
   end
 end
+
+# == Schema Information
+#
+# Table name: identities
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  provider   :string
+#  uid        :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

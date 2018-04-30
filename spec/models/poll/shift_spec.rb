@@ -121,3 +121,18 @@ describe Poll::Shift do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: poll_shifts
+#
+#  id            :integer          not null, primary key
+#  booth_id      :integer
+#  officer_id    :integer
+#  date          :date
+#  created_at    :datetime
+#  updated_at    :datetime
+#  officer_name  :string
+#  officer_email :string
+#  task          :integer          default(0), not null
+#

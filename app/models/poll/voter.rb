@@ -65,3 +65,25 @@ class Poll
 
   end
 end
+
+# == Schema Information
+#
+# Table name: poll_voters
+#
+#  id                    :integer          not null, primary key
+#  document_number       :string
+#  document_type         :string
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  poll_id               :integer          not null
+#  booth_assignment_id   :integer
+#  age                   :integer
+#  gender                :string
+#  geozone_id            :integer
+#  answer_id             :integer
+#  officer_assignment_id :integer
+#  user_id               :integer
+#  origin                :string
+#  officer_id            :integer
+#  token                 :string
+#

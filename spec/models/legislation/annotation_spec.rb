@@ -109,3 +109,24 @@ RSpec.describe Legislation::Annotation, type: :model do
     expect(annotation.context).to eq(context)
   end
 end
+
+# == Schema Information
+#
+# Table name: legislation_annotations
+#
+#  id                           :integer          not null, primary key
+#  quote                        :string
+#  ranges                       :text
+#  text                         :text
+#  legislation_draft_version_id :integer
+#  author_id                    :integer
+#  hidden_at                    :datetime
+#  created_at                   :datetime         not null
+#  updated_at                   :datetime         not null
+#  comments_count               :integer          default(0)
+#  range_start                  :string
+#  range_start_offset           :integer
+#  range_end                    :string
+#  range_end_offset             :integer
+#  context                      :text
+#

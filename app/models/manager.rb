@@ -4,3 +4,11 @@ class Manager < ActiveRecord::Base
 
   validates :user_id, presence: true, uniqueness: true
 end
+
+# == Schema Information
+#
+# Table name: managers
+#
+#  id      :integer          not null, primary key
+#  user_id :integer
+#

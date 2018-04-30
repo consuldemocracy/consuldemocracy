@@ -37,3 +37,16 @@ RSpec.describe Legislation::Answer, type: :model do
     expect(option_1.answers_count).to eq 0
   end
 end
+
+# == Schema Information
+#
+# Table name: legislation_answers
+#
+#  id                             :integer          not null, primary key
+#  legislation_question_id        :integer
+#  legislation_question_option_id :integer
+#  user_id                        :integer
+#  hidden_at                      :datetime
+#  created_at                     :datetime         not null
+#  updated_at                     :datetime         not null
+#

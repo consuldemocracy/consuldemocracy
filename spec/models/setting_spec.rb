@@ -79,3 +79,12 @@ describe Setting do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: settings
+#
+#  id    :integer          not null, primary key
+#  key   :string
+#  value :string
+#

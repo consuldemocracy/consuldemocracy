@@ -34,3 +34,23 @@ class Poll::Recount < ActiveRecord::Base
     self.author_id_log += ":#{author_id_was}"
   end
 end
+
+# == Schema Information
+#
+# Table name: poll_recounts
+#
+#  id                        :integer          not null, primary key
+#  author_id                 :integer
+#  origin                    :string
+#  date                      :date
+#  booth_assignment_id       :integer
+#  officer_assignment_id     :integer
+#  officer_assignment_id_log :text             default("")
+#  author_id_log             :text             default("")
+#  white_amount              :integer          default(0)
+#  white_amount_log          :text             default("")
+#  null_amount               :integer          default(0)
+#  null_amount_log           :text             default("")
+#  total_amount              :integer          default(0)
+#  total_amount_log          :text             default("")
+#

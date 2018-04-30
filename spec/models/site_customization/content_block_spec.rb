@@ -18,3 +18,15 @@ RSpec.describe SiteCustomization::ContentBlock, type: :model do
     expect(valid_block).to be_valid
   end
 end
+
+# == Schema Information
+#
+# Table name: site_customization_content_blocks
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  locale     :string
+#  body       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

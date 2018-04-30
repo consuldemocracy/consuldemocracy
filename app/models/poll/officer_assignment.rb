@@ -22,3 +22,17 @@ class Poll
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: poll_officer_assignments
+#
+#  id                  :integer          not null, primary key
+#  booth_assignment_id :integer
+#  officer_id          :integer
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  date                :date             not null
+#  final               :boolean          default(FALSE)
+#  user_data_log       :string           default("")
+#
