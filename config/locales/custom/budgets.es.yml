@@ -9,7 +9,7 @@ es:
           create: Crear propuesta
           quota_exceeded: Ya ha hecho todas las propuestas permitidas para esta campaña
         by_heading: 'Propuestas de inversión con ámbito: %{heading}'
-        lista_seleccionadas: Seleccionadas por las juntas de distrito
+        lista_seleccionadas: Seleccionadas por las reuniones de distrito
         link_lista_seleccionadas: Consulta aquí las propuestas priorizadas de este distrito que pasan directamente a la fase de validación y estudio de viabilidad
       investment:
         title: Propuesta de inversión
@@ -21,7 +21,7 @@ es:
           other: "%{count} avales"
         give_support: Avalar
         alert_limit_votes: Te quedan %{votes} avales. ¿Seguro que quieres continuar?
-        seleccionada_por_junta: Esta propuesta ya se ha avalado por la junta de distrito, pasa directamente a la fase de validación y estudio.
+        seleccionada_por_junta: Esta propuesta ha sido avalada en la reunión de Distrito. Se está estudiando su viabilidad técnica y económica.
     ballots:
       reasons_for_not_balloting:
         quota_exceeded: Has excedido el número de avales permitido
