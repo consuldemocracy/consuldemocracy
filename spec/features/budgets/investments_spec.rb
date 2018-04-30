@@ -922,6 +922,7 @@ feature 'Budget Investments' do
 
     expect(page).to have_content("Unfeasibility explanation")
     expect(page).to have_content("Local government is not competent in this matter")
+    expect(page).to have_content("This investment project has been marked as not feasible and will not go to balloting phase")
   end
 
   scenario "Show (unfeasible budget investment with valuation not finished)" do
