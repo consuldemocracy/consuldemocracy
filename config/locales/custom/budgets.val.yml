@@ -22,7 +22,7 @@ val:
           other: "%{count} avals"
         give_support: Avalar
         alert_limit_votes: Sols et queden %{votes} avals. Segur que vols continuar?
-        seleccionada_por_junta: Aquesta proposta ha sigut avalada en la reunió de Districte. S'està estudiant la seva viabilitat tècnica i económica
+        seleccionada_por_junta: Aquesta proposta ha sigut avalada en la reunió de Districte. S'està estudiant la seva viabilitat tècnica i econòmica
     phase:
       drafting: Esborrany (No visible per al públic)
       accepting: Acceptant propostes
