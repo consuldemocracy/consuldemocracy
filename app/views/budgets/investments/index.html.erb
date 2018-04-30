@@ -71,9 +71,6 @@
                      } %>
         <% end %>
 
-        <%= render "banners" if @budget.selecting? || @budget.balloting?  %>
-        <%= paginate @investments %>
-
       <% else %>
 
         <% @investments.each do |investment| %>
@@ -81,11 +78,9 @@
                      locals: { investment: investment } %>
         <% end %>
 
-        <%= render "banners" if @budget.selecting? || @budget.balloting?  %>
-        <%= paginate @investments %>
-
       <% end %>
 
+      <%= paginate @investments %>
     </div>
 
     <div class="small-12 medium-3 column">

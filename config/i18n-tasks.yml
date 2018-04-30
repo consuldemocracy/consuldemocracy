@@ -189,6 +189,7 @@ ignore_unused:
   - 'legislation.processes.index.*'
   - '*.form.map_skip_checkbox'
   - 'votes.budget_investments.different_heading_assigned*'
+  - '*.form.map_skip_checkbox'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
