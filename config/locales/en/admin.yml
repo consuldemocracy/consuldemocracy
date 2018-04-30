@@ -188,6 +188,7 @@ en:
         table_feasibility: "Feasibility"
         table_valuation_finished: "Val. Fin."
         table_selection: "Selected"
+        table_evaluation: "Show to valuators"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Assigned administrator

@@ -56,6 +56,12 @@ section "Creating Investments" do
   end
 end
 
+section "Marking investments as visible to valuators" do
+  (1..50).to_a.sample.times do
+    Budget::Investment.reorder("RANDOM()").first.update(visible_to_valuators: true)
+  end
+end
+
 section "Geolocating Investments" do
   Budget.all.each do |budget|
     budget.investments.each do |investment|

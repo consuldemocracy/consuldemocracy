@@ -342,6 +342,10 @@ FactoryBot.define do
       winner true
     end
 
+    trait :visible_to_valuators do
+      visible_to_valuators true
+    end
+
     trait :incompatible do
       selected
       incompatible true
