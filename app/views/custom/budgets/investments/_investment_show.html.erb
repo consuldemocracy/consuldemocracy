@@ -1,7 +1,14 @@
 <section class="budget-investment-show" id="<%= dom_id(investment) %>">
   <div class="row">
     <div class="small-12 medium-9 column">
-      <%= link_to(t("shared.back"), budget_investments_path(investment.budget, heading_id: investment.heading), class: 'back') %>
+      <% filter = '' %>
+      <% if investment.selected_by_assembly? %>
+      <%   filter = 'selected_by_assembly'   %>
+      <% else                                %>
+      <%   filter = 'unselected_by_assembly' %>
+      <% end                                 %>
+
+      <%= link_to(t("shared.back"), budget_investments_path(investment.budget, heading_id: investment.heading, filter: filter, order: 'random'), class: 'back') %>
 
       <h1><%= investment.title %></h1>
 
