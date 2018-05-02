@@ -81,7 +81,7 @@ describe Signature do
         expect(Vote.count).to eq(1)
       end
 
-      it "does not assigns vote to invalid user on budget investment" do
+      it "does not assigns vote to an unverified user on budget investment" do
         investment = create(:budget_investment)
         signature_sheet = create(:signature_sheet, signable: investment)
         user = create(:user, document_number: "123A")
@@ -109,6 +109,7 @@ describe Signature do
         proposal = create(:proposal)
         user = create(:user, :level_two, document_number: "123A")
         vote = create(:vote, votable: proposal, voter: user)
+
         signature_sheet = create(:signature_sheet, signable: proposal)
         signature = create(:signature, signature_sheet: signature_sheet, document_number: user.document_number)
 

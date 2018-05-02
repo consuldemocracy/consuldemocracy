@@ -23,27 +23,14 @@ class Signature < ActiveRecord::Base
     end
   end
 
-  def assign_vote_to_user
-    set_user
-    if signable.is_a? Budget::Investment
-      signable.vote_by(voter: user, vote: 'yes') if [nil, :no_selecting_allowed].include?(signable.reason_for_not_being_selectable_by(user))
-    else
-      signable.register_vote(user, "yes")
-    end
-    assign_signature_to_vote
   def find_or_create_user?
     self.user = find_user || create_user
   end
 
-  def assign_signature_to_vote
-    vote = Vote.where(votable: signable, voter: user).first
-    vote.update(signature: self) if vote
   def find_user
     User.where(document_number: document_number_variants).first
   end
 
-  def user_exists?
-    User.where(document_number: document_number).any?
   def document_number_variants
     document_types.collect do |document_type|
       get_document_number_variants(document_type, document_number)
@@ -95,6 +82,24 @@ class Signature < ActiveRecord::Base
   def set_user
     user = User.where(document_number: document_number).first
     update(user: user)
+  end
+
+  def assign_vote_to_user
+    if signable.is_a? Budget::Investment
+      signable.vote_by(voter: user, vote: 'yes') if can_sign?
+    else
+      signable.register_vote(user, "yes")
+    end
+    assign_signature_to_vote
+  end
+
+  def assign_signature_to_vote
+    vote = Vote.where(votable: signable, voter: user).first
+    vote.update(signature: self) if vote
+  end
+
+  def can_sign?
+    [nil, :no_selecting_allowed].include?(signable.reason_for_not_being_selectable_by(user))
   end
 
   def mark_as_verified
