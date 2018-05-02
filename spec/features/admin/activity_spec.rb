@@ -205,7 +205,7 @@ feature 'Admin activity' do
 
       within("#proposal_#{proposal.id}") do
         click_link 'Hide author'
-        expect(current_path).to eq(debates_path)
+        expect(page).to have_current_path(debates_path)
       end
 
       visit admin_activity_path
