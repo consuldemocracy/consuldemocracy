@@ -58,7 +58,23 @@ module DocumentParser
       number_variants.each do |number|
         variants << number + letter.downcase << number + letter.upcase
       end
+    else
+      spanish_id_eight_digits = format_spanish_id_digits(number_variants.first)
+      letter = generate_letter(spanish_id_eight_digits)
+
+      number_variants.each do |number|
+        variants << number + letter.downcase << number + letter.upcase
+      end
     end
     variants
   end
+
+  def format_spanish_id_digits(spanish_id_digits)
+    spanish_id_digits.length < 8 ? "%08d" % spanish_id_digits.to_i : spanish_id_digits
+  end
+
+  def generate_letter(document_number_digits)
+    "TRWAGMYFPDXBNJZSQVHLCKE"[document_number_digits.to_i % 23].chr
+  end
+
 end
