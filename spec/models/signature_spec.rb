@@ -117,6 +117,20 @@ describe Signature do
         expect(Vote.count).to eq(1)
       end
 
+      it "does not assign vote to user if already voted with a document number variant" do
+        proposal = create(:proposal)
+        user = create(:user, :level_two, document_number: "123P")
+        vote = create(:vote, votable: proposal, voter: user)
+
+        signature_sheet = create(:signature_sheet, signable: proposal)
+        signature = create(:signature, signature_sheet: signature_sheet, document_number: "123")
+
+        signature.verify
+
+        expect(signature.user).to eq(user)
+        expect(Vote.count).to eq(1)
+      end
+
       it "does not assign vote to user if already voted on budget investment" do
         investment = create(:budget_investment)
         user = create(:user, :level_two, document_number: "123A")
@@ -216,6 +230,62 @@ describe Signature do
         expect(signature).not_to be_verified
       end
     end
+
+  end
+
+  describe "#find_or_create_user?" do
+
+    describe "#find_user" do
+
+      it "returns the user with an exact document number" do
+        user = create(:user, document_number: "12345678Z")
+        signature = create(:signature, document_number: "12345678Z")
+
+        expect(signature.find_user).to eq(user)
+      end
+
+      it "returns the user without letter when trying to sign with letter" do
+        user = create(:user, document_number: "12345678")
+        signature = create(:signature, document_number: "12345678Z")
+
+        expect(signature.find_user).to eq(user)
+      end
+
+      it "returns the user with letter when trying to sign without letter" do
+        user = create(:user, document_number: "12345678Z")
+        signature = create(:signature, document_number: "12345678")
+
+        expect(signature.find_user).to eq(user)
+      end
+
+      it "returns nil when there are no users matching one of the document number variants" do
+        user = create(:user, document_number: "987654321A")
+        signature = create(:signature, document_number: "12345678Z")
+
+        expect(signature.find_user).to eq(nil)
+      end
+
+    end
+
+    describe "#create_user" do
+
+      it "creates the user if in census" do
+        signature = create(:signature, document_number: "12345678Z")
+
+        expect { signature.create_user }.to change { User.count }.by(1)
+      end
+
+      it "creates the user if a document number variant is found" do
+        signature = create(:signature, document_number: "12345678")
+
+        expect { signature.create_user }.to change { User.count }.by(1)
+      end
+
+      it "does not create the user if not in census" do
+        signature = create(:signature, document_number: "987654321A")
+
+        expect { signature.create_user }.to change { User.count }.by(0)
+      end
 
   end
 

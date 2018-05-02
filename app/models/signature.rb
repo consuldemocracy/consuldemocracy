@@ -15,11 +15,7 @@ class Signature < ActiveRecord::Base
   before_validation :clean_document_number
 
   def verify
-    if user_exists?
-      assign_vote_to_user
-      mark_as_verified
-    elsif in_census?
-      create_user
+    if find_or_create_user?
       assign_vote_to_user
       mark_as_verified
     end
@@ -33,11 +29,15 @@ class Signature < ActiveRecord::Base
       signable.register_vote(user, "yes")
     end
     assign_signature_to_vote
+  def find_or_create_user?
+    self.user = find_user || create_user
   end
 
   def assign_signature_to_vote
     vote = Vote.where(votable: signable, voter: user).first
     vote.update(signature: self) if vote
+  def find_user
+    User.where(document_number: document_number_variants).first
   end
 
   def user_exists?
@@ -49,6 +49,8 @@ class Signature < ActiveRecord::Base
   end
 
   def create_user
+    return false unless in_census?
+
     user_params = {
       document_number: document_number,
       created_from_signature: true,
