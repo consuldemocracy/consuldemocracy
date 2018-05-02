@@ -18,6 +18,8 @@ class Signature < ActiveRecord::Base
     if find_or_create_user?
       assign_vote_to_user
       mark_as_verified
+    else
+      mark_as_unverified
     end
   end
 
@@ -99,6 +101,8 @@ class Signature < ActiveRecord::Base
     update(verified: true)
   end
 
+  def mark_as_unverified
+    update(verified: false)
   end
 
   private
