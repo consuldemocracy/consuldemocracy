@@ -1,4 +1,6 @@
 class Signature < ActiveRecord::Base
+  include DocumentParser
+
   belongs_to :signature_sheet
   belongs_to :user
 
@@ -40,6 +42,10 @@ class Signature < ActiveRecord::Base
 
   def user_exists?
     User.where(document_number: document_number).any?
+  def document_number_variants
+    document_types.collect do |document_type|
+      get_document_number_variants(document_type, document_number)
+    end.flatten.uniq
   end
 
   def create_user
@@ -90,8 +96,12 @@ class Signature < ActiveRecord::Base
     update(verified: true)
   end
 
-  def document_types
-    %w(1 2 3 4)
   end
+
+  private
+
+    def document_types
+      %w(1 2 3 4)
+    end
 
 end
