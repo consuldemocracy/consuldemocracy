@@ -1,6 +1,5 @@
-class VerifiedUser < ActiveRecord::Base
-  scope :by_user,  ->(user)  { where(document_number: user.document_number) }
-
+class VerifiedUser < ApplicationRecord
+  scope :by_user,  ->(user) { where(document_number: user.document_number) }
   scope :by_email, ->(email) { where(email: email) }
   scope :by_phone, ->(phone) { where(phone: phone) }
 

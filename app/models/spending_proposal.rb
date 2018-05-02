@@ -1,4 +1,4 @@
-class SpendingProposal < ActiveRecord::Base
+class SpendingProposal < ApplicationRecord
   include Measurable
   include Sanitizable
   include Taggable
@@ -9,7 +9,7 @@ class SpendingProposal < ActiveRecord::Base
   include ActsAsParanoidAliases
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :geozone
+  belongs_to :geozone, optional: true
   belongs_to :administrator
   has_many :valuation_assignments, dependent: :destroy
   has_many :valuators, through: :valuation_assignments
@@ -55,10 +55,6 @@ class SpendingProposal < ActiveRecord::Base
 
   def description
     super.try :html_safe
-  end
-
-  def self.filter_params(params)
-    params.select{|x, _| %w{geozone_id administrator_id tag_name valuator_id}.include? x.to_s }
   end
 
   def self.scoped_filter(params, current_filter)

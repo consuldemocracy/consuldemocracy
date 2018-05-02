@@ -1,4 +1,4 @@
-class Legislation::Question < ActiveRecord::Base
+class Legislation::Question < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
   include Notifiable

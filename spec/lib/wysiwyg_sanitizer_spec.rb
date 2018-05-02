@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe WYSIWYGSanitizer do
+describe 'WYSIWYGSanitizer' do
 
-  subject { described_class.new }
+  subject { WYSIWYGSanitizer.new }
 
   describe '#sanitize' do
 

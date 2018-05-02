@@ -1,4 +1,5 @@
 require 'csv'
+
 class Proposal < ActiveRecord::Base
   include Rails.application.routes.url_helpers
   include Flaggable
@@ -30,7 +31,8 @@ class Proposal < ActiveRecord::Base
   PROCEEDINGS = [ 'Derechos Humanos' ]
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :geozone
+  belongs_to :geozone, optional: true
+
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :proposal_notifications, dependent: :destroy
 

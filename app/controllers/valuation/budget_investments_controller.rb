@@ -63,7 +63,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def resource_name
-      resource_model.parameterize('_')
+      resource_model.parameterize(separator: '_')
     end
 
     def load_budget
@@ -97,7 +97,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def params_for_current_valuator
-      Budget::Investment.filter_params(params)
+      Budget::Investment.filter_params(params).to_h.merge({ valuator_id: current_user.valuator.id,
+                                                           budget_id: @budget.id })
     end
 
     def valuation_params

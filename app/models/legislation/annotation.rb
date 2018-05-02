@@ -1,4 +1,4 @@
-class Legislation::Annotation < ActiveRecord::Base
+class Legislation::Annotation < ApplicationRecord
   COMMENTS_PAGE_SIZE = 5
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases

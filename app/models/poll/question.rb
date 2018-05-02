@@ -1,4 +1,4 @@
-class Poll::Question < ActiveRecord::Base
+class Poll::Question < ApplicationRecord
   include Measurable
   include Searchable
 
