@@ -287,6 +287,15 @@ describe Signature do
         expect { signature.create_user }.to change { User.count }.by(0)
       end
 
+      it "assigns the document number returned by census instead of the one in the signature sheet" do
+        signature = create(:signature, document_number: "00012345678Z")
+
+        signature.create_user
+
+        expect(User.last.document_number).to eq("12345678Z")
+      end
+    end
+
   end
 
 end

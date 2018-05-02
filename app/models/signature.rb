@@ -80,6 +80,7 @@ class Signature < ActiveRecord::Base
       response = CensusCaller.new.call(document_type, document_number)
       if response.valid?
         @census_api_response = response
+        self.document_number = @census_api_response.document_number
         true
       else
         false
