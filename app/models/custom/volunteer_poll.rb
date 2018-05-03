@@ -1,4 +1,4 @@
-class VolunteerPoll < ActiveRecord::Base
+class VolunteerPoll < ApplicationRecord
 
   VALID_DAYS = [
     "monday_13_morning",

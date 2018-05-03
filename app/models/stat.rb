@@ -1,4 +1,4 @@
-class Stat < ActiveRecord::Base
+class Stat < ApplicationRecord
   validates :namespace, presence: true
   validates :group, presence: true
   validates :name, presence: true, uniqueness: { scope: [:namespace, :group] }

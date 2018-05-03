@@ -1,4 +1,4 @@
-class Document < ActiveRecord::Base
+class Document < ApplicationRecord
   include DocumentsHelper
   include DocumentablesHelper
   has_attached_file :attachment, url: "/system/:class/:prefix/:style/:hash.:extension",
