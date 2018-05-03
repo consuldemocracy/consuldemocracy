@@ -111,7 +111,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_tags
-      @tags = Budget::Investment.by_budget(@budget).tags_on(:valuation).order(:name).uniq
+      @tags = Budget::Investment.by_budget(@budget).tags_on(:valuation).order(:name).distinct
     end
 
     def load_ballot
