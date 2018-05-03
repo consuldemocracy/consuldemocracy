@@ -37,7 +37,7 @@ es:
           debates: Debates
           proposals: Propuestas
           budgets: Presupuestos participativos
-          more_info: Página de más información
+          help_page: Página de ayuda
         background_color: Color de fondo
         font_color: Color del texto
       edit:

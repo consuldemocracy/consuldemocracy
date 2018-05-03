@@ -74,6 +74,8 @@ feature 'Admin banners magement' do
   end
 
   scenario 'Publish a banner' do
+    section = create(:web_section, name: 'proposals')
+
     visit admin_root_path
 
     within('#side_menu') do
@@ -91,6 +93,7 @@ feature 'Admin banners magement' do
     fill_in 'post_ended_at', with: next_week.strftime("%d/%m/%Y")
     fill_in 'banner_background_color', with: '#850000'
     fill_in 'banner_font_color', with: '#ffb2b2'
+    check "banner_web_section_ids_#{section.id}"
 
     click_button 'Save changes'
 
@@ -118,19 +121,6 @@ feature 'Admin banners magement' do
 
     expect(page.find_field("banner_background_color_picker").value).to eq('#850000')
     expect(page.find_field("banner_font_color_picker").value).to eq('#ffb2b2')
-  end
-
-  scenario "Created banner is correctly shown in the web" do
-    banner = create(:banner, title: 'My banner', description: 'My description of the banner', target_url: '/debates', background_color: '#00FF00')
-
-    visit proposals_path
-
-    expect(find('.banner')[:style]).to eq("background-color:#00FF00")
-
-    within('.banner') do
-      expect(find('h2')[:style]).to eq("color:#{banner.font_color}")
-      expect(find('h3')[:style]).to eq("color:#{banner.font_color}")
-    end
   end
 
   scenario 'Edit banner with live refresh', :js do

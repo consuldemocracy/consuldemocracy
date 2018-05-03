@@ -745,6 +745,15 @@ FactoryBot.define do
     font_color '#FFFFFF'
   end
 
+  factory :web_section do
+    name 'homepage'
+  end
+
+  factory :banner_section, class: 'Banner::Section' do
+    association :banner_id, factory: :banner
+    association :web_section, factory: :web_section
+  end
+
   factory :proposal_notification do
     sequence(:title) { |n| "Thank you for supporting my proposal #{n}" }
     sequence(:body) { |n| "Please let others know so we can make it happen #{n}" }
