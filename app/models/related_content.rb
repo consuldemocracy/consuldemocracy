@@ -1,4 +1,4 @@
-class RelatedContent < ActiveRecord::Base
+class RelatedContent < ApplicationRecord
   RELATED_CONTENT_SCORE_THRESHOLD = Setting["related_content_score_threshold"].to_f
   RELATIONABLE_MODELS = %w{proposals debates budgets investments}.freeze
 

@@ -1,4 +1,4 @@
-class Poll::Question::Answer < ActiveRecord::Base
+class Poll::Question::Answer < ApplicationRecord
   include Galleryable
   include Documentable
 
