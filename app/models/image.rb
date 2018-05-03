@@ -1,4 +1,4 @@
-class Image < ActiveRecord::Base
+class Image < ApplicationRecord
   include ImagesHelper
   include ImageablesHelper
 
