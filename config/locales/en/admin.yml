@@ -1437,6 +1437,10 @@ en:
           one: "There is %{count} invalid signature"
           other: "There are %{count} invalid signatures"
         unverified_error: (Not verified by Census)
+        voted:
+          zero: "There is no votes created from the verified signatures."
+          one: "There is %{count} vote created from the verified signatures."
+          other: "There is %{count} votes created from verified signatures."
         loading: "There are still signatures that are being verified by the Census, please refresh the page in a few moments"
     stats:
       show:
