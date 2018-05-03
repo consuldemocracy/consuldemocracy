@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  after_filter :after_login, only: :create
+  after_action :after_login, only: :create
 
   def twitter
     sign_in_with :twitter_login, :twitter
