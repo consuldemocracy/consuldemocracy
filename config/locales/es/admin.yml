@@ -195,7 +195,6 @@ es:
           visible_to_valuators: Mostrar a evaluadores
           selected: Seleccionado
           author_username: Usuario autor
-          incompatible: Incompatible
         table_id: "ID"
         table_title: "Título"
         table_supports: "Apoyos"
