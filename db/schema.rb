@@ -222,7 +222,6 @@ ActiveRecord::Schema.define(version: 20180418164308) do
     t.integer  "community_id"
     t.integer  "original_spending_proposal_id"
     t.integer  "valuator_group_assignments_count",            default: 0
-    t.boolean  "visible_to_valuators",                  default: false
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
