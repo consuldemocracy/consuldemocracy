@@ -12,12 +12,8 @@ module AdminHelper
     t("#{namespace}.header.title")
   end
 
-  def menu_tags?
-    ["tags"].include?(controller_name)
-  end
-
   def menu_moderated_content?
-    ["proposals", "debates", "comments", "hidden_users"].include?(controller_name) && controller.class.parent != Admin::Legislation
+    ["proposals", "debates", "comments", "hidden_users", "activity"].include?(controller_name) && controller.class.parent != Admin::Legislation
   end
 
   def menu_budget?
@@ -29,15 +25,15 @@ module AdminHelper
   end
 
   def menu_profiles?
-    %w[administrators organizations officials moderators valuators managers users activity].include?(controller_name)
+    %w[administrators organizations officials moderators valuators managers users].include?(controller_name)
   end
 
-  def menu_banners?
-    ["banners"].include?(controller_name)
+  def menu_settings?
+    ["settings", "tags", "geozones", "images", "content_blocks"].include?(controller_name)
   end
 
   def menu_customization?
-    ["pages", "images", "content_blocks"].include?(controller_name) || menu_homepage?
+    ["pages", "banners"].include?(controller_name) || menu_homepage?
   end
 
   def menu_homepage?
