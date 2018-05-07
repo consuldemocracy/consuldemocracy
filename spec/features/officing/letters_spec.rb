@@ -220,49 +220,49 @@ feature 'Letters' do
   context "Checks all document types" do
 
     scenario "Passport" do
-      fill_in 'residence_document_number', with: "12345678A"
+      fill_in 'residence_document_number', with: "AA12345B"
       fill_in 'residence_postal_code', with: '28013'
 
       click_button 'Validate document'
 
       expect(page).to have_content 'Voto VÁLIDO'
-      expect(page).to have_content '12345678A'
+      expect(page).to have_content 'AA12345B'
       expect(page).to have_content '28013'
 
       voters = Poll::Voter.all
       expect(voters.count).to eq(1)
       expect(voters.first.origin).to eq("letter")
-      expect(voters.first.document_number).to eq("12345678A")
+      expect(voters.first.document_number).to eq("AA12345B")
       expect(voters.first.document_type).to eq("2")
       expect(voters.first.poll).to eq(poll)
 
       logs = Poll::LetterOfficerLog.all
       expect(logs.count).to eq(2)
       expect(logs.first.user_id).to eq(officer.user_id)
-      expect(logs.first.document_number).to eq("12345678A")
+      expect(logs.first.document_number).to eq("AA12345B")
       expect(logs.first.postal_code).to eq("28013")
       expect(logs.first.message).to eq("Voto NO VÁLIDO")
 
       expect(logs.last.user_id).to eq(officer.user_id)
-      expect(logs.last.document_number).to eq("12345678A")
+      expect(logs.last.document_number).to eq("AA12345B")
       expect(logs.last.postal_code).to eq("28013")
       expect(logs.last.message).to eq("Voto VÁLIDO")
     end
 
     scenario "Foreign resident" do
-      fill_in 'residence_document_number', with: "12345678B"
+      fill_in 'residence_document_number', with: "X54321H"
       fill_in 'residence_postal_code', with: '28013'
 
       click_button 'Validate document'
 
       expect(page).to have_content 'Voto VÁLIDO'
-      expect(page).to have_content '12345678B'
+      expect(page).to have_content 'X54321H'
       expect(page).to have_content '28013'
 
       voters = Poll::Voter.all
       expect(voters.count).to eq(1)
       expect(voters.first.origin).to eq("letter")
-      expect(voters.first.document_number).to eq("12345678B")
+      expect(voters.first.document_number).to eq("X54321H")
       expect(voters.first.document_type).to eq("3")
       expect(voters.first.poll).to eq(poll)
 
