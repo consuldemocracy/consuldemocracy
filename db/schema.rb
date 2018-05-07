@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323170945) do
+ActiveRecord::Schema.define(version: 20180425084539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1119,6 +1119,12 @@ ActiveRecord::Schema.define(version: 20180323170945) do
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
     t.boolean  "public_interests",                          default: false
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "address"
+    t.string   "postal_code"
+    t.string   "city"
+    t.boolean  "ca_wanabee"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -1126,6 +1132,7 @@ ActiveRecord::Schema.define(version: 20180323170945) do
   add_index "users", ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
   add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree
   add_index "users", ["password_changed_at"], name: "index_users_on_password_changed_at", using: :btree
+  add_index "users", ["postal_code"], name: "index_users_on_postal_code", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
 

@@ -49,6 +49,16 @@
   }
 }
 
+.auth-page, .edit_account {
+  .date-of-birth select {
+    display: inline-block;
+    width: 30%;
+    @include breakpoint(medium) {
+      width: 25%;
+    }
+  }
+}
+
 $subnavigation-sm-btn-width: 130px;
 
 .subnavigation.subnavigation-sm {

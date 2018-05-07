@@ -9,6 +9,13 @@ FactoryBot.define do
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
+    # custom_fields begin -----------------------
+    sequence(:firstname) { |n| "Manuela#{n}" }
+    sequence(:lastname) { |n| "Zuliani#{n}" }
+    postal_code '11000'
+    date_of_birth 22.years.ago
+    # custom_fields end -------------------------
+
     sequence(:username) { |n| "Manuela#{n}" }
     sequence(:email)    { |n| "manuela#{n}@consul.dev" }
 

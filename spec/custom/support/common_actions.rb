@@ -11,7 +11,7 @@ module CommonActions
     fill_in 'user_password_confirmation', with: password
     check 'user_terms_of_service'
 
-    click_button 'Register'
+    click_button 'register-btn'
   end
 
   def login_through_form_as(user)
@@ -22,7 +22,7 @@ module CommonActions
     fill_in 'user_login', with: user.email
     fill_in 'user_password', with: user.password
 
-    click_button 'Enter'
+    click_button 'signin-btn'
   end
 
   def login_through_form_as_officer(user)
@@ -32,7 +32,7 @@ module CommonActions
     fill_in 'user_login', with: user.email
     fill_in 'user_password', with: user.password
 
-    click_button 'Enter'
+    click_button 'signin-btn'
     visit new_officing_residence_path
   end
 

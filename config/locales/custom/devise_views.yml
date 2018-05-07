@@ -8,4 +8,31 @@ fr:
         signup: Rejoins-nous!
     sessions:
       new:
-        login_label: Email ou nom d'utilisateur
+        login_label: Email ou pseudo
+    users:
+      registrations:
+        new:
+          username_is_available: "Pseudo disponible"
+          username_is_not_available: "Pseudo déjà utilisé"
+          username_label: Pseudo
+          username_note: "Nom d'utilisateur qui apparaîtra en face de vos publications (par défaut: Nom + Prénom)"
+          firstname_label: Prénom
+          lastname_label: Nom
+          date_of_birth_note: Entre 16 et 25 ans
+          date_of_birth: Date de naissance
+          address_label: Adresse (facultatif)
+          gender_label: Genre (facultatif)
+          gender_placeholder: Sélectionnez votre genre
+          phone_label: Téléphone (facultatif)
+          city_label: Ville
+          ca_wanabee: "Je souhaite devenir membre actif du conseil départemental des jeunes"
+          terms: J'ai pris connaissance de la %{terms} et m'engage à la respecter.
+          terms_link: charte d'engagement
+          terms_title: J'ai pris connaissance de la charte d'engagement et m'engage à la respecter.
+
+    mailer:
+      confirmation_instructions:
+        confirm_link: Confirmer mon compte
+        text: 'Vous pouvez confirmer votre courriel en cliquant sur le lien suivant :'
+        title: Bienvenue au Conseil Départemental des Jeunes de l'Aude
+        welcome: Bienvenue

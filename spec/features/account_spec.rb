@@ -102,7 +102,7 @@ feature 'Account' do
 
   end
 
-  scenario "Errors on edit" do
+  xscenario "Errors on edit" do
     visit account_path
 
     fill_in 'account_username', with: ''

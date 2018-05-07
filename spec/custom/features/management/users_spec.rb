@@ -6,7 +6,7 @@ feature 'Users' do
     login_as_manager
   end
 
-  xscenario 'Create a level 3 user with email from scratch' do
+  scenario 'Create a level 3 user with email from scratch' do
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '12345678Z'
     click_button 'Check'
@@ -18,6 +18,9 @@ feature 'Users' do
     fill_in 'user_username', with: 'pepe'
     fill_in 'user_email', with: 'pepe@gmail.com'
     select_date '31-December-1980', from: 'user_date_of_birth'
+    fill_in 'user_lastname', with: 'mirza'
+    fill_in 'user_firstname', with: 'zuliani'
+    fill_in 'user_postal_code', with: '11000'
 
     click_button 'Create user'
 
@@ -46,7 +49,7 @@ feature 'Users' do
     expect(page).to have_content "Your account has been confirmed."
   end
 
-  xscenario 'Create a level 3 user without email from scratch' do
+  scenario 'Create a level 3 user without email from scratch' do
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '12345678Z'
     click_button 'Check'
@@ -58,6 +61,9 @@ feature 'Users' do
     fill_in 'user_username', with: 'Kelly Sue'
     fill_in 'user_email', with: ''
     select_date '31-December-1980', from: 'user_date_of_birth'
+    fill_in 'user_lastname', with: 'mirza'
+    fill_in 'user_firstname', with: 'zuliani'
+    fill_in 'user_postal_code', with: '11000'
 
     click_button 'Create user'
 
@@ -70,30 +76,6 @@ feature 'Users' do
     expect(user).to be_residence_verified
     expect(user).to be_confirmed
     expect(user.date_of_birth).to have_content Date.new(1980, 12, 31)
-  end
-
-  scenario 'Delete a level 2 user account from document verification page', :js do
-    level_2_user = create(:user, :level_two, document_number: "12345678Z")
-
-    visit management_document_verifications_path
-    fill_in 'document_verification_document_number', with: '12345678Z'
-    click_button 'Check'
-
-    expect(page).not_to have_content "This user account is already verified."
-    expect(page).to have_content "This user can participate in the website with the following permissions"
-
-    click_link "Delete user"
-    click_link "Delete account"
-
-    expect(page).to have_content "User account deleted."
-
-    expect(level_2_user.reload.erase_reason).to eq "Deleted by manager: manager_user_#{Manager.last.user_id}"
-
-    visit management_document_verifications_path
-    fill_in 'document_verification_document_number', with: '12345678Z'
-    click_button 'Check'
-
-    expect(page).to have_content "no user account associated to it"
   end
 
 end
