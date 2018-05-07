@@ -195,7 +195,18 @@ en:
           visible_to_valuators: Show to valuators
           selected: Selected
           author_username: Author username
-          incompatible: Incompatible
+        table_id: "ID"
+        table_title: "Title"
+        table_supports: "Supports"
+        table_admin: "Administrator"
+        table_valuator: "Valuator"
+        table_valuation_group: "Valuation Group"
+        table_geozone: "Scope of operation"
+        table_feasibility: "Feasibility"
+        table_valuation_finished: "Val. Fin."
+        table_selection: "Selected"
+        table_evaluation: "Show to valuators"
+        table_incompatible: "Incompatible"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
@@ -1166,6 +1177,10 @@ en:
           one: "There is %{count} invalid signature"
           other: "There are %{count} invalid signatures"
         unverified_error: (Not verified by Census)
+        voted:
+          zero: "There is no votes created from the verified signatures."
+          one: "There is %{count} vote created from the verified signatures."
+          other: "There is %{count} votes created from verified signatures."
         loading: "There are still signatures that are being verified by the Census, please refresh the page in a few moments"
     stats:
       show:

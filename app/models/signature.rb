@@ -1,4 +1,6 @@
 class Signature < ApplicationRecord
+  include DocumentParser
+
   belongs_to :signature_sheet
   belongs_to :user
 
@@ -13,36 +15,31 @@ class Signature < ApplicationRecord
   before_validation :clean_document_number
 
   def verify
-    if user_exists?
+    if find_or_create_user?
       assign_vote_to_user
       mark_as_verified
-    elsif in_census?
-      create_user
-      assign_vote_to_user
-      mark_as_verified
-    end
-  end
-
-  def assign_vote_to_user
-    set_user
-    if signable.is_a? Budget::Investment
-      signable.vote_by(voter: user, vote: 'yes') if [nil, :no_selecting_allowed].include?(signable.reason_for_not_being_selectable_by(user))
     else
-      signable.register_vote(user, "yes")
+      mark_as_unverified
     end
-    assign_signature_to_vote
   end
 
-  def assign_signature_to_vote
-    vote = Vote.where(votable: signable, voter: user).first
-    vote.update(signature: self) if vote
+  def find_or_create_user?
+    self.user = find_user || create_user
   end
 
-  def user_exists?
-    User.where(document_number: document_number).any?
+  def find_user
+    User.where(document_number: document_number_variants).first
+  end
+
+  def document_number_variants
+    document_types.collect do |document_type|
+      get_document_number_variants(document_type, document_number)
+    end.flatten.uniq
   end
 
   def create_user
+    return false unless in_census?
+
     user_params = {
       document_number: document_number,
       created_from_signature: true,
@@ -72,6 +69,7 @@ class Signature < ApplicationRecord
       response = CensusCaller.new.call(document_type, document_number)
       if response.valid?
         @census_api_response = response
+        self.document_number = @census_api_response.document_number
         true
       else
         false
@@ -86,12 +84,36 @@ class Signature < ApplicationRecord
     update(user: user)
   end
 
+  def assign_vote_to_user
+    if signable.is_a? Budget::Investment
+      signable.vote_by(voter: user, vote: 'yes') if can_sign?
+    else
+      signable.register_vote(user, "yes")
+    end
+    assign_signature_to_vote
+  end
+
+  def assign_signature_to_vote
+    vote = Vote.where(votable: signable, voter: user).first
+    vote.update(signature: self) if vote
+  end
+
+  def can_sign?
+    [nil, :no_selecting_allowed].include?(signable.reason_for_not_being_selectable_by(user))
+  end
+
   def mark_as_verified
     update(verified: true)
   end
 
-  def document_types
-    %w(1 2 3 4)
+  def mark_as_unverified
+    update(verified: false)
   end
+
+  private
+
+    def document_types
+      %w(1 2 3 4)
+    end
 
 end

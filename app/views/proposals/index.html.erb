@@ -79,7 +79,13 @@
 
       <div id="proposals-list">
         <% if @proposals.any? || current_user.blank? %>
-          <%= render partial: 'proposals/proposal', collection: @proposals %>
+          <% if proposals_default_view? %>
+            <%= render partial: 'proposals/proposal', collection: @proposals %>
+          <% else %>
+            <% @proposals.each do |proposal| %>
+              <%= render partial: '/proposals/proposal_minimal', locals: { proposal: proposal } %>
+            <% end %>
+          <% end %>
         <% else %>
           <%= empty_recommended_proposals_message_text(current_user) %>
         <% end %>
