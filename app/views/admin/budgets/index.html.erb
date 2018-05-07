@@ -27,8 +27,10 @@
         <td class="small">
           <%= t("budgets.phase.#{budget.phase}") %>
         </td>
-        <td class="small">
-          <%= link_to t("admin.budgets.index.budget_investments"), admin_budget_budget_investments_path(budget_id: budget.id) %>
+        <td>
+          <%= link_to t("admin.budgets.index.budget_investments"),
+                         admin_budget_budget_investments_path(budget_id: budget.id),
+                         class: "button hollow medium" %>
         </td>
         <td class="small">
           <%= link_to t("admin.budgets.index.edit_groups"), admin_budget_path(budget) %>
