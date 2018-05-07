@@ -5,7 +5,7 @@ en:
     actions:
       actions: Actions
       confirm: Are you sure?
-      confirm_hide: Confirm
+      confirm_hide: Confirm moderation
       hide: Hide
       hide_author: Hide author
       restore: Restore
@@ -71,7 +71,7 @@ en:
         filters:
           open: Open
           finished: Finished
-        budget_investments: See budget investments
+        budget_investments: Manage projects
         table_name: Name
         table_phase: Phase
         table_investments: Investments
@@ -472,7 +472,7 @@ en:
       activity: Moderator activity
       admin: Admin menu
       banner: Manage banners
-      poll_questions: Poll questions
+      poll_questions: Questions
       proposals_topics: Proposals topics
       budgets: Participatory budgets
       geozones: Manage geozones
@@ -494,7 +494,7 @@ en:
       poll_shifts: Manage shifts
       officials: Officials
       organizations: Organisations
-      settings: Configuration settings
+      settings: Global settings
       spending_proposals: Spending proposals
       stats: Statistics
       signature_sheets: Signature Sheets
@@ -503,13 +503,12 @@ en:
         pages: Custom Pages
         images: Custom Images
         content_blocks: Custom content blocks
-      title_categories: Categories
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
       title_profiles: Profiles
-      title_banners: Banners
-      title_site_customization: Site customization
+      title_settings: Settings
+      title_site_customization: Site content
       legislation: Collaborative Legislation
       users: Users
     administrators:
@@ -721,8 +720,8 @@ en:
         table_location: "Location"
     polls:
       index:
-        title: "List of polls"
-        no_polls: "There are no polls."
+        title: "List of active polls"
+        no_polls: "There are no polls coming up."
         create: "Create poll"
         name: "Name"
         dates: "Dates"
@@ -834,8 +833,8 @@ en:
         title: "Results by booth"
     booths:
       index:
-        title: "List of booths"
-        no_booths: "There are no booths."
+        title: "List of active booths"
+        no_booths: "There are no active booths for any upcoming poll."
         add_booth: "Add booth"
         name: "Name"
         location: "Location"
@@ -963,6 +962,12 @@ en:
       description: Description
       image: Image
       show_image: Show image
+      view: View
+      proposal: Proposal
+      author: Author
+      content: Content
+      created_at: Created at
+      moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -1125,6 +1130,7 @@ en:
         add_tag: Add a new proposal topic
         title: Proposal topics
         topic: Topic
+        help: "When a user creates a proposal, the following topics are suggested as default tags."
       name:
         placeholder: Type the name of the topic
     users:

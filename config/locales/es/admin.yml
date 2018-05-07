@@ -5,7 +5,7 @@ es:
     actions:
       actions: Acciones
       confirm: '¿Estás seguro?'
-      confirm_hide: Confirmar
+      confirm_hide: Confirmar moderación
       hide: Ocultar
       hide_author: Bloquear al autor
       restore: Volver a mostrar
@@ -71,7 +71,7 @@ es:
         filters:
           open: Abiertos
           finished: Terminados
-        budget_investments: Ver proyectos de gasto
+        budget_investments: Gestionar proyectos de gasto
         table_name: Nombre
         table_phase: Fase
         table_investments: Proyectos de gasto
@@ -472,7 +472,7 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
-      poll_questions: Preguntas ciudadanas
+      poll_questions: Preguntas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
       geozones: Gestionar distritos
@@ -503,13 +503,12 @@ es:
         pages: Personalizar páginas
         images: Personalizar imágenes
         content_blocks: Personalizar bloques
-      title_categories: Categorías
       title_moderated_content: Contenido moderado
       title_budgets: Presupuestos
       title_polls: Votaciones
       title_profiles: Perfiles
-      title_banners: Banners
-      title_site_customization: Personalizar sitio
+      title_settings: Configuración
+      title_site_customization: Contenido del sitio
       legislation: Legislación colaborativa
       users: Usuarios
     administrators:
@@ -721,8 +720,8 @@ es:
         table_location: "Ubicación"
     polls:
       index:
-        title: "Listado de votaciones"
-        no_polls: "No hay ninguna votación."
+        title: "Listado de votaciones activas"
+        no_polls: "No hay ninguna votación próximamente."
         create: "Crear votación"
         name: "Nombre"
         dates: "Fechas"
@@ -834,8 +833,8 @@ es:
         title: "Resultados por urna"
     booths:
       index:
-        title: "Lista de urnas"
-        no_booths: "No hay urnas."
+        title: "Listado de urnas activas"
+        no_booths: "No hay urnas activas para ninguna votación próxima."
         add_booth: "Añadir urna"
         name: "Nombre"
         location: "Ubicación"
@@ -963,6 +962,12 @@ es:
       description: Descripción
       image: Imagen
       show_image: Mostrar imagen
+      view: Ver
+      proposal: Propuesta
+      author: Autor
+      content: Contenido
+      created_at: Fecha de creación
+      moderated_content: "Revisa el contenido moderado por los moderadores, y confirma si la moderación se ha realizado correctamente."
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
@@ -1125,6 +1130,7 @@ es:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
         topic: Tema
+        help: "Cuando un usuario crea una propuesta se le sugieren como etiquetas por defecto los siguientes temas."
       name:
         placeholder: Escribe el nombre del tema
     users:

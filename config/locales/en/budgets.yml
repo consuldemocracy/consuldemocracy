@@ -30,14 +30,14 @@ en:
         unselected: See investments not selected for balloting phase
     phase:
       drafting: Draft (Not visible to the public)
-      informing: Informing
+      informing: Information
       accepting: Accepting projects
       reviewing: Reviewing projects
       selecting: Selecting projects
       valuating: Valuating projects
       publishing_prices: Publishing projects prices
-      balloting: Balloting projects
-      reviewing_ballots: Reviewing Ballots
+      balloting: Voting projects
+      reviewing_ballots: Reviewing voting
       finished: Finished budget
     index:
       title: Participatory budgets
