@@ -28,6 +28,10 @@ fr:
     - octobre
     - novembre
     - décembre
+    order:
+    - :day
+    - :month
+    - :year
   datetime:
     prompts:
       day: Jour
