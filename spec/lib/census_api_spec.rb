@@ -23,11 +23,15 @@ describe CensusApi do
     end
 
     it 'adds upper and lowercase letter when the letter is present' do
-      expect(api.get_document_number_variants(1, '1234567A')).to eq(%w(1234567 01234567 1234567a 1234567A 01234567a 01234567A))
+      expect(api.get_document_number_variants(1, '1234567L')).to eq(%w(1234567 01234567 1234567l 1234567L 01234567l 01234567L))
     end
 
     it 'adds letter if not present' do
       expect(api.get_document_number_variants(1, '1234567')).to eq(%w(1234567 01234567 1234567l 1234567L 01234567l 01234567L))
+    end
+
+    it 'uses the correct letter for a spanish document number' do
+      expect(api.get_document_number_variants(1, '1234567B')).to eq(%w(1234567 01234567 1234567l 1234567L 01234567l 01234567L))
     end
   end
 
