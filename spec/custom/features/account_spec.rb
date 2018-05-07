@@ -106,6 +106,8 @@ feature 'Account' do
     visit account_path
 
     fill_in 'account_username', with: ''
+    fill_in 'account_firstname', with: ''
+    fill_in 'account_lastname', with: ''
     click_button 'Save changes'
 
     expect(page).to have_content error_message
@@ -125,7 +127,7 @@ feature 'Account' do
     expect(page).to have_content error_message
   end
 
-  xscenario 'Erasing account' do
+  scenario 'Erasing account' do
     visit account_path
 
     click_link 'Erase my account'

@@ -1,4 +1,41 @@
 fr:
+  date:
+    abbr_month_names:
+    -
+    - jan
+    - fév
+    - mar
+    - avr
+    - mai
+    - jun
+    - jul
+    - aoû
+    - sep
+    - oct
+    - nov
+    - déc
+    month_names:
+    -
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+  datetime:
+    prompts:
+      day: Jour
+      hour: Heure
+      minute: Minutes
+      month: Mois
+      second: Secondes
+      year: Année
   errors:
     messages:
       blank: ne peut être vide
