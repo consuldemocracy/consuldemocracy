@@ -439,8 +439,10 @@ en:
             error: Error
         form:
           add_option: Add option
-          title_placeholder: Add a title
+          title: Question
+          title_placeholder: Add question
           value_placeholder: Add a closed answer
+          question_options: "Possible answers (optional, by default open answers)"
         index:
           back: Back
           title: Questions associated to this process

@@ -1,40 +1,41 @@
 <%= form_for [:admin, @process, @question], url: url, html: {data: {watch_changes: true}} do |f| %>
 
   <% if @question.errors.any? %>
-    <div id="error_explanation" data-alert class="callout alert" data-closable>
-      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-        <span aria-hidden="true">&times;</span>
-      </button>
+    <div class="small-12 medium-9 column">
+      <div id="error_explanation" data-alert class="callout alert" data-closable>
+        <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
 
-      <strong>
-        <%= @question.errors.count %>
-        <%= t("admin.legislation.questions.errors.form.error", count: @question.errors.count) %>
-      </strong>
+        <strong>
+          <%= @question.errors.count %>
+          <%= t("admin.legislation.questions.errors.form.error", count: @question.errors.count) %>
+        </strong>
+      </div>
     </div>
   <% end %>
 
-  <div class="small-12 medium-4 column">
-    <%= f.label :title %>
-  </div>
-  <div class="small-12 medium-8 column">
-    <%= f.text_area :title, rows: 5, label: false, placeholder: t('admin.legislation.questions.form.title_placeholder') %>
+  <div class="small-12 medium-9 column">
+    <%= f.label :title, t("admin.legislation.questions.form.title") %>
+    <%= f.text_area :title, rows: 5, label: false, placeholder: t("admin.legislation.questions.form.title_placeholder") %>
   </div>
 
-  <div class="small-12 medium-4 column">
-    <%= f.label :question_options %>
+  <div class="small-12 medium-9 column">
+    <%= f.label :question_options, t("admin.legislation.questions.form.question_options") %>
   </div>
-  <div class="small-12 medium-8 column">
+
+  <div>
     <%= f.fields_for :question_options do |ff| %>
       <%= render 'question_option_fields', f: ff %>
     <% end %>
   </div>
-  <div class="small-12 medium-8 column">
-    <%= link_to_add_association t('.add_option'), f, :question_options %>
+
+  <div class="small-12 medium-9 column margin">
+    <%= link_to_add_association t("admin.legislation.questions.form.add_option"),
+                                f, :question_options, class: "button hollow medium" %>
   </div>
 
-  <div class="row">
-    <div class="actions small-12 medium-3 column legislation-process-save">
-      <%= f.submit(class: "button expanded", value: t("admin.legislation.questions.#{admin_submit_action(@question)}.submit_button")) %>
-    </div>
+  <div class="small-12 medium-6 large-4 column end">
+    <%= f.submit(class: "button expanded", value: t("admin.legislation.questions.#{admin_submit_action(@question)}.submit_button")) %>
   </div>
 <% end %>

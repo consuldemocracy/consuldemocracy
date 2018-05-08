@@ -439,8 +439,10 @@ es:
             error: Error
         form:
           add_option: +Añadir respuesta cerrada
+          title: Pregunta
           title_placeholder: Escribe un título a la pregunta
           value_placeholder: Escribe una respuesta cerrada
+          question_options: "Posibles respuestas (opcional, por defecto respuestas abiertas)"
         index:
           back: Volver
           title: Preguntas asociadas a este proceso
