@@ -68,10 +68,6 @@ module Abilities
         can :create, SpendingProposal
 
 
-
-
-
-
         # Dejar solamente una propuesta por grupo.
         if true || user
            .budget_investments

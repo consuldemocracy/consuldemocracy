@@ -148,7 +148,6 @@ module Budgets
     end
 
     def investments
-
       if @current_order == 'random'
         @investments.apply_filters_and_search(@budget, params, @current_filter)
                     .send("sort_by_#{@current_order}", params[:random_seed])

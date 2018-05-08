@@ -76,7 +76,6 @@ class Budget
     scope :undecided,                   -> { where(feasibility: "undecided") }
     scope :with_supports,               -> { where('cached_votes_up > 0') }
     scope :selected,                    -> { feasible.where(selected: true) }
-    #scope :selected_undecided,          -> { where(selected: true) }
     scope :compatible,                  -> { where(incompatible: false) }
     scope :incompatible,                -> { where(incompatible: true) }
     scope :winners,                     -> { selected.compatible.where(winner: true) }
@@ -343,10 +342,6 @@ class Budget
       end
       investments = investments.unfeasible if params[:unfeasible].present?
       investments = investments.selected if budget.balloting?
-      # else
-      #   investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
-      # end
-      # investments = investments.send(current_filter)            if current_filter.present?
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments = investments.filter(params[:advanced_search]) if params[:advanced_search].present?

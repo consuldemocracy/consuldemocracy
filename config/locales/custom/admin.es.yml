@@ -1,0 +1,9 @@
+es:
+  admin:
+    budget_investments:
+      index:
+        buttons:
+          search: Buscar
+      edit:
+        selection_by_assembly: Seleccionada en reunión de distrito
+        mark_as_selected_by_assembly: Marcar como seleccionada en reunión de distrito

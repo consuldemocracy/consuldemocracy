@@ -118,7 +118,8 @@ var initialize_modules = function() {
   App.InvestmentReportAlert.initialize();
 
 
-  $("#columna_2").css({height: $('div.expanded.budget.jumbo-budget.budget-heading').height()});
+  //$("#columna_2").css({height: $('div.expanded.budget.jumbo-budget.budget-heading').height()});
+  $("#columna_2").css({height: $('div#columna_1').height() + 51 });
 
   $('#distritos-map').imageMapResize();
 };
