@@ -135,7 +135,7 @@ feature 'Tags' do
     click_link "Create a budget investment"
 
     select  heading.name, from: 'budget_investment_heading_id'
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
+    fill_in 'budget_investment_title', with: 'Plant tress all over the city'
     fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
     check 'budget_investment_terms_of_service'
 
