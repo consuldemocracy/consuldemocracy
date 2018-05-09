@@ -1049,7 +1049,8 @@ feature 'Budget Investments' do
     user = create(:user)
     investment = create(:budget_investment)
     create(:budget_investment_milestone, investment: investment,
-                                         description: "Last milestone with a link to https://consul.dev",
+                                         description_en: "Last milestone with a link to https://consul.dev",
+                                         description_es: "Último hito con el link https://consul.dev",
                                          publication_date: Date.tomorrow)
     first_milestone = create(:budget_investment_milestone, investment: investment,
                                                            description: "First milestone",
@@ -1071,6 +1072,15 @@ feature 'Budget Investments' do
       expect(page).to have_link(document.title)
       expect(page).to have_link("https://consul.dev")
       expect(page).to have_content(first_milestone.status.name)
+    end
+
+    select('Español', from: 'locale-switcher')
+
+    find("#tab-milestones-label").click
+
+    within("#tab-milestones") do
+      expect(page).to have_content('Último hito con el link https://consul.dev')
+      expect(page).to have_link("https://consul.dev")
     end
   end
 
