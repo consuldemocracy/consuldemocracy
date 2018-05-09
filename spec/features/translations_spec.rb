@@ -76,21 +76,21 @@ feature "Translations" do
       scenario "Highlight current locale", :js do
         visit @edit_milestone_url
 
-        expect(find("span .js-globalize-locale-link.highlight")).to have_content "English"
+        expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
 
         select('Español', from: 'locale-switcher')
 
-        expect(find("span .js-globalize-locale-link.highlight")).to have_content "Español"
+        expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
       end
 
       scenario "Highlight selected locale", :js do
         visit @edit_milestone_url
 
-        expect(find("span .js-globalize-locale-link.highlight")).to have_content "English"
+        expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
 
         click_link "Español"
 
-        expect(find("span .js-globalize-locale-link.highlight")).to have_content "Español"
+        expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
       end
 
       scenario "Show selected locale form", :js do
