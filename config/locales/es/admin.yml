@@ -192,6 +192,7 @@ es:
         table_evaluation: "Mostrar a evaluadores"
         table_incompatible: "Incompatible"
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
+        see_results: "Ver resultados"
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
