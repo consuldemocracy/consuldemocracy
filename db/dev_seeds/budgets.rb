@@ -159,3 +159,17 @@ section "Creating default Investment Milestone Statuses" do
   Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executing_project'))
   Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executed'))
 end
+
+section "Creating investment milestones" do
+  Budget::Investment.all.each do |investment|
+    milestone = Budget::Investment::Milestone.new(investment_id: investment.id, publication_date: Date.tomorrow, status_id: Budget::Investment::Status.all.sample)
+    I18n.available_locales.map do |locale|
+      neutral_locale = locale.to_s.downcase.underscore.to_sym
+      Globalize.with_locale(neutral_locale) do
+        milestone.description = "Description for locale #{locale}"
+        milestone.title = I18n.l(Time.current, format: :datetime)
+        milestone.save!
+      end
+    end
+  end
+end
