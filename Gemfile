@@ -20,6 +20,8 @@ gem 'devise-async', '~>  1.0.0'
 gem 'devise_security_extension', git: 'https://github.com/phatworx/devise_security_extension.git' #, '~> 0.10'
 gem 'foundation-rails', '~> 6.4.3.0'
 gem 'foundation_rails_helper', '~> 2.0.0'
+gem 'globalize', '~> 5.1.0'
+gem 'globalize-accessors', '~> 0.2.1'
 gem 'graphiql-rails', '~> 1.4.1'
 gem 'graphql', '~> 1.7.8'
 gem 'groupdate', '~> 3.2.0'
@@ -54,8 +56,6 @@ gem 'turnout', '~> 2.4.0'
 gem 'uglifier', '~> 4.1.2'
 gem 'unicorn', '~> 5.4.0'
 gem 'whenever', '~> 0.10.0', require: false
-gem 'globalize', '~> 5.0.0'
-gem 'globalize-accessors', '~> 0.2.1'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-leaflet', '~> 1.3.1'
