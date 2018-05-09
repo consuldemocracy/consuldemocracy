@@ -19,7 +19,7 @@ module GlobalizeHelper
   end
 
   def highlight_current?(locale)
-    same_locale?(I18n.locale, locale) ? 'highlight' : ''
+    same_locale?(I18n.locale, locale) ? 'is-active' : ''
   end
 
   def show_delete?(locale)
