@@ -66,6 +66,12 @@ module BudgetsHelper
 
   def current_budget_map_locations
     return unless current_budget.present?
-    MapLocation.where(investment_id: current_budget.investments).map { |l| l.json_data }
+    if current_budget.valuating_or_later?
+      investments = current_budget.investments.selected
+    else
+      investments = current_budget.investments
+    end
+
+    MapLocation.where(investment_id: investments).map { |l| l.json_data }
   end
 end
