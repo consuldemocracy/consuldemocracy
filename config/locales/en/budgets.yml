@@ -125,6 +125,8 @@ en:
         no_milestones: Don't have defined milestones
         milestone_publication_date: "Published %{publication_date}"
         author: Author
+        project_unfeasible_html: 'This investment project <strong>has been marked as not feasible</strong> and will not go to balloting phase.'
+        project_not_selected_html: 'This investment project <strong>has not been selected</strong> for balloting phase.'
       wrong_price_format: Only integer numbers
       investment:
         add: Vote

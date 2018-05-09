@@ -137,6 +137,15 @@
           <span class="icon-budget"></span>
         </div>
         <br>
+        <% if investment.unfeasible? %>
+          <div class="callout warning">
+            <%= t("budgets.investments.show.project_unfeasible_html") %>
+          </div>
+        <% elsif !investment.selected? %>
+          <div class="callout warning">
+            <%= t("budgets.investments.show.project_not_selected_html") %>
+          </div>
+        <% end %>
       <% end %>
       <% if investment.should_show_price? %>
         <div class="sidebar-divider"></div>
