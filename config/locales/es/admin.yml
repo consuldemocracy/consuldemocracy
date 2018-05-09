@@ -207,6 +207,7 @@ es:
         table_selection: "Seleccionado"
         table_evaluation: "Mostrar a evaluadores"
         table_incompatible: "Incompatible"
+        see_results: "Ver resultados"
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
