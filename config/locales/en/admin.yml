@@ -207,6 +207,7 @@ en:
         table_selection: "Selected"
         table_evaluation: "Show to valuators"
         table_incompatible: "Incompatible"
+        see_results: "See results"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
