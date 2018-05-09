@@ -30,6 +30,9 @@ feature 'Valuation budget investments' do
 
   feature 'Index' do
     scenario 'Index shows budget investments assigned to current valuator' do
+      investment1 = create(:budget_investment, :visible_to_valuators, budget: budget)
+      investment2 = create(:budget_investment, :visible_to_valuators, budget: budget)
+
       individual_access = create(:budget_investment, :visible_to_valuators, budget: budget,
                                                                             valuators: [valuator])
       individual_and_group_access = create(:budget_investment, visible_to_valuators: true,
@@ -39,7 +42,6 @@ feature 'Valuation budget investments' do
       group_access = create(:budget_investment, visible_to_valuators: true, budget: budget,
                                                 valuator_groups: [valuator_group])
       no_access = create(:budget_investment, :visible_to_valuators, budget: budget)
-
 
       visit valuation_budget_budget_investments_path(budget)
 
@@ -85,11 +87,13 @@ feature 'Valuation budget investments' do
       (per_page + 2).times do
         investment = create(:budget_investment, :visible_to_valuators, budget: budget,
                                                                        valuators: [valuator])
+        investment.valuators << valuator
       end
 
       visit valuation_budget_budget_investments_path(budget)
 
       expect(page).to have_css('.budget_investment', count: per_page)
+
       within("ul.pagination") do
         expect(page).to have_content("1")
         expect(page).to have_content("2")
@@ -196,6 +200,9 @@ feature 'Valuation budget investments' do
                                                                     title: "Old idea",
                                                                     valuation_finished: true,
                                                                     valuators: [valuator])
+      valuating.valuators << valuator
+      valuated.valuators << valuator
+
 
       visit valuation_budget_budget_investments_path(budget)
 
@@ -224,7 +231,7 @@ feature 'Valuation budget investments' do
     let(:investment) do
       create(:budget_investment, budget: budget, price: 1234, feasibility: 'unfeasible',
                                  unfeasibility_explanation: 'It is impossible',
-                                 administrator: administrator)
+                                 administrator: administrator,)
     end
 
     background do
@@ -235,6 +242,7 @@ feature 'Valuation budget investments' do
       investment.update(visible_to_valuators: true)
 
       visit valuation_budget_budget_investments_path(budget)
+
 
       click_link investment.title
 
@@ -326,6 +334,8 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Dossier empty by default' do
+      investment.update(visible_to_valuators: true)
+
       visit valuation_budget_budget_investments_path(budget)
       click_link investment.title
 
@@ -337,6 +347,7 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Edit dossier' do
+      investment.update(visible_to_valuators: true)
       visit valuation_budget_budget_investments_path(budget)
       within("#budget_investment_#{investment.id}") do
         click_link "Edit dossier"
@@ -438,6 +449,8 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Finish valuation' do
+      investment.update(visible_to_valuators: true)
+
       visit valuation_budget_budget_investment_path(budget, investment)
       click_link 'Edit dossier'
 
@@ -495,7 +508,10 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Validates price formats' do
+      investment.update(visible_to_valuators: true)
+
       visit valuation_budget_budget_investments_path(budget)
+
       within("#budget_investment_#{investment.id}") do
         click_link "Edit dossier"
       end
