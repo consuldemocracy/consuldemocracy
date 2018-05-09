@@ -1075,9 +1075,7 @@ feature 'Debates' do
       fill_in 'debate_title', with: 'debate'
       check "debate_terms_of_service"
 
-      within('div#js-suggest') do
-        expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
-      end
+      expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
     end
 
     scenario 'No found suggestions', :js do
@@ -1091,9 +1089,7 @@ feature 'Debates' do
       fill_in 'debate_title', with: 'proposal'
       check "debate_terms_of_service"
 
-      within('div#js-suggest') do
-        expect(page).not_to have_content 'You are seeing'
-      end
+      expect(page).not_to have_content 'You are seeing'
     end
   end
 

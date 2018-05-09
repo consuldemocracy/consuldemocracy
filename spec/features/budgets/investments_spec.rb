@@ -802,9 +802,7 @@ feature 'Budget Investments' do
         visit new_budget_investment_path(other_budget)
         fill_in "budget_investment_title", with: "search"
 
-        within('div#js-suggest') do
-          expect(page).not_to have_content 'You are seeing'
-        end
+        expect(page).not_to have_content 'You are seeing'
       end
     end
 
