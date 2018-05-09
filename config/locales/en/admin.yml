@@ -645,6 +645,8 @@ en:
         empty_notifications: There are no notifications to show
       new:
         section_title: New notification
+        text: Text
+        submit: Create notification
       edit:
         section_title: Edit notification
       show:
