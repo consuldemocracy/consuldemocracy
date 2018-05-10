@@ -10,7 +10,7 @@ feature 'CKEditor' do
 
     expect(page).to have_css "#cke_debate_description"
 
-    click_link 'Debates'
+    visit debates_path
     click_link 'Start a debate'
 
     expect(page).to have_css "#cke_debate_description"

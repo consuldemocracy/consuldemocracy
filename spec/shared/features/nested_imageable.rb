@@ -275,6 +275,9 @@ def imageable_attach_new_file(_imageable_factory_name, path, success = true)
     image = find(".image")
     image_input = image.find("input[type=file]", visible: false)
     attach_file(image_input[:id], path, make_visible: true)
+    filename = path.to_s.split("/").last
+
+    expect(page).to have_content filename
     within image do
       if success
         expect(page).to have_css(".loading-bar.complete")

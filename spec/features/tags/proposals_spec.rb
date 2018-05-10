@@ -106,7 +106,7 @@ feature 'Tags' do
     find('.js-add-tag-link', text: 'Education').click
     click_button 'Create proposal'
 
-    expect(page).to have_content 'Proposal created successfully.'
+    expect(page).to have_content "You've created a proposal!"
 
     click_link 'Not now, go to my proposal'
 

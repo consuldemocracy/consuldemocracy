@@ -110,6 +110,10 @@ class Budget < ApplicationRecord
     Budget::Phase::PUBLISHED_PRICES_PHASES.include?(phase)
   end
 
+  def valuating_or_later?
+    valuating? || publishing_prices? || balloting_or_later?
+  end
+
   def balloting_process?
     balloting? || reviewing_ballots?
   end

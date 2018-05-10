@@ -179,13 +179,13 @@ feature 'Poll Officing' do
       expect(page).to have_selector('#residence_document_type')
 
       select 'Passport', from: 'residence_document_type'
-      fill_in 'residence_document_number', with: "12345678A"
+      fill_in 'residence_document_number', with: "AA12345B"
       fill_in 'residence_year_of_birth', with: '1980'
       click_button 'Validate document'
       expect(page).to have_content 'Document verified with Census'
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
-      expect(Poll::Voter.where(document_number: '12345678A', poll_id: poll, origin: 'booth', officer_id: officer2).count).to be(1)
+      expect(Poll::Voter.where(document_number: 'AA12345B', poll_id: poll, origin: 'booth', officer_id: officer2).count).to be(1)
 
       visit final_officing_polls_path
       expect(page).to have_content("Polls ready for final recounting")

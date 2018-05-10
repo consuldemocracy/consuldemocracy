@@ -16,7 +16,7 @@
   <% end %>
 
   <% provide :tracking_page_number, "33" %>
-  
+
   <div id="budget_heading" class="expanded budget budget-header no-margin-top">
     <div class="row" data-equalizer data-equalizer-on="medium">
       <div class="small-12 medium-9 column padding" data-equalizer-watch>
@@ -62,9 +62,9 @@
           <% end %>
 
 
-        <% if current_budget.finished? || (current_budget.balloting? && can?(:read_results, current_budget)) %>
+        <% if current_budget.finished? %>
           <%= link_to t("budgets.show.see_results"),
-                      budget_results_path(current_budget, heading_id: current_budget.headings.first),
+                      custom_budget_results_path(current_budget),
                       class: "button margin-top expanded" %>
         <% end %>
       </div>
