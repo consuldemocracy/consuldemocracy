@@ -7,7 +7,7 @@
 <div class="small-12 column">
   <div class="callout highlight">
     <div class="row">
-      <div class="small-12 medium-4 column">
+      <div class="small-12 medium-2 column">
         <strong><%= t("admin.newsletters.show.sent_at") %></strong><br>
         <% if @newsletter.draft? %>
           <%= t("admin.newsletters.index.draft") %>
@@ -15,7 +15,7 @@
           <%= l @newsletter.sent_at.to_date %>
         <% end %>
       </div>
-      <div class="small-12 medium-4 column">
+      <div class="small-12 medium-6 column">
         <strong><%= t("admin.newsletters.show.from") %></strong><br>
         <%= @newsletter.from %>
       </div>
@@ -24,7 +24,7 @@
         <%= @newsletter.subject %>
       </div>
     </div>
-    <div class="row">
+    <div class="row margin-top">
       <div class="small-12 column">
         <strong><%= t("admin.newsletters.show.segment_recipient") %></strong><br>
         <%= segment_name(@newsletter.segment_recipient) %>
