@@ -108,10 +108,14 @@ describe Newsletter do
       newsletter.deliver
 
       now = newsletter.first_batch_run_at
+      first_batch_run_at  = now.change(usec: 0)
+      second_batch_run_at = (now + 1.second).change(usec: 0)
+      third_batch_run_at  = (now + 2.seconds).change(usec: 0)
+
       expect(Delayed::Job.count).to eq(3)
-      expect(Delayed::Job.first.run_at).to eq(now)
-      expect(Delayed::Job.second.run_at).to eq(now + 1.second)
-      expect(Delayed::Job.third.run_at).to eq(now + 2.seconds)
+      expect(Delayed::Job.first.run_at.change(usec: 0)).to eq(first_batch_run_at)
+      expect(Delayed::Job.second.run_at.change(usec: 0)).to eq(second_batch_run_at)
+      expect(Delayed::Job.third.run_at.change(usec: 0)).to eq(third_batch_run_at)
     end
 
   end
