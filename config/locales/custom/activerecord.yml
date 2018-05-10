@@ -36,6 +36,10 @@ fr:
               confirmation: "Le mot de passe confirmé ne correspond pas au premier mot de passe saisi"
             username:
               taken: Ce pseudo est déjà pris
+            postal_code:
+              not_allowed: "doit être dans l'Aude"
+            date_of_birth:
+              not_allowed: "Vous devez avoir entre 16 et 25 ans révolus"
         proposal:
           attributes:
             tag_list:
