@@ -10,6 +10,16 @@ class User < ActiveRecord::Base
             :postal_code,
             presence: true, if: :username_required?
 
+  validate :postal_code_in_aude
+  private def postal_code_in_aude
+    errors.add(:postal_code, :not_allowed) unless valid_postal_code?
+  end
+
+  validate :age_in_allowed_range
+  private def age_in_allowed_range
+    errors.add(:date_of_birth, :not_allowed) unless valid_age?
+  end
+
   private def set_default_username
     self.username = [lastname, firstname].join(" ")
   end
@@ -37,6 +47,30 @@ class User < ActiveRecord::Base
       date_of_birth: nil
     )
     identities.destroy_all
+  end
+
+
+  def self.maximum_required_age
+    (Setting['max_age_to_participate'] || 16).to_i
+  end
+
+  private
+
+  def valid_postal_code?
+    postal_code =~ /^(11)[ ]?\d{3}/ # begins with 11, followed with a space or not, and 3 digits
+  end
+
+  def valid_age?(today = Date.current)
+    return if errors[:date_of_birth].any?
+    not_to_young && not_to_old
+  end
+
+  def not_to_young(today = Date.current)
+    Age.in_years(date_of_birth) >= User.minimum_required_age
+  end
+
+  def not_to_old(today = Date.current)
+    Age.in_years(date_of_birth) < User.maximum_required_age
   end
 
 
