@@ -565,6 +565,7 @@ en:
         empty_newsletters: There are no newsletters to show
       new:
         title: New newsletter
+        from: E-mail address that will appear as sending the newsletter
       edit:
         title: Edit newsletter
       show:
@@ -574,7 +575,7 @@ en:
         sent_at: Sent at
         subject: Subject
         segment_recipient: Recipients
-        from: From
+        from: E-mail address that will appear as sending the newsletter
         body: Email content
         body_help_text: This is how the users will see the email
         send_alert: Are you sure you want to send this newsletter to %{n} users?

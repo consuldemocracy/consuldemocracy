@@ -565,6 +565,7 @@ es:
         empty_newsletters: No hay newsletters para mostrar
       new:
         title: Nueva newsletter
+        from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
       edit:
         title: Editar newsletter
       show:
@@ -574,7 +575,7 @@ es:
         sent_at: Enviado
         subject: Asunto
         segment_recipient: Destinatarios
-        from: Enviado por
+        from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
         body: Contenido del email
         body_help_text: Así es como verán el email los usuarios
         send_alert: ¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?
