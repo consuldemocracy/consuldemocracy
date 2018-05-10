@@ -254,9 +254,13 @@ es:
         image: "Imagen"
         show_image: "Mostrar imagen"
         documents: "Documentos"
+      form:
+        add_language: Añadir idioma
+        remove_language: Eliminar idioma
       new:
         creating: Crear hito
         date: Fecha
+        description: Descripción
       edit:
         title: Editar hito
       create:

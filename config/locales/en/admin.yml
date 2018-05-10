@@ -254,9 +254,13 @@ en:
         image: "Image"
         show_image: "Show image"
         documents: "Documents"
+      form:
+        add_language: Add language
+        remove_language: Remove language
       new:
         creating: Create milestone
         date: Date
+        description: Description
       edit:
         title: Edit milestone
       create:
