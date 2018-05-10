@@ -1073,7 +1073,6 @@ feature 'Debates' do
 
       visit new_debate_path
       fill_in 'debate_title', with: 'debate'
-      check "debate_terms_of_service"
 
       expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
     end
