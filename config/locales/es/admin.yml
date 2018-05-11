@@ -1156,11 +1156,11 @@ es:
         title: Verificaciones incompletas
     site_customization:
       content_blocks:
-        form:
-          content_blocks_information: Información sobre los bloques de texto
-          content_block_about: Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu CONSUL.
-          content_block_top_links_html: "Los <strong>bloques de la cabecera (top_links)</strong> son bloques de enlaces que deben crearse con este formato:"
-          content_block_footer_html: "Los <strong>bloques del pie (footer)</strong> pueden tener cualquier formato y se pueden utilizar para guardar huellas Javascript, contenido CSS o contenido HTML personalizado."
+        information: Información sobre los bloques de texto
+        about: Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu CONSUL.
+        top_links_html: "Los <strong>bloques de la cabecera (top_links)</strong> son bloques de enlaces que deben crearse con este formato:"
+        footer_html: "Los <strong>bloques del pie (footer)</strong> pueden tener cualquier formato y se pueden utilizar para guardar huellas Javascript, contenido CSS o contenido HTML personalizado."
+        no_blocks: "No hay bloques de texto."
         create:
           notice: Bloque creado correctamente
           error: No se ha podido crear el bloque

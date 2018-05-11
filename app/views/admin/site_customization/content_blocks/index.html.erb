@@ -6,25 +6,42 @@
 
 <h2 class="inline-block"><%= t("admin.site_customization.content_blocks.index.title") %></h2>
 
-<table class="cms-page-list">
-  <thead>
-    <tr>
-      <th><%= t("admin.site_customization.content_blocks.content_block.name") %></th>
-      <th><%= t("admin.site_customization.content_blocks.content_block.body") %></th>
-      <th><%= t("admin.actions.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @content_blocks.each do |content_block| %>
-    <tr id="<%= dom_id(content_block) %>">
-      <td><%= link_to "#{content_block.name} (#{content_block.locale})", edit_admin_site_customization_content_block_path(content_block) %></td>
-      <td><%= content_block.body.html_safe %></td>
-      <td>
-        <%= button_to t("admin.site_customization.content_blocks.index.delete"),
-                      admin_site_customization_content_block_path(content_block),
-                      method: :delete, class: "button hollow alert" %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<h3><%= t("admin.site_customization.content_blocks.information") %></h3>
+
+<p><%= t("admin.site_customization.content_blocks.about") %></p>
+<p><%= t("admin.site_customization.content_blocks.top_links_html") %></p>
+
+<code>&lt;li&gt;&lt;a href=&quot;http://site1.com&quot;&gt;Site 1&lt;/a&gt;&lt;/li&gt;</code><br>
+<code>&lt;li&gt;&lt;a href=&quot;http://site2.com&quot;&gt;Site 2&lt;/a&gt;&lt;/li&gt;</code><br>
+<code>&lt;li&gt;&lt;a href=&quot;http://site3.com&quot;&gt;Site 3&lt;/a&gt;&lt;/li&gt;</code><br>
+
+<p class="margin-top"><%= t("admin.site_customization.content_blocks.footer_html") %></p>
+
+<% if @content_blocks.any? %>
+  <table class="cms-page-list">
+    <thead>
+      <tr>
+        <th><%= t("admin.site_customization.content_blocks.content_block.name") %></th>
+        <th><%= t("admin.site_customization.content_blocks.content_block.body") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @content_blocks.each do |content_block| %>
+      <tr id="<%= dom_id(content_block) %>">
+        <td><%= link_to "#{content_block.name} (#{content_block.locale})", edit_admin_site_customization_content_block_path(content_block) %></td>
+        <td><%= content_block.body.html_safe %></td>
+        <td>
+          <%= button_to t("admin.site_customization.content_blocks.index.delete"),
+                        admin_site_customization_content_block_path(content_block),
+                        method: :delete, class: "button hollow alert" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.site_customization.content_blocks.no_blocks") %>
+  </div>
+<% end %>
