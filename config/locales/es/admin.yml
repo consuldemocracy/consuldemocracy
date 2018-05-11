@@ -331,8 +331,8 @@ es:
         form:
           enabled: Habilitado
           process: Proceso
-          debate_phase: Fase previa
-          allegations_phase: Fase de alegaciones
+          debate_phase: Fase de debate
+          allegations_phase: Fase de redacción
           proposals_phase: Fase de propuestas
           start: Inicio
           end: Fin
@@ -364,7 +364,7 @@ es:
           status_planned: Próximamente
         subnav:
           info: Información
-          draft_texts: Texto
+          draft_texts: Redacción
           questions: Debate
           proposals: Propuestas
       proposals:

@@ -332,7 +332,7 @@ en:
           enabled: Enabled
           process: Process
           debate_phase: Debate phase
-          allegations_phase: Allegations phase
+          allegations_phase: Drafting phase
           proposals_phase: Proposals phase
           start: Start
           end: End
@@ -364,7 +364,7 @@ en:
           status_planned: Planned
         subnav:
           info: Information
-          draft_texts: Text
+          draft_texts: Drafting
           questions: Debate
           proposals: Proposals
       proposals:
