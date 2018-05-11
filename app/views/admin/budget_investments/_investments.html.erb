@@ -44,13 +44,8 @@
         <th><%= t("admin.budget_investments.index.table_geozone") %></th>
         <th><%= t("admin.budget_investments.index.table_feasibility") %></th>
         <th class="text-center"><%= t("admin.budget_investments.index.table_valuation_finished") %></th>
-        <th class="text-center">
-          <% if params[:filter] == "under_valuation" %>
-            <%= t("admin.budget_investments.index.table_evaluation") %>
-          <% else %>
-            <%= t("admin.budget_investments.index.table_selection") %>
-          <% end %>
-        </th>
+        <th class="text-center"><%= t("admin.budget_investments.index.table_evaluation") %></th>
+        <th class="text-center"><%= t("admin.budget_investments.index.table_selection") %></th>
         <% if params[:filter]  == "selected" %>
           <th class="text-center"><%= t("admin.budget_investments.index.table_incompatible") %></th>
         <% end %>
@@ -75,7 +70,7 @@
           </td>
           <td class="small">
             <% if investment.administrator.present? %>
-              <span title="<%= t('admin.budget_investments.index.assigned_admin') %>">
+              <span title="<%= t("admin.budget_investments.index.assigned_admin") %>">
                 <%= investment.administrator.name %>
               </span>
             <% else %>
@@ -100,15 +95,15 @@
           <td class="small text-center">
             <%= investment.valuation_finished? ? t("shared.yes"): t("shared.no") %>
           </td>
-        <td class="small text-center">
-          <% if params[:filter] == "under_valuation" %>
+          <td class="small text-center">
             <%= form_for [:admin, investment.budget, investment], remote: true do |f| %>
               <%= f.check_box :visible_to_valuators,
                               label: false,
                               class: "js-submit-on-change",
                               id: "budget_investment_visible_to_valuators" %>
             <% end %>
-          <% else %>
+          </td>
+          <td class="small text-center">
             <% if investment.selected? %>
               <%= link_to_unless investment.budget.finished?,
                                  t("admin.budget_investments.index.selected"),
@@ -135,7 +130,6 @@
                                  method: :patch,
                                  remote: true,
                                  class: "button small hollow expanded" %>
-            <% end %>
             <% end %>
           </td>
           <% if params[:filter] == "selected" %>
