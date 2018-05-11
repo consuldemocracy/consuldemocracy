@@ -249,6 +249,11 @@ es:
         subject: Asunto
         from: Enviado por
         body: Contenido del email
+      admin_notification:
+        segment_recipient: Destinatarios
+        title: Título
+        link: Enlace
+        body: Texto
     errors:
       models:
         user:
@@ -271,11 +276,11 @@ es:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "El segmento de usuarios es inválido"
+              invalid: "Los destinatarios son inválidos"
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "El segmento de usuarios es inválido"
+              invalid: "Los destinatarios son inválidos"
         map_location:
           attributes:
             map:

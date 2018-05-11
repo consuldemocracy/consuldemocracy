@@ -249,6 +249,11 @@ en:
         subject: Subject
         from: From
         body: Email content
+      admin_notification:
+        segment_recipient: Recipients
+        title: Title
+        link: Link
+        body: Text
     errors:
       models:
         user:
@@ -271,11 +276,11 @@ en:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "The user recipients segment is invalid"
+              invalid: "The recipients are invalid"
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "The user recipients segment is invalid"
+              invalid: "The recipients are invalid"
         map_location:
           attributes:
             map:
