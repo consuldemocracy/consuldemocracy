@@ -13,7 +13,8 @@ resources :budgets, only: [:show, :index, :stats] do
 
 
   get :stats
-  get :progress
+  get :progress_1
+  get :progress_2
 end
 
 scope '/participatory_budget' do

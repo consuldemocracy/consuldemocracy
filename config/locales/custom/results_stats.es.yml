@@ -34,4 +34,5 @@ es:
     more_than: Más de
 
   progress:
-    progress_link: 'Informe de estado nº 1'
+    progress_1_link: 'Informe de estado nº 1'
+    progress_2_link: 'Informe de estado nº 2'
