@@ -5,7 +5,6 @@
   <%= f.hidden_field :title, value: l(Time.current, format: :datetime),
                              maxlength: Budget::Investment::Milestone.title_max_length %>
 
-
   <div class="small-12 medium-6 margin-bottom">
     <%= f.select :status_id,
           @statuses.collect { |s| [s.name, s.id] },
