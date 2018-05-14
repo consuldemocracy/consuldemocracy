@@ -1,6 +1,9 @@
 ---
 es:
   budgets:
+    show:
+      view_all: Ver todas las propuestas
+      all_headings: Todas las propuestas
     investments:
       form:
         groups_proposed: Ya has creado una propuesta para %{groups}
@@ -22,6 +25,7 @@ es:
         give_support: Avalar
         alert_limit_votes: Te quedan %{votes} avales. ¿Seguro que quieres continuar?
         seleccionada_por_junta: Esta propuesta ha sido avalada en la reunión de Distrito. Se está estudiando su viabilidad técnica y económica.
+      all_proposals: Todas las propuestas
     ballots:
       reasons_for_not_balloting:
         quota_exceeded: Has excedido el número de avales permitido

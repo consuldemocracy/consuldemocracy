@@ -59,22 +59,38 @@
       <h3 class="margin-bottom"><%= t("budgets.show.unselected_title") %></h3>
     <% end %>
 
+
+
+
+
+
     <div class="groups-and-headings">
+
+      <h2><%= t("budgets.show.view_all") %></h2>
+      <ul class="no-bullet">
+        <li class="heading small-12 medium-4 large-3">
+          <%= link_to budget_investments_path(@budget, filter: 'unselected_by_assembly', order: 'random') do %>
+              <%= t("budgets.show.all_headings") %>
+              <span><%= number_to_currency(@budget.total_amount) %></span>
+          <% end %>
+        </li>
+      </ul>
+
+
       <% @budget.groups.each do |group| %>
         <h2><%= group.name %></h2>
         <ul class="no-bullet">
           <% group.headings.each do |heading| %>
             <li class="heading small-12 medium-4 large-3">
               <%= link_to budget_investments_path(@budget, heading_id: heading.id, filter: 'unselected_by_assembly', order: 'random') do %>
-                <div>
                   <%= heading.name %>
                   <span><%= number_to_currency(heading.price) %></span>
-                </div>
               <% end %>
             </li>
           <% end %>
         </ul>
       <% end %>
+
     </div>
   </div>
 </div>

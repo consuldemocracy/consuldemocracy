@@ -8,7 +8,11 @@
       <%   filter = 'unselected_by_assembly' %>
       <% end                                 %>
 
-      <%= link_to(t("shared.back"), budget_investments_path(investment.budget, heading_id: investment.heading, filter: filter, order: 'random'), class: 'back') %>
+      <% if request.referer.blank? %>
+        <%= link_to(t("shared.back"), budget_investments_path(investment.budget, heading_id: investment.heading, filter: filter, order: 'random'), class: 'back') %>
+      <% else %>
+        <%= link_to(t("shared.back"), request.referer, class: 'back') %>
+      <% end %>
 
       <h1><%= investment.title %></h1>
 

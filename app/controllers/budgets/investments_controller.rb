@@ -121,8 +121,8 @@ module Budgets
         @heading = @budget.headings.find(params[:heading_id])
         @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
       else
-        @heading = @budget.headings.last
-        @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+        @heading = nil #@budget.headings.last
+        @assigned_heading = nil #@ballot.try(:heading_for_group, @heading.try(:group))
       end
     end
 
