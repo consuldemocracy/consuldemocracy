@@ -11,8 +11,8 @@
                 social_url: budgets_url,
                 social_title: t("meta_tags.budget_2018.#{current_budget.phase}.title"),
                 social_description: t("meta_tags.budget_2018.#{current_budget.phase}.description"),
-                twitter_image_url: 'social_media_budgets_2018_twitter.png',
-                og_image_url: 'social_media_budgets_2018.png' %>
+                twitter_image_url: "social_media_budgets_2018_#{current_budget.phase}_twitter.png",
+                og_image_url: "social_media_budgets_2018_#{current_budget.phase}.png" %>
   <% end %>
 
   <% provide :tracking_page_number, "33" %>
