@@ -22,6 +22,11 @@
     <%= content_for :social_media_meta_tags %>
 
     <%= setting['per_page_code_head'].try(:html_safe) %>
+
+
+
+
+
   </head>
   <body class="<%= yield (:body_class) %>">
     <%= setting['per_page_code_body'].try(:html_safe) %>

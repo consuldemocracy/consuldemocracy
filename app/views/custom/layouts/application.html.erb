@@ -21,6 +21,14 @@
     <%= content_for :social_media_meta_tags %>
 
     <%= setting['per_page_code'].try(:html_safe) %>
+    <script type="text/javascript">
+      (function(){
+        window.incluTabOptions={incluTabVisible:!0};
+        var i7e_e=document.createElement("script"),i7e_t=window.location.host,i7e_n={es:"es-ES",en:"en-GB",fr:"fr-FR",eu:"x-EU",ek:"x-EU",va:"x-VA",ca:"ca-ES",he:"he-IL",il:"he-IL"},i7e_r="es-ES";
+        i7e_e.type="text/javascript";
+        var i7e_i=document.getElementsByTagName("html")[0].getAttribute("lang"),i7e_s=document.getElementsByTagName("html")[0].getAttribute("xml:lang");
+        return i7e_s===null?i7e_i===null?i7e_r="notDefined":i7e_r=i7e_n[i7e_i.substr(0,2)]:i7e_r=i7e_n[i7e_s.substr(0,2)],i7e_t=i7e_t.replace(/\./g,"--"),i7e_t+=".accesible.inclusite.com",i7e_e.src=document.location.protocol+"//"+i7e_t+"/inclusite/frameworks_initializer.js?lng="+i7e_r,document.getElementsByTagName("head")[0].appendChild(i7e_e),i7e_e.src})()
+    </script>
   </head>
   <body>
     <!-- <h1 class="show-for-sr"><%= setting['org_name'] %></h1> -->
