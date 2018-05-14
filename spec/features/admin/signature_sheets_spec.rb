@@ -7,15 +7,28 @@ feature 'Signature sheets' do
     login_as(admin.user)
   end
 
-  scenario "Index" do
-    3.times { create(:signature_sheet) }
+  context "Index" do
+    scenario 'Lists all signature_sheets' do
+      3.times { create(:signature_sheet) }
 
-    visit admin_signature_sheets_path
+      visit admin_signature_sheets_path
 
-    expect(page).to have_css(".signature_sheet", count: 3)
+      expect(page).to have_css(".signature_sheet", count: 3)
 
-    SignatureSheet.all.each do |signature_sheet|
-      expect(page).to have_content signature_sheet.name
+      SignatureSheet.all.each do |signature_sheet|
+        expect(page).to have_content signature_sheet.name
+      end
+    end
+
+    scenario 'Orders signature_sheets by created_at DESC' do
+      signature_sheet1 = create(:signature_sheet)
+      signature_sheet2 = create(:signature_sheet)
+      signature_sheet3 = create(:signature_sheet)
+
+      visit admin_signature_sheets_path
+
+      expect(signature_sheet3.name).to appear_before(signature_sheet2.name)
+      expect(signature_sheet2.name).to appear_before(signature_sheet1.name)
     end
   end
 
@@ -26,10 +39,13 @@ feature 'Signature sheets' do
 
       select "Citizen proposal", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: proposal.id
-      fill_in "signature_sheet_document_numbers", with: "12345678Z, 99999999Z"
+      fill_in "signature_sheet_document_numbers", with: "12345678Z, 1234567L, 99999999Z"
       click_button "Create signature sheet"
 
       expect(page).to have_content "Signature sheet created successfully"
+      expect(page).to have_content "There is 1 valid signature"
+      expect(page).to have_content "There is 1 vote created from the verified signatures"
+      expect(page).to have_content "There are 2 invalid signatures"
 
       visit proposal_path(proposal)
 
@@ -45,10 +61,13 @@ feature 'Signature sheets' do
 
       select "Investment", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: investment.id
-      fill_in "signature_sheet_document_numbers", with: "12345678Z, 99999999Z"
+      fill_in "signature_sheet_document_numbers", with: "12345678Z, 1234567L, 99999999Z"
       click_button "Create signature sheet"
 
       expect(page).to have_content "Signature sheet created successfully"
+      expect(page).to have_content "There is 1 valid signature"
+      expect(page).to have_content "There is 1 vote created from the verified signatures"
+      expect(page).to have_content "There are 2 invalid signatures"
 
       visit budget_investment_path(budget, investment)
 
@@ -78,7 +97,7 @@ feature 'Signature sheets' do
 
     expect(page).to have_content "Citizen proposal #{proposal.id}"
     expect(page).to have_content "12345678Z, 123A, 123B"
-    expect(page).to have_content signature_sheet.created_at.strftime("%d %b %H:%M")
+    expect(page).to have_content signature_sheet.created_at.strftime("%B %d, %Y %H:%M")
     expect(page).to have_content user.name
 
     within("#document_count") do

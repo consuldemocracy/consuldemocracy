@@ -25,3 +25,27 @@ section "Creating Debates" do
                             terms_of_service: "1")
   end
 end
+
+section "Open plenary" do
+  open_plenary = Debate.create!(author: User.reorder("RANDOM()").first,
+                                title: "Pregunta en el Pleno Abierto",
+                                created_at: Date.parse("20-04-2016"),
+                                description: "<p>Pleno Abierto preguntas</p>",
+                                terms_of_service: "1",
+                                tag_list: 'plenoabierto',
+                                comment_kind: 'question')
+
+  (1..30).each do |_i|
+    author = User.reorder("RANDOM()").first
+    cached_votes_up = rand(1000)
+    cached_votes_down = rand(1000)
+    cached_votes_total =  cached_votes_up + cached_votes_down
+    Comment.create!(user: author,
+                    created_at: rand(open_plenary.created_at..Time.now),
+                    commentable: open_plenary,
+                    body: Faker::Lorem.sentence,
+                    cached_votes_up: cached_votes_up,
+                    cached_votes_down: cached_votes_down,
+                    cached_votes_total: cached_votes_total)
+  end
+end

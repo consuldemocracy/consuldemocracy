@@ -25,9 +25,28 @@ module ActsAsTaggableOn
     def decrement_tag_custom_counter
       tag.decrement_custom_counter_for(taggable_type)
     end
+
+    def self.public_columns_for_api
+      ["tag_id",
+       "taggable_id",
+       "taggable_type"]
+    end
+
+    def public_for_api?
+      return false unless ["Proposal", "Debate"].include? (taggable_type)
+      return false unless taggable.present?
+      return false if taggable.hidden?
+      return false unless tag.present?
+      return false unless [nil, "category"].include? tag.kind
+      return false unless taggable.public_for_api?
+      return true
+    end
   end
 
   Tag.class_eval do
+
+    has_many :proposals, through: :taggings, source: :taggable, source_type: 'Proposal'
+    has_many :debates, through: :taggings, source: :taggable, source_type: 'Debate'
 
     scope :category, -> { where(kind: "category") }
 
@@ -75,6 +94,20 @@ module ActsAsTaggableOn
 
     def self.spending_proposal_tags
       ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'SpendingProposal').includes(:taggings).order(:name).uniq
+    end
+
+    def self.public_columns_for_api
+      ["id",
+       "name",
+       "taggings_count",
+       "kind"]
+    end
+
+    def public_for_api?
+      return false unless [nil, "category"].include? kind
+      return false unless proposals.any?(&:public_for_api?) || debates.any?(&:public_for_api?)
+      return false unless self.taggings.any?(&:public_for_api?)
+      return true
     end
 
     def self.graphql_field_name

@@ -4,11 +4,13 @@ module Budgets
     include CommentableActions
     include FlagActions
 
-    before_action :authenticate_user!, except: [:index, :show, :json_data]
+    before_action :authenticate_user!, except: [:index, :show, :redirect_to_new_url, :json_data]
+    before_action :load_budget, except: [:redirect_to_new_url, :json_data]
+    before_action :load_investment, only: [:show]
 
-    load_and_authorize_resource :budget, except: :json_data
-    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
-                                except: :json_data
+    load_and_authorize_resource :budget, except: [:redirect_to_new_url, :json_data]
+    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment", except: [:redirect_to_new_url, :json_data]
+    skip_authorization_check only: [:redirect_to_new_url, :json_data]
 
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
@@ -33,10 +35,8 @@ module Budgets
 
     def index
       @investments = investments.page(params[:page]).per(10).for_render
-
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
-      @tag_cloud = tag_cloud
     end
 
     def new
@@ -83,6 +83,11 @@ module Budgets
       super
     end
 
+    def redirect_to_new_url
+      investment = Budget::Investment.where(original_spending_proposal_id: params['id']).first
+      redirect_to budget_investment_path(investment.budget.slug, params['id'], spending: true) if investment.present?
+    end
+
     def json_data
       investment =  Budget::Investment.find(params[:id])
       data = {
@@ -106,15 +111,22 @@ module Budgets
         "budget_investment"
       end
 
+      def load_investments
+        @investments = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}")
+        @investments = @investments.page(params[:page]).per(10).for_render
+      end
+
       def load_investment_votes(investments)
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
       end
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          seed = params[:random_seed] || session[:random_seed] || rand(-100000..100000)
-          params[:random_seed] ||= Float(seed) rescue 0
+          seed = params[:random_seed] || session[:random_seed] || rand
+          params[:random_seed] = seed
+          session[:random_seed] = params[:random_seed]
         else
+          session[:random_seed] = nil
           params[:random_seed] = nil
         end
       end
@@ -128,6 +140,14 @@ module Budgets
                       map_location_attributes: [:latitude, :longitude, :zoom])
       end
 
+      def load_investment
+        @investment = if params['spending'] == 'true'
+                        @budget.investments.where(original_spending_proposal_id: params['id']).first
+                      else
+                        @budget.investments.find(params['id'])
+                      end
+      end
+
       def load_ballot
         query = Budget::Ballot.where(user: current_user, budget: @budget)
         @ballot = @budget.balloting? ? query.first_or_create : query.first_or_initialize
@@ -135,9 +155,22 @@ module Budgets
 
       def load_heading
         if params[:heading_id].present?
-          @heading = @budget.headings.find(params[:heading_id])
-          @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+          load_heading_from_slug
+          load_assigned_heading
+          set_heading_id_from_slug
         end
+      end
+
+      def load_heading_from_slug
+        @heading = @budget.headings.find_by(slug: params[:heading_id]) || @budget.headings.find_by(id: params[:heading_id])
+      end
+
+      def load_assigned_heading
+        @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+      end
+
+      def set_heading_id_from_slug
+        params[:heading_id] = @heading.try(:id)
       end
 
       def load_categories
@@ -146,6 +179,11 @@ module Budgets
 
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
+      end
+
+      def load_budget
+        @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+        raise ActionController::RoutingError, 'Not Found' if @budget.blank?
       end
 
       def set_view
@@ -163,5 +201,4 @@ module Budgets
       end
 
   end
-
 end

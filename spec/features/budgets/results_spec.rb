@@ -21,7 +21,7 @@ feature 'Results' do
     visit budget_path(budget)
     click_link "See results"
 
-    expect(page).to have_selector('a.active', text: budget.headings.first.name)
+    expect(page).to have_selector('a.is-active', text: budget.headings.first.name)
 
     within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
@@ -56,7 +56,7 @@ feature 'Results' do
     other_heading = create(:budget_heading, group: group)
     other_investment = create(:budget_investment, :winner, heading: other_heading)
 
-    visit budget_results_path(budget)
+    visit custom_budget_results_path(budget)
 
     within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
@@ -69,7 +69,7 @@ feature 'Results' do
     visit budget_path(budget)
     expect(page).not_to have_link "See results"
 
-    visit budget_results_path(budget, heading_id: budget.headings.first)
+    visit custom_budget_heading_result_path(budget, heading_id: budget.headings.first)
     expect(page).to have_content "You do not have permission to carry out the action"
   end
 
@@ -81,6 +81,26 @@ feature 'Results' do
     click_link "See results"
 
     expect(page).not_to have_content "Incompatibles"
+  end
+
+  context "Index" do
+
+    scenario "Display links to finished budget results" do
+      (Budget::Phase::PHASE_KINDS - ['finished']).each do |phase|
+        budget = create(:budget, phase: phase)
+        expect(page).to_not have_css("#budget_#{budget.id}_results", text: "See results")
+      end
+
+      finished_budget1 = create(:budget, phase: "finished")
+      finished_budget2 = create(:budget, phase: "finished")
+      finished_budget3 = create(:budget, phase: "finished")
+
+      visit budgets_path
+
+      expect(page).to have_css("#budget_#{finished_budget1.id}_results", text: "See results")
+      expect(page).to have_css("#budget_#{finished_budget2.id}_results", text: "See results")
+      expect(page).to have_css("#budget_#{finished_budget3.id}_results", text: "See results")
+    end
   end
 
 end

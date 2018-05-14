@@ -412,14 +412,16 @@ feature 'Commenting proposals' do
   end
 
   feature 'Voting comments' do
-
     background do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @proposal = create(:proposal)
       @comment = create(:comment, commentable: @proposal)
-
       login_as(@manuela)
+    end
+
+    after do
+      logout
     end
 
     scenario 'Show' do
@@ -445,9 +447,8 @@ feature 'Commenting proposals' do
       visit proposal_path(@proposal)
 
       within("#comment_#{@comment.id}_votes") do
-        find(".in_favor a").click
-
         within(".in_favor") do
+          find("a").click
           expect(page).to have_content "1"
         end
 

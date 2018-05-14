@@ -1,0 +1,112 @@
+<% provide :title, t("meta_tags.help_polls.title") %>
+<% provide :meta_description, t("meta_tags.help_polls.description") %>
+<% provide :meta_keywords, t("meta_tags.help_polls.keywords") %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: more_info_polls_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 medium-3 column">
+    <%= back_link_to help_path %>
+
+    <ul class="menu vertical margin-top">
+      <li><a href="#i"><strong>Información sobre las votaciones</strong></a></li>
+      <li><a href="#ii"><strong>Preguntas frecuentes sobre las votaciones</strong></a>
+        <ul class="margin-top">
+          <li><a href="#que-son-votaciones"><strong>¿Qué son las votaciones ciudadanas de Decide Madrid?</strong></a></li>
+          <li><a href="#cuando-votaciones"><strong>¿Cuándo se celebran las votaciones ciudadanas?</strong></a></li>
+          <li><a href="#quien-votaciones"><strong>¿Quién puede participar en las votaciones ciudadanas?</strong></a></li>
+          <li><a href="#comunicacion-votaciones"><strong>¿Cómo me puedo enterar de que tiene lugar una votación ciudadana?</strong></a></li>
+          <li><a href="#como-votar"><strong>¿Cómo puedo votar en una consulta de Decide Madrid?</strong></a></li>
+          <li><a href="#seguridad-votacion"><strong>¿Cómo se controla que cada persona vota una única vez?</strong></a></li>
+          <li><a href="#voto-secreto"><strong>¿El voto es secreto? ¿El Ayuntamiento de Madrid tiene acceso a los votos de la ciudadanía?</strong></a></li>
+          <li><a href="#voto-electronico"><strong>¿Al ser electrónico el voto no se aumenta el riesgo de fraude?</strong></a></li>
+          <li><a href="#votacion-distritos"><strong>¿Vota toda la gente de Madrid en cada consulta, incluso aunque haga referencia a un único distrito?</strong></a></li>
+          <li><a href="#votacion-exclusion"><strong>¿Se ha planteado llegar a los ciudadanos y ciudadanas con dificultades de acceso a Internet o en situación de exclusión?</strong></a></li>
+          <li><a href="#quorum-propuestas"><strong>¿Cuánta gente tiene que votar una propuesta o una actuación del gobierno municipal para que sea aprobada? ¿Qué quórum mínimo se necesitya para que las votaciones sean vinculantes?</strong></a></li>
+          <li><a href="#propuestas-tras-votacion"><strong>¿Qué pasa con las propuestas una vez ha finalizado la votación?</strong></a></li>
+          <li><a href="#primera-votacion-ciudadana"><strong>¿Se ha celebrado alguna votación ciudadana en el Ayuntamiento de Madrid?</strong></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-9 column more-info-text">
+    <h1 id="i">Información sobre las votaciones</h1>
+    <p>Regístrate para poder votar propuestas ciudadanas y las cuestiones que pregunta a sus vecinos el Ayuntamiento de Madrid. Toma decisiones municipales de forma directa.</p>
+
+    <p>Las votaciones se convocan cuando una propuesta ciudadana alcanza el 1% de apoyos del censo con derecho a voto, o cuando el Ayuntamiento de Madrid decide someter cuestiones a decisión directa de la ciudadanía.</p>
+
+    <p>Para participar en la próxima votación tienes que registrarte en Decide Madrid y verificar tu cuenta. Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años. Los resultados de todas las votaciones son vinculantes para el gobierno.</p>
+
+    <p>Algunas cuestiones que se han votado son:</p>
+
+    <ul>
+      <li>Las propuestas ciudadanas "Madrid 100% sostenible" y "Billete único de transporte público"; diferentes actuaciones que se planteaban llevar a cabo en la Gran Vía como la ampliación de las aceras o la preferencia del transporte público; los proyectos finalistas para la reforma de Plaza de España; diversas cuestiones en seis distritos de Madrid como sus planes de actuación, los nombres de parques o del propio distrito, y la protección de edificios históricos.</li>
+
+      <li>La remodelación de 11 plazas periféricas de la ciudad. Respecto a cada plaza se ha decidido si se remodelaría o no y qué proyecto se llevaría a cabo entre dos finalistas en caso de remodelarse.</li>
+    </ul>
+
+    <p>Los resultados de todas las votaciones son vinculantes para el gobierno. Pueden votar todas las personas empadronadas en Madrid mayores de 16 años.</p>
+
+    <h1 id="ii">Preguntas frecuentes sobre las votaciones</h1>
+
+    <h2 id="que-son-votaciones">¿Qué son las votaciones ciudadanas de Decide Madrid?</h2>
+    <p>Las votaciones son un mecanismo de participación del Ayuntamiento de Madrid por el que la ciudadanía con derecho a voto (personas empadronadas mayores de 16 años) pueden tomar decisiones municipales de forma directa. Bien sobre las propuestas ciudadanas que pasan a votación, bien sobre cuestiones relevantes que plantea directamente el Ayuntamiento de Madrid.</p>
+
+    <h2 id="cuando-votaciones">¿Cuándo se celebran las votaciones ciudadanas?</h2>
+    <p>Las votaciones de propuestas ciudadanas se celebran un mínimo de tres meses después de que una propuesta consigue los <%= setting["votes_for_proposal_success"] %> apoyos necesarios (el 1% de las personas con derecho a voto, personas mayores de 16 años empadronadas en Madrid).</p>
+
+    <p>Durante una semana, las personas con derecho a voto pueden decidir si están a favor o rechazan la propuesta.</p>
+
+    <p>Las votaciones de las cuestiones que plantea directamente el Ayuntamiento de Madrid pueden celebrarse en cualquier momento, aunque puede coincidir con la votación de propuestas, como ya ocurrió en la consulta de febrero de 2017. En esa ocasión el Consistorio preguntó sobre la movilidad de Gran Vía coincidiendo con la votación de las propuestas "Madrid 100% sostenible" y "Billete único para el transporte público".</p>
+
+    <h2 id="quien-votaciones">¿Quién puede participar en las votaciones ciudadanas?</h2>
+    <p>Las personas empadronadas en la ciudad de Madrid mayores de 16 años.</p>
+
+    <h2 id="comunicacion-votaciones">¿Cómo me puedo enterar de que tiene lugar una votación ciudadana?</h2>
+    <p>El Ayuntamiento de Madrid informa de la celebración de una votación ciudadana a través de la web de Decide Madrid, la publicación de notas de prensa, de los medios de comunicación, en redes sociales (del Ayuntamiento, las Juntas de Distrito y del Área de Participación Ciudadana, Transparencia y Gobierno Abierto), en los soportes exteriores municipales (marquesinas, mupis, banderolas, cartelería y dípticos) y de publicidad.</p>
+
+    <p>En ocasiones también se envía una carta a los domicilios de las personas empadronadas con derecho a voto para informar de la posibilidad que tienen de votar en las consultas.</p>
+
+    <h2 id="como-votar">¿Cómo puedo votar en una consulta de Decide Madrid?</h2>
+    <p>En la web de Decide Madrid, en la sección de <%= link_to "votaciones", polls_path %>. La posibilidad de votar está activa única y exclusivamente durante el periodo de votación. Para votar hay que registrarse y tener una cuenta de usuario verificada completamente, de tal forma que nos aseguremos de que cada persona no tiene más de una cuenta y el proceso es seguro.</p>
+
+    <p>Presencialmente se puede votar en las Oficinas de Atención a la Ciudadanía, presentando el DNI y sin necesidad de facilitar un correo electrónico. También se colocan urnas por la ciudad en determinadas fechas, de lo que informa el Ayuntamiento.</p>
+
+    <h2 id="seguridad-votacion">¿Cómo se controla que cada persona vota una única vez?</h2>
+    <p>En la votación en Decide Madrid se verifica que la cuenta de usuario corresponde a un único ciudadano o ciudadana. Para ello se contrasta la información personal con el padrón municipal y se facilita un código personal seguro de verificación de la cuenta a través de un SMS que se envía al número de teléfono móvil facilitado.</p>
+
+    <p>En caso de que este medio de comunicación no esté disponibles se solicita a la persona que acuda presencialmente a alguna de las Oficinas de Atención a la Ciudadanía (OAC). En las OAC las votaciones presenciales están controladas porque la persona tiene que presentar su DNI.</p>
+
+    <h2 id="voto-secreto">¿El voto es secreto? ¿El Ayuntamiento de Madrid tiene acceso a los votos de la ciudadanía?</h2>
+    <p>El voto es totalmente secreto. Se encripta de manera conjunta con diferentes autoridades externas al Ayuntamiento, de tal manera que para poder conocer la identidad de un votante todas las autoridades tendrían que realizar fraude conjuntamente.</p>
+
+    <h2 id="voto-electronico">¿Al ser electrónico el voto no se aumenta el riesgo de fraude?</h2>
+    <p>No, incluso lo reducimos. Hay una sensación subjetiva muy fuerte de diferencia de seguridad entre procesos en papel y procesos electrónicos que no se corresponde con la realidad.</p>
+
+    <p>En las elecciones generales donde el voto es en papel, después de que las mesas hayan hecho el recuento, las papeletas de los votos se tiran a la basura, y la persona responsable se dirige en persona con el recuento en la mano al centro donde se comparten los datos.</p>
+
+    <p>Si pensamos, por ejemplo, en el sistema de tarjetas de crédito y de cuentas bancarias, cada día confiamos la seguridad de nuestro dinero a un sistema electrónico. En el caso del Ayuntamiento de Madrid, la votación está asegurada mediante diferentes entidades externas, y además cualquier votante puede comprobar que su voto particular está en el recuento final y realizar el recuento completo de todos los votos por su cuenta. Dos garantías de seguridad imposibles en una votación tradicional.</p>
+
+    <h2 id="votacion-distritos">¿Vota toda la gente de Madrid en cada consulta, incluso aunque haga referencia a un único distrito?</h2>
+    <p>Sí. El mecanismo actual se desarrolla a nivel de toda la ciudad. Es compatible con que desde un distrito se desarrollen mecanismos de participación ciudadana que afecten únicamente a ese distrito.</p>
+
+    <h2 id="votacion-exclusion">¿Se ha planteado llegar a los ciudadanos y ciudadanas con dificultades de acceso a Internet o en situación de exclusión?</h2>
+    <p>Todas las votaciones pueden realizarse presencialmente en cualquiera de las 26 Oficinas de Atención a la Ciudadanía repartidas por todos los distritos de Madrid.</p>
+
+    <p>Adicionalmente se ha creado en el Área de Gobierno de Participación Ciudadana, Transparencia y Gobierno Abierto el Servicio de Inclusión, Neutralidad y Privacidad que ha puesto en marcha una mesa de inclusión con personal del Ayuntamiento y asociaciones que trabajan con colectivos en situación de exclusión, para diseñar mecanismos especiales para que puedan participar.</p>
+
+    <h2 id="quorum-propuestas">¿Cuánta gente tiene que votar una propuesta o una actuación del gobierno municipal para que sea aprobada? ¿Qué quórum mínimo se necesita para que las votaciones sean vinculantes?</h2>
+    <p>El quórum es el mínimo de participación necesaria para considerar una votación vinculante de manera legal. Ningún reglamento del Ayuntamiento de Madrid puede hacer que este mecanismo sea vinculante jurídicamente, porque eso está en contra de la legislación española. La vinculación con el mecanismo es política y se asume de manera personal por los concejales y la alcaldesa. Por ello no se considera ningún quórum.</p>
+
+    <h2 id="propuestas-tras-votacion">¿Qué pasa con las propuestas una vez ha finalizado la votación?</h2>
+    <p>En caso de que haya más gente a favor que en contra de una propuesta se acepta como propuesta colectiva de la ciudadanía madrileña. El gobierno del Ayuntamiento de Madrid la asume como propia y la lleva a cabo si es de su competencia o emprende actuaciones alternativas dentro de sus capacidades que intenten cumplir con la decisión de la propuesta. Si se trata de una actuación municipal se lleva a cabo.</p>
+
+    <h2 id="primera-votacion-ciudadana">¿Se ha celebrado alguna votación ciudadana en el Ayuntamiento de Madrid?</h2>
+    <p>Sí, en febrero de 2017 se celebró la primera votación de propuestas ciudadanas en la que la ciudadanía aprobó las propuestas de <%= link_to '"Madrid 100% sostenible" y "Billete único para el transporte público"', first_voting_path %>.</p>
+
+    <p>Tras la votación el Ayuntamiento asumió más de un centenar de medidas en sus políticas municipales. Medidas medioambientales, de movilidad y sostenibilidad, en el caso de "Madrid 100% sostenible" y acciones para solicitar al Consorcio de Transportes de Madrid que apruebe el billete intermodal.</p>
+  </div>
+</div>

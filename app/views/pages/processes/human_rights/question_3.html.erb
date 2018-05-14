@@ -1,0 +1,31 @@
+<% provide :title, "Plan de Derechos Humanos" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_human_rights"),
+          social_title: t("pages.processes.index.process_5_title"),
+          social_description: t("pages.processes.index.process_5_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: human_rights_question_3_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= back_link_to %>
+
+      <h1 class="margin-bottom"><%= t("pages.processes.index.process_5_title") %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 column small-centered text-center margin-top">
+    <h2>¿Qué propondrías para que la ciudadanía madrileña pueda conocer y defender mejor sus derechos?</h2>
+    <div class="small-12 medium-4 small-centered">
+      <div class="button hollow expanded margin-top">
+        <%= link_to_new_proposal_proceeding_path("Derechos Humanos", "Conocer y defender mejor mis derechos", "Crear Propuesta") %>
+      </div>
+    </div>
+  </div>
+</div>

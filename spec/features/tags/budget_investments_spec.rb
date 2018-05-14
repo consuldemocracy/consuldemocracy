@@ -79,7 +79,7 @@ feature 'Tags' do
     expect(page).to have_content tag_medio_ambiente.name
   end
 
-  scenario 'Category with category tags', :js do
+  scenario 'Create with category tags', :js do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
@@ -135,7 +135,7 @@ feature 'Tags' do
     click_link "Create a budget investment"
 
     select  heading.name, from: 'budget_investment_heading_id'
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
+    fill_in 'budget_investment_title', with: 'Plant tress all over the city'
     fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
     check 'budget_investment_terms_of_service'
 
@@ -232,7 +232,7 @@ feature 'Tags' do
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: new_tag) }
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: newer_tag) }
 
-    scenario 'Display user tags' do
+    xscenario 'Display user tags' do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
@@ -246,7 +246,7 @@ feature 'Tags' do
       end
     end
 
-    scenario "Filter by user tags" do
+    xscenario "Filter by user tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
@@ -268,6 +268,18 @@ feature 'Tags' do
         expect(page).to have_content investment1.title
         expect(page).to have_content investment2.title
         expect(page).not_to have_content investment3.title
+      end
+    end
+
+    scenario 'Do not display user tags' do
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        budget.update(phase: phase)
+
+        login_as(admin) if budget.drafting?
+        visit budget_path(budget)
+        click_link group.name
+
+        expect(page).not_to have_css("#tag-cloud")
       end
     end
 
@@ -297,10 +309,8 @@ feature 'Tags' do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
-        if budget.balloting?
-          [investment1, investment2, investment3].each do |investment|
-            investment.update(selected: true, feasibility: "feasible")
-          end
+        [investment1, investment2, investment3].each do |investment|
+          investment.update(selected: true, feasibility: "feasible")
         end
 
         login_as(admin) if budget.drafting?

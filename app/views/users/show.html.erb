@@ -1,6 +1,13 @@
 <main>
   <div class="activity row margin-top">
     <div class="small-12 column">
+      <% if current_budget %>
+        <%= link_to budget_recommendations_path(budget_id: current_budget.slug, 
+                      user_id: @user.id), 
+                      class: "button hollow float-right delegation" do %>
+          <small><%= t("users.show.delegation") %></small>
+        <% end %>
+      <% end %>
 
       <% if @user != current_user %>
         <% if @user.email_on_direct_message? %>
@@ -27,7 +34,7 @@
           <% @valid_filters.each do |filter| %>
             <% if @activity_counts[filter] > 0 %>
               <% if @current_filter == filter %>
-                <li class="active">
+                <li class="is-active">
                   <h2><%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %></h2>
                 </li>
               <% else %>

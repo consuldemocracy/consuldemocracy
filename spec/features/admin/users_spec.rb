@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature 'Admin users' do
+
   background do
     @admin = create(:administrator)
     @user  = create(:user, username: 'Jose Luis Balbin')
@@ -18,7 +19,7 @@ feature 'Admin users' do
   scenario 'The username links to their public profile' do
     click_link @user.name
 
-    expect(current_path).to eq(user_path(@user))
+    expect(page).to have_current_path(user_path(@user))
   end
 
   scenario 'Search' do

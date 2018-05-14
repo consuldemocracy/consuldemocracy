@@ -2,8 +2,6 @@ require 'rails_helper'
 require 'sessions_helper'
 
 feature 'Budget Investments' do
-
-
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:other_budget) { create(:budget, name: "What a Budget!") }
@@ -37,7 +35,7 @@ feature 'Budget Investments' do
     investments.each do |investment|
       within('#budget-investments') do
         expect(page).to have_content investment.title
-        expect(page).to have_css("a[href='#{budget_investment_path(budget_id: budget.id, id: investment.id)}']", text: investment.title)
+        expect(page).to have_css("a[href='#{budget_investment_path(budget, id: investment.id)}']", text: investment.title)
         expect(page).not_to have_content(unfeasible_investment.title)
       end
     end
@@ -75,6 +73,8 @@ feature 'Budget Investments' do
   end
 
   scenario 'Index should show investment descriptive image only when is defined' do
+    Setting['feature.allow_images'] = true
+
     investment = create(:budget_investment, heading: heading)
     investment_with_image = create(:budget_investment, heading: heading)
     image = create(:image, imageable: investment_with_image)
@@ -87,6 +87,8 @@ feature 'Budget Investments' do
     within("#budget_investment_#{investment_with_image.id}") do
       expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
     end
+
+    Setting['feature.allow_images'] = nil
   end
 
   context("Search") do
@@ -479,7 +481,7 @@ feature 'Budget Investments' do
 
       click_link "All City"
 
-      expected_path = budget_investments_path(budget, heading_id: heading.id, filter: "unfeasible")
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading.to_param, filter: "unfeasible")
       expect(page).to have_current_path(expected_path)
     end
 
@@ -496,17 +498,16 @@ feature 'Budget Investments' do
       click_link 'Districts'
       click_link 'Carabanchel'
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unfeasible")
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading1.to_param, filter: "unfeasible")
       expect(page).to have_current_path(expected_path)
     end
   end
 
-  context("Orders") do
+  context "Orders" do
     before { budget.update(phase: 'selecting') }
 
     scenario "Default order is random" do
-      per_page = Kaminari.config.default_per_page
-      (per_page + 100).times { create(:budget_investment) }
+      10.times { create(:budget_investment) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
       order = all(".budget-investment h3").collect {|i| i.text }
@@ -518,8 +519,7 @@ feature 'Budget Investments' do
     end
 
     scenario "Random order after another order" do
-      per_page = Kaminari.config.default_per_page
-      (per_page + 2).times { create(:budget_investment) }
+      10.times { create(:budget_investment) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link "highest rated"
@@ -533,7 +533,7 @@ feature 'Budget Investments' do
       expect(order).not_to eq(new_order)
     end
 
-    scenario 'Random order maintained with pagination', :js do
+    scenario 'Random order maintained with pagination' do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:budget_investment, heading: heading) }
 
@@ -551,7 +551,21 @@ feature 'Budget Investments' do
       expect(order).to eq(new_order)
     end
 
-    scenario "Investments are not repeated with random order", :js do
+    scenario 'Random order maintained when going back from show' do
+      10.times { |i| create(:budget_investment, heading: heading) }
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      order = all(".budget-investment h3").collect {|i| i.text }
+
+      click_link Budget::Investment.first.title
+      click_link "Go back"
+
+      new_order = all(".budget-investment h3").collect {|i| i.text }
+      expect(order).to eq(new_order)
+    end
+
+    scenario "Investments are not repeated with random order" do
       12.times { create(:budget_investment, heading: heading) }
       # 12 instead of per_page + 2 because in each page there are 10 (in this case), not 25
 
@@ -567,10 +581,9 @@ feature 'Budget Investments' do
       common_values = first_page_investments & second_page_investments
 
       expect(common_values.length).to eq(0)
-
     end
 
-    scenario 'Proposals are ordered by confidence_score', :js do
+    scenario 'Proposals are ordered by confidence_score' do
       best_proposal = create(:budget_investment, heading: heading, title: 'Best proposal')
       best_proposal.update_column(:confidence_score, 10)
       worst_proposal = create(:budget_investment, heading: heading, title: 'Worst proposal')
@@ -580,7 +593,7 @@ feature 'Budget Investments' do
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link 'highest rated'
-      expect(page).to have_selector('a.active', text: 'highest rated')
+      expect(page).to have_selector('a.is-active', text: 'highest rated')
 
       within '#budget-investments' do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -591,7 +604,7 @@ feature 'Budget Investments' do
       expect(current_url).to include('page=1')
     end
 
-    scenario 'Each user has a different and consistent random budget investment order when random_seed is disctint', :js do
+    scenario 'Each user has a different and consistent random budget investment order when random_seed is disctint' do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
@@ -627,7 +640,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario 'Each user has a equal and consistent budget investment order when the random_seed is equal', :js do
+    scenario 'Each user has a equal and consistent budget investment order when the random_seed is equal' do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
@@ -641,7 +654,30 @@ feature 'Budget Investments' do
       end
 
       expect(@first_user_investments_order).to eq(@second_user_investments_order)
+    end
 
+    scenario "Set votes for investments randomized with a seed" do
+      voter = create(:user, :level_two)
+      login_as(voter)
+
+      10.times { create(:budget_investment, heading: heading) }
+
+      voted_investments = []
+      10.times do
+        investment = create(:budget_investment, heading: heading)
+        create(:vote, votable: investment, voter: voter)
+        voted_investments << investment
+      end
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      voted_investments.each do |investment|
+        if page.has_link?(investment.title)
+          within("#budget_investment_#{investment.id}") do
+            expect(page).to have_content "You have already supported this investment"
+          end
+        end
+      end
     end
 
     def investments_order
@@ -667,7 +703,7 @@ feature 'Budget Investments' do
 
       expect(page.status_code).to eq(200)
       expect(page.html).to be_empty
-      expect(page).to have_current_path(budget_investments_path(budget_id: budget.id))
+      expect(page).to have_current_path(budget_investments_path(budget))
     end
 
     scenario 'Create budget investment too fast' do
@@ -766,9 +802,7 @@ feature 'Budget Investments' do
         visit new_budget_investment_path(other_budget)
         fill_in "budget_investment_title", with: "search"
 
-        within('div#js-suggest') do
-          expect(page).not_to have_content 'You are seeing'
-        end
+        expect(page).not_to have_content 'You are seeing'
       end
     end
 
@@ -795,9 +829,9 @@ feature 'Budget Investments' do
 
       select_options = find('#budget_investment_heading_id').all('option').collect(&:text)
       expect(select_options.first).to eq('')
-      expect(select_options.second).to eq('Health: More health professionals')
-      expect(select_options.third).to eq('Health: More hospitals')
-      expect(select_options.fourth).to eq('Toda la ciudad')
+      expect(select_options.second).to eq('Toda la ciudad')
+      expect(select_options.third).to eq('Health: More health professionals')
+      expect(select_options.fourth).to eq('Health: More hospitals')
     end
   end
 
@@ -813,6 +847,7 @@ feature 'Budget Investments' do
     expect(page).to have_content(investment.description)
     expect(page).to have_content(investment.author.name)
     expect(page).to have_content(investment.heading.name)
+
     within("#investment_code") do
       expect(page).to have_content(investment.id)
     end
@@ -956,6 +991,23 @@ feature 'Budget Investments' do
     expect(page).to have_content("This investment project has been marked as not feasible and will not go to balloting phase")
   end
 
+  scenario "Show (selected budget investment)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        :selected,
+                        budget: budget,
+                        group: group,
+                        heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).to have_content("This investment project has been selected for balloting phase")
+  end
+
   scenario "Show (not selected budget investment)" do
     user = create(:user)
     login_as(user)
@@ -1016,6 +1068,16 @@ feature 'Budget Investments' do
       expect(page).not_to have_content(Date.current)
       expect(page.find("#image_#{first_milestone.id}")['alt']).to have_content(image.title)
       expect(page).to have_link(document.title)
+      expect(page).to have_link("https://consul.dev")
+      expect(page).to have_content(first_milestone.status.name)
+    end
+
+    select('Español', from: 'locale-switcher')
+
+    find("#tab-milestones-label").click
+
+    within("#tab-milestones") do
+      expect(page).to have_content('Último hito con el link https://consul.dev')
       expect(page).to have_link("https://consul.dev")
     end
 
@@ -1120,6 +1182,7 @@ feature 'Budget Investments' do
         carabanchel_investment = create(:budget_investment, :selected, heading: carabanchel)
         salamanca_investment   = create(:budget_investment, :selected, heading: salamanca)
 
+        login_as(author)
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
         within("#budget_investment_#{carabanchel_investment.id}") do
@@ -1145,19 +1208,33 @@ feature 'Budget Investments' do
       end
 
       scenario "When supporting in another group", :js do
-        carabanchel     = create(:budget_heading, group: group)
-        another_heading = create(:budget_heading, group: create(:budget_group, budget: budget))
+        carabanchel = create(:budget_heading, group: group)
+
+        group2 = create(:budget_group, budget: budget)
+        another_heading1 = create(:budget_heading, group: group2)
+        another_heading2 = create(:budget_heading, group: group2)
 
         carabanchel_investment   = create(:budget_investment, heading: carabanchel)
-        another_group_investment = create(:budget_investment, heading: another_heading)
+        another_group_investment = create(:budget_investment, heading: another_heading1)
 
         create(:vote, votable: carabanchel_investment, voter: author)
 
         login_as(author)
-        visit budget_investments_path(budget, heading_id: another_heading.id)
+        visit budget_investments_path(budget, heading_id: another_heading1.id)
 
         within("#budget_investment_#{another_group_investment.id}") do
           expect(page).to have_css(".in-favor a[data-confirm]")
+        end
+      end
+
+      scenario "When supporting in a group with a single heading", :js do
+        all_city_investment = create(:budget_investment, heading: heading)
+
+        login_as(author)
+        visit budget_investments_path(budget, heading_id: heading.id)
+
+        within("#budget_investment_#{all_city_investment.id}") do
+          expect(page).not_to have_css(".in-favor a[data-confirm]")
         end
       end
     end
@@ -1216,6 +1293,27 @@ feature 'Budget Investments' do
 
   end
 
+  context "Publishing prices phase" do
+
+    background do
+      budget.update(phase: "publishing_prices")
+    end
+
+    scenario "Heading index - should show only selected investments" do
+      investment1 = create(:budget_investment, :selected, heading: heading, price: 10000)
+      investment2 = create(:budget_investment, :selected, heading: heading, price: 15000)
+      investment3 = create(:budget_investment, heading: heading, price: 30000)
+
+      visit budget_investments_path(budget, heading: heading)
+
+      within("#budget-investments") do
+        expect(page).to have_content investment1.title
+        expect(page).to have_content investment2.title
+        expect(page).not_to have_content investment3.title
+      end
+    end
+  end
+
   context "Balloting Phase" do
 
     background do
@@ -1228,6 +1326,8 @@ feature 'Budget Investments' do
       sp2 = create(:budget_investment, :selected, heading: heading, price: 20000)
 
       login_as(user)
+      # visit budget_path(budget)
+      # click_link "Health"
       visit root_path
 
       first(:link, "Participatory budgeting").click
@@ -1255,7 +1355,7 @@ feature 'Budget Investments' do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       click_link 'by price'
-      expect(page).to have_selector('a.active', text: 'by price')
+      expect(page).to have_selector('a.is-active', text: 'by price')
 
       within '#budget-investments' do
         expect(high_investment.title).to appear_before(mid_investment.title)
@@ -1388,7 +1488,7 @@ feature 'Budget Investments' do
 
       click_link "All City"
 
-      expected_path = budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading.to_param, filter: "unselected")
       expect(page).to have_current_path(expected_path)
     end
 
@@ -1404,7 +1504,7 @@ feature 'Budget Investments' do
       click_link 'Districts'
       click_link 'Carabanchel'
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unselected")
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading1.to_param, filter: "unselected")
       expect(page).to have_current_path(expected_path)
     end
 
@@ -1471,6 +1571,68 @@ feature 'Budget Investments' do
         expect(page).to have_content("You have voted 0 investment")
       end
 
+    end
+  end
+
+  context "Navigation" do
+
+    scenario "Back from show" do
+      heading2 = create(:budget_heading, group: group)
+
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading2)
+
+      visit budget_investment_path(budget, investment1)
+      click_link "Go back"
+
+      expect(page).to     have_content investment1.title
+      expect(page).not_to have_content investment2.title
+    end
+
+  end
+
+  context "Spending Proposal url redirection to associated Budget Investment" do
+    before do
+      create(:spending_proposal, id: 9999, title: 'Le Spending Proposal')
+      create(:budget_investment, id: 8888, title: 'Budget Investment child',
+                                 original_spending_proposal_id: 9999,
+                                 budget: create(:budget, slug: 'spending-proposals-budget'))
+      create(:budget_investment, id: 9999, title: 'Investment with same Spending ID Proposal',
+                                 budget: create(:budget, slug: 'new-budget'))
+    end
+
+    scenario "Old Spending Proposal url redirects migrated Investment url with its ID" do
+      visit "/participatory_budget/investment_projects/9999"
+
+      expect(page).to have_current_path("/presupuestos/spending-proposals-budget/proyecto/9999?spending=true")
+      expect(page).to have_content("Investment project code: 9999")
+      expect(page).to have_content("Budget Investment child")
+    end
+
+    scenario "Visit Investment migrated from Spending Proposal shows migrated Investment" do
+      visit "/presupuestos/spending-proposals-budget/proyecto/8888"
+
+      expect(page).to have_current_path("/presupuestos/spending-proposals-budget/proyecto/8888")
+      expect(page).to have_content("Investment project code: 9999")
+      expect(page).to have_content("Budget Investment child")
+    end
+
+    scenario "Visit Investment with same ID as migrated Spending Proposal shows that Investment" do
+      visit "/presupuestos/new-budget/proyecto/9999"
+
+      expect(page).to have_current_path("/presupuestos/new-budget/proyecto/9999")
+      expect(page).to have_content("Investment project code: 9999")
+      expect(page).to have_content("Investment with same Spending ID Proposal")
+    end
+  end
+
+  context "Wrong budget investment URL" do
+    let(:investment) { create(:budget_investment, budget: budget) }
+
+    it 'Trying to visit an investment with a wrong budget slug' do
+      wrong_url = budget_investment_path(budget_id: budget.slug, id: investment.id).gsub(budget.slug, 'wrong_budget_slug')
+
+      expect { visit wrong_url }.to raise_error(ActionController::RoutingError)
     end
   end
 end

@@ -1,6 +1,7 @@
 class Management::ProposalsController < Management::BaseController
   include HasOrders
   include CommentableActions
+  include Analytics
 
   before_action :only_verified_users, except: :print
   before_action :set_proposal, only: [:vote, :show]

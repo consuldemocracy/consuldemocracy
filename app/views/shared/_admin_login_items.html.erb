@@ -1,7 +1,7 @@
 <% if show_admin_menu? %>
-  <li>
+  <li class="has-submenu">
     <%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow", class: "hide-for-small-only" %>
-    <ul class="menu">
+    <ul class="submenu menu vertical" data-submenu>
       <% if current_user.administrator? %>
         <li>
           <%= link_to t("layouts.header.administration"), admin_root_path %>
@@ -29,7 +29,8 @@
     </ul>
   </li>
 <% end %>
-<% if current_user && current_user.poll_officer? %>
+
+<% if current_user && current_user.poll_officer? && Poll.current.any? %>
   <li>
     <%= link_to t("layouts.header.officing"), officing_root_path %>
   </li>

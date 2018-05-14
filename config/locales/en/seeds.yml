@@ -36,6 +36,16 @@ en:
       groups:
         all_city: All City
         districts: Districts
+      valuator_groups:
+        culture_and_sports: Culture & Sports
+        gender_and_diversity: Gender & Diversity Policies
+        urban_development: Sustainable Urban Development
+        equity_and_employment: Equity & Employment
+      statuses:
+        studying_project: Studying the project
+        bidding: Bidding
+        executing_project: Executing the project
+        executed: Executed
     polls:
       current_poll: "Current Poll"
       current_poll_geozone_restricted: "Current Poll Geozone Restricted"

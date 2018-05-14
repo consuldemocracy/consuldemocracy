@@ -36,6 +36,16 @@ es:
       groups:
         all_city: Toda la Ciudad
         districts: Distritos
+      valuator_groups:
+        culture_and_sports: Cultura y Deportes
+        gender_and_diversity: Políticas de Género y Diversidad
+        urban_development: Desarrollo Urbano Sostenible
+        equity_and_employment: Equidad y Empleo
+      statuses:
+        studying_project: Estudiando el proyecto
+        bidding: Licitación
+        executing_project: Ejecutando el proyecto
+        executed: Ejecutado
     polls:
       current_poll: "Votación Abierta"
       current_poll_geozone_restricted: "Votación Abierta restringida por geozona"

@@ -7,13 +7,10 @@ module ApplicationHelper
     request.path == '/'
   end
 
-  def opendata_page?
-    request.path == '/opendata'
-  end
-
   # if current path is /debates current_path_with_query_params(foo: 'bar') returns /debates?foo=bar
   # notice: if query_params have a param which also exist in current path, it "overrides" (query_params is merged last)
   def current_path_with_query_params(query_parameters)
+    return human_rights_proposals_path(request.query_parameters.merge(query_parameters)) if controller_name == "human_rights"
     url_for(request.query_parameters.merge(query_parameters))
   end
 
@@ -59,5 +56,9 @@ module ApplicationHelper
 
   def kaminari_path(url)
     "#{root_url.chomp("\/")}#{url}"
+  end
+
+  def css_for_landing
+    "landing-" + params[:landing] if params[:landing].present?
   end
 end

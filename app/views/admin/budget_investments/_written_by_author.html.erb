@@ -1,8 +1,9 @@
+<% investment_id = @investment.original_spending_proposal_id || @investment.id %>
 <div class="extra-info float-right">
   <%= t "admin.budget_investments.show.info",
          budget_name: @budget.name,
          group_name: @investment.group.name,
-         id: @investment.id %>
+         id: investment_id %>
 </div>
 
 <br>
@@ -22,6 +23,12 @@
         <strong><%= t("admin.budget_investments.show.by") %></strong>:
         <%= link_to @investment.author.name, admin_hidden_user_path(@investment.author) %>
       </p>
+      <% if @investment.organization_name.present? %>
+        <p>
+          <strong><%= t("admin.budget_investments.show.organization_name") %></strong>:
+          <%= @investment.organization_name %>
+        </p>
+      <% end %>
     </div>
 
     <div class="small-12 medium-4 column">

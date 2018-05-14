@@ -1,29 +1,35 @@
 section "Creating polls" do
 
   Poll.create(name: I18n.t('seeds.polls.current_poll'),
+              slug: I18n.t('seeds.polls.current_poll').parameterize,
               starts_at: 7.days.ago,
               ends_at:   7.days.from_now,
               geozone_restricted: false)
 
   Poll.create(name: I18n.t('seeds.polls.current_poll_geozone_restricted'),
+              slug: I18n.t('seeds.polls.current_poll_geozone_restricted').parameterize,
               starts_at: 5.days.ago,
               ends_at:   5.days.from_now,
               geozone_restricted: true,
               geozones: Geozone.reorder("RANDOM()").limit(3))
 
   Poll.create(name: I18n.t('seeds.polls.incoming_poll'),
+              slug: I18n.t('seeds.polls.incoming_poll').parameterize,
               starts_at: 1.month.from_now,
               ends_at:   2.months.from_now)
 
   Poll.create(name: I18n.t('seeds.polls.recounting_poll'),
+              slug: I18n.t('seeds.polls.recounting_poll').parameterize,
               starts_at: 15.days.ago,
               ends_at:   2.days.ago)
 
   Poll.create(name: I18n.t('seeds.polls.expired_poll_without_stats'),
+              slug: I18n.t('seeds.polls.expired_poll_without_stats').parameterize,
               starts_at: 2.months.ago,
               ends_at:   1.month.ago)
 
   Poll.create(name: I18n.t('seeds.polls.expired_poll_with_stats'),
+              slug: I18n.t('seeds.polls.expired_poll_with_stats').parameterize,
               starts_at: 2.months.ago,
               ends_at:   1.month.ago,
               results_enabled: true,
@@ -91,22 +97,22 @@ end
 section "Creating Poll Voters" do
 
   def vote_poll_on_booth(user, poll)
-    Poll::Voter.create!(document_type: user.document_type,
-                        document_number: user.document_number,
-                        user: user,
-                        poll: poll,
-                        origin: 'booth',
-                        officer: Poll::Officer.all.sample)
+    Poll::Voter.create(document_type: user.document_type,
+                       document_number: user.document_number,
+                       user: user,
+                       poll: poll,
+                       origin: 'booth',
+                       officer: Poll::Officer.all.sample)
   end
 
   def vote_poll_on_web(user, poll)
     randomly_answer_questions(poll, user)
-    Poll::Voter.create!(document_type: user.document_type,
-                        document_number: user.document_number,
-                        user: user,
-                        poll: poll,
-                        origin: 'web',
-                        token: SecureRandom.hex(32))
+    Poll::Voter.create(document_type: user.document_type,
+                       document_number: user.document_number,
+                       user: user,
+                       poll: poll,
+                       origin: 'web',
+                       token: SecureRandom.hex(32))
   end
 
   def randomly_answer_questions(poll, user)

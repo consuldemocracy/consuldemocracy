@@ -146,6 +146,70 @@ feature 'Debates' do
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
   end
 
+  scenario 'Create (predefined tag in url)' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path(tag: "open-plenary")
+    fill_in_debate
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate created successfully.'
+    within "#tags_debate_#{Debate.last.id}" do
+      expect(page).to have_content "open-plenary"
+    end
+  end
+
+  scenario 'Create (debate for questions as admin)' do
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    visit new_debate_path(tag: "open-plenary")
+    fill_in_debate
+    select 'Question', from: 'debate_comment_kind'
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate created successfully.'
+    within("#debate_#{Debate.last.id}") do
+      expect(page).to have_content "No questions"
+    end
+
+    within("#comments") do
+      expect(page).to have_content "Questions (0)"
+      expect(page).to have_content "Leave your question"
+      expect(page).to have_button "Publish question"
+    end
+  end
+
+  scenario 'Create (debate for comments as admin)' do
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    visit new_debate_path(tag: "open-plenary")
+    fill_in_debate
+    select 'Comment', from: 'debate_comment_kind'
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate created successfully.'
+    within("#debate_#{Debate.last.id}") do
+      expect(page).to have_content "No comments"
+    end
+
+    within("#comments") do
+      expect(page).to have_content "Comments (0)"
+      expect(page).to have_content "Leave your comment"
+      expect(page).to have_button "Publish comment"
+    end
+  end
+
+  scenario 'Create (debate for questions as user)' do
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    visit new_debate_path(tag: "open-plenary")
+    expect(page).not_to have_css 'debate_comment_kind'
+  end
+
   scenario 'Create with invisible_captcha honeypot field' do
     author = create(:user)
     login_as(author)
@@ -365,7 +429,7 @@ feature 'Debates' do
       visit debates_path
       click_link 'highest rated'
 
-      expect(page).to have_selector('a.active', text: 'highest rated')
+      expect(page).to have_selector('a.is-active', text: 'highest rated')
 
       within '#debates' do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -384,7 +448,7 @@ feature 'Debates' do
       visit debates_path
       click_link 'newest'
 
-      expect(page).to have_selector('a.active', text: 'newest')
+      expect(page).to have_selector('a.is-active', text: 'newest')
 
       within '#debates' do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -447,7 +511,7 @@ feature 'Debates' do
 
         click_link 'recommendations'
 
-        expect(page).to have_selector('a.active', text: 'recommendations')
+        expect(page).to have_selector('a.is-active', text: 'recommendations')
 
         within '#debates' do
           expect(best_debate.title).to appear_before(medium_debate.title)
@@ -837,7 +901,7 @@ feature 'Debates' do
       fill_in "search", with: "Show you got"
       click_button "Search"
 
-      expect(page).to have_selector("a.active", text: "relevance")
+      expect(page).to have_selector("a.is-active", text: "relevance")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -856,7 +920,7 @@ feature 'Debates' do
       fill_in "search", with: "Show you got"
       click_button "Search"
       click_link 'newest'
-      expect(page).to have_selector("a.active", text: "newest")
+      expect(page).to have_selector("a.is-active", text: "newest")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -881,7 +945,7 @@ feature 'Debates' do
       fill_in "search", with: "Show you got"
       click_button "Search"
       click_link 'recommendations'
-      expect(page).to have_selector("a.active", text: "recommendations")
+      expect(page).to have_selector("a.is-active", text: "recommendations")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -1009,11 +1073,8 @@ feature 'Debates' do
 
       visit new_debate_path
       fill_in 'debate_title', with: 'debate'
-      check "debate_terms_of_service"
 
-      within('div#js-suggest') do
-        expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
-      end
+      expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
     end
 
     scenario 'No found suggestions', :js do
@@ -1027,9 +1088,7 @@ feature 'Debates' do
       fill_in 'debate_title', with: 'proposal'
       check "debate_terms_of_service"
 
-      within('div#js-suggest') do
-        expect(page).not_to have_content 'You are seeing'
-      end
+      expect(page).not_to have_content 'You are seeing'
     end
   end
 

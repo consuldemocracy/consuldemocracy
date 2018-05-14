@@ -1,0 +1,465 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: service_letters_4_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <%= back_link_to %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 small-centered column">
+    <div class="float-left download">
+      <p><strong>DESCARGA ESTE DOCUMENTO</strong><br>
+        <%= link_to "Carta de Servicios: Centros de mayores <small>(DOC | 428Kb)</small>".html_safe,
+                    "/docs/carta_servicios_centros_de_mayores.doc",
+                    title: "Carta de Servicios: Centros de mayores (DOC | 428Kb)" %><br>
+        <%= link_to "Carta de Servicios: Centros de mayores <small>(PPT | 10,24Mb)</small>".html_safe,
+                    "/docs/carta_servicios_centros_de_mayores.ppt",
+                    title: "Carta de Servicios: Centros de mayores (PPT | 10,24Mb)" %>
+      </p>
+    </div>
+
+    <div class="float-right">
+      <p><strong>Fecha de aprobación: 13 de marzo de 2013</strong><br>
+      <strong>Fecha de la última evaluación: 3 de marzo de 2016</strong></p>
+      <a class="button warning" type="button" data-toggle="annotator-help">
+        <sub><span class="icon-edit"></span></sub>&nbsp;
+        <%= t("annotator.help.title") %>
+      </a>
+
+      <div class="dropdown-pane" id="annotator-help" data-dropdown data-auto-focus="true">
+        <% if user_signed_in? %>
+          <%= t("annotator.help.alt") %>
+        <% else %>
+          <p>
+            <%= t("annotator.help.text",
+                sign_in: link_to(t("annotator.help.text_sign_in"), new_user_session_path),
+                sign_up: link_to(t("annotator.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          </p>
+        <% end %>
+
+        <%= image_tag ("annotator_help.gif"), alt: t("annotator.help.alt") %>
+      </div>
+    </div>
+
+    <section data-annotatable-type="legislation"
+             data-annotatable-id="4"
+             data-annotatable-readonly="true"
+             id="carta_servicios_body">
+
+      <h1 class="text-center">Carta de Servicios de Centros Municipales de Mayores</h1>
+
+      <h2>1. Introducción</h2>
+      <p>El Ayuntamiento de Madrid, en el marco de sus políticas de bienestar y de atención social a las personas mayores dirige, gestiona y evalúa los servicios de atención a mayores, entre los que se encuentran los servicios de teleasistencia domiciliaria (TAD), ayuda a domicilio, comidas a domicilio y lavandería, organiza los programas de respiro familiar y cuidar al cuidador, y pone a disposición de la ciudadanía los Centros Municipales de Mayores y los Centros de Día.</p>
+
+      <p>Esta Carta de Servicios hace referencia a los Centros Municipales de Mayores.</p>
+
+      <p>El Ayuntamiento de Madrid, ha promovido e impulsado la red de Centros Municipales de Mayores (en adelante CMM). Diseñados como equipamientos de servicios sociales no residenciales, estos centros tienen como objetivo promover la convivencia de las personas mayores, mejorar su calidad de vida y propiciar su participación activa.</p>
+
+      <p>Los CMM ofrecen actividades socioculturales para la utilización del tiempo libre con un contenido preventivo y enriquecedor, y promueven el voluntariado de las personas mayores en dichos centros.</p>
+
+      <p>El Ayuntamiento de Madrid cuenta en la actualidad con 89 Centros Municipales de Mayores (con 312.156 socios/as) que dan cobertura a las necesidades y aspiraciones de ocio y tiempo libre de las personas mayores residentes en la ciudad de Madrid.</p>
+
+      <p>Estos centros son espacios que favorecen el envejecimiento activo y saludable, y el aprendizaje a lo largo de toda la vida (“long life learning”), así como la prevención de la dependencia, potenciando la autonomía personal.</p>
+
+      <p>El funcionamiento de estos centros se encuentra regulado en los Estatutos y el Reglamento de Régimen Interior, aprobados por el Pleno de la Corporación Municipal el 25 de febrero de 2011 (publicados en el B.O.C.M. de 18 de marzo de 2011), recogidas las aportaciones de los diferentes agentes intervinientes: Juntas Directivas de los CMM, técnicos y responsables municipales, y miembros del Consejo Sectorial de Personas Mayores de la Ciudad de Madrid.</p>
+
+      <p>Estos textos normativos reflejan un nuevo impulso favorecedor de la participación ciudadana, incorporando medios electrónicos de información para agilizar la intervención ciudadana en la vida pública.</p>
+
+      <p>Para completar este proceso, la <strong>Carta de Servicios de Centros Municipales de Mayores</strong> pretende hacer aún más visible este servicio entre la ciudadanía de Madrid así como aportar información sobre las condiciones en que se presta. <strong>Se inscribe dentro de los compromisos de calidad del Ayuntamiento de Madrid</strong> con el objetivo de aumentar el grado de satisfacción de la ciudadanía en relación con este servicio y aportar transparencia en la prestación del mismo.</p>
+
+      <p>En estos años, además de la presente Carta, se han aprobado otras Cartas de Servicios que materializan este compromiso con la calidad: en el año 2008, la <strong>Carta de Servicios del Servicio de Teleasistencia Domiciliaria</strong>, en abril de 2010, la <strong>Carta de Servicios de Centros de Día</strong>, en julio de 2010, la <strong>Carta de Servicios de Centros de Servicios Sociales</strong>, en abril de 2011, la <strong>Carta de Servicios del Servicio de Ayuda a Domicilio</strong>, en marzo de 2012, la <strong>Carta de Servicios de Samur Social</strong>, en septiembre de 2013, la <strong>Carta de Servicios de los Centros de Atención a la Infancia</strong>, en enero de 2014, la <strong>Carta de Servicios de los Centros de Apoyo a las Familias</strong>, y en junio de 2014, la <strong>Carta de Servicios de Educación Social</strong>, cumpliendo los objetivos establecidos en el Plan Operativo de Gobierno.</p>
+
+      <p>La Carta de Servicios de Centros Municipales de Mayores se aprobó por la Junta de Gobierno de la Ciudad de Madrid en marzo de 2013. Este texto corresponde a la última evaluación realizada el 3 de marzo de 2016; con ella, el Ayuntamiento de Madrid manifiesta nuevamente su compromiso con la calidad y la mejora continua de sus servicios. </p>
+
+      <h2>2. Datos de carácter general</h2>
+
+      <h3>Órgano Directivo responsable</h3>
+
+      <p>El Órgano directivo responsable del Servicio de Centros Municipales de Mayores es la <strong>Dirección General de Mayores, Atención Social, Inclusión Social y Atención a la Emergencia</strong> del Área de Gobierno de Equidad, Derechos Sociales y Empleo, si bien la gestión de los centros es competencia de las Juntas Municipales de Distrito.</p>
+
+      <p>Según el Acuerdo vigente de la Junta de Gobierno de la Ciudad de Madrid, entre las competencias que corresponden a esa Dirección General están:</p>
+      <ul>
+        <li>Favorecer la participación de las personas mayores en la vida social de los barrios y Distritos.</li>
+        <li>Diseñar y proponer programas y servicios para las personas mayores, en especial los referidos al mantenimiento de la persona mayor en su propio hogar todo el tiempo posible y los que tienen por objeto el apoyo a las familias que cuidan a sus mayores.</li>
+        <li>Implantar y evaluar periódicamente los criterios y estándares de calidad en relación con los Programas gestionados.</li>
+      </ul>
+
+      <p>Por otra parte, según el Acuerdo de la Junta de Gobierno de la Ciudad de Madrid, en vigor, de delegación de competencias en las Juntas Municipales de Distrito, a éstas les corresponde "gestionar los Centros para Mayores, comedores y demás equipamientos de servicios sociales municipales ubicados en el distrito, de conformidad con las disposiciones y directrices del Área de Gobierno de Equidad, Derechos Sociales y Empleo".</p>
+
+      <h3>Unidad prestadora</h3>
+
+      <p>Las unidades prestadoras del servicio son cada uno de los Centros Municipales de Mayores, distribuidos entre los 21 Distritos de la ciudad de Madrid.</p>
+
+      <p>El Departamento de Centros de Día y Residenciales, de la Dirección General de Mayores, Atención Social, Inclusión Social y Atención a la Emergencia, junto con los Departamentos de Servicios Sociales de los 21 distritos, son los responsables de la gestión, control y seguimiento de estos centros.</p>
+
+      <h2>3. Normativa</h2>
+
+      <h3>Normativa general</h3>
+      Artículo 51 de la Constitución Española de 1978.
+
+      <h3>Leyes Orgánicas</h3>
+      <ul>
+        <li>Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de carácter personal</li>
+      </ul>
+
+      <h3>Leyes y Reales Decretos</h3>
+      <ul>
+        <li>Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público que entra en vigor el 3 de octubre de 2016 (salvo alguna excepción).</li>
+        <li>Ley 39/2015, de 1 de octubre, de Procedimiento Administrativo Común de las Administraciones Públicas que entra en vigor el 3 de octubre de 2016 y expresamente deroga la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común y la Ley 11/2007, de 22 de junio, de acceso electrónico de los ciudadanos a los Servicios Públicos.</li>
+        <li>Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.</li>
+        <li>Ley 27/2013, de 27 de diciembre, de racionalización y sostenibilidad de la Administración Local.</li>
+        <li>Ley 17/2009, de 23 de noviembre, sobre el libre acceso a las actividades de servicios y su ejercicio y Ley 25/2009, de 22 de diciembre, de modificación de diversas leyes para su adaptación a la Ley sobre el libre acceso a las actividades de servicios y su ejercicio.</li>
+        <li>Ley 39/2006, de 14 de diciembre, de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia.</li>
+        <li>Ley 22/2006, de 4 de julio, de Capitalidad y de Régimen Especial de Madrid.</li>
+        <li>Real Decreto Legislativo 2/2004, de 5 de marzo, por el que se aprueba el Texto Refundido de la Ley Reguladora de las Haciendas Locales.</li>
+        <li>Ley 57/2003, de 16 de diciembre, de Medidas para la Modernización del Gobierno Local.</li>
+        <li>Ley 51/2003, de 2 de diciembre, de igualdad de oportunidades, no discriminación y accesibilidad universal de las personas con discapacidad.</li>
+        <li>Ley 11/2003, de 27 de marzo, de Servicios Sociales de la Comunidad de Madrid.</li>
+        <li>Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común.</li>
+        <li>Real Decreto Legislativo 781/1986, de 18 de abril, por el que se aprueba el Texto Refundido de las Disposiciones Legales vigentes en materia de Régimen Local.</li>
+        <li>Ley 7/1985, de 2 de abril, Reguladora de las Bases de Régimen Local.</li>
+      </ul>
+
+      <h3>Normativa municipal general</h3>
+      <ul>
+        <li>Acuerdo del Pleno, de 30 de marzo de 2011, por el que se aprueba la Ordenanza por la que se adaptan al ámbito de la ciudad de Madrid las previsiones contenidas en la normativa estatal y autonómica de transposición de la Directiva 2006/123/CE, del Parlamento Europeo y del Consejo, de 12 de diciembre de 2006, relativa a los servicios en el mercado interior.</li>
+        <li>Acuerdo de la Junta de Gobierno de la Ciudad de Madrid de 25 de junio de 2009, por el que se regula el Sistema de Cartas de Servicios en el Ayuntamiento de Madrid.</li>
+        <li>Acuerdo de la Junta de Gobierno de la Ciudad de Madrid de 4 de diciembre de 2008, por el que se aprueba el Código de Buenas Prácticas Administrativas del Ayuntamiento de Madrid.</li>
+        <li>Decreto del Alcalde de 17 de enero de 2005, por el que se regula la Atención al Ciudadano en el Ayuntamiento de Madrid y su normativa de desarrollo.</li>
+        <li>Reglamento Orgánico de los Distritos de la Ciudad de Madrid, de 23 de diciembre de 2004.</li>
+        <li>Reglamento Orgánico del Gobierno y de la Administración del Ayuntamiento de Madrid, de 31 de mayo de 2004.</li>
+        <li>Reglamento Orgánico de Participación Ciudadana del Ayuntamiento de Madrid, de 31 de mayo de 2004.</li>
+      </ul>
+
+      <h3>Normativa municipal estructura y competencias</h3>
+      <ul>
+        <li>Acuerdo en vigor de la Junta de Gobierno de la Ciudad de Madrid de organización y competencias de los Distritos.</li>
+        <li>Acuerdo en vigor de la Junta de Gobierno de la Ciudad de Madrid por el que se establece la organización del Área de Gobierno de Equidad, Derechos Sociales y Empleo y se delegan competencias en su titular y en los titulares de los órganos directivos.</li>
+        <li>Decreto en vigor de la Alcaldesa, por el que se establece el número, denominación y competencias de las Áreas en las que se estructura la Administración del Ayuntamiento de Madrid.</li>
+        <li>Decreto en vigor de la Alcaldesa de delegación y desconcentración de competencias.</li>
+      </ul>
+
+      <h3>Normativa Específica:</h3>
+      <ul>
+        <li>Acuerdo del Pleno, de 25 de febrero de 2011, por el que se aprueba el Reglamento de Régimen Interior de Centros Municipales de Mayores.</li>
+        <li>Acuerdo del Pleno, de 25 de febrero de 2011, por el que se aprueban los Estatutos de Centros Municipales de Mayores.</li>
+      </ul>
+
+      <h2>4. Derechos y responsabilidades</h2>
+
+      <h3>Derechos de la ciudadanía y usuarias/os</h3>
+      <p>Los principales derechos de la ciudadanía en general y de las/os usuarias/os de los servicios objeto de esta Carta, recogidos básicamente en la normativa relativa a régimen jurídico de las Administraciones Públicas, procedimiento administrativo común, transparencia y protección de datos, son:</p>
+      <ul>
+        <li>Ser tratados con respeto y deferencia.</li>
+        <li>Recibir información sobre el servicio que se presta.</li>
+        <li>Conocer la identidad del personal bajo cuya responsabilidad se presta el servicio.</li>
+        <li>Ser objeto de una atención directa y personalizada.</li>
+        <li>Elegir el canal presencial, telefónico o electrónico a través del cual relacionarse con el Ayuntamiento (salvo que estén obligadas a relacionarse a través de medios electrónicos).</li>
+        <li>Exigir responsabilidades a su Administración y personal cuando así corresponda legalmente.</li>
+        <li>Presentar sugerencias, reclamaciones y felicitaciones sobre el funcionamiento de los servicios.</li>
+        <li>A la protección de datos de carácter personal y en particular a su seguridad y confidencialidad.</li>
+      </ul>
+
+      <p>Además, los derechos de los socios y las socias de los Centros Municipales de Mayores se recogen en el Capitulo I, Artículo 4 de los Estatutos:</p>
+      <ul>
+        <li>Asistir a la Asamblea General con voz y voto.</li>
+        <li>Elegir y ser elegido/a miembro del órgano de representación del centro.</li>
+        <li>Formular propuestas y sugerencias ante los órganos directivos del centro.</li>
+        <li>Participar en las actividades que se desarrollan en el centro y utilizar los servicios de conformidad con las condiciones que en su caso se establezcan.</li>
+      </ul>
+
+      <h3>Responsabilidades de la ciudadanía y usuarias/os</h3>
+      <p>Las responsabilidades de los socios y las socias de los Centros se establecen en los Estatutos y en el Reglamento de Régimen Interior de los Centros Municipales de Mayores, respectivamente.</p>
+      <ul>
+        <li>Respetar y cumplir los Estatutos, el Reglamento de Régimen Interior y demás normas que rigen el funcionamiento del centro, así como los acuerdos de la Asamblea General y de la Junta Directiva.</li>
+        <li>Colaborar en el cumplimiento de los fines del centro.</li>
+        <li>Informar a la Dirección del centro de las deficiencias que se observen en el funcionamiento del mismo.</li>
+        <li>Mantener siempre una actitud correcta y de respeto hacia los demás y hacia el personal de la organización.</li>
+        <li>Cumplir lo establecido en la normativa vigente y, en concreto, en la reglamentación técnica general y específica de los servicios objeto de la Carta (acreditación, plazos, documentación a aportar,...).</li>
+        <li>Abonar las tasas o precios de aquellos servicios en los que esté establecido.</li>
+        <li>Hacer adecuado uso de las instalaciones y respetar el material y los equipamientos, colaborando en su mantenimiento y limpieza.</li>
+        <li>Plantear sugerencias y reclamaciones con un contenido concreto y proporcionando los datos mínimos necesarios para su tramitación.</li>
+      </ul>
+
+      <h2>5. Mecanismos y modalidades de participación</h2>
+
+      <p>El Ayuntamiento de Madrid realiza una apuesta fuerte por el desarrollo y puesta en marcha de los procesos participativos, que garanticen el <strong>derecho</strong> de la ciudadanía a participar en la toma de decisiones junto con los poderes públicos, de manera que el sentir de la totalidad de la población se tenga en cuenta con carácter previo a la adopción de decisiones que puedan afectar a un Distrito concreto o a la totalidad de la Ciudad.</p>
+
+      <p>Entre los mecanismos, instrumentos y órganos de participación establecidos por el Ayuntamiento de Madrid en su <em>Reglamento Orgánico de Participación Ciudadana</em> y normativa de desarrollo, destacan:</p>
+      <ul>
+        <li>Las propuestas ciudadanas: la ciudadanía realiza propuestas de actuación en asuntos de competencia municipal o interés local. Cuando alcanzan el 2% de apoyos pueden someterse a debate y votación final, decidiendo entre todas y todos las que se llevan a cabo (mayoría simple de los participantes).</li>
+        <li>Las audiencias públicas: el Ayuntamiento invita a la ciudadanía a participar en cuestiones especialmente significativas de la acción municipal y lo que se decida mayoritariamente, definirá las actuaciones a realizar.</li>
+        <li>Las iniciativas populares: iniciativas normativas e iniciativas ciudadanas para promover actividades de interés público.</li>
+        <li>Las proposiciones al Pleno y a las Juntas de Distrito y los ruegos y preguntas en las sesiones plenarias del Distrito correspondiente.</li>
+        <li>Las sugerencias y reclamaciones: la ciudadanía ejerce su derecho a presentar sugerencias relativas a la creación, ampliación o mejora de los servicios prestados por el Ayuntamiento de Madrid; reclamaciones por tardanzas, desatenciones, incidencias o cualquier otra anomalía en su funcionamiento y felicitaciones, sobre los servicios prestados por el Ayuntamiento.</li>
+        <li>El Consejo Director de la Ciudad, los Consejos Sectoriales y los Consejos Territoriales.</li>
+        <li>Los sondeos de opinión, encuestas de satisfacción, consejos y foros temáticos, y paneles ciudadanos. Entre ellos destaca la Encuesta de Calidad de Vida y Satisfacción con los Servicios Públicos, encuesta presencial de carácter bienal que tiene por objetivo analizar el grado de satisfacción de la ciudadanía madrileña con los servicios públicos municipales, así como conocer su opinión respecto a la calidad de vida en la ciudad.</li>
+      </ul>
+
+      <p>Además, el Ayuntamiento de Madrid pone a disposición de las personas mayores otros mecanismos de participación como la página web <a href="http://www.madridmayor.es" target="_blank" title="(se abre en ventana nueva)">www.madridmayor.es</a>.</p>
+
+      <p>Asimismo, en los Centros Municipales de Mayores están establecidos específicamente, a través de los Estatutos y el Reglamento de Régimen Interior, los siguientes órganos de participación y representación de los socios y las socias: la Asamblea General, la Junta Directiva y la Comisión de Premios y Sanciones.</p>
+
+      <p>Es de destacar la participación de las personas mayores, bien a través de actividades de voluntariado en los Centros Municipales de Mayores en los grupos de acogida de nuevos socios y socias, en los de crecimiento personal y en talleres específicos, bien como miembros electos de Juntas Directivas, o como monitores, ofreciendo sus conocimientos y autoayuda.</p>
+
+      <p>Para avanzar de un modo decidido hacia las fórmulas reales de participación de la ciudadanía que profundicen y den sentido al compromiso de lograr un gobierno abierto, se ha puesto en marcha la <strong>web de gobierno abierto del Ayuntamiento de Madrid</strong>, destinada a que la ciudadanía pueda promover propuestas de actuación municipal de forma libre y transparente. En ella, a través de la plataforma de participación <a href="http://decide.madrid.es">decide.madrid</a> se pueden presentar propuestas, someter a audiencia pública las cuestiones más relevantes del gobierno de la Ciudad y participar en la elaboración de los Presupuestos del Ayuntamiento.</p>
+
+      <h2>6. Sistema de Sugerencias y Reclamaciones</h2>
+
+      <p>El Ayuntamiento de Madrid cuenta con un Sistema de Sugerencias y Reclamaciones a través del cual la ciudadanía e instituciones públicas o privadas pueden ejercer su derecho a presentar felicitaciones por los servicios prestados, sugerencias relativas a la creación, ampliación o mejora de los servicios prestados por el Ayuntamiento de Madrid y reclamaciones por tardanzas, desatenciones, incidencias o cualquier otra anomalía en su funcionamiento y felicitaciones.</p>
+
+      <p>Se podrán presentar sugerencias, reclamaciones y felicitaciones a través de:</p>
+      <ul>
+        <li><a href="http://www.madrid.es/contactar" target="_blank" title="(se abre en ventana nueva)">www.madrid.es/contactar</a>.</li>
+        <li>El Teléfono 010 Línea Madrid.</li>
+        <li>Las Oficinas de Atención a la Ciudadanía Línea Madrid.</li>
+        <li>Las Oficinas de Registro.</li>
+        <li>El Registro electrónico del Ayuntamiento de Madrid.</li>
+        <li>Los buzones que estuvieran disponibles en los centros del Ayuntamiento de Madrid con atención directa al público o en los Centros Municipales de Mayores.</li>
+      </ul>
+
+      <p>Las sugerencias, reclamaciones y felicitaciones se <strong>contestarán</strong> de forma adecuada y con la mayor celeridad posible, cumpliendo los compromisos asumidos en la Carta de Servicios de Sugerencias y Reclamaciones del Ayuntamiento de Madrid, aprobada el 10 de mayo de 2012.</p>
+
+      <h2>7. Servicios prestados</h2>
+
+      <p>Los Centros Municipales de Mayores son equipamientos sostenidos por el Ayuntamiento de Madrid, dependientes de los distritos de la ciudad. Son un recurso comunitario esencial para facilitar el mantenimiento del nivel de autonomía de las personas mayores, el envejecimiento saludable y la participación activa de este colectivo.</p>
+
+      <p>En los Centros Municipales de Mayores se desarrollan una serie de servicios dirigidos a la mejora de la calidad de vida y a la atención personal, así como la programación de actividades socioculturales, ocupacionales, artísticas y recreativas, de forma gratuita o a precios asequibles.</p>
+
+      <p>Los principales servicios prestados en los Centros Municipales de Mayores son:</p>
+      <ol>
+        <li><strong>Información a toda la población de la Ciudad de Madrid sobre los Centros Municipales de Mayores</strong>, a través de la WEB municipal <a href="http://www.madrid.es" target="_blank" title="(se abre en ventana nueva)">www.madrid.es</a>, y <a href="http://www.madridmayor.es" target="_blank" title="(se abre en ventana nueva)">www.madridmayor.es</a>, en los Centros de Servicios Sociales, y en los propios centros, así como mediante carta personalizada a las personas que cumplen 65 años, sobre las condiciones de acceso a los mismos (SUSPENDIDO TEMPORALMENTE DESDE AGOSTO DE 2015 POR DECISIÓN DEL ÁREA DE GOBIERNO).</li>
+
+        <li><strong>Programas socioculturales, ocupacionales o formativos</strong>, con el objetivo favorecer el envejecimiento activo, la calidad de vida, la relación y convivencia a través de distintas y variadas actividades, dinamizadas por el servicio de animación sociocultural. La distribución de los mismos en los distintos Centros Municipales de Mayores es variable, aunque todos ellos tienen cobertura de forma general en cada uno de los distritos de la ciudad. Se incluyen como principales actividades:
+          <ul>
+            <li>Acoger a los/as nuevos/as socios/as e informar sobre programas.</li>
+            <li>Planificar las actividades/ talleres con la participación de las Juntas Directivas de los Centros Municipales de Mayores.</li>
+            <li>Realizar la inscripción</li>
+            <li>Desarrollar las actividades de programación continua: mantenimiento físico, artísticas, recreativas o de formación en nuevas tecnologías o educación digital básica.</li>
+            <li>Organizar otras actividades, puntuales o esporádicas (conferencias, carnavales, excursiones, visitas culturales o viajes, etc.).</li>
+          </ul>
+        </li>
+
+        <li><strong>Servicios de Comedor / cafetería</strong>, cuyo objetivo es favorecer las relaciones personales y una alimentación equilibrada, ofreciendo menús variados a precios asequibles.</li>
+
+        <li><strong>Espacios de nuevas tecnologías</strong>, que tienen como objeto favorecer la formación informática de los socios y las socias de los Centros Municipales de Mayores
+          <ul>
+            <li>Facilitar el acceso a las aulas informáticas.</li>
+            <li>Facilitar el acceso a cursos formativos.</li>
+          </ul>
+        </li>
+
+        <li><strong>Servicios de Biblioteca y prensa</strong>, con el objetivo de favorecer el acceso a la información y a la cultura
+          <ul>
+            <li>Organizar el préstamo de libros.</li>
+            <li>Facilitar la consulta de material bibliográfico.</li>
+            <li>Facilitar el acceso a la prensa diaria, en formato digital o en formato papel.</li>
+          </ul>
+        </li>
+
+        <li><strong>Otros servicios</strong> que tienen como objetivo favorecer el envejecimiento activo y el bienestar, con precios asequibles
+          <ul>
+            <li>Podología.</li>
+            <li>Peluquería.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>8. Compromisos de calidad</h2>
+
+      <p>El Ayuntamiento de Madrid se comprometen a mejorar la calidad del servicio de los Centros Municipales de Mayores de forma permanente, a través de los siguientes compromisos, y sus correspondientes indicadores, que permitirán medir el cumplimiento de los estándares y compromisos establecidos en la presente Carta.</p>
+      <ol>
+        <li>El Ayuntamiento de Madrid mantendrá informada al 100% de las personas mayores que cumplen 65 años estando empadronadas en la ciudad de Madrid, mediante <strong>carta personalizada</strong> de las condiciones de acceso a los Centros Municipales de Mayores y de las condiciones para la tramitación de la tarjeta madridmayor.es. (SUSPENDIDO TEMPORALMENTE DESDE AGOSTO DE 2015 POR DECISIÓN DEL ÁREA DE GOBIERNO).
+
+          <ul>
+            <li>Indicador asociado:<br>
+            1.1. Porcentaje de personas que cumplen 65 años a las que se envía información sobre los CMM. (SUSPENDIDO TEMPORALMENTE DESDE AGOSTO DE 2015 POR DECISIÓN DEL ÁREA DE GOBIERNO).</li>
+          </ul>
+        </li>
+
+        <li>Todos los socios y las socias, en el momento de su incorporación al centro, dispondrán de <strong>información sobre los programas y servicios</strong> que se desarrollan en el Centro Municipal de Mayores y en los que van a poder participar. El 80% de las personas mayores usuarias valorará la satisfacción con la información recibida sobre los programas y servicios con una puntuación igual o superior a 7 y no más del 2% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            2.1. Porcentaje de personas mayores usuarias que valora la información recibida sobre los programas y servicios con una puntuación igual o superior a 7.<br>
+            2.2. Porcentaje de personas mayores usuarias que valora la información recibida sobre los programas y servicios con una puntuación inferior a 5.</li>
+          </ul>
+        </li>
+
+        <li>Todos los Centros Municipales de Mayores tendrán <strong>identificación y señalización</strong> exterior, así como identificación interna en todas las salas y servicios.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            3.1. Porcentaje de Centros Municipales de Mayores con señalización externa.<br>
+            3.2. Porcentaje de Centros Municipales de Mayores con señalización interna.</li>
+          </ul>
+        </li>
+
+        <li>Los Centros Municipales de Mayores facilitarán el <strong>acceso</strong> a personas mayores con movilidad reducida, tanto desde el exterior como a las zonas de uso común.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            4.1. Porcentaje de Centros Municipales de Mayores con accesibilidad desde el exterior.<br>
+            4.2. Porcentaje de Centros Municipales de Mayores con accesibilidad a zonas de uso común.</li>
+          </ul>
+        </li>
+
+        <li>El <strong>equipamiento</strong> y la confortabilidad de las instalaciones de todos los Centros Municipales de Mayores son adecuados al servicio que se presta. El 80% de las personas mayores usuarias valorará la satisfacción con el equipamiento y la confortabilidad de las instalaciones con una puntuación igual o superior a 7 y no más del 6% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            5.1. Porcentaje de personas mayores usuarias que valora el equipamiento y la confortabilidad de las instalaciones con una puntuación igual o superior a 7.<br>
+            5.2. Porcentaje de personas mayores usuarias que valora el equipamiento y la confortabilidad de las instalaciones con una puntuación inferior a 5.</li>
+          </ul>
+        </li>
+
+        <li>Todos los Centros Municipales de Mayores disponen de un <strong>horario</strong> de funcionamiento adecuado a las necesidades de los socios y las socias. El 85% de las personas mayores usuarias valorará la satisfacción con el horario de funcionamiento con una puntuación igual o superior a 7 y no más del 2% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            6.1. Porcentaje de personas mayores usuarias que valora el horario de funcionamiento con una puntuación igual o superior a 7.<br>
+            6.2. Porcentaje de personas mayores usuarias que valora el horario de funcionamiento con una puntuación inferior a 5.</li>
+          </ul>
+        </li>
+
+        <li>Todos los Centros Municipales de Mayores dispondrán de un servicio de <strong>animación sociocultural</strong>, para la dinamización de éstos.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            7.1 Porcentaje de centros que disponen del servicio de animación sociocultural.</li>
+          </ul>
+        </li>
+
+        <li>Al menos el 95% de los Centros Municipales de Mayores dispondrá de <strong>sala polivalente/gimnasio y comedor/cafetería</strong>. En todo caso, estos servicios estarán garantizados en un centro por distrito. El 85% de las personas mayores usuarias valorará la satisfacción con estos servicios con una puntuación igual o superior a 7 y no más del 5% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            8.1. Porcentaje de los Centros Municipales de Mayores que dispone de estos servicios.<br>
+            8.2. Porcentaje de distritos en los que al menos uno de sus centros dispone de estos servicios.<br>
+            8.3. Porcentaje de personas mayores usuarias que valora los servicios de sala polivalente/gimnasio y comedor/cafetería con una puntuación igual o superior a 7.<br>
+            8.4. Porcentaje de personas mayores usuarias que valora los servicios de sala polivalente/gimnasio y comedor/cafetería con una puntuación inferior a 5.</li>
+          </ul>
+        </li>
+
+        <li>En todos los Centros Municipales de Mayores que dispongan de servicio de comedor, se ofrecerá <strong>menú</strong> adecuado y asequible, de tal modo que el 80% de las personas mayores usuarias valore la satisfacción con el servicio de comedor con una puntuación igual o superior a 7 y no más del 10% lo valore por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicador asociado:<br>
+              9.1. Porcentaje de personas mayores usuarias que valora el servicio de comedor con una puntuación igual o superior a 7.<br>
+              9.2. Porcentaje de personas mayores usuarias que valora el servicio de comedor con una puntuación inferior a 5.</li>
+          </ul>
+        </li>
+
+        <li>Al menos el 95% de los Centros Municipales de Mayores dispondrá de <strong>actividades de promoción del envejecimiento activo</strong>: manuales, culturales, artísticas y de mantenimiento físico. En todo caso, estos servicios estarán garantizados en un centro por distrito. El 90% de las personas mayores usuarias valorará la satisfacción con estas actividades con una puntuación igual o superior a 7 y no más del 2% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            10.1. Porcentaje de los Centros Municipales de Mayores que dispone de todas las actividades de promoción del envejecimiento activo.<br>
+            10.2. Porcentaje de distritos en los que al menos uno de sus centros dispone de actividades de promoción del envejecimiento activo.<br>
+            10.3. Porcentaje de personas mayores usuarias que valora las actividades de promoción de envejecimiento activo con una puntuación igual o superior a 7.<br>
+            10.4. Porcentaje de personas mayores usuarias que valora las actividades de promoción de envejecimiento activo con una puntuación inferior a 5.</li>
+          </ul>
+        </li>
+
+        <li>Al menos el 85% de los Centros Municipales de Mayores dispondrá de <strong>aulas informáticas</strong> con actividades de formación en nuevas tecnologías, garantizándose la realización de esta actividad en al menos dos centros por distrito. El 90% de las personas mayores usuarias valorará la satisfacción con estas actividades con una puntuación igual o superior a 7 y no más del 2% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            11.1. Porcentaje de Centros Municipales de Mayores que dispone de aulas informáticas.<br>
+            11.2. Porcentaje de distritos en los que al menos dos de sus centros dispone de actividades de formación en nuevas tecnologías.<br>
+            11.3. Porcentaje de personas mayores usuarias que valora las actividades de formación en nuevas tecnologías con una puntuación igual o superior a 7.<br>
+            11.4. Porcentaje de personas mayores usuarias que valora las actividades de formación en nuevas tecnologías con una puntuación inferior a 5.</li>
+          </ul>
+        </li>
+
+        <li>Al menos el 60% de los Centros Municipales de Mayores dispondrá de los <strong>servicios de biblioteca/sala de lectura</strong>, así como de podología y peluquería. En el 95% de los distritos estos servicios estarán garantizados al menos en uno de sus centros. El 80% de las personas mayores usuarias valorará la satisfacción con estos servicios con una puntuación igual o superior a 7 y no más del 5% lo valorará por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            12.1. Porcentaje de Centros Municipales de Mayores que dispone de los servicios de biblioteca/sala de lectura, así como de podología y peluquería.<br>
+            12.2. Porcentaje de distritos en los que al menos uno de sus centros dispone de estos servicios.<br>
+            12.3. Porcentaje de personas mayores usuarias que valora estos servicios con una puntuación igual o superior a 7.<br>
+            12.4. Porcentaje de personas mayores usuarias que valora estos servicios con una puntuación inferior a 5.</li>
+          </ul>
+        </li>
+
+        <li>La propuesta de actividades se adaptará a los gustos y preferencias de los socios y las socias, garantizándose la <strong>participación</strong>. Todos los Centros Municipales de Mayores celebrarán al menos una vez al año una Asamblea General Ordinaria en la que se acordará la propuesta de actividades del centro. Además, realizarán al menos 7 reuniones anuales entre el equipo técnico y la Junta Directiva, en representación del conjunto de socios y socias de cada uno de los Centros Municipales de Mayores.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            13.1. Porcentaje de Centros Municipales de Mayores que realizan 7 o más reuniones de evaluación y planificación anuales.<br>
+            13.2. Porcentaje de Centros Municipales de Mayores que celebra una Asamblea General Ordinaria al menos una vez al año, para la propuesta de actividades del centro.</li>
+          </ul>
+        </li>
+
+        <li>Todas las personas que prestan diferentes servicios en los Centros Municipales de Mayores irán <strong>identificadas</strong> con una tarjeta visible.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            14.1. Porcentaje de personas que prestan servicios en los Centros Municipales de Mayores que van correctamente identificadas.</li>
+          </ul>
+        </li>
+
+        <li>Todo el personal prestará servicio con <strong>amabilidad y cortesía</strong>, de forma que el 90% de las personas mayores usuarias valore la satisfacción con el trato recibido con una puntuación igual o superior a 7 y no más del 2% lo valore por debajo de 5, en una escala de 0 a 10.
+
+          <ul>
+            <li>Indicador asociado:<br>
+            15.1. Porcentaje de personas mayores usuarias que valora el trato recibido con una puntuación igual o superior a 7.<br>
+            15.2. Porcentaje de personas mayores usuarias que valora el trato recibido con una puntuación inferior a 5.</li>
+          </ul>
+        </li>
+
+        <li>Las personas mayores usuarias de los Centros Municipales de Mayores valorarán los mismos de tal forma que al menos el 90% puntúe la <strong>satisfacción global</strong> con un valor igual o superior a 7 y no más del 2% lo puntúe debajo de 5, en una escala de 0 a 10. Al menos el 90% lo considerará recomendable para otras personas.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            16.1. Porcentaje de personas mayores usuarias que valora la satisfacción global con los centros con una puntuación igual o superior a 7.<br>
+            16.2. Porcentaje de personas mayores usuarias que valora la satisfacción global con los centros con una puntuación inferior a 5.<br>
+            16.3. Porcentaje de personas mayores usuarias que recomendarían los Centros Municipales de Mayores.</li>
+          </ul>
+        </li>
+
+        <li>Recibir y tramitar las <strong>sugerencias, reclamaciones y felicitaciones</strong> presentadas por la ciudadanía relativas a los servicios prestados, contestarlas de forma adecuada y con la mayor celeridad posible y a partir de ellas, poner en marcha acciones de mejora del servicio. Contestar el 60% de las sugerencias, reclamaciones y felicitaciones en un plazo máximo de 30 días naturales desde su presentación y, en ningún caso, en un plazo superior a 3 meses; aumentando, con respecto al año anterior, las contestadas en 15 días naturales o menos desde su presentación. El tiempo medio de contestación de las sugerencias, reclamaciones y felicitaciones será igual o inferior a 30 días naturales desde su presentación.
+
+          <ul>
+            <li>Indicadores asociados:<br>
+            17.1. Sugerencias, reclamaciones y felicitaciones tramitadas en relación a las personas mayores usuarias de los Centros Municipales de Mayores.<br>
+            17.2. Sugerencias, reclamaciones y felicitaciones relativas a los servicios prestados en los Centros municipales de Mayores contestadas en un plazo menor o igual a 15 días desde su presentación.<br>
+            17.3. Sugerencias, reclamaciones y felicitaciones relativas a los servicios prestados en los Centros Municipales de Mayores contestadas en un plazo menor o igual a 30 días desde su presentación.<br>
+            17.4. Tiempo medio de contestación de las sugerencias, reclamaciones y felicitaciones relativas a los Centros Municipales de Mayores.<br>
+            Porcentaje de sugerencias, reclamaciones y felicitaciones contestadas en menos de 3 meses</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><strong>Medidas de subsanación</strong>: quienes consideren que se ha incumplido alguno de los compromisos anteriormente recogidos, podrán comunicarlo a través del Sistema de Sugerencias y Reclamaciones del Ayuntamiento de Madrid (apartado 6 de esta Carta de Servicios). En caso de incumplimiento, se les enviará un escrito informando de las causas por las que el compromiso no pudo cumplirse, así como, de las medidas adoptadas para corregir la deficiencia detectada, si fuera posible.</p>
+
+      <p><strong>Seguimiento y evaluación</strong>: los resultados de los indicadores establecidos para medir el cumplimiento de los compromisos de esta Carta de Servicios, se pueden consultar en <a href="http://www.madrid.es" target="_blank" title="(se abre en ventana nueva)">www.madrid.es</a>, en <a href="http://www-2.munimadrid.es/SBAE_263_SF_CS_Internet/carta.do?Key=33758&Value=45.-+Centros+Municipales+de+Mayores">Ayuntamiento / Observatorio de la Ciudad / Sistema de Cartas de Servicios</a>. Estos resultados son evaluados anualmente.</p>
+
+      <h2>9. Datos de carácter complementario</h2>
+
+      <p>Acceso a la información sobre los Centros Municipales de Mayores del Ayuntamiento de Madrid:</p>
+      <ul>
+        <li>Centros Municipales de Mayores.</li>
+        <li>Centros de Servicios Sociales.</li>
+        <li>Juntas Municipales de distrito.</li>
+        <li>Teléfono de información del Ayuntamiento de Madrid: 010</li>
+        <li>Oficinas de Atención a la Ciudadanía Línea Madrid</li>
+        <li>Internet: <a href="http://www.madrid.es" target="_blank" title="(se abre en ventana nueva)">www.madrid.es</a></li>
+        <li>Internet: <a href="http://www.madridmayor.es" target="_blank" title="(se abre en ventana nueva)">www.madridmayor.es</a></li>
+      </ul>
+
+      <p>Horario de los Centros Municipales de Mayores: todos los días del año de 9 h a 21 horas (de lunes a domingo, excepto los días 25 de diciembre y 1 de enero).</p>
+
+      <p>La obtención de la tarjeta madridmayor.es para ser socio o socia podrá realizarse en cualquiera de las 26 Oficinas de Atención a la Ciudadanía Línea Madrid, solicitando cita previa en el 010 o en <a href="http://www.madrid.es/citamayor" target="_blank" title="(se abre en ventana nueva)">www.madrid.es/citamayor</a>.</p>
+
+      <h3>Enlaces:</h3>
+
+      <p><a href="www.madrid.es/portales/munimadrid/es/Inicio/Buscador-Simple/Oficinas-de-Atencion-al-Ciudadano-Linea-Madrid?vgnextfmt=default&vgnextoid=8b87b88db777f010VgnVCM2000000c205a0aRCRD&vgnextchannel=8db7566813946010VgnVCM100000dc0ca8c0RCRD&idioma=es&idiomaPrevio=es" target="_blank" title="(se abre en ventana nueva)">Oficinas de Atención a la Ciudadanía Línea Madrid</a></p>
+      <p><a href="www.madrid.es/portales/munimadrid/es/Inicio/Ayuntamiento/Servicios-Sociales/Centros-Municipales-de-Mayores-por-Distritos?vgnextfmt=default&vgnextoid=6c13a07b9bb74210VgnVCM1000000b205a0aRCRD&vgnextchannel=fe8a171c30036010VgnVCM100000dc0ca8c0RCRD" target="_blank" title="(se abre en ventana nueva)">Centros Municipales de Mayores por distritos</a></p>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<% provide :title, "Línea Madrid" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: linea_madrid_url,
+          social_title: t("pages.processes.index.process_14_title"),
+          social_description: t("pages.processes.index.process_14_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: linea_madrid_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to %>
+      <h1>Atención a la ciudadanía de Línea Madrid</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h2>Introducción</h2>
+    <p>El Proyecto Línea Madrid se enmarca dentro de uno de los principales objetivos del Ayuntamiento de Madrid como es la mejora continua en la prestación de servicios a la ciudadanía, siendo Línea Madrid la marca que identifica la atención a la ciudadanía dentro de Ayuntamiento de Madrid.</p>
+
+    <p>Línea Madrid se configura como un servicio integrador de la atención presencial, telefónica y telemática que permite a la ciudadanía acercarse al Ayuntamiento a través de cualquiera de los diferentes canales en función de sus necesidades y disponibilidad. El servicio presencial se presta a través de las Oficinas de Atención a la Ciudadanía, el telefónico se canaliza a través del 010 y el telemático a través del portal web del Ayuntamiento (<a href="http://www.madrid.es" target="_blank" title="(se abre en ventana nueva)">www.madrid.es</a> y las redes sociales (cuenta de Twitter <a href="https://twitter.com/Lineamadrid" target="_blank" title="(se abre en ventana nueva)">@Lineamadrid</a>).</p>
+
+    <p>En breve, se va a iniciar la tramitación para adjudicar por procedimiento abierto el nuevo contrato de servicios de “Apoyo a la gestión de la atención personalizada a través de los canales de atención a la ciudadanía de Línea Madrid” y considerando que el destinatario final de la prestación de este servicio es la ciudadanía de Madrid, el Ayuntamiento ha decidido promover dos vías de participación distintas:</p>
+    <ol>
+      <li>Preguntando a los operadores económicos a través de la consulta preliminar del mercado para conocer las mejores soluciones existentes sobre las cuestiones planteadas (<a href="https://sede.madrid.es/sites/v/index.jsp?vgnextoid=a8f118e532ca9510VgnVCM1000001d4a900aRCRD&vgnextchannel=f47ea38813180210VgnVCM100000c90da8c0RCRD" target="_blank" title="(se abre en ventana nueva)">trámite en la sede</a>).</li>
+      <li>Sometiendo a debate de la ciudadanía cuestiones esenciales sobre Línea Madrid.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="process-debates">
+  <div class="row">
+    <div class="small-12 column">
+      <h3>Preguntas del debate</h3>
+
+      <div class="row" data-equalizer>
+        <div class="small-12 medium-6 column margin-bottom">
+          <%= link_to debate_url(5004) do %>
+            <div class="panel" data-equalizer-watch>
+              Consideras suficientemente completa y actualizada la información que ofrece Línea Madrid a través de sus diferentes canales: telefónico -010-, presencial, a través de las oficinas de atención a la ciudadanía OAC, telemático a través de www.madrid.es y la cuenta de Twitter @lineamadrid?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-6 column margin-bottom">
+          <%= link_to debate_url(5005) do %>
+            <div class="panel" data-equalizer-watch>
+              A la hora de realizar trámites y gestiones a través de los diferentes canales de atención de Línea Madrid ¿has recibido la información suficiente para resolver tus dudas y problemas?
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row" data-equalizer>
+        <div class="small-12 medium-6 column margin-bottom">
+          <%= link_to debate_url(5006) do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Qué mejoras propondrías para que la atención presencial, telefónica o telemática fuera aún más accesible?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-6 column margin-bottom">
+          <%= link_to debate_url(5007) do %>
+            <div class="panel" data-equalizer-watch>
+              Respecto a la actividad web de Línea Madrid y en sus redes sociales ¿Qué otros servicios, informaciones o canales de participación te gustaría que se ofrecieran o cuáles crees que deberían mejorar?
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

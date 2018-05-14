@@ -1,18 +1,60 @@
-<%= link_to admin_spending_proposals_path, class: "back" do %>
-  <span class="icon-angle-left"></span>
-  <%= t("shared.back") %>
-<% end %>
+<%= back_link_to admin_spending_proposals_path %>
 
 <h2><%= t("admin.spending_proposals.summary.title") %></h2>
-  <div id="all-proposals">
-    <%= render 'summary_table',
-             spending_proposals: @spending_proposals,
-             second_scope: 'all' %>
+<div class="row margin">
+  <%= form_tag summary_admin_spending_proposals_path, method: :get, enforce_utf8: false do %>
+    <div class="small-12 medium-3 column float-right">
+      <%= select_tag :max_per_geozone,
+                      numeric_range_options((5..100), 5, params[:max_per_geozone]),
+                     { prompt: t("admin.spending_proposals.index.max_per_geozone"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <%= select_tag :max_for_no_geozone,
+                      numeric_range_options((5..300), 5, params[:max_for_no_geozone]),
+                     { prompt: t("admin.spending_proposals.index.max_for_no_geozone"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
+  <% end %>
 </div>
 
-<div id="proposals-with-votes">
-  <h2><%= t("admin.spending_proposals.summary.title_proposals_with_supports") %></h2>
-  <%= render 'summary_table',
-            spending_proposals: @spending_proposals_with_supports,
-            second_scope: 'with_supports' %>
+<div id="all-proposals">
+  <table id="spending_proposals" class="investment-projects-summary">
+    <th><%= t("admin.spending_proposals.summary.geozone_name") %></th>
+    <th><%= t("admin.spending_proposals.summary.finished_and_feasible_count") %></th>
+    <th><%= t("admin.spending_proposals.summary.finished_and_unfeasible_count") %></th>
+    <th><%= t("admin.spending_proposals.summary.finished_count") %></th>
+    <th><%= t("admin.spending_proposals.summary.in_evaluation_count") %></th>
+    <th><%= t("admin.spending_proposals.summary.total_count") %></th>
+    <th><%= t("admin.spending_proposals.summary.cost_for_geozone") %></th>
+
+    <% @spending_proposals.each do |geozone, price| %>
+      <tr id="<%= geozone.present? ? dom_id(geozone) : 'geozone_all_city' %>">
+        <td class="name">
+          <%= geozone.present? ? geozone.name : t("geozones.none") %>
+        </td>
+        <td class="finished-and-feasible-count">
+          <%= spending_proposal_count_for_geozone("finished_and_feasible", geozone) %>
+        </td>
+        <td class="finished-and-unfeasible-count">
+          <%= spending_proposal_count_for_geozone("unfeasible", geozone) %>
+        </td>
+        <td class="finished-count">
+          <%= spending_proposal_count_for_geozone("valuation_finished", geozone) %>
+        </td>
+        <td class="in-evaluation-count">
+          <%= spending_proposal_count_for_geozone("valuating", geozone) %>
+        </td>
+        <td class="total-count">
+          <%= spending_proposal_count_for_geozone("all", geozone) %>
+        </td>
+        <td class="total-price text-center">
+          <%= format_price(price) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>

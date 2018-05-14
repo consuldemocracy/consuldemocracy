@@ -50,6 +50,10 @@ class LocalCensus
         nil
     end
 
+    def document_number
+      "#{@body.identificador_documento}#{@body.letra_documento_string}" rescue nil
+    end
+
     private
 
       def data
@@ -61,10 +65,6 @@ class LocalCensus
 
     def get_record(document_type, document_number)
       LocalCensusRecord.find_by(document_type: document_type, document_number: document_number)
-    end
-
-    def dni?(document_type)
-      document_type.to_s == "1"
     end
 
 end

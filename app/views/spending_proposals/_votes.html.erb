@@ -1,8 +1,8 @@
-<div class="supports text-center">
+<% reason = spending_proposal.reason_for_not_being_votable_by(current_user) %>
+<% voting_allowed = true unless reason.presence == :not_voting_allowed %>
+<% user_voted_for = voted_for?(@spending_proposal_votes, spending_proposal) %>
 
-  <% reason = spending_proposal.reason_for_not_being_votable_by(current_user) %>
-  <% voting_allowed = true unless reason.presence == :not_voting_allowed %>
-  <% user_voted_for = voted_for?(@spending_proposal_votes, spending_proposal) %>
+<div class="supports text-center">
 
   <span class="total-supports <%= 'no-button' unless voting_allowed || user_voted_for %>">
     <%= t("spending_proposals.spending_proposal.supports", count: spending_proposal.total_votes) %>
@@ -16,9 +16,12 @@
     <% elsif voting_allowed %>
       <%= link_to vote_url,
           class: "button button-support small expanded",
-          title: t('spending_proposals.spending_proposal.support_title'), method: "post", remote: true,
+          title: t('spending_proposals.spending_proposal.support_title'),
+          method: "post",
+          remote: true,
+          data: supports_confirm_for_current_user(spending_proposal),
           "aria-hidden" => css_for_aria_hidden(reason) do %>
-        <%= t("spending_proposals.spending_proposal.support") %>
+        <%= t("spending_proposals.spending_proposal.vote") %>
       <% end %>
     <% end %>
   </div>

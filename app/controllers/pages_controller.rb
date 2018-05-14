@@ -12,4 +12,5 @@ class PagesController < ApplicationController
   rescue ActionView::MissingTemplate
     head 404
   end
+
 end

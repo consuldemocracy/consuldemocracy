@@ -33,6 +33,12 @@ feature 'Users' do
         expect(page).to have_content error_message
       end
 
+      scenario 'Sign up on Landing' do
+        visit new_user_registration_path(landing: "change-your-city")
+
+        expect(page).to have_css("body.landing-change-your-city")
+      end
+
     end
 
     context 'Sign in' do
@@ -391,6 +397,7 @@ feature 'Users' do
 
   scenario 'Admin with password expired trying to use same password' do
     user = create(:user, password_changed_at: Time.current - 1.year, password: '123456789')
+
     admin = create(:administrator, user: user)
 
     login_as(admin.user)

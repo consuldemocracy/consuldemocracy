@@ -1,0 +1,14 @@
+<h2><%= t("officing.residence.new.title") %></h2>
+
+<div class="row verification account">
+  <div class="small-12 column">
+    <%= form_for @residence, as: "residence", url: officing_letters_path do |f| %>
+      <%= render "errors" %>
+
+      <%= f.text_field :document_number, autocomplete: "off", autofocus: true %>
+      <%= f.text_field :postal_code, type: "number", autocomplete: "off" %>
+
+      <input type="submit" value="<%= t("officing.residence.new.submit") %>" class="button expanded">
+    <% end %>
+  </div>
+</div>

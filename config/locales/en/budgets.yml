@@ -64,7 +64,7 @@ en:
     investments:
       form:
         tag_category_label: "Categories"
-        tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
+        tags_instructions: "Tag this investment. You can choose from proposed categories or add your own"
         tags_label: Tags
         tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
         map_location: "Map location"
@@ -124,8 +124,10 @@ en:
         milestones_tab: Milestones
         no_milestones: Don't have defined milestones
         milestone_publication_date: "Published %{publication_date}"
+        milestone_status_changed: Investment status changed to
         author: Author
         project_unfeasible_html: 'This investment project <strong>has been marked as not feasible</strong> and will not go to balloting phase.'
+        project_selected_html: 'This investment project <strong>has been selected</strong> for balloting phase.'
         project_not_selected_html: 'This investment project <strong>has not been selected</strong> for balloting phase.'
       wrong_price_format: Only integer numbers
       investment:

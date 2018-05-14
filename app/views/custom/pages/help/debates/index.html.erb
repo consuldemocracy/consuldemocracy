@@ -1,0 +1,55 @@
+<% provide :title , t("meta_tags.help_debates.title") %>
+<% provide :meta_description, t("meta_tags.help_debates.description") %>
+<% provide :meta_keywords, t("meta_tags.help_debates.keywords") %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: more_info_debates_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 medium-3 column">
+    <%= back_link_to help_path %>
+
+    <ul class="vertical menu margin-top">
+      <li><a href="#que-es-debate"><strong>¿Qué es un debate en Decide Madrid?</strong></a></li>
+      <li><a href="#como-empezar-debate"><strong>¿Cómo puedo empezar un debate?</strong></a></li>
+      <li><a href="#temas-debate"><strong>¿Puedo abrir un debate sobre cualquier tema?</strong></a></li>
+      <li><a href="#participar-debate"><strong>¿Cómo puedo participar en un debate?</strong></a></li>
+      <li><a href="#participar-fuera-madrid"><strong>¿Cómo puede participar la gente que no esté empadronada en Madrid?</strong></a></li>
+      <li><a href="#encontrar-debate"><strong>¿Cómo puedo encontrar un debate de mi interés?</strong></a></li>
+      <li><a href="#debate-actuacion-ayuntamiento"><strong>¿Los debates implican algún tipo de actuación por parte del Ayuntamiento?</strong></a></li>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-9 column">
+    <h1>Preguntas frecuentes sobre Debates</h1>
+
+    <h2 id="que-es-debate">¿Qué es un debate en Decide Madrid?</h2>
+
+    <p>En la sección de <%= link_to "debates ciudadanos", debates_path %> puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad de Madrid. También es un espacio donde generar ideas con otros usuarios de la web, que a través de las otras secciones de Decide Madrid lleven a actuaciones concretas por parte del Ayuntamiento.</p>
+
+    <h2 id="como-empezar-debate">¿Cómo puedo empezar un debate?</h2>
+
+    <p>Para empezar un debate es necesario <%= link_to "registrarse", new_user_registration_path %> en Decide Madrid. Una vez hecha la inscripción hay que clicar en el apartado de <%= link_to "debates ciudadanos", debates_path %> y pulsar el botón ubicado a la derecha de la página, <% link_to "Empieza un debate", new_debate_path %>. Luego tienes que rellenar los campos de título del debate y el texto inicial. También puedes poner etiquetas o palabras clave. Para publicarlo acepta la política de privacidad y clicar el botón "Empieza un debate". Si se rellena incorrectamente algún campo del formulario verás que esos campos se marcan en rojo y te indican el error cometido en ellos.</p>
+
+    <h2 id="temas-debate">¿Puedo abrir un debate sobre cualquier tema?</h2>
+    <p>Sí. Pero ten en cuenta que los debates no pueden incluir contenidos o propaganda de carácter racista, sexista, xenófobo, de apología del terrorismo o que atenten contra los derechos humanos o la dignidad de las personas.</p>
+
+    <p>Los debates tampoco pueden tener fines delictivos; contener un lenguaje insultante; atentar contra la legislación vigente en materia de derechos fundamentales y libertades públicas, especialmente en lo concerniente al derecho al honor, la intimidad y la propia imagen y, por último, tampoco se podrán iniciar debates que tengan carácter reiterativo o puedan considerarse como "spam".</p>
+
+    <h2 id="participar-debate">¿Cómo puedo participar en un debate?</h2>
+    <p>Las personas registradas en Decide Madrid pueden comentar los debates planteados por otros usuarios y los debates propios. También pueden valorarlos con los botones de "Estoy de acuerdo" o "No estoy de acuerdo" que se encuentran en cada uno de ellos.</p>
+
+    <h2 id="participar-fuera-madrid">¿Cómo puede participar la gente que no esté empadronada en Madrid?</h2>
+    <p>Las personas que no estén empadronadas en la ciudad de Madrid pero quieran participar en Decide Madrid pueden crear debates, presentar propuestas, comentar en todas las secciones, y difundir lo que ocurre en la plataforma.</p>
+
+    <h2 id="encontrar-debate">¿Cómo puedo encontrar un debate de mi interés?</h2>
+    <p>Cuando entras en la sección de debates, aparecen por defecto los temas más comentados por los usuarios, es decir, los más activos. También puedes ordenarlos por los que tienen más valoraciones (Mejor valorados), por los más recientes (Nuevos) o en función de tus intereses (Recomendaciones, donde aparecen los temas en función de tu participación en Decide Madrid).</p>
+
+    <p>También tienes un buscador, en la parte superior derecha, donde puedes introducir una palabra clave para buscar los debates que más te interesan.</p>
+
+    <h2 id="debate-actuacion-ayuntamiento">¿Los debates implican algún tipo de actuación por parte del Ayuntamiento?</h2>
+    <p>Los debates no activan ningún mecanismo de actuación concreto por parte del Ayuntamiento de Madrid. Para conseguir una acción vinculante puedes <%= link_to "hacer una propuesta", proposals_path %> para la ciudad, plantear un proyecto de <%= link_to "presupuestos participativos", budgets_path %> cuando se abra la convocatoria anual, o participar en alguno de las <%= link_to "votaciones", polls_path %> o <%= link_to "procesos participativos", processes_path %> iniciados por parte del Ayuntamiento.</p>
+
+  </div>
+</div>

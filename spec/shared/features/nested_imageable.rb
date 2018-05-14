@@ -9,11 +9,10 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
   let!(:imageable)           { create(imageable_factory_name) }
 
   before do
-
     Setting['feature.allow_images'] = true
 
     imageable_path_arguments&.each do |argument_name, path_to_value|
-        arguments.merge!("#{argument_name}": imageable.send(path_to_value))
+      arguments.merge!("#{argument_name}": imageable.send(path_to_value))
     end
 
     imageable.update(author: user) if imageable.respond_to?(:author)
@@ -179,7 +178,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_on submit_button
 
       if has_many_images
-         skip "no need to test, there are no attributes for the parent resource"
+        skip "no need to test, there are no attributes for the parent resource"
       else
         expect(page).to have_content imageable_success_notice
       end
@@ -276,6 +275,9 @@ def imageable_attach_new_file(_imageable_factory_name, path, success = true)
     image = find(".image")
     image_input = image.find("input[type=file]", visible: false)
     attach_file(image_input[:id], path, make_visible: true)
+    filename = path.to_s.split("/").last
+
+    expect(page).to have_content filename
     within image do
       if success
         expect(page).to have_css(".loading-bar.complete")
@@ -289,7 +291,6 @@ end
 def imageable_fill_new_valid_proposal
   fill_in :proposal_title, with: "Proposal title"
   fill_in :proposal_summary, with: "Proposal summary"
-  fill_in :proposal_question, with: "Proposal question?"
   check :proposal_terms_of_service
 end
 

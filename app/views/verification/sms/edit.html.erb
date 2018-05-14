@@ -1,12 +1,11 @@
 <div class="verification account row">
-  <%track_event(category: "verification", action: "start_sms" )%>
   <div class="small-12 column">
     <div class="text-center">
 
       <div class="small-4 column verification-step completed">
         <span class="number">1</span> <%= t("verification.step_1") %>
       </div>
-      <div class="small-4 column verification-step active">
+      <div class="small-4 column verification-step is-active">
         <span class="number">2</span> <%= t("verification.step_2") %>
       </div>
       <div class="small-4 column verification-step">
@@ -39,7 +38,6 @@
 
       <%= f.submit t("verification.sms.edit.submit_button"), class: "button success" %>
     <% end %>
-
     <p>
       <strong><%= t("verification.sms.edit.resend_sms_text") %></strong><br>
       <%= link_to t("verification.sms.edit.resend_sms_link"), verified_user_path %>

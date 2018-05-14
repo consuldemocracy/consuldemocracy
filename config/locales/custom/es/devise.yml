@@ -1,0 +1,8 @@
+es:
+  devise:
+    registrations:
+      destroyed:
+        "¡Adiós! Tu cuenta ha sido cancelada. Esperamos volver a verte pronto. Le informamos que de conformidad con su petición,
+        sus datos personales registrados como usuario de la Web decide.madrid.es y que forman parte del fichero 'Gestión de procesos participativos'
+        cuyo responsable es la Dirección General de Participación Ciudadana, han sido cancelados en los términos de lo previsto en el artículo 16 de la
+        Ley Orgánica 15/1999 de Protección de Datos de Carácter Personal y del artículo 31 de su Reglamento de desarrollo (RD 1720/2007)."

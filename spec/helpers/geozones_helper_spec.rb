@@ -31,6 +31,45 @@ describe GeozonesHelper do
     end
   end
 
+  describe "#my_geozone" do
+    it "returns true if it is your geozone" do
+      california = create(:geozone)
+
+      user = create(:user)
+      ballot = create(:ballot, user: user, geozone: california)
+
+      expect(my_geozone?(california,  ballot)).to eq true
+    end
+
+    it "returns false if you have choosen another geozone" do
+      california = create(:geozone)
+      new_york = create(:geozone)
+
+      user = create(:user)
+      ballot = create(:ballot, user: user, geozone: california)
+
+      expect(my_geozone?(new_york,  ballot)).to eq false
+    end
+
+    it "returns false if there is no current geozone" do
+      california = create(:geozone)
+
+      user = create(:user)
+      ballot = create(:ballot, user: user, geozone: california)
+
+      expect(my_geozone?(nil,  ballot)).to eq false
+    end
+
+    it "returns false if there is no geozone in the ballot" do
+      california = create(:geozone)
+
+      user = create(:user)
+      ballot = create(:ballot, user: user, geozone: nil)
+
+      expect(my_geozone?(california,  ballot)).to eq false
+    end
+  end
+
   describe "#geozone_name_from_id" do
 
     it "returns geozone name if present" do

@@ -1,0 +1,26 @@
+<div class="type-selection-investment">
+  <div class="type-selection">
+    <div class="row margin-top clear">
+      <div class="small-12 column">
+        <h2><%= t("type_selection.title") %></h2>
+      </div>
+    </div>
+
+    <div class="row" data-equalizer>
+      <div class="small-12 medium-6 column type-investment">
+        <div class="callout" data-equalizer-watch>
+          <p><strong><%= t("type_selection.investment_title") %></strong><br>
+          <%= t("type_selection.investment_info") %></p>
+        </div>
+      </div>
+      <div class="small-12 medium-6 column type-proposal">
+        <div class="callout" data-equalizer-watch>
+          <%= link_to new_proposal_path do %>
+            <p><strong><%= t("type_selection.proposals_title") %></strong><br>
+            <%= t("type_selection.proposals_info") %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

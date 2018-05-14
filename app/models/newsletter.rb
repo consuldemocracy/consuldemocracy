@@ -20,6 +20,32 @@ class Newsletter < ActiveRecord::Base
     sent_at.nil?
   end
 
+  def deliver
+    run_at = first_batch_run_at
+    list_of_recipient_emails_in_batches.each do |recipient_emails|
+      recipient_emails.each do |recipient_email|
+        Mailer.delay(run_at: run_at).newsletter(self, recipient_email)
+      end
+      run_at += batch_interval
+    end
+  end
+
+  def batch_size
+    10000
+  end
+
+  def batch_interval
+    20.minutes
+  end
+
+  def first_batch_run_at
+    Time.current
+  end
+
+  def list_of_recipient_emails_in_batches
+    list_of_recipient_emails.in_groups_of(batch_size, false)
+  end
+
   private
 
   def validate_segment_recipient

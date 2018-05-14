@@ -1,0 +1,9 @@
+<%= form_for(@forum, url: representatives_url, method: :post) do |f| %>
+  <%= f.hidden_field :id %>
+  <div class="small-12 medium-4">
+     <%= f.submit class: "button expanded",
+           value: t("forums.show.delegate_button", forum: @forum.name.gsub('Presupuestos participativos', '')),
+           data: forum_confirm_data(@forum)
+     %>
+  </div>
+<% end %>

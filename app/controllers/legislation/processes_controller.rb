@@ -1,6 +1,8 @@
 class Legislation::ProcessesController < Legislation::BaseController
   has_filters %w{open next past}, only: :index
-  load_and_authorize_resource
+  load_and_authorize_resource :process
+
+  before_action :set_random_seed, only: :proposals
 
   def index
     @current_filter ||= 'open'
@@ -25,7 +27,7 @@ class Legislation::ProcessesController < Legislation::BaseController
     set_process
     @phase = :debate_phase
 
-    if @process.debate_phase.started?
+    if @process.debate_phase.started? || (current_user && current_user.administrator?)
       render :debate
     else
       render :phase_not_open
@@ -86,9 +88,10 @@ class Legislation::ProcessesController < Legislation::BaseController
   def proposals
     set_process
     @phase = :proposals_phase
+    @proposals = ::Legislation::Proposal.where(process: @process).order('random()').page(params[:page])
 
-    if @process.proposals_phase.started?
-      legislation_proposal_votes(@process.proposals)
+    if @process.proposals_phase.started? || (current_user && current_user.administrator?)
+      legislation_proposal_votes(@proposals)
       render :proposals
     else
       render :phase_not_open
@@ -104,5 +107,16 @@ class Legislation::ProcessesController < Legislation::BaseController
     def set_process
       return if member_method?
       @process = ::Legislation::Process.find(params[:process_id])
+    end
+
+    def set_random_seed
+      seed = begin
+               Float(params[:random_seed] || session[:random_seed] || (rand(99) / 100.0))
+             rescue
+               0
+             end
+      session[:random_seed], params[:random_seed] = seed
+      seed = (-1..1).cover?(seed) ? seed : 1
+      ::Legislation::Proposal.connection.execute "select setseed(#{seed})"
     end
 end

@@ -418,22 +418,24 @@ feature 'Commenting Budget::Investments' do
   end
 
   feature 'Voting comments' do
-
     background do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @investment = create(:budget_investment)
       @comment = create(:comment, commentable: @investment)
       @budget = @investment.budget
-
       login_as(@manuela)
+    end
+
+    after do
+      logout
     end
 
     scenario 'Show' do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
-      visit budget_investment_path(@budget, @budget, @investment)
+      visit budget_investment_path(@budget, @investment)
 
       within("#comment_#{@comment.id}_votes") do
         within(".in_favor") do
@@ -452,9 +454,8 @@ feature 'Commenting Budget::Investments' do
       visit budget_investment_path(@budget, @investment)
 
       within("#comment_#{@comment.id}_votes") do
-        find(".in_favor a").click
-
         within(".in_favor") do
+          find("a").click
           expect(page).to have_content "1"
         end
 
@@ -474,14 +475,14 @@ feature 'Commenting Budget::Investments' do
         find('.against a').click
 
         within('.in_favor') do
-          expect(page).to have_content "0"
+          expect(page).to have_content('0')
         end
 
         within('.against') do
-          expect(page).to have_content "1"
+          expect(page).to have_content('1')
         end
 
-        expect(page).to have_content "1 vote"
+        expect(page).to have_content('1 vote')
       end
     end
 

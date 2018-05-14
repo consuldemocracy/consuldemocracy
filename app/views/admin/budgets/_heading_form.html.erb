@@ -1,13 +1,15 @@
 <%= form_for [:admin, budget, group, heading], remote: true do |f| %>
   <%= render 'shared/errors', resource: heading %>
-  <label><%= t("admin.budgets.form.heading") %></label>
-  <%= f.text_field :name,
-                    label: false,
-                    maxlength: 50,
-                    placeholder: t("admin.budgets.form.heading") %>
+  <div class="row expanded">
+    <div class="small-12 column">
+      <label><%= t("admin.budgets.form.heading") %></label>
+      <%= f.text_field :name,
+                        label: false,
+                        maxlength: 50,
+                        placeholder: t("admin.budgets.form.heading") %>
+    </div>
 
-  <div class="row">
-    <div class="small-12 medium-6 column">
+    <div class="small-12 medium-6 column end">
       <label><%= t("admin.budgets.form.amount") %></label>
       <%= f.text_field :price,
                         label: false,
@@ -15,7 +17,7 @@
                         placeholder: t("admin.budgets.form.amount") %>
     </div>
   </div>
-  <div class="row">
+  <div class="row expanded">
     <div class="small-12 medium-6 column">
       <label><%= t("admin.budgets.form.population") %></label>
       <p class="help-text" id="budgets-population-help-text">
@@ -25,15 +27,19 @@
                         label: false,
                         maxlength: 8,
                         placeholder: t("admin.budgets.form.population"),
-                        data: {toggle_focus: "population-info"},
                         aria: {describedby: "budgets-population-help-text"} %>
     </div>
-    <div class="small-12 medium-6 column " >
-      <div id="population-info" class="is-hidden" data-toggler="is-hidden">
+
+    <div class="small-12 medium-6 column">
+      <div class="callout">
         <%= t("admin.budgets.form.population_info") %>
       </div>
     </div>
   </div>
 
-  <%= f.submit t("admin.budgets.form.save_heading"), class: "button success" %>
+  <div class="row expanded">
+    <div class="small-12 column">
+      <%= f.submit t("admin.budgets.form.save_heading"), class: "button success" %>
+    </div>
+  </div>
 <% end %>

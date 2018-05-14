@@ -17,11 +17,22 @@ class Poll
     scope :by_officer_and_poll, ->(officer_id, poll_id) do
       where("officer_id = ? AND poll_booth_assignments.poll_id = ?", officer_id, poll_id)
     end
+    scope :by_officer, ->(officer){ where(officer_id: officer.id) }
+    scope :by_date, ->(date){ where(date: date) }
+    scope :by_poll,  ->(poll) do
+      joins(:booth_assignment).where("poll_booth_assignments.poll_id" => poll.id)
+    end
+    scope :by_booth, ->(booth) do
+      joins(:booth_assignment).where("poll_booth_assignments.booth_id" => booth.id)
+    end
 
     before_create :log_user_data
 
     def log_user_data
       self.user_data_log = "#{officer.user_id} - #{officer.user.name_and_email}"
     end
+
+    delegate :booth, to: :booth_assignment
+
   end
 end

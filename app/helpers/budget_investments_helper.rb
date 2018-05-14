@@ -10,10 +10,10 @@ module BudgetInvestmentsHelper
   end
 
   def investments_minimal_view_path
-    budget_investments_path(id: @heading.group.to_param,
-                            heading_id: @heading.to_param,
-                            filter: @current_filter,
-                            view: investments_secondary_view)
+    custom_budget_investments_path(id: @heading.group.to_param,
+                                   heading_id: @heading.to_param,
+                                   filter: @current_filter,
+                                   view: investments_secondary_view)
   end
 
   def investments_default_view?

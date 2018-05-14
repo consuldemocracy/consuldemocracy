@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>" data-current-user-id="<%= current_user.try(:id) %>">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <%= render "layouts/meta_tags" %>
+
+    <title><%= content_for?(:title) ? yield(:title) : setting['org_name'] %></title>
+
+    <%= stylesheet_link_tag "application" %>
+
+    <!--[if lt IE 9]>
+      <%= stylesheet_link_tag "ie" %>
+    <![endif]-->
+
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "favicon.ico" %>
+    <%= favicon_link_tag "apple-touch-icon-200.png",
+                     rel: "icon apple-touch-icon",
+                     sizes: "200x200",
+                     type: "image/png" %>
+    <%= content_for :social_media_meta_tags %>
+
+    <%= setting['per_page_code_head'].try(:html_safe) %>
+  </head>
+  <body>
+    <%= setting['per_page_code_body'].try(:html_safe) %>
+
+    <h1 class="show-for-sr"><%= setting['org_name'] %></h1>
+
+    <div class="wrapper nvotes <%= yield (:wrapper_class) %>">
+      <%# render 'layouts/header' %>
+      <%= render 'layouts/ie_version_too_old' %>
+      <%= render 'layouts/flash' %>
+
+      <%= yield %>
+
+      <div class="push"></div>
+    </div>
+    <div class="footer">
+      <%= render 'layouts/footer' %>
+    </div>
+    <span id="analytics">
+      <%# render "layouts/analytics" %>
+    </span>
+  </body>
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag "ie_lt9" %>
+  <![endif]-->
+</html>

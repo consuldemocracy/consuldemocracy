@@ -68,8 +68,8 @@ feature 'Admin settings' do
 
       visit admin_settings_path
 
-      expect(find("#latitude", visible: false).value).to eq "51.48"
-      expect(find("#longitude", visible: false).value).to eq "0.0"
+      expect(find("#latitude", visible: false).value).to eq "40.4332002"
+      expect(find("#longitude", visible: false).value).to eq "-3.7009591"
     end
 
     scenario "Should update marker", :js do

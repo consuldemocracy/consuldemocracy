@@ -626,6 +626,15 @@
   }
 }
 
+.milestone-status {
+  background: $budget;
+  border-radius: rem-calc(4);
+  color: #fff;
+  display: inline-block;
+  margin-top: $line-height / 6;
+  padding: $line-height / 4 $line-height / 2;
+}
+
 .show-actions-menu {
 
   [class^="icon-"] {
@@ -1077,7 +1086,7 @@
     }
   }
 
-  .active {
+  .is-active {
     color: $brand;
 
     &::after {
@@ -1349,8 +1358,7 @@
       text-decoration: none;
     }
 
-    a,
-    div {
+    a {
       display: block;
       padding: $line-height / 2;
 
@@ -1535,7 +1543,7 @@
   padding: $line-height / 4;
 }
 
-.select-district .active a {
+.select-district .is-active a {
   background: #f9f9f9;
   border-radius: rem-calc(3);
   color: $budget;
@@ -1628,7 +1636,7 @@
       z-index: 99;
     }
 
-    &.active {
+    &.is-active {
 
       h3 {
         background: $budget;
@@ -1811,10 +1819,6 @@
 
 .orbit-slide {
   max-height: none !important;
-
-  img {
-    image-rendering: pixelated;
-  }
 }
 
 .orbit-caption {

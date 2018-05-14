@@ -6,7 +6,8 @@ class UserSegments
                 feasible_and_undecided_investment_authors
                 selected_investment_authors
                 winner_investment_authors
-                not_supported_on_current_budget)
+                not_supported_on_current_budget
+                beta_testers)
 
   def self.all_users
     User.active
@@ -47,6 +48,16 @@ class UserSegments
                   current_budget_investments.pluck(:id)
                 )
     )
+  end
+
+  def self.beta_testers
+    testers = %w(aranacm@madrid.es
+                 bertocq@gmail.com
+                 mariajecheca@gmail.com
+                 alberto@decabeza.es
+                 voodoorai2000@gmail.com)
+
+    User.where(email: testers)
   end
 
   def self.user_segment_emails(users_segment)
