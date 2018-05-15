@@ -119,6 +119,7 @@ class BudgetsController < ApplicationController
       balloters.uniq.count
     }
   end
+
   def total_budgets_investmens
     stats_cache('total_budgets_investments') { Budget::Investment.count }
   end
@@ -148,91 +149,91 @@ class BudgetsController < ApplicationController
   end
 
   def total_male_participants
-      stats_cache('total_male_participants') { participants.where(gender: 'male').count }
-    end
+    stats_cache('total_male_participants') { participants.where(gender: 'male').count }
+  end
 
-    def total_female_participants
-      stats_cache('total_female_participants') { participants.where(gender: 'female').count }
-    end
+  def total_female_participants
+    stats_cache('total_female_participants') { participants.where(gender: 'female').count }
+  end
 
-    def male_percentage
-      stats_cache('male_percentage') { total_male_participants / total_participants_with_gender.to_f * 100 }
-    end
+  def male_percentage
+    stats_cache('male_percentage') { total_male_participants / total_participants_with_gender.to_f * 100 }
+  end
 
-    def female_percentage
-      stats_cache('female_percentage') { total_female_participants / total_participants_with_gender.to_f * 100 }
-    end
+  def female_percentage
+    stats_cache('female_percentage') { total_female_participants / total_participants_with_gender.to_f * 100 }
+  end
 
-    def total_participants_with_gender
-      stats_cache('total_participants_with_gender') { participants.where.not(gender: nil).distinct.count }
-    end
+  def total_participants_with_gender
+    stats_cache('total_participants_with_gender') { participants.where.not(gender: nil).distinct.count }
+  end
 
-    def age_groups
-      stats_cache('age_groups') {
-        groups = Hash.new(0)
-        ["16 - 19",
-        "20 - 24",
-        "25 - 29",
-        "30 - 34",
-        "35 - 39",
-        "40 - 44",
-        "45 - 49",
-        "50 - 54",
-        "55 - 59",
-        "60 - 64",
-        "65 - 69",
-        "70 - 140"].each do |group|
-          start, finish = group.split(" - ")
-          group_name = (group == "70 - 140" ? "+ 70" : group)
-          groups[group_name] = User.where(id: participants).where("date_of_birth > ? AND date_of_birth < ?", finish.to_i.years.ago.beginning_of_year, eval(start).years.ago.end_of_year).count
-        end
-        groups
-      }
-    end
+  def age_groups
+    stats_cache('age_groups') {
+      groups = Hash.new(0)
+      ["16 - 19",
+      "20 - 24",
+      "25 - 29",
+      "30 - 34",
+      "35 - 39",
+      "40 - 44",
+      "45 - 49",
+      "50 - 54",
+      "55 - 59",
+      "60 - 64",
+      "65 - 69",
+      "70 - 140"].each do |group|
+        start, finish = group.split(" - ")
+        group_name = (group == "70 - 140" ? "+ 70" : group)
+        groups[group_name] = User.where(id: participants).where("date_of_birth > ? AND date_of_birth < ?", finish.to_i.years.ago.beginning_of_year, eval(start).years.ago.end_of_year).count
+      end
+      groups
+    }
+  end
 
-    def headings
-      stats_cache('headings') {
-        groups = Hash.new(0)
-        @headings.each do |heading|
-          groups[heading.id] = Hash.new(0)
-          groups[heading.id][:total_participants_support_phase] = voters_by_heading(heading.id).uniq.count
-          groups[heading.id][:total_participants_vote_phase]    = balloters_by_heading(heading.id).uniq.count
-          groups[heading.id][:total_participants_all_phase]     = (voters_by_heading(heading.id) + balloters_by_heading(heading.id)).uniq.count
-        end
+  def headings
+    stats_cache('headings') {
+      groups = Hash.new(0)
+      @headings.each do |heading|
+        groups[heading.id] = Hash.new(0)
+        groups[heading.id][:total_participants_support_phase] = voters_by_heading(heading.id).uniq.count
+        groups[heading.id][:total_participants_vote_phase]    = balloters_by_heading(heading.id).uniq.count
+        groups[heading.id][:total_participants_all_phase]     = (voters_by_heading(heading.id) + balloters_by_heading(heading.id)).uniq.count
+      end
 
-        groups[:total] = Hash.new(0)
-        groups[:total][:total_participants_support_phase] = groups.collect {|k,v| v[:total_participants_support_phase]}.sum
-        groups[:total][:total_participants_vote_phase]    = groups.collect {|k,v| v[:total_participants_vote_phase]}.sum
-        groups[:total][:total_participants_all_phase]     = groups.collect {|k,v| v[:total_participants_all_phase]}.sum
+      groups[:total] = Hash.new(0)
+      groups[:total][:total_participants_support_phase] = groups.collect {|k,v| v[:total_participants_support_phase]}.sum
+      groups[:total][:total_participants_vote_phase]    = groups.collect {|k,v| v[:total_participants_vote_phase]}.sum
+      groups[:total][:total_participants_all_phase]     = groups.collect {|k,v| v[:total_participants_all_phase]}.sum
 
-        @headings.each do |heading|
-          groups[heading.id][:percentage_participants_support_phase]        = voters_by_heading(heading.id).uniq.count / groups[:total][:total_participants_support_phase].to_f * 100
-          groups[heading.id][:percentage_district_population_support_phase] = voters_by_heading(heading.id).uniq.count / district_population[heading.name].to_f * 100
+      @headings.each do |heading|
+        groups[heading.id][:percentage_participants_support_phase]        = voters_by_heading(heading.id).uniq.count / groups[:total][:total_participants_support_phase].to_f * 100
+        groups[heading.id][:percentage_district_population_support_phase] = voters_by_heading(heading.id).uniq.count / district_population[heading.name].to_f * 100
 
-          groups[heading.id][:percentage_participants_vote_phase]        = balloters_by_heading(heading.id).uniq.count / groups[:total][:total_participants_vote_phase].to_f * 100
-          groups[heading.id][:percentage_district_population_vote_phase] = balloters_by_heading(heading.id).uniq.count / district_population[heading.name].to_f * 100
+        groups[heading.id][:percentage_participants_vote_phase]        = balloters_by_heading(heading.id).uniq.count / groups[:total][:total_participants_vote_phase].to_f * 100
+        groups[heading.id][:percentage_district_population_vote_phase] = balloters_by_heading(heading.id).uniq.count / district_population[heading.name].to_f * 100
 
-          groups[heading.id][:percentage_participants_all_phase]        = (voters_by_heading(heading.id) + balloters_by_heading(heading.id)).uniq.count / groups[:total][:total_participants_all_phase].to_f * 100
-          groups[heading.id][:percentage_district_population_all_phase] = (voters_by_heading(heading.id) + balloters_by_heading(heading.id)).uniq.count / district_population[heading.name].to_f * 100
-        end
+        groups[heading.id][:percentage_participants_all_phase]        = (voters_by_heading(heading.id) + balloters_by_heading(heading.id)).uniq.count / groups[:total][:total_participants_all_phase].to_f * 100
+        groups[heading.id][:percentage_district_population_all_phase] = (voters_by_heading(heading.id) + balloters_by_heading(heading.id)).uniq.count / district_population[heading.name].to_f * 100
+      end
 
-        groups[:total][:percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.sum
-        groups[:total][:percentage_participants_vote_phase]    = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.sum
-        groups[:total][:percentage_participants_all_phase]     = groups.collect {|k,v| v[:percentage_participants_all_phase]}.sum
+      groups[:total][:percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.sum
+      groups[:total][:percentage_participants_vote_phase]    = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.sum
+      groups[:total][:percentage_participants_all_phase]     = groups.collect {|k,v| v[:percentage_participants_all_phase]}.sum
 
-        groups
-      }
-    end
+      groups
+    }
+  end
 
-    def district_population
-      { "Tota la ciutat" => 140000 }
-    end
+  def district_population
+    { "Tota la ciutat" => 140000 }
+  end
 
-    def total_unknown_gender_or_age
-      stats_cache('total_unknown_gender_or_age') {
-        participants.where("gender IS NULL OR date_of_birth is NULL").uniq.count
-      }
-    end
+  def total_unknown_gender_or_age
+    stats_cache('total_unknown_gender_or_age') {
+      participants.where("gender IS NULL OR date_of_birth is NULL").uniq.count
+    }
+  end
   # def delegators
   #   stats_cache('delegators') { User.where.not(representative_id: nil).pluck(:id) }
   # end

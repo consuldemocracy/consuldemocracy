@@ -16,13 +16,37 @@
 
       <div class="small-12 search-results margin-bottom">
 
-        <% if params[:unfeasible].present? %>
-          <h2><%= t("budgets.investments.index.unfeasible") %>: <%= @heading.name %></h2>
+        <% if @current_filter == "unfeasible" %>
+
+          <h3>
+            <%= t("budgets.investments.index.unfeasible") %>:
+            <% if @heading.present? %>
+              <%= @heading.name %>
+            <% else %>
+              <%= t("budgets.show.all_headings") %>
+            <% end %>
+          </h3>
+
           <div class="callout primary margin">
               <% debug setting.inspect %>
               <%= t("budgets.investments.index.unfeasible_text",
               definitions: link_to(t("budgets.investments.index.unfeasible_text_definitions"), "/more_information#item_3")).html_safe %>
           </div>
+        <% elsif @current_filter == "unselected" %>
+
+
+          <h3 class="margin-bottom">
+            <%= t("budgets.show.unselected_title") %>:
+            <% if @heading.present? %>
+              <%= @heading.name %>
+            <% else %>
+              <%= t("budgets.show.all_headings") %>
+            <% end %>
+
+
+          </h3>
+
+
         <% else %>
           <%= content_tag(:h2, t("budgets.investments.index.by_heading", heading: @heading.name)) if @heading.present? %>
         <% end %>

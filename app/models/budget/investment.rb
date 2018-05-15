@@ -335,13 +335,12 @@ class Budget
     def self.apply_filters_and_search(budget, params, current_filter = nil)
       investments = all
       investments = investments.send(current_filter) if current_filter.present?
-      if params[:unfeasible].present?
-        investments = investments.unfeasible
-      else
+      unless current_filter == "unfeasible"
         investments = investments.not_unfeasible
       end
-      investments = investments.unfeasible if params[:unfeasible].present?
-      investments = investments.selected if budget.balloting?
+      if budget.balloting? && !["unfeasible", "unselected"].include?(current_filter)
+        investments = investments.selected if budget.balloting?
+      end
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments = investments.filter(params[:advanced_search]) if params[:advanced_search].present?
