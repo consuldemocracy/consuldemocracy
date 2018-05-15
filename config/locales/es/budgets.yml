@@ -148,10 +148,10 @@ es:
     show:
       group: Grupo
       phase: Fase actual
-      unfeasible_title: Proyectos inviables
-      unfeasible: Ver las proyectos inviables
-      unselected_title: Proyectos no seleccionados para la votación final
-      unselected: Ver los proyectos no seleccionados para la votación final
+      unfeasible_title: Propuestas inviables
+      unfeasible: Ver las propuestas inviables
+      unselected_title: Propuestas no seleccionadas para la votación final
+      unselected: Ver las propuestas no seleccionadas para la votación final
       see_results: Ver resultados
     results:
       link: Resultados
@@ -164,12 +164,12 @@ es:
       show_all_link: Mostrar todas
       price: Precio total
       amount_available: Presupuesto disponible
-      accepted: 'Proyecto de gasto aceptado: '
-      discarded: 'Proyecto de gasto descartado: '
+      accepted: 'Propuesta aceptada: '
+      discarded: 'Propuesta descartada: '
       incompatibles: Incompatibles
-      investment_proyects: Ver lista completa de proyectos de gasto
-      unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
-      not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
+      investment_proyects: Ver lista completa de propuestas
+      unfeasible_investment_proyects: Ver lista de propuestas inviables
+      not_selected_investment_proyects: Ver lista de propuestas no seleccionadas para la votación final
     phases:
       errors:
         dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"
