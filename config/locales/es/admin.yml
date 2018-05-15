@@ -67,6 +67,7 @@ es:
           on_debates: Debates
           on_proposals: Propuestas
           on_users: Usuarios
+          on_system_emails: Emails del sistema
         title: Actividad de los Moderadores
         type: Tipo
         no_activity: No hay actividad de moderadores.

@@ -67,6 +67,7 @@ en:
           on_debates: Debates
           on_proposals: Proposals
           on_users: Users
+          on_system_emails: System emails
         title: Moderator activity
         type: Type
         no_activity: There are no moderators activity.
