@@ -39,4 +39,9 @@ class ProposalNotification < ActiveRecord::Base
     proposal
   end
 
+  def moderate_system_email(moderator)
+    Notification.where(notifiable_type: 'ProposalNotification', notifiable: self).destroy_all
+    Activity.log(moderator, :hide, self)
+  end
+
 end

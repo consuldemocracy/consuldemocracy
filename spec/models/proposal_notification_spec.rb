@@ -152,5 +152,21 @@ describe ProposalNotification do
 
     end
 
+    describe "#moderate_system_email" do
+      let(:admin) { create(:administrator) }
+      let(:proposal) { create(:proposal) }
+      let(:proposal_notification) { build(:proposal_notification, proposal: proposal) }
+      let(:notification) { create(:notification, notifiable: proposal_notification) }
+
+      it "removes all notifications related to the proposal notification" do
+        proposal_notification.moderate_system_email(admin.user)
+        expect(Notification.all.count).to be(0)
+      end
+
+      it "records the moderation action in the Activity table" do
+        proposal_notification.moderate_system_email(admin.user)
+        expect(Activity.last.actionable_type).to eq('ProposalNotification')
+      end
+    end
   end
 end
