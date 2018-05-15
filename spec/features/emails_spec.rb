@@ -327,6 +327,26 @@ feature 'Emails' do
       expect(notification2.emailed_at).to be
     end
 
+    scenario "notifications moderated are not sent" do
+      user = create(:user, email_digest: true)
+      proposal = create(:proposal)
+      proposal_notification = create(:proposal_notification, proposal: proposal)
+      notification = create(:notification, notifiable: proposal_notification)
+
+      reset_mailer
+
+      proposal_notification.moderate_system_email(create(:administrator).user)
+
+      email_digest = EmailDigest.new(user)
+      email_digest.deliver
+      email_digest.mark_as_emailed
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
+
+    xscenario "Delete all Notifications included in the digest after email sent" do
+    end
+
   end
 
   context "User invites" do
