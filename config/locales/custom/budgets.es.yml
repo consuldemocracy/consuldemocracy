@@ -5,6 +5,8 @@ es:
       view_all: Ver todas las propuestas
       all_headings: Todas las propuestas
     investments:
+      show:
+        title: Propuesta de inversión
       form:
         groups_proposed: Ya has creado una propuesta para %{groups}
       index:
