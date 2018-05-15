@@ -1,6 +1,6 @@
 class Admin::SystemEmailsController < Admin::BaseController
 
-  before_action :load_system_email, only: [:view, :preview_pending]
+  before_action :load_system_email, only: [:view, :preview_pending, :moderate_pending]
 
   def index
     @system_emails = {
