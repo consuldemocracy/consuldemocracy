@@ -73,11 +73,14 @@ feature 'Admin legislation processes' do
   end
 
   context 'Update' do
-    scenario 'Remove summary text', js: true do
-      process = create(:legislation_process,
-                       title: 'An example legislation process',
-                       summary: 'Summarizing the process',
-                       description: 'Description of the process')
+    let!(:process) do
+      create(:legislation_process,
+             title: 'An example legislation process',
+             summary: 'Summarizing the process',
+             description: 'Description of the process')
+    end
+
+    scenario 'Remove summary text' do
       visit admin_root_path
 
       within('#side_menu') do
@@ -100,11 +103,7 @@ feature 'Admin legislation processes' do
       expect(page).to have_content 'Description of the process'
     end
 
-    scenario 'Deactivate draft publication', js: true do
-      process = create(:legislation_process,
-                       title: 'An example legislation process',
-                       summary: 'Summarizing the process',
-                       description: 'Description of the process')
+    scenario 'Deactivate draft publication' do
       visit admin_root_path
 
       within('#side_menu') do
