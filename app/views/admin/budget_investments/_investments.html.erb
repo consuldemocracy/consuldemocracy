@@ -38,9 +38,9 @@
         <th><%= t("admin.budget_investments.index.table_id") %></th>
         <th><%= t("admin.budget_investments.index.table_title") %></th>
         <th><%= t("admin.budget_investments.index.table_supports") %></th>
-        <th><%= t("admin.budget_investments.index.table_admin") %></th>
-        <th><%= t("admin.budget_investments.index.table_valuator") %></th>
-        <th><%= t("admin.budget_investments.index.table_valuation_group") %></th>
+        
+        
+        
         <th><%= t("admin.budget_investments.index.table_geozone") %></th>
         <th><%= t("admin.budget_investments.index.table_feasibility") %></th>
         <th class="text-center"><%= t("admin.budget_investments.index.table_valuation_finished") %></th>
@@ -67,23 +67,6 @@
           </td>
           <td class="text-center">
             <%= investment.total_votes %>
-          </td>
-          <td class="small">
-            <% if investment.administrator.present? %>
-              <span title="<%= t("admin.budget_investments.index.assigned_admin") %>">
-                <%= investment.administrator.name %>
-              </span>
-            <% else %>
-              <%= t("admin.budget_investments.index.no_admin_assigned") %>
-            <% end %>
-          </td>
-          <td class="small">
-            <% no_valuators_assigned = t("admin.budget_investments.index.no_valuators_assigned") %>
-            <%= investment.assigned_valuators || no_valuators_assigned %>
-          </td>
-          <td class="small">
-            <% no_valuation_groups = t("admin.budget_investments.index.no_valuation_groups") %>
-            <%= investment.assigned_valuation_groups || no_valuation_groups %>
           </td>
           <td class="small">
             <%= investment.heading.name %>
