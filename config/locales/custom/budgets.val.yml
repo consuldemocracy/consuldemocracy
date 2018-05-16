@@ -1,6 +1,9 @@
 ---
 val:
   budgets:
+    ballots:
+      reasons_for_not_balloting:
+        different_heading_assigned: Ja has votat en un districte diferent (%{user_heading}) del pressupost
     show:
       view_all: Vore totes les propostes
       all_headings: Totes les propostes

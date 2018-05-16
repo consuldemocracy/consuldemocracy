@@ -142,7 +142,7 @@ val:
         check_ballot_link: "revisar els meus vots"
         price: "Esta partida te un pressupost de"
     progress_bar:
-      assigned: 'Has sigut asignat: '
+      assigned: 'Han segut asignats: '
       available: 'Pressupost disponible: '
     show:
       group: Grup

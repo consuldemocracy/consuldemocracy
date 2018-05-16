@@ -1,6 +1,9 @@
 ---
 es:
   budgets:
+    ballots:
+      reasons_for_not_balloting:
+        different_heading_assigned: Ya has votado en un distrito diferente (%{user_heading}) del presupuesto
     show:
       view_all: Ver todas las propuestas
       all_headings: Todas las propuestas

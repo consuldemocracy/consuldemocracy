@@ -122,7 +122,7 @@ module Budgets
         @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
       else
         @heading = nil #@budget.headings.last
-        @assigned_heading = nil #@ballot.try(:heading_for_group, @heading.try(:group))
+        @assigned_heading = @ballot.try(:heading_for_group, @budget.headings.last.try(:group))
       end
     end
 

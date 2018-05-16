@@ -22,22 +22,26 @@
 
     <%= setting['per_page_code'].try(:html_safe) %>
 
-    <%= render "/layouts/inclusite_header" %>
+    <% unless Rails.env.development? %>
+      <%= render "/layouts/inclusite_header" %>
+    <% end %>
 
 
 
 
   </head>
   <body>
-  <ul id="__inclusite__tab__" class="tabinclusite" style="left: -57px;">
-    <li id="__inclusite__tab__li">
-      <a title="Web accesible." href="#">
-        <img alt="Web accesible." class="logo_inclusite" src="https://decidim--castello--es.accesible.inclusite.com/inclusite/ca-ES/images/logo_inclusite.png">
-      </a>
-      <a id="inclu_arrow" class="inclu_arrow_right" style="cursor: pointer;">
-      </a>
-    </li>
-  </ul>
+    <% unless Rails.env.development? %>
+      <ul id="__inclusite__tab__" class="tabinclusite" style="left: -57px;">
+        <li id="__inclusite__tab__li">
+          <a title="Web accesible." href="#">
+            <img alt="Web accesible." class="logo_inclusite" src="https://decidim--castello--es.accesible.inclusite.com/inclusite/ca-ES/images/logo_inclusite.png">
+          </a>
+          <a id="inclu_arrow" class="inclu_arrow_right" style="cursor: pointer;">
+          </a>
+        </li>
+      </ul>
+    <% end %>
     <!-- <h1 class="show-for-sr"><%= setting['org_name'] %></h1> -->
 
     <div class="wrapper">
