@@ -379,6 +379,58 @@ feature 'Budgets' do
       expect(page).to have_link "See investments not selected for balloting phase"
     end
 
+    scenario "Take into account headings with the same name from a different budget" do
+      group1 = create(:budget_group, budget: budget, name: "New York")
+      heading1 = create(:budget_heading, group: group1, name: "Brooklyn")
+      heading2 = create(:budget_heading, group: group1, name: "Queens")
+
+      budget2 = create(:budget)
+      group2 = create(:budget_group, budget: budget2, name: "New York")
+      heading3 = create(:budget_heading, group: group2, name: "Brooklyn")
+      heading4 = create(:budget_heading, group: group2, name: "Queens")
+
+      visit budget_path(budget)
+      click_link "New York"
+
+      expect(page).to have_css("#budget_heading_#{heading1.id}")
+      expect(page).to have_css("#budget_heading_#{heading2.id}")
+
+      expect(page).to_not have_css("#budget_heading_#{heading3.id}")
+      expect(page).to_not have_css("#budget_heading_#{heading4.id}")
+    end
+
+    scenario "See results button is showed if the budget has finished for all users" do
+      user = create(:user)
+      admin = create(:administrator)
+      budget = create(:budget, :finished)
+
+      login_as(user)
+      visit budget_path(budget)
+      expect(page).to have_link "See results"
+
+      logout
+
+      login_as(admin.user)
+      visit budget_path(budget)
+      expect(page).to have_link "See results"
+    end
+
+    scenario "See results button isn't showed if the budget hasn't finished for all users" do
+      user = create(:user)
+      admin = create(:administrator)
+      budget = create(:budget, :balloting)
+
+      login_as(user)
+      visit budget_path(budget)
+      expect(page).not_to have_link "See results"
+
+      logout
+
+      login_as(admin.user)
+      visit budget_path(budget)
+      expect(page).not_to have_link "See results"
+    end
+
   end
 
   context "In Drafting phase" do
