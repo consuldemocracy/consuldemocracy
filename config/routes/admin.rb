@@ -38,6 +38,13 @@ namespace :admin do
     get :summary, on: :collection
   end
 
+  resources :proposal_notifications, only: :index do
+    member do
+      put :restore
+      put :confirm_hide
+    end
+  end
+
   resources :budgets do
     member do
       put :calculate_winners
