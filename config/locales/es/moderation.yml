@@ -47,6 +47,7 @@ es:
       flagged_comments: Comentarios
       flagged_debates: Debates
       proposals: Propuestas
+      proposal_notifications: Notificaciones de propuestas
       users: Bloquear usuarios
     proposals:
       index:

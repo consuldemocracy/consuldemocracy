@@ -47,6 +47,7 @@ en:
       flagged_comments: Comments
       flagged_debates: Debates
       proposals: Proposals
+      proposal_notifications: Proposals notifications
       users: Block users
     proposals:
       index:
