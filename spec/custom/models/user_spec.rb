@@ -2,12 +2,50 @@ require 'rails_helper'
 
 describe User do
 
+  # Tests fixes =============================================
+
   describe "#age" do
     it "is the rounded integer age based on the date_of_birth" do
-      user = create(:user, date_of_birth: 18.years.ago)
-      expect(user.age).to eq(18)
+      user = create(:user, date_of_birth: Date.current.ago(User.minimum_required_age.years).to_date)
+      expect(user.age).to eq(16)
     end
   end
+
+  describe "#erase" do
+    it "erases user information and marks him as erased" do
+      user = create(:user,
+                     username: "manolo",
+                     email: "a@a.com",
+                     unconfirmed_email: "a@a.com",
+                     date_of_birth: Date.current.ago(User.minimum_required_age.years).to_date,
+                     phone_number: "5678",
+                     confirmed_phone: "5678",
+                     unconfirmed_phone: "5678",
+                     encrypted_password: "foobar",
+                     confirmation_token: "token1",
+                     reset_password_token: "token2",
+                     email_verification_token: "token3")
+
+      user.erase('a test')
+      user.reload
+
+      expect(user.erase_reason).to eq('a test')
+      expect(user.erased_at).to    be
+
+      expect(user.username).to be_nil
+      expect(user.email).to be_nil
+      expect(user.unconfirmed_email).to be_nil
+      expect(user.phone_number).to be_nil
+      expect(user.confirmed_phone).to be_nil
+      expect(user.unconfirmed_phone).to be_nil
+      expect(user.encrypted_password).to be_empty
+      expect(user.confirmation_token).to be_nil
+      expect(user.reset_password_token).to be_nil
+      expect(user.email_verification_token).to be_nil
+    end
+  end
+
+  # New tests =============================================
 
   describe "#age_in_allowed_range" do
 
@@ -55,4 +93,6 @@ describe User do
       expect(subject).not_to be_valid
     end
   end
+
+
 end

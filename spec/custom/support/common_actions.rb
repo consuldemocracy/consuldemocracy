@@ -158,7 +158,7 @@ module CommonActions
   def verify_residence
     select 'DNI', from: 'residence_document_type'
     fill_in 'residence_document_number', with: "12345678Z"
-    select_date '31-December-1980', from: 'residence_date_of_birth'
+    select_date "31-December-#{valid_date_of_birth_year}", from: 'residence_date_of_birth'
     fill_in 'residence_postal_code', with: '28013'
     check 'residence_terms_of_service'
 
@@ -169,7 +169,7 @@ module CommonActions
   def officing_verify_residence
     select 'DNI', from: 'residence_document_type'
     fill_in 'residence_document_number', with: "12345678Z"
-    fill_in 'residence_year_of_birth', with: "1980"
+    fill_in 'residence_year_of_birth', with: "#{valid_date_of_birth_year}"
 
     click_button 'Validate document'
 
@@ -369,6 +369,13 @@ module CommonActions
     select (options[:segment_recipient] || 'All users'), from: 'newsletter_segment_recipient'
     fill_in "newsletter_from", with: (options[:from] || "no-reply@consul.dev")
     fill_in "newsletter_body", with: (options[:body] || "This is a different body")
+  end
+
+  # Custom method proper to CJAude
+
+  # valid year used to cope with `lib/census_api.rb:stubbed_valid_response`
+  def valid_date_of_birth_year
+    20.years.ago.year
   end
 
 end

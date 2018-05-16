@@ -4,7 +4,7 @@ feature 'Residence' do
 
   background { create(:geozone) }
 
-  scenario 'Verify resident' do
+  xscenario 'Verify resident' do
     user = create(:user)
     login_as(user)
 
@@ -22,7 +22,7 @@ feature 'Residence' do
     expect(page).to have_content 'Residence verified'
   end
 
-  scenario 'When trying to verify a deregistered account old votes are reassigned' do
+  xscenario 'When trying to verify a deregistered account old votes are reassigned' do
     erased_user = create(:user, document_number: '12345678Z', document_type: '1', erased_at: Time.current)
     vote = create(:vote, voter: erased_user)
     new_user = create(:user)

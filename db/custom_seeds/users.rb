@@ -15,7 +15,7 @@ section "Creating Users" do
     confirmed_at:           Time.current,
     terms_of_service:       "1",
     gender:                 ['Male', 'Female'].sample,
-    date_of_birth:          rand((Time.current - 26.years)..(Time.current - 16.years)),
+    date_of_birth:          rand((Time.current - 25.years)..(Time.current - 16.years)),
     public_activity:        (rand(1..100) > 30),
     residence_verified_at: Time.current,
     confirmed_phone: Faker::PhoneNumber.phone_number,

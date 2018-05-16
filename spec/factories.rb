@@ -1,8 +1,14 @@
+# ============================
+# /!\ Attention, suite à la validation d'un âge maximum, il a fallu modifier de nombreux champs (date)
+# Les champs à la suite desquels est commenté `custom field` sont ceux qui ont été modifiés
+# =============================
+
 FactoryBot.define do
   factory :local_census_record, class: 'LocalCensusRecord' do
     document_number '12345678A'
     document_type 1
-    date_of_birth Date.new(1970, 1, 31)
+    date_of_birth Date.new(20.years.ago.year, 1, 31) #custom field
+    # date_of_birth Date.new(1970, 1, 31)
     postal_code '28002'
   end
 
@@ -13,7 +19,7 @@ FactoryBot.define do
     sequence(:firstname) { |n| "Manuela#{n}" }
     sequence(:lastname) { |n| "Zuliani#{n}" }
     postal_code '11000'
-    date_of_birth 22.years.ago
+    date_of_birth 20.years.ago
     # custom_fields end -------------------------
 
     sequence(:username) { |n| "Manuela#{n}" }
@@ -37,7 +43,8 @@ FactoryBot.define do
       sms_confirmation_code "1234"
       document_type "1"
       document_number
-      date_of_birth Date.new(1980, 12, 31)
+      # date_of_birth Date.new(1980, 12, 31)
+      date_of_birth Date.new(20.years.ago.year, 12, 31)  #custom field
       gender "female"
       geozone
     end
@@ -84,7 +91,8 @@ FactoryBot.define do
     user
     document_number
     document_type    "1"
-    date_of_birth    Date.new(1980, 12, 31)
+    # date_of_birth    Date.new(1980, 12, 31)
+    date_of_birth    Date.new(20.years.ago.year, 12, 31)  #custom field
     postal_code      "28013"
     terms_of_service '1'
 
@@ -659,7 +667,8 @@ FactoryBot.define do
     association :officer, factory: :poll_officer
     document_number
     document_type    "1"
-    year_of_birth    "1980"
+    # year_of_birth    "1980"
+    year_of_birth    20.years.ago.year # custom field
 
     trait :invalid do
       year_of_birth Time.current.year

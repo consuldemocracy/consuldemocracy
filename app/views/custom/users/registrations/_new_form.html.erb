@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="small-12 column">
+
+      <%= f.hidden_field :use_redeemable_code %>
+      <%= f.hidden_field :locale, value: I18n.locale %>
+
+
+
+      <%= f.text_field :lastname,  autofocus: true,
+                                   placeholder: t("devise_views.users.registrations.new.lastname_label")
+                                   %>
+
+      <%= f.text_field :firstname, placeholder: t("devise_views.users.registrations.new.firstname_label")
+                                   %>
+      <%= f.label :username %>
+      <p class="help-text" id="username-help-text"><%= t("devise_views.users.registrations.new.username_note") %></p>
+      <%= f.text_field :username, maxlength: User.username_max_length,
+                                placeholder: t("devise_views.users.registrations.new.username_label"),
+                                label: false,
+                                aria: {describedby: "username-help-text"} %>
+
+      <%= f.invisible_captcha :family_name %>
+
+
+      <div class="date-of-birth">
+        <%= f.label t("devise_views.users.registrations.new.date_of_birth") %>
+        <p class="help-text" id="date-of-birth-help-text"><%= t("devise_views.users.registrations.new.date_of_birth_note") %></p>
+        <%= f.date_select :date_of_birth,
+                          prompt: true,
+                          start_year: 26.years.ago.year, end_year: 16.years.ago.year,
+                          label: false,
+                          aria: {describedby: "date-of-birth-help-text"} %>
+      </div>
+
+      <div class="gender">
+        <%= f.select :gender, user_genders_select_options, label: t("devise_views.users.registrations.new.gender_label"), prompt: t("devise_views.users.registrations.new.gender_placeholder") %>
+      </div>
+
+      <!-- Address -->
+
+      <%= f.text_field :address, label: t("devise_views.users.registrations.new.address_label") %>
+
+      <div class="medium-6">
+        <%= f.text_field :postal_code %>
+      </div>
+
+      <%= f.text_field :city, label: t("devise_views.users.registrations.new.city_label") %>
+
+      <!-- Connexion info -->
+
+      <%= f.text_field  :phone_number,  placeholder: t("devise_views.organizations.registrations.new.phone_number_label"), label: t("devise_views.users.registrations.new.phone_label") %>
+
+      <%= f.email_field :email,     placeholder: t("devise_views.users.registrations.new.email_label") %>
+
+      <% if resource.use_redeemable_code %>
+        <%= f.text_field :redeemable_code, placeholder: t("devise_views.users.registrations.new.redeemable_code") %>
+      <% end %>
+
+      <%= f.label :ca_wanabee do %>
+        <%= f.check_box :ca_wanabee, title: t('devise_views.users.registrations.new.ca_wanabee'), label: false %>
+        <span class="checkbox">
+          <%= t("devise_views.users.registrations.new.ca_wanabee", title: "devise_views.users.registrations.new.ca_wanabee").html_safe %>
+        </span>
+      <% end %>
+
+      <%= f.label :terms_of_service do %>
+        <%= f.check_box :terms_of_service, title: t('devise_views.users.registrations.new.terms_title'), label: false %>
+        <span class="checkbox">
+          <%= t("devise_views.users.registrations.new.terms",
+              terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions",
+              title: t('shared.target_blank_html'),
+              target: "_blank")).html_safe %>
+        </span>
+      <% end %>
+      <div class="small-12 medium-6 small-centered">
+        <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded", id: "register-btn" %>
+      </div>
+    </div>
+  </div>

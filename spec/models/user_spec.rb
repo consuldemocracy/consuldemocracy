@@ -448,7 +448,7 @@ describe User do
   end
 
   describe "#erase" do
-    it "erases user information and marks him as erased" do
+    xit "erases user information and marks him as erased" do
       user = create(:user,
                      username: "manolo",
                      email: "a@a.com",

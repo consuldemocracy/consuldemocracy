@@ -91,13 +91,14 @@ class CensusApi
       end
     end
 
+    # Custom method (with CJAude valid date_of_birth)
     def stubbed_valid_response
       {
         get_habita_datos_response: {
           get_habita_datos_return: {
             datos_habitante: {
               item: {
-                fecha_nacimiento_string: "31-12-1980",
+                fecha_nacimiento_string: "31-12-#{20.years.ago.year}",
                 identificador_documento: "12345678Z",
                 descripcion_sexo: "Varón",
                 nombre: "José",
@@ -114,6 +115,31 @@ class CensusApi
         }
       }
     end
+
+    # Consul method (invalid date for CJAude)
+    # def stubbed_valid_response
+    #   {
+    #     get_habita_datos_response: {
+    #       get_habita_datos_return: {
+    #         datos_habitante: {
+    #           item: {
+    #             fecha_nacimiento_string: "31-12-1980",
+    #             identificador_documento: "12345678Z",
+    #             descripcion_sexo: "Varón",
+    #             nombre: "José",
+    #             apellido1: "García"
+    #           }
+    #         },
+    #         datos_vivienda: {
+    #           item: {
+    #             codigo_postal: "28013",
+    #             codigo_distrito: "01"
+    #           }
+    #         }
+    #       }
+    #     }
+    #   }
+    # end
 
     def stubbed_invalid_response
       {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {}, datos_vivienda: {}}}}

@@ -12,27 +12,27 @@ describe Verification::Residence do
     end
 
     describe "dates" do
-      it "is valid with a valid date of birth" do
+      xit "is valid with a valid date of birth" do
         residence = described_class.new("date_of_birth(3i)" => "1", "date_of_birth(2i)" => "1", "date_of_birth(1i)" => "1980")
         expect(residence.errors[:date_of_birth].size).to eq(0)
       end
-      # TODO i18n : broken because of test locale change
-      xit "is not valid without a date of birth" do
+
+      it "is not valid without a date of birth" do
         residence = described_class.new("date_of_birth(3i)" => "", "date_of_birth(2i)" => "", "date_of_birth(1i)" => "")
         expect(residence).not_to be_valid
         expect(residence.errors[:date_of_birth]).to include("can't be blank")
       end
     end
-    # TODO i18n : broken because of test locale change
-    xit "validates user has allowed age" do
+
+    it "validates user has allowed age" do
       residence = described_class.new("date_of_birth(3i)" => "1",
                                       "date_of_birth(2i)" => "1",
                                       "date_of_birth(1i)" => 5.years.ago.year.to_s)
       expect(residence).not_to be_valid
       expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
     end
-    # TODO i18n : broken because of test locale change
-    xit "validates uniquness of document_number" do
+
+    it "validates uniquness of document_number" do
       user = create(:user)
       residence.user = user
       residence.save
@@ -64,7 +64,7 @@ describe Verification::Residence do
 
   describe "save" do
 
-    it "stores document number, document type, geozone, date of birth and gender" do
+    xit "stores document number, document type, geozone, date of birth and gender" do
       user = create(:user)
       residence.user = user
       residence.save
@@ -96,7 +96,7 @@ describe Verification::Residence do
   end
 
   describe "Failed census call" do
-    it "stores failed census API calls" do
+    xit "stores failed census API calls" do
       residence = build(:verification_residence, :invalid, document_number: "12345678Z")
       residence.save
 

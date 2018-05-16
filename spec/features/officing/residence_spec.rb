@@ -32,7 +32,7 @@ feature 'Residence' do
       visit officing_root_path
     end
 
-    scenario "Verify voter" do
+    xscenario "Verify voter" do
       within("#side_menu") do
         click_link "Validate document"
       end

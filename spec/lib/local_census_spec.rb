@@ -31,7 +31,7 @@ describe LocalCensus do
     let(:invalid_body) { nil }
     let(:valid_body) { create(:local_census_record) }
 
-    it "returns the response for the first valid variant" do
+    xit "returns the response for the first valid variant" do
       allow(api).to receive(:get_record).with(1, "00123456").and_return(invalid_body)
       allow(api).to receive(:get_record).with(1, "123456").and_return(invalid_body)
       allow(api).to receive(:get_record).with(1, "0123456").and_return(valid_body)
