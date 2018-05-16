@@ -10,12 +10,12 @@ class User < ActiveRecord::Base
             :postal_code,
             presence: true, if: :username_required?
 
-  validate :postal_code_in_aude
+  validate :postal_code_in_aude, if: :username_required?
   private def postal_code_in_aude
     errors.add(:postal_code, :not_allowed) unless valid_postal_code?
   end
 
-  validate :age_in_allowed_range
+  validate :age_in_allowed_range, if: :username_required?
   private def age_in_allowed_range
     errors.add(:date_of_birth, :not_allowed) unless valid_age?
   end
@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
 
 
   def self.maximum_required_age
-    (Setting['max_age_to_participate'] || 16).to_i
+    (Setting['max_age_to_participate'] || 25).to_i
   end
 
   private

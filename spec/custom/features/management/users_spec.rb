@@ -17,7 +17,7 @@ feature 'Users' do
 
     fill_in 'user_username', with: 'pepe'
     fill_in 'user_email', with: 'pepe@gmail.com'
-    select_date '31-December-1980', from: 'user_date_of_birth'
+    select_date "31-December-#{valid_date_of_birth_year}", from: 'user_date_of_birth'
     fill_in 'user_lastname', with: 'mirza'
     fill_in 'user_firstname', with: 'zuliani'
     fill_in 'user_postal_code', with: '11000'
@@ -32,7 +32,7 @@ feature 'Users' do
     expect(user).to be_level_three_verified
     expect(user).to be_residence_verified
     expect(user).not_to be_confirmed
-    expect(user.date_of_birth).to have_content Date.new(1980, 12, 31)
+    expect(user.date_of_birth).to have_content Date.new(valid_date_of_birth_year, 12, 31)
 
     sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
     visit user_confirmation_path(confirmation_token: sent_token)
@@ -60,7 +60,7 @@ feature 'Users' do
 
     fill_in 'user_username', with: 'Kelly Sue'
     fill_in 'user_email', with: ''
-    select_date '31-December-1980', from: 'user_date_of_birth'
+    select_date "31-December-#{valid_date_of_birth_year}", from: 'user_date_of_birth'
     fill_in 'user_lastname', with: 'mirza'
     fill_in 'user_firstname', with: 'zuliani'
     fill_in 'user_postal_code', with: '11000'
@@ -75,7 +75,7 @@ feature 'Users' do
     expect(user).to be_level_three_verified
     expect(user).to be_residence_verified
     expect(user).to be_confirmed
-    expect(user.date_of_birth).to have_content Date.new(1980, 12, 31)
+    expect(user.date_of_birth).to have_content Date.new(valid_date_of_birth_year, 12, 31)
   end
 
 end

@@ -28,8 +28,8 @@ describe Poll::Voter do
 
        expect(voter).to be_valid
     end
-    # TODO i18n : broken because of test locale change
-    xit "is not valid if the user has already voted in the same poll or booth_assignment" do
+
+    it "is not valid if the user has already voted in the same poll or booth_assignment" do
       user = create(:user, :level_two)
 
       voter1 = create(:poll_voter, user: user, poll: poll)
@@ -38,8 +38,8 @@ describe Poll::Voter do
       expect(voter2).not_to be_valid
       expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
     end
-    # TODO i18n : broken because of test locale change
-    xit "is not valid if the user has already voted in the same poll/booth" do
+
+    it "is not valid if the user has already voted in the same poll/booth" do
       user = create(:user, :level_two)
 
       voter1 = create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
@@ -48,8 +48,8 @@ describe Poll::Voter do
       expect(voter2).not_to be_valid
       expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
     end
-    # TODO i18n : broken because of test locale change
-    xit "is not valid if the user has already voted in different booth in the same poll" do
+
+    it "is not valid if the user has already voted in different booth in the same poll" do
       booth_assignment1 = create(:poll_booth_assignment, poll: poll)
       booth_assignment2 = create(:poll_booth_assignment, poll: poll)
 
@@ -73,8 +73,8 @@ describe Poll::Voter do
 
       expect(voter2).to be_valid
     end
-    # TODO i18n : broken because of test locale change
-    xit "is not valid if the user has voted via web" do
+
+    it "is not valid if the user has voted via web" do
       answer = create(:poll_answer)
       answer.record_voter_participation('token')
 
@@ -145,7 +145,7 @@ describe Poll::Voter do
 
   describe "save" do
 
-    it "sets demographic info" do
+    xit "sets demographic info" do
       geozone = create(:geozone)
       user = create(:user,
                     geozone: geozone,
