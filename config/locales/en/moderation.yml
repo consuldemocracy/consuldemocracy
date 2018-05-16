@@ -68,6 +68,25 @@ en:
           created_at: Most recent
           flags: Most flagged
         title: Proposals
+    proposal_notifications:
+      index:
+        block_authors: Block authors
+        confirm: Are you sure?
+        filter: Filter
+        filters:
+          all: All
+          pending_review: Pending review
+          ignored: Mark as viewed
+        headers:
+          moderate: Moderate
+          proposal_notification: Proposal notification
+        hide_proposal_notifications: Hide proposals
+        ignore_flags: Mark as viewed
+        order: Order by
+        orders:
+          created_at: Most recent
+          moderated: Moderated
+        title: Proposal notifications
     users:
       index:
         hidden: Blocked
