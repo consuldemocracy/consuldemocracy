@@ -504,6 +504,7 @@ en:
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
+      hidden_proposal_notifications: Hidden proposal notifications
       hidden_users: Hidden users
       administrators: Administrators
       managers: Managers

@@ -129,6 +129,7 @@ ignore_unused:
   - 'admin.banners.index.filters.*'
   - 'admin.debates.index.filter*'
   - 'admin.proposals.index.filter*'
+  - 'admin.proposal_notifications.index.filter*'
   - 'admin.budgets.index.filter*'
   - 'admin.budget_investments.index.filter*'
   - 'admin.spending_proposals.index.filter*'
