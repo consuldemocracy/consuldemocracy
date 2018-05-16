@@ -45,6 +45,11 @@
 
     <div class="js-participation-not-allowed participation-not-allowed" style='display:none'>
       <p>
+        <% if @assigned_heading %>
+        <%   asigned = link_to(@assigned_heading.name, budget_investments_path(budget_id: investment.budget_id, heading_id: @assigned_heading.id)) %>
+        <% else %>
+        <%   asigned = '' %>
+        <% end %>
         <%= t("budgets.ballots.reasons_for_not_balloting.#{reason}",
               verify_account: link_to(t("votes.verify_account"), verification_path),
               signin: link_to(t("votes.signin"), new_user_session_path),
@@ -52,9 +57,7 @@
               my_heading: link_to(investment.heading.name,
                                   budget_investments_path(budget_id: investment.budget_id,
                                                           heading_id: investment.heading_id)),
-              user_heading: link_to(@assigned_heading.name,
-                                  budget_investments_path(budget_id: investment.budget_id,
-                                                          heading_id: @assigned_heading.id)),
+              user_heading: asigned,
               change_ballot: link_to(t("budgets.ballots.reasons_for_not_balloting.change_ballot"),
                                     budget_ballot_path(@budget))).html_safe %>
       </p>
