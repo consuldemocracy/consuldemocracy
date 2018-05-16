@@ -1591,6 +1591,10 @@
         transition: font-size 0.3s;
       }
     }
+
+    .progress-bar-amount {
+      margin-top: rem-calc(-24);
+    }
   }
 }
 

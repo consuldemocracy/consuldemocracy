@@ -2313,6 +2313,10 @@ ul {
   position: relative;
   z-index: 3;
 
+  @include breakpoint(medium) {
+    background-color: #000;
+  }
+
   @include breakpoint(large) {
     background-color: #000;
     height: rem-calc(100);
