@@ -29,6 +29,13 @@ namespace :admin do
     end
   end
 
+  resources :proposal_notifications, only: :index do
+    member do
+      put :restore
+      put :confirm_hide
+    end
+  end
+
   ### Modified in: config/routes/custom.rb
   ### ToDo: Figure out a way to maintain Consul's routes in this file,
   #         whilst modifying them in routes/custom.rb
