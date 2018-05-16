@@ -1028,8 +1028,12 @@ ActiveRecord::Schema.define(version: 20180517141120) do
     t.text     "body"
     t.integer  "author_id"
     t.integer  "proposal_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.boolean  "moderated",         default: false
+    t.datetime "hidden_at"
+    t.datetime "ignored_at"
+    t.datetime "confirmed_hide_at"
   end
 
   create_table "proposals", force: :cascade do |t|
