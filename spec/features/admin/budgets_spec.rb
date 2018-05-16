@@ -186,31 +186,37 @@ feature 'Admin budgets' do
   end
 
   context "Calculate Budget's Winner Investments" do
-
     scenario 'For a Budget in reviewing balloting' do
       budget = create(:budget, phase: 'reviewing_ballots')
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group, price: 4)
       unselected = create(:budget_investment, :unselected, heading: heading, price: 1,
                                                            ballot_lines_count: 3)
-      winner = create(:budget_investment, :winner, heading: heading, price: 3,
+      winner = create(:budget_investment, :selected, heading: heading, price: 3,
                                                    ballot_lines_count: 2)
-      selected = create(:budget_investment, :selected, heading: heading, price: 2,
-                                                       ballot_lines_count: 1)
+      selected = create(:budget_investment, :selected, heading: heading, price: 2, ballot_lines_count: 1)
 
       visit edit_admin_budget_path(budget)
+      expect(page).not_to have_content 'See results'
       click_link 'Calculate Winner Investments'
       expect(page).to have_content 'Winners being calculated, it may take a minute.'
       expect(page).to have_content winner.title
       expect(page).not_to have_content unselected.title
       expect(page).not_to have_content selected.title
+
+
+      visit edit_admin_budget_path(budget)
+      expect(page).to have_content 'See results'
     end
 
     scenario 'For a finished Budget' do
       budget = create(:budget, phase: 'finished')
+      allow_any_instance_of(Budget).to receive(:has_winning_investments?).and_return true
 
       visit edit_admin_budget_path(budget)
+
       expect(page).not_to have_content 'Calculate Winner Investments'
+      expect(page).to have_content 'See results'
     end
 
   end
