@@ -1270,7 +1270,7 @@ feature 'Admin budget investments' do
 
       visit admin_budget_budget_investments_path(budget)
 
-      expect(page).not_to have_css("#budget_investment_visible_to_valuators")
+      expect(page).to have_css("#budget_investment_visible_to_valuators")
 
       within('#filter-subnav') { click_link 'Under valuation' }
 
@@ -1362,7 +1362,6 @@ feature 'Admin budget investments' do
       investment2.update(administrator: admin)
 
       visit admin_budget_budget_investments_path(budget)
-      within('#filter-subnav') { click_link 'Under valuation' }
 
       within("#budget_investment_#{investment1.id}") do
         check "budget_investment_visible_to_valuators"
@@ -1401,7 +1400,6 @@ feature 'Admin budget investments' do
       end
 
       visit admin_budget_budget_investments_path(budget)
-      within('#filter-subnav') { click_link 'Under valuation' }
 
       within("#budget_investment_#{investment1.id}") do
         expect(find("#budget_investment_visible_to_valuators")).not_to be_checked
@@ -1420,7 +1418,7 @@ feature 'Admin budget investments' do
 
       visit admin_budget_budget_investments_path(budget)
 
-      expect(page).not_to have_css("#budget_investment_visible_to_valuators")
+      expect(page).to have_css("#budget_investment_visible_to_valuators")
 
       within('#filter-subnav') { click_link 'Under valuation' }
 

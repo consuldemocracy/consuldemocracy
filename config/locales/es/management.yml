@@ -70,7 +70,7 @@ es:
       support_budget_investments: Apoyar proyectos de gasto
       users: Usuarios
       edit_user_accounts: Editar cuenta de usuario
-      user_invites: Invitaciones para usuarios
+      user_invites: Enviar invitaciones
     permissions:
       create_proposals: Crear nuevas propuestas
       debates: Participar en debates
@@ -141,7 +141,7 @@ es:
         label: Emails
         info: "Introduce los emails separados por comas (',')"
         submit: Enviar invitaciones
-        title: Invitaciones para usuarios
+        title: Enviar invitaciones
       create:
         success_html: Se han enviado <strong>%{count} invitaciones</strong>.
-        title: Invitaciones para usuarios
+        title: Enviar invitaciones

@@ -40,7 +40,7 @@ describe Newsletter do
   describe '#valid_segment_recipient?' do
     it 'is false when segment_recipient value is invalid' do
       newsletter.update(segment_recipient: 'invalid_segment_name')
-      error = 'The user recipients segment is invalid'
+      error = 'The recipients are invalid'
 
       expect(newsletter).not_to be_valid
       expect(newsletter.errors.messages[:segment_recipient]).to include(error)
