@@ -41,8 +41,8 @@
                                   aria: {describedby: "date-of-birth-help-text"} %>
               </div>
               <div class="gender">
-              <%= f.select :gender, user_genders_select_options %>
-            </div>
+                <%= f.select :gender, user_genders_select_options, label: t("devise_views.users.registrations.new.gender_label"), prompt: t("devise_views.users.registrations.new.gender_placeholder") %>
+              </div>
 
             <!-- Address -->
 
@@ -193,6 +193,27 @@
                 <% end %>
               </span>
             </div>
+          <% end %>
+
+          <!-- Connexion reseaux sociaux -->
+          <% if feature?(:twitter_login) || feature?(:facebook_login) || feature?(:google_login) %>
+            <h2><%= t("account.show.social_networks")%></h2>
+
+            <% if feature? :facebook_login %>
+            <div class="small-12 medium-6 column end">
+              <% if auth = current_user.identities.find_by(provider: :facebook) %>
+                <%= link_to "Délier", remove_provider_account_path(auth), method: :delete,
+                            title: t("account.show.remove_provider", kind: "Facebook"),
+                            class: "button-facebook button expanded" %>
+              <% else %>
+                <%= link_to "Lier", user_omniauth_authorize_path(:facebook),
+                          title: t("account.show.add_provider", kind: "Facebook"),
+                          class: "button-facebook button expanded" %>
+              <% end %>
+            </div>
+          <% end %>
+
+
           <% end %>
         </div>
       </div>

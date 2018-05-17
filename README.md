@@ -54,6 +54,20 @@ Le framework CSS utilisé est Foundation en version 6.2.4.
 car la documentation disponible sur le site web du projet correspond à une version
 plus récente.
 
+### Omniauth 
+
+#### Facebook
+
+Pour se connecter via facebook en local :
+
+Utiliser ngrok : `./ngrok http 3000`
+
+Dans l'[interface développeur de facebook](https://developers.facebook.com/apps) : 
+- créer une application de test, si elle n'existe pas encore (credentials à renseigner dans `config/secrtes.yml`)
+- renseigner l'url de callback à partir de l'url https fournie par ngrok dans Produits > Facebook login > Paramètres > champs "URI de redirection OAuth valides" -> ex `https://a171c66a.ngrok.io/users/auth/facebook/callback`
+- renseigner le "Domaines de l’app" dans Paramètres > Général -> ex `a171c66a.ngrok.io`
+- renseigner "URL du site" dans Paramètres > Général -> block Site web -> `https://a171c66a.ngrok.io/`
+
 ## Déploiements
 
 ```bash

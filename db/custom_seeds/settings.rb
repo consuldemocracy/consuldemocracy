@@ -10,9 +10,9 @@ section "Creating custom Settings" do
   Setting['feature.spending_proposals'] = nil
   Setting['feature.spending_proposal_features.voting_allowed'] = nil
   Setting['feature.polls'] = true
-  Setting['feature.twitter_login'] = true
+  Setting['feature.twitter_login'] = nil
   Setting['feature.facebook_login'] = true
-  Setting['feature.google_login'] = true
+  Setting['feature.google_login'] = nil
   Setting['feature.public_stats'] = true
   Setting['feature.budgets'] = nil
   Setting['feature.signature_sheets'] = true

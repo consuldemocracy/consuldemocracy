@@ -17,6 +17,9 @@ fr:
       user_permission_proposal: Créer des nouveaux projets
       user_permission_support_proposal: Soutenir des projets
       user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits"
+      social_networks: "Réseaux sociaux"
+      add_provider: "Lier votre compte à %{kind}"
+      remove_provider: "Délier votre compte de %{kind}"
   debates:
     create:
       form:
