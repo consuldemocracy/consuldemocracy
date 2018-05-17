@@ -48,7 +48,7 @@ class Admin::NewslettersController < Admin::BaseController
     @newsletter = Newsletter.find(params[:id])
 
     if @newsletter.valid?
-      @newsletter.deliver
+      @newsletter.delay.deliver
       @newsletter.update(sent_at: Time.current)
       flash[:notice] = t("admin.newsletters.send_success")
     else
