@@ -118,5 +118,25 @@ describe Newsletter do
       expect(Delayed::Job.third.run_at.change(usec: 0)).to eq(third_batch_run_at)
     end
 
+    it "skips invalid emails" do
+      Proposal.destroy_all
+
+      valid_email = "john@gmail.com"
+      invalid_email = "john@gmail..com"
+
+      valid_email_user = create(:user, email: valid_email)
+      proposal = create(:proposal, author: valid_email_user)
+
+      invalid_email_user = create(:user, email: invalid_email)
+      proposal = create(:proposal, author: invalid_email_user)
+
+      newsletter.deliver
+
+      expect(Activity.count).to eq(1)
+      expect(Activity.first.user_id).to eq(valid_email_user.id)
+      expect(Activity.first.action).to eq("email")
+      expect(Activity.first.actionable).to eq(newsletter)
+    end
+
   end
 end
