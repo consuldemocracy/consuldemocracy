@@ -505,7 +505,7 @@ DEPENDENCIES
   acts_as_votable (~> 0.11.1)
   ahoy_matey (~> 1.6.0)
   ancestry (~> 3.0.1)
-  aws-sdk
+  aws-sdk (~> 2)
   browser (~> 2.5.2)
   bullet (~> 5.7.0)
   byebug (~> 10.0.0)
