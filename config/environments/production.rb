@@ -82,6 +82,9 @@ Rails.application.configure do
   # Set paperclip configuration for AWS S3
   config.paperclip_defaults = {
     storage: :s3,
+    preserve_files: true,
+    s3_host_name: Rails.application.secrets.s3_endpoint,
+    s3_protocol: :https,
     s3_credentials: {
       bucket: Rails.application.secrets.s3_bucket,
       access_key_id: Rails.application.secrets.s3_access_key_id,
