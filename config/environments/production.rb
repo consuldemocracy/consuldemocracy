@@ -84,7 +84,7 @@ Rails.application.configure do
     storage: :s3,
     preserve_files: true,
     s3_host_name: Rails.application.secrets.s3_endpoint,
-    s3_protocol: :https,
+    s3_protocol: Rails.application.secrets.s3_protocol,
     s3_credentials: {
       bucket: Rails.application.secrets.s3_bucket,
       access_key_id: Rails.application.secrets.s3_access_key_id,
