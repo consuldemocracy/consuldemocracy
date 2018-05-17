@@ -118,6 +118,21 @@ describe Newsletter do
       expect(Delayed::Job.third.run_at.change(usec: 0)).to eq(third_batch_run_at)
     end
 
+    it "logs users that have received the newsletter" do
+      newsletter.deliver
+
+      expect(Activity.count).to eq(3)
+
+      recipients.each do |email|
+        user = User.where(email: email).first
+        activity = Activity.where(user: user).first
+
+        expect(activity.user_id).to eq(user.id)
+        expect(activity.action).to eq("email")
+        expect(activity.actionable).to eq(newsletter)
+      end
+    end
+
     it "skips invalid emails" do
       Proposal.destroy_all
 
