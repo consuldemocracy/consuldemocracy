@@ -11,6 +11,14 @@
         signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path)).html_safe %>
   </p>
 
+  <% if resource.identities.any? %>
+    <div class='callout primary'>
+      <p>Votre compte est maintenant lié à <%= resource.identities.last.provider %>.</p>
+      <p>Merci de renseigner les champs manquants pour pouvoir compléter votre inscription.</p>
+    </div>
+  <% end %>
+
+
   <div class="row">
     <div class="small-12 column">
 

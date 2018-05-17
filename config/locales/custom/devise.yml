@@ -1,0 +1,6 @@
+fr:
+  devise:
+    omniauth_callbacks:
+      failure: "Il n'a pas été possible de vous identifier avec %{kind} à cause de \"%{reason}\"."
+      success: "Identifié avec succès avec %{kind}."
+      provider_removed: "Compte délié de %{kind}."

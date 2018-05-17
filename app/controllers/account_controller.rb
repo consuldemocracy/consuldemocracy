@@ -1,7 +1,7 @@
 class AccountController < ApplicationController
   before_action :authenticate_user!
   before_action :set_account
-  load_and_authorize_resource class: "User"
+  load_and_authorize_resource class: "User", except: :remove_provider
 
   def show
   end
@@ -14,6 +14,7 @@ class AccountController < ApplicationController
       render :show
     end
   end
+
 
   private
 

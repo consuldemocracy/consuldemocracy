@@ -50,11 +50,41 @@ class User < ActiveRecord::Base
   end
 
 
+
   def self.maximum_required_age
     (Setting['max_age_to_participate'] || 25).to_i
   end
 
-  private
+  # Omniauth --------------------------------------------------------------------------
+
+  # appelé lors de la liaison Omniauth.
+  # Remplit les champs possibles avec les données récupérées de Omniauth2.
+  def fill_from_omniauth(auth)
+    oauth_email           = auth['info']['email']
+    oauth_email_confirmed = oauth_email.present? && (auth['info']['verified'] || auth['info']['verified_email'])
+
+    self.identities << Identity.new(provider: auth['provider'], uid: auth['uid'])
+    self.email = oauth_email if self.email.blank?
+    self.oauth_email = oauth_email if self.email.blank?
+
+    self.lastname       = auth['info']['last_name'] if self.lastname.blank?
+    self.firstname      = auth['info']['first_name'] if self.firstname.blank?
+    self.username       = auth['info']['name'] if self.username.blank?
+
+    self.confirmed_at =  DateTime.current if (oauth_email_confirmed && self.confirmed_at.blank?)
+
+  end
+
+  # Appelé par Devise lors de l'inscription via omniauth
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if auth = session[:omniauth]
+        user.fill_from_omniauth(auth)
+      end
+    end
+  end
+
+  private #  ==============================
 
   def valid_postal_code?
     postal_code =~ /^(11)[ ]?\d{3}/ # begins with 11, followed with a space or not, and 3 digits

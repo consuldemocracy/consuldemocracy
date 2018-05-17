@@ -2,6 +2,17 @@ require_dependency Rails.root.join('app', 'controllers', 'account_controller').t
 
 class AccountController < ApplicationController
 
+  skip_authorization_check only: :remove_provider
+
+  # Délie le compte du réseau social demandé
+  def remove_provider
+    auth = @account.identities.find(params[:id])
+    if auth.destroy
+      flash[:notice] = I18n.t("devise.omniauth_callbacks.provider_removed", kind: auth.provider)
+    end
+    redirect_to account_path
+  end
+
   private
 
     def account_params
