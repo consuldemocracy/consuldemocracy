@@ -1,4 +1,5 @@
 <%= render "/admin/poll/polls/poll_header" %>
+
 <div id="poll-resources">
   <%= render "/admin/poll/polls/subnav" %>
 
@@ -12,5 +13,6 @@
     <%= render "recount", resource: @poll %>
     <%= render "result" %>
     <%= render "results_by_booth" %>
+    <%= render "show_results", resource: @poll %>
   <% end %>
 </div>
