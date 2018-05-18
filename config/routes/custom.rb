@@ -159,8 +159,10 @@ end
 ########## Named Routes ###########
 
 # Budgets 2017
+# Budgets
 get 'presupuestos-participativos-2017-videos',     to: 'pages#show', id: 'landings/budgets_videos_2017',    as: 'budgets_videos_2017'
 get 'presupuestos-participativos-2017-materiales', to: 'pages#show', id: 'landings/budgets_materials_2017', as: 'budgets_materials_2017'
+get 'presupuestos-participativos-2018-materiales', to: 'pages#show', id: 'landings/budgets_materials_2018', as: 'budgets_materials_2018'
 get 'participatory_budget/select_district',        to: 'spending_proposals#select_district', as: 'select_district'
 get 'delegacion',                                  to: 'forums#index', as: 'delegation'
 get 'presupuestos-participativos-resultados',      to: 'spending_proposals#results',                    as: 'participatory_budget_results'
