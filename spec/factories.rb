@@ -749,6 +749,23 @@ FactoryBot.define do
     sequence(:title) { |n| "Thank you for supporting my proposal #{n}" }
     sequence(:body) { |n| "Please let others know so we can make it happen #{n}" }
     proposal
+    association :author, factory: :user
+
+    trait :moderated do
+      moderated true
+    end
+
+    trait :ignored do
+      ignored_at Date.current
+    end
+
+    trait :hidden do
+      hidden_at Date.current
+    end
+
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.current
+    end
   end
 
   factory :direct_message do
