@@ -103,6 +103,9 @@ es:
       poll:
         one: "Votación"
         other: "Votaciones"
+      proposal_notification:
+        one: "Notificación de propuesta"
+        other: "Notificaciones de propuestas"
     attributes:
       budget:
         name: "Nombre"
