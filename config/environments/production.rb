@@ -93,3 +93,5 @@ Rails.application.configure do
     }
   }
 end
+
+Rails.logger = Le.new(Rails.application.secrets.logentries_api_token)
