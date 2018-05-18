@@ -270,17 +270,23 @@ es:
         text: "¡Gracias por votar!"
         button: "Ver proyectos"
     budgets:
-      label: "Presupuestos participativos 2018"
-      title: "Así se evalúan y tasan los proyectos ciudadanos"
-      text: "Los técnicos municipales revisan los proyectos que han recibido de más a menos apoyos."
+      label: "Votación presupuestos participativos"
+      title: "Cómo votar en los presupuestos participativos 2018"
+      text: "Te explicamos cómo votar los proyectos ciudadanos que quieres que haga el ayuntamiento en tu distrito y en toda la ciudad."
       link: "Leer más"
-      alt: "Técnicos municipales revisando proyectos"
-    decide:
-      label: "Empieza a participar"
-      title: "Decídete y cambia tu ciudad"
-      text: "Apúntate a la plataforma de participación ciudadana del Ayuntamiento y haz que Madrid sea más tuyo."
-      link: "Regístrate"
-      alt: "Imagen de la nueva campaña de Decide Madrid"
+      alt: "Ciudadanos votando en una de las urnas en las calles de Madrid"
+    budgets_materials:
+      label: "Proyectos finalistas"
+      title: "Difunde tus proyectos de presupuestos participativos"
+      text: "Si quieres difundir proyectos finalistas, ya sean tuyos o de tus vecinos, descárgate los materiales de la campaña del Ayuntamiento."
+      link: "Ver materiales"
+      alt: "Imagen de la nueva campaña 100 millones dan para mucho"
+    open_square:
+      label: "Plaza Abierta"
+      title: "Ven a conocer los proyectos de participativos"
+      text: "El sábado 9 de junio, de 11:30 a 13:30 h, acércate a la plaza de Jacinto Benavente. Proponentes de proyectos explicarán en qué consisten sus propuestas."
+      link: "Leer más"
+      alt: "Ciudadanos hablando en una plaza de Madrid"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
