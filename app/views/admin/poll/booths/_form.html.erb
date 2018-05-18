@@ -12,9 +12,13 @@
   </div>
 
   <div class="small-12 column">
-    <%= f.check_box :physical,
-                     placeholder: t("admin.booths.new.physical"),
-                     label:       t("admin.booths.new.physical") %>
+    <%= f.select :physical, {} do %>
+      <%= options_for_select({
+          t("admin.booths.new.physical") => true,
+          t("admin.booths.new.digital")  => false
+        }, @booth.physical)
+      %>
+    <% end %>
   </div>
 </div>
 

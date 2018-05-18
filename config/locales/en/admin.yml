@@ -944,6 +944,7 @@ en:
         name: "Name"
         location: "Location"
         physical: "Physical booth"
+        digital: "Digital booth"
         submit_button: "Create booth"
       edit:
         title: "Edit booth"

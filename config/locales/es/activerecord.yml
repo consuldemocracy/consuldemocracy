@@ -238,6 +238,8 @@ es:
       image:
         title: Título
         attachment: Archivo adjunto
+      poll/booth:
+        physical: Tipo de urna
       poll/question/answer:
         title: Respuesta
         description: Descripción

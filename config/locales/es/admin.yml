@@ -944,6 +944,7 @@ es:
         name: "Nombre"
         location: "Ubicación"
         physical: "Urna física"
+        digital: "Urna digital"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"

@@ -238,6 +238,8 @@ en:
       image:
         title: Title
         attachment: Attachment
+      poll/booth:
+        physical: Booth kind
       poll/question/answer:
         title: Answer
         description: Description
