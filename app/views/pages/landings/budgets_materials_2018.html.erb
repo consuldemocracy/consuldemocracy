@@ -35,11 +35,11 @@
       <p class="budget-lead"><strong>Difunde los proyectos de los <%= link_to "presupuestos participativos 2018", budgets_welcome_path %> de Madrid que has planteado o los que quieras que vote la gente.</strong></p>
       <p>En esta página te facilitamos el material gráfico de la campaña para que puedas pedir el voto para proyectos para toda la ciudad y/o los distritos que han pasado a la final.</p>
       <ul class="no-district">
-        <li><%= link_to 'Cartel de la campaña "100 millones dan para mucho"', "/system/budgets/2018/cartel_100_millones_dan_para_mucho.pdf" %>
-        <li><%= link_to "Imagen genérica para Twitter", "/system/budgets//2018/twitter_imagen_generica.png" %>
-        <li><%= link_to "GIF genérico para Twitter", "/system/budgets/2018/twitter_imagen_animada.gif" %>
-        <li><%= link_to "Imagen para Facebook genérica", "/system/budgets/2018/facebook_imagen_generica.png" %>
-        <li><%= link_to "Vídeo genérico para Facebook", "/system/budgets/2018/facebook_imagen_animada.mp4" %>
+        <li><%= link_to 'Cartel de la campaña "100 millones dan para mucho"', "/system/budgets/2018/cartel_100_millones_dan_para_mucho.pdf", target: "_blank" %>
+        <li><%= link_to "Imagen genérica para Twitter", "/system/budgets//2018/twitter_imagen_generica.png", target: "_blank" %>
+        <li><%= link_to "GIF genérico para Twitter", "/system/budgets/2018/twitter_imagen_animada.gif", target: "_blank" %>
+        <li><%= link_to "Imagen para Facebook genérica", "/system/budgets/2018/facebook_imagen_generica.png", target: "_blank" %>
+        <li><%= link_to "Vídeo genérico para Facebook", "/system/budgets/2018/facebook_imagen_animada.mp4", target: "_blank" %>
       </ul>
     </div>
   </div>
@@ -81,7 +81,7 @@
           </figure>
           <ul class="no-bullet">
             <li>
-              <%= link_to "/docs/budgets_materials_2018/cartel_#{filename}.pdf", target: "_blank",
+              <%= link_to "/system/budgets/2018/cartel_#{filename}.pdf", target: "_blank",
                           title: "Descargar cartel de #{name} PDF - #{size_1}Kb (se abre en ventana nueva)" do %>
                 <%= image_tag "budgets_materials_2017/icon_poster.png", alt: "" %><span>Cartel de <%= name %></span>
               <% end %>
