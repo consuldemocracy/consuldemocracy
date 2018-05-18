@@ -203,7 +203,7 @@ nl:
       external_link_transparency: Transparantie
       external_link_transparency_url: https://transparency.consul
       locale: 'Taal:'
-      logo: Consul logo
+      logo: MÁS DEMOCRACIA EN EUROPA logo
       management: Manage
       moderation: Moderatie
       valuation: Beoordeling
@@ -707,4 +707,3 @@ nl:
   invisible_captcha:
     sentence_for_humans: "Negeer dit veld als u mens bent"
     timestamp_error_message: "Sorry, dat ging te snel! Probeer nog eens."
-
