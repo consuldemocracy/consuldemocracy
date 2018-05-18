@@ -13,7 +13,9 @@
 
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
-              social_url: root_url %>
+              social_url: root_url,
+              twitter_image_url: "social_media_budgets_2018_#{current_budget.phase}_twitter.png",
+              og_image_url: "social_media_budgets_2018_#{current_budget.phase}.png" %>
 <% end %>
 
 <div class="welcome">
