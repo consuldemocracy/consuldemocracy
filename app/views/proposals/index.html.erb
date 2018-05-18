@@ -114,7 +114,9 @@
           <%= render 'categories' %>
           <%= render "shared/tag_cloud", taggable: 'proposal' %>
           <%= render 'geozones' %>
-          <%= render 'popular' %>
+          <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+            <%= render 'popular' %>
+          <% end %>
         <% end %>
         <%= render 'retired' %>
       </aside>
