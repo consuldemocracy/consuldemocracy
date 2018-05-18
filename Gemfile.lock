@@ -69,6 +69,11 @@ GEM
       jmespath (~> 1.0)
     aws-sdk-resources (2.3.22)
       aws-sdk-core (= 2.3.22)
+    aws-ses (0.6.0)
+      builder
+      mail (> 2.2.5)
+      mime-types
+      xml-simple
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -497,6 +502,7 @@ GEM
       railties (>= 4.2)
     whenever (0.10.0)
       chronic (>= 0.6.3)
+    xml-simple (1.1.5)
     xpath (3.0.0)
       nokogiri (~> 1.8)
 
@@ -510,6 +516,7 @@ DEPENDENCIES
   ancestry (~> 3.0.1)
   autoprefixer-rails (~> 8.2.0)
   aws-sdk (~> 2)
+  aws-ses (~> 0.6.0)
   browser (~> 2.5.2)
   bullet (~> 5.7.0)
   byebug (~> 10.0.0)
