@@ -64,7 +64,8 @@ $vicalvaro:         #f77924;
 $villa-vallecas:    #a70500;
 $villaverde:        #8e4e28;
 
-.budgets-materials-2017 {
+.budgets-materials-2017,
+.budgets-materials-2018 {
 
   .header {
     background: $budget;
@@ -322,6 +323,35 @@ $villaverde:        #8e4e28;
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+}
+
+.budgets-materials-2018 {
+
+  .header {
+    background: #000;
+
+    @include breakpoint(medium) {
+      background: #000 image-url('budget_welcome/background_header.jpg');
+      background-position: 100% top;
+      background-size: contain;
+    }
+
+    h1 {
+      color: $budget-2018-pink;
+      font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important;
+      font-size: rem-calc(40);
+      line-height: rem-calc(40);
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(50);
+        line-height: rem-calc(50);
+      }
+    }
+
+    a {
+      color: #fff;
     }
   }
 }

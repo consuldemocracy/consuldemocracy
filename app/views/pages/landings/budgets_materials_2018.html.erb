@@ -1,0 +1,106 @@
+<% provide :title, "Materiales para difundir los presupuestos participativos 2018" %>
+<% provide :meta_description, "Difunde los proyectos de los presupuestos participativos 2018 de Madrid que has planteado o los que quieras que vote la gente." %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budgets_materials_2018_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+<!-- Facebook OG -->
+<meta property="og:url"           content="<%= budgets_materials_2018_url %>" />
+<meta property="og:title"         content="Materiales para difundir los presupuestos participativos 2018" />
+<meta property="og:image"         content="<%= image_url 'social_media_budgets_materials_2018.png' %>" />
+<meta property="og:description"   content="Difunde los proyectos de los presupuestos participativos 2018 de Madrid que has planteado o los que quieras que vote la gente." />
+<!-- Twitter -->
+<meta name="twitter:card"          content="summary" />
+<meta name="twitter:site"          content="@decideMadrid" />
+<meta name="twitter:title"         content="Materiales para difundir los presupuestos participativos 2018" />
+<meta name="twitter:image"         content="<%= image_url 'social_media_budgets_materials_2018.png' %>" />
+<meta name="twitter:description"   content="Difunde los proyectos de los presupuestos participativos 2018 de Madrid que has planteado o los que quieras que vote la gente." />
+<% end %>
+
+<div class="budgets-materials-2018">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <%= back_link_to budgets_welcome_path %>
+        <br>
+        <div class="district-box">
+          <h1>Materiales de difusión de los<br> presupuestos participativos 2018</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-9 column">
+      <p class="budget-lead"><strong>Difunde los proyectos de los <%= link_to "presupuestos participativos 2018", budgets_welcome_path %> de Madrid que has planteado o los que quieras que vote la gente.</strong></p>
+      <p>En esta página te facilitamos el material gráfico de la campaña para que puedas pedir el voto para proyectos para toda la ciudad y/o los distritos que han pasado a la final.</p>
+      <ul class="no-district">
+        <li><%= link_to 'Cartel de la campaña "100 millones dan para mucho"', "/system/budgets/2018/cartel_100_millones_dan_para_mucho.pdf", target: "_blank" %>
+        <li><%= link_to "Imagen genérica para Twitter", "/system/budgets//2018/twitter_imagen_generica.png", target: "_blank" %>
+        <li><%= link_to "GIF genérico para Twitter", "/system/budgets/2018/twitter_imagen_animada.gif", target: "_blank" %>
+        <li><%= link_to "Imagen para Facebook genérica", "/system/budgets/2018/facebook_imagen_generica.png", target: "_blank" %>
+        <li><%= link_to "Vídeo genérico para Facebook", "/system/budgets/2018/facebook_imagen_animada.mp4", target: "_blank" %>
+      </ul>
+    </div>
+  </div>
+
+  <% districts = [
+    ["Arganzuela", "arganzuela", "arganzuela", "27",  "44", "669"],
+    ["Barajas", "barajas", "barajas", "27",  "43", "788"],
+    ["Carabanchel", "carabanchel", "carabanchel", "28",  "43", "530"],
+    ["Centro", "centro", "centro", "27",  "42", "767"],
+    ["Chamartín", "chamartin", "chamartin", "27",  "63", "669"],
+    ["Chamberí" , "chamberi", "chamberi", "28", "42", "722"],
+    ["Ciudad Lineal", "ciudad-lineal", "ciudad_lineal", "27", "42", "767"],
+    ["Fuencarral-El Pardo", "fuencarral-pardo", "fuencarral_el_pardo", "28", "44", "801"],
+    ["Hortaleza", "hortaleza", "hortaleza", "27", "86", "583"],
+    ["Latina", "latina", "latina", "27", "45", "774"],
+    ["Moncloa-Aravaca", "moncloa-aravaca", "moncloa_aravaca", "27", "80", "896"],
+    ["Moratalaz", "moratalaz", "moratalaz", "27", "108", "780"],
+    ["Puente de Vallecas", "puente-vallecas", "puente_de_vallecas", "27", "103", "698"],
+    ["Retiro", "retiro", "retiro", "27", "42", "693"],
+    ["Salamanca", "salamanca", "salamanca", "27", "43", "762"],
+    ["San Blas-Canillejas", "san-blas-canillejas", "san_blas_canillejas", "27", "74", "804"],
+    ["Tetuán", "tetuan", "tetuan", "26", "42", "789"],
+    ["Usera", "usera", "usera", "28", "44", "853"],
+    ["Vicálvaro", "vicalvaro", "vicalvaro", "28", "96", "849"],
+    ["Villa de Vallecas", "villa-vallecas", "villa_de_vallecas", "26", "64", "755"],
+    ["Villaverde",  "villaverde", "villaverde", "26", "75", "703"]] %>
+
+  <div class="row">
+    <%# districts.each do |name, slug, filename, size_1, size_2, size_3| %>
+    <% districts.each do |name, slug, filename,  size_1| %>
+      <div class="small-12 medium-6 large-4 column district-box">
+        <div class="district-card">
+          <figure>
+            <%= image_tag "budgets_materials_2017/title.png", alt: "" %>
+            <figcaption>
+              <span class="background-<%= slug %>">DISTRITO</span><br>
+              <h3 class="color-<%= slug %>"><%= name %></h3>
+            </figcaption>
+          </figure>
+          <ul class="no-bullet">
+            <li>
+              <%= link_to "/system/budgets/2018/cartel_#{filename}.pdf", target: "_blank",
+                          title: "Descargar cartel de #{name} PDF - #{size_1}Kb (se abre en ventana nueva)" do %>
+                <%= image_tag "budgets_materials_2017/icon_poster.png", alt: "" %><span>Cartel de <%= name %></span>
+              <% end %>
+            </li>
+            <!-- <li>
+              <%# link_to "/docs/budgets_materials_2017/diptico_#{slug}.pdf", target: "_blank",
+                          title: "Descargar díptico informativo de #{name} PDF - #{size_2}Kb (se abre en ventana nueva)" do %>
+                <%# image_tag "budgets_materials_2017/icon_diptico.png", alt: "" %><span>Díptico informativo de <%#= name %></span>
+              <%# end %>
+              </li>
+            <li>
+              <%# link_to "/docs/budgets_materials_2017/imagen_#{slug}.jpg", target: "_blank",
+                          title: "Descargar imagen para redes sociales de #{name} JPG - #{size_3}Kb (se abre en ventana nueva)" do %>
+                <%# image_tag "budgets_materials_2017/icon_image.png", alt: "" %><span>Imagen para redes sociales de <%#= name %></span>
+              <%# end %>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

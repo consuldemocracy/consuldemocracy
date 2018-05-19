@@ -1,0 +1,59 @@
+<% provide :title, "Materiales para difundir los presupuestos participativos 2018" %>
+<% provide :meta_description, "Difunde los proyectos de los presupuestos participativos 2018 de Madrid que has planteado o los que quieras que vote la gente." %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budgets_materials_2018_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+<!-- Facebook OG -->
+<meta property="og:url"           content="<%= budgets_materials_2018_url %>" />
+<meta property="og:title"         content="Materiales para difundir los presupuestos participativos 2018" />
+<meta property="og:image"         content="<%= image_url 'social_media_budgets_materials_2018.png' %>" />
+<meta property="og:description"   content="Difunde los proyectos de los presupuestos participativos 2018 de Madrid que has planteado o los que quieras que vote la gente." />
+<!-- Twitter -->
+<meta name="twitter:card"          content="summary" />
+<meta name="twitter:site"          content="@decideMadrid" />
+<meta name="twitter:title"         content="Materiales para difundir los presupuestos participativos 2018" />
+<meta name="twitter:image"         content="<%= image_url 'social_media_budgets_materials_2018.png' %>" />
+<meta name="twitter:description"   content="Difunde los proyectos de los presupuestos participativos 2018 de Madrid que has planteado o los que quieras que vote la gente." />
+<% end %>
+
+<div class="budgets-materials-2018">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <%= back_link_to budgets_welcome_path %>
+        <br>
+        <div class="district-box">
+          <h1>Cómo votar en los<br> presupuestos participativos 2018</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-9 column">
+      <p>La votación final de los <strong>presupuestos participativos 2018</strong> se lleva a cabo entre el 15 de mayo y el 30 de junio en <%= link_to "Decide Madrid", root_path %>. Es la fase decisiva del proceso por el que la ciudadanía propone y decide el destino de 100 millones de euros del presupuesto municipal.</p>
+
+      <p>Es ahora cuando los vecinos y vecinas de Madrid deciden qué proyectos deberá realizar el ayuntamiento a partir de 2019. En la primera fase de los presupuestos participativos 2018, personas y colectivos presentaron 3.332 proyectos, de los cuales alrededor de 700 han llegado a la final tras la fase de evaluación técnica y tasación.</p>
+
+      <p>En esta página te explicamos cómo participar en la votación final:</p>
+
+      <ul>
+        <li><strong>Entra en Decide Madrid</strong>: las personas empadronadas en Madrid mayores de 16 años pueden inscribirse en Decide Madrid y votar proyectos en el apartado de <%= link_to "Presupuestos Participativos", budgets_path %>.
+        <br>
+        Cada persona puede seleccionar proyectos para toda la ciudad, hasta cubrir los 30 millones destinados a esta categoría, y para un distrito de su elección, en el que no es necesario estar empadronado. Hasta el final de la votación se puede modificar la selección de proyectos.
+        </li>
+        <li><strong>Acude a cualquiera de las 26 Oficinas de Atención a la Ciudadanía</strong> con tu DNI, donde el personal de Línea Madrid te puede ayudar a votar en Decide Madrid.</li>
+        <li><strong>Acude a la votación presencial el fin de semana del 23 y 24 de junio</strong>, en horario de 11 a 19 horas, a alguna de las urnas que se colocarán en puntos clave de los 21 distritos. Es necesario presentar el DNI.</li>
+      </ul>
+
+      <p><strong>Recuerda</strong>: tú decides que proyectos ciudadanos llevará a cabo el Ayuntamiento de Madrid a partir del próximo año con 100 millones de euros. Si quieres ayudar a difundir proyectos, puedes acceder a los <%= link_to "materiales de la campaña de presupuestos participativos 2018", budgets_materials_2018_path %>.</p>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <div class="float-right">
+        <%= render '/shared/print' %>
+      </div>
+    </div>
+  </div>
+</div>
