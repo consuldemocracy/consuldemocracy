@@ -2,3 +2,10 @@ pt-BR:
   layouts:
     header:
       logo: MÁS DEMOCRACIA EN EUROPA logotipo
+  account:
+    show:
+      email_on_comment_label: Notificar-me por email quando alguém comentar sobre
+        minhas propostas
+  welcome:
+    welcome:
+      user_permission_proposal_participate: Participar nos propostas

@@ -2,3 +2,9 @@ nl:
   layouts:
     header:
       logo: MÁS DEMOCRACIA EN EUROPA logo
+  account:
+    show:
+      email_on_comment_label: Stuur me een email als iemand op mijn voorstellen reageert
+  welcome:
+    welcome:
+      user_permission_proposal_participate: Neem deel aan voorstellen
