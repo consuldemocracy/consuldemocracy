@@ -5,3 +5,6 @@ val:
   welcome:
     welcome:
       user_permission_proposal_participate: Participar en propostes
+  layouts:
+    header:
+      logo: Logo de MÁS DEMOCRACIA EN EUROPA

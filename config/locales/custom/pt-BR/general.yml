@@ -6,3 +6,6 @@ pt-BR:
   welcome:
     welcome:
       user_permission_proposal_participate: Participar nos propostas
+  layouts:
+    header:
+      logo: MÁS DEMOCRACIA EN EUROPA logotipo
