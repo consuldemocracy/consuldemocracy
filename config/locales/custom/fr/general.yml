@@ -6,3 +6,5 @@ fr:
     footer:
       participation_text: Participe à des sujets d'intérêt pour la Communauté économique européenne.
       copyright: MasDemocraciaEnEuropa, %{year}
+  social:
+    linkedin: "%{org} LinkedIn"

@@ -90,6 +90,17 @@
               <% end %>
             </li>
           <% end %>
+          <% if setting['linkedin_handle'] %>
+            <li class="inline-block">
+              <%= link_to "https://www.linkedin.com/company/#{setting['linkedin_handle']}", target: "_blank",
+                          title: t("shared.go_to_page") + t("social.linkedin", org: setting['org_name']) + t('shared.target_blank_html') do %>
+                          <span class="show-for-sr"><%= t("social.linkedin", org: setting['org_name']) %></span>
+                          <span class="icon-linkedin" aria-hidden="true">
+                            <%= image_tag 'linkedin-icon' %>
+                          </span>
+              <% end %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
