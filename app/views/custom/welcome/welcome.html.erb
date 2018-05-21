@@ -40,17 +40,19 @@
     </p>
 
   <% end %>
-  
+
   <% if current_user.level_three_verified? %>
-    <p class="already-verified">
-      <span class="icon-check"></span>
-      <%= t("account.show.verified_account") %>
-    </p>
+    <ul>
+      <li>
+        <span class="icon-check"></span>
+        <%= t("account.show.verified_account") %>
+      </li>
+    </ul>
   <% else %>
     <%= link_to(t("welcome.welcome.user_permission_verify_my_account"), verification_path, class: "button success radius expand") %>
   <% end %>
 
-  <p class="text-center">
-    <%= link_to t("welcome.welcome.go_to_index"), proposals_path %>
+  <p>
+    <%= link_to t("verification.letter.edit.see_all"), proposals_path, class: "button success radius expand" %>
   </p>
 </div>
