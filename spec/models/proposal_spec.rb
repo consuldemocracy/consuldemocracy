@@ -895,6 +895,19 @@ describe Proposal do
       expect(proposal.users_to_notify).to eq([voter_and_follower])
     end
 
+    it "returns voters and followers except the proposal author" do
+      author = create(:user, :level_two)
+      proposal = create(:proposal, author: author)
+      voter_and_follower = create(:user, :level_two)
+
+      create(:follow, user: author, followable: proposal)
+      create(:follow, user: voter_and_follower, followable: proposal)
+      create(:vote, voter: author, votable: proposal)
+      create(:vote, voter: voter_and_follower, votable: proposal)
+
+      expect(proposal.users_to_notify).to eq([voter_and_follower])
+    end
+
   end
 
   describe "#recommendations" do
