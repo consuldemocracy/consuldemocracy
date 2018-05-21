@@ -1,20 +1,20 @@
-<% provide :title, "Materiales para difundir los presupuestos participativos 2018" %>
-<% provide :meta_description, "Difunde los proyectos de los presupuestos participativos 2018 de Madrid que has planteado o los que quieras que vote la gente." %>
+<% provide :title, "Cómo votar los presupuestos participativos de Madrid" %>
+<% provide :meta_description, "Vota en los presupuestos participativos de Madrid 2018. En esta página te explicamos cómo votar en decidemadrid.es y presencialmente." %>
 <% content_for :canonical do %>
-  <%= render "shared/canonical", href: budgets_materials_2018_url %>
+  <%= render "shared/canonical", href: budgets_voting_2018_url %>
 <% end %>
 <% provide :social_media_meta_tags do %>
 <!-- Facebook OG -->
-<meta property="og:url"           content="<%= budgets_materials_2018_url %>" />
-<meta property="og:title"         content="Materiales para difundir los presupuestos participativos 2018" />
+<meta property="og:url"           content="<%= budgets_voting_2018_url %>" />
+<meta property="og:title"         content="Cómo votar los presupuestos participativos de Madrid" />
 <meta property="og:image"         content="<%= image_url 'social_media_budgets_materials_2018.png' %>" />
-<meta property="og:description"   content="Difunde los proyectos de los presupuestos participativos 2018 de Madrid que has planteado o los que quieras que vote la gente." />
+<meta property="og:description"   content="Vota en los presupuestos participativos de Madrid 2018. En esta página te explicamos cómo votar en decidemadrid.es y presencialmente." />
 <!-- Twitter -->
 <meta name="twitter:card"          content="summary" />
 <meta name="twitter:site"          content="@decideMadrid" />
-<meta name="twitter:title"         content="Materiales para difundir los presupuestos participativos 2018" />
+<meta name="twitter:title"         content="Cómo votar los presupuestos participativos de Madrid" />
 <meta name="twitter:image"         content="<%= image_url 'social_media_budgets_materials_2018.png' %>" />
-<meta name="twitter:description"   content="Difunde los proyectos de los presupuestos participativos 2018 de Madrid que has planteado o los que quieras que vote la gente." />
+<meta name="twitter:description"   content="Vota en los presupuestos participativos de Madrid 2018. En esta página te explicamos cómo votar en decidemadrid.es y presencialmente." />
 <% end %>
 
 <div class="budgets-materials-2018">
@@ -45,6 +45,15 @@
         </li>
         <li><strong>Acude a cualquiera de las 26 Oficinas de Atención a la Ciudadanía</strong> con tu DNI, donde el personal de Línea Madrid te puede ayudar a votar en Decide Madrid.</li>
         <li><strong>Acude a la votación presencial el fin de semana del 23 y 24 de junio</strong>, en horario de 11 a 19 horas, a alguna de las urnas que se colocarán en puntos clave de los 21 distritos. Es necesario presentar el DNI.</li>
+      </ul>
+
+      <p><strong>¿No puedes entrar en Decide Madrid?</strong></p>
+
+      <ul>
+        <li>Si no te funciona la verificación de tu cuenta, consulta <%= link_to "estas instrucciones de ayuda", faq_path(anchor: "1"), target: "_blank" %>.</li>
+        <li>Si se te ha olvidado tu contraseña para entrar en Decide Madrid, <%= link_to "comprueba estos pasos", faq_path(anchor: "8"), target: "_blank" %>.</li>
+        <li>Si te sale un mensaje de que tu DNI ya está en uso, también tenemos unas <%= link_to "instrucciones de ayuda", faq_path(anchor: "11"), target: "_blank" %>.</li>
+        <li>Si te ocurre otra incidencia que no está entre las anteriores, busca en la página de <%= link_to "soluciones a problemas técnicos", faq_path, target: "_blank" %> de Decide Madrid.</li>
       </ul>
 
       <p><strong>Recuerda</strong>: tú decides que proyectos ciudadanos llevará a cabo el Ayuntamiento de Madrid a partir del próximo año con 100 millones de euros. Si quieres ayudar a difundir proyectos, puedes acceder a los <%= link_to "materiales de la campaña de presupuestos participativos 2018", budgets_materials_2018_path %>.</p>
