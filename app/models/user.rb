@@ -72,7 +72,6 @@ class User < ActiveRecord::Base
   end
 
   before_validation :clean_document_number
-  before_create :verified_by_default
 
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
@@ -248,7 +247,8 @@ class User < ActiveRecord::Base
   end
 
   def show_welcome_screen?
-    sign_in_count == 1 && unverified? && !organization && !administrator?
+    verification = Setting["feature.user.skip_verification"].present? ? true : unverified?
+    sign_in_count == 1 && verification && !organization && !administrator?
   end
 
   def password_required?
@@ -341,10 +341,6 @@ class User < ActiveRecord::Base
         attributes: :username,
         maximum: User.username_max_length)
       validator.validate(self)
-    end
-
-    def verified_by_default
-      self.verified_at = Date.current
     end
 
 end
