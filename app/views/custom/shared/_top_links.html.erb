@@ -1,0 +1,13 @@
+<ul class="no-bullet external-links">
+  <% if setting['blog_url'] %>
+    <li>
+      <%= link_to t("layouts.header.external_link_blog"),
+                  setting['blog_url'],
+                  target: "_blank",
+                  rel: "nofollow",
+                  title: t("shared.go_to_page") + t("layouts.header.external_link_blog") + t('shared.target_blank_html') %>
+    </li>
+  <% end %>
+
+  <%= raw content_block("top_links", I18n.locale) %>
+</ul>
