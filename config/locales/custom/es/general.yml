@@ -2,3 +2,7 @@ es:
   layouts:
     header:
       logo: Logo de MÁS DEMOCRACIA EN EUROPA
+      open_gov: Más Democracia En Europa
+    footer:
+      participation_text: Participa en temas de interés para la Comunidad Económica Europea
+      copyright: MasDemocraciaEnEuropa, %{year}

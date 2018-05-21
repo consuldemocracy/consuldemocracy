@@ -2,3 +2,7 @@ nl:
   layouts:
     header:
       logo: MÁS DEMOCRACIA EN EUROPA logo
+      open_gov: Más Democracia En Europa
+    footer:
+      participation_text: Deelnemen aan onderwerpen die van belang zijn voor de Europese Economische Gemeenschap
+      copyright: MasDemocraciaEnEuropa, %{year}
