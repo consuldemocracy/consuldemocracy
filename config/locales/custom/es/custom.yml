@@ -270,21 +270,21 @@ es:
         text: "¡Gracias por votar!"
         button: "Ver proyectos"
     budgets:
-      label: "Votación presupuestos participativos"
-      title: "Cómo votar en los presupuestos participativos 2018"
+      label: "Votación participativos"
+      title: "Cómo votar los proyectos finalistas"
       text: "Te explicamos cómo votar los proyectos ciudadanos que quieres que haga el ayuntamiento en tu distrito y en toda la ciudad."
       link: "Leer más"
       alt: "Ciudadanos votando en una de las urnas en las calles de Madrid"
     budgets_materials:
-      label: "Proyectos finalistas"
-      title: "Difunde tus proyectos de presupuestos participativos"
+      label: "Web de descargas"
+      title: "Descarga materiales para difundir los proyectos"
       text: "Si quieres difundir proyectos finalistas, ya sean tuyos o de tus vecinos, descárgate los materiales de la campaña del Ayuntamiento."
       link: "Ver materiales"
       alt: "Imagen de la nueva campaña 100 millones dan para mucho"
     open_square:
       label: "Plaza Abierta"
       title: "Ven a conocer los proyectos de participativos"
-      text: "El sábado 9 de junio, de 11:30 a 13:30 h, acércate a la plaza de Jacinto Benavente. Proponentes de proyectos explicarán en qué consisten sus propuestas."
+      text: "El sábado 9 de junio, de 11:30 a 13:30 h, acércate a la plaza de Tirso de Molina. Proponentes de proyectos explicarán en qué consisten sus propuestas."
       link: "Leer más"
       alt: "Ciudadanos hablando en una plaza de Madrid"
   budgets_banner:
