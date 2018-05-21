@@ -1,10 +1,14 @@
 es:
-  layouts:
-    header:
-      logo: Logo de MÁS DEMOCRACIA EN EUROPA
   account:
     show:
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas
   welcome:
     welcome:
       user_permission_proposal_participate: Participar en propuestas
+  layouts:
+    header:
+      logo: Logo de MÁS DEMOCRACIA EN EUROPA
+      open_gov: Más Democracia En Europa
+    footer:
+      participation_text: Participa en temas de interés para la Comunidad Económica Europea
+      copyright: MasDemocraciaEnEuropa, %{year}

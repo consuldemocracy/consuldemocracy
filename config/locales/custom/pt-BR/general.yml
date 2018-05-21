@@ -1,7 +1,4 @@
 pt-BR:
-  layouts:
-    header:
-      logo: MÁS DEMOCRACIA EN EUROPA logotipo
   account:
     show:
       email_on_comment_label: Notificar-me por email quando alguém comentar sobre
@@ -9,3 +6,11 @@ pt-BR:
   welcome:
     welcome:
       user_permission_proposal_participate: Participar nos propostas
+  layouts:
+    header:
+      logo: MÁS DEMOCRACIA EN EUROPA logo
+      open_gov: Más Democracia En Europa
+    footer:
+      participation_text: Participar de temas de interesse para a Comunidade Econômica Européia
+      copyright: MasDemocraciaEnEuropa, %{year}
+      logo: MÁS DEMOCRACIA EN EUROPA logotipo
