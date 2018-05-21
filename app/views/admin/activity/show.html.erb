@@ -33,12 +33,16 @@
               <%= activity.actionable.username %> (<%= activity.actionable.email %>)
             <% when "Comment" %>
               <%= activity.actionable.body %>
+            <% when "Newsletter" %>
+              <strong><%= activity.actionable.subject %></strong>
+            <% when "ProposalNotification" %>
+              <strong><%= activity.actionable.title %></strong>
+              <br>
+              <%= activity.actionable.body %>
             <% else %>
               <strong><%= activity.actionable.title %></strong>
               <br>
-              <div class="proposal-description">
-                <%= activity.actionable.description %>
-              </div>
+              <%= activity.actionable.description %>
             <% end %>
           <td class="align-top">
             <%= activity.user.name %> (<%= activity.user.email %>)
