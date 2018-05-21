@@ -13,4 +13,5 @@ pt-BR:
     footer:
       participation_text: Participar de temas de interesse para a Comunidade Econômica Européia
       copyright: MasDemocraciaEnEuropa, %{year}
-      logo: MÁS DEMOCRACIA EN EUROPA logotipo
+  social:
+    linkedin: "%{org} LinkedIn"

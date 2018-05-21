@@ -12,3 +12,5 @@ nl:
     footer:
       participation_text: Deelnemen aan onderwerpen die van belang zijn voor de Europese Economische Gemeenschap
       copyright: MasDemocraciaEnEuropa, %{year}
+  social:
+    linkedin: "%{org} LinkedIn"
