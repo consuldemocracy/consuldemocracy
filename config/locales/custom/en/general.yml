@@ -1,0 +1,7 @@
+en:
+  account:
+    show:
+      email_on_comment_label: Notify me by email when someone comments on my proposals
+  welcome:
+    welcome:
+      user_permission_proposal_participate: Participate on proposals
