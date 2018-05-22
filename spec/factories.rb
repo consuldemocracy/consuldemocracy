@@ -962,4 +962,22 @@ LOREM_IPSUM
     sequence(:body)    { |n| "Body #{n}" }
   end
 
+  factory :widget_card, class: 'Widget::Card' do
+    sequence(:title)       { |n| "Title #{n}" }
+    sequence(:description) { |n| "Description #{n}" }
+    sequence(:link_text)   { |n| "Link text #{n}" }
+    sequence(:link_url)    { |n| "Link url #{n}" }
+
+    trait :header do
+      header true
+      sequence(:button_text)   { |n| "Button text #{n}" }
+      sequence(:button_url)    { |n| "Button url #{n}" }
+      sequence(:alignment)   { |n| "background" }
+    end
+
+    after :create do |widget_card|
+      create(:image, imageable: widget_card)
+    end
+  end
+
 end

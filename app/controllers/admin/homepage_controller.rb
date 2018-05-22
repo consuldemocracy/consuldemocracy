@@ -1,6 +1,7 @@
 class Admin::HomepageController < Admin::BaseController
 
   def show
+    load_cards
   end
 
   private
@@ -9,4 +10,9 @@ class Admin::HomepageController < Admin::BaseController
     settings = /feature.homepage.widgets/
     @settings = Setting.select {|setting| setting.key =~ /#{settings}/ }
   end
+
+  def load_cards
+    @cards = ::Widget::Card.body
+  end
+
 end

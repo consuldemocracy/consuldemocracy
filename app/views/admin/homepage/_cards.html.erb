@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <th>title</th>
+    <th>text</th>
+    <th>link text</th>
+    <th>link</th>
+    <th>image</th>
+    <th>actions</th>
+  </tr>
+  <% cards.each do |card| %>
+    <%= render "card", card: card %>
+  <% end %>
+</table>

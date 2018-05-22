@@ -1,6 +1,19 @@
 <h1>Homepage</h1>
 
 <p>The active modules appear in the homepage in the same order as here.</p>
+<h2>Cards</h2>
+
+
+<div>
+  <%= link_to "Create card", new_admin_widget_card_path %>
+</div>
+
+<div id="cards">
+  <% if @cards.present? %>
+    <%= render "cards", cards: @cards %>
+  <% end %>
+</div>
+
 <% @settings.each do |setting| %>
   
   <div>

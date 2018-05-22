@@ -182,4 +182,7 @@ namespace :admin do
 
   resource :homepage, controller: :homepage
 
+  namespace :widget do
+    resources :cards
+  end
 end

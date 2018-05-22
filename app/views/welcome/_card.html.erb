@@ -1,0 +1,11 @@
+<div id="<%= dom_id(card) %>" class="card">
+  <%= card.title %>
+  <%= card.description %>
+  <%= link_to card.link_text, card.link_url %>
+
+  <% if card.image.present? %>
+    <%= image_tag(card.image_url(:large),
+                  class: "margin",
+                  alt: card.image.title)  %>
+  <% end %>
+</div>

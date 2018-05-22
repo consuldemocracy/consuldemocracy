@@ -1,0 +1,11 @@
+<%= form_for [:admin, @card] do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :description %>
+  <%= f.text_field :link_text %>
+  <%= f.text_field :link_url %>
+  <%= f.hidden_field :header, value: @card.header? %>
+  <div class="images small-12 column">
+    <%= render 'images/nested_image', imageable: @card, f: f %>
+  </div>
+  <%= f.submit %>
+<% end %>

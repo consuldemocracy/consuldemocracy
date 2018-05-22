@@ -1,0 +1,22 @@
+<tr id="<%= dom_id(card) %>" class="card">
+  <td><%= card.title %></td>
+  <td><%= card.description %></td>
+  <td><%= card.link_text %></td>
+  <td><%= card.link_url %></td>
+  
+  <!-- remove conditional once specs have image validations -->
+  <td><% if card.image.present? %>
+        <%= image_tag(card.image_url(:thumb), 
+                      class: "margin", 
+                      alt: card.image.title)  %>
+      <% end %></td>
+  <td>
+    <div>
+      <%= link_to "Edit", edit_admin_widget_card_path(card) %>
+    <div>
+      <%= link_to "Remove", admin_widget_card_path(card), 
+                            method: :delete,
+                            data: { confirm: t('admin.actions.confirm') } %>
+    <div>
+  </td>
+</tr>

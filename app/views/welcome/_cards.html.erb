@@ -1,0 +1,5 @@
+<h1>Cards</h1>
+
+<% @cards.all.each do |card| %>
+  <%= render "card", card: card %>
+<% end %>
