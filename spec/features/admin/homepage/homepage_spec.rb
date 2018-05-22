@@ -7,6 +7,9 @@ feature 'Homepage' do
     login_as(admin)
 
   end
+  scenario "Header" do
+  end
+
   scenario "Cards" do
     card1 = create(:widget_card, title: "Card text",
                                  description: "Card description",

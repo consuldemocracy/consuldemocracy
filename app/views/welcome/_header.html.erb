@@ -1,0 +1,13 @@
+<% if header.present? %>
+  <%= header.title %>
+  <%= header.description %>
+  
+  <% if header.image.present? %>
+    <%= image_tag(header.image_url(:large),
+                  class: "margin",
+                  alt: header.image.title)  %>
+  <% end %>
+  
+  <%= link_to header.button_text, header.button_url %>
+  <%= header.alignment %>
+<% end %>

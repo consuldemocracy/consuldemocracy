@@ -5,6 +5,7 @@ class WelcomeController < ApplicationController
   layout "devise", only: [:welcome, :verification]
 
   def index
+    @header = Widget::Card.header.first
     @cards = Widget::Card.body
   end
 
