@@ -113,6 +113,7 @@
         <% if params[:retired].blank? %>
           <%= render 'categories' %>
           <%= render "shared/tag_cloud", taggable: 'proposal' %>
+          <%= render 'geozones' if setting[:org_name] != 'MASDEMOCRACIAEUROPA' %>
           <%= render 'popular' if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
         <% end %>
         <%= render 'retired' %>

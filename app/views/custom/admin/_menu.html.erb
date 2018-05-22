@@ -182,6 +182,15 @@
       </ul>
     </li>
 
+    <% if setting[:org_name] != 'MASDEMOCRACIAENEUROPA' %>
+      <li class="section-title <%= "active" if controller_name == "geozones" %>">
+        <%= link_to admin_geozones_path do %>
+          <span class="icon-map-marker"></span>
+          <strong><%= t('admin.menu.geozones') %></strong>
+        <% end %>
+      </li>
+    <% end %>
+
     <% if feature?(:signature_sheets) %>
       <li class="section-title <%= "active" if controller_name == "signature_sheets" %>">
         <%= link_to admin_signature_sheets_path do %>
