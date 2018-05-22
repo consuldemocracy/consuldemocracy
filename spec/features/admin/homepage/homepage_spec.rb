@@ -15,6 +15,9 @@ feature 'Homepage' do
   let(:proposals_setting)    { Setting.where(key: 'feature.homepage.widgets.feeds.proposals').first }
   let(:debates_setting)      { Setting.where(key: 'feature.homepage.widgets.feeds.debates').first }
   let(:processes_setting)    { Setting.where(key: 'feature.homepage.widgets.feeds.processes').first }
+  let(:user_recommendations) { Setting.where(key: 'feature.user.recommendations').first }
+  let(:user)                 { create(:user) }
+
   scenario "Header" do
   end
 
@@ -101,3 +104,23 @@ feature 'Homepage' do
       expect(page).to have_css("img[alt='#{card2.image.title}']")
     end
   end
+
+  scenario "Recomendations" do
+    proposal1 = create(:proposal, tag_list: "Sport")
+    proposal2 = create(:proposal, tag_list: "Sport")
+    create(:follow, followable: proposal1, user: user)
+
+    visit admin_homepage_path
+    within("#setting_#{user_recommendations.id}") do
+      click_button "Enable"
+    end
+
+    expect(page).to have_content "Value updated"
+
+    login_as(user)
+    visit root_path
+
+    expect(page).to have_content("Recommendations that may interest you")
+  end
+
+end
