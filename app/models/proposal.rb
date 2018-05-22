@@ -227,7 +227,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def users_to_notify
-    (voters + followers).uniq
+    (voters + followers).uniq - [author]
   end
 
   def self.proposals_orders(user)
