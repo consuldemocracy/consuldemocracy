@@ -1,0 +1,11 @@
+<h1>Homepage</h1>
+
+<p>The active modules appear in the homepage in the same order as here.</p>
+<% @settings.each do |setting| %>
+  
+  <div>
+    <strong><%= t("settings.#{setting.key}") %></strong>
+  </div>
+
+  <%= render "setting", setting: setting %>
+<% end %>

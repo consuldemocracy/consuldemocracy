@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "Home" do
 
-  feature "For not logged users" do
+  context "For not logged users" do
 
     scenario 'Welcome message' do
       visit root_path
@@ -20,7 +20,7 @@ feature "Home" do
 
   end
 
-  feature "For signed in users" do
+  context "For signed in users" do
 
     feature "Recommended" do
 

@@ -179,4 +179,7 @@ namespace :admin do
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
   end
+
+  resource :homepage, controller: :homepage
+
 end
