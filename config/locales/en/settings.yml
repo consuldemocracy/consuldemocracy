@@ -42,6 +42,7 @@ en:
       legislation: Legislation
       user:
         recommendations: Recommendeds
+        skip_verification: Skip user verification
       community: Community on proposals and investments
       map: Proposals and budget investments geolocation
       allow_images: Allow upload and show images

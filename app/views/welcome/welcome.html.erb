@@ -7,8 +7,22 @@
   <ul>
     <li><span class="icon-check"></span>&nbsp;<%= t("welcome.welcome.user_permission_debates") %></li>
     <li><span class="icon-check"></span>&nbsp;<%= t("welcome.welcome.user_permission_proposal") %></li>
-    <li><span class="icon-x"></span>&nbsp;<%= t("welcome.welcome.user_permission_support_proposal") %></li>
-    <li><span class="icon-x"></span>&nbsp;<%= t("welcome.welcome.user_permission_votes") %></li>
+    <li>
+      <% if current_user.level_two_or_three_verified? %>
+        <span class="icon-check"></span>
+      <% else %>
+        <span class="icon-x"></span>
+      <% end %>
+      <%= t("welcome.welcome.user_permission_support_proposal") %>
+    </li>
+    <li>
+      <% if current_user.level_three_verified? %>
+        <span class="icon-check"></span>
+      <% else %>
+        <span class="icon-x"></span>
+      <% end %>
+      <%= t("welcome.welcome.user_permission_votes") %>
+    </li>
   </ul>
 
   <p>
@@ -19,7 +33,14 @@
     <%= t("welcome.welcome.user_permission_verify") %>
   </p>
 
-  <%= link_to(t("welcome.welcome.user_permission_verify_my_account"), verification_path, class: "button success radius expand") %>
+  <% if current_user.level_three_verified? %>
+    <p class="already-verified">
+      <span class="icon-check"></span>
+      <%= t("account.show.verified_account") %>
+    </p>
+  <% else %>
+    <%= link_to(t("welcome.welcome.user_permission_verify_my_account"), verification_path, class: "button success radius expand") %>
+  <% end %>
 
   <p class="text-center">
     <%= link_to t("welcome.welcome.go_to_index"), proposals_path %>
