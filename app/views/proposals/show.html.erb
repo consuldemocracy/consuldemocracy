@@ -114,6 +114,8 @@
 
         <%= render 'shared/tags', taggable: @proposal %>
 
+        <%= render 'shared/geozone', geozonable: @proposal %>
+        
         <%= render 'relationable/related_content', relationable: @proposal %>
 
         <div class="js-moderator-proposal-actions margin">
