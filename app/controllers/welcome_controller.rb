@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
 
   def index
     @header = Widget::Card.header.first
+    @feeds = Widget::Feed.active
     @cards = Widget::Card.body
   end
 

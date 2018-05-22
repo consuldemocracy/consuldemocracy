@@ -1,0 +1,16 @@
+<h1>Feeds</h1>
+
+<% @feeds.each do |feed| %>
+  
+  <div>
+    <strong>Most active <%= feed.kind %></strong>
+  </div>
+
+  <% feed.items.each do |item| %>    
+    <div class="<%= item.class.to_s.parameterize('_') %>">
+      <%= item.title %>
+    </div>
+    <br/>
+  <% end %>
+  
+<% end %>

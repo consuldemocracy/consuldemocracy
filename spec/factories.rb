@@ -818,6 +818,11 @@ FactoryBot.define do
       published false
     end
 
+    trait :open do
+      start_date 1.week.ago
+      end_date   1.week.from_now
+    end
+
   end
 
   factory :legislation_draft_version, class: 'Legislation::DraftVersion' do
@@ -978,6 +983,9 @@ LOREM_IPSUM
     after :create do |widget_card|
       create(:image, imageable: widget_card)
     end
+  end
+
+  factory :widget_feed, class: 'Widget::Feed' do
   end
 
 end

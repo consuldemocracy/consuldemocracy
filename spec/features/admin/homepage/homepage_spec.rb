@@ -6,8 +6,70 @@ feature 'Homepage' do
     admin = create(:administrator).user
     login_as(admin)
 
+    Setting['feature.homepage.widgets.feeds.proposals'] = false
+    Setting['feature.homepage.widgets.feeds.debates'] = false
+    Setting['feature.homepage.widgets.feeds.processes'] = false
+    Setting['feature.user.recommendations'] = false
   end
+
+  let(:proposals_setting)    { Setting.where(key: 'feature.homepage.widgets.feeds.proposals').first }
+  let(:debates_setting)      { Setting.where(key: 'feature.homepage.widgets.feeds.debates').first }
+  let(:processes_setting)    { Setting.where(key: 'feature.homepage.widgets.feeds.processes').first }
   scenario "Header" do
+  end
+
+  context "Feeds" do
+
+    scenario "Proposals" do
+      5.times { create(:proposal) }
+
+      visit admin_homepage_path
+      within("#setting_#{proposals_setting.id}") do
+        click_button "Enable"
+      end
+
+      expect(page).to have_content "Value updated"
+
+      visit root_path
+
+      expect(page).to have_content "Most active proposals"
+      expect(page).to have_css(".proposal", count: 3)
+    end
+
+    scenario "Debates" do
+      5.times { create(:debate) }
+
+      visit admin_homepage_path
+      within("#setting_#{debates_setting.id}") do
+        click_button "Enable"
+      end
+
+      expect(page).to have_content "Value updated"
+
+      visit root_path
+
+      expect(page).to have_content "Most active debates"
+      expect(page).to have_css(".debate", count: 3)
+    end
+
+    scenario "Processes" do
+      5.times { create(:legislation_process) }
+
+      visit admin_homepage_path
+      within("#setting_#{processes_setting.id}") do
+        click_button "Enable"
+      end
+
+      expect(page).to have_content "Value updated"
+
+      visit root_path
+
+      expect(page).to have_content "Most active processes"
+      expect(page).to have_css(".legislation_process", count: 3)
+    end
+
+    xscenario "Deactivate"
+
   end
 
   scenario "Cards" do

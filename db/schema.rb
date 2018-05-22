@@ -378,6 +378,9 @@ ActiveRecord::Schema.define(version: 20180519132715) do
 
   add_index "failed_census_calls", ["user_id"], name: "index_failed_census_calls_on_user_id", using: :btree
 
+  create_table "feeds", force: :cascade do |t|
+  end
+
   create_table "flags", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "flaggable_type"
@@ -1234,6 +1237,9 @@ ActiveRecord::Schema.define(version: 20180519132715) do
     t.string   "alignment"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "widget_feeds", force: :cascade do |t|
   end
 
   add_foreign_key "administrators", "users"
