@@ -58,7 +58,7 @@
       </div>
     <% end %>
 
-    <% if setting[:org_name] != 'MASDEMOCRACIAENEUROPA' %>
+    <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
       <div class="small-12 medium-6 column">
         <%= f.label :geozone_id,  t("proposals.form.geozone") %>
         <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
