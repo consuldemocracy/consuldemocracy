@@ -1,0 +1,16 @@
+fr:
+  account:
+    show:
+      email_on_comment_label: Me notifier par email quand quelqu'un commente mes propositions
+  welcome:
+    welcome:
+      user_permission_proposal_participate: Participez aux propositions
+  layouts:
+    header:
+      logo: MÁS DEMOCRACIA EN EUROPA logo
+      open_gov: Más Democracia En Europa
+    footer:
+      participation_text: Participe à des sujets d'intérêt pour la Communauté économique européenne.
+      copyright: MasDemocraciaEnEuropa, %{year}
+  social:
+    linkedin: "%{org} LinkedIn"

@@ -209,7 +209,8 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.proposals_orders(user)
-    orders = %w{hot_score confidence_score created_at relevance archival_date}
+    orders = %w{hot_score created_at relevance archival_date}
+    orders << "confidence_score" if Setting['org_name'] != "MASDEMOCRACIAEUROPA"
     orders << "recommendations" if user.present?
     orders
   end
