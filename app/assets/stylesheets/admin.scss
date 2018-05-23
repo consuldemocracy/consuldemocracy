@@ -706,12 +706,6 @@ $sidebar-active: #f4fcd0;
   }
 }
 
-.legislation-process-new {
-  @include breakpoint(medium) {
-    text-align: right;
-  }
-}
-
 // 08. CMS
 // --------------
 .cms-page-list {
