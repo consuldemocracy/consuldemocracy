@@ -76,13 +76,20 @@ es:
       description: Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero.
       open_source: software libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_title: Participación
       participation_text: Decide cómo debe ser la ciudad de Madrid que quieres.
+      open_data_title: Datos Abiertos
+      open_data_text: Todos los datos del Ayuntamiento son tuyos.
+      transparency_title: Transparencia
+      transparency_text: Obtén cualquier información sobre el Ayuntamiento de Madrid.
       transparency_url: http://transparencia.madrid.es
     header:
       logo: "Decide Madrid: portal de participación ciudadana del Ayuntamiento de Madrid."
+      external_link_opendata: Datos abiertos
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparencia
       external_link_transparency_url: http://transparencia.madrid.es
+      external_link_blog: Blog
       forums: "Foros Locales"
       help_translate: Ayúdanos a traducir
       help_translate_info: Cómo ayudar

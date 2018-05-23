@@ -67,8 +67,23 @@ en:
     footer:
       copyright: Ayuntamiento de Madrid, %{year}
       description: This portal uses the %{consul} which is %{open_source}. From Madrid out into the world.
+      participation_title: Participation
+      participation_text: Decide how to shape the Madrid you want to live in.
+      open_data_title: Open data
+      open_data_text: Every detail about the City Council is yours to access.
+      transparency_title: Transparency
+      transparency_text: Find out anything about the Madrid City Council.
+      transparency_url: http://transparencia.madrid.es
     header:
       logo: "Decide Madrid: portal of citizen participation of the City of Madrid."
+      external_link_opendata: Open data
+      external_link_opendata_url: http://datos.madrid.es
+      external_link_transparency: Transparencia
+      external_link_transparency_url: http://transparencia.madrid.es
+      external_link_blog: Blog
+      forums: "Local Forums"
+      help_translate: Help us translate
+      help_translate_info: How to help
   social:
     blog_link: "Blog"
     facebook_link: "Facebook"
