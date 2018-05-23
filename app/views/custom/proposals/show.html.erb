@@ -114,7 +114,7 @@
 
         <%= render 'shared/tags', taggable: @proposal %>
 
-        <%= render 'shared/geozone', geozonable: @proposal %>
+        <%= render 'shared/geozone', geozonable: @proposal if setting[:org_name] != 'MASDEMOCRACIAENEUROPA' %>
 
         <%= render 'relationable/related_content', relationable: @proposal %>
 
@@ -187,6 +187,7 @@
             <% end %>
           </div>
         <% end %>
+
         <%= render partial: 'shared/social_share', locals: {
           share_title: t("proposals.show.share"),
           title: @proposal.title,
