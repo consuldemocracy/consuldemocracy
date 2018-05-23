@@ -1,13 +1,21 @@
 <% if header.present? %>
-  <%= header.title %>
-  <%= header.description %>
-  
-  <% if header.image.present? %>
-    <%= image_tag(header.image_url(:large),
-                  class: "margin",
-                  alt: header.image.title)  %>
-  <% end %>
-  
-  <%= link_to header.button_text, header.button_url %>
-  <%= header.alignment %>
+  <div class="jumbo highlight">
+    <div class="row">
+      <div class="small-12 medium-6 column <%= 'medium-9 small-centered text-center' unless header.image.present? %>">
+        <h1><%= header.title %></h1>
+        <p class="lead"><%= header.description %></p>
+        <div class="small-12 medium-6 large-4 <%= 'small-centered' unless header.image.present? %>">
+          <%= link_to header.link_text, header.link_url, class: "button expanded large" %>
+        </div>
+      </div>
+
+      <% if header.image.present? %>
+        <div class="small-12 medium-6 column">
+          <%= image_tag(header.image_url(:large),
+                        class: "margin",
+                        alt: header.image.title)  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 <% end %>

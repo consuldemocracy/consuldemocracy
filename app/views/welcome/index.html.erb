@@ -9,52 +9,16 @@
               social_url: root_url %>
 <% end %>
 
-<div class="jumbo highlight">
-  <div class="row">
-    <div class="small-12 medium-9 small-centered column text-center">
-      <h1><%= t("layouts.header.open_city_title") %></h1>
-      <p class="lead">
-        <%= t("layouts.header.open_city_slogan_html") %>
-      </p>
-      <div class="small-12 medium-6 large-4 small-centered">
-        <%= link_to t("shared.more_info"), help_path, class: "button expanded large" %>
-      </div>
-    </div>
-  </div>
-</div>
-
 <%= render "header", header: @header %>
-<%= render "feeds" %>
-<%= render "cards" %>
 
-<% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
-  <%= render "recommended",
-              recommended_debates: @recommended_debates,
-              recommended_proposals: @recommended_proposals %>
-  <hr>
-<% end %>
+<main>
+  <%= render "feeds" %>
 
-<% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
-  <main>
-    <div class="small-12 column text-center">
-      <div class="row margin padding">
-        <div class="small-12 medium-3 column">
-          <h2><%= t("welcome.debates.title") %></h2>
-          <p><%= t("welcome.debates.description") %></p>
-        </div>
-        <div class="small-12 medium-3 column">
-          <h2><%= t("welcome.proposal.title") %></h2>
-          <p><%= t("welcome.proposal.description") %></p>
-        </div>
-        <div class="small-12 medium-3 column">
-          <h2><%= t("welcome.decide.title") %></h2>
-          <p><%= t("welcome.decide.description") %></p>
-        </div>
-        <div class="small-12 medium-3 column">
-          <h2><%= t("welcome.do.title") %></h2>
-          <p><%= t("welcome.do.description") %></p>
-        </div>
-      </div>
-    </div>
-  </main>
-<% end %>
+  <%= render "cards" %>
+
+  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+    <%= render "recommended",
+                recommended_debates: @recommended_debates,
+                recommended_proposals: @recommended_proposals %>
+  <% end %>
+</main>

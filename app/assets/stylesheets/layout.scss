@@ -23,6 +23,7 @@
 // 21. Related content
 // 22. Images
 // 23. Maps
+// 24. Homepage
 //
 
 // 01. Global styles
@@ -2224,17 +2225,17 @@ table {
 // 19. Recommended Section Home
 // ----------------------------
 
-.home-page {
-
-  .push {
-    display: none;
-  }
-}
-
 .section-recommended {
-  padding: $line-height * 2 0;
+  background: #fafafa;
+  border-bottom: 1px solid $border;
+  border-top: 1px solid $border;
+  padding: $line-height 0;
 
   h2 {
+    margin-bottom: 0;
+  }
+
+  p {
     margin-bottom: $line-height * 2;
   }
 
@@ -2258,12 +2259,12 @@ table {
   .card {
 
     .card-section {
-      padding: $line-height 0;
-      max-width: rem-calc(300);
       margin: 0 auto;
+      max-width: none;
+      padding: 0;
 
       p {
-        font-size: rem-calc(15);
+        font-size: $base-font-size;
         text-align: left;
       }
     }
@@ -2293,18 +2294,6 @@ table {
     width: 100%;
   }
 
-  .debates-inner {
-    border-top: 4px solid $debates;
-  }
-
-  .proposals-inner {
-    border-top: 4px solid $proposals;
-  }
-
-  .budget-investments-inner {
-    border-top: 4px solid $budget;
-  }
-
   .debates-inner,
   .proposals-inner,
   .budget-investments-inner {
@@ -2316,10 +2305,10 @@ table {
     }
 
     h4 {
-      margin-top: $line-height;
-      margin-bottom: 0;
+      margin-top: 0;
+      margin-bottom: $line-height;
       font-size: rem-calc(18);
-      min-height: rem-calc(50);
+      min-height: 0;
     }
 
     h5 {
@@ -2338,9 +2327,21 @@ table {
       }
     }
 
+    .debates,
+    .proposals {
+
+      a {
+        display: block;
+        margin-top: $line-height;
+      }
+    }
+
     .debates-inner,
     .proposals-inner,
     .budget-investments-inner {
+      border: 1px solid $border;
+      padding: $line-height;
+      margin-right: $line-height;
       max-height: rem-calc(500);
 
       @include breakpoint(small) {
@@ -2573,5 +2574,72 @@ table {
 
   &.leaflet-disabled {
     color: #525252 !important;
+  }
+}
+
+// 24. Homepage
+// ------------
+
+.home-page {
+
+  a {
+
+    p {
+
+      &.description {
+        color: $text;
+      }
+    }
+  }
+
+  a:hover {
+
+    h3 {
+      color: #fff;
+    }
+  }
+}
+
+.figure-card {
+  display: flex;
+  margin: 0 0 $line-height;
+  position: relative;
+
+  a {
+
+    h3,
+    .title {
+      color: #fff;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  figcaption {
+    bottom: 0;
+    color: #fff;
+    font-size: rem-calc(36);
+    line-height: rem-calc(36);
+    text-transform: uppercase;
+    padding: $line-height / 4 $line-height / 2;
+    position: absolute;
+    width: 100%;
+
+    h3,
+    .title {
+      font-size: rem-calc(36);
+      line-height: rem-calc(36);
+    }
+
+    span {
+      background: #fff;
+      border-radius: rem-calc(4);
+      color: #000;
+      display: inline;
+      font-size: $base-font-size;
+      padding: rem-calc(4) rem-calc(8);
+    }
   }
 }

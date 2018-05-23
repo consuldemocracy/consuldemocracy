@@ -1,16 +1,14 @@
-<h1>Feeds</h1>
+<div class="row">
+  <div class="small-12 column">
+    <% @feeds.each do |feed| %>
 
-<% @feeds.each do |feed| %>
-  
-  <div>
-    <strong>Most active <%= feed.kind %></strong>
+      <strong>Most active <%= feed.kind %></strong>
+
+      <% feed.items.each do |item| %>
+        <div class="<%= item.class.to_s.parameterize('_') %>">
+          <%= item.title %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-
-  <% feed.items.each do |item| %>    
-    <div class="<%= item.class.to_s.parameterize('_') %>">
-      <%= item.title %>
-    </div>
-    <br/>
-  <% end %>
-  
-<% end %>
+</div>

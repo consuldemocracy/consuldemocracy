@@ -800,6 +800,7 @@ es:
       title: Propones
     recommended:
       title: Recomendaciones que te pueden interesar
+      help: "Estas recomendaciones se generan por las etiquetas de los debates y propuestas que estás siguiendo."
       debates:
         title: Debates recomendados
         btn_text_link: Todos los debates recomendados
