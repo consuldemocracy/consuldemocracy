@@ -241,6 +241,11 @@ es:
         subject: Asunto
         from: Enviado por
         body: Contenido del email
+      widget/card:
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
+        link_url: URL del enlace
     errors:
       models:
         user:

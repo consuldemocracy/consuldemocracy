@@ -1,11 +1,23 @@
 <%= form_for [:admin, @card] do |f| %>
   <%= f.text_field :title %>
-  <%= f.text_area :description %>
-  <%= f.text_field :link_text %>
-  <%= f.text_field :link_url %>
-  <%= f.hidden_field :header, value: @card.header? %>
-  <div class="images small-12 column">
-    <%= render 'images/nested_image', imageable: @card, f: f %>
+
+  <%= f.text_area :description, rows: 5 %>
+
+  <div class="small-12 medium-6">
+    <%= f.text_field :link_text %>
   </div>
-  <%= f.submit %>
+
+  <div class="small-12 medium-6">
+    <%= f.text_field :link_url %>
+  </div>
+
+  <%= f.hidden_field :header, value: @card.header? %>
+
+  <div class="image-form">
+    <div class="image small-12 column">
+      <%= render 'images/nested_image', imageable: @card, f: f %>
+    </div>
+  </div>
+
+  <%= f.submit(t("admin.homepage.#{action_name}.#{@card.header? ? 'submit_header' : 'submit_card'}"), class: "button success") %>
 <% end %>
