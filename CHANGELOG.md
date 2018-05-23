@@ -3,6 +3,81 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.15.0](https://github.com/consul/consul/compare/v0.14...v0.15) - 2018-05-23
+
+### Added
+- Show 'See Results' button in budget admin panel https://github.com/consul/consul/pull/2632
+- Add valuator groups  assigned to investments to admin tables & csv export https://github.com/consul/consul/pull/2592
+- Add Valuator Group name validation & related specs https://github.com/consul/consul/pull/2576
+- Display message in budget's index when there are no budgets https://github.com/consul/consul/pull/2575
+- Allow supporting investments on more than one heading per group https://github.com/consul/consul/pull/2546
+- User segment for users that haven't supported in budget https://github.com/consul/consul/pull/2540
+- Allow Budget Group names to be edited https://github.com/consul/consul/pull/2504
+- Add valuator groups https://github.com/consul/consul/pull/2510
+- Allow admin generated content to be translatable https://github.com/consul/consul/pull/2619
+- New Crowdin translations https://github.com/consul/consul/pull/2572
+- Extend notifications to be marked as read or unread https://github.com/consul/consul/pull/2549
+- Admin users https://github.com/consul/consul/pull/2538
+- Let managers reset user's password https://github.com/consul/consul/pull/2548
+- Make config.time\_zone configurable at secrets.yml https://github.com/consul/consul/pull/2468
+- Document upload setting https://github.com/consul/consul/pull/2585
+- Include Node.js as requirement on README https://github.com/consul/consul/pull/2486
+- Add Node.js as requirement on README \(spanish\) https://github.com/consul/consul/pull/2550
+- View mode selector on lists https://github.com/consul/consul/issues/2509)
+- Let users mark Notifications as read https://github.com/consul/consul/issues/2478)
+
+### Changed
+- Display unfeasibility explanation only when valuation has finished https://github.com/consul/consul/pull/2570
+- Admin budget investment info https://github.com/consul/consul/pull/2539
+- Restrict valuators access to edit/valute only on valuating phase https://github.com/consul/consul/pull/2535
+- Valuators cannot reopen finished valuations https://github.com/consul/consul/pull/2518
+- Heading link on budgets message https://github.com/consul/consul/pull/2528
+- Admin newsletter email refactor https://github.com/consul/consul/pull/2474
+- Admin emails list download https://github.com/consul/consul/pull/2466
+- Admin newsletter emails https://github.com/consul/consul/pull/2462
+- Migration from PhantomJS to Headless Chrome https://github.com/consul/consul/pull/2534
+- Update rubocop gem from 0.53.0 to 0.54.0 https://github.com/consul/consul/pull/2574
+- Update rails-html-sanitizer gem version to 1.0.4 https://github.com/consul/consul/pull/2568
+- Improve README code syntax https://github.com/consul/consul/pull/2561
+- Improve Github's Pull Request Template file https://github.com/consul/consul/pull/2515
+- Remove sitemap generator output when running specs https://github.com/consul/consul/pull/2599
+- Avoid db:dev\_seed log print when run from its test https://github.com/consul/consul/pull/2598
+- Update loofah gem to 2.2.1 version https://github.com/consul/consul/pull/2545
+- Rubocop & rubocop-rspec gem & config updates https://github.com/consul/consul/pull/2524
+
+### Fixed
+- Fix valuation heading filters https://github.com/consul/consul/pull/2578
+- Fixes budgets ui for all phases https://github.com/consul/consul/pull/2537
+- Fixes Issue \#2604 https://github.com/consul/consul/pull/2614
+- Fix MapLocation json\_data to return mappable ids https://github.com/consul/consul/pull/2613
+- Fix to change email address from my account https://github.com/consul/consul/pull/2569
+- Fixes social share buttons https://github.com/consul/consul/pull/2525
+- Mode view https://github.com/consul/consul/pull/2567
+- Minor fixes https://github.com/consul/consul/pull/2566
+- Improve Documents list https://github.com/consul/consul/pull/2490
+- UI fixes https://github.com/consul/consul/pull/2489
+- Cleans legislation proposals https://github.com/consul/consul/pull/2527
+- Design minor fixes https://github.com/consul/consul/pull/2465
+- Help text https://github.com/consul/consul/pull/2452
+- Fixed how newsletters controller and mailer handle recipients https://github.com/consul/consul/pull/2492
+- Fix UserSegment feasible and undecided investment authors https://github.com/consul/consul/pull/2491
+- Remove empty emails from user segment usages https://github.com/consul/consul/pull/2516
+- Fix routes deprecation warning for `to:` usage https://github.com/consul/consul/pull/2560
+- Fix date parsing to take the TimeZone in account  https://github.com/consul/consul/pull/2559
+- Fix `rake db:dev\_seed` task flaky spec https://github.com/consul/consul/pull/2522
+- Fix Email Spec comment random failures https://github.com/consul/consul/pull/2506
+- Fix flaky spec: Residence Assigned officers Error https://github.com/consul/consul/pull/2458
+- Fix for flaky spec in Officing spec test file https://github.com/consul/consul/pull/2543
+- Fix Flaky spec: Moderate debates Hide https://github.com/consul/consul/pull/2542
+- Fix flaky spec: random investments order scenario https://github.com/consul/consul/pull/2536
+- Fixed flaky spec: missing comment on legislation annotation https://github.com/consul/consul/pull/2455
+- Fix flaky spec: random investments order scenario  https://github.com/consul/consul/pull/2454
+- Fix flaky spec: users without email should not receive emails https://github.com/consul/consul/pull/2453
+- Flaky spec fix: Debates Show: "Back" link directs to previous page https://github.com/consul/consul/pull/2513
+- Fix Exception in home page https://github.com/consul/consul/issues/2621)
+- Fix for budget's index when there are no budgets https://github.com/consul/consul/issues/2562)
+- Fix menu highlighted in admin section https://github.com/consul/consul/issues/2556)
+
 ## [0.14.0](https://github.com/consul/consul/compare/v0.13...v0.14) - 2018-03-08
 
 ### Added
@@ -270,7 +345,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rails 4.2.6
 - Ruby 2.2.3
 
-[Unreleased]: https://github.com/consul/consul/compare/v0.13...consul:master
+[Unreleased]: https://github.com/consul/consul/compare/v0.15...consul:master
+[0.15.0]: https://github.com/consul/consul/compare/v0.14...v0.15
+[0.14.0]: https://github.com/consul/consul/compare/v0.13...v0.14
 [0.13.0]: https://github.com/consul/consul/compare/v0.12...v0.13
 [0.12.0]: https://github.com/consul/consul/compare/v0.11...v0.12
 [0.11.0]: https://github.com/consul/consul/compare/v0.10...v0.11
