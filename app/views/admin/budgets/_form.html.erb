@@ -4,7 +4,7 @@
 
   <div class="row margin-top">
     <div class="small-12 medium-9 column">
-      <%= f.select :phase, budget_phases_select_options %>
+      <%= f.select :phase, budget_phases_select_options, selected: "drafting" %>
     </div>
     <div class="small-12 medium-3 column">
       <%= f.select :currency_symbol, budget_currency_symbol_select_options %>

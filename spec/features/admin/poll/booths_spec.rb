@@ -142,8 +142,8 @@ feature 'Admin booths' do
 
       visit edit_admin_booth_path(Poll::Booth.last)
 
-      physical_booth = find('#poll_booth_physical')
-      expect(physical_booth).to be_checked
+      booth_kind = find('#poll_booth_physical')
+      expect(booth_kind.value).to eq('true')
     end
 
     scenario "Choose digital booth instead of physical booth" do
@@ -152,7 +152,7 @@ feature 'Admin booths' do
 
       fill_in "poll_booth_name", with: "Upcoming booth"
       fill_in "poll_booth_location", with: "39th Street, number 2, ground floor"
-      uncheck "poll_booth_physical"
+      select 'Digital booth', from: 'poll_booth_physical'
 
       click_button "Create booth"
 
@@ -160,8 +160,8 @@ feature 'Admin booths' do
 
       visit edit_admin_booth_path(Poll::Booth.last)
 
-      physical_booth = find('#poll_booth_physical')
-      expect(physical_booth).not_to be_checked
+      booth_kind = find('#poll_booth_physical')
+      expect(booth_kind.value).to eq('false')
     end
 
   end

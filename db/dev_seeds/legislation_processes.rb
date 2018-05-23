@@ -4,7 +4,6 @@ section "Creating legislation processes" do
                                  description: Faker::Lorem.paragraphs.join("\n\n"),
                                  summary: Faker::Lorem.paragraph,
                                  additional_info: Faker::Lorem.paragraphs.join("\n\n"),
-                                 proposals_description: Faker::Lorem.paragraph,
                                  start_date: Date.current - 3.days,
                                  end_date: Date.current + 3.days,
                                  debate_start_date: Date.current - 3.days,
