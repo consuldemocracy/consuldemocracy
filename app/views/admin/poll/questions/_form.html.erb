@@ -14,19 +14,6 @@
 
     <%= f.text_field :title %>
 
-    <div class="small-12">
-      <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
-
-      <p class="help-text" id="video-url-help-text">
-        <%= t("proposals.form.proposal_video_url_note") %>
-      </p>
-
-      <%= f.text_field :video_url,
-                        placeholder: t("proposals.form.proposal_video_url"),
-                        label: false,
-                        aria: {describedby: "video-url-help-text"} %>
-    </div>
-
     <div class="small-12 medium-6 large-4 margin-top">
       <%= f.submit(class: "button expanded", value: t("shared.save")) %>
     </div>

@@ -11,9 +11,17 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<% provide :social_media_meta_tags do %>
-  <%= render "shared/social_media_meta_tags",
-              social_url: root_url %>
+<% if current_budget %>
+  <% provide :social_media_meta_tags do %>
+    <%= render "shared/social_media_meta_tags",
+                social_url: root_url,
+                twitter_image_url: "social_media_budgets_2018_balloting_twitter.png",
+                og_image_url: "social_media_budgets_2018_balloting.png" %>
+  <% end %>
+<% else %>
+  <% provide :social_media_meta_tags do %>
+    <%= render "shared/social_media_meta_tags", social_url: root_url %>
+  <% end %>
 <% end %>
 
 <div class="welcome">

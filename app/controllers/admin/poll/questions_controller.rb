@@ -55,7 +55,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   private
 
     def question_params
-      params.require(:poll_question).permit(:poll_id, :title, :question, :proposal_id, :video_url)
+      params.require(:poll_question).permit(:poll_id, :title, :question, :proposal_id)
     end
 
     def search_params

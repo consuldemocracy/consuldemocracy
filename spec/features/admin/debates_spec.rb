@@ -33,7 +33,7 @@ feature 'Admin debates' do
     debate = create(:debate, :hidden)
     visit admin_debates_path
 
-    click_link 'Confirm'
+    click_link 'Confirm moderation'
 
     expect(page).not_to have_content(debate.title)
     click_link('Confirmed')

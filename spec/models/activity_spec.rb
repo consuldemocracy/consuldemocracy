@@ -7,12 +7,14 @@ describe Activity do
     expect(build(:activity, actionable: create(:debate))).to be_valid
     expect(build(:activity, actionable: create(:comment))).to be_valid
     expect(build(:activity, actionable: create(:user))).to be_valid
+    expect(build(:activity, actionable: create(:newsletter))).to be_valid
   end
 
   it "is a valid only with allowed actions" do
     expect(build(:activity, action: "hide")).to be_valid
     expect(build(:activity, action: "block")).to be_valid
     expect(build(:activity, action: "restore")).to be_valid
+    expect(build(:activity, action: "email")).to be_valid
     expect(build(:activity, action: "dissapear")).not_to be_valid
   end
 

@@ -81,22 +81,22 @@ $button-radius: $global-radius;
 
 $font-family-serif: Georgia, 'Times New Roman', Times, serif;
 
-$header-sizes: (
+$header-styles: (
   small: (
-    'h1': 34,
-    'h2': 24,
-    'h3': 20,
-    'h4': 18,
-    'h5': 16,
-    'h6': 14,
+    'h1': ('font-size': 34),
+    'h2': ('font-size': 24),
+    'h3': ('font-size': 20),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 14),
   ),
   medium: (
-    'h1': 44,
-    'h2': 34,
-    'h3': 24,
-    'h4': 19,
-    'h5': 16,
-    'h6': 13,
+    'h1': ('font-size': 44),
+    'h2': ('font-size': 34),
+    'h3': ('font-size': 24),
+    'h4': ('font-size': 19),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 13),
   ),
 );
 

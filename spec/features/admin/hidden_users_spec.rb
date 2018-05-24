@@ -38,7 +38,7 @@ feature 'Admin hidden users' do
     user = create(:user, :hidden)
     visit admin_hidden_users_path
 
-    click_link 'Confirm'
+    click_link 'Confirm moderation'
 
     expect(page).not_to have_content(user.username)
     click_link('Confirmed')

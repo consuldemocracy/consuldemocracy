@@ -3,7 +3,7 @@ namespace :budgets do
 
     desc "Calculate current balloting stats"
     task balloting: :environment do
-      Budget.where(phase: ["balloting", "reviewing_ballots"]).each do |budget|
+      Budget.where(phase: ["balloting", "reviewing_ballots", "finished"]).each do |budget|
         namespace = "budget_#{budget.id}_balloting_stats"
         city_heading = budget.headings.where(name: "Toda la ciudad").first
         city_heading_id = city_heading.present? ? city_heading.id : nil

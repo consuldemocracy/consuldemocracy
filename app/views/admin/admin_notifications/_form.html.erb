@@ -5,9 +5,10 @@
                                                       @admin_notification[:segment_recipient]) %>
   <%= f.text_field :title %>
   <%= f.text_field :link %>
-  <%= f.text_area :body %>
+  <%= f.label :body %>
+  <%= f.text_area :body, label: false %>
 
   <div class="margin-top">
-    <%= f.submit class: "button success" %>
+    <%= f.submit t("admin.admin_notifications.new.submit"), class: "button success" %>
   </div>
 <% end %>

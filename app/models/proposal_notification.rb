@@ -10,6 +10,7 @@ class ProposalNotification < ActiveRecord::Base
   validates :proposal, presence: true
   validate :minimum_interval
 
+  scope :with_hidden, -> { all }
   scope :public_for_api, -> { where(proposal_id: Proposal.public_for_api.pluck(:id)) }
 
   def minimum_interval
@@ -37,6 +38,11 @@ class ProposalNotification < ActiveRecord::Base
 
   def notifiable
     proposal
+  end
+
+  def moderate_system_email(moderator)
+    Notification.where(notifiable_type: 'ProposalNotification', notifiable: self).destroy_all
+    Activity.log(moderator, :hide, self)
   end
 
 end

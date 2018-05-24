@@ -248,6 +248,7 @@ $sidebar-active: #f4fcd0;
 }
 
 .admin-content {
+  overflow: scroll;
   padding: $line-height !important;
 }
 
@@ -700,12 +701,6 @@ $sidebar-active: #f4fcd0;
 }
 
 .legislation-question-delete {
-  @include breakpoint(medium) {
-    text-align: right;
-  }
-}
-
-.legislation-process-new {
   @include breakpoint(medium) {
     text-align: right;
   }

@@ -1,6 +1,6 @@
 class Admin::SystemEmailsController < Admin::BaseController
 
-  before_action :load_system_email, only: [:view, :preview_pending]
+  before_action :load_system_email, only: [:view, :preview_pending, :moderate_pending]
 
   def index
     @system_emails = {
@@ -22,6 +22,28 @@ class Admin::SystemEmailsController < Admin::BaseController
       @previews = ProposalNotification.where(id: unsent_proposal_notifications_ids)
                                       .page(params[:page])
     end
+  end
+
+  def moderate_pending
+    ProposalNotification.find(params[:id]).moderate_system_email(current_user)
+
+    redirect_to admin_system_email_preview_pending_path("proposal_notification_digest")
+  end
+
+  def send_pending
+    User.email_digest.find_each do |user|
+      email_digest = EmailDigest.new(user)
+      begin
+        email_digest.deliver
+        email_digest.mark_as_emailed
+      rescue
+        user.increment_counter(:failed_email_digests_count)
+        user.save
+      end
+    end
+
+    flash[:notice] = t("admin.system_emails.preview_pending.send_pending_notification")
+    redirect_to admin_system_emails_path
   end
 
   private

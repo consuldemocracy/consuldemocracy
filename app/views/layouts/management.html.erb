@@ -18,23 +18,23 @@
     <header class="header">
       <div class="top-links">
         <div class="expanded row">
-          <%= render 'shared/locale_switcher' %>
+          <%= render "shared/locale_switcher" %>
         </div>
       </div>
 
-      <div class="expanded row">
+      <div class="expanded row admin-top-bar">
         <div class="top-bar">
-
-          <%= link_to setting['org_name'], management_root_path, class: "logo show-for-small-only" %>
-
-            <div class="top-bar-title">
-              <h1>
-                <%= link_to management_root_path do %>
-                  <%= setting['org_name'] %>
-                  <br><small><%= t("management.dashboard.index.title") %></small>
-                <% end %>
-              </h1>
-            </div>
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li class="menu-text">
+                <h1>
+                  <%= link_to management_root_path do %>
+                    <%= setting["org_name"] %>
+                    <br><small><%= t("management.dashboard.index.title") %></small>
+                  <% end %>
+                </h1>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

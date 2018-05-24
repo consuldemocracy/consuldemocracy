@@ -105,7 +105,7 @@ en:
         description: "La votación final de proyectos de los presupuestos participativos de Madrid empieza el 15 de mayo. ¡Prepárate para decidir el destino de 100 millones!"
       balloting:
         title: "Vota los proyectos finalistas de presupuestos participativos"
-        description: "Vota en Decide Madrid los proyectos que quieres que haga el Ayuntamiento en tu barrio y en Madrid. ¡Decide a qué ideas dedicar 100 millones de euros!"
+        description: "¿Has pensado qué hacer con 100 millones de #PresupuestosParticipativos? Vota en https://decide.madrid.es/ #VotaParticipativos18"
       finished:
         title: "Resultados de los presupuestos participativos 2018"
         description: "La ciudadanía ha decidido qué hará el Ayuntamiento con 100 millones de euros reservados a proyectos ciudadanos. Entérate de los proyectos ganadores."
@@ -270,17 +270,23 @@ en:
         text: "Thank you for voting!"
         button: "See projects"
     budgets:
-      label: "Participatory Budgets 2018"
-      title: "This is how citizen projects are evaluated and assessed"
-      text: "The municipal civil servants review the projects that have received from more to less support."
+      label: "Participatory budgets vote"
+      title: "How to vote for finalist projects"
+      text: "How to vote the citizen projects that Madrid City Council will do in your district and throughout the city."
       link: "Read more"
-      alt: "Municipal civil servants reviewing projects"
-    decide:
-      label: "Start participating"
-      title: "Decide and change your city"
-      text: "Sign up to the citizen participation platform of Madrid City Council and make Madrid more yours."
-      link: "Sign up"
-      alt: "Image of the new Decide Madrid campaign"
+      alt: "Citizens voting at one of the polls in the streets of Madrid"
+    budgets_materials:
+      label: "Download pictures"
+      title: "Download pictures to disseminate the projects"
+      text: "Disseminate your finalist projects or your neighbors'. Download the City Council campaign pictures!"
+      link: "See pictures"
+      alt: "Image of the new campaign 100 million gives a lot for the future"
+    open_square:
+      label: "Open Square"
+      title: "Come to know the finalist projects"
+      text: "On Saturday, June 9, from 11:30 a.m. to 1:30 p.m., go to Tirso de Molina square. Proponents of projects will explain what their proposals consist of."
+      link: "Read more"
+      alt: "Citizens speaking in a square in Madrid"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"

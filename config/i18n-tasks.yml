@@ -195,12 +195,6 @@ ignore_unused:
 # - 'simple_form.{placeholders,hints,labels}.*'
 # - 'simple_form.{error_notification,required}.:'
 #### Review unused keys after merge with Budgest (both en and es)
-  - layouts.header.see_all
-  - legislation.help.alt
-  - legislation.help.text
-  - legislation.help.text_sign_in
-  - legislation.help.text_sign_up
-  - legislation.help.title
   - users.show.confirm_deletion_spending_proposal
   - users.show.delete_spending_proposal
   - verification.letter.create.flash.offices_url
