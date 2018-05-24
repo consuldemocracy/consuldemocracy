@@ -242,6 +242,7 @@ es:
         from: Enviado por
         body: Contenido del email
       widget/card:
+        label: Etiqueta
         title: Título
         description: Descripción
         link_text: Texto del enlace

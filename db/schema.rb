@@ -1231,10 +1231,8 @@ ActiveRecord::Schema.define(version: 20180519132715) do
     t.text     "description"
     t.string   "link_text"
     t.string   "link_url"
-    t.string   "button_text"
-    t.string   "button_url"
+    t.string   "label"
     t.boolean  "header",      default: false
-    t.string   "alignment"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end

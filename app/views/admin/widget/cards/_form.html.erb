@@ -1,4 +1,8 @@
 <%= form_for [:admin, @card] do |f| %>
+  <div class="small-12 medium-6">
+    <%= f.text_field :label %>
+  </div>
+
   <%= f.text_field :title %>
 
   <%= f.text_area :description, rows: 5 %>

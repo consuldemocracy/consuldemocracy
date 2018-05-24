@@ -5,10 +5,8 @@ class CreateWidgetCards < ActiveRecord::Migration
       t.text :description
       t.string :link_text
       t.string :link_url
-      t.string :button_text
-      t.string :button_url
+      t.string :label
       t.boolean :header, default: false
-      t.string :alignment
       t.timestamps null: false
     end
   end

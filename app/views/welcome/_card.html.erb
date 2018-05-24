@@ -5,7 +5,7 @@
         <%= image_tag(card.image_url(:large), alt: card.image.title) %>
       <% end %>
       <figcaption>
-        <span>LABEL</span><br>
+        <span><%= card.label %></span><br>
         <h3><%= card.title %></h3>
       </figcaption>
     </figure>

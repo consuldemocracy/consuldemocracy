@@ -11,6 +11,7 @@ feature 'Cards' do
     visit admin_homepage_path
     click_link "Create card"
 
+    fill_in "widget_card_label", with: "Card label"
     fill_in "widget_card_title", with: "Card text"
     fill_in "widget_card_description", with: "Card description"
     fill_in "widget_card_link_text", with: "Link text"
@@ -23,6 +24,7 @@ feature 'Cards' do
 
     card = Widget::Card.last
     within("#widget_card_#{card.id}") do
+      expect(page).to have_content "Card label"
       expect(page).to have_content "Card text"
       expect(page).to have_content "Card description"
       expect(page).to have_content "Link text"
@@ -57,6 +59,7 @@ feature 'Cards' do
       click_link "Edit"
     end
 
+    fill_in "widget_card_label", with: "Card label updated"
     fill_in "widget_card_title", with: "Card text updated"
     fill_in "widget_card_description", with: "Card description updated"
     fill_in "widget_card_link_text", with: "Link text updated"
@@ -67,6 +70,7 @@ feature 'Cards' do
 
     expect(page).to have_css(".card", count: 1)
     within("#widget_card_#{Widget::Card.last.id}") do
+      expect(page).to have_content "Card label updated"
       expect(page).to have_content "Card text updated"
       expect(page).to have_content "Card description updated"
       expect(page).to have_content "Link text updated"
@@ -95,8 +99,9 @@ feature 'Cards' do
       visit admin_homepage_path
       click_link "Create header"
 
-      fill_in "widget_card_title", with: "Card text"
-      fill_in "widget_card_description", with: "Card description"
+      fill_in "widget_card_label", with: "Header label"
+      fill_in "widget_card_title", with: "Header text"
+      fill_in "widget_card_description", with: "Header description"
       fill_in "widget_card_link_text", with: "Link text"
       fill_in "widget_card_link_url", with: "consul.dev"
       click_button "Create header"
@@ -105,8 +110,9 @@ feature 'Cards' do
 
       within("#header") do
         expect(page).to have_css(".card", count: 1)
-        expect(page).to have_content "Card text"
-        expect(page).to have_content "Card description"
+        expect(page).to have_content "Header label"
+        expect(page).to have_content "Header text"
+        expect(page).to have_content "Header description"
         expect(page).to have_content "Link text"
         expect(page).to have_content "consul.dev"
       end

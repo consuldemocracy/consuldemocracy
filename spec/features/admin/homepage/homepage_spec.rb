@@ -76,33 +76,37 @@ feature 'Homepage' do
   end
 
   scenario "Cards" do
-    card1 = create(:widget_card, title: "Card text",
-                                 description: "Card description",
-                                 link_text: "Link text",
-                                 link_url: "consul.dev")
+    card1 = create(:widget_card, label: "Card1 label",
+                                 title: "Card1 text",
+                                 description: "Card1 description",
+                                 link_text: "Link1 text",
+                                 link_url: "consul1.dev")
 
-    card2 = create(:widget_card, title: "Card text2",
-                                 description: "Card description2",
-                                 link_text: "Link text2",
-                                 link_url: "consul.dev2")
+    card2 = create(:widget_card, label: "Card2 label",
+                                 title: "Card2 text",
+                                 description: "Card2 description",
+                                 link_text: "Link2 text",
+                                 link_url: "consul2.dev")
 
     visit root_path
 
     expect(page).to have_css(".card", count: 2)
 
     within("#widget_card_#{card1.id}") do
-      expect(page).to have_content("Card text")
-      expect(page).to have_content("Card description")
-      expect(page).to have_content("Link text")
-      expect(page).to have_link(href: "consul.dev")
+      expect(page).to have_content("Card1 label")
+      expect(page).to have_content("Card1 text")
+      expect(page).to have_content("Card1 description")
+      expect(page).to have_content("Link1 text")
+      expect(page).to have_link(href: "consul1.dev")
       expect(page).to have_css("img[alt='#{card1.image.title}']")
     end
 
     within("#widget_card_#{card2.id}") do
-      expect(page).to have_content("Card text2")
-      expect(page).to have_content("Card description2")
-      expect(page).to have_content("Link text2")
-      expect(page).to have_link(href: "consul.dev2")
+      expect(page).to have_content("Card2 label")
+      expect(page).to have_content("Card2 text")
+      expect(page).to have_content("Card2 description")
+      expect(page).to have_content("Link2 text")
+      expect(page).to have_link(href: "consul2.dev")
       expect(page).to have_css("img[alt='#{card2.image.title}']")
     end
   end
