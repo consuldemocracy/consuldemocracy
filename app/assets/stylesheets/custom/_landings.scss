@@ -354,6 +354,24 @@ $villaverde:        #8e4e28;
       color: #fff;
     }
   }
+
+  .background-pink,
+  .background-yellow,
+  .background-blue {
+    color: #000;
+  }
+
+  .background-pink {
+    background: $budget-2018-pink;
+  }
+
+  .background-yellow {
+    background: $budget-2018-yellow;
+  }
+
+  .background-blue {
+    background: $budget-2018-blue;
+  }
 }
 
 // 03. Geocraft
