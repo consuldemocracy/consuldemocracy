@@ -70,14 +70,12 @@
                        ballot: @ballot
                      } %>
         <% end %>
-
       <% else %>
 
         <% @investments.each do |investment| %>
           <%= render partial: '/budgets/investments/investment_minimal',
                      locals: { investment: investment } %>
         <% end %>
-
       <% end %>
 
       <%= paginate @investments %>

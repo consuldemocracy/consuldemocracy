@@ -89,4 +89,5 @@ module ProposalsHelper
   def human_rights?
     controller_name == "human_rights"
   end
+
 end

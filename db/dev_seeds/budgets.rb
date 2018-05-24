@@ -141,6 +141,7 @@ section "Creating Valuation direct Assignments" do
     Budget::Investment.all.sample.valuators << Valuator.all.sample
   end
 end
+
 section "Creating Valuation Group Assignments" do
   (1..50).to_a.sample.times do
     Budget::Investment.all.sample.valuator_groups << ValuatorGroup.all.sample

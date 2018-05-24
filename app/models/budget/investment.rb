@@ -70,7 +70,6 @@ class Budget
     scope :visible_to_valuators,        -> { where(visible_to_valuators: true) }
     scope :valuation_finished,          -> { where(valuation_finished: true) }
     scope :valuation_finished_feasible, -> { where(valuation_finished: true, feasibility: "feasible") }
-    scope :visible_to_valuators,        -> { where(visible_to_valuators: true) }
     scope :feasible,                    -> { where(feasibility: "feasible") }
     scope :unfeasible,                  -> { where(feasibility: "unfeasible") }
     scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
