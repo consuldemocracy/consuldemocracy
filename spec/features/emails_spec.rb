@@ -303,7 +303,7 @@ feature 'Emails' do
       notification3 = create_proposal_notification(proposal3)
 
       email_digest = EmailDigest.new(user)
-      email_digest.deliver
+      email_digest.deliver(Time.current)
       email_digest.mark_as_emailed
 
       email = open_last_email
@@ -347,7 +347,7 @@ feature 'Emails' do
       proposal_notification.moderate_system_email(create(:administrator).user)
 
       email_digest = EmailDigest.new(user)
-      email_digest.deliver
+      email_digest.deliver(Time.current)
       email_digest.mark_as_emailed
 
       expect { open_last_email }.to raise_error "No email has been sent!"
