@@ -9,7 +9,7 @@ App.Map =
 
     $('.js-toggle-map').on
         click: ->
-          App.Map.toogleMap()
+          App.Map.toggleMap()
 
   initializeMap: (element) ->
     App.Map.cleanInvestmentCoordinates(element)
@@ -106,7 +106,7 @@ App.Map =
           add_marker=createMarker(i.lat , i.long)
           add_marker.bindPopup(contentPopup(i.investment_title, i.investment_id, i.budget_id))
 
-  toogleMap: ->
+  toggleMap: ->
       $('.map').toggle()
       $('.js-location-map-remove-marker').toggle()
 
