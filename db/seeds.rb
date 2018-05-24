@@ -123,3 +123,5 @@ Setting['map_zoom'] = 10
 
 # Related content
 Setting['related_content_score_threshold'] = -0.3
+
+Setting["feature.user.skip_verification"] = 'true'
