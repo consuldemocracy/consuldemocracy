@@ -429,7 +429,7 @@ feature 'Debates' do
       visit debates_path
       click_link 'highest rated'
 
-      expect(page).to have_selector('a.active', text: 'highest rated')
+      expect(page).to have_selector('a.is-active', text: 'highest rated')
 
       within '#debates' do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -448,7 +448,7 @@ feature 'Debates' do
       visit debates_path
       click_link 'newest'
 
-      expect(page).to have_selector('a.active', text: 'newest')
+      expect(page).to have_selector('a.is-active', text: 'newest')
 
       within '#debates' do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -511,7 +511,7 @@ feature 'Debates' do
 
         click_link 'recommendations'
 
-        expect(page).to have_selector('a.active', text: 'recommendations')
+        expect(page).to have_selector('a.is-active', text: 'recommendations')
 
         within '#debates' do
           expect(best_debate.title).to appear_before(medium_debate.title)
@@ -901,7 +901,7 @@ feature 'Debates' do
       fill_in "search", with: "Show you got"
       click_button "Search"
 
-      expect(page).to have_selector("a.active", text: "relevance")
+      expect(page).to have_selector("a.is-active", text: "relevance")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -920,7 +920,7 @@ feature 'Debates' do
       fill_in "search", with: "Show you got"
       click_button "Search"
       click_link 'newest'
-      expect(page).to have_selector("a.active", text: "newest")
+      expect(page).to have_selector("a.is-active", text: "newest")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -945,7 +945,7 @@ feature 'Debates' do
       fill_in "search", with: "Show you got"
       click_button "Search"
       click_link 'recommendations'
-      expect(page).to have_selector("a.active", text: "recommendations")
+      expect(page).to have_selector("a.is-active", text: "recommendations")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -1073,11 +1073,8 @@ feature 'Debates' do
 
       visit new_debate_path
       fill_in 'debate_title', with: 'debate'
-      check "debate_terms_of_service"
 
-      within('div#js-suggest') do
-        expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
-      end
+      expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
     end
 
     scenario 'No found suggestions', :js do
@@ -1091,9 +1088,7 @@ feature 'Debates' do
       fill_in 'debate_title', with: 'proposal'
       check "debate_terms_of_service"
 
-      within('div#js-suggest') do
-        expect(page).not_to have_content 'You are seeing'
-      end
+      expect(page).not_to have_content 'You are seeing'
     end
   end
 

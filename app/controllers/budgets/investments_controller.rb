@@ -85,7 +85,7 @@ module Budgets
 
     def redirect_to_new_url
       investment = Budget::Investment.where(original_spending_proposal_id: params['id']).first
-      redirect_to budget_investment_path(investment.budget.slug, params['id']) if investment.present?
+      redirect_to budget_investment_path(investment.budget.slug, params['id'], spending: true) if investment.present?
     end
 
     def json_data
@@ -141,8 +141,11 @@ module Budgets
       end
 
       def load_investment
-        @investment = @budget.investments.where(original_spending_proposal_id: params['id']).first
-        @investment ||= @budget.investments.find(params['id'])
+        @investment = if params['spending'] == 'true'
+                        @budget.investments.where(original_spending_proposal_id: params['id']).first
+                      else
+                        @budget.investments.find(params['id'])
+                      end
       end
 
       def load_ballot

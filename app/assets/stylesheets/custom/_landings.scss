@@ -4,10 +4,11 @@
 // 01. Budgets videos 2017
 // 02. Budgets materials 2017
 // 03. Geocraft
+// 04. Cambia tu ciudad
 //
 
-// 00. Budgets videos 2017
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 00. Common styles for landings
+// ------------------------------
 
 .franklin-title {
   font-family: 'Franklin Gothic' !important;
@@ -15,7 +16,7 @@
 }
 
 // 01. Budgets videos 2017
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// -----------------------
 
 .budgets-videos-2017 {
 
@@ -39,7 +40,7 @@
 }
 
 // 02. Budgets materials 2017
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// --------------------------
 
 $arganzuela:        #b89774;
 $barajas:           #f70918;
@@ -326,7 +327,7 @@ $villaverde:        #8e4e28;
 }
 
 // 03. Geocraft
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ------------
 
 $geocraft: #006800;
 
@@ -439,6 +440,70 @@ $geocraft: #006800;
       color: $geocraft;
       font-weight: bold;
       text-decoration: underline;
+    }
+  }
+}
+
+// 04. Cambia tu ciudad
+// --------------------
+
+.landing-cambia-tu-ciudad {
+
+  .auth-image {
+    background: $brand image-url('landings/bg_landing_cambia_tu_ciudad.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: $line-height * 2;
+
+    @include breakpoint(medium) {
+      padding-bottom: 0;
+    }
+
+    h1 {
+      border-bottom: 3px solid #000;
+      text-align: right;
+
+      img {
+        width: auto;
+      }
+
+      a {
+        text-align: unset;
+      }
+    }
+  }
+
+  .phrase-container {
+    display: table-row;
+    height: 100%;
+  }
+
+  .phrase-content {
+    display: table-cell;
+    padding: $line-height * 2 10% 0;
+    text-align: center;
+    vertical-align: top;
+
+    @include breakpoint(large) {
+      padding-top: $line-height * 5;
+    }
+  }
+
+  p {
+
+    &.phrase {
+      background: #f3efa2;
+      display: inline;
+      font-family: "Souvenir" !important;
+      font-size: rem-calc(30);
+      line-height: rem-calc(30);
+      text-transform: uppercase;
+
+      @include breakpoint(large) {
+        background: none;
+        font-size: rem-calc(60);
+        line-height: rem-calc(60);
+      }
     }
   }
 }

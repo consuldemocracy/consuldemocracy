@@ -593,7 +593,7 @@ feature 'Budget Investments' do
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link 'highest rated'
-      expect(page).to have_selector('a.active', text: 'highest rated')
+      expect(page).to have_selector('a.is-active', text: 'highest rated')
 
       within '#budget-investments' do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -802,9 +802,7 @@ feature 'Budget Investments' do
         visit new_budget_investment_path(other_budget)
         fill_in "budget_investment_title", with: "search"
 
-        within('div#js-suggest') do
-          expect(page).not_to have_content 'You are seeing'
-        end
+        expect(page).not_to have_content 'You are seeing'
       end
     end
 
@@ -993,6 +991,23 @@ feature 'Budget Investments' do
     expect(page).to have_content("This investment project has been marked as not feasible and will not go to balloting phase")
   end
 
+  scenario "Show (selected budget investment)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        :selected,
+                        budget: budget,
+                        group: group,
+                        heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).to have_content("This investment project has been selected for balloting phase")
+  end
+
   scenario "Show (not selected budget investment)" do
     user = create(:user)
     login_as(user)
@@ -1055,6 +1070,15 @@ feature 'Budget Investments' do
       expect(page).to have_link(document.title)
       expect(page).to have_link("https://consul.dev")
       expect(page).to have_content(first_milestone.status.name)
+    end
+
+    select('Español', from: 'locale-switcher')
+
+    find("#tab-milestones-label").click
+
+    within("#tab-milestones") do
+      expect(page).to have_content('Último hito con el link https://consul.dev')
+      expect(page).to have_link("https://consul.dev")
     end
 
     select('Español', from: 'locale-switcher')
@@ -1269,6 +1293,27 @@ feature 'Budget Investments' do
 
   end
 
+  context "Publishing prices phase" do
+
+    background do
+      budget.update(phase: "publishing_prices")
+    end
+
+    scenario "Heading index - should show only selected investments" do
+      investment1 = create(:budget_investment, :selected, heading: heading, price: 10000)
+      investment2 = create(:budget_investment, :selected, heading: heading, price: 15000)
+      investment3 = create(:budget_investment, heading: heading, price: 30000)
+
+      visit budget_investments_path(budget, heading: heading)
+
+      within("#budget-investments") do
+        expect(page).to have_content investment1.title
+        expect(page).to have_content investment2.title
+        expect(page).not_to have_content investment3.title
+      end
+    end
+  end
+
   context "Balloting Phase" do
 
     background do
@@ -1310,7 +1355,7 @@ feature 'Budget Investments' do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       click_link 'by price'
-      expect(page).to have_selector('a.active', text: 'by price')
+      expect(page).to have_selector('a.is-active', text: 'by price')
 
       within '#budget-investments' do
         expect(high_investment.title).to appear_before(mid_investment.title)
@@ -1547,33 +1592,36 @@ feature 'Budget Investments' do
   end
 
   context "Spending Proposal url redirection to associated Budget Investment" do
-    let!(:investment_with_same_id) { create(:budget_investment, id: 9999, title: 'Investment with same Spending ID Proposal') }
-    let!(:spending_proposal) { create(:spending_proposal, id: 9999, title: 'Le Spending Proposal') }
-    let!(:associated_budget_investment) do
-      create(:budget_investment, id: 8888, title: 'Budget Investment child', original_spending_proposal_id: spending_proposal.id)
+    before do
+      create(:spending_proposal, id: 9999, title: 'Le Spending Proposal')
+      create(:budget_investment, id: 8888, title: 'Budget Investment child',
+                                 original_spending_proposal_id: 9999,
+                                 budget: create(:budget, slug: 'spending-proposals-budget'))
+      create(:budget_investment, id: 9999, title: 'Investment with same Spending ID Proposal',
+                                 budget: create(:budget, slug: 'new-budget'))
     end
 
-    scenario "Old Spending Proposal url redirects to associated Budget Investment with original spending proposal ID" do
-      visit "/participatory_budget/investment_projects/#{spending_proposal.id}"
+    scenario "Old Spending Proposal url redirects migrated Investment url with its ID" do
+      visit "/participatory_budget/investment_projects/9999"
 
-      expect(current_path).to eq("/presupuestos/#{associated_budget_investment.budget.slug}/proyecto/#{spending_proposal.id}")
-      expect(page).to have_content("Investment project code: #{spending_proposal.id}")
+      expect(page).to have_current_path("/presupuestos/spending-proposals-budget/proyecto/9999?spending=true")
+      expect(page).to have_content("Investment project code: 9999")
       expect(page).to have_content("Budget Investment child")
     end
 
-    scenario "New Budget Investment url with original spending proposal ID shows correctly" do
-      visit "/presupuestos/#{associated_budget_investment.budget.slug}/proyecto/#{spending_proposal.id}"
+    scenario "Visit Investment migrated from Spending Proposal shows migrated Investment" do
+      visit "/presupuestos/spending-proposals-budget/proyecto/8888"
 
-      expect(current_path).to eq("/presupuestos/#{associated_budget_investment.budget.slug}/proyecto/#{spending_proposal.id}")
-      expect(page).to have_content("Investment project code: #{spending_proposal.id}")
+      expect(page).to have_current_path("/presupuestos/spending-proposals-budget/proyecto/8888")
+      expect(page).to have_content("Investment project code: 9999")
       expect(page).to have_content("Budget Investment child")
     end
 
-    scenario "Budget Investment not associated to an Spending, and with same ID as migrated Spending proposal shows correctly" do
-      visit "/presupuestos/#{investment_with_same_id.budget.slug}/proyecto/#{investment_with_same_id.id}"
+    scenario "Visit Investment with same ID as migrated Spending Proposal shows that Investment" do
+      visit "/presupuestos/new-budget/proyecto/9999"
 
-      expect(current_path).to eq("/presupuestos/#{investment_with_same_id.budget.slug}/proyecto/#{investment_with_same_id.id}")
-      expect(page).to have_content("Investment project code: #{investment_with_same_id.id}")
+      expect(page).to have_current_path("/presupuestos/new-budget/proyecto/9999")
+      expect(page).to have_content("Investment project code: 9999")
       expect(page).to have_content("Investment with same Spending ID Proposal")
     end
   end

@@ -83,9 +83,11 @@
         <h4><%= @proposal.question %></h4>
 
         <% if @proposal.is_proposal? %>
-          <%= render 'documents/documents',
-                      documents: @proposal.documents,
-                      max_documents_allowed: Proposal.max_documents_allowed %>
+          <% if feature?(:allow_attached_documents) %>
+            <%= render 'documents/documents',
+                        documents: @proposal.documents,
+                        max_documents_allowed: Proposal.max_documents_allowed %>
+          <% end %>
 
           <%= render 'shared/tags', taggable: @proposal %>
 

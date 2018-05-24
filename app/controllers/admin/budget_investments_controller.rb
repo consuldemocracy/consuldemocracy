@@ -75,25 +75,22 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       resource_model.parameterize('_')
     end
 
-    def sort_by(params)
-      if params.present? && Budget::Investment::SORTING_OPTIONS.include?(params)
-        "#{params == 'supports' ? 'cached_votes_up' : params} ASC"
-      else
-        "cached_votes_up DESC, created_at DESC"
-      end
-    end
-
     def load_investments
       @investments = Budget::Investment.scoped_filter(params, @current_filter)
-                                       .order(sort_by(params[:sort_by]))
+                                       .order_filter(params[:sort_by])
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
     def budget_investment_params
       params.require(:budget_investment)
             .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
+<<<<<<< HEAD
                     :organization_name, :label, :incompatible, :selected,
                     :valuation_tag_list,  :visible_to_valuators, valuator_ids: [], valuator_group_ids: [])
+=======
+                    :valuation_tag_list, :incompatible, :selected, :organization_name, :label,
+                    :visible_to_valuators, valuator_ids: [], valuator_group_ids: [])
+>>>>>>> 4559bd5c795bed6f80f0222fb2819247c6f3b5ce
     end
 
     def load_budget

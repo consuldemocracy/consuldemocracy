@@ -150,7 +150,7 @@ feature 'Budgets' do
     expect(page).to have_content "This is the summary for finished phase"
     expect(page).to have_content "March 21, 2018 - March 29, 2018"
 
-    expect(page).to have_css(".phase.active", count: 1)
+    expect(page).to have_css(".phase.is-active", count: 1)
   end
 
   xcontext "Index map" do
@@ -175,6 +175,25 @@ feature 'Budgets' do
 
       within ".map_location" do
         expect(page).to have_css(".map-icon", count: 3)
+      end
+    end
+
+    scenario "Display selected investment's map location markers" , :js do
+
+      budget.update(phase: :valuating)
+
+      investment1 = create(:budget_investment, :selected, heading: heading)
+      investment2 = create(:budget_investment, :selected, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+
+      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
+      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
+      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 2)
       end
     end
 
@@ -219,6 +238,18 @@ feature 'Budgets' do
     scenario "Links to unfeasible and selected if balloting or later" do
       budget = create(:budget, :selecting)
       group = create(:budget_group, budget: budget)
+
+      visit budget_path(budget)
+
+      expect(page).not_to have_link "See unfeasible investments"
+      expect(page).not_to have_link "See investments not selected for balloting phase"
+
+      click_link group.name
+
+      expect(page).not_to have_link "See unfeasible investments"
+      expect(page).not_to have_link "See investments not selected for balloting phase"
+
+      budget.update(phase: :publishing_prices)
 
       visit budget_path(budget)
 

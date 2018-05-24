@@ -81,7 +81,7 @@ describe Signature do
         expect(Vote.count).to eq(1)
       end
 
-      it "does not assigns vote to invalid user on budget investment" do
+      it "does not assigns vote to an unverified user on budget investment" do
         investment = create(:budget_investment)
         signature_sheet = create(:signature_sheet, signable: investment)
         user = create(:user, document_number: "123A")
@@ -109,11 +109,26 @@ describe Signature do
         proposal = create(:proposal)
         user = create(:user, :level_two, document_number: "123A")
         vote = create(:vote, votable: proposal, voter: user)
+
         signature_sheet = create(:signature_sheet, signable: proposal)
         signature = create(:signature, signature_sheet: signature_sheet, document_number: user.document_number)
 
         signature.verify
 
+        expect(Vote.count).to eq(1)
+      end
+
+      it "does not assign vote to user if already voted with a document number variant" do
+        proposal = create(:proposal)
+        user = create(:user, :level_two, document_number: "123P")
+        vote = create(:vote, votable: proposal, voter: user)
+
+        signature_sheet = create(:signature_sheet, signable: proposal)
+        signature = create(:signature, signature_sheet: signature_sheet, document_number: "123")
+
+        signature.verify
+
+        expect(signature.user).to eq(user)
         expect(Vote.count).to eq(1)
       end
 
@@ -214,6 +229,71 @@ describe Signature do
 
         signature.verify
         expect(signature).not_to be_verified
+      end
+    end
+
+  end
+
+  describe "#find_or_create_user?" do
+
+    describe "#find_user" do
+
+      it "returns the user with an exact document number" do
+        user = create(:user, document_number: "12345678Z")
+        signature = create(:signature, document_number: "12345678Z")
+
+        expect(signature.find_user).to eq(user)
+      end
+
+      it "returns the user without letter when trying to sign with letter" do
+        user = create(:user, document_number: "12345678")
+        signature = create(:signature, document_number: "12345678Z")
+
+        expect(signature.find_user).to eq(user)
+      end
+
+      it "returns the user with letter when trying to sign without letter" do
+        user = create(:user, document_number: "12345678Z")
+        signature = create(:signature, document_number: "12345678")
+
+        expect(signature.find_user).to eq(user)
+      end
+
+      it "returns nil when there are no users matching one of the document number variants" do
+        user = create(:user, document_number: "987654321A")
+        signature = create(:signature, document_number: "12345678Z")
+
+        expect(signature.find_user).to eq(nil)
+      end
+
+    end
+
+    describe "#create_user" do
+
+      it "creates the user if in census" do
+        signature = create(:signature, document_number: "12345678Z")
+
+        expect { signature.create_user }.to change { User.count }.by(1)
+      end
+
+      it "creates the user if a document number variant is found" do
+        signature = create(:signature, document_number: "12345678")
+
+        expect { signature.create_user }.to change { User.count }.by(1)
+      end
+
+      it "does not create the user if not in census" do
+        signature = create(:signature, document_number: "987654321A")
+
+        expect { signature.create_user }.to change { User.count }.by(0)
+      end
+
+      it "assigns the document number returned by census instead of the one in the signature sheet" do
+        signature = create(:signature, document_number: "00012345678Z")
+
+        signature.create_user
+
+        expect(User.last.document_number).to eq("12345678Z")
       end
     end
 

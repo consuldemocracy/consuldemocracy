@@ -135,7 +135,7 @@ feature 'Tags' do
     click_link "Create a budget investment"
 
     select  heading.name, from: 'budget_investment_heading_id'
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
+    fill_in 'budget_investment_title', with: 'Plant tress all over the city'
     fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
     check 'budget_investment_terms_of_service'
 
@@ -309,10 +309,8 @@ feature 'Tags' do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
-        if budget.balloting?
-          [investment1, investment2, investment3].each do |investment|
-            investment.update(selected: true, feasibility: "feasible")
-          end
+        [investment1, investment2, investment3].each do |investment|
+          investment.update(selected: true, feasibility: "feasible")
         end
 
         login_as(admin) if budget.drafting?

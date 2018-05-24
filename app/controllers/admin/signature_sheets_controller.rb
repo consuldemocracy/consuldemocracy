@@ -1,7 +1,7 @@
 class Admin::SignatureSheetsController < Admin::BaseController
 
   def index
-    @signature_sheets = SignatureSheet.all
+    @signature_sheets = SignatureSheet.all.order(created_at: :desc)
   end
 
   def new
@@ -21,6 +21,7 @@ class Admin::SignatureSheetsController < Admin::BaseController
 
   def show
     @signature_sheet = SignatureSheet.find(params[:id])
+    @voted_signatures = Vote.where(signature: @signature_sheet.signatures.verified).count
   end
 
   private

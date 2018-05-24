@@ -1,5 +1,9 @@
 module DocumentParser
 
+  def dni?(document_type)
+    document_type.to_s == "1"
+  end
+
   def get_document_number_variants(document_type, document_number)
     # Delete all non-alphanumerics
     document_number = document_number.to_s.gsub(/[^0-9A-Za-z]/i, '')
@@ -50,11 +54,21 @@ module DocumentParser
   # ['1234a', '1234A', '01234a', '01234A']
   def get_letter_variants(number_variants, letter)
     variants = []
-    if letter.present?
-      number_variants.each do |number|
-        variants << number + letter.downcase << number + letter.upcase
-      end
+    spanish_id_eight_digits = format_spanish_id_digits(number_variants.first)
+    letter = generate_letter(spanish_id_eight_digits)
+
+    number_variants.each do |number|
+      variants << number + letter.downcase << number + letter.upcase
     end
     variants
   end
+
+  def format_spanish_id_digits(spanish_id_digits)
+    spanish_id_digits.length < 8 ? "%08d" % spanish_id_digits.to_i : spanish_id_digits
+  end
+
+  def generate_letter(document_number_digits)
+    "TRWAGMYFPDXBNJZSQVHLCKE"[document_number_digits.to_i % 23].chr
+  end
+
 end

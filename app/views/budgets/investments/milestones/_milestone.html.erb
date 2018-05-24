@@ -10,6 +10,18 @@
       </span>
     <% end %>
 
+    <% if milestone.status.present? %>
+      <p>
+        <strong>
+          <%= t("budgets.investments.show.milestone_status_changed") %>
+        </strong>
+        <br>
+        <span class="milestone-status">
+          <%= milestone.status.name %>
+        </span>
+      </p>
+    <% end %>
+
     <%= image_tag(milestone.image_url(:large), { id: "image_#{milestone.id}", alt: milestone.image.title, class: "margin" }) if milestone.image.present? %>
 
     <% globalize(neutral_locale(locale)) do %>

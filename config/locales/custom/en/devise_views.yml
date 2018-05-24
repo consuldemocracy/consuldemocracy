@@ -1,0 +1,5 @@
+en:
+  devise_views:
+    mailer:
+      confirmation_instructions:
+        title: Welcome to the Open Government Portal of the Madrid City Council

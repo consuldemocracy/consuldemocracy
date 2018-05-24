@@ -62,7 +62,7 @@ feature 'Legislation Proposals' do
     visit legislation_process_proposal_path(proposal.process, proposal)
 
     within('#navigation_bar') do
-      expect(page).to have_css('.active', count: 1)
+      expect(page).to have_css('.is-active', count: 1)
     end
   end
 

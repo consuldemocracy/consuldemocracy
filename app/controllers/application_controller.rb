@@ -69,7 +69,9 @@ class ApplicationController < ActionController::Base
     end
 
     def set_layout
-      if devise_controller?
+      if devise_controller? && params[:landing]
+        "landing"
+      elsif devise_controller?
         "devise"
       else
         "application"
@@ -128,7 +130,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_default_budget_filter
-      if @budget.try(:balloting?)
+      if @budget.try(:balloting?) || @budget.try(:publishing_prices?)
         params[:filter] ||= "selected"
       end
     end

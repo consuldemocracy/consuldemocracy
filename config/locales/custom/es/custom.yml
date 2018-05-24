@@ -275,12 +275,12 @@ es:
       text: "Los técnicos municipales revisan los proyectos que han recibido de más a menos apoyos."
       link: "Leer más"
       alt: "Técnicos municipales revisando proyectos"
-    observatory:
-      label: "Consulta pública"
-      title: "Un nuevo órgano de participación"
-      text: "Aporta ideas al reglamento del Observatorio de la Ciudad, un órgano de participación presencial."
-      link: "Participar en la consulta"
-      alt: "Grupos de trabajo frente al Ayuntamiento"
+    decide:
+      label: "Empieza a participar"
+      title: "Decídete y cambia tu ciudad"
+      text: "Apúntate a la plataforma de participación ciudadana del Ayuntamiento y haz que Madrid sea más tuyo."
+      link: "Regístrate"
+      alt: "Imagen de la nueva campaña de Decide Madrid"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
@@ -388,3 +388,15 @@ es:
       proposal_type: Elige si quieres hacer una propuesta o una pregunta
     index:
       start_proposal_question: Crear propuesta o pregunta
+  landings:
+    cambia_tu_ciudad:
+      phrase_1: "Maya decidió que Madrid necesitaba puntos de carga para coches eléctricos"
+      phrase_2: "Jana decidió que había que sensibilizar a los madrileños sobre sostenibilidad"
+      phrase_3: "Huan decidió que el cole de su hijo tenía que ahorrar energía"
+      phrase_4: "Leo decidió que los edificios municipales tenían que ser más eficientes"
+      phrase_5: "Marina decidió que Madrid tenía que incentivar los coches eléctricos"
+      phrase_6: "Anuar decidió que en Madrid había que ahorrar energía"
+      phrase_7: "Daniela decidió que Madrid tenía que ser más verde"
+    meta:
+      title: Cambia tu ciudad con Decide Madrid
+      description: Decide Madrid es una web donde puedes tomar decisiones para hacer Madrid más tuyo, mejor. Presenta tus propuestas para que el Ayuntamiento las lleve a cabo.

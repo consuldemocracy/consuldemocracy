@@ -1,0 +1,5 @@
+en:
+  devise_views:
+    mailer:
+      confirmation_instructions:
+        title: Te damos la bienvenida al Portal de Gobierno Abierto del Ayuntamiento de Madrid

@@ -47,9 +47,11 @@
                                    aria: {describedby: "video-url-help-text"} %>
     </div>
 
-    <div class="documents small-12 column" data-max-documents="<%= Legislation::Proposal.max_documents_allowed %>" id="js-legislation-proposal-documents">
-      <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
-    </div>
+    <% if feature?(:allow_attached_documents) %>
+      <div class="documents small-12 column" data-max-documents="<%= Legislation::Proposal.max_documents_allowed %>" id="js-legislation-proposal-documents">
+        <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
+      </div>
+    <% end %>
 
     <div class="small-12 medium-6 column" id="js-legislation-proposal-geozone">
       <%= f.label :geozone_id,  t("proposals.form.geozone") %>

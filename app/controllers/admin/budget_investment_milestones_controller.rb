@@ -16,7 +16,8 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
     @milestone = Budget::Investment::Milestone.new(milestone_params)
     @milestone.investment = @investment
     if @milestone.save
-      redirect_to admin_budget_budget_investment_path(@investment.budget, @investment),
+      investment_id = @investment.original_spending_proposal_id || @investment.id
+      redirect_to admin_budget_budget_investment_path(budget_id: @investment.budget, id: investment_id),
                   notice: t('admin.milestones.create.notice')
     else
       render :new
@@ -64,16 +65,16 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
     Budget::Investment::Milestone.find(params[:id])
   end
 
+  def load_statuses
+    @statuses = Budget::Investment::Status.all
+  end
+
   def resource_model
     Budget::Investment::Milestone
   end
 
   def resource
     get_milestone
-  end
-
-  def load_statuses
-    @statuses = Budget::Investment::Status.all
   end
 
 end

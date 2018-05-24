@@ -134,20 +134,25 @@
           </div>
         <% end %>
       <% else %>
-        <div class="float-right">
-          <span class="label-budget-investment float-left">
-            <%= t("budgets.investments.show.title") %>
-          </span>
-          <span class="icon-budget"></span>
-        </div>
-        <br>
         <% if investment.unfeasible? %>
           <div class="callout warning">
             <%= t("budgets.investments.show.project_unfeasible_html") %>
           </div>
+        <% elsif investment.selected? %>
+          <div class="callout success">
+            <%= t("budgets.investments.show.project_selected_html") %>
+          </div>
         <% elsif !investment.selected? %>
           <div class="callout warning">
             <%= t("budgets.investments.show.project_not_selected_html") %>
+          </div>
+        <% else %>
+          <br>
+          <div class="float-right">
+            <span class="label-budget-investment float-left">
+              <%= t("budgets.investments.show.title") %>
+            </span>
+            <span class="icon-budget"></span>
           </div>
         <% end %>
       <% end %>

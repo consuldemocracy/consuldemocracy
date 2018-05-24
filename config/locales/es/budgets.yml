@@ -67,8 +67,6 @@ es:
         tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
-        faq: "¿Qué puedes proponer?"
-        faq_link: "Mira toda la información sobre los presupuestos participativos"
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
@@ -128,8 +126,9 @@ es:
         milestone_publication_date: "Publicado el %{publication_date}"
         milestone_status_changed: El proyecto ha cambiado al estado
         author: Autor
-        project_unfeasible_html: 'Este proyecto de inversión <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación.'
-        project_not_selected_html: 'Este proyecto de inversión <strong>no ha sido seleccionado</strong> para la fase de votación.'
+        project_unfeasible_html: 'Este proyecto de gasto <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación.'
+        project_selected_html: 'Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación.'
+        project_not_selected_html: 'Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación.'
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         add: Votar

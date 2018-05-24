@@ -275,12 +275,12 @@ en:
       text: "The municipal civil servants review the projects that have received from more to less support."
       link: "Read more"
       alt: "Municipal civil servants reviewing projects"
-    observatory:
-      label: "Public consultation"
-      title: "A new body of participation"
-      text: "Contribute your ideas to the regulation of the City Observatory, a body of face-to-face participation."
-      link: "Participate in the consultation"
-      alt: "Working groups in front of the City Hall"
+    decide:
+      label: "Start participating"
+      title: "Decide and change your city"
+      text: "Sign up to the citizen participation platform of Madrid City Council and make Madrid more yours."
+      link: "Sign up"
+      alt: "Image of the new Decide Madrid campaign"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
@@ -388,3 +388,15 @@ en:
       proposal_type: Choose if you wanna make a proposal or a question
     index:
       start_proposal_question: Create proposal or question
+  landings:
+    cambia_tu_ciudad:
+      phrase_1: "Maya decided that Madrid needed charging points for electric cars"
+      phrase_2: "Jana decided that people of Madrid needed sustainability awareness"
+      phrase_3: "Huan decided that his son's school had to save energy"
+      phrase_4: "Leo decided that municipal buildings had to be more Eco-efficient"
+      phrase_5: "Marina decided that Madrid had to promote electric cars"
+      phrase_6: "Anuar decided that Madrid had to save energy"
+      phrase_7: "Daniela decided that Madrid had to be greener"
+    meta:
+      title: Change your city with Decide Madrid
+      description: Decide Madrid is a website where you can make decisions to make Madrid more yours, better. Make your proposals for the City Hall to carry them out.
