@@ -1,3 +1,4 @@
+# Failing spec
 require 'rails_helper'
 
 feature 'Admin settings' do
