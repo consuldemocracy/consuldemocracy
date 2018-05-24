@@ -655,6 +655,9 @@ en:
         action: Preview Pending
         preview_of: Preview of %{name}
         pending_to_be_sent: This is the content pending to be sent
+        moderate_pending: Moderate notification send
+        send_pending: Send pending
+        send_pending_notification: Pending notifications sent succesfully
       proposal_notification_digest:
         title: Proposal Notification Digest
         description: Gathers all proposal notifications for an user in a single message, to avoid too much emails.
