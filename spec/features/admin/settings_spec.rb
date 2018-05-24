@@ -1,4 +1,3 @@
-# Failing spec
 require 'rails_helper'
 
 feature 'Admin settings' do
@@ -100,6 +99,7 @@ feature 'Admin settings' do
       setting = Setting.where(key: "feature.user.skip_verification").first
 
       visit admin_settings_path
+      find("#features-tab").click
 
       accept_alert do
         find("#edit_setting_#{setting.id} .button").click
@@ -113,6 +113,7 @@ feature 'Admin settings' do
       setting = Setting.where(key: "feature.user.skip_verification").first
 
       visit admin_settings_path
+      find("#features-tab").click
 
       accept_alert do
         find("#edit_setting_#{setting.id} .button").click
