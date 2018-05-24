@@ -35,8 +35,9 @@ feature 'Admin settings' do
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
+      find("#map-tab").click
 
-      expect(page).not_to have_content "Map configuration"
+      expect(page).not_to have_css("#admin-map")
     end
 
     scenario "Should be able when map feature activated" do
@@ -44,8 +45,9 @@ feature 'Admin settings' do
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
+      find("#map-tab").click
 
-      expect(page).to have_content "Map configuration"
+      expect(page).to have_css("#admin-map")
     end
 
     scenario "Should show successful notice" do
@@ -78,6 +80,7 @@ feature 'Admin settings' do
       login_as(admin)
 
       visit admin_settings_path
+      find("#map-tab").click
       find("#admin-map").click
       within "#map-form" do
         click_on "Update"
