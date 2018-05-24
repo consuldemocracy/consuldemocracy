@@ -23,9 +23,11 @@
       </div>
     <% end %>
 
-    <div class="documents small-12 column">
-      <%= render 'documents/nested_documents', documentable: @investment, f: f %>
-    </div>
+    <% if feature?(:allow_attached_documents) %>
+      <div class="documents small-12 column">
+        <%= render 'documents/nested_documents', documentable: @investment, f: f %>
+      </div>
+    <% end %>
 
     <% if feature?(:map) %>
       <div class="small-12 column">

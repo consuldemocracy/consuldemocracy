@@ -8,8 +8,8 @@ feature 'Admin budget investments' do
   end
 
   background do
-    admin = create(:administrator)
-    login_as(admin.user)
+    @admin = create(:administrator)
+    login_as(@admin.user)
   end
 
   context "Feature flag" do
@@ -142,7 +142,7 @@ feature 'Admin budget investments' do
       end
 
       within("#budget_investment_#{budget_investment3.id}") do
-        expect(page).to have_content("No valuators assigned")
+        expect(page).to have_content("No valuation groups assigned")
       end
     end
 
@@ -1191,19 +1191,134 @@ feature 'Admin budget investments' do
     end
   end
 
+  context "Mark as visible to valuators" do
+    let(:valuator) { create(:valuator) }
+    let(:admin) { create(:administrator) }
+
+    let(:group) { create(:budget_group, budget: budget) }
+    let(:heading) { create(:budget_heading, group: group) }
+
+    let(:investment1) { create(:budget_investment, heading: heading) }
+    let(:investment2) { create(:budget_investment, heading: heading) }
+
+    scenario "Mark as visible to valuator", :js do
+      investment1.valuators << valuator
+      investment2.valuators << valuator
+      investment1.update(administrator: admin)
+      investment2.update(administrator: admin)
+
+      visit admin_budget_budget_investments_path(budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
+
+      within("#budget_investment_#{investment1.id}") do
+        check "budget_investment_visible_to_valuators"
+      end
+
+      visit admin_budget_budget_investments_path(budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
+
+      within("#budget_investment_#{investment1.id}") do
+        expect(find("#budget_investment_visible_to_valuators")).to be_checked
+      end
+    end
+
+    scenario "Shows the correct investments to valuators" do
+      investment1.update(visible_to_valuators: true)
+      investment2.update(visible_to_valuators: false)
+
+      investment1.valuators << valuator
+      investment2.valuators << valuator
+      investment1.update(administrator: admin)
+      investment2.update(administrator: admin)
+
+      login_as(valuator.user.reload)
+      visit root_path
+      click_link "Admin"
+      click_link "Valuation"
+
+      within "#budget_#{budget.id}" do
+        click_link "Evaluate"
+      end
+
+      expect(page).to     have_content investment1.title
+      expect(page).not_to have_content investment2.title
+    end
+
+    scenario "Unmark as visible to valuator", :js do
+      Setting['feature.budgets.valuators_allowed'] = true
+
+      investment1.valuators << valuator
+      investment2.valuators << valuator
+      investment1.update(administrator: admin)
+      investment2.update(administrator: admin)
+
+      visit admin_budget_budget_investments_path(budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
+
+      within("#budget_investment_#{investment1.id}") do
+        uncheck "budget_investment_visible_to_valuators"
+      end
+
+      visit admin_budget_budget_investments_path(budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
+
+      within("#budget_investment_#{investment1.id}") do
+        expect(find("#budget_investment_visible_to_valuators")).not_to be_checked
+      end
+    end
+
+    scenario "Showing the valuating checkbox" do
+      investment1 = create(:budget_investment, budget: budget, visible_to_valuators: true)
+      investment2 = create(:budget_investment, budget: budget, visible_to_valuators: false)
+
+      investment1.valuators << create(:valuator)
+      investment2.valuators << create(:valuator)
+      investment2.valuators << create(:valuator)
+      investment1.update(administrator: create(:administrator))
+      investment2.update(administrator: create(:administrator))
+
+      visit admin_budget_budget_investments_path(budget)
+
+      expect(page).not_to have_css("#budget_investment_visible_to_valuators")
+
+      within('#filter-subnav') { click_link 'Under valuation' }
+
+      within("#budget_investment_#{investment1.id}") do
+        valuating_checkbox = find('#budget_investment_visible_to_valuators')
+        expect(valuating_checkbox).to be_checked
+      end
+
+      within("#budget_investment_#{investment2.id}") do
+        valuating_checkbox = find('#budget_investment_visible_to_valuators')
+        expect(valuating_checkbox).not_to be_checked
+      end
+    end
+  end
+
   context "Selecting csv" do
 
     scenario "Downloading CSV file" do
-      investment = create(:budget_investment, :feasible, budget: budget,
-                                                         price: 100)
-      valuator = create(:valuator, user: create(:user, username: 'Rachel',
-                                                       email: 'rachel@val.org'))
-      group = create(:valuator_group, name: "Test name")
-
-      investment.valuator_groups << group
-
-      admin = create(:administrator, user: create(:user, username: 'Gema'))
-      investment.update(administrator_id: admin.id)
+      admin = create(:administrator, user: create(:user, username: 'Admin'))
+      valuator = create(:valuator, user: create(:user, username: 'Valuator'))
+      valuator_group = create(:valuator_group, name: "Valuator Group")
+      budget_group = create(:budget_group, name: "Budget Group", budget: budget)
+      first_budget_heading = create(:budget_heading, group: budget_group, name: "Budget Heading")
+      second_budget_heading = create(:budget_heading, group: budget_group, name: "Other Heading")
+      first_investment = create(:budget_investment, :feasible, :selected, title: "Le Investment",
+                                                         budget: budget, group: budget_group,
+                                                         heading: first_budget_heading,
+                                                         cached_votes_up: 88, price: 99,
+                                                         valuators: [],
+                                                         valuator_groups: [valuator_group],
+                                                         administrator: admin,
+                                                         visible_to_valuators: true)
+      second_investment = create(:budget_investment, :unfeasible, title: "Alt Investment",
+                                                         budget: budget, group: budget_group,
+                                                         heading: second_budget_heading,
+                                                         cached_votes_up: 66, price: 88,
+                                                         valuators: [valuator],
+                                                         valuator_groups: [],
+                                                         visible_to_valuators: false)
 
       visit admin_budget_budget_investments_path(budget)
 
@@ -1213,40 +1328,28 @@ feature 'Admin budget investments' do
       expect(header).to match(/^attachment/)
       expect(header).to match(/filename="budget_investments.csv"$/)
 
-      valuators = investment.valuators.collect(&:description_or_name).join(', ')
-      feasibility_string = "admin.budget_investments.index"\
-                           ".feasibility.#{investment.feasibility}"
-      price = I18n.t(feasibility_string, price: investment.formatted_price)
-
-      expect(page).to have_content investment.title
-      expect(page).to have_content investment.total_votes.to_s
-      expect(page).to have_content investment.id.to_s
-      expect(page).to have_content investment.heading.name
-
-      expect(page).to have_content investment.administrator.name
-      expect(page).to have_content valuators
-      expect(page).to have_content group.name
-      expect(page).to have_content price
-      expect(page).to have_content I18n.t('shared.no')
+      csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation,"\
+                     "Feasibility,Val. Fin.,Selected,Show to valuators,Author username\n"\
+                     "#{first_investment.id},Le Investment,88,Admin,-,Valuator Group,"\
+                     "Budget Heading,Feasible (€99),Yes,Yes,Yes,#{first_investment.author.username}\n#{second_investment.id},"\
+                     "Alt Investment,66,No admin assigned,Valuator,-,Other Heading,"\
+                     "Unfeasible,No,No,No,#{second_investment.author.username}\n"
+      expect(page.body).to eq(csv_contents)
     end
 
     scenario "Downloading CSV file with applied filter" do
-      investment1 = create(:budget_investment, :unfeasible, budget: budget,
-                                                            title: 'compatible')
-      investment2 = create(:budget_investment, :finished, budget: budget,
-                                                          title: 'finished')
+      unfeasible_investment = create(:budget_investment, :unfeasible, budget: budget,
+                                                                      title: 'Unfeasible one')
+      finished_investment = create(:budget_investment, :finished, budget: budget,
+                                                                  title: 'Finished Investment')
 
       visit admin_budget_budget_investments_path(budget)
       within('#filter-subnav') { click_link 'Valuation finished' }
 
       click_link "Download current selection"
 
-      header = page.response_headers['Content-Disposition']
-      expect(header).to match(/^attachment/)
-      expect(header).to match(/filename="budget_investments.csv"$/)
-
-      expect(page).to have_content investment2.title
-      expect(page).not_to have_content investment1.title
+      expect(page).to have_content('Finished Investment')
+      expect(page).not_to have_content('Unfeasible one')
     end
   end
 

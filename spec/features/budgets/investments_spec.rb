@@ -990,6 +990,24 @@ feature 'Budget Investments' do
 
     expect(page).to have_content("Unfeasibility explanation")
     expect(page).to have_content("Local government is not competent in this matter")
+    expect(page).to have_content("This investment project has been marked as not feasible and will not go to balloting phase")
+  end
+
+  scenario "Show (not selected budget investment)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        budget: budget,
+                        group: group,
+                        heading: heading,
+                        unfeasibility_explanation: 'Local government is not competent in this matter')
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).to have_content("This investment project has not been selected for balloting phase")
   end
 
   scenario "Show (unfeasible budget investment with valuation not finished)" do
@@ -1014,7 +1032,8 @@ feature 'Budget Investments' do
     user = create(:user)
     investment = create(:budget_investment)
     create(:budget_investment_milestone, investment: investment,
-                                         description: "Last milestone with a link to https://consul.dev",
+                                         description_en: "Last milestone with a link to https://consul.dev",
+                                         description_es: "Último hito con el link https://consul.dev",
                                          publication_date: Date.tomorrow)
     first_milestone = create(:budget_investment_milestone, investment: investment,
                                                            description: "First milestone",
@@ -1036,6 +1055,15 @@ feature 'Budget Investments' do
       expect(page).to have_link(document.title)
       expect(page).to have_link("https://consul.dev")
       expect(page).to have_content(first_milestone.status.name)
+    end
+
+    select('Español', from: 'locale-switcher')
+
+    find("#tab-milestones-label").click
+
+    within("#tab-milestones") do
+      expect(page).to have_content('Último hito con el link https://consul.dev')
+      expect(page).to have_link("https://consul.dev")
     end
   end
 

@@ -192,6 +192,7 @@ en:
         table_valuation_finished: "Val. Fin."
         table_evaluation: "Show to valuators"
         table_selection: "Selected"
+        table_evaluation: "Show to valuators"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Assigned administrator
@@ -265,9 +266,12 @@ en:
       form:
         admin_statuses: Admin investment statuses
         no_statuses_defined: There are no defined investment statuses yet
+        add_language: Add language
+        remove_language: Remove language
       new:
         creating: Create milestone
         date: Date
+        description: Description
       edit:
         title: Edit milestone
       create:
@@ -985,8 +989,8 @@ en:
       flash:
         updated: Value updated
       index:
-        banners: Estilos de banners
-        banner_imgs: Imágenes para los banners
+        banners: Banner styles
+        banner_imgs: Banner images
         title: Configuration settings
         update_setting: Update
         feature_flags: Features

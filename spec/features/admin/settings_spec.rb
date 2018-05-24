@@ -89,4 +89,36 @@ feature 'Admin settings' do
 
   end
 
+  describe "Skip verification" do
+
+    scenario "deactivate skip verification", :js do
+      Setting["feature.user.skip_verification"] = 'true'
+      setting = Setting.where(key: "feature.user.skip_verification").first
+
+      visit admin_settings_path
+
+      accept_alert do
+        find("#edit_setting_#{setting.id} .button").click
+      end
+
+      expect(page).to have_content 'Value updated'
+    end
+
+    scenario "activate skip verification", :js do
+      Setting["feature.user.skip_verification"] = nil
+      setting = Setting.where(key: "feature.user.skip_verification").first
+
+      visit admin_settings_path
+
+      accept_alert do
+        find("#edit_setting_#{setting.id} .button").click
+      end
+
+      expect(page).to have_content 'Value updated'
+
+      Setting["feature.user.skip_verification"] = nil
+    end
+
+  end
+
 end

@@ -20,7 +20,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       format.html
       format.js
       format.csv do
-        send_data Budget::Investment.to_csv(@investments, headers: true),
+        send_data Budget::Investment::Exporter.new(@investments).to_csv,
                   filename: 'budget_investments.csv'
       end
     end
@@ -92,8 +92,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     def budget_investment_params
       params.require(:budget_investment)
             .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
-                    :valuation_tag_list, :incompatible, :selected, :organization_name, :label,
-                    :visible_to_valuators, valuator_ids: [], valuator_group_ids: [])
+                    :organization_name, :label, :incompatible, :selected,
+                    :valuation_tag_list,  :visible_to_valuators, valuator_ids: [], valuator_group_ids: [])
     end
 
     def load_budget

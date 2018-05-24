@@ -192,6 +192,7 @@ es:
         table_valuation_finished: "Ev. Fin."
         table_evaluation: "Mostrar a evaluadores"
         table_selection: "Seleccionado"
+        table_evaluation: "Mostrar a evaluadores"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignado
@@ -265,9 +266,12 @@ es:
       form:
         admin_statuses: Gestionar estados de proyectos
         no_statuses_defined: No hay estados definidos
+        add_language: Añadir idioma
+        remove_language: Eliminar idioma
       new:
         creating: Crear hito
         date: Fecha
+        description: Descripción
       edit:
         title: Editar hito
       create:

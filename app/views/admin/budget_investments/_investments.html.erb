@@ -85,12 +85,13 @@
           <td class="small text-center">
             <%= investment.valuation_finished? ? t('shared.yes'): t('shared.no') %>
           </td>
-          <td class="small">
+          <td class="small text-center">
             <% if params[:filter] == "under_valuation" %>
               <%= form_for [:admin, investment.budget, investment], remote: true do |f| %>
                 <%= f.check_box :visible_to_valuators,
                                 label: false,
-                                class: "js-submit-on-change" %>
+                                class: "js-submit-on-change",
+                                id: "budget_investment_visible_to_valuators" %>
               <% end %>
             <% else %>
               <% if investment.selected? %>
