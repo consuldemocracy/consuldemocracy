@@ -88,6 +88,26 @@ feature "System Emails" do
       expect(Activity.last.actionable_type).to eq('ProposalNotification')
       expect(page).not_to have_content("Proposal A Title")
     end
+
+    scenario "#send_pending" do
+      proposal = create(:proposal)
+      proposal_notification = create(:proposal_notification, proposal: proposal,
+                                                              title: 'Proposal A Title',
+                                                              body: 'Proposal A Notification Body')
+      voter = create(:user, :level_two)
+      create(:notification, notifiable: proposal_notification, user: voter, emailed_at: nil)
+      create(:follow, user: voter, followable: proposal)
+
+      visit admin_system_emails_path
+
+      click_on "Send pending"
+
+      email = open_last_email
+      expect(email).to deliver_to(voter)
+      expect(email).to have_body_text(proposal_notification.body)
+
+      expect(page).to have_content("Pending notifications sent succesfully")
+    end
   end
 
 end
