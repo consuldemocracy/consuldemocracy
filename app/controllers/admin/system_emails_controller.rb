@@ -30,6 +30,22 @@ class Admin::SystemEmailsController < Admin::BaseController
     redirect_to admin_system_email_preview_pending_path("proposal_notification_digest")
   end
 
+  def send_pending
+    User.email_digest.find_each do |user|
+      email_digest = EmailDigest.new(user)
+      begin
+        email_digest.deliver
+        email_digest.mark_as_emailed
+      rescue
+        user.increment_counter(:failed_email_digests_count)
+        user.save
+      end
+    end
+
+    flash[:notice] = t("admin.system_emails.preview_pending.send_pending_notification")
+    redirect_to admin_system_emails_path
+  end
+
   private
 
   def load_system_email
