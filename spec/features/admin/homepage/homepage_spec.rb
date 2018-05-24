@@ -93,14 +93,16 @@ feature 'Homepage' do
     within("#widget_card_#{card1.id}") do
       expect(page).to have_content("Card text")
       expect(page).to have_content("Card description")
-      expect(page).to have_link("Link text", href: "consul.dev")
+      expect(page).to have_content("Link text")
+      expect(page).to have_link(href: "consul.dev")
       expect(page).to have_css("img[alt='#{card1.image.title}']")
     end
 
     within("#widget_card_#{card2.id}") do
       expect(page).to have_content("Card text2")
       expect(page).to have_content("Card description2")
-      expect(page).to have_link("Link text2", href: "consul.dev2")
+      expect(page).to have_content("Link text2")
+      expect(page).to have_link(href: "consul.dev2")
       expect(page).to have_css("img[alt='#{card2.image.title}']")
     end
   end

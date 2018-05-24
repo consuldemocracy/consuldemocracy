@@ -16,7 +16,7 @@ feature 'Cards' do
     fill_in "widget_card_link_text", with: "Link text"
     fill_in "widget_card_link_url", with: "consul.dev"
     attach_image_to_card
-    click_button "Create Card"
+    click_button "Create card"
 
     expect(page).to have_content "Success"
     expect(page).to have_css(".card", count: 1)
@@ -27,7 +27,7 @@ feature 'Cards' do
       expect(page).to have_content "Card description"
       expect(page).to have_content "Link text"
       expect(page).to have_content "consul.dev"
-      expect(page).to have_css("img[alt='#{card.image.title}']")
+      expect(page).to have_link("Show image", href: card.image_url(:large))
     end
   end
 
@@ -44,7 +44,7 @@ feature 'Cards' do
       expect(page).to have_content card.description
       expect(page).to have_content card.link_text
       expect(page).to have_content card.link_url
-      expect(page).to have_css("img[alt='#{card.image.title}']")
+      expect(page).to have_link("Show image", href: card.image_url(:large))
     end
   end
 
@@ -61,7 +61,7 @@ feature 'Cards' do
     fill_in "widget_card_description", with: "Card description updated"
     fill_in "widget_card_link_text", with: "Link text updated"
     fill_in "widget_card_link_url", with: "consul.dev updated"
-    click_button "Update Card"
+    click_button "Save card"
 
     expect(page).to have_content "Updated"
 
@@ -81,7 +81,7 @@ feature 'Cards' do
 
     within("#widget_card_#{card.id}") do
       accept_confirm do
-        click_link "Remove"
+        click_link "Delete"
       end
     end
 
@@ -99,7 +99,7 @@ feature 'Cards' do
       fill_in "widget_card_description", with: "Card description"
       fill_in "widget_card_link_text", with: "Link text"
       fill_in "widget_card_link_url", with: "consul.dev"
-      click_button "Create Card"
+      click_button "Create header"
 
       expect(page).to have_content "Success"
 
@@ -122,7 +122,7 @@ feature 'Cards' do
 
   def attach_image_to_card
     click_link "Add image"
-    image_input = find(".image").find("input[type=file]", visible: false)
+    image_input = all(".image").last.find("input[type=file]", visible: false)
     attach_file(
       image_input[:id],
       Rails.root.join('spec/fixtures/files/clippy.jpg'),

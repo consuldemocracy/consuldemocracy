@@ -7,7 +7,7 @@ feature "Home" do
     scenario 'Welcome message' do
       visit root_path
 
-      expect(page).to have_content "Love the city, and it will become a city you love"
+      expect(page).to have_content "CONSUL"
     end
 
     scenario 'Not display recommended section' do
@@ -103,29 +103,6 @@ feature "Home" do
       scenario 'Do not display recommended section when there are not debates and proposals' do
         visit root_path
         expect(page).not_to have_content "Recommendations that may interest you"
-      end
-
-      feature 'Carousel size' do
-
-        scenario 'Display debates centered when there are no proposals' do
-          debate = create(:debate, tag_list: "Sport")
-          visit root_path
-          expect(page).to have_selector('.medium-centered.large-centered')
-        end
-
-        scenario 'Correct display debates and proposals' do
-          proposal = create(:proposal, tag_list: "Sport")
-          debates = create(:debate, tag_list: "Sport")
-
-          visit root_path
-
-          expect(page).to have_selector('.debates.medium-offset-2.large-offset-2')
-          expect(page).not_to have_selector('.proposals.medium-offset-2.large-offset-2')
-          expect(page).not_to have_selector('.debates.end')
-          expect(page).to have_selector('.proposals.end')
-          expect(page).not_to have_selector('.medium-centered.large-centered')
-        end
-
       end
     end
 
