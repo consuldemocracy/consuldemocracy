@@ -47,7 +47,7 @@ feature "Welcome screen" do
 
     visit root_path
     expect(page).to have_content("Vote in participatory budgets")
-    expect(page).to have_link("See projects")
+    expect(page).to have_link("Vote projects")
 
     budget.update_attributes(phase: :reviewing_ballots)
 
