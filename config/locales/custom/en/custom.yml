@@ -260,7 +260,7 @@ en:
       balloting:
         title: "Decides what projects the City Council will do with 100 million"
         text: "Vote in participatory budgets"
-        button: "See projects"
+        button: "Vote projects"
       reviewing_ballots:
         title: "In a few days we will know the winning projects of the participatory budgets"
         text: "Thank you for voting!"

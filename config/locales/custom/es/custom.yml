@@ -260,7 +260,7 @@ es:
       balloting:
         title: "Decide qué proyectos hará el Ayuntamiento con 100 millones"
         text: "Vota los presupuestos participativos"
-        button: "Ver proyectos"
+        button: "Votar proyectos"
       reviewing_ballots:
         title: "En unos días conoceremos los proyectos ganadores de los presupuestos participativos"
         text: "¡Gracias por votar!"
