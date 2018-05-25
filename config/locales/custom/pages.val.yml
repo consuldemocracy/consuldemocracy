@@ -39,17 +39,35 @@ val:
         lema: Mone a gaudir de la vida en les colles
 
     priv:
-      title: "Política de Privadesa"
-      subtitle: "AVÍS DE PROTECCIÓ DE DADES"
+      title: "Política de Privacitat"
+      subtitle: "POLÍTICA DE PRIVACITAT PÀGINA WEB"
       body: |-
-        1. La navegació per la informació disponible al Portal de Govern Obert és anònima.
-        2. Per a utilitzar els serveis continguts en el Portal de Govern Obert l'usuari haurà de donar-se d'alta i proporcionar prèviament les dades de caràcter personal segun la informació específica que consta en cada tipus d'alta.
-        3. Les dades aportades seran incorporades i tractades per l'Ajuntament d'acord amb la descripció del fitxer següent:
-          * __Nom del fitxer/tractament:__ DATOS PERSONALES WEB
-          * __Finalitat del fitxer/tractament:__ Gestionar els processos participatius per al control de l'habilitació de les persones que participen en els mateixos i recompte merament numèric i estadístic dels resultats derivats dels processos de participació ciutadana
-          * __Òrgan responsable:__ AYUNTAMIENTO DE CASTELLÓN
-        4. L'interessat podrà exercir els drets d'accés, rectificació, cancel·lació i oposició, davant l'òrgan responsable indicat tot la qual cosa s'informa en el compliment de l'article 5 de la Llei Orgànica 15/1999, de 13 de desembre, de Protecció de Dades de Caràcter Personal.
-        5. Com a principi general, aquest lloc web no comparteix ni revela informació obtinguda, excepte quan haja sigut autoritzada per l'usuari, o la informació siga requerida per l'autoritat judicial, ministeri fiscal o la policia judicial, o se de algun dels supòsits regulats en l'article 11 de la Llei Orgànica 15/1999, de 13 de desembre, de Protecció de Dades de Caràcter Personal.
+        L'Ajuntament de XXXX està especialment sensibilitzat amb la protecció de dades de caràcter personal dels usuaris i usuàries dels serveis del lloc web.
+        Per mitjà d’aquest document, l'Ajuntament us informa que les pàgines web tenen per objecte facilitar-vos informació sobre el nostre municipi i els esdeveniments que s'hi organitzen, posar a la vostra disposició la informació establerta en la Llei de transparència, accés a la informació pública i bon govern, i la possibilitat d'efectuar els tràmits que estan disponibles a través de la nostra seu electrònica.
+        L'Ajuntament us informa, com a USUARIS i USUÀRIES dels llocs web anteriorment esmentats, dels usos a què se sotmeten les dades de caràcter personal que es demanen en lloc web, a fi que decidiu, lliurement i voluntària, si desitgeu facilitar la informació sol·licitada.
+        L'Ajuntament es reserva la facultat de modificar aquesta política amb l'objecte d'adaptar-la a novetats legislatives, criteris jurisprudencials, pràctiques del sector o interessos de l'entitat.
+        Qualsevol modificació serà anunciada amb la deguda antelació, a fi que tingueu un perfecte coneixement del seu contingut.
+        ## RESPONSABLE DEL TRACTAMENT
+        El responsable del tractament de les dades de caràcter personal és l'Ajuntament de Castelló.
+        __Domicili: Plaça Major 1 , 12001 Castelló__
+        __Contacte: dpd@castello.es__
+        __Telèfon:  010__
+        __Delegat de protecció de dades: dpd@castello.es__
+        ## FINALITAT DEL TRACTAMENT
+        Les dades que ens faciliteu per mitjà de l'apartat de Contacte seran tractades amb la finalitat d'atendre la vostra sol·licitud. Si ens envieu un correu electrònic, igualment tractarem les dades per a donar resposta a la vostra sol·licitud.
+        La recollida i tractament de les dades personals a través dels diferents formularis a què poguéreu accedir a través de la seu electrònica/tràmits té diferents finalitats indicades en les clàusules recollides en el formulari corresponent. Aquestes finalitats seran atendre la vostra sol·licitud, reclamació, denúncia i, en general, gestionar el tràmit que inicieu a través de la seu electrònica.
+        ## TERMINI DE CONSERVACIÓ
+        Les dades personals proporcionades es conservaran el temps necessari per a gestionar la vostra consulta, suggeriment, reclamació o denúncia. Finalitzada aquesta, es conservaran durant el termini corresponent per a complir les obligacions legals o durant el termini que un jutge o tribunal ho puga requerir. Així mateix, podran ser conservades amb fins històrics i d'arxiu general.
+        ## LEGITIMACIÓ
+        La legitimació per al tractament dependrà de la vostra petició. Així quan estiga relacionada amb les funcions de l'Ajuntament es basaran en l'exercici de les funcions públiques. Quan ens realitze una petició o se subscriga a algun servei oferit per l'Ajuntament, es basarà en el vostre consentiment. Quan la sol·licitud estiga relacionada amb el compliment d'una obligació legal, la normativa aplicable serà la base de legitimació. Quan existisca un contracte entre vosaltres i l'Ajuntament, la base de legitimació serà la relació contractual existent.
+        ## DESTINATARIS I DESTINATÀRIES
+        Les dades podran ser cedides a altres organismes públics competents en la matèria en compliment de la normativa vigent. Així mateix, podran ser publicades en el Portal de Transparència de l'Ajuntament, en compliment de la Llei 19/2013 de transparència, accés a la informació pública i bon govern.
+        ## DRETS DELS USUARIS I USUÀRIES
+        Podreu posar-vos en contacte amb el nostre delegat de protecció de dades per a qualsevol dubte que tingueu sobre el tractament de les vostres dades de caràcter personal en l’adreça següent: dpd@castello.es
+        Podreu exercitar els drets d'accés, rectificació, cancel·lació, portabilitat, supressió o, si és el cas, oposició. Per a això, podreu dirigir-vos a l'Ajuntament a través de l’adreça següent  Plaça Major 1 , 12001 Castelló, especificant el dret que sol·liciteu, amb un document identificatiu (DNI, passaport..). En el cas que actuàreu per mitjà de representant, legal o voluntari, haureu d'aportar també el document que acredite la representació i document identificatiu d’aquest.
+        Així mateix, en cas de considerar vulnerat el vostre dret a la protecció de dades personals, podreu dirigir-vos a l'Agència Espanyola de Protecció de Dades (www.agpd.es).
+        ## MESURES DE SEGURETAT
+        S'aplicaran les mesures de seguretat establertes en la normativa corresponent (Esquema Nacional de Seguretat).
 
     census_terms: "Per a verificar el compte cal tenir 16 anys o més i estar empadronat aportant les dades indicades anteriorment, els quals seran contrastats. Acceptant el procés de verificació accepta donar el seu consentiment per a contrastar aquesta informació, així com mitjans de contacte que figuren en aquests fitxers. Les dades aportades seran incorporats i tractats en un fitxer indicat anteriorment en les condicions d'ús del portal."
     conditions: "Condicions d'ús"
