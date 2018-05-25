@@ -940,6 +940,15 @@ es:
           without_confirmed_hide: Pendientes
         title: Propuestas ocultas
         no_hidden_proposals: No hay propuestas ocultas.
+    proposal_notifications:
+      index:
+        filter: Filtro
+        filters:
+          all: Todas
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Pendientes
+        title: Notificaciones ocultas
+        no_hidden_proposals: No hay notificaciones ocultas.
     settings:
       flash:
         updated: Valor actualizado

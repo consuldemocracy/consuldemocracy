@@ -940,6 +940,15 @@ en:
           without_confirmed_hide: Pending
         title: Hidden proposals
         no_hidden_proposals: There is no hidden proposals.
+    proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden notifications
+        no_hidden_proposals: There is no hidden notifications.
     settings:
       flash:
         updated: Value updated
