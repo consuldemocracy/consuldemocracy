@@ -162,27 +162,27 @@
   </div>
 
   <% districts = [
-    ["Arganzuela", "arganzuela", "arganzuela", "973",  "0", "65"],
-    ["Barajas", "barajas", "barajas", "984",  "0", "56"],
-    ["Carabanchel", "carabanchel", "carabanchel", "985",  "0", "60"],
-    ["Centro", "centro", "centro", "984",  "0", "56"],
-    ["Chamartín", "chamartin", "chamartin", "983",  "0", "58"],
-    ["Chamberí" , "chamberi", "chamberi", "980", "0", "56"],
-    ["Ciudad Lineal", "ciudad-lineal", "ciudad_lineal", "974", "0", "60"],
-    ["Fuencarral-El Pardo", "fuencarral-pardo", "fuencarral_el_pardo", "976", "0", "60"],
-    ["Hortaleza", "hortaleza", "hortaleza", "978", "0", "64"],
-    ["Latina", "latina", "latina", "983", "0", "64"],
-    ["Moncloa-Aravaca", "moncloa-aravaca", "moncloa_aravaca", "982", "0", "58"],
-    ["Moratalaz", "moratalaz", "moratalaz", "971", "0", "63"],
-    ["Puente de Vallecas", "puente-vallecas", "puente_de_vallecas", "984", "0", "62"],
-    ["Retiro", "retiro", "retiro", "981", "0", "61"],
-    ["Salamanca", "salamanca", "salamanca", "980", "0", "60"],
-    ["San Blas-Canillejas", "san-blas-canillejas", "san_blas_canillejas", "979", "0", "62"],
-    ["Tetuán", "tetuan", "tetuan", "973", "0", "54"],
-    ["Usera", "usera", "usera", "974", "0", "57"],
-    ["Vicálvaro", "vicalvaro", "vicalvaro", "972", "0", "56"],
-    ["Villa de Vallecas", "villa-vallecas", "villa_de_vallecas", "978", "0", "58"],
-    ["Villaverde",  "villaverde", "villaverde", "975", "0", "53"]] %>
+    ["Arganzuela", "arganzuela", "arganzuela", "973",  "1.1", "65"],
+    ["Barajas", "barajas", "barajas", "984",  "1.1", "56"],
+    ["Carabanchel", "carabanchel", "carabanchel", "985",  "1.1", "60"],
+    ["Centro", "centro", "centro", "984",  "1.1", "56"],
+    ["Chamartín", "chamartin", "chamartin", "983",  "1.1", "58"],
+    ["Chamberí" , "chamberi", "chamberi", "980", "1.1", "56"],
+    ["Ciudad Lineal", "ciudad-lineal", "ciudad_lineal", "974", "1.1", "60"],
+    ["Fuencarral-El Pardo", "fuencarral-pardo", "fuencarral_el_pardo", "976", "1.1", "60"],
+    ["Hortaleza", "hortaleza", "hortaleza", "978", "1.1", "64"],
+    ["Latina", "latina", "latina", "983", "1.1", "64"],
+    ["Moncloa-Aravaca", "moncloa-aravaca", "moncloa_aravaca", "982", "1.1", "58"],
+    ["Moratalaz", "moratalaz", "moratalaz", "971", "1.1", "63"],
+    ["Puente de Vallecas", "puente-vallecas", "puente_de_vallecas", "984", "1.1", "62"],
+    ["Retiro", "retiro", "retiro", "981", "1.1", "61"],
+    ["Salamanca", "salamanca", "salamanca", "980", "1.1", "60"],
+    ["San Blas-Canillejas", "san-blas-canillejas", "san_blas_canillejas", "979", "1.1", "62"],
+    ["Tetuán", "tetuan", "tetuan", "973", "1.1", "54"],
+    ["Usera", "usera", "usera", "974", "1.1", "57"],
+    ["Vicálvaro", "vicalvaro", "vicalvaro", "972", "1.1", "56"],
+    ["Villa de Vallecas", "villa-vallecas", "villa_de_vallecas", "978", "1.1", "58"],
+    ["Villaverde",  "villaverde", "villaverde", "975", "1.1", "53"]] %>
 
   <div class="row">
     <div class="small-12 column">
@@ -205,12 +205,12 @@
                 <%= image_tag "budgets_materials_2017/icon_poster.png", alt: "" %><span>Cartel de <%= name %></span>
               <% end %>
             </li>
-            <!-- <li>
-              <%# link_to "/docs/budgets_materials_2017/diptico_#{slug}.pdf", target: "_blank",
-                          title: "Descargar díptico informativo de #{name} PDF - #{size_2}Kb (se abre en ventana nueva)" do %>
-                <%# image_tag "budgets_materials_2017/icon_diptico.png", alt: "" %><span>Díptico informativo de <%#= name %></span>
-              <%# end %>
-              </li> -->
+            <li>
+              <%= link_to "/system/budgets/2018/diptico_#{filename}.pdf", target: "_blank",
+                          title: "Descargar díptico informativo de #{name} PDF - #{size_2}Mb (se abre en ventana nueva)" do %>
+                <%= image_tag "budgets_materials_2017/icon_diptico.png", alt: "" %><span>Díptico informativo de <%= name %></span>
+              <% end %>
+            </li>
             <li>
               <%= link_to "/system/budgets/2018/imagen_#{slug}.png", target: "_blank",
                           title: "Descargar imagen para redes sociales de #{name} JPG - #{size_3}Kb (se abre en ventana nueva)" do %>
