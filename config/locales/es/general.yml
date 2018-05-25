@@ -783,6 +783,18 @@ es:
         one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito"
         other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos"
   welcome:
+    feed:
+      most_active:
+        debates: "Debates más activos"
+        proposals: "Propuestas más activas"
+        processes: "Procesos abiertos"
+      see_all_debates: Ver todos los debates
+      see_all_proposals: Ver todas las propuestas
+      see_all_processes: Ver todos los procesos
+      process_label: Proceso
+      see_process: Ver proceso
+    cards:
+      title: Destacados
     recommended:
       title: Recomendaciones que te pueden interesar
       help: "Estas recomendaciones se generan por las etiquetas de los debates y propuestas que estás siguiendo."

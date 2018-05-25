@@ -246,7 +246,7 @@ en:
         from: From
         body: Email content
       widget/card:
-        label: Label
+        label: Label (optional)
         title: Title
         description: Description
         link_text: Link text

@@ -14,7 +14,16 @@
 <main>
   <%= render "feeds" %>
 
-  <%= render "cards" %>
+
+  <div class="row">
+    <div class="small-12 medium-8 column">
+      <%= render "cards" %>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <%= render "processes" %>
+    </div>
+  </div>
 
   <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
     <%= render "recommended",

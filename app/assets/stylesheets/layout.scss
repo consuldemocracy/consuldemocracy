@@ -2227,8 +2227,8 @@ table {
 
 .section-recommended {
   background: #fafafa;
-  border-bottom: 1px solid $border;
   border-top: 1px solid $border;
+  margin-bottom: rem-calc(-48);
   padding: $line-height 0;
 
   h2 {
@@ -2598,6 +2598,70 @@ table {
       color: #fff;
     }
   }
+
+  .background-header {
+    clip-path: ellipse(60% 80% at 50% 0%);
+    height: $line-height * 2;
+    background: $highlight;
+    margin-top: rem-calc(-48);
+  }
+
+  h3 {
+
+    &.title {
+      display: inline-block;
+      border-top: 4px solid $brand;
+      min-width: rem-calc(240);
+      padding-top: $line-height / 2;
+    }
+  }
+}
+
+.feeds-list {
+
+  .proposal {
+    clear: both;
+  }
+
+  .debate {
+    margin: $line-height 0;
+  }
+}
+
+.feed-image {
+  background: #fafafa;
+  display: inline-block;
+  height: rem-calc(120);
+  margin: $line-height / 2 0;
+  overflow: hidden;
+  width: rem-calc(120);
+
+  img {
+    margin-left: rem-calc(-15);
+    max-width: none;
+    width: rem-calc(120);
+  }
+}
+
+.feed-description {
+  padding-top: $line-height;
+
+  p {
+    font-size: $small-font-size;
+  }
+}
+
+.feed-content {
+  border-bottom: 1px solid $border;
+  display: inline-block;
+
+  a {
+
+    &.see-all {
+      font-size: $small-font-size;
+      margin: $line-height 0 $line-height / 2;
+    }
+  }
 }
 
 .figure-card {
@@ -2617,11 +2681,16 @@ table {
     }
   }
 
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
   figcaption {
     bottom: 0;
     color: #fff;
-    font-size: rem-calc(36);
-    line-height: rem-calc(36);
+    font-size: rem-calc(24);
+    line-height: rem-calc(24);
     text-transform: uppercase;
     padding: $line-height / 4 $line-height / 2;
     position: absolute;
@@ -2629,16 +2698,18 @@ table {
 
     h3,
     .title {
-      font-size: rem-calc(36);
-      line-height: rem-calc(36);
+      font-size: rem-calc(24);
+      line-height: rem-calc(24);
     }
 
     span {
       background: #fff;
       border-radius: rem-calc(4);
       color: #000;
-      display: inline;
-      font-size: $base-font-size;
+      display: inline-block;
+      font-size: $small-font-size;
+      font-weight: bold;
+      margin-bottom: $line-height / 4;
       padding: rem-calc(4) rem-calc(8);
     }
   }
