@@ -103,8 +103,6 @@ App.Map =
           marker.options['id'] = i.investment_id
 
           marker.on 'click', openMarkerPopup
-          add_marker=createMarker(i.lat , i.long)
-          add_marker.bindPopup(contentPopup(i.investment_title, i.investment_id, i.budget_id))
 
   toggleMap: ->
       $('.map').toggle()

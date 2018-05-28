@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'Budgets' do
 
-  let(:budget) { create(:budget) }
-  let(:level_two_user) { create(:user, :level_two) }
+  let(:budget)             { create(:budget) }
+  let(:level_two_user)     { create(:user, :level_two) }
   let(:allowed_phase_list) { ['balloting', 'reviewing_ballots', 'finished'] }
 
   context 'Index' do
@@ -193,41 +193,44 @@ feature 'Budgets' do
 
   context "Index map" do
 
-    let(:group) { create(:budget_group, budget: budget) }
+    let(:group)   { create(:budget_group, budget: budget) }
     let(:heading) { create(:budget_heading, group: group) }
 
-    before do
+    background do
       Setting['feature.map'] = true
     end
 
-    scenario "Display investment's map location markers" , :js do
+    scenario "Display investment's map location markers", :js do
       investment1 = create(:budget_investment, heading: heading)
       investment2 = create(:budget_investment, heading: heading)
       investment3 = create(:budget_investment, heading: heading)
 
-      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234)
-      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235)
-      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236)
+      create(:map_location, longitude: 40.1234, latitude: -3.634, investment: investment1)
+      create(:map_location, longitude: 40.1235, latitude: -3.635, investment: investment2)
+      create(:map_location, longitude: 40.1236, latitude: -3.636, investment: investment3)
 
       visit budgets_path
 
       within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 3)
+        expect(page).to have_css(".map-icon", count: 3, visible: false)
       end
     end
 
-    scenario "Skip invalid map markers" , :js do
+    scenario "Skip invalid map markers", :js do
       map_locations = []
+
+      investment = create(:budget_investment, heading: heading)
+
       map_locations << { longitude: 40.123456789, latitude: 3.12345678 }
-      map_locations << { longitude: 40.123456789, latitude: "*******" }
+      map_locations << { longitude: 40.123456789, latitude: "********" }
       map_locations << { longitude: "**********", latitude: 3.12345678 }
 
       budget_map_locations = map_locations.map do |map_location|
         {
           lat: map_location[:latitude],
           long: map_location[:longitude],
-          investment_title: "#{rand(999)}",
-          investment_id: "#{rand(999)}",
+          investment_title: investment.title,
+          investment_id: investment.id,
           budget_id: budget.id
         }
       end
@@ -238,7 +241,7 @@ feature 'Budgets' do
       visit budgets_path
 
       within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 1)
+        expect(page).to have_css(".map-icon", count: 1, visible: false)
       end
     end
   end
