@@ -12,4 +12,8 @@ module FeedsHelper
     feed.kind == "processes"
   end
 
+  def feed_processes_enabled?
+    Setting['feature.homepage.widgets.feeds.processes'].present?
+  end
+
 end

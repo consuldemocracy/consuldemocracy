@@ -7,14 +7,16 @@
           <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
 
           <% feed.items.each do |item| %>
-            <div class="<%= item.class.to_s.parameterize('_') %>">
-              <div class="feed-image small-12 medium-2 column">
-                <% if feature?(:allow_images) && item.image.present? %>
-                  <%= image_tag item.image_url(:thumb),
-                                alt: item.image.title.unicode_normalize %>
-                <% end %>
+            <div class="<%= item.class.to_s.parameterize('_') %> row">
+              <div class="small-12 large-3 column">
+                <div class="feed-image">
+                  <% if feature?(:allow_images) && item.image.present? %>
+                    <%= image_tag item.image_url(:thumb),
+                                  alt: item.image.title.unicode_normalize %>
+                  <% end %>
+                </div>
               </div>
-              <div class="feed-description small-12 medium-10 column">
+              <div class="feed-description small-12 large-9 column">
                 <strong><%= link_to item.title, url_for(item) %></strong><br>
                 <p><%= item.summary %></p>
               </div>

@@ -67,7 +67,7 @@ feature 'Homepage' do
 
       visit root_path
 
-      expect(page).to have_content "Most active processes"
+      expect(page).to have_content "Open processes"
       expect(page).to have_css(".legislation_process", count: 3)
     end
 

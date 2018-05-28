@@ -2644,7 +2644,10 @@ table {
 }
 
 .feed-description {
-  padding-top: $line-height;
+
+  @include breakpoint(medium) {
+    padding-top: $line-height;
+  }
 
   p {
     font-size: $small-font-size;
@@ -2668,6 +2671,11 @@ table {
   display: flex;
   margin: 0 0 $line-height;
   position: relative;
+
+  @include breakpoint(medium) {
+    max-height: rem-calc(185);
+    overflow: hidden;
+  }
 
   a {
 

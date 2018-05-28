@@ -16,7 +16,7 @@
 
 
   <div class="row">
-    <div class="small-12 medium-8 column">
+    <div class="small-12 column <%= 'medium-8' if feed_processes_enabled? %>">
       <%= render "cards" %>
     </div>
 
