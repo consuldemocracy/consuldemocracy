@@ -31,16 +31,7 @@ class Admin::SystemEmailsController < Admin::BaseController
   end
 
   def send_pending
-    User.email_digest.find_each do |user|
-      email_digest = EmailDigest.new(user)
-      begin
-        email_digest.deliver
-        email_digest.mark_as_emailed
-      rescue
-        user.increment_counter(:failed_email_digests_count)
-        user.save
-      end
-    end
+    Notification.send_pending
 
     flash[:notice] = t("admin.system_emails.preview_pending.send_pending_notification")
     redirect_to admin_system_emails_path
