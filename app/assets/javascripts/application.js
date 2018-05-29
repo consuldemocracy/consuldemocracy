@@ -19,8 +19,6 @@
 //= require jquery-fileupload/basic
 //= require foundation
 //= require turbolinks
-//= require ckeditor/loader
-//= require_directory ./ckeditor
 //= require social-share-button
 //= require initial
 //= require ahoy
@@ -78,6 +76,10 @@
 //= require send_newsletter_alert
 //= require managers
 //= require globalize
+//= require_directory ./ckeditor
+//= require_directory ./ckeditor/translations
+//= require ckeditor
+//= require globalize
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -123,6 +125,7 @@ var initialize_modules = function() {
   App.SendNewsletterAlert.initialize();
   App.Managers.initialize();
   App.Globalize.initialize();
+  App.Ckeditor.initialize();
 };
 
 $(function(){
