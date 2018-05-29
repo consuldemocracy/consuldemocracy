@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180519132715) do
+ActiveRecord::Schema.define(version: 20180519132610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -377,9 +377,6 @@ ActiveRecord::Schema.define(version: 20180519132715) do
   end
 
   add_index "failed_census_calls", ["user_id"], name: "index_failed_census_calls_on_user_id", using: :btree
-
-  create_table "feeds", force: :cascade do |t|
-  end
 
   create_table "flags", force: :cascade do |t|
     t.integer  "user_id"
@@ -1238,6 +1235,9 @@ ActiveRecord::Schema.define(version: 20180519132715) do
   end
 
   create_table "widget_feeds", force: :cascade do |t|
+    t.string   "kind"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "administrators", "users"
