@@ -1229,6 +1229,10 @@ es:
         description: Descripción
         link_text: Texto del enlace
         link_url: URL del enlace
+      feeds:
+        proposals: Propuestas
+        debates: Debates
+        processes: Procesos
       new:
         header_title: Nuevo encabezado
         submit_header: Crear encabezado

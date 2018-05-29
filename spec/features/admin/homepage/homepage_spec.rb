@@ -12,9 +12,10 @@ feature 'Homepage' do
     Setting['feature.user.recommendations'] = false
   end
 
-  let(:proposals_setting)    { Setting.where(key: 'feature.homepage.widgets.feeds.proposals').first }
-  let(:debates_setting)      { Setting.where(key: 'feature.homepage.widgets.feeds.debates').first }
-  let(:processes_setting)    { Setting.where(key: 'feature.homepage.widgets.feeds.processes').first }
+  let!(:proposals_feed)    { create(:widget_feed, kind: "proposals") }
+  let!(:debates_feed)      { create(:widget_feed, kind: "debates") }
+  let!(:processes_feed)    { create(:widget_feed, kind: "processes") }
+
   let(:user_recommendations) { Setting.where(key: 'feature.user.recommendations').first }
   let(:user)                 { create(:user) }
 
@@ -23,47 +24,45 @@ feature 'Homepage' do
 
   context "Feeds" do
 
-    scenario "Proposals" do
+    scenario "Proposals", :js do
       5.times { create(:proposal) }
 
       visit admin_homepage_path
-      within("#setting_#{proposals_setting.id}") do
-        click_button "Enable"
-      end
 
-      expect(page).to have_content "Value updated"
+      within("#widget_feed_#{proposals_feed.id}") do
+        select '1', from: 'widget_feed_limit'
+        accept_confirm { click_button "Enable" }
+      end
 
       visit root_path
 
       expect(page).to have_content "Most active proposals"
-      expect(page).to have_css(".proposal", count: 3)
+      expect(page).to have_css(".proposal", count: 1)
     end
 
-    scenario "Debates" do
+    scenario "Debates", :js do
       5.times { create(:debate) }
 
       visit admin_homepage_path
-      within("#setting_#{debates_setting.id}") do
-        click_button "Enable"
+      within("#widget_feed_#{debates_feed.id}") do
+        select '2', from: 'widget_feed_limit'
+        accept_confirm { click_button "Enable" }
       end
-
-      expect(page).to have_content "Value updated"
 
       visit root_path
 
       expect(page).to have_content "Most active debates"
-      expect(page).to have_css(".debate", count: 3)
+      expect(page).to have_css(".debate", count: 2)
     end
 
-    scenario "Processes" do
+    scenario "Processes", :js do
       5.times { create(:legislation_process) }
 
       visit admin_homepage_path
-      within("#setting_#{processes_setting.id}") do
-        click_button "Enable"
+      within("#widget_feed_#{processes_feed.id}") do
+        select '3', from: 'widget_feed_limit'
+        accept_confirm { click_button "Enable" }
       end
-
-      expect(page).to have_content "Value updated"
 
       visit root_path
 

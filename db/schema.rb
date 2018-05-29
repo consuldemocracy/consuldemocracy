@@ -1236,8 +1236,9 @@ ActiveRecord::Schema.define(version: 20180519132610) do
 
   create_table "widget_feeds", force: :cascade do |t|
     t.string   "kind"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "limit",      default: 3
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_foreign_key "administrators", "users"

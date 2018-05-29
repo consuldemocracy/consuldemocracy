@@ -3,14 +3,18 @@ class Widget::Feed < ActiveRecord::Base
 
   KINDS = %w(proposals debates processes)
 
-  def active?(kind)
-    Setting["feature.homepage.widgets.feeds.#{kind}"].present?
+  def active?
+    setting.value.present?
+  end
+
+  def setting
+    Setting.where(key: "feature.homepage.widgets.feeds.#{kind}").first
   end
 
   def self.active
     KINDS.collect do |kind|
-      feed = new(kind: kind)
-      feed if feed.active?(kind)
+      feed = find_or_create_by(kind: kind)
+      feed if feed.active?
     end.compact
   end
 
@@ -28,10 +32,6 @@ class Widget::Feed < ActiveRecord::Base
 
   def processes
     Legislation::Process.open.limit(limit)
-  end
-
-  def limit
-    3
   end
 
 end

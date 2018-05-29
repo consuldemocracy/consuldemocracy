@@ -180,9 +180,10 @@ namespace :admin do
     resources :content_blocks, except: [:show]
   end
 
-  resource :homepage, controller: :homepage
+  resource :homepage, controller: :homepage, only: [:show]
 
   namespace :widget do
     resources :cards
+    resources :feeds, only: [:update]
   end
 end
