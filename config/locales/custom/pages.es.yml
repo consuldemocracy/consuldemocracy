@@ -364,16 +364,35 @@ es:
 
     priv:
       title: "Política de Privacidad"
-      subtitle: "AVISO DE PROTECCIÓN DE DATOS"
+      subtitle: "POLÍTICA DE PRIVACIDAD PÁGINA WEB"
       body: |-
-        1. La navegación por la información disponible en el Portal de Gobierno Abierto es anónima.
-        2. Para utilizar los servicios contenidos en el Portal de Gobierno Abierto el usuario deberá darse de alta y proporcionar previamente los datos de carácter personal segun la información específica que consta en cada tipo de alta.
-        3. Los datos aportados serán incorporados y tratados por el Ayuntamiento de acuerdo con la descripción del fichero siguiente:
-          * __Nombre del fichero/tratamiento:__ DATOS PERSONALES WEB
-          * __Finalidad del fichero/tratamiento:__ Gestionar los procesos participativos para el control de la habilitación de las personas que participan en los mismos y recuento meramente numérico y estadístico de los resultados derivados de los procesos de participación ciudadana
-          * __Órgano responsable:__ AYUNTAMIENTO DE CASTELLÓN
-        4. El interesado podrá ejercer los derechos de acceso, rectificación, cancelación y oposición, ante el órgano responsable indicado todo lo cual se informa en el cumplimiento del artículo 5 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
-        5. Como principio general, este sitio web no comparte ni revela información obtenida, excepto cuando haya sido autorizada por el usuario, o la información sea requerida por la autoridad judicial, ministerio fiscal o la policía judicial, o de alguno de los supuestos regulados en el artículo 11 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
+        El Ayuntamiento de Castellón está especialmente sensibilizado con la protección de datos de carácter personal de los Usuarios de los servicios del sitio Web.
+        Mediante la presente, el Ayuntamiento le informa que las páginas web tienen por objeto facilitarle información sobre nuestro municipio, los eventos que se organizan, poner a su disposición la información establecida en la Ley de Transparencia, acceso a la información pública y buen gobierno y la posibilidad de efectuar los trámites que están disponibles a través de nuestra sede electrónica.
+        El Ayuntamiento informa a los USUARIOS de los sitios web anteriormente mencionados de los usos a los que se someten los datos de carácter personal que se recaban en sitio Web, con el fin de que decidan, libre y voluntariamente, si desean facilitar la información solicitada.
+        El Ayuntamiento se reserva la facultad de modificar esta Política con el objeto de adaptarla a novedades legislativas, criterios jurisprudenciales, prácticas del sector, o intereses de la entidad.
+        Cualquier modificación en la misma será anunciada con la debida antelación, a fin de que tenga perfecto conocimiento de su contenido.
+        ## RESPONSABLE DEL TRATAMIENTO
+        El Responsable del Tratamiento de los datos de carácter personal es el Ayuntamiento de Castellón.
+        __Domicilio: Plaza Mayor 1 , 12001 Castellón__
+        __Contacto: dpd@castello.es__
+        __Teléfono: 010__
+        __Delegado de Protección de Datos: dpd@castello.es__
+        ## FINALIDAD DEL TRATAMIENTO
+        Los datos que nos facilite mediante el apartado de Contacto serán tratados con la finalidad de atender su solicitud. Si nos envía un correo electrónico, igualmente, trataremos los datos para dar respuesta a su solicitud
+        La recogida y tratamiento de los datos personales a través de los diferentes formularios a los que pudiera acceder a través de la sede electrónica/Trámites tiene diferentes finalidades indicadas en las cláusulas recogidas en el formulario correspondiente. Estas finalidades serán atender su solicitud, reclamación, denuncia y, en general, gestionar el trámite que inicie a través de la sede electrónica
+        ## PLAZO DE CONSERVACIÓN
+        Los datos personales proporcionados se conservarán el plazo necesario para gestionar su consulta, sugerencia, reclamación, denuncia. Finalizada la misma, se conservarán durante el plazo correspondiente para cumplir con las obligaciones legales o durante el plazo que un juez o tribunal lo pueda requerir. Asimismo, podrán ser conservados con fines históricos y de archivo general.
+        ## LEGITIMACIÓN
+        La legitimación para el tratamiento dependerá de su petición. Así cuando esté relacionada con las funciones del Ayuntamiento se basarán en el ejercicio de las funciones públicas. Cuando nos realice una petición o se suscriba a algún servicio ofrecido por el Ayuntamiento se basará en su consentimiento. Cuando la solicitud esté relacionada con el cumplimiento de una obligación legal, la normativa aplicable será la base de legitimación. Cuando exista un contrato entre usted y el Ayuntamiento, la base de legitimación será la relación contractual existente.
+        ## DESTINATARIOS
+        Los datos podrán ser cedidos a otros organismos públicos competentes en la materia en cumplimiento de la normativa vigente. Asimismo, podrán ser publicados en el Portal de Transparencia del Ayuntamiento en cumplimiento de la Ley 19/2013 de Transparencia, Acceso a la información Pública y Buen Gobierno.
+        ## DERECHOS DE LOS USUARIOS
+        Podrá ponerse en contacto con nuestro Delegado de Protección de Datos para cualquier duda que tenga referida al tratamiento de sus datos de carácter personal en la siguiente dirección dpd@castello.es
+        Ud. podrá ejercitar los derechos de Acceso, Rectificación, Cancelación, Portabilidad, Supresión o, en su caso, Oposición. Para ello, podrá dirigirse al Ayuntamiento en la siguiente dirección Plaza Mayor 1 , 12001 Castellón, especificando el derecho que solicita, acompañando de documento identificativo (DNI, Pasaporte..) En caso de que actuara mediante representante, legal o voluntario, deberá aportar también documento que acredite la representación y documento identificativo del mismo.
+        Asimismo, en caso de considerar vulnerado su derecho a la protección de datos personales, podrá dirigirse a la Agencia Española de Protección de Datos (www.agpd.es).
+        ## MEDIDAS DE SEGURIDAD
+        Se aplicarán las medidas de seguridad establecidas en la normativa correspondiente (Esquema Nacional de Seguridad)
+
     census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
     conditions: Condiciones de uso
     conditions_body: |-
