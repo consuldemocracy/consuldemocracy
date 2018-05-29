@@ -143,14 +143,14 @@ describe EmailDigest do
       user = create(:user, email: 'valid_email@email.com')
 
       email_digest = described_class.new(user)
-      expect(email_digest.valid_email?).to be_a(MatchData)
+      expect(email_digest.valid_email?).to be(true)
     end
 
     it "returns nil if email is invalid" do
       user = create(:user, email: 'invalid_email@email..com')
 
       email_digest = described_class.new(user)
-      expect(email_digest.valid_email?).to be(nil)
+      expect(email_digest.valid_email?).to be(false)
     end
 
     it "returns false if email does not exist" do
