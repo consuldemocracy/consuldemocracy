@@ -14,8 +14,8 @@
       <%= f.text_field :title, maxlength: SpendingProposal.title_max_length %>
     </div>
 
-    <div class="ckeditor small-12 column">
-      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
+    <div class="ckeditor-container small-12 column">
+      <%= f.text_area :description, maxlength: SpendingProposal.description_max_length, class: 'ckeditor', ckeditor_lang: I18n.locale %>
     </div>
 
     <div class="small-12 column">

@@ -13,8 +13,8 @@
 
     <%= f.invisible_captcha :subtitle %>
 
-    <div class="ckeditor small-12 column">
-      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
+    <div class="ckeditor-container small-12 column">
+      <%= f.text_area :description, maxlength: SpendingProposal.description_max_length, class: 'ckeditor', ckeditor_lang: I18n.locale %>
     </div>
 
     <% if feature?(:allow_images) %>

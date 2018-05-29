@@ -9,9 +9,9 @@
 
     <%= f.invisible_captcha :subtitle %>
 
-    <div class="ckeditor small-12 column">
+    <div class="ckeditor-container small-12 column">
       <%= f.label :description, t("spending_proposals.form.description") %>
-      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+      <%= f.text_area :description, maxlength: SpendingProposal.description_max_length, class: 'ckeditor', ckeditor_lang: I18n.locale, label: false %>
     </div>
 
     <div class="small-12 column">

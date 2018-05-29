@@ -28,9 +28,9 @@
           <%= t("admin.budget_phases.edit.description_help_text") %>
         </p>
 
-        <%= f.cktext_area :description,
+        <%= f.text_area :description,
                           maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
-                          ckeditor: { language: I18n.locale },
+                          class: 'ckeditor', ckeditor_lang: I18n.locale,
                           label: false %>
       </div>
     </div>
@@ -43,9 +43,9 @@
           <%= t("admin.budget_phases.edit.summary_help_text") %>
         </p>
 
-        <%= f.cktext_area :summary,
+        <%= f.text_area :summary,
                           maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                          ckeditor: { language: I18n.locale },
+                          class: 'ckeditor', ckeditor_lang: I18n.locale,
                           label: false %>
       </div>
     </div>
