@@ -95,7 +95,10 @@ feature "Home" do
         debate = create(:debate, tag_list: "Sport")
 
         visit root_path
-        click_on debate.title
+
+        within('#section_recommended') do
+          click_on debate.title
+        end
 
         expect(page).to have_current_path(debate_path(debate))
       end
