@@ -251,6 +251,8 @@ en:
         description: Description
         link_text: Link text
         link_url: Link URL
+      widget/feed:
+        limit: Number of items
     errors:
       models:
         user:
