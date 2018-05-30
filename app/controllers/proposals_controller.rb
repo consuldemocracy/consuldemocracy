@@ -23,7 +23,7 @@ class ProposalsController < ApplicationController
 
   def show
     super
-    @notifications = @proposal.notifications
+    @notifications = @proposal.notifications.not_moderated
     load_rank
     @document = Document.new(documentable: @proposal)
     @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
