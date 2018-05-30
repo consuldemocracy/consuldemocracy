@@ -58,11 +58,12 @@ describe Widget::Feed do
 
     describe "#processes" do
 
-      it "returns open processes" do
-        open_process1 = create(:legislation_process, :open, title: "Open process 1")
-        open_process2 = create(:legislation_process, :open, title: "Open process 2")
-        open_process3 = create(:legislation_process, :open, title: "Open process 3")
-        open_process4 = create(:legislation_process, :open, title: "Open process 4")
+      it "returns open and published processes" do
+        open_process1 = create(:legislation_process, :open, :published, title: "Open process 1")
+        open_process2 = create(:legislation_process, :open, :published, title: "Open process 2")
+        open_process3 = create(:legislation_process, :open, :published, title: "Open process 3")
+        open_process4 = create(:legislation_process, :open, :published, title: "Open process 4")
+        open_process5 = create(:legislation_process, :open, :not_published, title: "Open process 5")
         past_process = create(:legislation_process, :past, title: "Past process")
 
         feed = build(:widget_feed, kind: "processes")

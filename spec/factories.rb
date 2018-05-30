@@ -814,6 +814,10 @@ FactoryBot.define do
       result_publication_date Date.current + 5.days
     end
 
+    trait :published do
+      published true
+    end
+
     trait :not_published do
       published false
     end

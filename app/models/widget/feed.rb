@@ -31,7 +31,7 @@ class Widget::Feed < ActiveRecord::Base
   end
 
   def processes
-    Legislation::Process.open.limit(limit)
+    Legislation::Process.open.published.limit(limit)
   end
 
 end
