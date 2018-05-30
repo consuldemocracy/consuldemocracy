@@ -8,12 +8,12 @@ feature 'CKEditor' do
 
     visit new_debate_path
 
-    expect(page).to have_css "#cke_debate_description"
+    expect(page).to have_css ".ckeditor-container"
 
     click_link 'Debates'
     click_link 'Start a debate'
 
-    expect(page).to have_css "#cke_debate_description"
+    expect(page).to have_css ".ckeditor-container"
   end
 
 end
