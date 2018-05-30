@@ -210,6 +210,7 @@ feature "Notifications" do
     end
 
     it "sends emails in batches" do
+      remove_users_without_pending_notifications
       Notification.send_pending
 
       expect(Delayed::Job.count).to eq(3)

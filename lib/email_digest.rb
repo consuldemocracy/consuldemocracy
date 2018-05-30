@@ -28,7 +28,7 @@ class EmailDigest
   end
 
   def valid_email?
-    user.email.present? && user.email.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i)
+    user.email&.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i).present?
   end
 
 end
