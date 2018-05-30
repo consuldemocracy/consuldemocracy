@@ -1,4 +1,34 @@
 es:
+  account:
+    show:
+      delegation: Delegación de voto en presupuestos participativos
+      finish_verification: "Añade una doble comprobación de verificación a tu cuenta"
+      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_create_budget_investments: Crear proyectos de gasto*
+      user_permission_votes: Participar en todas las consultas*
+  answers:
+    index:
+      title: Respuesta enviada
+      sent: Tu respuesta ha sido enviada. Gracias por participar.
+    new:
+      send: Enviar respuesta
+  comments:
+    form:
+      leave_reply: Deja tu respuesta
+  questions:
+    form:
+      leave_comment: Haz tu pregunta
+  questions_helper:
+    comment_button: Publicar pregunta
+    comment_link: Preguntar
+    reply_button: Publicar respuesta
+    reply_link: Respuesta
+  comment_kinds:
+    comment: Comentario
+    question: Pregunta
+  form:
+    signature_sheet: la hoja de firmas
+    spending_proposal: la propuesta de inversión
   debates:
     index:
       top: Destacados
@@ -17,6 +47,10 @@ es:
         one: 1 pregunta
         other: "%{count} preguntas"
         zero: Sin preguntas
+      questions_title: Preguntas
+    form:
+      comment_kind_label: Tipo de comentarios
+      comment_kind_instructions: Escoge el tipo de comentario
   proposals:
     index:
       section_header:
@@ -33,6 +67,8 @@ es:
         help_text_4: 'En febrero de 2017 tuvo lugar la primera votación ciudadana en la que se aprobaron las propuestas "Madrid 100% sostenible" y "Billete único para el transporte público".'
     form:
       sub_proceeding: "Derecho"
+      proposal_type: Tipo de propuesta
+      tags_label: Tags
   polls:
     index:
       title: Consultas ciudadanas del Ayuntamiento Madrid
@@ -55,6 +91,9 @@ es:
         random: Aleatorias
     show:
       videos: "Vídeo"
+  poll_questions:
+    show:
+      vote_error: "Algo ha fallado y tu voto no se ha podido registrar correctamente. Por favor comprueba que tu navegador soporta JavaScript y vuelve a intentarlo más tarde."
   forums:
     index:
       deactivate_link: "Desactivar"
@@ -94,18 +133,86 @@ es:
       help_translate: Ayúdanos a traducir
       help_translate_info: Cómo ayudar
       delegation: Delegación
+      collaborative_legislation: Procesos
+      spending_proposals: Presupuestos participativos
   shared:
+    comments:
+      title: 'Comentarios'
+      login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
     probe_plaza_banner: "#RemodelaciónPlazaEspaña"
+    author_info:
+      forum: Espacio de debate distrital
   spending_proposals:
     form:
       geozone: "Elige si es una propuesta para toda la ciudad o para un distrito"
+      title: Título de la propuesta de inversión
     index:
       unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
       unfeasible_text_definitions: ver definiciones aquí
+      available: "Disponible:"
+      sidebar:
+        back: Volver a página de selección
+        district: Distrito
+        my_ballot: Mis votos
+        remember_city: Además puedes votar propuestas de inversión para %{city}.
+        remember_city_link_html: <strong>toda la ciudad</strong>
+        remember_district: Además puedes votar propuestas de inversión para %{district}.
+        remember_district_link_html: <strong>un distrito</strong>
+        voted_html:
+          one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
+          other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+        voted_info: Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
+        votes: Apoyos restantes
+        votes_district: "Solo puedes votar en el distrito %{district}"
+        zero: "Todavía no has votado ninguna propuesta de inversión."
+      orders:
+        random: Aleatorias
+        confidence_score: Mejor valoradas
+        price: Por coste
+    welcome:
+      city_link: Votar para toda la ciudad
+      city_link_close: Propuestas de toda la ciudad
+      contact_html: Si tienes alguna duda puedes %{contact_faq} o enviarnos un email a <strong>preparticipativos@madrid.es</strong>
+      contact_faq: consultar las preguntas frecuentes
+      delegation: Delegar mis votos
+      delegation_closed: Ver delegaciones de voto
+      delegation_info_html: "Si activas la delegación en cualquiera de los espacios, tus votos se realizarán<br> automáticamente sobre las propuestas que haya decidido el espacio correspondiente."
+      delegation_meetings: espacios presenciales de debate
+      delegation_text: Delega tu votación en lo que se decida en cualquiera de los %{meetings}
+      delegation_text_closed: A continuación podrás ver lo que se ha decido en los %{meetings}
+      delegation_title: Delegación de voto
+      districts: Distritos
+      districts_link: Votar propuestas de distrito
+      districts_link_close: Propuestas de distrito
+      in_two_minutes: Toda la información sobre los presupuestos participativos
+      title: "Ya puedes votar las propuestas"
+      title_close: "Presupuestos participativos"
+      title_results: "Presupuestos participativos"
+      text_first_html: "Desde el <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
+      text_first_close_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016."
+      text_first_results_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016."
+      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad y además del distrito</strong> que selecciones."
+      text_second_close_html: "En breve mostraremos los resultados de las votaciones."
+      text_second_results_html: "Ya puedes consultar los resultados."
+      text_long_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente hace propuestas, y las vota. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
+      text_long_close_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente ha hecho sus propuestas, y las ha votado. <strong>En breve podrás ver los resultados</strong>. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
+      text_long_results_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente ha hecho sus propuestas, y las ha votado. <strong>Puedes consultar los resultados</strong>. El Gobierno asume la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
+      unfeasible_link: Ver propuestas de inversión no viables
+      see_results: Ver resultados
     new:
       recommendation_one: Consulta los %{requirements}.
       recommendation_one_link: requisitos que debe cumplir una propuesta
+      recommendations_title: Cómo crear una propuesta de inversión
+      start_new: Crear una propuesta de inversión
+      back_link: Volver
+    show:
+      price_explanation: Informe de coste
+      unfeasibility_explanation: Informe de inviabilidad
+      code: 'Código propuesta de gasto:'
     spending_proposal:
+      add: Añadir
+      already_added: "Ya has añadido esta propuesta de inversión"
+      forum: Espacio de debate distrital
       vote: Votar
     header:
       check_ballot: Revisar mis votos
@@ -165,6 +272,23 @@ es:
         other: Has votado %{count} propuestas con un coste de %{amount_spent}.
       ballot_verified_only: Sólo usuarios verificados pueden votar en presupuestos participativos, %{verify_account}.
       verify_account: verifica tu cuenta
+      filters:
+        spending_proposals:
+          one: 1 Propuesta de inversión
+          other: "%{count} Propuestas de inversión"
+        ballot: Presupuestos participativos
+      delegation: Lista de proyectos de gasto recomendados
+  votes:
+    spending_proposals:
+      unfeasible: Las propuestas no viables no pueden recibir apoyos.
+      no_city_supports_available: Ya has usado todos tus apoyos de ciudad.
+      no_district_supports_available: Ya has usado todos tus apoyos de distrito.
+      different_district_assigned: Ya apoyaste propuestas de otro distrito.
+      different_geozone_assigned: Tienes votos activos en otro distrito. %{my_geozone}
+      not_enough_money: El precio de esta propuesta es mayor que el presupuesto que te queda disponible.
+      confirm_first_vote_on_district: "Cada persona puede apoyar las propuestas de toda la ciudad y de un distrito a su elección. Si pulsas aceptar apoyarás esta propuesta y de ahora en adelante sólo podrás apoyar las propuestas de %{district}. Este distrito no se puede cambiar luego. ¿Quieres apoyar esta propuesta y seleccionar este distrito?"
+      confirm_discard_delegation: "Si votas dejarás de delegar. "
+      no_ballots_allowed: No se puede votar
   welcome:
     title: "Decide Madrid: portal of citizen participation of the City of Madrid"
     featured:
@@ -186,3 +310,7 @@ es:
         btn_text_link: Ver todos los debates recomendados
       proposals:
         btn_text_link: Ver todas las propuestas recomendadas
+      slide: "Ver %{title}"
+    welcome:
+      go_to_index: Ahora no, empezar a participar
+      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
