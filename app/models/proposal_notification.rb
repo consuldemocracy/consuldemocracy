@@ -45,6 +45,10 @@ class ProposalNotification < ActiveRecord::Base
     ignored_at.present?
   end
 
+  def after_restore
+    update(moderated: false)
+  end
+
   private
 
   def set_author

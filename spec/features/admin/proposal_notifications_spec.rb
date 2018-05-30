@@ -25,6 +25,7 @@ feature 'Admin proposal notifications' do
 
     expect(proposal_notification.reload).not_to be_hidden
     expect(proposal_notification).to be_ignored
+    expect(proposal_notification).not_to be_moderated
   end
 
   scenario 'Confirm hide' do
