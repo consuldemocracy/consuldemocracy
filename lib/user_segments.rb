@@ -60,7 +60,7 @@ class UserSegments
                  alberto@decabeza.es
                  voodoorai2000@gmail.com)
 
-    User.where(email: testers)
+    User.where(email: testers).order('created_at ASC')
   end
 
   def self.geozones
