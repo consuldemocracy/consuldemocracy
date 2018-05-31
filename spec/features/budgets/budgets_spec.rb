@@ -216,6 +216,18 @@ feature 'Budgets' do
       expect(page).not_to have_link "See unfeasible investments"
       expect(page).not_to have_link "See investments not selected for balloting phase"
 
+      budget.update(phase: :publishing_prices)
+
+      visit budget_path(budget)
+
+      expect(page).not_to have_link "See unfeasible investments"
+      expect(page).not_to have_link "See investments not selected for balloting phase"
+
+      click_link group.name
+
+      expect(page).not_to have_link "See unfeasible investments"
+      expect(page).not_to have_link "See investments not selected for balloting phase"
+
       budget.update(phase: :balloting)
 
       visit budget_path(budget)
