@@ -186,7 +186,8 @@ feature 'Admin budgets' do
   end
 
   context "Calculate Budget's Winner Investments" do
-    scenario 'For a Budget in reviewing balloting' do
+
+    scenario 'For a Budget in reviewing balloting', :js do
       budget = create(:budget, phase: 'reviewing_ballots')
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group, price: 4)

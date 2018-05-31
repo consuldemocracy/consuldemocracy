@@ -366,6 +366,23 @@ feature 'Admin budget investments' do
       expect(page).not_to have_select("tag_name", options: ["All tags", "Accessibility"])
     end
 
+    scenario "Disable 'Calculate winner' button if incorrect phase" do
+      budget.update(phase: 'reviewing_ballots')
+
+      visit admin_budget_budget_investments_path(budget)
+      click_link 'Winners'
+
+      expect(page).to have_link "Calculate Winner Investments"
+
+      budget.update(phase: 'accepting')
+
+      visit admin_budget_budget_investments_path(budget)
+      click_link 'Winners'
+
+      expect(page).not_to have_link "Calculate Winner Investments"
+      expect(page).to have_content 'The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects'
+    end
+
     scenario "Limiting by max number of investments per heading", :js do
       group_1 = create(:budget_group, budget: budget)
       group_2 = create(:budget_group, budget: budget)

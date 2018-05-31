@@ -9,7 +9,23 @@
 
 <%= link_to t("admin.budget_investments.index.download_current_selection"),
             admin_budget_budget_investments_path(csv_params),
-            class: "float-right small" %>
+            class: "float-right small clear" %>
+
+<% if params[:filter] == 'winners' %>
+  <% if display_calculate_winners_button?(@budget) %>
+    <%= link_to calculate_winner_button_text(@budget),
+                calculate_winners_admin_budget_path(@budget),
+                method: :put,
+                class: "button hollow float-right clear" %>
+  <% else %>
+    <span class="button hollow disabled float-right clear">
+      <%= t("admin.budgets.winners.calculate")%>
+    </span>
+    <div class="callout warning clear">
+      <%= t("admin.budget_investments.index.cannot_calculate_winners") %>
+    </div>
+  <% end %>
+<% end %>
 
 <% if @investments.any? %>
   <h3 class="inline-block"><%= page_entries_info @investments %></h3><br>
@@ -134,7 +150,7 @@
 
   <%= paginate @investments %>
 <% else %>
-  <div class="callout primary">
+  <div class="callout primary clear">
     <%= t("admin.budget_investments.index.no_budget_investments") %>
   </div>
 <% end %>
