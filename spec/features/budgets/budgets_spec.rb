@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'Budgets' do
 
-  let(:budget) { create(:budget) }
-  let(:level_two_user) { create(:user, :level_two) }
+  let(:budget)             { create(:budget) }
+  let(:level_two_user)     { create(:user, :level_two) }
   let(:allowed_phase_list) { ['balloting', 'reviewing_ballots', 'finished'] }
 
   context 'Index' do
@@ -189,6 +189,61 @@ feature 'Budgets' do
     expect(page).to have_content "March 21, 2018 - March 29, 2018"
 
     expect(page).to have_css(".phase.active", count: 1)
+  end
+
+  context "Index map" do
+
+    let(:group)   { create(:budget_group, budget: budget) }
+    let(:heading) { create(:budget_heading, group: group) }
+
+    background do
+      Setting['feature.map'] = true
+    end
+
+    scenario "Display investment's map location markers", :js do
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+
+      create(:map_location, longitude: 40.1234, latitude: -3.634, investment: investment1)
+      create(:map_location, longitude: 40.1235, latitude: -3.635, investment: investment2)
+      create(:map_location, longitude: 40.1236, latitude: -3.636, investment: investment3)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 3, visible: false)
+      end
+    end
+
+    scenario "Skip invalid map markers", :js do
+      map_locations = []
+
+      investment = create(:budget_investment, heading: heading)
+
+      map_locations << { longitude: 40.123456789, latitude: 3.12345678 }
+      map_locations << { longitude: 40.123456789, latitude: "********" }
+      map_locations << { longitude: "**********", latitude: 3.12345678 }
+
+      budget_map_locations = map_locations.map do |map_location|
+        {
+          lat: map_location[:latitude],
+          long: map_location[:longitude],
+          investment_title: investment.title,
+          investment_id: investment.id,
+          budget_id: budget.id
+        }
+      end
+
+      allow_any_instance_of(BudgetsHelper).
+      to receive(:current_budget_map_locations).and_return(budget_map_locations)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 1, visible: false)
+      end
+    end
   end
 
   context 'Show' do
