@@ -1,11 +1,9 @@
-es:
+en:
   verification:
     letter:
       new:
-        go_to_index: Empezar a participar
-        title: "¡Felicidades!"
         budgets:
           title: ¡Ya puedes votar!
           decide: Decide en qué se invierten 100 millones de presupuesto municipal.
           vote: Vota los proyectos finalistas de presupuestos participativos.
-          button: Votar ahora
+          button: Vote now
