@@ -13,14 +13,13 @@ describe Legislation::AnnotationsController do
     it 'creates an ahoy event' do
       sign_in @user
 
-      post :create, params: {
-                      process_id: @process.id,
-                      draft_version_id: @draft_version.id,
-                      legislation_annotation: {
-                          "quote" => "ipsum",
-                          "ranges" => [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
-                          "text": "una anotacion"
-                      }}
+      post :create, process_id: @process.id,
+                    draft_version_id: @draft_version.id,
+                    legislation_annotation: {
+                        "quote" => "ipsum",
+                        "ranges" => [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}],
+                        "text": "una anotacion"
+                      }
       expect(Ahoy::Event.where(name: :legislation_annotation_created).count).to eq 1
       expect(Ahoy::Event.last.properties['legislation_annotation_id']).to eq Legislation::Annotation.last.id
     end
@@ -28,14 +27,13 @@ describe Legislation::AnnotationsController do
     it 'does not create an annotation if the draft version is a final version' do
       sign_in @user
 
-      post :create, params: {
-                    process_id: @process.id,
+      post :create, process_id: @process.id,
                     draft_version_id: @final_version.id,
                     legislation_annotation: {
                       "quote" => "ipsum",
                       "ranges" => [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}],
                       "text": "una anotacion"
-                    }}
+                    }
 
       expect(response).to have_http_status(:not_found)
     end
@@ -44,16 +42,13 @@ describe Legislation::AnnotationsController do
       sign_in @user
 
       expect do
-        post :create, params: {
-                        process_id: @process.id,
-                        draft_version_id: @draft_version.id,
-                        legislation_annotation: {
-                            "quote" => "ipsum",
-                            "ranges" => [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
-                            "text": "una anotacion"
-                        }},
-                      xhr: true
-
+        xhr :post, :create, process_id: @process.id,
+                    draft_version_id: @draft_version.id,
+                    legislation_annotation: {
+                        "quote" => "ipsum",
+                        "ranges" => [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}],
+                        "text": "una anotacion"
+                      }
       end.to change { @draft_version.annotations.count }.by(1)
     end
 
@@ -62,31 +57,27 @@ describe Legislation::AnnotationsController do
       @process.update_attribute(:allegations_end_date, Date.current - 1.day)
 
       expect do
-        post :create, params: {
-                        process_id: @process.id,
-                        draft_version_id: @draft_version.id,
-                        legislation_annotation: {
-                            "quote" => "ipsum",
-                            "ranges" => [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
-                            "text": "una anotacion"
-                        }},
-                      xhr: true
-      end.to_not change { @draft_version.annotations.count }
+        xhr :post, :create, process_id: @process.id,
+                    draft_version_id: @draft_version.id,
+                    legislation_annotation: {
+                        "quote" => "ipsum",
+                        "ranges" => [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}],
+                        "text": "una anotacion"
+                      }
+      end.not_to change { @draft_version.annotations.count }
     end
 
     it 'creates an annotation by parsing parameters in JSON' do
       sign_in @user
 
       expect do
-        post :create, params: {
-                        process_id: @process.id,
-                        draft_version_id: @draft_version.id,
-                        legislation_annotation: {
-                            "quote" => "ipsum",
-                            "ranges" => [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}].to_json,
-                            "text": "una anotacion"
-                        }},
-                      xhr: true
+        xhr :post, :create, process_id: @process.id,
+                    draft_version_id: @draft_version.id,
+                    legislation_annotation: {
+                        "quote" => "ipsum",
+                        "ranges" => [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}].to_json,
+                        "text": "una anotacion"
+                      }
       end.to change { @draft_version.annotations.count }.by(1)
     end
 
@@ -97,16 +88,14 @@ describe Legislation::AnnotationsController do
       sign_in @user
 
       expect do
-        post :create, params: {
-                        process_id: @process.id,
-                        draft_version_id: @draft_version.id,
-                        legislation_annotation: {
-                            "quote" => "ipsum",
-                            "ranges" => [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
-                            "text": "una anotacion"
-                        }},
-                        xhr: true
-      end.to_not change { @draft_version.annotations.count }
+        xhr :post, :create, process_id: @process.id,
+                    draft_version_id: @draft_version.id,
+                    legislation_annotation: {
+                        "quote" => "ipsum",
+                        "ranges" => [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}],
+                        "text": "una anotacion"
+                      }
+      end.not_to change { @draft_version.annotations.count }
 
       expect(annotation.reload.comments_count).to eq(2)
       expect(annotation.comments.last.body).to eq("una anotacion")

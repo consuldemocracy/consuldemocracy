@@ -1,6 +1,5 @@
 require 'csv'
-
-class Proposal < ApplicationRecord
+class Proposal < ActiveRecord::Base
   include Rails.application.routes.url_helpers
   include Flaggable
   include Taggable
@@ -31,8 +30,7 @@ class Proposal < ApplicationRecord
   PROCEEDINGS = [ 'Derechos Humanos' ]
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :geozone, optional: true
-
+  belongs_to :geozone
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :proposal_notifications, dependent: :destroy
 

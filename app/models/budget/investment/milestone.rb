@@ -1,6 +1,6 @@
 class Budget
   class Investment
-    class Milestone < ApplicationRecord
+    class Milestone < ActiveRecord::Base
       include Imageable
       include Documentable
       documentable max_documents_allowed: 3,

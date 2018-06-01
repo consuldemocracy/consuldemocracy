@@ -1,4 +1,4 @@
-class Valuator < ApplicationRecord
+class Valuator < ActiveRecord::Base
   belongs_to :user, touch: true
   belongs_to :valuator_group
 

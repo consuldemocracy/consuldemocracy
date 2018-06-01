@@ -1,4 +1,4 @@
-class SiteCustomization::Page < ApplicationRecord
+class SiteCustomization::Page < ActiveRecord::Base
   VALID_STATUSES = %w(draft published)
 
   validates :slug, presence: true,

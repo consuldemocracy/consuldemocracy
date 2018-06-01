@@ -1,4 +1,4 @@
-class Answer < ApplicationRecord
+class Answer < ActiveRecord::Base
   CONTEXTS = ['Derechos Humanos']
   validates :text, length: { in: 10..6000 }
   validates :context, inclusion: { in: CONTEXTS }

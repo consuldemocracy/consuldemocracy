@@ -1,4 +1,4 @@
-class Identity < ApplicationRecord
+class Identity < ActiveRecord::Base
   belongs_to :user
 
   validates :provider, presence: true

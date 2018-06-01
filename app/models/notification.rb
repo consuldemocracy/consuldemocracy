@@ -1,4 +1,5 @@
-class Notification < ApplicationRecord
+class Notification < ActiveRecord::Base
+
   belongs_to :user, counter_cache: true
   belongs_to :notifiable, polymorphic: true
 

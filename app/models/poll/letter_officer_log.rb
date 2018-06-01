@@ -1,5 +1,5 @@
 class Poll
-  class LetterOfficerLog < ApplicationRecord
+  class LetterOfficerLog < ActiveRecord::Base
     VALID_MESSAGES = { ok: "Voto VÁLIDO",
                        has_voted: "Voto REFORMULADO",
                        census_failed: "Voto NO VÁLIDO",

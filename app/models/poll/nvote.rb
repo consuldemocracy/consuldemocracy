@@ -1,5 +1,5 @@
 class Poll
-  class Nvote < ApplicationRecord
+  class Nvote < ActiveRecord::Base
 
   acts_as_paranoid
 

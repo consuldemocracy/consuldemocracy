@@ -1,5 +1,5 @@
 class Budget
-  class Recommendation < ApplicationRecord
+  class Recommendation < ActiveRecord::Base
     belongs_to :budget
     belongs_to :user, -> { with_hidden }
     belongs_to :investment

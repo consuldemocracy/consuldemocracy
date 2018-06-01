@@ -1,5 +1,5 @@
 class Budget
-  class Phase < ApplicationRecord
+  class Phase < ActiveRecord::Base
     PHASE_KINDS = %w(drafting informing accepting reviewing selecting valuating publishing_prices balloting
                 reviewing_ballots finished).freeze
     PUBLISHED_PRICES_PHASES = %w(publishing_prices balloting reviewing_ballots finished).freeze

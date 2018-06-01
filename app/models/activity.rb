@@ -1,4 +1,4 @@
-class Activity < ApplicationRecord
+class Activity < ActiveRecord::Base
   belongs_to :actionable, -> { with_hidden }, polymorphic: true
   belongs_to :user, -> { with_hidden }
 

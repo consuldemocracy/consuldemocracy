@@ -1,5 +1,5 @@
 class Poll
-  class Voter < ApplicationRecord
+  class Voter < ActiveRecord::Base
 
     VALID_ORIGINS = %w{web booth letter}.freeze
 

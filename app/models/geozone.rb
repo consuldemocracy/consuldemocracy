@@ -1,4 +1,4 @@
-class Geozone < ApplicationRecord
+class Geozone < ActiveRecord::Base
 
   include Graphqlable
 

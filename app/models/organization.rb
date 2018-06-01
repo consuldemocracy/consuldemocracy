@@ -1,4 +1,5 @@
-class Organization < ApplicationRecord
+class Organization < ActiveRecord::Base
+
   include Graphqlable
 
   belongs_to :user, touch: true

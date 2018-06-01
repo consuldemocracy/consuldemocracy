@@ -1,5 +1,5 @@
 class Poll
-  class Officer < ApplicationRecord
+  class Officer < ActiveRecord::Base
     belongs_to :user
     has_many :officer_assignments, class_name: "Poll::OfficerAssignment"
     has_many :shifts, class_name: "Poll::Shift"

@@ -1,2 +1,2 @@
-class Campaign < ApplicationRecord
+class Campaign < ActiveRecord::Base
 end

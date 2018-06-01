@@ -1,4 +1,4 @@
-class Forum < ApplicationRecord
+class Forum < ActiveRecord::Base
   belongs_to :user
   has_many :represented_users, class_name: User, foreign_key: :representative_id
 

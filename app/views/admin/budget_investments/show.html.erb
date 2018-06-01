@@ -1,5 +1,6 @@
-<%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params).to_h), "data-turbolinks" => false do %>
-  <span class="icon-angle-left"></span> <%= t("shared.back") %>
+<%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params)),
+            class: "back", data: {no_turbolink: true} do %>
+  <span class="icon-angle-left"></span><%= t("shared.back") %>
 <% end %>
 
 <%= render 'written_by_author' %>
@@ -13,7 +14,7 @@
 
 <%= link_to t("admin.budget_investments.show.edit"),
             edit_admin_budget_budget_investment_path(@budget, @investment,
-                                                     Budget::Investment.filter_params(params).to_h) unless @budget.finished? %>
+                                                Budget::Investment.filter_params(params)) unless @budget.finished? %>
 
 <hr>
 
@@ -50,7 +51,7 @@
 <p>
   <%= link_to t("admin.budget_investments.show.edit_classification"),
                 edit_admin_budget_budget_investment_path(@budget, @investment,
-                                                  { anchor: 'classification' }.merge(Budget::Investment.filter_params(params).to_h)) unless @budget.finished? %>
+                                                  {anchor: 'classification'}.merge(Budget::Investment.filter_params(params))) unless @budget.finished? %>
 </p>
 
 <hr>

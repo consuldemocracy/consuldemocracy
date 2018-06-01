@@ -1,4 +1,4 @@
-class Annotation < ApplicationRecord
+class Annotation < ActiveRecord::Base
   serialize :ranges, Array
 
   belongs_to :legacy_legislation
