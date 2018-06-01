@@ -395,6 +395,10 @@ es:
     index:
       start_proposal_question: Crear propuesta o pregunta
   landings:
+    signup:
+      title: Vota los proyectos finalistas de presupuestos participativos
+      description: "¿Has pensado qué hacer con 100 millones de #PresupuestosParticipativos? Vota en https://decide.madrid.es/ #VotaParticipativos18"
+      budgets_title: "Vota los proyectos de presupuestos participativos"
     cambia_tu_ciudad:
       phrase_1: "Maya decidió que Madrid necesitaba puntos de carga para coches eléctricos"
       phrase_2: "Jana decidió que había que sensibilizar a los madrileños sobre sostenibilidad"
