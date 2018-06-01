@@ -501,6 +501,7 @@ en:
       stats: Statistics
       signature_sheets: Signature Sheets
       site_customization:
+        homepage: Homepage
         pages: Custom Pages
         images: Custom Images
         content_blocks: Custom content blocks
@@ -962,6 +963,8 @@ en:
       actions: Actions
       title: Title
       description: Description
+      image: Image
+      show_image: Show image
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -1216,3 +1219,31 @@ en:
           status_draft: Draft
           status_published: Published
           locale: Language
+    homepage:
+      title: Homepage
+      description: The active modules appear in the homepage in the same order as here.
+      header_title: Header
+      no_header: There is no header.
+      create_header: Create header
+      cards_title: Cards
+      create_card: Create card
+      no_cards: There is no cards.
+      cards:
+        title: Title
+        description: Description
+        link_text: Link text
+        link_url: Link URL
+      feeds:
+        proposals: Proposals
+        debates: Debates
+        processes: Processes
+      new:
+        header_title: New header
+        submit_header: Create header
+        card_title: New card
+        submit_card: Create card
+      edit:
+        header_title: Edit header
+        submit_header: Save header
+        card_title: Edit card
+        submit_card: Save card

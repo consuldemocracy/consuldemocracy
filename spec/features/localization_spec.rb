@@ -3,10 +3,16 @@ require 'rails_helper'
 feature 'Localization' do
 
   scenario 'Wrong locale' do
+    card = create(:widget_card, title: 'Bienvenido a CONSUL',
+                                description: 'Software libre para la participación ciudadana.',
+                                link_text: 'Más información',
+                                link_url: 'http://consulproject.org/',
+                                header: true)
+
     visit root_path(locale: :es)
     visit root_path(locale: :klingon)
 
-    expect(page).to have_text('La ciudad que quieres será la ciudad que quieras')
+    expect(page).to have_text('Bienvenido a CONSUL')
   end
 
   scenario 'Available locales appear in the locale switcher' do

@@ -1,0 +1,7 @@
+<h3 class="title"><%= t("welcome.cards.title") %></h3>
+
+<div class="row">
+  <% @cards.all.each do |card| %>
+    <%= render "card", card: card %>
+  <% end %>
+</div>

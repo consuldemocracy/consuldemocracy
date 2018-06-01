@@ -1,8 +1,12 @@
-<div class="small-12 column section-recommended padding">
+<div id="section_recommended" class="section-recommended">
   <div class="row">
 
-    <h2 class="text-center"><%= t("welcome.recommended.title") %></h2>
-    <div class="small-12 column carousel-image">
+    <div class="small-12 column">
+      <h2><%= t("welcome.recommended.title") %></h2>
+      <p><%= t("welcome.recommended.help") %></p>
+    </div>
+
+    <div class="carousel-image">
       <% if recommended_debates.any? %>
         <% carousel_size = calculate_carousel_size(recommended_debates, recommended_proposals, true) %>
         <%= render "recommended_carousel", recommendeds: recommended_debates,

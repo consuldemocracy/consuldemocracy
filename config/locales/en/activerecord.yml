@@ -245,6 +245,14 @@ en:
         subject: Subject
         from: From
         body: Email content
+      widget/card:
+        label: Label (optional)
+        title: Title
+        description: Description
+        link_text: Link text
+        link_url: Link URL
+      widget/feed:
+        limit: Number of items
     errors:
       models:
         user:

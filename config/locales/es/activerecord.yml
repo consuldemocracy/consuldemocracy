@@ -241,6 +241,14 @@ es:
         subject: Asunto
         from: Enviado por
         body: Contenido del email
+      widget/card:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
+        link_url: URL del enlace
+      widget/feed:
+        limit: Número de elementos
     errors:
       models:
         user:

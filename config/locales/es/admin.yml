@@ -501,6 +501,7 @@ es:
       stats: Estadísticas
       signature_sheets: Hojas de firmas
       site_customization:
+        homepage: Homepage
         pages: Personalizar páginas
         images: Personalizar imágenes
         content_blocks: Personalizar bloques
@@ -962,6 +963,8 @@ es:
       actions: Acciones
       title: Título
       description: Descripción
+      image: Imagen
+      show_image: Mostrar imagen
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
@@ -1216,3 +1219,31 @@ es:
           status_draft: Borrador
           status_published: Publicada
           locale: Idioma
+    homepage:
+      title: Homepage
+      description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.
+      header_title: Encabezado
+      create_header: Crear encabezado
+      no_header: No hay encabezado.
+      cards_title: Tarjetas
+      create_card: Crear tarjeta
+      no_cards: No hay tarjetas.
+      cards:
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
+        link_url: URL del enlace
+      feeds:
+        proposals: Propuestas
+        debates: Debates
+        processes: Procesos
+      new:
+        header_title: Nuevo encabezado
+        submit_header: Crear encabezado
+        card_title: Nueva tarjeta
+        submit_card: Crear tarjeta
+      edit:
+        header_title: Editar encabezado
+        submit_header: Guardar encabezado
+        card_title: Editar tarjeta
+        submit_card: Guardar tarjeta

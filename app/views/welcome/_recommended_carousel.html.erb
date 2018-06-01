@@ -1,9 +1,9 @@
-<div class="small-12 medium-4 large-4 <%= carousel_size %> column text-center <%= key %> ">
+<div class="small-12 medium-6 column <%= key %> ">
   <div class="card small-centered <%= key %>-inner">
 
     <h3><%= t("welcome.recommended.#{key.underscore}.title") %></h3>
 
-    <div class="orbit" role="region" data-orbit data-use-m-u-i="false">
+    <div class="orbit" role="region" data-orbit data-use-m-u-i="false" data-timer-delay="4000">
       <div class="orbit-wrapper">
 
         <ul class="orbit-container no-bullet" tabindex="0" >
@@ -38,5 +38,5 @@
     </div>
 
   </div>
-  <%= link_to btn_text_link, btn_path_link, class: 'button hollow expanded' %>
+  <%= link_to btn_text_link, btn_path_link %>
 </div>

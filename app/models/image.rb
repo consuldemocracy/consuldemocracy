@@ -68,6 +68,8 @@ class Image < ActiveRecord::Base
 
     def validate_image_dimensions
       if attachment_of_valid_content_type?
+        return true if imageable_class == Widget::Card
+
         dimensions = Paperclip::Geometry.from_file(attachment.queued_for_write[:original].path)
         errors.add(:attachment, :min_image_width, required_min_width: MIN_SIZE) if dimensions.width < MIN_SIZE
         errors.add(:attachment, :min_image_height, required_min_height: MIN_SIZE) if dimensions.height < MIN_SIZE
