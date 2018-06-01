@@ -1,5 +1,5 @@
 class Poll
-  class BoothAssignment < ApplicationRecord
+  class BoothAssignment < ActiveRecord::Base
     belongs_to :booth
     belongs_to :poll
 

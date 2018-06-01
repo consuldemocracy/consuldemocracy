@@ -1,5 +1,5 @@
 class Budget
-  class Heading < ApplicationRecord
+  class Heading < ActiveRecord::Base
     include Sluggable
 
     belongs_to :group

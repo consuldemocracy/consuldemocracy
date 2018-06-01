@@ -52,8 +52,8 @@ describe MigrateSpendingProposalsToInvestments do
       expect(inv2.heading).to eq(inv1.heading)
       expect(inv1.original_spending_proposal_id).to eq(sp1.id)
       expect(inv2.original_spending_proposal_id).to eq(sp2.id)
-      expect(sp1.explanations_log.to_i).to eq(inv1.id)
-      expect(sp2.explanations_log.to_i).to eq(inv2.id)
+      expect(sp1.explanations_log).to eq(inv1.id)
+      expect(sp2.explanations_log).to eq(inv2.id)
     end
 
     it "Imports feasibility correctly" do

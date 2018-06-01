@@ -1,4 +1,4 @@
-class Poll::Answer < ApplicationRecord
+class Poll::Answer < ActiveRecord::Base
 
   belongs_to :question, -> { with_hidden }
   belongs_to :author, ->   { with_hidden }, class_name: 'User', foreign_key: 'author_id'

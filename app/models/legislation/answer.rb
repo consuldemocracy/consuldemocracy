@@ -1,4 +1,4 @@
-class Legislation::Answer < ApplicationRecord
+class Legislation::Answer < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 

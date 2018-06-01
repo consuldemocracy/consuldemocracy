@@ -1,4 +1,4 @@
-class SiteCustomization::Image < ApplicationRecord
+class SiteCustomization::Image < ActiveRecord::Base
   VALID_IMAGES = {
     "icon_home" => [330, 240],
     "logo_header" => [80, 80],

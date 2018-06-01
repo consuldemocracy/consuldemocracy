@@ -1,4 +1,4 @@
-class ProbeSelection < ApplicationRecord
+class ProbeSelection < ActiveRecord::Base
   belongs_to :probe_option, counter_cache: true
   belongs_to :probe
   belongs_to :user

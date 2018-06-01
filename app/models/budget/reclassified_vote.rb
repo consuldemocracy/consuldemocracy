@@ -1,5 +1,5 @@
 class Budget
-  class ReclassifiedVote < ApplicationRecord
+  class ReclassifiedVote < ActiveRecord::Base
     REASONS = %w(heading_changed unfeasible)
 
     belongs_to :user

@@ -1,4 +1,4 @@
-class Image < ApplicationRecord
+class Image < ActiveRecord::Base
   include ImagesHelper
   include ImageablesHelper
 
@@ -77,23 +77,23 @@ class Image < ApplicationRecord
     def validate_attachment_size
       if imageable_class &&
          attachment_file_size > 1.megabytes
-        errors.add(:attachment, I18n.t("images.errors.messages.in_between",
-                                     min: "0 Bytes",
-                                     max: "#{imageable_max_file_size} MB"))
+        errors[:attachment] = I18n.t("images.errors.messages.in_between",
+                                      min: "0 Bytes",
+                                      max: "#{imageable_max_file_size} MB")
       end
     end
 
     def validate_attachment_content_type
       if imageable_class && !attachment_of_valid_content_type?
-        errors.add(:attachment, I18n.t("images.errors.messages.wrong_content_type",
-                                     content_type: attachment_content_type,
-                                     accepted_content_types: imageable_humanized_accepted_content_types))
+        errors[:attachment] = I18n.t("images.errors.messages.wrong_content_type",
+                                      content_type: attachment_content_type,
+                                      accepted_content_types: imageable_humanized_accepted_content_types)
       end
     end
 
     def attachment_presence
       if attachment.blank? && cached_attachment.blank?
-        errors.add(:attachment, I18n.t("errors.messages.blank"))
+        errors[:attachment] = I18n.t("errors.messages.blank")
       end
     end
 

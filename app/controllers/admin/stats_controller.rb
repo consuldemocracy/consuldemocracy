@@ -21,9 +21,7 @@ class Admin::StatsController < Admin::BaseController
     @verified_users = User.active.level_two_or_three_verified.count
     @unverified_users = User.active.unverified.count
     @users = User.active.count
-    @user_ids_who_voted_proposals = ActsAsVotable::Vote.where(votable_type: 'Proposal')
-                                                       .distinct.count(:voter_id)
-
+    @user_ids_who_voted_proposals = ActsAsVotable::Vote.where(votable_type: 'Proposal').distinct.count(:voter_id)
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
     @spending_proposals = SpendingProposal.count
     @ballots_with_votes = Ballot.where("ballot_lines_count > ?", 0).count
@@ -55,11 +53,7 @@ class Admin::StatsController < Admin::BaseController
 
   def spending_proposals
     @ballots = Ballot.where.not(geozone_id: nil).group(:geozone).count
-    @voters_in_city = BallotLine.select(:ballot_id)
-                                .distinct
-                                .joins(:spending_proposal)
-                                .where("spending_proposals.geozone_id" => nil).to_a.size
-
+    @voters_in_city = BallotLine.select(:ballot_id).uniq.joins(:spending_proposal).where("spending_proposals.geozone_id" => nil).to_a.size
     @voters_in_district = @ballots.values.sum
     @user_count = Ballot.where('ballot_lines_count > ?', 0).count
   end
@@ -72,9 +66,9 @@ class Admin::StatsController < Admin::BaseController
     @budget = Budget.find(params[:budget_id])
     heading_ids = @budget.heading_ids
 
-    votes = Vote.where(votable_type: 'Budget::Investment')
-                .includes(:budget_investment)
-                .where(budget_investments: { heading_id: heading_ids })
+    votes = Vote.where(votable_type: 'Budget::Investment').
+            includes(:budget_investment).
+            where(budget_investments: {heading_id: heading_ids})
 
     @vote_count = votes.count
     @user_count = votes.select(:voter_id).distinct.count
@@ -104,9 +98,7 @@ class Admin::StatsController < Admin::BaseController
 
   def redeemable_codes
     @users = User.where.not(redeemable_code: nil)
-    @users_after_campaign = @users.where(
-      "verified_at >= ?", Date.new(2016, 6, 17).beginning_of_day
-    ).count
+    @users_after_campaign = @users.where("verified_at >= ?", Date.new(2016, 6, 17).beginning_of_day).count
   end
 
   def user_invites
@@ -128,17 +120,17 @@ class Admin::StatsController < Admin::BaseController
   private
 
   def voters_in_heading(heading)
-    Vote.where(votable_type: 'Budget::Investment')
-        .includes(:budget_investment)
-        .where(budget_investments: { heading_id: heading.id })
-        .select("votes.voter_id").distinct.count
+    Vote.where(votable_type: 'Budget::Investment').
+        includes(:budget_investment).
+        where(budget_investments: {heading_id: heading.id}).
+        select("votes.voter_id").distinct.count
   end
 
   def voters_in_districts(budget)
-    Vote.where(votable_type: 'Budget::Investment')
-        .includes(:budget_investment)
-        .where(budget_investments: { heading_id: (budget.heading_ids - [city_heading(budget).id]) })
-        .select("votes.voter_id").distinct.count
+    Vote.where(votable_type: 'Budget::Investment').
+        includes(:budget_investment).
+        where(budget_investments: { heading_id: (budget.heading_ids - [city_heading(budget).id]) }).
+        select("votes.voter_id").distinct.count
   end
 
   def city_heading(budget)

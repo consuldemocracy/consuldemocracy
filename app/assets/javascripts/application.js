@@ -85,7 +85,7 @@
 //= require managers
 //= require globalize
 
-const initializeModules = function () {
+var initialize_modules = function() {
   App.Comments.initialize();
   App.Users.initialize();
   App.Votes.initialize();
@@ -133,8 +133,10 @@ const initializeModules = function () {
   App.Globalize.initialize();
 };
 
-$(function () {
-  $(document).on('page:load', initializeModules)
-  $(document).on('ajax:complete', initializeModules)
-  $(document).on('turbolinks:load', initializeModules)
-})
+$(function(){
+  Turbolinks.enableProgressBar();
+
+  $(document).ready(initialize_modules);
+  $(document).on('page:load', initialize_modules);
+  $(document).on('ajax:complete', initialize_modules);
+});

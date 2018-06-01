@@ -1,12 +1,12 @@
 class Budget
-  class Ballot < ApplicationRecord
+  class Ballot < ActiveRecord::Base
     belongs_to :user
     belongs_to :budget
 
     has_many :lines, dependent: :destroy
     has_many :investments, through: :lines
-    has_many :groups, -> { distinct }, through: :lines
-    has_many :headings, -> { distinct }, through: :groups
+    has_many :groups, -> { uniq }, through: :lines
+    has_many :headings, -> { uniq }, through: :groups
 
     def add_investment(investment)
       lines.create(investment: investment).persisted?

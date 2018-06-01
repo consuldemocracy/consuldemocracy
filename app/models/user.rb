@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class User < ActiveRecord::Base
 
   include Verification
   require 'date'
@@ -36,9 +36,8 @@ class User < ApplicationRecord
   has_many :direct_messages_received, class_name: 'DirectMessage', foreign_key: :receiver_id
   has_many :legislation_answers, class_name: 'Legislation::Answer', dependent: :destroy, inverse_of: :user
   has_many :follows
-
+  belongs_to :geozone
   belongs_to :representative, class_name: "Forum"
-  belongs_to :geozone, optional: true
 
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
@@ -71,7 +70,7 @@ class User < ApplicationRecord
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :public_for_api, -> { all }
-  scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).distinct }
+  scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).uniq }
   scope :by_authors,     ->(author_ids) { where("users.id IN (?)", author_ids) }
   scope :by_username_email_or_document_number, ->(search_string) do
     string = "%#{search_string}%"

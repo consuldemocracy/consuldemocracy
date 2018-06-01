@@ -1,4 +1,4 @@
-class Ballot < ApplicationRecord
+class Ballot < ActiveRecord::Base
   belongs_to :user
   belongs_to :geozone
 

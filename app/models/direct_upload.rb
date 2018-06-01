@@ -51,7 +51,7 @@ class DirectUpload
     @relation.valid?
 
     if @relation.errors.key? :attachment
-      errors.add(:attachment, @relation.errors.full_messages_for(:attachment))
+      errors[:attachment] = @relation.errors[:attachment]
     end
   end
 

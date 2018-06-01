@@ -1,4 +1,4 @@
-class Follow < ApplicationRecord
+class Follow < ActiveRecord::Base
   belongs_to :user
   belongs_to :followable, polymorphic: true
 

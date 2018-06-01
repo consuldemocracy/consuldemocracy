@@ -1,4 +1,4 @@
-class Legislation::DraftVersion < ApplicationRecord
+class Legislation::DraftVersion < ActiveRecord::Base
   VALID_STATUSES = %w(draft published)
 
   acts_as_paranoid column: :hidden_at

@@ -1,4 +1,4 @@
-class ProbeOption < ApplicationRecord
+class ProbeOption < ActiveRecord::Base
 
   belongs_to :probe
   belongs_to :debate

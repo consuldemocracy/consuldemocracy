@@ -22,7 +22,7 @@ class FollowsController < ApplicationController
   end
 
   def followable_translation_key(followable)
-    followable.class.name.parameterize(separator: "_")
+    followable.class.name.parameterize("_")
   end
 
 end

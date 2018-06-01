@@ -1,5 +1,5 @@
 class Poll
-  class FinalRecount < ApplicationRecord
+  class FinalRecount < ActiveRecord::Base
 
     VALID_ORIGINS = %w{ web booth letter }
 

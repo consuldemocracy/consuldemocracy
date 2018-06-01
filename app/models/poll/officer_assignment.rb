@@ -1,5 +1,5 @@
 class Poll
-  class OfficerAssignment < ApplicationRecord
+  class OfficerAssignment < ActiveRecord::Base
     belongs_to :officer
     belongs_to :booth_assignment
     has_many :partial_results

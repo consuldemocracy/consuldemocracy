@@ -1,4 +1,4 @@
-class Legislation::Process < ApplicationRecord
+class Legislation::Process < ActiveRecord::Base
   include ActsAsParanoidAliases
   include Taggable
   include Documentable

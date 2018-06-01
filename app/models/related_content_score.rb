@@ -1,4 +1,4 @@
-class RelatedContentScore < ApplicationRecord
+class RelatedContentScore < ActiveRecord::Base
   SCORES = {
     POSITIVE: 1,
     NEGATIVE: -1

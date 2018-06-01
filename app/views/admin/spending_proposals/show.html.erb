@@ -1,4 +1,4 @@
-<%= link_to admin_spending_proposals_path(@filter_params.to_h), data: {no_turbolink: true} do %>
+<%= link_to admin_spending_proposals_path(SpendingProposal.filter_params(params)), data: {no_turbolink: true} do %>
   <span class="icon-angle-left"></span> <%= t("admin.spending_proposals.show.back") %>
 <% end %>
 
@@ -6,7 +6,7 @@
 
 <%= link_to t("admin.spending_proposals.show.edit"),
               edit_admin_spending_proposal_path(@spending_proposal,
-                                                @filter_params.to_h) %>
+                                                SpendingProposal.filter_params(params)) %>
 
 <hr>
 
@@ -39,7 +39,7 @@
 <p>
   <%= link_to t("admin.spending_proposals.show.edit_classification"),
                 edit_admin_spending_proposal_path(@spending_proposal,
-                                          {anchor: 'classification'}.merge(@filter_params.to_h)) %>
+                                                  {anchor: 'classification'}.merge(SpendingProposal.filter_params(params))) %>
 </p>
 
 <hr>
@@ -49,7 +49,6 @@
 <%= render 'valuation/spending_proposals/written_by_valuators' %>
 
 <p>
-  <%= link_to t("admin.spending_proposals.show.edit_dossier"),
-              edit_valuation_spending_proposal_path(@spending_proposal) %>
+  <%= link_to t("admin.spending_proposals.show.edit_dossier"), edit_valuation_spending_proposal_path(@spending_proposal) %>
 </p>
 

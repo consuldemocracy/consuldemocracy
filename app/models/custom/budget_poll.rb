@@ -1,4 +1,4 @@
-class BudgetPoll < ApplicationRecord
+class BudgetPoll < ActiveRecord::Base
   VALID_PREFERRED_SUBJECTS = [
     'ns/nc',
     'Fase de propuesta',

@@ -1,4 +1,4 @@
-class Document < ApplicationRecord
+class Document < ActiveRecord::Base
   include DocumentsHelper
   include DocumentablesHelper
   has_attached_file :attachment, url: "/system/:class/:prefix/:style/:hash.:extension",
@@ -80,24 +80,24 @@ class Document < ApplicationRecord
     def validate_attachment_size
       if documentable_class.present? &&
          attachment_file_size > documentable_class.max_file_size
-        errors.add(:attachment, I18n.t("documents.errors.messages.in_between",
+        errors[:attachment] = I18n.t("documents.errors.messages.in_between",
                                       min: "0 Bytes",
-                                      max: "#{max_file_size(documentable_class)} MB"))
+                                      max: "#{max_file_size(documentable_class)} MB")
       end
     end
 
     def validate_attachment_content_type
       if documentable_class &&
          !accepted_content_types(documentable_class).include?(attachment_content_type)
-        errors.add(:attachment, I18n.t("documents.errors.messages.wrong_content_type",
-                                   content_type: attachment_content_type,
-                                   accepted_content_types: documentable_humanized_accepted_content_types(documentable_class)))
+        errors[:attachment] = I18n.t("documents.errors.messages.wrong_content_type",
+                                      content_type: attachment_content_type,
+                                      accepted_content_types: documentable_humanized_accepted_content_types(documentable_class))
       end
     end
 
     def attachment_presence
       if attachment.blank? && cached_attachment.blank?
-        errors.add(:attachment, I18n.t("errors.messages.blank"))
+        errors[:attachment] = I18n.t("errors.messages.blank")
       end
     end
 
