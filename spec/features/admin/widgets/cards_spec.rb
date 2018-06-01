@@ -20,7 +20,7 @@ feature 'Cards' do
     click_button "Create card"
 
     expect(page).to have_content "Success"
-    expect(page).to have_css(".card", count: 1)
+    expect(page).to have_css(".homepage-card", count: 1)
 
     card = Widget::Card.last
     within("#widget_card_#{card.id}") do
@@ -38,7 +38,7 @@ feature 'Cards' do
 
     visit admin_homepage_path
 
-    expect(page).to have_css(".card", count: 3)
+    expect(page).to have_css(".homepage-card", count: 3)
 
     cards = Widget::Card.all
     cards.each do |card|
@@ -68,7 +68,7 @@ feature 'Cards' do
 
     expect(page).to have_content "Updated"
 
-    expect(page).to have_css(".card", count: 1)
+    expect(page).to have_css(".homepage-card", count: 1)
     within("#widget_card_#{Widget::Card.last.id}") do
       expect(page).to have_content "Card label updated"
       expect(page).to have_content "Card text updated"
@@ -90,7 +90,7 @@ feature 'Cards' do
     end
 
     expect(page).to have_content "Removed"
-    expect(page).to have_css(".card", count: 0)
+    expect(page).to have_css(".homepage-card", count: 0)
   end
 
   context "Header Card" do
@@ -109,7 +109,7 @@ feature 'Cards' do
       expect(page).to have_content "Success"
 
       within("#header") do
-        expect(page).to have_css(".card", count: 1)
+        expect(page).to have_css(".homepage-card", count: 1)
         expect(page).to have_content "Header label"
         expect(page).to have_content "Header text"
         expect(page).to have_content "Header description"
@@ -118,7 +118,7 @@ feature 'Cards' do
       end
 
       within("#cards") do
-        expect(page).to have_css(".card", count: 0)
+        expect(page).to have_css(".homepage-card", count: 0)
       end
     end
 
