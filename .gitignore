@@ -33,3 +33,6 @@
 
 public/sitemap.xml
 public/system/
+
+# Ignore vim swap files
+*.swp
