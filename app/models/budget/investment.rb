@@ -1,5 +1,5 @@
 class Budget
-  class Investment < ActiveRecord::Base
+  class Investment < ApplicationRecord
     SORTING_OPTIONS = %w(id title supports).freeze
 
     include Rails.application.routes.url_helpers
@@ -28,7 +28,7 @@ class Budget
     belongs_to :heading
     belongs_to :group
     belongs_to :budget
-    belongs_to :administrator
+    belongs_to :administrator, optional: true
 
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
@@ -111,7 +111,7 @@ class Budget
     end
 
     def self.filter_params(params)
-      params.select{ |x, _| %w{heading_id group_id administrator_id tag_name valuator_id}.include?(x.to_s) }
+      params.permit(%i(heading_id group_id administrator_id tag_name valuator_id))
     end
 
     def self.scoped_filter(params, current_filter)

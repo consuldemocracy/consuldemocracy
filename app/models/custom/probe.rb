@@ -1,4 +1,4 @@
-class Probe < ActiveRecord::Base
+class Probe < ApplicationRecord
   has_many :probe_options, dependent: :destroy
 
   validates :codename, presence: true, uniqueness: true

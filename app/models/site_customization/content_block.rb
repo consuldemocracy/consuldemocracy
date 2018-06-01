@@ -1,4 +1,4 @@
-class SiteCustomization::ContentBlock < ActiveRecord::Base
+class SiteCustomization::ContentBlock < ApplicationRecord
   VALID_BLOCKS = %w(top_links footer)
 
   validates :locale, presence: true, inclusion: { in: I18n.available_locales.map(&:to_s) }

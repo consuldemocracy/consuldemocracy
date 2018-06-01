@@ -29,19 +29,31 @@ describe Admin::Api::StatsController do
         create :ahoy_event, name: 'bar', time: time_3
       end
 
-      it 'returns single events formated for working with c3.js' do
+      it 'returns single events formatted for working with c3.js' do
         sign_in user
-        get :show, event: 'foo'
+        get :show, params: { event: 'foo' }
 
         expect(response).to be_ok
 
         data = JSON.parse(response.body)
         expect(data).to eq "x" => ["2015-01-01", "2015-01-02"], "Foo" => [2, 1]
       end
+
+      it 'returns combined comma separated events formatted for working with c3.js' do
+        sign_in user
+        get :show, params: { event: 'foo,bar' }
+
+        expect(response).to be_ok
+
+        data = JSON.parse(response.body)
+        expect(data).to eq "x" => ["2015-01-01", "2015-01-02", "2015-01-03"],
+                           "Foo" => [2, 1, 0],
+                           "Bar" => [1, 0, 2]
+      end
     end
 
     context 'visits present' do
-      it 'returns visits formated for working with c3.js' do
+      it 'returns visits formatted for working with c3.js' do
         time_1 = Time.zone.local(2015, 01, 01)
         time_2 = Time.zone.local(2015, 01, 02)
 
@@ -50,7 +62,7 @@ describe Admin::Api::StatsController do
         create :visit, started_at: time_2
 
         sign_in user
-        get :show, visits: true
+        get :show, params: { visits: true }
 
         expect(response).to be_ok
 
@@ -60,7 +72,7 @@ describe Admin::Api::StatsController do
     end
 
     context 'visits and events present' do
-      it 'returns combined events and visits formated for working with c3.js' do
+      it 'returns combined events and visits formatted for working with c3.js' do
         time_1 = Time.zone.local(2015, 01, 01)
         time_2 = Time.zone.local(2015, 01, 02)
 
@@ -73,7 +85,7 @@ describe Admin::Api::StatsController do
         create :visit, started_at: time_2
 
         sign_in user
-        get :show, event: 'foo', visits: true
+        get :show, params: { event: 'foo', visits: true }
 
         expect(response).to be_ok
 
@@ -83,7 +95,7 @@ describe Admin::Api::StatsController do
     end
 
     context 'budget investments present' do
-      it 'returns budget investments formated for working with c3.js' do
+      it 'returns budget investments formatted for working with c3.js' do
         time_1 = Time.zone.local(2017, 04, 01)
         time_2 = Time.zone.local(2017, 04, 02)
 
@@ -92,7 +104,7 @@ describe Admin::Api::StatsController do
         budget_investment3 = create(:budget_investment, budget: @budget, created_at: time_2)
 
         sign_in user
-        get :show, budget_investments: true
+        get :show, params: { budget_investments: true }
 
         expect(response).to be_ok
 

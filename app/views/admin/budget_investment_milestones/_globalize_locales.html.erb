@@ -3,7 +3,8 @@
               id: "delete-#{neutral_locale(locale)}",
               style: show_delete?(locale),
               class: 'float-right delete js-delete-language',
-              data: { locale: neutral_locale(locale) } %>
+              data: { locale: neutral_locale(locale) },
+              "data-turbolinks" => false %>
 
 <% end %>
 

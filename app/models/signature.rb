@@ -1,4 +1,4 @@
-class Signature < ActiveRecord::Base
+class Signature < ApplicationRecord
   include DocumentParser
 
   belongs_to :signature_sheet

@@ -1,4 +1,4 @@
-class BallotLine < ActiveRecord::Base
+class BallotLine < ApplicationRecord
   belongs_to :ballot, counter_cache: true
   belongs_to :spending_proposal, counter_cache: true
 

@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  after_filter :after_login, only: :create
+  after_action :after_login, only: :create
 
   def twitter
     sign_in_with :twitter_login, :twitter
@@ -26,7 +26,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def sign_in_with(feature, provider)
       raise ActionController::RoutingError.new('Not Found') unless Setting["feature.#{feature}"]
 
-      auth = env["omniauth.auth"]
+      auth = request.env["omniauth.auth"]
 
       identity = Identity.first_or_create_from_oauth(auth)
       @user = current_user || identity.user || User.first_or_initialize_for_oauth(auth)

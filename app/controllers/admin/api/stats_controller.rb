@@ -14,7 +14,12 @@ class Admin::Api::StatsController < Admin::Api::BaseController
     ds = Ahoy::DataSource.new
 
     if params[:event].present?
-      ds.add params[:event].titleize, Ahoy::Event.where(name: params[:event]).group_by_day(:time).count
+      event_types = params[:event].split(',')
+
+      event_types.each do |event|
+        ds.add event.titleize, Ahoy::Event.where(name: event)
+                                          .group_by_day(:time).count
+      end
     end
 
     if params[:visits].present?
@@ -22,7 +27,8 @@ class Admin::Api::StatsController < Admin::Api::BaseController
     end
 
     if params[:unverified_users].present?
-      ds.add "Usuarios sin verificar", User.with_hidden.unverified.group_by_day(:created_at).count
+      ds.add "Usuarios sin verificar", User.with_hidden.unverified
+                                           .group_by_day(:created_at).count
     end
 
     if params[:spending_proposals].present?
@@ -30,11 +36,14 @@ class Admin::Api::StatsController < Admin::Api::BaseController
     end
 
     if params[:user_voted_budgets].present?
-      ds.add "User voted budgets", Ballot.where('ballot_lines_count > ?', 0).group_by_day(:updated_at).count
+      ds.add "User voted budgets", Ballot.where('ballot_lines_count > ?', 0)
+                                         .group_by_day(:updated_at).count
     end
 
     if params[:user_supported_budgets].present?
-      ds.add "User supported budgets", Vote.where(votable_type: 'Budget::Investment').select(:voter_id).distinct.group_by_day(:created_at).count
+      ds.add "User supported budgets", Vote.where(votable_type: 'Budget::Investment')
+                                           .select(:voter_id).distinct
+                                           .group_by_day(:created_at).count
     end
 
     if params[:budget_investments].present?

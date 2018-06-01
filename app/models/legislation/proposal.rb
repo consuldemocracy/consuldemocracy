@@ -1,4 +1,4 @@
-class Legislation::Proposal < ActiveRecord::Base
+class Legislation::Proposal < ApplicationRecord
   VALID_TYPES = %w(proposal question).freeze
   TITLE_MIN_LENGTH = 4
   TITLE_MAX_LENGTH = 500

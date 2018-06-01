@@ -1,4 +1,4 @@
-class Newsletter < ActiveRecord::Base
+class Newsletter < ApplicationRecord
 
   validates :subject, presence: true
   validates :segment_recipient, presence: true

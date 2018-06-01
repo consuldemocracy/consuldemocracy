@@ -1,4 +1,4 @@
-class Budget::Investment::Status < ActiveRecord::Base
+class Budget::Investment::Status < ApplicationRecord
   acts_as_paranoid column: :hidden_at
 
   has_many :milestones

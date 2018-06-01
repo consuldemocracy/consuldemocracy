@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe CensusApi do
-  let(:api) { described_class.new }
+describe 'CensusApi' do
+  let(:api) { CensusApi.new }
 
   describe '#get_document_number_variants' do
     it "trims and cleans up entry" do

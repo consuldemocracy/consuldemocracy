@@ -1,4 +1,5 @@
 FactoryBot.define do
+
   factory :local_census_record, class: 'LocalCensusRecord' do
     document_number '12345678A'
     document_type 1
@@ -142,7 +143,7 @@ FactoryBot.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag(create(:user), debate)
+        Flag.flag(FactoryBot.create(:user), debate)
       end
     end
 
@@ -156,7 +157,7 @@ FactoryBot.define do
 
     trait :conflictive do
       after :create do |debate|
-        Flag.flag(create(:user), debate)
+        Flag.flag(FactoryBot.create(:user), debate)
         4.times { create(:vote, votable: debate) }
       end
     end
@@ -188,7 +189,7 @@ FactoryBot.define do
 
     trait :flagged do
       after :create do |proposal|
-        Flag.flag(create(:user), proposal)
+        Flag.flag(FactoryBot.create(:user), proposal)
       end
     end
 
@@ -205,9 +206,9 @@ FactoryBot.define do
     end
 
     trait :conflictive do
-      after :create do |debate|
-        Flag.flag(create(:user), debate)
-        4.times { create(:vote, votable: debate) }
+      after :create do |proposal|
+        Flag.flag(FactoryBot.create(:user), proposal)
+        4.times { create(:vote, votable: proposal) }
       end
     end
 
@@ -513,7 +514,7 @@ FactoryBot.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag(create(:user), debate)
+        Flag.flag(FactoryBot.create(:user), debate)
       end
     end
 
