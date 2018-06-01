@@ -5,6 +5,7 @@
 // 02. Budgets materials 2017
 // 03. Geocraft
 // 04. Cambia tu ciudad
+// 05. Budgets signup 2018
 //
 
 // 00. Common styles for landings
@@ -552,6 +553,48 @@ $geocraft: #006800;
         font-size: rem-calc(60);
         line-height: rem-calc(60);
       }
+    }
+  }
+}
+
+// 05. Budgets signup 2018
+// -----------------------
+
+.auth-image {
+
+  h1 img {
+    height: auto;
+    width: auto;
+  }
+}
+
+.landing-budgets {
+
+ .auth-image {
+    background: #000 image-url('landings/bg_landing_budgets.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: $line-height * 2;
+
+    @include breakpoint(medium) {
+      padding-bottom: 0;
+    }
+
+    h1 {
+      border-bottom: 3px solid #fff;
+
+      a {
+        text-align: unset;
+      }
+    }
+  }
+
+  .phrase-content {
+    padding: $line-height * 2 0;
+    text-align: center;
+
+    @include breakpoint(large) {
+      padding-top: $line-height * 5;
     }
   }
 }
