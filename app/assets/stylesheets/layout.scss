@@ -2606,6 +2606,10 @@ table {
     margin-top: rem-calc(-48);
   }
 
+  .card {
+    border: 0;
+  }
+
   h3 {
 
     &.title {
@@ -2629,12 +2633,10 @@ table {
 }
 
 .feed-image {
-  background: #fafafa;
   display: inline-block;
   height: rem-calc(120);
   margin: $line-height / 2 0;
   overflow: hidden;
-  width: rem-calc(120);
 
   img {
     margin-left: rem-calc(-15);

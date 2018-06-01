@@ -8,15 +8,15 @@
 
           <% feed.items.each do |item| %>
             <div class="<%= item.class.to_s.parameterize('_') %> row">
-              <div class="small-12 large-3 column">
-                <div class="feed-image">
-                  <% if feature?(:allow_images) && item.image.present? %>
+              <% if feature?(:allow_images) && item.image.present? %>
+                <div class="small-12 large-3 column">
+                  <div class="feed-image">
                     <%= image_tag item.image_url(:thumb),
                                   alt: item.image.title.unicode_normalize %>
-                  <% end %>
+                  </div>
                 </div>
-              </div>
-              <div class="feed-description small-12 large-9 column">
+              <% end %>
+              <div class="feed-description small-12 column <%= 'large-9' if feature?(:allow_images) && item.image.present? %>">
                 <strong><%= link_to item.title, url_for(item) %></strong><br>
                 <p><%= item.summary %></p>
               </div>
