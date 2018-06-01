@@ -1,105 +1,24 @@
-<h2><%= t("admin.settings.index.title") %></h2>
+<h1>Settings</h1>
+<div class="tabs-content" data-tabs-content="settings-tabs">
+  <%= render "filter_subnav" %>
 
-<table>
-  <tbody>
-    <% @settings.each do |setting| %>
-      <tr>
-        <td class="small-12 medium-4">
-          <strong><%= t("settings.#{setting.key}") %></strong>
-        </td>
-        <td class="small-12 medium-8">
-          <%= form_for(setting, url: admin_setting_path(setting), html: { id: "edit_#{dom_id(setting)}"}) do |f| %>
-            <div class="small-12 medium-6 large-9 column">
-              <%= f.text_area :value, label: false, id: dom_id(setting), lines: 1 %>
-            </div>
-            <div class="small-12 medium-6 large-3 column">
-              <%= f.submit(t('admin.settings.index.update_setting'), class: "button hollow expanded") %>
-            </div>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="tabs-panel is-active" id="tab-configuration">
+    <%= render "configuration" %>
+  </div>
 
-<h2><%= t("admin.settings.index.feature_flags") %></h2>
+  <div class="tabs-panel" id="tab-feature-flags">
+    <%= render "feature_flags" %>
+  </div>
 
-<table>
-  <tbody>
-    <% @feature_flags.each do |feature_flag| %>
-      <tr>
-        <td>
-          <strong><%= t("settings.#{feature_flag.key}") %></strong>
-        </td>
+  <div class="tabs-panel" id="tab-banner-styles">
+    <%= render "banner_styles" %>
+  </div>
 
-        <td>
-          <%= feature_flag.enabled? ? t("admin.settings.index.features.enabled") : t("admin.settings.index.features.disabled") %>
-        </td>
+  <div class="tabs-panel" id="tab-banner-images">
+    <%= render "banner_images" %>
+  </div>
 
-        <td class="text-right">
-          <%= form_for(feature_flag, url: admin_setting_path(feature_flag), html: { id: "edit_#{dom_id(feature_flag)}"}) do |f| %>
-
-            <%= f.hidden_field :value, id: dom_id(feature_flag), value: (feature_flag.enabled? ? "" : "active") %>
-            <%= f.submit(t("admin.settings.index.features.#{feature_flag.enabled? ? 'disable' : 'enable'}"),
-                        class: "button expanded #{feature_flag.enabled? ? 'hollow alert' : 'success'}",
-                        data: {confirm: t("admin.actions.confirm")}) %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<% if @banner_styles.present? %>
-  <h2><%= t("admin.settings.index.banners") %></h2>
-
-  <table>
-    <tbody>
-      <% @banner_styles.each do |setting| %>
-        <tr>
-          <td>
-            <strong><%= t("settings.#{setting.key}") %></strong>
-          </td>
-
-          <td>
-            <%= form_for(setting, url: admin_setting_path(setting), html: { id: "edit_#{dom_id(setting)}"}) do |f| %>
-              <%= f.text_area :value, label: false, id: dom_id(setting), lines: 1 %>
-              <%= f.submit(t('admin.settings.index.update_setting'), class: "button hollow") %>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
-
-<% if @banner_imgs.present?%>
-  <h2><%= t("admin.settings.index.banner_imgs") %></h2>
-
-  <table>
-    <tbody>
-      <% @banner_imgs.each do |setting| %>
-        <tr>
-          <td>
-            <strong><%= t("settings.#{setting.key}") %></strong>
-          </td>
-
-          <td>
-            <%= form_for(setting, url: admin_setting_path(setting), html: { id: "edit_#{dom_id(setting)}"}) do |f| %>
-              <%= f.text_area :value, label: false, id: dom_id(setting), lines: 1 %>
-              <%= f.submit(t('admin.settings.index.update_setting'), class: "button small success") %>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
-
-<% if feature?(:map) %>
-  <h2><%= t("admin.settings.index.map.title") %></h2>
-  <p><%= t("admin.settings.index.map.help") %></p>
-
-  <%= render "map_form" %>
-
-<% end %>
+  <div class="tabs-panel" id="tab-map-configuration">
+    <%= render "map_configuration" %>
+  </div>
+</div>
