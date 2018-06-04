@@ -22,6 +22,7 @@ en:
         no_ballots_allowed: Selecting phase is closed
         different_heading_assigned_html: "You have already voted a different heading: %{heading_link}"
         change_ballot: change your votes
+        casted_offline: You have already participated offline
     groups:
       show:
         title: Select an option

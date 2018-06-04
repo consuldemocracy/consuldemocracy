@@ -70,5 +70,9 @@ class Budget
       investments.where(group: group).first.heading
     end
 
+    def casted_offline?
+      budget.poll&.voted_by?(user)
+    end
+
   end
 end
