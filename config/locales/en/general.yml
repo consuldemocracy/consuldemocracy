@@ -20,6 +20,8 @@ en:
       email_on_direct_message_label: Receive emails about direct messages
       email_digest_label: Receive a summary of proposal notifications
       official_position_badge_label: Show official position badge
+      recommendations: Recommendations
+      show_debates_recommendations: Show debates recommendations
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...

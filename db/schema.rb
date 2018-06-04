@@ -1156,6 +1156,7 @@ ActiveRecord::Schema.define(version: 20180519132610) do
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
     t.boolean  "public_interests",                          default: false
+    t.boolean  "recommended_debates",                       default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

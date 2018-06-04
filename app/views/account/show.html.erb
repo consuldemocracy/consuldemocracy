@@ -112,6 +112,19 @@
             </div>
           <% end %>
 
+          <% if feature?("user.recommendations") %>
+            <h2><%= t("account.show.recommendations") %></h2>
+
+            <% if feature?("user.recommendations_on_debates") %>
+              <div>
+                <%= f.check_box :recommended_debates, title: t("account.show.show_debates_recommendations"), label: false %>
+                <span class="checkbox">
+                  <%= t("account.show.show_debates_recommendations") %>
+                </span>
+              </div>
+            <% end %>
+          <% end %>
+
           <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>
         </div>
 

@@ -59,6 +59,8 @@ class DebatesController < ApplicationController
     end
 
     def debates_recommendations
+      return unless current_user.recommended_debates
       @recommended_debates = Debate.recommendations(current_user).sort_by_random.limit(3)
     end
+
 end
