@@ -123,6 +123,15 @@
                 </span>
               </div>
             <% end %>
+
+            <% if feature?("user.recommendations_on_proposals") %>
+              <div>
+                <%= f.check_box :recommended_proposals, title: t("account.show.show_proposals_recommendations"), label: false %>
+                <span class="checkbox">
+                  <%= t("account.show.show_proposals_recommendations") %>
+                </span>
+              </div>
+            <% end %>
           <% end %>
 
           <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>

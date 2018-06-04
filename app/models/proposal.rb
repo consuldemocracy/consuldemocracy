@@ -210,8 +210,8 @@ class Proposal < ActiveRecord::Base
 
   def self.proposals_orders(user)
     orders = %w{hot_score confidence_score created_at relevance archival_date}
-    orders << "recommendations" if user.present?
-    orders
+    orders << "recommendations" if user&.recommended_proposals
+    return orders
   end
 
   protected

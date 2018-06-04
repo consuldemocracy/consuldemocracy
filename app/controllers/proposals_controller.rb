@@ -146,6 +146,7 @@ class ProposalsController < ApplicationController
     end
 
     def proposals_recommendations
+      return unless current_user.recommended_proposals
       @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
     end
 
