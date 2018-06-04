@@ -1341,6 +1341,7 @@ ActiveRecord::Schema.define(version: 20180604173248) do
     t.integer  "balloted_heading_id"
     t.boolean  "public_interests",                                            default: false
     t.boolean  "recommended_debates",                                         default: false
+    t.boolean  "recommended_proposals",                                       default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

@@ -22,6 +22,7 @@ en:
       official_position_badge_label: Show official position badge
       recommendations: Recommendations
       show_debates_recommendations: Show debates recommendations
+      show_proposals_recommendations: Show proposals recommendations
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
