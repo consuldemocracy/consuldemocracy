@@ -17,6 +17,8 @@ class Budget < ActiveRecord::Base
   has_many :lines, through: :ballots, class_name: 'Budget::Ballot::Line'
   has_many :phases, class_name: Budget::Phase
 
+  has_one :poll
+
   before_validation :sanitize_descriptions
 
   after_create :generate_phases
