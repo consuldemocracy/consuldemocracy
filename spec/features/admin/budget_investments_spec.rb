@@ -425,6 +425,78 @@ feature 'Admin budget investments' do
       expect(page).not_to have_select("tag_name", options: ["All tags", "Accessibility"])
     end
 
+    scenario "Disable 'Calculate winner' button if incorrect phase" do
+      budget.update(phase: 'reviewing_ballots')
+
+      visit admin_budget_budget_investments_path(budget)
+      click_link 'Winners'
+
+      expect(page).to have_link "Calculate Winner Investments"
+
+      budget.update(phase: 'accepting')
+
+      visit admin_budget_budget_investments_path(budget)
+      click_link 'Winners'
+
+      expect(page).not_to have_link "Calculate Winner Investments"
+      expect(page).to have_content 'The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects'
+    end
+
+    scenario "Limiting by max number of investments per heading", :js do
+      group_1 = create(:budget_group, budget: budget)
+      group_2 = create(:budget_group, budget: budget)
+      parks   = create(:budget_heading, group: group_1)
+      roads   = create(:budget_heading, group: group_2)
+      streets = create(:budget_heading, group: group_2)
+
+      [2, 4, 90, 100, 200, 300].each do |n|
+        create(:budget_investment, heading: parks, cached_votes_up: n, title: "Park with #{n} supports")
+      end
+
+      [21, 31, 51, 81, 91, 101].each do |n|
+        create(:budget_investment, heading: roads, cached_votes_up: n, title: "Road with #{n} supports")
+      end
+
+      [3, 10, 30, 33, 44, 55].each do |n|
+        create(:budget_investment, heading: streets, cached_votes_up: n, title: "Street with #{n} supports")
+      end
+
+      visit admin_budget_budget_investments_path(budget)
+
+      [2, 4, 90, 100, 200, 300].each do |n|
+        expect(page).to have_link("Park with #{n} supports")
+      end
+
+      [21, 31, 51, 81, 91, 101].each do |n|
+        expect(page).to have_link("Road with #{n} supports")
+      end
+
+      [3, 10, 30, 33, 44, 55].each do |n|
+        expect(page).to have_link("Street with #{n} supports")
+      end
+
+      click_link 'Advanced filters'
+      fill_in "max_per_heading", with: 5
+      click_button 'Filter'
+
+      expect(page).to have_content('There are 15 investments')
+      expect(page).not_to have_link("Park with 2 supports")
+      expect(page).not_to have_link("Road with 21 supports")
+      expect(page).not_to have_link("Street with 3 supports")
+
+      [4, 90, 100, 200, 300].each do |n|
+        expect(page).to have_link("Park with #{n} supports")
+      end
+
+      [31, 51, 81, 91, 101].each do |n|
+        expect(page).to have_link("Road with #{n} supports")
+      end
+
+      [10, 30, 33, 44, 55].each do |n|
+        expect(page).to have_link("Street with #{n} supports")
+      end
+    end
+
     scenario "Filtering by minimum number of votes", :js do
       group_1 = create(:budget_group, budget: budget)
       group_2 = create(:budget_group, budget: budget)

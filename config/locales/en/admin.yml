@@ -129,6 +129,7 @@ en:
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
+        recalculate: Recalculate Winner Investments
     budget_phases:
       edit:
         start_date: Start date
@@ -209,6 +210,7 @@ en:
         table_evaluation: "Show to valuators"
         table_incompatible: "Incompatible"
         see_results: "See results"
+        cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
@@ -548,6 +550,7 @@ en:
       stats: Statistics
       signature_sheets: Signature Sheets
       site_customization:
+        homepage: Homepage
         pages: Custom Pages
         images: Custom Images
         content_blocks: Custom content blocks
@@ -1030,6 +1033,8 @@ en:
       index:
         banners: Banner styles
         banner_imgs: Banner images
+        no_banners_images: No banner images
+        no_banners_styles: No banner styles
         title: Configuration settings
         update_setting: Update
         feature_flags: Features
@@ -1075,6 +1080,8 @@ en:
       content: Content
       created_at: Created at
       moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
+      image: Image
+      show_image: Show image
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -1424,3 +1431,31 @@ en:
           status_draft: Draft
           status_published: Published
           locale: Language
+    homepage:
+      title: Homepage
+      description: The active modules appear in the homepage in the same order as here.
+      header_title: Header
+      no_header: There is no header.
+      create_header: Create header
+      cards_title: Cards
+      create_card: Create card
+      no_cards: There is no cards.
+      cards:
+        title: Title
+        description: Description
+        link_text: Link text
+        link_url: Link URL
+      feeds:
+        proposals: Proposals
+        debates: Debates
+        processes: Processes
+      new:
+        header_title: New header
+        submit_header: Create header
+        card_title: New card
+        submit_card: Create card
+      edit:
+        header_title: Edit header
+        submit_header: Save header
+        card_title: Edit card
+        submit_card: Save card

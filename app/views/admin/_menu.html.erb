@@ -102,6 +102,11 @@
       </a>
       <ul <%= "class=is-active" if menu_customization? &&
                                    controller.class.parent != Admin::Poll::Questions::Answers %>>
+
+        <li <%= "class=active" if menu_homepage? %>>
+          <%= link_to t("admin.menu.site_customization.homepage"), admin_homepage_path %>
+        </li>
+
         <li <%= "class=is-active" if controller_name == "pages" %>>
           <%= link_to t("admin.menu.site_customization.pages"), admin_site_customization_pages_path %>
         </li>
@@ -190,6 +195,7 @@
         <li <%= "class=is-active" if controller_name == "users" %>>
           <%= link_to t("admin.menu.users"), admin_users_path %>
         </li>
+
       </ul>
     </li>
 
@@ -226,6 +232,13 @@
           <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path%>
         </li>
       </ul>
+    </li>
+
+    <li class="section-title <%= "active" if controller_name == "settings" %>">
+      <%= link_to admin_settings_path do %>
+        <span class="icon-settings"></span>
+        <strong><%= t("admin.settings.index.title") %></strong>
+      <% end %>
     </li>
   </ul>
 </div>

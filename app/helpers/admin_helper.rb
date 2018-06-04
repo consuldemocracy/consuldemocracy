@@ -33,7 +33,11 @@ module AdminHelper
   end
 
   def menu_customization?
-    ["pages", "banners"].include?(controller_name)
+    ["pages", "banners"].include?(controller_name) || menu_homepage?
+  end
+
+  def menu_homepage?
+    ["homepage", "cards"].include?(controller_name)
   end
 
   def official_level_options

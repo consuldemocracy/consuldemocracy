@@ -1,44 +1,7 @@
+<h3 class="title"><%= t("welcome.cards.title") %></h3>
+
 <div class="row">
-  <div class="small-12 large-4 column margin-bottom">
-    <%= link_to budgets_voting_2018_path, title: t("welcome.budgets.link") do %>
-      <figure class="figure-card">
-        <%= image_tag "welcome/budgets.jpg", alt: t("welcome.budgets.alt") %>
-        <figcaption>
-          <span><%= t("welcome.budgets.label") %></span><br>
-          <h3><%= t("welcome.budgets.title") %></h3>
-        </figcaption>
-      </figure>
-      <p class="description"><%= t("welcome.budgets.text") %></p>
-      <p><%= t("welcome.budgets.link") %></p>
-    <% end %>
-  </div>
-
-  <div class="small-12 large-4 column margin-bottom">
-    <%= link_to budgets_materials_2018_path, title: t("welcome.budgets_materials.link") do %>
-      <figure class="figure-card">
-        <%= image_tag "welcome/budgets_materials.jpg", alt: t("welcome.budgets_materials.alt") %>
-        <figcaption>
-          <span><%= t("welcome.budgets_materials.label") %></span><br>
-          <h3><%= t("welcome.budgets_materials.title") %></h3>
-        </figcaption>
-      </figure>
-      <p class="description"><%= t("welcome.budgets_materials.text") %></p>
-      <p><%= t("welcome.budgets_materials.link") %></p>
-    <% end %>
-  </div>
-
-  <div class="small-12 large-4 column margin-bottom">
-    <%= link_to "https://diario.madrid.es/blog/notas-de-prensa/empieza-la-votacion-final-de-los-presupuestos-participativos-de-madrid-2018/",
-                target: "_blank", title: t("welcome.open_square.link") do %>
-      <figure class="figure-card">
-        <%= image_tag "welcome/open_square.jpg", alt: t("welcome.open_square.alt") %>
-        <figcaption>
-          <span><%= t("welcome.open_square.label") %></span><br>
-          <h3><%= t("welcome.open_square.title") %></h3>
-        </figcaption>
-      </figure>
-      <p class="description"><%= t("welcome.open_square.text") %></p>
-      <p><%= t("welcome.open_square.link") %></p>
-    <% end %>
-  </div>
+  <% @cards.all.each do |card| %>
+    <%= render "card", card: card %>
+  <% end %>
 </div>
