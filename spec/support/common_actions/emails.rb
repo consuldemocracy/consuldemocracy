@@ -1,5 +1,4 @@
 module Emails
-  # spec/features/emails_spec.rb
   def create_direct_message(sender, receiver)
     login_as(sender)
     visit user_path(receiver)
@@ -17,8 +16,6 @@ module Emails
     DirectMessage.last
   end
 
-  # spec/features/admin/emails/newsletters_spec.rb
-  # spec/features/emails_spec.rb
   def fill_in_newsletter_form(options = {})
     fill_in "newsletter_subject", with: (options[:subject] || "This is a different subject")
     select (options[:segment_recipient] || 'All users'), from: 'newsletter_segment_recipient'

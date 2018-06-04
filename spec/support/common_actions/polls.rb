@@ -1,6 +1,4 @@
 module Polls
-  # spec/features/polls/results_spec.rb
-  # spec/features/polls/voter_spec.rb
   def vote_for_poll_via_web(poll, question, answer)
     visit poll_path(poll)
 
@@ -10,7 +8,6 @@ module Polls
     end
   end
 
-  # spec/features/polls/voter_spec.rb
   def vote_for_poll_via_booth
     visit new_officing_residence_path
     officing_verify_residence
@@ -23,8 +20,6 @@ module Polls
     expect(Poll::Voter.count).to eq(1)
   end
 
-  # spec/features/admin/stats_spec.rb
-  # spec/features/polls/voter_spec.rb
   def confirm_phone(user = nil)
     user ||= User.last
 
