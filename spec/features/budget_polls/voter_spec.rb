@@ -9,6 +9,7 @@ feature "BudgetPolls" do
   let(:booth) { create(:poll_booth) }
   let(:officer) { create(:poll_officer) }
   let(:admin) { create(:administrator) }
+  let!(:user) { create(:user, :in_census) }
 
   before do
     allow(Date).to receive(:current).and_return Date.new(2018,1,1)
@@ -24,8 +25,6 @@ feature "BudgetPolls" do
 
   context "Offline" do
     scenario "A citizen can cast a paper vote", :js do
-      user = create(:user, :in_census)
-
       login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
@@ -57,8 +56,6 @@ feature "BudgetPolls" do
     end
 
     scenario "A citizen cannot vote offline again", :js do
-      user = create(:user, :in_census)
-
       login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
@@ -77,8 +74,6 @@ feature "BudgetPolls" do
     end
 
     scenario "A citizen cannot vote online after voting offline", :js do
-      user = create(:user, :in_census)
-
       login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
@@ -103,16 +98,54 @@ feature "BudgetPolls" do
   end
 
   context "Online" do
-    scenario "A citizen can cast vote online" do
-      # Login as User
-      # Cast a vote for an investment
+    scenario "A citizen can cast vote online", :js do
+      login_as(user)
+      visit budget_investment_path(budget, investment)
+
+      within("#budget_investment_#{investment.id}") do
+        find('.add a').click
+        expect(page).to have_content "Remove"
+      end
     end
 
-    scenario "A citizen cannot vote offline after voting online" do
-      # create scenario for an user that voted online
+    scenario "A citizen cannot vote online again", :js do
+      login_as(user)
+      visit budget_investment_path(budget, investment)
 
-      # Login as Poll Officer
-      # Check the citizen cannot vote offline
+      within("#budget_investment_#{investment.id}") do
+        find('.add a').click
+        expect(page).to have_content "Remove"
+      end
+
+      visit budget_investment_path(budget, investment)
+      find("div.ballot").hover
+
+      within("#budget_investment_#{investment.id}") do
+        expect(page).to have_content "Remove vote"
+      end
+    end
+
+    scenario "A citizen cannot vote offline after voting online", :js do
+      login_as(user)
+      visit budget_investment_path(budget, investment)
+
+      within("#budget_investment_#{investment.id}") do
+        find('.add a').click
+        expect(page).to have_content "Remove"
+      end
+
+      logout
+      login_through_form_as_officer(officer.user)
+
+      visit new_officing_residence_path
+      officing_verify_residence
+
+      expect(page).to have_content poll.name
+
+      within("#poll_#{poll.id}") do
+        expect(page).not_to have_button("Confirm vote")
+        expect(page).to have_content("Has already participated in this poll")
+      end
     end
 
   end

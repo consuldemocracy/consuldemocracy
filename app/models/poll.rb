@@ -83,8 +83,13 @@ class Poll < ActiveRecord::Base
   end
 
   def votable_by?(user)
+    return false if user_has_an_online_ballot(user)
     answerable_by?(user) &&
     not_voted_by?(user)
+  end
+
+  def user_has_an_online_ballot(user)
+    budget.present? && budget.ballots.find_by(user: user)&.lines.present?
   end
 
   def self.not_voted_by(user)
