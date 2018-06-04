@@ -20,6 +20,8 @@ es:
       email_on_direct_message_label: Recibir emails con mensajes privados
       email_digest_label: Recibir resumen de notificaciones sobre propuestas
       official_position_badge_label: Mostrar etiqueta de tipo de usuario
+      recommendations: Recomendaciones
+      show_debates_recommendations: Mostrar recomendaciones en el listado de debates
       title: Mi cuenta
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
