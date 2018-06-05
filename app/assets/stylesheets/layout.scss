@@ -2693,11 +2693,11 @@ table {
   height: rem-calc(120);
   margin: $line-height / 2 0;
   overflow: hidden;
+  width: 100%;
 
   img {
-    margin-left: rem-calc(-15);
     max-width: none;
-    width: rem-calc(120);
+    width: 100%;
   }
 }
 
