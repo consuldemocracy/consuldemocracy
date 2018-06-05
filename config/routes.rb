@@ -49,4 +49,7 @@ Rails.application.routes.draw do
   # Static pages
   get '/blog' => redirect("http://blog.consul/")
   resources :pages, path: '/', only: [:show]
+
+  post '/tinymce_assets' => 'tinymce_assets#create'
+
 end
