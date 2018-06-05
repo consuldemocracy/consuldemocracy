@@ -3,6 +3,7 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
+      can :manage, TinymceAsset
       can [:read, :map], Debate
       can [:read, :map, :summary, :share], Proposal
       can :read, Comment

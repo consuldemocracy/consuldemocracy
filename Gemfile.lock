@@ -458,6 +458,13 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.8)
     tins (1.15.0)
+    tinymce-rails (4.7.13)
+      railties (>= 3.1.1)
+    tinymce-rails-imageupload (4.0.17.beta.3)
+      railties (>= 3.2, < 6)
+      tinymce-rails (~> 4.0)
+    tinymce-rails-langs (4.20180103)
+      tinymce-rails (~> 4.1, >= 4.1.10)
     turbolinks (2.5.3)
       coffee-rails
     turnout (2.4.0)
@@ -569,6 +576,9 @@ DEPENDENCIES
   spring (~> 2.0.1)
   spring-commands-rspec (~> 1.0.4)
   sprockets (~> 3.7.1)
+  tinymce-rails
+  tinymce-rails-imageupload (~> 4.0.0.beta)
+  tinymce-rails-langs
   turbolinks (~> 2.5.3)
   turnout (~> 2.4.0)
   uglifier (~> 4.1.2)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180519132610) do
+ActiveRecord::Schema.define(version: 20180601115144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1057,6 +1057,16 @@ ActiveRecord::Schema.define(version: 20180519132610) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
   add_index "tags", ["spending_proposals_count"], name: "index_tags_on_spending_proposals_count", using: :btree
+
+  create_table "tinymce_assets", force: :cascade do |t|
+    t.string   "file"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "topics", force: :cascade do |t|
     t.string   "title",                      null: false
