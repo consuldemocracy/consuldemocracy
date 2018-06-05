@@ -78,6 +78,7 @@
 //= require send_newsletter_alert
 //= require managers
 //= require globalize
+//= require tinymce-jquery
 
 var initialize_modules = function() {
   App.Comments.initialize();
