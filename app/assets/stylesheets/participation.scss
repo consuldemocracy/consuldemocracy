@@ -319,7 +319,8 @@
 .legislation-process-new,
 .legislation-process-edit,
 .milestone-new,
-.milestone-edit {
+.milestone-edit,
+.image-form {
   @include direct-uploads;
 }
 

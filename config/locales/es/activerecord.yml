@@ -259,6 +259,14 @@ es:
         title: Título
         link: Enlace
         body: Texto
+      widget/card:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
+        link_url: URL del enlace
+      widget/feed:
+        limit: Número de elementos
     errors:
       models:
         user:

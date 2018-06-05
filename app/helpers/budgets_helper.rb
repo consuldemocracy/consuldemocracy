@@ -76,4 +76,16 @@ module BudgetsHelper
 
     MapLocation.where(investment_id: investments).map { |l| l.json_data }
   end
+
+  def display_calculate_winners_button?(budget)
+    budget.balloting_or_later?
+  end
+
+  def calculate_winner_button_text(budget)
+    if budget.investments.winners.empty?
+      t("admin.budgets.winners.calculate")
+    else
+      t("admin.budgets.winners.recalculate")
+    end
+  end
 end
