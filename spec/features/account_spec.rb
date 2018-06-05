@@ -174,4 +174,30 @@ feature 'Account' do
 
     expect(page).to have_content "Invalid login or password"
   end
+
+  context 'Recommendations' do
+
+    background do
+      Setting['feature.user.recommendations'] = true
+      Setting['feature.user.recommendations_on_debates'] = true
+      Setting['feature.user.recommendations_on_proposals'] = true
+    end
+
+    after do
+      Setting['feature.user.recommendations'] = nil
+      Setting['feature.user.recommendations_on_debates'] = nil
+      Setting['feature.user.recommendations_on_proposals'] = nil
+    end
+
+    scenario 'show checkboxes to enable/disable recommendations (disabled by default)' do
+      visit account_path
+
+      expect(page).to have_content('Recommendations')
+      expect(page).to have_content('Show debates recommendations')
+      expect(page).to have_content('Show proposals recommendations')
+      expect(find("#account_recommended_debates")).not_to be_checked
+      expect(find("#account_recommended_proposals")).not_to be_checked
+    end
+
+  end
 end
