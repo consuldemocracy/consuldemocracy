@@ -29,8 +29,12 @@
 
       <div class="orbit-bullets">
         <% recommendeds.each_with_index do |recommended, index| %>
-          <button data-slide="<%= index %>" class="<%= is_active_class(index) %>">
-            <span class="show-for-sr">Second slide details.</span>
+          <button class="<%= is_active_class(index) %>"
+                  title="<%= t("welcome.recommended.slide", title: recommended.title) %>"
+                  data-slide="<%= index %>">
+            <span class="show-for-sr">
+              <%= t("welcome.recommended.slide", title: recommended.title) %>
+            </span>
           </button>
         <% end %>
       </div>
