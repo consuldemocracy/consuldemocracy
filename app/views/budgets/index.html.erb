@@ -48,8 +48,7 @@
             <% end %>
           <% end %>
 
-
-        <% if current_budget.finished? || (current_budget.balloting? && can?(:read_results, current_budget)) %>
+        <% if current_budget.finished? %>
           <%= link_to t("budgets.show.see_results"),
                       budget_results_path(current_budget, heading_id: current_budget.headings.first),
                       class: "button margin-top expanded" %>
@@ -137,6 +136,7 @@
                         <h3><%= budget.name %></h3>
                       </div>
                     </div>
+
                     <div class="small-12 medium-3 column table" data-equalizer-watch>
                       <div id="budget_<%= budget.id %>_results" class="table-cell align-middle">
                         <%= link_to t("budgets.index.see_results"),

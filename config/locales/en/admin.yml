@@ -192,6 +192,7 @@ en:
         table_evaluation: "Show to valuators"
         table_incompatible: "Incompatible"
         cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
+        see_results: "See results"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
