@@ -253,12 +253,21 @@ a {
       }
     }
 
-    &.active {
-      border-bottom: 2px solid $brand;
-      color: $brand;
+    & + li {
+      margin-left: 0;
     }
 
-    &:not(.active) {
+    &.is-active {
+      border-bottom: 2px solid $brand;
+      color: $brand;
+      padding-bottom: rem-calc(1);
+
+      h2 a {
+        color: $brand;
+      }
+    }
+
+    &:not(.is-active) {
       margin-bottom: $line-height / 3;
     }
   }
@@ -279,7 +288,7 @@ a {
       color: $text-medium;
       padding: 0;
 
-      &.active {
+      &.is-active {
         font-weight: bold;
         color: $brand;
       }
@@ -289,7 +298,7 @@ a {
       font-size: $base-font-size;
     }
 
-    &.active {
+    &.is-active {
       border-bottom: 2px solid $brand;
       color: $brand;
     }
@@ -404,6 +413,11 @@ a {
   text-transform: uppercase;
 }
 
+figure img {
+  height: 100%;
+  width: 100%;
+}
+
 // 02. Header
 // ----------
 
@@ -436,8 +450,6 @@ header {
 .top-bar {
   background: $brand !important;
   color: #fff;
-  height: $line-height * 2;
-  line-height: $line-height * 2;
   padding-bottom: 0;
   padding-top: 0;
 
@@ -445,30 +457,44 @@ header {
     padding: 0;
   }
 
-  .top-bar-title a {
-    @include logo;
-    line-height: rem-calc(80);
-
-    @include breakpoint(medium) {
-      line-height: rem-calc(80);
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
   ul {
     background: none;
     padding-right: rem-calc(15);
   }
 
+  .menu .menu-text {
+    padding: 0;
+
+    a {
+      color: #fff;
+      display: inline-block;
+      font-family: 'Lato' !important;
+      font-size: rem-calc(24);
+      font-weight: lighter;
+      line-height: $line-height * 2;
+      padding: 0;
+
+      @include breakpoint(medium) {
+        line-height: rem-calc(80);
+        margin-top: 0;
+      }
+
+      img {
+
+        @include breakpoint(medium) {
+          margin-right: $line-height / 2;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
   .menu > li {
     display: block;
+    width: 100%;
 
     @include breakpoint(medium) {
-      display: table-cell;
-      height: $line-height * 3.5;
+      width: auto;
     }
 
     a {
@@ -482,6 +508,7 @@ header {
     }
 
     .button {
+      background: none;
       text-align: left;
 
       @include breakpoint(medium) {
@@ -492,13 +519,11 @@ header {
     }
   }
 
-  .menu-icon.dark {
-    height: 20px;
+  .has-submenu {
 
-    &::after,
-    &:hover::after {
-      background: #fff;
-      box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+    &.is-active a {
+      color: #fff;
+      font-weight: bold;
     }
   }
 
@@ -507,7 +532,7 @@ header {
     &.is-dropdown-submenu {
       background: #fff;
       margin: 0;
-      margin-top: rem-calc(-24);
+      margin-top: rem-calc(-12);
       padding: 0;
       z-index: 9;
     }
@@ -522,6 +547,23 @@ header {
       }
     }
   }
+}
+
+.menu-icon {
+
+  &.dark {
+
+    &:hover::after,
+    &::after {
+      background: #fff;
+      box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+    }
+  }
+}
+
+.title-bar {
+  background: none;
+  float: right;
 }
 
 .dropdown.menu > li {
@@ -605,7 +647,7 @@ header {
       }
     }
 
-    &.active {
+    &.is-active {
       color: #fff;
 
       @include breakpoint(medium) {
@@ -652,7 +694,7 @@ header {
 
 .top-bar-right {
 
-  .active {
+  .is-active {
     font-weight: bold;
     text-decoration: underline;
   }
@@ -680,7 +722,7 @@ header {
     }
   }
 
-  .active {
+  .is-active {
     border-bottom: 2px solid $brand;
     color: $brand;
 
@@ -784,7 +826,7 @@ footer {
   color: $link;
 
   &:hover,
-  &.active {
+  &.is-active {
     background: $brand;
     color: #fff;
   }
@@ -1798,7 +1840,7 @@ table {
       }
     }
 
-    &.active {
+    &.is-active {
       background: #43ac6a;
       color: #fff;
     }
@@ -2257,6 +2299,11 @@ table {
   }
 
   .card {
+    padding: $line-height / 2;
+
+    .card {
+      border: 0;
+    }
 
     .card-section {
       margin: 0 auto;

@@ -99,7 +99,7 @@
       }
     }
 
-    .active {
+    .is-active {
       border-bottom: 2px solid $brand;
     }
   }
@@ -244,7 +244,7 @@
       position: relative;
     }
 
-    .active {
+    .is-active {
       background: #ccdbe6;
       border: 0;
     }

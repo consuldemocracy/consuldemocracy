@@ -188,7 +188,7 @@ feature 'Budgets' do
     expect(page).to have_content "This is the summary for finished phase"
     expect(page).to have_content "March 21, 2018 - March 29, 2018"
 
-    expect(page).to have_css(".phase.active", count: 1)
+    expect(page).to have_css(".phase.is-active", count: 1)
   end
 
   context "Index map" do

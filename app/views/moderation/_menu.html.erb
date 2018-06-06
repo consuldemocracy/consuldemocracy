@@ -5,7 +5,7 @@
     </li>
 
     <% if feature?(:proposals) %>
-      <li <%= "class=active" if controller_name == "proposals" %>>
+      <li <%= "class=is-active" if controller_name == "proposals" %>>
         <%= link_to moderation_proposals_path do %>
           <span class="icon-proposals"></span>
           <%= t("moderation.menu.proposals") %>
@@ -14,7 +14,7 @@
     <% end %>
 
     <% if feature?(:debates) %>
-      <li <%= "class=active" if controller_name == "debates" %>>
+      <li <%= "class=is-active" if controller_name == "debates" %>>
         <%= link_to moderation_debates_path do %>
           <span class="icon-debates"></span>
           <%= t('moderation.menu.flagged_debates') %>
@@ -22,14 +22,14 @@
       </li>
     <% end %>
 
-    <li <%= "class=active" if controller_name == "comments" %>>
+    <li <%= "class=is-active" if controller_name == "comments" %>>
       <%= link_to moderation_comments_path do %>
         <span class="icon-comments"></span>
         <%= t("moderation.menu.flagged_comments") %>
       <% end %>
     </li>
 
-    <li <%= "class=active" if controller_name == "users" %>>
+    <li <%= "class=is-active" if controller_name == "users" %>>
       <%= link_to moderation_users_path do %>
         <span class="icon-user"></span>
         <%= t("moderation.menu.users") %>

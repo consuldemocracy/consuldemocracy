@@ -261,7 +261,7 @@ feature 'Ballots' do
       click_link "States"
 
       expect(page).to have_content "California"
-      expect(page).to have_css("#budget_heading_#{california.id}.active")
+      expect(page).to have_css("#budget_heading_#{california.id}.is-active")
     end
 
     scenario 'Change my heading', :js do
@@ -283,8 +283,8 @@ feature 'Ballots' do
 
       visit budget_path(budget)
       click_link "States"
-      expect(page).to have_css("#budget_heading_#{new_york.id}.active")
-      expect(page).not_to have_css("#budget_heading_#{california.id}.active")
+      expect(page).to have_css("#budget_heading_#{new_york.id}.is-active")
+      expect(page).not_to have_css("#budget_heading_#{california.id}.is-active")
     end
 
     scenario 'View another heading' do

@@ -688,7 +688,7 @@ feature 'Proposals' do
 
       visit proposals_path
       click_link 'highest rated'
-      expect(page).to have_selector('a.active', text: 'highest rated')
+      expect(page).to have_selector('a.is-active', text: 'highest rated')
 
       within '#proposals' do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -708,7 +708,7 @@ feature 'Proposals' do
 
       visit proposals_path
       click_link 'newest'
-      expect(page).to have_selector('a.active', text: 'newest')
+      expect(page).to have_selector('a.is-active', text: 'newest')
 
       within '#proposals' do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -771,7 +771,7 @@ feature 'Proposals' do
 
         click_link 'recommendations'
 
-        expect(page).to have_selector('a.active', text: 'recommendations')
+        expect(page).to have_selector('a.is-active', text: 'recommendations')
 
         within '#proposals-list' do
           expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -1288,7 +1288,7 @@ feature 'Proposals' do
       fill_in "search", with: "Show what you got"
       click_button "Search"
 
-      expect(page).to have_selector("a.active", text: "relevance")
+      expect(page).to have_selector("a.is-active", text: "relevance")
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show what you got"
@@ -1307,7 +1307,7 @@ feature 'Proposals' do
       fill_in "search", with: "Show what you got"
       click_button "Search"
       click_link 'newest'
-      expect(page).to have_selector("a.active", text: "newest")
+      expect(page).to have_selector("a.is-active", text: "newest")
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show you got"
@@ -1332,7 +1332,7 @@ feature 'Proposals' do
       fill_in "search", with: "Show you got"
       click_button "Search"
       click_link 'recommendations'
-      expect(page).to have_selector("a.active", text: "recommendations")
+      expect(page).to have_selector("a.is-active", text: "recommendations")
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show you got"

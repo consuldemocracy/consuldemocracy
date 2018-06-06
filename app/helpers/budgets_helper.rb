@@ -49,7 +49,7 @@ module BudgetsHelper
 
   def css_for_ballot_heading(heading)
     return '' if current_ballot.blank?
-    current_ballot.has_lines_in_heading?(heading) ? 'active' : ''
+    current_ballot.has_lines_in_heading?(heading) ? 'is-active' : ''
   end
 
   def current_ballot
