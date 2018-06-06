@@ -1,15 +1,15 @@
-<div class="row margin-bottom feeds-list">
+<div class="row margin-bottom feeds-list" data-equalizer data-equalize-on="medium">
   <% @feeds.each do |feed| %>
 
     <% if feed_proposals?(feed) %>
       <div class="small-12 medium-8 column margin-top">
-        <div class="feed-content">
+        <div class="feed-content" data-equalizer-watch>
           <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
 
           <% feed.items.each do |item| %>
             <div class="<%= item.class.to_s.parameterize('_') %> row">
               <% if feature?(:allow_images) && item.image.present? %>
-                <div class="small-12 large-3 column">
+                <div class="small-12 medium-6 large-3 column">
                   <div class="feed-image">
                     <%= image_tag item.image_url(:thumb),
                                   alt: item.image.title.unicode_normalize %>
@@ -22,15 +22,15 @@
               </div>
             </div>
           <% end %>
-
-          <%= link_to t("welcome.feed.see_all_proposals"), proposals_path, class: "float-right see-all" %>
         </div>
+
+        <%= link_to t("welcome.feed.see_all_proposals"), proposals_path, class: "see-all" %>
       </div>
     <% end %>
 
     <% if feed_debates?(feed) %>
       <div class="small-12 medium-4 column margin-top">
-        <div class="feed-content">
+        <div class="feed-content" data-equalizer-watch>
           <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
 
           <% feed.items.each do |item| %>
@@ -38,9 +38,9 @@
               <strong><%= link_to item.title, url_for(item) %></strong>
             </div>
           <% end %>
-
-          <%= link_to t("welcome.feed.see_all_debates"), debates_path, class: "float-right see-all" %>
         </div>
+
+        <%= link_to t("welcome.feed.see_all_debates"), debates_path, class: "see-all" %>
       </div>
     <% end %>
 
