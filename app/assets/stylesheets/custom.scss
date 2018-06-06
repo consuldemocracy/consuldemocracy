@@ -3,3 +3,29 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+.top-links {
+  background: white;
+  color: #057200;
+  a {
+    color: #057200;
+  }
+}
+
+.locale-form label {
+    color: #057200;
+    font-size: 0.875rem;
+    font-weight: normal;
+}
+
+#locale-switcher {
+    background-color: transparent;
+    border: 0;
+    color: #057200;
+    font-size: 0.875rem;
+    margin-bottom: 0;
+    outline: none;
+    padding-left: 0.1875rem;
+    padding-right: 1.5rem;
+    width: auto;
+}
