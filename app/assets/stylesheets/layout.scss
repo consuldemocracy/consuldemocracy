@@ -2707,6 +2707,10 @@ table {
     height: rem-calc(96);
   }
 
+  @include breakpoint(medium) {
+    height: rem-calc(96);
+  }
+
   img {
     max-width: none;
     width: 100%;
