@@ -711,15 +711,6 @@ table {
   }
 }
 
-.legislation-process-index {
-
-  .legislation-process-new {
-    @include breakpoint(medium) {
-      text-align: right;
-    }
-  }
-}
-
 // 08. CMS
 // --------------
 .cms-page-list {

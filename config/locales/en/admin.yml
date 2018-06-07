@@ -372,9 +372,6 @@ en:
           title: Proposals
           back: Back
         form:
-          header_information: Information header
-          header_information_description: Provide information about the proposals. This text will be displayed as an alert in the Proposals section inside this Process. Use Markdown to format the text.
-          header_information_placeholder: Add information for the proposals' header
           custom_categories: Categories
           custom_categories_description: Categories that users can select creating the proposal.
       draft_versions:
