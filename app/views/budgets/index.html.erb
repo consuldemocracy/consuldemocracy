@@ -48,7 +48,6 @@
             <% end %>
           <% end %>
 
-
         <% if current_budget.finished? %>
           <%= link_to t("budgets.show.see_results"),
                       budget_results_path(current_budget, heading_id: current_budget.headings.first),
@@ -65,9 +64,9 @@
         <div id="groups_and_headings" class="groups-and-headings">
           <% current_budget.groups.each do |group| %>
             <h2 id="<%= group.name.parameterize %>"><%= group.name %></h2>
-            <ul class="no-bullet">
+            <ul class="no-bullet" data-equalizer data-equalizer-on="medium">
               <% group.headings.order_by_group_name.each do |heading| %>
-                <li class="heading small-12 medium-4 large-2">
+                <li class="heading small-12 medium-4 large-2" data-equalizer-watch>
                   <% unless current_budget.informing? %>
                     <%= link_to budget_investments_path(current_budget.id, heading_id: heading.id) do %>
                       <%= heading_name_and_price_html(heading, current_budget) %>
@@ -137,19 +136,13 @@
                         <h3><%= budget.name %></h3>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="small-12 medium-3 column table" data-equalizer-watch>
-                    <div id="budget_<%= budget.id %>_results" class="table-cell align-middle">
-                      <% if budget.name == "Presupuestos Participativos 2016" %>
-                        <%= link_to t("budgets.index.see_results"),
-                                    participatory_budget_results_path,
-                                    class: "button expanded" %>
-                      <% else %>
+                    <div class="small-12 medium-3 column table" data-equalizer-watch>
+                      <div id="budget_<%= budget.id %>_results" class="table-cell align-middle">
                         <%= link_to t("budgets.index.see_results"),
                                     budget_results_path(budget.id),
                                     class: "button expanded" %>
-                      <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
