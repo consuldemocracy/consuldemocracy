@@ -21,20 +21,11 @@
 
           <%= link_to t("budgets.investments.header.presencial_ballot"), '/more_information#item_9' %>
 
-
-
-
-
-
-
-
-
-
           <% if cannot? :show, @ballot %>
             <h2><%= @heading.name %> <%= @budget.formatted_heading_price(@heading) %></h2>
           <% end %>
 
-          <% if @heading.group.name == 'Districtes' %>
+          <% if !@budget.balloting? && @heading.group.name == 'Districtes' %>
             <%= link_to t('budgets.investments.index.link_lista_seleccionadas'), "/system/documentos/2018/Acta_districte_#{@heading.name.upcase}.pdf", target: '_blank' %>
           <% end %>
 
