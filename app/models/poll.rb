@@ -37,6 +37,7 @@ class Poll < ActiveRecord::Base
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
   scope :public_for_api, -> { all }
   scope :with_nvotes, -> { where.not(nvotes_poll_id: nil) }
+  scope :not_budget,    -> { where(budget_id: nil) }
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 

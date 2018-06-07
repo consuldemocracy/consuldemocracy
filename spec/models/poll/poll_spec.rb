@@ -291,4 +291,24 @@ describe Poll do
 
   end
 
+  context "scopes" do
+
+    describe "#not_budget" do
+
+      it "returns polls not associated to a budget" do
+        budget = create(:budget)
+
+        poll1 = create(:poll)
+        poll2 = create(:poll)
+        poll3 = create(:poll, budget: budget)
+
+        expect(Poll.not_budget).to include(poll1)
+        expect(Poll.not_budget).to include(poll2)
+        expect(Poll.not_budget).to_not include(poll3)
+      end
+
+    end
+
+  end
+
 end
