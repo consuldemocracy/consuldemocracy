@@ -11,6 +11,21 @@ class Management::ProposalsController < Management::BaseController
   has_orders %w{confidence_score hot_score created_at most_commented random}, only: [:index, :print]
   has_orders %w{most_voted newest}, only: :show
 
+  def create
+    @resource = resource_model.new(strong_params.merge(author: current_user, published_at: Time.now))
+
+    if @resource.save
+      track_event
+      redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
+      redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
+    else
+      load_categories
+      load_geozones
+      set_resource_instance
+      render :new
+    end
+  end
+
   def show
     super
     @notifications = @proposal.notifications
@@ -37,7 +52,8 @@ class Management::ProposalsController < Management::BaseController
 
     def proposal_params
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
-                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id)
+                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id, :skip_map, 
+                                       map_location_attributes: [:latitude, :longitude, :zoom])
     end
 
     def resource_model

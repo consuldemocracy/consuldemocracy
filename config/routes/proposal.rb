@@ -6,7 +6,9 @@ resources :proposals do
     put :unflag
     get :retire_form
     get :share
+    get :created
     patch :retire
+    patch :publish
   end
 
   collection do

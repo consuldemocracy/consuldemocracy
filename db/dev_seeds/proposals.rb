@@ -37,7 +37,8 @@ section "Creating Proposals" do
                                 tag_list: tags.sample(3).join(','),
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
-                                terms_of_service: "1")
+                                terms_of_service: "1",
+                                published_at: Time.now)
     add_image_to proposal
   end
 end
@@ -58,7 +59,8 @@ section "Creating Archived Proposals" do
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
-                                created_at: Setting["months_to_archive_proposals"].to_i.months.ago)
+                                created_at: Setting["months_to_archive_proposals"].to_i.months.ago,
+                                published_at: Setting["months_to_archive_proposals"].to_i.months.ago)
     add_image_to proposal
   end
 end
@@ -80,7 +82,8 @@ section "Creating Successful Proposals" do
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
-                                cached_votes_up: Setting["votes_for_proposal_success"])
+                                cached_votes_up: Setting["votes_for_proposal_success"],
+                                published_at: Time.now)
     add_image_to proposal
   end
 
@@ -99,7 +102,8 @@ section "Creating Successful Proposals" do
                                 tag_list: tags.sample(3).join(','),
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
-                                terms_of_service: "1")
+                                terms_of_service: "1",
+                                published_at: Time.now)
     add_image_to proposal
   end
 end
@@ -110,5 +114,6 @@ section "Creating proposal notifications" do
                                  body: "Proposal notification body #{i}",
                                  author: User.all.sample,
                                  proposal: Proposal.all.sample)
+                                 
   end
 end

@@ -71,9 +71,24 @@ class Proposal < ActiveRecord::Base
   scope :unsuccessful,             -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
   scope :public_for_api,           -> { all }
   scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
+  scope :published,                -> { where.not(published_at: nil) }
+  scope :draft,                    -> { where(published_at: nil) }
+  scope :created_by,               ->(author) { unscoped.where(hidden_at: nil, author: author) }
 
   def url
     proposal_path(self)
+  end
+
+  def publish
+    update(published_at: Time.now)
+  end
+
+  def published?
+    !published_at.nil?
+  end
+
+  def draft?
+    published_at.nil?
   end
 
   def self.recommendations(user)

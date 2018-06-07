@@ -170,6 +170,7 @@ FactoryBot.define do
     responsible_name     'John Snow'
     terms_of_service     '1'
     skip_map             '1'
+    published_at         { Time.now }
     association :author, factory: :user
 
     trait :hidden do
@@ -211,6 +212,10 @@ FactoryBot.define do
 
     trait :successful do
       cached_votes_up { Proposal.votes_needed_for_success + 100 }
+    end
+
+    trait :draft do
+      published_at nil
     end
   end
 
