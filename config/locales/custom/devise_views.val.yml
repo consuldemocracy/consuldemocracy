@@ -1,5 +1,8 @@
 ---
 val:
+  devise:
+    registrations:
+      destroyed: "Adéu! El teu compte ha sigut cancel·lat. Esperem tornar a veure't prompte. T'informem que de conformitat amb la teua petició, les teues dades personals registrades com a usuari de la Web i que formen part del Registre d'Activitats de Tractament el responsable del qual és l'Ajuntament de Castelló de la Plana, han sigut cancel·lades en els termes del previst en l'article 17 del REGLAMENT (UE) 2016/679 DEL PARLAMENT EUROPEU I DEL CONSELL de 27 d'abril de 2016 relatiu a la protecció de les persones físiques en el que respecta al tractament de dades personals i a la lliure circulació d'aquestes dades i pel qual es deroga la Directiva 95/46/CE  (Reglament general de protecció de dades)."
   devise_views:
     users:
       registrations:
