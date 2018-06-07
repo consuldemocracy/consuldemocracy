@@ -33,13 +33,16 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
 
     if @proposal.save
-      redirect_to share_proposal_path(@proposal), notice: I18n.t('flash.actions.create.proposal')
+      redirect_to created_proposal_path(@proposal), notice: I18n.t('flash.actions.create.proposal')
     else
       render :new
     end
   end
 
+  def created; end
+
   def index_customization
+    discard_draft
     discard_archived
     load_retired
     load_successful_proposals
@@ -78,6 +81,11 @@ class ProposalsController < ApplicationController
     @tag_cloud = tag_cloud
   end
 
+  def publish
+    @proposal.publish
+    redirect_to share_proposal_path(@proposal), notice: t('proposals.notice.published')
+  end
+
   private
 
     def proposal_params
@@ -104,6 +112,10 @@ class ProposalsController < ApplicationController
 
     def set_featured_proposal_votes(proposals)
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
+    end
+
+    def discard_draft
+      @resources = @resources.published
     end
 
     def discard_archived
@@ -142,5 +154,4 @@ class ProposalsController < ApplicationController
         MapLocation.destroy(map_location[:id])
       end
     end
-
 end

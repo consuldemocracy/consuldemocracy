@@ -5,7 +5,7 @@ module Abilities
     def initialize(user)
       merge Abilities::Everyone.new(user)
 
-      can [:read, :update], User, id: user.id
+      can %i[read update], User, id: user.id
 
       can :read, Debate
       can :update, Debate do |debate|
@@ -16,6 +16,10 @@ module Abilities
       can :update, Proposal do |proposal|
         proposal.editable_by?(user)
       end
+      can :publish, Proposal do |proposal|
+        proposal.draft? && proposal.author.id == user.id
+      end
+
       can [:retire_form, :retire], Proposal, author_id: user.id
 
       can :read, Legislation::Proposal
@@ -26,7 +30,7 @@ module Abilities
 
       can :create, Comment
       can :create, Debate
-      can :create, Proposal
+      can %i[create created], Proposal
       can :create, Legislation::Proposal
 
       can :suggest, Debate
@@ -60,7 +64,9 @@ module Abilities
       end
 
       if user.level_two_or_three_verified?
-        can :vote, Proposal
+        can :vote, Proposal do |proposal|
+          proposal.published?
+        end
         can :vote_featured, Proposal
         can :vote, SpendingProposal
         can :create, SpendingProposal
