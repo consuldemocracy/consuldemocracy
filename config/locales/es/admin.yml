@@ -41,7 +41,7 @@ es:
         form:
           error:
             one: "error impidió guardar el banner"
-            other: 'errores impidieron guardar el banner.'
+            other: "errores impidieron guardar el banner"
       new:
         creating: Crear banner
     activity:
@@ -267,7 +267,7 @@ es:
       edit:
         title: Editar hito
       create:
-        notice: Nuevo hito creado con éxito!
+        notice: ¡Nuevo hito creado con éxito!
       update:
         notice: Hito actualizado
       delete:

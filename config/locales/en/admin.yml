@@ -27,8 +27,8 @@ en:
         preview: Preview
       banner:
         title: Title
-        description:  Description
-        target_url:  Link
+        description: Description
+        target_url: Link
         style: Style
         image: Image
         post_started_at: Post started at
@@ -41,7 +41,7 @@ en:
         form:
           error:
             one: "error prevented this banner from being saved"
-            other: 'errors prevented this banner from being saved'
+            other: "errors prevented this banner from being saved"
       new:
         creating: Create banner
     activity:
@@ -62,7 +62,7 @@ en:
           on_users: Users
         title: Moderator activity
         type: Type
-        no_activity: There ares no moderators activity.
+        no_activity: There are no moderators activity.
     budgets:
       index:
         title: Participatory budgets
@@ -675,7 +675,7 @@ en:
         search_officer_placeholder: Search officer
         search_officer_text: Search for an officer to assign a new shift
         select_date: "Select day"
-        no_voting_days: "Los dias de votación terminaron"
+        no_voting_days: "Voting days ended"
         select_task: "Select task"
         table_shift: "Shift"
         table_email: "Email"

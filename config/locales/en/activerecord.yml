@@ -59,8 +59,8 @@ en:
         one: "Citizen proposal"
         other: "Citizen proposals"
       spending_proposal:
-        one: "Spending proposal"
-        other: "Spending proposals"
+        one: "Investment project"
+        other: "Investment projects"
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -113,15 +113,11 @@ en:
         phase: "Phase"
         currency_symbol: "Currency"
       budget/investment:
-        heading_id: "Sección de presupuesto"
-        title: "Title"
-        description: "Description"
-        external_url: "External url"
-        administrator_id: "Administrator"
-        description: "Description"
-        external_url: "Link to additional documentation"
         heading_id: "Heading"
         title: "Title"
+        description: "Description"
+        external_url: "Link to additional documentation"
+        administrator_id: "Administrator"
         location: "Location (optional)"
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
@@ -163,7 +159,7 @@ en:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"
       spending_proposal:
-        administrator_id: "Administrador"
+        administrator_id: "Administrator"
         association_name: "Association name"
         description: "Description"
         external_url: "Link to additional documentation"
