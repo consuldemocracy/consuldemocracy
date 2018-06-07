@@ -1,0 +1,9 @@
+en:
+  verification:
+    letter:
+      new:
+        budgets:
+          title: ¡Ya puedes votar!
+          decide: Decide en qué se invierten 100 millones de presupuesto municipal.
+          vote: Vota los proyectos finalistas de presupuestos participativos.
+          button: Vote now

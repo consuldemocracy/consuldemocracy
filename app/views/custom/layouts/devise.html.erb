@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%= t("landings.signup.title") %></title>
+
+    <% provide :meta_description, t("landings.signup.description") %>
+    <%= render "shared/social_media_meta_tags",
+            social_url: new_user_registration_url,
+            social_title: t("landings.signup.title"),
+            social_description: t("landings.signup.description"),
+            twitter_image_url: "social_media_cambia_tu_ciudad_twitter.jpg",
+            og_image_url: "social_media_cambia_tu_ciudad.jpg" %>
+    <%= render "layouts/meta_tags" %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "favicon.ico" %>
+    <%= setting['per_page_code_head'].try(:html_safe) %>
+
+  </head>
+
+  <body class="auth-page landing-budgets">
+    <%= setting['per_page_code_body'].try(:html_safe) %>
+
+    <div class="wrapper">
+      <div class="auth-image small-12 medium-4 column">
+        <h1 class="margin">
+          <%= link_to root_path do %>
+            <%= image_tag(image_path_for('logo_header_madrid.png'), alt: setting['org_name']) %>
+          <% end %>
+        </h1>
+
+        <div class="phrase-content">
+          <%= image_tag(image_path_for('landings/landing_budgets.png'), alt: t("landings.signup.budgets_title")) %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-8 column">
+        <div class="row">
+          <div class="small-12 medium-9 large-7 small-centered column">
+            <div class="auth-form margin">
+              <%= render 'layouts/flash' %>
+
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="push"></div>
+    </div>
+
+    <div class="footer">
+      <%= render 'layouts/footer' %>
+    </div>
+    <span id="analytics">
+      <%= render "layouts/analytics" %>
+    </span>
+  </body>
+</html>

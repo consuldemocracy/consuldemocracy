@@ -1,3 +1,5 @@
+<% content_for :body_class, "home-page" %>
+
 <% if current_budget %>
   <% provide :title, t("meta_tags.welcome_index.#{current_budget.phase}.title") %>
   <% provide :meta_description, t("meta_tags.welcome_index.#{current_budget.phase}.description") %>
@@ -24,20 +26,27 @@
   <% end %>
 <% end %>
 
-<div class="welcome">
+<%= render "header", header: @header %>
+
+<main class="welcome">
 
   <h1 class="show-for-sr"><%= t("welcome.title") %></h1>
 
-  <%= render "header" %>
+  <%= render "feeds" %>
 
-  <%= render "cards" %>
+  <div class="row">
+    <div class="small-12 column <%= 'large-8' if feed_processes_enabled? %>">
+      <%= render "cards" %>
+    </div>
+
+    <div class="small-12 large-4 column">
+      <%= render "processes" %>
+    </div>
+  </div>
 
   <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
     <%= render "recommended",
                 recommended_debates: @recommended_debates,
                 recommended_proposals: @recommended_proposals %>
   <% end %>
-
-  <%= render "features" %>
-
-</div>
+</main>

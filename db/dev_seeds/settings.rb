@@ -94,4 +94,9 @@ section "Creating Settings" do
   # <!-- End Piwik Code -->"
   # Setting[:per_page_code_head] = piwik_tracking_code_head
   # Setting[:per_page_code_body] = piwik_tracking_code_body
+
+  Setting['feature.homepage.widgets.feeds.proposals'] = true
+  Setting['feature.homepage.widgets.feeds.debates'] = true
+  Setting['feature.homepage.widgets.feeds.processes'] = true
+
 end

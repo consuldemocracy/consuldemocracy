@@ -103,6 +103,9 @@ en:
       poll:
         one: "Poll"
         other: "Polls"
+      proposal_notification:
+        one: "Proposal notification"
+        other: "Proposal notifications"
     attributes:
       budget:
         name: "Name"
@@ -166,7 +169,7 @@ en:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"
       spending_proposal:
-        administrator_id: "Administrador"
+        administrator_id: "Administrator"
         association_name: "Association name"
         description: "Description"
         external_url: "Link to additional documentation"
@@ -256,6 +259,14 @@ en:
         title: Title
         link: Link
         body: Text
+      widget/card:
+        label: Label (optional)
+        title: Title
+        description: Description
+        link_text: Link text
+        link_url: Link URL
+      widget/feed:
+        limit: Number of items
     errors:
       models:
         user:

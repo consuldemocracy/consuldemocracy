@@ -29,6 +29,13 @@ namespace :admin do
     end
   end
 
+  resources :proposal_notifications, only: :index do
+    member do
+      put :restore
+      put :confirm_hide
+    end
+  end
+
   ### Modified in: config/routes/custom.rb
   ### ToDo: Figure out a way to maintain Consul's routes in this file,
   #         whilst modifying them in routes/custom.rb
@@ -199,5 +206,12 @@ namespace :admin do
     resources :pages, except: [:show]
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
+  end
+
+  resource :homepage, controller: :homepage, only: [:show]
+
+  namespace :widget do
+    resources :cards
+    resources :feeds, only: [:update]
   end
 end

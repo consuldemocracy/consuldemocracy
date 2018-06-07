@@ -229,64 +229,6 @@ en:
     create_error: "Invalid ID"
     deleted: "Investment project removed from the list"
     share: "Share your list of your recommended investment projects with this link:"
-  welcome:
-    header:
-      label: "Make your citizen proposal"
-      title: "Do you have an idea to change Madrid?"
-      text: "Madrid City Council will carry out your proposal if it reaches a citizen voting. You need 27,064 supports in Decide Madrid, the 1% of the population with the right to vote."
-      button: "Create a proposal"
-    header_budget:
-      label: "Participatory budgets 2018"
-      accepting:
-        title: "Decide the citizen projects that Madrid City Council will do, you have:"
-        text: "100 million euros"
-        button: "Send your project"
-      reviewing:
-        title: "Decide the citizen projects that Madrid City Council will do, you have:"
-        text: "100 million euros"
-        button: "See projects"
-      selecting:
-        title: "Choose investment projects in one district and the entire city to be voted on"
-        text: "Support citizen projects"
-        button: "See projects"
-      valuating:
-        title: "The City Council reviews and rates the most supported projects until May 15"
-        text: "Most supported projects"
-        button: "See projects"
-      publishing_prices:
-        title: "The City Council reviews and rates the most supported projects until May 15"
-        text: "Most supported projects"
-        button: "See projects"
-      balloting:
-        title: "Decides what projects the City Council will do with 100 million"
-        text: "Vote in participatory budgets"
-        button: "Vote projects"
-      reviewing_ballots:
-        title: "In a few days we will know the winning projects of the participatory budgets"
-        text: "Thank you for voting!"
-        button: "See projects"
-      finished:
-        title: "Look at the winning projects of the 2018 participatory budgets"
-        text: "Thank you for voting!"
-        button: "See projects"
-    budgets:
-      label: "Participatory budgets vote"
-      title: "How to vote for finalist projects"
-      text: "How to vote the citizen projects that Madrid City Council will do in your district and throughout the city."
-      link: "Read more"
-      alt: "Citizens voting at one of the polls in the streets of Madrid"
-    budgets_materials:
-      label: "Download pictures"
-      title: "Download pictures to disseminate the projects"
-      text: "Disseminate your finalist projects or your neighbors'. Download the City Council campaign pictures!"
-      link: "See pictures"
-      alt: "Image of the new campaign 100 million gives a lot for the future"
-    open_square:
-      label: "Open Square"
-      title: "Come to know the finalist projects"
-      text: "On Saturday, June 9, from 11:30 a.m. to 1:30 p.m., go to Tirso de Molina square. Proponents of projects will explain what their proposals consist of."
-      link: "Read more"
-      alt: "Citizens speaking in a square in Madrid"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
@@ -395,6 +337,10 @@ en:
     index:
       start_proposal_question: Create proposal or question
   landings:
+    signup:
+      title: Vota los proyectos finalistas de presupuestos participativos
+      description: "¿Has pensado qué hacer con 100 millones de #PresupuestosParticipativos? Vota en https://decide.madrid.es/ #VotaParticipativos18"
+      budgets_title: "Vota los proyectos de presupuestos participativos"
     cambia_tu_ciudad:
       phrase_1: "Maya decided that Madrid needed charging points for electric cars"
       phrase_2: "Jana decided that people of Madrid needed sustainability awareness"
