@@ -5,6 +5,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   before_action :load_geozones, only: [:new, :create, :edit, :update]
 
   def index
+    @polls = Poll.not_budget
   end
 
   def show
