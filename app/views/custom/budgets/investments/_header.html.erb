@@ -19,8 +19,6 @@
           <h1><%= @budget.name %></h1>
           <%= safe_html_with_links @budget.description %>
 
-          <%= link_to t("budgets.investments.header.presencial_ballot"), '/more_information#item_9' %>
-
           <% if cannot? :show, @ballot %>
             <h2><%= @heading.name %> <%= @budget.formatted_heading_price(@heading) %></h2>
           <% end %>
@@ -119,8 +117,6 @@
           <% end %>
           <h1><%= @budget.name %></h1>
           <%= safe_html_with_links @budget.description %>
-
-          <%= link_to t("budgets.investments.header.presencial_ballot"), '/more_information#item_9' %>
 
           <% if cannot? :show, @ballot %>
             <h2><%= t("budgets.investments.all_proposals") %> <%= number_to_currency(@budget.total_amount) %></h2>
