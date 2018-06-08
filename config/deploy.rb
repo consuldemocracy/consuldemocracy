@@ -1,19 +1,23 @@
 # config valid only for current version of Capistrano
 lock '~> 3.10.1'
 
-def deploysecret(key)
+def deploysecret(key, default = 'undefined')
   @deploy_secrets_yml ||= YAML.load_file('config/deploy-secrets.yml')[fetch(:stage).to_s]
-  @deploy_secrets_yml.fetch(key.to_s, 'undefined')
+  @deploy_secrets_yml.fetch(key.to_s, default)
 end
 
 set :rails_env, fetch(:stage)
-set :rvm1_ruby_version, '2.3.2'
+
+if deploysecret(:use_rvm, true)
+  require 'rvm1/capistrano3'
+  set :rvm1_ruby_version, deploysecret(:ruby_version, '2.3.2') 
+end
 
 set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
-set :repo_url, 'https://github.com/consul/consul.git'
+set :repo_url, deploysecret(:repository, 'https://github.com/consul/consul.git')
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
@@ -40,10 +44,22 @@ set(:config_files, %w(
 
 set :whenever_roles, -> { :app }
 
+set :user, deploysecret(:user)
+set :ssh_options, -> {
+  {
+    user: deploysecret(:user),
+    forward_agent: true,
+    compression: 'none',
+    port: deploysecret(:ssh_port)
+  }
+}
+
 namespace :deploy do
-  before :starting, 'rvm1:install:rvm'  # install/update RVM
-  before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
-  before :starting, 'install_bundler_gem' # install bundler gem
+  if deploysecret(:use_rvm, true) 
+    before :starting, 'rvm1:install:rvm'  # install/update RVM
+    before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
+    before :starting, 'install_bundler_gem' # install bundler gem
+  end
 
   after :publishing, 'deploy:restart'
   after :published, 'delayed_job:restart'

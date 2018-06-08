@@ -1,9 +1,18 @@
 namespace :deploy do
-  desc 'Commands for unicorn application'
-  %w(start stop force-stop restart upgrade reopen-logs).each do |command|
-    task command.to_sym do
+  desc 'Commands for passenger/unicorn application'
+  if File.exist?("/etc/init.d/unicorn_#{fetch(:full_app_name)}")
+    %w(start stop force-stop restart upgrade reopen-logs).each do |command|
+      task command.to_sym do
+        on roles(:app), in: :sequence, wait: 5 do
+          execute "/etc/init.d/unicorn_#{fetch(:full_app_name)} #{command}"
+        end
+      end
+    end
+  else
+    task :restart do
       on roles(:app), in: :sequence, wait: 5 do
-        execute "/etc/init.d/unicorn_#{fetch(:full_app_name)} #{command}"
+        # Your restart mechanism here, for example:
+        execute :touch, release_path.join('tmp/restart.txt')
       end
     end
   end
