@@ -1,4 +1,6 @@
 resources :proposals do
+  resources :proposals_dashboard, as: :dashboard, path: :dashboard, only: %i[index]
+
   member do
     post :vote
     post :vote_featured

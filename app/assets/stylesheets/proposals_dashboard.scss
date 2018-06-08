@@ -1,0 +1,132 @@
+.proposals-dashboard {
+  display: flex;
+  // flex-flow: row nowrap;
+  // justify-content: flex-start;
+  // align-items: flex-start;
+  flex-direction: column;
+  margin-top: -1.5rem;
+
+  .column-wrapper {
+    flex: 2;
+    display: flex;
+
+    .left-column {
+      flex: 0 0 150pt;
+      background: lightgray;
+      margin-right: 5px;
+      // width: 150pt;
+      padding: 5pt;
+      // min-height: 775px;
+
+      .state-box {
+        .logo {
+          height: 100pt;
+          width: 100pt;
+          margin-left: 20pt;
+          margin-right: 20pt;
+          border-radius: 50pt;
+          background-color: #fff3cb;
+          border: 2pt solid white;
+        }
+
+        .status {
+          height: 25pt;
+          width: 100pt;
+          margin-left: 20pt;
+          margin-right: 20pt;
+          padding-top: 3pt;
+          color: #055392;
+          font-weight: bold;
+          text-align: center;
+          vertical-align: middle;
+        }
+
+        .draft {
+          background-color: #ffe699;
+        }
+
+        .published {
+          background-color: #d3ebd2;
+        }
+      }
+
+      .menu {
+        color: #a9a9a9;
+        font-size: 16pt;
+
+        .menu-title {
+          margin-top: 10pt;
+        }
+
+        .menu-entry {
+          color: #a9a9a9;
+          padding-left: 25pt;
+          line-height: 30pt;
+          vertical-align: middle;
+          display: block;
+        }
+
+        .menu-entry:focus, .menu-entry:active, .menu-entry:hover {
+          outline: 0;
+          text-decoration: none;
+        }
+
+        .selected {
+          font-weight: bold;
+          color: #454545;
+        }
+
+        .menu-entry.selected {
+          text-decoration: underline #a9a9a9;
+        }
+      }
+    }
+
+    .right-column {
+      background: lightgray;
+      flex: 1 1;
+      padding: 5pt;
+      //min-height: 775px;
+
+      .progress-info {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: stretch;
+        width: 1440px;
+      }
+
+      .cell-data {
+        flex-grow: 1;
+        width: 33%;
+        font-size: 16pt;
+        font-weight: bold;
+        line-height: 32pt;
+        vertical-align: middle;
+        padding-left: 42pt;
+
+        .caption {
+          width: 150pt;
+          float: left;
+        }
+
+        .value {
+          width: 50pt;
+          float: left;
+          text-align: right;
+        }
+
+        .value:after {
+          clear: both;
+        }
+      }
+      
+      .body {
+        background-color: white;
+        height: 500px;
+      }
+    }
+  }
+}
+
