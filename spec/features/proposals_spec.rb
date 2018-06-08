@@ -833,6 +833,30 @@ feature 'Proposals' do
         expect(page).not_to have_css('.recommendation', count: 3)
         expect(page).not_to have_link('recommendations')
       end
+
+      scenario 'Recommendations shown in index are dismissable', :js do
+        user     = create(:user, recommended_proposals: true)
+        proposal = create(:proposal, tag_list: "Sport")
+        create(:follow, followable: proposal, user: user)
+
+        login_as(user)
+
+        visit proposals_path
+
+        within("#recommendations") do
+          expect(page).to have_content('Best')
+          expect(page).to have_content('Worst')
+          expect(page).to have_content('Medium')
+          expect(page).to have_css('.recommendation', count: 3)
+
+          find('.icon-x').click
+
+          expect(page).not_to have_content('Best')
+          expect(page).not_to have_content('Worst')
+          expect(page).not_to have_content('Medium')
+          expect(page).not_to have_css('.recommendation', count: 3)
+        end
+      end
     end
   end
 

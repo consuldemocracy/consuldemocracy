@@ -4,26 +4,29 @@
       <h2 class="show-for-sr"><%= t("shared.recommended_index.title") %></h2>
     </div>
 
-    <%= link_to "#", title: t("shared.recommended_index.hide"),
-                     class: "float-right-medium small hide-recommendations" do %>
-      <span class="icon-x"></span>
-      <span class="show-for-sr"><%= t("shared.recommended_index.hide") %></span>
-    <% end %>
+    <div id="recommendations" data-toggler=".hide">
+      <%= link_to "#", title: t("shared.recommended_index.hide"),
+                       class: "float-right-medium small hide-recommendations",
+                       data: { toggle: "recommendations" } do %>
+        <span class="icon-x"></span>
+        <span class="show-for-sr"><%= t("shared.recommended_index.hide") %></span>
+      <% end %>
 
-    <% recommended.each_with_index do |recommended, index| %>
-      <div class="small-12 medium-6 large-4 column end">
-        <%= link_to recommended_path(recommended) do %>
-          <div class="recommendation" data-equalizer-watch>
-            <h3><%= recommended.title %></h3>
-          </div>
-        <% end %>
+      <% recommended.each_with_index do |recommended, index| %>
+        <div class="small-12 medium-6 large-4 column end">
+          <%= link_to recommended_path(recommended) do %>
+            <div class="recommendation" data-equalizer-watch>
+              <h3><%= recommended.title %></h3>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="small-12 column">
+        <%= link_to t("shared.recommended_index.see_more"),
+                    current_path_with_query_params(order: "recommendations"),
+                    class: "float-right-medium small" %>
       </div>
-    <% end %>
-
-    <div class="small-12 column">
-      <%= link_to t("shared.recommended_index.see_more"),
-                  current_path_with_query_params(order: "recommendations"),
-                  class: "float-right-medium small" %>
     </div>
   </div>
 </div>
