@@ -12,7 +12,7 @@ feature 'Answers' do
 
     click_button "Send answer"
 
-    expect(page).to have_content("Tu respuesta ha sido enviada")
+    expect(page).to have_content("Your answer has been sent.")
 
     expect(Answer.last.text).to eq("This is a test answer")
   end
