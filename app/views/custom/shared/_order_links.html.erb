@@ -8,14 +8,14 @@
   <ul class="no-bullet submenu">
       <% @valid_orders.each do |order| %>
         <li class="inline-block">
-          <%= link_to current_path_with_query_params(order: order, filter: 'unselected_by_assembly', page: 1), class: (order == params[:order] && params[:filter] == 'unselected_by_assembly') ? 'active' : '' do %>
+          <%= link_to current_path_with_query_params(order: order, filter: 'selected', page: 1), class: (order == params[:order] && params[:filter] == 'selected') ? 'active' : '' do %>
             <%= content_tag(order == @current_order ? :h2 : :span) do %>
               <%= t("#{i18n_namespace}.orders.#{order}") %>
             <% end %>
           <% end %>
         </li>
       <% end %>
-      <% if @heading && @heading.group.name == 'Districtes' %>
+      <% if !@budget.balloting? && @heading && @heading.group.name == 'Districtes' %>
         <li class="inline-block">
           <%= link_to current_path_with_query_params(filter: 'selected_by_assembly', page: 1), class: params[:filter] == 'selected_by_assembly' ? 'active' : '' do %>
             <%= content_tag(true ? :h2 : :span) do %>

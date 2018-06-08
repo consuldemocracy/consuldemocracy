@@ -64,7 +64,7 @@
       <% if ["unfeasible", "unselected"].include?(@current_filter) %>
         <% filter = @current_filter %>
       <% else %>
-        <% filter = "unselected_by_assembly" %>
+        <% filter = nil %>
       <% end %>
 
       <h2><%= t("budgets.show.view_all") %></h2>
