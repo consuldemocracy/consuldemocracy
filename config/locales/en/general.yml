@@ -470,6 +470,7 @@ en:
         zero: No comments
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
+      draft: Draft
       flag: This proposal has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
       notifications_tab: Notifications

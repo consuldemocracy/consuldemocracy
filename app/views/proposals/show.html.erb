@@ -164,35 +164,37 @@
           </div>
         <% end %>
 
-        <% if @proposal.published? %>
-          <div class="sidebar-divider"></div>
-          <h2><%= t("votes.supports") %></h2>
-          <div id="<%= dom_id(@proposal) %>_votes">
-            <% if @proposal.successful? %>
-              <p>
-                <%= t("proposals.proposal.successful",
-                    voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+        <div class="sidebar-divider"></div>
+        <h2><%= t("votes.supports") %></h2>
+        <div id="<%= dom_id(@proposal) %>_votes">
+          <% if @proposal.draft? %>
+            <p><%= t '.draft' %></p>
+          <% elsif @proposal.successful? %>
+            <p>
+              <%= t("proposals.proposal.successful",
+                  voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+            </p>
+            <% if can? :create, Poll::Question %>
+              <p class="text-center">
+                <%= link_to t('poll_questions.create_question'),
+                            new_admin_question_path(proposal_id: @proposal.id),
+                            class: "button hollow expanded" %>
               </p>
-              <% if can? :create, Poll::Question %>
-                <p class="text-center">
-                  <%= link_to t('poll_questions.create_question'),
-                              new_admin_question_path(proposal_id: @proposal.id),
-                              class: "button hollow expanded" %>
-                </p>
-              <% end %>
-            <% elsif @proposal.archived? %>
-              <div class="padding text-center">
-                <p>
-                  <strong><%= t("proposals.proposal.supports", count: @proposal.total_votes) %></strong>
-                </p>
-                <p><%= t("proposals.proposal.archived") %></p>
-              </div>
-            <% else %>
-              <%= render 'votes',
-                        { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
             <% end %>
-          </div>
-        <% end %>
+          <% elsif @proposal.archived? %>
+            <div class="padding text-center">
+              <p>
+                <strong><%= t("proposals.proposal.supports", count: @proposal.total_votes) %></strong>
+              </p>
+              <p><%= t("proposals.proposal.archived") %></p>
+            </div>
+          <% else %>
+            <%= render 'votes',
+                      { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
+          <% end %>
+        </div>
+
+
         <%= render partial: 'shared/social_share', locals: {
           share_title: t("proposals.show.share"),
           title: @proposal.title,

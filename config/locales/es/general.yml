@@ -470,6 +470,7 @@ es:
         other: "%{count} Comentarios"
       comments_tab: Comentarios
       dashboard_proposal_link: Panel de control
+      draft: En borrador
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
