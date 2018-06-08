@@ -47,6 +47,9 @@ en:
       map: Proposals and budget investments geolocation
       allow_images: Allow upload and show images
       allow_attached_documents: Allow upload and show of attached documents
+      guides: Guides to create proposals or investment projects
+      public_stats: Public stats
+    related_content_score_threshold: Related content score threshold
     map_latitude: Latitude
     map_longitude: Longitude
     map_zoom: Zoom
