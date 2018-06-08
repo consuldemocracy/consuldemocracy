@@ -11,7 +11,16 @@
           <div class="status draft"><%= t '.draft' %></div>
         <% end %>
       </div>
-      <div class="menu">
+      <div class="dashboard-menu">
+        <% if current_editable?(proposal) || can?(:publish, proposal) %>
+          <div class="menu-title"><span class="icon-user"></span><%= t '.general' %></div>
+          <% if current_editable?(proposal) %>
+            <%= link_to t('.edit_proposal_link'), edit_proposal_path(proposal), class: 'menu-entry', target: '_blank' %>
+          <% end %>
+
+          <%= link_to t('.publish'), publish_proposal_dashboard_index_path(proposal), method: :patch, class: 'menu-entry' if can?(:publish, proposal) %>
+        <% end %>
+
         <!-- 
         <div class="menu-title"><span class="icon-user"></span> Progreso</div>
         <a href='#' class="menu-entry">Meta actual</a>
