@@ -132,15 +132,14 @@
       </div>
 
       <aside class="small-12 medium-3 column">
-        <% if author_of_proposal?(@proposal) || current_editable?(@proposal) || can_destroy_image?(@proposal) %>
+        <% if author_of_proposal?(@proposal) || can?(:dashboard, @proposal) || can_destroy_image?(@proposal) %>
           <div class="sidebar-divider"></div>
           <h2><%= t("proposals.show.author") %></h2>
           <div class="show-actions-menu">
-
-            <% if current_editable?(@proposal) %>
-              <%= link_to edit_proposal_path(@proposal), class: 'button hollow expanded' do %>
+            <% if can? :dashboard, @proposal %>
+              <%= link_to proposal_dashboard_index_path(@proposal), class: 'button hollow expanded' do %>
                           <span class="icon-edit"></span>
-                          <%= t("proposals.show.edit_proposal_link") %>
+                          <%= t("proposals.show.dashboard_proposal_link") %>
               <% end %>
             <% end %>
 

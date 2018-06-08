@@ -469,7 +469,7 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
       comments_tab: Comentarios
-      edit_proposal_link: Editar propuesta
+      dashboard_proposal_link: Panel de control
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
@@ -490,6 +490,9 @@ es:
     index:
       draft: Borrador
       published: Publicada
+      general: General
+      publish: Publicar
+      edit_proposal_link: Editar propuesta
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"

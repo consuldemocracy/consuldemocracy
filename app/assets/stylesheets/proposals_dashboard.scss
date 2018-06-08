@@ -1,8 +1,5 @@
 .proposals-dashboard {
   display: flex;
-  // flex-flow: row nowrap;
-  // justify-content: flex-start;
-  // align-items: flex-start;
   flex-direction: column;
   margin-top: -1.5rem;
 
@@ -14,9 +11,7 @@
       flex: 0 0 150pt;
       background: lightgray;
       margin-right: 5px;
-      // width: 150pt;
       padding: 5pt;
-      // min-height: 775px;
 
       .state-box {
         .logo {
@@ -50,7 +45,7 @@
         }
       }
 
-      .menu {
+      .dashboard-menu {
         color: #a9a9a9;
         font-size: 16pt;
 

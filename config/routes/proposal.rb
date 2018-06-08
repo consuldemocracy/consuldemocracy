@@ -1,5 +1,9 @@
 resources :proposals do
-  resources :proposals_dashboard, as: :dashboard, path: :dashboard, only: %i[index]
+  resources :proposals_dashboard, as: :dashboard, path: :dashboard, only: %i[index] do
+    collection do
+      patch :publish
+    end
+  end
 
   member do
     post :vote

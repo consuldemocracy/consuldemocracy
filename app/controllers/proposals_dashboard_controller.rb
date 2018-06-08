@@ -12,6 +12,13 @@ class ProposalsDashboardController < ApplicationController
     authorize! :dashboard, proposal
   end
 
+  def publish
+    authorize! :publish, proposal
+
+    proposal.publish
+    redirect_to proposal_dashboard_index_path(proposal), notice: t('proposals.notice.published')
+  end
+
   private
 
   def proposal
