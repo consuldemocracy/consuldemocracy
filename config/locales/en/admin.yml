@@ -965,11 +965,6 @@ en:
       description: Description
       image: Image
       show_image: Show image
-      view: View
-      proposal: Proposal
-      author: Author
-      content: Content
-      created_at: Created at
       moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
     spending_proposals:
       index:

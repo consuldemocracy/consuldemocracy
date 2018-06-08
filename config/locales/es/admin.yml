@@ -965,11 +965,6 @@ es:
       description: Descripción
       image: Imagen
       show_image: Mostrar imagen
-      view: Ver
-      proposal: Propuesta
-      author: Autor
-      content: Contenido
-      created_at: Fecha de creación
       moderated_content: "Revisa el contenido moderado por los moderadores, y confirma si la moderación se ha realizado correctamente."
     spending_proposals:
       index:
