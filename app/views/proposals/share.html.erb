@@ -27,14 +27,16 @@
           description: @proposal.summary
         } %>
 
-        <div class="callout light">
-          <p class="centered">
-          <strong><%= t '.improve_it' %></strong>
-          </p>
-          <div class="centered">
-            <%= link_to t('.dashboard'), '#', class: 'button' %>
+        <% if can? :dashboard, @proposal %> 
+          <div class="callout light">
+            <p class="centered">
+              <strong><%= t '.improve_it' %></strong>
+            </p>
+            <div class="centered">
+              <%= link_to t('.dashboard'), proposal_dashboard_index_path(@proposal), class: 'button' %>
+            </div>
           </div>
-        </div>
+        <% end %>
 
         <% if @proposal_improvement_path.present? %>
           <div class="callout highlight margin-top text-center">

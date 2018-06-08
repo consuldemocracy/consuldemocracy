@@ -486,6 +486,10 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+  proposals_dashboard:
+    index:
+      draft: Borrador
+      published: Publicada
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"

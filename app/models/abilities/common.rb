@@ -19,6 +19,9 @@ module Abilities
       can :publish, Proposal do |proposal|
         proposal.draft? && proposal.author.id == user.id
       end
+      can :dashboard, Proposal do |proposal|
+        proposal.author.id == user.id
+      end
 
       can [:retire_form, :retire], Proposal, author_id: user.id
 
