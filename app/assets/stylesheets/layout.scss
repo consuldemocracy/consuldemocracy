@@ -194,9 +194,9 @@ a {
   background: $light;
 }
 
-.highlight {
-  background: $highlight;
-}
+// .highlight {
+//   background: $highlight;
+// }
 
 .icon-check {
   color: $check;
@@ -212,7 +212,6 @@ a {
 .footer,
 .push {
   clear: both;
-  min-height: $line-height * 12;
 }
 
 .ie-callout {
