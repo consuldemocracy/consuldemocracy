@@ -253,7 +253,7 @@ a {
       }
     }
 
-    & + li {
+    + li {
       margin-left: 0;
     }
 
@@ -2671,8 +2671,9 @@ table {
     &.title {
       display: inline-block;
       border-top: 4px solid $brand;
+      margin-bottom: 0;
       min-width: rem-calc(240);
-      padding-top: $line-height / 2;
+      padding: $line-height / 2 0;
     }
   }
 }
@@ -2683,17 +2684,32 @@ table {
     clear: both;
   }
 
-  .debate {
-    margin: $line-height 0;
+  a {
+
+    &.see-all {
+      border-bottom: 1px solid $border;
+      display: block;
+      font-size: $small-font-size;
+      margin: $line-height 0 $line-height / 2;
+      text-align: right;
+      width: 100%;
+    }
   }
 }
 
 .feed-image {
   display: inline-block;
   height: rem-calc(120);
-  margin: $line-height / 2 0;
   overflow: hidden;
   width: 100%;
+
+  @include breakpoint(medium) {
+    height: rem-calc(96);
+  }
+
+  @include breakpoint(medium) {
+    height: rem-calc(96);
+  }
 
   img {
     max-width: none;
@@ -2703,25 +2719,19 @@ table {
 
 .feed-description {
 
-  @include breakpoint(medium) {
-    padding-top: $line-height;
-  }
-
   p {
     font-size: $small-font-size;
+    margin-bottom: 0;
   }
 }
 
 .feed-content {
-  border-bottom: 1px solid $border;
-  display: inline-block;
 
-  a {
-
-    &.see-all {
-      font-size: $small-font-size;
-      margin: $line-height 0 $line-height / 2;
-    }
+  .debate,
+  .proposal {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: $line-height / 2 0;
   }
 }
 

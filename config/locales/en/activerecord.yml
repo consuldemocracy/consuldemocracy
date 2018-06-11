@@ -169,7 +169,7 @@ en:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"
       spending_proposal:
-        administrator_id: "Administrador"
+        administrator_id: "Administrator"
         association_name: "Association name"
         description: "Description"
         external_url: "Link to additional documentation"
