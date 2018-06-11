@@ -144,6 +144,8 @@ feature 'Users' do
 
         visit edit_user_registration_path
         expect(page).to have_field('user_email', with: 'manuelacarmena@example.com')
+        visit account_path
+        expect(page).to have_content I18n.t("account.show.verified_account")
       end
 
       scenario 'Sign up when Oauth provider has an unverified email' do
