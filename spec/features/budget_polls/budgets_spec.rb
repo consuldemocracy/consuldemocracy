@@ -9,12 +9,12 @@ feature 'Admin Budgets' do
 
   scenario 'Admin ballots link appears if budget has a poll associated' do
     budget = create(:budget)
-    create(:poll, budget: budget)
+    poll = create(:poll, budget: budget)
 
     visit admin_budgets_path
 
     within "#budget_#{budget.id}" do
-      expect(page).to have_link("Admin ballots")
+      expect(page).to have_link("Admin ballots", admin_poll_path(poll))
     end
   end
 
