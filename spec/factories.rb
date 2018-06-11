@@ -1029,4 +1029,37 @@ LOREM_IPSUM
   factory :widget_feed, class: 'Widget::Feed' do
   end
 
+  factory :proposal_dashboard_action, class: 'ProposalDashboardAction' do
+    title { Faker::Lorem.sentence }
+    description { Faker::Lorem.sentence }
+    link nil
+    request_to_administrators true
+    day_offset 0
+    required_supports 0
+    order 0
+    active true
+    hidden_at nil
+
+    trait :admin_request do
+      link nil
+      request_to_administrators true
+    end
+
+    trait :external_link do
+      link { Faker::Internet.url }
+      request_to_administrators false
+    end
+
+    trait :inactive do
+      active false
+    end 
+    
+    trait :active do
+      active true
+    end
+
+    trait :deleted do
+      hidden_at { Time.now.utc }
+    end
+  end
 end

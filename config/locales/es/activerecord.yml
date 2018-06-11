@@ -106,6 +106,9 @@ es:
       proposal_notification:
         one: "Notificación de propuesta"
         other: "Notificaciones de propuestas"
+      proposal_dashboard_action:
+        one: Acción del panel de control de propuestas
+        other: Acciones del panel de control de propuestas
     attributes:
       budget:
         name: "Nombre"
@@ -260,6 +263,15 @@ es:
         link_url: URL del enlace
       widget/feed:
         limit: Número de elementos
+      proposal_dashboard_action:
+        title: Título
+        description: Descripción
+        link: Enlace externo
+        request_to_administrators: Petición para administrador
+        day_offset: Días requeridos para la activación
+        required_supports: Soportes requeridos para la activación
+        order: Orden
+        active: Activa
     errors:
       models:
         user:

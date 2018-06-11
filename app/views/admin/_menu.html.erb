@@ -223,6 +223,12 @@
           <%= link_to t("admin.menu.geozones"), admin_geozones_path %>
         </li>
 
+        <li <%= 'class=is_active' if controller_name == 'proposal_dashboard_actions' %>>
+
+          <%= link_to <%= ProposalDashboardAction.model_name.human(count: 2),
+                      admin_proposal_dashboard_actions_path %>
+        </li>
+
         <li <%= "class=is-active" if controller_name == "images" &&
                                   controller.class.parent != Admin::Poll::Questions::Answers %>>
           <%= link_to t("admin.menu.site_customization.images"), admin_site_customization_images_path %>

@@ -87,4 +87,5 @@ describe Abilities::Administrator do
   it { should be_able_to(:destroy, proposal_document) }
   it { should_not be_able_to(:destroy, budget_investment_image) }
   it { should_not be_able_to(:destroy, budget_investment_document) }
+  it { should be_able_to(:manage, ProposalDashboardAction) }
 end

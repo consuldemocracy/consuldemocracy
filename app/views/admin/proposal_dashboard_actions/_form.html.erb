@@ -1,0 +1,56 @@
+<%= form_for [:admin, proposal_dashboard_action] do |f| %>
+
+  <%= render 'errors' %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.label :title %>
+      <%= f.text_field :title, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.label :description %>
+      <%= f.text_field :description, label: false %>
+    </div>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.check_box :request_to_administrators, label: ProposalDashboardAction.human_attribute_name(:request_to_administrators) %>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.label :link%>
+      <%= f.text_field :link, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 large-4 column">
+      <%= f.label :day_offset %>
+      <%= f.number_field :day_offset, label: false, step: 1, min: 0 %>
+    </div>
+
+    <div class="small-12 medium-4 large-4 column">
+      <%= f.label :required_supports %>
+      <%= f.number_field :required_supports, label: false, step: 1, min: 0 %>
+    </div>
+
+    <div class="small-12 medium-4 large-4 column">
+      <%= f.label :order %>
+      <%= f.number_field :order, label: false, step: 1, min: 0 %>
+    </div>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.check_box :active, label: ProposalDashboardAction.human_attribute_name(:active) %>
+  </div>
+
+  <div class="row">
+    <div class="actions small-12 large-3 medium-3 column">
+      <%= f.submit(class: 'button expanded', value: t('admin.proposal_dashboard_actions.form.submit_button')) %>
+    </div>
+  </div>
+<% end %>

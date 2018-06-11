@@ -1,0 +1,41 @@
+<%= link_to t('admin.proposal_dashboard_actions.index.create'),
+              new_admin_proposal_dashboard_action_path, class: 'button success float-right' %>
+
+<h2 class="inline-block">
+  <%= ProposalDashboardAction.model_name.human(count: 2) %>
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= ProposalDashboardAction.human_attribute_name(:title) %></th>
+      <th><%= ProposalDashboardAction.human_attribute_name(:active) %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @proposal_dashboard_actions.empty? %>
+      <tr>
+        <td colspan="100%"><%= t 'admin.proposal_dashboard_actions.index.no_records' %></td>
+      </tr>
+    <% end %>
+
+    <% @proposal_dashboard_actions.each do |action| %>
+      <tr id="<%= dom_id(action) %>">
+        <td><%= action.title %></td>
+        <td><%= active_human_readable(action.active) %></td>
+        <td style="text-align: right">
+          <%= link_to t('admin.proposal_dashboard_actions.index.edit'), 
+                      edit_admin_proposal_dashboard_action_path(action), 
+                      class: 'edit-banner button hollow' %>
+          <%= link_to t('admin.proposal_dashboard_actions.index.delete'), 
+                      admin_proposal_dashboard_action_path(action), 
+                      method: :delete, 
+                      class: 'button hollow alert',
+                      data: { confirm: t('admin.actions.confirm') } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

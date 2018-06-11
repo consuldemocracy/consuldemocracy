@@ -106,6 +106,9 @@ en:
       proposal_notification:
         one: "Proposal notification"
         other: "Proposal notifications"
+      proposal_dashboard_action:
+        one: Proposal dashboard action
+        other: Proposal dashboard actions
     attributes:
       budget:
         name: "Name"
@@ -244,7 +247,6 @@ en:
       poll/question/answer:
         title: Answer
         description: Description
-      poll/question/answer/video:
         title: Title
         url: External video
       newsletter:
@@ -260,6 +262,15 @@ en:
         link_url: Link URL
       widget/feed:
         limit: Number of items
+      proposal_dashboard_action:
+        title: Title
+        description: Description
+        link: External link
+        request_to_administrators: Admin request
+        day_offset: Required days for the activation
+        required_supports: Required supports for the activation
+        order: Order
+        active: Active
     errors:
       models:
         user:

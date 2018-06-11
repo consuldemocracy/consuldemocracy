@@ -48,6 +48,7 @@ module Abilities
       can [:search, :index], ::User
 
       can :manage, Annotation
+      can :manage, ProposalDashboardAction
 
       can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
 

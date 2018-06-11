@@ -1090,6 +1090,32 @@ es:
       delete:
         success: Distrito borrado correctamente
         error: No se puede borrar el distrito porque ya tiene elementos asociados
+    proposal_dashboard_actions:
+      index:
+        create: Crear
+        edit: Editar
+        delete: Borrar
+        no_records: No se encontraron registros
+        active: Si
+        inactive: No
+      new:
+        creating: Nueva acción para el dashboard de propuestas
+        back: Volver a la lista
+      create:
+        notice: Acción creada con éxito
+      edit:
+        editing: Editar acción para el dashboard de propuestas
+        back: Volver a la lista
+      form:
+        submit_button: Guardar
+      delete:
+        success: Acción borrada con éxito
+      errors:
+        form:
+          error:
+            one: "error impidió guardar la acción"
+            other: 'errores impidieron guardar la acción.'
+
     signature_sheets:
       author: Autor
       created_at: Fecha de creación

@@ -104,6 +104,7 @@ describe Abilities::Common do
 
   it { should be_able_to(:destroy, own_budget_investment_image) }
   it { should_not be_able_to(:destroy, budget_investment_image) }
+  it { is_expected.not_to be_able_to(:manage, ProposalDashboardAction) }
 
   describe 'flagging content' do
     it { should be_able_to(:flag, debate)   }
