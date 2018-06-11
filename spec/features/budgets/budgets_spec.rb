@@ -22,7 +22,7 @@ feature 'Budgets' do
         expect(page).to have_content(budget.name)
         expect(page).to have_content(budget.description)
         expect(page).to have_content('Actual phase')
-        expect(page).to have_content('Informing')
+        expect(page).to have_content('Information')
         expect(page).to have_link('Help with participatory budgets')
         expect(page).to have_link('See all phases')
       end

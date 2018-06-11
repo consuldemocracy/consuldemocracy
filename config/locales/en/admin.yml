@@ -5,7 +5,7 @@ en:
     actions:
       actions: Actions
       confirm: Are you sure?
-      confirm_hide: Confirm
+      confirm_hide: Confirm moderation
       hide: Hide
       hide_author: Hide author
       restore: Restore
@@ -71,7 +71,7 @@ en:
         filters:
           open: Open
           finished: Finished
-        budget_investments: See budget investments
+        budget_investments: Manage projects
         table_name: Name
         table_phase: Phase
         table_investments: Investments
@@ -332,7 +332,7 @@ en:
           enabled: Enabled
           process: Process
           debate_phase: Debate phase
-          allegations_phase: Allegations phase
+          allegations_phase: Drafting phase
           proposals_phase: Proposals phase
           start: Start
           end: End
@@ -364,7 +364,7 @@ en:
           status_planned: Planned
         subnav:
           info: Information
-          draft_texts: Text
+          draft_texts: Drafting
           questions: Debate
           proposals: Proposals
       proposals:
@@ -439,8 +439,10 @@ en:
             error: Error
         form:
           add_option: Add option
-          title_placeholder: Add a title
+          title: Question
+          title_placeholder: Add question
           value_placeholder: Add a closed answer
+          question_options: "Possible answers (optional, by default open answers)"
         index:
           back: Back
           title: Questions associated to this process
@@ -472,7 +474,7 @@ en:
       activity: Moderator activity
       admin: Admin menu
       banner: Manage banners
-      poll_questions: Poll questions
+      poll_questions: Questions
       proposals_topics: Proposals topics
       budgets: Participatory budgets
       geozones: Manage geozones
@@ -494,7 +496,7 @@ en:
       poll_shifts: Manage shifts
       officials: Officials
       organizations: Organisations
-      settings: Configuration settings
+      settings: Global settings
       spending_proposals: Spending proposals
       stats: Statistics
       signature_sheets: Signature Sheets
@@ -503,13 +505,12 @@ en:
         pages: Custom Pages
         images: Custom Images
         content_blocks: Custom content blocks
-      title_categories: Categories
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
       title_profiles: Profiles
-      title_banners: Banners
-      title_site_customization: Site customization
+      title_settings: Settings
+      title_site_customization: Site content
       legislation: Collaborative Legislation
       users: Users
     administrators:
@@ -564,6 +565,7 @@ en:
         empty_newsletters: There are no newsletters to show
       new:
         title: New newsletter
+        from: E-mail address that will appear as sending the newsletter
       edit:
         title: Edit newsletter
       show:
@@ -573,7 +575,7 @@ en:
         sent_at: Sent at
         subject: Subject
         segment_recipient: Recipients
-        from: From
+        from: E-mail address that will appear as sending the newsletter
         body: Email content
         body_help_text: This is how the users will see the email
         send_alert: Are you sure you want to send this newsletter to %{n} users?
@@ -721,8 +723,8 @@ en:
         table_location: "Location"
     polls:
       index:
-        title: "List of polls"
-        no_polls: "There are no polls."
+        title: "List of active polls"
+        no_polls: "There are no polls coming up."
         create: "Create poll"
         name: "Name"
         dates: "Dates"
@@ -834,8 +836,8 @@ en:
         title: "Results by booth"
     booths:
       index:
-        title: "List of booths"
-        no_booths: "There are no booths."
+        title: "List of active booths"
+        no_booths: "There are no active booths for any upcoming poll."
         add_booth: "Add booth"
         name: "Name"
         location: "Location"
@@ -963,6 +965,7 @@ en:
       description: Description
       image: Image
       show_image: Show image
+      moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -1125,6 +1128,7 @@ en:
         add_tag: Add a new proposal topic
         title: Proposal topics
         topic: Topic
+        help: "When a user creates a proposal, the following topics are suggested as default tags."
       name:
         placeholder: Type the name of the topic
     users:
@@ -1147,11 +1151,11 @@ en:
         title: Incomplete verifications
     site_customization:
       content_blocks:
-        form:
-          content_blocks_information: Information about content blocks
-          content_block_about: You can create HTML content blocks to be inserted in the header or the footer of your CONSUL.
-          content_block_top_links_html: "<strong>Header blocks (top_links)</strong> are blocks of links that must have this format:"
-          content_block_footer_html: "<strong>Footer blocks</strong> can have any format and can be used to insert Javascript, CSS or custom HTML."
+        information: Information about content blocks
+        about: You can create HTML content blocks to be inserted in the header or the footer of your CONSUL.
+        top_links_html: "<strong>Header blocks (top_links)</strong> are blocks of links that must have this format:"
+        footer_html: "<strong>Footer blocks</strong> can have any format and can be used to insert Javascript, CSS or custom HTML."
+        no_blocks: "There are no content blocks."
         create:
           notice: Content block created successfully
           error: Content block couldn't be created

@@ -5,7 +5,7 @@ es:
     actions:
       actions: Acciones
       confirm: '¿Estás seguro?'
-      confirm_hide: Confirmar
+      confirm_hide: Confirmar moderación
       hide: Ocultar
       hide_author: Bloquear al autor
       restore: Volver a mostrar
@@ -71,7 +71,7 @@ es:
         filters:
           open: Abiertos
           finished: Terminados
-        budget_investments: Ver proyectos de gasto
+        budget_investments: Gestionar proyectos de gasto
         table_name: Nombre
         table_phase: Fase
         table_investments: Proyectos de gasto
@@ -331,8 +331,8 @@ es:
         form:
           enabled: Habilitado
           process: Proceso
-          debate_phase: Fase previa
-          allegations_phase: Fase de alegaciones
+          debate_phase: Fase de debate
+          allegations_phase: Fase de redacción
           proposals_phase: Fase de propuestas
           start: Inicio
           end: Fin
@@ -364,7 +364,7 @@ es:
           status_planned: Próximamente
         subnav:
           info: Información
-          draft_texts: Texto
+          draft_texts: Redacción
           questions: Debate
           proposals: Propuestas
       proposals:
@@ -439,8 +439,10 @@ es:
             error: Error
         form:
           add_option: +Añadir respuesta cerrada
+          title: Pregunta
           title_placeholder: Escribe un título a la pregunta
           value_placeholder: Escribe una respuesta cerrada
+          question_options: "Posibles respuestas (opcional, por defecto respuestas abiertas)"
         index:
           back: Volver
           title: Preguntas asociadas a este proceso
@@ -472,7 +474,7 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
-      poll_questions: Preguntas ciudadanas
+      poll_questions: Preguntas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
       geozones: Gestionar distritos
@@ -503,13 +505,12 @@ es:
         pages: Personalizar páginas
         images: Personalizar imágenes
         content_blocks: Personalizar bloques
-      title_categories: Categorías
       title_moderated_content: Contenido moderado
       title_budgets: Presupuestos
       title_polls: Votaciones
       title_profiles: Perfiles
-      title_banners: Banners
-      title_site_customization: Personalizar sitio
+      title_settings: Configuración
+      title_site_customization: Contenido del sitio
       legislation: Legislación colaborativa
       users: Usuarios
     administrators:
@@ -564,6 +565,7 @@ es:
         empty_newsletters: No hay newsletters para mostrar
       new:
         title: Nueva newsletter
+        from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
       edit:
         title: Editar newsletter
       show:
@@ -573,7 +575,7 @@ es:
         sent_at: Enviado
         subject: Asunto
         segment_recipient: Destinatarios
-        from: Enviado por
+        from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
         body: Contenido del email
         body_help_text: Así es como verán el email los usuarios
         send_alert: ¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?
@@ -721,8 +723,8 @@ es:
         table_location: "Ubicación"
     polls:
       index:
-        title: "Listado de votaciones"
-        no_polls: "No hay ninguna votación."
+        title: "Listado de votaciones activas"
+        no_polls: "No hay ninguna votación próximamente."
         create: "Crear votación"
         name: "Nombre"
         dates: "Fechas"
@@ -834,8 +836,8 @@ es:
         title: "Resultados por urna"
     booths:
       index:
-        title: "Lista de urnas"
-        no_booths: "No hay urnas."
+        title: "Listado de urnas activas"
+        no_booths: "No hay urnas activas para ninguna votación próxima."
         add_booth: "Añadir urna"
         name: "Nombre"
         location: "Ubicación"
@@ -963,6 +965,7 @@ es:
       description: Descripción
       image: Imagen
       show_image: Mostrar imagen
+      moderated_content: "Revisa el contenido moderado por los moderadores, y confirma si la moderación se ha realizado correctamente."
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
@@ -1125,6 +1128,7 @@ es:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
         topic: Tema
+        help: "Cuando un usuario crea una propuesta se le sugieren como etiquetas por defecto los siguientes temas."
       name:
         placeholder: Escribe el nombre del tema
     users:
@@ -1147,11 +1151,11 @@ es:
         title: Verificaciones incompletas
     site_customization:
       content_blocks:
-        form:
-          content_blocks_information: Información sobre los bloques de texto
-          content_block_about: Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu CONSUL.
-          content_block_top_links_html: "Los <strong>bloques de la cabecera (top_links)</strong> son bloques de enlaces que deben crearse con este formato:"
-          content_block_footer_html: "Los <strong>bloques del pie (footer)</strong> pueden tener cualquier formato y se pueden utilizar para guardar huellas Javascript, contenido CSS o contenido HTML personalizado."
+        information: Información sobre los bloques de texto
+        about: Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu CONSUL.
+        top_links_html: "Los <strong>bloques de la cabecera (top_links)</strong> son bloques de enlaces que deben crearse con este formato:"
+        footer_html: "Los <strong>bloques del pie (footer)</strong> pueden tener cualquier formato y se pueden utilizar para guardar huellas Javascript, contenido CSS o contenido HTML personalizado."
+        no_blocks: "No hay bloques de texto."
         create:
           notice: Bloque creado correctamente
           error: No se ha podido crear el bloque

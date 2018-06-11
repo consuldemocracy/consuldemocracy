@@ -2,32 +2,28 @@
   Admin - <%= t("admin.menu.legislation") %> - <%= t("admin.legislation.processes.index.filters.#{@current_filter}") %>
 <% end %>
 
-<div class="legislation-admin legislation-process-index">
-  <div class="row">
-    <div class="small-12 medium-9 column">
-      <h2 class="inline-block"><%= t("admin.legislation.processes.index.title") %></h2>
-    </div>
-    <div class="small-12 medium-3 column legislation-process-new">
-      <%= link_to t("admin.legislation.processes.index.create"), new_admin_legislation_process_path, class: "button" %>
-    </div>
-  </div>
+<h2 class="inline-block"><%= t("admin.legislation.processes.index.title") %></h2>
 
-  <%= render 'shared/filter_subnav', i18n_namespace: "admin.legislation.processes.index" %>
+<%= link_to t("admin.legislation.processes.index.create"), new_admin_legislation_process_path,
+            class: "button success float-right" %>
 
-  <% if @processes.any? %>
-    <h3><%= page_entries_info @processes %></h3>
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.legislation.processes.index" %>
 
-    <table class="stack">
-      <thead>
-        <tr>
-          <th><%= t("admin.legislation.processes.process.title") %></th>
-          <th><%= t("admin.legislation.processes.process.status") %></th>
-          <th><%= t("admin.legislation.processes.process.creation_date") %></th>
-          <th><%= t("admin.legislation.processes.process.comments") %></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
+<% if @processes.any? %>
+  <h3><%= page_entries_info @processes %></h3>
+
+  <table class="stack">
+    <thead>
+      <tr>
+        <th><%= t("admin.legislation.processes.process.title") %></th>
+        <th><%= t("admin.legislation.processes.process.status") %></th>
+        <th><%= t("admin.legislation.processes.process.creation_date") %></th>
+        <th><%= t("admin.legislation.processes.process.comments") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
       <% @processes.each do |process| %>
         <tr id="<%= dom_id(process) %>">
           <td class="small-12 medium-8">
@@ -43,14 +39,12 @@
           </td>
         </tr>
       <% end %>
-      </tbody>
-    </table>
+    </tbody>
+  </table>
 
-    <%= paginate @processes %>
-  <% else %>
-    <div class="callout primary">
-      <%= page_entries_info @processes %>
-    </div>
-  <% end %>
-
-</div>
+  <%= paginate @processes %>
+<% else %>
+  <div class="callout primary">
+    <%= page_entries_info @processes %>
+  </div>
+<% end %>

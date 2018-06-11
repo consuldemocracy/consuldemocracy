@@ -201,6 +201,7 @@ en:
         body: Body
       legislation/process:
         title: Process Title
+        summary: Summary
         description: Description
         additional_info: Additional info
         start_date: Start date
