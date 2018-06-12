@@ -64,12 +64,10 @@
     </div>
     <aside class="small-12 medium-3 column">
       <% if investment.should_show_aside? %>
-        <% if investment.selected? %>
+        <% if false && investment.selected? %>
             <div class="supports js-participation">
               <%= t("budgets.investments.investment.seleccionada_por_junta") %>
             </div>
-
-
         <% elsif investment.should_show_votes? %>
           <div class="sidebar-divider"></div>
           <h2><%= t("budgets.investments.show.supports") %></h2>
