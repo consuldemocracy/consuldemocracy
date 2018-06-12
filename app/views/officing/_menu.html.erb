@@ -1,14 +1,14 @@
 <div class="admin-sidebar" data-equalizer-watch>
   <ul id="officing_menu">
 
-    <li <%= "class=active" if controller_name == "voters" %>>
+    <li <%= "class=is-active" if controller_name == "voters" %>>
       <%= link_to new_officing_residence_path do %>
         <span class="icon-user"></span>
         <%= t("officing.menu.voters") %>
       <% end %>
     </li>
 
-    <li <%= "class=active" if ["results"].include?(controller_name) || (controller_name == "polls" && action_name == "final") %>>
+    <li <%= "class=is-active" if ["results"].include?(controller_name) || (controller_name == "polls" && action_name == "final") %>>
       <%= link_to final_officing_polls_path do %>
         <span class="icon-user"></span>
         <%= t("officing.menu.total_recounts") %>

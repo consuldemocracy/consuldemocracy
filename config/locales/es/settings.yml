@@ -47,6 +47,9 @@ es:
       map: Geolocalización de propuestas y proyectos de gasto
       allow_images: Permitir subir y mostrar imágenes
       allow_attached_documents: Permitir creación de documentos adjuntos
+      guides: Guías para crear propuestas o proyectos de inversión
+      public_stats: Estadísticas públicas
+    related_content_score_threshold: Umbral de puntuación de contenido relacionado
     map_latitude: Latitud
     map_longitude: Longitud
     map_zoom: Zoom

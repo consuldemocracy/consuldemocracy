@@ -1,18 +1,22 @@
 <% provide :title do %><%= @proposal.title %><% end %>
 <% content_for :meta_description do %><%= @proposal.summary %><% end %>
 <% provide :social_media_meta_tags do %>
-<%= render "shared/social_media_meta_tags",
-            social_url: proposal_url(@proposal),
-            social_title: @proposal.title,
-            social_description: @proposal.summary,
-            twitter_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil),
-            og_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil) %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: proposal_url(@proposal),
+              social_title: @proposal.title,
+              social_description: @proposal.summary,
+              twitter_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil),
+              og_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil) %>
 <% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: proposal_url(@proposal) %>
 <% end %>
 
-<% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
+<% cache [locale_and_user_status(@proposal),
+          @proposal,
+          @proposal.author,
+          Flag.flagged?(current_user, @proposal),
+          @proposal_votes] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
@@ -23,7 +27,8 @@
           <div data-alert class="callout alert margin-top proposal-retired">
             <strong>
               <%= t("proposals.show.retired_warning") %><br>
-              <%= link_to t("proposals.show.retired_warning_link_to_explanation"), "#retired_explanation" %>
+              <%= link_to t("proposals.show.retired_warning_link_to_explanation"),
+                          "#retired_explanation" %>
             </strong>
           </div>
         <% elsif @proposal.conflictive? %>
@@ -101,7 +106,10 @@
 
         <% if @proposal.retired? %>
           <div id="retired_explanation" class="callout">
-            <h2><%= t('proposals.show.retired') %>: <%= t("proposals.retire_options.#{@proposal.retired_reason}") unless @proposal.retired_reason == 'other' %></h2>
+            <h2>
+              <%= t("proposals.show.retired") %>:
+              <%= t("proposals.retire_options.#{@proposal.retired_reason}") unless @proposal.retired_reason == 'other' %>
+            </h2>
             <%= simple_format text_with_links(@proposal.retired_explanation), {}, sanitize: false %>
           </div>
         <% end %>
@@ -206,11 +214,20 @@
   </div>
 <% end %>
 
-<div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
-  <%= render "proposals/filter_subnav" %>
-  <%= render "proposals/notifications" %>
+<div class="additional-content">
+  <div class="filter-subnav">
+    <div class="row">
+      <div class="small-12 column">
+        <%= render "proposals/filter_subnav" %>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <div class="tabs-panel is-active" id="tab-comments">
+<div class="tabs-content" data-tabs-content="proposals_tabs" role="tablist">
+  <div class="tabs-panel is-active" id="tab-comments" role="tab">
     <%= render "proposals/comments" %>
   </div>
+
+  <%= render "proposals/notifications" %>
 </div>

@@ -32,7 +32,7 @@
         <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
                                 legislation_processes_path,
                                 controller.class.parent == Legislation,
-                                accesskey: "l" %>
+                                accesskey: "4" %>
       </li>
     <% end %>
     <% if feature?(:spending_proposals) %>
@@ -48,15 +48,15 @@
         <%= layout_menu_link_to t("layouts.header.budgets"),
                                   budgets_path,
                                   controller_name == "budgets" || controller_name == "investments",
-                                  accesskey: "4",
+                                  accesskey: "5",
                                   title: t("shared.go_to_page") + t("layouts.header.budgets") %>
       </li>
     <% end %>
     <li>
       <%= link_to t("layouts.header.help"),
                     help_path,
-                    accesskey: "5",
-                    class: ("active" if current_page?(help_path)),
+                    accesskey: "6",
+                    class: ("is-active" if current_page?(help_path)),
                     title: t("shared.go_to_page") + t("layouts.header.help") %>
     </li>
   </ul>

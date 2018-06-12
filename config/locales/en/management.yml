@@ -70,7 +70,7 @@ en:
       support_budget_investments: Support Budget Investments
       users: Users
       edit_user_accounts: Edit user account
-      user_invites: User's invites
+      user_invites: Send invitations
     permissions:
       create_proposals: Create proposals
       debates: Engage in debates
@@ -140,8 +140,8 @@ en:
       new:
         label: Emails
         info: "Enter the emails separated by commas (',')"
-        submit: Send invites
-        title: User's invites
+        submit: Send invitations
+        title: Send invitations
       create:
         success_html: <strong>%{count} invitations</strong> have been sent.
-        title: User's invites
+        title: Send invitations

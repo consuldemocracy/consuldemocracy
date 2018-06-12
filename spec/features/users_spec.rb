@@ -440,7 +440,7 @@ feature 'Users' do
 
       visit user_path(@user, filter: "follows")
 
-      expect(page).to have_selector(".activity li.active", text: "1 Following")
+      expect(page).to have_selector(".activity li.is-active", text: "1 Following")
     end
 
     describe 'Proposals' do

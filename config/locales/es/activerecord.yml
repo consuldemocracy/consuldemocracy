@@ -201,6 +201,7 @@ es:
         body: Contenido
       legislation/process:
         title: Título del proceso
+        summary: Resumen
         description: En qué consiste
         additional_info: Información adicional
         start_date: Fecha de inicio del proceso

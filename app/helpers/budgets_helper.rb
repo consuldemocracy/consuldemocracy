@@ -49,7 +49,7 @@ module BudgetsHelper
 
   def css_for_ballot_heading(heading)
     return '' if current_ballot.blank?
-    current_ballot.has_lines_in_heading?(heading) ? 'active' : ''
+    current_ballot.has_lines_in_heading?(heading) ? 'is-active' : ''
   end
 
   def current_ballot
@@ -66,7 +66,13 @@ module BudgetsHelper
 
   def current_budget_map_locations
     return unless current_budget.present?
-    MapLocation.where(investment_id: current_budget.investments).map { |l| l.json_data }
+    if current_budget.valuating_or_later?
+      investments = current_budget.investments.selected
+    else
+      investments = current_budget.investments
+    end
+
+    MapLocation.where(investment_id: investments).map { |l| l.json_data }
   end
 
   def display_calculate_winners_button?(budget)
