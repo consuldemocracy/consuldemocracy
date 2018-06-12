@@ -1,0 +1,19 @@
+de:
+  moderation:
+    comments:
+      index:
+        block_authors: Autoren blockieren
+        confirm: Sind Sie sich sicher?
+        title: Kommentare
+    debates:
+      index:
+        block_authors: Autoren blockieren
+    menu:
+      flagged_comments: Kommentare
+    proposals:
+      index:
+        filter: Filter
+        headers:
+          proposal: Vorschlag
+        hide_proposals: Vorschläge ausblenden
+        title: Vorschläge

@@ -5,6 +5,7 @@ end
 SitemapGenerator::Sitemap.namer = SitemapGenerator::SimpleNamer.new(:sitemap, extension: '.xml')
 
 # default host
+SitemapGenerator::Sitemap.verbose = false if Rails.env.test?
 SitemapGenerator::Sitemap.default_host = Setting["url"]
 
 # sitemap generator

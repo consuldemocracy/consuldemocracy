@@ -117,6 +117,13 @@ feature 'Budgets' do
       end
     end
 
+    scenario "No budgets" do
+      Budget.destroy_all
+
+      visit budgets_path
+
+      expect(page).to have_content "There are no budgets"
+    end
   end
 
   scenario 'Index shows only published phases' do

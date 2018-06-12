@@ -39,7 +39,7 @@ feature 'Admin budget investment milestones' do
 
       click_link 'Create new milestone'
 
-      fill_in 'budget_investment_milestone_description', with: 'New description milestone'
+      fill_in 'budget_investment_milestone_description_en', with: 'New description milestone'
       fill_in 'budget_investment_milestone_publication_date', with: Date.current
 
       click_button 'Create milestone'
@@ -53,7 +53,7 @@ feature 'Admin budget investment milestones' do
 
       click_link 'Create new milestone'
 
-      fill_in 'budget_investment_milestone_description', with: 'New description milestone'
+      fill_in 'budget_investment_milestone_description_en', with: 'New description milestone'
 
       click_button 'Create milestone'
 
@@ -77,7 +77,7 @@ feature 'Admin budget investment milestones' do
 
       expect(page).to have_css("img[alt='#{milestone.image.title}']")
 
-      fill_in 'budget_investment_milestone_description', with: 'Changed description'
+      fill_in 'budget_investment_milestone_description_en', with: 'Changed description'
       fill_in 'budget_investment_milestone_publication_date', with: Date.current
       fill_in 'budget_investment_milestone_documents_attributes_0_title', with: 'New document title'
 

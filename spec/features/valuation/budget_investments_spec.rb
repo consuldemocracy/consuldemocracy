@@ -26,8 +26,8 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Index shows budget investments assigned to current valuator' do
-    investment1 = create(:budget_investment, budget: budget)
-    investment2 = create(:budget_investment, budget: budget)
+    investment1 = create(:budget_investment, :visible_to_valuators, budget: budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, budget: budget)
 
     investment1.valuators << valuator
 
@@ -38,8 +38,8 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Index shows no budget investment to admins no valuators' do
-    investment1 = create(:budget_investment, budget: budget)
-    investment2 = create(:budget_investment, budget: budget)
+    investment1 = create(:budget_investment, :visible_to_valuators, budget: budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, budget: budget)
 
     investment1.valuators << valuator
 
@@ -52,9 +52,9 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Index orders budget investments by votes' do
-    investment10  = create(:budget_investment, budget: budget, cached_votes_up: 10)
-    investment100 = create(:budget_investment, budget: budget, cached_votes_up: 100)
-    investment1   = create(:budget_investment, budget: budget, cached_votes_up: 1)
+    investment10  = create(:budget_investment, :visible_to_valuators, budget: budget, cached_votes_up: 10)
+    investment100 = create(:budget_investment, :visible_to_valuators, budget: budget, cached_votes_up: 100)
+    investment1   = create(:budget_investment, :visible_to_valuators, budget: budget, cached_votes_up: 1)
 
     investment1.valuators << valuator
     investment10.valuators << valuator
@@ -66,39 +66,100 @@ feature 'Valuation budget investments' do
     expect(investment10.title).to appear_before(investment1.title)
   end
 
-  scenario "Index filtering by heading", :js do
-    group = create(:budget_group, budget: budget)
-    heading1 = create(:budget_heading, name: "District 9", group: group)
-    heading2 = create(:budget_heading, name: "Down to the river", group: group)
-    investment1 = create(:budget_investment, title: "Realocate visitors", heading: heading1,
-                                             group: group, budget: budget)
-    investment2 = create(:budget_investment, title: "Destroy the city", heading: heading2,
-                                             group: group, budget: budget)
-    investment1.valuators << valuator
-    investment2.valuators << valuator
+  scenario 'Index displays investments paginated' do
+    per_page = Kaminari.config.default_per_page
+    (per_page + 2).times do
+      investment = create(:budget_investment, :visible_to_valuators, budget: budget)
+      investment.valuators << valuator
+    end
 
     visit valuation_budget_budget_investments_path(budget)
 
-    expect(page).to have_link("Realocate visitors")
-    expect(page).to have_link("Destroy the city")
+    expect(page).to have_css('.budget_investment', count: per_page)
 
-    expect(page).to have_content "All headings (2)"
-    expect(page).to have_content "District 9 (1)"
-    expect(page).to have_content "Down to the river (1)"
+    within("ul.pagination") do
+      expect(page).to have_content("1")
+      expect(page).to have_content("2")
+      expect(page).not_to have_content("3")
+      click_link "Next", exact: false
+    end
 
-    click_link "District 9", exact: false
+    expect(page).to have_css('.budget_investment', count: 2)
+  end
 
-    expect(page).to have_link("Realocate visitors")
-    expect(page).not_to have_link("Destroy the city")
+  scenario "Index filtering by heading", :js do
+    group = create(:budget_group, budget: budget)
+    valuating_heading = create(:budget_heading, name: "Only Valuating", group: group)
+    valuating_finished_heading = create(:budget_heading, name: "Valuating&Finished", group: group)
+    finished_heading = create(:budget_heading, name: "Only Finished", group: group)
+    create(:budget_investment, :visible_to_valuators, title: "Valuating Investment ONE",
+                               heading: valuating_heading,
+                               group: group,
+                               budget: budget,
+                               valuators: [valuator])
+    create(:budget_investment, :visible_to_valuators, title: "Valuating Investment TWO",
+                               heading: valuating_finished_heading,
+                               group: group,
+                               budget: budget,
+                               valuators: [valuator])
+    create(:budget_investment, :finished, :visible_to_valuators, title: "Finished ONE",
+                                          heading: valuating_finished_heading,
+                                          group: group,
+                                          budget: budget,
+                                          valuators: [valuator])
+    create(:budget_investment, :finished, :visible_to_valuators, title: "Finished TWO",
+                                          heading: finished_heading,
+                                          group: group,
+                                          budget: budget,
+                                          valuators: [valuator])
 
-    click_link "Down to the river", exact: false
+    visit valuation_budget_budget_investments_path(budget)
 
-    expect(page).to have_link("Destroy the city")
-    expect(page).not_to have_link("Realocate visitors")
+    expect(page).to have_link("Valuating Investment ONE")
+    expect(page).to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
 
-    click_link "All headings", exact: false
-    expect(page).to have_link("Realocate visitors")
-    expect(page).to have_link("Destroy the city")
+    expect(page).to have_link('All headings (4)')
+    expect(page).to have_link('Only Valuating (1)')
+    expect(page).to have_link('Valuating&Finished (2)')
+    expect(page).to have_link('Only Finished (1)')
+
+    click_link "Only Valuating (1)", exact: false
+    expect(page).to have_link("Valuating Investment ONE")
+    expect(page).not_to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
+
+    click_link 'Valuation finished'
+    expect(page).not_to have_link("Valuating Investment ONE")
+    expect(page).not_to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
+
+    click_link "Valuating&Finished (2)", exact: false
+    expect(page).not_to have_link("Valuating Investment ONE")
+    expect(page).to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
+
+    click_link 'Valuation finished'
+    expect(page).not_to have_link("Valuating Investment ONE")
+    expect(page).not_to have_link("Valuating Investment TWO")
+    expect(page).to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
+
+    click_link "Only Finished (1)", exact: false
+    expect(page).not_to have_link("Valuating Investment ONE")
+    expect(page).not_to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).not_to have_link("Finished TWO")
+
+    click_link 'Valuation finished'
+    expect(page).not_to have_link("Valuating Investment ONE")
+    expect(page).not_to have_link("Valuating Investment TWO")
+    expect(page).not_to have_link("Finished ONE")
+    expect(page).to have_link("Finished TWO")
   end
 
   scenario "Current filter is properly highlighted" do
@@ -122,9 +183,10 @@ feature 'Valuation budget investments' do
   end
 
   scenario "Index filtering by valuation status" do
-    valuating = create(:budget_investment, budget: budget, title: "Ongoing valuation")
-    valuated  = create(:budget_investment, budget: budget, title: "Old idea",
-                                           valuation_finished: true)
+    valuating = create(:budget_investment, :visible_to_valuators,
+                                            budget: budget, title: "Ongoing valuation")
+    valuated  = create(:budget_investment, :visible_to_valuators,
+                                            budget: budget, title: "Old idea", valuation_finished: true)
     valuating.valuators << valuator
     valuated.valuators << valuator
 
@@ -154,7 +216,7 @@ feature 'Valuation budget investments' do
     let(:investment) do
       create(:budget_investment, budget: budget, price: 1234, feasibility: 'unfeasible',
                                  unfeasibility_explanation: 'It is impossible',
-                                 administrator: administrator)
+                                 administrator: administrator,)
     end
 
     background do
@@ -162,7 +224,9 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'visible for assigned valuators' do
+      investment.update(visible_to_valuators: true)
       visit valuation_budget_budget_investments_path(budget)
+
 
       click_link investment.title
 
@@ -216,8 +280,10 @@ feature 'Valuation budget investments' do
   feature 'Valuate' do
     let(:admin) { create(:administrator) }
     let(:investment) do
-      create(:budget_investment, budget: budget, price: nil,
-                                                        administrator: admin)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      create(:budget_investment, heading: heading, group: group, budget: budget, price: nil,
+                                 administrator: admin)
     end
 
     background do
@@ -225,6 +291,8 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Dossier empty by default' do
+      investment.update(visible_to_valuators: true)
+
       visit valuation_budget_budget_investments_path(budget)
       click_link investment.title
 
@@ -236,6 +304,7 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Edit dossier' do
+      investment.update(visible_to_valuators: true)
       visit valuation_budget_budget_investments_path(budget)
       within("#budget_investment_#{investment.id}") do
         click_link "Edit dossier"
@@ -337,6 +406,8 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Finish valuation' do
+      investment.update(visible_to_valuators: true)
+
       visit valuation_budget_budget_investment_path(budget, investment)
       click_link 'Edit dossier'
 
@@ -394,7 +465,10 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Validates price formats' do
+      investment.update(visible_to_valuators: true)
+
       visit valuation_budget_budget_investments_path(budget)
+
       within("#budget_investment_#{investment.id}") do
         click_link "Edit dossier"
       end
@@ -405,6 +479,36 @@ feature 'Valuation budget investments' do
 
       expect(page).to have_content('2 errors')
       expect(page).to have_content('Only integer numbers', count: 2)
+    end
+
+    scenario 'not visible to valuators when budget is not valuating' do
+      budget.update(phase: 'publishing_prices')
+
+      investment = create(:budget_investment, budget: budget)
+      investment.valuators << [valuator]
+
+      login_as(valuator.user)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
+
+      expect(page).to have_content('Investments can only be valuated when Budget is in valuating phase')
+    end
+
+    scenario 'visible to admins regardless of not being in valuating phase' do
+      budget.update(phase: 'publishing_prices')
+
+      user = create(:user)
+      admin = create(:administrator, user: user)
+      valuator = create(:valuator, user: user)
+
+      investment = create(:budget_investment, budget: budget)
+      investment.valuators << [valuator]
+
+
+      login_as(admin.user)
+      visit valuation_budget_budget_investment_path(budget, investment)
+      click_link 'Edit dossier'
+
+      expect(page).to have_content investment.title
     end
   end
 end

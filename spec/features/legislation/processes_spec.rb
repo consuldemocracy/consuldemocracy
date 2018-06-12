@@ -149,15 +149,30 @@ feature 'Legislation' do
 
         visit legislation_process_path(process)
 
-        expect(page).to have_content("This phase is not open yet")
+        expect(page).to     have_content("This phase is not open yet")
+        expect(page).to_not have_content("Participate in the debate")
       end
 
-      scenario 'open' do
+      scenario 'open without questions' do
         process = create(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
 
         visit legislation_process_path(process)
 
-        expect(page).to have_content("Participate in the debate")
+        expect(page).to_not have_content("Participate in the debate")
+        expect(page).to_not have_content("This phase is not open yet")
+      end
+
+      scenario 'open with questions' do
+        process = create(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
+        create(:legislation_question, process: process, title: "Question 1")
+        create(:legislation_question, process: process, title: "Question 2")
+
+        visit legislation_process_path(process)
+
+        expect(page).to     have_content("Question 1")
+        expect(page).to     have_content("Question 2")
+        expect(page).to     have_content("Participate in the debate")
+        expect(page).to_not have_content("This phase is not open yet")
       end
 
       include_examples "not published permissions", :debate_legislation_process_path

@@ -10,24 +10,10 @@
   <%= link_to t("admin.budgets.form.add_group"), "#", class: "button float-right js-toggle-link", data: { "toggle-selector" => "#new-group-form" } %>
 <% end %>
 
-<%= form_for [:admin, @budget, Budget::Group.new], html: {id: "new-group-form", style: "display:none"}, remote: true do |f| %>
-
-  <%= f.label :name, t("admin.budgets.form.group") %>
-
-  <div class="input-group">
-    <%= f.text_field :name,
-                      label: false,
-                      maxlength: 50,
-                      placeholder: t("admin.budgets.form.group"),
-                      class: "input-group-field" %>
-    <div class="input-group-button">
-      <%= f.submit t("admin.budgets.form.create_group"), class: "button success" %>
-    </div>
-  </div>
-<% end %>
+<%= render 'admin/budgets/group_form', budget: @budget, group: Budget::Group.new, id: "new-group-form", button_title: t("admin.budgets.form.create_group"), css_class: '' %>
 
 <% groups.each do |group| %>
   <div id="<%= dom_id(group) %>">
-    <%= render "admin/budgets/group", group: group, headings: group.headings %>
+    <%= render "admin/budgets/group", group: group, headings: group.headings.order(:id) %>
   </div>
 <% end %>

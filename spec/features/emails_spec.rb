@@ -6,7 +6,7 @@ feature 'Emails' do
     reset_mailer
   end
 
-  xscenario "Signup Email" do
+  scenario "Signup Email" do
     sign_up
 
     email = open_last_email
@@ -15,7 +15,7 @@ feature 'Emails' do
     expect(email).to have_body_text(user_confirmation_path)
   end
 
-  xscenario "Reset password" do
+  scenario "Reset password" do
     reset_password
 
     email = open_last_email
@@ -25,7 +25,7 @@ feature 'Emails' do
   end
 
   context 'Proposal comments' do
-    xscenario "Send email on proposal comment" do
+    scenario "Send email on proposal comment" do
       user = create(:user, email_on_comment: true)
       proposal = create(:proposal, author: user)
       comment_on(proposal)
@@ -36,7 +36,7 @@ feature 'Emails' do
       expect(email).to have_body_text(proposal_path(proposal))
     end
 
-    xscenario 'Do not send email about own proposal comments' do
+    scenario 'Do not send email about own proposal comments' do
       user = create(:user, email_on_comment: true)
       proposal = create(:proposal, author: user)
       comment_on(proposal, user)
@@ -44,7 +44,7 @@ feature 'Emails' do
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
 
-    xscenario 'Do not send email about proposal comment unless set in preferences' do
+    scenario 'Do not send email about proposal comment unless set in preferences' do
       user = create(:user, email_on_comment: false)
       proposal = create(:proposal, author: user)
       comment_on(proposal)
@@ -55,7 +55,7 @@ feature 'Emails' do
 
   context 'Debate comments' do
     # TODO i18n : broken because of test locale change
-    xscenario "Send email on debate comment" do
+    scenario "Send email on debate comment" do
       user = create(:user, email_on_comment: true)
       debate = create(:debate, author: user)
       comment_on(debate)
@@ -68,7 +68,7 @@ feature 'Emails' do
       expect(email).to have_body_text(account_path)
     end
 
-    xscenario 'Do not send email about own debate comments' do
+    scenario 'Do not send email about own debate comments' do
       user = create(:user, email_on_comment: true)
       debate = create(:debate, author: user)
       comment_on(debate, user)
@@ -76,7 +76,7 @@ feature 'Emails' do
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
 
-    xscenario 'Do not send email about debate comment unless set in preferences' do
+    scenario 'Do not send email about debate comment unless set in preferences' do
       user = create(:user, email_on_comment: false)
       debate = create(:debate, author: user)
       comment_on(debate)
@@ -87,7 +87,7 @@ feature 'Emails' do
 
   context 'Budget investments comments' do
     # TODO i18n : broken because of test locale change
-    xscenario 'Send email on budget investment comment' do
+    scenario 'Send email on budget investment comment' do
       user = create(:user, email_on_comment: true)
       investment = create(:budget_investment, author: user, budget: create(:budget))
       comment_on(investment)
@@ -100,7 +100,7 @@ feature 'Emails' do
       expect(email).to have_body_text(account_path)
     end
 
-    xscenario 'Do not send email about own budget investments comments' do
+    scenario 'Do not send email about own budget investments comments' do
       user = create(:user, email_on_comment: true)
       investment = create(:budget_investment, author: user, budget: create(:budget))
       comment_on(investment, user)
@@ -108,7 +108,7 @@ feature 'Emails' do
       expect { open_last_email }.to raise_error 'No email has been sent!'
     end
 
-    xscenario 'Do not send email about budget investment comment unless set in preferences' do
+    scenario 'Do not send email about budget investment comment unless set in preferences' do
       user = create(:user, email_on_comment: false)
       investment = create(:budget_investment, author: user, budget: create(:budget))
       comment_on(investment)
@@ -123,7 +123,7 @@ feature 'Emails' do
     end
 
     # TODO i18n : broken because of test locale change
-    xscenario 'Send email on topic comment' do
+    scenario 'Send email on topic comment' do
       user = create(:user, email_on_comment: true)
       topic = create(:topic, author: user, community: @proposal.community)
       comment_on(topic)
@@ -136,7 +136,7 @@ feature 'Emails' do
       expect(email).to have_body_text(account_path)
     end
 
-    xscenario 'Do not send email about own topic comments' do
+    scenario 'Do not send email about own topic comments' do
       user = create(:user, email_on_comment: true)
       topic = create(:topic, author: user, community: @proposal.community)
       comment_on(topic, user)
@@ -144,7 +144,7 @@ feature 'Emails' do
       expect { open_last_email }.to raise_error 'No email has been sent!'
     end
 
-    xscenario 'Do not send email about topic comment unless set in preferences' do
+    scenario 'Do not send email about topic comment unless set in preferences' do
       user = create(:user, email_on_comment: false)
       topic = create(:topic, author: user, community: @proposal.community)
       comment_on(topic)
@@ -153,8 +153,7 @@ feature 'Emails' do
     end
   end
 
-  # TODO i18n : broken because of test locale change
-  xcontext 'Poll comments' do
+  context 'Poll comments' do
     scenario 'Send email on poll comment' do
       user = create(:user, email_on_comment: true)
       poll = create(:poll, author: user)
@@ -187,7 +186,7 @@ feature 'Emails' do
 
   context 'Comment replies' do
     # TODO i18n : broken because of test locale change
-    xscenario "Send email on comment reply", :js do
+    scenario "Send email on comment reply", :js do
       user = create(:user, email_on_comment_reply: true)
       reply_to(user)
 
@@ -282,7 +281,7 @@ feature 'Emails' do
 
   context "Proposal notification digest" do
 
-    xscenario "notifications for proposals that I have supported" do
+    scenario "notifications for proposals that I have supported" do
       user = create(:user, email_digest: true)
 
       proposal1 = create(:proposal)
@@ -391,7 +390,8 @@ feature 'Emails' do
     end
 
     scenario "Unfeasible investment" do
-      investment = create(:budget_investment, author: author, budget: budget)
+      budget.update(phase: 'valuating')
+      investment = create(:budget_investment, author: author, budget: budget, heading: heading)
 
       valuator = create(:valuator)
       investment.valuators << valuator
@@ -465,7 +465,7 @@ feature 'Emails' do
 
   context "Polls" do
     # TODO i18n : broken because of test locale change
-    xscenario "Send email on poll comment reply", :js do
+    scenario "Send email on poll comment reply", :js do
       user1 = create(:user, email_on_comment_reply: true)
       user2 = create(:user)
       poll = create(:poll, author: create(:user))

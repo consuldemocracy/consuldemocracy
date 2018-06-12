@@ -5,7 +5,8 @@ class UserSegments
                 investment_authors
                 feasible_and_undecided_investment_authors
                 selected_investment_authors
-                winner_investment_authors)
+                winner_investment_authors
+                not_supported_on_current_budget)
 
   def self.all_users
     User.active
@@ -35,6 +36,17 @@ class UserSegments
 
   def self.winner_investment_authors
     author_ids(current_budget_investments.winners.pluck(:author_id).uniq)
+  end
+
+  def self.not_supported_on_current_budget
+    author_ids(
+      User.where(
+                  'id NOT IN (SELECT DISTINCT(voter_id) FROM votes'\
+                  ' WHERE votable_type = ? AND votes.votable_id IN (?))',
+                  'Budget::Investment',
+                  current_budget_investments.pluck(:id)
+                )
+    )
   end
 
   def self.user_segment_emails(users_segment)

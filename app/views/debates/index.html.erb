@@ -46,6 +46,12 @@
         <%= render "featured_debates" %>
       <% end %>
 
+      <div class="row">
+        <div class="small-12 column">
+          <%= render "view_mode" %>
+        </div>
+      </div>
+
       <%= render "shared/advanced_search", search_path: debates_path(page: 1) %>
 
       <%= render 'shared/order_links', i18n_namespace: "debates.index" %>
@@ -55,7 +61,13 @@
       </div>
 
       <% if @debates.any? || current_user.blank? %>
-        <%= render @debates %>
+        <% if debates_default_view? %>
+          <%= render @debates %>
+        <% else %>
+          <% @debates.each do |debate| %>
+            <%= render partial: 'debates/debate_minimal', locals: { debate: debate } %>
+          <% end %>
+        <% end %>
       <% else %>
         <%= empty_recommended_debates_message_text(current_user) %>
       <% end %>

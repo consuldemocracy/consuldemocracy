@@ -98,7 +98,7 @@ feature 'Votes' do
         expect(page).to have_content "1 vote"
       end
 
-      scenario 'Trying to vote multiple times', :js do
+      xscenario 'Trying to vote multiple times', :js do
         visit debate_path(create(:debate))
 
         find('.in-favor a').click

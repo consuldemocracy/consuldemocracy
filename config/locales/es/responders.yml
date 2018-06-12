@@ -16,6 +16,7 @@ es:
         budget_investment: "Proyecto de gasto creado correctamente."
         signature_sheet: "Hoja de firmas creada correctamente"
         topic: "Tema creado correctamente."
+        valuator_group: "Grupo de evaluadores creado correctamente"
       save_changes:
         notice: Cambios guardados
       update:
@@ -27,9 +28,11 @@ es:
         spending_proposal: "Propuesta de inversión actualizada correctamente."
         budget_investment: "Proyecto de gasto actualizado correctamente"
         topic: "Tema actualizado correctamente."
+        valuator_group: "Grupo de evaluadores actualizado correctamente"
       destroy:
         spending_proposal: "Propuesta de inversión eliminada."
         budget_investment: "Proyecto de gasto eliminado."
         error: "No se pudo borrar"
         topic: "Tema eliminado."
         poll_question_answer_video: "Vídeo de respuesta eliminado."
+        valuator_group: "Grupo de evaluadores eliminado correctamente"

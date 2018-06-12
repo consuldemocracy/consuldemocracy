@@ -215,14 +215,14 @@ feature 'Budget Investments' do
       expect(page).to have_content(budget_investment.title)
 
       within("#budget-investments") do
-        find('.js-in-favor a').click
+        accept_confirm { find('.js-in-favor a').click }
 
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this investment project. Share it!"
       end
     end
 
-    # This tests passes ok locally but fails on the last two lines in Travis
+    # This test passes ok locally but fails on the last two lines in Travis
     xscenario 'Supporting budget investments on behalf of someone in show view', :js do
       budget_investment = create(:budget_investment, budget: @budget)
 

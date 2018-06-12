@@ -218,7 +218,7 @@
   left: 0;
   line-height: $line-height;
   min-height: 100%;
-  padding: $line-height $line-height / 2;
+  padding: $line-height / 2;
   position: absolute;
   text-align: center;
   top: 0;
@@ -634,6 +634,25 @@
   }
 }
 
+.additional-content {
+
+  .tabs {
+    background: none;
+    border: 0;
+    margin-bottom: 0;
+
+    a {
+      background: none;
+    }
+  }
+
+  .filter-subnav {
+    background: $highlight;
+    margin-bottom: $line-height;
+    padding-top: $line-height / 4;
+  }
+}
+
 // 04. List participation
 // ----------------------
 
@@ -986,6 +1005,112 @@
   }
 }
 
+.view-mode {
+
+  ul {
+    margin-bottom: 0;
+
+    li {
+      padding: $line-height / 4 0;
+      padding-left: $line-height;
+    }
+  }
+
+  .dropdown-pane {
+    width: auto;
+  }
+
+  .button {
+    background: #eee;
+    height: rem-calc(36);
+    margin-bottom: 0;
+    padding: $line-height / 4;
+    width: rem-calc(36);
+
+    &::before {
+      color: $text;
+      font-family: 'icons';
+    }
+  }
+
+  &.default {
+
+    .button {
+
+      &::before {
+        content: '\51';
+      }
+    }
+  }
+
+  &.minimal {
+
+    .button {
+
+      &::before {
+        content: '\22';
+      }
+    }
+  }
+
+  .view-list {
+    position: relative;
+
+    &::before {
+      content: '\22';
+      font-family: 'icons';
+      left: 0;
+      position: absolute;
+      top: 6px;
+    }
+  }
+
+  .view-card {
+    position: relative;
+
+    &::before {
+      content: '\51';
+      font-family: 'icons';
+      left: 0;
+      position: absolute;
+      top: 6px;
+    }
+  }
+
+  .active {
+    color: $brand;
+
+    &::after {
+      content: '\6c';
+      font-family: 'icons';
+      font-size: $tiny-font-size;
+    }
+  }
+}
+
+.debate,
+.proposal,
+.budget-investment {
+
+  &.minimal {
+
+    .panel,
+    .debate-content,
+    .proposal-content,
+    .budget-investment-content {
+      min-height: 0;
+    }
+
+    .panel h3 {
+      margin: 0 0 $line-height / 2;
+
+      @include breakpoint(medium) {
+        margin: 0;
+      }
+    }
+  }
+}
+
 // 05. Featured
 // ------------
 
@@ -1120,9 +1245,17 @@
       text-decoration: underline;
     }
 
+    .callout {
+
+      &.primary a {
+        color: $link;
+      }
+    }
+
     .button {
       background: #fff;
       color: $budget;
+      text-decoration: none;
     }
 
     .info {
@@ -1432,12 +1565,9 @@
     background-color: $budget;
     transition: height 0.3s;
 
-    h1 {
-      transition: font-size 0.3s;
-    }
-
     h2 {
-      margin-bottom: 0;
+      margin-bottom: $line-height / 2;
+      transition: font-size 0.3s;
     }
 
     &.is-fixed {
@@ -1448,7 +1578,7 @@
       top: 0;
       width: 100%;
 
-      h1 {
+      h2 {
         font-size: rem-calc(24);
         transition: font-size 0.3s;
       }
@@ -1509,6 +1639,23 @@
       &::before {
         background-color: $budget;
       }
+    }
+  }
+}
+
+.budgets-stats {
+
+  .header {
+    background: $highlight;
+  }
+
+  .big-number-stat {
+    font-size: rem-calc(60);
+    font-weight: bold;
+    line-height: rem-calc(60);
+
+    &.budget {
+      color: $budget;
     }
   }
 }

@@ -22,7 +22,7 @@ val:
       title: Nova resposta al teu comentari
     unfeasible_spending_proposal:
       hi: "Estimat usuari,"
-      new_html: 'Per tot això, t''invitem a que elabores una <strong>nova proposta</strong> que s''ajuste a les condicions d''aquest procés. Això ho pots fer en aquest enllaç: %{url}.'
+      new_html: "Per tot això, t'invitem a que elabores una <strong>nova proposta</strong> que s'ajuste a les condicions d'aquest procés. Això ho pots fer en aquest enllaç: %{url}."
       new_href: "nova proposta d'inversió"
       reconsider_html: "Si consideres que la teua proposta rebutjada cumpleix els requisits per a mantindrela com a proposta d'inversió, podràs comunicar-ho, en el plaç de 48 hores, al correu example@consul.es, indicant necessariament per a la seua tramitació el códi %{code} com asunt del correu, corresponent a la teua proposta."
       sincerely: "Atentament"
@@ -32,7 +32,7 @@ val:
       unfeasible_html: "Desde l'Ajuntament volem agraïr la teua participació en els <strong>Pressupostos participatius</strong>. Lamentem informarte que la teua proposta <strong>'%{title}'</strong> quedarà excluïda d'aquest procés participatiu per el següent motiu:"
     budget_investment_unfeasible:
       hi: "Estimat usuari,"
-      new_html: 'Per tot això, t''invitema que elabores un <strong>nou projecte d''inversió</strong> que s''ajuste a les condicions d''aquest procés. Això ho pots fer en aquest enllaç: %{url}.'
+      new_html: "Per tot això, t'invitema que elabores un <strong>nou projecte d'inversió</strong> que s'ajuste a les condicions d'aquest procés. Això ho pots fer en aquest enllaç: %{url}."
       new_href: "nova proposta d'inversió"
       reconsider_html: "Si consideres que la teua proposta rebutjada cumpleix els requisits per a mantindrela com a proposta d'inversió, podràs comunicar-ho, en el plaç de 48 hores, al correu example@consul.es, indicant necessariament per a la seua tramitació el códi %{code} com asunt del correu, corresponent a la teua proposta."
       sincerely: "Atentament"

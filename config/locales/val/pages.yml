@@ -3,80 +3,14 @@ val:
     census_terms: Per a verificar el compte hi ha que tindre 16 anys o més i estar empadronat aportant les dades indicades anteriorment, les quals seran contrastades. Acceptant el procés de verificació accepta donar el seu consentiment per a contrastar dita informació, així com els mitjans de contacte que figuren en els dits fitxers. Les dades aportades seran incorporades i tractades en un fitxer indicat anteriorment en les condicions d'us del portal.
     conditions: Condicions d'us
     general_terms: Condicions d'us
-    more_info:
-      title: "Descubreix %{org_name}"
-      subtitle: "Apren tot el que pots fer en aquesta web."
-      guide: 'Esta guía explica cadascuna de les seccions de %{org_name}. Pots ampliar l''informació en els enllaços de "informació detallada".'
-      menu:
-        debates: "Debats"
-        proposals: "Propostes"
-        budgets: "Pressupostos participatius"
-        other: "Altra informació d'interés"
-      debates:
-        title: "Debats"
-        description: "Crea un fil en el que debatir sobre quansevol tema que vullgues compartir amb la resta de gent de la teua ciutat."
-        feature_1: "Per a crear un debat has de %{link}"
-        feature_1_link: "registrarte en %{org_name}"
-        feature_2_html: "Els debats poden ser valorats utilitzant els botons de <strong>Estic d'acord</strong> o <strong>No estic d'acord</strong> que trobaràs en cadascun d'ells."
-        image_alt: "Botons per a valorar els debats"
-        figcaption: 'Botons "Estic d''acord" i "No estic d''acord" per a valorar els debats.'
-      proposals:
-        title: "Propostes"
-        description: "Proposa el que vols que l'Ajuntament duga a terme i recolza propostes d'altres persones."
-        feature_1: "Per a crear una proposta has de %{link}, ademés per a recolzarles has de verificar el teu compte."
-        feature_1_link: "registrarte en %{org_name}"
-        feature_2_html: "Les propostes que aconseguisquen <strong>el recolzament del 1% de la gent</strong> (major de 16 anys empadronada) pasen la votació."
-        feature_3_html: "Si hi ha més gent a favor que en contra en la votació, <strong>l'Ajuntament assumeix la proposta i es du a terme</strong>."
-        image_alt: "Botó per a avalar una proposta"
-        figcaption_html: 'Botó per a "Recolzar" una proposta. <br>Quant arribe el número de recolzaments pasarà a votació.'
-      budgets:
-        title: "Pressupostos Participatius"
-        description: "Els primers sis mesos de cada any pots decidir com gastar part del pressupost."
-        feature_1: "Per a crear un projecte de despesa has de %{link} i verificar el teu compte."
-        feature_1_link: "registrarte en %{org_name}"
-        feature_2_html: "En primer lloc comença la <strong>fase d'acceptació</strong> de projectes."
-        feature_3_html: "Després hi ha una <strong>fase d'avals</strong> per a prioritzar els més interesants, les més avalades son avaluades per l'Ajuntament per vore si son viables i quant costen."
-        feature_4_html: "Al final hi ha una <strong>fase de votació</strong> on es decideix en quines es gasta eixa part del pressupost."
-        image_alt: "Diferents fases d'un pressupost participatiu"
-        figcaption_html: 'Fase "d''Avals" i fase de "Votació" dels pressupostos participatius.'
-      polls:
-        title: "Votacions"
-        description: "Les propostes ciutadanes que asolisquen l'1% d'avals pasaràn a votació."
-        feature_1: "Per participar en la pròxima votació has de %{link} verificar el teu compte."
-        feature_1_link: "registrarte en %{org_name}"
-        feature_2: "Poden votar totes les persones empadronades en la ciutat majors de 16 anys."
-        feature_3: "Els resultats de totes les votacions seran vinculants per al govern."
-      faq:
-        title: "Problemes tècnics?"
-        description: "Llig les preguntes frequents i resol els teus dubtes."
-        button: "Vore les preguntes freqüents"
-        page:
-          title: "Preguntes Freqüents"
-          description: "Utilitza esta pàgina per a resoldre les Preguntes freqüents als usuaris del lloc."
-          faq_1_title: "Pregunta 1"
-          faq_1_description: "Aquest es un exemple per a la descripció de la pregunta u."
-      other:
-        title: "Altra informació d'interés"
-        how_to_use: "Utilitza %{org_name} en el teu municipi"
-      how_to_use:
-        text: |-
-          Utilíza-ho en el teu municipi lliurement o ajudals a millorar-lo, es software lliure.
-          
-          Aquest Portal de Govern Obert usa la [aplicación CONSUL] (https://github.com/consul/consul 'github consul') que és software lliure, amb [llicencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), açò significa en paraules senzilles, que quansevol pot lliurement gastar el codi, copiarlo, vorel en detall, modificar-lo, i redistribuirlo al mon amb les modificacions que vullga (mantenint el que altres puguen a la vegada fer el mateix). Perque creiem que la cultura es millor i més rica quant es libera.
-          
-          Si eres programador, pots vore el codi i ajudar-nos a millorar-lo en [aplicació CONSUL](https://github.com/consul/consul 'github consul').
-      titles:
-        how_to_use: Utilítzal en el teu municipi
     privacy: Política de privacitat
     titles:
       accessibility: Accessibilitat
       conditions: Condicions d'us
-      more_info: "Més informació sobre %{org_name}"
       privacy: Política de privacitat
     verify:
       code: Codi que has rebut en la teua carta
       email: Correu electrònic
-      info: 'Per a verificar el teu compte introdueix les dades amb les que et vas registrar:'
       info_code: 'Ara introdueix el codi que has rebut en la teua carta:'
       password: Contrasenya
       submit: Verificar el meu compte

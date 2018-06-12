@@ -1,10 +1,25 @@
 es:
   management:
     account:
+      menu:
+        reset_password_email: Restablecer contraseña via email
+        reset_password_manually: Restablecer contraseña manualmente
       alert:
         unverified_user: Solo se pueden editar cuentas de usuarios verificados
       show:
         title: Cuenta de usuario
+      edit:
+        title: 'Editar cuenta de usuario: Restablecer contraseña'
+        back: Atrás
+        password:
+          password: Contraseña
+          send_email: Enviar email para restablecer la contraseña
+          reset_email_send: Email enviado correctamente.
+          reseted: Contraseña restablecida correctamente
+          random: Generar contraseña aleatoria
+          save: Guardar
+          print: Imprimir contraseña
+          print_help: Podrás imprimir la contraseña cuando se haya guardado.
     account_info:
       change_user: Cambiar usuario
       document_number_label: 'Número de documento:'

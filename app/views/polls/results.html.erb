@@ -17,8 +17,8 @@
 
     <div class="small-12 medium-9 column" data-equalizer-watch>
       <%- @poll.questions.each do |question| %>
+        <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
         <table id="question_<%= question.id %>_results_table">
-          <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
           <thead>
             <tr>
               <%- question.question_answers.each do |answer| %>

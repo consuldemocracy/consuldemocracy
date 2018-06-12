@@ -1,0 +1,29 @@
+de:
+  verification:
+    back: Zurück zu meinem Konto
+    email:
+      show:
+        alert:
+          failure: Der Bestätigungscode ist falsch
+    letter:
+      edit:
+        see_all: Vorschläge anzeigen
+      new:
+        go_to_index: Vorschläge anzeigen
+    residence:
+      new:
+        date_of_birth: Geburtsdatum
+        document_number_help_title: Hilfe
+        postal_code: Postleitzahl
+    sms:
+      edit:
+        submit_button: Senden
+      new:
+        submit_button: Senden
+    step_2: Bestätigungscode
+    user_permission_proposal: Neuen Vorschlag erstellen
+    verified_user:
+      show:
+        email_title: E-Mails
+        phone_title: Telefonnummern
+        title: Verfügbare Informationen

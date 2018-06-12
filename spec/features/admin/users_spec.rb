@@ -9,10 +9,16 @@ feature 'Admin users' do
   end
 
   scenario 'Index' do
-    expect(page).to have_content @user.name
+    expect(page).to have_link @user.name
     expect(page).to have_content @user.email
     expect(page).to have_content @admin.name
     expect(page).to have_content @admin.email
+  end
+
+  scenario 'The username links to their public profile' do
+    click_link @user.name
+
+    expect(current_path).to eq(user_path(@user))
   end
 
   scenario 'Search' do

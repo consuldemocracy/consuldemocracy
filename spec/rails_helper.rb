@@ -10,7 +10,7 @@ require 'rspec/rails'
 require 'spec_helper'
 require 'capybara/rails'
 require 'capybara/rspec'
-require 'capybara/poltergeist'
+require 'selenium/webdriver'
 
 I18n.default_locale = :en
 
@@ -26,17 +26,23 @@ RSpec.configure do |config|
   end
 end
 
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app,
-    timeout: 1.minute,
-    inspector: true, # allows remote debugging by executing page.driver.debug
-    phantomjs_logger: File.open(File::NULL, "w"), # don't print console.log calls in console
-    phantomjs_options: ['--load-images=no', '--disk-cache=false'],
-    extensions: [File.expand_path("../support/phantomjs_ext/disable_js_fx.js", __FILE__)] # disable js effects
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.register_driver :headless_chrome do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+    chromeOptions: { args: %w(headless window-size=1200,600) }
+  )
+
+  Capybara::Selenium::Driver.new(
+    app,
+    browser: :chrome,
+    desired_capabilities: capabilities
   )
 end
 
-Capybara.javascript_driver = :poltergeist
+Capybara.javascript_driver = :headless_chrome
 
 Capybara.exact = true
 

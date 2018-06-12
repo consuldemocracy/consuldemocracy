@@ -392,8 +392,6 @@ feature 'Users' do
     expect(page).not_to have_content "Your password is expired"
   end
 
-
-  # TODO i18n : broken because of test locale change
   scenario 'Admin with password expired trying to use same password' do
     user = create(:user, password_changed_at: Time.current - 1.year, password: '123456789')
     admin = create(:administrator, user: user)

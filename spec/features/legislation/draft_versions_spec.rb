@@ -55,7 +55,7 @@ feature 'Legislation Draft Versions' do
       expect(page).to have_content("Body of the second version")
     end
     # TODO i18n : broken because of test locale change
-    xit "switches to another version with js", :js do
+    it "switches to another version with js", :js do
       visit legislation_process_draft_version_path(@process, @draft_version_1)
       expect(page).to have_content("Body of the first version")
 
@@ -194,7 +194,7 @@ feature 'Legislation Draft Versions' do
       expect(page).to have_content "my annotation"
       expect(page).to have_content comment.body
 
-      all(".annotator-hl")[1].trigger('click')
+      all(".annotator-hl")[1].click
       expect(page).to have_content "my other annotation"
     end
 

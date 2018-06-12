@@ -1,50 +1,53 @@
-<div class="callout primary float-right">
-  <%= t "admin.budget_investments.show.info", budget_name: @budget.name, group_name: @investment.group.name, id: @investment.id %>
+<div class="extra-info float-right">
+  <%= t "admin.budget_investments.show.info",
+         budget_name: @budget.name,
+         group_name: @investment.group.name,
+         id: @investment.id %>
 </div>
 
 <br>
 <h1 class="inline-block"><%= @investment.title %></h1>
 
-<div class="row small-collapse spending-proposal-info">
-  <div class="row">
+<div class="admin-budget-investment-info">
+  <div class="row expanded">
     <div class="small-12 medium-4 column">
       <p title="<%= t("admin.budget_investments.show.group") %>: <%= @investment.group.name %>">
-        <strong><%= t("admin.budget_investments.show.heading") %>:</strong>
+        <strong><%= t("admin.budget_investments.show.heading") %></strong>:
         <%= @investment.heading.name %>
       </p>
     </div>
 
     <div class="small-12 medium-4 column">
       <p>
-        <strong><%= t("admin.budget_investments.show.by") %>:</strong>
+        <strong><%= t("admin.budget_investments.show.by") %></strong>:
         <%= link_to @investment.author.name, admin_hidden_user_path(@investment.author) %>
       </p>
     </div>
 
     <div class="small-12 medium-4 column">
       <p>
-        <strong><%= t("admin.budget_investments.show.sent") %>:</strong>
+        <strong><%= t("admin.budget_investments.show.sent") %></strong>:
         <%= l @investment.created_at, format: :datetime %>
       </p>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row expanded">
     <div class="small-12 medium-4 column">
       <p>
-        <strong><%= t("admin.budget_investments.show.compatibility.title") %>:</strong>
+        <strong><%= t("admin.budget_investments.show.compatibility.title") %></strong>:
         <%= t("admin.budget_investments.show.compatibility.#{@investment.incompatible?}") %>
       </p>
     </div>
     <div class="small-12 medium-4 column">
       <p>
-        <strong><%= t("admin.budget_investments.show.selection.title") %>:</strong>
+        <strong><%= t("admin.budget_investments.show.selection.title") %></strong>:
         <%= t("admin.budget_investments.show.selection.#{@investment.selected?}") %>
       </p>
     </div>
     <div class="small-12 medium-4 column">
       <p>
-        <strong><%= t("admin.budget_investments.show.winner.title") %>:</strong>
+        <strong><%= t("admin.budget_investments.show.winner.title") %></strong>:
         <%= t("admin.budget_investments.show.winner.#{@investment.winner?}") %>
       </p>
     </div>
@@ -52,10 +55,37 @@
 </div>
 
 <% if @investment.external_url.present? %>
-  <p><%= text_with_links @investment.external_url %>&nbsp;<span class="icon-external small"></span></p>
+  <p>
+    <%= text_with_links @investment.external_url %>&nbsp;<span class="icon-external small"></span>
+  </p>
 <% end %>
 
 <%= safe_html_with_links @investment.description %>
+
+<p>
+  <strong><%= t("admin.budget_investments.show.image") %></strong>:
+
+  <% if @investment.image.present? %>
+    <%= link_to t("admin.budget_investments.show.see_image"),
+                   namespaced_budget_investment_path(@investment, {anchor: 'image'}),
+                   target: "blank" %>
+  <% else %>
+    <%= t("admin.budget_investments.show.no_image") %>
+  <% end %>
+</p>
+
+<p>
+  <strong><%= t("admin.budget_investments.show.documents") %></strong>:
+
+  <% if @investment.documents.present? %>
+    <%= link_to t("admin.budget_investments.show.see_documents",
+                   count: @investment.documents.count),
+                   namespaced_budget_investment_path(@investment, {anchor: 'documents'}),
+                   target: "blank" %>
+  <% else %>
+    <%= t("admin.budget_investments.show.no_documents") %>
+  <% end %>
+</p>
 
 <p id="user-tags">
   <strong><%= t("admin.budget_investments.show.user_tags") %>: </strong>
