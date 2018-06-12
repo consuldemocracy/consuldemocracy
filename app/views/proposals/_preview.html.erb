@@ -124,35 +124,14 @@
       </div>
 
       <aside class="small-12 medium-3 column">
-        <% if author_of_proposal?(@proposal) || can?(:dashboard, @proposal) || can_destroy_image?(@proposal) %>
+        <% if can?(:dashboard, @proposal) %>
           <div class="sidebar-divider"></div>
           <h2><%= t("proposals.show.author") %></h2>
           <div class="show-actions-menu">
-            <% if can? :dashboard, @proposal %>
-              <%= link_to proposal_dashboard_index_path(@proposal), class: 'button hollow expanded' do %>
-                          <span class="icon-edit"></span>
-                          <%= t("proposals.show.dashboard_proposal_link") %>
-              <% end %>
+            <%= link_to proposal_dashboard_index_path(@proposal), class: 'button hollow expanded' do %>
+                        <span class="icon-edit"></span>
+                        <%= t("proposals.show.dashboard_proposal_link") %>
             <% end %>
-
-            <% if author_of_proposal?(@proposal) %>
-              <%= link_to new_proposal_notification_path(proposal_id: @proposal.id),
-                          class: 'button hollow expanded' do %>
-                          <span class="icon-no-notification"></span>
-                          <%= t("proposals.show.send_notification") %>
-              <% end %>
-            <% end %>
-
-            <% if can_destroy_image?(@proposal) %>
-              <%= link_to image_path(@proposal.image, from: request.url),
-                          method: :delete,
-                          class: 'button hollow alert expanded',
-                          data: { confirm: t('images.actions.destroy.confirm') } do %>
-                          <span class="icon-image"></span>
-                          <%= t("images.remove_image") %>
-              <% end %>
-            <% end %>
-
           </div>
         <% end %>
 

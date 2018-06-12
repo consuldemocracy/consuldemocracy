@@ -17,6 +17,19 @@
           <% if current_editable?(proposal) %>
             <%= link_to t('.edit_proposal_link'), edit_proposal_path(proposal), class: 'menu-entry', target: '_blank' %>
           <% end %>
+          
+          <%= link_to t('.send_notification'),
+                      new_proposal_notification_path(proposal_id: proposal.id),
+                      class: 'menu-entry',
+                      target: '_blank' %>
+
+          <% if can_destroy_image?(proposal) %>
+            <%= link_to t('images.remove_image'),
+                        image_path(proposal.image, from: request.url),
+                        method: :delete,
+                        class: 'menu-entry',
+                        data: { confirm: t('images.actions.destroy.confirm') } %>
+          <% end %>
 
           <%= link_to t('.publish'), publish_proposal_dashboard_index_path(proposal), method: :patch, class: 'menu-entry' if can?(:publish, proposal) %>
         <% end %>

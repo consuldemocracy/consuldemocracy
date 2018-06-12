@@ -478,7 +478,6 @@ es:
       retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
       retired: Propuesta retirada por el autor
       share: Compartir
-      send_notification: Enviar notificación
       no_notifications: "Esta propuesta no tiene notificaciones."
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentación adicional"
@@ -494,6 +493,7 @@ es:
       general: General
       publish: Publicar
       edit_proposal_link: Editar propuesta
+      send_notification: Enviar notificación
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"
