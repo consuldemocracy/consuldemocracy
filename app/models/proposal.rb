@@ -41,7 +41,7 @@ class Proposal < ActiveRecord::Base
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
   validates :question, length: { in: 10..Proposal.question_max_length }
-  validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
+  validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length } unless Setting["feature.user.skip_verification"] == "true"
   validates :retired_reason, inclusion: { in: RETIRE_OPTIONS, allow_nil: true }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
@@ -219,7 +219,11 @@ class Proposal < ActiveRecord::Base
 
     def set_responsible_name
       if author
-        self.responsible_name = author.username
+        if author.document_number.present?
+          self.responsible_name = author.document_number
+        elsif Setting["feature.user.skip_verification"] == "true"
+          self.responsible_name = author.username
+        end
       end
     end
 
