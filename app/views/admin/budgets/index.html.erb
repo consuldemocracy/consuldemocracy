@@ -42,6 +42,8 @@
         <td class="small">
           <% if budget.poll.present? %>
             <%= link_to t("admin.budgets.index.admin_ballots"), admin_poll_path(budget.poll) %>
+          <% else %>
+            <%= link_to_create_budget_poll(budget) %>
           <% end %>
         </td>
       </tr>
