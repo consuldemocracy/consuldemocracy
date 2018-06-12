@@ -12,6 +12,8 @@
   }
 }
 
+
+
 .locale-form label {
     color: #057200;
     font-size: 0.875rem;
@@ -30,3 +32,9 @@
     width: auto;
 }
 
+.footer {
+  background: $border;
+  border-top: 6px solid $brand;
+  margin-top: $line-height * 2;
+  // padding-top: $line-height;
+}
