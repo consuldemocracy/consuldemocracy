@@ -11,24 +11,15 @@
       <span class="label alert"><%= t('users.proposals.retired') %></span>
     </td>
 
-  <% elsif author?(proposal) %>
-
-    <td>
-      <%= link_to t("users.proposals.send_notification"),
-                  new_proposal_notification_path(proposal_id: proposal.id),
-                  class: 'button hollow expanded' %>
-    </td>
-
+  <% elsif can?(:dashboard, proposal) %>
     <td>
       <% if proposal.retired? %>
         <span class="label alert"><%= t('users.proposals.retired') %></span>
       <% else %>
-        <%= link_to t('users.proposals.retire'),
-                    retire_form_proposal_path(proposal),
-                    class: 'button hollow alert expanded' %>
+        <%= link_to t('proposals.show.dashboard_proposal_link'), 
+                    proposal_dashboard_index_path(proposal), class: 'button hollow expanded' %>
       <% end %>
     </td>
-
   <% else %>
 
     <td class="text-center" colspan="2">

@@ -494,6 +494,7 @@ en:
       publish: Publish
       edit_proposal_link: Edit
       send_notification: Send notification
+      retire: Retire
   polls:
     all: "All"
     no_dates: "no date assigned"
@@ -792,7 +793,6 @@ en:
       delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
       send_notification: "Send notification"
-      retire: "Retire"
       retired: "Retired proposal"
       see: "See proposal"
   votes:

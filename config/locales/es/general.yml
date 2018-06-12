@@ -494,6 +494,7 @@ es:
       publish: Publicar
       edit_proposal_link: Editar propuesta
       send_notification: Enviar notificación
+      retire: Retirar
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"
@@ -791,7 +792,6 @@ es:
       delete_alert: "¿Estás seguro de que deseas borrar tu proyecto de gasto? Esta acción no se puede deshacer"
     proposals:
       send_notification: "Enviar notificación"
-      retire: "Retirar"
       retired: "Propuesta retirada"
       see: "Ver propuesta"
   votes:

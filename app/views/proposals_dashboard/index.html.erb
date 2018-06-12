@@ -30,6 +30,13 @@
                         class: 'menu-entry',
                         data: { confirm: t('images.actions.destroy.confirm') } %>
           <% end %>
+        
+          <% unless proposal.retired? %>
+            <%= link_to t('.retire'),
+                        retire_form_proposal_path(proposal),
+                        class: 'menu-entry',
+                        target: '_blank' %>
+          <% end %>
 
           <%= link_to t('.publish'), publish_proposal_dashboard_index_path(proposal), method: :patch, class: 'menu-entry' if can?(:publish, proposal) %>
         <% end %>
