@@ -159,6 +159,10 @@ class Budget < ActiveRecord::Base
     end
   end
 
+  def has_winning_investments?
+    investments.winners.any?
+  end
+
   private
 
   def sanitize_descriptions

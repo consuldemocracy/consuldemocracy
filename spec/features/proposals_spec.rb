@@ -48,6 +48,35 @@ feature 'Proposals' do
       end
     end
 
+    scenario 'Index view mode' do
+      featured_proposals = create_featured_proposals
+      proposals = [create(:proposal), create(:proposal), create(:proposal)]
+
+      visit proposals_path
+
+      click_button 'View mode'
+
+      click_link 'List'
+
+      proposals.each do |proposal|
+        within('#proposals') do
+          expect(page).to     have_link proposal.title
+          expect(page).to_not have_content proposal.summary
+        end
+      end
+
+      click_button 'View mode'
+
+      click_link 'Cards'
+
+      proposals.each do |proposal|
+        within('#proposals') do
+          expect(page).to have_link proposal.title
+          expect(page).to have_content proposal.summary
+        end
+      end
+    end
+
     scenario 'Pagination' do
       per_page = Kaminari.config.default_per_page
       (per_page + 5).times { create(:proposal) }
@@ -1234,16 +1263,16 @@ feature 'Proposals' do
           click_link "Advanced search"
 
           select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: 7.days.ago.to_date
-          fill_in "advanced_search_date_max", with: 1.day.ago.to_date
+          fill_in "advanced_search_date_min", with: 7.days.ago.strftime('%d/%m/%Y')
+          fill_in "advanced_search_date_max", with: 1.day.ago.strftime('%d/%m/%Y')
           click_button "Filter"
 
           expect(page).to have_content("citizen proposals cannot be found")
 
           within "#js-advanced-search" do
             expect(page).to have_select('advanced_search[date_min]', selected: 'Customized')
-            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%Y-%m-%d')}']")
-            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%Y-%m-%d')}']")
+            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%d/%m/%Y')}']")
+            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%d/%m/%Y')}']")
           end
         end
 

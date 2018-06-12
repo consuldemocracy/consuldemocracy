@@ -3,6 +3,17 @@ include ActionView::Helpers::DateHelper
 
 feature 'Commenting Budget::Investments' do
 
+  before do
+    Setting['feature.budgets'] = true
+  end
+
+  after do
+    Setting['feature.budgets'] = nil
+  end
+
+  let(:user) { create :user }
+  let(:investment) { create :budget_investment }
+
   feature 'Voting comments' do
 
     background do
@@ -15,16 +26,17 @@ feature 'Commenting Budget::Investments' do
       login_as(@manuela)
     end
 
-    # TODO : apparemment, gros pb de dependance dans le fichier originel : impossible
-    # de passer le test si l'integralite du fichier n'est pas lancé en test
-    xscenario 'Trying to vote multiple times', :js do
+
+    scenario 'Trying to vote multiple times', :js do
       visit budget_investment_path(@budget, @investment)
-      save_and_open_page
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
-        find('.in_favor a').click
+        within('.in_favor') do
+          expect(page).to have_content "1"
+        end
 
+        find('.in_favor a').click
         within('.in_favor') do
           expect(page).to have_content "0"
         end
@@ -33,7 +45,7 @@ feature 'Commenting Budget::Investments' do
           expect(page).to have_content "0"
         end
 
-        expect(page).to have_content "0 votes"
+        expect(page).to have_content "No votes"
       end
     end
   end

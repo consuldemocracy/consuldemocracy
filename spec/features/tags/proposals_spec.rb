@@ -78,7 +78,6 @@ feature 'Tags' do
     check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
-    save_and_open_page
     expect(page).to have_content 'Proposal created successfully.'
 
     click_link 'Not now, go to my proposal'

@@ -135,44 +135,38 @@ feature 'Proposals' do
 
   context "Voting" do
 
-    scenario 'Voting proposals on behalf of someone in index view', :js do
-      proposal = create(:proposal)
+    let!(:proposal) { create(:proposal) }
 
+    scenario 'Voting proposals on behalf of someone in index view', :js do
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Support proposals"
 
       within(".proposals-list") do
-        find('.in-favor a').click
-
+        click_link('Support')
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this proposal. Share it!"
       end
+
       expect(page).to have_current_path(management_proposals_path)
     end
 
     scenario 'Voting proposals on behalf of someone in show view', :js do
-      proposal = create(:proposal)
-
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Support proposals"
 
-      within(".proposals-list") do
-        click_link proposal.title
-      end
+      within(".proposals-list") { click_link proposal.title }
+      within("#proposal_#{proposal.id}_votes") { click_link('Support') }
 
-      find('.in-favor a').click
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this proposal. Share it!"
       expect(page).to have_current_path(management_proposal_path(proposal))
     end
 
     scenario "Should not allow unverified users to vote proposals" do
-      proposal = create(:proposal)
-
       user = create(:user)
       login_managed_user(user)
 

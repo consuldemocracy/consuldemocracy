@@ -13,6 +13,7 @@ en:
       unmark_featured: Unmark featured
       edit: Edit
       configure: Configure
+      delete: Delete
     banners:
       index:
         title: Banners
@@ -106,6 +107,8 @@ en:
         no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
         add_group: Add new group
         create_group: Create group
+        edit_group: Edit group
+        submit: Save group
         heading: Heading name
         add_heading: Add heading
         amount: Amount
@@ -117,6 +120,7 @@ en:
         table_amount: Amount
         table_population: Population
         population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
+        max_votable_headings: "Maxium number of headings in which a user can vote"
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
@@ -167,22 +171,24 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
+        no_valuation_groups: No valuation groups assigned
         feasibility:
           feasible: "Feasible (%{price})"
           unfeasible: "Unfeasible"
           undecided: "Undecided"
         selected: "Selected"
         select: "Select"
-        download_current_selection: "Download current selection"
         table_id: "ID"
         table_title: "Title"
         table_supports: "Supports"
         table_admin: "Administrator"
         table_valuator: "Valuator"
+        table_valuation_group: "Valuation Group"
         table_geozone: "Scope of operation"
         table_feasibility: "Feasibility"
         table_valuation_finished: "Val. Fin."
         table_selection: "Selected"
+        table_evaluation: "Show to valuators"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Assigned administrator
@@ -214,6 +220,13 @@ en:
           title: Winner
           "true": "Yes"
           "false": "No"
+        image: "Image"
+        see_image: "See image"
+        no_image: "Without image"
+        documents: "Documents"
+        see_documents: "See documents (%{count})"
+        no_documents: "Without documents"
+        valuator_groups: "Valuator Groups"
       edit:
         classification: Classification
         compatibility: Compatibility
@@ -227,6 +240,7 @@ en:
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
+        user_groups: "Groups"
       search_unfeasible: Search unfeasible
     milestones:
       index:
@@ -240,9 +254,13 @@ en:
         image: "Image"
         show_image: "Show image"
         documents: "Documents"
+      form:
+        add_language: Add language
+        remove_language: Remove language
       new:
         creating: Create milestone
         date: Date
+        description: Description
       edit:
         title: Edit milestone
       create:
@@ -524,6 +542,7 @@ en:
       feasible_and_undecided_investment_authors: "Authors of some investment in the current budget that does not comply with: [valuation finished unfesasible]"
       selected_investment_authors: Authors of selected investments in the current budget
       winner_investment_authors: Authors of winner investments in the current budget
+      not_supported_on_current_budget: Users that haven't supported investments on current budget
       invalid_recipients_segment: "Recipients user segment is invalid"
     newsletters:
       create_success: Newsletter created successfully
@@ -571,8 +590,10 @@ en:
         description: Description
         no_description: No description
         no_valuators: There are no valuators.
+        valuator_groups: "Valuator Groups"
+        group: "Group"
+        no_group: "No group"
       valuator:
-        description_placeholder: 'Description (optional)'
         add: Add to valuators
         delete: Delete
       search:
@@ -586,6 +607,30 @@ en:
         in_evaluation_count: In evaluation
         total_count: Total
         cost: Cost
+      form:
+        edit_title: "Valuators: Edit valuator"
+        update: "Update valuator"
+        updated: "Valuator updated successfully"
+      show:
+        description: "Description"
+        email: "Email"
+        group: "Group"
+        no_description: "Without description"
+        no_group: "Without group"
+    valuator_groups:
+      index:
+        title: "Valuator groups"
+        new: "Create valuators group"
+        name: "Name"
+        members: "Members"
+        no_groups: "There are no valuator groups"
+      show:
+        title: "Valuators group: %{group}"
+        no_valuators: "There are no valuators assigned to this group"
+      form:
+        name: "Group name"
+        new: "Create valuators group"
+        edit: "Save valuators group"
     poll_officers:
       index:
         title: Poll officers
@@ -872,8 +917,8 @@ en:
       flash:
         updated: Value updated
       index:
-        banners: Estilos de banners
-        banner_imgs: Imágenes para los banners
+        banners: Banner styles
+        banner_imgs: Banner images
         title: Configuration settings
         update_setting: Update
         feature_flags: Features

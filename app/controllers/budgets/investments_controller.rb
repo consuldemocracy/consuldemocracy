@@ -4,10 +4,11 @@ module Budgets
     include CommentableActions
     include FlagActions
 
-    before_action :authenticate_user!, except: [:index, :show]
+    before_action :authenticate_user!, except: [:index, :show, :json_data]
 
-    load_and_authorize_resource :budget
-    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
+    load_and_authorize_resource :budget, except: :json_data
+    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
+                                except: :json_data
 
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
@@ -15,6 +16,9 @@ module Budgets
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
+    before_action :set_view, only: :index
+
+    skip_authorization_check only: :json_data
 
     feature_flag :budgets
 
@@ -79,6 +83,19 @@ module Budgets
       super
     end
 
+    def json_data
+      investment =  Budget::Investment.find(params[:id])
+      data = {
+        investment_id: investment.id,
+        investment_title: investment.title,
+        budget_id: investment.budget.id
+      }.to_json
+
+      respond_to do |format|
+        format.json { render json: data }
+      end
+    end
+
     private
 
       def resource_model
@@ -129,6 +146,10 @@ module Budgets
 
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
+      end
+
+      def set_view
+        @view = (params[:view] == "minimal") ? "minimal" : "default"
       end
 
       def investments

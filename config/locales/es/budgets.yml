@@ -41,6 +41,7 @@ es:
       finished: Resultados
     index:
       title: Presupuestos participativos
+      empty_budgets: No hay presupuestos participativos.
       section_header:
         icon_alt: Icono de Presupuestos participativos
         title: Presupuestos participativos
@@ -70,11 +71,11 @@ es:
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
         location: "Información adicional de la ubicación"
+        map_skip_checkbox: "Este proyecto no tiene una ubicación concreta o no la conozco."
       index:
         title: Presupuestos participativos
         unfeasible: Proyectos de gasto no viables
-        unfeasible_text: "Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad."
-        unfeasible_text_definitions: ver definiciones aquí
+        unfeasible_text: "Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto) para ser declarados viables y llegar hasta la fase de votación final. Todos las proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad."
         by_heading: 'Proyectos de gasto con ámbito: %{heading}'
         search_form:
           button: Buscar
@@ -124,13 +125,17 @@ es:
         no_milestones: No hay hitos definidos
         milestone_publication_date: "Publicado el %{publication_date}"
         author: Autor
+        project_unfeasible_html: 'Este proyecto de inversión <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación.'
+        project_not_selected_html: 'Este proyecto de inversión <strong>no ha sido seleccionado</strong> para la fase de votación.'
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         add: Votar
         already_added: Ya has añadido este proyecto de gasto
         already_supported: Ya has apoyado este proyecto de gasto. ¡Compártelo!
         support_title: Apoyar este proyecto
-        confirm_group: "Sólo puedes apoyar proyectos de una partida. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
+        confirm_group:
+          one: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
+          other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
         supports:
           zero: Sin apoyos
           one: 1 apoyo

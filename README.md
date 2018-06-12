@@ -111,7 +111,7 @@ Ces actions sont documentées dans [les releases](https://github.com/consul/cons
 
 ## Configuration for development and test environments
 
-**NOTE**: For more detailed instructions check the [docs](https://github.com/consul/docs/tree/master/en/getting_started/prerequisites)
+**NOTE**: For more detailed instructions check the [docs](https://consul_docs.gitbooks.io/docs/)
 
 Prerequisites: install git, Ruby 2.3.2, `bundler` gem, Node.js and PostgreSQL (>=9.4).
 
@@ -130,15 +130,15 @@ RAILS_ENV=test rake db:setup
 
 Run the app locally:
 
-```
+```bash
 bin/rails s
 ```
 
-Prerequisites for testing: install PhantomJS >= 2.1.1
+Prerequisites for testing: install ChromeDriver >= 2.33
 
 Run the tests with:
 
-```
+```bash
 bin/rspec
 ```
 
@@ -152,6 +152,10 @@ But for some actions like voting, you will need a verified user, the seeds file 
  **user:** verified@consul.dev
  **pass:** 12345678
 
+## Configuration for production environments
+
+See [installer](https://github.com/consul/installer)
+
 ## Documentation
 
 Check the ongoing documentation at [https://consul_docs.gitbooks.io/docs/content/](https://consul_docs.gitbooks.io/docs/content/) to learn more about how to start your own CONSUL fork, install it, customize it and learn to use it from an administrator/maintainer perspective. You can contribute to it at [https://github.com/consul/docs](https://github.com/consul/docs)
@@ -163,7 +167,3 @@ Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt)
 ## Contributions
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Local development with Docker
-
-Please check the documentation at [https://consul_docs.gitbooks.io/docs/content/en/getting_started/docker.html](https://consul_docs.gitbooks.io/docs/content/en/getting_started/docker.html)

@@ -12,10 +12,12 @@ feature 'Budget Investments' do
 
   before do
     Setting['feature.allow_images'] = true
+    Setting['feature.budgets'] = true
   end
 
   after do
     Setting['feature.allow_images'] = nil
+    Setting['feature.budgets'] = nil
   end
 
   context "Concerns" do
@@ -39,6 +41,37 @@ feature 'Budget Investments' do
         expect(page).to have_content investment.title
         expect(page).to have_css("a[href='#{budget_investment_path(budget_id: budget.id, id: investment.id)}']", text: investment.title)
         expect(page).not_to have_content(unfeasible_investment.title)
+      end
+    end
+  end
+
+  scenario 'Index view mode' do
+    investments = [create(:budget_investment, heading: heading),
+                   create(:budget_investment, heading: heading),
+                   create(:budget_investment, heading: heading)]
+
+    visit budget_path(budget)
+    click_link 'Health'
+
+    click_button 'View mode'
+
+    click_link 'List'
+
+    investments.each do |investment|
+      within('#budget-investments') do
+        expect(page).to     have_link investment.title
+        expect(page).to_not have_content(investment.description)
+      end
+    end
+
+    click_button 'View mode'
+
+    click_link 'Cards'
+
+    investments.each do |investment|
+      within('#budget-investments') do
+        expect(page).to have_link investment.title
+        expect(page).to have_content(investment.description)
       end
     end
   end
@@ -401,16 +434,16 @@ feature 'Budget Investments' do
           click_link "Advanced search"
 
           select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: 7.days.ago.to_date
-          fill_in "advanced_search_date_max", with: 1.day.ago.to_date
+          fill_in "advanced_search_date_min", with: 7.days.ago.strftime('%d/%m/%Y')
+          fill_in "advanced_search_date_max", with: 1.day.ago.strftime('%d/%m/%Y')
           click_button "Filter"
 
           expect(page).to have_content("investments cannot be found")
 
           within "#js-advanced-search" do
             expect(page).to have_select('advanced_search[date_min]', selected: 'Customized')
-            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%Y-%m-%d')}']")
-            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%Y-%m-%d')}']")
+            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%d/%m/%Y')}']")
+            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%d/%m/%Y')}']")
           end
         end
 
@@ -563,16 +596,13 @@ feature 'Budget Investments' do
     scenario 'Each user has a different and consistent random budget investment order when random_seed is disctint', :js do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
-      r1 = 1
-      r2 = 2
-
       in_browser(:one) do
-        visit budget_investments_path(budget, heading: heading, random_seed: r1)
+        visit budget_investments_path(budget, heading: heading, random_seed: rand)
         @first_user_investments_order = investments_order
       end
 
       in_browser(:two) do
-        visit budget_investments_path(budget, heading: heading, random_seed: r2)
+        visit budget_investments_path(budget, heading: heading, random_seed: rand)
         @second_user_investments_order = investments_order
       end
 
@@ -924,14 +954,51 @@ feature 'Budget Investments' do
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
     expect(page).to have_content("Unfeasibility explanation")
-    expect(page).to have_content(investment.unfeasibility_explanation)
+    expect(page).to have_content("Local government is not competent in this matter")
+    expect(page).to have_content("This investment project has been marked as not feasible and will not go to balloting phase")
   end
 
-  scenario "Show milestones", :js do
+  scenario "Show (not selected budget investment)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        budget: budget,
+                        group: group,
+                        heading: heading,
+                        unfeasibility_explanation: 'Local government is not competent in this matter')
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).to have_content("This investment project has not been selected for balloting phase")
+  end
+
+  scenario "Show (unfeasible budget investment with valuation not finished)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :unfeasible,
+                        valuation_finished: false,
+                        budget: budget,
+                        group: group,
+                        heading: heading,
+                        unfeasibility_explanation: 'Local government is not competent in this matter')
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).not_to have_content("Unfeasibility explanation")
+    expect(page).not_to have_content("Local government is not competent in this matter")
+  end
+
+  xscenario "Show milestones", :js do
     user = create(:user)
     investment = create(:budget_investment)
     create(:budget_investment_milestone, investment: investment,
-                                         description: "Last milestone with a link to https://consul.dev",
+                                         description_en: "Last milestone with a link to https://consul.dev",
+                                         description_es: "Último hito con el link https://consul.dev",
                                          publication_date: Date.tomorrow)
     first_milestone = create(:budget_investment_milestone, investment: investment,
                                                            description: "First milestone",
@@ -942,7 +1009,7 @@ feature 'Budget Investments' do
     login_as(user)
     visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
 
-    find("#tab-milestones-label").trigger('click')
+    find("#tab-milestones-label").click
 
     within("#tab-milestones") do
       expect(first_milestone.description).to appear_before('Last milestone with a link to https://consul.dev')
@@ -951,6 +1018,15 @@ feature 'Budget Investments' do
       expect(page).not_to have_content(Date.current)
       expect(page.find("#image_#{first_milestone.id}")['alt']).to have_content(image.title)
       expect(page).to have_link(document.title)
+      expect(page).to have_link("https://consul.dev")
+    end
+
+    select('Español', from: 'locale-switcher')
+
+    find("#tab-milestones-label").click
+
+    within("#tab-milestones") do
+      expect(page).to have_content('Último hito con el link https://consul.dev')
       expect(page).to have_link("https://consul.dev")
     end
   end
@@ -962,7 +1038,7 @@ feature 'Budget Investments' do
     login_as(user)
     visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
 
-    find("#tab-milestones-label").trigger('click')
+    find("#tab-milestones-label").click
 
     within("#tab-milestones") do
       expect(page).to have_content("Don't have defined milestones")

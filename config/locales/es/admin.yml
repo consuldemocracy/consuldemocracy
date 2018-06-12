@@ -13,6 +13,7 @@ es:
       unmark_featured: Quitar destacado
       edit: Editar
       configure: Configurar
+      delete: Borrar
     banners:
       index:
         title: Banners
@@ -79,11 +80,11 @@ es:
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
       create:
-        notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
+        notice: "¡Presupuestos participativos creados con éxito!"
       update:
-        notice: Campaña de presupuestos participativos actualizada
+        notice: Presupuestos participativos actualizados
       edit:
-        title: Editar campaña de presupuestos participativos
+        title: Editar presupuestos participativos
         delete: Eliminar presupuesto
         phase: Fase
         dates: Fechas
@@ -106,6 +107,8 @@ es:
         no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
         add_group: Añadir nuevo grupo
         create_group: Crear grupo
+        edit_group: Editar grupo
+        submit: Guardar grupo
         heading: Nombre de la partida
         add_heading: Añadir partida
         amount: Cantidad
@@ -117,6 +120,7 @@ es:
         table_amount: Cantidad
         table_population: Población
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
+        max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.
@@ -167,6 +171,7 @@ es:
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
+        no_valuation_groups: Sin grupos evaluadores
         feasibility:
           feasible: "Viable (%{price})"
           unfeasible: "Inviable"
@@ -178,10 +183,12 @@ es:
         table_supports: "Apoyos"
         table_admin: "Administrador"
         table_valuator: "Evaluador"
+        table_valuation_group: "Grupos evaluadores"
         table_geozone: "Ámbito de actuación"
         table_feasibility: "Viabilidad"
         table_valuation_finished: "Ev. Fin."
         table_selection: "Seleccionado"
+        table_evaluation: "Mostrar a evaluadores"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignado
@@ -213,6 +220,13 @@ es:
           title: Ganadora
           "true": "Si"
           "false": "No"
+        image: "Imagen"
+        see_image: "Ver imagen"
+        no_image: "Sin imagen"
+        documents: "Documentos"
+        see_documents: "Ver documentos (%{count})"
+        no_documents: "Sin documentos"
+        valuator_groups: "Grupos de evaluadores"
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
@@ -226,6 +240,7 @@ es:
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
+        user_groups: "Grupos"
       search_unfeasible: Buscar inviables
     milestones:
       index:
@@ -239,9 +254,13 @@ es:
         image: "Imagen"
         show_image: "Mostrar imagen"
         documents: "Documentos"
+      form:
+        add_language: Añadir idioma
+        remove_language: Eliminar idioma
       new:
         creating: Crear hito
         date: Fecha
+        description: Descripción
       edit:
         title: Editar hito
       create:
@@ -523,6 +542,7 @@ es:
       feasible_and_undecided_investment_authors: "Usuarios autores de algún proyecto de gasto en los actuales presupuestos que no cumpla: [evaluación finalizada inviable]"
       selected_investment_authors: Usuarios autores de proyectos de gasto seleccionadas en los actuales presupuestos
       winner_investment_authors: Usuarios autores de proyectos de gasto ganadoras en los actuales presupuestos
+      not_supported_on_current_budget: Usuarios que no han apoyado proyectos de los actuales presupuestos
       invalid_recipients_segment: "El segmento de destinatarios es inválido"
     newsletters:
       create_success: Newsletter creada correctamente
@@ -570,8 +590,10 @@ es:
         description: Descripción
         no_description: Sin descripción
         no_valuators: No hay evaluadores.
+        valuator_groups: "Grupo de evaluadores"
+        group: "Grupo"
+        no_group: "Sin grupo"
       valuator:
-        description_placeholder: 'Descripción (opcional)'
         add: Añadir como evaluador
         delete: Borrar
       search:
@@ -585,6 +607,30 @@ es:
         in_evaluation_count: En evaluación
         total_count: Total
         cost: Coste total
+      form:
+        edit_title: "Evaluadores: Editar evaluador"
+        update: "Actualizar evaluador"
+        updated: "Evaluador actualizado correctamente"
+      show:
+        description: "Descripción"
+        email: "Email"
+        group: "Grupo"
+        no_description: "Sin descripción"
+        no_group: "Sin grupo"
+    valuator_groups:
+      index:
+        title: "Grupos de evaluadores"
+        new: "Crear grupo de evaluadores"
+        name: "Nombre"
+        members: "Miembros"
+        no_groups: "No hay grupos de evaluadores"
+      show:
+        title: "Grupo de evaluadores: %{group}"
+        no_valuators: "No hay evaluadores asigandos a este grupo"
+      form:
+        name: "Nombre del grupo"
+        new: "Crear grupo de evaluadores"
+        edit: "Guardar grupo de evaluadores"
     poll_officers:
       index:
         title: Presidentes de mesa

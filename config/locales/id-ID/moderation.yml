@@ -1,0 +1,6 @@
+id:
+  moderation:
+    comments:
+      index:
+        headers:
+          comment: Komentar

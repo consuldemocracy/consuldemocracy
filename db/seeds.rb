@@ -85,6 +85,7 @@ Setting['feature.user.recommendations'] = true
 Setting['feature.community'] = true
 Setting['feature.map'] = nil
 Setting['feature.allow_images'] = true
+Setting['feature.allow_attached_documents'] = true
 Setting['feature.guides'] = nil
 
 # Spending proposals feature flags
@@ -122,3 +123,5 @@ Setting['map_zoom'] = 10
 
 # Related content
 Setting['related_content_score_threshold'] = -0.3
+
+Setting["feature.user.skip_verification"] = 'true'

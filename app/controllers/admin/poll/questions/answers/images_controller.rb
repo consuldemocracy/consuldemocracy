@@ -1,5 +1,5 @@
 class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseController
-  before_action :load_answer
+  before_action :load_answer, except: :destroy
 
   def index
   end
@@ -17,6 +17,15 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
                notice: t("flash.actions.create.poll_question_answer_image")
     else
       render :new
+    end
+  end
+
+  def destroy
+    @image = ::Image.find(params[:id])
+    @image.destroy
+
+    respond_to do |format|
+      format.js { render layout: false }
     end
   end
 

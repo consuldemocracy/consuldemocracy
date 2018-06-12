@@ -8,6 +8,11 @@ feature 'Admin budget phases' do
     before do
       admin = create(:administrator)
       login_as(admin.user)
+      Setting['feature.budgets'] = true
+    end
+
+    after do
+      Setting['feature.budgets'] = nil
     end
 
     scenario 'Update phase' do

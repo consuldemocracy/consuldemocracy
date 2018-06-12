@@ -1,5 +1,6 @@
-<%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params)), data: {no_turbolink: true} do %>
-  <span class="icon-angle-left"></span> <%= t("shared.back") %>
+<%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params)),
+            class: "back", data: {no_turbolink: true} do %>
+  <span class="icon-angle-left"></span><%= t("shared.back") %>
 <% end %>
 
 <%= render 'written_by_author' %>
@@ -20,6 +21,15 @@
   <strong><%= t("admin.budget_investments.show.tags") %>:</strong>
 
   <%= @investment.tags_on(:valuation).pluck(:name).sort.join(', ') %>
+</p>
+
+<p id="assigned_valuator_groups">
+  <strong><%= t("admin.budget_investments.show.valuator_groups") %>:</strong>
+  <% if @investment.valuator_groups.any? %>
+    <%= @investment.valuator_groups.collect(&:name).join(', ') %>
+  <% else %>
+    <%= t("admin.budget_investments.show.undefined") %>
+  <% end %>
 </p>
 
 <p id="assigned_valuators">

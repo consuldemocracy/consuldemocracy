@@ -8,6 +8,7 @@ class ProposalsController < ApplicationController
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :destroy_map_location_association, only: :update
+  before_action :set_view, only: :index
 
   feature_flag :proposals
 
@@ -125,6 +126,10 @@ class ProposalsController < ApplicationController
         set_featured_proposal_votes(@featured_proposals)
         @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
       end
+    end
+
+    def set_view
+      @view = (params[:view] == "minimal") ? "minimal" : "default"
     end
 
     def load_successful_proposals

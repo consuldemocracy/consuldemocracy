@@ -14,6 +14,16 @@ module CommonActions
     click_button 'Register'
   end
 
+  def login_through_form_with_email_and_password(email='manuela@consul.dev', password='judgementday')
+    visit root_path
+    click_link 'Sign in'
+
+    fill_in 'user_login', with: email
+    fill_in 'user_password', with: password
+
+    click_button 'Enter'
+  end
+
   def login_through_form_as(user)
     visit root_path
     click_link 'Sign in'
@@ -293,7 +303,7 @@ module CommonActions
 
   def add_to_ballot(budget_investment)
     within("#budget_investment_#{budget_investment.id}") do
-      find('.add a').trigger('click')
+      find('.add a').click
       expect(page).to have_content "Remove"
     end
   end
@@ -353,4 +363,7 @@ module CommonActions
     fill_in "newsletter_body", with: (options[:body] || "This is a different body")
   end
 
+  def click_notifications_icon
+    find("#notifications a").click
+  end
 end

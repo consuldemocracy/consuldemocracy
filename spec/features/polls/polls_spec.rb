@@ -9,6 +9,9 @@ feature 'Polls' do
   context '#index' do
 
     scenario 'Polls can be listed' do
+      visit polls_path
+      expect(page).to have_content('There are no open votings')
+
       polls = create_list(:poll, 3)
       create(:image, imageable: polls[0])
       create(:image, imageable: polls[1])

@@ -6,7 +6,7 @@ val:
       title_placeholder: Afegeix un títol descriptiu per a l'imatge
       attachment_label: Selecciona una imatge
       delete_button: Eliminar imatge
-      note: 'Pots pujar una imatge en els formats: %{accepted_content_types}, i de fins %{max_file_size} MB per fitxer.'
+      note: "Pots pujar una imatge en els formats: %{accepted_content_types}, i de fins %{max_file_size} MB per fitxer."
       add_new_image: Afegir imatge
       admin_title: "Imatge"
       admin_alt_text: "Texte alternatiu per a l'imatge"
