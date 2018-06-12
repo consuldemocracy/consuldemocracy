@@ -470,7 +470,6 @@ es:
         other: "%{count} Comentarios"
       comments_tab: Comentarios
       dashboard_proposal_link: Panel de control
-      draft: En borrador
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
@@ -483,6 +482,8 @@ es:
       title_external_url: "Documentación adicional"
       title_video_url: "Vídeo externo"
       author: Autor
+    preview:
+      draft: En borrador
     update:
       form:
         submit_button: Guardar cambios
@@ -791,7 +792,6 @@ es:
       send_private_message: "Enviar un mensaje privado"
       delete_alert: "¿Estás seguro de que deseas borrar tu proyecto de gasto? Esta acción no se puede deshacer"
     proposals:
-      send_notification: "Enviar notificación"
       retired: "Propuesta retirada"
       see: "Ver propuesta"
   votes:
