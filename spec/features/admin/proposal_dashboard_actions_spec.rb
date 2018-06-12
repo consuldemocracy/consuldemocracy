@@ -75,7 +75,7 @@ feature 'Admin proposal dasboard actions' do
 
     it 'deletes the action', js: true do
       page.accept_confirm do
-        click_button 'Delete'
+        click_link 'Delete'
       end
 
       expect(page).not_to have_content(action.title)

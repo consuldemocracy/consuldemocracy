@@ -7,7 +7,7 @@
             <%= simple_format text_with_links(@proposal.retired_explanation), {}, sanitize: false %>
           </div>
         <% end %>
-d
+
         <% if feature?(:allow_attached_documents) %>
           <%= render 'documents/documents',
                       documents: @proposal.documents,

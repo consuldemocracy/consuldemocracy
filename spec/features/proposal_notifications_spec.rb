@@ -2,26 +2,28 @@ require 'rails_helper'
 
 feature 'Proposal Notifications' do
 
-  scenario "Send a notification" do
+  scenario 'Send a notification' do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
     login_as(author)
     visit root_path
 
-    click_link "My activity"
+    click_link 'My activity'
 
     within("#proposal_#{proposal.id}") do
-      click_link "Send notification"
+      click_link 'Dashboard'
     end
 
-    fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal"
-    fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen!"
+    click_link 'Send notification'
+
+    fill_in 'proposal_notification_title', with: 'Thank you for supporting my proposal'
+    fill_in 'proposal_notification_body', with: 'Please share it with others so we can make it happen!'
     click_button "Send message"
 
-    expect(page).to have_content "Your message has been sent correctly."
-    expect(page).to have_content "Thank you for supporting my proposal"
-    expect(page).to have_content "Please share it with others so we can make it happen!"
+    expect(page).to have_content 'Your message has been sent correctly.'
+    expect(page).to have_content 'Thank you for supporting my proposal'
+    expect(page).to have_content 'Please share it with others so we can make it happen!'
   end
 
   scenario "Send a notification (Active voter)" do
@@ -167,18 +169,8 @@ feature 'Proposal Notifications' do
       proposal = create(:proposal, author: author)
 
       login_as(author)
-      visit user_path(author)
-
-      within("#proposal_#{proposal.id}") do
-        expect(page).to have_link "Send notification"
-      end
-
-      login_as(user)
-      visit user_path(author)
-
-      within("#proposal_#{proposal.id}") do
-        expect(page).not_to have_link "Send message"
-      end
+      visit proposal_dashboard_index_path(proposal)
+      expect(page).to have_link "Send notification"
     end
 
     scenario "Accessing form directly" do
