@@ -7,15 +7,37 @@ feature 'Admin Budgets' do
     login_as(admin)
   end
 
-  scenario 'Admin ballots link appears if budget has a poll associated' do
-    budget = create(:budget)
-    poll = create(:poll, budget: budget)
+  context "Index" do
 
-    visit admin_budgets_path
+    scenario 'Create poll if the budget does not have a poll associated' do
+      budget = create(:budget)
 
-    within "#budget_#{budget.id}" do
-      expect(page).to have_link("Admin ballots", admin_poll_path(poll))
+      visit admin_budgets_path
+
+      click_link "Admin ballots"
+
+      balloting_phase = budget.phases.where(kind: "balloting").first
+
+      expect(current_path).to match(/admin\/polls\/\d+/)
+      expect(page).to have_content(budget.name)
+      expect(page).to have_content(balloting_phase.starts_at.to_date)
+      expect(page).to have_content(balloting_phase.ends_at.to_date)
+
+      expect(Poll.count).to eq(1)
+      expect(Poll.last.budget).to eq(budget)
     end
+
+    scenario 'Display link to poll if the budget has a poll associated' do
+      budget = create(:budget)
+      poll = create(:poll, budget: budget)
+
+      visit admin_budgets_path
+
+      within "#budget_#{budget.id}" do
+        expect(page).to have_link("Admin ballots", admin_poll_path(poll))
+      end
+    end
+
   end
 
 end
