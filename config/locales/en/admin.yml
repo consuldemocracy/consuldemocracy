@@ -1091,6 +1091,9 @@ en:
         success: Geozone successfully deleted
         error: This geozone can't be deleted since there are elements attached to it
     proposal_dashboard_actions:
+      action_type:
+        proposed_action: Proposed action
+        resource: Resource
       index:
         create: Create
         edit: Edit

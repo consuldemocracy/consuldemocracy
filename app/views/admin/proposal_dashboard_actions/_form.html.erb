@@ -16,6 +16,15 @@
     </div>
   </div>
 
+  <div class="small-12 medium-3 column">
+    <%= f.label :action_type %>
+    <% ProposalDashboardAction.action_types.keys.each do |action_type_value| %>
+      <%= f.radio_button :action_type, action_type_value, label: false %>
+      <%= f.label "action_type_#{action_type_value}", t("admin.proposal_dashboard_actions.action_type.#{action_type_value}") %>
+      <br>
+    <% end %>
+  </div>
+
   <div class="small-12 column">
     <%= f.check_box :request_to_administrators, label: ProposalDashboardAction.human_attribute_name(:request_to_administrators) %>
   </div>

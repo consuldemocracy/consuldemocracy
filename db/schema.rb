@@ -888,6 +888,7 @@ ActiveRecord::Schema.define(version: 20180711224810) do
     t.integer  "order",                                default: 0
     t.boolean  "active",                               default: true
     t.datetime "hidden_at"
+    t.integer  "action_type",                          default: 0,     null: false
   end
 
   create_table "proposal_notifications", force: :cascade do |t|

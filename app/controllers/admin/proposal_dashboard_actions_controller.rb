@@ -8,7 +8,13 @@ class Admin::ProposalDashboardActionsController < Admin::BaseController
   end
 
   def new
-    @proposal_dashboard_action = ProposalDashboardAction.new(active: true, day_offset: 0, required_supports: 0, request_to_administrators: true)
+    @proposal_dashboard_action = ProposalDashboardAction.new(
+      active: true,
+      day_offset: 0,
+      required_supports: 0,
+      request_to_administrators: true,
+      action_type: 'proposed_action'
+    )
   end
 
   def create
@@ -41,7 +47,7 @@ class Admin::ProposalDashboardActionsController < Admin::BaseController
   def proposal_dashboard_action_params
     params
       .require(:proposal_dashboard_action)
-      .permit(:title, :description, :link, :request_to_administrators, :day_offset, :required_supports, :order, :active)
+      .permit(:title, :description, :link, :request_to_administrators, :day_offset, :required_supports, :order, :active, :action_type)
   end
 
 

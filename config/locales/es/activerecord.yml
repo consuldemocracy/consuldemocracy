@@ -272,6 +272,7 @@ es:
         required_supports: Soportes requeridos para la activación
         order: Orden
         active: Activa
+        action_type: Tipo
     errors:
       models:
         user:

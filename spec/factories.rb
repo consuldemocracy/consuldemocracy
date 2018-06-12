@@ -1039,6 +1039,7 @@ LOREM_IPSUM
     order 0
     active true
     hidden_at nil
+    action_type 'proposed_action'
 
     trait :admin_request do
       link nil
@@ -1060,6 +1061,14 @@ LOREM_IPSUM
 
     trait :deleted do
       hidden_at { Time.now.utc }
+    end
+
+    trait :proposed_action do
+      action_type 'proposed_action'
+    end
+
+    trait :resource do
+      action_type 'resource'
     end
   end
 end

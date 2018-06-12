@@ -4,6 +4,8 @@ class ProposalDashboardAction < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  enum action_type: %i[proposed_action resource]
+
   validates :title, 
             presence: true,
             allow_blank: false,
@@ -13,6 +15,8 @@ class ProposalDashboardAction < ActiveRecord::Base
             presence: true,
             allow_blank: false,
             length: { in: 4..255 }
+
+  validates :action_type, presence: true
 
   validates :day_offset,
             presence: true,

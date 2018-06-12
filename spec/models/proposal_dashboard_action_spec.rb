@@ -9,7 +9,8 @@ describe ProposalDashboardAction do
           day_offset: day_offset,
           required_supports: required_supports,
           link: link,
-          request_to_administrators: request_to_administrators
+          request_to_administrators: request_to_administrators,
+          action_type: action_type
   end
 
   let(:title) { Faker::Lorem.sentence }
@@ -18,6 +19,7 @@ describe ProposalDashboardAction do
   let(:required_supports) { 0 }
   let(:link) { nil }
   let(:request_to_administrators) { true }
+  let(:action_type) { 'resource' }
 
   it { is_expected.to be_valid }
 
@@ -125,6 +127,12 @@ describe ProposalDashboardAction do
 
       it { is_expected.to be_valid }
     end
+  end
+
+  context 'when action type is nil' do
+    let(:action_type) { nil }
+    
+    it { is_expected.not_to be_valid }
   end
 end
 

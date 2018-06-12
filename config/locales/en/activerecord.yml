@@ -271,6 +271,7 @@ en:
         required_supports: Required supports for the activation
         order: Order
         active: Active
+        action_type: Type
     errors:
       models:
         user:
