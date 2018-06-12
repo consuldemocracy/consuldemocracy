@@ -10,11 +10,13 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
   && apt-get install -y google-chrome-stable \
   && apt-get clean
 
-RUN CHROMEDRIVER_RELEASE=2.38 \
+RUN CHROMEDRIVER_RELEASE=2.36 \
   && CHROMEDRIVER_URL="http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_RELEASE/chromedriver_linux64.zip" \
   && apt-get install unzip \
   && curl --silent --show-error --location --fail --retry 3 --output /tmp/chromedriver_linux64.zip $CHROMEDRIVER_URL \
-  && unzip /tmp/chromedriver_linux64.zip chromedriver -d /usr/local/bin \
+  && unzip /tmp/chromedriver_linux64.zip chromedriver -d /usr/local/share \
+  && chmod +x /usr/local/share/chromedriver \
+  && ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver \
   && rm /tmp/chromedriver_linux64.zip
 
 # Files created inside the container repect the ownership
