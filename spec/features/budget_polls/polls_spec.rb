@@ -3,7 +3,8 @@ require 'rails_helper'
 feature "Polls" do
 
   context "Public index" do
-    it 'Budget polls should not be listed' do
+
+    scenario 'Budget polls should not be listed' do
       poll = create(:poll)
       budget_poll = create(:poll, budget: create(:budget))
 
@@ -12,10 +13,12 @@ feature "Polls" do
       expect(page).to have_content(poll.name)
       expect(page).not_to have_content(budget_poll.name)
     end
+
   end
 
   context "Admin index" do
-    it 'Budget polls should not appear in the list' do
+
+    scenario 'Budget polls should not appear in the list' do
       login_as(create(:administrator).user)
 
       poll = create(:poll)
