@@ -218,8 +218,8 @@ class Proposal < ActiveRecord::Base
   protected
 
     def set_responsible_name
-      if author && author.document_number?
-        self.responsible_name = author.document_number
+      if author
+        self.responsible_name = author.username
       end
     end
 
