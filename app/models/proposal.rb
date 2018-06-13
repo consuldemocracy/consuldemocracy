@@ -48,7 +48,7 @@ class Proposal < ActiveRecord::Base
 
   validate :valid_video_url?
 
-  before_validation :set_responsible_name
+  before_validation :set_responsible_name unless Setting["feature.user.skip_verification"] == "true"
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
@@ -218,12 +218,8 @@ class Proposal < ActiveRecord::Base
   protected
 
     def set_responsible_name
-      if author
-        if author.document_number.present?
-          self.responsible_name = author.document_number
-        elsif Setting["feature.user.skip_verification"] == "true"
-          self.responsible_name = author.username
-        end
+      if author && author.document_number?
+        self.responsible_name = author.document_number
       end
     end
 
