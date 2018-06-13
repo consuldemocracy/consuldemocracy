@@ -84,6 +84,7 @@ namespace :admin do
   end
 
   resources :tags, only: [:index, :create, :update, :destroy]
+
   resources :officials, only: [:index, :edit, :update, :destroy] do
     get :search, on: :collection
   end
@@ -99,6 +100,7 @@ namespace :admin do
     get :search, on: :collection
     get :summary, on: :collection
   end
+
   resources :valuator_groups
 
   resources :managers, only: [:index, :create, :destroy] do

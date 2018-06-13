@@ -27,4 +27,9 @@ namespace :moderation do
     put :hide, on: :member
     put :moderate, on: :collection
   end
+
+  resources :budget_investments, only: :index do
+    put :hide, on: :member
+    put :moderate, on: :collection
+  end
 end
