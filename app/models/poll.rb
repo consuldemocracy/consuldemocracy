@@ -114,4 +114,7 @@ class Poll < ActiveRecord::Base
     end
   end
 
+  def budget_poll?
+    budget.present?
+  end
 end
