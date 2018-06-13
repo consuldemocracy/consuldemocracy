@@ -1,4 +1,10 @@
 resources :proposals do
+  resources :proposals_dashboard, as: :dashboard, path: :dashboard, only: %i[index] do
+    collection do
+      patch :publish
+    end
+  end
+
   member do
     post :vote
     post :vote_featured
@@ -6,7 +12,9 @@ resources :proposals do
     put :unflag
     get :retire_form
     get :share
+    get :created
     patch :retire
+    patch :publish
   end
 
   collection do

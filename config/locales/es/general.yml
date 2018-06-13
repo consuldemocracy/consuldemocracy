@@ -305,6 +305,22 @@ es:
     create:
       form:
         submit_button: Crear propuesta
+    created:
+      title: ¡Enhorabuena! Has dado el primer paso.
+      motivation: |
+        <p>
+          Es importante contar al menos con 100 apoyos el primer día de campaña para poder
+          impulsar tu propuesta.
+        </p>
+        <p>
+          ¿Crees que necesitas ayuda para alcanzar esta meta? Si es así, deja tu propuesta
+          como borrador y te guiaremos.
+        </p>
+      publish: No, quiero publicar la propuesta ya
+      dashboard: Si, quiero ayuda y publicaré mas tarde
+    share:
+      improve_it: Mejora tu campaña y consigue mas apoyos.
+      dashboard: Ver mas información
     edit:
       editing: Editar propuesta
       form:
@@ -404,6 +420,7 @@ es:
       start_new: Crear una propuesta
     notice:
       retired: Propuesta retirada
+      published: La propuesta ha sido publicada
     proposal:
       created: "¡Has creado una propuesta!"
       share:
@@ -441,7 +458,8 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
       comments_tab: Comentarios
-      edit_proposal_link: Editar propuesta
+      dashboard_proposal_link: Panel de control
+      draft: En borrador
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
@@ -458,6 +476,13 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+  proposals_dashboard:
+    index:
+      draft: Borrador
+      published: Publicada
+      general: General
+      publish: Publicar
+      edit_proposal_link: Editar propuesta
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"

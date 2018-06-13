@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>" data-current-user-id="<%= current_user.try(:id) %>">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <%= render "layouts/tracking_data" %>
+    <%= render "layouts/meta_tags" %>
+    <title><%= content_for?(:title) ? yield(:title) : setting['org_name'] %></title>
+    <%= content_for :canonical %>
+    <%= stylesheet_link_tag    "application" %>
+    <!--[if lt IE 9]>
+      <%= stylesheet_link_tag "ie" %>
+    <![endif]-->
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "favicon.ico" %>
+    <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"),
+                     rel: "icon apple-touch-icon",
+                     sizes: "200x200",
+                     type: "image/png" %>
+    <%= content_for :social_media_meta_tags %>
+
+    <%= setting['per_page_code_head'].try(:html_safe) %>
+  </head>
+  <body class="<%= yield (:body_class) %>">
+    <%= setting['per_page_code_body'].try(:html_safe) %>
+
+    <h1 class="show-for-sr"><%= setting['org_name'] %></h1>
+
+    <div class="wrapper <%= yield (:wrapper_class) %>">
+      <%= render 'layouts/header' %>
+
+      <!--[if lt IE 9]>
+      <% if browser.ie? && cookies['ie_alert_closed'] != 'true' %>
+        <div data-alert class="callout primary ie-callout" data-closable>
+          <button class="close-button ie-callout-close-js"
+                  aria-label="<%= t("application.close") %>" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h2><%= t("layouts.application.ie_title") %></h2>
+          <p>
+            <%= t("layouts.application.ie",
+            chrome: link_to(
+                    t("layouts.application.chrome"), "https://www.google.com/chrome/browser/desktop/", title: t("shared.target_blank_html"), target: "_blank"),
+            firefox: link_to(
+                     t("layouts.application.firefox"), "https://www.mozilla.org/firefox", title: t("shared.target_blank_html"), target: "_blank")
+            ).html_safe %>
+          </p>
+        </div>
+      <% end %>
+      <![endif]-->
+
+      <%= render 'layouts/flash' %>
+
+      <%= yield %>
+      <div class="push"></div>
+    </div>
+  </body>
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag "ie_lt9" %>
+  <![endif]-->
+</html>
