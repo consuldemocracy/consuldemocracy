@@ -14,14 +14,18 @@
       <thead>
         <tr>
           <th class="text-center"></th>
-          <th class="text-center"><%= t("admin.recounts.index.total_final") %></th>
+          <% unless @poll.budget_poll? %>
+            <th class="text-center"><%= t("admin.recounts.index.total_final") %></th>
+          <% end %>
           <th class="text-center"><%= t("admin.recounts.index.total_system") %></th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong><%= t("admin.recounts.index.all_booths_total") %></strong></td>
-          <td class="text-center" id="total_final"><%=  @all_booths_counts[:final] %></td>
+          <% unless @poll.budget_poll? %>
+            <td class="text-center" id="total_final"><%=  @all_booths_counts[:final] %></td>
+          <% end %>
           <td class="text-center" id="total_system"><%= @all_booths_counts[:system] %></td>
         </tr>
       </tbody>
@@ -30,7 +34,9 @@
     <table class="fixed margin">
       <thead>
         <th><%= t("admin.recounts.index.table_booth_name") %></th>
-        <th class="text-center"><%= t("admin.recounts.index.table_total_recount") %></th>
+        <% unless @poll.budget_poll? %>
+          <th class="text-center"><%= t("admin.recounts.index.table_total_recount") %></th>
+        <% end %>
         <th class="text-center"><%= t("admin.recounts.index.table_system_count") %></th>
       </thead>
       <tbody>
@@ -43,13 +49,15 @@
                 <%= link_to booth_assignment.booth.name, admin_poll_booth_assignment_path(@poll, booth_assignment, anchor: 'tab-recounts') %>
               </strong>
             </td>
-            <td class="text-center <%= 'count-error' if total_recounts.to_i != system_count %>" id="<%= dom_id(booth_assignment) %>_recount">
-              <% if total_recounts.present? %>
-                <strong><%= total_recounts %></strong>
-              <% else %>
-                <span>-</span>
-              <% end %>
-            </td>
+            <% unless @poll.budget_poll? %>
+              <td class="text-center <%= 'count-error' if total_recounts.to_i != system_count %>" id="<%= dom_id(booth_assignment) %>_recount">
+                <% if total_recounts.present? %>
+                  <strong><%= total_recounts %></strong>
+                <% else %>
+                  <span>-</span>
+                <% end %>
+              </td>
+            <% end %>
             <td class="text-center" id="<%= dom_id(booth_assignment) %>_system">
               <% if system_count.present? %>
                 <strong><%= system_count %></strong>
