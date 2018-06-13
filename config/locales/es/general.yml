@@ -768,6 +768,7 @@ es:
       deleted_proposal: Esta propuesta ha sido eliminada
       deleted_budget_investment: Este proyecto de gasto ha sido eliminado
       proposals: Propuestas
+      proposals_status: Estado
       debates: Debates
       budget_investments: Proyectos de presupuestos participativos
       comments: Comentarios
@@ -795,6 +796,8 @@ es:
       delete_alert: "¿Estás seguro de que deseas borrar tu proyecto de gasto? Esta acción no se puede deshacer"
     proposals:
       retired: "Propuesta retirada"
+      draft: Borrador
+      published: Publicada
       see: "Ver propuesta"
   votes:
     agree: Estoy de acuerdo

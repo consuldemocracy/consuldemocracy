@@ -769,6 +769,7 @@ en:
       deleted_proposal: This proposal has been deleted
       deleted_budget_investment: This investment project has been deleted
       proposals: Proposals
+      proposals_status: Status
       debates: Debates
       budget_investments: Budget investments
       comments: Comments
@@ -796,6 +797,8 @@ en:
       delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
       retired: "Retired proposal"
+      draft: Draft
+      published: Published
       see: "See proposal"
   votes:
     agree: I agree

@@ -1,7 +1,8 @@
 <table class="margin-top">
   <thead>
     <th scope="col"><%= t("users.show.proposals") %></th>
-    <th scope="col"><%= t("users.show.actions") %></th>
+    <th scope="col" class="text-center"><%= t("users.show.proposals_status") %></th>
+    <th scope="col"></th>
   </thead>
   <tbody>
     <% @proposals.each do |proposal| %>
