@@ -40,4 +40,23 @@ feature 'Admin Budgets' do
 
   end
 
+  context "Show" do
+
+    scenario 'Do not show questions section if the budget have a poll associated' do
+      budget = create(:budget)
+      poll = create(:poll, budget: budget)
+
+      visit admin_poll_path(poll)
+
+      within "#poll-resources" do
+        expect(page).not_to have_content("Questions")
+        expect(page).to have_content("Booths")
+        expect(page).to have_content("Officers")
+        expect(page).to have_content("Recounting")
+        expect(page).to have_content("Results")
+      end
+    end
+
+  end
+
 end
