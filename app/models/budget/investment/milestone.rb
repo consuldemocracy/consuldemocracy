@@ -3,9 +3,9 @@ class Budget
     class Milestone < ActiveRecord::Base
       include Imageable
       include Documentable
-      documentable accepted_content_types: [ "application/pdf" ]
-                   Setting['max_documents_allowed'].to_i
+      documentable Setting['max_documents_allowed'].to_i
                    Setting['max_file_size'].to_i.megabytes
+                   Setting['accepted_content_types']
       translates :title, :description, touch: true
       globalize_accessors locales: [:en, :es, :fr, :nl, :val, :pt_br]
 

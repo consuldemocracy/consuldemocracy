@@ -15,16 +15,6 @@ def log(msg)
   @logger.info "#{msg}\n"
 end
 
-# Max number & size of attached documents
-Setting['documents.proposal.max_size'] = '3'
-Setting['documents.proposal.max_number'] = '3'
-Setting['documents.budget_investment.max_size'] = '3'
-Setting['documents.budget_investment.max_number'] = '3'
-Setting['documents.budget_investment_milestone.max_size'] = '3'
-Setting['documents.budget_investment_milestone.max_number'] = '3'
-Setting['documents.legislation_process.max_size'] = '3'
-Setting['documents.legislation_process.max_number'] = '3'
-
 require_relative 'dev_seeds/settings'
 require_relative 'dev_seeds/geozones'
 require_relative 'dev_seeds/users'

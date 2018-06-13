@@ -15,7 +15,7 @@ class Proposal < ActiveRecord::Base
   include Mappable
   include Notifiable
   include Documentable
-  documentable accepted_content_types: [ "application/pdf" ]
+  documentable Setting['accepted_content_types']
                Setting['max_documents_allowed'].to_i
                Setting['max_file_size'].to_i.megabytes
 
