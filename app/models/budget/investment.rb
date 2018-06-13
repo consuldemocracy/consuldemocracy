@@ -13,10 +13,9 @@ class Budget
     include Imageable
     include Mappable
     include Documentable
-    documentable max_documents_allowed: 3,
-                 max_file_size: 3.megabytes,
-                 accepted_content_types: [ "application/pdf" ]
-
+    documentable accepted_content_types: [ "application/pdf" ]
+                 Setting['max_documents_allowed'].to_i
+                 Setting['max_file_size'].to_i.megabytes
     acts_as_votable
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases

@@ -13,6 +13,16 @@ Setting["official_level_3_name"] = "Directores generales"
 Setting["official_level_4_name"] = "Concejales"
 Setting["official_level_5_name"] = "Alcaldesa"
 
+# Max number & size of attached documents
+Setting['documents.proposal.max_size'] = '3'
+Setting['documents.proposal.max_number'] = '3'
+Setting['documents.budget_investment.max_size'] = '3'
+Setting['documents.budget_investment.max_number'] = '3'
+Setting['documents.budget_investment_milestone.max_size'] = '3'
+Setting['documents.budget_investment_milestone.max_number'] = '3'
+Setting['documents.legislation_process.max_size'] = '3'
+Setting['documents.legislation_process.max_number'] = '3'
+
 # Max percentage of allowed anonymous votes on a debate
 Setting["max_ratio_anon_votes_on_debates"] = 50
 
@@ -129,4 +139,3 @@ Setting["feature.user.skip_verification"] = 'true'
 Setting['feature.homepage.widgets.feeds.proposals'] = true
 Setting['feature.homepage.widgets.feeds.debates'] = true
 Setting['feature.homepage.widgets.feeds.processes'] = true
-

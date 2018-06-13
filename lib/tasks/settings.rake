@@ -13,4 +13,14 @@ namespace :settings do
     Setting['feature.allow_attached_documents'] = true
   end
 
+  desc "Initialize the values for the max size of files"
+  task create_attached_documents_setting: :environment do
+    Setting['feature.max_size']  = '3'
+  end
+
+  desc "Initialize the values for the max number of files"
+  task create_attached_documents_setting: :environment do
+    Setting['feature.max_number'] = '3'
+  end
+
 end
