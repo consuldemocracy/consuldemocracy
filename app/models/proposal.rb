@@ -36,19 +36,19 @@ class Proposal < ActiveRecord::Base
   validates :question, presence: true
   validates :summary, presence: true
   validates :author, presence: true
-  validates :responsible_name, presence: true
+  validates :responsible_name, presence: true, :unless => :skip_verification?
 
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
   validates :question, length: { in: 10..Proposal.question_max_length }
-  validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length } unless Setting["feature.user.skip_verification"] == "true"
+  validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }, :unless => :skip_verification?
   validates :retired_reason, inclusion: { in: RETIRE_OPTIONS, allow_nil: true }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   validate :valid_video_url?
 
-  before_validation :set_responsible_name unless Setting["feature.user.skip_verification"] == "true"
+  before_validation :set_responsible_name
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
@@ -71,6 +71,10 @@ class Proposal < ActiveRecord::Base
   scope :unsuccessful,             -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
   scope :public_for_api,           -> { all }
   scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
+
+  def skip_verification?
+    Setting["feature.user.skip_verification"] == "true"
+  end
 
   def url
     proposal_path(self)
