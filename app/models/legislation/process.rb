@@ -2,9 +2,7 @@ class Legislation::Process < ActiveRecord::Base
   include ActsAsParanoidAliases
   include Taggable
   include Documentable
-  documentable Setting['accepted_content_types']
-               Setting['max_documents_allowed'].to_i
-               Setting['max_file_size'].to_i.megabytes
+
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs
 

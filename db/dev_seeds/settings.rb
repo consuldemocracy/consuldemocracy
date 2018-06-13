@@ -64,9 +64,17 @@ section "Creating Settings" do
   Setting.create(key: 'map_zoom', value: 10)
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
 
-  Setting.create(key: 'max_size', value: 3)
-  Setting.create(key: 'max_number', value: 3)
-  Setting.create(key: 'accepted_content_types', value: [ "application/pdf" ] )
+  Setting.create(key: 'Documents maximum number for proposals', value: 'seeds.settings.documents.proposal.max_number')
+  Setting.create(key: 'Documents maximum size (in Mb) for proposals', value: 'seeds.settings.documents.proposal.max_size')
+  Setting.create(key: 'Documents maximum number for budget investments', value: 'seeds.settings.documents.budget_investment.max_number')
+  Setting.create(key: 'Documents maximum size (in Mb) for budget investments', value: 'seeds.settings.documents.budget_investment.max_size')
+  Setting.create(key: 'Documents maximum number for budget investment milestones', value: 'seeds.settings.documents.budget_investment_milestone.max_number')
+  Setting.create(key: 'Documents maximum size (in Mb) for budget investments milestones', value: 'seeds.settings.budget_investment_milestone.proposal.max_size')
+  Setting.create(key: 'Documents maximum number for legislation process', value: 'seeds.settings.documents.legislation_process.max_number')
+  Setting.create(key: 'Documents maximum size (in Mb) for legislation process', value: 'seeds.settings.documents.legislation_process.max_size')
+  Setting.create(key: 'Documents maximum number for poll question answers', value: 'seeds.settings.documents.poll_question_answer.max_number')
+  Setting.create(key: 'Documents maximum size (in Mb) for poll question answers',value: 'seeds.settings.documents.poll_question_answer.max_size')
+
 
   Setting['feature.homepage.widgets.feeds.proposals'] = true
   Setting['feature.homepage.widgets.feeds.debates'] = true

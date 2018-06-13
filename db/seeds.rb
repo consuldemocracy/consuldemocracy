@@ -13,28 +13,6 @@ Setting["official_level_3_name"] = "Directores generales"
 Setting["official_level_4_name"] = "Concejales"
 Setting["official_level_5_name"] = "Alcaldesa"
 
-# Max number & size of attached documents
-Setting['documents.proposal.max_size'] = '3'
-Setting['documents.proposal.max_number'] = '3'
-Setting['documents.proposal.accepted_content_types'] = [ "application/pdf" ]
-Setting['documents.budget_investment.max_size'] = '3'
-Setting['documents.budget_investment.max_number'] = '3'
-Setting['documents.budget_investment.accepted_content_types'] = [ "application/pdf" ]
-Setting['documents.budget_investment_milestone.max_size'] = '3'
-Setting['documents.budget_investment_milestone.max_number'] = '3'
-Setting['documents.budget_investment_milestone.accepted_content_types'] = [ "application/pdf" ]
-Setting['documents.legislation_process.max_size'] = '3'
-Setting['documents.legislation_process.max_number'] = '3'
-Setting['documents.legislation_process.accepted_content_types'] = [ "application/pdf" ]
-Setting['documents.legislation_proposal.max_size'] = '3'
-Setting['documents.legislation_proposal.max_number'] = '3'
-Setting['documents.legislation_proposal.accepted_content_types'] = [ "application/pdf" ]
-Setting['documents.poll_question_answer.max_size'] = '3'
-Setting['documents.poll_question_answer.max_number'] = '3'
-Setting['documents.poll_question_answer.accepted_content_types'] = [ "application/pdf" ]
-
-
-
 # Max percentage of allowed anonymous votes on a debate
 Setting["max_ratio_anon_votes_on_debates"] = 50
 
@@ -109,6 +87,32 @@ Setting['feature.map'] = nil
 Setting['feature.allow_images'] = true
 Setting['feature.allow_attached_documents'] = true
 Setting['feature.guides'] = nil
+
+# Max number, max size, and content types of attached documents
+Setting['documents.proposal.max_size'] = '3'
+Setting['documents.proposal.max_number'] = '3'
+Setting['documents.proposal.accepted_content_types'] = "application/pdf"
+Setting['documents.proposal.max_documents_allowed'] = '3'
+Setting['documents.budget_investment.max_size'] = '3'
+Setting['documents.budget_investment.max_number'] = '3'
+Setting['documents.budget_investment.max_documents_allowed'] = '3'
+Setting['documents.budget_investment.accepted_content_types'] = "application/pdf"
+Setting['documents.budget_investment_milestone.max_size'] = '3'
+Setting['documents.budget_investment_milestone.max_number'] = '3'
+Setting['documents.budget_investment_milestone.max_documents_allowed'] = '3'
+Setting['documents.budget_investment_milestone.accepted_content_types'] = "application/pdf"
+Setting['documents.legislation_process.max_size'] = '3'
+Setting['documents.legislation_process.max_number'] = '3'
+Setting['documents.legislation_process.max_documents_allowed'] = '3'
+Setting['documents.legislation_process.accepted_content_types'] = "application/pdf"
+Setting['documents.legislation_proposal.max_size'] = '3'
+Setting['documents.legislation_proposal.max_number'] = '3'
+Setting['documents.legislation_proposal.max_documents_allowed'] = '3'
+Setting['documents.legislation_proposal.accepted_content_types'] = "application/pdf"
+Setting['documents.poll_question_answer.max_size'] = '3'
+Setting['documents.poll_question_answer.max_number'] = '3'
+Setting['documents.poll_question_answer.max_documents_allowed'] = '3'
+Setting['documents.poll_question_answer.accepted_content_types'] = "application/pdf"
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil

@@ -1,9 +1,6 @@
 class Poll::Question::Answer < ActiveRecord::Base
   include Galleryable
   include Documentable
-  documentable Setting['accepted_content_types']
-               Setting['max_documents_allowed'].to_i
-               Setting['max_file_size'].to_i.megabytes
 
   accepts_nested_attributes_for :documents, allow_destroy: true
 

@@ -11,9 +11,13 @@ namespace :settings do
   desc "Create new Attached Documents feature setting"
   task create_attached_documents_setting: :environment do
     Setting['feature.allow_attached_documents'] = true
-    Setting['feature.max_size']  = '3'
-    Setting['feature.max_number'] = '3'
-    Setting['feature.accepted_content_types'] = [ "application/pdf" ]
   end
 
+  desc "Initialize max size, number, allowed and accepted content types"
+  task initialize_attached_documents_setting: :environment do
+    Setting['feature.max_documents_allowed'] = '3'
+    Setting['feature.max_size']  = '3'
+    Setting['feature.max_number'] = '3'
+    Setting['feature.accepted_content_types'] =  "application/pdf"
+  end
 end
