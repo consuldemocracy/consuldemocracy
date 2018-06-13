@@ -320,11 +320,13 @@ es:
           impulsar tu propuesta.
         </p>
         <p>
-          ¿Crees que necesitas ayuda para alcanzar esta meta? Si es así, deja tu propuesta
-          como borrador y te guiaremos.
+          <strong>¿Crees que necesitas ayuda para alcanzar esta meta?</strong>
+          <br>
+          Si es así, deja tu propuesta como borrador y te guiaremos.
         </p>
       publish: No, quiero publicar la propuesta ya
       dashboard: Si, quiero ayuda y publicaré mas tarde
+      preview_title: Así es como quedará tu propuesta cuando la publiques
     share:
       improve_it: Mejora tu campaña y consigue mas apoyos.
       dashboard: Ver mas información

@@ -320,11 +320,13 @@ en:
         boost your proposal.
         </p>
         <p>
-        Do you think you need help to achieve this goal? If so, leave your proposal
-        as a draft and we will guide you.
+          <strong>Do you think you need help to achieve this goal?</strong>
+          <br>
+          If so, leave your proposal as a draft and we will guide you.
         </p>
       publish: No, I want to publish the proposal
       dashboard: Yes, I want help and I'll publish later
+      preview_title: This is how your proposal will look when you publish it
     share:
       improve_it: Improve your campaign and get more support.
       dashboard: See more information
