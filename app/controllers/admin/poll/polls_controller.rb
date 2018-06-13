@@ -20,7 +20,12 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   def create
     @poll = Poll.new(poll_params.merge(author: current_user))
     if @poll.save
-      redirect_to [:admin, @poll], notice: t("flash.actions.create.poll")
+      notice = t("flash.actions.create.poll")
+      if @poll.budget.present?
+        redirect_to admin_poll_booth_assignments_path(@poll), notice: notice
+      else
+        redirect_to [:admin, @poll], notice: notice
+      end
     else
       render :new
     end
