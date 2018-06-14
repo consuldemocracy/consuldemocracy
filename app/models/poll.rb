@@ -133,4 +133,8 @@ class Poll < ActiveRecord::Base
     Rails.application.secrets["nvotes_server_url"] || ENV["nvotes_server_url"]
   end
 
+  def budget_poll?
+    budget.present?
+  end
+
 end
