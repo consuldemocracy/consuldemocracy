@@ -224,9 +224,7 @@
         </li>
 
         <li <%= 'class=is_active' if controller_name == 'proposal_dashboard_actions' %>>
-
-          <%= link_to <%= ProposalDashboardAction.model_name.human(count: 2),
-                      admin_proposal_dashboard_actions_path %>
+          <%= link_to ProposalDashboardAction.model_name.human(count: 2), admin_proposal_dashboard_actions_path %>
         </li>
 
         <li <%= "class=is-active" if controller_name == "images" &&
