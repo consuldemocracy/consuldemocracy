@@ -39,9 +39,13 @@ resources :budgets, only: [:show, :index], path: 'presupuestos' do
   resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
     member do
       post :vote
+      put :flag
+      put :unflag
     end
+
     collection { get :suggest }
   end
+
   resource :ballot, only: :show, controller: "budgets/ballots" do
     resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
   end
