@@ -498,6 +498,10 @@ en:
       edit_proposal_link: Edit
       send_notification: Send notification
       retire: Retire
+      progress: Progress
+      actions: Actions
+    proposed_action:
+      execute: Execute
   polls:
     all: "All"
     no_dates: "no date assigned"

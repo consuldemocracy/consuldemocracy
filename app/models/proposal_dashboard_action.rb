@@ -4,6 +4,9 @@ class ProposalDashboardAction < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  has_many :proposal_executed_dashboard_actions, dependent: :restrict_with_error
+  has_many :proposals, through: :proposal_executed_dashboard_actions
+
   enum action_type: %i[proposed_action resource]
 
   validates :title, 
@@ -41,6 +44,17 @@ class ProposalDashboardAction < ActiveRecord::Base
 
   scope :active, -> { where(active: true) }
   scope :inactive, -> { where(active: false) }
+  scope :resources, -> { where(action_type: 'resource') }
+  scope :proposed_actions, -> { where(action_type: 'proposed_action') }
+  scope :active_for, ->(proposal) do 
+    published_at = proposal.published_at || Date.today
+
+    active
+      .where('required_supports <= ?', proposal.votes_for.size)
+      .where('day_offset <= ?', (Date.today - published_at).to_i)
+  end
+
+  default_scope { order(order: :asc, title: :asc) }
 
   def request_to_administrators?
     request_to_administrators || false

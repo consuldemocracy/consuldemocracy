@@ -41,13 +41,12 @@
           <%= link_to t('.publish'), publish_proposal_dashboard_index_path(proposal), method: :patch, class: 'menu-entry' if can?(:publish, proposal) %>
         <% end %>
 
-        <!-- 
-        <div class="menu-title"><span class="icon-user"></span> Progreso</div>
-        <a href='#' class="menu-entry">Meta actual</a>
-        <a href='#' class="menu-entry">Acciones</a>
-        <a href='#' class="menu-entry">Feed</a>
-        <a href='#' class="menu-entry">Ruta</a>
-
+        <div class="menu-title"><span class="icon-user"></span> <%= t '.progress' %></div>
+        <!-- a href='#' class="menu-entry">Meta actual</a -->
+        <%= link_to t('.actions'), proposal_dashboard_index_path(proposal.to_param), class: 'menu-entry' %>
+        <!-- a href='#' class="menu-entry">Feed</a -->
+        <!-- a href='#' class="menu-entry">Ruta</a -->
+      <!--
         <div class="menu-title selected"><span class="icon-user"></span> Recursos</div>
         <a href='#' class="menu-entry selected">Kit de difusión</a>
         <a href='#' class="menu-entry">Encuestas</a>
@@ -89,9 +88,16 @@
           <div class="caption">Notificaciones</div>
           <div class="value">3</div>
         </div>
-      </div>
-      <div class="body">body</div>
+        </div>
       -->
+      <div class="body">
+        <table>
+          <caption><%= t('.actions') %></caption>
+          <% proposed_actions.each do |action| %>
+            <%= render partial: 'proposed_action', locals: { action: action } %>
+          <% end %>
+        </table>
+      </div>      
     </div>
   </div>
 </div>

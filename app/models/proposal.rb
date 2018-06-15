@@ -31,6 +31,8 @@ class Proposal < ActiveRecord::Base
   belongs_to :geozone
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :proposal_notifications, dependent: :destroy
+  has_many :proposal_executed_dashboard_actions, dependent: :destroy
+  has_many :proposal_dashboard_actions, through: :proposal_executed_dashboard_actions
 
   validates :title, presence: true
   validates :question, presence: true

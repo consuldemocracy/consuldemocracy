@@ -498,6 +498,10 @@ es:
       edit_proposal_link: Editar propuesta
       send_notification: Enviar notificación
       retire: Retirar
+      progress: Progreso
+      actions: Acciones
+    proposed_action:
+      execute: Ejecutar
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"

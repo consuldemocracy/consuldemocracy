@@ -3,6 +3,10 @@ resources :proposals do
     collection do
       patch :publish
     end
+
+    member do
+      post :execute
+    end
   end
 
   member do

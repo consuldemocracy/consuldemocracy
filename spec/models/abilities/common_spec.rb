@@ -160,6 +160,19 @@ describe Abilities::Common do
     it { should_not be_able_to(:destroy, proposal_image)         }
     it { should_not be_able_to(:destroy, proposal_document)      }
   end
+  
+  describe 'proposals dashboard' do
+    it { is_expected.to be_able_to(:dashboard, own_proposal) }
+    it { is_expected.not_to be_able_to(:dashboard, proposal) }
+  end
+
+  describe 'publishing proposals' do
+    let(:draft_own_proposal) { create(:proposal, :draft, author: user) }
+
+    it { is_expected.to be_able_to(:publish, draft_own_proposal) }
+    it { is_expected.not_to be_able_to(:publish, own_proposal) }
+    it { is_expected.not_to be_able_to(:publish, proposal) }
+  end
 
   describe "when level 2 verified" do
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }

@@ -891,6 +891,18 @@ ActiveRecord::Schema.define(version: 20180711224810) do
     t.integer  "action_type",                          default: 0,     null: false
   end
 
+  create_table "proposal_executed_dashboard_actions", force: :cascade do |t|
+    t.integer  "proposal_id"
+    t.integer  "proposal_dashboard_action_id"
+    t.datetime "executed_at"
+    t.text     "comments"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "proposal_executed_dashboard_actions", ["proposal_dashboard_action_id"], name: "index_proposal_action", using: :btree
+  add_index "proposal_executed_dashboard_actions", ["proposal_id"], name: "index_proposal_executed_dashboard_actions_on_proposal_id", using: :btree
+
   create_table "proposal_notifications", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
@@ -1324,6 +1336,8 @@ ActiveRecord::Schema.define(version: 20180711224810) do
   add_foreign_key "poll_recounts", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
+  add_foreign_key "proposal_executed_dashboard_actions", "proposal_dashboard_actions"
+  add_foreign_key "proposal_executed_dashboard_actions", "proposals"
   add_foreign_key "proposals", "communities"
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
