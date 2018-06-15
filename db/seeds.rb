@@ -88,29 +88,23 @@ Setting['feature.allow_images'] = true
 Setting['feature.allow_attached_documents'] = true
 Setting['feature.guides'] = nil
 
-# Max number, max size, and content types of attached documents
-Setting['documents.proposal.max_size'] = '3'
-Setting['documents.proposal.max_number'] = '3'
-Setting['documents.proposal.accepted_content_types'] = "application/pdf"
+# Max documents allowed, max file size, and content types of attached documents
+Setting['documents.proposal.max_file_size'] = '3'
 Setting['documents.proposal.max_documents_allowed'] = '3'
-Setting['documents.budget_investment.max_size'] = '3'
-Setting['documents.budget_investment.max_number'] = '3'
+Setting['documents.proposal.accepted_content_types'] = "application/pdf"
+Setting['documents.budget_investment.max_file_size'] = '3'
 Setting['documents.budget_investment.max_documents_allowed'] = '3'
 Setting['documents.budget_investment.accepted_content_types'] = "application/pdf"
-Setting['documents.budget_investment_milestone.max_size'] = '3'
-Setting['documents.budget_investment_milestone.max_number'] = '3'
+Setting['documents.budget_investment_milestone.max_file_size'] = '3'
 Setting['documents.budget_investment_milestone.max_documents_allowed'] = '3'
 Setting['documents.budget_investment_milestone.accepted_content_types'] = "application/pdf"
-Setting['documents.legislation_process.max_size'] = '3'
-Setting['documents.legislation_process.max_number'] = '3'
+Setting['documents.legislation_process.max_file_size'] = '3'
 Setting['documents.legislation_process.max_documents_allowed'] = '3'
 Setting['documents.legislation_process.accepted_content_types'] = "application/pdf"
-Setting['documents.legislation_proposal.max_size'] = '3'
-Setting['documents.legislation_proposal.max_number'] = '3'
+Setting['documents.legislation_proposal.max_file_size'] = '3'
 Setting['documents.legislation_proposal.max_documents_allowed'] = '3'
 Setting['documents.legislation_proposal.accepted_content_types'] = "application/pdf"
-Setting['documents.poll_question_answer.max_size'] = '3'
-Setting['documents.poll_question_answer.max_number'] = '3'
+Setting['documents.poll_question_answer.max_file_size'] = '3'
 Setting['documents.poll_question_answer.max_documents_allowed'] = '3'
 Setting['documents.poll_question_answer.accepted_content_types'] = "application/pdf"
 
