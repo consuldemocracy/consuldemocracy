@@ -10,5 +10,4 @@ namespace :homepage do
       Setting['feature.homepage.widgets.feeds.processes'] = true
     end
   end
-
 end
