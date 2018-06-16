@@ -175,7 +175,7 @@ feature 'Admin settings' do
     end
 
     scenario "Admin should be able to update the accepted content types for proposals" do
-      Setting["documents_proposal_accepted_content_types"] = 'application/pdf'
+      Setting["documents_proposal_accepted_content_types"] = "application/pdf"
       setting = Setting.where(key:"documents_proposal_accepted_content_types").first
 
       admin = create(:administrator).user
@@ -185,21 +185,12 @@ feature 'Admin settings' do
       find("#tab-configuration").click
 
       within("#edit_setting_#{setting.id}") do
-        fill_in "setting_#{setting.id}", with: 'application/json'
+        fill_in "setting_#{setting.id}", with: "json"
         click_button 'Update'
       end
 
       expect(page).to have_content 'Value updated'
-      expect(page).to have_content "application/json"
-    end
-
-  # update this test!
-    scenario "User visits new proposal page and should see updated application content type" do
-      @user  = create(:user, username: 'Jose Luis Balbin')
-      login_as(@user.username)
-
-      visit new_proposal_path
-      expect(page).to have_content "application/json"
+      expect(page).to have_content "json"
     end
 
     scenario "Admin should be able to update the maximum number of documents for budget investment" do

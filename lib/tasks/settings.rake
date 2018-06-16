@@ -15,20 +15,24 @@ namespace :settings do
 
   desc "Initialize max size, number, allowed and accepted content types"
   task initialize_attached_documents_setting: :environment do
-    Setting['documents.proposal.max_file_size'] = '3'
-    Setting['documents.proposal.max_documents_allowed'] = '3'
-    Setting['documents.proposal.accepted_content_types'] = "application/pdf"
-    Setting['documents.budget_investment.max_file_size'] = '3'
-    Setting['documents.budget_investment.max_documents_allowed'] = '3'
-    Setting['documents.budget_investment.accepted_content_types'] = "application/pdf"
-    Setting['documents.budget_investment_milestone.max_file_size'] = '3'
-    Setting['documents.budget_investment_milestone.max_documents_allowed'] = '3'
-    Setting['documents.budget_investment_milestone.accepted_content_types'] = "application/pdf"
-    Setting['documents.legislation_process.max_file_size'] = '3'
-    Setting['documents.legislation_process.max_documents_allowed'] = '3'
-    Setting['documents.legislation_process.accepted_content_types'] = "application/pdf"
-    Setting['documents_poll_question_answer_max_file_size'] = '3'
-    Setting['documents_poll_question_answer_max_documents_allowed'] = '3'
-    Setting['documents_poll_question_answer_accepted_content_types'] = "application/pdf"
+    Setting.create(key: 'documents_proposal_max_file_size', value: '3')
+    Setting.create(key: 'documents_proposal_max_documents_allowed', value: '3')
+    Setting.create(key: 'documents_proposal_accepted_content_types', value: 'application/pdf')
+    Setting.create(key: 'documents_budget_investment_max_file_size', value: '3')
+    Setting.create(key: 'documents_budget_investment_max_documents_allowed', value: '3')
+    Setting.create(key: 'documents_budget_investment_accepted_content_types', value: 'application/pdf')
+    Setting.create(key: 'documents_budget_investment_milestone_max_file_size', value: '3')
+    Setting.create(key: 'documents_budget_investment_milestone_max_documents_allowed', value: '3')
+    Setting.create(key: 'documents_budget_investment_milestone_accepted_content_types', value: 'application/pdf')
+    Setting.create(key: 'documents_legislation_process_max_file_size', value: '3')
+    Setting.create(key: 'documents_legislation_process_max_documents_allowed', value: '3')
+    Setting.create(key: 'documents_legislation_process_accepted_content_types', value: 'application/pdf')
+    Setting.create(key: 'documents_legislation_proposal_max_file_size', value: '3')
+    Setting.create(key: 'documents_legislation_proposal_max_documents_allowed', value: '3')
+    Setting.create(key: 'documents_legislation_proposal_accepted_content_types', value: 'application/pdf')
+    Setting.create(key: 'documents_poll_question_answer_max_file_size', value: '3')
+    Setting.create(key: 'documents_poll_question_answer_max_documents_allowed', value: '3')
+    Setting.create(key: 'documents_poll_question_answer_accepted_content_types', value: 'application/pdf')
+
   end
 end
