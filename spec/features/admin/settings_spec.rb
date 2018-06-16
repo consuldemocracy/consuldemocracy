@@ -126,7 +126,7 @@ feature 'Admin settings' do
 
   end
 
-  describe "Update document settings", :js do
+  describe "Update documentable resource settings", :js do
 
     scenario "Should be able to update the maximum number of documents for proposals" do
       Setting["documents_proposal_max_documents_allowed"] = '3'
@@ -236,7 +236,8 @@ feature 'Admin settings' do
       expect(page).to have_content 'Value updated'
     end
 
-
   end
+
+
 
 end
