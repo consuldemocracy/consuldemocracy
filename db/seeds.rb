@@ -20,16 +20,16 @@ Setting["max_ratio_anon_votes_on_debates"] = 50
 Setting["max_votes_for_debate_edit"] = 1000
 
 # Max votes where a proposal is still editable
-Setting["max_votes_for_proposal_edit"] = 1000
+Setting["max_votes_for_proposal.edit"] = 1000
 
 # Max length for comments
 Setting['comments_body_max_length'] = 1000
 
 # Prefix for the Proposal codes
-Setting["proposal_code_prefix"] = 'MAD'
+Setting["proposal.code_prefix"] = 'MAD'
 
 # Number of votes needed for proposal success
-Setting["votes_for_proposal_success"] = 53726
+Setting["votes_for_proposal.success"] = 53726
 
 # Months to archive proposals
 Setting["months_to_archive_proposals"] = 12
@@ -101,15 +101,12 @@ Setting['documents.budget_investment_milestone.accepted_content_types'] = "appli
 Setting['documents.legislation_process.max_file_size'] = '3'
 Setting['documents.legislation_process.max_documents_allowed'] = '3'
 Setting['documents.legislation_process.accepted_content_types'] = "application/pdf"
-Setting['documents.legislation_proposal.max_file_size'] = '3'
-Setting['documents.legislation_proposal.max_documents_allowed'] = '3'
-Setting['documents.legislation_proposal.accepted_content_types'] = "application/pdf"
-Setting['documents.poll_question_answer.max_file_size'] = '3'
-Setting['documents.poll_question_answer.max_documents_allowed'] = '3'
-Setting['documents.poll_question_answer.accepted_content_types'] = "application/pdf"
+Setting['documents_poll_question_answer_max_file_size'] = '3'
+Setting['documents_poll_question_answer_max_documents_allowed'] = '3'
+Setting['documents_poll_question_answer_accepted_content_types'] = "application/pdf"
 
 # Spending proposals feature flags
-Setting['feature.spending_proposal_features.voting_allowed'] = nil
+Setting['feature.spending_proposal.features.voting_allowed'] = nil
 
 # Banner styles
 Setting['banner-style.banner-style-one']   = "Banner style 1"
@@ -122,7 +119,7 @@ Setting['banner-img.banner-img-two']   = "Banner image 2"
 Setting['banner-img.banner-img-three'] = "Banner image 3"
 
 # Proposal notifications
-Setting['proposal_notification_minimum_interval_in_days'] = 3
+Setting['proposal.notification_minimum_interval_in_days'] = 3
 Setting['direct_message_max_per_day'] = 3
 
 # Email settings
@@ -134,7 +131,7 @@ Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
 Setting['min_age_to_participate'] = 16
 
 # Proposal improvement url path ('/help/proposal-improvement')
-Setting['proposal_improvement_path'] = nil
+Setting['proposal.improvement_path'] = nil
 
 # City map feature default configuration (Greenwich)
 Setting['map_latitude'] = 51.48

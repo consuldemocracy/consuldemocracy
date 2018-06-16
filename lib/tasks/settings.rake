@@ -15,9 +15,23 @@ namespace :settings do
 
   desc "Initialize max size, number, allowed and accepted content types"
   task initialize_attached_documents_setting: :environment do
-    Setting['feature.max_documents_allowed'] = '3'
-    Setting['feature.max_size']  = '3'
-    Setting['feature.max_number'] = '3'
-    Setting['feature.accepted_content_types'] =  "application/pdf"
+    Setting['documents.proposal.max_file_size'] = '3'
+    Setting['documents.proposal.max_documents_allowed'] = '3'
+    Setting['documents.proposal.accepted_content_types'] = "application/pdf"
+    Setting['documents.budget_investment.max_file_size'] = '3'
+    Setting['documents.budget_investment.max_documents_allowed'] = '3'
+    Setting['documents.budget_investment.accepted_content_types'] = "application/pdf"
+    Setting['documents.budget_investment_milestone.max_file_size'] = '3'
+    Setting['documents.budget_investment_milestone.max_documents_allowed'] = '3'
+    Setting['documents.budget_investment_milestone.accepted_content_types'] = "application/pdf"
+    Setting['documents.legislation_process.max_file_size'] = '3'
+    Setting['documents.legislation_process.max_documents_allowed'] = '3'
+    Setting['documents.legislation_process.accepted_content_types'] = "application/pdf"
+    Setting['documents.legislation_proposal.max_file_size'] = '3'
+    Setting['documents.legislation_proposal.max_documents_allowed'] = '3'
+    Setting['documents.legislation_proposal.accepted_content_types'] = "application/pdf"
+    Setting['documents.poll_question_answer.max_file_size'] = '3'
+    Setting['documents.poll_question_answer.max_documents_allowed'] = '3'
+    Setting['documents.poll_question_answer.accepted_content_types'] = "application/pdf"
   end
 end

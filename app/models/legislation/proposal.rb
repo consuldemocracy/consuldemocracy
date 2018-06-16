@@ -45,6 +45,18 @@ class Legislation::Proposal < ActiveRecord::Base
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
 
+  def self.max_documents_allowed
+    Setting["documents_legislation_proposal_max_documents_allowed"].to_i
+  end
+
+  def self.max_file_size
+    Setting["documents_legislation_proposal_max_file_size"].to_i.megabytes
+  end
+
+  def self.accepted_content_types
+    [Setting["documents_legislation_proposal_accepted_content_types"]]
+  end
+
   def to_param
     "#{id}-#{title}".parameterize
   end

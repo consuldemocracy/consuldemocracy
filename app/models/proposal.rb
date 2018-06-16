@@ -73,6 +73,18 @@ class Proposal < ActiveRecord::Base
     proposal_path(self)
   end
 
+  def self.max_documents_allowed
+    Setting["documents_proposal_max_documents_allowed"].to_i
+  end
+
+  def self.max_file_size
+    Setting["documents_proposal_max_file_size"].to_i.megabytes
+  end
+
+  def self.accepted_content_types
+    [Setting["documents_proposal_accepted_content_types"]]
+  end
+
   def self.recommendations(user)
     tagged_with(user.interests, any: true)
       .where("author_id != ?", user.id)

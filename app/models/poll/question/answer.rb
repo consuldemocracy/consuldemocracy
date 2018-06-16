@@ -12,6 +12,18 @@ class Poll::Question::Answer < ActiveRecord::Base
 
   before_validation :set_order, on: :create
 
+  def self.max_documents_allowed
+    Setting["documents_poll_question_answer_max_documents_allowed"].to_i
+  end
+
+  def self.max_file_size
+    Setting["documents_poll_question_answer_max_file_size"].to_i.megabytes
+  end
+
+  def self.accepted_content_types
+    [Setting["documents_poll_question_answer_accepted_content_types"]]
+  end
+
   def description
     super.try :html_safe
   end

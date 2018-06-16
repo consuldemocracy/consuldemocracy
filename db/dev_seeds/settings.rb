@@ -64,22 +64,24 @@ section "Creating Settings" do
   Setting.create(key: 'map_zoom', value: 10)
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
 
-  Setting.create(key: 'documents_maximum_number_for_proposals', value: '3' )
-  Setting.create(key: 'documents_maximum_size_in_Mb__for_proposals', value: '3')
-  Setting.create(key: 'accepted_content_type_for_proposals', value: 'application/pdf')
-  Setting.create(key: 'documents_maximum_number_for_budget_investments', value: '3')
-  Setting.create(key: 'documents_maximum_size_in_Mb_for_budget_investments', value: '3')
-  Setting.create(key: 'accepted_content_type_for_budget_investments', value: 'application/pdf')
-  Setting.create(key: 'documents_maximum_number_for_budget_investment_milestones', value: '3')
-  Setting.create(key: 'documents_maximum_size_in_Mb_for_budget_investments_milestones', value: '3')
-  Setting.create(key: 'accepted_content_type_for_budget_investment_milestones', value: 'application/pdf')
-  Setting.create(key: 'documents_maximum_number_for_legislation_process', value: '3')
-  Setting.create(key: 'documents_maximum_size_in_Mb_for_legislation_process', value: '3')
-  Setting.create(key: 'accepted_content_type_for_legislation_process', value: 'application/pdf')
-  Setting.create(key: 'documents_maximum_number_for_poll_question_answers', value: '3')
-  Setting.create(key: 'documents_maximum_size_in_Mb_for_poll_question_answers',value: '3')
-  Setting.create(key: 'accepted_content_type_for_poll_question_answers', value: 'application/pdf')
-
+  Setting['documents_proposal_max_file_size'] = '3'
+  Setting['documents_proposal_max_documents_allowed'] = '3'
+  Setting['documents_proposal_accepted_content_types'] = "application/pdf"
+  Setting['documents_budget_investment_max_file_size'] = '3'
+  Setting['documents_budget_investment_max_documents_allowed'] = '3'
+  Setting['documents_budget_investment_accepted_content_types'] = "application/pdf"
+  Setting['documents_budget_investment_milestone_max_file_size'] = '3'
+  Setting['documents_budget_investment_milestone_max_documents_allowed'] = '3'
+  Setting['documents_budget_investment_milestone_accepted_content_types'] = "application/pdf"
+  Setting['documents_legislation_process_max_file_size'] = '3'
+  Setting['documents_legislation_process_max_documents_allowed'] = '3'
+  Setting['documents_legislation_process_accepted_content_types'] = "application/pdf"
+  Setting['documents_legislation_proposal_max_file_size'] = '3'
+  Setting['documents_legislation_proposal_max_documents_allowed'] = '3'
+  Setting['documents_legislation_proposal_accepted_content_types'] = "application/pdf"
+  Setting['documents_poll_question_answer_max_file_size'] = '3'
+  Setting['documents_poll_question_answer_max_documents_allowed'] = '3'
+  Setting['documents_poll_question_answer_accepted_content_types'] = "application/pdf"
 
   Setting['feature.homepage.widgets.feeds.proposals'] = true
   Setting['feature.homepage.widgets.feeds.debates'] = true
