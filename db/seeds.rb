@@ -89,6 +89,7 @@ Setting['feature.allow_attached_documents'] = true
 Setting['feature.guides'] = nil
 
 # Max documents allowed, max file size, and content types of attached documents
+
 Setting['documents.proposal.max_file_size'] = '3'
 Setting['documents.proposal.max_documents_allowed'] = '3'
 Setting['documents.proposal.accepted_content_types'] = "application/pdf"

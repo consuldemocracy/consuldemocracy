@@ -27,11 +27,8 @@ namespace :settings do
     Setting['documents.legislation_process.max_file_size'] = '3'
     Setting['documents.legislation_process.max_documents_allowed'] = '3'
     Setting['documents.legislation_process.accepted_content_types'] = "application/pdf"
-    Setting['documents.legislation_proposal.max_file_size'] = '3'
-    Setting['documents.legislation_proposal.max_documents_allowed'] = '3'
-    Setting['documents.legislation_proposal.accepted_content_types'] = "application/pdf"
-    Setting['documents.poll_question_answer.max_file_size'] = '3'
-    Setting['documents.poll_question_answer.max_documents_allowed'] = '3'
-    Setting['documents.poll_question_answer.accepted_content_types'] = "application/pdf"
+    Setting['documents_poll_question_answer_max_file_size'] = '3'
+    Setting['documents_poll_question_answer_max_documents_allowed'] = '3'
+    Setting['documents_poll_question_answer_accepted_content_types'] = "application/pdf"
   end
 end

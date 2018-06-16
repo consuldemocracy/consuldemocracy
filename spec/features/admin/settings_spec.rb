@@ -126,4 +126,117 @@ feature 'Admin settings' do
 
   end
 
+  describe "Update document settings", :js do
+
+    scenario "Should be able to update the maximum number of documents for proposals" do
+      Setting["documents_proposal_max_documents_allowed"] = '3'
+      setting = Setting.where(key:"documents_proposal_max_documents_allowed").first
+
+      admin = create(:administrator).user
+      login_as(admin)
+
+      visit admin_settings_path
+      find("#tab-configuration").click
+
+      within("#edit_setting_#{setting.id}") do
+        fill_in "setting_#{setting.id}", with: '5'
+        click_button 'Update'
+      end
+
+      expect(page).to have_content 'Value updated'
+    end
+
+    scenario "Should be able to update the maximum number of documents for budget investment" do
+      Setting["documents_budget_investment_max_documents_allowed"] = '3'
+      setting = Setting.where(key:"documents_budget_investment_max_documents_allowed").first
+
+      admin = create(:administrator).user
+      login_as(admin)
+
+      visit admin_settings_path
+      find("#tab-configuration").click
+
+      within("#edit_setting_#{setting.id}") do
+        fill_in "setting_#{setting.id}", with: '5'
+        click_button 'Update'
+      end
+
+      expect(page).to have_content 'Value updated'
+    end
+
+    scenario "Should be able to update the maximum number of documents for budget investment milestone" do
+      Setting["documents_budget_investment_milestone_max_documents_allowed"] = '3'
+      setting = Setting.where(key:"documents_budget_investment_milestone_max_documents_allowed").first
+
+      admin = create(:administrator).user
+      login_as(admin)
+
+      visit admin_settings_path
+      find("#tab-configuration").click
+
+      within("#edit_setting_#{setting.id}") do
+        fill_in "setting_#{setting.id}", with: '5'
+        click_button 'Update'
+      end
+
+      expect(page).to have_content 'Value updated'
+    end
+
+    scenario "Should be able to update the maximum number of documents for legislation process milestone" do
+      Setting["documents_legislation_process_max_documents_allowed"] = '3'
+      setting = Setting.where(key:"documents_legislation_process_max_documents_allowed").first
+
+      admin = create(:administrator).user
+      login_as(admin)
+
+      visit admin_settings_path
+      find("#tab-configuration").click
+
+      within("#edit_setting_#{setting.id}") do
+        fill_in "setting_#{setting.id}", with: '5'
+        click_button 'Update'
+      end
+
+      expect(page).to have_content 'Value updated'
+    end
+
+    scenario "Should be able to update the maximum number of documents for legislation proposal milestone" do
+      Setting["documents_legislation_proposal_max_documents_allowed"] = '3'
+      setting = Setting.where(key:"documents_legislation_proposal_max_documents_allowed").first
+
+      admin = create(:administrator).user
+      login_as(admin)
+
+      visit admin_settings_path
+      find("#tab-configuration").click
+
+      within("#edit_setting_#{setting.id}") do
+        fill_in "setting_#{setting.id}", with: '5'
+        click_button 'Update'
+      end
+
+      expect(page).to have_content 'Value updated'
+    end
+
+    scenario "Should be able to update the maximum number of documents for poll question answer" do
+      Setting["documents_poll_question_answer_max_documents_allowed"] = '3'
+      setting = Setting.where(key:"documents_poll_question_answer_max_documents_allowed").first
+
+      admin = create(:administrator).user
+      login_as(admin)
+
+      visit admin_settings_path
+      find("#tab-configuration").click
+
+      within("#edit_setting_#{setting.id}") do
+        fill_in "setting_#{setting.id}", with: '5'
+        click_button 'Update'
+      end
+
+      expect(page).to have_content 'Value updated'
+    end
+
+
+  end
+
 end

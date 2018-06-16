@@ -63,25 +63,26 @@ section "Creating Settings" do
   Setting.create(key: 'map_longitude', value: -3.7)
   Setting.create(key: 'map_zoom', value: 10)
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
+  
 
-  Setting['documents_proposal_max_file_size'] = '3'
-  Setting['documents_proposal_max_documents_allowed'] = '3'
-  Setting['documents_proposal_accepted_content_types'] = "application/pdf"
-  Setting['documents_budget_investment_max_file_size'] = '3'
-  Setting['documents_budget_investment_max_documents_allowed'] = '3'
-  Setting['documents_budget_investment_accepted_content_types'] = "application/pdf"
-  Setting['documents_budget_investment_milestone_max_file_size'] = '3'
-  Setting['documents_budget_investment_milestone_max_documents_allowed'] = '3'
-  Setting['documents_budget_investment_milestone_accepted_content_types'] = "application/pdf"
-  Setting['documents_legislation_process_max_file_size'] = '3'
-  Setting['documents_legislation_process_max_documents_allowed'] = '3'
-  Setting['documents_legislation_process_accepted_content_types'] = "application/pdf"
-  Setting['documents_legislation_proposal_max_file_size'] = '3'
-  Setting['documents_legislation_proposal_max_documents_allowed'] = '3'
-  Setting['documents_legislation_proposal_accepted_content_types'] = "application/pdf"
-  Setting['documents_poll_question_answer_max_file_size'] = '3'
-  Setting['documents_poll_question_answer_max_documents_allowed'] = '3'
-  Setting['documents_poll_question_answer_accepted_content_types'] = "application/pdf"
+  Setting.create(key: 'documents_proposal_max_file_size', value: '3')
+  Setting.create(key: 'documents_proposal_max_documents_allowed', value: '3')
+  Setting.create(key: 'documents_proposal_accepted_content_types', value: 'application/pdf')
+  Setting.create(key: 'documents_budget_investment_max_file_size', value: '3')
+  Setting.create(key: 'documents_budget_investment_max_documents_allowed', value: '3')
+  Setting.create(key: 'documents_budget_investment_accepted_content_types', value: 'application/pdf')
+  Setting.create(key: 'documents_budget_investment_milestone_max_file_size', value: '3')
+  Setting.create(key: 'documents_budget_investment_milestone_max_documents_allowed', value: '3')
+  Setting.create(key: 'documents_budget_investment_milestone_accepted_content_types', value: 'application/pdf')
+  Setting.create(key: 'documents_legislation_process_max_file_size', value: '3')
+  Setting.create(key: 'documents_legislation_process_max_documents_allowed', value: '3')
+  Setting.create(key: 'documents_legislation_process_accepted_content_types', value: 'application/pdf')
+  Setting.create(key: 'documents_legislation_proposal_max_file_size', value: '3')
+  Setting.create(key: 'documents_legislation_proposal_max_documents_allowed', value: '3')
+  Setting.create(key: 'documents_legislation_proposal_accepted_content_types', value: 'application/pdf')
+  Setting.create(key: 'documents_poll_question_answer_max_file_size', value: '3')
+  Setting.create(key: 'documents_poll_question_answer_max_documents_allowed', value: '3')
+  Setting.create(key: 'documents_poll_question_answer_accepted_content_types', value: 'application/pdf')
 
   Setting['feature.homepage.widgets.feeds.proposals'] = true
   Setting['feature.homepage.widgets.feeds.debates'] = true

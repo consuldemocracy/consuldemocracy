@@ -43,3 +43,22 @@ en:
       recounting_poll: "Recounting Poll"
       expired_poll_without_stats: "Expired Poll without Stats & Results"
       expired_poll_with_stats: "Expired Poll with Stats & Results"
+    documents:
+      proposal.max_file_size: '3'
+      proposal.max_documents_allowed: '3'
+      proposal.accepted_content_types: 'application/pdf'
+      budget_investment.max_file_size: '3'
+      budget_investment.max_documents_allowed: '3'
+      budget_investment.accepted_content_types: 'application/pdf'
+      budget_investment_milestone.max_file_size: '3'
+      budget_investment_milestone.max_documents_allowed: '3'
+      budget_investment_milestone.accepted_content_types: 'application/pdf'
+      legislation_process.max_file_size: '3'
+      legislation_process.max_documents_allowed: '3'
+      legislation_process.accepted_content_types: 'application/pdf'
+      legislation_proposal.max_file_size: '3'
+      legislation_proposal.max_documents_allowed: '3'
+      legislation_proposal.accepted_content_types: 'application/pdf'
+      poll_question_answer.max_file_size: '3'
+      poll_question_answer.max_documents_allowed: '3'
+      poll_question_answer.accepted_content_types: 'application/pdf'
