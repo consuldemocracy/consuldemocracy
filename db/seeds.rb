@@ -26,7 +26,7 @@ Setting["max_votes_for_proposal_edit"] = 1000
 Setting['comments_body_max_length'] = 1000
 
 # Prefix for the Proposal codes
-Setting["proposal_code_prefix"] = 'MAD'
+Setting["proposal_code_prefix"] = 'ZAM'
 
 # Number of votes needed for proposal success
 Setting["votes_for_proposal_success"] = 53726
