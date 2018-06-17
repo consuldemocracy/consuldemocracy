@@ -217,6 +217,7 @@ feature 'Admin settings' do
       login_as(@user.username)
 
       visit create_investments_management_budgets_path
+      
       expect(page).to have_content "77"
     end
 
