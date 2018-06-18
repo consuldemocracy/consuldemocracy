@@ -63,6 +63,7 @@ module Abilities
       cannot :moderate, ProposalNotification, author_id: user.id
 
       can :index, ProposalNotification
+      can :manage, AdministratorTask
     end
   end
 end

@@ -109,6 +109,9 @@ en:
       proposal_dashboard_action:
         one: Proposal dashboard action
         other: Proposal dashboard actions
+      administrator_task:
+        one: Task
+        other: Tasks
     attributes:
       budget:
         name: "Name"
@@ -272,6 +275,12 @@ en:
         order: Order
         active: Active
         action_type: Type
+      proposal_executed_dashboard_action:
+        comments: Comments for the administrator
+      administrator_task:
+        source: Source
+        user: Executed by
+        executed_at: Executed at
     errors:
       models:
         user:

@@ -502,6 +502,10 @@ es:
       actions: Acciones
     proposed_action:
       execute: Ejecutar
+    form:
+      request: Solicitar
+    create_request:
+      success: La petición ha sido correctamente enviada al administrador.
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"

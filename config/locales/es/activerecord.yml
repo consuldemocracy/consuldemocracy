@@ -109,6 +109,9 @@ es:
       proposal_dashboard_action:
         one: Acción del panel de control de propuestas
         other: Acciones del panel de control de propuestas
+      administrator_task:
+        one: Tarea
+        other: Tareas
     attributes:
       budget:
         name: "Nombre"
@@ -273,6 +276,12 @@ es:
         order: Orden
         active: Activa
         action_type: Tipo
+      proposal_executed_dashboard_action:
+        comments: Comentarios para el administrador
+      administrator_task:
+        source: Fuente
+        user: Ejecutado por
+        executed_at: Ejecutado el
     errors:
       models:
         user:

@@ -1,0 +1,13 @@
+<div class="proposals-dashboard-new-request-form row">
+
+  <div class="small-12 medium-9 column">
+    <%= back_link_to %>
+
+    <h1><%= proposal_dashboard_action.title %></h1>
+    <div data-alert class="callout primary">
+      <%= proposal_dashboard_action.description %>
+    </div>
+
+    <%= render 'proposals_dashboard/form' %>
+  </div>
+</div>

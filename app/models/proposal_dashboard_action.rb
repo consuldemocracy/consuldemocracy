@@ -59,4 +59,8 @@ class ProposalDashboardAction < ActiveRecord::Base
   def request_to_administrators?
     request_to_administrators || false
   end
+
+  def request_to_administrators?
+    request_to_administrators
+  end
 end

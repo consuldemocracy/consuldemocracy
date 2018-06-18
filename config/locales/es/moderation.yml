@@ -49,6 +49,7 @@ es:
       proposals: Propuestas
       proposal_notifications: Notificaciones de propuestas
       users: Bloquear usuarios
+      administrator_tasks: Tareas pendientes
     proposals:
       index:
         block_authors: Bloquear autores
@@ -95,3 +96,17 @@ es:
         search_placeholder: email o nombre de usuario
         title: Bloquear usuarios
       notice_hide: Usuario bloqueado. Se han ocultado todos sus debates y comentarios.
+    administrator_tasks:
+      index:
+        solve: Resolver
+        no_records: No hay tareas pendientes
+      edit:
+        back: Volver a la lista de tareas pendientes
+        solving: Resolver tarea pendiente
+      form:
+        solve: Marcar como resuelta
+        proposal: "La propuesta: %{title}"
+        request: "Ha solicitado: %{title}"
+        check_details: Ver los detalles de la propuesta
+      update:
+        success: La tarea ha sido marcada como resuelta
