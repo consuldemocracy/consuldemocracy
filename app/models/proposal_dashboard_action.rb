@@ -47,7 +47,7 @@ class ProposalDashboardAction < ActiveRecord::Base
   scope :resources, -> { where(action_type: 'resource') }
   scope :proposed_actions, -> { where(action_type: 'proposed_action') }
   scope :active_for, ->(proposal) do 
-    published_at = proposal.published_at || Date.today
+    published_at = proposal.published_at&.to_date || Date.today
 
     active
       .where('required_supports <= ?', proposal.votes_for.size)
