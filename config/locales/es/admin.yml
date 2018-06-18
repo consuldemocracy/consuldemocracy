@@ -78,8 +78,10 @@ es:
         table_investments: Proyectos de gasto
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
+        table_admin_ballots: Urnas
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
+        admin_ballots: Gestionar urnas
       create:
         notice: "¡Presupuestos participativos creados con éxito!"
       update:
@@ -555,6 +557,7 @@ es:
       title_profiles: Perfiles
       title_settings: Configuración
       title_site_customization: Contenido del sitio
+      title_booths: Urnas de votación
       legislation: Legislación colaborativa
       users: Usuarios
     administrators:

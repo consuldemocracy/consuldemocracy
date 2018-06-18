@@ -5,6 +5,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   before_action :load_geozones, only: [:new, :create, :edit, :update]
 
   def index
+    @polls = Poll.not_budget
   end
 
   def show
@@ -19,7 +20,12 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   def create
     @poll = Poll.new(poll_params.merge(author: current_user))
     if @poll.save
-      redirect_to [:admin, @poll], notice: t("flash.actions.create.poll")
+      notice = t("flash.actions.create.poll")
+      if @poll.budget.present?
+        redirect_to admin_poll_booth_assignments_path(@poll), notice: notice
+      else
+        redirect_to [:admin, @poll], notice: notice
+      end
     else
       render :new
     end
@@ -61,7 +67,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     def poll_params
       image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
       attributes = [:name, :starts_at, :ends_at, :geozone_restricted, :summary, :description,
-                    :results_enabled, :stats_enabled, geozone_ids: [],
+                    :results_enabled, :stats_enabled, :budget_id, geozone_ids: [],
                     image_attributes: image_attributes]
       params.require(:poll).permit(*attributes)
     end

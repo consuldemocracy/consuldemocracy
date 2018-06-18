@@ -21,6 +21,7 @@ class Poll < ActiveRecord::Base
 
   has_and_belongs_to_many :geozones
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :budget
 
   accepts_nested_attributes_for :questions
 
@@ -36,6 +37,7 @@ class Poll < ActiveRecord::Base
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
   scope :public_for_api, -> { all }
   scope :with_nvotes, -> { where.not(nvotes_poll_id: nil) }
+  scope :not_budget,    -> { where(budget_id: nil) }
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 
@@ -82,8 +84,13 @@ class Poll < ActiveRecord::Base
   end
 
   def votable_by?(user)
+    return false if user_has_an_online_ballot(user)
     answerable_by?(user) &&
     not_voted_by?(user)
+  end
+
+  def user_has_an_online_ballot(user)
+    budget.present? && budget.ballots.find_by(user: user)&.lines.present?
   end
 
   def self.not_voted_by(user)
@@ -124,6 +131,10 @@ class Poll < ActiveRecord::Base
 
   def self.server_url
     Rails.application.secrets["nvotes_server_url"] || ENV["nvotes_server_url"]
+  end
+
+  def budget_poll?
+    budget.present?
   end
 
 end

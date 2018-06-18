@@ -78,8 +78,10 @@ en:
         table_investments: Investments
         table_edit_groups: Headings groups
         table_edit_budget: Edit
+        table_admin_ballots: Ballots
         edit_groups: Edit headings groups
         edit_budget: Edit budget
+        admin_ballots: Admin ballots
       create:
         notice: New participatory budget created successfully!
       update:
@@ -555,6 +557,7 @@ en:
       title_profiles: Profiles
       title_settings: Settings
       title_site_customization: Site content
+      title_booths: Voting booths
       legislation: Collaborative Legislation
       users: Users
     administrators:

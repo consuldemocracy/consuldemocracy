@@ -21,6 +21,7 @@ es:
         no_ballots_allowed: El periodo de votación está cerrado.
         different_heading_assigned_html: "Ya has votado proyectos de otra partida: %{heading_link}"
         change_ballot: cambiar tus votos
+        casted_offline: Ya has participado presencialmente
     groups:
       show:
         title: Selecciona una opción
