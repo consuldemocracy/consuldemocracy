@@ -33,6 +33,7 @@
 //= require moderator_comment
 //= require moderator_debates
 //= require moderator_proposals
+//= require moderator_budget_investments
 //= require moderator_proposal_notifications
 //= require prevent_double_submission
 //= require gettext
