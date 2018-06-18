@@ -1,20 +1,20 @@
 nl:
   settings:
-    comments_body_max_length: "Comments body max length"
-    official_level_1_name: "Level 1 public official"
-    official_level_2_name: "Level 2 public official"
-    official_level_3_name: "Level 3 public official"
-    official_level_4_name: "Level 4 public official"
-    official_level_5_name: "Level 5 public official"
-    max_ratio_anon_votes_on_debates: "Maximum ratio of anonymous votes per Debate"
-    max_votes_for_proposal_edit: "Number of votes from which a Proposal can no longer be edited"
-    max_votes_for_debate_edit: "Number of votes from which a Debate can no longer be edited"
-    proposal_code_prefix: "Prefix for Proposal codes"
-    votes_for_proposal_success: "Number of votes necessary for approval of a Proposal"
-    months_to_archive_proposals: "Months to archive Proposals"
-    email_domain_for_officials: "Email domain for public officials"
-    per_page_code_head: "Code to be included on every page (<head>)"
-    per_page_code_body: "Code to be included on every page (<body>)"
+    comments_body_max_length: "Commentaar tekst maximum lengte"
+    official_level_1_name: "Niveau 1 'beambte'"
+    official_level_2_name: "Niveau 2 'beambte'"
+    official_level_3_name: "Niveau 3 'beambte'"
+    official_level_4_name: "Niveau 4 'beambte'"
+    official_level_5_name: "Niveau 5 'beambte'"
+    max_ratio_anon_votes_on_debates: "Maximum verhouding gewone vs. anonieme stemmen per debat"
+    max_votes_for_proposal_edit: "Aantal stemmen vanaf welke een voorstel niet meer kan worden aangepast"
+    max_votes_for_debate_edit: "Aantal stemmen vanaf welke een debat niet meer kan worden aangepast"
+    proposal_code_prefix: "Prefix voorstel codes"
+    votes_for_proposal_success: "Aantal stemmen dat nodig is voor de goedkeuring van een voorstel"
+    months_to_archive_proposals: "Maanden na welke voorstellen worden gearchiveerd"
+    email_domain_for_officials: "Email domain voor beambten"
+    per_page_code_head: "Code die op elke pagina moet worden opgenomen (<head>)"
+    per_page_code_body: "Code die op elke pagina moet worden opgenomen (<body>)"
     twitter_handle: "Twitter handle"
     twitter_hashtag: "Twitter hashtag"
     facebook_handle: "Facebook handle"
@@ -24,23 +24,23 @@ nl:
     transparency_url: "Transparency URL"
     opendata_url: "Open Data URL"
     url: "Main URL"
-    org_name: "Organization"
-    place_name: "Place"
+    org_name: "Organisatie"
+    place_name: "Plaats"
     feature:
-      budgets: Participatory budgeting
+      budgets: Burgerbegroting
       twitter_login: Twitter login
       facebook_login: Facebook login
       google_login: Google login
-      proposals: Proposals
-      debates: Debates
-      polls: Polls
-      signature_sheets: Signature sheets
-      spending_proposals: Investment projects
+      proposals: Voorstellen
+      debates: Debatten
+      polls: Peilingen
+      signature_sheets: Handtekeninglijsten
+      spending_proposals: Begrotingsvoorstellen
       spending_proposal_features:
-        voting_allowed: Voting on investment projects
-    mailer_from_name: Origin email name
-    mailer_from_address: Origin email address
-    meta_description: "Site description (SEO)"
+        voting_allowed: Stemmen op begrotingsvoorstellen
+    mailer_from_name: Oorspronkelijke naam
+    mailer_from_address: Oorspronkelijk email adres
+    meta_description: "Site beschrijving (SEO)"
     meta_keywords: "Keywords (SEO)"
-    verification_offices_url: Verification offices URL
-    min_age_to_participate: Minimum age needed to participate
+    verification_offices_url: Verificatie bureau's URL
+    min_age_to_participate: Minimum leeftijd voor deelname

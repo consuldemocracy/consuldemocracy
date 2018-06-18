@@ -2,111 +2,111 @@
 nl:
   verification:
     alert:
-      lock: You have reached the maximum number of attempts. Please try again later.
-    back: Return to my account
+      lock: U hebt het maximale aantal pogingen bereikt. Probeer het later opnieuw.
+    back: Terug naar mijn account
     email:
       create:
         alert:
-          failure: There was a problem with sending an email to your account
+          failure: Er is een probleem opgetreden bij het verzenden van een e-mail naar uw account
         flash:
-          success: 'We have sent a confirmation email to your account: %{email}'
+          success: 'We hebben een bevestigingsbericht naar uw account verzonden: %{email}'
       show:
         alert:
-          failure: Verification code incorrect
+          failure: Verificatiecode onjuist
         flash:
-          success: You are a verified user
+          success: U bent geverifieerd
     letter:
       alert:
-        unconfirmed_code: You have not yet entered the confirmation code
+        unconfirmed_code: U hebt de bevestigingscode nog niet ingevoerd
       create:
         flash:
           offices: Citizen Support Offices
-          success_html: Thank you for requesting your <b>maximum security code (only required for the final votes)</b>. In a few days we will send it to the address featuring in the data we have on file. Please remember that, if you prefer, you can collect your code from any of the %{offices}.
+          success_html: Bedankt voor het aanvragen van uw <b>maximale beveiligingscode (alleen vereist voor de definitieve stemmen)</b>. Over een paar dagen sturen we deze naar het adres met de gegevens die we in ons bestand hebben staan. U kunt uw code ook ophalen bij een van de %{offices}.
       edit:
-        see_all: See proposals
-        title: Letter requested
+        see_all: Zie voorstellen
+        title: Brief aangevraagd
       errors:
-        incorrect_code: Verification code incorrect
+        incorrect_code: Verificatiecode onjuist
       new:
-        explanation: 'For participate on final voting you can:'
-        go_to_index: See proposals
-        office: Verify in any %{office}
+        explanation: 'Om deel te nemen aan de eindstemming, kunt u:'
+        go_to_index: Zie voorstellen
+        office: Verifieer in een %{office}
         offices: Citizen Support Offices
-        send_letter: Send me a letter with the code
-        title: Congratulations!
-        user_permission_info: With your account you can...
+        send_letter: Stuur me een brief met de code
+        title: Gefeliciteerd!
+        user_permission_info: Met uw account kunt u...
       update:
         flash:
-          success: Code correct. Your account is now verified
+          success: Correcte code. Uw account is nu geverifieerd
     redirect_notices:
-      already_verified: Your account is already verified
-      email_already_sent: We have already sent an email with a confirmation link. If you cannot locate the email, you can request a reissue here
+      already_verified: Uw account is al geverifieerd
+      email_already_sent: We hebben al een e-mail verzonden met een bevestigingslink. Als u de e-mail niet kunt vinden, kunt u hier een nieuwe aanvragen
     residence:
       alert:
-        unconfirmed_residency: You have not yet confirmed your residency
+        unconfirmed_residency: U heeft uw inwonerschap nog niet bevestigd
       create:
         flash:
-          success: Residence verified
+          success: Inwonerschap bevestigd
       new:
-        accept_terms_text: I accept %{terms_url} of the Census
-        accept_terms_text_title: I accept the terms and conditions of access of the Census
-        date_of_birth: Date of birth
-        document_number: Document number
+        accept_terms_text: Eens met %{terms_url}
+        accept_terms_text_title: Ik accepteer de toegangsvoorwaarden
+        date_of_birth: Geboortedatum
+        document_number: Document nummer
         document_number_help_title: Help
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P'
+        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Paspoort</strong>: AAA000001<br> <strong>Identiteitskaart</strong>: X1234567P'
         document_type:
-          passport: Passport
-          residence_card: Residence card
+          passport: Paspoort
+          residence_card: Identiteitskaart
           spanish_id: DNI
         document_type_label: Document type
-        error_not_allowed_age: You don't have the required age to participate
-        error_not_allowed_postal_code: In order to be verified, you must be registered.
-        error_verifying_census: The Census was unable to verify your information. Please confirm that your census details are correct by calling to City Council or visit one %{offices}.
+        error_not_allowed_age: Je hebt niet de vereiste leeftijd om deel te nemen
+        error_not_allowed_postal_code: Om te worden geverifieerd, moet u geregistreerd zijn.
+        error_verifying_census: Uw gegevens konden niet worden geverifiëerd. Bevestig dat ze juist zijn door één van de %{offices} te bezoeken.
         error_verifying_census_offices: Citizen Support Office
-        form_errors: prevented the verification of your residence
+        form_errors: verhinderde de verificatie van uw woning
         postal_code: Postcode
-        postal_code_note: To verify your account you must be registered
-        terms: the terms and conditions of access
-        title: Verify residence
-        verify_residence: Verify residence
+        postal_code_note: Om uw account te verifiëren, moet u geregistreerd zijn
+        terms: de algemene voorwaarden voor toegang
+        title: Verifieer woonplaats
+        verify_residence: Verifieer woonplaats
     sms:
       create:
         flash:
-          success: Enter the confirmation code sent to you by text message
+          success: Voer de bevestigingscode in die u per sms is toegestuurd
       edit:
-        confirmation_code: Enter the code you received on your mobile
-        resend_sms_link: Click here to send it again
-        resend_sms_text: Didn't get a text with your confirmation code?
-        submit_button: Send
-        title: Security code confirmation
+        confirmation_code: Voer de code in die u op uw mobiel hebt ontvangen
+        resend_sms_link: Klik hier om het opnieuw te verzenden
+        resend_sms_text: Heeft u geen sms gekregen met bevestigingscode?
+        submit_button: Zend
+        title: Beveiligingscode bevestiging
       new:
-        phone: Enter your mobile phone number to receive the code
-        phone_format_html: "<strong><em>(Example: 612345678 or +34612345678)</em></strong>"
-        phone_note: We only use your phone to send you a code, never to contact you.
-        phone_placeholder: "Example: 612345678 or +34612345678"
-        submit_button: Send
-        title: Send confirmation code
+        phone: Voer uw mobiele telefoonnummer in om de code te ontvangen
+        phone_format_html: "<strong><em>(vb: 0303145678 of +31612345678)</em></strong>"
+        phone_note: We gebruiken uw nummer alleen om een code te sturen, nooit om contact op te nemen.
+        phone_placeholder: "Voorbeeld: 0612345678 or +31612345678"
+        submit_button: Zend
+        title: Stuur bevestigingscode
       update:
-        error: Incorrect confirmation code
+        error: Ongeldige bevestigingscode
         flash:
           level_three:
-            success: Code correct. Your account is now verified
+            success: Correcte code. Uw account is nu geverifieerd
           level_two:
-            success: Code correct
-    step_1: Residence
-    step_2: Confirmation code
-    step_3: Final verification
-    user_permission_debates: Participate on debates
-    user_permission_info: Verifing your information you'll be able to...
-    user_permission_proposal: Create new proposals
-    user_permission_support_proposal: Support proposals*
-    user_permission_votes: Participate on final voting*
+            success: Correcte code
+    step_1: Woonplaats
+    step_2: Bevestigingscode
+    step_3: Definitieve verificatie
+    user_permission_debates: Neem deel in debatten
+    user_permission_info: Als u uw informatie verifieert, kunt u ...
+    user_permission_proposal: Nieuwe voorstellen doen
+    user_permission_support_proposal: Voorstellen steunen*
+    user_permission_votes: Deelnemen aan peilingen*
     verified_user:
       form:
-        submit_button: Send code
+        submit_button: Stuur code
       show:
         email_title: Emails
-        explanation: We currently hold the following details on the Register; please select a method for your confirmation code to be sent.
-        phone_title: Phone numbers
-        title: Available information
-        use_another_phone: Use other phone
+        explanation: We hebben momenteel de volgende details in ons register; selecteer een methode om uw bevestigingscode te verzenden.
+        phone_title: Telefoonnummer
+        title: Beschikbare informatie
+        use_another_phone: Gebruik andere telefoon
