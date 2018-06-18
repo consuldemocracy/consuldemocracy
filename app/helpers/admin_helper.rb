@@ -1,15 +1,27 @@
 module AdminHelper
 
   def side_menu
-    render "/#{namespace}/menu"
+    if namespace == 'moderation/budgets'
+      render "/moderation/menu"
+    else
+      render "/#{namespace}/menu"
+    end
   end
 
   def namespaced_root_path
-    "/#{namespace}"
+    if namespace == 'moderation/budgets'
+      "/moderation"
+    else
+      "/#{namespace}"
+    end
   end
 
   def namespaced_header_title
-    t("#{namespace}.header.title")
+    if namespace == 'moderation/budgets'
+      t("moderation.header.title")
+    else
+      t("#{namespace}.header.title")
+    end
   end
 
   def menu_moderated_content?
