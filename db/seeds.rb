@@ -102,9 +102,9 @@ Setting['documents.budget_investment_milestone.accepted_content_types'] = "appli
 Setting['documents.legislation_process.max_file_size'] = '3'
 Setting['documents.legislation_process.max_documents_allowed'] = '3'
 Setting['documents.legislation_process.accepted_content_types'] = "application/pdf"
-Setting['documents_poll_question_answer_max_file_size'] = '3'
-Setting['documents_poll_question_answer_max_documents_allowed'] = '3'
-Setting['documents_poll_question_answer_accepted_content_types'] = "application/pdf"
+Setting['documents.poll_question_answer_max_file_size'] = '3'
+Setting['documents.poll_question_answer_max_documents_allowed'] = '3'
+Setting['documents.poll_question_answer_accepted_content_types'] = "application/pdf"
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal.features.voting_allowed'] = nil
