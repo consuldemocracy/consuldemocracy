@@ -15,6 +15,13 @@ namespace :admin do
     end
   end
 
+  resources :hidden_budget_investments, only: :index do
+    member do
+      put :restore
+      put :confirm_hide
+    end
+  end
+
   resources :debates, only: :index do
     member do
       put :restore
