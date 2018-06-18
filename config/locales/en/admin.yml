@@ -343,6 +343,15 @@ en:
         hidden_at: 'Hidden at:'
         registered_at: 'Registered at:'
         title: Activity of user (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden budgets investments
+        no_hidden_budget_investments: There are no hidden budget investments
     legislation:
       processes:
         create:
@@ -512,6 +521,7 @@ en:
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
+      hidden_budget_investments: Hidden budget investments
       hidden_proposal_notifications: Hidden proposal notifications
       hidden_users: Hidden users
       administrators: Administrators
