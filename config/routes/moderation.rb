@@ -28,7 +28,7 @@ namespace :moderation do
     put :moderate, on: :collection
   end
 
-  resources :budget_investments, only: :index do
+  resources :budget_investments, only: :index, controller: 'budgets/investments' do
     put :hide, on: :member
     put :moderate, on: :collection
   end
