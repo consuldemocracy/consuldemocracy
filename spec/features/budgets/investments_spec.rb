@@ -1567,4 +1567,69 @@ feature 'Budget Investments' do
 
     end
   end
+
+  scenario 'Flagging an investment as innapropriate', :js do
+    user       = create(:user)
+    investment = create(:budget_investment, heading: heading)
+
+    login_as(user)
+
+    visit budget_investment_path(budget, investment)
+
+    within "#budget_investment_#{investment.id}" do
+      find("#flag-expand-investment-#{investment.id}").click
+      find("#flag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#unflag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).to be
+  end
+
+  scenario 'Unflagging an investment', :js do
+    user       = create(:user)
+    investment = create(:budget_investment, heading: heading)
+    Flag.flag(user, investment)
+
+    login_as(user)
+
+    visit budget_investment_path(budget, investment)
+
+    within "#budget_investment_#{investment.id}" do
+      find("#unflag-expand-investment-#{investment.id}").click
+      find("#unflag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#flag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).not_to be
+  end
+
+  scenario 'Flagging an investment updates the DOM properly', :js do
+    user       = create(:user)
+    investment = create(:budget_investment, heading: heading)
+
+    login_as(user)
+
+    visit budget_investment_path(budget, investment)
+
+    within "#budget_investment_#{investment.id}" do
+      find("#flag-expand-investment-#{investment.id}").click
+      find("#flag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#unflag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).to be
+
+    within "#budget_investment_#{investment.id}" do
+      find("#unflag-expand-investment-#{investment.id}").click
+      find("#unflag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#flag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).not_to be
+  end
+
 end
