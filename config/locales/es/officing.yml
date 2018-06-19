@@ -57,6 +57,7 @@ es:
         table_poll: Votación
         table_status: Estado de las votaciones
         table_actions: Acciones
+        not_to_vote: La persona ha decidido no votar por el momento
       show:
         can_vote: Puede votar
         error_already_voted: Ya ha participado en esta votación.
