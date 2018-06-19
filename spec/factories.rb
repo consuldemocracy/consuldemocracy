@@ -389,6 +389,24 @@ FactoryBot.define do
       feasibility "feasible"
       valuation_finished true
     end
+
+     trait :hidden do
+       hidden_at Time.current
+     end
+
+     trait :with_ignored_flag do
+       ignored_flag_at Time.current
+     end
+
+    trait :flagged do
+       after :create do |investment|
+         Flag.flag(create(:user), investment)
+       end
+     end
+
+     trait :with_confirmed_hide do
+       confirmed_hide_at Time.current
+     end
   end
 
   factory :budget_phase, class: 'Budget::Phase' do
