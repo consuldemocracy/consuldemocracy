@@ -499,6 +499,7 @@ en:
       send_notification: Send notification
       retire: Retire
       progress: Progress
+      resources: Resources
       actions: Actions
     proposed_action:
       execute: Execute

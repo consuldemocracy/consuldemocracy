@@ -499,6 +499,7 @@ es:
       send_notification: Enviar notificación
       retire: Retirar
       progress: Progreso
+      resources: Recursos
       actions: Acciones
     proposed_action:
       execute: Ejecutar

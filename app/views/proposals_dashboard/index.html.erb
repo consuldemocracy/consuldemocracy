@@ -47,7 +47,7 @@
         <!-- a href='#' class="menu-entry">Feed</a -->
         <!-- a href='#' class="menu-entry">Ruta</a -->
 
-        <div class="menu-title selected"><span class="icon-user"></span> Recursos</div>
+        <div class="menu-title"><span class="icon-user"></span> <%= t '.resources' %></div>
         <% proposed_actions.resources.each do |resource| %>
           <span data-tooltip title="<%= resource.description %>">
             <% if resource.request_to_administrators? %>
