@@ -6,6 +6,7 @@ en:
       index:
         title: Poll officing
         info: Here you can validate user documents and store voting results
+        no_shifts: You don't have officing shifts today.
     menu:
       voters: Validate document
       total_recounts: Total recounts and results
