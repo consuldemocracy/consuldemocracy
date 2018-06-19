@@ -9,7 +9,7 @@
 </div>
 
 <%= form_tag moderate_moderation_budget_investments_path(request.query_parameters), method: :put do %>
-  <p class="js-check">
+  <p class="float-left js-check">
     <%= t("shared.check") %>:
     <%= link_to t("shared.check_all"), "#", data: { check_all: "budget_investment_ids[]" } %>
     |
@@ -17,60 +17,55 @@
   </p>
 
   <table class="clear">
-    <tr>
-      <th>
-        <%= t("moderation.budget_investments.index.headers.budget_investment") %>
-      </th>
-      <th>
-       <%= t("moderation.budget_investments.index.headers.moderate") %>
-      </th>
-    </tr>
-    <% @budget_investments.each do |investment| %>
-      <tr id="investment_<%= investment.id %>">
-        <td>
-          <%= link_to investment.title, admin_budget_budget_investment_path(
-                                          budget_id: investment.budget_id,
-                                          id: investment.id
-                                        ), target: "_blank" %>
-          <br>
-          <span class="date"><%= l investment.updated_at.to_date %></span>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= investment.flags_count %><span class="icon-flag flag-disable"></span>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= investment.author.username %>
-          <br>
-          <div class="moderation-description">
-            <%= investment.description %>
-          </div>
-        </td>
-        <td class="text-center">
-          <%= check_box_tag "budget_investment_ids[]", investment.id, nil, id: "#{dom_id(investment)}_check" %>
-        </td>
+    <thead>
+      <tr>
+        <th><%= t("moderation.budget_investments.index.headers.budget_investment") %></th>
+        <th><%= t("moderation.budget_investments.index.headers.moderate") %></th>
       </tr>
-    <% end %>
+    </thead>
+
+    <tbody>
+      <% @budget_investments.each do |investment| %>
+        <tr id="investment_<%= investment.id %>">
+          <td>
+            <%= link_to investment.title, admin_budget_budget_investment_path(
+                                            budget_id: investment.budget_id,
+                                            id: investment.id
+                                          ), target: "_blank" %>
+            <br>
+            <span class="date"><%= l investment.updated_at.to_date %></span>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <%= investment.flags_count %><span class="icon-flag flag-disable"></span>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <%= investment.author.username %>
+            <br>
+            <div class="moderation-description">
+              <%= investment.description %>
+            </div>
+          </td>
+          <td class="text-center">
+            <%= check_box_tag "budget_investment_ids[]", investment.id, nil, id: "#{dom_id(investment)}_check" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 
   <%= submit_tag t("moderation.budget_investments.index.block_authors"),
                  name: "block_authors",
                  class: "button hollow alert",
-                 data: {
-                  confirm: t("moderation.budget_investments.index.confirm")
-                } %>
+                 data: { confirm: t("moderation.budget_investments.index.confirm") } %>
 
   <div class="float-right">
     <%= submit_tag t("moderation.budget_investments.index.hide_budget_investments"),
                    name: "hide_budget_investments",
                    class: "button hollow alert",
-                   data: {
-                    confirm: t("moderation.budget_investments.index.confirm")
-                  } %>
+                   data: { confirm: t("moderation.budget_investments.index.confirm") } %>
 
     <%= submit_tag t("moderation.budget_investments.index.ignore_flags"),
                    name: "ignore_flags",
                    class: "button hollow",
-                   data: {
-                    confirm: t("moderation.budget_investments.index.confirm")
-                  } %>
+                   data: { confirm: t("moderation.budget_investments.index.confirm") } %>
   </div>
 
   <%= paginate @budget_investments %>
