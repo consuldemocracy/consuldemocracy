@@ -1,11 +1,13 @@
 <div class="admin-sidebar" data-equalizer-watch>
   <ul id="officing_menu">
-    <li <%= "class=is-active" if controller_name == "voters" %>>
-      <%= link_to new_officing_residence_path do %>
-        <span class="icon-user"></span>
-        <%= t("officing.menu.voters") %>
-      <% end %>
-    </li>
+    <% if vote_collection_shift? %>
+      <li <%= "class=is-active" if controller_name == "voters" %>>
+        <%= link_to new_officing_residence_path do %>
+          <span class="icon-user"></span>
+          <%= t("officing.menu.voters") %>
+        <% end %>
+      </li>
+    <% end %>
 
     <% if final_recount_shift? %>
       <li <%= "class=is-active" if ["results"].include?(controller_name) || (controller_name == "polls" && action_name == "final") %>>
