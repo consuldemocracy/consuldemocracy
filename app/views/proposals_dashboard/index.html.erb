@@ -46,13 +46,23 @@
         <%= link_to t('.actions'), proposal_dashboard_index_path(proposal.to_param), class: 'menu-entry' %>
         <!-- a href='#' class="menu-entry">Feed</a -->
         <!-- a href='#' class="menu-entry">Ruta</a -->
-      <!--
-        <div class="menu-title selected"><span class="icon-user"></span> Recursos</div>
-        <a href='#' class="menu-entry selected">Kit de difusión</a>
-        <a href='#' class="menu-entry">Encuestas</a>
-        <a href='#' class="menu-entry">Testimonios</a>
-        <a href='#' class="menu-entry">Widget</a>
 
+        <div class="menu-title selected"><span class="icon-user"></span> Recursos</div>
+        <% proposed_actions.resources.each do |resource| %>
+          <span data-tooltip title="<%= resource.description %>">
+            <% if resource.request_to_administrators? %>
+              <%= link_to resource.title, 
+                          new_request_proposal_dashboard_path(proposal, resource),
+                          class: 'menu-entry' %>
+            <% else %>
+              <%= link_to resource.title, 
+                          resource.link, 
+                          target: '_blank',
+                          class: 'menu-entry' %>
+            <% end %>
+          </span>
+        <% end %>
+      <!--
         <div class="menu-title"><span class="icon-user"></span> Comunidad</div>
         <a href='#' class="menu-entry">Equipo impulsor</a>
         <a href='#' class="menu-entry">Mensajes</a>
