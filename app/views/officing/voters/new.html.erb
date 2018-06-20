@@ -28,4 +28,8 @@
   </table>
 <% end %>
 
-<%= link_to t("officing.voters.new.not_to_vote"), namespaced_root_path, class: "button" %>
+<% if Poll.votable_by(@user).any? %>
+  <div id="not_voted">
+    <%= link_to t("officing.voters.new.not_to_vote"), namespaced_root_path, class: "button" %>
+  </div>
+<% end %>
