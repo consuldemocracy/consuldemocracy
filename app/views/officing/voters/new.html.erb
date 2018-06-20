@@ -1,5 +1,3 @@
-<%= back_link_to new_officing_residence_path %>
-
 <h2><%= t("officing.voters.new.title") %></h2>
 
 <% if physical_booth? %>
@@ -48,6 +46,10 @@
 
 <% if Poll.votable_by(@user).any? %>
   <div id="not_voted">
-    <%= link_to t("officing.voters.new.not_to_vote"), namespaced_root_path, class: "button" %>
+    <div class="row margin">
+      <div class="small-12 column text-center">
+        <%= link_to t("officing.voters.new.not_to_vote"), namespaced_root_path, class: "button margin-top" %>
+      </div>
+    </div>
   </div>
 <% end %>
