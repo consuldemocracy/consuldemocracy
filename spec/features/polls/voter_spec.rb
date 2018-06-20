@@ -117,6 +117,43 @@ feature "Voter" do
       end
     end
 
+    context "The person has decided not to vote at this time" do
+      let!(:user) { create(:user, :in_census) }
+
+      scenario "Show not to vote at this time button" do
+        login_through_form_as_officer(officer.user)
+
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        expect(page).to have_content poll.name
+        expect(page).to have_button "Confirm vote"
+        expect(page).to have_content "Can vote"
+        expect(page).to have_link "The person has decided not to vote at this time"
+      end
+
+      scenario "Hides not to vote at this time button if already voted", :js do
+        login_through_form_as_officer(officer.user)
+
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        within("#poll_#{poll.id}") do
+          click_button("Confirm vote")
+          expect(page).not_to have_button("Confirm vote")
+          expect(page).to have_content "Vote introduced!"
+          expect(page).not_to have_content "The person has decided not to vote at this time"
+        end
+
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        expect(page).to have_content "Has already participated in this poll"
+        expect(page).not_to have_content "The person has decided not to vote at this time"
+      end
+
+    end
+
     context "Trying to vote the same poll in booth and web" do
       let!(:user) { create(:user, :in_census) }
 
