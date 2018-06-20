@@ -61,6 +61,41 @@ $sidebar-active: #f4fcd0;
     [class^="icon-"]:not(.icon-circle) {
       font-size: $base-font-size;
     }
+
+    @include breakpoint(small only) {
+
+      .top-bar-left ul {
+        display: inline-block;
+      }
+
+      .top-bar-right {
+
+        .submenu {
+          border: 0;
+          display: block;
+          margin-top: 0;
+          position: initial;
+          width: 100%;
+        }
+
+        .is-active {
+          font-weight: normal;
+          text-decoration: none;
+        }
+
+        .is-submenu-item {
+          padding: $line-height / 2 0;
+        }
+
+        a {
+          font-weight: normal !important;
+        }
+      }
+
+      [class^="icon-"] {
+        display: none;
+      }
+    }
   }
 
   .menu .menu-text {
