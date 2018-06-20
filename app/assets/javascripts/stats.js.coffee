@@ -1,4 +1,4 @@
-}# Helper for generate C3.js graphs
+# Helper for generate C3.js graphs
 #----------------------------------------------------------------------
 
 buildGraph = (el) ->
