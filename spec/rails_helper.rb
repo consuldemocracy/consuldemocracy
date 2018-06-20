@@ -46,7 +46,7 @@ end
 Capybara.asset_host = 'http://localhost:3000'
 Capybara::Screenshot.prune_strategy = :keep_last_run
 Capybara.javascript_driver = :headless_chrome
-Capybara.default_max_wait_time = 120
+Capybara.default_max_wait_time = 60
 
 Capybara.exact = true
 
