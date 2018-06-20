@@ -2,6 +2,8 @@ resources :proposals do
   resources :proposals_dashboard, as: :dashboard, path: :dashboard, only: %i[index] do
     collection do
       patch :publish
+      get :supports
+      get :stats
     end
 
     member do

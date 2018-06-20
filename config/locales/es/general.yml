@@ -202,6 +202,8 @@ es:
       firefox: Firefox
       ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.
       ie_title: Esta web no está optimizada para tu navegador
+    proposals_dashboard:
+      title: Dashboard de propuesta
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
@@ -490,9 +492,7 @@ es:
       form:
         submit_button: Guardar cambios
   proposals_dashboard:
-    index:
-      draft: Borrador
-      published: Publicada
+    menu:
       general: General
       publish: Publicar
       edit_proposal_link: Editar propuesta
@@ -501,12 +501,20 @@ es:
       progress: Progreso
       resources: Recursos
       actions: Acciones
+      graphic: Gráfico
     proposed_action:
       execute: Ejecutar
     form:
       request: Solicitar
     create_request:
       success: La petición ha sido correctamente enviada al administrador.
+    stats:
+      group_by_year: Agrupar por año
+      group_by_month: Agrupar por meses
+      group_by_week: Agrupar por semanas
+      group_by_date: Agrupar por fechas
+      progress: Progreso acumulado
+      supports: Apoyos
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"

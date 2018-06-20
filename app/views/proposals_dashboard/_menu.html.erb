@@ -1,0 +1,99 @@
+
+<% if current_editable?(proposal) || can?(:publish, proposal) %>
+  <div class="row">
+    <div class="small-2 columns"></div>
+    <div class="small-10 columns"><%= t '.general' %></div>
+  </div>
+
+  <% if current_editable?(proposal) %>
+    <div class="row">
+      <div class="small-2 columns"></div>
+      <div class="small-10 columns">
+        <%= link_to t('.edit_proposal_link'), edit_proposal_path(proposal), target: '_blank' %>
+      </div>
+    </div>
+  <% end %>
+          
+  <div class="row">
+    <div class="small-2 columns"></div>
+    <div class="small-10 columns">
+      <%= link_to t('.send_notification'),
+                  new_proposal_notification_path(proposal_id: proposal.id),
+                  target: '_blank' %>
+    </div>
+  </div>
+
+  <% if can_destroy_image?(proposal) %>
+    <div class="row">
+      <div class="small-2 columns"></div>
+      <div class="small-10 columns">
+        <%= link_to t('images.remove_image'),
+                    image_path(proposal.image, from: request.url),
+                    method: :delete,
+                    data: { confirm: t('images.actions.destroy.confirm') } %>
+      </div>
+    </div>
+  <% end %>
+
+  <% unless proposal.retired? %>
+    <div class="row">
+      <div class="small-2 columns"></div>
+      <div class="small-10 columns">
+        <%= link_to t('.retire'),
+                    retire_form_proposal_path(proposal),
+                    target: '_blank' %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if can?(:publish, proposal) %>
+    <div class="row">
+      <div class="small-2 columns"></div>
+      <div class="small-10 columns">
+        <%= link_to t('.publish'), publish_proposal_dashboard_index_path(proposal), method: :patch %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="row">
+  <div class="small-2 columns"></div>
+  <div class="small-10 columns"><%= t('.progress') %></div>
+</div>
+
+<div class="row">
+  <div class="small-2 columns"></div>
+  <div class="small-10 columns">
+    <%= link_to t('.graphic'), stats_proposal_dashboard_index_path(proposal.to_param) %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-2 columns"></div>
+  <div class="small-10 columns">
+    <%= link_to t('.actions'), proposal_dashboard_index_path(proposal.to_param) %>
+  </div>
+</div>
+
+<% if proposed_actions.resources.any? %>
+  <div class="row">
+    <div class="small-2 columns"></div>
+    <div class="small-10 columns"><%= t '.resources' %></div>
+  </div>
+
+  <% proposed_actions.resources.each do |resource| %>
+    <div class="row">
+      <div class="small-2 columns"></div>
+      <div class="small-10 columns">
+        <span data-tooltip title="<%= resource.description %>">
+          <% if resource.request_to_administrators? %>
+            <%= link_to resource.title, 
+                        new_request_proposal_dashboard_path(proposal, resource) %>
+          <% else %>
+            <%= link_to resource.title, resource.link, target: '_blank' %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  <% end %>
+<% end %>

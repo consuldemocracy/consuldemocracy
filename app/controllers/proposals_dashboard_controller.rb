@@ -50,6 +50,15 @@ class ProposalsDashboardController < ApplicationController
     end
   end
 
+  def stats
+    authorize! :dashboard, proposal
+  end
+
+  def supports
+    authorize! :dashboard, proposal
+    render json: ProposalSupportsQuery.for(params)
+  end
+
   private
 
   def proposal_executed_dashboard_action_params

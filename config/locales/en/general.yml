@@ -202,6 +202,8 @@ en:
       firefox: Firefox
       ie: We have detected that you are browsing with Internet Explorer. For an enhanced experience, we recommend using %{firefox} or %{chrome}.
       ie_title: This website is not optimised for your browser
+    proposals_dashboard:
+      title: Proposal dashboard
     footer:
       accessibility: Accessibility
       conditions: Terms and conditions of use
@@ -490,9 +492,7 @@ en:
       form:
         submit_button: Save changes
   proposals_dashboard:
-    index:
-      draft: Draft
-      published: Published
+    menu:
       general: General
       publish: Publish
       edit_proposal_link: Edit
@@ -501,12 +501,20 @@ en:
       progress: Progress
       resources: Resources
       actions: Actions
+      graphic: Graphic
     proposed_action:
       execute: Execute
     form:
       request: Request
     create_request:
       success: The request for the administrator has been successfully sent.
+    stats:
+      group_by_year: Group by year
+      group_by_month: Group by month
+      group_by_week: Group by week
+      group_by_date: Group by date
+      progress: Acumulated progress
+      supports: Supports
   polls:
     all: "All"
     no_dates: "no date assigned"

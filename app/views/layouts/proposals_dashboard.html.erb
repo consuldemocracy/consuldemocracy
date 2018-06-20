@@ -29,7 +29,7 @@
     <h1 class="show-for-sr"><%= setting['org_name'] %></h1>
 
     <div class="wrapper <%= yield (:wrapper_class) %>">
-      <%= render 'layouts/header' %>
+      <%= render partial: 'layouts/header', locals: {with_subnavigation: false} %>
 
       <!--[if lt IE 9]>
       <% if browser.ie? && cookies['ie_alert_closed'] != 'true' %>
@@ -51,9 +51,21 @@
       <% end %>
       <![endif]-->
 
-      <%= render 'layouts/flash' %>
+      <%= render partial: 'layouts/flash' %>
 
-      <%= yield %>
+      <div class="proposal-dashboard">
+        <div class="row small-12 columns title">
+          <h5><%= t '.title' %></h5>
+        </div>
+        <div class="row">
+          <div class="small-2 columns left-menu">
+            <%= render partial: 'proposals_dashboard/menu' %>
+          </div>
+          <div class="small-10 columns body">
+            <%= yield %>
+          </div>
+        </div>
+
       <div class="push"></div>
     </div>
   </body>

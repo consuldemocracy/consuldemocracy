@@ -16,3 +16,41 @@
     background-color: #e7f3fd;
   }
 }
+
+.proposal-dashboard {
+  margin-top: -1.5rem;
+
+  .columns {
+    padding: 0;
+  }
+
+  .row {
+    max-width: 100%;
+  }
+
+  .has-tip {
+    border-bottom: none;
+    font-weight: normal;
+  }
+
+  .title {
+    border-bottom: 1pt solid lightgray;
+
+    h5 {
+      padding: 1rem 1.5rem 1rem 1.5rem;
+      font-size: 16pt;
+      margin: 0;
+    }
+  }
+
+  .left-menu {
+    border-right: 1pt solid lightgray;
+    border-bottom: 1pt solid lightgray; 
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    background-color: #fbfbfb;
+  }
+
+  .body {
+    padding: 1rem 1.5rem 1rem 1.5rem;
+  }
+}

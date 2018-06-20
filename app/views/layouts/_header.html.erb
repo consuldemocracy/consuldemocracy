@@ -63,15 +63,16 @@
     </div>
   </div>
 
-  <div class="subnavigation expanded">
-    <div class="row">
-      <div class="hide-for-small-only">
-        <%= render "shared/subnavigation" %>
-      </div>
-      <div class="small-12 medium-3 column">
-        <%= yield :header_addon %>
+  <% if with_subnavigation %>
+    <div class="subnavigation expanded">
+      <div class="row">
+        <div class="hide-for-small-only">
+          <%= render "shared/subnavigation" %>
+        </div>
+        <div class="small-12 medium-3 column">
+          <%= yield :header_addon %>
+        </div>
       </div>
     </div>
-  </div>
-
+  <% end %>
 </header>
