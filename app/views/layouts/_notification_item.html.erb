@@ -1,28 +1,28 @@
 <% if user_signed_in? %>
   <li id="notifications">
-    <%= link_to notifications_path, rel: "nofollow", 
+    <%= link_to notifications_path, rel: "nofollow",
                 class: "notifications" do %>
       <span class="show-for-sr">
         <%= t("layouts.header.notification_item.notifications") %>
       </span>
-      
+
       <% if current_user.notifications.unread.count > 0 %>
         <span class="icon-circle" aria-hidden="true"></span>
-        <span class="icon-notification" aria-hidden="true" 
-              title="<%= t('layouts.header.notification_item.new_notifications', 
+        <span class="icon-notification" aria-hidden="true"
+              title="<%= t("layouts.header.notification_item.new_notifications",
                          count: current_user.notifications_count).html_safe %>">
         </span>
-        <small class="show-for-small-only">
-          <%= t('layouts.header.notification_item.new_notifications', 
+        <span class="show-for-small-only">
+          <%= t("layouts.header.notification_item.new_notifications",
               count: current_user.notifications_count).html_safe %>
-        </small>
-      <% else %>
-        <span class="icon-no-notification" aria-hidden="true" 
-              title="<%= t('layouts.header.notification_item.no_notifications') %>">
         </span>
-        <small class="show-for-small-only">
-          <%= t('layouts.header.notification_item.no_notifications') %>
-        </small>
+      <% else %>
+        <span class="icon-no-notification" aria-hidden="true"
+              title="<%= t("layouts.header.notification_item.no_notifications") %>">
+        </span>
+        <span class="show-for-small-only">
+          <%= t("layouts.header.notification_item.no_notifications") %>
+        </span>
       <% end %>
 
     <% end %>
