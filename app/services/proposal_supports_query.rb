@@ -31,7 +31,7 @@ class ProposalSupportsQuery
   end
 
   def votes
-    Vote.where(votable: proposal, created_at: start_date..end_date).order(created_at: :asc)
+    Vote.where(votable: proposal, created_at: start_date.beginning_of_day..end_date.end_of_day).order(created_at: :asc)
   end
 
   def proposal
