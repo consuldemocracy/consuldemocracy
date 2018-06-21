@@ -15,7 +15,7 @@
           <% end %>
         </li>
       <% end %>
-      <% if !@budget.balloting? && @heading && @heading.group.name == 'Districtes' %>
+      <% if !@budget.balloting? && !@budget.reviewing_ballots? && !@budget.finished? && @heading && @heading.group.name == 'Districtes' %>
         <li class="inline-block">
           <%= link_to current_path_with_query_params(filter: 'selected_by_assembly', page: 1), class: params[:filter] == 'selected_by_assembly' ? 'active' : '' do %>
             <%= content_tag(true ? :h2 : :span) do %>
