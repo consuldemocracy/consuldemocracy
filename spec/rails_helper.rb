@@ -43,6 +43,10 @@ Capybara.register_driver :headless_chrome do |app|
   )
 end
 
+Capybara::Screenshot.register_driver(:headless_chrome) do |driver, path|
+  driver.browser.save_screenshot(path)
+end
+
 Capybara.asset_host = 'http://localhost:3000'
 Capybara::Screenshot.prune_strategy = :keep_last_run
 Capybara.javascript_driver = :headless_chrome

@@ -75,13 +75,13 @@
   </div>
 </div>
 
-<% if proposed_actions.resources.any? %>
+<% if resources.any? %>
   <div class="row">
     <div class="small-2 columns"></div>
     <div class="small-10 columns"><%= t '.resources' %></div>
   </div>
 
-  <% proposed_actions.resources.each do |resource| %>
+  <% resources.each do |resource| %>
     <div class="row">
       <div class="small-2 columns"></div>
       <div class="small-10 columns">

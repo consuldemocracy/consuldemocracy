@@ -44,8 +44,8 @@ class ProposalDashboardAction < ActiveRecord::Base
 
   scope :active, -> { where(active: true) }
   scope :inactive, -> { where(active: false) }
-  scope :resources, -> { where(action_type: 'resource') }
-  scope :proposed_actions, -> { where(action_type: 'proposed_action') }
+  scope :resources, -> { where(action_type: 1) }
+  scope :proposed_actions, -> { where(action_type: 0) }
   scope :active_for, ->(proposal) do 
     published_at = proposal.published_at&.to_date || Date.today
 
