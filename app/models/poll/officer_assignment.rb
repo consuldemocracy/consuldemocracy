@@ -2,6 +2,7 @@ class Poll
   class OfficerAssignment < ActiveRecord::Base
     belongs_to :officer
     belongs_to :booth_assignment
+    has_many :ballot_sheets
     has_many :partial_results
     has_many :recounts
     has_many :voters
