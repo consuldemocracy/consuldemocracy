@@ -19,13 +19,13 @@ class Officing::BallotSheetsController < Officing::BaseController
 
   def create
     load_officer_assignment
-    check_officer_assignment
 
     @ballot_sheet = Poll::BallotSheet.new(ballot_sheet_params)
 
     if @ballot_sheet.save
       redirect_to officing_poll_ballot_sheet_path(@poll, @ballot_sheet)
     else
+      flash.now[:alert] = @ballot_sheet.errors.full_messages.join(", ")
       render :new
     end
   end
@@ -61,13 +61,6 @@ class Officing::BallotSheetsController < Officing::BaseController
   def load_officer_assignment
     @officer_assignment = current_user.poll_officer.officer_assignments.final
                                       .find_by(id: ballot_sheet_params[:officer_assignment_id])
-  end
-
-  def check_officer_assignment
-    if @officer_assignment.blank?
-      flash.now[:alert] = t("officing.results.flash.error_wrong_booth")
-      render :new
-    end
   end
 
   def ballot_sheet_params

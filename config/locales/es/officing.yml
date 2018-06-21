@@ -20,6 +20,7 @@ es:
       see_ballot_sheets: Ver lista de papeletas de votación
       index:
         title: "%{poll_budget} - Listado de papeletas de votación"
+        ballot_sheet: "Papeleta de votación %{id}"
         ballot_sheet_name: Nombre
         ballot_sheet_author: Autor
         ballot_sheet_creation_date: Fecha de creación
@@ -30,6 +31,10 @@ es:
         select_booth: Elegir urna
         csv_data: Datos de CSV
         submit: Guardar
+      show:
+        created_at: Fecha de creación
+        author: Autor
+        data: Datos de CSV
     results:
       flash:
         create: "Datos guardados"

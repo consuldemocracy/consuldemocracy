@@ -21,6 +21,7 @@ en:
       see_ballot_sheets: See ballot sheets list
       index:
         title: "%{poll_budget} - Ballot sheets list"
+        ballot_sheet: "Ballot sheet %{id}"
         ballot_sheet_name: Name
         ballot_sheet_author: Author
         ballot_sheet_creation_date: Creation date
@@ -31,6 +32,10 @@ en:
         select_booth: Select booth
         csv_data: CSV data
         submit: Save
+      show:
+        created_at: Creation date
+        author: Author
+        data: CSV data
     booth:
       new:
         title: "Choose your booth"
