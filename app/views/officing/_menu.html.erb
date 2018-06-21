@@ -1,7 +1,9 @@
 <div class="admin-sidebar" data-equalizer-watch>
   <ul id="officing_menu">
     <% if vote_collection_shift? %>
-      <li <%= "class=is-active" if controller_name == "voters" %>>
+      <li class="<%= "js-vote-collection" %>
+                 <%= " is-active" if controller_name == "voters" %>
+                 <%= " is-hidden" if controller_name == "voters" && Poll.votable_by(@user).any? %>">
         <%= link_to new_officing_residence_path do %>
           <span class="icon-user"></span>
           <%= t("officing.menu.voters") %>
