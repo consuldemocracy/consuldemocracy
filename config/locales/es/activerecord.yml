@@ -61,6 +61,9 @@ es:
       poll/officer:
         one: "presidente de mesa"
         other: "presidentes de mesa"
+      poll/ballot_sheet:
+        one: Papeleta de votación
+        other: Papeletas de votación
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
@@ -208,6 +211,10 @@ es:
         external_url: "Enlace a documentación adicional"
       poll/question/translation:
         title: "Pregunta"
+      poll/ballot_sheet:
+        data: Datos de CSV
+        poll_id: Votación
+        officer_assignment_id: Turno
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
