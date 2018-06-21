@@ -95,6 +95,8 @@ namespace :officing do
    resources :nvotes, only: :new do
      get :thanks, on: :collection
    end
+
+   resources :ballot_sheets, only: [:new, :create, :show, :index]
  end
 
  resource :booth, controller: "booth", only: [:new, :create]

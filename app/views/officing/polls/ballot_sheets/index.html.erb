@@ -1,0 +1,24 @@
+<h2><%= t("officing.poll_budgets.index.title", poll_budget: @poll_budget) %></h2>
+
+<% if @ballot_sheets.any? %>
+  <table class="fixed">
+    <thead>
+      <th colspan="2"><%= t("officing.poll_budgets.index.ballot_sheet_name") %></th>
+      <th colspan="2"><%= t("officing.poll_budgets.index.ballot_sheet_author") %></th>
+      <th colspan="2"><%= t("officing.poll_budgets.index.ballot_sheet_creation_date") %></th>
+    </thead>
+    <tbody>
+      <% @ballot_sheets.each do |ballot_sheet| %>
+        <tr id="<%= dom_id(ballot_sheet) %>" class="ballot_sheet">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("officing.poll_budgets.index.empty_results") %>
+  </div>
+<% end %>
