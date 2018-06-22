@@ -5,7 +5,7 @@ module Abilities
     def initialize(user)
       merge Abilities::Everyone.new(user)
 
-      can %i[read update], User, id: user.id
+      can [:read, :update], User, id: user.id
 
       can :read, Debate
       can :update, Debate do |debate|
@@ -33,7 +33,7 @@ module Abilities
 
       can :create, Comment
       can :create, Debate
-      can %i[create created], Proposal
+      can [:create, :created], Proposal
       can :create, Legislation::Proposal
 
       can :suggest, Debate

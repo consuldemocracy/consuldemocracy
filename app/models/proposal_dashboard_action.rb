@@ -5,7 +5,7 @@ class ProposalDashboardAction < ActiveRecord::Base
   has_many :proposal_executed_dashboard_actions, dependent: :restrict_with_error
   has_many :proposals, through: :proposal_executed_dashboard_actions
 
-  enum action_type: %i[proposed_action resource]
+  enum action_type: [:proposed_action, :resource]
 
   validates :title, 
             presence: true,

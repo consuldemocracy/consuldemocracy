@@ -1,5 +1,5 @@
 resources :proposals do
-  resources :proposals_dashboard, as: :dashboard, path: :dashboard, only: %i[index] do
+  resources :proposals_dashboard, as: :dashboard, path: :dashboard, only: [:index] do
     collection do
       patch :publish
       get :supports
