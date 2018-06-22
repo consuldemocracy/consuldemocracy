@@ -34,7 +34,6 @@ class Admin::ProposalDashboardActionsController < Admin::BaseController
     else
       render :edit
     end
-
   end
 
   def destroy
