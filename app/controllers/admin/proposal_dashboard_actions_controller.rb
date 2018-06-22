@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Admin::ProposalDashboardActionsController < Admin::BaseController
   helper_method :proposal_dashboard_action
 

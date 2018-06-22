@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class CreateProposalDashboardActions < ActiveRecord::Migration
   def change
     create_table :proposal_dashboard_actions do |t|

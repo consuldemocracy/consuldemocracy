@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ProposalDashboardAction < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases

@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# Proposals dashboard
 class ProposalsDashboardController < ApplicationController
   before_action :authenticate_user!
 

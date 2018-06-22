@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class AdministratorTask < ActiveRecord::Base
   belongs_to :source, polymorphic: true
   belongs_to :user

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ProposalExecutedDashboardAction < ActiveRecord::Base
   belongs_to :proposal
   belongs_to :proposal_dashboard_action
