@@ -104,7 +104,7 @@ describe Abilities::Common do
 
   it { should be_able_to(:destroy, own_budget_investment_image) }
   it { should_not be_able_to(:destroy, budget_investment_image) }
-  it { is_expected.not_to be_able_to(:manage, ProposalDashboardAction) }
+  it { should_not be_able_to(:manage, ProposalDashboardAction) }
 
   describe 'flagging content' do
     it { should be_able_to(:flag, debate)   }
@@ -162,16 +162,16 @@ describe Abilities::Common do
   end
   
   describe 'proposals dashboard' do
-    it { is_expected.to be_able_to(:dashboard, own_proposal) }
-    it { is_expected.not_to be_able_to(:dashboard, proposal) }
+    it { should be_able_to(:dashboard, own_proposal) }
+    it { should_not be_able_to(:dashboard, proposal) }
   end
 
   describe 'publishing proposals' do
     let(:draft_own_proposal) { create(:proposal, :draft, author: user) }
 
-    it { is_expected.to be_able_to(:publish, draft_own_proposal) }
-    it { is_expected.not_to be_able_to(:publish, own_proposal) }
-    it { is_expected.not_to be_able_to(:publish, proposal) }
+    it { should be_able_to(:publish, draft_own_proposal) }
+    it { should_not be_able_to(:publish, own_proposal) }
+    it { should_not be_able_to(:publish, proposal) }
   end
 
   describe "when level 2 verified" do
