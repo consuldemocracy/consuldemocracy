@@ -75,7 +75,7 @@ class Proposal < ActiveRecord::Base
   scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
   scope :published,                -> { where.not(published_at: nil) }
   scope :draft,                    -> { where(published_at: nil) }
-  scope :created_by,               ->(author) { unscoped.where(hidden_at: nil, author: author) }
+  scope :created_by,               ->(author) { where(author: author) }
 
   def url
     proposal_path(self)
