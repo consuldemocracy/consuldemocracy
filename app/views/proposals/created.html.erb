@@ -1,9 +1,9 @@
 <div class=proposal-created>
   <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-12 column">
-        <h1><%= t '.title' %></h1>
+        <h1><%= t('.title') %></h1>
 
-        <%= raw t '.motivation' %>
+        <%= raw t('.motivation') %>
         
         <%= link_to t('.dashboard'), proposal_dashboard_index_path(@proposal), class: 'button' if can? :dashboard, @proposal %>
         <%= link_to t('.publish'), publish_proposal_path(@proposal), method: :patch, class: 'button' if can? :publish, @proposal %>

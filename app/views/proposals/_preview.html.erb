@@ -140,7 +140,7 @@
           <h2><%= t("votes.supports") %></h2>
           <div id="<%= dom_id(@proposal) %>_votes">
             <% if @proposal.draft? %>
-              <p><%= t '.draft' %></p>
+              <p><%= t('.draft') %></p>
             <% elsif @proposal.successful? %>
               <p>
                 <%= t("proposals.proposal.successful",
