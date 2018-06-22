@@ -27,7 +27,7 @@
           description: @proposal.summary
         } %>
 
-        <% if can? :dashboard, @proposal %> 
+        <% if can?(:dashboard, @proposal) %> 
           <div class="callout light">
             <p class="centered">
               <strong><%= t('.improve_it') %></strong>

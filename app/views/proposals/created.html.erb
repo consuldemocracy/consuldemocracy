@@ -5,8 +5,8 @@
 
         <%= raw t('.motivation') %>
         
-        <%= link_to t('.dashboard'), proposal_dashboard_index_path(@proposal), class: 'button' if can? :dashboard, @proposal %>
-        <%= link_to t('.publish'), publish_proposal_path(@proposal), method: :patch, class: 'button' if can? :publish, @proposal %>
+        <%= link_to t('.dashboard'), proposal_dashboard_index_path(@proposal), class: 'button' if can?(:dashboard, @proposal) %>
+        <%= link_to t('.publish'), publish_proposal_path(@proposal), method: :patch, class: 'button' if can?(:publish, @proposal) %>
       </div>
   </div>
 </div>
