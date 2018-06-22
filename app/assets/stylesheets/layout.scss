@@ -2655,6 +2655,28 @@ table {
 
   .card {
     border: 0;
+    overflow: visible;
+
+    a {
+
+      img {
+        transition-duration: 0.3s;
+        transition-property: transform;
+      }
+    }
+
+    a:hover {
+      box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    p {
+      padding: 0 $line-height / 4;
+    }
   }
 
   h3 {
