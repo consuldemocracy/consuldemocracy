@@ -13,7 +13,7 @@ feature 'Admin proposal dasboard actions' do
         visit admin_proposal_dashboard_actions_path
       end
 
-      it 'shows that there are no records available' do
+      scenario 'shows that there are no records available' do
         expect(page).to have_content('No records found')
       end
     end
@@ -25,7 +25,7 @@ feature 'Admin proposal dasboard actions' do
         visit admin_proposal_dashboard_actions_path
       end
 
-      it 'shows the action data' do
+      scenario 'shows the action data' do
         expect(page).to have_content(action.title)
       end
     end
@@ -39,7 +39,7 @@ feature 'Admin proposal dasboard actions' do
       click_link 'Create'
     end
 
-    it 'Creates a new action' do
+    scenario 'Creates a new action' do
       fill_in 'proposal_dashboard_action_title', with: action.title
       fill_in 'proposal_dashboard_action_description', with: action.description
 
@@ -58,7 +58,7 @@ feature 'Admin proposal dasboard actions' do
       click_link 'Edit'
     end
 
-    it 'Updates the action' do
+    scenario 'Updates the action' do
       fill_in 'proposal_dashboard_action_title', with: title
       click_button 'Save'
 
@@ -73,7 +73,7 @@ feature 'Admin proposal dasboard actions' do
       visit admin_proposal_dashboard_actions_path
     end
 
-    it 'deletes the action', js: true do
+    scenario 'deletes the action', js: true do
       page.accept_confirm do
         click_link 'Delete'
       end

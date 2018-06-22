@@ -13,7 +13,7 @@ describe 'Administrator tasks' do
         visit admin_administrator_tasks_path
       end
 
-      it 'informs that there are no pending tasks' do
+      scenario 'informs that there are no pending tasks' do
         expect(page).to have_content('There are no pending tasks')
       end
     end
@@ -25,15 +25,15 @@ describe 'Administrator tasks' do
         visit admin_administrator_tasks_path
       end
 
-      it 'shows the related proposal title' do
+      scenario 'shows the related proposal title' do
         expect(page).to have_content(task.source.proposal.title)
       end
 
-      it 'shows the requested action title' do
+      scenario 'shows the requested action title' do
         expect(page).to have_content(task.source.proposal_dashboard_action.title)
       end
 
-      it 'has a link that allows solving the request' do
+      scenario 'has a link that allows solving the request' do
         expect(page).to have_link('Solve')
       end
     end
@@ -47,15 +47,15 @@ describe 'Administrator tasks' do
       click_link 'Solve'
     end
 
-    it 'contains a link to the proposal' do
+    scenario 'contains a link to the proposal' do
       expect(page).to have_link('Check the proposal details')
     end
 
-    it 'contains a button that solves the request' do
+    scenario 'contains a button that solves the request' do
       expect(page).to have_button('Mark as solved')
     end
 
-    it 'shows the comments added by the user during the request' do
+    scenario 'shows the comments added by the user during the request' do
       expect(page).to have_content(task.source.comments)
     end
 
@@ -64,7 +64,7 @@ describe 'Administrator tasks' do
         click_button 'Mark as solved'
       end
 
-      it 'The proposal dissapears from the list' do
+      scenario 'The proposal dissapears from the list' do
         expect(page).not_to have_content(task.source.proposal.title)
       end
     end
