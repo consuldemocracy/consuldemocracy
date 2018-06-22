@@ -28,8 +28,7 @@ feature 'Officing Results' do
     not_allowed_poll_2.update(ends_at: 1.day.ago)
     not_allowed_poll_3 = regular_officer_assignment_2.booth_assignment.poll
 
-    visit root_path
-    click_link 'Polling officers'
+    visit officing_root_path
 
     expect(page).to have_content('Poll officing')
 

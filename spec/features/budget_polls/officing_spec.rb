@@ -45,4 +45,28 @@ feature 'Budget Poll Officing' do
     expect(page).not_to have_content("Total recounts and results")
   end
 
+  context "layout" do
+
+    scenario "Logo" do
+      user = create(:user)
+      officer = create(:poll_officer, user: user)
+
+      login_as user
+      visit officing_root_path
+
+      expect(page).to_not have_link("Decide Madrid Polling", href: "/officing")
+    end
+
+    scenario "Polling officers header menu" do
+      user = create(:user)
+      officer = create(:poll_officer, user: user)
+
+      login_as user
+      visit officing_root_path
+
+      expect(page).to_not have_link("Polling officers", href: "/officing")
+    end
+
+  end
+
 end
