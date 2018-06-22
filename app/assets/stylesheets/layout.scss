@@ -2655,6 +2655,28 @@ table {
 
   .card {
     border: 0;
+    overflow: visible;
+
+    a {
+
+      img {
+        transition-duration: 0.3s;
+        transition-property: transform;
+      }
+    }
+
+    a:hover {
+      box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    p {
+      padding: 0 $line-height / 4;
+    }
   }
 
   h3 {
@@ -2665,6 +2687,21 @@ table {
       margin-bottom: 0;
       min-width: rem-calc(240);
       padding: $line-height / 2 0;
+    }
+  }
+
+  .figure-card {
+
+    figcaption {
+      z-index: 3;
+    }
+
+    .gradient {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 1) 100%);
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
     }
   }
 }
