@@ -28,6 +28,8 @@ describe Abilities::Administrator do
   let(:hidden_comment) { create(:comment, :hidden) }
   let(:hidden_proposal) { create(:proposal, :hidden) }
 
+  let(:administrator_task) { create(:administrator_task) }
+
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
   it { should be_able_to(:vote, debate) }
@@ -88,4 +90,7 @@ describe Abilities::Administrator do
   it { should_not be_able_to(:destroy, budget_investment_image) }
   it { should_not be_able_to(:destroy, budget_investment_document) }
   it { should be_able_to(:manage, ProposalDashboardAction) }
+
+  it { is_expected.to be_able_to :manage, AdministratorTask }
+  it { is_expected.to be_able_to :manage, administrator_task }
 end

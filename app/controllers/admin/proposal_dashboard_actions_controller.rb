@@ -38,8 +38,13 @@ class Admin::ProposalDashboardActionsController < Admin::BaseController
   end
 
   def destroy
-    proposal_dashboard_action.destroy
-    redirect_to admin_proposal_dashboard_actions_path, notice: t('admin.proposal_dashboard_actions.delete.success')
+    if proposal_dashboard_action.destroy
+      flash[:notice] = t('admin.proposal_dashboard_actions.delete.success')
+    else
+      flash[:error] = proposal_dashboard_action.errors.full_messages.join(',')
+    end
+
+    redirect_to admin_proposal_dashboard_actions_path
   end
 
   private

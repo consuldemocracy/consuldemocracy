@@ -21,7 +21,6 @@ describe Abilities::Moderator do
   let(:hidden_debate) { create(:debate, :hidden) }
   let(:hidden_comment) { create(:comment, :hidden) }
   let(:hidden_proposal) { create(:proposal, :hidden) }
-  let(:administrator_task) { create(:administrator_task) }
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
@@ -31,9 +30,6 @@ describe Abilities::Moderator do
   it { should be_able_to(:show, proposal) }
 
   it { should be_able_to(:read, Organization) }
-
-  it { is_expected.to be_able_to :manage, AdministratorTask }
-  it { is_expected.to be_able_to :manage, administrator_task }
 
   describe "organizations" do
     let(:pending_organization)  { create(:organization) }

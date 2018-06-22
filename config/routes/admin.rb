@@ -196,5 +196,6 @@ namespace :admin do
     resources :feeds, only: [:update]
   end
 
-  resources :proposal_dashboard_actions, only: %i[index new create edit update destroy]
+  resources :proposal_dashboard_actions, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :administrator_tasks, only: [:index, :edit, :update]
 end

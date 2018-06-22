@@ -42,12 +42,5 @@
         <%= t("moderation.menu.users") %>
       <% end %>
     </li>
-
-    <li <%= 'class=is-active' if controller_name == 'administrator_tasks' %>>
-      <%= link_to moderation_administrator_tasks_path do %>
-        <span class="icon-check"></span>
-        <%= t 'moderation.menu.administrator_tasks' %>
-      <% end %>
-    </li>
   </ul>
 </nav>

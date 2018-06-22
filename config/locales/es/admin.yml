@@ -545,6 +545,8 @@ es:
       title_booths: Urnas de votación
       legislation: Legislación colaborativa
       users: Usuarios
+      proposals_dashboard: Panel de control de propuestas
+      administrator_tasks: Tareas pendientes
     administrators:
       index:
         title: Administradores
@@ -1319,3 +1321,17 @@ es:
         submit_header: Guardar encabezado
         card_title: Editar tarjeta
         submit_card: Guardar tarjeta
+    administrator_tasks:
+      index:
+        solve: Resolver
+        no_records: No hay tareas pendientes
+      edit:
+        back: Volver a la lista de tareas pendientes
+        solving: Resolver tarea pendiente
+      form:
+        solve: Marcar como resuelta
+        proposal: "La propuesta: %{title}"
+        request: "Ha solicitado: %{title}"
+        check_details: Ver los detalles de la propuesta
+      update:
+        success: La tarea ha sido marcada como resuelta
