@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ProposalSupportsQuery
   attr_reader :params
 
@@ -16,6 +14,12 @@ class ProposalSupportsQuery
     grouped_votes = groups
     grouped_votes.each do |group, votes|
       grouped_votes[group] = votes.inject(0) { |sum, vote| sum + vote.vote_weight }
+    end
+
+    accumulated = 0
+    grouped_votes.each do |k, v|
+      accumulated += v
+      grouped_votes[k] = accumulated
     end
 
     grouped_votes
