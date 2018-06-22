@@ -170,7 +170,7 @@ FactoryBot.define do
     responsible_name     'John Snow'
     terms_of_service     '1'
     skip_map             '1'
-    published_at         { Time.now }
+    published_at         { Time.current }
     association :author, factory: :user
 
     trait :hidden do
@@ -1060,7 +1060,7 @@ LOREM_IPSUM
     end
 
     trait :deleted do
-      hidden_at { Time.now.utc }
+      hidden_at { Time.current }
     end
 
     trait :proposed_action do
@@ -1075,7 +1075,7 @@ LOREM_IPSUM
   factory :proposal_executed_dashboard_action, class: 'ProposalExecutedDashboardAction' do
     proposal
     proposal_dashboard_action
-    executed_at { Time.now }
+    executed_at { Time.current }
 
     trait :with_comments do
       comments { Faker::Lorem.sentence(10) }
@@ -1085,7 +1085,7 @@ LOREM_IPSUM
   factory :administrator_task do
     source { |s| s.association(:proposal_executed_dashboard_action, :with_comments) }
     user
-    executed_at { Time.now }
+    executed_at { Time.current }
 
     trait :pending do
       user { nil }
@@ -1094,7 +1094,7 @@ LOREM_IPSUM
 
     trait :done do
       user
-      executed_at { Time.now }
+      executed_at { Time.current }
     end
   end
 end

@@ -14,7 +14,7 @@ describe ProposalExecutedDashboardAction do
     create :proposal_dashboard_action, request_to_administrators: request_to_administrators, link: Faker::Internet.url
   end
   let(:request_to_administrators) { false }
-  let(:executed_at) { Time.now }
+  let(:executed_at) { Time.current }
   let(:comments) { '' }
 
   it { is_expected.to be_valid }
