@@ -1,5 +1,5 @@
 class Admin::ProposalDashboardActionsController < Admin::BaseController
-  helper_method :proposal_dashboard_action
+  helper_method :proposal_dashboard_action, :resource
 
   def index
     @proposal_dashboard_actions = ProposalDashboardAction.all
@@ -45,6 +45,10 @@ class Admin::ProposalDashboardActionsController < Admin::BaseController
   end
 
   private
+
+  def resource
+    @proposal_dashboard_action
+  end
 
   def proposal_dashboard_action_params
     params
