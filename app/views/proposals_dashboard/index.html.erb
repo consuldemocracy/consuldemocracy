@@ -1,5 +1,5 @@
 <table>
-  <caption><%= t('.actions') %></caption>
+  <caption><%= t('proposals_dashboard.menu.actions') %></caption>
   <% proposed_actions.each do |action| %>
     <%= render partial: 'proposed_action', locals: { action: action } %>
   <% end %>

@@ -28,7 +28,7 @@
 
   ProposalGraph.prototype.draw = function(data) {
     var xColumnValues = [ 'x' ],
-      progressColumnValues =  [ this.progressLabel ], // [ '<%= t('.progress') %>' ],
+      progressColumnValues =  [ this.progressLabel ],
       key;
 
     for (key in data) {
@@ -50,7 +50,7 @@
       axis: {
         y: {
           label: { 
-            text: this.supportsLabel, // '<%= t '.supports' %> ',
+            text: this.supportsLabel,
             position: 'outer-middle'
           }
         },
