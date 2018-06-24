@@ -4,7 +4,6 @@
   <head>
     <%= render "layouts/common_head", default_title: "Admin" %>
     <%= content_for :head %>
-    <%= javascript_tag "jQuery.fx.off = true" if Rails.env.test? %>
   </head>
 
   <body class="admin" data-watch-form-message="<%= I18n.t('layouts.admin.watch_form_message') %>">
