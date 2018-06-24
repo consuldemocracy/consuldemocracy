@@ -61,3 +61,21 @@ en:
     verification_offices_url: Verification offices URL
     min_age_to_participate: Minimum age needed to participate
     proposal_improvement_path: Proposal improvement info internal link
+    documents_proposal_max_file_size: "Maximum file size for proposals (in Mb)"
+    documents_proposal_max_documents_allowed: "Maximum documents allowed for proposals"
+    documents_proposal_accepted_content_types: "Accepted content types for proposals"
+    documents_budget_investment_max_file_size: "Maximum file size for budget investments (in Mb)"
+    documents_budget_investment_max_documents_allowed: "Maximum documents allowed for budget investments"
+    documents_budget_investment_accepted_content_types: "Accepted content types for budget investments"
+    documents_budget_investment_milestone_max_file_size: "Maximum file size for budget investment milestones (in Mb)"
+    documents_budget_investment_milestone_max_documents_allowed: "Maximum documents allowed for budget investment milestones"
+    documents_budget_investment_milestone_accepted_content_types: "Accepted content types for budget investment milestones"
+    documents_legislation_process_max_file_size: "Maximum file sie for legislation process (in Mb)"
+    documents_legislation_process_max_documents_allowed: "Maximum documents allowed for legislation process"
+    documents_legislation_process_accepted_content_types: "Accepted content types for legislation process"
+    documents_legislation_proposal_max_file_size: "Maximum file size for legislation proposals (in Mb)"
+    documents_legislation_proposal_max_documents_allowed: "Maximum documents allowed for legislation proposals"
+    documents_legislation_proposal_accepted_content_types: "Accepted content types for legislation proposals"
+    documents_poll_question_answer_max_file_size: "Maximum file size for poll question answers (in Mb)"
+    documents_poll_question_answer_max_documents_allowed: "Maximum documents allowed for poll question answers"
+    documents_poll_question_answer_accepted_content_types: "Accepted content types for poll question answers"

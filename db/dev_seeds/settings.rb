@@ -63,7 +63,6 @@ section "Creating Settings" do
   Setting.create(key: 'map_longitude', value: -3.7)
   Setting.create(key: 'map_zoom', value: 10)
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
-  
 
   Setting.create(key: 'documents_proposal_max_file_size', value: '3')
   Setting.create(key: 'documents_proposal_max_documents_allowed', value: '3')
