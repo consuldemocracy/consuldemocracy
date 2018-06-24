@@ -1115,12 +1115,6 @@ es:
         submit_button: Guardar
       delete:
         success: Acción borrada con éxito
-      errors:
-        form:
-          error:
-            one: "error impidió guardar la acción"
-            other: 'errores impidieron guardar la acción.'
-
     signature_sheets:
       author: Autor
       created_at: Fecha de creación
