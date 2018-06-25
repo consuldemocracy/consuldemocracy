@@ -2395,6 +2395,7 @@ table {
 
   .carousel-image .orbit-wrapper img {
     display: block;
+    height: rem-calc(120);
 
     @include breakpoint(small) {
       margin: 0 auto;
