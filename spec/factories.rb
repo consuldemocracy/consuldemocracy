@@ -540,6 +540,11 @@ FactoryBot.define do
     user
   end
 
+  # custom_factory
+  factory :animator do
+    user
+  end
+
   factory :poll do
     sequence(:name) { |n| "Poll #{SecureRandom.hex}" }
 

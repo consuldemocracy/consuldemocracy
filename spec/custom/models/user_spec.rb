@@ -94,5 +94,19 @@ describe User do
     end
   end
 
+  describe "animator?" do
+    subject { build(:user) }
+    
+    it "is false when the user is not a animator" do
+      expect(subject.animator?).to be false
+    end
+
+    it "is true when the user is a animator" do
+      subject.save
+      create(:animator, user: subject)
+      expect(subject.animator?).to be true
+    end
+  end
+
 
 end

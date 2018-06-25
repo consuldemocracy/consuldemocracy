@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425084539) do
+ActiveRecord::Schema.define(version: 20180625131118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,12 @@ ActiveRecord::Schema.define(version: 20180425084539) do
   add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time", using: :btree
   add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
   add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
+
+  create_table "animators", force: :cascade do |t|
+    t.integer "user_id"
+  end
+
+  add_index "animators", ["user_id"], name: "index_animators_on_user_id", using: :btree
 
   create_table "annotations", force: :cascade do |t|
     t.string   "quote"
@@ -1241,6 +1247,7 @@ ActiveRecord::Schema.define(version: 20180425084539) do
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
   add_foreign_key "administrators", "users"
+  add_foreign_key "animators", "users"
   add_foreign_key "annotations", "legacy_legislations"
   add_foreign_key "annotations", "users"
   add_foreign_key "budget_investments", "communities"
