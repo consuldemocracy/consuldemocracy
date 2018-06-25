@@ -117,19 +117,23 @@
 
             <% if feature?("user.recommendations_on_debates") %>
               <div>
-                <%= f.check_box :recommended_debates, title: t("account.show.show_debates_recommendations"), label: false %>
-                <span class="checkbox">
-                  <%= t("account.show.show_debates_recommendations") %>
-                </span>
+                <%= f.label :recommended_debates do %>
+                  <%= f.check_box :recommended_debates, title: t("account.show.show_debates_recommendations"), label: false %>
+                  <span class="checkbox">
+                    <%= t("account.show.show_debates_recommendations") %>
+                  </span>
+                <% end %>
               </div>
             <% end %>
 
             <% if feature?("user.recommendations_on_proposals") %>
               <div>
-                <%= f.check_box :recommended_proposals, title: t("account.show.show_proposals_recommendations"), label: false %>
-                <span class="checkbox">
-                  <%= t("account.show.show_proposals_recommendations") %>
-                </span>
+                <%= f.label :recommended_proposals do %>
+                  <%= f.check_box :recommended_proposals, title: t("account.show.show_proposals_recommendations"), label: false %>
+                  <span class="checkbox">
+                    <%= t("account.show.show_proposals_recommendations") %>
+                  </span>
+                <% end %>
               </div>
             <% end %>
           <% end %>
