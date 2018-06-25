@@ -413,11 +413,6 @@ a {
   text-transform: uppercase;
 }
 
-figure img {
-  height: 100%;
-  width: 100%;
-}
-
 // 02. Header
 // ----------
 
@@ -2704,6 +2699,11 @@ table {
       width: 100%;
       z-index: 2;
     }
+  }
+
+  figure img {
+    height: 100%;
+    width: 100%;
   }
 }
 
