@@ -1091,7 +1091,7 @@ feature 'Debates' do
       fill_in 'debate_title', with: 'proposal'
       check "debate_terms_of_service"
 
-      within('div#js-suggest', visible: false) do
+      within('div#js-suggest') do
         expect(page).not_to have_content 'You are seeing'
       end
     end
