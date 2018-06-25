@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   GENDERS = %w(male female).freeze
 
+  has_one :animator
+
   validates :firstname,
             :lastname,
             :date_of_birth,
@@ -25,7 +27,15 @@ class User < ActiveRecord::Base
   end
   before_validation :set_default_username, if: -> { username.blank? && !erased? }
 
+  # Scopes =======================================
+
+  scope :animators,     -> { joins(:animator) }
+
   # Instance methods ==================================================
+  
+  def animator?
+    animator.present?
+  end
 
   def erase(erase_reason = nil)
     update(
