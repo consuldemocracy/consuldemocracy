@@ -75,6 +75,9 @@ fr:
       flag: Cette idée a été signalée comme inapproprié par plusieurs utilisateurs
       destroy_debate_link: Supprimer
   form:
+    accept_terms: J'accepte la %{policy} et les %{conditions}
+    policy: politique de confidentialité
+    conditions: conditions d'utilisation
     debate: Idée
     proposal: Projet
   geozones:
@@ -134,7 +137,7 @@ fr:
       proposal_summary: Résumé du projet
       proposal_summary_note: "(maximum 200 caractères)"
       proposal_text: Texte du projet
-      proposal_title: Titre ddu projet
+      proposal_title: Titre du projet
       tags_instructions: "Catégoriser cette proposition. Vous pouvez choisir parmi\nles catégories proposées ou ajouter la vôtre"
       tags_label: Tags
       tags_placeholder: "Entrez les tags que vous voudriez utiliser, séparer par des virgules (',')"

@@ -15,7 +15,6 @@ before_script:
   - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
   - for i in config/*.example; do cp "$i" "${i/.example}"; done
   - bundle exec rake db:setup
-  - bundle exec rake db:custom_seed
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build

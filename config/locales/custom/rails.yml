@@ -42,6 +42,7 @@ fr:
       year: Année
   errors:
     messages:
+      accepted: doit être accepté
       blank: ne peut être vide
       too_short:
         one: est trop court (au moins 1 caractère)
