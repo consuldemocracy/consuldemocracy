@@ -49,10 +49,9 @@ class User < ActiveRecord::Base
     identities.destroy_all
   end
 
-
-
+  # Possibilité de participer jusqu'à 26 ans - 1 jour
   def self.maximum_required_age
-    (Setting['max_age_to_participate'] || 25).to_i
+    (Setting['max_age_to_participate'] || 26).to_i
   end
 
   # Omniauth --------------------------------------------------------------------------
