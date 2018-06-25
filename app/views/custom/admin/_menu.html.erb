@@ -6,7 +6,7 @@
         <span class="icon-proposals"></span>
         <strong><%= t("admin.menu.title_categories") %></strong>
       </a>
-      <ul <%= "class=is-active" if menu_tags? %>>
+      <ul <%= "class=is-active" if menu_settings? %>>
         <li <%= "class=active" if controller_name == "tags" %>>
           <%= link_to t("admin.menu.proposals_topics"), admin_tags_path %>
         </li>
