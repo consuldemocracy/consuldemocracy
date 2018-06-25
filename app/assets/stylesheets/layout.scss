@@ -421,11 +421,6 @@ a {
   text-transform: uppercase;
 }
 
-figure img {
-  height: 100%;
-  width: 100%;
-}
-
 // 02. Header
 // ----------
 
@@ -2675,6 +2670,11 @@ table {
       min-width: rem-calc(240);
       padding: $line-height / 2 0;
     }
+  }
+
+  figure img {
+    height: 100%;
+    width: 100%;
   }
 }
 
