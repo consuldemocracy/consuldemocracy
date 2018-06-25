@@ -14,3 +14,5 @@ en:
       copyright: MasDemocraciaEnEuropa, %{year}
   social:
     linkedin: "%{org} LinkedIn"
+  related_content:
+    help: "You can add links of Proposals inside of %{org}."
