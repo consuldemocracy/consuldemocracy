@@ -721,9 +721,9 @@ feature 'Proposals' do
 
     context 'Recommendations' do
 
-      let!(:best_proposal)   { create(:proposal, title: 'Best',   cached_votes_up: 10, tag_list: "Sport") }
-      let!(:medium_proposal) { create(:proposal, title: 'Medium', cached_votes_up: 5,  tag_list: "Sport") }
-      let!(:worst_proposal)  { create(:proposal, title: 'Worst',  cached_votes_up: 1,  tag_list: "Sport") }
+      let!(:best_proposal)   { create(:proposal, title: 'Best',   cached_votes_up: 10, tag_list: 'Sport') }
+      let!(:medium_proposal) { create(:proposal, title: 'Medium', cached_votes_up: 5,  tag_list: 'Sport') }
+      let!(:worst_proposal)  { create(:proposal, title: 'Worst',  cached_votes_up: 1,  tag_list: 'Sport') }
 
       before do
         Setting['feature.user.recommendations'] = true
@@ -735,71 +735,56 @@ feature 'Proposals' do
         Setting['feature.user.recommendations_on_proposals'] = nil
       end
 
-      scenario 'Proposals can not ordered by recommendations when there is not an user logged' do
+      scenario "Proposals can't be ordered by recommendations if there's no logged user" do
         visit proposals_path
         expect(page).not_to have_selector('a', text: 'recommendations')
       end
 
-      scenario 'Show recommended proposals on index header' do
-        user     = create(:user)
-        proposal = create(:proposal, tag_list: "Sport")
+      scenario 'Show recommended proposals on index header when user has recommendations enabled' do
+        user     = create(:user, recommended_proposals: true)
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
 
         login_as(user)
-
-        visit account_path
-
-        expect(page).to have_content('Recommendations')
-        expect(page).to have_content('Show proposals recommendations')
-        expect(find("#account_recommended_proposals")).not_to be_checked
-
-        check 'account_recommended_proposals'
-        click_button 'Save changes'
-
-        expect(find("#account_recommended_proposals")).to be_checked
-
         visit proposals_path
 
         expect(page).to have_css('.recommendation', count: 3)
-        expect(page).to have_link "Best"
-        expect(page).to have_link "Medium"
-        expect(page).to have_link "Worst"
-        expect(page).to have_link "See more recommendations"
+        expect(page).to have_link 'Best'
+        expect(page).to have_link 'Medium'
+        expect(page).to have_link 'Worst'
+        expect(page).to have_link 'See more recommendations'
       end
 
       scenario 'Should display text when there are not recommended results' do
         user     = create(:user, recommended_proposals: true)
-        proposal = create(:proposal, tag_list: "Distinct_to_sport")
+        proposal = create(:proposal, tag_list: 'Distinct_to_sport')
         create(:follow, followable: proposal, user: user)
 
         login_as(user)
-
         visit proposals_path
 
         click_link 'recommendations'
 
-        expect(page).to have_content "There are not proposals related to your interests"
+        expect(page).to have_content 'There are not proposals related to your interests'
       end
 
       scenario 'Should display text when user has not related interests' do
         user = create(:user, recommended_proposals: true)
 
         login_as(user)
-
         visit proposals_path
 
         click_link 'recommendations'
 
-        expect(page).to have_content "Follow proposals so we can give you recommendations"
+        expect(page).to have_content 'Follow proposals so we can give you recommendations'
       end
 
-      scenario 'Proposals are ordered by recommendations when there is an user logged' do
+      scenario "Proposals are ordered by recommendations when there's an user logged" do
         user     = create(:user, recommended_proposals: true)
-        proposal = create(:proposal, tag_list: "Sport")
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
 
         login_as(user)
-
         visit proposals_path
 
         click_link 'recommendations'
@@ -815,19 +800,12 @@ feature 'Proposals' do
         expect(current_url).to include('page=1')
       end
 
-      scenario 'Recommendations are not shown if feature is disabled' do
+      scenario 'are not shown if user does not have recommendations enabled' do
         user     = create(:user)
-        proposal = create(:proposal, tag_list: "Sport")
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
 
         login_as(user)
-
-        visit account_path
-
-        expect(page).to have_content('Recommendations')
-        expect(page).to have_content('Show proposals recommendations')
-        expect(find("#account_recommended_proposals")).not_to be_checked
-
         visit proposals_path
 
         expect(page).not_to have_css('.recommendation', count: 3)
@@ -836,11 +814,10 @@ feature 'Proposals' do
 
       scenario 'Recommendations shown in index are dismissable', :js do
         user     = create(:user, recommended_proposals: true)
-        proposal = create(:proposal, tag_list: "Sport")
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
 
         login_as(user)
-
         visit proposals_path
 
         within("#recommendations") do

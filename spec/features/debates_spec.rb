@@ -397,9 +397,9 @@ feature 'Debates' do
 
     context 'Recommendations' do
 
-      let!(:best_debate)   { create(:debate, title: 'Best',   cached_votes_total: 10, tag_list: "Sport") }
-      let!(:medium_debate) { create(:debate, title: 'Medium', cached_votes_total: 5,  tag_list: "Sport") }
-      let!(:worst_debate)  { create(:debate, title: 'Worst',  cached_votes_total: 1,  tag_list: "Sport") }
+      let!(:best_debate)   { create(:debate, title: 'Best',   cached_votes_total: 10, tag_list: 'Sport') }
+      let!(:medium_debate) { create(:debate, title: 'Medium', cached_votes_total: 5,  tag_list: 'Sport') }
+      let!(:worst_debate)  { create(:debate, title: 'Worst',  cached_votes_total: 1,  tag_list: 'Sport') }
 
       background do
         Setting['feature.user.recommendations'] = true
@@ -411,40 +411,29 @@ feature 'Debates' do
         Setting['feature.user.recommendations_on_debates'] = nil
       end
 
-      scenario 'Debates can not ordered by recommendations when there is not an user logged' do
+      scenario "Debates can't be ordered by recommendations if there's no logged user" do
         visit debates_path
         expect(page).not_to have_selector('a', text: 'recommendations')
       end
 
-      scenario 'Show recommended debates on index header' do
-        user     = create(:user)
-        proposal = create(:proposal, tag_list: "Sport")
+      scenario 'Show recommended debates on index header when user has recommendations enabled' do
+        user     = create(:user, recommended_debates: true)
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
 
         login_as(user)
-        visit account_path
-
-        expect(page).to have_content('Recommendations')
-        expect(page).to have_content('Show debates recommendations')
-        expect(find("#account_recommended_debates")).not_to be_checked
-
-        check 'account_recommended_debates'
-        click_button 'Save changes'
-
-        expect(find("#account_recommended_debates")).to be_checked
-
         visit debates_path
 
         expect(page).to have_css('.recommendation', count: 3)
-        expect(page).to have_link "Best"
-        expect(page).to have_link "Medium"
-        expect(page).to have_link "Worst"
-        expect(page).to have_link "See more recommendations"
+        expect(page).to have_link 'Best'
+        expect(page).to have_link 'Medium'
+        expect(page).to have_link 'Worst'
+        expect(page).to have_link 'See more recommendations'
       end
 
       scenario 'Should display text when there are not recommended results' do
         user     = create(:user, recommended_debates: true)
-        proposal = create(:proposal, tag_list: "Distinct_to_sport")
+        proposal = create(:proposal, tag_list: 'Distinct_to_sport')
         create(:follow, followable: proposal, user: user)
 
         login_as(user)
@@ -452,22 +441,23 @@ feature 'Debates' do
 
         click_link 'recommendations'
 
-        expect(page).to have_content "There are not debates related to your interests"
+        expect(page).to have_content 'There are not debates related to your interests'
       end
 
       scenario 'Should display text when user has not related interests' do
         user = create(:user, recommended_debates: true)
+
         login_as(user)
         visit debates_path
 
         click_link 'recommendations'
 
-        expect(page).to have_content "Follow proposals so we can give you recommendations"
+        expect(page).to have_content 'Follow proposals so we can give you recommendations'
       end
 
-      scenario 'Debates are ordered by recommendations when there is a user logged' do
+      scenario "Debates are ordered by recommendations when there's an user logged" do
         user     = create(:user, recommended_debates: true)
-        proposal = create(:proposal, tag_list: "Sport")
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
 
         login_as(user)
@@ -486,18 +476,12 @@ feature 'Debates' do
         expect(current_url).to include('page=1')
       end
 
-      scenario 'Recommendations are not shown if feature is disabled' do
+      scenario 'are not shown if user does not have recommendations enabled' do
         user     = create(:user)
-        proposal = create(:proposal, tag_list: "Sport")
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
 
         login_as(user)
-        visit account_path
-
-        expect(page).to have_content('Recommendations')
-        expect(page).to have_content('Show debates recommendations')
-        expect(find("#account_recommended_debates")).not_to be_checked
-
         visit debates_path
 
         expect(page).not_to have_css('.recommendation', count: 3)
@@ -506,11 +490,10 @@ feature 'Debates' do
 
       scenario 'Recommendations shown in index are dismissable', :js do
         user     = create(:user, recommended_debates: true)
-        proposal = create(:proposal, tag_list: "Sport")
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
 
         login_as(user)
-
         visit debates_path
 
         within("#recommendations") do
