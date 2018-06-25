@@ -3,6 +3,15 @@ require 'rails_helper'
 describe Legislation::AnswersController do
 
   describe 'POST create' do
+
+    before do
+      Setting['feature.legislation'] = true
+    end
+
+    after do
+      Setting['feature.legislation'] = nil
+    end
+
     before do
       @process = create(:legislation_process, debate_start_date: Date.current - 3.days, debate_end_date: Date.current + 2.days)
       @question = create(:legislation_question, process: @process, title: "Question 1")

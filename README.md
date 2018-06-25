@@ -109,6 +109,15 @@ En production penser à bloquer l'accès aux comptes admin et verified.
 Certaines releases nécessitent des actions particulières suite à une montée de version.
 Ces actions sont documentées dans [les releases](https://github.com/consul/consul/releases).
 
+## Changements principaux par rapport à Consul 
+
+- Développement d'un module Actualité, page d'accueil par défaut des personnes connectées
+- Les utilisateurs sont vérifiés par principe, dès leur inscription, sans avoir à vérifier de document officiel
+- Les utilisateurs doivent renseigner + de données à l'inscriptions : nom, prénom, âge, adresse...
+- L'inscription via facebook ne fait que pré-remplir un profil utilisateur, au lieu de créer directement un compte
+- Un compte utilisateur peut être lié/délié de facebook après coup.
+- Les `Proposal` ont par défaut le nom de leur `author` comme responsible_name (et non `document_number`)
+
 ## Configuration for development and test environments
 
 **NOTE**: For more detailed instructions check the [docs](https://consul_docs.gitbooks.io/docs/)
