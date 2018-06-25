@@ -58,10 +58,6 @@ $sidebar-active: #f4fcd0;
       box-shadow: 0 2px 2px #eee;
     }
 
-    [class^="icon-"]:not(.icon-circle) {
-      font-size: $base-font-size;
-    }
-
     @include breakpoint(small only) {
 
       .top-bar-left ul {
@@ -95,6 +91,10 @@ $sidebar-active: #f4fcd0;
       [class^="icon-"] {
         display: none;
       }
+    }
+
+    [class^="icon-"]:not(.icon-circle) {
+      font-size: $base-font-size;
     }
   }
 
