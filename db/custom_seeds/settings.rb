@@ -30,7 +30,7 @@ section "Creating custom Settings" do
 
   # Settings extraient de l ancienne BDD
   Setting['min_age_to_participate'] = '16'
-  Setting['max_age_to_participate'] = '25'
+  Setting['max_age_to_participate'] = '26'
   Setting['proposal_code_prefix'] = 'CDJ'
   Setting['votes_for_proposal_success'] = '30'
   Setting['votes_for_debate_success'] = '30'
