@@ -4,6 +4,9 @@ fr:
       article:
         one: "Actualité"
         other: "Actualités"
+      animator:
+        one: "Membre du conseil d'animation"
+        other: "Membres du conseil d'animation"
       debate:
         one: "Idée"
         other: "Idées"

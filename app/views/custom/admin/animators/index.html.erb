@@ -1,0 +1,50 @@
+<h2 class="inline-block"><%= t("admin.animators.index.title") %></h2>
+
+<%= render 'admin/shared/user_search', url: search_admin_animators_path %>
+
+<div id="animators">
+  <% if @animators.any? %>
+    <h3 class="margin"><%= page_entries_info @animators %></h3>
+
+    <table>
+      <thead>
+        <th scope="col"><%= t("admin.animators.index.name") %></th>
+        <th scope="col" class="small-6"><%= t("admin.animators.index.email") %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+        <% @animators.each do |animator| %>
+          <tr>
+            <td>
+              <%= animator.name %>
+            </td>
+            <td>
+              <%= animator.email %>
+            </td>
+            <td>
+              <% if animator.persisted? %>
+                <%= link_to t('admin.animators.animator.delete'),
+                            admin_animator_path(animator),
+                            method: :delete,
+                            class: "button hollow alert expanded"
+                %>
+              <% else %>
+                <%= link_to t('admin.animators.animator.add'),
+                            { controller: "admin/animators", action: :create,
+                              user_id: animator.user_id },
+                              method: :post,
+                              class: "button success expanded" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @animators %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.animators.index.no_animators") %>
+    </div>
+  <% end %>
+</div>
