@@ -148,8 +148,8 @@ feature 'Admin settings' do
     end
 
     scenario "User visits new proposal page and should see updated maximum number of documents" do
-      @user  = create(:user, username: 'Jose Luis Balbin')
-      login_as(@user.username)
+      user  = create(:user, username: "consuluser")
+      login_as(user.username)
 
       visit new_proposal_path
       expect(page).to have_content "22"
@@ -157,7 +157,7 @@ feature 'Admin settings' do
 
     scenario "Admin should be able to update the maximum file size for proposals" do
       Setting["documents_proposal_max_file_size"] = '3'
-      setting = Setting.where(key:"documents_proposal_max_file_size").first
+      setting = Setting.where(key:"proposal_max_file_size").first
 
       admin = create(:administrator).user
       login_as(admin)
@@ -176,7 +176,7 @@ feature 'Admin settings' do
 
     scenario "Admin should be able to update the accepted content types for proposals" do
       Setting["documents_proposal_accepted_content_types"] = "application/pdf"
-      setting = Setting.where(key:"documents_proposal_accepted_content_types").first
+      setting = Setting.where(key:"proposal_accepted_content_types").first
 
       admin = create(:administrator).user
       login_as(admin)
@@ -195,7 +195,7 @@ feature 'Admin settings' do
 
     scenario "Admin should be able to update the maximum number of documents for budget investment" do
       Setting["documents_budget_investment_max_documents_allowed"] = '3'
-      setting = Setting.where(key:"documents_budget_investment_max_documents_allowed").first
+      setting = Setting.where(key:"budget_investment_max_documents_allowed").first
 
       admin = create(:administrator).user
       login_as(admin)
@@ -213,17 +213,17 @@ feature 'Admin settings' do
     end
 
     scenario "User visits new buget investment page and should see updated maximum number of documents" do
-      @user  = create(:user, username: 'Jose Luis Balbin')
+      @user  = create(:user, username: "consuluser")
       login_as(@user.username)
 
       visit create_investments_management_budgets_path
-      
+
       expect(page).to have_content "77"
     end
 
     scenario "Admin should be able to update the maximum number of documents for budget investment milestone" do
       Setting["documents_budget_investment_milestone_max_documents_allowed"] = '3'
-      setting = Setting.where(key:"documents_budget_investment_milestone_max_documents_allowed").first
+      setting = Setting.where(key:"budget_investment_milestone_max_documents_allowed").first
 
       admin = create(:administrator).user
       login_as(admin)
@@ -242,7 +242,7 @@ feature 'Admin settings' do
 
     scenario "Admin should be able to update the maximum number of documents for legislation process milestone" do
       Setting["documents_legislation_process_max_documents_allowed"] = '3'
-      setting = Setting.where(key:"documents_legislation_process_max_documents_allowed").first
+      setting = Setting.where(key:"legislation_process_max_documents_allowed").first
 
       admin = create(:administrator).user
       login_as(admin)
@@ -261,7 +261,7 @@ feature 'Admin settings' do
 
     scenario "Admin should be able to update the maximum number of documents for legislation proposal milestone" do
       Setting["documents_legislation_proposal_max_documents_allowed"] = '3'
-      setting = Setting.where(key:"documents_legislation_proposal_max_documents_allowed").first
+      setting = Setting.where(key:"legislation_proposal_max_documents_allowed").first
 
       admin = create(:administrator).user
       login_as(admin)
@@ -281,7 +281,7 @@ feature 'Admin settings' do
 
     scenario "Admin should be able to update the maximum number of documents for poll question answer" do
       Setting["documents_poll_question_answer_max_documents_allowed"] = '3'
-      setting = Setting.where(key:"documents_poll_question_answer_max_documents_allowed").first
+      setting = Setting.where(key:"poll_question_answer_max_documents_allowed").first
 
       admin = create(:administrator).user
       login_as(admin)
