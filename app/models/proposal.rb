@@ -74,15 +74,15 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.max_documents_allowed
-    Setting["documents_proposal_max_documents_allowed"].to_i
+    Setting["proposal_max_documents_allowed"].to_i
   end
 
   def self.max_file_size
-    Setting["documents_proposal_max_file_size"].to_i.megabytes
+    Setting["proposal_max_file_size"].to_i.megabytes
   end
 
   def self.accepted_content_types
-    [Setting["documents_proposal_accepted_content_types"]]
+    [Setting["proposal_accepted_content_types"]]
   end
 
   def self.recommendations(user)

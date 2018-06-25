@@ -89,25 +89,44 @@ Setting['feature.allow_attached_documents'] = true
 Setting['feature.guides'] = nil
 
 # Max documents allowed, max file size, and content types of attached documents
+Setting['proposal.max_file_size'] = '3'
+Setting['proposal.max_documents_allowed'] = '3'
+Setting['proposal.accepted_content_types'] = "application/pdf"
+Setting['budget_investment.max_file_size'] = '3'
+Setting['budget_investment.max_documents_allowed'] = '3'
+Setting['budget_investment.accepted_content_types'] = "application/pdf"
+Setting['budget_investment_milestone.max_file_size'] = '3'
+Setting['budget_investment_milestone.max_documents_allowed'] = '3'
+Setting['budget_investment_milestone.accepted_content_types'] = "application/pdf"
+Setting['legislation_process.max_file_size'] = '3'
+Setting['legislation_process.max_documents_allowed'] = '3'
+Setting['legislation_process.accepted_content_types'] = "application/pdf"
+Setting['legislation_proposal.max_file_size'] = '3'
+Setting['legislation_proposal.max_documents_allowed'] = '3'
+Setting['legislation_proposal.accepted_content_types'] = "application/pdf"
+Setting['poll_question_answer.max_file_size'] = '3'
+Setting['poll_question_answer.max_documents_allowed'] = '3'
+Setting['poll_question_answer.accepted_content_types'] = "application/pdf"
 
-Setting['documents.proposal.max_file_size'] = '3'
-Setting['documents.proposal.max_documents_allowed'] = '3'
-Setting['documents.proposal.accepted_content_types'] = "application/pdf"
-Setting['documents.budget_investment.max_file_size'] = '3'
-Setting['documents.budget_investment.max_documents_allowed'] = '3'
-Setting['documents.budget_investment.accepted_content_types'] = "application/pdf"
-Setting['documents.budget_investment_milestone.max_file_size'] = '3'
-Setting['documents.budget_investment_milestone.max_documents_allowed'] = '3'
-Setting['documents.budget_investment_milestone.accepted_content_types'] = "application/pdf"
-Setting['documents.legislation_process.max_file_size'] = '3'
-Setting['documents.legislation_process.max_documents_allowed'] = '3'
-Setting['documents.legislation_process.accepted_content_types'] = "application/pdf"
-Setting['documents.legislation_proposal.max_file_size'] = '3'
-Setting['documents.legislation_proposal.max_documents_allowed'] = '3'
-Setting['documents.legislation_proposal.accepted_content_types'] = "application/pdf"
-Setting['documents.poll_question_answer_max_file_size'] = '3'
-Setting['documents.poll_question_answer_max_documents_allowed'] = '3'
-Setting['documents.poll_question_answer_accepted_content_types'] = "application/pdf"
+# create keys for documentable resources for translation
+Setting.create(key: 'proposal_max_file_size', value: '3')
+Setting.create(key: 'proposal_max_documents_allowed', value: '3')
+Setting.create(key: 'proposal_accepted_content_types', value: 'application/pdf')
+Setting.create(key: 'budget_investment_max_file_size', value: '3')
+Setting.create(key: 'budget_investment_max_documents_allowed', value: '3')
+Setting.create(key: 'budget_investment_accepted_content_types', value: 'application/pdf')
+Setting.create(key: 'budget_investment_milestone_max_file_size', value: '3')
+Setting.create(key: 'budget_investment_milestone_max_documents_allowed', value: '3')
+Setting.create(key: 'budget_investment_milestone_accepted_content_types', value: 'application/pdf')
+Setting.create(key: 'legislation_process_max_file_size', value: '3')
+Setting.create(key: 'legislation_process_max_documents_allowed', value: '3')
+Setting.create(key: 'legislation_process_accepted_content_types', value: 'application/pdf')
+Setting.create(key: 'legislation_proposal_max_file_size', value: '3')
+Setting.create(key: 'legislation_proposal_max_documents_allowed', value: '3')
+Setting.create(key: 'legislation_proposal_accepted_content_types', value: 'application/pdf')
+Setting.create(key: 'poll_question_answer_max_file_size', value: '3')
+Setting.create(key: 'poll_question_answer_max_documents_allowed', value: '3')
+Setting.create(key: 'poll_question_answer_accepted_content_types', value: 'application/pdf')
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal.features.voting_allowed'] = nil

@@ -12,9 +12,9 @@ module Documentable
     private
 
     def documentable(options = {})
-      @max_documents_allowed = options[:max_documents_allowed]
-      @max_file_size = options[:max_file_size]
-      @accepted_content_types = options[:accepted_content_types]
+      @max_documents_allowed = options["max_documents_allowed"]
+      @max_file_size = options["max_file_size"]
+      @accepted_content_types = options["accepted_content_types"]
     end
 
   end

@@ -13,26 +13,25 @@ namespace :settings do
     Setting['feature.allow_attached_documents'] = true
   end
 
-  desc "Initialize max size, number, allowed and accepted content types"
-  task initialize_attached_documents_setting: :environment do
-    Setting.create(key: 'documents_proposal_max_file_size', value: '3')
-    Setting.create(key: 'documents_proposal_max_documents_allowed', value: '3')
-    Setting.create(key: 'documents_proposal_accepted_content_types', value: 'application/pdf')
-    Setting.create(key: 'documents_budget_investment_max_file_size', value: '3')
-    Setting.create(key: 'documents_budget_investment_max_documents_allowed', value: '3')
-    Setting.create(key: 'documents_budget_investment_accepted_content_types', value: 'application/pdf')
-    Setting.create(key: 'documents_budget_investment_milestone_max_file_size', value: '3')
-    Setting.create(key: 'documents_budget_investment_milestone_max_documents_allowed', value: '3')
-    Setting.create(key: 'documents_budget_investment_milestone_accepted_content_types', value: 'application/pdf')
-    Setting.create(key: 'documents_legislation_process_max_file_size', value: '3')
-    Setting.create(key: 'documents_legislation_process_max_documents_allowed', value: '3')
-    Setting.create(key: 'documents_legislation_process_accepted_content_types', value: 'application/pdf')
-    Setting.create(key: 'documents_legislation_proposal_max_file_size', value: '3')
-    Setting.create(key: 'documents_legislation_proposal_max_documents_allowed', value: '3')
-    Setting.create(key: 'documents_legislation_proposal_accepted_content_types', value: 'application/pdf')
-    Setting.create(key: 'documents_poll_question_answer_max_file_size', value: '3')
-    Setting.create(key: 'documents_poll_question_answer_max_documents_allowed', value: '3')
-    Setting.create(key: 'documents_poll_question_answer_accepted_content_types', value: 'application/pdf')
-
+  desc "initialize max size, number, allowed and accepted content types"
+  task create_attached_documents_setting: :environment do
+    Setting['proposal_max_file_size'] = '3'
+    Setting['proposal_max_documents_allowed'] = '3'
+    Setting['proposal_accepted_content_types'] = "application/pdf"
+    Setting['budget_investment_max_file_size'] = '3'
+    Setting['budget_investment_max_documents_allowed'] = '3'
+    Setting['budget_investment_accepted_content_types'] = "application/pdf"
+    Setting['budget_investment_milestone_max_file_size'] = '3'
+    Setting['budget_investment_milestone_max_documents_allowed'] = '3'
+    Setting['budget_investment_milestone_accepted_content_types'] = "application/pdf"
+    Setting['legislation_process_max_file_size'] = '3'
+    Setting['legislation_process_max_documents_allowed'] = '3'
+    Setting['legislation_process_accepted_content_types'] = "application/pdf"
+    Setting['legislation_proposal_max_file_size'] = '3'
+    Setting['legislation_proposal_max_documents_allowed'] = '3'
+    Setting['legislation_proposal_accepted_content_types'] = "application/pdf"
+    Setting['poll_question_answer_max_file_size'] = '3'
+    Setting['poll_question_answer_max_documents_allowed'] = '3'
+    Setting['poll_question_answer_accepted_content_types'] = "application/pdf"
   end
 end

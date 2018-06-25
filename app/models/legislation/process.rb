@@ -32,15 +32,15 @@ class Legislation::Process < ActiveRecord::Base
   scope :published, -> { where(published: true) }
 
   def self.max_documents_allowed
-    Setting["documents_legislation_process_max_documents_allowed"].to_i
+    Setting["legislation_process_max_documents_allowed"].to_i
   end
 
   def self.max_file_size
-    Setting["documents_legislation_process_max_file_size"].to_i.megabytes
+    Setting["legislation_process_max_file_size"].to_i.megabytes
   end
 
   def self.accepted_content_types
-    [Setting["documents_legislation_process_accepted_content_types"]]
+    [Setting["legislation_process_accepted_content_types"]]
   end
 
   def debate_phase

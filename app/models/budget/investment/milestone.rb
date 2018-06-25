@@ -21,15 +21,15 @@ class Budget
       end
 
       def self.max_documents_allowed
-        Setting["documents_buget_investment_milestone_max_documents_allowed"].to_i
+        Setting["budget_investment_milestone_max_documents_allowed"].to_i
       end
 
       def self.max_file_size
-        Setting["documents_buget_investment_milestone_max_file_size"].to_i.megabytes
+        Setting["budget_investment_milestone_max_file_size"].to_i.megabytes
       end
 
       def self.accepted_content_types
-        [Setting["documents_buget_investment_milestone_accepted_content_types"]]
+        [Setting["budget_investment_milestone_accepted_content_types"]]
       end
 
     end
