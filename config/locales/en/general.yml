@@ -486,7 +486,6 @@ en:
       title_external_url: "Additional documentation"
       title_video_url: "External video"
       author: Author
-    preview:
       draft: Draft
     update:
       form:

@@ -10,7 +10,7 @@ describe 'Administrator tasks' do
   context 'when accessing the pending task list' do
     context 'and no pending task' do
       before do
-        visit admin_administrator_tasks_path
+        visit admin_proposal_dashboard_administrator_tasks_path
       end
 
       scenario 'informs that there are no pending tasks' do
@@ -22,7 +22,7 @@ describe 'Administrator tasks' do
       let!(:task) { create :administrator_task, :pending }
 
       before do
-        visit admin_administrator_tasks_path
+        visit admin_proposal_dashboard_administrator_tasks_path
       end
 
       scenario 'shows the related proposal title' do
@@ -43,7 +43,7 @@ describe 'Administrator tasks' do
     let!(:task) { create :administrator_task, :pending }
 
     before do
-      visit admin_administrator_tasks_path
+      visit admin_proposal_dashboard_administrator_tasks_path
       click_link 'Solve'
     end
 

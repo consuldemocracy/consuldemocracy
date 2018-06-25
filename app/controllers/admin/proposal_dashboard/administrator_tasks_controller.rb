@@ -1,4 +1,4 @@
-class Admin::AdministratorTasksController < Admin::BaseController
+class Admin::ProposalDashboard::AdministratorTasksController < Admin::ProposalDashboard::BaseController
   helper_method :administrator_task
 
   def index
@@ -14,7 +14,7 @@ class Admin::AdministratorTasksController < Admin::BaseController
     authorize! :update, administrator_task
 
     administrator_task.update(user: current_user, executed_at: Time.now)
-    redirect_to admin_administrator_tasks_path, { flash: { notice: t('.success') } }
+    redirect_to admin_proposal_dashboard_administrator_tasks_path, { flash: { notice: t('.success') } }
   end
 
   private

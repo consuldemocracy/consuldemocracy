@@ -1315,17 +1315,18 @@ en:
         submit_header: Save header
         card_title: Edit card
         submit_card: Save card
-    administrator_tasks:
-      index:
-        solve: Solve
-        no_records: There are no pending tasks
-      edit:
-        back: Back to pending tasks list
-        solving: Solve pending task
-      form:
-        solve: Mark as solved
-        proposal: "The proposal: %{title}"
-        request: "Has requested: %{title}"
-        check_details: Check the proposal details
-      update:
-        success: The task has been marked as solved.
+    proposal_dashboard:
+      administrator_tasks:
+        index:
+          solve: Solve
+          no_records: There are no pending tasks
+        edit:
+          back: Back to pending tasks list
+          solving: Solve pending task
+        form:
+          solve: Mark as solved
+          proposal: "The proposal: %{title}"
+          request: "Has requested: %{title}"
+          check_details: Check the proposal details
+        update:
+          success: The task has been marked as solved.

@@ -1,4 +1,4 @@
-class Admin::ProposalDashboardActionsController < Admin::BaseController
+class Admin::ProposalDashboard::ActionsController < Admin::ProposalDashboard::BaseController
   helper_method :proposal_dashboard_action, :resource
 
   def index
