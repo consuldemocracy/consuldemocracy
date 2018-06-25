@@ -10,5 +10,6 @@ module Consul
     end
 
     config.autoload_paths << "#{Rails.root}/app/services/custom"
+    config.autoload_paths << "#{Rails.root}/app/helpers/custom"
   end
 end

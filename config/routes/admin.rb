@@ -94,6 +94,12 @@ namespace :admin do
     get :search, on: :collection
   end
 
+  # custom_cdj
+  resources :animators, only: [:index, :create, :destroy] do
+    get :search, on: :collection
+  end
+  # end custom_cdj
+
   resources :users, only: [:index, :show]
 
   scope module: :poll do

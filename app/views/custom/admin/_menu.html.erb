@@ -122,24 +122,30 @@
           <%= link_to t("admin.menu.administrators"), admin_administrators_path %>
         </li>
 
-        <li <%= "class=active" if controller_name == "organizations" %>>
-          <%= link_to t("admin.menu.organizations"), admin_organizations_path %>
-        </li>
+        <% unless feature?(:cdj_profiles) %>
+          <li <%= "class=active" if controller_name == "organizations" %>>
+            <%= link_to t("admin.menu.organizations"), admin_organizations_path %>
+          </li>
 
-        <li <%= "class=active" if controller_name == "officials" %>>
-          <%= link_to t("admin.menu.officials"), admin_officials_path %>
-        </li>
+          <li <%= "class=active" if controller_name == "officials" %>>
+            <%= link_to t("admin.menu.officials"), admin_officials_path %>
+          </li>
 
-        <li <%= "class=active" if %w(moderators activity).include?(controller_name) %>>
-          <%= link_to t('admin.menu.moderators'), admin_moderators_path%>
-        </li>
+          <li <%= "class=active" if %w(moderators activity).include?(controller_name) %>>
+            <%= link_to t('admin.menu.moderators'), admin_moderators_path%>
+          </li>
 
-        <li <%= "class=active" if controller_name == "valuators" %>>
-          <%= link_to t('admin.menu.valuators'), admin_valuators_path %>
-        </li>
+          <li <%= "class=active" if controller_name == "valuators" %>>
+            <%= link_to t('admin.menu.valuators'), admin_valuators_path %>
+          </li>
 
-        <li <%= "class=active" if controller_name == "managers" %>>
-          <%= link_to t('admin.menu.managers'), admin_managers_path %>
+          <li <%= "class=active" if controller_name == "managers" %>>
+            <%= link_to t('admin.menu.managers'), admin_managers_path %>
+          </li>
+        <% end %>
+
+        <li <%= "class=active" if controller_name == "animators" %>>
+          <%= link_to t('admin.menu.animators'), admin_animators_path %>
         </li>
 
         <li <%= 'class=active' if controller_name == 'users' %>>

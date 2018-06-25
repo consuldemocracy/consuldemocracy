@@ -1,5 +1,4 @@
 require_dependency Rails.root.join('app', 'models', 'abilities', 'everyone').to_s
-require_dependency Rails.root.join('app', 'models', 'abilities', 'common').to_s
 
 module Abilities
   class Common
