@@ -189,7 +189,7 @@ feature 'Account' do
       Setting['feature.user.recommendations_on_proposals'] = nil
     end
 
-    scenario 'show checkboxes to enable/disable recommendations (disabled by default)' do
+    scenario 'are disabled by default' do
       visit account_path
 
       expect(page).to have_content('Recommendations')
@@ -197,6 +197,29 @@ feature 'Account' do
       expect(page).to have_content('Show proposals recommendations')
       expect(find("#account_recommended_debates")).not_to be_checked
       expect(find("#account_recommended_proposals")).not_to be_checked
+    end
+
+    scenario "can be enabled through 'My account' page" do
+      visit account_path
+
+      expect(page).to have_content('Recommendations')
+      expect(page).to have_content('Show debates recommendations')
+      expect(page).to have_content('Show proposals recommendations')
+      expect(find("#account_recommended_debates")).not_to be_checked
+      expect(find("#account_recommended_proposals")).not_to be_checked
+
+      check 'account_recommended_debates'
+      check 'account_recommended_proposals'
+
+      click_button 'Save changes'
+
+      expect(find("#account_recommended_debates")).to be_checked
+      expect(find("#account_recommended_proposals")).to be_checked
+
+      @user.reload
+
+      expect(@user.recommended_debates).to be(true)
+      expect(@user.recommended_proposals).to be(true)
     end
 
   end
