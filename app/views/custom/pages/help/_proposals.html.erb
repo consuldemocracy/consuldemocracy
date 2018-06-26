@@ -3,6 +3,7 @@
     <h3 id="proposals" data-magellan-target="proposals">
       <%= t("pages.help.proposals.title") %>
     </h3>
+    <p><%= link_to "Guía para la presentación de propuestas", page_path('proposal_guide') %></p>
     <p>
       <%= t("pages.help.proposals.description",
               link: link_to(t("pages.help.proposals.link"), proposals_path)).html_safe %>

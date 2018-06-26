@@ -18,8 +18,6 @@
 <div id="more-info" class="more-info-content">
   <div class="row">
     <div class="small-12 medium-7 large-8 column">
-      <%= render "pages/help/how_can_use" %>
-
       <% if feature?(:debates) %>
         <%= render "pages/help/debates" %>
       <% end %>
@@ -39,6 +37,7 @@
       <% if feature?(:legislation) %>
         <%= render "pages/help/processes" %>
       <% end %>
+      <%= render "pages/help/how_can_use" %>
     </div>
     <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
       <div class="small-12 medium-4 large-3 column more-info-sidebar">
