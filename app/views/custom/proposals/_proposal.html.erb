@@ -55,7 +55,7 @@
               <% end %>
             </p>
             <div class="proposal-description">
-              <p><%= proposal.summary %></p>
+              <p><%= proposal.objective.html_safe %></p>
               <div class="truncate"></div>
             </div>
             <%= render "shared/tags", taggable: proposal, limit: 5 %>

@@ -165,6 +165,9 @@ FactoryBot.define do
     sequence(:summary)   { |n| "In summary, what we want is... #{n}" }
     description          'Proposal description'
     question             'Proposal question'
+    objective            'Proposal objective'
+    feasible_explanation 'This proposal is viable because...'
+    impact_description   'This proposal should change ...'
     external_url         'http://external_documention.es'
     video_url            'https://youtu.be/nhuNb0XtRhQ'
     responsible_name     'John Snow'

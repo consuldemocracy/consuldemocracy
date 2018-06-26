@@ -17,4 +17,57 @@ describe Proposal do
     expect(proposal).to be_valid
   end
 
+  context "when Setting['org_name'] is 'MASDEMOCRACIAEUROPA'" do
+
+    before { Setting['org_name'] = 'MASDEMOCRACIAEUROPA' }
+
+    it "is valid without question" do
+      proposal.question = nil
+
+      expect(proposal).to be_valid
+    end
+
+    it "is valid without summary" do
+      proposal.summary = nil
+
+      expect(proposal).to be_valid
+    end
+
+    it "is not valid without objective" do
+      proposal.objective = nil
+
+      expect(proposal).not_to be_valid
+    end
+
+    it "is not valid with objective longer than maximum length" do
+      proposal.objective = 'a' * (300 + 1)
+
+      expect(proposal).not_to be_valid
+    end
+
+    it "is not valid without feasible_explanation" do
+      proposal.feasible_explanation = nil
+
+      expect(proposal).not_to be_valid
+    end
+
+    it "is not valid without feasible_explanation longer than maximum length" do
+      proposal.feasible_explanation = 'a' * (300 + 1)
+
+      expect(proposal).not_to be_valid
+    end
+
+    it "is not valid without impact_description" do
+      proposal.impact_description = nil
+
+      expect(proposal).not_to be_valid
+    end
+
+    it "is not valid without impact_description longer than maximum length" do
+      proposal.impact_description = 'a' * (300 + 1)
+
+      expect(proposal).not_to be_valid
+    end
+  end
+
 end

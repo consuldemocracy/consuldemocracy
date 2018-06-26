@@ -5,6 +5,7 @@
 //
 
 .icon-linkedin{
+
   img{
     margin-top: -10px;
     width: 25px;
@@ -12,8 +13,7 @@
   }
 }
 
-@media print, screen and (min-width: 40em) {
-  .auth-image {
-    min-height: 98rem;
-  }
+.small-subtitle{
+  font-size: 16px;
+  border-bottom: solid 1px #dee0e3;
 }

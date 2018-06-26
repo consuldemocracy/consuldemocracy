@@ -1,10 +1,10 @@
 <% provide :title do %><%= @proposal.title %><% end %>
-<% content_for :meta_description do %><%= @proposal.summary %><% end %>
+<% content_for :meta_description do %><%= strip_tags @proposal.objective %><% end %>
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
             social_url: proposal_url(@proposal),
             social_title: @proposal.title,
-            social_description: @proposal.summary,
+            social_description: strip_tags(@proposal.objective),
             twitter_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil),
             og_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil) %>
 <% end %>
@@ -58,8 +58,6 @@
           <strong><%= @proposal.code %></strong>
         </p>
 
-        <blockquote><%= @proposal.summary %></blockquote>
-
         <% if @proposal.video_url.present? %>
           <div class="small-12 medium-7 small-centered">
             <div class="flex-video">
@@ -69,6 +67,15 @@
         <% end %>
 
         <%= safe_html_with_links @proposal.description %>
+
+        <h2 class="small-subtitle"><%= t("proposals.show.proposal_objective") %></h2>
+        <%= safe_html_with_links @proposal.objective %>
+
+        <h2 class="small-subtitle"><%= t("proposals.show.proposal_feasible_explanation") %></h2>
+        <%= safe_html_with_links @proposal.feasible_explanation %>
+
+        <h2 class="small-subtitle"><%= t("proposals.show.proposal_impact_description") %></h2>
+        <%= safe_html_with_links @proposal.impact_description %>
 
         <% if feature?(:map) && map_location_available?(@proposal.map_location) %>
           <div class="margin">
@@ -97,8 +104,6 @@
 
         <% end %>
 
-        <h4><%= @proposal.question %></h4>
-
         <% if @proposal.retired? %>
           <div id="retired_explanation" class="callout">
             <h2><%= t('proposals.show.retired') %>: <%= t("proposals.retire_options.#{@proposal.retired_reason}") unless @proposal.retired_reason == 'other' %></h2>
@@ -113,8 +118,6 @@
         <% end %>
 
         <%= render 'shared/tags', taggable: @proposal %>
-
-        <%= render 'shared/geozone', geozonable: @proposal if setting[:org_name] != 'MASDEMOCRACIAENEUROPA' %>
 
         <%= render 'relationable/related_content', relationable: @proposal %>
 
@@ -209,11 +212,20 @@
   </div>
 <% end %>
 
-<div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
-  <%= render "proposals/filter_subnav" %>
+<div class="additional-content">
+  <div class="filter-subnav">
+    <div class="row">
+      <div class="small-12 column">
+        <%= render "proposals/filter_subnav" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tabs-content" data-tabs-content="proposals_tabs" role="tablist">
   <%= render "proposals/notifications" %>
 
-  <div class="tabs-panel is-active" id="tab-comments">
+  <div class="tabs-panel is-active" id="tab-comments" role="tab">
     <%= render "proposals/comments" %>
   </div>
 </div>
