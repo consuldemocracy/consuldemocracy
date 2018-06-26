@@ -12,6 +12,7 @@ en:
     footer:
       participation_text: Participates in topics of interest to the European Economic Community
       copyright: MasDemocraciaEnEuropa, %{year}
+      legal_disclaimer: Legal disclaimer
   social:
     linkedin: "%{org} LinkedIn"
   related_content:

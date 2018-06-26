@@ -11,4 +11,6 @@ en:
         feature_1: "creando una o más propuestas,"
         feature_2: "comentando las propuestas existentes,"
         feature_3: "realizando una o más propuestas complementarias a una propuesta existente, y/o"
-        feature_4: "creando una o más propuestas distintas o contrapropuestas a partir de propuestas existentes."        
+        feature_4: "creando una o más propuestas distintas o contrapropuestas a partir de propuestas existentes."
+    titles:
+      legal_disclaimer: Legal disclaimer

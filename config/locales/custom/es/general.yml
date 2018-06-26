@@ -12,6 +12,7 @@ es:
     footer:
       participation_text: Participa en temas de interés para la Comunidad Económica Europea
       copyright: MasDemocraciaEnEuropa, %{year}
+      legal_disclaimer: Aviso legal
   social:
     linkedin: "LinkedIn de %{org}"
   related_content:
