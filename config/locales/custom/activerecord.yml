@@ -1,12 +1,15 @@
 fr:
   activerecord:
     models:
+      admin:
+        one: "Administrateur"
+        other: "Administrateurs"
       article:
         one: "Actualité"
         other: "Actualités"
       animator:
-        one: "Membre du conseil d'animation"
-        other: "Membres du conseil d'animation"
+        one: "Membre du comité d'animation"
+        other: "Membres du comité d'animation"
       debate:
         one: "Idée"
         other: "Idées"

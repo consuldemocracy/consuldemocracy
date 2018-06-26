@@ -3,7 +3,7 @@ fr:
   admin:
     menu:
       articles: "Rédaction des actualités"
-      animators: "Conseil d'animation"
+      animators: "Comité d'animation"
     articles:
       delete:
         success: Article supprimé avec succès
@@ -13,7 +13,7 @@ fr:
           submit_button: Créer l'article
     animators:
       index:
-        title: Conseil d'animation
+        title: Comité d'animation
         name: Nom
         email: Email
         no_animators: Il n'y a pas de membres du CA.
