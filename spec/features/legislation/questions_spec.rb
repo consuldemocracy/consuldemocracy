@@ -3,10 +3,15 @@ require 'rails_helper'
 feature 'Legislation' do
   context 'process debate page' do
     before do
+      Setting['feature.legislation'] = true
       @process = create(:legislation_process, debate_start_date: Date.current - 3.days, debate_end_date: Date.current + 2.days)
       create(:legislation_question, process: @process, title: "Question 1")
       create(:legislation_question, process: @process, title: "Question 2")
       create(:legislation_question, process: @process, title: "Question 3")
+    end
+
+    after do
+      Setting['feature.map'] = nil
     end
 
     scenario 'shows question list' do
