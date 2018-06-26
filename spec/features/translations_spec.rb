@@ -7,7 +7,6 @@ feature "Translations" do
     let(:investment) { create(:budget_investment) }
     let(:milestone) { create(:budget_investment_milestone,
                               investment: investment,
-                              description_en: "Description in English",
                               description_es: "Descripción en Español") }
 
     background do
@@ -22,8 +21,8 @@ feature "Translations" do
     scenario "Add a translation", :js do
       visit @edit_milestone_url
 
-      select "Français", from: "translation_locale"
-      fill_in 'budget_investment_milestone_description_fr', with: 'Description en Français'
+      select "English", from: "translation_locale"
+      fill_in 'budget_investment_milestone_description_en', with: 'Description in English'
 
       click_button 'Update milestone'
       expect(page).to have_content "Milestone updated successfully"
@@ -33,9 +32,6 @@ feature "Translations" do
 
       click_link "Español"
       expect(page).to have_field('budget_investment_milestone_description_es', with: 'Descripción en Español')
-
-      click_link "Français"
-      expect(page).to have_field('budget_investment_milestone_description_fr', with: 'Description en Français')
     end
 
     scenario "Update a translation", :js do
@@ -43,6 +39,9 @@ feature "Translations" do
 
       click_link "Español"
       fill_in 'budget_investment_milestone_description_es', with: 'Descripción correcta en Español'
+
+      click_link "English"
+      fill_in 'budget_investment_milestone_description_en', with: 'Description in English'
 
       click_button 'Update milestone'
       expect(page).to have_content "Milestone updated successfully"
@@ -94,6 +93,7 @@ feature "Translations" do
       end
 
       scenario "Show selected locale form", :js do
+        milestone.update(description_en: "Description in English")
         visit @edit_milestone_url
 
         expect(page).to have_field('budget_investment_milestone_description_en', with: 'Description in English')
@@ -105,14 +105,15 @@ feature "Translations" do
 
       scenario "Select a locale and add it to the milestone form", :js do
         visit @edit_milestone_url
+        expect(page).to have_link "English"
 
-        select "Français", from: "translation_locale"
+        select "English", from: "translation_locale"
 
-        expect(page).to have_link "Français"
+        expect(page).to have_link "English"
 
-        click_link "Français"
+        click_link "English"
 
-        expect(page).to have_field('budget_investment_milestone_description_fr')
+        expect(page).to have_field('budget_investment_milestone_description_en')
       end
     end
 
