@@ -2408,7 +2408,7 @@ table {
   background: #fafafa;
   border-bottom: 1px solid #eee;
   margin-bottom: $line-height;
-  margin-top: rem-calc(-25);
+  margin-top: rem-calc(-$line-height);
   padding: $line-height 0;
 
   @include breakpoint(medium) {
@@ -2449,7 +2449,7 @@ table {
   color: $text-light;
   position: absolute;
   right: 12px;
-  top: rem-calc(-18);
+  top: -18px;
 }
 
 // 20. Documents
