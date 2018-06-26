@@ -33,7 +33,7 @@ class Proposal < ActiveRecord::Base
   has_many :proposal_notifications, dependent: :destroy
 
   validates :title, presence: true
-  validates :description, presence: true
+  validates :description, presence: true, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
   validates :question, presence: true, if: -> { Setting['org_name'] != "MASDEMOCRACIAEUROPA" }
   validates :objective, presence: true, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
   validates :feasible_explanation, presence: true, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
