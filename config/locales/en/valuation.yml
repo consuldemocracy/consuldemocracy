@@ -35,6 +35,7 @@ en:
         table_title: Title
         table_heading_name: Heading name
         table_actions: Actions
+        no_investments: "There are no investment projects."
       show:
         back: Back
         title: Investment project
