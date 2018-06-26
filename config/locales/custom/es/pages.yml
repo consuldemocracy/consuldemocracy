@@ -1,0 +1,14 @@
+es:
+  pages:
+    help:
+      menu:
+        how_can_use: "¿Cómo puedo utilizar la plataforma?"
+      how_can_use:
+        title: "¿Cómo puedo utilizar la plataforma?"
+        description_1: "Cualquier persona puede navegar libremente por esta plataforma digital y acceder a las propuestas realizadas por otras personas, así como por organizaciones y colectivos, para lograr una Europa más democrática."
+        description_2: "Los/as participantes registrados/as (%{link}) podrán interactuar con la plataforma digital, en su propio nombre o en representación de organizaciones y colectivos, del siguiente modo:"
+        description_3: "Todas las propuestas originales, así como las complementarias y las contrapropuestas, serán publicadas automáticamente, sin perjuicio de que aquellas que incumplan las %{link} puedan posteriormente ser retiradas de la plataforma."
+        feature_1: "creando una o más propuestas,"
+        feature_2: "comentando las propuestas existentes,"
+        feature_3: "realizando una o más propuestas complementarias a una propuesta existente, y/o"
+        feature_4: "creando una o más propuestas distintas o contrapropuestas a partir de propuestas existentes."
