@@ -166,6 +166,11 @@ describe Abilities::Common do
     it { should_not be_able_to(:dashboard, proposal) }
   end
 
+  describe 'proposal polls' do
+    it { should be_able_to(:manage_polls, own_proposal) }
+    it { should_not be_able_to(:manage_polls, proposal) }
+  end
+
   describe 'publishing proposals' do
     let(:draft_own_proposal) { create(:proposal, :draft, author: user) }
 

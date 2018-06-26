@@ -13,7 +13,7 @@ class Poll < ActiveRecord::Base
   has_many :voters
   has_many :officer_assignments, through: :booth_assignments
   has_many :officers, through: :officer_assignments
-  has_many :questions
+  has_many :questions, inverse_of: :poll
   has_many :comments, as: :commentable
 
   has_and_belongs_to_many :geozones

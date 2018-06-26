@@ -521,6 +521,9 @@ es:
         add_question: Añadir pregunta
       question_fields:
         remove_question: Borrar pregunta
+        add_answer: Añadir respuesta
+      question_answer_fields:
+        remove_answer: Borrar respuesta
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"

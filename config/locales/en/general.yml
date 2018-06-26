@@ -521,6 +521,9 @@ en:
         add_question: Add question
       question_fields:
         remove_question: Remove question
+        add_answer: Add answer
+      question_answer_fields:
+        remove_answer: Remove answer
   polls:
     all: "All"
     no_dates: "no date assigned"

@@ -36,8 +36,6 @@ class Dashboard::PollsController < Dashboard::BaseController
   def update
     authorize! :manage_polls, proposal
 
-    byebug
-
     if poll.update(poll_params)
       redirect_to proposal_dashboard_poll_path(proposal, poll), notice: t("flash.actions.update.poll")
     else
