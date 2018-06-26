@@ -1,5 +1,5 @@
 <% if show_admin_menu? %>
-    <% if current_user.administrator? %>
+    <% if (current_user.administrator?  || current_user.animator?) %>
       <li class="small-6 medium-4 columns">
         <%= link_to admin_root_path do %>
           <%= image_tag(image_path_for('icon_administration.png'), class: "show-for-small-only") %>
@@ -8,7 +8,7 @@
       </li>
     <% end %>
 
-    <% if current_user.administrator? || current_user.moderator? %>
+    <% if current_user.administrator?  || current_user.animator? || current_user.moderator? %>
       <li class="small-6 medium-4 columns">
         <%= link_to moderation_root_path do %>
           <%= image_tag(image_path_for('icon_moderation.png'), class: "show-for-small-only") %>
@@ -41,6 +41,14 @@
     <%= link_to officing_root_path, class: "show-for-small-only" do %>
       <%= image_tag(image_path_for('icon_officing.png')) %>
       <%= t("layouts.header.officing_light") %>
+    <% end %>
+  </li>
+<% end %>
+  <% if (feature?(:cdj_profiles) && (current_user.administrator? || current_user.animator?)) %>
+  <li class="small-6 medium-4 columns">
+    <%= link_to communication_root_path, class: "show-for-small-only" do %>
+      <%= image_tag(image_path_for('icon_communication.png')) %>
+      <%= t("layouts.header.communication") %>
     <% end %>
   </li>
 <% end %>

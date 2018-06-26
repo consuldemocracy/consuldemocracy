@@ -52,9 +52,10 @@ module UsersHelper
     current_user && current_user.manager?
   end
 
-  def show_admin_menu?
-    current_administrator? || current_moderator? || current_valuator? || current_manager?
-  end
+  # custom cdj helper in custom/users_helper.rb
+  # def show_admin_menu?
+  #   current_administrator? || current_moderator? || current_valuator? || current_manager?
+  # end
 
   def interests_title_text(user)
     if current_user == user
