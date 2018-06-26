@@ -16,7 +16,7 @@ feature 'Account' do
     expect(page).to have_content "Edit user account"
     expect(page).to have_content "Create proposal"
     expect(page).to have_content "Print proposals"
-    expect(page).to have_content "User's invites"
+    expect(page).to have_content "Send invitations"
     expect(page).not_to have_content "Users"
     expect(page).not_to have_content "Support proposals"
     expect(page).not_to have_content "Create spending proposals"
