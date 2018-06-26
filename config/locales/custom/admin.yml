@@ -5,6 +5,8 @@ fr:
       articles: "Rédaction des actualités"
       animators: "Comité d'animation"
       title_categories: "Catégories"
+      title_profiles: "Utilisateurs"
+      title_banners: "Bannières"
     articles:
       delete:
         success: Article supprimé avec succès
