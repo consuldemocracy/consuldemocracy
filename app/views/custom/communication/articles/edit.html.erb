@@ -1,0 +1,16 @@
+<% provide :title do %>
+  Admin - Actualités - <%= @article.title %>
+<% end %>
+
+<%= back_link_to communication_articles_path %>
+
+<%= button_to 'Supprimer', communication_article_path(@article), method: :delete, class: "button hollow alert small float-right" %>
+
+<div class="row">
+  <div class="small-12 column">
+    <h2>Édition de <%= @article.title %></h2>
+    <div class="article-form">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>

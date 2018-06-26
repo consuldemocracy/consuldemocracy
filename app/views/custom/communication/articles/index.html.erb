@@ -1,0 +1,31 @@
+<%= link_to "Créer une actualité",
+              new_communication_article_path, class: "button success float-right" %>
+
+<h2 class="inline-block">Actualités</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Statut</th>
+      <th>Mis à jour le</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr id="<%= dom_id(article) %>">
+        <td><%= article.title %></td>
+        <td><%= t("article.statuses.title.#{article.status}") %></td>
+        <td><%= l article.updated_at.to_date %></td>
+        <td>
+          <%= link_to "Editer", edit_communication_article_path(article), class: 'edit-banner button hollow' %>
+        </td>
+        <td>
+          <%= link_to "Supprimer", communication_article_path(article), method: :delete, class: 'button hollow alert' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

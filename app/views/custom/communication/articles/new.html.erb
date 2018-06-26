@@ -1,0 +1,14 @@
+<% provide :title do %>
+  Admin - Actualités - Nouvelle actualité %>
+<% end %>
+
+<%= back_link_to communication_articles_path %>
+
+<div class="row">
+  <div class="small-12 column">
+    <h2>Nouvelle actualité</h2>
+    <div class="article-form">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>

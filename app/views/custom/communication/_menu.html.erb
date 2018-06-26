@@ -1,0 +1,53 @@
+<div class="admin-sidebar" data-equalizer-watch>
+  <ul id="admin_menu" data-accordion-menu data-multi-open="false">
+
+    <% if feature?(:articles) %>
+      <li class="section-title <%= "active" if controller_name == "articles" %>">
+        <%= link_to communication_articles_path do %>
+          <span class="icon-edit"></span>
+          <strong><%= t('admin.menu.articles') %></strong>
+        <% end %>
+      </li>
+    <% end %>
+
+    <li class="section-title">
+      <a href="#">
+        <span class="icon-proposals"></span>
+        <strong><%= t("admin.menu.title_categories") %></strong>
+      </a>
+      <ul <%= "class=is-active" if menu_tags? %>>
+        <li <%= "class=active" if controller_name == "tags" %>>
+          <%= link_to t("admin.menu.proposals_topics"), communication_tags_path %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="section-title" <%= "class=active" if %w(newsletters emails_download).include?(controller_name) %>>
+      <a href="#">
+        <span class="icon-zip"></span>
+        <strong><%= t("admin.menu.emails") %></strong>
+      </a>
+      <ul id="emails_menu" <%= "class=is-active" if %w(newsletters emails_download).include?(controller_name) %>>
+        <li <%= "class=active" if controller_name == "newsletters" %>>
+          <%= link_to t("admin.menu.newsletters"), communication_newsletters_path %>
+        </li>
+        <li <%= "class=active" if controller_name == "emails_download" %>>
+          <%= link_to t("admin.menu.emails_download"), communication_emails_download_index_path %>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="section-title">
+      <a href="#">
+        <span class="icon-banner"></span>
+        <strong><%= t("admin.menu.title_banners") %></strong>
+      </a>
+      <ul <%= "class=is-active" if menu_banners? %>>
+        <li <%= "class=active" if controller_name == "banners" %>>
+          <%= link_to t("admin.menu.banner"), communication_banners_path %>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</div>

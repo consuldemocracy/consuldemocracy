@@ -4,6 +4,7 @@ fr:
     menu:
       articles: "Rédaction des actualités"
       animators: "Comité d'animation"
+      title_categories: "Catégories"
     articles:
       delete:
         success: Article supprimé avec succès

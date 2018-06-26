@@ -569,7 +569,7 @@ fr:
       edit:
         title: Modifier le bulletin d'information
       show:
-        title: Apperçu du bulletin d'information
+        title: Aperçu du bulletin d'information
         send: Envoyer
         affected_users: (%{n} utilisateurs concernés)
         sent_at: Envoyé à

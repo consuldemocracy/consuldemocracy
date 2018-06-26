@@ -1,11 +1,22 @@
 namespace :communication do
-  root to: "tags#index"
+  root to: "dashboard#index"
+
+  resources :articles, path: '/news', only: [:index, :new, :create, :edit, :update, :show, :destroy]
 
   resources :tags, only: [:index, :create, :update, :destroy]
 
-  # resources :budgets, only: :index do
-  #   resources :budget_investments, only: [:index, :show, :edit] do
-  #     patch :valuate, on: :member
-  #   end
-  # end
+  resources :newsletters do
+    member do
+      post :deliver
+    end
+    get :users, on: :collection
+  end
+
+  resources :emails_download, only: :index do
+    get :generate_csv, on: :collection
+  end
+
+  resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
+    collection { get :search }
+  end
 end

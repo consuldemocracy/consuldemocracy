@@ -1,0 +1,52 @@
+<%= back_link_to %>
+
+<h2><%= t("admin.newsletters.show.title") %></h2>
+
+<% recipients_count = @newsletter.valid_segment_recipient? ? @newsletter.list_of_recipient_emails.count : 0 %>
+
+<div class="small-12 column">
+  <div class="callout highlight">
+    <div class="row">
+      <div class="small-12 medium-4 column">
+        <strong><%= t("admin.newsletters.show.sent_at") %></strong><br>
+        <% if @newsletter.draft? %>
+          <%= t("admin.newsletters.index.draft") %>
+        <% else %>
+          <%= l @newsletter.sent_at.to_date %>
+        <% end %>
+      </div>
+      <div class="small-12 medium-4 column">
+        <strong><%= t("admin.newsletters.show.from") %></strong><br>
+        <%= @newsletter.from %>
+      </div>
+      <div class="small-12 medium-4 column">
+        <strong><%= t("admin.newsletters.show.subject") %></strong><br>
+        <%= @newsletter.subject %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 column">
+        <strong><%= t("admin.newsletters.show.segment_recipient") %></strong><br>
+        <%= segment_name(@newsletter.segment_recipient) %>
+        <%= t("admin.newsletters.show.affected_users", n: recipients_count) %>
+      </div>
+    </div>
+  </div>
+
+  <strong><%= t("admin.newsletters.show.body") %></strong>
+  <p class="help-text" id="phase-description-help-text">
+    <%= t("admin.newsletters.show.body_help_text") %>
+  </p>
+  <div class="newsletter-body-content">
+    <%= render file: "app/views/mailer/newsletter.html.erb", layout: '/app/views/layouts/mailer.html.erb' %>
+  </div>
+</div>
+
+<% if @newsletter.draft? && @newsletter.valid_segment_recipient? %>
+  <%= link_to t("admin.newsletters.show.send"),
+              deliver_communication_newsletter_path(@newsletter),
+              "data-alert": t("admin.newsletters.show.send_alert", n: recipients_count),
+              method: :post,
+              id: "js-send-newsletter-alert",
+              class: "button success" %>
+<% end %>

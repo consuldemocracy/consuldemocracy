@@ -1,0 +1,54 @@
+<%= form_for [:communication, @article], html: {class: "edit_article", data: {watch_changes: true}} do |f| %>
+
+  <% if @article.errors.any? %>
+    <div id="error_explanation" data-alert class="callout alert" data-closable>
+      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <strong>
+        <%= @article.errors.count %>
+        <%= t("admin.site_customization.pages.errors.form.error", count: @article.errors.count) %>
+      </strong>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <hr>
+    </div>
+    <div class="small-12 medium-3 column">
+      <%= f.label :status %>
+      <% [:draft, :published].each do |status| %>
+        <%= f.radio_button :status, status, label: false %>
+        <%= f.label "status_#{status}", t("article.statuses.title.#{status}") %>
+        <br>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <hr>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, label: false %>
+
+      <%= f.label :subtitle %>
+      <%= f.text_field :subtitle, label: false, size: 80, maxlength: 80 %>
+
+      <div class="ckeditor margin-top">
+        <%= f.label :content %>
+        <%= f.cktext_area :content, label: false, cols: 80, rows: 10, ckeditor: { language: I18n.locale } %>
+      </div>
+
+      <div class="small-12 column">
+        <%= render 'images/admin_image', imageable: @article, f: f %>
+      </div>
+
+      <div class="small-12 medium-6 large-4">
+        <%= f.submit class: "button success expanded", value: t("admin.articles.create.form.submit_button") %>
+      </div>
+    </div>
+  </div>
+<% end %>
