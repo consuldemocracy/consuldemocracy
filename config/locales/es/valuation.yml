@@ -35,6 +35,7 @@ es:
         table_title: Título
         table_heading_name: Nombre de la partida
         table_actions: Acciones
+        no_investments: "No hay proyectos de gasto."
       show:
         back: Volver
         title: Proyecto de gasto

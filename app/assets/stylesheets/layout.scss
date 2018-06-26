@@ -421,11 +421,6 @@ a {
   text-transform: uppercase;
 }
 
-figure img {
-  height: 100%;
-  width: 100%;
-}
-
 // 02. Header
 // ----------
 
@@ -2408,6 +2403,7 @@ table {
 
   .carousel-image .orbit-wrapper img {
     display: block;
+    height: rem-calc(120);
 
     @include breakpoint(small) {
       margin: 0 auto;
@@ -2675,6 +2671,11 @@ table {
       min-width: rem-calc(240);
       padding: $line-height / 2 0;
     }
+  }
+
+  figure img {
+    height: 100%;
+    width: 100%;
   }
 }
 
