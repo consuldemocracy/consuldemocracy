@@ -1367,6 +1367,10 @@
       }
     }
 
+    .heading-name {
+      padding: $line-height / 2;
+    }
+
     span {
       color: $text;
       display: block;
