@@ -11,6 +11,15 @@ resources :proposals do
       get :new_request
       post :create_request
     end
+
+  end
+
+  namespace :dashboard do
+    resources :polls, except: :destroy do
+      member do
+        get :results
+      end
+    end
   end
 
   member do

@@ -75,25 +75,32 @@
   </div>
 </div>
 
-<% if resources.any? %>
+<div class="row">
+  <div class="small-2 columns"></div>
+  <div class="small-10 columns"><%= t '.resources' %></div>
+</div>
+
+<% if can?(:manage_polls, proposal) %>
   <div class="row">
     <div class="small-2 columns"></div>
-    <div class="small-10 columns"><%= t '.resources' %></div>
-  </div>
-
-  <% resources.each do |resource| %>
-    <div class="row">
-      <div class="small-2 columns"></div>
-      <div class="small-10 columns">
-        <span data-tooltip title="<%= resource.description %>">
-          <% if resource.request_to_administrators? %>
-            <%= link_to resource.title, 
-                        new_request_proposal_dashboard_path(proposal, resource) %>
-          <% else %>
-            <%= link_to resource.title, resource.link, target: '_blank' %>
-          <% end %>
-        </span>
-      </div>
+    <div class="small-10 columns">
+      <%= link_to t('.polls'), proposal_dashboard_polls_path(proposal.to_param) %>
     </div>
-  <% end %>
+  </div>
+<% end %>
+
+<% resources.each do |resource| %>
+  <div class="row">
+    <div class="small-2 columns"></div>
+    <div class="small-10 columns">
+      <span data-tooltip title="<%= resource.description %>">
+        <% if resource.request_to_administrators? %>
+          <%= link_to resource.title, 
+                      new_request_proposal_dashboard_path(proposal, resource) %>
+        <% else %>
+          <%= link_to resource.title, resource.link, target: '_blank' %>
+        <% end %>
+      </span>
+    </div>
+  </div>
 <% end %>

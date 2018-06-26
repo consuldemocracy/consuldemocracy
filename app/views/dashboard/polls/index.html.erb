@@ -1,0 +1,22 @@
+<h2 class="inline-block"><%= t("admin.polls.index.title") %></h2>
+
+<%= link_to t("admin.polls.index.create"),
+            new_proposal_dashboard_poll_path(proposal),
+            class: "button success float-right" %>
+
+<% if @polls.any? %>
+  <table>
+    <thead>
+      <th class="medium-6"><%= t("admin.polls.index.name") %></th>
+      <th><%= t("admin.polls.index.dates") %></th>
+      <th class="text-right"><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+      <%= render @polls %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.polls.index.no_polls") %>
+  </div>
+<% end %>

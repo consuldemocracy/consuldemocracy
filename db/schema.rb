@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180615102215) do
+ActiveRecord::Schema.define(version: 20180625075520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -886,8 +886,11 @@ ActiveRecord::Schema.define(version: 20180615102215) do
     t.boolean  "stats_enabled",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "related_id"
+    t.string   "related_type"
   end
 
+  add_index "polls", ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id", using: :btree
   add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
 
   create_table "proposal_dashboard_actions", force: :cascade do |t|

@@ -1,9 +1,5 @@
-class ProposalsDashboardController < ApplicationController
-  before_action :authenticate_user!
-
-  helper_method :proposal, :proposed_actions, :resources, :proposal_dashboard_action
-  respond_to :html
-  layout 'proposals_dashboard'
+class ProposalsDashboardController < Dashboard::BaseController
+  helper_method :proposal_dashboard_action
 
   def index
     authorize! :dashboard, proposal
@@ -64,17 +60,5 @@ class ProposalsDashboardController < ApplicationController
 
   def proposal_dashboard_action
     @proposal_dashboard_action ||= ProposalDashboardAction.find(params[:id])
-  end
-
-  def proposal
-    @proposal ||= Proposal.find(params[:proposal_id])
-  end
-
-  def proposed_actions
-    @proposed_actions ||= ProposalDashboardAction.proposed_actions.active_for(proposal)
-  end
-
-  def resources
-    @resources ||= ProposalDashboardAction.resources.active_for(proposal)
   end
 end

@@ -501,6 +501,7 @@ en:
       resources: Resources
       actions: Actions
       graphic: Graphic
+      polls: Polls
     proposed_action:
       execute: Execute
     form:
@@ -514,6 +515,12 @@ en:
       group_by_date: Group by date
       progress: Acumulated progress
       supports: Supports
+  dashboard:
+    polls:
+      form:
+        add_question: Add question
+      question_fields:
+        remove_question: Remove question
   polls:
     all: "All"
     no_dates: "no date assigned"

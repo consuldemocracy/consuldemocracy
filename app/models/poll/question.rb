@@ -20,6 +20,8 @@ class Poll::Question < ActiveRecord::Base
 
   validates :title, length: { minimum: 4 }
 
+  accepts_nested_attributes_for :question_answers, reject_if: :all_blank, allow_destroy: true
+
   scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
 
   scope :sort_for_list, -> { order('poll_questions.proposal_id IS NULL', :created_at)}

@@ -1,0 +1,18 @@
+<tr id="<%= dom_id(poll) %>" class="poll">
+  <td>
+    <strong>
+      <%= link_to poll.name, proposal_dashboard_poll_path(proposal, poll) %>
+    </strong>
+  </td>
+  <td>
+    <%= l poll.starts_at.to_date %> - <%= l poll.ends_at.to_date %>
+  </td>
+  <td class="text-right">
+    <%= link_to t("admin.actions.edit"),
+                edit_proposal_dashboard_poll_path(proposal, poll),
+                class: "button hollow" %>
+    <%= link_to t("admin.actions.configure"),
+                proposal_dashboard_poll_path(proposal, poll),
+                class: "button hollow" %>
+  </td>
+</tr>

@@ -18,11 +18,15 @@ class Poll < ActiveRecord::Base
 
   has_and_belongs_to_many :geozones
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :related, polymorphic: true
 
   validates :name, presence: true
 
   validate :date_range
 
+  accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
+
+  scope :for, ->(element) { where(related: element) }
   scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Date.current.beginning_of_day, Date.current.beginning_of_day) }
   scope :incoming, -> { where('? < starts_at', Date.current.beginning_of_day) }
   scope :expired,  -> { where('ends_at < ?', Date.current.beginning_of_day) }

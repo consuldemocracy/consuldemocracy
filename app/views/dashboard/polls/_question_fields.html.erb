@@ -1,0 +1,29 @@
+<div class="nested-fields">
+  <%= f.hidden_field :author_id, value: f.object.author_id || current_user.id %>
+  <%= f.hidden_field :proposal_id, value: f.object.proposal_id || proposal.id %>
+  <div class="row">
+    <div class="small-12 large-9 column">
+      <%= f.text_field :title %>
+    </div>
+    <div class="small-12 large-3 column" style="padding-top: 20px">
+      <%= link_to_remove_association f, class: 'button hollow' do %>
+        <span class="icon-x" aria-hidden="true"></span>
+        <span><%=t(".remove_question") %></span>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="answers">
+    <%= f.fields_for :question_answers do |answer| %>
+      <%= render 'question_answer_fields', f: answer %>
+    <% end %>
+
+    <div id="links row">
+      <div class="small-12">
+        <%= link_to_add_association t('.add_answer'), f, :question_answers, class: 'button hollow' %>
+      </div>
+    </div>
+  </div>
+
+  <hr style="max-width:100%">
+</div>

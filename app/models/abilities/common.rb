@@ -22,6 +22,9 @@ module Abilities
       can :dashboard, Proposal do |proposal|
         proposal.author.id == user.id
       end
+      can :manage_polls, Proposal do |proposal|
+        proposal.author.id == user.id
+      end
 
       can [:retire_form, :retire], Proposal, author_id: user.id
 
