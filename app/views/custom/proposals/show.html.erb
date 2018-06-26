@@ -12,7 +12,11 @@
   <%= render "shared/canonical", href: proposal_url(@proposal) %>
 <% end %>
 
-<% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
+<% cache [locale_and_user_status(@proposal),
+          @proposal,
+          @proposal.author,
+          Flag.flagged?(current_user, @proposal),
+          @proposal_votes] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
@@ -58,6 +62,10 @@
           <strong><%= @proposal.code %></strong>
         </p>
 
+        <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+          <blockquote><%= @proposal.summary %></blockquote>
+        <% end %>
+
         <% if @proposal.video_url.present? %>
           <div class="small-12 medium-7 small-centered">
             <div class="flex-video">
@@ -68,14 +76,16 @@
 
         <%= safe_html_with_links @proposal.description %>
 
-        <h2 class="small-subtitle"><%= t("proposals.show.proposal_objective") %></h2>
-        <%= safe_html_with_links @proposal.objective %>
+        <% if setting['org_name'] == 'MASDEMOCRACIAEUROPA' %>
+          <h2 class="small-subtitle"><%= t("proposals.show.proposal_objective") %></h2>
+          <%= safe_html_with_links @proposal.objective %>
 
-        <h2 class="small-subtitle"><%= t("proposals.show.proposal_feasible_explanation") %></h2>
-        <%= safe_html_with_links @proposal.feasible_explanation %>
+          <h2 class="small-subtitle"><%= t("proposals.show.proposal_feasible_explanation") %></h2>
+          <%= safe_html_with_links @proposal.feasible_explanation %>
 
-        <h2 class="small-subtitle"><%= t("proposals.show.proposal_impact_description") %></h2>
-        <%= safe_html_with_links @proposal.impact_description %>
+          <h2 class="small-subtitle"><%= t("proposals.show.proposal_impact_description") %></h2>
+          <%= safe_html_with_links @proposal.impact_description %>
+        <% end %>
 
         <% if feature?(:map) && map_location_available?(@proposal.map_location) %>
           <div class="margin">
@@ -104,9 +114,16 @@
 
         <% end %>
 
+        <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+          <h4><%= @proposal.question %></h4>
+        <% end %>
+
         <% if @proposal.retired? %>
           <div id="retired_explanation" class="callout">
-            <h2><%= t('proposals.show.retired') %>: <%= t("proposals.retire_options.#{@proposal.retired_reason}") unless @proposal.retired_reason == 'other' %></h2>
+            <h2>
+              <%= t("proposals.show.retired") %>:
+              <%= t("proposals.retire_options.#{@proposal.retired_reason}") unless @proposal.retired_reason == 'other' %>
+            </h2>
             <%= simple_format text_with_links(@proposal.retired_explanation), {}, sanitize: false %>
           </div>
         <% end %>
@@ -118,6 +135,8 @@
         <% end %>
 
         <%= render 'shared/tags', taggable: @proposal %>
+
+        <%= render 'shared/geozone', geozonable: @proposal if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
 
         <%= render 'relationable/related_content', relationable: @proposal %>
 
@@ -223,9 +242,9 @@
 </div>
 
 <div class="tabs-content" data-tabs-content="proposals_tabs" role="tablist">
-  <%= render "proposals/notifications" %>
-
   <div class="tabs-panel is-active" id="tab-comments" role="tab">
     <%= render "proposals/comments" %>
   </div>
+
+  <%= render "proposals/notifications" %>
 </div>
