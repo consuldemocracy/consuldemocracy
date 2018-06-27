@@ -14,9 +14,19 @@
             </strong>
           </td>
           <td class="text-right">
-            <%= link_to t("officing.polls.final.add_results"),
-                        new_officing_poll_result_path(poll),
-                        class: "button hollow" %>
+            <% if poll.budget.present? %>
+              <%= link_to t("officing.poll_budgets.see_ballot_sheets"),
+                          officing_poll_ballot_sheets_path(poll),
+                          class: "button" %>
+
+                <%= link_to t("officing.polls.final.add_results"),
+                            new_officing_poll_ballot_sheet_path(poll),
+                            class: "button hollow" %>
+            <% else %>
+              <%= link_to t("officing.polls.final.add_results"),
+                          new_officing_poll_result_path(poll),
+                          class: "button hollow" %>
+            <% end %>
           </td>
         </tr>
       <% end %>

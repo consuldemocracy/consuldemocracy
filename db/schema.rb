@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180604173248) do
+ActiveRecord::Schema.define(version: 20180621182723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -774,6 +774,17 @@ ActiveRecord::Schema.define(version: 20180604173248) do
   add_index "poll_answers", ["author_id"], name: "index_poll_answers_on_author_id", using: :btree
   add_index "poll_answers", ["question_id", "answer"], name: "index_poll_answers_on_question_id_and_answer", using: :btree
   add_index "poll_answers", ["question_id"], name: "index_poll_answers_on_question_id", using: :btree
+
+  create_table "poll_ballot_sheets", force: :cascade do |t|
+    t.text     "data"
+    t.integer  "poll_id"
+    t.integer  "officer_assignment_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "poll_ballot_sheets", ["officer_assignment_id"], name: "index_poll_ballot_sheets_on_officer_assignment_id", using: :btree
+  add_index "poll_ballot_sheets", ["poll_id"], name: "index_poll_ballot_sheets_on_poll_id", using: :btree
 
   create_table "poll_booth_assignments", force: :cascade do |t|
     t.integer  "booth_id"

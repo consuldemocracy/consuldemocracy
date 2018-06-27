@@ -58,6 +58,9 @@ en:
       poll/officer:
         one: "officer"
         other: "officers"
+      poll/ballot_sheet:
+        one: Ballot sheet
+        other: Ballot sheets
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"
@@ -187,6 +190,10 @@ en:
         summary: "Summary"
         description: "Description"
         external_url: "Link to additional documentation"
+      poll/ballot_sheet:
+        data: CSV data
+        poll_id: Poll
+        officer_assignment_id: Officer assignment
       signature_sheet:
         signable_type: "Signable type"
         signable_id: "Signable ID"

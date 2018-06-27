@@ -13,6 +13,12 @@ class Officing::BaseController < ApplicationController
       raise CanCan::AccessDenied unless current_user.try(:poll_officer?)
     end
 
+    def check_officer_assignment
+      if @officer_assignment.blank?
+        go_back_to_new(t("officing.results.flash.error_wrong_booth"))
+      end
+    end
+
     def load_officer_assignment
       @officer_assignments ||= current_user.poll_officer.officer_assignments.where(date: Time.current.to_date)
     end

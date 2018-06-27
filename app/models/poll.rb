@@ -18,6 +18,7 @@ class Poll < ActiveRecord::Base
   has_many :officers, through: :officer_assignments
   has_many :questions
   has_many :comments, as: :commentable
+  has_many :ballot_sheets
 
   has_and_belongs_to_many :geozones
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
