@@ -130,3 +130,5 @@ Setting['feature.homepage.widgets.feeds.proposals'] = true
 Setting['feature.homepage.widgets.feeds.debates'] = true
 Setting['feature.homepage.widgets.feeds.processes'] = true
 
+require_relative 'seed_logger'
+require_relative 'dev_seeds/widgets'
