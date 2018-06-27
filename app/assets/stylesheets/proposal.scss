@@ -20,6 +20,7 @@
 .proposal-dashboard {
   .dashboard-sidebar {
     border-right: 1pt solid lightgray;
+    background-color: #fbfbfb;
 
     @include breakpoint(medium) {
       min-height: rem-calc(1100);
