@@ -6,49 +6,53 @@
 <div class="row margin-top">
 
   <div class="small-12 medium-9 column">
-    <h1>TÉRMINOS Y CONDICIONES</h1>
+    <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+      <h1><%= t("pages.conditions") %></h1>
+    <% else %>
+      <h1>TÉRMINOS Y CONDICIONES</h1>
+    <% end %>
 
-<h3>1. Objetivo de la iniciativa</h3>
-<p>Esta plataforma digital está dirigida a recoger propuestas realizadas por cualquier persona, organización o grupo de interés para mejorar la democracia en Europa y favorecer un debate público sobre las propuestas realizadas.</p>
+    <h3>1. Objetivo de la iniciativa</h3>
+    <p>Esta plataforma digital está dirigida a recoger propuestas realizadas por cualquier persona, organización o grupo de interés para mejorar la democracia en Europa y favorecer un debate público sobre las propuestas realizadas.</p>
 
-<h3>2. Cuestiones generales sobre la participación en la plataforma digital "Más democracia en Europa"</h3>
-<p>Cualquier persona física a partir de los 14 años que se haya registrado previamente en la plataforma digital, o cualquier colectivo u organización a través de un representante que se haya registrado previamente como tal en la plataforma digital, podrá participar en la misma.</p>
-<p>Las propuestas de organizaciones o colectivos serán presentadas en su nombre a través de una persona física y ostente la representación de dicha organización o colectivo, indicando el modo concreto en que tal representación pueda ser verificada. Dicha persona será responsable plena de que la propuesta en cuestión refleje la opinión o el acuerdo de la organización o del colectivo en cuestión.</p>
-<p>No existe limitación en cuanto al número de propuestas que puedan presentar las personas físicas y las organizaciones o colectivos.</p>
-<p>Cada propuesta será identificada mediante un título y se describirán sus objetivos concretos de modo claro y preciso; asimismo, se recomienda rellenar otros campos de la plantilla que a tal efecto se facilita, relativos a la factibilidad y al impacto de la propuesta. Se recomienda que la descripción de la propuesta no supere los 3000 caracteres. Las propuestas podrán ser difundidas a través de redes sociales como Vimeo, YouTube, Slideshare, Flickr o SoundCloud.</p>
-<p>En caso de que quieran realizar alguna acción que implique la creación, apoyo o comentario de una propuesta, se les solicitará un registro previo. Dicho registro se realizará introduciendo los siguientes datos:</p>
-<ul>
-  <li>Nombre de usuario</li>
-  <li>Correo electrónico</li>
-  <li>Aceptación de las condiciones de privacidad, los términos y condiciones y el aviso legal de la plataforma digital "Más democracia en Europa"</li>
-</ul>
-<p>En caso de que una persona física actúe por cuenta o en representación de una organización o un colectivo, se le solicitará, asimismo:</p>
-<ul>
-  <li>Nombre de la organización o colectivo que representa</li>
-  <li>Cargo o representación que ostenta</li>
-  <li>Medio de verificación de dicho cargo o representación (por ejemplo, un teléfono de contacto de la organización)</li>
-</ul>
-<p>La plataforma digital "Más democracia en Europa" también permite que la identificación de los usuarios se realice mediante el usuario de Facebook, Twitter y Google+.</p>
-<p>Tras una comprobación no funciona, si se corrige mantener los botones, si no eliminar los botones y este texto</p>
-<p>Los/as participantes registrados/as podrán interactuar con la plataforma digital, en su propio nombre o en representación de organizaciones y colectivos, del siguiente modo:</p>
-<ul>
-  <li>Creando una o más propuestas.</li>
-  <li>Comentando las propuestas existentes</li>
-  <li>Realizando una o más propuestas complementarias a una propuesta existente.</li>
-  <li>Creando una o más propuestas distintas o contrapropuestas a partir de propuestas existentes.</li>
-</ul>
-<p>Todas las propuestas originales, así como las complementarias y las contrapropuestas, serán publicadas automáticamente, sin perjuicio de que aquellas que incumplan las condiciones de uso puedan posteriormente ser retiradas de la plataforma.</p>
+    <h3>2. Cuestiones generales sobre la participación en la plataforma digital "Más democracia en Europa"</h3>
+    <p>Cualquier persona física a partir de los 14 años que se haya registrado previamente en la plataforma digital, o cualquier colectivo u organización a través de un representante que se haya registrado previamente como tal en la plataforma digital, podrá participar en la misma.</p>
+    <p>Las propuestas de organizaciones o colectivos serán presentadas en su nombre a través de una persona física y ostente la representación de dicha organización o colectivo, indicando el modo concreto en que tal representación pueda ser verificada. Dicha persona será responsable plena de que la propuesta en cuestión refleje la opinión o el acuerdo de la organización o del colectivo en cuestión.</p>
+    <p>No existe limitación en cuanto al número de propuestas que puedan presentar las personas físicas y las organizaciones o colectivos.</p>
+    <p>Cada propuesta será identificada mediante un título y se describirán sus objetivos concretos de modo claro y preciso; asimismo, se recomienda rellenar otros campos de la plantilla que a tal efecto se facilita, relativos a la factibilidad y al impacto de la propuesta. Se recomienda que la descripción de la propuesta no supere los 3000 caracteres. Las propuestas podrán ser difundidas a través de redes sociales como Vimeo, YouTube, Slideshare, Flickr o SoundCloud.</p>
+    <p>En caso de que quieran realizar alguna acción que implique la creación, apoyo o comentario de una propuesta, se les solicitará un registro previo. Dicho registro se realizará introduciendo los siguientes datos:</p>
+    <ul>
+      <li>Nombre de usuario</li>
+      <li>Correo electrónico</li>
+      <li>Aceptación de las condiciones de privacidad, los términos y condiciones y el aviso legal de la plataforma digital "Más democracia en Europa"</li>
+    </ul>
+    <p>En caso de que una persona física actúe por cuenta o en representación de una organización o un colectivo, se le solicitará, asimismo:</p>
+    <ul>
+      <li>Nombre de la organización o colectivo que representa</li>
+      <li>Cargo o representación que ostenta</li>
+      <li>Medio de verificación de dicho cargo o representación (por ejemplo, un teléfono de contacto de la organización)</li>
+    </ul>
+    <p>La plataforma digital "Más democracia en Europa" también permite que la identificación de los usuarios se realice mediante el usuario de Facebook, Twitter y Google+.</p>
+    <p>Tras una comprobación no funciona, si se corrige mantener los botones, si no eliminar los botones y este texto</p>
+    <p>Los/as participantes registrados/as podrán interactuar con la plataforma digital, en su propio nombre o en representación de organizaciones y colectivos, del siguiente modo:</p>
+    <ul>
+      <li>Creando una o más propuestas.</li>
+      <li>Comentando las propuestas existentes</li>
+      <li>Realizando una o más propuestas complementarias a una propuesta existente.</li>
+      <li>Creando una o más propuestas distintas o contrapropuestas a partir de propuestas existentes.</li>
+    </ul>
+    <p>Todas las propuestas originales, así como las complementarias y las contrapropuestas, serán publicadas automáticamente, sin perjuicio de que aquellas que incumplan las condiciones de uso puedan posteriormente ser retiradas de la plataforma.</p>
 
-<h3>3. Condiciones relativas al tratamiento de los contenidos proporcionados por los/as usuarios/as</h3>
-<p>Las presentes condiciones regulan los términos aplicables al contenido remitido por los/as usuarios/as de esta plataforma a través del formulario correspondiente (en adelante, el contenido). Estas condiciones se aplican tanto al contenido inicialmente remitido a la plataforma como a cualquier contenido que se envíe con posterioridad a FRIDE. Al respecto, se realizan las siguientes previsiones:</p>
-<p><strong>No Confidencialidad:</strong> Todo el contenido remitido a FRIDE por el/la usuario/a deberá ser susceptible de ser conocido por el público en general. Por lo tanto, FRIDE tratará el citado contenido como información no confidencial.</p>
-<p><strong>Procedimiento:</strong> FRIDE podrá ponerse en contacto con los/as usuarios/as para solicitarles información adicional. Dicha información tendrá asimismo carácter de no confidencial. Esglobal/FRIDE se reserva el derecho de no contactar con los/as usuarios/as. En el supuesto que el FRIDE, a su entera discreción, decidiera contactar con determinados/as usuarios/as, la organización no adquirirá compromiso alguno más allá de los términos del intercambio.</p>
-<p><strong>Publicidad o difusión de los contenidos presentados:</strong> Los participantes en la plataforma digital "Más democracia en Europa" declaran conocer y aceptar el hecho de que la información aportada será publicada en la web www.masdemocraciaeneuropa.org, así como a través de otros medios que la organización considere oportunos para dar a conocer la iniciativa. Asimismo, declaran conocer y aceptar que las propuestas y comentarios realizados por ellos/as pueden ser utilizados por para la elaboración del informe que realizará FRIDE afínales de septiembre, y que será remitido al gobierno a través del Ministerio de Asuntos Exteriores, Unión Europea y Cooperación, así como a los distintos grupos parlamentarios y que a su vez será publicado en la web www.masdemocraciaeneuropa.org, así como a través de otros medios que la organización considere oportunos para dar a conocer la iniciativa. El gobierno podrá a su vez compartir la totalidad o partes de dicho informe con los gobiernos de otros países de la Unión Europea y con las Instituciones comunitarias.</p>
-<p><strong>No devolución material:</strong> FRIDE no tiene obligación alguna de devolver el contenido remitido por los/as usuarios/as.</p>
-<p><strong>Procedimiento de aviso y retirada:</strong> FRIDE procesará las peticiones de eliminación o retirada de contenidos que incumplan las condiciones de uso. Cualquier persona, con motivos razonados si existe incumplimiento de las presentes condiciones de uso, podrá solicitar la retirada de contenidos a FRIDE. FRIDE se reserva el derecho de hacer las comprobaciones o verificaciones oportunas con carácter previo a la retirada de cualquier contenido.</p>
+    <h3>3. Condiciones relativas al tratamiento de los contenidos proporcionados por los/as usuarios/as</h3>
+    <p>Las presentes condiciones regulan los términos aplicables al contenido remitido por los/as usuarios/as de esta plataforma a través del formulario correspondiente (en adelante, el contenido). Estas condiciones se aplican tanto al contenido inicialmente remitido a la plataforma como a cualquier contenido que se envíe con posterioridad a FRIDE. Al respecto, se realizan las siguientes previsiones:</p>
+    <p><strong>No Confidencialidad:</strong> Todo el contenido remitido a FRIDE por el/la usuario/a deberá ser susceptible de ser conocido por el público en general. Por lo tanto, FRIDE tratará el citado contenido como información no confidencial.</p>
+    <p><strong>Procedimiento:</strong> FRIDE podrá ponerse en contacto con los/as usuarios/as para solicitarles información adicional. Dicha información tendrá asimismo carácter de no confidencial. Esglobal/FRIDE se reserva el derecho de no contactar con los/as usuarios/as. En el supuesto que el FRIDE, a su entera discreción, decidiera contactar con determinados/as usuarios/as, la organización no adquirirá compromiso alguno más allá de los términos del intercambio.</p>
+    <p><strong>Publicidad o difusión de los contenidos presentados:</strong> Los participantes en la plataforma digital "Más democracia en Europa" declaran conocer y aceptar el hecho de que la información aportada será publicada en la web www.masdemocraciaeneuropa.org, así como a través de otros medios que la organización considere oportunos para dar a conocer la iniciativa. Asimismo, declaran conocer y aceptar que las propuestas y comentarios realizados por ellos/as pueden ser utilizados por para la elaboración del informe que realizará FRIDE afínales de septiembre, y que será remitido al gobierno a través del Ministerio de Asuntos Exteriores, Unión Europea y Cooperación, así como a los distintos grupos parlamentarios y que a su vez será publicado en la web www.masdemocraciaeneuropa.org, así como a través de otros medios que la organización considere oportunos para dar a conocer la iniciativa. El gobierno podrá a su vez compartir la totalidad o partes de dicho informe con los gobiernos de otros países de la Unión Europea y con las Instituciones comunitarias.</p>
+    <p><strong>No devolución material:</strong> FRIDE no tiene obligación alguna de devolver el contenido remitido por los/as usuarios/as.</p>
+    <p><strong>Procedimiento de aviso y retirada:</strong> FRIDE procesará las peticiones de eliminación o retirada de contenidos que incumplan las condiciones de uso. Cualquier persona, con motivos razonados si existe incumplimiento de las presentes condiciones de uso, podrá solicitar la retirada de contenidos a FRIDE. FRIDE se reserva el derecho de hacer las comprobaciones o verificaciones oportunas con carácter previo a la retirada de cualquier contenido.</p>
 
-<h3>4. Revisión de las condiciones de uso</h3>
-<p>FRIDE se reserva el derecho de revisar las presentes condiciones de uso, la política de privacidad  y el aviso legal en cualquier momento y por cualquier razón. En dicho caso, los usuarios/as registrados/as serán avisados a través de este espacio en línea y, si continúan utilizando la plataforma digital, se entenderá que aceptan las modificaciones introducidas.</p>
+    <h3>4. Revisión de las condiciones de uso</h3>
+    <p>FRIDE se reserva el derecho de revisar las presentes condiciones de uso, la política de privacidad  y el aviso legal en cualquier momento y por cualquier razón. En dicho caso, los usuarios/as registrados/as serán avisados a través de este espacio en línea y, si continúan utilizando la plataforma digital, se entenderá que aceptan las modificaciones introducidas.</p>
 
   </div>
 
