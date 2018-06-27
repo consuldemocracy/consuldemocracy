@@ -66,6 +66,9 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
   config.action_mailer.asset_host = "https://#{Rails.application.secrets.server_name}"
 
+  # Use POSTFIX as the default systema to deliver emails
+  config.action_mailer.delivery_method = :sendmail
+
   # SMTP configuration to deliver emails
   # Uncomment the following block of code and add your SMTP service credentials
   # config.action_mailer.delivery_method = :smtp
