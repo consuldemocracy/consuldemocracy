@@ -54,10 +54,17 @@
                 </span>
               <% end %>
             </p>
-            <div class="proposal-description">
-              <p><%= proposal.summary %></p>
-              <div class="truncate"></div>
-            </div>
+            <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+              <div class="proposal-description">
+                <p><%= proposal.summary %></p>
+                <div class="truncate"></div>
+              </div>
+            <% else %>
+              <div class="proposal-description">
+                <p><%= proposal.objective.html_safe %></p>
+                <div class="truncate"></div>
+              </div>
+            <% end %>
             <%= render "shared/tags", taggable: proposal, limit: 5 %>
           <% end %>
         </div>
