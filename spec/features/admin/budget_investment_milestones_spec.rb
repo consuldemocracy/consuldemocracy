@@ -42,7 +42,7 @@ feature 'Admin budget investment milestones' do
       click_link 'Create new milestone'
 
       select status.name, from: 'budget_investment_milestone_status_id'
-      fill_in 'budget_investment_milestone_description', with: 'New description milestone'
+      fill_in 'budget_investment_milestone_description_en', with: 'New description milestone'
       fill_in 'budget_investment_milestone_publication_date', with: Date.current
 
       click_button 'Create milestone'
