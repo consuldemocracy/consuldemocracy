@@ -34,6 +34,11 @@
           <li class="tabs-title is-active">
             <%= link_to t("budgets.stats.link"), budget_stats_path(@budget), class: "is-active" %>
           </li>
+          <% if @budget.finished? %>
+            <li class="tabs-title">
+              <%= link_to t("budgets.executions.link"), budget_executions_path(@budget) %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
