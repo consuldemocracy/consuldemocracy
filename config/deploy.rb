@@ -13,7 +13,7 @@ set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
-set :repo_url, 'https://github.com/consul/consul.git'
+set :repo_url, deploysecret(:repo_url)
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
