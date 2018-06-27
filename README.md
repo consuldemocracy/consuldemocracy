@@ -114,9 +114,15 @@ Ces actions sont documentées dans [les releases](https://github.com/consul/cons
 - Développement d'un module Actualité, page d'accueil par défaut des personnes connectées
 - Les utilisateurs sont vérifiés par principe, dès leur inscription, sans avoir à vérifier de document officiel
 - Les utilisateurs doivent renseigner + de données à l'inscriptions : nom, prénom, âge, adresse...
+- Pas d'inscription en tant qu'organisation.
+- Age maximum d'inscription à 26 ans - 1 jour.
 - L'inscription via facebook ne fait que pré-remplir un profil utilisateur, au lieu de créer directement un compte
 - Un compte utilisateur peut être lié/délié de facebook après coup.
 - Les `Proposal` ont par défaut le nom de leur `author` comme responsible_name (et non `document_number`)
+- Nouveau rôle : `Animator`, qui partage certaines des abilities des admin et des modérateurs. Représente un membre du CA du conseil des jeunes. Détails des droits dans ce [tableur](https://docs.google.com/spreadsheets/d/17lfoyj-qtRVrncjWBN9L-d2yKt1j9md-H_PhZUq_wD4/edit#gid=131811949). Les rôles `Manager`, `Moderator`, `Valuator`, `poll officer` sont inutilisés.
+- Nouvelle organisation du back office : création d'un menu "Communication" reprenant des éléments du menu "Administration". Simplification des autres menus. Détails de l'armature dans ce [tableur](https://docs.google.com/spreadsheets/d/17lfoyj-qtRVrncjWBN9L-d2yKt1j9md-H_PhZUq_wD4/edit#gid=131811949)
+- Limitation des votes aux votes en ligne. 
+
 
 ## Configuration for development and test environments
 
