@@ -23,53 +23,45 @@
 
     <%= setting['per_page_code_head'].try(:html_safe) %>
   </head>
-  <body class="<%= yield (:body_class) %>">
+  <body class="proposal-dashboard">
     <%= setting['per_page_code_body'].try(:html_safe) %>
 
     <h1 class="show-for-sr"><%= setting['org_name'] %></h1>
 
-    <div class="wrapper <%= yield (:wrapper_class) %>">
-      <%= render partial: 'layouts/header', locals: {with_subnavigation: false} %>
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
 
-      <!--[if lt IE 9]>
-      <% if browser.ie? && cookies['ie_alert_closed'] != 'true' %>
-        <div data-alert class="callout primary ie-callout" data-closable>
-          <button class="close-button ie-callout-close-js"
-                  aria-label="<%= t("application.close") %>" type="button" data-close>
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h2><%= t("layouts.application.ie_title") %></h2>
-          <p>
-            <%= t("layouts.application.ie",
-            chrome: link_to(
-                    t("layouts.application.chrome"), "https://www.google.com/chrome/browser/desktop/", title: t("shared.target_blank_html"), target: "_blank"),
-            firefox: link_to(
-                     t("layouts.application.firefox"), "https://www.mozilla.org/firefox", title: t("shared.target_blank_html"), target: "_blank")
-            ).html_safe %>
-          </p>
-        </div>
-      <% end %>
-      <![endif]-->
-
-      <%= render partial: 'layouts/flash' %>
-
-      <div class="proposal-dashboard">
-        <div class="row small-12 columns title">
-          <h5><%= t '.title' %></h5>
-        </div>
-        <div class="row">
-          <div class="small-2 columns left-menu">
-            <%= render partial: 'proposals_dashboard/menu' %>
-          </div>
-          <div class="small-10 columns body">
-            <%= yield %>
+          <div class="show-for-small-only">
+            <div class="dashboard-sidebar" data-equalizer-watch>
+              <%= render partial: 'proposals_dashboard/menu' %>
+            </div>
           </div>
         </div>
 
-      <div class="push"></div>
+        <div class="off-canvas-content" data-off-canvas-content>
+          <%= render partial: 'layouts/header', locals: {with_subnavigation: false} %>
+
+          <div class="no-margin-top row expanded collapse" data-equalizer>
+            <div class="small-12 medium-3 column" data-equalizer-watch>
+
+              <div class="show-for-small-only">
+                <button type="button" class="button hollow expanded" data-toggle="offCanvas"><%= t("admin.menu.admin") %></button>
+              </div>
+
+              <div id="side_menu" class="hide-for-small-only">
+                <div class="dashboard-sidebar" data-equalizer-watch>
+                  <%= render partial: 'proposals_dashboard/menu' %>
+                </div>
+              </div>
+            </div>
+            <div class="admin-content small-12 medium-9 column" data-equalizer-watch>
+              <%= render partial: 'layouts/flash' %>
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
-  <!--[if lt IE 9]>
-    <%= javascript_include_tag "ie_lt9" %>
-  <![endif]-->
 </html>

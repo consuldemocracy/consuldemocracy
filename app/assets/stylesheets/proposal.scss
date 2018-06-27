@@ -18,7 +18,92 @@
 }
 
 .proposal-dashboard {
-  margin-top: -1.5rem;
+  .dashboard-sidebar {
+    border-right: 1pt solid lightgray;
+
+    @include breakpoint(medium) {
+      min-height: rem-calc(1100);
+    }
+
+    ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      margin-left: 0;
+      padding: 0;
+
+      [class^="icon-"] {
+        color: #595959;
+        display: inline-block;
+        font-size: rem-calc(24);
+        line-height: $line-height;
+        padding: $line-height / 2 $line-height / 4;
+        padding-left: 0;
+        vertical-align: middle;
+      }
+
+    }
+
+    li {
+      margin: 0;
+      outline: 0;
+
+      ul {
+        margin-left: $line-height / 1.5;
+        border-left: 1px solid #b6b6b6;
+        padding-left: $line-height / 2;
+      }
+
+      &.is-active a {
+        span {
+          color: #00538b;
+          font-weight: bold;
+          border-bottom: 2px solid #00538b;
+          padding-bottom: 2px;
+        }
+      }
+    }
+
+    li a {
+      color: #595959;
+      display: block;
+      line-height: rem-calc(48);
+      padding-left: rem-calc(12);
+      vertical-align: top;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    li a.is-active {
+      color: #00538b;
+
+      [class^="icon-"] {
+        color: #00538b;
+      }
+    }
+
+    .submenu {
+      border-bottom: 0;
+      margin-left: $line-height;
+
+      li:first-child {
+        padding-top: $line-height / 2;
+      }
+
+      li:last-child {
+        padding-bottom: $line-height / 2;
+      }
+
+      a {
+        font-weight: normal;
+      }
+
+      .is-active {
+        border-bottom: 0;
+      }
+    }
+  }
 
   .columns {
     padding: 0;
@@ -41,13 +126,6 @@
       font-size: 16pt;
       margin: 0;
     }
-  }
-
-  .left-menu {
-    border-right: 1pt solid lightgray;
-    border-bottom: 1pt solid lightgray; 
-    padding: 1rem 1.5rem 1rem 1.5rem;
-    background-color: #fbfbfb;
   }
 
   .body {
