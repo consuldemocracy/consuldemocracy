@@ -80,7 +80,7 @@ class Proposal < ActiveRecord::Base
   scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
 
   def skip_verification?
-    Setting["feature.user.skip_verification"] == "true"
+    Setting["feature.user.skip_verification"].present?
   end
 
   def url
