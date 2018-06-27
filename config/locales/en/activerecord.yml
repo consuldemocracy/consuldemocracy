@@ -13,6 +13,9 @@ en:
       budget/investment/milestone:
         one: "milestone"
         other: "milestones"
+      budget/investment/status:
+        one: "Investment status"
+        other: "Investment statuses"
       comment:
         one: "Comment"
         other: "Comments"
@@ -126,6 +129,9 @@ en:
         title: "Title"
         description: "Description"
         publication_date: "Publication date"
+      budget/investment/status:
+        name: "Name"
+        description: "Description (optional)"
       budget/heading:
         name: "Heading name"
         price: "Price"
