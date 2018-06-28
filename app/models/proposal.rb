@@ -101,7 +101,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.description_max_length
-    1200
+    6000
   end
 
   def to_param

@@ -20,15 +20,15 @@ module Measurable
     end
 
     def feasible_explanation_max_length
-      300
+      1700
     end
 
     def impact_description_max_length
-      300
+      1700
     end
 
     def objective_max_length
-      300
+      1700
     end
 
   end
