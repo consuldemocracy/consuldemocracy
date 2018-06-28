@@ -91,7 +91,7 @@ module Abilities
       can [:manage], Article
 
       can [:search, :create, :index, :destroy], ::Animator
-      can [:cdj_show], User
+      can [:cdj_show, :print_password, :reset_password, :change_password], User
     end
   end
 end

@@ -103,6 +103,9 @@ namespace :admin do
   resources :users, only: [:index, :show] do
     # custom_cdj : namespaced custom name to prevent consul overriding
     get :cdj_show, on: :member
+    get :print_password, on: :member
+    patch :change_password, on: :member
+    get :reset_password, on: :member
   end
 
   scope module: :poll do

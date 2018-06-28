@@ -7,10 +7,10 @@
 <h1 class="inline-block"><%= @user.name %></h2>
 
 
-<%= form_for @user, as: :account, url: account_path do |f| %>
 
-  <div class="row">
-    <div class="small-12 medium-7 column">
+<div class="row">
+  <div class="small-12 medium-7 column">
+    <%= form_for @user, as: :account, url: account_path do |f| %>
 
       <h2><%= t("account.show.personal")%></h2>
 
@@ -78,6 +78,23 @@
         <% end %>
       </div>
 
+      <div>
+        <h2>Rôles</h2>
+        <label>Rôles actuels : </label>
+        <p>
+          <% if user_roles(@user).any? %>
+            <%= display_user_roles(@user) %>
+          <% else %> 
+            Aucun
+          <% end %>
+        </p>
+        <%= f.label :ca_wanabee do %>
+          <%= f.check_box :ca_wanabee, title: t('devise_views.users.registrations.new.ca_wanabee'), label: false, disabled: true %>
+          <span class="checkbox">
+            <%= t("devise_views.users.registrations.new.ca_wanabee", title: "devise_views.users.registrations.new.ca_wanabee").html_safe %>
+          </span>
+        <% end %>
+      </div>
 
       <% if @user.email.present? %>
         <h2><%= t("account.show.notifications")%></h2>
@@ -141,40 +158,53 @@
         </div>
       <% end %>
 
-    </div>
-
-    <div class="user-permissions small-12 medium-5 column">
-      <h2>Rôles</h2>
-      <label>Rôles actuels</label>
-      <p><%= display_user_roles(@user) %></p>
-      <%= f.label :ca_wanabee do %>
-        <%= f.check_box :ca_wanabee, title: t('devise_views.users.registrations.new.ca_wanabee'), label: false, disabled: true %>
-        <span class="checkbox">
-          <%= t("devise_views.users.registrations.new.ca_wanabee", title: "devise_views.users.registrations.new.ca_wanabee").html_safe %>
-        </span>
-      <% end %>
-      <br>
-
-      <!-- Connexion reseaux sociaux -->
-      <% if feature?(:twitter_login) || feature?(:facebook_login) || feature?(:google_login) %>
-        <h2><%= t("account.show.social_networks")%></h2>
-
-        <% if feature? :facebook_login %>
-        <div class="small-12 medium-6 column end">
-          <% if auth = current_user.identities.find_by(provider: :facebook) %>
-            <%= link_to "Compte lié", remove_provider_account_path(auth), method: :delete,
-                        title: t("account.show.remove_provider", kind: "Facebook"),
-                        class: "button-facebook button expanded", disabled: true  %>
-          <% else %>
-            <%= link_to "Compte non lié", user_omniauth_authorize_path(:facebook),
-                      title: t("account.show.add_provider", kind: "Facebook"),
-                      class: "button-facebook button expanded", disabled: true  %>
-          <% end %>
-        </div>
-      <% end %>
-
-
-      <% end %>
-    </div>
+    <% end %>
   </div>
-<% end %>
+
+  <div class="user-permissions small-12 medium-5 column">
+    <h3 class="not-print"><%= t("management.account.menu.reset_password_email") %></h3>
+    <%= link_to t("management.account.edit.password.send_email"), reset_password_admin_user_path(@user.id), class: "button hollow" %>
+    <hr>
+    
+    <h3 class="not-print"><%= t("management.account.menu.reset_password_manually") %></h3>
+    <%= form_for @user, url: change_password_admin_user_path do |f| %>
+      <div class="row">
+        <%= f.label :password %>
+        <div class="columns end">
+
+          <div class="input-group">
+            <%= f.password_field :password, class: "input-group-field no-margin-bottom", label: false, value: nil %>
+            <span class="input-group-label">
+              <a href="#" class="show-password"><i class="icon-eye"></i></a>
+            </span>
+          </div>
+
+          <%= link_to t("management.account.edit.password.random"), '#', class: 'generate-random-value float-right' %>
+        </div>
+      </div>
+      <%= f.submit t("management.account.edit.password.save"), class: "button success" %>
+    <% end %>
+    <hr>
+    
+    <!-- Connexion reseaux sociaux -->
+    <% if feature?(:twitter_login) || feature?(:facebook_login) || feature?(:google_login) %>
+      <h3><%= t("account.show.social_networks")%></h3>
+
+      <% if feature? :facebook_login %>
+      <div class="small-12 medium-6 column end">
+        <% if auth = current_user.identities.find_by(provider: :facebook) %>
+          <%= link_to "Compte lié", remove_provider_account_path(auth), method: :delete,
+                      title: t("account.show.remove_provider", kind: "Facebook"),
+                      class: "button-facebook button expanded", disabled: true  %>
+        <% else %>
+          <%= link_to "Compte non lié", user_omniauth_authorize_path(:facebook),
+                    title: t("account.show.add_provider", kind: "Facebook"),
+                    class: "button-facebook button expanded", disabled: true  %>
+        <% end %>
+      </div>
+    <% end %>
+
+
+    <% end %>
+  </div>
+</div>
