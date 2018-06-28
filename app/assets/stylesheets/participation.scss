@@ -627,6 +627,15 @@
   }
 }
 
+.milestone-status {
+  background: $budget;
+  border-radius: rem-calc(4);
+  color: #fff;
+  display: inline-block;
+  margin-top: $line-height / 6;
+  padding: $line-height / 4 $line-height / 2;
+}
+
 .show-actions-menu {
 
   [class^="icon-"] {
