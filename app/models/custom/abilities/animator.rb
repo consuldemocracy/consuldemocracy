@@ -10,6 +10,8 @@ module Abilities
       # Debates / Idées -----------------------------------
       
       # Proposals / Projets -------------------------------
+      can :create, Proposal
+      can :create, Legislation::Proposal
       
       # Polls / Votes -------------------------------------
       can [:read, :create, :update, :destroy, :add_question, :results, :stats], Poll
