@@ -1,0 +1,17 @@
+<div class="row section-content">
+  <div class="small-12 column">
+    <h3 id="how_can_use" data-magellan-target="how_can_use"><%= t("pages.help.how_can_use.title") %></h3>
+
+    <p><%= t("pages.help.how_can_use.description_1") %></p>
+
+    <p><%= t("pages.help.how_can_use.description_2", link: link_to(t("devise_views.menu.login_items.signup"), new_user_registration_path)).html_safe %></p>
+    <ul class="features">
+      <li><%= t("pages.help.how_can_use.feature_1") %></li>
+      <li><%= t("pages.help.how_can_use.feature_2") %></li>
+      <li><%= t("pages.help.how_can_use.feature_3") %></li>
+      <li><%= t("pages.help.how_can_use.feature_4") %></li>
+    </ul>
+
+    <p><%= t("pages.help.how_can_use.description_3", link: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions")).html_safe %></p>
+  </div>
+</div>

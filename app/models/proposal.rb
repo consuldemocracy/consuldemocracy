@@ -33,15 +33,22 @@ class Proposal < ActiveRecord::Base
   has_many :proposal_notifications, dependent: :destroy
 
   validates :title, presence: true
-  validates :question, presence: true
-  validates :summary, presence: true
+  validates :description, presence: true, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
+  validates :question, presence: true, if: -> { Setting['org_name'] != "MASDEMOCRACIAEUROPA" }
+  validates :objective, presence: true, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
+  validates :feasible_explanation, presence: true, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
+  validates :impact_description, presence: true, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
+  validates :summary, presence: true, if: -> { Setting['org_name'] != "MASDEMOCRACIAEUROPA" }
   validates :author, presence: true
-  validates :responsible_name, presence: true
+  validates :responsible_name, presence: true, :unless => :skip_verification?
 
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
-  validates :question, length: { in: 10..Proposal.question_max_length }
-  validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
+  validates :feasible_explanation, length: { maximum: Proposal.feasible_explanation_max_length }, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
+  validates :impact_description, length: { maximum: Proposal.impact_description_max_length }, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
+  validates :question, length: { in: 10..Proposal.question_max_length }, if: -> { Setting['org_name'] != "MASDEMOCRACIAEUROPA" }
+  validates :objective, length: { in: 10..Proposal.objective_max_length }, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
+  validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }, :unless => :skip_verification?
   validates :retired_reason, inclusion: { in: RETIRE_OPTIONS, allow_nil: true }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
@@ -72,6 +79,10 @@ class Proposal < ActiveRecord::Base
   scope :public_for_api,           -> { all }
   scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
 
+  def skip_verification?
+    Setting["feature.user.skip_verification"] == "true"
+  end
+
   def url
     proposal_path(self)
   end
@@ -87,6 +98,10 @@ class Proposal < ActiveRecord::Base
 
   def self.not_followed_by_user(user)
     where.not(id: followed_by_user(user).pluck(:id))
+  end
+
+  def self.description_max_length
+    6000
   end
 
   def to_param
@@ -209,7 +224,8 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.proposals_orders(user)
-    orders = %w{hot_score confidence_score created_at relevance archival_date}
+    orders = %w{hot_score created_at relevance archival_date}
+    orders << "confidence_score" if Setting['org_name'] != "MASDEMOCRACIAEUROPA"
     orders << "recommendations" if user.present?
     orders
   end

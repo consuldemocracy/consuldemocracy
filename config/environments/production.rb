@@ -60,8 +60,11 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
+  # Configure AWS SES (Simple Email Service)
+  config.action_mailer.delivery_method = :ses
+
   # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+  # Set this to true and configure the email server for immediate delivery to raise delivery errors.  
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
   config.action_mailer.asset_host = "https://#{Rails.application.secrets.server_name}"
@@ -78,4 +81,20 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Set paperclip configuration for AWS S3
+  config.paperclip_defaults = {
+    storage: :s3,
+    preserve_files: true,
+    s3_host_name: Rails.application.secrets.s3_endpoint,
+    s3_protocol: Rails.application.secrets.s3_protocol,
+    s3_credentials: {
+      bucket: Rails.application.secrets.s3_bucket,
+      access_key_id: Rails.application.secrets.s3_access_key_id,
+      secret_access_key: Rails.application.secrets.s3_secret_access_key,
+      s3_region: Rails.application.secrets.s3_region
+    }
+  }
 end
+
+Rails.logger = Le.new(Rails.application.secrets.logentries_api_key)

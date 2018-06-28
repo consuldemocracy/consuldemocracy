@@ -19,6 +19,18 @@ module Measurable
       6000
     end
 
+    def feasible_explanation_max_length
+      1700
+    end
+
+    def impact_description_max_length
+      1700
+    end
+
+    def objective_max_length
+      1700
+    end
+
   end
 
 end
