@@ -1,0 +1,180 @@
+<%= link_to "Retour",
+              admin_users_path, class: "button info float-right" %>
+
+
+<%= avatar_image(@user, seed: @user.id, size: 100, class: "margin-bottom") %>
+
+<h1 class="inline-block"><%= @user.name %></h2>
+
+
+<%= form_for @user, as: :account, url: account_path do |f| %>
+
+  <div class="row">
+    <div class="small-12 medium-7 column">
+
+      <h2><%= t("account.show.personal")%></h2>
+
+      <div class="small-12 medium-10">
+        <% if @user.organization? %>
+          <%= f.fields_for :organization do |fo| %>
+            <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("account.show.organization_name_label"), disabled: true %>
+            <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length, placeholder: t("account.show.organization_responsible_name_placeholder"), disabled: true  %>
+          <% end %>
+          <%= f.text_field :phone_number, placeholder: t("account.show.phone_number_label"), disabled: true  %>
+
+        <% else %>
+          <%= f.text_field :lastname, disabled: true %>
+          <%= f.text_field :firstname, disabled: true  %>
+          <%= f.text_field :username, maxlength: User.username_max_length, placeholder: t("account.show.username_label"), disabled: true  %>
+
+            <div class="date-of-birth">
+            <%= f.label t("devise_views.users.registrations.new.date_of_birth") %>
+            <p class="help-text" id="date-of-birth-help-text"><%= t("devise_views.users.registrations.new.date_of_birth_note")  %></p>
+            <%= f.date_select :date_of_birth,
+                              prompt: true,
+                              start_year: 26.years.ago.year, end_year: 16.years.ago.year,
+                              label: false,
+                              aria: {describedby: "date-of-birth-help-text"}, disabled: true %>
+          </div>
+          <div class="gender">
+            <%= f.select :gender, user_genders_select_options, 
+              { label: t("devise_views.users.registrations.new.gender_label") }, 
+              { prompt: t("devise_views.users.registrations.new.gender_placeholder"), 
+              disabled: true }  %>
+          </div>
+
+        <!-- Address -->
+
+        <%= f.text_field :address, disabled: true %>
+
+        <div class="medium-6">
+          <%= f.text_field :postal_code, disabled: true %>
+        </div>
+
+        <%= f.text_field :city, disabled: true %>
+
+        <!-- Connexion info -->
+
+        <%= f.text_field  :phone_number,  placeholder: t("devise_views.organizations.registrations.new.phone_number_label"), disabled: true %>
+
+        <% end %>
+      </div>
+
+      <div>
+        <%= f.label :public_activity do %>
+          <%= f.check_box :public_activity, title: t('account.show.public_activity_label'), label: false, disabled: true %>
+          <span class="checkbox">
+            <%= t("account.show.public_activity_label") %>
+          </span>
+        <% end %>
+      </div>
+
+      <div>
+        <%= f.label :public_interests do %>
+          <%= f.check_box :public_interests, title: t('account.show.public_interests_label'), label: false, disabled: true %>
+          <span class="checkbox">
+            <%= t("account.show.public_interests_label") %>
+          </span>
+        <% end %>
+      </div>
+
+
+      <% if @user.email.present? %>
+        <h2><%= t("account.show.notifications")%></h2>
+
+        <div>
+          <%= f.label :email_on_comment do %>
+            <%= f.check_box :email_on_comment, title: t('account.show.email_on_comment_label'), label: false, disabled: true %>
+            <span class="checkbox">
+              <%= t("account.show.email_on_comment_label") %>
+            </span>
+          <% end %>
+        </div>
+
+        <div>
+          <%= f.label :email_on_comment_reply do %>
+            <%= f.check_box :email_on_comment_reply, title: t('account.show.email_on_comment_reply_label'), label: false, disabled: true %>
+            <span class="checkbox">
+              <%= t("account.show.email_on_comment_reply_label") %>
+            </span>
+          <% end %>
+        </div>
+
+        <div>
+          <%= f.label :email_newsletter_subscribed do %>
+            <%= f.check_box :newsletter, title: t('account.show.subscription_to_website_newsletter_label'), label: false, disabled: true %>
+            <span class="checkbox">
+              <%= t("account.show.subscription_to_website_newsletter_label") %>
+            </span>
+          <% end %>
+        </div>
+
+        <div>
+          <%= f.label :email_digest do %>
+            <%= f.check_box :email_digest, title: t('account.show.email_digest_label'), label: false, disabled: true %>
+            <span class="checkbox">
+              <%= t("account.show.email_digest_label") %>
+            </span>
+          <% end %>
+        </div>
+
+        <div>
+          <%= f.label :email_on_direct_message do %>
+            <%= f.check_box :email_on_direct_message, title: t('account.show.email_on_direct_message_label'), label: false, disabled: true %>
+            <span class="checkbox">
+              <%= t("account.show.email_on_direct_message_label") %>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if @user.official_level == 1 %>
+        <div>
+          <%= f.label :official_position_badge do %>
+            <%= f.check_box :official_position_badge,
+                              title: t('account.show.official_position_badge_label'),
+                              label: false, disabled: true %>
+            <span class="checkbox">
+              <%= t("account.show.official_position_badge_label") %>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="user-permissions small-12 medium-5 column">
+      <h2>Rôles</h2>
+      <label>Rôles actuels</label>
+      <p><%= display_user_roles(@user) %></p>
+      <%= f.label :ca_wanabee do %>
+        <%= f.check_box :ca_wanabee, title: t('devise_views.users.registrations.new.ca_wanabee'), label: false, disabled: true %>
+        <span class="checkbox">
+          <%= t("devise_views.users.registrations.new.ca_wanabee", title: "devise_views.users.registrations.new.ca_wanabee").html_safe %>
+        </span>
+      <% end %>
+      <br>
+
+      <!-- Connexion reseaux sociaux -->
+      <% if feature?(:twitter_login) || feature?(:facebook_login) || feature?(:google_login) %>
+        <h2><%= t("account.show.social_networks")%></h2>
+
+        <% if feature? :facebook_login %>
+        <div class="small-12 medium-6 column end">
+          <% if auth = current_user.identities.find_by(provider: :facebook) %>
+            <%= link_to "Compte lié", remove_provider_account_path(auth), method: :delete,
+                        title: t("account.show.remove_provider", kind: "Facebook"),
+                        class: "button-facebook button expanded", disabled: true  %>
+          <% else %>
+            <%= link_to "Compte non lié", user_omniauth_authorize_path(:facebook),
+                      title: t("account.show.add_provider", kind: "Facebook"),
+                      class: "button-facebook button expanded", disabled: true  %>
+          <% end %>
+        </div>
+      <% end %>
+
+
+      <% end %>
+    </div>
+  </div>
+<% end %>

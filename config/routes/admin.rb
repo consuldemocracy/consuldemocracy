@@ -100,7 +100,10 @@ namespace :admin do
   end
   # end custom_cdj
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    # custom_cdj : namespaced custom name to prevent consul overriding
+    get :cdj_show, on: :member
+  end
 
   scope module: :poll do
     resources :polls do

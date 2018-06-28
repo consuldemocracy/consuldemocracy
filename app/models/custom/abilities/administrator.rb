@@ -91,6 +91,7 @@ module Abilities
       can [:manage], Article
 
       can [:search, :create, :index, :destroy], ::Animator
+      can [:cdj_show], User
     end
   end
 end
