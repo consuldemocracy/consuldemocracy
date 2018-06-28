@@ -22,6 +22,11 @@
     </div>
     <div class="column large-8">
       <div class="current-goal">
+        <div class="counter-value">
+          <%= t('.support_count', count: next_goal_supports) %>
+        </div>
+
+        <div class="counter-label"><%= t('.current_goal') %></div>
       </div>
 
       <div class="support-indicator">

@@ -1,5 +1,5 @@
 class ProposalsDashboardController < Dashboard::BaseController
-  helper_method :proposal_dashboard_action
+  helper_method :proposal_dashboard_action, :next_goal_supports
 
   def index
     authorize! :dashboard, proposal
@@ -60,5 +60,9 @@ class ProposalsDashboardController < Dashboard::BaseController
 
   def proposal_dashboard_action
     @proposal_dashboard_action ||= ProposalDashboardAction.find(params[:id])
+  end
+
+  def next_goal_supports
+    ProposalDashboardAction.next_goal_for(proposal)&.required_supports || Setting["votes_for_proposal_success"]
   end
 end

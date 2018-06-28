@@ -212,6 +212,10 @@ es:
         active_resources: Recursos activos
         community: Comunidad
         show_proposal: Ver propuesta
+        current_goal: Meta actual
+        support_count:
+          one: "%{count} apoyo"
+          other: "%{count} apoyos"
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso

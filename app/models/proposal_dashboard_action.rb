@@ -52,6 +52,18 @@ class ProposalDashboardAction < ActiveRecord::Base
       .where('day_offset <= ?', (Date.today - published_at).to_i)
   end
 
+  def self.next_goal_for(proposal)
+    published_at = proposal.published_at&.to_date || Date.today
+
+    active
+      .where(
+        '(required_supports > ? or day_offset > ?)', 
+        proposal.votes_for.size, 
+        (Date.today - published_at).to_i)
+      .order(required_supports: :asc)
+      &.first
+  end
+
   default_scope { order(order: :asc, title: :asc) }
 
   def request_to_administrators?
