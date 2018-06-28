@@ -30,6 +30,13 @@
       </div>
 
       <div class="support-indicator">
+        <div class="text-right">
+          <%= next_goal_progress %>%
+        </div>
+        <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" 
+             aria-valuetext="<%= "#{next_goal_progress}%" %>" aria-valuemax="100">
+           <div class="progress-meter" style="width: <%= next_goal_progress %>%"></div>
+        </div>
       </div>
 
       <div class="proposal-link">

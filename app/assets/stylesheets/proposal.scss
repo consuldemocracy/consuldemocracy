@@ -168,11 +168,21 @@
     }
 
     .support-indicator {
-      flex-grow: 2;
+      flex-grow: 3;
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      .progress {
+        margin-bottom: 0;
+      }
+
+      .progress-meter {
+        background-color: #ffac38;
+      }
     }
 
     .current-goal {
-      flex-grow: 1;
+      flex-grow: 0;
     }
   }  
 
