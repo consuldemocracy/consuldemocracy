@@ -106,6 +106,56 @@
     }
   }
 
+  .proposal-totals {
+    padding: 0;
+
+    .column {
+      padding: 1.5rem;
+
+    }
+
+    .column:first-child {
+      border-right: 1px solid lightgray;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    .counter {
+      flex-grow: 1;
+      padding-left: 10pt;
+      padding-right: 10pt;
+
+      .counter-value {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .counter-label {
+        color: #c5c5c5;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+
+    .counter:first-child {
+      padding-left: 0;
+
+      .counter-value {
+        color: #ffac38;
+      }
+
+      .counter-label {
+        color: #ffac38;
+      }
+    }
+
+    .counter:not(:last-child) {
+      border-right: 1px solid lightgray;
+    } 
+  }  
+
   .proposal-title {
     display: flex;
     align-items: flex-start;

@@ -207,6 +207,10 @@ es:
         published: Publicada
         draft: Borrador
         retired: Retirada
+      proposal_totals:
+        supports: Apoyos
+        active_resources: Recursos activos
+        community: Comunidad
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso

@@ -1,0 +1,26 @@
+<div class="callout proposal-totals">
+  <div class="row">
+    <div class="column large-4">
+      <div class="counter">
+        <div class="counter-value"><%= proposal.votes_for.size %></div>
+        <div class="counter-label"><%= t('.supports') %></div>
+      </div>
+
+      <div class="counter">
+        <div class="counter-value">
+          <%= ProposalDashboardAction.active.resources.active_for(proposal).count %>
+          /
+          <%= ProposalDashboardAction.active.resources.count %>
+        </div>
+        <div class="counter-label"><%= t('.active_resources') %></div>
+      </div>
+
+      <div class="counter">
+        <div class="counter-value">0</div>
+        <div class="counter-label"><%= t('.community') %></div>
+      </div> 
+    </div>
+    <div class="column large-8">
+    </div>
+  </div>
+</div>

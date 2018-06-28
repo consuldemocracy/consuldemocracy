@@ -207,6 +207,10 @@ en:
         published: Published
         draft: Draft
         retired: Retired
+      proposal_totals:
+        supports: Supports
+        active_resources: Active resources
+        community: Community
     footer:
       accessibility: Accessibility
       conditions: Terms and conditions of use
