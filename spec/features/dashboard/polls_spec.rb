@@ -13,7 +13,10 @@ feature 'Polls' do
   end
 
   scenario 'Initially there are no polls' do
-    click_link 'Polls'
+    within('#side_menu') do
+      click_link 'Polls'
+    end
+
     expect(page).to have_content('There are no polls coming up.')
   end
 

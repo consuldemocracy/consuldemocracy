@@ -1,10 +1,11 @@
 <% content_for :action_title, t("admin.polls.index.title") %>
 
-<%= link_to t("admin.polls.index.create"),
-            new_proposal_dashboard_poll_path(proposal),
-            class: "button success float-right" %>
 
 <% if @polls.any? %>
+  <%= link_to t("admin.polls.index.create"),
+              new_proposal_dashboard_poll_path(proposal),
+              class: "button success float-right" %>
+
   <table>
     <thead>
       <th class="medium-6"><%= t("admin.polls.index.name") %></th>
@@ -19,4 +20,8 @@
   <div class="callout primary">
     <%= t("admin.polls.index.no_polls") %>
   </div>
+
+  <%= link_to t("admin.polls.index.create"),
+              new_proposal_dashboard_poll_path(proposal),
+              class: "button success float-right" %>
 <% end %>

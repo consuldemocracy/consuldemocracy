@@ -1,6 +1,6 @@
 module ProposalsDashboardHelper
   def resources_menu_visible?(proposal, resources)
-    can?(:manage_polls, proposal) && resources.any?
+    can?(:manage_polls, proposal) || resources.any?
   end
 
   def progress_menu(&block)
