@@ -107,7 +107,7 @@
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-      <% if (feature?(:cdj_profiles) && can? :create, Proposal) %>
+      <% if can?(:create, Proposal) %>
         <%= link_to t("proposals.index.start_proposal"),
                     new_proposal_guide,
                     class: 'button expanded' %>
