@@ -106,6 +106,26 @@
     }
   }
 
+  .proposal-title {
+    display: flex;
+    align-items: flex-start;
+
+    .label {
+      color: #fefefe;
+      margin-left: 10pt;
+    }
+  }
+
+  .action-title {
+    margin-top: 5pt;
+    margin-bottom: 10pt;
+
+    hr {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+
   .columns {
     padding: 0;
   }

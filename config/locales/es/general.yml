@@ -202,8 +202,11 @@ es:
       firefox: Firefox
       ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.
       ie_title: Esta web no está optimizada para tu navegador
-    proposals_dashboard:
-      title: Dashboard de propuesta
+    dashboard:
+      proposal_header:
+        published: Publicada
+        draft: Borrador
+        retired: Retirada
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
@@ -509,12 +512,17 @@ es:
     create_request:
       success: La petición ha sido correctamente enviada al administrador.
     stats:
+      title: Gráfico
       group_by_year: Agrupar por año
       group_by_month: Agrupar por meses
       group_by_week: Agrupar por semanas
       group_by_date: Agrupar por fechas
       progress: Progreso acumulado
       supports: Apoyos
+    index:
+      title: Edición
+    new_request:
+      title: Petición al administrador
   dashboard:
     polls:
       form:
@@ -524,6 +532,8 @@ es:
         add_answer: Añadir respuesta
       question_answer_fields:
         remove_answer: Borrar respuesta
+      show:
+        title: Configurar encuesta
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"

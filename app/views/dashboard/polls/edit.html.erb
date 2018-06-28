@@ -1,6 +1,6 @@
-<%= back_link_to %>
+<% content_for :action_title, t("admin.polls.edit.title") %>
 
-<h2><%= t("admin.polls.edit.title") %></h2>
+<%= back_link_to %>
 
 <div class="polls-form">
   <%= render "form" %>

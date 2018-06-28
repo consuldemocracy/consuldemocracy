@@ -1,4 +1,4 @@
-<h2 class="inline-block"><%= t("admin.polls.index.title") %></h2>
+<% content_for :action_title, t("admin.polls.index.title") %>
 
 <%= link_to t("admin.polls.index.create"),
             new_proposal_dashboard_poll_path(proposal),

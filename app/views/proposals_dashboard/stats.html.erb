@@ -1,3 +1,5 @@
+<% content_for :action_title, t('.title') %>
+
 <div class="small-12 column">
   <div class="button-group">
     <%= link_to t('.group_by_year'), stats_proposal_dashboard_index_path(proposal, group_by: 'year'), class: 'button' %>
