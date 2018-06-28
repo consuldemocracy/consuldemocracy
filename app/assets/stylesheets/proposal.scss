@@ -111,14 +111,13 @@
 
     .column {
       padding: 1.5rem;
-
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
     }
 
     .column:first-child {
       border-right: 1px solid lightgray;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
     }
 
     .counter {
@@ -154,6 +153,21 @@
     .counter:not(:last-child) {
       border-right: 1px solid lightgray;
     } 
+
+    .proposal-link {
+      flex-grow: 1;
+      .button {
+        margin: 0;
+      }
+    }
+
+    .support-indicator {
+      flex-grow: 2;
+    }
+
+    .current-goal {
+      flex-grow: 1;
+    }
   }  
 
   .proposal-title {

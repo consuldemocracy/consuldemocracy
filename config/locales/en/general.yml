@@ -211,6 +211,7 @@ en:
         supports: Supports
         active_resources: Active resources
         community: Community
+        show_proposal: Show proposal
     footer:
       accessibility: Accessibility
       conditions: Terms and conditions of use

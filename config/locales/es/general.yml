@@ -211,6 +211,7 @@ es:
         supports: Apoyos
         active_resources: Recursos activos
         community: Comunidad
+        show_proposal: Ver propuesta
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
