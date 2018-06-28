@@ -40,7 +40,7 @@ describe Proposal do
     end
 
     it "is not valid with objective longer than maximum length" do
-      proposal.objective = 'a' * (300 + 1)
+      proposal.objective = 'a' * (1700 + 1)
 
       expect(proposal).not_to be_valid
     end
@@ -52,7 +52,7 @@ describe Proposal do
     end
 
     it "is not valid without feasible_explanation longer than maximum length" do
-      proposal.feasible_explanation = 'a' * (300 + 1)
+      proposal.feasible_explanation = 'a' * (1700 + 1)
 
       expect(proposal).not_to be_valid
     end
@@ -64,7 +64,7 @@ describe Proposal do
     end
 
     it "is not valid without impact_description longer than maximum length" do
-      proposal.impact_description = 'a' * (300 + 1)
+      proposal.impact_description = 'a' * (1700 + 1)
 
       expect(proposal).not_to be_valid
     end
