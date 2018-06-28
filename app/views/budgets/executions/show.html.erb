@@ -1,0 +1,64 @@
+<% provide :title, t('budgets.executions.page_title', budget: @budget.name) %>
+<% content_for :meta_description do %><%= @budget.description_for_phase('finished') %><% end %>
+<% provide :social_media_meta_tags do %>
+<%= render 'shared/social_media_meta_tags',
+            social_url: budget_executions_url(@budget),
+            social_title: @budget.name,
+            social_description: @budget.description_for_phase('finished') %>
+<% end %>
+
+<% content_for :canonical do %>
+  <%= render 'shared/canonical', href: budget_executions_url(@budget) %>
+<% end %>
+
+<div class="budgets-stats">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 column">
+        <%= back_link_to budgets_path %>
+        <h2 class="margin-top">
+          <%= t('budgets.executions.heading') %><br>
+          <span><%= @budget.name %></span>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="tabs">
+      <li class="tabs-title">
+        <%= link_to t('budgets.results.link'), budget_results_path(@budget) %>
+      </li>
+      <li class="tabs-title is-active">
+        <%= link_to t('budgets.executions.link'), budget_executions_path(@budget), class: 'is-active' %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-3 large-2 column">
+    <h3 class="margin-bottom">
+      <%= t('budgets.executions.heading_selection_title') %>
+    </h3>
+    <ul class="menu vertical no-margin-top no-padding-top">
+      <% @budget.headings.order('id ASC').each do |heading| %>
+        <li>
+          <%= link_to heading.name,
+                      custom_budget_heading_execution_path(@budget, heading_id: heading.to_param),
+                      heading.to_param == @heading.to_param ? { class: 'is-active' } : {} %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-9 large-10 column">
+    <%= form_tag(budget_executions_path(budget: @budget), method: :get) do %>
+      <div class="small-12 medium-3 column">
+        <%= select_tag 'status', options_from_collection_for_select(@statuses, 'id', 'name') %>
+      </div>
+    <% end %>
+  </div>
+</div>

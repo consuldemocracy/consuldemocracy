@@ -176,6 +176,9 @@ en:
       not_selected_investment_proyects: List of all investment projects not selected for balloting
     executions:
       link: "Execution"
+      page_title: "%{budget} - Executions"
+      heading: "Participatory budget executions"
+      heading_selection_title: "By district"
     phases:
       errors:
         dates_range_invalid: "Start date can't be equal or later than End date"
