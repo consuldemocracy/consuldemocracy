@@ -15,7 +15,9 @@ feature 'Proposal Notifications' do
       click_link 'Dashboard'
     end
 
-    click_link 'Send notification'
+    within('#side_menu') do
+      click_link 'Send notification'
+    end
 
     fill_in 'proposal_notification_title', with: 'Thank you for supporting my proposal'
     fill_in 'proposal_notification_body', with: 'Please share it with others so we can make it happen!'
