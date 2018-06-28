@@ -112,4 +112,12 @@ CKEDITOR.editorConfig = function( config )
     { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike' ] }
   ];
   config.toolbar = "mini";
+
+  // CDJ custom -----------------------------
+  config.toolbar_cdj = [
+    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat' ] },
+    { name: 'styles', items: [ 'Format', 'Font', 'FontSize' ] },
+    { name: 'paragraph', groups: [ 'list' ], items: [ 'NumberedList', 'BulletedList' ] },
+    { name: 'links', items: [ 'Link', 'Unlink' ] }
+  ];
 };

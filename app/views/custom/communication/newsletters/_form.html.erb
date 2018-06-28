@@ -5,7 +5,7 @@
                                                       @newsletter[:segment_recipient]) %>
   <%= f.text_field :subject %>
   <%= f.text_field :from %>
-  <%= f.cktext_area :body, ckeditor: { language: I18n.locale } %>
+  <%= f.cktext_area :body, ckeditor: { language: I18n.locale, toolbar: 'cdj' } %>
 
   <div class="margin-top">
     <%= f.submit class: "button success" %>
