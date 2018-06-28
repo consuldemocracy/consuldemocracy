@@ -16,8 +16,10 @@ App.Suggest =
             js_suggest_selector = $this.data('js-suggest')
             $(js_suggest_selector).html(stHtml)
 
+      timer = null
+
       $this.on 'keyup', ->
-        window.clearTimeout(callback)
-        window.setTimeout(callback, 1000)
+        window.clearTimeout(timer)
+        timer = window.setTimeout(callback, 1000)
 
       $this.on 'change', callback
