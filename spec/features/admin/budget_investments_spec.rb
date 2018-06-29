@@ -585,6 +585,24 @@ feature 'Admin budget investments' do
 
     end
 
+    scenario "See results button appears when budget status is finished" do
+
+      finished_budget = create(:budget, :finished)
+
+      visit admin_budget_budget_investments_path(budget_id: finished_budget.id)
+      expect(page).to have_content "See results"
+
+    end
+
+    scenario "See results button does not appear for unfinished budgets" do
+
+      not_finished_budget = create(:budget, :valuating)
+
+      visit admin_budget_budget_investments_path(budget_id: not_finished_budget.id)
+      expect(page).not_to have_content "See results"
+
+    end
+
   end
 
   context 'Search' do
