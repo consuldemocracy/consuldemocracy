@@ -37,6 +37,27 @@ feature 'Proposals' do
 
   # custom tests CDJ Aude -----------------------
 
+  context 'with with cdj_aude feature' do
+
+    before do
+      Setting['feature.cdj_aude'] = true
+    end
+
+    after do
+      Setting['feature.cdj_aude'] = nil
+    end
+
+    scenario 'Create ' do
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+      expect(page).not_to have_current_path(new_proposal_path)
+      expect(page).to have_current_path(root_path)
+      expect(page).to have_content "You do not have permission to carry out the action"
+    end
+  end
+
   scenario 'Create with verified user without document_number' do
     author = create(:user, :verified)
     login_as(author)
