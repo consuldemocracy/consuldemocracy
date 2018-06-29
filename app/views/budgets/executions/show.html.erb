@@ -57,7 +57,9 @@
   <div class="small-12 medium-9 large-10 column">
     <%= form_tag(budget_executions_path(budget: @budget), method: :get) do %>
       <div class="small-12 medium-3 column">
-        <%= select_tag 'status', options_from_collection_for_select(@statuses, 'id', 'name') %>
+        <%= select_tag :status, options_from_collection_for_select(
+          @statuses, "id", "name", params[:status]
+        ), class: "js-submit-on-change", include_blank: true %>
       </div>
     <% end %>
   </div>
