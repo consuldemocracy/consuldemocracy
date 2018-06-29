@@ -46,6 +46,7 @@ RSpec.configure do |config|
     load Rails.root.join('db', 'seeds.rb').to_s
     load Rails.root.join('db', 'custom_seeds.rb').to_s
     Setting["feature.user.skip_verification"] = nil
+    Setting["feature.cdj_profiles"] = nil
   end
 
   config.before(:each, type: :feature) do

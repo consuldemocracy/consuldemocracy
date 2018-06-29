@@ -31,8 +31,10 @@ module Abilities
 
       can :create, Comment
       can :create, Debate
-      # can :create, Proposal
-      # can :create, Legislation::Proposal
+      unless Setting["feature.cdj_profiles"].present?
+        can :create, Proposal
+        can :create, Legislation::Proposal
+      end
 
       can :suggest, Debate
       can :suggest, Proposal

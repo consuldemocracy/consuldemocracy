@@ -10,6 +10,14 @@ feature 'Tags' do
   let!(:tag_economia) { create(:tag, :category, name: 'Economía') }
   let(:admin) { create(:administrator).user }
 
+  before do
+    Setting['feature.budgets'] = true
+  end
+
+  after do
+    Setting['feature.budgets'] = nil
+  end
+
   scenario 'Index' do
     earth = create(:budget_investment, heading: heading, tag_list: tag_medio_ambiente.name)
     money = create(:budget_investment, heading: heading, tag_list: tag_economia.name)

@@ -7,10 +7,12 @@ feature 'Guide the user to create the correct resource' do
 
   background do
     Setting['feature.guides'] = true
+    Setting['feature.budgets'] = true
   end
 
   after do
     Setting['feature.guides'] = nil
+    Setting['feature.budgets'] = nil
   end
 
   context "Proposals" do

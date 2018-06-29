@@ -16,16 +16,12 @@ describe 'Customization Engine' do
     reset_load_path_and_reload(default_path)
   end
 
-  # # TODO i18n : broken because of test locale change
-  # xit "loads custom and override original locales" do
   it 'loads custom and override original locales' do
     increase_load_path_and_reload(Dir[Rails.root.join('spec', 'support',
                                                       'locales', 'custom', '*.{rb,yml}')])
     expect(test_key).to eq 'Overriden string with custom locales'
   end
 
-  # # TODO i18n : broken because of test locale change
-  # xit "does not override original locales" do
   it 'does not override original locales' do
     increase_load_path_and_reload(Dir[Rails.root.join('spec', 'support',
                                                       'locales', '*.{rb,yml}')])
