@@ -3,7 +3,7 @@ resources :proposals do
     collection do
       patch :publish
       get :supports
-      get :stats
+      get :progress
     end
 
     member do
@@ -11,7 +11,6 @@ resources :proposals do
       get :new_request
       post :create_request
     end
-
   end
 
   namespace :dashboard do

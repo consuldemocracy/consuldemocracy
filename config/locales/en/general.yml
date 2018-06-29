@@ -505,15 +505,10 @@ en:
         submit_button: Save changes
   proposals_dashboard:
     menu:
-      general: General
-      publish: Publish
-      edit_proposal_link: Edit
-      send_notification: Send notification
-      retire: Retire
+      my_proposal: My proposal
       progress: Progress
       resources: Resources
       actions: Actions
-      graphic: Graphic
       polls: Polls
     proposed_action:
       execute: Execute
@@ -521,7 +516,7 @@ en:
       request: Request
     create_request:
       success: The request for the administrator has been successfully sent.
-    stats:
+    progress:
       title: Graphic
       group_by_year: Group by year
       group_by_month: Group by month
@@ -531,6 +526,10 @@ en:
       supports: Supports
     index:
       title: Edition
+      edit_proposal_link: Edit
+      publish: Publish
+      retire: Retire
+      send_notification: Send notification
     new_request:
       title: Administrator request
   dashboard:

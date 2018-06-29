@@ -42,6 +42,15 @@
         vertical-align: middle;
       }
 
+      [class^="fi-"] {
+        color: #595959;
+        display: inline-block;
+        font-size: rem-calc(24);
+        line-height: $line-height;
+        padding: $line-height / 2 $line-height / 4;
+        padding-left: 0;
+        vertical-align: middle;
+      }
     }
 
     li {
@@ -80,6 +89,10 @@
       color: #00538b;
 
       [class^="icon-"] {
+        color: #00538b;
+      }
+
+      [class^="fi-"] {
         color: #00538b;
       }
     }

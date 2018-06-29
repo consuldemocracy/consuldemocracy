@@ -23,9 +23,7 @@ module Notifications
       click_link "Dashboard"
     end
 
-    within('#side_menu') do
-      click_link "Send notification"
-    end
+    click_link "Send notification"
 
     fill_in 'proposal_notification_title', with: "Thanks for supporting proposal: #{proposal.title}"
     fill_in 'proposal_notification_body', with: "Please share it with others! #{proposal.summary}"

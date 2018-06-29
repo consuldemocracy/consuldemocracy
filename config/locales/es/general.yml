@@ -505,15 +505,10 @@ es:
         submit_button: Guardar cambios
   proposals_dashboard:
     menu:
-      general: General
-      publish: Publicar
-      edit_proposal_link: Editar propuesta
-      send_notification: Enviar notificación
-      retire: Retirar
+      my_proposal: Mi propuesta
       progress: Progreso
       resources: Recursos
       actions: Acciones
-      graphic: Gráfico
       polls: Encuestas
     proposed_action:
       execute: Ejecutar
@@ -531,6 +526,10 @@ es:
       supports: Apoyos
     index:
       title: Edición
+      edit_proposal_link: Editar propuesta
+      publish: Publicar
+      retire: Retirar
+      send_notification: Enviar notificación
     new_request:
       title: Petición al administrador
   dashboard:

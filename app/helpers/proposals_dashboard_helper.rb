@@ -1,30 +1,20 @@
 module ProposalsDashboardHelper
-  def resources_menu_visible?(proposal, resources)
-    can?(:manage_polls, proposal) || resources.any?
+  def my_proposal_menu_class
+    return 'is-active' if controller_name == 'proposals_dashboard' && action_name == 'index'
+    nil
   end
 
-  def progress_menu(&block)
-    menu_group('progress-menu', progress_menu_active?, &block)
+  def progress_menu_class
+    return 'is-active' if progress_menu_active?
+    nil
   end
 
   def progress_menu_active?
-    actions_menu_active? || stats_menu_active?
+    is_proposed_action_request? || (controller_name == 'proposals_dashboard' && action_name == 'progress')
   end
 
-  def actions_menu(&block)
-    menu_entry(actions_menu_active?, &block)
-  end
-
-  def actions_menu_active?
-    (controller_name == 'proposals_dashboard' && action_name == 'index') || is_proposed_action_request?
-  end
-
-  def stats_menu(&block)
-    menu_entry(stats_menu_active?, &block)
-  end
-
-  def stats_menu_active?
-    controller_name == 'proposals_dashboard' && action_name == 'stats'
+  def resources_menu_visible?(proposal, resources)
+    can?(:manage_polls, proposal) || resources.any?
   end
 
   def resources_menu(&block)

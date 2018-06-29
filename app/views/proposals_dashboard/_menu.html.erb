@@ -1,73 +1,16 @@
 <ul id="proposal_dashboard_menu" data-multi-open="false">
   <li class="section-title">
-    <a href="#">
-      <span class="icon-checkmark-circle"></span>
-      <strong><%= t('.general') %></strong>
-    </a>
-
-    <ul id="general-menu">
-      <% if current_editable?(proposal) %>
-        <li>
-          <%= link_to edit_proposal_path(proposal), target: '_blank' do %>
-            <span><%= t('.edit_proposal_link') %></span>
-          <% end %>
-        </li>
-      <% end %>
-
-      <li>
-        <%= link_to new_proposal_notification_path(proposal_id: proposal.id),
-                    target: '_blank' do %>
-          <span><%= t('.send_notification') %></span>
-        <% end %>
-      </li>
-      
-      <% if can_destroy_image?(proposal) %>
-        <li>
-          <%= link_to image_path(proposal.image, from: request.url),
-                      method: :delete,
-                      data: { confirm: t('images.actions.destroy.confirm') } do %>
-            <span><%= t('images.remove_image') %></span>
-          <% end %>
-        </li>
-      <% end %>
-
-      <% unless proposal.retired? %>
-        <li>
-          <%= link_to retire_form_proposal_path(proposal),
-                      target: '_blank' do %>
-            <span><%= t('.retire') %></span>
-          <% end %>
-        </li>
-      <% end %>
-
-      <% if can?(:publish, proposal) %>
-        <li>
-          <%= link_to publish_proposal_dashboard_index_path(proposal), method: :patch do %>
-            <span><%= t('.publish') %></span>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
+    <%= link_to proposal_dashboard_index_path(proposal.to_param), class: my_proposal_menu_class do %>
+      <i class="fi-lightbulb"></i>
+      <strong><%= t('.my_proposal') %></strong>
+    <% end %>
   </li>
 
   <li class="section-title">
-    <a href="#" <%= 'class=is-active' if progress_menu_active? %>>
-      <span class="icon-bars"></span>
+    <%= link_to progress_proposal_dashboard_index_path(proposal.to_param),
+                class: progress_menu_class do %>
+      <span class="fi-graph-trend"></span>
       <strong><%= t('.progress') %></strong>
-    </a>
-
-    <%= progress_menu do %>
-      <%= stats_menu do %>
-        <%= link_to stats_proposal_dashboard_index_path(proposal.to_param) do %>
-          <span><%= t('.graphic') %></span>
-        <% end %>
-      <% end %>
-
-      <%= actions_menu do %>
-        <%= link_to proposal_dashboard_index_path(proposal.to_param) do %>
-          <span><%= t('.actions') %></span>
-        <% end %>
-      <% end %>
     <% end %>
   </li>
 

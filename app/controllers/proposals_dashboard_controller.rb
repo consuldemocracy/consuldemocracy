@@ -43,7 +43,7 @@ class ProposalsDashboardController < Dashboard::BaseController
     end
   end
 
-  def stats
+  def progress 
     authorize! :dashboard, proposal
   end
 
