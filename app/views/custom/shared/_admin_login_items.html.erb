@@ -26,7 +26,7 @@
           <%= link_to t("layouts.header.management"), management_sign_in_path %>
         </li>
       <% end %>
-       <% if (feature?(:cdj_profiles) && (current_user.administrator? || current_user.animator?)) %>
+       <% if (feature?(:cdj_aude) && (current_user.administrator? || current_user.animator?)) %>
         <li>
           <%= link_to t("layouts.header.communication"), communication_root_path %>
         </li>

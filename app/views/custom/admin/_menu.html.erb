@@ -1,7 +1,7 @@
 <div class="admin-sidebar" data-equalizer-watch>
   <ul id="admin_menu" data-accordion-menu data-multi-open="false">
 
-    <% unless feature?(:cdj_profiles) %>
+    <% unless feature?(:cdj_aude) %>
       <li class="section-title">
         <a href="#">
           <span class="icon-proposals"></span>
@@ -76,7 +76,7 @@
             <%= link_to t("admin.menu.poll_questions"), admin_questions_path %>
           </li>
 
-          <% unless feature?(:cdj_profiles) %>
+          <% unless feature?(:cdj_aude) %>
             <li <%= "class=active" if controller_name == "officers" %>>
               <%= link_to t('admin.menu.poll_officers'), admin_officers_path %>
             </li>
@@ -122,7 +122,7 @@
           <%= link_to t("admin.menu.administrators"), admin_administrators_path %>
         </li>
 
-        <% unless feature?(:cdj_profiles) %>
+        <% unless feature?(:cdj_aude) %>
           <li <%= "class=active" if controller_name == "organizations" %>>
             <%= link_to t("admin.menu.organizations"), admin_organizations_path %>
           </li>
@@ -164,7 +164,7 @@
       </li>
     <% end %>
 
-    <% unless feature?(:cdj_profiles) %>
+    <% unless feature?(:cdj_aude) %>
       <li class="section-title">
         <a href="#">
           <span class="icon-banner"></span>
@@ -218,7 +218,7 @@
       </li>
     <% end %>
 
-    <% unless feature?(:cdj_profiles) %>
+    <% unless feature?(:cdj_aude) %>
       <li class="section-title" <%= "class=active" if %w(newsletters emails_download).include?(controller_name) %>>
         <a href="#">
           <span class="icon-zip"></span>

@@ -5,7 +5,7 @@ section "Creating custom Settings" do
 
   # Feature flags
   Setting['feature.articles'] = true
-  Setting['feature.cdj_profiles'] = true
+  Setting['feature.cdj_aude'] = true
   Setting['feature.debates'] = true
   Setting['feature.proposals'] = true
   Setting['feature.spending_proposals'] = nil

@@ -44,7 +44,7 @@
     <% end %>
   </li>
 <% end %>
-  <% if (feature?(:cdj_profiles) && current_user && (current_user.administrator? || current_user.animator?)) %>
+  <% if (feature?(:cdj_aude) && current_user && (current_user.administrator? || current_user.animator?)) %>
   <li class="small-6 medium-4 columns">
     <%= link_to communication_root_path, class: "show-for-small-only" do %>
       <%= image_tag(image_path_for('icon_communication.png')) %>
