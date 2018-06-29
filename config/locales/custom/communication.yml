@@ -1,4 +1,7 @@
 fr:
+  layouts:
+    header:
+      communication: Communication
   communication:
     header:
       title: Communication
@@ -6,3 +9,15 @@ fr:
       index:
         title: Communication
         description: Ici, vous trouverez permettant de rédiger des articles, gérer les tags, l'envoi de newsletter et les bannières.
+
+
+en:
+  layouts:
+    header:
+      communication: Communication
+  communication:
+    header:
+      title: Communication
+    dashboard:
+      index:
+        title: Communication
