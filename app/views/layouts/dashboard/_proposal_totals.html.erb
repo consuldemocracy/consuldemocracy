@@ -40,7 +40,11 @@
       </div>
 
       <div class="proposal-link">
-        <%= link_to t('.show_proposal'), proposal_path(proposal), class: 'button success expanded' %>
+        <% if proposal.draft? %>
+          <%= link_to t('.preview_proposal'), proposal_path(proposal), class: 'button success expanded', target: '_blank' %>
+        <% else %>
+          <%= link_to t('.show_proposal'), proposal_path(proposal), class: 'button success expanded', target: '_blank' %>
+        <% end %>
       </div>
     </div>
   </div>

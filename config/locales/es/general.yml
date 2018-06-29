@@ -212,6 +212,7 @@ es:
         active_resources: Recursos activos
         community: Comunidad
         show_proposal: Ver propuesta
+        preview_proposal: Previsualizar propuesta
         current_goal: Meta actual
         support_count:
           one: "%{count} apoyo"
