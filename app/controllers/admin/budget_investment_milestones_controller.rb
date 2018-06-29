@@ -77,4 +77,8 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
     get_milestone
   end
 
+  def load_statuses
+    @statuses = Budget::Investment::Status.all
+  end
+
 end

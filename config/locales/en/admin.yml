@@ -283,6 +283,8 @@ en:
         no_statuses_defined: There are no defined investment statuses yet
         add_language: Add language
         remove_language: Remove language
+        admin_statuses: Admin investment statuses
+        no_statuses_defined: There are no defined investment statuses yet
       new:
         creating: Create milestone
         date: Date
@@ -1077,6 +1079,7 @@ en:
       moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
       image: Image
       show_image: Show image
+      moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
     spending_proposals:
       index:
         geozone_filter_all: All zones
