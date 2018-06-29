@@ -130,12 +130,6 @@ module CommonActions
     expect(page).not_to have_selector('.in-favor a')
   end
 
-  def add_to_ballot(spending_proposal)
-    within("#spending_proposal_#{spending_proposal.id}") do
-      find('.add a').click
-    end
-  end
-
   def create_spending_proposal_for(*users)
     users.each do |user|
       create(:spending_proposal, :finished, :feasible, author: user)
