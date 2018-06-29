@@ -1,8 +1,10 @@
-<div class="float-right">
-  <%= link_to t("admin.budget_investments.index.see_results"),
-              custom_budget_results_path(current_budget),
-              class: "button hollow medium", target: "_blank" %>
-</div>
+<% if @budget.has_winning_investments? %>
+  <div class="float-right">
+    <%= link_to t("admin.budget_investments.index.see_results"),
+                custom_budget_results_path(@budget),
+                class: "button hollow medium", target: "_blank" %>
+  </div>
+<% end %>
 
 <h2 class="inline-block"><%= @budget.name %> - <%= t("admin.budget_investments.index.title") %></h2>
 
