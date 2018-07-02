@@ -29,12 +29,16 @@
       </ul>
     </li>
 
-    <li <%= "class=active" if controller_name == "proposals" && action_name == "new" %>>
-      <%= link_to new_management_proposal_path do %>
-        <span class="icon-proposals"></span>
-        <%= t("management.menu.create_proposal") %>
-      <% end %>
-    </li>
+    <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+
+      <li <%= "class=active" if controller_name == "proposals" && action_name == "new" %>>
+        <%= link_to new_management_proposal_path do %>
+          <span class="icon-proposals"></span>
+          <%= t("management.menu.create_proposal") %>
+        <% end %>
+      </li>
+      
+    <% end %>
 
     <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
 
@@ -108,7 +112,7 @@
       </li>
 
     <% end %>
-    
+
     <li>
       <%= link_to new_management_user_invite_path do %>
         <span class="icon-letter"></span>
