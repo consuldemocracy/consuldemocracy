@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180625075520) do
+ActiveRecord::Schema.define(version: 20180702085737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -635,6 +635,18 @@ ActiveRecord::Schema.define(version: 20180625075520) do
   add_index "legislation_questions", ["hidden_at"], name: "index_legislation_questions_on_hidden_at", using: :btree
   add_index "legislation_questions", ["legislation_process_id"], name: "index_legislation_questions_on_legislation_process_id", using: :btree
 
+  create_table "links", force: :cascade do |t|
+    t.string   "label"
+    t.string   "url"
+    t.boolean  "open_in_new_tab"
+    t.integer  "linkable_id"
+    t.string   "linkable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "links", ["linkable_type", "linkable_id"], name: "index_links_on_linkable_type_and_linkable_id", using: :btree
+
   create_table "local_census_records", force: :cascade do |t|
     t.string   "document_number", null: false
     t.string   "document_type",   null: false
@@ -895,7 +907,7 @@ ActiveRecord::Schema.define(version: 20180625075520) do
 
   create_table "proposal_dashboard_actions", force: :cascade do |t|
     t.string   "title",                     limit: 80
-    t.string   "description"
+    t.text     "description"
     t.string   "link"
     t.boolean  "request_to_administrators",            default: false
     t.integer  "day_offset",                           default: 0
@@ -904,13 +916,13 @@ ActiveRecord::Schema.define(version: 20180625075520) do
     t.boolean  "active",                               default: true
     t.datetime "hidden_at"
     t.integer  "action_type",                          default: 0,     null: false
+    t.string   "short_description"
   end
 
   create_table "proposal_executed_dashboard_actions", force: :cascade do |t|
     t.integer  "proposal_id"
     t.integer  "proposal_dashboard_action_id"
     t.datetime "executed_at"
-    t.text     "comments"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end

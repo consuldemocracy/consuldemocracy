@@ -531,7 +531,7 @@ es:
       retire: Retirar
       send_notification: Enviar notificación
     new_request:
-      title: Petición al administrador
+      liks: Enlaces
   dashboard:
     polls:
       form:
@@ -942,3 +942,12 @@ es:
       text_sign_in: iniciar sesión
       text_sign_up: registrarte
       title: "¿Cómo puedo comentar este documento?"
+  links:
+    nested_links:
+      title: Enlaces
+      note: Añade los enlaces que sean de interés.
+      add_new_link: Añadir nuevo enlace
+    link_fields:
+      label_placeholder: Título del enlace
+      url_placeholder: Dirección del enlace
+      destroy: Borrar enlace

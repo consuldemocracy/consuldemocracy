@@ -10,7 +10,8 @@
     <tr>
       <th><%= ProposalDashboardAction.human_attribute_name(:title) %></th>
       <th><%= ProposalDashboardAction.human_attribute_name(:action_type) %></th>
-      <th><%= ProposalDashboardAction.human_attribute_name(:active) %></th>
+      <th class="text-right"><%= ProposalDashboardAction.human_attribute_name(:required_supports) %></th>
+      <th class="text-center"><%= ProposalDashboardAction.human_attribute_name(:active) %></th>
       <th></th>
     </tr>
   </thead>
@@ -26,8 +27,9 @@
       <tr id="<%= dom_id(action) %>">
         <td><%= action.title %></td>
         <td><%= t("admin.proposal_dashboard_actions.action_type.#{action.action_type}") %></td>
-        <td><%= active_human_readable(action.active) %></td>
-        <td style="text-align: right">
+        <td class="text-right"><%= action.required_supports %></td>
+        <td class="text-center"><%= active_human_readable(action.active) %></td>
+        <td class="text-right">
           <%= link_to t('admin.proposal_dashboard_actions.index.edit'), 
                       edit_admin_proposal_dashboard_action_path(action), 
                       class: 'edit-banner button hollow' %>

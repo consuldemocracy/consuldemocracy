@@ -112,6 +112,9 @@ en:
       administrator_task:
         one: Task
         other: Tasks
+      link:
+        one: Link
+        other: Links
     attributes:
       budget:
         name: "Name"
@@ -267,6 +270,7 @@ en:
         limit: Number of items
       proposal_dashboard_action:
         title: Title
+        short_description: Short description
         description: Description
         link: External link
         request_to_administrators: Admin request
@@ -275,12 +279,13 @@ en:
         order: Order
         active: Active
         action_type: Type
-      proposal_executed_dashboard_action:
-        comments: Comments for the administrator
       administrator_task:
         source: Source
         user: Executed by
-        executed_at: Executed at
+      link:
+        label: Title
+        url: Link
+        open_in_new_tab: Open in new tab
     errors:
       models:
         user:

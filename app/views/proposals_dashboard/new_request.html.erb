@@ -1,15 +1,25 @@
-<% content_for :action_title, t('.title') %>
+<% content_for :action_title, proposal_dashboard_action.title %>
 
-<div class="proposals-dashboard-new-request-form row">
-
+<div class="row">
   <div class="small-12 medium-9 column">
-    <%= back_link_to %>
+    <%== proposal_dashboard_action.description %>
+  </div>
 
-    <h1><%= proposal_dashboard_action.title %></h1>
-    <div data-alert class="callout primary">
-      <%= proposal_dashboard_action.description %>
-    </div>
+  <div class="small-12 medium-3 column">
+    <% if proposal_dashboard_action.links.any? %>
+      <div class="proposal-dashboard-action-links">
+        <h3><%= t('.links') %></h3>
+        <% proposal_dashboard_action.links.each do |link| %>
+          <% if link.open_in_new_tab %>
+            <%= link_to link.label, link.url, target: '_blank' %>
+          <% else %>
+            <%= link_to link.label, link.url %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
 
+    <%= render 'documents/documents', documents: proposal_dashboard_action.documents %>
     <%= render 'proposals_dashboard/form' %>
   </div>
 </div>

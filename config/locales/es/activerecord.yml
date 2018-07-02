@@ -112,6 +112,9 @@ es:
       administrator_task:
         one: Tarea
         other: Tareas
+      link:
+        one: Enlace
+        other: Enlaces
     attributes:
       budget:
         name: "Nombre"
@@ -268,6 +271,7 @@ es:
         limit: Número de elementos
       proposal_dashboard_action:
         title: Título
+        short_description: Descripción corta
         description: Descripción
         link: Enlace externo
         request_to_administrators: Petición para administrador
@@ -276,12 +280,14 @@ es:
         order: Orden
         active: Activa
         action_type: Tipo
-      proposal_executed_dashboard_action:
-        comments: Comentarios para el administrador
       administrator_task:
         source: Fuente
         user: Ejecutado por
         executed_at: Ejecutado el
+      link:
+        label: Título
+        url: Enlace
+        open_in_new_tab: Abrir en ventana nueva
     errors:
       models:
         user:

@@ -1,4 +1,11 @@
 class ProposalDashboardAction < ActiveRecord::Base
+  include Documentable
+  documentable max_documents_allowed: 3,
+               max_file_size: 3.megabytes,
+               accepted_content_types: [ 'application/pdf' ]
+
+  include Linkable
+
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
@@ -14,8 +21,7 @@ class ProposalDashboardAction < ActiveRecord::Base
 
   validates :description,
             presence: true,
-            allow_blank: false,
-            length: { in: 4..255 }
+            allow_blank: false
 
   validates :action_type, presence: true
 
@@ -32,11 +38,6 @@ class ProposalDashboardAction < ActiveRecord::Base
               only_integer: true,
               greater_than_or_equal_to: 0
             }
-
-  validates :link,
-            presence: true,
-            allow_blank: false,
-            unless: :request_to_administrators?
 
   default_scope { order(order: :asc, title: :asc) }
 

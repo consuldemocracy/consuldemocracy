@@ -58,7 +58,9 @@ module Abilities
 
       can [:create, :destroy], Follow
 
-      can [:destroy], Document, documentable: { author_id: user.id }
+      can [:destroy], Document do |document|
+        document.documentable.try(:author_id) == user.id
+      end
 
       can [:destroy], Image, imageable: { author_id: user.id }
 

@@ -5,8 +5,7 @@ describe ProposalExecutedDashboardAction do
     build :proposal_executed_dashboard_action, 
           proposal: proposal,
           proposal_dashboard_action: proposal_dashboard_action,
-          executed_at: executed_at,
-          comments: comments
+          executed_at: executed_at
   end
 
   let(:proposal) { create :proposal }
@@ -15,7 +14,6 @@ describe ProposalExecutedDashboardAction do
   end
   let(:request_to_administrators) { false }
   let(:executed_at) { Time.current }
-  let(:comments) { '' }
 
   it { should be_valid }
 
@@ -40,17 +38,7 @@ describe ProposalExecutedDashboardAction do
   context 'when the action sends a request to the administrators' do
     let(:request_to_administrators) { true }
 
-    context 'and comments are blank' do
-      let(:comments) { '' }
-
-      it { should_not be_valid }
-    end
-
-    context 'and comments have value' do
-      let(:comments) { Faker::Lorem.sentence }
-
-      it { should be_valid }
-    end
+    it { should be_valid }
   end
 
   context 'when it has been already executed' do

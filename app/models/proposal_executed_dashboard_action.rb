@@ -7,9 +7,4 @@ class ProposalExecutedDashboardAction < ActiveRecord::Base
   validates :proposal, presence: true, uniqueness: { scope: :proposal_dashboard_action }
   validates :proposal_dashboard_action, presence: true
   validates :executed_at, presence: true
-  validates :comments, presence: true, allow_blank: false, if: :comments_required?
-
-  def comments_required?
-    proposal_dashboard_action&.request_to_administrators? || false
-  end
 end

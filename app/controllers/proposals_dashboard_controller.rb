@@ -16,7 +16,7 @@ class ProposalsDashboardController < Dashboard::BaseController
     authorize! :dashboard, proposal
 
     ProposalExecutedDashboardAction.create(proposal: proposal, proposal_dashboard_action: proposal_dashboard_action, executed_at: Time.now)
-    redirect_to proposal_dashboard_index_path(proposal.to_param)
+    redirect_to progress_proposal_dashboard_index_path(proposal.to_param)
   end
 
   def new_request
@@ -27,11 +27,11 @@ class ProposalsDashboardController < Dashboard::BaseController
   def create_request
     authorize! :dashboard, proposal
 
-    source_params = proposal_executed_dashboard_action_params.merge(
+    source_params = {
       proposal: proposal, 
       proposal_dashboard_action: proposal_dashboard_action, 
       executed_at: Time.now
-    )
+    }
 
     @proposal_executed_dashboard_action = ProposalExecutedDashboardAction.new(source_params)
     if @proposal_executed_dashboard_action.save
@@ -54,9 +54,6 @@ class ProposalsDashboardController < Dashboard::BaseController
 
   private
 
-  def proposal_executed_dashboard_action_params
-    params.require(:proposal_executed_dashboard_action).permit(:comments)
-  end
 
   def proposal_dashboard_action
     @proposal_dashboard_action ||= ProposalDashboardAction.find(params[:id])

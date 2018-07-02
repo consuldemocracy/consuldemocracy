@@ -1076,14 +1076,10 @@ LOREM_IPSUM
     proposal
     proposal_dashboard_action
     executed_at { Time.current }
-
-    trait :with_comments do
-      comments { Faker::Lorem.sentence(10) }
-    end
   end
 
   factory :administrator_task do
-    source { |s| s.association(:proposal_executed_dashboard_action, :with_comments) }
+    source { |s| s.association(:proposal_executed_dashboard_action) }
     user
     executed_at { Time.current }
 
@@ -1096,5 +1092,16 @@ LOREM_IPSUM
       user
       executed_at { Time.current }
     end
+  end
+
+  factory :link do
+    linkable { |s| s.association(:proposal_dashboard_action) }
+    label { Faker::Lorem.sentence }
+    url { Faker::Internet.url }
+    open_in_new_tab false
+
+    trait :open_in_new_tab do
+      open_in_new_tab true
+    end    
   end
 end

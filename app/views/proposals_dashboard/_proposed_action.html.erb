@@ -1,30 +1,18 @@
 <tr>
   <td>
-    <% if action.link.blank? %>
-      <span data-tooltip title="<%= action.description %>">
+    <%= link_to new_request_proposal_dashboard_path(proposal, action) do %>
+      <span data-tooltip title="<%= action.short_description || action.title %>">
         <%= action.title %>
       </span>
-    <% else %>
-      <%= link_to action.link, target: '_blank' do %>
-        <span data-tooltip title="<%= action.description %>">
-          <%= action.title %>
-        </span>
-      <% end %>
     <% end %>
   </td>
   <td>
     <% if action.proposals.where(id: proposal.id).any? %>
       <%=l action.proposal_executed_dashboard_actions.find_by(proposal: proposal).executed_at, format: :short %>
     <% else %>
-      <% if action.request_to_administrators? %>
-        <%= link_to t('.execute'), 
-                     new_request_proposal_dashboard_path(proposal, action) %>
-      <% else %>
-        <%= link_to t('.execute'), 
-                     execute_proposal_dashboard_path(proposal.to_param, action.to_param), 
-                     method: 'post', 
-                     data: { confirm: t('admin.actions.confirm') } %>
-      <% end %>
+      <%= link_to t('.execute'), 
+                  execute_proposal_dashboard_path(proposal, action),
+                  method: 'post' %>
     <% end %>
   </td>
 </tr>

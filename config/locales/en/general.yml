@@ -531,7 +531,7 @@ en:
       retire: Retire
       send_notification: Send notification
     new_request:
-      title: Administrator request
+      links: Links
   dashboard:
     polls:
       form:
@@ -943,3 +943,12 @@ en:
       text_sign_in: login
       text_sign_up: sign up
       title: How I can comment this document?
+  links:
+    nested_links:
+      title: Links
+      note: Add the links that are of interest
+      add_new_link: Add new link
+    link_fields:
+      label_placeholder: Link title
+      url_placeholder: Link address
+      destroy: Remove link

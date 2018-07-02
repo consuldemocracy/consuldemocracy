@@ -2,7 +2,7 @@ class Admin::ProposalDashboard::ActionsController < Admin::ProposalDashboard::Ba
   helper_method :proposal_dashboard_action, :resource
 
   def index
-    @proposal_dashboard_actions = ProposalDashboardAction.all
+    @proposal_dashboard_actions = ProposalDashboardAction.order(required_supports: :asc)
   end
 
   def new
@@ -53,7 +53,11 @@ class Admin::ProposalDashboard::ActionsController < Admin::ProposalDashboard::Ba
   def proposal_dashboard_action_params
     params
       .require(:proposal_dashboard_action)
-      .permit(:title, :description, :link, :request_to_administrators, :day_offset, :required_supports, :order, :active, :action_type)
+      .permit(
+        :title, :description, :short_description, :request_to_administrators, :day_offset, :required_supports, :order, :active, :action_type,
+        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+        links_attributes: [:id, :label, :url, :open_in_new_tab, :_destroy] 
+      )
   end
 
 

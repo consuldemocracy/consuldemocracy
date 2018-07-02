@@ -3,7 +3,6 @@
   <div class="callout">
     <h5><%=t '.proposal', title: administrator_task.source.proposal.title %></h5>
     <p><%=t '.request', title: administrator_task.source.proposal_dashboard_action.title %></p>
-    <%== administrator_task.source.comments unless administrator_task.source.comments.blank? %>
     <%= link_to t('.check_details'), proposal_path(administrator_task.source.proposal), target: '_blank' %>
   </div>
 

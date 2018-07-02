@@ -7,7 +7,6 @@ describe ProposalDashboardAction do
           description: description,
           day_offset: day_offset,
           required_supports: required_supports,
-          link: link,
           request_to_administrators: request_to_administrators,
           action_type: action_type
   end
@@ -16,7 +15,6 @@ describe ProposalDashboardAction do
   let(:description) { Faker::Lorem.sentence }
   let(:day_offset) { 0 }
   let(:required_supports) { 0 }
-  let(:link) { nil }
   let(:request_to_administrators) { true }
   let(:action_type) { 'resource' }
 
@@ -45,18 +43,6 @@ describe ProposalDashboardAction do
   context 'when validating description' do
     context 'and description is blank' do
       let(:description) { nil }
-
-      it { should_not be_valid }
-    end
-
-    context 'and description is very short' do
-      let(:description) { 'abc' }
-
-      it { should_not be_valid }
-    end
-
-    context 'and description is very long' do
-      let(:description) { 'a' * 256 }
 
       it { should_not be_valid }
     end
@@ -99,32 +85,6 @@ describe ProposalDashboardAction do
       let(:required_supports) { 1.23 }
 
       it { should_not be_valid }
-    end
-  end
-
-  context 'when url is blank' do
-    let(:link) { nil }
-    
-    context 'and no request_to_administrators' do
-      let(:request_to_administrators) { false }
-
-      it { should_not be_valid }
-    end
-
-    context 'and request_to_administrators' do
-      let(:request_to_administrators) { true }
-
-      it { should be_valid }
-    end
-  end
-  
-  context 'when url is not blank' do
-    let(:link) { Faker::Internet.url }
-
-    context 'and no request_to_administrators' do
-      let(:request_to_administrators) { false }
-
-      it { should be_valid }
     end
   end
 

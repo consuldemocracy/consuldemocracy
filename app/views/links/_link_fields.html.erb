@@ -1,0 +1,20 @@
+<div id="<%= dom_id(f.object) %>" class="link link-fields nested-fields">
+  <div class="small-12 column">
+    <%= f.text_field :label, placeholder: t('.label_placeholder') %>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.text_field :url, placeholder: t('.url_placeholder') %>
+  </div>
+
+  <div class="small-6 column">
+    <%= f.check_box :open_in_new_tab, label: Link.human_attribute_name(:open_in_new_tab) %>
+  </div>
+
+  <div class="small-6 column">
+    <%= f.check_box :_destroy, label: t('.destroy') if f.object.id.present? %>
+  </div>
+
+  <hr>
+</div>
+

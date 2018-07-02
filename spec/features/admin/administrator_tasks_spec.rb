@@ -55,10 +55,6 @@ describe 'Administrator tasks' do
       expect(page).to have_button('Mark as solved')
     end
 
-    scenario 'shows the comments added by the user during the request' do
-      expect(page).to have_content(task.source.comments)
-    end
-
     context 'and the Mark as solved button is pressed' do
       before do
         click_button 'Mark as solved'
