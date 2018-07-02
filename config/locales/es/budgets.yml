@@ -179,6 +179,9 @@ es:
       page_title: "%{budget} - Ejecuciones"
       heading: "Ejecuciones presupuestos participativos"
       heading_selection_title: "Ámbito de actuación"
+      filters:
+        label: "Estado actual del proyecto"
+        all: "Todos"
     phases:
       errors:
         dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"
