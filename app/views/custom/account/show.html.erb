@@ -151,25 +151,25 @@
             <p>
               <%= t("account.show.user_permission_verify") %>
             </p>
-          <% end %>
 
-          <% unless @account.organization? %>
-            <div>
-              <span class="verify-account">
-                <% if current_user.level_three_verified? %>
-                  <ul>
-                    <li>
-                      <span class="icon-check"></span>
-                      <%= t("account.show.verified_account") %>
-                    </li>
-                  </ul>
-                <% elsif current_user.level_two_verified? %>
-                  <%= link_to t("account.show.finish_verification"), verification_path, class: "button success" %>
-                <% else %>
-                  <%= link_to t("account.show.verify_my_account"), verification_path, class: "button success" %>
-                <% end %>
-              </span>
-            </div>
+            <% unless @account.organization? %>
+              <div>
+                <span class="verify-account">
+                  <% if current_user.level_three_verified? %>
+                    <ul>
+                      <li>
+                        <span class="icon-check"></span>
+                        <%= t("account.show.verified_account") %>
+                      </li>
+                    </ul>
+                  <% elsif current_user.level_two_verified? %>
+                    <%= link_to t("account.show.finish_verification"), verification_path, class: "button success" %>
+                  <% else %>
+                    <%= link_to t("account.show.verify_my_account"), verification_path, class: "button success" %>
+                  <% end %>
+                </span>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>

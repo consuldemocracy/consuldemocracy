@@ -14,7 +14,6 @@ feature "Welcome screen" do
 
       expect(page).to have_content "Participate on proposals"
       expect(page).to have_content "Create new proposals"
-      expect(page).to have_content "Account verified"
       expect(page).to have_content "See proposals"
       expect(page).not_to have_content I18n.t("welcome.welcome.user_permission_support_proposal")
       expect(page).not_to have_content I18n.t("welcome.welcome.user_permission_votes")

@@ -39,17 +39,16 @@
       <%= t("welcome.welcome.user_permission_verify") %>
     </p>
 
-  <% end %>
-
-  <% if current_user.level_three_verified? %>
-    <ul>
-      <li>
-        <span class="icon-check"></span>
-        <%= t("account.show.verified_account") %>
-      </li>
-    </ul>
-  <% else %>
-    <%= link_to(t("welcome.welcome.user_permission_verify_my_account"), verification_path, class: "button success radius expand") %>
+    <% if current_user.level_three_verified? %>
+      <ul>
+        <li>
+          <span class="icon-check"></span>
+          <%= t("account.show.verified_account") %>
+        </li>
+      </ul>
+    <% else %>
+      <%= link_to(t("welcome.welcome.user_permission_verify_my_account"), verification_path, class: "button success radius expand") %>
+    <% end %>
   <% end %>
 
   <p>
