@@ -44,7 +44,7 @@
       <%= t("budgets.executions.heading_selection_title") %>
     </h3>
     <ul class="menu vertical no-margin-top no-padding-top">
-      <% @budget.headings.order('id ASC').each do |heading| %>
+      <% @headings.each do |heading| %>
         <li>
           <%= link_to heading.name, "#" %>
         </li>
