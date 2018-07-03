@@ -562,7 +562,7 @@ $sidebar-active: #f4fcd0;
 
 .account-info,
 .login-as {
-  background-color: #e7e7e7;
+  background-color: $highlight;
   border-radius: rem-calc(3);
   font-size: rem-calc(16);
   font-weight: normal;
@@ -667,6 +667,10 @@ $sidebar-active: #f4fcd0;
       background: #e0e0e0;
     }
   }
+}
+
+.management-list {
+  max-width: rem-calc(1200);
 }
 
 // 06. Polls
