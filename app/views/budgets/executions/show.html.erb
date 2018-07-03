@@ -46,16 +46,14 @@
     <ul class="menu vertical no-margin-top no-padding-top">
       <% @budget.headings.order('id ASC').each do |heading| %>
         <li>
-          <%= link_to heading.name,
-                      custom_budget_heading_execution_path(@budget, heading_id: heading.to_param),
-                      heading.to_param == @heading.to_param ? { class: 'is-active' } : {} %>
+          <%= link_to heading.name, "#" %>
         </li>
       <% end %>
     </ul>
   </div>
 
   <div class="small-12 medium-9 large-10 column">
-    <%= form_tag(budget_executions_path(budget: @budget), method: :get) do %>
+    <%= form_tag(budget_executions_path(@budget), method: :get) do %>
       <div class="small-12 medium-3 column">
         <%= label_tag t("budgets.executions.filters.label") %>
         <%= select_tag :status, options_from_collection_for_select(
