@@ -33,7 +33,6 @@ get "presupuestos/:id/estadisticas",       to: "budgets/stats#show", as: 'custom
 get "presupuestos/:id/resultados",         to: "budgets/results#show", as: 'custom_budget_results'
 get 'presupuestos/:id/ejecuciones',        to: 'budgets/executions#show', as: 'custom_budget_executions'
 get "presupuestos/:id/resultados/:heading_id", to: "budgets/results#show", as: 'custom_budget_heading_result'
-get 'presupuestos/:id/ejecuciones/:heading_id', to: 'budgets/executions#show', as: 'custom_budget_heading_execution'
 
 resources :budgets, only: [:show, :index], path: 'presupuestos' do
   resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
