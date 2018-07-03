@@ -21,37 +21,7 @@
 
   <div class="row">
     <div class="small-12 column">
-      <%=f.text_area :summary, rows: 4%>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 column">
       <%=f.text_area :description, rows: 8%>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 column">
-      <%= render 'images/admin_image', imageable: poll, f: f %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-6 medium-6 column">
-      <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
-    </div>
-  </div>
-
-  <div id="geozones" style="<%= poll.geozone_restricted? ? '' : 'display:none' %>">
-    <div class="row">
-      <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
-        <div class="small-6 medium-3 column">
-          <%= b.label do %>
-            <%= b.check_box %><%= b.text %>
-          <% end %>
-        </div>
-      <% end %>
     </div>
   </div>
 
