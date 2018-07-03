@@ -103,7 +103,7 @@
         <strong><%= t("admin.menu.title_booths") %></strong>
       </a>
       <ul id="booths_menu" <%= "class=is-active" if menu_booths? || controller_name == "polls" && action_name == "booth_assignments" %>>
-                  <li <%= "class=is-active" if controller_name == "officers" %>>
+        <li <%= "class=is-active" if controller_name == "officers" %>>
           <%= link_to t("admin.menu.poll_officers"), admin_officers_path %>
         </li>
 
