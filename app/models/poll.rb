@@ -27,6 +27,7 @@ class Poll < ActiveRecord::Base
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
 
   scope :for, ->(element) { where(related: element) }
+  scope :public_polls, -> { where(related: nil) }
   scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Date.current.beginning_of_day, Date.current.beginning_of_day) }
   scope :incoming, -> { where('? < starts_at', Date.current.beginning_of_day) }
   scope :expired,  -> { where('ends_at < ?', Date.current.beginning_of_day) }
