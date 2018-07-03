@@ -1,0 +1,17 @@
+<div>
+  <% @headings.each do |heading| %>
+    <b><%= heading.name %></b>
+    <% heading.investments.selected.sort_by_ballots.joins(:milestones).each do |investment| %>
+      <div>
+        <% if investment.image.present? %>
+          <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
+        <% else %>
+          <%= image_tag Rails.root.join('/budget_execution_no_image.jpg'), alt: investment.title %>
+        <% end %>
+        <%= investment.title %>
+        <%= investment.author.name %>
+        <%= investment.formatted_price %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
