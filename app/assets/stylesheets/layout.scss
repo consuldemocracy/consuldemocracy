@@ -1963,7 +1963,8 @@ table {
   }
 }
 
-.comment-body {
+.comment-body,
+.notification-body {
 
   img {
     margin-right: $line-height / 2;

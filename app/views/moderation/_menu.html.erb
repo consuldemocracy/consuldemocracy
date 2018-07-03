@@ -11,6 +11,13 @@
           <%= t("moderation.menu.proposals") %>
         <% end %>
       </li>
+
+      <li <%= "class=is-active" if controller_name == "proposal_notifications" %>>
+        <%= link_to moderation_proposal_notifications_path do %>
+          <span class="icon-proposals"></span>
+          <%= t("moderation.menu.proposal_notifications") %>
+        <% end %>
+      </li>
     <% end %>
 
     <% if feature?(:debates) %>

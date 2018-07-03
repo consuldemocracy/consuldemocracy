@@ -504,6 +504,7 @@ es:
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
+      hidden_proposal_notifications: Notificationes de propuesta ocultas
       hidden_users: Usuarios bloqueados
       administrators: Administradores
       managers: Gestores
@@ -940,6 +941,15 @@ es:
           without_confirmed_hide: Pendientes
         title: Propuestas ocultas
         no_hidden_proposals: No hay propuestas ocultas.
+    proposal_notifications:
+      index:
+        filter: Filtro
+        filters:
+          all: Todas
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Pendientes
+        title: Notificaciones ocultas
+        no_hidden_proposals: No hay notificaciones ocultas.
     settings:
       flash:
         updated: Valor actualizado

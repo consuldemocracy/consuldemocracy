@@ -149,6 +149,10 @@
           <%= link_to t("admin.menu.hidden_comments"), admin_comments_path %>
         </li>
 
+        <li <%= "class=is-active" if controller_name == "proposal_notifications" %>>
+          <%= link_to t("admin.menu.hidden_proposal_notifications"), admin_proposal_notifications_path %>
+        </li>
+
         <li <%= "class=is-active" if controller_name == "hidden_users" %>>
           <%= link_to t("admin.menu.hidden_users"), admin_hidden_users_path %>
         </li>
