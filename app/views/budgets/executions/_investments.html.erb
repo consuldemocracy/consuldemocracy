@@ -1,17 +1,29 @@
-<div>
-  <% @headings.each do |heading| %>
-    <b><%= heading.name %></b>
+<% @headings.each do |heading| %>
+  <h4 id="<%= heading.name.parameterize %>">
+    <%= heading.name %>
+  </h4>
+  <div class="row" data-equalizer-on="medium" data-equalizer>
     <% heading.investments.selected.sort_by_ballots.joins(:milestones).each do |investment| %>
-      <div>
-        <% if investment.image.present? %>
-          <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
-        <% else %>
-          <%= image_tag Rails.root.join('/budget_execution_no_image.jpg'), alt: investment.title %>
-        <% end %>
-        <%= investment.title %>
-        <%= investment.author.name %>
-        <%= investment.formatted_price %>
+      <div class="small-12 medium-6 large-4 column end margin-bottom">
+        <div class="budget-execution">
+          <%= link_to investment.url, data: { 'equalizer-watch': true} do %>
+            <% if investment.image.present? %>
+              <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
+            <% else %>
+              <%= image_tag Rails.root.join('/budget_execution_no_image.jpg'), alt: investment.title %>
+            <% end %>
+            <div class="budget-execution-info">
+              <div class="budget-execution-content">
+                <h5><%= investment.title %></h5>
+                <span class="author"><%= investment.author.name %></span>
+              </div>
+              <p class="price margin-top text-center">
+                <strong><%= investment.formatted_price %></strong>
+              </p>
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>
