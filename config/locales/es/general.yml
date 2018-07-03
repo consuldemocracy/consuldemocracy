@@ -534,6 +534,18 @@ es:
       liks: Enlaces
   dashboard:
     polls:
+      index:
+        title: Encuestas
+        create: Crear encuesta
+        count:
+          one: Has creado %{count} encuesta.
+          other: Has creado %{count} encuestas.
+      poll:
+        published_on: Publicada
+        responses:
+          one: "%{count} respuesta"
+          other: "%{count} respuestas"
+        view_responses: Ver respuestas
       form:
         add_question: Añadir pregunta
       question_fields:

@@ -1,18 +1,27 @@
-<tr id="<%= dom_id(poll) %>" class="poll">
-  <td>
-    <strong>
-      <%= link_to poll.name, proposal_dashboard_poll_path(proposal, poll) %>
-    </strong>
-  </td>
-  <td>
-    <%= l poll.starts_at.to_date %> - <%= l poll.ends_at.to_date %>
-  </td>
-  <td class="text-right">
-    <%= link_to t("admin.actions.edit"),
-                edit_proposal_dashboard_poll_path(proposal, poll),
-                class: "button hollow" %>
-    <%= link_to t("admin.actions.configure"),
-                proposal_dashboard_poll_path(proposal, poll),
-                class: "button hollow" %>
-  </td>
-</tr>
+<div class="column poll-card" id="<%= dom_id(poll) %>">
+  <div class="card">
+    <div class="card-section">
+      <p class="text-right">
+        <a href='#' class="button round hollow clipboard-btn" data-clipboard-text="<%= poll_url(poll) %>">
+          <i class="fi-clipboard-notes"></i>
+        </a>
+      </p>
+      <h4 class="text-center"><%= poll.title %></h4>
+      <p class="text-center">
+        <%= t('.published_on') %>
+        <%= l(poll.starts_at.to_date) %>
+      </p>
+    </div>
+
+    <div class="card-section text-center">
+      <strong><%= t('.responses', count: poll.questions.count) %></strong>
+    </div>
+
+    <div class="card-section text-center">
+      <a href='#' class="button">
+        <%= t('.view_reponses') %>
+      </a>
+    </div>
+  </div>
+</div>
+

@@ -534,6 +534,18 @@ en:
       links: Links
   dashboard:
     polls:
+      index:
+        title: Polls
+        create: Create poll
+        count:
+          one: You have created %{count} poll.
+          other: You have created %{count} polls.
+      poll:
+        published_on: Published on
+        responses:
+          one: "%{count} response"
+          other: "%{count} responses"
+        view_responses: Ver respuestas
       form:
         add_question: Add question
       question_fields:

@@ -1,27 +1,15 @@
-<% content_for :action_title, t("admin.polls.index.title") %>
+<% content_for :action_title, t('.title') %>
 
+<%= link_to t('.create'),
+            new_proposal_dashboard_poll_path(proposal),
+            class: 'button' %>
+
+<div class="row small-12 column">
+  <strong><%= t('.count', count: @polls.count) %></strong>
+</div>
 
 <% if @polls.any? %>
-  <%= link_to t("admin.polls.index.create"),
-              new_proposal_dashboard_poll_path(proposal),
-              class: "button success float-right" %>
-
-  <table>
-    <thead>
-      <th class="medium-6"><%= t("admin.polls.index.name") %></th>
-      <th><%= t("admin.polls.index.dates") %></th>
-      <th class="text-right"><%= t("admin.actions.actions") %></th>
-    </thead>
-    <tbody>
-      <%= render @polls %>
-    </tbody>
-  </table>
-<% else %>
-  <div class="callout primary">
-    <%= t("admin.polls.index.no_polls") %>
+  <div class="row small-up-2 medium-up-3 large-up-4">
+    <%= render @polls %>
   </div>
-
-  <%= link_to t("admin.polls.index.create"),
-              new_proposal_dashboard_poll_path(proposal),
-              class: "button success float-right" %>
 <% end %>
