@@ -3,7 +3,7 @@
     <%= heading.name %>
   </h4>
   <div class="row" data-equalizer-on="medium" data-equalizer>
-    <% heading.investments.selected.sort_by_ballots.joins(:milestones).each do |investment| %>
+    <% winner_investments(heading).each do |investment| %>
       <div class="small-12 medium-6 large-4 column end margin-bottom">
         <div class="budget-execution">
           <%= link_to budget_investment_path(@budget, investment, anchor: "tab-milestones"), data: { 'equalizer-watch': true } do %>
