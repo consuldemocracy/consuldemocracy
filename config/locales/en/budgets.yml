@@ -175,9 +175,9 @@ en:
       unfeasible_investment_proyects: List of all unfeasible investment projects
       not_selected_investment_proyects: List of all investment projects not selected for balloting
     executions:
-      link: "Execution"
-      page_title: "%{budget} - Executions"
-      heading: "Participatory budget executions"
+      link: "Milestones"
+      page_title: "%{budget} - Milestones"
+      heading: "Participatory budget Milestones"
       heading_selection_title: "By district"
       filters:
         label: "Project's current state"

@@ -175,9 +175,9 @@ es:
       unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
       not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
     executions:
-      link: "Ejecución"
-      page_title: "%{budget} - Ejecuciones"
-      heading: "Ejecuciones presupuestos participativos"
+      link: "Seguimiento"
+      page_title: "%{budget} - Seguimiento de proyectos"
+      heading: "Seguimiento de proyectos"
       heading_selection_title: "Ámbito de actuación"
       filters:
         label: "Estado actual del proyecto"
