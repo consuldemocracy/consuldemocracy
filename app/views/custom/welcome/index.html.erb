@@ -11,16 +11,14 @@
 
 <%= render "header", header: @header %>
 
-<main>
-  <div class="small-12 medium-9 column">
+<main data-equalizer="main">
+  <div class="small-12 medium-9 column" data-equalizer-watch="main">
     <%= render "feeds" %>
-
     <div class="row">
       <div class="small-12 column <%= 'large-8' if feed_processes_enabled? %>">
         <hr />
         <%= render "cards" %>
       </div>
-
       <div class="small-12 large-4 column">
         <%= render "processes" %>
       </div>
@@ -32,16 +30,10 @@
                   recommended_proposals: @recommended_proposals %>
     <% end %>
   </div>
-
-  <div class="small-12 medium-3 column sidebar">
-    <h3>#Consulta ciudadanas</h3>
-    <%#= image_tag(image_path_for("hablamos-europa.png"),
-                  class: "",
-                  size: "48x48",
-                  alt: t("layouts.header.logo")) %>
-    <%= image_tag("hablamos_europa.png") %>
+  <div class="small-12 medium-3 column sidebar" data-equalizer-watch="main">
+    <h3>Consulta ciudadanas</h3>
+    <%= image_tag("heblamos_europa.png", alt: "") %>
+    <br />
     <%= link_to "¿ Cómo puedo utilizar la plataforma ?", '#', class: "button" %>
   </div>
-
-
 </main>

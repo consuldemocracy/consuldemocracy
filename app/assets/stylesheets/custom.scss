@@ -4,7 +4,6 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
-
 //Variables
 $color-gray-super-light: #f2f2f2;
 $color-gray-light: #dfe0e4;
@@ -13,17 +12,14 @@ $color-blue: #004a83;
 $color-blue-2: #002f7a;
 $body-font-family: 'Lato', 'Arial', sans-serif !important;
 
-
-
 body{
   font-family: $body-font-family;
+  &.home-page{
+    .push{
+      display: none;
+    }
+  }
 }
-
-
-
-// .hollow{
-//   @include button($expand:false, $background:transparent, $background-hover:auto, $color:auto, $style:hollow);
-// }
 
 //Header
 header{
@@ -32,6 +28,11 @@ header{
 
   .top-bar{
     background: $color-gray-light !important;
+
+    .menu > li a{
+      color: $color-blue;
+    }
+
     .menu .menu-text a{
       color: $color-blue;
       font-weight: 700;
@@ -45,20 +46,22 @@ header{
 }
 
 .home-page{
-
   //Button - Convert this for foundation
   .button{
     background: $color-yellow;
     color: $color-blue;
     font-weight: 700;
     text-transform: uppercase;
-    border-radius:0;
+    border-radius:3px;
 
     &:hover{
       background: $color-blue;
       color: $color-yellow;
     }
   }
+  // .hollow{
+  //   @include button($expand:false, $background:transparent, $background-hover:auto, $color:auto, $style:hollow);
+  // }
 
   //Home page Banner
   .home-banner{
@@ -145,20 +148,39 @@ header{
 
     .debate,
     .proposal {
-      margin-bottom: 0;
-      margin-top: 0;
-      padding: 0;
+      // margin-bottom: 0;
+      // margin-top: 0;
+      // padding: 0;
     }
   }
 
   .sidebar{
     background:$color-gray-super-light;
     padding: $line-height;
+    text-align: center;
+
+    img{
+      margin:0 auto;
+      display: block;
+      height: 130px;
+    }
+  }
+}
+
+.footer {
+  min-height: auto;
+  background: $color-gray-light;
+  border-top: 0;
+
+  .subfooter{
+    margin-top: $line-height;
+    padding-top: $line-height;
   }
 }
 
 
 
+// Check this...is not mine....
 .icon-linkedin{
   img{
     margin-top: -10px;
