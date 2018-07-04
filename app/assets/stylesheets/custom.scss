@@ -20,10 +20,8 @@ body{
     }
   }
 }
-
 //Header
 header{
-  margin-bottom: 0;
   background: $color-gray-light !important;
 
   .top-bar{
@@ -46,6 +44,11 @@ header{
 }
 
 .home-page{
+
+  //Header
+  header{
+    margin-bottom: 0;
+  }
   //Button - Convert this for foundation
   .button{
     background: $color-yellow;

@@ -57,7 +57,11 @@
       <div class="push"></div>
     </div>
     <div class="footer">
-      <%= render 'layouts/footer' %>
+      <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+        <%= render 'layouts/footer' %>
+      <% else %>
+        <%= render 'layouts/footer_democracy_eu' %>
+      <% end %>  
     </div>
   </body>
   <!--[if lt IE 9]>
