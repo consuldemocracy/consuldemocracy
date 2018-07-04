@@ -3,11 +3,11 @@
     <% if feed_proposals?(feed) %>
       <div class="small-12 column margin-top">
         <div class="feed-content" data-equalizer-watch>
-          <h3 class="title">#<%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
+          <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
 
           <div class="row">
             <% feed.items.each do |item| %>
-              <div class="<%= item.class.to_s.parameterize('_') %> columns large-4">
+              <div class="<%= item.class.to_s.parameterize('_') %> columns large-12">
                 <% if feature?(:allow_images) && item.image.present? %>
                   <div class="small-12 medium-6 large-3 column">
                     <div class="feed-image">
