@@ -1686,9 +1686,10 @@
     display: block;
 
     img {
-      max-height: $line-height * 13;
+      height: $line-height * 9;
       transition-duration: 0.3s;
       transition-property: transform;
+      width: 100%;
     }
 
     &:hover {
