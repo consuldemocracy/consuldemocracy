@@ -620,6 +620,8 @@ en:
       results:
         title: "Questions"
         most_voted_answer: "Most voted answer: "
+    poll_header:
+      back_to_proposal: Back to proposal
   poll_questions:
     create_question: "Create question"
     show:

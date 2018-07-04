@@ -620,6 +620,8 @@ es:
       results:
         title: "Preguntas"
         most_voted_answer: 'Respuesta más votada: '
+    poll_header:
+      back_to_proposal: Volver a la propuesta
   poll_questions:
     create_question: "Crear pregunta"
     show:

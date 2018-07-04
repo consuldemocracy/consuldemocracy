@@ -19,7 +19,7 @@ class Dashboard::PollsController < Dashboard::BaseController
   def create
     authorize! :manage_polls, proposal
 
-    @poll = Poll.new(poll_params.merge(author: current_user, related: proposal))
+    @poll = Poll.new(poll_params.merge(author: current_user, related: proposal, stats_enabled: false))
     if @poll.save
       redirect_to proposal_dashboard_poll_path(proposal, poll), notice: t("flash.actions.create.poll")
     else
