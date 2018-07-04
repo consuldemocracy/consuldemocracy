@@ -532,11 +532,11 @@ en:
       voted_token: "You can write down this vote identifier, to check your vote on the final results:"
   proposal_notifications:
     new:
-      title: "Send message"
+      title: "Send notification"
       title_label: "Title"
-      body_label: "Message"
-      submit_button: "Send message"
-      info_about_receivers_html: "This message will be send to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Message are not sent immediately, users will receive periodically an email with all proposal notifications."
+      body_label: "Notification"
+      submit_button: "Send notification"
+      info_about_receivers_html: "This notification will be sent to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Notifications are not sent immediately, users will periodically receive an email with all proposal notifications."
       proposal_page: "the proposal's page"
     show:
       back: "Go back to my activity"
