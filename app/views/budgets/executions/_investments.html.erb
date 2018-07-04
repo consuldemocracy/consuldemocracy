@@ -6,11 +6,15 @@
     <% heading.investments.selected.sort_by_ballots.joins(:milestones).each do |investment| %>
       <div class="small-12 medium-6 large-4 column end margin-bottom">
         <div class="budget-execution">
-          <%= link_to investment.url, data: { 'equalizer-watch': true} do %>
-            <% if investment.image.present? %>
-              <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
-            <% else %>
-              <%= image_tag Rails.root.join('/budget_execution_no_image.jpg'), alt: investment.title %>
+          <%= link_to budget_investment_path(@budget, investment, anchor: "tab-milestones"), data: { 'equalizer-watch': true } do %>
+            <% investment.milestones.each do |milestone| %>
+              <% if milestone.image.present? %>
+                <%= image_tag milestone.image_url(:large), alt: milestone.image.title %>
+              <% elsif investment.image.present? %>
+                <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
+              <% else %>
+                <%= image_tag Rails.root.join('/budget_execution_no_image.jpg'), alt: investment.title %>
+              <% end %>
             <% end %>
             <div class="budget-execution-info">
               <div class="budget-execution-content">
