@@ -95,7 +95,9 @@ class Budget
       end
 
       def participants
-        stats_cache("participants") { User.where(id: (authors + voters + balloters).uniq) }
+        stats_cache("participants") do
+          User.where(id: (authors + voters + balloters + poll_ballot_voters).uniq)
+        end
       end
 
       def authors
@@ -108,6 +110,12 @@ class Budget
 
       def balloters
         stats_cache("balloters") { @budget.ballots.where("ballot_lines_count > ?", 0).pluck(:user_id) }
+      end
+
+      def poll_ballot_voters
+        stats_cache("poll_ballot_voters") do
+          @budget&.poll ? @budget.poll.voters.pluck(:user_id) : []
+        end
       end
 
       def total_participants_with_gender
