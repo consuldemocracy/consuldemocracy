@@ -4,7 +4,6 @@
       <div class="small-12 column margin-top">
         <div class="feed-content" data-equalizer-watch>
           <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
-
           <div class="row">
             <% feed.items.each do |item| %>
               <div class="<%= item.class.to_s.parameterize('_') %> columns large-12">
@@ -24,7 +23,6 @@
             <% end %>
           </div>
         </div>
-
         <%= link_to t("welcome.feed.see_all_proposals"), proposals_path, class: "see-all" %>
       </div>
     <% end %>
@@ -33,14 +31,12 @@
       <div class="small-12 medium-4 column margin-top">
         <div class="feed-content" data-equalizer-watch>
           <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
-
           <% feed.items.each do |item| %>
             <div class="<%= item.class.to_s.parameterize('_') %>">
               <strong><%= link_to item.title, url_for(item) %></strong>
             </div>
           <% end %>
         </div>
-
         <%= link_to t("welcome.feed.see_all_debates"), debates_path, class: "see-all" %>
       </div>
     <% end %>
