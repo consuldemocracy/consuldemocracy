@@ -21,7 +21,7 @@ class Dashboard::PollsController < Dashboard::BaseController
 
     @poll = Poll.new(poll_params.merge(author: current_user, related: proposal, stats_enabled: false))
     if @poll.save
-      redirect_to proposal_dashboard_poll_path(proposal, poll), notice: t("flash.actions.create.poll")
+      redirect_to proposal_dashboard_polls_path(proposal), notice: t("flash.actions.create.poll")
     else
       render :new
     end

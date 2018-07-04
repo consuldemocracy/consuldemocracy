@@ -1115,6 +1115,8 @@ en:
         success: Action successfully deleted
       form:
         submit_button: Save
+        day_offset_help_text: Enter 0 so that this value is not taken into account.
+        required_supports_help_text: Enter 0 so that this value is not taken into account.
     signature_sheets:
       author: Author
       created_at: Creation date

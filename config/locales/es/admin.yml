@@ -1113,6 +1113,8 @@ es:
         back: Volver a la lista
       form:
         submit_button: Guardar
+        day_offset_help_text: Introduce 0 para que este valor no se tenga en cuenta.
+        required_supports_help_text: Introduce 0 para que este valor no se tenga en cuenta.
       delete:
         success: Acción borrada con éxito
     signature_sheets:
