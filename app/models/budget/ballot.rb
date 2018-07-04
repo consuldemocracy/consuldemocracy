@@ -2,6 +2,7 @@ class Budget
   class Ballot < ActiveRecord::Base
     belongs_to :user
     belongs_to :budget
+    belongs_to :poll_ballot, class_name: "Poll::Ballot"
 
     has_many :lines, dependent: :destroy
     has_many :investments, through: :lines

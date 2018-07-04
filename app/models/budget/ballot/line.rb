@@ -40,7 +40,7 @@ class Budget
         end
 
         def store_user_heading
-          ballot.user.update(balloted_heading_id: heading.id)
+          ballot.user.update(balloted_heading_id: heading.id) unless ballot.physical == true
         end
     end
   end
