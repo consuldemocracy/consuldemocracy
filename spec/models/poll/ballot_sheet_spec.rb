@@ -37,4 +37,24 @@ describe Poll::BallotSheet do
 
   end
 
+  describe "#verify_ballots" do
+    it "creates ballots for each document number" do
+      budget = create(:budget)
+      poll = create(:poll, budget: budget)
+      poll_ballot = create(:poll_ballot_sheet, poll: poll, data: "1,2,3;4,5,6")
+      poll_ballot.verify_ballots
+
+      expect(Poll::Ballot.count).to eq(2)
+      expect(Budget::Ballot.count).to eq(2)
+    end
+  end
+
+  describe "#parsed_ballots" do
+    it "splits ballots by ';' or '\n'" do
+      data = "1,2,3;4,5,6\n7,8,9"
+      ballot_sheet.update(data: data)
+
+      expect(ballot_sheet.parsed_ballots).to eq(["1,2,3", "4,5,6", "7,8,9"])
+    end
+  end
 end
