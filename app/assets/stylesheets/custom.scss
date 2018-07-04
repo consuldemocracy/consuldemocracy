@@ -6,6 +6,7 @@
 
 
 //Variables
+$color-gray-super-light: #f2f2f2;
 $color-gray-light: #dfe0e4;
 $color-yellow: #ffcc00;
 $color-blue: #004a83;
@@ -18,19 +19,7 @@ body{
   font-family: $body-font-family;
 }
 
-//Button - Convert this for foundation
-.button{
-  background: $color-yellow;
-  color: $color-blue;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius:0;
 
-  &:hover{
-    background: $color-blue;
-    color: $color-yellow;
-  }
-}
 
 // .hollow{
 //   @include button($expand:false, $background:transparent, $background-hover:auto, $color:auto, $style:hollow);
@@ -56,6 +45,21 @@ header{
 }
 
 .home-page{
+
+  //Button - Convert this for foundation
+  .button{
+    background: $color-yellow;
+    color: $color-blue;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius:0;
+
+    &:hover{
+      background: $color-blue;
+      color: $color-yellow;
+    }
+  }
+
   //Home page Banner
   .home-banner{
     overflow: hidden;
@@ -117,6 +121,40 @@ header{
     }
   }
 
+  h3.title{
+    border:0;
+  }
+
+  .feed-description p,
+  a p.description {
+    font-size: 0.875rem;
+  }
+
+  .feeds-list{
+    .proposal{
+     clear: none;
+   }
+
+   a.see-all{
+     text-align: left;
+     border: 0;
+   }
+  }
+
+  .feed-content {
+
+    .debate,
+    .proposal {
+      margin-bottom: 0;
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+
+  .sidebar{
+    background:$color-gray-super-light;
+    padding: $line-height;
+  }
 }
 
 
