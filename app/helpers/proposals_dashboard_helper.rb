@@ -61,4 +61,13 @@ module ProposalsDashboardHelper
   def is_request_active(id)
     controller_name == 'proposals_dashboard' && action_name == 'new_request' && proposal_dashboard_action&.id == id
   end
+  
+  def resoure_availability_label(resource)
+    label = []
+
+    label << t('.required_days', days: resource.day_offset) if resource.day_offset > 0
+    label << t('.required_supports', supports: number_with_delimiter(resource.required_supports, delimiter: '.')) if resource.required_supports > 0
+
+    label.join(" #{t('.and')}<br>")
+  end
 end

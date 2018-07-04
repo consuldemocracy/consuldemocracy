@@ -249,4 +249,49 @@
   .proposal-dashboard-action-links {
     margin-bottom: 15pt;
   }
+
+  .resource-card {
+    min-height: 200pt;
+
+    .bottom-container {
+      position: relative;
+      padding-left: 0;
+      padding-right: 0;
+
+      .bottom-element {
+        position: absolute; 
+        bottom: 0; 
+        width: 100%;
+      }
+    }
+  }
+
+  .resource-card.success {
+    background-color: #c5f6eb;
+
+    i {
+      display: inline-block;
+      width: 20pt;
+      height: 20pt;
+      color: #00cf96;
+      border-radius: 10pt;
+      border: 1pt solid #00cf96;
+      padding-right: 4pt;
+    }
+  }
+
+  .resource-card.alert {
+    background-color: #ffe5e8;
+
+    i {
+      display: inline-block;
+      width: 20pt;
+      height: 20pt;
+      color: #ff828b;
+      border-radius: 10pt;
+      border: 1pt solid #ff828b;
+      padding-right: 4pt;
+
+    }
+  }
 }

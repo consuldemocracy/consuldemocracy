@@ -39,8 +39,6 @@ class ProposalDashboardAction < ActiveRecord::Base
               greater_than_or_equal_to: 0
             }
 
-  default_scope { order(order: :asc, title: :asc) }
-
   scope :active, -> { where(active: true) }
   scope :inactive, -> { where(active: false) }
   scope :resources, -> { where(action_type: 1) }
@@ -53,19 +51,18 @@ class ProposalDashboardAction < ActiveRecord::Base
       .where('day_offset <= ?', (Date.today - published_at).to_i)
   end
 
-  def self.next_goal_for(proposal)
+  def active_for?(proposal)
     published_at = proposal.published_at&.to_date || Date.today
 
+    required_supports <= proposal.votes_for.size && day_offset <= (Date.today - published_at).to_i
+  end
+
+  def self.next_goal_for(proposal)
     active
-      .where(
-        '(required_supports > ? or day_offset > ?)', 
-        proposal.votes_for.size, 
-        (Date.today - published_at).to_i)
+      .where('required_supports > ?', proposal.votes_for.size)
       .order(required_supports: :asc)
       &.first
   end
-
-  default_scope { order(order: :asc, title: :asc) }
 
   def request_to_administrators?
     request_to_administrators || false

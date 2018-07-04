@@ -1,5 +1,5 @@
 class ProposalsDashboardController < Dashboard::BaseController
-  helper_method :proposal_dashboard_action
+  helper_method :proposal_dashboard_action, :active_resources
 
   def index
     authorize! :dashboard, proposal
@@ -54,8 +54,11 @@ class ProposalsDashboardController < Dashboard::BaseController
 
   private
 
-
   def proposal_dashboard_action
     @proposal_dashboard_action ||= ProposalDashboardAction.find(params[:id])
+  end
+
+  def active_resources
+    ProposalDashboardAction.active.resources.order(required_supports: :asc, day_offset: :asc)
   end
 end

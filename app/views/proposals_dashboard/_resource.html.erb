@@ -1,0 +1,30 @@
+<div class="column" id="<%= dom_id(resource) %>">
+  <div class="card resource-card <%= resource.active_for?(proposal) ? 'success' : 'alert' %>">
+    <div class="card-section">
+      <p class="text-right">
+        <% if resource.active_for?(proposal) %>
+          <i class="fi-check"></i>
+        <% else %>
+          <i class="fi-lock"></i>
+        <% end %>
+      </p>
+      <h4 class="text-center"><%= resource.title %></h4>
+      <p class="text-center">
+        <%= resource.short_description %>
+      </p>
+    </div>
+
+    <div class="card-section text-center bottom-container">
+      <% if resource.active_for?(proposal) %>
+        <div class="bottom-element text-center">
+          <%= link_to t('.view_resource'), new_request_proposal_dashboard_path(proposal, resource), class: 'button success' %>
+        </div>
+      <% else %>
+        <strong>
+          <%== resoure_availability_label(resource) %>
+        </strong>
+      <% end %>
+    </div>
+  </div>
+</div>
+

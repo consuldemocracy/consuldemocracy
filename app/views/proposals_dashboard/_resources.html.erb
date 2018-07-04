@@ -1,0 +1,10 @@
+<% if active_resources.any? %>
+  <div class="action-title">
+    <h5><%= t('.available_resources') %></h5>
+    <hr>
+  </div>
+
+  <div class="row small-up-2 medium-up-3 large-up-4">
+    <%= render partial: 'resource', collection: active_resources %>
+  </div>
+<% end %>

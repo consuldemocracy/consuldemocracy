@@ -13,11 +13,11 @@ class Dashboard::BaseController < ApplicationController
   end
 
   def proposed_actions
-    @proposed_actions ||= ProposalDashboardAction.proposed_actions.active_for(proposal)
+    @proposed_actions ||= ProposalDashboardAction.proposed_actions.active_for(proposal).order(order: :asc)
   end
 
   def resources
-    @resources ||= ProposalDashboardAction.resources.active_for(proposal)
+    @resources ||= ProposalDashboardAction.resources.active_for(proposal).order(order: :asc)
   end
 
   def next_goal_supports

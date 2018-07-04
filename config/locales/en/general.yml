@@ -532,6 +532,13 @@ en:
       send_notification: Send notification
     new_request:
       links: Links
+    resources:
+      available_resources: Available resources
+    resource:
+      required_days: "%{days} days required"
+      required_supports: "%{supports} supports required"
+      and: and
+      view_resource: See resource
   dashboard:
     polls:
       index:
