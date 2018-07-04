@@ -19,14 +19,15 @@
       </li>
     <% end %>
 
-    <li>
-      <%= layout_menu_link_to t("¿De qué se trata?"),
-                              proposals_path,
-                              controller_name == 'proposals',
-                              accesskey: "2",
-                              title: t("shared.go_to_page") + t("layouts.header.proposals") %>
-    </li>
-
+    <% if setting['org_name'] == 'MASDEMOCRACIAEUROPA' %>
+      <li>
+        <%= link_to "¿De qué se trata?",
+                      page_path('de-que-se-trata'),
+                      accesskey: "7",
+                      class: ("is-active" if current_page?(page_path('de-que-se-trata'))),
+                      title: t("shared.go_to_page") + "¿De qué se trata?" %>
+      </li>
+    <% end %>
 
     <% if feature?(:polls) %>
       <li>

@@ -10,5 +10,9 @@
         <h3><%= card.title %></h3>
       </figcaption>
     </figure>
+    <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+      <p class="description"><%= card.description %></p>
+      <p><%= card.link_text %></p>
+    <% end %>
   <% end %>
 </div>
