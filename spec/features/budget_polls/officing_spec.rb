@@ -3,8 +3,7 @@ require 'rails_helper'
 feature 'Budget Poll Officing' do
 
   scenario 'Show sidebar menu if officer has shifts assigned' do
-    budget = create(:budget)
-    poll = create(:poll, budget: budget)
+    poll = create(:poll)
     booth = create(:poll_booth)
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
 
