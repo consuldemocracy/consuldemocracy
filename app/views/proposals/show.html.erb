@@ -141,7 +141,9 @@
           <h2><%= t("votes.supports") %></h2>
           <div id="<%= dom_id(@proposal) %>_votes">
             <% if @proposal.draft? %>
-              <p><%= t('.draft') %></p>
+              <div class="callout primary">
+                <p class=text-center><strong><%= t('.draft') %></strong></p>
+              </div>
             <% elsif @proposal.successful? %>
               <p>
                 <%= t("proposals.proposal.successful",

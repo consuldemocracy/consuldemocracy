@@ -499,7 +499,7 @@ es:
       title_external_url: "Documentación adicional"
       title_video_url: "Vídeo externo"
       author: Autor
-      draft: En borrador
+      draft: Propuesta en borrador
     update:
       form:
         submit_button: Guardar cambios

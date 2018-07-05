@@ -499,7 +499,7 @@ en:
       title_external_url: "Additional documentation"
       title_video_url: "External video"
       author: Author
-      draft: Draft
+      draft: Proposal in draft
     update:
       form:
         submit_button: Save changes
