@@ -18,9 +18,13 @@
     </div>
 
     <div class="card-section text-center">
-      <a href='#' class="button">
-        <%= t('.view_responses') %>
-      </a>
+      <% if poll.incoming? %>
+        <%= link_to 'Editar encuesta', edit_proposal_dashboard_poll_path(proposal, poll), class: 'button hollow' %>
+      <% else %>
+        <a href='#' class="button">
+          <%= t('.view_responses') %>
+        </a>
+      <% end %>
     </div>
   </div>
 </div>

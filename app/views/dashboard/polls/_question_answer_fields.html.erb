@@ -4,17 +4,21 @@
       <%= f.text_field :title %>
     </div>
     <div class="small-12 large-3 column" style="padding-top: 20px">
-      <%= link_to_remove_association f, class: 'button hollow' do %>
+      <%= link_to_remove_association f, class: 'button hollow alert' do %>
         <span class="icon-x" aria-hidden="true"></span>
-        <span><%=t(".remove_answer") %></span>
+        <span><%=t('.remove_answer') %></span>
       <% end %>
     </div>
   </div>
 
-  <div class="ckeditor">
-    <%= f.cktext_area :description,
-                      maxlength: Poll::Question.description_max_length,
-                      ckeditor: { language: I18n.locale } %>
+  <div class="row">
+    <div class="small-12 large-9 column">
+      <div class="ckeditor">
+        <%= f.cktext_area :description,
+                          maxlength: Poll::Question.description_max_length,
+                          ckeditor: { language: I18n.locale } %>
+      </div>
+    </div>
   </div>
 
   <hr style="max-width:100%">
