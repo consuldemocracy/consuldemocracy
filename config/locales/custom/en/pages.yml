@@ -14,3 +14,7 @@ en:
         feature_4: "creando una o más propuestas distintas o contrapropuestas a partir de propuestas existentes."
     titles:
       legal_disclaimer: Legal disclaimer
+    slugs:
+      privacy: privacy-policy
+      terms_and_conditions: terms-and-conditions
+      legal_notice: legal-notice
