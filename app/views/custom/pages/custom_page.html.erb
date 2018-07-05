@@ -8,7 +8,12 @@
       <h2><%= @custom_page.subtitle%></h2>
     <% end %>
 
-    <%= safe_html_with_links @custom_page.content %>
+    <% if setting['org_name'] == 'MASDEMOCRACIAEUROPA' %>
+      <%= safe_html_with_links @custom_page.content %>
+    <% else %>
+      <%= text_with_links @custom_page.content %>
+    <% end %>
+    
   </div>
 
   <% if @custom_page.print_content_flag %>
