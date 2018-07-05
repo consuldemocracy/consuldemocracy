@@ -1285,9 +1285,10 @@ ActiveRecord::Schema.define(version: 20180718115545) do
     t.string   "link_text"
     t.string   "link_url"
     t.string   "label"
-    t.boolean  "header",      default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.boolean  "header",              default: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "is_background_image"
   end
 
   create_table "widget_feeds", force: :cascade do |t|

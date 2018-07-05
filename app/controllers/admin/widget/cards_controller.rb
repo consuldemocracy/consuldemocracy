@@ -40,7 +40,7 @@ class Admin::Widget::CardsController < Admin::BaseController
 
   def card_params
     params.require(:widget_card).permit(:label, :title, :description, :link_text, :link_url,
-                                        :button_text, :button_url, :alignment, :header,
+                                        :button_text, :button_url, :alignment, :header, :is_background_image,
                                         image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy])
   end
 

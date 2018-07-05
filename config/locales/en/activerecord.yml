@@ -258,6 +258,7 @@ en:
         description: Description
         link_text: Link text
         link_url: Link URL
+        is_background_image: Use as background
       widget/feed:
         limit: Number of items
     errors:
