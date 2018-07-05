@@ -76,11 +76,18 @@
             <%= @stats[:total_supports] %> <em><%= t("budgets.stats.supports") %></em><br>
           </span>
 
-          <span class="label balloting"></span>&nbsp;
-          <span class="uppercase"><strong><%= t("budgets.stats.total_participants_vote_phase") %></strong></span>:
-          <span id="total_participants_vote_phase">
-            <%= @stats[:total_participants_vote_phase] %> <em><%= t("budgets.stats.participants") %></em>,
-            <%= @stats[:total_votes] %> <em><%= t("budgets.stats.votes") %></em><br>
+          <br>
+
+          <span class="label"></span>&nbsp;
+          <span class="uppercase"><strong><%= t("budgets.stats.total_participants_web") %></strong></span>:
+          <span id="total_participants_web">
+            <%= @stats[:total_participants_web] %><br>
+          </span>
+
+          <span class="label"></span>&nbsp;
+          <span class="uppercase"><strong><%= t("budgets.stats.total_participants_booths") %></strong></span>:
+          <span id="total_participants_booths">
+            <%= @stats[:total_participants_booths] %><br>
           </span>
         </p>
       </div>
