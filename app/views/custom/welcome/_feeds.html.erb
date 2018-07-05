@@ -2,8 +2,8 @@
   <% @feeds.each do |feed| %>
 
     <% if feed_proposals?(feed) %>
-      <div class="small-12 medium-8 column margin-top">
-        <div class="feed-content" data-equalizer-watch>
+      <div class="small-12 medium-8 column padding-top">
+        <div class="feed-content">
           <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
 
           <% feed.items.each do |item| %>
@@ -45,7 +45,7 @@
         </div>
       <% end %>
     <% else %>
-      <div class="small-12 medium-4 column margin-top">
+      <div class="small-12 medium-4 column padding-top sidebar">
         <div class="feed-content" data-equalizer-watch>
           <h3 class="title">#Consultas ciudadanas</h3>
           <h3 class="title">#MásDemocraciaenEuropa</h3>

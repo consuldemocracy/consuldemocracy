@@ -23,7 +23,9 @@
                           class: "float-left",
                           size: "48x48",
                           alt: t("layouts.header.logo")) %>
-            <%= setting["org_name"] %>
+            <div class="title">
+              <%= setting["org_name"] %>
+            </div>
           <% end %>
         </li>
       </ul>
@@ -52,7 +54,8 @@
         </ul>
       </div>
 
-      <div class="show-for-small-only">
+      <div class="small-12 show-for-small-only">
+        <hr />
         <div class="subnavigation row">
           <%= render "shared/subnavigation" %>
           <div class="small-12 column">
