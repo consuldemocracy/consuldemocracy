@@ -11,8 +11,8 @@
 
 <%= render "header", header: @header %>
 
-<main data-equalizer="main">
-  <div class="column" data-equalizer-watch="main">
+<main>
+  <div class="column">
     <%= render "feeds" %>
     <div class="row">
       <div class="small-12 column <%= 'large-8' if feed_processes_enabled? %>">

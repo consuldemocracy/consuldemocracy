@@ -12,6 +12,28 @@ $color-blue: #004a83;
 $color-blue-2: #002f7a;
 $body-font-family: 'Lato', 'Arial', sans-serif !important;
 
+
+
+.button {
+  background: $color-yellow;
+  font-size: $base-font-size;
+  color: $color-blue-2;
+  &:hover {
+    text-decoration: none !important;
+    color: $color-blue-2;
+    background: #fff;
+  }
+}
+
+.button.hollow {
+  border: 1px solid $color-yellow;
+  color: $color-yellow;
+  &:hover {
+    border: 1px solid #fff;
+    color: #fff;
+  }
+}
+
 body{
   font-family: $body-font-family;
   &.home-page{
@@ -20,13 +42,42 @@ body{
     }
   }
 }
+
 //Header
 header{
   background: $color-gray-light !important;
 
-  .top-bar{
-    background: $color-gray-light !important;
+  @include breakpoint(small) {
+    .title-bar{
+      margin-top: 10px;
+    }
+  }
 
+  @include breakpoint(medium) {
+    .title-bar{
+      margin-top: 0;
+    }
+  }
+
+  .top-bar#responsive_menu{
+    @include breakpoint(small) {
+      margin-top: $line-height;
+      padding: $line-height;
+    }
+
+    @include breakpoint(medium) {
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+
+  .top-bar{
+    background: $color-gray-light;
+    .subnavigation {
+      a{
+        color:$color-blue;
+      }
+    }
     .menu > li a{
       color: $color-blue;
     }
@@ -39,6 +90,16 @@ header{
         margin-top: .7rem;
         margin-left: .5rem;
       }
+
+      .title{
+        @include breakpoint(small) {
+          font-size: 13px;
+          float: left;
+          display: inline-block;
+          margin-top: 10px;
+          margin-left: 10px;
+        }
+      }
     }
   }
 }
@@ -49,22 +110,6 @@ header{
   header{
     margin-bottom: 0;
   }
-  //Button - Convert this for foundation
-  .button{
-    background: $color-yellow;
-    color: $color-blue;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius:3px;
-
-    &:hover{
-      background: $color-blue;
-      color: $color-yellow;
-    }
-  }
-  // .hollow{
-  //   @include button($expand:false, $background:transparent, $background-hover:auto, $color:auto, $style:hollow);
-  // }
 
   //Home page Banner
   .home-banner{
@@ -73,34 +118,87 @@ header{
     position: relative;
 
     .content{
-      padding-top: 4rem;
-      padding-bottom: 4rem;
-      position: relative;
-      z-index: 2;
+
+      @include breakpoint(medium) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      @include breakpoint(small) {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      h1{
+        @include breakpoint(medium) {
+          color:#fff;
+          max-width: 100%;
+        }
+
+        @include breakpoint(small) {
+          color: $black;
+          max-width: 400px;
+          line-height: 1;
+          margin: 0 auto;
+          float: none;
+        }
+      }
+
+      .lead{
+        @include breakpoint(small) {
+          color: $black;
+          font-size: 1.3rem;
+        }
+        @include breakpoint(medium) {
+          color: #fff;
+        }
+      }
     }
 
     .bg-overlay{
-      position: absolute;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0,0,0,0.4);
-      z-index: 1;
+      @include breakpoint(medium) {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.4);
+        z-index: 1;
+        display: block;
+      }
+      @include breakpoint(small) {
+        // display: none;
+      }
     }
 
     .bg-image{
-      position: absolute;
-      width: 100%;
-      height: 100vh;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+      @include breakpoint(medium) {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      @include breakpoint(small) {
+        // position: relative;
+        // height: auto;
+      }
+
     }
   }
 
   .questions{
-    padding: $line-height;
-    padding-top: $line-height*3;
-    padding-bottom: $line-height*3;
+    @include breakpoint(medium) {
+      padding: $line-height;
+      padding-top: $line-height*3;
+      padding-bottom: $line-height*3;
+    }
+
+    @include breakpoint(small) {
+      padding-top: $line-height;
+      padding-bottom: $line-height;
+    }
   }
 
   .buttons{
@@ -145,16 +243,6 @@ header{
      text-align: left;
      border: 0;
    }
-  }
-
-  .feed-content {
-
-    .debate,
-    .proposal {
-      // margin-bottom: 0;
-      // margin-top: 0;
-      // padding: 0;
-    }
   }
 
   .sidebar{
