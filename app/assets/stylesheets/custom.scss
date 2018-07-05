@@ -72,7 +72,7 @@ header{
   }
 
   .top-bar{
-    background: $color-gray-light;
+    background: $color-gray-light !important;
     .subnavigation {
       a{
         color:$color-blue;
@@ -285,8 +285,6 @@ header{
     padding-top: $line-height;
   }
 }
-
-
 
 // Check this...is not mine....
 .icon-linkedin{
