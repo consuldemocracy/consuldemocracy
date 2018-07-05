@@ -1,0 +1,9 @@
+<% if proposed_actions.any? %>
+  <br><br>
+  <div class="action-title">
+    <h5><%= t('.title') %></h5>
+    <hr>
+  </div>
+
+  <%= render partial: 'proposed_action', collection: proposed_actions %>
+<% end %>

@@ -508,15 +508,12 @@ es:
       my_proposal: Mi propuesta
       progress: Progreso
       resources: Recursos
-      actions: Acciones
       polls: Encuestas
-    proposed_action:
-      execute: Ejecutar
     form:
       request: Solicitar
     create_request:
       success: La petición ha sido correctamente enviada al administrador.
-    stats:
+    progress:
       title: Gráfico
       group_by_year: Agrupar por año
       group_by_month: Agrupar por meses
@@ -539,6 +536,8 @@ es:
       required_supports: "%{supports} apoyos necesarios"
       and: y
       view_resource: Ver recurso
+    recommended_actions:
+      title: Acciones recomendadas
   dashboard:
     polls:
       index:

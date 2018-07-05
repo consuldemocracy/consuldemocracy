@@ -21,11 +21,5 @@
 
 <%= javascript_include_tag 'dashboard_graphs', 'data-turbolinks-track' => true %>
 
-<table>
-  <caption><%= t('proposals_dashboard.menu.actions') %></caption>
-  <% proposed_actions.each do |action| %>
-    <%= render partial: 'proposed_action', locals: { action: action } %>
-  <% end %>
-</table>
-
+<%= render 'recommended_actions' %>
 <%= render 'resources' %>

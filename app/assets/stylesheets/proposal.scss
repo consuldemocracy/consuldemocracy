@@ -294,4 +294,41 @@
 
     }
   }
+
+  .proposed-action {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 15pt;
+
+    .exec-indicator {
+      margin-right: 10pt;
+      
+      i {
+        color: #00e193;
+      }
+
+      .checkbox-unchecked {
+        display:block; 
+        width: 16px; 
+        height: 16px; 
+        border: 1px solid lightgray; 
+        margin-top: 4px;
+      }
+    }
+
+    h4 {
+      font-weight: normal;
+    }
+
+    p {
+      color: #535469;
+      line-height: 1rem;
+      font-size: 16px;
+      margin: 0;
+    }
+    
+    a {
+      font-size: 16px;
+    }
+  }
 }
