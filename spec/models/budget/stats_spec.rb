@@ -68,6 +68,22 @@ describe Budget::Stats do
 
   end
 
+  context "#total_participants_web" do
+
+    it "returns the number of total participants in the votes phase via web" do
+      expect(@stats[:total_participants_web]).to be 3
+    end
+
+  end
+
+  context "#total_participants_booths" do
+
+    it "returns the number of total participants in the votes phase in booths" do
+      expect(@stats[:total_participants_booths]).to be 1
+    end
+
+  end
+
   context "#total_budget_investments" do
 
     it "returns the number of total budget investments" do
