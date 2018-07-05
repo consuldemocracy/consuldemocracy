@@ -262,7 +262,24 @@ header{
   min-height: auto;
   background: $color-gray-light;
   border-top: 0;
+  .footer-sections{
+    @include breakpoint(small) {
+      text-align: center;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    @include breakpoint(medium) {
+      margin-top: $line-height;
+      padding-top: $line-height;
+    }
 
+    div{
+      @include breakpoint(small) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
   .subfooter{
     margin-top: $line-height;
     padding-top: $line-height;
