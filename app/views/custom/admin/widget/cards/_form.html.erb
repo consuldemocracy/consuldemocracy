@@ -5,7 +5,7 @@
 
   <%= f.text_field :title %>
 
-  <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+  <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' || params[:welcome_header] == "true"  %>
     <%= f.text_area :description, rows: 5 %>
 
     <div class="small-12 medium-6">
