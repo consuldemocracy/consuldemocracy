@@ -85,7 +85,7 @@
       },
       axis: {
         y: {
-          min: 0,
+          min: this.proposalSuccess * 0.1,
           max: this.proposalSuccess,
           label: { 
             text: this.supportsLabel,
