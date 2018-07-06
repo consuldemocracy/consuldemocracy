@@ -537,6 +537,17 @@ es:
       view_resource: Ver recurso
     recommended_actions:
       title: Acciones recomendadas
+    next_goal:
+      title: Meta
+      target_supports: 
+        one: Consigue %{count} apoyo para tu propuesta
+        other: Consigue %{count} apoyos para tu propuesta
+      days:
+        one: "%{count} día"
+        other: "%{count} días"
+      unlocked_resource: Recurso desbloqueado
+      ideal_time: Tiempo ideal
+      see_complete_course: Ver ruta completa
   dashboard:
     polls:
       index:

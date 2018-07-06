@@ -1,7 +1,7 @@
 class Dashboard::BaseController < ApplicationController
   before_action :authenticate_user!
 
-  helper_method :proposal, :proposed_actions, :resource, :resources, :next_goal_supports, :next_goal_progress, :community_members_count
+  helper_method :proposal, :proposed_actions, :resource, :resources, :next_goal, :next_goal_supports, :next_goal_progress, :community_members_count
 
   respond_to :html
   layout 'proposals_dashboard'
@@ -21,7 +21,7 @@ class Dashboard::BaseController < ApplicationController
   end
 
   def next_goal_supports
-    @next_goal_supports ||= ProposalDashboardAction.next_goal_for(proposal)&.required_supports || Setting["votes_for_proposal_success"]
+    @next_goal_supports ||= next_goal&.required_supports || Setting["votes_for_proposal_success"]
   end
 
   def next_goal_progress
@@ -32,5 +32,9 @@ class Dashboard::BaseController < ApplicationController
     Rails.cache.fetch("community/#{proposal.community.id}/participants_count", expires_in: 1.hour) do
       proposal.community.participants.count
     end
+  end
+
+  def next_goal
+    @next_goal ||= ProposalDashboardAction.next_goal_for(proposal)
   end
 end

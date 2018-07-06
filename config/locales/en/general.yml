@@ -537,6 +537,17 @@ en:
       view_resource: See resource
     recommended_actions:
       title: Recommended actions
+    next_goal:
+      title: Goal
+      target_supports: 
+        one: Get %{count} support for your proposal
+        other: Get %{count} supports for your proposal
+      days:
+        one: "%{count} day"
+        other: "%{count} days"
+      unlocked_resource: Resource unlocked
+      ideal_time: Ideal time
+      see_complete_course: Check out the complete course
   dashboard:
     polls:
       index:
