@@ -515,10 +515,9 @@ es:
       success: La petición ha sido correctamente enviada al administrador.
     progress:
       title: Gráfico
-      group_by_year: Agrupar por año
-      group_by_month: Agrupar por meses
-      group_by_week: Agrupar por semanas
-      group_by_date: Agrupar por fechas
+      group_by_month: Mensual
+      group_by_week: Semanal
+      group_by_date: Diario
       progress: Progreso acumulado
       supports: Apoyos
     index:

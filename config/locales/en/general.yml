@@ -515,10 +515,9 @@ en:
       success: The request for the administrator has been successfully sent.
     progress:
       title: Graphic
-      group_by_year: Group by year
-      group_by_month: Group by month
-      group_by_week: Group by week
-      group_by_date: Group by date
+      group_by_month: Monthly
+      group_by_week: Weekly
+      group_by_date: Daily
       progress: Acumulated progress
       supports: Supports
     index:

@@ -1,3 +1,7 @@
+namespace :dashboard do
+  resources :resources, only: [:index]
+end
+
 resources :proposals do
   resources :proposals_dashboard, as: :dashboard, path: :dashboard, only: [:index] do
     collection do
