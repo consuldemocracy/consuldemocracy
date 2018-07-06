@@ -9,6 +9,8 @@ en:
     header:
       logo: MÁS DEMOCRACIA EN EUROPA logo
       open_gov: Más Democracia En Europa
+      subnavigation:
+        about: "What is this about?"
     footer:
       participation_text: Participates in topics of interest to the European Economic Community
       copyright: MasDemocraciaEnEuropa, %{year}

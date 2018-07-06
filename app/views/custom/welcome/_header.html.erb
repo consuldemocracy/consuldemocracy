@@ -2,12 +2,10 @@
   <div class="home-banner">
     <% if header.image.present? %>
     <div class="bg-overlay"></div>
-    <!-- <div class="bg-image" style="background-image: url('<%#= header.image_url(:large)  %>')"></div> -->
+    <!-- <div class="bg-image" style="background-image: url('<%# header.image_url(:original)  %>')"></div> -->
 
       <div class="bg-image">
-        <%#= image_tag("banners/banner_mas_democracia_europa.jpg", alt: "") %>
-        <%#= image_tag("banners/banner-eu-2.jpg", alt: "") %>
-        <%= image_tag("banners/banner-eu-3.png", alt: "") %>
+        <%= image_tag("banners/banner-eu-3.jpg", alt: "") %>
       </div>
     <% end %>
 
