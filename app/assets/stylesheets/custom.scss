@@ -22,6 +22,7 @@ $body-font-family: 'Lato', 'Arial', sans-serif !important;
     text-decoration: none !important;
     color: $color-blue-2;
     background: #fff;
+    border: 1px solid $color-blue-2;
   }
 }
 
@@ -29,8 +30,8 @@ $body-font-family: 'Lato', 'Arial', sans-serif !important;
   border: 1px solid $color-yellow;
   color: $color-yellow;
   &:hover {
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid $color-blue-2;
+    color: $color-blue-2;
   }
 }
 

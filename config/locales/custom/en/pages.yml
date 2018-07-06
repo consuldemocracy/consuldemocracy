@@ -24,6 +24,10 @@ en:
         feature_2: "commenting on existing proposals,"
         feature_3: "making one or more proposals complementary to an existing proposal, and/or"
         feature_4: "creating one or more separate or counter-proposals from existing proposals."
+      proposals:
+        title: "Proposals"
+        description: "In the %{link} section you can put forward proposals for More democracy in Europe to carry them out..."
+        link: "proposals"
     titles:
       legal_disclaimer: Legal disclaimer
     slugs:
