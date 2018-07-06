@@ -38,6 +38,8 @@ es:
       total_selected_investments: Propuestas en la fase final
       total_unfeasible_investments: Propuestas inviables
       total_participants_support_phase: Fase de apoyos
+      total_participants_web: Participantes web en votación final
+      total_participants_booths: Participantes en urnas votación final
       participants: Participantes
       supports: Apoyos
       votes: Votos

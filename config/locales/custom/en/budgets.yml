@@ -24,6 +24,8 @@ en:
       total_selected_investments: Proposals on final phase
       total_unfeasible_investments: Unfeasible proposals
       total_participants_support_phase: Support phase
+      total_participants_web: Vote phase web participants
+      total_participants_booths: Vote phase booth participants
       participants: Participants
       supports: Supports
       votes: Votes
