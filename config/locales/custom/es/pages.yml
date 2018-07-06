@@ -12,6 +12,10 @@ es:
         feature_2: "comentando las propuestas existentes,"
         feature_3: "realizando una o más propuestas complementarias a una propuesta existente, y/o"
         feature_4: "creando una o más propuestas distintas o contrapropuestas a partir de propuestas existentes."
+      proposals:
+        title: "Propuestas"
+        description: "En la sección de %{link} puedes plantear propuestas para que Más democracia en Europa las lleve a cabo..."
+        link: "propuestas"
     titles:
       legal_disclaimer: Aviso legal
     slugs:
