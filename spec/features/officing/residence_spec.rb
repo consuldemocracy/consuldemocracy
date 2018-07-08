@@ -3,6 +3,14 @@ require 'rails_helper'
 feature 'Residence' do
   let(:officer) { create(:poll_officer) }
 
+  background do
+    travel_to Time.now # TODO: use `freeze_time` after migrating to Rails 5.
+  end
+
+  after do
+    travel_back
+  end
+
   feature "Officers without assignments" do
 
     scenario "Can not access residence verification" do
