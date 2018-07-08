@@ -64,21 +64,21 @@ cp config/database-docker.yml.example config/database.yml
 
 Then you'll have to build the container with:
 ```bash
-sudo docker build -t consul .
+docker build -t consul .
 ```
 
 Create your app database images:
 
 ```bash
-sudo docker-compose up -d database
+docker-compose up -d database
 ```
 
 Once built you can initialize your development DB and populate it with:
 ```
-sudo docker-compose run app rake db:create
-sudo docker-compose run app rake db:migrate
-sudo docker-compose run app rake db:seed
-sudo docker-compose run app rake db:dev_seed
+docker-compose run app rake db:create
+docker-compose run app rake db:migrate
+docker-compose run app rake db:seed
+docker-compose run app rake db:dev_seed
 ```
 
 ### Windows
@@ -91,21 +91,46 @@ Pending to be completed... Contributions Welcome!
 
 Now we can finally run the application with:
 ```bash
-sudo docker-compose up
+docker-compose up
 ```
 
-And you'll be able to acces it at your browser visiting [http://localhost:3000](http://localhost:3000)
+And you'll be able to access it at your browser visiting [http://localhost:3000](http://localhost:3000)
 
 Additionally, if you want to run the rails console just run in another terminal:
 
 ```bash
-sudo docker-compose run app rails console
+docker-compose run app rails console
 ```
 
-To verify the containers are up execute **sudo docker ps .** You should see output similar to this:
-
+To verify the containers are up execute:
+```bash
+docker ps .
+``` 
+You should see output similar to this:
 ![docker ps](https://i.imgur.com/ASvzXrd.png)
 
 ### Windows
 
 Pending to be completed... Contributions Welcome!
+
+## Having trouble?
+Run these commands at **Consul's directory**, to erase all your previous Consul's Docker images and containers. Then restart the Docker [installation process](#installation):
+
+1. Remove all CONSUL images:
+```bash
+docker-compose down --rmi all -v --remove-orphans
+```
+
+2. Remove all CONSUL containers
+```bash
+docker-compose rm -f -s -v
+``` 
+
+3. Verify if there is some container yet:
+```bash
+docker ps -a 
+```
+Case positive, remove each one manually:
+```bash
+docker container rm <container_id>
+```

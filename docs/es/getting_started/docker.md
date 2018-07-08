@@ -63,20 +63,20 @@ cp config/database-docker.yml.example config/database.yml
 
 Y generamos el contenedor:
 ```bash
-sudo docker build -t consul .
+docker build -t consul .
 ```
 
 Creamos las imágenes de base de datos:
 ```bash
-sudo docker-compose up -d database
+docker-compose up -d database
 ```
 
 Y la inicializamos con:
 ```
-sudo docker-compose run app rake db:create
-sudo docker-compose run app rake db:migrate
-sudo docker-compose run app rake db:seed
-sudo docker-compose run app rake db:dev_seed
+docker-compose run app rake db:create
+docker-compose run app rake db:migrate
+docker-compose run app rake db:seed
+docker-compose run app rake db:dev_seed
 ```
 
 ### Windows
@@ -89,7 +89,7 @@ Pendiente de ser completado... ¡Se agradecen las Contribuciones!
 
 Una vez instalado, puedes lanzar la aplicación con:
 ```bash
-sudo docker-compose up
+docker-compose up
 ```
 
 Y podrás acceder a la aplicación desde tu navegador visitando [http://localhost:3000](http://localhost:3000)
@@ -97,16 +97,39 @@ Y podrás acceder a la aplicación desde tu navegador visitando [http://localhos
 Adicionalmente, si quieres lanzar por ejemplo la consola de rails:
 
 ```bash
-sudo docker-compose run app rails console
+docker-compose run app rails console
 ```
 
 Para verificar que los contenedores estan corriendo usa:
-`sudo docker ps .`
-
+```bash
+docker ps .
+```
 Deberías obtener algo similar a:
-
 ![docker ps](https://i.imgur.com/ASvzXrd.png)
 
 ### Windows
 
 Pendiente de ser completado... ¡Se agradecen las Contribuciones!
+
+
+## ¿Habiendo problemas?
+Ejecute los comandos en el **directorio de CONSUL**, para borrar todas las imágenes y contenedores anteriores del Docker de CONSUL. Luego, reinicie el [proceso de instalación](#instalación) de Docker:
+
+1. Quitar todas las imágenes de CONSUL:
+```bash
+docker-compose down --rmi all -v --remove-orphans
+```
+
+2. Quitar todos los contenedores de CONSUL
+```bash
+docker-compose rm -f -s -v
+``` 
+
+3. Verificar si todavía hay algún contenedor:
+```bash
+docker ps -a 
+```
+Caso positivo, eliminar cada uno de forma manual:
+```bash
+docker container rm <container_id>
+```
