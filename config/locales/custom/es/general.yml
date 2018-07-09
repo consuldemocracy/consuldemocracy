@@ -32,10 +32,10 @@ es:
       proposal_text_note_html: Al escribir, procura que las frases sean cortas y claras. Utiliza palabras que todo el mundo pueda comprender, evitando por ejemplo el lenguaje técnico. Intenta mantener la atención del lector a través de ejemplos, o con guiones para enumerar distintos aspectos, y evitando repetir las ideas.  <br>(máximo 6000 caracteres ~ 1200 palabras)
       proposal_title: Título de la propuesta
       proposal_title_note: El título debe ser breve. Se trata de describir tu propuesta de modo que suscite interés.
-      tag_category_label: Selecciona aquí las palabras clave
-      tags_instructions: "Es recomendable seleccionar o crear algunas palabras clave para identificar tu propuesta. Puedes elegir entre las palabras clave existentes o introducir las que desees separadas por una coma (',')."
-      tags_label: Palabras clave
-      tags_placeholder: Escribe las palabras clave que desees separadas por una coma (',')
+      tag_category_label: Selecciona aquí las palabras clave/categorías
+      tags_instructions: "Es recomendable seleccionar o crear algunas palabras clave/categorías para identificar tu propuesta. Puedes elegir entre las palabras clave/categorías existentes o introducir las que desees separadas por una coma (',')."
+      tags_label: Palabras clave/Categorías
+      tags_placeholder: Escribe las palabras clave/categorías que desees separadas por una coma (',')
     new:
       recommendations_title: Antes de comenzar a redactar tu propuesta ...
       recommendation_one: Has comprobado si la propuesta, o alguna propuesta muy similar, se ha puesto ya en práctica? Es conveniente reflexionar uns minutos sobre ello, y hacer una consulta en Internet usando palabras clave.
