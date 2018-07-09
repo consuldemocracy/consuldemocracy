@@ -43,6 +43,7 @@ en:
       recommendation_four: Enjoy this space and the voices that fill it. It belongs to you too.
       recommendation_five: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
       start_new: Create new proposal
+      search_proposals: Search proposals
       form:
         submit_button: Send your proposal
     show:
