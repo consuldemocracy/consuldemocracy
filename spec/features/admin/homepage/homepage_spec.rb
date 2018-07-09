@@ -74,39 +74,59 @@ feature 'Homepage' do
 
   end
 
-  scenario "Cards" do
-    card1 = create(:widget_card, label: "Card1 label",
-                                 title: "Card1 text",
-                                 description: "Card1 description",
-                                 link_text: "Link1 text",
-                                 link_url: "consul1.dev")
+  context "Cards" do
+    scenario "Show" do
+      card1 = create(:widget_card, label: "Card1 label",
+                                   title: "Card1 text",
+                                   description: "Card1 description",
+                                   link_text: "Link1 text",
+                                   link_url: "consul1.dev")
 
-    card2 = create(:widget_card, label: "Card2 label",
-                                 title: "Card2 text",
-                                 description: "Card2 description",
-                                 link_text: "Link2 text",
-                                 link_url: "consul2.dev")
+      card2 = create(:widget_card, label: "Card2 label",
+                                   title: "Card2 text",
+                                   description: "Card2 description",
+                                   link_text: "Link2 text",
+                                   link_url: "consul2.dev")
 
-    visit root_path
+      visit root_path
 
-    expect(page).to have_css(".card", count: 2)
+      expect(page).to have_css(".card", count: 2)
 
-    within("#widget_card_#{card1.id}") do
-      expect(page).to have_content("Card1 label")
-      expect(page).to have_content("Card1 text")
-      expect(page).to have_content("Card1 description")
-      expect(page).to have_content("Link1 text")
-      expect(page).to have_link(href: "consul1.dev")
-      expect(page).to have_css("img[alt='#{card1.image.title}']")
+      within("#widget_card_#{card1.id}") do
+        expect(page).to have_content("Card1 label")
+        expect(page).to have_content("Card1 text")
+        expect(page).to have_content("Card1 description")
+        expect(page).to have_content("Link1 text")
+        expect(page).to have_link(href: "consul1.dev")
+        expect(page).to have_css("img[alt='#{card1.image.title}']")
+      end
+
+      within("#widget_card_#{card2.id}") do
+        expect(page).to have_content("Card2 label")
+        expect(page).to have_content("Card2 text")
+        expect(page).to have_content("Card2 description")
+        expect(page).to have_content("Link2 text")
+        expect(page).to have_link(href: "consul2.dev")
+        expect(page).to have_css("img[alt='#{card2.image.title}']")
+      end
     end
 
-    within("#widget_card_#{card2.id}") do
-      expect(page).to have_content("Card2 label")
-      expect(page).to have_content("Card2 text")
-      expect(page).to have_content("Card2 description")
-      expect(page).to have_content("Link2 text")
-      expect(page).to have_link(href: "consul2.dev")
-      expect(page).to have_css("img[alt='#{card2.image.title}']")
+    scenario "Edit" do
+      card1 = create(:widget_card, header: true)
+
+      visit edit_admin_widget_card_path(card1)
+
+      within ".image-form" do
+        check("Use as background")
+      end
+
+      click_button "Save header"
+
+      visit root_path
+
+      within("div.background-header") do
+        expect(page).to have_css("img[alt='#{card1.image.title}']")
+      end
     end
   end
 
