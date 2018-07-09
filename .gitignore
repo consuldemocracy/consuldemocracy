@@ -21,11 +21,15 @@
 /config/secrets.yml
 /config/deploy-secrets.yml
 /config/maintenance.yml
-
 /coverage
 
 /config/beta-testers.txt
 .byebug_history
+
+/db/seeds.rb
+/config/database.yml.example
+/config/environments/production.rb
+/config/secrets.yml.example
 
 # Mac finder artifacts
 .DS_Store

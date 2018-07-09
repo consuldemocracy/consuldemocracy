@@ -11,7 +11,7 @@ Setting["official_level_1_name"] = "Empleados públicos"
 Setting["official_level_2_name"] = "Organización Municipal"
 Setting["official_level_3_name"] = "Directores generales"
 Setting["official_level_4_name"] = "Concejales"
-Setting["official_level_5_name"] = "Alcaldesa"
+Setting["official_level_5_name"] = "Alcalde"
 
 # Max percentage of allowed anonymous votes on a debate
 Setting["max_ratio_anon_votes_on_debates"] = 50
@@ -26,7 +26,7 @@ Setting["max_votes_for_proposal_edit"] = 1000
 Setting['comments_body_max_length'] = 1000
 
 # Prefix for the Proposal codes
-Setting["proposal_code_prefix"] = 'MAD'
+Setting["proposal_code_prefix"] = 'ZAM'
 
 # Number of votes needed for proposal success
 Setting["votes_for_proposal_success"] = 53726
@@ -53,16 +53,16 @@ Setting["telegram_handle"] = nil
 Setting["instagram_handle"] = nil
 Setting["blog_url"] = nil
 Setting["transparency_url"] = nil
-Setting["opendata_url"] = "/opendata"
+Setting["opendata_url"] = ""
 
 # Public-facing URL of the app.
-Setting["url"] = "http://example.com"
+Setting["url"] = "https://zamoraparticipa.com"
 
 # CONSUL installation's organization name
-Setting["org_name"] = "CONSUL"
+Setting["org_name"] = "AYUNTAMIENTO DE ZAMORA"
 
 # CONSUL installation place name (City, Country...)
-Setting["place_name"] = "CONSUL-land"
+Setting["place_name"] = "CONSUL-ZAMORA"
 
 # Meta tags for SEO
 Setting["meta_title"] = nil

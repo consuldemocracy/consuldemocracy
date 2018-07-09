@@ -3,3 +3,29 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+.top-bar .top-bar-title a img{
+    width:200px;height:auto;
+    margin-bottom:-2px;
+}
+
+.cabecerazamora{
+      height:35vh;
+      background-image: image-url('custom/header-title-bg.jpg');
+      background-size:cover;
+      margin-top:-20px;
+      }
+
+.canalvideo{
+      padding-top:15px;
+      padding-bottom:15px;
+      }
+      .canalvideo iframe{
+      float:left;margin:10px;
+      }
+.verification-step{
+      display:none;
+      }
+      .verification-step .active{
+      display:display;
+      }
