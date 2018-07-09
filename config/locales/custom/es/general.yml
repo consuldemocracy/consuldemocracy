@@ -38,12 +38,13 @@ es:
       tags_placeholder: Escribe las palabras clave/categorías que desees separadas por una coma (',')
     new:
       recommendations_title: Antes de comenzar a redactar tu propuesta ...
-      recommendation_one: Has comprobado si la propuesta, o alguna propuesta muy similar, se ha puesto ya en práctica? Es conveniente reflexionar uns minutos sobre ello, y hacer una consulta en Internet usando palabras clave.
-      recommendation_two: Has comprobado si existe una propuesta similar en esta plataforma? Busca propuestas en esta plataforma usando palabras clave.
+      recommendation_one: ¿Has comprobado si la propuesta, o alguna propuesta muy similar, se ha puesto ya en práctica? Es conveniente reflexionar uns minutos sobre ello, y hacer una consulta en Internet usando palabras clave.
+      recommendation_two: ¿Has comprobado si existe una propuesta similar en esta plataforma? Busca propuestas en esta plataforma usando palabras clave.
       recommendation_three: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_five: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
       start_new: Crea una propuesta
+      search_proposals: Buscar propuestas
       more_info: ¿Cómo funcionan las propuestas?
       form:
         submit_button: Envía tu propuesta

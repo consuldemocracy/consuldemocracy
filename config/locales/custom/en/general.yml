@@ -44,6 +44,7 @@ en:
       recommendation_five: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
       start_new: Create a proposal
       more_info: How do proposals work?
+      search_proposals: Search proposals
       form:
         submit_button: Send your proposal
     show:
