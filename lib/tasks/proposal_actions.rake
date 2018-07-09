@@ -12,4 +12,9 @@ namespace :proposal_actions do
       )
     end
   end 
+
+  desc 'Initialize successful proposal id setting'
+  task initialize_successful_proposal_id: :environment do
+    Setting['proposals.successful_proposal_id'] = nil
+  end
 end

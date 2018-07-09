@@ -63,3 +63,5 @@ en:
     verification_offices_url: Verification offices URL
     min_age_to_participate: Minimum age needed to participate
     proposal_improvement_path: Proposal improvement info internal link
+    proposals:
+      successful_proposal_id: Successful proposal

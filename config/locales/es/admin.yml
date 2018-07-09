@@ -982,6 +982,8 @@ es:
             update: La configuración del mapa se ha guardado correctamente.
           form:
             submit: Actualizar
+        proposals:
+          title: Ajustes para propuestas
     shared:
       booths_search:
         button: Buscar

@@ -982,6 +982,8 @@ en:
             update: Map configuration updated succesfully.
           form:
             submit: Update
+        proposals:
+          title: Proposal related settings
     shared:
       booths_search:
         button: Search
