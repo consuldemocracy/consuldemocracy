@@ -61,8 +61,3 @@ es:
       no_demographic_data: "* No se dispone de los datos demográficos de %{total} participantes."
       participatory_disclaimer: "** Las cifras de participación total se refieren a personas que han creado, apoyado o votado propuestas."
       heading_disclaimer: "*** Los datos de distrito se refieren al distrito en el que el usuario ha votado, no necesariamente en el que está empadronado."
-  votes:
-    budget_investments:
-      different_heading_assigned:
-        one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito"
-        other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos"

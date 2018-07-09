@@ -47,8 +47,3 @@ en:
       no_demographic_data: "* There is no demographic data for %{total} participants."
       participatory_disclaimer: "** The numbers of total participation refer to persons that created, supported or voted investment proposals."
       heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."
-  votes:
-    budget_investments:
-      different_heading_assigned:
-        one: "You can only support investment projects in %{count} district"
-        other: "You can only support investment projects in %{count} districts"
