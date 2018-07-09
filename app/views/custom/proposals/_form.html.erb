@@ -156,7 +156,11 @@
     </div>
 
     <div class="actions small-12 column">
-      <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button")) %>
+      <% if setting['org_name'] == 'MASDEMOCRACIAEUROPA' %>
+        <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button_custom")) %>
+      <% else %>
+        <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button")) %>
+      <% end %>
     </div>
   </div>
 <% end %>

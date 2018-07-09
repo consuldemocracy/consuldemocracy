@@ -48,6 +48,10 @@ es:
       more_info: ¿Cómo funcionan las propuestas?
       form:
         submit_button: Envía tu propuesta
+        submit_button_custom: Envía tu propuesta
+    edit:
+      form:
+        submit_button_custom: Guardar cambios
     show:
       proposal_objective: Objetivo/s concreto/s de la propuesta
       proposal_feasible_explanation: Aplicabilidad de la propuesta

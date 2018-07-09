@@ -46,7 +46,10 @@ en:
       more_info: How do proposals work?
       search_proposals: Search proposals
       form:
-        submit_button: Send your proposal
+        submit_button_custom: Send your proposal
+    edit:
+      form:
+        submit_button_custom: Save changes
     show:
       proposal_objective: Proposal precise Objective/s
       proposal_feasible_explanation: Proposal feasilbility

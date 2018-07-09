@@ -7,6 +7,11 @@ feature 'Masdemocraciaeuropa proposals' do
     Setting["feature.user.skip_verification"] = "true"
   end
 
+  before do
+    author = create(:user)
+    login_as(author)
+  end
+
   describe "New" do
     let!(:proposal) { create(:proposal) }
 
@@ -26,6 +31,12 @@ feature 'Masdemocraciaeuropa proposals' do
       visit new_proposal_path
 
       expect(page).not_to have_selector "textarea#question"
+    end
+
+    scenario "Should display custom submit button" do
+      visit new_proposal_path
+
+      expect(page.find("input[type='submit']").value).to eq 'Send your proposal'
     end
   end
 
@@ -161,7 +172,7 @@ feature 'Masdemocraciaeuropa proposals' do
       fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
       check 'proposal_terms_of_service'
 
-      click_button 'Create proposal'
+      click_button 'Send your proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
     end
