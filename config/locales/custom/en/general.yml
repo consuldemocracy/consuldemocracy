@@ -23,11 +23,11 @@ en:
   proposals:
     form:
       proposal_feasible_explanation: Is your proposal actionable?
-      proposal_feasible_explanation_note_html: Explain briefly what does it take to have your proposal implemented, including an even rough estimation of the cost of it. <br>(max 1700 characters ~ 300 words)
+      proposal_feasible_explanation_note_html: Explain briefly what does it take to have your proposal implemented, including if possible an even rough estimation of the cost of it. <br>(max 1700 characters ~ 300 words)
       proposal_impact_description: What can be the impact of your proposal?
       proposal_impact_description_note_html: Describe the potential consequences of your proposal from a social, cultural, economic, political, legal, environmental…  perspectives. Identify the main beneficiaries of the proposal was it implemented. <br>(max 1700 characters ~ 300 words)
       proposal_objective: Precise Objective/s
-      proposal_objective_note_html: All proposals on this platform aim to advance democracy in Europe. It is important that your proposal has one or two more precise objectives within that common objective. <br>(max 1700 characters ~ 300 words)"
+      proposal_objective_note_html: All proposals on this platform aim to advance democracy in Europe. It is important that your proposal has some more precise objectives within that common objective. <br>(max 1700 characters ~ 300 words)"
       proposal_text: Explain your proposal
       proposal_text_note_html: "Keep your sentences short and clear. Use words that everybody can understand; e.g. avoid technical language. Try to keep the attention of the reader: e.g. avoid repetition, refer to examples, use bullet points… <br>(max 6000 characters ~ 1200 words)"
       proposal_title: Proposal title
@@ -56,3 +56,6 @@ en:
     mailer:
       confirmation_instructions:
         title: Welcome to Más democracia en Europa
+  images:
+    form:
+      note: "You can upload one image of following content types: %{accepted_content_types}, up to %{max_file_size} MB and a minimum of 475px height and 475px width."
