@@ -2,6 +2,35 @@ require 'rails_helper'
 
 describe User do
 
+  describe '#headings_voted_within_group' do
+    it "returns the headings voted by a user" do
+      user1 = create(:user)
+      user2 = create(:user)
+
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+
+      new_york = create(:budget_heading, group: group)
+      san_franciso = create(:budget_heading, group: group)
+      another_heading = create(:budget_heading, group: group)
+
+      new_york_investment = create(:budget_investment, heading: new_york)
+      san_franciso_investment = create(:budget_investment, heading: san_franciso)
+      another_investment = create(:budget_investment, heading: san_franciso)
+
+      create(:vote, votable: new_york_investment, voter: user1)
+      create(:vote, votable: san_franciso_investment, voter: user1)
+
+      expect(user1.headings_voted_within_group(group)).to include(new_york)
+      expect(user1.headings_voted_within_group(group)).to include(san_franciso)
+      expect(user1.headings_voted_within_group(group)).to_not include(another_heading)
+
+      expect(user2.headings_voted_within_group(group)).to_not include(new_york)
+      expect(user2.headings_voted_within_group(group)).to_not include(san_franciso)
+      expect(user2.headings_voted_within_group(group)).to_not include(another_heading)
+    end
+  end
+
   describe "#debate_votes" do
     let(:user) { create(:user) }
 
