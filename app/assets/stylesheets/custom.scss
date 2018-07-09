@@ -21,6 +21,17 @@ body:not(.admin) {
       text-decoration: none !important;
       color: $color-blue-2;
       background: #fff;
+      border: 1px solid $color-blue-2;
+    }
+  }
+
+  .button.hollow.home {
+    border: 1px solid $color-yellow;
+    color: $color-yellow;
+    background: transparent;
+    &:hover {
+      border: 1px solid #fff;
+      color: #fff;
     }
   }
 
@@ -29,8 +40,8 @@ body:not(.admin) {
     color: $color-yellow;
     background: transparent;
     &:hover {
-      border: 1px solid #fff;
-      color: #fff;
+      border: 1px solid $color-blue-2;
+      color: $color-blue-2;
     }
   }
 }
