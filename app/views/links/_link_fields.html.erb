@@ -11,8 +11,8 @@
     <%= f.check_box :open_in_new_tab, label: Link.human_attribute_name(:open_in_new_tab) %>
   </div>
 
-  <div class="small-6 column">
-    <%= f.check_box :_destroy, label: t('.destroy') if f.object.id.present? %>
+  <div class="small-6 column action-remove text-right">
+    <%= render_destroy_element_link(f, f.object) %>
   </div>
 
   <hr>

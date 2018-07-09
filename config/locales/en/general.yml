@@ -974,6 +974,9 @@ en:
       text_sign_up: sign up
       title: How I can comment this document?
   links:
+    form:
+      delete_button: Delete
+      cancel_button: Cancel
     nested_links:
       title: Links
       note: Add the links that are of interest

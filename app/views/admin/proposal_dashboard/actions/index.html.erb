@@ -27,7 +27,7 @@
       <tr id="<%= dom_id(action) %>">
         <td><%= action.title %></td>
         <td><%= t("admin.proposal_dashboard_actions.action_type.#{action.action_type}") %></td>
-        <td class="text-right"><%= action.required_supports %></td>
+        <td class="text-right"><%= number_with_delimiter(action.required_supports, delimiter: '.') %></td>
         <td class="text-center"><%= active_human_readable(action.active) %></td>
         <td class="text-right">
           <%= link_to t('admin.proposal_dashboard_actions.index.edit'), 

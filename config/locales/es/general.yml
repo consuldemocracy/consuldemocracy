@@ -973,6 +973,9 @@ es:
       text_sign_up: registrarte
       title: "¿Cómo puedo comentar este documento?"
   links:
+    form:
+      delete_button: Borrar
+      cancel_button: Cancelar
     nested_links:
       title: Enlaces
       note: Añade los enlaces que sean de interés.
