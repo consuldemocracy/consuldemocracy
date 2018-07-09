@@ -47,6 +47,9 @@ es:
       proposal_objective: Objetivo/s concreto/s de la propuesta
       proposal_feasible_explanation: Aplicabilidad de la propuesta
       proposal_impact_description: Impacto de la propuesta
+    retire_form:
+      warning: "Si sigues adelante tu propuesta dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir visible."
+      retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe ser visible
   related_content:
     help: "Puedes introducir cualquier enlace de Propuesta que esté dentro de %{org}."
   devise_views:

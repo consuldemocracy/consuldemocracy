@@ -46,6 +46,9 @@ en:
       proposal_objective: Proposal precise Objective/s
       proposal_feasible_explanation: Proposal feasilbility
       proposal_impact_description: Proposal impact
+    retire_form:
+      warning: "If you retire the proposal it will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be detectable"
+      retired_explanation_placeholder: Explain shortly why you think this proposal should not be detectable
   related_content:
     help: "You can add links of Proposals inside of %{org}."
   devise_views:
