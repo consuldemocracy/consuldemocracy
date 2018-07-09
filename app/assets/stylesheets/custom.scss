@@ -271,10 +271,17 @@ header{
       text-align: center;
       padding-top: 2rem;
       padding-bottom: 2rem;
+      .border-b{
+        border-bottom: 1px solid #bfbfc1;
+      }
     }
+
     @include breakpoint(medium) {
       margin-top: $line-height;
       padding-top: $line-height;
+      .border-b{
+        border: 0;
+      }
     }
 
     div{
