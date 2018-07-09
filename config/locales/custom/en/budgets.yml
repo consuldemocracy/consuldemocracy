@@ -28,8 +28,6 @@ en:
       total_participants_booths: Vote phase booth participants
       participants: Participants
       supports: Supports
-      votes: Votes
-      total_participants_vote_phase: Voting Phase
       by_gender: "Participants by gender"
       total_male_participants: Mens
       total_female_participants: Women
