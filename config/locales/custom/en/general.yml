@@ -48,3 +48,7 @@ en:
       proposal_impact_description: Proposal impact
   related_content:
     help: "You can add links of Proposals inside of %{org}."
+  devise_views:
+    mailer:
+      confirmation_instructions:
+        title: Welcome to Más democracia en Europa

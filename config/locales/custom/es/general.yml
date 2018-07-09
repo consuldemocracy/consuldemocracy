@@ -49,3 +49,7 @@ es:
       proposal_impact_description: Impacto de la propuesta
   related_content:
     help: "Puedes introducir cualquier enlace de Propuesta que esté dentro de %{org}."
+  devise_views:
+    mailer:
+      confirmation_instructions:
+        title: Te damos la bienvenida a la plataforma Más democracia en Europa
