@@ -9,10 +9,15 @@ en:
     header:
       logo: MÁS DEMOCRACIA EN EUROPA logo
       open_gov: Más Democracia En Europa
+      subnavigation:
+        about: "What is this about?"
     footer:
       participation_text: Participates in topics of interest to the European Economic Community
       copyright: MasDemocraciaEnEuropa, %{year}
       legal_disclaimer: Legal disclaimer
+      project_text: A project by
+      colaboration_text: In collaboration with
+      support_text: Supported by
   social:
     linkedin: "%{org} LinkedIn"
   proposals:

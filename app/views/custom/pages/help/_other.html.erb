@@ -1,0 +1,11 @@
+<h3 id="other" data-magellan-target="other"><%= t("pages.help.other.title") %></h3>
+
+<ul class="features">
+  <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+    <li><%= link_to t("pages.help.other.how_to_use", org_name: setting['org_name']), how_to_use_path %></li>
+  <% end %>
+
+  <% SiteCustomization::Page.with_more_info_flag.with_same_locale.each do |custom_page| %>
+    <li><%= link_to custom_page.title, page_path(custom_page.slug) %></li>
+  <% end %>
+</ul>
