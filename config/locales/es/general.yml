@@ -983,4 +983,3 @@ es:
     link_fields:
       label_placeholder: Título del enlace
       url_placeholder: Dirección del enlace
-      destroy: Borrar enlace

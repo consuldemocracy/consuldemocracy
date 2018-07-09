@@ -984,4 +984,3 @@ en:
     link_fields:
       label_placeholder: Link title
       url_placeholder: Link address
-      destroy: Remove link
