@@ -2,10 +2,8 @@ es:
   pages:
     home:
       questions:
-        question1_html: ¿Hacia dónde quieres que vaya <strong>Europa</strong> en el futuro?
-        question2_html: ¿Sientes que <strong>estás participando</strong> en las decisiones europeas?
-        question3_html: ¿Cómo puede Europa hacer frente a los <strong>problemas sociales, económicos, medioambientales</strong>?
-        question4_html: ¿Crees que puedes ser parte de la solución?
+        question1_html: ¿Hacia dónde quieres que vaya <strong>Europa</strong> en el futuro? ¿Sientes que <strong>estás participando</strong> en las decisiones europeas?
+        question2_html: ¿Cómo puede Europa hacer frente a los <strong>problemas sociales, económicos, medioambientales</strong>? ¿Crees que puedes ser parte de la solución?
         answer: >
                   Esta plataforma digital, abierta a la participación de la ciudadanía,
                   te ofrece la oportunidad de proponer ideas para conseguir que la Unión
