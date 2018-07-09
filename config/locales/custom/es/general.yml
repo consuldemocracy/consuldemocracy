@@ -43,9 +43,16 @@ es:
       recommendation_three: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_five: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
+      suggest_warning_html: "Estás creando una propuesta complementaria a: <strong><a href=\"%{link}\">%{title}</a></strong>"
+      start_complementary: "Crea una propuesta complementaria"
     show:
       proposal_objective: Objetivo/s concreto/s de la propuesta
       proposal_feasible_explanation: Aplicabilidad de la propuesta
       proposal_impact_description: Impacto de la propuesta
+      complementary_link: Crea propuesta complementaria
+      act: Actúa
+      suggest_link: Sugerir cambios
+      suggest_text: Sugiere cambios para esta propuesta a través del sistema de comentarios.
+
   related_content:
     help: "Puedes introducir cualquier enlace de Propuesta que esté dentro de %{org}."

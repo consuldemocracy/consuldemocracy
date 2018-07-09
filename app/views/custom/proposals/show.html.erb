@@ -146,6 +146,20 @@
       </div>
 
       <aside class="small-12 medium-3 column">
+
+        <% if !author_of_proposal?(@proposal) || current_user.blank? %>
+          <div class="sidebar-divider"></div>
+          <p class="sidebar-title"><%= t("proposals.show.act") %></p>
+          <div class="show-actions-menu">
+            <%= link_to new_proposal_path(original_proposal_id: @proposal.id), class: 'button hollow expanded' do %>
+                        <%= t("proposals.show.complementary_link") %>
+            <% end %>
+            <%= link_to '#js-suggest-notice', class: 'button hollow expanded', id: 'js-proposal-change-suggest' do %>
+                        <%= t("proposals.show.suggest_link") %>
+            <% end %>
+          </div>
+        <% end %>
+
         <% if author_of_proposal?(@proposal) || current_editable?(@proposal) || can_destroy_image?(@proposal) %>
           <div class="sidebar-divider"></div>
           <h2><%= t("proposals.show.author") %></h2>
@@ -243,6 +257,11 @@
 
 <div class="tabs-content" data-tabs-content="proposals_tabs" role="tablist">
   <div class="tabs-panel is-active" id="tab-comments" role="tab">
+    <%= render 'shared/notice',
+                id: 'js-suggest-notice',
+                type: 'notice',
+                klass: 'hide column',
+                text: t('proposals.show.suggest_text') %>
     <%= render "proposals/comments" %>
   </div>
 
