@@ -68,6 +68,12 @@ describe Proposal do
 
       expect(proposal).not_to be_valid
     end
+
+    it "is not valid when title is longer than 120 characters" do
+      proposal.title = "a" * 120
+
+      expect(proposal).not_to be_valid
+    end
   end
 
 end

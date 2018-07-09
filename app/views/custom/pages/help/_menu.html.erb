@@ -8,7 +8,7 @@
       <% end %>
       <% if feature?(:proposals) %>
         <li>
-          <%= link_to t("pages.help.menu.proposals"), "#proposals", class: "button hollow expanded" %>
+          <%= link_to t("pages.help.menu.proposals"), "#proposals", class: "button expanded" %>
         </li>
       <% end %>
       <% if feature?(:budgets) %>
@@ -27,13 +27,11 @@
       </li>
       <% end %>
       <li>
-        <%= link_to t("pages.help.menu.how_can_use"), "#how_can_use", class: "button hollow expanded" %>
-      </li>         
-      <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
-        <li>
-          <%= link_to t("pages.help.menu.other"), "#other", class: "button hollow expanded" %>
-        </li>
-      <% end %>
+        <%= link_to t("pages.help.menu.how_can_use"), "#how_can_use", class: "button expanded" %>
+      </li>
+      <li>
+        <%= link_to t("pages.help.menu.other"), "#other", class: "button expanded" %>
+      </li>
     </ul>
   </div>
 </div>

@@ -1,5 +1,19 @@
 es:
   pages:
+    home:
+      questions:
+        question1_html: ¿Hacia dónde quieres que vaya <strong>Europa</strong> en el futuro?
+        question2_html: ¿Sientes que <strong>estás participando</strong> en las decisiones europeas?
+        question3_html: ¿Cómo puede Europa hacer frente a los <strong>problemas sociales, económicos, medioambientales</strong>?
+        question4_html: ¿Crees que puedes ser parte de la solución?
+        answer: >
+                  Esta plataforma digital, abierta a la participación de la ciudadanía,
+                  te ofrece la oportunidad de proponer ideas para conseguir que la Unión
+                  Europea responda a nuestras preocupaciones; una Europa más democrática,
+                  más participativa, menos desigual, más accesible, más solidaria, más sostenible.
+        read_more: Leer más ->
+      button_1: Envía tu propuesta
+      button_2: Consulta las propuestas ya realizadas
     help:
       menu:
         how_can_use: "¿Cómo puedo utilizar la plataforma?"
@@ -12,5 +26,14 @@ es:
         feature_2: "comentando las propuestas existentes,"
         feature_3: "realizando una o más propuestas complementarias a una propuesta existente, y/o"
         feature_4: "creando una o más propuestas distintas o contrapropuestas a partir de propuestas existentes."
+      proposals:
+        title: "Propuestas"
+        description: "En la sección de %{link} puedes plantear propuestas para que Más democracia en Europa las lleve a cabo..."
+        link: "propuestas"
     titles:
       legal_disclaimer: Aviso legal
+    slugs:
+      privacy: politica-de-privacidad
+      terms_and_conditions: terminos-y-condiciones
+      legal_notice: aviso-legal
+      about: de-que-se-trata

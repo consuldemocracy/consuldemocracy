@@ -21,11 +21,11 @@
 
     <% if setting['org_name'] == 'MASDEMOCRACIAEUROPA' %>
       <li>
-        <%= link_to "¿De qué se trata?",
-                      page_path('de-que-se-trata'),
-                      accesskey: "7",
-                      class: ("is-active" if current_page?(page_path('de-que-se-trata'))),
-                      title: t("shared.go_to_page") + "¿De qué se trata?" %>
+        <%= link_to t('layouts.header.subnavigation.about'),
+                    page_path(t('pages.slugs.about')),
+                    accesskey: "7",
+                    class: ("is-active" if current_page?(page_path('de-que-se-trata'))),
+                    title: t("shared.go_to_page") + "¿De qué se trata?" %>
       </li>
     <% end %>
 

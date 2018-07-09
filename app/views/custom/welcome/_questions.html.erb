@@ -1,18 +1,17 @@
 <div class="questions">
   <div class="small-12 medium-8 column small-centered">
     <p>
-      ¿Hacia dónde quieres que vaya <strong>Europa</strong> en el futuro?
-      ¿Sientes que <strong>estás participando</strong> en las decisiones europeas?
+      <%= t('pages.home.questions.question1_html') %>
+      <%= t('pages.home.questions.question2_html') %>
     </p>
-    ¿Cómo puede Europa hacer frente a los <strong>problemas sociales, económicos, medioambientales</strong>
-    ¿Crees que puedes ser parte de la solución?
+    <p>
+    <%= t('pages.home.questions.question3_html') %>
+    <%= t('pages.home.questions.question4_html') %>
+    </p>
     <hr />
     <p>
-      Esta plataforma digital, abierta a la participación de la ciudadanía,
-      te ofrece la oportunidad de proponer ideas para conseguir que la Unión
-      Europea responda a nuestras preocupaciones; una Europa más democrática,
-      más participativa, menos desigual, más accesible, más solidaria, más sostenible.
+      <%= t('pages.home.questions.answer') %>
     </p>
-    <%= link_to "Leer más ->", page_path('de-que-se-trata'), class: "small" %>
+    <%= link_to t('pages.home.questions.read_more'), page_path(t('pages.slugs.about')), class: "small" %>
   </div>
 </div>

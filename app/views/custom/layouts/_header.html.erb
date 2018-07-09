@@ -12,7 +12,9 @@
   <div class="row">
     <div class="title-bar" data-responsive-toggle="responsive_menu" data-hide-for="medium">
       <button class="menu-icon" type="button" data-toggle="responsive_menu"></button>
-      <div class="title-bar-title"><%= t("application.menu")%></div>
+      <div class="title-bar-title">
+        <%#= t("application.menu")%>
+      </div>
     </div>
 
     <div class="top-bar">
@@ -40,7 +42,7 @@
                             class: "hide-for-small-only float-left",
                             size: "60x60",
                             alt: t("layouts.header.logo")) %>
-              <%= setting["org_name"] %>
+              <span><%= setting["org_name"] %></span>
             <% end %>
           </li>
         </ul>
