@@ -142,7 +142,7 @@ feature 'Votes' do
         within("#budget_investment_#{third_heading_investment.id}") do
           find('.in-favor a').click
 
-          expect(page).to have_content "You can only support investment projects in 2 districts"
+          expect(page).to have_content "You can only support investment projects in 2 districts. You have already supported investments in #{new_york.name} and #{san_francisco.name}"
 
           expect(page).not_to have_content "1 support"
           expect(page).not_to have_content "You have already supported this investment project. Share it!"
@@ -165,7 +165,7 @@ feature 'Votes' do
         visit budget_investment_path(budget, third_heading_investment)
 
         find('.in-favor a').click
-        expect(page).to have_content "You can only support investment projects in 2 districts"
+        expect(page).to have_content "You can only support investment projects in 2 districts. You have already supported investments in #{new_york.name} and #{san_francisco.name}"
 
         expect(page).not_to have_content "1 support"
         expect(page).not_to have_content "You have already supported this investment project. Share it!"

@@ -769,8 +769,8 @@ en:
       unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
       different_heading_assigned:
-        one: "You can only support investment projects in %{count} district"
-        other: "You can only support investment projects in %{count} districts"
+        one: "You can only support investment projects in %{count} district. You have already supported investments in %{supported_headings}."
+        other: "You can only support investment projects in %{count} districts. You have already supported investments in %{supported_headings}."
   welcome:
     feed:
       most_active:
