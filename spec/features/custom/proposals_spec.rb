@@ -38,6 +38,18 @@ feature 'Masdemocraciaeuropa proposals' do
 
       expect(page.find("input[type='submit']").value).to eq 'Send your proposal'
     end
+    
+    describe "Complementary proposal" do
+      scenario "Should display original proposal title" do
+        proposal = create(:proposal, title: "Original proposal", summary: "Summary", objective: "Objective <br> sample")
+        visit proposal_path(proposal)
+        click_on "Create complementary proposal"
+
+        expect(page).to have_content "Original proposal"
+        expect(page).to have_content "Create a complementary proposal"
+        expect(page).not_to have_content "Create new proposal"
+      end
+    end      
   end
 
   describe "Index" do
@@ -152,6 +164,25 @@ feature 'Masdemocraciaeuropa proposals' do
       visit proposal_path(proposal)
 
       expect(page).to have_content "A very good feasible explanation"
+    end
+
+    describe "Suggest changes proposals" do
+      scenario "Should not display suggest changes text", :js do
+        proposal = create(:proposal, feasible_explanation: "A very good feasible explanation")
+
+        visit proposal_path(proposal)
+
+        expect(page).not_to have_content "Suggest changes to this proposal through the comments system."
+      end
+
+      scenario "Should display suggest changes text after click Suggest changes button", :js do
+        proposal = create(:proposal, feasible_explanation: "A very good feasible explanation")
+
+        visit proposal_path(proposal)
+        click_on "Suggest changes"
+
+        expect(page).to have_content "Suggest changes to this proposal through the comments system."
+      end
     end
 
   end

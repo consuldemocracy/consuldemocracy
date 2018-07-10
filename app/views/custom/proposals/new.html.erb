@@ -3,12 +3,21 @@
   <div class="small-12 medium-9 column">
     <%= back_link_to %>
 
-    <h1><%= t("proposals.new.start_new") %></h1>
+    <% if @original_proposal.present? %>
+      <h1><%= t("proposals.new.start_complementary") %></h1>
+    <% else %>
+      <h1><%= t("proposals.new.start_new") %></h1>
+    <% end %>
     <div data-alert class="callout primary">
       <%= link_to help_path(anchor: "proposals"), title: t('shared.target_blank_html'), target: "_blank" do %>
         <%= t("proposals.new.more_info")%>
       <% end %>
     </div>
+    <% if @original_proposal.present? %>
+      <div data-alert class="callout warning">
+        <%= t "proposals.new.suggest_warning_html", title: @original_proposal.title, link: proposal_path(@original_proposal) %>
+      </div>
+    <% end %>
     <%= render "proposals/form", form_url: proposals_url %>
   </div>
 

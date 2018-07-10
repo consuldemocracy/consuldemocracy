@@ -37,6 +37,7 @@ en:
       tags_label: Keywords
       tags_placeholder: "Enter the keywords you would like to use, separated by commas (',')"
     new:
+      recommendations_title: Before you start writing your proposal...
       recommendation_one: Are you sure that your proposal, or something very similar to it, has not yet been implemented? Take a few minutes to think about it and look for similar ideas on the web.
       recommendation_two: Are you sure that there is no similar proposal already on this platform? Browse proposals using keywords
       recommendation_three: Do not use capital letters for the proposal title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at.
@@ -47,6 +48,8 @@ en:
       search_proposals: Search proposals
       form:
         submit_button_custom: Send your proposal
+      suggest_warning_html: "You are creating a complementary proposal of: <strong><a href=\"%{link}\">%{title}</a></strong>"
+      start_complementary: "Create a complementary proposal"        
     edit:
       form:
         submit_button_custom: Save changes
@@ -54,6 +57,10 @@ en:
       proposal_objective: Proposal precise Objective/s
       proposal_feasible_explanation: Proposal feasilbility
       proposal_impact_description: Proposal impact
+      complementary_link: Create complementary proposal
+      act: Act
+      suggest_link: Suggest changes
+      suggest_text: Suggest changes to this proposal through the comments system.
     retire_form:
       warning: "If you retire the proposal it will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be detectable"
       retired_explanation_placeholder: Explain shortly why you think this proposal should not be detectable

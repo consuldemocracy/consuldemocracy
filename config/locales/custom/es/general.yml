@@ -49,6 +49,8 @@ es:
       form:
         submit_button: Envía tu propuesta
         submit_button_custom: Envía tu propuesta
+      suggest_warning_html: "Estás creando una propuesta complementaria a: <strong><a href=\"%{link}\">%{title}</a></strong>"
+      start_complementary: "Crea una propuesta complementaria"        
     edit:
       form:
         submit_button_custom: Guardar cambios
@@ -56,6 +58,10 @@ es:
       proposal_objective: Objetivo/s concreto/s de la propuesta
       proposal_feasible_explanation: Aplicabilidad de la propuesta
       proposal_impact_description: Impacto de la propuesta
+      complementary_link: Crea propuesta complementaria
+      act: Actúa
+      suggest_link: Sugerir cambios
+      suggest_text: Sugiere cambios para esta propuesta a través del sistema de comentarios.
     retire_form:
       warning: "Si sigues adelante tu propuesta dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir visible."
       retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe ser visible
