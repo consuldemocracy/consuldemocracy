@@ -46,9 +46,6 @@ body:not(.admin) {
   }
 }
 
-
-
-
 body{
   font-family: $body-font-family;
   &.home-page{
@@ -318,6 +315,29 @@ header{
     font-size: 0.7rem;
   }
 }
+
+
+//Register
+body.auth-page{
+  .auth-image h1 span{
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .basic-info{
+    margin-top:2rem;
+  }
+
+  table{
+    font-size: 1rem;
+    tr td{
+      padding: 1rem;
+    }
+    tr:nth-child(even){
+      background: #f7f7f7;
+    }
+  }
+}
+
 
 // Check this...is not mine....
 .icon-linkedin{
