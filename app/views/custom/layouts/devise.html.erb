@@ -13,8 +13,8 @@
   </head>
 
   <body class="auth-page">
-    <div class="wrapper">
-      <div class="auth-image small-12 medium-3 column">
+    <div class="wrapper" data-equalizer>
+      <div class="auth-image small-12 medium-3 column" data-equalizer-watch>
         <h1 class="logo margin">
           <%= link_to root_path do %>
             <%= image_tag(image_path_for('logo_header.png'), class: 'float-left', alt: t("layouts.header.logo")) %>
@@ -22,8 +22,7 @@
           <% end %>
         </h1>
       </div>
-
-      <div class="small-12 medium-9 column">
+      <div class="small-12 medium-9 column" data-equalizer-watch>
         <div class="row">
           <div class="small-12 medium-9 large-7 small-centered column">
             <div class="auth-form margin">
@@ -34,12 +33,16 @@
           </div>
         </div>
       </div>
-
       <div class="push"></div>
     </div>
 
     <div class="footer">
-      <%= render 'layouts/footer' %>
+      <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+        <%= render 'layouts/footer' %>
+      <% else %>
+        <%= render 'layouts/footer_democracy_eu' %>
+      <% end %>
     </div>
+
   </body>
 </html>
