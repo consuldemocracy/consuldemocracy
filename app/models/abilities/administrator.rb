@@ -65,7 +65,7 @@ module Abilities
       can [:hide, :update, :toggle_selection], Budget::Investment
       can [:valuate, :comment_valuation], Budget::Investment
       can :create, Budget::ValuatorAssignment
-      can :read_stats, Budget, phase: "reviewing_ballots"
+      can [:read_results, :read_stats], Budget, phase: "reviewing_ballots"
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
 

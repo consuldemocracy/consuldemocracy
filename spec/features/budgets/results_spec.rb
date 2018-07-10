@@ -64,15 +64,6 @@ feature 'Results' do
     end
   end
 
-  scenario "If budget is in a phase different from finished results can't be accessed" do
-    budget.update(phase: (Budget::Phase::PHASE_KINDS - ['drafting', 'finished']).sample)
-    visit budget_path(budget)
-    expect(page).not_to have_link "See results"
-
-    visit custom_budget_heading_result_path(budget, heading_id: budget.headings.first)
-    expect(page).to have_content "You do not have permission to carry out the action"
-  end
-
   scenario "No incompatible investments", :js do
     investment3.incompatible = false
     investment3.save
@@ -101,6 +92,34 @@ feature 'Results' do
       expect(page).to have_css("#budget_#{finished_budget2.id}_results", text: "See results")
       expect(page).to have_css("#budget_#{finished_budget3.id}_results", text: "See results")
     end
+  end
+
+  context "Show" do
+
+    it "is not accessible to normal users if phase is not 'finished'" do
+      budget.update(phase: 'reviewing_ballots')
+
+      visit budget_results_path(budget.id)
+      expect(page).to have_content "You do not have permission to carry out the action "\
+                                   "'read_results' on budget."
+    end
+
+    it "is accessible to normal users if phase is 'finished'" do
+      budget.update(phase: 'finished')
+
+      visit budget_results_path(budget.id)
+      expect(page).to have_content "Results"
+    end
+
+    it "is accessible to administrators when budget has phase 'reviewing_ballots'" do
+      budget.update(phase: 'reviewing_ballots')
+
+      login_as(create(:administrator).user)
+
+      visit budget_results_path(budget.id)
+      expect(page).to have_content "Results"
+    end
+
   end
 
 end
