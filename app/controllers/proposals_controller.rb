@@ -21,6 +21,11 @@ class ProposalsController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
+  def new
+    super
+    @original_proposal = Proposal.find(params[:original_proposal_id]) if params[:original_proposal_id].present?
+  end
+
   def show
     super
     @notifications = @proposal.notifications
