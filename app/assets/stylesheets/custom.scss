@@ -319,6 +319,13 @@ header{
 
 //Register
 body.auth-page{
+  .auth-image h1 img {
+    height: 3rem;
+    width: 3rem;
+    margin-top:20px;
+    margin-right: 5px;
+  }
+
   .auth-image h1 span{
     font-size: 12px;
     font-weight: 700;

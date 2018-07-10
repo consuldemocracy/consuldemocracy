@@ -16,9 +16,11 @@
     <div class="wrapper" data-equalizer>
       <div class="auth-image small-12 medium-3 column" data-equalizer-watch>
         <h1 class="logo margin">
-          <%= link_to root_path do %>
-            <%= image_tag(image_path_for('logo_header.png'), class: 'float-left', alt: t("layouts.header.logo")) %>
-            <span><%= setting['org_name'] %></span>
+          <%= link_to root_path, accesskey: "0" do %>
+            <%= image_tag(image_path_for("white_logo_mas_democracia_eu.png"),
+                          class: "float-left",
+                          alt: t("layouts.header.logo")) %>
+            <span><%= setting["org_name"] %></span>
           <% end %>
         </h1>
       </div>
