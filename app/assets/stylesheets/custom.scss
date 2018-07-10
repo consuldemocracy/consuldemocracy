@@ -46,9 +46,6 @@ body:not(.admin) {
   }
 }
 
-
-
-
 body{
   font-family: $body-font-family;
   &.home-page{
@@ -316,6 +313,47 @@ header{
   }
   header .top-bar .menu .menu-text span{
     font-size: 0.7rem;
+  }
+}
+
+
+//Register
+body.auth-page{
+  .auth-image h1 img {
+    height: 3rem;
+    width: 3rem;
+    margin-top:20px;
+    margin-right: 5px;
+  }
+
+  .auth-image h1 span{
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .basic-info{
+    margin-top:2rem;
+  }
+
+  table{
+    font-size: 1rem;
+    tr td{
+      padding: 1rem;
+    }
+    tr:nth-child(even){
+      background: #f7f7f7;
+    }
+  }
+}
+
+@media screen and (min-width: 40em) and (max-width: 43em) {
+  //Register
+  body.auth-page{
+
+    .auth-image{
+      h1 span{
+        font-size: 10px;
+      }
+    }
   }
 }
 

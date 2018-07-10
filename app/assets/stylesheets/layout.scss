@@ -857,9 +857,9 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
 
-  @include breakpoint(medium) {
-    min-height: $line-height * 42;
-  }
+  // @include breakpoint(medium) {
+  //   min-height: $line-height * 42;
+  // }
 
   h1 {
     margin-top: $line-height;
