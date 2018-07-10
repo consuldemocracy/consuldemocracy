@@ -28,6 +28,9 @@ es:
         title: "Propuestas"
         description: "En la sección de %{link} puedes plantear propuestas para que Más democracia en Europa las lleve a cabo..."
         link: "propuestas"
+      title: "¿Quieres contribuir a lograr una Europa más democrática?"
+      subtitle: "Más Democracia en Europa es una plataforma digital abierta a la ciudadanía que te permite realizar y valorar propuestas para lograr una Europa más participativa, en la que los ciudadanos y ciudadanas estén más cerca de la toma de decisiones."
+      guide: 'Esta guía explica cómo puedes utilizar la plataforma y cómo hacer las propuestas.'
     titles:
       legal_disclaimer: Aviso legal
     slugs:
