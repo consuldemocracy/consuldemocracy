@@ -520,6 +520,7 @@ en:
       group_by_date: Daily
       progress: Acumulated progress
       supports: Supports
+      success: Ideal progress
     index:
       title: Edition
       edit_proposal_link: Edit

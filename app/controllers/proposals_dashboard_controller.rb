@@ -52,6 +52,16 @@ class ProposalsDashboardController < Dashboard::BaseController
     render json: ProposalSupportsQuery.for(params)
   end
 
+  def successful_supports
+    authorize! :dashboard, proposal
+    render json: SuccessfulProposalSupportsQuery.for(params)
+  end
+
+  def achievements
+    authorize! :dashboard, proposal
+    render json: ProposalAchievementsQuery.for(params)
+  end
+
   private
 
   def proposal_dashboard_action

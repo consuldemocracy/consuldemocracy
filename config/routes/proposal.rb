@@ -7,7 +7,9 @@ resources :proposals do
     collection do
       patch :publish
       get :supports
+      get :successful_supports
       get :progress
+      get :achievements
     end
 
     member do

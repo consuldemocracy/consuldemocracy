@@ -520,6 +520,7 @@ es:
       group_by_date: Diario
       progress: Progreso acumulado
       supports: Apoyos
+      success: Progreso ideal
     index:
       title: Edición
       edit_proposal_link: Editar propuesta
