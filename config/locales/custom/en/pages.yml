@@ -29,6 +29,9 @@ en:
         title: "Proposals"
         description: "In the %{link} section you can put forward proposals for More democracy in Europe to carry them out..."
         link: "proposals"
+      title: "Do you want to contribute to achieving a more democratic Europe?"
+      subtitle: "The digital platform More Democracy in Europe is aimed at making and assessing proposals in order to attain a more democratic Europe, in which the citizens will be closer to the policy-making process."
+      guide: 'This guide explains how you can use the platform and how to make your proposals.'
     titles:
       legal_disclaimer: Legal disclaimer
     slugs:
