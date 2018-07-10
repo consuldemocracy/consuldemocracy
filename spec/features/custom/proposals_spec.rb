@@ -33,6 +33,12 @@ feature 'Masdemocraciaeuropa proposals' do
       expect(page).not_to have_selector "textarea#question"
     end
 
+    scenario "Should display custom submit button" do
+      visit new_proposal_path
+
+      expect(page.find("input[type='submit']").value).to eq 'Send your proposal'
+    end
+    
     describe "Complementary proposal" do
       scenario "Should display original proposal title" do
         proposal = create(:proposal, title: "Original proposal", summary: "Summary", objective: "Objective <br> sample")
@@ -43,7 +49,7 @@ feature 'Masdemocraciaeuropa proposals' do
         expect(page).to have_content "Create a complementary proposal"
         expect(page).not_to have_content "Create new proposal"
       end
-    end
+    end      
   end
 
   describe "Index" do
@@ -197,7 +203,7 @@ feature 'Masdemocraciaeuropa proposals' do
       fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
       check 'proposal_terms_of_service'
 
-      click_button 'Create proposal'
+      click_button 'Send your proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
     end

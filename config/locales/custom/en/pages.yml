@@ -2,15 +2,14 @@ en:
   pages:
     home:
       questions:
-        question1_html: Where do you want to go <strong>Europe</strong> in the future?
-        question2_html: Do you feel that you <strong>are participating </strong> in European decisions?
-        question3_html: How can Europe deal with social, economic and environmental problems?
-        question4_html: Do you think you can be part of the solution?
+        question1_html: Where do you want <strong>Europe</strong> to go in the future? Do you feel that you are involved in European decisions?
+        question2_html: How can Europe address <strong>social, economic and environmental problems</strong>? Do you think that you may be part of the solution?
         answer: >
-                  This digital platform, open to the participation of citizens,
-                  offers you the opportunity to come up with ideas to get the Union to
-                  European responds to our concerns; a more democratic Europe,
-                  more participatory, less unequal, more accessible, more supportive, more sustainable.
+                  This digital platform, open to citizen participation, provides
+                  you with the opportunity to present ideas aimed to make the
+                  European Union respond to our concerns; and to attain a more
+                  democratic, more participative, less unequal, more approachable,
+                  more caring, more sustainable Europe.
         read_more: Read more ->
       button_1: Send your proposal
       button_2: Consult the proposals

@@ -23,28 +23,37 @@ es:
   proposals:
     form:
       proposal_feasible_explanation: ¿Es factible tu propuesta?
-      proposal_feasible_explanation_note_html: Explica brevemente cómo puede llevarse la propuesta a la práctica, incluyendo una estimación, aún en términos generales, de su coste <br>(max 1700 caracteres ~ 300 palabras).
+      proposal_feasible_explanation_note_html: Explica brevemente cómo puede llevarse la propuesta a la práctica, incluyendo si es posible una estimación, aún en términos generales, de su coste. <br>(max 1700 caracteres ~ 300 palabras)
       proposal_impact_description: ¿Qué impacto puede tener tu propuesta?
       proposal_impact_description_note_html: Describe las potenciales consecuencias de llevar tu propuesta a la práctica desde el punto de vista social, cultural, económico, politico, legal, medioambiental... Identifica quiénes serían los principales beneficiarios si la propuesta se llevase a la práctica. <br>(max 1700 caracteres ~ 300 palabras)
       proposal_objective: Objetivo/s concreto/s
-      proposal_objective_note_html: "Todas las propuestas incluidas en esta plataforma tratan de una forma o de otra de mejorar la democracia en Europa. Es importante que tu propuesta tenga uno o dos objetivos más concretos dentro de ese gran objetivo común. <br>(max 1700 caracteres ~ 300 palabras)"
+      proposal_objective_note_html: "Todas las propuestas incluidas en esta plataforma tratan de una forma o de otra de mejorar la democracia en Europa. Es importante que tu propuesta tenga algunos objetivos más concretos dentro de ese gran objetivo común. <br>(max 1700 caracteres ~ 300 palabras)"
       proposal_text: Explica tu/vuestra propuesta
       proposal_text_note_html: Al escribir, procura que las frases sean cortas y claras. Utiliza palabras que todo el mundo pueda comprender, evitando por ejemplo el lenguaje técnico. Intenta mantener la atención del lector a través de ejemplos, o con guiones para enumerar distintos aspectos, y evitando repetir las ideas.  <br>(máximo 6000 caracteres ~ 1200 palabras)
       proposal_title: Título de la propuesta
       proposal_title_note: El título debe ser breve. Se trata de describir tu propuesta de modo que suscite interés.
-      tag_category_label: Selecciona aquí las palabras clave
-      tags_instructions: "Es recommendable seleccionar o crear algunas palabras clave para identificar tu propuesta. Puedes elegir entre las palabras clave existentes o introducir las que desees separadas por una coma (',')."
-      tags_label: Palabras clave
-      tags_placeholder: Escribe las palabras clave que desees separadas por una coma (',')
+      tag_category_label: Selecciona aquí las palabras clave/categorías
+      tags_instructions: "Es recomendable seleccionar o crear algunas palabras clave/categorías para identificar tu propuesta. Puedes elegir entre las palabras clave/categorías existentes o introducir las que desees separadas por una coma (',')."
+      tags_label: Palabras clave/Categorías
+      tags_placeholder: Escribe las palabras clave/categorías que desees separadas por una coma (',')
     new:
       recommendations_title: Antes de comenzar a redactar tu propuesta ...
-      recommendation_one: Has comprobado si la propuesta, o alguna propuesta muy similar, se ha puesto ya en práctica? Es conveniente reflexionar uns minutos sobre ello, y hacer una consulta en Internet usando palabras clave.
-      recommendation_two: Has comprobado si existe una propuesta similar en esta plataforma? Busca propuestas en esta plataforma usando palabras clave.
+      recommendation_one: ¿Has comprobado si la propuesta, o alguna propuesta muy similar, se ha puesto ya en práctica? Es conveniente reflexionar uns minutos sobre ello, y hacer una consulta en Internet usando palabras clave.
+      recommendation_two: ¿Has comprobado si existe una propuesta similar en esta plataforma? Busca propuestas en esta plataforma usando palabras clave.
       recommendation_three: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_five: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
+      start_new: Crea una propuesta
+      search_proposals: Buscar propuestas
+      more_info: ¿Cómo funcionan las propuestas?
+      form:
+        submit_button: Envía tu propuesta
+        submit_button_custom: Envía tu propuesta
       suggest_warning_html: "Estás creando una propuesta complementaria a: <strong><a href=\"%{link}\">%{title}</a></strong>"
-      start_complementary: "Crea una propuesta complementaria"
+      start_complementary: "Crea una propuesta complementaria"        
+    edit:
+      form:
+        submit_button_custom: Guardar cambios
     show:
       proposal_objective: Objetivo/s concreto/s de la propuesta
       proposal_feasible_explanation: Aplicabilidad de la propuesta
@@ -53,6 +62,15 @@ es:
       act: Actúa
       suggest_link: Sugerir cambios
       suggest_text: Sugiere cambios para esta propuesta a través del sistema de comentarios.
-
+    retire_form:
+      warning: "Si sigues adelante tu propuesta dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir visible."
+      retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe ser visible
   related_content:
     help: "Puedes introducir cualquier enlace de Propuesta que esté dentro de %{org}."
+  devise_views:
+    mailer:
+      confirmation_instructions:
+        title: Te damos la bienvenida a la plataforma Más democracia en Europa
+  images:
+    form:
+      note: 'Puedes subir una imagen en los formatos: %{accepted_content_types}, de hasta %{max_file_size} MB por archivo y un mínimo 475px de alto y 475px de ancho.'
