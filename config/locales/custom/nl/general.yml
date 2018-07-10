@@ -1,0 +1,16 @@
+nl:
+  account:
+    show:
+      email_on_comment_label: Stuur me een email als iemand op mijn voorstellen reageert
+  welcome:
+    welcome:
+      user_permission_proposal_participate: Neem deel aan voorstellen
+  layouts:
+    header:
+      logo: MÁS DEMOCRACIA EN EUROPA logo
+      open_gov: Más Democracia En Europa
+    footer:
+      participation_text: Deelnemen aan onderwerpen die van belang zijn voor de Europese Economische Gemeenschap
+      copyright: MasDemocraciaEnEuropa, %{year}
+  social:
+    linkedin: "%{org} LinkedIn"

@@ -1,0 +1,39 @@
+en:
+  pages:
+    home:
+      questions:
+        question1_html: Where do you want to go <strong>Europe</strong> in the future?
+        question2_html: Do you feel that you <strong>are participating </strong> in European decisions?
+        question3_html: How can Europe deal with social, economic and environmental problems?
+        question4_html: Do you think you can be part of the solution?
+        answer: >
+                  This digital platform, open to the participation of citizens,
+                  offers you the opportunity to come up with ideas to get the Union to
+                  European responds to our concerns; a more democratic Europe,
+                  more participatory, less unequal, more accessible, more supportive, more sustainable.
+        read_more: Read more ->
+      button_1: Send your proposal
+      button_2: Consult the proposals
+    help:
+      menu:
+        how_can_use: "How can I use the platform?"
+      how_can_use:
+        title: "How can I use the platform?"
+        description_1: "Anyone can freely browse this digital platform and access the proposals made by other people, as well as by organisations and groups, to achieve a more democratic Europe."
+        description_2: "Registered participants (%{link}) will be able to interact with the digital platform, either on their own behalf or on behalf of organisations and groups, as follows:"
+        description_3: "All original proposals, as well as complementary and counter-proposals, will be published automatically, without prejudice to the possibility that those that do not comply with the %{link} may later be withdrawn from the platform."
+        feature_1: "creating one or more proposals,"
+        feature_2: "commenting on existing proposals,"
+        feature_3: "making one or more proposals complementary to an existing proposal, and/or"
+        feature_4: "creating one or more separate or counter-proposals from existing proposals."
+      proposals:
+        title: "Proposals"
+        description: "In the %{link} section you can put forward proposals for More democracy in Europe to carry them out..."
+        link: "proposals"
+    titles:
+      legal_disclaimer: Legal disclaimer
+    slugs:
+      privacy: privacy-policy
+      terms_and_conditions: terms-and-conditions
+      legal_notice: legal-notice
+      about: about

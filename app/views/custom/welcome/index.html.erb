@@ -1,0 +1,33 @@
+<% content_for :body_class, "home-page" %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: root_url %>
+<% end %>
+
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: root_url %>
+<% end %>
+
+<%= render "header", header: @header %>
+
+<main>
+  <div class="column">
+    <%= render "feeds" %>
+    <div class="row">
+      <div class="small-12 column <%= 'large-8' if feed_processes_enabled? %>">
+        <%= render "cards" %>
+      </div>
+
+      <div class="small-12 large-4 column">
+        <%= render "processes" %>
+      </div>
+    </div>
+
+    <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+      <%= render "recommended",
+                  recommended_debates: @recommended_debates,
+                  recommended_proposals: @recommended_proposals %>
+    <% end %>
+  </div>
+</main>

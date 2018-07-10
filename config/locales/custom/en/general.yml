@@ -1,0 +1,50 @@
+en:
+  account:
+    show:
+      email_on_comment_label: Notify me by email when someone comments on my proposals
+  welcome:
+    welcome:
+      user_permission_proposal_participate: Participate on proposals
+  layouts:
+    header:
+      logo: MÁS DEMOCRACIA EN EUROPA logo
+      open_gov: Más Democracia En Europa
+      subnavigation:
+        about: "What is this about?"
+    footer:
+      participation_text: Participates in topics of interest to the European Economic Community
+      copyright: MasDemocraciaEnEuropa, %{year}
+      legal_disclaimer: Legal disclaimer
+      project_text: A project by
+      colaboration_text: In collaboration with
+      support_text: Supported by
+  social:
+    linkedin: "%{org} LinkedIn"
+  proposals:
+    form:
+      proposal_feasible_explanation: Is your proposal actionable?
+      proposal_feasible_explanation_note_html: Explain briefly what does it take to have your proposal implemented, including an even rough estimation of the cost of it. <br>(max 1700 characters ~ 300 words)
+      proposal_impact_description: What can be the impact of your proposal?
+      proposal_impact_description_note_html: Describe the potential consequences of your proposal from a social, cultural, economic, political, legal, environmental…  perspectives. Identify the main beneficiaries of the proposal was it implemented. <br>(max 1700 characters ~ 300 words)
+      proposal_objective: Precise Objective/s
+      proposal_objective_note_html: All proposals on this platform aim to advance democracy in Europe. It is important that your proposal has one or two more precise objectives within that common objective. <br>(max 1700 characters ~ 300 words)"
+      proposal_text: Explain your proposal
+      proposal_text_note_html: "Keep your sentences short and clear. Use words that everybody can understand; e.g. avoid technical language. Try to keep the attention of the reader: e.g. avoid repetition, refer to examples, use bullet points… <br>(max 6000 characters ~ 1200 words)"
+      proposal_title: Proposal title
+      proposal_title_note: Be concise. Try both to describe your proposal and draw the attention of the broader public
+      tag_category_label: Browse existing keywords
+      tags_instructions: "Tag this proposal. You can choose from proposed keywords or add your own"
+      tags_label: Keywords
+      tags_placeholder: "Enter the keywords you would like to use, separated by commas (',')"
+    new:
+      recommendation_one: Are you sure that your proposal, or something very similar to it, has not yet been implemented? Take a few minutes to think about it and look for similar ideas on the web.
+      recommendation_two: Are you sure that there is no similar proposal already on this platform? Browse proposals using keywords
+      recommendation_three: Do not use capital letters for the proposal title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at.
+      recommendation_four: Enjoy this space and the voices that fill it. It belongs to you too.
+      recommendation_five: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
+    show:
+      proposal_objective: Proposal precise Objective/s
+      proposal_feasible_explanation: Proposal feasilbility
+      proposal_impact_description: Proposal impact
+  related_content:
+    help: "You can add links of Proposals inside of %{org}."

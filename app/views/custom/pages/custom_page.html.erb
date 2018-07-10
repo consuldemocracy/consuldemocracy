@@ -1,0 +1,24 @@
+<% provide :title do %><%= @custom_page.title %><% end %>
+
+<div class="row margin-top">
+
+  <div class="small-12 medium-9 column">
+    <h1><%= @custom_page.title %></h1>
+    <% if @custom_page.subtitle.present? %>
+      <h2><%= @custom_page.subtitle%></h2>
+    <% end %>
+
+    <% if setting['org_name'] == 'MASDEMOCRACIAEUROPA' %>
+      <%= safe_html_with_links @custom_page.content %>
+    <% else %>
+      <%= text_with_links @custom_page.content %>
+    <% end %>
+
+  </div>
+
+  <% if @custom_page.print_content_flag %>
+    <div class="small-12 medium-3 column">
+      <%= render '/shared/print' %>
+    </div>
+  <% end %>
+</div>
