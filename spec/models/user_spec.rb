@@ -667,6 +667,15 @@ describe User do
       expect(user.interests).to eq ["Sport"]
     end
 
+    it "deals gracefully with hidden proposals" do
+      proposal = create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal, user: user)
+
+      proposal.hide
+
+      expect(user.interests).to eq []
+    end
+
     it "discards followed objects duplicated tags" do
       proposal1 = create(:proposal, tag_list: "Sport")
       proposal2 = create(:proposal, tag_list: "Sport")
