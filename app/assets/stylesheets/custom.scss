@@ -338,6 +338,17 @@ body.auth-page{
   }
 }
 
+@media screen and (min-width: 40em) and (max-width: 43em) {
+  //Register
+  body.auth-page{
+
+    .auth-image{
+      h1 span{
+        font-size: 10px;
+      }
+    }
+  }
+}
 
 // Check this...is not mine....
 .icon-linkedin{
