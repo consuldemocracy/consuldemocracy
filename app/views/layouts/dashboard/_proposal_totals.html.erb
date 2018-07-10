@@ -2,7 +2,7 @@
   <div class="row">
     <div class="column large-4">
       <div class="counter">
-        <div class="counter-value"><%= proposal.votes_for.size %></div>
+        <div class="counter-value"><%= number_with_delimiter(proposal.votes_for.size, delimiter: '.') %></div>
         <div class="counter-label"><%= t('.supports') %></div>
       </div>
 
@@ -16,14 +16,14 @@
       </div>
 
       <div class="counter">
-        <div class="counter-value"><%= community_members_count %></div>
+        <div class="counter-value"><%= number_with_delimiter(community_members_count, delimiter: '.') %></div>
         <div class="counter-label"><%= t('.community') %></div>
       </div> 
     </div>
     <div class="column large-8">
       <div class="current-goal">
         <div class="counter-value">
-          <%= t('.support_count', count: next_goal_supports) %>
+          <%= t('.support_count', count: number_with_delimiter(next_goal_supports, delimiter: '.')) %>
         </div>
 
         <div class="counter-label"><%= t('.current_goal') %></div>

@@ -25,7 +25,7 @@
         <% if can?(:manage_polls, proposal) %>
           <%= polls_menu do %>
             <%= link_to proposal_dashboard_polls_path(proposal.to_param) do %>
-              <span><%= t('.polls') %></span>
+              <span data-tooltip title="<%= Setting['proposals.poll_short_title'] || t('.polls') %>"><%= t('.polls') %></span>
             <% end %>
           <% end %>
         <% end %>

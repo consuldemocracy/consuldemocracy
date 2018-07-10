@@ -557,6 +557,8 @@ en:
         count:
           one: You have created %{count} poll.
           other: You have created %{count} polls.
+        links: Links
+        additiontal_information: Additional information
       poll:
         published_on: Published on
         responses:

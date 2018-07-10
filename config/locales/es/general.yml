@@ -557,6 +557,8 @@ es:
         count:
           one: Has creado %{count} encuesta.
           other: Has creado %{count} encuestas.
+        links: Enlaces
+        additiontal_information: Información adicional
       poll:
         published_on: Publicada
         responses:

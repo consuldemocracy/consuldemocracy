@@ -1,11 +1,23 @@
 <% content_for :action_title, t('.title') %>
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <%== Setting['proposals.poll_description'] %>
+  </div>
 
-<%= link_to t('.create'),
-            new_proposal_dashboard_poll_path(proposal),
-            class: 'button' %>
+  <div class="small-12 medium-3 column">
+    <% unless Setting['proposals.poll_link'].blank? %>
+      <div class="proposal-dashboard-action-links">
+        <h3><%= t('.links') %></h3>
+        <%= link_to t('.additiontal_information'), Setting['proposals.poll_link'], target: '_blank' %>
+      </div>
+    <% end %>
 
-<div class="row small-12 column">
-  <strong><%= t('.count', count: @polls.count) %></strong>
+
+    <strong><%= t('.count', count: @polls.count) %></strong>
+    <%= link_to t('.create'),
+                new_proposal_dashboard_poll_path(proposal),
+                class: 'button expanded' %>
+  </div>
 </div>
 
 <% if @polls.any? %>

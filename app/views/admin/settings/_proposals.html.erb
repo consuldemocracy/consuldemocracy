@@ -17,5 +17,59 @@
         <% end %>
       </td>
     </tr>
+    <tr>
+      <td class="small-12 medium-4">
+        <strong><%= t("settings.#{poll_feature_short_title_setting.key}") %></strong>
+      </td>
+      <td class="small-12 medium-8">
+        <%= form_for poll_feature_short_title_setting,
+                     url: admin_setting_path(poll_feature_short_title_setting),
+                     html: { id: "edit_#{dom_id(poll_feature_short_title_setting)}"} do |f| %>
+          <div class="small-12 medium-6 large-9 column">
+            <%= f.text_field :value, label: false, id: dom_id(poll_feature_short_title_setting) %>
+          </div>
+          <div class="small-12 medium-6 large-3 column">
+            <%= f.submit(t('admin.settings.index.update_setting'), class: "button hollow expanded") %>
+          </div>
+        <% end %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="small-12 medium-4">
+        <strong><%= t("settings.#{poll_feature_description_setting.key}") %></strong>
+      </td>
+      <td class="small-12 medium-8">
+        <%= form_for poll_feature_description_setting,
+                     url: admin_setting_path(poll_feature_description_setting),
+                     html: { id: "edit_#{dom_id(poll_feature_description_setting)}"} do |f| %>
+          <div class="small-12 medium-6 large-9 column">
+            <%= f.cktext_area :value, label: false, id: dom_id(poll_feature_description_setting) %>
+          </div>
+          <div class="small-12 medium-6 large-3 column">
+            <%= f.submit(t('admin.settings.index.update_setting'), class: "button hollow expanded") %>
+          </div>
+        <% end %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="small-12 medium-4">
+        <strong><%= t("settings.#{poll_feature_link_setting.key}") %></strong>
+      </td>
+      <td class="small-12 medium-8">
+        <%= form_for poll_feature_link_setting,
+                     url: admin_setting_path(poll_feature_link_setting),
+                     html: { id: "edit_#{dom_id(poll_feature_link_setting)}"} do |f| %>
+          <div class="small-12 medium-6 large-9 column">
+            <%= f.text_field :value, label: false, id: dom_id(poll_feature_link_setting) %>
+          </div>
+          <div class="small-12 medium-6 large-3 column">
+            <%= f.submit(t('admin.settings.index.update_setting'), class: "button hollow expanded") %>
+          </div>
+        <% end %>
+      </td>
+    </tr>
+
   </tbody>
 </table>

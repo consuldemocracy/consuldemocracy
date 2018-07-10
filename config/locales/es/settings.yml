@@ -65,3 +65,6 @@ es:
     proposal_improvement_path: Link a información para mejorar propuestas
     proposals:
       successful_proposal_id: Propuesta exitosa
+      poll_short_title: Subtítulo funcionalidad encuestas
+      poll_description: Descripción funcionalidad encuestas
+      proposals.poll_link: Enlace información adicional

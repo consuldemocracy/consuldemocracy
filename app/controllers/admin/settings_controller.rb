@@ -1,5 +1,5 @@
 class Admin::SettingsController < Admin::BaseController
-  helper_method :successful_proposal_setting, :successful_proposals
+  helper_method :successful_proposal_setting, :successful_proposals, :poll_feature_short_title_setting, :poll_feature_description_setting, :poll_feature_link_setting
 
   def index
     all_settings = Setting.all.group_by { |s| s.type }
@@ -34,5 +34,17 @@ class Admin::SettingsController < Admin::BaseController
 
   def successful_proposals
     Proposal.successful
+  end
+
+  def poll_feature_short_title_setting
+    Setting.find_by(key: 'proposals.poll_short_title')
+  end
+
+  def poll_feature_description_setting
+    Setting.find_by(key: 'proposals.poll_description')
+  end
+
+  def poll_feature_link_setting
+    Setting.find_by(key: 'proposals.poll_link')
   end
 end

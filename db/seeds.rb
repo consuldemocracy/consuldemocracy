@@ -134,3 +134,5 @@ Setting['feature.homepage.widgets.feeds.processes'] = true
 
 # Proposals
 Setting['proposals.successful_proposal_id'] = nil
+Setting['proposals.poll_short_title'] = nil
+Setting['proposals.poll_description'] = nil

@@ -65,3 +65,6 @@ en:
     proposal_improvement_path: Proposal improvement info internal link
     proposals:
       successful_proposal_id: Successful proposal
+      poll_short_title: Subtitle for polls feature
+      poll_description: Description for polls feature
+      poll_link: Additional information link
