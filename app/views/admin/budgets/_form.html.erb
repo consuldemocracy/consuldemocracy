@@ -65,7 +65,7 @@
 
       <% if @budget.has_winning_investments? %>
         <%= link_to t("budgets.show.see_results"),
-                    budget_results_path(@budget),
+                    custom_budget_results_path(@budget),
                     class: "button hollow margin-left" %>
       <% end %>
       <% if @budget.persisted? %>

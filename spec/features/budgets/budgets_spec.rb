@@ -394,6 +394,14 @@ feature 'Budgets' do
       expect(page).not_to have_link "See results"
     end
 
+    scenario "Custom url for results page" do
+      user = create(:user)
+      budget = create(:budget, :finished)
+
+      visit budget_path(budget)
+      expect(page).to have_link('See results', href: "/presupuestos/#{budget.slug}/resultados")
+    end
+
   end
 
   context "In Drafting phase" do

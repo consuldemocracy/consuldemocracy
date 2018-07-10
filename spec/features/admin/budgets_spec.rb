@@ -212,12 +212,21 @@ feature 'Admin budgets' do
 
     scenario 'For a finished Budget' do
       budget = create(:budget, phase: 'finished')
-      allow_any_instance_of(Budget).to receive(:has_winning_investments?).and_return true
+      allow_any_instance_of(Budget).to receive(:has_winning_investments?).and_return(true)
 
       visit edit_admin_budget_path(budget)
 
       expect(page).not_to have_content 'Calculate Winner Investments'
       expect(page).to have_content 'See results'
+    end
+
+    scenario "Custom url for results page" do
+      budget = create(:budget, phase: 'finished')
+      allow_any_instance_of(Budget).to receive(:has_winning_investments?).and_return(true)
+
+      visit edit_admin_budget_path(budget)
+
+      expect(page).to have_link('See results', href: "/presupuestos/#{budget.slug}/resultados")
     end
 
   end
