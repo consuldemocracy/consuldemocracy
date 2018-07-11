@@ -6,10 +6,10 @@ feature 'Executions' do
   let(:group)   { create(:budget_group, budget: budget) }
   let(:heading) { create(:budget_heading, group: group, price: 1000) }
 
-  let!(:investment1) { create(:budget_investment, :selected,     heading: heading, price: 200, ballot_lines_count: 900) }
-  let!(:investment2) { create(:budget_investment, :selected,     heading: heading, price: 300, ballot_lines_count: 800) }
+  let!(:investment1) { create(:budget_investment, :winner,       heading: heading, price: 200, ballot_lines_count: 900) }
+  let!(:investment2) { create(:budget_investment, :winner,       heading: heading, price: 300, ballot_lines_count: 800) }
   let!(:investment3) { create(:budget_investment, :incompatible, heading: heading, price: 500, ballot_lines_count: 700) }
-  let!(:investment4) { create(:budget_investment, :selected,     heading: heading, price: 600, ballot_lines_count: 600) }
+  let!(:investment4) { create(:budget_investment, :winner,       heading: heading, price: 600, ballot_lines_count: 600) }
 
   scenario 'only displays investments with milestones' do
     create(:budget_investment_milestone, investment: investment1)
