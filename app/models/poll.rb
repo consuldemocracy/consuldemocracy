@@ -3,6 +3,7 @@ class Poll < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
   include Notifiable
+  include Sluggable
 
   RECOUNT_DURATION = 1.week
 
@@ -90,6 +91,22 @@ class Poll < ActiveRecord::Base
     unless starts_at.present? && ends_at.present? && starts_at <= ends_at
       errors.add(:starts_at, I18n.t('errors.messages.invalid_date_range'))
     end
+  end
+
+  def self.server_shared_key
+    Rails.application.secrets["nvotes_shared_key"] || ENV["nvotes_shared_key"]
+  end
+
+  def self.server_url
+    Rails.application.secrets["nvotes_server_url"] || ENV["nvotes_server_url"]
+  end
+
+  def budget_poll?
+    budget.present?
+  end
+
+  def generate_slug?
+    slug.nil?
   end
 
 end

@@ -70,6 +70,7 @@ feature 'Admin polls' do
     expect(page).to have_content "Upcoming poll"
     expect(page).to have_content I18n.l(start_date.to_date)
     expect(page).to have_content I18n.l(end_date.to_date)
+    expect(Poll.last.slug).to eq "#{Poll.last.name.to_s.parameterize}"
   end
 
   scenario "Edit" do
