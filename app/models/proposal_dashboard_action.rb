@@ -51,6 +51,13 @@ class ProposalDashboardAction < ActiveRecord::Base
       .where('day_offset <= ?', (Date.today - published_at).to_i)
   end
 
+  scope :course_for, lambda { |proposal|
+    active
+      .resources
+      .where('required_supports > ?', proposal.votes_for.size)
+      .order(required_supports: :asc)
+  }
+
   def active_for?(proposal)
     published_at = proposal.published_at&.to_date || Date.today
 
@@ -58,10 +65,7 @@ class ProposalDashboardAction < ActiveRecord::Base
   end
 
   def self.next_goal_for(proposal)
-    active
-      .where('required_supports > ?', proposal.votes_for.size)
-      .order(required_supports: :asc)
-      &.first
+    course_for(proposal).first
   end
 
   def request_to_administrators?

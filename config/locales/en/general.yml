@@ -540,6 +540,9 @@ en:
       title: Recommended actions
     next_goal:
       title: Goal
+      see_complete_course: Check out the complete course
+      hide_course: Hide course
+    goal:
       target_supports: 
         one: Get %{count} support for your proposal
         other: Get %{count} supports for your proposal
@@ -548,7 +551,6 @@ en:
         other: "%{count} days"
       unlocked_resource: Resource unlocked
       ideal_time: Ideal time
-      see_complete_course: Check out the complete course
   dashboard:
     polls:
       index:

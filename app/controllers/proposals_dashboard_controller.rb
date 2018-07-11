@@ -1,5 +1,5 @@
 class ProposalsDashboardController < Dashboard::BaseController
-  helper_method :proposal_dashboard_action, :active_resources
+  helper_method :proposal_dashboard_action, :active_resources, :course
 
   def index
     authorize! :dashboard, proposal
@@ -69,6 +69,10 @@ class ProposalsDashboardController < Dashboard::BaseController
   end
 
   def active_resources
-    ProposalDashboardAction.active.resources.order(required_supports: :asc, day_offset: :asc)
+    @active_resources ||= ProposalDashboardAction.active.resources.order(required_supports: :asc, day_offset: :asc)
+  end
+
+  def course
+    @course ||= ProposalDashboardAction.course_for(proposal)
   end
 end

@@ -540,6 +540,9 @@ es:
       title: Acciones recomendadas
     next_goal:
       title: Meta
+      see_complete_course: Ver ruta completa
+      hide_course: Ocultar ruta
+    goal:
       target_supports: 
         one: Consigue %{count} apoyo para tu propuesta
         other: Consigue %{count} apoyos para tu propuesta
@@ -548,7 +551,6 @@ es:
         other: "%{count} días"
       unlocked_resource: Recurso desbloqueado
       ideal_time: Tiempo ideal
-      see_complete_course: Ver ruta completa
   dashboard:
     polls:
       index:

@@ -4,34 +4,22 @@
     <h5><%= t('.title') %></h5>
     <hr>
   </div>
-  <div class="row next-goal">
-    <div class="column small-12">
-      <i class="fi-flag"></i>
-      <strong>
-        <%= t('.target_supports', count: number_with_precision(next_goal.required_supports, delimiter: '.', precision: 0)) %>
-      </strong>
-    </div>
-    <div class="column small-12">&nbsp;</div>
+
+  <div id="next-goal" data-toggler=".hide">
+    <%= render 'goal', goal: next_goal %>
 
     <div class="column small-12">
-      <i class="fi-unlock"></i>
-      <strong><%= next_goal.title %></strong>
-    </div>
-    <div class="column small-12 skip-icon">
-      <p class="help-text"><%= t('.unlocked_resource') %></p>
-    </div>
-
-    <% if next_goal.day_offset.positive? %>
-      <div class="column small-12">
-        <strong><%= t('.days', count: next_goal.day_offset) %></strong>
-      </div>
-      <div class="column small-12">
-        <p class="help-text"><%= t('.ideal_time') %></p>
-      </div>
-    <% end %>
-
-    <div class="column small-12">
-      <%= link_to t('.see_complete_course'), '#' %>
+      <a data-toggle="complete-course next-goal"><%= t('.see_complete_course') %></a>
     </div>
   </div>
+
+  <% if course.count > 1 %>
+    <div class="hide" id="complete-course" data-toggler=".hide">
+      <%= render partial: 'goal', collection: course %>,  
+
+      <div class="column small-12">
+        <a data-toggle="complete-course next-goal"><%= t('.hide_course') %></a>
+      </div>
+    </div>
+  <% end %>
 <% end %>
