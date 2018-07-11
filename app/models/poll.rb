@@ -6,6 +6,7 @@ class Poll < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
   include Notifiable
+  include Sluggable
 
   RECOUNT_DURATION = 1.week
 
@@ -136,6 +137,10 @@ class Poll < ActiveRecord::Base
 
   def budget_poll?
     budget.present?
+  end
+
+  def generate_slug?
+    slug.nil?
   end
 
 end
