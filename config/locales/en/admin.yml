@@ -269,8 +269,6 @@ en:
         show_image: "Show image"
         documents: "Documents"
       form:
-        add_language: Add language
-        remove_language: Remove language
         admin_statuses: Admin investment statuses
         no_statuses_defined: There are no defined investment statuses yet
       new:
@@ -1377,3 +1375,6 @@ en:
         submit_header: Save header
         card_title: Edit card
         submit_card: Save card
+    translations:
+        remove_language: Remove language
+        add_language: Add language

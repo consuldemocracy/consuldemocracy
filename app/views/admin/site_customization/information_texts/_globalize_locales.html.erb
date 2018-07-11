@@ -1,5 +1,5 @@
 <% I18n.available_locales.each do |locale| %>
-  <%= link_to t("admin.milestones.form.remove_language"), "#",
+  <%= link_to t("admin.translations.remove_language"), "#",
               id: "delete-#{neutral_locale(locale)}",
               style: show_delete?(locale),
               class: 'float-right delete js-delete-language',
@@ -22,6 +22,6 @@
 <div class="small-12 medium-6">
   <%= select_tag :translation_locale,
                  options_for_locale_select,
-                 prompt: t("admin.milestones.form.add_language"),
+                 prompt: t("admin.translations.add_language"),
                  class: "js-globalize-locale" %>
 </div>
