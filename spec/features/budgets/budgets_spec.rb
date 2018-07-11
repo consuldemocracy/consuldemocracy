@@ -398,8 +398,15 @@ feature 'Budgets' do
       user = create(:user)
       budget = create(:budget, :finished)
 
-      visit budget_path(budget)
-      expect(page).to have_link('See results', href: "/presupuestos/#{budget.slug}/resultados")
+      visit budgets_path
+
+      within("#budget_heading") do
+        expect(page).to have_link('See results', href: "/presupuestos/#{budget.slug}/resultados")
+      end
+
+      within("#finished_budgets") do
+        expect(page).to have_link('See results', href: "/presupuestos/#{budget.slug}/resultados")
+      end
     end
 
   end
