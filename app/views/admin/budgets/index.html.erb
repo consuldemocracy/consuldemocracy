@@ -16,6 +16,7 @@
       <th><%= t("admin.budgets.index.table_investments") %></th>
       <th><%= t("admin.budgets.index.table_edit_groups") %></th>
       <th><%= t("admin.budgets.index.table_edit_budget") %></th>
+      <th><%= t("admin.budgets.index.table_force_public") %></th>
     </tr>
   </thead>
   <tbody>
@@ -37,6 +38,9 @@
         </td>
         <td class="small">
           <%= link_to t("admin.budgets.index.edit_budget"), edit_admin_budget_path(budget) %>
+        </td>
+        <td class="small">
+          <%= budget.force_public ? t("shared.yes") : t("shared.no") %>
         </td>
       </tr>
     <% end %>

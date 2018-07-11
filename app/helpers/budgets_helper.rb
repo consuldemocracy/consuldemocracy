@@ -61,7 +61,7 @@ module BudgetsHelper
   end
 
   def budget_published?(budget)
-    !budget.drafting? || current_user&.administrator?
+    budget.force_public || !budget.drafting? || current_user&.administrator?
   end
 
   def current_budget_map_locations
@@ -86,4 +86,21 @@ module BudgetsHelper
       t("admin.budgets.winners.recalculate")
     end
   end
+
+  def link_to_create_budget_poll(budget)
+    balloting_phase = budget.phases.where(kind: "balloting").first
+
+    link_to t("admin.budgets.index.admin_ballots"),
+            admin_polls_path(poll: {
+                              name:      budget.name,
+                              budget_id: budget.id,
+                              starts_at: balloting_phase.starts_at,
+                              ends_at:   balloting_phase.ends_at }),
+            method: :post
+  end
+
+  def show_the_stats_link?(budget, bool)
+    bool || budget.force_public
+  end
+
 end

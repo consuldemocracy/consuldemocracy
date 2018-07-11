@@ -273,6 +273,7 @@ ActiveRecord::Schema.define(version: 20180718115545) do
     t.text     "description_drafting"
     t.text     "description_publishing_prices"
     t.text     "description_informing"
+    t.boolean  "force_public"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -1279,6 +1280,12 @@ ActiveRecord::Schema.define(version: 20180718115545) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  create_table "web_sections", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "widget_cards", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -1295,12 +1302,6 @@ ActiveRecord::Schema.define(version: 20180718115545) do
     t.integer  "limit",      default: 3
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-  end
-
-  create_table "web_sections", force: :cascade do |t|
-    t.text     "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "administrators", "users"
