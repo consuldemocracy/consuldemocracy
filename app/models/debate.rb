@@ -156,10 +156,8 @@ class Debate < ActiveRecord::Base
 
   def self.debates_orders(user)
     orders = %w{hot_score confidence_score created_at relevance}
-    if user.present? && Setting['feature.user.recommendations'].present?
-      orders << "recommendations"
-    end
-    orders
+    orders << "recommendations" if user&.recommended_debates
+    return orders
   end
 
   def set_comment_kind

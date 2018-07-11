@@ -6,6 +6,7 @@ class DebatesController < ApplicationController
   before_action :parse_tag_filter, only: :index
   before_action :authenticate_user!, except: [:index, :show, :map]
   before_action :set_view, only: :index
+  before_action :debates_recommendations, only: :index, if: :current_user
 
   feature_flag :debates
 
@@ -61,6 +62,11 @@ class DebatesController < ApplicationController
 
     def set_view
       @view = (params[:view] == "minimal") ? "minimal" : "default"
+    end
+
+    def debates_recommendations
+      return unless current_user.recommended_debates
+      @recommended_debates = Debate.recommendations(current_user).sort_by_random.limit(3)
     end
 
 end

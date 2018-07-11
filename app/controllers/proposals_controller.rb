@@ -9,6 +9,7 @@ class ProposalsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
+  before_action :proposals_recommendations, only: :index, if: :current_user
 
   feature_flag :proposals
 
@@ -170,5 +171,10 @@ class ProposalsController < ApplicationController
 
     def load_rank
       @proposal_rank ||= Proposal.rank(@proposal)
+    end
+
+    def proposals_recommendations
+      return unless current_user.recommended_proposals
+      @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
     end
 end

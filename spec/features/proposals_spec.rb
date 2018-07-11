@@ -774,52 +774,70 @@ feature 'Proposals' do
 
     context 'Recommendations' do
 
-      let!(:best_proposal) { create(:proposal, title: 'Best', cached_votes_up: 10, tag_list: "Sport") }
-      let!(:medium_proposal) { create(:proposal, title: 'Medium', cached_votes_up: 5, tag_list: "Sport") }
-      let!(:worst_proposal) { create(:proposal, title: 'Worst', cached_votes_up: 1, tag_list: "Sport") }
+      let!(:best_proposal)   { create(:proposal, title: 'Best',   cached_votes_up: 10, tag_list: 'Sport') }
+      let!(:medium_proposal) { create(:proposal, title: 'Medium', cached_votes_up: 5,  tag_list: 'Sport') }
+      let!(:worst_proposal)  { create(:proposal, title: 'Worst',  cached_votes_up: 1,  tag_list: 'Sport') }
 
       before do
         Setting['feature.user.recommendations'] = true
+        Setting['feature.user.recommendations_on_proposals'] = true
       end
 
       after do
         Setting['feature.user.recommendations'] = nil
+        Setting['feature.user.recommendations_on_proposals'] = nil
       end
 
-      scenario 'Proposals can not ordered by recommendations when there is not an user logged', :js do
+      scenario "Proposals can't be ordered by recommendations if there's no logged user" do
         visit proposals_path
-
         expect(page).not_to have_selector('a', text: 'recommendations')
       end
 
-      scenario 'Should display text when there are not recommendeds results', :js do
-        user = create(:user)
-        proposal = create(:proposal, tag_list: "Distinct_to_sport")
+      scenario 'Show recommended proposals on index header when user has recommendations enabled' do
+        user     = create(:user, recommended_proposals: true)
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
+
+        login_as(user)
+        visit proposals_path
+
+        expect(page).to have_css('.recommendation', count: 3)
+        expect(page).to have_link 'Best'
+        expect(page).to have_link 'Medium'
+        expect(page).to have_link 'Worst'
+        expect(page).to have_link 'See more recommendations'
+      end
+
+      scenario 'Should display text when there are not recommended results' do
+        user     = create(:user, recommended_proposals: true)
+        proposal = create(:proposal, tag_list: 'Distinct_to_sport')
+        create(:follow, followable: proposal, user: user)
+
         login_as(user)
         visit proposals_path
 
         click_link 'recommendations'
 
-        expect(page).to have_content "There are not proposals related to your interests"
+        expect(page).to have_content 'There are not proposals related to your interests'
       end
 
-      scenario 'Should display text when user has not related interests', :js do
-        user = create(:user)
+      scenario 'Should display text when user has not related interests' do
+        user = create(:user, recommended_proposals: true)
+
         login_as(user)
         visit proposals_path
 
         click_link 'recommendations'
 
-        expect(page).to have_content "Follow proposals so we can give you recommendations"
+        expect(page).to have_content 'Follow proposals so we can give you recommendations'
       end
 
-      scenario 'Proposals are ordered by recommendations when there is an user logged', :js do
-        user = create(:user)
-        proposal = create(:proposal, tag_list: "Sport")
+      scenario "Proposals are ordered by recommendations when there's an user logged" do
+        user     = create(:user, recommended_proposals: true)
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
-        login_as(user)
 
+        login_as(user)
         visit proposals_path
 
         click_link 'recommendations'
@@ -833,6 +851,41 @@ feature 'Proposals' do
 
         expect(current_url).to include('order=recommendations')
         expect(current_url).to include('page=1')
+      end
+
+      scenario 'are not shown if user does not have recommendations enabled' do
+        user     = create(:user)
+        proposal = create(:proposal, tag_list: 'Sport')
+        create(:follow, followable: proposal, user: user)
+
+        login_as(user)
+        visit proposals_path
+
+        expect(page).not_to have_css('.recommendation', count: 3)
+        expect(page).not_to have_link('recommendations')
+      end
+
+      scenario 'Recommendations shown in index are dismissable', :js do
+        user     = create(:user, recommended_proposals: true)
+        proposal = create(:proposal, tag_list: 'Sport')
+        create(:follow, followable: proposal, user: user)
+
+        login_as(user)
+        visit proposals_path
+
+        within("#recommendations") do
+          expect(page).to have_content('Best')
+          expect(page).to have_content('Worst')
+          expect(page).to have_content('Medium')
+          expect(page).to have_css('.recommendation', count: 3)
+
+          find('.icon-x').click
+
+          expect(page).not_to have_content('Best')
+          expect(page).not_to have_content('Worst')
+          expect(page).not_to have_content('Medium')
+          expect(page).not_to have_css('.recommendation', count: 3)
+        end
       end
     end
   end
@@ -1370,10 +1423,13 @@ feature 'Proposals' do
       end
     end
 
-    scenario "Reorder by recommendations results maintaing search", :js do
+    scenario "Reorder by recommendations results maintaing search" do
       Setting['feature.user.recommendations'] = true
-      user = create(:user)
+      Setting['feature.user.recommendations_for_proposals'] = true
+
+      user = create(:user, recommended_proposals: true)
       login_as(user)
+
       proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  tag_list: "Sport")
       proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   tag_list: "Sport")
       proposal3 = create(:proposal, title: "Do not display with same tag", cached_votes_up: 100, tag_list: "Sport")
@@ -1393,7 +1449,9 @@ feature 'Proposals' do
         expect(page).not_to have_content "Do not display with same tag"
         expect(page).not_to have_content "Do not display"
       end
+
       Setting['feature.user.recommendations'] = nil
+      Setting['feature.user.recommendations_for_proposals'] = nil
     end
 
     scenario 'After a search do not show featured proposals' do

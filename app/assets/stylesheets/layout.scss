@@ -18,7 +18,7 @@
 // 16. Flags
 // 17. Activity
 // 18. Banners
-// 19. Recommended Section Home
+// 19. Recommendations
 // 20. Documents
 // 21. Related content
 // 22. Images
@@ -2268,8 +2268,8 @@ table {
   }
 }
 
-// 19. Recommended Section Home
-// ----------------------------
+// 19. Recommendations
+// -------------------
 
 .section-recommended {
   background: #fafafa;
@@ -2409,6 +2409,54 @@ table {
       margin: 0 auto;
     }
   }
+}
+
+.recommended-index {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  margin-bottom: $line-height;
+  margin-top: rem-calc(-$line-height);
+  padding: $line-height 0;
+
+  @include breakpoint(medium) {
+    padding-top: 0;
+  }
+
+  h2 {
+    font-size: $small-font-size;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: $base-font-size;
+    margin-bottom: 0;
+  }
+
+  a {
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .recommendation {
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    display: block;
+    margin-bottom: $line-height / 4;
+    padding: $line-height / 2;
+
+    &:hover {
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.hide-recommendations {
+  color: $text-light;
+  position: absolute;
+  right: 12px;
+  top: -18px;
 }
 
 // 20. Documents

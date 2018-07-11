@@ -20,6 +20,9 @@ en:
       email_on_direct_message_label: Receive emails about direct messages
       email_digest_label: Receive a summary of proposal notifications
       official_position_badge_label: Show official position badge
+      recommendations: Recommendations
+      show_debates_recommendations: Show debates recommendations
+      show_proposals_recommendations: Show proposals recommendations
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
@@ -627,6 +630,10 @@ en:
       title: View mode
       cards: Cards
       list: List
+    recommended_index:
+        title: Recommendations
+        see_more: See more recommendations
+        hide: Hide recommendations
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"
