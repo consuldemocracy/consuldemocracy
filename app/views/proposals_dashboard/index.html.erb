@@ -4,11 +4,6 @@
 
 <% end %>
 
-<%= link_to t('.send_notification'), 
-            new_proposal_notification_path(proposal_id: proposal.id),
-            target: '_blank',
-            class: 'button hollow' %>
-
 <% if can_destroy_image?(proposal) %>
   <%= link_to t('images.remove_image'), 
               image_path(proposal.image, from: request.url),

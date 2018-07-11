@@ -526,7 +526,6 @@ es:
       edit_proposal_link: Editar propuesta
       publish: Publicar
       retire: Retirar
-      send_notification: Enviar notificación
     new_request:
       liks: Enlaces
     resources:
@@ -988,3 +987,7 @@ es:
     link_fields:
       label_placeholder: Título del enlace
       url_placeholder: Dirección del enlace
+  communities:
+    show:
+      send_notification: Enviar mensaje a la Comunidad
+      author: Autor

@@ -10,23 +10,20 @@ feature 'Proposal Notifications' do
     visit root_path
 
     click_link 'My activity'
-
-    within("#proposal_#{proposal.id}") do
-      click_link 'Dashboard'
-    end
-
-    click_link 'Send notification'
+    click_link proposal.title
+    click_link 'Access the community'
+    click_link 'Send message to the community'
 
     fill_in 'proposal_notification_title', with: 'Thank you for supporting my proposal'
     fill_in 'proposal_notification_body', with: 'Please share it with others so we can make it happen!'
-    click_button "Send message"
+    click_button 'Send message'
 
     expect(page).to have_content 'Your message has been sent correctly.'
     expect(page).to have_content 'Thank you for supporting my proposal'
     expect(page).to have_content 'Please share it with others so we can make it happen!'
   end
 
-  scenario "Send a notification (Active voter)" do
+  scenario 'Send a notification (Active voter)' do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -38,7 +35,7 @@ feature 'Proposal Notifications' do
     expect(Notification.count).to eq(1)
   end
 
-  scenario "Send a notification (Follower)" do
+  scenario 'Send a notification (Follower)' do
     author = create(:user)
     proposal = create(:proposal, author: author)
     user_follower = create(:user)
@@ -49,7 +46,7 @@ feature 'Proposal Notifications' do
     expect(Notification.count).to eq(1)
   end
 
-  scenario "Send a notification (Follower and Voter)" do
+  scenario 'Send a notification (Follower and Voter)' do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -93,8 +90,8 @@ feature 'Proposal Notifications' do
 
   scenario "Show notifications" do
     proposal = create(:proposal)
-    notification1 = create(:proposal_notification, proposal: proposal, title: "Hey guys", body: "Just wanted to let you know that...")
-    notification2 = create(:proposal_notification, proposal: proposal, title: "Another update",
+    _notification1 = create(:proposal_notification, proposal: proposal, title: "Hey guys", body: "Just wanted to let you know that...")
+    _notification2 = create(:proposal_notification, proposal: proposal, title: "Another update",
                                                    body: "We are almost there please share with your peoples!")
 
     visit proposal_path(proposal)
@@ -161,16 +158,17 @@ feature 'Proposal Notifications' do
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
   end
 
-  context "Permissions" do
+  context 'Permissions' do
 
-    scenario "Link to send the message" do
-      user = create(:user)
+    scenario 'Link to send the message' do
+      _user = create(:user)
       author = create(:user)
       proposal = create(:proposal, author: author)
 
       login_as(author)
-      visit proposal_dashboard_index_path(proposal)
-      expect(page).to have_link "Send notification"
+      visit community_path(proposal.community)
+
+      expect(page).to have_link 'Send message to the community'
     end
 
     scenario "Accessing form directly" do

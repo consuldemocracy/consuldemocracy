@@ -526,7 +526,6 @@ en:
       edit_proposal_link: Edit
       publish: Publish
       retire: Retire
-      send_notification: Send notification
     new_request:
       links: Links
     resources:
@@ -989,3 +988,7 @@ en:
     link_fields:
       label_placeholder: Link title
       url_placeholder: Link address
+  communities:
+    show:
+      send_notification: Send message to the community
+      author: Author

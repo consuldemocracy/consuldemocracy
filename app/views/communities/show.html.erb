@@ -28,6 +28,14 @@
     </div>
 
     <aside class="small-12 medium-3 column hide-for-small-only">
+      <% if @community.proposal.present? %>
+        <div class="sidebar-divider"></div>
+        <h2><%= t('.author') %></h2>
+        <%= link_to t('.send_notification'),
+                    new_proposal_notification_path(proposal_id: @community.proposal.id),
+                    class: 'button expanded hollow' %>
+      <% end %>
+      
       <div class="sidebar-divider"></div>
       <h2><%= t("community.show.sidebar.participate") %></h2>
       <%= link_to t("community.show.sidebar.new_topic"), create_topic_link(@community) , class: "button expanded" %>
