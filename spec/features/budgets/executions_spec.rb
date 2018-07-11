@@ -27,6 +27,23 @@ feature 'Executions' do
     expect(page).not_to have_content(investment4.title)
   end
 
+  scenario 'render a message for headings without winner investments' do
+    empty_group   = create(:budget_group, budget: budget)
+    empty_heading = create(:budget_heading, group: empty_group, price: 1000)
+
+    visit budget_path(budget)
+    click_link 'See results'
+
+    expect(page).to have_content(heading.name)
+    expect(page).to have_content(empty_heading.name)
+
+    click_link 'Milestones'
+    click_link "#{empty_heading.name}"
+
+    expect(page).to have_content('No winner investments for this heading')
+  end
+
+
   context 'Images' do
     scenario 'renders milestone image if available' do
       milestone1 = create(:budget_investment_milestone, investment: investment1)
