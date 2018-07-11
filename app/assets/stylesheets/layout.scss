@@ -2409,7 +2409,7 @@ table {
   border-bottom: 1px solid #eee;
   margin-bottom: $line-height;
   margin-top: rem-calc(-25);
-  padding: $line-height 0;
+  padding: $line-height 0 $line-height / 2;
 
   @include breakpoint(medium) {
     padding-top: 0;
