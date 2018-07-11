@@ -25,13 +25,15 @@
 
       <% unless @draft_version.final_version? %>
         <div class="small-12 medium-3 column">
-          <%= link_to legislation_process_draft_version_annotations_path(@process, @draft_version), title: t('.see_comments'), class: "button" do %>
+          <%= link_to legislation_process_draft_version_annotations_path(@process, @draft_version), title: t('.see_comments'), class: "button expanded" do %>
             <strong><%= t('.see_comments') %></strong>
           <% end %>
         </div>
       <% end %>
 
     </div>
+
+    <%= render 'legislation/processes/help_gif' %>
 
     <div class="row draft-allegation medium-collapse comments-on">
       <div class="small-12 calc-index column <%= "js-toggle-allegations" unless @draft_version.final_version? %>">
