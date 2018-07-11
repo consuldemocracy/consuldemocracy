@@ -15,6 +15,30 @@ class Community < ActiveRecord::Base
     proposal.present?
   end
 
+  def latest_activity
+    activity = []
+  
+    most_recent_comment = Comment.where(commentable: topics).order(updated_at: :desc).take(1).first
+    activity << most_recent_comment.updated_at unless most_recent_comment.nil?
+
+    most_recent_topic = topics.order(updated_at: :desc).take(1).first
+    activity << most_recent_topic.updated_at unless most_recent_topic.nil?
+
+    activity.max
+  end
+
+  def comments_count
+    Comment.where(commentable: topics).count
+  end
+
+  def debates_count
+    topics.count
+  end
+
+  def participants_count
+    participants.count
+  end
+
   private
 
   def users_who_commented

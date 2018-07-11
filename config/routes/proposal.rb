@@ -9,6 +9,7 @@ resources :proposals do
       get :supports
       get :successful_supports
       get :progress
+      get :community
       get :achievements
     end
 

@@ -1,0 +1,39 @@
+<% content_for :action_title, t('proposals_dashboard.menu.community') %>
+
+<div class="row">
+  <div class="small-12 large-9 column">
+    <%= link_to t('.access_community'), community_path(proposal.community), class: 'button hollow' %>
+    <% unless proposal.community.latest_activity.nil? %>
+      <p class="help-text"><%= t('.latest_activity', at: l(proposal.community.latest_activity.to_date)) %></p>
+    <% end %>
+  </div>
+
+  <div class="small-12 large-1 column community-totals">
+    <span class="fi-torsos-all"></span>
+    &nbsp;<strong><%= number_with_delimiter(proposal.community.participants_count, delimiter: '.') %></strong>
+  <p><%= t('.participants') %></p>
+  </div>
+
+  <div class="small-12 large-1 column community-totals">
+    <span class="fi-comment-quotes"></span>
+    &nbsp;<strong><%= number_with_delimiter(proposal.community.debates_count, delimiter: '.') %></strong>
+    <p><%= t('.debates') %></p>
+  </div>
+  
+  <div class="small-12 large-1 column community-totals">
+    <span class="fi-comments"></span>
+    &nbsp;<strong><%= number_with_delimiter(proposal.community.comments_count, delimiter: '.') %></strong>
+    <p><%= t('.comments') %></p>
+  </div>
+</div>
+
+<% if proposal.community.topics.any? %>
+  <div class="action-title">
+    <h5><%= t('.latest_topics') %></h5>
+    <hr>
+  </div>
+
+  <ul>
+    <%= render partial: 'topic', collection: proposal.community.topics %>
+  </ul>
+<% end %>

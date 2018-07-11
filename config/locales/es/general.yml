@@ -508,6 +508,7 @@ es:
       my_proposal: Mi propuesta
       progress: Progreso
       resources: Recursos
+      community: Comunidad
       polls: Encuestas
     form:
       request: Solicitar
@@ -550,6 +551,13 @@ es:
         other: "%{count} días"
       unlocked_resource: Recurso desbloqueado
       ideal_time: Tiempo ideal
+    community:
+      access_community: Acceder a la comunidad
+      latest_activity: "Última actividad de la comunidad: %{at}"
+      participants: Participantes
+      debates: Debates
+      comments: Comentarios
+      latest_topics: Últimos debates
   dashboard:
     polls:
       index:

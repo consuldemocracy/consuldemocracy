@@ -42,4 +42,12 @@
       <% end %>
     </li>
   <% end %>
+
+  <li class="section-title">
+    <%= link_to community_proposal_dashboard_index_path(proposal.to_param),
+                class: community_menu_class do %>
+      <span class="fi-torsos-all"></span>
+      <strong><%= t('.community') %></strong>
+    <% end %>
+  </li>
 </ul>

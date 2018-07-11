@@ -9,6 +9,11 @@ module ProposalsDashboardHelper
     nil
   end
 
+  def community_menu_class
+    return 'is-active' if controller_name == 'proposals_dashboard' && action_name == 'community'
+    nil
+  end
+
   def progress_menu_active?
     is_proposed_action_request? || (controller_name == 'proposals_dashboard' && action_name == 'progress')
   end

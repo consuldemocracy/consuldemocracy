@@ -47,6 +47,10 @@ class ProposalsDashboardController < Dashboard::BaseController
     authorize! :dashboard, proposal
   end
 
+  def community
+    authorize! :dashboard, proposal
+  end
+
   def supports
     authorize! :dashboard, proposal
     render json: ProposalSupportsQuery.for(params)
