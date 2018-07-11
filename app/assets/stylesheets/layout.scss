@@ -2415,7 +2415,7 @@ table {
   background: #fafafa;
   border-bottom: 1px solid #eee;
   margin-bottom: $line-height;
-  margin-top: rem-calc(-$line-height);
+  margin-top: rem-calc(-25);
   padding: $line-height 0;
 
   @include breakpoint(medium) {
