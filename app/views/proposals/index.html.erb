@@ -38,7 +38,9 @@
   <% end %>
 
   <% if @recommended_proposals.present? %>
-    <%= render "shared/recommended_index", recommended: @recommended_proposals %>
+    <%= render "shared/recommended_index", recommended: @recommended_proposals,
+                                           disable_recommendations_path: recommendations_disable_proposals_path,
+                                           namespace: "proposals" %>
   <% end %>
 
   <div class="row">

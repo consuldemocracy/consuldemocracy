@@ -812,7 +812,7 @@ feature 'Proposals' do
         expect(page).not_to have_link('recommendations')
       end
 
-      scenario 'shown on index header are dismissable', :js do
+      scenario 'are automatically disabled when dismissed from index', :js do
         user     = create(:user)
         proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
@@ -826,13 +826,19 @@ feature 'Proposals' do
           expect(page).to have_content('Medium')
           expect(page).to have_css('.recommendation', count: 3)
 
-          find('.icon-x').click
-
-          expect(page).not_to have_content('Best')
-          expect(page).not_to have_content('Worst')
-          expect(page).not_to have_content('Medium')
-          expect(page).not_to have_css('.recommendation', count: 3)
+          accept_confirm { click_link 'Hide recommendations' }
         end
+
+        expect(page).not_to have_link('recommendations')
+        expect(page).not_to have_css('.recommendation', count: 3)
+        expect(page).to have_content('Recommendations for proposals are now disabled for this account')
+
+        user.reload
+
+        visit account_path
+
+        expect(find("#account_recommended_proposals")).not_to be_checked
+        expect(user.recommended_proposals).to be(false)
       end
     end
   end

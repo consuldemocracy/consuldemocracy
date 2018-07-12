@@ -29,6 +29,7 @@ module Abilities
       can [:read], Legislation::Question
       can [:read, :map, :share], Legislation::Proposal
       can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
+      can :disable_recommendations, [Debate, Proposal]
     end
   end
 end
