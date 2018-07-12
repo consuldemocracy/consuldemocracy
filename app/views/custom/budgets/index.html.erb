@@ -162,7 +162,7 @@
                                       class: "button expanded" %>
                         <% else %>
                           <%= link_to t("budgets.index.see_results"),
-                                      budget_results_path(budget.id),
+                                      custom_budget_results_path(budget),
                                       class: "button expanded" %>
                         <% end %>
                       </div>
