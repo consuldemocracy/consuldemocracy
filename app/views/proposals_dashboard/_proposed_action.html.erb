@@ -21,8 +21,10 @@
         <% end %>
 
         <% proposed_action.links.each do |link| %>
-          <%= link_to link.label, link.url, target: '_blank' %>
+          <p><%= link_to link.label, link.url, target: '_blank' %></p>
         <% end %>
+
+        <%= render partial: 'document', collection: proposed_action.documents %>
       <% end %>
     </div>
   </div>
