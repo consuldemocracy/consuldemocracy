@@ -67,8 +67,9 @@ class DebatesController < ApplicationController
     end
 
     def debates_recommendations
-      return unless current_user.recommended_debates
-      @recommended_debates = Debate.recommendations(current_user).sort_by_random.limit(3)
+      if Setting['feature.user.recommendations_on_debates'] && current_user.recommended_debates
+        @recommended_debates = Debate.recommendations(current_user).sort_by_random.limit(3)
+      end
     end
 
 end
