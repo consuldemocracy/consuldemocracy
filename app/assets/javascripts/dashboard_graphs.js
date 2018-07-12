@@ -141,9 +141,8 @@
   }
 
   ProposalGraph.prototype.draw = function(data) {
-    this.xColumnValues = this.xColumnValues.sort();
-    this.xColumnValues.unshift('x');
-
+    this.formatXColumnValues();
+    
     this.chart = c3.generate({
       bindto: '#' + this.targetId,
       data: {
@@ -185,6 +184,25 @@
         position: 'right'
       }
     });
+  };
+
+  ProposalGraph.prototype.formatXColumnValues = function () {
+    var i, l, parts;
+
+    this.xColumnValues = this.xColumnValues.sort();
+
+    if (this.isDailyGrouped()) {
+      for (i = 0, l = this.xColumnValues.length; i < l; i += 1) {
+        parts = this.xColumnValues[i].match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+        this.xColumnValues[i] = parts[2] + "/" + parts[3];
+      }
+    }
+
+    this.xColumnValues.unshift('x');
+  }
+
+  ProposalGraph.prototype.isDailyGrouped = function() {
+    return this.groupBy === undefined || this.groupBy === '' || this.groupBy === null
   };
 
   $(document).ready(function () {

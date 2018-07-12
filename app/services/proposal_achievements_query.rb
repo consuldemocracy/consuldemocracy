@@ -37,8 +37,10 @@ class ProposalAchievementsQuery
 
   def achievements
     ProposalExecutedDashboardAction
+      .joins(:proposal_dashboard_action)
       .includes(:proposal_dashboard_action)
       .where(proposal: proposal, executed_at: start_date.beginning_of_day..end_date.end_of_day)
+      .where(proposal_dashboard_actions: { action_type: 1 })
       .order(executed_at: :asc)
   end
 
