@@ -393,6 +393,10 @@ namespace :proposal_actions do
       5
     ]
 
+    votes_count = expected_supports.inject(0.0) { |sum, x| sum + x }
+    goal_votes = Setting['votes_for_proposal_success'].to_f
+    cached_votes_up = 0
+
     tags = Faker::Lorem.words(25)
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
@@ -412,6 +416,9 @@ namespace :proposal_actions do
 
 
     expected_supports.each_with_index do |supports, day_offset|
+      supports = (supports * goal_votes / votes_count).ceil
+      cached_votes_up += supports
+
       supports.times do |i|
         user = User.create!(
           username: "user_#{proposal.id}_#{day_offset}_#{i}",
@@ -437,5 +444,6 @@ namespace :proposal_actions do
     end
 
     Setting['proposals.successful_proposal_id'] = proposal.id
+    proposal.update(cached_votes_up: cached_votes_up)
   end
 end
