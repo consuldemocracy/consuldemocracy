@@ -2,11 +2,11 @@
 <% content_for :meta_description do %><%= @budget.description_for_phase('finished') %><% end %>
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
-            social_url: budget_results_url(@budget),
+            social_url: custom_budget_results_url(@budget),
             social_title: @budget.name,
             social_description: @budget.description_for_phase('finished'),
-            twitter_image_url: '/social_media_budgets_results_twitter.png',
-            og_image_url: '/social_media_budgets_results.png' %>
+            twitter_image_url: 'social_budget_2018_results_twitter.png',
+            og_image_url: 'social_budget_2018_results.png' %>
 <% end %>
 
 <% content_for :canonical do %>

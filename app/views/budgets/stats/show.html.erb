@@ -1,14 +1,16 @@
-<% cache [@stats] do %>
-  <% provide :title do %>
-    <%= t("budgets.stats.page_title", budget: @budget.name) %>
-  <% end %>
-  <% provide :social_media_meta_tags do %>
-  <%= render "shared/social_media_meta_tags",
-              social_url: budget_url(@budget),
-              social_title: @budget.name,
-              social_description: @budget.description_for_phase('finished') %>
-  <% end %>
+<% provide :title do %>
+  <%= t("budgets.stats.page_title", budget: @budget.name) %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: custom_budget_stats_url(@budget),
+            social_title: @budget.name,
+            social_description: @budget.description_for_phase('finished'),
+            twitter_image_url: 'social_budget_2018_stats_twitter.png',
+            og_image_url: 'social_budget_2018_stats.png' %>
+<% end %>
 
+<% cache [@stats] do %>
   <div class="budgets-stats">
     <div class="expanded no-margin-top padding header">
       <div class="row">
