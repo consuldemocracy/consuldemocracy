@@ -50,6 +50,14 @@ class DebatesController < ApplicationController
     @resources = @resources.not_probe
   end
 
+  def disable_recommendations
+    if current_user.update(recommended_debates: false)
+      redirect_to debates_path, notice: t('debates.index.recommendations.actions.success')
+    else
+      redirect_to debates_path, error: t('debates.index.recommendations.actions.error')
+    end
+  end
+
   private
 
     def debate_params
