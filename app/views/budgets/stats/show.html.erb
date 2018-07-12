@@ -32,9 +32,11 @@
           <li class="tabs-title is-active">
             <%= link_to t("budgets.stats.link"), custom_budget_stats_path(@budget), class: "is-active" %>
           </li>
-          <li class="tabs-title">
-            <%= link_to t("budgets.executions.link"), custom_budget_executions_path(@budget) %>
-          </li>
+          <% if Rails.env.test? %>
+            <li class="tabs-title">
+              <%= link_to t("budgets.executions.link"), custom_budget_executions_path(@budget) %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
