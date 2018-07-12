@@ -4,9 +4,11 @@
   <% end %>
   <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
-              social_url: budget_url(@budget),
+              social_url: custom_budget_stats_url(@budget),
               social_title: @budget.name,
-              social_description: @budget.description_for_phase('finished') %>
+              social_description: @budget.description_for_phase('finished'),
+              twitter_image_url: 'social_budget_2018_stats_twitter.png',
+              og_image_url: 'social_budget_2018_stats.png' %>
   <% end %>
 
   <div class="budgets-stats">
