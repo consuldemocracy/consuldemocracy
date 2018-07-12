@@ -7,8 +7,8 @@
               social_description: t("social_share.polls_show.facebook_#{@poll.id}", default: @poll.summary) %>
 <% end %>
 <%= provide :social_media_meta_tags do %>
-  <meta name="twitter:image" content="<%= root_url %>social_media_polls_<%= @poll.id %>_twitter.jpg" />
-  <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_polls_<%= @poll.id %>.jpg"/>
+  <meta name="twitter:image" content="<%= root_url %>social_media_polls_twitter.jpg" />
+  <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_polls.jpg"/>
 <% end %>
 
 <div class="polls-show">
