@@ -35,7 +35,6 @@ module Abilities
       can :results_2017, Poll
       can :stats_2017, Poll
       can :info_2017, Poll
-      can :disable_recommendations, [Debate, Proposal]
     end
   end
 end
