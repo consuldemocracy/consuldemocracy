@@ -1001,3 +1001,9 @@ es:
     show:
       send_notification: Enviar mensaje a la Comunidad
       author: Autor
+      surveys: Encuestas
+      complete_survey: Completa la encuesta
+    participants:
+      surveys: Encuestas
+    poll:
+      take_part: Participa del %{from} al %{to}

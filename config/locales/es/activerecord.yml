@@ -360,6 +360,7 @@ es:
               cannot_comment_valuation: 'No puedes comentar una evaluación'
       messages:
         record_invalid: 'Error de validación: %{errors}'
+        another_poll_active: Hay otra encuesta activa para este periodo.
         restrict_dependent_destroy:
           has_one: "No se puede eliminar el registro porque existe una %{record} dependiente"
           has_many: "No se puede eliminar el registro porque existe %{record} dependientes"

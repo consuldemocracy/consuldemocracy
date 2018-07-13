@@ -1002,3 +1002,9 @@ en:
     show:
       send_notification: Send message to the community
       author: Author
+      surveys: Surveys
+      complete_survey: Complete the survey
+    participants:
+      surveys: Surveys
+    poll:
+      take_part: Take part from %{from} to %{to}

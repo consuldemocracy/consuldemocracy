@@ -358,6 +358,7 @@ en:
               cannot_comment_valuation: 'You cannot comment a valuation'
       messages:
         record_invalid: "Validation failed: %{errors}"
+        another_poll_active: There is another poll active for the given period
         restrict_dependent_destroy:
           has_one: "Cannot delete record because a dependent %{record} exists"
           has_many: "Cannot delete record because dependent %{record} exist"

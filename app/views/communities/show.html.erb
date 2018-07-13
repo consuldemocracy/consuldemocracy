@@ -39,8 +39,14 @@
       <div class="sidebar-divider"></div>
       <h2><%= t("community.show.sidebar.participate") %></h2>
       <%= link_to t("community.show.sidebar.new_topic"), create_topic_link(@community) , class: "button expanded" %>
+
+      <% if @community.proposal&.polls&.current&.any? %>
+        <div class="sidebar-divider"></div>
+        <h2><%= t('.surveys') %></h2>
+        <%= link_to t('.complete_survey'), @community.proposal.polls.current.first, class: 'button expanded hollow' %>
+      <% end %>
     </aside>
   </div>
 </div>
 
-<%= render 'participants' %>
+<%= render 'subnav' %>

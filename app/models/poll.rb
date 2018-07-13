@@ -23,6 +23,7 @@ class Poll < ActiveRecord::Base
   validates :name, presence: true
 
   validate :date_range
+  validate :only_one_active, unless: :public?
 
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
 
@@ -35,6 +36,10 @@ class Poll < ActiveRecord::Base
   scope :published, -> { where('published = ?', true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
   scope :public_for_api, -> { all }
+  scope :overlaping_with, lambda { |poll| 
+    where('? < ends_at and ? >= starts_at', poll.starts_at.beginning_of_day, poll.ends_at.end_of_day)
+      .where.not(id: poll.id)
+  }
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 
@@ -95,6 +100,16 @@ class Poll < ActiveRecord::Base
     unless starts_at.present? && ends_at.present? && starts_at <= ends_at
       errors.add(:starts_at, I18n.t('errors.messages.invalid_date_range'))
     end
+  end
+
+  def only_one_active
+    if Poll.overlaping_with(self).any?
+      errors.add(:starts_at, I18n.t('activerecord.errors.messages.another_poll_active'))
+    end
+  end
+
+  def public?
+    related.nil?
   end
 
 end
