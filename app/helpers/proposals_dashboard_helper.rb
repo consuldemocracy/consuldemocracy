@@ -75,4 +75,19 @@ module ProposalsDashboardHelper
 
     label.join(" #{t('proposals_dashboard.resource.and')}<br>")
   end
+
+  def daily_selected_class
+    return nil if params[:group_by].blank?
+    'hollow'
+  end
+
+  def weekly_selected_class
+    return nil if params[:group_by] == 'week'
+    'hollow'
+  end
+
+  def monthly_selected_class
+    return nil if params[:group_by] == 'month'
+    'hollow'
+  end
 end
