@@ -119,7 +119,7 @@ feature 'Stats' do
       create(:spending_proposal, :feasible, geozone: california)
       create(:spending_proposal, :feasible, geozone: nil)
 
-      SpendingProposal.all.each do |spending_proposal|
+      SpendingProposal.find_each do |spending_proposal|
         create(:ballot, spending_proposals: [spending_proposal], geozone: spending_proposal.geozone)
       end
 
@@ -222,7 +222,7 @@ feature 'Stats' do
         carabanchel_investment = create(:budget_investment, heading: carabanchel)
         carabanchel_investment = create(:budget_investment, heading: carabanchel)
 
-        Budget::Investment.all.each do |investment|
+        Budget::Investment.find_each do |investment|
           create(:vote, votable: investment)
         end
 
@@ -430,7 +430,7 @@ feature 'Stats' do
 
       expect(page).to have_css(".proposal_notification", count: 3)
 
-      ProposalNotification.all.each do |proposal_notification|
+      ProposalNotification.find_each do |proposal_notification|
         expect(page).to have_content proposal_notification.title
         expect(page).to have_content proposal_notification.body
       end
