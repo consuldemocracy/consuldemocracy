@@ -129,6 +129,7 @@ es:
         author: Autor
         project_unfeasible_html: 'Este proyecto de gasto <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación.'
         project_selected_html: 'Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación.'
+        project_winner: 'Proyecto de gasto ganador'
         project_not_selected_html: 'Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación.'
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
