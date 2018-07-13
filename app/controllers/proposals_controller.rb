@@ -92,6 +92,14 @@ class ProposalsController < ApplicationController
     @resource.sub_proceeding = params[:sub_proceeding]
   end
 
+  def disable_recommendations
+    if current_user.update(recommended_proposals: false)
+      redirect_to proposals_path, notice: t('proposals.index.recommendations.actions.success')
+    else
+      redirect_to proposals_path, error: t('proposals.index.recommendations.actions.error')
+    end
+  end
+
   private
 
     def proposal_params
@@ -174,7 +182,9 @@ class ProposalsController < ApplicationController
     end
 
     def proposals_recommendations
-      return unless current_user.recommended_proposals
-      @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
+      if Setting['feature.user.recommendations_on_proposals'] && current_user.recommended_proposals
+        @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
+      end
     end
+
 end

@@ -113,6 +113,10 @@ es:
       recommendations:
         without_results: No existen debates relacionados con tus intereses
         without_interests: Sigue propuestas para que podamos darte recomendaciones
+        disable: "Si ocultas las recomendaciones para debates, no se volverán a mostrar. Puedes volver a activarlas en 'Mi cuenta'"
+        actions:
+          success: "Las recomendaciones de debates han sido desactivadas"
+          error: "Ha ocurrido un error. Por favor dirígete al apartado 'Mi cuenta' para desactivar las recomendaciones manualmente"
       search_form:
         button: Buscar
         placeholder: Buscar debates...
@@ -348,6 +352,10 @@ es:
       recommendations:
         without_results: No existen propuestas relacionadas con tus intereses
         without_interests: Sigue propuestas para que podamos darte recomendaciones
+        disable: "Si ocultas las recomendaciones para propuestas, no se volverán a mostrar. Puedes volver a activarlas en 'Mi cuenta'"
+        actions:
+          success: "Las recomendaciones de propuestas han sido desactivadas"
+          error: "Ha ocurrido un error. Por favor dirígete al apartado 'Mi cuenta' para desactivar las recomendaciones manualmente"
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
       retired_links:
