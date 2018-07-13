@@ -199,7 +199,7 @@ feature "Admin Notifications" do
 
       expect(page).to have_content "Notification sent successfully"
 
-      User.all.each do |user|
+      User.find_each do |user|
         expect(user.notifications.count).to eq(1)
       end
     end

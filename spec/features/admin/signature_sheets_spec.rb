@@ -15,7 +15,7 @@ feature 'Signature sheets' do
 
       expect(page).to have_css(".signature_sheet", count: 3)
 
-      SignatureSheet.all.each do |signature_sheet|
+      SignatureSheet.find_each do |signature_sheet|
         expect(page).to have_content signature_sheet.name
       end
     end
