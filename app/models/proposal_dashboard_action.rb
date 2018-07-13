@@ -19,10 +19,6 @@ class ProposalDashboardAction < ActiveRecord::Base
             allow_blank: false,
             length: { in: 4..80 }
 
-  validates :description,
-            presence: true,
-            allow_blank: false
-
   validates :action_type, presence: true
 
   validates :day_offset,

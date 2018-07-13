@@ -64,9 +64,11 @@
     <hr>
   </div>
 
-  <div class="documents small-12 column">
-    <%= render 'documents/nested_documents', documentable: proposal_dashboard_action, f: f %>
-  </div>
+  <% if feature?(:allow_attached_documents) %>
+    <div class="documents small-12 column">
+      <%= render 'documents/nested_documents', documentable: proposal_dashboard_action, f: f %>
+    </div>
+  <% end %>
 
   <div class="small-12 column">
     <hr>

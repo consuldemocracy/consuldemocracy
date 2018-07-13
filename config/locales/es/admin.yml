@@ -1103,8 +1103,8 @@ es:
         edit: Editar
         delete: Borrar
         no_records: No se encontraron registros
-        active: Si
-        inactive: No
+        active: 'Si'
+        inactive: 'No'
       new:
         creating: Nueva acción para el dashboard de propuestas
         back: Volver a la lista

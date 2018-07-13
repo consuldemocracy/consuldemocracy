@@ -40,14 +40,6 @@ describe ProposalDashboardAction do
     end
   end
 
-  context 'when validating description' do
-    context 'and description is blank' do
-      let(:description) { nil }
-
-      it { should_not be_valid }
-    end
-  end
-
   context 'when validating day_offset' do
     context 'and day_offset is nil' do
       let(:day_offset) { nil }
