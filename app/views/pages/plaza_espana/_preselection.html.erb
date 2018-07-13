@@ -250,7 +250,7 @@
     </div>
 
     <map name="map_preselection" id="html_map_preselection">
-      <% Geozone.all.each do |geozone| %>
+      <% Geozone.find_each do |geozone| %>
         <area shape="poly"
               coords="<%= geozone.html_map_coordinates %>"
               href="#<%= geozone.name.parameterize %>-preselection"
