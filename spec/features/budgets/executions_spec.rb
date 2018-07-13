@@ -138,7 +138,7 @@ feature 'Executions' do
       expect(page).not_to have_content(investment2.title)
     end
 
-    xscenario 'are based on latest milestone status', :js do
+    scenario 'are based on latest milestone status', :js do
       create(:budget_investment_milestone, investment: investment1,
                                            publication_date: Date.yesterday,
                                            status: status1)
@@ -157,10 +157,12 @@ feature 'Executions' do
       select 'Studying the project', from: 'status'
 
       expect(page).not_to have_content(investment1.title)
+      expect(page).to have_content('No winner investments for this heading')
 
       select 'Bidding', from: 'status'
 
       expect(page).to have_content(investment1.title)
+      expect(page).not_to have_content('No winner investments for this heading')
     end
   end
 
