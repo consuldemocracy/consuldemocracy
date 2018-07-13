@@ -2,7 +2,7 @@ namespace :users do
 
   desc "Recalculates all the failed census calls counters for users"
   task count_failed_census_calls: :environment do
-    User.find_each{ |user| User.reset_counters(user.id, :failed_census_calls)}
+    User.find_each { |user| User.reset_counters(user.id, :failed_census_calls) }
   end
 
   desc "Assigns official level to users with the officials' email domain"
@@ -100,7 +100,7 @@ namespace :users do
 
   desc "Update password changed at for existing users"
   task update_password_changed_at: :environment do
-    User.all.each do |user|
+    User.find_each do |user|
       user.update(password_changed_at: user.created_at)
     end
   end

@@ -33,7 +33,7 @@ namespace :budgets do
     require 'csv'
 
     csv_string = CSV.generate(col_sep: "^", row_sep: "*****") do |csv|
-      BudgetPoll.all.each do |budget_poll|
+      BudgetPoll.find_each do |budget_poll|
         csv << [
           budget_poll.name,
           budget_poll.email,
