@@ -29,10 +29,17 @@ es:
         title: Título
         description: Descripción
         target_url: Enlace
-        style: Estilo
-        image: Imagen
         post_started_at: Inicio de publicación
         post_ended_at: Fin de publicación
+        sections_label: Secciones en las que aparece
+        sections:
+          homepage: Homepage
+          debates: Debates
+          proposals: Propuestas
+          budgets: Presupuestos participativos
+          help_page: Página de ayuda
+        background_color: Color de fondo
+        font_color: Color del texto
       edit:
         editing: Editar el banner
         form:
