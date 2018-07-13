@@ -69,7 +69,7 @@ module Abilities
       can [:create, :destroy, :manage], ::Poll::BoothAssignment
       can [:create, :destroy], ::Poll::OfficerAssignment
       can [:read, :create, :update], Poll::Question
-      can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
+      can :destroy, Poll::Question
 
       can :manage, SiteCustomization::Page
       can :manage, SiteCustomization::Image

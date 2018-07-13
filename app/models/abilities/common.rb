@@ -26,6 +26,10 @@ module Abilities
         proposal.author.id == user.id
       end
 
+      can :results, Poll do |poll|
+        poll.related&.author&.id == user.id
+      end
+
       can [:retire_form, :retire], Proposal, author_id: user.id
 
       can :read, Legislation::Proposal

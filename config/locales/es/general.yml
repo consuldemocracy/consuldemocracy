@@ -574,6 +574,8 @@ es:
           one: "%{count} respuesta"
           other: "%{count} respuestas"
         view_responses: Ver respuestas
+        show_results: Mostrar resultados
+        show_results_help: Si marcas esta casilla los resultados serán públicos y todos los usuarios podrán verlos
       form:
         add_question: Añadir pregunta
       question_fields:

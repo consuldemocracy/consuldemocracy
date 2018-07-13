@@ -34,10 +34,14 @@ class Dashboard::PollsController < Dashboard::BaseController
   def update
     authorize! :manage_polls, proposal
 
-    if poll.update(poll_params)
-      redirect_to proposal_dashboard_poll_path(proposal, poll), notice: t("flash.actions.update.poll")
-    else
-      render :edit
+    respond_to do |format|
+      if poll.update(poll_params)
+        format.html { redirect_to proposal_dashboard_poll_path(proposal, poll), notice: t("flash.actions.update.poll") }
+        format.json { respond_with_bip(poll) }
+      else
+        format.html { render :edit }
+        format.json { respond_with_bip(poll) }
+      end
     end
   end
 

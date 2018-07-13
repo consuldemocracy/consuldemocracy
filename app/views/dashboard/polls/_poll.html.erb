@@ -26,6 +26,20 @@
         </a>
       <% end %>
     </div>
+    <div class="card-section">
+      <p>
+        <%= best_in_place poll, 
+                          :results_enabled, 
+                          as: :checkbox, 
+                          url: proposal_dashboard_poll_url(proposal, poll),
+                          collection: {
+                            false: raw('<input type="checkbox">'),
+                            true: raw('<input type="checkbox" checked>')
+                          } %>
+        <strong><%= t('.show_results') %></strong>
+      </p>
+      <p class="help-text"><%= t('.show_results_help') %></p>
+    </div>
   </div>
 </div>
 

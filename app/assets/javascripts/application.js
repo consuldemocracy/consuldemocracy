@@ -17,6 +17,7 @@
 //= require jquery-ui/widgets/autocomplete
 //= require jquery-ui/widgets/sortable
 //= require jquery-fileupload/basic
+//= require best_in_place
 //= require foundation
 //= require turbolinks
 //= require ckeditor/loader
@@ -81,6 +82,7 @@
 //= require globalize
 //= require clipboard
 //= require clipboard_button
+//= require best_in_place_initialize
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -127,6 +129,7 @@ var initialize_modules = function() {
   App.Managers.initialize();
   App.Globalize.initialize();
   App.ClipboardButton.initialize();
+  App.BestInPlace.initialize();
 };
 
 $(function(){

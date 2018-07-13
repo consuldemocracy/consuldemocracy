@@ -167,8 +167,12 @@ describe Abilities::Common do
   end
 
   describe 'proposal polls' do
+    let(:poll) { create(:poll, related: own_proposal) }
+
     it { should be_able_to(:manage_polls, own_proposal) }
     it { should_not be_able_to(:manage_polls, proposal) }
+    it { should_not be_able_to(:stats, poll) }
+    it { should be_able_to(:results, poll) }
   end
 
   describe 'publishing proposals' do
