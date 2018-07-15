@@ -443,7 +443,7 @@ feature 'Users' do
       expect(page).to have_selector(".activity li.is-active", text: "1 Following")
     end
 
-    scenario "Gracefully handle followables that have been hidden", :focus do
+    scenario "Gracefully handle followables that have been hidden" do
       active_proposal = create(:proposal)
       hidden_proposal = create(:proposal)
 
