@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Banner' do
 
   scenario "The banner is shown correctly" do
-    create(:web_section, name: 'homepage')
+    create(:web_section, name: 'debates')
     banner = create(:banner, title: 'Hello',
                       description: 'Banner description',
                       target_url:  'http://www.url.com',
@@ -11,10 +11,10 @@ feature 'Banner' do
                       post_ended_at:   (Time.current + 10.days),
                       background_color: '#FF0000',
                       font_color: '#FFFFFF')
-    section = WebSection.where(name: 'homepage').last
+    section = WebSection.where(name: 'debates').last
     create(:banner_section, web_section: section, banner_id: banner.id)
 
-    visit root_path
+    visit debates_path
 
     within('.banner') do
       expect(page).to have_content('Banner description')
@@ -22,7 +22,11 @@ feature 'Banner' do
       expect(find('h3')[:style]).to eq("color:#{banner.font_color}")
     end
 
-    visit debates_path
+    visit root_path
+
+    expect(page).not_to have_content('Banner description')
+
+    visit proposals_path
 
     expect(page).not_to have_content('Banner description')
   end
