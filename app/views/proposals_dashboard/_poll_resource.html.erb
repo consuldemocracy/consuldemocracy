@@ -1,9 +1,11 @@
 <% if can?(:manage_polls, proposal) %>
   <div class="column">
-    <div class="card resource-card success">
+    <div class="card resource-card primary"
+         data-tooltip title="<%= t('proposals_dashboard.resource.request_resource') %>"
+         data-position="bottom" data-alignment="right">
       <div class="card-section">
         <p class="text-right">
-          <i class="fi-check"></i>
+          <i class="fi-pencil"></i>
         </p>
         <h4 class="text-center"><%= t('proposals_dashboard.menu.polls') %></h4>
         <p class="text-center">
@@ -13,7 +15,7 @@
 
       <div class="card-section text-center bottom-container">
         <div class="bottom-element text-center">
-          <%= link_to t('proposals_dashboard.resource.view_resource'), proposal_dashboard_polls_path(proposal.to_param), class: 'button success' %>
+          <%= link_to t('proposals_dashboard.resource.request_resource'), proposal_dashboard_polls_path(proposal.to_param), class: 'button primary' %>
         </div>
       </div>
     </div>

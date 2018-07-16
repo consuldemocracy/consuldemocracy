@@ -264,7 +264,6 @@
     min-height: 200pt;
 
     .bottom-container {
-      position: relative;
       padding-left: 0;
       padding-right: 0;
 
@@ -276,17 +275,31 @@
     }
   }
 
-  .resource-card.success {
-    background-color: #c5f6eb;
-
+  .resource-card {
     i {
       display: inline-block;
       width: 20pt;
       height: 20pt;
-      color: #00cf96;
       border-radius: 10pt;
-      border: 1pt solid #00cf96;
       padding-right: 4pt;
+    }
+  }
+
+  .resource-card.primary {
+    background-color: #d3edf6;
+
+    i {
+      color: #116f8e;
+      border: 1pt solid #116f8e;
+    }
+  }
+
+  .resource-card.success {
+    background-color: #c5f6eb;
+
+    i {
+      color: #00cf96;
+      border: 1pt solid #00cf96;
     }
   }
 
@@ -294,14 +307,8 @@
     background-color: #ffe5e8;
 
     i {
-      display: inline-block;
-      width: 20pt;
-      height: 20pt;
       color: #ff828b;
-      border-radius: 10pt;
       border: 1pt solid #ff828b;
-      padding-right: 4pt;
-
     }
   }
 

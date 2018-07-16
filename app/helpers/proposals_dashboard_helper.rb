@@ -90,4 +90,17 @@ module ProposalsDashboardHelper
     return nil if params[:group_by] == 'month'
     'hollow'
   end
+
+  def resource_card_class(resource, proposal)
+    return 'alert' unless resource.active_for?(proposal)
+    return 'success' if resource.executed_for?(proposal)
+    'primary'
+  end
+
+  def resource_tooltip(resource, proposal)
+    return t('proposals_dashboard.resource.resource_locked') unless resource.active_for?(proposal)
+    return t('proposals_dashboard.resource.view_resource') if resource.executed_for?(proposal)
+    return t('proposals_dashboard.resource.resource_requested') if resource.requested_for?(proposal)
+    t('proposals_dashboard.resource.request_resource')
+  end
 end

@@ -60,6 +60,20 @@ class ProposalDashboardAction < ActiveRecord::Base
     required_supports <= proposal.votes_for.size && day_offset <= (Date.today - published_at).to_i
   end
 
+  def requested_for?(proposal)
+    executed_action = proposal_executed_dashboard_actions.find_by(proposal: proposal)
+    return false if executed_action.nil?
+
+    executed_action.administrator_tasks.any?
+  end
+
+  def executed_for?(proposal)
+    executed_action = proposal_executed_dashboard_actions.find_by(proposal: proposal)
+    return false if executed_action.nil?
+
+    executed_action.administrator_tasks.where.not(executed_at: nil).any?
+  end
+
   def self.next_goal_for(proposal)
     course_for(proposal).first
   end

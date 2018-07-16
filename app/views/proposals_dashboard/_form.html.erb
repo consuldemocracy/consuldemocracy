@@ -1,4 +1,4 @@
-<% if proposal_dashboard_action.request_to_administrators %>
+<% if proposal_dashboard_action.request_to_administrators && !proposal_dashboard_action.requested_for?(proposal) %>
   <%= form_for @proposal_executed_dashboard_action, 
                url: create_request_proposal_dashboard_url(proposal, proposal_dashboard_action) do |f| %>
     <div class="actions">

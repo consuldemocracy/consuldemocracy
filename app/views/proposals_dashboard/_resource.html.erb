@@ -1,9 +1,13 @@
 <div class="column" id="<%= dom_id(resource) %>">
-  <div class="card resource-card <%= resource.active_for?(proposal) ? 'success' : 'alert' %>">
+  <div class="card resource-card <%= resource_card_class(resource, proposal) %>" 
+       data-tooltip title="<%= resource_tooltip(resource, proposal) %>"
+       data-position="bottom" data-alignment="right">
     <div class="card-section">
       <p class="text-right">
-        <% if resource.active_for?(proposal) %>
+        <% if resource.executed_for?(proposal) %>
           <i class="fi-check"></i>
+        <% elsif resource.active_for?(proposal) %>
+          <i class="fi-pencil"></i>
         <% else %>
           <i class="fi-lock"></i>
         <% end %>
@@ -15,9 +19,15 @@
     </div>
 
     <div class="card-section text-center bottom-container">
-      <% if resource.active_for?(proposal) %>
+      <% if resource.executed_for?(proposal) %>
         <div class="bottom-element text-center">
           <%= link_to t('.view_resource'), new_request_proposal_dashboard_path(proposal, resource), class: 'button success' %>
+        </div>
+      <% elsif resource.requested_for?(proposal) %>
+        <strong><%= t('.resource_requested') %></strong>
+      <% elsif resource.active_for?(proposal) %>
+        <div class="bottom-element text-center">
+          <%= link_to t('.request_resource'), new_request_proposal_dashboard_path(proposal, resource), class: 'button primary' %>
         </div>
       <% else %>
         <strong>

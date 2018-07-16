@@ -536,6 +536,9 @@ en:
       required_supports: "%{supports} supports required"
       and: and
       view_resource: See resource
+      resource_requested: Resource already requested
+      request_resource: Request resource 
+      resource_locked: Resource locked
     recommended_actions:
       title: Recommended actions
     next_goal:

@@ -536,6 +536,9 @@ es:
       required_supports: "%{supports} apoyos necesarios"
       and: y
       view_resource: Ver recurso
+      resource_requested: Recurso solicitado
+      request_resource: Solicitar recurso
+      resource_locked: Recurso bloqueado
     recommended_actions:
       title: Acciones recomendadas
     next_goal:
