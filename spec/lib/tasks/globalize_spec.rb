@@ -151,7 +151,7 @@ describe "Globalize tasks" do
       before { I18n.locale = :"pt-BR" }
 
       let!(:milestone) do
-        create(:budget_investment_milestone).tap do |milestone|
+        create(:milestone).tap do |milestone|
           milestone.translations.delete_all
           milestone.update_column(:title, "Português")
           milestone.reload

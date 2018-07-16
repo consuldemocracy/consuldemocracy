@@ -10,7 +10,7 @@ en:
       budget/investment:
         one: "Investment"
         other: "Investments"
-      budget/investment/milestone:
+      milestone:
         one: "milestone"
         other: "milestones"
       milestone/status:

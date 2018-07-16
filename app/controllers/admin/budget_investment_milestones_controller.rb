@@ -2,19 +2,19 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
   include Translatable
 
   before_action :load_budget_investment, only: [:index, :new, :create, :edit, :update, :destroy]
-  before_action :load_budget_investment_milestone, only: [:edit, :update, :destroy]
+  before_action :load_milestone, only: [:edit, :update, :destroy]
   before_action :load_statuses, only: [:index, :new, :create, :edit, :update]
 
   def index
   end
 
   def new
-    @milestone = Budget::Investment::Milestone.new
+    @milestone = Milestone.new
   end
 
   def create
-    @milestone = Budget::Investment::Milestone.new(milestone_params)
-    @milestone.investment = @investment
+    @milestone = Milestone.new(milestone_params)
+    @milestone.milestoneable = @investment
     if @milestone.save
       redirect_to admin_budget_budget_investment_path(@investment.budget, @investment),
                   notice: t('admin.milestones.create.notice')
@@ -47,22 +47,22 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
     image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
     documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
     attributes = [:publication_date, :budget_investment_id, :status_id,
-                  translation_params(Budget::Investment::Milestone),
+                  translation_params(Milestone),
                   image_attributes: image_attributes, documents_attributes: documents_attributes]
 
-    params.require(:budget_investment_milestone).permit(*attributes)
+    params.require(:milestone).permit(*attributes)
   end
 
   def load_budget_investment
     @investment = Budget::Investment.find(params[:budget_investment_id])
   end
 
-  def load_budget_investment_milestone
+  def load_milestone
     @milestone = get_milestone
   end
 
   def get_milestone
-    Budget::Investment::Milestone.find(params[:id])
+    Milestone.find(params[:id])
   end
 
   def resource

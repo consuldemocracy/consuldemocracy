@@ -10,7 +10,7 @@ es:
       budget/investment:
         one: "Proyecto de gasto"
         other: "Proyectos de gasto"
-      budget/investment/milestone:
+      milestone:
         one: "hito"
         other: "hitos"
       milestone/status:

@@ -198,8 +198,8 @@ FactoryBot.define do
     sequence(:description) { |n| "Milestone status #{n} description" }
   end
 
-  factory :budget_investment_milestone, class: 'Budget::Investment::Milestone' do
-    association :investment, factory: :budget_investment
+  factory :milestone, class: 'Milestone' do
+    association :milestoneable, factory: :budget_investment
     association :status, factory: :milestone_status
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
