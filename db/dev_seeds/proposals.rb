@@ -10,7 +10,7 @@ IMAGE_FILES = %w{
                            "proposals", filename))
 end
 
-def add_image_to( imageable )
+def add_image_to(imageable)
   # imageable should respond to #title & #author
   imageable.image = Image.create!({
     imageable: imageable,
