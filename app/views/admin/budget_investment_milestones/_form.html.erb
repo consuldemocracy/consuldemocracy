@@ -8,7 +8,7 @@
           { include_blank: @statuses.any? ? '' : t('admin.milestones.form.no_statuses_defined') },
           { disabled: @statuses.blank? } %>
     <%= link_to t('admin.milestones.form.admin_statuses'),
-                admin_budget_investment_statuses_path %>
+                admin_milestone_statuses_path %>
   </div>
 
   <%= f.translatable_fields do |translations_form| %>

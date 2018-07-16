@@ -294,24 +294,24 @@ es:
         notice: Hito borrado correctamente
     statuses:
       index:
-        title: Estados de proyectos
-        empty_statuses: Aún no se ha creado ningún estado de proyecto
-        new_status: Crear nuevo estado de proyecto
+        title: Estados de seguimiento
+        empty_statuses: Aún no se ha creado ningún estado de seguimiento
+        new_status: Crear nuevo estado de seguimiento
         table_name: Nombre
         table_description: Descripción
         table_actions: Acciones
         delete: Borrar
         edit: Editar
       edit:
-        title: Editar estado de proyecto
+        title: Editar estado de seguimiento
       update:
-        notice: Estado de proyecto editado correctamente
+        notice: Estado de seguimiento editado correctamente
       new:
-        title: Crear estado de proyecto
+        title: Crear estado de seguimiento
       create:
-        notice: Estado de proyecto creado correctamente
+        notice: Estado de seguimiento creado correctamente
       delete:
-        notice: Estado de proyecto eliminado correctamente
+        notice: Estado de seguimiento eliminado correctamente
     comments:
       index:
         filter: Filtro

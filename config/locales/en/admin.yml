@@ -294,24 +294,24 @@ en:
         notice: Milestone successfully deleted
     statuses:
       index:
-        title: Investment statuses
-        empty_statuses: There are no investment statuses created
-        new_status: Create new investment status
+        title: Milestone statuses
+        empty_statuses: There are no milestone statuses created
+        new_status: Create new milestone status
         table_name: Name
         table_description: Description
         table_actions: Actions
         delete: Delete
         edit: Edit
       edit:
-        title: Edit investment status
+        title: Edit milestone status
       update:
-        notice: Investment status updated successfully
+        notice: Milestone status updated successfully
       new:
-        title: Create investment status
+        title: Create milestone status
       create:
-        notice: Investment status created successfully
+        notice: Milestone status created successfully
       delete:
-        notice: Investment status deleted successfully
+        notice: Milestone status deleted successfully
     comments:
       index:
         filter: Filter
