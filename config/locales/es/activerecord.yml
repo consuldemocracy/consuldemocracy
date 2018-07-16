@@ -13,9 +13,9 @@ es:
       budget/investment/milestone:
         one: "hito"
         other: "hitos"
-      budget/investment/status:
-        one: "Estado del proyecto"
-        other: "Estados del proyecto"
+      milestone/status:
+        one: "Estado de seguimiento"
+        other: "Estados de seguimiento"
       comment:
         one: "Comentario"
         other: "Comentarios"

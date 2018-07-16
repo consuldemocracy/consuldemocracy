@@ -781,6 +781,16 @@ ActiveRecord::Schema.define(version: 20181016204729) do
   add_index "map_locations", ["investment_id"], name: "index_map_locations_on_investment_id", using: :btree
   add_index "map_locations", ["proposal_id"], name: "index_map_locations_on_proposal_id", using: :btree
 
+  create_table "milestone_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "hidden_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "milestone_statuses", ["hidden_at"], name: "index_milestone_statuses_on_hidden_at", using: :btree
+
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
   end

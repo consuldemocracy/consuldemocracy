@@ -41,7 +41,7 @@ feature 'Admin budget investment milestones' do
 
   context "New" do
     scenario "Add milestone" do
-      status = create(:budget_investment_status)
+      status = create(:milestone_status)
       visit admin_budget_budget_investment_path(@investment.budget, @investment)
 
       click_link 'Create new milestone'

@@ -13,9 +13,9 @@ en:
       budget/investment/milestone:
         one: "milestone"
         other: "milestones"
-      budget/investment/status:
-        one: "Investment status"
-        other: "Investment statuses"
+      milestone/status:
+        one: "Milestone Status"
+        other: "Milestone Statuses"
       comment:
         one: "Comment"
         other: "Comments"
