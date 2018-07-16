@@ -13,7 +13,7 @@
 
   <%= f.translatable_fields do |translations_form| %>
     <%= translations_form.hidden_field :title, value: l(Time.current, format: :datetime),
-                               maxlength: Budget::Investment::Milestone.title_max_length %>
+                               maxlength: Milestone.title_max_length %>
 
     <%= translations_form.text_area :description,
                                     rows: 5,

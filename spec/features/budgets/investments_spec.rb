@@ -1121,13 +1121,13 @@ feature 'Budget Investments' do
   scenario "Show milestones", :js do
     user = create(:user)
     investment = create(:budget_investment)
-    create(:budget_investment_milestone, investment: investment,
-                                         description_en: "Last milestone with a link to https://consul.dev",
-                                         description_es: "Último hito con el link https://consul.dev",
-                                         publication_date: Date.tomorrow)
-    first_milestone = create(:budget_investment_milestone, investment: investment,
-                                                           description: "First milestone",
-                                                           publication_date: Date.yesterday)
+    create(:milestone, milestoneable: investment,
+                       description_en: "Last milestone with a link to https://consul.dev",
+                       description_es: "Último hito con el link https://consul.dev",
+                       publication_date: Date.tomorrow)
+    first_milestone = create(:milestone, milestoneable: investment,
+                                         description: "First milestone",
+                                         publication_date: Date.yesterday)
     image = create(:image, imageable: first_milestone)
     document = create(:document, documentable: first_milestone)
 
