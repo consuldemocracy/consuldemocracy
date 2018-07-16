@@ -20,6 +20,9 @@ en:
       email_on_direct_message_label: Receive emails about direct messages
       email_digest_label: Receive a summary of proposal notifications
       official_position_badge_label: Show official position badge
+      recommendations: Recommendations
+      show_debates_recommendations: Show debates recommendations
+      show_proposals_recommendations: Show proposals recommendations
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
@@ -110,6 +113,10 @@ en:
       recommendations:
         without_results: There are not debates related to your interests
         without_interests: Follow proposals so we can give you recommendations
+        disable: "Debates recommendations will stop showing if you dismiss them. You can enable them again in 'My account' page"
+        actions:
+          success: "Recommendations for debates are now disabled for this account"
+          error: "An error has occured. Please go to 'Your account' page to manually disable recommendations for debates"
       search_form:
         button: Search
         placeholder: Search debates...
@@ -361,6 +368,10 @@ en:
       recommendations:
         without_results: There are not proposals related to your interests
         without_interests: Follow proposals so we can give you recommendations
+        disable: "Proposals recommendations will stop showing if you dismiss them. You can enable them again in 'My account' page"
+        actions:
+          success: "Recommendations for proposals are now disabled for this account"
+          error: "An error has occured. Please go to 'Your account' page to manually disable recommendations for proposals"
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
       retired_links:
@@ -632,6 +643,10 @@ en:
       title: View mode
       cards: Cards
       list: List
+    recommended_index:
+        title: Recommendations
+        see_more: See more recommendations
+        hide: Hide recommendations
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"

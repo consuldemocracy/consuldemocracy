@@ -40,6 +40,8 @@ section "Creating Settings" do
   Setting.create(key: 'feature.signature_sheets', value: "true")
   Setting.create(key: 'feature.legislation', value: "true")
   Setting.create(key: 'feature.user.recommendations', value: "true")
+  Setting.create(key: 'feature.user.recommendations_on_debates', value: "true")
+  Setting.create(key: 'feature.user.recommendations_on_proposals', value: "true")
   Setting.create(key: 'feature.community', value: "true")
   Setting.create(key: 'feature.map', value: "true")
   Setting.create(key: 'feature.allow_images', value: "true")

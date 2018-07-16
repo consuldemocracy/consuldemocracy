@@ -43,6 +43,8 @@ en:
       user:
         recommendations: Recommendations
         skip_verification: Skip user verification
+        recommendations_on_debates: Recommendations on debates
+        recommendations_on_proposals: Recommendations on proposals
       community: Community on proposals and investments
       map: Proposals and budget investments geolocation
       allow_images: Allow upload and show images
