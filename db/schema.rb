@@ -104,8 +104,15 @@ ActiveRecord::Schema.define(version: 20180711224810) do
     t.integer  "ballot_lines_count", default: 0
   end
 
+  create_table "banner_sections", force: :cascade do |t|
+    t.integer  "banner_id"
+    t.integer  "web_section_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "banners", force: :cascade do |t|
-    t.string   "title",           limit: 80
+    t.string   "title",            limit: 80
     t.string   "description"
     t.string   "target_url"
     t.string   "style"
@@ -113,8 +120,10 @@ ActiveRecord::Schema.define(version: 20180711224810) do
     t.date     "post_started_at"
     t.date     "post_ended_at"
     t.datetime "hidden_at"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.text     "background_color"
+    t.text     "font_color"
   end
 
   add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
@@ -1501,6 +1510,12 @@ ActiveRecord::Schema.define(version: 20180711224810) do
   add_index "votes", ["signature_id"], name: "index_votes_on_signature_id", using: :btree
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
+
+  create_table "web_sections", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "widget_cards", force: :cascade do |t|
     t.string   "title"

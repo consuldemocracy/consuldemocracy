@@ -39,6 +39,7 @@ class Management::BaseController < ActionController::Base
       session[:locale] ||= I18n.default_locale
 
       I18n.locale = session[:locale]
+      Globalize.locale = I18n.locale
     end
 
     def current_budget

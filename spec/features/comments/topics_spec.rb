@@ -516,8 +516,13 @@ feature 'Commenting topics from proposals' do
       visit community_topic_path(@proposal.community, @topic)
 
       within("#comment_#{@comment.id}_votes") do
-        find(".in_favor a").click
-        find(".against a").click
+        find('.in_favor a').click
+
+        within('.in_favor') do
+          expect(page).to have_content "1"
+        end
+
+        find('.against a').click
 
         within('.in_favor') do
           expect(page).to have_content "0"
@@ -1069,6 +1074,11 @@ feature 'Commenting topics from budget investments' do
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
+
+        within('.in_favor') do
+          expect(page).to have_content "1"
+        end
+
         find('.against a').click
 
         within('.in_favor') do

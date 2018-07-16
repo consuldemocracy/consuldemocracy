@@ -1,4 +1,9 @@
-<% provide :title do %><%= t("budgets.index.title") %><% end %>
+<% if has_banners? %>
+  <%= render "shared/banner" %>
+<% end %>
+
+<% provide :title do %><%= t('budgets.index.title') %><% end %>
+
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
 <% end %>
