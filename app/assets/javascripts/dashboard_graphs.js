@@ -175,10 +175,10 @@
       grid: {
         y: {
           lines: this.goals
-        },
-        x: {
-          lines: this.achievements
         }
+        //x: {
+        //  lines: this.achievements
+        //}
       },
       legend: {
         position: 'right'
