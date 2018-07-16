@@ -6,7 +6,7 @@ module Budgets
 
     def show
       authorize! :read_executions, @budget
-      @statuses = ::Budget::Investment::Status.all
+      @statuses = Milestone::Status.all
 
       if params[:status].present?
         @investments_by_heading = @budget.investments.winners

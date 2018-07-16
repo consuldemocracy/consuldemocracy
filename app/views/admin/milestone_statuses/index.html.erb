@@ -1,7 +1,7 @@
 <h2 class="inline-block"><%= t("admin.statuses.index.title") %></h2>
 
 <%= link_to t("admin.statuses.index.new_status"),
-            new_admin_budget_investment_status_path,
+            new_admin_milestone_status_path,
             class: "button float-right margin-right" %>
 
 <% if @statuses.any? %>
@@ -15,7 +15,7 @@
     </thead>
     <tbody>
       <% @statuses.each do |status| %>
-        <tr id="<%= dom_id(status) %>" class="budget_investment_status">
+        <tr id="<%= dom_id(status) %>" class="milestone_status">
           <td>
             <%= status.name %>
           </td>
@@ -24,10 +24,10 @@
           </td>
           <td>
             <%= link_to t("admin.statuses.index.edit"),
-                        edit_admin_budget_investment_status_path(status),
+                        edit_admin_milestone_status_path(status),
                         method: :get, class: "button hollow" %>
             <%= link_to t("admin.statuses.index.delete"),
-                        admin_budget_investment_status_path(status),
+                        admin_milestone_status_path(status),
                         method: :delete, class: "button hollow alert" %>
           </td>
         </tr>

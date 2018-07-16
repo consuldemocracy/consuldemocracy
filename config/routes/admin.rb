@@ -69,7 +69,7 @@ namespace :admin do
     resources :budget_phases, only: [:edit, :update]
   end
 
-  resources :budget_investment_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
+  resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
 
   resources :signature_sheets, only: [:index, :new, :create, :show]
 

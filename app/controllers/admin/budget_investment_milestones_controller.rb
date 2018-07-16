@@ -70,7 +70,7 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
   end
 
   def load_statuses
-    @statuses = Budget::Investment::Status.all
+    @statuses = Milestone::Status.all
   end
 
 end

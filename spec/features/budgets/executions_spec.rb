@@ -46,7 +46,7 @@ feature 'Executions' do
   end
 
   scenario "Show message when there are no winning investments with the selected status", :js do
-    create(:budget_investment_status, name: I18n.t('seeds.budgets.statuses.executed'))
+    create(:milestone_status, name: I18n.t('seeds.budgets.statuses.executed'))
 
     visit budget_path(budget)
 
@@ -129,8 +129,8 @@ feature 'Executions' do
 
   context 'Filters' do
 
-    let!(:status1) { create(:budget_investment_status, name: I18n.t('seeds.budgets.statuses.studying_project')) }
-    let!(:status2) { create(:budget_investment_status, name: I18n.t('seeds.budgets.statuses.bidding')) }
+    let!(:status1) { create(:milestone_status, name: I18n.t('seeds.budgets.statuses.studying_project')) }
+    let!(:status2) { create(:milestone_status, name: I18n.t('seeds.budgets.statuses.bidding')) }
 
     scenario 'Filters select with counter are shown' do
       create(:budget_investment_milestone, investment: investment1,
@@ -154,7 +154,7 @@ feature 'Executions' do
     scenario 'by milestone status', :js do
       create(:budget_investment_milestone, investment: investment1, status: status1)
       create(:budget_investment_milestone, investment: investment2, status: status2)
-      create(:budget_investment_status, name: I18n.t('seeds.budgets.statuses.executing_project'))
+      create(:milestone_status, name: I18n.t('seeds.budgets.statuses.executing_project'))
 
       visit budget_path(budget)
 
@@ -260,7 +260,7 @@ feature 'Executions' do
   context 'No milestones' do
 
     scenario 'Milestone not yet published' do
-      status = create(:budget_investment_status)
+      status = create(:milestone_status)
       unpublished_milestone = create(:budget_investment_milestone, investment: investment1,
                                      status: status, publication_date: Date.tomorrow)
 

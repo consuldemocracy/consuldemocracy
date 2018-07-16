@@ -11,7 +11,7 @@ class Budget
       include Globalizable
 
       belongs_to :investment
-      belongs_to :status, class_name: 'Budget::Investment::Status'
+      belongs_to :status, class_name: 'Milestone::Status'
 
       validates :investment, presence: true
       validates :publication_date, presence: true
