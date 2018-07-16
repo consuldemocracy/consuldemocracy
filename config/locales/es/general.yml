@@ -1003,7 +1003,7 @@ es:
       author: Autor
       surveys: Encuestas
       complete_survey: Completa la encuesta
-    participants:
+    subnav:
       surveys: Encuestas
     poll:
       take_part: Participa del %{from} al %{to}

@@ -1004,7 +1004,7 @@ en:
       author: Author
       surveys: Surveys
       complete_survey: Complete the survey
-    participants:
+    subnav:
       surveys: Surveys
     poll:
       take_part: Take part from %{from} to %{to}
