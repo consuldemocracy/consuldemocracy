@@ -107,4 +107,20 @@ feature 'Signature sheets' do
     end
   end
 
+  scenario 'Revalidate' do
+    proposal = create(:proposal)
+    user = Administrator.first.user
+    signature_sheet = create(:signature_sheet,
+                             signable: proposal,
+                             document_numbers: "12345678Z, 123A, 123B",
+                             author: user)
+
+    visit admin_signature_sheet_path(signature_sheet)
+
+    click_on "Revalidate"
+
+    expect(page).to have_content( I18n.t('flash.actions.revalidate.signature_sheet') )
+
+  end
+
 end
