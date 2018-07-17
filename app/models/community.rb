@@ -40,7 +40,7 @@ class Community < ActiveRecord::Base
   end
 
   def author_from_community
-    from_proposal? ? User.where(id: proposal&.author_id) : User.where(id: investment&.author_id)
+    User.where(id: communitable&.author_id)
   end
 
 end
