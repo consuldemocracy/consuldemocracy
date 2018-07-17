@@ -42,3 +42,5 @@
     <%= t("admin.signature_sheets.show.loading") %>
   </div>
 <% end %>
+
+<%= link_to t("admin.signature_sheets.show.revalidate"), revalidate_admin_signature_sheet_path(@signature_sheet), class: 'button float-right' %>

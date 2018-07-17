@@ -37,3 +37,5 @@ en:
         topic: "Topic deleted successfully."
         poll_question_answer_video: "Answer video deleted successfully."
         valuator_group: "Valuator group deleted successfully"
+      revalidate:
+        signature_sheet: "Validating again signature sheet"

@@ -1190,6 +1190,7 @@ en:
         document_numbers_note: "Write the numbers separated by commas (,)"
         submit: Create signature sheet
       show:
+        revalidate: Revalidate
         created_at: Created
         author: Author
         documents: Documents
