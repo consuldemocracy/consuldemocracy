@@ -1,8 +1,3 @@
-section "Creating Communities" do
-  Proposal.all.each { |proposal| proposal.update(community: Community.create) }
-  Budget::Investment.all.each { |investment| investment.update(community: Community.create) }
-end
-
 section "Creating Communities Topics" do
   Community.all.each do |community|
     Topic.create(community: community, author: User.all.sample,
