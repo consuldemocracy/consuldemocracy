@@ -8,6 +8,7 @@ describe Proposal do
     it_behaves_like "has_public_author"
     it_behaves_like "notifiable"
     it_behaves_like "map validations"
+    it_behaves_like "communitable"
   end
 
   it "is valid" do

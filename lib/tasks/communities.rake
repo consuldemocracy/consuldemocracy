@@ -5,15 +5,13 @@ namespace :communities do
 
     Proposal.all.each do |proposal|
       if proposal.community.blank?
-        community = Community.create
-        proposal.update(community_id: community.id)
+        proposal.update(community: Community.create)
       end
     end
 
     Budget::Investment.all.each do |investment|
       if investment.community.blank?
-        community = Community.create
-        investment.update(community_id: community.id)
+        investment.update(community: Community.create)
       end
     end
   end

@@ -1,6 +1,5 @@
 class Community < ActiveRecord::Base
-  has_one :proposal
-  has_one :investment, class_name: Budget::Investment
+  belongs_to :communitable, polymorphic: true
   has_many :topics
 
   def participants
@@ -11,19 +10,25 @@ class Community < ActiveRecord::Base
   end
 
   def from_proposal?
-    proposal.present?
-  end
-
-  def communitable
-    from_proposal? ? proposal : investment
-  end
-
-  def communitable_type
-    communitable.class.name
+    communitable_type == "Proposal"
   end
 
   def communitable_key
     communitable_type.split("::").last.underscore
+  end
+
+  # @deprecated Please use {#communitable} instead
+  def proposal
+    warn "[DEPRECATION] `Community#proposal` is deprecated. " +
+         "Please use `Community#communitable` instead."
+    communitable
+  end
+
+  # @deprecated Please use {#communitable} instead
+  def investment
+    warn "[DEPRECATION] `Community#investment` is deprecated. " +
+         "Please use `Community#communitable` instead."
+    communitable
   end
 
   private

@@ -27,19 +27,10 @@ RSpec.describe Community, type: :model do
     end
   end
 
-  # TODO: remove the trivial ones after migrating to a polymorphic association.
-  describe "#communitable" do
+  describe "#communitable_key" do
     context "from proposal" do
       let(:proposal) { create(:proposal) }
       let(:community) { proposal.community }
-
-      it "returns the proposal as communitable" do
-        expect(community.communitable).to be(proposal)
-      end
-
-      it "returns proposal as communitable type" do
-        expect(community.communitable_type).to eq "Proposal"
-      end
 
       it "returns proposal as communitable key" do
         expect(community.communitable_key).to eq "proposal"
@@ -49,14 +40,6 @@ RSpec.describe Community, type: :model do
     context "from investment" do
       let(:investment) { create(:budget_investment) }
       let(:community) { investment.community }
-
-      it "returns the investment as communitable" do
-        expect(community.communitable).to be(investment)
-      end
-
-      it "returns budget investment as communitable type" do
-        expect(community.communitable_type).to eq "Budget::Investment"
-      end
 
       it "returns investment as communitable key" do
         expect(community.communitable_key).to eq "investment"

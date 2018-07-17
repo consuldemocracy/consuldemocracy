@@ -5,6 +5,7 @@ describe Budget::Investment do
 
   describe "Concerns" do
     it_behaves_like "notifiable"
+    it_behaves_like "communitable"
   end
 
   it "is valid" do

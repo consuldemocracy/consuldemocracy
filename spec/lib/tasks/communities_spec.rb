@@ -18,7 +18,7 @@ describe 'Communities Rake' do
 
       it 'When proposal has not community_id' do
         proposal = create(:proposal)
-        proposal.update(community_id: nil)
+        proposal.update(community: nil)
         expect(proposal.community).to be_nil
 
         run_rake_task
@@ -32,7 +32,7 @@ describe 'Communities Rake' do
 
       it 'When budget investment has not community_id' do
         investment = create(:budget_investment)
-        investment.update(community_id: nil)
+        investment.update(community: nil)
         expect(investment.community).to be_nil
 
         run_rake_task
