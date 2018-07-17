@@ -153,6 +153,8 @@ class Budget < ActiveRecord::Base
       %w{random}
     when 'publishing_prices', 'balloting', 'reviewing_ballots'
       %w{random price}
+    when 'finished'
+      %w{random}
     else
       %w{random confidence_score}
     end
@@ -200,5 +202,3 @@ class Budget < ActiveRecord::Base
     slug.nil? || drafting?
   end
 end
-
-

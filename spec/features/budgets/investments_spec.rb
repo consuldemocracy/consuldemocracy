@@ -680,6 +680,20 @@ feature 'Budget Investments' do
       end
     end
 
+    scenario 'Order is random if budget is finished' do
+      10.times { create(:budget_investment) }
+
+      budget.update(phase: 'finished')
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+      order = all(".budget-investment h3").collect {|i| i.text }
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+      new_order = eq(all(".budget-investment h3").collect {|i| i.text })
+
+      expect(order).not_to eq(new_order)
+    end
+
     def investments_order
       all(".budget-investment h3").collect {|i| i.text }
     end
@@ -1121,6 +1135,20 @@ feature 'Budget Investments' do
     within("#tab-milestones") do
       expect(page).to have_content("Don't have defined milestones")
     end
+  end
+
+  scenario "Only winner investments are show when budget is finished" do
+    3.times { create(:budget_investment, heading: heading) }
+
+    Budget::Investment.first.update(feasibility: 'feasible', selected: true, winner: true)
+    Budget::Investment.second.update(feasibility: 'feasible', selected: true, winner: true)
+    budget.update(phase: 'finished')
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    expect(page).to have_content("#{Budget::Investment.first.title}")
+    expect(page).to have_content("#{Budget::Investment.second.title}")
+    expect(page).not_to have_content("#{Budget::Investment.third.title}")
   end
 
   it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
