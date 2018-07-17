@@ -14,6 +14,18 @@ class Community < ActiveRecord::Base
     proposal.present?
   end
 
+  def communitable
+    from_proposal? ? proposal : investment
+  end
+
+  def communitable_type
+    communitable.class.name
+  end
+
+  def communitable_key
+    communitable_type.split("::").last.underscore
+  end
+
   private
 
   def users_who_commented

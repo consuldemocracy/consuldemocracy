@@ -3,12 +3,12 @@
   <div class="jumbo light">
     <div class="row">
       <div class="small-12 column">
-        <span class="uppercase"><%= community_text(@community) %></span>
-        <h2><%= link_to community_title(@community), community_back_link_path(@community) %></h2>
+        <span class="uppercase"><%= t("community.show.title.#{@community.communitable_key}") %></span>
+        <h2><%= link_to @community.communitable.title, community_back_link_path(@community) %></h2>
       </div>
 
       <div class="small-12 medium-9 column end">
-        <p><%= community_description(@community) %></p>
+        <p><%= t("community.show.description.#{@community.communitable_key}") %></p>
       </div>
     </div>
   </div>

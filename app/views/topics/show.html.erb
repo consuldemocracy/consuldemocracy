@@ -3,8 +3,8 @@
     <div class="small-12 medium-9 column">
 
       <%= back_link_to community_path(@community), t("community.show.back",
-                       community: community_text(@community),
-                       proposal: community_title(@community)) %>
+                       community: t("community.show.title.#{@community.communitable_key}"),
+                       proposal: @community.communitable.title) %>
 
       <h1><%= @topic.title %></h1>
 
