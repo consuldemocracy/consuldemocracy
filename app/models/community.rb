@@ -9,10 +9,6 @@ class Community < ActiveRecord::Base
     users_participants.uniq
   end
 
-  def from_proposal?
-    communitable_type == "Proposal"
-  end
-
   def communitable_key
     communitable_type.split("::").last.underscore
   end

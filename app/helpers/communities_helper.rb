@@ -1,6 +1,6 @@
 module CommunitiesHelper
   def community_back_link_path(community)
-    if community.from_proposal?
+    if community.communitable_type == "Proposal"
       proposal_path(community.communitable)
     else
       budget_investment_path(community.communitable.budget_id, community.communitable)
