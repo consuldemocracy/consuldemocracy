@@ -314,8 +314,10 @@ ActiveRecord::Schema.define(version: 20180718115545) do
   add_index "comments", ["valuation"], name: "index_comments_on_valuation", using: :btree
 
   create_table "communities", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "communitable_id"
+    t.string   "communitable_type"
   end
 
   create_table "debates", force: :cascade do |t|
