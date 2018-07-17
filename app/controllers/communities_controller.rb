@@ -34,6 +34,6 @@ class CommunitiesController < ApplicationController
   end
 
   def communitable_exists?
-    @community.proposal.present? || @community.investment.present?
+    @community.communitable.present?
   end
 end

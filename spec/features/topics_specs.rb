@@ -121,7 +121,7 @@ feature 'Topics' do
 
       visit community_topic_path(community, topic)
 
-      expect(page).to have_content community.proposal.title
+      expect(page).to have_content proposal.title
       expect(page).to have_content topic.title
     end
 

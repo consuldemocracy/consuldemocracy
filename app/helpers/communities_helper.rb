@@ -1,9 +1,9 @@
 module CommunitiesHelper
   def community_back_link_path(community)
     if community.from_proposal?
-      proposal_path(community.proposal)
+      proposal_path(community.communitable)
     else
-      budget_investment_path(community.investment.budget_id, community.investment)
+      budget_investment_path(community.communitable.budget_id, community.communitable)
     end
   end
 
