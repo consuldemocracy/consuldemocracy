@@ -18,6 +18,7 @@ en:
       project_text: A project by
       colaboration_text: In collaboration with
       support_text: Supported by
+      consul_html: This portal uses the <strong><a href=\"%{link}\">CONSUL</a></strong> application which is open-source software.
   social:
     linkedin: "%{org} LinkedIn"
   proposals:
@@ -49,7 +50,7 @@ en:
       form:
         submit_button_custom: Send your proposal
       suggest_warning_html: "You are creating a complementary proposal of: <strong><a href=\"%{link}\">%{title}</a></strong>"
-      start_complementary: "Create a complementary proposal"        
+      start_complementary: "Create a complementary proposal"
     edit:
       form:
         submit_button_custom: Save changes

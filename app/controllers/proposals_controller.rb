@@ -15,8 +15,11 @@ class ProposalsController < ApplicationController
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
   has_orders ->(c) { Proposal.proposals_orders(c.current_user) }, only: :index
-  has_orders %w{most_voted newest oldest}, only: :show
-
+  if Setting['org_name'] != "MASDEMOCRACIAEUROPA"
+    has_orders %w{most_voted newest oldest}, only: :show
+  else
+    has_orders %w{newest oldest}, only: :show
+  end
   load_and_authorize_resource
   helper_method :resource_model, :resource_name
   respond_to :html, :js
