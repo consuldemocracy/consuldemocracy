@@ -560,7 +560,7 @@ es:
       participants: Participantes
       debates: Debates
       comments: Comentarios
-      latest_topics: Últimos debates
+      latest_comments: Últimos mensajes
   dashboard:
     polls:
       index:

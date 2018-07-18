@@ -27,7 +27,11 @@ class Community < ActiveRecord::Base
   end
 
   def comments_count
-    Comment.where(commentable: topics).count
+    comments.count
+  end
+
+  def comments
+    Comment.where(commentable: topics)
   end
 
   def debates_count
