@@ -30,12 +30,12 @@
     <% end %>
   </div>
 
-  <div class="small-12 medium-9 column margin">
+  <div class="small-12 medium-9 column">
     <%= link_to_add_association t("admin.legislation.questions.form.add_option"),
-                                f, :question_options, class: "button hollow medium" %>
+                                f, :question_options, class: "button hollow" %>
   </div>
 
-  <div class="small-12 medium-6 large-4 column end">
-    <%= f.submit(class: "button expanded", value: t("admin.legislation.questions.#{admin_submit_action(@question)}.submit_button")) %>
+  <div class="small-12 medium-6 large-3 clear column end margin-top">
+    <%= f.submit(class: "button success expanded", value: t("admin.legislation.questions.#{admin_submit_action(@question)}.submit_button")) %>
   </div>
 <% end %>

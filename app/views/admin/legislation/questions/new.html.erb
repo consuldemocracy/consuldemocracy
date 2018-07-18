@@ -1,21 +1,18 @@
 <% provide :title do %>
-  Admin - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.questions.index.title") %> - <%= t("admin.legislation.questions.new.title") %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.questions.index.title") %> - <%= t("admin.legislation.questions.new.title") %>
 <% end %>
 
-<div class="legislation-admin legislation-questions-new legislation-questions-form row">
+<div class="legislation-questions-new legislation-questions-form">
+
+  <%= back_link_to admin_legislation_process_questions_path(@process), t("admin.legislation.questions.new.back") %>
+
+  <h2><%= @process.title %></h2>
+
+  <%= render 'admin/legislation/processes/subnav', process: @process, active: 'questions' %>
+
   <div class="small-12 column">
-    <%= back_link_to admin_legislation_process_questions_path(@process), t("admin.legislation.questions.new.back") %>
-
-    <h2><%= @process.title %></h2>
-
-    <%= render 'admin/legislation/processes/subnav', process: @process, active: 'questions' %>
-
-    <div class="row">
-      <div class="small-12 medium-9 column">
-        <h3><%= t("admin.legislation.questions.new.title") %></h3>
-      </div>
-    </div>
-
-    <%= render 'form', url: admin_legislation_process_questions_path(@process) %>
+    <h3><%= t("admin.legislation.questions.new.title") %></h3>
   </div>
+
+  <%= render 'form', url: admin_legislation_process_questions_path(@process) %>
 </div>
