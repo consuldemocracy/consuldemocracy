@@ -151,10 +151,10 @@
           <div class="sidebar-divider"></div>
           <p class="sidebar-title"><%= t("proposals.show.act") %></p>
           <div class="show-actions-menu">
-            <%= link_to new_proposal_path(original_proposal_id: @proposal.id), class: 'button hollow expanded' do %>
+            <%= link_to new_proposal_path(original_proposal_id: @proposal.id), class: 'button expanded' do %>
                         <%= t("proposals.show.complementary_link") %>
             <% end %>
-            <%= link_to '#js-suggest-notice', class: 'button hollow expanded', id: 'js-proposal-change-suggest' do %>
+            <%= link_to '#js-suggest-notice', class: 'button expanded', id: 'js-proposal-change-suggest' do %>
                         <%= t("proposals.show.suggest_link") %>
             <% end %>
           </div>
@@ -166,7 +166,7 @@
           <div class="show-actions-menu">
 
             <% if current_editable?(@proposal) %>
-              <%= link_to edit_proposal_path(@proposal), class: 'button hollow expanded' do %>
+              <%= link_to edit_proposal_path(@proposal), class: 'button expanded' do %>
                           <span class="icon-edit"></span>
                           <%= t("proposals.show.edit_proposal_link") %>
               <% end %>
@@ -174,7 +174,7 @@
 
             <% if author_of_proposal?(@proposal) %>
               <%= link_to new_proposal_notification_path(proposal_id: @proposal.id),
-                          class: 'button hollow expanded' do %>
+                          class: 'button expanded' do %>
                           <span class="icon-no-notification"></span>
                           <%= t("proposals.show.send_notification") %>
               <% end %>
@@ -183,7 +183,7 @@
             <% if can_destroy_image?(@proposal) %>
               <%= link_to image_path(@proposal.image, from: request.url),
                           method: :delete,
-                          class: 'button hollow alert expanded',
+                          class: 'button alert expanded',
                           data: { confirm: t('images.actions.destroy.confirm') } do %>
                           <span class="icon-image"></span>
                           <%= t("images.remove_image") %>
@@ -207,7 +207,7 @@
                 <p class="text-center">
                   <%= link_to t('poll_questions.create_question'),
                               new_admin_question_path(proposal_id: @proposal.id),
-                              class: "button hollow expanded" %>
+                              class: "button expanded" %>
                 </p>
               <% end %>
             <% elsif @proposal.archived? %>

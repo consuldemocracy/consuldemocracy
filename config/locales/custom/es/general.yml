@@ -18,6 +18,7 @@ es:
       project_text: Un proyecto de
       colaboration_text: En colaboración con
       support_text: Apoyado por
+      consul_html: "Este portal usa la aplicación <strong><a href=\"%{link}\">CONSUL</a></strong> que es software libre."
   social:
     linkedin: "LinkedIn de %{org}"
   proposals:
@@ -49,8 +50,8 @@ es:
       form:
         submit_button: Envía tu propuesta
         submit_button_custom: Envía tu propuesta
-      suggest_warning_html: "Estás creando una propuesta complementaria a: <strong><a href=\"%{link}\">%{title}</a></strong>"
-      start_complementary: "Crea una propuesta complementaria"        
+      suggest_warning_html: "Estás creando una propuesta alternativa a: <strong><a href=\"%{link}\">%{title}</a></strong>"
+      start_complementary: "Crea una propuesta alternativa"
     edit:
       form:
         submit_button_custom: Guardar cambios
@@ -58,9 +59,9 @@ es:
       proposal_objective: Objetivo/s concreto/s de la propuesta
       proposal_feasible_explanation: Aplicabilidad de la propuesta
       proposal_impact_description: Impacto de la propuesta
-      complementary_link: Crea propuesta complementaria
+      complementary_link: Crea una propuesta alternativa
       act: Actúa
-      suggest_link: Sugerir cambios
+      suggest_link: Sugiere cambios a esta propuesta
       suggest_text: Sugiere cambios para esta propuesta a través del sistema de comentarios.
     retire_form:
       warning: "Si sigues adelante tu propuesta dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir visible."
