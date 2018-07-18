@@ -46,6 +46,10 @@ $sidebar-active: #f4fcd0;
 
   .top-links {
     background: #000;
+
+    a {
+      line-height: rem-calc($line-height * 1.5);
+    }
   }
 
   .admin-top-bar {
