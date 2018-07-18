@@ -237,6 +237,10 @@
         <li <%= "class=is-active" if controller_name == "content_blocks" %>>
           <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path%>
         </li>
+
+        <li <%= "class=is-active" if controller_name == "information_texts" %>>
+          <%= link_to t("admin.menu.site_customization.information_texts"), admin_site_customization_information_texts_path%>
+        </li>
       </ul>
     </li>
   </ul>
