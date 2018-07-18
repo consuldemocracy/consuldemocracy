@@ -1,11 +1,11 @@
 <% provide :title do %>
-  Admin - <%= t("admin.menu.legislation") %> - <%= t("admin.legislation.processes.index.filters.#{@current_filter}") %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= t("admin.legislation.processes.index.filters.#{@current_filter}") %>
 <% end %>
 
 <h2 class="inline-block"><%= t("admin.legislation.processes.index.title") %></h2>
 
 <%= link_to t("admin.legislation.processes.index.create"), new_admin_legislation_process_path,
-            class: "button success float-right" %>
+            class: "button float-right" %>
 
 <%= render 'shared/filter_subnav', i18n_namespace: "admin.legislation.processes.index" %>
 
@@ -18,7 +18,7 @@
         <th><%= t("admin.legislation.processes.process.title") %></th>
         <th><%= t("admin.legislation.processes.process.status") %></th>
         <th><%= t("admin.legislation.processes.process.creation_date") %></th>
-        <th><%= t("admin.legislation.processes.process.comments") %></th>
+        <th class="text-center"><%= t("admin.legislation.processes.process.comments") %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -26,16 +26,16 @@
     <tbody>
       <% @processes.each do |process| %>
         <tr id="<%= dom_id(process) %>">
-          <td class="small-12 medium-8">
+          <td class="small-12 medium-6">
             <%= link_to process.title, edit_admin_legislation_process_path(process) %>
           </td>
           <td><%= t("admin.legislation.processes.process.status_#{process.status}") %></td>
           <td><%= I18n.l process.created_at.to_date %></td>
-          <td><%= process.total_comments %></td>
+          <td class="text-center"><%= process.total_comments %></td>
           <td>
             <%= link_to t("admin.legislation.processes.index.delete"), admin_legislation_process_path(process),
                         method: :delete,
-                        class: 'button hollow alert' %>
+                        class: 'button hollow alert expanded' %>
           </td>
         </tr>
       <% end %>

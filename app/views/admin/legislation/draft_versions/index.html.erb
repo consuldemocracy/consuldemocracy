@@ -1,23 +1,20 @@
 <% provide :title do %>
-  Admin - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.draft_versions.index.title") %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.draft_versions.index.title") %>
 <% end %>
 
-<div class="legislation-admin legislation-draft-versions-index row">
+<div class="legislation-draft-versions-index">
+
+  <%= back_link_to admin_legislation_processes_path, t("admin.legislation.processes.edit.back") %>
+
+  <h2><%= @process.title %></h2>
+
+  <%= render 'admin/legislation/processes/subnav', process: @process, active: 'draft_versions' %>
+
   <div class="small-12 column">
-    <%= back_link_to admin_legislation_processes_path, t("admin.legislation.processes.edit.back") %>
+    <h4 class="inline-block"><%= t("admin.legislation.draft_versions.index.title") %></h4>
 
-    <h2><%= @process.title %></h2>
-
-    <%= render 'admin/legislation/processes/subnav', process: @process, active: 'draft_versions' %>
-
-    <div class="row">
-      <div class="small-12 medium-9 column">
-        <h4><%= t("admin.legislation.draft_versions.index.title") %></h4>
-      </div>
-
-      <div class="small-12 medium-3 column legislation-process-version">
-        <%= link_to t("admin.legislation.draft_versions.index.create"), new_admin_legislation_process_draft_version_path, class: "button" %>
-      </div>
+    <div class="float-right">
+      <%= link_to t("admin.legislation.draft_versions.index.create"), new_admin_legislation_process_draft_version_path, class: "button" %>
     </div>
 
     <% if @process.draft_versions.any? %>
@@ -27,8 +24,8 @@
             <th><%= t("admin.legislation.draft_versions.table.title") %></th>
             <th><%= t("admin.legislation.draft_versions.table.created_at") %></th>
             <th><%= t("admin.legislation.draft_versions.table.status") %></th>
-            <th><%= t("admin.legislation.draft_versions.table.comments") %></th>
-            <th><%= t("admin.legislation.draft_versions.table.final_version") %></th>
+            <th class="text-center"><%= t("admin.legislation.draft_versions.table.comments") %></th>
+            <th class="text-center"><%= t("admin.legislation.draft_versions.table.final_version") %></th>
           </tr>
         </thead>
         <tbody>
@@ -46,8 +43,8 @@
                 <%= t("admin.legislation.draft_versions.statuses.published") %>
               <% end %>
             </td>
-            <td><%= draft_version.total_comments %></td>
-            <td>
+            <td class="text-center"><%= draft_version.total_comments %></td>
+            <td class="text-center">
               <% if draft_version.final_version %>
                 <span class="icon-check" title="<%= draft_version.final_version %>"></span>
               <% else %>

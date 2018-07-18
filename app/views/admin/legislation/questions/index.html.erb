@@ -1,23 +1,19 @@
 <% provide :title do %>
-  Admin - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.questions.index.title") %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.questions.index.title") %>
 <% end %>
 
-<div class="legislation-admin legislation-draft-versions-index row">
+<div class="legislation-draft-versions-index">
+  <%= back_link_to admin_legislation_processes_path, t("admin.legislation.questions.index.back") %>
+
+  <h2><%= @process.title %></h2>
+
+  <%= render 'admin/legislation/processes/subnav', process: @process, active: 'questions' %>
+
   <div class="small-12 column">
-    <%= back_link_to admin_legislation_processes_path, t("admin.legislation.questions.index.back") %>
+    <h4 class="inline-block"><%= t("admin.legislation.questions.index.title") %></h4>
 
-    <h2><%= @process.title %></h2>
-
-    <%= render 'admin/legislation/processes/subnav', process: @process, active: 'questions' %>
-
-    <div class="row">
-      <div class="small-12 medium-9 column">
-        <h4><%= t("admin.legislation.questions.index.title") %></h4>
-      </div>
-
-      <div class="small-12 medium-3 column legislation-process-question">
-        <%= link_to t("admin.legislation.questions.index.create"), new_admin_legislation_process_question_path, class: "button" %>
-      </div>
+    <div class="float-right">
+      <%= link_to t("admin.legislation.questions.index.create"), new_admin_legislation_process_question_path, class: "button" %>
     </div>
 
     <% if @process.questions.any? %>
@@ -26,8 +22,8 @@
           <tr>
             <th><%= t("admin.legislation.questions.table.title") %></th>
             <th><%= t("admin.legislation.questions.table.question_options") %></th>
-            <th><%= t("admin.legislation.questions.table.answers_count") %></th>
-            <th><%= t("admin.legislation.questions.table.comments_count") %></th>
+            <th class="text-center"><%= t("admin.legislation.questions.table.answers_count") %></th>
+            <th class="text-center"><%= t("admin.legislation.questions.table.comments_count") %></th>
           </tr>
         </thead>
         <tbody>
@@ -45,8 +41,8 @@
                 <% end %>
               <% end %>
             </td>
-            <td><%= question.answers_count %></td>
-            <td><%= link_to question.comments.count, legislation_process_question_path(@process, question, anchor: 'comments') %></td>
+            <td class="text-center"><%= question.answers_count %></td>
+            <td class="text-center"><%= link_to question.comments.count, legislation_process_question_path(@process, question, anchor: 'comments') %></td>
           </tr>
         <% end %>
         </tbody>
