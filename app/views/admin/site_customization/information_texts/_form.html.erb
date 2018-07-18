@@ -1,0 +1,15 @@
+<%= form_tag admin_site_customization_information_texts_path do %>
+  <% I18n.available_locales.each do |l| %>
+    <%= hidden_field_tag "delete_translations[#{l}]", 0 %>
+  <% end %>
+  <% contents.each do |group| %>
+    <% group.each do |content| %>
+      <b><%= t(content[:key]) %></b>
+      <% content.globalize_locales.each do |locale| %>
+        <%= render 'form_field', content: content, locale: locale %>
+      <% end %>
+
+    <% end %>
+  <% end %>
+  <%= submit_tag "Save", class: "button" %>
+<% end %>
