@@ -215,6 +215,9 @@ namespace :admin do
     resources :pages, except: [:show]
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
+    resources :information_texts, only: [:index] do
+      post :update, on: :collection
+    end
   end
 
   resource :homepage, controller: :homepage, only: [:show]
