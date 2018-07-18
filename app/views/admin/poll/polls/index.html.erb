@@ -2,14 +2,14 @@
 
 <%= link_to t("admin.polls.index.create"),
             new_admin_poll_path,
-            class: "button success float-right" %>
+            class: "button float-right" %>
 
 <% if @polls.any? %>
   <table>
     <thead>
-      <th class="medium-6"><%= t("admin.polls.index.name") %></th>
+      <th class="small-6"><%= t("admin.polls.index.name") %></th>
       <th><%= t("admin.polls.index.dates") %></th>
-      <th class="text-right"><%= t("admin.actions.actions") %></th>
+      <th><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
       <%= render @polls %>
