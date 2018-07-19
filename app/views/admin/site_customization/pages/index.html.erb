@@ -1,5 +1,5 @@
 <% provide :title do %>
-  Admin - <%= t("admin.menu.site_customization.pages") %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.site_customization.pages") %>
 <% end %>
 
 <%= link_to t("admin.site_customization.pages.index.create"), new_admin_site_customization_page_path, class: "button float-right" %>
@@ -16,7 +16,7 @@
         <th><%= t("admin.site_customization.pages.page.updated_at") %></th>
         <th><%= t("admin.site_customization.pages.page.status") %></th>
         <th><%= t("admin.site_customization.pages.page.locale") %></th>
-        <th colspan="2"><%= t("admin.actions.actions") %></th>
+        <th class="small-4"><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <tbody>
@@ -29,17 +29,21 @@
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
         <td><%= name_for_locale(page.locale) %></td>
-        <td class="small">
-          <span class="icon-eye"></span>
-          <% if page.status == "published" %>
-            <%= link_to t("admin.site_customization.pages.index.see_page"), page.url, target: "_blank" %>
-          <% else %>
-            <%= t("admin.site_customization.pages.index.see_page") %>
-          <% end %>
-        </td>
-        <td class="small delete">
-          <span class="icon-x"></span>
-          <%= link_to t("admin.site_customization.pages.index.delete"), admin_site_customization_page_path(page), method: :delete, class: "delete" %>
+        <td>
+          <div class="small-6 column">
+            <% if page.status == "published" %>
+              <%= link_to t("admin.site_customization.pages.index.see_page"),
+                          page.url,
+                          target: "_blank",
+                          class: "button hollow expanded" %>
+            <% end %>
+          </div>
+          <div class="small-6 column end">
+            <%= link_to t("admin.site_customization.pages.index.delete"),
+                        admin_site_customization_page_path(page),
+                        method: :delete,
+                        class: "button hollow alert expanded" %>
+          </div>
         </td>
       </tr>
     <% end %>
