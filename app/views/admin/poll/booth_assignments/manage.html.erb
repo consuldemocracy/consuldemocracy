@@ -1,9 +1,6 @@
-<%= link_to booth_assignments_admin_polls_path do %>
-  <span class="icon-angle-left"></span> <%= t("shared.back") %>
-<% end %>
-<hr>
+<%= back_link_to booth_assignments_admin_polls_path %>
 
-<h2 class="inline-block"><%= t("admin.booth_assignments.manage.assignments_list", poll: @poll.name) %></h2>
+<h2><%= t("admin.booth_assignments.manage.assignments_list", poll: @poll.name) %></h2>
 
 <% if @booths.empty? %>
   <div class="callout primary">
@@ -15,7 +12,7 @@
       <th><%= t("admin.booths.index.name") %></th>
       <th><%= t("admin.booths.index.location") %></th>
       <th><%= t("admin.booth_assignments.manage.status.assign_status") %></th>
-      <th class="text-right"><%= t("admin.actions.actions") %></th>
+      <th class="small-3"><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
     <% @booths.each do |booth| %>
