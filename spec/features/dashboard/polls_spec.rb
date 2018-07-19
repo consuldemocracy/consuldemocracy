@@ -40,4 +40,84 @@ feature 'Polls' do
     expect(page).to have_content "Upcoming poll"
     expect(page).to have_content I18n.l(start_date.to_date)
   end
+
+  scenario 'Edit poll is allowed for upcoming polls' do
+    poll = create(:poll, :incoming, related: proposal)
+    
+    visit proposal_dashboard_polls_path(proposal)
+
+    within "div#poll_#{poll.id}" do
+      expect(page).to have_content('Edit survey')
+
+      click_link 'Edit survey'
+    end
+
+    click_button 'Update poll'
+
+    expect(page).to have_content 'Poll updated successfully'
+  end
+
+  scenario 'Edit poll is not allowed for current polls' do
+    poll = create(:poll, :current, related: proposal)
+    
+    visit proposal_dashboard_polls_path(proposal)
+
+    within "div#poll_#{poll.id}" do
+      expect(page).not_to have_content('Edit survey')
+    end
+  end
+
+  scenario 'Edit poll is not allowed for expired polls' do
+    poll = create(:poll, :expired, related: proposal)
+    
+    visit proposal_dashboard_polls_path(proposal)
+
+    within "div#poll_#{poll.id}" do
+      expect(page).not_to have_content('Edit survey')
+    end
+  end
+
+  scenario 'View results not available for upcoming polls' do
+    poll = create(:poll, :incoming, related: proposal)
+    
+    visit proposal_dashboard_polls_path(proposal)
+
+    within "div#poll_#{poll.id}" do
+      expect(page).not_to have_content('View results')
+    end
+  end
+
+  scenario 'View results available for current polls' do
+    poll = create(:poll, :current, related: proposal)
+    
+    visit proposal_dashboard_polls_path(proposal)
+
+    within "div#poll_#{poll.id}" do
+      expect(page).to have_content('View results')
+    end
+  end
+
+  scenario 'View results available for expired polls' do
+    poll = create(:poll, :expired, related: proposal)
+    
+    visit proposal_dashboard_polls_path(proposal)
+
+    within "div#poll_#{poll.id}" do
+      expect(page).to have_content('View results')
+    end
+  end
+
+  scenario 'View results redirects to results in public zone', js: true do
+    poll = create(:poll, :expired, related: proposal)
+    
+    visit proposal_dashboard_polls_path(proposal)
+
+    within "div#poll_#{poll.id}" do
+      click_link 'View results'
+    end
+
+    page.driver.browser.switch_to.window page.driver.browser.window_handles.last do
+      expect(page.current_path).to eq(results_poll_path(poll))
+    end
+  end
 end

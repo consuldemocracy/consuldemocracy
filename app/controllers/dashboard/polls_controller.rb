@@ -12,10 +12,6 @@ class Dashboard::PollsController < Dashboard::BaseController
     @poll = Poll.new
   end
 
-  def show
-    authorize! :manage_polls, proposal
-  end
-
   def create
     authorize! :manage_polls, proposal
 
@@ -36,18 +32,13 @@ class Dashboard::PollsController < Dashboard::BaseController
 
     respond_to do |format|
       if poll.update(poll_params)
-        format.html { redirect_to proposal_dashboard_poll_path(proposal, poll), notice: t("flash.actions.update.poll") }
+        format.html { redirect_to proposal_dashboard_polls_path(proposal), notice: t("flash.actions.update.poll") }
         format.json { respond_with_bip(poll) }
       else
         format.html { render :edit }
         format.json { respond_with_bip(poll) }
       end
     end
-  end
-
-  def results
-    authorize! :manage_polls, proposal
-    @partial_results = poll.partial_results
   end
 
   private
