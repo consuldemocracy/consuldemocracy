@@ -57,7 +57,7 @@ feature 'Admin legislation draft versions' do
       fill_in 'legislation_draft_version_changelog', with: 'Version 3 changes'
       fill_in 'legislation_draft_version_body', with: 'Version 3 body'
 
-      within('.primary-buttons') do
+      within('.end') do
         click_button 'Create version'
       end
 
