@@ -27,13 +27,13 @@
   </div>
 </div>
 
-<% if proposal.community.topics.any? %>
+<% if proposal.community.comments.any? %>
   <div class="action-title">
-    <h5><%= t('.latest_topics') %></h5>
+    <h5><%= t('.latest_comments') %></h5>
     <hr>
   </div>
 
   <ul>
-    <%= render partial: 'topic', collection: proposal.community.topics %>
+    <%= render partial: 'comment', collection: proposal.community.comments.sort_by_newest.limit(5) %>
   </ul>
 <% end %>
