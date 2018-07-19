@@ -97,10 +97,17 @@ header{
     .menu .menu-text a{
       color: $color-blue;
       font-weight: 700;
+      font-size: 1.4rem;
 
       img{
-        margin-top: .7rem;
         margin-left: .5rem;
+        max-width: 50px;
+        @include breakpoint(medium) {
+          margin-top: 1rem;
+        }
+        @include breakpoint(small) {
+          margin-top: 0.4rem;
+        }
       }
 
       .title{
@@ -305,17 +312,14 @@ header{
   }
 }
 
-
-@media screen and (min-width: 40em) and (max-width: 63.9375em) {
-  header .top-bar .menu .menu-text a img{
-    max-width: 38px;
-    margin-top: 23px;
+@media screen and (min-width: 40rem) and (max-width: 48.0625rem) {
+  header .top-bar .menu .menu-text a{
+    font-size: 0.8rem;
   }
-  header .top-bar .menu .menu-text span{
-    font-size: 0.7rem;
+  .dropdown.menu > li.is-dropdown-submenu-parent > a {
+    padding-right: 20px;
   }
 }
-
 
 //Register
 body.auth-page{
