@@ -194,6 +194,11 @@ $sidebar-active: #f4fcd0;
 
     &.with-button {
       line-height: $line-height * 2;
+
+      .button {
+        background: #fff;
+        color: $brand;
+      }
     }
   }
 
@@ -207,6 +212,19 @@ $sidebar-active: #f4fcd0;
   }
 
   table {
+
+    thead {
+      color: #fff;
+    }
+
+    th {
+      background: $brand;
+      color: #fff;
+
+      label {
+        color: #fff;
+      }
+    }
 
     .break {
       word-break: break-word;
@@ -224,7 +242,6 @@ $sidebar-active: #f4fcd0;
 
       @include breakpoint(medium) {
         margin-left: $line-height / 2;
-        margin-right: $line-height / 2;
         margin-top: 0;
       }
     }
@@ -337,6 +354,14 @@ $sidebar-active: #f4fcd0;
 
 .no-margin-bottom {
   margin-bottom: 0 !important;
+}
+
+.enabled {
+  color: $color-success;
+}
+
+.disabled {
+  color: $text-medium;
 }
 
 // 02. Sidebar
