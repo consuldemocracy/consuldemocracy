@@ -876,21 +876,21 @@ ActiveRecord::Schema.define(version: 20180704132918) do
   end
 
   create_table "proposals", force: :cascade do |t|
-    t.string   "title",                limit: 80
+    t.string   "title",                limit: 120
     t.text     "description"
     t.string   "question"
     t.string   "external_url"
     t.integer  "author_id"
     t.datetime "hidden_at"
-    t.integer  "flags_count",                     default: 0
+    t.integer  "flags_count",                      default: 0
     t.datetime "ignored_flag_at"
-    t.integer  "cached_votes_up",                 default: 0
-    t.integer  "comments_count",                  default: 0
+    t.integer  "cached_votes_up",                  default: 0
+    t.integer  "comments_count",                   default: 0
     t.datetime "confirmed_hide_at"
-    t.integer  "hot_score",            limit: 8,  default: 0
-    t.integer  "confidence_score",                default: 0
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.integer  "hot_score",            limit: 8,   default: 0
+    t.integer  "confidence_score",                 default: 0
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.string   "responsible_name",     limit: 60
     t.text     "summary"
     t.string   "video_url"
