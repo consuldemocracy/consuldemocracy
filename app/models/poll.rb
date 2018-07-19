@@ -39,6 +39,7 @@ class Poll < ActiveRecord::Base
   scope :overlaping_with, lambda { |poll| 
     where('? < ends_at and ? >= starts_at', poll.starts_at.beginning_of_day, poll.ends_at.end_of_day)
       .where.not(id: poll.id)
+      .where(related: poll.related)
   }
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
