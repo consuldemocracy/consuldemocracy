@@ -7,7 +7,10 @@
       </div>
       <div class="small-12 medium-4 column border-b">
         <p><strong><%= t("layouts.footer.colaboration_text") %></strong></p>
-        <%= image_tag("logo_european_council.png", alt: "") %>
+        <div style="margin: 0 auto; padding-top: 0px; display: inline-block;">
+          <%= image_tag("logo_european_council.png", alt: "", style: "float: left;") %>
+          <%= image_tag("http://www.rockandror.com/assets/logo-signature-email.png", alt: "Rock&RoR Agile web development studio", style: "width: 79px;float: left;") %>
+        </div>
       </div>
       <div class="small-12 medium-4 column">
         <p><strong><%= t("layouts.footer.support_text") %></strong></p>
