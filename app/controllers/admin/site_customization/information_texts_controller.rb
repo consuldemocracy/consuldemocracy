@@ -2,40 +2,62 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
   include Translatable
 
   def index
-    @contents = I18nContent.all
+    existing_keys = {}
+    @tab = params[:tab] || :debates
+    I18nContent.begins_with_key(@tab).all.
+                map{|content| existing_keys[content.key] = content }
+    @content = {}
+    I18n.backend.send(:translations)[:en].each do |k,v|
+      @content[k.to_s] = flat_hash(v).keys.map{|s| existing_keys["#{k.to_s}.#{s}"].nil? ?
+                                            I18nContent.new(key: "#{k.to_s}.#{s}") :
+                                            existing_keys["#{k.to_s}.#{s}"] }
+    end
+    @content = @content[@tab.to_s]
+
   end
 
   def update
     content_params.each do |content|
-      text = I18nContent.find(content[:id])
-      text.update(content[:values].slice(*translation_params(content[:values])))
+      value = content[:values].slice(*translation_params(content[:values]))
+      unless value.empty?
+        text = I18nContent.by_key(content[:id]).last || I18nContent.create(key: content[:id])
+        text.update(value)
+        text.save
+      end
     end
     redirect_to admin_site_customization_information_texts_path
   end
 
   private
 
-  def i18n_content_params
-    attributes = [:key, :value]
-    params.require(:information_texts).permit(*attributes, translation_params(params[:information_texts]))
-  end
-
-  def resource_model
-    I18nContent
-  end
-
-  def resource
-    resource_model.find(content_params[:id])
-  end
-
-  def content_params
-    params.require(:contents).values
-  end
-
-  def delete_translations
-    languages_to_delete = params[:delete_translations].select { |k, v| params[:delete_translations][k] == "1" }.keys
-    languages_to_delete.each do |locale|
-      I18nContentTranslation.destroy_all(locale: locale)
+    def i18n_content_params
+      attributes = [:key, :value]
+      params.require(:information_texts).permit(*attributes, translation_params(params[:information_texts]))
     end
-  end
+
+    def resource_model
+      I18nContent
+    end
+
+    def resource
+      resource_model.find(content_params[:id])
+    end
+
+    def content_params
+      params.require(:contents).values
+    end
+
+    def delete_translations
+      languages_to_delete = params[:delete_translations].select { |k, v| params[:delete_translations][k] == "1" }.keys
+      languages_to_delete.each do |locale|
+        I18nContentTranslation.destroy_all(locale: locale)
+      end
+    end
+
+    def flat_hash(h, f=nil, g={})
+      return g.update({ f => h }) unless h.is_a? Hash
+      h.each { |k, r| flat_hash(r, [f,k].compact.join('.'), g) }
+      g
+    end
+
 end
