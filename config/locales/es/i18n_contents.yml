@@ -1,0 +1,180 @@
+es:
+  budgets:
+    index:
+      section_footer:
+        description: 'Descripción de la sección de debates'
+        help_text_1: 'Texto de ayuda 1 para la sección de debates'
+        help_text_2: 'Texto de ayuda 2 para la sección de debates'
+        help_text_3: 'Texto de ayuda 3 para la sección de debates'
+        help_text_4: 'Texto de ayuda 4 para la sección de debates'
+  community:
+    topic:
+      sidebar:
+        recommendation_one: 'Recomendación 1 en la creación de un tema en la comunidad de propuestas'
+        recommendation_two: 'Recomendación 2 en la creación de un tema en la comunidad de propuestas'
+        recommendation_three: 'Recomendación 3 en la creación de un tema en la comunidad de propuestas'
+  devise:
+    registrations:
+      destroyed: 'Mensaje al eliminar una cuenta'
+  devise_views:
+    mailer:
+      confirmation_instructions:
+        title: 'Título del email de confimación'
+  debates:
+    index:
+      section_footer:
+        description: 'Descripción de la ayuda del índice de debates'
+        help_text_1: 'Texto de ayuda 1 del índice de debates'
+        help_text_2: 'Texto de ayuda 2 del índice de debates'
+        help_text_3: 'Texto de ayuda 3 del índice de debates'
+    new:
+      recommendation_one: 'Recomendación 1 en la creación de debates'
+      recommendation_two: 'Recomendación 2 en la creación de debates'
+      recommendation_three: 'Recomendación 3 en la creación de debates'
+      recommendation_four: 'Recomendación 4 en la creación de debates'
+  layouts:
+    footer:
+      accessibility: 'Nombre enlace accesibilidad'
+      conditions: 'Nombre enlace condiciones de uso'
+      privacy: 'Nombre enlace política de privacidad'
+  proposals:
+    index:
+      section_footer:
+        description: 'Descripción de la página de propuestas'
+        help_text_1: 'Texto de ayuda 1 en la página de propuestas'
+        help_text_2: 'Texto de ayuda 2 en la página de propuestas'
+        help_text_3: 'Texto de ayuda 3 en la página de propuestas'
+    new:
+      form:
+        submit_button: 'Texto del botón "Crear propuesta"'
+        more_info: 'Texto "Más información" de la página de nueva propuesta'
+        recommendation_one: 'Recomendación 1 de la página de nueva propuesta'
+        recommendation_two: 'Recomendación 2 de la página de nueva propuesta'
+        recommendation_three: 'Recomendación 3 de la página de nueva propuesta'
+    proposal:
+      reason_for_supports_necessary: 'Número de apoyos necesarios para las propuestas'
+  polls:
+    index:
+      section_footer:
+        description: 'Descripción de la página de votaciones'
+        help_text_1: 'Texto de ayuda 1 en la página de votaciones'
+        help_text_2: 'Texto de ayuda 2 en la página de votaciones'
+  legislation:
+    processes:
+      index:
+        section_footer:
+          description: 'Descripción procesos legislativos'
+          help_text_1: 'Texto ayuda 1 procesos legislativos'
+          help_text_2: 'Texto ayuda 2 procesos legislativos'
+          help_text_3: 'Texto ayuda 3 procesos legislativos'
+  management:
+    print:
+      proposals_info: 'Información de propuestas (impresas)'
+      proposals_note: 'Nota de propuetas (impresas)'
+      proposals_title: 'Título de propuestas (impresas)'
+      budget_investments_info: 'Información de proyectos (impresos)'
+      budgets_investments_note: 'Notas de proyectos (impresos)'
+  guides:
+    title: 'Título de las guías'
+    subtitle: 'Subtítulo de las guías'
+    budget_investment:
+      title: 'Título de guías de presupuestos'
+      feature_1_html: 'Característica 1 de presupuestos'
+      feature_2_html: 'Característica 2 de presupuestos'
+      feature_3_html: 'Característica 3 de presupuestos'
+      feature_4_html: 'Característica 4 de presupuestos'
+      new_button: 'Botón de nuevo presupuesto'
+    proposal:
+      title: 'Título de guías de propuestas'
+      feature_1_html: 'Característica 1 de propuestas'
+      feature_2_html: 'Característica 2 de propuestas'
+      feature_3_html: 'Característica 3 de propuestas'
+      feature_4_html: 'Característica 4 de propuestas'
+      new_button: 'Botón de nueva propuesta'
+  mailers:
+    no_reply: 'Mensaje de no contestar'
+    comment:
+      hi: 'Saludo email nuevo comentario'
+      new_comment_by_html: 'Texto nuevo comentario'
+      subject: 'Asunto nuevo comentario'
+      title: 'Título nuevo comentario'
+    config:
+      manage_email_subscriptions: 'Gestionar subscripciones de emails'
+    email_verification:
+      click_here_to_verify: 'Nombre enlace para verificar la cuenta'
+      instructions_2_html: 'Instrucciones para verificar la cuenta 2'
+      instructions_html: 'Instrucciones para verificar la cuenta'
+      subject: 'Asunto verificar la cuenta'
+      thanks: 'Agradecimientos'
+      title: 'Título email verificación'
+    reply:
+      hi: 'Saludo email nueva respuesta'
+      new_reply_by_html: 'Texto email nueva respuesta'
+      subject: 'Asunto email nueva respuesta'
+      title: 'Título email nueva respuesta'
+    unfeasible_spending_proposal:
+      hi: 'Saludo email proyecto inviable'
+      reconsider_html: 'Texto para reconsiderar el proyecto'
+      sincerely: 'Saludo final'
+      signatory: 'Firma'
+      sorry: 'Disculpas'
+      subject: 'Asunto'
+      unfeasible_html: 'Texto email inviable'
+    budget_investment_unfeasible:
+      hi: 'Saludo email proyecto inviable'
+      reconsider_html: 'Texto para reconsiderar la proyecto'
+      sincerely: 'Saludo final'
+      signatory: 'Firma'
+      sorry: 'Disculpas'
+      subject: 'Asunto'
+      unfeasible_html: 'Texto email inviable'
+    proposal_notification_digest:
+      info: 'Información resumen propuestas'
+      title: 'Título resumen propuestas'
+      share: 'Texto compartir propuesta'
+      comment: 'Texto comentar propuesta'
+      unsubscribe: 'Cancelar subscripción'
+      unsubscribe_account: 'Texto enlace cancelar subscripción'
+    direct_message_for_receiver:
+      subject: 'Asunto nuevo mensaje privado'
+      reply: 'Texto enlace responder mensaje privado'
+      unsubscribe: 'Cancelar avisos de mensajes privados'
+      unsubscribe_account: 'Texto enlace cancelar subscripción'
+    direct_message_for_sender:
+      subject: 'Asunto email envío mensaje privado'
+      title_html: 'Título email envío mensaje privado'
+    user_invite:
+      ignore: 'Ignorar correo de invitación'
+      text: 'Texto email invitación'
+      thanks: 'Agradecimiento email invitación'
+      title: 'Título email invitación'
+      button: 'Botón email invitación'
+      subject: 'Asunto email invitación'
+    budget_investment_created:
+      subject: 'Asunto email proyecto de inversión'
+      title: 'Título email proyecto de inversión'
+      intro_html: 'Saludo'
+      text_html: 'Texto'
+      follow_html: 'Texto seguir proceso'
+      follow_link: 'Texto link seguir proceso'
+      sincerely: 'Saludo final'
+      signatory: 'Firma'
+      share: 'Texto compartir'
+    budget_investment_selected:
+      subject: 'Asunto'
+      hi: 'Saludo'
+      selected_html: 'Texto seleccionado'
+      share: 'Compartir'
+      share_button: 'Botón compartir'
+      thanks: 'Agradecimientos'
+      sincerely: 'Saludo final'
+      signatory: 'Firma'
+    budget_investment_unselected:
+      subject: 'Asunto'
+      hi: 'Saludo'
+      unselected_html: 'Texto no seleccionado'
+      participate_html: 'Texto seguir participando'
+      participate_url: 'URL seguir participando'
+      thanks: 'Agradecimientos'
+      sincerely: 'Saludo final'
+      signatory: 'Firma'

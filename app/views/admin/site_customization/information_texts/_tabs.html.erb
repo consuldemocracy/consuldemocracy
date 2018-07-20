@@ -1,23 +1,7 @@
-<ul class="tabs" data-tabs id="information-texts-tabs">
-  <li class="tabs-title is-active">
-    <%= link_to t("admin.menu.site_customization.information_texts_menu.debates"), "#tab-debates" %>
-  </li>
-  <li class="tabs-title">
-    <%= link_to t("admin.menu.site_customization.information_texts_menu.proposals"), "#tab-proposals" %>
-  </li>
-  <li class="tabs-title">
-    <%= link_to t("admin.menu.site_customization.information_texts_menu.polls"), "#tab-polls" %>
-  </li>
-  <li class="tabs-title">
-    <%= link_to t("admin.menu.site_customization.information_texts_menu.participatory_budgets"), "#tab-participatory-budgets" %>
-  </li>
-  <li class="tabs-title">
-    <%= link_to t("admin.menu.site_customization.information_texts_menu.more_information"), "#tab-more-information" %>
-  </li>
-  <li class="tabs-title">
-    <%= link_to t("admin.menu.site_customization.information_texts_menu.emails"), "#tab-emails" %>
-  </li>
-  <li class="tabs-title">
-    <%= link_to t("admin.menu.site_customization.information_texts_menu.management"), "#tab-management" %>
-  </li>
+<ul class="tabs" >
+  <% [:debates, :community, :proposals, :polls, :layouts, :emails, :management, :guides, :welcome].each do |tab| %>
+      <li class="tabs-title <%= "is-active" if tab.to_s == @tab %>">
+        <%= link_to t("admin.menu.site_customization.information_texts_menu.#{tab}"), admin_site_customization_information_texts_path(tab: tab) %>
+      </li>
+  <% end %>
 </ul>
