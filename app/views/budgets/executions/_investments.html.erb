@@ -1,10 +1,9 @@
 <% @headings.each do |heading| %>
-  <h4 id="<%= heading.name.parameterize %>">
-    <%= heading.name %>
-  </h4>
-  <% if winner_investments(heading).any? %>
+    <h4 id="<%= heading.name.parameterize %>">
+      <%= heading.name %>
+    </h4>
     <div class="row" data-equalizer-on="medium" data-equalizer>
-      <% winner_investments(heading).each do |investment| %>
+      <% heading.investments.each do |investment| %>
         <div class="small-12 medium-6 large-4 column end margin-bottom">
           <div class="budget-execution">
             <%= link_to budget_investment_path(@budget, investment, anchor: "tab-milestones"), data: { 'equalizer-watch': true } do %>
@@ -31,9 +30,4 @@
         </div>
       <% end %>
     </div>
-  <% else %>
-    <div class="callout primary clear">
-      <%= t("budgets.executions.no_winner_investments") %>
-    </div>
-  <% end %>
 <% end %>
