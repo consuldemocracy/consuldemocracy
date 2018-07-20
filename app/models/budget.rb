@@ -161,13 +161,13 @@ class Budget < ActiveRecord::Base
   end
 
   def email_selected
-    investments.selected.each do |investment|
+    investments.selected.order(:id).each do |investment|
       Mailer.budget_investment_selected(investment).deliver_later
     end
   end
 
   def email_unselected
-    investments.unselected.each do |investment|
+    investments.unselected.order(:id).each do |investment|
       Mailer.budget_investment_unselected(investment).deliver_later
     end
   end

@@ -33,7 +33,7 @@ feature 'Budget Poll Officing' do
     expect(page).to have_content("Total recounts and results")
   end
 
-  scenario 'Do not show sidebar menus if officer has no shifts assigned' do
+  scenario 'Do not show sidebar menu if officer has no shifts assigned' do
     user = create(:user)
     officer = create(:poll_officer, user: user)
 
@@ -68,5 +68,4 @@ feature 'Budget Poll Officing' do
     end
 
   end
-
 end

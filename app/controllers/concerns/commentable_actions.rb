@@ -16,7 +16,7 @@ module CommentableActions
     index_customization if index_customization.present?
 
     @tag_cloud = tag_cloud
-    @banners = Banner.with_active
+    @banners = Banner.in_section(section(resource_model.name)).with_active
 
     set_resource_votes(@resources)
 
@@ -124,6 +124,15 @@ module CommentableActions
       return false unless resource.try(:documents)
       resource.documents = resource.documents.each do |document|
         document.set_attachment_from_cached_attachment if document.cached_attachment.present?
+      end
+    end
+
+    def section(resource_name)
+      case resource_name
+      when "Proposal"
+        'proposals'
+      when "Debate"
+        'debates'
       end
     end
 end

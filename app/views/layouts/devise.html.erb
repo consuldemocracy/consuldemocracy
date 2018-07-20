@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><%= content_for?(:title) ? yield(:title) : "Gobierno abierto" %></title>
+    <%= render "layouts/common_head", default_title: "Gobierno abierto" %>
     <%= render "layouts/meta_tags" %>
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-    <%= favicon_link_tag "favicon.ico" %>
     <%= setting['per_page_code_head'].try(:html_safe) %>
   </head>
 
