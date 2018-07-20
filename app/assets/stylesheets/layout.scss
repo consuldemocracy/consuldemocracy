@@ -34,6 +34,12 @@
   background-color: $brand;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-size: $base-font-size;
 }
@@ -794,8 +800,7 @@ footer {
 }
 
 .footer {
-  background: $border;
-  border-top: 6px solid $brand;
+  background: #f1f1f1;
   margin-top: $line-height * 2;
   padding-top: $line-height;
 }
