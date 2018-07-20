@@ -1857,4 +1857,40 @@ feature 'Successful proposals' do
     end
 
   end
+
+  context "Skip user verification" do
+
+    before do
+      Setting["feature.user.skip_verification"] = 'true'
+    end
+
+    after do
+      Setting["feature.user.skip_verification"] = nil
+    end
+
+    scenario "Create" do
+      author = create(:user)
+      login_as(author)
+
+      visit proposals_path
+
+      within('aside') do
+        click_link 'Create a proposal'
+      end
+
+      expect(current_path).to eq(new_proposal_path)
+
+      fill_in 'proposal_title', with: 'Help refugees'
+      fill_in 'proposal_summary', with: 'In summary what we want is...'
+      fill_in 'proposal_description', with: 'This is very important because...'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=yPQfcG-eimk'
+      fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
+      check 'proposal_terms_of_service'
+
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+    end
+  end
 end
