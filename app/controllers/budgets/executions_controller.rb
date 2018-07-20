@@ -10,7 +10,6 @@ module Budgets
       @headings = @budget.headings
                          .includes(investments: :milestones)
                          .joins(investments: :milestones)
-                         .where(budget_investments: {winner: true})
                          .distinct
                          .order(id: :asc)
 
