@@ -2,22 +2,8 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
   include Translatable
 
   def index
-    existing_keys = {}
-    @tab = params[:tab] || :debates
-
-    I18nContent.begins_with_key(@tab)
-               .all
-               .map{ |content| existing_keys[content.key] = content }
-
-    @content = {}
-
-    I18n.backend.send(:translations)[:en].each do |k,v|
-      @content[k.to_s] = flat_hash(v).keys
-                                     .map{ |s| existing_keys["#{k.to_s}.#{s}"].nil? ?
-                                            I18nContent.new(key: "#{k.to_s}.#{s}") :
-                                            existing_keys["#{k.to_s}.#{s}"] }
-    end
-
+    fetch_existing_keys
+    append_or_create_keys
     @content = @content[@tab.to_s]
   end
 
@@ -57,6 +43,26 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
       languages_to_delete = params[:delete_translations].select { |k, v| params[:delete_translations][k] == '1' }.keys
       languages_to_delete.each do |locale|
         I18nContentTranslation.destroy_all(locale: locale)
+      end
+    end
+
+    def fetch_existing_keys
+      existing_keys = {}
+      @tab = params[:tab] || :debates
+
+      I18nContent.begins_with_key(@tab)
+                 .all
+                 .map{ |content| existing_keys[content.key] = content }
+    end
+
+    def append_or_create_keys
+      @content = {}
+
+      I18n.backend.send(:translations)[:en].each do |k, v|
+        @content[k.to_s] = flat_hash(v).keys
+                                       .map{ |s| existing_keys["#{k.to_s}.#{s}"].nil? ?
+                                              I18nContent.new(key: "#{k.to_s}.#{s}") :
+                                              existing_keys["#{k.to_s}.#{s}"] }
       end
     end
 
