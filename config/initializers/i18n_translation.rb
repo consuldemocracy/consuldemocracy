@@ -1,8 +1,7 @@
-require 'action_view/helpers/tag_helper'
 require 'i18n/exceptions'
+require 'action_view/helpers/tag_helper'
 
 module ActionView
-  # = Action View Translation Helpers
   module Helpers
     module TranslationHelper
       include TagHelper
@@ -19,7 +18,6 @@ module ActionView
         end
         translate(key, options)
       end
-
     end
   end
 end
