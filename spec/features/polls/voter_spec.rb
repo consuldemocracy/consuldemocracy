@@ -36,10 +36,11 @@ feature "Voter" do
         expect(page).not_to have_link(answer_yes.title)
       end
 
-      expect(page).to have_css(".js-token-message", visible: true)
-      token = find(:css, ".js-question-answer")[:href].gsub(/.+?(?=token)/, '').gsub('token=', '')
+      # Hides token temporally
+      #expect(page).to have_css(".js-token-message", visible: true)
+      #token = find(:css, ".js-question-answer")[:href].gsub(/.+?(?=token)/, '').gsub('token=', '')
 
-      expect(page).to have_content "You can write down this vote identifier, to check your vote on the final results: #{token}"
+      #expect(page).to have_content "You can write down this vote identifier, to check your vote on the final results: #{token}"
 
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("web")
