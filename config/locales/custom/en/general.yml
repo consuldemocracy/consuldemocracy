@@ -189,6 +189,7 @@ en:
       heading: "PARTICIPATORY BUDGET"
       results_link: Results
       stats_link: "Participation stats"
+      executions_link: "Milestones"
       geozone_selection_title: "By district"
       spending_proposal: Proposal title
       ballot_lines_count: Times selected
@@ -204,6 +205,7 @@ en:
       heading: "PARTICIPATORY BUDGET"
       results_link: Results
       stats_link: "Participation stats"
+      executions_link: "Milestones"
     welcome:
       city_link: Vote city proposals
       city_link_close: City proposals

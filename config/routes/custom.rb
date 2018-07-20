@@ -175,6 +175,7 @@ get 'participatory_budget/select_district',        to: 'spending_proposals#selec
 get 'delegacion',                                  to: 'forums#index', as: 'delegation'
 get 'presupuestos-participativos-resultados',      to: 'spending_proposals#results',                    as: 'participatory_budget_results'
 get 'presupuestos-participativos-estadisticas',    to: 'spending_proposals#stats',                      as: 'participatory_budget_stats'
+get 'presupuestos-participativos-ejecuciones',     to: 'budgets/executions#show',                       as: 'participatory_budget_executions', defaults: {id: '2016'}
 get 'participatory_budget_info',                   to: 'pages#show', id: 'help/budgets/info_2016', as: 'more_info_budgets_2016'
 get 'jornada-presupuestos-participativos',         to: 'budget_polls#new'
 get 'jornada-presupuestos-participativos/success', to: 'budget_polls#success'

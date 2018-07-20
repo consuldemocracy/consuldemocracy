@@ -223,6 +223,7 @@ es:
       heading: "PRESUPUESTOS PARTICIPATIVOS"
       results_link: Resultados
       stats_link: "Estadísticas de participación"
+      executions_link: "Seguimiento"
       geozone_selection_title: "Ámbito de actuación"
       spending_proposal: Título
       ballot_lines_count: Votos
@@ -238,6 +239,7 @@ es:
       heading: "PRESUPUESTOS PARTICIPATIVOS"
       results_link: Resultados
       stats_link: "Estadísticas de participación"
+      executions_link: "Seguimiento"
   ballots:
     show:
       city_link: Votar para toda la ciudad
