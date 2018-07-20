@@ -4,16 +4,21 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
   def index
     existing_keys = {}
     @tab = params[:tab] || :debates
-    I18nContent.begins_with_key(@tab).all.
-                map{|content| existing_keys[content.key] = content }
+
+    I18nContent.begins_with_key(@tab)
+               .all
+               .map{ |content| existing_keys[content.key] = content }
+
     @content = {}
+
     I18n.backend.send(:translations)[:en].each do |k,v|
-      @content[k.to_s] = flat_hash(v).keys.map{|s| existing_keys["#{k.to_s}.#{s}"].nil? ?
+      @content[k.to_s] = flat_hash(v).keys
+                                     .map{ |s| existing_keys["#{k.to_s}.#{s}"].nil? ?
                                             I18nContent.new(key: "#{k.to_s}.#{s}") :
                                             existing_keys["#{k.to_s}.#{s}"] }
     end
-    @content = @content[@tab.to_s]
 
+    @content = @content[@tab.to_s]
   end
 
   def update
@@ -25,6 +30,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
         text.save
       end
     end
+
     redirect_to admin_site_customization_information_texts_path
   end
 
@@ -48,16 +54,16 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
     end
 
     def delete_translations
-      languages_to_delete = params[:delete_translations].select { |k, v| params[:delete_translations][k] == "1" }.keys
+      languages_to_delete = params[:delete_translations].select { |k, v| params[:delete_translations][k] == '1' }.keys
       languages_to_delete.each do |locale|
         I18nContentTranslation.destroy_all(locale: locale)
       end
     end
 
-    def flat_hash(h, f=nil, g={})
+    def flat_hash(h, f = nil, g = {})
       return g.update({ f => h }) unless h.is_a? Hash
       h.each { |k, r| flat_hash(r, [f,k].compact.join('.'), g) }
-      g
+      return g
     end
 
 end
