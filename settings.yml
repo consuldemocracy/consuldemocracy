@@ -1,0 +1,60 @@
+eu-ES:
+  settings:
+    comments_body_max_length: "Iruzkinen gehienezko luzera"
+    official_level_1_name: "1.go mailako kargu publikoa"
+    official_level_2_name: "2.go mailako kargu publikoa"
+    official_level_3_name: "3.go mailako kargu publikoa"
+    official_level_4_name: "4.go mailako kargu publikoa"
+    official_level_5_name: "5.go mailako kargu publikoa"
+    max_ratio_anon_votes_on_debates: "Eztabaida bakoitzeko bozka anonimo portsentaia"
+    max_votes_for_proposal_edit: "Proposamen bat editaezina biurtzeko bozka kopurua"
+    max_votes_for_debate_edit: "Eztabaida bat editaezina biurtzeko bozka kopurua"
+    proposal_code_prefix: "Proposamenentzako aurrizkia"
+    votes_for_proposal_success: "Proposamen bat onartzeko bozka kopurua"
+    months_to_archive_proposals: "Proposamenak artxibatzeko hil kopurua"
+    email_domain_for_officials: "Kargu publikoentzako email dominioa"
+    per_page_code_head: "Orri bakoitzean sartzeko kodea (<head>)"
+    per_page_code_body: "Orri bakoitzean sartzeko kodea (<body>)"
+    twitter_handle: "Twitter erabiltzailea"
+    twitter_hashtag: "Twitter Hashtag"
+    facebook_handle: "Facebook identifikatzailea"
+    youtube_handle: "Youtube erabiltzailea"
+    telegram_handle: "Telegram erabiltzailea"
+    instagram_handle: "Instagram erabiltzailea"
+    blog_url: "Blog URL-a"
+    transparency_url: "Transparentzia URL-a"
+    opendata_url: "Open data URL-a"
+    url: "WEB orokorraren URL-a"
+    org_name: "Antolakuntzaren izena"
+    place_name: "Lekuaren izena"
+    feature:
+      budgets: Partaidetzazko aurrekontuakj
+      twitter_login: Registro con Twitter
+      facebook_login: Registro con Facebook
+      google_login: Registro con Google
+      proposals: Proposamenak
+      debates: Eztabaidak
+      polls: Bozkaketak
+      signature_sheets: Firma orriak
+      spending_proposals: Inbertsio Proposamenak
+      spending_proposal_features:
+        voting_allowed: Inbertsio proposamanei buruzko bozkaketak
+      legislation: Legeak
+      user:
+        recommendations: Gomendioak
+        skip_verification: Erabiltzaileen egiaztapena saltatu
+      community: Proposamen eta gastu proiektuen komunitatea
+      map: Proposamen eta gastu proiektuen geokokapena
+      allow_images: Irudiak igotea eta erakustea baimendu
+      allow_attached_documents: Itsatsitako domumentuak sortzea baimendu
+    map_latitude: Latitudeaea
+    map_londotude: Londotudea
+    map_zoom: Zoom
+    mailer_from_name: Bidaltzaile email izena
+    mailer_from_address: Bidaltzaile email helbidea
+    meta_title: "Lekuaren izenbura (SEO)"
+    meta_description: "Lekuaren deskribapena (SEO)"
+    meta_keywords: "Hitz gakoa (SEO)"
+    verification_offices_url: Egiaztatze bulegoen URL-a
+    min_age_to_participate: Parte hartzeko gutxienezko adina
+    proposal_improvement_path: Proposamenak hobetzeko informazio linka
