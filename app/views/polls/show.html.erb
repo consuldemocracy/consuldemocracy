@@ -37,11 +37,13 @@
         <%= render 'polls/questions/question', question: question, token: @token %>
       <% end %>
 
-      <% if poll_voter_token(@poll, current_user).empty? %>
-        <div class="callout token-message js-token-message" style="display: none">
-          <%= t('poll_questions.show.voted_token') %>
-        </div>
-      <% end %>
+      <!-- Hides token temporally -->
+      <%# if poll_voter_token(@poll, current_user).empty? %>
+        <!-- <div class="callout token-message js-token-message" style="display: none">
+          <%#= t("poll_questions.show.voted_token") %>
+        </div> -->
+      <%# end %>
+      <!-- /.  Hides token temporally -->
     </div>
   </div>
 
