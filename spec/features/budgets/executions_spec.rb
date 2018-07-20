@@ -181,4 +181,33 @@ feature 'Executions' do
     end
   end
 
+  context 'Spending Proposals' do
+    let!(:budget) { create(:budget, :finished, slug: '2016') }
+
+    scenario 'can navigate from spending proposal Results page to Executions page' do
+      create(:budget_investment_milestone, investment: investment1)
+
+      visit participatory_budget_results_path
+
+      click_on 'Milestones'
+
+      expect(page).to have_current_path(participatory_budget_executions_path)
+      expect(page).to have_css('.budget-execution', count: 1)
+      within('.budget-execution') do
+        expect(page).to have_content(investment1.title)
+      end
+    end
+
+    scenario 'renders spending proposal navigation when accessing 2016 budget' do
+      create(:budget_investment_milestone, investment: investment1)
+
+      visit participatory_budget_executions_path
+
+      expect(page).to have_current_path(participatory_budget_executions_path)
+
+      click_on 'Results'
+
+      expect(page).to have_current_path(participatory_budget_results_path)
+    end
+  end
 end
