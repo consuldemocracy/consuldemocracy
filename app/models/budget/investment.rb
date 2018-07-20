@@ -23,6 +23,7 @@ class Budget
     include Relationable
     include Notifiable
     include Filterable
+    include Flaggable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -81,6 +82,8 @@ class Budget
     scope :winners,                     -> { selected.compatible.where(winner: true) }
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
+    scope :sort_by_flags,               -> { order(flags_count: :desc, updated_at: :desc) }
+    scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
 
     scope :by_budget,         ->(budget)            { where(budget: budget) }
     scope :by_group,          ->(group_id)          { where(group_id: group_id) }

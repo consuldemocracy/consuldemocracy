@@ -15,6 +15,13 @@ namespace :admin do
     end
   end
 
+  resources :hidden_budget_investments, only: :index do
+    member do
+      put :restore
+      put :confirm_hide
+    end
+  end
+
   resources :debates, only: :index do
     member do
       put :restore
@@ -84,6 +91,7 @@ namespace :admin do
   end
 
   resources :tags, only: [:index, :create, :update, :destroy]
+
   resources :officials, only: [:index, :edit, :update, :destroy] do
     get :search, on: :collection
   end
@@ -99,6 +107,7 @@ namespace :admin do
     get :search, on: :collection
     get :summary, on: :collection
   end
+
   resources :valuator_groups
 
   resources :managers, only: [:index, :create, :destroy] do
