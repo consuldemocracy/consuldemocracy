@@ -1,0 +1,38 @@
+eu-ES:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} ondo sortuta."
+        debate: "Eztabaida ondo sortuta."
+        direct_message: "Zure mezua ondo bidali da."
+        poll: "Bozkaketa ondo sortuta."
+        poll_booth: "Hautetsontzia ondo sortuta."
+        poll_question_answer: "Erantzuna ondo sortuta"
+        poll_question_answer_video: "Bideoa ondo sortuta"
+        poll_question_answer_image: "Irudia ondo kargatuta"
+        proposal: "Proposamena ondo sortuta."
+        proposal_notification: "Zure mezua ondo bidali da."
+        spending_proposal: "Inbertsio proposamena ondo sortuta. Bertara sartu nahi baduzu %{activity}-tik sartu zaitezke."
+        budget_investment: "Gastu proiektua ondo sortuta."
+        signature_sheet: "Firma orria ondo sortuta"
+        topic: "Gaia ondo sortuta."
+        valuator_group: "Ebaluatzaile taldea ondo sortuta."
+      save_changes:
+        notice: Aldaketak gorde dira
+      update:
+        notice: "%{resource_name} ondo eguneratuta."
+        debate: "Eztabaida ondo eguneratuta."
+        poll: "Bozkaketa ondo eguneratuta."
+        poll_booth: "Hautetsontzia ondo eguneratuta."
+        proposal: "Proposamena ondo eguneratuta."
+        spending_proposal: "Inbertsio proposamena ondo eguneratuta."
+        budget_investment: "Gastu proiektua ondo eguneratuta"
+        topic: "Gaia ondo eguneratuta."
+        valuator_group: "Ebaluatzaile taldea ondo eguneratuta"
+      destroy:
+        spending_proposal: "Inbertsio proposamena ezabatuta."
+        budget_investment: "Gastu proiektua ezabatuta."
+        error: "Ezin izan da ezabatu."
+        topic: "Gaia ezabatuta."
+        poll_question_answer_video: "Erantzun bideoa ezabatuta."
+        valuator_group: "Ebaluatzaile taldea ondo ezabatuta"

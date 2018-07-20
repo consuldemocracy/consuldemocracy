@@ -1,0 +1,92 @@
+eu-ES:
+  mailers:
+    no_reply: "Mezu hau erantzunik onartzen ez duen helbide elektroniko batetik bidali da."
+    comment:
+      hi: Kaixo
+      new_comment_by_html: <b>%{commenter}</b> iruzkin berri bat idatzi du
+      subject: norbaitek zure %{commentable} iruzkinan idatzi du
+      title: Iruzkin berria
+    config:
+      manage_email_subscriptions: 'Email hauek jasotzeari usteko aldatu zure konfigurazioa:'
+    email_verification:
+      click_here_to_verify: lotura honetan
+      instructions_2_html: Email hau zure <b>%{document_type} %{document_number}</b> kontua egiaztatzeko da. Hauek zure datuak ez badira, mesedez ez sakatu aurreko lotura eta email hau ez ikusiarena egin.
+      instructions_html: Gobernu irekiaren atarian zure kontua egiaztatzen amaitzeko,  %{verification_link} lotura sakatu behar duzu.
+      subject: Zure emaila egiaztatu
+      thanks: Eskerrik asko.
+      title: Zure kontua hurrengo loturarekin egiaztatu
+    reply:
+      hi: Kaixo
+      new_reply_by_html: <b>%{commenter}</b>-(e)k zure iruzkina erantzun du
+      subject: Norbaitek zure iruzkin erantzun du
+      title: Zure iruzkinari erantzun berri bat
+    unfeasible_spending_proposal:
+      hi: "Erabiltzaile agurgarri hori,"
+      new_html: 'Guzti horregaitik, prosezu honen baldintzekin bat datorren <strong>proposamen berri bat</strong> sortu dezazun gonbidatzen zaitugu. Lotura honetan egin dezakezu: %{url}.'
+      new_href: "Gastu proposamen berria"
+      reconsider_html: "Baztertutako proposamenak gastu proposamen moduan mantentzeko baldintzak dituela uste baduzu, 48 orduren buruan jakinarazi dezakezu example@consul.es korreora. Tramitaziorako beharrezko da emailaren gaia zure proposamenari dagokion %{code} izatea."
+      sincerely: "Adeitasunez"
+      signatory: "HERRITARREN PARTAIDETZA SAIL OROKORRA"
+      sorry: "Barkatu eragozpenak. Parte hartu izanagaitik eskerrak ematen dizugu."
+      subject: "'%{code}' kodea duen zure inbertsio proposamena bideraezin gisa markatuta izan da"
+      unfeasible_html: "Udaletxetik <strong>Partaidetzazko Aurrekoentuetan</strong> zure partaidetza eskertu nahi dizugu. Asko sentitzen dugu baina zure <strong>'%{title}'</strong> proposamena prosezu honetatik kanpo geldituko da hurrengo arrazoiarengaitik:"
+    budget_investment_unfeasible:
+      hi: "Erabiltzaile agurgarri hori,"
+      new_html: 'Guzti horregaitik, prosezu honen baldintzekin bat datorren <strong>Gastu proiektu berri</strong> bat sortzera gonbidatzen dizugu. Hurrengo loturan egin dezakezu: %{url}.'
+      new_href: "Gastu proiektu berria"
+      reconsider_html: "Baztertutako proposamenak gastu proposamen moduan mantentzeko baldintzak dituela uste baduzu, 48 orduren buruan jakinarazi dezakezu example@consul.es korreora. Tramitaziorako beharrezko da emailaren gaia zure proposamenari dagokion %{code} izatea."
+      sincerely: "Adeitasunez"
+      signatory: "HERRITARREN PARTAIDETZA SAIL OROKORRA"
+      sorry: "Barkatu eragozpenak. Parte hartu izanagaitik eskerrak ematen dizugu."
+      subject: "'%{code}' kodea duen zure gastu proposamena bideraezin gisa markatuta izan da"
+      unfeasible_html: "Udaletxetik <strong>Partaidetzazko Aurrekoentuetan</strong> zure partaidetza eskertu nahi dizugu. Asko sentitzen dugu baina zure <strong>'%{title}'</strong> proiektua prosezu honetatik kanpo geldituko da hurrengo arrazoiarengaitik:"
+    proposal_notification_digest:
+      info: "Jarraian %{org_name}-(e)n babesten dituzun proposamenen egileek argitaratutako japinarazpen berriak erakusten dizugu."
+      title: "%{org_name}-(e)n proposatutako jakinarzpen berriak"
+      share: Proposamena partekatu
+      comment: Proposamena iruzkindu
+      unsubscribe: "Proposamen jakinarazpenik jaso nahi ez baduzu, %{account}-(e)n sartu zaitezke eta  'Proposamenei buruz jakinarazpenak jaso' aukera desmarkatu dezakezu."
+      unsubscribe_account: Nire kontua
+    direct_message_for_receiver:
+      subject: "Mezu pribatu berri bat jaso duzu"
+      reply: "%{sender} erantzun"
+      unsubscribe: "Mezu pribaturik jaso nahi ez baduzu, %{account}-(e)n sartu zaitezke eta 'Mezu pribatudun emailak jaso' aukera desmarkatu dezakezu."
+      unsubscribe_account: Nire kontua
+    direct_message_for_sender:
+      subject: "Mezu pribatu berri bat bidali duzu"
+      title_html: "<strong>%{receiver}</strong>-(e)ri mezu pribatu berri bat bidali diozu ondorengo eduakinarekin:"
+    user_invite:
+      ignore: "Ez arduratu gonbidapen hau eskatu ez baduzu, email hau ez ikusiarena egin ahal duzu."
+      text: "Eskerrik asko %{org}!-(e)ra batu nahi duzulako. Segundu batzu barru nahi duzu herria erabaki eta eraikitzen hasi zaitezke. Hurrengo formularioa bete baino ez daukazu:"
+      thanks: "Eskerrik asko."
+      title: "Ondo etorri %{org}-(e)ra"
+      button: Erregistroa osatu 
+      subject: "%{org_name}-(e)rako gonbidapena"
+    budget_investment_created:
+      subject: "Eskerrik asko proiektu bat sortzeagaitik!"
+      title: "Eskerrik asko proiektu bat sortzeagaitik!"
+      intro_html: "Kaixo <strong>%{author}</strong>,"
+      text_html: "Eskerrik asko <strong>%{budget}</strong> partaidetzazko aurrekontuetarako zure <strong>%{investment}</strong> proiektua sortzeagaitik."
+      follow_html: "Prosezuaren aurrerapenei buruz informatuko zaitugu, <strong>%{link}</strong> orrian jarrai ditzakezu ere."
+      follow_link: "Partaidetzazko aurrekontuak"
+      sincerely: "Adeitasunez,"
+      signatory: "HERRITARREN PARTAIDETZA SAIL OROKORRA"
+      share: "Zure proiektua partekatu"
+    budget_investment_selected:
+      subject: "Zure '%{code}' kodedun gastu proiektua aukeratuta izan da"
+      hi: "Erabiltzaile agurgarri hori"
+      selected_html: "Udaletxetik zure ideiarekin <strong>partaidetzazko aurrekontuetan</strong> parte hartu izatea eskertzen dizugu. Zure <strong>'%{title}'</strong> proiektua aukeratua izan dela eta <strong>maiatzak 15 eta ekainak 30</strong> artean izango den azken bozkaketa fasera pasatuko dela informatzen zaitugu."
+      share: "Bozkak lortzen hasi! Zure gastu proiektua sare sozialetan partekatu. Hedapena nahitaezinezkoa da proiektua errealitate bihurtu dadin."
+      share_button: Zure proiektua partekatu"
+      thanks: "Eskerrik asko zure partaidetzagaitik."
+      sincerely: "Adeitasunez"
+      signatory: "HERRITARREN PARTAIDETZA SAIL OROKORRA"
+    budget_investment_unselected:
+      subject: "Zure '%{code}' kodedun gastu proiektua ez da izan aukeratuta"
+      hi: "Erabiltzaile agurgarri hori"
+      unselected_html: "Udaletxetik zure ideiarekin <strong>partaidetzazko aurrekontuetan</strong> parte hartu izatea eskertzen dizugu. Asko sentitzen dugu baina zure <strong>'%{title}'</strong> proiektua azken bozkaketa fasetik kanpo gelditu da."
+      participate_html: "Herri osoarako edota aukeratutako auzorako <strong>maiatzak 15 eta ekainak 30</strong> artean izango den azken bozkaketa fasean parte hartzen jarraitu dezakezu."
+      participate_url: "azken bozkaketa fasean parte hartu"
+      thanks: "Eskerrak berriz ere zure partaidetzagaitik."
+      sincerely: "Adeitasunez"
+      signatory: "HERRITARREN PARTAIDETZA SAIL OROKORRA"

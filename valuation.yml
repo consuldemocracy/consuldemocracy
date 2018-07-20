@@ -1,0 +1,126 @@
+eu-ES:
+  valuation:
+    header:
+      title: Ebaluaketa
+    menu:
+      title: Ebaluaketa
+      budgets: Partaidetzazko aurrekontuak
+      spending_proposals: Inbertsio proposamenak
+    budgets:
+      index:
+        title: Partaidetzazko aurrekontuak
+        filters:
+          current: Zabalik
+          finished: Amaituta
+        table_name: Izena
+        table_phase: Faseaa
+        table_assigned_investments_valuation_open: Aur. Inb. ebaluaketan esleituta
+        table_actions: Ekintzak
+        evaluate: Ebaluatu
+    budget_investments:
+      index:
+        headings_filter_all: Elementu guztiak
+        filters:
+          valuation_open: Zabalik
+          valuating: Ebaluatzen
+          valuation_finished: Ebaluaketa amaituta
+        assigned_to: "%{valuator}-ri esleituta"
+        title: Gastu proiektuak
+        edit: Txostena editatu
+        valuators_assigned:
+          one: Evaluatzailea esleituta
+          other: "%{count} ebaluatzaile esleituta"
+        no_valuators_assigned: Ebaluatzaile gabe
+        table_id: ID
+        table_title: Izenburua
+        table_heading_name: Elementuaren izenburua
+        table_actions: Ekintzak
+      show:
+        back: Itzuli
+        title: Gastu proiektua
+        info: Bidalketa datuak
+        by: -gaitik bidalita
+        sent: Sortze data
+        heading: Elementua
+        dossier: Txostena
+        edit_dossier: Txostena editatu
+        price: Kostua
+        price_first_year: Lehen urteko kostua
+        currency: "€"
+        feasibility: Bideragarritasuna
+        feasible: Bideragarria
+        unfeasible: Bideragabezina
+        undefined: Definitu gabe
+        valuation_finished: Txostena amaituta
+        duration: Exekuzio epea
+        responsibles: Arduradunak
+        assigned_admin: Esleitutako administratzailea
+        assigned_valuators: Esleitutako ebaluatzaileak
+      edit:
+        dossier: Txostena
+        price_html: "Kostua (%{currency}) <small>(datu publikoa)</small>"
+        price_first_year_html: "Lehen urteko kostua (%{currency}) <small>(aukerakoa, datu ez publikoa)</small>"
+        price_explanation_html: Txostena de coste <small>(aukerakoa, datu publikoa)</small>
+        feasibility: Bideragarritasuna
+        feasible: Bideragarria
+        unfeasible: Bideragarri ezina
+        undefined_feasible: Erabaki gabe
+        feasible_explanation_html: Bideragarriezin txostena <small>(izan ezkero, datu publikoa)</small>
+        valuation_finished: Amaitutako txostena
+        valuation_finished_alert: "Ziur zaude txosten hau beteta dagoela markatu nahi duzula? Behin markatuta, ezin da atzera bota."
+        not_feasible_alert: "Proiektua aurkeztu duenari bideragarriezin txostena itsatsita duen email bat bialduko zaio berehala."
+        duration_html: Plazo de ejecución <small>(aukerakoa, datu ez publicoa)</small>
+        save: Aldaketak gorde
+      notice:
+        valuate: "Dossierra eguneratuuta"
+      valuation_comments: Ebaluaketaren iruzkinak
+      not_in_valuating_phase: Aurrekontuak ebaluaketa fasean daudenean soilik ebaluatu ahal dira proiektuak
+    spending_proposals:
+      index:
+        geozone_filter_all: Ekintza arlo guztiak
+        filters:
+          valuation_open: Zabalik
+          valuating: Ebaluatzen
+          valuation_finished: Ebaluaketa amaituta
+        title: Partaidetzazko aurrekontuentzat inbertsio proposamenak
+        edit: Editatu
+      show:
+        back: Itzuli
+        heading: Inbertsio proposamena
+        info: Bialtze datuak
+        association_name: Elkartea
+        by: gaitik bidalita
+        sent: Sortze data
+        geozone: Arloa
+        dossier: Txostena
+        edit_dossier: Txostena editatu
+        price: Kostua
+        price_first_year: Lehen urteko kostua
+        currency: "€"
+        feasibility: Bideragarritasuna
+        feasible: Bideragarria
+        not_feasible: Bideragarriezina
+        undefined: Definitu gabe
+        valuation_finished: Amaitutakkok txostena
+        time_scope: Exekuzio epea
+        internal_comments: Barne iruzkinak
+        responsibles: Arduradunak
+        assigned_admin: Esleitutako administratzailea
+        assigned_valuators: Eslleitutako ebaluatzaileak
+      edit:
+        dossier: Txostena
+        price_html: "Kostua (%{currency}) <small>(datu publikoa)</small>"
+        price_first_year_html: "Lehen urteko kostua (%{currency}) <small>(aukerakoa, pribatua)</small>"
+        currency: "€"
+        price_explanation_html: Kostu txostena <small>(aukerakoa, datu publikoa)</small>
+        feasibility: Bideragarritasuna
+        feasible: Bideragarria
+        not_feasible: Bideragarri ezina
+        undefined_feasible: Definitu gabe
+        feasible_explanation_html: Txostena de inviabilidad <small>(en caso de que lo sea, dato público)</small>
+        valuation_finished: Txostena amaituta
+        time_scope_html: Exekuzio epea <small>(aukerakoa, datu ez publikoa)</small>
+        internal_comments_html: Iruzkinak eta behaketak <small>(Barne arduradunentzako, datu ez publikoa)</small>
+        save: Datuak gorde
+      notice:
+        valuate: "Txoztena eguneratuta"

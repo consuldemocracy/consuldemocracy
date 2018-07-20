@@ -1,0 +1,18 @@
+eu-ES:
+  guides:
+    title: "%{org}-rentzako ideiarik daukazu?"
+    subtitle: "Sortu nahi duzuna aukeratu"
+    budget_investment:
+      title: "Gastu proiektu bat"
+      feature_1_html: "<strong>Udal aurrekontua</strong>ren zati bat gastatzearen moduko ideiak dira"
+      feature_2_html: "Gastu proiektuak <strong>urtarrila eta martxoa</strong> artean planteatu behar dira"
+      feature_3_html: "Babesak jaso ezkero, bideragarria bada eta udal konpetentzien barne badago, bozkaktetara pasatzen da"
+      feature_4_html: "Herritarrek proiektuak onartzen badituzte, errealitate bihurtzen dira"
+      new_button: Gastu proiektu bat sortu nahi dut
+    proposal:
+      title: "Herri proposamen bat"
+      feature_1_html: "Udaletxeak garatu dezakeen edozein ekintzari buruzku ideiak dira"
+      feature_2_html: "<strong>%{votes} babes</strong> behar dira %{org}-(a)n bozkaketetara pasatzeko"
+      feature_3_html: "Edozein moemntutan aktibatzen dira; Babesak lortzeko <strong>urte bat</strong> daukazu"
+      feature_4_html: "Bozkaketan onartu ezkero, Udaletxeak proposamena bere gain hartuko du"
+      new_button: Proposamen bat sortu nahi dut

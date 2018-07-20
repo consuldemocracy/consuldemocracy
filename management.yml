@@ -1,0 +1,147 @@
+eu-ES:
+  management:
+    account:
+      menu:
+        reset_password_email: Email bidez pasahitza berrezarri
+        reset_password_manually: Eskuz berrezarri pasahitza
+      alert:
+        unverified_user: Egiaztatutako erabiltzaileen kontuak soilik editatu daitezke
+      show:
+        title: Erabiltzaile kontua
+      edit:
+        title: 'Erabiltzaile kontua editatu: pasahitza berrezarri'
+        back: Atzera
+        password:
+          password: Pasahitza
+          send_email: Emaila bidali pahahitza berrezartzeko
+          reset_email_send: Emaila ondo bidalita.
+          reseted: Pahahitza ondo berrezarrita
+          random: Zorizko pasahitza sortu
+          save: Gorde
+          print: Pasahitza inprimatu
+          print_help: Pasahitza gordetzen denean inprimatu ahalko duzu.
+    account_info:
+      change_user: Erabiltzailea aldatu
+      document_number_label: 'Agiri zenbakia:'
+      document_type_label: 'Agiri mota:'
+      email_label: 'Emaila:'
+      identified_label: 'Izen identifikatzailea:'
+      username_label: 'Erabiltzailea:'
+    check: Egiaztatu
+    dashboard:
+      index:
+        title: Kudeaketa
+        info: Hemen, ezkerreko zerrendan dauden ekintzekin, erabiltzaileak kudeatu ditzakezu.
+    document_number: Agiri zenbakia
+    document_type_label: Agiri mota
+    document_verifications:
+      already_verified: Erabiltzaile kontu hau egiaztatuta dago.
+      has_no_account_html: Erabiltzailea sortzeko %{link}-(e)n sartu eta klikatu pantailako goikalde eta eskumakaldean dagoen <b>'Erregistratu'</b> aukeraren gain.
+      link: CONSUL
+      in_census_has_following_permissions: 'Erabiltzaile honek hurrengo aukerekin parte hartu dezake gobernu web atari irekian:'
+      not_in_census: Agiri hau erregistratu gabe dago.
+      not_in_census_info: 'Erroldatu gabe dauden pertsonek hurrengo aukerekin parte hartu dezakete gobernu web atari irekian:'
+      please_check_account_data: Kontua guztiz egiaztatzeko aurreko datuak ondo dagozala ziurtatu zaitez.
+      title: Erabiltzaile kudeaketa
+      under_age: "Ez duzu adin nahiko zure kontua egiaztatzeko."
+      verify: Erabiltzailea egiaztatu
+    email_label: Emaila
+    date_of_birth: Jaiotze data
+    email_verifications:
+      already_verified: Erabiltzaile kontu hau egiaztatuta dago.
+      choose_options: 'Hurrengo aukeretatik bat aukeratu:'
+      document_found_in_census: Agiri hau udal erroldan dago, baina oraindik ez zaio erabiltzaile kontu bat elkartu.
+      document_mismatch: Email hori agiria elkartuta duen erabiltzaile bateri dagokio %{document_number}(%{document_type})
+      email_placeholder: Erregistroaren email sartu
+      email_sent_instructions: Kontua egiaztatzeko linka email batean bialdu dizugu  zuk emandako email helbidera. Beharrezkoa da bertan klikatzea kontua egiaztatzeko.
+      if_existing_account: Pertsonak web orrian erabiltzaile kontua sortu badu
+      if_no_existing_account: Oraindik pertsonak ez badu web orrian erabiltzaile kontua sortu
+      introduce_email: 'Kontua sortu zuen emaila sartu:'
+      send_email: Egiaztatze emaila bidali
+    menu:
+      create_proposal: Proposamena sortu
+      print_proposals: Proposamenak inprimatu
+      support_proposals: Proposamenak babestu
+      create_spending_proposal: Inbertsio proposamena sortu
+      print_spending_proposals: Inbertsio proposamena inprimitu
+      support_spending_proposals: Inbertsio proposamena babestu
+      create_budget_investment: Gastu proiektuak sortu
+      print_budget_investments: Gastu proiektuak inprimatu
+      support_budget_investments: Gastu proiektuak babestu
+      users: Erabiltzaileak
+      edit_user_accounts: Erabiltzaile kontua editatu
+      user_invites: Gonbidapenak erabiltzaileentzat
+    permissions:
+      create_proposals: Proposamen berriak sortu
+      debates: Eztabaidetan parte hartu
+      support_proposals: Proposamenak babestu
+      vote_proposals: Azken bozkaketetan parte hartu
+    print:
+      proposals_info: 'Zure proposamenak http://url.consul -(e)n egin'
+      proposals_note: Babes gehien dituzten proposamenak bozkatuak izango dira. Eta gehiengo batek baiezkoa eman ezkero Udaletzeak garatu egingo du.
+      proposals_title: 'Proposamenak:'
+      spending_proposals_info: http://url.consul -(e)n parte hartu
+      spending_proposals_note: Partaidetzazko aurrekontuak gastu proiektu babestuenetan inbertituko dira.
+      budget_investments_info: 'http://url.consul -(e)n parte hartu'
+      budget_investments_note: Partaidetzazko aurrekontuak gastu proiektu babestuenetan inbertituko dira.
+    print_info: Informazio hau inprimitu
+    proposals:
+      alert:
+        unverified_user: Erabiltzaile hau ez dago egiaztatuta
+      create_proposal: Proposamena sortu
+      print:
+        print_button: Inprimitu
+    budgets:
+      create_new_investment: Proiektu berria sortu
+      print_investments: Proiektuak inprimitu
+      support_investments: Proiektuak babestu
+    budget_investments:
+      alert:
+        unverified_user: Erabiltzaile hau ez dago egiaztatuta
+      create: Proiektu berria sortu
+      filters:
+        heading: Concepto
+        unfeasible: Proiektu bideragarriezinak
+      print:
+        print_button: Inprimitu
+      search_results:
+        one: " '%{search_term}' hitza dauka"
+        other: " '%{search_term}' hitza dauka"
+    spending_proposals:
+      alert:
+        unverified_user: Erabiltzaile hau ez dago egiaztatuta
+      create: Gastu proposamena sortu
+      filters:
+        unfeasible: Inbertsio proposamen bideragarriezinak
+        by_geozone: 'Inbertsio Proposamenak con ámbito: %{geozone}'
+      print:
+        print_button: Inprimitu
+      search_results:
+        one: " '%{search_term}'  hitza dutenak"
+        other: " '%{search_term}'  hitza dutenak"
+    sessions:
+      signed_out: Saioa ondo itxi duzu.
+      signed_out_managed_user: Erabiltzaile saioa ondo itxi da.
+    username_label: Erabiltzaile izena
+    users:
+      create_user: Erabiltzaile kontu berri bat sortu
+      create_user_info: 'hurrengo informazioarekin erabiltzaile kontu bat sortuko dugu:'
+      create_user_submit: Erabiltzailea sortu
+      create_user_success_html:  kontua egiaztatzeko <b>%{email}</b>-ra posta elektroniko bat bidali dugu. Bidalitako emailak erabiltzaileak sakatu behar duen link bat darama. Linka sakatzerakoan pasahitza aukera dezake eta partaidetza web orrira sar daiteke.
+      autogenerated_password_html: "Erabiltzaile honi <b>%{password}</b> pasahitza ondotu zaio. Aldatu nahi izan ezkero web orriko 'Nire kontua' atalean alda dezake."
+      email_optional_label: Emaila (gomendagarria baina aukerakoa)
+      erased_notice: Erabiltzaile kontua ezabatuta.
+      erased_by_manager: 'Manager-ak ezabatuta: %{manager}'
+      erase_account_link: Kontua ezabatu
+      erase_account_confirm: 'ziur zaude erabiltzaile hau ezabatu nahi duzula? Ekintza hau ezin da desegin'
+      erase_warning: Ekintza hau ezin da desegin. Mesedez, kontu hau ezabatu nahi duzula ziurtatu zaitez.
+      erase_submit: Kontua ezabatu
+    user_invites:
+      new:
+        label: Emailak
+        info: "Emailak koma bibez banatuta sartu (',')"
+        submit: Gonbidapenak bialdu
+        title: Erabiltzaileentzako gonbidapenak
+      create:
+        success_html: <strong>%{count} gonbidapen</strong> bidali dira.
+        title: Erabiltzaileentzako gonbidapenak
