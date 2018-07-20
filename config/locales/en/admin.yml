@@ -127,7 +127,8 @@ en:
         table_amount: Amount
         table_population: Population
         population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
-        max_votable_headings: "Maxium number of headings in which a user can vote"
+        max_votable_headings: "Maximum number of headings in which a user can vote"
+        current_of_max_headings: "%{current} of %{max}"
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.

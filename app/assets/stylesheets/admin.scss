@@ -1165,6 +1165,17 @@ table {
   }
 }
 
+.max-headings-label {
+  color: $text-medium;
+  font-size: $small-font-size;
+  margin-left: $line-height / 2;
+}
+
+.current-of-max-headings {
+  color: #000;
+  font-weight: bold;
+}
+
 // 11. Newsletters
 // -----------------
 
