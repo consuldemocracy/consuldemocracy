@@ -27,7 +27,9 @@ feature 'Executions' do
     expect(page).not_to have_content(investment4.title)
   end
 
-  scenario 'render a message for headings without winner investments' do
+  scenario "Do not display headings with no winning investments for selected status" do
+    create(:budget_investment_milestone, investment: investment1)
+
     empty_group   = create(:budget_group, budget: budget)
     empty_heading = create(:budget_heading, group: empty_group, price: 1000)
 
@@ -38,11 +40,25 @@ feature 'Executions' do
     expect(page).to have_content(empty_heading.name)
 
     click_link 'Milestones'
-    click_link "#{empty_heading.name}"
 
-    expect(page).to have_content('No winner investments for this heading')
+    expect(page).to have_content(heading.name)
+    expect(page).not_to have_content(empty_heading.name)
   end
 
+  scenario "Show message when there are no winning investments with the selected status", :js do
+    create(:budget_investment_status, name: I18n.t('seeds.budgets.statuses.executed'))
+
+    visit budget_path(budget)
+
+    click_link 'See results'
+    click_link 'Milestones'
+
+    expect(page).not_to have_content('No winner investments in this state')
+
+    select 'Executed', from: 'status'
+
+    expect(page).to have_content('No winner investments in this state')
+  end
 
   context 'Images' do
     scenario 'renders milestone image if available' do
@@ -157,7 +173,6 @@ feature 'Executions' do
       select 'Studying the project', from: 'status'
 
       expect(page).not_to have_content(investment1.title)
-      expect(page).to have_content('No winner investments for this heading')
 
       select 'Bidding', from: 'status'
 

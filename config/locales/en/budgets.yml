@@ -179,7 +179,7 @@ en:
       page_title: "%{budget} - Milestones"
       heading: "Participatory budget Milestones"
       heading_selection_title: "By district"
-      no_winner_investments: "No winner investments for this heading"
+      no_winner_investments: "No winner investments in this state"
       filters:
         label: "Project's current state"
         all: "All"

@@ -62,6 +62,12 @@
       </div>
     <% end %>
 
-    <%= render 'budgets/executions/investments' %>
+    <% if @headings.any? %>
+      <%= render 'budgets/executions/investments' %>
+    <% else %>
+      <div class="callout primary clear">
+        <%= t("budgets.executions.no_winner_investments") %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -179,7 +179,7 @@ es:
       page_title: "%{budget} - Seguimiento de proyectos"
       heading: "Seguimiento de proyectos"
       heading_selection_title: "Ámbito de actuación"
-      no_winner_investments: "No hay proyectos de gasto ganadores para esta partida"
+      no_winner_investments: "No hay proyectos de gasto ganadores en este estado"
       filters:
         label: "Estado actual del proyecto"
         all: "Todos"
