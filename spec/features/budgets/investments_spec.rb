@@ -881,6 +881,10 @@ feature 'Budget Investments' do
           expect(page).to have_content(investment.formatted_price)
           expect(page).to have_content(investment.price_explanation)
 
+          if budget.finished?
+            investment.update(winner: true)
+          end
+
           visit budget_investments_path(budget)
 
           expect(page).to have_content(investment.formatted_price)
