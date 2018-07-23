@@ -538,9 +538,10 @@ en:
       signature_sheets: Signature Sheets
       site_customization:
         homepage: Homepage
-        pages: Custom Pages
-        images: Custom Images
+        pages: Custom pages
+        images: Custom images
         content_blocks: Custom content blocks
+        information_texts: Custom information texts
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
