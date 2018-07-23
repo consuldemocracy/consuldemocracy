@@ -3,10 +3,10 @@
     <div class="small-12 large-9 column">
       <%= f.text_field :title %>
     </div>
-    <div class="small-12 large-3 column" style="padding-top: 20px">
+    <div class="small-12 large-3 column remove-nested-record">
       <%= link_to_remove_association f, class: 'button hollow alert' do %>
         <span class="icon-x" aria-hidden="true"></span>
-        <span><%=t('.remove_answer') %></span>
+        <span><%=t("dashboard.polls.question_answer_fields.remove_answer") %></span>
       <% end %>
     </div>
   </div>
@@ -21,5 +21,5 @@
     </div>
   </div>
 
-  <hr style="max-width:100%">
+  <hr>
 </div>

@@ -1105,6 +1105,11 @@ es:
         no_records: No se encontraron registros
         active: 'Si'
         inactive: 'No'
+        title: Recursos/Acciones recomendadas
+        action_title: Título
+        action_type: Tipo
+        required_supports: Apoyos necesarios
+        action_active: Activo
       new:
         creating: Nueva acción para el dashboard de propuestas
         back: Volver a la lista
@@ -1322,6 +1327,7 @@ es:
     proposal_dashboard:
       administrator_tasks:
         index:
+          title: Tareas pendientes
           solve: Resolver
           no_records: No hay tareas pendientes
         edit:

@@ -9,7 +9,7 @@
   <div class="small-12 medium-4 column">
     <% if proposal_dashboard_action.links.any? %>
       <div class="proposal-dashboard-action-links">
-        <h3><%= t('.links') %></h3>
+        <h3><%= t("proposals_dashboard.new_request.links") %></h3>
         <% proposal_dashboard_action.links.each do |link| %>
           <% if link.open_in_new_tab %>
             <%= link_to link.label, link.url, target: '_blank' %>

@@ -1,4 +1,5 @@
 .proposal-show {
+
   p.centered {
     text-align: center;
   }
@@ -12,14 +13,16 @@
 
 .proposal-created {
   margin-bottom: 1.5rem;
+  
   .row {
     background-color: #e7f3fd;
   }
 }
 
 .proposal-dashboard {
+  
   .dashboard-sidebar {
-    border-right: 1pt solid lightgray;
+    border-right: rem-calc(1) solid lightgray;
     background-color: #fbfbfb;
 
     @include breakpoint(medium) {
@@ -64,6 +67,7 @@
       }
 
       &.is-active a {
+  
         span {
           color: #00538b;
           font-weight: bold;
@@ -135,8 +139,8 @@
 
     .counter {
       flex-grow: 1;
-      padding-left: 10pt;
-      padding-right: 10pt;
+      padding-left: rem-calc(10);
+      padding-right: rem-calc(10);
 
       .counter-value {
         text-align: center;
@@ -175,6 +179,7 @@
 
     .proposal-link {
       flex-grow: 1;
+  
       .button {
         margin: 0;
       }
@@ -205,13 +210,13 @@
 
     .label {
       color: #fefefe;
-      margin-left: 10pt;
+      margin-left: rem-calc(10);
     }
   }
 
   .action-title {
-    margin-top: 5pt;
-    margin-bottom: 10pt;
+    margin-top: rem-calc(5);
+    margin-bottom: rem-calc(10);
 
     hr {
       max-width: 100%;
@@ -243,11 +248,11 @@
   }
 
   .title {
-    border-bottom: 1pt solid lightgray;
+    border-bottom: rem-calc(1) solid lightgray;
 
     h5 {
       padding: 1rem 1.5rem 1rem 1.5rem;
-      font-size: 16pt;
+      font-size: rem-calc(16);
       margin: 0;
     }
   }
@@ -257,11 +262,11 @@
   }
 
   .proposal-dashboard-action-links {
-    margin-bottom: 15pt;
+    margin-bottom: rem-calc(15);
   }
 
   .resource-card {
-    min-height: 200pt;
+    min-height: rem-calc(200);
 
     .bottom-container {
       padding-left: 0;
@@ -276,12 +281,13 @@
   }
 
   .resource-card {
+  
     i {
       display: inline-block;
-      width: 20pt;
-      height: 20pt;
-      border-radius: 10pt;
-      padding-right: 4pt;
+      width: rem-calc(20);
+      height: rem-calc(20);
+      border-radius: rem-calc(10);
+      padding-right: rem-calc(4);
     }
   }
 
@@ -290,7 +296,7 @@
 
     i {
       color: #116f8e;
-      border: 1pt solid #116f8e;
+      border: rem-calc(1) solid #116f8e;
     }
   }
 
@@ -299,7 +305,7 @@
 
     i {
       color: #00cf96;
-      border: 1pt solid #00cf96;
+      border: rem-calc(1) solid #00cf96;
     }
   }
 
@@ -308,17 +314,17 @@
 
     i {
       color: #ff828b;
-      border: 1pt solid #ff828b;
+      border: rem-calc(1) solid #ff828b;
     }
   }
 
   .proposed-action {
     display: flex;
     flex-flow: row wrap;
-    margin-bottom: 15pt;
+    margin-bottom: rem-calc(15);
 
     .exec-indicator {
-      margin-right: 10pt;
+      margin-right: rem-calc(10);
       
       i {
         color: #00e193;
@@ -347,16 +353,28 @@
     a {
       font-size: 16px;
     }
-
   }
 
   .community-totals {
+    
     span {
       color: #898989;
     }
 
     p {
       color: #898989;
+    }
+  }
+
+  .polls-form {
+
+    hr {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .remove-nested-record {
+      padding-top: 20px;
     }
   }
 }
