@@ -7,7 +7,9 @@
   <%= render "shared/social_media_meta_tags",
               social_url: polls_url,
               social_title: t("polls.index.title"),
-              social_description: t("polls.index.description") %>
+              social_description: t("polls.index.description"),
+              twitter_image_url:  "social_media_polls_twitter.jpg",
+              og_image_url: "social_media_polls.jpg" %>
 <% end %>
 
 <%= render "shared/section_header", i18n_namespace: "polls.index.section_header", image: "polls" %>
@@ -15,6 +17,10 @@
 <div class="row">
   <div class="small-12 column">
     <%= render 'shared/filter_subnav', i18n_namespace: "polls.index" %>
+
+    <h3 class="margin-top"><%= t("polls.index.muros_title") %></h3>
+    <p><%= t("polls.index.muros_1_html") %></p>
+    <p><%= t("polls.index.muros_2") %>&nbsp;<%= t("polls.index.muros_3_html") %></p>
 
     <% if @polls.any? %>
       <% polls_by_geozone_restriction = @polls.group_by(&:geozone_restricted) %>
