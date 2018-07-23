@@ -21,7 +21,7 @@
       <% if poll.incoming? %>
         <%= link_to t('.edit_poll'), edit_proposal_dashboard_poll_path(proposal, poll), class: 'button hollow' %>
       <% else %>
-        <%= link_to t('.view_responses'), proposal_dashboard_poll_path(proposal, poll), class: 'button' %>
+        <%= link_to t('.view_results'), results_poll_path(poll), class: 'button', target: '_blank' %>
       <% end %>
     </div>
     <div class="card-section">

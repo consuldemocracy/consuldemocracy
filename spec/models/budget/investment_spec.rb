@@ -1029,12 +1029,12 @@ describe Budget::Investment do
         investment.heading = heading2
         investment.store_reclassified_votes("heading_changed")
 
-        reclassified_vote = Budget::ReclassifiedVote.first
-
         expect(Budget::ReclassifiedVote.count).to eq(3)
-        expect(reclassified_vote.investment_id).to eq(investment.id)
-        expect(reclassified_vote.user_id).to eq(Budget::Ballot.first.user.id)
-        expect(reclassified_vote.reason).to eq("heading_changed")
+        Budget::ReclassifiedVote.find_each do |reclassified_vote|
+          expect(reclassified_vote.investment_id).to eq(investment.id)
+          expect(reclassified_vote.reason).to eq("heading_changed")
+          expect(Budget::Ballot.where(user_id: reclassified_vote.user_id)).not_to be_empty
+        end
       end
     end
 

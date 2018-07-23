@@ -21,11 +21,7 @@ resources :proposals do
   end
 
   namespace :dashboard do
-    resources :polls, except: :destroy do
-      member do
-        get :results
-      end
-    end
+    resources :polls, except: [:show, :destroy]
   end
 
   member do

@@ -576,7 +576,7 @@ en:
         responses:
           one: "%{count} response"
           other: "%{count} responses"
-        view_responses: View responses
+        view_results: View results
         edit_poll: Edit survey
         show_results: Show results
         show_results_help: If you check this box the results will be public and all users will be able to see them

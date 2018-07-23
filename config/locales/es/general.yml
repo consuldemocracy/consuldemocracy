@@ -576,7 +576,7 @@ es:
         responses:
           one: "%{count} respuesta"
           other: "%{count} respuestas"
-        view_responses: Ver respuestas
+        view_results: Ver resultados
         edit_poll: Editar encuesta
         show_results: Mostrar resultados
         show_results_help: Si marcas esta casilla los resultados serán públicos y todos los usuarios podrán verlos
