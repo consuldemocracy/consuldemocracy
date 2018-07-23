@@ -11,7 +11,7 @@ module Budgets
                          .includes(investments: :milestones)
                          .joins(investments: :milestones)
                          .distinct
-                         .order(id: :asc)
+                         .order(name: :asc)
 
       if params[:status].present?
         @headings = @headings.where(filter_investment_by_latest_milestone, params[:status])
