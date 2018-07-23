@@ -120,4 +120,16 @@ feature 'Polls' do
       expect(page.current_path).to eq(results_poll_path(poll))
     end
   end
+
+  scenario 'Poll card' do
+     poll = create(:poll, :expired, related: proposal)
+    
+    visit proposal_dashboard_polls_path(proposal)
+
+    within "div#poll_#{poll.id}" do
+      expect(page).to have_content(I18n.l(poll.starts_at.to_date))
+      expect(page).to have_content(I18n.l(poll.ends_at.to_date))
+      expect(page).to have_link(poll.title)
+    end
+  end
 end
