@@ -499,7 +499,7 @@ es:
           form:
             error: Error
         form:
-          add_option: +Añadir respuesta cerrada
+          add_option: Añadir respuesta cerrada
           title: Pregunta
           title_placeholder: Escribe un título a la pregunta
           value_placeholder: Escribe una respuesta cerrada
@@ -670,7 +670,7 @@ es:
         section_title: Editar notificación
       show:
         section_title: Vista previa de notificación
-        send: Enviar
+        send: Enviar notificación
         will_get_notified: (%{n} usuarios serán notificados)
         got_notified: (%{n} usuarios fueron notificados)
         sent_at: Enviado
@@ -1064,6 +1064,12 @@ es:
             update: La configuración del mapa se ha guardado correctamente.
           form:
             submit: Actualizar
+      setting: Funcionalidad
+      setting_actions: Acciones
+      setting_name: Configuración
+      setting_status: Estado
+      setting_value: Valor
+      no_description: Sin descripción
     shared:
       booths_search:
         button: Buscar

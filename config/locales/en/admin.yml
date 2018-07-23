@@ -670,7 +670,7 @@ en:
         section_title: Edit notification
       show:
         section_title: Notification preview
-        send: Send
+        send: Send notification
         will_get_notified: (%{n} users will be notified)
         got_notified: (%{n} users got notified)
         sent_at: Sent at
@@ -1064,6 +1064,12 @@ en:
             update: Map configuration updated succesfully.
           form:
             submit: Update
+      setting: Feature
+      setting_actions: Actions
+      setting_name: Setting
+      setting_status: Status
+      setting_value: Value
+      no_description: "No description"
     shared:
       booths_search:
         button: Search
