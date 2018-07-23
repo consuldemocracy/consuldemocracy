@@ -542,6 +542,18 @@ en:
         images: Custom images
         content_blocks: Custom content blocks
         information_texts: Custom information texts
+        information_texts_menu:
+          debates: "Debates"
+          community: "Community"
+          proposals: "Proposals"
+          polls: "Polls"
+          layouts: "Layouts"
+          emails: "Emails"
+          management: "Management"
+          guides: "Guides"
+          welcome: "Welcome"
+        buttons:
+          save: "Save"
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
