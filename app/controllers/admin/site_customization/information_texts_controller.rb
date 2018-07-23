@@ -47,12 +47,12 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
     end
 
     def fetch_existing_keys
-      existing_keys = {}
+      @existing_keys = {}
       @tab = params[:tab] || :debates
 
       I18nContent.begins_with_key(@tab)
                  .all
-                 .map{ |content| existing_keys[content.key] = content }
+                 .map{ |content| @existing_keys[content.key] = content }
     end
 
     def append_or_create_keys
@@ -60,9 +60,9 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
       I18n.backend.send(:translations)[:en].each do |k, v|
         @content[k.to_s] = flat_hash(v).keys
-                                       .map{ |s| existing_keys["#{k.to_s}.#{s}"].nil? ?
+                                       .map{ |s| @existing_keys["#{k.to_s}.#{s}"].nil? ?
                                               I18nContent.new(key: "#{k.to_s}.#{s}") :
-                                              existing_keys["#{k.to_s}.#{s}"] }
+                                              @existing_keys["#{k.to_s}.#{s}"] }
       end
     end
 
