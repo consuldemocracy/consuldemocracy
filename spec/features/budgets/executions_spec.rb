@@ -196,12 +196,7 @@ feature 'Executions' do
       city_heading   = create_heading_with_investment_with_milestone(group: group, name: 'Toda la ciudad')
       other_heading2 = create_heading_with_investment_with_milestone(group: group, name: 'Other 2')
 
-      visit budget_path(budget)
-      click_link 'See results'
-
-      expect(page).to have_link('Milestones')
-
-      click_link 'Milestones'
+      visit budget_executions_path(budget)
 
       expect(page).to have_css('.budget-execution', count: 3)
       expect(city_heading.name).to appear_before(other_heading1.name)
@@ -214,12 +209,7 @@ feature 'Executions' do
       a_heading = create_heading_with_investment_with_milestone(group: group, name: 'Aaa')
       m_heading = create_heading_with_investment_with_milestone(group: group, name: 'Mmm')
 
-      visit budget_path(budget)
-      click_link 'See results'
-
-      expect(page).to have_link('Milestones')
-
-      click_link 'Milestones'
+      visit budget_executions_path(budget)
 
       expect(page).to have_css('.budget-execution', count: 3)
       expect(a_heading.name).to appear_before(m_heading.name)
