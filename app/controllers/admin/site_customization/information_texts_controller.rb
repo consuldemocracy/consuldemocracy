@@ -57,10 +57,15 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
     def append_or_create_keys
       @content = {}
+      translations = if params[:locale].present?
+                       I18n.backend.send(:translations)[params[:locale].to_sym]
+                     else
+                       I18n.backend.send(:translations)[I18n.locale.to_sym]
+                     end
 
-      I18n.backend.send(:translations)[:en].each do |k, v|
+      translations.each do |k, v|
         @content[k.to_s] = flat_hash(v).keys
-                                       .map{ |s| @existing_keys["#{k.to_s}.#{s}"].nil? ?
+                                       .map { |s| @existing_keys["#{k.to_s}.#{s}"].nil? ?
                                               I18nContent.new(key: "#{k.to_s}.#{s}") :
                                               @existing_keys["#{k.to_s}.#{s}"] }
       end
