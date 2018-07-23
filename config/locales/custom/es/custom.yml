@@ -297,6 +297,13 @@ es:
         gender: "Participación por sexo"
         age: "Participación por grupos de edad"
         district: "Participación por distrito"
+    index:
+      title: "Vota un diseño de mural para cada distrito"
+      description: "Entra en Decide Madrid y vota el diseño de mural que embellecerá tu distrito."
+      muros_title: "Compartiendo muros"
+      muros_1_html: 'La iniciativa <strong>"Compartiendo Muros"</strong>, promovida por la Dirección General de Intervención en el Paisaje Urbano y el Patrimonio Cultural, tiene como objetivo principal que la ciudadanía identifique el espacio público como algo suyo, participe en su embellecimiento y se responsabilice de su conservación y mantenimiento a través de acciones artísticas abiertas a la participación del tejido creativo radicado en el distrito.'
+      muros_2: "Los murales son fruto de la colaboración entre el vecindario de los distritos y el o la artista que se ha elegido por convocatoria abierta para llevar a cabo este proyecto en cada uno de los distritos."
+      muros_3_html: "Elige el diseño que prefieres para embellecer tu distrito. <strong>Puedes votar desde el viernes 20 de julio hasta el martes 31 de julio</strong>. Las intervenciones artísticas cuyos diseños resulten elegidos se realizarán entre el 3 de septiembre y el 9 de octubre."
   first_2017_poll:
     title: PRIMERA VOTACIÓN CIUDADANA
     date: 13-19 DE FEBRERO 2017
