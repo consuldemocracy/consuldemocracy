@@ -549,7 +549,7 @@ es:
           proposals: "Propuestas"
           polls: "Votaciones"
           layouts: "Plantillas"
-          emails: "Correos"
+          mailers: "Correos"
           management: "Gestión"
           guides: "Guías"
           welcome: "Bienvenido/a"
