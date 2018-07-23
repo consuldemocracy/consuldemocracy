@@ -128,6 +128,32 @@
       </ul>
     </li>
 
+    <li class="section-title">
+      <a href="#">
+        <span class="icon-box"></span>
+        <strong><%= t("admin.menu.title_booths") %></strong>
+      </a>
+      <ul id="booths_menu" <%= "class=is-active" if menu_booths? || controller_name == "polls" && action_name == "booth_assignments" %>>
+        <li <%= "class=is-active" if controller_name == "officers" %>>
+          <%= link_to t("admin.menu.poll_officers"), admin_officers_path %>
+        </li>
+
+        <li <%= "class=is-active" if controller_name == "booths" &&
+                                  action_name != "available" %>>
+          <%= link_to t("admin.menu.poll_booths"), admin_booths_path %>
+        </li>
+
+        <li <%= "class=is-active" if (controller_name == "polls" && action_name == "booth_assignments") ||
+                                  (controller_name == "booth_assignments" && action_name == "manage") %>>
+          <%= link_to t("admin.menu.poll_booth_assignments"), booth_assignments_admin_polls_path %>
+        </li>
+
+        <li <%= "class=is-active" if controller_name == "information_texts" %>>
+          <%= link_to t("admin.menu.site_customization.information_texts"), admin_site_customization_information_texts_path %>
+        </li>
+      </ul>
+    </li>
+
     <% if feature?(:signature_sheets) %>
       <li class="section-title <%= "is-active" if controller_name == "signature_sheets" %>">
         <%= link_to admin_signature_sheets_path do %>
@@ -246,10 +272,6 @@
 
         <li <%= "class=is-active" if controller_name == "content_blocks" %>>
           <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path%>
-        </li>
-
-        <li <%= "class=is-active" if controller_name == "information_texts" %>>
-          <%= link_to t("admin.menu.site_customization.information_texts"), admin_site_customization_information_texts_path%>
         </li>
       </ul>
     </li>
