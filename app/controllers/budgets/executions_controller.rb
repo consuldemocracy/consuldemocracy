@@ -17,7 +17,7 @@ module Budgets
         @headings = @headings.where(filter_investment_by_latest_milestone, params[:status])
       end
 
-      @headings = reorder_with_city_heading_first(@headings)
+      @headings = reorder_alphabetically_with_city_heading_first(@headings)
     end
 
     private
@@ -33,17 +33,15 @@ module Budgets
         SQL
       end
 
-      def reorder_with_city_heading_first(original_headings)
-        headings = original_headings.to_a.dup
-
-        city_heading_index = headings.find_index do |heading|
-          heading.name == "Toda la ciudad"
-        end
-
-        if city_heading_index
-          headings.insert(0, headings.delete_at(city_heading_index))
-        else
-          headings
+      def reorder_alphabetically_with_city_heading_first(headings)
+        headings.sort do |a, b|
+          if a.name == 'Toda la ciudad'
+            -1
+          elsif b.name == 'Toda la ciudad'
+            1
+          else
+            a.name <=> b.name
+          end
         end
       end
   end
