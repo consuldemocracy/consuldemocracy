@@ -207,5 +207,23 @@ feature 'Executions' do
       expect(city_heading.name).to appear_before(other_heading1.name)
       expect(city_heading.name).to appear_before(other_heading2.name)
     end
+
+    scenario 'Non-city headings are displayed in alphabetical order' do
+      heading.destroy!
+      z_heading = create_heading_with_investment_with_milestone(group: group, name: 'Zzz')
+      a_heading = create_heading_with_investment_with_milestone(group: group, name: 'Aaa')
+      m_heading = create_heading_with_investment_with_milestone(group: group, name: 'Mmm')
+
+      visit budget_path(budget)
+      click_link 'See results'
+
+      expect(page).to have_link('Milestones')
+
+      click_link 'Milestones'
+
+      expect(page).to have_css('.budget-execution', count: 3)
+      expect(a_heading.name).to appear_before(m_heading.name)
+      expect(m_heading.name).to appear_before(z_heading.name)
+    end
   end
 end
