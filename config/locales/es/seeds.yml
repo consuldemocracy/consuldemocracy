@@ -1,11 +1,11 @@
 es:
   seeds:
     settings:
-      official_level_1_name: Empleados públicos
-      official_level_2_name: Organización Municipal
-      official_level_3_name: Directores generales
-      official_level_4_name: Concejales
-      official_level_5_name: Alcaldesa
+      official_level_1_name: Cargo oficial 1
+      official_level_2_name: Cargo oficial 2
+      official_level_3_name: Cargo oficial 3
+      official_level_4_name: Cargo oficial 4
+      official_level_5_name: Cargo oficial 5
     geozones:
       north_district: Distrito Norte
       west_district: Distrito Oeste
