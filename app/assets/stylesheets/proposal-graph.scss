@@ -1,12 +1,13 @@
-// #proposal-graph > svg > g:nth-child(2) > g.c3-grid.c3-grid-lines > g.c3-ygrid-lines > g:nth-child(2) > line
-#proposal-graph {
-    .c3-ygrid-lines {
-      line {
-        stroke: #005c92;
-      }
+.proposal-graph {
 
-      text {
-        fill: #005c92;
-      }
+  .c3-ygrid-lines {
+
+    line {
+      stroke: #005c92;
+    }
+
+    text {
+      fill: #005c92;
     }
   }
+}

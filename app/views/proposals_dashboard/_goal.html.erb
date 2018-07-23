@@ -2,7 +2,7 @@
   <div class="column small-12">
     <i class="fi-flag"></i>
     <strong>
-      <%= t('.target_supports', count: number_with_precision(goal.required_supports, delimiter: '.', precision: 0)) %>
+      <%= t("proposals_dashboard.goal.target_supports", count: number_with_precision(goal.required_supports, delimiter: '.', precision: 0)) %>
     </strong>
   </div>
   <div class="column small-12">&nbsp;</div>
@@ -12,15 +12,15 @@
     <strong><%= goal.title %></strong>
   </div>
   <div class="column small-12 skip-icon">
-    <p class="help-text"><%= t('.unlocked_resource') %></p>
+    <p class="help-text"><%= t("proposals_dashboard.goal.unlocked_resource") %></p>
   </div>
 
   <% if goal.day_offset.positive? %>
     <div class="column small-12">
-      <strong><%= t('.days', count: goal.day_offset) %></strong>
+      <strong><%= t("proposals_dashboard.goal.days", count: goal.day_offset) %></strong>
     </div>
     <div class="column small-12">
-      <p class="help-text"><%= t('.ideal_time') %></p>
+      <p class="help-text"><%= t("proposals_dashboard.goal.ideal_time") %></p>
     </div>
   <% end %>
 </div>

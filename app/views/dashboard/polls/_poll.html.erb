@@ -8,20 +8,20 @@
       </p>
       <h4 class="text-center"><%= poll.title %></h4>
       <p class="text-center">
-        <%= t('.published_on') %>
+        <%= t("dashboard.polls.poll.published_on") %>
         <%= l(poll.starts_at.to_date) %>
       </p>
     </div>
 
     <div class="card-section text-center">
-      <strong><%= t('.responses', count: poll.questions.count) %></strong>
+      <strong><%= t("dashboard.polls.poll.responses", count: poll.questions.count) %></strong>
     </div>
 
     <div class="card-section text-center">
       <% if poll.incoming? %>
-        <%= link_to t('.edit_poll'), edit_proposal_dashboard_poll_path(proposal, poll), class: 'button hollow' %>
+        <%= link_to t("dashboard.polls.poll.edit_poll"), edit_proposal_dashboard_poll_path(proposal, poll), class: 'button hollow' %>
       <% else %>
-        <%= link_to t('.view_results'), results_poll_path(poll), class: 'button', target: '_blank' %>
+        <%= link_to t("dashboard.polls.poll.view_results"), results_poll_path(poll), class: 'button', target: '_blank' %>
       <% end %>
     </div>
     <div class="card-section">
@@ -34,9 +34,9 @@
                             false: raw('<input type="checkbox">'),
                             true: raw('<input type="checkbox" checked>')
                           } %>
-        <strong><%= t('.show_results') %></strong>
+        <strong><%= t("dashboard.polls.poll.show_results") %></strong>
       </p>
-      <p class="help-text"><%= t('.show_results_help') %></p>
+      <p class="help-text"><%= t("dashboard.polls.poll.show_results_help") %></p>
     </div>
   </div>
 </div>

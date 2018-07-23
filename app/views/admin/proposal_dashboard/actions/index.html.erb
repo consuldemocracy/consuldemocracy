@@ -1,17 +1,17 @@
-<%= link_to t('admin.proposal_dashboard_actions.index.create'),
+<%= link_to t("admin.proposal_dashboard_actions.index.create"),
               new_admin_proposal_dashboard_action_path, class: 'button success float-right' %>
 
 <h2 class="inline-block">
-  <%= ProposalDashboardAction.model_name.human(count: 2) %>
+  <%= t("admin.proposal_dashboard_actions.index.title") %>
 </h2>
 
 <table>
   <thead>
     <tr>
-      <th><%= ProposalDashboardAction.human_attribute_name(:title) %></th>
-      <th><%= ProposalDashboardAction.human_attribute_name(:action_type) %></th>
-      <th class="text-right"><%= ProposalDashboardAction.human_attribute_name(:required_supports) %></th>
-      <th class="text-center"><%= ProposalDashboardAction.human_attribute_name(:active) %></th>
+      <th><%= t("admin.proposal_dashboard_actions.index.action_title") %></th>
+      <th><%= t("admin.proposal_dashboard_actions.index.action_type") %></th>
+      <th class="text-right"><%= t("admin.proposal_dashboard_actions.index.required_supports") %></th>
+      <th class="text-center"><%= t("admin.proposal_dashboard_actions.index.action_active") %></th>
       <th></th>
     </tr>
   </thead>
@@ -19,7 +19,7 @@
   <tbody>
     <% if @proposal_dashboard_actions.empty? %>
       <tr>
-        <td colspan="100%"><%= t('admin.proposal_dashboard_actions.index.no_records') %></td>
+        <td colspan="100%"><%= t("admin.proposal_dashboard_actions.index.no_records") %></td>
       </tr>
     <% end %>
 
@@ -30,14 +30,14 @@
         <td class="text-right"><%= number_with_delimiter(action.required_supports, delimiter: '.') %></td>
         <td class="text-center"><%= active_human_readable(action.active) %></td>
         <td class="text-right">
-          <%= link_to t('admin.proposal_dashboard_actions.index.edit'), 
+          <%= link_to t("admin.proposal_dashboard_actions.index.edit"), 
                       edit_admin_proposal_dashboard_action_path(action), 
                       class: 'edit-banner button hollow' %>
-          <%= link_to t('admin.proposal_dashboard_actions.index.delete'), 
+          <%= link_to t("admin.proposal_dashboard_actions.index.delete"), 
                       admin_proposal_dashboard_action_path(action), 
                       method: :delete, 
                       class: 'button hollow alert',
-                      data: { confirm: t('admin.actions.confirm') } %>
+                      data: { confirm: t("admin.actions.confirm") } %>
         </td>
       </tr>
     <% end %>

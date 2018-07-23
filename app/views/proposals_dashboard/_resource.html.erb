@@ -21,13 +21,17 @@
     <div class="card-section text-center bottom-container">
       <% if resource.executed_for?(proposal) %>
         <div class="bottom-element text-center">
-          <%= link_to t('.view_resource'), new_request_proposal_dashboard_path(proposal, resource), class: 'button success' %>
+          <%= link_to t("proposals_dashboard.resource.view_resource"),
+                      new_request_proposal_dashboard_path(proposal, resource),
+                      class: 'button success' %>
         </div>
       <% elsif resource.requested_for?(proposal) %>
-        <strong><%= t('.resource_requested') %></strong>
+        <strong><%= t("proposals_dashboard.resource.resource_requested") %></strong>
       <% elsif resource.active_for?(proposal) %>
         <div class="bottom-element text-center">
-          <%= link_to t('.request_resource'), new_request_proposal_dashboard_path(proposal, resource), class: 'button primary' %>
+          <%= link_to t("proposals_dashboard.resource.request_resource"),
+                      new_request_proposal_dashboard_path(proposal, resource),
+                      class: 'button primary' %>
         </div>
       <% else %>
         <strong>

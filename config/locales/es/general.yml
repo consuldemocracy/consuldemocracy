@@ -528,7 +528,7 @@ es:
       publish: Publicar
       retire: Retirar
     new_request:
-      liks: Enlaces
+      links: Enlaces
     resources:
       available_resources: Recursos disponibles
     resource:
@@ -587,8 +587,6 @@ es:
         add_answer: Añadir respuesta
       question_answer_fields:
         remove_answer: Borrar respuesta
-      show:
-        title: Configurar encuesta
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"
@@ -892,6 +890,8 @@ es:
       draft: Borrador
       published: Publicada
       see: "Ver propuesta"
+      actions: Acciones
+      retired_help_text: Dashboard no disponible para propuestas retiradas
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.

@@ -587,8 +587,6 @@ en:
         add_answer: Add answer
       question_answer_fields:
         remove_answer: Remove answer
-      show:
-        title: Configure poll
   polls:
     all: "All"
     no_dates: "no date assigned"
@@ -893,6 +891,8 @@ en:
       draft: Draft
       published: Published
       see: "See proposal"
+      actions: Actions
+      retired_help_text: Dashboard not available for retired proposals
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.

@@ -1105,6 +1105,11 @@ en:
         no_records: No records found
         active: 'Yes'
         inactive: 'No'
+        title: Resources/Recomended actions
+        action_title: Title
+        action_type: Type
+        required_supports: Required supports
+        action_active: Active
       new:
         creating: New action for the proposals dashboard
         back: Back to list
@@ -1322,6 +1327,7 @@ en:
     proposal_dashboard:
       administrator_tasks:
         index:
+          title: Pending tasks
           solve: Solve
           no_records: There are no pending tasks
         edit:
