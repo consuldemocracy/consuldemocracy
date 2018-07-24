@@ -110,7 +110,7 @@
       <ul <%= "class=is-active" if menu_customization? &&
                                    controller.class.parent != Admin::Poll::Questions::Answers %>>
 
-        <li <%= "class=active" if menu_homepage? %>>
+        <li <%= "class=is-active" if menu_homepage? %>>
           <%= link_to t("admin.menu.site_customization.homepage"), admin_homepage_path %>
         </li>
 
