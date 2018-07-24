@@ -1,9 +1,9 @@
-<% @headings.each do |heading| %>
+<% @investments_by_heading.each do |heading, investments| %>
     <h4 id="<%= heading.name.parameterize %>">
-      <%= heading.name %>
+      <%= heading.name %> (<%= investments.count %>)
     </h4>
     <div class="row" data-equalizer-on="medium" data-equalizer>
-      <% heading.investments.each do |investment| %>
+      <% investments.each do |investment| %>
         <div class="small-12 medium-6 large-4 column end margin-bottom">
           <div class="budget-execution">
             <%= link_to budget_investment_path(@budget, investment, anchor: "tab-milestones"), data: { 'equalizer-watch': true } do %>
