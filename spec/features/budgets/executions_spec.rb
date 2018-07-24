@@ -55,7 +55,7 @@ feature 'Executions' do
 
     expect(page).not_to have_content('No winner investments in this state')
 
-    select 'Executed', from: 'status'
+    select 'Executed (0)', from: 'status'
 
     expect(page).to have_content('No winner investments in this state')
   end
@@ -125,6 +125,25 @@ feature 'Executions' do
     let!(:status1) { create(:budget_investment_status, name: I18n.t('seeds.budgets.statuses.studying_project')) }
     let!(:status2) { create(:budget_investment_status, name: I18n.t('seeds.budgets.statuses.bidding')) }
 
+    scenario 'Filters select with counter are shown' do
+      create(:budget_investment_milestone, investment: investment1,
+                                           publication_date: Date.yesterday,
+                                           status: status1)
+
+      create(:budget_investment_milestone, investment: investment2,
+                                           publication_date: Date.yesterday,
+                                           status: status2)
+
+      visit budget_path(budget)
+
+      click_link 'See results'
+      click_link 'Milestones'
+
+      expect(page).to have_content("All (2)")
+      expect(page).to have_content("#{status1.name} (1)")
+      expect(page).to have_content("#{status2.name} (1)")
+    end
+
     scenario 'by milestone status', :js do
       create(:budget_investment_milestone, investment: investment1, status: status1)
       create(:budget_investment_milestone, investment: investment2, status: status2)
@@ -138,17 +157,17 @@ feature 'Executions' do
       expect(page).to have_content(investment1.title)
       expect(page).to have_content(investment2.title)
 
-      select 'Studying the project', from: 'status'
+      select 'Studying the project (1)', from: 'status'
 
       expect(page).to have_content(investment1.title)
       expect(page).not_to have_content(investment2.title)
 
-      select 'Bidding', from: 'status'
+      select 'Bidding (1)', from: 'status'
 
       expect(page).to have_content(investment2.title)
       expect(page).not_to have_content(investment1.title)
 
-      select 'Executing the project', from: 'status'
+      select 'Executing the project (0)', from: 'status'
 
       expect(page).not_to have_content(investment1.title)
       expect(page).not_to have_content(investment2.title)
@@ -167,10 +186,10 @@ feature 'Executions' do
       click_link 'See results'
       click_link 'Milestones'
 
-      select 'Studying the project', from: 'status'
+      select 'Studying the project (0)', from: 'status'
       expect(page).not_to have_content(investment1.title)
 
-      select 'Bidding', from: 'status'
+      select 'Bidding (1)', from: 'status'
       expect(page).to have_content(investment1.title)
     end
 
@@ -187,10 +206,10 @@ feature 'Executions' do
       click_link 'See results'
       click_link 'Milestones'
 
-      select 'Studying the project', from: 'status'
+      select 'Studying the project (1)', from: 'status'
       expect(page).to have_content(investment1.title)
 
-      select 'Bidding', from: 'status'
+      select 'Bidding (0)', from: 'status'
       expect(page).not_to have_content(investment1.title)
     end
   end
