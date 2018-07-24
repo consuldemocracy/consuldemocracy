@@ -57,7 +57,7 @@
 
     <% if feature?(:budgets) %>
       <li class="section-title <%= "is-active" if controller_name == "budgets" ||
-                                                                     "budget_investment_statuses" %>">
+                                                  controller_name == "budget_investment_statuses" %>">
         <%= link_to admin_budgets_path do %>
           <span class="icon-budget"></span>
           <strong><%= t("admin.menu.budgets") %></strong>
@@ -240,7 +240,7 @@
         <strong><%= t("admin.menu.proposals_dashboard") %></strong>
       </a>
       <ul <%= "class=is-active" if menu_proposals_dashboard? %>>
-        <li <%= "class=is-active" if controller_name == "proposal_dashboard_actions" %>>
+        <li <%= "class=is-active" if controller_name == "actions" %>>
           <%= link_to ProposalDashboardAction.model_name.human(count: 2), admin_proposal_dashboard_actions_path %>
         </li>
 

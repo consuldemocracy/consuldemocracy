@@ -572,7 +572,7 @@ en:
         links: Links
         additiontal_information: Additional information
       poll:
-        published_on: Published on
+        copy_link: Copy link
         responses:
           one: "%{count} response"
           other: "%{count} responses"

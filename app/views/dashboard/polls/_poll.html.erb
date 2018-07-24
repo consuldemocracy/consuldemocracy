@@ -1,15 +1,14 @@
 <div class="column poll-card" id="<%= dom_id(poll) %>">
   <div class="card">
     <div class="card-section">
-      <p class="text-right">
+      <p class="text-center">
         <a href='#' class="button round hollow clipboard-btn" data-clipboard-text="<%= poll_url(poll) %>">
-          <i class="fi-clipboard-notes"></i>
+          <i class="fi-clipboard-notes"></i> <%= t("dashboard.polls.poll.copy_link") %>
         </a>
       </p>
-      <h4 class="text-center"><%= poll.title %></h4>
+      <h4 class="text-center"><%= link_to poll.title, poll %></h4>
       <p class="text-center">
-        <%= t("dashboard.polls.poll.published_on") %>
-        <%= l(poll.starts_at.to_date) %>
+        <%= l(poll.starts_at.to_date) %> - <%= l(poll.ends_at.to_date) %>
       </p>
     </div>
 
