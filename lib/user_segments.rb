@@ -8,11 +8,11 @@ class UserSegments
        feasible_and_undecided_investment_authors
        selected_investment_authors
        winner_investment_authors
-       not_supported_on_current_budget].freeze
+       not_supported_on_current_budget] + geozones.keys
   end
 
   def self.segment_name(segment)
-    I18n.t("admin.segment_recipient.#{segment}") if segments.include?(segment.to_s)
+    geozones[segment.to_s]&.name || I18n.t("admin.segment_recipient.#{segment}") if valid_segment?(segment)
   end
 
   def self.all_users
@@ -58,11 +58,15 @@ class UserSegments
   end
 
   def self.valid_segment?(segment)
-    segment && respond_to?(segment)
+    segments.include?(segment.to_s)
   end
 
   def self.recipients(segment)
-    send(segment)
+    if geozones[segment.to_s]
+      all_users.where(geozone: geozones[segment.to_s])
+    else
+      send(segment)
+    end
   end
 
   def self.user_segment_emails(segment)
@@ -77,5 +81,9 @@ class UserSegments
 
     def self.author_ids(author_ids)
       all_users.where(id: author_ids)
+    end
+
+    def self.geozones
+      Geozone.order(:name).map { |geozone| [geozone.name.parameterize.underscore, geozone] }.to_h
     end
 end

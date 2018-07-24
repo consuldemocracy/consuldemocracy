@@ -19,6 +19,26 @@ describe UserSegments do
     it "returns nil for invalid segments" do
       expect(UserSegments.segment_name("invalid")).to be nil
     end
+
+    context "with geozones in the database" do
+      before do
+        create(:geozone, name: "Lands and Borderlands")
+        create(:geozone, name: "Lowlands and Highlands")
+      end
+
+      it "returns geozone names when the geozone exists" do
+        expect(UserSegments.segment_name("lands_and_borderlands")).to eq "Lands and Borderlands"
+        expect(UserSegments.segment_name("lowlands_and_highlands")).to eq "Lowlands and Highlands"
+      end
+
+      it "returns regular segments when the geozone doesn't exist" do
+        expect(UserSegments.segment_name("all_users")).to eq "All users"
+      end
+
+      it "returns nil for invalid segments" do
+        expect(UserSegments.segment_name("invalid")).to be nil
+      end
+    end
   end
 
   describe ".valid_segment?" do
@@ -40,6 +60,30 @@ describe UserSegments do
 
     it "is falsey when nil is passed" do
       expect(UserSegments.valid_segment?(nil)).to be_falsey
+    end
+
+    context "with geozones in the database" do
+      before do
+        create(:geozone, name: "Lands and Borderlands")
+        create(:geozone, name: "Lowlands and Highlands")
+      end
+
+      it "returns true when the geozone exists" do
+        expect(UserSegments.valid_segment?("lands_and_borderlands")).to be true
+        expect(UserSegments.valid_segment?("lowlands_and_highlands")).to be true
+      end
+
+      it "returns true when the segment exists" do
+        expect(UserSegments.valid_segment?("all_users")).to be true
+      end
+
+      it "is falsey when the segment doesn't exist" do
+        expect(UserSegments.valid_segment?("imaginary_segment")).to be_falsey
+      end
+
+      it "is falsey when nil is passed" do
+        expect(UserSegments.valid_segment?(nil)).to be_falsey
+      end
     end
   end
 
@@ -254,6 +298,42 @@ describe UserSegments do
 
       emails = UserSegments.user_segment_emails(:all_users)
       expect(emails).to eq ["first@email.com", "last@email.com"]
+    end
+  end
+
+  context "Geozones" do
+    let!(:new_york) { create(:geozone, name: "New York") }
+    let!(:california) { create(:geozone, name: "California") }
+    let!(:user1) { create(:user, geozone: new_york) }
+    let!(:user2) { create(:user, geozone: new_york) }
+    let!(:user3) { create(:user, geozone: california) }
+
+    before do
+      create(:geozone, name: "Mars")
+      create(:user, geozone: nil)
+    end
+
+    it "includes geozones in available segments" do
+      expect(UserSegments.segments).to include("new_york")
+      expect(UserSegments.segments).to include("california")
+      expect(UserSegments.segments).to include("mars")
+      expect(UserSegments.segments).not_to include("jupiter")
+    end
+
+    it "returns users of a geozone" do
+      expect(UserSegments.recipients("new_york")).to match_array [user1, user2]
+      expect(UserSegments.recipients("california")).to eq [user3]
+    end
+
+    it "accepts symbols as parameters" do
+      expect(UserSegments.recipients(:new_york)).to match_array [user1, user2]
+      expect(UserSegments.recipients(:california)).to eq [user3]
+    end
+
+    it "only returns active users of a geozone" do
+      user2.update!(erased_at: Time.current)
+
+      expect(UserSegments.recipients("new_york")).to eq [user1]
     end
   end
 end
