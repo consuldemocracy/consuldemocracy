@@ -4,12 +4,12 @@ feature 'Executions' do
 
   let(:budget)  { create(:budget, phase: 'finished') }
   let(:group)   { create(:budget_group, budget: budget) }
-  let(:heading) { create(:budget_heading, group: group, price: 1000) }
+  let(:heading) { create(:budget_heading, group: group) }
 
-  let!(:investment1) { create(:budget_investment, :winner,       heading: heading, price: 200, ballot_lines_count: 900) }
-  let!(:investment2) { create(:budget_investment, :winner,       heading: heading, price: 300, ballot_lines_count: 800) }
-  let!(:investment3) { create(:budget_investment, :incompatible, heading: heading, price: 500, ballot_lines_count: 700) }
-  let!(:investment4) { create(:budget_investment, :winner,       heading: heading, price: 600, ballot_lines_count: 600) }
+  let!(:investment1) { create(:budget_investment, :winner,       heading: heading) }
+  let!(:investment2) { create(:budget_investment, :winner,       heading: heading) }
+  let!(:investment4) { create(:budget_investment, :winner,       heading: heading) }
+  let!(:investment3) { create(:budget_investment, :incompatible, heading: heading) }
 
   scenario 'only displays investments with milestones' do
     create(:budget_investment_milestone, investment: investment1)
@@ -101,10 +101,10 @@ feature 'Executions' do
 
     scenario "renders last milestone's image if investment has multiple milestones with images associated" do
       milestone1 = create(:budget_investment_milestone, investment: investment1,
-                                                        publication_date: Date.yesterday)
+                                                        publication_date: 2.weeks.ago)
 
       milestone2 = create(:budget_investment_milestone, investment: investment1,
-                                                        publication_date: Date.tomorrow)
+                                                        publication_date: Date.yesterday)
 
       create(:image, imageable: milestone1, title: 'First milestone image')
       create(:image, imageable: milestone2, title: 'Second milestone image')
@@ -156,6 +156,26 @@ feature 'Executions' do
 
     scenario 'are based on latest milestone status', :js do
       create(:budget_investment_milestone, investment: investment1,
+                                           publication_date: 1.month.ago,
+                                           status: status1)
+
+      create(:budget_investment_milestone, investment: investment1,
+                                           publication_date: Date.yesterday,
+                                           status: status2)
+
+      visit budget_path(budget)
+      click_link 'See results'
+      click_link 'Milestones'
+
+      select 'Studying the project', from: 'status'
+      expect(page).not_to have_content(investment1.title)
+
+      select 'Bidding', from: 'status'
+      expect(page).to have_content(investment1.title)
+    end
+
+    scenario 'milestones with future dates are not shown', :js do
+      create(:budget_investment_milestone, investment: investment1,
                                            publication_date: Date.yesterday,
                                            status: status1)
 
@@ -164,20 +184,14 @@ feature 'Executions' do
                                            status: status2)
 
       visit budget_path(budget)
-
       click_link 'See results'
       click_link 'Milestones'
 
-      expect(page).to have_content(investment1.title)
-
       select 'Studying the project', from: 'status'
-
-      expect(page).not_to have_content(investment1.title)
+      expect(page).to have_content(investment1.title)
 
       select 'Bidding', from: 'status'
-
-      expect(page).to have_content(investment1.title)
-      expect(page).not_to have_content('No winner investments for this heading')
+      expect(page).not_to have_content(investment1.title)
     end
   end
 
