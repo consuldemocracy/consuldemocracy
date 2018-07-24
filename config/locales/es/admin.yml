@@ -612,6 +612,27 @@ es:
       winner_investment_authors: Usuarios autores de proyectos de gasto ganadoras en los actuales presupuestos
       not_supported_on_current_budget: Usuarios que no han apoyado proyectos de los actuales presupuestos
       invalid_recipients_segment: "El segmento de destinatarios es inválido"
+      arganzuela: Arganzuela
+      barajas: Barajas
+      carabanchel: Carabanchel
+      centro: Centro
+      chamartin: Chamartín
+      chamberi: Chamberí
+      ciudad_lineal: Ciudad Lineal
+      fuencarral_el_pardo: Fuencarral-El Pardo
+      hortaleza: Hortaleza
+      latina: Latina
+      moncloa_aravaca: Moncloa-Aravaca
+      moratalaz: Moratalaz
+      puente_de_vallecas: Puente de Vallecas
+      retiro: Retiro
+      salamanca: Salamanca
+      san_blas_canillejas: San Blas-Canillejas
+      tetuan: Tetuán
+      usera: Usera
+      vicalvaro: Vicálvaro
+      villa_de_vallecas: Villa de Vallecas
+      villaverde: Villaverde
     newsletters:
       create_success: Newsletter creada correctamente
       update_success: Newsletter actualizada correctamente

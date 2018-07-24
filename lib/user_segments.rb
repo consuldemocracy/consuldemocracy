@@ -7,7 +7,7 @@ class UserSegments
                 selected_investment_authors
                 winner_investment_authors
                 not_supported_on_current_budget
-                beta_testers)
+                beta_testers) + Geozone.all.map(&:name).map(&:parameterize).map(&:underscore).sort - ["city"]
 
   def self.all_users
     User.active
@@ -60,6 +60,13 @@ class UserSegments
     User.where(email: testers)
   end
 
+  Geozone.all.each do |geozone|
+    method_name = geozone.name.parameterize.underscore
+    self.define_singleton_method(:"#{method_name}") do
+      all_users.where(geozone: geozone)
+    end
+  end
+
   def self.user_segment_emails(users_segment)
     UserSegments.send(users_segment).newsletter.pluck(:email).compact
   end
@@ -73,4 +80,5 @@ class UserSegments
   def self.author_ids(author_ids)
     all_users.where(id: author_ids)
   end
+
 end
