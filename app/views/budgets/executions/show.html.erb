@@ -44,7 +44,7 @@
       <%= t("budgets.executions.heading_selection_title") %>
     </h3>
     <ul class="menu vertical no-margin-top no-padding-top">
-      <% @headings.each do |heading| %>
+      <% @investments_by_heading.each_pair do |heading, investments| %>
         <li>
           <%= link_to heading.name, "#" + heading.name.parameterize %>
         </li>
@@ -56,13 +56,14 @@
     <%= form_tag(budget_executions_path(@budget), method: :get) do %>
       <div class="small-12 medium-3 column">
         <%= label_tag t("budgets.executions.filters.label") %>
-        <%= select_tag :status, options_from_collection_for_select(
-          @statuses, :id, :name, params[:status]
-        ), class: "js-submit-on-change", prompt: t("budgets.executions.filters.all") %>
+        <%= select_tag :status,
+                      options_from_collection_for_select(@statuses, :id, :name, params[:status]),
+                      class: "js-submit-on-change",
+                      prompt: t("budgets.executions.filters.all") %>
       </div>
     <% end %>
 
-    <% if @headings.any? %>
+    <% if @investments_by_heading.any? %>
       <%= render 'budgets/executions/investments' %>
     <% else %>
       <div class="callout primary clear">
