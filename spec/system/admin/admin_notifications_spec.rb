@@ -215,7 +215,7 @@ describe "Admin Notifications", :admin do
   end
 
   scenario "Select list of users to send notification" do
-    UserSegments::SEGMENTS.each do |user_segment|
+    UserSegments.segments.each do |user_segment|
       segment_recipient = I18n.t("admin.segment_recipient.#{user_segment}")
 
       visit new_admin_admin_notification_path

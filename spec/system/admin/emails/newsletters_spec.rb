@@ -162,7 +162,7 @@ describe "Admin newsletter emails", :admin do
   end
 
   scenario "Select list of users to send newsletter" do
-    UserSegments::SEGMENTS.each do |user_segment|
+    UserSegments.segments.each do |user_segment|
       visit new_admin_newsletter_path
 
       fill_in_newsletter_form(segment_recipient: I18n.t("admin.segment_recipient.#{user_segment}"))

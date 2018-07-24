@@ -1,13 +1,15 @@
 class UserSegments
-  SEGMENTS = %w[all_users
-                administrators
-                all_proposal_authors
-                proposal_authors
-                investment_authors
-                feasible_and_undecided_investment_authors
-                selected_investment_authors
-                winner_investment_authors
-                not_supported_on_current_budget].freeze
+  def self.segments
+    %w[all_users
+       administrators
+       all_proposal_authors
+       proposal_authors
+       investment_authors
+       feasible_and_undecided_investment_authors
+       selected_investment_authors
+       winner_investment_authors
+       not_supported_on_current_budget].freeze
+  end
 
   def self.all_users
     User.active.where.not(confirmed_at: nil)
