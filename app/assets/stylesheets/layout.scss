@@ -2491,10 +2491,6 @@ table {
     padding: 0 $line-height / 2;
     position: relative;
 
-    a {
-      word-wrap: break-word;
-    }
-
     .icon-document {
       color: #007bb7;
       display: inline-block;
@@ -2507,6 +2503,10 @@ table {
       margin-bottom: 0;
     }
   }
+}
+
+.document-link a {
+  word-wrap: break-word;
 }
 
 .additional-document-link {
