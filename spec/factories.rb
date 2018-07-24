@@ -1124,7 +1124,7 @@ LOREM_IPSUM
 
   factory :newsletter do
     sequence(:subject) { |n| "Subject #{n}" }
-    segment_recipient  UserSegments::SEGMENTS.sample
+    segment_recipient  UserSegments.segments.sample
     sequence(:from)    { |n| "noreply#{n}@consul.dev" }
     sequence(:body)    { |n| "Body #{n}" }
   end
@@ -1133,7 +1133,7 @@ LOREM_IPSUM
     title             { |n| "Admin Notification title #{n}" }
     body              { |n| "Admin Notification body #{n}" }
     link              nil
-    segment_recipient UserSegments::SEGMENTS.sample
+    segment_recipient UserSegments.segments.sample
     recipients_count  nil
     sent_at           nil
 

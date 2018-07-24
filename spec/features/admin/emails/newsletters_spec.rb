@@ -146,14 +146,33 @@ feature "Admin newsletter emails" do
     end
   end
 
-  scenario "Select list of users to send newsletter" do
-    UserSegments::SEGMENTS.each do |user_segment|
-      visit new_admin_newsletter_path
+  context "Select list of users to send newsletter" do
 
-      fill_in_newsletter_form(segment_recipient: I18n.t("admin.segment_recipient.#{user_segment}"))
-      click_button "Create Newsletter"
+    scenario "Custom user segments" do
+      UserSegments.segments.each do |user_segment|
+        visit new_admin_newsletter_path
 
-      expect(page).to have_content(I18n.t("admin.segment_recipient.#{user_segment}"))
+        fill_in_newsletter_form(segment_recipient: I18n.t("admin.segment_recipient.#{user_segment}"))
+        click_button "Create Newsletter"
+
+        expect(page).to have_content(I18n.t("admin.segment_recipient.#{user_segment}"))
+      end
     end
+
+    scenario "Geozone segments" do
+      create(:geozone, name: "Arganzuela")
+      create(:geozone, name: "Barajas")
+      create(:geozone, name: "Centro")
+
+      Geozone.pluck(:name).each do |geozone|
+        visit new_admin_newsletter_path
+
+        fill_in_newsletter_form(segment_recipient: I18n.t("admin.segment_recipient.#{geozone.parameterize.underscore}"))
+        click_button "Create Newsletter"
+
+        expect(page).to have_content(I18n.t("admin.segment_recipient.#{geozone.parameterize.underscore}"))
+      end
+    end
+
   end
 end
