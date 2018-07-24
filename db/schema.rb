@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180718115545) do
+ActiveRecord::Schema.define(version: 20180723093127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1308,7 +1308,6 @@ ActiveRecord::Schema.define(version: 20180718115545) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legacy_legislations"
   add_foreign_key "annotations", "users"
-  add_foreign_key "budget_investments", "communities"
   add_foreign_key "documents", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
@@ -1340,7 +1339,6 @@ ActiveRecord::Schema.define(version: 20180718115545) do
   add_foreign_key "poll_recounts", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
-  add_foreign_key "proposals", "communities"
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
   add_foreign_key "users", "geozones"
