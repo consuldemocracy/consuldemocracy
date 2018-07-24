@@ -44,7 +44,7 @@ module AdminHelper
     ["homepage", "cards"].include?(controller_name)
   end
 
-  def menu_proposals_dashboard?
+  def menu_dashboard?
     ["actions", "administrator_tasks"].include?(controller_name)
   end
 

@@ -1,0 +1,27 @@
+<div class="next-goal row">
+  <div class="column small-12">
+    <i class="fi-flag"></i>
+    <strong>
+      <%= t("dashboard.goal.target_supports", count: number_with_precision(goal.required_supports, delimiter: '.', precision: 0)) %>
+    </strong>
+  </div>
+  <div class="column small-12">&nbsp;</div>
+
+  <div class="column small-12">
+    <i class="fi-unlock"></i>
+    <strong><%= goal.title %></strong>
+  </div>
+  <div class="column small-12 skip-icon">
+    <p class="help-text"><%= t("dashboard.goal.unlocked_resource") %></p>
+  </div>
+
+  <% if goal.day_offset.positive? %>
+    <div class="column small-12">
+      <strong><%= t("dashboard.goal.days", count: goal.day_offset) %></strong>
+    </div>
+    <div class="column small-12">
+      <p class="help-text"><%= t("dashboard.goal.ideal_time") %></p>
+    </div>
+  <% end %>
+</div>
+

@@ -1,0 +1,26 @@
+<% content_for :action_title, dashboard_action.title %>
+
+<div class="row">
+  <div class="small-12 medium-8 column">
+    <%== dashboard_action.description %>
+    <%= render 'dashboard/form' %>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <% if dashboard_action.links.any? %>
+      <div class="proposal-dashboard-action-links">
+        <h3><%= t("dashboard.new_request.links") %></h3>
+        <% dashboard_action.links.each do |link| %>
+          <% if link.open_in_new_tab %>
+            <%= link_to link.label, link.url, target: '_blank' %>
+          <% else %>
+            <%= link_to link.label, link.url %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= render 'documents/documents', documents: dashboard_action.documents %>
+  </div>
+</div>
+

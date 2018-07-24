@@ -1,0 +1,11 @@
+<div class="dashboard-action-new row">
+  <div class="small-12 column">
+    <%= back_link_to admin_dashboard_actions_path, t("admin.dashboard.actions.new.back") %>
+
+    <h1><%= t("admin.dashboard.actions.new.creating") %></h1>
+
+    <%= form_for dashboard_action, url: { action: 'create' } do |f| %>
+      <%= render 'form', f: f %>
+    <% end %>
+  </div>
+</div>

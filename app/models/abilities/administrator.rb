@@ -48,7 +48,7 @@ module Abilities
       can [:search, :index], ::User
 
       can :manage, Annotation
-      can :manage, ProposalDashboardAction
+      can :manage, Dashboard::Action
 
       can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
 
@@ -85,6 +85,7 @@ module Abilities
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil
+      can [:manage], Dashboard::AdministratorTask
     end
   end
 end

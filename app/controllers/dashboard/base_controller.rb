@@ -4,7 +4,7 @@ class Dashboard::BaseController < ApplicationController
   helper_method :proposal, :proposed_actions, :resource, :resources, :next_goal, :next_goal_supports, :next_goal_progress, :community_members_count
 
   respond_to :html
-  layout 'proposals_dashboard'
+  layout 'dashboard'
 
   private
 
@@ -13,11 +13,11 @@ class Dashboard::BaseController < ApplicationController
   end
 
   def proposed_actions
-    @proposed_actions ||= ProposalDashboardAction.proposed_actions.active_for(proposal).order(order: :asc)
+    @proposed_actions ||= Dashboard::Action.proposed_actions.active_for(proposal).order(order: :asc)
   end
 
   def resources
-    @resources ||= ProposalDashboardAction.resources.active_for(proposal).order(order: :asc)
+    @resources ||= Dashboard::Action.resources.active_for(proposal).order(order: :asc)
   end
 
   def next_goal_supports
@@ -35,6 +35,6 @@ class Dashboard::BaseController < ApplicationController
   end
 
   def next_goal
-    @next_goal ||= ProposalDashboardAction.next_goal_for(proposal)
+    @next_goal ||= Dashboard::Action.next_goal_for(proposal)
   end
 end

@@ -1,0 +1,44 @@
+<div class="column" id="<%= dom_id(resource) %>">
+  <div class="card resource-card <%= resource_card_class(resource, proposal) %>" 
+       data-tooltip title="<%= resource_tooltip(resource, proposal) %>"
+       data-position="bottom" data-alignment="right">
+    <div class="card-section">
+      <p class="text-right">
+        <% if resource.executed_for?(proposal) %>
+          <i class="fi-check"></i>
+        <% elsif resource.active_for?(proposal) %>
+          <i class="fi-pencil"></i>
+        <% else %>
+          <i class="fi-lock"></i>
+        <% end %>
+      </p>
+      <h4 class="text-center"><%= resource.title %></h4>
+      <p class="text-center">
+        <%= resource.short_description %>
+      </p>
+    </div>
+
+    <div class="card-section text-center bottom-container">
+      <% if resource.executed_for?(proposal) %>
+        <div class="bottom-element text-center">
+          <%= link_to t("dashboard.resource.view_resource"),
+                      new_request_proposal_dashboard_path(proposal, resource),
+                      class: 'button success' %>
+        </div>
+      <% elsif resource.requested_for?(proposal) %>
+        <strong><%= t("dashboard.resource.resource_requested") %></strong>
+      <% elsif resource.active_for?(proposal) %>
+        <div class="bottom-element text-center">
+          <%= link_to t("dashboard.resource.request_resource"),
+                      new_request_proposal_dashboard_path(proposal, resource),
+                      class: 'button primary' %>
+        </div>
+      <% else %>
+        <strong>
+          <%== resoure_availability_label(resource) %>
+        </strong>
+      <% end %>
+    </div>
+  </div>
+</div>
+

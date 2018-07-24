@@ -1,0 +1,55 @@
+<ul id="proposal_dashboard_menu" data-multi-open="false">
+  <li class="section-title">
+    <%= link_to proposal_dashboard_index_path(proposal.to_param), class: my_proposal_menu_class do %>
+      <i class="fi-lightbulb"></i>
+      <strong><%= t("dashboard.menu.my_proposal") %></strong>
+    <% end %>
+  </li>
+
+  <li class="section-title">
+    <%= link_to progress_proposal_dashboard_index_path(proposal.to_param),
+                class: progress_menu_class do %>
+      <span class="fi-graph-trend"></span>
+      <strong><%= t("dashboard.menu.progress") %></strong>
+    <% end %>
+  </li>
+
+  <% if resources_menu_visible?(proposal, resources) %>
+    <li class="section-title">
+      <a href="#" <%= 'class=is-active' if resources_menu_active? %>>
+        <span class="icon-file-text-o"></span>
+        <strong><%= t("dashboard.menu.resources") %></strong>
+      </a>
+
+      <%= resources_menu do %>
+        <% if can?(:manage_polls, proposal) %>
+          <%= polls_menu do %>
+            <%= link_to proposal_dashboard_polls_path(proposal.to_param) do %>
+              <span data-tooltip title="<%= Setting['proposals.poll_short_title'] || t("dashboard.menu.polls") %>">
+                <%= t("dashboard.menu.polls") %>
+              </span>
+            <% end %>
+          <% end %>
+        <% end %>
+
+        <% resources.each do |resource| %>
+          <li <%= 'class=is-active' if is_request_active(resource.id) %>>
+            <%= link_to new_request_proposal_dashboard_path(proposal, resource) do %>
+              <span data-tooltip title="<%= resource.short_description %>">
+                <%= resource.title %>
+              </span>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <li class="section-title">
+    <%= link_to community_proposal_dashboard_index_path(proposal.to_param),
+                class: community_menu_class do %>
+      <span class="fi-torsos-all"></span>
+      <strong><%= t("dashboard.menu.community") %></strong>
+    <% end %>
+  </li>
+</ul>

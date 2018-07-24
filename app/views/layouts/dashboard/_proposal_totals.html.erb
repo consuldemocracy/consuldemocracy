@@ -8,9 +8,9 @@
 
       <div class="counter">
         <div class="counter-value">
-          <%= ProposalDashboardAction.active.resources.active_for(proposal).count %>
+          <%= Dashboard::Action.active.resources.active_for(proposal).count %>
           /
-          <%= ProposalDashboardAction.active.resources.count %>
+          <%= Dashboard::Action.active.resources.count %>
         </div>
         <div class="counter-label"><%= t('.active_resources') %></div>
       </div>

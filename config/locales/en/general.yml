@@ -503,7 +503,7 @@ en:
     update:
       form:
         submit_button: Save changes
-  proposals_dashboard:
+  dashboard:
     menu:
       my_proposal: My proposal
       progress: Progress
@@ -561,7 +561,6 @@ en:
       debates: Debates
       comments: Comments
       latest_comments: Latest messages
-  dashboard:
     polls:
       index:
         title: Polls
