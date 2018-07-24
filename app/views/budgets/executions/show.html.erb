@@ -57,9 +57,12 @@
       <div class="small-12 medium-3 column">
         <%= label_tag t("budgets.executions.filters.label") %>
         <%= select_tag :status,
-                      options_from_collection_for_select(@statuses, :id, :name, params[:status]),
+                      options_from_collection_for_select(@statuses,
+                      :id, lambda { |s| "#{s.name} (#{filters_select_counts(s.id)})" },
+                      params[:status]),
                       class: "js-submit-on-change",
-                      prompt: t("budgets.executions.filters.all") %>
+                      prompt: t("budgets.executions.filters.all",
+                      count: @budget.investments.winners.with_milestones.count) %>
       </div>
     <% end %>
 
