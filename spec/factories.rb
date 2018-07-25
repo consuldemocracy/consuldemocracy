@@ -1056,4 +1056,10 @@ LOREM_IPSUM
   factory :widget_feed, class: 'Widget::Feed' do
   end
 
+  factory :i18n_content, class: 'I18nContent' do
+    key 'debates.index.section_footer.description'
+    value_es 'Texto en español'
+    value_en 'Text in english'
+  end
+
 end
