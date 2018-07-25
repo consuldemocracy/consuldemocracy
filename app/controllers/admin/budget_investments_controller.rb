@@ -84,12 +84,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_investments
-      @investments = if params[:title_or_id].present?
-                       Budget::Investment.search_by_title_or_id(params)
-                     else
-                       Budget::Investment.scoped_filter(params, @current_filter)
-                                         .order(sort_by(params[:sort_by]))
-                     end
+      @investments = Budget::Investment.scoped_filter(params, @current_filter)
+                                       .order(sort_by(params[:sort_by]))
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
