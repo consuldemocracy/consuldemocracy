@@ -11,13 +11,13 @@ feature "Admin custom information texts" do
     visit admin_site_customization_information_texts_path
 
     click_link 'Debates'
-    expect(page).to have_content 'Help about debates'
+    expect(page).to have_content 'Help about citizen debates'
 
     click_link 'Community'
     expect(page).to have_content 'Access the community'
 
     click_link 'Proposals'
-    expect(page).to have_content 'Create proposal'
+    expect(page).to have_content 'Proposal type'
 
     within "#information-texts-tabs" do
       click_link "Polls"
@@ -41,132 +41,75 @@ feature "Admin custom information texts" do
     expect(page).to have_content 'Choose what you want to create'
 
     click_link 'Welcome'
-    expect(page).to have_content 'See all debates'
+    expect(page).to have_content 'See all recommended debates'
   end
 
-  context "Globalization" do
+  scenario 'can be changed and they are correctly shown' do
+    content  = create(:i18n_content)
+    old_text = content.value_en
 
-    scenario "Add a translation", :js do
-      key = "debates.form.debate_title"
+    visit admin_site_customization_information_texts_path
 
-      visit admin_site_customization_information_texts_path
+    select 'English', from: 'translation_locale'
+    fill_in "contents_content_#{content.key}values_value_en", with: 'Custom debates text'
+    click_button "Save"
 
-      select "Français", from: "translation_locale"
-      fill_in "contents_content_#{key}values_value_fr", with: 'Titre personalise du débat'
+    visit debates_path
 
-      click_button "Save"
+    expect(page).to have_content 'Custom debates text'
+    expect(page).not_to have_content old_text
+  end
 
-      expect(page).to have_content 'Translation updated successfully'
+  scenario 'change according to current locale', :js do
+    content = create(:i18n_content)
 
-      select "Français", from: "translation_locale"
+    visit debates_path
 
-      expect(page).to have_content 'Titre personalise du débat'
-      expect(page).not_to have_content 'Titre du débat'
-    end
+    expect(page).to have_content content.value_en
+    expect(page).not_to have_content content.value_es
 
-    scenario "Update a translation", :js do
-      key = "debates.form.debate_title"
-      content = create(:i18n_content, key: key, value_fr: 'Titre personalise du débat')
+    select('Español', from: 'locale-switcher')
 
-      visit admin_site_customization_information_texts_path
+    expect(page).to have_content content.value_es
+    expect(page).not_to have_content content.value_en
+  end
 
-      select "Français", from: "translation_locale"
-      fill_in "contents_content_#{key}values_value_fr", with: 'Titre personalise again du débat'
+  scenario 'languages can be added', :js do
+    content = create(:i18n_content, key: 'debates.form.debate_text')
 
-      click_button 'Save'
-      expect(page).to have_content 'Translation updated successfully'
+    visit admin_site_customization_information_texts_path(locale: :fr)
 
-      click_link 'Français'
+    select 'Français', from: 'translation_locale'
 
-      expect(page).to have_content 'Titre personalise again du débat'
-      expect(page).not_to have_content 'Titre personalise du débat'
-    end
+    click_link 'Français'
+    expect(page).to have_css('a.is-active', text: 'Français')
 
-    scenario "Remove a translation", :js do
-      first_key = "debates.form.debate_title"
-      debate_title = create(:i18n_content, key: first_key,
-                                           value_en: 'Custom debate title',
-                                           value_es: 'Título personalizado de debate')
+    fill_in "contents_content_#{content.key}values_value_fr", with: 'Nouvelle titre en français'
+    click_button 'Enregistrer'
 
-      second_key = "debates.form.debate_text"
-      debate_text = create(:i18n_content, key: second_key,
-                                          value_en: 'Custom debate text',
-                                          value_es: 'Texto personalizado de debate')
+    content.reload
 
-      visit admin_site_customization_information_texts_path
+    expect(page).to have_content 'Nouvelle titre en français'
+    expect(content.value_fr).to eq 'Nouvelle titre en français'
+  end
 
-      click_link "Español"
-      click_link "Remove language"
-      click_button "Save"
+  scenario 'languages can be removed', :js do
+    content = create(:i18n_content)
 
-      expect(page).not_to have_link "Español"
+    visit admin_site_customization_information_texts_path
 
-      click_link 'English'
-      expect(page).to have_content 'Custom debate text'
-      expect(page).to have_content 'Custom debate title'
+    click_link 'Español'
+    expect(page).to have_css('a.is-active', text: 'Español')
 
-      debate_title.reload
-      debate_text.reload
+    click_link 'Remove language'
+    expect(page).not_to have_link('Español')
 
-      expect(debate_text.value_es).to be(nil)
-      expect(debate_title.value_es).to be(nil)
-      expect(debate_text.value_en).to eq('Custom debate text')
-      expect(debate_title.value_en).to eq('Custom debate title')
-    end
+    click_button 'Save'
 
-    context "Javascript interface" do
+    content.reload
 
-      scenario "Highlight current locale", :js do
-        visit admin_site_customization_information_texts_path
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
-
-        select('Español', from: 'locale-switcher')
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
-      end
-
-      scenario "Highlight selected locale", :js do
-        key = "debates.form.debate_title"
-        content = create(:i18n_content, key: key, value_es: 'Título')
-
-        visit admin_site_customization_information_texts_path
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
-
-        click_link "Español"
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
-      end
-
-      scenario "Show selected locale form", :js do
-        key = "debates.form.debate_title"
-        content = create(:i18n_content, key: key,
-                                        value_en: 'Title',
-                                        value_es: 'Título')
-
-        visit admin_site_customization_information_texts_path
-
-        expect(page).to have_field("contents_content_#{key}values_value_en", with: 'Title')
-
-        click_link "Español"
-
-        expect(page).to have_field("contents_content_#{key}values_value_es", with: 'Título')
-      end
-
-      scenario "Select a locale and add it to the form", :js do
-        key = "debates.form.debate_title"
-
-        visit admin_site_customization_information_texts_path
-        select "Français", from: "translation_locale"
-
-        expect(page).to have_link "Français"
-
-        click_link "Français"
-        expect(page).to have_field("contents_content_#{key}values_value_fr")
-      end
-    end
-
+    expect(content.value_es).to be nil
+    expect(page).not_to have_content 'Texto en español'
   end
 
 end
