@@ -9,7 +9,7 @@ class UserSegments
        selected_investment_authors
        winner_investment_authors
        not_supported_on_current_budget
-       beta_testers) + geozones
+       beta_testers) + self.geozones
   end
 
   def self.all_users
@@ -64,13 +64,19 @@ class UserSegments
   end
 
   def self.geozones
-    Geozone.pluck(:name).map(&:parameterize).map(&:underscore).sort - ["city"]
+    if ActiveRecord::Base.connection.table_exists?('geozones')
+      Geozone.pluck(:name).map(&:parameterize).map(&:underscore).sort - ["city"]
+    else
+      []
+    end
   end
 
-  Geozone.all.each do |geozone|
-    method_name = geozone.name.parameterize.underscore
-    self.define_singleton_method(:"#{method_name}") do
-      all_users.where(geozone: geozone)
+  if ActiveRecord::Base.connection.table_exists?('geozones')
+    Geozone.all.each do |geozone|
+      method_name = geozone.name.parameterize.underscore
+      self.define_singleton_method(:"#{method_name}") do
+        all_users.where(geozone: geozone)
+      end
     end
   end
 
