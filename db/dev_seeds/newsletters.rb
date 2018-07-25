@@ -11,6 +11,7 @@ section "Creating Newsletters" do
     " and their quest to ensure the survival of the human species."
   ]
 
+  UserSegments.generate_geozone_segments
   5.times do |n|
     Newsletter.create!(
       subject: "Newsletter subject #{n}",
