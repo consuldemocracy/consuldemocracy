@@ -14,7 +14,7 @@ section "Creating Newsletters" do
   5.times do |n|
     Newsletter.create!(
       subject: "Newsletter subject #{n}",
-      segment_recipient: UserSegments::SEGMENTS.sample,
+      segment_recipient: UserSegments.segments.sample,
       from: 'no-reply@consul.dev',
       body: newsletter_body.sample,
       sent_at: [Time.now, nil].sample
