@@ -6,6 +6,7 @@
       <h2><%= t("dashboard.mailer.forward.subtitle") %></h2>
     </div>
     <%= image_tag proposal.image.attachment.url(:large), class: 'proposal-image' if proposal.image.present? %>
+    <%= image_tag 'default_mailing.jpg', class: 'proposal-image' unless proposal.image.present? %>
     <div class="mail-body">
       <%== t("dashboard.mailer.forward.introduction") %>
       <%= link_to t("dashboard.mailer.forward.support_it"), proposal_url(@proposal), class: 'support-link' %>
