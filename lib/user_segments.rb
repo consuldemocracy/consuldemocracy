@@ -8,7 +8,7 @@ class UserSegments
        feasible_and_undecided_investment_authors
        selected_investment_authors
        winner_investment_authors
-       not_supported_on_current_budget) + self.geozones
+       not_supported_on_current_budget) + geozones
   end
 
   def self.all_users
@@ -53,20 +53,28 @@ class UserSegments
   end
 
   def self.geozones
-    if ActiveRecord::Base.connection.table_exists?('geozones')
-      Geozone.pluck(:name).map(&:parameterize).map(&:underscore).sort - ["city"]
-    else
-      []
-    end
+    geozones_available? ? geozone_names : []
   end
 
-  if ActiveRecord::Base.connection.table_exists?('geozones')
+  def self.geozones_available?
+    ActiveRecord::Base.connection.table_exists?('geozones')
+  end
+
+  def self.geozone_names
+    Geozone.pluck(:name).map(&:parameterize).map(&:underscore).sort - ["city"]
+  end
+
+  def self.generate_geozone_segments
     Geozone.all.each do |geozone|
       method_name = geozone.name.parameterize.underscore
       self.define_singleton_method(:"#{method_name}") do
         all_users.where(geozone: geozone)
       end
     end
+  end
+
+  if self.geozones_available?
+    self.generate_geozone_segments
   end
 
   def self.user_segment_emails(users_segment)
@@ -82,4 +90,5 @@ class UserSegments
   def self.author_ids(author_ids)
     all_users.where(id: author_ids)
   end
+
 end
