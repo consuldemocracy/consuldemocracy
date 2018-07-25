@@ -54,16 +54,13 @@
                                   title: t("shared.go_to_page") + t("layouts.header.budgets") %>
       </li>
     <% end %>
-
-    <% unless content_block("main_navigation_left", I18n.locale) || content_block("main_navigation_right", I18n.locale) %>
-      <li>
-        <%= link_to t("layouts.header.help"),
-                      help_path,
-                      accesskey: "6",
-                      class: ("is-active" if current_page?(help_path)),
-                      title: t("shared.go_to_page") + t("layouts.header.help") %>
-      </li>
-    <% end %>
+    <li>
+      <%= link_to t("layouts.header.help"),
+                    help_path,
+                    accesskey: "6",
+                    class: ("is-active" if current_page?(help_path)),
+                    title: t("shared.go_to_page") + t("layouts.header.help") %>
+    </li>
     
     <%= raw content_block("main_navigation_right", I18n.locale) %>
   </ul>
