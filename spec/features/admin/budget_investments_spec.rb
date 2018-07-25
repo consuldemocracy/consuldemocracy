@@ -617,7 +617,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content('Some investment')
       expect(page).to have_content('Some other investment')
 
-      fill_in 'title_or_id', with: 999999
+      fill_in 'title_or_id', with: first_investment.id
       click_button 'Filter'
 
       expect(page).to have_content('Some other investment')
