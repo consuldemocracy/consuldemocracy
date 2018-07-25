@@ -31,11 +31,19 @@ module ProposalsDashboardHelper
   end
 
   def resources_menu_active?
-    polls_menu_active? || is_resource_request? 
+    polls_menu_active? || mailing_menu_active? || is_resource_request? 
   end
 
   def polls_menu_active?
     controller_name == 'polls'
+  end
+
+  def mailing_menu(&block)
+    menu_entry(mailing_menu_active?, &block)
+  end
+
+  def mailing_menu_active?
+    controller_name == 'mailing'
   end
 
   def menu_group(id, active, &block)

@@ -1,0 +1,26 @@
+<% if can?(:manage_mailing, proposal) %>
+  <div class="column">
+    <div class="card resource-card primary"
+         data-tooltip title="<%= t("dashboard.resource.request_resource") %>"
+         data-position="bottom" data-alignment="right">
+      <div class="card-section">
+        <p class="text-right">
+          <i class="fi-pencil resource-icon"></i>
+        </p>
+        <h4 class="text-center"><%= t("dashboard.menu.mailing") %></h4>
+        <p class="text-center">
+          <%= Setting['proposals.email_short_title'] %>
+        </p>
+      </div>
+
+      <div class="card-section text-center bottom-container">
+        <div class="bottom-element text-center">
+          <%= link_to t("dashboard.resource.request_resource"),
+                      new_proposal_dashboard_mailing_path(proposal.to_param),
+                      class: 'button primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+

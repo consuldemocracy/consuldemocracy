@@ -68,3 +68,5 @@ es:
       poll_short_title: Subtítulo funcionalidad encuestas
       poll_description: Descripción funcionalidad encuestas
       poll_link: Enlace información adicional
+      email_short_title: Subtítulo funcionalidad de correo electrónico
+      email_description: Descripción funcionalidad de correo electrónico

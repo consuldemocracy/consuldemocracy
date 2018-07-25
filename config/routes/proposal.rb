@@ -22,6 +22,7 @@ resources :proposals do
 
   namespace :dashboard do
     resources :polls, except: [:show, :destroy]
+    resources :mailing, only: [:index, :new, :create]
   end
 
   member do

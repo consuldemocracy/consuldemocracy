@@ -45,6 +45,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.cache_store = :dalli_store
+  config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
 
   config.after_initialize do
     Bullet.enable = true

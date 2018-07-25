@@ -510,6 +510,7 @@ es:
       resources: Recursos
       community: Comunidad
       polls: Encuestas
+      mailing: Correo electrónico
     form:
       request: Solicitar
     create_request:
@@ -586,6 +587,47 @@ es:
         add_answer: Añadir respuesta
       question_answer_fields:
         remove_answer: Borrar respuesta
+    mailing:
+      index:
+        title: Previsualización del correo electrónico
+      new:
+        title: Funcionalidad de correo electrónico
+      mailing_options:
+        send: Enviar a %{address}
+        preview: Previsualizar
+      create:
+        sent: El e-mail ha sido enviado
+    mailer:
+      forward:
+        subtitle: Si me apoyas, lo conseguiremos.
+        support_it: Apoyar esta propuesta
+        share_in: Compartir en
+        introduction:
+          <p>¡Hola!</p>
+
+          <p>
+            Te escribo para comunicarte que estoy
+            participando en Decide Madrid, la plataforma para que
+            los madrileños y madrileñas podamos decidir qué ciudad
+            queremos. Y para ello, he creado mi propia propuesta ciudadana
+            y ahora, ¡voy a necesitar tu apoyo! Pero no te preocupes porque 
+            es muy sencillo.
+          </p>
+
+          <p>
+            Tan sólo tienes que pinchar en el botón que verás a continuación 
+            'Apoyar esta propuesta' y directamente podrás informarte a cerca de
+            ella antes de impulsarla. Sólo las propuestas que consigan el
+            máximo apoyo se llevarán a cabo por parte de nuestro Ayuntamiento,
+            y he pensado que tú, ¡seguro que me ayudas a lograrlo!
+          </p>
+        share_info:
+          "<p>
+            Y si además, me haces el gran favor de compartir mi propuesta con 
+            tus amigos, familiares y contactos, ¡ya sería la bomba! Puedes
+            hacerlo a continuación desde la red social que tú quieras o desde tu
+            correo electrónico:
+          </p>"
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"

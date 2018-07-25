@@ -137,3 +137,5 @@ Setting['proposals.successful_proposal_id'] = nil
 Setting['proposals.poll_short_title'] = nil
 Setting['proposals.poll_description'] = nil
 Setting['proposals.poll_link'] = nil
+Setting['proposals.email_short_title'] = nil
+Setting['proposals.email_description'] = nil
