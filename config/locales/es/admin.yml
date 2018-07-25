@@ -187,18 +187,20 @@ es:
           undecided: "Sin decidir"
         selected: "Seleccionada"
         select: "Seleccionar"
-        table_id: "ID"
-        table_title: "Título"
-        table_supports: "Apoyos"
-        table_admin: "Administrador"
-        table_valuator: "Evaluador"
-        table_valuation_group: "Grupos evaluadores"
-        table_geozone: "Ámbito de actuación"
-        table_feasibility: "Viabilidad"
-        table_valuation_finished: "Ev. Fin."
-        table_selection: "Seleccionado"
-        table_evaluation: "Mostrar a evaluadores"
-        table_incompatible: "Incompatible"
+        list:
+          id: ID
+          title: Título
+          supports: Apoyos
+          admin: Administrador
+          valuator: Evaluador
+          valuation_group: Grupos evaluadores
+          geozone: Ámbito de actuación
+          feasibility: Viabilidad
+          valuation_finished: Ev. Fin.
+          selected: Seleccionado
+          visible_to_valuators: Mostrar a evaluadores
+          author_username: Usuario autor
+          incompatible: Incompatible
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
       show:

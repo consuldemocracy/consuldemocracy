@@ -186,18 +186,20 @@ en:
           undecided: "Undecided"
         selected: "Selected"
         select: "Select"
-        table_id: "ID"
-        table_title: "Title"
-        table_supports: "Supports"
-        table_admin: "Administrator"
-        table_valuator: "Valuator"
-        table_valuation_group: "Valuation Group"
-        table_geozone: "Scope of operation"
-        table_feasibility: "Feasibility"
-        table_valuation_finished: "Val. Fin."
-        table_selection: "Selected"
-        table_evaluation: "Show to valuators"
-        table_incompatible: "Incompatible"
+        list:
+          id: ID
+          title: Title
+          supports: Supports
+          admin: Administrator
+          valuator: Valuator
+          valuation_group: Valuation Group
+          geozone: Scope of operation
+          feasibility: Feasibility
+          valuation_finished: Val. Fin.
+          selected: Selected
+          visible_to_valuators: Show to valuators
+          author_username: Author username
+          incompatible: Incompatible
         cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
         see_results: "See results"
       show:
