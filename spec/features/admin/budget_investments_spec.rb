@@ -1060,13 +1060,15 @@ feature 'Admin budget investments' do
                                                          cached_votes_up: 88, price: 99,
                                                          valuators: [],
                                                          valuator_groups: [valuator_group],
-                                                         administrator: admin)
+                                                         administrator: admin,
+                                                         visible_to_valuators: true)
       second_investment = create(:budget_investment, :unfeasible, title: "Alt Investment",
                                                          budget: budget, group: budget_group,
                                                          heading: second_budget_heading,
                                                          cached_votes_up: 66, price: 88,
                                                          valuators: [valuator],
-                                                         valuator_groups: [])
+                                                         valuator_groups: [],
+                                                         visible_to_valuators: false)
 
       visit admin_budget_budget_investments_path(budget)
 
@@ -1077,10 +1079,11 @@ feature 'Admin budget investments' do
       expect(header).to match(/filename="budget_investments.csv"$/)
 
       csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation,"\
-                     "Feasibility,Val. Fin.,Selected\n#{first_investment.id},Le Investment,88,"\
-                     "Admin,-,Valuator Group,Budget Heading,Feasible (€99),Yes,Yes\n"\
-                     "#{second_investment.id},Alt Investment,66,No admin assigned,Valuator,-,"\
-                     "Other Heading,Unfeasible,No,No\n"
+                     "Feasibility,Val. Fin.,Selected,Show to valuators,Author username\n"\
+                     "#{first_investment.id},Le Investment,88,Admin,-,Valuator Group,"\
+                     "Budget Heading,Feasible (€99),Yes,Yes,Yes,#{first_investment.author.username}\n#{second_investment.id},"\
+                     "Alt Investment,66,No admin assigned,Valuator,-,Other Heading,"\
+                     "Unfeasible,No,No,No,#{second_investment.author.username}\n"
       expect(page.body).to eq(csv_contents)
     end
 
