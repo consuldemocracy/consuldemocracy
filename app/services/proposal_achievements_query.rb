@@ -18,7 +18,7 @@ class ProposalAchievementsQuery
       achievements.each do |achievement|
         grouped_results[key] << {
           executed_at: achievements.last.executed_at,
-          title: achievements.last.proposal_dashboard_action.title
+          title: achievements.last.action.title
         }
       end
     end
@@ -36,11 +36,11 @@ class ProposalAchievementsQuery
   end
 
   def achievements
-    ProposalExecutedDashboardAction
-      .joins(:proposal_dashboard_action)
-      .includes(:proposal_dashboard_action)
+    Dashboard::ExecutedAction
+      .joins(:action)
+      .includes(:action)
       .where(proposal: proposal, executed_at: start_date.beginning_of_day..end_date.end_of_day)
-      .where(proposal_dashboard_actions: { action_type: 0 })
+      .where(dashboard_actions: { action_type: 0 })
       .order(executed_at: :asc)
   end
 

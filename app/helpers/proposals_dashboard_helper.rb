@@ -1,6 +1,6 @@
 module ProposalsDashboardHelper
   def my_proposal_menu_class
-    return 'is-active' if controller_name == 'proposals_dashboard' && action_name == 'index'
+    return 'is-active' if controller_name == 'dashboard' && action_name == 'index'
     nil
   end
 
@@ -10,12 +10,12 @@ module ProposalsDashboardHelper
   end
 
   def community_menu_class
-    return 'is-active' if controller_name == 'proposals_dashboard' && action_name == 'community'
+    return 'is-active' if controller_name == 'dashboard' && action_name == 'community'
     nil
   end
 
   def progress_menu_active?
-    is_proposed_action_request? || (controller_name == 'proposals_dashboard' && action_name == 'progress')
+    is_proposed_action_request? || (controller_name == 'dashboard' && action_name == 'progress')
   end
 
   def resources_menu_visible?(proposal, resources)
@@ -56,24 +56,24 @@ module ProposalsDashboardHelper
   end
 
   def is_resource_request?
-    controller_name == 'proposals_dashboard' && action_name == 'new_request' && proposal_dashboard_action&.resource?
+    controller_name == 'dashboard' && action_name == 'new_request' && dashboard_action&.resource?
   end
 
   def is_proposed_action_request?
-    controller_name == 'proposals_dashboard' && action_name == 'new_request' && proposal_dashboard_action&.proposed_action?
+    controller_name == 'dashboard' && action_name == 'new_request' && dashboard_action&.proposed_action?
   end
 
   def is_request_active(id)
-    controller_name == 'proposals_dashboard' && action_name == 'new_request' && proposal_dashboard_action&.id == id
+    controller_name == 'dashboard' && action_name == 'new_request' && dashboard_action&.id == id
   end
   
   def resoure_availability_label(resource)
     label = []
 
-    label << t('proposals_dashboard.resource.required_days', days: resource.day_offset) if resource.day_offset > 0
-    label << t('proposals_dashboard.resource.required_supports', supports: number_with_delimiter(resource.required_supports, delimiter: '.')) if resource.required_supports > 0
+    label << t("dashboard.resource.required_days", days: resource.day_offset) if resource.day_offset > 0
+    label << t("dashboard.resource.required_supports", supports: number_with_delimiter(resource.required_supports, delimiter: '.')) if resource.required_supports > 0
 
-    label.join(" #{t('proposals_dashboard.resource.and')}<br>")
+    label.join(" #{t("dashboard.resource.and")}<br>")
   end
 
   def daily_selected_class
@@ -98,9 +98,9 @@ module ProposalsDashboardHelper
   end
 
   def resource_tooltip(resource, proposal)
-    return t('proposals_dashboard.resource.resource_locked') unless resource.active_for?(proposal)
-    return t('proposals_dashboard.resource.view_resource') if resource.executed_for?(proposal)
-    return t('proposals_dashboard.resource.resource_requested') if resource.requested_for?(proposal)
-    t('proposals_dashboard.resource.request_resource')
+    return t("dashboard.resource.resource_locked") unless resource.active_for?(proposal)
+    return t("dashboard.resource.view_resource") if resource.executed_for?(proposal)
+    return t("dashboard.resource.resource_requested") if resource.requested_for?(proposal)
+    t("dashboard.resource.request_resource")
   end
 end

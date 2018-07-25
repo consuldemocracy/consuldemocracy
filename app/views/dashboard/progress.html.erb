@@ -1,0 +1,37 @@
+<% content_for :action_title, t("dashboard.progress.title") %>
+
+<div class="row">
+  <div class="small-12 column">
+    <div class="button-group">
+      <%= link_to t("dashboard.progress.group_by_date"), 
+                  progress_proposal_dashboard_index_path(proposal), 
+                  class: "button #{daily_selected_class}" %>
+      <%= link_to t("dashboard.progress.group_by_week"), 
+                  progress_proposal_dashboard_index_path(proposal, group_by: 'week'), 
+                  class: "button #{weekly_selected_class}" %>
+      <%= link_to t("dashboard.progress.group_by_month"),
+                  progress_proposal_dashboard_index_path(proposal, group_by: 'month'),
+                  class: "button #{monthly_selected_class}" %>
+    </div>
+  </div>
+</div>
+
+<div class="small-12 column">
+  <div id="proposal-graph" 
+       data-proposal-graph-url="<%= supports_proposal_dashboard_index_path(proposal, format: :json) %>" 
+       data-successful-proposal-graph-url="<%= successful_supports_proposal_dashboard_index_path(proposal, format: :json) %>"
+       data-proposal-achievements-url="<%= achievements_proposal_dashboard_index_path(proposal, format: :json) %>"
+       data-proposal-graph-group-by="<%= params[:group_by] %>"
+       data-proposal-graph-progress-label="<%= t("dashboard.progress.progress") %>"
+       data-proposal-graph-supports-label="<%= t("dashboard.progress.supports") %>"
+       data-proposal-graph-success-label="<%= t("dashboard.progress.success") %>"
+       data-proposal-success="<%= Setting["votes_for_proposal_success"] %>"
+       class="c3 proposal-graph" 
+       style="max-height: 320px; position: relative;"></div>
+</div>
+
+<%= javascript_include_tag 'dashboard_graphs', 'data-turbolinks-track' => true %>
+
+<%= render 'next_goal' %>
+<%= render 'recommended_actions' %>
+<%= render 'resources' %>

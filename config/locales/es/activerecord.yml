@@ -106,10 +106,10 @@ es:
       proposal_notification:
         one: "Notificación de propuesta"
         other: "Notificaciones de propuestas"
-      proposal_dashboard_action:
+      dashboard/action:
         one: Acción del panel de control de propuestas
         other: Acciones del panel de control de propuestas
-      administrator_task:
+      dashboard/administrator_task:
         one: Tarea
         other: Tareas
       link:
@@ -269,7 +269,7 @@ es:
         link_url: URL del enlace
       widget/feed:
         limit: Número de elementos
-      proposal_dashboard_action:
+      dashboard/action:
         title: Título
         short_description: Descripción corta
         description: Descripción
@@ -280,7 +280,7 @@ es:
         order: Orden
         active: Activa
         action_type: Tipo
-      administrator_task:
+      dashboard/administrator_task:
         source: Fuente
         user: Ejecutado por
         executed_at: Ejecutado el

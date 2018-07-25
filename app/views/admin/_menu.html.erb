@@ -237,15 +237,15 @@
     <li class="section-title">
       <a href="#">
         <span class="icon-check"></span>
-        <strong><%= t("admin.menu.proposals_dashboard") %></strong>
+        <strong><%= t("admin.menu.dashboard") %></strong>
       </a>
-      <ul <%= "class=is-active" if menu_proposals_dashboard? %>>
+      <ul <%= "class=is-active" if menu_dashboard? %>>
         <li <%= "class=is-active" if controller_name == "actions" %>>
-          <%= link_to ProposalDashboardAction.model_name.human(count: 2), admin_proposal_dashboard_actions_path %>
+          <%= link_to t("admin.menu.dashboard_actions"), admin_dashboard_actions_path %>
         </li>
 
         <li <%= "class=is-active" if controller_name == "administrator_tasks" %>>
-          <%= link_to admin_proposal_dashboard_administrator_tasks_path do %>
+          <%= link_to admin_dashboard_administrator_tasks_path do %>
             <%= t("admin.menu.administrator_tasks") %>
           <% end %>
         </li>

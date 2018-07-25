@@ -2,7 +2,7 @@ class Dashboard::ResourcesController < Dashboard::BaseController
   skip_authorization_check
 
   def index
-    @resources = ProposalDashboardAction
+    @resources = Dashboard::Action
                  .active
                  .resources
                  .where('required_supports > 0')

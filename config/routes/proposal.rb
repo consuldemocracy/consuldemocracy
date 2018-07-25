@@ -3,7 +3,7 @@ namespace :dashboard do
 end
 
 resources :proposals do
-  resources :proposals_dashboard, as: :dashboard, path: :dashboard, only: [:index] do
+  resources :dashboard, only: [:index] do
     collection do
       patch :publish
       get :supports

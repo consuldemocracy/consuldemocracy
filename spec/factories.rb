@@ -217,6 +217,14 @@ FactoryBot.define do
     trait :draft do
       published_at nil
     end
+
+    trait :retired do
+      retired_at { Time.current }
+    end
+
+    trait :published do
+      published_at { Time.current }
+    end
   end
 
   factory :spending_proposal do
@@ -1029,7 +1037,7 @@ LOREM_IPSUM
   factory :widget_feed, class: 'Widget::Feed' do
   end
 
-  factory :proposal_dashboard_action, class: 'ProposalDashboardAction' do
+  factory :dashboard_action, class: 'Dashboard::Action' do
     title { Faker::Lorem.sentence }
     description { Faker::Lorem.sentence }
     link nil
@@ -1042,13 +1050,11 @@ LOREM_IPSUM
     action_type 'proposed_action'
 
     trait :admin_request do
-      link nil
       request_to_administrators true
     end
 
     trait :external_link do
       link { Faker::Internet.url }
-      request_to_administrators false
     end
 
     trait :inactive do
@@ -1072,14 +1078,14 @@ LOREM_IPSUM
     end
   end
 
-  factory :proposal_executed_dashboard_action, class: 'ProposalExecutedDashboardAction' do
+  factory :dashboard_executed_action, class: 'Dashboard::ExecutedAction' do
     proposal
-    proposal_dashboard_action
+    action { |s| s.association(:dashboard_action) }
     executed_at { Time.current }
   end
 
-  factory :administrator_task do
-    source { |s| s.association(:proposal_executed_dashboard_action) }
+  factory :dashboard_administrator_task, class: 'Dashboard::AdministratorTask' do
+    source { |s| s.association(:dashboard_executed_action) }
     user
     executed_at { Time.current }
 
@@ -1095,7 +1101,7 @@ LOREM_IPSUM
   end
 
   factory :link do
-    linkable { |s| s.association(:proposal_dashboard_action) }
+    linkable { |s| s.association(:action) }
     label { Faker::Lorem.sentence }
     url { Faker::Internet.url }
     open_in_new_tab false

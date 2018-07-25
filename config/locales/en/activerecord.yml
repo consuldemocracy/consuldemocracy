@@ -106,10 +106,10 @@ en:
       proposal_notification:
         one: "Proposal notification"
         other: "Proposal notifications"
-      proposal_dashboard_action:
+      dashboard/action:
         one: Proposal dashboard action
         other: Proposal dashboard actions
-      administrator_task:
+      dashboard/administrator_task:
         one: Task
         other: Tasks
       link:
@@ -268,7 +268,7 @@ en:
         link_url: Link URL
       widget/feed:
         limit: Number of items
-      proposal_dashboard_action:
+      dashboard/action:
         title: Title
         short_description: Short description
         description: Description
@@ -279,7 +279,7 @@ en:
         order: Order
         active: Active
         action_type: Type
-      administrator_task:
+      dashboard/administrator_task:
         source: Source
         user: Executed by
       link:

@@ -1,0 +1,16 @@
+<%= form_for administrator_task, url: { action: 'update' } do |f| %>
+
+  <div class="callout">
+    <h5><%= t("admin.dashboard.administrator_tasks.form.proposal", title: administrator_task.source.proposal.title) %></h5>
+    <p><%= t("admin.dashboard.administrator_tasks.form.request", title: administrator_task.source.action.title) %></p>
+    <%= link_to t("admin.dashboard.administrator_tasks.form.check_details"),
+                proposal_path(administrator_task.source.proposal),
+                target: '_blank' %>
+  </div>
+
+  <div class="row">
+    <div class="actions small-12 large-3 medium-3 column">
+      <%= f.submit(class: 'button expanded', value: t("admin.dashboard.administrator_tasks.form.solve")) %>
+    </div>
+  </div>
+<% end %>
