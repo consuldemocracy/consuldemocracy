@@ -225,6 +225,19 @@ fr:
         pages: Pages personnalisées
         images: Images personnalisées
         content_blocks: Blocs de contenu personnalisés
+        information_texts: "Textes d'information personnalisés"
+        information_texts_menu:
+          debates: "Débats"
+          community: "Communauté"
+          proposals: "Propositions"
+          polls: "Votes"
+          layouts: "Dessins"
+          mailers: "Courriels"
+          management: "Gestion"
+          guides: "Guides"
+          welcome: "Bienvenue"
+        buttons:
+          save: "Enregistrer"
       title_categories: Catégories
       title_moderated_content: Contenu modéré
       title_budgets: Budgets
