@@ -518,9 +518,10 @@ en:
       administrators: Administrators
       managers: Managers
       moderators: Moderators
-      newsletters_and_notifications: Newsletters & Notifications
+      messaging_users: Messages to users
       newsletters: Newsletters
       admin_notifications: Notifications
+      system_emails: System Emails
       emails_download: Emails download
       valuators: Valuators
       poll_officers: Poll officers
@@ -649,6 +650,15 @@ en:
         preview_guide: "This is how the users will see the notification:"
         sent_guide: "This is how the users see the notification:"
         send_alert: Are you sure you want to send this notification to %{n} users?
+    system_emails:
+      preview_pending:
+        action: Preview Pending
+        preview_of: Preview of %{name}
+        pending_to_be_sent: This is the content pending to be sent
+      proposal_notification_digest:
+        title: Proposal Notification Digest
+        description: Gathers all proposal notifications for an user in a single message, to avoid too much emails.
+        preview_detail: Users will only recieve notifications from the proposals they are following
     emails_download:
       index:
         title: Emails download
@@ -1045,6 +1055,11 @@ en:
       image: Image
       show_image: Show image
       moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
+      view: View
+      proposal: Proposal
+      author: Author
+      content: Content
+      created_at: Created at
     spending_proposals:
       index:
         geozone_filter_all: All zones
