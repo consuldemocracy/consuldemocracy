@@ -183,10 +183,10 @@ feature "Admin custom information texts" do
       expect(debate_title.value_en).to eq('Custom debate title')
     end
 
-    context "Globalize javascript interface" do
+    context "Javascript interface" do
 
       scenario "Highlight current locale", :js do
-        visit @edit_milestone_url
+        visit admin_site_customization_information_texts_path
 
         expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
 
@@ -196,7 +196,10 @@ feature "Admin custom information texts" do
       end
 
       scenario "Highlight selected locale", :js do
-        visit @edit_milestone_url
+        key = "debates.form.debate_title"
+        content = create(:i18n_content, key: key, value_es: 'Título')
+
+        visit admin_site_customization_information_texts_path
 
         expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
 
@@ -206,25 +209,30 @@ feature "Admin custom information texts" do
       end
 
       scenario "Show selected locale form", :js do
-        visit @edit_milestone_url
+        key = "debates.form.debate_title"
+        content = create(:i18n_content, key: key,
+                                        value_en: 'Title',
+                                        value_es: 'Título')
 
-        expect(page).to have_field('budget_investment_milestone_description_en', with: 'Description in English')
+        visit admin_site_customization_information_texts_path
+
+        expect(page).to have_field("contents_content_#{key}values_value_en", with: 'Title')
 
         click_link "Español"
 
-        expect(page).to have_field('budget_investment_milestone_description_es', with: 'Descripción en Español')
+        expect(page).to have_field("contents_content_#{key}values_value_es", with: 'Título')
       end
 
       scenario "Select a locale and add it to the milestone form", :js do
-        visit @edit_milestone_url
+        key = "debates.form.debate_title"
 
+        visit admin_site_customization_information_texts_path
         select "Français", from: "translation_locale"
 
         expect(page).to have_link "Français"
 
         click_link "Français"
-
-        expect(page).to have_field('budget_investment_milestone_description_fr')
+        expect(page).to have_field("contents_content_#{key}values_value_fr")
       end
     end
 
