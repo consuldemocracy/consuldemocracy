@@ -7,11 +7,11 @@ module ActionView
       include TagHelper
 
       def t(key, options = {})
-        translation = I18nContent.by_key(key).last
+        translation = I18nContent.by_key(key)
 
         if translation.present?
           Globalize.with_locale(locale) do
-            string = I18nContent.where(key: key).first.value
+            string = translation.first.value
 
             options.each do |key, value|
               string.sub! "%{#{key}}", (value || "%{#{key}}")
