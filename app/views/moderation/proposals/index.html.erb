@@ -2,75 +2,69 @@
 
 <%= render 'shared/filter_subnav', i18n_namespace: "moderation.proposals.index" %>
 
-<div class="row">
-  <h3 class="small-8 large-8 columns"><%= page_entries_info @proposals %></h3>
-  <div class="small-4 large-4 columns">
-    <div class="float-right">
-      <%= t("moderation.proposals.index.order") %>
-      <%= render 'shared/order_selector', i18n_namespace: "moderation.proposals.index" %>
-    </div>
-  </div>
+<h3 class="inline-block"><%= page_entries_info @proposals %></h3>
+<div class="float-right">
+  <%= t("moderation.proposals.index.order") %>
+  <%= render 'shared/order_selector', i18n_namespace: "moderation.proposals.index" %>
 </div>
 
 <%= form_tag moderate_moderation_proposals_path(request.query_parameters), method: :put do %>
-  <p class="js-check">
+  <p class="float-left js-check">
     <%= t('shared.check') %>:
-    <%= link_to t('shared.check_all'), '#', data: {check_all: "proposal_ids[]"} %>
+    <%= link_to t('shared.check_all'), '#', data: { check_all: "proposal_ids[]" } %>
     |
-    <%= link_to t('shared.check_none'), '#', data: {check_none: "proposal_ids[]"} %>
+    <%= link_to t('shared.check_none'), '#', data: { check_none: "proposal_ids[]" } %>
   </p>
 
   <table class="clear">
-    <tr>
-      <th>
-        <%= t("moderation.proposals.index.headers.proposal") %>
-      </th>
-      <th>
-       <%= t("moderation.proposals.index.headers.moderate") %>
-      </th>
-    </tr>
-    <% @proposals.each do |proposal| %>
-      <tr id="proposal_<%= proposal.id %>">
-        <td>
-          <%= link_to proposal.title, proposal, target: "_blank" %>
-          <br>
-          <span class="date"><%= l proposal.updated_at.to_date %></span>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= proposal.flags_count %><span class="icon-flag flag-disable"></span>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= proposal.author.username %>
-          <br>
-          <div class="moderation-description">
-            <%= proposal.description %>
-          </div>
-        </td>
-        <td class="text-center">
-          <%= check_box_tag "proposal_ids[]", proposal.id, nil, id: "#{dom_id(proposal)}_check" %>
-        </td>
+    <thead>
+      <tr>
+        <th><%= t("moderation.proposals.index.headers.proposal") %></th>
+        <th><%= t("moderation.proposals.index.headers.moderate") %></th>
       </tr>
-    <% end %>
+    </thead>
+
+    <tbody>
+      <% @proposals.each do |proposal| %>
+        <tr id="proposal_<%= proposal.id %>">
+          <td>
+            <%= link_to proposal.title, proposal, target: "_blank" %>
+            <br>
+            <span class="date"><%= l proposal.updated_at.to_date %></span>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <%= proposal.flags_count %><span class="icon-flag flag-disable"></span>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <%= proposal.author.username %>
+            <br>
+            <div class="moderation-description">
+              <%= proposal.description %>
+            </div>
+          </td>
+          <td class="text-center">
+            <%= check_box_tag "proposal_ids[]", proposal.id, nil, id: "#{dom_id(proposal)}_check" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 
   <%= submit_tag t('moderation.proposals.index.block_authors'),
-    name: "block_authors",
-    class: "button hollow alert",
-    data: {confirm: t('moderation.proposals.index.confirm')}
-  %>
+                 name: "block_authors",
+                 class: "button hollow alert",
+                 data: { confirm: t('moderation.proposals.index.confirm') } %>
 
   <div class="float-right">
     <%= submit_tag t('moderation.proposals.index.hide_proposals'),
-      name: "hide_proposals",
-      class: "button hollow alert",
-      data: {confirm: t('moderation.proposals.index.confirm')}
-    %>
+                   name: "hide_proposals",
+                   class: "button hollow alert",
+                   data: { confirm: t('moderation.proposals.index.confirm') } %>
+
     <%= submit_tag t('moderation.proposals.index.ignore_flags'),
-      name: "ignore_flags",
-      class: "button hollow",
-      data: {confirm: t('moderation.proposals.index.confirm')}
-    %>
+                   name: "ignore_flags",
+                   class: "button hollow",
+                   data: { confirm: t('moderation.proposals.index.confirm') } %>
   </div>
 
   <%= paginate @proposals %>
 
 <% end %>
-
