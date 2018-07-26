@@ -38,6 +38,11 @@ class ProposalNotification < ActiveRecord::Base
     proposal
   end
 
+  def moderate_system_email(moderator)
+    Notification.where(notifiable_type: 'ProposalNotification', notifiable: self).destroy_all
+    Activity.log(moderator, :hide, self)
+  end
+
   def ignore_flag
     update(ignored_at: Time.current)
   end
@@ -54,11 +59,6 @@ class ProposalNotification < ActiveRecord::Base
 
   def set_author
     self.update(author_id: self.proposal.author_id) if self.proposal
-  end
-
-  def moderate_system_email(moderator)
-    Notification.where(notifiable_type: 'ProposalNotification', notifiable: self).destroy_all
-    Activity.log(moderator, :hide, self)
   end
 
 end
