@@ -67,6 +67,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
     def append_or_create_keys
       @content = {}
+      I18n.backend.send(:init_translations) unless I18n.backend.initialized?
       translations = if params[:locale].present?
                        I18n.backend.send(:translations)[params[:locale].to_sym]
                      else
