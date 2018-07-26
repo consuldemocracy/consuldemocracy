@@ -682,6 +682,7 @@ ActiveRecord::Schema.define(version: 20180711224810) do
     t.date     "sent_at"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.datetime "hidden_at"
   end
 
   create_table "notifications", force: :cascade do |t|

@@ -67,6 +67,7 @@ es:
           on_debates: Debates
           on_proposals: Propuestas
           on_users: Usuarios
+          on_system_emails: Emails del sistema
         title: Actividad de los Moderadores
         type: Tipo
         no_activity: No hay actividad de moderadores.
@@ -656,6 +657,9 @@ es:
         action: Previsualizar Pendientes
         preview_of: Vista previa de %{name}
         pending_to_be_sent: Este es todo el contenido pendiente de enviar
+        moderate_pending: Moderar envío de notificación
+        send_pending : Enviar pendientes
+        send_pending_notification: Notificaciones pendientes enviadas correctamente
       proposal_notification_digest:
         title: Resumen de Notificationes de Propuestas
         description: Reune todas las notificaciones de propuestas en un único mensaje, para evitar demasiados emails.
