@@ -608,8 +608,8 @@ feature 'Admin budget investments' do
     scenario 'Sort by ID' do
       visit admin_budget_budget_investments_path(budget, sort_by: 'id')
 
-      expect('B First Investment').to appear_before('A Second Investment')
-      expect('A Second Investment').to appear_before('C Third Investment')
+      expect('C Third Investment').to appear_before('A Second Investment')
+      expect('A Second Investment').to appear_before('B First Investment')
     end
 
     scenario 'Sort by title' do
@@ -622,8 +622,8 @@ feature 'Admin budget investments' do
     scenario 'Sort by supports' do
       visit admin_budget_budget_investments_path(budget, sort_by: 'supports')
 
-      expect('C Third Investment').to appear_before('A Second Investment')
-      expect('A Second Investment').to appear_before('B First Investment')
+      expect('B First Investment').to appear_before('A Second Investment')
+      expect('A Second Investment').to appear_before('C Third Investment')
     end
   end
 

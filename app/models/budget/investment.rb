@@ -57,6 +57,10 @@ class Budget
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
     scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f.nonzero? ? seed.to_f : 1}, budget_investments.id") }
 
+    scope :sort_by_id, -> { order("id DESC") }
+    scope :sort_by_title, -> { order("title ASC") }
+    scope :sort_by_supports, -> { order("cached_votes_up DESC") }
+
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
     scope :without_valuator,            -> { valuation_open.where(valuator_assignments_count: 0) }
@@ -130,6 +134,12 @@ class Budget
       ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?('undecided')
       ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?('unfeasible')
       results.where("budget_investments.id IN (?)", ids)
+    end
+
+    def self.order_filter(sorting_param)
+      if sorting_param.present? && SORTING_OPTIONS.include?(sorting_param)
+        send("sort_by_#{sorting_param}")
+      end
     end
 
     def self.limit_results(budget, params, results)
