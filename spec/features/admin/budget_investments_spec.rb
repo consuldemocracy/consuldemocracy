@@ -431,9 +431,9 @@ feature 'Admin budget investments' do
       administrator = create(:administrator, user: user)
 
       create(:budget_investment, budget: budget, title: 'Educate the children',
-                                 id: 20, administrator: administrator)
+                                 administrator: administrator)
       create(:budget_investment, budget: budget, title: 'More schools',
-                                 id: 10, administrator: administrator)
+                                 administrator: administrator)
       create(:budget_investment, budget: budget, title: 'More hospitals')
 
 
@@ -452,7 +452,8 @@ feature 'Admin budget investments' do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      fill_in 'title_or_id', with: 20
+      educate_children_investment = Budget::Investment.find_by(title: 'Educate the children')
+      fill_in 'title_or_id', with: educate_children_investment.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -466,11 +467,9 @@ feature 'Admin budget investments' do
 
     scenario "Combination of select with text search", :js do
       create(:budget_investment, budget: budget, title: 'Educate the children',
-                                 feasibility: 'feasible', id: 20,
-                                 valuation_finished: true)
+                                 feasibility: 'feasible', valuation_finished: true)
       create(:budget_investment, budget: budget, title: 'More schools',
-                                 feasibility: 'feasible', id: 10,
-                                 valuation_finished: true)
+                                 feasibility: 'feasible', valuation_finished: true)
       create(:budget_investment, budget: budget, title: 'More hospitals')
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -490,7 +489,8 @@ feature 'Admin budget investments' do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      fill_in 'title_or_id', with: 20
+      educate_children_investment = Budget::Investment.find_by(title: 'Educate the children')
+      fill_in 'title_or_id', with: educate_children_investment.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -507,12 +507,10 @@ feature 'Admin budget investments' do
       administrator = create(:administrator, user: user)
 
       create(:budget_investment, budget: budget, title: 'Educate the children',
-                                 feasibility: 'feasible', id: 20,
-                                 valuation_finished: true,
+                                 feasibility: 'feasible', valuation_finished: true,
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: 'More schools',
-                                 feasibility: 'feasible', id: 10,
-                                 valuation_finished: true,
+                                 feasibility: 'feasible', valuation_finished: true,
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: 'More hospitals',
                                  administrator: administrator)
@@ -547,7 +545,8 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content("More hospitals")
       expect(page).not_to have_content("More hostals")
 
-      fill_in 'title_or_id', with: 20
+      educate_children_investment = Budget::Investment.find_by(title: 'Educate the children')
+      fill_in 'title_or_id', with: educate_children_investment.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
