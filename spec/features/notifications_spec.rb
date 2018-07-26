@@ -205,7 +205,7 @@ feature "Notifications" do
       Notification.send_pending
 
       email = open_last_email
-      expect(email).to have_subject("Proposal notifications in Decide Madrid")
+      expect(email).to have_subject("Proposal notifications in CONSUL")
     end
 
     it "sends emails in batches" do
