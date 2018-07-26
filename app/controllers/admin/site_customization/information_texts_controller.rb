@@ -27,7 +27,8 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
     end
 
-    redirect_to admin_site_customization_information_texts_path, notice: "Translation updated successfully"
+    redirect_to admin_site_customization_information_texts_path,
+                notice: t('flash.actions.update.translation')
   end
 
   private
