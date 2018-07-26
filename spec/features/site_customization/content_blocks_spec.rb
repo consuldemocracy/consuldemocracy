@@ -32,8 +32,8 @@ feature "Custom content blocks" do
   end
 
   scenario "main navigation left" do
-    create(:site_customization_content_block, name: "main_navigation_left", locale: "en", body: "content for left links")
-    create(:site_customization_content_block, name: "main_navigation_left", locale: "es", body: "contenido para left links")
+    create(:site_customization_content_block, name: "subnavigation_left", locale: "en", body: "content for left links")
+    create(:site_customization_content_block, name: "subnavigation_left", locale: "es", body: "contenido para left links")
 
     visit "/?locale=en"
 
@@ -47,8 +47,8 @@ feature "Custom content blocks" do
   end
 
   scenario "main navigation right" do
-    create(:site_customization_content_block, name: "main_navigation_right", locale: "en", body: "content for right links")
-    create(:site_customization_content_block, name: "main_navigation_right", locale: "es", body: "contenido para right links")
+    create(:site_customization_content_block, name: "subnavigation_right", locale: "en", body: "content for right links")
+    create(:site_customization_content_block, name: "subnavigation_right", locale: "es", body: "contenido para right links")
 
     visit "/?locale=en"
 
