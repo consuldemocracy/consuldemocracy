@@ -115,7 +115,7 @@ feature "Admin custom information texts" do
 
   context "Globalization" do
 
-    scenario "Add a translation", :js, :focus do
+    scenario "Add a translation", :js do
       key = "debates.form.debate_title"
 
       visit admin_site_customization_information_texts_path
@@ -134,23 +134,21 @@ feature "Admin custom information texts" do
     end
 
     scenario "Update a translation", :js do
-      visit @edit_milestone_url
+      key = "debates.form.debate_title"
+      content = create(:i18n_content, key: key, value_fr: 'Titre personalise du débat')
 
-      click_link "Español"
-      fill_in 'budget_investment_milestone_description_es', with: 'Descripción correcta en Español'
+      visit admin_site_customization_information_texts_path
 
-      click_button 'Update milestone'
-      expect(page).to have_content "Milestone updated successfully"
+      select "Français", from: "translation_locale"
+      fill_in "contents_content_#{key}values_value_fr", with: 'Titre personalise again du débat'
 
-      visit budget_investment_path(investment.budget, investment)
+      click_button 'Save'
+      expect(page).to have_content 'Translation updated successfully'
 
-      click_link("Milestones (1)")
-      expect(page).to have_content("Description in English")
+      click_link 'Français'
 
-      select('Español', from: 'locale-switcher')
-      click_link("Seguimiento (1)")
-
-      expect(page).to have_content("Descripción correcta en Español")
+      expect(page).to have_content 'Titre personalise again du débat'
+      expect(page).not_to have_content 'Titre personalise du débat'
     end
 
     scenario "Remove a translation", :js do
