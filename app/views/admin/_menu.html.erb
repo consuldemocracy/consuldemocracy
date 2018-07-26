@@ -79,16 +79,22 @@
       </li>
     <% end %>
 
-    <% messages_sections = %w(newsletters emails_download) %>
+    <% messages_sections = %w(newsletters emails_download admin_notifications system_emails) %>
     <% messages_menu_active = messages_sections.include?(controller_name) %>
     <li class="section-title" <%= "class=is-active" if messages_menu_active %>>
       <a href="#">
         <span class="icon-zip"></span>
-        <strong><%= t("admin.menu.emails") %></strong>
+        <strong><%= t("admin.menu.messaging_users") %></strong>
       </a>
-      <ul <%= "class=is-active" if messages_menu_active %>>
+      <ul id="messaging_users_menu" <%= "class=is-active" if messages_menu_active %>>
         <li <%= "class=is-active" if controller_name == "newsletters" %>>
           <%= link_to t("admin.menu.newsletters"), admin_newsletters_path %>
+        </li>
+        <li <%= "class=is-active" if controller_name == "admin_notifications" %>>
+          <%= link_to t("admin.menu.admin_notifications"), admin_admin_notifications_path %>
+        </li>
+        <li <%= "class=is-active" if controller_name == "system_emails" %>>
+          <%= link_to t("admin.menu.system_emails"), admin_system_emails_path %>
         </li>
         <li <%= "class=is-active" if controller_name == "emails_download" %>>
           <%= link_to t("admin.menu.emails_download"), admin_emails_download_index_path %>
@@ -231,7 +237,6 @@
         <li <%= "class=is-active" if controller_name == "content_blocks" %>>
           <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path%>
         </li>
-
       </ul>
     </li>
   </ul>

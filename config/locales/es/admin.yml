@@ -187,18 +187,20 @@ es:
           undecided: "Sin decidir"
         selected: "Seleccionada"
         select: "Seleccionar"
-        table_id: "ID"
-        table_title: "Título"
-        table_supports: "Apoyos"
-        table_admin: "Administrador"
-        table_valuator: "Evaluador"
-        table_valuation_group: "Grupos evaluadores"
-        table_geozone: "Ámbito de actuación"
-        table_feasibility: "Viabilidad"
-        table_valuation_finished: "Ev. Fin."
-        table_selection: "Seleccionado"
-        table_evaluation: "Mostrar a evaluadores"
-        table_incompatible: "Incompatible"
+        list:
+          id: ID
+          title: Título
+          supports: Apoyos
+          admin: Administrador
+          valuator: Evaluador
+          valuation_group: Grupos evaluadores
+          geozone: Ámbito de actuación
+          feasibility: Viabilidad
+          valuation_finished: Ev. Fin.
+          selected: Seleccionado
+          visible_to_valuators: Mostrar a evaluadores
+          author_username: Usuario autor
+          incompatible: Incompatible
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
       show:
@@ -517,8 +519,10 @@ es:
       administrators: Administradores
       managers: Gestores
       moderators: Moderadores
-      emails: Envío de emails
+      messaging_users: Mensajes a usuarios
       newsletters: Newsletters
+      admin_notifications: Notificaciones
+      system_emails: Emails del sistema
       emails_download: Descarga de emails
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
@@ -612,6 +616,50 @@ es:
         body: Contenido del email
         body_help_text: Así es como verán el email los usuarios
         send_alert: ¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?
+    admin_notifications:
+      create_success: Notificación creada correctamente
+      update_success: Notificación actualizada correctamente
+      send_success: Notificación enviada correctamente
+      delete_success: Notificación borrada correctamente
+      index:
+        section_title: Envío de notificaciones
+        new_notification: Crear notificación
+        title: Título
+        segment_recipient: Destinatarios
+        sent: Enviado
+        actions: Acciones
+        draft: Borrador
+        edit: Editar
+        delete: Borrar
+        preview: Previsualizar
+        view: Visualizar
+        empty_notifications: No hay notificaciones para mostrar
+      new:
+        section_title: Nueva notificación
+      edit:
+        section_title: Editar notificación
+      show:
+        section_title: Vista previa de notificación
+        send: Enviar
+        will_get_notified: (%{n} usuarios serán notificados)
+        got_notified: (%{n} usuarios fueron notificados)
+        sent_at: Enviado
+        title: Título
+        body: Texto
+        link: Enlace
+        segment_recipient: Destinatarios
+        preview_guide: "Así es como los usuarios verán la notificación:"
+        sent_guide: "Así es como los usuarios ven la notificación:"
+        send_alert: ¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?
+    system_emails:
+      preview_pending:
+        action: Previsualizar Pendientes
+        preview_of: Vista previa de %{name}
+        pending_to_be_sent: Este es todo el contenido pendiente de enviar
+      proposal_notification_digest:
+        title: Resumen de Notificationes de Propuestas
+        description: Reune todas las notificaciones de propuestas en un único mensaje, para evitar demasiados emails.
+        preview_detail: Los usuarios sólo recibirán las notificaciones de aquellas propuestas que siguen.
     emails_download:
       index:
         title: Descarga de emails
@@ -1008,6 +1056,11 @@ es:
       image: Imagen
       show_image: Mostrar imagen
       moderated_content: "Revisa el contenido moderado por los moderadores, y confirma si la moderación se ha realizado correctamente."
+      view: Ver
+      proposal: Propuesta
+      author: Autor
+      content: Contenido
+      created_at: Fecha de creación
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación

@@ -128,4 +128,58 @@ feature "Notifications" do
     expect(page).to_not have_css("#notifications")
   end
 
+  scenario "Notification's notifiable model no longer includes Notifiable module" do
+    create(:notification, notifiable: create(:spending_proposal), user: user)
+    create(:notification, notifiable: create(:poll_question), user: user)
+
+    click_notifications_icon
+    expect(page).to have_content('This resource is not available anymore.', count: 2)
+  end
+
+  context "Admin Notifications" do
+    let(:admin_notification) do
+      create(:admin_notification, title: 'Notification title',
+                                  body: 'Notification body',
+                                  link: 'https://www.external.link.dev/',
+                                  segment_recipient: 'all_users')
+    end
+
+    let!(:notification) do
+      create(:notification, user: user, notifiable: admin_notification)
+    end
+
+    before do
+      login_as user
+    end
+
+    scenario "With external link" do
+      visit notifications_path
+      expect(page).to have_content('Notification title')
+      expect(page).to have_content('Notification body')
+
+      first("#notification_#{notification.id} a").click
+      expect(page.current_url).to eq('https://www.external.link.dev/')
+    end
+
+    scenario "With internal link" do
+      admin_notification.update_attributes(link: '/stats')
+
+      visit notifications_path
+      expect(page).to have_content('Notification title')
+      expect(page).to have_content('Notification body')
+
+      first("#notification_#{notification.id} a").click
+      expect(page).to have_current_path('/stats')
+    end
+
+    scenario "Without a link" do
+      admin_notification.update_attributes(link: '/stats')
+
+      visit notifications_path
+      expect(page).to have_content('Notification title')
+      expect(page).to have_content('Notification body')
+      expect(page).not_to have_link(notification_path(notification), visible: false)
+    end
+  end
+
 end

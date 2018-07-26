@@ -1,21 +1,11 @@
-<li id="<%= dom_id(notification) %>" class="notification <%= "unread" if notification.unread? %>">
-
-  <% if notification.notifiable_available? %>
-    <%= link_to notification do %>
-      <p>
-        <em>
-          <%= t("notifications.notification.action.#{notification.notifiable_action}",
-                count: notification.counter) %>
-        </em>
-        <strong id="<%= dom_id(notification) %>_title">
-          <%= notification.notifiable_title %>
-        </strong>
-      </p>
-
-      <p class="time">
-        <%= l notification.timestamp, format: :datetime %>
-      </p>
-    <% end %>
+<li id="<%= dom_id(notification) %>" class="notification <%= 'unread' if notification&.unread? %>">
+  <% if notification.notifiable.try(:notifiable_available?) %>
+    <% locals = { notification: notification,
+                  timestamp: notification.timestamp,
+                  title: notification.notifiable_title,
+                  body: notification.notifiable.try(:body) } %>
+    <% link_text = render partial: '/notifications/notification_body', locals: locals %>
+    <%= link_to_if notification.link.present?, link_text, notification.link %>
   <% else %>
     <p>
       <strong>

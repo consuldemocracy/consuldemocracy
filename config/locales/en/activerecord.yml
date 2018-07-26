@@ -283,6 +283,10 @@ en:
           attributes:
             segment_recipient:
               invalid: "The user recipients segment is invalid"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "The user recipients segment is invalid"
         map_location:
           attributes:
             map:

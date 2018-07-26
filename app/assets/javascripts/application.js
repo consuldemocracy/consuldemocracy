@@ -79,6 +79,7 @@
 //= require send_newsletter_alert
 //= require managers
 //= require globalize
+//= require send_admin_notification_alert
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -124,6 +125,7 @@ var initialize_modules = function() {
   App.SendNewsletterAlert.initialize();
   App.Managers.initialize();
   App.Globalize.initialize();
+  App.SendAdminNotificationAlert.initialize();
 };
 
 $(function(){
