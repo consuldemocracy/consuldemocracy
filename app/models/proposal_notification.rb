@@ -10,7 +10,6 @@ class ProposalNotification < ActiveRecord::Base
   validates :proposal, presence: true
   validate :minimum_interval
 
-  scope :with_hidden, -> { all }
   scope :public_for_api,           -> { where(proposal_id: Proposal.public_for_api.pluck(:id)) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
   scope :sort_by_moderated,       -> { reorder(moderated: :desc) }
