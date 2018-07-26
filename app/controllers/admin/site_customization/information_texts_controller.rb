@@ -9,15 +9,25 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
   def update
     content_params.each do |content|
-      value = content[:values].slice(*translation_params(content[:values]))
-      unless value.empty?
-        text = I18nContent.by_key(content[:id]).last || I18nContent.create(key: content[:id])
-        text.update(value)
-        text.save
+      values = content[:values].slice(*translation_params(content[:values]))
+
+      unless values.empty?
+        values.each do |key, value|
+          locale = key.split("_").last
+
+          if value == I18n.backend.translate(locale, content[:id])
+            next
+          else
+            text = I18nContent.find_or_create_by(key: content[:id])
+            Globalize.locale = locale
+            text.update(value: value)
+          end
+        end
       end
+
     end
 
-    redirect_to admin_site_customization_information_texts_path
+    redirect_to admin_site_customization_information_texts_path, notice: "Translation updated successfully"
   end
 
   private
