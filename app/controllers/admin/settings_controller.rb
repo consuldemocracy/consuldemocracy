@@ -1,5 +1,6 @@
 class Admin::SettingsController < Admin::BaseController
-  helper_method :successful_proposal_setting, :successful_proposals, :poll_feature_short_title_setting, :poll_feature_description_setting, :poll_feature_link_setting
+  helper_method :successful_proposal_setting, :successful_proposals, :poll_feature_short_title_setting, :poll_feature_description_setting,
+                :poll_feature_link_setting, :email_feature_short_title_setting, :email_feature_description_setting
 
   def index
     all_settings = Setting.all.group_by { |s| s.type }
@@ -29,7 +30,7 @@ class Admin::SettingsController < Admin::BaseController
   end
 
   def successful_proposal_setting
-    Setting.find_by(key: 'proposals.successful_proposal_id')
+    @successful_proposal_setting ||= Setting.find_by(key: 'proposals.successful_proposal_id')
   end
 
   def successful_proposals
@@ -37,14 +38,22 @@ class Admin::SettingsController < Admin::BaseController
   end
 
   def poll_feature_short_title_setting
-    Setting.find_by(key: 'proposals.poll_short_title')
+    @poll_feature_short_title_setting ||= Setting.find_by(key: 'proposals.poll_short_title')
   end
 
   def poll_feature_description_setting
-    Setting.find_by(key: 'proposals.poll_description')
+    @poll_feature_description_setting ||= Setting.find_by(key: 'proposals.poll_description')
   end
 
   def poll_feature_link_setting
-    Setting.find_by(key: 'proposals.poll_link')
+    @poll_feature_link_setting ||= Setting.find_by(key: 'proposals.poll_link')
+  end
+  
+  def email_feature_short_title_setting
+    @email_feature_short_title_setting ||= Setting.find_by(key: 'proposals.email_short_title')
+  end
+  
+  def email_feature_description_setting
+    @email_feature_description_setting ||= Setting.find_by(key: 'proposals.email_description')
   end
 end

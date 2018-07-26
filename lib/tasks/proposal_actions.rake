@@ -15,10 +15,16 @@ namespace :proposal_actions do
 
   desc 'Initialize proposal settings'
   task initialize_settings: :environment do
-    Setting['proposals.successful_proposal_id'] = nil if Setting.find_by(key: 'proposals.successful_proposal_id').nil?
-    Setting['proposals.poll_short_title'] = nil if Setting.find_by(key: 'proposals.poll_short_title').nil?
-    Setting['proposals.poll_description'] = nil if Setting.find_by(key: 'proposals.poll_description').nil?
-    Setting['proposals.poll_link'] = nil if Setting.find_by(key: 'proposals.poll_link').nil?
+    %w[
+      proposals.successful_proposal_id
+      proposals.poll_short_title
+      proposals.poll_description
+      proposals.poll_link
+      proposals.email_short_title
+      proposals.email_description
+    ].each do |key|
+      Setting[key] = nil if Setting.find_by(key: key).nil?
+    end
   end
 
   desc 'Simulate successful proposal'

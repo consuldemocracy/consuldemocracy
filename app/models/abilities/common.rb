@@ -25,6 +25,9 @@ module Abilities
       can :manage_polls, Proposal do |proposal|
         proposal.author.id == user.id
       end
+      can :manage_mailing, Proposal do |proposal|
+        proposal.author.id == user.id
+      end
 
       can :results, Poll do |poll|
         poll.related&.author&.id == user.id

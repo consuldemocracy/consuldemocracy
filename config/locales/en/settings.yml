@@ -68,3 +68,5 @@ en:
       poll_short_title: Subtitle for polls feature
       poll_description: Description for polls feature
       poll_link: Additional information link
+      email_short_title: Subtitle for email feature
+      email_description: Description for email feature

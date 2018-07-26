@@ -2,6 +2,12 @@
 <div class="row">
   <div class="small-12 medium-9 column">
     <%== Setting['proposals.poll_description'] %>
+
+    <% if @polls.any? %>
+      <div class="row small-up-2 medium-up-3 large-up-4">
+        <%= render @polls %>
+      </div>
+    <% end %>
   </div>
 
   <div class="small-12 medium-3 column">
@@ -19,9 +25,3 @@
                 class: 'button expanded' %>
   </div>
 </div>
-
-<% if @polls.any? %>
-  <div class="row small-up-2 medium-up-3 large-up-4">
-    <%= render @polls %>
-  </div>
-<% end %>
