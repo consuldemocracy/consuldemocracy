@@ -75,7 +75,7 @@ describe EmailDigest do
 
       reset_mailer
       email_digest = described_class.new(user)
-      email_digest.deliver
+      email_digest.deliver(Time.current)
 
       email = open_last_email
       expect(email).to have_subject("Proposal notifications in CONSUL")
@@ -89,7 +89,7 @@ describe EmailDigest do
 
       reset_mailer
       email_digest = described_class.new(user)
-      email_digest.deliver
+      email_digest.deliver(Time.current)
 
       expect(all_emails.count).to eq(0)
     end
@@ -135,6 +135,31 @@ describe EmailDigest do
       expect(user2.failed_email_digests_count).to eq(0)
     end
 
+  end
+
+  describe "#valid_email?" do
+
+    it "returns a MatchData if email is valid" do
+      user = create(:user, email: 'valid_email@email.com')
+
+      email_digest = described_class.new(user)
+      expect(email_digest.valid_email?).to be_a(MatchData)
+    end
+
+    it "returns nil if email is invalid" do
+      user = create(:user, email: 'invalid_email@email..com')
+
+      email_digest = described_class.new(user)
+      expect(email_digest.valid_email?).to be(nil)
+    end
+
+    it "returns false if email does not exist" do
+      user = create(:user)
+      user.update_attribute(:email, nil)
+
+      email_digest = described_class.new(user)
+      expect(email_digest.valid_email?).to be(false)
+    end
   end
 
 end

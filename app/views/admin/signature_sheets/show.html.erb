@@ -2,7 +2,7 @@
 
 <div class="callout secondary float-right">
   <%= t("admin.signature_sheets.show.created_at") %>
-  <strong><%= l(@signature_sheet.created_at, format: :short) %></strong>
+  <strong><%= l(@signature_sheet.created_at, format: :long) %></strong>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= t("admin.signature_sheets.show.author") %>
   <strong><%= @signature_sheet.author.name %></strong>

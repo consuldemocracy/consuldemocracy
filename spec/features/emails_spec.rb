@@ -294,7 +294,7 @@ feature 'Emails' do
       notification3 = create_proposal_notification(proposal3)
 
       email_digest = EmailDigest.new(user)
-      email_digest.deliver
+      email_digest.deliver(Time.current)
       email_digest.mark_as_emailed
 
       email = open_last_email
@@ -306,14 +306,14 @@ feature 'Emails' do
       expect(email).to have_body_text(notification1.notifiable.body)
       expect(email).to have_body_text(proposal1.author.name)
 
-      expect(email).to have_body_text(/#{notification_path(notification1)}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'tab-notifications')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'comments')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'social-share')}/)
 
       expect(email).to have_body_text(proposal2.title)
       expect(email).to have_body_text(notification2.notifiable.title)
       expect(email).to have_body_text(notification2.notifiable.body)
-      expect(email).to have_body_text(/#{notification_path(notification2)}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'tab-notifications')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'comments')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'social-share')}/)
       expect(email).to have_body_text(proposal2.author.name)
@@ -325,6 +325,26 @@ feature 'Emails' do
       notification2.reload
       expect(notification1.emailed_at).to be
       expect(notification2.emailed_at).to be
+    end
+
+    scenario "notifications moderated are not sent" do
+      user = create(:user, email_digest: true)
+      proposal = create(:proposal)
+      proposal_notification = create(:proposal_notification, proposal: proposal)
+      notification = create(:notification, notifiable: proposal_notification)
+
+      reset_mailer
+
+      proposal_notification.moderate_system_email(create(:administrator).user)
+
+      email_digest = EmailDigest.new(user)
+      email_digest.deliver(Time.current)
+      email_digest.mark_as_emailed
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
+
+    xscenario "Delete all Notifications included in the digest after email sent" do
     end
 
   end
