@@ -310,39 +310,25 @@ describe Budget::Investment do
 
   describe "#by_budget" do
 
-    it "returns true for unfeasible investments with unfeasibility explanation and valuation finished" do
-      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
-        budget.update(phase: phase)
+    it "returns investments scoped by budget" do
+       budget1 = create(:budget)
+       budget2 = create(:budget)
 
-        expect(investment.should_show_unfeasibility_explanation?).to eq(true)
-      end
-    end
+       group1 = create(:budget_group, budget: budget1)
+       group2 = create(:budget_group, budget: budget2)
 
-    it "returns false in valuation has not finished" do
-      investment.update(valuation_finished: false)
-      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
-        budget.update(phase: phase)
+       heading1 = create(:budget_heading, group: group1)
+       heading2 = create(:budget_heading, group: group2)
 
-        expect(investment.should_show_unfeasibility_explanation?).to eq(false)
-      end
-    end
+       investment1 = create(:budget_investment, heading: heading1)
+       investment2 = create(:budget_investment, heading: heading1)
+       investment3 = create(:budget_investment, heading: heading2)
 
-    it "returns false if not unfeasible" do
-      investment.update(feasibility: "undecided")
-      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
-        budget.update(phase: phase)
+       investments_by_budget = Budget::Investment.by_budget(budget1)
 
-        expect(investment.should_show_unfeasibility_explanation?).to eq(false)
-      end
-    end
-
-    it "returns false if unfeasibility explanation blank" do
-      investment.update(unfeasibility_explanation: "")
-      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
-        budget.update(phase: phase)
-
-        expect(investment.should_show_unfeasibility_explanation?).to eq(false)
-      end
+       expect(investments_by_budget).to include investment1
+       expect(investments_by_budget).to include investment2
+       expect(investments_by_budget).to_not include investment3
     end
   end
 
