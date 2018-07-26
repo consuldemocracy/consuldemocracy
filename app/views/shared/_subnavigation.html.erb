@@ -1,6 +1,6 @@
 <div class="small-12 medium-9 column">
   <ul>
-    <%= raw content_block("main_navigation_left", I18n.locale) %>
+    <%= raw content_block("subnavigation_left", I18n.locale) %>
 
     <% if feature?(:debates) %>
       <li>
@@ -62,6 +62,6 @@
                     title: t("shared.go_to_page") + t("layouts.header.help") %>
     </li>
     
-    <%= raw content_block("main_navigation_right", I18n.locale) %>
+    <%= raw content_block("subnavigation_right", I18n.locale) %>
   </ul>
 </div>
