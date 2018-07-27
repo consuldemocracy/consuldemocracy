@@ -162,6 +162,23 @@ feature 'Admin polls' do
     expect(page).to have_current_path(edit_admin_poll_path(poll))
   end
 
+  scenario "Edit polls list" do
+    description = "<p>Polls <strong>list</strong> description</p>"
+    expect(ActivePoll.description).to be nil
+
+    visit admin_polls_path
+    click_link "Edit polls list"
+
+    fill_in "active_poll_description", with: description
+    click_button "Save changes"
+
+    expect(page).to have_content "Polls list updated successfully."
+    expect(ActivePoll.description).to eq description
+
+    click_link "Edit polls list"
+    expect(page).to have_field('active_poll_description', text: description)
+  end
+
   context "Booths" do
 
     context "Poll show" do

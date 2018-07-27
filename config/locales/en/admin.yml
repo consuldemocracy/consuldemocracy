@@ -846,6 +846,14 @@ en:
         no_booths: "There are no booths assigned to this poll."
         table_name: "Name"
         table_location: "Location"
+    active_polls:
+      edit:
+        title: "Edit polls list"
+      form:
+        description:
+          text: "Description"
+          help_text: "This text will appear in the header of polls page"
+        submit: "Save changes"
     polls:
       index:
         title: "List of active polls"

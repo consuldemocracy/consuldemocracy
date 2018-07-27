@@ -1,0 +1,17 @@
+<%= form_for(@active_poll, url: form_url) do |f| %>
+
+  <div class="row">
+    <div class="ckeditor small-12 column">
+      <%= f.label :description, t("admin.active_polls.form.description.text") %>
+						<span class="help-text"><%= t("admin.active_polls.form.description.help_text") %></span>
+      <%= f.cktext_area :description, maxlength: ActivePoll.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+    </div>
+		</div>
+
+  <div class="row padding">
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button", value: t("admin.active_polls.form.submit")) %>
+    </div>
+  </div>
+
+<% end %>
