@@ -3,12 +3,20 @@ section "Creating banners" do
     title = Faker::Lorem.sentence(word_count = 3)
     description = Faker::Lorem.sentence(word_count = 12)
     target_url = Rails.application.routes.url_helpers.proposal_path(proposal)
-    banner = Banner.create!(title: title,
+    banner = Banner.new(title: title,
                             description: description,
                             target_url: target_url,
                             post_started_at: rand((Time.current - 1.week)..(Time.current - 1.day)),
                             post_ended_at:   rand((Time.current - 1.day)..(Time.current + 1.week)),
                             created_at: rand((Time.current - 1.week)..Time.current))
+    I18n.available_locales.map do |locale|
+      neutral_locale = locale.to_s.downcase.underscore.to_sym
+      Globalize.with_locale(neutral_locale) do
+        banner.description = "Description for locale #{locale}"
+        banner.title = "Title for locale #{locale}"
+        banner.save!
+      end
+    end
   end
 end
 

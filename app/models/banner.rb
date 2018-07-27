@@ -3,6 +3,10 @@ class Banner < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  translates :title,       touch: true
+  translates :description, touch: true
+  globalize_accessors locales: [:en, :es, :fr, :nl, :val, :pt_br]
+
   validates :title, presence: true,
                     length: { minimum: 2 }
   validates :description, presence: true

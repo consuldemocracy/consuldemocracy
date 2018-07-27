@@ -1,4 +1,5 @@
 class Admin::BannersController < Admin::BaseController
+  include Translatable
 
   has_filters %w{all with_active with_inactive}, only: :index
 
@@ -41,7 +42,7 @@ class Admin::BannersController < Admin::BaseController
                     :post_started_at, :post_ended_at,
                     :background_color, :font_color,
                     web_section_ids: []]
-      params.require(:banner).permit(*attributes)
+      params.require(:banner).permit(*attributes, *translation_params(params[:banner]))
     end
 
     def banner_styles
@@ -58,5 +59,14 @@ class Admin::BannersController < Admin::BaseController
 
     def banner_sections
       @banner_sections = WebSection.all
+    end
+
+    def resource
+      @banner = Banner.find(params[:id]) unless @banner
+      @banner
+    end
+
+    def resource_model
+      Banner
     end
 end
