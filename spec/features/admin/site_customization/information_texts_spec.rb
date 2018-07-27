@@ -11,7 +11,7 @@ feature "Admin custom information texts" do
     visit admin_site_customization_information_texts_path
 
     click_link 'Debates'
-    expect(page).to have_content 'Help about citizen debates'
+    expect(page).to have_content 'Help about debates'
 
     click_link 'Community'
     expect(page).to have_content 'Access the community'
@@ -41,7 +41,7 @@ feature "Admin custom information texts" do
     expect(page).to have_content 'Choose what you want to create'
 
     click_link 'Welcome'
-    expect(page).to have_content 'See all recommended debates'
+    expect(page).to have_content 'See all debates'
   end
 
   context "Globalization" do
