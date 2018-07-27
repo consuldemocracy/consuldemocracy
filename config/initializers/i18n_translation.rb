@@ -7,21 +7,16 @@ module ActionView
       include TagHelper
 
       def t(key, options = {})
-        translation = I18nContent.by_key(key)
+        current_locale = options[:locale].present? ? options[:locale] : I18n.locale
 
+        i18_content = I18nContent.by_key(key).first
+        translation = I18nContentTranslation.where(i18n_content_id: i18_content&.id,
+                                                   locale: current_locale).first&.value
         if translation.present?
-          Globalize.with_locale(locale) do
-            string = translation.first.value
-
-            options.each do |key, value|
-              string.sub! "%{#{key}}", (value || "%{#{key}}")
-            end
-
-            return string.html_safe unless string.nil?
-          end
+          translation
+        else
+          translate(key, options)
         end
-
-        translate(key, options)
       end
     end
   end

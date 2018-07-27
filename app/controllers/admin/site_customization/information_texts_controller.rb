@@ -15,7 +15,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
         values.each do |key, value|
           locale = key.split("_").last
 
-          if value == I18n.backend.translate(locale, content[:id])
+          if value == t(content[:id], locale: locale)
             next
           else
             text = I18nContent.find_or_create_by(key: content[:id])
