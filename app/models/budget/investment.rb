@@ -85,12 +85,12 @@ class Budget
     scope :sort_by_flags,               -> { order(flags_count: :desc, updated_at: :desc) }
     scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
 
-    scope :by_budget,         ->(budget)            { where(budget: budget) }
-    scope :by_group,          ->(group_id)          { where(group_id: group_id) }
-    scope :by_heading,        ->(heading_id)        { where(heading_id: heading_id) }
-    scope :by_admin,          ->(admin_id)          { where(administrator_id: admin_id) }
-    scope :by_tag,            ->(tag_name)          { tagged_with(tag_name) }
-    scope :by_valuator,       ->(valuator_id)       { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
+    scope :by_budget,         ->(budget)      { where(budget: budget) }
+    scope :by_group,          ->(group_id)    { where(group_id: group_id) }
+    scope :by_heading,        ->(heading_id)  { where(heading_id: heading_id) }
+    scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
+    scope :by_tag,            ->(tag_name)    { tagged_with(tag_name) }
+    scope :by_valuator,       ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
     scope :by_valuator_group, ->(valuator_group_id) { where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id).joins(:valuator_group_assignments) }
     scope :accesible_by_valuator, ->(valuator) do
       direct_access = by_valuator(valuator&.id)
@@ -150,6 +150,16 @@ class Budget
         send("sort_by_#{sorting_param}")
       else
         order(cached_votes_up: :desc).order(id: :desc)
+      end
+    end
+
+    def self.limit_results(budget, params, results)
+      max_per_heading = params[:max_per_heading].to_i
+      return results if max_per_heading <= 0
+
+      ids = []
+      budget.headings.pluck(:id).each do |hid|
+        ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
       end
     end
 

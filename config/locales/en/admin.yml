@@ -204,18 +204,7 @@ en:
           visible_to_valuators: Show to valuators
           selected: Selected
           author_username: Author username
-        table_id: "ID"
-        table_title: "Title"
-        table_supports: "Supports"
-        table_admin: "Administrator"
-        table_valuator: "Valuator"
-        table_valuation_group: "Valuation Group"
-        table_geozone: "Scope of operation"
-        table_feasibility: "Feasibility"
-        table_valuation_finished: "Val. Fin."
-        table_selection: "Selected"
-        table_evaluation: "Show to valuators"
-        table_incompatible: "Incompatible"
+          incompatible: Incompatible
         see_results: "See results"
         cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
         see_results: "See results"
@@ -1137,6 +1126,11 @@ en:
       image: Image
       show_image: Show image
       moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
+      view: View
+      proposal: Proposal
+      author: Author
+      content: Content
+      created_at: Created at
     spending_proposals:
       index:
         geozone_filter_all: All zones

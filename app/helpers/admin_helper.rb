@@ -33,11 +33,11 @@ module AdminHelper
   end
 
   def menu_polls?
-    %w[polls questions answers].include?(controller_name)
+    %w[polls questions answers recounts results].include?(controller_name)
   end
 
   def menu_booths?
-    %w[officers booths officer_assignments booth_assignments recounts results shifts].include?(controller_name)
+    %w[officers booths shifts booth_assignments officer_assignments].include?(controller_name)
   end
 
   def menu_profiles?
