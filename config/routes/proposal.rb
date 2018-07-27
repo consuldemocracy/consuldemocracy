@@ -1,16 +1,9 @@
-namespace :dashboard do
-  resources :resources, only: [:index]
-end
-
 resources :proposals do
   resources :dashboard, only: [:index] do
     collection do
       patch :publish
-      get :supports
-      get :successful_supports
       get :progress
       get :community
-      get :achievements
     end
 
     member do
@@ -21,6 +14,10 @@ resources :proposals do
   end
 
   namespace :dashboard do
+    resources :resources, only: [:index]
+    resources :achievements, only: [:index]
+    resources :successful_supports, only: [:index]
+    resources :supports, only: [:index]
     resources :polls, except: [:show, :destroy]
     resources :mailing, only: [:index, :new, :create]
   end

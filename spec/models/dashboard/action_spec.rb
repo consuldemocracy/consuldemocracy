@@ -18,118 +18,135 @@ describe Dashboard::Action do
   let(:request_to_administrators) { true }
   let(:action_type) { 'resource' }
 
-  it { should be_valid }
-
-  context 'when validating title' do
-    context 'and title is blank' do
-      let(:title) { nil }
-
-      it { should_not be_valid }
-    end
-
-    context 'and title is very short' do
-      let(:title) { 'abc' }
-
-      it { should_not be_valid }
-    end
-
-    context 'and title is very long' do
-      let(:title) { 'a' * 81 }
-
-      it { should_not be_valid }
-    end
+  it 'is invalid when title is blank' do
+    action = build(:dashboard_action, title: '')
+    expect(action).not_to be_valid
   end
 
-  context 'when validating day_offset' do
-    context 'and day_offset is nil' do
-      let(:day_offset) { nil }
-
-      it { should_not be_valid }
-    end
-
-    context 'and day_offset is negative' do
-      let(:day_offset) { -1 }
-
-      it { should_not be_valid }
-    end
-
-    context 'and day_offset is not an integer' do
-      let(:day_offset) { 1.23 }
-
-      it { should_not be_valid }
-    end
+  it 'is invalid when title is too short' do
+    action = build(:dashboard_action, title: 'abc')
+    expect(action).not_to be_valid
   end
 
-  context 'when validating required_supports' do
-    context 'and required_supports is nil' do
-      let(:required_supports) { nil }
-
-      it { should_not be_valid }
-    end
-
-    context 'and required_supports is negative' do
-      let(:required_supports) { -1 }
-
-      it { should_not be_valid }
-    end
-
-    context 'and required_supports is not an integer' do
-      let(:required_supports) { 1.23 }
-
-      it { should_not be_valid }
-    end
+  it 'is invalid when title is too long' do
+    action = build(:dashboard_action, title: 'a' * 81)
+    expect(action).not_to be_valid
   end
 
-  context 'when action type is nil' do
-    let(:action_type) { nil }
-    
-    it { should_not be_valid }
+  it 'is invalid when day_offset is not defined' do
+    action = build(:dashboard_action, day_offset: nil)
+    expect(action).not_to be_valid
+  end
+
+  it 'is invalid when day_offset is negative' do
+    action = build(:dashboard_action, day_offset: -1)
+    expect(action).not_to be_valid
+  end
+
+  it 'is invalid when day_offset not an integer' do
+    action = build(:dashboard_action, day_offset: 1.23)
+    expect(action).not_to be_valid
+  end
+
+  it 'is invalid when required_supports is nil' do
+    action = build(:dashboard_action, required_supports: nil)
+    expect(action).not_to be_valid
+  end
+
+  it 'is invalid when required_supports is negative' do
+    action = build(:dashboard_action, required_supports: -1)
+    expect(action).not_to be_valid
+  end
+
+  it 'is invalid when required_supports is not an integer' do
+    action = build(:dashboard_action, required_supports: 1.23)
+    expect(action).not_to be_valid
+  end
+
+  it 'is invalid when action_type is nil' do
+    action = build(:dashboard_action, action_type: nil)
+    expect(action).not_to be_valid
   end
 
   context 'active_for?' do
-    let(:proposal) { create(:proposal, published_at: published_at, cached_votes_up: cached_votes_up) }
-    let(:published_at) { Time.current }
-    let(:cached_votes_up) { Proposal.votes_needed_for_success + 100 }
-    
-    it { should be_active_for(proposal) }
-                     
-    context 'and not enough supports' do
-      let(:required_supports) { cached_votes_up + 100 }
+    it 'is active when required supports is 0 and day_offset is 0' do
+      action = build(:dashboard_action, required_supports: 0, day_offset: 0)
+      proposal = build(:proposal)
 
-      it { should_not be_active_for(proposal) }
+      expect(action).to be_active_for(proposal)
     end
 
-    context 'and not passed enough time since publication' do
-      let(:day_offset) { 10 }
+    it 'is active when published after day_offset' do
+      action = build(:dashboard_action, required_supports: 0, day_offset: 10)
+      proposal = build(:proposal, published_at: Time.current - 10.days)
+      
+      expect(action).to be_active_for(proposal)
+    end
 
-      it { should_not be_active_for(proposal) }
+    it 'is active when have enough supports' do
+      action = build(:dashboard_action, required_supports: 10, day_offset: 0)
+      proposal = build(:proposal, cached_votes_up: 10)
+
+      expect(action).to be_active_for(proposal)
+    end
+
+    it 'is not active when not enough time published' do
+      action = build(:dashboard_action, required_supports: 0, day_offset: 10)
+      proposal = build(:proposal, published_at: Time.current - 9.days)
+      
+      expect(action).not_to be_active_for(proposal)
+    end
+
+    it 'is not active when not enough supports' do
+      action = build(:dashboard_action, required_supports: 10, day_offset: 0)
+      proposal = build(:proposal, cached_votes_up: 9)
+
+      expect(action).not_to be_active_for(proposal)
     end
   end
 
-  context 'executed_for? and requested_for?' do
-    let(:proposal) { create(:proposal) }
-    subject { create(:dashboard_action, :active, :admin_request, :resource) }
+  context 'requested_for?' do
+    it 'is not requested when no administrator task' do
+      proposal = create(:proposal)
+      action = create(:dashboard_action, :active, :admin_request, :resource)
 
-    it { should_not be_requested_for(proposal) }
-    it { should_not be_executed_for(proposal) }
+      expect(action).not_to be_requested_for(proposal)
+    end
 
-    context 'and executed action' do
-      let(:executed_action) { create(:dashboard_executed_action, proposal: proposal, action: subject) }
+    it 'is requested when administrator task' do
+      proposal = create(:proposal)
+      action = create(:dashboard_action, :active, :admin_request, :resource)
+      executed_action = create(:dashboard_executed_action, proposal: proposal, action: action)
+      _task = create(:dashboard_administrator_task, :pending, source: executed_action)
 
-      context 'and pending administrator task' do
-        let!(:task) { create(:dashboard_administrator_task, :pending, source: executed_action) }  
+      expect(action).to be_requested_for(proposal)
+    end
+  end
 
-        it { should be_requested_for(proposal) }
-        it { should_not be_executed_for(proposal) }
-      end
+  context 'executed_for?' do
+    it 'is not executed when no administrator task' do
+      proposal = create(:proposal)
+      action = create(:dashboard_action, :active, :admin_request, :resource)
 
-      context 'and solved administrator task' do
-        let!(:task) { create(:dashboard_administrator_task, :done, source: executed_action) }  
+      expect(action).not_to be_executed_for(proposal)
+    end
 
-        it { should be_requested_for(proposal) }
-        it { should be_executed_for(proposal) }
-      end
+    it 'is not executed when pending administrator task' do
+      proposal = create(:proposal)
+      action = create(:dashboard_action, :active, :admin_request, :resource)
+      executed_action = create(:dashboard_executed_action, proposal: proposal, action: action)
+      _task = create(:dashboard_administrator_task, :pending, source: executed_action)
+
+      expect(action).not_to be_executed_for(proposal)
+    end
+
+    it 'is executed when done administrator task' do
+      proposal = create(:proposal)
+      action = create(:dashboard_action, :active, :admin_request, :resource)
+      executed_action = create(:dashboard_executed_action, proposal: proposal, action: action)
+      _task = create(:dashboard_administrator_task, :done, source: executed_action)
+
+      expect(action).to be_executed_for(proposal)
     end
   end
 end
-
