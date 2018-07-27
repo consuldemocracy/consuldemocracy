@@ -83,7 +83,7 @@
       <ul <%= "class=is-active" if menu_customization? &&
                                    controller.class.parent != Admin::Poll::Questions::Answers %>>
 
-        <li <%= "class=active" if menu_homepage? %>>
+        <li <%= "class=is-active" if menu_homepage? %>>
           <%= link_to t("admin.menu.site_customization.homepage"), admin_homepage_path %>
         </li>
 
@@ -93,6 +93,10 @@
 
         <li <%= "class=is-active" if controller_name == "banners" %>>
           <%= link_to t("admin.menu.banner"), admin_banners_path %>
+        </li>
+
+        <li <%= "class=is-active" if controller_name == "information_texts" %>>
+          <%= link_to t("admin.menu.site_customization.information_texts"), admin_site_customization_information_texts_path %>
         </li>
       </ul>
     </li>
