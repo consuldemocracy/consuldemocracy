@@ -18,6 +18,12 @@ ActiveRecord::Schema.define(version: 20181016204729) do
   enable_extension "unaccent"
   enable_extension "pg_trgm"
 
+  create_table "active_polls", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "action"
