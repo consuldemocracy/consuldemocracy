@@ -37,7 +37,7 @@ class DashboardController < Dashboard::BaseController
     if @dashboard_executed_action.save
       Dashboard::AdministratorTask.create(source: @dashboard_executed_action)
 
-      redirect_to progress_proposal_dashboard_index_path(proposal.to_param), { flash: { info: t('.success') } }
+      redirect_to progress_proposal_dashboard_index_path(proposal.to_param), { flash: { info: t('dashboard.create_request.success') } }
     else
       flash.now[:alert] = @dashboard_executed_action.errors.full_messages.join('<br>')
       render :new_request
@@ -50,21 +50,6 @@ class DashboardController < Dashboard::BaseController
 
   def community
     authorize! :dashboard, proposal
-  end
-
-  def supports
-    authorize! :dashboard, proposal
-    render json: ProposalSupportsQuery.for(params)
-  end
-
-  def successful_supports
-    authorize! :dashboard, proposal
-    render json: SuccessfulProposalSupportsQuery.for(params)
-  end
-
-  def achievements
-    authorize! :dashboard, proposal
-    render json: ProposalAchievementsQuery.for(params)
   end
 
   private

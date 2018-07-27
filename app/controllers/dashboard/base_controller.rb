@@ -1,16 +1,14 @@
 class Dashboard::BaseController < ApplicationController
   before_action :authenticate_user!
 
+  include Dashboard::HasProposal
+
   helper_method :proposal, :proposed_actions, :resource, :resources, :next_goal, :next_goal_supports, :next_goal_progress, :community_members_count
 
   respond_to :html
   layout 'dashboard'
 
   private
-
-  def proposal
-    @proposal ||= Proposal.includes(:community).find(params[:proposal_id])
-  end
 
   def proposed_actions
     @proposed_actions ||= Dashboard::Action.proposed_actions.active_for(proposal).order(order: :asc)

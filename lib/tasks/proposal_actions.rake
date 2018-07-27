@@ -27,6 +27,13 @@ namespace :proposal_actions do
     end
   end
 
+  desc 'Publish all proposals'
+  task publish_all: :environment do
+    Proposal.draft.find_each do |proposal|
+      proposal.update(published_at: proposal.created_at)
+    end
+  end
+
   desc 'Simulate successful proposal'
   task create_successful_proposal: :environment do
     expected_supports = [

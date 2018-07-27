@@ -2,7 +2,6 @@
   <div class="row margin-top">
     <div class="small-12 column">
       <ul class="menu simple clear">
-        <%#  if current_user && current_user.administrator? || @poll.results_enabled? %>
         <% if can?(:results, @poll) %>
           <% if controller_name == "polls" && action_name == "results" %>
             <li class="is-active">

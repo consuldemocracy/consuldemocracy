@@ -5,7 +5,7 @@ class Poll::Question < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  belongs_to :poll, inverse_of: :questions
+  belongs_to :poll
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
   has_many :comments, as: :commentable

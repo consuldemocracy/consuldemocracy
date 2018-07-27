@@ -5,7 +5,7 @@
 (function(){
   'use strict';
 
-  var ProposalGraph = function(url) {
+  let ProposalGraph = function(url) {
     this.url = url;
     this.successfulProposalDataUrl = null;
     this.proposalAchievementsUrl = null;
@@ -15,12 +15,11 @@
     this.progressLabel = 'Progress';
     this.supportsLabel = 'Supports';
     this.successLabel = 'Success';
-    this.chart = null;
     this.goals = null;
     this.achievements = null;
     this.xColumnValues = null;
-    this.succesfulColumnValues = null;
     this.progressColumnValues = null;
+    this.resourcesUrl = null;
   };
 
   ProposalGraph.prototype.refresh = function() {
@@ -33,7 +32,7 @@
 
   ProposalGraph.prototype.refreshGoals = function () {
     return $.ajax({
-      url: '/dashboard/resources.json',
+      url: this.resourcesUrl,
       cache: false,
       success: function(data) {
         this.parseGoals(data);
@@ -42,7 +41,7 @@
   };
 
   ProposalGraph.prototype.parseGoals = function(data) {
-    var i, l;
+    let i, l;
 
     this.goals = [];
     for (i = 0, l = data.length; i < l; i += 1) {
@@ -67,7 +66,7 @@
   };
 
   ProposalGraph.prototype.parseData = function(data) {
-    var key; 
+    let key;
     
     this.xColumnValues = [ ];
     this.progressColumnValues =  [ this.progressLabel ];
@@ -94,7 +93,7 @@
   };
 
   ProposalGraph.prototype.parseSuccessfulProposalData = function(data) {
-    var key; 
+    let key;
     
     this.successfulColumnValues = [ this.successLabel ];
 
@@ -120,7 +119,7 @@
   };
 
   ProposalGraph.prototype.parseAchievements = function(data) {
-    var group;
+    let group;
 
     this.achievements = [];
     for (group in data) {
@@ -128,7 +127,7 @@
         this.addXColumnValue(group);
         this.achievements.push({
           value: group,
-          text: data[group][data[group].length - 1].title 
+          text: data[group].title
         });
       }
     }
@@ -138,12 +137,12 @@
     if (this.xColumnValues.indexOf(value) === -1) {
       this.xColumnValues.push(value);
     }
-  }
+  };
 
-  ProposalGraph.prototype.draw = function(data) {
+  ProposalGraph.prototype.draw = function() {
     this.formatXColumnValues();
     
-    this.chart = c3.generate({
+    c3.generate({
       bindto: '#' + this.targetId,
       data: {
         x: 'x',
@@ -176,9 +175,6 @@
         y: {
           lines: this.goals
         }
-        //x: {
-        //  lines: this.achievements
-        //}
       },
       legend: {
         position: 'right'
@@ -187,7 +183,7 @@
   };
 
   ProposalGraph.prototype.formatXColumnValues = function () {
-    var i, l, parts;
+    let i, l, parts;
 
     this.xColumnValues = this.xColumnValues.sort();
 
@@ -199,7 +195,7 @@
     }
 
     this.xColumnValues.unshift('x');
-  }
+  };
 
   ProposalGraph.prototype.isDailyGrouped = function() {
     return this.groupBy === undefined || this.groupBy === '' || this.groupBy === null
@@ -207,7 +203,7 @@
 
   $(document).ready(function () {
     $('[data-proposal-graph-url]').each(function () {
-      var graph = new ProposalGraph($(this).data('proposal-graph-url'));
+      let graph = new ProposalGraph($(this).data('proposal-graph-url'));
       graph.successfulProposalDataUrl = $(this).data('successful-proposal-graph-url');
       graph.proposalAchievementsUrl = $(this).data('proposal-achievements-url');
       graph.targetId = $(this).attr('id');
@@ -216,6 +212,7 @@
       graph.supportsLabel = $(this).data('proposal-graph-supports-label');
       graph.successLabel = $(this).data('proposal-graph-success-label');
       graph.proposalSuccess = parseInt($(this).data('proposal-success'), 10);
+      graph.resourcesUrl = $(this).data('proposal-resources-url');
 
       graph.refresh();
     });

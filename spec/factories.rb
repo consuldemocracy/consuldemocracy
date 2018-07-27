@@ -1038,7 +1038,7 @@ LOREM_IPSUM
   end
 
   factory :dashboard_action, class: 'Dashboard::Action' do
-    title { Faker::Lorem.sentence }
+    title { Faker::Lorem.sentence[0..80] }
     description { Faker::Lorem.sentence }
     link nil
     request_to_administrators true
