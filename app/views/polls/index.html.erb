@@ -9,6 +9,10 @@
   <div class="small-12 column">
     <%= render 'shared/filter_subnav', i18n_namespace: "polls.index" %>
 
+    <% if @polls_description.present? %>
+				  <span><%= safe_html_with_links @polls_description %></span>
+				<% end %>
+
     <% if @polls.any? %>
       <% polls_by_geozone_restriction = @polls.group_by(&:geozone_restricted) %>
 
