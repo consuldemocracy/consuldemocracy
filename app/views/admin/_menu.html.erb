@@ -7,7 +7,7 @@
           <strong><%= t("admin.menu.title_polls") %></strong>
         </a>
         <ul id="polls_menu" <%= "class=is-active" if menu_polls? || controller.class.parent == Admin::Poll::Questions::Answers %>>
-          <li <%= "class=is-active" if %w(polls booth_assignments officer_assignments recounts results).include?(controller_name) %>>
+          <li <%= "class=is-active" if %w(polls recounts results).include?(controller_name) %>>
             <%= link_to t("admin.menu.polls"), admin_polls_path %>
           </li>
 
@@ -25,7 +25,7 @@
         <strong><%= t("admin.menu.title_booths") %></strong>
       </a>
       <ul id="booths_menu" <%= "class=is-active" if menu_booths? || controller_name == "polls" && action_name == "booth_assignments" %>>
-                  <li <%= "class=is-active" if controller_name == "officers" %>>
+        <li <%= "class=is-active" if %w(officers officer_assignments).include?(controller_name) %>>
           <%= link_to t("admin.menu.poll_officers"), admin_officers_path %>
         </li>
 
@@ -35,7 +35,7 @@
         </li>
 
         <li <%= "class=is-active" if (controller_name == "polls" && action_name == "booth_assignments") ||
-                                  (controller_name == "booth_assignments" && action_name == "manage") %>>
+                                  controller_name == "booth_assignments" %>>
           <%= link_to t("admin.menu.poll_booth_assignments"), booth_assignments_admin_polls_path %>
         </li>
 
