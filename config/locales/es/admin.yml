@@ -346,6 +346,15 @@ es:
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
         title: Actividad del usuario (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
+        title: Proyectos de gasto ocultos
+        no_hidden_budget_investments: No hay proyectos de gasto ocultos
     legislation:
       processes:
         create:
@@ -515,6 +524,7 @@ es:
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
+      hidden_budget_investments: Proyectos de gasto ocultos
       hidden_proposal_notifications: Notificationes de propuesta ocultas
       hidden_users: Usuarios bloqueados
       administrators: Administradores
