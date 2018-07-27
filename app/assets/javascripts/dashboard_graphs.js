@@ -5,7 +5,7 @@
 (function(){
   'use strict';
 
-  let ProposalGraph = function(url) {
+  var ProposalGraph = function(url) {
     this.url = url;
     this.successfulProposalDataUrl = null;
     this.proposalAchievementsUrl = null;
@@ -41,7 +41,7 @@
   };
 
   ProposalGraph.prototype.parseGoals = function(data) {
-    let i, l;
+    var i, l;
 
     this.goals = [];
     for (i = 0, l = data.length; i < l; i += 1) {
@@ -66,7 +66,7 @@
   };
 
   ProposalGraph.prototype.parseData = function(data) {
-    let key;
+    var key;
     
     this.xColumnValues = [ ];
     this.progressColumnValues =  [ this.progressLabel ];
@@ -93,7 +93,7 @@
   };
 
   ProposalGraph.prototype.parseSuccessfulProposalData = function(data) {
-    let key;
+    var key;
     
     this.successfulColumnValues = [ this.successLabel ];
 
@@ -119,7 +119,7 @@
   };
 
   ProposalGraph.prototype.parseAchievements = function(data) {
-    let group;
+    var group;
 
     this.achievements = [];
     for (group in data) {
@@ -183,7 +183,7 @@
   };
 
   ProposalGraph.prototype.formatXColumnValues = function () {
-    let i, l, parts;
+    var i, l, parts;
 
     this.xColumnValues = this.xColumnValues.sort();
 
@@ -203,7 +203,7 @@
 
   $(document).ready(function () {
     $('[data-proposal-graph-url]').each(function () {
-      let graph = new ProposalGraph($(this).data('proposal-graph-url'));
+      var graph = new ProposalGraph($(this).data('proposal-graph-url'));
       graph.successfulProposalDataUrl = $(this).data('successful-proposal-graph-url');
       graph.proposalAchievementsUrl = $(this).data('proposal-achievements-url');
       graph.targetId = $(this).attr('id');
