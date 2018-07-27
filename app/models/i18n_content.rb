@@ -7,5 +7,4 @@ class I18nContent < ActiveRecord::Base
 
   translates :value, touch: true
   globalize_accessors locales: [:en, :es, :fr, :nl, :val]
-
 end
