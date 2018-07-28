@@ -19,7 +19,7 @@ feature "Admin custom pages" do
       visit admin_root_path
 
       within("#side_menu") do
-        click_link "Custom Pages"
+        click_link "Custom pages"
       end
 
       expect(page).not_to have_content "An example custom page"
@@ -44,7 +44,7 @@ feature "Admin custom pages" do
       visit admin_root_path
 
       within("#side_menu") do
-        click_link "Custom Pages"
+        click_link "Custom pages"
       end
 
       click_link "An example custom page"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180711224810) do
+ActiveRecord::Schema.define(version: 20180718115545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -207,6 +207,9 @@ ActiveRecord::Schema.define(version: 20180711224810) do
     t.integer  "community_id"
     t.boolean  "visible_to_valuators",                        default: false
     t.integer  "valuator_group_assignments_count",            default: 0
+    t.datetime "confirmed_hide_at"
+    t.datetime "ignored_flag_at"
+    t.integer  "flags_count",                                 default: 0
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -449,6 +452,21 @@ ActiveRecord::Schema.define(version: 20180711224810) do
 
   add_index "geozones_polls", ["geozone_id"], name: "index_geozones_polls_on_geozone_id", using: :btree
   add_index "geozones_polls", ["poll_id"], name: "index_geozones_polls_on_poll_id", using: :btree
+
+  create_table "i18n_content_translations", force: :cascade do |t|
+    t.integer  "i18n_content_id", null: false
+    t.string   "locale",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.text     "value"
+  end
+
+  add_index "i18n_content_translations", ["i18n_content_id"], name: "index_i18n_content_translations_on_i18n_content_id", using: :btree
+  add_index "i18n_content_translations", ["locale"], name: "index_i18n_content_translations_on_locale", using: :btree
+
+  create_table "i18n_contents", force: :cascade do |t|
+    t.string "key"
+  end
 
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
