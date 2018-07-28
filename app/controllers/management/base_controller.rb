@@ -56,7 +56,7 @@ class Management::BaseController < ActionController::Base
 
     def manager_logged_in
       if current_manager
-        @manager_logged_in = User.find_by(id: session[:manager]["login"].last(1))
+        @manager_logged_in = User.find_by_manager_login(session[:manager]["login"])
       end
     end
 

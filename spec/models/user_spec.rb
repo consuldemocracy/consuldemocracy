@@ -690,4 +690,17 @@ describe User do
 
   end
 
+  describe ".find_by_manager_login" do
+    it "works with a low ID" do
+      user = create(:user)
+      expect(User.find_by_manager_login("admin_user_#{user.id}")).to eq user
+    end
+
+    it "works with a high ID" do
+      10.times { create(:user) }
+      user = User.last
+      expect(User.find_by_manager_login("admin_user_#{user.id}")).to eq user
+    end
+  end
+
 end
