@@ -65,6 +65,8 @@ class User < ActiveRecord::Base
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :public_for_api, -> { all }
   scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).uniq }
+
+  scope :by_community,   ->(community_id){ where("users.id IN (?)",community_id)}
   scope :by_authors,     ->(author_ids) { where("users.id IN (?)", author_ids) }
   scope :by_username_email_or_document_number, ->(search_string) do
     string = "%#{search_string}%"
@@ -331,7 +333,7 @@ class User < ActiveRecord::Base
 
   def interests
     followables = follows.map(&:followable)
-    followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
+    #followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
   end
 
   private
