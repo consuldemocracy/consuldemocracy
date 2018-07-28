@@ -330,7 +330,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_by_manager_login(manager_login)
-    find_by(id: manager_login.last(1))
+    find_by(id: manager_login.split("_").last)
   end
 
   def interests
