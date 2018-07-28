@@ -333,7 +333,7 @@ class User < ActiveRecord::Base
 
   def interests
     followables = follows.map(&:followable)
-    #followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
+    followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
   end
 
   private
