@@ -34,6 +34,12 @@
   background-color: $brand;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-size: $base-font-size;
 }
@@ -550,6 +556,20 @@ header {
       }
     }
   }
+
+  .top-bar-title {
+    line-height: $line-height;
+
+    a img {
+      height: rem-calc(48);
+      margin: 0;
+      width: auto;
+
+      @include breakpoint(medium up) {
+        height: auto;
+      }
+    }
+  }
 }
 
 .menu-icon {
@@ -788,8 +808,7 @@ footer {
 }
 
 .footer {
-  background: $border;
-  border-top: 6px solid $brand;
+  background: #f1f1f1;
   margin-top: $line-height * 2;
   padding-top: $line-height;
 }

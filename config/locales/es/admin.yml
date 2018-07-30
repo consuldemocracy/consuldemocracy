@@ -204,18 +204,7 @@ es:
           visible_to_valuators: Mostrar a evaluadores
           selected: Seleccionado
           author_username: Usuario autor
-        table_id: "ID"
-        table_title: "Título"
-        table_supports: "Apoyos"
-        table_admin: "Administrador"
-        table_valuator: "Evaluador"
-        table_valuation_group: "Grupos evaluadores"
-        table_geozone: "Ámbito de actuación"
-        table_feasibility: "Viabilidad"
-        table_valuation_finished: "Ev. Fin."
-        table_selection: "Seleccionado"
-        table_evaluation: "Mostrar a evaluadores"
-        table_incompatible: "Incompatible"
+          incompatible: Incompatible
         see_results: "Ver resultados"
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
@@ -1137,6 +1126,11 @@ es:
       image: Imagen
       show_image: Mostrar imagen
       moderated_content: "Revisa el contenido moderado por los moderadores, y confirma si la moderación se ha realizado correctamente."
+      view: Ver
+      proposal: Propuesta
+      author: Autor
+      content: Contenido
+      created_at: Fecha de creación
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación

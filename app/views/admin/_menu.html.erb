@@ -7,7 +7,7 @@
           <strong><%= t("admin.menu.title_polls") %></strong>
         </a>
         <ul id="polls_menu" <%= "class=is-active" if menu_polls? || controller.class.parent == Admin::Poll::Questions::Answers %>>
-          <li <%= "class=is-active" if controller_name == "polls" && action_name != "booth_assignments" %>>
+          <li <%= "class=is-active" if %w(polls recounts results).include?(controller_name) %>>
             <%= link_to t("admin.menu.polls"), admin_polls_path %>
           </li>
 
@@ -59,7 +59,7 @@
         <span class="icon-zip"></span>
         <strong><%= t("admin.menu.messaging_users") %></strong>
       </a>
-      <ul <%= "class=is-active" if messages_menu_active %>>
+      <ul id="messaging_users_menu" <%= "class=is-active" if messages_menu_active %>>
         <li <%= "class=is-active" if controller_name == "newsletters" %>>
           <%= link_to t("admin.menu.newsletters"), admin_newsletters_path %>
         </li>

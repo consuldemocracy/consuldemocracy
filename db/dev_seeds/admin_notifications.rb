@@ -1,36 +1,28 @@
 section "Creating Admin Notifications & Templates" do
   AdminNotification.create!(
-    title: 'New usage Terms & Conditions!',
-    segment_recipient: 'administrators',
-    body: 'We have improved our usage terms & conditions! please check them out to be up to date.',
-    link: 'http://localhost:3000/condiciones-de-uso'
+    title: I18n.t('seeds.admin_notification.internal_link.title'),
+    body: I18n.t('seeds.admin_notification.internal_link.body'),
+    link: Setting['url'] + I18n.t('seeds.admin_notification.internal_link.link'),
+    segment_recipient: 'administrators'
   ).deliver
 
   AdminNotification.create!(
-    title: 'Help us translate consul 🤓',
-    segment_recipient: 'administrators',
-    body: 'If you are proficient in a language, please help us translate consul!.',
-    link: 'https://crwd.in/consul'
+    title: I18n.t('seeds.admin_notification.external_link.title'),
+    body: I18n.t('seeds.admin_notification.external_link.body'),
+    link: I18n.t('seeds.admin_notification.external_link.link'),
+    segment_recipient: 'administrators'
   ).deliver
 
   AdminNotification.create!(
-    title: 'You can now geolocate proposals & investments',
-    segment_recipient: 'administrators',
-    body: 'When you create a proposal or investment you now can specify a point on a map 🗺'
+    title: I18n.t('seeds.admin_notification.without_link.title'),
+    body: I18n.t('seeds.admin_notification.without_link.body'),
+    segment_recipient: 'administrators'
   ).deliver
 
   AdminNotification.create!(
-    title: 'We just opened a new Participatory Budget!',
+    title: I18n.t('seeds.admin_notification.not_sent.title'),
+    body: I18n.t('seeds.admin_notification.not_sent.body'),
     segment_recipient: 'administrators',
-    link: 'https://www.decide.madrid.es/presupuestos2018/1',
-    body: 'Start creating proposals for budget investments!'
-  ).deliver
-
-  AdminNotification.create!(
-    title: 'We are closing the 2018 Participatory Budget!!',
-    segment_recipient: 'administrators',
-    link: 'https://www.decide.madrid.es/presupuestos2018/1',
-    body: 'Hurry up and create a last proposal before it ends next in two days!',
     sent_at: nil
   )
 end
