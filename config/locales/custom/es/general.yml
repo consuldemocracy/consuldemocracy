@@ -220,7 +220,7 @@ es:
       different_district_active_info: "(Si retiras todos los votos de este distrito puedes seleccionar otro)"
     results:
       page_title: "Presupuestos participativos | Resultados"
-      heading: "PRESUPUESTOS PARTICIPATIVOS"
+      heading: "PRESUPUESTOS PARTICIPATIVOS 2016"
       results_link: Resultados
       stats_link: "Estadísticas de participación"
       executions_link: "Seguimiento"
@@ -236,7 +236,7 @@ es:
       discarded: "Propuesta de inversión descartada: "
     stats:
       page_title: "Presupuestos participativos | Estadísticas de participación"
-      heading: "PRESUPUESTOS PARTICIPATIVOS"
+      heading: "PRESUPUESTOS PARTICIPATIVOS 2016"
       results_link: Resultados
       stats_link: "Estadísticas de participación"
       executions_link: "Seguimiento"

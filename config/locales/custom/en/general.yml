@@ -186,7 +186,7 @@ en:
       different_district_active_info: "(If you remove all votes of this district you can select another one)"
     results:
       page_title: "Participatory budget | Results"
-      heading: "PARTICIPATORY BUDGET"
+      heading: "PARTICIPATORY BUDGET 2016"
       results_link: Results
       stats_link: "Participation stats"
       executions_link: "Milestones"
@@ -202,7 +202,7 @@ en:
       discarded: "Discarded spending proposal: "
     stats:
       page_title: "Participatory budget | Participation stats"
-      heading: "PARTICIPATORY BUDGET"
+      heading: "PARTICIPATORY BUDGET 2016"
       results_link: Results
       stats_link: "Participation stats"
       executions_link: "Milestones"
