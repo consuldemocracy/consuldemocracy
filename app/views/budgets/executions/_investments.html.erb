@@ -13,7 +13,7 @@
                 <% elsif investment.image.present? %>
                   <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
                 <% else %>
-                  <%= image_tag Rails.root.join('/budget_execution_no_image.jpg'), alt: investment.title %>
+                  <%= image_tag "budget_execution_no_image.jpg", alt: investment.title %>
                 <% end %>
               <% end %>
               <div class="budget-execution-info">
