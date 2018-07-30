@@ -61,6 +61,8 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
+      community:
+        one: "Comunidad"
       spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
