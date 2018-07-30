@@ -322,7 +322,7 @@ es:
       geozone: Ámbito de actuación
       proposal_external_url: Enlace a documentación adicional
       proposal_question: Pregunta de la propuesta
-      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <br>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'"
+      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No"
       proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
       proposal_summary: Resumen de la propuesta
@@ -412,7 +412,6 @@ es:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
-      reason_for_supports_necessary: 1% del Censo
       support: Apoyar
       support_title: Apoyar esta propuesta
       supports:
@@ -426,8 +425,7 @@ es:
       supports_necessary: "%{number} apoyos necesarios"
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
-      successful: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
-      voting: "próxima votación"
+      successful: "Esta propuesta ha alcanzado los apoyos necesarios."
     show:
       author_deleted: Usuario eliminado
       code: 'Código de la propuesta:'

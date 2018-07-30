@@ -322,7 +322,7 @@ en:
       geozone: Scope of operation
       proposal_external_url: Link to additional documentation
       proposal_question: Proposal question
-      proposal_question_example_html: "Must be summarised in one question with a Yes or No answer. <br>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'"
+      proposal_question_example_html: "Must be summarised in one question with a Yes or No answer"
       proposal_responsible_name: Full name of the person submitting the proposal
       proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
       proposal_summary: Proposal summary
@@ -412,7 +412,6 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
-      reason_for_supports_necessary: 1% of Census
       support: Support
       support_title: Support this proposal
       supports:
@@ -426,8 +425,7 @@ en:
       supports_necessary: "%{number} supports needed"
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
-      successful: "This proposal has reached the required supports and will be voted in the %{voting}."
-      voting: "next voting"
+      successful: "This proposal has reached the required supports."
     show:
       author_deleted: User deleted
       code: 'Proposal code:'
