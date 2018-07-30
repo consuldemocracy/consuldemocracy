@@ -19,7 +19,9 @@
         <td><%= tenant.title %></td>
         <td>
           <%= link_to t("admin.tenants.index.edit"), edit_admin_tenant_path(tenant), class: "edit-banner button hollow" %>
-          <%= link_to t("admin.tenants.index.delete"), admin_tenant_path(tenant), method: :delete, class: "button hollow alert" %>
+          <% if !main_tenant?(tenant)%>
+            <%= link_to t("admin.tenants.index.delete"), admin_tenant_path(tenant), method: :delete, class: "button hollow alert" %>
+          <% end %>
         </td>
       </tr>
     <% end %>
