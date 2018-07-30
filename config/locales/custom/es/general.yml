@@ -125,6 +125,7 @@ es:
       transparency_title: Transparencia
       transparency_text: Obtén cualquier información sobre el Ayuntamiento de Madrid.
       transparency_url: http://transparencia.madrid.es
+      faq: Asistencia técnica
     header:
       logo: "Decide Madrid: portal de participación ciudadana del Ayuntamiento de Madrid."
       external_link_opendata: Datos abiertos
