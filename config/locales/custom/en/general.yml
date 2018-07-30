@@ -68,6 +68,10 @@ en:
     form:
       sub_proceeding: Human right
       proposal_type: Proposal type
+    proposal:
+      reason_for_supports_necessary: 1% of Census
+      successful: "This proposal has reached the required supports and will be voted in the %{voting}."
+      voting: "next voting"
   polls:
     index:
       title: Madrid City Council Citizen Consultations

@@ -72,6 +72,10 @@ es:
       sub_proceeding: "Derecho"
       proposal_type: Tipo de propuesta
       tags_label: Tags
+    proposal:
+      reason_for_supports_necessary: 1% del Censo
+      successful: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+      voting: "próxima votación"
   polls:
     index:
       title: Consultas ciudadanas del Ayuntamiento Madrid
