@@ -211,6 +211,7 @@ ignore_unused:
   - admin.stats.polls.current
   - admin.stats.polls.expired
   - landings.cambia_tu_ciudad.*
+  - 'seeds.settings.*'
 ####
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:

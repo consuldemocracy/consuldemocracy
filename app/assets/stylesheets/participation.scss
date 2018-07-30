@@ -1676,59 +1676,6 @@
   }
 }
 
-.budget-execution {
-  border: 1px solid $border;
-  overflow: hidden;
-  position: relative;
-
-  a {
-    color: $text;
-    display: block;
-
-    img {
-      height: $line-height * 9;
-      transition-duration: 0.3s;
-      transition-property: transform;
-      width: 100%;
-    }
-
-    &:hover {
-      text-decoration: none;
-
-      img {
-        transform: scale(1.05);
-      }
-    }
-  }
-
-  h5 {
-    font-size: $base-font-size;
-    margin-bottom: 0;
-  }
-
-  .budget-execution-info {
-    padding: $line-height / 2;
-  }
-
-  .author {
-    color: $text-medium;
-    font-size: $small-font-size;
-  }
-
-  .budget-execution-content {
-    min-height: $line-height * 3;
-  }
-
-  .price {
-    color: $budget;
-    font-size: rem-calc(24);
-  }
-
-  &:hover {
-    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
-  }
-}
-
 // 07. Proposals successful
 // -------------------------
 

@@ -195,7 +195,7 @@ feature "Admin Notifications" do
 
       visit admin_admin_notification_path(notification)
 
-      accept_confirm { click_link "Send notification" }
+      accept_confirm { accept_confirm { click_link "Send notification" }}
 
       expect(page).to have_content "Notification sent successfully"
 
