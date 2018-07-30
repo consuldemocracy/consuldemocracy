@@ -42,6 +42,9 @@ es:
         title: Ayuda sobre los debates ciudadanos
         description: Inicia un debate para compartir puntos de vista con otras personas sobre los temas que te preocupan de la ciudad de Madrid.
         help_text_1: "El espacio de debates ciudadanos está dirigido a que cualquier persona pueda exponer temas que le preocupan y sobre los que quiera compartir puntos de vista con otras personas, preferentemente relacionados con la ciudad de Madrid."
+        help_text_3: "Ten en cuenta que un debate no activa ningún mecanismo de actuación concreto. Si quieres hacer una %{proposal} para la ciudad o plantear un proyecto de %{budget} cuando se abra la convocatoria, ve a la sección correspondiente."
+        proposals_link: propuesta
+        budget_link: presupuestos participativos
     show:
       questions:
         one: 1 pregunta
