@@ -31,7 +31,6 @@ get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcom
 get 'presupuestos',                        to: 'budgets#index', id: 'help/budgets/welcome',    as: 'budgets_welcome'
 get "presupuestos/:id/estadisticas",       to: "budgets/stats#show", as: 'custom_budget_stats'
 get "presupuestos/:id/resultados",         to: "budgets/results#show", as: 'custom_budget_results'
-get 'presupuestos/:id/ejecuciones',        to: 'budgets/executions#show', as: 'custom_budget_executions'
 get "presupuestos/:id/resultados/:heading_id", to: "budgets/results#show", as: 'custom_budget_heading_result'
 
 resources :budgets, only: [:show, :index], path: 'presupuestos' do
