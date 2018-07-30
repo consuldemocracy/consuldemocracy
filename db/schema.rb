@@ -1555,6 +1555,15 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.index ["proposals_count"], name: "index_tags_on_proposals_count"
   end
 
+  create_table "tenants", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "schema"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tenants_on_name", unique: true
+    t.index ["schema"], name: "index_tenants_on_schema", unique: true
+  end
+
   create_table "topics", id: :serial, force: :cascade do |t|
     t.string "title", null: false
     t.text "description"
