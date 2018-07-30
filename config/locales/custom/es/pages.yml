@@ -10,6 +10,7 @@ es:
         Todos juntos conseguiremos que cualquier país pueda disfrutar de esta herramienta. ¡Un millón de gracias!
     help:
       title: "%{org} es la plataforma de participación ciudadana del Ayuntamiento de Madrid"
+      subtitle: "En %{org} se pueden hacer propuestas, votar en consultas ciudadanas, plantear proyectos de presupuestos participativos, decidir la normativa municipal y abrir debates para intercambiar opiniones con otras personas."
       meta_description: "Plataforma de participación ciudadana del Ayuntamiento de Madrid donde puedes proponer y decidir en qué gastar el presupuesto municipal."
       meta_keywords: "participación ciudadana, Ayuntamiento de Madrid, Madrid, presupuestos participativos, propuestas ciudadanas, consulta ciudadana"
       menu:
@@ -23,18 +24,22 @@ es:
         feature_html: "Para crear una propuesta hay que registrarse en %{org}. Las propuestas que consiguen el apoyo en la web del 1% de la gente con derecho a voto (%{supports} apoyos de personas mayores de 16 años empadronadas en Madrid) pasan a votación. Para apoyar propuestas es necesario verificar tu cuenta."
         kit_decide: "Las propuestas permiten que personas y colectivos de Madrid decidan directamente cómo quieren que sea su ciudad. Te facilitamos el %{link} para que puedas poner en marcha campañas para divulgar tus propuestas."
         kit_link: "Kit Decide"
+        figcaption_html: 'Botón para "Apoyar" una propuesta.<br>Cuando alcance el número de apoyos pasará a votación.'
       budgets:
         detail: "Preguntas frecuentes sobre presupuestos participativos"
         feature: "En este proceso cada año la gente plantea, apoya y vota proyectos. Los más votados pasan a financiarse con el presupuesto municipal. En 2017 fueron seleccionados 311 proyectos por un total de 100 millones de euros."
         feature_2: "Los proyectos pueden ser para toda la ciudad (proyectos de gasto de gran envergadura o que afectan a gran parte de los habitantes de Madrid) o para cada uno de los 21 distritos."
+        phase_1_html: "Entre enero y principios de marzo, las personas registradas en %{org} pueden <strong>presentar proyectos</strong>."
         phase_2_html: "En marzo, los proponentes tienen que recabar apoyos, a modo de <strong>fase de preselección</strong>. El %{link} te puede ayudar a hacer campaña y divulgar tus proyectos."
         phase_2_link: "Kit Decide"
         phase_3_html: "Entre abril y comienzos de mayo los técnicos del Ayuntamiento de Madrid <strong>tasan los proyectos</strong> por orden de más a menos apoyados y comprueban que son viables."
         phase_4_html: "Finalmente, entre el 15 de mayo y el 30 de junio, toda la ciudadanía madrileña puede <strong>votar los proyectos</strong> que más le interesan."
+        phase_5_html: "A partir de la aprobación de los presupuestos al año siguiente el Ayuntamiento empieza a llevar a cabo los proyectos ganadores."
       polls:
         detail: "Preguntas frecuentes sobre votaciones"
         description: "La sección de %{link} se activa cada vez que una propuesta alcanza el 1% de apoyos y pasa a votación o cuando el Ayuntamiento de Madrid propone un tema para que la gente decida sobre él."
         feature_2: "Pueden votar todas las personas empadronadas en Madrid mayores de 16 años."
+        feature_3: "Los resultados de todas las votaciones son vinculantes para el gobierno municipal."
         image_alt: "Primera votación ciudadana"
         figcaption: "Imagen de campaña de la Primera Votación Ciudadana en febrero de 2017."
         text_1_html: 'Hasta ahora se han celebrado dos votaciones. En febrero de 2017 la ciudadanía aprobó las propuestas de <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">"Madrid 100% sostenible" y "Billete único para el transporte público"</a>. También se preguntó por la <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">reforma de Plaza de España</a>, la movilidad de <a href="https://decide.madrid.es/vota/gran-via/results">Gran Vía</a> y cuestiones en seis distritos.'
