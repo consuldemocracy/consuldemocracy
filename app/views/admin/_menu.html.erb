@@ -259,7 +259,7 @@
     </li>
 
     <% if admin_main_tenant? %>
-      <li class="section-title <%= "active" if controller_name == "tenants" && controller.action_name != "switch" %>">
+      <li <%= "class=is-active" if controller_name == "tenants" && controller.action_name != "switch" %>>
         <%= link_to admin_tenants_path do %>
           <span class="icon-organizations"></span>
           <strong><%= t("admin.menu.multitenancy") %></strong>
