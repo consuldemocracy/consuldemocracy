@@ -154,4 +154,63 @@ Y por último para comprobar que todo esta bien, lanza los tests:
 bundle exec rspec
 ```
 
+## ChromeDriver
+
+Para realizar pruebas de integración, usamos Selenium junto a Headless Chrome.
+
+En distribuciones basadas en Debian, el proceso de instalar ChromeDriver no es tan sencillo como en Mac OS.
+
+Para ello, primero instala los siguientes paquetes:
+
+```bash
+sudo apt-get update && sudo apt-get install libxss1 libappindicator1 libindicator7 unzip
+```
+
+Ahora necesitarás Google Chrome o Chromium. Ambas opciones son válidas.
+
+Puedes instalar el primero haciendo click [acá](https://www.google.com/chrome/index.html), mientras que el segundo puede ser instalado de la siguiente manera:
+
+```bash
+sudo apt-get install chromium
+```
+
+Ahora puedes instalar ChromeDriver. Primero, comprueba su última versión haciendo click [acá](https://sites.google.com/a/chromium.org/chromedriver/)
+
+Descárgalo ejecutando el siguiente comando:
+
+```bash
+wget -N http://chromedriver.storage.googleapis.com/2.37/chromedriver_linux64.zip
+```
+
+Descomprimelo y hazlo ejecutable:
+
+```bash
+unzip chromedriver_linux64.zip
+chmod +x chromedriver
+```
+
+Finalmente, añade el binario a tu `$PATH`:
+
+```bash
+sudo mv -f chromedriver /usr/local/share/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+```
+
+Asegúrate de que todo funciona como es debido ejecutando el siguiente comando:
+
+```bash
+chromedriver --version
+```
+
+Deberías recibir un mensaje indicando la última versión de ChromeDriver. Si ese es el caso, está todo listo
+
+Si te encuentras usando una distro basada en Arch, instalando `chromium` desde el repositorio `extra` debería ser suficiente
+
+También tienes la opción de solo instalar ChromeDriver desde AUR. Si usas `pacaur`, ejecuta el siguiente comando:
+
+```bash
+pacaur -S chromedriver
+```
+
 > Ya estás listo para [instalar Consul](../installation.html)!!
