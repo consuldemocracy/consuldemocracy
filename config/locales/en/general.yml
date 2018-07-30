@@ -207,17 +207,11 @@ en:
       contact_us: For technical assistance enters
       copyright: CONSUL, %{year}
       description: This portal uses the %{consul} which is %{open_source}.
-      faq: technical assistance
-      open_data_text: Every detail about the City Council is yours to access.
-      open_data_title: Open data
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decide how to shape the city you want to live in.
       participation_title: Participation
       privacy: Privacy Policy
-      transparency_text: Find out anything about the city.
-      transparency_title: Transparency
-      transparency_url: https://transparency.consul
     header:
       administration_menu: Admin
       administration: Administration

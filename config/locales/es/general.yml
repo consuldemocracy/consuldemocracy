@@ -207,17 +207,11 @@ es:
       contact_us: Para asistencia técnica entra en
       copyright: CONSUL, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
-      faq: Asistencia técnica
-      open_data_text: Todos los datos del Ayuntamiento son tuyos.
-      open_data_title: Datos Abiertos
       open_source: software de código abierto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decide cómo debe ser la ciudad que quieres.
       participation_title: Participación
       privacy: Política de privacidad
-      transparency_text: Obtén cualquier información sobre la ciudad.
-      transparency_title: Transparencia
-      transparency_url: https://transparency.consul
     header:
       administration_menu: Admin
       administration: Administración
