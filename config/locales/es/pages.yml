@@ -1,11 +1,9 @@
 es:
   pages:
-    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
     help:
       title: "%{org} es una plataforma de participación ciudadana"
-      subtitle: "En %{org} se pueden hacer propuestas, votar en consultas ciudadanas, plantear proyectos de presupuestos participativos, decidir la normativa municipal y abrir debates para intercambiar opiniones con otras personas."
       guide: 'Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}.'
       menu:
         debates: "Debates"
@@ -26,19 +24,12 @@ es:
         title: "Propuestas"
         description: "En la sección de %{link} puedes plantear propuestas para que el Ayuntamiento las lleve a cabo. Las propuestas recaban apoyos, y si alcanzan los apoyos suficientes se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Ayuntamiento y se llevan a cabo."
         link: "propuestas ciudadanas"
-        feature_html: "Para crear una propuesta hay que registrarse en %{org}. Las propuestas que consiguen el apoyo en la web del 1% de la gente con derecho a voto (%{supports} apoyos de personas mayores de 16 años empadronadas) pasan a votación. Para apoyar propuestas es necesario verificar tu cuenta."
         image_alt: "Botón para apoyar una propuesta"
-        figcaption_html: 'Botón para "Apoyar" una propuesta.<br>Cuando alcance el número de apoyos pasará a votación.'
+        figcaption_html: 'Botón para "Apoyar" una propuesta.'
       budgets:
         title: "Presupuestos participativos"
         description: "La sección de %{link} sirve para que la gente decida de manera directa a qué se destina una parte del presupuesto municipal."
         link: "presupuestos participativos"
-        feature: "En este proceso cada año la gente plantea, apoya y vota proyectos. Los más votados pasan a financiarse con el presupuesto municipal."
-        phase_1_html: "Entre enero y principios de marzo, las personas registradas en %{org} pueden <strong>presentar proyectos</strong>."
-        phase_2_html: "En marzo, los proponentes tienen que recabar apoyos, a modo de <strong>fase de preselección</strong>."
-        phase_3_html: "Entre abril y comienzos de mayo los técnicos del Ayuntamiento <strong>tasan los proyectos</strong> por orden de más a menos apoyados y comprueban que son viables."
-        phase_4_html: "Finalmente, entre mayo y junio, toda la ciudadanía puede <strong>votar los proyectos</strong> que más le interesan."
-        phase_5_html: "A partir de la aprobación de los presupuestos al año siguiente el Ayuntamiento empieza a llevar a cabo los proyectos ganadores."
         image_alt: "Diferentes fases de un presupuesto participativo"
         figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
       polls:
@@ -47,8 +38,6 @@ es:
         link: "votaciones ciudadanas"
         feature_1: "Para participar en las votaciones tienes que %{link} y verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
-        feature_2: "Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años."
-        feature_3: "Los resultados de todas las votaciones son vinculantes para el gobierno municipal."
       processes:
         title: "Procesos legislativos"
         description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad y puede dar su opinión sobre las políticas municipales en debates previos."
