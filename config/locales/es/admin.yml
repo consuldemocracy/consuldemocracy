@@ -270,8 +270,6 @@ es:
         show_image: "Mostrar imagen"
         documents: "Documentos"
       form:
-        add_language: Añadir idioma
-        remove_language: Eliminar idioma
         admin_statuses: Gestionar estados de proyectos
         no_statuses_defined: No hay estados definidos
       new:
@@ -1378,3 +1376,6 @@ es:
         submit_header: Guardar encabezado
         card_title: Editar tarjeta
         submit_card: Guardar tarjeta
+    translations:
+      add_language: Añadir idioma
+      remove_language: Eliminar idioma
