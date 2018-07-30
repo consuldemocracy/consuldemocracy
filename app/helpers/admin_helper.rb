@@ -102,6 +102,10 @@ module AdminHelper
     user_roles(user).join(", ")
   end
 
+  def admin_main_tenant?
+    Apartment::Tenant.current == "public"
+  end
+
   private
 
     def namespace

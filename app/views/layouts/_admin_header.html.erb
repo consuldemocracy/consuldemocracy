@@ -21,7 +21,7 @@
           <li class="menu-text">
             <h1>
               <%= link_to namespaced_root_path do %>
-                <%= setting["org_name"] %>
+                <%= session[:current_tenant]["name"] %>
                 <br><small><%= namespaced_header_title %></small>
               <% end %>
             </h1>

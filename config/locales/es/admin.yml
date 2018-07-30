@@ -365,7 +365,7 @@ es:
       index:
         back: Volver a %{org}
         title: Administración
-        description: Bienvenido al panel de administración de %{org}.
+        description: Bienvenido al panel de administración de la Entidad %{org}.
     debates:
       index:
         filter: Filtro
@@ -644,6 +644,7 @@ es:
       title_booths: Urnas de votación
       legislation: Legislación colaborativa
       users: Usuarios
+      multitenancy: Multientidad
     administrators:
       index:
         title: Administradores
@@ -1469,6 +1470,41 @@ es:
             notice: "Tarjeta actualizada con éxito"
           destroy:
             notice: "Tarjeta eliminada con éxito"
+    tenants:
+      title: "Entidad:"
+      available_tenants: Entidades disponibles
+      ws_census: Servicio Web Padrón
+      index:
+        title: Multientidad
+        create: Crear entidad
+        edit: Editar
+        delete: Borrar
+        multitenant: Multi-Entidad
+      tenant:
+        name: Nombre de la entidad
+        title: Título del sitio
+        subdomain: Subdominio
+        postal_code: Código postal
+        endpoint_census: Endpoint Servicio Web
+        institution_code_census: Código Institución
+        portal_name_census: Código Portal
+        user_code_census: Código Usuario
+      delete:
+        success: Entidad borrada correctamente
+        error: No se puede borrar la entidad
+      new:
+        back: Volver
+        creating: Nueva entidad
+      edit:
+        form:
+          submit_button: Guardar cambios
+        editing: Editar entidad
+        back: Volver
+      errors:
+        form:
+          error:
+            one: "error impidió guardar la entidad"
+            other: "errores impidieron guardar la entidad."
     homepage:
       title: Homepage
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.

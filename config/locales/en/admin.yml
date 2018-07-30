@@ -365,7 +365,7 @@ en:
       index:
         back: Go back to %{org}
         title: Administration
-        description: Welcome to the %{org} admin panel.
+        description: Welcome to the (%{org} Tenant) admin panel.
     debates:
       index:
         filter: Filter
@@ -645,6 +645,7 @@ en:
       title_booths: Voting booths
       legislation: Collaborative Legislation
       users: Users
+      multitenancy: Multitenancy
     administrators:
       index:
         title: Administrators
@@ -1470,6 +1471,41 @@ en:
             notice: "Card updated successfully"
           destroy:
             notice: "Card removed successfully"
+    tenants:
+      title: "Tenant:"
+      available_tenants: Available tenants
+      ws_census: Census Web Service
+      index:
+        title: Multitenancy
+        create: Create tenant
+        edit: Edit
+        delete: Delete
+        multitenant: Multi-Tenant
+      tenant:
+        name: Tenant name
+        title: Site Title
+        subdomain: Subdomain
+        postal_code: Postal code
+        endpoint_census: Web Service Endpoint
+        institution_code_census: Institution code
+        portal_name_census: Portal code
+        user_code_census: User code
+      delete:
+        success: Tenant deleted successfully
+        error: Tenant couldn't be deleted
+      new:
+        back: Go back
+        creating: New tenant
+      edit:
+        form:
+          submit_button: Save changes
+        editing: Edit tenant
+        back: Go back
+      errors:
+        form:
+          error:
+            one: "error prevented this tenant from being saved"
+            other: "errors prevented this tenant from being saved"
     homepage:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.
