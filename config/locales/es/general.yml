@@ -225,10 +225,6 @@ es:
       collaborative_legislation: Procesos legislativos
       debates: Debates
       external_link_blog: Blog
-      external_link_opendata: Datos abiertos
-      external_link_opendata_url: https://opendata.consul
-      external_link_transparency: Transparencia
-      external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
       logo: Logo de CONSUL
       management: Gestión
