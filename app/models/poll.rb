@@ -113,4 +113,7 @@ class Poll < ActiveRecord::Base
     related.nil?
   end
 
+  def answer_count
+    Poll::Answer.where(question: questions).count
+  end
 end
