@@ -179,14 +179,6 @@ es:
       investment_proyects: Ver lista completa de proyectos de gasto
       unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
       not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
-    executions:
-      link: "Seguimiento"
-      page_title: "%{budget} - Seguimiento de proyectos"
-      heading: "Seguimiento de proyectos"
-      heading_selection_title: "Ámbito de actuación"
-      filters:
-        label: "Estado actual del proyecto"
-        all: "Todos"
     phases:
       errors:
         dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"
