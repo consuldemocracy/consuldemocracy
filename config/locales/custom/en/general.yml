@@ -39,6 +39,9 @@ en:
         title: Help about citizen debates
         description: Start a debate to share opinions with others about the topics you are concerned about of the city of Madrid.
         help_text_1: "The space for citizen debates is aimed at anyone who can expose issues of their concern and those who want to share opinions with other people, preferably related to the city of Madrid."
+        help_text_3: "Keep in mind that a debate does not start any specific action. If you want to make a %{proposal} for the city or raise a investment project of %{budget} when the phase is open, go to the corresponding section."
+        proposals_link: proposal
+        budget_link: participatory budgeting
     form:
       comment_kind_instructions: Comment kind
       comment_kind_label: Choose the comment kind
@@ -65,6 +68,10 @@ en:
     form:
       sub_proceeding: Human right
       proposal_type: Proposal type
+    proposal:
+      reason_for_supports_necessary: 1% of Census
+      successful: "This proposal has reached the required supports and will be voted in the %{voting}."
+      voting: "next voting"
   polls:
     index:
       title: Madrid City Council Citizen Consultations
@@ -126,6 +133,7 @@ en:
       transparency_title: Transparency
       transparency_text: Find out anything about the Madrid City Council.
       transparency_url: http://transparencia.madrid.es
+      faq: technical assistance
     header:
       spending_proposals: Participatory budgeting
       delegation: Delegation

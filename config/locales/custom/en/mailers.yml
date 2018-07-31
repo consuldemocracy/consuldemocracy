@@ -1,4 +1,24 @@
-es:
+en:
   mailers:
     unfeasible_spending_proposal:
       unfeasible_html: "From the Madrid City Council we want to thank you for your participation in the <strong>participatory budgets of the city of Madrid</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+      reconsider_html: "If you believe that the rejected proposal meets the requirements to be an investment proposal, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+    email_verification:
+      instructions_html: To complete the verification of your user account in the Open Government Portal, you must click %{verification_link}.
+    user_invite:
+      text: "Thank you for applying to join %{org}! In seconds you can start to decide the city you want, just fill the form below:"
+    budget_investment_created:
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+    budget_investment_unfeasible:
+      reconsider_html: "If you believe that the rejected investment meets the requirements to be an investment project, you can communicate this, within 48 hours, responding to the email address preparticipativos@madrid.es. Including the code %{code} in the subject of the email."
+      signatory: "Área de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid"
+      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+    budget_investment_selected:
+      selected_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We would like to inform you that your investment project <strong>'%{title}'</strong> has been selected for the final voting phase that will happen from <strong>May 15th to June 30th</strong>."
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+    budget_investment_unselected:
+      unselected_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment project <strong>'%{title}'</strong> has not been selected for the final voting phase."
+      participate_html: "You can continue participating in the final voting phase voting for investments projects from <strong>May 15th to June 30th</strong>."
+      participate_url: "participate in the final voting"
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"

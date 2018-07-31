@@ -5,6 +5,8 @@ es:
         description: Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas de Madrid va destinada una parte del presupuesto municipal.
         help_text_1: "Los presupuestos participativos son unos procesos en los que la ciudadanía decide de forma directa en qué se gasta una parte del presupuesto municipal. Cualquier persona empadronada en Madrid mayor de 16 años puede proponer un proyecto de gasto que se preselecciona en una fase de apoyos ciudadanos."
         help_text_2: "Los proyectos más votados se evalúan y pasan a una votación final en la que se deciden las actuaciones que llevará a cabo el Ayuntamiento de Madrid una vez se aprueben los presupuestos municipales del año próximo."
+        help_text_3: "La presentación de proyectos de presupuestos participativos se lleva a cabo desde enero y a lo largo de un periodo de mes y medio, aproximadamente. Para participar y plantear propuestas para toda la ciudad y/ los distritos hay que registrarse en %{org} y verificar la cuenta."
+        help_text_4: "Para conseguir el mayor número de apoyos y votos posible, elige un titular descriptivo y comprensible de tu proyecto. Después tienes un espacio para desarrollar el planteamiento de tu propuesta. Aporta todos los datos y explicaciones, e incluso documentos e imágenes, para ayudar a otras personas participantes a entender mejor lo que planteas."
     ballots:
       show:
         zero: "Todavía no has votado ningún proyecto de gasto."

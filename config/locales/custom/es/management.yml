@@ -1,12 +1,15 @@
 es:
   management:
     document_verifications:
-      in_census_has_following_permissions: 'Este usuario puede participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:'
+      in_census_has_following_permissions: "Este usuario puede participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:"
       not_in_census: Este documento no está registrado en el Padrón Municipal de Madrid.
-      not_in_census_info: 'Las personas no empadronadas en Madrid pueden participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:'
+      not_in_census_info: "Las personas no empadronadas en Madrid pueden participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:"
       link: http://decide.madrid.es
     print:
       proposals_info: Haz tu propuesta en http://decide.madrid.es
       proposals_note: Las propuestas más apoyadas serán llevadas a votación. Y si las acepta una mayoría, el Ayuntamiento las llevará a cabo.
-      proposals_title: 'Propuestas:'
+      proposals_title: "Propuestas:"
       spending_proposals_info: Participa en http://decide.madrid.es
+      spending_proposals_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
+      budget_investments_info: Participa en http://decide.madrid.es
+      budget_investments_note: Los presupuestos participativos se invertirán en los proyectos de gasto más apoyados.

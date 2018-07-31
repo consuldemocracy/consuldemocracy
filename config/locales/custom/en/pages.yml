@@ -10,6 +10,7 @@ en:
         Together we can make this open government tool available to any country. Thanks a million!
     help:
       title: "%{org} is the Madrid City Council's citizen participation platform"
+      subtitle: "In %{org} you can make proposals, vote in citizen consultations, propose participatory budget projects, decide on municipal regulations and open debates to exchange opinions with others."
       meta_description: "Madrid City Council's citizen participation platform where you can propose and decide what to spend the municipal budget on."
       meta_keywords: "citizen participation, Madrid City Council, Madrid, participatory budgets, citizen proposals, citizen consultation"
       menu:
@@ -23,18 +24,22 @@ en:
         feature_html: "To create a proposal you must register in %{org}. The proposals that get the support on the website of 1% of people with the right to vote (%{supports} supports of people over 16 years old registered in Madrid) go to vote. To support proposals it is necessary to verify your account."
         kit_decide: "The proposals allow people and groups in Madrid to decide directly how they want their city to be. We provide you with the %{link} so you can launch campaigns to publicize your proposals."
         kit_link: "Decide Kit"
+        figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
       budgets:
         detail: "Frequently Asked Questions about Participatory Budgeting"
         feature: "In this process, every year people raise, support and vote on projects. The most voted are financed by the municipal budget. In 2017, 311 projects were selected for a total of 100 million euros."
         feature_2: "The projects can be for the whole city (large expenditure projects or projects that affect a large part of Madrid's inhabitants) or for each of the 21 districts."
+        phase_1_html: "Between January and early March, people registered in %{org} can <strong>present</strong>."
         phase_2_html: "In March, proponents have to gather support, in the form of <strong>preselection</strong>phase. The %{link} can help you campaign and publicize your projects."
         phase_2_link: "Decide Kit"
         phase_3_html: "Between April and the beginning of May, the technicians of the Madrid City Council <strong> tax projects</strong> on an order of more or less supported and check that they are viable."
         phase_4_html: "Finally, between 15th May and 30th June, all citizens of Madrid can <strong>vote on the projects</strong> they are most interested in."
+        phase_5_html: "From the approval of the budgets the following year the City Council begins to carry out the winning projects."
       polls:
         detail: "Frequently Asked Questions about Voting"
         description: "The %{link} section is activated each time a proposal reaches 1% support and goes to the vote or when the Madrid City Council proposes an issue for people to decide on."
         feature_2: "All persons registered in Madrid over the age of 16 can vote."
+        feature_3: "The results of all votes are binding on the municipal government."
         image_alt: "First citizen vote"
         figcaption: "Campaign image of the First Citizen Vote in February 2017."
         text_1_html: 'Two voting have been held so far. In February 2017, citizens approved the proposals of <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">"Madrid 100% sostenible" and "Billete único para el transporte público"</a>. It was also asked about the <a href="https://decide.madrid.es/vota/madrid-100-sostenible-billete-unico-para-el-transporte-publico-y-plaza-de-espana/results">reform of Plaza de España</a>, the mobility of <a href="https://decide.madrid.es/vota/gran-via/results">Gran Vía</a> and issues in six districts.'
@@ -44,6 +49,8 @@ en:
         detail: "Frequently Asked Questions about Processes"
         description: "In the %{link} section, citizens participate in the drafting and modification of regulations affecting the city of Madrid and can give their opinion on municipal policies in previous debates."
         link: "processes"
+        feature: "To participate in a process you have to %{sign_up} and check the %{link} page periodically to see which regulations and policies are being discussed and consulted."
+        sign_up: "sign up on %{org}"
       other:
         world: "Citizen participation in the world"
         facts: "Facts about citizen participation and direct democracy"
