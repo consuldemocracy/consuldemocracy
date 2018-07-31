@@ -180,6 +180,11 @@ describe Abilities::Common do
     it { should_not be_able_to(:manage_mailing, proposal) }
   end
 
+  describe 'proposal poster' do
+    it { should be_able_to(:manage_poster, own_proposal) }
+    it { should_not be_able_to(:manage_poster, proposal) }
+  end
+
   describe 'publishing proposals' do
     let(:draft_own_proposal) { create(:proposal, :draft, author: user) }
 

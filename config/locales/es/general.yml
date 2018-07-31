@@ -511,6 +511,7 @@ es:
       community: Comunidad
       polls: Encuestas
       mailing: Correo electrónico
+      poster: Póster
     form:
       request: Solicitar
     create_request:
@@ -587,6 +588,22 @@ es:
         add_answer: Añadir respuesta
       question_answer_fields:
         remove_answer: Borrar respuesta
+    poster:
+      index:
+        title: Previsualización del poster
+        h1: No te quedes mirando,
+        h2: ¡apóyame! ;)
+        intro_text:
+          Estoy participando en Decide Madrid con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el 
+          apoyo necesario para hacer de madrid la ciudad que todos queremos.
+        proposal_code: "Código de la propuesta: %{code}"
+        h3: Apoya mi propuesta
+        footer: Entra en decide.madrid.es y apoya esta propuesta. Necesitamos ser muchos. Decide tu también. ¡Gracias!
+      new:
+        title: Funcionalidad de póster
+      options:
+        preview: Previsualizar
+        download: Descargar
     mailing:
       index:
         title: Previsualización del correo electrónico

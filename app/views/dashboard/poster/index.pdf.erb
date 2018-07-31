@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <%= wicked_pdf_stylesheet_link_tag 'application' -%>
+  <%= wicked_pdf_stylesheet_link_tag 'pdf_fonts' -%>
+</head>
+<body>
+  <div class="row">
+    <div class="small-12 medium-9 column dashboard-poster-preview dashboard-poster-pdf">
+      <div class="header">
+        <h1><%= t("dashboard.poster.index.h1") %></h1>
+        <h2><%= t("dashboard.poster.index.h2") %></h2>
+        <p><%= t("dashboard.poster.index.intro_text") %></p>
+        <p class="image-caption"><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></p>
+      </div>
+
+      <div class="proposal-image">
+        <%= wicked_pdf_image_tag proposal.image.attachment.url(:large), class: 'proposal-image' if proposal.image.present? %>
+        <%= wicked_pdf_image_tag 'default_mailing.jpg', class: 'proposal-image' unless proposal.image.present? %>
+      </div>
+
+      <h3><%= t("dashboard.poster.index.h3") %></h3>
+
+      <div class="proposal-title">"<%= proposal.title %>"</div>
+
+      <div class="poster-footer"><%= t("dashboard.poster.index.footer") %></div>
+    </div>
+  </div>
+</body>
+</html>

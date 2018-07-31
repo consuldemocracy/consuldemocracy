@@ -30,12 +30,20 @@ module ProposalsDashboardHelper
     menu_entry(polls_menu_active?, &block)
   end
 
+  def poster_menu(&block)
+    menu_entry(poster_menu_active?, &block)
+  end
+
   def resources_menu_active?
-    polls_menu_active? || mailing_menu_active? || is_resource_request? 
+    poster_menu_active? || polls_menu_active? || mailing_menu_active? || is_resource_request? 
   end
 
   def polls_menu_active?
     controller_name == 'polls'
+  end
+
+  def poster_menu_active?
+    controller_name == 'poster'
   end
 
   def mailing_menu(&block)

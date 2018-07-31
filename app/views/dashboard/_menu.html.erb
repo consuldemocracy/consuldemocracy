@@ -42,6 +42,16 @@
           <% end %>
         <% end %>
 
+        <% if can?(:manage_poster, proposal) %>
+          <%= poster_menu do %>
+            <%= link_to new_proposal_dashboard_poster_path(proposal.to_param) do %>
+              <span data-tooltip title="<%= Setting['proposals.poster_short_title'] || t("dashboard.menu.poster") %>">
+                <%= t("dashboard.menu.poster") %>
+              </span>
+            <% end %>
+          <% end %>
+        <% end %>
+        
         <% resources.each do |resource| %>
           <li <%= 'class=is-active' if is_request_active(resource.id) %>>
             <%= link_to new_request_proposal_dashboard_path(proposal, resource) do %>

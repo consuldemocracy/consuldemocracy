@@ -511,6 +511,7 @@ en:
       community: Community
       polls: Polls
       mailing: E-mail
+      poster: Poster
     form:
       request: Request
     create_request:
@@ -587,6 +588,22 @@ en:
         add_answer: Add answer
       question_answer_fields:
         remove_answer: Remove answer
+    poster:
+      index:
+        title: Poster preview
+        h1: Do not keep looking,
+        h2: back me up! ;)
+        intro_text:
+          I am participating in Decide Madrid with my own citizen proposal and only if you also add you can I achieve the
+          necessary support to make Madrid the city we all want.
+        proposal_code: "Code of the proposal: %{code}"
+        h3: Support my proposal
+        footer: Visit decide.madrid.es and support this proposal. We need to be many. Decide your too. Thank you!
+      new:
+        title: Poster feature
+      options:
+        preview: Preview
+        download: Download
     mailing:
       index:
         title: E-mail preview

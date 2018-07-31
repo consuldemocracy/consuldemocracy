@@ -20,6 +20,7 @@ resources :proposals do
     resources :supports, only: [:index]
     resources :polls, except: [:show, :destroy]
     resources :mailing, only: [:index, :new, :create]
+    resources :poster, only: [:index, :new]
   end
 
   member do

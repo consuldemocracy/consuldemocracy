@@ -139,3 +139,5 @@ Setting['proposals.poll_description'] = nil
 Setting['proposals.poll_link'] = nil
 Setting['proposals.email_short_title'] = nil
 Setting['proposals.email_description'] = nil
+Setting['proposals.poster_short_title'] = nil
+Setting['proposals.poster_description'] = nil
