@@ -422,6 +422,7 @@ en:
         form:
           custom_categories: Categories
           custom_categories_description: Categories that users can select creating the proposal.
+          custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
       draft_versions:
         create:
           notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'

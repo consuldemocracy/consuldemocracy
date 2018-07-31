@@ -242,8 +242,6 @@ feature 'Emails' do
     email = open_last_email
     expect(email).to have_subject("Your investment project '#{spending_proposal.code}' has been marked as unfeasible")
     expect(email).to deliver_to(spending_proposal.author.email)
-    expect(email).to have_body_text(spending_proposal.title)
-    expect(email).to have_body_text(spending_proposal.code)
     expect(email).to have_body_text(spending_proposal.feasible_explanation)
 
     Setting["feature.spending_proposals"] = nil
@@ -435,8 +433,6 @@ feature 'Emails' do
       email = open_last_email
       expect(email).to have_subject("Your investment project '#{investment.code}' has been marked as unfeasible")
       expect(email).to deliver_to(investment.author.email)
-      expect(email).to have_body_text(investment.title)
-      expect(email).to have_body_text(investment.code)
       expect(email).to have_body_text(investment.unfeasibility_explanation)
     end
 
@@ -460,7 +456,6 @@ feature 'Emails' do
       investment = investment2
       expect(email).to have_subject("Your investment project '#{investment.code}' has been selected")
       expect(email).to deliver_to(investment.author.email)
-      expect(email).to have_body_text(investment.title)
     end
 
     scenario "Unselected investment" do
@@ -483,7 +478,6 @@ feature 'Emails' do
       investment = investment2
       expect(email).to have_subject("Your investment project '#{investment.code}' has not been selected")
       expect(email).to deliver_to(investment.author.email)
-      expect(email).to have_body_text(investment.title)
     end
 
   end
