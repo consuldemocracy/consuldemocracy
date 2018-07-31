@@ -1,36 +1,8 @@
 <%= render "admin/shared/globalize_locales", resource: @poll %>
 
-<%= form_for [:admin, @poll] do |f| %>
-
-  <% @poll.globalize_locales.each do |locale| %>
-    <%= hidden_field_tag "delete_translations[#{locale}]", 0 %>
-  <% end %>
-
-<<<<<<< HEAD
+<%= translatable_form_for [:admin, @poll] do |f| %>
   <div class="small-12 medium-6 column">
-    <%= f.label :name, t("admin.shared.name") %>
-    <% @poll.globalize_locales.each do |locale| %>
-      <% globalize(locale) do %>
-        <%= f.text_field "name_#{locale}",
-                          class: "js-globalize-attribute",
-                          data: { locale: locale },
-                          style: display_translation?(locale),
-                          label: false %>
-=======
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.label :name, t("admin.shared.name") %>
-      <% @poll.globalize_locales.each do |locale| %>
-        <% globalize(locale) do %>
-          <%= f.text_field "name_#{locale}",
-                           class: "js-globalize-attribute",
-                           data: { locale: locale },
-                           style: display_translation?(locale),
-                           label: false %>
-        <% end %>
->>>>>>> fix identation
-      <% end %>
-    <% end %>
+    <%= f.translatable_text_field :name %>
   </div>
 
   <div class="clear">
@@ -47,62 +19,12 @@
     </div>
   </div>
 
-<<<<<<< HEAD
   <div class="small-12 column">
-    <%= f.label :summary, t("admin.shared.summary") %>
-    <% @poll.globalize_locales.each do |locale| %>
-      <% globalize(locale) do %>
-        <%= f.text_area "summary_#{locale}",
-                         rows: 4,
-                         class: "js-globalize-attribute",
-                         data: { locale: locale },
-                         style: display_translation?(locale),
-                         label: false %>
-=======
-  <div class="row">
-    <div class="small-12 column">
-      <%= f.label :summary, t("admin.shared.summary") %>
-      <% @poll.globalize_locales.each do |locale| %>
-        <% globalize(locale) do %>
-          <%= f.text_area "summary_#{locale}",
-                           rows: 4,
-                           class: "js-globalize-attribute",
-                           data: { locale: locale },
-                           style: display_translation?(locale),
-                           label: false %>
-        <% end %>
->>>>>>> fix identation
-      <% end %>
-    <% end %>
+    <%=f.translatable_text_area :summary, rows: 4%>
   </div>
 
-<<<<<<< HEAD
   <div class="small-12 column">
-    <%= f.label :description, t("admin.shared.description") %>
-    <% @poll.globalize_locales.each do |locale| %>
-      <% globalize(locale) do %>
-        <%= f.text_area "description_#{locale}",
-                         rows: 8,
-                         class: "js-globalize-attribute",
-                         data: { locale: locale },
-                         style: display_translation?(locale),
-                         label: false %>
-=======
-  <div class="row">
-    <div class="small-12 column">
-      <%= f.label :description, t("admin.shared.description") %>
-      <% @poll.globalize_locales.each do |locale| %>
-        <% globalize(locale) do %>
-          <%= f.text_area "description_#{locale}",
-                           rows: 8,
-                           class: "js-globalize-attribute",
-                           data: { locale: locale },
-                           style: display_translation?(locale),
-                           label: false %>
-        <% end %>
->>>>>>> fix identation
-      <% end %>
-    <% end %>
+    <%=f.translatable_text_area :description, rows: 8%>
   </div>
 
   <div class="small-12 column">
