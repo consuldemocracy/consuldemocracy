@@ -34,7 +34,7 @@ If you want to contribute code to solve an issue:
 * Fork the project.
 * Create a topic branch based on master.
 * Commit there your code to solve the issue.
-* Make sure all test are passing (and add specs to test any new feature if needed).
+* Make sure all test are passing (and add specs to test any new feature you've added).
 * Follow these [best practices](https://github.com/styleguide/ruby)
 * Open a *pull request* to the main repository describing what issue you are addressing. 
 
