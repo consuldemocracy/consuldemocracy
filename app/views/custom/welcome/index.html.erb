@@ -1,6 +1,6 @@
 <% content_for :body_class, "home-page" %>
 
-<% if current_budget %>
+<% if false %>
   <% provide :title, t("meta_tags.welcome_index.#{current_budget.phase}.title") %>
   <% provide :meta_description, t("meta_tags.welcome_index.#{current_budget.phase}.description") %>
 <% else %>
@@ -13,7 +13,7 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<% if current_budget %>
+<% if false %>
   <% provide :social_media_meta_tags do %>
     <%= render "shared/social_media_meta_tags",
                 social_url: root_url,
@@ -22,7 +22,12 @@
   <% end %>
 <% else %>
   <% provide :social_media_meta_tags do %>
-    <%= render "shared/social_media_meta_tags", social_url: root_url %>
+    <%= render "shared/social_media_meta_tags",
+                social_url: root_url,
+                social_title: t("landings.signup.title"),
+                social_description: t("landings.signup.description"),
+                twitter_image_url: "social_media_cambia_tu_ciudad_twitter.jpg",
+                og_image_url: "social_media_cambia_tu_ciudad.jpg" %>
   <% end %>
 <% end %>
 
