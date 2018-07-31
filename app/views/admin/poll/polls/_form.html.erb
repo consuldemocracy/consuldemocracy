@@ -8,14 +8,14 @@
 
   <div class="row">
     <div class="small-12 medium-6 column">
-						<%= f.label :name, t("admin.shared.name") %>
+      <%= f.label :name, t("admin.shared.name") %>
       <% @poll.globalize_locales.each do |locale| %>
         <% globalize(locale) do %>
           <%= f.text_field "name_#{locale}",
                            class: "js-globalize-attribute",
-														             data: { locale: locale },
+                           data: { locale: locale },
                            style: display_translation?(locale),
-														             label: false %>
+                           label: false %>
         <% end %>
       <% end %>
     </div>
@@ -37,15 +37,15 @@
 
   <div class="row">
     <div class="small-12 column">
-						<%= f.label :summary, t("admin.shared.summary") %>
+      <%= f.label :summary, t("admin.shared.summary") %>
       <% @poll.globalize_locales.each do |locale| %>
         <% globalize(locale) do %>
           <%= f.text_area "summary_#{locale}",
-												               rows: 4,
+                           rows: 4,
                            class: "js-globalize-attribute",
-														             data: { locale: locale },
+                           data: { locale: locale },
                            style: display_translation?(locale),
-														             label: false %>
+                           label: false %>
         <% end %>
       <% end %>
     </div>
@@ -53,15 +53,15 @@
 
   <div class="row">
     <div class="small-12 column">
-						<%= f.label :description, t("admin.shared.description") %>
+      <%= f.label :description, t("admin.shared.description") %>
       <% @poll.globalize_locales.each do |locale| %>
         <% globalize(locale) do %>
           <%= f.text_area "description_#{locale}",
-												               rows: 8,
+                           rows: 8,
                            class: "js-globalize-attribute",
-														             data: { locale: locale },
+                           data: { locale: locale },
                            style: display_translation?(locale),
-														             label: false %>
+                           label: false %>
         <% end %>
       <% end %>
     </div>
