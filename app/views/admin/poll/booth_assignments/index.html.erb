@@ -4,7 +4,7 @@
   <%= render "/admin/poll/polls/subnav" %>
   <%= render "search_booths" %>
 
-  <h3><%= t("admin.poll_booth_assignments.index.booths_title") %></h3>
+  <h3 class="inline-block"><%= t("admin.poll_booth_assignments.index.booths_title") %></h3>
 
   <%= link_to t("admin.booth_assignments.manage_assignments"),
               manage_admin_poll_booth_assignments_path(@poll),

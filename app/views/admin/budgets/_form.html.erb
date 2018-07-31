@@ -1,59 +1,65 @@
 <%= form_for [:admin, @budget] do |f| %>
 
-  <%= f.text_field :name, maxlength: Budget.title_max_length %>
+  <div class="small-12 medium-9 column">
+    <%= f.text_field :name, maxlength: Budget.title_max_length %>
+  </div>
 
-  <div class="row margin-top">
-    <div class="small-12 medium-9 column">
+  <div class="margin-top">
+    <div class="small-12 medium-6 column">
       <%= f.select :phase, budget_phases_select_options, selected: "drafting" %>
     </div>
-    <div class="small-12 medium-3 column">
+    <div class="small-12 medium-3 column end">
       <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
     </div>
   </div>
 
   <% if @budget.phases.present? %>
-    <table id='budget-phases-table' class="table-for-mobile">
-      <thead>
-        <tr>
-          <th><%= t("admin.budgets.edit.phase") %></th>
-          <th><%= t("admin.budgets.edit.dates") %></th>
-          <th class="text-center"><%= t("admin.budgets.edit.enabled") %></th>
-          <th><%= t("admin.budgets.edit.actions") %></th>
-        </tr>
-      </thead>
+    <div class="small-12 column">
+      <table id="budget-phases-table" class="table-for-mobile">
+        <thead>
+          <tr>
+            <th><%= t("admin.budgets.edit.phase") %></th>
+            <th><%= t("admin.budgets.edit.dates") %></th>
+            <th class="text-center"><%= t("admin.budgets.edit.enabled") %></th>
+            <th><%= t("admin.budgets.edit.actions") %></th>
+          </tr>
+        </thead>
 
-      <% @budget.phases.order(:id).each do |phase| %>
-        <tr id="<%= dom_id(phase) %>" class="phase">
-          <td>
-            <%= t("budgets.phase.#{phase.kind}") %>
-            <% if @budget.current_phase == phase %>
-              <span class="label success"><strong><%= t("admin.budgets.edit.active") %></strong></span>
-            <% end %>
-          </td>
-          <td>
-            <% if phase.starts_at.present? || phase.ends_at.present? %>
-              <%= l(phase.starts_at.to_date) if phase.starts_at.present? %>
-              -
-              <%= l(phase.ends_at.to_date) if phase.ends_at.present? %>
-            <% else %>
-              <em><%= t("admin.budgets.edit.blank_dates") %></em>
-            <% end %>
-          </td>
-          <td class="text-center">
-            <span class="budget-phase-enabled <%= phase.enabled? ? 'enabled' : 'disabled' %>"></span>
-          </td>
-          <td>
-            <%= link_to t("admin.budgets.edit.edit_phase"),
-                        edit_admin_budget_budget_phase_path(@budget, phase),
-                        method: :get, class: "button hollow" %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
+        <% @budget.phases.order(:id).each do |phase| %>
+          <tr id="<%= dom_id(phase) %>" class="phase">
+            <td>
+              <%= t("budgets.phase.#{phase.kind}") %>
+              <% if @budget.current_phase == phase %>
+                <span class="label success"><strong><%= t("admin.budgets.edit.active") %></strong></span>
+              <% end %>
+            </td>
+            <td>
+              <% if phase.starts_at.present? || phase.ends_at.present? %>
+                <%= l(phase.starts_at.to_date) if phase.starts_at.present? %>
+                -
+                <%= l(phase.ends_at.to_date) if phase.ends_at.present? %>
+              <% else %>
+                <em><%= t("admin.budgets.edit.blank_dates") %></em>
+              <% end %>
+            </td>
+            <td class="text-center">
+              <span class="budget-phase-enabled <%= phase.enabled? ? 'enabled' : 'disabled' %>"></span>
+            </td>
+            <td>
+              <%= link_to t("admin.budgets.edit.edit_phase"),
+                          edit_admin_budget_budget_phase_path(@budget, phase),
+                          method: :get, class: "button hollow expanded" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
   <% end %>
 
-  <div class="margin-top">
-    <%= f.submit nil, class: "button success" %>
+  <div class="small-12 column">
+    <div class="clear small-12 medium-4 large-3 inline-block">
+      <%= f.submit nil, class: "button success" %>
+    </div>
 
     <div class="float-right">
       <% if @budget.balloting_process? %>
@@ -72,9 +78,9 @@
         <%= link_to t("admin.budgets.edit.delete"),
             admin_budget_path(@budget),
             method: :delete,
-            class: "button hollow alert float-right margin-left" %>
+            class: "delete float-right margin-left" %>
       <% end %>
     </div>
-
   </div>
+
 <% end %>

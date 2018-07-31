@@ -15,23 +15,17 @@
 
   <% end %>
 
-  <div class="row">
-    <div class="small-12 medium-4 column">
-      <%= label_tag t('admin.legislation.proposals.form.custom_categories') %>
-      <small><%= t('admin.legislation.proposals.form.custom_categories_description') %></small>
-    </div>
-    <div class="small-12 medium-8 column">
-      <%= f.text_field :custom_list, value: @process.tag_list_on(:customs).to_s,
-                        label: false,
-                        placeholder: t("proposals.form.tags_placeholder"),
-                        class: 'js-tag-list',
-                        aria: {describedby: "tag-list-help-text"} %>
-    </div>
+  <div class="small-12 medium-8 column">
+    <%= f.label :custom_list, t("admin.legislation.proposals.form.custom_categories") %>
+    <span class="help-text"><%= t("admin.legislation.proposals.form.custom_categories_description") %></span>
+    <%= f.text_field :custom_list, value: @process.tag_list_on(:customs).to_s,
+                      label: false,
+                      placeholder: t("admin.legislation.proposals.form.custom_categories_placeholder"),
+                      class: 'js-tag-list',
+                      aria: {describedby: "tag-list-help-text"} %>
   </div>
 
-  <div class="row">
-    <div class="actions small-12 medium-3 column legislation-process-save">
-      <%= f.submit(class: "button expanded", value: t("admin.legislation.processes.#{admin_submit_action(@process)}.submit_button")) %>
-    </div>
+  <div class="small-12 medium-3 column clear end">
+    <%= f.submit(class: "button expanded", value: t("admin.legislation.processes.#{admin_submit_action(@process)}.submit_button")) %>
   </div>
 <% end %>

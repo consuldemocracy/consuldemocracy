@@ -416,6 +416,7 @@ en:
         form:
           custom_categories: Categories
           custom_categories_description: Categories that users can select creating the proposal.
+          custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
       draft_versions:
         create:
           notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'
@@ -663,7 +664,7 @@ en:
         section_title: Edit notification
       show:
         section_title: Notification preview
-        send: Send
+        send: Send notification
         will_get_notified: (%{n} users will be notified)
         got_notified: (%{n} users got notified)
         sent_at: Sent at
@@ -1055,6 +1056,12 @@ en:
             update: Map configuration updated succesfully.
           form:
             submit: Update
+      setting: Feature
+      setting_actions: Actions
+      setting_name: Setting
+      setting_status: Status
+      setting_value: Value
+      no_description: "No description"
     shared:
       booths_search:
         button: Search
