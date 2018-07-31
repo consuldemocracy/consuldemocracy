@@ -481,6 +481,9 @@ en:
       geozone_restricted: "Districts"
       geozone_info: "Can participate people in the Census of: "
       already_answer: "You already have participated in this poll"
+      not_logged_in: "You must sign in or sign up to participate"
+      unverified: "You must verify your account to participate"
+      cant_answer: "This poll is not available on your geozone"
       section_header:
         icon_alt: Voting icon
         title: Voting

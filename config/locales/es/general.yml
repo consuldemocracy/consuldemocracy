@@ -471,6 +471,9 @@ es:
       geozone_restricted: "Distritos"
       geozone_info: 'Pueden participar las personas empadronadas en: '
       already_answer: "Ya has participado en esta votación"
+      not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
+      unverified: "Por favor verifica tu cuenta para participar"
+      cant_answer: "Esta votación no está disponible en tu zona"
       section_header:
         icon_alt: Icono de Votaciones
         title: Votaciones
