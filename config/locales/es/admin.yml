@@ -665,11 +665,7 @@ es:
         section_title: Editar notificación
       show:
         section_title: Vista previa de notificación
-<<<<<<< HEAD
-        send: Enviar
-=======
         send: Enviar notificación
->>>>>>> 8299a1910b2293d26a06654f6ca4ff7ac8240b5b
         will_get_notified: (%{n} usuarios serán notificados)
         got_notified: (%{n} usuarios fueron notificados)
         sent_at: Enviado
