@@ -40,15 +40,6 @@ If you want to contribute code to solve an issue:
 
 **Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
-## Cleaning up
-
-In the rush of time sometimes things get messy, you can help us cleaning things up:
-
-* implement [pending specs](https://travis-ci.org/consul/consul)
-* increase [code coverage](https://coveralls.io/github/consul/consul?branch=master)
-* improve [code quality](https://codeclimate.com/github/consul/consul)
-* make [code consistent](https://github.com/bbatsov/rubocop)
-
 ## Other ways of contributing without coding
 
 * If you think there's a feature missing, or find a bug, create an issue (make sure it has not already been reported).
