@@ -4,6 +4,11 @@ class Poll < ActiveRecord::Base
   include ActsAsParanoidAliases
   include Notifiable
 
+  translates :name,        touch: true
+  translates :summary,     touch: true
+  translates :description, touch: true
+  globalize_accessors locales: [:en, :es, :fr, :nl, :pt_br]
+
   RECOUNT_DURATION = 1.week
 
   has_many :booth_assignments, class_name: "Poll::BoothAssignment"

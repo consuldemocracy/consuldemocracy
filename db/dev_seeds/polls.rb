@@ -28,6 +28,20 @@ section "Creating polls" do
               ends_at:   1.month.ago,
               results_enabled: true,
               stats_enabled: true)
+
+  names = Poll.map(&:name)
+  Poll.each_with_index do |poll, i|
+    I18n.available_locales.map do |locale|
+      neutral_locale = locale.to_s.downcase.underscore.to_sym
+      Globalize.with_locale(neutral_locale) do
+        poll.name = "#{names[i]} (#{locale})"
+        poll.summary = "Summary for locale #{locale}"
+        poll.description = "Description for locale #{locale}"
+        poll.save!
+      end
+    end
+  end
+
 end
 
 section "Creating Poll Questions & Answers" do
