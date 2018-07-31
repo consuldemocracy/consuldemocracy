@@ -78,12 +78,9 @@ es:
       vote_proposals: Participar en las votaciones finales
     print:
       proposals_info: Haz tu propuesta en http://url.consul
-      proposals_note: Las propuestas más apoyadas serán llevadas a votación. Y si las acepta una mayoría, el Ayuntamiento las llevará a cabo.
       proposals_title: 'Propuestas:'
       spending_proposals_info: Participa en http://url.consul
-      spending_proposals_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
       budget_investments_info: 'Participa en http://url.consul'
-      budget_investments_note: Los presupuestos participativos se invertirán en los proyectos de gasto más apoyados.
     print_info: Imprimir esta información
     proposals:
       alert:

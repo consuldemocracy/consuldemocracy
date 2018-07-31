@@ -88,7 +88,7 @@ feature "Admin custom content blocks" do
       expect(page).to have_content("#{block.name} (#{block.locale})")
       expect(page).to have_content(block.body)
 
-      click_button "Delete block"
+      click_link "Delete block"
 
       expect(page).not_to have_content("#{block.name} (#{block.locale})")
       expect(page).not_to have_content(block.body)
@@ -98,7 +98,7 @@ feature "Admin custom content blocks" do
       block = create(:site_customization_content_block)
       visit edit_admin_site_customization_content_block_path(block)
 
-      click_button "Delete block"
+      click_link "Delete block"
 
       expect(page).not_to have_content("#{block.name} (#{block.locale})")
       expect(page).not_to have_content(block.body)

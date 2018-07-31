@@ -1,11 +1,9 @@
 <%= form_for [:admin, @poll] do |f| %>
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.text_field :name %>
-    </div>
+  <div class="small-12 medium-6 column">
+    <%= f.text_field :name %>
   </div>
 
-  <div class="row">
+  <div class="clear">
     <div class="small-12 medium-6 column">
       <%= f.text_field :starts_at,
                         value: @poll.starts_at.present? ? l(@poll.starts_at.to_date) : nil,
@@ -19,25 +17,19 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="small-12 column">
-      <%=f.text_area :summary, rows: 4%>
-    </div>
+  <div class="small-12 column">
+    <%=f.text_area :summary, rows: 4%>
   </div>
 
-  <div class="row">
-    <div class="small-12 column">
-      <%=f.text_area :description, rows: 8%>
-    </div>
+  <div class="small-12 column">
+    <%=f.text_area :description, rows: 8%>
   </div>
 
-  <div class="row">
-    <div class="small-12 column">
-      <%= render 'images/admin_image', imageable: @poll, f: f %>
-    </div>
+  <div class="small-12 column">
+    <%= render 'images/admin_image', imageable: @poll, f: f %>
   </div>
 
-  <div class="row">
+  <div class="clear">
     <div class="small-6 medium-6 column">
       <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
     </div>
@@ -55,10 +47,10 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="small-12 medium-4 column">
+  <div class="clear">
+    <div class="small-12 medium-4 large-2 column">
       <%= f.submit t("admin.polls.#{admin_submit_action(@poll)}.submit_button"),
-                   class: "button success expanded" %>
+                   class: "button success expanded margin-top" %>
     </div>
   </div>
 <% end %>

@@ -4,23 +4,27 @@
 
 <% if @questions.count == 0 %>
   <div class="callout primary margin-top">
-    <%= t('admin.questions.index.no_questions') %>
+    <%= t("admin.questions.index.no_questions") %>
   </div>
 <% else %>
   <table class="fixed">
     <thead>
       <tr>
-        <th><%= t('admin.questions.index.table_question') %></th>
-        <th class="text-right"><%= t("admin.actions.actions") %></th>
+        <th class="small-8"><%= t("admin.questions.index.table_question") %></th>
+        <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <tbody>
       <% @questions.each do |question| %>
         <tr id="<%= dom_id(question) %>">
           <td><%= link_to question.title, admin_question_path(question) %></td>
-          <td class="text-right">
-            <%= link_to t('shared.edit'), edit_admin_question_path(question), class: "button hollow" %>
-            <%= link_to t('shared.delete'), admin_question_path(question), class: "button hollow alert", method: :delete %>
+          <td>
+            <div class="small-6 column">
+              <%= link_to t("shared.edit"), edit_admin_question_path(question), class: "button hollow expanded" %>
+            </div>
+            <div class="small-6 column">
+              <%= link_to t("shared.delete"), admin_question_path(question), class: "button hollow alert expanded", method: :delete %>
+            <div class="small-6 column">
           </td>
         </tr>
       <% end %>

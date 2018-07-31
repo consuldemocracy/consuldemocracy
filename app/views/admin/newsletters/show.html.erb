@@ -4,39 +4,37 @@
 
 <% recipients_count = @newsletter.valid_segment_recipient? ? @newsletter.list_of_recipient_emails.count : 0 %>
 
-<div class="small-12 column">
-  <div class="callout highlight">
-    <div class="row">
-      <div class="small-12 medium-2 column">
-        <strong><%= t("admin.newsletters.show.sent_at") %></strong><br>
-        <% if @newsletter.draft? %>
-          <%= t("admin.newsletters.index.draft") %>
-        <% else %>
-          <%= l @newsletter.sent_at.to_date %>
-        <% end %>
-      </div>
-      <div class="small-12 medium-6 column">
-        <strong><%= t("admin.newsletters.show.from") %></strong><br>
-        <%= @newsletter.from %>
-      </div>
-      <div class="small-12 medium-4 column">
-        <strong><%= t("admin.newsletters.show.subject") %></strong><br>
-        <%= @newsletter.subject %>
-      </div>
+  <div class="small-12 column callout highlight">
+    <div class="small-12 medium-2 column">
+      <strong><%= t("admin.newsletters.show.sent_at") %></strong><br>
+      <% if @newsletter.draft? %>
+        <%= t("admin.newsletters.index.draft") %>
+      <% else %>
+        <%= l @newsletter.sent_at.to_date %>
+      <% end %>
     </div>
-    <div class="row margin-top">
-      <div class="small-12 column">
-        <strong><%= t("admin.newsletters.show.segment_recipient") %></strong><br>
-        <%= segment_name(@newsletter.segment_recipient) %>
-        <%= t("admin.newsletters.show.affected_users", n: recipients_count) %>
-      </div>
+    <div class="small-12 medium-6 column">
+      <strong><%= t("admin.newsletters.show.from") %></strong><br>
+      <%= @newsletter.from %>
+    </div>
+    <div class="small-12 medium-4 column">
+      <strong><%= t("admin.newsletters.show.subject") %></strong><br>
+      <%= @newsletter.subject %>
+    </div>
+    <div class="small-12 column">
+      <strong><%= t("admin.newsletters.show.segment_recipient") %></strong><br>
+      <%= segment_name(@newsletter.segment_recipient) %>
+      <%= t("admin.newsletters.show.affected_users", n: recipients_count) %>
     </div>
   </div>
 
-  <strong><%= t("admin.newsletters.show.body") %></strong>
-  <p class="help-text" id="phase-description-help-text">
-    <%= t("admin.newsletters.show.body_help_text") %>
-  </p>
+  <div class="small-12 column">
+    <strong><%= t("admin.newsletters.show.body") %></strong>
+    <p class="help-text" id="phase-description-help-text">
+      <%= t("admin.newsletters.show.body_help_text") %>
+    </p>
+  </div>
+
   <div class="newsletter-body-content">
     <%= render file: "app/views/layouts/_mailer_header.html.erb" %>
 
