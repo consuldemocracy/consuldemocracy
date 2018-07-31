@@ -1,3 +1,5 @@
+<%= render "admin/shared/globalize_locales", resource: @poll %>
+
 <%= form_for [:admin, @poll] do |f| %>
   <div class="small-12 medium-6 column">
     <%= f.text_field :name %>

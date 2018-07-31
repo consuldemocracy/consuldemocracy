@@ -900,6 +900,19 @@ ActiveRecord::Schema.define(version: 20180813141443) do
   add_index "poll_shifts", ["booth_id"], name: "index_poll_shifts_on_booth_id", using: :btree
   add_index "poll_shifts", ["officer_id"], name: "index_poll_shifts_on_officer_id", using: :btree
 
+  create_table "poll_translations", force: :cascade do |t|
+    t.integer  "poll_id",     null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.text     "summary"
+    t.text     "description"
+  end
+
+  add_index "poll_translations", ["locale"], name: "index_poll_translations_on_locale", using: :btree
+  add_index "poll_translations", ["poll_id"], name: "index_poll_translations_on_poll_id", using: :btree
+
   create_table "poll_voters", force: :cascade do |t|
     t.string   "document_number"
     t.string   "document_type"

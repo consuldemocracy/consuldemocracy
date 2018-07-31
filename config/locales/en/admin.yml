@@ -1084,8 +1084,10 @@ en:
       search_results: "Search results"
       no_search_results: "No results found."
       actions: Actions
+      name: Name
       title: Title
       description: Description
+      summary: Summary
       image: Image
       show_image: Show image
       moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
