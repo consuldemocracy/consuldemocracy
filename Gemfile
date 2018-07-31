@@ -6,7 +6,7 @@ gem 'acts-as-taggable-on', '~> 5.0.0'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'ahoy_matey', '~> 1.6.0'
 gem 'ancestry', '~> 3.0.2'
-gem "apartment"
+gem "apartment", "~> 2.2"
 gem 'autoprefixer-rails', '~> 8.2.0'
 gem 'browser', '~> 2.5.3'
 gem 'cancancan', '~> 2.3.0'

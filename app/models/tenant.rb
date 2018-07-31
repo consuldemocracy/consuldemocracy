@@ -9,7 +9,8 @@ class Tenant < ActiveRecord::Base
       unless subdomain == "public"
         Apartment::Tenant.create(subdomain)
         Apartment::Tenant.switch(subdomain) do
-          admin = User.create!(username: "admin", email: "admin@consul.dev", password: "12345678", password_confirmation: "12345678", confirmed_at: Time.current, terms_of_service: "1")
+          admin = User.create!(username: "admin", email: "admin@consul.dev", password: "12345678",
+            password_confirmation: "12345678", confirmed_at: Time.current, terms_of_service: "1")
           admin.create_administrator
           populate_settings
         end

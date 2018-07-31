@@ -1489,6 +1489,10 @@ es:
         institution_code_census: Código Institución
         portal_name_census: Código Portal
         user_code_census: Código Usuario
+      create:
+        success: Entidad creada correctamente
+      update:
+        success: Entidad actualizada correctamente
       delete:
         success: Entidad borrada correctamente
         error: No se puede borrar la entidad

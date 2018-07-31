@@ -1490,6 +1490,10 @@ en:
         institution_code_census: Institution code
         portal_name_census: Portal code
         user_code_census: User code
+      create:
+        success: Tenant created successfully
+      update:
+        success: Tenant updated successfully
       delete:
         success: Tenant deleted successfully
         error: Tenant couldn't be deleted
