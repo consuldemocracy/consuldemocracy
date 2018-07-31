@@ -12,11 +12,13 @@ module Translatable
     end
 
     def delete_translations
-      locales = resource_model.globalize_locales.
-      select { |k, v| params[:delete_translations].include?(k.to_sym) && params[:delete_translations][k] == "1" }
-      locales.each do |l|
-        Globalize.with_locale(l) do
-          resource.translation.destroy
+      if params[:delete_translations].present?
+        locales = resource_model.globalize_locales.
+        select { |k, v| params[:delete_translations].include?(k.to_sym) && params[:delete_translations][k] == "1" }
+        locales.each do |l|
+          Globalize.with_locale(l) do
+            resource.translation.destroy
+          end
         end
       end
     end
