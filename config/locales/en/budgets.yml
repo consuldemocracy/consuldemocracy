@@ -179,6 +179,15 @@ en:
       investment_proyects: List of all investment projects
       unfeasible_investment_proyects: List of all unfeasible investment projects
       not_selected_investment_proyects: List of all investment projects not selected for balloting
+    executions:
+      link: "Milestones"
+      page_title: "%{budget} - Milestones"
+      heading: "Participatory budget Milestones"
+      heading_selection_title: "By district"
+      no_winner_investments: "No winner investments in this state"
+      filters:
+        label: "Project's current state"
+        all: "All (%{count})"
     phases:
       errors:
         dates_range_invalid: "Start date can't be equal or later than End date"

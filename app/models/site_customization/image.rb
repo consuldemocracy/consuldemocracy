@@ -4,7 +4,8 @@ class SiteCustomization::Image < ActiveRecord::Base
     "logo_header" => [80, 80],
     "social_media_icon" => [470, 246],
     "social_media_icon_twitter" => [246, 246],
-    "apple-touch-icon-200" => [200, 200]
+    "apple-touch-icon-200" => [200, 200],
+    "budget_execution_no_image" => [800, 600]
   }
 
   has_attached_file :image

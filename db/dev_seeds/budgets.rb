@@ -203,10 +203,3 @@ section "Creating investment milestones" do
     end
   end
 end
-
-section "Creating default Investment Milestone Statuses" do
-  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.studying_project'))
-  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.bidding'))
-  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executing_project'))
-  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executed'))
-end
