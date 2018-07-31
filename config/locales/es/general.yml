@@ -136,9 +136,6 @@ es:
         description: Inicia un debate para compartir puntos de vista con otras personas sobre los temas que te preocupan.
         help_text_1: "El espacio de debates ciudadanos está dirigido a que cualquier persona pueda exponer temas que le preocupan y sobre los que quiera compartir puntos de vista con otras personas."
         help_text_2: 'Para abrir un debate es necesario registrarse en %{org}. Los usuarios ya registrados también pueden comentar los debates abiertos y valorarlos con los botones de "Estoy de acuerdo" o "No estoy de acuerdo" que se encuentran en cada uno de ellos.'
-        help_text_3: "Ten en cuenta que un debate no activa ningún mecanismo de actuación concreto. Si quieres hacer una %{proposal} para la ciudad o plantear un proyecto de %{budget} cuando se abra la convocatoria, ve a la sección correspondiente."
-        proposals_link: propuesta
-        budget_link: presupuestos participativos
     new:
       form:
         submit_button: Empieza un debate
@@ -210,17 +207,11 @@ es:
       contact_us: Para asistencia técnica entra en
       copyright: CONSUL, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
-      faq: Asistencia técnica
-      open_data_text: Todos los datos del Ayuntamiento son tuyos.
-      open_data_title: Datos Abiertos
       open_source: software de código abierto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decide cómo debe ser la ciudad que quieres.
       participation_title: Participación
       privacy: Política de privacidad
-      transparency_text: Obtén cualquier información sobre la ciudad.
-      transparency_title: Transparencia
-      transparency_url: https://transparency.consul
     header:
       administration_menu: Admin
       administration: Administración
@@ -228,10 +219,6 @@ es:
       collaborative_legislation: Procesos legislativos
       debates: Debates
       external_link_blog: Blog
-      external_link_opendata: Datos abiertos
-      external_link_opendata_url: https://opendata.consul
-      external_link_transparency: Transparencia
-      external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
       logo: Logo de CONSUL
       management: Gestión
@@ -335,7 +322,7 @@ es:
       geozone: Ámbito de actuación
       proposal_external_url: Enlace a documentación adicional
       proposal_question: Pregunta de la propuesta
-      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <br>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'"
+      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No"
       proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
       proposal_summary: Resumen de la propuesta
@@ -400,10 +387,7 @@ es:
         help: Ayuda sobre las propuestas
       section_footer:
         title: Ayuda sobre las propuestas
-        description: Haz una propuesta ciudadana. Si obtiene los apoyos suficientes y pasa a votación, puedes conseguir que todos los habitantes decidan cómo quieren que sea nuestra ciudad.
-        help_text_1: "Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su ciudad. Cualquier persona puede hacer una propuesta sobre un tema que le interese o preocupe para que el ayuntamiento la lleve a cabo, después de conseguir los apoyos suficientes y de someterse a votación ciudadana."
-        help_text_2: "Para crear una propuesta hay que registrarse en %{org}. Las propuestas que consigan el apoyo del 1% de la gente en la web, pasan a votación. Para apoyar propuestas es necesario tener una cuenta verificada."
-        help_text_3: "Se convoca una votación ciudadana cuando las propuestas consiguen los apoyos necesarios. Una vez celebrada, si hay más gente a favor que en contra, el Consistorio asume la propuesta y la lleva a cabo."
+        description: Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su ciudad, después de conseguir los apoyos suficientes y de someterse a votación ciudadana.
     new:
       form:
         submit_button: Crear propuesta
@@ -428,7 +412,6 @@ es:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
-      reason_for_supports_necessary: 1% del Censo
       support: Apoyar
       support_title: Apoyar esta propuesta
       supports:
@@ -442,8 +425,7 @@ es:
       supports_necessary: "%{number} apoyos necesarios"
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
-      successful: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
-      voting: "próxima votación"
+      successful: "Esta propuesta ha alcanzado los apoyos necesarios."
     show:
       author_deleted: Usuario eliminado
       code: 'Código de la propuesta:'
@@ -493,9 +475,7 @@ es:
         help: Ayuda sobre las votaciones
       section_footer:
         title: Ayuda sobre las votaciones
-        description: Regístrate para poder votar propuestas ciudadanas y las cuestiones que pregunta a sus vecinos el Ayuntamiento. Toma decisiones municipales de forma directa.
-        help_text_1: "Las votaciones se convocan cuando una propuesta ciudadana alcanza el 1% de apoyos del censo con derecho a voto. En las votaciones también se pueden incluir cuestiones que el Ayuntamiento somete a decisión directa de la ciudadanía."
-        help_text_2: "Para participar en la próxima votación tienes que registrarte en %{org} y verificar tu cuenta. Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años. Los resultados de todas las votaciones serán vinculantes para el gobierno."
+        description: Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
       no_polls: "No hay votaciones abiertas."
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
