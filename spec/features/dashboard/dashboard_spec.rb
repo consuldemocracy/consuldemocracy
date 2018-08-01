@@ -73,6 +73,7 @@ feature "Proposal's dashboard" do
     within 'div#available-resources-section' do
       expect(page).to have_content('Polls')
       expect(page).to have_content('E-mail')
+      expect(page).to have_content('Poster')
       expect(page).to have_content(available.title)      
       expect(page).to have_content(unavailable.title)
       expect(page).to have_content(requested.title)
@@ -102,6 +103,10 @@ feature "Proposal's dashboard" do
 
   scenario 'Dashboard has a link to e-mail feature' do
     expect(page).to have_link('E-mail')
+  end
+
+  scenario 'Dashboard has a link to poster feature' do
+    expect(page).to have_link('Poster')
   end
 
   scenario 'Dashboard has a link to resources on main menu' do

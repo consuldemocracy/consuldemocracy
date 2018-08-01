@@ -22,6 +22,8 @@ namespace :proposal_actions do
       proposals.poll_link
       proposals.email_short_title
       proposals.email_description
+      proposals.poster_short_title
+      proposals.poster_description
     ].each do |key|
       Setting[key] = nil if Setting.find_by(key: key).nil?
     end

@@ -495,6 +495,8 @@ GEM
       railties (>= 4.2)
     whenever (0.10.0)
       chronic (>= 0.6.3)
+    wicked_pdf (1.1.0)
+    wkhtmltopdf-binary (0.12.4)
     xpath (3.0.0)
       nokogiri (~> 1.8)
 
@@ -586,6 +588,8 @@ DEPENDENCIES
   unicorn (~> 5.4.0)
   web-console (~> 3.3.0)
   whenever (~> 0.10.0)
+  wicked_pdf (~> 1.1.0)
+  wkhtmltopdf-binary (~> 0.12.4)
 
 BUNDLED WITH
    1.16.2
