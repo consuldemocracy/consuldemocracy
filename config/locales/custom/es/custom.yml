@@ -345,8 +345,8 @@ es:
       start_proposal_question: Crear propuesta o pregunta
   landings:
     signup:
-      title: Vota los proyectos finalistas de presupuestos participativos
-      description: "¿Has pensado qué hacer con 100 millones de #PresupuestosParticipativos? Vota en https://decide.madrid.es/ #VotaParticipativos18"
+      title: Cambia tu ciudad con Decide Madrid
+      description: "Decide Madrid es una web donde puedes tomar decisiones para hacer Madrid más tuyo, mejor. Presenta tus propuestas."
       decide: "En Madrid tú decides"
     cambia_tu_ciudad:
       phrase_1: "Maya decidió que Madrid necesitaba puntos de carga para coches eléctricos"

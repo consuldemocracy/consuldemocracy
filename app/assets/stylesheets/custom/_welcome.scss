@@ -184,7 +184,7 @@ $budget-2018-yellow:   #fef384;
       font-size: rem-calc(20);
       font-weight: 300;
       line-height: rem-calc(20);
-      margin-top: $line-height;
+      margin-top: $line-height / 2;
 
       @include breakpoint(medium) {
         font-size: rem-calc(30);
@@ -205,7 +205,7 @@ $budget-2018-yellow:   #fef384;
     }
 
     span {
-      color: $budget-2018-pink;
+      color: #fff;
       font-size: rem-calc(18);
       font-weight: 300;
       line-height: rem-calc(18);
