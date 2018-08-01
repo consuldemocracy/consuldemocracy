@@ -8,12 +8,15 @@ module Translatable
   private
 
     def translation_params(params)
-      resource_model.globalize_attribute_names.select { |k, v| params.include?(k.to_sym) && params[k].present? }
+      resource_model
+        .globalize_attribute_names
+        .select { |k| params[k].present? ||
+                      resource_model.translated_locales.include?(get_locale_from_attribute(k)) }
     end
 
     def delete_translations
-      locales = resource_model.globalize_locales.
-      select { |k, v| params[:delete_translations].include?(k.to_sym) && params[:delete_translations][k] == "1" }
+      locales = resource_model.translated_locales
+                              .select { |l| params.dig(:delete_translations, l) == "1" }
       locales.each do |l|
         Globalize.with_locale(l) do
           resource.translation.destroy
@@ -21,4 +24,8 @@ module Translatable
       end
     end
 
+    def get_locale_from_attribute(attribute_name)
+      locales = resource_model.globalize_locales
+      attribute_name.to_s.match(/(#{locales.join('|')})\Z/)&.captures&.first
+    end
 end
