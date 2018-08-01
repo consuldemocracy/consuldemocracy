@@ -47,9 +47,17 @@ end
 section "Creating Poll Questions & Answers" do
   Poll.all.each do |poll|
     (1..4).to_a.sample.times do
-      question = Poll::Question.create!(author: User.all.sample,
-                                        title: Faker::Lorem.sentence(3).truncate(60) + '?',
-                                        poll: poll)
+      title = Faker::Lorem.sentence(3).truncate(60) + '?'
+      question = Poll::Question.new(author: User.all.sample,
+                                    title: title,
+                                    poll: poll)
+      I18n.available_locales.map do |locale|
+        neutral_locale = locale.to_s.downcase.underscore.to_sym
+        Globalize.with_locale(neutral_locale) do
+          question.title = "#{title} (#{locale})"
+        end
+      end
+      question.save!
       Faker::Lorem.words((2..4).to_a.sample).each do |answer|
         description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
         Poll::Question::Answer.create!(question: question,
@@ -194,6 +202,13 @@ section "Creating Poll Questions from Proposals" do
                                      description: Faker::ChuckNorris.fact)
     end
     question.copy_attributes_from_proposal(proposal)
+    title = question.title
+    I18n.available_locales.map do |locale|
+      neutral_locale = locale.to_s.downcase.underscore.to_sym
+      Globalize.with_locale(neutral_locale) do
+        question.title = "#{title} (#{locale})"
+      end
+    end
     question.save!
   end
 end
@@ -209,6 +224,13 @@ section "Creating Successful Proposals" do
                                      description: Faker::ChuckNorris.fact)
     end
     question.copy_attributes_from_proposal(proposal)
+    title = question.title
+    I18n.available_locales.map do |locale|
+      neutral_locale = locale.to_s.downcase.underscore.to_sym
+      Globalize.with_locale(neutral_locale) do
+        question.title = "#{title} (#{locale})"
+      end
+    end
     question.save!
   end
 end
