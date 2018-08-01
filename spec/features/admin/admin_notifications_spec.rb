@@ -99,7 +99,7 @@ feature "Admin Notifications" do
                                       body: 'Other body',
                                       link: '')
 
-      click_button "Create notification"
+      click_button "Update notification"
 
       expect(page).to have_content "Notification updated successfully"
       expect(page).to have_content "All users"
@@ -181,7 +181,7 @@ feature "Admin Notifications" do
     visit edit_admin_admin_notification_path(notification)
 
     fill_in :admin_notification_title, with: ''
-    click_button "Create notification"
+    click_button "Update notification"
 
     expect(page).to have_content error_message
   end
