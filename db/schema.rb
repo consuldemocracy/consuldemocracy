@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180730213824) do
+ActiveRecord::Schema.define(version: 20180731173147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -808,6 +808,17 @@ ActiveRecord::Schema.define(version: 20180730213824) do
   end
 
   add_index "poll_question_answers", ["question_id"], name: "index_poll_question_answers_on_question_id", using: :btree
+
+  create_table "poll_question_translations", force: :cascade do |t|
+    t.integer  "poll_question_id", null: false
+    t.string   "locale",           null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "title"
+  end
+
+  add_index "poll_question_translations", ["locale"], name: "index_poll_question_translations_on_locale", using: :btree
+  add_index "poll_question_translations", ["poll_question_id"], name: "index_poll_question_translations_on_poll_question_id", using: :btree
 
   create_table "poll_questions", force: :cascade do |t|
     t.integer  "proposal_id"

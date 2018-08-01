@@ -243,6 +243,112 @@ feature "Translations" do
       end
     end
 
+    context "Questions" do
+
+      let(:question) { create(:poll_question, poll: poll,
+                                              title_en: "Question in English",
+                                              title_es: "Pregunta en Español") }
+
+      before do
+        @edit_question_url = edit_admin_question_path(question)
+      end
+
+      scenario "Add a translation", :js do
+        visit @edit_question_url
+
+        select "Français", from: "translation_locale"
+        fill_in 'poll_question_title_fr', with: 'Question en Français'
+
+        click_button 'Save'
+        expect(page).to have_content "Changes saved"
+
+        visit @edit_question_url
+        expect(page).to have_field('poll_question_title_en', with: 'Question in English')
+
+        click_link "Español"
+        expect(page).to have_field('poll_question_title_es', with: 'Pregunta en Español')
+
+        click_link "Français"
+        expect(page).to have_field('poll_question_title_fr', with: 'Question en Français')
+      end
+
+      scenario "Update a translation", :js do
+        visit @edit_question_url
+
+        click_link "Español"
+        fill_in 'poll_question_title_es', with: 'Pregunta correcta en Español'
+
+        click_button 'Save'
+        expect(page).to have_content "Changes saved"
+
+        visit poll_path(poll)
+        expect(page).to have_content("Question in English")
+
+        select('Español', from: 'locale-switcher')
+        expect(page).to have_content("Pregunta correcta en Español")
+      end
+
+      scenario "Remove a translation", :js do
+        visit @edit_question_url
+
+        click_link "Español"
+        click_link "Remove language"
+
+        expect(page).not_to have_link "Español"
+
+        click_button "Save"
+        visit @edit_question_url
+        expect(page).not_to have_link "Español"
+      end
+
+      context "Globalize javascript interface" do
+
+        scenario "Highlight current locale", :js do
+          visit @edit_question_url
+
+          expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
+
+          select('Español', from: 'locale-switcher')
+
+          expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
+        end
+
+        scenario "Highlight selected locale", :js do
+          visit @edit_question_url
+
+          expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
+
+          click_link "Español"
+
+          expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
+        end
+
+        scenario "Show selected locale form", :js do
+          visit @edit_question_url
+
+          expect(page).to have_field('poll_question_title_en', with: 'Question in English')
+
+          click_link "Español"
+
+          expect(page).to have_field('poll_question_title_es', with: 'Pregunta en Español')
+        end
+
+        scenario "Select a locale and add it to the poll form", :js do
+          visit @edit_question_url
+
+          select "Français", from: "translation_locale"
+
+          expect(page).to have_link "Français"
+
+          click_link "Français"
+
+          expect(page).to have_field('poll_question_title_fr')
+        end
+      end
+
+    end
+
+
   end
 
 end

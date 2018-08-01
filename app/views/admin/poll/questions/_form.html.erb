@@ -1,18 +1,36 @@
+<%= render "admin/shared/globalize_locales", resource: @question %>
+
 <%= form_for(@question, url: form_url) do |f| %>
 
   <%= render 'shared/errors', resource: @question %>
+
+	<% @question.globalize_locales.each do |locale| %>
+    <%= hidden_field_tag "delete_translations[#{locale}]", 0 %>
+	<% end %>
 
   <%= f.hidden_field :proposal_id %>
 
   <div class="small-12">
     <div class="small-12 medium-6 large-4">
+      <% select_options = Poll.joins(:translations)
+                              .where('poll_translations.locale = ?', Globalize.locale)
+                              .pluck("poll_translations.name", :id) %>
       <%= f.select :poll_id,
-                    options_for_select(Poll.pluck(:name, :id)),
+                    options_for_select(select_options),
                     prompt: t("admin.questions.index.select_poll"),
                     label: t("admin.questions.new.poll_label") %>
     </div>
 
-    <%= f.text_field :title %>
+    <%= f.label :name, t("admin.shared.title") %>
+    <% @question.globalize_locales.each do |locale| %>
+      <% globalize(locale) do %>
+        <%= f.text_field "title_#{locale}",
+                         class: "js-globalize-attribute",
+                         data: { locale: locale },
+                         style: display_translation?(locale),
+                         label: false %>
+      <% end %>
+    <% end %>
 
     <div class="small-12 medium-4 large-2 margin-top">
       <%= f.submit(class: "button success expanded", value: t("shared.save")) %>

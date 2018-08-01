@@ -41,7 +41,7 @@ feature 'Admin poll questions' do
     click_link "Create question"
 
     select 'Movies', from: 'poll_question_poll_id'
-    fill_in 'poll_question_title', with: title
+    fill_in 'poll_question_title_en', with: title
 
     click_button 'Save'
 
@@ -56,7 +56,7 @@ feature 'Admin poll questions' do
     click_link "Create question"
 
     expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
-    expect(page).to have_field('poll_question_title', with: proposal.title)
+    expect(page).to have_field('poll_question_title_en', with: proposal.title)
 
     select 'Proposals', from: 'poll_question_poll_id'
 
@@ -79,7 +79,7 @@ feature 'Admin poll questions' do
 
     old_title = question1.title
     new_title = "Potatoes are great and everyone should have one"
-    fill_in 'poll_question_title', with: new_title
+    fill_in 'poll_question_title_en', with: new_title
 
     click_button 'Save'
 
