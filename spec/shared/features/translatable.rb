@@ -186,6 +186,8 @@ def update_button_text
   case translatable_class.name
   when "Budget::Investment::Milestone"
     "Update milestone"
+  when "AdminNotification"
+    "Update notification"
   else
     "Save changes"
   end
