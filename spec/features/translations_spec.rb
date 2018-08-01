@@ -140,18 +140,26 @@ feature "Translations" do
       visit @edit_poll_url
 
       select "Français", from: "translation_locale"
+      fill_in 'poll_name_fr', with: 'Name en Français'
+      fill_in 'poll_summary_fr', with: 'Summary en Français'
       fill_in 'poll_description_fr', with: 'Description en Français'
 
       click_button 'Update poll'
       expect(page).to have_content "Poll updated successfully"
 
       visit @edit_poll_url
+      expect(page).to have_field('poll_name_en', with: 'Name in English')
+      expect(page).to have_field('poll_summary_en', with: 'Summary in English')
       expect(page).to have_field('poll_description_en', with: 'Description in English')
 
       click_link "Español"
+      expect(page).to have_field('poll_name_es', with: 'Nombre en Español')
+      expect(page).to have_field('poll_summary_es', with: 'Resumen en Español')
       expect(page).to have_field('poll_description_es', with: 'Descripción en Español')
 
       click_link "Français"
+      expect(page).to have_field('poll_name_fr', with: 'Name en Français')
+      expect(page).to have_field('poll_summary_fr', with: 'Summary en Français')
       expect(page).to have_field('poll_description_fr', with: 'Description en Français')
     end
 
@@ -159,15 +167,21 @@ feature "Translations" do
       visit @edit_poll_url
 
       click_link "Español"
+      fill_in 'poll_name_es', with: 'Nombre correcto en Español'
+      fill_in 'poll_summary_es', with: 'Resumen correcto en Español'
       fill_in 'poll_description_es', with: 'Descripción correcta en Español'
 
       click_button 'Update poll'
       expect(page).to have_content "Poll updated successfully"
 
       visit poll_path(poll)
+      expect(page).to have_content("Name in English")
+      expect(page).to have_content("Summary in English")
       expect(page).to have_content("Description in English")
 
       select('Español', from: 'locale-switcher')
+      expect(page).to have_content("Nombre correcto en Español")
+      expect(page).to have_content("Resumen correcto en Español")
       expect(page).to have_content("Descripción correcta en Español")
     end
 
