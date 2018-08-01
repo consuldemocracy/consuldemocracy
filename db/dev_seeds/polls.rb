@@ -37,9 +37,9 @@ section "Creating polls" do
         poll.name = "#{name} (#{locale})"
         poll.summary = "Summary for locale #{locale}"
         poll.description = "Description for locale #{locale}"
-        poll.save!
       end
     end
+    poll.save!
   end
 
 end
