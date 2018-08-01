@@ -2,10 +2,10 @@ require 'rails_helper'
 
 describe Budget::Stats do
 
-  before(:all) do
+  before(:each) do
     @budget = create(:budget)
     @group = create(:budget_group, budget: @budget)
-    @heading = create(:budget_heading, group: @group, price: 1000)
+    @heading = create(:budget_heading, :city_heading, group: @group, price: 1000)
 
     @investment1 = create(:budget_investment, :selected, author: create(:user, gender: 'female'),
                           heading: @heading, price: 200, ballot_lines_count: 900, winner: true)
