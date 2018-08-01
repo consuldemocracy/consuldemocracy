@@ -140,6 +140,8 @@ feature "Translations" do
       visit @edit_poll_url
 
       select "Français", from: "translation_locale"
+      fill_in 'poll_name_fr', with: 'Name en Français'
+      fill_in 'poll_summary_fr', with: 'Summary en Français'
       fill_in 'poll_description_fr', with: 'Description en Français'
 
       click_button 'Update poll'
@@ -165,6 +167,8 @@ feature "Translations" do
       visit @edit_poll_url
 
       click_link "Español"
+      fill_in 'poll_name_es', with: 'Nombre correcto en Español'
+      fill_in 'poll_summary_es', with: 'Resumen correcto en Español'
       fill_in 'poll_description_es', with: 'Descripción correcta en Español'
 
       click_button 'Update poll'
