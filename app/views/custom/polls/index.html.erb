@@ -18,10 +18,6 @@
   <div class="small-12 column">
     <%= render 'shared/filter_subnav', i18n_namespace: "polls.index" %>
 
-    <h3 class="margin-top"><%= t("polls.index.muros_title") %></h3>
-    <p><%= t("polls.index.muros_1_html") %></p>
-    <p><%= t("polls.index.muros_2") %>&nbsp;<%= t("polls.index.muros_3_html") %></p>
-
     <% if @polls.any? %>
       <% polls_by_geozone_restriction = @polls.group_by(&:geozone_restricted) %>
 
