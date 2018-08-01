@@ -19,13 +19,13 @@ feature 'Polls' do
     start_date = 1.week.from_now
     end_date = 2.weeks.from_now
 
-    fill_in "poll_name", with: "Upcoming poll"
-    fill_in 'poll_starts_at', with: start_date.strftime("%d/%m/%Y")
-    fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
+    fill_in "poll_name", with: 'Upcoming poll'
+    fill_in 'poll_starts_at', with: start_date.strftime('%d/%m/%Y')
+    fill_in 'poll_ends_at', with: end_date.strftime('%d/%m/%Y')
     fill_in 'poll_description', with: "Upcomming poll's description. This poll..."
 
-    expect(page).not_to have_css("#poll_results_enabled")
-    expect(page).not_to have_css("#poll_stats_enabled")
+    expect(page).not_to have_css('#poll_results_enabled')
+    expect(page).not_to have_css('#poll_stats_enabled')
 
     click_link 'Add question'
 
@@ -34,11 +34,20 @@ feature 'Polls' do
     click_link 'Add answer'
     fill_in 'Title', with: 'First answer'
 
-    click_button "Create poll"
+    click_button 'Create poll'
 
-    expect(page).to have_content "Poll created successfully"
-    expect(page).to have_content "Upcoming poll"
+    expect(page).to have_content 'Poll created successfully'
+    expect(page).to have_content 'Upcoming poll'
     expect(page).to have_content I18n.l(start_date.to_date)
+  end
+
+  scenario 'Create a poll redirects back to form when invalid data', js: true do
+    click_link 'Polls'
+    click_link 'Create poll'
+
+    click_button 'Create poll'
+
+    expect(page).to have_content('New poll')
   end
 
   scenario 'Edit poll is allowed for upcoming polls' do
@@ -55,6 +64,24 @@ feature 'Polls' do
     click_button 'Update poll'
 
     expect(page).to have_content 'Poll updated successfully'
+  end
+
+  scenario 'Edit poll redirects back when invalid data', js: true do
+    poll = create(:poll, :incoming, related: proposal)
+    
+    visit proposal_dashboard_polls_path(proposal)
+
+    within "div#poll_#{poll.id}" do
+      expect(page).to have_content('Edit survey')
+
+      click_link 'Edit survey'
+    end
+
+    fill_in "poll_name", with: ''
+
+    click_button 'Update poll'
+
+    expect(page).to have_content('Edit poll')
   end
 
   scenario 'Edit poll is not allowed for current polls' do

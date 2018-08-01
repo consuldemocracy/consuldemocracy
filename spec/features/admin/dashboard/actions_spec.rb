@@ -47,6 +47,11 @@ feature 'Admin dashboard actions' do
 
       expect(page).to have_content(action.title)
     end
+
+    scenario 'Renders create form in case data is invalid' do
+      click_button 'Save'
+      expect(page).to have_content('errors prevented this Dashboard/Action from being saved.')
+    end
   end
 
   context 'when editing an action' do
@@ -64,6 +69,12 @@ feature 'Admin dashboard actions' do
 
       expect(page).to have_content(title)
     end
+
+    scenario 'Renders edit form in case data is invalid' do
+      fill_in 'dashboard_action_title', with: 'x'
+      click_button 'Save'
+      expect(page).to have_content('error prevented this Dashboard/Action from being saved.')
+    end
   end
 
   context 'when destroying an action' do
@@ -79,6 +90,16 @@ feature 'Admin dashboard actions' do
       end
 
       expect(page).not_to have_content(action.title)
+    end
+
+    scenario 'can not delete actions that have been executed', js: true do
+      _executed_action = create(:dashboard_executed_action, action: action)
+
+      page.accept_confirm do
+        click_link 'Delete'
+      end
+
+      expect(page).to have_content('Cannot delete record because dependent executed actions exist')
     end
   end
 end

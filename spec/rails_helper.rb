@@ -1,3 +1,8 @@
+unless ENV['TRAVIS']
+  require 'simplecov'
+  SimpleCov.start 'rails'
+end
+
 ENV['RAILS_ENV'] ||= 'test'
 if ENV['TRAVIS']
   require 'coveralls'

@@ -126,6 +126,18 @@ feature "Proposal's dashboard" do
     expect(page).to have_content('The request for the administrator has been successfully sent.')
   end
 
+  scenario 'Request already requested resource with admin request', js: true do
+    feature = create(:dashboard_action, :resource, :active, :admin_request)
+
+    visit proposal_dashboard_index_path(proposal)
+    click_link(feature.title)
+
+    create(:dashboard_executed_action, action: feature, proposal: proposal)
+
+    click_button 'Request'
+    expect(page).to have_content('Proposal has already been taken')
+  end
+
   scenario 'Resource without admin request do not have a request link', js: true do
     feature = create(:dashboard_action, :resource, :active)
 

@@ -29,5 +29,14 @@ feature 'Poster' do
     expect(page).not_to have_link('Preview')
     expect(page).to have_link('Download')
   end
+
+  scenario 'PDF contains the proposal details', js: true do
+    click_link 'Download'
+
+    page.driver.browser.switch_to.window page.driver.browser.window_handles.last do
+      expect(page).to have_content(proposal.title)
+      expect(page).to have_content(proposal.code)
+    end
+  end
 end
 

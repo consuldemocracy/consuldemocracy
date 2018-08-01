@@ -77,8 +77,4 @@ class Dashboard::Action < ActiveRecord::Base
   def self.next_goal_for(proposal)
     course_for(proposal).first
   end
-
-  def request_to_administrators?
-    request_to_administrators || false
-  end
 end

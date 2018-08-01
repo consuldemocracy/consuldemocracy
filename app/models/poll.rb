@@ -104,9 +104,10 @@ class Poll < ActiveRecord::Base
   end
 
   def only_one_active
-    if Poll.overlaping_with(self).any?
-      errors.add(:starts_at, I18n.t('activerecord.errors.messages.another_poll_active'))
-    end
+    return unless starts_at.present?
+    return unless ends_at.present?
+    return unless Poll.overlaping_with(self).any?
+    errors.add(:starts_at, I18n.t('activerecord.errors.messages.another_poll_active'))
   end
 
   def public?
