@@ -8,6 +8,7 @@
   <%= f.text_area :body %>
 
   <div class="margin-top">
-    <%= f.submit class: "button success" %>
+    <%= f.submit t("admin.admin_notifications.#{admin_submit_action(@admin_notification)}.submit_button"),
+                 class: "button success" %>
   </div>
 <% end %>
