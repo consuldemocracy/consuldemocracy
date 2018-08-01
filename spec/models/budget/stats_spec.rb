@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe Budget::Stats do
 
-  before(:all) do
+  before(:each) do
     @budget = create(:budget)
     @group = create(:budget_group, budget: @budget)
     @heading = create(:budget_heading, group: @group, price: 1000)
