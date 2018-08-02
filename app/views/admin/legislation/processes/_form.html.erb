@@ -1,4 +1,6 @@
-<%= form_for [:admin, @process], html: {data: {watch_changes: true}} do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @process  %>
+
+<%= translatable_form_for [:admin, @process], html: {data: {watch_changes: true}} do |f| %>
 
   <% if @process.errors.any? %>
 
@@ -172,37 +174,35 @@
   </div>
 
   <div class="small-12 medium-9 column">
-    <%= f.label :title %>
-    <%= f.text_field :title,
-                     label: false,
-                     placeholder: t("admin.legislation.processes.form.title_placeholder") %>
+    <%= f.translatable_text_field :title,
+                                  placeholder: t("admin.legislation.processes.form.title_placeholder") %>
   </div>
 
   <div class="small-12 medium-9 column">
     <%= f.label :summary %>
     <span class="help-text"><%= t("admin.legislation.processes.form.use_markdown") %></span>
-    <%= f.text_area :summary,
-                     label: false,
-                     rows: 2,
-                     placeholder: t("admin.legislation.processes.form.summary_placeholder") %>
+    <%= f.translatable_text_field :summary,
+                                  rows: 2,
+                                  placeholder: t("admin.legislation.processes.form.summary_placeholder"),
+                                  label: false %>
   </div>
 
   <div class="small-12 medium-9 column">
     <%= f.label :description %>
     <span class="help-text"><%= t("admin.legislation.processes.form.use_markdown") %></span>
-    <%= f.text_area :description,
-                     label: false,
-                     rows: 5,
-                     placeholder: t("admin.legislation.processes.form.description_placeholder") %>
+    <%= f.translatable_text_field :description,
+                                  rows: 5,
+                                  placeholder: t("admin.legislation.processes.form.description_placeholder"),
+                                  label: false %>
   </div>
 
   <div class="small-12 medium-9 column">
     <%= f.label :additional_info %>
     <span class="help-text"><%= t("admin.legislation.processes.form.use_markdown") %></span>
-    <%= f.text_area :additional_info,
-                     label: false,
-                     rows: 10,
-                     placeholder: t("admin.legislation.processes.form.additional_info_placeholder") %>
+    <%= f.translatable_text_area :additional_info,
+                                  rows: 10,
+                                  placeholder: t("admin.legislation.processes.form.additional_info_placeholder"),
+                                  label: false %>
   </div>
 
   <div class="small-12 medium-3 column clear end">
