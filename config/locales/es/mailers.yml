@@ -11,7 +11,7 @@ es:
     email_verification:
       click_here_to_verify: en este enlace
       instructions_2_html: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
-      instructions_html: Para terminar de verificar tu cuenta de usuario en el Portal de Gobierno Abierto del Ayuntamiento de Madrid, necesitamos que pulses %{verification_link}.
+      instructions_html: Para terminar de verificar tu cuenta de usuario pulsa %{verification_link}.
       subject: Verifica tu email
       thanks: Muchas gracias.
       title: Verifica tu cuenta con el siguiente enlace
@@ -22,20 +22,14 @@ es:
       title: Nueva respuesta a tu comentario
     unfeasible_spending_proposal:
       hi: "Estimado usuario,"
-      reconsider_html: "Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, al correo example@consul.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
       sincerely: "Atentamente"
-      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
-      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
     budget_investment_unfeasible:
       hi: "Estimado usuario,"
-      reconsider_html: "Si consideras que el proyecto rechazado cumple los requisitos para mantenerlo como proyecto de gasto, podrás comunicarlo, en el plazo de 48 horas, al correo example@consul.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu proyecto."
       sincerely: "Atentamente"
-      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"
-      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu proyecto <strong>'%{title}'</strong> quedará excluido de este proceso participativo por el siguiente motivo:"
     proposal_notification_digest:
       info: "A continuación te mostramos las nuevas notificaciones que han publicado los autores de las propuestas que estás apoyando en %{org_name}."
       title: "Notificaciones de propuestas en %{org_name}"
@@ -53,7 +47,7 @@ es:
       title_html: "Has enviado un nuevo mensaje privado a <strong>%{receiver}</strong> con el siguiente contenido:"
     user_invite:
       ignore: "Si no has solicitado esta invitación no te preocupes, puedes ignorar este correo."
-      text: "¡Gracias por solicitar unirte a %{org}! En unos segundos podrás empezar a decidir la ciudad que quieres, sólo tienes que rellenar el siguiente formulario:"
+      text: "¡Gracias por solicitar unirte a %{org}! En unos segundos podrás empezar a participar, sólo tienes que rellenar el siguiente formulario:"
       thanks: "Muchas gracias."
       title: "Bienvenido a %{org}"
       button: Completar registro
@@ -66,23 +60,16 @@ es:
       follow_html: "Te informaremos de cómo avanza el proceso, que también puedes seguir en la página de <strong>%{link}</strong>."
       follow_link: "Presupuestos participativos"
       sincerely: "Atentamente,"
-      signatory: "Área de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid"
       share: "Comparte tu proyecto"
     budget_investment_selected:
       subject: "Tu proyecto de gasto '%{code}' ha sido seleccionado"
       hi: "Estimado/a usuario/a"
-      selected_html: "Desde el Ayuntamiento de Madrid agradecemos que hayas participado con tu idea en los <strong>Presupuestos Participativos</strong>. Te informamos de que tu proyecto <strong>'%{title}'</strong> ha sido seleccionado y pasa a la fase de votación final que tiene lugar desde el <strong>15 de mayo hasta el 30 de junio de 2017</strong>."
       share: "Empieza ya a conseguir votos, comparte tu proyecto de gasto en redes sociales. La difusión es fundamental para conseguir que se haga realidad."
       share_button: "Comparte tu proyecto"
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"
-      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
     budget_investment_unselected:
       subject: "Tu proyecto de gasto '%{code}' no ha sido seleccionado"
       hi: "Estimado/a usuario/a"
-      unselected_html: "Desde el Ayuntamiento de Madrid agradecemos que hayas participado con tu idea en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu proyecto <strong>'%{title}'</strong> no ha sido seleccionado para la fase de votación final."
-      participate_html: "Puedes continuar participando en la votación final votando proyectos para toda la ciudad y el distrito que elijas desde el <strong>15 de mayo hasta el 30 de junio de 2017.</strong>"
-      participate_url: "participes en la votación final"
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"
-      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"

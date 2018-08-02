@@ -136,9 +136,6 @@ en:
         description: Start a debate to share opinions with others about the topics you are concerned about.
         help_text_1: "The space for citizen debates is aimed at anyone who can expose issues of their concern and those who want to share opinions with other people."
         help_text_2: 'To open a debate you need to sign up on %{org}. Users can also comment on open debates and rate them with the "I agree" or "I disagree" buttons found in each of them.'
-        help_text_3: "Keep in mind that a debate does not start any specific action. If you want to make a %{proposal} for the city or raise a investment project of %{budget} when the phase is open, go to the corresponding section."
-        proposals_link: proposal
-        budget_link: participatory budgeting
     new:
       form:
         submit_button: Start a debate
@@ -209,15 +206,11 @@ en:
       contact_us: For technical assistance enters
       copyright: CONSUL, %{year}
       description: This portal uses the %{consul} which is %{open_source}.
-      faq: technical assistance
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decide how to shape the city you want to live in.
       participation_title: Participation
       privacy: Privacy Policy
-      transparency_text: Find out anything about the city.
-      transparency_title: Transparency
-      transparency_url: https://transparency.consul
     header:
       administration_menu: Admin
       administration: Administration
@@ -225,10 +218,6 @@ en:
       collaborative_legislation: Legislation processes
       debates: Debates
       external_link_blog: Blog
-      external_link_opendata: Open data
-      external_link_opendata_url: https://opendata.consul
-      external_link_transparency: Transparency
-      external_link_transparency_url: https://transparency.consul
       locale: 'Language:'
       logo: CONSUL logo
       management: Management
@@ -394,10 +383,7 @@ en:
         help: Help about proposals
       section_footer:
         title: Help about proposals
-        description: Make a citizen proposal. If it gets enough supports it will go to voting phase, so you can get all the citizens to decide how they want their city to be.
-        help_text_1: "The citizen proposals are an opportunity for neighbours and collectives to decide directly how they want to shape their city. Any person can make a proposal about a topic or concern of their interest, for the City Council to make it, after it gets enough supports to be put to a citizens vote."
-        help_text_2: "To create a proposal, you must sign up on %{org}. The proposals that get the support of 1% of the users in the web, goes to voting phase. To support proposals it is necessary to have a verified account."
-        help_text_3: "A citizen vote is celebrated when the proposals get the necessary supports. Once celebrated, if there are more people in favor than against, the City Council assumes the proposal and carries it out."
+        description: Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their city to be, after getting sufficient support and submitting to a citizens' vote.
     new:
       form:
         submit_button: Create proposal
@@ -422,7 +408,6 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
-      reason_for_supports_necessary: 1% of Census
       support: Support
       support_title: Support this proposal
       supports:
@@ -436,8 +421,7 @@ en:
       supports_necessary: "%{number} supports needed"
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
-      successful: "This proposal has reached the required supports and will be voted in the %{voting}."
-      voting: "next voting"
+      successful: "This proposal has reached the required supports."
     show:
       author_deleted: User deleted
       code: 'Proposal code:'
@@ -490,9 +474,7 @@ en:
         help: Help about voting
       section_footer:
         title: Help about voting
-        description: Sign up to vote on citizen proposals and questions the City Council ask to the neighbors. Make municipal decisions directly.
-        help_text_1: "Voting takes place when a citizen proposal supports reaches 1% of the census with voting rights. Voting can also include questions that the City Council ask to the citizens decision."
-        help_text_2: "To participate in the next vote you have to sign up on %{org} and verify your account. All registered voters in the city over 16 years old can vote. The results of all votes are binding on the government."
+        description: Citizens' polls are a participatory mechanism by which citizens with voting rights can make direct decisions
       no_polls: "There are no open votings."
     show:
       already_voted_in_booth: "You have already participated in a physical booth. You can not participate again."

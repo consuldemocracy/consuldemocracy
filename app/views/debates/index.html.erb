@@ -95,9 +95,6 @@
           <p><%= t("debates.index.section_footer.help_text_1") %></p>
           <p><%= t("debates.index.section_footer.help_text_2",
                     org: link_to(setting["org_name"], new_user_registration_path)).html_safe %></p>
-          <p><%= t("debates.index.section_footer.help_text_3",
-                    proposal: link_to(t("debates.index.section_footer.proposals_link"), proposals_path),
-                    budget: link_to(t("debates.index.section_footer.budget_link"), budgets_path)).html_safe %>
           </p>
         </div>
       <% end %>

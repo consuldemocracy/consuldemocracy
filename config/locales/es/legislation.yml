@@ -71,9 +71,6 @@ es:
         section_footer:
           title: Ayuda sobre procesos legislativos
           description: Participa en los debates y procesos previos a la aprobación de una norma o de una actuación municipal. Tu opinión será tenida en cuenta por el Ayuntamiento.
-          help_text_1: "En los procesos participativos, el Ayuntamiento ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa que afecta a la ciudad y de dar su opinión sobre ciertas actuaciones que tiene previsto llevar a cabo."
-          help_text_2: "Las personas registradas en %{org} pueden participar con aportaciones en la consulta pública de nuevas ordenanzas, reglamentos y directrices, entre otros. Sus comentarios son analizados por el área correspondiente y tenidos en cuenta de cara a la redacción final de las normas."
-          help_text_3: "El Ayuntamiento también abre procesos para recibir aportaciones y opiniones sobre actuaciones municipales."
       phase_not_open:
         not_open: Esta fase del proceso todavía no está abierta
       phase_empty:
