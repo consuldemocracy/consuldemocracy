@@ -829,6 +829,18 @@ ActiveRecord::Schema.define(version: 20180813141443) do
   add_index "poll_partial_results", ["origin"], name: "index_poll_partial_results_on_origin", using: :btree
   add_index "poll_partial_results", ["question_id"], name: "index_poll_partial_results_on_question_id", using: :btree
 
+  create_table "poll_question_answer_translations", force: :cascade do |t|
+    t.integer  "poll_question_answer_id", null: false
+    t.string   "locale",                  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "title"
+    t.text     "description"
+  end
+
+  add_index "poll_question_answer_translations", ["locale"], name: "index_poll_question_answer_translations_on_locale", using: :btree
+  add_index "poll_question_answer_translations", ["poll_question_answer_id"], name: "index_85270fa85f62081a3a227186b4c95fe4f7fa94b9", using: :btree
+
   create_table "poll_question_answer_videos", force: :cascade do |t|
     t.string  "title"
     t.string  "url"

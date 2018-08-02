@@ -15,8 +15,8 @@ feature 'Answers' do
     visit admin_question_path(question)
     click_link 'Add answer'
 
-    fill_in 'poll_question_answer_title', with: title
-    fill_in 'poll_question_answer_description', with: description
+    fill_in 'poll_question_answer_title_en', with: title
+    fill_in 'poll_question_answer_description_en', with: description
 
     click_button 'Save'
 
@@ -33,8 +33,8 @@ feature 'Answers' do
     visit admin_question_path(question)
     click_link 'Add answer'
 
-    fill_in 'poll_question_answer_title', with: title
-    fill_in 'poll_question_answer_description', with: description
+    fill_in 'poll_question_answer_title_en', with: title
+    fill_in 'poll_question_answer_description_en', with: description
 
     click_button 'Save'
 
@@ -53,7 +53,7 @@ feature 'Answers' do
     old_title = answer.title
     new_title = 'Ex Machina'
 
-    fill_in 'poll_question_answer_title', with: new_title
+    fill_in 'poll_question_answer_title_en', with: new_title
 
     click_button 'Save'
 
