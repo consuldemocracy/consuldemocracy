@@ -2,6 +2,8 @@
 
 <%= form_for [:admin, @investment.budget, @investment, @milestone] do |f| %>
 
+  <%= render_translations_to_delete(@milestone) %>
+
   <%= f.hidden_field :title, value: l(Time.current, format: :datetime),
                              maxlength: Budget::Investment::Milestone.title_max_length %>
 
@@ -16,7 +18,6 @@
 
   <%= f.label :description, t("admin.milestones.new.description") %>
   <% @milestone.globalize_locales.each do |locale| %>
-    <%= hidden_field_tag "delete_translations[#{locale}]", 0 %>
     <% globalize(locale) do %>
       <%= f.text_area "description_#{locale}", rows: 5,
                       class: "js-globalize-attribute",
