@@ -4,9 +4,7 @@
 
   <%= render 'errors' %>
 
-  <% @banner.globalize_locales.each do |locale| %>
-    <%= hidden_field_tag "delete_translations[#{locale}]", 0 %>
-  <% end %>
+  <%= render_translations_to_delete(@banner) %>
 
   <div class="row">
     <% date_started_at = @banner.post_started_at.present? ? I18n.localize(@banner.post_started_at) : "" %>
