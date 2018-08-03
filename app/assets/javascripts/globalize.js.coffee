@@ -36,6 +36,10 @@ App.Globalize =
   disable_locale: (locale) ->
     $("#enabled_translations_" + locale).val(0)
 
+  refresh_visible_translations: ->
+    locale = $('.js-globalize-locale-link.is-active').data("locale")
+    App.Globalize.display_translations(locale)
+
   initialize: ->
     $('.js-globalize-locale').on 'change', ->
       App.Globalize.display_translations($(this).val())
