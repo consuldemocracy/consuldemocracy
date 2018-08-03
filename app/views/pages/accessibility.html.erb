@@ -5,142 +5,95 @@
 
 <div class="row">
 <div class="small-12 column">
-  <h1>Accesibilidad</h1>
-  <p>La accesibilidad web se refiere a la posibilidad de acceso a la web y a sus contenidos por todas las personas, independientemente de las discapacidades (físicas, intelectuales o técnicas) que puedan presentar o de las que se deriven del contexto de uso (tecnológicas o ambientales).</p>
 
-  <p>Cuando los sitios web están diseñados pensando en la accesibilidad, todos los usuarios pueden acceder en condiciones de igualdad a los contenidos, por ejemplo:</p>
-
-  <ul>
-    <li>Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información. </li>
-    <li>Cuando los vídeos disponen de subtítulos, los usuarios con dificultades auditivas pueden entenderlos plenamente. </li>
-    <li>Si los contenidos están escritos en un lenguaje sencillo e ilustrados, los usuarios con problemas de aprendizaje están en mejores condiciones de entenderlos.</li>
-    <li>Si el usuario tiene problemas de movilidad y le cuesta usar el ratón, las alternativas con el teclado le ayudan en la navegación.</li>
-  </ul>
-
-  <h2>"Atajos" de teclado</h2>
-
-  <p>Para poder navegar por este sitio web de forma accesible, se han programado un grupo de teclas de acceso rápido que recogen las principales secciones de interés general en los que está organizado el sitio.</p>
-
-  <div class="small-12 medium-6">
-    <table>
-      <caption class="show-for-sr">Atajos de teclado para el menú de navegación</caption>
-      <thead>
-        <tr>
-          <th scope="col" class="text-center">Tecla</th>
-          <th scope="col">Página</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="text-center">0</td>
-          <td>Inicio</td>
-        </tr>
-        <tr>
-          <td class="text-center">1</td>
-          <td>Debates</td>
-        </tr>
-        <tr>
-          <td class="text-center">2</td>
-          <td>Propuestas</td>
-        </tr>
-        <tr>
-          <td class="text-center">3</td>
-          <td>Votaciones</td>
-        </tr>
-        <tr>
-          <td class="text-center">4</td>
-          <td>Presupuestos participativos</td>
-        </tr>
-        <tr>
-          <td class="text-center">5</td>
-          <td>Procesos legislativos</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p>Dependiendo del sistema operativo y del navegador que se utilice, la combinación de teclas será la siguiente:</p>
-
-  <div class="small-12 medium-6">
-    <table>
-      <caption class="show-for-sr">Combinación de teclas dependiendo del sistema operativo y navegador</caption>
-      <thead>
-        <tr>
-          <th scope="col">Navegador</th>
-          <th scope="col">Combinación de teclas</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Explorer</td>
-          <td>ALT + atajo y luego ENTER</td>
-        </tr>
-        <tr>
-          <td>Firefox</td>
-          <td>ALT + MAYÚSCULAS + atajo</td>
-        </tr>
-        <tr>
-          <td>Chrome</td>
-          <td>ALT + atajo (si es un MAC, CTRL + ALT + atajo)</td>
-        </tr>
-        <tr>
-          <td>Safari</td>
-          <td>ALT + atajo (si es un MAC, CMD + atajo)</td>
-        </tr>
-        <tr>
-          <td>Opera</td>
-          <td>MAYÚSCULAS + ESC + atajo</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h2>Tamaño del texto</h2>
-  <p>El diseño accesible de este sitio web permite que el usuario pueda elegir el tamaño del texto que le convenga. Esta acción puede llevarse a cabo de diferentes maneras según el navegador que se utilice.</p>
-
-  <div class="small-12 medium-6">
-    <table>
-      <thead>
-        <tr>
-          <th scope="col">Navegador</th>
-          <th scope="col">Acción a realizar </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Explorer</td>
-          <td>Ver > Tamaño del texto</td>
-        </tr>
-        <tr>
-          <td>Firefox</td>
-          <td>Ver > Tamaño</td>
-        </tr>
-        <tr>
-          <td>Chrome</td>
-          <td>Ajustes (icono) > Opciones > Avanzada > Contenido web > Tamaño fuente</td>
-        </tr>
-        <tr>
-          <td>Safari</td>
-          <td>Visualización > ampliar/reducir</td>
-        </tr>
-        <tr>
-          <td>Opera</td>
-          <td>Ver > escala</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p>Otra forma de modificar el tamaño de texto es utilizar los atajos de teclado definidos en los navegadores, en particular la combinación de teclas:</p>
+  <h1><%= t('.title') %></h1>
+  <%= simple_format(t('.description')) %>
 
   <ul>
-    <li><code>CTRL y + (CMD y + en MAC)</code> para aumentar el tamaño del texto</li>
-    <li><code> CTRL y - (CMD y - en MAC)</code> para reducir el tamaño del texto</li>
+    <% t('.examples').each do |example| %>
+      <li><%= example %></li>
+    <% end %>
   </ul>
 
-  <h2>Compatibilidad con estándares y diseño visual</h2>
+  <h2><%= t('.keyboard_shortcuts.title') %></h2>
 
-  <p>Todas las páginas de este sitio web cumplen con&nbsp; las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo&nbsp;<abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.</p>
+  <p><%= t('.keyboard_shortcuts.navigation_table.description') %></p>
+
+  <div class="small-12 medium-6">
+    <table>
+      <caption class="show-for-sr"><%= t('.keyboard_shortcuts.navigation_table.caption') %></caption>
+      <thead>
+        <tr>
+          <th scope="col" class="text-center"><%= t('.keyboard_shortcuts.navigation_table.key_header') %></th>
+          <th scope="col"><%= t('.keyboard_shortcuts.navigation_table.page_header') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% t('.keyboard_shortcuts.navigation_table.rows').each do |row| %>
+          <tr>
+            <td class="text-center"><%= row[:key_column] %></td>
+            <td><%= row[:page_column] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <p><%= t('.keyboard_shortcuts.browser_table.description') %></p>
+
+  <div class="small-12 medium-6">
+    <table>
+      <caption class="show-for-sr"><%= t('.keyboard_shortcuts.browser_table.caption') %></caption>
+      <thead>
+        <tr>
+          <th scope="col"><%= t('.keyboard_shortcuts.browser_table.browser_header') %></th>
+          <th scope="col"><%= t('.keyboard_shortcuts.browser_table.key_header') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% t('.keyboard_shortcuts.browser_table.rows').each do |row| %>
+          <tr>
+            <td><%= row[:browser_column] %></td>
+            <td><%= row[:key_column] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <h2><%= t('.textsize.title') %></h2>
+  <p><%= t('.textsize.browser_settings_table.description') %></p>
+
+  <div class="small-12 medium-6">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col"><%= t('.textsize.browser_settings_table.browser_header') %></th>
+          <th scope="col"><%= t('.textsize.browser_settings_table.action_header') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% t('.textsize.browser_settings_table.rows').each do |row| %>
+          <tr>
+            <td><%= row[:browser_column] %></td>
+            <td><%= row[:action_column] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <p><%= t('.textsize.browser_shortcuts_table.description') %></p>
+
+  <ul>
+    <% t('.textsize.browser_shortcuts_table.rows').each do |row| %>
+      <li><code><%= row[:shortcut_column] %></code> <%= row[:description_column] %></li>
+    <% end  %>
+  </ul>
+
+  <h2><%= t('.compatibility.title') %></h2>
+
+  <p><%= t('.compatibility.description_html') %></p>
 
   </div>
 </div>

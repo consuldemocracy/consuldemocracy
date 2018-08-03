@@ -6,22 +6,27 @@
 <div class="row margin-top">
 
   <div class="small-12 medium-9 column">
-    <h1><%= t("pages.privacy") %></h1>
 
-    <h2>AVISO DE PROTECCIÓN DE DATOS</h2>
+    <h1><%= t(".title") %></h1>
+    <h2><%= t('.subtitle') %></h2>
+
     <ol>
-      <li>La navegación por la informacion disponible en el Portal de Gobierno Abierto es anónima.</li>
-      <li>Para utilizar los servicios contenidos en el Portal de Gobierno Abierto el usuario deberá darse de alta y proporcionar previamente los datos de carácter personal segun la informacion especifica que consta en cada tipo de alta.</li>
-      <li>Los datos aportados serán incorporados y tratados por el Ayuntamiento de acuerdo con la descripción del fichero siguiente:
-        <ul>
-          <li><strong>Nombre del fichero/tratamiento:</strong> NOMBRE DEL FICHERO</li>
-          <li><strong>Finalidad del fichero/tratamiento:</strong> Gestionar los procesos participativos para el control de la habilitación de las personas que participan en los mismos y recuento meramente numérico y estadístico de los resultados derivados de los procesos de participación ciudadana</li>
-          <li><strong>Órgano responsable:</strong> ÓRGANO RESPONSABLE</li>
-        </ul>
-      </li>
-      <li>El interesado podrá ejercer los derechos de acceso, rectificación, cancelación y oposición, ante el órgano responsable indicado todo lo cual se informa en el cumplimiento del artículo 5 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.</li>
-      <li>Como principio general, este sitio web no comparte ni revela información obtenida, excepto cuando haya sido autorizada por el usuario, o la informacion sea requerida por la autoridad judicial, ministerio fiscal o la policia judicial, o se de alguno de los supuestos regulados en el artículo 11 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.</li>
+      <% t('.info_items').each do |item| %>
+        <% if item.key? :text %>
+          <li><%= item[:text] %></li>
+        <% else %>
+          <ul>
+            <% item[:subitems].each do |subitem| %>
+              <li>
+                <strong> <%= subitem[:field] %></strong>
+                <%= subitem[:description] %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+      <% end %>
     </ol>
+
   </div>
 
   <div class="small-12 medium-3 column">
