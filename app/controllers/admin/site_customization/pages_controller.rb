@@ -1,4 +1,5 @@
 class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::BaseController
+  include Translatable
   load_and_authorize_resource :page, class: "SiteCustomization::Page"
 
   def index
@@ -30,19 +31,31 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
     notice = t('admin.site_customization.pages.destroy.notice')
     redirect_to admin_site_customization_pages_path, notice: notice
   end
+  
+  def get_page
+     SiteCustomization::Page.find(params[:id])
+   end
+   def resource_model
+     SiteCustomization::Page
+   end
+   def resource
+     get_page
+   end
 
   private
 
     def page_params
-      params.require(:site_customization_page).permit(
-        :slug,
+      attributes = [:slug,
         :title,
         :subtitle,
         :content,
         :more_info_flag,
         :print_content_flag,
         :status,
-        :locale
+        :locale]
+      
+      params.require(:site_customization_page).permit(*attributes, 
+        translation_params(params[:site_customization_page])
       )
     end
 end
