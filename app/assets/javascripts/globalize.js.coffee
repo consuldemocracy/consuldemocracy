@@ -1,6 +1,7 @@
 App.Globalize =
 
   display_locale: (locale) ->
+    App.Globalize.enable_locale(locale)
     $(".js-globalize-locale-link").each ->
       if $(this).data("locale") == locale
         $(this).show()
@@ -27,7 +28,13 @@ App.Globalize =
     next = $(".js-globalize-locale-link:visible").first()
     App.Globalize.highlight_locale(next)
     App.Globalize.display_translations(next.data("locale"))
-    $("#delete_translations_" + locale).val(1)
+    App.Globalize.disable_locale(locale)
+
+  enable_locale: (locale) ->
+    $("#enabled_translations_" + locale).val(1)
+
+  disable_locale: (locale) ->
+    $("#enabled_translations_" + locale).val(0)
 
   initialize: ->
     $('.js-globalize-locale').on 'change', ->

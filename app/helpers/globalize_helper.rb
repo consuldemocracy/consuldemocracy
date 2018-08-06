@@ -27,7 +27,11 @@ module GlobalizeHelper
   end
 
   def css_to_display_translation?(resource, locale)
-    resource.translated_locales.include?(neutral_locale(locale)) || locale == I18n.locale ? "" : "display: none"
+    enable_locale?(resource, locale) ? "" : "display: none"
+  end
+
+  def enable_locale?(resource, locale)
+    resource.translated_locales.include?(neutral_locale(locale)) || locale == I18n.locale
   end
 
   def highlight_current?(locale)
