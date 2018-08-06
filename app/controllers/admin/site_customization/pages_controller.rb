@@ -32,15 +32,13 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
     redirect_to admin_site_customization_pages_path, notice: notice
   end
   
-  def get_page
-     SiteCustomization::Page.find(params[:id])
-   end
-   def resource_model
-     SiteCustomization::Page
-   end
-   def resource
-     get_page
-   end
+  def resource_model
+    SiteCustomization::Page
+  end
+  
+  def resource
+    SiteCustomization::Page.find(params[:id])
+  end
 
   private
 
