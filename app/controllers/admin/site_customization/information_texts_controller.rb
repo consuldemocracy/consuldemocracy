@@ -9,7 +9,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
   def update
     content_params.each do |content|
-      values = content[:values].slice(*translation_params(content[:values]))
+      values = content[:values].slice(*translation_params(I18nContent))
 
       unless values.empty?
         values.each do |key, value|
@@ -43,7 +43,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
     end
 
     def resource
-      resource_model.find(content_params[:id])
+      I18nContent.find(content_params[:id])
     end
 
     def content_params
