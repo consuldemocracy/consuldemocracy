@@ -1051,7 +1051,7 @@ ActiveRecord::Schema.define(version: 20180802221830) do
 
   create_table "site_customization_pages", force: :cascade do |t|
     t.string   "slug",                                 null: false
-    t.string   "title"
+    t.string   "title",              default: ""
     t.string   "subtitle"
     t.text     "content"
     t.boolean  "more_info_flag"

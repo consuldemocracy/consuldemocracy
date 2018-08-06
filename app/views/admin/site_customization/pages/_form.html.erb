@@ -70,6 +70,7 @@
 	                               data: { locale: locale },
 	                               style: display_translation?(locale) do %>
 	          <%= f.cktext_area "content_#{locale}",
+			                    class: "js-globalize-attribute",
 	                            ckeditor: { language: locale },
 	                            data: { locale: locale },
 	                            label: false %>
