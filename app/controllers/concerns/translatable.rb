@@ -7,16 +7,19 @@ module Translatable
 
   private
 
-    def translation_params(params)
-      resource_model
-        .globalize_attribute_names
-        .select { |k| params[k].present? ||
-                      resource_model.translated_locales.include?(get_locale_from_attribute(k)) }
+    # TODO change method interface to remove unnecessary argument
+    def translation_params(_)
+      enabled_translations.flat_map do |locale|
+        resource_model.translated_attribute_names.map do |attr_name|
+          resource_model.localized_attr_name_for(attr_name, locale)
+        end
+      end.tap { |x| Rails.logger.debug "permitted translation params:"; p x}
     end
 
+    # TODO change to resource
     def delete_translations
       locales = resource_model.translated_locales
-                              .select { |l| params.dig(:delete_translations, l) == "1" }
+                              .select { |l| params.dig(:enabled_translations, l) == "0" }
       locales.each do |l|
         Globalize.with_locale(l) do
           resource.translation.destroy
@@ -24,8 +27,9 @@ module Translatable
       end
     end
 
-    def get_locale_from_attribute(attribute_name)
-      locales = resource_model.globalize_locales
-      attribute_name.to_s.match(/(#{locales.join('|')})\Z/)&.captures&.first
+    def enabled_translations
+      params.fetch(:enabled_translations)
+            .select { |_, v| v == '1' }
+            .keys
     end
 end
