@@ -5,8 +5,8 @@ feature "Custom Pages" do
     scenario "See default content when custom page is not published" do
       custom_page = create(:site_customization_page,
         slug: "conditions",
-        title: "Custom conditions",
-        content: "New text for conditions page",
+        title_en: "Custom conditions",
+        content_en: "New text for conditions page",
         print_content_flag: true,
         locale: "en"
       )
@@ -22,8 +22,8 @@ feature "Custom Pages" do
     scenario "See custom content when custom page is published" do
       custom_page = create(:site_customization_page, :published,
         slug: "conditions",
-        title: "Custom conditions",
-        content: "New text for conditions page",
+        title_en: "Custom conditions",
+        content_en: "New text for conditions page",
         print_content_flag: true,
         locale: "en"
       )
@@ -42,8 +42,8 @@ feature "Custom Pages" do
       scenario "See page" do
         custom_page = create(:site_customization_page,
           slug: "other-slug",
-          title: "Custom page",
-          content: "Text for new custom page",
+          title_en: "Custom page",
+          content_en: "Text for new custom page",
           print_content_flag: false,
           locale: "en"
         )
@@ -58,8 +58,8 @@ feature "Custom Pages" do
       scenario "See page" do
         custom_page = create(:site_customization_page, :published,
           slug: "other-slug",
-          title: "Custom page",
-          content: "Text for new custom page",
+          title_en: "Custom page",
+          content_en: "Text for new custom page",
           print_content_flag: false,
           locale: "en"
         )
@@ -75,9 +75,9 @@ feature "Custom Pages" do
       scenario "Show all fields and text with links" do
         custom_page = create(:site_customization_page, :published,
           slug: "slug-with-all-fields-filled",
-          title: "Custom page",
-          subtitle: "This is my new custom page",
-          content: "Text for new custom page with a link to https://consul.dev",
+          title_en: "Custom page",
+          subtitle_en: "This is my new custom page",
+          content_en: "Text for new custom page with a link to https://consul.dev",
           print_content_flag: true,
           locale: "en"
         )
@@ -95,9 +95,9 @@ feature "Custom Pages" do
       scenario "Don't show subtitle if its blank" do
         custom_page = create(:site_customization_page, :published,
           slug: "slug-without-subtitle",
-          title: "Custom page",
-          subtitle: "",
-          content: "Text for new custom page",
+          title_en: "Custom page",
+          subtitle_en: "",
+          content_en: "Text for new custom page",
           print_content_flag: false,
           locale: "en"
         )
@@ -113,8 +113,8 @@ feature "Custom Pages" do
 
       scenario "Listed in more information page" do
         custom_page = create(:site_customization_page, :published,
-          slug: "another-slug", title: "Another custom page",
-          subtitle: "Subtitle for custom page",
+          slug: "another-slug", title_en: "Another custom page",
+          subtitle_en: "Subtitle for custom page",
           more_info_flag: true,
           locale: "en"
         )
@@ -127,7 +127,7 @@ feature "Custom Pages" do
       scenario "Not listed in more information page" do
         custom_page = create(:site_customization_page, :published,
           slug: "another-slug", title: "Another custom page",
-          subtitle: "Subtitle for custom page",
+          subtitle_en: "Subtitle for custom page",
           more_info_flag: false,
           locale: "en"
         )
@@ -145,8 +145,8 @@ feature "Custom Pages" do
 
       scenario "Not listed in more information page due to different locale" do
         custom_page = create(:site_customization_page, :published,
-          slug: "another-slug", title: "Ce texte est en français",
-          subtitle: "Subtitle for custom page",
+          slug: "another-slug", title_en: "Ce texte est en français",
+          subtitle_en: "Subtitle for custom page",
           more_info_flag: false,
           locale: "fr"
         )

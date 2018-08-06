@@ -119,10 +119,15 @@ feature "Translations" do
   
   context "Pages" do
 
-    let(:site_customization_page) { create(:site_customization_page,
-                                           slug: "example-page", 
-                                           title_en: "Title in English",
-                                           title_es: "Titulo en Español") }                          
+    let(:custom_page) { create(:site_customization_page, :published,
+                          slug: "example-page",
+                          title_en: "Title in English",
+                          title_es: "Titulo en Español",
+                          subtitle_en: "Subtitle in English",
+                          subtitle_es: "Subtitulo en Español",
+                          content_en: "Content in English",
+                          content_es: "Contenido en Español"
+                          ) }                          
 
     background do
       admin = create(:administrator)
@@ -130,7 +135,7 @@ feature "Translations" do
     end
 
     before do
-      @edit_page_url = edit_admin_site_customization_page_path(site_customization_page)
+      @edit_page_url = edit_admin_site_customization_page_path(custom_page)
     end
 
     scenario "Add a translation", :js do
@@ -161,14 +166,14 @@ feature "Translations" do
       click_button 'Update Custom page'
       expect(page).to have_content "Page updated successfully"
 
-      visit "/"+site_customization_page.slug #Does not work this
+      visit custom_page.url
 
       select('English', from: 'locale-switcher')
       
       expect(page).to have_content("Title in English")
 
       select('Español', from: 'locale-switcher')
-
+ 
       expect(page).to have_content("Titulo correcta en Español")
     end
 
