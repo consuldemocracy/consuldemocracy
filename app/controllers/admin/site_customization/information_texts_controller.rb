@@ -33,15 +33,6 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
   private
 
-    def i18n_content_params
-      attributes = [:key, :value]
-      params.require(:information_texts).permit(*attributes, translation_params(params[:information_texts]))
-    end
-
-    def resource_model
-      I18nContent
-    end
-
     def resource
       I18nContent.find(content_params[:id])
     end
