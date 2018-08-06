@@ -6,7 +6,6 @@ section "Creating legislation proposals" do
                                   summary: Faker::Lorem.paragraph,
                                   author: User.all.sample,
                                   process: Legislation::Process.all.sample,
-                                  terms_of_service: '1',
-                                  proposal_type: 'proposal')
+                                  terms_of_service: '1')
   end
 end
