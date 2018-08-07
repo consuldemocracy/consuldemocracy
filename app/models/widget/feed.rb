@@ -1,4 +1,4 @@
-class Widget::Feed < ActiveRecord::Base
+class Widget::Feed < ApplicationRecord
   self.table_name = "widget_feeds"
 
   KINDS = %w(proposals debates processes)

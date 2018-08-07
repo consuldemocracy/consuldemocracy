@@ -1,4 +1,4 @@
-class AdminNotification < ActiveRecord::Base
+class AdminNotification < ApplicationRecord
   include Notifiable
 
   validates :title, presence: true

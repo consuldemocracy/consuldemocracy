@@ -1,4 +1,4 @@
-class Banner::Section < ActiveRecord::Base
+class Banner::Section < ApplicationRecord
   belongs_to :banner
   belongs_to :web_section
 end

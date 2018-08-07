@@ -1,4 +1,4 @@
-class Widget::Card < ActiveRecord::Base
+class Widget::Card < ApplicationRecord
   include Imageable
 
   self.table_name = "widget_cards"
