@@ -53,7 +53,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
     def delete_translations
       languages_to_delete = params[:delete_translations].select { |k, v| params[:delete_translations][k] == '1' }.keys
       languages_to_delete.each do |locale|
-        I18nContentTranslation.destroy_all(locale: locale)
+        I18nContentTranslation.where(locale: locale).destroy_all
       end
     end
 
