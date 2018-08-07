@@ -13,7 +13,7 @@
         <div class="debate-list">
           <% if @process.questions.empty? %>
             <div class="callout primary">
-              <p><%= t('.empty_questions') %></p>
+              <p><%= t("legislation.processes.debate.empty_questions") %></p>
             </div>
           <% else %>
             <%= render @process.questions %>
@@ -21,11 +21,13 @@
         </div>
       </div>
 
-      <div class="small-12 medium-3 column">
-        <div class="callout success">
-          <p><%= t('.participate') %></p>
+      <% if @process.questions.any? %>
+        <div class="small-12 medium-3 column">
+          <div class="callout success">
+            <p><%= t("legislation.processes.debate.participate") %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

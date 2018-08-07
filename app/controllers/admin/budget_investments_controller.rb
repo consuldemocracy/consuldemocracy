@@ -20,7 +20,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       format.html
       format.js
       format.csv do
-        send_data Budget::Investment.to_csv(@investments, headers: true),
+        send_data Budget::Investment::Exporter.new(@investments).to_csv,
                   filename: 'budget_investments.csv'
       end
     end
@@ -75,28 +75,16 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       resource_model.parameterize(separator: '_')
     end
 
-    def sort_by(params)
-      if params.present? && Budget::Investment::SORTING_OPTIONS.include?(params)
-        "#{params == 'supports' ? 'cached_votes_up' : params} ASC"
-      else
-        "cached_votes_up DESC, created_at DESC"
-      end
-    end
-
     def load_investments
-      @investments = if params[:title_or_id].present?
-                       Budget::Investment.search_by_title_or_id(params)
-                     else
-                       Budget::Investment.scoped_filter(params, @current_filter)
-                                         .order(sort_by(params[:sort_by]))
-                     end
+      @investments = Budget::Investment.scoped_filter(params, @current_filter)
+      @investments = @investments.order_filter(params[:sort_by]) if params[:sort_by].present?
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
     def budget_investment_params
       params.require(:budget_investment)
             .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
-                    :valuation_tag_list, :incompatible, :selected, valuator_ids: [],
+                    :valuation_tag_list, :incompatible, :visible_to_valuators, :selected, valuator_ids: [],
                     valuator_group_ids: [])
     end
 

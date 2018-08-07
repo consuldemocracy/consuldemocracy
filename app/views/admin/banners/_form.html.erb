@@ -3,18 +3,8 @@
   <%= render 'errors' %>
 
   <div class="row">
-    <div class="small-12 medium-6 large-3 column">
-    <%= f.label :style, t("admin.banners.banner.style") %>
-    <%= f.select :style, options_for_select(@banner_styles, @banner.style),:include_blank => '-',
-                      label: false,placeholder: t("admin.banners.banner.style") %>
-    </div>
-    <div class="small-12 medium-6 large-3 column">
-    <%= f.label :image, t("admin.banners.banner.image") %>
-    <%= f.select :image, options_for_select(@banner_imgs, @banner.image),:include_blank => '-',
-                      label: false, placeholder: t("admin.banners.banner.image") %>
-    </div>
     <% date_started_at = @banner.post_started_at.present? ? I18n.localize(@banner.post_started_at) : "" %>
-    <div class="small-12 medium-6 large-3 column">
+    <div class="small-12 medium-3 column">
       <%= f.label :post_started_at, t("admin.banners.banner.post_started_at") %>
       <%= f.text_field :post_started_at,
                         label: false,
@@ -24,7 +14,7 @@
                         id: "post_started_at" %>
     </div>
     <% date_ended_at = @banner.post_ended_at.present? ? I18n.localize(@banner.post_ended_at) : ""%>
-    <div class="small-12 medium-6 large-3 column">
+    <div class="small-12 medium-3 column end">
       <%= f.label :post_ended_at, t("admin.banners.banner.post_ended_at") %>
       <%= f.text_field  :post_ended_at,
                         label: false,
@@ -61,16 +51,36 @@
   </div>
 
   <div class="row">
+    <div class="small-12 column">
+      <%= f.label :sections, t("admin.banners.banner.sections_label") %>
+      <%= f.collection_check_boxes(:web_section_ids, @banner_sections, :id, :name) do |b| %>
+        <%= b.check_box %> <%= t("admin.banners.banner.sections.#{b.text}") %><br>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-3 column">
+      <%= f.label :sections, t("admin.banners.banner.background_color") %>
+      <%= color_field(:banner, :background_color, id: 'banner_background_color_picker') %>
+      <%= f.text_field :background_color, label: false %>
+    </div>
+    <div class="small-3 column end">
+      <%= f.label :sections, t("admin.banners.banner.font_color") %>
+      <%= color_field(:banner, :font_color, id: 'banner_font_color_picker') %>
+      <%= f.text_field :font_color, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="actions small-12 medium-3 column">
       <%= f.submit(class: "button expanded", value: t("admin.banners.edit.form.submit_button")) %>
     </div>
   </div>
-  <div id="js-banner-style" class="<%= @banner.style %>">
-    <div id="js-banner-image" class="<%= @banner.image %>">
-      <%= link_to @banner.target_url do %>
-        <h2 id="js-banner-title"><%= @banner.title %></h2>
-        <h3 id="js-banner-description"><%= @banner.description %></h3>
-      <% end %>
-    </div>
+  <div id="js-banner-background" class="banner" style="background-color:<%= @banner.background_color %>">
+    <%= link_to @banner.target_url do %>
+      <h2 id="js-banner-title" style="color:<%= @banner.font_color %>"><%= @banner.title %></h2>
+      <h3 id="js-banner-description" style="color:<%= @banner.font_color %>"><%= @banner.description %></h3>
+    <% end %>
   </div>
 <% end %>

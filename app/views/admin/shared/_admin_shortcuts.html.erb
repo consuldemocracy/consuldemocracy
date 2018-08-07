@@ -2,11 +2,17 @@
   <li>
     <%= link_to admin_stats_path, title: t("admin.menu.stats") do %>
       <span class="icon-stats"></span>
+      <span class="show-for-small-only">
+        <%= t("admin.menu.stats") %>
+      </span>
     <% end %>
   </li>
   <li>
     <%= link_to admin_settings_path, title: t("admin.menu.settings") do %>
       <span class="icon-settings"></span>
+      <span class="show-for-small-only">
+        <%= t("admin.menu.settings") %>
+      </span>
     <% end %>
   </li>
 <% end %>

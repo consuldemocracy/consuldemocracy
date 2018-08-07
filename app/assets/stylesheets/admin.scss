@@ -27,6 +27,10 @@ $sidebar-active: #f4fcd0;
     font-weight: 100;
     margin-bottom: $line-height;
 
+    small {
+      color: $text-medium;
+    }
+
     &.title {
       text-transform: uppercase;
     }
@@ -42,28 +46,75 @@ $sidebar-active: #f4fcd0;
 
   .top-links {
     background: #000;
+
+    a {
+      line-height: rem-calc($line-height * 1.5);
+    }
+  }
+
+  .admin-top-bar {
+    background: #fff;
   }
 
   .top-bar {
     background: #fff !important;
     border-bottom: 1px solid #eee;
-    box-shadow: 0 2px 2px #eee;
     color: #000;
     height: auto;
+
+    @include breakpoint(medium) {
+      box-shadow: 0 2px 2px #eee;
+    }
+
+    @include breakpoint(small only) {
+
+      .top-bar-left ul {
+        display: inline-block;
+      }
+
+      .top-bar-right {
+
+        .submenu {
+          border: 0;
+          display: block;
+          margin-top: 0;
+          position: initial;
+          width: 100%;
+        }
+
+        .is-active {
+          font-weight: normal;
+          text-decoration: none;
+        }
+
+        .is-submenu-item {
+          padding: $line-height / 2 0;
+        }
+
+        a {
+          font-weight: normal !important;
+        }
+      }
+
+      [class^="icon-"] {
+        display: none;
+      }
+    }
 
     [class^="icon-"]:not(.icon-circle) {
       font-size: $base-font-size;
     }
   }
 
-  .top-bar-title {
+  .menu .menu-text {
 
     h1 {
-      margin-bottom: 0;
       margin-top: $line-height / 2;
+      margin-bottom: 0;
 
       @include breakpoint(medium) {
         margin-left: $line-height / 2;
+        margin-top: 0;
       }
 
       small {
@@ -94,12 +145,17 @@ $sidebar-active: #f4fcd0;
     }
   }
 
-  .menu-icon.dark {
+  .title-bar {
+    color: #000;
+    position: absolute;
+    right: 12px;
+  }
 
-    &::after,
-    &:hover::after {
-      background: #000 !important;
-      box-shadow: 0 7px 0 #000, 0 14px 0 #000 !important;
+  .menu-icon {
+
+    &::after {
+      background: #000;
+      box-shadow: 0 7px 0 #000, 0 14px 0 #000;
     }
   }
 
@@ -138,6 +194,11 @@ $sidebar-active: #f4fcd0;
 
     &.with-button {
       line-height: $line-height * 2;
+
+      .button {
+        background: #fff;
+        color: $brand;
+      }
     }
   }
 
@@ -151,6 +212,19 @@ $sidebar-active: #f4fcd0;
   }
 
   table {
+
+    thead {
+      color: #fff;
+    }
+
+    th {
+      background: $brand;
+      color: #fff;
+
+      label {
+        color: #fff;
+      }
+    }
 
     .break {
       word-break: break-word;
@@ -168,7 +242,6 @@ $sidebar-active: #f4fcd0;
 
       @include breakpoint(medium) {
         margin-left: $line-height / 2;
-        margin-right: $line-height / 2;
         margin-top: 0;
       }
     }
@@ -186,7 +259,7 @@ $sidebar-active: #f4fcd0;
       margin-bottom: $line-height / 3;
     }
 
-    .active {
+    .is-active {
       border-bottom: 2px solid $admin-color;
       color: $admin-color;
       font-weight: bold;
@@ -231,6 +304,7 @@ $sidebar-active: #f4fcd0;
 }
 
 .admin-content {
+  overflow: scroll;
   padding: $line-height !important;
 }
 
@@ -279,7 +353,15 @@ $sidebar-active: #f4fcd0;
 }
 
 .no-margin-bottom {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.enabled {
+  color: $color-success;
+}
+
+.disabled {
+  color: $text-medium;
 }
 
 // 02. Sidebar
@@ -321,7 +403,7 @@ $sidebar-active: #f4fcd0;
       padding-left: $line-height / 2;
     }
 
-    &.active a {
+    &.is-active a {
       background: $sidebar-hover;
       border-left: 2px solid $sidebar-active;
       font-weight: bold;
@@ -371,7 +453,7 @@ $sidebar-active: #f4fcd0;
       font-weight: normal;
     }
 
-    .active {
+    .is-active {
       border-bottom: 0;
     }
   }
@@ -513,7 +595,7 @@ $sidebar-active: #f4fcd0;
 
 .account-info,
 .login-as {
-  background-color: #e7e7e7;
+  background-color: $highlight;
   border-radius: rem-calc(3);
   font-size: rem-calc(16);
   font-weight: normal;
@@ -585,9 +667,10 @@ $sidebar-active: #f4fcd0;
 .admin-content .select-heading {
 
   a {
+    color: $text;
     display: block;
 
-    &.active {
+    &.is-active {
       color: $brand;
       font-weight: bold;
       text-decoration: underline;
@@ -618,6 +701,10 @@ $sidebar-active: #f4fcd0;
       background: #e0e0e0;
     }
   }
+}
+
+.management-list {
+  max-width: rem-calc(1200);
 }
 
 // 06. Polls
@@ -681,7 +768,7 @@ table {
 }
 
 .legislation-admin {
-  .menu .active > a {
+  .menu .is-active > a {
     background: none;
   }
 }
@@ -695,15 +782,6 @@ table {
 .legislation-question-delete {
   @include breakpoint(medium) {
     text-align: right;
-  }
-}
-
-.legislation-process-index {
-
-  .legislation-process-new {
-    @include breakpoint(medium) {
-      text-align: right;
-    }
   }
 }
 
@@ -1114,6 +1192,17 @@ table {
       content: '\76';
     }
   }
+}
+
+.max-headings-label {
+  color: $text-medium;
+  font-size: $small-font-size;
+  margin-left: $line-height / 2;
+}
+
+.current-of-max-headings {
+  color: #000;
+  font-weight: bold;
 }
 
 // 11. Newsletters

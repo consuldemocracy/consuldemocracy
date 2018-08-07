@@ -285,6 +285,23 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
     end
 
+    describe "When allow attached documents setting is disabled" do
+      before do
+        Setting['feature.allow_attached_documents'] = false
+      end
+
+      after do
+        Setting['feature.allow_attached_documents'] = true
+      end
+
+      scenario "Add new document button should not be available" do
+        login_as user_to_login
+        visit send(path, arguments)
+
+        expect(page).not_to have_content("Add new document")
+      end
+    end
+
   end
 
 end

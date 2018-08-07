@@ -250,9 +250,13 @@ feature 'Tags' do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
-        if budget.balloting?
+        [investment1, investment2, investment3].each do |investment|
+          investment.update(selected: true, feasibility: "feasible")
+        end
+
+        if budget.finished?
           [investment1, investment2, investment3].each do |investment|
-            investment.update(selected: true, feasibility: "feasible")
+            investment.update(selected: true, feasibility: "feasible", winner: true)
           end
         end
 
@@ -297,9 +301,13 @@ feature 'Tags' do
       Budget::Phase::PHASE_KINDS.each do |phase|
         budget.update(phase: phase)
 
-        if budget.balloting?
+        [investment1, investment2, investment3].each do |investment|
+          investment.update(selected: true, feasibility: "feasible")
+        end
+
+        if budget.finished?
           [investment1, investment2, investment3].each do |investment|
-            investment.update(selected: true, feasibility: "feasible")
+            investment.update(selected: true, feasibility: "feasible", winner: true)
           end
         end
 

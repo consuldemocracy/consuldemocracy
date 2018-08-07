@@ -5,6 +5,10 @@ class WelcomeController < ApplicationController
   layout "devise", only: [:welcome, :verification]
 
   def index
+    @header = Widget::Card.header.first
+    @feeds = Widget::Feed.active
+    @cards = Widget::Card.body
+    @banners = Banner.in_section('homepage').with_active
   end
 
   def welcome

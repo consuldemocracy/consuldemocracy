@@ -1,0 +1,69 @@
+<h2><%= t("moderation.proposal_notifications.index.title") %></h2>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "moderation.proposal_notifications.index" %>
+
+<h3 class="inline-block"><%= page_entries_info @proposal_notifications %></h3>
+<div class="float-right">
+  <%= t("moderation.proposal_notifications.index.order") %>
+  <%= render 'shared/order_selector', i18n_namespace: "moderation.proposal_notifications.index" %>
+</div>
+
+<%= form_tag moderate_moderation_proposal_notifications_path(request.query_parameters), method: :put do %>
+  <p class="float-left js-check">
+    <%= t('shared.check') %>:
+    <%= link_to t('shared.check_all'), '#', data: { check_all: "proposal_notification_ids[]" } %>
+    |
+    <%= link_to t('shared.check_none'), '#', data: { check_none: "proposal_notification_ids[]" } %>
+  </p>
+
+  <table class="clear">
+    <thead>
+      <tr>
+        <th><%= t("moderation.proposal_notifications.index.headers.proposal_notification") %></th>
+        <th><%= t("moderation.proposal_notifications.index.headers.moderate") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @proposal_notifications.each do |proposal_notification| %>
+        <tr id="proposal_notification_<%= proposal_notification.id %>">
+          <td>
+            <%= link_to proposal_notification.title, proposal_notification, target: "_blank" %>
+            <br>
+            <span class="date"><%= l proposal_notification.updated_at.to_date %></span>
+            <br>
+            <div class="moderation-description">
+              <%= proposal_notification.body %>
+            </div>
+          </td>
+          <td class="text-center">
+            <%= check_box_tag "proposal_notification_ids[]",
+                              proposal_notification.id,
+                              nil,
+                              id: "#{dom_id(proposal_notification)}_check" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= submit_tag t('moderation.proposal_notifications.index.block_authors'),
+                 name: "block_authors",
+                 class: "button hollow alert",
+                 data: { confirm: t('moderation.proposal_notifications.index.confirm') } %>
+
+  <div class="float-right">
+    <%= submit_tag t('moderation.proposal_notifications.index.hide_proposal_notifications'),
+                   name: "hide_proposal_notifications",
+                   class: "button hollow alert",
+                   data: { confirm: t('moderation.proposal_notifications.index.confirm') } %>
+
+    <%= submit_tag t('moderation.proposal_notifications.index.ignore_flags'),
+                   name: "ignore_flags",
+                   class: "button hollow",
+                   data: { confirm: t('moderation.proposal_notifications.index.confirm') } %>
+  </div>
+
+  <%= paginate @proposal_notifications %>
+
+<% end %>

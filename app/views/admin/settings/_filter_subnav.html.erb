@@ -1,0 +1,37 @@
+<ul class="tabs"
+    id="settings-tabs"
+    data-deep-link="true"
+    data-update-history="true"
+    data-deep-link-smudge="true"
+    data-deep-link-smudge-delay="500"
+    data-tabs>
+  <li class="tabs-title is-active">
+    <%= link_to "#tab-configuration" do %>
+      <%= t("admin.settings.index.title") %>
+    <% end %>
+  </li>
+
+  <li class="tabs-title" id="features-tab">
+    <%= link_to "#tab-feature-flags" do %>
+      <%= t("admin.settings.index.feature_flags") %>
+    <% end %>
+  </li>
+
+  <li class="tabs-title">
+    <%= link_to "#tab-banner-styles" do %>
+      <%= t("admin.settings.index.banners") %>
+    <% end %>
+  </li>
+
+  <li class="tabs-title">
+    <%= link_to "#tab-banner-images" do %>
+      <%= t("admin.settings.index.banner_imgs") %>
+    <% end %>
+  </li>
+
+  <li class="tabs-title" id="map-tab">
+    <%= link_to "#tab-map-configuration" do %>
+      <%= t("admin.settings.index.map.title") %>
+    <% end %>
+  </li>
+</ul>

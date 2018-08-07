@@ -11,7 +11,8 @@ class MapLocation < ApplicationRecord
 
   def json_data
     {
-      id: id,
+      investment_id: investment_id,
+      proposal_id: proposal_id,
       lat: latitude,
       long: longitude
     }

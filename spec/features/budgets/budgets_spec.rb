@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'Budgets' do
 
-  let(:budget) { create(:budget) }
-  let(:level_two_user) { create(:user, :level_two) }
+  let(:budget)             { create(:budget) }
+  let(:level_two_user)     { create(:user, :level_two) }
   let(:allowed_phase_list) { ['balloting', 'reviewing_ballots', 'finished'] }
 
   context 'Index' do
@@ -22,7 +22,7 @@ feature 'Budgets' do
         expect(page).to have_content(budget.name)
         expect(page).to have_content(budget.description)
         expect(page).to have_content('Actual phase')
-        expect(page).to have_content('Informing')
+        expect(page).to have_content('Information')
         expect(page).to have_link('Help with participatory budgets')
         expect(page).to have_link('See all phases')
       end
@@ -188,7 +188,133 @@ feature 'Budgets' do
     expect(page).to have_content "This is the summary for finished phase"
     expect(page).to have_content "March 21, 2018 - March 29, 2018"
 
-    expect(page).to have_css(".phase.active", count: 1)
+    expect(page).to have_css(".phase.is-active", count: 1)
+  end
+
+  context "Index map" do
+
+    let(:group)   { create(:budget_group, budget: budget) }
+    let(:heading) { create(:budget_heading, group: group) }
+
+    background do
+      Setting['feature.map'] = true
+    end
+
+    scenario "Display investment's map location markers", :js do
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+
+      create(:map_location, longitude: 40.1234, latitude: -3.634, investment: investment1)
+      create(:map_location, longitude: 40.1235, latitude: -3.635, investment: investment2)
+      create(:map_location, longitude: 40.1236, latitude: -3.636, investment: investment3)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 3, visible: false)
+      end
+    end
+
+    scenario "Skip invalid map markers", :js do
+      map_locations = []
+
+      investment = create(:budget_investment, heading: heading)
+
+      map_locations << { longitude: 40.123456789, latitude: 3.12345678 }
+      map_locations << { longitude: 40.123456789, latitude: "********" }
+      map_locations << { longitude: "**********", latitude: 3.12345678 }
+
+      budget_map_locations = map_locations.map do |map_location|
+        {
+          lat: map_location[:latitude],
+          long: map_location[:longitude],
+          investment_title: investment.title,
+          investment_id: investment.id,
+          budget_id: budget.id
+        }
+      end
+
+      allow_any_instance_of(BudgetsHelper).
+      to receive(:current_budget_map_locations).and_return(budget_map_locations)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 1, visible: false)
+      end
+    end
+  end
+
+  xcontext "Index map" do
+
+    let(:group) { create(:budget_group, budget: budget) }
+    let(:heading) { create(:budget_heading, group: group) }
+
+    before do
+      Setting['feature.map'] = true
+    end
+
+    scenario "Display investment's map location markers" , :js do
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+
+      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
+      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
+      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 3)
+      end
+    end
+
+    scenario "Display selected investment's map location markers" , :js do
+
+      budget.update(phase: :valuating)
+
+      investment1 = create(:budget_investment, :selected, heading: heading)
+      investment2 = create(:budget_investment, :selected, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+
+      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
+      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
+      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 2)
+      end
+    end
+
+    scenario "Skip invalid map markers" , :js do
+      map_locations = []
+      map_locations << { longitude: 40.123456789, latitude: 3.12345678 }
+      map_locations << { longitude: 40.123456789, latitude: "*******" }
+      map_locations << { longitude: "**********", latitude: 3.12345678 }
+
+      budget_map_locations = map_locations.map do |map_location|
+        {
+          lat: map_location[:latitude],
+          long: map_location[:longitude],
+          investment_title: "#{rand(999)}",
+          investment_id: "#{rand(999)}",
+          budget_id: budget.id
+        }
+      end
+
+      allow_any_instance_of(BudgetsHelper).
+      to receive(:current_budget_map_locations).and_return(budget_map_locations)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 1)
+      end
+    end
   end
 
   context 'Show' do
@@ -205,6 +331,18 @@ feature 'Budgets' do
     scenario "Links to unfeasible and selected if balloting or later" do
       budget = create(:budget, :selecting)
       group = create(:budget_group, budget: budget)
+
+      visit budget_path(budget)
+
+      expect(page).not_to have_link "See unfeasible investments"
+      expect(page).not_to have_link "See investments not selected for balloting phase"
+
+      click_link group.name
+
+      expect(page).not_to have_link "See unfeasible investments"
+      expect(page).not_to have_link "See investments not selected for balloting phase"
+
+      budget.update(phase: :publishing_prices)
 
       visit budget_path(budget)
 
@@ -239,6 +377,58 @@ feature 'Budgets' do
 
       expect(page).to have_link "See unfeasible investments"
       expect(page).to have_link "See investments not selected for balloting phase"
+    end
+
+    scenario "Take into account headings with the same name from a different budget" do
+      group1 = create(:budget_group, budget: budget, name: "New York")
+      heading1 = create(:budget_heading, group: group1, name: "Brooklyn")
+      heading2 = create(:budget_heading, group: group1, name: "Queens")
+
+      budget2 = create(:budget)
+      group2 = create(:budget_group, budget: budget2, name: "New York")
+      heading3 = create(:budget_heading, group: group2, name: "Brooklyn")
+      heading4 = create(:budget_heading, group: group2, name: "Queens")
+
+      visit budget_path(budget)
+      click_link "New York"
+
+      expect(page).to have_css("#budget_heading_#{heading1.id}")
+      expect(page).to have_css("#budget_heading_#{heading2.id}")
+
+      expect(page).to_not have_css("#budget_heading_#{heading3.id}")
+      expect(page).to_not have_css("#budget_heading_#{heading4.id}")
+    end
+
+    scenario "See results button is showed if the budget has finished for all users" do
+      user = create(:user)
+      admin = create(:administrator)
+      budget = create(:budget, :finished)
+
+      login_as(user)
+      visit budget_path(budget)
+      expect(page).to have_link "See results"
+
+      logout
+
+      login_as(admin.user)
+      visit budget_path(budget)
+      expect(page).to have_link "See results"
+    end
+
+    scenario "See results button isn't showed if the budget hasn't finished for all users" do
+      user = create(:user)
+      admin = create(:administrator)
+      budget = create(:budget, :balloting)
+
+      login_as(user)
+      visit budget_path(budget)
+      expect(page).not_to have_link "See results"
+
+      logout
+
+      login_as(admin.user)
+      visit budget_path(budget)
+      expect(page).not_to have_link "See results"
     end
 
   end

@@ -50,7 +50,7 @@
         <li>
           <%= link_to heading.name,
                       budget_results_path(@budget, heading_id: heading.to_param),
-                      class: heading.to_param == @heading.to_param ? 'active' : '' %>
+                      class: heading.to_param == @heading.to_param ? 'is-active' : '' %>
         </li>
       <% end %>
     </ul>

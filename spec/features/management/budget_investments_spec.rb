@@ -19,7 +19,7 @@ feature 'Budget Investments' do
 
       click_link "Create budget investment"
       within "#budget_#{@budget.id}" do
-        click_link "Create New Investment"
+        click_link "Create budget investment"
       end
 
       within(".account-info") do
@@ -69,10 +69,10 @@ feature 'Budget Investments' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      click_link "Support Budget Investments"
+      click_link "Support budget investments"
       expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
-        click_link "Support Budget Investments"
+        click_link "Support budget investments"
       end
 
       fill_in "search", with: "what you got"
@@ -96,10 +96,10 @@ feature 'Budget Investments' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      click_link "Support Budget Investments"
+      click_link "Support budget investments"
       expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
-        click_link "Support Budget Investments"
+        click_link "Support budget investments"
       end
 
       fill_in "search", with: "Area 52"
@@ -122,10 +122,10 @@ feature 'Budget Investments' do
     user = create(:user, :level_two)
     login_managed_user(user)
 
-    click_link "Support Budget Investments"
+    click_link "Support budget investments"
     expect(page).to have_content(@budget.name)
     within "#budget_#{@budget.id}" do
-      click_link "Support Budget Investments"
+      click_link "Support budget investments"
     end
 
     within(".account-info") do
@@ -207,10 +207,10 @@ feature 'Budget Investments' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      click_link "Support Budget Investments"
+      click_link "Support budget investments"
       expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
-        click_link "Support Budget Investments"
+        click_link "Support budget investments"
       end
       expect(page).to have_content(budget_investment.title)
 
@@ -229,10 +229,10 @@ feature 'Budget Investments' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      click_link "Support Budget Investments"
+      click_link "Support budget investments"
       expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
-        click_link "Support Budget Investments"
+        click_link "Support budget investments"
       end
 
       within("#budget-investments") do
@@ -250,7 +250,7 @@ feature 'Budget Investments' do
       user = create(:user)
       login_managed_user(user)
 
-      click_link "Support Budget Investments"
+      click_link "Support budget investments"
 
       expect(page).to have_content "User is not verified"
     end
@@ -261,11 +261,11 @@ feature 'Budget Investments' do
     scenario 'Printing budget investments' do
       16.times { create(:budget_investment, budget: @budget, heading: @heading) }
 
-      click_link "Print Budget Investments"
+      click_link "Print budget investments"
 
       expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
-        click_link "Print Budget Investments"
+        click_link "Print budget investments"
       end
 
       expect(page).to have_css('.budget-investment', count: 15)
@@ -283,11 +283,11 @@ feature 'Budget Investments' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      click_link "Print Budget Investments"
+      click_link "Print budget investments"
 
       expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
-        click_link "Print Budget Investments"
+        click_link "Print budget investments"
       end
 
       within '#budget-investments' do

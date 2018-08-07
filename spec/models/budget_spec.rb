@@ -190,6 +190,18 @@ describe Budget do
     end
   end
 
+  describe '#has_winning_investments?' do
+    it 'should return true if there is a winner investment' do
+      budget.investments << build(:budget_investment, :winner, price: 3, ballot_lines_count: 2)
+
+      expect(budget.has_winning_investments?).to eq true
+    end
+
+    it 'hould return false if there is not a winner investment' do
+      expect(budget.has_winning_investments?).to eq false
+    end
+  end
+
   describe "#generate_phases" do
     let(:drafting_phase)          { budget.phases.drafting }
     let(:informing_phase)         { budget.phases.informing }

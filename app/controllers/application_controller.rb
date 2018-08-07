@@ -59,6 +59,7 @@ class ApplicationController < ActionController::Base
       end
 
       I18n.locale = locale
+      Globalize.locale = I18n.locale
     end
 
     def set_layout
@@ -117,7 +118,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_default_budget_filter
-      if @budget.try(:balloting?)
+      if @budget.try(:balloting?) || @budget.try(:publishing_prices?)
         params[:filter] ||= "selected"
       end
     end

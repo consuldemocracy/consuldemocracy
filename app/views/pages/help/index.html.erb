@@ -3,11 +3,14 @@
   <%= render "shared/canonical", href: help_url %>
 <% end %>
 
+<% if has_banners? %>
+  <%= render "shared/banner" %>
+<% end %>
+
 <div class="jumbo light">
   <div class="row">
     <div class="small-12 medium-9 column">
       <h2><%= t("pages.help.title", org: setting['org_name']) %></h2>
-      <p><%= t("pages.help.subtitle", org: setting['org_name']) %></p>
       <p><%= t("pages.help.guide", org: setting['org_name']) %></p>
     </div>
   </div>

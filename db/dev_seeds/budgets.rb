@@ -1,3 +1,29 @@
+INVESTMENT_IMAGE_FILES = %w{
+  brennan-ehrhardt-25066-unsplash_713x513.jpg
+  carl-nenzen-loven-381554-unsplash_713x475.jpg
+  carlos-zurita-215387-unsplash_713x475.jpg
+  hector-arguello-canals-79584-unsplash_713x475.jpg
+  olesya-grichina-218176-unsplash_713x475.jpg
+  sole-d-alessandro-340443-unsplash_713x475.jpg
+}.map do |filename|
+  File.new(Rails.root.join("db",
+                           "dev_seeds",
+                           "images",
+                           "budget",
+                           "investments", filename))
+end
+
+def add_image_to(imageable)
+  # imageable should respond to #title & #author
+  imageable.image = Image.create!({
+    imageable: imageable,
+    title: imageable.title,
+    attachment: INVESTMENT_IMAGE_FILES.sample,
+    user: imageable.author
+  })
+  imageable.save
+end
+
 section "Creating Budgets" do
   Budget.create(
     name: "#{I18n.t('seeds.budgets.budget')} #{Date.current.year - 1}",
@@ -53,6 +79,14 @@ section "Creating Investments" do
       skip_map: "1",
       terms_of_service: "1"
     )
+
+    add_image_to(investment) if Random.rand > 0.5
+  end
+end
+
+section "Marking investments as visible to valuators" do
+  (1..50).to_a.sample.times do
+    Budget::Investment.reorder("RANDOM()").first.update(visible_to_valuators: true)
   end
 end
 
@@ -77,7 +111,7 @@ section "Winner Investments" do
   budget = Budget.finished.first
   50.times do
     heading = budget.headings.all.sample
-    Budget::Investment.create!(
+    investment = Budget::Investment.create!(
       author: User.all.sample,
       heading: heading,
       group: heading.group,
@@ -92,6 +126,7 @@ section "Winner Investments" do
       skip_map: "1",
       terms_of_service: "1"
     )
+    add_image_to(investment) if Random.rand > 0.3
   end
   budget.headings.each do |heading|
     Budget::Result.new(budget, heading).calculate_winners
@@ -102,4 +137,25 @@ section "Creating Valuation Assignments" do
   (1..50).to_a.sample.times do
     Budget::Investment.all.sample.valuators << Valuator.first
   end
+end
+
+section "Creating investment milestones" do
+  Budget::Investment.all.each do |investment|
+    milestone = Budget::Investment::Milestone.new(investment_id: investment.id, publication_date: Date.tomorrow)
+    I18n.available_locales.map do |locale|
+      neutral_locale = locale.to_s.downcase.underscore.to_sym
+      Globalize.with_locale(neutral_locale) do
+        milestone.description = "Description for locale #{locale}"
+        milestone.title = I18n.l(Time.current, format: :datetime)
+        milestone.save!
+      end
+    end
+  end
+end
+
+section "Creating default Investment Milestone Statuses" do
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.studying_project'))
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.bidding'))
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executing_project'))
+  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executed'))
 end

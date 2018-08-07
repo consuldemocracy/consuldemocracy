@@ -13,6 +13,9 @@ en:
       budget/investment/milestone:
         one: "milestone"
         other: "milestones"
+      budget/investment/status:
+        one: "Investment status"
+        other: "Investment statuses"
       comment:
         one: "Comment"
         other: "Comments"
@@ -59,8 +62,8 @@ en:
         one: "Citizen proposal"
         other: "Citizen proposals"
       spending_proposal:
-        one: "Spending proposal"
-        other: "Spending proposals"
+        one: "Investment project"
+        other: "Investment projects"
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -100,6 +103,9 @@ en:
       poll:
         one: "Poll"
         other: "Polls"
+      proposal_notification:
+        one: "Proposal notification"
+        other: "Proposal notifications"
     attributes:
       budget:
         name: "Name"
@@ -113,23 +119,23 @@ en:
         phase: "Phase"
         currency_symbol: "Currency"
       budget/investment:
-        heading_id: "Sección de presupuesto"
-        title: "Title"
-        description: "Description"
-        external_url: "External url"
-        administrator_id: "Administrator"
-        description: "Description"
-        external_url: "Link to additional documentation"
         heading_id: "Heading"
         title: "Title"
+        description: "Description"
+        external_url: "Link to additional documentation"
+        administrator_id: "Administrator"
         location: "Location (optional)"
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
       budget/investment/milestone:
+        status_id: "Current investment status (optional)"
         title: "Title"
-        description: "Description"
+        description: "Description (optional if there's an status assigned)"
         publication_date: "Publication date"
+      budget/investment/status:
+        name: "Name"
+        description: "Description (optional)"
       budget/heading:
         name: "Heading name"
         price: "Price"
@@ -163,7 +169,7 @@ en:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"
       spending_proposal:
-        administrator_id: "Administrador"
+        administrator_id: "Administrator"
         association_name: "Association name"
         description: "Description"
         external_url: "Link to additional documentation"
@@ -205,6 +211,7 @@ en:
         body: Body
       legislation/process:
         title: Process Title
+        summary: Summary
         description: Description
         additional_info: Additional info
         start_date: Start date
@@ -245,6 +252,14 @@ en:
         subject: Subject
         from: From
         body: Email content
+      widget/card:
+        label: Label (optional)
+        title: Title
+        description: Description
+        link_text: Link text
+        link_url: Link URL
+      widget/feed:
+        limit: Number of items
     errors:
       models:
         user:
@@ -265,6 +280,10 @@ en:
               min_image_width: "Image Width must be at least %{required_min_width}px"
               min_image_height: "Image Height must be at least %{required_min_height}px"
         newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "The user recipients segment is invalid"
+        admin_notification:
           attributes:
             segment_recipient:
               invalid: "The user recipients segment is invalid"

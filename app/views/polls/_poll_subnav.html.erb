@@ -5,7 +5,7 @@
       <ul class="menu simple clear">
         <% if current_user && current_user.administrator? || @poll.results_enabled? %>
           <% if controller_name == "polls" && action_name == "results" %>
-            <li class="active">
+            <li class="is-active">
               <h2><%= t("polls.show.results_menu") %></h2>
             </li>
           <% else %>
@@ -15,7 +15,7 @@
 
         <% if current_user && current_user.administrator? || @poll.stats_enabled? %>
           <% if controller_name == "polls" && action_name == "stats" %>
-            <li class="active">
+            <li class="is-active">
               <h2><%= t("polls.show.stats_menu") %></h2>
             </li>
           <% else %>
@@ -24,7 +24,7 @@
         <% end %>
 
         <% if controller_name == "polls" && action_name == "show" %>
-          <li class="active">
+          <li class="is-active">
             <h2><%= t("polls.show.info_menu") %></h2>
           </li>
         <% else %>

@@ -15,6 +15,13 @@ namespace :admin do
     end
   end
 
+  resources :hidden_budget_investments, only: :index do
+    member do
+      put :restore
+      put :confirm_hide
+    end
+  end
+
   resources :debates, only: :index do
     member do
       put :restore
@@ -38,6 +45,13 @@ namespace :admin do
     get :summary, on: :collection
   end
 
+  resources :proposal_notifications, only: :index do
+    member do
+      put :restore
+      put :confirm_hide
+    end
+  end
+
   resources :budgets do
     member do
       put :calculate_winners
@@ -55,6 +69,8 @@ namespace :admin do
     resources :budget_phases, only: [:edit, :update]
   end
 
+  resources :budget_investment_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
+
   resources :signature_sheets, only: [:index, :new, :create, :show]
 
   resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
@@ -69,6 +85,7 @@ namespace :admin do
   end
 
   resources :tags, only: [:index, :create, :update, :destroy]
+
   resources :officials, only: [:index, :edit, :update, :destroy] do
     get :search, on: :collection
   end
@@ -84,6 +101,7 @@ namespace :admin do
     get :search, on: :collection
     get :summary, on: :collection
   end
+
   resources :valuator_groups
 
   resources :managers, only: [:index, :create, :destroy] do
@@ -150,6 +168,19 @@ namespace :admin do
     get :users, on: :collection
   end
 
+  resources :admin_notifications do
+    member do
+      post :deliver
+    end
+  end
+
+  resources :system_emails, only: [:index] do
+    get :view
+    get :preview_pending
+    put :moderate_pending
+    put :send_pending
+  end
+
   resources :emails_download, only: :index do
     get :generate_csv, on: :collection
   end
@@ -178,5 +209,15 @@ namespace :admin do
     resources :pages, except: [:show]
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
+    resources :information_texts, only: [:index] do
+      post :update, on: :collection
+    end
+  end
+
+  resource :homepage, controller: :homepage, only: [:show]
+
+  namespace :widget do
+    resources :cards
+    resources :feeds, only: [:update]
   end
 end

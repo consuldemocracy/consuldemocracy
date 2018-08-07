@@ -2,8 +2,7 @@ class Admin::BannersController < Admin::BaseController
 
   has_filters %w{all with_active with_inactive}, only: :index
 
-  before_action :banner_styles, only: [:edit, :new, :create, :update]
-  before_action :banner_imgs, only: [:edit, :new, :create, :update]
+  before_action :banner_sections, only: [:edit, :new, :create, :update]
 
   respond_to :html, :js
 
@@ -38,8 +37,10 @@ class Admin::BannersController < Admin::BaseController
   private
 
     def banner_params
-      attributes = [:title, :description, :target_url, :style, :image,
-                    :post_started_at, :post_ended_at]
+      attributes = [:title, :description, :target_url,
+                    :post_started_at, :post_ended_at,
+                    :background_color, :font_color,
+                    web_section_ids: []]
       params.require(:banner).permit(*attributes)
     end
 
@@ -55,4 +56,7 @@ class Admin::BannersController < Admin::BaseController
                      end
     end
 
+    def banner_sections
+      @banner_sections = WebSection.all
+    end
 end

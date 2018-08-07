@@ -105,6 +105,10 @@ class Budget < ApplicationRecord
     Budget::Phase::PUBLISHED_PRICES_PHASES.include?(phase)
   end
 
+  def valuating_or_later?
+    valuating? || publishing_prices? || balloting_or_later?
+  end
+
   def balloting_process?
     balloting? || reviewing_ballots?
   end
@@ -142,21 +146,27 @@ class Budget < ApplicationRecord
       %w{random}
     when 'publishing_prices', 'balloting', 'reviewing_ballots'
       %w{random price}
+    when 'finished'
+      %w{random}
     else
       %w{random confidence_score}
     end
   end
 
   def email_selected
-    investments.selected.each do |investment|
+    investments.selected.order(:id).each do |investment|
       Mailer.budget_investment_selected(investment).deliver_later
     end
   end
 
   def email_unselected
-    investments.unselected.each do |investment|
+    investments.unselected.order(:id).each do |investment|
       Mailer.budget_investment_unselected(investment).deliver_later
     end
+  end
+
+  def has_winning_investments?
+    investments.winners.any?
   end
 
   private
@@ -185,5 +195,3 @@ class Budget < ApplicationRecord
     slug.nil? || drafting?
   end
 end
-
-

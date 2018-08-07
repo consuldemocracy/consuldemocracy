@@ -1,11 +1,11 @@
 en:
   seeds:
     settings:
-      official_level_1_name: Public workers
-      official_level_2_name: Municipal Organization
-      official_level_3_name: General Directors
-      official_level_4_name: Councillors
-      official_level_5_name: Mayor
+      official_level_1_name: Official position 1
+      official_level_2_name: Official position 2
+      official_level_3_name: Official position 3
+      official_level_4_name: Official position 4
+      official_level_5_name: Official position 5
     geozones:
       north_district: North District
       west_district: West District
@@ -36,6 +36,16 @@ en:
       groups:
         all_city: All City
         districts: Districts
+      valuator_groups:
+        culture_and_sports: Culture & Sports
+        gender_and_diversity: Gender & Diversity Policies
+        urban_development: Sustainable Urban Development
+        equity_and_employment: Equity & Employment
+      statuses:
+        studying_project: Studying the project
+        bidding: Bidding
+        executing_project: Executing the project
+        executed: Executed
     polls:
       current_poll: "Current Poll"
       current_poll_geozone_restricted: "Current Poll Geozone Restricted"

@@ -233,8 +233,6 @@ feature 'Emails' do
     email = open_last_email
     expect(email).to have_subject("Your investment project '#{spending_proposal.code}' has been marked as unfeasible")
     expect(email).to deliver_to(spending_proposal.author.email)
-    expect(email).to have_body_text(spending_proposal.title)
-    expect(email).to have_body_text(spending_proposal.code)
     expect(email).to have_body_text(spending_proposal.feasible_explanation)
 
     Setting["feature.spending_proposals"] = nil
@@ -294,7 +292,7 @@ feature 'Emails' do
       notification3 = create_proposal_notification(proposal3)
 
       email_digest = EmailDigest.new(user)
-      email_digest.deliver
+      email_digest.deliver(Time.current)
       email_digest.mark_as_emailed
 
       email = open_last_email
@@ -306,14 +304,14 @@ feature 'Emails' do
       expect(email).to have_body_text(notification1.notifiable.body)
       expect(email).to have_body_text(proposal1.author.name)
 
-      expect(email).to have_body_text(/#{notification_path(notification1)}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'tab-notifications')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'comments')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'social-share')}/)
 
       expect(email).to have_body_text(proposal2.title)
       expect(email).to have_body_text(notification2.notifiable.title)
       expect(email).to have_body_text(notification2.notifiable.body)
-      expect(email).to have_body_text(/#{notification_path(notification2)}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'tab-notifications')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'comments')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'social-share')}/)
       expect(email).to have_body_text(proposal2.author.name)
@@ -327,6 +325,26 @@ feature 'Emails' do
       expect(notification2.emailed_at).to be
     end
 
+    scenario "notifications moderated are not sent" do
+      user = create(:user, email_digest: true)
+      proposal = create(:proposal)
+      proposal_notification = create(:proposal_notification, proposal: proposal)
+      notification = create(:notification, notifiable: proposal_notification)
+
+      reset_mailer
+
+      proposal_notification.moderate_system_email(create(:administrator).user)
+
+      email_digest = EmailDigest.new(user)
+      email_digest.deliver(Time.current)
+      email_digest.mark_as_emailed
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
+
+    xscenario "Delete all Notifications included in the digest after email sent" do
+    end
+
   end
 
   context "User invites" do
@@ -336,7 +354,7 @@ feature 'Emails' do
       visit new_management_user_invite_path
 
       fill_in "emails", with: " john@example.com, ana@example.com,isable@example.com "
-      click_button "Send invites"
+      click_button "Send invitations"
 
       expect(page).to have_content "3 invitations have been sent."
 
@@ -406,8 +424,6 @@ feature 'Emails' do
       email = open_last_email
       expect(email).to have_subject("Your investment project '#{investment.code}' has been marked as unfeasible")
       expect(email).to deliver_to(investment.author.email)
-      expect(email).to have_body_text(investment.title)
-      expect(email).to have_body_text(investment.code)
       expect(email).to have_body_text(investment.unfeasibility_explanation)
     end
 
@@ -431,7 +447,6 @@ feature 'Emails' do
       investment = investment2
       expect(email).to have_subject("Your investment project '#{investment.code}' has been selected")
       expect(email).to deliver_to(investment.author.email)
-      expect(email).to have_body_text(investment.title)
     end
 
     scenario "Unselected investment" do
@@ -454,7 +469,6 @@ feature 'Emails' do
       investment = investment2
       expect(email).to have_subject("Your investment project '#{investment.code}' has not been selected")
       expect(email).to deliver_to(investment.author.email)
-      expect(email).to have_body_text(investment.title)
     end
 
   end

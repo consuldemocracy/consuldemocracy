@@ -35,8 +35,9 @@ feature 'Admin settings' do
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
+      find("#map-tab").click
 
-      expect(page).not_to have_content "Map configuration"
+      expect(page).not_to have_css("#admin-map")
     end
 
     scenario "Should be able when map feature activated" do
@@ -44,8 +45,9 @@ feature 'Admin settings' do
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
+      find("#map-tab").click
 
-      expect(page).to have_content "Map configuration"
+      expect(page).to have_css("#admin-map")
     end
 
     scenario "Should show successful notice" do
@@ -78,6 +80,7 @@ feature 'Admin settings' do
       login_as(admin)
 
       visit admin_settings_path
+      find("#map-tab").click
       find("#admin-map").click
       within "#map-form" do
         click_on "Update"
@@ -85,6 +88,40 @@ feature 'Admin settings' do
 
       expect(find("#latitude", visible: false).value).not_to eq "51.48"
       expect(page).to have_content "Map configuration updated succesfully"
+    end
+
+  end
+
+  describe "Skip verification" do
+
+    scenario "deactivate skip verification", :js do
+      Setting["feature.user.skip_verification"] = 'true'
+      setting = Setting.where(key: "feature.user.skip_verification").first
+
+      visit admin_settings_path
+      find("#features-tab").click
+
+      accept_alert do
+        find("#edit_setting_#{setting.id} .button").click
+      end
+
+      expect(page).to have_content 'Value updated'
+    end
+
+    scenario "activate skip verification", :js do
+      Setting["feature.user.skip_verification"] = nil
+      setting = Setting.where(key: "feature.user.skip_verification").first
+
+      visit admin_settings_path
+      find("#features-tab").click
+
+      accept_alert do
+        find("#edit_setting_#{setting.id} .button").click
+      end
+
+      expect(page).to have_content 'Value updated'
+
+      Setting["feature.user.skip_verification"] = nil
     end
 
   end

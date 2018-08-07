@@ -1,0 +1,48 @@
+<h2><%= t("admin.settings.index.feature_flags") %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("admin.settings.setting") %></th>
+      <th><%= t("admin.settings.setting_status") %></th>
+      <th><%= t("admin.settings.setting_actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @feature_flags.each do |feature_flag| %>
+      <tr>
+        <td class="small-8">
+          <strong><%= t("settings.#{feature_flag.key}") %></strong>
+          <br>
+          <span class="small">
+            <%= t("settings.#{feature_flag.key}_description", default: t("admin.settings.no_description")) %>
+          </span>
+        </td>
+
+        <td>
+          <% if feature_flag.enabled? %>
+            <span class="enabled">
+              <strong>
+                <%= t ("admin.settings.index.features.enabled") %>
+              </strong>
+            </span>
+          <% else %>
+            <span class="disabled">
+              <%= t("admin.settings.index.features.disabled") %>
+            </span>
+          <% end %>
+        </td>
+
+        <td class="text-right">
+          <%= form_for(feature_flag, url: admin_setting_path(feature_flag), html: { id: "edit_#{dom_id(feature_flag)}"}) do |f| %>
+
+            <%= f.hidden_field :value, id: dom_id(feature_flag), value: (feature_flag.enabled? ? "" : "active") %>
+            <%= f.submit(t("admin.settings.index.features.#{feature_flag.enabled? ? 'disable' : 'enable'}"),
+                        class: "button expanded #{feature_flag.enabled? ? 'hollow alert' : 'success'}",
+                        data: {confirm: t("admin.actions.confirm")}) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

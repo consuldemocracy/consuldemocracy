@@ -40,11 +40,15 @@ section "Creating Settings" do
   Setting.create(key: 'feature.signature_sheets', value: "true")
   Setting.create(key: 'feature.legislation', value: "true")
   Setting.create(key: 'feature.user.recommendations', value: "true")
+  Setting.create(key: 'feature.user.recommendations_on_debates', value: "true")
+  Setting.create(key: 'feature.user.recommendations_on_proposals', value: "true")
   Setting.create(key: 'feature.community', value: "true")
   Setting.create(key: 'feature.map', value: "true")
   Setting.create(key: 'feature.allow_images', value: "true")
+  Setting.create(key: 'feature.allow_attached_documents', value: "true")
   Setting.create(key: 'feature.public_stats', value: "true")
   Setting.create(key: 'feature.guides', value: nil)
+  Setting.create(key: 'feature.user.skip_verification', value: "true")
 
   Setting.create(key: 'per_page_code_head', value: "")
   Setting.create(key: 'per_page_code_body', value: "")
@@ -61,4 +65,8 @@ section "Creating Settings" do
   Setting.create(key: 'map_longitude', value: -3.7)
   Setting.create(key: 'map_zoom', value: 10)
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
+
+  Setting['feature.homepage.widgets.feeds.proposals'] = true
+  Setting['feature.homepage.widgets.feeds.debates'] = true
+  Setting['feature.homepage.widgets.feeds.processes'] = true
 end

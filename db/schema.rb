@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320104823) do
+ActiveRecord::Schema.define(version: 20180718115545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.datetime "updated_at"
     t.index ["actionable_id", "actionable_type"], name: "index_activities_on_actionable_id_and_actionable_type", using: :btree
     t.index ["user_id"], name: "index_activities_on_user_id", using: :btree
+  end
+
+  create_table "admin_notifications", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "link"
+    t.string   "segment_recipient"
+    t.integer  "recipients_count"
+    t.date     "sent_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "administrators", force: :cascade do |t|
@@ -58,17 +69,24 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.index ["user_id"], name: "index_annotations_on_user_id", using: :btree
   end
 
+  create_table "banner_sections", force: :cascade do |t|
+    t.integer  "banner_id"
+    t.integer  "web_section_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "banners", force: :cascade do |t|
-    t.string   "title",           limit: 80
+    t.string   "title",            limit: 80
     t.string   "description"
     t.string   "target_url"
-    t.string   "style"
-    t.string   "image"
     t.date     "post_started_at"
     t.date     "post_ended_at"
     t.datetime "hidden_at"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.text     "background_color"
+    t.text     "font_color"
     t.index ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
   end
 
@@ -109,6 +127,18 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.index ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
   end
 
+  create_table "budget_investment_milestone_translations", force: :cascade do |t|
+    t.integer  "budget_investment_milestone_id", null: false
+    t.string   "locale",                         null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "title"
+    t.text     "description"
+  end
+
+  add_index "budget_investment_milestone_translations", ["budget_investment_milestone_id"], name: "index_6770e7675fe296cf87aa0fd90492c141b5269e0b", using: :btree
+  add_index "budget_investment_milestone_translations", ["locale"], name: "index_budget_investment_milestone_translations_on_locale", using: :btree
+
   create_table "budget_investment_milestones", force: :cascade do |t|
     t.integer  "investment_id"
     t.string   "title",            limit: 80
@@ -116,7 +146,20 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.datetime "publication_date"
+    t.integer  "status_id"
   end
+
+  add_index "budget_investment_milestones", ["status_id"], name: "index_budget_investment_milestones_on_status_id", using: :btree
+
+  create_table "budget_investment_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "hidden_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "budget_investment_statuses", ["hidden_at"], name: "index_budget_investment_statuses_on_hidden_at", using: :btree
 
   create_table "budget_investments", force: :cascade do |t|
     t.integer  "author_id"
@@ -153,7 +196,11 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.boolean  "winner",                                      default: false
     t.boolean  "incompatible",                                default: false
     t.integer  "community_id"
+    t.boolean  "visible_to_valuators",                        default: false
     t.integer  "valuator_group_assignments_count",            default: 0
+    t.datetime "confirmed_hide_at"
+    t.datetime "ignored_flag_at"
+    t.integer  "flags_count",                                 default: 0
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
     t.index ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
     t.index ["community_id"], name: "index_budget_investments_on_community_id", using: :btree
@@ -386,6 +433,21 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.index ["poll_id"], name: "index_geozones_polls_on_poll_id", using: :btree
   end
 
+  create_table "i18n_content_translations", force: :cascade do |t|
+    t.integer  "i18n_content_id", null: false
+    t.string   "locale",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.text     "value"
+  end
+
+  add_index "i18n_content_translations", ["i18n_content_id"], name: "index_i18n_content_translations_on_i18n_content_id", using: :btree
+  add_index "i18n_content_translations", ["locale"], name: "index_i18n_content_translations_on_locale", using: :btree
+
+  create_table "i18n_contents", force: :cascade do |t|
+    t.string "key"
+  end
+
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -605,6 +667,7 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.date     "sent_at"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.datetime "hidden_at"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -801,8 +864,12 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.text     "body"
     t.integer  "author_id"
     t.integer  "proposal_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.boolean  "moderated",         default: false
+    t.datetime "hidden_at"
+    t.datetime "ignored_at"
+    t.datetime "confirmed_hide_at"
   end
 
   create_table "proposals", force: :cascade do |t|
@@ -1060,6 +1127,8 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
     t.boolean  "public_interests",                          default: false
+    t.boolean  "recommended_debates",                       default: true
+    t.boolean  "recommended_proposals",                     default: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
@@ -1146,6 +1215,30 @@ ActiveRecord::Schema.define(version: 20180320104823) do
     t.index ["signature_id"], name: "index_votes_on_signature_id", using: :btree
     t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
+  end
+
+  create_table "widget_cards", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link_text"
+    t.string   "link_url"
+    t.string   "label"
+    t.boolean  "header",      default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "widget_feeds", force: :cascade do |t|
+    t.string   "kind"
+    t.integer  "limit",      default: 3
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "web_sections", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "administrators", "users"

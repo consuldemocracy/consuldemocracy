@@ -80,9 +80,11 @@
 
         <h4><%= @proposal.question %></h4>
 
-        <%= render 'documents/documents',
-                    documents: @proposal.documents,
-                    max_documents_allowed: Proposal.max_documents_allowed %>
+        <% if feature?(:allow_attached_documents) %>
+          <%= render 'documents/documents',
+                      documents: @proposal.documents,
+                      max_documents_allowed: Proposal.max_documents_allowed %>
+        <% end %>
 
         <%= render 'shared/tags', taggable: @proposal %>
 
@@ -111,9 +113,13 @@
   </div>
 <% end %>
 
-<div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
-  <%= render "legislation/proposals/filter_subnav" %>
+<div class="row">
+  <div class="small-12 column">
+    <%= render "legislation/proposals/filter_subnav" %>
+  </div>
+</div>
 
+<div class="tabs-content" data-tabs-content="legislation_proposals_tabs">
   <div class="tabs-panel is-active" id="tab-comments">
     <%= render "legislation/proposals/comments" %>
   </div>

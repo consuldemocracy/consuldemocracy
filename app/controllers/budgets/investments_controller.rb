@@ -16,6 +16,7 @@ module Budgets
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
+    before_action :set_view, only: :index
 
     skip_authorization_check only: :json_data
 
@@ -31,7 +32,11 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = investments.page(params[:page]).per(10).for_render
+      if @budget.finished?
+        @investments = investments.winners.page(params[:page]).per(10).for_render
+      else
+        @investments = investments.page(params[:page]).per(10).for_render
+      end
 
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
@@ -111,8 +116,9 @@ module Budgets
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          seed = params[:random_seed] || session[:random_seed] || rand(-100000..100000)
-          params[:random_seed] ||= Float(seed) rescue 0
+          seed = params[:random_seed] || session[:random_seed] || rand
+          params[:random_seed] = seed
+          session[:random_seed] = params[:random_seed]
         else
           params[:random_seed] = nil
         end
@@ -145,6 +151,10 @@ module Budgets
 
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
+      end
+
+      def set_view
+        @view = (params[:view] == "minimal") ? "minimal" : "default"
       end
 
       def investments

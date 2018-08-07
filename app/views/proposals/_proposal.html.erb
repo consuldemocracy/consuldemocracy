@@ -9,7 +9,8 @@
 
         <div class="small-12 medium-3 large-2 column text-center">
           <div data-equalizer-watch>
-            <%= image_tag proposal.image_url(:thumb), alt: proposal.image.title %>
+            <%= image_tag proposal.image_url(:thumb),
+                          alt: proposal.image.title.unicode_normalize %>
           </div>
         </div>
 
@@ -69,8 +70,7 @@
           <div class="padding text-center">
 
             <p>
-              <%= t("proposals.proposal.successful",
-                  voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+              <%= t("proposals.proposal.successful") %>
             </p>
           </div>
           <% if can? :create, Poll::Question %>

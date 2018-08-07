@@ -13,9 +13,6 @@
             edit_admin_budget_budget_group_budget_heading_path(budget_id: group.budget.id, budget_group_id: group.id, id: heading.id),
             class: "button hollow",
             remote: true %>
-    <%= link_to t("admin.budget_investments.index.title"),
-        admin_budget_budget_investments_path(budget_id: group.budget.id, heading_id: heading.id),
-        class: "button hollow"  %>
     <% if heading.can_be_deleted? %>
       <%= link_to t('admin.administrators.administrator.delete'),
           #admin_budget_budget_group_budget_headings_path(group.budget.id, group.id),

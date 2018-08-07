@@ -68,6 +68,23 @@ shared_examples "documentable" do |documentable_factory_name,
 
     end
 
+    describe "When allow attached documents setting is disabled" do
+      before do
+        Setting['feature.allow_attached_documents'] = false
+      end
+
+      after do
+        Setting['feature.allow_attached_documents'] = true
+      end
+
+      scenario "Documents list should not be available" do
+        login_as(create(:user))
+        visit send(documentable_path, arguments)
+
+        expect(page).not_to have_css("#documents")
+      end
+    end
+
   end
 
   context "Destroy" do

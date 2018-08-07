@@ -2,15 +2,8 @@
 <html lang="es">
 
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><%= content_for?(:title) ? yield(:title) : "Admin" %></title>
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= render "layouts/common_head", default_title: "Admin" %>
     <%= content_for :head %>
-    <%= csrf_meta_tags %>
-    <%= favicon_link_tag "favicon.ico" %>
   </head>
 
   <body class="admin" data-watch-form-message="<%= I18n.t('layouts.admin.watch_form_message') %>">

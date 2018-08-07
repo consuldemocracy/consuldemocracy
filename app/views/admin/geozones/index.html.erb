@@ -1,5 +1,5 @@
 <%= link_to t("admin.geozones.index.create"),
-              new_admin_geozone_path, class: "button success float-right" %>
+              new_admin_geozone_path, class: "button float-right" %>
 
 <h2 class="inline-block"><%= t("admin.geozones.index.title") %></h2>
 
@@ -10,7 +10,7 @@
       <th><%= t("admin.geozones.geozone.external_code") %></th>
       <th><%= t("admin.geozones.geozone.census_code") %></th>
       <th><%= t("admin.geozones.geozone.coordinates") %></th>
-      <th colspan="2"></th>
+      <th><%= t("admin.actions.actions") %></th>
     </tr>
   </thead>
 
@@ -22,10 +22,17 @@
         <td><%= geozone.census_code %></td>
         <td class="break"><%= geozone.html_map_coordinates %></td>
         <td>
-          <%= link_to t("admin.geozones.index.edit"), edit_admin_geozone_path(geozone), class: 'edit-banner button hollow' %>
-        </td>
-        <td>
-          <%= link_to t("admin.geozones.index.delete"), admin_geozone_path(geozone), method: :delete, class: 'button hollow alert' %>
+          <div class="small-6 column">
+            <%= link_to t("admin.geozones.index.edit"),
+                        edit_admin_geozone_path(geozone),
+                        class: "button hollow expanded" %>
+          </div>
+          <div class="small-6 column">
+            <%= link_to t("admin.geozones.index.delete"),
+                        admin_geozone_path(geozone),
+                        method: :delete,
+                        class: "button hollow alert expanded" %>
+          </div>
         </td>
       </tr>
     <% end %>

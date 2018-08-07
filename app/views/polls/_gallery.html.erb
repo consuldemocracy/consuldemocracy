@@ -17,13 +17,13 @@
     </li>
 
     <% answer.images.reverse.each_with_index do |image, index| %>
-      <li class="orbit-slide <%= active_class(index) %>">
+      <li class="orbit-slide <%= is_active_class(index) %>">
         <%= link_to image.attachment.url(:original), target: "_blank" do %>
           <%= image_tag image.attachment.url(:original),
                         class: "orbit-image",
-                        alt: image.title %>
+                        alt: image.title.unicode_normalize %>
         <% end %>
-        <span class="orbit-caption"><%= image.title %></span>
+        <span class="orbit-caption"><%= image.title.unicode_normalize %></span>
       </li>
     <% end %>
 
@@ -31,8 +31,8 @@
 
   <nav class="orbit-bullets">
     <% answer.images.each_with_index do |image, index| %>
-      <button class="<%= active_class(index) %>" data-slide="<%= index %>">
-        <span class="show-for-sr"><%= image.title %></span>
+      <button class="<%= is_active_class(index) %>" data-slide="<%= index %>">
+        <span class="show-for-sr"><%= image.title.unicode_normalize %></span>
       </button>
     <% end %>
   </nav>

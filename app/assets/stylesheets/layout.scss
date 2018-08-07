@@ -18,11 +18,12 @@
 // 16. Flags
 // 17. Activity
 // 18. Banners
-// 19. Recommended Section Home
+// 19. Recommendations
 // 20. Documents
 // 21. Related content
 // 22. Images
 // 23. Maps
+// 24. Homepage
 //
 
 // 01. Global styles
@@ -31,6 +32,12 @@
 ::selection {
   color: #fff;
   background-color: $brand;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
 
 body {
@@ -252,12 +259,21 @@ a {
       }
     }
 
-    &.active {
-      border-bottom: 2px solid $brand;
-      color: $brand;
+    + li {
+      margin-left: 0;
     }
 
-    &:not(.active) {
+    &.is-active {
+      border-bottom: 2px solid $brand;
+      color: $brand;
+      padding-bottom: rem-calc(1);
+
+      h2 a {
+        color: $brand;
+      }
+    }
+
+    &:not(.is-active) {
       margin-bottom: $line-height / 3;
     }
   }
@@ -278,7 +294,7 @@ a {
       color: $text-medium;
       padding: 0;
 
-      &.active {
+      &.is-active {
         font-weight: bold;
         color: $brand;
       }
@@ -288,7 +304,7 @@ a {
       font-size: $base-font-size;
     }
 
-    &.active {
+    &.is-active {
       border-bottom: 2px solid $brand;
       color: $brand;
     }
@@ -435,8 +451,6 @@ header {
 .top-bar {
   background: $brand !important;
   color: #fff;
-  height: $line-height * 2;
-  line-height: $line-height * 2;
   padding-bottom: 0;
   padding-top: 0;
 
@@ -444,30 +458,44 @@ header {
     padding: 0;
   }
 
-  .top-bar-title a {
-    @include logo;
-    line-height: rem-calc(80);
-
-    @include breakpoint(medium) {
-      line-height: rem-calc(80);
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
   ul {
     background: none;
     padding-right: rem-calc(15);
   }
 
+  .menu .menu-text {
+    padding: 0;
+
+    a {
+      color: #fff;
+      display: inline-block;
+      font-family: 'Lato' !important;
+      font-size: rem-calc(24);
+      font-weight: lighter;
+      line-height: $line-height * 2;
+      padding: 0;
+
+      @include breakpoint(medium) {
+        line-height: rem-calc(80);
+        margin-top: 0;
+      }
+
+      img {
+
+        @include breakpoint(medium) {
+          margin-right: $line-height / 2;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
   .menu > li {
     display: block;
+    width: 100%;
 
     @include breakpoint(medium) {
-      display: table-cell;
-      height: $line-height * 3.5;
+      width: auto;
     }
 
     a {
@@ -481,6 +509,7 @@ header {
     }
 
     .button {
+      background: none;
       text-align: left;
 
       @include breakpoint(medium) {
@@ -491,13 +520,11 @@ header {
     }
   }
 
-  .menu-icon.dark {
-    height: 20px;
+  .has-submenu {
 
-    &::after,
-    &:hover::after {
-      background: #fff;
-      box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+    &.is-active a {
+      color: #fff;
+      font-weight: bold;
     }
   }
 
@@ -506,7 +533,7 @@ header {
     &.is-dropdown-submenu {
       background: #fff;
       margin: 0;
-      margin-top: rem-calc(-24);
+      margin-top: rem-calc(-12);
       padding: 0;
       z-index: 9;
     }
@@ -521,6 +548,37 @@ header {
       }
     }
   }
+
+  .top-bar-title {
+    line-height: $line-height;
+
+    a img {
+      height: rem-calc(48);
+      margin: 0;
+      width: auto;
+
+      @include breakpoint(medium up) {
+        height: auto;
+      }
+    }
+  }
+}
+
+.menu-icon {
+
+  &.dark {
+
+    &:hover::after,
+    &::after {
+      background: #fff;
+      box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+    }
+  }
+}
+
+.title-bar {
+  background: none;
+  float: right;
 }
 
 .dropdown.menu > li {
@@ -604,7 +662,7 @@ header {
       }
     }
 
-    &.active {
+    &.is-active {
       color: #fff;
 
       @include breakpoint(medium) {
@@ -651,7 +709,7 @@ header {
 
 .top-bar-right {
 
-  .active {
+  .is-active {
     font-weight: bold;
     text-decoration: underline;
   }
@@ -679,7 +737,7 @@ header {
     }
   }
 
-  .active {
+  .is-active {
     border-bottom: 2px solid $brand;
     color: $brand;
 
@@ -742,8 +800,7 @@ footer {
 }
 
 .footer {
-  background: $border;
-  border-top: 6px solid $brand;
+  background: #f1f1f1;
   margin-top: $line-height * 2;
   padding-top: $line-height;
 }
@@ -783,7 +840,7 @@ footer {
   color: $link;
 
   &:hover,
-  &.active {
+  &.is-active {
     background: $brand;
     color: #fff;
   }
@@ -820,11 +877,6 @@ footer {
 
   h1 {
     margin-top: $line-height;
-
-    img {
-      height: rem-calc(80);
-      width: rem-calc(80);
-    }
 
     a {
       color: #fff;
@@ -1797,7 +1849,7 @@ table {
       }
     }
 
-    &.active {
+    &.is-active {
       background: #43ac6a;
       color: #fff;
     }
@@ -1920,7 +1972,8 @@ table {
   }
 }
 
-.comment-body {
+.comment-body,
+.notification-body {
 
   img {
     margin-right: $line-height / 2;
@@ -2187,7 +2240,8 @@ table {
 
 .banner-style-one,
 .banner-style-two,
-.banner-style-three {
+.banner-style-three,
+.banner {
   margin: 0;
   margin-bottom: $line-height;
 
@@ -2221,20 +2275,20 @@ table {
   }
 }
 
-// 19. Recommended Section Home
-// ----------------------------
-
-.home-page {
-
-  .push {
-    display: none;
-  }
-}
+// 19. Recommendations
+// -------------------
 
 .section-recommended {
-  padding: $line-height * 2 0;
+  background: #fafafa;
+  border-top: 1px solid $border;
+  margin-bottom: rem-calc(-48);
+  padding: $line-height 0;
 
   h2 {
+    margin-bottom: 0;
+  }
+
+  p {
     margin-bottom: $line-height * 2;
   }
 
@@ -2256,14 +2310,19 @@ table {
   }
 
   .card {
+    padding: $line-height / 2;
+
+    .card {
+      border: 0;
+    }
 
     .card-section {
-      padding: $line-height 0;
-      max-width: rem-calc(300);
       margin: 0 auto;
+      max-width: none;
+      padding: 0;
 
       p {
-        font-size: rem-calc(15);
+        font-size: $base-font-size;
         text-align: left;
       }
     }
@@ -2293,18 +2352,6 @@ table {
     width: 100%;
   }
 
-  .debates-inner {
-    border-top: 4px solid $debates;
-  }
-
-  .proposals-inner {
-    border-top: 4px solid $proposals;
-  }
-
-  .budget-investments-inner {
-    border-top: 4px solid $budget;
-  }
-
   .debates-inner,
   .proposals-inner,
   .budget-investments-inner {
@@ -2316,10 +2363,10 @@ table {
     }
 
     h4 {
-      margin-top: $line-height;
-      margin-bottom: 0;
+      margin-top: 0;
+      margin-bottom: $line-height;
       font-size: rem-calc(18);
-      min-height: rem-calc(50);
+      min-height: 0;
     }
 
     h5 {
@@ -2338,9 +2385,21 @@ table {
       }
     }
 
+    .debates,
+    .proposals {
+
+      a {
+        display: block;
+        margin-top: $line-height;
+      }
+    }
+
     .debates-inner,
     .proposals-inner,
     .budget-investments-inner {
+      border: 1px solid $border;
+      padding: $line-height;
+      margin-right: $line-height;
       max-height: rem-calc(500);
 
       @include breakpoint(small) {
@@ -2351,11 +2410,60 @@ table {
 
   .carousel-image .orbit-wrapper img {
     display: block;
+    height: rem-calc(120);
 
     @include breakpoint(small) {
       margin: 0 auto;
     }
   }
+}
+
+.recommended-index {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  margin-bottom: $line-height;
+  margin-top: rem-calc(-25);
+  padding: $line-height 0 $line-height / 2;
+
+  @include breakpoint(medium) {
+    padding-top: 0;
+  }
+
+  h2 {
+    font-size: $small-font-size;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: $base-font-size;
+    margin-bottom: 0;
+  }
+
+  a {
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .recommendation {
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    display: block;
+    margin-bottom: $line-height / 4;
+    padding: $line-height / 2;
+
+    &:hover {
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.hide-recommendations {
+  color: $text-light;
+  position: absolute;
+  right: 12px;
+  top: -18px;
 }
 
 // 20. Documents
@@ -2389,10 +2497,6 @@ table {
     padding: 0 $line-height / 2;
     position: relative;
 
-    a {
-      word-wrap: break-word;
-    }
-
     .icon-document {
       color: #007bb7;
       display: inline-block;
@@ -2405,6 +2509,10 @@ table {
       margin-bottom: 0;
     }
   }
+}
+
+.document-link a {
+  word-wrap: break-word;
 }
 
 .additional-document-link {
@@ -2573,5 +2681,201 @@ table {
 
   &.leaflet-disabled {
     color: #525252 !important;
+  }
+}
+
+// 24. Homepage
+// ------------
+
+.home-page {
+
+  a {
+
+    p {
+
+      &.description {
+        color: $text;
+      }
+    }
+  }
+
+  a:hover {
+
+    h3 {
+      color: #fff;
+    }
+  }
+
+  .background-header {
+    clip-path: ellipse(60% 80% at 50% 0%);
+    height: $line-height * 2;
+    background: $highlight;
+    margin-top: rem-calc(-48);
+  }
+
+  .card {
+    border: 0;
+    overflow: visible;
+
+    a {
+
+      img {
+        transition-duration: 0.3s;
+        transition-property: transform;
+      }
+    }
+
+    a:hover {
+      box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    p {
+      padding: 0 $line-height / 4;
+    }
+  }
+
+  h3 {
+
+    &.title {
+      display: inline-block;
+      border-top: 4px solid $brand;
+      margin-bottom: 0;
+      min-width: rem-calc(240);
+      padding: $line-height / 2 0;
+    }
+  }
+
+  .figure-card {
+
+    figcaption {
+      z-index: 3;
+    }
+
+    .gradient {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 1) 100%);
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+
+  figure img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.feeds-list {
+
+  .proposal {
+    clear: both;
+  }
+
+  a {
+
+    &.see-all {
+      border-bottom: 1px solid $border;
+      display: block;
+      font-size: $small-font-size;
+      margin: $line-height 0 $line-height / 2;
+      text-align: right;
+      width: 100%;
+    }
+  }
+}
+
+.feed-image {
+  display: inline-block;
+  height: rem-calc(120);
+  overflow: hidden;
+
+  @include breakpoint(medium) {
+    height: rem-calc(96);
+  }
+
+  img {
+    margin-left: rem-calc(-15);
+    max-width: none;
+    width: rem-calc(120);
+  }
+}
+
+.feed-description {
+
+  p {
+    font-size: $small-font-size;
+    margin-bottom: 0;
+  }
+}
+
+.feed-content {
+
+  .debate,
+  .proposal {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: $line-height / 2 0;
+  }
+}
+
+.figure-card {
+  display: flex;
+  margin: 0 0 $line-height;
+  position: relative;
+
+  @include breakpoint(medium) {
+    max-height: rem-calc(185);
+    overflow: hidden;
+  }
+
+  a {
+
+    h3,
+    .title {
+      color: #fff;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  figcaption {
+    bottom: 0;
+    color: #fff;
+    font-size: rem-calc(24);
+    line-height: rem-calc(24);
+    text-transform: uppercase;
+    padding: $line-height / 4 $line-height / 2;
+    position: absolute;
+    width: 100%;
+
+    h3,
+    .title {
+      font-size: rem-calc(24);
+      line-height: rem-calc(24);
+    }
+
+    span {
+      background: #fff;
+      border-radius: rem-calc(4);
+      color: #000;
+      display: inline-block;
+      font-size: $small-font-size;
+      font-weight: bold;
+      margin-bottom: $line-height / 4;
+      padding: rem-calc(4) rem-calc(8);
+    }
   }
 }

@@ -56,11 +56,7 @@ es:
       see_results: Ver resultados
       section_footer:
         title: Ayuda sobre presupuestos participativos
-        description: Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal.
-        help_text_1: "Los presupuestos participativos son unos procesos en los que la ciudadanía decide de forma directa en qué se gasta una parte del presupuesto municipal. Cualquier persona empadronada mayor de 16 años puede proponer un proyecto de gasto que se preselecciona en una fase de apoyos ciudadanos."
-        help_text_2: "Los proyectos más votados se evalúan y pasan a una votación final en la que se deciden las actuaciones que llevará a cabo el Ayuntamiento una vez se aprueben los presupuestos municipales del año próximo."
-        help_text_3: "La presentación de proyectos de presupuestos participativos se lleva a cabo desde enero y a lo largo de un periodo de mes y medio, aproximadamente. Para participar y plantear propuestas para toda la ciudad y/ los distritos hay que registrarse en %{org} y verificar la cuenta."
-        help_text_4: "Para conseguir el mayor número de apoyos y votos posible, elige un titular descriptivo y comprensible de tu proyecto. Después tienes un espacio para desarrollar el planteamiento de tu propuesta. Aporta todos los datos y explicaciones, e incluso documentos e imágenes, para ayudar a otras personas participantes a entender mejor lo que planteas."
+        description: Con los presupuestos participativos la ciudadanía decide a qué proyectos va destinada una parte del presupuesto.
     investments:
       form:
         tag_category_label: "Categorías"
@@ -71,11 +67,11 @@ es:
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
         location: "Información adicional de la ubicación"
+        map_skip_checkbox: "Este proyecto no tiene una ubicación concreta o no la conozco."
       index:
         title: Presupuestos participativos
         unfeasible: Proyectos de gasto no viables
-        unfeasible_text: "Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad."
-        unfeasible_text_definitions: ver definiciones aquí
+        unfeasible_text: "Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto) para ser declarados viables y llegar hasta la fase de votación final. Todos las proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad."
         by_heading: 'Proyectos de gasto con ámbito: %{heading}'
         search_form:
           button: Buscar
@@ -124,7 +120,12 @@ es:
         milestones_tab: Seguimiento
         no_milestones: No hay hitos definidos
         milestone_publication_date: "Publicado el %{publication_date}"
+        milestone_status_changed: El proyecto ha cambiado al estado
         author: Autor
+        project_unfeasible_html: 'Este proyecto de gasto <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación.'
+        project_selected_html: 'Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación.'
+        project_winner: 'Proyecto de gasto ganador'
+        project_not_selected_html: 'Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación.'
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         add: Votar

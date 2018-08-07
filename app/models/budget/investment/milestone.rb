@@ -7,12 +7,16 @@ class Budget
                    max_file_size: 3.megabytes,
                    accepted_content_types: [ "application/pdf" ]
 
+      translates :title, :description, touch: true
+      globalize_accessors locales: [:en, :es, :fr, :nl, :val, :pt_br]
+
       belongs_to :investment
+      belongs_to :status, class_name: 'Budget::Investment::Status'
 
       validates :title, presence: true
-      validates :description, presence: true
       validates :investment, presence: true
       validates :publication_date, presence: true
+      validate :description_or_status_present?
 
       scope :order_by_publication_date, -> { order(publication_date: :asc) }
 
@@ -20,6 +24,11 @@ class Budget
         80
       end
 
+      def description_or_status_present?
+        unless description.present? || status_id.present?
+          errors.add(:description)
+        end
+      end
     end
   end
 end
