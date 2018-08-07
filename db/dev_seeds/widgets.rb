@@ -14,7 +14,7 @@ section "Creating header and cards for the homepage" do
     link_text: 'More information',
     link_url: 'help_path',
     label: 'Welcome to',
-    header: TRUE,
+    header: true,
     image_attributes: create_image_attachment('header')
   )
 
@@ -24,7 +24,7 @@ section "Creating header and cards for the homepage" do
     link_text: 'More about debates',
     link_url: 'https://youtu.be/zU_0UN4VajY',
     label: 'Debates',
-    header: FALSE,
+    header: false,
     image_attributes: create_image_attachment('debate')
   )
 
@@ -34,7 +34,7 @@ section "Creating header and cards for the homepage" do
     link_text: 'More about proposals',
     link_url: 'https://youtu.be/ZHqBpT4uCoM',
     label: 'Citizen proposals',
-    header: FALSE,
+    header: false,
     image_attributes: create_image_attachment('proposal')
   )
 
@@ -44,7 +44,7 @@ section "Creating header and cards for the homepage" do
     link_text: 'More about Participatory budgets',
     link_url: 'https://youtu.be/igQ8KGZdk9c',
     label: 'Participatory budgets',
-    header: FALSE,
+    header: false,
     image_attributes: create_image_attachment('budget')
   )
 end
