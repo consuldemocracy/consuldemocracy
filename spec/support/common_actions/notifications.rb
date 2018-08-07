@@ -10,7 +10,7 @@ module Notifications
   end
 
   def comment_body(resource)
-    "comment-body-#{resource.class.name.parameterize("_").to_sym}_#{resource.id}"
+    "comment-body-#{resource.class.name.parameterize(separator: "_").to_sym}_#{resource.id}"
   end
 
   def create_proposal_notification(proposal)
