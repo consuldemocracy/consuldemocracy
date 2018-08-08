@@ -1,13 +1,13 @@
-# Use Ruby 2.3.6 as base image
-FROM ruby:2.3.6
+# Use Ruby 2.4.1 as base image
+FROM ruby:2.4.1
 
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install essential Linux packages
 RUN apt-get update -qq
-RUN apt-get install -y build-essential libpq-dev postgresql-client nodejs imagemagick sudo libxss1 libappindicator1 libindicator7 unzip memcached
+RUN apt-get install -y build-essential libpq-dev postgresql-client nodejs imagemagick sudo libxss1 libappindicator1 libindicator7 unzip memcached libxml2-dev
 
-# Files created inside the container repect the ownership
+# Files created inside the container respect the ownership
 RUN adduser --shell /bin/bash --disabled-password --gecos "" consul \
   && adduser consul sudo \
   && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
