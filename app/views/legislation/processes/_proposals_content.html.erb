@@ -8,6 +8,7 @@
               <p><%= t("legislation.processes.proposals.empty_proposals") %></p>
             </div>
           <% else %>
+            <%= render 'shared/filter_subnav', i18n_namespace: "legislation.processes.proposals" %>
             <%= render proposals %>
             <%= paginate proposals %>
           <% end %>

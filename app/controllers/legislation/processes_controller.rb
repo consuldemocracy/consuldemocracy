@@ -1,5 +1,7 @@
 class Legislation::ProcessesController < Legislation::BaseController
   has_filters %w{open next past}, only: :index
+  has_filters %w{all selected}, only: :proposals
+
   load_and_authorize_resource
 
   before_action :set_random_seed, only: :proposals
@@ -91,7 +93,9 @@ class Legislation::ProcessesController < Legislation::BaseController
 
     @proposals = ::Legislation::Proposal.where(process: @process)
     @proposals = @proposals.search(params[:search]) if params[:search].present?
-    @proposals = @proposals.order('random()').page(params[:page])
+    @proposals = @proposals.send(@current_filter).order('random()').page(params[:page])
+
+    @valid_filters = [] unless @proposals.map(&:selected).include? true
 
     if @process.proposals_phase.started? || (current_user && current_user.administrator?)
       legislation_proposal_votes(@proposals)
