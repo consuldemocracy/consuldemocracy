@@ -34,6 +34,10 @@ class Budget
       investments.empty?
     end
 
+    def city_heading?
+      name == "Toda la ciudad"
+    end
+
     private
 
     def generate_slug?

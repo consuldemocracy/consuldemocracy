@@ -246,8 +246,8 @@ feature 'Executions' do
 
   context 'Heading Order' do
 
-    def create_heading_with_investment_with_milestone(group:, name:)
-      heading    = create(:budget_heading, group: group, name: name)
+    def create_heading_with_investment_with_milestone(*opts, **kwargs)
+      heading    = create(:budget_heading, *opts, kwargs)
       investment = create(:budget_investment, :winner, heading: heading)
       milestone  = create(:budget_investment_milestone, investment: investment)
       heading
@@ -255,9 +255,9 @@ feature 'Executions' do
 
     scenario 'City heading is displayed first' do
       heading.destroy!
-      other_heading1 = create_heading_with_investment_with_milestone(group: group, name: 'Other 1')
-      city_heading   = create_heading_with_investment_with_milestone(group: group, name: 'Toda la ciudad')
-      other_heading2 = create_heading_with_investment_with_milestone(group: group, name: 'Other 2')
+      other_heading1 = create_heading_with_investment_with_milestone(group: group)
+      city_heading   = create_heading_with_investment_with_milestone(:city_heading, group: group)
+      other_heading2 = create_heading_with_investment_with_milestone(group: group)
 
       visit custom_budget_executions_path(budget)
 

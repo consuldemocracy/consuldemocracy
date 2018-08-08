@@ -326,7 +326,7 @@ FactoryBot.define do
     end
 
     trait :city_heading do
-      id 1
+      name "Toda la ciudad"
     end
   end
 

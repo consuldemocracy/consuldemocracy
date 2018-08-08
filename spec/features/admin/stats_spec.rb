@@ -163,13 +163,7 @@ feature 'Stats' do
       let!(:budget) { create(:budget) }
       # TODO change name to city_heading?
       let!(:group_all_city) { create(:budget_group, budget: budget) }
-      #let!(:heading_all_city) { create(:budget_heading, :city_heading, group: group_all_city) }
-      let!(:heading_all_city) { create(:budget_heading, group: group_all_city) }
-
-      background do
-        allow_any_instance_of(Admin::StatsController).
-        to receive(:city_heading).and_return(heading_all_city)
-      end
+      let!(:heading_all_city) { create(:budget_heading, :city_heading, group: group_all_city) }
 
       scenario "Number of supports in investment projects" do
         group_2 = create(:budget_group, budget: budget)
@@ -250,12 +244,7 @@ feature 'Stats' do
       scenario "Number of users that have supported geozone/no-geozone wide proposals" do
         group_districts = create(:budget_group, budget: budget)
 
-        #all_city    = heading_all_city
         carabanchel = create(:budget_heading, group: group_districts)
-
-        allow_any_instance_of(Admin::StatsController).
-        to receive(:city_heading).and_return(heading_all_city)
-
         all_city_investment = create(:budget_investment, heading: heading_all_city)
         district_investment = create(:budget_investment, heading: carabanchel)
 

@@ -176,6 +176,10 @@ class Budget < ActiveRecord::Base
     investments.winners.any?
   end
 
+  def city_heading
+    headings.find_by(name: "Toda la ciudad")
+  end
+
   private
 
   def sanitize_descriptions
