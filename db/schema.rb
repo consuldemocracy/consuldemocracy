@@ -740,6 +740,7 @@ ActiveRecord::Schema.define(version: 20180910142325) do
     t.integer  "cached_votes_total",                default: 0
     t.integer  "cached_votes_down",                 default: 0
     t.string   "proposal_type"
+    t.boolean  "selected"
   end
 
   add_index "legislation_proposals", ["legislation_process_id"], name: "index_legislation_proposals_on_legislation_process_id", using: :btree

@@ -1,7 +1,23 @@
 class Admin::Legislation::ProposalsController < Admin::Legislation::BaseController
+
+  has_orders %w{id title supports}, only: :index
+
   load_and_authorize_resource :process, class: "Legislation::Process"
   load_and_authorize_resource :proposal, class: "Legislation::Proposal", through: :process
 
   def index
+    @proposals = @proposals.send("sort_by_#{@current_order}").page(params[:page])
   end
+
+  def update
+    @proposal.selected = !@proposal.selected
+
+    if @proposal.save
+      notice = t('admin.legislation.proposals.update.notice')
+    else
+      notice = t('admin.legislation.proposals.update.error')
+    end
+    redirect_to admin_legislation_process_proposals_path, notice: notice
+  end
+
 end

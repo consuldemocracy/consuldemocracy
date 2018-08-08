@@ -79,6 +79,9 @@ en:
       legislation/process:
         one: "Process"
         other: "Processes"
+      legislation/proposal:
+        one: "Proposal"
+        other: "Proposals"
       legislation/draft_versions:
         one: "Draft version"
         other: "Draft versions"
