@@ -4,7 +4,7 @@ class Admin::Widget::FeedsController < Admin::BaseController
     @feed = ::Widget::Feed.find(params[:id])
     @feed.update(feed_params)
 
-    render nothing: true
+    head :ok
   end
 
   private
