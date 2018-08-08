@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install essential Linux packages
 RUN apt-get update -qq
-RUN apt-get install -y build-essential libpq-dev postgresql-client nodejs imagemagick sudo libxss1 libappindicator1 libindicator7 unzip memcached libxml2-dev
+RUN apt-get install -y build-essential libpq-dev postgresql-client nodejs imagemagick sudo libxss1 libappindicator1 libindicator7 unzip memcached libxml2-dev chromium
 
 # Files created inside the container respect the ownership
 RUN adduser --shell /bin/bash --disabled-password --gecos "" consul \
@@ -41,8 +41,7 @@ RUN gem install bundler
 # Finish establishing our Ruby environment
 RUN bundle install --full-index
 
-# Install Chromium and ChromeDriver for E2E integration tests
-RUN apt-get update -qq && apt-get install -y chromium
+# Install ChromeDriver for E2E integration tests
 RUN wget -N http://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip
 RUN unzip chromedriver_linux64.zip
 RUN chmod +x chromedriver
