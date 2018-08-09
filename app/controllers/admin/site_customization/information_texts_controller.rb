@@ -66,17 +66,11 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
       translations = I18n.backend.send(:translations)[locale.to_sym]
 
       translations.each do |k, v|
-        @content[k.to_s] = flat_hash(v).keys
-                                       .map { |s| @existing_keys["#{k.to_s}.#{s}"].nil? ?
-                                              I18nContent.new(key: "#{k.to_s}.#{s}") :
-                                              @existing_keys["#{k.to_s}.#{s}"] }
+        @content[k.to_s] = I18nContent.flat_hash(v).keys
+                                      .map { |s| @existing_keys["#{k.to_s}.#{s}"].nil? ?
+                                                 I18nContent.new(key: "#{k.to_s}.#{s}") :
+                                                 @existing_keys["#{k.to_s}.#{s}"] }
       end
-    end
-
-    def flat_hash(h, f = nil, g = {})
-      return g.update({ f => h }) unless h.is_a? Hash
-      h.each { |k, r| flat_hash(r, [f,k].compact.join('.'), g) }
-      return g
     end
 
 end
