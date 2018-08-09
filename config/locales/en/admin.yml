@@ -386,7 +386,7 @@ en:
         index:
           create: New process
           delete: Delete
-          title: Legislation processess
+          title: Legislation processes
           filters:
             open: Open
             next: Next
@@ -1357,7 +1357,7 @@ en:
       create_header: Create header
       cards_title: Cards
       create_card: Create card
-      no_cards: There is no cards.
+      no_cards: There are no cards.
       cards:
         title: Title
         description: Description

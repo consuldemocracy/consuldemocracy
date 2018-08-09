@@ -7,7 +7,7 @@ en:
       title_placeholder: Add a descriptive title for the document
       attachment_label: Choose document
       delete_button: Remove document
-      cancel_button: Cancelar
+      cancel_button: Cancel
       note: "You can upload up to a maximum of %{max_documents_allowed} documents of following content types: %{accepted_content_types}, up to %{max_file_size} MB per file."
       add_new_document: Add new document
     actions:

@@ -443,7 +443,7 @@ en:
       retired: Proposal retired by the author
       share: Share
       send_notification: Send notification
-      no_notifications: "This proposal has any notifications."
+      no_notifications: "This proposal doesn't have any notification."
       embed_video_title: "Video on %{proposal}"
       title_external_url: "Additional documentation"
       title_video_url: "External video"
@@ -526,7 +526,7 @@ en:
       title_label: "Title"
       body_label: "Message"
       submit_button: "Send message"
-      info_about_receivers_html: "This message will be send to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Message are not sent immediately, users will receive periodically an email with all proposal notifications."
+      info_about_receivers_html: "This message will be sent to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Messages are not sent immediately, users will receive periodically an email with all proposal notifications."
       proposal_page: "the proposal's page"
     show:
       back: "Go back to my activity"
