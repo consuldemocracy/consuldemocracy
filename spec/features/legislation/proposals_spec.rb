@@ -64,6 +64,33 @@ feature 'Legislation Proposals' do
     expect(legislation_proposals_order).to eq(first_page_proposals_order)
   end
 
+  scenario 'Selected filter apperars only if exists any eslecte poposal' do
+    legislation_process = create(:legislation_process)
+    create(:legislation_proposal, legislation_process_id: legislation_process.id)
+
+    visit legislation_process_proposals_path(legislation_process.id)
+
+    expect(page).not_to have_content('Selected')
+
+    create(:legislation_proposal, legislation_process_id: legislation_process.id, selected: true)
+
+    visit legislation_process_proposals_path(legislation_process.id)
+
+    expect(page).to have_content('Selected')
+  end
+
+  scenario 'Selected filter works correctly' do
+    legislation_process = create(:legislation_process)
+    proposal1 = create(:legislation_proposal, legislation_process_id: legislation_process.id)
+    proposal2 = create(:legislation_proposal, legislation_process_id: legislation_process.id, selected: true)
+    visit legislation_process_proposals_path(legislation_process.id)
+
+    click_link 'Selected'
+
+    expect(page).to have_css("div#legislation_proposal_#{proposal2.id}")
+    expect(page).not_to have_css("div#legislation_proposal_#{proposal1.id}")
+  end
+
   def legislation_proposals_order
     all("[id^='legislation_proposal_']").collect { |e| e[:id] }
   end
