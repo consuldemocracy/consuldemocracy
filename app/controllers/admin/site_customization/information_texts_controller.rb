@@ -13,7 +13,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
       unless values.empty?
         values.each do |key, value|
-          locale = key.split("_").last
+          locale = key.split('_').last
 
           if value == t(content[:id], locale: locale) || value.match(/translation missing/)
             next
@@ -44,6 +44,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
     def delete_translations
       languages_to_delete = params[:enabled_translations].select { |_, v| v == '0' }
                                                          .keys
+
       languages_to_delete.each do |locale|
         I18nContentTranslation.destroy_all(locale: locale)
       end
@@ -53,9 +54,9 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
       @existing_keys = {}
       @tab = params[:tab] || :debates
 
-      I18nContent.begins_with_key(@tab)
-                 .all
-                 .map{ |content| @existing_keys[content.key] = content }
+      I18nContent.begins_with_key(@tab).map { |content|
+        @existing_keys[content.key] = content
+      }
     end
 
     def append_or_create_keys
@@ -66,10 +67,10 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
       translations = I18n.backend.send(:translations)[locale.to_sym]
 
       translations.each do |k, v|
-        @content[k.to_s] = I18nContent.flat_hash(v).keys
-                                      .map { |s| @existing_keys["#{k.to_s}.#{s}"].nil? ?
-                                                 I18nContent.new(key: "#{k.to_s}.#{s}") :
-                                                 @existing_keys["#{k.to_s}.#{s}"] }
+        @content[k.to_s] = I18nContent.flat_hash(v).keys.map { |s|
+          @existing_keys["#{k.to_s}.#{s}"].nil? ? I18nContent.new(key: "#{k.to_s}.#{s}") :
+                                                  @existing_keys["#{k.to_s}.#{s}"]
+        }
       end
     end
 
