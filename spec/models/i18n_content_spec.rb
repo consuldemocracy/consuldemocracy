@@ -73,4 +73,36 @@ RSpec.describe I18nContent, type: :model do
       expect(i18n_content.value).to eq('Texto en español')
     end
   end
+
+  context 'flat_hash' do
+
+    it 'using one parameter' do
+      expect(I18nContent.flat_hash(nil)).to eq({nil=>nil})
+      expect(I18nContent.flat_hash('string')).to eq({nil=>'string'})
+      expect(I18nContent.flat_hash({w: 'string'})).to eq({"w" => 'string'})
+      expect(I18nContent.flat_hash({w: {p: 'string'}})).to eq({"w.p" => 'string'})
+    end
+
+    it 'using the two first parameters' do
+      expect(I18nContent.flat_hash('string', 'f')).to eq({'f'=>'string'})
+      expect(I18nContent.flat_hash(nil, 'f')).to eq({"f" => nil})
+      expect(I18nContent.flat_hash({w: 'string'}, 'f')).to eq({"f.w" => 'string'})
+      expect(I18nContent.flat_hash({w: {p: 'string'}}, 'f')).to eq({"f.w.p" => 'string'})
+    end
+
+    it 'using the first and last parameters' do
+      expect {I18nContent.flat_hash('string', nil, 'not hash')}.to raise_error NoMethodError
+      expect(I18nContent.flat_hash(nil, nil, {q: 'other string'})).to eq({q: 'other string', nil => nil})
+      expect(I18nContent.flat_hash({w: 'string'}, nil, {q: 'other string'})).to eq({q: 'other string', "w" => 'string'})
+      expect(I18nContent.flat_hash({w: {p: 'string'}}, nil, {q: 'other string'})).to eq({q: 'other string', "w.p" => 'string'})
+    end
+
+    it 'using all parameters' do
+      expect {I18nContent.flat_hash('string', 'f', 'not hash')}.to raise_error NoMethodError
+      expect(I18nContent.flat_hash(nil, 'f', {q: 'other string'})).to eq({q: 'other string', "f" => nil})
+      expect(I18nContent.flat_hash({w: 'string'}, 'f', {q: 'other string'})).to eq({q: 'other string', "f.w" => 'string'})
+      expect(I18nContent.flat_hash({w: {p: 'string'}}, 'f', {q: 'other string'})).to eq({q: 'other string', "f.w.p" => 'string'})
+    end
+
+  end
 end
