@@ -9,20 +9,37 @@
                       placeholder: t("admin.budgets.form.group"),
                       class: "input-group-field" %>
 
-    <% if group.persisted? %>
-      <div class="small-12 medium-6 large-4">
-        <%= f.label :name, t("admin.budgets.form.max_votable_headings") %>
-
-        <%= f.select :max_votable_headings,
-                     (1..group.headings.count),
-                     label: false,
-                     placeholder: t("admin.budgets.form.max_votable_headings"),
-                     class: "input-group-field" %>
-      </div>
-    <% end %>
-
     <div class="input-group-button">
       <%= f.submit button_title, class: "button success" %>
     </div>
   </div>
+
+  <% if group.persisted? %>
+    <div class="row">
+      <div class="columns small-12 medium-4 large-4">
+        <%= f.select :voting_style,
+                     budget_voting_style_select_options,
+                     { label: t("admin.budgets.form.voting_style") },
+                     {
+                       class: 'js-toggle-select',
+                       data: { "toggle-selector": "#number_votes_per_heading_wrapper", "hide-on": "knapsack" }
+                     }
+        %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12 medium-6 large-6">
+        <%= f.select :max_votable_headings,
+                     (1..group.headings.count),
+                     label: t("admin.budgets.form.max_votable_headings"),
+                     placeholder: t("admin.budgets.form.max_votable_headings")
+        %>
+      </div>
+
+      <div class="columns small-12 medium-6 large-6 <%= group.approval_voting? ? '' : 'hide'  %>" id="number_votes_per_heading_wrapper">
+        <%= f.number_field :number_votes_per_heading, { label: t("admin.budgets.form.number_votes_per_heading") } %>
+      </div>
+    </div>
+  <% end %>
 <% end %>

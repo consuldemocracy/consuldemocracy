@@ -27,16 +27,22 @@
           <h3>
             <%= group.name %> - <%= @ballot.heading_for_group(group).name %>
           </h3>
-          <%= link_to t("budgets.ballots.show.remaining",
-                      amount: @ballot.formatted_amount_available(@ballot.heading_for_group(group))).html_safe,
+          <%= link_to t("budgets.ballots.show.remaining.#{group.voting_style}_html",
+                      amount: group.approval_voting? ?
+                                group.number_votes_per_heading - @ballot.investments.by_group(group.id).count :
+                                @ballot.formatted_amount_available(@ballot.heading_for_group(group))),
                       budget_group_path(@budget, group) %>
         </div>
         <% if @ballot.has_lines_in_group?(group) %>
           <h4 class="amount-spent text-right">
-            <%= t("budgets.ballots.show.amount_spent") %>
-            <span>
-              <%= @ballot.formatted_amount_spent(@ballot.heading_for_group(group)) %>
-            </span>
+              <% if group.approval_voting? %>
+                <%= t('budgets.ballots.show.votes_cast_html', amount: @ballot.investments.by_group(group.id).count) %>
+              <% else %>
+                <%= t("budgets.ballots.show.amount_spent") %>
+                <span>
+                  <%= @ballot.formatted_amount_spent(@ballot.heading_for_group(group)) %>
+                </span>
+              <%end %>
           </h4>
         <% else %>
           <p>

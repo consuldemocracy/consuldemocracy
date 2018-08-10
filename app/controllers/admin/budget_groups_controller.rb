@@ -17,7 +17,12 @@ class Admin::BudgetGroupsController < Admin::BaseController
   private
 
     def budget_group_params
-      params.require(:budget_group).permit(:name, :max_votable_headings)
+      params.require(:budget_group).permit(
+        :name,
+        :max_votable_headings,
+        :voting_style,
+        :number_votes_per_heading
+      )
     end
 
 end

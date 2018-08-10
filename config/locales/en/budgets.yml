@@ -4,7 +4,10 @@ en:
       show:
         title: Your ballot
         amount_spent: Amount spent
-        remaining: "You still have <span>%{amount}</span> to invest."
+        votes_cast_html: "Votes cast: <span>%{amount}</span>"
+        remaining:
+          knapsack_html: "You still have <span>%{amount}</span> to invest."
+          approval_html: "You can still cast <span>%{amount}</span> votes."
         no_balloted_group_yet: "You have not voted on this group yet, go vote!"
         remove: Remove vote
         voted_html:
@@ -20,6 +23,7 @@ en:
         not_enough_money_html: "You have already assigned the available budget.<br><small>Remember you can %{change_ballot} at any time</small>"
         no_ballots_allowed: Selecting phase is closed
         different_heading_assigned_html: "You have already voted a different heading: %{heading_link}"
+        not_enough_available_votes_html: "You have reached the maximum number of votes allowed"
         change_ballot: change your votes
     groups:
       show:
@@ -39,6 +43,9 @@ en:
       balloting: Voting projects
       reviewing_ballots: Reviewing voting
       finished: Finished budget
+    voting_style:
+      knapsack: Knapsack
+      approval: Approval
     index:
       title: Participatory budgets
       empty_budgets: There are no budgets.
@@ -85,7 +92,9 @@ en:
           voted_html:
             one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
             other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
-          voted_info: You can %{link} at any time until the close of this phase. No need to spend all the money available.
+          voted_info:
+            knapsack_html: You can %{link} at any time until the close of this phase. No need to spend all the money available.
+            approval_html: You can %{link} at any time until the close of this phase.
           voted_info_link: change your vote
           different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
           change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
@@ -149,6 +158,7 @@ en:
     progress_bar:
       assigned: "You have assigned: "
       available: "Available budget: "
+      remaining_votes_html: "You have selected <strong>%{casted_votes}</strong> of <strong>%{votes_available}</strong> projects."
     show:
       group: Group
       phase: Actual phase

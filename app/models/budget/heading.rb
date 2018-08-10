@@ -5,7 +5,6 @@ class Budget
     belongs_to :group
 
     has_many :investments
-
     validates :group_id, presence: true
     validates :name, presence: true, uniqueness: { if: :name_exists_in_budget_headings }
     validates :price, presence: true
@@ -13,6 +12,7 @@ class Budget
     validates :population, numericality: { greater_than: 0 }, allow_nil: true
 
     delegate :budget, :budget_id, to: :group, allow_nil: true
+    delegate :voting_style, :approval_voting?, :number_votes_per_heading, to: :group, prefix: true
 
     scope :order_by_group_name, -> { includes(:group).order('budget_groups.name', 'budget_headings.name') }
 

@@ -4,8 +4,11 @@ nl:
       show:
         title: Uw keuze
         amount_spent: Uitgegeven
-        remaining: "U heeft nog <span>%{amount}</span> te spenderen."
+        remaining:
+          knapsack_html: "U heeft nog <span>%{amount}</span> te spenderen."
+          approval_html: "Je kunt nog steeds <span>%{amount}</span> stemmen plaatsen."
         remove: Verwijder keuze
+        votes_cast_html: "Uitgebrachte stemmen: <span>%{amount}</span>"
         voted_html:
           one: "U heeft op <span>één</span> voorstel gestemd."
           other: "U heeft op <span>%{count}</span> voorstellen gestemd."

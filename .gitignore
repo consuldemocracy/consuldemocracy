@@ -33,3 +33,5 @@
 
 public/sitemap.xml
 public/system/
+
+.idea/*

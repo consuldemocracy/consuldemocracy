@@ -23,8 +23,20 @@ App.Forms =
       false
     )
 
+  toggleSelect: ->
+    $('.js-toggle-select').unbind('change').on('change', ->
+      dropdown = $(this)
+      target = $(dropdown.data('toggle-selector'))
+
+      if dropdown.val() in dropdown.data('hide-on').split(',')
+        target.addClass('hide')
+      else
+        target.removeClass('hide')
+    )
+
   initialize: ->
     App.Forms.disableEnter()
     App.Forms.submitOnChange()
     App.Forms.toggleLink()
+    App.Forms.toggleSelect()
     false

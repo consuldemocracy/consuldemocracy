@@ -232,6 +232,7 @@ class Budget
       return :not_selected                    unless selected?
       return :no_ballots_allowed              unless budget.balloting?
       return :different_heading_assigned_html unless ballot.valid_heading?(heading)
+      return :not_enough_available_votes_html if heading.group_approval_voting? && ballot.investments.count == heading.group.number_votes_per_heading
       return :not_enough_money_html           if ballot.present? && !enough_money?(ballot)
     end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180718115545) do
+ActiveRecord::Schema.define(version: 20180810211514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,9 +119,11 @@ ActiveRecord::Schema.define(version: 20180718115545) do
 
   create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
-    t.string  "name",                 limit: 50
+    t.string  "name",                     limit: 50
     t.string  "slug"
-    t.integer "max_votable_headings",            default: 1
+    t.integer "max_votable_headings",                default: 1
+    t.string  "voting_style",                        default: "knapsack"
+    t.integer "number_votes_per_heading",            default: 1
   end
 
   add_index "budget_groups", ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
@@ -1279,6 +1281,12 @@ ActiveRecord::Schema.define(version: 20180718115545) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  create_table "web_sections", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "widget_cards", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -1295,12 +1303,6 @@ ActiveRecord::Schema.define(version: 20180718115545) do
     t.integer  "limit",      default: 3
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-  end
-
-  create_table "web_sections", force: :cascade do |t|
-    t.text     "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "administrators", "users"
