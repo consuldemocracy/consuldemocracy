@@ -134,10 +134,9 @@ ActiveRecord::Schema.define(version: 20180718115545) do
     t.datetime "updated_at",                     null: false
     t.string   "title"
     t.text     "description"
+    t.index ["budget_investment_milestone_id"], name: "index_6770e7675fe296cf87aa0fd90492c141b5269e0b", using: :btree
+    t.index ["locale"], name: "index_budget_investment_milestone_translations_on_locale", using: :btree
   end
-
-  add_index "budget_investment_milestone_translations", ["budget_investment_milestone_id"], name: "index_6770e7675fe296cf87aa0fd90492c141b5269e0b", using: :btree
-  add_index "budget_investment_milestone_translations", ["locale"], name: "index_budget_investment_milestone_translations_on_locale", using: :btree
 
   create_table "budget_investment_milestones", force: :cascade do |t|
     t.integer  "investment_id"
@@ -147,9 +146,8 @@ ActiveRecord::Schema.define(version: 20180718115545) do
     t.datetime "updated_at",                  null: false
     t.datetime "publication_date"
     t.integer  "status_id"
+    t.index ["status_id"], name: "index_budget_investment_milestones_on_status_id", using: :btree
   end
-
-  add_index "budget_investment_milestones", ["status_id"], name: "index_budget_investment_milestones_on_status_id", using: :btree
 
   create_table "budget_investment_statuses", force: :cascade do |t|
     t.string   "name"
@@ -157,9 +155,8 @@ ActiveRecord::Schema.define(version: 20180718115545) do
     t.datetime "hidden_at"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["hidden_at"], name: "index_budget_investment_statuses_on_hidden_at", using: :btree
   end
-
-  add_index "budget_investment_statuses", ["hidden_at"], name: "index_budget_investment_statuses_on_hidden_at", using: :btree
 
   create_table "budget_investments", force: :cascade do |t|
     t.integer  "author_id"
@@ -439,10 +436,9 @@ ActiveRecord::Schema.define(version: 20180718115545) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.text     "value"
+    t.index ["i18n_content_id"], name: "index_i18n_content_translations_on_i18n_content_id", using: :btree
+    t.index ["locale"], name: "index_i18n_content_translations_on_locale", using: :btree
   end
-
-  add_index "i18n_content_translations", ["i18n_content_id"], name: "index_i18n_content_translations_on_i18n_content_id", using: :btree
-  add_index "i18n_content_translations", ["locale"], name: "index_i18n_content_translations_on_locale", using: :btree
 
   create_table "i18n_contents", force: :cascade do |t|
     t.string "key"
@@ -1217,6 +1213,12 @@ ActiveRecord::Schema.define(version: 20180718115545) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
   end
 
+  create_table "web_sections", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "widget_cards", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -1233,12 +1235,6 @@ ActiveRecord::Schema.define(version: 20180718115545) do
     t.integer  "limit",      default: 3
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-  end
-
-  create_table "web_sections", force: :cascade do |t|
-    t.text     "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "administrators", "users"
