@@ -14,14 +14,6 @@ module GlobalizeHelper
     same_locale?(neutral_locale(I18n.locale), neutral_locale(locale)) ? "" : "display: none"
   end
 
-  def render_translations_to_delete(resource)
-    capture do
-      resource.globalize_locales.each do |locale|
-        concat translation_enabled_tag(locale, enable_locale?(resource, locale))
-      end
-    end
-  end
-
   def translation_enabled_tag(locale, enabled)
     hidden_field_tag("enabled_translations[#{locale}]", (enabled ? 1 : 0))
   end
