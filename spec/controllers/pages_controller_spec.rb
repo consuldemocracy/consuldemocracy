@@ -4,27 +4,27 @@ describe PagesController do
 
   describe 'Static pages' do
 
-    it 'should include a privacy page' do
+    it 'includes a privacy page' do
       get :show, params: { id: :privacy }
       expect(response).to be_ok
     end
 
-    it 'should include a conditions page' do
+    it 'includes a conditions page' do
       get :show, params: { id: :conditions }
       expect(response).to be_ok
     end
 
-    it 'should include a general terms page' do
+    it 'includes a general terms page' do
       get :show, params: { id: :general_terms }
       expect(response).to be_ok
     end
 
-    it 'should include a terms page' do
+    it 'includes a terms page' do
       get :show, params: { id: :census_terms }
       expect(response).to be_ok
     end
 
-    it 'should include a accessibility page' do
+    it 'includes a accessibility page' do
       get :show, params: { id: :accessibility }
       expect(response).to be_ok
     end

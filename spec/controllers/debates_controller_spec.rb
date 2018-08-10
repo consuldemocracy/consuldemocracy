@@ -12,10 +12,16 @@ describe DebatesController do
     end
 
     it 'creates an ahoy event' do
-
       sign_in create(:user)
 
-      post :create, params: { debate: { title: 'A sample debate', description: 'this is a sample debate', terms_of_service: 1 }}
+      post :create, params: {
+        debate: {
+          title: 'A sample debate',
+          description: 'this is a sample debate',
+          terms_of_service: 1
+        }
+      }
+
       expect(Ahoy::Event.where(name: :debate_created).count).to eq 1
       expect(Ahoy::Event.last.properties['debate_id']).to eq Debate.last.id
     end
@@ -43,7 +49,7 @@ describe DebatesController do
 
       expect do
         post :vote, xhr: true, params: { id: debate.id, value: 'yes' }
-      end.to_not change { debate.reload.votes_for.size }
+      end.not_to change { debate.reload.votes_for.size }
     end
   end
 end
