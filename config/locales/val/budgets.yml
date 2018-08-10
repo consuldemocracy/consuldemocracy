@@ -4,9 +4,13 @@ val:
       show:
         title: Els meus vots
         amount_spent: Cost total
-        remaining: "Et queden <span>%{amount}</span> per a invertir."
+        remaining:
+          knapsack__html: "Et queden <span>%{amount}</span> per a invertir."
+          approval_html: "Et queden <span>%{amount}</span> voti"
+
         no_balloted_group_yet: "Encara no has votat projectes d'aquest grup, ¡vota!"
         remove: Llevar vot
+        votes_cast_html: "Repartiment de vots: <span>%{amount}</span>"
         voted_html:
           one: "Has votat <span>una</span> proposta."
           other: "Has votat <span>%{count}</span> propostes."

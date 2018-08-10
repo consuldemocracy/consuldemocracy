@@ -30,7 +30,15 @@ describe Budget::Group do
         expect(build(:budget_group, budget: budget, name_en: "Español")).not_to be_valid
       end
     end
+  end
 
+  describe "voting_style" do
+    it "must be of one of a valid type" do
+      Budget::Vote::KINDS.each do |vk|
+        expect(build(:budget_group, voting_style: vk)).to be_valid
+      end
+      expect(build(:budget_group, voting_style: 'something else')).not_to be_valid
+    end
   end
 
   describe "#sort_by_name" do
@@ -70,4 +78,13 @@ describe Budget::Group do
       end
     end
   end
+
+  describe "number_votes_per_heading" do
+    it "must be at least 1" do
+      expect(build(:budget_group, number_votes_per_heading: 10)).to be_valid
+      expect(build(:budget_group, number_votes_per_heading: -1)).not_to be_valid
+      expect(build(:budget_group, number_votes_per_heading: 0)).not_to be_valid
+    end
+  end
+
 end

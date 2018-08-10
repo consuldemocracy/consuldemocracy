@@ -4,9 +4,12 @@ fr:
       show:
         title: Votre vote
         amount_spent: Montant dépensé
-        remaining: "Il vous reste <span>%{amount}</span> à investir."
+        remaining:
+          knapsack_html: "Il vous reste <span>%{amount}</span> à investir."
+          approval_html: "Vous pouvez toujours lancer des votes <span>%{amount}</span>."
         no_balloted_group_yet: "Vous n'avez pas encore voté dans ce groupe, allez voter !"
         remove: Supprimer le vote
+        votes_cast_html: "Votes: <span>%{amount}</span>"
         voted_html:
           one: "Vous avez voté pour <span>une</span> proposition."
           other: "Vous avez voté pour <span>%{count}</span> propositions."

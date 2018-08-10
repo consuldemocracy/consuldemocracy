@@ -56,12 +56,25 @@
       });
       $("[name='progress_bar[kind]']").change();
     },
+    toggleSelect = function() {
+      $('.js-toggle-select').unbind('change').on('change', function() {
+        var dropdown, ref, target;
+        dropdown = $(this);
+        target = $(dropdown.data('toggle-selector'));
+        if (ref = dropdown.val(), indexOf.call(dropdown.data('hide-on').split(','), ref) >= 0) {
+          target.addClass('hide');
+        } else {
+          target.removeClass('hide');
+        }
+      });
+    },
     initialize: function() {
       App.Forms.disableEnter();
       App.Forms.submitOnChange();
       App.Forms.toggleLink();
       App.Forms.synchronizeInputs();
       App.Forms.hideOrShowFieldsAfterSelection();
+      App.Forms.toggleSelect();
     }
   };
 }).call(this);

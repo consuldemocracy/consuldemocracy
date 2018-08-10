@@ -18,10 +18,35 @@
   <% if @group.persisted? %>
     <div class="row">
       <div class="small-12 medium-6 column">
+        <%= f.select :voting_style,
+                     budget_voting_style_select_options,
+                     { label: t("admin.budget_groups.form.voting_style") },
+                     {
+                       class: 'js-toggle-select',
+                       data: { "toggle-selector": "#number_votes_per_heading_wrapper", "hide-on": "knapsack" }
+                     }
+        %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 medium-6 column">
         <%= f.select :max_votable_headings,
                      (1..@group.headings.count),
                      label: t("admin.budget_groups.max_votable_headings"),
                      placeholder: t("admin.budget_groups.max_votable_headings") %>
+      </div>
+    </div>
+        
+    <div id="number_votes_per_heading_wrapper" class="<%= 'hide' unless @group.approval_voting? %>">
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.select :number_votes_per_heading,
+                      (1..@group.headings.count),
+                      label: t("admin.budget_groups.form.number_votes_per_heading"),
+                      placeholder: t("admin.budget_groups.form.number_votes_per_heading")
+          %>
+        </div>
       </div>
     </div>
   <% end %>

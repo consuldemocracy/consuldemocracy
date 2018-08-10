@@ -155,6 +155,8 @@ en:
         edit: "Edit group"
         name: "Group name"
         submit: "Save group"
+        voting_style: "Voting style"
+        number_votes_per_heading: "Number of votes user can cast under each heading"
       index:
         back: "Go back to budgets"
     budget_headings:

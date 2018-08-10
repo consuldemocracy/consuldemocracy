@@ -37,6 +37,7 @@ class Budget
               format: /\A(-|\+)?((?:1[0-7]|[1-9])?\d(?:\.\d{1,})?|180(?:\.0{1,})?)\z/
 
     delegate :budget, :budget_id, to: :group, allow_nil: true
+    delegate :voting_style, :approval_voting?, :number_votes_per_heading, to: :group, prefix: true
 
     scope :allow_custom_content,  -> { where(allow_custom_content: true).sort_by(&:name) }
 
