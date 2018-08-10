@@ -3,7 +3,8 @@ class Admin::SpendingProposalsController < Admin::BaseController
   before_action :load_filter_params
   feature_flag :spending_proposals
 
-  has_filters %w{valuation_open without_admin managed valuating valuation_finished all}, only: :index
+  has_filters %w{valuation_open without_admin managed valuating valuation_finished all},
+              only: :index
 
   load_and_authorize_resource
 
@@ -35,24 +36,27 @@ class Admin::SpendingProposalsController < Admin::BaseController
   end
 
   def summary
-    @spending_proposals = SpendingProposal.group(:geozone).sum(:price).sort_by{|geozone, count| geozone.present? ? geozone.name : "z"}
-    @spending_proposals_with_supports = SpendingProposal.with_supports.group(:geozone).sum(:price)
-                                                        .sort_by{|geozone, count| geozone.present? ? geozone.name : "z"}
+    @spending_proposals = SpendingProposal.group(:geozone)
+                                          .sum(:price)
+                                          .sort_by { |geozone, count|
+                                            geozone.present? ? geozone.name : 'z'
+                                          }
+
+    @spending_proposals_with_supports = SpendingProposal.with_supports
+                                                        .group(:geozone)
+                                                        .sum(:price)
+                                                        .sort_by { |geozone, count|
+                                                          geozone.present? ? geozone.name : 'z'
+                                                        }
   end
 
   private
 
     def spending_proposal_params
-      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name,
-                                                :administrator_id, :tag_list, valuator_ids: [])
-    end
-
-    def filter_params
-      params.permit(:geozone_id, :administrator_id, :tag_name, :valuator_id)
-    end
-
-    def load_filter_params
-      @filter_params ||= filter_params
+      params.require(:spending_proposal).permit(
+        :title, :description, :external_url, :geozone_id, :association_name,
+        :administrator_id, :tag_list, valuator_ids: []
+      )
     end
 
     def filter_params
