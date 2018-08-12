@@ -10,7 +10,8 @@ feature 'Banner' do
                       post_started_at: (Time.current - 4.days),
                       post_ended_at:   (Time.current + 10.days),
                       background_color: '#FF0000',
-                      font_color: '#FFFFFF')
+                      font_color: '#FFFFFF',
+                      banner_position: 'Top')
     section = WebSection.where(name: 'homepage').last
     create(:banner_section, web_section: section, banner_id: banner.id)
 
