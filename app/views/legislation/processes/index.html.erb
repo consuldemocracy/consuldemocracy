@@ -7,6 +7,10 @@
 <div class="row">
   <div id="legislation" class="legislation-list small-12 medium-9 column">
 
+    <% if has_banners? && is_banner_on_top? %>
+      <%= render "shared/banner" %>
+    <% end %>
+
     <%= render 'shared/filter_subnav', i18n_namespace: "legislation.processes.index" %>
 
     <div id="legislation-list">
@@ -17,6 +21,10 @@
         <div class="callout primary margin-top">
           <%= t(".no_#{@current_filter}_processes") %>
         </div>
+      <% end %>
+	  
+      <% if has_banners? && is_banner_on_bottom? %>
+        <%= render "shared/banner" %>
       <% end %>
 
       <div id="section_help" class="margin" data-magellan-target="section_help">

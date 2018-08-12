@@ -5,6 +5,7 @@ class Legislation::ProcessesController < Legislation::BaseController
   def index
     @current_filter ||= 'open'
     @processes = ::Legislation::Process.send(@current_filter).published.page(params[:page])
+    @banners = Banner.in_section('legislation_processes').with_active    
   end
 
   def show

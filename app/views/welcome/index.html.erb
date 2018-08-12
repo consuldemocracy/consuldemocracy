@@ -1,13 +1,12 @@
+<% if has_banners? && is_banner_on_top? %>
+  <%= render "shared/banner" %>
+<% end %>	
 <% content_for :body_class, "home-page" %>
 
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: root_url %>
 <% end %>
-
-<% if has_banners? %>
-  <%= render "shared/banner" %>
-<% end %>
-
+  
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
               social_url: root_url %>
@@ -16,6 +15,7 @@
 <%= render "header", header: @header %>
 
 <main>
+	
   <%= render "feeds" %>
 
 
@@ -35,3 +35,7 @@
                 recommended_proposals: @recommended_proposals %>
   <% end %>
 </main>
+
+<% if has_banners? && is_banner_on_bottom? %>
+  <%= render "shared/banner" %>
+<% end %>

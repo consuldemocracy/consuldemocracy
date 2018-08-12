@@ -3,7 +3,7 @@
   <%= render "shared/canonical", href: help_url %>
 <% end %>
 
-<% if has_banners? %>
+<% if has_banners? && is_banner_on_top? %>
   <%= render "shared/banner" %>
 <% end %>
 
@@ -53,3 +53,7 @@
     </div>
   </div>
 </div>
+
+<% if has_banners? && is_banner_on_bottom? %>
+  <%= render "shared/banner" %>
+<% end %>

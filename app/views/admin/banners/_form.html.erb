@@ -55,6 +55,18 @@
       <%= f.label :sections, t("admin.banners.banner.sections_label") %>
       <%= f.collection_check_boxes(:web_section_ids, @banner_sections, :id, :name) do |b| %>
         <%= b.check_box %> <%= t("admin.banners.banner.sections.#{b.text}") %><br>
+		<!-- 
+		<% if b.text == 'budgets'%>
+		  <% Budget::Group.all.each do |group| %>
+		    <% if group.budget.phase != 'finished' %>
+		      <span style="display:inline-block; width: 20px;"></span><%= group.name %><br>
+			  <% group.headings.each do |heading| %>
+		        <span style="display:inline-block; width: 40px;"></span><%= b.check_box %> <%= heading.name %><br>
+			  <% end %>	
+			<% end %>  
+		  <% end %>	
+		<% end %>
+			 -->  
       <% end %>
     </div>
   </div>
@@ -69,6 +81,9 @@
       <%= f.label :sections, t("admin.banners.banner.font_color") %>
       <%= color_field(:banner, :font_color, id: 'banner_font_color_picker') %>
       <%= f.text_field :font_color, label: false %>
+    </div>
+    <div class="small-3 column end">
+      <%= f.select :banner_position, options_for_select(Banner::BANNER_POSITIONS, @banner.banner_position) %>				
     </div>
   </div>
 

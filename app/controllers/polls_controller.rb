@@ -10,6 +10,7 @@ class PollsController < ApplicationController
 
   def index
     @polls = @polls.send(@current_filter).includes(:geozones).sort_for_list.page(params[:page])
+    @banners = Banner.in_section('polls').with_active
   end
 
   def show

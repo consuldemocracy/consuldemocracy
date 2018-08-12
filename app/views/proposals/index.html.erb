@@ -46,7 +46,7 @@
   <div class="row">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
 
-      <% if has_banners? %>
+      <% if has_banners? && is_banner_on_top? %>
         <%= render "shared/banner" %>
       <% end %>
 
@@ -93,6 +93,11 @@
         <% else %>
           <%= empty_recommended_proposals_message_text(current_user) %>
         <% end %>
+		
+        <% if has_banners? && is_banner_on_bottom? %>
+          <%= render "shared/banner" %>
+        <% end %>
+		
         <%= paginate @proposals %>
 
         <% unless @search_terms || @advanced_search_terms || @tag_filter %>

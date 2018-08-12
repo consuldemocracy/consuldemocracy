@@ -39,7 +39,7 @@ class Admin::BannersController < Admin::BaseController
     def banner_params
       attributes = [:title, :description, :target_url,
                     :post_started_at, :post_ended_at,
-                    :background_color, :font_color,
+                    :background_color, :font_color, :banner_position,
                     web_section_ids: []]
       params.require(:banner).permit(*attributes)
     end

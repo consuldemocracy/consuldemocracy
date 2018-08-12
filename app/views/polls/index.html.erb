@@ -7,6 +7,10 @@
 
 <div class="row">
   <div class="small-12 column">
+	  
+	<% if has_banners? && is_banner_on_top? %>
+	  <%= render "shared/banner" %>
+	<% end %>  
     <%= render 'shared/filter_subnav', i18n_namespace: "polls.index" %>
 
     <% if @polls.any? %>
@@ -25,6 +29,10 @@
         </h3>
         <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[true]} %>
       <% end %>
+	  
+      <% if has_banners? && is_banner_on_bottom? %>
+        <%= render "shared/banner" %>
+      <% end %>
 
       <%= paginate @polls %>
     <% else %>
@@ -41,3 +49,5 @@
     </div>
   </div>
 </div>
+
+

@@ -1,4 +1,4 @@
-<% if has_banners? %>
+<% if has_banners? && is_banner_on_top? %>
   <%= render "shared/banner" %>
 <% end %>
 
@@ -176,6 +176,10 @@
   </div>
 <% end %>
 
+<% if has_banners? && is_banner_on_bottom? %>
+  <%= render "shared/banner" %>
+<% end %>
+
 <div class="row">
   <div class="small-12 column">
     <div id="section_help" class="margin" data-magellan-target="section_help">
@@ -186,3 +190,4 @@
     </div>
   </div>
 </div>
+

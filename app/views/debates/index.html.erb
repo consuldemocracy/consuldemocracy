@@ -44,7 +44,7 @@
   <div class="row">
     <div id="debates" class="debates-list small-12 medium-9 column">
 
-      <% if has_banners? %>
+      <% if has_banners? && is_banner_on_top? %>
         <%= render "shared/banner" %>
       <% end %>
 
@@ -77,6 +77,11 @@
       <% else %>
         <%= empty_recommended_debates_message_text(current_user) %>
       <% end %>
+	  
+      <% if has_banners? && is_banner_on_bottom? %>
+        <%= render "shared/banner" %>
+      <% end %>
+	  
       <%= paginate @debates %>
 
       <% unless @search_terms || @advanced_search_terms || @tag_filter %>
@@ -99,6 +104,7 @@
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
         <%= render "shared/tag_cloud", taggable: "debate" %>
       </aside>
+	  
     </div>
 
   </div>

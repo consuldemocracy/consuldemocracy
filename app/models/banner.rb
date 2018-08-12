@@ -2,6 +2,8 @@ class Banner < ActiveRecord::Base
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
+  
+  BANNER_POSITIONS = %w(Top Bottom).freeze
 
   validates :title, presence: true,
                     length: { minimum: 2 }
