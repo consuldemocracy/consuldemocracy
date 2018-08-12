@@ -22,7 +22,7 @@ class Admin::BannersController < Admin::BaseController
   end
 
   def update
-    if @banner.update(banner_params)
+    if @banner.update(banner_params) && @banner.update_attribute(:headings, params[:banner_headings])
       redirect_to admin_banners_path
     else
       render :edit
@@ -39,7 +39,7 @@ class Admin::BannersController < Admin::BaseController
     def banner_params
       attributes = [:title, :description, :target_url,
                     :post_started_at, :post_ended_at,
-                    :background_color, :font_color, :banner_position,
+                    :background_color, :font_color, :banner_position, :headings,
                     web_section_ids: []]
       params.require(:banner).permit(*attributes)
     end

@@ -5,7 +5,7 @@ module BannersHelper
   end
   
   def is_banner_on_top?
-    @banners.sample.banner_position == "Top"
+    @banners.sample.banner_position == "Top" || @banners.sample.banner_position.nil?
   end
   
   def is_banner_on_bottom?

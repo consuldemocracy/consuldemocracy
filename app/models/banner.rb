@@ -4,6 +4,7 @@ class Banner < ActiveRecord::Base
   include ActsAsParanoidAliases
   
   BANNER_POSITIONS = %w(Top Bottom).freeze
+  serialize :headings
 
   validates :title, presence: true,
                     length: { minimum: 2 }

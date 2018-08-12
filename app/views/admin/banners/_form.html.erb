@@ -54,19 +54,22 @@
     <div class="small-12 column">
       <%= f.label :sections, t("admin.banners.banner.sections_label") %>
       <%= f.collection_check_boxes(:web_section_ids, @banner_sections, :id, :name) do |b| %>
-        <%= b.check_box %> <%= t("admin.banners.banner.sections.#{b.text}") %><br>
-		<!-- 
+        <%= b.check_box %> <%= t("admin.banners.banner.sections.#{b.text}") %><br> 
 		<% if b.text == 'budgets'%>
 		  <% Budget::Group.all.each do |group| %>
 		    <% if group.budget.phase != 'finished' %>
 		      <span style="display:inline-block; width: 20px;"></span><%= group.name %><br>
 			  <% group.headings.each do |heading| %>
-		        <span style="display:inline-block; width: 40px;"></span><%= b.check_box %> <%= heading.name %><br>
+		        <span style="display:inline-block; width: 40px;"></span>
+	  		      <% if (@banner.headings!=nil) && (@banner.headings.include? heading.id.to_s) %>	  
+	                <%= check_box_tag 'banner_headings[]',heading.id, checked = true %> <%= heading.name %><br>
+	  		      <% else %>
+	                <%= check_box_tag 'banner_headings[]',heading.id, checked = false %> <%= heading.name %><br>		  
+	  		      <% end %>
 			  <% end %>	
 			<% end %>  
 		  <% end %>	
-		<% end %>
-			 -->  
+		<% end %> 
       <% end %>
     </div>
   </div>
