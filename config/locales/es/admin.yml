@@ -33,11 +33,13 @@ es:
         post_ended_at: Fin de publicación
         sections_label: Secciones en las que aparece
         sections:
-          homepage: Homepage
+          homepage: Página principal
           debates: Debates
           proposals: Propuestas
           budgets: Presupuestos participativos
           help_page: Página de ayuda
+          polls: Votaciones
+          legislation_processes: Processos legislativos		  
         background_color: Color de fondo
         font_color: Color del texto
       edit:

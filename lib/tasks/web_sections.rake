@@ -6,5 +6,7 @@ namespace :web_sections do
     WebSection.create(name: 'proposals')
     WebSection.create(name: 'budgets')
     WebSection.create(name: 'help_page')
+    WebSection.create(name: 'polls')
+    WebSection.create(name: 'legislation_processes')       
   end
 end

@@ -33,6 +33,15 @@ fr:
         image: Image
         post_started_at: Début de la publication
         post_ended_at: Fin de la publication
+        sections_label: Sections dans lesquelles il apparaît
+        sections:
+          homepage: Page principal
+          debates: Des débats
+          proposals: Propositions
+          budgets: Budgets participatifs
+          help_page: Page d'aide
+          polls: Votes
+          legislation_processes: Processus législatif	
       edit:
         editing: Modifier la bannière
         form:

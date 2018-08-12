@@ -38,6 +38,8 @@ en:
           proposals: Proposals
           budgets: Participatory budgeting
           help_page: Help page
+          polls: Polls
+          legislation_processes: Legislation processes		  		  
         background_color: Background colour
         font_color: Font colour
       edit:
