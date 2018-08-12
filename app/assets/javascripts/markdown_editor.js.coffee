@@ -1,9 +1,14 @@
 App.MarkdownEditor =
 
   refresh_preview: (element, md) ->
-    textarea_content = element.find('textarea').val()
+    textarea_content = App.MarkdownEditor.find_textarea(element).val()
     result = md.render(textarea_content)
     element.find('#markdown-preview').html(result)
+
+  # Multi-locale (translatable) form fields work by hiding inputs of locales
+  # which are not "active".
+  find_textarea: (editor) ->
+    editor.find('textarea:visible')
 
   initialize: ->
     $('.markdown-editor').each ->
@@ -13,18 +18,18 @@ App.MarkdownEditor =
         typographer: true,
       })
 
-      App.MarkdownEditor.refresh_preview($(this), md)
+      editor = $(this)
 
-      $(this).on 'change input paste keyup', ->
+      editor.on 'input', ->
         App.MarkdownEditor.refresh_preview($(this), md)
         $('.legislation-draft-versions-edit .warning').show()
         return
 
-      $(this).find('textarea').on 'scroll', ->
+      editor.find('textarea').on 'scroll', ->
         $('#markdown-preview').scrollTop($(this).scrollTop())
 
-      $(this).find('.fullscreen-toggle').on 'click', ->
-        $('.markdown-editor').toggleClass('fullscreen')
+      editor.find('.fullscreen-toggle').on 'click', ->
+        editor.toggleClass('fullscreen')
         $('.fullscreen-container').toggleClass('medium-8', 'medium-12')
         span = $(this).find('span')
         current_html = span.html()
@@ -33,7 +38,8 @@ App.MarkdownEditor =
         else
           span.html(span.data('open-text'))
 
-        if $('.markdown-editor').hasClass('fullscreen')
-          $('.markdown-editor textarea').height($(window).height() - 100)
+        if editor.hasClass('fullscreen')
+          App.MarkdownEditor.find_textarea(editor).height($(window).height() - 100)
+          App.MarkdownEditor.refresh_preview(editor, md)
         else
-          $('.markdown-editor textarea').height("10em")
+          App.MarkdownEditor.find_textarea(editor).height("10em")
