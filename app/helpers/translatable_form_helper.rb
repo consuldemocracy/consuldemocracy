@@ -32,7 +32,11 @@ class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
               class: (options.fetch(:class, "") + " js-globalize-attribute"),
               style: @template.display_translation?(locale),
               data:  options.fetch(:data, {}).merge(locale: locale),
-              label: false
+              label_options: {
+                class: (options.fetch(:class, "") + " js-globalize-attribute"),
+                style: @template.display_translation?(locale),
+                data:  (options.dig(:label_options, :data) || {}) .merge(locale: locale)
+              }
             )
 
             @template.concat send(field_type, "#{method}_#{locale}", final_options)
