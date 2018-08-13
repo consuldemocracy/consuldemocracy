@@ -1038,22 +1038,9 @@ ActiveRecord::Schema.define(version: 20180812221515) do
 
   add_index "site_customization_images", ["name"], name: "index_site_customization_images_on_name", unique: true, using: :btree
 
-  create_table "site_customization_page_translations", force: :cascade do |t|
-    t.integer  "site_customization_page_id", null: false
-    t.string   "locale",                     null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "title"
-    t.string   "subtitle"
-    t.text     "content"
-  end
-
-  add_index "site_customization_page_translations", ["locale"], name: "index_site_customization_page_translations_on_locale", using: :btree
-  add_index "site_customization_page_translations", ["site_customization_page_id"], name: "index_7fa0f9505738cb31a31f11fb2f4c4531fed7178b", using: :btree
-
   create_table "site_customization_pages", force: :cascade do |t|
     t.string   "slug",                                 null: false
-    t.string   "title",              default: ""
+    t.string   "title",                                null: false
     t.string   "subtitle"
     t.text     "content"
     t.boolean  "more_info_flag"

@@ -93,6 +93,7 @@ feature 'Admin banners magement' do
     fill_in 'post_ended_at', with: next_week.strftime("%d/%m/%Y")
     fill_in 'banner_background_color', with: '#850000'
     fill_in 'banner_font_color', with: '#ffb2b2'
+    select 'Top', from:"banner_banner_position"
     check "banner_web_section_ids_#{section.id}"
 
     click_button 'Save changes'
@@ -103,6 +104,46 @@ feature 'Admin banners magement' do
 
     expect(page).to have_content 'Such banner'
     expect(page).to have_link 'Such banner many text wow link', href: 'https://www.url.com'
+  end
+  
+  scenario 'Publish a heading banner' do
+    section = create(:web_section, name: 'budgets')
+    budget = create(:budget)
+    group = create(:budget_group, name: "Streets", budget: budget)
+    heading = create(:budget_heading, group: group, name: "Main Avenue")
+    create(:budget_investment, title: "Realocate visitors", budget: budget, group: group, heading: heading)
+
+    visit admin_root_path
+
+    within('#side_menu') do
+      click_link "Manage banners"
+    end
+
+    click_link "Create banner"
+
+    fill_in 'banner_title', with: 'Heading banner'
+    fill_in 'banner_description', with: 'many text wow link'
+    fill_in 'banner_target_url', with: 'https://www.url.com'
+    last_week = Time.current - 7.days
+    next_week = Time.current + 7.days
+    fill_in 'post_started_at', with: last_week.strftime("%d/%m/%Y")
+    fill_in 'post_ended_at', with: next_week.strftime("%d/%m/%Y")
+    fill_in 'banner_background_color', with: '#850000'
+    fill_in 'banner_font_color', with: '#ffb2b2'
+    select 'Top', from:"banner_banner_position"
+    
+    check "banner_web_section_ids_#{section.id}"
+    check "banner_headings_"
+ #   find(:css, "#banner_headings_[value='#{heading.id}']").set(true)
+
+    click_button 'Save changes'
+
+    expect(page).to have_content 'Heading banner'
+
+#    visit budget_investments_path(budget, heading_id: heading.id)
+    
+    expect(page).to have_content 'Heading banner'
+    expect(page).to have_link 'Heading banner many text wow link', href: 'https://www.url.com'
   end
 
   scenario "Update banner color when changing from color picker or text_field", :js do
