@@ -1,3 +1,8 @@
+<% if @heading.present? %>
+  <% if has_banners? && is_banner_heading_on_top?(@heading.id) %>
+    <%= render "shared/banner" %>
+  <% end %>
+<% end %>
 <% provide :title do %><%= t('budgets.investments.index.title') %><% end %>
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
@@ -78,7 +83,14 @@
         <% end %>
       <% end %>
 
+      <% if @heading.present? %>
+        <% if has_banners? && is_banner_heading_on_bottom?(@heading.id) %>
+          <%= render "shared/banner" %>
+        <% end %>
+      <% end %>
+
       <%= paginate @investments %>
+
     </div>
 
     <div class="small-12 medium-3 column">

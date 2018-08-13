@@ -41,6 +41,7 @@ module Budgets
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
+      @banners = Banner.in_section('budgets').with_active
     end
 
     def new
