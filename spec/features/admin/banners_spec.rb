@@ -106,7 +106,7 @@ feature 'Admin banners magement' do
     expect(page).to have_link 'Such banner many text wow link', href: 'https://www.url.com'
   end
   
-  scenario 'Publish a heading banner' do
+  scenario 'Publish a banner in a heading section' do
     section = create(:web_section, name: 'budgets')
     budget = create(:budget)
     group = create(:budget_group, name: "Streets", budget: budget)
@@ -130,17 +130,16 @@ feature 'Admin banners magement' do
     fill_in 'post_ended_at', with: next_week.strftime("%d/%m/%Y")
     fill_in 'banner_background_color', with: '#850000'
     fill_in 'banner_font_color', with: '#ffb2b2'
-    select 'Top', from:"banner_banner_position"
+    select 'Bottom', from:"banner_banner_position"
     
     check "banner_web_section_ids_#{section.id}"
-    check "banner_headings_"
- #   find(:css, "#banner_headings_[value='#{heading.id}']").set(true)
+    check "banner_headings_#{heading.id}"
 
     click_button 'Save changes'
-
+    
     expect(page).to have_content 'Heading banner'
 
-#    visit budget_investments_path(budget, heading_id: heading.id)
+    visit budget_investments_path(budget, heading_id: heading.id)
     
     expect(page).to have_content 'Heading banner'
     expect(page).to have_link 'Heading banner many text wow link', href: 'https://www.url.com'
