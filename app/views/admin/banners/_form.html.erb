@@ -61,11 +61,11 @@
 		      <span style="display:inline-block; width: 20px;"></span><%= group.name %><br>
 			  <% group.headings.each do |heading| %>
 		        <span style="display:inline-block; width: 40px;"></span>
-	  		      <% if (@banner.headings!=nil) && (@banner.headings.include? heading.id.to_s) %>	  
-	                <%= check_box_tag "banner_headings[]",heading.id, checked = true, id: "banner_headings_#{heading.id}" %> <%= heading.name %><br>
-	  		      <% else %>
-	                <%= check_box_tag "banner_headings[]",heading.id, checked = false, id: "banner_headings_#{heading.id}" %> <%= heading.name %><br>		  
-	  		      <% end %>
+	  		    <% if (@banner.headings!=nil) && (@banner.headings.include? heading.id.to_s) %>	  
+	              <%= check_box_tag "banner_headings[]",heading.id, checked = true, id: "banner_headings_#{heading.id}" %> <%= heading.name %><br>
+	  		    <% else %>
+	              <%= check_box_tag "banner_headings[]",heading.id, checked = false, id: "banner_headings_#{heading.id}" %> <%= heading.name %><br>		  
+	  		    <% end %>
 			  <% end %>	
 			<% end %>  
 		  <% end %>	
