@@ -14,7 +14,8 @@ feature 'Admin banners magement' do
                   post_started_at: (Time.current + 4.days),
                   post_ended_at:   (Time.current + 10.days),
                   background_color: '#FF0000',
-                  font_color: '#FFFFFF')
+                  font_color: '#FFFFFF',
+                  banner_position: 'Top')
 
       @banner2 = create(:banner, title: "Banner number two",
                   description:  "This is the text of banner number two and is not longer active",
@@ -22,7 +23,8 @@ feature 'Admin banners magement' do
                   post_started_at: (Time.current - 10.days),
                   post_ended_at:   (Time.current - 3.days),
                   background_color: '#00FF00',
-                  font_color: '#FFFFFF')
+                  font_color: '#FFFFFF',
+                  banner_position: 'Top')
 
       @banner3 = create(:banner, title: "Banner number three",
                   description:  "This is the text of banner number three and has style banner-three",
@@ -30,7 +32,8 @@ feature 'Admin banners magement' do
                   post_started_at: (Time.current - 1.day),
                   post_ended_at:   (Time.current + 10.days),
                   background_color: '#0000FF',
-                  font_color: '#FFFFFF')
+                  font_color: '#FFFFFF',
+                  banner_position: 'Top')
 
       @banner4 = create(:banner, title: "Banner number four",
                   description:  "This is the text of banner number four and has style banner-one",
@@ -38,7 +41,8 @@ feature 'Admin banners magement' do
                   post_started_at: (DateTime.current - 10.days),
                   post_ended_at:   (DateTime.current + 10.days),
                   background_color: '#FFF000',
-                  font_color: '#FFFFFF')
+                  font_color: '#FFFFFF',
+                  banner_position: 'Top')
 
       @banner5 = create(:banner, title: "Banner number five",
                   description:  "This is the text of banner number five and has style banner-two",
@@ -46,7 +50,8 @@ feature 'Admin banners magement' do
                   post_started_at: (DateTime.current - 10.days),
                   post_ended_at:   (DateTime.current + 10.days),
                   background_color: '#FFFF00',
-                  font_color: '#FFFFFF')
+                  font_color: '#FFFFFF',
+                  banner_position: 'Top')
     end
 
     scenario 'Index show active banners' do
@@ -170,7 +175,8 @@ feature 'Admin banners magement' do
                               post_started_at: (Time.current + 4.days),
                               post_ended_at:   (Time.current + 10.days),
                               background_color: '#FF0000',
-                              font_color: '#FFFFFF')
+                              font_color: '#FFFFFF',
+                              banner_position: 'Top')
 
     visit admin_root_path
 
@@ -208,7 +214,8 @@ feature 'Admin banners magement' do
                     post_started_at: (Time.current + 4.days),
                     post_ended_at:   (Time.current + 10.days),
                     background_color: '#FF0000',
-                    font_color: '#FFFFFF')
+                    font_color: '#FFFFFF',
+                    banner_position: 'Top')
 
     visit admin_root_path
 
