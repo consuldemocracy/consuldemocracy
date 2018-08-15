@@ -72,7 +72,6 @@ feature "Translations" do
     end
 
     scenario 'Change value of a translated field to blank' do
-      milestone.update_attributes!(status: create(:budget_investment_status))
       visit @edit_milestone_url
 
       fill_in 'budget_investment_milestone_description_en', with: ''
@@ -80,7 +79,8 @@ feature "Translations" do
       click_button "Update milestone"
       expect(page).to have_content "Milestone updated successfully"
 
-      expect(milestone.reload.description).to be_blank
+      expect(page).to have_content "Milestone updated successfully"
+      expect(page).not_to have_content "Description in English"
     end
 
     context "Globalize javascript interface" do
