@@ -8,10 +8,8 @@ module Translatable
   private
 
     def translation_params(resource_model)
-      enabled_translations.flat_map do |loc|
-        resource_model.translated_attribute_names.map do |attr_name|
-          resource_model.localized_attr_name_for(attr_name, loc)
-        end
+      resource_model.translated_attribute_names.product(enabled_translations).map do |attr_name, loc|
+        resource_model.localized_attr_name_for(attr_name, loc)
       end
     end
 
