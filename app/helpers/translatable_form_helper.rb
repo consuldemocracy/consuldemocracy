@@ -11,6 +11,19 @@ module TranslatableFormHelper
       yield(f)
     end
   end
+
+  def merge_translatable_field_options(options, locale)
+    options.merge(
+      class: (options.fetch(:class, "") + " js-globalize-attribute"),
+      style: display_translation?(locale),
+      data:  options.fetch(:data, {}).merge(locale: locale),
+      label_options: {
+        class: (options.fetch(:class, "") + " js-globalize-attribute"),
+        style: display_translation?(locale),
+        data:  (options.dig(:label_options, :data) || {}) .merge(locale: locale)
+      }
+    )
+  end
 end
 
 class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
@@ -28,17 +41,7 @@ class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
       @template.capture do
         @object.globalize_locales.each do |locale|
           Globalize.with_locale(locale) do
-            final_options = options.merge(
-              class: (options.fetch(:class, "") + " js-globalize-attribute"),
-              style: @template.display_translation?(locale),
-              data:  options.fetch(:data, {}).merge(locale: locale),
-              label_options: {
-                class: (options.fetch(:class, "") + " js-globalize-attribute"),
-                style: @template.display_translation?(locale),
-                data:  (options.dig(:label_options, :data) || {}) .merge(locale: locale)
-              }
-            )
-
+            final_options = @template.merge_translatable_field_options(options, locale)
             @template.concat send(field_type, "#{method}_#{locale}", final_options)
           end
         end
