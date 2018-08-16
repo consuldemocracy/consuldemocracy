@@ -29,16 +29,16 @@ RSpec.describe I18nContent, type: :model do
     end
 
     it 'return all matching records when #begins_with_key is used' do
-      debate_translation = create(:i18n_content)
-      debate_title       = create(:i18n_content, key: 'debates.form.debate_title')
-      proposal_title     = create(:i18n_content, key: 'proposals.form.proposal_title')
+      debate_text    = create(:i18n_content, key: 'debates.form.debate_text')
+      debate_title   = create(:i18n_content, key: 'debates.form.debate_title')
+      proposal_title = create(:i18n_content, key: 'proposals.form.proposal_title')
 
       expect(I18nContent.all.size).to eq(3)
 
       query = I18nContent.begins_with_key('debates')
 
       expect(query.size).to eq(2)
-      expect(query).to eq([debate_translation, debate_title])
+      expect(query).to eq([debate_text, debate_title])
       expect(query).not_to include(proposal_title)
     end
   end
