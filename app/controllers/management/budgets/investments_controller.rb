@@ -18,6 +18,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   def create
     @investment.terms_of_service = "1"
     @investment.author = managed_user
+    set_map_location
 
     if @investment.save
       notice = t('flash.actions.create.notice', resource_name: Budget::Investment.model_name.human, count: 1)
@@ -68,4 +69,15 @@ class Management::Budgets::InvestmentsController < Management::BaseController
       @categories = ActsAsTaggableOn::Tag.category.order(:name)
     end
 
+    def set_map_location
+      @investment.skip_map = params[:budget_investment][:skip_map]
+      return if @investment.skip_map == "1"
+
+      map_location = params[:budget_investment][:map_location_attributes]
+      @investment.build_map_location(
+        latitude: map_location[:latitude],
+        longitude: map_location[:longitude],
+        zoom: map_location[:zoom],
+      )
+    end
 end
