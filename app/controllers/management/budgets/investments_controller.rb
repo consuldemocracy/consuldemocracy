@@ -70,9 +70,15 @@ class Management::Budgets::InvestmentsController < Management::BaseController
     end
 
     def set_map_location
-      @investment.skip_map = params[:budget_investment][:skip_map]
-      return if @investment.skip_map == "1"
+      return if params[:budget_investment][:skip_map] == nil
 
+      @investment.skip_map = params[:budget_investment][:skip_map]
+      if @investment.skip_map != "1"
+        build_map_location
+      end
+    end
+
+    def build_map_location
       map_location = params[:budget_investment][:map_location_attributes]
       @investment.build_map_location(
         latitude: map_location[:latitude],
