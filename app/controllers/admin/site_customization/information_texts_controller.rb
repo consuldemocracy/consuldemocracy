@@ -66,10 +66,9 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
       locale = params[:locale] || I18n.locale
       translations = I18n.backend.send(:translations)[locale.to_sym]
 
-      translations.each do |k, v|
-        @content[k.to_s] = I18nContent.flat_hash(v).keys.map { |s|
-          @existing_keys["#{k.to_s}.#{s}"].nil? ? I18nContent.new(key: "#{k.to_s}.#{s}") :
-                                                  @existing_keys["#{k.to_s}.#{s}"]
+      translations.each do |key, value|
+        @content[key.to_s] = I18nContent.flat_hash(value).keys.map { |string|
+          @existing_keys["#{key.to_s}.#{string}"] || I18nContent.new(key: "#{key.to_s}.#{string}")
         }
       end
     end
