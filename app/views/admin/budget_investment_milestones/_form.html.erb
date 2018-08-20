@@ -14,9 +14,9 @@
                 admin_budget_investment_statuses_path %>
   </div>
 
-  <%= f.translatable_text_field :description,
-                                rows: 5,
-                                label: t("admin.milestones.new.description") %>
+  <%= f.translatable_text_area :description,
+                               rows: 5,
+                               label: t("admin.milestones.new.description") %>
 
   <%= f.label :publication_date, t("admin.milestones.new.date") %>
   <%= f.text_field :publication_date,
