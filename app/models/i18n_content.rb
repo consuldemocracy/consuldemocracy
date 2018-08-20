@@ -40,10 +40,10 @@ class I18nContent < ActiveRecord::Base
   #   'string.key2.key4.key5' => 'value3'
   # }
 
-  def self.flat_hash(h, f = nil, g = {})
-    return g.update({ f => h }) unless h.is_a? Hash
-    h.map { |k, r| flat_hash(r, [f, k].compact.join('.'), g) }
-    return g
+  def self.flat_hash(input, path = nil, output = {})
+    return output.update({ path => input }) unless input.is_a? Hash
+    input.map { |key, value| flat_hash(value, [path, key].compact.join('.'), output) }
+    return output
   end
 
 end
