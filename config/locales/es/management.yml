@@ -68,7 +68,7 @@ es:
       create_budget_investment: Crear proyectos de gasto
       print_budget_investments: Imprimir proyectos de gasto
       support_budget_investments: Apoyar proyectos de gasto
-      users: Gestión de usuarios
+      edit_user_accounts: Gestión de usuarios
       user_invites: Enviar invitaciones
       select_user: Seleccionar usuario
     permissions:

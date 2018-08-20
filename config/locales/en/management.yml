@@ -68,7 +68,7 @@ en:
       create_budget_investment: Create budget investment
       print_budget_investments: Print budget investments
       support_budget_investments: Support budget investments
-      users: Users management
+      edit_user_accounts: Users management
       user_invites: Send invitations
       select_user: Select user
     permissions:
