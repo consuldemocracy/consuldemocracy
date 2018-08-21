@@ -160,26 +160,28 @@ feature 'Stats' do
 
   feature "Budget investments" do
     context "Supporting phase" do
-      background do
-        @budget = create(:budget)
-        @group_all_city   = create(:budget_group, budget: @budget)
-        @heading_all_city = create(:budget_heading, group: @group_all_city)
+      let!(:budget) { create(:budget) }
+      # TODO change name to city_heading?
+      let!(:group_all_city) { create(:budget_group, budget: budget) }
+      #let!(:heading_all_city) { create(:budget_heading, :city_heading, group: group_all_city) }
+      let!(:heading_all_city) { create(:budget_heading, group: group_all_city) }
 
+      background do
         allow_any_instance_of(Admin::StatsController).
-        to receive(:city_heading).and_return(@heading_all_city)
+        to receive(:city_heading).and_return(heading_all_city)
       end
 
       scenario "Number of supports in investment projects" do
-        group_2 = create(:budget_group, budget: @budget)
+        group_2 = create(:budget_group, budget: budget)
         investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
-        investment2 = create(:budget_investment, heading: @heading_all_city)
+        investment2 = create(:budget_investment, heading: heading_all_city)
 
         1.times { create(:vote, votable: investment1) }
         2.times { create(:vote, votable: investment2) }
 
         visit admin_stats_path
         click_link "Participatory Budgets"
-        within("#budget_#{@budget.id}") do
+        within("#budget_#{budget.id}") do
           click_link "Supporting phase"
         end
 
@@ -191,9 +193,9 @@ feature 'Stats' do
         user2 = create(:user, :level_two)
         user3 = create(:user, :level_two)
 
-        group_2 = create(:budget_group, budget: @budget)
+        group_2 = create(:budget_group, budget: budget)
         investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
-        investment2 = create(:budget_investment, heading: @heading_all_city)
+        investment2 = create(:budget_investment, heading: heading_all_city)
 
         create(:vote, votable: investment1, voter: user1)
         create(:vote, votable: investment1, voter: user2)
@@ -201,7 +203,7 @@ feature 'Stats' do
 
         visit admin_stats_path
         click_link "Participatory Budgets"
-        within("#budget_#{@budget.id}") do
+        within("#budget_#{budget.id}") do
           click_link "Supporting phase"
         end
 
@@ -209,12 +211,9 @@ feature 'Stats' do
       end
 
       scenario "Number of users that have supported investments projects per geozone" do
-        budget = create(:budget)
-
-        group_all_city  = create(:budget_group, budget: budget)
         group_districts = create(:budget_group, budget: budget)
 
-        all_city    = create(:budget_heading, group: group_all_city)
+        all_city    = heading_all_city
         carabanchel = create(:budget_heading, group: group_districts)
         barajas     = create(:budget_heading, group: group_districts)
 
@@ -249,18 +248,15 @@ feature 'Stats' do
       end
 
       scenario "Number of users that have supported geozone/no-geozone wide proposals" do
-        budget = create(:budget)
-
-        group_all_city  = create(:budget_group, budget: budget)
         group_districts = create(:budget_group, budget: budget)
 
-        all_city    = create(:budget_heading, group: group_all_city)
+        #all_city    = heading_all_city
         carabanchel = create(:budget_heading, group: group_districts)
 
         allow_any_instance_of(Admin::StatsController).
-        to receive(:city_heading).and_return(all_city)
+        to receive(:city_heading).and_return(heading_all_city)
 
-        all_city_investment = create(:budget_investment, heading: all_city)
+        all_city_investment = create(:budget_investment, heading: heading_all_city)
         district_investment = create(:budget_investment, heading: carabanchel)
 
         user_both = create(:user, :level_two)
