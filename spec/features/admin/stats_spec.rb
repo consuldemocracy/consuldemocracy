@@ -162,13 +162,13 @@ feature 'Stats' do
     context "Supporting phase" do
       let!(:budget) { create(:budget) }
       # TODO change name to city_heading?
-      let!(:group_all_city) { create(:budget_group, budget: budget) }
-      let!(:heading_all_city) { create(:budget_heading, :city_heading, group: group_all_city) }
+      let!(:city_group) { create(:budget_group, budget: budget) }
+      let!(:city_heading) { create(:budget_heading, :city_heading, group: city_group) }
 
       scenario "Number of supports in investment projects" do
         group_2 = create(:budget_group, budget: budget)
         investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
-        investment2 = create(:budget_investment, heading: heading_all_city)
+        investment2 = create(:budget_investment, heading: city_heading)
 
         1.times { create(:vote, votable: investment1) }
         2.times { create(:vote, votable: investment2) }
@@ -189,7 +189,7 @@ feature 'Stats' do
 
         group_2 = create(:budget_group, budget: budget)
         investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
-        investment2 = create(:budget_investment, heading: heading_all_city)
+        investment2 = create(:budget_investment, heading: city_heading)
 
         create(:vote, votable: investment1, voter: user1)
         create(:vote, votable: investment1, voter: user2)
@@ -207,7 +207,7 @@ feature 'Stats' do
       scenario "Number of users that have supported investments projects per geozone" do
         group_districts = create(:budget_group, budget: budget)
 
-        all_city    = heading_all_city
+        all_city    = city_heading
         carabanchel = create(:budget_heading, group: group_districts)
         barajas     = create(:budget_heading, group: group_districts)
 
@@ -245,7 +245,7 @@ feature 'Stats' do
         group_districts = create(:budget_group, budget: budget)
 
         carabanchel = create(:budget_heading, group: group_districts)
-        all_city_investment = create(:budget_investment, heading: heading_all_city)
+        all_city_investment = create(:budget_investment, heading: city_heading)
         district_investment = create(:budget_investment, heading: carabanchel)
 
         user_both = create(:user, :level_two)
