@@ -170,24 +170,25 @@ describe Budget::Stats do
   context "#headings" do
 
     it "returns headings data" do
-      expect(@stats[:headings][1][:total_investments_count]).to be 5
-      expect(@stats[:headings][1][:total_participants_support_phase]).to be 2
-      expect(@stats[:headings][1][:total_participants_vote_phase]).to be 4
-      expect(@stats[:headings][1][:total_participants_all_phase]).to be 6
-      expect(@stats[:headings][1][:percentage_participants_support_phase]).to be 100.0
-      expect(@stats[:headings][1][:percentage_district_population_support_phase]).to be 0.162
-      expect(@stats[:headings][1][:percentage_participants_vote_phase]).to be 100.0
-      expect(@stats[:headings][1][:percentage_district_population_vote_phase]).to be 0.324
-      expect(@stats[:headings][1][:percentage_participants_all_phase]).to be 100.0
-      expect(@stats[:headings][1][:percentage_district_population_all_phase]).to be 0.486
+      heading_stats = @stats[:headings][@heading.id]
+      expect(heading_stats[:total_investments_count]).to be 5
+      expect(heading_stats[:total_participants_support_phase]).to be 2
+      expect(heading_stats[:total_participants_vote_phase]).to be 4
+      expect(heading_stats[:total_participants_all_phase]).to be 6
+      expect(heading_stats[:percentage_participants_support_phase]).to be 100.0
+      expect(heading_stats[:percentage_district_population_support_phase]).to be 0.162
+      expect(heading_stats[:percentage_participants_vote_phase]).to be 100.0
+      expect(heading_stats[:percentage_district_population_vote_phase]).to be 0.324
+      expect(heading_stats[:percentage_participants_all_phase]).to be 100.0
+      expect(heading_stats[:percentage_district_population_all_phase]).to be 0.486
 
-      expect(@stats[:headings][:total][:total_investments_count]).to be 5
-      expect(@stats[:headings][:total][:total_participants_support_phase]).to be 2
-      expect(@stats[:headings][:total][:total_participants_vote_phase]).to be 4
-      expect(@stats[:headings][:total][:total_participants_all_phase]).to be 6
-      expect(@stats[:headings][:total][:percentage_participants_support_phase]).to be 100.0
-      expect(@stats[:headings][:total][:percentage_participants_vote_phase]).to be 100.0
-      expect(@stats[:headings][:total][:percentage_participants_all_phase]).to be 100.0
+      expect(heading_stats[:total_investments_count]).to be 5
+      expect(heading_stats[:total_participants_support_phase]).to be 2
+      expect(heading_stats[:total_participants_vote_phase]).to be 4
+      expect(heading_stats[:total_participants_all_phase]).to be 6
+      expect(heading_stats[:percentage_participants_support_phase]).to be 100.0
+      expect(heading_stats[:percentage_participants_vote_phase]).to be 100.0
+      expect(heading_stats[:percentage_participants_all_phase]).to be 100.0
     end
 
   end
