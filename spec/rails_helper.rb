@@ -46,4 +46,6 @@ Capybara.javascript_driver = :headless_chrome
 
 Capybara.exact = true
 
+Capybara.server = :webrick
+
 OmniAuth.config.test_mode = true
