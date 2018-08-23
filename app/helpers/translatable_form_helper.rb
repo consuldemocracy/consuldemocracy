@@ -15,11 +15,11 @@ module TranslatableFormHelper
   def merge_translatable_field_options(options, locale)
     options.merge(
       class: "#{options[:class]} js-globalize-attribute".strip,
-      style: display_translation?(locale),
+      style: "#{options[:style]} #{display_translation?(locale)}".strip,
       data:  options.fetch(:data, {}).merge(locale: locale),
       label_options: {
         class: "#{options.dig(:label_options, :class)} js-globalize-attribute".strip,
-        style: display_translation?(locale),
+        style: "#{options.dig(:label_options, :style)} #{display_translation?(locale)}".strip,
         data:  (options.dig(:label_options, :data) || {}) .merge(locale: locale)
       }
     )
