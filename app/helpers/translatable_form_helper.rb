@@ -18,7 +18,7 @@ module TranslatableFormHelper
       style: display_translation?(locale),
       data:  options.fetch(:data, {}).merge(locale: locale),
       label_options: {
-        class: "#{options[:class]} js-globalize-attribute".strip,
+        class: "#{options.dig(:label_options, :class)} js-globalize-attribute".strip,
         style: display_translation?(locale),
         data:  (options.dig(:label_options, :data) || {}) .merge(locale: locale)
       }
