@@ -1,8 +1,8 @@
 module TranslatableFormHelper
-  def translatable_form_for(record, options = {})
-    object = record.is_a?(Array) ? record.last : record
+  def translatable_form_for(record_or_record_path, options = {})
+    object = record_or_record_path.is_a?(Array) ? record_or_record_path.last : record_or_record_path
 
-    form_for(record, options.merge(builder: TranslatableFormBuilder)) do |f|
+    form_for(record_or_record_path, options.merge(builder: TranslatableFormBuilder)) do |f|
 
       object.globalize_locales.each do |locale|
         concat translation_enabled_tag(locale, enable_locale?(object, locale))
