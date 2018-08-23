@@ -4,6 +4,6 @@ module SiteCustomizationHelper
   end
 
   def site_customization_display_translation?(locale)
-    site_customization_enable_translation?(locale) ? "" : "display: none"
+    site_customization_enable_translation?(locale) ? "" : "display: none;"
   end
 end

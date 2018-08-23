@@ -11,7 +11,7 @@ module GlobalizeHelper
   end
 
   def display_translation?(locale)
-    same_locale?(neutral_locale(I18n.locale), neutral_locale(locale)) ? "" : "display: none"
+    same_locale?(neutral_locale(I18n.locale), neutral_locale(locale)) ? "" : "display: none;"
   end
 
   def translation_enabled_tag(locale, enabled)
@@ -19,7 +19,7 @@ module GlobalizeHelper
   end
 
   def css_to_display_translation?(resource, locale)
-    enable_locale?(resource, locale) ? "" : "display: none"
+    enable_locale?(resource, locale) ? "" : "display: none;"
   end
 
   def enable_locale?(resource, locale)
