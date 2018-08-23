@@ -248,7 +248,7 @@ GEM
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
     kgio (2.11.2)
-    knapsack_pro (0.53.0)
+    knapsack_pro (0.56.0)
       rake
     kramdown (1.17.0)
     launchy (2.4.3)
@@ -557,7 +557,7 @@ DEPENDENCIES
   jquery-rails (~> 4.3.1)
   jquery-ui-rails (~> 6.0.1)
   kaminari (~> 1.0.1)
-  knapsack_pro (~> 0.53.0)
+  knapsack_pro (~> 0.56.0)
   launchy (~> 2.4.3)
   letter_opener_web (~> 1.3.2)
   mdl (~> 0.4.0)
