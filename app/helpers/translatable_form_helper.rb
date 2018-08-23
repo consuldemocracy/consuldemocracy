@@ -41,7 +41,9 @@ module TranslatableFormHelper
         @template.capture do
           @object.globalize_locales.each do |locale|
             Globalize.with_locale(locale) do
+              label_without_locale = @object.class.human_attribute_name(method)
               final_options = @template.merge_translatable_field_options(options, locale)
+                                       .reverse_merge(label: label_without_locale)
               @template.concat send(field_type, "#{method}_#{locale}", final_options)
             end
           end
