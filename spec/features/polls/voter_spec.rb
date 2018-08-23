@@ -32,7 +32,10 @@ feature "Voter" do
       expect(page).to have_css(".js-token-message", visible: true)
       token = find(:css, ".js-question-answer")[:href].gsub(/.+?(?=token)/, '').gsub('token=', '')
 
-      expect(page).to have_content "You can write down this vote identifier, to check your vote on the final results: #{token}"
+      expect(page).to have_content(
+        "You can write down this vote identifier, to check your vote on the final results: #{token}",
+        normalize_ws: true
+      )
 
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("web")

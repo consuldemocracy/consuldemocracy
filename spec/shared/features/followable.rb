@@ -63,7 +63,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
         click_link("Follow #{followable.model_name.human.downcase}")
       end
 
-      expect(page).to have_content strip_tags(create_notice_message)
+      expect(page).to have_content(strip_tags(create_notice_message), normalize_ws: true)
     end
 
     scenario "Display unfollow button when user already following" do
@@ -101,7 +101,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
         click_link("Unfollow #{followable.model_name.human.downcase}")
       end
 
-      expect(page).to have_content strip_tags(destroy_notice_message)
+      expect(page).to have_content(strip_tags(destroy_notice_message), normalize_ws: true)
     end
 
   end
