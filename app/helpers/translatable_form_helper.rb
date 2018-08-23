@@ -31,6 +31,7 @@ class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
   def translatable_text_field(method, options = {})
     translatable_field(:text_field, method, options)
   end
+
   def translatable_text_area(method, options = {})
     translatable_field(:text_area, method, options)
   end
