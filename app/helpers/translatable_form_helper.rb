@@ -24,28 +24,28 @@ module TranslatableFormHelper
       }
     )
   end
-end
 
-class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
+  class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
 
-  def translatable_text_field(method, options = {})
-    translatable_field(:text_field, method, options)
-  end
+    def translatable_text_field(method, options = {})
+      translatable_field(:text_field, method, options)
+    end
 
-  def translatable_text_area(method, options = {})
-    translatable_field(:text_area, method, options)
-  end
+    def translatable_text_area(method, options = {})
+      translatable_field(:text_area, method, options)
+    end
 
-  private
+    private
 
-    def translatable_field(field_type, method, options = {})
-      @template.capture do
-        @object.globalize_locales.each do |locale|
-          Globalize.with_locale(locale) do
-            final_options = @template.merge_translatable_field_options(options, locale)
-            @template.concat send(field_type, "#{method}_#{locale}", final_options)
+      def translatable_field(field_type, method, options = {})
+        @template.capture do
+          @object.globalize_locales.each do |locale|
+            Globalize.with_locale(locale) do
+              final_options = @template.merge_translatable_field_options(options, locale)
+              @template.concat send(field_type, "#{method}_#{locale}", final_options)
+            end
           end
         end
       end
-    end
+  end
 end
