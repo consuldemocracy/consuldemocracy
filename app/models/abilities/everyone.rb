@@ -3,10 +3,8 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      can :access, :ckeditor   # needed to access Ckeditor filebrowser
-      can [:access, :read, :create, :destroy], Ckeditor::Picture
-      can [:access, :read, :create, :destroy], Ckeditor::AttachmentFile
 
+      can :read, Ckeditor::Picture
       can [:read, :map], Debate
       can [:read, :map, :summary, :share], Proposal
       can :read, Comment

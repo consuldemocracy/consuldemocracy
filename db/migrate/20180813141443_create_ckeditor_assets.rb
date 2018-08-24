@@ -7,9 +7,11 @@ class CreateCkeditorAssets < ActiveRecord::Migration
       t.string  :data_fingerprint
       t.string  :type, limit: 30
 
-      # Uncomment	it to save images dimensions, if your need it
+      # Uncomment	it to save images dimensions, if you need it
       t.integer :width
       t.integer :height
+
+      t.integer :user_id
 
       t.timestamps null: false
     end

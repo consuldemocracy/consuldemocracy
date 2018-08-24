@@ -5,6 +5,9 @@ module Abilities
     def initialize(user)
       merge Abilities::Everyone.new(user)
 
+      can :access, :ckeditor   # needed to access Ckeditor filebrowser
+      can [:access, :create, :destroy], Ckeditor::Picture, id: user.id
+
       can [:read, :update], User, id: user.id
 
       can :read, Debate

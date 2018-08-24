@@ -56,3 +56,5 @@ Ckeditor.setup do |config|
   # By default: "ckeditor/config.js"
   # config.js_config_url = 'ckeditor/config.js'
 end
+
+Ckeditor::PicturesController.send(:load_and_authorize_resource)
