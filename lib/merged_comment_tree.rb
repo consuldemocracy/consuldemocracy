@@ -1,14 +1,10 @@
 class MergedCommentTree < CommentTree
-  attr_accessor :commentables, :array_order
+  attr_reader :commentables, :array_order
 
   def initialize(commentables, page, order = "confidence_score")
     @commentables = commentables
-    @commentable = commentables.first
-    @page = page
-    @order = order
+    super(commentables.first, page, order)
     @array_order = set_array_order(order)
-
-    @comments = root_comments + root_descendants
   end
 
   def root_comments
