@@ -1,5 +1,7 @@
 class Ckeditor::PicturesController < Ckeditor::ApplicationController
+
   load_and_authorize_resource
+
   def index
     @pictures = Ckeditor.picture_adapter.find_all(ckeditor_pictures_scope)
     @pictures = Ckeditor::Paginatable.new(@pictures).page(params[:page])
@@ -10,7 +12,7 @@ class Ckeditor::PicturesController < Ckeditor::ApplicationController
   end
 
   def create
-    @picture = Ckeditor.picture_model.new
+    @picture = Ckeditor.picture_model.new(user_id: current_user.id)
     respond_with_asset(@picture)
   end
 
@@ -30,7 +32,7 @@ class Ckeditor::PicturesController < Ckeditor::ApplicationController
     end
 
     def authorize_resource
-      model = (@picture || Ckeditor.picture_model)
+      model = @picture || Ckeditor.picture_model
       @authorization_adapter.try(:authorize, params[:action], model)
     end
 end
