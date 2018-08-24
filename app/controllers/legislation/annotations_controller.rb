@@ -8,7 +8,7 @@ class Legislation::AnnotationsController < Legislation::BaseController
   load_and_authorize_resource :draft_version, through: :process
   load_and_authorize_resource
 
-  has_orders %w{most_voted newest}, only: :show
+  has_orders %w[most_voted newest oldest], only: :show
 
   def index
     @annotations = @draft_version.annotations
