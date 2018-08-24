@@ -24,11 +24,9 @@
 
     <%= image_tag(milestone.image_url(:large), { id: "image_#{milestone.id}", alt: milestone.image.title, class: "margin" }) if milestone.image.present? %>
 
-    <% globalize(neutral_locale(locale)) do %>
-      <p>
-        <%= text_with_links milestone.description %>
-      </p>
-    <% end %>
+    <p>
+      <%= text_with_links milestone.description %>
+    </p>
 
     <% if milestone.documents.present? %>
       <div class="document-link text-center">
