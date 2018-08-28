@@ -7,6 +7,8 @@ module ActionDispatch::Routing::UrlFor
     case resource.class.name
     when "Budget::Investment"
       [resource.budget, resource]
+    when "Budget::Investment::Milestone"
+      [resource.investment.budget, resource.investment, resource]
     when "Legislation::Annotation"
       [resource.draft_version.process, resource.draft_version, resource]
     when "Legislation::Proposal", "Legislation::Question"

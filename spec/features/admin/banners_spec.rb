@@ -6,6 +6,11 @@ feature 'Admin banners magement' do
     login_as(create(:administrator).user)
   end
 
+  it_behaves_like "translatable",
+                  "banner",
+                  "edit_admin_banner_path",
+                  %w[title description]
+
   context "Index" do
     background do
       @banner1 = create(:banner, title: "Banner number one",
@@ -255,51 +260,6 @@ feature 'Admin banners magement' do
       click_button "Save changes"
       visit @edit_banner_url
       expect(page).not_to have_link "Español"
-    end
-
-    context "Globalize javascript interface" do
-
-      scenario "Highlight current locale", :js do
-        visit @edit_banner_url
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
-
-        select('Español', from: 'locale-switcher')
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
-      end
-
-      scenario "Highlight selected locale", :js do
-        visit @edit_banner_url
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
-
-        click_link "Español"
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
-      end
-
-      scenario "Show selected locale form", :js do
-        visit @edit_banner_url
-
-        expect(page).to have_field('banner_description_en', with: 'Description in English')
-
-        click_link "Español"
-
-        expect(page).to have_field('banner_description_es', with: 'Descripción en Español')
-      end
-
-      scenario "Select a locale and add it to the banner form", :js do
-        visit @edit_banner_url
-
-        select "Français", from: "translation_locale"
-
-        expect(page).to have_link "Français"
-
-        click_link "Français"
-
-        expect(page).to have_field('banner_description_fr')
-      end
     end
   end
 end
