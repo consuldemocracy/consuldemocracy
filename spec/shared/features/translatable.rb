@@ -55,18 +55,19 @@ shared_examples "translatable" do |factory_name, path_name, fields|
 
       click_link "Español"
       field = fields.sample
+      updated_text = "Corrección de #{text_for(field, :es)}"
 
-      fill_in field_for(field, :es), with: "Corrección de #{text_for(field, :es)}"
+      fill_in field_for(field, :es), with: updated_text
 
       click_button update_button_text
 
       visit path
 
-      expect(page).to have_content(text_for(field, :en))
+      expect(page).to have_field(field_for(field, :en), with: text_for(field, :en))
 
       select('Español', from: 'locale-switcher')
 
-      expect(page).to have_content("Corrección de #{text_for(field, :es)}")
+      expect(page).to have_field(field_for(field, :es), with: updated_text)
     end
 
     scenario "Remove a translation", :js do
@@ -93,13 +94,13 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       field = possible_blanks.sample
 
       visit path
-      expect(page).to have_content text_for(field, :en)
+      expect(page).to have_field(field_for(field, :en), with: text_for(field, :en))
 
       fill_in field_for(field, :en), with: ''
       click_button update_button_text
 
       visit path
-      expect(page).not_to have_content text_for(field, :en)
+      expect(page).to have_field(field_for(field, :en), with: '')
     end
 
     scenario "Add a translation for a locale with non-underscored name", :js do
@@ -115,7 +116,7 @@ shared_examples "translatable" do |factory_name, path_name, fields|
 
       select('Português', from: 'locale-switcher')
 
-      expect(page).to have_content(text_for(field, :"pt-BR"))
+      expect(page).to have_field(field_for(field, :pt_br), with: text_for(field, :"pt-BR"))
     end
   end
 
