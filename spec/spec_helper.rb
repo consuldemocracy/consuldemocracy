@@ -64,10 +64,6 @@ RSpec.configure do |config|
     page.driver.reset!
   end
 
-  config.before(:each, type: :feature) do
-    Capybara.reset_sessions!
-  end
-
   config.before do
     DatabaseCleaner.start
   end
