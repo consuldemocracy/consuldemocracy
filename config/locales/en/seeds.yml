@@ -53,18 +53,3 @@ en:
       recounting_poll: "Recounting Poll"
       expired_poll_without_stats: "Expired Poll without Stats & Results"
       expired_poll_with_stats: "Expired Poll with Stats & Results"
-    admin_notifications:
-      internal_link:
-        title: 'Do you have a proposal?'
-        body: 'Remember you can create a proposal with your ideas and people will discuss & support it.'
-        link: '/proposals'
-      external_link:
-        title: Help us translate consul
-        body: 'If you are proficient in a language, please help us translate consul!.'
-        link: 'https://crwd.in/consul'
-      without_link:
-        title: 'You can now geolocate proposals & investments'
-        body: 'When you create a proposal or investment you now can specify a point on a map'
-      not_sent:
-        title: 'We are closing the Participatory Budget!!'
-        body: 'Hurry up and create a last proposal before it ends next in few days!'
