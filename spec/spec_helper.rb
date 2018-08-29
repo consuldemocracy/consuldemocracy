@@ -61,11 +61,6 @@ RSpec.configure do |config|
     end
   end
 
-  config.before(:each, :headless_chrome) do
-    Capybara.current_driver  = :headless_chrome
-    DatabaseCleaner.strategy = :truncation
-  end
-
   config.after(:each, :page_driver) do
     page.driver.reset!
   end
