@@ -70,7 +70,7 @@ RSpec.configure do |config|
     Capybara.current_driver = Capybara.default_driver
   end
 
-  config.after(:each, :nvotes) do
+  config.after(:each, :page_driver) do
     page.driver.reset!
   end
 
