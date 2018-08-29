@@ -112,7 +112,7 @@ feature "Home" do
   end
 
   feature 'IE alert' do
-    scenario 'IE visitors are presented with an alert until they close it' do
+    scenario 'IE visitors are presented with an alert until they close it', :page_driver do
       # Selenium API does not include page request/response inspection methods
       # so we must use Capybara::RackTest driver to set the browser's headers
       Capybara.current_session.driver.header(
@@ -133,7 +133,7 @@ feature "Home" do
       expect(page.driver.request.cookies['ie_alert_closed']).to eq('true')
     end
 
-    scenario 'non-IE visitors are not bothered with IE alerts' do
+    scenario 'non-IE visitors are not bothered with IE alerts', :page_driver do
       visit root_path
       expect(page).not_to have_xpath(ie_alert_box_xpath, visible: false)
       expect(page.driver.request.cookies['ie_alert_closed']).to be_nil

@@ -60,6 +60,10 @@ RSpec.configure do |config|
     end
   end
 
+  config.after(:each, :page_driver) do
+    page.driver.reset!
+  end
+
   config.before(:each, type: :feature) do
     Capybara.reset_sessions!
   end
