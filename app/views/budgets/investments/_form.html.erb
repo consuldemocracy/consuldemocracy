@@ -1,9 +1,9 @@
 <%= form_for(@investment, url: form_url, method: :post, html: { multipart: true }) do |f| %>
-  <%= render 'shared/errors', resource: @investment %>
+  <%= render "shared/errors", resource: @investment %>
 
   <div class="row">
     <div class="small-12 medium-9 column">
-      <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: true, } %>
+      <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true, } %>
     </div>
   </div>
 
@@ -17,7 +17,7 @@
                                  toggle_focus: "title-suggestions"
                                } %>
     </div>
-    <%= render 'shared/suggest_message', id: 'title-suggestions',
+    <%= render "shared/suggest_message", id: "title-suggestions",
                                          message: t("spending_proposals.suggestions.title") %>
     <div id="js-suggest"></div>
 
@@ -35,33 +35,39 @@
     <div class="small-12 medium-9 column">
       <%= f.text_field :external_url, data: { toggle_focus: "external-url-suggestions" } %>
     </div>
-    <%= render 'shared/suggest_message', id: 'external-url-suggestions',
+    <%= render "shared/suggest_message", id: "external-url-suggestions",
                                          message: t("spending_proposals.suggestions.external_url") %>
   </div>
 
-  <div class="row">
-    <div class="images small-12 column">
-      <%= render 'images/nested_image', imageable: @investment, f: f %>
+  <% if feature?(:allow_images) %>
+    <div class="row">
+      <div class="images small-12 column">
+        <%= render "images/nested_image", imageable: @investment, f: f %>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <% if feature?(:allow_attached_documents) %>
-    <div class="documents small-12 column">
-      <%= render 'documents/nested_documents', documentable: @investment, f: f %>
+    <div class="row">
+      <div class="documents small-12 column">
+        <%= render "documents/nested_documents", documentable: @investment, f: f %>
+      </div>
     </div>
   <% end %>
 
   <% if feature?(:map) %>
-    <div class="small-12 column">
-      <%= render 'map_locations/form_fields',
-                 form:     f,
-                 map_location: @investment.map_location || MapLocation.new,
-                 label:    t("budgets.investments.form.map_location"),
-                 help:     t("budgets.investments.form.map_location_instructions"),
-                 remove_marker_label: t("budgets.investments.form.map_remove_marker"),
-                 parent_class: "budget_investment",
-                 i18n_namespace: "budgets.investments" %>
+    <div class="row">
+      <div class="small-12 column">
+        <%= render "map_locations/form_fields",
+                   form: f,
+                   map_location: @investment.map_location || MapLocation.new,
+                   label: t("budgets.investments.form.map_location"),
+                   help: t("budgets.investments.form.map_location_instructions"),
+                   remove_marker_label: t("budgets.investments.form.map_remove_marker"),
+                   parent_class: "budget_investment",
+                   i18n_namespace: "budgets.investments" %>
 
+      </div>
     </div>
   <% end %>
 
@@ -70,20 +76,16 @@
       <%= f.label :location, t("budgets.investments.form.location") %>
       <%= f.text_field :location, label: false, data: { toggle_focus: "location-suggestions" } %>
     </div>
-      <%= render 'shared/suggest_message', id: 'location-suggestions',
-                                           message: t("spending_proposals.suggestions.location") %>
-  </div>
-
-  <div class="small-12 column">
-    <%= f.label :location, t("budgets.investments.form.location") %>
-    <%= f.text_field :location, label: false %>
+    <%= render "shared/suggest_message", id: "location-suggestions",
+                                         message: t("spending_proposals.suggestions.location") %>
   </div>
 
   <div class="row">
     <div class="small-12 medium-9 column">
       <%= f.text_field :organization_name, data: {toggle_focus: "organization-name-suggestions"} %>
     </div>
-    <%= render 'shared/suggest_message', id: 'organization-name-suggestions', message: "#{t("spending_proposals.suggestions.organization_name")}" %>
+    <%= render "shared/suggest_message", id: "organization-name-suggestions",
+                                         message: t("spending_proposals.suggestions.organization_name") %>
   </div>
 
   <div class="row">
@@ -98,33 +100,36 @@
         <% end %>
       </div>
     </div>
+
     <div class="small-12 medium-9 column">
-    <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
-                      label: false,
-                      placeholder: t("budgets.investments.form.tags_placeholder"),
-                      aria: {describedby: "tags-list-help-text"},
-                      class: 'js-tag-list tag-autocomplete',
-                      data: {js_url: suggest_tags_path, toggle_focus: "tag-list-suggestions"} %>
+      <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
+                                  label: false,
+                                  placeholder: t("budgets.investments.form.tags_placeholder"),
+                                  aria: { describedby: "tags-list-help-text" },
+                                  class: "js-tag-list tag-autocomplete",
+                                  data: {
+                                    js_url: suggest_tags_path,
+                                    toggle_focus: "tag-list-suggestions"
+                                  } %>
     </div>
-    <%= render 'shared/suggest_message', id: 'tag-list-suggestions', message: "#{t("spending_proposals.suggestions.tag_list")}" %>
+    <%= render "shared/suggest_message", id: "tag-list-suggestions",
+                                        message: t("spending_proposals.suggestions.tag_list") %>
   </div>
 
-    <% unless current_user.manager? %>
-
-      <div class="row">
-        <div class="small-12 medium-9 column">
-          <%= f.label :terms_of_service do %>
-            <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
-            <span class="checkbox">
-              <%= t("form.accept_terms",
-                  policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                  conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
-            </span>
-          <% end %>
-        </div>
+  <% unless current_user.manager? %>
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <%= f.label :terms_of_service do %>
+          <%= f.check_box :terms_of_service, title: t("form.accept_terms_title"), label: false %>
+          <span class="checkbox">
+            <%= t("form.accept_terms",
+                    policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                    conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
+          </span>
+        <% end %>
       </div>
-
-    <% end %>
+    </div>
+  <% end %>
 
   <div class="row">
     <div class="actions small-12 medium-6 large-4 end column">
