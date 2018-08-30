@@ -2,21 +2,15 @@ require 'rails_helper'
 
 feature "Voter" do
 
-  context "Origin" do
+  context "Origin", :with_frozen_time do
 
-    let(:poll) { create(:poll, :current, starts_at: "2017-12-01", ends_at: "2018-02-01") }
+    let(:poll) { create(:poll, :current) }
     let(:question) { create(:poll_question, poll: poll) }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
     let(:admin) { create(:administrator) }
     let!(:answer_yes) { create(:poll_question_answer, question: question, title: 'Yes') }
     let!(:answer_no) { create(:poll_question_answer, question: question, title: 'No') }
-
-    before do
-      allow(Date).to receive(:current).and_return Date.new(2018,1,1)
-      allow(Date).to receive(:today).and_return Date.new(2018,1,1)
-      allow(Time).to receive(:current).and_return Time.zone.parse("2018-01-01 12:00:00")
-    end
 
     background do
       create(:geozone, :in_census)
@@ -220,12 +214,18 @@ feature "Voter" do
 
         click_link "Sign out"
 
-        login_as user
-        visit poll_path(poll)
+        # Time needs to pass between the moment we vote and the moment
+        # we log in; otherwise the link to vote won't be available.
+        # It's safe to advance one second because this test isn't
+        # affected by possible date changes.
+        travel 1.second do
+          login_as user
+          visit poll_path(poll)
 
-        within("#poll_question_#{question.id}_answers") do
-          expect(page).to have_link(answer_yes.title)
-          expect(page).to have_link(answer_no.title)
+          within("#poll_question_#{question.id}_answers") do
+            expect(page).to have_link(answer_yes.title)
+            expect(page).to have_link(answer_no.title)
+          end
         end
       end
     end
