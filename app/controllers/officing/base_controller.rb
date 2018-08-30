@@ -47,7 +47,7 @@ class Officing::BaseController < ApplicationController
     end
 
     def todays_booths_for_officer(officer)
-      officer.officer_assignments.by_date(Date.today).map(&:booth).uniq
+      officer.officer_assignments.by_date(Date.current).map(&:booth).uniq
     end
 
     def letter?
