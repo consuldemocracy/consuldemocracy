@@ -387,17 +387,11 @@ feature 'Polls' do
     end
   end
 
-  context 'Booth & Website' do
+  context 'Booth & Website', :with_frozen_time do
 
-    let(:poll) { create(:poll, summary: "Summary", description: "Description", starts_at: '2017-12-01', ends_at: '2018-02-01') }
+    let(:poll) { create(:poll, summary: "Summary", description: "Description") }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
-
-    before do
-      allow(Date).to receive(:current).and_return Date.new(2018,1,1)
-      allow(Date).to receive(:today).and_return Date.new(2018,1,1)
-      allow(Time).to receive(:current).and_return Time.zone.parse("2018-01-01 12:00:00")
-    end
 
     scenario 'Already voted on booth cannot vote on website', :js do
 
