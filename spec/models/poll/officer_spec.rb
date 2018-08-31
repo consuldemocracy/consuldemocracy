@@ -121,4 +121,21 @@ describe Poll::Officer do
       expect(assigned_polls.last).to eq(poll_3)
     end
   end
+
+  describe "todays_booths" do
+    let(:officer) { create(:poll_officer) }
+
+    it "returns booths for the application's time zone date", :with_different_time_zone do
+      assignment_with_local_time_zone = create(:poll_officer_assignment,
+                                               date:    Date.today,
+                                               officer: officer)
+
+      assignment_with_application_time_zone = create(:poll_officer_assignment,
+                                                     date:    Date.current,
+                                                     officer: officer)
+
+      expect(officer.todays_booths).to include(assignment_with_application_time_zone.booth)
+      expect(officer.todays_booths).not_to include(assignment_with_local_time_zone.booth)
+    end
+  end
 end
