@@ -690,7 +690,6 @@ es:
         other: "%{count} apoyos"
     suggestions:
       title: "No escribas el título del pryecto o frases enteras en mayúsculas. En internet eso se considera gritar, y a nadie le gusta que le griten."
-      external_url: "¿Se te ha quedado pequeño el espacio para la propuesta? Incluye un enlace para poder tener acceso a más información."
       location: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       organization_name: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       tag_list: "Etiquetar correctamente un proyecto hace que su búsqueda sea más sencilla y tiene más posibilidades de conseguir apoyos."

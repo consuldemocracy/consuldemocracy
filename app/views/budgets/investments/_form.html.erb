@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="small-12 medium-9 column">
-      <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true, } %>
+      <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true } %>
     </div>
   </div>
 
@@ -29,14 +29,6 @@
       <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length,
                                       ckeditor: { language: I18n.locale } %>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-9 column">
-      <%= f.text_field :external_url, data: { toggle_focus: "external-url-suggestions" } %>
-    </div>
-    <%= render "shared/suggest_message", id: "external-url-suggestions",
-                                         message: t("spending_proposals.suggestions.external_url") %>
   </div>
 
   <% if feature?(:allow_images) %>
@@ -82,7 +74,7 @@
 
   <div class="row">
     <div class="small-12 medium-9 column">
-      <%= f.text_field :organization_name, data: {toggle_focus: "organization-name-suggestions"} %>
+      <%= f.text_field :organization_name, data: { toggle_focus: "organization-name-suggestions" } %>
     </div>
     <%= render "shared/suggest_message", id: "organization-name-suggestions",
                                          message: t("spending_proposals.suggestions.organization_name") %>
