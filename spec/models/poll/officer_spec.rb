@@ -121,4 +121,32 @@ describe Poll::Officer do
       expect(assigned_polls.last).to eq(poll_3)
     end
   end
+
+  describe "todays_booths" do
+    let(:officer) { create(:poll_officer) }
+
+    before do
+      system_zone = ActiveSupport::TimeZone.new("UTC")
+      local_zone = ActiveSupport::TimeZone.new("Madrid")
+
+      # Make sure the date defined by `config.time_zone` and
+      # the local date are different.
+      allow(Time).to receive(:zone).and_return(system_zone)
+      allow(Time).to receive(:now).and_return(Date.current.at_end_of_day.in_time_zone(local_zone))
+      allow(Date).to receive(:today).and_return(Time.now.to_date)
+    end
+
+    it "returns booths for the date defined by the application's time zone" do
+      assignment_with_local_time_zone = create(:poll_officer_assignment,
+                                               date:    Date.today,
+                                               officer: officer)
+
+      assignment_with_application_time_zone = create(:poll_officer_assignment,
+                                                     date:    Date.current,
+                                                     officer: officer)
+
+      expect(officer.todays_booths).to include(assignment_with_application_time_zone.booth)
+      expect(officer.todays_booths).not_to include(assignment_with_local_time_zone.booth)
+    end
+  end
 end
