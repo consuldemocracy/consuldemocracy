@@ -82,7 +82,7 @@ FactoryBot.define do
     user
     document_number
     document_type    "1"
-    date_of_birth    Time.zone.local(1980, 12, 31).to_date
+    date_of_birth    { Time.zone.local(1980, 12, 31).to_date }
     postal_code      "28013"
     terms_of_service '1'
 
@@ -193,7 +193,7 @@ FactoryBot.define do
     end
 
     trait :archived do
-      created_at 25.months.ago
+      created_at { 25.months.ago }
     end
 
     trait :with_hot_score do
@@ -395,11 +395,11 @@ FactoryBot.define do
     end
 
      trait :hidden do
-       hidden_at Time.current
+       hidden_at { Time.current }
      end
 
      trait :with_ignored_flag do
-       ignored_flag_at Time.current
+       ignored_flag_at { Time.current }
      end
 
     trait :flagged do
@@ -409,7 +409,7 @@ FactoryBot.define do
      end
 
      trait :with_confirmed_hide do
-       confirmed_hide_at Time.current
+       confirmed_hide_at { Time.current }
      end
   end
 
@@ -869,15 +869,15 @@ FactoryBot.define do
     end
 
     trait :ignored do
-      ignored_at Date.current
+      ignored_at { Date.current }
     end
 
     trait :hidden do
-      hidden_at Date.current
+      hidden_at { Date.current }
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.current
+      confirmed_hide_at { Time.current }
     end
   end
 
@@ -964,14 +964,14 @@ FactoryBot.define do
     end
 
     trait :in_proposals_phase do
-      proposals_phase_start_date Date.current - 1.day
-      proposals_phase_end_date Date.current + 2.days
+      proposals_phase_start_date { Date.current - 1.day }
+      proposals_phase_end_date { Date.current + 2.days }
       proposals_phase_enabled true
     end
 
     trait :upcoming_proposals_phase do
-      proposals_phase_start_date Date.current + 1.day
-      proposals_phase_end_date Date.current + 2.days
+      proposals_phase_start_date { Date.current + 1.day }
+      proposals_phase_end_date { Date.current + 2.days }
       proposals_phase_enabled true
     end
 
@@ -984,8 +984,8 @@ FactoryBot.define do
     end
 
     trait :open do
-      start_date 1.week.ago
-      end_date   1.week.from_now
+      start_date { 1.week.ago }
+      end_date   { 1.week.from_now }
     end
 
   end
@@ -1143,7 +1143,7 @@ LOREM_IPSUM
 
     trait :sent do
       recipients_count 1
-      sent_at Time.current
+      sent_at { Time.current }
     end
   end
 
