@@ -125,18 +125,7 @@ describe Poll::Officer do
   describe "todays_booths" do
     let(:officer) { create(:poll_officer) }
 
-    before do
-      system_zone = ActiveSupport::TimeZone.new("UTC")
-      local_zone = ActiveSupport::TimeZone.new("Madrid")
-
-      # Make sure the date defined by `config.time_zone` and
-      # the local date are different.
-      allow(Time).to receive(:zone).and_return(system_zone)
-      allow(Time).to receive(:now).and_return(Date.current.at_end_of_day.in_time_zone(local_zone))
-      allow(Date).to receive(:today).and_return(Time.now.to_date)
-    end
-
-    it "returns booths for the date defined by the application's time zone" do
+    it "returns booths for the application's time zone date", :with_different_time_zone do
       assignment_with_local_time_zone = create(:poll_officer_assignment,
                                                date:    Date.today,
                                                officer: officer)
