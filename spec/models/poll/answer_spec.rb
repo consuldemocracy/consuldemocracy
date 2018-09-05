@@ -6,10 +6,6 @@ describe Poll::Answer do
 
     let(:answer) { build(:poll_answer) }
 
-    it "is valid" do
-      expect(answer).to be_valid
-    end
-
     it "is not valid wihout a question" do
       answer.question = nil
       expect(answer).not_to be_valid

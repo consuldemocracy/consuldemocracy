@@ -48,10 +48,6 @@ describe User do
 
   subject { build(:user) }
 
-  it "is valid" do
-    expect(subject).to be_valid
-  end
-
   describe "#terms" do
     it "is not valid without accepting the terms of service" do
       subject.terms_of_service = nil

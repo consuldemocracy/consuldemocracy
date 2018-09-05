@@ -10,10 +10,6 @@ describe Proposal do
     it_behaves_like "map validations"
   end
 
-  it "is valid" do
-    expect(proposal).to be_valid
-  end
-
   it "is not valid without an author" do
     proposal.author = nil
     expect(proposal).not_to be_valid

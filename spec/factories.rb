@@ -79,7 +79,7 @@ FactoryBot.define do
 
   factory :verification_residence, class: Verification::Residence do
     user
-    document_number
+    document_number  "12345678Z"
     document_type    "1"
     date_of_birth    Time.zone.local(1980, 12, 31).to_date
     postal_code      "28013"
@@ -390,6 +390,10 @@ FactoryBot.define do
     starts_at   { Date.yesterday }
     ends_at     { Date.tomorrow }
     enabled     true
+
+    after(:build) do |phase|
+      phase.budget.phases.send(phase.kind).destroy
+    end
   end
 
   factory :image do
@@ -413,7 +417,19 @@ FactoryBot.define do
 
   factory :budget_ballot_line, class: 'Budget::Ballot::Line' do
     association :ballot, factory: :budget_ballot
-    association :investment, factory: :budget_investment
+
+    after(:build) do |ballot_line|
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      group.headings << heading
+      budget.groups << group
+
+      ballot_line.ballot = create(:budget_ballot, budget: budget)
+      ballot_line.investment = create(:budget_investment, :selected, budget: budget,
+                                                                     heading: heading)
+      ballot_line.heading = heading
+    end
   end
 
   factory :budget_reclassified_vote, class: 'Budget::ReclassifiedVote' do
@@ -451,6 +467,7 @@ FactoryBot.define do
 
   factory :follow do
     association :user, factory: :user
+    association :followable, factory: :proposal
 
     trait :followed_proposal do
       association :followable, factory: :proposal
@@ -682,7 +699,7 @@ FactoryBot.define do
   factory :officing_residence, class: 'Officing::Residence' do
     user
     association :officer, factory: :poll_officer
-    document_number
+    document_number  "12345678Z"
     document_type    "1"
     year_of_birth    "1980"
 
@@ -978,10 +995,14 @@ LOREM_IPSUM
 
   factory :direct_upload do
     user
+    resource_type "Proposal"
+    resource_relation "documents"
+    attachment { File.new("spec/fixtures/files/empty.pdf") }
 
     trait :proposal do
       resource_type "Proposal"
     end
+
     trait :budget_investment do
       resource_type "Budget::Investment"
     end
@@ -1012,6 +1033,9 @@ LOREM_IPSUM
   end
 
   factory :related_content do
+    association :parent_relationable, factory: :proposal
+    association :child_relationable, factory: :debate
+
   end
 
   factory :newsletter do

@@ -6,10 +6,6 @@ shared_examples "image validations" do |imageable_factory|
   let!(:imageable)              { image.imageable }
   let!(:acceptedcontenttypes)   { imageable_accepted_content_types }
 
-  it "is valid" do
-    expect(image).to be_valid
-  end
-
   it "is not valid without a title" do
     image.title = nil
 

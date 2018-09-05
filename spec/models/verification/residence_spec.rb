@@ -3,13 +3,9 @@ require 'rails_helper'
 describe Verification::Residence do
 
   let!(:geozone) { create(:geozone, census_code: "01") }
-  let(:residence) { build(:verification_residence, document_number: "12345678Z") }
+  let(:residence) { build(:verification_residence) }
 
   describe "validations" do
-
-    it "is valid" do
-      expect(residence).to be_valid
-    end
 
     describe "dates" do
       it "is valid with a valid date of birth" do
@@ -97,7 +93,7 @@ describe Verification::Residence do
 
   describe "Failed census call" do
     it "stores failed census API calls" do
-      residence = build(:verification_residence, :invalid, document_number: "12345678Z")
+      residence = build(:verification_residence, :invalid)
       residence.save
 
       expect(FailedCensusCall.count).to eq(1)

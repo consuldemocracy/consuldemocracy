@@ -4,11 +4,6 @@ RSpec.describe Legislation::Annotation, type: :model do
   let(:draft_version) { create(:legislation_draft_version) }
   let(:annotation) { create(:legislation_annotation, draft_version: draft_version) }
 
-  it "is valid" do
-    expect(draft_version).to be_valid
-    expect(annotation).to be_valid
-  end
-
   it "calculates the context for multinode annotations" do
     quote = "ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam"\
             " erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex"\

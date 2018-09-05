@@ -3,10 +3,6 @@ require 'rails_helper'
 RSpec.describe Legislation::Answer, type: :model do
   let(:legislation_answer) { build(:legislation_answer) }
 
-  it "is valid" do
-    expect(legislation_answer).to be_valid
-  end
-
   it "counts answers" do
     question = create(:legislation_question)
     option_1 = create(:legislation_question_option, question: question, value: 'Yes')

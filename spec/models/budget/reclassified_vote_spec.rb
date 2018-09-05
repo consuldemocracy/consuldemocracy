@@ -5,10 +5,6 @@ describe Budget::ReclassifiedVote do
   describe "Validations" do
     let(:reclassified_vote) { build(:budget_reclassified_vote) }
 
-    it "is valid" do
-      expect(reclassified_vote).to be_valid
-    end
-
     it "is not valid without a user" do
       reclassified_vote.user_id = nil
       expect(reclassified_vote).not_to be_valid

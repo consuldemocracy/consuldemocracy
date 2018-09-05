@@ -9,10 +9,6 @@ describe Debate do
     it_behaves_like "notifiable"
   end
 
-  it "is valid" do
-    expect(debate).to be_valid
-  end
-
   it "is not valid without an author" do
     debate.author = nil
     expect(debate).not_to be_valid

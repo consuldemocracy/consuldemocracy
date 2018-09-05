@@ -7,10 +7,6 @@ shared_examples "document validations" do |documentable_factory|
   let!(:maxfilesize)            { max_file_size(document.documentable.class) }
   let!(:acceptedcontenttypes)   { accepted_content_types(document.documentable.class) }
 
-  it "is valid" do
-    expect(document).to be_valid
-  end
-
   it "is not valid without a title" do
     document.title = nil
 

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Verification::Residence do
 
-  let(:residence) { build(:verification_residence, document_number: "12345678Z") }
+  let(:residence) { build(:verification_residence) }
 
   describe "verification" do
 

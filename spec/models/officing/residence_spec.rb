@@ -3,13 +3,9 @@ require 'rails_helper'
 describe Officing::Residence do
 
   let!(:geozone)  { create(:geozone, census_code: "01") }
-  let(:residence) { build(:officing_residence, document_number: "12345678Z") }
+  let(:residence) { build(:officing_residence) }
 
   describe "validations" do
-
-    it "is valid" do
-      expect(residence).to be_valid
-    end
 
     it "is not valid without a document number" do
       residence.document_number = nil
@@ -77,9 +73,7 @@ describe Officing::Residence do
                     gender: 'female',
                     geozone: geozone)
 
-      residence = build(:officing_residence,
-                        document_number: "12345678Z",
-                        document_type: "1")
+      residence = build(:officing_residence, document_type: "1")
 
       residence.save
       user = residence.user
@@ -96,7 +90,7 @@ describe Officing::Residence do
     it "makes half-verified users fully verified" do
       user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
       expect(user).to be_unverified
-      residence = build(:officing_residence, document_number: "12345678Z", year_of_birth: 1980)
+      residence = build(:officing_residence, year_of_birth: 1980)
       expect(residence).to be_valid
       expect(user.reload).to be_unverified
       residence.save
@@ -104,7 +98,7 @@ describe Officing::Residence do
     end
 
     it "stores failed census calls" do
-      residence = build(:officing_residence, :invalid, document_number: "12345678Z")
+      residence = build(:officing_residence, :invalid)
       residence.save
 
       expect(FailedCensusCall.count).to eq(1)
