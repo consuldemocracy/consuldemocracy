@@ -346,6 +346,15 @@ es:
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
         title: Actividad del usuario (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
+        title: Proyectos de gasto ocultos
+        no_hidden_budget_investments: No hay proyectos de gasto ocultos
     legislation:
       processes:
         create:
@@ -408,6 +417,7 @@ es:
         form:
           custom_categories: Categorías
           custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta.
+          custom_categories_placeholder: Escribe las etiquetas que desees separadas por una coma (,) y entrecomilladas ("")
       draft_versions:
         create:
           notice: 'Borrador creado correctamente. <a href="%{link}">Haz click para verlo</a>'
@@ -472,7 +482,7 @@ es:
           form:
             error: Error
         form:
-          add_option: +Añadir respuesta cerrada
+          add_option: Añadir respuesta cerrada
           title: Pregunta
           title_placeholder: Escribe un título a la pregunta
           value_placeholder: Escribe una respuesta cerrada
@@ -515,6 +525,7 @@ es:
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
+      hidden_budget_investments: Proyectos de gasto ocultos
       hidden_proposal_notifications: Notificationes de propuesta ocultas
       hidden_users: Usuarios bloqueados
       administrators: Administradores
@@ -542,6 +553,19 @@ es:
         pages: Personalizar páginas
         images: Personalizar imágenes
         content_blocks: Personalizar bloques
+        information_texts: Personalizar textos
+        information_texts_menu:
+          debates: "Debates"
+          community: "Comunidad"
+          proposals: "Propuestas"
+          polls: "Votaciones"
+          layouts: "Plantillas"
+          mailers: "Correos"
+          management: "Gestión"
+          guides: "Guías"
+          welcome: "Bienvenido/a"
+        buttons:
+          save: "Guardar cambios"
       title_moderated_content: Contenido moderado
       title_budgets: Presupuestos
       title_polls: Votaciones
@@ -641,7 +665,7 @@ es:
         section_title: Editar notificación
       show:
         section_title: Vista previa de notificación
-        send: Enviar
+        send: Enviar notificación
         will_get_notified: (%{n} usuarios serán notificados)
         got_notified: (%{n} usuarios fueron notificados)
         sent_at: Enviado
@@ -1033,6 +1057,12 @@ es:
             update: La configuración del mapa se ha guardado correctamente.
           form:
             submit: Actualizar
+      setting: Funcionalidad
+      setting_actions: Acciones
+      setting_name: Configuración
+      setting_status: Estado
+      setting_value: Valor
+      no_description: Sin descripción
     shared:
       booths_search:
         button: Buscar

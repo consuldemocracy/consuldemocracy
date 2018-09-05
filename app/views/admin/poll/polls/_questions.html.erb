@@ -2,13 +2,13 @@
 
 <% if @poll.questions.empty? %>
   <div class="callout primary margin-top">
-    <%= t('admin.polls.show.no_questions') %>
+    <%= t("admin.polls.show.no_questions") %>
   </div>
 <% else %>
   <table class="fixed margin">
     <thead>
       <tr>
-        <th><%= t('admin.polls.show.table_title') %></th>
+        <th><%= t("admin.polls.show.table_title") %></th>
       </tr>
     </thead>
     <% @poll.questions.each do |question| %>

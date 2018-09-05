@@ -345,6 +345,15 @@ en:
         hidden_at: 'Hidden at:'
         registered_at: 'Registered at:'
         title: Activity of user (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden budgets investments
+        no_hidden_budget_investments: There are no hidden budget investments
     legislation:
       processes:
         create:
@@ -407,6 +416,7 @@ en:
         form:
           custom_categories: Categories
           custom_categories_description: Categories that users can select creating the proposal.
+          custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
       draft_versions:
         create:
           notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'
@@ -514,6 +524,7 @@ en:
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
+      hidden_budget_investments: Hidden budget investments
       hidden_proposal_notifications: Hidden proposal notifications
       hidden_users: Hidden users
       administrators: Administrators
@@ -538,9 +549,22 @@ en:
       signature_sheets: Signature Sheets
       site_customization:
         homepage: Homepage
-        pages: Custom Pages
-        images: Custom Images
+        pages: Custom pages
+        images: Custom images
         content_blocks: Custom content blocks
+        information_texts: Custom information texts
+        information_texts_menu:
+          debates: "Debates"
+          community: "Community"
+          proposals: "Proposals"
+          polls: "Polls"
+          layouts: "Layouts"
+          mailers: "Emails"
+          management: "Management"
+          guides: "Guides"
+          welcome: "Welcome"
+        buttons:
+          save: "Save"
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
@@ -640,7 +664,7 @@ en:
         section_title: Edit notification
       show:
         section_title: Notification preview
-        send: Send
+        send: Send notification
         will_get_notified: (%{n} users will be notified)
         got_notified: (%{n} users got notified)
         sent_at: Sent at
@@ -1032,6 +1056,12 @@ en:
             update: Map configuration updated succesfully.
           form:
             submit: Update
+      setting: Feature
+      setting_actions: Actions
+      setting_name: Setting
+      setting_status: Status
+      setting_value: Value
+      no_description: "No description"
     shared:
       booths_search:
         button: Search
