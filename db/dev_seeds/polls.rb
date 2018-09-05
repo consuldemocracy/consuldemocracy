@@ -29,7 +29,7 @@ section "Creating polls" do
               results_enabled: true,
               stats_enabled: true)
 
-  Poll.find_each do |poll|
+  Poll.all.each do |poll|
     name = poll.name
     I18n.available_locales.map do |locale|
       neutral_locale = locale.to_s.downcase.underscore.to_sym
