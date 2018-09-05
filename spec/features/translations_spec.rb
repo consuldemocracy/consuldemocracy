@@ -253,6 +253,29 @@ feature "Translations" do
         @edit_question_url = edit_admin_question_path(question)
       end
 
+      context "Poll select box" do
+
+        scenario "translates the poll name in options", :js do
+          visit @edit_question_url
+
+          expect(page).to have_select('poll_question_poll_id', options: [poll.name_en])
+
+          select('Español', from: 'locale-switcher')
+
+          expect(page).to have_select('poll_question_poll_id', options: [poll.name_es])
+        end
+
+        scenario "uses fallback if name is not translated to current locale", :js do
+          visit @edit_question_url
+
+          expect(page).to have_select('poll_question_poll_id', options: [poll.name_en])
+
+          select('Français', from: 'locale-switcher')
+
+          expect(page).to have_select('poll_question_poll_id', options: [poll.name_es])
+        end
+      end
+
       scenario "Add a translation", :js do
         visit @edit_question_url
 
