@@ -33,7 +33,7 @@ feature 'Commenting Probe Options' do
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
 
-    expect(page).to have_link "Go back to #{probe_option.name}", href: probe_probe_option_path(probe_id: probe.codename, id: probe_option.id)
+    expect(page).to have_link "Go back to #{probe_option.name}", href: probe_probe_option_path(probe.codename, probe_option)
   end
 
   scenario 'Collapsable comments', :js do

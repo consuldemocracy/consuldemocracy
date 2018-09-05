@@ -9,6 +9,11 @@ feature 'Admin budget investment milestones' do
     @investment = create(:budget_investment)
   end
 
+  it_behaves_like "translatable",
+                  "budget_investment_milestone",
+                  "edit_admin_budget_budget_investment_budget_investment_milestone_path",
+                  %w[description]
+
   context "Index" do
     scenario 'Displaying milestones' do
       milestone = create(:budget_investment_milestone, investment: @investment)
