@@ -181,19 +181,19 @@
   <div class="small-12 medium-9 column">
     <%= f.label :summary %>
     <span class="help-text"><%= t("admin.legislation.processes.form.use_markdown") %></span>
-    <%= f.translatable_text_field :summary,
-                                  rows: 2,
-                                  placeholder: t("admin.legislation.processes.form.summary_placeholder"),
-                                  label: false %>
+    <%= f.translatable_text_area :summary,
+                                 rows: 2,
+                                 placeholder: t("admin.legislation.processes.form.summary_placeholder"),
+                                 label: false %>
   </div>
 
   <div class="small-12 medium-9 column">
     <%= f.label :description %>
     <span class="help-text"><%= t("admin.legislation.processes.form.use_markdown") %></span>
-    <%= f.translatable_text_field :description,
-                                  rows: 5,
-                                  placeholder: t("admin.legislation.processes.form.description_placeholder"),
-                                  label: false %>
+    <%= f.translatable_text_area :description,
+                                 rows: 5,
+                                 placeholder: t("admin.legislation.processes.form.description_placeholder"),
+                                 label: false %>
   </div>
 
   <div class="small-12 medium-9 column">
