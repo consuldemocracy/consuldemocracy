@@ -1,4 +1,5 @@
 class Admin::AdminNotificationsController < Admin::BaseController
+  include Translatable
 
   def index
     @admin_notifications = AdminNotification.all
@@ -62,6 +63,13 @@ class Admin::AdminNotificationsController < Admin::BaseController
   private
 
     def admin_notification_params
-      params.require(:admin_notification).permit(:title, :body, :link, :segment_recipient)
+      attributes = [:title, :body, :link, :segment_recipient,
+                    *translation_params(AdminNotification)]
+
+      params.require(:admin_notification).permit(attributes)
+    end
+
+    def resource
+      AdminNotification.find(params[:id])
     end
 end

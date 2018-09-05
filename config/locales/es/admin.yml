@@ -687,9 +687,10 @@ es:
         empty_notifications: No hay notificaciones para mostrar
       new:
         section_title: Nueva notificación
-        submit: Crear notificación
+        submit_button: Crear notificación
       edit:
         section_title: Editar notificación
+        submit_button: Actualizar notificación
       show:
         section_title: Vista previa de notificación
         send: Enviar notificación

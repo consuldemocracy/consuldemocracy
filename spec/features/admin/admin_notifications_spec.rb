@@ -8,6 +8,11 @@ feature "Admin Notifications" do
     create(:budget)
   end
 
+  it_behaves_like "translatable",
+                  "admin_notification",
+                  "edit_admin_admin_notification_path",
+                  %w[title body]
+
   context "Show" do
     scenario "Valid Admin Notification" do
       notification = create(:admin_notification, title: 'Notification title',
@@ -99,7 +104,7 @@ feature "Admin Notifications" do
                                       body: 'Other body',
                                       link: '')
 
-      click_button "Create notification"
+      click_button "Update notification"
 
       expect(page).to have_content "Notification updated successfully"
       expect(page).to have_content "All users"
@@ -180,8 +185,8 @@ feature "Admin Notifications" do
     notification = create(:admin_notification)
     visit edit_admin_admin_notification_path(notification)
 
-    fill_in :admin_notification_title, with: ''
-    click_button "Create notification"
+    fill_in :admin_notification_title_en, with: ''
+    click_button "Update notification"
 
     expect(page).to have_content error_message
   end
