@@ -76,8 +76,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     end
 
     def resource
-      @poll = Poll.find(params[:id]) unless @poll
-      @poll
+      @poll ||= Poll.find(params[:id])
     end
 
     def resource_model
