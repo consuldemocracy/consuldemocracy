@@ -12,9 +12,7 @@
 
   <div class="small-12">
     <div class="small-12 medium-6 large-4">
-      <% select_options = Poll.joins(:translations)
-                              .where('poll_translations.locale = ?', Globalize.locale)
-                              .pluck("poll_translations.name", :id) %>
+      <% select_options = Poll.all.map { |p| [p.name, p.id] } %>
       <%= f.select :poll_id,
                     options_for_select(select_options),
                     prompt: t("admin.questions.index.select_poll"),
