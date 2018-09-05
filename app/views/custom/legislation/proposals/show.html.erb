@@ -105,7 +105,7 @@
            By only allowing voting in the index of Proposals,
            hopefully citizens will see other interesting proposals
            to vote for -->
-      <% unless @process.id == 24 %>
+      <% unless @process.title == "PLENO ABIERTO" %>
         <aside class="small-12 medium-3 column">
           <div class="sidebar-divider"></div>
           <h2><%= t("votes.supports") %></h2>
