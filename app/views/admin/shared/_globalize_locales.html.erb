@@ -1,9 +1,9 @@
 <% I18n.available_locales.each do |locale| %>
   <%= link_to t("admin.translations.remove_language"), "#",
-              id: "delete-#{neutral_locale(locale)}",
+              id: "delete-#{locale}",
               style: show_delete?(locale),
               class: 'float-right delete js-delete-language',
-              data: { locale: neutral_locale(locale) } %>
+              data: { locale: locale } %>
 
 <% end %>
 
@@ -13,7 +13,7 @@
       <%= link_to name_for_locale(locale), "#",
                   style: css_to_display_translation?(resource, locale),
                   class: "js-globalize-locale-link #{highlight_current?(locale)}",
-                  data: { locale: neutral_locale(locale) },
+                  data: { locale: locale },
                   remote: true %>
     </li>
   <% end %>
