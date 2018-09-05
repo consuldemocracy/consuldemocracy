@@ -29,7 +29,7 @@ section "Creating polls" do
               results_enabled: true,
               stats_enabled: true)
 
-  Poll.all.each do |poll|
+  Poll.find_each do |poll|
     name = poll.name
     I18n.available_locales.map do |locale|
       neutral_locale = locale.to_s.downcase.underscore.to_sym
@@ -45,7 +45,7 @@ section "Creating polls" do
 end
 
 section "Creating Poll Questions & Answers" do
-  Poll.all.each do |poll|
+  Poll.find_each do |poll|
     (1..4).to_a.sample.times do
       title = Faker::Lorem.sentence(3).truncate(60) + '?'
       question = Poll::Question.new(author: User.all.sample,
@@ -85,10 +85,10 @@ section "Creating Poll Booths & BoothAssignments" do
 end
 
 section "Creating Poll Shifts for Poll Officers" do
-  Poll.all.each do |poll|
+  Poll.find_each do |poll|
     Poll::BoothAssignment.where(poll: poll).each do |booth_assignment|
       scrutiny = (poll.ends_at.to_datetime..poll.ends_at.to_datetime + Poll::RECOUNT_DURATION)
-      Poll::Officer.all.each do |poll_officer|
+      Poll::Officer.find_each do |poll_officer|
         {
           vote_collection: (poll.starts_at.to_datetime..poll.ends_at.to_datetime),
           recount_scrutiny: scrutiny
@@ -160,7 +160,7 @@ section "Creating Poll Voters" do
 end
 
 section "Creating Poll Recounts" do
-  Poll.all.each do |poll|
+  Poll.find_each do |poll|
     poll.booth_assignments.each do |booth_assignment|
       officer_assignment = poll.officer_assignments.first
       author = Poll::Officer.first.user
@@ -178,7 +178,7 @@ section "Creating Poll Recounts" do
 end
 
 section "Creating Poll Results" do
-  Poll.all.each do |poll|
+  Poll.find_each do |poll|
     poll.booth_assignments.each do |booth_assignment|
       officer_assignment = poll.officer_assignments.first
       author = Poll::Officer.first.user
