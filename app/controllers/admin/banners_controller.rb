@@ -41,8 +41,9 @@ class Admin::BannersController < Admin::BaseController
       attributes = [:title, :description, :target_url,
                     :post_started_at, :post_ended_at,
                     :background_color, :font_color,
+                    *translation_params(Banner),
                     web_section_ids: []]
-      params.require(:banner).permit(*attributes, *translation_params(params[:banner]))
+      params.require(:banner).permit(*attributes)
     end
 
     def banner_styles
@@ -64,9 +65,5 @@ class Admin::BannersController < Admin::BaseController
     def resource
       @banner = Banner.find(params[:id]) unless @banner
       @banner
-    end
-
-    def resource_model
-      Banner
     end
 end

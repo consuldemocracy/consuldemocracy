@@ -14,8 +14,24 @@ module GlobalizeHelper
     same_locale?(neutral_locale(I18n.locale), neutral_locale(locale)) ? "" : "display: none"
   end
 
+  def render_translations_to_delete(resource)
+    capture do
+      resource.globalize_locales.each do |locale|
+        concat translation_enabled_tag(locale, enable_locale?(resource, locale))
+      end
+    end
+  end
+
+  def translation_enabled_tag(locale, enabled)
+    hidden_field_tag("enabled_translations[#{locale}]", (enabled ? 1 : 0))
+  end
+
   def css_to_display_translation?(resource, locale)
-    resource.translated_locales.include?(neutral_locale(locale)) || locale == I18n.locale ? "" : "display: none"
+    enable_locale?(resource, locale) ? "" : "display: none"
+  end
+
+  def enable_locale?(resource, locale)
+    resource.translated_locales.include?(neutral_locale(locale)) || locale == I18n.locale
   end
 
   def highlight_current?(locale)
