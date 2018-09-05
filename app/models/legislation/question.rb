@@ -3,7 +3,7 @@ class Legislation::Question < ActiveRecord::Base
   include ActsAsParanoidAliases
   include Notifiable
 
-  translates :title, touch: :true
+  translates :title, touch: true
   globalize_accessors
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'

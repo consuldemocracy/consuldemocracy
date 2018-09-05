@@ -1,8 +1,8 @@
 class AdminNotification < ActiveRecord::Base
   include Notifiable
 
-  translates :title, touch: :true
-  translates :body,  touch: :true
+  translates :title, touch: true
+  translates :body,  touch: true
   globalize_accessors
 
   validates :title, presence: true

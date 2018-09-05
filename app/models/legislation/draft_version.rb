@@ -7,7 +7,7 @@ class Legislation::DraftVersion < ActiveRecord::Base
   translates :title,     touch: true
   translates :changelog, touch: true
   translates :body,      touch: true
-  translates :body_html,  touch: true
+  translates :body_html, touch: true
   translates :toc_html,  touch: true
   globalize_accessors
 
