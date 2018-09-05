@@ -26,8 +26,10 @@ class Legislation::DraftVersion < ActiveRecord::Base
     renderer = Redcarpet::Render::HTML.new(with_toc_data: true)
     toc_renderer = Redcarpet::Render::HTML_TOC.new(with_toc_data: true)
 
-    self.body_html = Redcarpet::Markdown.new(renderer).render(body)
-    self.toc_html = Redcarpet::Markdown.new(toc_renderer).render(body)
+    if body_changed?
+      self.body_html = Redcarpet::Markdown.new(renderer).render(body)
+      self.toc_html = Redcarpet::Markdown.new(toc_renderer).render(body)
+    end
 
     translations.each do |translation|
       if translation.body_changed?
