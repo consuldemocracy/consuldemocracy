@@ -130,5 +130,16 @@ feature 'Admin legislation processes' do
 
       expect(page).not_to have_content 'Draft publication'
     end
+
+    scenario "Change proposal categories" do
+      visit edit_admin_legislation_process_path(process)
+      within(".admin-content") { click_link "Proposals" }
+
+      fill_in "Categories", with: "recycling,bicycles"
+      click_button "Save changes"
+
+      visit admin_legislation_process_proposals_path(process)
+      expect(page).to have_field("Categories", with: "bicycles, recycling")
+    end
   end
 end
