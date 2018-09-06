@@ -2,11 +2,6 @@ require 'rails_helper'
 
 feature 'Admin legislation draft versions' do
 
-  it_behaves_like "translatable",
-                  "legislation_draft_version",
-                  "edit_admin_legislation_process_draft_version_path",
-                  %w[title changelog]
-
   background do
     admin = create(:administrator)
     login_as(admin.user)
