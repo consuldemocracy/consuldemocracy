@@ -302,7 +302,6 @@ ActiveRecord::Schema.define(version: 20180813141443) do
     t.string   "type",              limit: 30
     t.integer  "width"
     t.integer  "height"
-    t.integer  "user_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end

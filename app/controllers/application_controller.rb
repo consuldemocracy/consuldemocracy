@@ -27,15 +27,7 @@ class ApplicationController < ActionController::Base
   respond_to :html
   helper_method :current_budget
 
-  before_action :set_user_for_ckeditor_pictures
-
   private
-
-    def set_user_for_ckeditor_pictures
-      if request.path == '/ckeditor/pictures' && request.request_method == 'POST'
-        params['user_id'] = current_user.id
-      end
-    end
 
     def authenticate_http_basic
       authenticate_or_request_with_http_basic do |username, password|

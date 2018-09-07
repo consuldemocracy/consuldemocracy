@@ -10,8 +10,6 @@ class CreateCkeditorAssets < ActiveRecord::Migration
       t.integer :width
       t.integer :height
 
-      t.integer :user_id
-
       t.timestamps null: false
     end
 
