@@ -382,6 +382,10 @@ class User < ActiveRecord::Base
     where(conditions.to_hash).where(["username = ?", login]).first
   end
 
+  def self.find_by_manager_login(manager_login)
+    find_by(id: manager_login.split("_").last)
+  end
+
   def interests
     followables = follows.map(&:followable)
     followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
