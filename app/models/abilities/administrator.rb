@@ -89,6 +89,9 @@ module Abilities
       can :manage, SiteCustomization::Image
       can :manage, SiteCustomization::ContentBlock
 
+      can :access, :ckeditor
+      can :manage, Ckeditor::Picture
+
       can [:manage], ::Legislation::Process
       can [:manage], ::Legislation::DraftVersion
       can [:manage], ::Legislation::Question
