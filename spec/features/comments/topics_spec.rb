@@ -2,14 +2,13 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting topics from proposals' do
-  let(:user) { create :user }
+  let(:user)     { create :user }
   let(:proposal) { create :proposal }
 
-  scenario 'Index', :js do
-
+  scenario 'Index' do
     community = proposal.community
     topic = create(:topic, community: community)
-    3.times { create(:comment, commentable: topic) }
+    create_list(:comment, 3, commentable: topic)
 
     visit community_topic_path(community, topic)
 
@@ -23,7 +22,7 @@ feature 'Commenting topics from proposals' do
     end
   end
 
-  scenario 'Show', :js do
+  scenario 'Show' do
     community = proposal.community
     topic = create(:topic, community: community)
     parent_comment = create(:comment, commentable: topic)
@@ -559,14 +558,13 @@ feature 'Commenting topics from proposals' do
 end
 
 feature 'Commenting topics from budget investments' do
-  let(:user) { create :user }
+  let(:user)       { create :user }
   let(:investment) { create :budget_investment }
 
-  scenario 'Index', :js do
-
+  scenario 'Index' do
     community = investment.community
     topic = create(:topic, community: community)
-    3.times { create(:comment, commentable: topic) }
+    create_list(:comment, 3, commentable: topic)
 
     visit community_topic_path(community, topic)
 
@@ -580,7 +578,7 @@ feature 'Commenting topics from budget investments' do
     end
   end
 
-  scenario 'Show', :js do
+  scenario 'Show' do
     community = investment.community
     topic = create(:topic, community: community)
     parent_comment = create(:comment, commentable: topic)

@@ -563,8 +563,8 @@ feature 'Admin budget investments' do
 
       click_link 'Advanced filters'
 
-      page.check('advanced_filters_feasible')
-      click_button "Filter"
+      within('#advanced_filters') { check('advanced_filters_feasible') }
+      click_button('Filter')
 
       expect(page).to have_css(".budget_investment", count: 2)
       expect(page).to have_content("Educate the children")
@@ -582,7 +582,6 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content("More hostals")
 
       expect(page).to have_content('Selected')
-
     end
 
     scenario "See results button appears when budget status is finished" do
@@ -1067,8 +1066,9 @@ feature 'Admin budget investments' do
       expect(page).to have_content(winner_bi.title)
 
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#advanced_filters_feasible").set(true) }
-      click_button 'Filter'
+
+      within('#advanced_filters') { check('advanced_filters_feasible') }
+      click_button('Filter')
 
       expect(page).not_to have_content(unfeasible_bi.title)
       expect(page).not_to have_content(feasible_bi.title)
@@ -1076,9 +1076,12 @@ feature 'Admin budget investments' do
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
-      within('#advanced_filters') { find(:css, "#advanced_filters_selected").set(true) }
-      within('#advanced_filters') { find(:css, "#advanced_filters_feasible").set(false) }
-      click_button 'Filter'
+      within('#advanced_filters') do
+        check('advanced_filters_selected')
+        uncheck('advanced_filters_feasible')
+      end
+
+      click_button('Filter')
 
       expect(page).not_to have_content(unfeasible_bi.title)
       expect(page).not_to have_content(feasible_bi.title)
@@ -1098,8 +1101,9 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(budget)
 
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#advanced_filters_undecided").set(true) }
-      click_button 'Filter'
+
+      within('#advanced_filters') { check('advanced_filters_undecided') }
+      click_button('Filter')
 
       expect(page).to have_content(undecided_bi.title)
       expect(page).not_to have_content(winner_bi.title)
@@ -1108,8 +1112,8 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content(unfeasible_bi.title)
       expect(page).not_to have_content(feasible_vf_bi.title)
 
-      within('#advanced_filters') { find(:css, "#advanced_filters_unfeasible").set(true) }
-      click_button 'Filter'
+      within('#advanced_filters') { check('advanced_filters_unfeasible') }
+      click_button('Filter')
 
       expect(page).to have_content(undecided_bi.title)
       expect(page).to have_content(unfeasible_bi.title)
@@ -1152,8 +1156,9 @@ feature 'Admin budget investments' do
       end
 
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#advanced_filters_selected").set(true) }
-      click_button 'Filter'
+
+      within('#advanced_filters') { check('advanced_filters_selected') }
+      click_button('Filter')
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
         expect(page).not_to have_link('Select')
@@ -1165,9 +1170,8 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(budget)
       click_link 'Advanced filters'
 
-      within('#advanced_filters') { find(:css, "#advanced_filters_selected").set(true) }
-
-      click_button 'Filter'
+      within('#advanced_filters') { check('advanced_filters_selected') }
+      click_button('Filter')
 
       expect(page).to have_content('There are 2 investments')
 
