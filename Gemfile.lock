@@ -396,7 +396,7 @@ GEM
     rubocop-rspec (1.24.0)
       rubocop (>= 0.53.0)
     ruby-progressbar (1.9.0)
-    rubyzip (1.2.1)
+    rubyzip (1.2.2)
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
       sshkit (>= 1.2)
