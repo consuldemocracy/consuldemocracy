@@ -512,7 +512,7 @@ DEPENDENCIES
   capybara (~> 2.17.0)
   ckeditor (~> 4.2.3)
   cocoon (~> 1.2.9)
-  coffee-rails (~> 4.2.1)
+  coffee-rails (~> 4.2.2)
   coveralls (~> 0.8.21)
   daemons (~> 1.2.4)
   dalli (~> 2.7.6)
