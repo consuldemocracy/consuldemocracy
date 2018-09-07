@@ -3,8 +3,6 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-
-      can :read, Ckeditor::Picture
       can [:read, :map], Debate
       can [:read, :map, :summary, :share], Proposal
       can :read, Comment
