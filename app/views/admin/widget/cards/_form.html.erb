@@ -19,6 +19,8 @@
 
   <div class="image-form">
     <div class="image small-12 column">
+      <%= f.check_box :is_background_image %>
+
       <%= render 'images/nested_image', imageable: @card, f: f %>
     </div>
   </div>

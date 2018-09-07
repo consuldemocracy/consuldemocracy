@@ -10,7 +10,7 @@
         </div>
       </div>
 
-      <% if header.image.present? %>
+      <% if header.image.present? && !header.is_background_image %>
         <div class="small-12 medium-6 column">
           <%= image_tag(header.image_url(:large),
                         class: "margin",
@@ -19,5 +19,10 @@
       <% end %>
     </div>
   </div>
-  <div class="background-header"></div>
+  <div class="background-header">
+    <% if header.image.present? && header.is_background_image %>
+      <%= image_tag(header.image_url(:large), class: "margin",
+                                    alt: header.image.title)  %>
+    <% end %>
+  </div>
 <% end %>
