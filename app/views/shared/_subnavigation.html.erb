@@ -15,7 +15,7 @@
       <li>
         <%= layout_menu_link_to t("layouts.header.proposals"),
                                 proposals_path,
-                                controller_name == 'proposals',
+                                controller.class == ProposalsController,
                                 accesskey: "2",
                                 title: t("shared.go_to_page") + t("layouts.header.proposals") %>
       </li>
