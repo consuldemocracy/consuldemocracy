@@ -8,7 +8,7 @@ describe UserSegments do
   describe "#all_users" do
     it "returns all active users enabled" do
       active_user = create(:user)
-      erased_user  = create(:user, erased_at: Time.current)
+      erased_user = create(:user, erased_at: Time.current)
 
       expect(described_class.all_users).to include active_user
       expect(described_class.all_users).not_to include erased_user
@@ -203,6 +203,12 @@ describe UserSegments do
     it "returns only users with specific emails" do
       expect(described_class.beta_testers.count).to eq(5)
       expect(described_class.beta_testers.pluck(:email)).to match_array(beta_testers)
+    end
+
+    it "returns users sorted by `created_at` attribute" do
+      users   = described_class.beta_testers.pluck(:email)
+      testers = User.order('created_at ASC').pluck(:email).last(5)
+      expect(users).to eq(testers)
     end
   end
 
