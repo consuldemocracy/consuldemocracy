@@ -5,8 +5,10 @@ class Admin::ProposalNotificationsController < Admin::BaseController
   before_action :load_proposal, only: [:confirm_hide, :restore]
 
   def index
-    @proposal_notifications = ProposalNotification.only_hidden.send(@current_filter).order(hidden_at: :desc)
-                         .page(params[:page])
+    @proposal_notifications = ProposalNotification.only_hidden
+                                                  .send(@current_filter)
+                                                  .order(hidden_at: :desc)
+                                                  .page(params[:page])
   end
 
   def confirm_hide
