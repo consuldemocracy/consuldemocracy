@@ -2,10 +2,6 @@
 
 <%= render 'legislation/processes/header', process: @process, header: :full %>
 
-<%= render 'custom_documents' %>
-
-<%= render 'custom_results' %>
-
 <%= render 'key_dates', process: @process, phase: :proposals %>
 
 <div class="row">
@@ -13,28 +9,19 @@
     <div class="row">
       <div class="small-12 medium-9 column">
         <div class="legislation-proposals">
-          <% if @proposals.empty? %>
+          <% if @process.proposals.empty? %>
             <div class="callout primary">
               <p><%= t('.empty_proposals') %></p>
             </div>
           <% else %>
-            <%= render @proposals %>
-            <%= paginate @proposals %>
+            <%= render @process.proposals %>
           <% end %>
         </div>
       </div>
 
       <div class="small-12 medium-3 column">
         <% if @process.proposals_phase.open? %>
-          <% if @process.id == 24 %>
-            <p><%= link_to t("proposals.index.start_proposal_question"),
-                            (user_signed_in? ? new_legislation_process_proposal_path(@process) : new_user_session_path),
-                            class: 'button expanded', id: 'create-new-proposal' %></p>
-          <% else %>
-            <p><%= link_to t("proposals.index.start_proposal"),
-                            (user_signed_in? ? new_legislation_process_proposal_path(@process) : new_user_session_path),
-                            class: 'button expanded', id: 'create-new-proposal' %></p>
-          <% end %>
+          <p><%= link_to t("proposals.index.start_proposal"), new_legislation_process_proposal_path(@process), class: 'button expanded' %></p>
         <% end %>
         <%= render 'legislation/proposals/categories', taggable: @process %>
       </div>
