@@ -175,7 +175,7 @@
     </div>
 
     <map name="map_survey" id="html_map_survey">
-      <% Geozone.all.each do |geozone| %>
+      <% Geozone.find_each do |geozone| %>
         <area shape="poly"
               coords="<%= geozone.html_map_coordinates %>"
               href="#<%= geozone.name.parameterize %>-survey"

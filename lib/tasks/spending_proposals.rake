@@ -3,7 +3,7 @@ namespace :spending_proposals do
   task migrate_to_budgets: :environment do
     puts "We have #{SpendingProposal.count} spending proposals"
     puts "Migrating!!..."
-    SpendingProposal.all.each { |sp| MigrateSpendingProposalsToInvestments.new.import(sp) }
+    SpendingProposal.find_each { |sp| MigrateSpendingProposalsToInvestments.new.import(sp) }
     puts "And now we've got #{Budget.where(name: '2016').first.investments.count} budgets"
   end
 
