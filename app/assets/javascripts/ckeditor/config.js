@@ -14,6 +14,7 @@ CKEDITOR.editorConfig = function( config )
   config.filebrowserUploadUrl = "/ckeditor/attachment_files";
 
   config.allowedContent = true;
+  config.format_tags = "p;h2;h3";
 
   // Rails CSRF token
   config.filebrowserParams = function(){
