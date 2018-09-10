@@ -12,3 +12,5 @@ App.LegislationAdmin =
           else
             $(this).val("")
 
+    $("#nested-question-options").on "cocoon:after-insert", ->
+      App.Globalize.refresh_visible_translations()

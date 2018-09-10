@@ -1,4 +1,6 @@
-<%= form_for [:admin, @process, @draft_version], url: url, html: {data: {watch_changes: true}} do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @draft_version  %>
+
+<%= translatable_form_for [:admin, @process, @draft_version], url: url, html: {data: {watch_changes: true}} do |f| %>
 
   <% if @draft_version.errors.any? %>
     <div id="error_explanation" data-alert class="callout alert" data-closable>
@@ -14,14 +16,17 @@
   <% end %>
 
   <div class="small-12 medium-9 column">
-    <%= f.label :title %>
-    <%= f.text_field :title, label: false, placeholder: t("admin.legislation.draft_versions.form.title_placeholder") %>
+    <%= f.translatable_text_field :title,
+                                  placeholder: t("admin.legislation.draft_versions.form.title_placeholder") %>
   </div>
 
   <div class="small-12 medium-9 column">
     <%= f.label :changelog %>
     <span class="help-text"><%= t("admin.legislation.draft_versions.form.use_markdown") %></span>
-    <%= f.text_area :changelog, label: false, rows: 5, placeholder: t("admin.legislation.draft_versions.form.changelog_placeholder") %>
+    <%= f.translatable_text_area :changelog,
+                                 label: false,
+                                 rows: 5,
+                                 placeholder: t("admin.legislation.draft_versions.form.changelog_placeholder") %>
   </div>
 
   <div class="small-12 medium-9 column">
@@ -65,7 +70,9 @@
       <% end %>
     </div>
     <div class="small-12 medium-6 column markdown-area">
-      <%= f.text_area :body, label: false, placeholder: t("admin.legislation.draft_versions.form.body_placeholder") %>
+      <%= f.translatable_text_area :body,
+                                   label: false,
+                                   placeholder: t("admin.legislation.draft_versions.form.body_placeholder") %>
     </div>
 
     <div id="markdown-preview" class="small-12 medium-6 column markdown-preview">

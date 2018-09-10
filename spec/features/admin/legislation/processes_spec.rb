@@ -7,6 +7,11 @@ feature 'Admin legislation processes' do
     login_as(admin.user)
   end
 
+  it_behaves_like "translatable",
+                  "legislation_process",
+                  "edit_admin_legislation_process_path",
+                  %w[title summary description additional_info]
+
   context "Feature flag" do
 
     scenario 'Disabled with a feature flag' do
@@ -38,9 +43,9 @@ feature 'Admin legislation processes' do
 
       click_link "New process"
 
-      fill_in 'legislation_process_title', with: 'An example legislation process'
-      fill_in 'legislation_process_summary', with: 'Summary of the process'
-      fill_in 'legislation_process_description', with: 'Describing the process'
+      fill_in 'legislation_process_title_en', with: 'An example legislation process'
+      fill_in 'legislation_process_summary_en', with: 'Summary of the process'
+      fill_in 'legislation_process_description_en', with: 'Describing the process'
 
       base_date = Date.current
       fill_in 'legislation_process[start_date]', with: base_date.strftime("%d/%m/%Y")
@@ -93,7 +98,7 @@ feature 'Admin legislation processes' do
       expect(find("#legislation_process_debate_phase_enabled")).to be_checked
       expect(find("#legislation_process_published")).to be_checked
 
-      fill_in 'legislation_process_summary', with: ''
+      fill_in 'legislation_process_summary_en', with: ''
       click_button "Save changes"
 
       expect(page).to have_content "Process updated successfully"
@@ -124,6 +129,17 @@ feature 'Admin legislation processes' do
       click_link 'Click to visit'
 
       expect(page).not_to have_content 'Draft publication'
+    end
+
+    scenario "Change proposal categories" do
+      visit edit_admin_legislation_process_path(process)
+      within(".admin-content") { click_link "Proposals" }
+
+      fill_in "Categories", with: "recycling,bicycles"
+      click_button "Save changes"
+
+      visit admin_legislation_process_proposals_path(process)
+      expect(page).to have_field("Categories", with: "bicycles, recycling")
     end
   end
 end
