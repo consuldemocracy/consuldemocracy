@@ -324,6 +324,10 @@ FactoryBot.define do
     trait :drafting_budget do
       association :group, factory: [:budget_group, :drafting_budget]
     end
+
+    trait :city_heading do
+      name "Toda la ciudad"
+    end
   end
 
   factory :budget_investment, class: 'Budget::Investment' do

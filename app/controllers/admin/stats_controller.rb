@@ -73,7 +73,7 @@ class Admin::StatsController < Admin::BaseController
     @vote_count = votes.count
     @user_count = votes.select(:voter_id).distinct.count
 
-    @voters_in_city = voters_in_heading(city_heading(@budget)) rescue 0
+    @voters_in_city = voters_in_heading(@budget.city_heading) rescue 0
     @voters_in_district = voters_in_districts(@budget) rescue 0
 
     @voters_in_heading = {}
@@ -129,12 +129,8 @@ class Admin::StatsController < Admin::BaseController
   def voters_in_districts(budget)
     Vote.where(votable_type: 'Budget::Investment').
         includes(:budget_investment).
-        where(budget_investments: { heading_id: (budget.heading_ids - [city_heading(budget).id]) }).
+        where(budget_investments: { heading_id: (budget.heading_ids - [budget.city_heading.id]) }).
         select("votes.voter_id").distinct.count
-  end
-
-  def city_heading(budget)
-    budget.headings.where(name: "Toda la ciudad").first
   end
 
 end

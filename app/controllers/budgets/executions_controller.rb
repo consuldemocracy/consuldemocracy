@@ -33,9 +33,9 @@ module Budgets
 
       def reorder_alphabetically_with_city_heading_first
         @investments_by_heading.sort do |a, b|
-          if a[0].name == 'Toda la ciudad'
+          if a[0].city_heading?
             -1
-          elsif b[0].name == 'Toda la ciudad'
+          elsif b[0].city_heading?
             1
           else
             a[0].name <=> b[0].name
