@@ -58,6 +58,7 @@ es:
       section_footer:
         title: Ayuda sobre presupuestos participativos
         description: Con los presupuestos participativos la ciudadanía decide a qué proyectos va destinada una parte del presupuesto.
+      milestones: Seguimiento de proyectos
     investments:
       form:
         tag_category_label: "Categorías"
