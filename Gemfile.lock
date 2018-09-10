@@ -61,7 +61,7 @@ GEM
       activerecord (>= 3.2.0)
     arel (6.0.4)
     ast (2.4.0)
-    autoprefixer-rails (8.2.0)
+    autoprefixer-rails (9.1.4)
       execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -500,7 +500,7 @@ DEPENDENCIES
   acts_as_votable (~> 0.11.1)
   ahoy_matey (~> 1.6.0)
   ancestry (~> 3.0.1)
-  autoprefixer-rails (~> 8.2.0)
+  autoprefixer-rails (~> 9.1.4)
   browser (~> 2.5.2)
   bullet (~> 5.7.0)
   byebug (~> 10.0.0)
