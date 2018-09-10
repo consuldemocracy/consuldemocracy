@@ -71,6 +71,18 @@ feature "Translations" do
       expect(page).not_to have_link "Español"
     end
 
+    scenario 'Change value of a translated field to blank' do
+      visit @edit_milestone_url
+
+      fill_in 'budget_investment_milestone_description_en', with: ''
+
+      click_button "Update milestone"
+      expect(page).to have_content "Milestone updated successfully"
+
+      expect(page).to have_content "Milestone updated successfully"
+      expect(page).not_to have_content "Description in English"
+    end
+
     context "Globalize javascript interface" do
 
       scenario "Highlight current locale", :js do
