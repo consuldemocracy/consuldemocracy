@@ -41,12 +41,19 @@ feature 'Localization' do
     expect(page).to have_select('locale-switcher', selected: 'Español')
   end
 
-  scenario 'Locale switcher not present if only one locale' do
-    allow(I18n).to receive(:available_locales).and_return([:en])
+  context "Only one locale" do
+    before do
+      allow(I18n).to receive(:available_locales).and_return([:en])
+      I18n.reload!
+    end
 
-    visit '/'
-    expect(page).not_to have_content('Language')
-    expect(page).not_to have_css('div.locale')
+    after { I18n.reload! }
+
+    scenario "Locale switcher not present" do
+      visit '/'
+      expect(page).not_to have_content('Language')
+      expect(page).not_to have_css('div.locale')
+    end
   end
 
   context "Missing language names" do
