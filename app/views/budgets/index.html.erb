@@ -136,17 +136,20 @@
               <div class="budget-investment clear">
                 <div class="panel past-budgets">
                   <div class="row" data-equalizer data-equalizer-on="medium">
-                    <div class="small-12 medium-9 column table" data-equalizer-watch>
+                    <div class="small-12 medium-6 column table" data-equalizer-watch>
                       <div class="table-cell align-middle">
                         <h3><%= budget.name %></h3>
                       </div>
                     </div>
 
-                    <div class="small-12 medium-3 column table" data-equalizer-watch>
+                    <div class="small-12 medium-6 column table" data-equalizer-watch>
                       <div id="budget_<%= budget.id %>_results" class="table-cell align-middle">
                         <%= link_to t("budgets.index.see_results"),
                                     budget_results_path(budget.id),
-                                    class: "button expanded" %>
+                                    class: "button" %>
+                        <%= link_to t("budgets.index.milestones"),
+                                    budget_executions_path(budget.id),
+                                    class: "button" %>
                       </div>
                     </div>
                   </div>
