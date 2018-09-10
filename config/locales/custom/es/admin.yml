@@ -6,6 +6,9 @@ es:
       proposals:
         form:
           custom_categories_placeholder: Escribe las etiquetas que desees separadas por una coma (,) y entrecomilladas ("")
+      processes:
+        form:
+          film_library: Filmoteca
     segment_recipient:
       beta_testers: "Beta testers"
     budget_investments:
