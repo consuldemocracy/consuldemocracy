@@ -84,8 +84,8 @@ feature 'Admin banners magement' do
 
     click_link "Create banner"
 
-    fill_in 'banner_title', with: 'Such banner'
-    fill_in 'banner_description', with: 'many text wow link'
+    fill_in 'banner_title_en', with: 'Such banner'
+    fill_in 'banner_description_en', with: 'many text wow link'
     fill_in 'banner_target_url', with: 'https://www.url.com'
     last_week = Time.current - 7.days
     next_week = Time.current + 7.days
@@ -110,7 +110,7 @@ feature 'Admin banners magement' do
 
     fill_in 'banner_background_color', with: '#850000'
     fill_in 'banner_font_color', with: '#ffb2b2'
-    fill_in 'banner_title', with: 'Fun with flags'
+    fill_in 'banner_title_en', with: 'Fun with flags'
 
     # This last step simulates the blur event on the page. The color pickers and the text_fields
     # has onChange events that update each one when the other changes, but this is only fired when
@@ -141,8 +141,8 @@ feature 'Admin banners magement' do
 
     click_link "Edit banner"
 
-    fill_in 'banner_title', with: 'Modified title'
-    fill_in 'banner_description', with: 'Edited text'
+    fill_in 'banner_title_en', with: 'Modified title'
+    fill_in 'banner_description_en', with: 'Edited text'
 
     page.find("body").click
 
@@ -184,4 +184,122 @@ feature 'Admin banners magement' do
     expect(page).not_to have_content 'Ugly banner'
   end
 
+  context "Translations" do
+
+    let(:banner) { create(:banner, title_en: "Title in English",
+                                   title_es: "Título en Español",
+                                   target_url: 'http://url.com',
+                                   description_en: "Description in English",
+                                   description_es: "Descripción en Español") }
+
+    before do
+      @edit_banner_url = edit_admin_banner_path(banner)
+    end
+
+    scenario "Add a translation", :js do
+      visit @edit_banner_url
+
+      select "Français", from: "translation_locale"
+      fill_in 'banner_title_fr', with: 'Titre en Français'
+      fill_in 'banner_description_fr', with: 'Description en Français'
+
+      click_button 'Save changes'
+
+      visit @edit_banner_url
+      expect(page).to have_field('banner_description_en', with: 'Description in English')
+
+      click_link "Español"
+      expect(page).to have_field('banner_description_es', with: 'Descripción en Español')
+
+      click_link "Français"
+      expect(page).to have_field('banner_description_fr', with: 'Description en Français')
+    end
+
+    scenario "Update a translation", :js do
+      banner.update_attributes(target_url:  'http://www.url.com',
+                               post_started_at: (Time.current - 4.days),
+                               post_ended_at:   (Time.current + 10.days))
+
+      section = create(:web_section, name: 'debates')
+      create(:banner_section, web_section: section, banner_id: banner.id)
+
+      visit @edit_banner_url
+
+      click_link "Español"
+      fill_in 'banner_title_es', with: 'Título correcto en Español'
+
+      click_button 'Save changes'
+
+      visit debates_path
+
+      within('.banner') do
+        expect(page).to have_content("Description in English")
+      end
+
+      select('Español', from: 'locale-switcher')
+
+      within('.banner') do
+        expect(page).to have_content('Título correcto en Español')
+      end
+    end
+
+    scenario "Remove a translation", :js do
+
+      visit @edit_banner_url
+
+      click_link "Español"
+      click_link "Remove language"
+
+      expect(page).not_to have_link "Español"
+
+      click_button "Save changes"
+      visit @edit_banner_url
+      expect(page).not_to have_link "Español"
+    end
+
+    context "Globalize javascript interface" do
+
+      scenario "Highlight current locale", :js do
+        visit @edit_banner_url
+
+        expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
+
+        select('Español', from: 'locale-switcher')
+
+        expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
+      end
+
+      scenario "Highlight selected locale", :js do
+        visit @edit_banner_url
+
+        expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
+
+        click_link "Español"
+
+        expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
+      end
+
+      scenario "Show selected locale form", :js do
+        visit @edit_banner_url
+
+        expect(page).to have_field('banner_description_en', with: 'Description in English')
+
+        click_link "Español"
+
+        expect(page).to have_field('banner_description_es', with: 'Descripción en Español')
+      end
+
+      scenario "Select a locale and add it to the banner form", :js do
+        visit @edit_banner_url
+
+        select "Français", from: "translation_locale"
+
+        expect(page).to have_link "Français"
+
+        click_link "Français"
+
+        expect(page).to have_field('banner_description_fr')
+      end
+    end
+  end
 end

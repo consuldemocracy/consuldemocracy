@@ -1,6 +1,12 @@
+<%= render "admin/shared/globalize_locales", resource: @banner %>
+
 <%= form_for [:admin, @banner] do |f| %>
 
   <%= render 'errors' %>
+
+  <% @banner.globalize_locales.each do |locale| %>
+    <%= hidden_field_tag "delete_translations[#{locale}]", 0 %>
+  <% end %>
 
   <div class="row">
     <% date_started_at = @banner.post_started_at.present? ? I18n.localize(@banner.post_started_at) : "" %>
@@ -28,8 +34,18 @@
   <div class="row">
     <div class="small-12 medium-6 column">
       <%= f.label :title, t("admin.banners.banner.title") %>
-      <%= f.text_field :title, placeholder: t("admin.banners.banner.title"), label: false,
-                        data: {js_banner_title: "js_banner_title"} %>
+
+      <% @banner.globalize_locales.each do |locale| %>
+        <% globalize(locale) do %>
+          <%= f.text_field "title_#{locale}",
+                           placeholder: t("admin.banners.banner.title"),
+                           class: "js-globalize-attribute",
+                           data: {js_banner_title: "js_banner_title",
+                                  locale: locale},
+                           style: display_translation?(locale),
+                           label: false %>
+        <% end %>
+      <% end %>
     </div>
 
     <div class="small-12 medium-6 column">
@@ -43,10 +59,17 @@
   <div class="row">
     <div class="small-12 column">
       <%= f.label :description, t("admin.banners.banner.description") %>
-      <%= f.text_field :description,
-                        label: false,
-                        data: {js_banner_description: "js_banner_description"},
-                        placeholder: t("admin.banners.banner.description") %>
+      <% @banner.globalize_locales.each do |locale| %>
+        <% globalize(locale) do %>
+          <%= f.text_field "description_#{locale}",
+                           placeholder: t("admin.banners.banner.description"),
+                           class: "js-globalize-attribute",
+                           data: {js_banner_description: "js_banner_description",
+                                  locale: locale},
+                           style: display_translation?(locale),
+                           label: false %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 
