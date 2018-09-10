@@ -13,7 +13,7 @@ module Budgets
                       .joins(:milestones).includes(:milestones)
                       .select { |i| i.milestones.published.with_status
                                                 .order_by_publication_date.last
-                                                .status_id == params[:status].to_i }
+                                                .try(:status_id) == params[:status].to_i }
                       .uniq
                       .group_by(&:heading)
       else

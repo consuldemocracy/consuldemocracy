@@ -249,4 +249,18 @@ feature 'Executions' do
       expect(m_heading.name).to appear_before(z_heading.name)
     end
   end
+
+  context 'No milestones' do
+
+    scenario 'Milestone not yet published' do
+      status = create(:budget_investment_status)
+      unpublished_milestone = create(:budget_investment_milestone, investment: investment1,
+                                     status: status, publication_date: Date.tomorrow)
+
+      visit custom_budget_executions_path(budget, status: status.id)
+
+      expect(page).to have_content('No winner investments in this state')
+    end
+
+  end
 end
