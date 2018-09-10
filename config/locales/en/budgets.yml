@@ -58,6 +58,7 @@ en:
       section_footer:
         title: Help with participatory budgets
         description: With the participatory budgets the citizens decide to which projects is destined a part of the budget.
+      milestones: Milestones
     investments:
       form:
         tag_category_label: "Categories"
