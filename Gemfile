@@ -92,7 +92,7 @@ group :development do
   gem 'rubocop', '~> 0.54.0', require: false
   gem 'rubocop-rspec', '~> 1.24.0', require: false
   gem 'rvm1-capistrano3', '~> 1.4.0', require: false
-  gem 'scss_lint', '~> 0.54.0', require: false
+  gem 'scss_lint', '~> 0.55.0', require: false
   gem 'web-console', '~> 3.3.0'
 end
 
