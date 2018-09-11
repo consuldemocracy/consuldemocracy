@@ -50,7 +50,7 @@ gem 'sprockets', '~> 3.7.2'
 gem 'turbolinks', '~> 2.5.3'
 gem 'turnout', '~> 2.4.0'
 gem 'uglifier', '~> 4.1.2'
-gem 'unicorn', '~> 5.4.0'
+gem 'unicorn', '~> 5.4.1'
 gem 'whenever', '~> 0.10.0', require: false
 gem 'globalize', '~> 5.0.0'
 gem 'globalize-accessors', '~> 0.2.1'
