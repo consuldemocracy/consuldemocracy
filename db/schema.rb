@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180802221830) do
+ActiveRecord::Schema.define(version: 20180831000000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,8 @@ ActiveRecord::Schema.define(version: 20180802221830) do
     t.datetime "updated_at",                  null: false
     t.text     "background_color"
     t.text     "font_color"
+    t.string   "banner_position"
+    t.text     "headings"
   end
 
   add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
@@ -1051,7 +1053,7 @@ ActiveRecord::Schema.define(version: 20180802221830) do
 
   create_table "site_customization_pages", force: :cascade do |t|
     t.string   "slug",                                 null: false
-    t.string   "title",              default: ""
+    t.string   "title"
     t.string   "subtitle"
     t.text     "content"
     t.boolean  "more_info_flag"
@@ -1059,7 +1061,6 @@ ActiveRecord::Schema.define(version: 20180802221830) do
     t.string   "status",             default: "draft"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
-    t.string   "locale"
   end
 
   create_table "spending_proposals", force: :cascade do |t|

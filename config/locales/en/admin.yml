@@ -1348,7 +1348,7 @@ en:
           updated_at: Updated at
           status_draft: Draft
           status_published: Published
-          locale: Language
+          slug: Slug		  
     homepage:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.

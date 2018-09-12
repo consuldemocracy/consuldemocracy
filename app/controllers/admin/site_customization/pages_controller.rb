@@ -49,8 +49,7 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
         :content,
         :more_info_flag,
         :print_content_flag,
-        :status,
-        :locale]
+        :status]
       
       params.require(:site_customization_page).permit(*attributes, 
         translation_params(params[:site_customization_page])
