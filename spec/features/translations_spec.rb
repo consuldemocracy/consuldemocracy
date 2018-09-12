@@ -98,7 +98,7 @@ feature "Translations" do
       expect(page).to have_content("Description in English")
 
       select('Português', from: 'locale-switcher')
-      click_link("Seguimiento (1)")
+      click_link("Milestones (1)")
 
       expect(page).to have_content('Description in pt-BR')
     end
