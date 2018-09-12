@@ -10,4 +10,9 @@ module BudgetExecutionsHelper
                                       .last.status_id == status rescue false }.count
   end
 
+  def first_milestone_with_image(investment)
+    investment.milestones.order(publication_date: :asc, created_at: :asc)
+                         .select{ |milestone| milestone.image.present? }.first
+  end
+
 end
