@@ -17,7 +17,7 @@ module Abilities
         proposal.editable_by?(user)
       end
       can :publish, Proposal do |proposal|
-        proposal.draft? && proposal.author.id == user.id
+        proposal.draft? && proposal.author.id == user.id && !proposal.retired?
       end
       can :dashboard, Proposal do |proposal|
         proposal.author.id == user.id
