@@ -66,6 +66,18 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
   config.action_mailer.asset_host = "https://#{Rails.application.secrets.server_name}"
 
+  # SMTP configuration to deliver emails
+  # Uncomment the following block of code and add your SMTP service credentials
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.example.com',
+  #   port:                 587,
+  #   domain:               'example.com',
+  #   user_name:            '<username>',
+  #   password:             '<password>',
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true }
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
