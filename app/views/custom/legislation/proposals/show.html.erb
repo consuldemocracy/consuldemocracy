@@ -38,6 +38,9 @@
           <% end %>
 
         </div>
+
+        <%= render_image(@proposal.image, :large, true) if @proposal.image.present? %>
+
         <br>
 
         <% if @proposal.is_proposal? %>
