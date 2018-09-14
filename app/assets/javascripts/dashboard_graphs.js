@@ -140,7 +140,12 @@
   };
 
   ProposalGraph.prototype.draw = function() {
+    var colors = {};
+
     this.formatXColumnValues();
+    
+    colors[this.progressColumnValues[0]] = '#004a83';
+    colors[this.successfulColumnValues[0]] = '#ff7f0e';
     
     c3.generate({
       bindto: '#' + this.targetId,
@@ -150,7 +155,8 @@
           this.xColumnValues,
           this.progressColumnValues,
           this.successfulColumnValues
-        ]
+        ],
+        colors: colors
       },
       axis: {
         y: {
