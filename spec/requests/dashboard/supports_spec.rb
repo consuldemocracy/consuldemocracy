@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "Retrieves number of supports for a proposal" do
-  let(:created_at) { DateTime.parse("2018-01-01 12:00:00") }
+  let(:created_at) { Time.now - 9.days }
   let(:proposal) { create(:proposal, created_at: created_at, published_at: created_at) }
 
   before do
@@ -19,7 +19,7 @@ describe "Retrieves number of supports for a proposal" do
     json = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to have_http_status(200)
-    expect(json.length).to eq(8)
+    expect(json.length).to eq(10)
     expect(json.values.last).to eq(8)
   end
 
@@ -39,7 +39,8 @@ describe "Retrieves number of supports for a proposal" do
     json = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to have_http_status(200)
-    expect(json.length).to eq(1)
+    expect(json.length).to be >= 1
+    expect(json.length).to be <= 2
     expect(json.values.last).to eq(8)
   end
 end

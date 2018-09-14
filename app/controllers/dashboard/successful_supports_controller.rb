@@ -1,5 +1,6 @@
 class Dashboard::SuccessfulSupportsController < Dashboard::BaseController
   include Dashboard::ExpectsDateRange
+  include Dashboard::GroupSupports
 
   def index
     authorize! :dashboard, proposal
@@ -9,30 +10,9 @@ class Dashboard::SuccessfulSupportsController < Dashboard::BaseController
   private
 
   def accumulated_grouped_supports
-    grouped_votes = grouped_supports
-    grouped_votes.each do |group, votes|
-      grouped_votes[group] = votes.inject(0) { |sum, vote| sum + vote.vote_weight }
-    end
-
-    accumulated = 0
-    grouped_votes.each do |k, v|
-      accumulated += v
-      grouped_votes[k] = accumulated
-    end
-
-    grouped_votes
-  end
-
-  def grouped_supports
-    if params[:group_by] == 'week'
-      return supports.group_by { |v| "#{v.voted_at.to_date.cweek}/#{v.voted_at.to_date.year}" }
-    end
-
-    if params[:group_by] == 'month'
-      return supports.group_by { |v| "#{v.voted_at.to_date.year}-#{v.voted_at.to_date.month}" }
-    end
-
-    supports.group_by { |v| v.voted_at.to_date }
+    grouped_votes = grouped_supports(:voted_at)
+    accumulate_supports(grouped_votes)
+    fill_holes(grouped_votes)
   end
 
   def supports
