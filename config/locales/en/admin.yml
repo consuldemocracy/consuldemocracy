@@ -73,6 +73,7 @@ en:
         no_activity: There are no moderators activity.
     budgets:
       index:
+        admin_ballots: Admin ballots
         title: Participatory budgets
         new_link: Create new budget
         filter: Filter
@@ -85,6 +86,7 @@ en:
         table_investments: Investments
         table_edit_groups: Headings groups
         table_edit_budget: Edit
+        table_force_public: Forced publication
         edit_groups: Edit headings groups
         edit_budget: Edit budget
       create:

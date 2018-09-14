@@ -118,6 +118,7 @@ es:
         description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
         phase: "Fase"
         currency_symbol: "Divisa"
+        force_public: "Forzar publicación"
       budget/investment:
         heading_id: "Partida presupuestaria"
         title: "Título"

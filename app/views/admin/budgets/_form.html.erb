@@ -11,6 +11,9 @@
     <div class="small-12 medium-3 column end">
       <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
     </div>
+    <div class="small-12 medium-3 column">
+      <%= f.check_box :force_public %>
+    </div>
   </div>
 
   <% if @budget.phases.present? %>
@@ -69,7 +72,7 @@
                     class: "button hollow" %>
       <% end %>
 
-      <% if @budget.has_winning_investments? %>
+      <% if show_the_stats_link?(@budget, @budget.has_winning_investments? ) %>
         <%= link_to t("budgets.show.see_results"),
                     budget_results_path(@budget),
                     class: "button hollow margin-left" %>

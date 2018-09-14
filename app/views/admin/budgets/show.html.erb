@@ -1,6 +1,7 @@
 <%= back_link_to admin_budgets_path %>
 
 <h2><%= @budget.name %></h2>
+<h4><%= "#{t("admin.budgets.index.table_force_public")}: #{@budget.force_public ? t("shared.yes") : t("shared.no")}" %> </h4>
 
 <div id="<%= dom_id @budget %>_groups">
   <%= render "groups", groups: @budget.groups.order(:id) %>

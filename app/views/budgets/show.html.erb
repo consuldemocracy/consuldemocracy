@@ -36,7 +36,7 @@
         <% end %>
       <% end %>
 
-      <% if @budget.finished? %>
+      <% if show_the_stats_link?(@budget, @budget.finished?) %>
         <%= link_to t("budgets.show.see_results"),
                     budget_results_path(@budget, heading_id: @budget.headings.first),
                     class: "button margin-top expanded" %>

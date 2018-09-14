@@ -118,6 +118,7 @@ en:
         description_finished: "Description when the budget is finished"
         phase: "Phase"
         currency_symbol: "Currency"
+        force_public: "Force public"
       budget/investment:
         heading_id: "Heading"
         title: "Title"

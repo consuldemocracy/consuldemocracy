@@ -73,6 +73,7 @@ es:
         no_activity: No hay actividad de moderadores.
     budgets:
       index:
+        admin_ballots: Administrar Presupuestos participativos
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
         filter: Filtro
@@ -85,6 +86,8 @@ es:
         table_investments: Proyectos de gasto
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
+        table_admin_ballots: Urnas
+        table_force_public: Publicacion forzada
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
       create:
