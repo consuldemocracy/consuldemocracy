@@ -214,7 +214,7 @@
     var i,
         l,
         tick = [],
-        step = this.xColumnValues.length < 13 ? 12 : Math.round((this.xColumnValues.length - 1) / 12);
+        step = this.xColumnValues.length < 13 ? 1 : Math.round((this.xColumnValues.length - 1) / 12);
 
     if (this.xColumnValues.length > 1) {
       tick.push(0);
