@@ -5,12 +5,6 @@
 
     <h1><%= t("proposals.new.start_new") %></h1>
 
-    <div data-alert class="callout primary">
-      <%= link_to help_path(anchor: "proposals"), title: t('shared.target_blank_html'), target: "_blank" do %>
-        <%= t("proposals.new.more_info")%>
-      <% end %>
-    </div>
-
     <%= render "legislation/proposals/form", form_url: legislation_process_proposals_url, id: @proposal.id %>
   </div>
 </div>

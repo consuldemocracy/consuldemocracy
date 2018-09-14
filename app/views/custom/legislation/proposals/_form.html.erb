@@ -10,10 +10,13 @@
     </div>
 
     <div class="small-12 column">
-
-      <%= f.label :title do %>
-        <span id="js-legislation-proposal-label-title"><%= t("proposals.form.proposal_title") %></span>
-        <span id="js-legislation-proposal-label-question-title"><%= t("legislation_proposals.form.question_title") %></span>
+      <% if @process.film_library? %>
+        <%= f.label :title, "Título de la película" %>
+      <% else %>
+        <%= f.label :title do %>
+          <span id="js-legislation-proposal-label-title"><%= t("proposals.form.proposal_title") %></span>
+          <span id="js-legislation-proposal-label-question-title"><%= t("legislation_proposals.form.question_title") %></span>
+        <% end %>
       <% end %>
       <%= f.text_field :title, maxlength: Legislation::Proposal::TITLE_MAX_LENGTH, label: false %>
     </div>
@@ -21,21 +24,33 @@
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column" id="js-legislation-proposal-summary">
-      <%= f.label :summary, t("proposals.form.proposal_summary") %>
-      <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
-      <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
-                      placeholder: t('proposals.form.proposal_summary'),
-                      aria: {describedby: "summary-help-text"} %>
+      <% if @process.film_library? %>
+        <%= f.label :summary, "Resumen" %>
+        <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
+        <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
+                        placeholder: "Resumen",
+                        aria: {describedby: "summary-help-text"} %>
+      <% else %>
+        <%= f.label :summary, t("proposals.form.proposal_summary") %>
+        <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
+        <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
+                        placeholder: t('proposals.form.proposal_summary'),
+                        aria: {describedby: "summary-help-text"} %>
+      <% end %>
     </div>
 
     <div class="ckeditor small-12 column">
-      <%= f.label :description do %>
-        <span id="js-legislation-proposal-label-description">
-           <%= t("proposals.form.proposal_text") %>
-        </span>
-        <span id="js-legislation-proposal-label-question-description">
-          <%= t("legislation_proposals.form.question_description") %>
-        </span>
+      <% if @process.film_library? %>
+        <%= f.label :description, "Más información de la película" %>
+      <% else %>
+        <%= f.label :description do %>
+          <span id="js-legislation-proposal-label-description">
+             <%= t("proposals.form.proposal_text") %>
+          </span>
+          <span id="js-legislation-proposal-label-question-description">
+            <%= t("legislation_proposals.form.question_description") %>
+          </span>
+        <% end %>
       <% end %>
       <%= f.cktext_area :description, maxlength: Legislation::Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
@@ -47,20 +62,34 @@
                                    aria: {describedby: "video-url-help-text"} %>
     </div>
 
-    <% if feature?(:allow_attached_documents) %>
-      <div class="documents small-12 column" data-max-documents="<%= Legislation::Proposal.max_documents_allowed %>" id="js-legislation-proposal-documents">
-        <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
+    <% if feature?(:allow_images) %>
+      <div class="images small-12 column">
+        <%= render 'images/nested_image', imageable: @proposal, f: f %>
       </div>
     <% end %>
 
-    <div class="small-12 medium-6 column" id="js-legislation-proposal-geozone">
-      <%= f.label :geozone_id,  t("proposals.form.geozone") %>
-      <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
-    </div>
+    <% unless @process.film_library? %>
+      <% if feature?(:allow_attached_documents) %>
+        <div class="documents small-12 column" data-max-documents="<%= Legislation::Proposal.max_documents_allowed %>" id="js-legislation-proposal-documents">
+          <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
+        </div>
+      <% end %>
+
+      <div class="small-12 medium-6 column" id="js-legislation-proposal-geozone">
+        <%= f.label :geozone_id,  t("proposals.form.geozone") %>
+        <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
+      </div>
+    <% end %>
 
     <div class="small-12 column" id="js-legislation-proposal-tags">
-      <%= f.label :tag_list, t("legislation.proposals.form.tags_label") %>
-      <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
+      <% if @process.film_library? %>
+        <%= f.label :tag_list, "Géneros" %>
+        <p class="help-text" id="tag-list-help-text">Selecciona el género de la película que estás proponiendo</p>
+      <% else %>
+        <%= f.label :tag_list, t("legislation.proposals.form.tags_label") %>
+        <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
+      <% end %>
+
 
       <div id="category_tags" class="tags">
         <% @process.tag_list_on(:customs).each do |tag| %>
@@ -69,11 +98,20 @@
       </div>
 
       <br>
-      <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
-                        label: false,
-                        placeholder: t("proposals.form.tags_placeholder"),
-                        class: 'js-tag-list',
-                        aria: {describedby: "tag-list-help-text"} %>
+      <% if @process.film_library? %>
+        <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
+                          label: false,
+                          placeholder: "Selecciona el género de la película con las etiquetas de arriba",
+                          class: 'js-tag-list',
+                          aria: {describedby: "tag-list-help-text"},
+                          readonly: true %>
+      <% else %>
+        <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
+                            label: false,
+                            placeholder: t("proposals.form.tags_placeholder"),
+                            class: 'js-tag-list',
+                            aria: {describedby: "tag-list-help-text"} %>
+      <% end %>
     </div>
 
     <div class="small-12 column">

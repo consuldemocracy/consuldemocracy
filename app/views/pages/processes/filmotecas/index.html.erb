@@ -1,0 +1,51 @@
+<%= provide :title, "Decide Filmoteca" %>
+<%= provide :meta_description, "Propón y vota películas para proyectar en los Centros Culturales de tu distrito" %>
+<%= provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: page_url("filmotecas"),
+              social_title: "Decide Filmoteca",
+              social_description: "Propón y vota películas para proyectar en los Centros Culturales de tu distrito",
+              twitter_image_url: "social_media_filmotecas_twitter.jpg",
+              og_image_url: "social_media_filmotecas.jpg" %>
+<% end %>
+
+<div class="filmoteca">
+  <div class="no-margin-top header">
+    <div class="row text-center">
+      <h2 class="margin-top">
+        <%= image_tag "filmoteca/decide_filmoteca.png", alt: "Decide Filmoteca" %>
+      </h2>
+    </div>
+  </div>
+
+  <div class="row margin-top">
+    <div class="small-12 medium-9 column">
+      <h3>Propón y decide qué películas se proyectan en tu distrito.</h3>
+      <p>Como resultado de <a href="https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/proyecto/2331" target="_blank">diferentes propuestas</a> de los presupuestos participativos, ahora la cartelera del distrito la decides tú.</p>
+
+      <h3>¿Cómo funcionan las filmotecas ciudadanas?</h3>
+      <p>Cada mes se elegirá la cartelera del mes siguiente. Puedes proponer cualquier película, y las que tengan más apoyos al acabar el proceso mensual serán las que se proyecten. En caso de que no sea posible proyectar alguna de las propuestas seleccionadas se pasará a la siguiente más apoyada.</p>
+      <p>Puedes consultar a continuación la cartelera vigente, y entrar a los espacios de participación.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <h3>Cartelera</h3>
+    </div>
+
+    <div class="small-12 medium-4 column end">
+      <%= link_to "https://decide.madrid.es/legislation/processes/61/proposals", class: "film-library" do %>
+        <%= image_tag "filmoteca/moratalaz.jpg", alt: "Centro Cultural Moratalaz" %>
+      <% end %>
+
+      <h4 class="margin-top">
+        <a href="https://www.madrid.es/portales/munimadrid/es/Inicio/Cultura-ocio-y-deporte/Cultura-y-ocio/Direcciones-y-telefonos/Centro-Cultural-el-Torito-Moratalaz-/?vgnextfmt=default&vgnextoid=f3073d0b5e71c010VgnVCM1000000b205a0aRCRD&vgnextchannel=76f3efff228fe410VgnVCM2000000c205a0aRCRD"
+        target="_blank">Centro Cultural el Torito (Moratalaz)</a>
+      </h4>
+      <p>Avenida Moratalaz, 130</p>
+
+      <%= link_to "Proponer película", "https://decide.madrid.es/legislation/processes/61/proposals", class: "button expanded"%>
+    </div>
+  </div>
+</div>

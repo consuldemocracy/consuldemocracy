@@ -38,6 +38,9 @@
           <% end %>
 
         </div>
+
+        <%= render_image(@proposal.image, :large, true) if @proposal.image.present? %>
+
         <br>
 
         <% if @proposal.is_proposal? %>
@@ -83,15 +86,19 @@
         <h4><%= @proposal.question %></h4>
 
         <% if @proposal.is_proposal? %>
-          <% if feature?(:allow_attached_documents) %>
-            <%= render 'documents/documents',
-                        documents: @proposal.documents,
-                        max_documents_allowed: Proposal.max_documents_allowed %>
+          <% unless @process.film_library? %>
+            <% if feature?(:allow_attached_documents) %>
+              <%= render 'documents/documents',
+                          documents: @proposal.documents,
+                          max_documents_allowed: Proposal.max_documents_allowed %>
+            <% end %>
           <% end %>
 
           <%= render 'shared/tags', taggable: @proposal %>
 
-          <%= render 'shared/geozone', geozonable: @proposal %>
+          <% unless @process.film_library? %>
+            <%= render 'shared/geozone', geozonable: @proposal %>
+          <% end %>
         <% end %>
 
         <div class="js-moderator-proposal-actions margin">
@@ -125,9 +132,17 @@
   </div>
 <% end %>
 
-<div class="tabs-content" data-tabs-content="proposals-tabs">
-  <%= render "legislation/proposals/filter_subnav" %>
+<div class="additional-content">
+  <div class="filter-subnav">
+    <div class="row">
+      <div class="small-12 column">
+        <%= render "legislation/proposals/filter_subnav" %>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="tabs-content" data-tabs-content="legislation_proposals_tabs">
   <div class="tabs-panel is-active" id="tab-comments">
     <%= render "legislation/proposals/comments" %>
   </div>

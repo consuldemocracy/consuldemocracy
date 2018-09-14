@@ -1,0 +1,32 @@
+<div class="legislation clear">
+  <div class="column row legislation-text">
+    <div class="small-12 medium-8 column">
+      <div class="legislation-text">
+        <h3><%= link_to "Filmotecas ciudadanas", filmotecas_path %></h3>
+      </div>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <%= link_to filmotecas_path, class: "button hollow big expanded", title:  t("legislation.processes.process.see_latest_comments_title") do %>
+         <span class="icon-comments"></span>&nbsp;Ver cartelera
+      <% end %>
+    </div>
+
+    <div class="small-12 medium-11 column end">
+      Ahora puedes decidir la cartelera de tu distrito. Propón las películas que te gustaría ver.
+    </div>
+  </div>
+
+  <div class="column row">
+    <div class="small-12 column legislation-calendar-info">
+      <p><%= t("legislation.processes.shared.key_dates") %></p>
+    </div>
+  </div>
+
+  <div class="column row small-collapse medium-uncollapse legislation-calendar">
+    <div class="small-6 medium-6 column">
+      <h4><%= t("legislation.processes.shared.proposals_dates") %></h4>
+      <p>17 Sep 2018 - 31 Dic 2018</p>
+    </div>
+  </div>
+</div>
