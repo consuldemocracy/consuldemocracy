@@ -685,7 +685,8 @@
 }
 
 .budget-investments-list .budget-investment,
-.proposals-list .proposal {
+.proposals-list .proposal,
+.legislation-proposals .proposal {
 
   @include breakpoint(medium) {
 
