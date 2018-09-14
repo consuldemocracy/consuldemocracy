@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="small-12 large-9 column">
-    <%= link_to t("dashboard.community.access_community"), community_path(proposal.community), class: 'button hollow' %>
+    <%= link_to t("dashboard.community.access_community"), community_path(proposal.community), class: 'button hollow', target: '_blank' %>
     <% unless proposal.community.latest_activity.nil? %>
       <p class="help-text"><%= t("dashboard.community.latest_activity", at: l(proposal.community.latest_activity.to_date)) %></p>
     <% end %>

@@ -6,7 +6,7 @@
           <i class="fi-clipboard-notes"></i> <%= t("dashboard.polls.poll.copy_link") %>
         </a>
       </p>
-      <h4 class="text-center"><%= link_to poll.title, poll %></h4>
+      <h4 class="text-center"><%= link_to poll.title, poll, target: '_blank' %></h4>
       <p class="text-center">
         <%= l(poll.starts_at.to_date) %> - <%= l(poll.ends_at.to_date) %>
       </p>
