@@ -100,7 +100,7 @@ feature 'Executions' do
       expect(page).to have_css("img[alt='#{investment4.title}']")
     end
 
-    scenario "renders first milestone's image if investment has multiple milestones with images associated" do
+    scenario "renders last milestone's image if investment has multiple milestones with images associated" do
       milestone1 = create(:budget_investment_milestone, investment: investment1,
                                                         publication_date: Date.yesterday)
 
@@ -122,7 +122,7 @@ feature 'Executions' do
       click_link 'Milestones'
 
       expect(page).to have_content(investment1.title)
-      expect(page).to have_css("img[alt='#{milestone2.image.title}']")
+      expect(page).to have_css("img[alt='#{milestone3.image.title}']")
     end
 
   end
