@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Retrieves number of supports for a proposal" do
   let(:created_at) { DateTime.parse("2018-01-01 12:00:00") }
-  let(:proposal) { create(:proposal, created_at: created_at) }
+  let(:proposal) { create(:proposal, created_at: created_at, published_at: created_at) }
 
   before do
     8.times do |i|

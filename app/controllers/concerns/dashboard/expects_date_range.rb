@@ -3,9 +3,9 @@ module Dashboard::ExpectsDateRange
 
   include Dashboard::HasProposal
 
-  def start_date
+  def start_date(fallback_date = proposal.created_at.to_date)
     return Date.parse(params[:start_date]) unless params[:start_date].blank?
-    proposal.created_at.to_date
+    fallback_date
   end
 
   def end_date

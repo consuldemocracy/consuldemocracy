@@ -20,19 +20,46 @@ class Dashboard::SupportsController < Dashboard::BaseController
       grouped_votes[k] = accumulated
     end
 
-    grouped_votes
+    fill_holes(grouped_votes)
   end
 
   def grouped_supports
-    if params[:group_by] == 'week'
-      return supports.group_by { |v| "#{v.created_at.to_date.cweek}/#{v.created_at.to_date.year}" }
+    supports.group_by { |v| grouping_key_for(v.created_at) }
+  end
+
+  def grouping_key_for(created_at)
+    return "#{created_at.to_date.cweek}/#{created_at.to_date.year}" if params[:group_by] == 'week'
+    return "#{created_at.to_date.year}-#{created_at.to_date.month}" if params[:group_by] == 'month'
+
+    created_at.to_date
+  end
+
+  def fill_holes(grouped_votes)
+    (start_date(proposal.published_at.to_date)..end_date).step(interval).each do |date|
+      missing_key = grouping_key_for(date)
+      next if grouped_votes.key? missing_key
+
+      previous_key = previous_key_for(date)
+      previous_value = if grouped_votes.key? previous_key
+                         grouped_votes[previous_key]
+                       else
+                         0
+                       end
+
+      grouped_votes[missing_key] = previous_value
     end
 
-    if params[:group_by] == 'month'
-      return supports.group_by { |v| "#{v.created_at.to_date.year}-#{v.created_at.to_date.month}" }
-    end
+    grouped_votes
+  end
 
-    supports.group_by { |v| v.created_at.to_date }
+  def previous_key_for(date)
+    grouping_key_for(date - interval)
+  end
+
+  def interval
+    return 1.week if params[:group_by] == 'week'
+    return 1.month if params[:group_by] == 'month'
+    1.day
   end
 
   def supports
