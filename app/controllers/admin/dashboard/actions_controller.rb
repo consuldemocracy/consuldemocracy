@@ -10,7 +10,7 @@ class Admin::Dashboard::ActionsController < Admin::Dashboard::BaseController
       active: true,
       day_offset: 0,
       required_supports: 0,
-      request_to_administrators: true,
+      request_to_administrators: false,
       action_type: 'proposed_action'
     )
   end
