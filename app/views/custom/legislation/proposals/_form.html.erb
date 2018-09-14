@@ -104,7 +104,7 @@
                           placeholder: "Selecciona el género de la película con las etiquetas de arriba",
                           class: 'js-tag-list',
                           aria: {describedby: "tag-list-help-text"},
-                          disabled: true %>
+                          readonly: true %>
       <% else %>
         <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
                             label: false,
