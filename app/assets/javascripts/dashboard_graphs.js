@@ -179,10 +179,8 @@
         x: {
           type: 'category',
           tick: {
-            fit: true,
-            culling: {
-              max: 15
-            }
+            values: this.tickXValues(),
+            centered: true
           }
         }
       },
@@ -208,6 +206,23 @@
     }
 
     tick.push(maximumValue);
+
+    return tick;
+  };
+
+  ProposalGraph.prototype.tickXValues = function () {
+    var i,
+        l,
+        tick = [],
+        step = this.xColumnValues.length < 13 ? 12 : Math.round((this.xColumnValues.length - 1) / 12);
+
+    if (this.xColumnValues.length > 1) {
+      tick.push(0);
+
+      for(i = step, l = this.xColumnValues.length - 1; i < l; i += step) {
+        tick.push(i);
+      }
+    }
 
     return tick;
   };
