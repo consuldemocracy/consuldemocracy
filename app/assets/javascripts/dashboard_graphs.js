@@ -12,6 +12,7 @@
     this.targetId = null;
     this.groupBy = null;
     this.proposalSuccess = null;
+    this.maximumValue = 0;
     this.progressLabel = 'Progress';
     this.supportsLabel = 'Supports';
     this.successLabel = 'Success';
@@ -75,6 +76,10 @@
       if (data.hasOwnProperty(key)) {
         this.xColumnValues.push(key);
         this.progressColumnValues.push(data[key]);
+
+        if (this.maximumValue < data[key]) {
+          this.maximumValue = data[key];
+        }
       }
     }
   };
@@ -140,13 +145,14 @@
   };
 
   ProposalGraph.prototype.draw = function() {
-    var colors = {};
+    var colors = {},
+        maximumValue = this.maximumValue === 0 ? this.proposalSuccess : Math.round(this.maximumValue * 1.10);
 
     this.formatXColumnValues();
     
     colors[this.progressColumnValues[0]] = '#004a83';
     colors[this.successfulColumnValues[0]] = '#ff7f0e';
-    
+
     c3.generate({
       bindto: '#' + this.targetId,
       data: {
@@ -160,8 +166,11 @@
       },
       axis: {
         y: {
-          min: this.proposalSuccess * 0.1,
-          max: this.proposalSuccess,
+          tick: {
+            values: this.tickYValues()
+          },
+          min: (this.maximumValue === 0 ? Math.round(this.proposalSuccess * 0.10) : 0),
+          max: maximumValue,
           label: { 
             text: this.supportsLabel,
             position: 'outer-middle'
@@ -186,6 +195,21 @@
         position: 'right'
       }
     });
+  };
+
+  ProposalGraph.prototype.tickYValues = function () {
+    var i,
+        tick = [0],
+        maximumValue = this.maximumValue === 0 ? this.proposalSuccess : Math.round(this.maximumValue * 1.10),
+        step = maximumValue <= 10 ? 1 : Math.round(maximumValue / 10);
+
+    for (i = step; i < maximumValue; i += step) {
+      tick.push(i);
+    }
+
+    tick.push(maximumValue);
+
+    return tick;
   };
 
   ProposalGraph.prototype.formatXColumnValues = function () {
