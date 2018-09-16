@@ -121,3 +121,5 @@ es:
         tags_label: "Categorías"
       not_verified: "Para votar propuestas %{verify_account}."
       closed: "Este proceso se ha cerrado y ya no puede recoger votos."
+      categories:
+          genre: Categorías
