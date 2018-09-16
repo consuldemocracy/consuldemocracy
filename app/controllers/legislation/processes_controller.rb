@@ -88,7 +88,10 @@ class Legislation::ProcessesController < Legislation::BaseController
   def proposals
     set_process
     @phase = :proposals_phase
-    @proposals = ::Legislation::Proposal.where(process: @process).order('random()').page(params[:page])
+
+    @proposals = ::Legislation::Proposal.where(process: @process)
+    @proposals = @proposals.search(params[:search]) if params[:search].present?
+    @proposals = @proposals.order('random()').page(params[:page])
 
     if @process.proposals_phase.started? || (current_user && current_user.administrator?)
       legislation_proposal_votes(@proposals)
