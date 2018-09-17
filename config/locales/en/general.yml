@@ -329,7 +329,7 @@ en:
         submit_button: Create proposal
     created:
       title: Congratulations! You have taken the first step.
-      motivation: |
+      motivation_html: |
         <p>
         It is important to have at least 100 supports on the first day of the campaign to be able to
         boost your proposal.

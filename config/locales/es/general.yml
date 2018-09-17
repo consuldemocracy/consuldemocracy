@@ -329,7 +329,7 @@ es:
         submit_button: Crear propuesta
     created:
       title: ¡Enhorabuena! Has dado el primer paso.
-      motivation: |
+      motivation_html: |
         <p>
           Es importante contar al menos con 100 apoyos el primer día de campaña para poder
           impulsar tu propuesta.

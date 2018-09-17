@@ -1,20 +1,20 @@
 <div class=proposal-created>
   <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-12 column">
-        <h1><%= t('.title') %></h1>
+        <h1><%= t("proposals.created.title") %></h1>
 
-        <%= raw t('.motivation') %>
+        <%= raw t("proposals.created.motivation_html") %>
         
-        <%= link_to t('.dashboard'), proposal_dashboard_index_path(@proposal), class: 'button' if can?(:dashboard, @proposal) %>
-        <%= link_to t('.publish'), publish_proposal_path(@proposal), method: :patch, class: 'button' if can?(:publish, @proposal) %>
+        <%= link_to t("proposals.created.dashboard"), proposal_dashboard_index_path(@proposal), class: "button" if can?(:dashboard, @proposal) %>
+        <%= link_to t("proposals.created.publish"), publish_proposal_path(@proposal), method: :patch, class: "button" if can?(:publish, @proposal) %>
       </div>
   </div>
 </div>
 
 <div class="row">
   <div class="small-12 column">
-    <h3><%= t('.preview_title') %></h3>
+    <h3><%= t("proposals.created.preview_title") %></h3>
   </div>
 </div>
 
-<%= render file: 'proposals/show.html.erb', locals: { preview: true } %>
+<%= render file: "proposals/show.html.erb", locals: { preview: true } %>
