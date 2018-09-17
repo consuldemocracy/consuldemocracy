@@ -26,13 +26,18 @@ module Dashboard::GroupSupports
     end
 
     def fill_holes(grouped_votes)
+      complete_grouped_votes = {}
+
       (start_date(proposal.published_at.to_date)..end_date).each do |date|
-        missing_key = grouping_key_for(date)
-        next if grouped_votes.key? missing_key
-        grouped_votes[missing_key] = []
+        key = grouping_key_for(date)
+        complete_grouped_votes[key] = if grouped_votes.key? key
+                                        grouped_votes[key]
+                                      else
+                                        []
+                                      end
       end
 
-      grouped_votes
+      complete_grouped_votes
     end
 
     def previous_key_for(date)
