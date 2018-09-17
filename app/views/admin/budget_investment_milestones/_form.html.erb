@@ -1,8 +1,6 @@
 <%= render "admin/shared/globalize_locales", resource: @milestone %>
 
-<%= form_for [:admin, @investment.budget, @investment, @milestone] do |f| %>
-
-  <%= render_translations_to_delete(@milestone) %>
+<%= translatable_form_for [:admin, @investment.budget, @investment, @milestone] do |f| %>
 
   <%= f.hidden_field :title, value: l(Time.current, format: :datetime),
                              maxlength: Budget::Investment::Milestone.title_max_length %>
@@ -16,16 +14,9 @@
                 admin_budget_investment_statuses_path %>
   </div>
 
-  <%= f.label :description, t("admin.milestones.new.description") %>
-  <% @milestone.globalize_locales.each do |locale| %>
-    <% globalize(locale) do %>
-      <%= f.text_area "description_#{locale}", rows: 5,
-                      class: "js-globalize-attribute",
-                      data: { locale: locale },
-                      style: display_translation?(locale),
-                      label: false %>
-    <% end %>
-  <% end %>
+  <%= f.translatable_text_area :description,
+                               rows: 5,
+                               label: t("admin.milestones.new.description") %>
 
   <%= f.label :publication_date, t("admin.milestones.new.date") %>
   <%= f.text_field :publication_date,

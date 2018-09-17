@@ -8,7 +8,7 @@ class Budget
                    accepted_content_types: [ "application/pdf" ]
 
       translates :title, :description, touch: true
-      globalize_accessors locales: [:en, :es, :fr, :nl, :val, :pt_br]
+      globalize_accessors
 
       belongs_to :investment
       belongs_to :status, class_name: 'Budget::Investment::Status'

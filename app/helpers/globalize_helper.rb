@@ -6,20 +6,12 @@ module GlobalizeHelper
 
   def locale_options
     I18n.available_locales.map do |locale|
-      [name_for_locale(locale), neutral_locale(locale)]
+      [name_for_locale(locale), locale]
     end
   end
 
   def display_translation?(locale)
-    same_locale?(neutral_locale(I18n.locale), neutral_locale(locale)) ? "" : "display: none"
-  end
-
-  def render_translations_to_delete(resource)
-    capture do
-      resource.globalize_locales.each do |locale|
-        concat translation_enabled_tag(locale, enable_locale?(resource, locale))
-      end
-    end
+    same_locale?(I18n.locale, locale) ? "" : "display: none;"
   end
 
   def translation_enabled_tag(locale, enabled)
@@ -27,11 +19,11 @@ module GlobalizeHelper
   end
 
   def css_to_display_translation?(resource, locale)
-    enable_locale?(resource, locale) ? "" : "display: none"
+    enable_locale?(resource, locale) ? "" : "display: none;"
   end
 
   def enable_locale?(resource, locale)
-    resource.translated_locales.include?(neutral_locale(locale)) || locale == I18n.locale
+    resource.translated_locales.include?(locale) || locale == I18n.locale
   end
 
   def highlight_current?(locale)
@@ -40,10 +32,6 @@ module GlobalizeHelper
 
   def show_delete?(locale)
     display_translation?(locale)
-  end
-
-  def neutral_locale(locale)
-    locale.to_s.downcase.underscore.to_sym
   end
 
   def globalize(locale, &block)

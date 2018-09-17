@@ -1,10 +1,8 @@
 <%= render "admin/shared/globalize_locales", resource: @banner %>
 
-<%= form_for [:admin, @banner] do |f| %>
+<%= translatable_form_for [:admin, @banner] do |f| %>
 
   <%= render 'errors' %>
-
-  <%= render_translations_to_delete(@banner) %>
 
   <div class="row">
     <% date_started_at = @banner.post_started_at.present? ? I18n.localize(@banner.post_started_at) : "" %>
@@ -31,19 +29,10 @@
 
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%= f.label :title, t("admin.banners.banner.title") %>
-
-      <% @banner.globalize_locales.each do |locale| %>
-        <% globalize(locale) do %>
-          <%= f.text_field "title_#{locale}",
-                           placeholder: t("admin.banners.banner.title"),
-                           class: "js-globalize-attribute",
-                           data: {js_banner_title: "js_banner_title",
-                                  locale: locale},
-                           style: display_translation?(locale),
-                           label: false %>
-        <% end %>
-      <% end %>
+      <%= f.translatable_text_field :title,
+                                    placeholder: t("admin.banners.banner.title"),
+                                    data: {js_banner_title: "js_banner_title"},
+                                    label: t("admin.banners.banner.title") %>
     </div>
 
     <div class="small-12 medium-6 column">
@@ -56,18 +45,10 @@
 
   <div class="row">
     <div class="small-12 column">
-      <%= f.label :description, t("admin.banners.banner.description") %>
-      <% @banner.globalize_locales.each do |locale| %>
-        <% globalize(locale) do %>
-          <%= f.text_field "description_#{locale}",
-                           placeholder: t("admin.banners.banner.description"),
-                           class: "js-globalize-attribute",
-                           data: {js_banner_description: "js_banner_description",
-                                  locale: locale},
-                           style: display_translation?(locale),
-                           label: false %>
-        <% end %>
-      <% end %>
+      <%= f.translatable_text_field :description,
+                                    placeholder: t("admin.banners.banner.description"),
+                                    data: {js_banner_description: "js_banner_description"},
+                                    label: t("admin.banners.banner.description")  %>
     </div>
   </div>
 

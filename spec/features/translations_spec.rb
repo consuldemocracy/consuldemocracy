@@ -83,6 +83,26 @@ feature "Translations" do
       expect(page).not_to have_content "Description in English"
     end
 
+    scenario "Add a translation for a locale with non-underscored name", :js do
+      visit @edit_milestone_url
+
+      select "Português", from: "translation_locale"
+      fill_in 'budget_investment_milestone_description_pt_br', with: 'Description in pt-BR'
+
+      click_button 'Update milestone'
+      expect(page).to have_content "Milestone updated successfully"
+
+      visit budget_investment_path(investment.budget, investment)
+
+      click_link("Milestones (1)")
+      expect(page).to have_content("Description in English")
+
+      select('Português', from: 'locale-switcher')
+      click_link("Milestones (1)")
+
+      expect(page).to have_content('Description in pt-BR')
+    end
+
     context "Globalize javascript interface" do
 
       scenario "Highlight current locale", :js do
