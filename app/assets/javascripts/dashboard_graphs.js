@@ -133,8 +133,9 @@
       if (data.hasOwnProperty(group)) {
         this.addXColumnValue(group);
         this.achievements.push({
-          value: group,
-          text: data[group].title
+          value: this.formatGroup(group),
+          text: data[group].title,
+          position: 'start'
         });
       }
     }
@@ -189,6 +190,9 @@
       grid: {
         y: {
           lines: this.goals
+        },
+        x: {
+          lines: this.achievements
         }
       },
       legend: {
@@ -236,13 +240,21 @@
 
     if (this.isDailyGrouped()) {
       for (i = 0, l = this.xColumnValues.length; i < l; i += 1) {
-        parts = this.xColumnValues[i].match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
-        this.xColumnValues[i] = parts[2] + "/" + parts[3];
+        this.xColumnValues[i] = this.formatGroup(this.xColumnValues[i]);
       }
     }
 
     this.xColumnValues.unshift('x');
   };
+
+  ProposalGraph.prototype.formatGroup = function(group) {
+    if (this.isDailyGrouped()) {
+      var parts = group.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+      return parts[2] + "/" + parts[3];
+    }
+
+    return group;
+  }
 
   ProposalGraph.prototype.isDailyGrouped = function() {
     return this.groupBy === undefined || this.groupBy === '' || this.groupBy === null
