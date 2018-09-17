@@ -29,15 +29,7 @@ module Dashboard::GroupSupports
       (start_date(proposal.published_at.to_date)..end_date).each do |date|
         missing_key = grouping_key_for(date)
         next if grouped_votes.key? missing_key
-
-        previous_key = previous_key_for(date)
-        previous_value = if grouped_votes.key? previous_key
-                           grouped_votes[previous_key]
-                         else
-                           0
-                         end
-
-        grouped_votes[missing_key] = previous_value
+        grouped_votes[missing_key] = []
       end
 
       grouped_votes

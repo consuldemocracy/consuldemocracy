@@ -11,8 +11,8 @@ class Dashboard::SuccessfulSupportsController < Dashboard::BaseController
 
   def accumulated_grouped_supports
     grouped_votes = grouped_supports(:voted_at)
-    accumulate_supports(grouped_votes)
     fill_holes(grouped_votes)
+    accumulate_supports(grouped_votes)
   end
 
   def supports
