@@ -15,9 +15,9 @@
     <%= render 'shared/filter_subnav', i18n_namespace: "legislation.processes.index" %>
 
     <div id="legislation-list">
-      <%# if @current_filter == "open" %>
-        <%# render "custom/legislation/filmoteca" %>
-      <%# end %>
+      <% if @current_filter == "open" %>
+        <%= render "custom/legislation/filmoteca" %>
+      <% end %>
 
       <% if @processes.any? %>
         <%= render @processes %>
