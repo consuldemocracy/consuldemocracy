@@ -2,6 +2,8 @@
 //= require c3
 //= require c3ext
 
+// TODO: This module is complex enough to require its own tests. Rewrite it using Ecma6 class syntax and
+// write tests for this feature after consul has been migrated to Rails 5.1
 (function(){
   'use strict';
 
