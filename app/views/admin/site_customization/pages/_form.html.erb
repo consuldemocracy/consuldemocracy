@@ -50,7 +50,8 @@
 
       <div class="ckeditor margin-top">
         <%= f.label :content %>
-        <%= f.cktext_area :content, label: false, cols: 80, rows: 10, ckeditor: { language: I18n.locale } %>
+        <%= f.cktext_area :content, label: false, cols: 80, rows: 10,
+                          ckeditor: { language: I18n.locale, toolbar: "admin" } %>
       </div>
 
       <div class="small-12 medium-6 large-3">
