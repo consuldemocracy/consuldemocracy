@@ -422,9 +422,6 @@ en:
           supports: Supports
           select: Select
           selected: Selected
-        update:
-          notice: 'Proposal updated successfully'
-          error: Proposal couldn't be updated
         form:
           custom_categories: Categories
           custom_categories_description: Categories that users can select creating the proposal.

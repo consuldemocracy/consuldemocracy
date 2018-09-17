@@ -19,7 +19,7 @@
           <td class="text-center"><%= proposal.id %></td>
           <td><%= proposal.title %></td>
           <td class="text-center"><%= proposal.cached_votes_up %></td>
-          <td><%= render "select_proposal", proposal: proposal %></td>
+          <td class="select"><%= render "select_proposal", proposal: proposal %></td>
         </tr>
       <% end %>
     </tbody>

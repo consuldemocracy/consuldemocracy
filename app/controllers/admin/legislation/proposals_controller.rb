@@ -12,7 +12,5 @@ class Admin::Legislation::ProposalsController < Admin::Legislation::BaseControll
   def toggle_selection
     @proposal.toggle :selected
     @proposal.save!
-    redirect_to admin_legislation_process_proposals_path,
-                notice: t('admin.legislation.proposals.update.notice')
   end
 end

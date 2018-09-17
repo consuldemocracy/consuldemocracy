@@ -423,9 +423,6 @@ es:
           supports: Apoyos
           select: Seleccionar
           selected: Seleccionado
-        update:
-          notice: Propuesta actualizada correctamente.
-          error: No se ha podido actualizar la propuesta
         form:
           custom_categories: Categorías
           custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta.
