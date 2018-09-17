@@ -10,6 +10,11 @@ feature "Translations" do
                               description_en: "Description in English",
                               description_es: "Descripción en Español") }
 
+    it_behaves_like "translatable",
+                    "budget_investment_milestone",
+                    "edit_admin_budget_budget_investment_budget_investment_milestone_path",
+                    %w[description]
+
     background do
       admin = create(:administrator)
       login_as(admin.user)
@@ -101,51 +106,6 @@ feature "Translations" do
       click_link("Milestones (1)")
 
       expect(page).to have_content('Description in pt-BR')
-    end
-
-    context "Globalize javascript interface" do
-
-      scenario "Highlight current locale", :js do
-        visit @edit_milestone_url
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
-
-        select('Español', from: 'locale-switcher')
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
-      end
-
-      scenario "Highlight selected locale", :js do
-        visit @edit_milestone_url
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
-
-        click_link "Español"
-
-        expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
-      end
-
-      scenario "Show selected locale form", :js do
-        visit @edit_milestone_url
-
-        expect(page).to have_field('budget_investment_milestone_description_en', with: 'Description in English')
-
-        click_link "Español"
-
-        expect(page).to have_field('budget_investment_milestone_description_es', with: 'Descripción en Español')
-      end
-
-      scenario "Select a locale and add it to the milestone form", :js do
-        visit @edit_milestone_url
-
-        select "Français", from: "translation_locale"
-
-        expect(page).to have_link "Français"
-
-        click_link "Français"
-
-        expect(page).to have_field('budget_investment_milestone_description_fr')
-      end
     end
 
   end
