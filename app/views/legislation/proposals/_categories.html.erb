@@ -1,3 +1,6 @@
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title"><%= t("legislation.proposals.categories.genre") %></h2>
+<br>
 <ul id="categories" class="no-bullet categories">
   <% @process.tag_list_on(:customs).each do |tag| %>
     <li class="inline-block">
