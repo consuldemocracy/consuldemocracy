@@ -66,7 +66,7 @@ feature 'Legislation Proposals' do
     end
   end
 
-  scenario 'Selected filter apperars only if exists any eslecte poposal' do
+  scenario 'Selected filter apperars only if exists any selected poposal' do
     legislation_process = create(:legislation_process)
     create(:legislation_proposal, legislation_process_id: legislation_process.id)
 
