@@ -16,6 +16,7 @@ class Legislation::Proposal < ActiveRecord::Base
   include Communitable
   include Documentable
   include Notifiable
+  include Imageable
 
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
