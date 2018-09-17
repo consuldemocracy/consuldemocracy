@@ -42,7 +42,8 @@ describe "Retrieves number of supports for the successful proposal" do
     json = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to have_http_status(200)
-    expect(json.length).to eq(2)
+    expect(json.length).to be >= 2
+    expect(json.length).to be <= 3
     expect(json.values.last).to eq(8)
   end
 
