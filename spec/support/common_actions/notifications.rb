@@ -32,20 +32,7 @@ module Notifications
   end
 
   def path_for(resource)
-    nested_path_for(resource) || url_for([resource, only_path: true])
-  end
-
-  def nested_path_for(resource)
-    case resource.class.name
-    when "Legislation::Question"
-      legislation_process_question_path(resource.process, resource)
-    when "Legislation::Proposal"
-      legislation_process_proposal_path(resource.process, resource)
-    when "Budget::Investment"
-      budget_investment_path(resource.budget, resource)
-    else
-      false
-    end
+    polymorphic_hierarchy_path(resource)
   end
 
   def error_message(resource_model = nil)
