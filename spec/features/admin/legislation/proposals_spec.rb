@@ -20,7 +20,7 @@ feature 'Admin legislation processes' do
       end
     end
 
-    scenario 'Selecting legislation proposals' do
+    scenario 'Selecting legislation proposals', :js do
       proposal = create(:legislation_proposal, cached_votes_up: 10)
       visit admin_legislation_process_proposals_path(proposal.legislation_process_id)
 
