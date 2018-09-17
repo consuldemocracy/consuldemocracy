@@ -91,7 +91,7 @@ section "Marking investments as visible to valuators" do
 end
 
 section "Geolocating Investments" do
-  Budget.all.each do |budget|
+  Budget.find_each do |budget|
     budget.investments.each do |investment|
       MapLocation.create(latitude: Setting['map_latitude'].to_f + rand(-10..10)/100.to_f,
                          longitude: Setting['map_longitude'].to_f + rand(-10..10)/100.to_f,
@@ -140,7 +140,7 @@ section "Creating Valuation Assignments" do
 end
 
 section "Creating investment milestones" do
-  Budget::Investment.all.each do |investment|
+  Budget::Investment.find_each do |investment|
     milestone = Budget::Investment::Milestone.new(investment_id: investment.id, publication_date: Date.tomorrow)
     I18n.available_locales.map do |locale|
       Globalize.with_locale(locale) do

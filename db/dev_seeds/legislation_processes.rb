@@ -23,7 +23,7 @@ section "Creating legislation processes" do
                                  published: true)
   end
 
-  Legislation::Process.all.each do |process|
+  Legislation::Process.find_each do |process|
     (1..3).each do |i|
       process.draft_versions.create!(title: "Version #{i}",
                                      body: Faker::Lorem.paragraphs.join("\n\n"))
