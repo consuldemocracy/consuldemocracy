@@ -9,15 +9,10 @@ class Admin::Legislation::ProposalsController < Admin::Legislation::BaseControll
     @proposals = @proposals.send("sort_by_#{@current_order}").page(params[:page])
   end
 
-  def update
-    @proposal.selected = !@proposal.selected
-
-    if @proposal.save
-      notice = t('admin.legislation.proposals.update.notice')
-    else
-      notice = t('admin.legislation.proposals.update.error')
-    end
-    redirect_to admin_legislation_process_proposals_path, notice: notice
+  def toggle_selection
+    @proposal.toggle :selected
+    @proposal.save!
+    redirect_to admin_legislation_process_proposals_path,
+                notice: t('admin.legislation.proposals.update.notice')
   end
-
 end

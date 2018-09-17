@@ -5,4 +5,8 @@
      button_text = t("admin.legislation.proposals.index.select")
      clas = 'button hollow expanded'
    end %>
-<%= link_to button_text, admin_legislation_process_proposal_path(proposal.process, proposal), method: 'PUT', class: clas %>
+
+<%= link_to button_text,
+            toggle_selection_admin_legislation_process_proposal_path(proposal.process, proposal),
+            method: :patch,
+            class: clas %>
