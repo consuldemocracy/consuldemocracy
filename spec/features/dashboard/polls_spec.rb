@@ -5,7 +5,7 @@ feature 'Polls' do
 
   before do
     login_as(proposal.author)
-    visit proposal_dashboard_index_path(proposal)
+    visit proposal_dashboard_path(proposal)
   end
 
   scenario 'Has a link to polls feature' do

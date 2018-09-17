@@ -33,7 +33,7 @@
         <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
           <div class="show-for-small-only">
             <div class="dashboard-sidebar" data-equalizer-watch>
-              <%= render partial: 'dashboard/menu' %>
+              <%= render partial: "dashboard/menu" %>
             </div>
           </div>
         </div>
@@ -50,14 +50,14 @@
 
               <div id="side_menu" class="hide-for-small-only">
                 <div class="dashboard-sidebar" data-equalizer-watch>
-                  <%= render partial: 'dashboard/menu' %>
+                  <%= render partial: "dashboard/menu" %>
                 </div>
               </div>
             </div>
             <div class="admin-content small-12 medium-9 column" data-equalizer-watch>
-              <%= render partial: 'layouts/flash' %>
-              <%= render partial: 'layouts/dashboard/proposal_totals' %>
-              <%= render partial: 'layouts/dashboard/proposal_header' %>
+              <%= render partial: "layouts/flash" %>
+              <%= render partial: "layouts/dashboard/proposal_totals" %>
+              <%= render partial: "layouts/dashboard/proposal_header" %>
               <%= yield %>
             </div>
           </div>

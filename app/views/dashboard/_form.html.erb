@@ -1,6 +1,6 @@
 <% if dashboard_action.request_to_administrators && !dashboard_action.requested_for?(proposal) %>
   <%= form_for @dashboard_executed_action, 
-               url: create_request_proposal_dashboard_url(proposal, dashboard_action) do |f| %>
+               url: create_request_proposal_dashboard_action_url(proposal, dashboard_action) do |f| %>
     <div class="actions">
       <%= f.submit(class: 'button', value: t("dashboard.form.request")) %>
     </div>

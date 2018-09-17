@@ -20,6 +20,6 @@
 <% end %>
 
 <% if can?(:publish, proposal) %>
-  <%= link_to t("dashboard.index.publish"), publish_proposal_dashboard_index_path(proposal), class: 'button success', method: :patch %>
+  <%= link_to t("dashboard.index.publish"), publish_proposal_dashboard_path(proposal), class: 'button success', method: :patch %>
 <% end %>
 

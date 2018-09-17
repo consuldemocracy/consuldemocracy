@@ -5,7 +5,7 @@
 
         <%= raw t("proposals.created.motivation_html") %>
         
-        <%= link_to t("proposals.created.dashboard"), proposal_dashboard_index_path(@proposal), class: "button" if can?(:dashboard, @proposal) %>
+        <%= link_to t("proposals.created.dashboard"), proposal_dashboard_path(@proposal), class: "button" if can?(:dashboard, @proposal) %>
         <%= link_to t("proposals.created.publish"), publish_proposal_path(@proposal), method: :patch, class: "button" if can?(:publish, @proposal) %>
       </div>
   </div>

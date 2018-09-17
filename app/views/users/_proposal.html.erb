@@ -19,7 +19,7 @@
   <% elsif can?(:dashboard, proposal) %>
     <td>
         <%= link_to t("proposals.show.dashboard_proposal_link"), 
-                    proposal_dashboard_index_path(proposal), class: 'button hollow expanded' %>
+                    proposal_dashboard_path(proposal), class: 'button hollow expanded' %>
     </td>
   <% else %>
     <td class="text-center">

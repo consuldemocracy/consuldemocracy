@@ -5,7 +5,7 @@ feature "Proposal's dashboard" do
 
   before do
     login_as(proposal.author)
-    visit proposal_dashboard_index_path(proposal)
+    visit proposal_dashboard_path(proposal)
   end
 
   scenario 'Dashboard has a link to my proposal' do
@@ -33,7 +33,7 @@ feature "Proposal's dashboard" do
     goal = create(:dashboard_action, :resource, :active, required_supports: proposal.votes_for.size + 1_000)
     future_goal = create(:dashboard_action, :resource, :active, required_supports: proposal.votes_for.size + 2_000)
 
-    visit progress_proposal_dashboard_index_path(proposal)
+    visit progress_proposal_dashboard_path(proposal)
 
     within 'div#goals-section' do
       expect(page).to have_content(goal.title)
@@ -49,7 +49,7 @@ feature "Proposal's dashboard" do
   scenario 'Dashboard progress show proposed actions' do
     action = create(:dashboard_action, :proposed_action, :active)
 
-    visit progress_proposal_dashboard_index_path(proposal)
+    visit progress_proposal_dashboard_path(proposal)
     expect(page).to have_content(action.title)
 
     find(:css, "#dashboard_action_#{action.id}_execute").click
@@ -69,7 +69,7 @@ feature "Proposal's dashboard" do
 
     unavailable = create(:dashboard_action, :resource, :active, required_supports: proposal.votes_for.size + 1_000) 
 
-    visit progress_proposal_dashboard_index_path(proposal)
+    visit progress_proposal_dashboard_path(proposal)
     within 'div#available-resources-section' do
       expect(page).to have_content('Polls')
       expect(page).to have_content('E-mail')
@@ -112,14 +112,14 @@ feature "Proposal's dashboard" do
   scenario 'Dashboard has a link to resources on main menu' do
     feature = create(:dashboard_action, :resource, :active)
 
-    visit proposal_dashboard_index_path(proposal)
+    visit proposal_dashboard_path(proposal)
     expect(page).to have_link(feature.title)
   end
 
   scenario 'Request resource with admin request', js: true do
     feature = create(:dashboard_action, :resource, :active, :admin_request)
 
-    visit proposal_dashboard_index_path(proposal)
+    visit proposal_dashboard_path(proposal)
     click_link(feature.title)
 
     click_button 'Request'
@@ -129,7 +129,7 @@ feature "Proposal's dashboard" do
   scenario 'Request already requested resource with admin request', js: true do
     feature = create(:dashboard_action, :resource, :active, :admin_request)
 
-    visit proposal_dashboard_index_path(proposal)
+    visit proposal_dashboard_path(proposal)
     click_link(feature.title)
 
     create(:dashboard_executed_action, action: feature, proposal: proposal)
@@ -141,7 +141,7 @@ feature "Proposal's dashboard" do
   scenario 'Resource without admin request do not have a request link', js: true do
     feature = create(:dashboard_action, :resource, :active)
 
-    visit proposal_dashboard_index_path(proposal)
+    visit proposal_dashboard_path(proposal)
     click_link(feature.title)
 
     expect(page).not_to have_button('Request')

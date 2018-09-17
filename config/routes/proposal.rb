@@ -1,26 +1,25 @@
 resources :proposals do
-  resources :dashboard, only: [:index] do
+  resource :dashboard, only: [:show], controller: 'dashboard' do
     collection do
       patch :publish
       get :progress
       get :community
     end
 
-    member do
-      post :execute
-      get :new_request
-      post :create_request
+    resources :resources, only: [:index], controller: 'dashboard/resources'
+    resources :achievements, only: [:index], controller: 'dashboard/achievements'
+    resources :successful_supports, only: [:index], controller: 'dashboard/successful_supports'
+    resources :supports, only: [:index], controller: 'dashboard/supports'
+    resources :polls, except: [:show, :destroy], controller: 'dashboard/polls'
+    resources :mailing, only: [:index, :new, :create], controller: 'dashboard/mailing'
+    resources :poster, only: [:index, :new], controller: 'dashboard/poster'
+    resources :actions, only: [], controller: 'dashboard/actions' do
+      member do
+        post :execute
+        get :new_request
+        post :create_request
+      end
     end
-  end
-
-  namespace :dashboard do
-    resources :resources, only: [:index]
-    resources :achievements, only: [:index]
-    resources :successful_supports, only: [:index]
-    resources :supports, only: [:index]
-    resources :polls, except: [:show, :destroy]
-    resources :mailing, only: [:index, :new, :create]
-    resources :poster, only: [:index, :new]
   end
 
   member do

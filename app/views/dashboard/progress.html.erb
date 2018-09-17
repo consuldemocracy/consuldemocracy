@@ -5,13 +5,13 @@
     <div class="small-12 column">
       <div class="button-group">
         <%= link_to t("dashboard.progress.group_by_date"), 
-                    progress_proposal_dashboard_index_path(proposal), 
+                    progress_proposal_dashboard_path(proposal), 
                     class: "button #{daily_selected_class}" %>
         <%= link_to t("dashboard.progress.group_by_week"), 
-                    progress_proposal_dashboard_index_path(proposal, group_by: 'week'), 
+                    progress_proposal_dashboard_path(proposal, group_by: 'week'), 
                     class: "button #{weekly_selected_class}" %>
         <%= link_to t("dashboard.progress.group_by_month"),
-                    progress_proposal_dashboard_index_path(proposal, group_by: 'month'),
+                    progress_proposal_dashboard_path(proposal, group_by: 'month'),
                     class: "button #{monthly_selected_class}" %>
       </div>
     </div>

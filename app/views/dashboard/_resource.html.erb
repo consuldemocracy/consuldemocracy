@@ -22,7 +22,7 @@
       <% if resource.executed_for?(proposal) %>
         <div class="bottom-element text-center">
           <%= link_to t("dashboard.resource.view_resource"),
-                      new_request_proposal_dashboard_path(proposal, resource),
+                      new_request_proposal_dashboard_action_path(proposal, resource),
                       class: 'button success' %>
         </div>
       <% elsif resource.requested_for?(proposal) %>
@@ -30,7 +30,7 @@
       <% elsif resource.active_for?(proposal) %>
         <div class="bottom-element text-center">
           <%= link_to t("dashboard.resource.request_resource"),
-                      new_request_proposal_dashboard_path(proposal, resource),
+                      new_request_proposal_dashboard_action_path(proposal, resource),
                       class: 'button primary' %>
         </div>
       <% else %>

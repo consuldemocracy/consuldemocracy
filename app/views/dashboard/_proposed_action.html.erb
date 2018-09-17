@@ -4,7 +4,7 @@
       <% if proposed_action.proposals.where(id: proposal.id).any? %>
         <i class="fi-check success"></i>
       <% else %>
-        <%= link_to execute_proposal_dashboard_path(proposal, proposed_action), method: :post, id: "#{dom_id(proposed_action)}_execute" do %>
+        <%= link_to execute_proposal_dashboard_action_path(proposal, proposed_action), method: :post, id: "#{dom_id(proposed_action)}_execute" do %>
           <div class="checkbox-unchecked">
           </div>
         <% end %>
