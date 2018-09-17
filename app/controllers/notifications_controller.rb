@@ -36,19 +36,11 @@ class NotificationsController < ApplicationController
   end
 
   private
-
     def linkable_resource_path(notification)
-      case notification.linkable_resource.class.name
-      when "Budget::Investment"
-        budget_investment_path @notification.linkable_resource.budget, @notification.linkable_resource
-      when "Topic"
-        community_topic_path @notification.linkable_resource.community, @notification.linkable_resource
+      if notification.linkable_resource.is_a?(AdminNotification)
+        notification.linkable_resource.link || notifications_path
       else
-        if @notification.linkable_resource.is_a?(AdminNotification)
-          @notification.linkable_resource.link || notifications_path
-        else
-          url_for @notification.linkable_resource
-        end
+        polymorphic_hierarchy_path(notification.linkable_resource)
       end
     end
 
