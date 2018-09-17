@@ -221,7 +221,6 @@ describe Poll do
   end
 
   describe "#voted_in_booth?" do
-
     it "returns true if the user has already voted in booth" do
       user = create(:user, :level_two)
       poll = create(:poll)
@@ -246,7 +245,30 @@ describe Poll do
 
       expect(poll.voted_in_booth?(user)).not_to be
     end
-
   end
 
+  describe '.overlaping_with' do
+    let(:proposal) { create :proposal }
+    let(:other_proposal) { create :proposal }
+    let(:poll) { create(:poll, related: proposal) }
+    let(:overlaping_poll) { build(:poll, related: proposal, starts_at: poll.starts_at + 1.day, ends_at: poll.ends_at - 1.day) }
+    let(:non_overlaping_poll) { create(:poll, related: proposal, starts_at: poll.ends_at + 1.day, ends_at: poll.ends_at + 31.days) }
+    let(:overlaping_poll_2) { create(:poll, related: other_proposal, starts_at: poll.starts_at + 1.day, ends_at: poll.ends_at - 1.day) }
+
+    it 'a poll can not overlap itself' do
+      expect(Poll.overlaping_with(poll)).not_to include(poll)
+    end
+
+    it 'returns overlaping polls for the same proposal' do
+      expect(Poll.overlaping_with(overlaping_poll)).to include(poll)
+    end
+
+    it 'do not returs non overlaping polls for the same proposal' do
+      expect(Poll.overlaping_with(poll)).not_to include(non_overlaping_poll)
+    end
+
+    it 'do not returns overlaping polls for other proposal' do
+      expect(Poll.overlaping_with(poll)).not_to include(overlaping_poll_2)
+    end
+  end
 end

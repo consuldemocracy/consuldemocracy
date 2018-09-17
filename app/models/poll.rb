@@ -36,13 +36,13 @@ class Poll < ActiveRecord::Base
   scope :published, -> { where('published = ?', true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
   scope :public_for_api, -> { all }
-  scope :overlaping_with, lambda { |poll| 
+  scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
+
+  def self.overlaping_with(poll)
     where('? < ends_at and ? >= starts_at', poll.starts_at.beginning_of_day, poll.ends_at.end_of_day)
       .where.not(id: poll.id)
       .where(related: poll.related)
-  }
-
-  scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
+  end
 
   def title
     name
