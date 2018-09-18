@@ -373,7 +373,7 @@ es:
           enabled: Habilitado
           process: Proceso
           debate_phase: Fase de debate
-          allegations_phase: Fase de redacción
+          allegations_phase: Fase de comentarios
           proposals_phase: Fase de propuestas
           start: Inicio
           end: Fin

@@ -372,7 +372,7 @@ en:
           enabled: Enabled
           process: Process
           debate_phase: Debate phase
-          allegations_phase: Drafting phase
+          allegations_phase: Comments phase
           proposals_phase: Proposals phase
           start: Start
           end: End
