@@ -134,24 +134,6 @@ feature "Custom Pages" do
         expect(page).to have_selector("h1", text: "Another custom page")
         expect(page).to have_content("Subtitle for custom page")
       end
-
-      scenario "Not listed in more information page due to different locale" do
-        custom_page = create(:site_customization_page, :published,
-          slug: "another-slug", title_en: "Ce texte est en français",
-          subtitle_en: "Subtitle for custom page",
-          more_info_flag: false
-        )
-
-        visit help_path
-
-        expect(page).not_to have_content("Ce texte est en français")
-
-        visit custom_page.url
-
-        expect(page).to have_title("Ce texte est en français")
-        expect(page).to have_selector("h1", text: "Ce texte est en français")
-        expect(page).to have_content("Subtitle for custom page")
-      end
     end
   end
 end

@@ -52,7 +52,7 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
         :status]
       
       params.require(:site_customization_page).permit(*attributes, 
-        translation_params(params[:site_customization_page])
+        *translation_params(params[:site_customization_page])
       )
     end
 end
