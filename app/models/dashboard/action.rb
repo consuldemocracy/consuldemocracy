@@ -39,7 +39,8 @@ class Dashboard::Action < ActiveRecord::Base
   scope :inactive, -> { where(active: false) }
   scope :resources, -> { where(action_type: 1) }
   scope :proposed_actions, -> { where(action_type: 0) }
-  scope :active_for, ->(proposal) do 
+
+  def self.active_for(proposal) 
     published_at = proposal.published_at&.to_date || Date.today
 
     active
@@ -47,12 +48,12 @@ class Dashboard::Action < ActiveRecord::Base
       .where('day_offset <= ?', (Date.today - published_at).to_i)
   end
 
-  scope :course_for, lambda { |proposal|
+  def self.course_for(proposal)
     active
       .resources
       .where('required_supports > ?', proposal.cached_votes_up)
       .order(required_supports: :asc)
-  }
+  end
 
   def active_for?(proposal)
     published_at = proposal.published_at&.to_date || Date.today
