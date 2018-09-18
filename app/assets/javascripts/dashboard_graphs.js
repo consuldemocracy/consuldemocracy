@@ -194,6 +194,9 @@
         x: {
           lines: this.achievements
         }
+      },
+      zoom: {
+        enabled: true
       }
     });
   };
