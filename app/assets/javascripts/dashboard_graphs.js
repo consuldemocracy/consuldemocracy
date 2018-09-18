@@ -194,9 +194,6 @@
         x: {
           lines: this.achievements
         }
-      },
-      legend: {
-        position: 'right'
       }
     });
   };
