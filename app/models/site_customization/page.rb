@@ -8,7 +8,7 @@ class SiteCustomization::Page < ActiveRecord::Base
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
   
   translates :title, :subtitle, :content
-  globalize_accessors locales: [:en, :es, :fr, :nl, :val, :pt_br] 
+  globalize_accessors locales: I18n.available_locales.map { |l| l.to_s.underscore.to_sym }
  
   scope :published, -> { where(status: 'published').order('id DESC') }
   scope :with_more_info_flag, -> { where(status: 'published', more_info_flag: true).order('id ASC') }

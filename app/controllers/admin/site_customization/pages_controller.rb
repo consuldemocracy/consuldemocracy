@@ -32,10 +32,6 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
     redirect_to admin_site_customization_pages_path, notice: notice
   end
   
-  def resource_model
-    SiteCustomization::Page
-  end
-  
   def resource
     SiteCustomization::Page.find(params[:id])
   end
@@ -49,10 +45,11 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
         :content,
         :more_info_flag,
         :print_content_flag,
-        :status]
+        :status,
+        :locale]
       
       params.require(:site_customization_page).permit(*attributes, 
-        *translation_params(params[:site_customization_page])
+        *translation_params(SiteCustomization::Page)
       )
     end
 end
