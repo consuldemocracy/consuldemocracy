@@ -64,7 +64,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
       attributes = [:name, :starts_at, :ends_at, :geozone_restricted, :summary, :description,
                     :results_enabled, :stats_enabled, geozone_ids: [],
                     image_attributes: image_attributes]
-      params.require(:poll).permit(*attributes, *translation_params(params[:poll]))
+      params.require(:poll).permit(*attributes, *translation_params(Poll))
     end
 
     def search_params
