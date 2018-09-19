@@ -1,5 +1,5 @@
 <%= form_for [:admin, @page], html: {class: "edit_page", data: {watch_changes: true}} do |f| %>
-<%= render "globalize_locales" %>
+
   <% if @page.errors.any? %>
     <div id="error_explanation" data-alert class="callout alert" data-closable>
       <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
@@ -30,54 +30,33 @@
       <br>
     <% end %>
   </div>
-  
   <div class="small-12 medium-4 column">
-    <%= f.label :slug , t("admin.site_customization.pages.page.slug") %>
+    <%= f.label :locale %>
+    <%= f.select :locale, I18n.available_locales.map { |l| [name_for_locale(l), l.to_s] }, { include_blank: true, label: false } %>
+  </div>
+  <div class="small-12 medium-4 column">
+    <%= f.label :slug %>
     <%= f.text_field :slug, label: false, size: 80, maxlength: 80 %>
   </div>
-	<% @page.globalize_locales.each do |locale| %>
-	    <%= hidden_field_tag "delete_translations[#{locale}]", 0 %>
-	<% end %>
+
     <div class="small-12 column">
-      <hr> 
-	  <%= f.label :title , t("admin.site_customization.pages.page.title") %>
-	  <% @page.globalize_locales.each do |locale| %>
-        <% globalize(locale) do %>
-		  <%= f.text_field "title_#{locale}",
-		    class: "js-globalize-attribute",
-		    data: { locale: locale },
-		    style: display_translation?(locale),
-		     label: false %>			  
-        <% end %>
-	  <% end %>
-	  <%= f.label :subtitle %>
-	  <% @page.globalize_locales.each do |locale| %>
-        <% globalize(locale) do %>
-		  <%= f.text_field "subtitle_#{locale}",
-		    class: "js-globalize-attribute",
-		    data: { locale: locale },
-		    style: display_translation?(locale),
-		    label: false %>			  
-        <% end %>
-	  <% end %>	  
-      <% @page.globalize_locales.each do |locale| %>
-        <% globalize(locale) do %>
-	        <%= content_tag :span, class: "js-globalize-attribute",
-	                               data: { locale: locale },
-	                               style: display_translation?(locale) do %>
-	          <%= f.cktext_area "content_#{locale}",
-			                    class: "js-globalize-attribute",
-	                            ckeditor: { language: locale },
-	                            data: { locale: locale },
-	                            label: false %>
-			  </br>					
-	        <% end %>	  		    	  	  
-        <% end %>
-      <% end %>
+      <hr>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, label: false %>
+
+      <%= f.label :subtitle %>
+      <%= f.text_field :subtitle, label: false, size: 80, maxlength: 80 %>
+
+      <div class="ckeditor margin-top">
+        <%= f.label :content %>
+        <%= f.cktext_area :content, label: false, cols: 80, rows: 10,
+                          ckeditor: { language: I18n.locale, toolbar: "admin" } %>
+      </div>
+
       <div class="small-12 medium-6 large-3">
         <%= f.submit class: "button success expanded" %>
       </div>
     </div>
   </div>
-<% end %>	
-
+<% end %>
