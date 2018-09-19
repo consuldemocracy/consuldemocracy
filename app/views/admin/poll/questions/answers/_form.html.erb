@@ -1,25 +1,12 @@
 <%= render "admin/shared/globalize_locales", resource: @answer %>
 
-<%= form_for(@answer, url: form_url) do |f| %>
+<%= translatable_form_for(@answer, url: form_url) do |f| %>
 
   <%= render 'shared/errors', resource: @answer %>
 
-  <% @answer.globalize_locales.each do |locale| %>
-    <%= hidden_field_tag "delete_translations[#{locale}]", 0 %>
-	<% end %>
-
   <%= f.hidden_field :question_id, value: @answer.question_id || @question.id %>
 
-  <%= f.label :title, t("admin.shared.title") %>
-  <% @answer.globalize_locales.each do |locale| %>
-    <% globalize(locale) do %>
-      <%= f.text_field "title_#{locale}",
-                       class: "js-globalize-attribute",
-                       data: { locale: locale },
-                       style: display_translation?(locale),
-                       label: false %>
-    <% end %>
-  <% end %>
+  <%= f.translatable_text_field :title %>
 
   <div class="ckeditor">
     <%= f.label :description, t("admin.shared.description") %>
