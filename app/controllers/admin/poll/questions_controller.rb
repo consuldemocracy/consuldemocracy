@@ -57,7 +57,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
 
     def question_params
       attributes = [:poll_id, :title, :question, :proposal_id]
-      params.require(:poll_question).permit(*attributes, *translation_params(params[:poll_question]))
+      params.require(:poll_question).permit(*attributes, *translation_params(Poll::Question))
     end
 
     def search_params
