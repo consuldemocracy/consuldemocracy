@@ -30,6 +30,18 @@ ActiveRecord::Schema.define(version: 20180813141443) do
   add_index "activities", ["actionable_id", "actionable_type"], name: "index_activities_on_actionable_id_and_actionable_type", using: :btree
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
 
+  create_table "admin_notification_translations", force: :cascade do |t|
+    t.integer  "admin_notification_id", null: false
+    t.string   "locale",                null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "title"
+    t.text     "body"
+  end
+
+  add_index "admin_notification_translations", ["admin_notification_id"], name: "index_admin_notification_translations_on_admin_notification_id", using: :btree
+  add_index "admin_notification_translations", ["locale"], name: "index_admin_notification_translations_on_locale", using: :btree
+
   create_table "admin_notifications", force: :cascade do |t|
     t.string   "title"
     t.text     "body"

@@ -145,6 +145,7 @@ ignore_unused:
   - 'admin.settings.index.features.*'
   - 'admin.polls.*.submit_button'
   - 'admin.booths.*.submit_button'
+  - 'admin.admin_notifications.*.submit_button'
   - 'admin.homepage.*'
   - 'moderation.comments.index.filter*'
   - 'moderation.comments.index.order*'

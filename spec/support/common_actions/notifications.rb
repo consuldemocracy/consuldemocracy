@@ -43,8 +43,8 @@ module Notifications
 
   def fill_in_admin_notification_form(options = {})
     select (options[:segment_recipient] || 'All users'), from: :admin_notification_segment_recipient
-    fill_in :admin_notification_title, with: (options[:title] || 'This is the notification title')
-    fill_in :admin_notification_body, with: (options[:body] || 'This is the notification body')
+    fill_in :admin_notification_title_en, with: (options[:title] || 'This is the notification title')
+    fill_in :admin_notification_body_en, with: (options[:body] || 'This is the notification body')
     fill_in :admin_notification_link, with: (options[:link] || 'https://www.decide.madrid.es/vota')
   end
 end

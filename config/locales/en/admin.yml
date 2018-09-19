@@ -658,8 +658,10 @@ en:
         empty_notifications: There are no notifications to show
       new:
         section_title: New notification
+        submit_button: Create notification
       edit:
         section_title: Edit notification
+        submit_button: Update notification
       show:
         section_title: Notification preview
         send: Send notification
