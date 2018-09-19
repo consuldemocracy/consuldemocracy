@@ -39,7 +39,7 @@ feature "Admin Notifications" do
   end
 
   context "Index" do
-    scenario "Valid Admin Notifications" do
+    scenario "Valid Admin Notifications", :with_frozen_time do
       draft = create(:admin_notification, segment_recipient: :all_users, title: 'Not yet sent')
       sent = create(:admin_notification, :sent, segment_recipient: :administrators,
                                                 title: 'Sent one')

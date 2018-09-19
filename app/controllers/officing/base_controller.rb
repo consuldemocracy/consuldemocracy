@@ -31,7 +31,7 @@ class Officing::BaseController < ApplicationController
 
     def verify_booth
       return unless current_booth.blank?
-      booths = todays_booths_for_officer(current_user.poll_officer)
+      booths = current_user.poll_officer.todays_booths
       case booths.count
       when 0
         redirect_to officing_root_path
@@ -44,10 +44,6 @@ class Officing::BaseController < ApplicationController
 
     def current_booth
       Poll::Booth.where(id: session[:booth_id]).first
-    end
-
-    def todays_booths_for_officer(officer)
-      officer.officer_assignments.by_date(Date.today).map(&:booth).uniq
     end
 
     def letter?

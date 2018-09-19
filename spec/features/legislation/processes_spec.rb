@@ -141,7 +141,7 @@ feature 'Legislation' do
     end
 
     context 'debate phase' do
-      scenario 'not open' do
+      scenario 'not open', :with_frozen_time do
         process = create(:legislation_process, debate_start_date: Date.current + 1.day, debate_end_date: Date.current + 2.days)
 
         visit legislation_process_path(process)
@@ -176,7 +176,7 @@ feature 'Legislation' do
     end
 
     context 'draft publication phase' do
-      scenario 'not open' do
+      scenario 'not open', :with_frozen_time do
         process = create(:legislation_process, draft_publication_date: Date.current + 1.day)
 
         visit draft_publication_legislation_process_path(process)
@@ -196,7 +196,7 @@ feature 'Legislation' do
     end
 
     context 'allegations phase' do
-      scenario 'not open' do
+      scenario 'not open', :with_frozen_time do
         process = create(:legislation_process, allegations_start_date: Date.current + 1.day, allegations_end_date: Date.current + 2.days)
 
         visit allegations_legislation_process_path(process)
@@ -216,7 +216,7 @@ feature 'Legislation' do
     end
 
     context 'final version publication phase' do
-      scenario 'not open' do
+      scenario 'not open', :with_frozen_time do
         process = create(:legislation_process, result_publication_date: Date.current + 1.day)
 
         visit result_publication_legislation_process_path(process)
@@ -236,7 +236,7 @@ feature 'Legislation' do
     end
 
     context 'proposals phase' do
-      scenario 'not open' do
+      scenario 'not open', :with_frozen_time do
         process = create(:legislation_process, :upcoming_proposals_phase)
 
         visit legislation_process_proposals_path(process)

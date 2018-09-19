@@ -1,12 +1,11 @@
 require 'rails_helper'
 
-feature 'Officing Results' do
+feature 'Officing Results', :with_frozen_time do
   let(:poll) { create(:poll, ends_at: 1.day.ago) }
   let(:booth) { create(:poll_booth) }
   let(:poll_officer) { create(:poll_officer) }
 
   background do
-    travel_to Time.now # TODO: use `freeze_time` after migrating to Rails 5.
     create(:poll_booth_assignment, poll: poll, booth: booth)
     create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth, date: Date.current)
     @question_1 = create(:poll_question, poll: poll)
@@ -18,10 +17,6 @@ feature 'Officing Results' do
 
     login_as(poll_officer.user)
     set_officing_booth(booth)
-  end
-
-  after do
-    travel_back
   end
 
   scenario 'Only polls where user is officer for results are accessible' do

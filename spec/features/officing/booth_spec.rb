@@ -1,12 +1,6 @@
 require 'rails_helper'
 
-feature 'Booth' do
-
-  before do
-    allow(Date).to receive(:current).and_return Date.new(2018,1,1)
-    allow(Date).to receive(:today).and_return Date.new(2018,1,1)
-    allow(Time).to receive(:current).and_return Time.zone.parse("2018-01-01 12:00:00")
-  end
+feature 'Booth', :with_frozen_time do
 
   scenario "Officer with no booth assignments today" do
     officer = create(:poll_officer)
