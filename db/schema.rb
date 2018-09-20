@@ -847,6 +847,17 @@ ActiveRecord::Schema.define(version: 20180813141443) do
 
   add_index "poll_question_answers", ["question_id"], name: "index_poll_question_answers_on_question_id", using: :btree
 
+  create_table "poll_question_translations", force: :cascade do |t|
+    t.integer  "poll_question_id", null: false
+    t.string   "locale",           null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "title"
+  end
+
+  add_index "poll_question_translations", ["locale"], name: "index_poll_question_translations_on_locale", using: :btree
+  add_index "poll_question_translations", ["poll_question_id"], name: "index_poll_question_translations_on_poll_question_id", using: :btree
+
   create_table "poll_questions", force: :cascade do |t|
     t.integer  "proposal_id"
     t.integer  "poll_id"
