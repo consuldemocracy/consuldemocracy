@@ -25,6 +25,9 @@ Layout/IndentationConsistency:
 Layout/EndOfLine:
   EnforcedStyle: lf
 
+Layout/TrailingBlankLines:
+  Enabled: true
+
 Layout/TrailingWhitespace:
   Enabled: true
 
