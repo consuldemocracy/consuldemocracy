@@ -2,6 +2,11 @@ class Poll::Question::Answer < ActiveRecord::Base
   include StatsHelper
   include Galleryable
   include Documentable
+
+  translates :title,       touch: true
+  translates :description, touch: true
+  globalize_accessors locales: [:en, :es, :fr, :nl, :pt_br]
+
   documentable max_documents_allowed: 3,
                max_file_size: 20.megabytes,
                accepted_content_types: [ "application/pdf" ]
@@ -16,7 +21,7 @@ class Poll::Question::Answer < ActiveRecord::Base
   before_validation :set_order, on: :create
 
   def description
-    super.try :html_safe
+    self[:description].try :html_safe
   end
 
   def self.order_answers(ordered_array)

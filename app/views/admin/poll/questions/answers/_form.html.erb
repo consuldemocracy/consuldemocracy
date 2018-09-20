@@ -1,15 +1,30 @@
-<%= form_for(@answer, url: form_url) do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @answer %>
+
+<%= translatable_form_for(@answer, url: form_url) do |f| %>
 
   <%= render 'shared/errors', resource: @answer %>
 
   <%= f.hidden_field :question_id, value: @answer.question_id || @question.id %>
 
-  <%= f.text_field :title %>
+  <%= f.translatable_text_field :title %>
 
   <div class="ckeditor">
-    <%= f.cktext_area :description,
-                      maxlength: Poll::Question.description_max_length,
-                      ckeditor: { language: I18n.locale } %>
+    <%= f.label :description, t("admin.shared.description") %>
+    <% @answer.globalize_locales.each do |locale| %>
+      <% globalize(locale) do %>
+        <%= content_tag :span, class: "js-globalize-attribute",
+                               data: { locale: locale },
+                               style: display_translation?(locale) do %>
+
+          <%= f.cktext_area "description_#{locale}",
+                            maxlength: Poll::Question.description_max_length,
+                            ckeditor: { language: locale },
+                            class: "js-globalize-attribute",
+                            data: { locale: locale },
+                            label: false %>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="small-12 medium-4 large-2 margin-top">
