@@ -8,6 +8,11 @@ class Poll < ActiveRecord::Base
   include Notifiable
   include Sluggable
 
+  translates :name,        touch: true
+  translates :summary,     touch: true
+  translates :description, touch: true
+  globalize_accessors
+
   RECOUNT_DURATION = 1.week
 
   has_many :booth_assignments, class_name: "Poll::BoothAssignment"
