@@ -25,6 +25,9 @@ Layout/IndentationConsistency:
 Layout/EndOfLine:
   EnforcedStyle: lf
 
+Layout/TrailingWhitespace:
+  Enabled: true
+
 Bundler/DuplicatedGem:
   Enabled: true
 
