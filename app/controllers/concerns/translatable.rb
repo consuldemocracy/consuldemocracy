@@ -25,7 +25,7 @@ module Translatable
     end
 
     def enabled_translations
-      params.fetch(:enabled_translations)
+      params.fetch(:enabled_translations, {})
             .select { |_, v| v == '1' }
             .keys
     end
