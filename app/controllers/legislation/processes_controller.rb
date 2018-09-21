@@ -95,7 +95,7 @@ class Legislation::ProcessesController < Legislation::BaseController
     @proposals = @proposals.search(params[:search]) if params[:search].present?
     @proposals = @proposals.send(@current_filter).order('random()').page(params[:page])
 
-    @valid_filters = [] unless @proposals.map(&:selected).include? true
+    @valid_filters = [] unless @proposals.selected.any?
 
     if @process.proposals_phase.started? || (current_user && current_user.administrator?)
       legislation_proposal_votes(@proposals)
