@@ -255,6 +255,16 @@ feature 'Legislation' do
         expect(page).to have_content("There are no proposals")
       end
 
+      scenario 'create proposal button redirects to register path if user is not logged in' do
+        process = create(:legislation_process, :in_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+        click_link "Create a proposal"
+
+        expect(page).to have_current_path new_user_session_path
+        expect(page).to have_content "You must sign in or register to continue"
+      end
+
       include_examples "not published permissions", :legislation_process_proposals_path
     end
   end
