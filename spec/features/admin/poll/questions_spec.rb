@@ -6,6 +6,11 @@ feature 'Admin poll questions' do
     login_as(create(:administrator).user)
   end
 
+  it_behaves_like "translatable",
+                  "poll_question",
+                  "edit_admin_question_path",
+                  %w[title]
+
   scenario 'Index' do
     question1 = create(:poll_question)
     question2 = create(:poll_question)
@@ -108,4 +113,41 @@ feature 'Admin poll questions' do
 
   pending "Mark all city by default when creating a poll question from a successful proposal"
 
+  context "Poll select box" do
+
+    let(:poll) { create(:poll, name_en: "Name in English",
+                               name_es: "Nombre en Español",
+                               summary_en: "Summary in English",
+                               summary_es: "Resumen en Español",
+                               description_en: "Description in English",
+                               description_es: "Descripción en Español") }
+
+    let(:question) { create(:poll_question, poll: poll,
+                                            title_en: "Question in English",
+                                            title_es: "Pregunta en Español") }
+
+    before do
+      @edit_question_url = edit_admin_question_path(question)
+    end
+
+    scenario "translates the poll name in options", :js do
+      visit @edit_question_url
+
+      expect(page).to have_select('poll_question_poll_id', options: [poll.name_en])
+
+      select('Español', from: 'locale-switcher')
+
+      expect(page).to have_select('poll_question_poll_id', options: [poll.name_es])
+    end
+
+    scenario "uses fallback if name is not translated to current locale", :js do
+      visit @edit_question_url
+
+      expect(page).to have_select('poll_question_poll_id', options: [poll.name_en])
+
+      select('Français', from: 'locale-switcher')
+
+      expect(page).to have_select('poll_question_poll_id', options: [poll.name_es])
+    end
+  end
 end

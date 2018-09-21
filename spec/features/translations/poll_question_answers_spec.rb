@@ -57,12 +57,12 @@ feature "Translations" do
           expect(page).to have_content "Description en Français"
         end
 
-        scenario "Update a translation", :js do
+        scenario "Update a translation with allowed blank translated field", :js do
           visit @edit_answer_url
 
           click_link "Español"
           fill_in 'poll_question_answer_title_es', with: 'Pregunta correcta en Español'
-          fill_in_ckeditor 'poll_question_answer_description_es', with: 'Descripción correcta en Español'
+          fill_in_ckeditor 'poll_question_answer_description_es', with: ''
 
           click_button 'Save'
           expect(page).to have_content "Changes saved"
@@ -72,7 +72,7 @@ feature "Translations" do
 
           select('Español', from: 'locale-switcher')
           expect(page).to have_content("Pregunta correcta en Español")
-          expect(page).to have_content("Descripción correcta en Español")
+          expect(page).to_not have_content("Descripción en Español")
         end
 
         scenario "Remove a translation", :js do
@@ -86,6 +86,17 @@ feature "Translations" do
           click_button "Save"
           visit @edit_answer_url
           expect(page).not_to have_link "Español"
+        end
+
+        scenario "Add a translation for a locale with non-underscored name", :js do
+          visit @edit_answer_url
+
+          select('Português', from: 'translation_locale')
+          fill_in_ckeditor 'poll_question_answer_description_pt_br', with: 'resposta em Português'
+          click_button 'Save'
+
+          select('Português', from: 'locale-switcher')
+          expect(page).to have_content("resposta em Português")
         end
 
         context "Globalize javascript interface" do
