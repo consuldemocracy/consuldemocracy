@@ -15,6 +15,9 @@ Rails.application.config.assets.precompile += %w( stat_graphs.js )
 Rails.application.config.assets.precompile += %w( print.css )
 Rails.application.config.assets.precompile += %w( ie.css )
 
-# Loads app/assets/images/custom before app/assets/images
-images_path = Rails.application.config.assets.paths
-images_path = images_path.insert(0, Rails.root.join("app", "assets", "images", "custom").to_s)
+# Loads custom images and custom fonts before app/assets/images and app/assets/fonts
+assets_path = Rails.application.config.assets.paths
+
+%w[images fonts].each do |asset|
+  assets_path.insert(0, Rails.root.join("app", "assets", asset, "custom").to_s)
+end
