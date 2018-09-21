@@ -1115,10 +1115,8 @@ es:
       search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
-      name: Nombre
       title: Título
       description: Descripción
-      summary: Resumen
       view: Ver
       proposal: Propuesta
       author: Autor
