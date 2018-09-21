@@ -28,11 +28,11 @@
         <% if @process.proposals_phase.open? %>
           <% if @process.title == "PLENO ABIERTO" %>
             <p><%= link_to t("proposals.index.start_proposal_question"),
-                            (user_signed_in? ? new_legislation_process_proposal_path(@process) : new_user_session_path),
+                            new_legislation_process_proposal_path(@process),
                             class: 'button expanded', id: 'create-new-proposal' %></p>
           <% else %>
             <p><%= link_to t("proposals.index.start_proposal"),
-                            (user_signed_in? ? new_legislation_process_proposal_path(@process) : new_user_session_path),
+                            new_legislation_process_proposal_path(@process),
                             class: 'button expanded', id: 'create-new-proposal' %></p>
           <% end %>
         <% end %>
