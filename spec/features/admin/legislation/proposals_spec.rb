@@ -73,7 +73,7 @@ feature 'Admin legislation processes' do
       proposal1 = create(:legislation_proposal, title: 'bbbb', cached_votes_up: 10, legislation_process_id: legislation_process.id)
       proposal2 = create(:legislation_proposal, title: 'aaaa', cached_votes_up: 20, legislation_process_id: legislation_process.id)
       proposal3 = create(:legislation_proposal, title: 'cccc', cached_votes_up: 30, legislation_process_id: legislation_process.id)
-      visit admin_legislation_process_proposals_path(legislation_process.id)
+      visit admin_legislation_process_proposals_path(legislation_process.id, order: :title)
 
       select "Id", from: "order-selector-participation"
 
