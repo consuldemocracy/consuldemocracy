@@ -4,7 +4,7 @@ class Poll::Question::Answer < ActiveRecord::Base
 
   translates :title,       touch: true
   translates :description, touch: true
-  globalize_accessors locales: [:en, :es, :fr, :nl, :pt_br]
+  globalize_accessors
 
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
