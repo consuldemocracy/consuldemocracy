@@ -1085,10 +1085,8 @@ es:
       search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
-      name: Nombre
       title: Título
       description: Descripción
-      summary: Resumen
       image: Imagen
       show_image: Mostrar imagen
       moderated_content: "Revisa el contenido moderado por los moderadores, y confirma si la moderación se ha realizado correctamente."
