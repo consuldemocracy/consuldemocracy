@@ -62,15 +62,9 @@ feature 'Admin legislation processes' do
       select "Supports", from: "order-selector-participation"
 
       within('#proposals_table') do
-        within(:xpath, "//tbody/tr[1]") do
-          expect(page).to have_content('10')
-        end
-        within(:xpath, "//tbody/tr[2]") do
-          expect(page).to have_content('20')
-        end
-        within(:xpath, "//tbody/tr[3]") do
-          expect(page).to have_content('30')
-        end
+        within(:xpath, "//tbody/tr[1]") { expect(page).to have_content('30') }
+        within(:xpath, "//tbody/tr[2]") { expect(page).to have_content('20') }
+        within(:xpath, "//tbody/tr[3]") { expect(page).to have_content('10') }
       end
     end
 
