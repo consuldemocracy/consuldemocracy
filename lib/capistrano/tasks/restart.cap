@@ -1,8 +1,10 @@
-desc 'Restart Unicorn'
-task :restart do
-  on roles(:app) do
-    execute "kill -QUIT `cat /home/deploy/consul/pids/unicorn.pid`; true"
-    execute "kill -QUIT `cat /home/deploy/consul/shared/pids/unicorn.pid`; true"
-    execute "cd /home/deploy/consul/current && /home/deploy/.rvm/gems/ruby-2.3.2/wrappers/unicorn -c config/unicorn.rb -E production -D"
-  end
+namespace :deploy do
+	desc 'Restart Unicorn'
+	task :restart do
+		on roles(:app) do
+			execute "kill -QUIT `cat /home/deploy/consul/pids/unicorn.pid`; true"
+			execute "kill -QUIT `cat /home/deploy/consul/shared/pids/unicorn.pid`; true"
+			execute "cd /home/deploy/consul/current && /home/deploy/.rvm/gems/ruby-2.3.2/wrappers/unicorn -c config/unicorn.rb -E production -D"
+		end
+	end
 end
