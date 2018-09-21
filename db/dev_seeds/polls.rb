@@ -32,8 +32,7 @@ section "Creating polls" do
   Poll.find_each do |poll|
     name = poll.name
     I18n.available_locales.map do |locale|
-      neutral_locale = locale.to_s.downcase.underscore.to_sym
-      Globalize.with_locale(neutral_locale) do
+      Globalize.with_locale(locale) do
         poll.name = "#{name} (#{locale})"
         poll.summary = "Summary for locale #{locale}"
         poll.description = "Description for locale #{locale}"
@@ -52,8 +51,7 @@ section "Creating Poll Questions & Answers" do
                                     title: title,
                                     poll: poll)
       I18n.available_locales.map do |locale|
-        neutral_locale = locale.to_s.downcase.underscore.to_sym
-        Globalize.with_locale(neutral_locale) do
+        Globalize.with_locale(locale) do
           question.title = "#{title} (#{locale})"
         end
       end
@@ -64,8 +62,7 @@ section "Creating Poll Questions & Answers" do
                                             title: title.capitalize,
                                             description: description)
         I18n.available_locales.map do |locale|
-          neutral_locale = locale.to_s.downcase.underscore.to_sym
-          Globalize.with_locale(neutral_locale) do
+          Globalize.with_locale(locale) do
             answer.title = "#{title} (#{locale})"
             answer.description = "#{description} (#{locale})"
           end
@@ -210,8 +207,7 @@ section "Creating Poll Questions from Proposals" do
                                           title: title.capitalize,
                                           description: description)
       I18n.available_locales.map do |locale|
-        neutral_locale = locale.to_s.downcase.underscore.to_sym
-        Globalize.with_locale(neutral_locale) do
+        Globalize.with_locale(locale) do
           answer.title = "#{title} (#{locale})"
           answer.description = "#{description} (#{locale})"
         end
@@ -221,8 +217,7 @@ section "Creating Poll Questions from Proposals" do
     question.copy_attributes_from_proposal(proposal)
     title = question.title
     I18n.available_locales.map do |locale|
-      neutral_locale = locale.to_s.downcase.underscore.to_sym
-      Globalize.with_locale(neutral_locale) do
+      Globalize.with_locale(locale) do
         question.title = "#{title} (#{locale})"
       end
     end
@@ -241,8 +236,7 @@ section "Creating Successful Proposals" do
                                           title: title.capitalize,
                                           description: description)
       I18n.available_locales.map do |locale|
-        neutral_locale = locale.to_s.downcase.underscore.to_sym
-        Globalize.with_locale(neutral_locale) do
+        Globalize.with_locale(locale) do
           answer.title = "#{title} (#{locale})"
           answer.description = "#{description} (#{locale})"
         end
@@ -252,8 +246,7 @@ section "Creating Successful Proposals" do
     question.copy_attributes_from_proposal(proposal)
     title = question.title
     I18n.available_locales.map do |locale|
-      neutral_locale = locale.to_s.downcase.underscore.to_sym
-      Globalize.with_locale(neutral_locale) do
+      Globalize.with_locale(locale) do
         question.title = "#{title} (#{locale})"
       end
     end
