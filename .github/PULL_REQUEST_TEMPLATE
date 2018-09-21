@@ -1,17 +1,17 @@
-References
-===================
-> Add references to related Issues/Pull Requests/Travis Builds/Rollbar errors/etc...
+## References
 
-Objectives
-===================
-> What are the objectives of this changes? (If there is no related Issue with an explanation)
+> Related Issues/Pull Requests/Travis Builds/Rollbar errors/etc...
 
-Visual Changes
-===================
-> Any visual changes? please attach screenshots (or gifs) showing them.
-> If modified views are public (not the admin panel), try them in mobile display (with your browser's developer console) and add screenshots.
+## Objectives
 
-Notes
-===================
-> Mention rake tasks or actions to be done when deploying this changes to a server (if any).
-> Explain any caveats, or important things to notice like deprecations (if any).
+> What are the objectives of this changes?
+
+## Visual Changes
+
+> A picture is worth a thousand words!
+
+## Does this PR need a Backport to CONSUL?
+
+> Don't forget to add the label `Backport-Needed`
+
+## Notes
