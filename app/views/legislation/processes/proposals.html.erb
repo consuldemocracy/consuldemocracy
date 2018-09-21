@@ -11,7 +11,7 @@
         <div class="legislation-proposals">
           <% if @proposals.empty? %>
             <div class="callout primary">
-              <p><%= t('.empty_proposals') %></p>
+              <p><%= t("legislation.processes.proposals.empty_proposals") %></p>
             </div>
           <% else %>
             <%= render @proposals %>
