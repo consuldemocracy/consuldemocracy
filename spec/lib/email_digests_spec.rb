@@ -143,14 +143,21 @@ describe EmailDigest do
       user = create(:user, email: 'valid_email@email.com')
 
       email_digest = described_class.new(user)
-      expect(email_digest.valid_email?).to be_a(MatchData)
+      expect(String.valid_email?(email_digest.user.email)).to be(true)
     end
 
-    it "returns nil if email is invalid" do
+    it "returns nil if email is invalid (incorrect extension)" do
       user = create(:user, email: 'invalid_email@email..com')
 
       email_digest = described_class.new(user)
-      expect(email_digest.valid_email?).to be(nil)
+      expect(String.valid_email?(email_digest.user.email)).to be(false)
+    end
+
+    it "returns nil if email is invalid (incorrect char)" do
+      user = create(:user, email: 'inva?lid_email@email.com')
+
+      email_digest = described_class.new(user)
+      expect(String.valid_email?(email_digest.user.email)).to be(false)
     end
 
     it "returns false if email does not exist" do
@@ -158,7 +165,7 @@ describe EmailDigest do
       user.update_attribute(:email, nil)
 
       email_digest = described_class.new(user)
-      expect(email_digest.valid_email?).to be(false)
+      expect(String.valid_email?(email_digest.user.email)).to be(false)
     end
   end
 
