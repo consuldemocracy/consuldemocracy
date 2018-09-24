@@ -7,6 +7,7 @@ section "Creating legislation proposals" do
                                   author: User.all.sample,
                                   process: Legislation::Process.all.sample,
                                   terms_of_service: '1',
+                                  selected: rand <= 1.0 / 3,
                                   proposal_type: 'proposal')
   end
 end
