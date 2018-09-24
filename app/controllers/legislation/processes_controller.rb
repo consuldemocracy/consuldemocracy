@@ -1,6 +1,6 @@
 class Legislation::ProcessesController < Legislation::BaseController
-  has_filters %w{open next past}, only: :index
-  has_filters %w{all selected}, only: :proposals
+  has_filters %w[open next past], only: :index
+  has_filters %w[all selected], only: :proposals
 
   load_and_authorize_resource
 
