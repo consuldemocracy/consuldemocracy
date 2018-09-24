@@ -7,6 +7,11 @@ feature 'Admin legislation questions' do
     login_as(admin.user)
   end
 
+  it_behaves_like "translatable",
+                  "legislation_question",
+                  "edit_admin_legislation_process_question_path",
+                  %w[title]
+
   context "Feature flag" do
 
     background do
@@ -60,7 +65,7 @@ feature 'Admin legislation questions' do
 
       click_link 'Create question'
 
-      fill_in 'legislation_question_title', with: 'Question 3'
+      fill_in 'legislation_question_title_en', with: 'Question 3'
       click_button 'Create question'
 
       expect(page).to have_content 'Question 3'
@@ -87,7 +92,7 @@ feature 'Admin legislation questions' do
 
       click_link 'Question 2'
 
-      fill_in 'legislation_question_title', with: 'Question 2b'
+      fill_in 'legislation_question_title_en', with: 'Question 2b'
       click_button 'Save changes'
 
       expect(page).to have_content 'Question 2b'
@@ -109,6 +114,62 @@ feature 'Admin legislation questions' do
       expect(page).to have_content 'Questions'
       expect(page).to have_content 'Question 1'
       expect(page).not_to have_content 'Question 2'
+    end
+  end
+
+  context "Special translation behaviour" do
+
+    let!(:question) { create(:legislation_question,
+                             title_en: "Title in English",
+                             title_es: "Título en Español") }
+
+    before do
+      @edit_question_url = edit_admin_legislation_process_question_path(question.process, question)
+    end
+
+    scenario 'Add translation for question option', :js do
+      visit @edit_question_url
+
+      click_on 'Add option'
+
+      find('#nested-question-options input').set('Option 1')
+
+      click_link "Español"
+
+      find('#nested-question-options input').set('Opción 1')
+
+      click_button "Save changes"
+      visit @edit_question_url
+
+      expect(page).to have_field('legislation_question_question_options_attributes_0_value_en', with: 'Option 1')
+
+      click_link "Español"
+
+      expect(page).to have_field('legislation_question_question_options_attributes_0_value_es', with: 'Opción 1')
+    end
+
+    scenario 'Add new question option after changing active locale', :js do
+      visit @edit_question_url
+
+      click_link "Español"
+
+      click_on 'Add option'
+
+      find('#nested-question-options input').set('Opción 1')
+
+      click_link "English"
+
+      find('#nested-question-options input').set('Option 1')
+
+      click_button "Save changes"
+
+      visit @edit_question_url
+
+      expect(page).to have_field('legislation_question_question_options_attributes_0_value_en', with: 'Option 1')
+
+      click_link "Español"
+
+      expect(page).to have_field('legislation_question_question_options_attributes_0_value_es', with: 'Opción 1')
     end
   end
 end

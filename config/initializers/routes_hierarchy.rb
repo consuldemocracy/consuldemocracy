@@ -11,7 +11,7 @@ module ActionDispatch::Routing::UrlFor
       [resource.investment.budget, resource.investment, resource]
     when "Legislation::Annotation"
       [resource.draft_version.process, resource.draft_version, resource]
-    when "Legislation::Proposal", "Legislation::Question"
+    when "Legislation::Proposal", "Legislation::Question", "Legislation::DraftVersion"
       [resource.process, resource]
     when "Topic"
       [resource.community, resource]

@@ -84,7 +84,7 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       expect(page).not_to have_link "Español"
     end
 
-    scenario 'Change value of a translated field to blank' do
+    scenario 'Change value of a translated field to blank', :js do
       possible_blanks = fields.select do |field|
         translatable.dup.tap { |duplicate| duplicate.send(:"#{field}=", '') }.valid?
       end
