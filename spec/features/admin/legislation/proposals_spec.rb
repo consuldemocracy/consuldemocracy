@@ -31,12 +31,12 @@ feature 'Admin legislation processes' do
     end
 
     scenario 'Sorting legislation proposals by title', js: true do
-      legislation_process = create(:legislation_process)
-      create(:legislation_proposal, title: 'bbbb', cached_votes_up: 10, legislation_process_id: legislation_process.id)
-      create(:legislation_proposal, title: 'aaaa', cached_votes_up: 20, legislation_process_id: legislation_process.id)
-      create(:legislation_proposal, title: 'cccc', cached_votes_up: 30, legislation_process_id: legislation_process.id)
-      visit admin_legislation_process_proposals_path(legislation_process.id)
+      process = create(:legislation_process)
+      create(:legislation_proposal, title: 'bbbb', legislation_process_id: process.id)
+      create(:legislation_proposal, title: 'aaaa', legislation_process_id: process.id)
+      create(:legislation_proposal, title: 'cccc', legislation_process_id: process.id)
 
+      visit admin_legislation_process_proposals_path(process.id)
       select "Title", from: "order-selector-participation"
 
       within('#proposals_table') do
@@ -53,12 +53,12 @@ feature 'Admin legislation processes' do
     end
 
     scenario 'Sorting legislation proposals by supports', js: true do
-      legislation_process = create(:legislation_process)
-      create(:legislation_proposal, title: 'bbbb', cached_votes_up: 10, legislation_process_id: legislation_process.id)
-      create(:legislation_proposal, title: 'aaaa', cached_votes_up: 20, legislation_process_id: legislation_process.id)
-      create(:legislation_proposal, title: 'cccc', cached_votes_up: 30, legislation_process_id: legislation_process.id)
-      visit admin_legislation_process_proposals_path(legislation_process.id)
+      process = create(:legislation_process)
+      create(:legislation_proposal, cached_votes_up: 10, legislation_process_id: process.id)
+      create(:legislation_proposal, cached_votes_up: 30, legislation_process_id: process.id)
+      create(:legislation_proposal, cached_votes_up: 20, legislation_process_id: process.id)
 
+      visit admin_legislation_process_proposals_path(process.id)
       select "Supports", from: "order-selector-participation"
 
       within('#proposals_table') do
@@ -69,12 +69,12 @@ feature 'Admin legislation processes' do
     end
 
     scenario 'Sorting legislation proposals by Id', js: true do
-      legislation_process = create(:legislation_process)
-      proposal1 = create(:legislation_proposal, title: 'bbbb', cached_votes_up: 10, legislation_process_id: legislation_process.id)
-      proposal2 = create(:legislation_proposal, title: 'aaaa', cached_votes_up: 20, legislation_process_id: legislation_process.id)
-      proposal3 = create(:legislation_proposal, title: 'cccc', cached_votes_up: 30, legislation_process_id: legislation_process.id)
-      visit admin_legislation_process_proposals_path(legislation_process.id, order: :title)
+      process = create(:legislation_process)
+      proposal1 = create(:legislation_proposal, title: 'bbbb', legislation_process_id: process.id)
+      proposal2 = create(:legislation_proposal, title: 'aaaa', legislation_process_id: process.id)
+      proposal3 = create(:legislation_proposal, title: 'cccc', legislation_process_id: process.id)
 
+      visit admin_legislation_process_proposals_path(process.id, order: :title)
       select "Id", from: "order-selector-participation"
 
       within('#proposals_table') do

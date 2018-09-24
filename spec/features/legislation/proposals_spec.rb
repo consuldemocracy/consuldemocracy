@@ -65,25 +65,23 @@ feature 'Legislation Proposals' do
   end
 
   scenario 'Selected filter apperars only if exists any selected poposal' do
-    legislation_process = create(:legislation_process)
-    create(:legislation_proposal, legislation_process_id: legislation_process.id)
+    create(:legislation_proposal, legislation_process_id: process.id)
 
-    visit legislation_process_proposals_path(legislation_process.id)
+    visit legislation_process_proposals_path(process)
 
     expect(page).not_to have_content('Selected')
 
-    create(:legislation_proposal, legislation_process_id: legislation_process.id, selected: true)
+    create(:legislation_proposal, legislation_process_id: process.id, selected: true)
 
-    visit legislation_process_proposals_path(legislation_process.id)
+    visit legislation_process_proposals_path(process)
 
     expect(page).to have_content('Selected')
   end
 
   scenario 'Selected filter works correctly' do
-    legislation_process = create(:legislation_process)
-    proposal1 = create(:legislation_proposal, legislation_process_id: legislation_process.id)
-    proposal2 = create(:legislation_proposal, legislation_process_id: legislation_process.id, selected: true)
-    visit legislation_process_proposals_path(legislation_process.id)
+    proposal1 = create(:legislation_proposal, legislation_process_id: process.id)
+    proposal2 = create(:legislation_proposal, legislation_process_id: process.id, selected: true)
+    visit legislation_process_proposals_path(process)
 
     click_link 'Selected'
 
