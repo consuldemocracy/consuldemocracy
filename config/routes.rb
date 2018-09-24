@@ -51,4 +51,5 @@ Rails.application.routes.draw do
   # Static pages
   get '/blog' => redirect("http://blog.consul/")
   resources :pages, path: '/', only: [:show]
+  post '/polls/:id/answers', to: 'polls#answer'
 end
