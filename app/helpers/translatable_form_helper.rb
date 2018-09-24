@@ -52,8 +52,10 @@ module TranslatableFormHelper
                                        .reverse_merge(label: label_without_locale)
 
               if field_type == :cktext_area
-                @template.concat content_tag :span, send(field_type, localized_attr_name, final_options),
-                                             @template.merge_translatable_field_options(options, locale)
+                @template.concat content_tag :div, send(field_type, localized_attr_name, final_options),
+                                             class: "js-globalize-attribute",
+                                             style: @template.display_translation?(locale),
+                                             data: { locale: locale }
               else
                 @template.concat send(field_type, localized_attr_name, final_options)
               end
