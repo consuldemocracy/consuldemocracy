@@ -139,6 +139,8 @@ ignore_unused:
   - 'admin.activity.show.filter*'
   - 'admin.legislation.processes.index.filter*'
   - 'admin.legislation.processes.*.submit_button'
+  - 'admin.legislation.processes.proposals.orders.*'
+  - 'admin.legislation.processes.proposals.select_order'
   - 'admin.legislation.draft_versions.*.submit_button'
   - 'admin.legislation.questions.*.submit_button'
   - 'admin.comments.index.hidden_*'
@@ -176,6 +178,7 @@ ignore_unused:
   - 'notifications.notification.action.*'
   - 'legislation.processes.index.filter*'
   - 'legislation.processes.index.section_header.*'
+  - 'legislation.processes.proposals.filters.*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'
