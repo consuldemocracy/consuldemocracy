@@ -64,15 +64,15 @@ FactoryBot.define do
     end
 
     trait :ignored do
-      ignored_at Date.current
+      ignored_at { Date.current }
     end
 
     trait :hidden do
-      hidden_at Date.current
+      hidden_at { Date.current }
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.current
+      confirmed_hide_at { Time.current }
     end
   end
 

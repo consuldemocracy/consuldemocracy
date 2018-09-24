@@ -82,6 +82,14 @@ RSpec.configure do |config|
     Bullet.end_request
   end
 
+  config.before(:each, :with_frozen_time) do
+    travel_to Time.now # TODO: use `freeze_time` after migrating to Rails 5.
+  end
+
+  config.after(:each, :with_frozen_time) do
+    travel_back
+  end
+
   # Allows RSpec to persist some state between runs in order to support
   # the `--only-failures` and `--next-failure` CLI options.
   config.example_status_persistence_file_path = "spec/examples.txt"

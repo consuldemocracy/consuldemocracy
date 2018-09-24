@@ -149,11 +149,11 @@ FactoryBot.define do
     end
 
      trait :hidden do
-       hidden_at Time.current
+       hidden_at { Time.current }
      end
 
      trait :with_ignored_flag do
-       ignored_flag_at Time.current
+       ignored_flag_at { Time.current }
      end
 
     trait :flagged do
@@ -163,7 +163,7 @@ FactoryBot.define do
      end
 
      trait :with_confirmed_hide do
-       confirmed_hide_at Time.current
+       confirmed_hide_at { Time.current }
      end
   end
 

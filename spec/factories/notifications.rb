@@ -18,7 +18,7 @@ FactoryBot.define do
 
     trait :sent do
       recipients_count 1
-      sent_at Time.current
+      sent_at { Time.current }
     end
   end
 end
