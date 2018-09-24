@@ -1,6 +1,6 @@
 class Admin::Legislation::ProposalsController < Admin::Legislation::BaseController
 
-  has_orders %w{id title supports}, only: :index
+  has_orders %w[id title supports], only: :index
 
   load_and_authorize_resource :process, class: "Legislation::Process"
   load_and_authorize_resource :proposal, class: "Legislation::Proposal", through: :process
