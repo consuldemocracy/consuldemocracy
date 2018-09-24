@@ -14,12 +14,10 @@ Rails.application.config.assets.precompile += %w( ie_lt9.js )
 Rails.application.config.assets.precompile += %w( stat_graphs.js )
 Rails.application.config.assets.precompile += %w( print.css )
 Rails.application.config.assets.precompile += %w( ie.css )
-Rails.application.config.assets.precompile += %w( survey_timeline.js )
 Rails.application.config.assets.precompile += %w( chart.js )
 Rails.application.config.assets.precompile += %w( survey-charts.js )
 Rails.application.config.assets.precompile += %w( preselection-charts.js )
 Rails.application.config.assets.precompile += %w( stats-charts.js )
-Rails.application.config.assets.precompile += %w( progress_bar.js )
 Rails.application.config.assets.precompile += %w( participatory-budget-charts.js )
 
 # Loads custom images and custom fonts before app/assets/images and app/assets/fonts
