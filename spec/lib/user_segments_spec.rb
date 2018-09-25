@@ -192,8 +192,7 @@ describe UserSegments do
 
   describe "#beta_testers" do
     let(:beta_testers) do
-      %w(aranacm@madrid.es bertocq@gmail.com mariajecheca@gmail.com
-       alberto@decabeza.es voodoorai2000@gmail.com)
+      %w(aranacm@madrid.es alberto@decabeza.es voodoorai2000@gmail.com)
     end
 
     before do
@@ -201,13 +200,13 @@ describe UserSegments do
     end
 
     it "returns only users with specific emails" do
-      expect(described_class.beta_testers.count).to eq(5)
+      expect(described_class.beta_testers.count).to eq(3)
       expect(described_class.beta_testers.pluck(:email)).to match_array(beta_testers)
     end
 
     it "returns users sorted by `created_at` attribute" do
       users   = described_class.beta_testers.pluck(:email)
-      testers = User.order('created_at ASC').pluck(:email).last(5)
+      testers = User.order('created_at ASC').pluck(:email).last(3)
       expect(users).to eq(testers)
     end
   end

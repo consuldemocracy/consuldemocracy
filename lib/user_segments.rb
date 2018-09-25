@@ -55,8 +55,6 @@ class UserSegments
 
   def self.beta_testers
     testers = %w(aranacm@madrid.es
-                 bertocq@gmail.com
-                 mariajecheca@gmail.com
                  alberto@decabeza.es
                  voodoorai2000@gmail.com)
 
