@@ -1,13 +1,1 @@
-<% if proposal.selected?
-     button_text = t("admin.legislation.proposals.index.selected")
-     clas = 'button expanded'
-   else
-     button_text = t("admin.legislation.proposals.index.select")
-     clas = 'button hollow expanded'
-   end %>
-
-<%= link_to button_text,
-            toggle_selection_admin_legislation_process_proposal_path(proposal.process, proposal),
-            remote: true,
-            method: :patch,
-            class: clas %>
+<%= link_to_toggle_legislation_proposal_selection(proposal) %>
