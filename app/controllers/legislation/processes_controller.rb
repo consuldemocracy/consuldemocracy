@@ -93,6 +93,8 @@ class Legislation::ProcessesController < Legislation::BaseController
 
     @proposals = ::Legislation::Proposal.where(process: @process)
     @proposals = @proposals.search(params[:search]) if params[:search].present?
+
+    @current_filter = "winners" if params[:filter].blank? && @proposals.winners.any?
     @proposals = @proposals.send(@current_filter).page(params[:page])
 
     if @process.proposals_phase.started? || (current_user && current_user.administrator?)
