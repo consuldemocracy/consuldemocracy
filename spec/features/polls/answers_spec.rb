@@ -28,8 +28,8 @@ feature 'Answers' do
     visit admin_question_path(question)
 
     click_link "Add answer"
-    fill_in "poll_question_answer_title", with: "¿Would you like to reform Central Park?"
-    fill_in "poll_question_answer_description", with: "Adding more trees, creating a play area..."
+    fill_in "poll_question_answer_title_en", with: "¿Would you like to reform Central Park?"
+    fill_in "poll_question_answer_description_en", with: "Adding more trees, creating a play area..."
     click_button "Save"
 
     expect(page).to have_content "Answer created successfully"

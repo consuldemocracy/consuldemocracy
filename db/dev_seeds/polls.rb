@@ -28,19 +28,46 @@ section "Creating polls" do
               ends_at:   1.month.ago,
               results_enabled: true,
               stats_enabled: true)
+
+  Poll.find_each do |poll|
+    name = poll.name
+    I18n.available_locales.map do |locale|
+      Globalize.with_locale(locale) do
+        poll.name = "#{name} (#{locale})"
+        poll.summary = "Summary for locale #{locale}"
+        poll.description = "Description for locale #{locale}"
+      end
+    end
+    poll.save!
+  end
+
 end
 
 section "Creating Poll Questions & Answers" do
   Poll.find_each do |poll|
     (1..4).to_a.sample.times do
-      question = Poll::Question.create!(author: User.all.sample,
-                                        title: Faker::Lorem.sentence(3).truncate(60) + '?',
-                                        poll: poll)
-      Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+      title = Faker::Lorem.sentence(3).truncate(60) + '?'
+      question = Poll::Question.new(author: User.all.sample,
+                                    title: title,
+                                    poll: poll)
+      I18n.available_locales.map do |locale|
+        Globalize.with_locale(locale) do
+          question.title = "#{title} (#{locale})"
+        end
+      end
+      question.save!
+      Faker::Lorem.words((2..4).to_a.sample).each do |title|
         description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-        Poll::Question::Answer.create!(question: question,
-                                       title: answer.capitalize,
-                                       description: description)
+        answer = Poll::Question::Answer.new(question: question,
+                                            title: title.capitalize,
+                                            description: description)
+        I18n.available_locales.map do |locale|
+          Globalize.with_locale(locale) do
+            answer.title = "#{title} (#{locale})"
+            answer.description = "#{description} (#{locale})"
+          end
+        end
+        answer.save!
       end
     end
   end
@@ -174,12 +201,26 @@ section "Creating Poll Questions from Proposals" do
     proposal = Proposal.all.sample
     poll = Poll.current.first
     question = Poll::Question.create(poll: poll)
-    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question,
-                                     title: answer.capitalize,
-                                     description: Faker::ChuckNorris.fact)
+    Faker::Lorem.words((2..4).to_a.sample).each do |title|
+      description = "<p>#{Faker::ChuckNorris.fact}</p>"
+      answer = Poll::Question::Answer.new(question: question,
+                                          title: title.capitalize,
+                                          description: description)
+      I18n.available_locales.map do |locale|
+        Globalize.with_locale(locale) do
+          answer.title = "#{title} (#{locale})"
+          answer.description = "#{description} (#{locale})"
+        end
+      end
+      answer.save!
     end
     question.copy_attributes_from_proposal(proposal)
+    title = question.title
+    I18n.available_locales.map do |locale|
+      Globalize.with_locale(locale) do
+        question.title = "#{title} (#{locale})"
+      end
+    end
     question.save!
   end
 end
@@ -189,12 +230,26 @@ section "Creating Successful Proposals" do
     proposal = Proposal.all.sample
     poll = Poll.current.first
     question = Poll::Question.create(poll: poll)
-    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question,
-                                     title: answer.capitalize,
-                                     description: Faker::ChuckNorris.fact)
+    Faker::Lorem.words((2..4).to_a.sample).each do |title|
+      description = "<p>#{Faker::ChuckNorris.fact}</p>"
+      answer = Poll::Question::Answer.new(question: question,
+                                          title: title.capitalize,
+                                          description: description)
+      I18n.available_locales.map do |locale|
+        Globalize.with_locale(locale) do
+          answer.title = "#{title} (#{locale})"
+          answer.description = "#{description} (#{locale})"
+        end
+      end
+      answer.save!
     end
     question.copy_attributes_from_proposal(proposal)
+    title = question.title
+    I18n.available_locales.map do |locale|
+      Globalize.with_locale(locale) do
+        question.title = "#{title} (#{locale})"
+      end
+    end
     question.save!
   end
 end

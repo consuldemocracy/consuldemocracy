@@ -880,6 +880,18 @@ ActiveRecord::Schema.define(version: 20180813141443) do
   add_index "poll_partial_results", ["origin"], name: "index_poll_partial_results_on_origin", using: :btree
   add_index "poll_partial_results", ["question_id"], name: "index_poll_partial_results_on_question_id", using: :btree
 
+  create_table "poll_question_answer_translations", force: :cascade do |t|
+    t.integer  "poll_question_answer_id", null: false
+    t.string   "locale",                  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "title"
+    t.text     "description"
+  end
+
+  add_index "poll_question_answer_translations", ["locale"], name: "index_poll_question_answer_translations_on_locale", using: :btree
+  add_index "poll_question_answer_translations", ["poll_question_answer_id"], name: "index_85270fa85f62081a3a227186b4c95fe4f7fa94b9", using: :btree
+
   create_table "poll_question_answer_videos", force: :cascade do |t|
     t.string  "title"
     t.string  "url"
@@ -897,6 +909,17 @@ ActiveRecord::Schema.define(version: 20180813141443) do
   end
 
   add_index "poll_question_answers", ["question_id"], name: "index_poll_question_answers_on_question_id", using: :btree
+
+  create_table "poll_question_translations", force: :cascade do |t|
+    t.integer  "poll_question_id", null: false
+    t.string   "locale",           null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "title"
+  end
+
+  add_index "poll_question_translations", ["locale"], name: "index_poll_question_translations_on_locale", using: :btree
+  add_index "poll_question_translations", ["poll_question_id"], name: "index_poll_question_translations_on_poll_question_id", using: :btree
 
   create_table "poll_questions", force: :cascade do |t|
     t.integer  "proposal_id"
@@ -950,6 +973,19 @@ ActiveRecord::Schema.define(version: 20180813141443) do
   add_index "poll_shifts", ["booth_id", "officer_id", "date", "task"], name: "index_poll_shifts_on_booth_id_and_officer_id_and_date_and_task", unique: true, using: :btree
   add_index "poll_shifts", ["booth_id"], name: "index_poll_shifts_on_booth_id", using: :btree
   add_index "poll_shifts", ["officer_id"], name: "index_poll_shifts_on_officer_id", using: :btree
+
+  create_table "poll_translations", force: :cascade do |t|
+    t.integer  "poll_id",     null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.text     "summary"
+    t.text     "description"
+  end
+
+  add_index "poll_translations", ["locale"], name: "index_poll_translations_on_locale", using: :btree
+  add_index "poll_translations", ["poll_id"], name: "index_poll_translations_on_poll_id", using: :btree
 
   create_table "poll_voters", force: :cascade do |t|
     t.string   "document_number"
