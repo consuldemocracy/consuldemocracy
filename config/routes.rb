@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#welcome'
   get '/consul.json', to: "installation#details"
 
+  get 'robots.:format' => 'robots#index'
+
   resources :stats, only: [:index]
   resources :images, only: [:destroy]
   resources :documents, only: [:destroy]

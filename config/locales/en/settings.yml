@@ -119,3 +119,4 @@ en:
       guides_description: "Displays a guide to differences between proposals and investment projects if there is an active participatory budget"
       public_stats: "Public stats"
       public_stats_description: "Display public stats in the Administration panel"
+      prevent_bing_from_index_consul: Prevent indexing from Bing (bingbot)
