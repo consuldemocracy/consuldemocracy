@@ -64,14 +64,8 @@ feature 'Legislation Proposals' do
     expect(legislation_proposals_order).to eq(first_page_proposals_order)
   end
 
-  scenario 'Selected filter apperars only if exists any selected poposal' do
+  scenario 'Selected filter apperars even if there are not any selected poposals' do
     create(:legislation_proposal, legislation_process_id: process.id)
-
-    visit legislation_process_proposals_path(process)
-
-    expect(page).not_to have_content('Selected')
-
-    create(:legislation_proposal, legislation_process_id: process.id, selected: true)
 
     visit legislation_process_proposals_path(process)
 
