@@ -53,8 +53,8 @@ en:
       proposals:
         empty_proposals: There are no proposals
         filters:
-          all: All
-          selected: Selected
+          random: All
+          winners: Selected
       debate:
         empty_questions: There aren't any questions
         participate: Participate in the debate
