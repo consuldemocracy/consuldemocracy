@@ -57,7 +57,7 @@ GEM
     akami (1.3.1)
       gyoku (>= 0.4.0)
       nokogiri
-    ancestry (3.0.1)
+    ancestry (3.0.2)
       activerecord (>= 3.2.0)
     arel (6.0.4)
     ast (2.4.0)
@@ -501,7 +501,7 @@ DEPENDENCIES
   acts-as-taggable-on (~> 5.0.0)
   acts_as_votable (~> 0.11.1)
   ahoy_matey (~> 1.6.0)
-  ancestry (~> 3.0.1)
+  ancestry (~> 3.0.2)
   autoprefixer-rails (~> 9.1.4)
   browser (~> 2.5.2)
   bullet (~> 5.7.0)
