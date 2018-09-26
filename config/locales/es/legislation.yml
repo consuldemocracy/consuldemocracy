@@ -53,7 +53,7 @@ es:
       proposals:
         empty_proposals: No hay propuestas
         filters:
-          random: Todas
+          random: Aleatorias
           winners: Seleccionadas
       debate:
         empty_questions: No hay preguntas
