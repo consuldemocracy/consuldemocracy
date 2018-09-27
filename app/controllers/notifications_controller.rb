@@ -44,7 +44,11 @@ class NotificationsController < ApplicationController
       when "Topic"
         community_topic_path @notification.linkable_resource.community, @notification.linkable_resource
       else
-        url_for @notification.linkable_resource
+        if @notification.linkable_resource.is_a?(AdminNotification)
+          @notification.linkable_resource.link || notifications_path
+        else
+          url_for @notification.linkable_resource
+        end
       end
     end
 

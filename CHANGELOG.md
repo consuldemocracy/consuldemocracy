@@ -3,6 +3,75 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.16.0](https://github.com/consul/consul/compare/v0.15...v0.16) - 2018-07-16
+
+### Added
+- **Budgets:** Budgets investment show messages https://github.com/consul/consul/pull/2766
+- **Budgets:** Add Valuator Group name validation & related specs https://github.com/consul/consul/pull/2576
+- **Budgets:** Investment milestone's project status https://github.com/consul/consul/pull/2706
+- **Budgets:** Budget statuses https://github.com/consul/consul/pull/2705
+- **Budgets:** Display only selected budget investmests in "Publishing prices" phase https://github.com/consul/consul/pull/2657
+- **Budgets:** Budgets see results https://github.com/consul/consul/pull/2620
+- **Budgets:** Show 'See Results' button in budget admin panel https://github.com/consul/consul/pull/2632
+- **Budgets:** Adds message to selected budget investments https://github.com/consul/consul/pull/2622
+- **Budgets:** Fixes Issue \#2604 https://github.com/consul/consul/pull/2614
+- **Officing:** Officing not to vote https://github.com/consul/consul/pull/2726
+- **Officing:** Officing sidebar menu https://github.com/consul/consul/pull/2725
+- **Homepage:** Homepage cards https://github.com/consul/consul/pull/2693
+- **Homepage:** Adding homepage header and cards seeds https://github.com/consul/consul/pull/2679
+- **Homepage:** Add customization of homepage from admin section https://github.com/consul/consul/pull/2641
+- **Globalization:** Allow admin generated content to be translatable https://github.com/consul/consul/pull/2619
+- **Recommendations:** Debates and proposals recommendations for users https://github.com/consul/consul/pull/2760
+- **Notifications:** Allow author notifications to be moderated https://github.com/consul/consul/pull/2717
+- **Configuration:** Document upload setting https://github.com/consul/consul/pull/2585
+- **Maintenance:** add proposal image on dev\_seeds task https://github.com/consul/consul/pull/2768
+- **Docker:** Add imagemagick package to Docker configuration https://github.com/consul/consul/pull/2655
+- **Design/UX:** Legislation help gif https://github.com/consul/consul/pull/2732
+
+### Changed
+- **Budgets:** Add valuator groups assigned to investments to admin tables & csv export https://github.com/consul/consul/pull/2592
+- **Design/UX:** Adds ballot booths menu on admin https://github.com/consul/consul/pull/2716
+- **Design/UX:** Polls UI https://github.com/consul/consul/pull/2765
+- **Design/UX:** Manager UI https://github.com/consul/consul/pull/2715
+- **Design/UX:** Homepage design https://github.com/consul/consul/pull/2694
+- **Design/UX:** Admin UI https://github.com/consul/consul/pull/2666
+- **Design/UX:** Minor fixes https://github.com/consul/consul/pull/2665
+- **Design/UX:** Homepage layout https://github.com/consul/consul/pull/2663
+- **Design/UX:** Admin form improvements https://github.com/consul/consul/pull/2645
+- **Maintenance:** Regenerate Gemfile.lock https://github.com/consul/consul/pull/2701
+- **Maintenance:** Update Sprockets to fix vulnerability https://github.com/consul/consul/pull/2758
+- **Maintenance:** Split spec common actions support helper https://github.com/consul/consul/pull/2653
+- **Maintenance:** Split admin settings https://github.com/consul/consul/pull/2650
+- **Maintenance:** Update README with production configuration https://github.com/consul/consul/pull/2648
+- **Maintenance:** Remove sitemap generator output when running specs https://github.com/consul/consul/pull/2599
+- **Maintenance:** Avoid db:dev\_seed log print when run from its test https://github.com/consul/consul/pull/2598
+- **Maintenance:** Foundation update https://github.com/consul/consul/pull/2590
+- **Docker:** Docker/docker-compose enhancements https://github.com/consul/consul/pull/2661
+
+### Fixed
+- **Budgets:** Fix valuation heading filters https://github.com/consul/consul/pull/2578
+- **Budgets:** Budgets homepage map fixes https://github.com/consul/consul/pull/2654
+- **Budgets:** Display message in budget's index when there are no budgets https://github.com/consul/consul/pull/2575
+- **Proposals:** Fix validation error when creating proposals without user verification https://github.com/consul/consul/pull/2775
+- **Design/UX:** UI design https://github.com/consul/consul/pull/2733
+- **Design/UX:** A11y https://github.com/consul/consul/pull/2724
+- **Design/UX:** UI design https://github.com/consul/consul/pull/2608
+- **Design/UX:** Fixes admin menu toggle https://github.com/consul/consul/pull/2692
+- **Maintenance:** Fix flaky spec: Budget Investments Show milestones https://github.com/consul/consul/pull/2719
+- **Maintenance:** Fix flaky specs: Votes Debates and Voting comments Update https://github.com/consul/consul/pull/2734
+- **Maintenance:** Fix flaky specs using CKEditor https://github.com/consul/consul/pull/2711
+- **Maintenance:** Fix suggestions being requested with every keystroke https://github.com/consul/consul/pull/2708
+- **Maintenance:** Fix valuation heading filters https://github.com/consul/consul/pull/2702
+- **Maintenance:** Flaky spec: Polls Concerns behaves like notifiable in-app Multiple users commented on my notifiable https://github.com/consul/consul/pull/2699
+- **Maintenance:** Fix flaky spec: Proposals Voting Voting proposals on behalf of someone in show view https://github.com/consul/consul/pull/2697
+- **Maintenance:** Fix flaky spec: Admin budgets Manage groups and headings Create group https://github.com/consul/consul/pull/2696
+- **Maintenance:** Fix flaky specs: Emails Budgets Selected/Unselected investment https://github.com/consul/consul/pull/2695
+- **Maintenance:** Fix flaky specs: Officing Results Add/Edit results https://github.com/consul/consul/pull/2712
+- **Maintenance:** Add issue template https://github.com/consul/consul/pull/2722
+- **Users activity:** Deal gracefully with hidden followable in my activity https://github.com/consul/consul/pull/2752
+- **Recommendations:** Deal gracefully with recommendations of hidden proposals https://github.com/consul/consul/pull/2751
+- **Maps:** Fix MapLocation json\_data to return mappable ids https://github.com/consul/consul/pull/2613
+
 ## [0.15.0](https://github.com/consul/consul/compare/v0.14...v0.15) - 2018-05-23
 
 ### Added
@@ -56,7 +125,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Social share:** Fixes social share buttons https://github.com/consul/consul/pull/2525
 - **Newsletters:** Fixed how newsletters controller and mailer handle recipients https://github.com/consul/consul/pull/2492
 - **Newsletters:** Fix UserSegment feasible and undecided investment authors https://github.com/consul/consul/pull/2491
-- **Newsletters:** Remove empty emails from user segment usages 
+- **Newsletters:** Remove empty emails from user segment usages
 - **Design:** Mode view https://github.com/consul/consul/pull/2567
 - **Design:** Minor fixes https://github.com/consul/consul/pull/2566
 - **Design:** Improve Documents list https://github.com/consul/consul/pull/2490
@@ -347,7 +416,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rails 4.2.6
 - Ruby 2.2.3
 
-[Unreleased]: https://github.com/consul/consul/compare/v0.15...consul:master
+[Unreleased]: https://github.com/consul/consul/compare/v0.16...consul:master
+[0.16.0]: https://github.com/consul/consul/compare/v0.15...v.016
 [0.15.0]: https://github.com/consul/consul/compare/v0.14...v0.15
 [0.14.0]: https://github.com/consul/consul/compare/v0.13...v0.14
 [0.13.0]: https://github.com/consul/consul/compare/v0.12...v0.13

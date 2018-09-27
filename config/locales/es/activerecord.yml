@@ -311,6 +311,10 @@ es:
           attributes:
             segment_recipient:
               invalid: "El segmento de usuarios es inválido"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "El segmento de usuarios es inválido"
         map_location:
           attributes:
             map:

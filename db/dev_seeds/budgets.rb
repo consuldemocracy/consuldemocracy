@@ -1,3 +1,29 @@
+INVESTMENT_IMAGE_FILES = %w{
+  brennan-ehrhardt-25066-unsplash_713x513.jpg
+  carl-nenzen-loven-381554-unsplash_713x475.jpg
+  carlos-zurita-215387-unsplash_713x475.jpg
+  hector-arguello-canals-79584-unsplash_713x475.jpg
+  olesya-grichina-218176-unsplash_713x475.jpg
+  sole-d-alessandro-340443-unsplash_713x475.jpg
+}.map do |filename|
+  File.new(Rails.root.join("db",
+                           "dev_seeds",
+                           "images",
+                           "budget",
+                           "investments", filename))
+end
+
+def add_image_to(imageable)
+  # imageable should respond to #title & #author
+  imageable.image = Image.create!({
+    imageable: imageable,
+    title: imageable.title,
+    attachment: INVESTMENT_IMAGE_FILES.sample,
+    user: imageable.author
+  })
+  imageable.save
+end
+
 section "Creating Budgets" do
   Budget.create(
     name: "#{I18n.t('seeds.budgets.budget')} #{Date.current.year - 1}",
@@ -53,6 +79,8 @@ section "Creating Investments" do
       skip_map: "1",
       terms_of_service: "1"
     )
+
+    add_image_to(investment) if Random.rand > 0.5
   end
 end
 
@@ -83,7 +111,7 @@ section "Winner Investments" do
   budget = Budget.finished.first
   50.times do
     heading = budget.headings.all.sample
-    Budget::Investment.create!(
+    investment = Budget::Investment.create!(
       author: User.all.sample,
       heading: heading,
       group: heading.group,
@@ -98,6 +126,7 @@ section "Winner Investments" do
       skip_map: "1",
       terms_of_service: "1"
     )
+    add_image_to(investment) if Random.rand > 0.3
   end
   budget.headings.each do |heading|
     Budget::Result.new(budget, heading).calculate_winners

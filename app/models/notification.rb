@@ -53,8 +53,18 @@ class Notification < ActiveRecord::Base
       "proposal_notification"
     when "Comment"
       "replies_to"
+    when "AdminNotification"
+      nil
     else
       "comments_on"
+    end
+  end
+
+  def link
+    if notifiable.is_a?(AdminNotification) && notifiable.link.blank?
+      nil
+    else
+      self
     end
   end
 

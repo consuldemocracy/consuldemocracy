@@ -83,6 +83,7 @@
 //= require clipboard
 //= require clipboard_button
 //= require best_in_place_initialize
+//= require send_admin_notification_alert
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -130,6 +131,7 @@ var initialize_modules = function() {
   App.Globalize.initialize();
   App.ClipboardButton.initialize();
   App.BestInPlace.initialize();
+  App.SendAdminNotificationAlert.initialize();
 };
 
 $(function(){
