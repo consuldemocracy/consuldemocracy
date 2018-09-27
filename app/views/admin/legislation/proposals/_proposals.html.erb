@@ -3,7 +3,7 @@
 
   <%= render 'shared/wide_order_selector', i18n_namespace: "admin.legislation.processes.proposals" %>
 
-  <table class="stack" id="proposals_table">
+  <table class="stack" id="legislation_proposals_list">
     <thead>
       <tr>
         <th class="text-center"><%= t("admin.legislation.proposals.index.id") %></th>
@@ -15,7 +15,7 @@
 
     <tbody>
       <% proposals.each do |proposal| %>
-        <tr id="<%= dom_id(proposal) %>">
+        <tr id="<%= dom_id(proposal) %>" class="legislation_proposal">
           <td class="text-center"><%= proposal.id %></td>
           <td><%= proposal.title %></td>
           <td class="text-center"><%= proposal.cached_votes_up %></td>
