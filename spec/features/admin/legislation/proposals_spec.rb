@@ -42,16 +42,10 @@ feature 'Admin legislation processes' do
       visit admin_legislation_process_proposals_path(process.id)
       select "Title", from: "order-selector-participation"
 
-      within('#proposals_table') do
-        within(:xpath, "//tbody/tr[1]") do
-          expect(page).to have_content('aaaa')
-        end
-        within(:xpath, "//tbody/tr[2]") do
-          expect(page).to have_content('bbbb')
-        end
-        within(:xpath, "//tbody/tr[3]") do
-          expect(page).to have_content('cccc')
-        end
+      within('#legislation_proposals_list') do
+        within all('.legislation_proposal')[0] { expect(page).to have_content('aaaa') }
+        within all('.legislation_proposal')[1] { expect(page).to have_content('bbbb') }
+        within all('.legislation_proposal')[2] { expect(page).to have_content('cccc') }
       end
     end
 
@@ -64,10 +58,10 @@ feature 'Admin legislation processes' do
       visit admin_legislation_process_proposals_path(process.id)
       select "Supports", from: "order-selector-participation"
 
-      within('#proposals_table') do
-        within(:xpath, "//tbody/tr[1]") { expect(page).to have_content('30') }
-        within(:xpath, "//tbody/tr[2]") { expect(page).to have_content('20') }
-        within(:xpath, "//tbody/tr[3]") { expect(page).to have_content('10') }
+      within('#legislation_proposals_list') do
+        within all('.legislation_proposal')[0] { expect(page).to have_content('30') }
+        within all('.legislation_proposal')[1] { expect(page).to have_content('20') }
+        within all('.legislation_proposal')[2] { expect(page).to have_content('10') }
       end
     end
 
@@ -80,16 +74,10 @@ feature 'Admin legislation processes' do
       visit admin_legislation_process_proposals_path(process.id, order: :title)
       select "Id", from: "order-selector-participation"
 
-      within('#proposals_table') do
-        within(:xpath, "//tbody/tr[1]") do
-          expect(page).to have_content(proposal1.id)
-        end
-        within(:xpath, "//tbody/tr[2]") do
-          expect(page).to have_content(proposal2.id)
-        end
-        within(:xpath, "//tbody/tr[3]") do
-          expect(page).to have_content(proposal3.id)
-        end
+      within('#legislation_proposals_list') do
+        within all('.legislation_proposal')[0] { expect(page).to have_content(proposal1.id) }
+        within all('.legislation_proposal')[1] { expect(page).to have_content(proposal2.id) }
+        within all('.legislation_proposal')[2] { expect(page).to have_content(proposal3.id) }
       end
     end
   end
