@@ -98,8 +98,8 @@ feature 'Legislation Proposals' do
     scenario 'filters correctly' do
       proposal1 = create(:legislation_proposal, legislation_process_id: process.id)
       proposal2 = create(:legislation_proposal, legislation_process_id: process.id, selected: true)
-      visit legislation_process_proposals_path(process, filter: "random")
 
+      visit legislation_process_proposals_path(process, filter: "random")
       click_link 'Selected'
 
       expect(page).to have_css("div#legislation_proposal_#{proposal2.id}")
