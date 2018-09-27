@@ -12,10 +12,10 @@
     <thead>
       <tr>
         <th><%= t("admin.site_customization.pages.page.title") %></th>
+        <th><%= t("admin.site_customization.pages.page.slug") %></th>
         <th><%= t("admin.site_customization.pages.page.created_at") %></th>
         <th><%= t("admin.site_customization.pages.page.updated_at") %></th>
         <th><%= t("admin.site_customization.pages.page.status") %></th>
-        <th><%= t("admin.site_customization.pages.page.locale") %></th>
         <th class="small-4"><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -25,10 +25,10 @@
         <td>
           <%= link_to page.title, edit_admin_site_customization_page_path(page) %>
         </td>
+        <td><%= page.slug %></td>
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
-        <td><%= name_for_locale(page.locale) %></td>
         <td>
           <div class="small-6 column">
             <% if page.status == "published" %>
@@ -56,3 +56,4 @@
     <%= page_entries_info @pages %>
   </div>
 <% end %>
+
