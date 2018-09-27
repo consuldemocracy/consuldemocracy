@@ -11,7 +11,9 @@ feature 'Admin legislation processes' do
 
     scenario 'Displaying legislation proposals' do
       proposal = create(:legislation_proposal, cached_votes_up: 10)
+
       visit admin_legislation_process_proposals_path(proposal.legislation_process_id)
+
       within "#legislation_proposal_#{proposal.id}" do
         expect(page).to have_content(proposal.title)
         expect(page).to have_content(proposal.id)
@@ -22,9 +24,10 @@ feature 'Admin legislation processes' do
 
     scenario 'Selecting legislation proposals', :js do
       proposal = create(:legislation_proposal, cached_votes_up: 10)
-      visit admin_legislation_process_proposals_path(proposal.legislation_process_id)
 
+      visit admin_legislation_process_proposals_path(proposal.legislation_process_id)
       click_link 'Select'
+
       within "#legislation_proposal_#{proposal.id}" do
         expect(page).to have_content('Selected')
       end
