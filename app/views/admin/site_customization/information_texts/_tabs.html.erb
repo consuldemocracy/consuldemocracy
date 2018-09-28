@@ -1,11 +1,11 @@
 <ul id="information-texts-tabs" class="tabs" >
-  <% [:debates, :community, :proposals, :polls, :layouts, :mailers, :management, :guides, :welcome].each do |tab| %>
+  <% [:debates, :community, :proposals, :polls, :layouts, :mailers, :management, :welcome].each do |tab| %>
     <li class="tabs-title">
-      <% if tab.to_s == @tab %>  			
+      <% if tab.to_s == @tab %>
         <%= link_to t("admin.menu.site_customization.information_texts_menu.#{tab}"), admin_site_customization_information_texts_path(tab: tab), :class => 'is-active' %>
       <% else %>
         <%= link_to t("admin.menu.site_customization.information_texts_menu.#{tab}"), admin_site_customization_information_texts_path(tab: tab) %>
-      <% end %>  
+      <% end %>
     </li>
   <% end %>
 </ul>
