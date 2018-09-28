@@ -1692,9 +1692,10 @@
 
     img {
       height: $line-height * 9;
+      min-width: 100%;
+      max-width: none;
       transition-duration: 0.3s;
       transition-property: transform;
-      width: 100%;
     }
 
     &:hover {
