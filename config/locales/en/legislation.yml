@@ -123,4 +123,3 @@ en:
       form:
         tags_label: "Categories"
       not_verified: "For vote proposals %{verify_account}."
-      closed: "This process has been closed and can not receive votes."
