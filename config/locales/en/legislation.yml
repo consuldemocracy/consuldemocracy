@@ -52,6 +52,9 @@ en:
         more_info: More information and context
       proposals:
         empty_proposals: There are no proposals
+        filters:
+          random: Random
+          winners: Selected
       debate:
         empty_questions: There aren't any questions
         participate: Participate in the debate
@@ -120,6 +123,5 @@ en:
       form:
         tags_label: "Categories"
       not_verified: "For vote proposals %{verify_account}."
-      closed: "This process has been closed and can not receive votes."
       categories:
           genre: Categories

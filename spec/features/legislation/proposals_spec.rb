@@ -66,6 +66,49 @@ feature 'Legislation Proposals' do
     end
   end
 
+  context 'Selected filter' do
+    scenario 'apperars even if there are not any selected poposals' do
+      create(:legislation_proposal, legislation_process_id: process.id)
+
+      visit legislation_process_proposals_path(process)
+
+      expect(page).to have_content('Selected')
+    end
+
+    scenario 'defaults to winners if there are selected proposals' do
+      create(:legislation_proposal, legislation_process_id: process.id)
+      create(:legislation_proposal, legislation_process_id: process.id, selected: true)
+
+      visit legislation_process_proposals_path(process)
+
+      expect(page).to have_link('Random')
+      expect(page).not_to have_link('Selected')
+      expect(page).to have_content('Selected')
+    end
+
+    scenario 'defaults to random if the current process does not have selected proposals' do
+      create(:legislation_proposal, legislation_process_id: process.id)
+      create(:legislation_proposal, selected: true)
+
+      visit legislation_process_proposals_path(process)
+
+      expect(page).to have_link('Selected')
+      expect(page).not_to have_link('Random')
+      expect(page).to have_content('Random')
+    end
+
+    scenario 'filters correctly' do
+      proposal1 = create(:legislation_proposal, legislation_process_id: process.id)
+      proposal2 = create(:legislation_proposal, legislation_process_id: process.id, selected: true)
+
+      visit legislation_process_proposals_path(process, filter: "random")
+      click_link 'Selected'
+
+      expect(page).to have_css("div#legislation_proposal_#{proposal2.id}")
+      expect(page).not_to have_css("div#legislation_proposal_#{proposal1.id}")
+    end
+  end
+
   def legislation_proposals_order
     all("[id^='legislation_proposal_']").collect { |e| e[:id] }
   end
