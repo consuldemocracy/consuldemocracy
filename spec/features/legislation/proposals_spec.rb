@@ -61,14 +61,14 @@ feature 'Legislation Proposals' do
       first_page_proposals_order = legislation_proposals_order
 
       click_link 'Next'
+
       expect(page).to have_content "You're on page 2"
-      second_page_proposals_order = legislation_proposals_order
+      expect(first_page_proposals_order & legislation_proposals_order).to eq([])
 
       click_link 'Previous'
-      expect(page).to have_content "You're on page 1"
 
+      expect(page).to have_content "You're on page 1"
       expect(legislation_proposals_order).to eq(first_page_proposals_order)
-      expect(first_page_proposals_order & second_page_proposals_order).to eq([])
     end
 
     scenario 'Does not crash when the seed is not a number' do
