@@ -64,6 +64,19 @@ feature 'Legislation Proposals' do
     expect(legislation_proposals_order).to eq(first_page_proposals_order)
   end
 
+  scenario 'Does not crash when the seed is not a number' do
+    create_list(
+      :legislation_proposal,
+      (Legislation::Proposal.default_per_page + 2),
+      process: process
+    )
+
+    login_as user
+    visit legislation_process_proposals_path(process, random_seed: "Spoof")
+
+    expect(page).to have_content "You're on page 1"
+  end
+
   context 'Selected filter' do
     scenario 'apperars even if there are not any selected poposals' do
       create(:legislation_proposal, legislation_process_id: process.id)
