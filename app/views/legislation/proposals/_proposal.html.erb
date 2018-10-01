@@ -1,20 +1,17 @@
 <div id="<%= dom_id(proposal) %>"
      class="proposal clear <%= ("human-rights" if proposal.author.id == 505793) %>"
      data-type="proposal">
-  <div class="panel <%= ('with-image' if feature?(:allow_images) && proposal.image.present?) %>">
+  <div class="panel <%= ('with-image' if proposal.image.present?) %>">
     <div class="icon-human-rights"></div>
+    <div class="icon-successful"></div>
 
-    <% if feature?(:allow_images) && proposal.image.present? %>
-      <div class="row" data-equalizer>
-
+    <% if proposal.image.present? %>
+      <div class="row">
         <div class="small-12 medium-3 large-2 column text-center">
-          <div data-equalizer-watch>
-            <%= image_tag proposal.image_url(:thumb),
-                          alt: proposal.image.title.unicode_normalize %>
-          </div>
+          <%= image_tag proposal.image_url(:thumb),
+                        alt: proposal.image.title.unicode_normalize %>
         </div>
-
-        <div class="small-12 medium-6 large-7 column">
+        <div class="small-12 medium-6 large-7 column margin-top">
     <% else %>
       <div class="row">
         <div class="small-12 medium-9 column">
