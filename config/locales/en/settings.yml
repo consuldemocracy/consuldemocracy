@@ -119,3 +119,5 @@ en:
       guides_description: "Displays a guide to differences between proposals and investment projects if there is an active participatory budget"
       public_stats: "Public stats"
       public_stats_description: "Display public stats in the Administration panel"
+      help_page: "Help page"
+      help_page_description: "Displays a Help menu that contains a page with an info section about each enabled feature"

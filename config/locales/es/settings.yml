@@ -119,3 +119,5 @@ es:
       guides_description: "Muestra una guía de diferencias entre las propuestas y los proyectos de gasto si hay un presupuesto participativo activo"
       public_stats: "Estadísticas públicas"
       public_stats_description: "Muestra las estadísticas públicas en el panel de Administración"
+      help_page: "Página de Ayuda"
+      help_page_description: "Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada."
