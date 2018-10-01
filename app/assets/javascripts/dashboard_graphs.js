@@ -165,7 +165,24 @@
           this.progressColumnValues,
           this.successfulColumnValues
         ],
-        colors: colors
+        colors: colors,
+        color: function (color, d) {
+          var achievement;
+
+          if (d.id === this.successfulColumnValues[0] || !d.hasOwnProperty('x')) {
+            return color;
+          }
+
+          achievement = this.achievements.find(function (element) {
+            return element.value === this.xColumnValues[d.index + 1];
+          }.bind(this));
+
+          if (achievement !== undefined) {
+            return '#ff0000';
+          }
+
+          return color;
+        }.bind(this)
       },
       axis: {
         y: {
@@ -190,13 +207,25 @@
       grid: {
         y: {
           lines: this.goals
-        },
-        x: {
-          lines: this.achievements
         }
       },
       zoom: {
         enabled: true
+      },
+      tooltip: {
+        format: {
+          title: function (d) { 
+            var achievement = this.achievements.find(function (element) {
+              return element.value === this.xColumnValues[d + 1];
+            }.bind(this));
+
+            if (achievement !== undefined) {
+              return this.xColumnValues[d + 1] + ': ' + achievement.text;
+            }
+
+            return this.xColumnValues[d + 1];
+          }.bind(this)
+        }
       }
     });
   };
