@@ -29,7 +29,7 @@ feature 'Legislation Proposals' do
       )
     end
 
-    scenario 'Each user has a different and consistent random proposals order', :js do
+    scenario "Each user has a different and consistent random proposals order", :js do
       in_browser(:one) do
         login_as user
         visit legislation_process_proposals_path(process)
@@ -55,23 +55,23 @@ feature 'Legislation Proposals' do
       end
     end
 
-    scenario 'Random order maintained with pagination', :js do
+    scenario "Random order maintained with pagination", :js do
       login_as user
       visit legislation_process_proposals_path(process)
       first_page_proposals_order = legislation_proposals_order
 
-      click_link 'Next'
+      click_link "Next"
 
       expect(page).to have_content "You're on page 2"
       expect(first_page_proposals_order & legislation_proposals_order).to eq([])
 
-      click_link 'Previous'
+      click_link "Previous"
 
       expect(page).to have_content "You're on page 1"
       expect(legislation_proposals_order).to eq(first_page_proposals_order)
     end
 
-    scenario 'Does not crash when the seed is not a number' do
+    scenario "Does not crash when the seed is not a number" do
       login_as user
       visit legislation_process_proposals_path(process, random_seed: "Spoof")
 
