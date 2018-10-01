@@ -117,12 +117,7 @@ class Legislation::ProcessesController < Legislation::BaseController
     end
 
     def set_random_seed
-      seed = begin
-               Float(params[:random_seed] || session[:random_seed] || (rand(99) / 100.0))
-             rescue
-               0
-             end
-
+      seed = (params[:random_seed] || session[:random_seed] || (rand(99) / 100.0)).to_f
       session[:random_seed] = seed
       params[:random_seed] = seed
       seed = (-1..1).cover?(seed) ? seed : 1
