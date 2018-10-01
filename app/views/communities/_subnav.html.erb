@@ -1,0 +1,37 @@
+<div class="row column communities-participant">
+
+  <ul class="tabs" data-tabs id="communities-show-tabs">
+
+    <li class="tabs-title is-active">
+      <%= link_to "#tab-participants" do %>
+        <h3>
+          <%= t("community.show.tab.participants") %>
+          <span class="js-comments-count">(<%= @participants.count %>)</span>
+        </h3>
+      <% end %>
+    </li>
+
+    <% if @community.proposal.present? %>
+      <li class="tabs-title">
+        <%= link_to '#tab-polls' do %>
+          <h3>
+            <%= t('.surveys') %>
+            <span class="js-comments-count">(<%= @community.proposal.polls.count %>)</span>
+          </h3>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="tabs-content" data-tabs-content="communities-show-tabs">
+    <div class="tabs-panel is-active" id="tab-participants">
+      <%= render partial: 'participant', collection: @participants %>
+    </div>
+
+    <% if @community.proposal.present? %>
+      <div class="tabs-panel" id="tab-polls">
+        <%= render partial: 'poll', collection: @community.proposal.polls %>
+      </div>
+    <% end %>
+  </div>
+</div>

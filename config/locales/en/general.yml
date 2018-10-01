@@ -202,6 +202,21 @@ en:
       firefox: Firefox
       ie: We have detected that you are browsing with Internet Explorer. For an enhanced experience, we recommend using %{firefox} or %{chrome}.
       ie_title: This website is not optimised for your browser
+    dashboard:
+      proposal_header:
+        published: Published
+        draft: Draft
+        retired: Retired
+      proposal_totals:
+        supports: Supports
+        active_resources: Active resources
+        community: Community
+        show_proposal: Show proposal
+        preview_proposal: Preview proposal
+        current_goal: Current goal
+        support_count:
+          one: "%{count} support" 
+          other: "%{count} supports"
     footer:
       accessibility: Accessibility
       conditions: Terms and conditions of use
@@ -312,6 +327,24 @@ en:
     create:
       form:
         submit_button: Create proposal
+    created:
+      title: Congratulations! You have taken the first step.
+      motivation_html: |
+        <p>
+        It is important to have at least 100 supports on the first day of the campaign to be able to
+        boost your proposal.
+        </p>
+        <p>
+          <strong>Do you think you need help to achieve this goal?</strong>
+          <br>
+          If so, leave your proposal as a draft and we will guide you.
+        </p>
+      publish: No, I want to publish the proposal
+      dashboard: Yes, I want help and I'll publish later
+      preview_title: This is how your proposal will look when you publish it
+    share:
+      improve_it: Improve your campaign and get more support.
+      dashboard: See more information
     edit:
       editing: Edit proposal
       form:
@@ -415,6 +448,7 @@ en:
       start_new: Create new proposal
     notice:
       retired: Proposal retired
+      published: The proposal has been published
     proposal:
       created: "You've created a proposal!"
       share:
@@ -452,7 +486,7 @@ en:
         other: "%{count} comments"
         zero: No comments
       comments_tab: Comments
-      edit_proposal_link: Edit
+      dashboard_proposal_link: Dashboard
       flag: This proposal has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
       notifications_tab: Notifications
@@ -460,15 +494,157 @@ en:
       retired_warning_link_to_explanation: Read the explanation before voting for it.
       retired: Proposal retired by the author
       share: Share
-      send_notification: Send notification
       no_notifications: "This proposal has any notifications."
       embed_video_title: "Video on %{proposal}"
       title_external_url: "Additional documentation"
       title_video_url: "External video"
       author: Author
+      draft: Proposal in draft
     update:
       form:
         submit_button: Save changes
+  dashboard:
+    menu:
+      my_proposal: My proposal
+      progress: Progress
+      resources: Resources
+      community: Community
+      polls: Polls
+      mailing: E-mail
+      poster: Poster
+    form:
+      request: Request
+    create_request:
+      success: The request for the administrator has been successfully sent.
+    progress:
+      title: Graphic
+      group_by_month: Monthly
+      group_by_week: Weekly
+      group_by_date: Daily
+      progress: Acumulated progress
+      supports: Supports
+      success: Ideal progress
+    index:
+      title: Edition
+      edit_proposal_link: Edit
+      publish: Publish
+      retire: Retire
+    new_request:
+      links: Links
+    resources:
+      available_resources: Available resources
+    resource:
+      required_days: "%{days} days required"
+      required_supports: "%{supports} supports required"
+      and: and
+      view_resource: See resource
+      resource_requested: Resource already requested
+      request_resource: Request resource 
+      resource_locked: Resource locked
+    recommended_actions:
+      title: Recommended actions
+    next_goal:
+      title: Goal
+      see_complete_course: Check out the complete course
+      hide_course: Hide course
+    goal:
+      target_supports: 
+        one: Get %{count} support for your proposal
+        other: Get %{count} supports for your proposal
+      days:
+        one: "%{count} day"
+        other: "%{count} days"
+      unlocked_resource: Resource unlocked
+      ideal_time: Ideal time
+    community:
+      access_community: Access the community
+      latest_activity: "Latest activity of the community: %{at}" 
+      participants: Participants
+      debates: Debates
+      comments: Comments
+      latest_comments: Latest messages
+    polls:
+      index:
+        title: Polls
+        create: Create poll
+        count:
+          one: You have created %{count} poll.
+          other: You have created %{count} polls.
+        links: Links
+        additiontal_information: Additional information
+      poll:
+        copy_link: Copy link
+        responses:
+          one: "%{count} response"
+          other: "%{count} responses"
+        view_results: View results
+        edit_poll: Edit survey
+        show_results: Show results
+        show_results_help: If you check this box the results will be public and all users will be able to see them
+      form:
+        add_question: Add question
+      question_fields:
+        remove_question: Remove question
+        add_answer: Add answer
+      question_answer_fields:
+        remove_answer: Remove answer
+    poster:
+      index:
+        title: Poster preview
+        h1: Do not keep looking,
+        h2: back me up! ;)
+        intro_text:
+          I am participating in Decide Madrid with my own citizen proposal and only if you also add you can I achieve the
+          necessary support to make Madrid the city we all want.
+        proposal_code: "Code of the proposal: %{code}"
+        h3: Support my proposal
+        footer: Visit decide.madrid.es and support this proposal. We need to be many. Decide your too. Thank you!
+      new:
+        title: Poster feature
+      options:
+        preview: Preview
+        download: Download
+    mailing:
+      index:
+        title: E-mail preview
+      new:
+        title: E-mail feature
+      mailing_options:
+        send: Send to %{address}
+        preview: Preview
+      create:
+        sent: The email has been sent
+    mailer:
+      forward:
+        subtitle: If you support me, we will achieve it.
+        support_it: Support this proposal
+        share_in: Share in
+        introduction:
+          "<p>Hello!</p>
+
+          <p>
+            I am writing to let you know that I am
+            participating in Decide Madrid, the platform for
+            Madrid and Madrid we can decide which city
+            we want. And for that, I created my own citizen proposal
+            and now, I'm going to need your support! But do not worry because
+            It is very simple.
+          </p>
+
+          <p>
+            You just have to click on the button that you will see below
+            'Support this proposal' and you can directly inform yourself about
+            before promoting it. Only the proposals that achieve the
+            maximum support will be carried out by our City Council,
+            and I thought that you, I'm sure you help me achieve it!
+          </p>"
+        share_info:
+          "<p>
+            And if you also do me the great favor of sharing my proposal with
+            your friends, family and contacts, it would be the bomb! Can
+            do it next from the social network that you want or from your
+            email:
+          </p>"
   polls:
     all: "All"
     no_dates: "no date assigned"
@@ -534,6 +710,8 @@ en:
       results:
         title: "Questions"
         most_voted_answer: "Most voted answer: "
+    poll_header:
+      back_to_proposal: Back to proposal
   poll_questions:
     create_question: "Create question"
     show:
@@ -740,6 +918,7 @@ en:
       deleted_proposal: This proposal has been deleted
       deleted_budget_investment: This investment project has been deleted
       proposals: Proposals
+      proposals_status: Status
       debates: Debates
       budget_investments: Budget investments
       comments: Comments
@@ -766,10 +945,12 @@ en:
       send_private_message: "Send private message"
       delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
-      send_notification: "Send notification"
-      retire: "Retire"
       retired: "Retired proposal"
+      draft: Draft
+      published: Published
       see: "See proposal"
+      actions: Actions
+      retired_help_text: Dashboard not available for retired proposals
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
@@ -868,3 +1049,24 @@ en:
       text_sign_in: login
       text_sign_up: sign up
       title: How I can comment this document?
+  links:
+    form:
+      delete_button: Delete
+      cancel_button: Cancel
+    nested_links:
+      title: Links
+      note: Add the links that are of interest
+      add_new_link: Add new link
+    link_fields:
+      label_placeholder: Link title
+      url_placeholder: Link address
+  communities:
+    show:
+      send_notification: Send message to the community
+      author: Author
+      surveys: Surveys
+      complete_survey: Complete the survey
+    subnav:
+      surveys: Surveys
+    poll:
+      take_part: Take part from %{from} to %{to}

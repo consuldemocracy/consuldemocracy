@@ -132,3 +132,12 @@ Setting['feature.homepage.widgets.feeds.proposals'] = true
 Setting['feature.homepage.widgets.feeds.debates'] = true
 Setting['feature.homepage.widgets.feeds.processes'] = true
 
+# Proposals
+Setting['proposals.successful_proposal_id'] = nil
+Setting['proposals.poll_short_title'] = nil
+Setting['proposals.poll_description'] = nil
+Setting['proposals.poll_link'] = nil
+Setting['proposals.email_short_title'] = nil
+Setting['proposals.email_description'] = nil
+Setting['proposals.poster_short_title'] = nil
+Setting['proposals.poster_description'] = nil

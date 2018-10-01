@@ -1,0 +1,25 @@
+<% content_for :action_title, t("dashboard.poster.index.title") %>
+<div class="row">
+  <div class="small-12 medium-9 column dashboard-poster-preview">
+    <div class="header">
+      <h1><%= t("dashboard.poster.index.h1") %></h1>
+      <h2><%= t("dashboard.poster.index.h2") %></h2>
+      <p><%= t("dashboard.poster.index.intro_text") %></p>
+      <p class="image-caption"><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></p>
+    </div>
+
+    <div class="proposal-image">
+      <%= image_tag proposal.image.attachment.url(:large), class: 'proposal-image' if proposal.image.present? %>
+      <%= image_tag 'default_mailing.jpg', class: 'proposal-image' unless proposal.image.present? %>
+    </div>
+
+    <h3><%= t("dashboard.poster.index.h3") %></h3>
+
+    <div class="proposal-title">"<%= proposal.title %>"</div>
+
+    <div class="poster-footer"><%= t("dashboard.poster.index.footer") %></div>
+  </div>
+
+  <%= render 'options' %>
+</div>
+

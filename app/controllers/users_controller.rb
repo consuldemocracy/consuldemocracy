@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
     def set_activity_counts
       @activity_counts = HashWithIndifferentAccess.new(
-                          proposals: Proposal.where(author_id: @user.id).count,
+                          proposals: Proposal.created_by(@user).count,
                           debates: (Setting['feature.debates'] ? Debate.where(author_id: @user.id).count : 0),
                           budget_investments: (Setting['feature.budgets'] ? Budget::Investment.where(author_id: @user.id).count : 0),
                           comments: only_active_commentables.count,
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     end
 
     def load_proposals
-      @proposals = Proposal.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
+      @proposals = Proposal.created_by(@user).order(created_at: :desc).page(params[:page])
     end
 
     def load_debates

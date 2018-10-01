@@ -206,7 +206,7 @@ feature 'Proposals' do
     expect(page).to have_css "meta[property='og:title'][content=\"#{proposal.title}\"]", visible: false
   end
 
-  scenario 'Create' do
+  scenario 'Create and publish' do
     author = create(:user)
     login_as(author)
 
@@ -225,8 +225,10 @@ feature 'Proposals' do
 
     expect(page).to have_content 'Proposal created successfully.'
     expect(page).to have_content 'Help refugees'
-    expect(page).not_to have_content 'You can also see more information about improving your campaign'
 
+    click_link 'No, I want to publish the proposal'
+
+    expect(page).to have_content 'Improve your campaign and get more support'
     click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Help refugees'
@@ -260,8 +262,9 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-    expect(page).to have_content 'Improve your campaign and get more supports'
+    click_link 'No, I want to publish the proposal'
 
+    expect(page).to have_content 'Improve your campaign and get more supports'
     click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Help refugees'
@@ -329,7 +332,7 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-
+    click_link 'No, I want to publish the proposal'
     click_link 'Not now, go to my proposal'
 
     expect(Proposal.last.responsible_name).to eq('Isabel Garcia')
@@ -351,7 +354,7 @@ feature 'Proposals' do
 
     click_button 'Create proposal'
     expect(page).to have_content 'Proposal created successfully.'
-
+    click_link 'No, I want to publish the proposal'
     click_link 'Not now, go to my proposal'
 
     expect(Proposal.last.responsible_name).to eq(author.document_number)
@@ -383,7 +386,7 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-
+    click_link 'No, I want to publish the proposal'
     click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Testing an attack'
@@ -407,7 +410,7 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-
+    click_link 'No, I want to publish the proposal'
     click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Testing auto link'
@@ -430,7 +433,7 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-
+    click_link 'No, I want to publish the proposal'
     click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Testing auto link'
@@ -438,6 +441,7 @@ feature 'Proposals' do
     expect(page).not_to have_link('click me')
     expect(page.html).not_to include "<script>alert('hey')</script>"
 
+    click_link 'Dashboard'
     click_link 'Edit'
 
     expect(page).to have_current_path(edit_proposal_path(Proposal.last))
@@ -465,7 +469,7 @@ feature 'Proposals' do
       click_button 'Create proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
-
+      click_link 'No, I want to publish the proposal'
       click_link 'Not now, go to my proposal'
 
       within "#geozone" do
@@ -494,7 +498,7 @@ feature 'Proposals' do
       click_button 'Create proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
-
+      click_link 'No, I want to publish the proposal'
       click_link 'Not now, go to my proposal'
 
       within "#geozone" do
@@ -511,8 +515,11 @@ feature 'Proposals' do
 
       visit user_path(proposal.author)
       within("#proposal_#{proposal.id}") do
-        click_link 'Retire'
+        click_link 'Dashboard'
       end
+
+      click_link 'Retire'
+      
       expect(page).to have_current_path(retire_form_proposal_path(proposal))
 
       select 'Duplicated', from: 'proposal_retired_reason'

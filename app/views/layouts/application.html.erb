@@ -22,7 +22,7 @@
     <h1 class="show-for-sr"><%= setting['org_name'] %></h1>
 
     <div class="wrapper <%= yield (:wrapper_class) %>">
-      <%= render 'layouts/header' %>
+      <%= render partial: 'layouts/header', locals: {with_subnavigation: true} %>
 
       <!--[if lt IE 9]>
       <% if browser.ie? && cookies['ie_alert_closed'] != 'true' %>
@@ -45,8 +45,8 @@
       <![endif]-->
 
       <%= render 'layouts/flash' %>
-
       <%= yield %>
+
       <div class="push"></div>
     </div>
     <div class="footer">

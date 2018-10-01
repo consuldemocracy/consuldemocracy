@@ -68,6 +68,9 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.11)
+    best_in_place (3.0.3)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     browser (2.5.2)
     builder (3.2.3)
     bullet (5.7.1)
@@ -96,6 +99,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
+    capybara-screenshot (1.0.21)
+      capybara (>= 1.0, < 4)
+      launchy
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
@@ -489,6 +495,8 @@ GEM
       railties (>= 4.2)
     whenever (0.10.0)
       chronic (>= 0.6.3)
+    wicked_pdf (1.1.0)
+    wkhtmltopdf-binary (0.12.4)
     xpath (3.0.0)
       nokogiri (~> 1.8)
 
@@ -501,6 +509,7 @@ DEPENDENCIES
   ahoy_matey (~> 1.6.0)
   ancestry (~> 3.0.1)
   autoprefixer-rails (~> 8.2.0)
+  best_in_place (~> 3.0.1)
   browser (~> 2.5.2)
   bullet (~> 5.7.0)
   byebug (~> 10.0.0)
@@ -510,6 +519,7 @@ DEPENDENCIES
   capistrano-rails (~> 1.3.1)
   capistrano3-delayed-job (~> 1.7.3)
   capybara (~> 2.17.0)
+  capybara-screenshot
   ckeditor (~> 4.2.3)
   cocoon (~> 1.2.9)
   coffee-rails (~> 4.2.1)
@@ -578,6 +588,8 @@ DEPENDENCIES
   unicorn (~> 5.4.0)
   web-console (~> 3.3.0)
   whenever (~> 0.10.0)
+  wicked_pdf (~> 1.1.0)
+  wkhtmltopdf-binary (~> 0.12.4)
 
 BUNDLED WITH
    1.16.2

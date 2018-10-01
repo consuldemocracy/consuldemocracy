@@ -1,0 +1,10 @@
+<li>
+  <%= comment.body %>
+  <p class="help-text">
+    <%= comment.commentable.title %>
+    -
+    <%= l(comment.updated_at.to_date) %>
+    -
+    <%= comment.author.name %>
+  </p>
+</li>

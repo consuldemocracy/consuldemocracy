@@ -31,6 +31,9 @@ class Proposal < ActiveRecord::Base
   belongs_to :geozone
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :proposal_notifications, dependent: :destroy
+  has_many :dashboard_executed_actions, dependent: :destroy, class_name: 'Dashboard::ExecutedAction'
+  has_many :dashboard_actions, through: :dashboard_executed_actions, class_name: 'Dashboard::Action'
+  has_many :polls, as: :related
 
   validates :title, presence: true
   validates :question, presence: true
@@ -71,9 +74,24 @@ class Proposal < ActiveRecord::Base
   scope :unsuccessful,             -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
   scope :public_for_api,           -> { all }
   scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
+  scope :published,                -> { where.not(published_at: nil) }
+  scope :draft,                    -> { where(published_at: nil) }
+  scope :created_by,               ->(author) { where(author: author) }
 
   def url
     proposal_path(self)
+  end
+
+  def publish
+    update(published_at: Time.now)
+  end
+
+  def published?
+    !published_at.nil?
+  end
+
+  def draft?
+    published_at.nil?
   end
 
   def self.recommendations(user)

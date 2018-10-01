@@ -7,6 +7,7 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'ahoy_matey', '~> 1.6.0'
 gem 'ancestry', '~> 3.0.1'
 gem 'autoprefixer-rails', '~> 8.2.0'
+gem 'best_in_place', '~> 3.0.1'
 gem 'browser', '~> 2.5.2'
 gem 'cancancan', '~> 2.1.2'
 gem 'ckeditor', '~> 4.2.3'
@@ -18,6 +19,7 @@ gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'devise', '~> 3.5.7'
 gem 'devise-async', '~> 0.10.2'
 gem 'devise_security_extension', '~> 0.10.0'
+gem 'faker', '~> 1.8.7'
 gem 'foundation-rails', '~> 6.4.3.0'
 gem 'foundation_rails_helper', '~> 2.0.0'
 gem 'graphiql-rails', '~> 1.4.1'
@@ -54,6 +56,8 @@ gem 'unicorn', '~> 5.4.0'
 gem 'whenever', '~> 0.10.0', require: false
 gem 'globalize', '~> 5.0.0'
 gem 'globalize-accessors', '~> 0.2.1'
+gem 'wkhtmltopdf-binary', '~> 0.12.4'
+gem 'wicked_pdf', '~> 1.1.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-leaflet'
@@ -64,7 +68,6 @@ group :development, :test do
   gem 'bullet', '~> 5.7.0'
   gem 'byebug', '~> 10.0.0'
   gem 'factory_bot_rails', '~> 4.8.2'
-  gem 'faker', '~> 1.8.7'
   gem 'i18n-tasks', '~> 0.9.20'
   gem 'knapsack_pro', '~> 0.53.0'
   gem 'launchy', '~> 2.4.3'
@@ -76,6 +79,7 @@ end
 
 group :test do
   gem 'capybara', '~> 2.17.0'
+  gem 'capybara-screenshot'
   gem 'coveralls', '~> 0.8.21', require: false
   gem 'database_cleaner', '~> 1.6.1'
   gem 'email_spec', '~> 2.1.0'

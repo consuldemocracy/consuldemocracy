@@ -44,6 +44,10 @@ module AdminHelper
     ["homepage", "cards"].include?(controller_name)
   end
 
+  def menu_dashboard?
+    ["actions", "administrator_tasks"].include?(controller_name)
+  end
+
   def official_level_options
     options = [["", 0]]
     (1..5).each do |i|

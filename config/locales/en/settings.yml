@@ -63,3 +63,12 @@ en:
     verification_offices_url: Verification offices URL
     min_age_to_participate: Minimum age needed to participate
     proposal_improvement_path: Proposal improvement info internal link
+    proposals:
+      successful_proposal_id: Successful proposal
+      poll_short_title: Subtitle for polls feature
+      poll_description: Description for polls feature
+      poll_link: Additional information link
+      email_short_title: Subtitle for email feature
+      email_description: Description for email feature
+      poster_short_title: Subtitle for poster feature
+      poster_description: Description for poster feature

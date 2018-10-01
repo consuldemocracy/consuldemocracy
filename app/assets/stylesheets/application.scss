@@ -2,11 +2,17 @@
 @import 'foundation_and_overrides';
 @import 'fonts';
 @import 'icons';
+@import 'foundation-icons';
 @import 'mixins';
 @import 'admin';
 @import 'layout';
 @import 'participation';
 @import 'pages';
+@import 'proposal';
+@import 'proposal-graph';
+@import 'dashboard_mailer_preview';
+@import 'dashboard_poster_preview';
+@import 'poll';
 @import 'legislation';
 @import 'legislation_process';
 @import 'community';

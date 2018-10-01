@@ -16,9 +16,11 @@ class Poll::Question < ActiveRecord::Base
 
   validates :title, presence: true
   validates :author, presence: true
-  validates :poll_id, presence: true
+  validates :poll_id, presence: true, if: Proc.new { |question| question.poll.nil? }
 
   validates :title, length: { minimum: 4 }
+
+  accepts_nested_attributes_for :question_answers, reject_if: :all_blank, allow_destroy: true
 
   scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
 

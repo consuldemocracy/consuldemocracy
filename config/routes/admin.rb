@@ -201,4 +201,9 @@ namespace :admin do
     resources :cards
     resources :feeds, only: [:update]
   end
+
+  namespace :dashboard do 
+    resources :actions, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :administrator_tasks, only: [:index, :edit, :update]
+  end
 end

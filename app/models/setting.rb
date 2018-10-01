@@ -6,15 +6,11 @@ class Setting < ActiveRecord::Base
   scope :banner_img, -> { where("key ilike ?", "banner-img.%")}
 
   def type
-    if feature_flag?
-      'feature'
-    elsif banner_style?
-      'banner-style'
-    elsif banner_img?
-      'banner-img'
-    else
-      'common'
-    end
+    return 'feature' if feature_flag?
+    return 'banner-style' if banner_style?
+    return 'banner-img' if banner_img?
+    return 'proposals' if proposals?
+    'common'
   end
 
   def feature_flag?
@@ -31,6 +27,10 @@ class Setting < ActiveRecord::Base
 
   def banner_img?
     key.start_with?('banner-img.')
+  end
+
+  def proposals?
+    key.start_with?('proposals.')
   end
 
   class << self

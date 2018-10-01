@@ -802,7 +802,7 @@ feature 'Budget Investments' do
         visit new_budget_investment_path(budget)
         fill_in "budget_investment_title", with: "item"
 
-        within('div#js-suggest') do
+        within('div#js-suggest', visible: false) do
           expect(page).not_to have_content 'You are seeing'
         end
       end
@@ -1151,6 +1151,7 @@ feature 'Budget Investments' do
   it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 
   it_behaves_like "imageable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+  it_behaves_like "imageable destroy", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 
   it_behaves_like "nested imageable",
                   "budget_investment",

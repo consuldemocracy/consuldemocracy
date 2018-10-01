@@ -48,6 +48,7 @@ module Abilities
       can [:search, :index], ::User
 
       can :manage, Annotation
+      can :manage, Dashboard::Action
 
       can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
 
@@ -68,7 +69,7 @@ module Abilities
       can [:create, :destroy, :manage], ::Poll::BoothAssignment
       can [:create, :destroy], ::Poll::OfficerAssignment
       can [:read, :create, :update], Poll::Question
-      can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
+      can :destroy, Poll::Question
 
       can :manage, SiteCustomization::Page
       can :manage, SiteCustomization::Image
@@ -84,6 +85,7 @@ module Abilities
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil
+      can [:manage], Dashboard::AdministratorTask
     end
   end
 end

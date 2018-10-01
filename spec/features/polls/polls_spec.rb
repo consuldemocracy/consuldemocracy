@@ -26,6 +26,14 @@ feature 'Polls' do
       end
     end
 
+    scenario "Proposal polls won't be listed" do
+      proposal = create(:proposal)
+      _poll = create(:poll, related: proposal) 
+
+      visit polls_path
+      expect(page).to have_content('There are no open votings')
+    end
+
     scenario 'Filtering polls' do
       create(:poll, name: "Current poll")
       create(:poll, :incoming, name: "Incoming poll")

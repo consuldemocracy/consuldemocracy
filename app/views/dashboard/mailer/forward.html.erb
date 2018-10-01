@@ -1,0 +1,19 @@
+<header>
+  <h1><%= @proposal.title %></h1>
+  <h2><%= t("dashboard.mailer.forward.subtitle") %></h2>
+</header>
+<%= image_tag @proposal.image.attachment.url(:large), class: 'proposal-image' if @proposal.image.present? %>
+<%= image_tag 'default_mailing.jpg', class: 'proposal-image' unless @proposal.image.present? %>
+<div class="mail-body">
+  <%== t("dashboard.mailer.forward.introduction") %>
+  <%= link_to t("dashboard.mailer.forward.support_it"), proposal_url(@proposal), class: 'support-link' %>
+  <%== t("dashboard.mailer.forward.share_info") %>
+
+  <p class="share-title"><%= t("dashboard.mailer.forward.share_in") %></p>
+  <%= render partial: 'shared/social_share', locals: {
+            title: @proposal.title,
+            url: proposal_url(@proposal),
+            description: @proposal.summary
+          } %>
+
+</div>

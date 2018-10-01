@@ -321,6 +321,52 @@ es:
         back: Volver a %{org}
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
+      actions:
+        action_type:
+          proposed_action: Acción propuesta
+          resource: Recurso
+        index:
+          create: Crear
+          edit: Editar
+          delete: Borrar
+          no_records: No se encontraron registros
+          active: 'Si'
+          inactive: 'No'
+          title: Recursos/Acciones recomendadas
+          action_title: Título
+          action_type: Tipo
+          required_supports: Apoyos necesarios
+          action_active: Activo
+        new:
+          creating: Nueva acción para el dashboard de propuestas
+          back: Volver a la lista
+        create:
+          notice: Acción creada con éxito
+        edit:
+          editing: Editar acción para el dashboard de propuestas
+          back: Volver a la lista
+        form:
+          submit_button: Guardar
+          day_offset_help_text: Introduce 0 para que este valor no se tenga en cuenta.
+          required_supports_help_text: Introduce 0 para que este valor no se tenga en cuenta.
+        delete:
+          success: Acción borrada con éxito
+      administrator_tasks:
+        index:
+          title: Tareas pendientes
+          solve: Resolver
+          no_records: No hay tareas pendientes
+          source: Origen
+        edit:
+          back: Volver a la lista de tareas pendientes
+          solving: Resolver tarea pendiente
+        form:
+          solve: Marcar como resuelta
+          proposal: "La propuesta: %{title}"
+          request: "Ha solicitado: %{title}"
+          check_details: Ver los detalles de la propuesta
+        update:
+          success: La tarea ha sido marcada como resuelta
     debates:
       index:
         filter: Filtro
@@ -549,6 +595,9 @@ es:
       title_booths: Urnas de votación
       legislation: Legislación colaborativa
       users: Usuarios
+      dashboard: Panel de control de propuestas
+      administrator_tasks: Tareas pendientes
+      dashboard_actions: Acciones del panel de control de propuestas
     administrators:
       index:
         title: Administradores
@@ -1019,6 +1068,8 @@ es:
             update: La configuración del mapa se ha guardado correctamente.
           form:
             submit: Actualizar
+        proposals:
+          title: Ajustes para propuestas
     shared:
       booths_search:
         button: Buscar

@@ -1,0 +1,17 @@
+<div class="proposal-title">
+  <h3 class="proposal-title"><%= link_to proposal.title, proposal, target: '_blank' %></h3>
+  <% if proposal.retired? %>
+    <div class="label alert"><%= t('.retired') %></div>
+  <% elsif proposal.published? %>
+    <div class="label success"><%= t('.published') %></div>
+  <% else %>
+    <div class="label primary"><%= t('.draft') %></div>
+  <% end %>
+</div>
+
+<% if content_for?(:action_title) %>
+  <div class="action-title">
+    <h5><%= yield(:action_title) %></h5>
+    <hr>
+  </div>
+<% end %>

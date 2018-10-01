@@ -63,3 +63,12 @@ es:
     verification_offices_url: URL oficinas verificación
     min_age_to_participate: Edad mínima para participar
     proposal_improvement_path: Link a información para mejorar propuestas
+    proposals:
+      successful_proposal_id: Propuesta exitosa
+      poll_short_title: Subtítulo funcionalidad encuestas
+      poll_description: Descripción funcionalidad encuestas
+      poll_link: Enlace información adicional
+      email_short_title: Subtítulo funcionalidad de correo electrónico
+      email_description: Descripción funcionalidad de correo electrónico
+      poster_short_title: Subtítulo funcionalidad póster
+      poster_description: Descripción funcionalidad póster

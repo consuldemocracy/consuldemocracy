@@ -320,6 +320,52 @@ en:
         back: Go back to %{org}
         title: Administration
         description: Welcome to the %{org} admin panel.
+      actions:
+        action_type:
+          proposed_action: Proposed action
+          resource: Resource
+        index:
+          create: Create
+          edit: Edit
+          delete: Delete
+          no_records: No records found
+          active: 'Yes'
+          inactive: 'No'
+          title: Resources/Recomended actions
+          action_title: Title
+          action_type: Type
+          required_supports: Required supports
+          action_active: Active
+        new:
+          creating: New action for the proposals dashboard
+          back: Back to list
+        create:
+          notice: Action created successfully
+        edit:
+          editing: Edit action for the proposals dashboard
+          back: Back to list
+        delete:
+          success: Action successfully deleted
+        form:
+          submit_button: Save
+          day_offset_help_text: Enter 0 so that this value is not taken into account.
+          required_supports_help_text: Enter 0 so that this value is not taken into account.
+      administrator_tasks:
+        index:
+          title: Pending tasks
+          solve: Solve
+          no_records: There are no pending tasks
+          source: Source
+        edit:
+          back: Back to pending tasks list
+          solving: Solve pending task
+        form:
+          solve: Mark as solved
+          proposal: "The proposal: %{title}"
+          request: "Has requested: %{title}"
+          check_details: Check the proposal details
+        update:
+          success: The task has been marked as solved.
     debates:
       index:
         filter: Filter
@@ -548,6 +594,9 @@ en:
       title_booths: Voting booths
       legislation: Collaborative Legislation
       users: Users
+      dashboard: Proposals dashboard
+      administrator_tasks: Pending tasks 
+      dashboard_actions: Proposal dashboard actions
     administrators:
       index:
         title: Administrators
@@ -1018,6 +1067,8 @@ en:
             update: Map configuration updated succesfully.
           form:
             submit: Update
+        proposals:
+          title: Proposal related settings
     shared:
       booths_search:
         button: Search

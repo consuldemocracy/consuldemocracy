@@ -106,6 +106,15 @@ es:
       proposal_notification:
         one: "Notificación de propuesta"
         other: "Notificaciones de propuestas"
+      dashboard/action:
+        one: Acción del panel de control de propuestas
+        other: Acciones del panel de control de propuestas
+      dashboard/administrator_task:
+        one: Tarea
+        other: Tareas
+      link:
+        one: Enlace
+        other: Enlaces
     attributes:
       budget:
         name: "Nombre"
@@ -260,6 +269,25 @@ es:
         link_url: URL del enlace
       widget/feed:
         limit: Número de elementos
+      dashboard/action:
+        title: Título
+        short_description: Descripción corta
+        description: Descripción
+        link: Enlace externo
+        request_to_administrators: Petición para administrador
+        day_offset: Días requeridos para la activación
+        required_supports: Soportes requeridos para la activación
+        order: Orden
+        active: Activa
+        action_type: Tipo
+      dashboard/administrator_task:
+        source: Fuente
+        user: Ejecutado por
+        executed_at: Ejecutado el
+      link:
+        label: Título
+        url: Enlace
+        open_in_new_tab: Abrir en ventana nueva
     errors:
       models:
         user:
@@ -336,6 +364,7 @@ es:
               cannot_comment_valuation: 'No puedes comentar una evaluación'
       messages:
         record_invalid: 'Error de validación: %{errors}'
+        another_poll_active: Hay otra encuesta activa para este periodo.
         restrict_dependent_destroy:
           has_one: "No se puede eliminar el registro porque existe una %{record} dependiente"
           has_many: "No se puede eliminar el registro porque existe %{record} dependientes"

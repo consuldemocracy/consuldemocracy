@@ -1,0 +1,65 @@
+@import 'application';
+
+body {
+  padding-left: 30%;
+  padding-right: 30%;
+
+  p {
+    text-align: justify;
+  }
+}
+
+header {
+  background-color: #3700fd; 
+  color: white;
+  padding: 20pt 20pt 20pt 20pt;
+  margin-bottom: 0;
+  border-bottom: 0;
+
+  h1 {
+    font-size: 40pt;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 25pt;
+    text-align: center;
+  }
+}
+
+.proposal-image {
+  width: 100%;
+}
+
+.mail-body {
+  color: #838383;
+  font-size: 18pt;
+  margin-top: 20pt;
+}
+
+.support-link {
+  display: block;
+  background-color: #004a84;
+  color: #ddffff;
+  text-decoration: none;
+  border: 1px solid $border;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 40pt;
+  padding: 20pt 20pt 20pt 20pt;
+  border-radius: 5pt;
+  text-align: center;
+  margin-top: 50pt;
+  margin-bottom: 50pt;
+}
+.support-link:hover {
+  color: #ddffffff;
+  text-decoration: none;
+}
+
+.share-title {
+  font-weight: bold;
+  font-size: 25pt;
+}
+
