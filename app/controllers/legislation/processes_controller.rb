@@ -118,9 +118,11 @@ class Legislation::ProcessesController < Legislation::BaseController
 
     def set_random_seed
       seed = (params[:random_seed] || session[:random_seed] || (rand(99) / 100.0)).to_f
+      seed = (-1..1).cover?(seed) ? seed : 1
+
       session[:random_seed] = seed
       params[:random_seed] = seed
-      seed = (-1..1).cover?(seed) ? seed : 1
+
       ::Legislation::Proposal.connection.execute "select setseed(#{seed})"
     end
 end
