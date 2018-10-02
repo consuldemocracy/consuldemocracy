@@ -3,22 +3,6 @@ FROM ruby:2.3.6
 # Install essential Linux packages
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev postgresql-client nodejs imagemagick sudo
 
-# Test requirements
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-  && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
-  && apt-get update \
-  && apt-get install -y google-chrome-stable \
-  && apt-get clean
-
-RUN CHROMEDRIVER_RELEASE=2.36 \
-  && CHROMEDRIVER_URL="http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_RELEASE/chromedriver_linux64.zip" \
-  && apt-get install unzip \
-  && curl --silent --show-error --location --fail --retry 3 --output /tmp/chromedriver_linux64.zip $CHROMEDRIVER_URL \
-  && unzip /tmp/chromedriver_linux64.zip chromedriver -d /usr/local/share \
-  && chmod +x /usr/local/share/chromedriver \
-  && ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver \
-  && rm /tmp/chromedriver_linux64.zip
-
 # Files created inside the container repect the ownership
 RUN adduser --shell /bin/bash --disabled-password --gecos "" consul \
   && adduser consul sudo \
