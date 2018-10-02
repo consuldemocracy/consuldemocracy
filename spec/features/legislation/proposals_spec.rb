@@ -22,6 +22,8 @@ feature 'Legislation Proposals' do
 
   feature "Random pagination" do
     before do
+      allow(Legislation::Proposal).to receive(:default_per_page).and_return(12)
+
       create_list(
         :legislation_proposal,
         (Legislation::Proposal.default_per_page + 2),
