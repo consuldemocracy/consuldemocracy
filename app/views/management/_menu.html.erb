@@ -3,7 +3,7 @@
     <li class="section-title">
       <a href="#">
         <span class="icon-user"></span>
-        <strong><%= t("management.menu.users") %></strong>
+        <strong><%= t("management.menu.edit_user_accounts") %></strong>
       </a>
       <ul class="is-active">
 
@@ -19,6 +19,12 @@
 
         <li <%= "class=is-active" if menu_edit_password_manually? %>>
           <%= link_to t("management.account.menu.reset_password_manually"), edit_password_manually_management_account_path %>
+          </li>
+        <li>
+          <%= link_to t("management.users.edit_email"), management_account_path(edit_email: true) %>
+        </li>
+        <li>
+          <%= link_to t("management.users.erase_submit"), management_account_path(delete_user: true) %>
         </li>
 
         <li <%= "class=is-active" if menu_create_proposal? %>>

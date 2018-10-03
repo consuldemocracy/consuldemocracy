@@ -68,7 +68,7 @@ en:
       create_budget_investment: Create budget investment
       print_budget_investments: Print budget investments
       support_budget_investments: Support budget investments
-      users: Users management
+      edit_user_accounts: Users management
       user_invites: Send invitations
       select_user: Select user
     permissions:
@@ -135,10 +135,12 @@ en:
       email_optional_label: Email (optional)
       erased_notice: User account deleted.
       erased_by_manager: "Deleted by manager: %{manager}"
-      erase_account_link: Delete user
       erase_account_confirm: Are you sure you want to erase the account? This action can not be undone
       erase_warning: This action can not be undone. Please make sure you want to erase this account.
       erase_submit: Delete account
+      edit_email: Edit email
+      update_email: Update email
+      notice_changed_email: An email message has been sent on to the introduced email address. It will be necessary to follow a link on that email message for the email address change to be completed effectively.
     user_invites:
       new:
         label: Emails

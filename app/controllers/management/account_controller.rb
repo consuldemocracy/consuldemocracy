@@ -3,6 +3,21 @@ class Management::AccountController < Management::BaseController
   before_action :only_verified_users
 
   def show
+    @delete_user = params[:delete_user]
+    @edit_email = params[:edit_email]
+  end
+
+  def update
+    if managed_user.update(manage_account_params)
+      if params[:edit_email]
+        @sent_email = true
+      else
+        flash[:notice] = t("flash.actions.save_changes.notice")
+      end
+    else
+      @edit_email = params[:edit_email]
+    end
+    render :show
   end
 
   def edit
@@ -29,6 +44,10 @@ class Management::AccountController < Management::BaseController
 
     def only_verified_users
       check_verified_user t("management.account.alert.unverified_user")
+    end
+
+    def manage_account_params
+      params.require(:user).permit(:email)
     end
 
 end

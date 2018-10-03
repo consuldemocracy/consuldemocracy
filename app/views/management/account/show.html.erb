@@ -1,3 +1,11 @@
 <h2><%= t("management.account.show.title") %></h2>
 
-<%= render 'management/users/erase_user_account' %>
+<% if @delete_user %>
+  <%= render 'management/users/erase_user_account' %>
+<% elsif @edit_email %>
+  <%= render 'management/users/edit_user_account' %>
+<% elsif @sent_email%>
+  <div class="callout success medium-6">
+    <%= t("management.users.notice_changed_email") %>
+  </div>
+<% end %>
