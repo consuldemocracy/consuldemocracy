@@ -237,5 +237,25 @@ feature 'Legislation' do
 
       include_examples "not published permissions", :result_publication_legislation_process_path
     end
+
+    context 'proposals phase' do
+      scenario 'not open' do
+        process = create(:legislation_process, :upcoming_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("This phase is not open yet")
+      end
+
+      scenario 'open' do
+        process = create(:legislation_process, :in_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("There are no proposals")
+      end
+
+      include_examples "not published permissions", :legislation_process_proposals_path
+    end
   end
 end
