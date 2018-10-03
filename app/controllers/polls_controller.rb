@@ -1,10 +1,12 @@
+
+
 class PollsController < ApplicationController
   include PollsHelper
 
   load_and_authorize_resource
 
   has_filters %w{current expired incoming}
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_orders %w{most_voted newest oldest}, only: [:show, :answer]
 
   ::Poll::Answer # trigger autoload
 
@@ -16,27 +18,58 @@ class PollsController < ApplicationController
     @questions = @poll.questions.for_render.sort_for_list
     @token = poll_voter_token(@poll, current_user)
     @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions).where.not(description: "").order(:given_order)
-
-    @questions_without_any_answer = session[:questions_without_any_answer]
-    @answers_by_question_id = {}
-    unless (session[:answers_by_question_id].nil?)
-      session[:answers_by_question_id].each do |k,v|
-        @answers_by_question_id[k.to_i] = v
-      end
-    else
-      @answers_by_question_id = {}  
-      poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user.try(:id))
-      poll_answers.each do |answer|
-        @answers_by_question_id[answer.question_id] = answer.answer
-      end      
-    end
-    session[:questions_without_any_answer] = nil
-    session[:answers_by_question_id] = nil  
-
+    @answers_by_question_id = {}     
+    ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user.try(:id)).each do |answer|
+      @answers_by_question_id[answer.question_id] = answer.answer
+    end    
     @commentable = @poll
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
   end
 
+  def answer    
+    @questions = @poll.questions.for_render.sort_for_list
+    @token = poll_voter_token(@poll, current_user)
+    @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions).where.not(description: "").order(:given_order)
+    @answers_by_question_id = {}     
+    @found_error = false
+    @answers = []
+    @questions.each do |question| 
+      if(question.answers.count()==0)
+        next
+      end        
+      answer_id = params['answer_question_' + question.id.to_s]        
+      answer = question.answers.find_or_initialize_by(author: current_user)
+      if (answer_id)
+        answer.answer = Poll::Question::Answer.find_by_id(answer_id.to_i).title
+      else 
+        answer.answer = nil
+        @found_error = true        
+      end
+      answer.touch if answer.persisted?
+      answer.record_voter_participation(@token)        
+      question.question_answers.where(question_id: question).each do |question_answer|
+        question_answer.set_most_voted
+      end
+      @answers_by_question_id[answer.question_id] = answer.answer
+      @answers.push(answer)
+    end
+    @commentable = @poll
+    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+
+    unless @found_error
+      @answers.each do |answer|       
+        answer.save()
+      end
+      return redirect_to poll_path(@poll), notice: t("flash.actions.save_changes.notice")      
+    else
+      @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions).where.not(description: "").order(:given_order)
+      render :action => 'show'      
+      return true
+    end  
+  end
+
+
+=begin
   def answer    
     @questions = @poll.questions.for_render.sort_for_list
     @token = poll_voter_token(@poll, current_user)    
@@ -44,6 +77,7 @@ class PollsController < ApplicationController
     question_counter = 0
     questions_answered_counter = 0    
     answers_by_question_id = {}
+    
     @questions.each do |question| 
       # test if exists answer to do a choice
       if(question.answers.count()==0)
@@ -86,6 +120,7 @@ class PollsController < ApplicationController
       return redirect_to poll_path(@poll)
     end
   end
+=end
 
   def stats
     @stats = Poll::Stats.new(@poll).generate

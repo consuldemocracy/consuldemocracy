@@ -20,12 +20,12 @@ App.Polls =
     @token = App.Polls.generateToken()
     App.Polls.replaceToken()
 
-    $("label.button").on "click", () ->
+    $(".polls-show label.button").on "click", () ->
       if !$(this).hasClass('answered')
-        $(this).attr('class', 'button answered')
-      $(this).siblings().attr("class", "button secondary hollow js-question-answer")
+        $(this).attr('class', 'button secondary hollow js-question-answer')
+      $(this).siblings("label.button").attr("class", "button secondary hollow js-question-answer")
 
-    $(".js-question-answer").on
+    $(".polls-show .js-question-answer").on
       click: =>
         token_message = $(".js-token-message")
         if !token_message.is(':visible')

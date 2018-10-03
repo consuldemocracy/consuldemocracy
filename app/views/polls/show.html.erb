@@ -8,7 +8,6 @@
   <div class="row margin">
     <div class="small-12 medium-9 column">
       <%= render "callout" %>
-
       <% if @poll.voted_in_booth?(current_user) %>
         <div class="callout warning">
           <%= t("polls.show.already_voted_in_booth") %>

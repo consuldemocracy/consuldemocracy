@@ -1,4 +1,4 @@
-<%= form_tag("/polls/" + @poll.id.to_s + "/answers", method: "post") do %>
+<%= form_tag("/polls/" + @poll.id.to_s + "", method: "post") do %>
 	<% @questions.each do |question| %>
 		<div id="<%= dom_id(question) %>" class="poll-question">
 		  <h3>
@@ -11,7 +11,7 @@
 					<%= radio_button_tag("answer_question_" + question.id.to_s, answer.id, (@answers_by_question_id[question.id] == answer.title), class: 'button secondary hollow js-question-answer pseudo-radio js-question-answer', :id => "answer_question_" + question.id.to_s + "__" + answer.id.to_s) %>
 					<%= label_tag("answer_question_" + question.id.to_s + "__" + answer.id.to_s, answer.title, :class =>  (@answers_by_question_id[question.id] == answer.title ? 'button answered' : 'button secondary hollow js-question-answer'), :for => "answer_question_" + question.id.to_s + "__" + answer.id.to_s) %>			        
 			    <% end %>
-			  <% if (@questions_without_any_answer && @questions_without_any_answer.include?(question.id))
+			  <% if (@found_error && !@answers_by_question_id[question.id])
 			   %>
 			  	<br>
 		      	<font color='red'><%= t("polls.show.choose_answer") %></font>
