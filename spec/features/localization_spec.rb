@@ -3,11 +3,13 @@ require 'rails_helper'
 feature 'Localization' do
 
   scenario 'Wrong locale' do
-    card = create(:widget_card, title: 'Bienvenido a CONSUL',
-                                description: 'Software libre para la participación ciudadana.',
-                                link_text: 'Más información',
-                                link_url: 'http://consulproject.org/',
-                                header: true)
+    Globalize.with_locale(:es) do
+      create(:widget_card, title: 'Bienvenido a CONSUL',
+                           description: 'Software libre para la participación ciudadana.',
+                           link_text: 'Más información',
+                           link_url: 'http://consulproject.org/',
+                           header: true)
+    end
 
     visit root_path(locale: :es)
     visit root_path(locale: :klingon)

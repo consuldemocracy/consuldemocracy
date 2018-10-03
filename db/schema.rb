@@ -1404,6 +1404,20 @@ ActiveRecord::Schema.define(version: 20180813141443) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  create_table "widget_card_translations", force: :cascade do |t|
+    t.integer  "widget_card_id", null: false
+    t.string   "locale",         null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "label"
+    t.string   "title"
+    t.text     "description"
+    t.string   "link_text"
+  end
+
+  add_index "widget_card_translations", ["locale"], name: "index_widget_card_translations_on_locale", using: :btree
+  add_index "widget_card_translations", ["widget_card_id"], name: "index_widget_card_translations_on_widget_card_id", using: :btree
+
   create_table "widget_cards", force: :cascade do |t|
     t.string   "title"
     t.text     "description"

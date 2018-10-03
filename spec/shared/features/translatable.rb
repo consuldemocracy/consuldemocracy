@@ -192,6 +192,8 @@ def update_button_text
     "Update poll"
   when "Poll::Question"
     "Save"
+  when "Widget::Card"
+    "Save card"
   else
     "Save changes"
   end
