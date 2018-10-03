@@ -23,9 +23,12 @@ FactoryBot.define do
     draft_publication_date { Date.current - 1.day }
     allegations_start_date { Date.current }
     allegations_end_date { Date.current + 3.days }
+    proposals_phase_start_date { Date.current }
+    proposals_phase_end_date { Date.current + 2.days }
     result_publication_date { Date.current + 5.days }
     debate_phase_enabled true
     allegations_phase_enabled true
+    proposals_phase_enabled true
     draft_publication_enabled true
     result_publication_enabled true
     published true
