@@ -9,6 +9,18 @@ Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/shared/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
+
+  config.around(:each, :with_csrf_protection) do |example|
+    orig = ActionController::Base.allow_forgery_protection
+
+    begin
+      ActionController::Base.allow_forgery_protection = true
+      example.run
+    ensure
+      ActionController::Base.allow_forgery_protection = orig
+    end
+  end
+
   config.use_transactional_fixtures = false
 
   config.filter_run :focus

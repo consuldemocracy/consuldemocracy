@@ -168,6 +168,7 @@ en:
       user_not_found: User not found
       invalid_date_range: "Invalid date range"
   form:
+    invalid_authenticity_token: Invalid authenticity token, please try again.
     accept_terms: I agree to the %{policy} and the %{conditions}
     accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
     conditions: Terms and conditions of use
