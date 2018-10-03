@@ -8,7 +8,7 @@
       <h2><%= @custom_page.subtitle%></h2>
     <% end %>
 
-    <%= text_with_links @custom_page.content %>
+    <%= safe_html_with_links AdminWYSIWYGSanitizer.new.sanitize(@custom_page.content) %>
   </div>
 
   <% if @custom_page.print_content_flag %>
