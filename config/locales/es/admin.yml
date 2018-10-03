@@ -1191,6 +1191,7 @@ es:
         document_numbers_note: "Introduce los números separados por comas (,)"
         submit: Crear hoja de firmas
       show:
+        revalidate: Revalidar
         created_at: Creado
         author: Autor
         documents: Documentos

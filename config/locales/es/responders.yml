@@ -37,3 +37,5 @@ es:
         topic: "Tema eliminado."
         poll_question_answer_video: "Vídeo de respuesta eliminado."
         valuator_group: "Grupo de evaluadores eliminado correctamente"
+      revalidate:
+        signature_sheet: "Validando de nuevo la hoja de firmas"
