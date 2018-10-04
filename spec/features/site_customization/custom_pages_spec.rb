@@ -109,7 +109,7 @@ feature "Custom Pages" do
         skip "this view has been modified in Madrid, make it work with Consul's implementation"
 
         custom_page = create(:site_customization_page, :published,
-          slug: "another-slug", 
+          slug: "another-slug",
           title_en: "Another custom page",
           subtitle_en: "Subtitle for custom page",
           more_info_flag: true
@@ -138,10 +138,10 @@ feature "Custom Pages" do
         expect(page).to have_content("Subtitle for custom page")
       end
     end
-  end  
-    
+  end
+
   context "Translation" do
-    
+
     let(:custom_page) { create(:site_customization_page, :published,
                             slug: "example-page",
                             title_en: "Title in English",
@@ -150,7 +150,7 @@ feature "Custom Pages" do
                             subtitle_es: "Subtitulo en Español",
                             content_en: "Content in English",
                             content_es: "Contenido en Español"
-                            ) }                          
+                            ) }
 
     background do
       admin = create(:administrator)
@@ -169,7 +169,7 @@ feature "Custom Pages" do
 
       click_button 'Update Custom page'
       expect(page).to have_content "Page updated successfully"
-      
+
       visit @edit_page_url
       expect(page).to have_field('site_customization_page_title_en', with: 'Title in English')
 
@@ -192,11 +192,11 @@ feature "Custom Pages" do
       visit custom_page.url
 
       select('English', from: 'locale-switcher')
-      
+
       expect(page).to have_content("Title in English")
 
       select('Español', from: 'locale-switcher')
- 
+
       expect(page).to have_content("Titulo correcta en Español")
     end
 
