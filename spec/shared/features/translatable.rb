@@ -188,6 +188,10 @@ def update_button_text
     "Update milestone"
   when "AdminNotification"
     "Update notification"
+  when "Poll"
+    "Update poll"
+  when "Poll::Question"
+    "Save"
   when "Widget::Card"
     "Save card"
   else
