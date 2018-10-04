@@ -52,7 +52,7 @@ feature 'Localization' do
   context "Missing language names" do
 
     let!(:default_enforce) { I18n.enforce_available_locales }
-    let!(:default_locales) { I18n.available_locales }
+    let!(:default_locales) { I18n.available_locales.dup }
 
     before do
       I18n.enforce_available_locales = false
@@ -63,6 +63,7 @@ feature 'Localization' do
     after do
       I18n.enforce_available_locales = default_enforce
       I18n.available_locales = default_locales
+      I18n.locale = I18n.default_locale
     end
 
     scenario 'Available locales without language translation display locale key' do
