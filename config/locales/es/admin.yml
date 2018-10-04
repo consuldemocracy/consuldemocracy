@@ -1394,11 +1394,11 @@ es:
         page:
           created_at: Creada
           status: Estado
-          title: Título
           updated_at: Última actualización
           status_draft: Borrador
           status_published: Publicada
-          locale: Idioma
+          title: Título
+          slug: Slug
     homepage:
       title: Homepage
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.
