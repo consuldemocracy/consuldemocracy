@@ -192,7 +192,6 @@ he:
       poll_questions: הצבעות
       budgets: מימון השתתפותי
       spending_proposals: הצעות להוצאת כספים
-  locale: עברית
   notifications:
     index:
       empty_notifications: אין לך תגובות חדשות
