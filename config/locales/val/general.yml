@@ -250,7 +250,6 @@ val:
       text_sign_in: iniciar sessió
       text_sign_up: registrar-te
       title: Com puc comentar aquest document?
-  locale: Valencià
   notifications:
     index:
       empty_notifications: No tens noves notificacions.

@@ -249,7 +249,6 @@ en:
       text_sign_in: login
       text_sign_up: sign up
       title: How I can comment this document?
-  locale: English
   notifications:
     index:
       empty_notifications: You don't have new notifications.
