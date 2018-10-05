@@ -17,7 +17,8 @@
     <aside class="small-12 column show-for-small-only">
       <div class="sidebar-divider"></div>
       <h2><%= t("community.show.sidebar.participate") %></h2>
-      <%= link_to t("community.show.sidebar.new_topic"), create_topic_link(@community) , class: "button expanded" %>
+      <%= link_to t("community.show.sidebar.new_topic"),
+                  create_topic_link(@community), class: "button expanded" %>
     </aside>
 
     <div class="small-12 medium-9 column">
@@ -30,20 +31,22 @@
     <aside class="small-12 medium-3 column hide-for-small-only">
       <% if @community.proposal.present? %>
         <div class="sidebar-divider"></div>
-        <h2><%= t('.author') %></h2>
-        <%= link_to t('.send_notification'),
+        <h2><%= t("communities.show.author") %></h2>
+        <%= link_to t("communities.show.send_notification"),
                     new_proposal_notification_path(proposal_id: @community.proposal.id),
-                    class: 'button expanded hollow' %>
+                    class: "button expanded hollow" %>
       <% end %>
-      
+
       <div class="sidebar-divider"></div>
       <h2><%= t("community.show.sidebar.participate") %></h2>
-      <%= link_to t("community.show.sidebar.new_topic"), create_topic_link(@community) , class: "button expanded" %>
+      <%= link_to t("community.show.sidebar.new_topic"),
+                  create_topic_link(@community), class: "button expanded" %>
 
       <% if @community.proposal&.polls&.current&.any? %>
         <div class="sidebar-divider"></div>
-        <h2><%= t('.surveys') %></h2>
-        <%= link_to t('.complete_survey'), @community.proposal.polls.current.first, class: 'button expanded hollow' %>
+        <h2><%= t("communities.show.surveys") %></h2>
+        <%= link_to t("communities.show.complete_survey"),
+                    @community.proposal.polls.current.first, class: "button expanded hollow" %>
       <% end %>
     </aside>
   </div>

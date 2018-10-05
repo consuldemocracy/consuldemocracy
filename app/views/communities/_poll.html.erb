@@ -1,5 +1,10 @@
-<%= link_to poll do %>
-  <strong><%= poll.title %></strong>
-<% end %> 
-<p class="help-text"><%= t('.take_part', from: l(poll.starts_at.to_date), to:(poll.ends_at.to_date)) %></p>
-<hr>
+<div class="community-poll">
+  <h4>
+    <%= link_to poll.title, poll %>
+  </h4>
+
+  <p class="topic-info">
+    <%= t("communities.poll.take_part",
+           from: l(poll.starts_at.to_date), to:(poll.ends_at.to_date)) %>
+  </p>
+</div>
