@@ -1,4 +1,4 @@
 App.ClipboardButton =
   initialize: ->
-    clipboard = new ClipboardJS('.clipboard-btn');
+    clipboard = new ClipboardJS('.js-clipboard');
     console.log(clipboard);
