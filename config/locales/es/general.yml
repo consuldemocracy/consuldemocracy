@@ -208,7 +208,6 @@ es:
         draft: Borrador
         retired: Retirada
       proposal_totals:
-        supports: Apoyos
         active_resources: Recursos activos
         community: Comunidad
         show_proposal: Ver propuesta
@@ -329,16 +328,8 @@ es:
         submit_button: Crear propuesta
     created:
       title: ¡Enhorabuena! Has dado el primer paso.
-      motivation_html: |
-        <p>
-          Es importante contar al menos con 100 apoyos el primer día de campaña para poder
-          impulsar tu propuesta.
-        </p>
-        <p>
-          <strong>¿Crees que necesitas ayuda para alcanzar esta meta?</strong>
-          <br>
-          Si es así, deja tu propuesta como borrador y te guiaremos.
-        </p>
+      motivation: "Es importante contar al menos con 100 apoyos el primer día de campaña para poder impulsar tu propuesta."
+      motivation_2_html: "<strong>¿Crees que necesitas ayuda para alcanzar esta meta?</strong><br>Si es así, deja tu propuesta como borrador y te guiaremos."
       publish: No, quiero publicar la propuesta ya
       dashboard: Si, quiero ayuda y publicaré mas tarde
       preview_title: Así es como quedará tu propuesta cuando la publiques
@@ -527,8 +518,8 @@ es:
     index:
       title: Edición
       edit_proposal_link: Editar propuesta
-      publish: Publicar
-      retire: Retirar
+      publish: Publicar propuesta
+      retire: Retirar propuesta
     new_request:
       links: Enlaces
     resources:
@@ -548,7 +539,7 @@ es:
       see_complete_course: Ver ruta completa
       hide_course: Ocultar ruta
     goal:
-      target_supports: 
+      target_supports:
         one: Consigue %{count} apoyo para tu propuesta
         other: Consigue %{count} apoyos para tu propuesta
       days:
@@ -591,13 +582,12 @@ es:
     poster:
       index:
         title: Previsualización del poster
-        h1: No te quedes mirando,
-        h2: ¡apóyame! ;)
+        poster_title_html: "No te quedes mirando,<br> ¡apóyame! ;)"
         intro_text:
-          Estoy participando en Decide Madrid con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el 
+          Estoy participando en Decide Madrid con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el
           apoyo necesario para hacer de madrid la ciudad que todos queremos.
         proposal_code: "Código de la propuesta: %{code}"
-        h3: Apoya mi propuesta
+        support: Apoya mi propuesta
         footer: Entra en decide.madrid.es y apoya esta propuesta. Necesitamos ser muchos. Decide tu también. ¡Gracias!
       new:
         title: Funcionalidad de póster
@@ -627,12 +617,12 @@ es:
             participando en Decide Madrid, la plataforma para que
             los madrileños y madrileñas podamos decidir qué ciudad
             queremos. Y para ello, he creado mi propia propuesta ciudadana
-            y ahora, ¡voy a necesitar tu apoyo! Pero no te preocupes porque 
+            y ahora, ¡voy a necesitar tu apoyo! Pero no te preocupes porque
             es muy sencillo.
           </p>
 
           <p>
-            Tan sólo tienes que pinchar en el botón que verás a continuación 
+            Tan sólo tienes que pinchar en el botón que verás a continuación
             'Apoyar esta propuesta' y directamente podrás informarte a cerca de
             ella antes de impulsarla. Sólo las propuestas que consigan el
             máximo apoyo se llevarán a cabo por parte de nuestro Ayuntamiento,
@@ -640,7 +630,7 @@ es:
           </p>
         share_info:
           "<p>
-            Y si además, me haces el gran favor de compartir mi propuesta con 
+            Y si además, me haces el gran favor de compartir mi propuesta con
             tus amigos, familiares y contactos, ¡ya sería la bomba! Puedes
             hacerlo a continuación desde la red social que tú quieras o desde tu
             correo electrónico:
