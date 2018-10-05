@@ -10,9 +10,9 @@ body {
 }
 
 header {
-  background-color: #3700fd; 
-  color: white;
-  padding: 20pt 20pt 20pt 20pt;
+  background-color: #3700fd;
+  color: #fff;
+  padding: 20pt;
   margin-bottom: 0;
   border-bottom: 0;
 
@@ -40,19 +40,20 @@ header {
 .support-link {
   display: block;
   background-color: #004a84;
-  color: #ddffff;
+  color: #dff;
   text-decoration: none;
   border: 1px solid $border;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   font-size: 40pt;
-  padding: 20pt 20pt 20pt 20pt;
+  padding: 20pt;
   border-radius: 5pt;
   text-align: center;
   margin-top: 50pt;
   margin-bottom: 50pt;
 }
+
 .support-link:hover {
   color: #ddffffff;
   text-decoration: none;

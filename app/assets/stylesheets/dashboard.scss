@@ -1,0 +1,483 @@
+// Table of Contents
+//
+// 01. Dashboard global
+// 02. Actions
+// 03. Resources
+// 04. Goals
+// 05. Sidebar
+// 06. Community
+// 07. Graph
+// 08. Polls
+// 09. Email preview
+// 10. Poster preview
+//
+
+// 01. Dashboard global
+// --------------------
+
+.proposal-title {
+  display: inline-block;
+
+  .label {
+    display: inline-block;
+    margin-left: $line-height / 2;
+    vertical-align: top;
+  }
+}
+
+.dashboard-proposals-stats {
+  border: 2px solid $highlight;
+  border-radius: rem-calc(6);
+  margin-bottom: $line-height;
+  padding: $line-height / 2;
+
+  .counter {
+    text-align: center;
+  }
+
+  .counter-divider {
+
+    @include breakpoint(medium) {
+      border-left: 2px solid $highlight;
+      border-right: 2px solid $highlight;
+    }
+  }
+
+  .counter-value {
+    font-size: rem-calc(20);
+    font-weight: bold;
+  }
+
+  .counter-label {
+    color: $text-medium;
+    font-weight: bold;
+  }
+
+  .progress {
+    background: #f0efea;
+    border-radius: rem-calc(6);
+    height: $line-height;
+  }
+
+  .progress-meter {
+    background: #ffad33;
+    border-bottom-right-radius: rem-calc(3);
+    border-top-right-radius: rem-calc(3);
+  }
+
+  .next-goal-progress {
+    font-size: $small-font-size;
+    font-weight: bold;
+    text-align: right;
+  }
+}
+
+.title {
+  border-bottom: 1px solid $border;
+  margin: $line-height 0;
+}
+
+// 02. Actions
+// -----------
+
+.action {
+  margin-top: $line-height;
+
+  .action-content {
+    display: inline-block;
+    margin-left: $line-height / 4;
+
+    h4,
+    p {
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: $small-font-size;
+    }
+  }
+
+  .icon-check {
+    display: inline-block;
+    font-size: rem-calc(24);
+    vertical-align: top;
+  }
+
+  .unchecked-link {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .unchecked {
+    border: 1px solid $border;
+    border-radius: rem-calc(4);
+    display: inline-block;
+    height: rem-calc(20);
+    margin-top: $line-height / 6;
+    width: rem-calc(20);
+  }
+}
+
+// 03. Resources
+// -------------
+
+.resource-card {
+  background: #d1f5eb;
+  border-radius: rem-calc(4);
+  margin-bottom: $line-height;
+  min-height: $line-height * 9;
+  padding: $line-height * 2 $line-height $line-height;
+  position: relative;
+  text-align: center;
+
+  &.alert {
+    background: #feeaeb;
+
+    &::before {
+      border: 2px solid #fb9497;
+      color: #fb9497;
+      content: '\74';
+    }
+  }
+
+  &::before {
+    border: 2px solid #00cb96;
+    border-radius: rem-calc(40);
+    color: #00cb96;
+    content: '\6c';
+    font-family: 'icons';
+    font-size: rem-calc(20);
+    height: rem-calc(36);
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: rem-calc(36);
+  }
+
+  .resource-description {
+    min-height: $line-height * 4;
+  }
+
+  .button {
+    background: #00cb96;
+    color: #000;
+    font-weight: bold;
+  }
+}
+
+// 04. Goals
+// ---------
+
+.next-goal {
+  border-left: 2px solid $border;
+  margin-left: $line-height;
+  margin-top: rem-calc(-24);
+  padding-left: $line-height;
+  padding-top: $line-height;
+  position: relative;
+
+  &::before {
+    background: #fff;
+    border: 1px solid $border;
+    border-radius: rem-calc(36);
+    color: #000;
+    content: '\77';
+    font-family: 'icons';
+    font-size: rem-calc(24);
+    height: rem-calc(36);
+    left: -18px;
+    padding: 0 rem-calc(6) rem-calc(6);
+    position: absolute;
+    top: 18px;
+    width: rem-calc(36);
+  }
+
+  .help-text {
+    color: $text-medium;
+    display: block;
+    padding-top: $line-height / 4;
+  }
+}
+
+.goal-supports,
+.goal-resource,
+.goal-days {
+  margin-bottom: $line-height;
+  padding-left: $line-height * 1.5;
+  position: relative;
+
+  &::before {
+    color: #000;
+    font-family: 'icons';
+    font-size: rem-calc(24);
+    left: 6px;
+    position: absolute;
+    top: -6px;
+  }
+}
+
+.goal-supports {
+
+  &::before {
+    content: '\77';
+  }
+}
+
+.goal-resource {
+
+  &::before {
+    content: '\74';
+  }
+}
+
+.goal-days {
+
+  &::before {
+    content: '\67';
+  }
+}
+
+// 05. Sidebar
+// -----------
+
+.dashboard-sidebar {
+  background: #fbfbfb;
+  border-right: 1px solid $border;
+
+  @include breakpoint(medium) {
+    min-height: $line-height * 45;
+  }
+
+  [class^="icon-"] {
+    color: $text;
+    display: inline-block;
+    font-size: rem-calc(24);
+    line-height: $line-height;
+    padding: $line-height / 2 $line-height / 4;
+    padding-left: 0;
+    vertical-align: middle;
+  }
+
+  ul {
+
+    li {
+      line-height: $line-height * 2;
+      padding-left: $line-height;
+    }
+
+    &.resources {
+      border-left: 1px solid $border;
+      margin-left: $line-height / 2;
+    }
+  }
+
+  a {
+    color: $text;
+  }
+
+  .is-active {
+    color: $brand;
+    position: relative;
+
+    &::before {
+      background: linear-gradient(to right, rgba(231, 236, 240, 1) 0%, rgba(251, 251, 251, 1) 90%);
+      border-left: 4px solid $brand;
+      content: '';
+      height: rem-calc(48);
+      left: 0;
+      padding-left: rem-calc(20);
+      position: absolute;
+      width: rem-calc(24);
+    }
+
+    a {
+      color: $brand;
+
+      ~ a {
+        color: $text;
+      }
+    }
+
+    [class^="icon-"] {
+      color: $brand;
+    }
+  }
+
+  .has-tip {
+    border-bottom: 0;
+    color: $text;
+    font-weight: normal;
+  }
+
+  .submenu-active {
+    border-bottom: 2px solid $brand;
+
+    .has-tip {
+      color: $brand;
+      font-weight: bold;
+    }
+  }
+}
+
+// 06. Community
+// -------------
+
+.dashboard-community {
+
+  .community-number {
+    font-size: rem-calc(24);
+    font-weight: bold;
+  }
+
+  [class^="icon-"] {
+    color: $text-medium;
+    display: inline-block;
+    font-size: rem-calc(24);
+    line-height: $line-height;
+    vertical-align: middle;
+  }
+
+  .community-info {
+    color: $text-medium;
+  }
+
+  .community-info {
+    font-size: $small-font-size;
+  }
+}
+
+// 07. Graph
+// ---------
+
+.proposal-graph {
+
+  .c3-ygrid-lines {
+
+    line {
+      stroke: #005c92;
+    }
+
+    text {
+      fill: #005c92;
+    }
+  }
+}
+
+// 08. Polls
+// ---------
+
+.question-fields {
+  border-bottom: 1px solid $border;
+  margin-bottom: $line-height;
+}
+
+.answer-fields {
+  background: #fbfbfb;
+  border: 1px solid $border;
+  margin-bottom: $line-height;
+  padding: $line-height;
+}
+
+.poll-card {
+  background: #e7f3fd;
+  border-radius: rem-calc(4);
+  margin-bottom: $line-height;
+  min-height: $line-height * 9;
+  padding: $line-height;
+  position: relative;
+  text-align: center;
+
+  .clipboard {
+    border: 1px solid $brand;
+    border-radius: rem-calc(20);
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: $line-height;
+    padding: $line-height / 4 $line-height / 2;
+    padding-left: rem-calc(30);
+    position: relative;
+    text-decoration: none;
+
+    &::before {
+      color: $brand;
+      content: '\6d';
+      font-family: 'icons';
+      left: 6px;
+      position: absolute;
+    }
+  }
+
+  .button {
+    font-weight: bold;
+  }
+}
+
+.community-poll {
+  border-bottom: 1px solid $border;
+  margin-bottom: $line-height;
+  padding-bottom: $line-height / 2;
+}
+
+// 09. Email preview
+// -----------------
+
+.dashboard-mail-preview {
+
+  .mail-header {
+    background-color: $brand;
+    color: #fff;
+    padding: $line-height;
+    text-align: center;
+  }
+
+  .mail-body {
+    text-align: justify;
+  }
+}
+
+// 10. Poster preview
+// --------------------
+
+.dashboard-poster-preview {
+
+  .poster-header {
+    background-color: $brand;
+    color: #fff;
+    padding: $line-height * 2;
+
+    p {
+      font-size: rem-calc(24);
+    }
+
+    .intro {
+      margin: $line-height * 2;
+      text-align: justify;
+    }
+
+    .image-caption {
+      color: #fff;
+      font-size: rem-calc(20);
+      font-weight: bold;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    .proposal-image {
+      width: 100%;
+    }
+  }
+
+  .proposal-title {
+    color: $brand;
+    font-size: rem-calc(40);
+    margin-bottom: $line-height * 2;
+  }
+
+  .poster-footer {
+    border-left: 2px solid $border;
+    font-size: rem-calc(20);
+    margin: 0 auto;
+    padding-left: $line-height / 2;
+    width: 50%;
+  }
+}
