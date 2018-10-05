@@ -72,5 +72,48 @@ describe "Globalize tasks" do
         expect(notification.send(:"title_#{I18n.locale}")).to eq("Translated")
       end
     end
+
+    context "Custom page with a different locale and no translations" do
+      let(:page) do
+        create(:site_customization_page, locale: :fr).tap do |page|
+          page.translations.delete_all
+          page.update_column(:title, "en Français")
+          page.reload
+        end
+      end
+
+      it "copies the original data to both the page's locale" do
+        expect(page.title).to eq("en Français")
+        expect(page.title_fr).to be nil
+        expect(page.send(:"title_#{I18n.locale}")).to be nil
+
+        run_rake_task
+        page.reload
+
+        expect(page.title).to eq("en Français")
+        expect(page.title_fr).to eq("en Français")
+        expect(page.send(:"title_#{I18n.locale}")).to be nil
+      end
+    end
+
+    context "Custom page with a different locale and existing translations" do
+      let(:page) do
+        create(:site_customization_page, title: "In English", locale: :fr).tap do |page|
+          page.update_column(:title, "en Français")
+        end
+      end
+
+      it "copies the original data to the page's locale" do
+        expect(page.title_fr).to be nil
+        expect(page.title).to eq("In English")
+
+        run_rake_task
+        page.reload
+
+        expect(page.title).to eq("In English")
+        expect(page.title_fr).to eq("en Français")
+        expect(page.send(:"title_#{I18n.locale}")).to eq("In English")
+      end
+    end
   end
 end

@@ -22,8 +22,14 @@ namespace :globalize do
 
       model_class.find_each do |record|
         fields.each do |field|
-          if record.send(:"#{field}_#{I18n.locale}").blank?
-            record.send(:"#{field}_#{I18n.locale}=", record.untranslated_attributes[field.to_s])
+          locale = if model_class == SiteCustomization::Page && record.locale.present?
+                     record.locale
+                   else
+                     I18n.locale
+                   end
+
+          if record.send(:"#{field}_#{locale}").blank?
+            record.send(:"#{field}_#{locale}=", record.untranslated_attributes[field.to_s])
           end
         end
 
