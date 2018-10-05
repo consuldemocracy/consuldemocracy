@@ -2,9 +2,9 @@
   <div class="row">
     <div class="small-12 medium-9 column padding">
       <% if @poll.related.nil? %>
-        <%= back_link_to polls_path, t('polls.show.back') %>
+        <%= back_link_to polls_path, t("polls.show.back") %>
       <% else %>
-        <%= link_to t('.back_to_proposal'), [@poll.related] %>
+        <%= link_to t("polls.poll_header.back_to_proposal"), [@poll.related] %>
       <% end %>
 
       <h2><%= @poll.name %></h2>
@@ -22,7 +22,7 @@
 
     <aside class="small-12 medium-3 column margin-top">
       <%= render partial: 'shared/social_share', locals: {
-        share_title: t('shared.share'),
+        share_title: t("shared.share"),
         title: @poll.name,
         url: poll_url(@poll),
         description: @poll.name

@@ -1,42 +1,37 @@
-<div class="column poll-card" id="<%= dom_id(poll) %>">
-  <div class="card">
-    <div class="card-section">
-      <p class="text-center">
-        <a href='#' class="button round hollow clipboard-btn" data-clipboard-text="<%= poll_url(poll) %>">
-          <i class="fi-clipboard-notes"></i> <%= t("dashboard.polls.poll.copy_link") %>
-        </a>
-      </p>
-      <h4 class="text-center"><%= link_to poll.title, poll, target: '_blank' %></h4>
-      <p class="text-center">
-        <%= l(poll.starts_at.to_date) %> - <%= l(poll.ends_at.to_date) %>
-      </p>
-    </div>
+<div id="<%= dom_id(poll) %>" class="small-12 medium-6 large-4 column end">
+  <div class="poll-card" data-equalizer-watch="poll-cards">
+    <a href="#" class="clipboard js-clipboard" data-clipboard-text="<%= poll_url(poll) %>">
+      <%= t("dashboard.polls.poll.copy_link") %>
+    </a>
 
-    <div class="card-section text-center">
+    <h4><%= link_to poll.title, poll, target: "_blank" %></h4>
+    <span class="small">
+      <%= l(poll.starts_at.to_date) %> - <%= l(poll.ends_at.to_date) %>
+    </span>
+
+    <p class="margin-top">
       <strong><%= t("dashboard.polls.poll.responses", count: poll.answer_count) %></strong>
-    </div>
+    </p>
 
-    <div class="card-section text-center">
+    <div class="small-12 column small-centered margin-top">
       <% if poll.incoming? %>
-        <%= link_to t("dashboard.polls.poll.edit_poll"), edit_proposal_dashboard_poll_path(proposal, poll), class: 'button hollow' %>
+        <%= link_to t("dashboard.polls.poll.edit_poll"),
+                    edit_proposal_dashboard_poll_path(proposal, poll), class: "button hollow" %>
       <% else %>
-        <%= link_to t("dashboard.polls.poll.view_results"), results_poll_path(poll), class: 'button', target: '_blank' %>
+        <%= link_to t("dashboard.polls.poll.view_results"),
+                    results_poll_path(poll), class: "button", target: "_blank" %>
       <% end %>
     </div>
-    <div class="card-section">
-      <p>
-        <%= best_in_place poll, 
-                          :results_enabled, 
-                          as: :checkbox, 
-                          url: proposal_dashboard_poll_url(proposal, poll),
-                          collection: {
-                            false: raw('<input type="checkbox">'),
-                            true: raw('<input type="checkbox" checked>')
-                          } %>
-        <strong><%= t("dashboard.polls.poll.show_results") %></strong>
-      </p>
-      <p class="help-text"><%= t("dashboard.polls.poll.show_results_help") %></p>
-    </div>
+
+    <%= best_in_place poll,
+                      :results_enabled,
+                      as: :checkbox,
+                      url: proposal_dashboard_poll_url(proposal, poll),
+                      collection: {
+                        false: raw('<input type="checkbox">'),
+                        true: raw('<input type="checkbox" checked>')
+                      } %>
+    <strong><%= t("dashboard.polls.poll.show_results") %></strong>
+    <p class="help-text"><%= t("dashboard.polls.poll.show_results_help") %></p>
   </div>
 </div>
-
