@@ -1,11 +1,7 @@
-<div id='available-resources-section'>
-  <br><br>
-  <div class="action-title">
-    <h5><%= t("dashboard.resources.available_resources") %></h5>
-    <hr>
-  </div>
+<div id="available-resources-section">
+  <h3 class="title"><%= t("dashboard.resources.available_resources") %></h3>
 
-  <div class="row small-up-2 medium-up-3 large-up-4">
+  <div data-equalizer="resources" data-equalize-on="medium">
     <%= render 'poll_resource' %>
     <%= render 'mailing_resource' %>
     <%= render 'poster_resource' %>

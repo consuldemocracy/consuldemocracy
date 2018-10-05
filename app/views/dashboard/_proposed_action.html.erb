@@ -1,27 +1,28 @@
-<div class="row" id="<%= dom_id(proposed_action) %>">
-  <div class="proposed-action">
-    <div class="exec-indicator">
-      <% if proposed_action.proposals.where(id: proposal.id).any? %>
-        <i class="fi-check success"></i>
-      <% else %>
-        <%= link_to execute_proposal_dashboard_action_path(proposal, proposed_action), method: :post, id: "#{dom_id(proposed_action)}_execute" do %>
-          <div class="checkbox-unchecked">
-          </div>
-        <% end %>
+<div id="<%= dom_id(proposed_action) %>">
+  <div class="action">
+    <% if proposed_action.proposals.where(id: proposal.id).any? %>
+      <span class="icon-check"></span>
+    <% else %>
+      <%= link_to execute_proposal_dashboard_action_path(proposal, proposed_action),
+                  id: "#{dom_id(proposed_action)}_execute",
+                  method: :post,
+                  class: "unchecked-link" do %>
+        <span class="unchecked"></span>
       <% end %>
-    </div>
+    <% end %>
 
-    <div>
+    <div class="action-content">
       <h4><%= proposed_action.title %></h4>
+
       <% if proposed_action.proposals.where(id: proposal.id).any? %>
-        <p><%=l(proposed_action.executed_actions.find_by(proposal: proposal).executed_at.to_date) %></p>
+        <p><%= l(proposed_action.executed_actions.find_by(proposal: proposal).executed_at.to_date) %></p>
       <% else %>
-        <% unless proposed_action.short_description.blank? %>
+        <% if proposed_action.short_description.present? %>
           <p><%= proposed_action.short_description %></p>
         <% end %>
 
         <% proposed_action.links.each do |link| %>
-          <p><%= link_to link.label, link.url, target: '_blank' %></p>
+          <p><%= link_to link.label, link.url, target: "_blank" %></p>
         <% end %>
 
         <%= render partial: 'document', collection: proposed_action.documents %>
