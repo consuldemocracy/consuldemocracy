@@ -130,9 +130,10 @@
             <div class="sidebar-divider"></div>
             <h2><%= t("proposals.show.author") %></h2>
             <div class="show-actions-menu">
-              <%= link_to proposal_dashboard_path(@proposal), class: 'button hollow expanded', id: "proposal-dashboard-#{@proposal.id}" do %>
-                          <span class="icon-edit"></span>
-                          <%= t("proposals.show.dashboard_proposal_link") %>
+              <%= link_to proposal_dashboard_path(@proposal), class: "button hollow expanded",
+                          id: "proposal_dashboard_#{@proposal.id}" do %>
+                <span class="icon-edit"></span>
+                <%= t("proposals.show.dashboard_proposal_link") %>
               <% end %>
             </div>
           <% end %>
