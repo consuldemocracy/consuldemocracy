@@ -180,8 +180,9 @@ GEM
       activerecord (>= 4.2.0, < 4.3)
     globalize-accessors (0.2.1)
       globalize (~> 5.0, >= 5.0.0)
-    graphiql-rails (1.4.8)
-      rails
+    graphiql-rails (1.4.11)
+      railties
+      sprockets-rails
     graphql (1.7.8)
     groupdate (3.2.0)
       activesupport (>= 3)
@@ -257,7 +258,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
-    mini_mime (1.0.0)
+    mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     mixlib-cli (1.7.0)
@@ -270,7 +271,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (5.0.2)
     newrelic_rpm (4.1.0.333)
-    nokogiri (1.8.4)
+    nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
     nori (2.6.0)
     oauth (0.5.3)
@@ -524,7 +525,7 @@ DEPENDENCIES
   foundation_rails_helper (~> 2.0.0)
   globalize (~> 5.0.0)
   globalize-accessors (~> 0.2.1)
-  graphiql-rails (~> 1.4.1)
+  graphiql-rails (~> 1.4.11)
   graphql (~> 1.7.8)
   groupdate (~> 3.2.0)
   i18n-tasks (~> 0.9.25)
