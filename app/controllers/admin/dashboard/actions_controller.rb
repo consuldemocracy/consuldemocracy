@@ -2,7 +2,7 @@ class Admin::Dashboard::ActionsController < Admin::Dashboard::BaseController
   helper_method :dashboard_action, :resource
 
   def index
-    @dashboard_actions = ::Dashboard::Action.order(required_supports: :asc)
+    @dashboard_actions = proposed_actions + resources
   end
 
   def new
@@ -63,5 +63,13 @@ class Admin::Dashboard::ActionsController < Admin::Dashboard::BaseController
 
   def dashboard_action
     @dashboard_action ||= ::Dashboard::Action.find(params[:id])
+  end
+
+  def proposed_actions
+    ::Dashboard::Action.proposed_actions.order(order: :asc)
+  end
+
+  def resources
+    ::Dashboard::Action.resources.order(required_supports: :asc, day_offset: :asc)
   end
 end
