@@ -194,7 +194,9 @@ namespace :admin do
   namespace :legislation do
     resources :processes do
       resources :questions
-      resources :proposals
+      resources :proposals do
+        member { patch :toggle_selection }
+      end
       resources :draft_versions
     end
   end

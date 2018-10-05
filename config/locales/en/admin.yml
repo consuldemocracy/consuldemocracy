@@ -394,6 +394,12 @@ en:
           back: Back
           title: Create new collaborative legislation process
           submit_button: Create process
+        proposals:
+          select_order: Sort by
+          orders:
+            id: Id
+            title: Title
+            supports: Supports
         process:
           title: Process
           comments: Comments
@@ -411,6 +417,11 @@ en:
         index:
           title: Proposals
           back: Back
+          id: Id
+          title: Title
+          supports: Supports
+          select: Select
+          selected: Selected
         form:
           custom_categories: Categories
           custom_categories_description: Categories that users can select creating the proposal.

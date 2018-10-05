@@ -887,6 +887,13 @@
   }
 }
 
+.legislation-proposals {
+
+  .votes {
+    min-height: $line-height * 8;
+  }
+}
+
 .proposal-show .votes,
 .debate-show .votes {
   border: 0;

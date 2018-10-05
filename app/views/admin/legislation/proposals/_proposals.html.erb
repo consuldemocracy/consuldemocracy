@@ -1,0 +1,29 @@
+<% if proposals.any? %>
+  <h3><%= page_entries_info proposals %></h3>
+
+  <%= render 'shared/wide_order_selector', i18n_namespace: "admin.legislation.processes.proposals" %>
+
+  <table class="stack" id="legislation_proposals_list">
+    <thead>
+      <tr>
+        <th class="text-center"><%= t("admin.legislation.proposals.index.id") %></th>
+        <th><%= t("admin.legislation.proposals.index.title") %></th>
+        <th class="text-center"><%= t("admin.legislation.proposals.index.supports") %></th>
+        <th><%= t("admin.legislation.proposals.index.selected") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% proposals.each do |proposal| %>
+        <tr id="<%= dom_id(proposal) %>" class="legislation_proposal">
+          <td class="text-center"><%= proposal.id %></td>
+          <td><%= proposal.title %></td>
+          <td class="text-center"><%= proposal.cached_votes_up %></td>
+          <td class="select"><%= render "select_proposal", proposal: proposal %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate proposals %>
+<% end %>

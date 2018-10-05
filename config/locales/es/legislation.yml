@@ -52,6 +52,9 @@ es:
         more_info: Más información y contexto
       proposals:
         empty_proposals: No hay propuestas
+        filters:
+          random: Aleatorias
+          winners: Seleccionadas
       debate:
         empty_questions: No hay preguntas
         participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
@@ -120,4 +123,3 @@ es:
       form:
         tags_label: "Categorías"
       not_verified: "Para votar propuestas %{verify_account}."
-      closed: "Este proceso se ha cerrado y ya no puede recoger votos."
