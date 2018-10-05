@@ -1,8 +1,5 @@
 ---
 pt-BR:
-  i18n:
-    language:
-      name: Português
   account:
     show:
       change_credentials_link: Alterar meus dados pessoais
