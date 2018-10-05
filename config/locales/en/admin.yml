@@ -1393,11 +1393,11 @@ en:
         page:
           created_at: Created at
           status: Status
-          title: Title
           updated_at: Updated at
           status_draft: Draft
           status_published: Published
-          locale: Language
+          title: Title
+          slug: Slug
     homepage:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.
