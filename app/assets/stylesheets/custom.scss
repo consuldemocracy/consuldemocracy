@@ -17,10 +17,20 @@ header,
   background: image-url('homepage_bg.jpg');
   background-size: cover;
   height: 400px;
+  padding-top: 96px;
 
   span,
   h1 {
     color: #fff;
+  }
+
+  h1 {
+    font-size: 60px;
+    margin-bottom: 48px;
+  }
+
+  span {
+    font-size: 24px;
   }
 
   .button {
