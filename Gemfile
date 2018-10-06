@@ -54,6 +54,7 @@ gem 'unicorn', '~> 5.4.1'
 gem 'whenever', '~> 0.10.0', require: false
 gem 'globalize', '~> 5.0.0'
 gem 'globalize-accessors', '~> 0.2.1'
+gem 'recipient_interceptor', '~> 0.2.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-leaflet'
