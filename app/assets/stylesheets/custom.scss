@@ -3,3 +3,41 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+.top-links {
+  background: #000;
+}
+
+header,
+.top-bar {
+  background: #333 !important;
+}
+
+.jumbo-ogp {
+  background: image-url('homepage_bg.jpg');
+  background-size: cover;
+  height: 400px;
+
+  span,
+  h1 {
+    color: #fff;
+  }
+
+  .button {
+    background: #fff;
+    color: #222;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
