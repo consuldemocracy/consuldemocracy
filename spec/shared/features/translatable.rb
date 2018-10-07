@@ -16,6 +16,16 @@ shared_examples "translatable" do |factory_name, path_name, fields|
     end.to_h
   end
 
+  let(:optional_fields) do
+    fields.select do |field|
+      translatable.translations.last.dup.tap { |duplicate| duplicate.send(:"#{field}=", "") }.valid?
+    end
+  end
+
+  let(:required_fields) do
+    fields - optional_fields
+  end
+
   let(:translatable) { create(factory_name, attributes) }
   let(:path) { send(path_name, *resource_hierarchy_for(translatable)) }
   before { login_as(create(:administrator).user) }
@@ -70,6 +80,24 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       expect(page).to have_field(field_for(field, :es), with: updated_text)
     end
 
+    scenario "Update a translation with invalid data", :js do
+      skip("can't have invalid translations") if required_fields.empty?
+
+      field = required_fields.sample
+
+      visit path
+      click_link "Español"
+
+      expect(page).to have_field(field_for(field, :es), with: text_for(field, :es))
+
+      fill_in field_for(field, :es), with: ""
+      click_button update_button_text
+
+      expect(page).to have_css "#error_explanation"
+
+      # TODO: check the field is now blank.
+    end
+
     scenario "Remove a translation", :js do
       visit path
 
@@ -85,13 +113,9 @@ shared_examples "translatable" do |factory_name, path_name, fields|
     end
 
     scenario 'Change value of a translated field to blank', :js do
-      possible_blanks = fields.select do |field|
-        translatable.dup.tap { |duplicate| duplicate.send(:"#{field}=", '') }.valid?
-      end
+      skip("can't have translatable blank fields") if optional_fields.empty?
 
-      skip("can't have translatable blank fields") if possible_blanks.empty?
-
-      field = possible_blanks.sample
+      field = optional_fields.sample
 
       visit path
       expect(page).to have_field(field_for(field, :en), with: text_for(field, :en))
@@ -105,10 +129,12 @@ shared_examples "translatable" do |factory_name, path_name, fields|
 
     scenario "Add a translation for a locale with non-underscored name", :js do
       visit path
-      field = fields.sample
 
       select "Português brasileiro", from: "translation_locale"
-      fill_in field_for(field, :pt_br), with: text_for(field, :"pt-BR")
+
+      fields.each do |field|
+        fill_in field_for(field, :"pt-BR"), with: text_for(field, :"pt-BR")
+      end
 
       click_button update_button_text
 
@@ -116,7 +142,8 @@ shared_examples "translatable" do |factory_name, path_name, fields|
 
       select('Português brasileiro', from: 'locale-switcher')
 
-      expect(page).to have_field(field_for(field, :pt_br), with: text_for(field, :"pt-BR"))
+      field = fields.sample
+      expect(page).to have_field(field_for(field, :"pt-BR"), with: text_for(field, :"pt-BR"))
     end
   end
 
@@ -176,7 +203,7 @@ def field_for(field, locale)
   if translatable_class.name == "I18nContent"
     "contents_content_#{translatable.key}values_#{field}_#{locale}"
   else
-    "#{translatable_class.model_name.singular}_#{field}_#{locale}"
+    find("[data-locale='#{locale}'][id$='#{field}']")[:id]
   end
 end
 
