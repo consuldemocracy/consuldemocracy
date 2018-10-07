@@ -9,4 +9,10 @@ module Translatable
                                  resource_model.translated_attribute_names
       }
     end
+
+    def enabled_translations
+      params.fetch(:enabled_translations, {})
+            .select { |_, v| v == '1' }
+            .keys
+    end
 end

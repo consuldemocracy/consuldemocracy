@@ -142,6 +142,24 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       expect(page).to have_link "Français"
     end
 
+    scenario "Update a translation with invalid data", :js do
+      skip("can't have invalid translations") if required_fields.empty?
+
+      field = required_fields.sample
+
+      visit path
+      click_link "Español"
+
+      expect(page).to have_field(field_for(field, :es), with: text_for(field, :es))
+
+      fill_in field_for(field, :es), with: ""
+      click_button update_button_text
+
+      expect(page).to have_css "#error_explanation"
+
+      # TODO: check the field is now blank.
+    end
+
     scenario "Remove a translation", :js do
       visit path
 
@@ -199,7 +217,11 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       visit path
 
       select "Português brasileiro", from: "translation_locale"
-      fields.each { |field| fill_in_field field, :"pt-BR", with: text_for(field, :"pt-BR") }
+
+      fields.each do |field|
+        fill_in field_for(field, :"pt-BR"), with: text_for(field, :"pt-BR")
+      end
+
       click_button update_button_text
 
       visit path
@@ -207,7 +229,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       select('Português brasileiro', from: 'locale-switcher')
 
       field = fields.sample
-      expect_page_to_have_translatable_field field, :"pt-BR", with: text_for(field, :"pt-BR")
+      expect(page).to have_field(field_for(field, :"pt-BR"), with: text_for(field, :"pt-BR"))
     end
   end
 
@@ -310,6 +332,7 @@ def expect_page_to_have_translatable_field(field, locale, with:)
         within_frame(0) { expect(page).to have_content with }
       end
     end
+    find("[data-locale='#{locale}'][id$='#{field}']")[:id]
   end
 end
 
