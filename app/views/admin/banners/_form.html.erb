@@ -28,18 +28,16 @@
   </div>
 
   <div class="row">
-    <%= f.translatable_fields do |translations_form, locale| %>
+    <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 medium-6 column">
-        <%= translations_form.translatable_text_field :title,
-          locale: locale,
+        <%= translations_form.text_field :title,
           placeholder: t("admin.banners.banner.title"),
           data: {js_banner_title: "js_banner_title"},
           label: t("admin.banners.banner.title") %>
       </div>
 
       <div class="small-12 column">
-        <%= translations_form.translatable_text_field :description,
-          locale: locale,
+        <%= translations_form.text_field :description,
           placeholder: t("admin.banners.banner.description"),
           data: {js_banner_description: "js_banner_description"},
           label: t("admin.banners.banner.description")  %>

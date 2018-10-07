@@ -19,23 +19,10 @@ module TranslatableFormHelper
   end
 
   class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
-
-    def translatable_text_field(method, options = {})
-      translatable_field(:text_field, method, options)
-    end
-
-    def translatable_text_area(method, options = {})
-      translatable_field(:text_area, method, options)
-    end
-
-    def translatable_cktext_area(method, options = {})
-      translatable_field(:cktext_area, method, options)
-    end
-
     def translatable_fields(&block)
       @object.globalize_locales.map do |locale|
         Globalize.with_locale(locale) do
-          fields_for(:translations, @object.translations.where(locale: locale).first_or_initialize) do |translations_form|
+          fields_for(:translations, @object.translations.where(locale: locale).first_or_initialize, builder: TranslationsFieldsBuilder) do |translations_form|
             @template.concat translations_form.hidden_field(
               :_destroy,
               value: !@template.enable_locale?(@object, locale),
@@ -44,18 +31,25 @@ module TranslatableFormHelper
 
             @template.concat translations_form.hidden_field(:locale, value: locale)
 
-            yield translations_form, locale
+            yield translations_form
           end
         end
       end.join.html_safe
     end
 
+  end
+
+  class TranslationsFieldsBuilder < FoundationRailsHelper::FormBuilder
+    %i[text_field text_area cktext_area].each do |field|
+      define_method field do |attribute, options = {}|
+        super attribute, translations_options(options)
+      end
+    end
+
     private
 
-      def translatable_field(field_type, method, options = {})
-        locale = options.delete(:locale)
-        final_options = @template.merge_translatable_field_options(options, locale)
-        send(field_type, method, final_options)
+      def translations_options(options)
+        @template.merge_translatable_field_options(options, @object.locale)
       end
   end
 end
