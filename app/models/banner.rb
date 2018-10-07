@@ -6,10 +6,13 @@ class Banner < ActiveRecord::Base
   translates :title,       touch: true
   translates :description, touch: true
   globalize_accessors
+  accepts_nested_attributes_for :translations, allow_destroy: true
 
-  validates :title, presence: true,
-                    length: { minimum: 2 }
-  validates :description, presence: true
+  translation_class.instance_eval do
+    validates :title, presence: true, length: { minimum: 2 }
+    validates :description, presence: true
+  end
+
   validates :target_url, presence: true
   validates :post_started_at, presence: true
   validates :post_ended_at, presence: true

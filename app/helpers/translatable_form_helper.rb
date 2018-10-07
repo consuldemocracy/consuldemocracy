@@ -1,13 +1,6 @@
 module TranslatableFormHelper
-  def translatable_form_for(record_or_record_path, options = {})
-    object = record_or_record_path.is_a?(Array) ? record_or_record_path.last : record_or_record_path
-
-    form_for(record_or_record_path, options.merge(builder: TranslatableFormBuilder)) do |f|
-
-      object.globalize_locales.each do |locale|
-        concat translation_enabled_tag(locale, enable_locale?(object, locale))
-      end
-
+  def translatable_form_for(record, options = {})
+    form_for(record, options.merge(builder: TranslatableFormBuilder)) do |f|
       yield(f)
     end
   end
@@ -39,29 +32,30 @@ module TranslatableFormHelper
       translatable_field(:cktext_area, method, options)
     end
 
+    def translatable_fields(&block)
+      @object.globalize_locales.map do |locale|
+        Globalize.with_locale(locale) do
+          fields_for(:translations, @object.translations.where(locale: locale).first_or_initialize) do |translations_form|
+            @template.concat translations_form.hidden_field(
+              :_destroy,
+              value: !@template.enable_locale?(@object, locale),
+              class: "destroy_locale",
+              data: { locale: locale })
+
+            @template.concat translations_form.hidden_field(:locale, value: locale)
+
+            yield translations_form, locale
+          end
+        end
+      end.join.html_safe
+    end
+
     private
 
       def translatable_field(field_type, method, options = {})
-        @template.capture do
-          @object.globalize_locales.each do |locale|
-            Globalize.with_locale(locale) do
-              localized_attr_name = @object.localized_attr_name_for(method, locale)
-
-              label_without_locale = @object.class.human_attribute_name(method)
-              final_options = @template.merge_translatable_field_options(options, locale)
-                                       .reverse_merge(label: label_without_locale)
-
-              if field_type == :cktext_area
-                @template.concat content_tag :div, send(field_type, localized_attr_name, final_options),
-                                             class: "js-globalize-attribute",
-                                             style: @template.display_translation?(locale),
-                                             data: { locale: locale }
-              else
-                @template.concat send(field_type, localized_attr_name, final_options)
-              end
-            end
-          end
-        end
+        locale = options.delete(:locale)
+        final_options = @template.merge_translatable_field_options(options, locale)
+        send(field_type, method, final_options)
       end
   end
 end
