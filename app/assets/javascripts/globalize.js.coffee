@@ -34,10 +34,13 @@ App.Globalize =
     App.Globalize.disable_locale(locale)
 
   enable_locale: (locale) ->
-    $("#enabled_translations_" + locale).val(1)
+    App.Globalize.destroy_locale_field(locale).val(false)
 
   disable_locale: (locale) ->
-    $("#enabled_translations_" + locale).val(0)
+    App.Globalize.destroy_locale_field(locale).val(true)
+
+  destroy_locale_field: (locale) ->
+    $(".destroy_locale[data-locale=" + locale + "]")
 
   refresh_visible_translations: ->
     locale = $('.js-globalize-locale-link.is-active').data("locale")
