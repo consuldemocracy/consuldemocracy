@@ -2,7 +2,15 @@
   <%= t("layouts.header.collaborative_legislation") %> - <%= t("legislation.processes.index.filters.#{@current_filter}") %>
 <% end %>
 
-<%= render "shared/section_header", i18n_namespace: "legislation.processes.index.section_header", image: "legislation_processes" %>
+<div class="help-header no-margin-top margin-bottom">
+  <div class="row">
+    <div class="small-12 column" data-magellan>
+      <h1 class="inline-block">
+        Open Government Action Plan Consultations
+      </h1>
+    </div>
+  </div>
+</div>
 
 <div class="row">
   <div id="legislation" class="legislation-list small-12 medium-9 column">

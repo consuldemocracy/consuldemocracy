@@ -1,4 +1,4 @@
-<% provide :title do %><%= t("proposals.index.title") %><% end %>
+<% provide :title do %>Send ideas<% end %>
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
              search_path: proposals_path(page: 1),
@@ -34,7 +34,15 @@
       </div>
     </div>
   <% else %>
-    <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
+    <div class="help-header no-margin-top margin-bottom">
+    <div class="row">
+    <div class="small-12 column" data-magellan>
+      <h1 class="inline-block">
+        Share your ideas to make government more open
+      </h1>
+    </div>
+  </div>
+</div>
   <% end %>
 
   <% if feature?('user.recommendations') && @recommended_proposals.present? %>
@@ -63,11 +71,11 @@
         </div>
       <% end %>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="small-12 column">
-          <%= render "view_mode" %>
+          <%# render "view_mode" %>
         </div>
-      </div>
+      </div> -->
 
       <%= render("shared/advanced_search", search_path: proposals_path(page: 1)) unless params[:retired].present? %>
 
@@ -95,7 +103,7 @@
         <% end %>
         <%= paginate @proposals %>
 
-        <% unless @search_terms || @advanced_search_terms || @tag_filter %>
+        <% if false %>
           <div id="section_help" class="margin" data-magellan-target="section_help">
             <p class="lead">
               <strong><%= t("proposals.index.section_footer.title") %></strong>
@@ -111,13 +119,90 @@
         <%= link_to t("proposals.index.start_proposal"),
                     new_proposal_guide,
                     class: 'button expanded' %>
-        <% if params[:retired].blank? %>
-          <%= render 'categories' %>
-          <%= render "shared/tag_cloud", taggable: 'proposal' %>
-          <%= render 'geozones' %>
-          <%= render 'popular' %>
-        <% end %>
-        <%= render 'retired' %>
+        <%# if params[:retired].blank? %>
+          <%# render 'categories' %>
+          <div class="sidebar-divider"></div>
+<h2 class="sidebar-title"><%= t("shared.tags_cloud.categories") %></h2>
+<br>
+
+<ul id="categories" class="no-bullet categories">
+  <li class="inline-block"><%= link_to "Agriculture", proposals_path(search: "Agriculture") %></li>
+  <li class="inline-block"><%= link_to "Climate", proposals_path(search: "Climate") %></li>
+  <li class="inline-block"><%= link_to "Culture", proposals_path(search: "Culture") %></li>
+  <li class="inline-block"><%= link_to "Development", proposals_path(search: "Development") %></li>
+  <li class="inline-block"><%= link_to "Digital economy", proposals_path(search: "Digital economy") %></li>
+  <li class="inline-block"><%= link_to "Education", proposals_path(search: "Education") %></li>
+  <li class="inline-block"><%= link_to "Employment", proposals_path(search: "Employment") %></li>
+  <li class="inline-block"><%= link_to "Energy", proposals_path(search: "Energy") %></li>
+  <li class="inline-block"><%= link_to "Environment", proposals_path(search: "Environment") %></li>
+  <li class="inline-block"><%= link_to "Health", proposals_path(search: "Health") %></li>
+  <li class="inline-block"><%= link_to "Human rights", proposals_path(search: "Human rights") %></li>
+  <li class="inline-block"><%= link_to "Justice", proposals_path(search: "Justice") %></li>
+  <li class="inline-block"><%= link_to "Multilingualism", proposals_path(search: "Multilingualism") %></li>
+  <li class="inline-block"><%= link_to "Research", proposals_path(search: "Research") %></li>
+  <li class="inline-block"><%= link_to "Space", proposals_path(search: "Space") %></li>
+  <li class="inline-block"><%= link_to "Sport", proposals_path(search: "Sport") %></li>
+  <li class="inline-block"><%= link_to "Transport", proposals_path(search: "Transport") %></li>
+
+</ul>
+
+          <%# render "shared/tag_cloud", taggable: 'proposal' %>
+          <div id="tag-cloud">
+  <div class="sidebar-divider"></div>
+  <h2 class="sidebar-title"><%= t("shared.tags_cloud.tags") %></h2>
+  <br>
+  <ul class="no-bullet tag-cloud">
+    <li class="inline-block">
+      <%= link_to proposals_path(search: "participation") do %>
+        <span class="tag">participation</span>
+      <% end %>
+    </li>
+    <li class="inline-block">
+      <%= link_to proposals_path(search: "collaboration") do %>
+        <span class="tag">collaboration</span>
+      <% end %>
+    </li>
+    <li class="inline-block">
+      <%= link_to proposals_path(search: "open decisions") do %>
+        <span class="tag">open decisions</span>
+      <% end %>
+    </li>
+    <li class="inline-block">
+      <%= link_to proposals_path(search: "technology") do %>
+        <span class="tag">technology</span>
+      <% end %>
+    </li>
+    <li class="inline-block">
+      <%= link_to proposals_path(search: "agencies") do %>
+        <span class="tag">agencies</span>
+      <% end %>
+    </li>
+    <li class="inline-block">
+      <%= link_to proposals_path(search: "economic") do %>
+        <span class="tag">economic</span>
+      <% end %>
+    </li>
+    <li class="inline-block">
+      <%= link_to proposals_path(search: "create communities") do %>
+        <span class="tag">create communities</span>
+      <% end %>
+    </li>
+  </ul>
+
+  <div class="sidebar-divider"></div>
+  <h2 class="sidebar-title">Archived ideas</h2>
+  <br>
+  <ul class="no-bullet">
+    <li><%= link_to "2015", "#" %></li>
+    <li><%= link_to "2016", "#" %></li>
+    <li><%= link_to "2017", "#" %></li>
+  </ul>
+</div>
+
+          <%# render 'geozones' %>
+          <%# render 'popular' %>
+        <%# end %>
+        <%# render 'retired' %>
       </aside>
     </div>
 

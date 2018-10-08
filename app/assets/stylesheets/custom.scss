@@ -43,6 +43,79 @@ header,
   min-height: 185px;
 }
 
+.button,
+.proposal .supports .button-support {
+  background: #67bb28;
+  color: #fff;
+}
+
+.sidebar-title {
+  border-top: 2px solid #059aff;
+}
+
+.categories a, .geozone a {
+  background: #e0f0d3;
+  border: 2px solid #67bb28;
+  color: #000;
+}
+
+.proposal .supports .progress .meter {
+  background: #68bc29;
+}
+
+.proposal .supports .progress {
+  background: #e1f1d4;
+  border: 1px solid #e1f1d4;
+}
+
+.help-header h1 {
+  text-transform: none;
+}
+
+.subnavigation a.is-active,
+.submenu .is-active,
+.menu.simple li.is-active {
+  border-bottom: 2px solid #1f9eff;
+  color: #1f9eff;
+}
+
+.pagination .current {
+  background: #1f9eff;
+}
+
+@media print, screen and (min-width: 40em) {
+  .top-bar .menu > li .button {
+    background: #1f9eff;
+    color: #fff;
+  }
+
+  .subnavigation a:hover {
+    color: #1f9eff;
+  }
+}
+
+.documents ul li {
+  padding-bottom: 12px;
+}
+
+.jumbo.action-plan {
+  background: image-url('action_plan_bg.png');
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
