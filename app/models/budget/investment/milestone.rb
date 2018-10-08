@@ -8,7 +8,8 @@ class Budget
                    accepted_content_types: [ "application/pdf" ]
 
       translates :title, :description, touch: true
-      include Globalizable
+      globalize_accessors
+      accepts_nested_attributes_for :translations, allow_destroy: true
 
       belongs_to :investment
       belongs_to :status, class_name: 'Budget::Investment::Status'
