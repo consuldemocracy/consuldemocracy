@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>" data-current-user-id="<%= current_user.try(:id) %>">
   <head>
-    <%= render "layouts/common_head", default_title: setting['org_name'] %>
+    <%= render "layouts/common_head", default_title: "Open Government World" %>
     <%= render "layouts/tracking_data" %>
     <%= render "layouts/meta_tags" %>
     <%= content_for :canonical %>

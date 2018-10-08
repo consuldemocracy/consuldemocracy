@@ -103,7 +103,22 @@ header,
   background-size: cover;
 }
 
+.legislation-calendar {
+  margin-left: 150px !important;
+  max-width: 718px !important;
+}
 
+.legislation {
+  position: relative;
+}
+
+.legislation-index-image {
+  width: 150px;
+  overflow: hidden;
+  height: 222px;
+  position: absolute;
+  top: 0;
+}
 
 
 
