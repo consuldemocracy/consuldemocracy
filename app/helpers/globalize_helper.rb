@@ -23,7 +23,9 @@ module GlobalizeHelper
   end
 
   def enable_locale?(resource, locale)
-    resource.translated_locales.include?(locale) || locale == I18n.locale
+    # Use `map` instead of `pluck` in order to keep the `params` sent
+    # by the browser when there's invalid data
+    resource.translations.map(&:locale).include?(locale) || locale == I18n.locale
   end
 
   def highlight_current?(locale)
