@@ -157,7 +157,9 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
 
       expect(page).to have_css "#error_explanation"
 
-      # TODO: check the field is now blank.
+      click_link "Español"
+
+      expect(page).to have_field(field_for(field, :es), with: "")
     end
 
     scenario "Remove a translation", :js do
