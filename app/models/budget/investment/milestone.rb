@@ -9,11 +9,11 @@ class Budget
 
       translates :title, :description, touch: true
       globalize_accessors
+      accepts_nested_attributes_for :translations, allow_destroy: true
 
       belongs_to :investment
       belongs_to :status, class_name: 'Budget::Investment::Status'
 
-      validates :title, presence: true
       validates :investment, presence: true
       validates :publication_date, presence: true
       validate :description_or_status_present?
