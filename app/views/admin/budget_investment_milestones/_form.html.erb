@@ -2,9 +2,6 @@
 
 <%= translatable_form_for [:admin, @investment.budget, @investment, @milestone] do |f| %>
 
-  <%= f.hidden_field :title, value: l(Time.current, format: :datetime),
-                             maxlength: Budget::Investment::Milestone.title_max_length %>
-
   <div class="small-12 medium-6 margin-bottom">
     <%= f.select :status_id,
           @statuses.collect { |s| [s.name, s.id] },
@@ -14,9 +11,14 @@
                 admin_budget_investment_statuses_path %>
   </div>
 
-  <%= f.translatable_text_area :description,
-                               rows: 5,
-                               label: t("admin.milestones.new.description") %>
+  <%= f.translatable_fields do |translations_form| %>
+    <%= translations_form.hidden_field :title, value: l(Time.current, format: :datetime),
+                               maxlength: Budget::Investment::Milestone.title_max_length %>
+
+    <%= translations_form.text_area :description,
+                                    rows: 5,
+                                    label: t("admin.milestones.new.description") %>
+  <% end %>
 
   <%= f.label :publication_date, t("admin.milestones.new.date") %>
   <%= f.text_field :publication_date,
