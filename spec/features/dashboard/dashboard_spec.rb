@@ -13,20 +13,20 @@ feature "Proposal's dashboard" do
   end
 
   scenario 'My proposal has a link to edit the proposal' do
-    expect(page).to have_link('Edit')
+    expect(page).to have_link('Edit proposal')
   end
 
   scenario 'My proposal has a link to retire the proposal' do
-    expect(page).to have_link('Retire')
+    expect(page).to have_link('Retire proposal')
   end
 
   scenario 'My proposal has a link to publish the proposal' do
-    expect(page).to have_link('Publish')
+    expect(page).to have_link('Publish proposal')
   end
 
   scenario "Publish link dissapears after proposal's publication" do
-    click_link 'Publish'
-    expect(page).not_to have_link('Publish')
+    click_link 'Publish proposal'
+    expect(page).not_to have_link('Publish proposal')
   end
 
   scenario 'Dashboard progress shows current goal', js: true do
