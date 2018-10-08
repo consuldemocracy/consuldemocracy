@@ -25,7 +25,6 @@ module TranslatableFormHelper
           fields_for(:translations, translation_for(locale), builder: TranslationsFieldsBuilder) do |translations_form|
             @template.concat translations_form.hidden_field(
               :_destroy,
-              value: !@template.enable_locale?(@object, locale),
               class: "destroy_locale",
               data: { locale: locale })
 
@@ -48,7 +47,9 @@ module TranslatableFormHelper
     end
 
     def new_translation_for(locale)
-      @object.translations.new(locale: locale)
+      @object.translations.new(locale: locale).tap do |translation|
+        translation.mark_for_destruction unless locale == I18n.locale
+      end
     end
   end
 
