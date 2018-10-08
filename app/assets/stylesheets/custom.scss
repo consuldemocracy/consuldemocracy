@@ -110,6 +110,10 @@ header,
 
 .legislation {
   position: relative;
+
+  h3 {
+    font-size: 20px !important;
+  }
 }
 
 .legislation-index-image {
@@ -120,7 +124,38 @@ header,
   top: 0;
 }
 
+.legislation-proposals .panel {
+  position: relative;
 
+  .label {
+    border-radius: 4px;
+
+    &.gov {
+      background: #0499ff;
+      margin-left: 24px;
+    }
+  }
+}
+
+.icon-processes-org {
+  border-left: 40px solid #024a84;
+  border-top: 0;
+  border-bottom: 40px solid transparent;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+
+  &::after {
+    color: #fff;
+    content: '\73';
+    font-family: "icons" !important;
+    left: -37px;
+    position: absolute;
+    top: 0;
+  }
+}
 
 
 
