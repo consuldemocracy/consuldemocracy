@@ -1,9 +1,19 @@
 <% cache [locale_and_user_status, debate, @debate_votes[debate.id]] do %>
   <div id="<%= dom_id(debate) %>" class="debate clear" data-type="debate">
-    <div class="panel">
+    <div class="panel with-image">
       <div class="row">
 
-        <div class="small-12 medium-9 column">
+        <div class="small-12 medium-3 large-2 column text-center">
+          <% if debate.id == 1 %>
+            <%= image_tag "debate_1.jpg" %>
+          <% elsif debate.id == 2 %>
+            <%= image_tag "debate_2.jpg" %>
+          <% elsif debate.id == 3 %>
+            <%= image_tag "debate_3.jpg" %>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-7 column">
           <div class="debate-content">
             <h3><%= link_to debate.title, debate %></h3>
             <% if false %>
