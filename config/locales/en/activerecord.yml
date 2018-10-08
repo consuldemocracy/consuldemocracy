@@ -255,6 +255,14 @@ en:
         subject: Subject
         from: From
         body: Email content
+      admin_notification:
+        segment_recipient: Recipients
+        title: Title
+        link: Link
+        body: Text
+      admin_notification/translation:
+        title: Title
+        body: Text
       widget/card:
         label: Label (optional)
         title: Title
