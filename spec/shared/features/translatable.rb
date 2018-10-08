@@ -131,6 +131,30 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       expect(page).not_to have_link "Español"
     end
 
+    scenario "Remove a translation with invalid data", :js do
+      skip("can't have invalid translations") if required_fields.empty?
+
+      field = required_fields.sample
+
+      visit path
+
+      click_link "Español"
+      click_link "Remove language"
+
+      click_link "English"
+      fill_in field_for(field, :en), with: ""
+      click_button update_button_text
+
+      expect(page).to have_css "#error_explanation"
+      expect(page).to have_field(field_for(field, :en), with: "")
+      expect(page).not_to have_link "Español"
+
+      visit path
+      click_link "Español"
+
+      expect(page).to have_field(field_for(field, :es), with: text_for(field, :es))
+    end
+
     scenario 'Change value of a translated field to blank', :js do
       skip("can't have translatable blank fields") if optional_fields.empty?
 
