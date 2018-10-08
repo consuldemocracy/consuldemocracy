@@ -269,6 +269,9 @@ en:
         title: Title
         link: Link
         body: Text
+      admin_notification/translation:
+        title: Title
+        body: Text
       widget/card:
         label: Label (optional)
         title: Title
