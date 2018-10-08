@@ -79,6 +79,23 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       expect_page_to_have_translatable_field field, :fr, with: ""
     end
 
+    scenario "Add an invalid translation", :js do
+      skip("can't have invalid translations") if required_fields.empty?
+
+      field = required_fields.sample
+
+      visit path
+      select "Français", from: "translation_locale"
+      fill_in field_for(field, :fr), with: ""
+      click_button update_button_text
+
+      expect(page).to have_css "#error_explanation"
+
+      click_link "Français"
+
+      expect(page).to have_field(field_for(field, :fr), with: "")
+    end
+
     scenario "Update a translation", :js do
       visit path
 
