@@ -5,12 +5,12 @@
 
   <%= f.select :segment_recipient, options_for_select(user_segments_options,
                                                       @admin_notification[:segment_recipient]) %>
-
-  <%= f.translatable_text_field :title %>
-
   <%= f.text_field :link %>
 
-  <%= f.translatable_text_area :body %>
+  <%= f.translatable_fields do |translations_form| %>
+    <%= translations_form.text_field :title %>
+    <%= translations_form.text_area :body %>
+  <% end %>
 
   <div class="margin-top">
     <%= f.submit t("admin.admin_notifications.#{admin_submit_action(@admin_notification)}.submit_button"),
