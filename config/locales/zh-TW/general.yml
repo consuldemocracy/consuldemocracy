@@ -241,7 +241,6 @@ zh-TW:
       text_sign_in: 登錄
       text_sign_up: 登記
       title: 我怎樣能對此文檔作評論？
-  locale: 英文
   notifications:
     index:
       empty_notifications: 您沒有新通知。

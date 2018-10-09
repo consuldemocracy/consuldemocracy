@@ -249,7 +249,6 @@ sv:
       text_sign_in: logga in
       text_sign_up: registrera dig
       title: Hur kommenterar jag det här dokumentet?
-  locale: Svenska
   notifications:
     index:
       empty_notifications: Du har inga nya aviseringar.
