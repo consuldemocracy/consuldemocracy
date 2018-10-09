@@ -215,13 +215,18 @@ header,
   background: #000;
 }
 
+.download-commmitments {
+  color: #059aff;
+  border-radius: 20px;
+  border: 2px solid #059aff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  float: right;
 
-
-
-
-
-
-
-
-
-
+  &:hover {
+    color: #1f9eff;
+    text-decoration: none;
+  }
+}
