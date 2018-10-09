@@ -1,9 +1,9 @@
-<% provide :title do %><%= t("debates.index.title") %><% end %>
-<% content_for :header_addon do %>
-  <%= render "shared/search_form",
+<% provide :title do %>Current commitments<% end %>
+<%# content_for :header_addon do %>
+  <%# render "shared/search_form",
              search_path: debates_path(page: 1),
              i18n_namespace: "debates.index.search_form" %>
-<% end %>
+<%# end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: debates_url %>
 <% end %>
@@ -32,7 +32,16 @@
       </div>
     </div>
   <% else %>
-    <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
+    <div class="help-header no-margin-top margin-bottom">
+  <div class="row">
+    <div class="small-12 column" data-magellan>
+      <h1 class="inline-block">
+        Open Government Commitments 2018
+      </h1>
+    </div>
+  </div>
+</div>
+
   <% end %>
 
   <% if feature?('user.recommendations') && @recommended_debates.present? %>
@@ -52,19 +61,21 @@
         <%= render "featured_debates" %>
       <% end %>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="small-12 column">
-          <%= render "view_mode" %>
+          <%# render "view_mode" %>
         </div>
-      </div>
+      </div> -->
 
-      <%= render "shared/advanced_search", search_path: debates_path(page: 1) %>
+      <%# render "shared/advanced_search", search_path: debates_path(page: 1) %>
 
-      <%= render "shared/order_links", i18n_namespace: "debates.index" %>
+      <%# render "shared/order_links", i18n_namespace: "debates.index" %>
 
-      <div class="show-for-small-only">
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
-      </div>
+      <!-- <div class="show-for-small-only">
+        <%# link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
+      </div> -->
+
+      <a href="#" class="download-commmitments">Download all commitments in a CSV file</a>
 
       <% if @debates.any? || current_user.blank? %>
         <% if debates_default_view? %>
@@ -79,7 +90,7 @@
       <% end %>
       <%= paginate @debates %>
 
-      <% unless @search_terms || @advanced_search_terms || @tag_filter %>
+      <% if false %>
         <div id="section_help" class="margin" data-magellan-target="section_help">
           <p class="lead">
             <strong><%= t("debates.index.section_footer.title") %></strong>
@@ -96,8 +107,38 @@
     <div class="small-12 medium-3 column">
 
       <aside class="margin-bottom">
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
-        <%= render "shared/tag_cloud", taggable: "debate" %>
+        <%# link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
+        <%# render "shared/tag_cloud", taggable: "debate" %>
+        <div class="sidebar-divider"></div>
+  <h2 class="sidebar-title">Categories</h2>
+        <ul id="categories" class="no-bullet categories">
+          <li class="inline-block"><%= link_to "Agriculture", debates_path(search: "Agriculture") %></li>
+          <li class="inline-block"><%= link_to "Climate", debates_path(search: "Climate") %></li>
+          <li class="inline-block"><%= link_to "Culture", debates_path(search: "Culture") %></li>
+          <li class="inline-block"><%= link_to "Development", debates_path(search: "Development") %></li>
+          <li class="inline-block"><%= link_to "Digital economy", debates_path(search: "Digital economy") %></li>
+          <li class="inline-block"><%= link_to "Education", debates_path(search: "Education") %></li>
+          <li class="inline-block"><%= link_to "Employment", debates_path(search: "Employment") %></li>
+          <li class="inline-block"><%= link_to "Energy", debates_path(search: "Energy") %></li>
+          <li class="inline-block"><%= link_to "Environment", debates_path(search: "Environment") %></li>
+          <li class="inline-block"><%= link_to "Health", debates_path(search: "Health") %></li>
+          <li class="inline-block"><%= link_to "Human rights", debates_path(search: "Human rights") %></li>
+          <li class="inline-block"><%= link_to "Justice", debates_path(search: "Justice") %></li>
+          <li class="inline-block"><%= link_to "Multilingualism", debates_path(search: "Multilingualism") %></li>
+          <li class="inline-block"><%= link_to "Research", debates_path(search: "Research") %></li>
+          <li class="inline-block"><%= link_to "Space", debates_path(search: "Space") %></li>
+          <li class="inline-block"><%= link_to "Sport", debates_path(search: "Sport") %></li>
+          <li class="inline-block"><%= link_to "Transport", debates_path(search: "Transport") %></li>
+        </ul>
+
+        <div class="sidebar-divider"></div>
+        <h2 class="sidebar-title">Past commitments</h2>
+        <br>
+        <ul class="no-bullet">
+          <li><%= link_to "2015", "#" %></li>
+          <li><%= link_to "2016", "#" %></li>
+          <li><%= link_to "2017", "#" %></li>
+        </ul>
       </aside>
     </div>
 

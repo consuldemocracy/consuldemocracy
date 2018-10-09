@@ -4,6 +4,14 @@
   <div class="panel <%= ('with-image' if proposal.image.present?) %>">
     <div class="icon-successful"></div>
 
+    <% if proposal.id == 1 %>
+      <div class="icon-processes-org"></div>
+      <span class="label gov">Government proposal</span>
+    <% elsif proposal.id == 2 %>
+      <div class="icon-processes-org"></div>
+      <span class="label gov">Government proposal</span>
+    <% end %>
+
     <% if proposal.image.present? %>
       <div class="row">
         <div class="small-12 medium-3 large-2 column text-center">
@@ -35,10 +43,20 @@
                 <span class="author">
                   <%= proposal.author.name %>
                 </span>
-                <% if proposal.author.display_official_position_badge? %>
+                <% if proposal.id == 1 %>
                   <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                  <span class="label round level-<%= proposal.author.official_level %>">
-                    <%= proposal.author.official_position %>
+                  <span class="label round level-5">
+                    Official user
+                  </span>
+                <% elsif proposal.id == 2 %>
+                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                  <span class="label round level-5">
+                    Official user
+                  </span>
+                <% elsif proposal.id == 2 %>
+                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                  <span class="label round level-5">
+                    Official user
                   </span>
                 <% end %>
               <% end %>

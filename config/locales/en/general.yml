@@ -191,7 +191,7 @@ en:
     topic: Topic
     image: Image
   geozones:
-    none: All city
+    none: All world
     all: All scopes
   layouts:
     application:

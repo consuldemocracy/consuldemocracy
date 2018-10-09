@@ -34,7 +34,7 @@ class Legislation::Process < ActiveRecord::Base
   validates :proposals_phase_end_date, presence: true, if: :proposals_phase_start_date?
   validate :valid_date_ranges
 
-  scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current).order('id DESC') }
+  scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current).order('id ASC') }
   scope :next, -> { where("start_date > ?", Date.current).order('id DESC') }
   scope :past, -> { where("end_date < ?", Date.current).order('id DESC') }
 

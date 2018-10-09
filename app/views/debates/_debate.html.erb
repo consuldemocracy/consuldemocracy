@@ -1,11 +1,22 @@
 <% cache [locale_and_user_status, debate, @debate_votes[debate.id]] do %>
   <div id="<%= dom_id(debate) %>" class="debate clear" data-type="debate">
-    <div class="panel">
+    <div class="panel with-image">
       <div class="row">
 
-        <div class="small-12 medium-9 column">
+        <div class="small-12 medium-3 large-2 column text-center">
+          <% if debate.id == 1 %>
+            <%= image_tag "debate_1.jpg" %>
+          <% elsif debate.id == 2 %>
+            <%= image_tag "debate_2.jpg" %>
+          <% elsif debate.id == 3 %>
+            <%= image_tag "debate_3.jpg" %>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-7 column">
           <div class="debate-content">
             <h3><%= link_to debate.title, debate %></h3>
+            <% if false %>
             <p class="debate-info">
               <span class="icon-comments"></span>&nbsp;
               <%= link_to t("debates.debate.comments", count: debate.comments_count), debate_path(debate, anchor: "comments") %>
@@ -36,8 +47,9 @@
                   <%= t("shared.collective") %>
                 </span>
               <% end %>
-
             </p>
+            <% end %>
+
             <div class="debate-description">
               <%= debate.description %>
               <div class="truncate"></div>
@@ -47,7 +59,37 @@
         </div>
 
         <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column">
-            <%= render 'debates/votes', debate: debate %>
+            <%# render 'debates/votes', debate: debate %>
+          <div class="traffic-light votes">
+            <% if debate.id == 1 %>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="70" aria-valuemin="0" aria-valuetext="70 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 70%">
+                  <p class="progress-meter-text">70%</p>
+                </span>
+              </div>
+            <% elsif debate.id == 2 %>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="70" aria-valuemin="0" aria-valuetext="70 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 70%">
+                  <p class="progress-meter-text">70%</p>
+                </span>
+              </div>
+            <% elsif debate.id == 3 %>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 25%">
+                  <p class="progress-meter-text">25%</p>
+                </span>
+              </div>
+            <% end %>
+
+            <p><strong>Progress</strong></p>
+            <% if debate.id == 1 %>
+              <%= image_tag("traffic_light_green.jpg") %>
+            <% elsif debate.id == 2 %>
+              <%= image_tag("traffic_light_green.jpg") %>
+            <% elsif debate.id == 3 %>
+              <%= image_tag("traffic_light_yellow.jpg") %>
+            <% end %>
+          </div>
         </div>
 
       </div>

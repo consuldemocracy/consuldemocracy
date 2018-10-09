@@ -2,7 +2,13 @@
   <%= link_to card.link_url do %>
     <figure class="figure-card">
       <div class="gradient"></div>
-      <% if card.image.present? %>
+      <% if card.id == 2 %>
+        <%= image_tag "card_1.jpg" %>
+      <% elsif card.id == 3 %>
+        <%= image_tag "card_2.jpg" %>
+      <% elsif card.id == 4 %>
+        <%= image_tag "card_3.jpg" %>
+      <% elsif card.image.present? %>
         <%= image_tag(card.image_url(:large), alt: card.image.title) %>
       <% end %>
       <figcaption>

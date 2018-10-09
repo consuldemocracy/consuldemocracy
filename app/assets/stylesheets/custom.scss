@@ -3,3 +3,230 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+.top-links {
+  background: #000;
+}
+
+header,
+.top-bar {
+  background: #333 !important;
+}
+
+.jumbo-ogp {
+  background: image-url('homepage_bg.jpg');
+  background-size: cover;
+  height: 400px;
+  padding-top: 96px;
+
+  span,
+  h1 {
+    color: #fff;
+  }
+
+  h1 {
+    font-size: 60px;
+    margin-bottom: 48px;
+  }
+
+  span {
+    font-size: 24px;
+  }
+
+  .button {
+    background: #fff;
+    color: #222;
+  }
+}
+
+.home-page .card a img {
+  min-height: 185px;
+}
+
+.button,
+.proposal .supports .button-support {
+  background: #67bb28;
+  color: #fff;
+}
+
+.sidebar-title {
+  border-top: 2px solid #059aff;
+}
+
+.categories a, .geozone a {
+  background: #e0f0d3;
+  border: 2px solid #67bb28;
+  color: #000;
+}
+
+.proposal .supports .progress .meter {
+  background: #68bc29;
+}
+
+.proposal .supports .progress {
+  background: #e1f1d4;
+  border: 1px solid #e1f1d4;
+}
+
+.help-header h1 {
+  text-transform: none;
+}
+
+.subnavigation a.is-active,
+.submenu .is-active,
+.menu.simple li.is-active {
+  border-bottom: 2px solid #1f9eff;
+  color: #1f9eff;
+}
+
+.pagination .current {
+  background: #1f9eff;
+}
+
+@media print, screen and (min-width: 40em) {
+  .top-bar .menu > li .button {
+    background: #1f9eff;
+    color: #fff;
+  }
+
+  .subnavigation a:hover {
+    color: #1f9eff;
+  }
+}
+
+.documents ul li {
+  padding-bottom: 12px;
+}
+
+.jumbo.action-plan {
+  background: image-url('action_plan_bg.png');
+  background-size: cover;
+}
+
+.legislation-calendar {
+  margin-left: 150px !important;
+  max-width: 718px !important;
+}
+
+.legislation {
+  position: relative;
+
+  h3 {
+    font-size: 20px !important;
+  }
+}
+
+.legislation-index-image {
+  width: 150px;
+  overflow: hidden;
+  height: 222px;
+  position: absolute;
+  top: 0;
+}
+
+.legislation-proposals .panel {
+  position: relative;
+
+  .label {
+    border-radius: 4px;
+
+    &.gov {
+      background: #0499ff;
+      margin-left: 24px;
+    }
+  }
+}
+
+.icon-processes-org {
+  border-left: 40px solid #024a84;
+  border-top: 0;
+  border-bottom: 40px solid transparent;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+
+  &::after {
+    color: #fff;
+    content: '\73';
+    font-family: "icons" !important;
+    left: -37px;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.traffic-light {
+
+  .progress {
+    margin-left: 12px;
+  }
+
+  .green {
+    background: image-url("traffic_light_green.jpg");
+  }
+
+  .yellow {
+    background: image-url("traffic_light_yellow.jpg");
+  }
+}
+
+.debate-show {
+  background: $highlight;
+  margin-top: -24px;
+  padding-top: 24px;
+  margin-bottom: 24px;
+}
+
+.commitment-documents {
+  background: #fbfbfb;
+  margin-top: -24px;
+  padding: 24px 0;
+  margin-bottom: 24px;
+}
+
+.progress {
+  background: #e1f1d4;
+  border: 1px solid #e1f1d4;
+
+  .progress-meter {
+    background: #68bc29;
+
+    .progress-meter-text {
+      color: #000;
+      position: relative;
+      text-align: right;
+    }
+  }
+}
+
+.commitment-actions {
+  border-bottom: 1px solid $border;
+  margin-bottom: 24px;
+}
+
+.commitment-dates {
+  line-height: 30px;
+  margin-top: -5px;
+}
+
+.tab-milestones ul li::before {
+  background: #000;
+}
+
+.download-commmitments {
+  color: #059aff;
+  border-radius: 20px;
+  border: 2px solid #059aff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  float: right;
+
+  &:hover {
+    color: #1f9eff;
+    text-decoration: none;
+  }
+}
