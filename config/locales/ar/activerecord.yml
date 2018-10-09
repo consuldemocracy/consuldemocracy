@@ -1,0 +1,118 @@
+ar:
+  activerecord:
+    models:
+      activity:
+        zero: "النشاط"
+        one: "نشاط"
+        two: "نشاطين"
+        few: "الأنشطة"
+        many: "الأنشطة"
+        other: "الأنشطة"
+      budget:
+        zero: "ميزانية"
+        one: "ميزانية"
+        two: "ميزانيات"
+        few: "ميزانيات"
+        many: "ميزانيات"
+        other: "ميزانيات"
+      budget/investment:
+        zero: "إستثمار"
+        one: "إستثمار"
+        two: "إستثمارات"
+        few: "إستثمارات"
+        many: "إستثمارات"
+        other: "إستثمارات"
+      comment:
+        zero: "تعليق"
+        one: "تعليق"
+        two: "تعليقات"
+        few: "تعليقات"
+        many: "تعليقات"
+        other: "تعليقات"
+      tag:
+        zero: "العلامات"
+        one: "علامة"
+        two: "علامتين"
+        few: "البعض من العلامات"
+        many: "الكثير من العلامات"
+        other: "العلامات"
+      user:
+        zero: "المستخدم"
+        one: "المستخدم"
+        two: "المستخدمان"
+        few: "المستخدمين"
+        many: "المستخدمين"
+        other: "المستخدمين"
+      moderator:
+        zero: "المشرف"
+        one: "المشرف"
+        two: "المشرفين"
+        few: "المشرفين"
+        many: "المشرفين"
+        other: "المشرفين"
+      manager:
+        zero: "مدير"
+        one: "مدير"
+        two: "مديران"
+        few: "مدراء"
+        many: "مدراء"
+        other: "مدراء"
+      vote:
+        zero: "تصويت"
+        one: "صوت"
+        two: "صوتان"
+        few: "اصوات"
+        many: "اصوات"
+        other: "اصوات"
+    attributes:
+      budget:
+        name: "الاسم"
+        currency_symbol: "العملة"
+      budget/investment:
+        title: "العنوان"
+        description: "الوصف"
+        location: "الموقع (اختياري)"
+      budget/investment/milestone:
+        title: "العنوان"
+        publication_date: "تاريخ النشر"
+      budget/heading:
+        price: "السعر"
+      proposal:
+        author: "كاتب"
+        title: "العنوان"
+        question: "سؤال"
+        description: "الوصف"
+        terms_of_service: "شروط الخدمة"
+      user:
+        login: "البريد الإلكتروني أو اسم المستخدم"
+        email: "البريد الإلكتروني"
+        username: "اسم المستخدم"
+        password_confirmation: "تأكيد كلمة المرور"
+        password: "كلمة المرور"
+        current_password: "كلمة المرور الحالية"
+        phone_number: "رقم الهاتف"
+        official_position: "الموقف الرسمي"
+        official_level: "المستوى الرسمي"
+        redeemable_code: "رمز التحقق الواردة عبر البريد الإلكتروني"
+      organization:
+        name: "اسم المنظمة"
+      spending_proposal:
+        association_name: "اسم الرابطة"
+        description: "الوصف"
+        title: "العنوان"
+      poll:
+        name: "الاسم"
+        starts_at: "تاريخ البدء"
+        ends_at: "تاريخ الإغلاق"
+        summary: "ملخص"
+      poll/question:
+        title: "سؤال"
+        summary: "ملخص"
+        description: "الوصف"
+      site_customization/page:
+        title: العنوان
+      site_customization/image:
+        image: صورة
+      site_customization/content_block:
+        name: الاسم
+        locale: الإعدادات المحلية

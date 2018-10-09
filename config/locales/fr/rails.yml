@@ -1,60 +1,126 @@
 fr:
   date:
     abbr_day_names:
-    - dim
-    - lun
-    - mar
-    - mer
-    - jeu
-    - ven
-    - sam
+      - dim
+      - lun
+      - mar
+      - mer
+      - jeu
+      - ven
+      - sam
     abbr_month_names:
-    -
-    - fév
-    - mar
-    - avr
-    - mai
-    - jun
-    - jul
-    - aoû
-    - sep
-    - oct
-    - nov
-    - déc
-    - Déc
+      - 
+      - Janv
+      - Févr
+      - Mar
+      - Avr
+      - Mai
+      - Juin
+      - Juill
+      - Août
+      - Sept
+      - Oct
+      - Nov
+      - Déc
     day_names:
-    - dimanche
-    - lundi
-    - mardi
-    - mercredi
-    - jeudi
-    - vendredi
-    - samedi
+      - dimanche
+      - lundi
+      - mardi
+      - mercredi
+      - jeudi
+      - vendredi
+      - samedi
     formats:
       default: "%d/%m/%Y"
       long: "%d %B %Y"
       short: "%d %b"
     month_names:
-    -
-    - février
-    - mars
-    - avril
-    - mai
-    - juin
-    - Décembre
+      - 
+      - Janvier
+      - Février
+      - Mars
+      - Avril
+      - Mai
+      - Juin
+      - Juillet
+      - Août
+      - Septembre
+      - Octobre
+      - Novembre
+      - Décembre
+    order:
+      - ':année'
+      - :mois
+      - :jour
   datetime:
     distance_in_words:
+      about_x_hours:
+        one: environ 1 heure
+        other: environ %{count} heures
+      about_x_months:
+        one: environ 1 mois
+        other: environ %{count} mois
+      about_x_years:
+        one: environ 1 an
+        other: environ %{count} ans
+      almost_x_years:
+        one: presque 1 an
+        other: presque %{count} ans
+      half_a_minute: demi-minute
+      less_than_x_minutes:
+        one: moins d'1 minute
+        other: moins de %{count} minutes
+      less_than_x_seconds:
+        one: moins d'1 seconde
+        other: moins de %{count} secondes
+      over_x_years:
+        one: plus d'1 an
+        other: plus de %{count} ans
+      x_days:
+        one: 1 jour
+        other: "%{count} jours"
       x_minutes:
         one: 1 minute
+        other: "%{count} mois"
+      x_months:
+        one: 1 mois
         other: "%{count} mois"
       x_years:
         one: 1 an
         other: "%{count} jours"
+      x_seconds:
+        one: 1 seconde
+        other: "%{count} secondes"
+    prompts:
+      day: Jour
+      hour: Heure
+      minute: Minute
+      month: Mois
+      second: Secondes
+      year: Année
   errors:
     format: "%{attribute} %{message}"
     messages:
-      model_invalid: 'La validation omise : %{errors}'
+      accepted: doit être accepté
+      blank: ne peut pas être vide
+      present: doit être vide
+      confirmation: ne correspond pas à %{attribute}
+      empty: ne peut pas être vide
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: est réservé
+      greater_than: doit être plus grand que %{count}
+      greater_than_or_equal_to: doit être plus grand que ou égal à %{count}
+      inclusion: n'est pas inclus dans la liste
+      invalid: n'est pas valide
+      less_than: doit être plus petit que %{count}
+      less_than_or_equal_to: doit être plus petit que ou égal à %{count}
+      model_invalid: "La validation omise : %{errors}"
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
       required: doit exister
+      taken: est déjà utilisé
       too_long:
         one: est trop long (maximum est de 1 caractère)
         other: est trop long (maximum est %{count} caractères)
@@ -64,8 +130,18 @@ fr:
       wrong_length:
         one: est la mauvaise longueur (soit 1 caractère)
         other: est la longueur incorrecte (devrait être %{count} caractères)
+      other_than: doit être différent de %{count}
+    template:
+      body: 'Des problèmes ont été trouvés avec les champs suivants :'
+      header:
+        one: Impossible d'enregistrer ce/cette %{model} car 1 erreur a été trouvée
+        other: "Impossible d'enregistrer ce/cette %{model} car %{count} erreurs ont été trouvées"
   helpers:
+    select:
+      prompt: Veuillez sélectionner
     submit:
+      create: Créer %{model}
+      submit: Enregistrer %{model}
       update: Actualiser %{model}
   number:
     currency:
@@ -121,4 +197,5 @@ fr:
       default: "%A, %d %B %Y %H:%M:%S %z"
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
+      api: "%H %d/%m/%Y"
     pm: de l'après-midi

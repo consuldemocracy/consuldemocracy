@@ -1,0 +1,22 @@
+zh-CN:
+  activemodel:
+    models:
+      verification:
+        residence: "地址"
+        sms: "短信号码"
+    attributes:
+      verification:
+        residence:
+          document_type: "文档类型"
+          document_number: "文档编号(包括信件)"
+          date_of_birth: "出生日期"
+          postal_code: "邮政编码"
+        sms:
+          phone: "手机号码"
+          confirmation_code: "确认码"
+        email:
+          recipient: "电子邮件地址"
+      officing/residence:
+        document_type: "文档类型"
+        document_number: "文档编号(包括信件)"
+        year_of_birth: "出生年份"

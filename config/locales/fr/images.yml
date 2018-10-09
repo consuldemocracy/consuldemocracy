@@ -1,0 +1,21 @@
+fr:
+  images:
+    remove_image: Supprimer l'image
+    form:
+      title: Image descriptive
+      title_placeholder: Ajouter un titre descriptif pour l'image
+      attachment_label: Choisir une image
+      delete_button: Supprimer l'image
+      note: "Vous pouvez importer une image au format suivant : %{accepted_content_types}, d'une taille maximum de %{max_file_size} Mo."
+      add_new_image: Ajouter une image
+      admin_title: "Image"
+      admin_alt_text: "Texte de remplacement pour l’image"
+    actions:
+      destroy:
+        notice: Image supprimée avec succès.
+        alert: Impossible de supprimer l'image.
+        confirm: Êtes-vous sûr(e) de vouloir supprimer cette image ? Cette action est irréversible !
+    errors:
+      messages:
+        in_between: doit être entre %{min} et %{max}
+        wrong_content_type: Le format %{content_type} ne correspond à aucun format accepté (%{accepted_content_types}).

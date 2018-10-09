@@ -32,7 +32,6 @@ es:
       environment: Medio Ambiente
     budgets:
       budget: Presupuesto Participativo
-      currency: €
       groups:
         all_city: Toda la Ciudad
         districts: Distritos

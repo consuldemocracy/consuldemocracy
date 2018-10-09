@@ -37,7 +37,6 @@ val:
       updated: "La teua contrasenya ha canviat correctament. Has sigut identificat correctament."
       updated_not_active: "La teua contrasenya s'ha canviat correctament."
     registrations:
-      destroyed: "Adéu! El teu compte ha sigut cancel·lat. Esperem tornar a veure't prompte. Li informem que de conformitat amb la seua petició, les seues dades personals registrades com a usuari de la Web i que formen part del fitxer 'DADES PERSONALS WEB' el responsable de la qual és l'Ajuntament de Castelló de la Plana, han sigut cancel·lats en els termes del previst en l'article 16 de la Llei Orgànica 15/1999 de Protecció de Dades de Caràcter Personal i de l'article 31 del seu Reglament de desenvolupament (RD 1720/2007)."
       signed_up: "Benvingut! Has sigut identificat."
       signed_up_but_inactive: "T'has registrat correctament, pero no has pogut iniciar sesión perque el teu compte no ha segut activada."
       signed_up_but_locked: "T'has registrat correctament, però no has pogut iniciar sessió perquè el teu compte està bloquejat."

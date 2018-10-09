@@ -1,0 +1,13 @@
+es-HN:
+  pages:
+    general_terms: Términos y Condiciones
+    titles:
+      accessibility: Accesibilidad
+      conditions: Condiciones de uso
+      privacy: Política de Privacidad
+    verify:
+      code: Código que has recibido en tu carta
+      info_code: 'Ahora introduce el código que has recibido en tu carta:'
+      password: Contraseña
+      submit: Verificar mi cuenta
+      title: Verifica tu cuenta

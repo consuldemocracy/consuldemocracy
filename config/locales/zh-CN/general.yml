@@ -1,0 +1,339 @@
+zh-CN:
+  account:
+    show:
+      change_credentials_link: 更改我的身份验证资讯
+      email_on_comment_label: 当有人评论我的提议或辩论时，通过电子邮件通知我
+      email_on_comment_reply_label: 当有人回复我的评论时，通过电子邮件通知我
+      erase_account_link: 删除我的账号
+      finish_verification: 完成验证
+      notifications: 通知
+      organization_name_label: 组织名称
+      organization_responsible_name_placeholder: 组织／集体的代表
+      personal: 个人资料
+      phone_number_label: 电话号码
+      public_activity_label: 将我的活动列表公开
+      public_interests_label: 将我跟随的元素标签公开
+      public_interests_my_title_list: 您跟随的元素的标签
+      public_interests_user_title_list: 此用户跟随的元素的标签
+      save_changes_submit: 保存更改
+      subscription_to_website_newsletter_label: 通过电子邮件接收网站相关信息
+      email_on_direct_message_label: 接收有关直接消息的电子邮件
+      email_digest_label: 接收提议通知的总结
+      official_position_badge_label: 显示官方职位徽章
+      recommendations: 推荐
+      show_debates_recommendations: 显示辩论推荐
+      show_proposals_recommendations: 显示提议推荐
+      title: 我的帐号
+      user_permission_debates: 参与辩论
+      user_permission_info: 您可以用您的帐号来...
+      user_permission_proposal: 创建新的提议
+      user_permission_support_proposal: 支持提议
+      user_permission_title: 参与
+      user_permission_verify: 要执行所有操作，请验证您的帐号。
+      user_permission_verify_info: "＊仅适用于人口普查用户。"
+      user_permission_votes: 参与最终投票
+      username_label: 用户名
+      verified_account: 已验证的帐号
+      verify_my_account: 验证我的帐号
+  application:
+    close: 关闭
+    menu: 菜单
+  comments:
+    comments_closed: 评论已关闭
+    verified_only: 要参与%{verify_account}
+    verify_account: 验证您的帐号
+    comment:
+      admin: 管理员
+      author: 作者
+      deleted: 此评论已被删除
+      moderator: 审核员
+      responses:
+        zero: 没有回复
+        other: "%{count} 个回复"
+      user_deleted: 已删除的用户
+      votes:
+        zero: 没有投票
+        other: "%{count} 个投票"
+    form:
+      comment_as_admin: 以管理员身份做评论
+      comment_as_moderator: 以审核员身份做评论
+      leave_comment: 留下您的评论
+    orders:
+      most_voted: 最多投票
+      newest: 最新优先
+      oldest: 最旧优先
+      most_commented: 最多评论
+    select_order: 排序依据
+    show:
+      return_to_commentable: '返回 '
+  comments_helper:
+    comment_button: 发表评论
+    comment_link: 评论
+    comments_title: 评论
+    reply_button: 发表答复
+    reply_link: 答复
+  debates:
+    create:
+      form:
+        submit_button: 开始辩论
+    debate:
+      comments:
+        zero: 没有评论
+        other: "%{count} 个评论"
+      votes:
+        zero: 没有投票
+        other: "%{count} 个投票"
+    edit:
+      editing: 编辑辩论
+      form:
+        submit_button: 保存更改
+      show_link: 查看辩论
+    form:
+      debate_text: 最初辩论文本
+      debate_title: 辩论标题
+      tags_instructions: 为此辩论加标签。
+      tags_label: 主题
+      tags_placeholder: "输入您希望使用的标签，用逗号 (',') 分割"
+    index:
+      featured_debates: 特色
+      filter_topic:
+        other: " 主题'%{topic}'"
+      orders:
+        confidence_score: 最高评分
+        created_at: 最新
+        hot_score: 最活跃
+        most_commented: 最多评论
+        relevance: 相关性
+        recommendations: 推荐
+      recommendations:
+        without_results: 没有跟您兴趣相关的辩论
+        without_interests: 请跟随提议，以便我们可以给您推荐
+        disable: "如果您取消它们，辩论推荐将停止显示。您可以在‘我的帐户’页面再次启用它们"
+        actions:
+          success: "此账户的辩论推荐现已禁用"
+          error: "出现错误。请回到‘您的账户’页面，手动禁用辩论推荐"
+      search_form:
+        button: 搜索
+        placeholder: 搜索辩论...
+        title: 搜索
+      search_results_html:
+        other: " 包含术语<strong>'%{search_term}'</strong>"
+      select_order: 排序依据
+      start_debate: 开始辩论
+      title: 辩论
+      section_header:
+        icon_alt: 辩论图标
+        title: 辩论
+        help: 关于辩论的帮助
+      section_footer:
+        title: 关于辩论的帮助
+        description: 开始一个辩论，与他人分享您所关心主题的意见。
+        help_text_2: '要开始一个辩论，您需要在%{org} 上注册。用户也可以对公开辩论做出评论，并用每个辩论上面找到的“我同意”或者“我不同意”按钮来评分。'
+    new:
+      form:
+        submit_button: 开始辩论
+      info: 如果您要提出提议，这里是错误的地方，请进入%{info_link}。
+      info_link: 创建新提议
+      more_info: 更多信息
+      recommendation_four: 享受此空间和其中充满的声音。它也属于您。
+      recommendation_one: 请不要用大写字母写辩论标题或整个句子。在因特网上，这被认为是在喊叫。没有人喜欢被吆喝。
+      recommendation_three: 无情的批评很受欢迎。这是一个反思的空间。但是我们建议您保持优雅和智慧。这个世界会因为这些美德成为更美好的地方。
+      recommendation_two: 任何暗示非法行为，以及那些有意破坏辩论空间的辩论或评论都将被删除，其他一切都是允许的。
+      recommendations_title: 创建辩论的建议
+      start_new: 开始辩论
+    show:
+      author_deleted: 已删除的用户
+      comments:
+        zero: 没有评论
+        other: "%{count} 个评论"
+      comments_title: 评论
+      edit_debate_link: 编辑
+      flag: 此辩论已被几个用户标记为不恰当。
+      login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
+      share: 共用
+      author: 作者
+    update:
+      form:
+        submit_button: 保存更改
+  errors:
+    messages:
+      user_not_found: 未找到用户
+      invalid_date_range: "无效日期范围"
+  form:
+    accept_terms: 我同意%{policy} 和%{conditions}。
+    accept_terms_title: 我同意隐私政策和使用条款及条件
+    conditions: 使用条款及条件
+    debate: 辩论
+    direct_message: 私人信息
+    error: 错误
+    errors: 错误
+    not_saved_html: "阻止%{resource} 被保存。<br>请检查标记的字段来了解如何更正它们："
+    policy: 隐私政策
+    proposal: 提议
+    proposal_notification: "通知"
+    spending_proposal: 支出提议
+    budget/investment: 投资
+    budget/heading: 预算标题
+    poll/shift: 轮班
+    poll/question/answer: 答案
+    user: 帐户
+    verification/sms: 电话
+    signature_sheet: 签名表
+    document: 文档
+    topic: 主题
+    image: 图像
+  geozones:
+    none: 所有城市
+    all: 所有范围
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: 我们检测到您正在用Internet Explorer浏览。为了加强体验，我们建议使用%{firefox} 或者%{chrome}。
+      ie_title: 此网站没有对您的浏览器优化
+    footer:
+      accessibility: 辅助功能选项
+      conditions: 使用条款及条件
+      consul: CONSUL应用程序
+      consul_url: https://github.com/consul/consul
+      contact_us: 进入技术支援
+      copyright: CONSUL, %{year}
+      description: 此门户网站使用%{consul}，其是%{open_source}。
+      open_source: 开源软件
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_title: 参与
+      privacy: 隐私政策
+    header:
+      administration_menu: 管理
+      administration: 管理
+      available_locales: 可用语言
+      collaborative_legislation: 立法进程
+      debates: 辩论
+      external_link_blog: 博客
+      locale: '语言：'
+      logo: CONSUL logo（商标）
+      management: 管理
+      moderation: 审核
+      valuation: 评估
+      officing: 投票站官员
+      help: 帮助
+      my_account_link: 我的帐户
+      my_activity_link: 我的活动
+      open: 打开
+      open_gov: 开放政府
+      proposals: 提议
+      poll_questions: 投票
+      budgets: 参与性预算
+      spending_proposals: 支出提议
+      notification_item:
+        new_notifications:
+          other: 您有%{count} 个新通知
+        notifications: 通知
+        no_notifications: "您没有新的通知"
+  notifications:
+    notification:
+      notifiable_hidden: 此资源不再可用。
+  map:
+    title: "地区"
+    proposal_for_district: "为您的地区开始一个提议"
+    select_district: 经营范围
+    start_proposal: 创建提议
+  omniauth:
+    facebook:
+      sign_in: 用Facebook登录
+      sign_up: 用Facebook注册
+      name: Facebook
+    finish_signup:
+      title: "其他细节"
+      username_warning: "由于我们和社交网络互动方式发生变化，很可能您的用户名现在显示为‘已经被使用’。如果发生这种情况，请选择不同的用户名。"
+    google_oauth2:
+      sign_in: 用Google登录
+      sign_up: 用Google注册
+      name: Google
+    twitter:
+      sign_in: 用Twitter登录
+      sign_up: 用Twitter注册
+      name: Twitter
+    info_sign_in: "登录用："
+    info_sign_up: "注册用："
+    or_fill: "或者填写以下表格："
+  proposals:
+    create:
+      form:
+        submit_button: 创建提议
+    edit:
+      editing: 编辑提议
+      form:
+        submit_button: 保存更改
+      show_link: 查看提议
+    retire_form:
+      title: 撤回提议
+      warning: "如果您撤回提议，它仍然能接受支持，但是它将从主列表中删除，而且所有用户都将看到一条信息，声明作者认为此提议不应再被支持"
+      retired_reason_label: 撤回提议的原因
+      retired_reason_blank: 选择一个选项
+      retired_explanation_label: 解释
+      retired_explanation_placeholder: 简短解释为什么您认为此提议不应该再接受更多的支持
+      submit_button: 撤回提议
+    retire_options:
+      duplicated: 重复
+      started: 已在进行中
+      unfeasible: 不可行
+      done: 完成
+      other: 其他
+    form:
+      geozone: 经营范围
+      proposal_external_url: 链接到其他文档
+      proposal_question: 提议问题
+      proposal_question_example_html: "必须总结为一个用是或不是回答的问题"
+      proposal_responsible_name: 递交此提议的人的全名
+      proposal_responsible_name_note: "（个体或者作为集体的代表；将不会公开显示）"
+      proposal_summary: 提议总结
+      proposal_summary_note: "（最多200 字符）"
+      proposal_text: 提议文本
+      proposal_title: 提议标题
+      proposal_video_url: 链接到外部视频
+      proposal_video_url_note: 您可以添加到YouTube 或 Vimeo的链接
+      tag_category_label: "类别"
+      tags_instructions: "为此提议加标签。您可以从推荐的类别中选择或者自行添加"
+      tags_label: 标签
+    index:
+      featured_proposals: 特色
+      filter_topic:
+        other: " 主题'%{topic}'"
+      orders:
+        confidence_score: 最高评分
+        created_at: 最新
+        hot_score: 最活跃
+        most_commented: 最多评论
+        relevance: 相关性
+        recommendations: 推荐
+      recommendations:
+        without_results: 没有跟您兴趣相关的提议
+        without_interests: 请跟随提议，以便我们可以给您推荐
+        disable: "如果您取消它们，提议推荐将停止显示。您可以在‘我的账户’页面再次启用它们"
+        actions:
+          success: "此账户的提议推荐现已禁用"
+          error: "出现错误。请回到‘您的帐号’页面，手动禁用提议推荐"
+    new:
+      form:
+        submit_button: 创建提议
+      recommendations_title: 创建提议的推荐
+  shared:
+    recommended_index:
+      title: 推荐
+      see_more: 查看更多推荐
+      hide: 隐藏推荐
+  spending_proposals:
+    new:
+      recommendations_title: 如果创建支出提议
+  welcome:
+    feed:
+      most_active:
+        debates: "最活跃的辩论"
+        proposals: "最活跃的提议"
+        processes: "开放进程"
+    cards:
+      title: 特色
+    recommended:
+      title: 您可能感兴趣的推荐
+      help: "这些推荐是由您跟随的辩论和提议的标签生成。"

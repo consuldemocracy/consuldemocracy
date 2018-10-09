@@ -1,0 +1,50 @@
+tr:
+  date:
+    abbr_month_names:
+      - 
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names:
+      - Pazar
+      - Pazartesi
+      - Salı
+      - Çarşamba
+      - Perşembe
+      - Cuma
+      - Cumartesi
+    month_names:
+      - 
+      - Ocak
+      - Şubat
+      - Mart
+      - Nisan
+      - Mayıs 
+      - Haziran
+      - Temmuz
+      - Ağustos
+      - Eylül
+      - Ekim
+      - Kasım
+      - December
+    order:
+      - ': yıl'
+      - ': ay'
+      - ': gün'
+  datetime:
+    prompts:
+      day: Gün
+  number:
+    human:
+      format:
+        significant: true
+        strip_insignificant_zeros: true

@@ -20,6 +20,9 @@ val:
       email_on_direct_message_label: Rebre correus electrònics amb missatges privats
       email_digest_label: Rebre un resum de notificacions sobre propostes
       official_position_badge_label: Mostrar etiqueta de tipus d'usuari
+      recommendations: Recomanacions
+      show_debates_recommendations: Mostrar recomanacions de debats
+      show_proposals_recommendations: Mostrar recomanacions de propostes
       title: El meu compte
       user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...
@@ -110,6 +113,10 @@ val:
       recommendations:
         without_results: No existeixen debats relacionats amb els teus interessos
         without_interests: Segueix propostes per a que pugam donarte recomanacions
+        disable: "Les recomanacions sobre debats deixaran de mostrar-se si les descartes. Pots tornar-les a activar a la pàgina \"El meu compte\""
+        actions:
+          success: "Les recomanacions per a debats estàn desabilitades per a aquest compte"
+          error: "S'ha produït un error. Aneu a la pàgina \"El meu compte\" per desactivar manualment les recomanacions per als debats"
       search_form:
         button: Cercar
         placeholder: Cercar debats...
@@ -129,9 +136,6 @@ val:
         description: Inicia un debat per a compartir punts de vista amb altres persones sobre els temes que et preocupen.
         help_text_1: "L'espai de debats ciutadans està dirigit a que quansevol persona puga exposar temes que li preocupen i sobre els que vullga compartir punts de vista amb altres persones."
         help_text_2: 'Per a obrir un debat es necessari registrar-se en %{org}. Els usuaris ja registrats també poden comentar els debats oberts i varlorar-los amb els botons "Estic d''acord" o "No estic d''acord" que es troben en cadascun d''ells.'
-        help_text_3: "Tin en compte que un debat no activa cap mecanisme d'actuació concret. Si vols fer una %{proposal} per a la ciutat o plantejar un projecte de %{budget} quant s'obriga la convocatoria, ves a la secció corresponent."
-        proposals_link: proposta
-        budget_link: pressupostos participatius
     new:
       form:
         submit_button: Iniciar un debat
@@ -203,17 +207,11 @@ val:
       contact_us: Per a assistencia técnica entra en
       copyright: CONSUL, %{year}
       description: Este portal utilitza la %{consul} que es %{open_source}.
-      faq: assistència técnica
-      open_data_text: Totes les dades del Ajuntament son teues.
-      open_data_title: Dades obertes
       open_source: software de codi obert
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decideix com ha de ser la ciutat que vols.
       participation_title: Participació
       privacy: Política de privacitat
-      transparency_text: Obtín qualsevol informació sobre la ciutat.
-      transparency_title: Transparència
-      transparency_url: https://transparency.consul
     header:
       administration_menu: Admin
       administration: Administració
@@ -221,26 +219,27 @@ val:
       collaborative_legislation: Processos legislatius
       debates: Debats
       external_link_blog: Blog
-      external_link_opendata: Dades obertes
-      external_link_opendata_url: https://opendata.consul
-      external_link_transparency: Transparència
-      external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
       logo: Logo de CONSUL
       management: Gestió
       moderation: Moderació
       valuation: Avaluació
       officing: Presidents de taula
+      help: Ajuda
       my_account_link: El meu compte
       my_activity_link: La meua activitat
       open: obert
-      open_city_slogan_html: Existeixen ciutats gobernades directament per els seus habitants, que <strong>debateixen</strong> sobre temes que els preocupen, <strong>proposen</strong> idees per a millorar les seues vides i <strong>decideixen</strong> entre totes i tots les que es duen a terme.
-      open_city_title: La ciutat que vols serà la ciutat que voldras
       open_gov: Govern %{open}
       proposals: Propostes
       poll_questions: Votacions
       budgets: Pressupostos participatius
       spending_proposals: Propostes d'inversió
+      notification_item:
+        new_notifications:
+          one: Tens una nova notificació
+          other: Tens %{count} noves notificacions
+        notifications: Notificacions
+        no_notifications: "No tens noves notificacions"
     admin:
       watch_form_message: 'Has realitzat canvis que no han sigut guardats. Segur que vols abandonar la pàgina?'
   legacy_legislation:
@@ -254,7 +253,23 @@ val:
     index:
       empty_notifications: No tens noves notificacions.
       mark_all_as_read: Marcar totes como llegides
+      read: Llegides
       title: Notificacions
+      unread: Noves
+    notification:
+      action:
+        comments_on:
+          one: Hi ha un nou comentari en
+          other: Hi ha %{count} comentaris nous en
+        proposal_notification:
+          one: Hi ha una nova notificació en
+          other: Hi ha %{count} noves notificacions en
+        replies_to:
+          one: Hi ha una resposta nova al teu comentari en
+          other: Hi ha %{count} respostes noves al teu comentari en
+      mark_as_read: Marcar com llegides
+      mark_as_unread: Marcar com no llegides
+      notifiable_hidden: Aquest recurs no esta disponible.
   map:
     title: "Districtes"
     proposal_for_district: "Crea una proposta per al teu districte"
@@ -306,7 +321,6 @@ val:
       geozone: Ámbit d'actuació
       proposal_external_url: Enllaç a documentació adicional
       proposal_question: Pregunta de la proposta
-      proposal_question_example_html: "Deu ser resumida en una pregunta amb resposta Sí o No. <br>Ex. 'Està vosté d'acort en peatonalitzar el carrer Major?'"
       proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
       proposal_responsible_name_note: "(individualment o com representant d'un col·lectiu; no es mostrarà públicament)"
       proposal_summary: Resum de la proposta
@@ -339,6 +353,10 @@ val:
       recommendations:
         without_results: No existeixen propostes relacionades amb els teus interessos
         without_interests: Segueix propostes per a que pugam donar-te recomanacions
+        disable: "Les recomanacions sobre propostes deixaran de mostrar-se si les descartes. Pots tornar-les a activar a la pàgina \"El meu compte\""
+        actions:
+          success: "Les recomanacions per a propostes estan desabilitades per a aquest compte"
+          error: "S'ha produït un error. Aneu a la pàgina \"El meu compte\" per desactivar manualment les recomanacions per a propostes"
       retired_proposals: Propostes retirades
       retired_proposals_link: "Propostes retirades per els seus autors"
       retired_links:
@@ -367,10 +385,6 @@ val:
         help: Ajuda sobre les propostes
       section_footer:
         title: Ajuda sobre les propostes
-        description: Fes una proposta ciutadana. Si obté els avals suficients i pasa a votació, pots conseguir que tots els habitants decidisquen com volen que siga la nostra ciutat.
-        help_text_1: "Les propostes ciutadanes son una oportunitat per a que els veins i col·lectius decidisquen directament com volen que siga la seua ciutat. Quansevol persona pot fer una proposta sobre un tema que l'interese o preocupe per a que l'Ajuntament la duga a terme, després d'aconseguir els avals suficients i de sotmetre's a votació ciutadana."
-        help_text_2: "Per a crear una proposta cal registrar-se en %{org}. Les propostes que aconseguisquen el aval de l'1% de la gent en la web, pasen a votació. Per a avalar propostes es necessari tindre un compte verificat."
-        help_text_3: "Es convoca una votació ciutadana quant les propostes aconsegueixen els avals necesaris. Una vegada cel·lebrada, si hi ha més gent a favor que en contra, el Consistori asumeix la proposta i la du a terme."
     new:
       form:
         submit_button: Crear proposta
@@ -395,7 +409,6 @@ val:
         zero: Sense comentaris
         one: 1 comentari
         other: "%{count} comentaris"
-      reason_for_supports_necessary: 1% del Cens
       support: Avalar
       support_title: Avalar aquesta proposta
       supports:
@@ -409,8 +422,6 @@ val:
       supports_necessary: "%{number} avals necessaris"
       total_percent: 100%
       archived: "Aquesta proposta ha sigut arxivada i ja no pot recollir avals."
-      successful: "Esta proposta ha aconseguit els avals necessaris i pasarà a la %{voting}."
-      voting: "pròxima votació"
     show:
       author_deleted: Usuari eliminat
       code: 'Codi de la proposta:'
@@ -460,9 +471,7 @@ val:
         help: Ajuda sobre les votacions
       section_footer:
         title: Ajuda sobre les votacions
-        description: Registra't per poder votar propostes ciutadanes i les qüestions que pregunta als veïns l'Ajuntament. Pren decisions municipals de forma directa.
-        help_text_1: "Les votacions es convoquen quant una proposta ciutadana arriba a l'1% d'avals del cens amb dret a vot. En les votacions també es poden incloure qüestions que l'Ajuntament sotmet a decisió directa de la ciutadania."
-        help_text_2: "Per participar en la pròxima votació has de regitstrar-te en %{org} i verificar el teu compte. Poden votar totes les persones empadronades en la ciutat majors de 16 anys. Els resultats de totes les votacions seran vinculants per al govern."
+      no_polls: "No hi ha votacions obertes."
     show:
       already_voted_in_booth: "Ya has participat en esta votació en urnes presencials, no pots tornar a participar."
       already_voted_in_web: "Ya has participat en esta votació. Si tornes a votar es sobreescriurà el teu vot anterior."
@@ -482,7 +491,6 @@ val:
       zoom_plus: Ampliar imatge
       read_more: "Llegir més sobre %{answer}"
       read_less: "Llegir menys sobre %{answer}"
-      participate_in_other_polls: Participar en altres votacions
       videos: "Video extern"
       info_menu: "Informació"
       stats_menu: "Estadístiques de participació"
@@ -605,6 +613,14 @@ val:
       previous_slide: Imatge anterior
       next_slide: Imatge següent
     documentation: Documentació adicional
+    view_mode:
+      title: Mode de vista
+      cards: Targetes
+      list: Lista
+    recommended_index:
+      title: Recomanacions
+      see_more: Veure més recomanacions
+      hide: Ocultar recomanacions
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
@@ -722,6 +738,7 @@ val:
       no_private_messages: "Este usuari no accepta missatges privats."
       private_activity: Este usuari ha decidit mantindre en privat la seua llista d'activitats.
       send_private_message: "Enviar un missatge privat"
+      delete_alert: "Segur que desitges eliminar aquesta proposta? Aquesta acció no es pot desfer"
     proposals:
       send_notification: "Enviar notificació"
       retire: "Retirar"
@@ -751,21 +768,25 @@ val:
       organization: Les organitzacions no poden votar
       unfeasible: No es poden votar propostes inviables
       not_voting_allowed: El període de votació està tancat
+      different_heading_assigned:
+        one: "Sols pots avalar projectes de %{count} districte"
+        other: "Sols pots avalar projectes de %{count} districtes"
   welcome:
-    debates:
-      description: Trobar-nos, debatir i compartir el que ens pareix important en la nostra ciutat.
-      title: Debats
-    decide:
-      description: La ciutadania decideix si accepta o rebutja les propostes més avalades.
-      title: Decideix
-    do:
-      description: Si la proposta es acceptada majoritariament, l'Ajuntament la asumeix com a propia i la du a terme.
-      title: Es fa
-    proposal:
-      description: Espai obert per a propostes ciutadanes sobre el tipus de ciutat en el que volem viure.
-      title: Proposes
+    feed:
+      most_active:
+        debates: "Debats més actius"
+        proposals: "Propostes més actives"
+        processes: "Processos oberts"
+      see_all_debates: Veure tots els debats
+      see_all_proposals: Veure totes les propostes
+      see_all_processes: Veure tots els processos
+      process_label: Procés
+      see_process: Veure procés
+    cards:
+      title: Destacades
     recommended:
       title: Recomanacions que et poden interessar
+      help: "Estes recomanacions es generen per les etiquetes dels debats i propostes que estàs seguint."
       debates:
         title: Debats recomanats
         btn_text_link: Tots els debats recomanats
@@ -774,6 +795,7 @@ val:
         btn_text_link: Totes les propostes recomanades
       budget_investments:
         title: Pressupostos recomanats
+      slide: "Veure %{title}"
     verification:
       i_dont_have_an_account: No tinc compte, vull crear-ne un i verificar-lo
       i_have_an_account: Ja tinc un compte que vull verificar
@@ -801,6 +823,7 @@ val:
     help: "Pots afegir enllaços de %{models} en %{org}."
     submit: "Afegir"
     error: "Enllaç no vàlid. Recorda iniciar amb %{url}."
+    error_itself: "Enllaç no vàlid. No es pot relacionar un contingut amb ell mateix."
     success: "Has afegit nou contingut relacionat"
     is_related: "Es contingut relacionat?"
     score_positive: "Sí"
@@ -809,3 +832,13 @@ val:
       proposal: "Proposta"
       debate: "Debat"
       budget_investment: "Pressupost participatiu"
+  admin/widget:
+    header:
+      title: Administració
+  annotator:
+    help:
+      alt: Selecciona el text que vols comentar i polsa el botó amb el llapis.
+      text: Per a comentar este document has de %{sign_in} o %{sign_up}. Després selecciona el texte que vols comentar i polsa el botó amb el llapis.
+      text_sign_in: iniciar sessió
+      text_sign_up: registrar-te
+      title: Com puc comentar aquest document?

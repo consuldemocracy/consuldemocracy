@@ -6,6 +6,7 @@ val:
       index:
         title: Presidir taula de votacions
         info: Ací pots validar documents de ciutadans i guardar els resultats de les urnes
+        no_shifts: Hui no tens torn de president de taula.
     menu:
       voters: Validar document i votar
       total_recounts: Recompte total i escrutini
@@ -57,6 +58,7 @@ val:
         table_poll: Votació
         table_status: Estat de les votacions
         table_actions: Accions
+        not_to_vote: Aquesta persona ha decidit no votar en aquest moment
       show:
         can_vote: Pot votar
         error_already_voted: Ya has participat en esta votació

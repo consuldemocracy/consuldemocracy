@@ -8,54 +8,78 @@ fr:
         no_balloted_group_yet: "Vous n'avez pas encore voté dans ce groupe, allez voter !"
         remove: Supprimer le vote
         voted_html:
-          one: "Vous avez voté pour <span>une</span> proposition."
-          other: "Vous avez voté pour <span>%{count}</span> propositions."
+          one: "Vous avez voté <span>un</span> projet d'investissement."
+          other: "Vous avez voté <span>%{count}</span> projets d'investissement."
         voted_info_html: "Vous pouvez modifier votre vote à tout moment jusqu'à la fin de cette phase.<br> Vous n'avez pas besoin de dépenser tout le budget disponible."
-        zero: "Vous n'avez voté pour aucune des propositions d'investissement."
+        zero: Vous n'avez voté aucun projet d'investissement.
       reasons_for_not_balloting:
         not_logged_in: Vous devez %{signin} ou %{signup} pour continuer.
-        not_verified: Seuls les utilisateurs vérifiés peuvent voter pour les propositions, %{verify_account}.
+        not_verified: Seuls les utilisateurs vérifiés peuvent voter les projets d'investissement, %{verify_account}.
         organization: Les organisations ne sont pas autorisées à voter.
-        not_selected: Les propositions d'investissement non-sélectionnées ne peuvent être soutenues.
-        not_enough_money: "Vous n'avez pas assez de fonds."
+        not_selected: Les projets d'investissement non-sélectionnés ne peuvent être soutenus
+        not_enough_money_html: "Vous avez déjà utilisé l'ensemble du budget disponible. <br><small>N’oubliez pas, vous pouvez %{change_ballot} à tout moment</small>"
         no_ballots_allowed: La phase de sélection est terminée.
-        different_heading_assigned: Vous avez déjà voté pour une autre section de cette proposition.
+        different_heading_assigned_html: "Vous avez déjà voté pour une autre section : %{heading_link}"
+        change_ballot: modifier votre vote
     groups:
       show:
         title: Sélectionner une option
-        unfeasible_title: Investissements infaisables
-        unfeasible: Voir les investissements infaisables
+        unfeasible_title: Investissements irréalisables
+        unfeasible: Voir les investissements irréalisables
         unselected_title: Investissements non-sélectionnés pour la phase de vote
         unselected: Voir les investissements non-sélectionnés pour la phase de vote
     phase:
+      drafting: Brouillon (non visible du public)
+      informing: Information
       accepting: Présentation des projets
-      reviewing: Revue interne des projets
-      selecting: Phase de sélection
+      reviewing: Examen des projets
+      selecting: Sélection des projets
       valuating: Évaluation des projets
+      publishing_prices: Publication du coût des projets
       balloting: Vote final
       reviewing_ballots: Clôture des votes
-      finished: Résultats
+      finished: Budget terminé
     index:
       title: Budgets participatifs
+      empty_budgets: Il n'y a pas de budgets.
+      section_header:
+        icon_alt: Icône des budgets participatifs
+        title: Budgets participatifs
+        help: Aide sur les budgets participatifs
+        all_phases: Voir toutes les phases
+      all_phases: Phases de l’investissement budgétaire
+      map: Propositions d'investissement localisés
+      investment_proyects: Liste des projets d'investissement
+      unfeasible_investment_proyects: Liste des projets d'investissement irréalisables
+      not_selected_investment_proyects: Liste des projets d'investissement non sélectionnés pour le vote
+      finished_budgets: Budgets participatifs terminés
+      see_results: Voir les résultats
+      section_footer:
+        title: Aide sur les budgets participatifs
+        description: Avec la participation des budgets les citoyens décident à quels projets est destinée une partie du budget.
     investments:
       form:
         tag_category_label: "Catégories"
         tags_instructions: "Marquez cette proposition. Vous pouvez choisir parmi les catégories proposées ou en ajouter"
-        tags_label: Sujets
-        tags_placeholder: "Saisissez les étiquettes que vous souhaitez utiliser, séparées par des virgules (',')"
+        tags_label: Tags
+        tags_placeholder: "Saisissez les tags que vous souhaitez utiliser, séparés par des virgules (',')"
+        map_location: "Emplacement sur la carte"
+        map_location_instructions: "Positionnez le marqueur à l'emplacement correspondant sur la carte."
+        map_remove_marker: "Supprimer le marqueur"
+        location: "Information supplémentaires sur l'emplacement"
+        map_skip_checkbox: "Cet investissement n'a pas d'emplacement concret, à ma connaissance."
       index:
         title: Budget participatif
-        unfeasible: Propositions d'investissement infaisables
-        unfeasible_text: "Les propositions doivent satisfaire un certain nombre de critères (être légale, concrète, relever des compétences de la Ville, ne pas dépasser le plafond des budgets, %{definitions}) pour être déclarer viable et atteindre le stade final des votes. Toutes les propositions qui ne respectent pas ces critères sont identifiées comme infaisables et publiées dans la liste suivante, accompagnées de leur rapport d'infaisabilité."
-        unfeasible_text_definitions: voir les définitions ici
-        by_heading: "Portée des propositions d'investissement: %{heading}"
+        unfeasible: Projets d'investissement irréalisables
+        unfeasible_text: "Les projets d'investissement doivent satisfaire un certain nombre de critères (être légaux et concrets, relever des compétences de la commune, ne pas dépasser le plafond des budgets, %{definitions}) pour être déclarés viables et atteindre le stade final des votes. Tous les projets qui ne respectent pas ces critères sont identifiés comme irréalisables et publiés dans la liste suivante, accompagnés de leur rapport d'irréalisabilité."
+        by_heading: "Portée des projets d'investissement : %{heading}"
         search_form:
           button: Rechercher
-          placeholder: Rechercher des propositions d'investissement...
+          placeholder: Rechercher des projets d'investissement...
           title: Recherche
-        search_results:
-          one: " contenant le terme '%{search_term}'"
-          other: " contenant les termes '%{search_term}'"
+        search_results_html:
+          one: " contenant le terme <strong>'%{search_term}'</strong>"
+          other: " contenant les termes <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mon vote
           voted_html:
@@ -64,16 +88,18 @@ fr:
           voted_info: Vous pouvez %{link} à tout moment jusqu'à la clôture de cette phase. Vous n'avez pas besoin de dépenser tout le budget disponible.
           voted_info_link: modifier votre vote
           different_heading_assigned_html: "Vous avez des votes actifs dans une autre section : %{heading_link}"
-          zero: Vous n'avez voté pour aucune proposition d'investissement dans ce groupe.
-          verified_only: "Pour créer une proposition d'investissement %{verify}."
+          change_ballot: "Si vous changez d'avis, vous pouvez supprimer vos votes dans %{check_ballot} et recommencer."
+          check_ballot_link: "vérifier mon vote"
+          zero: Vous n'avez voté aucun projet d'investissement dans ce groupe.
+          verified_only: "Pour créer un projet d'investissement %{verify}."
           verify_account: "vérifiez votre compte"
-          create: "Créer une proposition d'investissement"
-          not_logged_in: "Pour créer une proposition d'investissement, vous devez vous %{sign_in} ou %{sign_up}."
+          create: "Créer un projet d'investissement"
+          not_logged_in: "Pour créer un projet d'investissement, vous devez vous %{sign_in} ou %{sign_up}."
           sign_in: "connecter"
           sign_up: "enregistrer"
           by_feasibility: Par faisabilité
           feasible: Projets faisables
-          unfeasible: Projets infaisables
+          unfeasible: Projets irréalisables
         orders:
           random: aléatoire
           confidence_score: les mieux notés
@@ -82,36 +108,74 @@ fr:
         author_deleted: Utilisateur supprimé
         price_explanation: Explication du coût
         unfeasibility_explanation: Explication de l'infaisabilité
-        code_html: 'Code de la proposition de dépense: <strong>%{code}</strong>'
+        code_html: 'Code du projet d''investissement: <strong>%{code}</strong>'
         location_html: 'Lieu: <strong>%{location}</strong>'
-        organization_name_html: 'Organisation: <strong>%{name}</strong>'
+        organization_name_html: 'Proposé au nom de : <strong>%{name}</strong>'
         share: Partager
-        title: Proposition d'investissement
+        title: Projet d'investissement
         supports: Soutiens
         votes: Votes
         price: Coût
+        comments_tab: Commentaires
+        milestones_tab: Jalons
+        no_milestones: Aucun jalon défini
+        milestone_publication_date: "Publié le %{publication_date}"
+        milestone_status_changed: Statut d'investissement changé à
+        author: Auteur
+        project_unfeasible_html: 'Ce projet d''investissement <strong>a été marqué comme irréalisable</strong> et n''ira pas en phase de vote.'
+        project_selected_html: 'Ce projet d''investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote.'
+        project_winner: 'Projet d''investissement gagnant'
+        project_not_selected_html: 'Ce projet d''investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote.'
       wrong_price_format: Nombres entiers uniquement
       investment:
-        title: Proposition d'investissement
         add: Voter
-        already_added: Vous avez déjà ajouté cette proposition d'investissement.
-        already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
+        already_added: Vous avez déjà ajouté ce projet d'investissement
+        already_supported: Vous avez déjà soutenu ce projet d'investissement. Partagez-le !
         support_title: Soutenir cette proposition
-        confirm_group: "Vous pouvez seulement soutenir les propositions d'un district. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
+        confirm_group:
+          one: "Vous pouvez seulement soutenir les propositions d'%{count} quartier. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
+          other: "Vous pouvez seulement soutenir les propositions de %{count} quartiers. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
         supports:
+          zero: Pas de soutiens
           one: 1 soutien
           other: "%{count} soutiens"
-          zero: Pas de soutiens
         give_support: Soutenir
       header:
         check_ballot: Vérifier mon vote
         different_heading_assigned_html: "Vous avez des votes actifs dans d'autres sections : %{heading_link}"
+        change_ballot: "Si vous changez d'avis, vous pouvez supprimer vos votes dans %{check_ballot} et recommencer."
+        check_ballot_link: "vérifier mon vote"
+        price: "Cette rubrique dispose d’un budget de"
     progress_bar:
-      available: "Disponible : "
+      assigned: "Vous avez affecté : "
+      available: "Budget disponible : "
     show:
       group: Groupe
       phase: Phase actuelle
-      unfeasible_title: Propositions infaisables
-      unfeasible: Voir les propositions infaisables
-      unselected_title: Propositions non-sélectionnées pour la phase de vote
-      unselected: Voir les propositions non-sélectionnées pour la phase de vote
+      unfeasible_title: Projets d'investissement irréalisables
+      unfeasible: Voir les projets d'investissement irréalisables
+      unselected_title: Projets d'investissement non-sélectionnés pour la phase de vote
+      unselected: Voir les projets d'investissement non-sélectionnés pour la phase de vote
+      see_results: Voir les résultats
+    results:
+      link: Résultats
+      page_title: "%{budget} - Résultats"
+      heading: "Résultats du budget participatif"
+      heading_selection_title: "Par quartier"
+      spending_proposal: Titre de la proposition
+      ballot_lines_count: Nombre de fois sélectionné
+      hide_discarded_link: Cacher les résultats rejetés
+      show_all_link: Tout afficher
+      price: Coût
+      amount_available: Budget disponible
+      accepted: "Proposition de dépense acceptée : "
+      discarded: "Proposition de dépense rejetée : "
+      incompatibles: Incompatibles
+      investment_proyects: Liste des projets d’investissement
+      unfeasible_investment_proyects: Liste des projets d'investissement irréalisables
+      not_selected_investment_proyects: Liste des projets d'investissement non sélectionnés pour le vote
+    phases:
+      errors:
+        dates_range_invalid: "La date de début ne peut pas être égale ou postérieure à la date de fin"
+        prev_phase_dates_invalid: "La date de début doit être postérieure à la date de début de la phase précédente (%{phase_name})"
+        next_phase_dates_invalid: "La date de fin doit être antérieure à la date de fin de la phase suivante (%{phase_name})"

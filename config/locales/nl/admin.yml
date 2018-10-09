@@ -1,739 +1,1382 @@
----
 nl:
   admin:
     header:
-      title: Administration
+      title: Beheer
     actions:
-      actions: Actions
-      confirm: Are you sure?
-      confirm_hide: Confirm
-      hide: Hide
-      hide_author: Hide author
-      restore: Restore
-      mark_featured: Featured
-      unmark_featured: Unmark featured
-      edit: Edit
-      configure: Configure
+      actions: Activiteiten
+      confirm: Bent u zeker?
+      confirm_hide: Bevestig
+      hide: Verberg
+      hide_author: Verberg schrijver
+      restore: Herstel
+      mark_featured: Aanbevolen
+      unmark_featured: niet aanbevolen
+      edit: Bewerk
+      configure: Configureer
+      delete: Verwijder
     banners:
       index:
-        title: Banners
-        create: Create banner
-        edit: Edit banner
-        delete: Delete banner
+        title: Banier
+        create: Maak banier
+        edit: Bewerk banier
+        delete: Verwijder banier
         filters:
-          all: All
-          with_active: Active
-          with_inactive: Inactive
+          all: Alle
+          with_active: Actieve
+          with_inactive: Inactieve
+        preview: Preview
       banner:
-        title: Title
-        description:  Description
-        target_url:  Link
-        style: Style
-        image: Image
-        post_started_at: Post started at
-        post_ended_at: Post ended at
+        title: Titel
+        description: Omschrijving
+        target_url: Link
+        post_started_at: Bijdrage start op
+        post_ended_at: Bijdrage eindigt op
+        sections_label: Secties waar het wordt weergegeven
+        sections:
+          homepage: Homepage
+          debates: Discussies
+          proposals: Voorstellen
+          budgets: Burgerbegroting
+          help_page: Help-pagina
+        background_color: Achtergrondkleur
+        font_color: Kleur van het lettertype
       edit:
-        back: Back
-        editing: Edit banner
+        editing: Bewerk banier
         form:
-          submit_button: Save changes
+          submit_button: Sla op
       errors:
         form:
           error:
-            one: "prevented this banner from being saved"
-            other: 'prevented this banner from being saved'
+            one: "verhinderde dat dit banier werd bewaard"
+            other: "verhinderde dat dit banier werd bewaard"
       new:
-        back: Back
-        creating: Create banner
+        creating: Maak banier
     activity:
       show:
-        action: Action
+        action: Activiteit
         actions:
-          block: Blocked
-          hide: Hidden
-          restore: Restored
-        by: Moderated by
-        content: Content
-        filter: Show
+          block: Geblokkeerd
+          hide: Verborden
+          restore: Hersteld
+        by: Gecontroleerd door
+        content: Inhoud
+        filter: Toon
         filters:
-          all: All
-          on_comments: Comments
-          on_debates: Debates
-          on_proposals: Proposals
-          on_users: Users
-        title: Moderator activity
+          all: Alle
+          on_comments: Commentaar
+          on_debates: Debatten
+          on_proposals: Voorstellen
+          on_users: Deelnemers
+          on_system_emails: E-mails van het systeem
+        title: Moderator activiteit
         type: Type
+        no_activity: Er is geen moderator activiteit.
     budgets:
       index:
-        title: Participatory budgets
-        new_link: Create new budget
+        title: Participatief budgetvoorstel
+        new_link: Nieuw voorstel
+        filter: Filter
         filters:
-          current: Open
-          finished: Finished
-        budget_investments: See budget investments
-        table_name: Name
-        table_phase: Phase
-        table_investments: Investments
-        table_edit_groups: Headings groups
-        table_edit_budget: Edit
-        edit_groups: Edit headings groups
-        edit_budget: Edit budget
+          open: Open
+          finished: Afgelopen
+        budget_investments: Zie begrotingsvoorstellen
+        table_name: Naam
+        table_phase: Fase
+        table_investments: Bestemmingen
+        table_edit_groups: Kopgroepen
+        table_edit_budget: Bewerk
+        edit_groups: Bewerk kopgroepen
+        edit_budget: Bewerk budget
       create:
-        notice: New participatory budget created successfully!
+        notice: Nieuw participatief budgetvoorstel gemaakt!
       update:
-        notice: Participatory budget updated successfully
+        notice: Participatief budgetvoorstel bewerkt
       edit:
-        title: Edit Participatory budget
+        title: Bewerk participatief budgetvoorstel
+        delete: Verwijder begroting
+        phase: Fase
+        dates: Datums
+        enabled: Ingeschakeld
+        actions: Acties
+        edit_phase: Bewerk fase
+        active: Actief
+        blank_dates: Datums zijn leeg
+      destroy:
+        success_notice: Begroting verwijderd
+        unable_notice: U kunt een begroting met voorstellen niet verwijderen
       new:
-        title: New participatory budget
+        title: Nieuw participatief budgetvoorstel
       show:
         groups:
-          one: 1 Group of budget headings
-          other: "%{count} Groups of budget headings"
+          one: 1 Groep budgetkoppen
+          other: "%{count} groepen budgetkoppen"
       form:
-        group: Group name
-        no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
-        add_group: Add new group
-        create_group: Create group
-        heading: Heading name
-        add_heading: Add heading
-        amount: Amount
-        population: Population
-        save_heading: Save heading
-        no_heading: This group has no assigned heading.
-        table_heading: Heading
-        table_amount: Amount
-        table_population: Population
+        group: Groepsnaam
+        no_groups: Nog geen groepen. Elke gebruiker kan maar binnen één kop per groep stemmen.
+        add_group: Nieuwe groep toevoegen
+        create_group: Nieuwe groep
+        edit_group: Bewerk groep
+        submit: Sla op
+        heading: Kop naam
+        add_heading: Voeg kop toe
+        amount: Bedrag
+        population: "Bevolking"
+        population_help_text: "Deze gegevens worden uitsluitend gebruikt om de participatiestatistieken te berekenen"
+        save_heading: Bewaar kop
+        no_heading: Deze groep is geen kop toegewezen.
+        table_heading: Kop
+        table_amount: Bedrag
+        table_population: Bevolking
+        population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan voor elke rubriek en per gebied worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus u kunt het leeg laten als het niet van toepassing is."
+        max_votable_headings: "Maximum aantal rubrieken waarin gestemd kan worden"
+        current_of_max_headings: "%{current} of %{max}"
       winners:
-        calculate: Calculate Winner Investments
-        calculated: Winners being calculated, it may take a minute.
+        calculate: Bereken gewonnen bestemmingen
+        calculated: Bestemmingen worden berekend, kan even duren.
+        recalculate: Herbereken gewonnen investeringen
+    budget_phases:
+      edit:
+        start_date: Startdatum
+        end_date: Einddatum
+        summary: Samenvatting
+        summary_help_text: Deze tekst informeert de deelnemer over de fase. Om het te laten zien zelfs als de fase niet actief is, vinkt u het vakje aan
+        description: Omschrijving
+        description_help_text: Deze tekst verschijnt in de kop wanneer de fase actief is
+        enabled: Fase actief
+        enabled_help_text: Deze fase is openbaar in de tijdlijn van de budgetfasen, maar ook actief voor andere doeleinden
+        save_changes: Sla op
     budget_investments:
       index:
-        heading_filter_all: All headings
-        administrator_filter_all: All administrators
-        valuator_filter_all: All valuators
-        tags_filter_all: All tags
+        heading_filter_all: Alle koppen
+        administrator_filter_all: Alle beheerders
+        valuator_filter_all: Alle beoordelaars
+        tags_filter_all: Alle labels
+        advanced_filters: Geavanceerde filters
+        placeholder: Zoek in projecten
+        sort_by:
+          placeholder: Sorteer op
+          id: ID
+          title: Titel
+          supports: Steunt
         filters:
-          valuation_open: Open
-          without_admin: Without assigned admin
-          managed: Managed
-          valuating: Under valuation
-          valuation_finished: Valuation finished
-          valuation_finished_feasible: Val. fin. Feasible
-          selected: Selected
-          all: All
-        title: Investment projects
-        assigned_admin: Assigned administrator
-        no_admin_assigned: No admin assigned
-        no_valuators_assigned: No valuators assigned
+          all: Alle
+          without_admin: Zonder toegewezen beheerder
+          without_valuator: Zonder toegewezen beoordelaar
+          under_valuation: Wordt beoordeeld
+          valuation_finished: Beoordeling voltooid
+          feasible: Haalbaar
+          selected: Geselecteerd
+          undecided: Onbeslist
+          unfeasible: Onhaalbaar
+          min_total_supports: Minimale ondersteuning
+          winners: Winnaars
+          one_filter_html: "Actieve filters: <b><em>%{filter}</em></b>"
+          two_filters_html: "Actieve filters: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Filter
+        download_current_selection: "Download huidige selectie"
+        no_budget_investments: "Er zijn geen begrotingsvoorstellen."
+        title: Budget bestemmingen
+        assigned_admin: Toegewezen beheerder
+        no_admin_assigned: Geen beheerder toegewezen
+        no_valuators_assigned: Geen beoordelaars toegewezen
+        no_valuation_groups: Geen beoordelingsgroep toegewezen
         feasibility:
-          feasible: "Feasible (%{price})"
-          unfeasible: "Unfeasible"
-          undecided: "Undecided"
-        selected: "Selected"
-        select: "Select"
-        table_id: "ID"
-        table_title: "Title"
-        table_admin: "Administrator"
-        table_valuator: "Valuator"
-        table_geozone: "Scope of operation"
-        table_feasibility: "Feasibility"
-        table_valuation_finished: "Val. Fin."
-        table_selection: "Selection"
-        table_incompatible: "Incompatible"
+          feasible: "Haalbaar (%{price})"
+          unfeasible: "Onhaalbaar"
+          undecided: "Onbeslist"
+        selected: "Geselecteerd"
+        select: "Selecteer"
+        list:
+          id: ID
+          title: Titel
+          supports: Steunen
+          admin: Beheerder
+          valuator: Beoordelaar
+          valuation_group: Beoordelingsgroep
+          geozone: Reikwijdte van het initiatief
+          feasibility: Haalbaarheid
+          valuation_finished: Beoordeling gedaan.
+          selected: Geselecteerd
+          visible_to_valuators: Tonen aan beoordelaars
+          author_username: Gebruikersnaam van de auteur
+          incompatible: Onverenigbaar
+        cannot_calculate_winners: Het budget moet in fase blijven "Ballotage projecten", "Rekening houden met stemmingen" of "Voltooide begroting" om winnaarsprojecten te kunnen berekenen
+        see_results: "Toon resultaten"
       show:
-        assigned_admin: Assigned administrator
-        assigned_valuators: Assigned valuators
-        classification: Clasification
-        info: "%{budget_name} - Group: %{group_name} - Investment project %{id}"
+        assigned_admin: Toegewezen beheerder
+        assigned_valuators: Toegewezen beoordelaars
+        classification: Clasificatie
+        info: "%{budget_name} - Groep: %{group_name} - Bestemming project %{id}"
         edit: Edit
-        edit_classification: Edit classification
-        by: By
-        sent: Sent
-        group: Grupo
-        heading: Partida
+        edit_classification: Bewerk classificatie
+        by: Door
+        sent: Verzonden
+        group: Groep
+        heading: Kop
         dossier: Dossier
-        edit_dossier: Edit dossier
-        tags: Tags
-        undefined: Undefined
+        edit_dossier: Bewerk dossier
+        tags: Labels
+        user_tags: Deelnemerslabels
+        undefined: Niet gedefinieerd
+        milestone: Mijlpaal
+        new_milestone: Nieuwe mijlpaal
+        compatibility:
+          title: Compatibiliteit
+          "true": Niet compatibel
+          "false": Compatibel
+        selection:
+          title: Selectie
+          "true": Geselecteerd
+          "false": Niet geselecteerd
+        winner:
+          title: Winnaar
+          "true": "Ja"
+          "false": "Nee"
+        image: "Afbeelding"
+        see_image: "Zie afbeelding"
+        no_image: "Zonder afbeelding"
+        documents: "Documenten"
+        see_documents: "zie documenten (%{count})"
+        no_documents: "Zonder documenten"
+        valuator_groups: "Beoordelingsgroepen"
       edit:
-        classification: Clasification
-        assigned_valuators: Valuators
-        select_heading: Select heading
-        submit_button: Update
-        tags: Tags
-        tags_placeholder: "Write the tags you want separated by commas (,)"
-        undefined: Undefined
-      search_unfeasible: Search unfeasible
+        classification: Clasificatie
+        compatibility: Compatibiliteit
+        mark_as_incompatible: Markeer als incompatibel
+        selection: Selectie
+        mark_as_selected: Markeer als geselecteerd
+        assigned_valuators: beoordelaars
+        select_heading: Selecteer kop
+        submit_button: Sla op
+        user_tags: Door deelnemer toegewezen labels
+        tags: Labels
+        tags_placeholder: "Labels, gescheiden door komma's (,)"
+        undefined: Niet gedefinieerd
+        user_groups: "Groepen"
+      search_unfeasible: Zoek op onhaalbaar
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Titel"
+        table_description: "Omschrijving"
+        table_publication_date: "Publicatiedatum"
+        table_status: Status
+        table_actions: "Acties"
+        delete: "Verwijder mijlpaal"
+        no_milestones: "Geen mijlpalen gedefiniëerd"
+        image: "Afbeelding"
+        show_image: "Toon afbeelding"
+        documents: "Documenten"
+      form:
+        admin_statuses: Beheerderstatussen
+        no_statuses_defined: Er zijn nog geen gedefinieerde investeringsstatussen
+      new:
+        creating: Nieuwe mijlpaal
+        date: Datum
+        description: Beschrijving
+      edit:
+        title: Bewerk mijlpaal
+      create:
+        notice: Nieuwe mijlpaal aangemaakt
+      update:
+        notice: Mijlpaal opgeslagen
+      delete:
+        notice: Mijlpaal verwijderd
+    statuses:
+      index:
+        title: Investeringsstatussen
+        empty_statuses: Er zijn nog geen gedefinieerde investeringsstatussen aangemaakt
+        new_status: Maak een nieuwe investeringsstatus aan
+        table_name: Name
+        table_description: Beschrijving
+        table_actions: Acties
+        delete: Verwijder
+        edit: Bewerk
+      edit:
+        title: Bewerk investeringsstatus
+      update:
+        notice: Investeringsstatus succesvol bijgewerkt
+      new:
+        title: Bewerk investeringsstatus
+      create:
+        notice: Investeringsstatus succesvol bijgewerkt
+      delete:
+        notice: Investeringsstatus succesvol verwijderd
     comments:
       index:
         filter: Filter
         filters:
-          all: All
-          with_confirmed_hide: Confirmed
-          without_confirmed_hide: Pending
-        hidden_debate: Hidden debate
-        hidden_proposal: Hidden proposal
-        title: Hidden comments
+          all: Alle
+          with_confirmed_hide: Bevestigd
+          without_confirmed_hide: In afwachting
+        hidden_debate: Verborgen debat
+        hidden_proposal: Verborgen voorstel
+        title: Verborgen commentaar
+        no_hidden_comments: Er is geen verborgen commentaar.
     dashboard:
       index:
-        back: Go back to
-        title: Administration
+        back: Ga terug naar
+        title: Beheer
+        description: Welkom op de %{org} beheers pagina.
     debates:
       index:
         filter: Filter
         filters:
-          all: All
-          with_confirmed_hide: Confirmed
-          without_confirmed_hide: Pending
-        title: Hidden debates
+          all: Alle
+          with_confirmed_hide: Bevestigd
+          without_confirmed_hide: In afwachting
+        title: Verborgen debatten
+        no_hidden_debates: Er zijn geen verborgen debatten.
+    hidden_users:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          with_confirmed_hide: Bevestigd
+          without_confirmed_hide: In afwachting
+        title: Verborgen deelnemers
+        user: Deelnemer
+        no_hidden_users: Er zijn geen verborgen deelnemers.
+      show:
+        email: 'E-mail:'
+        hidden_at: 'Verborgen op:'
+        registered_at: 'Geregistreerd op:'
+        title: Activiteit van deelnemer (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filter
+        filters:
+          all: Allen
+          with_confirmed_hide: Bevestigd
+          without_confirmed_hide: In afwachting
+        title: Verborgen begrotingsinvesteringen
+        no_hidden_budget_investments: Er zijn geen verborgen begrotingsinvesteringen
+    legislation:
+      processes:
+        create:
+          notice: 'Proces aangamaakt. <a href="%{link}">Klik om te zien</a>'
+          error: Proces kon niet worden aangemaakt
+        update:
+          notice: 'Proces opgeslagen. <a href="%{link}">Klik om te zien</a>'
+          error: Proces kon niet worden opgeslagen
+        destroy:
+          notice: Proces verwijderd
+        edit:
+          back: Terug
+          submit_button: Sla op
+        errors:
+          form:
+            error: Fout
+        form:
+          enabled: Actief
+          process: Plan
+          debate_phase: Debatfase
+          proposals_phase: Voorstelfase
+          start: Start
+          end: Eind
+          use_markdown: Gebruik Markdown voor vormgeving
+          title_placeholder: De titel van het plan
+          summary_placeholder: Korte samenvatting van de beschrijving
+          description_placeholder: Voeg een beschrijving van het plan toe
+          additional_info_placeholder: Voeg een aanvullende informatie toe
+        index:
+          create: Nieuw plan
+          delete: Verwijder
+          title: Plannen
+          filters:
+            open: Open
+            next: Volgende
+            past: Verleden
+            all: Alle
+        new:
+          back: Terug
+          title: Nieuw plan creëren
+          submit_button: Nieuw plan
+        process:
+          title: Plan
+          comments: Commentaar
+          status: Status
+          creation_date: Aanmaakdatum
+          status_open: Open
+          status_closed: Gesloten
+          status_planned: Gepland
+        subnav:
+          info: Informatie
+          draft_texts: Tekst
+          questions: Debat
+          proposals: Voorstellen
+      proposals:
+        index:
+          back: Terug
+        form:
+          custom_categories: Categorieën
+          custom_categories_description: Categorieën die deelnemers kunnen selecteren bij het maken van het voorstel.
+          custom_categories_placeholder: Voer de tags die u wilt gebruiken in, gescheiden door komma's (,) en tussen aanhalingstekens ("")
+      draft_versions:
+        create:
+          notice: 'Concept is aangemaakt. <a href="%{link}">Klik om te zien</a>'
+          error: Concept kon niet worden aangemaakt
+        update:
+          notice: 'Concept opgeslagen. <a href="%{link}">Klik om te zien</a>'
+          error: Concept kon niet worden opgeslagen
+        destroy:
+          notice: Concept verwijderd
+        edit:
+          back: Terug
+          submit_button: Sla op
+          warning: U hebt de tekst bewerkt, vergeet niet op 'Opslaan' te klikken om de wijzigingen permanent op te slaan.
+        errors:
+          form:
+            error: Fout
+        form:
+          title_html: 'Aanpassen van <span class="strong">%{draft_version_title}</span> van het proces <span class="strong">%{process_title}</span>'
+          launch_text_editor: Open tekst editor
+          close_text_editor: Sluit tekst editor
+          use_markdown: Gebruik Markdown om de tekst vorm te geven
+          hints:
+            final_version: Deze versie zal als eindresultaat voor dit proces worden gepubliceerd. Reacties zijn niet toegestaan.
+            status:
+              draft: U kunt als beheerder een voorbeeld bekijken; niemand anders kan het zien
+              published: Zichtbaar voor iedereen
+          title_placeholder: titel conceptversie
+          changelog_placeholder: Voeg de belangrijkste wijzigingen van de vorige versie toe
+          body_placeholder: concept tekst
+        index:
+          title: Concept versies
+          create: Nieuwe versie
+          delete: Verwijder
+          preview: Toon
+        new:
+          back: Terug
+          title: Nieuwe versie
+          submit_button: Nieuwe versie
+        statuses:
+          draft: Concept
+          published: Gepubliceerd
+        table:
+          title: Titel
+          created_at: Aanmaakdatum
+          comments: Commentaar
+          final_version: Eindversie
+          status: Status
+      questions:
+        create:
+          notice: 'Vraag aangemaakt. <a href="%{link}">Klik om te zien</a>'
+          error: Vraag kon niet worden aangemaakt
+        update:
+          notice: 'Vraag aangepast. <a href="%{link}">Klik om te zien</a>'
+          error: Vraag kon niet worden aangepast
+        destroy:
+          notice: Vraag verwijderd
+        edit:
+          back: Terug
+          title: "Bewerk “%{question_title}”"
+          submit_button: Sla op
+        errors:
+          form:
+            error: Fout
+        form:
+          add_option: Voeg keuze toe
+          title: Vraag
+          title_placeholder: titel
+          value_placeholder: antwoord
+          question_options: "Mogelijke antwoorden (optioneel, standaard open antwoorden)"
+        index:
+          back: Terug
+          title: Vragen bij dit plan
+          create: Maak vraag aan
+          delete: Verwijder
+        new:
+          back: Terug
+          title: Nieuwe vraag
+          submit_button: Sla op
+        table:
+          title: Titel
+          question_options: Vraag keuzen
+          answers_count: Aantal antwoorden
+          comments_count: Aantal commentaar
+        question_option_fields:
+          remove_option: Verwijder keuze
     managers:
       index:
-        title: Managers
+        title: Beheerders
+        name: Naam
+        email: E-mail
+        no_managers: Er zijn geen managers.
       manager:
-        add: Add
-        delete: Delete
+        add: Voeg toe
+        delete: Verwijder
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Managers: zoek deelnemers'
     menu:
-      activity: Moderator activity
-      admin: Admin menu
-      banner: Manage banners
-      poll_questions: Poll questions
-      proposals_topics: Proposals topics
-      budgets: Participatory budgets
-      geozones: Manage geozones
-      hidden_comments: Hidden comments
-      hidden_debates: Hidden debates
-      hidden_proposals: Hidden proposals
-      hidden_users: Hidden users
-      managers: Managers
-      moderators: Moderators
-      valuators: Valuators
-      poll_officers: Poll officers
-      polls: Polls
-      poll_booths: Booths location
-      officials: Officials
-      organizations: Organisations
-      settings: Configuration settings
-      spending_proposals: Spending proposals
-      stats: Statistics
-      signature_sheets: Signature Sheets
+      activity: Moderator activiteit
+      admin: Beheersmenu
+      banner: Bewerk banieren
+      poll_questions: Peilingvragen
+      proposals_topics: Voorstel onderwerpen
+      budgets: Burgerbegrotingen
+      geozones: Bewerk geozones
+      hidden_comments: Verborgen commentaar
+      hidden_debates: Verborgen debatten
+      hidden_proposals: Verborgen voorstellen
+      hidden_budget_investments: Verborgen begrotingsinvesteringen
+      hidden_proposal_notifications: Verborgen notificaties
+      hidden_users: Verborgen gebruikers
+      administrators: Beheerders
+      managers: Beheerders
+      moderators: Moderatoren
+      messaging_users: Berichten naar gebruikers
+      newsletters: Nieuwsbrieven
+      admin_notifications: Meldingen
+      system_emails: E-mails van het systeem
+      emails_download: E-mails download
+      valuators: beoordelaars
+      poll_officers: Peiling beambten
+      polls: Peilingen
+      poll_booths: Locatie stemhokje
+      poll_booth_assignments: Stemhokje toewijzingen
+      poll_shifts: Beheer diensten
+      officials: Beambten
+      organizations: Organisaties
+      settings: Instellingen
+      spending_proposals: begrotingsvoorstellen
+      stats: Statistieken
+      signature_sheets: Handtekening lijsten
       site_customization:
-        pages: Custom Pages
-        images: Custom Images
-        content_blocks: Custom content blocks
-      title_categories: Categories
-      title_moderated_content: Moderated content
-      title_budgets: Budgets
-      title_polls: Polls
-      title_profiles: Profiles
-      title_banners: Banners
-      title_site_customization: Site customization
+        homepage: Homepage
+        pages: Aangepaste pagina's
+        images: Aangepaste afbeeldingen
+        content_blocks: Aangepaste inhoud
+        information_texts: Aangepaste informatie teksten
+        information_texts_menu:
+          debates: "Discussies"
+          community: "Gemeenschap"
+          proposals: "Voorstellen"
+          polls: "Peilingen"
+          layouts: "Lay-outs"
+          mailers: "Emails"
+          management: "Beheer"
+          guides: "Leiden"
+          welcome: "Welkom"
+        buttons:
+          save: "Opslaan"
+      title_moderated_content: Gemodereerde inhoud
+      title_budgets: Budgetten
+      title_polls: Peilingen
+      title_profiles: Profielen
+      title_settings: Instellingen
+      title_site_customization: Aanpassing Site
+      title_booths: Stemhokjes
+      legislation: Plannen
+      users: Deelnemers
+    administrators:
+      index:
+        title: Beheerders
+        name: Naam
+        email: E-mail
+        no_administrators: Er zijn geen beheerders.
+      administrator:
+        add: Voeg toe
+        delete: Verwijder
+        restricted_removal: "Sorry, u kunt uzelf niet uit de beheerders verwijderen"
+      search:
+        title: "Beheerders: zoek deelnemers"
     moderators:
       index:
-        title: Moderators
+        title: Moderatoren
+        name: Naam
+        email: E-mail
+        no_moderators: Er zijn geen moderators.
       moderator:
-        add: Add
-        delete: Delete
+        add: Voeg toe
+        delete: Verwijder
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Moderators: zoek deelnemers'
+    segment_recipient:
+      all_users: Alle deelnemers
+      administrators: Beheerders
+      proposal_authors: Voorstel schrijvers
+      investment_authors: Voorstel schrijvers in de huidige burgerbegroting
+      feasible_and_undecided_investment_authors: "Auteurs van sommige investeringen in het huidige budget die niet voldoen: [beoordeling afgerond onhaalbaar]"
+      selected_investment_authors: Auteurs van geselecteerde voorstellen in de huidige burgerbegroting
+      winner_investment_authors: Auteurs van winnende voorstellen in de huidige burgerbegroting
+      not_supported_on_current_budget: Deelnemers die geen voorstellen hebben gesteund in de huidige burgerbegroting
+      invalid_recipients_segment: "Gebruikerssegment deelnemers is ongeldig"
+    newsletters:
+      create_success: Nieuwbrief aangamaakt
+      update_success: Nieuwbrieven aangapast
+      send_success: Nieuwbrieven verzonden
+      delete_success: Nieuwbrieven verwijderd
+      index:
+        title: Nieuwbrieven
+        new_newsletter: Nieuwe nieuwsbrief
+        subject: Onderwerp
+        segment_recipient: Geadresseerden
+        sent: Verstuurd
+        actions: Acties
+        draft: Concept
+        edit: Bewerk
+        delete: Verwijder
+        preview: Toon
+        empty_newsletters: Er zijn geen nieuwsbrieven om te tonen
+      new:
+        title: Nieuwe nieuwsbrief
+        from: E-mailadres dat wordt weergegeven als het verzenden van de nieuwsbrief
+      edit:
+        title: Bewerk nieuwsbrief
+      show:
+        title: Nieuwbrieven tonen
+        send: Stuur
+        affected_users: (betreft %{n} deelnemers)
+        sent_at: Verstuurd op
+        subject: Onderwerp
+        segment_recipient: Geadresseerden
+        from: Van
+        body: E-mail inhoud
+        body_help_text: Dit is hoe de deelnemers de e-mail zullen zien
+        send_alert: Weet u zeker dat u deze nieuwsbrief naar %{n} deelnemer wilt sturen?
+    admin_notifications:
+      create_success: Kennisgeving met succes gemaakt
+      update_success: Kennisgeving met succes bijgewerkt
+      send_success: Kennisgeving met succes verzonden
+      delete_success: Kennisgeving succesvol verwijderd
+      index:
+        section_title: Meldingen
+        new_notification: Nieuwe melding
+        title: Titel
+        segment_recipient: Geadresseerden
+        sent: Verzonden
+        actions: Acties
+        draft: Concept
+        edit: Bewerk
+        delete: Verwijder
+        preview: Voorbeeld
+        view: Weergave
+        empty_notifications: Er zijn geen meldingen te tonen
+      new:
+        section_title: Nieuwe melding
+      edit:
+        section_title: Bericht bewerken
+      show:
+        section_title: Voorbeeld van de kennisgeving
+        send: Stuur notificatie
+        will_get_notified: (de%{n} gebruikers zullen worden aangemeld)
+        got_notified: (%{n} gebruikers ontving kennisgeving)
+        sent_at: Verzonden naar
+        title: Titel
+        body: Tekst
+        link: Link
+        segment_recipient: Geadresseerden
+        preview_guide: "Dit is hoe de gebruikers de melding zullen zien:"
+        sent_guide: "Dit is hoe de gebruikers de melding zullen zien:"
+        send_alert: Weet u zeker dat u deze melding naar %{n} deelnemers wilt sturen?
+    system_emails:
+      preview_pending:
+        action: Voorbeeld in behandeling
+        preview_of: Voorbeeld van %{name}
+        pending_to_be_sent: Dit is de inhoud in afwachting die moet worden verzonden
+        moderate_pending: Bemiddelde melding verzenden
+        send_pending: Stuur in behandeling
+        send_pending_notification: In behandeling zijnde aanmeldingen succesvol verzonden
+      proposal_notification_digest:
+        title: Voorgestelde melding verwerken
+        description: Verzamelt alle meldingen van het voorstel voor een gebruiker in een enkel bericht, om te voorkomen dat er te veel e-mails worden verstuurd.
+        preview_detail: Gebruikers ontvangen alleen meldingen uit de voorstellen die ze volgen
+    emails_download:
+      index:
+        title: E-mails download
+        download_segment: Download email adressen
+        download_segment_help_text: Download als CSV file
+        download_emails_button: Download lijst e-mails
     valuators:
       index:
-        title: Valuators
+        title: beoordelaars
+        name: Naam
+        email: E-mail
+        description: Beschrijving
+        no_description: Geen beschrijving
+        no_valuators: Er zijn geen beoordelaars.
+        valuator_groups: "Beoordelingsgroepen"
+        group: "Groep"
+        no_group: "Geen groep"
       valuator:
-        user_found: User found
-        add: Add to valuators
+        add: Voeg toe aan beoordelaars
+        delete: Verwijder
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Beoordelaars: zoek deelnemers'
       summary:
-        title: Valuator summary for investment projects
-        valuator_name: Valuator
-        finished_and_feasible_count: Finished and feasible
-        finished_and_unfeasible_count: Finished and unfeasible
-        finished_count: Finished
-        in_evaluation_count: In evaluation
-        total_count: Total
-        cost: Cost
+        title: Samenvatting beoordeling voor begrotingsvoorstellen
+        valuator_name: beoordelaar
+        finished_and_feasible_count: Afgerond en haalbaar
+        finished_and_unfeasible_count: Afgerond en onhaalbaar
+        finished_count: Afgerond
+        in_evaluation_count: In overweging
+        total_count: Totaal
+        cost: Kosten
+      form:
+        edit_title: "Beoordelaars: Bewerk Beoordelaar"
+        update: "Sla op"
+        updated: "Beoordelaar aangepast"
+      show:
+        description: "Beschrijving"
+        email: "E-mail"
+        group: "Groep"
+        no_description: "Geen beschrijving"
+        no_group: "Geen groep"
+    valuator_groups:
+      index:
+        title: "Beoordelingsgroepen"
+        new: "Nieuwe Beoordelingsgroep"
+        name: "Naam"
+        members: "Leden"
+        no_groups: "Er zijn geen beoordelingsgroepen"
+      show:
+        title: "Beoordelingsgroep: %{group}"
+        no_valuators: "Er zijn geen beoordelaars toegewezen aan deze groep"
+      form:
+        name: "Groep naam"
+        new: "Nieuwe Beoordelingsgroep"
+        edit: "Bewerk Beoordelingsgroep"
     poll_officers:
       index:
-        title: Poll officers
+        title: Peiling beambten
       officer:
-        add: Add
-        delete: Delete position
-        name: Name
+        add: Voeg toe
+        delete: Verwijder positie
+        name: Naam
         email: Email
-        entry_name: officer
+        entry_name: beambte
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        email_placeholder: Zoek gebruiker via email
+        search: Zoek
+        user_not_found: Gebruiker niet gevonden
     poll_officer_assignments:
-      flash:
-        destroy: "Officing shift removed"
-        create: "Officing shift added"
-        error_destroy: "An error ocurred when removing officer assignment"
-        error_create: "An error ocurred when adding officer assignment"
       index:
-        officers_title: "List of officers"
-        no_officers: "There are no officers assigned to this poll."
-        table_name: "Name"
+        officers_title: "Lijst van beambten"
+        no_officers: "Er zijn geen beambten aangesteld voor deze peiling."
+        table_name: "Naam"
         table_email: "Email"
-        add_officer_assignments: "Add shifts as officer"
-        edit_officer_assignments: "Edit officing shifts"
       by_officer:
-        new_assignment: "New shift"
-        date: "Date"
-        booth: "Booth"
-        assignment: "Assignment"
-        select_date: "Select day"
-        select_booth: "Select booth"
-        add_assignment: "Add shift"
-        remove_assignment: "Remove"
-        assignments: "Officing shifts in this poll"
-        no_assignments: "This user has no officing shifts in this poll."
-        recounts: "Daily recounts"
-        recount: "Daily recount (by officer)"
-        total_recounts: "Final recounts"
-        total_recount: "Final recount (by officer)"
-    poll_booth_assignments:
+        date: "Datum"
+        booth: "Stemhokje"
+        assignments: "Diensten in deze peiling"
+        no_assignments: "Deze gebruiker heeft geen dienst in deze peiling."
+    poll_shifts:
+      new:
+        add_shift: "Dienst toevoegen"
+        shift: "Toewijzing"
+        shifts: "Diensten in dit stemhokje"
+        date: "Datum"
+        task: "Taak"
+        edit_shifts: Bewerk diensten
+        new_shift: "Nieuwe Dienst"
+        no_shifts: "Dit stemhokje heeft geen diensten"
+        officer: "Official"
+        remove_shift: "Verwijder"
+        search_officer_button: Zoek
+        search_officer_placeholder: Zoek official
+        search_officer_text: Zoek een official voor een nieuwe dienst
+        select_date: "Selecteer dag"
+        no_voting_days: "Dagen waarop niet wordt gestemd"
+        select_task: "Selecteer taak"
+        table_shift: "Dienst"
+        table_email: "E-mail"
+        table_name: "Naam"
       flash:
-        destroy: "Booth not assigned anymore"
-        create: "Booth assigned"
-        error_destroy: "An error ocurred when removing booth assignment"
-        error_create: "An error ocurred when assigning booth to the poll"
+        create: "Dienst toegevoegd"
+        destroy: "Dienst verwijderd"
+        date_missing: "Datum niet gekozen"
+      vote_collection: Verzamel stemmen
+      recount_scrutiny: Hertelling & onderzoek
+    booth_assignments:
+      manage_assignments: Bewerk toewijzingen
+      manage:
+        assignments_list: "Toewijzingen voor peiling '%{poll}'"
+        status:
+          assign_status: Toewijzing
+          assigned: Toegewezen
+          unassigned: Niet toegewezen
+        actions:
+          assign: Wijs stemhokje toe
+          unassign: Verwijder toewijzing
+    poll_booth_assignments:
+      alert:
+        shifts: "Er zijn diensten verbonden aan dit stemhokje. Als u de toewijzing verwijdert, worden de diensten ook verwijderd. Doorgaan?"
+      flash:
+        destroy: "Stemhokje niet meer toegewezen"
+        create: "Stemhokje toegewezen"
+        error_destroy: "Fout bij verwijderen toewijzing"
+        error_create: "Fout bij toewijzing"
       show:
-        location: "Location"
-        officers: "Officers"
-        officers_list: "Officer list for this booth"
-        no_officers: "There are no officers for this booth"
-        recounts: "Recounts"
-        recounts_list: "Recount list for this booth"
-        no_recounts: "There are not daily recounts of this booth yet"
-        date: "Date"
-        count_by_officer: "Daily recount (by officer)"
-        total_count: "Final recount (by officer)"
-        count_by_system:  "Votes (automatic)"
+        location: "Lokatie"
+        officers: "Beambten"
+        officers_list: "Lijst van beambten voor dit stemhokje"
+        no_officers: "Er zijn geen beambten voor dit stemhokje"
+        recounts: "Hertellingen"
+        recounts_list: "Lijst hertellingen voor dit stemhokje"
+        results: "Resultaten"
+        date: "Datum"
+        count_final: "Laatste hertelling (door official)"
+        count_by_system: "Stemmen (automatisch)"
+        total_system: Totaal stemmen (automatisch)
       index:
-        booths_title: "List of booths"
-        no_booths: "There are no booths assigned to this poll."
-        table_name: "Name"
-        table_location: "Location"
-        table_assignment: "Assignment"
-        remove_booth: "Remove booth from poll"
-        add_booth: "Assign booth"
+        booths_title: "Lijst stemhokjes"
+        no_booths: "Er zijn geen stemhokjes toegewezen aan deze peiling"
+        table_name: "Naam"
+        table_location: "Lokatie"
     polls:
       index:
-        title: "List of polls"
-        no_polls: "There are no polls."
-        create: "Create poll"
-        name: "Name"
-        dates: "Dates"
+        title: "Lijst van peilingen"
+        no_polls: "Er zijn geen peilingen."
+        create: "Nieuwe peiling"
+        name: "Naam"
+        dates: "Datums"
+        geozone_restricted: "Beperkt tot buurten"
       new:
-        title: "New poll"
-        submit_button: "Create poll"
+        title: "Nieuwe peiling"
+        show_results_and_stats: "Toon resultaten en statistieken"
+        show_results: "Toon resultaten"
+        show_stats: "Toon statistieken"
+        results_and_stats_reminder: "Als u deze vakjes selecteert, zijn de resultaten en / of statistieken van deze poll openbaar beschikbaar en ziet elke deelnemer ze."
+        submit_button: "Nieuwe peiling"
       edit:
-        title: "Edit poll"
-        submit_button: "Update poll"
+        title: "Bewerk peiling"
+        submit_button: "Sla op"
       show:
-        questions_tab: Questions
-        booths_tab: Booths
-        officers_tab: Officers
-        recounts_tab: Recounting
-        results_tab: Results
-        no_questions: "There are no questions assigned to this poll."
-        questions_title: "List of questions"
-        remove_question: "Remove question from poll"
-        add_question: "Include question"
-        table_title: "Title"
-        table_assignment: "Assignment"
-        table_name: "Name"
+        questions_tab: Vragen
+        booths_tab: Stemhokjes
+        officers_tab: Beambten
+        recounts_tab: Hertellen
+        results_tab: Resultaten
+        no_questions: "Er zijn geen vragen in deze peiling."
+        questions_title: "Lijst van vragen"
+        table_title: "Titel"
       flash:
-        question_added: "Question added to this poll"
-        error_on_question_added: "Question could not be assigned to this poll"
-        question_removed: "Question removed from this poll"
-        error_on_question_removed: "Question could not be removed from this poll"
+        question_added: "Vragen in deze peiling"
+        error_on_question_added: "Vraag kon niet worden toegevoegd aan peiling"
     questions:
       index:
-        title: "Questions"
-        create: "Create question"
-        no_questions: "There are no questions."
-        filter_poll: Filter by Poll
-        select_poll: Select Poll
-        questions_tab: "Questions"
-        successful_proposals_tab: "Successful proposals"
-        create_question: "Create question"
-        table_proposal: "Proposal"
-        table_question: "Question"
+        title: "Vragen"
+        create: "Nieuwe vraag"
+        no_questions: "Geen vragen."
+        filter_poll: Filter op peiling
+        select_poll: Selecteer peiling
+        questions_tab: "Vragen"
+        successful_proposals_tab: "Successvolle voorstellen"
+        create_question: "Nieuwe vraag"
+        table_proposal: "Voorstel"
+        table_question: "Vraag"
       edit:
-        title: "Edit Question"
+        title: "Bewerk vraag"
       new:
-        title: "Create Question"
-        poll_label: "Poll"
-        valid_answers_note: "Enter the answers separated by commas (,)"
+        title: "Nieuwe vraag"
+        poll_label: "peiling"
+      answers:
+        images:
+          add_image: "Voeg afbeelding toe"
+          save_image: "Sla afbeelding op"
       show:
-        proposal: Original proposal
-        author: Author
-        title: Title
-        valid_answers: Valid answers
-        description: Description
-        preview: View on website
+        proposal: Oorspronkelijk voorstel
+        author: Schrijver
+        question: Vraag
+        edit_question: Bewerk vraag
+        valid_answers: Geldige antwoorden
+        add_answer: Voeg antwoord toe
+        video_url: Externe video
+        answers:
+          title: Antwoord
+          description: Beschrijving
+          videos: Videos
+          video_list: Lijst video's
+          images: Afbeeldingen
+          images_list: Lijst afbeeldingen
+          documents: Documenten
+          documents_list: Lijst documenten
+          document_title: Titel
+          document_actions: Acties
+    answers:
+      new:
+        title: Nieuw antwoord
+      show:
+        title: Titel
+        description: Beschrijving
+        images: Afbeeldingen
+        images_list: Lijst afbeeldingen
+        edit: Bewerk antwoord
+      edit:
+        title: Bewerk antwoord
+      videos:
+        index:
+          title: Videos
+          add_video: Voeg video toe
+          video_title: Titel
+          video_url: Externe video
+        new:
+          title: Nieuwe video
+        edit:
+          title: Bewerk video
     recounts:
       index:
-        title: "Recounts"
-        no_recounts: "There is nothing to be recounted"
-        table_booth_name: "Booth"
-        table_recounts: "Accumulated daily recounts (by officer)"
-        table_total_recount: "Final recount (by officer)"
-        table_system_count: "Votes (automatic)"
+        title: "Hertellingen"
+        no_recounts: "Er valt niets te hertellen"
+        table_booth_name: "Stemhokje"
+        table_total_recount: "Uiteindelijke hertelling (door beambte)"
+        table_system_count: "Stemmen (automatisch)"
     results:
       index:
-        title: "Results"
-        no_results: "There are no results"
-        table_whites: "Blank ballots"
-        table_nulls: "Invalid ballots"
-        table_answer: Answer
-        table_votes: Votes
+        title: "Resultaten"
+        no_results: "Er zijn geen resultaten"
+      result:
+        table_whites: "Blanco stemmen"
+        table_nulls: "Ongeldige stemmen"
+        table_total: "Totaal stemmen"
+        table_answer: Antwoord
+        table_votes: Stemmen
+      results_by_booth:
+        booth: Stemhokje
+        results: Resultaten
+        see_results: Toon resultaten
+        title: "Resultaten per stemhokje"
     booths:
       index:
-        title: "List of booths"
-        no_booths: "There are no booths."
-        add_booth: "Add booth"
-        name: "Name"
-        location: "Location"
+        title: "Lijst van stemhokjes"
+        no_booths: "Er zijn geen stemhokjes."
+        add_booth: "Voeg stemhokje toe"
+        name: "Naam"
+        location: "Lokatie"
+        no_location: "Geen Locatie"
       new:
-        title: "New booth"
-        name: "Name"
-        location: "Location"
-        submit_button: "Create booth"
+        title: "Nieuw stemhokje"
+        name: "Naam"
+        location: "Lokatie"
+        submit_button: "Nieuw stemhokje"
       edit:
-        title: "Edit booth"
-        submit_button: "Update booth"
+        title: "Bewerk stemhokje"
+        submit_button: "Sla op"
       show:
-        location: "Location"
+        location: "Lokatie"
+      booth:
+        shifts: "Bewerk diensten"
+        edit: "Bewerk stemhokje"
     officials:
       edit:
-        destroy: Remove 'Official' status
-        title: 'Officials: Edit user'
+        destroy: Verwijder 'beambte' status
+        title: 'Beambten: Bewerk gebruiker'
       flash:
-        official_destroyed: 'Details saved: the user is no longer an official'
-        official_updated: Details of official saved
+        official_destroyed: 'Details opgeslagen: de gebruiker is niet langer beambte'
+        official_updated: Details van beambte opgeslagen
       index:
-        title: Officials
-      level_0: Not official
-      level_1: Level 1
-      level_2: Level 2
-      level_3: Level 3
-      level_4: Level 4
-      level_5: Level 5
+        title: Beambten
+        no_officials: Er zijn geen officials.
+        name: Naam
+        official_position: Official positie
+        official_level: Niveau
+      level_0: Geen beambte
+      level_1: Niveau 1
+      level_2: Niveau 2
+      level_3: Niveau 3
+      level_4: Niveau 4
+      level_5: Niveau 5
       search:
-        edit_official: Edit official
-        make_official: Make official
-        title: 'Official positions: User search'
+        edit_official: Bewerk beambte
+        make_official: Maak beambte
+        title: 'Beambten: zoek gebruiker'
+        no_results: Geen officials gevonden.
     organizations:
       index:
         filter: Filter
         filters:
-          all: All
-          pending: Pending
-          rejected: Rejected
-          verified: Verified
+          all: Alle
+          pending: In afwachting
+          rejected: Afgewezen
+          verified: Geverifierd
         hidden_count_html:
-          one: There is also <strong>one organisation</strong> with no users or with a hidden user.
-          other: There are <strong>%{count} organisations</strong> with no users or with a hidden user.
-        reject: Reject
-        rejected: Rejected
-        search: Search
-        search_placeholder: Name, email or phone number
-        title: Organisations
-        verified: Verified
-        verify: Verify
+          one: Er is <strong>een organisatie</strong> zonder gebruikers of met verborgen gebruikers.
+          other: Er zijn <strong>%{count} organisaties</strong> zonder gebruikers of met verborgen gebruikers.
+        name: Naam
+        email: E-mail
+        phone_number: Telefoonnummer
+        responsible_name: Verantwoordelijk
+        status: Status
+        no_organizations: Er zijn geen organisaties.
+        reject: Wijs af
+        rejected: Afgewezen
+        search: Zoek
+        search_placeholder: Naam, email of telefoonnummer
+        title: Organisaties
+        verified: Geverifieerd
+        verify: Verifieer
+        pending: In afwachting
       search:
-        title: Search Organisations
+        title: Zoek Organisaties
+        no_results: Geen organisaties gevonden.
     proposals:
       index:
         filter: Filter
         filters:
-          all: All
-          with_confirmed_hide: Confirmed
-          without_confirmed_hide: Pending
-        title: Hidden proposals
-    settings:
-      flash:
-        updated: Value updated
-      index:
-        banners: Banners
-        banner_imgs: Banner images
-        title: Configuration settings
-        update_setting: Update
-        feature_flags: Features
-        features:
-          enabled: "Feature enabled"
-          disabled: "Feature disabled"
-          enable: "Enable"
-          disable: "Disable"
-    shared:
-      booths_search:
-        button: Search
-        placeholder: Search booth by name
-      poll_officers_search:
-        button: Search
-        placeholder: Search poll officers
-      poll_questions_search:
-        button: Search
-        placeholder: Search poll questions
-      proposal_search:
-        button: Search
-        placeholder: Search proposals by title, code, description or question
-      spending_proposal_search:
-        button: Search
-        placeholder: Search spending proposals by title or description
-      user_search:
-        button: Search
-        placeholder: Search user by name or email'
-      search_results: "Search results"
-      no_search_results: "No results found."
-    spending_proposals:
-      index:
-        geozone_filter_all: All zones
-        administrator_filter_all: All administrators
-        valuator_filter_all: All valuators
-        tags_filter_all: All tags
-        filters:
-          valuation_open: Open
-          without_admin: Without assigned admin
-          managed: Managed
-          valuating: Under valuation
-          valuation_finished: Valuation finished
-          all: All
-        title: Investment projects for participatory budgeting
-        assigned_admin: Assigned administrator
-        no_admin_assigned: No admin assigned
-        no_valuators_assigned: No valuators assigned
-        summary_link: "Investment project summary"
-        valuator_summary_link: "Valuator summary"
-        feasibility:
-          feasible: "Feasible (%{price})"
-          not_feasible: "Not feasible"
-          undefined: "Undefined"
-      show:
-        assigned_admin: Assigned administrator
-        assigned_valuators: Assigned valuators
-        back: Back
-        classification: Clasification
-        heading: "Investment project %{id}"
-        edit: Edit
-        edit_classification: Edit classification
-        association_name: Association
-        by: By
-        sent: Sent
-        geozone: Scope
-        dossier: Dossier
-        edit_dossier: Edit dossier
-        tags: Tags
-        undefined: Undefined
-      edit:
-        classification: Clasification
-        assigned_valuators: Valuators
-        submit_button: Update
-        tags: Tags
-        tags_placeholder: "Write the tags you want separated by commas (,)"
-        undefined: Undefined
-      summary:
-        title: Summary for investment projects
-        title_proposals_with_supports: Summary for investment projects with supports
-        geozone_name: Scope
-        finished_and_feasible_count: Finished and feasible
-        finished_and_unfeasible_count: Finished and unfeasible
-        finished_count: Finished
-        in_evaluation_count: In evaluation
-        total_count: Total
-        cost_for_geozone: Cost
-    geozones:
-      index:
-        title: Geozone
-        create: Create geozone
-        edit: Edit
-        delete: Delete
-      geozone:
-        name: Name
-        external_code: External code
-        census_code: Census code
-        coordinates: Coordinates
-      errors:
-        form:
-          error:
-            one: "prevented this geozone from being saved"
-            other: 'prevented this geozone from being saved'
-      edit:
-        form:
-          submit_button: Save changes
-        editing: Editing geozone
-        back: Go back
-      new:
-        back: Go back
-        creating: Create district
-      delete:
-        success: Geozone successfully deleted
-        error: This geozone can't be deleted since there are elements attached to it
-    signature_sheets:
-      author: Author
-      created_at: Creation date
-      name: Name
-      no_signature_sheets: "There are not signature_sheets"
-      index:
-        title: Signature sheets
-        new: New signature sheets
-      new:
-        title: New signature sheets
-        document_numbers_note: "Write the numbers separated by commas (,)"
-        submit: Create signature sheet
-      show:
-        created_at: Created
-        author: Author
-        documents: Documents
-        document_count: "Number of documents:"
-        verified:
-          one: "There is %{count} valid signature"
-          other: "There are %{count} valid signatures"
-        unverified:
-          one: "There is %{count} invalid signature"
-          other: "There are %{count} invalid signatures"
-        unverified_error: (Not verified by Census)
-        loading: "There are still signatures that are being verified by the Census, please refresh the page in a few moments"
-    stats:
-      show:
-        stats_title: Stats
-        summary:
-          comment_votes: Comment votes
-          comments: Comments
-          debate_votes: Debate votes
-          debates: Debates
-          proposal_votes: Proposal votes
-          proposals: Proposals
-          spending_proposals: Spending Proposals
-          unverified_users: Unverified users
-          user_level_three: Level three users
-          user_level_two: Level two users
-          users: Total users
-          verified_users: Verified users
-          verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
-          visits: Visits
-          votes: Total votes
-        spending_proposals_title: Spending Proposals
-        visits_title: Visits
-        direct_messages: Direct messages
-        proposal_notifications: Proposal notifications
-        incomplete_verifications: Incomplete verifications
-      direct_messages:
-        title: Direct messages
-        total: Total
-        users_who_have_sent_message: Users that have sent a private message
-      proposal_notifications:
-        title: Proposal notifications
-        total: Total
-        proposals_with_notifications: Proposals with notifications
-    tags:
-      create: Create Topic
-      destroy: Destroy Topic
-      index:
-        add_tag: Add a new proposal topic
-        title: Proposal topics
-      name:
-        placeholder: Type the name of the topic
-    users:
+          all: Alle
+          with_confirmed_hide: Bevestingd
+          without_confirmed_hide: In afwachting
+        title: Verborgen voorstellen
+        no_hidden_proposals: Er zijn geen verborgen voorstellen.
+    proposal_notifications:
       index:
         filter: Filter
         filters:
-          all: All
-          with_confirmed_hide: Confirmed
-          without_confirmed_hide: Pending
-        title: Hidden users
+          all: Alle
+          with_confirmed_hide: Bevestigd
+          without_confirmed_hide: In afwachting
+        title: Verborgen notificaties
+        no_hidden_proposals: Er is geen verborgen meldingen.
+    settings:
+      flash:
+        updated: Waarde aangepast
+      index:
+        banners: Banieren
+        banner_imgs: Banier beelden
+        no_banners_images: Geen banner afbeeldingen
+        no_banners_styles: Geen banner stijlen
+        title: Instellingen
+        update_setting: Sla op
+        feature_flags: Instellingen
+        features:
+          enabled: "Instelling ingeschakeld"
+          disabled: "Instellingen uitgeschakeld"
+          enable: "Aan"
+          disable: "Uit"
+        map:
+          title: Kaart instellingen
+          help: Hier kunt u aanpassen hoe de kaart aan deelnemers wordt getoond. Sleep de kaartmarkering of klik ergens op de kaart, stel het gewenste zoomniveau in en klik "Pas aan".
+          flash:
+            update: Instellingen opgeslagen.
+          form:
+            submit: Pas aan
+      setting: Functie
+      setting_actions: Acties
+      setting_name: Instelling
+      setting_status: Status
+      setting_value: Waarde
+      no_description: "Geen beschrijving"
+    shared:
+      booths_search:
+        button: Zoek
+        placeholder: Zoek stemhokje op naam
+      poll_officers_search:
+        button: Zoek
+        placeholder: Zoek beambten
+      poll_questions_search:
+        button: Zoek
+        placeholder: zoek vragen
+      proposal_search:
+        button: Zoek
+        placeholder: Zoek voorstellen op titel, code, omschrijving of vraag
+      spending_proposal_search:
+        button: Zoek
+        placeholder: Zoek budgetvoorstellen op titel of omschrijving
+      user_search:
+        button: Zoek
+        placeholder: Zoek gebruiker op naam of email
+      search_results: "Zoek resultaten"
+      no_search_results: "Geen resultaten gevonden."
+      actions: Acties
+      title: Titel
+      description: Beschrijving
+      image: Afbeelding
+      show_image: Toon afbeelding
+      moderated_content: "Controleer de inhoud die door de moderators is aangemaakt en bevestig wanneer dit correct is gedaan."
+      view: Weergave
+      proposal: Voorstel
+      author: Auteur
+      content: Inhoud
+      created_at: Aangemaakt op
+    spending_proposals:
+      index:
+        geozone_filter_all: Alle zones
+        administrator_filter_all: Alle beheerders
+        valuator_filter_all: Alle beoordelaars
+        tags_filter_all: Alle labels
+        filters:
+          valuation_open: Open
+          without_admin: Zonder toegewezen beheerder
+          managed: Beheerd
+          valuating: Onder beoordeling
+          valuation_finished: Beoordeling beëindigd
+          all: Alle
+        title: Bestemmingen voor burgerbegroting
+        assigned_admin: Toegewezen beheerder
+        no_admin_assigned: Geen beheerder toegewezen
+        no_valuators_assigned: Geen beoordelaar toegewezen
+        summary_link: "Samenvatting bestemming"
+        valuator_summary_link: "Samenvatting beoordeling"
+        feasibility:
+          feasible: "Haalbaar (%{price})"
+          not_feasible: "Onhaalbaar"
+          undefined: "Niet gedefinieerd"
       show:
-        email: 'Email:'
-        hidden_at: 'Hidden at:'
-        registered_at: 'Registered at:'
-        title: Activity of user (%{user})
+        assigned_admin: Toegewezen beheerder
+        assigned_valuators: Toegewezen beoordelaars
+        back: Terug
+        classification: Clasificatie
+        heading: "Bestemming %{id}"
+        edit: Bewerk
+        edit_classification: Bewerk classificatie
+        association_name: Associatie
+        by: Door
+        sent: Verzonden
+        geozone: Scope
+        dossier: Dossier
+        edit_dossier: Bewerk dossier
+        tags: Labels
+        undefined: Niet gedefiniëerd
+      edit:
+        classification: Clasificatie
+        assigned_valuators: beoordelaars
+        submit_button: Sla op
+        tags: Labels
+        tags_placeholder: "Voeg labels toe, gescheiden door komma's (,)"
+        undefined: Niet gedefiniëerd
+      summary:
+        title: Samenvatting bestemmigen
+        title_proposals_with_supports: Samenvatting bestemmigen met steunbetuigingen
+        geozone_name: Scope
+        finished_and_feasible_count: Afgerond en haalbaar
+        finished_and_unfeasible_count: Afgerond en onhaalbaar
+        finished_count: Afgerond
+        in_evaluation_count: In overweging
+        total_count: Totaal
+        cost_for_geozone: Kosten
+    geozones:
+      index:
+        title: Geozone
+        create: Nieuwe geozone
+        edit: Bewerk
+        delete: Verwijder
+      geozone:
+        name: Naam
+        external_code: Externe code
+        census_code: Administratieve code
+        coordinates: Coördinaten
+      errors:
+        form:
+          error:
+            one: "verhinderde dat deze geozone werd opgeslagen"
+            other: 'verhinderde dat deze geozone werd opgeslagen'
+      edit:
+        form:
+          submit_button: Sla op
+        editing: Geozone bewerken
+        back: Terug
+      new:
+        back: Terug
+        creating: Nieuw district
+      delete:
+        success: Geozone verwijderd
+        error: Deze geozone kan niet worden verwijderd omdat er elementen aan verbonden zijn
+    signature_sheets:
+      author: Schrijver
+      created_at: Datum
+      name: Naam
+      no_signature_sheets: "Er zijn geen handtekeninglijsten"
+      index:
+        title: Handtekeninglijsten
+        new: Niewe handtekeninglijst
+      new:
+        title: Niewe Handtekeninglijst
+        document_numbers_note: "Nummers, gescheiden door komma's (,)"
+        submit: Niewe Handtekeninglijst
+      show:
+        created_at: Datum
+        author: Schrijver
+        documents: Documenten
+        document_count: "Aantal documenten:"
+        verified:
+          one: "Er is een geldige handtekening"
+          other: "Er zijn %{count} geldige handtekeningen"
+        unverified:
+          one: "Er is een ongeldige handtekening"
+          other: "Er zijn %{count} ongeldige handtekeningen"
+        unverified_error: (niet geverifierd door basisadministratie)
+        loading: "Handtekeningen worden nog geverifieerd; ververs de pagina in een minuutje"
+    stats:
+      show:
+        stats_title: Statistieken
+        summary:
+          comment_votes: Stemmen commentaar
+          comments: Commentaar
+          debate_votes: Stemmen debat
+          debates: Debat
+          proposal_votes: Stemmnen Voorstel
+          proposals: Voorstel
+          budgets: Open budgetten
+          budget_investments: Begrotingsvoorstellen
+          spending_proposals: Stemmen Burgerbegroting
+          unverified_users: Niet-geverifieerde gebruikers
+          user_level_three: Gebruikers niveau drie
+          user_level_two: Gebruikers niveau twee
+          users: Totaal gebruikers
+          verified_users: Geverifieerde gebruikers
+          verified_users_who_didnt_vote_proposals: Geverifieerde gebruikers die niet gestemd hebben op voorstellen
+          visits: Bezoeken
+          votes: Totaal stemmen
+        spending_proposals_title: Budger voorstellen
+        budgets_title: Burgerbegroting
+        visits_title: Bezoeken
+        direct_messages: Directe berichten
+        proposal_notifications: Voorstel notificaties
+        incomplete_verifications: Onvolledige verificaties
+        polls: Peilingen
+      direct_messages:
+        title: Directe berichten
+        total: Totaal
+        users_who_have_sent_message: Gebruikers die privéberichten stuurden
+      proposal_notifications:
+        title: Voorstel notificaties
+        total: Totaal
+        proposals_with_notifications: Voorstellen met notificaties
+      polls:
+        title: Peiling Stats
+        all: Peilingen
+        web_participants: Web deelnemers
+        total_participants: Aantal deelnemers
+        poll_questions: "Vragen van de peiling: %{poll}"
+        table:
+          poll_name: Peiling
+          question_name: Vraag
+          origin_web: Web deelnemers
+          origin_total: Aantal deelnemers
+    tags:
+      create: Nieuw Onderwerp
+      destroy: Verwijder Onderwerp
+      index:
+        add_tag: Voeg nieuw voorstel onderwerp toe
+        title: Voorstel Onderwerpen
+        topic: Onderwerp
+        help: "Wanneer een gebruiker een voorstel maakt, worden de volgende onderwerpen voorgesteld als standaard tags."
+      name:
+        placeholder: Type the naam van het onderwerp
+    users:
+      columns:
+        name: Naam
+        email: E-mail
+        document_number: Documentnummer
+        roles: Rollen
+        verification_level: Verificatieniveau
+      index:
+        title: Verborgen gebruikers
+        no_users: Er zijn geen deelnemers.
+      search:
+        placeholder: Zoek deelnemer per e-mail, naam of documentnummer
+        search: Zoek
     verifications:
       index:
-        phone_not_given: Phone not given
-        sms_code_not_confirmed: Has not confirmed the sms code
-        title: Incomplete verifications
+        phone_not_given: Geen tel. nummer opgegeven
+        sms_code_not_confirmed: Heeft de sms niet bevestigd
+        title: Onvolledige verificaties
     site_customization:
       content_blocks:
-        form:
-          content_blocks_information: Information about content blocks
-          content_block_about: You can create HTML content blocks to be inserted in the header or the footer of your Consul.
-          content_block_top_links_html: "<strong>Header blocks (top_links)</strong> are blocks of links that must have this format:"
-          content_block_footer_html: "<strong>Footer blocks</strong> can have any format and can be used to insert Javascript, CSS or custom HTML."
+        information: Informatie over inhoudsblokken
+        about: You can create HTML content blocks to be inserted in the header or the footer of your Consul.
+        top_links_html: "<strong>header blokken (top_links)</strong> zijn blokken van links die deze indeling moeten hebben:"
+        footer_html: "<strong>voettekst blokken</strong> kan elk formaat hebben en kan worden gebruikt voor het invoegen van Javascript, CSS of een aangepaste HTML-code."
+        no_blocks: "Er zijn geen inhoudsblokken."
         create:
-          notice: Content block created successfully
-          error: Content block couldn't be created
+          notice: Content paragraaf toegevoegd
+          error: Content paragraaf kon niet worden toegevoegd
         update:
-          notice: Content block updated successfully
-          error: Content block couldn't be updated
+          notice: Content paragraaf aangepast
+          error: Content paragraaf kon niet worden aangepast
         destroy:
-          notice: Content block deleted successfully
+          notice: Content paragraaf verwijderd
         edit:
-          title: Editing content block
+          title: Bewerk ontent paragraaf
         errors:
           form:
-            error: Error
+            error: Fout
         index:
-          create: Create new content block
-          delete: Delete block
-          title: Content blocks
+          create: Nieuwe content paragraaf
+          delete: Verwijder content paragraaf
+          title: Content Paragrafen
         new:
-          title: Create new content block
+          title: Nieuwe content paragraaf
         content_block:
-          body: Body
-          name: Name
+          body: Tekst
+          name: Naam
+          names:
+            top_links: Top links
+            footer: Voettekst
+            subnavigation_left: Hoofd navigatie links
+            subnavigation_right: Hoofd navigatie rechts
       images:
         index:
-          title: Custom images
-          update: Update
-          delete: Delete
-          image: Image
+          title: Foto's en Beeld
+          update: Sla op
+          delete: Verwijder
+          image: Beeld
         update:
-          notice: Image updated successfully
-          error: Image couldn't be updated
+          notice: Afbeelding toegevoegd
+          error: Afbeelding kon niet worden opgeslagen
         destroy:
-          notice: Image deleted successfully
-          error: Image couldn't be deleted
+          notice: Afbeelding verwijderd
+          error: Afbeelding kon niet worden verwijderd
       pages:
         create:
-          notice: Page created successfully
-          error: Page couldn't be created
+          notice: Pagina toegevoegd
+          error: Pagina kon niet worden opgeslagen
         update:
-          notice: Page updated successfully
-          error: Page couldn't be updated
+          notice: Pagina updated successfully
+          error: Pagina kon niet worden opgeslagen
         destroy:
-          notice: Page deleted successfully
+          notice: Pagina verwijderd
         edit:
-          title: Editing %{page_title}
+          title: '%{page_title} aanpassen'
         errors:
           form:
-            error: Error
+            error: Fout
         form:
-          options: Options
+          options: Opties
         index:
-          create: Create new page
-          delete: Delete page
-          title: Custom Pages
-          see_page: See page
+          create: Nieuwe pagina
+          delete: Verwijder pagina
+          title: Aangepaste Pagina's
+          see_page: Zie pagina
         new:
-          title: Create new custom page
+          title: Nieuwe Aangepaste Pagina
         page:
-          created_at: Created at
+          created_at: Aangemaakt op
           status: Status
-          title: Title
-          updated_at: Updated at
-          status_draft: Draft
-          status_published: Published
-          locale: Taal
+          updated_at: Bewerkt op
+          status_draft: Concept
+          status_published: Gepubliceerd
+          title: Titel
+    homepage:
+      title: Homepage
+      description: De actieve modules worden weergegeven op de homepage in dezelfde volgorde als hier.
+      header_title: Koptekst
+      no_header: Er is geen header.
+      create_header: Koptekst maken
+      cards_title: Kaarten
+      create_card: Kaart aanmaken
+      no_cards: Er zijn geen tegels.
+      cards:
+        title: Titel
+        description: Beschrijving
+        link_text: Tekst link
+        link_url: URL link
+      feeds:
+        proposals: Voorstellen
+        debates: Discussies
+        processes: Processen
+      new:
+        header_title: Nieuwe header
+        submit_header: Koptekst maken
+        card_title: Nieuwe kaart
+        submit_card: Kaart aanmaken
+      edit:
+        header_title: Header bewerken
+        submit_header: Bewaar koptekst
+        card_title: Kaart bewerken
+        submit_card: Kaart opslaan
+    translations:
+      remove_language: Verwijder taal
+      add_language: Taal toevoegen

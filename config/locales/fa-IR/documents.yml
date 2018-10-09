@@ -1,0 +1,23 @@
+fa:
+  documents:
+    title: اسناد
+    max_documents_allowed_reached_html: شما به حداکثر تعداد اسناد مجاز دسترسی داشته اید! <strong> قبل از اینکه بتوانید  سند دیگری را بارگذاری کنید باید یک مورد را حذف کنید. </ strong>
+    form:
+      title: اسناد
+      title_placeholder: افزودن عنوان توصیفی برای سند 
+      attachment_label: انتخاب سند 
+      delete_button: حذف سند 
+      note: "شما می توانید حداکثر   %{max_documents_allowed} اسناد از انواع مطالب و محتوا  آپلود کنید: %{accepted_content_types}تا %{max_file_size} مگابایت در هر فایل."
+      add_new_document: افزودن  سند  جدید
+    actions:
+      destroy:
+        notice: سند با موفقیت حذف شد.
+        alert: نمی توان تصویر را از بین برد.
+        confirm: آیا مطمئن هستید که می خواهید تصویر را  حذف کنید؟ این دستور قابل بازگشت نیست!
+    buttons:
+      download_document: دانلود فایل
+      destroy_document: از بین بردن سند
+    errors:
+      messages:
+        in_between: باید بین %{min} و %{max} باشد.
+        wrong_content_type: نوع محتوا %{content_type} با هیچ یک از انواع مطالب و محتوا پذیرفته شده %{accepted_content_types} مطابقت ندارد
