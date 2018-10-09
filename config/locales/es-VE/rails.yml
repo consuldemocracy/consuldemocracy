@@ -49,9 +49,9 @@ es-VE:
       - Noviembre
       - Diciembre
     order:
-      - ':año'
-      - :mes
-      - ':día'
+      - :day
+      - :month
+      - :year
   datetime:
     distance_in_words:
       about_x_hours:
