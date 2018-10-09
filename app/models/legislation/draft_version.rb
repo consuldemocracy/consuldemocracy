@@ -10,12 +10,16 @@ class Legislation::DraftVersion < ActiveRecord::Base
   translates :body_html, touch: true
   translates :toc_html,  touch: true
   globalize_accessors
+  accepts_nested_attributes_for :translations, allow_destroy: true
 
   belongs_to :process, class_name: 'Legislation::Process', foreign_key: 'legislation_process_id'
   has_many :annotations, class_name: 'Legislation::Annotation', foreign_key: 'legislation_draft_version_id', dependent: :destroy
 
-  validates :title, presence: true
-  validates :body, presence: true
+  translation_class.instance_eval do
+    validates :title, presence: true
+    validates :body, presence: true
+  end
+
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
 
   scope :published, -> { where(status: 'published').order('id DESC') }

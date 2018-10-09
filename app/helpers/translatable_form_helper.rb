@@ -10,11 +10,6 @@ module TranslatableFormHelper
       class: "#{options[:class]} js-globalize-attribute".strip,
       style: "#{options[:style]} #{display_translation?(locale)}".strip,
       data:  options.fetch(:data, {}).merge(locale: locale),
-      label_options: {
-        class: "#{options.dig(:label_options, :class)} js-globalize-attribute".strip,
-        style: "#{options.dig(:label_options, :style)} #{display_translation?(locale)}".strip,
-        data:  (options.dig(:label_options, :data) || {}) .merge(locale: locale)
-      }
     )
   end
 
@@ -56,14 +51,43 @@ module TranslatableFormHelper
   class TranslationsFieldsBuilder < FoundationRailsHelper::FormBuilder
     %i[text_field text_area cktext_area].each do |field|
       define_method field do |attribute, options = {}|
-        super attribute, translations_options(options)
+        final_options = translations_options(options)
+
+        custom_label(attribute, final_options[:label], final_options[:label_options]) +
+          help_text(final_options[:hint]) +
+          super(attribute, final_options.merge(label: false, hint: false))
       end
     end
 
+    def locale
+      @object.locale
+    end
+
+    def label(attribute, text = nil, options = {})
+      label_options = options.merge(
+        class: "#{options[:class]} js-globalize-attribute".strip,
+        style: "#{options[:style]} #{@template.display_translation?(locale)}".strip,
+        data:  (options[:data] || {}) .merge(locale: locale)
+      )
+
+      hint = label_options.delete(:hint)
+      super(attribute, text, label_options) + help_text(hint)
+    end
+
     private
+      def help_text(text)
+        if text
+          content_tag :span, text,
+                      class: "help-text js-globalize-attribute",
+                      data: { locale: locale },
+                      style: @template.display_translation?(locale)
+        else
+          ""
+        end
+      end
 
       def translations_options(options)
-        @template.merge_translatable_field_options(options, @object.locale)
+        @template.merge_translatable_field_options(options, locale)
       end
   end
 end
