@@ -45,7 +45,7 @@ class ProposalsController < ApplicationController
     discard_archived
     load_retired
     load_successful_proposals
-    load_featured unless @proposal_successful_exists
+    #load_featured unless @proposal_successful_exists
   end
 
   def vote
