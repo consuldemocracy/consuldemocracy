@@ -218,6 +218,14 @@ feature 'Proposals' do
     fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=yPQfcG-eimk'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
+
+    fill_in 'proposal_address', with: 'ONU 101'
+    fill_in 'proposal_commitment', with: 'To be righteous'
+    fill_in 'proposal_solve', with: 'Water for everybody'
+    fill_in 'proposal_relevant', with: 'Yes'
+    fill_in 'proposal_additional_info', with: 'This is part of the ONU world wide program'
+    fill_in 'proposal_activity', with: 'Build water wells everywhere'
+
     check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
@@ -236,6 +244,14 @@ feature 'Proposals' do
     expect(page).to have_content author.name
     expect(page).to have_content 'Refugees'
     expect(page).to have_content 'Solidarity'
+
+    expect(page).to have_content 'ONU 101'
+    expect(page).to have_content 'To be righteous'
+    expect(page).to have_content 'Water for everybody'
+    expect(page).to have_content 'Yes'
+    expect(page).to have_content 'This is part of the ONU world wide program'
+    expect(page).to have_content 'Build water wells everywhere'
+
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 

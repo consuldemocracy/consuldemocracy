@@ -102,6 +102,65 @@
 
         <% end %>
 
+        <% if @proposal.address.present? %>
+          <div>
+            <p>
+              <span></span>&nbsp;
+              <strong><%= t('proposals.show.title_address') %></strong>
+            </p>
+            <%= text_with_links @proposal.address %>
+          </div>
+        <% end %>
+
+        <% if @proposal.commitment.present? %>
+          <div>
+            <p>
+              <span></span>&nbsp;
+              <strong><%= t('proposals.show.title_commitment') %></strong>
+            </p>
+            <%= text_with_links @proposal.commitment %>
+          </div>
+        <% end %>
+
+        <% if @proposal.solve.present? %>
+          <div>
+            <p>
+              <span></span>&nbsp;
+              <strong><%= t('proposals.show.title_solve') %></strong>
+            </p>
+            <%= text_with_links @proposal.solve %>
+          </div>
+        <% end %>
+
+        <% if @proposal.relevant.present? %>
+          <div>
+            <p>
+              <span></span>&nbsp;
+              <strong><%= t('proposals.show.title_relevant') %></strong>
+            </p>
+            <%= text_with_links @proposal.relevant %>
+          </div>
+        <% end %>
+
+        <% if @proposal.additional_info.present? %>
+          <div>
+            <p>
+              <span></span>&nbsp;
+              <strong><%= t('proposals.show.title_additional_info') %></strong>
+            </p>
+            <%= text_with_links @proposal.additional_info %>
+          </div>
+        <% end %>
+
+        <% if @proposal.activity.present? %>
+          <div>
+            <p>
+              <span></span>&nbsp;
+              <strong><%= t('proposals.show.title_activity') %></strong>
+            </p>
+            <%= text_with_links @proposal.activity %>
+          </div>
+        <% end %>
 
         <% if @proposal.retired? %>
           <div id="retired_explanation" class="callout">

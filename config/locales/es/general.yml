@@ -329,6 +329,18 @@ es:
       proposal_title: Título de la propuesta
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
+      proposal_address: ""
+      proposal_address_note: ""
+      proposal_commitment: ""
+      proposal_commitment_note: ""
+      proposal_solve: ""
+      proposal_solve_note: ""
+      proposal_relevant: ""
+      proposal_relevant_note: ""
+      proposal_additional_info: ""
+      proposal_additional_info_note: ""
+      proposal_activity: ""
+      proposal_activity_note: ""
       tag_category_label: "Categorías"
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
       tags_label: Temas
@@ -445,6 +457,12 @@ es:
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentación adicional"
       title_video_url: "Vídeo externo"
+      title_address: ""
+      title_commitment: ""
+      title_solve: ""
+      title_relevant: ""
+      title_additional_info: ""
+      title_activity: ""
       author: Autor
     update:
       form:

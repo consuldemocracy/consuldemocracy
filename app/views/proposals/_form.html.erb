@@ -23,6 +23,73 @@
       <%= f.cktext_area :description, maxlength: Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 
+
+    <div class="small-12 column">
+      <%= f.label :address, t("proposals.form.proposal_address") %>
+      <p class="help-text" id="address-help-text">
+        <%= t("proposals.form.proposal_address_note") %>
+      </p>
+      <%= f.text_field :address, 
+                        placeholder: t("proposals.form.proposal_address"), 
+                        label: false,
+                        aria: { describedby: "address-help-text" } %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :commitment, t("proposals.form.proposal_commitment") %>
+      <p class="help-text" id="commitment-help-text">
+        <%= t("proposals.form.proposal_commitment_note") %>
+      </p>
+      <%= f.text_field :commitment, 
+                        placeholder: t("proposals.form.proposal_commitment"), 
+                        label: false,
+                        aria: { describedby: "commitment-help-text" } %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :solve, t("proposals.form.proposal_solve") %>
+      <p class="help-text" id="solve-help-text">
+        <%= t("proposals.form.proposal_solve_note") %>
+      </p>
+      <%= f.text_field :solve, 
+                        placeholder: t("proposals.form.proposal_solve"), 
+                        label: false,
+                        aria: { describedby: "solve-help-text" } %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :relevant, t("proposals.form.proposal_relevant") %>
+      <p class="help-text" id="relevant-help-text">
+        <%= t("proposals.form.proposal_relevant_note") %>
+      </p>
+      <%= f.text_field :relevant, 
+                        placeholder: t("proposals.form.proposal_relevant"), 
+                        label: false,
+                        aria: { describedby: "relevant-help-text" } %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :additional_info, t("proposals.form.proposal_additional_info") %>
+      <p class="help-text" id="additional_info-help-text">
+        <%= t("proposals.form.proposal_additional_info_note") %>
+      </p>
+      <%= f.text_field :additional_info, 
+                        placeholder: t("proposals.form.proposal_additional_info"), 
+                        label: false,
+                        aria: { describedby: "additional_info-help-text" } %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :activity, t("proposals.form.proposal_activity") %>
+      <p class="help-text" id="activity-help-text">
+        <%= t("proposals.form.proposal_activity_note") %>
+      </p>
+      <%= f.text_field :activity, 
+                        placeholder: t("proposals.form.proposal_activity"), 
+                        label: false,
+                        aria: { describedby: "activity-help-text" } %>
+    </div>
+    
     <div class="small-12 column">
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
       <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>

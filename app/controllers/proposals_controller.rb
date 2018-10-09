@@ -93,6 +93,7 @@ class ProposalsController < ApplicationController
     def proposal_params
       params.require(:proposal).permit(:title, :summary, :description, :external_url, :video_url,
                                        :responsible_name, :tag_list, :terms_of_service, :geozone_id, :skip_map,
+                                       :address, :commitment, :solve, :relevant, :additional_info, :activity,
                                        image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                                        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                                        map_location_attributes: [:latitude, :longitude, :zoom])
