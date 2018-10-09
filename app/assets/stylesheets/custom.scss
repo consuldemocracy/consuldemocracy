@@ -157,7 +157,28 @@ header,
   }
 }
 
+.traffic-light {
 
+  .progress {
+    background: #e1f1d4;
+    border: 1px solid #e1f1d4;
+    margin-left: 12px;
+
+    .progress-meter {
+      background: #68bc29;
+    }
+  }
+
+  .green {
+    background: image-url("traffic_light_green.jpg");
+
+  }
+
+  .yellow {
+    background: image-url("traffic_light_yellow.jpg");
+  }
+
+}
 
 
 
