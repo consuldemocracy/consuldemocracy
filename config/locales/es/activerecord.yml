@@ -225,6 +225,11 @@ es:
         allegations_start_date: Fecha de inicio de alegaciones
         allegations_end_date: Fecha de fin de alegaciones
         result_publication_date: Fecha de publicación del resultado final
+      legislation/process/translation:
+        title: Título del proceso
+        summary: Resumen
+        description: En qué consiste
+        additional_info: Información adicional
       legislation/draft_version:
         title: Título de la version
         body: Texto

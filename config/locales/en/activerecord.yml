@@ -225,6 +225,11 @@ en:
         allegations_start_date: Allegations start date
         allegations_end_date: Allegations end date
         result_publication_date: Final result publication date
+      legislation/process/translation:
+        title: Process Title
+        summary: Summary
+        description: Description
+        additional_info: Additional info
       legislation/draft_version:
         title: Version title
         body: Text
