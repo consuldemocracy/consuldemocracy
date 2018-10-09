@@ -46,10 +46,6 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
 
     def allowed_params
       [
-        :title,
-        :summary,
-        :description,
-        :additional_info,
         :start_date,
         :end_date,
         :debate_start_date,
@@ -67,7 +63,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :result_publication_enabled,
         :published,
         :custom_list,
-        *translation_params(::Legislation::Process),
+        translation_params(::Legislation::Process),
         documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
       ]
     end
