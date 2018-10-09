@@ -58,7 +58,7 @@ en:
       index:
         filter: Filter
         filters:
-          open: Open commitments
+          open: Open consultations
           next: Next
           past: Past
         no_open_processes: There aren't open processes
