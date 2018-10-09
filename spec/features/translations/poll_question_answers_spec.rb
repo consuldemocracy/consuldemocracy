@@ -91,11 +91,11 @@ feature "Translations" do
         scenario "Add a translation for a locale with non-underscored name", :js do
           visit @edit_answer_url
 
-          select('Português', from: 'translation_locale')
+          select('Português brasileiro', from: 'translation_locale')
           fill_in_ckeditor 'poll_question_answer_description_pt_br', with: 'resposta em Português'
           click_button 'Save'
 
-          select('Português', from: 'locale-switcher')
+          select('Português brasileiro', from: 'locale-switcher')
           expect(page).to have_content("resposta em Português")
         end
 
