@@ -19,9 +19,9 @@ feature 'Admin legislation processes' do
 
       click_link "New process"
 
-      fill_in 'legislation_process_title_en', with: 'Filmoteca process'
-      fill_in 'legislation_process_summary_en', with: 'Summary of the filmoteca process'
-      fill_in 'legislation_process_description_en', with: 'Describing the filmoteca process'
+      fill_in 'Process Title', with: 'Filmoteca process'
+      fill_in 'Summary', with: 'Summary of the filmoteca process'
+      fill_in 'Description', with: 'Describing the filmoteca process'
 
       base_date = Date.current
       fill_in 'legislation_process[start_date]', with: base_date.strftime("%d/%m/%Y")
