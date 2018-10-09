@@ -1,4 +1,4 @@
-shared_examples "translatable" do |factory_name, path_name, fields|
+shared_examples "translatable" do |factory_name, path_name, input_fields, textarea_fields = {}|
   let(:language_texts) do
     {
       es:      "en español",
@@ -9,6 +9,11 @@ shared_examples "translatable" do |factory_name, path_name, fields|
   end
 
   let(:translatable_class) { build(factory_name).class }
+
+  let(:input_fields) { input_fields } # So it's accessible by methods
+  let(:textarea_fields) { textarea_fields } # So it's accessible by methods
+
+  let(:fields) { input_fields + textarea_fields.keys }
 
   let(:attributes) do
     fields.product(%i[en es]).map do |field, locale|
@@ -41,23 +46,19 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       visit path
 
       select "Français", from: "translation_locale"
-
-      fields.each do |field|
-        fill_in field_for(field, :fr), with: text_for(field, :fr)
-      end
-
+      fields.each { |field| fill_in_field field, :fr, with: text_for(field, :fr) }
       click_button update_button_text
 
       visit path
       field = fields.sample
 
-      expect(page).to have_field(field_for(field, :en), with: text_for(field, :en))
+      expect_page_to_have_translatable_field field, :en, with: text_for(field, :en)
 
       click_link "Español"
-      expect(page).to have_field(field_for(field, :es), with: text_for(field, :es))
+      expect_page_to_have_translatable_field field, :es, with: text_for(field, :es)
 
       click_link "Français"
-      expect(page).to have_field(field_for(field, :fr), with: text_for(field, :fr))
+      expect_page_to_have_translatable_field field, :fr, with: text_for(field, :fr)
     end
 
     scenario "Add an invalid translation", :js do
@@ -66,15 +67,16 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       field = required_fields.sample
 
       visit path
+
       select "Français", from: "translation_locale"
-      fill_in field_for(field, :fr), with: ""
+      fill_in_field field, :fr, with: ""
       click_button update_button_text
 
       expect(page).to have_css "#error_explanation"
 
       click_link "Français"
 
-      expect(page).to have_field(field_for(field, :fr), with: "")
+      expect_page_to_have_translatable_field field, :fr, with: ""
     end
 
     scenario "Update a translation", :js do
@@ -84,17 +86,17 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       field = fields.sample
       updated_text = "Corrección de #{text_for(field, :es)}"
 
-      fill_in field_for(field, :es), with: updated_text
+      fill_in_field field, :es, with: updated_text
 
       click_button update_button_text
 
       visit path
 
-      expect(page).to have_field(field_for(field, :en), with: text_for(field, :en))
+      expect_page_to_have_translatable_field field, :en, with: text_for(field, :en)
 
       select('Español', from: 'locale-switcher')
 
-      expect(page).to have_field(field_for(field, :es), with: updated_text)
+      expect_page_to_have_translatable_field field, :es, with: updated_text
     end
 
     scenario "Update a translation with invalid data", :js do
@@ -105,16 +107,16 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       visit path
       click_link "Español"
 
-      expect(page).to have_field(field_for(field, :es), with: text_for(field, :es))
+      expect_page_to_have_translatable_field field, :es, with: text_for(field, :es)
 
-      fill_in field_for(field, :es), with: ""
+      fill_in_field field, :es, with: ""
       click_button update_button_text
 
       expect(page).to have_css "#error_explanation"
 
       click_link "Español"
 
-      expect(page).to have_field(field_for(field, :es), with: "")
+      expect_page_to_have_translatable_field field, :es, with: ""
     end
 
     scenario "Remove a translation", :js do
@@ -142,17 +144,17 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       click_link "Remove language"
 
       click_link "English"
-      fill_in field_for(field, :en), with: ""
+      fill_in_field field, :en, with: ""
       click_button update_button_text
 
       expect(page).to have_css "#error_explanation"
-      expect(page).to have_field(field_for(field, :en), with: "")
+      expect_page_to_have_translatable_field field, :en, with: ""
       expect(page).not_to have_link "Español"
 
       visit path
       click_link "Español"
 
-      expect(page).to have_field(field_for(field, :es), with: text_for(field, :es))
+      expect_page_to_have_translatable_field field, :es, with: text_for(field, :es)
     end
 
     scenario 'Change value of a translated field to blank', :js do
@@ -161,24 +163,20 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       field = optional_fields.sample
 
       visit path
-      expect(page).to have_field(field_for(field, :en), with: text_for(field, :en))
+      expect_page_to_have_translatable_field field, :en, with: text_for(field, :en)
 
-      fill_in field_for(field, :en), with: ''
+      fill_in_field field, :en, with: ''
       click_button update_button_text
 
       visit path
-      expect(page).to have_field(field_for(field, :en), with: '')
+      expect_page_to_have_translatable_field field, :en, with: ''
     end
 
     scenario "Add a translation for a locale with non-underscored name", :js do
       visit path
 
       select "Português brasileiro", from: "translation_locale"
-
-      fields.each do |field|
-        fill_in field_for(field, :"pt-BR"), with: text_for(field, :"pt-BR")
-      end
-
+      fields.each { |field| fill_in_field field, :"pt-BR", with: text_for(field, :"pt-BR") }
       click_button update_button_text
 
       visit path
@@ -186,7 +184,7 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       select('Português brasileiro', from: 'locale-switcher')
 
       field = fields.sample
-      expect(page).to have_field(field_for(field, :"pt-BR"), with: text_for(field, :"pt-BR"))
+      expect_page_to_have_translatable_field field, :"pt-BR", with: text_for(field, :"pt-BR")
     end
   end
 
@@ -215,11 +213,11 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       visit path
       field = fields.sample
 
-      expect(page).to have_field(field_for(field, :en), with: text_for(field, :en))
+      expect_page_to_have_translatable_field field, :en, with: text_for(field, :en)
 
       click_link "Español"
 
-      expect(page).to have_field(field_for(field, :es), with: text_for(field, :es))
+      expect_page_to_have_translatable_field field, :es, with: text_for(field, :es)
     end
 
     scenario "Select a locale and add it to the form", :js do
@@ -231,7 +229,7 @@ shared_examples "translatable" do |factory_name, path_name, fields|
 
       click_link "Français"
 
-      expect(page).to have_field(field_for(fields.sample, :fr))
+      expect_page_to_have_translatable_field fields.sample, :fr, with: ""
     end
   end
 end
@@ -247,6 +245,36 @@ def field_for(field, locale)
     "contents_content_#{translatable.key}values_#{field}_#{locale}"
   else
     find("[data-locale='#{locale}'][id$='#{field}']")[:id]
+  end
+end
+
+def fill_in_field(field, locale, with:)
+  if input_fields.include?(field)
+    fill_in field_for(field, locale), with: with
+  else
+    fill_in_textarea(field, textarea_fields[field], locale, with: with)
+  end
+end
+
+def fill_in_textarea(field, textarea_type, locale, with:)
+  if textarea_type == :markdownit
+    click_link class: "fullscreen-toggle"
+    fill_in field_for(field, locale), with: with
+    click_link class: "fullscreen-toggle"
+  end
+end
+
+def expect_page_to_have_translatable_field(field, locale, with:)
+  if input_fields.include?(field)
+    expect(page).to have_field field_for(field, locale), with: with
+  else
+    textarea_type = textarea_fields[field]
+
+    if textarea_type == :markdownit
+      click_link class: "fullscreen-toggle"
+      expect(page).to have_field field_for(field, locale), with: with
+      click_link class: "fullscreen-toggle"
+    end
   end
 end
 

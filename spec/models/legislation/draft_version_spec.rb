@@ -17,6 +17,7 @@ RSpec.describe Legislation::DraftVersion, type: :model do
   end
 
   it "renders and saves the html from the markdown body field with alternative translation" do
+    legislation_draft_version.title_fr = "Français"
     legislation_draft_version.body_fr = body_markdown
 
     legislation_draft_version.save!
