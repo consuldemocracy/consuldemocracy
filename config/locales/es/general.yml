@@ -321,8 +321,6 @@ es:
     form:
       geozone: Ámbito de actuación
       proposal_external_url: Enlace a documentación adicional
-      proposal_question: Pregunta de la propuesta
-      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No"
       proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
       proposal_summary: Resumen de la propuesta

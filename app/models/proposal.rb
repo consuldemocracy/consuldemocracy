@@ -33,14 +33,12 @@ class Proposal < ActiveRecord::Base
   has_many :proposal_notifications, dependent: :destroy
 
   validates :title, presence: true
-  validates :question, presence: true
   validates :summary, presence: true
   validates :author, presence: true
   validates :responsible_name, presence: true, unless: :skip_user_verification?
 
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
-  validates :question, length: { in: 10..Proposal.question_max_length }
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }, unless: :skip_user_verification?
   validates :retired_reason, inclusion: { in: RETIRE_OPTIONS, allow_nil: true }
 

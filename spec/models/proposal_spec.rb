@@ -54,23 +54,6 @@ describe Proposal do
     end
   end
 
-  describe "#question" do
-    it "is not valid without a question" do
-      proposal.question = nil
-      expect(proposal).not_to be_valid
-    end
-
-    it "is not valid when very short" do
-      proposal.question = "abc"
-      expect(proposal).not_to be_valid
-    end
-
-    it "is not valid when very long" do
-      proposal.question = "a" * 141
-      expect(proposal).not_to be_valid
-    end
-  end
-
   describe "#video_url" do
     it "is not valid when URL is not from Youtube or Vimeo" do
       proposal.video_url = "https://twitter.com"
