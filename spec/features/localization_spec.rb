@@ -56,7 +56,7 @@ feature 'Localization' do
 
     before do
       I18n.enforce_available_locales = false
-      I18n.available_locales << :wl
+      I18n.available_locales = default_locales + [:wl]
       I18n.locale = :wl
     end
 
