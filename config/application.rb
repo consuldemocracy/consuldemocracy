@@ -41,11 +41,13 @@ module Consul
       "zh-TW"]
     config.i18n.available_locales = available_locales
     config.i18n.fallbacks = {
+      'nl' => 'en'
+      'ast'   => 'es',
+      'ca'    => 'es',
       'fr'    => 'es',
       'gl'    => 'es',
       'it'    => 'es',
-      'pt-BR' => 'es',
-      'nl' => 'en'
+      'pt-BR' => 'es'
     }
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'custom', '**', '*.{rb,yml}')]
