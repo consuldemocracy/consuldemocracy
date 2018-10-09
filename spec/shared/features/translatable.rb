@@ -119,29 +119,6 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       expect_page_to_have_translatable_field field, :es, with: ""
     end
 
-    scenario "Update a translation not having the current locale", :js do
-      translatable.translations.destroy_all
-
-      translatable.translations.create(
-        fields.map { |field| [field, text_for(field, :fr)] }.to_h.merge(locale: :fr)
-      )
-
-      visit path
-
-      expect(page).not_to have_link "English"
-      expect(page).to have_link "Français"
-
-      click_button update_button_text
-
-      expect(page).not_to have_css "#error_explanation"
-      expect(page).not_to have_link "English"
-
-      visit path
-
-      expect(page).not_to have_link "English"
-      expect(page).to have_link "Français"
-    end
-
     scenario "Remove a translation", :js do
       visit path
 
@@ -309,6 +286,36 @@ def expect_page_to_have_translatable_field(field, locale, with:)
       within("div.js-globalize-attribute[data-locale='#{locale}'] .ckeditor ") do
         within_frame(0) { expect(page).to have_content with }
       end
+    end
+  end
+end
+
+def fill_in_field(field, locale, with:)
+  if input_fields.include?(field)
+    fill_in field_for(field, locale), with: with
+  else
+    fill_in_textarea(field, textarea_fields[field], locale, with: with)
+  end
+end
+
+def fill_in_textarea(field, textarea_type, locale, with:)
+  if textarea_type == :markdownit
+    click_link class: "fullscreen-toggle"
+    fill_in field_for(field, locale), with: with
+    click_link class: "fullscreen-toggle"
+  end
+end
+
+def expect_page_to_have_translatable_field(field, locale, with:)
+  if input_fields.include?(field)
+    expect(page).to have_field field_for(field, locale), with: with
+  else
+    textarea_type = textarea_fields[field]
+
+    if textarea_type == :markdownit
+      click_link class: "fullscreen-toggle"
+      expect(page).to have_field field_for(field, locale), with: with
+      click_link class: "fullscreen-toggle"
     end
   end
 end
