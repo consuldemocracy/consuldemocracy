@@ -231,6 +231,10 @@ es:
         changelog: Cambios
         status: Estado
         final_version: Versión final
+      legislation/draft_version/translation:
+        title: Título de la version
+        body: Texto
+        changelog: Cambios
       legislation/question:
         title: Título
         question_options: Respuestas

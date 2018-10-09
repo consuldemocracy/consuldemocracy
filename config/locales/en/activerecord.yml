@@ -231,6 +231,10 @@ en:
         changelog: Changes
         status: Status
         final_version: Final version
+      legislation/draft_version/translation:
+        title: Version title
+        body: Text
+        changelog: Changes
       legislation/question:
         title: Title
         question_options: Options
