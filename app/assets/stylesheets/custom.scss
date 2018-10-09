@@ -160,32 +160,60 @@ header,
 .traffic-light {
 
   .progress {
-    background: #e1f1d4;
-    border: 1px solid #e1f1d4;
     margin-left: 12px;
-
-    .progress-meter {
-      background: #68bc29;
-    }
   }
 
   .green {
     background: image-url("traffic_light_green.jpg");
-
   }
 
   .yellow {
     background: image-url("traffic_light_yellow.jpg");
   }
-
 }
 
+.debate-show {
+  background: $highlight;
+  margin-top: -24px;
+  padding-top: 24px;
+  margin-bottom: 24px;
+}
 
+.commitment-documents {
+  background: #fbfbfb;
+  margin-top: -24px;
+  padding: 24px 0;
+  margin-bottom: 24px;
+}
 
+.progress {
+  background: #e1f1d4;
+  border: 1px solid #e1f1d4;
 
+  .progress-meter {
+    background: #68bc29;
 
+    .progress-meter-text {
+      color: #000;
+      position: relative;
+      text-align: right;
+    }
+  }
+}
 
+.commitment-actions {
+  border-bottom: 1px solid $border;
+  margin-bottom: 24px;
+}
 
+.commitment-dates {
+  line-height: 30px;
+  margin-top: -5px;
+}
+
+.tab-milestones ul li::before {
+  background: #000;
+}
 
 
 

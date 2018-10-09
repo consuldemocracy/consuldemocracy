@@ -16,46 +16,50 @@
           </div>
         <% end %>
 
-        <div class="debate-info">
-          <%= render '/shared/author_info', resource: @debate %>
+        <!-- <div class="debate-info">
+          <%# render '/shared/author_info', resource: @debate %>
 
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= l @debate.created_at.to_date %>
+          <%# l @debate.created_at.to_date %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="icon-comments"></span>&nbsp;
-          <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
+          <%# link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="js-flag-actions">
-            <%= render 'debates/flag_actions', debate: @debate %>
+            <%# render 'debates/flag_actions', debate: @debate %>
           </span>
-        </div>
+        </div> -->
+
+        <p><strong>DESCRIPTION</strong></p>
 
         <%= safe_html_with_links @debate.description %>
 
-        <%= render 'shared/tags', taggable: @debate %>
+        <%# render 'shared/tags', taggable: @debate %>
 
-        <%= render 'relationable/related_content', relationable: @debate %>
+        <a href="#" class="button primary">See full information of the commitment</a>
 
-        <div class="js-moderator-debate-actions margin">
-          <%= render 'actions', debate: @debate %>
-        </div>
+        <%# render 'relationable/related_content', relationable: @debate %>
+
+        <!-- <div class="js-moderator-debate-actions margin">
+          <%# render 'actions', debate: @debate %>
+        </div> -->
       </div>
 
       <aside class="small-12 medium-3 column">
-        <% if current_user && @debate.editable_by?(current_user) %>
+        <!--<%# if current_user && @debate.editable_by?(current_user) %>
           <div class="sidebar-divider"></div>
-          <h2><%= t("debates.show.author") %></h2>
-          <%= link_to edit_debate_path(@debate), class: 'button hollow expanded' do %>
+          <h2><%# t("debates.show.author") %></h2>
+          <%# link_to edit_debate_path(@debate), class: 'button hollow expanded' do %>
             <span class="icon-edit"></span>
-            <%= t("debates.show.edit_debate_link") %>
-          <% end %>
-        <% end %>
+            <%# t("debates.show.edit_debate_link") %>
+          <%# end %>
+        <%# end %>-->
 
-        <div class="sidebar-divider"></div>
-        <h2><%= t("votes.supports") %></h2>
-        <div id="<%= dom_id(@debate) %>_votes">
-          <%= render 'debates/votes', debate: @debate %>
-        </div>
+        <!-- <div class="sidebar-divider"></div>
+        <h2><%# t("votes.supports") %></h2>
+        <div id="<%# dom_id(@debate) %>_votes">
+          <%# render 'debates/votes', debate: @debate %>
+        </div> -->
         <%= render partial: 'shared/social_share', locals: {
           share_title: t("debates.show.share"),
           title: @debate.title,
@@ -67,4 +71,18 @@
   </div>
 <% end %>
 
-<%= render "comments" %>
+<%# render "comments" %>
+<% if @debate.id == 1 %>
+  <%= render "commitment_1" %>
+  <%= render "timeline_1" %>
+<% end %>
+
+<% if @debate.id == 2 %>
+  <%= render "commitment_2" %>
+  <%= render "timeline_2" %>
+<% end %>
+
+<% if @debate.id == 3 %>
+  <%= render "commitment_3" %>
+  <%= render "timeline_3" %>
+<% end %>
