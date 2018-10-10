@@ -101,6 +101,11 @@
 
     .is-active {
       border-bottom: 2px solid $brand;
+
+      a,
+      h4 {
+        color: $brand;
+      }
     }
   }
 }
