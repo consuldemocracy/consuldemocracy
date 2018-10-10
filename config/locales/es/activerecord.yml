@@ -291,6 +291,11 @@ es:
         description: Descripción
         link_text: Texto del enlace
         link_url: URL del enlace
+      widget/card/translation:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
       widget/feed:
         limit: Número de elementos
     errors:
