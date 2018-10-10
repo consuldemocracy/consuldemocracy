@@ -67,9 +67,22 @@ module TranslatableFormHelper
   class TranslationsFieldsBuilder < FoundationRailsHelper::FormBuilder
     %i[text_field text_area cktext_area].each do |field|
       define_method field do |attribute, options = {}|
-        custom_label(attribute, options[:label], options[:label_options]) +
-          help_text(options[:hint]) +
-          super(attribute, options.merge(label: false, hint: false))
+        final_options = translations_options(options)
+
+        label_help_text_and_field =
+          custom_label(attribute, final_options[:label], final_options[:label_options]) +
+          help_text(final_options[:hint]) +
+          super(attribute, final_options.merge(label: false, hint: false))
+
+        if field == :cktext_area
+          content_tag :div,
+                      label_help_text_and_field,
+                      class: "js-globalize-attribute",
+                      style: @template.display_translation?(locale),
+                      data: { locale: locale }
+        else
+          label_help_text_and_field
+        end
       end
     end
 
