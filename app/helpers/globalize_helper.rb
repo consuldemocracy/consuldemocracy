@@ -10,17 +10,12 @@ module GlobalizeHelper
     end
   end
 
-  def display_translation?(resource, locale)
-    if !resource || resource.translations.blank? ||
-        resource.translations.map(&:locale).include?(I18n.locale)
-      locale == I18n.locale
-    else
-      locale == resource.translations.first.locale
-    end
+  def display_translation?(locale)
+    locale == I18n.locale
   end
 
-  def display_translation_style(resource, locale)
-    "display: none;" unless display_translation?(resource, locale)
+  def display_translation_style(locale)
+    "display: none;" unless display_translation?(locale)
   end
 
   def translation_enabled_tag(locale, enabled)
@@ -32,15 +27,13 @@ module GlobalizeHelper
   end
 
   def enable_locale?(resource, locale)
-    if resource.translations.any?
-      resource.locales_not_marked_for_destruction.include?(locale)
-    else
-      locale == I18n.locale
-    end
+    # Use `map` instead of `pluck` in order to keep the `params` sent
+    # by the browser when there's invalid data
+    resource.translations.reject(&:_destroy).map(&:locale).include?(locale) || locale == I18n.locale
   end
 
-  def highlight_class(resource, locale)
-    "is-active" if display_translation?(resource, locale)
+  def highlight_class(locale)
+    "is-active" if display_translation?(locale)
   end
 
   def globalize(locale, &block)
