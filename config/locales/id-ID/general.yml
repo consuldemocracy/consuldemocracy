@@ -229,7 +229,6 @@ id:
       text_sign_in: masuk
       text_sign_up: daftar
       title: Bagaimana saya dapat mengomentari dokumen ini?
-  locale: Bahasa Inggris
   notifications:
     index:
       empty_notifications: Anda tidak memiliki pemberitahuan baru.
