@@ -50,7 +50,7 @@ es:
       user:
         recommendations: "Recomendaciones"
         skip_verification: "Omitir verificación de usuarios"
-      community: "Comunidad en propuestas y proyectos de inversión"
+      community: "Comunidad en propuestas y proyectos de gasto"
       map: "Geolocalización de propuestas y proyectos de inversión"
       allow_images: "Permitir subir y mostrar imágenes"
       allow_attached_documents: "Permitir creación de documentos adjuntos"
