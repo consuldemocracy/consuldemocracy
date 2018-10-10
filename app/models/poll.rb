@@ -8,6 +8,7 @@ class Poll < ActiveRecord::Base
   translates :summary,     touch: true
   translates :description, touch: true
   globalize_accessors
+  accepts_nested_attributes_for :translations, allow_destroy: true
 
   RECOUNT_DURATION = 1.week
 
@@ -24,7 +25,9 @@ class Poll < ActiveRecord::Base
   has_and_belongs_to_many :geozones
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
-  validates :name, presence: true
+  translation_class.instance_eval do
+    validates :name, presence: true
+  end
 
   validate :date_range
 
