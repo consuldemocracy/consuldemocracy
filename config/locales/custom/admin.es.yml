@@ -7,3 +7,8 @@ es:
       edit:
         selection_by_assembly: Seleccionada en reunión de distrito
         mark_as_selected_by_assembly: Marcar como seleccionada en reunión de distrito
+    polls:
+      new:
+        kind_of_poll: 'Tipo de votación'
+  polls:
+    cartel_kind_name: 'Cartel de Magdalena'
