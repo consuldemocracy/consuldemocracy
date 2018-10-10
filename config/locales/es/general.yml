@@ -173,7 +173,7 @@ es:
     proposal: la propuesta
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
-    budget/investment: la propuesta de inversión
+    budget/investment: el proyecto de gasto
     budget/heading: la partida presupuestaria
     poll/shift: el turno
     poll/question/answer: la respuesta
@@ -552,9 +552,9 @@ es:
     followable:
       budget_investment:
         create:
-          notice_html: "¡Ahora estás siguiendo este proyecto de inversión! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
+          notice_html: "¡Ahora estás siguiendo este proyecto de gasto! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
         destroy:
-          notice_html: "¡Has dejado de seguir este proyecto de inverisión! </br> Ya no recibirás más notificaciones relacionadas con este proyecto."
+          notice_html: "¡Has dejado de seguir este proyecto de gasto! </br> Ya no recibirás más notificaciones relacionadas con este proyecto."
       proposal:
         create:
           notice_html: "¡Ahora estás siguiendo esta propuesta ciudadana! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
@@ -574,9 +574,9 @@ es:
         see_all: "Ver todos"
       budget_investment:
         found:
-          one: "Existe una propuesta de inversión con el término '%{query}', puedes participar en ella en vez de abrir una nueva."
-          other: "Existen propuestas de inversión con el término '%{query}', puedes participar en ellas en vez de abrir una nueva."
-        message: "Estás viendo %{limit} de %{count} propuestas de inversión que contienen el término '%{query}'"
+          one: "Existe un proyecto de gasto con el término '%{query}', puedes participar en él en vez de crear uno nuevo."
+          other: "Existen proyectos de gasto de con el término '%{query}', puedes participar en ellos en vez de crear una nuevo."
+        message: "Estás viendo %{limit} de %{count} proyectos de gasto que contienen el término '%{query}'"
         see_all: "Ver todas"
       proposal:
         found:
