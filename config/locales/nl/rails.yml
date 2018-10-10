@@ -50,7 +50,7 @@ nl:
       - december
     order:
       - :day
-      - :month
+      - ': month'
       - :year
   datetime:
     distance_in_words:
