@@ -64,6 +64,7 @@ feature 'Cards' do
       click_link "Edit"
     end
 
+<<<<<<< HEAD
     within(".translatable-fields") do
       fill_in "Label (optional)", with: "Card label updated"
       fill_in "Title", with: "Card text updated"
@@ -71,6 +72,12 @@ feature 'Cards' do
       fill_in "Link text", with: "Link text updated"
     end
 
+=======
+    fill_in "Label (optional)", with: "Card label updated"
+    fill_in "Title", with: "Card text updated"
+    fill_in "Description", with: "Card description updated"
+    fill_in "Link text", with: "Link text updated"
+>>>>>>> Update widget cards translatable fields
     fill_in "widget_card_link_url", with: "consul.dev updated"
     click_button "Save card"
 

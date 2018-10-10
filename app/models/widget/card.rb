@@ -8,7 +8,8 @@ class Widget::Card < ActiveRecord::Base
   translates :title,       touch: true
   translates :description, touch: true
   translates :link_text,   touch: true
-  include Globalizable
+  globalize_accessors
+  accepts_nested_attributes_for :translations, allow_destroy: true
 
   def self.header
     where(header: true)
