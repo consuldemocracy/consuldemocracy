@@ -74,7 +74,7 @@ module TranslatableFormHelper
     end
 
     def display_style
-      @template.display_translation_style(locale)
+      @template.display_translation_style(@object.globalized_model, locale)
     end
 
     private
