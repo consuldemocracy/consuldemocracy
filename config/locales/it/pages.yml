@@ -185,9 +185,9 @@ it:
       privacy: Informativa sulla privacy
     verify:
       code: Codice che hai ricevuto nella lettera
-      email: E-mail
+      email: Email
       info: 'Per verificare il tuo account inserisci i dati di accesso:'
       info_code: 'Ora introduci il codice che hai ricevuto nella lettera:'
       password: Password
-      submit: Verificare la mia utenza
+      submit: Verifica il mio account
       title: Verifica il tuo account
