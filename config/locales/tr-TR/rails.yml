@@ -37,9 +37,9 @@ tr:
       - Kasım
       - December
     order:
-      - :day
-      - :month
-      - :year
+      - ': yıl'
+      - ': ay'
+      - ': gün'
   datetime:
     prompts:
       day: Gün
