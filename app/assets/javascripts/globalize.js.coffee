@@ -47,6 +47,12 @@ App.Globalize =
       (element) -> $(element).data("locale")
     )
 
+  enabled_locales: ->
+    $.map(
+      $(".js-globalize-locale-link:visible"),
+      (element) -> $(element).data("locale")
+    )
+
   destroy_locale_field: (locale) ->
     $(".destroy_locale[data-locale=" + locale + "]")
 
@@ -72,7 +78,7 @@ App.Globalize =
       $(this).hide()
       App.Globalize.remove_language(locale)
 
-    $(".js-add-fields-container").on "cocoon:after-insert", ->
+    $(".add_fields_container").on "cocoon:after-insert", ->
       $.each(
         App.Globalize.enabled_locales(),
         (index, locale) -> App.Globalize.enable_locale(locale)
