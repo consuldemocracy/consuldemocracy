@@ -166,7 +166,7 @@ feature 'Tags' do
 
   context 'Tag cloud' do
 
-    scenario 'Display genre tags' do
+    scenario 'Display category tags' do
       tag_list = ["Action", "Adventure"]
 
       film_library_process.tag_list_on(:customs).add(tag_list)
