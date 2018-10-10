@@ -2,17 +2,19 @@
 
 <%= translatable_form_for [:admin, @card] do |f| %>
 
-  <div class="small-12 medium-6">
-    <%= f.translatable_text_field :label %>
-  </div>
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-6">
+      <%= translations_form.text_field :label %>
+    </div>
 
-  <%= f.translatable_text_field :title %>
+    <%= translations_form.text_field :title %>
 
-  <%= f.translatable_text_area :description, rows: 5 %>
+    <%= translations_form.text_area :description, rows: 5 %>
 
-  <div class="small-12 medium-6">
-    <%= f.translatable_text_field :link_text %>
-  </div>
+    <div class="small-12 medium-6">
+      <%= translations_form.text_field :link_text %>
+    </div>
+  <% end %>
 
   <div class="small-12 medium-6">
     <%= f.text_field :link_url %>

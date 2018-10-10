@@ -291,6 +291,11 @@ en:
         description: Description
         link_text: Link text
         link_url: Link URL
+      widget/card/translation:
+        label: Label (optional)
+        title: Title
+        description: Description
+        link_text: Link text
       widget/feed:
         limit: Number of items
     errors:
