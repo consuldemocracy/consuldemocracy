@@ -44,6 +44,7 @@ describe 'I18n' do
 
       I18n.enforce_available_locales = false
       I18n.locale = :zz
+      I18n.fallbacks[:zz] << I18n.default_locale
 
       expect(I18n.t("test_plural", count: 0)).to eq("No comments")
       expect(I18n.t("test_plural", count: 1)).to eq("1 comment")
