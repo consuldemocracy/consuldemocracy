@@ -31,15 +31,6 @@ es:
         target_url: Enlace
         post_started_at: Inicio de publicación
         post_ended_at: Fin de publicación
-        sections_label: Secciones en las que aparece
-        sections:
-          homepage: Homepage
-          debates: Debates
-          proposals: Propuestas
-          budgets: Presupuestos participativos
-          help_page: Página de ayuda
-        background_color: Color de fondo
-        font_color: Color del texto
       edit:
         editing: Editar el banner
         form:
@@ -62,12 +53,11 @@ es:
         content: Contenido
         filter: Mostrar
         filters:
-          all: Todo
+          all: Todos
           on_comments: Comentarios
           on_debates: Debates
           on_proposals: Propuestas
           on_users: Usuarios
-          on_system_emails: Emails del sistema
         title: Actividad de los Moderadores
         type: Tipo
         no_activity: No hay actividad de moderadores.
@@ -82,17 +72,17 @@ es:
         budget_investments: Gestionar proyectos de gasto
         table_name: Nombre
         table_phase: Fase
-        table_investments: Propuestas de inversión
+        table_investments: Proyectos de gasto
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
       create:
-        notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
+        notice: '¡Presupuestos participativos creados con éxito!'
       update:
-        notice: Campaña de presupuestos participativos actualizada
+        notice: Presupuestos participativos actualizados
       edit:
-        title: Editar campaña de presupuestos participativos
+        title: Editar presupuestos participativos
         delete: Eliminar presupuesto
         phase: Fase
         dates: Fechas
@@ -128,8 +118,6 @@ es:
         table_amount: Cantidad
         table_population: Población
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
-        max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
-        current_of_max_headings: "%{current} de %{max}"
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.
@@ -159,24 +147,23 @@ es:
           title: Título
           supports: Apoyos
         filters:
-          all: Todas
+          all: Todos
           without_admin: Sin administrador
           without_valuator: Sin evaluador
           under_valuation: En evaluación
           valuation_finished: Evaluación finalizada
           feasible: Viables
-          selected: Seleccionadas
+          selected: Seleccionados
           undecided: Sin decidir
           unfeasible: Inviables
-          min_total_supports: Apoyos mínimos
-          winners: Ganadores
+          winners: Ganadoras
           one_filter_html: "Filtros en uso: <b><em>%{filter}</em></b>"
           two_filters_html: "Filtros en uso: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtrar
         download_current_selection: "Descargar selección actual"
-        no_budget_investments: "No hay proyectos de inversión."
-        title: Propuestas de inversión
+        no_budget_investments: "No hay proyectos de gasto."
+        title: Proyectos de gasto
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
@@ -187,27 +174,13 @@ es:
           undecided: "Sin decidir"
         selected: "Seleccionada"
         select: "Seleccionar"
-        list:
-          id: ID
-          title: Título
-          supports: Apoyos
-          admin: Administrador
-          valuator: Evaluador
-          valuation_group: Grupos evaluadores
-          geozone: Ámbito de actuación
-          feasibility: Viabilidad
-          valuation_finished: Ev. Fin.
-          selected: Seleccionado
-          visible_to_valuators: Mostrar a evaluadores
-          author_username: Usuario autor
-          incompatible: Incompatible
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         classification: Clasificación
-        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
+        info: "%{budget_name} - Grupo: %{group_name} - Proyecto de gasto %{id}"
         edit: Editar
         edit_classification: Editar clasificación
         by: Autor
@@ -261,16 +234,12 @@ es:
         table_title: "Título"
         table_description: "Descripción"
         table_publication_date: "Fecha de publicación"
-        table_status: Estado
         table_actions: "Acciones"
         delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
         image: "Imagen"
         show_image: "Mostrar imagen"
         documents: "Documentos"
-      form:
-        admin_statuses: Gestionar estados de proyectos
-        no_statuses_defined: No hay estados definidos
       new:
         creating: Crear hito
         date: Fecha
@@ -278,31 +247,11 @@ es:
       edit:
         title: Editar hito
       create:
-        notice: Nuevo hito creado con éxito!
+        notice: '¡Nuevo hito creado con éxito!'
       update:
         notice: Hito actualizado
       delete:
         notice: Hito borrado correctamente
-    statuses:
-      index:
-        title: Estados de proyectos
-        empty_statuses: Aún no se ha creado ningún estado de proyecto
-        new_status: Crear nuevo estado de proyecto
-        table_name: Nombre
-        table_description: Descripción
-        table_actions: Acciones
-        delete: Borrar
-        edit: Editar
-      edit:
-        title: Editar estado de proyecto
-      update:
-        notice: Estado de proyecto editado correctamente
-      new:
-        title: Crear estado de proyecto
-      create:
-        notice: Estado de proyecto creado correctamente
-      delete:
-        notice: Estado de proyecto eliminado correctamente
     comments:
       index:
         filter: Filtro
@@ -337,21 +286,12 @@ es:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
         user: Usuario
-        no_hidden_users: No hay uusarios bloqueados.
+        no_hidden_users: No hay usuarios bloqueados.
       show:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
         title: Actividad del usuario (%{user})
-    hidden_budget_investments:
-      index:
-        filter: Filtro
-        filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
-        title: Proyectos de gasto ocultos
-        no_hidden_budget_investments: No hay proyectos de gasto ocultos
     legislation:
       processes:
         create:
@@ -371,8 +311,7 @@ es:
         form:
           enabled: Habilitado
           process: Proceso
-          debate_phase: Fase de debate
-          allegations_phase: Fase de comentarios
+          debate_phase: Fase previa
           proposals_phase: Fase de propuestas
           start: Inicio
           end: Fin
@@ -394,12 +333,6 @@ es:
           back: Volver
           title: Crear nuevo proceso de legislación colaborativa
           submit_button: Crear proceso
-        proposals:
-          select_order: Ordenar por
-          orders:
-            id: Id
-            title: Título
-            supports: Apoyos
         process:
           title: Proceso
           comments: Comentarios
@@ -416,15 +349,9 @@ es:
       proposals:
         index:
           back: Volver
-          id: Id
-          title: Título
-          supports: Apoyos
-          select: Seleccionar
-          selected: Seleccionado
         form:
           custom_categories: Categorías
           custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta.
-          custom_categories_placeholder: Escribe las etiquetas que desees separadas por una coma (,) y entrecomilladas ("")
       draft_versions:
         create:
           notice: 'Borrador creado correctamente. <a href="%{link}">Haz click para verlo</a>'
@@ -489,7 +416,7 @@ es:
           form:
             error: Error
         form:
-          add_option: Añadir respuesta cerrada
+          add_option: +Añadir respuesta cerrada
           title: Pregunta
           title_placeholder: Escribe un título a la pregunta
           value_placeholder: Escribe una respuesta cerrada
@@ -532,16 +459,10 @@ es:
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
-      hidden_budget_investments: Proyectos de gasto ocultos
-      hidden_proposal_notifications: Notificationes de propuesta ocultas
       hidden_users: Usuarios bloqueados
       administrators: Administradores
       managers: Gestores
       moderators: Moderadores
-      messaging_users: Mensajes a usuarios
-      newsletters: Newsletters
-      admin_notifications: Notificaciones
-      system_emails: Emails del sistema
       emails_download: Descarga de emails
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
@@ -557,26 +478,12 @@ es:
       signature_sheets: Hojas de firmas
       site_customization:
         content_blocks: Personalizar bloques
-        information_texts: Personalizar textos
-        information_texts_menu:
-          debates: "Debates"
-          community: "Comunidad"
-          proposals: "Propuestas"
-          polls: "Votaciones"
-          layouts: "Plantillas"
-          mailers: "Correos"
-          management: "Gestión"
-          guides: "Guías"
-          welcome: "Bienvenido/a"
-        buttons:
-          save: "Guardar cambios"
       title_moderated_content: Contenido moderado
       title_budgets: Presupuestos
       title_polls: Votaciones
       title_profiles: Perfiles
       title_settings: Configuración
       title_site_customization: Contenido del sitio
-      title_booths: Urnas de votación
       legislation: Legislación colaborativa
       users: Usuarios
     administrators:
@@ -644,56 +551,6 @@ es:
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
         body: Contenido del email
         body_help_text: Así es como verán el email los usuarios
-        send_alert: ¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?
-    admin_notifications:
-      create_success: Notificación creada correctamente
-      update_success: Notificación actualizada correctamente
-      send_success: Notificación enviada correctamente
-      delete_success: Notificación borrada correctamente
-      index:
-        section_title: Envío de notificaciones
-        new_notification: Crear notificación
-        title: Título
-        segment_recipient: Destinatarios
-        sent: Enviado
-        actions: Acciones
-        draft: Borrador
-        edit: Editar
-        delete: Borrar
-        preview: Previsualizar
-        view: Visualizar
-        empty_notifications: No hay notificaciones para mostrar
-      new:
-        section_title: Nueva notificación
-        submit_button: Crear notificación
-      edit:
-        section_title: Editar notificación
-        submit_button: Actualizar notificación
-      show:
-        section_title: Vista previa de notificación
-        send: Enviar notificación
-        will_get_notified: (%{n} usuarios serán notificados)
-        got_notified: (%{n} usuarios fueron notificados)
-        sent_at: Enviado
-        title: Título
-        body: Texto
-        link: Enlace
-        segment_recipient: Destinatarios
-        preview_guide: "Así es como los usuarios verán la notificación:"
-        sent_guide: "Así es como los usuarios ven la notificación:"
-        send_alert: ¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?
-    system_emails:
-      preview_pending:
-        action: Previsualizar Pendientes
-        preview_of: Vista previa de %{name}
-        pending_to_be_sent: Este es todo el contenido pendiente de enviar
-        moderate_pending: Moderar envío de notificación
-        send_pending : Enviar pendientes
-        send_pending_notification: Notificaciones pendientes enviadas correctamente
-      proposal_notification_digest:
-        title: Resumen de Notificationes de Propuestas
-        description: Reune todas las notificaciones de propuestas en un único mensaje, para evitar demasiados emails.
-        preview_detail: Los usuarios sólo recibirán las notificaciones de aquellas propuestas que siguen.
         send_alert: '¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?'
     emails_download:
       index:
@@ -718,7 +575,7 @@ es:
       search:
         title: 'Evaluadores: Búsqueda de usuarios'
       summary:
-        title: Resumen de evaluación de propuestas de inversión
+        title: Resumen de evaluación de proyectos de gasto
         valuator_name: Evaluador
         finished_and_feasible_count: Finalizadas viables
         finished_and_unfeasible_count: Finalizadas inviables
@@ -1030,15 +887,6 @@ es:
           without_confirmed_hide: Pendientes
         title: Propuestas ocultas
         no_hidden_proposals: No hay propuestas ocultas.
-    proposal_notifications:
-      index:
-        filter: Filtro
-        filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Pendientes
-        title: Notificaciones ocultas
-        no_hidden_proposals: No hay notificaciones ocultas.
     settings:
       flash:
         updated: Valor actualizado
@@ -1062,12 +910,6 @@ es:
             update: La configuración del mapa se ha guardado correctamente.
           form:
             submit: Actualizar
-      setting: Funcionalidad
-      setting_actions: Acciones
-      setting_name: Configuración
-      setting_status: Estado
-      setting_value: Valor
-      no_description: Sin descripción
     shared:
       booths_search:
         button: Buscar
@@ -1095,11 +937,6 @@ es:
       image: Imagen
       show_image: Mostrar imagen
       moderated_content: "Revisa el contenido moderado por los moderadores, y confirma si la moderación se ha realizado correctamente."
-      view: Ver
-      proposal: Propuesta
-      author: Autor
-      content: Contenido
-      created_at: Fecha de creación
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
@@ -1219,7 +1056,7 @@ es:
           proposal_votes: Votos en propuestas
           proposals: Propuestas
           budgets: Presupuestos abiertos
-          budget_investments: Propuestas de inversión
+          budget_investments: Proyectos de gasto
           spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
@@ -1312,11 +1149,6 @@ es:
         content_block:
           body: Contenido
           name: Nombre
-          names:
-            top_links: Enlaces superiores
-            footer: Pie de página
-            subnavigation_left: Navegación principal izquierda 
-            subnavigation_right: Navegación principal derecha
       images:
         index:
           title: Personalizar imágenes
@@ -1359,7 +1191,6 @@ es:
           status_draft: Borrador
           status_published: Publicada
           title: Título
-          slug: Slug
     homepage:
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.
       header_title: Encabezado
@@ -1386,6 +1217,3 @@ es:
         submit_header: Guardar encabezado
         card_title: Editar tarjeta
         submit_card: Guardar tarjeta
-    translations:
-      add_language: Añadir idioma
-      remove_language: Eliminar idioma
