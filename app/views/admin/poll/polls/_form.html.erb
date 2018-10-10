@@ -1,9 +1,7 @@
 <%= render "admin/shared/globalize_locales", resource: @poll %>
 
 <%= translatable_form_for [:admin, @poll] do |f| %>
-  <div class="small-12 medium-6 column">
-    <%= f.translatable_text_field :name %>
-  </div>
+  <%= render "shared/errors", resource: @poll %>
 
   <div class="clear">
     <div class="small-12 medium-6 column">
@@ -19,13 +17,20 @@
     </div>
   </div>
 
-  <div class="small-12 column">
-    <%=f.translatable_text_area :summary, rows: 4%>
-  </div>
 
-  <div class="small-12 column">
-    <%=f.translatable_text_area :description, rows: 8%>
-  </div>
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-6 column">
+      <%= translations_form.text_field :name %>
+    </div>
+
+    <div class="small-12 column">
+      <%= translations_form.text_area :summary, rows: 4 %>
+    </div>
+
+    <div class="small-12 column">
+      <%= translations_form.text_area :description, rows: 8 %>
+    </div>
+  <% end %>
 
   <div class="small-12 column">
     <%= render 'images/admin_image', imageable: @poll, f: f %>

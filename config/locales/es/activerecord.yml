@@ -185,6 +185,10 @@ es:
         geozone_restricted: "Restringida por zonas"
         summary: "Resumen"
         description: "Descripción"
+      poll/translation:
+        name: "Nombre"
+        summary: "Resumen"
+        description: "Descripción"
       poll/question:
         title: "Pregunta"
         summary: "Resumen"
