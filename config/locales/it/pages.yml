@@ -1,5 +1,9 @@
 it:
   pages:
+    conditions:
+      title: Termini e condizioni d'uso
+      subtitle: AVVISO LEGALE SULLE CONDIZIONI D'USO, PRIVACY E PROTEZIONE DEI DATI PERSONALI DEL PORTALE GOVERNO APERTO
+      description: Pagina di informazioni sulle condizioni di utilizzo, privacy e protezione dei dati personali.
     general_terms: Termini e condizioni d'uso
     help:
       title: "%{org} è una piattaforma di partecipazione cittadina"
@@ -24,6 +28,7 @@ it:
         description: "Nella sezione %{link} è possibile avanzare proposte da far realizzare dal Consiglio Comunale. Le proposte necessitano di sostegno e, se viene raggiunto un sostegno sufficiente, vengono ammesse al voto pubblico. Le proposte così approvate dal voto dei cittadini sono accettate dal Consiglio Comunale e realizzate."
         link: "proposte dei cittadini"
         image_alt: "Pulsante per sostenere una proposta"
+        figcaption_html: 'Pulsante per “Sostenere” una proposta.'
       budgets:
         title: "Bilancio partecipativo"
         description: "La sezione %{link} aiuta le persone a contribuire in maniera diretta alle decisioni relative a parte della spesa del bilancio comunale."
@@ -61,6 +66,42 @@ it:
           Se sei un programmatore, puoi vedere il codice e aiutarci a migliorarlo sulla [app CONSUL](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Usalo nella tua amministrazione locale
+    privacy:
+      title: Informativa sulla privacy
+      subtitle: INFORMATIVA SULLA PRIVACY DEI DATI
+      info_items:
+        - 
+          text: La navigazione attraverso le informazioni disponibili nel Portale Governo Aperto è anonima.
+        - 
+          text: Per utilizzare i servizi contenuti nel Portale Governo Aperto, l'utente deve registrarsi e fornire anticipatamente i dati personali relativi alle specifiche informazioni incluse in ogni tipo di registrazione.
+        - 
+          text: 'I dati forniti saranno incorporati ed elaborati dal Consiglio Comunale in conformità alla descrizione del seguente file:'
+        - 
+          subitems:
+            - 
+              field: 'Nome file:'
+              description: NOME DEL FILE
+            - 
+              field: 'Scopo del file:'
+              description: Gestione dei processi partecipativi per controllare la qualifica delle persone che vi partecipano e valutazione meramente numerica e statistica dei risultati derivati dai processi di partecipazione dei cittadini.
+            - 
+              field: 'Ente responsabile del documento:'
+              description: ENTE RESPONSABILE DEL DOCUMENTO
+        - 
+          text: L'interessato potrà esercitare i diritti di accesso, rettifica, cancellazione e opposizione, innanzi all'organismo responsabile indicato, secondo quanto previsto dall'articolo 5 della legge organica 15/1999, del 13 dicembre, sulla protezione dei Dati di Carattere Personale.
+        - 
+          text: Come principio generale, questo sito non condivide o divulga le informazioni raccolte, a meno che non venga a ciò autorizzato dall’utente o le informazioni siano richieste dall'Autorità Giudiziaria, compreso l’ufficio del Pubblico Ministero, o dalla polizia giudiziaria, ovvero in qualsiasi altro caso regolamentato dall'articolo 11 della legge organica 15/1999, del 13 dicembre, sulla Protezione dei Dati Personali.
+    accessibility:
+      title: Accessibilità
+      description: |-
+        L'accessibilità della rete si riferisce alla possibilità di accesso alla rete e ai suoi contenuti da parte di tutte le persone, indipendentemente dalle disabilità (fisiche, intellettuali o tecniche) che possano insorgere o da quelle che derivano dal contesto di utilizzo (tecnologico o ambientale).
+        
+        quando siti Web sono progettati con l'accessibilità in mente, tutti gli utenti possono accedere ai contenuti a parità di condizioni, ad esempio:
+      examples:
+        - Fornendo un testo alternativo alle immagini, gli utenti ciechi o ipovedenti possono utilizzare lettori speciali per accedere alle informazioni.
+        - Quando i video hanno i sottotitoli, gli utenti con disabilità uditive possono comprenderli appieno.
+        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
+        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
     titles:
       accessibility: Accessibilità
       conditions: Termini di utilizzo
