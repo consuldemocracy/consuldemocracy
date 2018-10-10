@@ -100,8 +100,15 @@ it:
       examples:
         - Fornendo un testo alternativo alle immagini, gli utenti ciechi o ipovedenti possono utilizzare lettori speciali per accedere alle informazioni.
         - Quando i video hanno i sottotitoli, gli utenti con disabilità uditive possono comprenderli appieno.
-        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
-        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
+        - Se i contenuti sono scritti in un linguaggio semplice e descrittivo, gli utenti con problemi di apprendimento sono in grado di comprenderli meglio.
+        - Se l'utente ha problemi di mobilità ed è difficile utilizzare il mouse, le alternative con la tastiera aiutano nella navigazione.
+      keyboard_shortcuts:
+        title: Scorciatoie da tastiera
+        navigation_table:
+          description: Per consentire di navigare attraverso questo sito in maniera accessibile, è stato programmato un gruppo di tasti di accesso rapido che raccolgono le principali sezioni di interesse generale in cui è organizzato il sito.
+          caption: Scorciatoie da tastiera per il menu di navigazione
+          key_header: Tasto
+          page_header: Pagina
     titles:
       accessibility: Accessibilità
       conditions: Termini di utilizzo
