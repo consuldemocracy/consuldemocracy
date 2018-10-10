@@ -5,14 +5,6 @@ module TranslatableFormHelper
     end
   end
 
-  def merge_translatable_field_options(options, locale)
-    options.merge(
-      class: "#{options[:class]} js-globalize-attribute".strip,
-      style: "#{options[:style]} #{display_translation?(locale)}".strip,
-      data:  options.fetch(:data, {}).merge(locale: locale),
-    )
-  end
-
   class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
     def translatable_fields(&block)
       @object.globalize_locales.map do |locale|
@@ -62,7 +54,7 @@ module TranslatableFormHelper
           content_tag :div,
                       label_help_text_and_field,
                       class: "js-globalize-attribute",
-                      style: @template.display_translation?(locale),
+                      style: display_style,
                       data: { locale: locale }
         else
           label_help_text_and_field
@@ -75,14 +67,14 @@ module TranslatableFormHelper
     end
 
     def label(attribute, text = nil, options = {})
-      label_options = options.merge(
-        class: "#{options[:class]} js-globalize-attribute".strip,
-        style: "#{options[:style]} #{@template.display_translation?(locale)}".strip,
-        data:  (options[:data] || {}) .merge(locale: locale)
-      )
-
+      label_options = translations_options(options)
       hint = label_options.delete(:hint)
+
       super(attribute, text, label_options) + help_text(hint)
+    end
+
+    def display_style
+      @template.display_translation_style(locale)
     end
 
     private
@@ -91,14 +83,18 @@ module TranslatableFormHelper
           content_tag :span, text,
                       class: "help-text js-globalize-attribute",
                       data: { locale: locale },
-                      style: @template.display_translation?(locale)
+                      style: display_style
         else
           ""
         end
       end
 
       def translations_options(options)
-        @template.merge_translatable_field_options(options, locale)
+        options.merge(
+          class: "#{options[:class]} js-globalize-attribute".strip,
+          style: "#{options[:style]} #{display_style}".strip,
+          data:  (options[:data] || {}).merge(locale: locale)
+        )
       end
   end
 end
