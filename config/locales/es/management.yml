@@ -63,7 +63,7 @@ es:
       create_spending_proposal: Crear propuesta de inversión
       print_spending_proposals: Imprimir propts. de inversión
       support_spending_proposals: Apoyar propts. de inversión
-      create_budget_investment: Crear proyectos de inversión
+      create_budget_investment: Crear proyectos de gasto
       user_invites: Enviar invitaciones
     permissions:
       create_proposals: Crear nuevas propuestas
