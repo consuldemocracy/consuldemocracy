@@ -249,7 +249,6 @@ de:
       text_sign_in: login
       text_sign_up: registrieren
       title: Wie kann ich dieses Dokument kommentieren?
-  locale: Deutsch
   notifications:
     index:
       empty_notifications: Sie haben keine neuen Benachrichtigungen.
