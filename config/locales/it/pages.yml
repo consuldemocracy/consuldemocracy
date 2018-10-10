@@ -96,7 +96,7 @@ it:
       description: |-
         L'accessibilità della rete si riferisce alla possibilità di accesso alla rete e ai suoi contenuti da parte di tutte le persone, indipendentemente dalle disabilità (fisiche, intellettuali o tecniche) che possano insorgere o da quelle che derivano dal contesto di utilizzo (tecnologico o ambientale).
         
-        quando siti Web sono progettati con l'accessibilità in mente, tutti gli utenti possono accedere ai contenuti a parità di condizioni, ad esempio:
+        Quando i siti web sono progettati con un occhio all'accessibilità, tutti gli utenti possono accedere ai contenuti a parità di condizioni, ad esempio:
       examples:
         - Fornendo un testo alternativo alle immagini, gli utenti ciechi o ipovedenti possono utilizzare lettori speciali per accedere alle informazioni.
         - Quando i video hanno i sottotitoli, gli utenti con disabilità uditive possono comprenderli appieno.
@@ -109,6 +109,75 @@ it:
           caption: Scorciatoie da tastiera per il menu di navigazione
           key_header: Tasto
           page_header: Pagina
+          rows:
+            - 
+              key_column: 0
+              page_column: Homepage
+            - 
+              key_column: 1
+              page_column: Dibattiti
+            - 
+              key_column: 2
+              page_column: Proposte
+            - 
+              key_column: 3
+              page_column: Voti
+            - 
+              key_column: 4
+              page_column: Bilanci partecipativi
+            - 
+              key_column: 5
+              page_column: Procedimenti legislativi
+        browser_table:
+          description: 'A seconda del sistema operativo e del browser utilizzato, la combinazione di tasti sarà la seguente:'
+          caption: Combinazione di tasti a seconda del sistema operativo e del browser
+          browser_header: Browser
+          key_header: Combinazione di tasti
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + scelta rapida poi INVIO
+            - 
+              browser_column: Firefox
+              key_column: ALT + MAIUSC + scelta rapida
+            - 
+              browser_column: Chrome
+              key_column: ALT + scelta rapida (CTRL + ALT + tasti di scelta rapida per MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + scelta rapida (CMD + scelta rapida per MAC)
+            - 
+              browser_column: Opera
+              key_column: MAIUSC + ESC + scelta rapida
+      textsize:
+        title: Dimensione testo
+        browser_settings_table:
+          description: Il design accessibile di questo sito web consente all'utente di scegliere la dimensione del testo che più gli si addice. Questa azione può essere effettuata in modi diversi a seconda del browser utilizzato.
+          browser_header: Browser
+          action_header: Azione da intraprendere
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Visualizza > Dimensione testo
+            - 
+              browser_column: Firefox
+              action_column: Visualizza > Dimensione
+            - 
+              browser_column: Chrome
+              action_column: Impostazioni (icona) > Opzioni > Avanzate > Contenuto Web > Dimensione testo
+            - 
+              browser_column: Safari
+              action_column: Visualizza > Zoom In/Zoom out
+            - 
+              browser_column: Opera
+              action_column: Visualizza > scala
+        browser_shortcuts_table:
+          description: 'Un altro modo per modificare la dimensione del testo consiste nell''utilizzare le scorciatoie da tastiera definite dai browser, in particolare la combinazione di tasti:'
+          rows:
+            - 
+              shortcut_column: CTRL e + (CMD e + su MAC)
+              description_column: Aumenta le dimensioni del testo
+            - 
     titles:
       accessibility: Accessibilità
       conditions: Termini di utilizzo
