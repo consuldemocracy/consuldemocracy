@@ -5,6 +5,7 @@ class Poll::Question::Answer < ActiveRecord::Base
   translates :title,       touch: true
   translates :description, touch: true
   globalize_accessors
+  accepts_nested_attributes_for :translations, allow_destroy: true
 
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
@@ -14,7 +15,10 @@ class Poll::Question::Answer < ActiveRecord::Base
   belongs_to :question, class_name: 'Poll::Question', foreign_key: 'question_id'
   has_many :videos, class_name: 'Poll::Question::Answer::Video'
 
-  validates :title, presence: true
+  translation_class.instance_eval do
+    validates :title, presence: true
+  end
+
   validates :given_order, presence: true, uniqueness: { scope: :question_id }
 
   before_validation :set_order, on: :create
