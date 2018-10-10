@@ -211,6 +211,10 @@ es:
         more_info_flag: Mostrar en la página de ayuda
         print_content_flag: Botón de imprimir contenido
         locale: Idioma
+      site_customization/page/translation:
+        title: Título
+        subtitle: Subtítulo
+        content: Contenido
       site_customization/image:
         name: Nombre
         image: Imagen
