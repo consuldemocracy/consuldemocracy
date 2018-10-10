@@ -211,6 +211,10 @@ en:
         more_info_flag: Show in help page
         print_content_flag: Print content button
         locale: Language
+      site_customization/page/translation:
+        title: Title
+        subtitle: Subtitle
+        content: Content
       site_customization/image:
         name: Name
         image: Image

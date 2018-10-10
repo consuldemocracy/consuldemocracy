@@ -244,7 +244,7 @@ def field_for(field, locale, visible: true)
   if translatable_class.name == "I18nContent"
     "contents_content_#{translatable.key}values_#{field}_#{locale}"
   else
-    find("[data-locale='#{locale}'][id$='#{field}']", visible: visible)[:id]
+    find("[data-locale='#{locale}'][id$='_#{field}']", visible: visible)[:id]
   end
 end
 
@@ -296,6 +296,8 @@ def update_button_text
     "Update poll"
   when "Poll::Question", "Poll::Question::Answer"
     "Save"
+  when "SiteCustomization::Page"
+    "Update Custom page"
   when "Widget::Card"
     "Save card"
   else
