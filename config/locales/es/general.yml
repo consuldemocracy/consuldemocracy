@@ -20,9 +20,6 @@ es:
       email_on_direct_message_label: Recibir emails con mensajes privados
       email_digest_label: Recibir resumen de notificaciones sobre propuestas
       official_position_badge_label: Mostrar etiqueta de tipo de usuario
-      recommendations: Recomendaciones
-      show_debates_recommendations: Mostrar recomendaciones en el listado de debates
-      show_proposals_recommendations: Mostrar recomendaciones en el listado de propuestas
       title: Mi cuenta
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
@@ -113,10 +110,6 @@ es:
       recommendations:
         without_results: No existen debates relacionados con tus intereses
         without_interests: Sigue propuestas para que podamos darte recomendaciones
-        disable: "Si ocultas las recomendaciones para debates, no se volverán a mostrar. Puedes volver a activarlas en 'Mi cuenta'"
-        actions:
-          success: "Las recomendaciones de debates han sido desactivadas"
-          error: "Ha ocurrido un error. Por favor dirígete al apartado 'Mi cuenta' para desactivar las recomendaciones manualmente"
       search_form:
         button: Buscar
         placeholder: Buscar debates...
@@ -321,7 +314,6 @@ es:
       geozone: Ámbito de actuación
       proposal_external_url: Enlace a documentación adicional
       proposal_question: Pregunta de la propuesta
-      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No"
       proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
       proposal_summary: Resumen de la propuesta
@@ -354,10 +346,6 @@ es:
       recommendations:
         without_results: No existen propuestas relacionadas con tus intereses
         without_interests: Sigue propuestas para que podamos darte recomendaciones
-        disable: "Si ocultas las recomendaciones para propuestas, no se volverán a mostrar. Puedes volver a activarlas en 'Mi cuenta'"
-        actions:
-          success: "Las recomendaciones de propuestas han sido desactivadas"
-          error: "Ha ocurrido un error. Por favor dirígete al apartado 'Mi cuenta' para desactivar las recomendaciones manualmente"
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
       retired_links:
@@ -386,7 +374,6 @@ es:
         help: Ayuda sobre las propuestas
       section_footer:
         title: Ayuda sobre las propuestas
-        description: Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su ciudad, después de conseguir los apoyos suficientes y de someterse a votación ciudadana.
     new:
       form:
         submit_button: Crear propuesta
@@ -424,7 +411,6 @@ es:
       supports_necessary: "%{number} apoyos necesarios"
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
-      successful: "Esta propuesta ha alcanzado los apoyos necesarios."
     show:
       author_deleted: Usuario eliminado
       code: 'Código de la propuesta:'
@@ -468,16 +454,12 @@ es:
       geozone_restricted: "Distritos"
       geozone_info: "Pueden participar las personas empadronadas en: "
       already_answer: "Ya has participado en esta votación"
-      not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
-      unverified: "Por favor verifica tu cuenta para participar"
-      cant_answer: "Esta votación no está disponible en tu zona"
       section_header:
         icon_alt: Icono de Votaciones
         title: Votaciones
         help: Ayuda sobre las votaciones
       section_footer:
         title: Ayuda sobre las votaciones
-        description: Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
       no_polls: "No hay votaciones abiertas."
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
@@ -624,10 +606,6 @@ es:
       title: Modo de vista
       cards: Tarjetas
       list: Lista
-    recommended_index:
-        title: Recomendaciones
-        see_more: Ver más recomendaciones
-        hide: Ocultar recomendaciones
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
@@ -842,10 +820,3 @@ es:
   admin/widget:
     header:
       title: Administración
-  annotator:
-    help:
-      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text_sign_in: iniciar sesión
-      text_sign_up: registrarte
-      title: "¿Cómo puedo comentar este documento?"
