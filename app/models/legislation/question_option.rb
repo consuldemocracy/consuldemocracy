@@ -4,10 +4,14 @@ class Legislation::QuestionOption < ActiveRecord::Base
 
   translates :value, touch: true
   globalize_accessors
+  accepts_nested_attributes_for :translations, allow_destroy: true
 
   belongs_to :question, class_name: 'Legislation::Question', foreign_key: 'legislation_question_id', inverse_of: :question_options
   has_many :answers, class_name: 'Legislation::Answer', foreign_key: 'legislation_question_id', dependent: :destroy, inverse_of: :question
 
   validates :question, presence: true
-  validates :value, presence: true, uniqueness: { scope: :legislation_question_id }
+
+  translation_class.instance_eval do
+    validates :value, presence: true # TODO: add uniqueness again
+  end
 end

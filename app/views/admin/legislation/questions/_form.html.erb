@@ -17,12 +17,14 @@
     </div>
   <% end %>
 
-  <div class="small-12 medium-9 column">
-    <%= f.translatable_text_area :title,
-                                 rows: 5,
-                                 placeholder: t("admin.legislation.questions.form.title_placeholder"),
-                                 label: t("admin.legislation.questions.form.title") %>
-  </div>
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-9 column">
+      <%= translations_form.text_area :title,
+                                      rows: 5,
+                                      placeholder: t("admin.legislation.questions.form.title_placeholder"),
+                                      label: t("admin.legislation.questions.form.title") %>
+    </div>
+  <% end %>
 
   <div class="small-12 medium-9 column">
     <%= f.label :question_options, t("admin.legislation.questions.form.question_options") %>
