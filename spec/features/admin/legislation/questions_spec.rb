@@ -56,7 +56,7 @@ feature 'Admin legislation questions' do
 
       click_link "All"
 
-      expect(page).not_to have_link "All"
+      expect(page).to have_content 'An example legislation process'
 
       click_link 'An example legislation process'
       click_link 'Debate'
