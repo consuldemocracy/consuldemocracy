@@ -697,7 +697,7 @@ es:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Esta propuesta ha sido eliminada
-      deleted_budget_investment: Esta propuesta de inversión ha sido eliminada
+      deleted_budget_investment: Este proyecto de gasto ha sido eliminado
       proposals: Propuestas
       debates: Debates
       budget_investments: Proyectos de presupuestos participativos
@@ -749,7 +749,7 @@ es:
       not_voting_allowed: El periodo de votación está cerrado.
     budget_investments:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
-      not_verified: Los proyectos de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      not_verified: Los proyectos de gasto sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
       organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
@@ -816,7 +816,7 @@ es:
     content_title:
       proposal: "Propuesta"
       debate: "Debate"
-      budget_investment: "Propuesta de inversión"
+      budget_investment: "Proyecto de gasto"
   admin/widget:
     header:
       title: Administración
