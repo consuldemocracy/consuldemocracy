@@ -4,9 +4,13 @@ class SiteCustomization::Page < ActiveRecord::Base
   translates :title,       touch: true
   translates :subtitle,    touch: true
   translates :content,     touch: true
-  include Globalizable
+  globalize_accessors
+  accepts_nested_attributes_for :translations, allow_destroy: true
 
-  validates_translation :title, presence: true
+  translation_class.instance_eval do
+    validates :title, presence: true
+  end
+
   validates :slug, presence: true,
                    uniqueness: { case_sensitive: false },
                    format: { with: /\A[0-9a-zA-Z\-_]*\Z/, message: :slug_format }
