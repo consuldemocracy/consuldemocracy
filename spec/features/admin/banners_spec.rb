@@ -110,6 +110,33 @@ feature 'Admin banners magement' do
     expect(page).to have_link 'Such banner many text wow link', href: 'https://www.url.com'
   end
 
+  scenario "Publish a banner with a translation different than the current locale", :js do
+    visit new_admin_banner_path
+
+    expect(page).to have_link "English"
+
+    click_link "Remove language"
+    select "Français", from: "translation_locale"
+
+    fill_in "Title", with: "En Français"
+    fill_in "Description", with: "Link en Français"
+
+    fill_in "Link", with: "https://www.url.com"
+
+    last_week = Time.current - 1.week
+    next_week = Time.current + 1.week
+
+    fill_in "Post started at", with: last_week.strftime("%d/%m/%Y")
+    fill_in "Post ended at", with: next_week.strftime("%d/%m/%Y")
+
+    click_button "Save changes"
+    click_link "Edit banner"
+
+    expect(page).to have_link "Français"
+    expect(page).not_to have_link "English"
+    expect(page).to have_field "Title", with: "En Français"
+  end
+
   scenario "Update banner color when changing from color picker or text_field", :js do
     visit new_admin_banner_path
 
