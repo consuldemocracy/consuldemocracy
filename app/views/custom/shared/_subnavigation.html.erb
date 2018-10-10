@@ -53,7 +53,7 @@
                                   title: t("shared.go_to_page") + t("layouts.header.budgets") %>
       </li>
     <% end %>
-    <% if feature?(:concurso_cartel_magdalena) %>
+    <% if feature?(:concurso_cartel_magdalena) && exists_polls_of_kind?('cartel')%>
       <li>
         <%= layout_menu_link_to t("pages.cartel_magdalena_2018.tab_link"),
                                   page_path('concurso_cartel_magdalena'),
