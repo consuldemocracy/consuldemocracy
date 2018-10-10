@@ -25,7 +25,7 @@ es:
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
         assigned_to: "Asignadas a %{valuator}"
-        title: Propuestas de inversión
+        title: Proyectos de gasto
         edit: Editar informe
         valuators_assigned:
           one: Evaluador asignado
@@ -37,7 +37,7 @@ es:
         table_actions: Acciones
       show:
         back: Volver
-        title: Propuesta de inversión
+        title: Proyecto de gasto
         info: Datos de envío
         by: Enviada por
         sent: Fecha de creación
