@@ -49,9 +49,9 @@ it:
       - Novembre
       - Dicembre
     order:
-      - :day
-      - :month
       - :year
+      - ': month'
+      - :day
   datetime:
     distance_in_words:
       about_x_hours:
