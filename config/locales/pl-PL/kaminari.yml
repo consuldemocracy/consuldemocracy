@@ -1,0 +1,26 @@
+pl:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Wpisy
+        one: Wpis
+        few: Wpisy
+        many: Wpisy
+        other: Wpisy
+      more_pages:
+        display_entries: Wyświetlanie <strong>%{first}&nbsp;-&nbsp;%{last}</strong> lub <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "nie można odnaleźć %{entry_name}"
+          one: Znaleziono <strong>1 %{entry_name}</strong>
+          few: Znaleziono <strong>%{count}%{entry_name}</strong>
+          many: Znaleziono <strong>%{count}%{entry_name}</strong>
+          other: Znaleziono <strong>%{count}%{entry_name}</strong>
+  views:
+    pagination:
+      current: Jesteś na stronie
+      first: Pierwszy
+      last: Ostatni
+      next: Następny
+      previous: Poprzedni
+      truncate: "&hellip;"

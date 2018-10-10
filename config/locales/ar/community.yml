@@ -1,0 +1,27 @@
+ar:
+  community:
+    show:
+      create_first_community_topic:
+        sign_in: "تسجيل الدخول"
+        sign_up: "التسجيل"
+      tab:
+        participants: المشاركون
+      sidebar:
+        participate: المشاركة
+      topic:
+        edit: تحرير الموضوع
+        comments:
+          zero: لا توجد تعليقات
+          zero: "%{count} تعليق"
+          one: '%{count} تعليق'
+          two: "%{count} تعليقات"
+          few: "%{count} تعليقات"
+          many: "%{count} تعليقات"
+          other: "%{count} تعليقات"
+    topic:
+      edit: تحرير الموضوع
+      form:
+        topic_title: العنوان
+      show:
+        tab:
+          comments_tab: التعليقات

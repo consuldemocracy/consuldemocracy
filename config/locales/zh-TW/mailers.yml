@@ -1,0 +1,79 @@
+zh-TW:
+  mailers:
+    no_reply: "此郵件是從一個不接受回覆的電郵地址發送的。"
+    comment:
+      hi: 您好
+      new_comment_by_html: <b>%{commenter}</b>發表了新評論
+      subject: 有人評論了您的%{commentable}
+      title: 新評論
+    config:
+      manage_email_subscriptions: 要停止接收這些電子郵件，請更改您的設置在
+    email_verification:
+      click_here_to_verify: 此鏈接
+      instructions_2_html: 此電郵將使用<b>%{document_type}%{document_number}</b>驗證您的帳戶。 如果這些都不屬於您，請不要點擊上一個鏈接，並忽略此電郵。
+      instructions_html: 要完成您的用戶帳戶的核實，您必須單擊%{verification_link}。
+      subject: 確認您的電郵
+      thanks: 謝謝。
+      title: 使用以下鏈接確認您的帳戶
+    reply:
+      hi: 您好
+      new_reply_by_html: <b>%{commenter}</b>對您的評論有新的回覆
+      subject: 有人回覆了您的評論
+      title: 對您的評論的新回覆
+    unfeasible_spending_proposal:
+      hi: "親愛的用戶，"
+      new_html: "僅此，我們邀請您詳細說明一個<strong>新建議</strong>，以符合此進程的條件。 您可以按照以下鏈接執行此操作：%{url}。"
+      new_href: "新投資項目"
+      sincerely: "真誠的"
+      sorry: "很抱歉給您帶來不便，我們再次感謝您的寶貴參與。"
+      subject: "您的投資項目'%{code}'已被標記為不可行"
+    proposal_notification_digest:
+      info: "以下是您在%{org_name} 中支持的建議的作者發佈的新通知。"
+      title: "在%{org_name} 中的建議通知"
+      share: 分享建議
+      comment: 評論建議
+      unsubscribe: "如果您不想收到建議通知，請訪問%{account} 並取消選中“接收建議通知的摘要”。"
+      unsubscribe_account: 我的帳戶
+    direct_message_for_receiver:
+      subject: "您收到了一條新的私人消息"
+      reply: 回覆%{sender}
+      unsubscribe: "如果您不想接收直接消息，請訪問%{account} 並取消選中“接收有關直接消息的電郵”。"
+      unsubscribe_account: 我的帳戶
+    direct_message_for_sender:
+      subject: "您發送了一條新的私人消息"
+      title_html: "您已使用以下內容向<strong>%{receiver}</strong>發送新的私人消息："
+    user_invite:
+      ignore: "如果您還沒有請求此邀請，請不用擔心，您可以忽略此電郵。"
+      text: "感謝您申請加入%{org}！ 在幾秒鐘後，您便可以開始參與，只需填寫下面的表格："
+      thanks: "謝謝。"
+      title: "歡迎訪問%{org}"
+      button: 完成註冊
+      subject: "邀請訪問%{org_name}"
+    budget_investment_created:
+      subject: "感謝您創建了一個投資！"
+      title: "感謝您創建了一個投資！"
+      intro_html: "您好<strong>%{author}</strong>，"
+      text_html: "感謝您為參與性預算<strong>%{budget}</strong>創建了您的投資<strong>%{investment}</strong>。"
+      follow_html: "我們會通知您流程的進展情況，您也可以在<strong>%{link}</strong>跟蹤查看。"
+      follow_link: "參與性預算"
+      sincerely: "真誠的，"
+      share: "分享您的項目"
+    budget_investment_unfeasible:
+      hi: "親愛的用戶，"
+      new_html: "謹此，我們邀請您詳細說明一個<strong>新投資</strong>，以符合此進程的條件。 您可以按照以下鏈接：%{url} 執行此操作。"
+      new_href: "新投資項目"
+      sincerely: "真誠的"
+      sorry: "很抱歉給您帶來不便，我們再次感謝您的寶貴參與。"
+      subject: "您的投資項目'%{code}'已被標記為不可行"
+    budget_investment_selected:
+      subject: "您的投資項目'%{code}'已被選中"
+      hi: "親愛的用戶，"
+      share: "開始獲得投票，在社交網絡上分享您的投資項目。 分享是對實現此目標至關重要。"
+      share_button: "分享您的投資項目"
+      thanks: "再次感謝您的參與。"
+      sincerely: "真誠的"
+    budget_investment_unselected:
+      subject: "您的投資項目'%{code}'未被選中"
+      hi: "親愛的用戶，"
+      thanks: "再次感謝您的參與。"
+      sincerely: "真誠的"

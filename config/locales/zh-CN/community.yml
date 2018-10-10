@@ -1,0 +1,59 @@
+zh-CN:
+  community:
+    sidebar:
+      title: 社群
+      description:
+        proposal: 参与此提议的用户社群。
+        investment: 参与此投资的用户社群
+      button_to_access: 访问社群
+    show:
+      title:
+        proposal: 提议社群
+        investment: 预算投资社群
+      description:
+        proposal: 参与此提议的社群。活跃的社群可以帮助改善提议的内容并促进其传播以得到更多的支持。
+        investment: 参与此预算投资的社群。活跃的社群可以帮助改善预算投资的内容并促进其传播以得到更多的支持。
+      create_first_community_topic:
+        first_theme_not_logged_in: 没有收到问题，请参与创建第一个问题。
+        first_theme: 创建第一个社群主题
+        sub_first_theme: "要创建主题，您必须%{sign_in} 或者%{sign_up}。"
+        sign_in: "登录"
+        sign_up: "注册"
+      tab:
+        participants: 参与者
+      sidebar:
+        participate: 参与
+        new_topic: 创建主题
+      topic:
+        edit: 编辑主题
+        destroy: 销毁主题
+        comments:
+          zero: 没有评论
+          other: "一个评论\n%{count} 个评论"
+      author: 作者
+      back: 返回 %{community} %{proposal}
+    topic:
+      create: 创建主题
+      edit: 编辑主题
+      form:
+        topic_title: 标题
+        topic_text: 初始文本
+        new:
+          submit_button: 创建主题
+        edit:
+          submit_button: 编辑主题
+        create:
+          submit_button: 创建主题
+        update:
+          submit_button: 更新主题
+      show:
+        tab:
+          comments_tab: 评论
+      sidebar:
+        recommendations_title: 创建主题的建议
+        recommendation_one: 请不要用大写字母写主题标题或整个句子。在因特网上这被当作是在喊叫。没有人喜欢被吆喝。
+        recommendation_two: 任何暗示非法行为，以及那些意图破坏主题空间的主题或评论都将被取消，其他的都是被允许的。
+        recommendation_three: 享受这个空间，以及其中充满的声音，它也是您的。
+  topics:
+    show:
+      login_to_comment: 您必须%{signin} 或者%{signup} 才能留下评论。

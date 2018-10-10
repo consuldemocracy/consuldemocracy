@@ -48,7 +48,7 @@ es:
         form:
           error:
             one: "error impidió guardar el banner"
-            other: "errores impidieron guardar el banner"
+            other: "errores impidieron guardar el banner."
       new:
         creating: Crear banner
     activity:
@@ -82,17 +82,17 @@ es:
         budget_investments: Gestionar proyectos de gasto
         table_name: Nombre
         table_phase: Fase
-        table_investments: Proyectos de gasto
+        table_investments: Propuestas de inversión
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
       create:
-        notice: "¡Presupuestos participativos creados con éxito!"
+        notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
       update:
-        notice: Presupuestos participativos actualizados
+        notice: Campaña de presupuestos participativos actualizada
       edit:
-        title: Editar presupuestos participativos
+        title: Editar campaña de presupuestos participativos
         delete: Eliminar presupuesto
         phase: Fase
         dates: Fechas
@@ -159,13 +159,13 @@ es:
           title: Título
           supports: Apoyos
         filters:
-          all: Todos
+          all: Todas
           without_admin: Sin administrador
           without_valuator: Sin evaluador
           under_valuation: En evaluación
           valuation_finished: Evaluación finalizada
           feasible: Viables
-          selected: Seleccionados
+          selected: Seleccionadas
           undecided: Sin decidir
           unfeasible: Inviables
           min_total_supports: Apoyos mínimos
@@ -173,11 +173,10 @@ es:
           one_filter_html: "Filtros en uso: <b><em>%{filter}</em></b>"
           two_filters_html: "Filtros en uso: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
-          search: Buscar
           filter: Filtrar
         download_current_selection: "Descargar selección actual"
-        no_budget_investments: "No hay proyectos de gasto."
-        title: Proyectos de gasto
+        no_budget_investments: "No hay proyectos de inversión."
+        title: Propuestas de inversión
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
@@ -208,7 +207,7 @@ es:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         classification: Clasificación
-        info: '%{budget_name} - Grupo: %{group_name} - Proyecto de gasto %{id}'
+        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
         edit: Editar
         edit_classification: Editar clasificación
         by: Autor
@@ -279,7 +278,7 @@ es:
       edit:
         title: Editar hito
       create:
-        notice: ¡Nuevo hito creado con éxito!
+        notice: Nuevo hito creado con éxito!
       update:
         notice: Hito actualizado
       delete:
@@ -338,7 +337,7 @@ es:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
         user: Usuario
-        no_hidden_users: No hay usuarios bloqueados.
+        no_hidden_users: No hay uusarios bloqueados.
       show:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
@@ -416,7 +415,6 @@ es:
           proposals: Propuestas
       proposals:
         index:
-          title: Propuestas
           back: Volver
           id: Id
           title: Título
@@ -558,9 +556,6 @@ es:
       stats: Estadísticas
       signature_sheets: Hojas de firmas
       site_customization:
-        homepage: Homepage
-        pages: Personalizar páginas
-        images: Personalizar imágenes
         content_blocks: Personalizar bloques
         information_texts: Personalizar textos
         information_texts_menu:
@@ -595,7 +590,7 @@ es:
         delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
-        title: 'Administradores: Búsqueda de usuarios'
+        title: "Administradores: Búsqueda de usuarios"
     moderators:
       index:
         title: Moderadores
@@ -699,6 +694,7 @@ es:
         title: Resumen de Notificationes de Propuestas
         description: Reune todas las notificaciones de propuestas en un único mensaje, para evitar demasiados emails.
         preview_detail: Los usuarios sólo recibirán las notificaciones de aquellas propuestas que siguen.
+        send_alert: '¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?'
     emails_download:
       index:
         title: Descarga de emails
@@ -722,7 +718,7 @@ es:
       search:
         title: 'Evaluadores: Búsqueda de usuarios'
       summary:
-        title: Resumen de evaluación de proyectos de gasto
+        title: Resumen de evaluación de propuestas de inversión
         valuator_name: Evaluador
         finished_and_feasible_count: Finalizadas viables
         finished_and_unfeasible_count: Finalizadas inviables
@@ -736,7 +732,6 @@ es:
         updated: "Evaluador actualizado correctamente"
       show:
         description: "Descripción"
-        email: "Email"
         group: "Grupo"
         no_description: "Sin descripción"
         no_group: "Sin grupo"
@@ -794,7 +789,6 @@ es:
         search_officer_placeholder: Buscar presidentes de mesa
         search_officer_text: Busca al presidente de mesa para asignar un turno
         select_date: "Seleccionar día"
-        no_voting_days: "Voting days ended"
         select_task: "Seleccionar tarea"
         table_shift: "Turno"
         table_email: "Email"
@@ -1225,7 +1219,7 @@ es:
           proposal_votes: Votos en propuestas
           proposals: Propuestas
           budgets: Presupuestos abiertos
-          budget_investments: Proyectos de gasto
+          budget_investments: Propuestas de inversión
           spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
@@ -1255,7 +1249,7 @@ es:
         all: Votaciones
         web_participants: Participantes en Web
         total_participants: Participantes totales
-        poll_questions: 'Preguntas de votación: %{poll}'
+        poll_questions: "Preguntas de votación: %{poll}"
         table:
           poll_name: Votación
           question_name: Pregunta
@@ -1367,11 +1361,10 @@ es:
           title: Título
           slug: Slug
     homepage:
-      title: Homepage
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.
       header_title: Encabezado
-      create_header: Crear encabezado
       no_header: No hay encabezado.
+      create_header: Crear encabezado
       cards_title: Tarjetas
       create_card: Crear tarjeta
       no_cards: No hay tarjetas.
@@ -1382,7 +1375,6 @@ es:
         link_url: URL del enlace
       feeds:
         proposals: Propuestas
-        debates: Debates
         processes: Procesos
       new:
         header_title: Nuevo encabezado

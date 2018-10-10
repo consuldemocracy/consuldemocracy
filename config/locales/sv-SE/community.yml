@@ -1,0 +1,60 @@
+sv:
+  community:
+    sidebar:
+      title: Gemenskap
+      description:
+        proposal: Delta i gemenskapen kring förslaget.
+        investment: Delta i gemenskapen kring budgetförslaget.
+      button_to_access: Gå med i gemenskapen
+    show:
+      title:
+        proposal: Gemenskap kring förslaget
+        investment: Gemenskap kring budgetförslaget
+      description:
+        proposal: Delta i gemenskapen för att utveckla förslaget. En aktiv diskussion kan leda till förbättringar av förslaget, ge det större spridning och ökat stöd.
+        investment: Delta i gemenskapen för att utveckla budgetförslaget. En aktiv diskussion kan leda till förbättringar av förslaget, ge det större spridning och ökat stöd.
+      create_first_community_topic:
+        first_theme_not_logged_in: Inga inlägg finns tillgängliga, skapa det första.
+        first_theme: Skapa det första inlägget i gemenskapen
+        sub_first_theme: "För att skapa ett tema behöver du %{sign_in} eller %{sign_up}."
+        sign_in: "logga in"
+        sign_up: "registrera dig"
+      tab:
+        participants: Deltagare
+      sidebar:
+        participate: Delta
+        new_topic: Skapa inlägg
+      topic:
+        edit: Redigera inlägg
+        destroy: Ta bort inlägg
+        comments:
+          zero: Inga kommentarer
+          one: 1 kommentar
+          other: "%{count} kommentarer"
+      author: Förslagslämnare
+      back: Tillbaka till %{community} %{proposal}
+    topic:
+      create: Skapa ett inlägg
+      edit: Redigera inlägg
+      form:
+        topic_title: Titel
+        topic_text: Inledande text
+        new:
+          submit_button: Skapa inlägg
+        edit:
+          submit_button: Redigera inlägg
+        create:
+          submit_button: Skapa inlägg
+        update:
+          submit_button: Uppdatera inlägg
+      show:
+        tab:
+          comments_tab: Kommentarer
+      sidebar:
+        recommendations_title: Rekommendationer för att skapa inlägg
+        recommendation_one: Använd inte versaler i inläggets titel eller i hela meningar i beskrivningen. På internet betyder det att skrika, och ingen gillar när folk skriker på dem.
+        recommendation_two: Inlägg eller kommentarer som förespråkar olagliga handlingar eller försöker sabotera diskussionen kommer att raderas. Allt annat är tillåtet.
+        recommendation_three: Det här är din plats, du ska kunna trivas och göra din röst hörd här.
+  topics:
+    show:
+      login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.

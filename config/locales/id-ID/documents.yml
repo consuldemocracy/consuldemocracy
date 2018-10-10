@@ -1,5 +1,6 @@
 id:
   documents:
+    max_documents_allowed_reached_html: Anda telah mencapai jumlah maksimum dari dokumen-dokumen yang diperbolehkan! <strong>Anda harus menghapus satu sebelum anda dapat meng-upload yang lain.</strong>
     form:
       title: Dokumen
       title_placeholder: Tambahkan judul deskriptif untuk dokumen
@@ -12,3 +13,9 @@ id:
         notice: Dokumen berhasil dihapus.
         alert: Tidak bisa menghancurkan dokumen.
         confirm: Apakah anda yakin ingin menghapus dokumen? Tindakan ini tidak dapat dibatalkan!
+    buttons:
+      download_document: Unduh file
+    errors:
+      messages:
+        in_between: harus di antara %{min} dan %{max}
+        wrong_content_type: konten jenis %{content_type} tidak sesuai yang diterima konten jenis %{accepted_content_types}

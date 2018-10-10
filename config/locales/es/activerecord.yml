@@ -8,8 +8,8 @@ es:
         one: "Presupuesto participativo"
         other: "Presupuestos participativos"
       budget/investment:
-        one: "Proyecto de gasto"
-        other: "Proyectos de gasto"
+        one: "Proyecto de inversión"
+        other: "Proyectos de inversión"
       budget/investment/milestone:
         one: "hito"
         other: "hitos"
@@ -38,14 +38,14 @@ es:
         one: "Evaluador"
         other: "Evaluadores"
       valuator_group:
-        one: "Grupo de Evaluadores"
-        other: "Grupos de Evaluadores"
+        one: "Grupo de evaluadores"
+        other: "Grupos de evaluadores"
       manager:
         one: "Gestor"
         other: "Gestores"
       newsletter:
         one: "Newsletter"
-        other: "Newsletters"
+        other: "Newsletter"
       vote:
         one: "Voto"
         other: "Votos"
@@ -62,8 +62,8 @@ es:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
       spending_proposal:
-        one: "Propuesta de inversión"
-        other: "Propuestas de inversión"
+        one: "Proyecto de inversión"
+        other: "Proyectos de inversión"
       site_customization/page:
         one: Página
         other: Páginas
@@ -129,7 +129,7 @@ es:
         administrator_id: "Administrador"
         location: "Ubicación (opcional)"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
-        image: "Imagen descriptiva del proyecto de gasto"
+        image: "Imagen descriptiva de la propuesta de inversión"
         image_title: "Título de la imagen"
       budget/investment/milestone:
         status_id: "Estado actual del proyecto (opcional)"
@@ -192,7 +192,7 @@ es:
         external_url: "Enlace a documentación adicional"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
-        signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
+        signable_id: "ID Propuesta ciudadana/Propuesta inversión"
         document_numbers: "Números de documentos"
       site_customization/page:
         content: Contenido
@@ -338,7 +338,7 @@ es:
             valuation:
               cannot_comment_valuation: 'No puedes comentar una evaluación'
       messages:
-        record_invalid: 'Error de validación: %{errors}'
+        record_invalid: "Error de validación: %{errors}"
         restrict_dependent_destroy:
           has_one: "No se puede eliminar el registro porque existe una %{record} dependiente"
           has_many: "No se puede eliminar el registro porque existe %{record} dependientes"

@@ -1,5 +1,197 @@
 ast:
   activerecord:
-    attributes:
+    models:
+      activity:
+        one: "actividá"
+        other: "actividaes"
       budget/investment:
+        one: "Proyectu de inversión"
+        other: "Proyectos d'inversión"
+      budget/investment/milestone:
+        one: "finxu"
+        other: "finxos"
+      comment:
+        one: "Comentariu"
+        other: "Comentarios"
+      debate:
+        one: "Alderique"
+        other: "Alderiques"
+      tag:
+        one: "Etiqueta"
+        other: "Etiquetes"
+      user:
+        one: "Usuariu"
+        other: "Usuarios"
+      moderator:
+        one: "Moderador"
+        other: "Moderadores"
+      administrator:
+        one: "Alministrador"
+        other: "Alministradores"
+      vote:
+        one: "Votu"
+        other: "Votos"
+      organization:
+        one: "Organización"
+        other: "Organizaciones"
+      poll/booth:
+        one: "urna"
+        other: "urnes"
+      poll/officer:
+        one: "presidente de mesa"
+        other: "presidentes de mesa"
+      proposal:
+        one: "Propuesta ciudadana"
+        other: "Propuestes ciudadanes"
+      site_customization/page:
+        one: Páxina
+        other: Páxines
+      site_customization/image:
+        one: Imaxe
+        other: Imaxes
+      site_customization/content_block:
+        one: Bloque
+        other: Bloques
+      legislation/process:
+        one: "Procesu"
+        other: "Procesos"
+      legislation/draft_versions:
+        one: "Versión borrador"
+        other: "Versiones borrador"
+      legislation/draft_texts:
+        one: "Borrador"
+        other: "Borradores"
+      legislation/questions:
+        one: "Entruga"
+        other: "Entruges"
+      legislation/question_options:
+        one: "Opción de respuesta zarrada"
+        other: "Opciones de respuesta zarrada"
+      legislation/answers:
+        one: "Respuesta"
+        other: "Respuestes"
+    attributes:
+      budget:
+        name: "Nombre"
+        description_accepting: "Descripción mientres la fase d'Aceptación"
+        description_reviewing: "Descripción mientres la fase de revisión interna"
+        description_selecting: "Descripción mientres la fase de sofitos"
+        description_valuating: "Descripción mientres la fase d'evaluación"
+        description_balloting: "Descripción mientres la fase de votación"
+        description_reviewing_ballots: "Descripción mientres la fase de revisión de votos"
+        description_finished: "Descripción cuando'l presupuestu remató / Resultancies"
+        phase: "Fase"
+        currency_symbol: "Divisa"
+      budget/investment:
+        heading_id: "Partida presupuestaria"
+        title: "Títulu"
+        description: "Descripción"
         external_url: "Enllaz a documentación adicional"
+        administrator_id: "Alministrador"
+      comment:
+        user: "Usuariu"
+      debate:
+        author: "Autor"
+        description: "Opinión"
+        terms_of_service: "Términos de serviciu"
+      proposal:
+        question: "Entruga"
+      user:
+        password_confirmation: "Confirmación de contraseña"
+        official_position: "Cargu públicu"
+        official_level: "Nivel del cargu"
+        redeemable_code: "Códigu de verificación per email"
+      organization:
+        responsible_name: "Persona responsable del colectivu"
+      spending_proposal:
+        association_name: "Nome de l'asociación"
+        geozone_id: "Ámbitu d'actuación"
+      poll:
+        starts_at: "Fecha d'apertura"
+        ends_at: "Fecha de zarru"
+        geozone_restricted: "Acutáu per xeozones"
+      poll/question:
+        summary: "Resume"
+      signature_sheet:
+        signable_type: "Tipu de fueya de firmes"
+        signable_id: "ID Propuesta ciudadana/Propuesta d'inversión"
+        document_numbers: "Númberos de documentos"
+      site_customization/page:
+        content: Conteníu
+        created_at: Creáu en
+        subtitle: Subtítulu
+        slug: Slug
+        status: Estáu
+        updated_at: Actualizáu en
+        print_content_flag: Botón d'imprimir conteníu
+        locale: Llinguaxe
+      site_customization/image:
+        image: Imaxe
+      site_customization/content_block:
+        locale: llingua
+        body: Conteníu
+      legislation/process:
+        title: Títulu del procesu
+        additional_info: Información adicional
+        start_date: Fecha d'entamu del procesu
+        end_date: Fecha de fin del procesu
+        debate_start_date: Fecha d'entamu del alderique
+        debate_end_date: Fecha de fin del alderique
+        draft_publication_date: Fecha de publicación del borrador
+        allegations_start_date: Fecha d'entamu d'allegamientos
+        allegations_end_date: Fecha de fin d'allegamientos
+        result_publication_date: Fecha de publicación del resultancia final
+      legislation/draft_version:
+        title: Títulu de la versión
+        body: Testu
+        changelog: Cambeos
+        final_version: Versión final
+      legislation/question:
+        question_options: Respuestes
+      legislation/question_option:
+        value: Valor
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Esti usuariu yá tien una clave acomuñada"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "les temes tienen de ser menor o igual que %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Llegasti al númberu máximu de mensaxes privaos per día"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Esti documentu nun apaez nel censu"
+              has_voted: "Esti usuariu yá votó"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: tien que ser igual o posterior a la fecha d'entamu
+            debate_end_date:
+              invalid_date_range: tien que ser igual o posterior a la fecha d'entamu del alderique
+            allegations_end_date:
+              invalid_date_range: tien que ser igual o posterior a la fecha d'entamu de los allegamientos
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Tienes de esperar un mínimu de %{interval} díes ente notificaciones"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Non verificáu por Padrón'
+              already_voted: 'Yá votó esta propuesta'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "tien de ser lletres, númberos, _ y -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Tien de tener %{required_width}px d'anchu"
+              image_height: "Tien de tener %{required_height}px d'altu"

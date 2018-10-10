@@ -4,15 +4,26 @@ he:
       confirm: בטוח?
       confirm_hide: אשר
       hide: החבא
+      hide_author: החבא יוצר
+      restore: שחזר
       mark_featured: מקודם
+      unmark_featured: לא מקודם
     banners:
       index:
+        title: באנרים
+        create: צור באנר
+        edit: ערוך באנר
+        delete: מחק באנר
         filters:
           all: הכל
+          with_active: פעיל
+          with_inactive: לא פעיל
       banner:
         title: שם
         description: תיאור
-        image: תמונה
+        target_url: קישור
+        post_started_at: החל מ
+        post_ended_at: עד
       edit:
         editing: ערוך באנר
         form:
@@ -21,8 +32,11 @@ he:
         creating: צור באנר
     activity:
       show:
+        action: פעולה
         actions:
           block: חסום
+          hide: מוחבא
+          restore: משוחזר
         by: Moderated by
         content: תוכן
         filter: הראה
@@ -31,13 +45,14 @@ he:
           on_comments: תגובות
           on_debates: דיוניים
           on_proposals: הצעות
+          on_users: משתשמים
         title: Moderator activity
+        type: סוג
     budgets:
       index:
         title: Participatory budgets
         new_link: Create new budget
         filters:
-          current: Open
           finished: Finished
         budget_investments: See budget investments
         table_name: Name
@@ -74,14 +89,10 @@ he:
         valuator_filter_all: All valuators
         tags_filter_all: All tags
         filters:
-          valuation_open: Open
-          without_admin: Without assigned admin
-          managed: Managed
-          valuating: Under valuation
-          valuation_finished: Valuation finished
-          valuation_finished_feasible: Val. fin. Feasible
-          selected: Selected
           all: All
+          without_admin: Without assigned admin
+          valuation_finished: Valuation finished
+          selected: Selected
         title: Investment projects
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
@@ -92,18 +103,10 @@ he:
           undecided: "Undecided"
         selected: "Selected"
         select: "Select"
-        table_id: "ID"
-        table_title: "Title"
-        table_admin: "Administrator"
-        table_valuator: "Valuator"
-        table_geozone: "Scope of operation"
-        table_feasibility: "Feasibility"
-        table_valuation_finished: "Val. Fin."
-        table_selection: "Selection"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
-        info: '%{budget_name} - Group: %{group_name} - Investment project %{id}'
+        info: "%{budget_name} - Group: %{group_name} - Investment project %{id}"
         edit: Edit
         edit_classification: Edit classification
         by: By
@@ -241,13 +244,22 @@ he:
         banner_imgs: Imágenes para los banners
         title: Configuration settings
         update_setting: עדכון
+        feature_flags: מאפיינים
+        features:
+          enabled: "אפשרת איפיון"
+          disabled: "השבתת איפיון"
+          enable: "לאפשר"
+          disable: "להשבית"
     shared:
       proposal_search:
         button: חיפוש
+        placeholder: חיפוש הצעות לפי כותרת, קוד, תיאור או שאלה
       spending_proposal_search:
         button: חיפוש
+        placeholder: חיפוש הצעות להוצאה כספית לפי כותרת או תיאור
       user_search:
         button: חיפוש
+        placeholder: '‘חיפוש משתמש/ת לפי שם או דואר אלקטרוני’'
     spending_proposals:
       index:
         geozone_filter_all: כל האזורים
@@ -265,6 +277,8 @@ he:
         assigned_admin: הוקצה מנהל/ת מערכת
         no_admin_assigned: לא הוקצה מנהל/ת מערכת
         no_valuators_assigned: לא הוקצו מעריכים
+        summary_link: "סיכום השקעות בפרויקט"
+        valuator_summary_link: "סיכום הערכה"
         feasibility:
           feasible: "בר ביצוע (%{price})"
           not_feasible: "אינו בר ביצוע"
@@ -273,6 +287,7 @@ he:
         assigned_admin: הוקצה מנהל לפרוייקט
         assigned_valuators: הוקצו מעריכים
         back: חזרה
+        heading: "השקעה כספית בפרוייקט %{id}"
         edit: עריכה
         edit_classification: עריכת הסיווג
         association_name: שם הארגון/עמותה
@@ -290,6 +305,8 @@ he:
         tags_placeholder: "כתיבת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)"
         undefined: אינו מוגדר
       summary:
+        title: סיכום פרויקטים להשקעה
+        title_proposals_with_supports: סיכום פרויקטים להשקעה שזכו בתמיכה
         geozone_name: הקף הפרויקט
         finished_and_feasible_count: הסתיים ובר ביצוע
         finished_and_unfeasible_count: הסתיים ואינו בר ביצוע
@@ -323,36 +340,65 @@ he:
       author: מחבר/ת
       created_at: תאריך יצירה
       name: שם
+      no_signature_sheets: "חסר דפים לחתימה"
+      index:
+        title: דפי חתימות
+        new: דפים חדשים לחתימות
       new:
         title: New  דף חדש לחתימות
+        document_numbers_note: "נא לכתוב את המספרים מופרדים באמצעות פסיקים (,)"
+        submit: יצירת דף לחתימות
       show:
+        created_at: נוצר ב
         author: מחבר/ת
         documents: מסמכים
+        document_count: "מספר המסמכים:"
+        unverified_error: (לא מאומת על ידי מפקד האוכלוסין)
+        loading: "עדיין נערך אימות חתימות על ידי מפקד האוכלוסין, בבקשה לרענן את הדף בעוד כמה רגעים"
     stats:
       show:
+        stats_title: סטטיסטיקה
         summary:
+          comment_votes: הצבעות על ההערה
           comments: הערות
+          debate_votes: הצבעות על הדיון
           debates: דיונים
+          proposal_votes: הצבעות להצעה
           proposals: הצעות
           spending_proposals: הצעה להוצאות כספיות
           unverified_users: משתמשים לא מאומתים
+          user_level_three: רמה של שלושה משתמשים
+          user_level_two: רמה של שני משתמשים
+          users: סך משתמשים
           verified_users: משתמשים מאומתים
+          verified_users_who_didnt_vote_proposals: משתמשים מאומתים שלא הצביעו על הצעות
           visits: כניסות/ביקורים
           votes: סך הצבעות
         spending_proposals_title: הצעות להוצאה כספית
         visits_title: כניסות/ביקורים
+        direct_messages: הודעות ישירות
+        proposal_notifications: הצעות להודעות
       direct_messages:
         title: הודעות ישירות
         total: סך הכל
+        users_who_have_sent_message: משתמשים/ות ששלחו הודעות פרטיות
       proposal_notifications:
         title: הצעת התראות
         total: סך הכל
+        proposals_with_notifications: הצעות המאפשרות הודעות
     tags:
       create: יצירת נושא
       destroy: מחיקת הנושא
+      index:
+        add_tag: הצעה לנושא לדיון חדש
+        title: נושאים לדיון
+      name:
+        placeholder: הקלד/י את שם הנושא
     users:
       index:
         title: משתמשיםות מוסתריםות
     verifications:
       index:
+        phone_not_given: לא ניתן מספר טלפון
+        sms_code_not_confirmed: לא אושר קוד המסרון
         title: כל אימותים מלאים

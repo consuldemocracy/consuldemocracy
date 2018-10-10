@@ -1,0 +1,121 @@
+it:
+  legislation:
+    annotations:
+      comments:
+        see_all: Vedi tutti
+        see_complete: Vedi completi
+        comments_count:
+          one: "%{count} commento"
+          other: "%{count} commenti"
+        replies_count:
+          one: "%{count} risposta"
+          other: "%{count} risposte"
+        cancel: Cancella
+        publish_comment: Pubblica Commento
+      form:
+        phase_not_open: Questa fase non è aperta
+        login_to_comment: È necessario %{signin} o %{signup} per lasciare un commento.
+        signin: Accedere
+        signup: Registrarsi
+      index:
+        title: Commenti
+        comments_about: Commenti su
+        see_in_context: Vedi nel contesto
+        comments_count:
+          one: "%{count} commento"
+          other: "%{count} commenti"
+      show:
+        title: Commenta
+      version_chooser:
+        seeing_version: Commmenti per la versione
+        see_text: Vedi la bozza di testo
+    draft_versions:
+      changes:
+        title: Modifiche
+        seeing_changelog_version: Riepilogo delle modifiche
+        see_text: Vedi la bozza di testo
+      show:
+        loading_comments: Caricamento dei commenti
+        seeing_version: Stai vedendo la versione in bozza
+        select_draft_version: Seleziona bozza
+        select_version_submit: vedi
+        updated_at: aggiornato in data %{date}
+        see_changes: vedi il riepilogo delle modifiche
+        see_comments: Vedi tutti i commenti
+        text_toc: Sommario
+        text_body: Testo
+        text_comments: Commenti
+    processes:
+      header:
+        additional_info: Ulteriori informazioni
+        description: Descrizione
+        more_info: Ulteriori informazioni e contesto
+      proposals:
+        empty_proposals: Non ci sono proposte
+      debate:
+        empty_questions: Non ci sono domande
+        participate: Partecipa al dibattito
+      index:
+        filter: Filtra
+        filters:
+          open: Procedimenti aperti
+          next: Successivo
+          past: Passato
+        no_open_processes: Non ci sono procedimenti aperti
+        no_next_processes: Non ci sono procedimenti in programma
+        no_past_processes: Non ci sono procedimenti passati
+        section_header:
+          icon_alt: Icona dei procedimenti legislativi
+          title: Procedimenti legislativi
+          help: Guida sui processi di legislazione
+        section_footer:
+          title: Guida sui processi di legislazione
+          description: Partecipa ai dibattiti e ai procedimenti precedenti all’approvazione di un’ordinanza o di un’iniziativa comunale. La tua opinione verrà presa in considerazione dal Consiglio Comunale.
+      phase_not_open:
+        not_open: Questa fase non è ancora aperta
+      phase_empty:
+        empty: Nulla è stato pubblicato al momento
+      process:
+        see_latest_comments: Vedi i commenti più recenti
+        see_latest_comments_title: Commenta questo procedimento
+      shared:
+        key_dates: Date chiave
+        debate_dates: Dibattito
+        draft_publication_date: Pubblicazione in bozza
+        result_publication_date: Pubblicazione del risultato finale
+        proposals_dates: Proposte
+    questions:
+      comments:
+        comment_button: Pubblica la risposta
+        comments_title: Apri le risposte
+        comments_closed: Fase chiusa
+        form:
+          leave_comment: Lascia la tua risposta
+      question:
+        comments:
+          zero: Nessun commento
+          one: "%{count} commento"
+          other: "%{count} commenti"
+        debate: Dibattito
+      show:
+        answer_question: Invia la risposta
+        next_question: Prossima domanda
+        first_question: Prima domanda
+        share: Condividi
+        title: Procedimento legislativo collaborativo
+      participation:
+        phase_not_open: Questa fase non è ancora aperta
+        organizations: Le organizzazioni non sono ammesse a partecipare al dibattito
+        signin: Accedere
+        signup: Registrarsi
+        unauthenticated: È necessario %{signin} o %{signup} per partecipare.
+        verified_only: Possono partecipare solo gli utenti verificati, %{verify_account}.
+        verify_account: verifica il tuo account
+        debate_phase_not_open: La fase di dibattito è conclusa e non è più possibile accettare risposte
+    shared:
+      share: Condividi
+      share_comment: Commenta la bozza %{version_name} del procedimento %{process_name}
+    proposals:
+      form:
+        tags_label: "Categorie"
+      not_verified: "Per votare le proposte %{verify_account}."
