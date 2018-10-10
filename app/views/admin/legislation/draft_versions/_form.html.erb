@@ -35,7 +35,7 @@
     <%= content_tag :div,
                     class: "markdown-editor clear js-globalize-attribute",
                     data: { locale: translations_form.locale },
-                    style: display_translation?(translations_form.locale) do %>
+                    style: translations_form.display_style do %>
 
       <div class="small-12 medium-8 column fullscreen-container">
         <div class="markdown-editor-header truncate">
