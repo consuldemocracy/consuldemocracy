@@ -62,7 +62,7 @@ es:
       new_href: "nueva propuesta de inversión"
       sincerely: "Atentamente"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
-      subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
+      subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"
     budget_investment_selected:
       subject: "Tu propuesta de inversión '%{code}' ha sido seleccionada"
       hi: "Estimado/a usuario/a"
@@ -71,7 +71,7 @@ es:
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"
     budget_investment_unselected:
-      subject: "Tu propuesta de inversión '%{code}' no ha sido seleccionada"
+      subject: "Tu proyecto de gasto '%{code}' no ha sido seleccionado"
       hi: "Estimado/a usuario/a"
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"
