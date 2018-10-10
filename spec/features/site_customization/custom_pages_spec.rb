@@ -162,7 +162,7 @@ feature "Custom Pages" do
     scenario "Add a translation in Português", :js do
       visit @edit_page_url
 
-      select "Português", from: "translation_locale"
+      select "Português brasileiro", from: "translation_locale"
       fill_in 'site_customization_page_title_pt_br', with: 'Titulo em Português'
 
       click_button 'Update Custom page'
@@ -174,7 +174,7 @@ feature "Custom Pages" do
       click_link "Español"
       expect(page).to have_field('site_customization_page_title_es', with: 'Titulo en Español')
 
-      click_link "Português"
+      click_link "Português brasileiro"
       expect(page).to have_field('site_customization_page_title_pt_br', with: 'Titulo em Português')
     end
 

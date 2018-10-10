@@ -232,7 +232,6 @@ nl:
       text_sign_in: log in
       text_sign_up: registreer
       title: Hoe kan ik reageren?
-  locale: Nederlands
   notifications:
     index:
       comments_on:

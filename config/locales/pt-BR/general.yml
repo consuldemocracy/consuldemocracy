@@ -1,8 +1,5 @@
 ---
 pt-BR:
-  i18n:
-    language:
-      name: Português
   account:
     show:
       change_credentials_link: Alterar meus dados pessoais
@@ -879,7 +876,6 @@ pt-BR:
       open_gov: Governo aberto
       proposals: Propostas
       spending_proposals: Propostas de despesas
-  locale: Português brasileiro
   mailers:
     comment:
       hi: Olá

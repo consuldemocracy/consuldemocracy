@@ -107,14 +107,14 @@ shared_examples "translatable" do |factory_name, path_name, fields|
       visit path
       field = fields.sample
 
-      select "Português", from: "translation_locale"
+      select "Português brasileiro", from: "translation_locale"
       fill_in field_for(field, :pt_br), with: text_for(field, :"pt-BR")
 
       click_button update_button_text
 
       visit path
 
-      select('Português', from: 'locale-switcher')
+      select('Português brasileiro', from: 'locale-switcher')
 
       expect(page).to have_field(field_for(field, :pt_br), with: text_for(field, :"pt-BR"))
     end
