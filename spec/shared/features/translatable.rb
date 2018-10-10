@@ -240,11 +240,11 @@ def text_for(field, locale)
   end
 end
 
-def field_for(field, locale)
+def field_for(field, locale, visible: true)
   if translatable_class.name == "I18nContent"
     "contents_content_#{translatable.key}values_#{field}_#{locale}"
   else
-    find("[data-locale='#{locale}'][id$='#{field}']")[:id]
+    find("[data-locale='#{locale}'][id$='#{field}']", visible: visible)[:id]
   end
 end
 
@@ -261,6 +261,8 @@ def fill_in_textarea(field, textarea_type, locale, with:)
     click_link class: "fullscreen-toggle"
     fill_in field_for(field, locale), with: with
     click_link class: "fullscreen-toggle"
+  elsif textarea_type == :ckeditor
+    fill_in_ckeditor field_for(field, locale, visible: false), with: with
   end
 end
 
@@ -274,6 +276,10 @@ def expect_page_to_have_translatable_field(field, locale, with:)
       click_link class: "fullscreen-toggle"
       expect(page).to have_field field_for(field, locale), with: with
       click_link class: "fullscreen-toggle"
+    elsif textarea_type == :ckeditor
+      within(".ckeditor div.js-globalize-attribute[data-locale='#{locale}']") do
+        within_frame(0) { expect(page).to have_content with }
+      end
     end
   end
 end
@@ -288,7 +294,7 @@ def update_button_text
     "Update notification"
   when "Poll"
     "Update poll"
-  when "Poll::Question"
+  when "Poll::Question", "Poll::Question::Answer"
     "Save"
   when "Widget::Card"
     "Save card"

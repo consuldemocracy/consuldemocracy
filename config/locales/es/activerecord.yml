@@ -267,7 +267,7 @@ es:
         title: Respuesta
         description: Descripción
       poll/question/answer/translation:
-        title: Título
+        title: Respuesta
         description: Descripción
       poll/question/answer/video:
         title: Título

@@ -262,6 +262,9 @@ en:
       poll/question/answer:
         title: Answer
         description: Description
+      poll/question/answer/translation:
+        title: Answer
+        description: Description
       poll/question/answer/video:
         title: Title
         url: External video
