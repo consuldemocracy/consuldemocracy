@@ -36,8 +36,10 @@
     <% end %>
 
     <div class="small-12 medium-9 column">
-      <%= link_to_add_association t("admin.legislation.questions.form.add_option"),
+      <div class="add_fields_container">
+        <%= link_to_add_association t("admin.legislation.questions.form.add_option"),
                                   f, :question_options, class: "button hollow"  %>
+      </div>
     </div>
   </div>
 
