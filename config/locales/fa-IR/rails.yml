@@ -49,9 +49,9 @@ fa:
       - نوامبر
       - دسامبر
     order:
-      - :day
-      - :month
-      - :year
+      - ': سال'
+      - ': ماه'
+      - ': روز'
   datetime:
     distance_in_words:
       about_x_hours:
