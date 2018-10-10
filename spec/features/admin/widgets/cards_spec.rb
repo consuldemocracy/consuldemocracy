@@ -16,10 +16,10 @@ feature 'Cards' do
     visit admin_homepage_path
     click_link "Create card"
 
-    fill_in "widget_card_label_en", with: "Card label"
-    fill_in "widget_card_title_en", with: "Card text"
-    fill_in "widget_card_description_en", with: "Card description"
-    fill_in "widget_card_link_text_en", with: "Link text"
+    fill_in "Label (optional)", with: "Card label"
+    fill_in "Title", with: "Card text"
+    fill_in "Description", with: "Card description"
+    fill_in "Link text", with: "Link text"
     fill_in "widget_card_link_url", with: "consul.dev"
     attach_image_to_card
     click_button "Create card"
@@ -64,10 +64,10 @@ feature 'Cards' do
       click_link "Edit"
     end
 
-    fill_in "widget_card_label_en", with: "Card label updated"
-    fill_in "widget_card_title_en", with: "Card text updated"
-    fill_in "widget_card_description_en", with: "Card description updated"
-    fill_in "widget_card_link_text_en", with: "Link text updated"
+    fill_in "Label (optional)", with: "Card label updated"
+    fill_in "Title", with: "Card text updated"
+    fill_in "Description", with: "Card description updated"
+    fill_in "Link text", with: "Link text updated"
     fill_in "widget_card_link_url", with: "consul.dev updated"
     click_button "Save card"
 
@@ -104,10 +104,10 @@ feature 'Cards' do
       visit admin_homepage_path
       click_link "Create header"
 
-      fill_in "widget_card_label_en", with: "Header label"
-      fill_in "widget_card_title_en", with: "Header text"
-      fill_in "widget_card_description_en", with: "Header description"
-      fill_in "widget_card_link_text_en", with: "Link text"
+      fill_in "Label (optional)", with: "Header label"
+      fill_in "Title", with: "Header text"
+      fill_in "Description", with: "Header description"
+      fill_in "Link text", with: "Link text"
       fill_in "widget_card_link_url", with: "consul.dev"
       click_button "Create header"
 
