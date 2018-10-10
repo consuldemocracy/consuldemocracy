@@ -105,7 +105,7 @@ es:
         other: "Votaciones"
       proposal_notification:
         one: "Notificación de propuesta"
-        other: "Notificaciónes de propuesta"
+        other: "Notificaciones de propuesta"
     attributes:
       budget:
         name: "Nombre"
