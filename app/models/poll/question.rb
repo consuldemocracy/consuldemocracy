@@ -7,6 +7,7 @@ class Poll::Question < ActiveRecord::Base
 
   translates :title, touch: true
   globalize_accessors
+  accepts_nested_attributes_for :translations, allow_destroy: true
 
   belongs_to :poll
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
@@ -17,11 +18,12 @@ class Poll::Question < ActiveRecord::Base
   has_many :partial_results
   belongs_to :proposal
 
-  validates :title, presence: true
+  translation_class.instance_eval do
+    validates :title, presence: true, length: { minimum: 4 }
+  end
+
   validates :author, presence: true
   validates :poll_id, presence: true
-
-  validates :title, length: { minimum: 4 }
 
   scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
 
@@ -47,7 +49,7 @@ class Poll::Question < ActiveRecord::Base
       self.author = proposal.author
       self.author_visible_name = proposal.author.name
       self.proposal_id = proposal.id
-      self.title = proposal.title
+      send(:"title_#{Globalize.locale}=", proposal.title)
     end
   end
 

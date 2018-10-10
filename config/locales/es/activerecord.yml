@@ -194,6 +194,8 @@ es:
         summary: "Resumen"
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
+      poll/question/translation:
+        title: "Pregunta"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Propuesta inversión"
