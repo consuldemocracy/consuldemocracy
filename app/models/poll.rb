@@ -12,6 +12,7 @@ class Poll < ActiveRecord::Base
   translates :summary,     touch: true
   translates :description, touch: true
   globalize_accessors
+  accepts_nested_attributes_for :translations, allow_destroy: true
 
   RECOUNT_DURATION = 1.week
 
@@ -32,7 +33,9 @@ class Poll < ActiveRecord::Base
 
   accepts_nested_attributes_for :questions
 
-  validates :name, presence: true
+  translation_class.instance_eval do
+    validates :name, presence: true
+  end
 
   validate :date_range
 
