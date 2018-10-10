@@ -197,6 +197,8 @@ en:
         summary: "Summary"
         description: "Description"
         external_url: "Link to additional documentation"
+      poll/question/translation:
+        title: "Question"
       poll/ballot_sheet:
         data: CSV data
         poll_id: Poll
