@@ -45,7 +45,7 @@ module TranslatableFormHelper
 
       def translations_options(resource, locale)
         {
-          class: " js-globalize-attribute",
+          class: "translatable_fields js-globalize-attribute",
           style: @template.display_translation_style(resource.globalized_model, locale),
           data:  { locale: locale }
         }
