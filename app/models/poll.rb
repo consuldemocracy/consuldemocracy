@@ -7,8 +7,7 @@ class Poll < ActiveRecord::Base
   translates :name,        touch: true
   translates :summary,     touch: true
   translates :description, touch: true
-  globalize_accessors
-  accepts_nested_attributes_for :translations, allow_destroy: true
+  include Globalizable
 
   RECOUNT_DURATION = 1.week
 

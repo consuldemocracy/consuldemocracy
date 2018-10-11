@@ -4,8 +4,7 @@ class SiteCustomization::Page < ActiveRecord::Base
   translates :title,       touch: true
   translates :subtitle,    touch: true
   translates :content,     touch: true
-  globalize_accessors
-  accepts_nested_attributes_for :translations, allow_destroy: true
+  include Globalizable
 
   translation_class.instance_eval do
     validates :title, presence: true

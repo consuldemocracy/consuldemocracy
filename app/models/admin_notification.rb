@@ -3,8 +3,7 @@ class AdminNotification < ActiveRecord::Base
 
   translates :title, touch: true
   translates :body,  touch: true
-  globalize_accessors
-  accepts_nested_attributes_for :translations, allow_destroy: true
+  include Globalizable
 
   translation_class.instance_eval do
     validates :title, presence: true
