@@ -116,7 +116,7 @@ var initialize_modules = function() {
   App.Sortable.initialize();
   App.TableSortable.initialize();
   App.InvestmentReportAlert.initialize();
-
+  App.Custom.initialize();
 
   //$("#columna_2").css({height: $('div.expanded.budget.jumbo-budget.budget-heading').height()});
   $("#columna_2").css({height: $('div#columna_1').height() + 51 });

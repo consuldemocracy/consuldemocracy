@@ -61,14 +61,36 @@
   </div>
 
   <% if controller_name == "polls" && action_name == "edit" %>
-    <div class="row">
       <fieldset class="fieldset">
         <legend><%= t('admin.polls.new.show_results_and_stats') %></legend>
-        <%= f.check_box :results_enabled, checked: @poll.results_enabled?, label: t('admin.polls.new.show_results') %>
-        <%= f.check_box :stats_enabled, checked: @poll.stats_enabled?, label: t('admin.polls.new.show_stats') %>
+        <div class="row">
+          <div class="small-4 columns">
+            <%= f.check_box :results_enabled, checked: @poll.results_enabled?, id: "checkbox_results", label: t('admin.polls.new.show_results') %>
+          </div>
+          <div id="when_show_results" style="display:none;">
+            <div class="small-5 columns">
+              <%= f.radio_button :when_show_results, false, { checked: !@poll.when_show_results?, label: 'Sólo cuando haya acabado la consulta' } %>
+            </div>
+            <div class="small-3 columns" id="when_show_results">
+              <%= f.radio_button :when_show_results, true, { checked: @poll.when_show_results?, label: 'Siempre' } %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-4 columns">
+            <%= f.check_box :stats_enabled, checked: @poll.stats_enabled?, id: "checkbox_stats", label: t('admin.polls.new.show_stats') %>
+          </div>
+          <div id="when_show_stats" style="display:none;">
+            <div class="small-5 columns">
+              <%= f.radio_button :when_show_stats, false, { checked: !@poll.when_show_stats?, label: 'Sólo cuando haya acabado la consulta' } %>
+            </div>
+            <div class="small-3 columns">
+              <%= f.radio_button :when_show_stats, true, { checked: @poll.when_show_stats?, label: 'Siempre'  } %>
+            </div>
+          </div>
+        </div>
         <p class="small"><%= t('admin.polls.new.results_and_stats_reminder') %></p>
       </fieldset>
-    </div>
   <% end %>
 
   <div class="row">
