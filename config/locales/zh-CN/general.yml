@@ -547,6 +547,20 @@ zh-CN:
         destroy:
           notice_html: "您已经停止跟随此公民提议！</br>您将不再接收到有关此提议的通知。"
     hide: 隐藏
+    suggest:
+      debate:
+        found:
+          other: "有些带有术语'%{query}'的辩论，您可以参与它们而不需要打开一个新的。"
+        message: "您正在看%{count} 个辩论中包含术语‘%{query}’的%{limit}"
+        see_all: "查看所有"
+      budget_investment:
+        found:
+          other: "有些带有术语'%{query}'的投资，您可以参与其中而不需要打开一个新的。"
+        message: "您在看%{count} 个投资里包含术语'%{query}'的%{limit}"
+      proposal:
+        found:
+          other: "有些带有术语 '%{query}'的提议，您可以贡献其中而不需要创建一个新的"
+        message: "您在看%{count} 个提议中包含术语 '%{query}'的%{limit}"
     recommended_index:
       title: 推荐
       see_more: 查看更多推荐
@@ -565,6 +579,17 @@ zh-CN:
       association_name: '协会名称'
       description: 说明
       external_url: 链接到其他文档
+    index:
+      by_geozone: "投资项目范围：%{geozone}"
+      search_form:
+        button: 搜索
+        placeholder: 投资项目...
+        title: 搜索
+      search_results:
+        other: " 包含术语'%{search_term}'"
+      sidebar:
+        geozones: 经营范围
+        feasibility: 可行性
     new:
       recommendations_title: 如果创建支出提议
   welcome:
