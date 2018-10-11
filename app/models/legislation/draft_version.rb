@@ -9,8 +9,7 @@ class Legislation::DraftVersion < ActiveRecord::Base
   translates :body,      touch: true
   translates :body_html, touch: true
   translates :toc_html,  touch: true
-  globalize_accessors
-  accepts_nested_attributes_for :translations, allow_destroy: true
+  include Globalizable
 
   belongs_to :process, class_name: 'Legislation::Process', foreign_key: 'legislation_process_id'
   has_many :annotations, class_name: 'Legislation::Annotation', foreign_key: 'legislation_draft_version_id', dependent: :destroy

@@ -13,8 +13,7 @@ class Legislation::Process < ActiveRecord::Base
   translates :summary,         touch: true
   translates :description,     touch: true
   translates :additional_info, touch: true
-  globalize_accessors
-  accepts_nested_attributes_for :translations, allow_destroy: true
+  include Globalizable
 
   PHASES_AND_PUBLICATIONS = %i(debate_phase allegations_phase proposals_phase draft_publication result_publication).freeze
 

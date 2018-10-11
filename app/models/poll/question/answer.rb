@@ -4,8 +4,7 @@ class Poll::Question::Answer < ActiveRecord::Base
 
   translates :title,       touch: true
   translates :description, touch: true
-  globalize_accessors
-  accepts_nested_attributes_for :translations, allow_destroy: true
+  include Globalizable
 
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
