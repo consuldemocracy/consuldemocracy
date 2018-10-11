@@ -41,7 +41,11 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   private
 
     def process_params
-      params.require(:legislation_process).permit(
+      params.require(:legislation_process).permit(allowed_params)
+    end
+
+    def allowed_params
+      [
         :title,
         :summary,
         :description,
@@ -63,9 +67,9 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :result_publication_enabled,
         :published,
         :custom_list,
-        *translation_params(Legislation::Process),
+        *translation_params(::Legislation::Process),
         documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
-      )
+      ]
     end
 
     def set_tag_list
@@ -74,6 +78,6 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
     end
 
     def resource
-      @process || Legislation::Process.find(params[:id])
+      @process || ::Legislation::Process.find(params[:id])
     end
 end

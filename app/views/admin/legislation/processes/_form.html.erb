@@ -173,6 +173,8 @@
     <hr>
   </div>
 
+  <%= render "custom_fields", process: @process, f: f %>
+
   <div class="small-12 medium-9 column">
     <%= f.translatable_text_field :title,
                                   placeholder: t("admin.legislation.processes.form.title_placeholder") %>
