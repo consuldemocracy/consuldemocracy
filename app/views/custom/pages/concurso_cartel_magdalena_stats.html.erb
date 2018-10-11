@@ -1,15 +1,15 @@
-<% provide :title do %><%= t('pages.titles.concurso_cartel_magdalena') %><% end %>
+<% provide :title do %><%= t('pages.titles.concurso_cartel_magdalena', year: Poll.kind_of_cartel.last.next_year) %><% end %>
 
 <% votacion = Poll.first %>
 
-<div class="expanded cartel_magdalena_2018 no-margin-top">
+<div class="expanded cartel_magdalena no-margin-top">
   <div class="row">
     <div class="small-12 medium-12 column padding">
       <h1>
-        <%= t('pages.cartel_magdalena_2018.title') %>
+        <%= t('pages.cartel_magdalena_current.title', year: Poll.kind_of_cartel.last.next_year) %>
         <br>
         <small>
-          <%= link_to t('pages.cartel_magdalena_2018.bases_link'), "/system/concurso_cartel_magdalena/Cartel_Magdalena_2018_Bases_#{I18n.locale}.pdf", target: '_blank' %>
+          <%= link_to t('pages.cartel_magdalena_current.bases_link', year: Poll.kind_of_cartel.last.next_year), "/system/concurso_cartel_magdalena/Cartel_Magdalena_2018_Bases_#{I18n.locale}.pdf", target: '_blank' %>
         </small>
       </h1>
     </div>
@@ -28,7 +28,7 @@
       <div class="row">
         <div class="small-12 column">
           <div class="panel purple text-center">
-            <p><%= t('pages.cartel_magdalena_2018.total_vots') %></p>
+            <p><%= t('pages.cartel_magdalena_current.total_vots') %></p>
             <p id="total_participants" class="big-number-stat">
               <%= @stats[:total_vots] %>
             </p>
@@ -42,7 +42,7 @@
         <!-- Resultados generales -->
         <div class="small-12 medium-6 column text-right">
           <div class="panel light-green" data-equalizer-watch>
-            <p><%= t('pages.cartel_magdalena_2018.cartells_seleccionats') %></p>
+            <p><%= t('pages.cartel_magdalena_current.cartells_seleccionats') %></p>
             <p id="total_spending_proposals" class="big-number-stat">
               <%= @stats[:cartells_seleccionats] %>
             </p>
@@ -57,7 +57,7 @@
 
         <!-- Participación por sexo -->
         <div class="small-12 column">
-          <h2 class="subtitle"><%= t('pages.cartel_magdalena_2018.sex_participation') %></h2>
+          <h2 class="subtitle"><%= t('pages.cartel_magdalena_current.sex_participation') %></h2>
         </div>
 
         <hr>
@@ -114,7 +114,7 @@
     <div class="row">
       <!-- Participación por grupos de edad -->
       <div class="small-12 column margin-top">
-        <h2 class="subtitle"><%= t('pages.cartel_magdalena_2018.age_participation') %></h2>
+        <h2 class="subtitle"><%= t('pages.cartel_magdalena_current.age_participation') %></h2>
       </div>
       <%= render 'pages/concurso_cartel_magdalena/results_age' %>
     </div>

@@ -92,6 +92,9 @@ class Poll < ActiveRecord::Base
     end
   end
 
+  def next_year
+    starts_at.year+1
+  end
 end
 
 # == Schema Information

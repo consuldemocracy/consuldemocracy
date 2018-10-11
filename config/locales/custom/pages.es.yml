@@ -1,9 +1,9 @@
 es:
   pages:
-    cartel_magdalena_2018:
-      title: Concurso del cartel de la Magdalena 2018
-      tab_link: Cartel Magdalena 2018
-      bases_link: Bases del concurso del cartel de las fiestas de la Magdalena 2018
+    cartel_magdalena_current:
+      title: 'Concurso del cartel de la Magdalena %{year}'
+      tab_link: 'Cartel Magdalena %{year}'
+      bases_link: 'Bases del concurso del cartel de las fiestas de la Magdalena %{year}'
       carteles_seleccionados: Carteles seleccionados
       confirm_votacion: Solo se puede votar un cartel, ¿Seguro que deseas votar este?
       already_voted: Ya has votado por otro cartel
@@ -16,26 +16,6 @@ es:
       catells_seleccionats: Cateles seleccionados
       sex_participation: Participación por sexos
       age_participation: Participación por grupos de edad
-      cartel_1:
-        lema: A un pas del cel
-      cartel_2:
-        lema: Cistella de tradició
-      cartel_3:
-        lema: Colors al vent
-      cartel_4:
-        lema: Els Festers
-      cartel_5:
-        lema: Escut de la festa
-      cartel_6:
-        lema: Festa
-      cartel_7:
-        lema: Pum pum pum
-      cartel_8:
-        lema: Simbologia de festes
-      cartel_9:
-        lema: Camino de tradiciones
-      cartel_10:
-        lema: Mone a gaudir de la vida en les colles
 
     more_information:
       item_1:
@@ -517,7 +497,7 @@ es:
       title: Datos abiertos
     privacy: Política de Privacidad
     titles:
-      concurso_cartel_magdalena: Concurso del cartel de la Magdalena 2018
+      concurso_cartel_magdalena: 'Concurso del cartel de la Magdalena %{year}'
       accessibility: Accesibilidad
       conditions: Condiciones de uso
       more_information: Más información
