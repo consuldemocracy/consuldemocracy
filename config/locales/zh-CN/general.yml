@@ -324,6 +324,9 @@ zh-CN:
       tags_label: 标签
       tags_placeholder: "请输入您希望使用的标签，用逗号(',') 分割"
       map_location: "地图位置"
+      map_location_instructions: "将地图导航到该位置并放置标记。"
+      map_remove_marker: "删除地图标记"
+      map_skip_checkbox: "此提议没有具体的位置或者我没有留意到。"
     index:
       featured_proposals: 特色
       filter_topic:
@@ -334,6 +337,7 @@ zh-CN:
         hot_score: 最活跃
         most_commented: 最多评论
         relevance: 相关性
+        archival_date: 存档的
         recommendations: 推荐
       recommendations:
         without_results: 没有跟您兴趣相关的提议
@@ -342,6 +346,33 @@ zh-CN:
         actions:
           success: "此账户的提议推荐现已禁用"
           error: "出现错误。请回到‘您的帐号’页面，手动禁用提议推荐"
+      retired_proposals: 撤回的提议
+      retired_proposals_link: "被作者撤回的提议"
+      retired_links:
+        all: 所有
+        duplicated: 重复的
+        started: 进行中
+        unfeasible: 不可行
+        done: 完成
+        other: 其他
+      search_form:
+        button: 搜索
+        placeholder: 搜索提议...
+        title: 搜索
+      search_results_html:
+        other: " 包含术语 <strong>'%{search_term}'</strong>"
+      select_order: 排序依据
+      select_order_long: '您正在查看的提议是依据：'
+      start_proposal: 创建提议
+      title: 提议
+      top: 每周热门
+      top_link_proposals: 按类别得到最多支持的提议
+      section_header:
+        icon_alt: 提议图标
+        title: 提议
+        help: 关于提议的帮助
+      section_footer:
+        title: 关于提议的帮助
     new:
       form:
         submit_button: 创建提议
