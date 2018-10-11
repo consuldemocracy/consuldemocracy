@@ -1,11 +1,8 @@
-<div class="row">
-  <div class="small-12 column">
-    <%= back_link_to admin_dashboard_actions_path, t("admin.dashboard.actions.edit.back") %>
-
-    <h1><%= t("admin.dashboard.actions.edit.editing") %></h1>
-
-    <%= form_for dashboard_action, url: { action: 'update' } do |f| %>
-      <%= render 'form', f: f %>
-    <% end %>
-  </div>
+<div class="small-12 column">
+  <%= back_link_to admin_dashboard_actions_path, t("admin.dashboard.actions.edit.back") %>
+  <h2><%= t("admin.dashboard.actions.edit.editing") %></h2>
 </div>
+
+<%= form_for dashboard_action, url: { action: 'update' } do |f| %>
+  <%= render 'form', f: f %>
+<% end %>

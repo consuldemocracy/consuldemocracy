@@ -1,88 +1,73 @@
 <%= render 'shared/errors' %>
 
-<div class="row">
+<div class="row expanded">
+  <div class="small-12 medium-4 column">
+    <%= f.label :action_type %>
+    <% ::Dashboard::Action.action_types.keys.each do |action_type_value| %>
+      <span class="margin-right">
+        <%= f.radio_button :action_type, action_type_value, label: false %>
+        <%= f.label "action_type_#{action_type_value}", t("admin.dashboard.actions.action_type.#{action_type_value}") %>
+      </span>
+    <% end %>
+  </div>
+
+  <div class="small-12 medium-4 column margin-top">
+    <%= f.check_box :request_to_administrators, label: ::Dashboard::Action.human_attribute_name(:request_to_administrators) %>
+  </div>
+
+  <div class="small-12 medium-4 column margin-top">
+    <%= f.check_box :active, label: ::Dashboard::Action.human_attribute_name(:active) %>
+  </div>
+</div>
+
+<div class="row expanded">
   <div class="small-12 column">
     <%= f.label :title %>
     <%= f.text_field :title, label: false %>
-  </div>
-</div>
 
-<div class="row">
-  <div class="small-12 column">
     <%= f.label :short_description %>
     <%= f.text_field :short_description, label: false %>
-  </div>
-</div>
 
-<div class="row">
-  <div class="small-12 column">
     <%= f.cktext_area :description,
                       ckeditor: { language: I18n.locale } %>
   </div>
 </div>
 
-<div class="row">
-  <div class="small-12 medium-3 column">
-    <%= f.label :action_type %>
-    <% ::Dashboard::Action.action_types.keys.each do |action_type_value| %>
-      <%= f.radio_button :action_type, action_type_value, label: false %>
-      <%= f.label "action_type_#{action_type_value}", t("admin.dashboard.actions.action_type.#{action_type_value}") %>
-      <br>
-    <% end %>
-  </div>
-</div>
-
-<div class="small-12 column">
-  <%= f.check_box :request_to_administrators, label: ::Dashboard::Action.human_attribute_name(:request_to_administrators) %>
-</div>
-
-<div class="row">
-  <div class="small-12 medium-4 large-4 column">
+<div class="row expanded margin-top">
+  <div class="small-12 medium-4 column">
     <%= f.label :day_offset %>
-    <%= f.number_field :day_offset, label: false, step: 1, min: 0 %>
     <p class="help-text"><%= t("admin.dashboard.actions.form.day_offset_help_text") %></p>
+    <%= f.number_field :day_offset, label: false, step: 1, min: 0 %>
   </div>
 
-  <div class="small-12 medium-4 large-4 column">
+  <div class="small-12 medium-4 column">
     <%= f.label :required_supports %>
-    <%= f.number_field :required_supports, label: false, step: 1, min: 0 %>
     <p class="help-text"><%= t("admin.dashboard.actions.form.required_supports_help_text") %></p>
+    <%= f.number_field :required_supports, label: false, step: 1, min: 0 %>
   </div>
 
-  <div class="small-12 medium-4 large-4 column">
+  <div class="small-12 medium-4 column">
     <%= f.label :order %>
+    <p class="help-text"><%= t("admin.dashboard.actions.form.order_help_text") %></p>
     <%= f.number_field :order, label: false, step: 1, min: 0 %>
   </div>
 </div>
 
-<div class="small-12 column">
-  <%= f.check_box :active, label: ::Dashboard::Action.human_attribute_name(:active) %>
-</div>
-
-<div class="small-12 column">
-  <hr>
-</div>
-
 <% if feature?(:allow_attached_documents) %>
   <div class="documents small-12 column">
+    <hr>
     <%= render 'documents/nested_documents', documentable: dashboard_action, f: f %>
+    <hr>
   </div>
 <% end %>
 
-<div class="small-12 column">
-  <hr>
-</div>
-
 <div class="links small-12 column">
   <%= render 'links/nested_links', linkable: dashboard_action, f: f %>
-</div>
-
-<div class="small-12 column">
   <hr>
 </div>
 
-<div class="row">
-  <div class="actions small-12 large-3 medium-3 column">
-    <%= f.submit(class: 'button expanded', value: t("admin.dashboard.actions.form.submit_button")) %>
+<div class="row expanded">
+  <div class="small-12 medium-6 large-4 column">
+    <%= f.submit(class: "button expanded", value: t("admin.dashboard.actions.form.submit_button")) %>
   </div>
 </div>
