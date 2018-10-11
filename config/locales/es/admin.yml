@@ -326,17 +326,19 @@ es:
           proposed_action: Acción propuesta
           resource: Recurso
         index:
-          create: Crear
+          create: Crear recurso o acción
           edit: Editar
           delete: Borrar
           no_records: No se encontraron registros
           active: 'Si'
           inactive: 'No'
-          title: Recursos/Acciones recomendadas
+          title: Recursos y acciones
           action_title: Título
           action_type: Tipo
           required_supports: Apoyos necesarios
+          day_offset: Días necesarios
           action_active: Activo
+          order: Orden
         new:
           creating: Nueva acción para el dashboard de propuestas
           back: Volver a la lista
@@ -347,8 +349,9 @@ es:
           back: Volver a la lista
         form:
           submit_button: Guardar
-          day_offset_help_text: Introduce 0 para que este valor no se tenga en cuenta.
-          required_supports_help_text: Introduce 0 para que este valor no se tenga en cuenta.
+          day_offset_help_text: Introduce 0 para que este valor no se tenga en cuenta
+          required_supports_help_text: Introduce 0 para que este valor no se tenga en cuenta
+          order_help_text: Orden para mostrar al usuario
         delete:
           success: Acción borrada con éxito
       administrator_tasks:
@@ -356,15 +359,15 @@ es:
           title: Tareas pendientes
           solve: Resolver
           no_records: No hay tareas pendientes
-          source: Origen
+          source: Propuesta
+          resource: Recurso solicitado
         edit:
           back: Volver a la lista de tareas pendientes
           solving: Resolver tarea pendiente
         form:
           solve: Marcar como resuelta
-          proposal: "La propuesta: %{title}"
-          request: "Ha solicitado: %{title}"
-          check_details: Ver los detalles de la propuesta
+          proposal: Propuesta
+          request: Recurso solicitado
         update:
           success: La tarea ha sido marcada como resuelta
     debates:
@@ -597,7 +600,7 @@ es:
       users: Usuarios
       dashboard: Panel de control de propuestas
       administrator_tasks: Tareas pendientes
-      dashboard_actions: Acciones del panel de control de propuestas
+      dashboard_actions: Recursos y acciones
     administrators:
       index:
         title: Administradores
@@ -1068,8 +1071,8 @@ es:
             update: La configuración del mapa se ha guardado correctamente.
           form:
             submit: Actualizar
-        proposals:
-          title: Ajustes para propuestas
+        dashboard:
+          title: Panel de control de propuestas
     shared:
       booths_search:
         button: Buscar

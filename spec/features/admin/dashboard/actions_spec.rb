@@ -36,7 +36,7 @@ feature 'Admin dashboard actions' do
 
     before do
       visit admin_dashboard_actions_path
-      click_link 'Create'
+      click_link 'Create resource or action'
     end
 
     scenario 'Creates a new action' do

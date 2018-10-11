@@ -65,10 +65,18 @@ en:
     proposal_improvement_path: Proposal improvement info internal link
     proposals:
       successful_proposal_id: Successful proposal
-      poll_short_title: Subtitle for polls feature
-      poll_description: Description for polls feature
+      successful_proposal_id_description: This proposal is used as a reference for a successful proposal in supports number and will be displayed in the dashboard graph.
+      poll_short_title: Polls
+      poll_short_title_description: Short description of the survey feature. Allows users to create surveys on a proposal
+      poll_description: Polls description
+      poll_description_description: Detailed description of the survey feature
       poll_link: Additional information link
-      email_short_title: Subtitle for email feature
-      email_description: Description for email feature
-      poster_short_title: Subtitle for poster feature
-      poster_description: Description for poster feature
+      poll_link_description: Añade un enlace de información adicional a la funcionalidad de encuestas del panel de control
+      email_short_title: Email
+      email_short_title_description: Short description of the email feature. Allows users to send an email to promote their proposal
+      email_description: Email description
+      email_description_description: Detailed description of the email feature
+      poster_short_title: Poster
+      poster_short_title_description: Short description of the poster feature. Allows users to download a poster on PDF format to promote their proposal
+      poster_description: Poster description
+      poster_description_description: Detailed description of the poster feature

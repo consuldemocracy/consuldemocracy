@@ -29,7 +29,7 @@ feature 'Admin administrator tasks' do
         expect(page).to have_content(task.source.proposal.title)
         expect(page).to have_content(task.source.action.title)
       end
-      
+
       scenario 'has a link that allows solving the request' do
         expect(page).to have_link('Solve')
       end
@@ -45,13 +45,9 @@ feature 'Admin administrator tasks' do
       click_link 'Solve'
     end
 
-    scenario 'Shows task details' do
-      expect(page).to have_content(task.source.proposal.title)
+    scenario 'Shows task details and link to proposal' do
+      expect(page).to have_link(task.source.proposal.title)
       expect(page).to have_content(task.source.action.title)
-    end
-    
-    scenario 'contains a link to the proposal' do
-      expect(page).to have_link('Check the proposal details')
     end
 
     scenario 'contains a button that solves the request' do
@@ -61,7 +57,7 @@ feature 'Admin administrator tasks' do
     scenario 'After it is solved dissapears from the list' do
       click_button 'Mark as solved'
 
-      expect(page).not_to have_content(task.source.proposal.title)
+      expect(page).not_to have_link(task.source.proposal.title)
       expect(page).not_to have_content(task.source.action.title)
       expect(page).to have_content('The task has been marked as solved')
     end

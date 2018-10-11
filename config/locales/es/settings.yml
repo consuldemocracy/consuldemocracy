@@ -65,10 +65,18 @@ es:
     proposal_improvement_path: Link a información para mejorar propuestas
     proposals:
       successful_proposal_id: Propuesta exitosa
-      poll_short_title: Subtítulo funcionalidad encuestas
-      poll_description: Descripción funcionalidad encuestas
-      poll_link: Enlace información adicional
-      email_short_title: Subtítulo funcionalidad de correo electrónico
-      email_description: Descripción funcionalidad de correo electrónico
-      poster_short_title: Subtítulo funcionalidad póster
-      poster_description: Descripción funcionalidad póster
+      successful_proposal_id_description: Esta propuesta se utiliza como referencia de una propuesta exitosa en número de apoyos y se mostrará en el gráfico del panel de control
+      poll_short_title: Encuestas
+      poll_short_title_description: Breve descripción de la funcionalidad de encuestas. Permite a los usuarios crear encuestas sobre una propuesta.
+      poll_description: Descripción encuestas
+      poll_description_description: Descripción detallada de la funcionalidad de encuestas
+      poll_link: Enlace de información adicional
+      poll_link_description: Añade un enlace de información adicional a la funcionalidad de encuestas del panel de control
+      email_short_title: Correo electrónico
+      email_short_title_description: Breve descripción de la funcionalidad de correo electrónico. Permite a los usuarios enviar un email para difundir su propuesta
+      email_description: Descripción correo electrónico
+      email_description_description: Descripción detallada de la funcionalidad de correo electrónico
+      poster_short_title: Póster
+      poster_short_title_description: Breve descripción de la funcionalidad de póster. Permite a los usuarios descargar un póster en formato PDF para difundir su propuesta
+      poster_description: Descripción póster
+      poster_description_description: Descripción detallada de la funcionalidad de póster
