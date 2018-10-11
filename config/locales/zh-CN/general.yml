@@ -444,6 +444,24 @@ zh-CN:
         incoming: "传入"
         expired: "过期的"
       title: "投票"
+      participate_button: "参与此投票"
+      participate_button_incoming: "更多信息"
+      participate_button_expired: "投票结束"
+      no_geozone_restricted: "所有城市"
+      geozone_restricted: "地区"
+      geozone_info: "参与人口普查的人可以： "
+      already_answer: "您已经参与此投票"
+      not_logged_in: "您必须登录或注册才可以参与"
+      unverified: "您必须验证您的账户才可以参与"
+      cant_answer: "此投票在您的地理区域里不可用"
+      section_header:
+        icon_alt: 投票图标
+        title: 投票
+        help: 关于投票的帮助
+      section_footer:
+        title: 关于投票的帮助
+        description: 公民投票是一种参与机制，有投票权的公民可以直接做出决定
+      no_polls: "没有开放的投票。"
   poll_questions:
     create_question: "创建问题"
     show:
@@ -456,7 +474,29 @@ zh-CN:
       title_label: "标题"
       body_label: "信息"
       submit_button: "发送信息"
+      info_about_receivers_html: "此信息将发送给<strong>%{count} 个人</strong> ，它将显示在%{proposal_page} 中。<br>信息不会立即发送，用户将定期收到包含所有提议通知的电子邮件。"
+      proposal_page: "提议页面"
+    show:
+      back: "返回我的活动"
   shared:
+    edit: '编辑'
+    save: '保存'
+    delete: 删除
+    "yes": "是"
+    "no": "不是"
+    search_results: "搜索结果"
+    advanced_search:
+      author_type: '按作者类别'
+      author_type_blank: '选择类别'
+      date: '按日期'
+      date_placeholder: 'DD/MM/YYYY（日／月／年）'
+      date_range_blank: '选择日期'
+      date_1: '过去24 小时'
+      date_2: '上周'
+      date_3: '上个月'
+      date_4: '去年'
+      date_5: '自定义'
+      from: '从'
     recommended_index:
       title: 推荐
       see_more: 查看更多推荐
