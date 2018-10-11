@@ -234,8 +234,30 @@ zh-CN:
         no_notifications: "您没有新的通知"
     admin:
       watch_form_message: '您有未保存的更改。是否确认要离开此页面？'
+  legacy_legislation:
+    help:
+      alt: 选择您希望评论的文本然后按下铅笔按钮。
+      text: 若要对此文档做评论，您必须%{sign_in} 或者%{sign_up}。然后选择您希望评论的文本，按下铅笔按钮。
+      text_sign_in: 登录
+      text_sign_up: 注册
+      title: 我可以如何评论此文档？
   notifications:
+    index:
+      empty_notifications: 您没有新的通知。
+      mark_all_as_read: 将所有标记为已读
+      read: 读
+      title: 通知
+      unread: 未读
     notification:
+      action:
+        comments_on:
+          other: 有%{count} 个新评论
+        proposal_notification:
+          other: 有%{count} 个新通知
+        replies_to:
+          other: 您的评论有%{count} 个新回复
+      mark_as_read: 标记为已读
+      mark_as_unread: 标记为未读
       notifiable_hidden: 此资源不再可用。
   map:
     title: "地区"
@@ -300,6 +322,8 @@ zh-CN:
       tag_category_label: "类别"
       tags_instructions: "为此提议加标签。您可以从推荐的类别中选择或者自行添加"
       tags_label: 标签
+      tags_placeholder: "请输入您希望使用的标签，用逗号(',') 分割"
+      map_location: "地图位置"
     index:
       featured_proposals: 特色
       filter_topic:
