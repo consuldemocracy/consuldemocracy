@@ -268,7 +268,11 @@ end
 
 def expect_page_to_have_translatable_field(field, locale, with:)
   if input_fields.include?(field)
-    expect(page).to have_field field_for(field, locale), with: with
+    if translatable_class.name == "I18nContent" && with.blank?
+      expect(page).to have_field field_for(field, locale)
+    else
+      expect(page).to have_field field_for(field, locale), with: with
+    end
   else
     textarea_type = textarea_fields[field]
 
