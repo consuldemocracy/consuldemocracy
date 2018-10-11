@@ -128,6 +128,7 @@ zh-CN:
       section_footer:
         title: 关于辩论的帮助
         description: 开始一个辩论，与他人分享您所关心主题的意见。
+        help_text_1: "公民辩论空间是针对任何能够揭露他们关心的问题和哪些想和他人分享意见的人。"
         help_text_2: '要开始一个辩论，您需要在%{org} 上注册。用户也可以对公开辩论做出评论，并用每个辩论上面找到的“我同意”或者“我不同意”按钮来评分。'
     new:
       form:
@@ -201,6 +202,7 @@ zh-CN:
       description: 此门户网站使用%{consul}，其是%{open_source}。
       open_source: 开源软件
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: 决定如何塑造您想要居住的城市。
       participation_title: 参与
       privacy: 隐私政策
     header:
@@ -230,6 +232,8 @@ zh-CN:
           other: 您有%{count} 个新通知
         notifications: 通知
         no_notifications: "您没有新的通知"
+    admin:
+      watch_form_message: '您有未保存的更改。是否确认要离开此页面？'
   notifications:
     notification:
       notifiable_hidden: 此资源不再可用。
