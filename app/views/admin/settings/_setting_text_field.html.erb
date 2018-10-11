@@ -1,6 +1,10 @@
 <tr>
-  <td class="small-12 medium-4">
+  <td class="small-12 medium-4 align-top">
     <strong><%= t("settings.#{setting.key}") %></strong>
+    <br>
+    <span class="small">
+      <%= t("settings.#{setting.key}_description") %>
+    </span>
   </td>
   <td class="small-12 medium-8">
     <%= form_for setting,
@@ -10,9 +14,8 @@
         <%= f.text_field :value, label: false, id: dom_id(setting) %>
       </div>
       <div class="small-12 medium-6 large-3 column">
-        <%= f.submit(t('admin.settings.index.update_setting'), class: "button hollow expanded") %>
+        <%= f.submit(t("admin.settings.index.update_setting"), class: "button hollow expanded") %>
       </div>
     <% end %>
   </td>
 </tr>
-
