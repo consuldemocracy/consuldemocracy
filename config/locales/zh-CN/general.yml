@@ -462,6 +462,43 @@ zh-CN:
         title: 关于投票的帮助
         description: 公民投票是一种参与机制，有投票权的公民可以直接做出决定
       no_polls: "没有开放的投票。"
+    show:
+      already_voted_in_booth: "您已经在实体投票亭参与了。您不能再次参与。"
+      already_voted_in_web: "您已经参与此投票。如果您再次投票，之前的票将被覆盖。"
+      back: 返回投票
+      cant_answer_not_logged_in: "您必须%{signin} 或者%{signup} 才可以参与。"
+      comments_tab: 评论
+      login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
+      signin: 登录
+      signup: 注册
+      cant_answer_verify_html: "您必须%{verify_link} 才能回答。"
+      verify_link: "验证您的账户"
+      cant_answer_incoming: "此投票还没有开始。"
+      cant_answer_expired: "此投票已经结束。"
+      cant_answer_wrong_geozone: "此问题在您的地理区域里不可用。"
+      more_info_title: "更多信息"
+      documents: 文档
+      zoom_plus: 展开图像
+      read_more: "阅读更多有关%{answer} 的信息"
+      read_less: "阅读更少有关%{answer} 的信息"
+      videos: "外部视频"
+      info_menu: "信息"
+      stats_menu: "参与统计"
+      results_menu: "投票结果"
+      stats:
+        title: "参与数据"
+        total_participation: "总参与量"
+        total_votes: "总投票数"
+        votes: "投票"
+        web: "网络"
+        booth: "投票亭"
+        total: "总"
+        valid: "有效"
+        white: "白票"
+        null_votes: "无效"
+      results:
+        title: "问题"
+        most_voted_answer: "得到最多投票的回答： "
   poll_questions:
     create_question: "创建问题"
     show:
@@ -501,6 +538,14 @@ zh-CN:
       title: 推荐
       see_more: 查看更多推荐
       hide: 隐藏推荐
+  social:
+    blog: "%{org} 博客"
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram（电报群）"
+    instagram: "%{org} Instagram"
   spending_proposals:
     new:
       recommendations_title: 如果创建支出提议
