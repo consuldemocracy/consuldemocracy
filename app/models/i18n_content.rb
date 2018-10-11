@@ -6,7 +6,7 @@ class I18nContent < ActiveRecord::Base
   validates :key, uniqueness: true
 
   translates :value, touch: true
-  globalize_accessors locales: [:en, :es, :fr, :nl]
+  globalize_accessors
 
   # flat_hash returns a flattened hash, a hash with a single level of
   # depth in which each key is composed from the keys of the original
