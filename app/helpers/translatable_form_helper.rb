@@ -25,23 +25,23 @@ module TranslatableFormHelper
       end.join.html_safe
     end
 
-    def translation_for(locale)
-      existing_translation_for(locale) || new_translation_for(locale)
-    end
-
-    def existing_translation_for(locale)
-      # Use `select` because `where` uses the database and so ignores
-      # the `params` sent by the browser
-      @object.translations.select { |translation| translation.locale == locale }.first
-    end
-
-    def new_translation_for(locale)
-      @object.translations.new(locale: locale).tap do |translation|
-        translation.mark_for_destruction unless locale == I18n.locale
-      end
-    end
-
     private
+
+      def translation_for(locale)
+        existing_translation_for(locale) || new_translation_for(locale)
+      end
+
+      def existing_translation_for(locale)
+        # Use `select` because `where` uses the database and so ignores
+        # the `params` sent by the browser
+        @object.translations.select { |translation| translation.locale == locale }.first
+      end
+
+      def new_translation_for(locale)
+        @object.translations.new(locale: locale).tap do |translation|
+          translation.mark_for_destruction unless locale == I18n.locale
+        end
+      end
 
       def translations_options(resource, locale)
         {
