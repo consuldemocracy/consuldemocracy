@@ -8,10 +8,9 @@
 </head>
 <body>
   <div class="row">
-    <div class="small-12 medium-9 column dashboard-poster-preview dashboard-poster-pdf">
+    <div class="small-12 medium-9 column dashboard-poster-pdf">
       <div class="header">
-        <h1><%= t("dashboard.poster.index.h1") %></h1>
-        <h2><%= t("dashboard.poster.index.h2") %></h2>
+        <h1><%= t("dashboard.poster.index.poster_title_html") %></h1>
         <p><%= t("dashboard.poster.index.intro_text") %></p>
         <p class="image-caption"><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></p>
       </div>
@@ -21,7 +20,7 @@
         <%= wicked_pdf_image_tag 'default_mailing.jpg', class: 'proposal-image' unless proposal.image.present? %>
       </div>
 
-      <h3><%= t("dashboard.poster.index.h3") %></h3>
+      <h3><%= t("dashboard.poster.index.support") %></h3>
 
       <div class="proposal-title">"<%= proposal.title %>"</div>
 

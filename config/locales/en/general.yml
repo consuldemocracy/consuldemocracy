@@ -208,14 +208,13 @@ en:
         draft: Draft
         retired: Retired
       proposal_totals:
-        supports: Supports
         active_resources: Active resources
         community: Community
         show_proposal: Show proposal
         preview_proposal: Preview proposal
         current_goal: Current goal
         support_count:
-          one: "%{count} support" 
+          one: "%{count} support"
           other: "%{count} supports"
     footer:
       accessibility: Accessibility
@@ -329,16 +328,8 @@ en:
         submit_button: Create proposal
     created:
       title: Congratulations! You have taken the first step.
-      motivation_html: |
-        <p>
-        It is important to have at least 100 supports on the first day of the campaign to be able to
-        boost your proposal.
-        </p>
-        <p>
-          <strong>Do you think you need help to achieve this goal?</strong>
-          <br>
-          If so, leave your proposal as a draft and we will guide you.
-        </p>
+      motivation:  "It is important to have at least 100 supports on the first day of the campaign to be able to boost your proposal."
+      motivation_2_html: "<strong>Do you think you need help to achieve this goal?</strong><br>If so, leave your proposal as a draft and we will guide you."
       publish: No, I want to publish the proposal
       dashboard: Yes, I want help and I'll publish later
       preview_title: This is how your proposal will look when you publish it
@@ -526,9 +517,9 @@ en:
       success: Ideal progress
     index:
       title: Edition
-      edit_proposal_link: Edit
-      publish: Publish
-      retire: Retire
+      edit_proposal_link: Edit proposal
+      publish: Publish proposal
+      retire: Retire proposal
     new_request:
       links: Links
     resources:
@@ -539,7 +530,7 @@ en:
       and: and
       view_resource: See resource
       resource_requested: Resource already requested
-      request_resource: Request resource 
+      request_resource: Request resource
       resource_locked: Resource locked
     recommended_actions:
       title: Recommended actions
@@ -548,7 +539,7 @@ en:
       see_complete_course: Check out the complete course
       hide_course: Hide course
     goal:
-      target_supports: 
+      target_supports:
         one: Get %{count} support for your proposal
         other: Get %{count} supports for your proposal
       days:
@@ -558,7 +549,7 @@ en:
       ideal_time: Ideal time
     community:
       access_community: Access the community
-      latest_activity: "Latest activity of the community: %{at}" 
+      latest_activity: "Latest activity of the community: %{at}"
       participants: Participants
       debates: Debates
       comments: Comments
@@ -591,13 +582,12 @@ en:
     poster:
       index:
         title: Poster preview
-        h1: Do not keep looking,
-        h2: back me up! ;)
+        poster_title_html: "Do not keep looking,<br> back me up! ;)"
         intro_text:
           I am participating in Decide Madrid with my own citizen proposal and only if you also add you can I achieve the
           necessary support to make Madrid the city we all want.
         proposal_code: "Code of the proposal: %{code}"
-        h3: Support my proposal
+        support: Support my proposal
         footer: Visit decide.madrid.es and support this proposal. We need to be many. Decide your too. Thank you!
       new:
         title: Poster feature

@@ -1,27 +1,27 @@
 <% if next_goal.present? %>
-  <div id='goals-section'>
-    <br><br>
-    <div class="action-title">
-      <h5><%= t("dashboard.next_goal.title") %></h5>
-      <hr>
-    </div>
+  <div id="goals-section">
+    <h3 class="title"><%= t("dashboard.next_goal.title") %></h3>
 
-    <div id="next-goal" data-toggler=".hide">
+    <div id="next_goal" data-toggler=".hide">
       <%= render 'goal', goal: next_goal %>
 
-      <div class="column small-12">
-        <a data-toggle="complete-course next-goal" id='see-complete-course-link'>
-          <%= t("dashboard.next_goal.see_complete_course") %>
-        </a>
-      </div>
+      <% if course.count > 1 %>
+        <div class="margin small">
+          <a id="see_complete_course_link" data-toggle="complete_course next_goal">
+            <%= t("dashboard.next_goal.see_complete_course") %>
+          </a>
+        </div>
+      <% end %>
     </div>
 
     <% if course.count > 1 %>
-      <div class="hide" id="complete-course" data-toggler=".hide">
-        <%= render partial: 'goal', collection: course %>  
+      <div id="complete_course" class="hide" data-toggler=".hide">
+        <%= render partial: 'goal', collection: course %>
 
-        <div class="column small-12">
-          <a data-toggle="complete-course next-goal"><%= t("dashboard.next_goal.hide_course") %></a>
+        <div class="margin small">
+          <a data-toggle="complete_course next_goal">
+            <%= t("dashboard.next_goal.hide_course") %>
+          </a>
         </div>
       </div>
     <% end %>

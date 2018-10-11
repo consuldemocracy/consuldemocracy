@@ -1,17 +1,10 @@
 module ProposalsDashboardHelper
-  def my_proposal_menu_class
-    return 'is-active' if controller_name == 'dashboard' && action_name == 'index'
-    nil
+  def my_proposal_menu_active?
+    controller_name == 'dashboard' && action_name == 'show'
   end
 
-  def progress_menu_class
-    return 'is-active' if progress_menu_active?
-    nil
-  end
-
-  def community_menu_class
-    return 'is-active' if controller_name == 'dashboard' && action_name == 'community'
-    nil
+  def community_menu_active?
+    controller_name == 'dashboard' && action_name == 'community'
   end
 
   def progress_menu_active?
@@ -22,20 +15,8 @@ module ProposalsDashboardHelper
     can?(:manage_polls, proposal) || resources.any?
   end
 
-  def resources_menu(&block)
-    menu_group('resources-menu', resources_menu_active?, &block)
-  end
-
-  def polls_menu(&block)
-    menu_entry(polls_menu_active?, &block)
-  end
-
-  def poster_menu(&block)
-    menu_entry(poster_menu_active?, &block)
-  end
-
   def resources_menu_active?
-    poster_menu_active? || polls_menu_active? || mailing_menu_active? || is_resource_request? 
+    poster_menu_active? || polls_menu_active? || mailing_menu_active? || is_resource_request?
   end
 
   def polls_menu_active?
@@ -46,29 +27,8 @@ module ProposalsDashboardHelper
     controller_name == 'poster'
   end
 
-  def mailing_menu(&block)
-    menu_entry(mailing_menu_active?, &block)
-  end
-
   def mailing_menu_active?
     controller_name == 'mailing'
-  end
-
-  def menu_group(id, active, &block)
-    html_class = nil
-    html_class = 'is-active' if active
-
-    content_tag(:ul, id: id, class: html_class) do
-      yield
-    end
-  end
-
-  def menu_entry(active, &block)
-    content = capture(&block)
-    html_class = nil
-    html_class = 'is-active' if active
-
-    content_tag(:li, content, class: html_class)
   end
 
   def is_resource_request?
@@ -82,7 +42,7 @@ module ProposalsDashboardHelper
   def is_request_active(id)
     controller_name == 'dashboard' && action_name == 'new_request' && dashboard_action&.id == id
   end
-  
+
   def resoure_availability_label(resource)
     label = []
 

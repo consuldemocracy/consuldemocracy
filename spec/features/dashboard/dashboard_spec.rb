@@ -13,20 +13,20 @@ feature "Proposal's dashboard" do
   end
 
   scenario 'My proposal has a link to edit the proposal' do
-    expect(page).to have_link('Edit')
+    expect(page).to have_link('Edit proposal')
   end
 
   scenario 'My proposal has a link to retire the proposal' do
-    expect(page).to have_link('Retire')
+    expect(page).to have_link('Retire proposal')
   end
 
   scenario 'My proposal has a link to publish the proposal' do
-    expect(page).to have_link('Publish')
+    expect(page).to have_link('Publish proposal')
   end
 
   scenario "Publish link dissapears after proposal's publication" do
-    click_link 'Publish'
-    expect(page).not_to have_link('Publish')
+    click_link 'Publish proposal'
+    expect(page).not_to have_link('Publish proposal')
   end
 
   scenario 'Dashboard progress shows current goal', js: true do
@@ -39,7 +39,7 @@ feature "Proposal's dashboard" do
       expect(page).to have_content(goal.title)
       expect(page).not_to have_content(future_goal.title)
 
-      find(:css, '#see-complete-course-link').click
+      find(:css, '#see_complete_course_link').click
 
       expect(page).to have_content(goal.title)
       expect(page).to have_content(future_goal.title)
@@ -67,14 +67,14 @@ feature "Proposal's dashboard" do
     executed_solved_action = create(:dashboard_executed_action, action: solved, proposal: proposal, executed_at: Time.current)
     _solved_task = create(:dashboard_administrator_task, :done, source: executed_solved_action)
 
-    unavailable = create(:dashboard_action, :resource, :active, required_supports: proposal.votes_for.size + 1_000) 
+    unavailable = create(:dashboard_action, :resource, :active, required_supports: proposal.votes_for.size + 1_000)
 
     visit progress_proposal_dashboard_path(proposal)
     within 'div#available-resources-section' do
       expect(page).to have_content('Polls')
       expect(page).to have_content('E-mail')
       expect(page).to have_content('Poster')
-      expect(page).to have_content(available.title)      
+      expect(page).to have_content(available.title)
       expect(page).to have_content(unavailable.title)
       expect(page).to have_content(requested.title)
       expect(page).to have_content(solved.title)

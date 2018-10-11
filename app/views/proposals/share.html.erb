@@ -27,13 +27,14 @@
           description: @proposal.summary
         } %>
 
-        <% if can?(:dashboard, @proposal) %> 
-          <div class="callout light">
-            <p class="centered">
-              <strong><%= t('.improve_it') %></strong>
+        <% if can?(:dashboard, @proposal) %>
+          <div class="callout light margin">
+            <p class="text-center">
+              <strong><%= t("proposals.share.improve_it") %></strong>
             </p>
-            <div class="centered">
-              <%= link_to t('.dashboard'), proposal_dashboard_path(@proposal), class: 'button' %>
+            <div class="small-12 medium-6 large-4 column small-centered">
+              <%= link_to t("proposals.share.dashboard"),
+                          proposal_dashboard_path(@proposal), class: "button expanded" %>
             </div>
           </div>
         <% end %>
@@ -41,7 +42,8 @@
         <% if @proposal_improvement_path.present? %>
           <div class="callout highlight margin-top text-center">
             <p class="lead"><strong><%= t("proposals.proposal.improve_info") %></strong></p>
-            <%= link_to t("proposals.proposal.improve_info_link"), @proposal_improvement_path, class: "button" %>
+            <%= link_to t("proposals.proposal.improve_info_link"),
+                        @proposal_improvement_path, class: "button" %>
           </div>
         <% end %>
 

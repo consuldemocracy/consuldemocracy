@@ -1,9 +1,5 @@
 <% if proposed_actions.any? %>
-  <br><br>
-  <div class="action-title">
-    <h5><%= t("dashboard.recommended_actions.title") %></h5>
-    <hr>
-  </div>
+  <h3 class="title"><%= t("dashboard.recommended_actions.title") %></h3>
 
   <%= render partial: 'proposed_action', collection: proposed_actions %>
 <% end %>

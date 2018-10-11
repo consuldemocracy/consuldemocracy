@@ -1,50 +1,55 @@
-<div class="callout proposal-totals">
-  <div class="row">
-    <div class="column large-4">
-      <div class="counter">
-        <div class="counter-value"><%= number_with_delimiter(proposal.votes_for.size, delimiter: '.') %></div>
-        <div class="counter-label"><%= t('.supports') %></div>
-      </div>
-
+<div class="dashboard-proposals-stats">
+  <div class="row expanded">
+    <div class="small-12 medium-3 large-2 column">
       <div class="counter">
         <div class="counter-value">
           <%= Dashboard::Action.active.resources.active_for(proposal).count %>
           /
           <%= Dashboard::Action.active.resources.count %>
         </div>
-        <div class="counter-label"><%= t('.active_resources') %></div>
+        <span class="counter-label"><%= t("layouts.dashboard.proposal_totals.active_resources") %></span>
       </div>
+    </div>
 
+    <div class="small-12 medium-3 large-2 column counter-divider">
       <div class="counter">
         <div class="counter-value"><%= number_with_delimiter(community_members_count, delimiter: '.') %></div>
-        <div class="counter-label"><%= t('.community') %></div>
-      </div> 
+        <span class="counter-label"><%= t("layouts.dashboard.proposal_totals.community") %></span>
+      </div>
     </div>
-    <div class="column large-8">
-      <div class="current-goal">
+
+    <div class="small-12 medium-3 large-2 column">
+      <div class="counter">
         <div class="counter-value">
-          <%= t('.support_count', count: number_with_delimiter(next_goal_supports, delimiter: '.')) %>
+          <%= number_with_delimiter(proposal.votes_for.size, delimiter: '.') %>
+          /
+          <%= t("layouts.dashboard.proposal_totals.support_count", count: number_with_delimiter(next_goal_supports, delimiter: '.')) %>
         </div>
-
-        <div class="counter-label"><%= t('.current_goal') %></div>
+        <span class="counter-label"><%= t("layouts.dashboard.proposal_totals.current_goal") %></span>
       </div>
+    </div>
 
-      <div class="support-indicator">
-        <div class="text-right">
-          <%= next_goal_progress %>%
+    <div class="small-12 large-6 column">
+      <div class="row">
+        <div class="small-12 medium-8 column">
+          <div class="next-goal-progress">
+            <%= next_goal_progress %>%
+          </div>
+          <div class="progress" role="progressbar" tabindex="0" aria-valuenow="0" aria-valuemin="0"
+               aria-valuetext="<%= "#{next_goal_progress}%" %>" aria-valuemax="100">
+             <div class="progress-meter" style="width: <%= next_goal_progress %>%"></div>
+          </div>
         </div>
-        <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" 
-             aria-valuetext="<%= "#{next_goal_progress}%" %>" aria-valuemax="100">
-           <div class="progress-meter" style="width: <%= next_goal_progress %>%"></div>
-        </div>
-      </div>
 
-      <div class="proposal-link">
-        <% if proposal.draft? %>
-          <%= link_to t('.preview_proposal'), proposal_path(proposal), class: 'button success expanded', target: '_blank' %>
-        <% else %>
-          <%= link_to t('.show_proposal'), proposal_path(proposal), class: 'button success expanded', target: '_blank' %>
-        <% end %>
+        <div class="small-12 medium-4 column">
+          <div class="proposal-link">
+            <% if proposal.draft? %>
+              <%= link_to t('layouts.dashboard.proposal_totals.preview_proposal'), proposal_path(proposal), class: 'button success expanded', target: '_blank' %>
+            <% else %>
+              <%= link_to t('layouts.dashboard.proposal_totals.show_proposal'), proposal_path(proposal), class: 'button success expanded', target: '_blank' %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
