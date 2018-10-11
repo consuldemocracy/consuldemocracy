@@ -244,7 +244,9 @@ def field_for(field, locale, visible: true)
   if translatable_class.name == "I18nContent"
     "contents_content_#{translatable.key}values_#{field}_#{locale}"
   else
-    find("[data-locale='#{locale}'][id$='_#{field}']", visible: visible)[:id]
+    within(".translatable_fields[data-locale='#{locale}']") do
+      find("input[id$='_#{field}'], textarea[id$='_#{field}']", visible: visible)[:id]
+    end
   end
 end
 
@@ -281,7 +283,7 @@ def expect_page_to_have_translatable_field(field, locale, with:)
       expect(page).to have_field field_for(field, locale), with: with
       click_link class: "fullscreen-toggle"
     elsif textarea_type == :ckeditor
-      within(".ckeditor div.js-globalize-attribute[data-locale='#{locale}']") do
+      within("div.js-globalize-attribute[data-locale='#{locale}'] .ckeditor ") do
         within_frame(0) { expect(page).to have_content with }
       end
     end

@@ -32,11 +32,7 @@
       <%= translations_form.label :body, nil, hint: t("admin.legislation.draft_versions.form.use_markdown") %>
     </div>
 
-    <%= content_tag :div,
-                    class: "markdown-editor clear js-globalize-attribute",
-                    data: { locale: translations_form.locale },
-                    style: translations_form.display_style do %>
-
+    <div class="markdown-editor">
       <div class="small-12 medium-8 column fullscreen-container">
         <div class="markdown-editor-header truncate">
           <%= t("admin.legislation.draft_versions.form.title_html",
@@ -66,7 +62,7 @@
 
       <div class="small-12 medium-6 column markdown-preview">
       </div>
-    <% end %>
+    </div>
   <% end %>
 
   <div class="small-12 medium-9 column">
