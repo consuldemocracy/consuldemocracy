@@ -379,7 +379,19 @@ zh-CN:
         submit_button: 创建提议
       more_info: 公民提议是如何运作的？
       recommendation_one: 请不要用大写字母写提议标题或者整个句子。在因特网上，这被认为是在喊叫。没有认喜欢被吆喝。
+      recommendation_three: 享受此空间和其中充满的声音。它也属于您。
+      recommendation_two: 任何暗示非法行为以及那些有意破坏辩论空间的提议或评论都将被删除。其他一切都是允许的。
       recommendations_title: 创建提议的推荐
+      start_new: 创建新提议
+    notice:
+      retired: 已撤回的提议
+    proposal:
+      created: "您已经创建一个提议！"
+      share:
+        guide: "现在您可以把它分享，让人们可以开始支持。"
+        edit: "在分享之前，您将可以随意更改文本。"
+        view_proposal: 不是现在，返回我的提议
+      improve_info: "改善您的推广活动以便得到更多支持"
   shared:
     recommended_index:
       title: 推荐
