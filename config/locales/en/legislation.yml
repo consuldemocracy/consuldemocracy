@@ -123,5 +123,4 @@ en:
       form:
         tags_label: "Categories"
       not_verified: "For vote proposals %{verify_account}."
-      categories:
-          genre: Categories
+      categories: Categories
