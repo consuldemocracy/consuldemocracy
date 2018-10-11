@@ -420,6 +420,42 @@ zh-CN:
       flag: 此提议已被几个用户标记为不恰当。
       login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
       notifications_tab: 通知
+      retired_warning: "作者认为此提议不应再得到支持。"
+      retired_warning_link_to_explanation: 投票前请先阅读说明。
+      retired: 被作者撤回的提议
+      share: 共用
+      send_notification: 发送通知
+      no_notifications: "此提议没有任何通知。"
+      embed_video_title: "%{proposal} 的视频"
+      title_external_url: "附加文档"
+      title_video_url: "外部视频"
+      author: 作者
+    update:
+      form:
+        submit_button: 保存更改
+  polls:
+    all: "所有"
+    no_dates: "没指定日期"
+    dates: "从%{open_at} 到%{closed_at}"
+    final_date: "最终重新计票／结果"
+    index:
+      filters:
+        current: "打开"
+        incoming: "传入"
+        expired: "过期的"
+      title: "投票"
+  poll_questions:
+    create_question: "创建问题"
+    show:
+      vote_answer: "投票%{answer}"
+      voted: "您已经投票%{answer}"
+      voted_token: "您可以写下此投票标识符号，以便在最终结果中检查您的投票："
+  proposal_notifications:
+    new:
+      title: "发送信息"
+      title_label: "标题"
+      body_label: "信息"
+      submit_button: "发送信息"
   shared:
     recommended_index:
       title: 推荐
