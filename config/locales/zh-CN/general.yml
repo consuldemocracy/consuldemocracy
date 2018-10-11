@@ -392,6 +392,34 @@ zh-CN:
         edit: "在分享之前，您将可以随意更改文本。"
         view_proposal: 不是现在，返回我的提议
       improve_info: "改善您的推广活动以便得到更多支持"
+      improve_info_link: "查看更多信息"
+      already_supported: 您已经支持此提议。将它分享吧！
+      comments:
+        zero: 没有评论
+        other: "%{count} 个评论"
+      support: 支持
+      support_title: 支持此提议
+      supports:
+        zero: 没有支持
+        other: "%{count} 个支持"
+      votes:
+        zero: 没有投票
+        other: "%{count} 个投票"
+      supports_necessary: "需要%{number} 个支持"
+      total_percent: 100%
+      archived: "此提议已存档，无法再收集支持。"
+      successful: "此提议已达到所需要的支持。"
+    show:
+      author_deleted: 已删除的用户
+      code: '提议编号：'
+      comments:
+        zero: 没有评论
+        other: "%{count} 个评论"
+      comments_tab: 评论
+      edit_proposal_link: 编辑
+      flag: 此提议已被几个用户标记为不恰当。
+      login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
+      notifications_tab: 通知
   shared:
     recommended_index:
       title: 推荐
