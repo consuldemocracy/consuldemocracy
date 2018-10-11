@@ -32,10 +32,7 @@ class Poll < ActiveRecord::Base
 
   accepts_nested_attributes_for :questions
 
-  translation_class.instance_eval do
-    validates :name, presence: true
-  end
-
+  validates_translation :name, presence: true
   validate :date_range
 
   scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Date.current.beginning_of_day, Date.current.beginning_of_day) }

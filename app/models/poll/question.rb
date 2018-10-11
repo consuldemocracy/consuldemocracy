@@ -19,10 +19,7 @@ class Poll::Question < ActiveRecord::Base
 
   accepts_nested_attributes_for :question_answers
 
-  translation_class.instance_eval do
-    validates :title, presence: true, length: { minimum: 4 }
-  end
-
+  validates_translation :title, presence: true, length: { minimum: 4 }
   validates :author, presence: true
   # validates :poll_id, presence: true
 

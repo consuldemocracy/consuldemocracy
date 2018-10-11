@@ -6,10 +6,7 @@ class SiteCustomization::Page < ActiveRecord::Base
   translates :content,     touch: true
   include Globalizable
 
-  translation_class.instance_eval do
-    validates :title, presence: true
-  end
-
+  validates_translation :title, presence: true
   validates :slug, presence: true,
                    uniqueness: { case_sensitive: false },
                    format: { with: /\A[0-9a-zA-Z\-_]*\Z/, message: :slug_format }
