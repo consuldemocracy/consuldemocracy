@@ -19,12 +19,4 @@ module SiteCustomizationHelper
       false
     end
   end
-
-  def merge_translatable_field_options(options, locale)
-    options.merge(
-      class: "#{options[:class]} js-globalize-attribute".strip,
-      style: "#{options[:style]} #{site_customization_display_translation_style(locale)}".strip,
-      data:  (options[:data] || {}).merge(locale: locale)
-    )
-  end
 end

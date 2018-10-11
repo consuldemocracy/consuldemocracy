@@ -1,5 +1,5 @@
 class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomization::BaseController
-  include Translatable
+  before_action :delete_translations, only: [:update]
 
   def index
     fetch_existing_keys
@@ -9,7 +9,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
   def update
     content_params.each do |content|
-      values = content[:values].slice(*translation_params(I18nContent))
+      values = content[:values].slice(*translation_params)
 
       unless values.empty?
         values.each do |key, value|
@@ -73,4 +73,15 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
       end
     end
 
+    def translation_params
+      I18nContent.translated_attribute_names.product(enabled_translations).map do |attr_name, loc|
+        I18nContent.localized_attr_name_for(attr_name, loc)
+      end
+    end
+
+    def enabled_translations
+      params.fetch(:enabled_translations, {})
+            .select { |_, v| v == '1' }
+            .keys
+    end
 end
