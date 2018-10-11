@@ -77,6 +77,16 @@ module TranslatableFormHelper
       @template.display_translation_style(@object.globalized_model, locale)
     end
 
+    def error_for(attribute, options = {})
+      final_options = translations_options(options).merge(class: "error js-globalize-attribute")
+
+      return unless has_error?(attribute)
+
+      error_messages = object.errors[attribute].join(', ')
+      error_messages = error_messages.html_safe if options[:html_safe_errors]
+      content_tag(:small, error_messages, final_options)
+    end
+
     private
       def help_text(text)
         if text
