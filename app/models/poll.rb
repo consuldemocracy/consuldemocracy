@@ -30,7 +30,7 @@ class Poll < ActiveRecord::Base
   scope :published, -> { where('published = ?', true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
   scope :public_for_api, -> { all }
-
+  scope :kind_of_cartel, -> { where(kind: 'cartel') }
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 
   def title
