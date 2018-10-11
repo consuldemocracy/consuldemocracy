@@ -14,11 +14,8 @@ class Legislation::DraftVersion < ActiveRecord::Base
   belongs_to :process, class_name: 'Legislation::Process', foreign_key: 'legislation_process_id'
   has_many :annotations, class_name: 'Legislation::Annotation', foreign_key: 'legislation_draft_version_id', dependent: :destroy
 
-  translation_class.instance_eval do
-    validates :title, presence: true
-    validates :body, presence: true
-  end
-
+  validates_translation :title, presence: true
+  validates_translation :body, presence: true
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
 
   scope :published, -> { where(status: 'published').order('id DESC') }

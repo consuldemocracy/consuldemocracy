@@ -7,10 +7,8 @@ class Banner < ActiveRecord::Base
   translates :description, touch: true
   include Globalizable
 
-  translation_class.instance_eval do
-    validates :title, presence: true, length: { minimum: 2 }
-    validates :description, presence: true
-  end
+  validates_translation :title, presence: true, length: { minimum: 2 }
+  validates_translation :description, presence: true
 
   validates :target_url, presence: true
   validates :post_started_at, presence: true

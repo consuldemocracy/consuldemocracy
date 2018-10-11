@@ -17,10 +17,7 @@ class Poll::Question < ActiveRecord::Base
   has_many :partial_results
   belongs_to :proposal
 
-  translation_class.instance_eval do
-    validates :title, presence: true, length: { minimum: 4 }
-  end
-
+  validates_translation :title, presence: true, length: { minimum: 4 }
   validates :author, presence: true
   validates :poll_id, presence: true
 

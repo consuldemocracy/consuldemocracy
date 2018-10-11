@@ -17,10 +17,7 @@ class Legislation::Question < ActiveRecord::Base
   accepts_nested_attributes_for :question_options, reject_if: proc { |attributes| attributes.all? { |k, v| v.blank? } }, allow_destroy: true
 
   validates :process, presence: true
-
-  translation_class.instance_eval do
-    validates :title, presence: true
-  end
+  validates_translation :title, presence: true
 
   scope :sorted, -> { order('id ASC') }
 

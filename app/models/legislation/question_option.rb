@@ -9,8 +9,5 @@ class Legislation::QuestionOption < ActiveRecord::Base
   has_many :answers, class_name: 'Legislation::Answer', foreign_key: 'legislation_question_id', dependent: :destroy, inverse_of: :question
 
   validates :question, presence: true
-
-  translation_class.instance_eval do
-    validates :value, presence: true # TODO: add uniqueness again
-  end
+  validates_translation :value, presence: true # TODO: add uniqueness again
 end
