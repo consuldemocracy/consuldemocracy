@@ -373,9 +373,12 @@ zh-CN:
         help: 关于提议的帮助
       section_footer:
         title: 关于提议的帮助
+        description: 在得到足够的支持并提交公民投票后，公民提议是邻居和集体直接决定他们希望自己的城市将如何发展的一个好机会。
     new:
       form:
         submit_button: 创建提议
+      more_info: 公民提议是如何运作的？
+      recommendation_one: 请不要用大写字母写提议标题或者整个句子。在因特网上，这被认为是在喊叫。没有认喜欢被吆喝。
       recommendations_title: 创建提议的推荐
   shared:
     recommended_index:
