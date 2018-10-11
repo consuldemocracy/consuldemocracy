@@ -127,12 +127,13 @@ feature 'Admin legislation questions' do
       edit_admin_legislation_process_question_path(question.process, question)
     end
 
-    let(:field_en) do
-      page.all("[data-locale='en'][id^='legislation_question_question_options'][id$='value']").first
-    end
+    let(:field_en) { field_for(:en) }
+    let(:field_es) { field_for(:es) }
 
-    let(:field_es) do
-      page.all("[data-locale='es'][id^='legislation_question_question_options'][id$='value']").first
+    def field_for(locale)
+      within(page.all(".translatable_fields[data-locale='#{locale}']").last) do
+        page.first("[id^='legislation_question_question_option'][id$='value']")
+      end
     end
 
     scenario 'Add translation for question option', :js do
