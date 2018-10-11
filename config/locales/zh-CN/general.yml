@@ -534,6 +534,19 @@ zh-CN:
       date_4: '去年'
       date_5: '自定义'
       from: '从'
+      search: '过滤器'
+    followable:
+      budget_investment:
+        create:
+          notice_html: "您现在正在跟随此投资项目！</br>我们会在变更发生时通知您，以便您了解最新动态。"
+        destroy:
+          notice_html: "您已经停止跟随此投资项目！</br>您将不再接收到有关此项目的通知。"
+      proposal:
+        create:
+          notice_html: "现在您正在跟随此公民提议！</br>我们会在变更发生时通知您，以便您了解最新动态。"
+        destroy:
+          notice_html: "您已经停止跟随此公民提议！</br>您将不再接收到有关此提议的通知。"
+    hide: 隐藏
     recommended_index:
       title: 推荐
       see_more: 查看更多推荐
@@ -547,6 +560,11 @@ zh-CN:
     telegram: "%{org} Telegram（电报群）"
     instagram: "%{org} Instagram"
   spending_proposals:
+    form:
+      association_name_label: '如果您以协会或集体的名义提出提议，请在此添加名称'
+      association_name: '协会名称'
+      description: 说明
+      external_url: 链接到其他文档
     new:
       recommendations_title: 如果创建支出提议
   welcome:
