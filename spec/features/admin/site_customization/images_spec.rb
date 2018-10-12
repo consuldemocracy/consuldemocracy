@@ -30,13 +30,13 @@ feature "Admin custom images" do
       click_link "Custom images"
     end
 
-    within("tr.icon_home") do
+    within("tr.social_media_icon") do
       attach_file "site_customization_image_image", "spec/fixtures/files/logo_header.png"
       click_button "Update"
     end
 
-    expect(page).to have_content("Width must be 330px")
-    expect(page).to have_content("Height must be 240px")
+    expect(page).to have_content("Width must be 470px")
+    expect(page).to have_content("Height must be 246px")
   end
 
   scenario "Delete image" do
