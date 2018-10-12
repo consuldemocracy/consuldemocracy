@@ -1,1 +1,7 @@
 es-MX:
+  seeds:
+    budgets:
+      currency: '$'
+      groups:
+        all_city: Toda la ciudad
+        districts: Distritos
