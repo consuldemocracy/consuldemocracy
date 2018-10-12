@@ -19,6 +19,9 @@ es-MX:
       comment:
         one: "Comentario"
         other: "Comentarios"
+      debate:
+        one: "Debate"
+        other: "Debates"
       tag:
         one: "Tema"
         other: "Temas"
@@ -40,6 +43,9 @@ es-MX:
       manager:
         one: "Gestor"
         other: "Gestores"
+      newsletter:
+        one: "Boletín de Noticias"
+        other: "Boletín de Noticias"
       vote:
         one: "Voto"
         other: "Votos"
@@ -67,6 +73,9 @@ es-MX:
       legislation/process:
         one: "Proceso"
         other: "Procesos"
+      legislation/proposal:
+        one: "Propuesta"
+        other: "Propuestas"
       legislation/draft_versions:
         one: "Versión borrador"
         other: "Versiones borrador"
@@ -94,6 +103,9 @@ es-MX:
       poll:
         one: "Votación"
         other: "Votaciones"
+      proposal_notification:
+        one: "Notificación de propuesta"
+        other: "Notificaciones de propuestas"
     attributes:
       budget:
         name: "Nombre"
@@ -118,7 +130,11 @@ es-MX:
         image_title: "Título de la imagen"
       budget/investment/milestone:
         title: "Título"
+        description: "Descripción (opcional si cuenta con un estado asignado)"
         publication_date: "Fecha de publicación"
+      budget/investment/status:
+        name: "Nombre"
+        description: "Descripción (opcional)"
       budget/heading:
         name: "Nombre de la partida"
         price: "Cantidad"
@@ -152,6 +168,7 @@ es-MX:
         name: "Nombre de organización"
         responsible_name: "Persona responsable del colectivo"
       spending_proposal:
+        administrator_id: "Administrador"
         association_name: "Nombre de la asociación"
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
@@ -180,6 +197,7 @@ es-MX:
         status: Estado
         title: Título
         updated_at: última actualización
+        more_info_flag: Mostrar en página de ayuda
         print_content_flag: Botón de imprimir contenido
         locale: Idioma
       site_customization/image:
@@ -226,6 +244,19 @@ es-MX:
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
+      newsletter:
+        segment_recipient: Destinatarios
+        subject: Asunto
+        from: De
+        body: Contenido
+      widget/card:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
+        link_url: URL del enlace
+      widget/feed:
+        limit: Número de elementos
     errors:
       models:
         user:
