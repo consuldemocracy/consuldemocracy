@@ -15,7 +15,6 @@ Rails.application.config.assets.precompile += %w( stat_graphs.js )
 Rails.application.config.assets.precompile += %w( dashboard_graphs.js )
 Rails.application.config.assets.precompile += %w( print.css )
 Rails.application.config.assets.precompile += %w( ie.css )
-Rails.application.config.assets.precompile += %w( dashboard_mailer.css )
 Rails.application.config.assets.precompile += %w( pdf_fonts.css )
 
 # Loads app/assets/images/custom before app/assets/images
