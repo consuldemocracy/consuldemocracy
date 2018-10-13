@@ -1,5 +1,7 @@
 es-CL:
   seeds:
+    organizations:
+      human_rights: Derechos Humanos
     categories:
       associations: Asociaciones
       culture: Cultura
@@ -17,6 +19,8 @@ es-CL:
       environment: Medio Ambiente
     budgets:
       budget: Presupuesto Participativo
+      groups:
+        all_city: Toda la Ciudad
       valuator_groups:
         culture_and_sports: Cultura y Deportes
         gender_and_diversity: Políticas de Género y Diversidad
