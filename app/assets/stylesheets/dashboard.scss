@@ -424,7 +424,7 @@
 .dashboard-mail-preview {
 
   .mail-header {
-    background-color: $brand;
+    background: #3700fd;
     color: #fff;
     padding: $line-height;
     text-align: center;
@@ -432,6 +432,10 @@
 
   .mail-body {
     text-align: justify;
+
+    .button {
+      background: #3700fd;
+    }
   }
 }
 
