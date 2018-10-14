@@ -84,6 +84,7 @@ de:
       google_login: "Google login"
       google_login_description: "Anmeldung mit Google-Account erlauben"
       proposals: "Vorschläge"
+      proposals_description: "Bürgervorschläge bieten die Möglichkeit für Nachbarn und Kollektive direkt zu entscheiden, wie ihre Stadt sein soll, nahdem sie genügend Unterstützung erhalten haben und einen Bürgenvorschlag eingereicht haben"
       debates: "Diskussionen"
       polls: "Umfragen"
       signature_sheets: "Unterschriftenbögen"
