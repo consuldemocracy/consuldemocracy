@@ -67,6 +67,8 @@ de:
     meta_keywords: "Stichwörter (SEO)"
     meta_keywords_description: 'Stichwörter <meta name="keywords">, zur Verbesserung der SEO'
     min_age_to_participate: erforderliches Mindestalter zur Teilnahme
+    min_age_to_participate_description: "Nutzer ab diesem Alter können an allen Prozessen teilnehmen"
+    analytics_url: "Analytik-URL"
     blog_url: "Blog URL"
     transparency_url: "Transparenz-URL"
     opendata_url: "Offene-Daten-URL"
@@ -74,6 +76,7 @@ de:
     proposal_improvement_path: Interner Link zur Antragsverbesserungsinformation
     feature:
       budgets: "Bürgerhaushalt"
+      budgets_description: "Durch den Bürgerhaushalt können BürgerInnen entscheiden an welche der, von Nachbarn presentierten, Projekte einen Teil des kommunalen Budgets erhalten"
       twitter_login: "Twitter login"
       twitter_login_description: "Anmeldung mit Twitter-Account erlauben"
       facebook_login: "Facebook login"
