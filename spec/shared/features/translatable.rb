@@ -267,7 +267,7 @@ def field_for(field, locale, visible: true)
   if translatable_class.name == "I18nContent"
     "contents_content_#{translatable.key}values_#{field}_#{locale}"
   else
-    within(".translatable_fields[data-locale='#{locale}']") do
+    within(".translatable-fields[data-locale='#{locale}']") do
       find("input[id$='_#{field}'], textarea[id$='_#{field}']", visible: visible)[:id]
     end
   end
