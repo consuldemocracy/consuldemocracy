@@ -119,6 +119,29 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       expect_page_to_have_translatable_field field, :es, with: ""
     end
 
+    scenario "Update a translation not having the current locale", :js do
+      translatable.translations.destroy_all
+
+      translatable.translations.create(
+        fields.map { |field| [field, text_for(field, :fr)] }.to_h.merge(locale: :fr)
+      )
+
+      visit path
+
+      expect(page).not_to have_link "English"
+      expect(page).to have_link "Français"
+
+      click_button update_button_text
+
+      expect(page).not_to have_css "#error_explanation"
+      expect(page).not_to have_link "English"
+
+      visit path
+
+      expect(page).not_to have_link "English"
+      expect(page).to have_link "Français"
+    end
+
     scenario "Remove a translation", :js do
       visit path
 
