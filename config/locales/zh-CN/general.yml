@@ -628,7 +628,7 @@ zh-CN:
         new: 创建
       title: 支出提议标题
     index:
-      title: 参与性预算
+      title: 参与性预算编制
       unfeasible: 不可行的投资项目
       by_geozone: "投资项目范围：%{geozone}"
       search_form:
@@ -643,7 +643,7 @@ zh-CN:
         unfeasible: 不可行
       start_spending_proposal: 创建一个投资项目
     new:
-      more_info: 参与性预算是如何运作的？
+      more_info: 参与性预算编制是如何运作的？
       recommendation_one: 提议必须提及可预算的行动。
       recommendation_three: 在描述支出提议的时候请尽可能详细说明，以便审阅小组可以明白您的观点。
       recommendation_two: 任何暗示非法行动的提议或评论都将被删除。
@@ -656,7 +656,7 @@ zh-CN:
     wrong_price_format: 仅限整数
     spending_proposal:
       spending_proposal: 投资项目
-      already_supported: 您已支持此项目。请分享它吧！
+      already_supported: 您已支持此提议。请分享它吧！
       support: 支持
       support_title: 支持此项目
       supports:
@@ -668,9 +668,9 @@ zh-CN:
       debates: 辩论
       proposals: 提议
       comments: 评论
-      proposal_votes: 投票提议
-      debate_votes: 投票辩论
-      comment_votes: 投票评论
+      proposal_votes: 提议的投票数
+      debate_votes: 辩论的投票数
+      comment_votes: 评论的投票数
       votes: 总投票数
       verified_users: 已验证的用户
       unverified_users: 未验证的用户
@@ -681,18 +681,18 @@ zh-CN:
   users:
     direct_messages:
       new:
-        body_label: 信息
-        direct_messages_bloqued: "此用户已决定不接收直接信息"
-        submit_button: 发送信息
-        title: 发送私人信息给%{receiver}
+        body_label: 消息
+        direct_messages_bloqued: "此用户已决定不接收直接消息"
+        submit_button: 发送消息
+        title: 发送私人消息给%{receiver}
         title_label: 标题
-        verified_only: 要发送私人信息%{verify_account}
+        verified_only: 要发送私人消息%{verify_account}
         verify_account: 验证您的账户
         authenticate: 您必须%{signin} 或者%{signup} 才能继续。
         signin: 登录
         signup: 注册
       show:
-        receiver: 发给%{receiver} 的信息
+        receiver: 发给%{receiver} 的消息
     show:
       deleted: 已删除
       deleted_debate: 此辩论已被删除
@@ -715,14 +715,14 @@ zh-CN:
         follows:
           other: "%{count} 个跟随"
       no_activity: 用户没有公开活动
-      no_private_messages: "此用户不接收私人信息。"
+      no_private_messages: "此用户不接收私人消息。"
       private_activity: 此用户已决定保密活动列表。
-      send_private_message: "发送私人信息"
+      send_private_message: "发送私人消息"
       delete_alert: "确定要删除您的投资项目吗？此操作将无法被撤销"
     proposals:
       send_notification: "发送通知"
       retire: "撤回"
-      retired: "撤回提议"
+      retired: "已撤回提议"
       see: "查看提议"
   votes:
     agree: 我同意
@@ -749,7 +749,7 @@ zh-CN:
       unfeasible: 不可行的投资项目无法得到支持
       not_voting_allowed: 投票阶段已结束
       different_heading_assigned:
-        other: "您只能支持在%{count} 地区的投资项目"
+        other: "您只能支持在%{count} 个地区的投资项目"
   welcome:
     feed:
       most_active:
@@ -758,7 +758,7 @@ zh-CN:
         processes: "开放进程"
       see_all_debates: 查看所有辩论
       see_all_proposals: 查看所有提议
-      see_all_processes: 查看所有提议
+      see_all_processes: 查看所有进程
       process_label: 进程
       see_process: 查看进程
     cards:
@@ -804,7 +804,7 @@ zh-CN:
     error: "链接无效。请记住以%{url} 开头。"
     error_itself: "链接无效。您无法把内容关联到它自身。"
     success: "您添加了新的相关的内容"
-    is_related: "¿它是相关的内容吗？"
+    is_related: "它是相关的内容吗？"
     score_positive: "是"
     score_negative: "不是"
     content_title:
