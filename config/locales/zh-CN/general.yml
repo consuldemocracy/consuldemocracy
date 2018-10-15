@@ -671,8 +671,52 @@ zh-CN:
       proposal_votes: 投票提议
       debate_votes: 投票辩论
       comment_votes: 投票评论
+      votes: 总投票数
+      verified_users: 已验证的用户
+      unverified_users: 未验证的用户
+  unauthorized:
+    default: 您没有权限访问此页面。
+    manage:
+      all: "您没有权限在%{subject} 上执行此操作‘%{action}‘。"
   users:
+    direct_messages:
+      new:
+        body_label: 信息
+        direct_messages_bloqued: "此用户已决定不接收直接信息"
+        submit_button: 发送信息
+        title: 发送私人信息给%{receiver}
+        title_label: 标题
+        verified_only: 要发送私人信息%{verify_account}
+        verify_account: 验证您的账户
+        authenticate: 您必须%{signin} 或者%{signup} 才能继续。
+        signin: 登录
+        signup: 注册
+      show:
+        receiver: 发给%{receiver} 的信息
     show:
+      deleted: 已删除
+      deleted_debate: 此辩论已被删除
+      deleted_proposal: 此提议已被删除
+      deleted_budget_investment: 此投资项目已被删除
+      proposals: 提议
+      debates: 辩论
+      budget_investments: 预算投资
+      comments: 评论
+      actions: 行动
+      filters:
+        comments:
+          other: "%{count} 个评论"
+        debates:
+          other: "%{count} 个辩论"
+        proposals:
+          other: "%{count} 个提议"
+        budget_investments:
+          other: "%{count} 个投资"
+        follows:
+          other: "%{count} 个跟随"
+      no_activity: 用户没有公开活动
+      no_private_messages: "此用户不接收私人信息。"
+      private_activity: 此用户已决定保密活动列表。
       send_private_message: "发送私人信息"
       delete_alert: "确定要删除您的投资项目吗？此操作将无法被撤销"
     proposals:
@@ -744,3 +788,14 @@ zh-CN:
       user_permission_proposal: 创建新的提议
       user_permission_support_proposal: 支持提议＊
       user_permission_verify: 要执行所有操作，请验证您的账户。
+      user_permission_verify_info: "＊仅适用于人口普查的用户。"
+      user_permission_verify_my_account: 验证我的账户
+      user_permission_votes: 参与最终投票
+  invisible_captcha:
+    sentence_for_humans: "如果您是人类，请忽略此字段"
+    timestamp_error_message: "很抱歉，那太快了！请重新递交。"
+  related_content:
+    title: "相关的内容"
+    add: "添加相关的内容"
+    label: "链接到相关的内容"
+    placeholder: "%{url}"
