@@ -39,7 +39,9 @@ module TranslatableFormHelper
 
       def new_translation_for(locale)
         @object.translations.new(locale: locale).tap do |translation|
-          translation.mark_for_destruction unless locale == I18n.locale
+          unless locale == I18n.locale && no_other_translations?(translation)
+            translation.mark_for_destruction
+          end
         end
       end
 
@@ -49,6 +51,10 @@ module TranslatableFormHelper
           style: @template.display_translation_style(resource.globalized_model, locale),
           data:  { locale: locale }
         }
+      end
+
+      def no_other_translations?(translation)
+        (@object.translations - [translation]).reject(&:_destroy).empty?
       end
   end
 
