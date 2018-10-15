@@ -120,12 +120,14 @@ feature 'Admin legislation questions' do
       edit_admin_legislation_process_question_path(question.process, question)
     end
 
-    let(:field_en) { field_for(:en) }
-    let(:field_es) { field_for(:es) }
+    let(:field_en) { fields_for(:en).first }
+    let(:field_es) { fields_for(:es).first }
 
-    def field_for(locale)
-      within(page.all(".translatable_fields[data-locale='#{locale}']").last) do
-        page.first("[id^='legislation_question_question_option'][id$='value']")
+    def fields_for(locale)
+      within("#nested-question-options") do
+        page.all(
+          "[data-locale='#{locale}'] [id^='legislation_question_question_option'][id$='value']"
+        )
       end
     end
 
@@ -140,6 +142,27 @@ feature 'Admin legislation questions' do
 
       visit edit_question_url
       expect(page).to have_field(field_en[:id], with: "Changed")
+    end
+
+    scenario "Remove an option", :js do
+      create(:legislation_question_option, question: question, value: "Yes")
+      create(:legislation_question_option, question: question, value: "No")
+
+      visit edit_question_url
+
+      expect(page).to have_field fields_for(:en).first[:id], with: "Yes"
+      expect(page).to have_field fields_for(:en).last[:id], with: "No"
+
+      page.first(:link, "Remove option").click
+
+      expect(page).not_to have_field fields_for(:en).first[:id], with: "Yes"
+      expect(page).to have_field fields_for(:en).last[:id], with: "No"
+
+      click_button "Save changes"
+      visit edit_question_url
+
+      expect(page).not_to have_field fields_for(:en).first[:id], with: "Yes"
+      expect(page).to have_field fields_for(:en).last[:id], with: "No"
     end
 
     context "Special translation behaviour" do
