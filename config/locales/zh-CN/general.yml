@@ -799,3 +799,25 @@ zh-CN:
     add: "添加相关的内容"
     label: "链接到相关的内容"
     placeholder: "%{url}"
+    help: "您可以添加%{org} 内的%{models} 链接。"
+    submit: "添加"
+    error: "链接无效。请记住以%{url} 开头。"
+    error_itself: "链接无效。您无法把内容关联到它自身。"
+    success: "您添加了新的相关的内容"
+    is_related: "¿它是相关的内容吗？"
+    score_positive: "是"
+    score_negative: "不是"
+    content_title:
+      proposal: "提议"
+      debate: "辩论"
+      budget_investment: "预算投资"
+  admin/widget:
+    header:
+      title: 管理
+  annotator:
+    help:
+      alt: 选择您希望评论的文本，然后按下铅笔按钮。
+      text: 若要对此文档进行评论，您必须%{sign_in} 或者%{sign_up}。然后选择您希望评论的文本，按下铅笔按钮。
+      text_sign_in: 登录
+      text_sign_up: 注册
+      title: 我怎样对此文档做评论？
