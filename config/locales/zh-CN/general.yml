@@ -644,6 +644,8 @@ zh-CN:
       start_spending_proposal: 创建一个投资项目
     new:
       more_info: 参与性预算是如何运作的？
+      recommendation_one: 提议必须提及可预算的行动。
+      recommendation_three: 在描述支出提议的时候请尽可能详细说明，以便审阅小组可以明白您的观点。
       recommendations_title: 如果创建支出提议
   welcome:
     feed:
