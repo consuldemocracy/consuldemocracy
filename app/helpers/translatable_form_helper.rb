@@ -9,7 +9,7 @@ module TranslatableFormHelper
     def translatable_fields(&block)
       @object.globalize_locales.map do |locale|
         Globalize.with_locale(locale) do
-          fields_for(:translations, translation_for(locale), builder: TranslationsFieldsBuilder) do |translations_form|
+          fields_for_translation(translation_for(locale)) do |translations_form|
             @template.content_tag :div, translations_options(translations_form.object, locale) do
               @template.concat translations_form.hidden_field(
                 :_destroy,
@@ -26,6 +26,12 @@ module TranslatableFormHelper
     end
 
     private
+
+      def fields_for_translation(translation, &block)
+        fields_for(:translations, translation, builder: TranslationsFieldsBuilder) do |f|
+          yield f
+        end
+      end
 
       def translation_for(locale)
         existing_translation_for(locale) || new_translation_for(locale)
