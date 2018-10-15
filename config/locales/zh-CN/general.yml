@@ -649,6 +649,28 @@ zh-CN:
       recommendation_two: 任何暗示非法行动的提议或评论都将被删除。
       recommendations_title: 如果创建支出提议
       start_new: 创建支出提议
+    show:
+      author_deleted: 已删除的用户
+      code: '提议编码：'
+      share: 分享
+    wrong_price_format: 仅限整数
+    spending_proposal:
+      spending_proposal: 投资项目
+      already_supported: 您已支持此项目。请分享它吧！
+      support: 支持
+      support_title: 支持此项目
+      supports:
+        zero: 没有支持
+        other: "%{count} 个支持"
+  stats:
+    index:
+      visits: 访问
+      debates: 辩论
+      proposals: 提议
+      comments: 评论
+      proposal_votes: 投票提议
+      debate_votes: 投票辩论
+      comment_votes: 投票评论
   users:
     show:
       send_private_message: "发送私人信息"
@@ -676,14 +698,49 @@ zh-CN:
       organization: 组织不得投票
       unfeasible: 不可行的投资项目无法得到支持
       not_voting_allowed: 投票阶段已结束
+    budget_investments:
+      not_logged_in: 您必须%{signin} 或者%{signup} 才能继续。
+      not_verified: 只有已验证的用户可以对投资项目进行投票；%{verify_account}。
+      organization: 组织不得投票
+      unfeasible: 不可行的投资项目无法得到支持
+      not_voting_allowed: 投票阶段已结束
+      different_heading_assigned:
+        other: "您只能支持在%{count} 地区的投资项目"
   welcome:
     feed:
       most_active:
         debates: "最活跃的辩论"
         proposals: "最活跃的提议"
         processes: "开放进程"
+      see_all_debates: 查看所有辩论
+      see_all_proposals: 查看所有提议
+      see_all_processes: 查看所有提议
+      process_label: 进程
+      see_process: 查看进程
     cards:
       title: 特色
     recommended:
       title: 您可能感兴趣的推荐
       help: "这些推荐是由您跟随的辩论和提议的标签生成。"
+      debates:
+        title: 推荐的辩论
+        btn_text_link: 所有推荐的辩论
+      proposals:
+        title: 推荐的提议
+        btn_text_link: 所有推荐的提议
+      budget_investments:
+        title: 推荐的投资
+      slide: "查看%{title}"
+    verification:
+      i_dont_have_an_account: 我没有账户
+      i_have_an_account: 我已经有一个账户
+      question: 您是否已经在%{org_name} 拥有账户？
+      title: 账户验证
+    welcome:
+      go_to_index: 查看提议和辩论
+      title: 参与
+      user_permission_debates: 参与辩论
+      user_permission_info: 您可以用您的账户来...
+      user_permission_proposal: 创建新的提议
+      user_permission_support_proposal: 支持提议＊
+      user_permission_verify: 要执行所有操作，请验证您的账户。
