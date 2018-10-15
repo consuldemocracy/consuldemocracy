@@ -1,6 +1,6 @@
 <% I18n.available_locales.each do |locale| %>
   <%= link_to t("admin.translations.remove_language"), "#",
-              id: "delete_#{locale}",
+              id: "js_delete_#{locale}",
               style: display_translation_style(resource, locale),
               class: 'float-right delete js-delete-language',
               data: { locale: locale } %>

@@ -35,7 +35,7 @@
       <%= render 'question_option_fields', f: ff %>
     <% end %>
 
-    <div class="add-fields-container">
+    <div class="js-add-fields-container">
       <div class="small-12 medium-9 column">
         <%= link_to_add_association t("admin.legislation.questions.form.add_option"),
                                   f, :question_options, class: "button hollow"  %>
