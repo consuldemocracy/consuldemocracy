@@ -124,7 +124,7 @@ feature 'Admin legislation questions' do
     let(:field_es) { fields_for(:es).first }
 
     def fields_for(locale)
-      within("#nested-question-options") do
+      within("#nested_question_options") do
         page.all(
           "[data-locale='#{locale}'] [id^='legislation_question_question_option'][id$='value']"
         )
@@ -135,7 +135,7 @@ feature 'Admin legislation questions' do
       create(:legislation_question_option, question: question, value: "Original")
 
       visit edit_question_url
-      find("#nested-question-options input").set("Changed")
+      find("#nested_question_options input").set("Changed")
       click_button "Save changes"
 
       expect(page).not_to have_css "#error_explanation"
@@ -175,11 +175,11 @@ feature 'Admin legislation questions' do
 
         click_on 'Add option'
 
-        find('#nested-question-options input').set('Option 1')
+        find('#nested_question_options input').set('Option 1')
 
         click_link "Español"
 
-        find('#nested-question-options input').set('Opción 1')
+        find('#nested_question_options input').set('Opción 1')
 
         click_button "Save changes"
         visit edit_question_url
@@ -198,11 +198,11 @@ feature 'Admin legislation questions' do
 
         click_on 'Add option'
 
-        find('#nested-question-options input').set('Opción 1')
+        find('#nested_question_options input').set('Opción 1')
 
         click_link "English"
 
-        find('#nested-question-options input').set('Option 1')
+        find('#nested_question_options input').set('Option 1')
 
         click_button "Save changes"
 
