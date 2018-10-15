@@ -60,12 +60,14 @@
       </li>
     <% end %>
 
-    <li>
-      <%= link_to t("layouts.header.help"),
-                    help_path,
-                    accesskey: "6",
-                    class: ("is-active" if current_page?(help_path)),
-                    title: t("shared.go_to_page") + t("layouts.header.help") %>
-    </li>
+    <% if feature?(:help_page) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.help"),
+                                help_path,
+                                current_page?(help_path),
+                                accesskey: "6",
+                                title: t("shared.go_to_page") + t("layouts.header.help") %>
+      </li>
+    <% end %>
   </ul>
 </div>

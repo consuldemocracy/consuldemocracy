@@ -132,3 +132,5 @@ es:
       probe:
         plaza: "Sondeo Plaza España"
         voting_allowed: Votaciones sobre propuestas de inversión
+      help_page: "Página de Ayuda"
+      help_page_description: "Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada."

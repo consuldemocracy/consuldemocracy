@@ -132,3 +132,5 @@ en:
       probe:
         plaza: "Plaza España Probe"
         voting_allowed: Voting on investment projects
+      help_page: "Help page"
+      help_page_description: "Displays a Help menu that contains a page with an info section about each enabled feature"

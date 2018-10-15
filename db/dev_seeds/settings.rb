@@ -56,6 +56,7 @@ section "Creating Settings" do
   Setting.create(key: 'feature.public_stats', value: "true")
   Setting.create(key: 'feature.guides', value: true)
   Setting.create(key: 'feature.user.skip_verification', value: "true")
+  Setting.create(key: 'feature.help_page', value: "true")
 
   Setting.create(key: 'per_page_code_head', value: "")
   Setting.create(key: 'per_page_code_body', value: "")
