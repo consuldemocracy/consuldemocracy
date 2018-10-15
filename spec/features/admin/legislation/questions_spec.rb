@@ -7,6 +7,8 @@ feature 'Admin legislation questions' do
     login_as(admin.user)
   end
 
+  let!(:process) { create(:legislation_process, title: "An example legislation process") }
+
   it_behaves_like "translatable",
                   "legislation_question",
                   "edit_admin_legislation_process_question_path",
@@ -23,7 +25,6 @@ feature 'Admin legislation questions' do
     end
 
     scenario 'Disabled with a feature flag' do
-      process = create(:legislation_process)
       expect{ visit admin_legislation_process_questions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
 
@@ -32,7 +33,6 @@ feature 'Admin legislation questions' do
   context "Index" do
 
     scenario 'Displaying legislation process questions' do
-      process = create(:legislation_process, title: 'An example legislation process')
       question = create(:legislation_question, process: process, title: 'Question 1')
       question = create(:legislation_question, process: process, title: 'Question 2')
 
@@ -48,8 +48,6 @@ feature 'Admin legislation questions' do
 
   context 'Create' do
     scenario 'Valid legislation question' do
-      process = create(:legislation_process, title: 'An example legislation process')
-
       visit admin_root_path
 
       within('#side_menu') do
@@ -74,7 +72,6 @@ feature 'Admin legislation questions' do
 
   context 'Update' do
     scenario 'Valid legislation question', :js do
-      process = create(:legislation_process, title: 'An example legislation process')
       question = create(:legislation_question, title: 'Question 2', process: process)
 
       visit admin_root_path
@@ -101,7 +98,6 @@ feature 'Admin legislation questions' do
 
   context 'Delete' do
     scenario 'Legislation question', :js do
-      process = create(:legislation_process, title: 'An example legislation process')
       create(:legislation_question, title: 'Question 1', process: process)
       question = create(:legislation_question, title: 'Question 2', process: process)
       question_option = create(:legislation_question_option, question: question, value: 'Yes')
