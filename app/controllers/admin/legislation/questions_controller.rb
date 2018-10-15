@@ -47,7 +47,7 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
     def question_params
       params.require(:legislation_question).permit(
         translation_params(::Legislation::Question),
-        question_options_attributes: [translation_params(::Legislation::QuestionOption)])
+        question_options_attributes: [:id, translation_params(::Legislation::QuestionOption)])
     end
 
     def resource
