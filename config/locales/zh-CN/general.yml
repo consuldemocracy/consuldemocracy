@@ -534,7 +534,22 @@ zh-CN:
       date_4: '去年'
       date_5: '自定义'
       from: '从'
+      general: '随着文本'
+      general_placeholder: '编写文本'
       search: '过滤器'
+      title: '高级搜索'
+      to: '至'
+    author_info:
+      author_deleted: 已删除的用户
+    back: 返回
+    check: 选择
+    check_all: 所有
+    check_none: 没有
+    collective: 集体
+    flag: 标记为不恰当
+    follow: "跟随"
+    following: "跟随着"
+    follow_entity: "跟随%{entity}"
     followable:
       budget_investment:
         create:
@@ -547,6 +562,10 @@ zh-CN:
         destroy:
           notice_html: "您已经停止跟随此公民提议！</br>您将不再接收到有关此提议的通知。"
     hide: 隐藏
+    print:
+      print_button: 打印此信息
+    search: 搜索
+    show: 显示
     suggest:
       debate:
         found:
@@ -557,6 +576,7 @@ zh-CN:
         found:
           other: "有些带有术语'%{query}'的投资，您可以参与其中而不需要打开一个新的。"
         message: "您在看%{count} 个投资里包含术语'%{query}'的%{limit}"
+        see_all: "查看所有"
       proposal:
         found:
           other: "有些带有术语 '%{query}'的提议，您可以贡献其中而不需要创建一个新的"
