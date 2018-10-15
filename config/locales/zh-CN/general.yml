@@ -646,7 +646,36 @@ zh-CN:
       more_info: 参与性预算是如何运作的？
       recommendation_one: 提议必须提及可预算的行动。
       recommendation_three: 在描述支出提议的时候请尽可能详细说明，以便审阅小组可以明白您的观点。
+      recommendation_two: 任何暗示非法行动的提议或评论都将被删除。
       recommendations_title: 如果创建支出提议
+      start_new: 创建支出提议
+  users:
+    show:
+      send_private_message: "发送私人信息"
+      delete_alert: "确定要删除您的投资项目吗？此操作将无法被撤销"
+    proposals:
+      send_notification: "发送通知"
+      retire: "撤回"
+      retired: "撤回提议"
+      see: "查看提议"
+  votes:
+    agree: 我同意
+    anonymous: 太多匿名投票而不能承认投票%{verify_account}。
+    comment_unauthenticated: 您必须%{signin} 或者%{signup} 才可以进行投票。
+    disagree: 我不同意
+    organizations: 组织不得投票
+    signin: 登录
+    signup: 注册
+    supports: 支持
+    unauthenticated: 您必须%{signin} 或者%{signup} 才能继续。
+    verified_only: 只有已验证的用户可以对提议进行投票；%{verify_account}。
+    verify_account: 验证您的账户
+    spending_proposals:
+      not_logged_in: 您必须%{signin} 或者%{signup} 才能继续。
+      not_verified: 只有已验证的用户可以对提议进行投票；%{verify_account}。
+      organization: 组织不得投票
+      unfeasible: 不可行的投资项目无法得到支持
+      not_voting_allowed: 投票阶段已结束
   welcome:
     feed:
       most_active:
