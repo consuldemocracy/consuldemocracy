@@ -13,7 +13,6 @@ module TranslatableFormHelper
             @template.content_tag :div, translations_options(translations_form.object, locale) do
               @template.concat translations_form.hidden_field(
                 :_destroy,
-                class: "destroy-locale",
                 data: { locale: locale })
 
               @template.concat translations_form.hidden_field(:locale, value: locale)

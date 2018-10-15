@@ -48,7 +48,7 @@ App.Globalize =
     )
 
   destroy_locale_field: (locale) ->
-    $(".destroy-locale[data-locale=" + locale + "]")
+    $("input[id$=_destroy][data-locale=" + locale + "]")
 
   site_customization_enable_locale_field: (locale) ->
     $("#enabled_translations_" + locale)
