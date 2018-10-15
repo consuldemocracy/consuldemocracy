@@ -64,7 +64,7 @@ feature 'Cards' do
       click_link "Edit"
     end
 
-    within(".translatable_fields") do
+    within(".translatable-fields") do
       fill_in "Label (optional)", with: "Card label updated"
       fill_in "Title", with: "Card text updated"
       fill_in "Description", with: "Card description updated"

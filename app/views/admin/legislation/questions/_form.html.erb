@@ -30,12 +30,12 @@
     <%= f.label :question_options, t("admin.legislation.questions.form.question_options") %>
   </div>
 
-  <div id="nested-question-options">
+  <div id="nested_question_options">
     <%= f.fields_for :question_options do |ff| %>
       <%= render 'question_option_fields', f: ff %>
     <% end %>
 
-    <div class="add_fields_container">
+    <div class="add-fields-container">
       <div class="small-12 medium-9 column">
         <%= link_to_add_association t("admin.legislation.questions.form.add_option"),
                                   f, :question_options, class: "button hollow"  %>
