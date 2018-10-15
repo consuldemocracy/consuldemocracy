@@ -581,6 +581,29 @@ zh-CN:
         found:
           other: "有些带有术语 '%{query}'的提议，您可以贡献其中而不需要创建一个新的"
         message: "您在看%{count} 个提议中包含术语 '%{query}'的%{limit}"
+        see_all: "查看所有"
+    tags_cloud:
+      tags: 趋势
+      districts: "地区"
+      districts_list: "地区列表"
+      categories: "类别"
+    target_blank_html: " （链接在新窗口打开）"
+    you_are_in: "您在"
+    unflag: 取消标记
+    unfollow_entity: "取消跟随%{entity}"
+    outline:
+      budget: 参与性预算
+      searcher: 搜寻者
+    go_to_page: "转到页面 "
+    share: 分享
+    orbit:
+      previous_slide: 上一张幻灯片
+      next_slide: 下一张幻灯片
+    documentation: 其他文档
+    view_mode:
+      title: 查看模式
+      cards: 卡片
+      list: 列表
     recommended_index:
       title: 推荐
       see_more: 查看更多推荐
@@ -599,7 +622,14 @@ zh-CN:
       association_name: '协会名称'
       description: 说明
       external_url: 链接到其他文档
+      geozone: 经营范围
+      submit_buttons:
+        create: 创建
+        new: 创建
+      title: 支出提议标题
     index:
+      title: 参与性预算
+      unfeasible: 不可行的投资项目
       by_geozone: "投资项目范围：%{geozone}"
       search_form:
         button: 搜索
@@ -610,7 +640,10 @@ zh-CN:
       sidebar:
         geozones: 经营范围
         feasibility: 可行性
+        unfeasible: 不可行
+      start_spending_proposal: 创建一个投资项目
     new:
+      more_info: 参与性预算是如何运作的？
       recommendations_title: 如果创建支出提议
   welcome:
     feed:
