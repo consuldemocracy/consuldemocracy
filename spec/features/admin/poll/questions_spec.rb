@@ -141,6 +141,10 @@ feature 'Admin poll questions' do
     end
 
     scenario "uses fallback if name is not translated to current locale", :js do
+      unless globalize_french_fallbacks.first == :es
+        skip("Spec only useful when French falls back to Spanish")
+      end
+
       visit @edit_question_url
 
       expect(page).to have_select('poll_question_poll_id', options: [poll.name_en])
@@ -149,5 +153,9 @@ feature 'Admin poll questions' do
 
       expect(page).to have_select('poll_question_poll_id', options: [poll.name_es])
     end
+  end
+
+  def globalize_french_fallbacks
+    Globalize.fallbacks(:fr).reject { |locale| locale.match(/fr/) }
   end
 end
