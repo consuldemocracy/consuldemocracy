@@ -42,8 +42,6 @@ module Consul
     config.i18n.available_locales = available_locales
     config.i18n.fallbacks = {
       'nl' => 'en'
-      'ast'   => 'es',
-      'ca'    => 'es',
       'fr'    => 'es',
       'gl'    => 'es',
       'it'    => 'es',
