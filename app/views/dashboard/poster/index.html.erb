@@ -1,26 +1,36 @@
 <% content_for :action_title, t("dashboard.poster.index.title") %>
 <div class="row expanded">
-  <div class="small-12 medium-9 large-7 column dashboard-poster-preview">
+  <div class="small-12 medium-9 column dashboard-poster-preview">
     <div class="poster-header">
-      <h1><%= t("dashboard.poster.index.poster_title_html") %></h1>
+      <h1>
+        <%= t("dashboard.poster.index.poster_title") %>
+        <br>
+        <%= t("dashboard.poster.index.poster_subtitle") %>
+      </h1>
       <p class="intro"><%= t("dashboard.poster.index.intro_text") %></p>
       <p class="text-center">
         <strong><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></strong>
       </p>
     </div>
 
-    <% if proposal.image.present? %>
-      <%= image_tag proposal.image.attachment.url(:large) %>
-    <% else %>
-      <%= image_tag "default_mailing.jpg" %>
-    <% end %>
-
-    <div class="margin text-center">
-      <h2><%= t("dashboard.poster.index.support") %></h2>
-      <h3 class="proposal-title">"<%= proposal.title %>"</h3>
+    <div class="proposal-image">
+      <% if proposal.image.present? %>
+        <%= image_tag proposal.image.attachment.url(:large) %>
+      <% else %>
+        <%= image_tag "default_mailing.jpg" %>
+      <% end %>
     </div>
 
-    <p class="poster-footer"><%= t("dashboard.poster.index.footer") %></p>
+    <div class="poster-content text-center">
+      <h2><%= t("dashboard.poster.index.support") %></h2>
+      <h3>
+        <span class="title-quote">"</span>
+        <%= proposal.title %>
+        <span class="title-quote">"</span>
+      </h3>
+
+      <p class="poster-footer"><%= t("dashboard.poster.index.footer") %></p>
+    </div>
   </div>
 
   <%= render 'poster_options' %>

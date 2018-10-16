@@ -6,26 +6,36 @@
   <%= wicked_pdf_stylesheet_link_tag 'application' -%>
   <%= wicked_pdf_stylesheet_link_tag 'pdf_fonts' -%>
 </head>
-<body>
-  <div class="row">
-    <div class="small-12 medium-9 column dashboard-poster-pdf">
-      <div class="header">
-        <h1><%= t("dashboard.poster.index.poster_title_html") %></h1>
-        <p><%= t("dashboard.poster.index.intro_text") %></p>
-        <p class="image-caption"><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></p>
-      </div>
+<body class="dashboard-poster-pdf">
+  <div class="poster-header">
+    <h1>
+      <%= t("dashboard.poster.index.poster_title") %>
+      <br>
+      <%= t("dashboard.poster.index.poster_subtitle") %>
+    </h1>
+    <p class="intro"><%= t("dashboard.poster.index.intro_text") %></p>
+    <p class="text-center">
+      <strong><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></strong>
+    </p>
+  </div>
 
-      <div class="proposal-image">
-        <%= wicked_pdf_image_tag proposal.image.attachment.url(:large), class: 'proposal-image' if proposal.image.present? %>
-        <%= wicked_pdf_image_tag 'default_mailing.jpg', class: 'proposal-image' unless proposal.image.present? %>
-      </div>
+  <div class="proposal-image">
+    <% if proposal.image.present? %>
+      <%= wicked_pdf_image_tag proposal.image.attachment.url(:large) %>
+    <% else %>
+      <%= wicked_pdf_image_tag "default_mailing.jpg" %>
+    <% end %>
+  </div>
 
-      <h3><%= t("dashboard.poster.index.support") %></h3>
+  <div class="poster-content">
+    <h2><%= t("dashboard.poster.index.support") %></h2>
+    <h3>
+      <span class="title-quote">"</span>
+      <%= proposal.title %>
+      <span class="title-quote">"</span>
+    </h3>
 
-      <div class="proposal-title">"<%= proposal.title %>"</div>
-
-      <div class="poster-footer"><%= t("dashboard.poster.index.footer") %></div>
-    </div>
+    <p class="poster-footer"><%= t("dashboard.poster.index.footer") %></p>
   </div>
 </body>
 </html>

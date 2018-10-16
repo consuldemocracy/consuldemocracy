@@ -10,6 +10,7 @@
 // 08. Polls
 // 09. Email preview
 // 10. Poster preview
+// 11. Poster PDF
 //
 
 // 01. Dashboard global
@@ -436,41 +437,72 @@
 }
 
 // 10. Poster preview
-// --------------------
+// ------------------
 
 .dashboard-poster-preview {
 
   .poster-header {
-    background-color: $brand;
+    background: $brand;
     color: #fff;
-    padding: $line-height * 2;
+    padding: $line-height * 2 $line-height $line-height * 6;
+
+    h1 {
+      color: #fff;
+      font-size: rem-calc(80);
+      line-height: rem-calc(80);
+    }
 
     p {
       font-size: rem-calc(24);
     }
 
     .intro {
-      margin: $line-height * 2;
+      margin: $line-height * 2 auto;
+      max-width: 60%;
       text-align: justify;
     }
+  }
 
-    .image-caption {
-      color: #fff;
-      font-size: rem-calc(20);
-      font-weight: bold;
-      margin-bottom: 0;
-      text-align: center;
+  .proposal-image {
+    margin: 0 auto;
+    max-width: 80%;
+    position: relative;
+
+    &::before {
+      background: #ff9e00;
+      content: '';
+      height: rem-calc(120);
+      left: -36px;
+      position: absolute;
+      top: -180px;
+      width: rem-calc(120);
     }
 
-    .proposal-image {
+    img {
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+      margin-top: rem-calc(-144);
+      position: relative;
       width: 100%;
     }
   }
 
-  .proposal-title {
+  h2 {
+    color: $text-medium;
+    margin: $line-height 0;
+    margin-left: 10%;
+    text-align: left;
+  }
+
+  h3 {
     color: $brand;
-    font-size: rem-calc(40);
+    font-size: rem-calc(50);
     margin-bottom: $line-height * 2;
+
+    .title-quote {
+      display: inline-block;
+      top: rem-calc(-12);
+      vertical-align: baseline;
+    }
   }
 
   .poster-footer {
@@ -479,5 +511,96 @@
     margin: 0 auto;
     padding-left: $line-height / 2;
     width: 50%;
+  }
+}
+
+// 11. Poster PDF
+// --------------
+
+.dashboard-poster-pdf {
+
+  .poster-header {
+    background: $brand;
+    color: #fff;
+    padding: rem-calc(320) rem-calc(160) rem-calc(640);
+    text-align: center;
+
+    h1 {
+      color: #fff;
+      font-size: rem-calc(250);
+      line-height: rem-calc(250);
+      text-align: left;
+    }
+
+    p {
+      font-size: rem-calc(80);
+      line-height: rem-calc(80);
+
+      &.intro {
+        margin: rem-calc(160) auto;
+        max-width: 60%;
+        text-align: justify;
+      }
+    }
+  }
+
+  .proposal-image {
+    margin: 0 auto;
+    max-width: rem-calc(2000);
+    position: relative;
+
+    &::before {
+      background: #ff9e00;
+      content: '';
+      height: rem-calc(400);
+      left: -120px;
+      position: absolute;
+      top: -720px;
+      width: rem-calc(400);
+    }
+
+    img {
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+      margin-top: rem-calc(-600);
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  .poster-content {
+    margin: 0 auto;
+    max-width: rem-calc(2000);
+  }
+
+  h2 {
+    color: $text-medium;
+    font-size: rem-calc(80);
+    margin-top: rem-calc(80);
+  }
+
+  h3 {
+    color: $brand;
+    font-size: rem-calc(200);
+    line-height: rem-calc(240);
+    margin: rem-calc(80) 0;
+    position: relative;
+    width: 90%;
+
+    .title-quote {
+      display: inline-block;
+      top: rem-calc(-40);
+      vertical-align: baseline;
+    }
+  }
+
+  .poster-footer {
+    border-left: 10px solid $border;
+    color: $text-medium;
+    font-size: rem-calc(60);
+    line-height: rem-calc(60);
+    margin: 0 auto;
+    max-width: 60%;
+    padding-left: rem-calc(40);
+    width: 100%;
   }
 }
