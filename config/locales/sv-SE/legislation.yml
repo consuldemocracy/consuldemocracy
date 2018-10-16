@@ -70,7 +70,7 @@ sv:
           help: Hjälp med dialoger
         section_footer:
           title: Hjälp med dialoger
-          description: Delta i diskussioner och processer inför beslut i staden. Dina åsikter kommer att tas i beaktande av kommunfullmäktige.
+          description: "Delta i diskussioner och processer inför beslut i staden. Dina åsikter kommer att tas i beaktande av kommunen.\n\nI dialoger får medborgarna möjlighet att diskutera och ge förslag inför olika typer av kommunala beslut.\n\nAlla som är skrivna i staden kan komma med synpunkter på nya regelverk, beslut och planer för staden. Dina kommentarer analyseras och tas i beaktande i besluten."
       phase_not_open:
         not_open: Fasen är inte öppen ännu
       phase_empty:
