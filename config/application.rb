@@ -40,8 +40,6 @@ module Consul
       "zh-TW"]
     config.i18n.available_locales = available_locales
     config.i18n.fallbacks = {
-      'ast'   => 'es',
-      'ca'    => 'es',
       'fr'    => 'es',
       'gl'    => 'es',
       'it'    => 'es',
