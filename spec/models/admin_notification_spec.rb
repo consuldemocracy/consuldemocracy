@@ -3,6 +3,8 @@ require 'rails_helper'
 describe AdminNotification do
   let(:admin_notification) { build(:admin_notification) }
 
+  it_behaves_like "globalizable", :admin_notification
+
   it "is valid" do
     expect(admin_notification).to be_valid
   end
