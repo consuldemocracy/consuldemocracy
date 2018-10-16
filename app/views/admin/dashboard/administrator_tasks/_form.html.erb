@@ -1,16 +1,28 @@
-<%= form_for administrator_task, url: { action: 'update' } do |f| %>
-
-  <div class="callout">
-    <h5><%= t("admin.dashboard.administrator_tasks.form.proposal", title: administrator_task.source.proposal.title) %></h5>
-    <p><%= t("admin.dashboard.administrator_tasks.form.request", title: administrator_task.source.action.title) %></p>
-    <%= link_to t("admin.dashboard.administrator_tasks.form.check_details"),
-                proposal_path(administrator_task.source.proposal),
-                target: '_blank' %>
-  </div>
-
-  <div class="row">
-    <div class="actions small-12 large-3 medium-3 column">
-      <%= f.submit(class: 'button expanded', value: t("admin.dashboard.administrator_tasks.form.solve")) %>
-    </div>
-  </div>
-<% end %>
+<div class="small-12 column">
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("admin.dashboard.administrator_tasks.form.proposal") %></th>
+        <th><%= t("admin.dashboard.administrator_tasks.form.request") %></th>
+        <th class="text-right"><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <%= form_for administrator_task, url: { action: 'update' } do |f| %>
+          <td>
+            <%= link_to administrator_task.source.proposal.title,
+                        proposal_path(administrator_task.source.proposal), target: "_blank" %>
+          </td>
+          <td>
+            <%= administrator_task.source.action.title %>
+          </td>
+          <td class="text-right">
+            <%= f.submit(value: t("admin.dashboard.administrator_tasks.form.solve"),
+                         class: "button") %>
+          </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -30,6 +30,8 @@
   </li>
 
   <li class="tabs-title" id="proposals-tab">
-    <%= link_to t('admin.settings.index.proposals.title'), '#tab-proposals' %>
+    <%= link_to "#tab-proposals" do %>
+      <%= t("admin.settings.index.dashboard.title") %>
+    <% end %>
   </li>
 </ul>
