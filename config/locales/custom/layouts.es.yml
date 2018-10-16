@@ -1,5 +1,7 @@
 es:
   layouts:
+    cartel_magdalena_current:
+      tab_link: 'Cartel Magdalena %{year}'
     subnavigation:
       query_districte: Consulta distritos
     application:

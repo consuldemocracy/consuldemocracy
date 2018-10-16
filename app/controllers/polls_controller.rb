@@ -28,10 +28,24 @@ class PollsController < ApplicationController
   end
 
   def stats
-    @stats = Poll::Stats.new(@poll).generate
+    @votacion = Poll.kind_of_cartel.last
+    @stats = calcula_resultados_cartel(@votacion)
+    @all_ages_count = @stats[:age_groups].values.sum.to_f
   end
 
   def results
+    @votacion = Poll.kind_of_cartel.last
+    @answers = @votacion.questions.first.answers.to_a
+    @results = []
+    @votacion.questions.first.question_answers.each do |question_answer|
+      votos = question_answer.total_votes
+      porcentaje = votos * 100.0 / @answers.size
+       @results << {
+        respuesta: question_answer,
+        votos: votos,
+        porcentaje: porcentaje
+        }
+    end
+    @results = @results.sort { |a, b| b[:votos] <=> a[:votos] }
   end
-
 end
