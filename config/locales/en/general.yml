@@ -582,7 +582,8 @@ en:
     poster:
       index:
         title: Poster preview
-        poster_title_html: "Do not keep looking,<br> back me up! ;)"
+        poster_title: "Do not keep looking,"
+        poster_subtitle: "back me up! ;)"
         intro_text:
           I am participating in Decide Madrid with my own citizen proposal and only if you also add you can I achieve the
           necessary support to make Madrid the city we all want.
