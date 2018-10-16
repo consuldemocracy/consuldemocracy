@@ -65,11 +65,11 @@ sv:
         no_next_processes: Det finns inga planerade processer
         no_past_processes: Det finns inga avslutade processer
         section_header:
-          icon_alt: Ikon för planeringsprocess
-          title: Planeringsprocesser
-          help: Hjälp med planeringsprocesser
+          icon_alt: Ikon för dialoger
+          title: Dialoger
+          help: Hjälp med dialoger
         section_footer:
-          title: Hjälp med planeringsprocesser
+          title: Hjälp med dialoger
           description: Delta i diskussioner och processer inför beslut i staden. Dina åsikter kommer att tas i beaktande av kommunfullmäktige.
       phase_not_open:
         not_open: Fasen är inte öppen ännu
@@ -102,7 +102,7 @@ sv:
         next_question: Nästa fråga
         first_question: Första frågan
         share: Dela
-        title: Kollaborativ planeringsprocess
+        title: Medborgardialoger
       participation:
         phase_not_open: Denna fas är inte öppen
         organizations: Organisationer får inte delta i debatten
