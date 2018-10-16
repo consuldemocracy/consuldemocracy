@@ -383,7 +383,7 @@ sv:
         index:
           create: Ny process
           delete: Ta bort
-          title: Planeringsprocesser
+          title: Dialoger
           filters:
             open: Pågående
             next: Kommande
@@ -391,7 +391,7 @@ sv:
             all: Alla
         new:
           back: Tillbaka
-          title: Skapa en ny kollaborativ planeringsprocess
+          title: Skapa en ny medborgardialog
           submit_button: Skapa process
         process:
           title: Process
@@ -567,7 +567,7 @@ sv:
       title_settings: Inställningar
       title_site_customization: Webbplatsens innehåll
       title_booths: Röststationer
-      legislation: Planeringsprocesser
+      legislation: Medborgardialoger
       users: Användare
     administrators:
       index:
