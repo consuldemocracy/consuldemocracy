@@ -56,7 +56,7 @@ sv:
       see_results: Visa resultat
       section_footer:
         title: Hjälp med medborgarbudgetar
-        description: I medborgarbudgeten bestämmer medborgarna vilka projekt som ska tilldelas en del av budgeten.
+        description: "Medborgarbudgetar är processer där invånarna beslutar om en del av stadens budget. Alla som är skrivna i staden kan ge förslag på projekt till budgeten.\n\nDe projekt som får flest röster granskas och skickas till en slutomröstning för att utse de vinnande projekten.\n\nBudgetförslag tas emot från januari till och med mars. För att skicka in ett förslag för hela staden eller en del av staden behöver du registrera dig och verifiera ditt konto.\n\nVälj en beskrivande och tydlig rubrik för ditt projekt och förklara hur du vill att det ska genomföras. Komplettera med bilder, dokument och annan viktig information för att göra ditt förslag så bra som möjligt."
     investments:
       form:
         tag_category_label: "Kategorier"
