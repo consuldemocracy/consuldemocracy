@@ -1029,7 +1029,7 @@ sv:
         no_hidden_proposals: Det finns inga dolda aviseringar.
     settings:
       flash:
-        updated: Uppdaterad kostnadsberäkning
+        updated: Uppdaterat
       index:
         banners: Bannerformat
         banner_imgs: Banner
