@@ -607,34 +607,12 @@ en:
     mailer:
       forward:
         subtitle: If you support me, we will achieve it.
-        support_it: Support this proposal
+        support_button: Support this proposal
         share_in: Share in
-        introduction:
-          "<p>Hello!</p>
-
-          <p>
-            I am writing to let you know that I am
-            participating in Decide Madrid, the platform for
-            Madrid and Madrid we can decide which city
-            we want. And for that, I created my own citizen proposal
-            and now, I'm going to need your support! But do not worry because
-            It is very simple.
-          </p>
-
-          <p>
-            You just have to click on the button that you will see below
-            'Support this proposal' and you can directly inform yourself about
-            before promoting it. Only the proposals that achieve the
-            maximum support will be carried out by our City Council,
-            and I thought that you, I'm sure you help me achieve it!
-          </p>"
-        share_info:
-          "<p>
-            And if you also do me the great favor of sharing my proposal with
-            your friends, family and contacts, it would be the bomb! Can
-            do it next from the social network that you want or from your
-            email:
-          </p>"
+        hi: "Hello!"
+        introduction: I am writing to let you know that I am participating in %{org}, the platform we can decide which city we want. And for that, I created my own citizen proposal and now, I'm going to need your support! But do not worry because It is very simple.
+        support: "You just have to click on the button that you will see below 'Support this proposal' and you can directly inform yourself about before promoting it. Only the proposals that achieve the maximum support will be carried out by our City Council, and I thought that you, I'm sure you help me achieve it!"
+        share: "And if you also do me the great favor of sharing my proposal with your friends, family and contacts, it would be the bomb! Can do it next from the social network that you want or from your email."
   polls:
     all: "All"
     no_dates: "no date assigned"

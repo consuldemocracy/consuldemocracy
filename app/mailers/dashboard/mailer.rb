@@ -1,5 +1,5 @@
 class Dashboard::Mailer < ApplicationMailer
-  layout 'dashboard/mailer'
+  layout 'mailer'
 
   def forward(proposal)
     @proposal = proposal

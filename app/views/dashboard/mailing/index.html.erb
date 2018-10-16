@@ -15,14 +15,16 @@
     </div>
 
     <div class="mail-body">
-      <%== t("dashboard.mailer.forward.introduction") %>
+      <p><%= t("dashboard.mailer.forward.hi") %></p>
+      <p><%= t("dashboard.mailer.forward.introduction", org: setting['org_name']) %></p>
+      <p><%= t("dashboard.mailer.forward.support") %></p>
 
       <div class="text-center">
-        <%= link_to t("dashboard.mailer.forward.support_it"),
+        <%= link_to t("dashboard.mailer.forward.support_button"),
                     proposal_url(@proposal), class: "button large" %>
       </div>
 
-      <%== t("dashboard.mailer.forward.share_info") %>
+      <%= t("dashboard.mailer.forward.share") %>
 
       <div class="text-center">
         <h3><%= t("dashboard.mailer.forward.share_in") %></h3>

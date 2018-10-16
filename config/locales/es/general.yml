@@ -607,34 +607,12 @@ es:
     mailer:
       forward:
         subtitle: Si me apoyas, lo conseguiremos.
-        support_it: Apoyar esta propuesta
+        support_button: Apoyar esta propuesta
         share_in: Compartir en
-        introduction:
-          <p>¡Hola!</p>
-
-          <p>
-            Te escribo para comunicarte que estoy
-            participando en Decide Madrid, la plataforma para que
-            los madrileños y madrileñas podamos decidir qué ciudad
-            queremos. Y para ello, he creado mi propia propuesta ciudadana
-            y ahora, ¡voy a necesitar tu apoyo! Pero no te preocupes porque
-            es muy sencillo.
-          </p>
-
-          <p>
-            Tan sólo tienes que pinchar en el botón que verás a continuación
-            'Apoyar esta propuesta' y directamente podrás informarte a cerca de
-            ella antes de impulsarla. Sólo las propuestas que consigan el
-            máximo apoyo se llevarán a cabo por parte de nuestro Ayuntamiento,
-            y he pensado que tú, ¡seguro que me ayudas a lograrlo!
-          </p>
-        share_info:
-          "<p>
-            Y si además, me haces el gran favor de compartir mi propuesta con
-            tus amigos, familiares y contactos, ¡ya sería la bomba! Puedes
-            hacerlo a continuación desde la red social que tú quieras o desde tu
-            correo electrónico:
-          </p>"
+        hi: "¡Hola!"
+        introduction: "Te escribo para comunicarte que estoy participando en %{org}, la plataforma para que podamos decidir qué ciudad queremos. Y para ello, he creado mi propia propuesta ciudadana y ahora, ¡voy a necesitar tu apoyo! Pero no te preocupes porque es muy sencillo."
+        support: "Tan sólo tienes que hacer clic en el botón que verás a continuación 'Apoyar esta propuesta' y directamente podrás informarte acerca de ella antes de impulsarla. Sólo las propuestas que consigan el máximo apoyo se llevarán a cabo por parte de nuestro Ayuntamiento, y he pensado que tú, ¡seguro que me ayudas a lograrlo!"
+        share: "Y si además, me haces el gran favor de compartir mi propuesta con tus amigos, familiares y contactos, ¡ya sería la bomba! Puedes hacerlo a continuación desde la red social que tú quieras o desde tu correo electrónico."
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"
