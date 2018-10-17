@@ -49,9 +49,9 @@ gl:
       - Novembro
       - Decembro
     order:
-      - :day
-      - :month
-      - :year
+      - ':día'
+      - :mes
+      - :ano
   datetime:
     distance_in_words:
       about_x_hours:

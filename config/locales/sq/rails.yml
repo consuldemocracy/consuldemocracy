@@ -49,9 +49,9 @@ sq:
       - Nëntor
       - Dhjetor
     order:
-      - :day
-      - :month
-      - :year
+      - :vit
+      - :muaj
+      - ':ditë'
   datetime:
     distance_in_words:
       about_x_hours:

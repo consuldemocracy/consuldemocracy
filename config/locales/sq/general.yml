@@ -205,7 +205,7 @@ sq:
       consul: Consul Tirana
       consul_url: https://github.com/consul/consul
       contact_us: Për ndihmë teknike hyni në
-      copyright: Tiranë, %{year}
+      copyright: Bashkia Tiranë, %{year}
       description: Ky portal përdor %{consul} i cili është %{open_source}.
       open_source: programet open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
