@@ -14,7 +14,6 @@ zh-CN:
         phase_not_open: 此阶段未开放
         login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
         signin: 登录
-        signup: 注册
       index:
         title: 评论
         comments_about: 评论关于
