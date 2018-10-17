@@ -95,6 +95,14 @@ class Poll < ActiveRecord::Base
   def next_year
     starts_at.year+1
   end
+
+  def show_results?
+    results_enabled? && (expired? || (!expired? && when_show_results))
+  end
+
+  def show_stats?
+    stats_enabled? && (expired? || (!expired? && when_show_stats))
+  end
 end
 
 # == Schema Information
