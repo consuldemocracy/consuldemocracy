@@ -1,9 +1,5 @@
 namespace :globalize do
-  desc "Migrates existing data to translation tables"
-  task migrate_data: :environment do
-    logger = Logger.new(STDOUT)
-    logger.formatter = proc { |severity, _datetime, _progname, msg| "#{severity} #{msg}\n" }
-
+  def translatable_classes
     [
       AdminNotification,
       Banner,
@@ -18,7 +14,13 @@ namespace :globalize do
       Poll::Question::Answer,
       SiteCustomization::Page,
       Widget::Card
-    ].each do |model_class|
+    ]
+  end
+
+  def migrate_data
+    @errored = false
+
+    translatable_classes.each do |model_class|
       logger.info "Migrating #{model_class} data"
 
       fields = model_class.translated_attribute_names
@@ -40,8 +42,43 @@ namespace :globalize do
           record.save!
         rescue ActiveRecord::RecordInvalid
           logger.error "Failed to save #{model_class} with id #{record.id}"
+          @errored = true
         end
       end
     end
+  end
+
+  def logger
+    @logger ||= Logger.new(STDOUT).tap do |logger|
+      logger.formatter = proc { |severity, _datetime, _progname, msg| "#{severity} #{msg}\n" }
+    end
+  end
+
+  def errored?
+    @errored
+  end
+
+  desc "Simulates migrating existing data to translation tables"
+  task simulate_migrate_data: :environment do
+    logger.info "Starting migrate data simulation"
+
+    ActiveRecord::Base.transaction do
+      migrate_data
+      raise ActiveRecord::Rollback
+    end
+
+    if errored?
+      logger.error "Simulation failed! Please check the errors and solve them before proceeding."
+      raise "Simulation failed!"
+    else
+      logger.info "Migrate data simulation ended successfully"
+    end
+  end
+
+  desc "Migrates existing data to translation tables"
+  task migrate_data: :simulate_migrate_data do
+    logger.info "Starting data migration"
+    migrate_data
+    logger.info "Finished data migration"
   end
 end
