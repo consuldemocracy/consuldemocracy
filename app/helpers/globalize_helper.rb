@@ -32,10 +32,11 @@ module GlobalizeHelper
   end
 
   def enable_locale?(resource, locale)
-    # Use `map` instead of `pluck` in order to keep the `params` sent
-    # by the browser when there's invalid data
-    (resource.translations.blank? && locale == I18n.locale) ||
-      resource.translations.reject(&:_destroy).map(&:locale).include?(locale)
+    if resource.translations.any?
+      resource.locales_not_marked_for_destruction.include?(locale)
+    else
+      locale == I18n.locale
+    end
   end
 
   def highlight_class(resource, locale)
