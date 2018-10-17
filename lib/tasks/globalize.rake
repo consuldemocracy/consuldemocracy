@@ -1,6 +1,9 @@
 namespace :globalize do
   desc "Migrates existing data to translation tables"
   task migrate_data: :environment do
+    logger = Logger.new(STDOUT)
+    logger.formatter = proc { |severity, _datetime, _progname, msg| "#{severity} #{msg}\n" }
+
     [
       AdminNotification,
       Banner,
@@ -16,7 +19,7 @@ namespace :globalize do
       SiteCustomization::Page,
       Widget::Card
     ].each do |model_class|
-      Logger.new(STDOUT).info "Migrating #{model_class} data"
+      logger.info "Migrating #{model_class} data"
 
       fields = model_class.translated_attribute_names
 
@@ -33,7 +36,11 @@ namespace :globalize do
           end
         end
 
-        record.save!
+        begin
+          record.save!
+        rescue ActiveRecord::RecordInvalid
+          logger.error "Failed to save #{model_class} with id #{record.id}"
+        end
       end
     end
   end
