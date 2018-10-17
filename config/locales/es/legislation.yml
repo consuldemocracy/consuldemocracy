@@ -52,6 +52,9 @@ es:
         more_info: Más información y contexto
       proposals:
         empty_proposals: No hay propuestas
+        filters:
+          random: Aleatorias
+          winners: Seleccionadas
       debate:
         empty_questions: No hay preguntas
         participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
@@ -82,6 +85,7 @@ es:
         key_dates: Fechas clave
         debate_dates: Debate previo
         draft_publication_date: Publicación borrador
+        allegations_dates: Comentarios
         result_publication_date: Publicación resultados
         proposals_dates: Propuestas
     questions:

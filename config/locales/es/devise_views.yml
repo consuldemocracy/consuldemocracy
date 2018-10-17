@@ -16,6 +16,7 @@ es:
       confirmation_instructions:
         confirm_link: Confirmar mi cuenta
         text: 'Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:'
+        title: Bienvenido/a
         welcome: Bienvenido/a
       reset_password_instructions:
         change_link: Cambiar mi contraseña

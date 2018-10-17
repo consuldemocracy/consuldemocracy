@@ -9,6 +9,7 @@ es:
       delete_button: Eliminar documento
       note: "Puedes subir hasta un máximo de %{max_documents_allowed} documentos en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo."
       add_new_document: Añadir nuevo documento
+      cancel_button: Cancelar
     actions:
       destroy:
         notice: El documento se ha eliminado correctamente.

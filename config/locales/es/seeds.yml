@@ -1,5 +1,11 @@
 es:
   seeds:
+    settings:
+      official_level_1_name: Cargo oficial 1
+      official_level_2_name: Cargo oficial 2
+      official_level_3_name: Cargo oficial 3
+      official_level_4_name: Cargo oficial 4
+      official_level_5_name: Cargo oficial 5
     geozones:
       north_district: Distrito Norte
       west_district: Distrito Oeste
@@ -29,6 +35,16 @@ es:
       groups:
         all_city: Toda la Ciudad
         districts: Distritos
+      valuator_groups:
+        culture_and_sports: Cultura y Deportes
+        gender_and_diversity: Políticas de Género y Diversidad
+        urban_development: Desarrollo Urbano Sostenible
+        equity_and_employment: Equidad y Empleo
+      statuses:
+        studying_project: Estudiando el proyecto
+        bidding: Licitación
+        executing_project: Ejecutando el proyecto
+        executed: Ejecutado
     polls:
       current_poll: "Votación Abierta"
       current_poll_geozone_restricted: "Votación Abierta restringida por geozona"
