@@ -23,3 +23,7 @@ zh-CN:
     unfeasible_spending_proposal:
       hi: "亲爱的用户，"
       new_html: "谨此，我们邀请您详细说明符合此进程条件的<strong>新提议</strong>。您可以按照这个链接来操作：%{url}。"
+      new_href: "新的投资项目"
+      sincerely: "真诚的"
+      sorry: "很抱歉给您造成不便，我们再次感谢您的宝贵参与。"
+      subject: "您的投资项目 '%{code}' 已被标记为不可行"
