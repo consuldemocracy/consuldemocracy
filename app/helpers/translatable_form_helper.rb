@@ -8,23 +8,26 @@ module TranslatableFormHelper
   class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
     def translatable_fields(&block)
       @object.globalize_locales.map do |locale|
-        Globalize.with_locale(locale) do
-          fields_for_translation(translation_for(locale)) do |translations_form|
-            @template.content_tag :div, translations_options(translations_form.object, locale) do
-              @template.concat translations_form.hidden_field(
-                :_destroy,
-                data: { locale: locale })
-
-              @template.concat translations_form.hidden_field(:locale, value: locale)
-
-              yield translations_form
-            end
-          end
-        end
+        Globalize.with_locale(locale) { fields_for_locale(locale, &block) }
       end.join.html_safe
     end
 
     private
+
+      def fields_for_locale(locale, &block)
+        fields_for_translation(translation_for(locale)) do |translations_form|
+          @template.content_tag :div, translations_options(translations_form.object, locale) do
+            @template.concat translations_form.hidden_field(
+              :_destroy,
+              data: { locale: locale }
+            )
+
+            @template.concat translations_form.hidden_field(:locale, value: locale)
+
+            yield translations_form
+          end
+        end
+      end
 
       def fields_for_translation(translation, &block)
         fields_for(:translations, translation, builder: TranslationsFieldsBuilder) do |f|
