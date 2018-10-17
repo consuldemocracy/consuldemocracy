@@ -13,6 +13,7 @@ describe LocalesHelper do
     after do
       I18n.backend.reload!
       I18n.enforce_available_locales = default_enforce
+      I18n.backend.send(:init_translations)
     end
 
     it "returns the language name in i18n.language.name translation" do
