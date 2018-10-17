@@ -1,1 +1,25 @@
 zh-CN:
+  mailers:
+    no_reply: "此消息是从一个不接受回复的电子邮件地址发送的。"
+    comment:
+      hi: 您好
+      new_comment_by_html: 来自<b>%{commenter}</b>的新评论
+      subject: 有人对您的%{commentable} 做了评论
+      title: 新评论
+    config:
+      manage_email_subscriptions: 要停止接收这些电子邮件请更改您的设置于
+    email_verification:
+      click_here_to_verify: 此链接
+      instructions_2_html: 此电子邮件将用<b>%{document_type} %{document_number}</b>来验证您的账户。如果这些不属于您，请不要点击上个链接并忽略此电子邮件。
+      instructions_html: 要完成您的用户账户验证，您必须点击%{verification_link}。
+      subject: 确认您的电子邮件
+      thanks: 非常感谢。
+      title: 使用以下链接来确认您的账户
+    reply:
+      hi: 您好
+      new_reply_by_html: <b>%{commenter}</b> 对您评论有新回复
+      subject: 有人回复了您的评论
+      title: 对您评论的新回复
+    unfeasible_spending_proposal:
+      hi: "亲爱的用户，"
+      new_html: "谨此，我们邀请您详细说明符合此进程条件的<strong>新提议</strong>。您可以按照这个链接来操作：%{url}。"
