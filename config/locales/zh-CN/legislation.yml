@@ -71,3 +71,51 @@ zh-CN:
         section_footer:
           title: 关于立法进程的帮助
           description: 在批准法令或市政行动之前，请参与辩论和进程。您的意见会被市政局考虑。
+      phase_not_open:
+        not_open: 此阶段尚未开启
+      phase_empty:
+        empty: 尚未发表任何内容
+      process:
+        see_latest_comments: 查看最新评论
+        see_latest_comments_title: 对此进程的评论
+      shared:
+        key_dates: 关键日期
+        debate_dates: 辩论
+        draft_publication_date: 发表草稿
+        allegations_dates: 评论
+        result_publication_date: 发表最终结果
+        proposals_dates: 提议
+    questions:
+      comments:
+        comment_button: 发表答案
+        comments_title: 开启答案
+        comments_closed: 已结束的阶段
+        form:
+          leave_comment: 留下您的评论
+      question:
+        comments:
+          zero: 没有评论
+          other: "%{count} 个评论"
+        debate: 辩论
+      show:
+        answer_question: 提交答案
+        next_question: 下个问题
+        first_question: 第一个问题
+        share: 分享
+        title: 合作立法进程
+      participation:
+        phase_not_open: 此阶段尚未开启
+        organizations: 组织不得参与辩论
+        signin: 登录
+        signup: 注册
+        unauthenticated: 您必须%{signin} 或者%{signup} 才可以参与。
+        verified_only: 只有已验证的用户可以参与，%{verify_account}。
+        verify_account: 验证您的账户
+        debate_phase_not_open: 辩论阶段已结束，答案不再被接受
+    shared:
+      share: 分享
+      share_comment: 从进程草稿%{process_name} 中对%{version_name} 的评论
+    proposals:
+      form:
+        tags_label: "类别"
+      not_verified: "为投票提议%{verify_account}。"
