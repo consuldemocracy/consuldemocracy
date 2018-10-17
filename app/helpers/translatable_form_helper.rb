@@ -37,9 +37,7 @@ module TranslatableFormHelper
       end
 
       def existing_translation_for(locale)
-        # Use `select` because `where` uses the database and so ignores
-        # the `params` sent by the browser
-        @object.translations.select { |translation| translation.locale == locale }.first
+        @object.translations.detect { |translation| translation.locale == locale }
       end
 
       def new_translation_for(locale)
