@@ -20,4 +20,9 @@ namespace :settings do
     Setting['feature.user.recommendations_on_proposals'] = true
   end
 
+  desc "Enable Help page"
+  task enable_help_page: :environment do
+    Setting['feature.help_page'] = true
+  end
+
 end

@@ -96,18 +96,8 @@ es:
       spending_proposals: "Propuestas de inversión"
       spending_proposals_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
       spending_proposal_features:
-        phase1: "Prespuestos participativos: Fase 1 - Aceptar propuestas"
-        phase1_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
-        phase2: "Prespuestos participativos: Fase 2 - Preselección de propuestas"
-        phase2_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
-        phase3: "Prespuestos participativos: Fase 3 - Votación final"
-        phase3_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
-        open_results_page: "Prespuestos participativos: Hacer públicos los resultados"
-        open_results_page_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
         voting_allowed: "Votaciones de preselección sobre propuestas de inversión."
         voting_allowed_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
-        final_voting_allowed: "Votaciones finales en propuestas de inversión."
-        final_voting_allowed_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
       user:
         recommendations: "Recomendaciones"
         recommendations_description: "Muestra a los usuarios recomendaciones en la homepage basado en las etiquetas de los elementos que sigue"
@@ -129,6 +119,5 @@ es:
       guides_description: "Muestra una guía de diferencias entre las propuestas y los proyectos de gasto si hay un presupuesto participativo activo"
       public_stats: "Estadísticas públicas"
       public_stats_description: "Muestra las estadísticas públicas en el panel de Administración"
-      probe:
-        plaza: "Sondeo Plaza España"
-        voting_allowed: Votaciones sobre propuestas de inversión
+      help_page: "Página de Ayuda"
+      help_page_description: "Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada."

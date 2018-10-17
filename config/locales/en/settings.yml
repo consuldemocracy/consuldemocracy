@@ -96,18 +96,8 @@ en:
       spending_proposals: "Spending proposals"
       spending_proposals_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
       spending_proposal_features:
-        phase1: "Participatory budget: Phase 1 - Accept proposals"
-        phase1_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
-        phase2: "Participatory budget: Phase 2 - Preselect proposals"
-        phase2_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
-        phase3: "Participatory budget: Phase 3 - Invest"
-        phase3_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
-        open_results_page: "Participatory budget: Make results page public"
-        open_results_page_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
         voting_allowed: Voting on investment projects - Preselection phase
         voting_allowed_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
-        final_voting_allowed: Voting on investment projects - Final phase
-        final_voting_allowed_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
       user:
         recommendations: "Recommendations"
         recommendations_description: "Shows users recommendations on the homepage based on the tags of the following items"
@@ -129,6 +119,5 @@ en:
       guides_description: "Displays a guide to differences between proposals and investment projects if there is an active participatory budget"
       public_stats: "Public stats"
       public_stats_description: "Display public stats in the Administration panel"
-      probe:
-        plaza: "Plaza España Probe"
-        voting_allowed: Voting on investment projects
+      help_page: "Help page"
+      help_page_description: "Displays a Help menu that contains a page with an info section about each enabled feature"
