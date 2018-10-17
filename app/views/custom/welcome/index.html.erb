@@ -2,13 +2,13 @@
   <div class="row">
     <div class="small-12 medium-12 column background-principal">
       <div class="hijo">
-        <%= link_to "Participa!", budgets_path, class: "button large alert" %>
+        <%= link_to "Participa!", poll_path(Poll.kind_of_cartel.last), class: "button large alert" %>
       </div>
     </div>
   </div>
 </div>
 
 <div class="expanded highlight padding no-margin-top text-center">
-  <h1><%= t("layouts.header.open_city_title") %></h1>
-  <h2><%= t("layouts.header.open_date") %></h2>
+  <h1><%# t("layouts.header.open_city_title") %></h1>
+  <h2><%# t("layouts.header.open_date") %></h2>
 </div>
