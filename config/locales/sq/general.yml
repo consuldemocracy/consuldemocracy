@@ -249,7 +249,6 @@ sq:
       text_sign_in: Kycu
       text_sign_up: Rregjistrohu
       title: Si mund ta komentoj këtë dokument?
-  locale: Anglisht
   notifications:
     index:
       empty_notifications: Ju nuk keni njoftime të reja

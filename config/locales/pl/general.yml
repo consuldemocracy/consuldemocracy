@@ -257,7 +257,6 @@ pl:
       text_sign_in: zaloguj się
       text_sign_up: zarejestruj się
       title: Jak mogę skomentować ten dokument?
-  locale: angielski
   notifications:
     index:
       empty_notifications: Nie masz nowych powiadomień.
