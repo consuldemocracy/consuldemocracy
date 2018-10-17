@@ -1,1 +1,12 @@
 zh-CN:
+  images:
+    remove_image: 删除图像
+    form:
+      title: 描述性图像
+      title_placeholder: 为图像添加描述性标题
+      attachment_label: 选择图像
+      delete_button: 删除图像
+      note: "您可上传以下内容类型的一个图像：%{accepted_content_types}，最多可以%{max_file_size} MB。"
+      add_new_image: 添加图像
+      admin_title: "图像"
+      admin_alt_text: "图像的替代文本"
