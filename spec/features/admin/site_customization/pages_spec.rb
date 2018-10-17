@@ -41,8 +41,11 @@ feature "Admin custom pages" do
   end
 
   context "Update" do
-    scenario "Valid custom page" do
+    let!(:custom_page) do
       create(:site_customization_page, title: "An example custom page", slug: "custom-example-page")
+    end
+
+    scenario "Valid custom page" do
       visit admin_root_path
 
       within("#side_menu") do
@@ -61,6 +64,14 @@ feature "Admin custom pages" do
       expect(page).to have_content "Page updated successfully"
       expect(page).to have_content "Another example custom page"
       expect(page).to have_content "another-custom-example-page"
+    end
+
+    scenario "Allows images in CKEditor", :js do
+      visit edit_admin_site_customization_page_path(custom_page)
+
+      within(".ckeditor") do
+        expect(page).to have_css(".cke_toolbar .cke_button__image_icon")
+      end
     end
   end
 
