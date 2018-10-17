@@ -1,1 +1,23 @@
 zh-CN:
+  legislation:
+    annotations:
+      comments:
+        see_all: 查看所有
+        see_complete: 查看完成
+        comments_count:
+          other: "%{count} 个评论"
+        replies_count:
+          other: "%{count} 个回复"
+        cancel: 取消
+        publish_comment: 发表评论
+      form:
+        phase_not_open: 此阶段未开放
+        login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
+        signin: 登录
+        signup: 注册
+      index:
+        title: 评论
+        comments_about: 评论关于
+        see_in_context: 在上下文中查看
+        comments_count:
+          other: "%{count} 个评论"
