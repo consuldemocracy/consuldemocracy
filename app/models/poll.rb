@@ -103,6 +103,14 @@ class Poll < ActiveRecord::Base
   def show_stats?
     stats_enabled? && (expired? || (!expired? && when_show_stats))
   end
+
+  def name_without_year
+    name.gsub(/[0-9]*/,'')
+  end
+
+  def to_param
+    "#{id}-#{name_without_year}".parameterize
+  end
 end
 
 # == Schema Information
