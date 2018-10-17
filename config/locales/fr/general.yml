@@ -888,7 +888,6 @@ fr:
       open_gov: Gouvernement ouvert
       proposals: Propositions
       spending_proposals: Propositions de dépense
-  locale: Français
   mailers:
     comment:
       hi: Bonjour
