@@ -582,7 +582,8 @@ es:
     poster:
       index:
         title: Previsualización del poster
-        poster_title_html: "No te quedes mirando,<br> ¡apóyame! ;)"
+        poster_title: "No te quedes mirando"
+        poster_subtitle: "¡apóyame! ;)"
         intro_text:
           Estoy participando en Decide Madrid con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el
           apoyo necesario para hacer de madrid la ciudad que todos queremos.
