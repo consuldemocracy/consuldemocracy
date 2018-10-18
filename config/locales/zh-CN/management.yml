@@ -38,3 +38,19 @@ zh-CN:
       already_verified: 此用户账户已验证。
       has_no_account_html: 为了创建账户，请转到%{link}，然后点击屏幕左上角的<b>‘注册’</b>。
       link: CONSUL
+      in_census_has_following_permissions: '此用户可以使用以下权限参与网站：'
+      not_in_census: 此文档尚未注册。
+      not_in_census_info: '未在人口普查中的公民可以使用以下权限参与网站：'
+      please_check_account_data: 请检查以上账户数据是否正确。
+      title: 用户管理
+      under_age: "您没到验证账户所要求的年龄。"
+      verify: 验证
+    email_label: 电子邮件
+    date_of_birth: 出生日期
+    email_verifications:
+      already_verified: 此用户账户已验证。
+      choose_options: '请选择以下选项之一：'
+      document_found_in_census: 此文档在人口普查中找到，但是没有相关联的用户账户。
+      document_mismatch: '此电子邮件属于已有关联id的用户： %{document_number}(%{document_type})'
+      email_placeholder: 写下此人用于创建他或她的账户的电子邮件
+      email_sent_instructions: 为了完全验证此用户，用户必须点击我们发送给以上电子邮件地址的链接。需要这个步骤来确认这个地址是真的属于他的。
