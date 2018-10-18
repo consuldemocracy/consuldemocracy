@@ -515,7 +515,6 @@ es-CL:
           layouts: "Diseños"
           mailers: "Correos electrónicos"
           management: "Gestión"
-          guides: "Guías"
           welcome: "Bienvenido/a"
         buttons:
           save: "Guardar"
