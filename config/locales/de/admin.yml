@@ -555,7 +555,6 @@ de:
           layouts: "Layouts"
           mailers: "E-Mails"
           management: "Verwaltung"
-          guides: "Guides"
           welcome: "Willkommen"
         buttons:
           save: "Speichern"
