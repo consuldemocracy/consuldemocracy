@@ -3,18 +3,15 @@
            <%= css_for_human_rights_user(proposal) %>
            <%= css_for_successfull_proposal(proposal) %>"
      data-type="proposal">
-  <div class="panel <%= ('with-image' if feature?(:allow_images) && proposal.image.present?) %>">
+  <div class="panel <%= 'with-image' if proposal.image.present? %>">
     <div class="icon-successful"></div>
     <div class="icon-human-rights"></div>
 
-    <% if feature?(:allow_images) && proposal.image.present? %>
-      <div class="row" data-equalizer>
-
+    <% if proposal.image.present? %>
+      <div class="row">
         <div class="small-12 medium-3 large-2 column text-center">
-          <div data-equalizer-watch>
-            <%= image_tag proposal.image_url(:thumb),
-                          alt: proposal.image.title.unicode_normalize %>
-          </div>
+          <%= image_tag proposal.image_url(:thumb),
+                        alt: proposal.image.title.unicode_normalize %>
         </div>
 
         <div class="small-12 medium-6 large-7 column">
@@ -27,10 +24,8 @@
             <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
             <p class="proposal-info">
               <span class="icon-comments"></span>&nbsp;
-              <%= link_to t("proposals.proposal.comments",
-                          count: proposal.comments_count),
-                          namespaced_proposal_path(proposal,
-                          anchor: "comments") %>
+              <%= link_to t("proposals.proposal.comments", count: proposal.comments_count),
+                          namespaced_proposal_path(proposal, anchor: "comments") %>
 
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= l proposal.created_at.to_date %>
@@ -70,8 +65,7 @@
       </div>
 
       <div id="<%= dom_id(proposal) %>_votes"
-           class="small-12 medium-3 column supports-container"
-           <%= 'data-equalizer-watch' if feature?(:allow_images) && proposal.image.present? %>>
+           class="small-12 medium-3 column supports-container">
         <% if proposal.successful? %>
           <div class="padding text-center">
 
