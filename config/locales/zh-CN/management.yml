@@ -135,6 +135,14 @@ zh-CN:
       erased_by_manager: "由经理: %{manager} 删除"
       erase_account_link: 删除用户
       erase_account_confirm: 您确定要删除此账户吗？此操作将无法被撤销
+      erase_warning: 此操作将无法撤销。请确定您要删除此账户。
+      erase_submit: 删除账户
     user_invites:
+      new:
+        label: 电子邮件
+        info: "输入电子邮件，用逗号(',') 分割"
+        submit: 发送邀请
+        title: 发送邀请
       create:
+        success_html: <strong>%{count} 邀请</strong>已发送。
         title: 发送邀请
