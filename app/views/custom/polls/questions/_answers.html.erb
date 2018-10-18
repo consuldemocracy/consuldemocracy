@@ -24,7 +24,7 @@
                   <%= answer.title %>
             </span>
           <% else %>
-            <% pregunta = @answers_by_question_id[question.id] ? '?' : '' %>
+            <% pregunta = @answers_by_question_id[question.id] ? t("poll_questions.update_ballot.alert") : '' %>
             <%= link_to answer.title,
               answer_question_path(question, answer: answer.title, token: token),
               method: :post,

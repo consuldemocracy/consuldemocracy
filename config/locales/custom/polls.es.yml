@@ -14,3 +14,6 @@ es:
     catells_seleccionats: Cateles seleccionados
     sex_participation: Participación por sexos
     age_participation: Participación por grupos de edad
+  poll_questions:
+    update_ballot:
+      alert: "¿Seguro que deseas cambiar el sentido de tu voto?"

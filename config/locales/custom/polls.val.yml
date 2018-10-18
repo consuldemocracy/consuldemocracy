@@ -15,3 +15,6 @@ val:
     catells_seleccionats: Catells seleccionats
     sex_participation: Participació per sexes
     age_participation: Participació per grups d'edat
+  poll_questions:
+    update_ballot:
+      alert: "Segur que desitjes canviar el sentit del teu vot?"
