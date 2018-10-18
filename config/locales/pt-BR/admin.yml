@@ -558,7 +558,6 @@ pt-BR:
           layouts: "Layouts"
           mailers: "E-mails"
           management: "Gerenciamento"
-          guides: "Guias"
           welcome: "Bem-vindo"
         buttons:
           save: "Salvar"
