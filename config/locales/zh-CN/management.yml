@@ -1,1 +1,40 @@
 zh-CN:
+  management:
+    account:
+      menu:
+        reset_password_email: 通过电子邮件重设密码
+        reset_password_manually: 手工重设密码
+      alert:
+        unverified_user: 还没有已验证的用户登录
+      show:
+        title: 用户账户
+      edit:
+        title: '编辑用户账户：重设密码'
+        back: 返回
+        password:
+          password: 密码
+          send_email: 发送重设密码的电子邮件
+          reset_email_send: 电子邮件已正确发送。
+          reseted: 密码已重设成功
+          random: 生成随机密码
+          save: 保存密码
+          print: 打印密码
+          print_help: 您可以打印已经保存的密码。
+    account_info:
+      change_user: 更改用户
+      document_number_label: '文档编号：'
+      document_type_label: '文档类型：'
+      email_label: '电子邮件：'
+      identified_label: '确定为：'
+      username_label: '用户名：'
+    check: 检查文档
+    dashboard:
+      index:
+        title: 管理
+        info: 您可以在这里通过左边菜单里列出的所有操作来管理用户。
+    document_number: 文档编号
+    document_type_label: 文档类型
+    document_verifications:
+      already_verified: 此用户账户已验证。
+      has_no_account_html: 为了创建账户，请转到%{link}，然后点击屏幕左上角的<b>‘注册’</b>。
+      link: CONSUL
