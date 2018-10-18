@@ -4,6 +4,6 @@
   </h3>
 
   <div id="<%= dom_id(question) %>_answers" class="padding">
-    <%= render 'custom/polls/questions/answers', question: question, token: token %>
+    <%= render 'custom/polls/questions/answers', question: question, answers: @answers, token: token %>
   </div>
 </div>
