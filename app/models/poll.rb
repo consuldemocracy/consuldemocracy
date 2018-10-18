@@ -11,7 +11,7 @@ class Poll < ActiveRecord::Base
   translates :name,        touch: true
   translates :summary,     touch: true
   translates :description, touch: true
-  globalize_accessors
+  include Globalizable
 
   RECOUNT_DURATION = 1.week
 
@@ -32,8 +32,7 @@ class Poll < ActiveRecord::Base
 
   accepts_nested_attributes_for :questions
 
-  validates :name, presence: true
-
+  validates_translation :name, presence: true
   validate :date_range
 
   scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Date.current.beginning_of_day, Date.current.beginning_of_day) }

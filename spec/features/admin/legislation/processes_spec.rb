@@ -43,9 +43,9 @@ feature 'Admin legislation processes' do
 
       click_link "New process"
 
-      fill_in 'legislation_process_title_en', with: 'An example legislation process'
-      fill_in 'legislation_process_summary_en', with: 'Summary of the process'
-      fill_in 'legislation_process_description_en', with: 'Describing the process'
+      fill_in 'Process Title', with: 'An example legislation process'
+      fill_in 'Summary', with: 'Summary of the process'
+      fill_in 'Description', with: 'Describing the process'
 
       base_date = Date.current
       fill_in 'legislation_process[start_date]', with: base_date.strftime("%d/%m/%Y")
@@ -98,7 +98,7 @@ feature 'Admin legislation processes' do
       expect(find("#legislation_process_debate_phase_enabled")).to be_checked
       expect(find("#legislation_process_published")).to be_checked
 
-      fill_in 'legislation_process_summary_en', with: ''
+      fill_in 'Summary', with: ''
       click_button "Save changes"
 
       expect(page).to have_content "Process updated successfully"

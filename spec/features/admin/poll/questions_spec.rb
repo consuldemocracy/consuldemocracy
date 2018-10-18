@@ -46,7 +46,7 @@ feature 'Admin poll questions' do
     click_link "Create question"
 
     select 'Movies', from: 'poll_question_poll_id'
-    fill_in 'poll_question_title_en', with: title
+    fill_in 'Question', with: title
 
     click_button 'Save'
 
@@ -61,7 +61,7 @@ feature 'Admin poll questions' do
     click_link "Create question"
 
     expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
-    expect(page).to have_field('poll_question_title_en', with: proposal.title)
+    expect(page).to have_field('Question', with: proposal.title)
 
     select 'Proposals', from: 'poll_question_poll_id'
 
@@ -84,7 +84,7 @@ feature 'Admin poll questions' do
 
     old_title = question1.title
     new_title = "Potatoes are great and everyone should have one"
-    fill_in 'poll_question_title_en', with: new_title
+    fill_in 'Question', with: new_title
 
     click_button 'Save'
 
@@ -141,6 +141,10 @@ feature 'Admin poll questions' do
     end
 
     scenario "uses fallback if name is not translated to current locale", :js do
+      unless globalize_french_fallbacks.first == :es
+        skip("Spec only useful when French falls back to Spanish")
+      end
+
       visit @edit_question_url
 
       expect(page).to have_select('poll_question_poll_id', options: [poll.name_en])
@@ -149,5 +153,9 @@ feature 'Admin poll questions' do
 
       expect(page).to have_select('poll_question_poll_id', options: [poll.name_es])
     end
+  end
+
+  def globalize_french_fallbacks
+    Globalize.fallbacks(:fr).reject { |locale| locale.match(/fr/) }
   end
 end

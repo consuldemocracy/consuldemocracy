@@ -41,13 +41,9 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
 
     def draft_version_params
       params.require(:legislation_draft_version).permit(
-        :title,
-        :changelog,
         :status,
         :final_version,
-        :body,
-        :body_html,
-        *translation_params(Legislation::DraftVersion)
+        translation_params(Legislation::DraftVersion)
       )
     end
 

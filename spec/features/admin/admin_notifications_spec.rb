@@ -185,7 +185,7 @@ feature "Admin Notifications" do
     notification = create(:admin_notification)
     visit edit_admin_admin_notification_path(notification)
 
-    fill_in :admin_notification_title_en, with: ''
+    fill_in "Title", with: ""
     click_button "Update notification"
 
     expect(page).to have_content error_message

@@ -6,7 +6,7 @@ class Poll::Question < ActiveRecord::Base
   include ActsAsParanoidAliases
 
   translates :title, touch: true
-  globalize_accessors
+  include Globalizable
 
   belongs_to :poll
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
@@ -19,11 +19,9 @@ class Poll::Question < ActiveRecord::Base
 
   accepts_nested_attributes_for :question_answers
 
-  validates :title, presence: true
+  validates_translation :title, presence: true, length: { minimum: 4 }
   validates :author, presence: true
   # validates :poll_id, presence: true
-
-  validates :title, length: { minimum: 4 }
 
   scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
 
@@ -49,7 +47,7 @@ class Poll::Question < ActiveRecord::Base
       self.author = proposal.author
       self.author_visible_name = proposal.author.name
       self.proposal_id = proposal.id
-      self.title = proposal.title
+      send(:"title_#{Globalize.locale}=", proposal.title)
     end
   end
 

@@ -175,37 +175,33 @@
 
   <%= render "custom_fields", process: @process, f: f %>
 
-  <div class="small-12 medium-9 column">
-    <%= f.translatable_text_field :title,
-                                  placeholder: t("admin.legislation.processes.form.title_placeholder") %>
-  </div>
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-9 column">
+      <%= translations_form.text_field :title,
+                                       placeholder: t("admin.legislation.processes.form.title_placeholder") %>
+    </div>
 
-  <div class="small-12 medium-9 column">
-    <%= f.label :summary %>
-    <span class="help-text"><%= t("admin.legislation.processes.form.use_markdown") %></span>
-    <%= f.translatable_text_area :summary,
-                                 rows: 2,
-                                 placeholder: t("admin.legislation.processes.form.summary_placeholder"),
-                                 label: false %>
-  </div>
+    <div class="small-12 medium-9 column">
+      <%= translations_form.text_area :summary,
+                                      rows: 2,
+                                      placeholder: t("admin.legislation.processes.form.summary_placeholder"),
+                                      hint: t("admin.legislation.processes.form.use_markdown") %>
+    </div>
 
-  <div class="small-12 medium-9 column">
-    <%= f.label :description %>
-    <span class="help-text"><%= t("admin.legislation.processes.form.use_markdown") %></span>
-    <%= f.translatable_text_area :description,
-                                 rows: 5,
-                                 placeholder: t("admin.legislation.processes.form.description_placeholder"),
-                                 label: false %>
-  </div>
+    <div class="small-12 medium-9 column">
+      <%= translations_form.text_area :description,
+                                      rows: 5,
+                                      placeholder: t("admin.legislation.processes.form.description_placeholder"),
+                                      hint: t("admin.legislation.processes.form.use_markdown") %>
+    </div>
 
-  <div class="small-12 medium-9 column">
-    <%= f.label :additional_info %>
-    <span class="help-text"><%= t("admin.legislation.processes.form.use_markdown") %></span>
-    <%= f.translatable_text_area :additional_info,
-                                  rows: 10,
-                                  placeholder: t("admin.legislation.processes.form.additional_info_placeholder"),
-                                  label: false %>
-  </div>
+    <div class="small-12 medium-9 column end">
+      <%= translations_form.text_area :additional_info,
+                                      rows: 10,
+                                      placeholder: t("admin.legislation.processes.form.additional_info_placeholder"),
+                                      hint: t("admin.legislation.processes.form.use_markdown") %>
+    </div>
+  <% end %>
 
   <div class="small-12 medium-3 column clear end">
     <%= f.submit(class: "button success expanded", value: t("admin.legislation.processes.#{admin_submit_action(@process)}.submit_button")) %>
