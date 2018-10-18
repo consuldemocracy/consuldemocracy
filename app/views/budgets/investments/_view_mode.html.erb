@@ -11,7 +11,7 @@
     </span>
     <ul class="no-bullet">
       <% if investments_default_view? %>
-        <li class="view-card active">
+        <li class="view-card is-active">
           <%= t("shared.view_mode.cards") %>
         </li>
         <li class="view-list">
@@ -21,7 +21,7 @@
         <li class="view-card">
           <%= link_to t("shared.view_mode.cards"), investments_minimal_view_path %>
         </li>
-        <li class="view-list active">
+        <li class="view-list is-active">
           <%= t("shared.view_mode.list") %>
         </li>
       <% end %>
