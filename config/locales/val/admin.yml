@@ -551,7 +551,6 @@ val:
           layouts: "Disenys"
           mailers: "Correus electrònics"
           management: "Gestió"
-          guides: "Guies"
           welcome: "Benvingut/da"
         buttons:
           save: "Guardar"
