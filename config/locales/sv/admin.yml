@@ -556,7 +556,6 @@ sv:
           layouts: "Layouter"
           mailers: "E-post"
           management: "Användarhantering"
-          guides: "Guider"
           welcome: "Välkommen"
         buttons:
           save: "Spara"
