@@ -67,6 +67,7 @@ en:
           on_debates: Debates
           on_proposals: Proposals
           on_users: Users
+          on_system_emails: System emails
         title: Moderator activity
         type: Type
         no_activity: There are no moderators activity.
@@ -167,7 +168,7 @@ en:
           selected: Selected
           undecided: Undecided
           unfeasible: Unfeasible
-          max_per_heading: Max. supports per heading
+          min_total_supports: Minimum supports
           winners: Winners
           one_filter_html: "Current applied filters: <b><em>%{filter}</em></b>"
           two_filters_html: "Current applied filters: <b><em>%{filter}, %{advanced_filters}</em></b>"
@@ -268,8 +269,6 @@ en:
         show_image: "Show image"
         documents: "Documents"
       form:
-        add_language: Add language
-        remove_language: Remove language
         admin_statuses: Admin investment statuses
         no_statuses_defined: There are no defined investment statuses yet
       new:
@@ -393,6 +392,15 @@ en:
         hidden_at: 'Hidden at:'
         registered_at: 'Registered at:'
         title: Activity of user (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden budgets investments
+        no_hidden_budget_investments: There are no hidden budget investments
     legislation:
       processes:
         create:
@@ -413,7 +421,7 @@ en:
           enabled: Enabled
           process: Process
           debate_phase: Debate phase
-          allegations_phase: Drafting phase
+          allegations_phase: Comments phase
           proposals_phase: Proposals phase
           start: Start
           end: End
@@ -435,6 +443,12 @@ en:
           back: Back
           title: Create new collaborative legislation process
           submit_button: Create process
+        proposals:
+          select_order: Sort by
+          orders:
+            id: Id
+            title: Title
+            supports: Supports
         process:
           title: Process
           comments: Comments
@@ -452,9 +466,15 @@ en:
         index:
           title: Proposals
           back: Back
+          id: Id
+          title: Title
+          supports: Supports
+          select: Select
+          selected: Selected
         form:
           custom_categories: Categories
           custom_categories_description: Categories that users can select creating the proposal.
+          custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
       draft_versions:
         create:
           notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'
@@ -562,14 +582,16 @@ en:
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
+      hidden_budget_investments: Hidden budget investments
       hidden_proposal_notifications: Hidden proposal notifications
       hidden_users: Hidden users
       administrators: Administrators
       managers: Managers
       moderators: Moderators
-      newsletters_and_notifications: Newsletters & Notifications
+      messaging_users: Messages to users
       newsletters: Newsletters
       admin_notifications: Notifications
+      system_emails: System Emails
       emails_download: Emails download
       valuators: Valuators
       poll_officers: Poll officers
@@ -585,9 +607,21 @@ en:
       signature_sheets: Signature Sheets
       site_customization:
         homepage: Homepage
-        pages: Custom Pages
-        images: Custom Images
+        pages: Custom pages
+        images: Custom images
         content_blocks: Custom content blocks
+        information_texts: Custom information texts
+        information_texts_menu:
+          debates: "Debates"
+          community: "Community"
+          proposals: "Proposals"
+          polls: "Polls"
+          layouts: "Layouts"
+          mailers: "Emails"
+          management: "Management"
+          welcome: "Welcome"
+        buttons:
+          save: "Save"
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
@@ -686,11 +720,13 @@ en:
         empty_notifications: There are no notifications to show
       new:
         section_title: New notification
+        submit_button: Create notification
       edit:
         section_title: Edit notification
+        submit_button: Update notification
       show:
         section_title: Notification preview
-        send: Send
+        send: Send notification
         will_get_notified: (%{n} users will be notified)
         got_notified: (%{n} users got notified)
         sent_at: Sent at
@@ -701,6 +737,18 @@ en:
         preview_guide: "This is how the users will see the notification:"
         sent_guide: "This is how the users see the notification:"
         send_alert: Are you sure you want to send this notification to %{n} users?
+    system_emails:
+      preview_pending:
+        action: Preview Pending
+        preview_of: Preview of %{name}
+        pending_to_be_sent: This is the content pending to be sent
+        moderate_pending: Moderate notification send
+        send_pending: Send pending
+        send_pending_notification: Pending notifications sent succesfully
+      proposal_notification_digest:
+        title: Proposal Notification Digest
+        description: Gathers all proposal notifications for an user in a single message, to avoid too much emails.
+        preview_detail: Users will only recieve notifications from the proposals they are following
     emails_download:
       index:
         title: Emails download
@@ -1072,6 +1120,12 @@ en:
             submit: Update
         dashboard:
           title: Proposals dashboard
+      setting: Feature
+      setting_actions: Actions
+      setting_name: Setting
+      setting_status: Status
+      setting_value: Value
+      no_description: "No description"
     shared:
       booths_search:
         button: Search
@@ -1099,6 +1153,11 @@ en:
       image: Image
       show_image: Show image
       moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
+      view: View
+      proposal: Proposal
+      author: Author
+      content: Content
+      created_at: Created at
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -1311,6 +1370,11 @@ en:
         content_block:
           body: Body
           name: Name
+          names:
+            top_links: Top Links
+            footer: Footer
+            subnavigation_left: Main Navigation Left
+            subnavigation_right: Main Navigation Right
       images:
         index:
           title: Custom images
@@ -1349,11 +1413,11 @@ en:
         page:
           created_at: Created at
           status: Status
-          title: Title
           updated_at: Updated at
           status_draft: Draft
           status_published: Published
-          locale: Language
+          title: Title
+          slug: Slug
     homepage:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.
@@ -1382,3 +1446,6 @@ en:
         submit_header: Save header
         card_title: Edit card
         submit_card: Save card
+    translations:
+        remove_language: Remove language
+        add_language: Add language

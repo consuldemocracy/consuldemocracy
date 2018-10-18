@@ -1,0 +1,49 @@
+val:
+  seeds:
+    geozones:
+      north_district: Districte Nord
+      west_district: Districte Oest
+      east_district: Districte Est
+      central_district: Districte Central
+    organizations:
+      human_rights: Drets Humans
+      neighborhood_association: Associació Veïnal
+    categories:
+      associations: Associacions
+      culture: Cultura
+      sports: Esport
+      social_rights: Drets Socials
+      economy: Economia
+      employment: Ocupació
+      equity: Equitat
+      sustainability: Sostenibilitat
+      participation: Participació
+      mobility: Mobilitat
+      media: Mitjans
+      health: Salut
+      transparency: Transparència
+      security_emergencies: Seguretat i Emergències
+      environment: Medi Ambient
+    budgets:
+      budget: Pressupost participatiu
+      currency: '€'
+      groups:
+        all_city: Tota la Ciutat
+        districts: Districtes
+      valuator_groups:
+        culture_and_sports: Cultura & Esports
+        gender_and_diversity: Polítiques de Genere & Diversitat
+        urban_development: Desenvolupament Urbà Sostenible
+        equity_and_employment: Igualtat & Ocupació
+      statuses:
+        studying_project: Estudiant el projecte
+        bidding: Ofertes
+        executing_project: Executant el projecte
+        executed: Executat
+    polls:
+      current_poll: "Votació Oberta"
+      current_poll_geozone_restricted: "Votació Oberta restringida per geozona"
+      incoming_poll: "Següent Votació"
+      recounting_poll: "Votació en Recompte"
+      expired_poll_without_stats: "Votació Finalitzada sense Estadístiques ni Resultats"
+      expired_poll_with_stats: "Votació Finalitzada amb Estadístiques i Resultats"

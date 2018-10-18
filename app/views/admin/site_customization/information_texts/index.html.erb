@@ -1,0 +1,10 @@
+<h2><%= t("admin.menu.site_customization.information_texts") %></h2>
+
+<div class="tabs-content" data-tabs-content="information-texts-tabs" role="tablist">
+  <%= render 'tabs' %>
+
+  <div class="tabs-panel is-active" role="tab">
+    <%= render "form", contents: [@content] %>
+  </div>
+
+</div>

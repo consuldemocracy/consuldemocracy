@@ -1,0 +1,8 @@
+tr:
+  budgets:
+    ballots:
+      show:
+        title: Oy
+        amount_spent: Harcanan miktar
+        remaining: "<span>%{amount}</span> yatırım yapmaya kalkmadı."
+        remove: Oy kaldırmak

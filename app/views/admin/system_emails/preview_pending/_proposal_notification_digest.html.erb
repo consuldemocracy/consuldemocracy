@@ -1,0 +1,40 @@
+<% if preview.proposal.present? %>
+  <div id="<%= dom_id(preview) %>">
+    <div class="callout highlight">
+      <div class="row expanded">
+        <div class="small-12 medium-6 column">
+          <strong><%= t("admin.shared.proposal") %></strong><br>
+          <%= link_to preview.proposal.title, proposal_url(preview.proposal) %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <strong><%= t("admin.shared.title") %></strong><br>
+          <%= link_to preview.title, proposal_url(preview.proposal, anchor: "tab-notifications") %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <strong><%= t("admin.shared.author") %></strong><br>
+          <%= preview.proposal.author&.username || '-' %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <strong><%= t("admin.shared.created_at") %></strong><br>
+          <%= l(preview.created_at, format: :datetime) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <strong><%= t("admin.shared.content") %></strong>
+        <p id="phase-description-help-text">
+          <%= preview.body %>
+        </p>
+      </div>
+    </div>
+
+    <%= link_to t("admin.system_emails.preview_pending.moderate_pending"),
+          admin_system_email_moderate_pending_path(system_email_id: 'proposal_notification_digest',
+          id: preview.id),
+          method: :put,
+          class: "button hollow float-right" %>
+  </div>
+  <hr>
+<% end %>

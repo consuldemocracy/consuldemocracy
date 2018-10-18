@@ -8,6 +8,11 @@ feature "Admin Notifications" do
     create(:budget)
   end
 
+  it_behaves_like "translatable",
+                  "admin_notification",
+                  "edit_admin_admin_notification_path",
+                  %w[title body]
+
   context "Show" do
     scenario "Valid Admin Notification" do
       notification = create(:admin_notification, title: 'Notification title',
@@ -34,7 +39,7 @@ feature "Admin Notifications" do
   end
 
   context "Index" do
-    scenario "Valid Admin Notifications" do
+    scenario "Valid Admin Notifications", :with_frozen_time do
       draft = create(:admin_notification, segment_recipient: :all_users, title: 'Not yet sent')
       sent = create(:admin_notification, :sent, segment_recipient: :administrators,
                                                 title: 'Sent one')
@@ -75,7 +80,7 @@ feature "Admin Notifications" do
                                     body: 'This is a body',
                                     link: 'http://www.dummylink.dev')
 
-    click_button "Create Admin notification"
+    click_button "Create notification"
 
     expect(page).to have_content "Notification created successfully"
     expect(page).to have_content "Proposal authors"
@@ -99,7 +104,7 @@ feature "Admin Notifications" do
                                       body: 'Other body',
                                       link: '')
 
-      click_button "Update Admin notification"
+      click_button "Update notification"
 
       expect(page).to have_content "Notification updated successfully"
       expect(page).to have_content "All users"
@@ -171,7 +176,7 @@ feature "Admin Notifications" do
   scenario 'Errors on create' do
     visit new_admin_admin_notification_path
 
-    click_button "Create Admin notification"
+    click_button "Create notification"
 
     expect(page).to have_content error_message
   end
@@ -180,8 +185,8 @@ feature "Admin Notifications" do
     notification = create(:admin_notification)
     visit edit_admin_admin_notification_path(notification)
 
-    fill_in :admin_notification_title, with: ''
-    click_button "Update Admin notification"
+    fill_in :admin_notification_title_en, with: ''
+    click_button "Update notification"
 
     expect(page).to have_content error_message
   end
@@ -195,11 +200,11 @@ feature "Admin Notifications" do
 
       visit admin_admin_notification_path(notification)
 
-      accept_confirm { click_link "Send" }
+      accept_confirm { click_link "Send notification" }
 
       expect(page).to have_content "Notification sent successfully"
 
-      User.all.each do |user|
+      User.find_each do |user|
         expect(user.notifications.count).to eq(1)
       end
     end
@@ -228,7 +233,7 @@ feature "Admin Notifications" do
       visit new_admin_admin_notification_path
 
       fill_in_admin_notification_form(segment_recipient: segment_recipient)
-      click_button "Create Admin notification"
+      click_button "Create notification"
 
       expect(page).to have_content(I18n.t("admin.segment_recipient.#{user_segment}"))
     end

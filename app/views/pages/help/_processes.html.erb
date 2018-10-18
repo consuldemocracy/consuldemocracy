@@ -11,9 +11,6 @@
     <ul class="features">
       <li>
         <% link = link_to(t("pages.help.processes.link"), legislation_processes_path) %>
-        <% sign_up_link = t("pages.help.processes.sign_up", org: setting['org_name']) %>
-        <% sign_up = link_to(sign_up_link, new_user_registration_path) %>
-        <%= t("pages.help.processes.feature", link: link, sign_up: sign_up).html_safe %>
       </li>
     </ul>
   </div>

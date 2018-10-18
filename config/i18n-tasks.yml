@@ -41,8 +41,8 @@ data:
     - config/locales/%{locale}/community.yml
     - config/locales/%{locale}/documents.yml
     - config/locales/%{locale}/images.yml
-    - config/locales/%{locale}/guides.yml
     - config/locales/%{locale}/user_groups.yml
+    - config/locales/%{locale}/i18n.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -135,15 +135,19 @@ ignore_unused:
   - 'admin.spending_proposals.index.filter*'
   - 'admin.organizations.index.filter*'
   - 'admin.hidden_users.index.filter*'
+  - 'admin.hidden_budget_investments.index.filter*'
   - 'admin.activity.show.filter*'
   - 'admin.legislation.processes.index.filter*'
   - 'admin.legislation.processes.*.submit_button'
+  - 'admin.legislation.processes.proposals.orders.*'
+  - 'admin.legislation.processes.proposals.select_order'
   - 'admin.legislation.draft_versions.*.submit_button'
   - 'admin.legislation.questions.*.submit_button'
   - 'admin.comments.index.hidden_*'
   - 'admin.settings.index.features.*'
   - 'admin.polls.*.submit_button'
   - 'admin.booths.*.submit_button'
+  - 'admin.admin_notifications.*.submit_button'
   - 'admin.homepage.*'
   - 'moderation.comments.index.filter*'
   - 'moderation.comments.index.order*'
@@ -152,6 +156,8 @@ ignore_unused:
   - 'moderation.proposals.index.order*'
   - 'moderation.debates.index.filter*'
   - 'moderation.debates.index.order*'
+  - 'moderation.budget_investments.index.filter*'
+  - 'moderation.budget_investments.index.order*'
   - 'moderation.proposal_notifications.index.filter*'
   - 'moderation.proposal_notifications.index.order*'
   - 'valuation.spending_proposals.index.filter*'
@@ -172,6 +178,7 @@ ignore_unused:
   - 'notifications.notification.action.*'
   - 'legislation.processes.index.filter*'
   - 'legislation.processes.index.section_header.*'
+  - 'legislation.processes.proposals.filters.*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'

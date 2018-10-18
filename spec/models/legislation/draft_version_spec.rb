@@ -16,6 +16,15 @@ RSpec.describe Legislation::DraftVersion, type: :model do
     expect(legislation_draft_version.toc_html).to eq(toc_html)
   end
 
+  it "renders and saves the html from the markdown body field with alternative translation" do
+    legislation_draft_version.body_fr = body_markdown
+
+    legislation_draft_version.save!
+
+    expect(legislation_draft_version.body_html_fr).to eq(body_html)
+    expect(legislation_draft_version.toc_html_fr).to eq(toc_html)
+  end
+
   def body_markdown
 <<-BODY_MARKDOWN
 # Title 1

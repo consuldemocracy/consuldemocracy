@@ -68,4 +68,29 @@ class Notification < ActiveRecord::Base
     end
   end
 
+  def self.send_pending
+    run_at = first_batch_run_at
+    User.email_digest.find_in_batches(batch_size: batch_size) do |users|
+      users.each do |user|
+        email_digest = EmailDigest.new(user)
+        email_digest.deliver(run_at)
+      end
+      run_at += batch_interval
+    end
+  end
+
+  private
+
+  def self.batch_size
+    10000
+  end
+
+  def self.batch_interval
+    20.minutes
+  end
+
+  def self.first_batch_run_at
+    Time.current
+  end
+
 end

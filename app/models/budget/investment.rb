@@ -23,6 +23,7 @@ class Budget
     include Relationable
     include Notifiable
     include Filterable
+    include Flaggable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -57,6 +58,10 @@ class Budget
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
     scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f.nonzero? ? seed.to_f : 1}, budget_investments.id") }
 
+    scope :sort_by_id, -> { order("id DESC") }
+    scope :sort_by_title, -> { order("title ASC") }
+    scope :sort_by_supports, -> { order("cached_votes_up DESC") }
+
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
     scope :without_valuator,            -> { valuation_open.where(valuator_assignments_count: 0) }
@@ -77,6 +82,8 @@ class Budget
     scope :winners,                     -> { selected.compatible.where(winner: true) }
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
+    scope :sort_by_flags,               -> { order(flags_count: :desc, updated_at: :desc) }
+    scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
 
     scope :by_budget,         ->(budget)      { where(budget: budget) }
     scope :by_group,          ->(group_id)    { where(group_id: group_id) }
@@ -109,7 +116,8 @@ class Budget
       budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       results = Investment.by_budget(budget)
 
-      results = limit_results(budget, params, results)                     if params[:max_per_heading].present?
+      results = results.where("cached_votes_up + physical_votes >= ?",
+                              params[:min_total_supports])                    if params[:min_total_supports].present?
       results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
       results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
       results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?
@@ -130,6 +138,12 @@ class Budget
       ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?('undecided')
       ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?('unfeasible')
       results.where("budget_investments.id IN (?)", ids)
+    end
+
+    def self.order_filter(sorting_param)
+      if sorting_param.present? && SORTING_OPTIONS.include?(sorting_param)
+        send("sort_by_#{sorting_param}")
+      end
     end
 
     def self.limit_results(budget, params, results)

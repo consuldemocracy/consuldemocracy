@@ -25,165 +25,145 @@ feature 'Emails' do
   end
 
   context 'Proposal comments' do
-    scenario "Send email on proposal comment" do
-      user = create(:user, email_on_comment: true)
-      proposal = create(:proposal, author: user)
+    let(:user)     { create(:user, email_on_comment: true) }
+    let(:proposal) { create(:proposal, author: user) }
+
+    scenario 'Send email on proposal comment' do
       comment_on(proposal)
 
       email = open_last_email
       expect(email).to have_subject('Someone has commented on your citizen proposal')
       expect(email).to deliver_to(proposal.author)
       expect(email).to have_body_text(proposal_path(proposal))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
+      expect(email).to have_body_text(account_path)
     end
 
     scenario 'Do not send email about own proposal comments' do
-      user = create(:user, email_on_comment: true)
-      proposal = create(:proposal, author: user)
       comment_on(proposal, user)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
     scenario 'Do not send email about proposal comment unless set in preferences' do
-      user = create(:user, email_on_comment: false)
-      proposal = create(:proposal, author: user)
+      user.update(email_on_comment: false)
       comment_on(proposal)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
   end
 
   context 'Debate comments' do
-    scenario "Send email on debate comment" do
-      user = create(:user, email_on_comment: true)
-      debate = create(:debate, author: user)
+    let(:user)   { create(:user, email_on_comment: true) }
+    let(:debate) { create(:debate, author: user) }
+
+    scenario 'Send email on debate comment' do
       comment_on(debate)
 
       email = open_last_email
       expect(email).to have_subject('Someone has commented on your debate')
       expect(email).to deliver_to(debate.author)
       expect(email).to have_body_text(debate_path(debate))
-      expect(email).to have_body_text(I18n.t("mailers.config.manage_email_subscriptions"))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
     scenario 'Do not send email about own debate comments' do
-      user = create(:user, email_on_comment: true)
-      debate = create(:debate, author: user)
       comment_on(debate, user)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
     scenario 'Do not send email about debate comment unless set in preferences' do
-      user = create(:user, email_on_comment: false)
-      debate = create(:debate, author: user)
+      user.update(email_on_comment: false)
       comment_on(debate)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
   end
 
   context 'Budget investments comments' do
+    let(:user)       { create(:user, email_on_comment: true) }
+    let(:investment) { create(:budget_investment, author: user, budget: create(:budget)) }
+
     scenario 'Send email on budget investment comment' do
-      user = create(:user, email_on_comment: true)
-      investment = create(:budget_investment, author: user, budget: create(:budget))
       comment_on(investment)
 
       email = open_last_email
       expect(email).to have_subject('Someone has commented on your investment')
       expect(email).to deliver_to(investment.author)
       expect(email).to have_body_text(budget_investment_path(investment, budget_id: investment.budget_id))
-      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
     scenario 'Do not send email about own budget investments comments' do
-      user = create(:user, email_on_comment: true)
-      investment = create(:budget_investment, author: user, budget: create(:budget))
       comment_on(investment, user)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
     scenario 'Do not send email about budget investment comment unless set in preferences' do
-      user = create(:user, email_on_comment: false)
-      investment = create(:budget_investment, author: user, budget: create(:budget))
+      user.update(email_on_comment: false)
       comment_on(investment)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
   end
 
   context 'Topic comments' do
-    before do
-      @proposal = create(:proposal)
-    end
+    let(:user)     { create(:user, email_on_comment: true) }
+    let(:proposal) { create(:proposal) }
+    let(:topic)    { create(:topic, author: user, community: proposal.community) }
 
     scenario 'Send email on topic comment' do
-      user = create(:user, email_on_comment: true)
-      topic = create(:topic, author: user, community: @proposal.community)
       comment_on(topic)
 
       email = open_last_email
       expect(email).to have_subject('Someone has commented on your topic')
       expect(email).to deliver_to(topic.author)
       expect(email).to have_body_text(community_topic_path(topic, community_id: topic.community_id))
-      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
     scenario 'Do not send email about own topic comments' do
-      user = create(:user, email_on_comment: true)
-      topic = create(:topic, author: user, community: @proposal.community)
       comment_on(topic, user)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
     scenario 'Do not send email about topic comment unless set in preferences' do
-      user = create(:user, email_on_comment: false)
-      topic = create(:topic, author: user, community: @proposal.community)
+      user.update(email_on_comment: false)
       comment_on(topic)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
   end
 
   context 'Poll comments' do
+    let(:user) { create(:user, email_on_comment: true) }
+    let(:poll) { create(:poll, author: user) }
+
     scenario 'Send email on poll comment' do
-      user = create(:user, email_on_comment: true)
-      poll = create(:poll, author: user)
       comment_on(poll)
 
       email = open_last_email
       expect(email).to have_subject('Someone has commented on your poll')
       expect(email).to deliver_to(poll.author)
       expect(email).to have_body_text(poll_path(poll))
-      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
     scenario 'Do not send email about own poll comments' do
-      user = create(:user, email_on_comment: true)
-      poll = create(:poll, author: user)
       comment_on(poll, user)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
     scenario 'Do not send email about poll question comment unless set in preferences' do
-      user = create(:user, email_on_comment: false)
-      poll = create(:poll, author: user)
+      user.update(email_on_comment: false)
       comment_on(poll)
-
-      expect { open_last_email }.to raise_error 'No email has been sent!'
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
   end
 
   context 'Comment replies' do
-    scenario "Send email on comment reply", :js do
-      user = create(:user, email_on_comment_reply: true)
+    let(:user) { create(:user, email_on_comment_reply: true) }
+
+    scenario 'Send email on comment reply', :js do
       reply_to(user)
 
       email = open_last_email
@@ -191,23 +171,33 @@ feature 'Emails' do
       expect(email).to deliver_to(user)
       expect(email).not_to have_body_text(debate_path(Comment.first.commentable))
       expect(email).to have_body_text(comment_path(Comment.last))
-      expect(email).to have_body_text(I18n.t("mailers.config.manage_email_subscriptions"))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 
-    scenario "Do not send email about own replies to own comments", :js do
-      user = create(:user, email_on_comment_reply: true)
+    scenario 'Do not send email about own replies to own comments', :js do
       reply_to(user, user)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
 
-    scenario "Do not send email about comment reply unless set in preferences", :js do
-      user = create(:user, email_on_comment_reply: false)
+    scenario 'Do not send email about comment reply unless set in preferences', :js do
+      user.update(email_on_comment_reply: false)
       reply_to(user)
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error('No email has been sent!')
     end
+  end
+
+  scenario "Email depending on user's locale" do
+    visit root_path(locale: :es)
+
+    click_link 'Registrarse'
+    fill_in_signup_form
+    click_button 'Registrarse'
+
+    email = open_last_email
+    expect(email).to deliver_to('manuela@consul.dev')
+    expect(email).to have_body_text(user_confirmation_path)
+    expect(email).to have_subject('Instrucciones de confirmación')
   end
 
   scenario "Email on unfeasible spending proposal" do
@@ -233,8 +223,6 @@ feature 'Emails' do
     email = open_last_email
     expect(email).to have_subject("Your investment project '#{spending_proposal.code}' has been marked as unfeasible")
     expect(email).to deliver_to(spending_proposal.author.email)
-    expect(email).to have_body_text(spending_proposal.title)
-    expect(email).to have_body_text(spending_proposal.code)
     expect(email).to have_body_text(spending_proposal.feasible_explanation)
 
     Setting["feature.spending_proposals"] = nil
@@ -294,7 +282,7 @@ feature 'Emails' do
       notification3 = create_proposal_notification(proposal3)
 
       email_digest = EmailDigest.new(user)
-      email_digest.deliver
+      email_digest.deliver(Time.current)
       email_digest.mark_as_emailed
 
       email = open_last_email
@@ -306,14 +294,14 @@ feature 'Emails' do
       expect(email).to have_body_text(notification1.notifiable.body)
       expect(email).to have_body_text(proposal1.author.name)
 
-      expect(email).to have_body_text(/#{notification_path(notification1)}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'tab-notifications')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'comments')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'social-share')}/)
 
       expect(email).to have_body_text(proposal2.title)
       expect(email).to have_body_text(notification2.notifiable.title)
       expect(email).to have_body_text(notification2.notifiable.body)
-      expect(email).to have_body_text(/#{notification_path(notification2)}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'tab-notifications')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'comments')}/)
       expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'social-share')}/)
       expect(email).to have_body_text(proposal2.author.name)
@@ -325,6 +313,26 @@ feature 'Emails' do
       notification2.reload
       expect(notification1.emailed_at).to be
       expect(notification2.emailed_at).to be
+    end
+
+    scenario "notifications moderated are not sent" do
+      user = create(:user, email_digest: true)
+      proposal = create(:proposal)
+      proposal_notification = create(:proposal_notification, proposal: proposal)
+      notification = create(:notification, notifiable: proposal_notification)
+
+      reset_mailer
+
+      proposal_notification.moderate_system_email(create(:administrator).user)
+
+      email_digest = EmailDigest.new(user)
+      email_digest.deliver(Time.current)
+      email_digest.mark_as_emailed
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
+
+    xscenario "Delete all Notifications included in the digest after email sent" do
     end
 
   end
@@ -406,8 +414,6 @@ feature 'Emails' do
       email = open_last_email
       expect(email).to have_subject("Your investment project '#{investment.code}' has been marked as unfeasible")
       expect(email).to deliver_to(investment.author.email)
-      expect(email).to have_body_text(investment.title)
-      expect(email).to have_body_text(investment.code)
       expect(email).to have_body_text(investment.unfeasibility_explanation)
     end
 
@@ -431,7 +437,6 @@ feature 'Emails' do
       investment = investment2
       expect(email).to have_subject("Your investment project '#{investment.code}' has been selected")
       expect(email).to deliver_to(investment.author.email)
-      expect(email).to have_body_text(investment.title)
     end
 
     scenario "Unselected investment" do
@@ -454,7 +459,6 @@ feature 'Emails' do
       investment = investment2
       expect(email).to have_subject("Your investment project '#{investment.code}' has not been selected")
       expect(email).to deliver_to(investment.author.email)
-      expect(email).to have_body_text(investment.title)
     end
 
   end
@@ -486,7 +490,7 @@ feature 'Emails' do
       expect(email).to deliver_to(user1)
       expect(email).not_to have_body_text(poll_path(poll))
       expect(email).to have_body_text(comment_path(Comment.last))
-      expect(email).to have_body_text(I18n.t("mailers.config.manage_email_subscriptions"))
+      expect(email).to have_body_text('To stop receiving these emails change your settings in')
       expect(email).to have_body_text(account_path)
     end
 

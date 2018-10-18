@@ -1,12 +1,12 @@
 <div class="nested-fields">
   <div class="field">
-    <div class="row">
-      <div class="small-12 medium-9 column">
-        <%= f.text_field :value, label: false, placeholder: t("admin.legislation.questions.form.value_placeholder") %>
-      </div>
-      <div class="small-12 medium-3 column">
-        <%= link_to_remove_association "<span class=\"icon-x\" aria-hidden=\"true\"></span> <span>#{t(".remove_option")}</span>".html_safe, f %>
-      </div>
+    <div class="small-12 medium-9 column">
+      <%= f.translatable_text_field :value,
+                                    placeholder: t("admin.legislation.questions.form.value_placeholder"),
+                                    label: false %>
+    </div>
+    <div class="small-12 medium-3 column">
+      <%= link_to_remove_association t("admin.legislation.questions.question_option_fields.remove_option"), f, class: "delete"%>
     </div>
   </div>
 </div>

@@ -1,4 +1,6 @@
 class Admin::Legislation::QuestionsController < Admin::Legislation::BaseController
+  include Translatable
+
   load_and_authorize_resource :process, class: "Legislation::Process"
   load_and_authorize_resource :question, class: "Legislation::Question", through: :process
 
@@ -46,7 +48,13 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
     def question_params
       params.require(:legislation_question).permit(
         :title,
-        question_options_attributes: [:id, :value, :_destroy]
+        *translation_params(::Legislation::Question),
+        question_options_attributes: [:id, :value,
+                                      *translation_params(::Legislation::QuestionOption)]
       )
+    end
+
+    def resource
+      @question || ::Legislation::Question.find(params[:id])
     end
 end

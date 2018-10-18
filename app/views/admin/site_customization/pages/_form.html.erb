@@ -1,5 +1,6 @@
-<%= form_for [:admin, @page], html: {class: "edit_page", data: {watch_changes: true}} do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @page %>
 
+<%= translatable_form_for [:admin, @page], html: {class: "edit_page", data: {watch_changes: true}} do |f| %>
   <% if @page.errors.any? %>
     <div id="error_explanation" data-alert class="callout alert" data-closable>
       <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
@@ -13,51 +14,38 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="small-12 column">
-      <hr>
-    </div>
-    <div class="small-12 medium-5 column">
-      <h3><%= t("admin.site_customization.pages.form.options") %></h3>
-      <%= f.check_box :more_info_flag, class: "small" %>
-      <%= f.check_box :print_content_flag %>
-    </div>
-    <div class="small-12 medium-3 column">
-      <%= f.label :status %>
-      <% ::SiteCustomization::Page::VALID_STATUSES.each do |status| %>
-        <%= f.radio_button :status, status, label: false %>
-        <%= f.label "status_#{status}", t("admin.site_customization.pages.page.status_#{status}") %>
-        <br>
-      <% end %>
-    </div>
-    <div class="small-12 medium-4 column">
-      <%= f.label :locale %>
-      <%= f.select :locale, I18n.available_locales.map { |l| [name_for_locale(l), l.to_s] }, { include_blank: true, label: false } %>
-    </div>
-    <div class="small-12 medium-4 column">
-      <%= f.label :slug %>
-      <%= f.text_field :slug, label: false, size: 80, maxlength: 80 %>
-    </div>
+  <div class="small-12 column">
+    <hr>
   </div>
 
-  <div class="row">
-    <div class="small-12 column">
-      <hr>
+  <div class="small-12 medium-5 column">
+    <h3><%= t("admin.site_customization.pages.form.options") %></h3>
+    <%= f.check_box :more_info_flag, class: "small" %>
+    <%= f.check_box :print_content_flag %>
+  </div>
+  <div class="small-12 medium-3 column">
+    <%= f.label :status %>
+    <% ::SiteCustomization::Page::VALID_STATUSES.each do |status| %>
+      <%= f.radio_button :status, status, label: false %>
+      <%= f.label "status_#{status}", t("admin.site_customization.pages.page.status_#{status}") %>
+      <br>
+    <% end %>
+  </div>
 
-      <%= f.label :title %>
-      <%= f.text_field :title, label: false %>
-
-      <%= f.label :subtitle %>
-      <%= f.text_field :subtitle, label: false, size: 80, maxlength: 80 %>
-
-      <div class="ckeditor margin-top">
-        <%= f.label :content %>
-        <%= f.cktext_area :content, label: false, cols: 80, rows: 10, ckeditor: { language: I18n.locale } %>
-      </div>
-
-      <div class="small-12 medium-6 large-4">
-        <%= f.submit class: "button success expanded" %>
-      </div>
+  <div class="small-12 medium-4 column">
+    <%= f.label :slug %>
+    <%= f.text_field :slug, label: false, size: 80, maxlength: 80 %>
+  </div>
+  <div class="small-12 column">
+    <hr>
+    <%= f.translatable_text_field :title %>
+    <%= f.translatable_text_field :subtitle %>
+    <div class="ckeditor">
+      <%= f.translatable_cktext_area :content,
+                                     ckeditor: { language: I18n.locale, toolbar: "admin" } %>
+    </div>
+    <div class="small-12 medium-6 large-3 margin-top">
+      <%= f.submit class: "button success expanded" %>
     </div>
   </div>
 <% end %>

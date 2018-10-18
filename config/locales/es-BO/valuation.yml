@@ -1,0 +1,120 @@
+es-BO:
+  valuation:
+    header:
+      title: Evaluación
+    menu:
+      title: Evaluación
+      budgets: Presupuestos participativos
+      spending_proposals: Propuestas de inversión
+    budgets:
+      index:
+        title: Presupuestos participativos
+        filters:
+          current: Abiertos
+          finished: Terminados
+        table_name: Nombre
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Prop. Inv. asignadas en evaluación
+        table_actions: Acciones
+        evaluate: Evaluar
+    budget_investments:
+      index:
+        headings_filter_all: Todas las partidas
+        filters:
+          valuation_open: Abiertas
+          valuating: En evaluación
+          valuation_finished: Evaluación finalizada
+        assigned_to: "Asignadas a %{valuator}"
+        title: Propuestas de inversión
+        edit: Editar informe
+        valuators_assigned:
+          one: Evaluador asignado
+          other: "%{count} evaluadores asignados"
+        no_valuators_assigned: Sin evaluador
+        table_title: Título
+        table_heading_name: Nombre de la partida
+        table_actions: Acciones
+      show:
+        back: Volver
+        title: Propuesta de inversión
+        info: Datos de envío
+        by: Enviada por
+        sent: Fecha de creación
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        price: Coste
+        price_first_year: Coste en el primer año
+        feasibility: Viabilidad
+        feasible: Viable
+        unfeasible: Inviable
+        undefined: Sin definir
+        valuation_finished: Informe finalizado
+        duration: Plazo de ejecución
+        responsibles: Responsables
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+      edit:
+        dossier: Informe
+        price_html: "Coste (%{currency}) <small>(dato público)</small>"
+        price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, dato no público)</small>"
+        price_explanation_html: Informe de coste <small>(opcional, dato público)</small>
+        feasibility: Viabilidad
+        feasible: Viable
+        unfeasible: Inviable
+        undefined_feasible: Sin decidir
+        feasible_explanation_html: Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>
+        valuation_finished: Informe finalizado
+        valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
+        not_feasible_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de inviabilidad."
+        duration_html: Plazo de ejecución <small>(opcional, dato no público)</small>
+        save: Guardar Cambios
+      notice:
+        valuate: "Dossier actualizado"
+    spending_proposals:
+      index:
+        geozone_filter_all: Todos los ámbitos de actuación
+        filters:
+          valuation_open: Abiertas
+          valuating: En evaluación
+          valuation_finished: Evaluación finalizada
+        title: Propuestas de inversión para presupuestos participativos
+        edit: Editar
+      show:
+        back: Volver
+        heading: Propuesta de inversión
+        info: Datos de envío
+        association_name: Asociación
+        by: Enviada por
+        sent: Fecha de creación
+        geozone: Ámbito
+        dossier: Informe
+        edit_dossier: Editar informe
+        price: Coste
+        price_first_year: Coste en el primer año
+        feasibility: Viabilidad
+        feasible: Viable
+        not_feasible: No viable
+        undefined: Sin definir
+        valuation_finished: Informe finalizado
+        time_scope: Plazo de ejecución
+        internal_comments: Comentarios internos
+        responsibles: Responsables
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+      edit:
+        dossier: Informe
+        price_html: "Coste (%{currency}) <small>(dato público)</small>"
+        price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, privado)</small>"
+        price_explanation_html: Informe de coste <small>(opcional, dato público)</small>
+        feasibility: Viabilidad
+        feasible: Viable
+        not_feasible: Inviable
+        undefined_feasible: Sin decidir
+        feasible_explanation_html: Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>
+        valuation_finished: Informe finalizado
+        time_scope_html: Plazo de ejecución <small>(opcional, dato no público)</small>
+        internal_comments_html: Comentarios y observaciones <small>(para responsables internos, dato no público)</small>
+        save: Guardar cambios
+      notice:
+        valuate: "Informe actualizado"

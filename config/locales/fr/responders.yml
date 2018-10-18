@@ -1,4 +1,3 @@
----
 fr:
   flash:
     actions:
@@ -16,6 +15,8 @@ fr:
         spending_proposal: "Proposition de dépense créée avec succès. Vous pouvez y accéder depuis %{activity}"
         budget_investment: "Budget d'investissement créé avec succès."
         signature_sheet: "Feuille de signature créée avec succès"
+        topic: "Sujet créé avec succès."
+        valuator_group: "Groupe d’évaluation créé avec succès"
       save_changes:
         notice: Modifications sauvegardées
       update:
@@ -26,8 +27,12 @@ fr:
         proposal: "Proposition mise-à-jour avec succès."
         spending_proposal: "Proposition de dépense mise-à-jour avec succès."
         budget_investment: "Budget d'investissement mis-à-jour avec succès."
+        topic: "Sujet mis à jour avec succès."
+        valuator_group: "Groupe d’évaluation créé avec succès"
       destroy:
         spending_proposal: "Proposition de dépense supprimée avec succès."
         budget_investment: "Budget d'investissement supprimé avec succès."
         error: "Suppression impossible"
+        topic: "Sujet supprimé avec succès."
         poll_question_answer_video: "Réponse vidéo supprimée avec succès."
+        valuator_group: "Groupe d’évaluation supprimé avec succès"

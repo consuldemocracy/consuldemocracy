@@ -41,7 +41,7 @@ feature "Admin newsletter emails" do
 
       expect(page).to have_css(".newsletter", count: 3)
 
-      Newsletter.all.each do |newsletter|
+      Newsletter.find_each do |newsletter|
         segment_recipient = I18n.t("admin.segment_recipient.#{newsletter.segment_recipient}")
         within("#newsletter_#{newsletter.id}") do
           expect(page).to have_content newsletter.subject

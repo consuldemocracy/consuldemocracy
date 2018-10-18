@@ -1,0 +1,22 @@
+pt-BR:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Entradas
+        one: Entrada
+        other: Entradas
+      more_pages:
+        display_entries: Exibindo <strong>%{first}&nbsp;-&nbsp;%{last}</strong> de <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} não pode ser encontrado"
+          one: Há <strong>1 %{entry_name}</strong>
+          other: Há <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Você está na página
+      first: Primeiro
+      last: Último
+      next: Próximo
+      previous: Anterior
+      truncate: "&hellip;"

@@ -144,7 +144,7 @@ feature 'Legislation' do
     end
 
     context 'debate phase' do
-      scenario 'not open' do
+      scenario 'not open', :with_frozen_time do
         process = create(:legislation_process, debate_start_date: Date.current + 1.day, debate_end_date: Date.current + 2.days)
 
         visit legislation_process_path(process)
@@ -179,7 +179,7 @@ feature 'Legislation' do
     end
 
     context 'draft publication phase' do
-      scenario 'not open' do
+      scenario 'not open', :with_frozen_time do
         process = create(:legislation_process, draft_publication_date: Date.current + 1.day)
 
         visit draft_publication_legislation_process_path(process)
@@ -199,7 +199,7 @@ feature 'Legislation' do
     end
 
     context 'allegations phase' do
-      scenario 'not open' do
+      scenario 'not open', :with_frozen_time do
         process = create(:legislation_process, allegations_start_date: Date.current + 1.day, allegations_end_date: Date.current + 2.days)
 
         visit allegations_legislation_process_path(process)
@@ -219,7 +219,7 @@ feature 'Legislation' do
     end
 
     context 'final version publication phase' do
-      scenario 'not open' do
+      scenario 'not open', :with_frozen_time do
         process = create(:legislation_process, result_publication_date: Date.current + 1.day)
 
         visit result_publication_legislation_process_path(process)
@@ -236,6 +236,36 @@ feature 'Legislation' do
       end
 
       include_examples "not published permissions", :result_publication_legislation_process_path
+    end
+
+    context 'proposals phase' do
+      scenario 'not open' do
+        process = create(:legislation_process, :upcoming_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("This phase is not open yet")
+      end
+
+      scenario 'open' do
+        process = create(:legislation_process, :in_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("There are no proposals")
+      end
+
+      scenario 'create proposal button redirects to register path if user is not logged in' do
+        process = create(:legislation_process, :in_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+        click_link "Create a proposal"
+
+        expect(page).to have_current_path new_user_session_path
+        expect(page).to have_content "You must sign in or register to continue"
+      end
+
+      include_examples "not published permissions", :legislation_process_proposals_path
     end
   end
 end

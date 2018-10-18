@@ -1,0 +1,79 @@
+sq:
+  mailers:
+    no_reply: "Ky mesazh u dërgua nga një adresë e-mail që nuk pranon përgjigje."
+    comment:
+      hi: Hi
+      new_comment_by_html: Ka një koment të ri nga<b>%{commenter}</b>
+      subject: Dikush ka komentuar mbi %{commentable} tuaj
+      title: Komenti i ri
+    config:
+      manage_email_subscriptions: Për të ndaluar marrjen e këtyre emaileve, ndryshoni opsionet tuaja në
+    email_verification:
+      click_here_to_verify: kjo lidhje
+      instructions_2_html: Ky email do të verifikojë llogarinë tuaj me <b>%{document_type}%{document_number}. Nëse këto nuk ju përkasin juve, mos klikoni në lidhjen e mëparshme dhe injorojeni këtë email.
+      instructions_html: Për të përfunduar verifikimin e llogarisë suaj të përdoruesit ju duhet të klikoni %{verification_link}
+      subject: Konfirmo emailin tënd
+      thanks: "Shumë Faleminderit \n"
+      title: Konfirmo llogarinë tënd duke përdorur lidhjen e mëposhtme
+    reply:
+      hi: Përshëndetje!
+      new_reply_by_html: Ka një përgjigje të re nga <b>%{commenter}</b> në komentin tuaj
+      subject: Dikush i është përgjigjur komentit tuaj
+      title: Përgjigje e re tek komentit tuaj
+    unfeasible_spending_proposal:
+      hi: "I dashur përdorues,"
+      new_html: "Për të gjitha këto, ne ju ftojmë të përpunoni një <strong>propozim të ri </ strong> që i nënshtrohet kushteve të këtij procesi. Ju mund ta bëni këtë duke ndjekur këtë lidhje: %{url}"
+      new_href: "projekt i ri investimi"
+      sincerely: "Sinqerisht"
+      sorry: "Ju kërkojmë ndjesë për shqetësimin dhe përsëri ju falënderojmë për pjesëmarrjen tuaj të paçmuar."
+      subject: "Projekti juaj i investimit %{code} është shënuar si i papërfillshëm"
+    proposal_notification_digest:
+      info: "Këtu janë njoftimet e reja që janë publikuar nga autorët e propozimeve që keni mbështetur %{org_name}."
+      title: "Njoftimet e propozimeve në %{org_name}"
+      share: Ndani propozimin
+      comment: Propozimi i komentit
+      unsubscribe: "Nëse nuk doni të merrni njoftimin e propozimit, vizitoni %{account} dhe hiqni 'Merr një përmbledhje të njoftimeve të propozimit'."
+      unsubscribe_account: Llogaria ime
+    direct_message_for_receiver:
+      subject: "Ju keni marrë një mesazh të ri privat"
+      reply: Përgjigjuni te %{sender}
+      unsubscribe: "Nëse nuk doni të merrni mesazhe të drejtpërdrejta, vizitoni %{account} dhe hiqni 'Marrja e postës elektronike në lidhje me mesazhet direkte'."
+      unsubscribe_account: Llogaria ime
+    direct_message_for_sender:
+      subject: "Ju keni dërguar një mesazh të ri privat"
+      title_html: "Ju keni dërguar një mesazh të ri privat tek <strong>%{receiver}</strong> me përmbajtje:"
+    user_invite:
+      ignore: "Nëse nuk e keni kërkuar këtë ftesë, mos u shqetësoni, mund ta injoroni këtë email."
+      text: "Faleminderit që po aplikon për t'u bashkuar me %{org}! Në pak sekonda ju mund të filloni të merrni pjesë, vetëm plotësoni formularin e mëposhtëm:"
+      thanks: "Shumë Faleminderit \n"
+      title: "Mire se erdhet ne %{org}"
+      button: Regjistrimi i plotë
+      subject: "Ftesë për %{org_name}"
+    budget_investment_created:
+      subject: "Faleminderit për krijimin e investimit!"
+      title: "Faleminderit për krijimin e investimit!"
+      intro_html: "Përshëndetje <strong>%{author}</strong>,"
+      text_html: "Faleminderit për krijimin e investimit tuaj <strong>%{investment}</strong>për buxhetet pjesëmarrëse <strong>%{budget}</strong>"
+      follow_html: "Ne do t'ju informojmë se si ecën procesi, të cilin mund ta ndjekësh edhe me <strong>%{link}</strong>"
+      follow_link: "Buxhetet  pjesëmarrës"
+      sincerely: "Sinqerisht"
+      share: "Ndani projektin tuaj"
+    budget_investment_unfeasible:
+      hi: "I dashur përdorues,"
+      new_html: "Për të gjitha këto, ne ju ftojmë të përpunoni një <strong> investim të ri </ strong> që i nënshtrohet kushteve të këtij procesi. Ju mund ta bëni këtë duke ndjekur këtë lidhje:%{url}"
+      new_href: "projekt i ri investimi"
+      sincerely: "Sinqerisht"
+      sorry: "Ju kërkojmë ndjesë për shqetësimin dhe përsëri ju falënderojmë për pjesëmarrjen tuaj të paçmuar."
+      subject: "Projekti juaj i investimit %{code} është shënuar si i papërfillshëm"
+    budget_investment_selected:
+      subject: "Projekti juaj i investimit %{code} është përzgjedhur"
+      hi: "I dashur përdorues,"
+      share: "Filloni të merrni votat, shpërndani projektin tuaj të investimeve në rrjetet sociale. Shpërndarja është thelbësore për ta bërë atë një realitet."
+      share_button: "Ndani projektin tuaj të investimeve"
+      thanks: "Faleminderit përsëri për pjesëmarrjen."
+      sincerely: "Sinqerisht"
+    budget_investment_unselected:
+      subject: "Projekti juaj i investimit %{code} nuk është përzgjedhur"
+      hi: "I dashur përdorues,"
+      thanks: "Faleminderit përsëri për pjesëmarrjen."
+      sincerely: "Sinqerisht"

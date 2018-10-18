@@ -1,67 +1,78 @@
 es:
   settings:
     comments_body_max_length: "Longitud máxima de los comentarios"
+    comments_body_max_length_description: "En número de caracteres"
     official_level_1_name: "Cargos públicos de nivel 1"
+    official_level_1_name_description: "Etiqueta que aparecerá en los usuarios marcados como Nivel 1 de cargo público"
     official_level_2_name: "Cargos públicos de nivel 2"
+    official_level_2_name_description: "Etiqueta que aparecerá en los usuarios marcados como Nivel 2 de cargo público"
     official_level_3_name: "Cargos públicos de nivel 3"
+    official_level_3_name_description: "Etiqueta que aparecerá en los usuarios marcados como Nivel 3 de cargo público"
     official_level_4_name: "Cargos públicos de nivel 4"
+    official_level_4_name_description: "Etiqueta que aparecerá en los usuarios marcados como Nivel 4 de cargo público"
     official_level_5_name: "Cargos públicos de nivel 5"
+    official_level_5_name_description: "Etiqueta que aparecerá en los usuarios marcados como Nivel 5 de cargo público"
     max_ratio_anon_votes_on_debates: "Porcentaje máximo de votos anónimos por Debate"
-    max_votes_for_proposal_edit: "Número de votos en que una Propuesta deja de poderse editar"
+    max_ratio_anon_votes_on_debates_description: "Se consideran votos anónimos los realizados por usuarios registrados con una cuenta sin verificar"
+    max_votes_for_proposal_edit: "Número de apoyos en que una Propuesta deja de poderse editar"
+    max_votes_for_proposal_edit_description: "A partir de este número de apoyos el autor de una Propuesta ya no podrá editarla"
     max_votes_for_debate_edit: "Número de votos en que un Debate deja de poderse editar"
+    max_votes_for_debate_edit_description: "A partir de este número de votos el autor de un Debate ya no podrá editarlo"
     proposal_code_prefix: "Prefijo para los códigos de Propuestas"
-    votes_for_proposal_success: "Número de votos necesarios para aprobar una Propuesta"
+    proposal_code_prefix_description: "Este prefijo aparecerá en las Propuestas delante de la fecha de creación y su ID"
+    votes_for_proposal_success: "Número de apoyos necesarios para aprobar una Propuesta"
+    votes_for_proposal_success_description: "Cuando una propuesta alcance este número de apoyos ya no podrá recibir más y se considera exitosa"
     months_to_archive_proposals: "Meses para archivar las Propuestas"
+    months_to_archive_proposals_description: "Pasado este número de meses las Propuestas se archivarán y ya no podrán recoger apoyos"
     email_domain_for_officials: "Dominio de email para cargos públicos"
+    email_domain_for_officials_description: "Todos los usuarios registrados con este dominio tendrán su cuenta verificada al registrarse"
     per_page_code_head: "Código a incluir en cada página (<head>)"
+    per_page_code_head_description: "Esté código aparecerá dentro de la etiqueta <head>. Útil para introducir scripts personalizados, analitycs..."
     per_page_code_body: "Código a incluir en cada página (<body>)"
+    per_page_code_body_description: "Esté código aparecerá dentro de la etiqueta <body>. Útil para introducir scripts personalizados, analitycs..."
     twitter_handle: "Usuario de Twitter"
+    twitter_handle_description: "Si está rellenado aparecerá en el pie de página"
     twitter_hashtag: "Hashtag para Twitter"
+    twitter_hashtag_description: "Hashtag que aparecerá al compartir contenido por Twitter"
     facebook_handle: "Identificador de Facebook"
+    facebook_handle_description: "Si está rellenado aparecerá en el pie de página"
     youtube_handle: "Usuario de Youtube"
+    youtube_handle_description: "Si está rellenado aparecerá en el pie de página"
     telegram_handle: "Usuario de Telegram"
+    telegram_handle_description: "Si está rellenado aparecerá en el pie de página"
     instagram_handle: "Usuario de Instagram"
+    instagram_handle_description: "Si está rellenado aparecerá en el pie de página"
+    url: "URL general de la web"
+    url_description: "URL principal de tu web"
+    org_name: "Nombre de la organización"
+    org_name_description: "Nombre de tu organización"
+    place_name: "Nombre del lugar"
+    place_name_description: "Nombre de tu ciudad"
+    related_content_score_threshold: Umbral de puntuación de contenido relacionado
+    related_content_score_threshold_description: Oculta el contenido que los usuarios marquen como no relacionado
+    map_latitude: "Latitud"
+    map_latitude_description: "Latitud para mostrar la posición del mapa"
+    map_longitude: "Longitud"
+    map_longitude_description: "Longitud para mostrar la posición del mapa"
+    map_zoom: "Zoom"
+    map_zoom_description: "Zoom para mostrar la posición del mapa"
+    mailer_from_name: "Nombre email remitente"
+    mailer_from_name_description: "Este nombre aparecerá en los emails enviados desde la aplicación"
+    mailer_from_address: "Dirección email remitente"
+    mailer_from_address_description: "Esta dirección de email aparecerá en los emails enviados desde la aplicación"
+    meta_title: "Título del sitio"
+    meta_title_description: "Título para el sitio <title>, utilizado para mejorar el SEO"
+    meta_description: "Descripción del sitio"
+    meta_description_description: 'Descripción del sitio <meta name="description">, utilizada para mejorar el SEO'
+    meta_keywords: "Palabras clave"
+    meta_keywords_description: 'Palabras clave <meta name="keywords">, utilizadas para mejorar el SEO'
+    min_age_to_participate: "Edad mínima para participar"
+    min_age_to_participate_description: "Los usuarios mayores de esta edad podrán participar en todos los procesos"
+    analytics_url: "URL de estadísticas externas"
     blog_url: "URL del blog"
     transparency_url: "URL de transparencia"
     opendata_url: "URL de open data"
-    url: "URL general de la web"
-    org_name: "Nombre de la organización"
-    place_name: "Nombre del lugar"
-    feature:
-      budgets: Presupuestos participativos
-      twitter_login: Registro con Twitter
-      facebook_login: Registro con Facebook
-      google_login: Registro con Google
-      proposals: Propuestas
-      debates: Debates
-      polls: Votaciones
-      signature_sheets: Hojas de firmas
-      spending_proposals: Propuestas de inversión
-      spending_proposal_features:
-        voting_allowed: Votaciones sobre propuestas de inversión
-      legislation: Legislación
-      user:
-        recommendations: Recomendaciones
-        skip_verification: Omitir verificación de usuarios
-        recommendations_on_debates: Recomendaciones en debates
-        recommendations_on_proposals: Recomendaciones en propuestas
-      community: Comunidad en propuestas y proyectos de gasto
-      map: Geolocalización de propuestas y proyectos de gasto
-      allow_images: Permitir subir y mostrar imágenes
-      allow_attached_documents: Permitir creación de documentos adjuntos
-      guides: Guías para crear propuestas o proyectos de inversión
-      public_stats: Estadísticas públicas
-    related_content_score_threshold: Umbral de puntuación de contenido relacionado
-    map_latitude: Latitud
-    map_longitude: Longitud
-    map_zoom: Zoom
-    mailer_from_name: Nombre email remitente
-    mailer_from_address: Dirección email remitente
-    meta_title: "Título del sitio (SEO)"
-    meta_description: "Descripción del sitio (SEO)"
-    meta_keywords: "Palabras clave (SEO)"
     verification_offices_url: URL oficinas verificación
-    min_age_to_participate: Edad mínima para participar
     proposal_improvement_path: Link a información para mejorar propuestas
     proposals:
       successful_proposal_id: Propuesta exitosa
@@ -80,3 +91,50 @@ es:
       poster_short_title_description: Breve descripción de la funcionalidad de póster. Permite a los usuarios descargar un póster en formato PDF para difundir su propuesta
       poster_description: Descripción póster
       poster_description_description: Descripción detallada de la funcionalidad de póster
+    feature:
+      budgets: "Presupuestos participativos"
+      budgets_description: "Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal"
+      twitter_login: "Registro con Twitter"
+      twitter_login_description: "Permitir que los usuarios se registren con su cuenta de Twitter"
+      facebook_login: "Registro con Facebook"
+      facebook_login_description: "Permitir que los usuarios se registren con su cuenta de Facebook"
+      google_login: "Registro con Google"
+      google_login_description: "Permitir que los usuarios se registren con su cuenta de Google"
+      proposals: "Propuestas"
+      proposals_description: "Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su ciudad, después de conseguir los apoyos suficientes y de someterse a votación ciudadana"
+      debates: "Debates"
+      debates_description: "El espacio de debates ciudadanos está dirigido a que cualquier persona pueda exponer temas que le preocupan y sobre los que quiera compartir puntos de vista con otras personas"
+      polls: "Votaciones"
+      polls_description: "Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa"
+      signature_sheets: "Hojas de firmas"
+      signature_sheets_description: "Permite añadir desde el panel de Administración firmas recogidas de forma presencial a Propuestas y proyectos de gasto de los Presupuestos participativos"
+      legislation: "Legislación colaborativa"
+      legislation_description: "En los procesos participativos se ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa que afecta a la ciudad y de dar su opinión sobre ciertas actuaciones que se tiene previsto llevar a cabo"
+      spending_proposals: "Propuestas de inversión"
+      spending_proposals_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
+      spending_proposal_features:
+        voting_allowed: "Votaciones de preselección sobre propuestas de inversión."
+        voting_allowed_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
+      user:
+        recommendations: "Recomendaciones"
+        recommendations_description: "Muestra a los usuarios recomendaciones en la homepage basado en las etiquetas de los elementos que sigue"
+        skip_verification: "Omitir verificación de usuarios"
+        skip_verification_description: "Esto deshabilitará la verificación de usuarios y todos los usuarios registrados podrán participar en todos los procesos"
+        recommendations_on_debates: "Recomendaciones en debates"
+        recommendations_on_debates_description: "Muestra a los usuarios recomendaciones en la página de debates basado en las etiquetas de los elementos que sigue"
+        recommendations_on_proposals: "Recomendaciones en propuestas"
+        recommendations_on_proposals_description: "Muestra a los usuarios recomendaciones en la página de propuestas basado en las etiquetas de los elementos que sigue"
+      community: "Comunidad en propuestas y proyectos de gasto"
+      community_description: "Activa la sección de comunidad en las propuestas y en los proyectos de gasto de los Presupuestos participativos"
+      map: "Geolocalización de propuestas y proyectos de gasto"
+      map_description: "Activa la geolocalización de propuestas y proyectos de gasto"
+      allow_images: "Permitir subir y mostrar imágenes"
+      allow_images_description: "Permite que los usuarios suban imágenes al crear propuestas y proyectos de gasto de los Presupuestos participativos"
+      allow_attached_documents: "Permitir creación de documentos adjuntos"
+      allow_attached_documents_description: "Permite que los usuarios suban documentos al crear propuestas y proyectos de gasto de los Presupuestos participativos"
+      guides: "Guías para crear propuestas o proyectos de gasto"
+      guides_description: "Muestra una guía de diferencias entre las propuestas y los proyectos de gasto si hay un presupuesto participativo activo"
+      public_stats: "Estadísticas públicas"
+      public_stats_description: "Muestra las estadísticas públicas en el panel de Administración"
+      help_page: "Página de Ayuda"
+      help_page_description: "Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada."

@@ -1,0 +1,24 @@
+nl:
+  documents:
+    title: Bestanden
+    max_documents_allowed_reached_html: Je hebt het maximum aantal bestanden bereikt! <strong>Je moet eerst een bestand verwijderen voordat je een andere kunt toevoegen.</strong>
+    form:
+      title: Bestanden
+      title_placeholder: Voeg een omschrijving toe voor het bestand
+      attachment_label: Kies bestand
+      delete_button: Verwijder bestand
+      cancel_button: Annuleren
+      note: "Je kunt tot een maximum van %{max_documents_allowed} bestanden of andere typen inhoud uploaden: %{accepted_content_types}, tot maximum van %{max_file_size} MB per bestand."
+      add_new_document: Nieuw bestand toevoegen
+    actions:
+      destroy:
+        notice: Bestand is succesvol verwijderd.
+        alert: Kan het bestand niet verwijderen.
+        confirm: Weet je zeker dat je het bestand wilt verwijderen? Deze actie kan niet ongedaan gemaakt worden!
+    buttons:
+      download_document: Download bestand
+      destroy_document: Verwijder bestand
+    errors:
+      messages:
+        in_between: moet tussen %{min} en %{max} zijn
+        wrong_content_type: Type bestand %{content_type} komt niet overeen met een van de toegestane type bestanden %{accepted_content_types}

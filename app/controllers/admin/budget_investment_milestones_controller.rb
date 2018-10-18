@@ -47,9 +47,10 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
     image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
     documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
     attributes = [:title, :description, :publication_date, :budget_investment_id, :status_id,
+                  *translation_params(Budget::Investment::Milestone),
                   image_attributes: image_attributes, documents_attributes: documents_attributes]
 
-    params.require(:budget_investment_milestone).permit(*attributes, translation_params(params[:budget_investment_milestone]))
+    params.require(:budget_investment_milestone).permit(*attributes)
   end
 
   def load_budget_investment
@@ -62,10 +63,6 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
 
   def get_milestone
     Budget::Investment::Milestone.find(params[:id])
-  end
-
-  def resource_model
-    Budget::Investment::Milestone
   end
 
   def resource

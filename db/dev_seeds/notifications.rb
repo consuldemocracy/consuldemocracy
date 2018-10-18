@@ -1,5 +1,5 @@
 section "Creating comment notifications" do
-  User.all.each do |user|
+  User.find_each do |user|
     debate = Debate.create!(author: user,
                             title: Faker::Lorem.sentence(3).truncate(60),
                             description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",

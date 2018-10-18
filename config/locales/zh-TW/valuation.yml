@@ -1,0 +1,126 @@
+zh-TW:
+  valuation:
+    header:
+      title: 評估
+    menu:
+      title: 評估
+      budgets: 參與性預算
+      spending_proposals: 開支建議
+    budgets:
+      index:
+        title: 參與性預算
+        filters:
+          current: 開
+          finished: 完成
+        table_name: 名稱
+        table_phase: 階段
+        table_assigned_investments_valuation_open: 投資項目被分配為評估開啟
+        table_actions: 行動
+        evaluate: 評估
+    budget_investments:
+      index:
+        headings_filter_all: 所有標題
+        filters:
+          valuation_open: 開
+          valuating: 評估中
+          valuation_finished: 評估已完成
+        assigned_to: "已分配給%{valuator}"
+        title: 投資項目
+        edit: 編輯檔案
+        valuators_assigned:
+          other: "已分配%{count} 位評估員"
+        no_valuators_assigned: 未分配評估員
+        table_id: ID
+        table_title: 標題
+        table_heading_name: 標題名稱
+        table_actions: 行動
+        no_investments: "沒有投資項目"
+      show:
+        back: 返回
+        title: 投資項目
+        info: 作者資訊
+        by: 發送者
+        sent: 發送於
+        heading: 標題
+        dossier: 檔案
+        edit_dossier: 編輯檔案
+        price: 價格
+        price_first_year: 第一年的成本
+        currency: "€"
+        feasibility: 可行性
+        feasible: 可行
+        unfeasible: 不可行
+        undefined: 未定義
+        valuation_finished: 評估已完成
+        duration: 時間範圍
+        responsibles: 責任
+        assigned_admin: 已分配管理員
+        assigned_valuators: 已分配評估員
+      edit:
+        dossier: 檔案
+        price_html: "價格(%{currency})"
+        price_first_year_html: "第一年的成本(%{currency}) <small>(可選擇填寫，數據不公開)</small>"
+        price_explanation_html: 價格說明
+        feasibility: 可行性
+        feasible: 可行
+        unfeasible: 不可行
+        undefined_feasible: 有待
+        feasible_explanation_html: 可行性的解釋
+        valuation_finished: 評估已完成
+        valuation_finished_alert: "您確定要將此報告標記為已完成嗎？ 如果您這樣做了，將無法再修改。"
+        not_feasible_alert: "立即發送電郵給項目作者，並附有不可行的報告。"
+        duration_html: 時間範圍
+        save: 儲存更改
+      notice:
+        valuate: "檔案已更新"
+      valuation_comments: 評估的評論
+      not_in_valuating_phase: 只有在預算處於評估階段，才能對投資進行評估
+    spending_proposals:
+      index:
+        geozone_filter_all: 所有區域
+        filters:
+          valuation_open: 開啟
+          valuating: 評估中
+          valuation_finished: 評估已完成
+        title: 參與性預算的投資項目
+        edit: 編輯
+      show:
+        back: 返回
+        heading: 投資項目
+        info: 作者資訊
+        association_name: 協會
+        by: 發送者
+        sent: 發送於
+        geozone: 範圍
+        dossier: 檔案
+        edit_dossier: 編輯檔案
+        price: 價格
+        price_first_year: 第一年的成本
+        currency: "€"
+        feasibility: 可行性
+        feasible: 可行
+        not_feasible: 不可行
+        undefined: 未定義
+        valuation_finished: 評估已完成
+        time_scope: 時間範圍
+        internal_comments: 內部評論
+        responsibles: 責任
+        assigned_admin: 已分配管理員
+        assigned_valuators: 已分配評估員
+      edit:
+        dossier: 檔案
+        price_html: "價格 (%{currency})"
+        price_first_year_html: "第一年的成本 (%{currency})"
+        currency: "€"
+        price_explanation_html: 價格解釋
+        feasibility: 可行性
+        feasible: 可行
+        not_feasible: 不可行
+        undefined_feasible: 有待
+        feasible_explanation_html: 可行性的解釋
+        valuation_finished: 評估已完成
+        time_scope_html: 時間範圍
+        internal_comments_html: 內部評論
+        save: 儲存更改
+      notice:
+        valuate: "檔案已更新"

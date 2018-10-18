@@ -371,59 +371,40 @@ feature 'Admin budget investments' do
       expect(page).to have_content 'The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects'
     end
 
-    scenario "Limiting by max number of investments per heading", :js do
+    scenario "Filtering by minimum number of votes", :js do
       group_1 = create(:budget_group, budget: budget)
       group_2 = create(:budget_group, budget: budget)
       parks   = create(:budget_heading, group: group_1)
       roads   = create(:budget_heading, group: group_2)
       streets = create(:budget_heading, group: group_2)
 
-      [2, 4, 90, 100, 200, 300].each do |n|
-        create(:budget_investment, heading: parks, cached_votes_up: n, title: "Park with #{n} supports")
-      end
-
-      [21, 31, 51, 81, 91, 101].each do |n|
-        create(:budget_investment, heading: roads, cached_votes_up: n, title: "Road with #{n} supports")
-      end
-
-      [3, 10, 30, 33, 44, 55].each do |n|
-        create(:budget_investment, heading: streets, cached_votes_up: n, title: "Street with #{n} supports")
-      end
+      create(:budget_investment, heading: parks, cached_votes_up: 40, title: "Park with 40 supports")
+      create(:budget_investment, heading: parks, cached_votes_up: 99, title: "Park with 99 supports")
+      create(:budget_investment, heading: roads, cached_votes_up: 100, title: "Road with 100 supports")
+      create(:budget_investment, heading: roads, cached_votes_up: 199, title: "Road with 199 supports")
+      create(:budget_investment, heading: streets, cached_votes_up: 200, title: "Street with 200 supports")
+      create(:budget_investment, heading: streets, cached_votes_up: 300, title: "Street with 300 supports")
 
       visit admin_budget_budget_investments_path(budget)
 
-      [2, 4, 90, 100, 200, 300].each do |n|
-        expect(page).to have_link("Park with #{n} supports")
-      end
-
-      [21, 31, 51, 81, 91, 101].each do |n|
-        expect(page).to have_link("Road with #{n} supports")
-      end
-
-      [3, 10, 30, 33, 44, 55].each do |n|
-        expect(page).to have_link("Street with #{n} supports")
-      end
+      expect(page).to have_link("Park with 40 supports")
+      expect(page).to have_link("Park with 99 supports")
+      expect(page).to have_link("Road with 100 supports")
+      expect(page).to have_link("Road with 199 supports")
+      expect(page).to have_link("Street with 200 supports")
+      expect(page).to have_link("Street with 300 supports")
 
       click_link 'Advanced filters'
-      fill_in "max_per_heading", with: 5
+      fill_in "min_total_supports", with: 180
       click_button 'Filter'
 
-      expect(page).to have_content('There are 15 investments')
-      expect(page).not_to have_link("Park with 2 supports")
-      expect(page).not_to have_link("Road with 21 supports")
-      expect(page).not_to have_link("Street with 3 supports")
-
-      [4, 90, 100, 200, 300].each do |n|
-        expect(page).to have_link("Park with #{n} supports")
-      end
-
-      [31, 51, 81, 91, 101].each do |n|
-        expect(page).to have_link("Road with #{n} supports")
-      end
-
-      [10, 30, 33, 44, 55].each do |n|
-        expect(page).to have_link("Street with #{n} supports")
-      end
+      expect(page).to have_content('There are 3 investments')
+      expect(page).to have_link("Road with 199 supports")
+      expect(page).to have_link("Street with 200 supports")
+      expect(page).to have_link("Street with 300 supports")
+      expect(page).not_to have_link("Park with 40 supports")
+      expect(page).not_to have_link("Park with 99 supports")
+      expect(page).not_to have_link("Road with 100 supports")
     end
 
     scenario "Combination of checkbox with text search", :js do
@@ -431,9 +412,9 @@ feature 'Admin budget investments' do
       administrator = create(:administrator, user: user)
 
       create(:budget_investment, budget: budget, title: 'Educate the children',
-                                 id: 20, administrator: administrator)
+                                 administrator: administrator)
       create(:budget_investment, budget: budget, title: 'More schools',
-                                 id: 10, administrator: administrator)
+                                 administrator: administrator)
       create(:budget_investment, budget: budget, title: 'More hospitals')
 
 
@@ -452,7 +433,8 @@ feature 'Admin budget investments' do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      fill_in 'title_or_id', with: 20
+      educate_children_investment = Budget::Investment.find_by(title: 'Educate the children')
+      fill_in 'title_or_id', with: educate_children_investment.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -466,11 +448,9 @@ feature 'Admin budget investments' do
 
     scenario "Combination of select with text search", :js do
       create(:budget_investment, budget: budget, title: 'Educate the children',
-                                 feasibility: 'feasible', id: 20,
-                                 valuation_finished: true)
+                                 feasibility: 'feasible', valuation_finished: true)
       create(:budget_investment, budget: budget, title: 'More schools',
-                                 feasibility: 'feasible', id: 10,
-                                 valuation_finished: true)
+                                 feasibility: 'feasible', valuation_finished: true)
       create(:budget_investment, budget: budget, title: 'More hospitals')
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -490,7 +470,8 @@ feature 'Admin budget investments' do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      fill_in 'title_or_id', with: 20
+      educate_children_investment = Budget::Investment.find_by(title: 'Educate the children')
+      fill_in 'title_or_id', with: educate_children_investment.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -507,12 +488,10 @@ feature 'Admin budget investments' do
       administrator = create(:administrator, user: user)
 
       create(:budget_investment, budget: budget, title: 'Educate the children',
-                                 feasibility: 'feasible', id: 20,
-                                 valuation_finished: true,
+                                 feasibility: 'feasible', valuation_finished: true,
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: 'More schools',
-                                 feasibility: 'feasible', id: 10,
-                                 valuation_finished: true,
+                                 feasibility: 'feasible', valuation_finished: true,
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: 'More hospitals',
                                  administrator: administrator)
@@ -538,8 +517,8 @@ feature 'Admin budget investments' do
 
       click_link 'Advanced filters'
 
-      page.check('advanced_filters_feasible')
-      click_button "Filter"
+      within('#advanced_filters') { check('advanced_filters_feasible') }
+      click_button('Filter')
 
       expect(page).to have_css(".budget_investment", count: 2)
       expect(page).to have_content("Educate the children")
@@ -547,7 +526,8 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content("More hospitals")
       expect(page).not_to have_content("More hostals")
 
-      fill_in 'title_or_id', with: 20
+      educate_children_investment = Budget::Investment.find_by(title: 'Educate the children')
+      fill_in 'title_or_id', with: educate_children_investment.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -557,7 +537,21 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content("More hostals")
 
       expect(page).to have_content('Selected')
+    end
 
+    scenario "See results button appears when budget status is finished" do
+      finished_budget = create(:budget, :finished)
+      create(:budget_investment, :winner, budget: finished_budget, title: "Winner project")
+
+      visit admin_budget_budget_investments_path(budget_id: finished_budget.id)
+      expect(page).to have_content "See results"
+    end
+
+    scenario "See results button does not appear for unfinished budgets" do
+      not_finished_budget = create(:budget, :valuating)
+
+      visit admin_budget_budget_investments_path(budget_id: not_finished_budget.id)
+      expect(page).not_to have_content "See results"
     end
 
   end
@@ -608,8 +602,8 @@ feature 'Admin budget investments' do
     scenario 'Sort by ID' do
       visit admin_budget_budget_investments_path(budget, sort_by: 'id')
 
-      expect('B First Investment').to appear_before('A Second Investment')
-      expect('A Second Investment').to appear_before('C Third Investment')
+      expect('C Third Investment').to appear_before('A Second Investment')
+      expect('A Second Investment').to appear_before('B First Investment')
     end
 
     scenario 'Sort by title' do
@@ -622,8 +616,8 @@ feature 'Admin budget investments' do
     scenario 'Sort by supports' do
       visit admin_budget_budget_investments_path(budget, sort_by: 'supports')
 
-      expect('C Third Investment').to appear_before('A Second Investment')
-      expect('A Second Investment').to appear_before('B First Investment')
+      expect('B First Investment').to appear_before('A Second Investment')
+      expect('A Second Investment').to appear_before('C Third Investment')
     end
   end
 
@@ -972,8 +966,9 @@ feature 'Admin budget investments' do
       expect(page).to have_content(winner_bi.title)
 
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#advanced_filters_feasible").set(true) }
-      click_button 'Filter'
+
+      within('#advanced_filters') { check('advanced_filters_feasible') }
+      click_button('Filter')
 
       expect(page).not_to have_content(unfeasible_bi.title)
       expect(page).not_to have_content(feasible_bi.title)
@@ -981,9 +976,12 @@ feature 'Admin budget investments' do
       expect(page).to have_content(selected_bi.title)
       expect(page).to have_content(winner_bi.title)
 
-      within('#advanced_filters') { find(:css, "#advanced_filters_selected").set(true) }
-      within('#advanced_filters') { find(:css, "#advanced_filters_feasible").set(false) }
-      click_button 'Filter'
+      within('#advanced_filters') do
+        check('advanced_filters_selected')
+        uncheck('advanced_filters_feasible')
+      end
+
+      click_button('Filter')
 
       expect(page).not_to have_content(unfeasible_bi.title)
       expect(page).not_to have_content(feasible_bi.title)
@@ -1003,8 +1001,9 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(budget)
 
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#advanced_filters_undecided").set(true) }
-      click_button 'Filter'
+
+      within('#advanced_filters') { check('advanced_filters_undecided') }
+      click_button('Filter')
 
       expect(page).to have_content(undecided_bi.title)
       expect(page).not_to have_content(winner_bi.title)
@@ -1013,8 +1012,8 @@ feature 'Admin budget investments' do
       expect(page).not_to have_content(unfeasible_bi.title)
       expect(page).not_to have_content(feasible_vf_bi.title)
 
-      within('#advanced_filters') { find(:css, "#advanced_filters_unfeasible").set(true) }
-      click_button 'Filter'
+      within('#advanced_filters') { check('advanced_filters_unfeasible') }
+      click_button('Filter')
 
       expect(page).to have_content(undecided_bi.title)
       expect(page).to have_content(unfeasible_bi.title)
@@ -1057,8 +1056,9 @@ feature 'Admin budget investments' do
       end
 
       click_link 'Advanced filters'
-      within('#advanced_filters') { find(:css, "#advanced_filters_selected").set(true) }
-      click_button 'Filter'
+
+      within('#advanced_filters') { check('advanced_filters_selected') }
+      click_button('Filter')
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
         expect(page).not_to have_link('Select')
@@ -1070,9 +1070,8 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(budget)
       click_link 'Advanced filters'
 
-      within('#advanced_filters') { find(:css, "#advanced_filters_selected").set(true) }
-
-      click_button 'Filter'
+      within('#advanced_filters') { check('advanced_filters_selected') }
+      click_button('Filter')
 
       expect(page).to have_content('There are 2 investments')
 

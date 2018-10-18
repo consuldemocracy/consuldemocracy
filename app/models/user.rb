@@ -182,6 +182,7 @@ class User < ActiveRecord::Base
     debates_ids = Debate.where(author_id: id).pluck(:id)
     comments_ids = Comment.where(user_id: id).pluck(:id)
     proposal_ids = Proposal.where(author_id: id).pluck(:id)
+    investment_ids = Budget::Investment.where(author_id: id).pluck(:id)
     proposal_notification_ids = ProposalNotification.where(author_id: id).pluck(:id)
 
     hide
@@ -189,6 +190,7 @@ class User < ActiveRecord::Base
     Debate.hide_all debates_ids
     Comment.hide_all comments_ids
     Proposal.hide_all proposal_ids
+    Budget::Investment.hide_all investment_ids
     ProposalNotification.hide_all proposal_notification_ids
   end
 
@@ -325,6 +327,10 @@ class User < ActiveRecord::Base
     login = conditions.delete(:login)
     where(conditions.to_hash).where(["lower(email) = ?", login.downcase]).first ||
     where(conditions.to_hash).where(["username = ?", login]).first
+  end
+
+  def self.find_by_manager_login(manager_login)
+    find_by(id: manager_login.split("_").last)
   end
 
   def interests

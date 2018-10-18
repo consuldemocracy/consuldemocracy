@@ -6,6 +6,11 @@ feature 'Admin banners magement' do
     login_as(create(:administrator).user)
   end
 
+  it_behaves_like "translatable",
+                  "banner",
+                  "edit_admin_banner_path",
+                  %w[title description]
+
   context "Index" do
     background do
       @banner1 = create(:banner, title: "Banner number one",
@@ -84,8 +89,8 @@ feature 'Admin banners magement' do
 
     click_link "Create banner"
 
-    fill_in 'banner_title', with: 'Such banner'
-    fill_in 'banner_description', with: 'many text wow link'
+    fill_in 'banner_title_en', with: 'Such banner'
+    fill_in 'banner_description_en', with: 'many text wow link'
     fill_in 'banner_target_url', with: 'https://www.url.com'
     last_week = Time.current - 7.days
     next_week = Time.current + 7.days
@@ -110,7 +115,7 @@ feature 'Admin banners magement' do
 
     fill_in 'banner_background_color', with: '#850000'
     fill_in 'banner_font_color', with: '#ffb2b2'
-    fill_in 'banner_title', with: 'Fun with flags'
+    fill_in 'banner_title_en', with: 'Fun with flags'
 
     # This last step simulates the blur event on the page. The color pickers and the text_fields
     # has onChange events that update each one when the other changes, but this is only fired when
@@ -141,8 +146,8 @@ feature 'Admin banners magement' do
 
     click_link "Edit banner"
 
-    fill_in 'banner_title', with: 'Modified title'
-    fill_in 'banner_description', with: 'Edited text'
+    fill_in 'banner_title_en', with: 'Modified title'
+    fill_in 'banner_description_en', with: 'Edited text'
 
     page.find("body").click
 
@@ -183,5 +188,4 @@ feature 'Admin banners magement' do
     visit admin_root_path
     expect(page).not_to have_content 'Ugly banner'
   end
-
 end
