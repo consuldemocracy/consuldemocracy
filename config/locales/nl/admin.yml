@@ -557,7 +557,6 @@ nl:
           layouts: "Lay-outs"
           mailers: "Emails"
           management: "Beheer"
-          guides: "Leiden"
           welcome: "Welkom"
         buttons:
           save: "Opslaan"
