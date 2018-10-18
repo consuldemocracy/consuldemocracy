@@ -1,24 +1,39 @@
 <div class="poll-question-answers">
   <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
-    <% question.question_answers.each do |answer| %>
-      <% if @answers_by_question_id[question.id] == answer.title &&
-          ( voted_before_sign_in(question) ||
-            (!voted_before_sign_in(question) || question.poll.voted_in_booth?(current_user))
-          )
-      %>
-        <span class="button answered"
-              title="<%= t("poll_questions.show.voted", answer: answer.title)%>">
-          <%= answer.title %>
-        </span>
-      <% else %>
-        <%= link_to answer.title,
-          answer_question_path(question, answer: answer.title, token: token),
-          method: :post,
-          remote: true,
-          title: t("poll_questions.show.vote_answer", answer: answer.title),
-          class: "button secondary hollow js-question-answer" %>
+    <div class="row">
+      <% answers = question.question_answers.sort { |a, b| Random.rand <=> Random.rand } %>
+      <% answers.each do |answer| %>
+        <% if answers.last == answer %>
+          <div class="small-12 medium-3 columns text-center end">
+        <% else %>
+          <div class="small-12 medium-3 columns text-center">
+        <% end %>
+        <%= answer.description %>
+        <%= link_to answer.images.first.attachment.url(:original), target: "_blank" do %>
+          <%= image_tag answer.images.first.attachment.url(:thumb),
+                        alt: answer.images.first.title %>
+        <% end %>
+        <br><br>
+        <% if @answers_by_question_id[question.id] == answer.title &&
+            ( voted_before_sign_in(question) ||
+              (!voted_before_sign_in(question) || question.poll.voted_in_booth?(current_user))
+            )
+        %>
+          <span class="button answered"
+                title="<%= t("poll_questions.show.voted", answer: answer.title)%>">
+            <%= answer.title %>
+          </span>
+        <% else %>
+          <%= link_to answer.title,
+            answer_question_path(question, answer: answer.title, token: token),
+            method: :post,
+            remote: true,
+            title: t("poll_questions.show.vote_answer", answer: answer.title),
+            class: "button secondary hollow js-question-answer" %>
+        <% end %>
+        </div>
       <% end %>
-    <% end %>
+    </div>
   <% else %>
     <% question.question_answers.each do |answer| %>
       <span class="button secondary hollow disabled"><%= answer.title %></span>

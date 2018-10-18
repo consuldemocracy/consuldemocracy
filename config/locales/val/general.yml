@@ -455,6 +455,7 @@ val:
         submit_button: Guardar canvis
   polls:
     all: "Totes"
+    bases_link: 'Bases del concurs del cartell de les festes de la Magdalena %{year}'
     no_dates: "sense data asignada"
     dates: "Des del %{open_at} fins el %{closed_at}"
     final_date: "Recompte final/Resultats"

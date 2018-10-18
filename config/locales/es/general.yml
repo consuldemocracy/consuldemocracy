@@ -455,6 +455,7 @@ es:
         submit_button: Guardar cambios
   polls:
     all: "Todas"
+    bases_link: 'Bases del concurso del cartel de las fiestas de la Magdalena %{year}'
     no_dates: "sin fecha asignada"
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
