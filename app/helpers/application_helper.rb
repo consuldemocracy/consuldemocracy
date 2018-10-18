@@ -61,8 +61,6 @@ module ApplicationHelper
     "#{root_url.chomp("\/")}#{url}"
   end
 
-  # This method is used to embed the font inside CSS when the asset is precompiled. It is required in order to allow
-  # wkpdfhtml embeding custom fonts inside the PDF.
   def self.asset_data_base64(path)
     asset = (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset(path)
     throw "Could not find asset '#{path}'" if asset.nil?
