@@ -562,7 +562,6 @@ pl:
           layouts: "Układy"
           mailers: "E-maile"
           management: "Zarząd"
-          guides: "Przewodniki"
           welcome: "Witaj"
         buttons:
           save: "Zapisz"
