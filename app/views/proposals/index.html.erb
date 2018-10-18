@@ -76,7 +76,7 @@
       <% if @proposals.any? %>
         <div class="show-for-small-only">
           <%= link_to t("proposals.index.start_proposal"),
-                      new_proposal_guide,
+                      new_proposal_path,
                       class: 'button expanded' %>
         </div>
       <% end %>
@@ -109,7 +109,7 @@
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
         <%= link_to t("proposals.index.start_proposal"),
-                    new_proposal_guide,
+                    new_proposal_path,
                     class: 'button expanded' %>
         <% if params[:retired].blank? %>
           <%= render 'categories' %>
