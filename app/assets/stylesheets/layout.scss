@@ -889,7 +889,6 @@ footer {
     a {
       color: #fff;
       display: block;
-      line-height: rem-calc(80); // Same as logo image height
       text-align: center;
 
       @include breakpoint(medium) {
