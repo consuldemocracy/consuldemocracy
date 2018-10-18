@@ -555,7 +555,6 @@ fr:
           layouts: "Mise en page"
           mailers: "Courriels"
           management: "Gestion"
-          guides: "Guides"
           welcome: "Bienvenue"
         buttons:
           save: "Sauvegarder"
