@@ -2,7 +2,11 @@
   <div class="row">
     <div class="small-12 medium-12 column background-principal">
       <div class="hijo">
-        <%= link_to "Participa!", poll_path(Poll.current_cartell), class: "button large alert" %>
+        <% if Poll.current_cartell %>
+          <%= link_to "Participa!", concurs_cartell_magdalena_path(Poll.current_cartell), class: "button large alert" %>
+        <% else %>
+          <%= link_to "Participa!", budgets_path, class: "button large alert" %>
+        <% end %>
       </div>
     </div>
   </div>
