@@ -112,7 +112,7 @@ zh-CN:
     spending_proposals:
       alert:
         unverified_user: 用户尚未被验证
-      create: 创建支持提议
+      create: 创建支出提议
       filters:
         unfeasible: 不可行的投资项目
         by_geozone: "投资项目范围：%{geozone}"
@@ -121,7 +121,7 @@ zh-CN:
       search_results:
         other: " 包含术语'%{search_term}'"
     sessions:
-      signed_out: 成功登出
+      signed_out: 已成功登出
       signed_out_managed_user: 用户会话已成功登出。
     username_label: 用户名
     users:
