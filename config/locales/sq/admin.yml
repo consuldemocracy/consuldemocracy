@@ -558,7 +558,6 @@ sq:
           layouts: "Layouts"
           mailers: "Emailet"
           management: "Drejtuesit"
-          guides: "Guidat"
           welcome: "Mirësevini"
         buttons:
           save: "Ruaj"
