@@ -27,3 +27,5 @@ zh-CN:
       sincerely: "真诚的"
       sorry: "很抱歉给您造成不便，我们再次感谢您的宝贵参与。"
       subject: "您的投资项目 '%{code}' 已被标记为不可行"
+    proposal_notification_digest:
+      info: "以下是您在%{org_name} 里支持的提议的作者发布的新通知。"
