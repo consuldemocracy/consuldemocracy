@@ -18,6 +18,9 @@ module Abilities
       can :stats, Poll do |poll|
         poll.show_stats?
       end
+      can :current_cartell, Poll do |poll|
+        true
+      end
       can :read, Poll::Question
       can :read, SpendingProposal
       can :read, LegacyLegislation

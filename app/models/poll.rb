@@ -108,8 +108,8 @@ class Poll < ActiveRecord::Base
     name.gsub(/[0-9]*/,'')
   end
 
-  def to_param
-    "#{id}-#{name_without_year}".parameterize
+  def self.current_cartell
+    Poll.kind_of_cartel.last
   end
 end
 

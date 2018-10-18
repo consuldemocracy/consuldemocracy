@@ -28,16 +28,16 @@ class PollsController < ApplicationController
   end
 
   def stats
-    @votacion = Poll.kind_of_cartel.last
-    @stats = calcula_resultados_cartel(@votacion)
+    @poll ||= Poll.current_cartell
+    @stats = calcula_resultados_cartel(@poll)
     @all_ages_count = @stats[:age_groups].values.sum.to_f
   end
 
   def results
-    @votacion = Poll.kind_of_cartel.last
-    @answers = @votacion.questions.first.answers.to_a
+    @poll ||= Poll.current_cartell
+    @answers = @poll.questions.first.answers.to_a
     @results = []
-    @votacion.questions.first.question_answers.each do |question_answer|
+    @poll.questions.first.question_answers.each do |question_answer|
       votos = question_answer.total_votes
       porcentaje = votos * 100.0 / @answers.size
        @results << {
@@ -47,5 +47,19 @@ class PollsController < ApplicationController
         }
     end
     @results = @results.sort { |a, b| b[:votos] <=> a[:votos] }
+  end
+
+  def current_cartell
+    @poll = Poll.current_cartell
+    @questions = @poll.questions.for_render.sort_for_list
+    @token = poll_voter_token(@poll, current_user)
+    @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions).where.not(description: "").order(:given_order)
+    @answers_by_question_id = {}
+    poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user.try(:id))
+    poll_answers.each do |answer|
+      @answers_by_question_id[answer.question_id] = answer.answer
+    end
+    @commentable = @poll
+    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
   end
 end

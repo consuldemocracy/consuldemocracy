@@ -9,7 +9,11 @@
             </li>
           <% else %>
             <li>
-              <%= link_to t('polls.show.results_menu'), results_poll_path(@poll) %>
+              <% if @poll == Poll.current_cartell %>
+                <%= link_to t('polls.show.results_menu'), concurs_cartell_magdalena_results_path %>
+              <% else %>
+                <%= link_to t('polls.show.results_menu'), results_poll_path(@poll) %>
+              <% end %>
             </li>
           <% end %>
         <% end %>
@@ -20,7 +24,12 @@
             <li class='active'><h2><%= t('polls.show.stats_menu') %></h2></li>
           <% else %>
             <li>
-              <%= link_to t('polls.show.stats_menu'), stats_poll_path(@poll) %>
+              <% if @poll == Poll.current_cartell %>
+                <%= link_to t('polls.show.stats_menu'), concurs_cartell_magdalena_stats_path %>
+              <% else %>
+                <%= link_to t('polls.show.stats_menu'), stats_poll_path(@poll) %>
+              <% end %>
+
             </li>
           <% end %>
         <% end %>
@@ -28,7 +37,13 @@
       <% if controller_name == 'polls' && action_name == 'show' %>
         <li class='active'><h2><%= t('polls.show.info_menu') %></h2></li>
       <% else %>
-        <li><%= link_to t('polls.show.info_menu'), poll_path(@poll) %></li>
+        <li>
+          <% if @poll == Poll.current_cartell %>
+            <%= link_to t('polls.show.info_menu'), concurs_cartell_magdalena_path %>
+          <% else %>
+            <%= link_to t('polls.show.info_menu'), poll_path(@poll) %>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </div>
