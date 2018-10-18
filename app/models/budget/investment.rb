@@ -261,8 +261,8 @@ class Budget
       return :not_selected                    unless selected?
       return :no_ballots_allowed              unless budget.balloting?
       return :different_heading_assigned_html unless ballot.valid_heading?(heading)
-      return :not_enough_available_votes_html if heading.group_approval_voting? && ballot.investments.count == heading.group.number_votes_per_heading
-      return :not_enough_money_html           if ballot.present? && !enough_money?(ballot)
+      return :not_enough_available_votes_html if not_enough_available_votes?(ballot, heading)
+      return :not_enough_money_html           if not_enough_money?(ballot, heading)
       return :casted_offline                  if ballot.casted_offline?
     end
 
@@ -423,5 +423,15 @@ class Budget
         { title       => "A",
           description => "D" }
       end
+
+      def not_enough_available_votes?(ballot, heading)
+        ballot_investments_for_group = ballot.investments.where(group_id: heading.group.id).count
+        heading.group.budget.approval_voting? && ballot_investments_for_group >= heading.max_votes
+      end
+
+      def not_enough_money?(ballot, heading)
+        heading.budget.money_bounded? && ballot.present? && !enough_money?(ballot)
+      end
+
   end
 end

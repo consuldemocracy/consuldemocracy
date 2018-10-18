@@ -325,4 +325,12 @@ describe Budget::Heading do
     end
   end
 
+  describe "max_votes" do
+    it "must be at least 1" do
+      expect(build(:budget_heading, max_votes: 10)).to be_valid
+      expect(build(:budget_heading, max_votes: -1)).not_to be_valid
+      expect(build(:budget_heading, max_votes: 0)).not_to be_valid
+    end
+  end
+
 end

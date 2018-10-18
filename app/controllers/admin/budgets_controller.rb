@@ -87,6 +87,8 @@ class Admin::BudgetsController < Admin::BaseController
                           :help_link,
                           :budget_milestone_tags,
                           :budget_valuation_tags,
+                          :voting_style,
+                          :money_bounded,
                           administrator_ids: [],
                           valuator_ids: [],
                           tracker_ids: []

@@ -19,6 +19,7 @@ class Budget
       after_save :store_user_heading
 
       def check_sufficient_funds
+        return true unless budget.money_bounded?
         errors.add(:money, "insufficient funds") if ballot.amount_available(investment.heading) < investment.price.to_i
       end
 

@@ -348,4 +348,26 @@ describe Budget do
       expect(budget.milestone_tags).to eq(["tag1"])
     end
   end
+
+  describe "Validation" do
+    it { expect(build(:budget)).to be_valid }
+    it { expect(build(:budget, :approval)).to be_valid }
+    it { expect(build(:budget, :knapsack)).to be_valid }
+    it { expect(build(:budget, voting_style: "Oups!")).not_to be_valid }
+  end
+
+  describe "Defaults" do
+    it { expect(build(:budget).knapsack_voting?).to be true }
+  end
+
+  describe "#approval_voting?" do
+    it { expect(build(:budget, :approval).approval_voting?).to be true }
+    it { expect(build(:budget, :knapsack).approval_voting?).to be false }
+  end
+
+  describe "#knapsack_voting?" do
+    it { expect(build(:budget, :knapsack).knapsack_voting?).to be true }
+    it { expect(build(:budget, :approval).knapsack_voting?).to be false }
+  end
+
 end

@@ -4,4 +4,12 @@ module BallotsHelper
     (amount_spent / amount_available.to_f * 100).to_s + "%"
   end
 
+  def remaining_votes(ballot, group)
+    if group.budget.approval_voting?
+      group.headings.sum(&:max_votes) - ballot.investments.by_group(group.id).count
+    else
+      ballot.formatted_amount_available(ballot.heading_for_group(group))
+    end
+  end
+
 end

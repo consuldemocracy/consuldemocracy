@@ -4,7 +4,7 @@ describe "Ballots" do
 
   let!(:user)       { create(:user, :level_two) }
   let!(:budget)     { create(:budget, phase: "balloting") }
-  let!(:states)     { create(:budget_group, budget: budget, name: "States", voting_style: "knapsack") }
+  let!(:states)     { create(:budget_group, budget: budget, name: "States") }
   let!(:california) { create(:budget_heading, group: states, name: "California", price: 1000) }
   let!(:new_york)   { create(:budget_heading, group: states, name: "New York", price: 1000000) }
 
@@ -64,8 +64,8 @@ describe "Ballots" do
       visit budget_path(budget)
     end
 
-    let!(:city) { create(:budget_group, budget: budget, name: "City", voting_style: "knapsack") }
-    let!(:districts) { create(:budget_group, budget: budget, name: "Districts", voting_style: "knapsack") }
+    let!(:city) { create(:budget_group, budget: budget, name: "City") }
+    let!(:districts) { create(:budget_group, budget: budget, name: "Districts") }
 
     context "Group and Heading Navigation" do
 
@@ -386,7 +386,7 @@ describe "Ballots" do
 
   context "Showing the ballot" do
     scenario "Do not display heading name if there is only one heading in the group (example: group city)" do
-      group = create(:budget_group, budget: budget, voting_style: "knapsack")
+      group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
       visit budget_path(budget)
       click_link group.name

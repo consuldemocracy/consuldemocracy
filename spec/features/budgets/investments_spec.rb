@@ -1957,6 +1957,34 @@ describe "Budget Investments" do
         expect(page).to have_css(".map-icon", count: 3, visible: false)
       end
     end
+
+    feature "Voting Style" do
+
+      scenario "Approval Voting", :js do
+        budget.update(phase: "balloting", voting_style: "approval")
+        user = create(:user, :level_two)
+
+        global_group   = create(:budget_group, budget: budget, name: "Global Group",)
+        global_heading = create(:budget_heading, group: global_group, name: "Global Heading",
+                                latitude: -43.145412, longitude: 12.009423, max_votes: 2)
+
+        investment = create(:budget_investment, :selected, price: 1, heading: global_heading)
+
+
+        login_as(user)
+        visit budget_investments_path(budget, heading_id: global_heading.id)
+
+        add_to_ballot(investment)
+        visit budget_investments_path(budget, heading_id: global_heading.id)
+
+        expect(page).to have_content("You have selected 1 of 2 projects.")
+
+        visit budget_ballot_path(budget)
+        expect(page).to have_content("You can change your vote at any time until the close of "\
+                                     "this phase.")
+      end
+
+    end
   end
 
 end

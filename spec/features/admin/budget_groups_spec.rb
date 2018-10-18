@@ -166,12 +166,12 @@ describe "Admin budget groups" do
       expect(page).to have_css("label.error", text: "Group name")
       expect(page).to have_content "can't be blank"
     end
-
   end
 
   context "Edit" do
 
     scenario "Show group information" do
+      budget.update_attribute :voting_style, "approval"
       group = create(:budget_group, budget: budget, max_votable_headings: 2)
       2.times { create(:budget_heading, group: group) }
 

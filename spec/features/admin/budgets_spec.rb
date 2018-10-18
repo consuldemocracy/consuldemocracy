@@ -126,6 +126,33 @@ describe "Admin budgets" do
 
       expect(page).to have_content "New participatory budget created successfully!"
       expect(page).to have_content "M30 - Summer campaign"
+
+      budget = Budget.order(:id).last
+      expect(budget.knapsack_voting?).to be true
+    end
+
+    scenario "Create budget - voting style approval", :js do
+      visit admin_budgets_path
+      click_link "Create new budget"
+
+      expect(page).not_to have_content("Voter can't exceed budget")
+
+      fill_in "Name", with: "M30 - Summer campaign"
+      select "Accepting projects", from: "budget[phase]"
+      select "Approval", from: "Voting Style"
+
+      expect(page).to have_content("Voter can't exceed budget")
+
+      select "No", from: "Voter can't exceed budget"
+
+      click_button "Create Budget"
+
+      expect(page).to have_content "New participatory budget created successfully!"
+      expect(page).to have_content "M30 - Summer campaign"
+
+      budget = Budget.order(:id).last
+      expect(budget.approval_voting?).to be true
+      expect(budget.money_bounded?).to be false
     end
 
     scenario "Name is mandatory" do

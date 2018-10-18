@@ -1,9 +1,10 @@
 require "rails_helper"
 
 describe "Votes" do
+    
+  let(:manuela) { create(:user, verified_at: Time.current) }
 
-  describe "Investments" do
-    let(:manuela) { create(:user, verified_at: Time.current) }
+  context "Investments - Knapsack" do
     let(:budget)  { create(:budget, phase: "selecting") }
     let(:group)   { create(:budget_group, budget: budget) }
     let(:heading) { create(:budget_heading, group: group) }
@@ -198,6 +199,73 @@ describe "Votes" do
         expect(page.driver.send(:find_modal).text).to match "You can only support investments in 2 districts."
       end
 
+    end
+  end
+
+  context "Investments - Approval" do
+    # Includes only Approval Voting related tests
+
+    let(:budget)  { create(:budget, :balloting, :approval) }
+
+    context "Voting restrictions" do
+
+      before { login_as(manuela) }
+
+      scenario "Restricted voting", :js do
+        group = create(:budget_group, budget: budget)
+        heading = create(:budget_heading, group: group, max_votes: 2)
+
+        investment1 = create(:budget_investment, :selected_with_price, heading: heading,
+          price: heading.price)
+        investment2 = create(:budget_investment, :selected_with_price, heading: heading,
+          price: heading.price)
+
+        visit budget_investments_path(budget, heading_id: heading.id)
+
+        within "#budget_investment_#{investment1.id}_ballot" do
+          click_link "Vote"
+        end
+
+        expect(page).to have_content("Remove vote")
+
+        within("#budget_investment_#{investment2.id}") do
+          find("div.ballot").hover
+          expect(page).to have_content("You have already assigned the available budget")
+        end
+
+        budget.update_attribute(:money_bounded, false)
+
+        visit budget_investments_path(budget, heading_id: heading.id)
+
+        within("#budget_investment_#{investment2.id}") do
+          find("div.ballot").hover
+          expect(page).not_to have_content("You have already assigned the available budget")
+        end
+      end
+
+      scenario "Unrestricted voting", :js do
+        budget.update_attribute(:money_bounded, false)
+        group = create(:budget_group, budget: budget)
+        heading = create(:budget_heading, group: group, max_votes: 2)
+
+        investment1 = create(:budget_investment, :selected_with_price, heading: heading,
+          price: heading.price)
+        investment2 = create(:budget_investment, :selected_with_price, heading: heading,
+          price: heading.price)
+
+        visit budget_investments_path(budget, heading_id: heading.id)
+
+        within "#budget_investment_#{investment1.id}_ballot" do
+          click_link "Vote"
+        end
+
+        expect(page).to have_content("Remove vote")
+
+        within("#budget_investment_#{investment2.id}") do
+          find("div.ballot").hover
+          expect(page).not_to have_content("You have already assigned the available budget")
+        end
+      end
     end
   end
 end

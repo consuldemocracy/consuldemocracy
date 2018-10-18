@@ -171,11 +171,9 @@ ActiveRecord::Schema.define(version: 20190607160900) do
 
   create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
-    t.string  "name",                     limit: 50
+    t.string  "name",                 limit: 50
     t.string  "slug"
-    t.integer "max_votable_headings",                default: 1
-    t.string  "voting_style",                        default: "knapsack"
-    t.integer "number_votes_per_heading",            default: 1
+    t.integer "max_votable_headings",            default: 1
     t.index ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
   end
 
@@ -198,6 +196,7 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.boolean "allow_custom_content",            default: false
     t.text    "latitude"
     t.text    "longitude"
+    t.integer "max_votes",                       default: 1
     t.index ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
   end
 
@@ -414,6 +413,8 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.text     "description_drafting"
     t.text     "description_publishing_prices"
     t.text     "description_informing"
+    t.string   "voting_style",                             default: "knapsack"
+    t.boolean  "money_bounded",                            default: true
     t.string   "help_link"
     t.string   "budget_milestone_tags"
     t.string   "budget_valuation_tags"

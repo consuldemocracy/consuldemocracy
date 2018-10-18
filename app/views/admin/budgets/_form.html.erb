@@ -18,8 +18,17 @@
   </div>
 
   <div class="row margin-top">
-    <div class="small-12 medium-6 column">
+    <div class="small-12 medium-3 column">
       <%= f.select :phase, budget_phases_select_options %>
+    </div>
+    <div class="small-12 medium-3 column">
+      <%= f.select :voting_style, budget_voting_styles_select_options, {}, { class: 'js-toggle-select', data: { 'toggle-selector' => '.approval-wrapper', 'hide-on' => 'knapsack' } } %>
+    </div>
+    <div class="small-12 medium-3 column approval-wrapper <%= 'hide' unless @budget.approval_voting? %>">
+      <%= f.select :money_bounded, [['Yes', true], ['No', false]] %>
+    </div>
+    <div class="small-12 medium-3 column end">
+      <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
     </div>
     <div class="small-12 medium-3 column end">
       <%= f.select :currency_symbol, budget_currency_symbol_select_options %>

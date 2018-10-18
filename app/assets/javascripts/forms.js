@@ -57,7 +57,7 @@
       $("[name='progress_bar[kind]']").change();
     },
     toggleSelect = function() {
-      $('.js-toggle-select').unbind('change').on('change', function() {
+      $('.js-toggle-select').on('change', function() {
         var dropdown, ref, target;
         dropdown = $(this);
         target = $(dropdown.data('toggle-selector'));

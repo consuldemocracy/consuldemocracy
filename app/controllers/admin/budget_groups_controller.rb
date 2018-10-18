@@ -58,11 +58,7 @@ class Admin::BudgetGroupsController < Admin::BaseController
     end
 
     def budget_group_params
-      valid_attributes = [
-        :max_votable_headings,
-        :max_votable_headings,
-        :voting_style
-      ]
+      valid_attributes = [:max_votable_headings]
       params.require(:budget_group).permit(*valid_attributes, translation_params(Budget::Group))
     end
 

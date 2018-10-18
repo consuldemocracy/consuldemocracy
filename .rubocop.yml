@@ -1,3 +1,4 @@
+require: rubocop-rspec
 inherit_from: .rubocop_basic.yml
 
 Performance/CompareWithBlock:
