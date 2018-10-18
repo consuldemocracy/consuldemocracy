@@ -29,3 +29,27 @@ zh-CN:
       subject: "您的投资项目 '%{code}' 已被标记为不可行"
     proposal_notification_digest:
       info: "以下是您在%{org_name} 里支持的提议的作者发布的新通知。"
+      title: "在%{org_name} 中的提议通知"
+      share: 分享提议
+      comment: 评论提议
+      unsubscribe: "如果您不希望收到提议通知，请访问%{account} 并取消选中‘接收提议通知的总结’。"
+      unsubscribe_account: 我的账户
+    direct_message_for_receiver:
+      subject: "您收到新的私人消息"
+      reply: 回复 %{sender}
+      unsubscribe: "如果您不希望接收直接消息，请访问%{account} 并取消选中‘接收关于直接消息的电子邮件’。"
+      unsubscribe_account: 我的账户
+    direct_message_for_sender:
+      subject: "您已发送一条新的私人消息"
+      title_html: "您已发送如下内容的新的私人消息给 <strong>%{receiver}</strong> ："
+    user_invite:
+      ignore: "如果您没有请求此邀请，请不要担心，您可以忽略此电子邮件。"
+      text: "感谢您申请加入%{org}！在几秒钟后，您就可以开始参与，您只需填写以下表格："
+      thanks: "非常感谢。"
+      title: "欢迎访问%{org}"
+      button: 完成注册
+      subject: "邀请访问%{org_name}"
+    budget_investment_created:
+      subject: "感谢您创建了一个投资！"
+      title: "感谢您创建了一个投资！"
+      intro_html: "您好<strong>%{author}</strong>,"
