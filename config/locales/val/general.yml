@@ -483,7 +483,7 @@ val:
         help_text_2: "Per participar en la pròxima votació has de regitstrar-te en %{org} i verificar el teu compte. Poden votar totes les persones empadronades en la ciutat majors de 16 anys. Els resultats de totes les votacions seran vinculants per al govern."
     show:
       already_voted_in_booth: "Ya has participat en esta votació en urnes presencials, no pots tornar a participar."
-      already_voted_in_web: "Ya has participat en esta votació. Si tornes a votar es sobreescriurà el teu vot anterior."
+      already_voted_in_web: "Ja has participat en esta votació. Si tornes a votar es sobreescriurà el teu vot anterior."
       back: Tornar a les votacions
       cant_answer_not_logged_in: "Necessites %{signin} o %{signup} per a participar."
       comments_tab: Comentaris
