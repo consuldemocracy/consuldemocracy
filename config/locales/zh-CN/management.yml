@@ -81,7 +81,7 @@ zh-CN:
       proposals_title: '提议：'
       spending_proposals_info: 在http://url.consul上参与
       budget_investments_info: 在http://url.consul上参与
-    print_info: 打印此资讯
+    print_info: 打印此信息
     proposals:
       alert:
         unverified_user: 用户尚未被验证
