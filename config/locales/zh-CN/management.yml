@@ -54,3 +54,80 @@ zh-CN:
       document_mismatch: '此电子邮件属于已有关联id的用户： %{document_number}(%{document_type})'
       email_placeholder: 写下此人用于创建他或她的账户的电子邮件
       email_sent_instructions: 为了完全验证此用户，用户必须点击我们发送给以上电子邮件地址的链接。需要这个步骤来确认这个地址是真的属于他的。
+      if_existing_account: 如果此人已经在网站中创建用户账户，
+      if_no_existing_account: 如果此人尚未创建账户
+      introduce_email: '请介绍账户中使用的电子邮件：'
+      send_email: 发送验证电子邮件
+    menu:
+      create_proposal: 创建提议
+      print_proposals: 打印提议
+      support_proposals: 支持提议
+      create_spending_proposal: 创建支出提议
+      print_spending_proposals: 打印支出提议
+      support_spending_proposals: 支持支出提议
+      create_budget_investment: 创建预算投资
+      print_budget_investments: 打印预算投资
+      support_budget_investments: 支持预算投资
+      users: 用户管理
+      user_invites: 发送邀请
+      select_user: 选择用户
+    permissions:
+      create_proposals: 创建提议
+      debates: 参与辩论
+      support_proposals: 支持提议
+      vote_proposals: 投票提议
+    print:
+      proposals_info: 在http://url.consul上创建您的提议
+      proposals_title: '提议：'
+      spending_proposals_info: 在http://url.consul上参与
+      budget_investments_info: 在http://url.consul上参与
+    print_info: 打印此资讯
+    proposals:
+      alert:
+        unverified_user: 用户尚未被验证
+      create_proposal: 创建提议
+      print:
+        print_button: 打印
+      index:
+        title: 支持提议
+    budgets:
+      create_new_investment: 创建预算投资
+      print_investments: 打印预算投资
+      support_investments: 支持预算投资
+      table_name: 名称
+      table_phase: 阶段
+      table_actions: 行动
+      no_budgets: 没有活跃的参与性预算。
+    budget_investments:
+      alert:
+        unverified_user: 用户尚未被验证
+      create: 创建预算投资
+      filters:
+        heading: 概念
+        unfeasible: 不可行投资
+      print:
+        print_button: 打印
+      search_results:
+        other: " 包含术语'%{search_term}'"
+    spending_proposals:
+      alert:
+        unverified_user: 用户尚未被验证
+      create: 创建支持提议
+      filters:
+        unfeasible: 不可行的投资项目
+        by_geozone: "投资项目范围：%{geozone}"
+      print:
+        print_button: 打印
+      search_results:
+        other: " 包含术语'%{search_term}'"
+    sessions:
+      signed_out: 成功登出
+      signed_out_managed_user: 用户会话已成功登出。
+    username_label: 用户名
+    users:
+      create_user: 创建新的账户
+      create_user_info: 我们将用以下数据创建账户
+      create_user_submit: 创建用户
+    user_invites:
+      create:
+        title: 发送邀请
