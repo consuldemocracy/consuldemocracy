@@ -6,7 +6,7 @@
       <h2><%= @poll.name %></h2>
       <br>
       <small>
-        <%= link_to t('polls.bases_link', year: @poll.next_year), "/system/concurso_cartel_magdalena/Cartel_Magdalena_2018_Bases_#{I18n.locale}.pdf", target: '_blank' %>
+        <%= link_to t('polls.bases_link', year: @poll.next_year), "/system/concurso_cartel_magdalena/bases_concurs_cartell_2019_#{I18n.locale}.pdf", target: '_blank' %>
       </small>
       <%= safe_html_with_links simple_format(@poll.summary) %>
       <% if @poll.geozones.any? %>
