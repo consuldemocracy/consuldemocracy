@@ -569,7 +569,6 @@ gl:
           layouts: "Capas"
           mailers: "Correos electrónicos"
           management: "Xestión"
-          guides: "Guías"
           welcome: "Benvida"
         buttons:
           save: "Gardar"
