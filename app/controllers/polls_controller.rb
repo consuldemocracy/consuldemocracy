@@ -4,7 +4,7 @@ class PollsController < ApplicationController
   load_and_authorize_resource
 
   has_filters %w{current expired incoming}
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_orders %w{most_voted newest oldest}, only: [:show, :current_cartell]
 
   ::Poll::Answer # trigger autoload
 
