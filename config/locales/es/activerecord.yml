@@ -231,6 +231,8 @@ es:
         end_date: Fecha de fin del proceso
         debate_start_date: Fecha de inicio del debate
         debate_end_date: Fecha de fin del debate
+        draft_start_date: Fecha de inicio del borrador
+        draft_end_date: Fecha de fin del borrador
         draft_publication_date: Fecha de publicación del borrador
         allegations_start_date: Fecha de inicio de alegaciones
         allegations_end_date: Fecha de fin de alegaciones
@@ -340,6 +342,8 @@ es:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio
             debate_end_date:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del debate
+            draft_end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del borrador
             allegations_end_date:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de las alegaciones
         proposal:

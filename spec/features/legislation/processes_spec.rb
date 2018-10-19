@@ -66,11 +66,13 @@ feature 'Legislation' do
       create(:legislation_process, title: "Process open")
       create(:legislation_process, :next, title: "Process next")
       create(:legislation_process, :past, title: "Process past")
+      create(:legislation_process, :in_draft_phase, title: "Process in draft phase")
 
       visit legislation_processes_path
       expect(page).to have_content('Process open')
       expect(page).not_to have_content('Process next')
       expect(page).not_to have_content('Process past')
+      expect(page).not_to have_content('Process in draft phase')
 
       visit legislation_processes_path(filter: 'next')
       expect(page).not_to have_content('Process open')

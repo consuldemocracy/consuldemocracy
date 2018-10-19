@@ -8,7 +8,7 @@ class Legislation::ProcessesController < Legislation::BaseController
 
   def index
     @current_filter ||= 'open'
-    @processes = ::Legislation::Process.send(@current_filter).published.page(params[:page])
+    @processes = ::Legislation::Process.send(@current_filter).published.not_in_draft.page(params[:page])
   end
 
   def show
