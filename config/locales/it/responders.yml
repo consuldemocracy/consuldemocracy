@@ -3,8 +3,8 @@ it:
     actions:
       create:
         notice: "%{resource_name} creato con successo."
-        debate: "Dibattito creato correttamente."
-        direct_message: "Il messaggio è stato inviato correttamente."
+        debate: "Dibattito creato con successo."
+        direct_message: "Il messaggio è stato inviato con successo."
         poll: "Sondaggio creato correttamente."
         poll_booth: "Seggio creato correttamente."
         poll_question_answer: "Risposta creata con successo"
