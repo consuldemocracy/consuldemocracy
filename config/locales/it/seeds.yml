@@ -1,1 +1,27 @@
 it:
+  seeds:
+    settings:
+      official_level_1_name: Incarico ufficiale 1
+      official_level_2_name: Incarico ufficiale 2
+      official_level_3_name: Incarico ufficiale 3
+      official_level_4_name: Incarico ufficiale 4
+      official_level_5_name: Incarico ufficiale 5
+    geozones:
+      north_district: Distretto Nord
+      west_district: Distretto Ovest
+      east_district: Distretto Est
+      central_district: Distretto Centrale
+    organizations:
+      human_rights: Diritti Umani
+      neighborhood_association: Associazione di Quartiere
+    categories:
+      associations: Associazioni
+      culture: Cultura
+      sports: Sport
+      social_rights: Diritti Sociali
+      economy: Economia
+      employment: Occupazione
+      equity: Equità
+      sustainability: Sostenibilità
+      participation: Partecipazione
+      mobility: Mobilità
