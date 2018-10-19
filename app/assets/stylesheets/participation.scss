@@ -1094,7 +1094,7 @@
     }
   }
 
-  .active {
+  .is-active {
     color: $brand;
 
     &::after {
@@ -1831,10 +1831,6 @@
 
 .orbit-slide {
   max-height: none !important;
-
-  img {
-    image-rendering: pixelated;
-  }
 }
 
 .orbit-caption {
