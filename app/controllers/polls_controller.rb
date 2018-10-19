@@ -25,6 +25,7 @@ class PollsController < ApplicationController
 
     @commentable = @poll
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+    @answers = @questions.first.question_answers.sort { |a, b| Random.rand <=> Random.rand }
   end
 
   def stats
