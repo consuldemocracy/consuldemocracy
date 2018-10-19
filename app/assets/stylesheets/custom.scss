@@ -310,19 +310,6 @@ header,
   background: #fff;
 }
 
-.jumbo {
-  background: $highlight;
-
-  @include breakpoint(medium) {
-    padding: rem-calc(24) 0;
-  }
-
-  h1,
-  p {
-    color: $text;
-  }
-}
-
 .jumbo-survey {
   background: #33dadf;
   border-bottom: 1px solid #33dadf;

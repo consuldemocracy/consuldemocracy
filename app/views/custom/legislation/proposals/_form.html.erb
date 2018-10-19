@@ -10,12 +10,13 @@
     </div>
 
     <div class="small-12 column">
-      <% if @process.film_library? %>
-        <%= f.label :title, "Título de la película" %>
-      <% else %>
-        <%= f.label :title do %>
-          <span id="js-legislation-proposal-label-title"><%= t("proposals.form.proposal_title") %></span>
-          <span id="js-legislation-proposal-label-question-title"><%= t("legislation_proposals.form.question_title") %></span>
+      <%= f.label :title do %>
+        <% if @process.film_library? %>
+          Título de la película
+        <% elsif @proposal.is_question? %>
+          <%= t("legislation_proposals.form.question_title") %>
+        <% else %>
+          <%= t("proposals.form.proposal_title") %>
         <% end %>
       <% end %>
       <%= f.text_field :title, maxlength: Legislation::Proposal::TITLE_MAX_LENGTH, label: false %>
