@@ -1,0 +1,35 @@
+<% provide :title do %><%= t('pages.titles.privacy') %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: page_url("privacy") %>
+<% end %>
+
+<div class="row margin-top">
+
+  <div class="small-12 medium-9 column">
+    <h1><%= t("pages.privacy") %></h1>
+
+    <h2>AVISO DE PROTECCIÓN DE DATOS</h2>
+    <p>De conformidad con lo previsto en el artículo 13 del Reglamento Europeo de Protección de Datos le informamos:</p>
+    <ol>
+      <li>La navegación por la información disponible en el Portal de Gobierno Abierto del Ayuntamiento de Madrid es anónima.</li>
+      <li>Para utilizar los servicios contenidos en el Portal de Gobierno Abierto del Ayuntamiento de Madrid el usuario deberá darse de alta y proporcionar previamente los datos de carácter personal según la información específica que consta en cada tipo de alta.</li>
+      <li>Los datos aportados serán incorporados y tratados por el Ayuntamiento de Madrid de acuerdo con la descripción del fichero siguiente:
+        <ul>
+          <li><strong>Nombre del fichero/tratamiento:</strong> GESTIÓN DE PROCESOS PARTICIPATIVOS</li>
+          <li><strong>Finalidad del fichero/tratamiento:</strong> Gestionar los procesos participativos para el control de la habilitación de las personas que participan en los mismos y recuento meramente numérico y estadístico de los resultados derivados de los procesos de participación ciudadana.</li>
+          <li><strong>Legitimidad del tratamiento:</strong> La base legal para el tratamiento de los datos se enmarca en el contexto del artículo 9.2 de la Constitución Española, en el artículo 69 de la Ley de Bases de Régimen Local y en el Reglamento Orgánico de Participación Ciudadana del Ayuntamiento de Madrid, que establece la necesidad de contribuir a generar una cultura para la participación ciudadana que amplíe la visión y la intervención de la ciudadanía y esta fortalezca así su poder en el sistema democrático.</li>
+          <li><strong>Órgano responsable</strong>: DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA (C/ Alcalá 45, 28014-Madrid)</li>
+        </ul>
+      </li>
+      <li>Como principio general, este sitio web no comparte ni revela información obtenida, excepto cuando haya sido autorizada por el usuario, o la información sea requerida por la autoridad judicial, ministerio fiscal o la policía judicial, o la misma venga prevista en la ley.</li>
+      <li>Los datos se conservarán con la finalidad descrita mientras no se oponga a ello o solicite la cancelación como usuario del portal de Gobierno Abierto. Una vez solicitada la cancelación de sus datos, estos serán bloqueados durante el plazo de 5 años, a disposición únicamente de Administraciones Públicas, Juzgados y Tribunales para atender posibles reclamaciones, tras los cuales, dichos datos serán suprimidos.</li>
+      <li>El interesado podrá ejercer los derechos de acceso, rectificación, cancelación y oposición, ante el órgano responsable indicado.</li>
+      <li>Autoridad de control: La Agencia Española de Protección de Datos es la autoridad de control ante la que se pueden presentar las reclamaciones sobre el tratamiento de datos personales.</li>
+    </ol>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <%= render '/shared/print' %>
+  </div>
+
+</div>
