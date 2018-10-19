@@ -27,7 +27,10 @@ class CommentTree
 
   def root_descendants
     root_comments.each_with_object([]) do |root, array|
-      array.concat(Comment.descendants_of(root).send("sort_descendants_by_#{order}").for_render.to_a)
+      comments = Comment.descendants_of(root)
+      comments = comments.send("sort_descendants_by_#{order}" if order
+      array.concat(comments).for_render.to_a)
+      # array.concat(Comment.descendants_of(root).send("sort_descendants_by_#{order}").for_render.to_a)
     end
   end
 
