@@ -373,6 +373,8 @@ en:
           enabled: Enabled
           process: Process
           debate_phase: Debate phase
+          draft_phase: Draft phase
+          draft_phase_description: If this phase is active, the process won't be listed on processes index. Allow to preview the process and create content before the start.
           allegations_phase: Comments phase
           proposals_phase: Proposals phase
           start: Start
