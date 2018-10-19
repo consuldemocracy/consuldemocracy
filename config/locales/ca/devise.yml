@@ -1,0 +1,51 @@
+ca:
+  devise:
+    password_expired:
+      expire_password: "Contrasenya caducada"
+      change_required: "La teua contrasenya ha caducat"
+      change_password: "Canvia la teua contrasenya"
+      new_password: "Nova contrasenya"
+      updated: "Contrasenya actualitzada amb èxit"
+    confirmations:
+      confirmed: "El teu compte ha sigut confirmat. Per favor autentica't amb el teu usuari i contrasenya"
+      send_instructions: "Rebràs un correu electrònic en uns minuts amb instruccions sobre com restablir la teua contrasenya."
+      send_paranoid_instructions: "Si el teu correu electrònic existeix en la nostra base de dades rebràs un correu electrònic en uns minuts amb instruccions sobre com restablir la teua contrasenya."
+    failure:
+      already_authenticated: "Ja has iniciat sessió."
+      inactive: "El teu compte encara no ha sigut activat."
+      invalid: "%{authentication_keys} o contrasenya invàlids."
+      locked: "El teu compte ha sigut bloquejat."
+      last_attempt: "Tens un últim intent abans que el teu compte siga bloquejat."
+      timeout: "La teua sessió ha expirat, per favor inicia sessió novament per a continuar."
+      unauthenticated: "Necessites iniciar sessió o registrar-te per a continuar."
+      unconfirmed: "Per a continuar, per favor prem en l'enllaç de confirmació que hem enviat al teu compte de correu."
+    mailer:
+      confirmation_instructions:
+        subject: "Instruccions de confirmació"
+      reset_password_instructions:
+        subject: "Instruccions per a restablir la teua contrasenya"
+      unlock_instructions:
+        subject: "Instruccions de desbloqueig"
+    omniauth_callbacks:
+      failure: "No se t'ha pogut identificar via %{kind} pel següent motiu: \"%{reason}\"."
+      success: "Identificat correctament via %{kind}."
+    passwords:
+      no_token: "No pots accedir a aquesta pàgina si no és a través d'un enllaç per a restablir la contrasenya. Si has accedit des de l'enllaç per a restablir la contrasenya, assegura't que la URL estiga completa."
+      send_instructions: "Rebràs un correu electrònic amb instruccions sobre com restablir la teua contrasenya en uns minuts."
+      send_paranoid_instructions: "Si el teu correu electrònic existeix en la nostra base de dades, rebràs un enllaç per a restablir la contrasenya en uns minuts."
+      updated: "La teua contrasenya ha canviat correctament. Has sigut identificat correctament."
+      updated_not_active: "La teua contrasenya s'ha canviat correctament."
+    registrations:
+      signed_up: "Benvingut! Has sigut identificat."
+      signed_up_but_inactive: "Te has registrado correctamente, pero no has podido iniciar sesión porque tu cuenta no ha sido activada."
+      signed_up_but_locked: "T'has registrat correctament, però no has pogut iniciar sessió perquè el teu compte està bloquejat."
+      signed_up_but_unconfirmed: "Se t'ha enviat un missatge amb un enllaç de confirmació. Per favor visita l'enllaç per a activar el teu compte."
+      update_needs_confirmation: "Has actualitzat el teu compte correctament, no obstant açò necessitem verificar el teu nou compte de correu. Per favor revisa el teu correu electrònic i visita l'enllaç per a finalitzar la confirmació de la teua nova adreça de correu electrònica."
+      updated: "Has actualitzat el teu compte correctament."
+    sessions:
+      signed_in: "Has iniciat sessió correctament."
+      signed_out: "Has tancat la sessió correctament."
+    unlocks:
+      send_instructions: "Rebràs un correu electrònic en uns minuts amb instruccions sobre com desbloquejar el teu compte."
+      send_paranoid_instructions: "Si el teu compte existeix, rebràs un correu electrònic en uns minuts amb instruccions sobre com desbloquejar el teu compte."
+      unlocked: "El teu compte ha sigut desbloquejat. Per favor inicia sessió per a continuar."

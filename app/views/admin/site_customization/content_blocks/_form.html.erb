@@ -14,22 +14,21 @@
   </div>
 
   <% end %>
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.label :name %>
-      <%= f.select :name, SiteCustomization::ContentBlock::VALID_BLOCKS, label: false %>
-    </div>
-    <div class="small-12 medium-6 column">
-      <%= f.label :locale %>
-      <%= f.select :locale, I18n.available_locales, label: false %>
-    </div>
 
-    <div class="small-12 column">
-      <%= f.label :body %>
-      <%= f.text_area :body, label: false, rows: 10 %>
-      <div class="small-12 medium-6 large-4">
-        <%= f.submit class: "button success expanded" %>
-      </div>
+  <div class="small-12 medium-6 column">
+    <%= f.label :name %>
+    <%= f.select :name, SiteCustomization::ContentBlock::VALID_BLOCKS.map { |key| [t("admin.site_customization.content_blocks.content_block.names.#{key}"), key] }, label: false %>
+  </div>
+  <div class="small-12 medium-6 column">
+    <%= f.label :locale %>
+    <%= f.select :locale, I18n.available_locales, label: false %>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.label :body %>
+    <%= f.text_area :body, label: false, rows: 10 %>
+    <div class="small-12 medium-6 large-3">
+      <%= f.submit class: "button success expanded" %>
     </div>
   </div>
 

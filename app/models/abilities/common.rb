@@ -66,6 +66,9 @@ module Abilities
       can [:flag, :unflag], Legislation::Proposal
       cannot [:flag, :unflag], Legislation::Proposal, author_id: user.id
 
+      can [:flag, :unflag], Budget::Investment
+      cannot [:flag, :unflag], Budget::Investment, author_id: user.id
+
       can [:create, :destroy], Follow
 
       can [:destroy], Document do |document|

@@ -16,7 +16,6 @@ val:
       confirmation_instructions:
         confirm_link: Confirmar el meu compte
         text: 'Pots confirmar el teu compte de correu en el següent enllaç:'
-        title: Et donem la benvinguda al Portal de Govern Obert
         welcome: Benvingut/da
       reset_password_instructions:
         change_link: Canvia la meua contrasenya

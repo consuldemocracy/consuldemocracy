@@ -13,7 +13,11 @@
   <%= render "shared/canonical", href: proposal_url(@proposal) %>
 <% end %>
 
-<% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
+<% cache [locale_and_user_status(@proposal),
+          @proposal,
+          @proposal.author,
+          Flag.flagged?(current_user, @proposal),
+          @proposal_votes] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
@@ -24,7 +28,8 @@
           <div data-alert class="callout alert margin-top proposal-retired">
             <strong>
               <%= t("proposals.show.retired_warning") %><br>
-              <%= link_to t("proposals.show.retired_warning_link_to_explanation"), "#retired_explanation" %>
+              <%= link_to t("proposals.show.retired_warning_link_to_explanation"),
+                          "#retired_explanation" %>
             </strong>
           </div>
         <% elsif @proposal.conflictive? %>
@@ -102,7 +107,10 @@
 
         <% if @proposal.retired? %>
           <div id="retired_explanation" class="callout">
-            <h2><%= t('proposals.show.retired') %>: <%= t("proposals.retire_options.#{@proposal.retired_reason}") unless @proposal.retired_reason == 'other' %></h2>
+            <h2>
+              <%= t("proposals.show.retired") %>:
+              <%= t("proposals.retire_options.#{@proposal.retired_reason}") unless @proposal.retired_reason == 'other' %>
+            </h2>
             <%= simple_format text_with_links(@proposal.retired_explanation), {}, sanitize: false %>
           </div>
         <% end %>
@@ -130,8 +138,9 @@
             <div class="sidebar-divider"></div>
             <h2><%= t("proposals.show.author") %></h2>
             <div class="show-actions-menu">
-              <%= link_to proposal_dashboard_path(@proposal), class: "button hollow expanded",
-                          id: "proposal_dashboard_#{@proposal.id}" do %>
+              <%= link_to proposal_dashboard_path(@proposal),
+                          class: 'button hollow expanded',
+                          id: "proposal-dashboard-#{@proposal.id}" do %>
                 <span class="icon-edit"></span>
                 <%= t("proposals.show.dashboard_proposal_link") %>
               <% end %>
@@ -147,12 +156,11 @@
               </div>
             <% elsif @proposal.successful? %>
               <p>
-                <%= t("proposals.proposal.successful",
-                    voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+                <%= t("proposals.proposal.successful") %>
               </p>
               <% if can? :create, Poll::Question %>
                 <p class="text-center">
-                  <%= link_to t('poll_questions.create_question'),
+                  <%= link_to t("poll_questions.create_question"),
                               new_admin_question_path(proposal_id: @proposal.id),
                               class: "button hollow expanded" %>
                 </p>
@@ -169,7 +177,6 @@
                         { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
             <% end %>
           </div>
-
 
           <%= render partial: 'shared/social_share', locals: {
             share_title: t("proposals.show.share"),
@@ -194,14 +201,18 @@
 <% end %>
 
 <% unless preview %>
-  <div class="row">
-    <div class="small-12 column">
-      <%= render "proposals/filter_subnav" %>
+  <div class="additional-content">
+    <div class="filter-subnav">
+      <div class="row">
+        <div class="small-12 column">
+          <%= render "proposals/filter_subnav" %>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="tabs-content" data-tabs-content="proposals_tabs" role="tablist">
-    <div class="tabs-panel is-active" id="tab-comments" role="tab">
+  <div class="tabs-content" data-tabs-content="proposals_tabs">
+    <div class="tabs-panel is-active" id="tab-comments">
       <%= render "proposals/comments" %>
     </div>
 

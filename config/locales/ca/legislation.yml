@@ -1,0 +1,6 @@
+ca:
+  legislation:
+    processes:
+      index:
+        filters:
+          past: passats

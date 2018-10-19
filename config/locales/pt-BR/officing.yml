@@ -1,0 +1,68 @@
+pt-BR:
+  officing:
+    header:
+      title: Votações
+    dashboard:
+      index:
+        title: Presidir votação
+        info: Aqui você pode validar os documentos do usuário e guardar os resultados dos votos
+        no_shifts: Você não tem turnos como presidente hoje.
+    menu:
+      voters: Validar documento
+      total_recounts: Recontagem total e resultados
+    polls:
+      final:
+        title: Lista de votações finalizadas prontas para recontagem
+        no_polls: Você não tem autorização para a recontagem final em nenhuma votação ativa
+        select_poll: Selecionar votação
+        add_results: Adicionar resultados
+    results:
+      flash:
+        create: "Resultados salvos"
+        error_create: "Resultados NÃO foram salvos. Erro nas informações."
+        error_wrong_booth: "Cabine incorreta. Resultados NÃO foram salvos."
+      new:
+        title: "%{poll} - Adicionar resultados"
+        not_allowed: "Você tem autorização para introduzir resultados"
+        booth: "Urna"
+        date: "Data"
+        select_booth: "Selecione a urna"
+        ballots_white: "Cédulas completamente em branco"
+        ballots_null: "Cédulas inválidas"
+        ballots_total: "Total de cédulas"
+        submit: "Salvar"
+        results_list: "Seus resultados"
+        see_results: "Exibir resultados"
+      index:
+        no_results: "Nenhum resultado"
+        results: Resultados
+        table_answer: Resposta
+        table_votes: Votos
+        table_whites: "Cédulas completamente em branco"
+        table_nulls: "Cédulas inválidas"
+        table_total: "Total de cédulas"
+    residence:
+      flash:
+        create: "Documento verificado com o Censo"
+        not_allowed: "Você não tem turnos como presidente hoje"
+      new:
+        title: Validar documento
+        document_number: "Número do documento (incluindo letras)"
+        submit: Validar documento
+        error_verifying_census: "O Censo foi incapaz de verificar este documento."
+        form_errors: impediu a verificação deste documento
+        no_assignments: "Você não tem turnos como presidente hoje"
+    voters:
+      new:
+        title: Votações
+        table_poll: Votação
+        table_status: Status das votações
+        table_actions: Ações
+        not_to_vote: A pessoa decidiu não votar neste momento
+      show:
+        can_vote: Pode votar
+        error_already_voted: Já participou desta votação
+        submit: Confirmar voto
+        success: "Voto introduzido!"
+      can_vote:
+        submit_disable_with: "Aguarde, confirmando voto..."

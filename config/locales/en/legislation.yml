@@ -52,6 +52,9 @@ en:
         more_info: More information and context
       proposals:
         empty_proposals: There are no proposals
+        filters:
+          random: Random
+          winners: Selected
       debate:
         empty_questions: There aren't any questions
         participate: Participate in the debate
@@ -71,9 +74,6 @@ en:
         section_footer:
           title: Help about legislation processes
           description: Participate in the debates and processes prior to the approval of a ordinance or a municipal action. Your opinion will be considered by the City Council.
-          help_text_1: "In participatory processes, the City Council offers to its citizens the opportunity to participate in the drafting and modification of regulations, affecting the city and to be able to give their opinion on certain actions that it plans to carry out."
-          help_text_2: "People registered in %{org} can participate with contributions in the public consultation of new ordinances, regulations and guidelines, among others. Your comments are analyzed by the corresponding area and considered for the final drafting of the ordinances."
-          help_text_3: "The City Council also opens processes to receive contributions and opinions on municipal actions."
       phase_not_open:
         not_open: This phase is not open yet
       phase_empty:
@@ -85,7 +85,7 @@ en:
         key_dates: Key dates
         debate_dates: Debate
         draft_publication_date: Draft publication
-        allegations_dates: Allegations
+        allegations_dates: Comments
         result_publication_date: Final result publication
         proposals_dates: Proposals
     questions:
@@ -123,4 +123,3 @@ en:
       form:
         tags_label: "Categories"
       not_verified: "For vote proposals %{verify_account}."
-      closed: "This process has been closed and can not receive votes."

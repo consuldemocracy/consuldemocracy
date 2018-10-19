@@ -1,0 +1,15 @@
+<% globalize(locale) do %>
+  
+  <% i18n_content = I18nContent.where(key: content.key).first %>
+  <% if i18n_content.present? %>
+    <% i18n_content_translation = I18nContentTranslation.where(i18n_content_id: i18n_content.id, locale: locale).first.try(:value) %>
+  <% else %>
+    <% i18n_content_translation = false %>
+  <% end %>
+
+  <%= hidden_field_tag "contents[content_#{content.key}][id]", content.key %>
+  <%= text_area_tag "contents[content_#{content.key}]values[value_#{locale}]",
+                    i18n_content_translation ||
+                    t(content.key, locale: locale),
+                    merge_translatable_field_options({rows: 5}, locale) %>
+<% end %>

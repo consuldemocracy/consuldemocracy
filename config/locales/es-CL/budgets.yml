@@ -1,0 +1,158 @@
+es-CL:
+  budgets:
+    ballots:
+      show:
+        title: Mis votos
+        amount_spent: Coste total
+        remaining: "Te quedan <span>%{amount}</span> para invertir"
+        no_balloted_group_yet: "Todavía no has votado proyectos de este grupo, ¡vota!"
+        remove: Quitar voto
+        voted_html:
+          one: "Has votado <span>una</span> propuesta."
+          other: "Has votado <span>%{count}</span> propuestas."
+        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
+        zero: Todavía no has votado ninguna propuesta de inversión.
+      reasons_for_not_balloting:
+        not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+        not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+        organization: Las organizaciones no pueden votar.
+        not_selected: No se pueden votar propuestas inviables.
+        not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
+        no_ballots_allowed: El periodo de votación está cerrado.
+        change_ballot: cambiar tus votos
+    groups:
+      show:
+        title: Selecciona una opción
+        unfeasible_title: Propuestas inviables
+        unfeasible: Ver propuestas inviables
+        unselected_title: Propuestas no seleccionadas para la votación final
+        unselected: Ver las propuestas no seleccionadas para la votación final
+    phase:
+      drafting: Borrador (No visible para el público)
+      accepting: Presentación de proyectos
+      reviewing: Revisión interna de proyectos
+      selecting: Fase de apoyos
+      valuating: Evaluación de proyectos
+      publishing_prices: Publicación de precios
+      finished: Resultados
+    index:
+      title: Presupuestos participativos
+      section_header:
+        icon_alt: Icono de Presupuestos participativos
+        title: Presupuestos participativos
+        all_phases: Ver todas las fases
+      all_phases: Fases de los presupuestos participativos
+      map: Proyectos localizables geográficamente
+      investment_proyects: Ver lista completa de proyectos de inversión
+      unfeasible_investment_proyects: Ver lista de proyectos de inversión inviables
+      not_selected_investment_proyects: Ver lista de proyectos de inversión no seleccionados para la votación final
+      finished_budgets: Presupuestos participativos terminados
+      see_results: Ver resultados
+    investments:
+      form:
+        tag_category_label: "Categorías"
+        tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
+        tags_label: Etiquetas
+        tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+        map_location: "Ubicación en el mapa"
+        map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
+        map_remove_marker: "Eliminar el marcador"
+        location: "Información adicional de la ubicación"
+      index:
+        title: Presupuestos participativos
+        unfeasible: Propuestas de inversión no viables
+        by_heading: "Propuestas de inversión con ámbito: %{heading}"
+        search_form:
+          button: Buscar
+          placeholder: Buscar propuestas de inversión...
+          title: Buscar
+        search_results_html:
+          one: " que contiene <strong>'%{search_term}'</strong>"
+          other: " que contienen <strong>'%{search_term}'</strong>"
+        sidebar:
+          my_ballot: Mis votos
+          voted_html:
+            one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
+            other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+          voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
+          voted_info_link: cambiar tus votos
+          different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+          change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
+          check_ballot_link: "revisar mis votos"
+          zero: Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto.
+          verified_only: "Para crear una nueva propuesta de inversión %{verify}."
+          verify_account: "verifica tu cuenta"
+          create: "Crear proyecto de gasto"
+          not_logged_in: "Para crear una nueva propuesta de inversión debes %{sign_in} o %{sign_up}."
+          sign_in: "iniciar sesión"
+          sign_up: "registrarte"
+          by_feasibility: Por viabilidad
+          feasible: Ver los proyectos viables
+          unfeasible: Ver los proyectos inviables
+        orders:
+          random: Aleatorias
+          confidence_score: Mejor valoradas
+          price: Por coste
+      show:
+        author_deleted: Usuario eliminado
+        price_explanation: Informe de coste
+        unfeasibility_explanation: Informe de inviabilidad
+        code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
+        location_html: 'Ubicación: <strong>%{location}</strong>'
+        organization_name_html: 'Propuesto en nombre de: <strong>%{name}</strong>'
+        share: Compartir
+        title: Propuesta de inversión
+        supports: Apoyos
+        votes: Votos
+        price: Coste
+        comments_tab: Comentarios
+        milestones_tab: Seguimiento
+        no_milestones: No hay hitos definidos
+        milestone_publication_date: "Publicado el %{publication_date}"
+        author: Autor
+      wrong_price_format: Solo puede incluir caracteres numéricos
+      investment:
+        add: Votar
+        already_added: Ya has añadido esta propuesta de inversión
+        already_supported: Ya has apoyado este proyecto de inversión. ¡Compártelo!
+        support_title: Apoyar esta propuesta
+        supports:
+          zero: Sin apoyos
+          one: 1 apoyo
+          other: "%{count} apoyos"
+        give_support: Apoyar
+      header:
+        check_ballot: Revisar mis votos
+        different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+        change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
+        check_ballot_link: "revisar mis votos"
+        price: "Esta partida tiene un presupuesto de"
+    progress_bar:
+      assigned: "Has asignado: "
+      available: "Presupuesto disponible: "
+    show:
+      group: Grupo
+      phase: Fase actual
+      unfeasible_title: Propuestas inviables
+      unfeasible: Ver las propuestas inviables
+      unselected_title: Propuestas no seleccionadas para la votación final
+      unselected: Ver las propuestas no seleccionadas para la votación final
+      see_results: Ver resultados
+    results:
+      link: Resultados
+      page_title: "%{budget} - Resultados"
+      heading: "Resultados presupuestos participativos"
+      heading_selection_title: "Ámbito de actuación"
+      spending_proposal: Título
+      ballot_lines_count: Votos
+      hide_discarded_link: Ocultar descartadas
+      show_all_link: Mostrar todas
+      price: Precio total
+      amount_available: Presupuesto disponible
+      accepted: "Propuesta de inversión aceptada: "
+      discarded: "Propuesta de inversión descartada: "
+    phases:
+      errors:
+        dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"
+        prev_phase_dates_invalid: "La fecha de inicio debe ser posterior a la fecha de inicio de la anterior fase habilitada (%{phase_name})"
+        next_phase_dates_invalid: "La fecha de fin debe ser anterior a la fecha de fin de la siguiente fase habilitada (%{phase_name})"

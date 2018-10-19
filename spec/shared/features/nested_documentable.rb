@@ -128,7 +128,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).to have_css ".loading-bar.complete"
     end
 
-    scenario "Should update loading bar style after unvalid file upload", :js do
+    scenario "Should update loading bar style after invalid file upload", :js do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -149,7 +149,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect_document_has_cached_attachment(0, ".pdf")
     end
 
-    scenario "Should not update document cached_attachment field after unvalid file upload", :js do
+    scenario "Should not update document cached_attachment field after invalid file upload", :js do
       login_as user_to_login
       visit send(path, arguments)
 

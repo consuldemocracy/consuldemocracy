@@ -29,6 +29,15 @@
       </li>
     <% end %>
 
+    <% if feature?(:budgets) %>
+      <li <%= "class=is-active" if controller_name == "investments" %>>
+        <%= link_to moderation_budget_investments_path do %>
+          <span class="icon-budget"></span>
+          <%= t("moderation.menu.flagged_investments") %>
+        <% end %>
+      </li>
+    <% end %>
+
     <li <%= "class=is-active" if controller_name == "comments" %>>
       <%= link_to moderation_comments_path do %>
         <span class="icon-comments"></span>

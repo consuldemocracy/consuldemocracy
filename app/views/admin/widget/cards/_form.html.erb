@@ -1,14 +1,17 @@
-<%= form_for [:admin, @card] do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @card %>
+
+<%= translatable_form_for [:admin, @card] do |f| %>
+
   <div class="small-12 medium-6">
-    <%= f.text_field :label %>
+    <%= f.translatable_text_field :label %>
   </div>
 
-  <%= f.text_field :title %>
+  <%= f.translatable_text_field :title %>
 
-  <%= f.text_area :description, rows: 5 %>
+  <%= f.translatable_text_area :description, rows: 5 %>
 
   <div class="small-12 medium-6">
-    <%= f.text_field :link_text %>
+    <%= f.translatable_text_field :link_text %>
   </div>
 
   <div class="small-12 medium-6">

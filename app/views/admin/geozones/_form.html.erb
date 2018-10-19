@@ -2,28 +2,24 @@
 
   <%= render 'errors' %>
 
-  <div clas="row">
-    <div class="small-12 medium-6 large-4 column">
-      <%= f.label :name, t("admin.geozones.geozone.name") %>
-      <%= f.text_field :name, label: false %>
-    </div>
-    <div class="small-12 medium-6 large-4 column">
-      <%= f.label :html_map_coordinates, t("admin.geozones.geozone.coordinates") %>
-      <%= f.text_field :html_map_coordinates, label: false %>
-    </div>
-    <div class="small-12 medium-6 large-2 column">
-      <%= f.label :external_code, t("admin.geozones.geozone.external_code") %>
-      <%= f.text_field :external_code, label: false %>
-    </div>
-    <div class="small-12 medium-6 large-2 column">
-      <%= f.label :census_code, t("admin.geozones.geozone.census_code") %>
-      <%= f.text_field :census_code, label: false %>
-    </div>
+  <div class="small-12 medium-6 large-4 column">
+    <%= f.label :name, t("admin.geozones.geozone.name") %>
+    <%= f.text_field :name, label: false %>
+  </div>
+  <div class="small-12 medium-6 large-4 column">
+    <%= f.label :html_map_coordinates, t("admin.geozones.geozone.coordinates") %>
+    <%= f.text_field :html_map_coordinates, label: false %>
+  </div>
+  <div class="small-12 medium-6 large-2 column">
+    <%= f.label :external_code, t("admin.geozones.geozone.external_code") %>
+    <%= f.text_field :external_code, label: false %>
+  </div>
+  <div class="small-12 medium-6 large-2 column">
+    <%= f.label :census_code, t("admin.geozones.geozone.census_code") %>
+    <%= f.text_field :census_code, label: false %>
   </div>
 
-  <div class="row">
-    <div class="actions small-12 large-3 medium-3 column">
-      <%= f.submit(class: "button expanded", value: t("admin.geozones.edit.form.submit_button")) %>
-    </div>
+  <div class="small-12 large-3 medium-3 column end">
+    <%= f.submit(class: "button success expanded", value: t("admin.geozones.edit.form.submit_button")) %>
   </div>
 <% end %>

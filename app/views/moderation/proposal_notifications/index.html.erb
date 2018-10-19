@@ -9,57 +9,59 @@
 </div>
 
 <%= form_tag moderate_moderation_proposal_notifications_path(request.query_parameters), method: :put do %>
-  <p class="js-check">
+  <p class="float-left js-check">
     <%= t('shared.check') %>:
-    <%= link_to t('shared.check_all'), '#', data: {check_all: "proposal_notification_ids[]"} %>
+    <%= link_to t('shared.check_all'), '#', data: { check_all: "proposal_notification_ids[]" } %>
     |
-    <%= link_to t('shared.check_none'), '#', data: {check_none: "proposal_notification_ids[]"} %>
+    <%= link_to t('shared.check_none'), '#', data: { check_none: "proposal_notification_ids[]" } %>
   </p>
 
   <table class="clear">
-    <tr>
-      <th>
-        <%= t("moderation.proposal_notifications.index.headers.proposal_notification") %>
-      </th>
-      <th>
-       <%= t("moderation.proposal_notifications.index.headers.moderate") %>
-      </th>
-    </tr>
-    <% @proposal_notifications.each do |proposal_notification| %>
-      <tr id="proposal_notification_<%= proposal_notification.id %>">
-        <td>
-          <%= link_to proposal_notification.title, proposal_notification, target: "_blank" %>
-          <br>
-          <span class="date"><%= l proposal_notification.updated_at.to_date %></span>
-          <br>
-          <div class="moderation-description">
-            <%= proposal_notification.body %>
-          </div>
-        </td>
-        <td class="text-center">
-          <%= check_box_tag "proposal_notification_ids[]", proposal_notification.id, nil, id: "#{dom_id(proposal_notification)}_check" %>
-        </td>
+    <thead>
+      <tr>
+        <th><%= t("moderation.proposal_notifications.index.headers.proposal_notification") %></th>
+        <th><%= t("moderation.proposal_notifications.index.headers.moderate") %></th>
       </tr>
-    <% end %>
+    </thead>
+
+    <tbody>
+      <% @proposal_notifications.each do |proposal_notification| %>
+        <tr id="proposal_notification_<%= proposal_notification.id %>">
+          <td>
+            <%= link_to proposal_notification.title, proposal_notification, target: "_blank" %>
+            <br>
+            <span class="date"><%= l proposal_notification.updated_at.to_date %></span>
+            <br>
+            <div class="moderation-description">
+              <%= proposal_notification.body %>
+            </div>
+          </td>
+          <td class="text-center">
+            <%= check_box_tag "proposal_notification_ids[]",
+                              proposal_notification.id,
+                              nil,
+                              id: "#{dom_id(proposal_notification)}_check" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 
   <%= submit_tag t('moderation.proposal_notifications.index.block_authors'),
-    name: "block_authors",
-    class: "button hollow alert",
-    data: {confirm: t('moderation.proposal_notifications.index.confirm')}
-  %>
+                 name: "block_authors",
+                 class: "button hollow alert",
+                 data: { confirm: t('moderation.proposal_notifications.index.confirm') } %>
 
   <div class="float-right">
     <%= submit_tag t('moderation.proposal_notifications.index.hide_proposal_notifications'),
-      name: "hide_proposal_notifications",
-      class: "button hollow alert",
-      data: {confirm: t('moderation.proposal_notifications.index.confirm')}
-    %>
+                   name: "hide_proposal_notifications",
+                   class: "button hollow alert",
+                   data: { confirm: t('moderation.proposal_notifications.index.confirm') } %>
+
     <%= submit_tag t('moderation.proposal_notifications.index.ignore_flags'),
-      name: "ignore_flags",
-      class: "button hollow",
-      data: {confirm: t('moderation.proposal_notifications.index.confirm')}
-    %>
+                   name: "ignore_flags",
+                   class: "button hollow",
+                   data: { confirm: t('moderation.proposal_notifications.index.confirm') } %>
   </div>
 
   <%= paginate @proposal_notifications %>

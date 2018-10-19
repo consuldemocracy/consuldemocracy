@@ -7,6 +7,11 @@ feature 'Admin legislation draft versions' do
     login_as(admin.user)
   end
 
+  it_behaves_like "translatable",
+                  "legislation_draft_version",
+                  "edit_admin_legislation_process_draft_version_path",
+                  %w[title changelog]
+
   context "Feature flag" do
 
     scenario 'Disabled with a feature flag' do
@@ -53,11 +58,11 @@ feature 'Admin legislation draft versions' do
 
       click_link 'Create version'
 
-      fill_in 'legislation_draft_version_title', with: 'Version 3'
-      fill_in 'legislation_draft_version_changelog', with: 'Version 3 changes'
-      fill_in 'legislation_draft_version_body', with: 'Version 3 body'
+      fill_in 'legislation_draft_version_title_en', with: 'Version 3'
+      fill_in 'legislation_draft_version_changelog_en', with: 'Version 3 changes'
+      fill_in 'legislation_draft_version_body_en', with: 'Version 3 body'
 
-      within('.primary-buttons') do
+      within('.end') do
         click_button 'Create version'
       end
 
@@ -86,11 +91,11 @@ feature 'Admin legislation draft versions' do
 
       click_link 'Version 1'
 
-      fill_in 'legislation_draft_version_title', with: 'Version 1b'
+      fill_in 'legislation_draft_version_title_en', with: 'Version 1b'
 
       click_link 'Launch text editor'
 
-      fill_in 'legislation_draft_version_body', with: '# Version 1 body\r\n\r\nParagraph\r\n\r\n>Quote'
+      fill_in 'legislation_draft_version_body_en', with: '# Version 1 body\r\n\r\nParagraph\r\n\r\n>Quote'
 
       within('.fullscreen') do
         click_link 'Close text editor'
@@ -99,6 +104,33 @@ feature 'Admin legislation draft versions' do
       click_button 'Save changes'
 
       expect(page).to have_content 'Version 1b'
+    end
+  end
+
+  context "Special translation behaviour" do
+
+    let!(:draft_version) { create(:legislation_draft_version) }
+
+    scenario 'Add body translation through markup editor', :js do
+      edit_path = edit_admin_legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      visit edit_path
+
+      select "Français", from: "translation_locale"
+
+      click_link 'Launch text editor'
+
+      fill_in 'legislation_draft_version_body_fr', with: 'Texte en Français'
+
+      click_link 'Close text editor'
+      click_button "Save changes"
+
+      visit edit_path
+
+      click_link "Français"
+      click_link 'Launch text editor'
+
+      expect(page).to have_field('legislation_draft_version_body_fr', with: 'Texte en Français')
     end
   end
 end

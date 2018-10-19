@@ -1,4 +1,6 @@
-<%= form_for [:admin, @process, @question], url: url, html: {data: {watch_changes: true}} do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @question  %>
+
+<%= translatable_form_for [:admin, @process, @question], url: url, html: {data: {watch_changes: true}} do |f| %>
 
   <% if @question.errors.any? %>
     <div class="small-12 medium-9 column">
@@ -16,26 +18,28 @@
   <% end %>
 
   <div class="small-12 medium-9 column">
-    <%= f.label :title, t("admin.legislation.questions.form.title") %>
-    <%= f.text_area :title, rows: 5, label: false, placeholder: t("admin.legislation.questions.form.title_placeholder") %>
+    <%= f.translatable_text_area :title,
+                                 rows: 5,
+                                 placeholder: t("admin.legislation.questions.form.title_placeholder"),
+                                 label: t("admin.legislation.questions.form.title") %>
   </div>
 
   <div class="small-12 medium-9 column">
     <%= f.label :question_options, t("admin.legislation.questions.form.question_options") %>
   </div>
 
-  <div>
+  <div id="nested-question-options">
     <%= f.fields_for :question_options do |ff| %>
       <%= render 'question_option_fields', f: ff %>
     <% end %>
+
+    <div class="small-12 medium-9 column">
+      <%= link_to_add_association t("admin.legislation.questions.form.add_option"),
+                                  f, :question_options, class: "button hollow"  %>
+    </div>
   </div>
 
-  <div class="small-12 medium-9 column margin">
-    <%= link_to_add_association t("admin.legislation.questions.form.add_option"),
-                                f, :question_options, class: "button hollow medium" %>
-  </div>
-
-  <div class="small-12 medium-6 large-4 column end">
-    <%= f.submit(class: "button expanded", value: t("admin.legislation.questions.#{admin_submit_action(@question)}.submit_button")) %>
+  <div class="small-12 medium-6 large-3 clear column end margin-top">
+    <%= f.submit(class: "button success expanded", value: t("admin.legislation.questions.#{admin_submit_action(@question)}.submit_button")) %>
   </div>
 <% end %>

@@ -9,7 +9,6 @@
 // 07. Proposals successful
 // 08. Polls
 // 09. Polls results and stats
-// 10. Guides
 //
 
 // 01. Votes and supports
@@ -685,7 +684,8 @@
 }
 
 .budget-investments-list .budget-investment,
-.proposals-list .proposal {
+.proposals-list .proposal,
+.legislation-proposals .proposal {
 
   @include breakpoint(medium) {
 
@@ -883,6 +883,13 @@
     .against {
       margin-left: $line-height / 4;
     }
+  }
+}
+
+.legislation-proposals {
+
+  .votes {
+    min-height: $line-height * 8;
   }
 }
 
@@ -2085,96 +2092,5 @@
     font-size: rem-calc(60);
     font-weight: bold;
     line-height: rem-calc(60);
-  }
-}
-
-// 10. Guides
-// ----------------------
-
-.guides {
-
-  h2 {
-    margin: $line-height 0 $line-height * 2;
-  }
-
-  .guide-budget,
-  .guide-proposal {
-    border-radius: rem-calc(3);
-    margin: $line-height 0;
-    padding: $line-height;
-    position: relative;
-
-    .button {
-      color: $text;
-      font-weight: bold;
-    }
-
-    &::before {
-      border-radius: 100%;
-      color: #fff;
-      font-family: "icons" !important;
-      height: rem-calc(80);
-      left: 50%;
-      line-height: rem-calc(80);
-      margin-left: rem-calc(-40);
-      position: absolute;
-      text-align: center;
-      top: -40px;
-      width: rem-calc(80);
-      z-index: 99;
-    }
-  }
-
-  .guide-budget {
-    border: 1px solid $budget;
-
-    &::before {
-      background: $budget;
-      content: '\53';
-      font-size: rem-calc(40);
-    }
-
-    .button {
-      background: #f8f5f9;
-      border: 1px solid $budget;
-    }
-  }
-
-  .guide-proposal {
-    border: 1px solid $proposals;
-
-    &::before {
-      background: $proposals;
-      content: '\68';
-      font-size: rem-calc(40);
-    }
-
-    .button {
-      background: #fffaf4;
-      border: 1px solid $proposals;
-    }
-  }
-
-  ul {
-
-    @include breakpoint(medium) {
-      min-height: $line-height * 14;
-    }
-
-    li {
-      margin-bottom: $line-height;
-      padding-left: $line-height;
-      position: relative;
-
-      &::before {
-        color: #37af65;
-        content: '\56';
-        font-family: "icons" !important;
-        font-size: $small-font-size;
-        left: 0;
-        position: absolute;
-        top: 1px;
-      }
-    }
   }
 }

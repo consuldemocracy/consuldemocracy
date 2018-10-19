@@ -33,7 +33,7 @@
             <% if current_user %>
               <% if current_user.level_two_or_three_verified? %>
                 <%= link_to t("budgets.investments.index.sidebar.create"),
-                            new_budget_investment_guide,
+                            new_budget_investment_path(@budget),
                             class: "button margin-top expanded" %>
               <% else %>
                 <div class="callout warning margin-top">
@@ -183,11 +183,6 @@
         <strong><%= t("budgets.index.section_footer.title") %></strong>
       </p>
       <p><%= t("budgets.index.section_footer.description") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_1") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_2") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_3",
-                org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
-      <p><%= t("budgets.index.section_footer.help_text_4") %></p>
     </div>
   </div>
 </div>

@@ -29,6 +29,7 @@ en:
         budget_investment: "Investment project updated succesfully."
         topic: "Topic updated successfully."
         valuator_group: "Valuator group updated successfully"
+        translation: "Translation updated successfully"
       destroy:
         spending_proposal: "Spending proposal deleted succesfully."
         budget_investment: "Investment project deleted succesfully."

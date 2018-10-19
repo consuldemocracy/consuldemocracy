@@ -70,8 +70,7 @@
           <div class="padding text-center">
 
             <p>
-              <%= t("proposals.proposal.successful",
-                  voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+              <%= t("proposals.proposal.successful") %>
             </p>
           </div>
           <% if can? :create, Poll::Question %>

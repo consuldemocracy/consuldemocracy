@@ -1,4 +1,6 @@
-<%= form_for [:admin, @process, @draft_version], url: url, html: {data: {watch_changes: true}} do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @draft_version  %>
+
+<%= translatable_form_for [:admin, @process, @draft_version], url: url, html: {data: {watch_changes: true}} do |f| %>
 
   <% if @draft_version.errors.any? %>
     <div id="error_explanation" data-alert class="callout alert" data-closable>
@@ -13,80 +15,71 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="small-12 medium-4 column">
-      <%= f.label :title %>
-    </div>
-    <div class="small-12 medium-8 column">
-      <%= f.text_field :title, label: false, placeholder: t('admin.legislation.draft_versions.form.title_placeholder') %>
-    </div>
+  <div class="small-12 medium-9 column">
+    <%= f.translatable_text_field :title,
+                                  placeholder: t("admin.legislation.draft_versions.form.title_placeholder") %>
   </div>
 
-  <div class="row">
-    <div class="small-12 medium-4 column">
-      <%= f.label :changelog %>
-      <small><%= t('admin.legislation.draft_versions.form.use_markdown') %></small>
-    </div>
-    <div class="small-12 medium-8 column">
-      <%= f.text_area :changelog, label: false, rows: 5, placeholder: t('admin.legislation.draft_versions.form.changelog_placeholder') %>
-    </div>
+  <div class="small-12 medium-9 column">
+    <%= f.label :changelog %>
+    <span class="help-text"><%= t("admin.legislation.draft_versions.form.use_markdown") %></span>
+    <%= f.translatable_text_area :changelog,
+                                 label: false,
+                                 rows: 5,
+                                 placeholder: t("admin.legislation.draft_versions.form.changelog_placeholder") %>
   </div>
 
-  <div class="row">
-    <div class="small-12 medium-4 column">
-      <%= f.label :status %>
-    </div>
-    <div class="small-12 medium-8 column">
-      <% ::Legislation::DraftVersion::VALID_STATUSES.each do |status| %>
-        <%= f.radio_button :status, status, label: false %>
-        <%= f.label "status_#{status}", t("admin.legislation.draft_versions.statuses.#{status}") %>
-        <small><%= t("admin.legislation.draft_versions.form.hints.status.#{status}") %></small>
-        <br/>
+  <div class="small-12 medium-9 column">
+    <%= f.label :status %>
+    <% ::Legislation::DraftVersion::VALID_STATUSES.each do |status| %>
+      <%= f.radio_button :status, status, label: false %>
+      <%= f.label "status_#{status}", t("admin.legislation.draft_versions.statuses.#{status}") %>
+      <span class="help-text"><%= t("admin.legislation.draft_versions.form.hints.status.#{status}") %></span>
+      <br>
+    <% end %>
+  </div>
+
+  <div class="small-12 medium-9 column">
+    <%= f.label :final_version %>
+    <%= f.check_box :final_version, label: false %>
+    <span class="help-text"><%= t("admin.legislation.draft_versions.form.hints.final_version") %></span>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <%= f.label :body %>
+    <span class="help-text"><%= t("admin.legislation.draft_versions.form.use_markdown") %></span>
+  </div>
+
+  <div class="markdown-editor clear">
+    <div class="small-12 medium-8 column fullscreen-container">
+      <div class="markdown-editor-header truncate">
+        <%= t("admin.legislation.draft_versions.form.title_html",
+               draft_version_title: @draft_version.title,
+               process_title: @process.title ) %>
+      </div>
+
+      <div class="markdown-editor-buttons">
+        <%= f.submit(class: "button", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
+      </div>
+
+      <%= link_to "#", class: 'fullscreen-toggle' do %>
+        <span data-closed-text="<%= t("admin.legislation.draft_versions.form.launch_text_editor")%>"
+              data-open-text="<%= t("admin.legislation.draft_versions.form.close_text_editor")%>">
+          <strong><%= t("admin.legislation.draft_versions.form.launch_text_editor")%></strong>
+        </span>
       <% end %>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-4 column">
-      <%= f.label :final_version %>
+    <div class="small-12 medium-6 column markdown-area">
+      <%= f.translatable_text_area :body,
+                                   label: false,
+                                   placeholder: t("admin.legislation.draft_versions.form.body_placeholder") %>
     </div>
-    <div class="small-12 medium-8 column">
-      <%= f.check_box :final_version, label: false %>
-      <small><%= t("admin.legislation.draft_versions.form.hints.final_version") %></small>
+
+    <div id="markdown-preview" class="small-12 medium-6 column markdown-preview">
     </div>
   </div>
 
-  <div class="row">
-    <div class="small-12 medium-4 column">
-      <%= f.label :body %>
-      <small><%= t('admin.legislation.draft_versions.form.use_markdown') %></small>
-    </div>
-    <div class="markdown-editor">
-      <div class="small-12 medium-8 column fullscreen-container">
-        <div class="markdown-editor-header truncate"><%= t('admin.legislation.draft_versions.form.title_html', draft_version_title: @draft_version.title, process_title: @process.title ) %></div>
-
-        <div class="markdown-editor-buttons">
-          <%= f.submit(class: "button", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
-        </div>
-
-        <%= link_to "#", class: 'fullscreen-toggle' do %>
-          <span data-closed-text="<%= t("admin.legislation.draft_versions.form.launch_text_editor")%>"
-                data-open-text="<%= t("admin.legislation.draft_versions.form.close_text_editor")%>">
-            <strong><%= t("admin.legislation.draft_versions.form.launch_text_editor")%></strong>
-          </span>
-        <% end %>
-      </div>
-      <div class="small-12 medium-6 column markdown-area">
-        <%= f.text_area :body, label: false, placeholder: t('admin.legislation.draft_versions.form.body_placeholder') %>
-      </div>
-      <div id="markdown-preview" class="small-12 medium-6 column markdown-preview">
-      </div>
-    </div>
-  </div>
-
-  <div class="row margin-top primary-buttons">
-    <div class="actions small-12 medium-3 column legislation-process-save">
-      <%= f.submit(class: "button expanded", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
-    </div>
+  <div class="small-12 medium-3 column clear end margin-top">
+    <%= f.submit(class: "button success expanded", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
   </div>
 <% end %>

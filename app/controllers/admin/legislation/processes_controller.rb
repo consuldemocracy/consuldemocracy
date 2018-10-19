@@ -1,4 +1,6 @@
 class Admin::Legislation::ProcessesController < Admin::Legislation::BaseController
+  include Translatable
+
   has_filters %w{open next past all}, only: :index
 
   load_and_authorize_resource :process, class: "Legislation::Process"
@@ -61,6 +63,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :result_publication_enabled,
         :published,
         :custom_list,
+        *translation_params(Legislation::Process),
         documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
       )
     end
@@ -68,5 +71,9 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
     def set_tag_list
       @process.set_tag_list_on(:customs, process_params[:custom_list])
       @process.save
+    end
+
+    def resource
+      @process || Legislation::Process.find(params[:id])
     end
 end

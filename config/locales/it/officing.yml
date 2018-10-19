@@ -1,0 +1,23 @@
+it:
+  officing:
+    menu:
+      voters: Convalidare il documento
+    results:
+      flash:
+        create: "Risultati salvati"
+        error_create: "Risultati non salvati. Errore nei dati."
+        error_wrong_booth: "Seggio sbagliato. Risultati non salvati."
+      new:
+        select_booth: "Selezionare il seggio"
+      index:
+        no_results: "Nessun risultato"
+    residence:
+      flash:
+        create: "Documento verificato con l'Anagrafe"
+      new:
+        form_errors: non hanno consentito di verificare il documento
+    voters:
+      show:
+        can_vote: Puoi votare
+        error_already_voted: Hai già partecipato a questa votazione
+        success: "Voto inserito!"

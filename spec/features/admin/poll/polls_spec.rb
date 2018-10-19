@@ -7,6 +7,11 @@ feature 'Admin polls' do
     login_as(admin.user)
   end
 
+  it_behaves_like "translatable",
+                  "poll",
+                  "edit_admin_poll_path",
+                  %w[name summary description]
+
   scenario 'Index empty', :js do
     visit admin_root_path
 
@@ -55,11 +60,11 @@ feature 'Admin polls' do
     start_date = 1.week.from_now
     end_date = 2.weeks.from_now
 
-    fill_in "poll_name", with: "Upcoming poll"
+    fill_in "poll_name_en", with: "Upcoming poll"
     fill_in 'poll_starts_at', with: start_date.strftime("%d/%m/%Y")
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
-    fill_in 'poll_summary', with: "Upcoming poll's summary. This poll..."
-    fill_in 'poll_description', with: "Upcomming poll's description. This poll..."
+    fill_in 'poll_summary_en', with: "Upcoming poll's summary. This poll..."
+    fill_in 'poll_description_en', with: "Upcomming poll's description. This poll..."
 
     expect(page).not_to have_css("#poll_results_enabled")
     expect(page).not_to have_css("#poll_stats_enabled")
@@ -83,7 +88,7 @@ feature 'Admin polls' do
 
     expect(page).to have_css("img[alt='#{poll.image.title}']")
 
-    fill_in "poll_name", with: "Next Poll"
+    fill_in "poll_name_en", with: "Next Poll"
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
 
     click_button "Update poll"

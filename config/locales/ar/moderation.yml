@@ -1,0 +1,41 @@
+ar:
+  moderation:
+    comments:
+      index:
+        confirm: هل أنت متأكد؟
+        filter: فرز
+        filters:
+          all: الكل
+          pending_flag_review: معلق
+        hide_comments: إخفاء التعليقات
+        orders:
+          newest: الأحدث
+        title: التعليقات
+    debates:
+      index:
+        confirm: هل أنت متأكد؟
+        filter: فرز
+        filters:
+          all: الكل
+          pending_flag_review: معلق
+        orders:
+          created_at: الأحدث
+    menu:
+      flagged_comments: التعليقات
+      users: حظر المستخدمين
+    proposals:
+      index:
+        block_authors: حظر المؤلفين
+        confirm: هل أنت متأكد؟
+        filter: فرز
+        filters:
+          all: الكل
+        order: ترتيب حسب
+    users:
+      index:
+        hidden: محظور
+        hide: حظر
+        search: بحث
+        search_placeholder: البريد الإلكتروني أو اسم المستخدم
+        title: حظر المستخدمين
+      notice_hide: تم حظر المستخدم و إخفاء جميع المناقشات والتعليقات الخاصة به.

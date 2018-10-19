@@ -15,6 +15,13 @@ namespace :admin do
     end
   end
 
+  resources :hidden_budget_investments, only: :index do
+    member do
+      put :restore
+      put :confirm_hide
+    end
+  end
+
   resources :debates, only: :index do
     member do
       put :restore
@@ -78,6 +85,7 @@ namespace :admin do
   end
 
   resources :tags, only: [:index, :create, :update, :destroy]
+
   resources :officials, only: [:index, :edit, :update, :destroy] do
     get :search, on: :collection
   end
@@ -93,6 +101,7 @@ namespace :admin do
     get :search, on: :collection
     get :summary, on: :collection
   end
+
   resources :valuator_groups
 
   resources :managers, only: [:index, :create, :destroy] do
@@ -165,6 +174,13 @@ namespace :admin do
     end
   end
 
+  resources :system_emails, only: [:index] do
+    get :view
+    get :preview_pending
+    put :moderate_pending
+    put :send_pending
+  end
+
   resources :emails_download, only: :index do
     get :generate_csv, on: :collection
   end
@@ -178,7 +194,9 @@ namespace :admin do
   namespace :legislation do
     resources :processes do
       resources :questions
-      resources :proposals
+      resources :proposals do
+        member { patch :toggle_selection }
+      end
       resources :draft_versions
     end
   end
@@ -193,6 +211,9 @@ namespace :admin do
     resources :pages, except: [:show]
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
+    resources :information_texts, only: [:index] do
+      post :update, on: :collection
+    end
   end
 
   resource :homepage, controller: :homepage, only: [:show]

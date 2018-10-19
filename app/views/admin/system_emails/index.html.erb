@@ -1,0 +1,44 @@
+<h2 class="inline-block"><%= t("admin.menu.system_emails") %></h2>
+
+<table id="system_emails">
+  <thead>
+    <tr>
+      <th><%= t("admin.shared.title") %></th>
+      <th><%= t("admin.shared.description") %></th>
+      <th class="small-7"><%= t("admin.shared.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @system_emails.each do |system_email_title, system_email_actions| %>
+    <tr id="<%= system_email_title %>" class="system_email">
+      <td>
+        <%= t("admin.system_emails.#{system_email_title}.title") %>
+      </td>
+      <td>
+        <%= t("admin.system_emails.#{system_email_title}.description") %>
+      </td>
+      <td>
+        <% if system_email_actions.include?('view') %>
+          <div class="small-4 column">
+            <%= link_to t("admin.shared.view"), admin_system_email_view_path(system_email_title),
+                                                class: "button hollow expanded" %>
+          </div>
+        <% end %>
+        <% if system_email_actions.include?('preview_pending') %>
+          <div class="small-4 column">
+            <%= link_to t("admin.system_emails.preview_pending.action"),
+                        admin_system_email_preview_pending_path(system_email_title),
+                        class: "button expanded" %>
+          </div>
+        <% end %>
+        <div class="small-4 column">
+          <%= link_to t("admin.system_emails.preview_pending.send_pending"),
+                      admin_system_email_send_pending_path(system_email_title),
+                      class: "button success expanded",
+                      method: :put %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

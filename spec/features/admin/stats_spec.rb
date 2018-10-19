@@ -131,7 +131,7 @@ feature 'Stats' do
 
       expect(page).to have_css(".proposal_notification", count: 3)
 
-      ProposalNotification.all.each do |proposal_notification|
+      ProposalNotification.find_each do |proposal_notification|
         expect(page).to have_content proposal_notification.title
         expect(page).to have_content proposal_notification.body
       end

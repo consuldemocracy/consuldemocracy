@@ -1,66 +1,71 @@
 en:
   settings:
     comments_body_max_length: "Comments body max length"
+    comments_body_max_length_description: "In number of characters"
     official_level_1_name: "Level 1 public official"
+    official_level_1_name_description: "Tag that will appear on users marked as Level 1 official position"
     official_level_2_name: "Level 2 public official"
+    official_level_2_name_description: "Tag that will appear on users marked as Level 2 official position"
     official_level_3_name: "Level 3 public official"
+    official_level_3_name_description: "Tag that will appear on users marked as Level 3 official position"
     official_level_4_name: "Level 4 public official"
+    official_level_4_name_description: "Tag that will appear on users marked as Level 4 official position"
     official_level_5_name: "Level 5 public official"
+    official_level_5_name_description: "Tag that will appear on users marked as Level 5 official position"
     max_ratio_anon_votes_on_debates: "Maximum ratio of anonymous votes per Debate"
+    max_ratio_anon_votes_on_debates_description: "Anonymous votes are by registered users with an unverified account"
     max_votes_for_proposal_edit: "Number of votes from which a Proposal can no longer be edited"
+    max_votes_for_proposal_edit_description: "From this number of supports the author of a Proposal can no longer edit it"
     max_votes_for_debate_edit: "Number of votes from which a Debate can no longer be edited"
+    max_votes_for_debate_edit_description: "From this number of votes the author of a Debate can no longer edit it"
     proposal_code_prefix: "Prefix for Proposal codes"
+    proposal_code_prefix_description: "This prefix will appear in the Proposals before the creation date and its ID"
     votes_for_proposal_success: "Number of votes necessary for approval of a Proposal"
+    votes_for_proposal_success_description: "When a proposal reaches this number of supports it will no longer be able to receive more supports and is considered successful"
     months_to_archive_proposals: "Months to archive Proposals"
+    months_to_archive_proposals_description: After this number of months the Proposals will be archived and will no longer be able to receive supports"
     email_domain_for_officials: "Email domain for public officials"
+    email_domain_for_officials_description: "All users registered with this domain will have their account verified at registration"
     per_page_code_head: "Code to be included on every page (<head>)"
+    per_page_code_head_description: "This code will appear inside the <head> label. Useful for entering custom scripts, analitycs..."
     per_page_code_body: "Code to be included on every page (<body>)"
+    per_page_code_body_description: "This code will appear inside the <body> label. Useful for entering custom scripts, analitycs..."
     twitter_handle: "Twitter handle"
+    twitter_handle_description: "If filled in it will appear in the footer"
     twitter_hashtag: "Twitter hashtag"
+    twitter_hashtag_description: "Hashtag that will appear when sharing content on Twitter"
     facebook_handle: "Facebook handle"
+    facebook_handle_description: "If filled in it will appear in the footer"
     youtube_handle: "Youtube handle"
+    youtube_handle_description: "If filled in it will appear in the footer"
     telegram_handle: "Telegram handle"
+    telegram_handle_description: "If filled in it will appear in the footer"
     instagram_handle: "Instagram handle"
-    blog_url: "Blog URL"
-    transparency_url: "Transparency URL"
-    opendata_url: "Open Data URL"
+    instagram_handle_description: "If filled in it will appear in the footer"
     url: "Main URL"
+    url_description: "Main URL of your website"
     org_name: "Organization"
+    org_name_description: "Name of your organization"
     place_name: "Place"
-    feature:
-      budgets: Participatory budgeting
-      twitter_login: Twitter login
-      facebook_login: Facebook login
-      google_login: Google login
-      proposals: Proposals
-      debates: Debates
-      polls: Polls
-      signature_sheets: Signature sheets
-      spending_proposals: Investment projects
-      spending_proposal_features:
-        voting_allowed: Voting on investment projects
-      legislation: Legislation
-      user:
-        recommendations: Recommendations
-        skip_verification: Skip user verification
-        recommendations_on_debates: Recommendations on debates
-        recommendations_on_proposals: Recommendations on proposals
-      community: Community on proposals and investments
-      map: Proposals and budget investments geolocation
-      allow_images: Allow upload and show images
-      allow_attached_documents: Allow upload and show of attached documents
-      guides: Guides to create proposals or investment projects
-      public_stats: Public stats
-    related_content_score_threshold: Related content score threshold
-    map_latitude: Latitude
-    map_longitude: Longitude
-    map_zoom: Zoom
-    mailer_from_name: Origin email name
-    mailer_from_address: Origin email address
+    place_name_description: "Name of your city"
+    related_content_score_threshold: "Related content score threshold"
+    related_content_score_threshold_description: "Hides content that users mark as unrelated"
+    map_latitude: "Latitude"
+    map_latitude_description: "Latitude to show the map position"
+    map_longitude: "Longitude"
+    map_longitude_description: "Longitude to show the position of the map"
+    map_zoom: "Zoom"
+    map_zoom_description: "Zoom to show the map position"
+    mailer_from_name: "Sender email name"
+    mailer_from_name_description: "This name will appear in emails sent from the application"
+    mailer_from_address: "Sender email address"
+    mailer_from_address_description: "This email address will appear in emails sent from the application"
     meta_title: "Site title (SEO)"
+    meta_title_description: "Title for the site <title>, used to improve SEO"
     meta_description: "Site description (SEO)"
+    meta_description_description: 'Site description <meta name="description">, used to improve SEO'
     meta_keywords: "Keywords (SEO)"
-    verification_offices_url: Verification offices URL
+    meta_keywords_description: 'Keywords <meta name="keywords">, used to improve SEO'
     min_age_to_participate: Minimum age needed to participate
     proposal_improvement_path: Proposal improvement info internal link
     proposals:
@@ -80,3 +85,57 @@ en:
       poster_short_title_description: Short description of the poster feature. Allows users to download a poster on PDF format to promote their proposal
       poster_description: Poster description
       poster_description_description: Detailed description of the poster feature
+    min_age_to_participate_description: "Users over this age can participate in all processes"
+    analytics_url: "Analytics URL"
+    blog_url: "Blog URL"
+    transparency_url: "Transparency URL"
+    opendata_url: "Open Data URL"
+    verification_offices_url: Verification offices URL
+    proposal_improvement_path: Proposal improvement info internal link
+    feature:
+      budgets: "Participatory budgeting"
+      budgets_description: "With participatory budgets, citizens decide which projects presented by their neighbours will receive a part of the municipal budget"
+      twitter_login: "Twitter login"
+      twitter_login_description: "Allow users to sign up with their Twitter account"
+      facebook_login: "Facebook login"
+      facebook_login_description: "Allow users to sign up with their Facebook account"
+      google_login: "Google login"
+      google_login_description: "Allow users to sign up with their Google Account"
+      proposals: "Proposals"
+      proposals_description: "Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their city to be, after getting sufficient support and submitting to a citizens' vote"
+      debates: "Debates"
+      debates_description: "The citizens' debate space is aimed at anyone who can present issues that concern them and about which they want to share their views with others"
+      polls: "Polls"
+      polls_description:  "Citizens' polls are a participatory mechanism by which citizens with voting rights can make direct decisions"
+      signature_sheets: "Signature sheets"
+      signature_sheets_description: "It allows ading from the Administration panel signatures collected on-site to Proposals and investment projects of the Participative Budgets"
+      legislation: "Legislation"
+      legislation_description: "In participatory processes, citizens are offered the opportunity to participate in the drafting and modification of regulations that affect the city and to give their opinion on certain actions that are planned to be carried out"
+      spending_proposals: "Spending proposals"
+      spending_proposals_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
+      spending_proposal_features:
+        voting_allowed: Voting on investment projects - Preselection phase
+        voting_allowed_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
+      user:
+        recommendations: "Recommendations"
+        recommendations_description: "Shows users recommendations on the homepage based on the tags of the following items"
+        skip_verification: "Skip user verification"
+        skip_verification_description: "This will disable user verification and all registered users will be able to participate in all processes"
+        recommendations_on_debates: "Recommendations on debates"
+        recommendations_on_debates_description: "Shows users recommendations to users on the debates page based on the tags of the items followed"
+        recommendations_on_proposals: "Recommendations on proposals"
+        recommendations_on_proposals_description: "Displays recommendations to users on the proposals page based on the tags of the items followed"
+      community: "Community on proposals and investments"
+      community_description: "Enables the community section in the proposals and investment projects of the Participatory Budgets"
+      map: "Proposals and budget investments geolocation"
+      map_description: "Enables geolocation of proposals and investment projects"
+      allow_images: "Allow upload and show images"
+      allow_images_description: "Allows users to upload images when creating proposals and investment projects from Participatory Budgets"
+      allow_attached_documents: "Allow upload and show of attached documents"
+      allow_attached_documents_description: "Allows users to upload documents when creating proposals and investment projects from Participatory Budgets"
+      guides: "Guides to create proposals or investment projects"
+      guides_description: "Displays a guide to differences between proposals and investment projects if there is an active participatory budget"
+      public_stats: "Public stats"
+      public_stats_description: "Display public stats in the Administration panel"
+      help_page: "Help page"
+      help_page_description: "Displays a Help menu that contains a page with an info section about each enabled feature"

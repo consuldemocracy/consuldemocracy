@@ -1,4 +1,6 @@
-<%= form_for [:admin, @banner] do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @banner %>
+
+<%= translatable_form_for [:admin, @banner] do |f| %>
 
   <%= render 'errors' %>
 
@@ -27,9 +29,10 @@
 
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%= f.label :title, t("admin.banners.banner.title") %>
-      <%= f.text_field :title, placeholder: t("admin.banners.banner.title"), label: false,
-                        data: {js_banner_title: "js_banner_title"} %>
+      <%= f.translatable_text_field :title,
+                                    placeholder: t("admin.banners.banner.title"),
+                                    data: {js_banner_title: "js_banner_title"},
+                                    label: t("admin.banners.banner.title") %>
     </div>
 
     <div class="small-12 medium-6 column">
@@ -42,11 +45,10 @@
 
   <div class="row">
     <div class="small-12 column">
-      <%= f.label :description, t("admin.banners.banner.description") %>
-      <%= f.text_field :description,
-                        label: false,
-                        data: {js_banner_description: "js_banner_description"},
-                        placeholder: t("admin.banners.banner.description") %>
+      <%= f.translatable_text_field :description,
+                                    placeholder: t("admin.banners.banner.description"),
+                                    data: {js_banner_description: "js_banner_description"},
+                                    label: t("admin.banners.banner.description")  %>
     </div>
   </div>
 
