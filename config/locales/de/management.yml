@@ -103,6 +103,7 @@ de:
         unverified_user: Der Benutzer ist nicht verifiziert
       create: Eine Budgetinvestitionen erstellen
       filters:
+        heading: Konzept
         unfeasible: Undurchführbare Investition
       print:
         print_button: Drucken
