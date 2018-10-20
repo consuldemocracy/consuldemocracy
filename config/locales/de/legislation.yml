@@ -52,6 +52,9 @@ de:
         more_info: Mehr Information
       proposals:
         empty_proposals: Es gibt keine Vorschläge
+        filters:
+          random: Zufällig
+          winners: Ausgewählt
       debate:
         empty_questions: Es gibt keine Fragen
         participate: An Diskussion teilnehmen
@@ -82,6 +85,7 @@ de:
         key_dates: Die wichtigsten Termine
         debate_dates: Diskussion
         draft_publication_date: Veröffentlichungsentwurf
+        allegations_dates: Kommentare
         result_publication_date: Veröffentlichung Endergebnis
         proposals_dates: Vorschläge
     questions:
