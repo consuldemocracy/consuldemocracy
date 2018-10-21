@@ -4,3 +4,19 @@ ru:
       verification:
         residence: "Резиденция"
         sms: "СМС"
+    attributes:
+      verification:
+        residence:
+          document_type: "Тип документа"
+          document_number: "Номер документа (включая буквы)"
+          date_of_birth: "Дата рождения"
+          postal_code: "Почтовый индекс"
+        sms:
+          phone: "Телефон"
+          confirmation_code: "Код подтверждения"
+        email:
+          recipient: "Электронный адрес"
+      officing/residence:
+        document_type: "Тип документа"
+        document_number: "Номер документа (включая буквы)"
+        year_of_birth: "Год рождения"
