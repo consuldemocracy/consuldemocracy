@@ -6,3 +6,4 @@ ru:
         description_accepting: "Описание во время этапа приема"
         description_reviewing: "Описание во время этапа рассмотрения"
         description_selecting: "Описание во время этапа выбора"
+        description_valuating: "Описание во время этапа оценки"
