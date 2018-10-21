@@ -83,3 +83,30 @@ ru:
         external_url: "Ссылка на дополнительную документацию"
       signature_sheet:
         signable_type: "Подписываемый тип"
+        signable_id: "Подписываемый ID"
+        document_numbers: "Номера документов"
+      site_customization/page:
+        content: Содержание
+        created_at: Создано в
+        subtitle: Субтитр
+        slug: Слизень
+        status: Статус
+        title: Заглавие
+        updated_at: Обновлено на
+        more_info_flag: Показать на странице справки
+        print_content_flag: Кнопка печати содержимого
+        locale: Язык
+      site_customization/image:
+        name: Имя
+        image: Изображение
+      site_customization/content_block:
+        name: Имя
+        locale: место действия
+        body: Тело
+      legislation/process:
+        title: Заглавие процесса
+        summary: Резюме
+        description: Описание
+        additional_info: Дополнительная информация
+        start_date: Дата начала
+        end_date: Дата окончания
