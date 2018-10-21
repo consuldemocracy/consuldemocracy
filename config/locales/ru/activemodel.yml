@@ -1,1 +1,6 @@
 ru:
+  activemodel:
+    models:
+      verification:
+        residence: "Резиденция"
+        sms: "СМС"
