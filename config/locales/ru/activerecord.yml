@@ -145,3 +145,31 @@ ru:
         segment_recipient: Получатели
         subject: Тема
         from: От
+        body: Содержание электронной почты
+      widget/card:
+        label: Метка (опционально)
+        title: Заглавие
+        description: Описание
+        link_text: Ссылка текста
+        link_url: Ссылка URL
+      widget/feed:
+        limit: Количество предметов
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Этот пользователь уже имеет пароль"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "метки должны быть меньше или равны %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Вы достигли максимального количества личных сообщений в день"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Ширина изображения должна быть не менее %{required_min_width}px"
+              min_image_height: "Высота изображения должна быть не менее %{required_min_height}px"
