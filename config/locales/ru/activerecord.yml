@@ -1,1 +1,8 @@
 ru:
+  activerecord:
+    attributes:
+      budget:
+        name: "Имя"
+        description_accepting: "Описание во время этапа приема"
+        description_reviewing: "Описание во время этапа рассмотрения"
+        description_selecting: "Описание во время этапа выбора"
