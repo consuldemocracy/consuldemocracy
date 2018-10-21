@@ -194,3 +194,15 @@ ru:
           attributes:
             end_date:
               invalid_date_range: должно быть до или после даты начала
+            debate_end_date:
+              invalid_date_range: должно быть до или после даты начала дебатов
+            allegations_end_date:
+              invalid_date_range: должно быть до или после даты начала заявлений
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "метки должны быть меньше или равны %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "метки должны быть меньше или равны %{count}"
