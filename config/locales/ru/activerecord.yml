@@ -173,3 +173,24 @@ ru:
             attachment:
               min_image_width: "Ширина изображения должна быть не менее %{required_min_width}px"
               min_image_height: "Высота изображения должна быть не менее %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Сегмент получателей пользователя является недействительным"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Сегмент получателей пользователя является недействительным"
+        map_location:
+          attributes:
+            map:
+              invalid: Расположение на карте не может быть пустым. Поместите маркер или установите флажок, если геолокация не требуется
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Документ не в переписи"
+              has_voted: "Пользователь уже проголосовал"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: должно быть до или после даты начала
