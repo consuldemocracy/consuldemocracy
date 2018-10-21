@@ -61,3 +61,25 @@ ru:
         redeemable_code: "Код подтверждения полученный по электронной почте"
       organization:
         name: "Название организации"
+        responsible_name: "Лицо, ответственное за группу"
+      spending_proposal:
+        administrator_id: "Администратор"
+        association_name: "Название ассоциации"
+        description: "Описание"
+        external_url: "Ссылка на дополнительную документацию"
+        geozone_id: "Сфера деятельности"
+        title: "Заглавие"
+      poll:
+        name: "Имя"
+        starts_at: "Дата начала"
+        ends_at: "Дата закрытия"
+        geozone_restricted: "Ограничено геозоном"
+        summary: "Резюме"
+        description: "Описание"
+      poll/question:
+        title: "Вопрос"
+        summary: "Резюме"
+        description: "Описание"
+        external_url: "Ссылка на дополнительную документацию"
+      signature_sheet:
+        signable_type: "Подписываемый тип"
