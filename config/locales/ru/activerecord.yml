@@ -110,3 +110,9 @@ ru:
         additional_info: Дополнительная информация
         start_date: Дата начала
         end_date: Дата окончания
+        debate_start_date: Дата начала дебатов
+        debate_end_date: Дата окончания дебатов
+        draft_publication_date: Дата публикации проекта
+        allegations_start_date: Дата начала заявлений
+        allegations_end_date: Дата окончания заявлений
+        result_publication_date: Дата публикации окончательного результата
