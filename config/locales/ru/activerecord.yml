@@ -116,3 +116,32 @@ ru:
         allegations_start_date: Дата начала заявлений
         allegations_end_date: Дата окончания заявлений
         result_publication_date: Дата публикации окончательного результата
+      legislation/draft_version:
+        title: Заглавие версии
+        body: Текст
+        changelog: Изменения
+        status: Статус
+        final_version: Окончательная версия
+      legislation/question:
+        title: Заглавие
+        question_options: Опции
+      legislation/question_option:
+        value: Значение
+      legislation/annotation:
+        text: Отзыв
+      document:
+        title: Заглавие
+        attachment: Прикрепление
+      image:
+        title: Заглавие
+        attachment: Прикрепление
+      poll/question/answer:
+        title: Ответ
+        description: Описание
+      poll/question/answer/video:
+        title: Заглавие
+        url: Внешнее видео
+      newsletter:
+        segment_recipient: Получатели
+        subject: Тема
+        from: От
