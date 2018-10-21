@@ -30,3 +30,34 @@ ru:
       budget/investment/status:
         name: "Имя"
         description: "Описание (опционально)"
+      budget/heading:
+        name: "Название заголовка"
+        price: "Цена"
+        population: "Население"
+      comment:
+        body: "Отзыв"
+        user: "Пользователь"
+      debate:
+        author: "Автор"
+        description: "Мнение"
+        terms_of_service: "Условия предоставления услуг"
+        title: "Заглавие"
+      proposal:
+        author: "Автор"
+        title: "Заглавие"
+        question: "Вопрос"
+        description: "Описание"
+        terms_of_service: "Условия предоставления услуг"
+      user:
+        login: "Электронный адрес или имя пользователя"
+        email: "Электронный адрес"
+        username: "Имя пользователя"
+        password_confirmation: "Подтверждение пароля"
+        password: "Пароль"
+        current_password: "Текущий пароль"
+        phone_number: "Номер телефона"
+        official_position: "Официальная позиция"
+        official_level: "Официальный уровень"
+        redeemable_code: "Код подтверждения полученный по электронной почте"
+      organization:
+        name: "Название организации"
