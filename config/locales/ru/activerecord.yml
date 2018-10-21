@@ -206,3 +206,30 @@ ru:
           attributes:
             tag_list:
               less_than_or_equal_to: "метки должны быть меньше или равны %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Вы должны ждать не менее %{interval} дней между уведомлениями"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Не проверено переписью'
+              already_voted: 'Уже проголосовано это предложение'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "должны быть буквы, цифры, _ и -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Ширина должна быть %{required_width}px"
+              image_height: "Высота должна быть %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Вы не можете комментировать оценку'
+      messages:
+        record_invalid: "Ошибка проверки: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Невозможно удалить запись, поскольку существует зависимый %{record}"
+          has_many: "Невозможно удалить запись, поскольку существует зависимый %{record}"
