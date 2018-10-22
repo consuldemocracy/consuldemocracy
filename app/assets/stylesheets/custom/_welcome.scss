@@ -170,7 +170,10 @@ $budget-2018-yellow:   #fef384;
   }
 
   .jumbo {
-    background: #ededed;
+    background: #ededed image-url('welcome/background_header_mobile.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding-bottom: rem-calc(100);
 
     @include breakpoint(medium) {
       background: #ededed image-url('welcome/background_header.jpg');
