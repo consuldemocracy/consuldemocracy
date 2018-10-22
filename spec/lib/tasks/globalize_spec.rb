@@ -11,7 +11,6 @@ describe "Globalize tasks" do
     end
 
     let :run_rake_task do
-      Rake::Task["globalize:simulate_migrate_data"].reenable
       Rake::Task["globalize:migrate_data"].reenable
       Rake.application.invoke_task "globalize:migrate_data"
     end
@@ -134,14 +133,16 @@ describe "Globalize tasks" do
         end
       end
 
-      it "simulates the task and aborts without creating any translations" do
+      it "ignores invalid data and migrates valid data" do
         expect(valid_process).to be_valid
         expect(invalid_process).not_to be_valid
 
-        expect { run_rake_task }.to raise_exception("Simulation failed!")
+        run_rake_task
 
-        expect(Legislation::Process::Translation.count).to eq 0
+        expect(valid_process.translations.count).to eq 1
         expect(valid_process.reload.title).to eq "Title"
+
+        expect(invalid_process.translations.count).to eq 0
         expect(invalid_process.reload.title).to eq ""
       end
     end
