@@ -394,6 +394,7 @@ en:
       start_new: Create new proposal
     notice:
       retired: Proposal retired
+      voted: You have successfully voted this proposal
     proposal:
       created: "You've created a proposal!"
       share:

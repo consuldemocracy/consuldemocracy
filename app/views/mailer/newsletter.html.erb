@@ -1,5 +1,17 @@
 <td style="padding-bottom: 20px; padding-left: 10px;">
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;line-height: 24px;">
     <%= safe_html_with_links @newsletter.body.html_safe %>
+
+    <% @newsletter.proposals.each do |proposal| %>
+      <p>
+        <%= link_to proposal.title, 
+                  proposal_url(proposal, newsletter_token: @token) %>
+      </p>
+
+      <p>
+        <%= link_to "Apoyar esta propuesta", 
+                    vote_proposal_url(proposal, newsletter_token: @token) %>
+      </p>
+    <% end %>
   </p>
 </td>

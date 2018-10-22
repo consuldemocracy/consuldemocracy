@@ -54,9 +54,8 @@ class UserSegments
   end
 
   def self.beta_testers
-    testers = %w(aranacm@madrid.es
-                 alberto@decabeza.es
-                 voodoorai2000@gmail.com)
+    testers = %w(voodoorai2000@gmail.com
+                 javim@elretirao.net)
 
     User.where(email: testers).order('created_at ASC')
   end
