@@ -39,3 +39,11 @@ zh-CN:
         title: "投票"
         description: "每当提议取得1%的支持并进入投票，或者市政局提议问题给人们决定的时候，%{link} 部分就会被激活。"
         link: "投票"
+        feature_1: "要参与投票，您必须%{link} 并核实您的账户。"
+        feature_1_link: "在%{org_name} 里注册"
+      processes:
+        title: "进程"
+        description: "在%{link} 部分，公民参与起草和修改影响城市的法规，并可以对之前辩论中的市政政策发表意见。"
+        link: "进程"
+      faq:
+        title: "技术问题？"
