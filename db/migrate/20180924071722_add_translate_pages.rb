@@ -1,10 +1,14 @@
 class AddTranslatePages < ActiveRecord::Migration
   def self.up
-    SiteCustomization::Page.create_translation_table!({
-      title: :string,
-      subtitle: :string,
-      content: :text
-    })
+    SiteCustomization::Page.create_translation_table!(
+      {
+        title:    :string,
+        subtitle: :string,
+        content:  :text
+      },
+      { migrate_data: true }
+    )
+
     change_column :site_customization_pages, :title, :string, :null => true
   end
 
