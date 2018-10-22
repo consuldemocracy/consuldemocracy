@@ -33,8 +33,10 @@ namespace :globalize do
                      I18n.locale
                    end
 
-          if record.send(:"#{field}_#{locale}").blank?
-            record.send(:"#{field}_#{locale}=", record.untranslated_attributes[field.to_s])
+          translated_field = record.localized_attr_name_for(field, locale)
+
+          if record.send(translated_field).blank?
+            record.send(:"#{translated_field}=", record.untranslated_attributes[field.to_s])
           end
         end
 

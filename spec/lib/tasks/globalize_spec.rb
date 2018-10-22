@@ -146,5 +146,23 @@ describe "Globalize tasks" do
         expect(invalid_process.reload.title).to eq ""
       end
     end
+
+    context "locale with non-underscored name" do
+      before { I18n.locale = :"pt-BR" }
+
+      let!(:milestone) do
+        create(:budget_investment_milestone).tap do |milestone|
+          milestone.translations.delete_all
+          milestone.update_column(:title, "Português")
+          milestone.reload
+        end
+      end
+
+      it "runs the migration successfully" do
+        run_rake_task
+
+        expect(milestone.reload.title).to eq "Português"
+      end
+    end
   end
 end
