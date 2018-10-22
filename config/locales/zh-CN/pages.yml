@@ -26,3 +26,16 @@ zh-CN:
       proposals:
         title: "提议"
         description: "在此%{link} 部分，您可以向市政局提出希望可以被他们实行的提议。这些提议需要得到支持，如果它们得到足够的支持，将可以得到公众投票。在公民投票中被确认的提议将被市政局接受并实行。"
+        link: "公民提议"
+        image_alt: "支持提议的按钮"
+        figcaption_html: '用于“支持”提议的按钮'
+      budgets:
+        title: "参与性预算编制"
+        description: "%{link} 部分帮助人们直接决定如何使用市政预算的部分支出。"
+        link: "参与性预算"
+        image_alt: "参与性预算的不同阶段"
+        figcaption_html: '参与性预算的“支持”和“投票”阶段。'
+      polls:
+        title: "投票"
+        description: "每当提议取得1%的支持并进入投票，或者市政局提议问题给人们决定的时候，%{link} 部分就会被激活。"
+        link: "投票"
