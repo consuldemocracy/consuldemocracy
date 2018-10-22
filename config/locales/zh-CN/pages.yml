@@ -57,3 +57,38 @@ zh-CN:
       other:
         title: "其他感兴趣的资讯"
         how_to_use: "在您的城市中使用%{org_name}"
+      how_to_use:
+        text: |-
+          在您本地政府中使用它或者帮助我们改善它，它是免费的软件。
+          
+          此开放政府门户网站使用[CONSUL app](https://github.com/consul/consul 'consul github')，这是免费的软件，使用[licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' )。简单来说，就是任何人都可以自由使用此原代码，复制它，查看其细节，修改它，以及把他想要的修改重新发布到全球（允许其他人也可以这么做）。因为我们认为文化在发布后会更好，更丰富。
+          
+          如果您是程序员，您可以在[CONSUL app](https://github.com/consul/consul 'consul github')查看原代码并帮助我们改善它。
+      titles:
+        how_to_use: 在您本地政府中使用它
+    privacy:
+      title: 隐私政策
+      subtitle: 有关数据隐私的资讯
+    accessibility:
+      textsize:
+        browser_settings_table:
+          browser_header: 浏览器
+          action_header: 要采取的行动
+          rows:
+            - 
+              browser_column: 浏览器
+              action_column: 查看> 字体大小
+            - 
+              browser_column: Firefox
+              action_column: 查看 > 大小
+            - 
+              browser_column: Chrome
+              action_column: 设置（图标）>选项>高级>网页内容>字体大小
+            - 
+              browser_column: Safari
+              action_column: 查看>放大／缩小
+            - 
+              browser_column: Opera
+              action_column: 查看>比例
+        browser_shortcuts_table:
+          description: '另一种修改字体大小的方法是使用浏览器中定义的键盘快捷键，尤其是组合键：'
