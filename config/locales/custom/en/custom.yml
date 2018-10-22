@@ -341,9 +341,8 @@ en:
       start_proposal_question: Create proposal or question
   landings:
     signup:
-      title: Change your city with Decide Madrid
-      description: Decide Madrid is a website where you can make decisions to make Madrid more yours, better. Make your proposals.
-      decide: "In Madrid, you decide"
+      title: "Register and support proposals to improve Madrid"
+      description: "On the city council's citizen participation website you build Madrid. Register, propose and support proposals to reach 27,000 signatures."
     cambia_tu_ciudad:
       phrase_1: "Maya decided that Madrid needed charging points for electric cars"
       phrase_2: "Jana decided that people of Madrid needed sustainability awareness"

@@ -111,6 +111,45 @@ header,
   }
 }
 
+.banner {
+  position: relative;
+
+  @include breakpoint(medium down) {
+    text-align: center;
+  }
+
+  a {
+
+    &:hover {
+      color: $link !important;
+      text-decoration: none;
+
+      h2,
+      h3 {
+        color: $link !important;
+      }
+    }
+  }
+
+  h3 {
+    max-width: 90%;
+  }
+
+  &::after {
+    background: #ededed image-url('banner_oct_2018.gif');
+    content: '';
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+
+    @include breakpoint(medium) {
+      position: absolute;
+      right: 0;
+      top: 12px;
+    }
+  }
+}
+
 // Display tables correctly on mobile (admin)
 
 .table-for-mobile {
