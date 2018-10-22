@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
 
   def index
     if current_user
-      redirect_to :budgets
+      redirect_to :concurs_cartell_magdalena
     end
   end
 
