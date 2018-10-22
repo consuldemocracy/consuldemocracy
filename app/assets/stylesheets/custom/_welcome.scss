@@ -170,8 +170,12 @@ $budget-2018-yellow:   #fef384;
   }
 
   .jumbo {
-    background: #000 image-url('welcome/background_header.jpg');
-    background-size: cover;
+    background: #ededed;
+
+    @include breakpoint(medium) {
+      background: #ededed image-url('welcome/background_header.jpg');
+      background-size: cover;
+    }
 
     h1,
     span,
@@ -180,7 +184,7 @@ $budget-2018-yellow:   #fef384;
     }
 
     h1 {
-      color: #fff;
+      color: #1d4cd6;
       font-size: rem-calc(20);
       font-weight: 300;
       line-height: rem-calc(20);
@@ -193,7 +197,7 @@ $budget-2018-yellow:   #fef384;
     }
 
     .lead {
-      color: $budget-2018-yellow;
+      color: #00245e;
       font-size: rem-calc(30);
       font-weight: 700;
       line-height: rem-calc(30);
@@ -217,8 +221,8 @@ $budget-2018-yellow:   #fef384;
     }
 
     .button {
-      background: #fff;
-      color: #000;
+      background: #1d4cd6;
+      color: #fff;
     }
   }
 }

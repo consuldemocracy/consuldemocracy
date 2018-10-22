@@ -571,7 +571,7 @@ $geocraft: #006800;
 .landing-budgets {
 
   .auth-image {
-    background: #000 image-url('landings/bg_landing_cambia_tu_ciudad.jpg');
+    background: #000 image-url('landings/bg_landing.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: $line-height * 2;
@@ -581,7 +581,7 @@ $geocraft: #006800;
     }
 
     h1 {
-      border-bottom: 3px solid #fff;
+      border-bottom: 0;
 
       a {
         text-align: unset;

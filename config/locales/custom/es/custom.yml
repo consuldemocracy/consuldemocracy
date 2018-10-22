@@ -341,9 +341,8 @@ es:
       start_proposal_question: Crear propuesta o pregunta
   landings:
     signup:
-      title: Cambia tu ciudad con Decide Madrid
-      description: "Decide Madrid es una web donde puedes tomar decisiones para hacer Madrid más tuyo, mejor. Presenta tus propuestas."
-      decide: "En Madrid tú decides"
+      title: Regístrate y apoya propuestas para mejorar Madrid
+      description: "En la web de participación ciudadana del ayuntamiento tú construyes Madrid. Regístrate, propón y apoya propuestas para llegar a las 27.000 firmas."
     cambia_tu_ciudad:
       phrase_1: "Maya decidió que Madrid necesitaba puntos de carga para coches eléctricos"
       phrase_2: "Jana decidió que había que sensibilizar a los madrileños sobre sostenibilidad"
