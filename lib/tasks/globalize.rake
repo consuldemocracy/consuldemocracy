@@ -41,7 +41,7 @@ namespace :globalize do
         begin
           record.save!
         rescue ActiveRecord::RecordInvalid
-          logger.error "Failed to save #{model_class} with id #{record.id}"
+          logger.warn "Failed to save #{model_class} with id #{record.id}"
           @errored = true
         end
       end
@@ -68,17 +68,20 @@ namespace :globalize do
     end
 
     if errored?
-      logger.error "Simulation failed! Please check the errors and solve them before proceeding."
-      raise "Simulation failed!"
+      logger.warn "Some database records will not be migrated"
     else
       logger.info "Migrate data simulation ended successfully"
     end
   end
 
   desc "Migrates existing data to translation tables"
-  task migrate_data: :simulate_migrate_data do
+  task migrate_data: :environment do
     logger.info "Starting data migration"
     migrate_data
     logger.info "Finished data migration"
+
+    if errored?
+      logger.warn "Some database records couldn't be migrated; please check the log messages"
+    end
   end
 end
