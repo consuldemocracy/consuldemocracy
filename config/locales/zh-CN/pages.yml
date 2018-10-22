@@ -47,3 +47,13 @@ zh-CN:
         link: "进程"
       faq:
         title: "技术问题？"
+        description: "请阅读常见问题解答来解决您的问题。"
+        button: "查看常见问题解答"
+        page:
+          title: "常见问题解答"
+          description: "网站用户可以使用此页面来解决一般常见问题。"
+          faq_1_title: "问题1"
+          faq_1_description: "这个例子是描述问题一的。"
+      other:
+        title: "其他感兴趣的资讯"
+        how_to_use: "在您的城市中使用%{org_name}"
