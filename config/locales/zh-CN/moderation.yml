@@ -1,1 +1,37 @@
 zh-CN:
+  moderation:
+    comments:
+      index:
+        block_authors: 封锁作者
+        confirm: 您确定吗？
+        filter: 过滤器
+        filters:
+          all: 所有
+          pending_flag_review: 有待
+          with_ignored_flag: 标记为已查看
+        headers:
+          comment: 评论
+          moderate: 审核
+        hide_comments: 隐藏评论
+        ignore_flags: 标记为已查看
+        order: 排序
+        orders:
+          flags: 最多标记
+          newest: 最新
+        title: 评论
+    dashboard:
+      index:
+        title: 审核
+    debates:
+      index:
+        block_authors: 封锁作者
+        confirm: 您确定吗？
+        filter: 过滤器
+        filters:
+          all: 所有
+          pending_flag_review: 有待
+          with_ignored_flag: 标记为已查看
+        headers:
+          debate: 辩论
+          moderate: 审核
+        hide_debates: 隐藏辩论
