@@ -47,7 +47,7 @@ class Poll::Question < ActiveRecord::Base
       self.author = proposal.author
       self.author_visible_name = proposal.author.name
       self.proposal_id = proposal.id
-      send(:"title_#{Globalize.locale}=", proposal.title)
+      send(:"#{localized_attr_name_for(:title, Globalize.locale)}=", proposal.title)
     end
   end
 
