@@ -1,6 +1,7 @@
 resources :proposals do
   member do
     post :vote
+    get :vote
     post :vote_featured
     put :flag
     put :unflag

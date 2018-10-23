@@ -6,6 +6,7 @@ class ProposalsController < ApplicationController
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
+  before_action :login_user!, only: [:show, :vote]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
@@ -23,13 +24,17 @@ class ProposalsController < ApplicationController
   respond_to :html, :js
 
   def show
-    super
-    @notifications = @proposal.notifications.not_moderated
-    load_rank
-    @document = Document.new(documentable: @proposal)
-    @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
+    if params[:newsletter_token].present?
+      redirect_to @proposal
+    else
+      super
+      @notifications = @proposal.notifications.not_moderated
+      load_rank
+      @document = Document.new(documentable: @proposal)
+      @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
 
-    redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
+      redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
+    end
   end
 
   def create
@@ -54,7 +59,13 @@ class ProposalsController < ApplicationController
 
   def vote
     @proposal.register_vote(current_user, 'yes')
-    set_proposal_votes(@proposal)
+
+    if request.get?
+      redirect_to @proposal, notice: t('proposals.notice.voted')
+    else
+      set_proposal_votes(@proposal)
+    end
+
     load_rank
     log_event("proposal", 'support', @proposal.id, @proposal_rank, 6, @proposal_rank)
   end
@@ -185,6 +196,20 @@ class ProposalsController < ApplicationController
       if Setting['feature.user.recommendations_on_proposals'] && current_user.recommended_proposals
         @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
       end
+    end
+
+    def login_user!
+      if newsletter_vote? && newsletter_user.present?
+        sign_in(:user, newsletter_user)
+      end
+    end
+
+    def newsletter_vote?
+      request.get? && params[:newsletter_token].present?
+    end
+
+    def newsletter_user
+      User.where(newsletter_token: params[:newsletter_token]).first
     end
 
 end

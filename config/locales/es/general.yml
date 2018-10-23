@@ -391,6 +391,7 @@ es:
       start_new: Crear una propuesta
     notice:
       retired: Propuesta retirada
+      voted: Has apoyado esta propuesta
     proposal:
       created: "¡Has creado una propuesta!"
       share:
