@@ -76,7 +76,7 @@ zh-CN:
           action_header: 要采取的行动
           rows:
             - 
-              browser_column: 浏览器
+              browser_column: Explorer
               action_column: 查看> 字体大小
             - 
               browser_column: Firefox
