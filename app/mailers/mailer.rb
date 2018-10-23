@@ -130,7 +130,7 @@ class Mailer < ApplicationMailer
     end
   end
 
-  def newsletter(newsletter, recipient_email, token)
+  def newsletter(newsletter, recipient_email, token=nil)
     @newsletter = newsletter
     @email_to = recipient_email
     @token = token

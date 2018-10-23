@@ -155,21 +155,4 @@ describe Newsletter do
 
   end
 
-  context "voting with token" do
-
-    describe "#generate_user_token" do
-      it "returns a token if the email is valid"
-      it "returns nil if the email is invalid"
-    end
-
-    describe "#deliver" do
-      it "skips invalid tokens"
-    end
-
-    describe "#proposals" do
-      it "returns the 5 most voted proposals" do
-        #take into account only active proposals
-      end
-    end
-  end
 end
