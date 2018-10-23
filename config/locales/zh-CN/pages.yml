@@ -92,3 +92,22 @@ zh-CN:
               action_column: 查看>比例
         browser_shortcuts_table:
           description: '另一种修改字体大小的方法是使用浏览器中定义的键盘快捷键，尤其是组合键：'
+          rows:
+            - 
+              shortcut_column: CTRL 和 + (在MAC上用CMD 和 +)
+              description_column: 增加字体大小
+            - 
+              shortcut_column: CTRL 和 - (在MAC上用CMD 和 -)
+              description_column: 减少字体大小
+      compatibility:
+        title: 与标准和视觉设计兼容
+        description_html: '本网站的所有页面均符合<strong>辅助功能指南</strong>或者由属于W3C的<abbr title = "Web Accessibility Initiative" lang = "en">WAI </ abbr>工作组建立的无障碍设计的一般原则。'
+    titles:
+      accessibility: 无障碍功能
+      conditions: 使用条款
+      help: "什么是%{org}？－ 公民参与"
+      privacy: 隐私政策
+    verify:
+      code: 您在信中收到的代码
+      email: 电子邮件
+      info: '要核实您的账户，请输入您的访问数据：'
