@@ -111,3 +111,7 @@ zh-CN:
       code: 您在信中收到的代码
       email: 电子邮件
       info: '要核实您的账户，请输入您的访问数据：'
+      info_code: '现在请输入您在信里收到的代码：'
+      password: 密码
+      submit: 核实我的账户
+      title: 核实您的账户
