@@ -114,4 +114,4 @@ zh-CN:
         search: 搜索
         search_placeholder: 电子邮件或用户名
         title: 封锁用户
-      notice_hide: 用户已被封锁。所有这个用户的辩论和评论都已被隐藏。
+      notice_hide: 用户已被封锁。这个用户的所有辩论和评论都已被隐藏。
