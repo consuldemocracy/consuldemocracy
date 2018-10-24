@@ -22,7 +22,7 @@ class UserSegments
   end
 
   def self.last_newsletter
-    Newsletter.find(26)
+    Newsletter.find(28)
   end
 
   def self.pending_user_ids

@@ -219,7 +219,7 @@ describe UserSegments do
 
     describe "#pending_last_newsletter" do
       it "returns users that did not receive the last newsletter" do
-        newsletter = create(:newsletter, id: 26)
+        newsletter = create(:newsletter, id: 28)
         activity = create(:activity, user: user1, actionable: newsletter)
 
         expect(described_class.pending_last_newsletter.count).to eq(2)
@@ -230,7 +230,7 @@ describe UserSegments do
 
     describe "#sent_user_ids" do
       it "returns user_ids that have already received a newsletter" do
-        newsletter = create(:newsletter, id: 26)
+        newsletter = create(:newsletter, id: 28)
         create(:activity, user: user1, actionable: newsletter)
         create(:activity, user: user2, actionable: newsletter)
 
@@ -241,7 +241,7 @@ describe UserSegments do
       end
 
       it "does not return duplicate user_ids" do
-        newsletter = create(:newsletter, id: 26)
+        newsletter = create(:newsletter, id: 28)
         create(:activity, user: user1, actionable: newsletter)
         create(:activity, user: user1, actionable: newsletter)
 
