@@ -1,4 +1,5 @@
 class Newsletter < ActiveRecord::Base
+  has_many :activities, as: :actionable
 
   validates :subject, presence: true
   validates :segment_recipient, presence: true
