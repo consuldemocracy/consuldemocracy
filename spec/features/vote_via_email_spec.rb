@@ -87,4 +87,61 @@ feature 'Vote via email' do
     end
 
   end
+
+  context "Deleting token" do
+
+    let!(:user) { create(:user, :verified, newsletter_token: "123456") }
+    let(:proposal) { create(:proposal) }
+
+    scenario "Visiting show path" do
+      visit proposal_path(proposal, newsletter_token: "123456")
+
+      expect(page).to have_content(proposal.title)
+
+      user.reload
+      expect(user.newsletter_token_used_at).to be
+      expect(user.newsletter_token).to eq(nil)
+    end
+
+    scenario "Visiting vote path" do
+      visit vote_proposal_path(proposal, newsletter_token: "123456")
+
+      expect(page).to have_content "You have successfully voted this proposal"
+
+      user.reload
+      expect(user.newsletter_token_used_at).to be
+      expect(user.newsletter_token).to eq(nil)
+    end
+
+    scenario "Voting another proposal after going to show" do
+      visit proposal_path(proposal, newsletter_token: "123456")
+
+      expect(page).to have_content(proposal.title)
+
+      user.reload
+      expect(user.newsletter_token).to eq(nil)
+
+      visit vote_proposal_path(proposal, newsletter_token: "123456")
+
+      expect(page).to have_content "You have successfully voted this proposal"
+
+      within('.supports') do
+        expect(page).to have_content "1 support"
+        expect(page).to_not have_selector ".in-favor a"
+      end
+    end
+
+    scenario "Trying to use token again" do
+      visit proposal_path(proposal, newsletter_token: "123456")
+
+      expect(page).to have_content(proposal.title)
+
+      click_link "Sign out"
+
+      visit proposal_path(proposal, newsletter_token: "123456")
+      expect(page).to_not have_link "Sign out"
+      expect(page).to have_link "Sign in"
+    end
+
+  end
 end

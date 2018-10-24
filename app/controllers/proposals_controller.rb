@@ -201,6 +201,8 @@ class ProposalsController < ApplicationController
     def login_user!
       if newsletter_vote? && newsletter_user.present?
         sign_in(:user, newsletter_user)
+        newsletter_user.update(newsletter_token_used_at: Time.current)
+        newsletter_user.update(newsletter_token: nil)
       end
     end
 
