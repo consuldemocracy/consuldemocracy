@@ -18,7 +18,8 @@ class UserSegments
   end
 
   def self.pending_last_newsletter
-    all_users.where.not(id: sent_user_ids(Newsletter.last))
+    last_newsletter = Newsletter.find(26)
+    all_users.where.not(id: sent_user_ids(last_newsletter))
   end
 
   def self.sent_user_ids(newsletter)
