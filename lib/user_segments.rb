@@ -18,8 +18,19 @@ class UserSegments
   end
 
   def self.pending_last_newsletter
-    last_newsletter = Newsletter.find(26)
-    all_users.where.not(id: sent_user_ids(last_newsletter))
+    User.where(id: pending_user_ids)
+  end
+
+  def self.last_newsletter
+    Newsletter.find(26)
+  end
+
+  def self.pending_user_ids
+    all_user_ids - sent_user_ids(last_newsletter)
+  end
+
+  def self.all_user_ids
+    all_users.pluck(:id)
   end
 
   def self.sent_user_ids(newsletter)
