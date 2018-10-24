@@ -2,6 +2,8 @@ class PollsController < ApplicationController
   include PollsHelper
 
   load_and_authorize_resource
+  skip_load_resource only: [:results, :stats]
+  skip_authorize_resource only: [:results, :stats]
 
   has_filters %w{current expired incoming}
   has_orders %w{most_voted newest oldest}, only: [:show, :current_cartell]
@@ -29,9 +31,10 @@ class PollsController < ApplicationController
   end
 
   def stats
-    @poll ||= Poll.current_cartell
+    @poll = params[:id].present? ? Poll.find(params[:id]) : Poll.current_cartell
     @stats = calcula_resultados_cartel(@poll)
     @all_ages_count = @stats[:age_groups].values.sum.to_f
+    authorize! :stats, @poll
   end
 
   def results
@@ -48,6 +51,7 @@ class PollsController < ApplicationController
         }
     end
     @results = @results.sort { |a, b| b[:votos] <=> a[:votos] }
+    authorize! :results, @poll
   end
 
   def current_cartell
