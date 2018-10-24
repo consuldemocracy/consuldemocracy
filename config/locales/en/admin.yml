@@ -624,6 +624,7 @@ en:
       winner_investment_authors: Authors of winner investments in the current budget
       not_supported_on_current_budget: Users that haven't supported investments on current budget
       invalid_recipients_segment: "Recipients user segment is invalid"
+      pending_last_newsletter: "Pending from last newsletter"
       arganzuela: Arganzuela
       barajas: Barajas
       carabanchel: Carabanchel

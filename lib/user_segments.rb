@@ -9,11 +9,21 @@ class UserSegments
        selected_investment_authors
        winner_investment_authors
        not_supported_on_current_budget
-       beta_testers) + geozones
+       beta_testers
+       pending_last_newsletter) + geozones
   end
 
   def self.all_users
     User.active
+  end
+
+  def self.pending_last_newsletter
+    last_newsletter = Newsletter.find(26)
+    all_users.where.not(id: sent_user_ids(last_newsletter))
+  end
+
+  def self.sent_user_ids(newsletter)
+    Activity.where(actionable: newsletter).pluck(:user_id).uniq
   end
 
   def self.administrators
