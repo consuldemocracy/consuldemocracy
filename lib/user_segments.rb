@@ -26,7 +26,7 @@ class UserSegments
   end
 
   def self.pending_user_ids
-    all_user_ids - sent_user_ids(last_newsletter)
+    all_user_ids - sent_user_ids(last_newsletter) - sent_user_ids(Newsletter.find(26))
   end
 
   def self.all_user_ids
