@@ -1,5 +1,13 @@
 zh-CN:
   date:
+    abbr_day_names:
+      - 星期天
+      - 周一
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
     abbr_month_names:
       - 
       - Jan
