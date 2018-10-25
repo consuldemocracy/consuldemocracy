@@ -1,1 +1,21 @@
 zh-CN:
+  seeds:
+    settings:
+      official_level_1_name: 正式职位 1
+      official_level_2_name: 正式职位 2
+      official_level_3_name: 正式职位 3
+      official_level_4_name: 正式职位 4
+      official_level_5_name: 正式职位 5
+    geozones:
+      north_district: 北区
+      west_district: 西区
+      east_district: 东区
+      central_district: 中区
+    organizations:
+      human_rights: 人权
+      neighborhood_association: 邻里协会
+    categories:
+      associations: 协会
+      culture: 文化
+      sports: 体育
+      social_rights: 社会权利
