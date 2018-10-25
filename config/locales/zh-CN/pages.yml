@@ -80,10 +80,13 @@ zh-CN:
           subitems:
             - 
               field: '文件名：'
-              description: 文件的名称
+              description: 此文件的名称
             - 
-              field: '文件的用途：'
+              field: '此文件的用途：'
+              description: 管理参与进程是为了控制参与其中的人员的资格，并对公民参与进程产生的结果只进行数据和统计重新计票。
             - 
+              field: '负责此文件的机构：'
+              description: 负责此文件的机构
         - 
         - 
     accessibility:
