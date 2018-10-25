@@ -93,6 +93,15 @@ zh-CN:
           text: 作为一般原则，本网站不会分享或者披露所获得的资讯，除非是得到用户的授权，或者被司法机关，检察办公室，或者司法警察要求提供资讯，或者受12月13日第15/1999 组织法第11 条关于个人数据保护的管制。
     accessibility:
       title: 无障碍功能
+      description: |-
+        网络无障碍功能指所有人都可以访问网络及其内容，以克服可能出现的残疾障碍（身体，智力或技术）或者是来自使用环境（技术或者环境）的障碍。
+        
+        当网站在设计时已考虑到无障碍功能，所有用户都可以在同等条件下访问内容，例如：
+      examples:
+        - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información。为图像提供替代文本，盲人或者视觉有障碍的用户可以使用特殊的阅读器来取得资讯。
+        - When videos have subtitles, users with hearing difficulties can fully understand them.
+        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
+        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
       textsize:
         browser_settings_table:
           browser_header: 浏览器
