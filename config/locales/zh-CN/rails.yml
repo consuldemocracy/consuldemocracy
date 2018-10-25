@@ -49,9 +49,9 @@ zh-CN:
       - 十一月
       - 十二月
     order:
-      - '：年'
-      - '：月'
-      - '：日'
+      - :year
+      - :month
+      - :day
   datetime:
     distance_in_words:
       about_x_hours:
@@ -160,7 +160,7 @@ zh-CN:
         format: "%n %u"
         units:
           byte:
-            other: 位元组
+            other: 字节
           gb: GB
           kb: KB
           mb: MB
