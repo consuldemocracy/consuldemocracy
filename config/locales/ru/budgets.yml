@@ -33,3 +33,12 @@ ru:
       selecting: Выборочные проекты
       valuating: Оцениваемые проекты
       publishing_prices: Цены публикации проектов
+      balloting: Проекты голосования
+      reviewing_ballots: Рассмотрение голосования
+      finished: Готовый бюджет
+    index:
+      title: Бюджеты для участия
+      empty_budgets: Нет бюджетов.
+      section_header:
+        icon_alt: Значок участия бюджетов
+        title: Бюджеты для участия
