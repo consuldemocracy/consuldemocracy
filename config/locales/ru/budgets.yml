@@ -128,3 +128,21 @@ ru:
         give_support: Поддержка
       header:
         check_ballot: Проверить вое голосование
+        different_heading_assigned_html: "У вас есть активные голоса в другом заголовке: %{heading_link}"
+        change_ballot: "Если вы передумаете, вы можете удалить свои голоса в %{check_ballot} и начать заново."
+        check_ballot_link: "проверить мое голосование"
+        price: "Этот заголовок имеет бюджет"
+    progress_bar:
+      assigned: "Вы назначили: "
+      available: "Доступный бюджет: "
+    show:
+      group: Группа
+      phase: Фактический этап
+      unfeasible_title: Неосуществимые инвестиции
+      unfeasible: Просмотр неосуществимых инвестиций
+      unselected_title: Инвестиции не отобранные для этапа голосования
+      unselected: Просмотр инвестиций не отобранные на этапе голосования
+      see_results: Просмотр результатов
+    results:
+      link: Результаты
+      page_title: "%{budget} - Результаты"
