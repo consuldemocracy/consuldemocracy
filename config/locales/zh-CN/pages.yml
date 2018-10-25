@@ -104,6 +104,30 @@ zh-CN:
         - 如果用户有行动障碍并难以使用鼠标，使用键盘的替代方法会有助于导航。
       keyboard_shortcuts:
         title: 键盘快捷键
+        navigation_table:
+          description: 为了能够无障碍浏览此网站，已经编写了一组快捷访问键，来进入网站组织的一般感兴趣的主要部分。
+          caption: 导航菜单的键盘快捷键
+          key_header: 键
+          page_header: 页
+          rows:
+            - 
+              key_column: 0
+              page_column: 主页
+            - 
+              key_column: 1
+              page_column: 辩论
+            - 
+              key_column: 2
+              page_column: 提议
+            - 
+              key_column: 3
+              page_column: 投票
+            - 
+              key_column: 4
+              page_column: 参与性预算
+            - 
+              key_column: 5
+              page_column: 立法进程
       textsize:
         browser_settings_table:
           browser_header: 浏览器
