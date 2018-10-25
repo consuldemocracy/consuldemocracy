@@ -15,5 +15,6 @@ zh-CN:
     max_ratio_anon_votes_on_debates: "每次辩论匿名投票的最大比率"
     max_ratio_anon_votes_on_debates_description: "匿名投票来自未经过账户核实的注册用户"
     max_votes_for_proposal_edit: "对无法再编辑提议的投票数"
-    max_votes_for_proposal_edit_description: "得到这个数量的支持，提议的作者无法再编辑它"
+    max_votes_for_proposal_edit_description: "得到这个数量的支持，提议的作者不能再编辑它"
     max_votes_for_debate_edit: "对无法再编辑辩论的投票数"
+    max_votes_for_debate_edit_description: "得到这个数量的投票，辩论的作者不能再编辑它"
