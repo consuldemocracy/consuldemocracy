@@ -32,3 +32,8 @@ zh-CN:
         translation: "翻译已成功更新"
       destroy:
         spending_proposal: "支出提议已成功删除。"
+        budget_investment: "投资项目已成功删除。"
+        error: "无法删除"
+        topic: "主题已成功删除。"
+        poll_question_answer_video: "回答视频已成功删除。"
+        valuator_group: "评估组已成功删除"
