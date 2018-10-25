@@ -38,6 +38,8 @@ feature 'Vote via email' do
     end
 
     scenario 'Verified user is logged in' do
+      @manuela.update(newsletter_token: "123456")
+
       login_as(@manuela)
       visit proposal_path(@proposal)
 
@@ -46,7 +48,7 @@ feature 'Vote via email' do
         expect(page).to have_selector ".in-favor a"
       end
 
-      visit vote_proposal_path(@proposal)
+      visit vote_proposal_path(@proposal, newsletter_token: "123456")
 
       expect(page).to have_content "You have successfully voted this proposal"
 
@@ -54,6 +56,8 @@ feature 'Vote via email' do
         expect(page).to have_content "1 support"
         expect(page).to_not have_selector ".in-favor a"
       end
+
+      expect_to_not_be_signed_in
     end
 
     scenario 'Verified user is not logged in' do
@@ -67,6 +71,8 @@ feature 'Vote via email' do
         expect(page).to have_content "1 support"
         expect(page).to_not have_selector ".in-favor a"
       end
+
+      expect_to_not_be_signed_in
     end
 
     scenario 'Verified user with invalid token' do
@@ -83,64 +89,32 @@ feature 'Vote via email' do
 
       visit vote_proposal_path(@proposal, newsletter_token: "123456")
 
-      expect(page).to have_content "You do not have permission to carry out the action 'vote' on proposal."
+      expect(page).to have_content "You must sign in or register to continue"
+      expect(page.current_path).to eq("/users/sign_in")
     end
 
   end
 
-  context "Deleting token" do
+  context "Show link with token" do
 
-    let!(:user) { create(:user, :verified, newsletter_token: "123456") }
-    let(:proposal) { create(:proposal) }
+    scenario "User is logged in" do
+      proposal = create(:proposal)
+      user = create(:user, :verified, newsletter_token: "123456")
 
-    scenario "Visiting show path" do
+      login_as(user)
+
       visit proposal_path(proposal, newsletter_token: "123456")
 
-      expect(page).to have_content(proposal.title)
-
-      user.reload
-      expect(user.newsletter_token_used_at).to be
-      expect(user.newsletter_token).to eq(nil)
+      expect_to_be_signed_in
     end
 
-    scenario "Visiting vote path" do
-      visit vote_proposal_path(proposal, newsletter_token: "123456")
-
-      expect(page).to have_content "You have successfully voted this proposal"
-
-      user.reload
-      expect(user.newsletter_token_used_at).to be
-      expect(user.newsletter_token).to eq(nil)
-    end
-
-    scenario "Voting another proposal after going to show" do
-      visit proposal_path(proposal, newsletter_token: "123456")
-
-      expect(page).to have_content(proposal.title)
-
-      user.reload
-      expect(user.newsletter_token).to eq(nil)
-
-      visit vote_proposal_path(proposal, newsletter_token: "123456")
-
-      expect(page).to have_content "You have successfully voted this proposal"
-
-      within('.supports') do
-        expect(page).to have_content "1 support"
-        expect(page).to_not have_selector ".in-favor a"
-      end
-    end
-
-    scenario "Trying to use token again" do
-      visit proposal_path(proposal, newsletter_token: "123456")
-
-      expect(page).to have_content(proposal.title)
-
-      click_link "Sign out"
+    scenario "User is not logged in" do
+      proposal = create(:proposal)
+      create(:user, :verified, newsletter_token: "123456")
 
       visit proposal_path(proposal, newsletter_token: "123456")
-      expect(page).to_not have_link "Sign out"
-      expect(page).to have_link "Sign in"
+
+      expect_to_not_be_signed_in
     end
 
   end

@@ -6,7 +6,7 @@ class ProposalsController < ApplicationController
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
-  before_action :login_user!, only: [:show, :vote]
+  before_action :login_user!, only: :vote
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
@@ -24,17 +24,13 @@ class ProposalsController < ApplicationController
   respond_to :html, :js
 
   def show
-    if params[:newsletter_token].present?
-      redirect_to @proposal
-    else
-      super
-      @notifications = @proposal.notifications.not_moderated
-      load_rank
-      @document = Document.new(documentable: @proposal)
-      @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
+    super
+    @notifications = @proposal.notifications.not_moderated
+    load_rank
+    @document = Document.new(documentable: @proposal)
+    @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
 
-      redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
-    end
+    redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
   end
 
   def create
@@ -60,7 +56,8 @@ class ProposalsController < ApplicationController
   def vote
     @proposal.register_vote(current_user, 'yes')
 
-    if request.get?
+    if newsletter_vote?
+      sign_out(:user)
       redirect_to @proposal, notice: t('proposals.notice.voted')
     else
       set_proposal_votes(@proposal)
@@ -199,10 +196,8 @@ class ProposalsController < ApplicationController
     end
 
     def login_user!
-      if newsletter_vote? && newsletter_user.present?
+      if newsletter_vote? && newsletter_user.present? && newsletter_user.level_two_or_three_verified?
         sign_in(:user, newsletter_user)
-        newsletter_user.update(newsletter_token_used_at: Time.current)
-        newsletter_user.update(newsletter_token: nil)
       end
     end
 
