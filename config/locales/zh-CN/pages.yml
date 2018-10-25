@@ -99,9 +99,11 @@ zh-CN:
         当网站在设计时已考虑到无障碍功能，所有用户都可以在同等条件下访问内容，例如：
       examples:
         - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información。为图像提供替代文本，盲人或者视觉有障碍的用户可以使用特殊的阅读器来取得资讯。
-        - When videos have subtitles, users with hearing difficulties can fully understand them.
-        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
-        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
+        - 当视频有字幕时，有听力障碍的用户可以完全理解它们。
+        - 如果内容是用简单的插图语言编写时，有学习障碍的用户也可以更好地理解它们。
+        - 如果用户有行动障碍并难以使用鼠标，使用键盘的替代方法会有助于导航。
+      keyboard_shortcuts:
+        title: 键盘快捷键
       textsize:
         browser_settings_table:
           browser_header: 浏览器
