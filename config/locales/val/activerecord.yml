@@ -76,6 +76,9 @@ val:
       legislation/process:
         one: "Proces"
         other: "Processos"
+      legislation/proposal:
+        one: "Proposta"
+        other: "Propostes"
       legislation/draft_versions:
         one: "Versió esborrany"
         other: "Versions esborrany"
