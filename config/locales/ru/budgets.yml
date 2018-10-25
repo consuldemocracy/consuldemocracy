@@ -93,3 +93,9 @@ ru:
           unfeasible: Невозможные проекты
         orders:
           random: случайный
+          confidence_score: наивысший рейтинг
+          price: по цене
+      show:
+        author_deleted: Пользователь удален
+        price_explanation: Описание цены
+        unfeasibility_explanation: Объяснение невозможности
