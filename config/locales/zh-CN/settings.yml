@@ -1,1 +1,4 @@
 zh-CN:
+  settings:
+    comments_body_max_length: "评论内容最大长度"
+    comments_body_max_length_description: "以字符数记"
