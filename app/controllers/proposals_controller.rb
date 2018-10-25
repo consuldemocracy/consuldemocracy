@@ -62,7 +62,7 @@ class ProposalsController < ApplicationController
   def newsletter_vote
     @proposal.register_vote(current_user, "yes")
 
-    sign_out(:user)
+    sign_out(:user) unless @signed_in_before_voting
     redirect_to @proposal, notice: t("proposals.notice.voted")
   end
 
@@ -195,7 +195,9 @@ class ProposalsController < ApplicationController
     end
 
     def login_user!
-      if newsletter_vote? && newsletter_user.present? && newsletter_user.level_two_or_three_verified?
+      if current_user.present?
+        @signed_in_before_voting = true
+      elsif newsletter_vote? && newsletter_user.present? && newsletter_user.level_two_or_three_verified?
         sign_in(:user, newsletter_user)
       end
     end

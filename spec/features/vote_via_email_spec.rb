@@ -29,7 +29,7 @@ feature 'Vote via email' do
         expect(page).to_not have_selector ".in-favor a"
       end
 
-      expect_to_not_be_signed_in
+      expect_to_be_signed_in
     end
 
     scenario 'Verified user is not logged in' do
