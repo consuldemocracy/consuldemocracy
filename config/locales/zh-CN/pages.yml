@@ -128,8 +128,31 @@ zh-CN:
             - 
               key_column: 5
               page_column: 立法进程
+        browser_table:
+          description: '根据操作系统和使用的浏览器，组合键将如下所示：'
+          caption: 组合键根据所使用的操作系统和浏览器
+          browser_header: 浏览器
+          key_header: 组合键
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + 快捷键，然后输入键
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + 快捷键
+            - 
+              browser_column: Chrome
+              key_column: ALT + 快捷键 (MAC使用CTRL + ALT + 快捷键)
+            - 
+              browser_column: Safari
+              key_column: ALT +快捷键 (MAC使用CMD + 快捷键)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + 快捷键
       textsize:
+        title: 字体大小
         browser_settings_table:
+          description: 本网站的可访问性设计允许用户选择适合自己的字体大小。根据使用的浏览器可以用不同的方式来执行此操作。
           browser_header: 浏览器
           action_header: 要采取的行动
           rows:
