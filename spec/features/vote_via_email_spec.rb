@@ -105,8 +105,12 @@ feature 'Vote via email' do
 
     scenario "Visiting vote path" do
       visit vote_proposal_path(proposal, newsletter_token: "123456")
+    scenario "User is logged in" do
+      proposal = create(:proposal)
+      user = create(:user, :verified, newsletter_token: "123456")
 
       expect(page).to have_content "You have successfully voted this proposal"
+      login_as(user)
 
       user.reload
       expect(user.newsletter_token_used_at).to be
@@ -129,6 +133,7 @@ feature 'Vote via email' do
         expect(page).to have_content "1 support"
         expect(page).to_not have_selector ".in-favor a"
       end
+      expect_to_be_signed_in
     end
 
     scenario "Trying to use token again" do
@@ -137,10 +142,15 @@ feature 'Vote via email' do
       expect(page).to have_content(proposal.title)
 
       click_link "Sign out"
+    scenario "User is not logged in" do
+      proposal = create(:proposal)
+      create(:user, :verified, newsletter_token: "123456")
 
       visit proposal_path(proposal, newsletter_token: "123456")
       expect(page).to_not have_link "Sign out"
       expect(page).to have_link "Sign in"
+
+      expect_to_not_be_signed_in
     end
 
   end
