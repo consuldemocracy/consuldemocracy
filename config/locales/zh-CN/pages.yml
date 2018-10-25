@@ -69,6 +69,14 @@ zh-CN:
     privacy:
       title: 隐私政策
       subtitle: 有关数据隐私的资讯
+      info_items:
+        - 
+          text: 通过开放政府门户网站提供的资讯进行导航是匿名的。
+        - 
+        - 
+        - 
+        - 
+        - 
     accessibility:
       textsize:
         browser_settings_table:
