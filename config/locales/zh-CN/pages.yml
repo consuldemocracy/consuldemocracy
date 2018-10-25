@@ -83,7 +83,7 @@ zh-CN:
               description: 此文件的名称
             - 
               field: '此文件的用途：'
-              description: 管理参与进程是为了控制参与其中的人员的资格，并对公民参与进程产生的结果只进行数据和统计重新计票。
+              description: 管理参与进程是为了控制参与其中的人员的资格，并对公民参与进程产生的结果只进行数字和统计重新计票。
             - 
               field: '负责此文件的机构：'
               description: 负责此文件的机构
@@ -98,7 +98,7 @@ zh-CN:
         
         当网站在设计时已考虑到无障碍功能，所有用户都可以在同等条件下访问内容，例如：
       examples:
-        - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información。为图像提供替代文本，盲人或者视觉有障碍的用户可以使用特殊的阅读器来取得资讯。
+        - 为图像提供替代文本，盲人或者视觉有障碍的用户可以使用特殊的阅读器来取得资讯。
         - 当视频有字幕时，有听力障碍的用户可以完全理解它们。
         - 如果内容是用简单的插图语言编写时，有学习障碍的用户也可以更好地理解它们。
         - 如果用户有行动障碍并难以使用鼠标，使用键盘的替代方法会有助于导航。
@@ -129,14 +129,14 @@ zh-CN:
               key_column: 5
               page_column: 立法进程
         browser_table:
-          description: '根据操作系统和使用的浏览器，组合键将如下所示：'
-          caption: 组合键根据所使用的操作系统和浏览器
+          description: '根据操作系统和使用的浏览器，组合键如下所示：'
+          caption: 组合键根据所使用的操作系统和浏览器而不同
           browser_header: 浏览器
           key_header: 组合键
           rows:
             - 
               browser_column: Explorer
-              key_column: ALT + 快捷键，然后输入键
+              key_column: ALT + 快捷键，然后回车键
             - 
               browser_column: Firefox
               key_column: ALT + CAPS + 快捷键
