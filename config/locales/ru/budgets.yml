@@ -1,1 +1,8 @@
 ru:
+  budgets:
+    ballots:
+      show:
+        title: Ваше голосование
+        amount_spent: Потраченная сумма
+        remaining: "У вас еще есть <span>%{amount}</span> чтобы инвестировать."
+        no_balloted_group_yet: "Вы еще не голосовали в этой группе, проголосуйте!"
