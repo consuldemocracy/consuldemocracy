@@ -211,47 +211,6 @@ describe UserSegments do
     end
   end
 
-  context "Pending users for last newsletter" do
-
-    let!(:user1) { create(:user) }
-    let!(:user2) { create(:user) }
-    let!(:user3) { create(:user) }
-
-    describe "#pending_last_newsletter" do
-      it "returns users that did not receive the last newsletter" do
-        newsletter = create(:newsletter, id: 28)
-        activity = create(:activity, user: user1, actionable: newsletter)
-
-        expect(described_class.pending_last_newsletter.count).to eq(2)
-        expect(described_class.pending_last_newsletter).to include(user2)
-        expect(described_class.pending_last_newsletter).to include(user3)
-      end
-    end
-
-    describe "#sent_user_ids" do
-      it "returns user_ids that have already received a newsletter" do
-        newsletter = create(:newsletter, id: 28)
-        create(:activity, user: user1, actionable: newsletter)
-        create(:activity, user: user2, actionable: newsletter)
-
-        expect(described_class.sent_user_ids(newsletter).count).to eq(2)
-        expect(described_class.sent_user_ids(newsletter)).to include(user1.id)
-        expect(described_class.sent_user_ids(newsletter)).to include(user2.id)
-        expect(described_class.sent_user_ids(newsletter)).to_not include(user3.id)
-      end
-
-      it "does not return duplicate user_ids" do
-        newsletter = create(:newsletter, id: 28)
-        create(:activity, user: user1, actionable: newsletter)
-        create(:activity, user: user1, actionable: newsletter)
-
-        expect(described_class.sent_user_ids(newsletter).count).to eq(1)
-        expect(described_class.sent_user_ids(newsletter)).to eq([user1.id])
-      end
-    end
-
-  end
-
   context "Geozones" do
 
     let!(:new_york) { create(:geozone, name: "New York") }

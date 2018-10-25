@@ -2,16 +2,4 @@
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;line-height: 24px;">
     <%= safe_html_with_links @newsletter.body.html_safe %>
   </p>
-
-  <% @newsletter.proposals.each do |proposal| %>
-    <p style="font-family: 'Open Sans',arial,sans-serif;font-size: 14px;line-height: 24px;
-              margin-bottom: 48px;">
-      <%= link_to proposal.title,
-                proposal_url(proposal, newsletter_token: @token),
-                style: "text-decoration: none" %>
-      <br>
-      <%= link_to "Apoyar esta propuesta",
-                  vote_proposal_url(proposal, newsletter_token: @token) %>
-    </p>
-  <% end %>
 </td>

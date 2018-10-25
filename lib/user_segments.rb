@@ -9,32 +9,11 @@ class UserSegments
        selected_investment_authors
        winner_investment_authors
        not_supported_on_current_budget
-       beta_testers
-       pending_last_newsletter) + geozones
+       beta_testers) + geozones
   end
 
   def self.all_users
     User.active
-  end
-
-  def self.pending_last_newsletter
-    User.where(id: pending_user_ids)
-  end
-
-  def self.last_newsletter
-    Newsletter.find(28)
-  end
-
-  def self.pending_user_ids
-    all_user_ids - sent_user_ids(last_newsletter) - sent_user_ids(Newsletter.find(26)) - sent_user_ids(Newsletter.find(30))
-  end
-
-  def self.all_user_ids
-    all_users.pluck(:id)
-  end
-
-  def self.sent_user_ids(newsletter)
-    Activity.where(actionable: newsletter).pluck(:user_id).uniq
   end
 
   def self.administrators
@@ -76,9 +55,8 @@ class UserSegments
 
   def self.beta_testers
     testers = %w(aranacm@madrid.es
-                 voodoorai2000@gmail.com
                  alberto@decabeza.es
-                 javim@elretirao.net)
+                 voodoorai2000@gmail.com)
 
     User.where(email: testers).order('created_at ASC')
   end
