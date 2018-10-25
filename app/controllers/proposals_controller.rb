@@ -56,7 +56,8 @@ class ProposalsController < ApplicationController
   def vote
     @proposal.register_vote(current_user, 'yes')
 
-    if request.get?
+    if newsletter_vote?
+      sign_out(:user)
       redirect_to @proposal, notice: t('proposals.notice.voted')
     else
       set_proposal_votes(@proposal)
