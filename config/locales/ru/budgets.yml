@@ -113,3 +113,18 @@ ru:
         milestone_publication_date: "Опубликованные %{publication_date}"
         milestone_status_changed: Инвестиционный статус изменен на
         author: Автор
+        project_unfeasible_html: 'Этот инвестиционный проект <strong>был отмечен как неосуществимый</strong> и не перейдет к этапу голосования.'
+        project_selected_html: 'Этот инвестиционный проект <strong>был выбран</strong> для этапа голосования.'
+        project_winner: 'Победный инвестиционный проект'
+        project_not_selected_html: 'Этот инвестиционный проект <strong>не был выбран</strong> для этапа голосования.'
+      wrong_price_format: Только целые числа
+      investment:
+        add: Голос
+        already_added: Вы уже добавили этот инвестиционный проект
+        already_supported: Вы уже поддержали этот инвестиционный проект. Поделитесь!
+        support_title: Поддержать этот проект
+        supports:
+          zero: Нет поддержки
+        give_support: Поддержка
+      header:
+        check_ballot: Проверить вое голосование
