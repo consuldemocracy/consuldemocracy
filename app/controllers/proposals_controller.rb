@@ -6,7 +6,7 @@ class ProposalsController < ApplicationController
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
-  before_action :login_user!, only: :vote
+  before_action :login_user!, only: :newsletter_vote
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
@@ -54,16 +54,16 @@ class ProposalsController < ApplicationController
 
   def vote
     @proposal.register_vote(current_user, 'yes')
-
-    if newsletter_vote?
-      sign_out(:user)
-      redirect_to @proposal, notice: t('proposals.notice.voted')
-    else
-      set_proposal_votes(@proposal)
-    end
-
+    set_proposal_votes(@proposal)
     load_rank
     log_event("proposal", 'support', @proposal.id, @proposal_rank, 6, @proposal_rank)
+  end
+
+  def newsletter_vote
+    @proposal.register_vote(current_user, "yes")
+
+    sign_out(:user)
+    redirect_to @proposal, notice: t("proposals.notice.voted")
   end
 
   def retire
@@ -201,7 +201,7 @@ class ProposalsController < ApplicationController
     end
 
     def newsletter_vote?
-      request.get? && params[:newsletter_token].present?
+      params[:newsletter_token].present?
     end
 
     def newsletter_user
