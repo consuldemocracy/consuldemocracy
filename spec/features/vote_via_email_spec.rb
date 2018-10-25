@@ -90,7 +90,8 @@ feature 'Vote via email' do
 
       visit vote_proposal_path(@proposal, newsletter_token: "123456")
 
-      expect(page).to have_content "You do not have permission to carry out the action 'vote' on proposal."
+      expect(page).to have_content "You must sign in or register to continue"
+      expect(page.current_path).to eq("/users/sign_in")
     end
 
   end
