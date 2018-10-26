@@ -13,7 +13,7 @@ ru:
         phase: "Этап"
         currency_symbol: "Валюта"
       budget/investment:
-        heading_id: "Заголовок"
+        heading_id: "Раздел"
         title: "Заглавие"
         description: "Описание"
         external_url: "Ссылка на дополнительную документацию"
