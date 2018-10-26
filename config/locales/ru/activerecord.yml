@@ -58,7 +58,7 @@ ru:
         phone_number: "Номер телефона"
         official_position: "Официальная позиция"
         official_level: "Официальный уровень"
-        redeemable_code: "Код подтверждения полученный по электронной почте"
+        redeemable_code: "Код подтверждения получен по электронному адресу"
       organization:
         name: "Название организации"
         responsible_name: "Лицо, ответственное за группу"
@@ -68,7 +68,7 @@ ru:
         description: "Описание"
         external_url: "Ссылка на дополнительную документацию"
         geozone_id: "Сфера деятельности"
-        title: "Заглавие"
+        title: "Название"
       poll:
         name: "Имя"
         starts_at: "Дата начала"
@@ -76,14 +76,20 @@ ru:
         geozone_restricted: "Ограничено геозоном"
         summary: "Резюме"
         description: "Описание"
+      poll/translation:
+        name: "Имя"
+        summary: "Резюме"
+        description: "Описание"
       poll/question:
         title: "Вопрос"
         summary: "Резюме"
         description: "Описание"
         external_url: "Ссылка на дополнительную документацию"
+      poll/question/translation:
+        title: "Вопрос"
       signature_sheet:
         signable_type: "Подписываемый тип"
-        signable_id: "Подписываемый ID"
+        signable_id: "Подписываемое ID"
         document_numbers: "Номера документов"
       site_customization/page:
         content: Содержание
@@ -91,11 +97,15 @@ ru:
         subtitle: Субтитр
         slug: Слизень
         status: Статус
-        title: Заглавие
-        updated_at: Обновлено на
+        title: Название
+        updated_at: Обновлено в
         more_info_flag: Показать на странице справки
         print_content_flag: Кнопка печати содержимого
         locale: Язык
+      site_customization/page/translation:
+        title: Название
+        subtitle: Субтитр
+        content: Содержание
       site_customization/image:
         name: Имя
         image: Изображение
