@@ -114,48 +114,68 @@ ru:
         locale: место действия
         body: Тело
       legislation/process:
-        title: Заглавие процесса
+        title: Название процесса
         summary: Резюме
         description: Описание
         additional_info: Дополнительная информация
         start_date: Дата начала
         end_date: Дата окончания
-        debate_start_date: Дата начала дебатов
-        debate_end_date: Дата окончания дебатов
+        debate_start_date: Дата начала обсуждения
+        debate_end_date: Дата окончания обсуждения
         draft_publication_date: Дата публикации проекта
         allegations_start_date: Дата начала заявлений
         allegations_end_date: Дата окончания заявлений
         result_publication_date: Дата публикации окончательного результата
+      legislation/process/translation:
+        title: Название процесса
+        summary: Резюме
+        description: Описание
+        additional_info: Дополнительная информация
       legislation/draft_version:
-        title: Заглавие версии
+        title: Название версии
         body: Текст
         changelog: Изменения
         status: Статус
         final_version: Окончательная версия
+      legislation/draft_version/translation:
+        title: Название версии
+        body: Текст
+        changelog: Изменения
       legislation/question:
-        title: Заглавие
+        title: Название
         question_options: Опции
       legislation/question_option:
         value: Значение
       legislation/annotation:
         text: Отзыв
       document:
-        title: Заглавие
+        title: Название
         attachment: Прикрепление
       image:
-        title: Заглавие
+        title: Название
         attachment: Прикрепление
       poll/question/answer:
         title: Ответ
         description: Описание
+      poll/question/answer/translation:
+        title: Ответ
+        description: Описание
       poll/question/answer/video:
-        title: Заглавие
+        title: Название
         url: Внешнее видео
       newsletter:
         segment_recipient: Получатели
         subject: Тема
         from: От
         body: Содержание электронной почты
+      admin_notification:
+        segment_recipient: Получатели
+        title: Название
+        link: Ссылка
+        body: Текст
+      admin_notification/translation:
+        title: Название
+        body: Текст
       widget/card:
         label: Метка (опционально)
         title: Заглавие
