@@ -444,6 +444,9 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+    share:
+      message: "He apoyado la propuesta %{summary} en %{org}. Si te interesa, ¡apoya tú también!"
+      message_mobile: "He apoyado la propuesta %{summary} en %{handle}. Si te interesa, ¡apoya tú también!"
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"
