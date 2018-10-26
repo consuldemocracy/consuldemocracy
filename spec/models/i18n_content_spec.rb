@@ -55,7 +55,7 @@ RSpec.describe I18nContent, type: :model do
     it 'responds to locales defined on model' do
       expect(i18n_content).to respond_to(:value_en)
       expect(i18n_content).to respond_to(:value_es)
-      expect(i18n_content).not_to respond_to(:value_de)
+      expect(i18n_content).not_to respond_to(:value_wl)
     end
 
     it 'returns nil if translations are not available' do
