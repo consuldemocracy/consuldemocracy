@@ -178,10 +178,15 @@ ru:
         body: Текст
       widget/card:
         label: Метка (опционально)
-        title: Заглавие
+        title: Название
         description: Описание
         link_text: Ссылка текста
         link_url: Ссылка URL
+      widget/card/translation:
+        label: Метка (опционально)
+        title: Название
+        description: Описание
+        link_text: Ссылка текста
       widget/feed:
         limit: Количество предметов
     errors:
