@@ -14,7 +14,7 @@ ru:
         currency_symbol: "Валюта"
       budget/investment:
         heading_id: "Раздел"
-        title: "Заглавие"
+        title: "Название"
         description: "Описание"
         external_url: "Ссылка на дополнительную документацию"
         administrator_id: "Администратор"
