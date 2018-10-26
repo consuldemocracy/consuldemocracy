@@ -1,34 +1,7 @@
-require: rubocop-rspec
-
-AllCops:
-  DisplayCopNames: true
-  DisplayStyleGuide: true
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
-  Exclude:
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'script/**/*'
-  TargetRubyVersion: 2.3
-  # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
-  # to ignore them, so only the ones explicitly set in this file are enabled.
-  DisabledByDefault: true
+inherit_from: .rubocop_basic.yml
 
 Metrics/LineLength:
   Max: 100
-
-Layout/IndentationConsistency:
-  EnforcedStyle: rails
-
-Layout/EndOfLine:
-  EnforcedStyle: lf
-
-Layout/TrailingBlankLines:
-  Enabled: true
-
-Layout/TrailingWhitespace:
-  Enabled: true
 
 Bundler/DuplicatedGem:
   Enabled: true
