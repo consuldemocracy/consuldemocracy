@@ -9,7 +9,6 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
   end
 
   def new
-    @question.question_options.build
   end
 
   def create
@@ -47,10 +46,9 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
 
     def question_params
       params.require(:legislation_question).permit(
-        :title,
-        *translation_params(::Legislation::Question),
-        question_options_attributes: [:id, :value,
-                                      *translation_params(::Legislation::QuestionOption)]
+        translation_params(::Legislation::Question),
+        question_options_attributes: [:id, :_destroy,
+                                      translation_params(::Legislation::QuestionOption)]
       )
     end
 

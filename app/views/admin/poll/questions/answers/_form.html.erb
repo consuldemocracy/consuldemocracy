@@ -6,11 +6,13 @@
 
   <%= f.hidden_field :question_id, value: @answer.question_id || @question.id %>
 
-  <%= f.translatable_text_field :title %>
+  <%= f.translatable_fields do |translations_form| %>
+    <%= translations_form.text_field :title %>
 
-  <div class="ckeditor">
-    <%= f.translatable_cktext_area :description, maxlength: Poll::Question.description_max_length %>
-  </div>
+    <div class="ckeditor">
+      <%= translations_form.cktext_area :description, maxlength: Poll::Question.description_max_length %>
+    </div>
+  <% end %>
 
   <div class="small-12 medium-4 large-2 margin-top">
     <%= f.submit(class: "button success expanded", value: t("shared.save")) %>

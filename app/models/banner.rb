@@ -5,11 +5,11 @@ class Banner < ActiveRecord::Base
 
   translates :title,       touch: true
   translates :description, touch: true
-  globalize_accessors
+  include Globalizable
 
-  validates :title, presence: true,
-                    length: { minimum: 2 }
-  validates :description, presence: true
+  validates_translation :title, presence: true, length: { minimum: 2 }
+  validates_translation :description, presence: true
+
   validates :target_url, presence: true
   validates :post_started_at, presence: true
   validates :post_ended_at, presence: true

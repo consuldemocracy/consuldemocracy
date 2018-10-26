@@ -3,12 +3,12 @@ App.MarkdownEditor =
   refresh_preview: (element, md) ->
     textarea_content = App.MarkdownEditor.find_textarea(element).val()
     result = md.render(textarea_content)
-    element.find('#markdown-preview').html(result)
+    element.find('.markdown-preview').html(result)
 
   # Multi-locale (translatable) form fields work by hiding inputs of locales
   # which are not "active".
   find_textarea: (editor) ->
-    editor.find('textarea:visible')
+    editor.find('textarea')
 
   initialize: ->
     $('.markdown-editor').each ->
@@ -26,7 +26,7 @@ App.MarkdownEditor =
         return
 
       editor.find('textarea').on 'scroll', ->
-        $('#markdown-preview').scrollTop($(this).scrollTop())
+        editor.find('.markdown-preview').scrollTop($(this).scrollTop())
 
       editor.find('.fullscreen-toggle').on 'click', ->
         editor.toggleClass('fullscreen')

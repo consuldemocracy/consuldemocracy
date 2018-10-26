@@ -185,11 +185,17 @@ es:
         geozone_restricted: "Restringida por zonas"
         summary: "Resumen"
         description: "Descripción"
+      poll/translation:
+        name: "Nombre"
+        summary: "Resumen"
+        description: "Descripción"
       poll/question:
         title: "Pregunta"
         summary: "Resumen"
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
+      poll/question/translation:
+        title: "Pregunta"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Propuesta inversión"
@@ -205,6 +211,10 @@ es:
         more_info_flag: Mostrar en la página de ayuda
         print_content_flag: Botón de imprimir contenido
         locale: Idioma
+      site_customization/page/translation:
+        title: Título
+        subtitle: Subtítulo
+        content: Contenido
       site_customization/image:
         name: Nombre
         image: Imagen
@@ -225,12 +235,21 @@ es:
         allegations_start_date: Fecha de inicio de alegaciones
         allegations_end_date: Fecha de fin de alegaciones
         result_publication_date: Fecha de publicación del resultado final
+      legislation/process/translation:
+        title: Título del proceso
+        summary: Resumen
+        description: En qué consiste
+        additional_info: Información adicional
       legislation/draft_version:
         title: Título de la version
         body: Texto
         changelog: Cambios
         status: Estado
         final_version: Versión final
+      legislation/draft_version/translation:
+        title: Título de la version
+        body: Texto
+        changelog: Cambios
       legislation/question:
         title: Título
         question_options: Respuestas
@@ -247,6 +266,9 @@ es:
       poll/question/answer:
         title: Respuesta
         description: Descripción
+      poll/question/answer/translation:
+        title: Respuesta
+        description: Descripción
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
@@ -255,12 +277,25 @@ es:
         subject: Asunto
         from: Enviado por
         body: Contenido del email
+      admin_notification:
+        segment_recipient: Destinatarios
+        title: Título
+        link: Enlace
+        body: Texto
+      admin_notification/translation:
+        title: Título
+        body: Texto
       widget/card:
         label: Etiqueta (opcional)
         title: Título
         description: Descripción
         link_text: Texto del enlace
         link_url: URL del enlace
+      widget/card/translation:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
       widget/feed:
         limit: Número de elementos
     errors:

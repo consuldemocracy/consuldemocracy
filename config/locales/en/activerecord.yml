@@ -185,11 +185,17 @@ en:
         geozone_restricted: "Restricted by geozone"
         summary: "Summary"
         description: "Description"
+      poll/translation:
+        name: "Name"
+        summary: "Summary"
+        description: "Description"
       poll/question:
         title: "Question"
         summary: "Summary"
         description: "Description"
         external_url: "Link to additional documentation"
+      poll/question/translation:
+        title: "Question"
       signature_sheet:
         signable_type: "Signable type"
         signable_id: "Signable ID"
@@ -205,6 +211,10 @@ en:
         more_info_flag: Show in help page
         print_content_flag: Print content button
         locale: Language
+      site_customization/page/translation:
+        title: Title
+        subtitle: Subtitle
+        content: Content
       site_customization/image:
         name: Name
         image: Image
@@ -225,12 +235,21 @@ en:
         allegations_start_date: Allegations start date
         allegations_end_date: Allegations end date
         result_publication_date: Final result publication date
+      legislation/process/translation:
+        title: Process Title
+        summary: Summary
+        description: Description
+        additional_info: Additional info
       legislation/draft_version:
         title: Version title
         body: Text
         changelog: Changes
         status: Status
         final_version: Final version
+      legislation/draft_version/translation:
+        title: Version title
+        body: Text
+        changelog: Changes
       legislation/question:
         title: Title
         question_options: Options
@@ -247,6 +266,9 @@ en:
       poll/question/answer:
         title: Answer
         description: Description
+      poll/question/answer/translation:
+        title: Answer
+        description: Description
       poll/question/answer/video:
         title: Title
         url: External video
@@ -255,12 +277,25 @@ en:
         subject: Subject
         from: From
         body: Email content
+      admin_notification:
+        segment_recipient: Recipients
+        title: Title
+        link: Link
+        body: Text
+      admin_notification/translation:
+        title: Title
+        body: Text
       widget/card:
         label: Label (optional)
         title: Title
         description: Description
         link_text: Link text
         link_url: Link URL
+      widget/card/translation:
+        label: Label (optional)
+        title: Title
+        description: Description
+        link_text: Link text
       widget/feed:
         limit: Number of items
     errors:
