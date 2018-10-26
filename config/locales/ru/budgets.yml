@@ -32,8 +32,8 @@ ru:
       reviewing: Рассмотрение проектов
       selecting: Выбор проектов
       valuating: Оценивание проектов
-      publishing_prices: Цены публикации проектов
-      balloting: Проекты голосования
+      publishing_prices: Публикация стоимости проектов
+      balloting: Голосование за проекты
       reviewing_ballots: Рассмотрение голосования
       finished: Готовый бюджет
     index:
