@@ -2,7 +2,7 @@ ru:
   activemodel:
     models:
       verification:
-        residence: "Резиденция"
+        residence: "Место жительства"
         sms: "СМС"
     attributes:
       verification:
