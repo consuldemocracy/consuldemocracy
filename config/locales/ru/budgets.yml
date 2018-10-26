@@ -15,15 +15,15 @@ ru:
         organization: Организациям не разрешается голосовать
         not_selected: Невыбранные инвестиционные проекты не поддерживаются
         not_enough_money_html: "Вы уже присвоили доступный бюджет.<br><small>Помните, что вы можете %{change_ballot} в любое время</small>"
-        no_ballots_allowed: Выбор этапа закрыт
+        no_ballots_allowed: Этап выбора закрыт
         different_heading_assigned_html: "Вы уже проголосовали за другой заголовок: %{heading_link}"
-        change_ballot: измените ваши голоса
+        change_ballot: изменить голоса
     groups:
       show:
         title: Выберите вариант
         unfeasible_title: Неосуществимые инвестиции
         unfeasible: Ознакомление с неосуществимыми инвестициями
-        unselected_title: Инвестиции не отобранные для этапа голосования
+        unselected_title: Инвестиции, не отобранные для голосования
         unselected: Ознакомление с инвестициями не отобранные на этапе голосования
     phase:
       drafting: Эскиз (Невидим для публики)
