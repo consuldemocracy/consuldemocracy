@@ -21,17 +21,17 @@ ru:
         location: "Местоположение (опционально)"
         organization_name: "Если вы делаете предложение от имени коллектива/организации или от имени большего числа людей, напишите его название"
         image: "Иллюстративное изображение предложения"
-        image_title: "Заглавие изображения"
+        image_title: "Название изображения"
       budget/investment/milestone:
         status_id: "Текущий инвестиционный статус (опционально)"
-        title: "Заглавие"
+        title: "Название"
         description: "Описание (опционально, если присвоен статус)"
         publication_date: "Дата публикации"
       budget/investment/status:
         name: "Имя"
         description: "Описание (опционально)"
       budget/heading:
-        name: "Название заголовка"
+        name: "Название раздела"
         price: "Цена"
         population: "Население"
       comment:
@@ -41,10 +41,10 @@ ru:
         author: "Автор"
         description: "Мнение"
         terms_of_service: "Условия предоставления услуг"
-        title: "Заглавие"
+        title: "Название"
       proposal:
         author: "Автор"
-        title: "Заглавие"
+        title: "Название"
         question: "Вопрос"
         description: "Описание"
         terms_of_service: "Условия предоставления услуг"
