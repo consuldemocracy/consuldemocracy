@@ -1,6 +1,14 @@
 es-CL:
   pages:
+    conditions:
+      title: Términos y condiciones de uso
+      subtitle: AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE DATOS DE CARÁCTER PERSONAL DEL PORTAL DE GOBIERNO ABIERTO
     general_terms: Términos y Condiciones
+    help:
+      menu:
+        budgets: "Presupuestos participativos"
+        polls: "Votaciones"
+        other: "Otra información de interés"
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
