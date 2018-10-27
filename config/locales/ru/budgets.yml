@@ -89,8 +89,8 @@ ru:
           sign_in: "войти"
           sign_up: "регистрация"
           by_feasibility: По возможности
-          feasible: Возможные проекты
-          unfeasible: Невозможные проекты
+          feasible: Осуществимые проекты
+          unfeasible: Неосуществимые проекты
         orders:
           random: случайный
           confidence_score: наивысший рейтинг
