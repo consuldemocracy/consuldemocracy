@@ -10,18 +10,18 @@ es-CL:
       - sáb
     abbr_month_names:
       - 
-      - Jan
+      - Ene
       - Feb
       - Mar
-      - Apr
+      - Abr
       - May
       - Jun
       - Jul
-      - Aug
+      - Ago
       - Sep
       - Oct
       - Nov
-      - Dec
+      - Dic
     day_names:
       - domingo
       - lunes
@@ -36,21 +36,21 @@ es-CL:
       short: "%d de %b"
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Enero
+      - Febrero
+      - Marzo
+      - Abril
+      - Mayo
+      - Junio
+      - Julio
+      - Agosto
+      - Septiembre
+      - Octubre
+      - Noviembre
+      - Diciembre
     order:
       - :day
-      - :month
+      - :mes
       - :year
   datetime:
     distance_in_words:
@@ -147,12 +147,14 @@ es-CL:
       format:
         delimiter: "."
         format: "%n %u"
+        precision: 2
         separator: ","
         significant: false
         strip_insignificant_zeros: false
         unit: "€"
     format:
       delimiter: "."
+      precision: 3
       separator: ","
       significant: false
       strip_insignificant_zeros: false
@@ -167,14 +169,25 @@ es-CL:
       format:
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        units:
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
   support:
     array:
       last_word_connector: " y "
       two_words_connector: " y "
   time:
+    am: am
     formats:
       datetime: "%d/%m/%Y %H:%M:%S"
       default: "%A, %d de %B de %Y %H:%M:%S %z"
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
       api: "%d/%m/%Y %H"
+    pm: pm
