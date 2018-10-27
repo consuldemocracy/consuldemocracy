@@ -180,13 +180,13 @@ ru:
         label: Метка (опционально)
         title: Название
         description: Описание
-        link_text: Ссылка текста
+        link_text: Текст ссылки
         link_url: Ссылка URL
       widget/card/translation:
         label: Метка (опционально)
         title: Название
         description: Описание
-        link_text: Ссылка текста
+        link_text: Текст ссылки
       widget/feed:
         limit: Количество предметов
     errors:
@@ -202,7 +202,7 @@ ru:
         direct_message:
           attributes:
             max_per_day:
-              invalid: "Вы достигли максимального количества личных сообщений в день"
+              invalid: "Вы достигли лимита максимального количества личных сообщений в день"
         image:
           attributes:
             attachment:
