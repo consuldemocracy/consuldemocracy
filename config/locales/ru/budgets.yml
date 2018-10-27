@@ -149,7 +149,7 @@ ru:
       heading: "Результаты партисипаторного бюджета"
       heading_selection_title: "По участкам"
       spending_proposal: Заголовок предложения
-      ballot_lines_count: Раз выбран
+      ballot_lines_count: Время выбрано
       hide_discarded_link: Скрыть отброшенные
       show_all_link: Показать все
       price: Цена
@@ -159,9 +159,9 @@ ru:
       incompatibles: Несовместимые
       investment_proyects: Список всех инвестиционных проектов
       unfeasible_investment_proyects: Список всех неосуществимых инвестиционных проектов
-      not_selected_investment_proyects: Список всех инвестиционных проектов не отобранных для голосования
+      not_selected_investment_proyects: Список всех инвестиционных проектов, не отобранных для голосования
     phases:
       errors:
         dates_range_invalid: "Дата начала не может быть равной или более поздней Даты окончания"
         prev_phase_dates_invalid: "Дата начала должна быть позднее даты начала предыдущего включенного этапа (%{phase_name})"
-        next_phase_dates_invalid: "Дата окончания должна быть раньше чем дата окончания следующего включенного этапа (%{phase_name})"
+        next_phase_dates_invalid: "Дата окончания должна быть раньше, чем дата окончания следующего включенного этапа (%{phase_name})"
