@@ -73,7 +73,7 @@ ru:
         name: "Имя"
         starts_at: "Дата начала"
         ends_at: "Дата закрытия"
-        geozone_restricted: "Ограничено геозоном"
+        geozone_restricted: "Ограничено геозоной"
         summary: "Резюме"
         description: "Описание"
       poll/translation:
@@ -88,7 +88,7 @@ ru:
       poll/question/translation:
         title: "Вопрос"
       signature_sheet:
-        signable_type: "Подписываемый тип"
+        signable_type: "Тип подписания"
         signable_id: "Подписываемое ID"
         document_numbers: "Номера документов"
       site_customization/page:
