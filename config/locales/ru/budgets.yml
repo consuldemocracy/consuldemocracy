@@ -146,8 +146,8 @@ ru:
     results:
       link: Результаты
       page_title: "%{budget} - Результаты"
-      heading: "Результаты участников бюджета"
-      heading_selection_title: "По районам"
+      heading: "Результаты партисипаторного бюджета"
+      heading_selection_title: "По участкам"
       spending_proposal: Заголовок предложения
       ballot_lines_count: Раз выбран
       hide_discarded_link: Скрыть отброшенные
