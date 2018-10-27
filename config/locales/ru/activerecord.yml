@@ -228,11 +228,11 @@ ru:
         legislation/process:
           attributes:
             end_date:
-              invalid_date_range: должно быть до или после даты начала
+              invalid_date_range: должно быть не раньше даты начала
             debate_end_date:
-              invalid_date_range: должно быть до или после даты начала дебатов
+              invalid_date_range: должно быть не раньше даты начала дебатов
             allegations_end_date:
-              invalid_date_range: должно быть до или после даты начала заявлений
+              invalid_date_range: должно быть не раньше даты начала заявлений
         proposal:
           attributes:
             tag_list:
@@ -249,7 +249,7 @@ ru:
           attributes:
             document_number:
               not_in_census: 'Не проверено переписью'
-              already_voted: 'Уже проголосовано это предложение'
+              already_voted: 'Уже проголосовано за это предложение'
         site_customization/page:
           attributes:
             slug:
