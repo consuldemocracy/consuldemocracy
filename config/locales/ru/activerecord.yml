@@ -95,7 +95,7 @@ ru:
         content: Содержание
         created_at: Создано в
         subtitle: Субтитр
-        slug: Слизень
+        slug: Slug URL
         status: Статус
         title: Название
         updated_at: Обновлено в
@@ -111,7 +111,7 @@ ru:
         image: Изображение
       site_customization/content_block:
         name: Имя
-        locale: место действия
+        locale: региональный язык
         body: Тело
       legislation/process:
         title: Название процесса
