@@ -43,7 +43,9 @@ es-CL:
       title: Moderación
     menu:
       flagged_comments: Comentarios
+      flagged_investments: Inversiones de presupuesto
       proposals: Propuestas
+      proposal_notifications: Notificaciones de propuestas
       users: Bloquear usuarios
     proposals:
       index:
@@ -64,6 +66,15 @@ es-CL:
           created_at: Más recientes
           flags: Más denunciadas
         title: Propuestas
+    budget_investments:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtro
+        filters:
+          all: Todas
+          pending_flag_review: Pendiente
+          with_ignored_flag: Marcados como revisados
     users:
       index:
         hidden: Bloqueado
