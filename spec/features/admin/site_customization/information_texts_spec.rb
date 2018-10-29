@@ -49,6 +49,14 @@ feature "Admin custom information texts" do
     expect(page).to have_content 'See all recommended debates'
   end
 
+  scenario 'check that tabs are highlight when click it' do
+    visit admin_site_customization_information_texts_path
+
+    click_link 'Proposals'
+    expect(find("a[href=\"/admin/site_customization/information_texts?tab=proposals\"].is-active"))
+          .to have_content "Proposals"
+  end
+
   context "Globalization" do
 
     scenario "Add a translation", :js do

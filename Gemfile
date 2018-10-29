@@ -5,13 +5,13 @@ gem 'rails', '4.2.10'
 gem 'acts-as-taggable-on', '~> 5.0.0'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'ahoy_matey', '~> 1.6.0'
-gem 'ancestry', '~> 3.0.1'
+gem 'ancestry', '~> 3.0.2'
 gem 'autoprefixer-rails', '~> 8.2.0'
 gem 'browser', '~> 2.5.2'
 gem 'cancancan', '~> 2.1.2'
 gem 'ckeditor', '~> 4.2.3'
 gem 'cocoon', '~> 1.2.9'
-gem 'coffee-rails', '~> 4.2.1'
+gem 'coffee-rails', '~> 4.2.2'
 gem 'daemons', '~> 1.2.4'
 gem 'dalli', '~> 2.7.6'
 gem 'delayed_job_active_record', '~> 4.1.0'
@@ -35,7 +35,7 @@ gem 'omniauth-facebook', '~> 4.0.0'
 gem 'omniauth-google-oauth2', '~> 0.4.0'
 gem 'omniauth-twitter', '~> 1.4.0'
 gem 'paperclip', '~> 5.2.1'
-gem 'paranoia', '~> 2.4.0'
+gem 'paranoia', '~> 2.4.1'
 gem 'pg', '~> 0.21.0'
 gem 'pg_search', '~> 2.0.1'
 gem 'redcarpet', '~> 3.4.0'
@@ -43,14 +43,14 @@ gem 'responders', '~> 2.4.0'
 gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'rollbar', '~> 2.15.5'
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
-gem 'savon', '~> 2.11.1'
+gem 'savon', '~> 2.12.0'
 gem 'sitemap_generator', '~> 6.0.1'
 gem 'social-share-button', '~> 1.1'
 gem 'sprockets', '~> 3.7.2'
 gem 'turbolinks', '~> 2.5.3'
 gem 'turnout', '~> 2.4.0'
 gem 'uglifier', '~> 4.1.2'
-gem 'unicorn', '~> 5.4.0'
+gem 'unicorn', '~> 5.4.1'
 gem 'whenever', '~> 0.10.0', require: false
 gem 'globalize', '~> 5.0.0'
 gem 'globalize-accessors', '~> 0.2.1'
@@ -76,7 +76,7 @@ end
 
 group :test do
   gem 'capybara', '~> 2.17.0'
-  gem 'coveralls', '~> 0.8.21', require: false
+  gem 'coveralls', '~> 0.8.22', require: false
   gem 'database_cleaner', '~> 1.6.1'
   gem 'email_spec', '~> 2.1.0'
   gem 'rspec-rails', '~> 3.6'
@@ -86,13 +86,13 @@ end
 group :development do
   gem 'capistrano', '~> 3.10.1', require: false
   gem 'capistrano-bundler', '~> 1.2', require: false
-  gem 'capistrano-rails', '~> 1.3.1', require: false
+  gem 'capistrano-rails', '~> 1.4.0', require: false
   gem 'capistrano3-delayed-job', '~> 1.7.3'
-  gem 'mdl', '~> 0.4.0', require: false
+  gem 'mdl', '~> 0.5.0', require: false
   gem 'rubocop', '~> 0.54.0', require: false
   gem 'rubocop-rspec', '~> 1.24.0', require: false
   gem 'rvm1-capistrano3', '~> 1.4.0', require: false
-  gem 'scss_lint', '~> 0.54.0', require: false
+  gem 'scss_lint', '~> 0.55.0', require: false
   gem 'web-console', '~> 3.3.0'
 end
 

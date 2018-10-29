@@ -27,7 +27,8 @@ feature "Admin custom content blocks" do
 
       click_link "Create new content block"
 
-      select "footer", from: "site_customization_content_block_name"
+      select I18n.t("admin.site_customization.content_blocks.content_block.names.footer"),
+                   from: "site_customization_content_block_name"
       select "es", from: "site_customization_content_block_locale"
       fill_in "site_customization_content_block_body", with: "Some custom content"
 
@@ -50,7 +51,8 @@ feature "Admin custom content blocks" do
 
       click_link "Create new content block"
 
-      select "top_links", from: "site_customization_content_block_name"
+      select I18n.t("admin.site_customization.content_blocks.content_block.names.top_links"),
+                   from: "site_customization_content_block_name"
       select "en", from: "site_customization_content_block_locale"
       fill_in "site_customization_content_block_body", with: "Some custom content"
 
