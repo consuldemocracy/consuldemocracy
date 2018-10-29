@@ -5,11 +5,13 @@
   <p class="sidebar-title"><%= share_title %></p>
 <% end %>
 <div class="social-share-full">
-  <%= social_share_button_tag("#{title} #{setting['twitter_hashtag']}",
+  <%= social_share_button_tag("#{title} #{setting['twitter_hashtag']} #{setting['twitter_handle']}",
                               url: local_assigns[:url],
                               image: local_assigns.fetch(:image_url, ''),
-                              desc: description ) %>
-  <a href="whatsapp://send?text=<%= CGI.escape(title) %>&nbsp;<%= url %>"
+                              desc: description,
+                              'data-twitter-title': local_assigns[:mobile],
+                              'data-telegram-title': local_assigns[:mobile])%>
+  <a href="whatsapp://send?text=<%= local_assigns[:mobile]%>&nbsp;<%= url %>"
      class="show-for-small-only" data-action="share/whatsapp/share">
     <span class="icon-whatsapp whatsapp"></span>
     <span class="show-for-sr"><%= t("social.whatsapp") %></span>
