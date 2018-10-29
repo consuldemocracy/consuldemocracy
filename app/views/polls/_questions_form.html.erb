@@ -8,14 +8,14 @@
 			<div class="poll-question-answers require-answer button-group-poll round toggle">
 			  <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
 			    <% question.question_answers.each do |answer| %>
-					<%= radio_button_tag("answer_question_" + question.id.to_s, answer.id, (@answers_by_question_id[question.id] == answer.title), class: 'button secondary hollow js-question-answer pseudo-radio js-question-answer', :id => "answer_question_" + question.id.to_s + "__" + answer.id.to_s) %>
+					<%= radio_button_tag("answer_question_" + question.id.to_s, answer.title, (@answers_by_question_id[question.id] == answer.title), class: 'button secondary hollow js-question-answer pseudo-radio js-question-answer', :id => "answer_question_" + question.id.to_s + "__" + answer.id.to_s) %>
 					<%= label_tag("answer_question_" + question.id.to_s + "__" + answer.id.to_s, answer.title, :class =>  (@answers_by_question_id[question.id] == answer.title ? 'button answered' : 'button secondary hollow js-question-answer'), :for => "answer_question_" + question.id.to_s + "__" + answer.id.to_s) %>			        
 			    <% end %>
-			  <% if (@found_error && !@answers_by_question_id[question.id])
-			   %>
-			  	<br>
-		      	<font color='red'><%= t("polls.show.choose_answer") %></font>
-		      <% end %>			    
+				  <% if (@found_error && !@answers_by_question_id[question.id])
+				   %>
+				  	<br>
+			      	<font color='red'><%= t("polls.show.choose_answer") %></font>
+			      <% end %>			    
 			  <% else %>
 			    <% question.question_answers.each do |answer| %>
 			      <span class="button secondary hollow disabled"><%= answer.title %></span>
