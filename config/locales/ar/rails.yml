@@ -64,6 +64,12 @@ ar:
           million: مليون
           quadrillion: كوادريليون
           thousand: ألف
+          trillion: تريليون
       format:
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        units:
+          gb: غيغا بايت
+          kb: كيلو بايت
+          tb: تيرابايت
