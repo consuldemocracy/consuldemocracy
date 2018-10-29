@@ -1,5 +1,13 @@
 ar:
   date:
+    abbr_day_names:
+      - الأحد
+      - الاثنين
+      - الثلاثاء
+      - الأربعاء
+      - الخميس
+      - الجمعة
+      - السبت
     abbr_month_names:
       - 
       - يناير
@@ -24,18 +32,29 @@ ar:
       - السبت
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - يناير
+      - فبراير
+      - مارس
+      - أبريل
+      - مايو
+      - يونيو
+      - يوليو
+      - أغسطس
+      - سبتمبر
+      - أكتوبر
+      - نوفمبر
+      - ديسمبر
+    order:
+      - ':السنة'
+      - ':الشهر'
+      - ':اليوم'
+  datetime:
+    prompts:
+      year: السنة
+  errors:
+    messages:
+      present: يجب أن تكون فارغة
+      confirmation: لا يتطابق مع %{attribute}
   number:
     human:
       format:
