@@ -280,9 +280,6 @@ RSpec/DescribeMethod:
 RSpec/DescribeSymbol:
   Enabled: true
 
-RSpec/DescribedClass:
-  Enabled: true
-
 RSpec/EmptyExampleGroup:
   Enabled: true
 
