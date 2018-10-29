@@ -53,8 +53,9 @@ ar:
       year: السنة
   errors:
     messages:
-      present: يجب أن تكون فارغة
+      present: يجب أن يكون فارغا
       confirmation: لا يتطابق مع %{attribute}
+      empty: لا يمكن أن يكون فارغا
   number:
     human:
       format:
