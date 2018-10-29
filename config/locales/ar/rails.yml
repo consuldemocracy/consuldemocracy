@@ -58,6 +58,12 @@ ar:
       empty: لا يمكن أن يكون فارغا
   number:
     human:
+      decimal_units:
+        units:
+          billion: مليار
+          million: مليون
+          quadrillion: كوادريليون
+          thousand: ألف
       format:
         significant: true
         strip_insignificant_zeros: true
