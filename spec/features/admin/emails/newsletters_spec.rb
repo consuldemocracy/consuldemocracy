@@ -157,7 +157,7 @@ feature "Admin newsletter emails" do
       expect(page).to have_content "Newsletter sent successfully"
 
       expect(page).to have_content "1 affected users"
-      expect(page).to have_content "Enviados 1"
+      expect(page).to have_content "1 email sent"
     end
   end
 

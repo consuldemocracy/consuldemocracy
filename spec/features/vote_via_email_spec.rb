@@ -2,34 +2,6 @@ require 'rails_helper'
 
 feature 'Vote via email' do
 
-  context "Email" do
-
-    scenario "Displays a show link and vote link to proposals" do
-      user = create(:user, newsletter: true)
-      proposal = create(:proposal)
-
-      admin = create(:administrator)
-      login_as(admin.user)
-
-      visit new_admin_newsletter_path
-
-      fill_in_newsletter_form(segment_recipient: 'All users')
-      click_button "Create Newsletter"
-
-      expect(page).to have_content "Newsletter created successfully"
-      click_link "Send"
-
-      user.reload
-      show_link = proposal_path(proposal, newsletter_token: user.newsletter_token)
-      vote_link = vote_proposal_path(proposal, newsletter_token: user.newsletter_token)
-
-      email = unread_emails_for(user.email).first
-      expect(email).to have_body_text(show_link)
-      expect(email).to have_body_text(vote_link)
-    end
-
-  end
-
   context "Voting proposals via a GET link" do
 
     background do
@@ -91,30 +63,6 @@ feature 'Vote via email' do
 
       expect(page).to have_content "You must sign in or register to continue"
       expect(page.current_path).to eq("/users/sign_in")
-    end
-
-  end
-
-  context "Show link with token" do
-
-    scenario "User is logged in" do
-      proposal = create(:proposal)
-      user = create(:user, :verified, newsletter_token: "123456")
-
-      login_as(user)
-
-      visit proposal_path(proposal, newsletter_token: "123456")
-
-      expect_to_be_signed_in
-    end
-
-    scenario "User is not logged in" do
-      proposal = create(:proposal)
-      create(:user, :verified, newsletter_token: "123456")
-
-      visit proposal_path(proposal, newsletter_token: "123456")
-
-      expect_to_not_be_signed_in
     end
 
   end

@@ -30,7 +30,7 @@ set :keep_releases, 5
 
 set :local_user, ENV['USER']
 
-set :delayed_job_workers, 10
+set :delayed_job_workers, 2
 set :delayed_job_roles, :background
 
 set(:config_files, %w(

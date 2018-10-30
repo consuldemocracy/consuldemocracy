@@ -154,5 +154,4 @@ describe Newsletter do
     end
 
   end
-
 end

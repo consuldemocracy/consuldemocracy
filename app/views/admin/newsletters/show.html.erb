@@ -26,9 +26,11 @@
       <%= segment_name(@newsletter.segment_recipient) %>
       <%= t("admin.newsletters.show.affected_users", n: recipients_count) %>
     </div>
+
     <div class="small-12 column">
-      <strong>Enviados</strong><br>
-      <%= Activity.where(actionable: @newsletter).count %>
+      <strong>
+        <%= t("admin.newsletters.show.sent_emails", count: @newsletter.activities.count) %>
+      </strong>
     </div>
   </div>
 

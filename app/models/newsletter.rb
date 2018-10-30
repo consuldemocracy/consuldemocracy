@@ -1,4 +1,5 @@
 class Newsletter < ActiveRecord::Base
+  has_many :activities, as: :actionable
 
   validates :subject, presence: true
   validates :segment_recipient, presence: true
@@ -28,8 +29,7 @@ class Newsletter < ActiveRecord::Base
     list_of_recipient_emails_in_batches.each do |recipient_emails|
       recipient_emails.each do |recipient_email|
         if valid_email?(recipient_email)
-          token = generate_user_token(recipient_email)
-          Mailer.delay(run_at: run_at).newsletter(self, recipient_email, token)
+          Mailer.delay(run_at: run_at).newsletter(self, recipient_email)
           log_delivery(recipient_email)
         end
       end
@@ -38,7 +38,7 @@ class Newsletter < ActiveRecord::Base
   end
 
   def batch_size
-    50000
+    10000
   end
 
   def batch_interval
@@ -51,22 +51,6 @@ class Newsletter < ActiveRecord::Base
 
   def list_of_recipient_emails_in_batches
     list_of_recipient_emails.in_groups_of(batch_size, false)
-  end
-
-  def generate_user_token(email)
-    user = User.where(email: email).first
-    if user.present?
-      user.update(newsletter_token: generate_token)
-      user.newsletter_token
-    end
-  end
-
-  def generate_token
-    Devise.friendly_token
-  end
-
-  def proposals
-    Proposal.unsuccessful.not_archived.not_retired.sort_by_confidence_score.limit(5)
   end
 
   private

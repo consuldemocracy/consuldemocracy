@@ -624,7 +624,6 @@ es:
       winner_investment_authors: Usuarios autores de proyectos de gasto ganadoras en los actuales presupuestos
       not_supported_on_current_budget: Usuarios que no han apoyado proyectos de los actuales presupuestos
       invalid_recipients_segment: "El segmento de destinatarios es inválido"
-      pending_last_newsletter: "Pendientes de la última newsletter"
       arganzuela: Arganzuela
       barajas: Barajas
       carabanchel: Carabanchel
@@ -672,6 +671,9 @@ es:
         title: Vista previa de newsletter
         send: Enviar
         affected_users: (%{n} usuarios afectados)
+        sent_emails:
+          one: 1 correo enviado
+          other: "%{count} correos enviados"
         sent_at: Enviado
         subject: Asunto
         segment_recipient: Destinatarios
