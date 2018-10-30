@@ -16,7 +16,14 @@ class Polls::QuestionsController < ApplicationController
     @question.question_answers.where(question_id: @question).each do |question_answer|
       question_answer.set_most_voted
     end
-
+    if params[:order_ids]
+      @answers = []
+      params[:order_ids].each do |answer_id|
+        @answers << Poll::Question::Answer.find(answer_id)
+      end
+    else
+      @answers = @question.question_answers.sort { |a, b| Random.rand <=> Random.rand }
+    end
     @answers_by_question_id = { @question.id => params[:answer] }
   end
 

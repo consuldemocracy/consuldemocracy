@@ -1,22 +1,4 @@
 es:
-  pages:
-    cartel_magdalena_current:
-      title: 'Concurso del cartel de la Magdalena %{year}'
-      tab_link: 'Cartel Magdalena %{year}'
-      bases_link: 'Bases del concurso del cartel de las fiestas de la Magdalena %{year}'
-      carteles_seleccionados: Carteles seleccionados
-      confirm_votacion: Solo se puede votar un cartel, ¿Seguro que deseas votar este?
-      already_voted: Ya has votado por otro cartel
-      vote_forbidden: No se puede votar si no se ha iniciado sesión y verificado la residencia
-      results: Resultados
-      votos: Votos
-      cartel: Cartel
-      lema: Lema
-      total_vots: Votos totales
-      catells_seleccionats: Cateles seleccionados
-      sex_participation: Participación por sexos
-      age_participation: Participación por grupos de edad
-
     more_information:
       item_1:
         title: 1.-¿ Qué són los presupuestos participativos?

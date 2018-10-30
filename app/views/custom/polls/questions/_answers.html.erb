@@ -1,0 +1,41 @@
+<div class="poll-question-answers">
+    <div class="row">
+      <% answers.each do |answer| %>
+        <% if answers.last == answer %>
+          <div class="small-12 medium-4 large-4 columns text-center end">
+        <% else %>
+          <div class="small-12 medium-4 large-4 columns text-center">
+        <% end %>
+        <%= answer.description %>
+        <%= link_to answer.images.first.attachment.url(:original), target: "_blank" do %>
+          <%= image_tag answer.images.first.attachment.url(:thumb),
+                        alt: answer.images.first.title %>
+        <% end %>
+        <br><br>
+        <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
+          <% if @answers_by_question_id[question.id] == answer.title &&
+              ( voted_before_sign_in(question) ||
+                (!voted_before_sign_in(question) || question.poll.voted_in_booth?(current_user))
+              )
+          %>
+            <span class="button answered"
+                  title="<%= t("poll_questions.show.voted", answer: answer.title)%>">
+                  <%= answer.title %>
+            </span>
+          <% else %>
+            <% pregunta = @answers_by_question_id[question.id] ? t("poll_questions.update_ballot.alert") : '' %>
+            <%= link_to answer.title,
+              answer_question_path(question, answer: answer.title, token: token, order_ids: answers.map(&:id)),
+              method: :post,
+              remote: true,
+              title: t("poll_questions.show.vote_answer", answer: answer.title),
+              class: "button secondary hollow js-question-answer",
+              data: {confirm: pregunta}%>
+          <% end %>
+          <% else %>
+            <span class="button secondary hollow disabled"><%= answer.title %></span>
+          <% end %>
+          </div>
+        <% end %>
+      </div>
+</div>

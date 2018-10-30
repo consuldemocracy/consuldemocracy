@@ -13,7 +13,7 @@
         <% if budget_published?(current_budget) %>
           <%= link_to t('budgets.button_text'), custom_budget_path(current_budget), class: "button" %>
         <% else %>
-          <%= link_to t('budgets.button_text_current', year: Poll.kind_of_cartel.last.next_year), "#", class: "button" %>
+          <%= link_to t('budgets.button_text_current', year: Poll.current_cartell.next_year), "#", class: "button" %>
         <% end %>
       <% elsif @last_budget.present? %>
         <%= link_to "#{t('results.button_title')} #{@last_budget.name}", budget_results_path(@last_budget), class: "button" %>

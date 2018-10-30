@@ -55,11 +55,11 @@
     <% end %>
     <% if feature?(:concurso_cartel_magdalena) && exists_polls_of_kind?('cartel')%>
       <li>
-        <%= layout_menu_link_to t("pages.cartel_magdalena_current.tab_link", year: Poll.kind_of_cartel.last.next_year),
-          poll_path(Poll.kind_of_cartel.last),
+        <%= layout_menu_link_to t("layouts.cartel_magdalena_current.tab_link", year: Poll.current_cartell.next_year),
+          concurs_cartell_magdalena_path,
           controller_name == 'polls' && params[:id] == 'concurso_cartel_magdalena',
           accesskey: "2",
-          title: t("shared.go_to_page") + t("pages.cartel_magdalena_current.tab_link", year: Poll.kind_of_cartel.last.next_year) %>
+          title: t("shared.go_to_page") + t("layouts.cartel_magdalena_current.tab_link", year: Poll.current_cartell.next_year) %>
       </li>
     <% end %>
     <li>

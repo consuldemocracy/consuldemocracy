@@ -1,0 +1,63 @@
+<% provide :title do %><%= @poll.name %><% end %>
+<div class='polls-results-stats'>
+  <%= render 'poll_header' %>
+  <%= render 'poll_subnav' %>
+  <div class='row margin' data-equalizer data-equalize-on='medium'>
+    <div class='row'>
+      <div class='small-12 medium-9 column'>
+        <h3>
+          <%= t('cartel_magdalena_current.results') %>
+        </h3>
+        <table class='hover'>
+          <thead>
+            <tr>
+              <th>
+                <%= t('cartel_magdalena_current.cartel') %>
+              </th>
+              <th>
+                <%= t('cartel_magdalena_current.lema') %>
+              </th>
+              <th class='text-right'>
+                <%= t('cartel_magdalena_current.votos') %>
+              </th>
+              <th class='text-right'>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @results.each do |r| %>
+              <tr>
+                <td>
+                  <% if r[:respuesta].images.first.present? %>
+                    <%= link_to image_tag(r[:respuesta].images.first.attachment.url(:thumb)),
+                               asset_path(r[:respuesta].images.first.attachment.url), target: '_blank' %>
+                  <% end %>
+                </td>
+                <td>
+                  <%= r[:respuesta].description %>
+                </td>
+                <td>
+                  <%= r[:votos] %>
+                </td>
+                <td>
+                  <%= number_to_percentage(r[:porcentaje], precision: 2) %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th></th>
+              <th></th>
+              <th class='text-right'>
+                <%= @answers.size %>
+              </th>
+              <th class='text-right'>
+                <%= number_to_percentage(100, precision: 2) %>
+              </th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,10 +13,13 @@ module Abilities
 
       can :read, Poll
       can :results, Poll do |poll|
-        poll.expired? && poll.results_enabled?
+        poll.show_results?
       end
       can :stats, Poll do |poll|
-        poll.expired? && poll.stats_enabled?
+        poll.show_stats?
+      end
+      can :current_cartell, Poll do |poll|
+        true
       end
       can :read, Poll::Question
       can :read, SpendingProposal
