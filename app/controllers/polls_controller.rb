@@ -38,7 +38,7 @@ class PollsController < ApplicationController
   end
 
   def results
-    @poll ||= Poll.current_cartell
+    @poll = params[:id].present? ? Poll.find(params[:id]) : Poll.current_cartell
     @answers = @poll.questions.first.answers.to_a
     @results = []
     @poll.questions.first.question_answers.each do |question_answer|
