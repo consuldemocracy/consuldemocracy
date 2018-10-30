@@ -23,9 +23,9 @@ class Poll < ActiveRecord::Base
 
   validate :date_range
 
-  scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Date.current.beginning_of_day, Date.current.beginning_of_day) }
-  scope :incoming, -> { where('? < starts_at', Date.current.beginning_of_day) }
-  scope :expired,  -> { where('ends_at < ?', Date.current.beginning_of_day) }
+  scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Date.current.beginning_of_day, Time.zone.now) }
+  scope :incoming, -> { where('? < starts_at', Time.zone.now) }
+  scope :expired,  -> { where('ends_at < ?', Time.zone.now) }
   scope :recounting, -> { Poll.where(ends_at: (Date.current.beginning_of_day - RECOUNT_DURATION)..Date.current.beginning_of_day) }
   scope :published, -> { where('published = ?', true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
@@ -36,15 +36,15 @@ class Poll < ActiveRecord::Base
     name
   end
 
-  def current?(timestamp = Date.current.beginning_of_day)
+  def current?(timestamp = Time.zone.now)
     starts_at <= timestamp && timestamp <= ends_at
   end
 
-  def incoming?(timestamp = Date.current.beginning_of_day)
+  def incoming?(timestamp = Time.zone.now)
     timestamp < starts_at
   end
 
-  def expired?(timestamp = Date.current.beginning_of_day)
+  def expired?(timestamp = Time.zone.now)
     ends_at < timestamp
   end
 
