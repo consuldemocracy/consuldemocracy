@@ -16,6 +16,7 @@ FactoryBot.define do
     title "A collaborative legislation process"
     description "Description of the process"
     summary "Summary of the process"
+
     start_date { Date.current - 5.days }
     end_date { Date.current + 5.days }
     debate_start_date { Date.current - 5.days }
@@ -87,8 +88,8 @@ FactoryBot.define do
     end
 
     trait :open do
-      start_date 1.week.ago
-      end_date   1.week.from_now
+      start_date { 1.week.ago }
+      end_date   { 1.week.from_now }
     end
 
   end

@@ -30,7 +30,7 @@ FactoryBot.define do
     end
 
     trait :archived do
-      created_at 25.months.ago
+      created_at { 25.months.ago }
     end
 
     trait :with_hot_score do
