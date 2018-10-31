@@ -637,6 +637,9 @@ es:
         title: Vista previa de newsletter
         send: Enviar
         affected_users: (%{n} usuarios afectados)
+        sent_emails:
+          one: 1 correo enviado
+          other: "%{count} correos enviados"
         sent_at: Enviado
         subject: Asunto
         segment_recipient: Destinatarios

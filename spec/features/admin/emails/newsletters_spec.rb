@@ -146,6 +146,20 @@ feature "Admin newsletter emails" do
     end
   end
 
+  context "Counter of emails sent", :js do
+    scenario "Display counter" do
+      newsletter = create(:newsletter, segment_recipient: "administrators")
+      visit admin_newsletter_path(newsletter)
+
+      accept_confirm { click_link "Send" }
+
+      expect(page).to have_content "Newsletter sent successfully"
+
+      expect(page).to have_content "1 affected users"
+      expect(page).to have_content "1 email sent"
+    end
+  end
+
   scenario "Select list of users to send newsletter" do
     UserSegments::SEGMENTS.each do |user_segment|
       visit new_admin_newsletter_path
