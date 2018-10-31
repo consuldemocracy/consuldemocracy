@@ -56,6 +56,7 @@ es:
       see_results: Ver resultados
       section_footer:
         title: Ayuda sobre presupuestos participativos
+        description: Con los presupuestos participativos la ciudadanía decide a qué proyectos va destinada una parte del presupuesto.
     investments:
       form:
         tag_category_label: "Categorías"
@@ -70,7 +71,7 @@ es:
       index:
         title: Presupuestos participativos
         unfeasible: Propuestas de inversión no viables
-        unfeasible_text: "Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto) para ser declarados viables y llegar hasta la fase de votación final. Todos las proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad."
+        unfeasible_text: "Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto) para ser declarados viables y llegar hasta la fase de votación final. Todos los proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad."
         by_heading: "Propuestas de inversión con ámbito: %{heading}"
         search_form:
           button: Buscar
@@ -119,9 +120,12 @@ es:
         milestones_tab: Seguimiento
         no_milestones: No hay hitos definidos
         milestone_publication_date: "Publicado el %{publication_date}"
+        milestone_status_changed: El proyecto ha cambiado al estado
         author: Autor
-        project_unfeasible_html: 'Este proyecto de inversión <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación.'
-        project_not_selected_html: 'Este proyecto de inversión <strong>no ha sido seleccionado</strong> para la fase de votación.'
+        project_unfeasible_html: 'Este proyecto de gasto <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación.'
+        project_selected_html: 'Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación.'
+        project_winner: 'Proyecto de gasto ganador'
+        project_not_selected_html: 'Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación.'
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         add: Votar
@@ -129,7 +133,7 @@ es:
         already_supported: Ya has apoyado este proyecto de inversión. ¡Compártelo!
         support_title: Apoyar este proyecto
         confirm_group:
-          one: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
+          one: "Sólo puedes apoyar proyectos en %{count} distrito. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
           other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
         supports:
           zero: Sin apoyos
