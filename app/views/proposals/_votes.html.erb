@@ -10,7 +10,8 @@
     <%= t("proposals.proposal.supports", count: proposal.total_votes) %>&nbsp;
     <span>
       <abbr>
-        <%= t("proposals.proposal.supports_necessary", number: number_with_delimiter(Proposal.votes_needed_for_success)) %>
+        <%= t("proposals.proposal.supports_necessary",
+               number: number_with_delimiter(Proposal.votes_needed_for_success)) %>
       </abbr>
     </span>
   </span>
@@ -60,11 +61,7 @@
 
   <% if voted_for?(@proposal_votes, proposal) && setting['twitter_handle'] %>
     <div class="share-supported">
-      <%= render partial: 'shared/social_share', locals: {
-          title: proposal.title,
-          url: proposal_url(proposal),
-          description: proposal.summary
-      } %>
+      <%= render 'proposals/social_share', proposal: proposal, share_title: false %>
     </div>
   <% end %>
 </div>

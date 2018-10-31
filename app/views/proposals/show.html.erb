@@ -192,12 +192,8 @@
                       { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
           <% end %>
         </div>
-        <%= render partial: 'shared/social_share', locals: {
-          share_title: t("proposals.show.share"),
-          title: @proposal.title,
-          url: proposal_url(@proposal),
-          description: @proposal.summary
-        } %>
+
+        <%= render 'proposals/social_share', proposal: @proposal, share_title: t("proposals.show.share") %>
 
         <% if current_user %>
           <div class="sidebar-divider"></div>
