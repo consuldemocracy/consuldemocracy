@@ -75,6 +75,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Maintenance-Specs:** Fix flaky spec: Admin legislation questions Update Valid legislation question [\#2976](https://github.com/consul/consul/pull/2976)
 - **Maintenance-Specs:** Fix flaky spec: Admin feature flags Enable a disabled feature  [\#2967](https://github.com/consul/consul/pull/2967)
 - **Maintenance-Specs:** Fix flaky spec for translations [\#2962](https://github.com/consul/consul/pull/2962)
+- **Maintenance-Specs:** Fix flaky spec: Admin legislation draft versions Update Valid legislation draft version [\#2995](https://github.com/consul/consul/pull/2995)
 - **Maintenance-Specs:** Fix pluralization spec when using different default locale [\#2973](https://github.com/consul/consul/pull/2973)
 - **Maintenance-Specs:** Fix time related specs [\#2911](https://github.com/consul/consul/pull/2911)
 - **Design/UX:** UI design [\#2983](https://github.com/consul/consul/pull/2983)
