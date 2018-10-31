@@ -76,6 +76,9 @@ es:
       legislation/process:
         one: "Proceso"
         other: "Procesos"
+      legislation/proposal:
+        one: "Propuesta"
+        other: "Propuestas"
       legislation/draft_versions:
         one: "Versión borrador"
         other: "Versiones borrador"
@@ -243,6 +246,10 @@ es:
         changelog: Cambios
         status: Estado
         final_version: Versión final
+      legislation/draft_version/translation:
+        title: Título de la versión
+        body: Texto
+        changelog: Cambios
       legislation/question:
         title: Título
         question_options: Respuestas
@@ -259,6 +266,9 @@ es:
       poll/question/answer:
         title: Respuesta
         description: Descripción
+      poll/question/answer/translation:
+        title: Título
+        description: Descripción
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
@@ -267,12 +277,25 @@ es:
         subject: Asunto
         from: Enviado por
         body: Contenido del email
+      admin_notification:
+        segment_recipient: Destinatarios
+        title: Título
+        link: Enlace
+        body: Texto
+      admin_notification/translation:
+        title: Título
+        body: Texto
       widget/card:
         label: Etiqueta (opcional)
         title: Título
         description: Descripción
         link_text: Texto del enlace
         link_url: URL del enlace
+      widget/card/translation:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
       widget/feed:
         limit: Número de elementos
     errors:
@@ -297,7 +320,7 @@ es:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "El segmento de usuarios es inválido"
+              invalid: "El usuario del destinatario es inválido"
         admin_notification:
           attributes:
             segment_recipient:
