@@ -76,6 +76,9 @@ es:
       legislation/process:
         one: "Proceso"
         other: "Procesos"
+      legislation/proposal:
+        one: "Propuesta"
+        other: "Propuestas"
       legislation/draft_versions:
         one: "Versión borrador"
         other: "Versiones borrador"
@@ -244,7 +247,7 @@ es:
         status: Estado
         final_version: Versión final
       legislation/draft_version/translation:
-        title: Título de la version
+        title: Título de la versión
         body: Texto
         changelog: Cambios
       legislation/question:
@@ -264,7 +267,7 @@ es:
         title: Respuesta
         description: Descripción
       poll/question/answer/translation:
-        title: Respuesta
+        title: Título
         description: Descripción
       poll/question/answer/video:
         title: Título
@@ -317,7 +320,7 @@ es:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "El segmento de usuarios es inválido"
+              invalid: "El usuario del destinatario es inválido"
         admin_notification:
           attributes:
             segment_recipient:
