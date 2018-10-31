@@ -85,7 +85,7 @@ feature 'Admin legislation draft versions' do
 
       click_link "All"
 
-      expect(page).to have_content 'An example legislation process'
+      expect(page).not_to have_link "All"
 
       click_link 'An example legislation process'
       click_link 'Drafting'
