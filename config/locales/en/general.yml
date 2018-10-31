@@ -450,6 +450,9 @@ en:
     update:
       form:
         submit_button: Save changes
+    share:
+      message: "I supported the proposal %{summary} in %{org}. If you're interested, support it too!"
+      message_mobile: "I supported the proposal %{summary} in %{handle}. If you're interested, support it too!"
   polls:
     all: "All"
     no_dates: "no date assigned"
