@@ -29,6 +29,7 @@ es:
         budget_investment: "Proyecto de gasto actualizado correctamente"
         topic: "Tema actualizado correctamente."
         valuator_group: "Grupo de evaluadores actualizado correctamente"
+        translation: "Traducción actualizada correctamente"
       destroy:
         spending_proposal: "Propuesta de inversión eliminada."
         budget_investment: "Proyecto de gasto eliminado."
