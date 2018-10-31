@@ -1,7 +1,87 @@
 # Changelog
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html)
+
+## [0.17.0](https://github.com/consul/consul/compare/v0.16...v0.17) - 2018-10-31
+
+### Added
+- **Multi-language:** Migrate globalize data [\#2986](https://github.com/consul/consul/pull/2986)
+- **Multi-language:** Update custom pages translations [\#2952](https://github.com/consul/consul/pull/2952)
+- **Multi-language:** Make homepage content translatable [\#2924](https://github.com/consul/consul/pull/2924)
+- **Multi-language:** Make collaborative legislation translatable [\#2912](https://github.com/consul/consul/pull/2912)
+- **Multi-language:** Make admin notifications translatable [\#2910](https://github.com/consul/consul/pull/2910)
+- **Multi-language:** Refactor translatable specs [\#2903](https://github.com/consul/consul/pull/2903)
+- **Multi-language:** Refactor code shared by admin-translatable resources [\#2896](https://github.com/consul/consul/pull/2896)
+- **Multi-language:** Change Translatable implementation to accommodate new requirements [\#2886](https://github.com/consul/consul/pull/2886)
+- **Multi-language:** Make banners translatable [\#2865](https://github.com/consul/consul/pull/2865)
+- **Multi-language:** Fix translatable bugs [\#2985](https://github.com/consul/consul/pull/2985)
+- **Multi-language:** Make polls translatable [\#2914](https://github.com/consul/consul/pull/2914)
+- **Multi-language:** Updates translatable custom pages [\#2913](https://github.com/consul/consul/pull/2913)
+- **Translations:** Add all available languages [\#2964](https://github.com/consul/consul/pull/2964)
+- **Translations:** Fix locale folder names [\#2963](https://github.com/consul/consul/pull/2963)
+- **Translations:** Update translations from Crowdin [\#2961](https://github.com/consul/consul/pull/2961)
+- **Translations:** Display language name or language key [\#2949](https://github.com/consul/consul/pull/2949)
+- **Translations:** Avoid InvalidPluralizationData exception when missing translations [\#2936](https://github.com/consul/consul/pull/2936)
+- **Translations:** Changes allegations dates label [\#2915](https://github.com/consul/consul/pull/2915)
+- **Maintenance-Rubocop:** Add Hound basic configuration [\#2987](https://github.com/consul/consul/pull/2987)
+- **Maintenance-Rubocop:** Update rubocop rules [\#2925](https://github.com/consul/consul/pull/2925)
+- **Maintenance-Rubocop:** Fix Rubocop warnings for Admin controllers [\#2880](https://github.com/consul/consul/pull/2880)
+- **Design/UX:** Adds status icons on polls poll group [\#2860](https://github.com/consul/consul/pull/2860)
+- **Design/UX:** Feature help page [\#2933](https://github.com/consul/consul/pull/2933)
+- **Design/UX:** Adds enable help page task [\#2960](https://github.com/consul/consul/pull/2960)
+- **Budgets:** Allow select winner legislation proposals [\#2950](https://github.com/consul/consul/pull/2950)
+- **Legislation-Proposals:** Add legislation proposal's categories [\#2948](https://github.com/consul/consul/pull/2948)
+- **Legislation-Proposals:** Admin permissions in legislation proposals [\#2945](https://github.com/consul/consul/pull/2945)
+- **Legislation-Proposals:** Random legislation proposal's order & pagination [\#2942](https://github.com/consul/consul/pull/2942)
+- **Legislation-Proposals:** Legislation proposals imageable [\#2922](https://github.com/consul/consul/pull/2922)
+- **CKeditor:** Bring back CKEditor images button [\#2977](https://github.com/consul/consul/pull/2977)
+- **CKeditor:** Ckeditor4 update [\#2876](https://github.com/consul/consul/pull/2876)
+- **Installation:** Add placeholder configuration for SMTP [\#2900](https://github.com/consul/consul/pull/2900)
+
+### Changed
+- **Newsletters:** Newsletter updates [\#2992](https://github.com/consul/consul/pull/2992)
+- **Maintenance-Gems:** \[Security\] Bump rubyzip from 1.2.1 to 1.2.2 [\#2879](https://github.com/consul/consul/pull/2879)
+- **Maintenance-Gems:** \[Security\] Bump nokogiri from 1.8.2 to 1.8.4 [\#2878](https://github.com/consul/consul/pull/2878)
+- **Maintenance-Gems:** \[Security\] Bump ffi from 1.9.23 to 1.9.25 [\#2877](https://github.com/consul/consul/pull/2877)
+- **Maintenance-Gems:** Bump jquery-rails from 4.3.1 to 4.3.3 [\#2929](https://github.com/consul/consul/pull/2929)
+- **Maintenance-Gems:** Bump browser from 2.5.2 to 2.5.3 [\#2928](https://github.com/consul/consul/pull/2928)
+- **Maintenance-Gems:** Bump delayed\_job\_active\_record from 4.1.2 to 4.1.3 [\#2927](https://github.com/consul/consul/pull/2927)
+- **Maintenance-Gems:** Bump rubocop-rspec from 1.24.0 to 1.26.0 [\#2926](https://github.com/consul/consul/pull/2926)
+- **Maintenance-Gems:** Bump paranoia from 2.4.0 to 2.4.1 [\#2909](https://github.com/consul/consul/pull/2909)
+- **Maintenance-Gems:** Bump ancestry from 3.0.1 to 3.0.2 [\#2908](https://github.com/consul/consul/pull/2908)
+- **Maintenance-Gems:** Bump i18n-tasks from 0.9.20 to 0.9.25 [\#2906](https://github.com/consul/consul/pull/2906)
+- **Maintenance-Gems:** Bump coveralls from 0.8.21 to 0.8.22 [\#2905](https://github.com/consul/consul/pull/2905)
+- **Maintenance-Gems:** Bump scss\_lint from 0.54.0 to 0.55.0 [\#2895](https://github.com/consul/consul/pull/2895)
+- **Maintenance-Gems:** Bump unicorn from 5.4.0 to 5.4.1 [\#2894](https://github.com/consul/consul/pull/2894)
+- **Maintenance-Gems:** Bump mdl from 0.4.0 to 0.5.0 [\#2892](https://github.com/consul/consul/pull/2892)
+- **Maintenance-Gems:** Bump savon from 2.11.2 to 2.12.0 [\#2891](https://github.com/consul/consul/pull/2891)
+- **Maintenance-Gems:** Bump capistrano-rails from 1.3.1 to 1.4.0 [\#2884](https://github.com/consul/consul/pull/2884)
+- **Maintenance-Gems:** Bump autoprefixer-rails from 8.2.0 to 9.1.4 [\#2881](https://github.com/consul/consul/pull/2881)
+- **Maintenance-Gems:** Upgrade gem coffee-rails to version 4.2.2 [\#2837](https://github.com/consul/consul/pull/2837)
+- **Maintenance-Refactorings:** Adds custom javascripts folder [\#2921](https://github.com/consul/consul/pull/2921)
+- **Maintenance-Refactorings:** Test suite maintenance [\#2888](https://github.com/consul/consul/pull/2888)
+- **Maintenance-Refactorings:** Replace `.all.each` with `.find\_each` to reduce memory usage [\#2887](https://github.com/consul/consul/pull/2887)
+- **Maintenance-Refactorings:** Split factories [\#2838](https://github.com/consul/consul/pull/2838)
+- **Maintenance-Refactorings:** Change spelling for constant to TITLE\_LENGTH\_RANGE [\#2966](https://github.com/consul/consul/pull/2966)
+- **Maintenance-Refactorings:** Remove described class cop [\#2990](https://github.com/consul/consul/pull/2990)
+- **Maintenance-Refactorings:** Ease customization in processes controller [\#2982](https://github.com/consul/consul/pull/2982)
+- **Maintenance-Refactorings:** Fix a misleading comment [\#2844](https://github.com/consul/consul/pull/2844)
+- **Maintenance-Refactorings:** Simplify legislation proposals customization [\#2946](https://github.com/consul/consul/pull/2946)
+- **Social-Share:** Improves social share messages for proposals [\#2994](https://github.com/consul/consul/pull/2994)
+
+### Fixed
+- **Maintenance-Specs:** Fix flaky specs: proposals and legislation Voting comments Update [\#2989](https://github.com/consul/consul/pull/2989)
+- **Maintenance-Specs:** Fix flaky spec: Admin legislation questions Update Valid legislation question [\#2976](https://github.com/consul/consul/pull/2976)
+- **Maintenance-Specs:** Fix flaky spec: Admin feature flags Enable a disabled feature  [\#2967](https://github.com/consul/consul/pull/2967)
+- **Maintenance-Specs:** Fix flaky spec for translations [\#2962](https://github.com/consul/consul/pull/2962)
+- **Maintenance-Specs:** Fix pluralization spec when using different default locale [\#2973](https://github.com/consul/consul/pull/2973)
+- **Maintenance-Specs:** Fix time related specs [\#2911](https://github.com/consul/consul/pull/2911)
+- **Design/UX:** UI design [\#2983](https://github.com/consul/consul/pull/2983)
+- **Design/UX:** Custom fonts [\#2916](https://github.com/consul/consul/pull/2916)
+- **Design/UX:** Show active tab in custom info texts [\#2898](https://github.com/consul/consul/pull/2898)
+- **Design/UX:** Fix navigation menu under Legislation::Proposal show view [\#2835](https://github.com/consul/consul/pull/2835)
+- **Social-Share:** Fix bug in facebook share link [\#2852](https://github.com/consul/consul/pull/2852)
 
 ## [0.16.0](https://github.com/consul/consul/compare/v0.15...v0.16) - 2018-07-16
 
@@ -416,7 +496,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rails 4.2.6
 - Ruby 2.2.3
 
-[Unreleased]: https://github.com/consul/consul/compare/v0.16...consul:master
+[Unreleased]: https://github.com/consul/consul/compare/v0.17...consul:master
+[0.17.0]: https://github.com/consul/consul/compare/v0.16...v.017
 [0.16.0]: https://github.com/consul/consul/compare/v0.15...v.016
 [0.15.0]: https://github.com/consul/consul/compare/v0.14...v0.15
 [0.14.0]: https://github.com/consul/consul/compare/v0.13...v0.14
