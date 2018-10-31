@@ -15,19 +15,55 @@
     </div>
   <% end %>
 
-  <div class="small-12 medium-9 column">
-    <%= f.translatable_text_field :title,
-                                  placeholder: t("admin.legislation.draft_versions.form.title_placeholder") %>
-  </div>
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-9 column">
+      <%= translations_form.text_field :title,
+                                       placeholder: t("admin.legislation.draft_versions.form.title_placeholder") %>
+    </div>
 
-  <div class="small-12 medium-9 column">
-    <%= f.label :changelog %>
-    <span class="help-text"><%= t("admin.legislation.draft_versions.form.use_markdown") %></span>
-    <%= f.translatable_text_area :changelog,
-                                 label: false,
-                                 rows: 5,
-                                 placeholder: t("admin.legislation.draft_versions.form.changelog_placeholder") %>
-  </div>
+    <div class="small-12 medium-9 column">
+      <%= translations_form.text_area :changelog,
+                                      hint: t("admin.legislation.draft_versions.form.use_markdown"),
+                                      rows: 5,
+                                      placeholder: t("admin.legislation.draft_versions.form.changelog_placeholder") %>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <%= translations_form.label :body, nil, hint: t("admin.legislation.draft_versions.form.use_markdown") %>
+    </div>
+
+    <div class="markdown-editor clear">
+      <div class="small-12 medium-8 column fullscreen-container">
+        <div class="markdown-editor-header truncate">
+          <%= t("admin.legislation.draft_versions.form.title_html",
+                 draft_version_title: @draft_version.title,
+                 process_title: @process.title ) %>
+        </div>
+
+        <div class="markdown-editor-buttons">
+          <%= f.submit(class: "button", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
+        </div>
+
+        <%= link_to "#", class: 'fullscreen-toggle' do %>
+          <span data-closed-text="<%= t("admin.legislation.draft_versions.form.launch_text_editor")%>"
+                data-open-text="<%= t("admin.legislation.draft_versions.form.close_text_editor")%>">
+            <strong><%= t("admin.legislation.draft_versions.form.launch_text_editor")%></strong>
+          </span>
+
+        <% end %>
+      </div>
+
+      <div class="small-12 medium-6 column markdown-area">
+        <%= translations_form.text_area :body,
+                                        label: false,
+                                        rows: 10,
+                                        placeholder: t("admin.legislation.draft_versions.form.body_placeholder") %>
+      </div>
+
+      <div class="small-12 medium-6 column markdown-preview">
+      </div>
+    </div>
+  <% end %>
 
   <div class="small-12 medium-9 column">
     <%= f.label :status %>
@@ -43,40 +79,6 @@
     <%= f.label :final_version %>
     <%= f.check_box :final_version, label: false %>
     <span class="help-text"><%= t("admin.legislation.draft_versions.form.hints.final_version") %></span>
-  </div>
-
-  <div class="small-12 medium-4 column">
-    <%= f.label :body %>
-    <span class="help-text"><%= t("admin.legislation.draft_versions.form.use_markdown") %></span>
-  </div>
-
-  <div class="markdown-editor clear">
-    <div class="small-12 medium-8 column fullscreen-container">
-      <div class="markdown-editor-header truncate">
-        <%= t("admin.legislation.draft_versions.form.title_html",
-               draft_version_title: @draft_version.title,
-               process_title: @process.title ) %>
-      </div>
-
-      <div class="markdown-editor-buttons">
-        <%= f.submit(class: "button", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
-      </div>
-
-      <%= link_to "#", class: 'fullscreen-toggle' do %>
-        <span data-closed-text="<%= t("admin.legislation.draft_versions.form.launch_text_editor")%>"
-              data-open-text="<%= t("admin.legislation.draft_versions.form.close_text_editor")%>">
-          <strong><%= t("admin.legislation.draft_versions.form.launch_text_editor")%></strong>
-        </span>
-      <% end %>
-    </div>
-    <div class="small-12 medium-6 column markdown-area">
-      <%= f.translatable_text_area :body,
-                                   label: false,
-                                   placeholder: t("admin.legislation.draft_versions.form.body_placeholder") %>
-    </div>
-
-    <div id="markdown-preview" class="small-12 medium-6 column markdown-preview">
-    </div>
   </div>
 
   <div class="small-12 medium-3 column clear end margin-top">

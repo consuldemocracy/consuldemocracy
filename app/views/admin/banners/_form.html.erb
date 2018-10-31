@@ -28,27 +28,29 @@
   </div>
 
   <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.translatable_text_field :title,
-                                    placeholder: t("admin.banners.banner.title"),
-                                    data: {js_banner_title: "js_banner_title"},
-                                    label: t("admin.banners.banner.title") %>
-    </div>
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 medium-6 column">
+        <%= translations_form.text_field :title,
+          placeholder: t("admin.banners.banner.title"),
+          data: {js_banner_title: "js_banner_title"},
+          label: t("admin.banners.banner.title") %>
+      </div>
 
+      <div class="small-12 column">
+        <%= translations_form.text_field :description,
+          placeholder: t("admin.banners.banner.description"),
+          data: {js_banner_description: "js_banner_description"},
+          label: t("admin.banners.banner.description")  %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
     <div class="small-12 medium-6 column">
       <%= f.label :target_url, t("admin.banners.banner.target_url") %>
       <%= f.text_field :target_url,
                         label: false,
                         placeholder: t("admin.banners.banner.target_url") %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 column">
-      <%= f.translatable_text_field :description,
-                                    placeholder: t("admin.banners.banner.description"),
-                                    data: {js_banner_description: "js_banner_description"},
-                                    label: t("admin.banners.banner.description")  %>
     </div>
   </div>
 

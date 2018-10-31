@@ -4,7 +4,7 @@ class Legislation::Question < ActiveRecord::Base
   include Notifiable
 
   translates :title, touch: true
-  globalize_accessors
+  include Globalizable
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :process, class_name: 'Legislation::Process', foreign_key: 'legislation_process_id'
@@ -17,7 +17,7 @@ class Legislation::Question < ActiveRecord::Base
   accepts_nested_attributes_for :question_options, reject_if: proc { |attributes| attributes.all? { |k, v| v.blank? } }, allow_destroy: true
 
   validates :process, presence: true
-  validates :title, presence: true
+  validates_translation :title, presence: true
 
   scope :sorted, -> { order('id ASC') }
 

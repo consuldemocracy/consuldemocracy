@@ -16,7 +16,7 @@ App.Globalize =
       else
         $(this).hide()
       $('.js-delete-language').hide()
-      $('#delete-' + locale).show()
+      $('#js_delete_' + locale).show()
 
   highlight_locale: (element) ->
     $('.js-globalize-locale-link').removeClass('is-active');
@@ -34,10 +34,24 @@ App.Globalize =
     App.Globalize.disable_locale(locale)
 
   enable_locale: (locale) ->
-    $("#enabled_translations_" + locale).val(1)
+    App.Globalize.destroy_locale_field(locale).val(false)
+    App.Globalize.site_customization_enable_locale_field(locale).val(1)
 
   disable_locale: (locale) ->
-    $("#enabled_translations_" + locale).val(0)
+    App.Globalize.destroy_locale_field(locale).val(true)
+    App.Globalize.site_customization_enable_locale_field(locale).val(0)
+
+  enabled_locales: ->
+    $.map(
+      $(".js-globalize-locale-link:visible"),
+      (element) -> $(element).data("locale")
+    )
+
+  destroy_locale_field: (locale) ->
+    $("input[id$=_destroy][data-locale=" + locale + "]")
+
+  site_customization_enable_locale_field: (locale) ->
+    $("#enabled_translations_" + locale)
 
   refresh_visible_translations: ->
     locale = $('.js-globalize-locale-link.is-active').data("locale")
@@ -58,3 +72,8 @@ App.Globalize =
       $(this).hide()
       App.Globalize.remove_language(locale)
 
+    $(".js-add-fields-container").on "cocoon:after-insert", ->
+      $.each(
+        App.Globalize.enabled_locales(),
+        (index, locale) -> App.Globalize.enable_locale(locale)
+      )

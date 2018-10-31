@@ -50,7 +50,8 @@ feature "Admin custom information texts" do
     visit admin_site_customization_information_texts_path
 
     click_link 'Proposals'
-    expect(find("a[href=\"/admin/site_customization/information_texts?tab=proposals\"].is-active")).to have_content "Proposals"
+    expect(find("a[href=\"/admin/site_customization/information_texts?tab=proposals\"].is-active"))
+          .to have_content "Proposals"
   end
 
   context "Globalization" do

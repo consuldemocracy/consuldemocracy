@@ -89,8 +89,8 @@ feature 'Admin banners magement' do
 
     click_link "Create banner"
 
-    fill_in 'banner_title_en', with: 'Such banner'
-    fill_in 'banner_description_en', with: 'many text wow link'
+    fill_in 'Title', with: 'Such banner'
+    fill_in 'Description', with: 'many text wow link'
     fill_in 'banner_target_url', with: 'https://www.url.com'
     last_week = Time.current - 7.days
     next_week = Time.current + 7.days
@@ -110,12 +110,39 @@ feature 'Admin banners magement' do
     expect(page).to have_link 'Such banner many text wow link', href: 'https://www.url.com'
   end
 
+  scenario "Publish a banner with a translation different than the current locale", :js do
+    visit new_admin_banner_path
+
+    expect(page).to have_link "English"
+
+    click_link "Remove language"
+    select "Français", from: "translation_locale"
+
+    fill_in "Title", with: "En Français"
+    fill_in "Description", with: "Link en Français"
+
+    fill_in "Link", with: "https://www.url.com"
+
+    last_week = Time.current - 1.week
+    next_week = Time.current + 1.week
+
+    fill_in "Post started at", with: last_week.strftime("%d/%m/%Y")
+    fill_in "Post ended at", with: next_week.strftime("%d/%m/%Y")
+
+    click_button "Save changes"
+    click_link "Edit banner"
+
+    expect(page).to have_link "Français"
+    expect(page).not_to have_link "English"
+    expect(page).to have_field "Title", with: "En Français"
+  end
+
   scenario "Update banner color when changing from color picker or text_field", :js do
     visit new_admin_banner_path
 
     fill_in 'banner_background_color', with: '#850000'
     fill_in 'banner_font_color', with: '#ffb2b2'
-    fill_in 'banner_title_en', with: 'Fun with flags'
+    fill_in 'Title', with: 'Fun with flags'
 
     # This last step simulates the blur event on the page. The color pickers and the text_fields
     # has onChange events that update each one when the other changes, but this is only fired when
@@ -146,8 +173,8 @@ feature 'Admin banners magement' do
 
     click_link "Edit banner"
 
-    fill_in 'banner_title_en', with: 'Modified title'
-    fill_in 'banner_description_en', with: 'Edited text'
+    fill_in 'Title', with: 'Modified title'
+    fill_in 'Description', with: 'Edited text'
 
     page.find("body").click
 
