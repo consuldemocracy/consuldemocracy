@@ -50,12 +50,21 @@ ar:
       - ':اليوم'
   datetime:
     prompts:
+      minute: دقيقة
+      month: شهر
+      second: ثواني
       year: السنة
   errors:
     messages:
       present: يجب أن يكون فارغا
       confirmation: لا يتطابق مع %{attribute}
       empty: لا يمكن أن يكون فارغا
+  helpers:
+    select:
+      prompt: الرجاء الإختيار
+    submit:
+      create: إنشاء %{model}
+      submit: حفظ %{model}
   number:
     human:
       decimal_units:
