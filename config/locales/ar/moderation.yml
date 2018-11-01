@@ -8,6 +8,7 @@ ar:
           all: الكل
           pending_flag_review: معلق
         hide_comments: إخفاء التعليقات
+        order: طلب
         orders:
           newest: الأحدث
         title: التعليقات
@@ -31,6 +32,9 @@ ar:
         filters:
           all: الكل
         order: ترتيب حسب
+    proposal_notifications:
+      index:
+        order: الطلب من طرف
     users:
       index:
         hidden: محظور
