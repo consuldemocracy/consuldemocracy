@@ -75,6 +75,7 @@ ar:
           thousand: ألف
           trillion: تريليون
       format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
       storage_units:
@@ -82,3 +83,6 @@ ar:
           gb: غيغا بايت
           kb: كيلو بايت
           tb: تيرابايت
+  support:
+    array:
+      two_words_connector: " و "
