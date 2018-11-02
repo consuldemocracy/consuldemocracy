@@ -33,7 +33,7 @@ de:
     twitter_handle: "Twitter Benutzer*name"
     twitter_handle_description: "Falls ausgefüllt, wird es in der Fußzeile erscheinen"
     twitter_hashtag: "Twitter hashtag"
-    twitter_hashtag_description: "Hashtag, der erscheint, wenn I halt auf Twitter geteilt wird"
+    twitter_hashtag_description: "Hashtag, der erscheint, wenn Inhalt auf Twitter geteilt wird"
     facebook_handle: "Facebook Benutzer*name"
     facebook_handle_description: "Falls ausgefüllt, wird es in der Fußzeile erscheinen"
     youtube_handle: "Benutzer*name für Youtube"
@@ -51,7 +51,7 @@ de:
     related_content_score_threshold: "Punktzahl-Grenze für verwandte Inhalte"
     related_content_score_threshold_description: "Inhalte, die Benutzer als zusammenhangslos markiert haben"
     map_latitude: "Breitengrad"
-    map_latitude_description: "Breitangrad, um die Kartenposition anzuzeigen"
+    map_latitude_description: "Breitengrad zur Anzeige der Kartenposition"
     map_longitude: "Längengrad"
     map_longitude_description: "Längengrad, um die Position der Karte zu zeigen"
     map_zoom: "Zoom"
@@ -76,7 +76,7 @@ de:
     proposal_improvement_path: Interner Link zur Antragsverbesserungsinformation
     feature:
       budgets: "Bürgerhaushalt"
-      budgets_description: "Durch den Bürgerhaushalt können BürgerInnen entscheiden an welche der, von Nachbarn presentierten, Projekte einen Teil des kommunalen Budgets erhalten"
+      budgets_description: "Bei Bürgerhaushalten entscheiden die Bürger, welche von ihren Nachbarn vorgestellten Projekte einen Teil des Gemeindebudgets erhalten"
       twitter_login: "Twitter login"
       twitter_login_description: "Anmeldung mit Twitter-Account erlauben"
       facebook_login: "Facebook login"
