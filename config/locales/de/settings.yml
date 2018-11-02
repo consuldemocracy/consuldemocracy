@@ -21,7 +21,7 @@ de:
     proposal_code_prefix: "Präfix für Vorschlag-Codes"
     proposal_code_prefix_description: "Dieses Präfix wird in den Vorschlägen vor dem Erstellungsdatum und der ID angezeigt"
     votes_for_proposal_success: "Anzahl der notwendigen Stimmen zur Genehmigung eines Vorschlags"
-    votes_for_proposal_success_description: "Wenn der Vorschlag diese Anzahl an Unterstützung erreicht, wird es nicht mehr in der Lage sein zusätzliche Unterstützung zu sammeln un wird als erfolgreich betrachtet"
+    votes_for_proposal_success_description: "Wenn ein Antrag diese Anzahl von Unterstützungen erreicht, kann er nicht mehr mehr unterstützt werden und gilt als erfolgreich"
     months_to_archive_proposals: "Anzahl der Monate, um Vorschläge zu archivieren"
     months_to_archive_proposals_description: Nach dieser Anzahl von Monaten wird elder Vorschlag archiviert und wird nicht mehr fähig sein Unterstützung zu erhalten"
     email_domain_for_officials: "E-Mail-Domäne für Beamte"
