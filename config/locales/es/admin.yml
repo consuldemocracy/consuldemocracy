@@ -31,6 +31,15 @@ es:
         target_url: Enlace
         post_started_at: Inicio de publicación
         post_ended_at: Fin de publicación
+        sections_label: Secciones en las que aparece
+        sections:
+          homepage: Homepage
+          debates: Debates
+          proposals: Propuestas
+          budgets: Presupuestos participativos
+          help_page: Página de ayuda
+        background_color: Color de fondo
+        font_color: Color del texto
       edit:
         editing: Editar el banner
         form:
@@ -58,6 +67,7 @@ es:
           on_debates: Debates
           on_proposals: Propuestas
           on_users: Usuarios
+          on_system_emails: Emails del sistema
         title: Actividad de los Moderadores
         type: Tipo
         no_activity: No hay actividad de moderadores.
@@ -118,6 +128,8 @@ es:
         table_amount: Cantidad
         table_population: Población
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
+        max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
+        current_of_max_headings: "%{current} de %{max}"
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
@@ -156,6 +168,7 @@ es:
           selected: Seleccionados
           undecided: Sin decidir
           unfeasible: Inviables
+          min_total_supports: Apoyos mínimos
           winners: Ganadores
           one_filter_html: "Filtros en uso: <b><em>%{filter}</em></b>"
           two_filters_html: "Filtros en uso: <b><em>%{filter}, %{advanced_filters}</em></b>"
@@ -174,6 +187,20 @@ es:
           undecided: "Sin decidir"
         selected: "Seleccionada"
         select: "Seleccionar"
+        list:
+          id: ID
+          title: Título
+          supports: Apoyos
+          admin: Administrador
+          valuator: Evaluador
+          valuation_group: Grupos evaluadores
+          geozone: Ámbito de actuación
+          feasibility: Viabilidad
+          valuation_finished: Ev. Fin.
+          selected: Seleccionado
+          visible_to_valuators: Mostrar a evaluadores
+          author_username: Usuario autor
+          incompatible: Incompatible
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
       show:
@@ -234,12 +261,16 @@ es:
         table_title: "Título"
         table_description: "Descripción"
         table_publication_date: "Fecha de publicación"
+        table_status: Estado
         table_actions: "Acciones"
         delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
         image: "Imagen"
         show_image: "Mostrar imagen"
         documents: "Documentos"
+      form:
+        admin_statuses: Gestionar estados de proyectos
+        no_statuses_defined: No hay estados definidos
       new:
         creating: Crear hito
         date: Fecha
@@ -252,6 +283,26 @@ es:
         notice: Hito actualizado
       delete:
         notice: Hito borrado correctamente
+    statuses:
+      index:
+        title: Estados de proyectos
+        empty_statuses: Aún no se ha creado ningún estado de proyecto
+        new_status: Crear nuevo estado de proyecto
+        table_name: Nombre
+        table_description: Descripción
+        table_actions: Acciones
+        delete: Borrar
+        edit: Editar
+      edit:
+        title: Editar estado de proyecto
+      update:
+        notice: Estado de proyecto editado correctamente
+      new:
+        title: Crear estado de proyecto
+      create:
+        notice: Estado de proyecto creado correctamente
+      delete:
+        notice: Estado de proyecto eliminado correctamente
     comments:
       index:
         filter: Filtro
@@ -292,6 +343,15 @@ es:
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
         title: Actividad del usuario (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
+        title: Proyectos de gasto ocultos
+        no_hidden_budget_investments: No hay proyectos de gasto ocultos
     legislation:
       processes:
         create:
@@ -312,6 +372,7 @@ es:
           enabled: Habilitado
           process: Proceso
           debate_phase: Fase previa
+          allegations_phase: Fase de comentarios
           proposals_phase: Fase de propuestas
           start: Inicio
           end: Fin
@@ -333,6 +394,8 @@ es:
           back: Volver
           title: Crear nuevo proceso de legislación colaborativa
           submit_button: Crear proceso
+        proposals:
+          select_order: Ordenar por
         process:
           title: Proceso
           comments: Comentarios
