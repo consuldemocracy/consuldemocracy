@@ -1,5 +1,9 @@
 es:
   pages:
+    conditions:
+      title: Condiciones de uso
+      subtitle: AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE DATOS PERSONALES DEL PORTAL DE GOBIERNO ABIERTO
+      description: Página de información sobre las condiciones de uso, privacidad y protección de datos personales.
     general_terms: Términos y Condiciones
     help:
       title: "%{org} es una plataforma de participación ciudadana"
@@ -24,6 +28,7 @@ es:
         description: "En la sección de %{link} puedes plantear propuestas para que el Ayuntamiento las lleve a cabo. Las propuestas recaban apoyos, y si alcanzan los apoyos suficientes se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Ayuntamiento y se llevan a cabo."
         link: "propuestas ciudadanas"
         image_alt: "Botón para apoyar una propuesta"
+        figcaption_html: 'Botón para "Apoyar" una propuesta.'
       budgets:
         title: "Presupuestos participativos"
         description: "La sección de %{link} sirve para que la gente decida de manera directa a qué se destina una parte del presupuesto municipal."
@@ -61,6 +66,58 @@ es:
           Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación CONSUL](https://github.com/consul/consul 'github consul').
       titles:
         how_to_use: Utilízalo en tu municipio
+    privacy:
+      title: Política de privacidad
+      subtitle: AVISO DE PROTECCIÓN DE DATOS
+      info_items:
+        - 
+          text: La navegación por la informacion disponible en el Portal de Gobierno Abierto es anónima.
+        - 
+          text: Para utilizar los servicios contenidos en el Portal de Gobierno Abierto el usuario deberá darse de alta y proporcionar previamente los datos de carácter personal segun la informacion especifica que consta en cada tipo de alta.
+        - 
+          text: 'Los datos aportados serán incorporados y tratados por el Ayuntamiento de acuerdo con la descripción del fichero siguiente:'
+        - 
+          subitems:
+            - 
+              field: 'Nombre del fichero/tratamiento:'
+              description: NOMBRE DEL FICHERO
+            - 
+              field: 'Finalidad del fichero/tratamiento:'
+              description: Gestionar los procesos participativos para el control de la habilitación de las personas que participan en los mismos y recuento meramente numérico y estadístico de los resultados derivados de los procesos de participación ciudadana.
+            - 
+              field: 'Órgano responsable:'
+              description: ÓRGANO RESPONSABLE
+        - 
+          text: El interesado podrá ejercer los derechos de acceso, rectificación, cancelación y oposición, ante el órgano responsable indicado todo lo cual se informa en el cumplimiento del artículo 5 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
+        - 
+          text: Como principio general, este sitio web no comparte ni revela información obtenida, excepto cuando haya sido autorizada por el usuario, o la informacion sea requerida por la autoridad judicial, ministerio fiscal o la policia judicial, o se de alguno de los supuestos regulados en el artículo 11 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
+    accessibility:
+      title: Accesibilidad
+      description: |-
+        La accesibilidad web se refiere a la posibilidad de acceso a la web y a sus contenidos por todas las personas, independientemente de las discapacidades (físicas, intelectuales o técnicas) que puedan presentar o de las que se deriven del contexto de uso (tecnológicas o ambientales).
+        
+        Cuando los sitios web están diseñados pensando en la accesibilidad, todos los usuarios pueden acceder en condiciones de igualdad a los contenidos, por ejemplo:
+      examples:
+        - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información.
+        - Cuando los vídeos disponen de subtítulos, los usuarios con dificultades auditivas pueden entenderlos plenamente.
+        - Si los contenidos están escritos en un lenguaje sencillo e ilustrados, los usuarios con problemas de aprendizaje están en mejores condiciones de entenderlos.
+        - Si el usuario tiene problemas de movilidad y le cuesta usar el ratón, las alternativas con el teclado le ayudan en la navegación.
+      keyboard_shortcuts:
+        title: '"Atajos" de teclado'
+        navigation_table:
+          description: Para poder navegar por este sitio web de forma accesible, se han programado un grupo de teclas de acceso rápido que recogen las principales secciones de interés general en los que está organizado el sitio.
+          caption: Atajos de teclado para el menú de navegación
+          key_header: Tecla
+          page_header: Página
+          rows:
+            - 
+              key_column: 0
+              page_column: Inicio
+            - 
+            - 
+            - 
+            - 
+            - 
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
