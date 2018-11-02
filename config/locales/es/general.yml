@@ -473,12 +473,14 @@ es:
       already_answer: "Ya has participado en esta votación"
       not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
       unverified: "Por favor verifica tu cuenta para participar"
+      cant_answer: "Esta votación no está disponible en tu zona"
       section_header:
         icon_alt: Icono de Votaciones
         title: Votaciones
         help: Ayuda sobre las votaciones
       section_footer:
         title: Ayuda sobre las votaciones
+        description: Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
       no_polls: "No hay votaciones abiertas."
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
@@ -625,6 +627,10 @@ es:
       title: Modo de vista
       cards: Tarjetas
       list: Lista
+    recommended_index:
+      title: Recomendaciones
+      see_more: Ver más recomendaciones
+      hide: Ocultar recomendaciones
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
@@ -839,3 +845,10 @@ es:
   admin/widget:
     header:
       title: Administración
+  annotator:
+    help:
+      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text_sign_in: iniciar sesión
+      text_sign_up: registrarte
+      title: '¿Cómo puedo comentar este documento?'
