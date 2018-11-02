@@ -105,7 +105,7 @@ de:
       keyboard_shortcuts:
         title: Tastaturkürzel
         navigation_table:
-          description: Um auf verständliche Weise durch die Webseite zu navigieren, wurde eine Gruppe von Schnellzugriff-Tasten einprogrammiert, die die allgemeinen Hauptbereiche erfassen, in denen die Seite organisiert ist.
+          description: Um auf dieser Website barrierefrei navigieren zu können, wurde eine Gruppe von Schnellzugriffstasten programmiert, die die wichtigsten Bereiche des allgemeinen Interesses, in denen die Website organisiert ist, zusammenfassen.
           caption: Tastaturkürzel für das Navigationsmenü
           key_header: Schlüssel
           page_header: Seite
@@ -129,7 +129,7 @@ de:
               key_column: 5
               page_column: Gesetzgebungsverfahren
         browser_table:
-          description: 'Je nach dem Betriebssystem und den verwendeten Browser wird die Tastenkombination wie folgt aussehen:'
+          description: 'Abhängig vom Betriebssystem und dem verwendeten Browser lautet die Tastenkombination wie folgt:'
           caption: Tastenkombination je nach Betriebssystem und Browser
           browser_header: Browser
           key_header: Tastenkombination
