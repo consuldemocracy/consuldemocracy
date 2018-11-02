@@ -114,10 +114,75 @@ es:
               key_column: 0
               page_column: Inicio
             - 
+              key_column: 1
+              page_column: Debates
             - 
+              key_column: 2
+              page_column: Propuestas
             - 
+              key_column: 3
+              page_column: Votaciones
             - 
+              key_column: 4
+              page_column: Presupuestos participativos
             - 
+              key_column: 5
+              page_column: Procesos legislativos
+        browser_table:
+          description: 'Dependiendo del sistema operativo y del navegador que se utilice, la combinación de teclas será la siguiente:'
+          caption: Combinación de teclas dependiendo del sistema operativo y navegador
+          browser_header: Navegador
+          key_header: Combinación de teclas
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + atajo y luego ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + MAYÚSCULAS + atajo
+            - 
+              browser_column: Chrome
+              key_column: ALT + atajo (si es un MAC, CTRL + ALT + atajo)
+            - 
+              browser_column: Safari
+              key_column: ALT + atajo (si es un MAC, CMD + atajo)
+            - 
+              browser_column: Opera
+              key_column: MAYÚSCULAS + ESC + atajo
+      textsize:
+        title: Tamaño del texto
+        browser_settings_table:
+          description: El diseño accesible de este sitio web permite que el usuario pueda elegir el tamaño del texto que le convenga. Esta acción puede llevarse a cabo de diferentes maneras según el navegador que se utilice.
+          browser_header: Navegador
+          action_header: Acción a realizar
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Ver > Tamaño del texto
+            - 
+              browser_column: Firefox
+              action_column: Ver > Tamaño
+            - 
+              browser_column: Chrome
+              action_column: Ajustes (icono) > Opciones > Avanzada > Contenido web > Tamaño fuente
+            - 
+              browser_column: Safari
+              action_column: Visualización > ampliar/reducir
+            - 
+              browser_column: Opera
+              action_column: Ver > escala
+        browser_shortcuts_table:
+          description: 'Otra forma de modificar el tamaño de texto es utilizar los atajos de teclado definidos en los navegadores, en particular la combinación de teclas:'
+          rows:
+            - 
+              shortcut_column: CTRL y + (CMD y + en MAC)
+              description_column: para aumentar el tamaño del texto
+            - 
+              shortcut_column: CTRL y - (CMD y - en MAC)
+              description_column: para reducir el tamaño del texto
+      compatibility:
+        title: Compatibilidad con estándares y diseño visual
+        description_html: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
