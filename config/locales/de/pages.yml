@@ -94,9 +94,9 @@ de:
     accessibility:
       title: Zugänglichkeit
       description: |-
-        Web-Zugänglichkeit bezieht sich auf die Möglichkeit des Zugriffs auf das Internet und seine Inhalte bei allen Menschen, unabhängig von den Behinderungen (körperlicher, geistiger oder technischer), die entstehen können, oder die sich Kontext der Nutzung ergeben (technologisch oder ökologisch).
+        Unter Webzugänglichkeit versteht man die Möglichkeit des Zugangs aller Menschen zum Web und seinen Inhalten, unabhängig von den Behinderungen (körperlich, geistig oder technisch), die sich aus dem Kontext der Nutzung (technologisch oder ökologisch) ergeben können. 
         
-        Wenn Webseiten mit Zugänglichkeit im Sinn entwickelt werden, können alle Nutzer auf Inhalte unter gleichen Bedingungen zugreifen, zum Beispiel:
+        Wenn Websites unter dem Gesichtspunkt der Barrierefreiheit gestaltet werden, können alle Nutzer beispielsweise unter gleichen Bedingungen auf Inhalte zugreifen:
       examples:
         - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información.Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
         - Wenn Videos Untertitel haben, können Nutzer mit Hörproblemen diese voll und ganz verstehen.
