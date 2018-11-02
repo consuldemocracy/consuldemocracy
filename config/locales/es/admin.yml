@@ -398,6 +398,8 @@ es:
           select_order: Ordenar por
           orders:
             id: Id
+            title: Título
+            supports: Apoyos
         process:
           title: Proceso
           comments: Comentarios
@@ -413,10 +415,16 @@ es:
           proposals: Propuestas
       proposals:
         index:
+          title: Título
           back: Volver
+          id: Id
+          supports: Apoyos
+          select: Seleccionar
+          selected: Seleccionada
         form:
           custom_categories: Categorías
           custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta.
+          custom_categories_placeholder: Escribe las etiquetas que desees separadas por una coma (,) y entrecomilladas ("")
       draft_versions:
         create:
           notice: 'Borrador creado correctamente. <a href="%{link}">Haz click para verlo</a>'
@@ -524,10 +532,16 @@ es:
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
+      hidden_budget_investments: Proyectos de gasto ocultos
+      hidden_proposal_notifications: Notificationes de propuesta ocultas
       hidden_users: Usuarios bloqueados
       administrators: Administradores
       managers: Gestores
       moderators: Moderadores
+      messaging_users: Mensajes a usuarios
+      newsletters: Newsletters
+      admin_notifications: Notificaciones
+      system_emails: Emails del sistema
       emails_download: Descarga de emails
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
@@ -542,13 +556,29 @@ es:
       stats: Estadísticas
       signature_sheets: Hojas de firmas
       site_customization:
+        homepage: Homepage
+        pages: Personalizar páginas
+        images: Personalizar imágenes
         content_blocks: Personalizar bloques
+        information_texts: Personalizar textos
+        information_texts_menu:
+          debates: "Debates"
+          community: "Comunidad"
+          proposals: "Propuestas"
+          polls: "Votaciones"
+          layouts: "Plantillas"
+          mailers: "Correos"
+          management: "Gestión"
+          welcome: "Bienvenido/a"
+        buttons:
+          save: "Guardar cambios"
       title_moderated_content: Contenido moderado
       title_budgets: Presupuestos
       title_polls: Votaciones
       title_profiles: Perfiles
       title_settings: Configuración
       title_site_customization: Contenido del sitio
+      title_booths: Urnas de votación
       legislation: Legislación colaborativa
       users: Usuarios
     administrators:
@@ -610,6 +640,9 @@ es:
         title: Vista previa de newsletter
         send: Enviar
         affected_users: (%{n} usuarios afectados)
+        sent_emails:
+          one: 1 correo enviado
+          other: "%{count} correos enviados"
         sent_at: Enviado
         subject: Asunto
         segment_recipient: Destinatarios
@@ -618,7 +651,31 @@ es:
         body_help_text: Así es como verán el email los usuarios
         send_alert: '¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?'
     admin_notifications:
+      create_success: Notificación creada correctamente
+      update_success: Notificación actualizada correctamente
+      send_success: Notificación enviada correctamente
+      delete_success: Notificación borrada correctamente
+      index:
+        section_title: Envío de notificaciones
+        new_notification: Crear notificación
+        title: Título
+        segment_recipient: Destinatarios
+        sent: Enviado
+        actions: Acciones
+        draft: Borrador
+        edit: Editar
+        delete: Borrar
+        preview: Previsualizar
+        view: Visualizar
+        empty_notifications: No hay notificaciones para mostrar
+      new:
+        section_title: Nueva notificación
+        submit_button: Crear notificación
+      edit:
+        section_title: Editar notificación
+        submit_button: Actualizar notificación
       show:
+        section_title: Vista previa de notificación
         send: Enviar notificación
         will_get_notified: (%{n} usuarios serán notificados)
         got_notified: (%{n} usuarios fueron notificados)
