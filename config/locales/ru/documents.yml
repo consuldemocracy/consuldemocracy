@@ -1,1 +1,10 @@
 ru:
+  documents:
+    title: Документы
+    max_documents_allowed_reached_html: Вы достигли максимально допустимого количества документов! <strong>Вы должны удалить одну, прежде чем вы сможете загрузить другую.</strong>
+    form:
+      title: Документы
+      title_placeholder: Добавить описательное название для документа
+      attachment_label: Выберите документ
+      delete_button: Убрать документ
+      cancel_button: Отменить
