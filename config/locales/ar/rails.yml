@@ -50,12 +50,16 @@ ar:
       - ':اليوم'
   datetime:
     prompts:
+      day: اليوم
+      hour: الساعة
       minute: دقيقة
       month: شهر
       second: ثواني
       year: السنة
   errors:
     messages:
+      accepted: يجب أن يكون مقبول
+      blank: لا يمكن أن يكون فارغا
       present: يجب أن يكون فارغا
       confirmation: لا يتطابق مع %{attribute}
       empty: لا يمكن أن يكون فارغا
