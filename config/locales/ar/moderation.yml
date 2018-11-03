@@ -7,6 +7,8 @@ ar:
         filters:
           all: الكل
           pending_flag_review: معلق
+        headers:
+          comment: التعليق
         hide_comments: إخفاء التعليقات
         order: طلب
         orders:
@@ -32,6 +34,9 @@ ar:
         filters:
           all: الكل
         order: ترتيب حسب
+    budget_investments:
+      index:
+        confirm: هل أنت متأكد؟
     proposal_notifications:
       index:
         order: الطلب من طرف
