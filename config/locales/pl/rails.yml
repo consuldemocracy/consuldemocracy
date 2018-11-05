@@ -49,9 +49,9 @@ pl:
       - Listopad
       - Grudzień
     order:
-      - :rok
-      - ':miesiąc'
-      - ':dzień'
+      - :day
+      - :month
+      - :year
   datetime:
     distance_in_words:
       about_x_hours:
