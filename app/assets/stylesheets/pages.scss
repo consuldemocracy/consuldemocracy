@@ -10,13 +10,23 @@
 // ----------------------
 
 .jumbo {
+  background: $highlight;
   margin-bottom: $line-height;
   margin-top: rem-calc(-24);
   padding-bottom: $line-height;
   padding-top: $line-height;
 
+  @include breakpoint(medium) {
+    padding: rem-calc(24) 0;
+  }
+
   &.light {
     background: #ecf0f1;
+  }
+
+  h1,
+  p {
+    color: $text;
   }
 }
 

@@ -18,6 +18,7 @@ RSpec.configure do |config|
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
   config.include(CommonActions)
+  config.include(ActiveSupport::Testing::TimeHelpers)
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
   end
@@ -41,6 +42,7 @@ RSpec.configure do |config|
   config.before do |example|
     DatabaseCleaner.strategy = :transaction
     I18n.locale = :en
+    Globalize.locale = I18n.locale
     load Rails.root.join('db', 'seeds.rb').to_s
     Setting["feature.user.skip_verification"] = nil
   end
@@ -78,6 +80,14 @@ RSpec.configure do |config|
   config.after(:each, type: :feature) do
     Bullet.perform_out_of_channel_notifications if Bullet.notification?
     Bullet.end_request
+  end
+
+  config.before(:each, :with_frozen_time) do
+    travel_to Time.now # TODO: use `freeze_time` after migrating to Rails 5.
+  end
+
+  config.after(:each, :with_frozen_time) do
+    travel_back
   end
 
   # Allows RSpec to persist some state between runs in order to support

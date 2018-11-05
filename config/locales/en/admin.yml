@@ -29,10 +29,17 @@ en:
         title: Title
         description: Description
         target_url: Link
-        style: Style
-        image: Image
         post_started_at: Post started at
         post_ended_at: Post ended at
+        sections_label: Sections where it will appear
+        sections:
+          homepage: Homepage
+          debates: Debates
+          proposals: Proposals
+          budgets: Participatory budgeting
+          help_page: Help page
+        background_color: Background colour
+        font_color: Font colour
       edit:
         editing: Edit banner
         form:
@@ -60,6 +67,7 @@ en:
           on_debates: Debates
           on_proposals: Proposals
           on_users: Users
+          on_system_emails: System emails
         title: Moderator activity
         type: Type
         no_activity: There are no moderators activity.
@@ -120,7 +128,8 @@ en:
         table_amount: Amount
         table_population: Population
         population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
-        max_votable_headings: "Maxium number of headings in which a user can vote"
+        max_votable_headings: "Maximum number of headings in which a user can vote"
+        current_of_max_headings: "%{current} of %{max}"
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
@@ -159,12 +168,11 @@ en:
           selected: Selected
           undecided: Undecided
           unfeasible: Unfeasible
-          max_per_heading: Max. supports per heading
+          min_total_supports: Minimum supports
           winners: Winners
           one_filter_html: "Current applied filters: <b><em>%{filter}</em></b>"
           two_filters_html: "Current applied filters: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
-          search: Search
           filter: Filter
         download_current_selection: "Download current selection"
         no_budget_investments: "There are no investment projects."
@@ -179,18 +187,20 @@ en:
           undecided: "Undecided"
         selected: "Selected"
         select: "Select"
-        table_id: "ID"
-        table_title: "Title"
-        table_supports: "Supports"
-        table_admin: "Administrator"
-        table_valuator: "Valuator"
-        table_valuation_group: "Valuation Group"
-        table_geozone: "Scope of operation"
-        table_feasibility: "Feasibility"
-        table_valuation_finished: "Val. Fin."
-        table_selection: "Selected"
-        table_evaluation: "Show to valuators"
-        table_incompatible: "Incompatible"
+        list:
+          id: ID
+          title: Title
+          supports: Supports
+          admin: Administrator
+          valuator: Valuator
+          valuation_group: Valuation Group
+          geozone: Scope of operation
+          feasibility: Feasibility
+          valuation_finished: Val. Fin.
+          selected: Selected
+          visible_to_valuators: Show to valuators
+          author_username: Author username
+          incompatible: Incompatible
         cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
         see_results: "See results"
       show:
@@ -259,8 +269,6 @@ en:
         show_image: "Show image"
         documents: "Documents"
       form:
-        add_language: Add language
-        remove_language: Remove language
         admin_statuses: Admin investment statuses
         no_statuses_defined: There are no defined investment statuses yet
       new:
@@ -335,6 +343,15 @@ en:
         hidden_at: 'Hidden at:'
         registered_at: 'Registered at:'
         title: Activity of user (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden budgets investments
+        no_hidden_budget_investments: There are no hidden budget investments
     legislation:
       processes:
         create:
@@ -355,7 +372,7 @@ en:
           enabled: Enabled
           process: Process
           debate_phase: Debate phase
-          allegations_phase: Drafting phase
+          allegations_phase: Comments phase
           proposals_phase: Proposals phase
           start: Start
           end: End
@@ -377,6 +394,12 @@ en:
           back: Back
           title: Create new collaborative legislation process
           submit_button: Create process
+        proposals:
+          select_order: Sort by
+          orders:
+            id: Id
+            title: Title
+            supports: Supports
         process:
           title: Process
           comments: Comments
@@ -394,9 +417,15 @@ en:
         index:
           title: Proposals
           back: Back
+          id: Id
+          title: Title
+          supports: Supports
+          select: Select
+          selected: Selected
         form:
           custom_categories: Categories
           custom_categories_description: Categories that users can select creating the proposal.
+          custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
       draft_versions:
         create:
           notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'
@@ -504,12 +533,16 @@ en:
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
+      hidden_budget_investments: Hidden budget investments
+      hidden_proposal_notifications: Hidden proposal notifications
       hidden_users: Hidden users
       administrators: Administrators
       managers: Managers
       moderators: Moderators
-      emails: Sending of emails
+      messaging_users: Messages to users
       newsletters: Newsletters
+      admin_notifications: Notifications
+      system_emails: System Emails
       emails_download: Emails download
       valuators: Valuators
       poll_officers: Poll officers
@@ -525,15 +558,28 @@ en:
       signature_sheets: Signature Sheets
       site_customization:
         homepage: Homepage
-        pages: Custom Pages
-        images: Custom Images
+        pages: Custom pages
+        images: Custom images
         content_blocks: Custom content blocks
+        information_texts: Custom information texts
+        information_texts_menu:
+          debates: "Debates"
+          community: "Community"
+          proposals: "Proposals"
+          polls: "Polls"
+          layouts: "Layouts"
+          mailers: "Emails"
+          management: "Management"
+          welcome: "Welcome"
+        buttons:
+          save: "Save"
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
       title_profiles: Profiles
       title_settings: Settings
       title_site_customization: Site content
+      title_booths: Voting booths
       legislation: Collaborative Legislation
       users: Users
     administrators:
@@ -595,6 +641,9 @@ en:
         title: Newsletter preview
         send: Send
         affected_users: (%{n} affected users)
+        sent_emails:
+          one: 1 email sent
+          other: "%{count} emails sent"
         sent_at: Sent at
         subject: Subject
         segment_recipient: Recipients
@@ -602,6 +651,55 @@ en:
         body: Email content
         body_help_text: This is how the users will see the email
         send_alert: Are you sure you want to send this newsletter to %{n} users?
+    admin_notifications:
+      create_success: Notification created successfully
+      update_success: Notification updated successfully
+      send_success: Notification sent successfully
+      delete_success: Notification deleted successfully
+      index:
+        section_title: Notifications
+        new_notification: New notification
+        title: Title
+        segment_recipient: Recipients
+        sent: Sent
+        actions: Actions
+        draft: Draft
+        edit: Edit
+        delete: Delete
+        preview: Preview
+        view: View
+        empty_notifications: There are no notifications to show
+      new:
+        section_title: New notification
+        submit_button: Create notification
+      edit:
+        section_title: Edit notification
+        submit_button: Update notification
+      show:
+        section_title: Notification preview
+        send: Send notification
+        will_get_notified: (%{n} users will be notified)
+        got_notified: (%{n} users got notified)
+        sent_at: Sent at
+        title: Title
+        body: Text
+        link: Link
+        segment_recipient: Recipients
+        preview_guide: "This is how the users will see the notification:"
+        sent_guide: "This is how the users see the notification:"
+        send_alert: Are you sure you want to send this notification to %{n} users?
+    system_emails:
+      preview_pending:
+        action: Preview Pending
+        preview_of: Preview of %{name}
+        pending_to_be_sent: This is the content pending to be sent
+        moderate_pending: Moderate notification send
+        send_pending: Send pending
+        send_pending_notification: Pending notifications sent succesfully
+      proposal_notification_digest:
+        title: Proposal Notification Digest
+        description: Gathers all proposal notifications for an user in a single message, to avoid too much emails.
+        preview_detail: Users will only recieve notifications from the proposals they are following
     emails_download:
       index:
         title: Emails download
@@ -939,6 +1037,15 @@ en:
           without_confirmed_hide: Pending
         title: Hidden proposals
         no_hidden_proposals: There is no hidden proposals.
+    proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden notifications
+        no_hidden_proposals: There is no hidden notifications.
     settings:
       flash:
         updated: Value updated
@@ -962,6 +1069,12 @@ en:
             update: Map configuration updated succesfully.
           form:
             submit: Update
+      setting: Feature
+      setting_actions: Actions
+      setting_name: Setting
+      setting_status: Status
+      setting_value: Value
+      no_description: "No description"
     shared:
       booths_search:
         button: Search
@@ -989,6 +1102,11 @@ en:
       image: Image
       show_image: Show image
       moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
+      view: View
+      proposal: Proposal
+      author: Author
+      content: Content
+      created_at: Created at
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -1201,6 +1319,11 @@ en:
         content_block:
           body: Body
           name: Name
+          names:
+            top_links: Top Links
+            footer: Footer
+            subnavigation_left: Main Navigation Left
+            subnavigation_right: Main Navigation Right
       images:
         index:
           title: Custom images
@@ -1239,11 +1362,11 @@ en:
         page:
           created_at: Created at
           status: Status
-          title: Title
           updated_at: Updated at
           status_draft: Draft
           status_published: Published
-          locale: Language
+          title: Title
+          slug: Slug
     homepage:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.
@@ -1272,3 +1395,6 @@ en:
         submit_header: Save header
         card_title: Edit card
         submit_card: Save card
+    translations:
+        remove_language: Remove language
+        add_language: Add language

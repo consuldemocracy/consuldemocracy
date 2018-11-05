@@ -9,6 +9,7 @@ class ProposalsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
+  before_action :proposals_recommendations, only: :index, if: :current_user
 
   feature_flag :proposals
 
@@ -24,6 +25,7 @@ class ProposalsController < ApplicationController
   def show
     super
     @notifications = @proposal.notifications
+    @notifications = @proposal.notifications.not_moderated
     @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
 
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
@@ -76,6 +78,14 @@ class ProposalsController < ApplicationController
   def summary
     @proposals = Proposal.for_summary
     @tag_cloud = tag_cloud
+  end
+
+  def disable_recommendations
+    if current_user.update(recommended_proposals: false)
+      redirect_to proposals_path, notice: t('proposals.index.recommendations.actions.success')
+    else
+      redirect_to proposals_path, error: t('proposals.index.recommendations.actions.error')
+    end
   end
 
   private
@@ -140,6 +150,12 @@ class ProposalsController < ApplicationController
       map_location = params[:proposal][:map_location_attributes]
       if map_location && (map_location[:longitude] && map_location[:latitude]).blank? && !map_location[:id].blank?
         MapLocation.destroy(map_location[:id])
+      end
+    end
+
+    def proposals_recommendations
+      if Setting['feature.user.recommendations_on_proposals'] && current_user.recommended_proposals
+        @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
       end
     end
 

@@ -7,8 +7,7 @@
           <strong><%= t("admin.menu.title_polls") %></strong>
         </a>
         <ul id="polls_menu" <%= "class=is-active" if menu_polls? || controller.class.parent == Admin::Poll::Questions::Answers %>>
-          <li <%= "class=is-active" if controller_name == "polls" && action_name != "booth_assignments" ||
-                                    %w(booth_assignments officer_assignments recounts results).include?(controller_name) %>>
+          <li <%= "class=is-active" if %w(polls recounts results).include?(controller_name) %>>
             <%= link_to t("admin.menu.polls"), admin_polls_path %>
           </li>
 
@@ -16,28 +15,36 @@
                                     controller.class.parent == Admin::Poll::Questions::Answers %>>
             <%= link_to t("admin.menu.poll_questions"), admin_questions_path %>
           </li>
-
-          <li <%= "class=is-active" if controller_name == "officers" %>>
-            <%= link_to t("admin.menu.poll_officers"), admin_officers_path %>
-          </li>
-
-          <li <%= "class=is-active" if controller_name == "booths" &&
-                                    action_name != "available" %>>
-            <%= link_to t("admin.menu.poll_booths"), admin_booths_path %>
-          </li>
-
-          <li <%= "class=is-active" if (controller_name == "polls" && action_name == "booth_assignments") ||
-                                    (controller_name == "booth_assignments" && action_name == "manage") %>>
-            <%= link_to t("admin.menu.poll_booth_assignments"), booth_assignments_admin_polls_path %>
-          </li>
-
-          <li <%= "class=is-active" if %w(shifts booths).include?(controller_name) &&
-                                    action_name == "available" %>>
-            <%= link_to t("admin.menu.poll_shifts"), available_admin_booths_path %>
-          </li>
         </ul>
       </li>
     <% end %>
+
+    <li class="section-title">
+      <a href="#">
+        <span class="icon-box"></span>
+        <strong><%= t("admin.menu.title_booths") %></strong>
+      </a>
+      <ul id="booths_menu" <%= "class=is-active" if menu_booths? || controller_name == "polls" && action_name == "booth_assignments" %>>
+        <li <%= "class=is-active" if %w(officers officer_assignments).include?(controller_name) %>>
+          <%= link_to t("admin.menu.poll_officers"), admin_officers_path %>
+        </li>
+
+        <li <%= "class=is-active" if controller_name == "booths" &&
+                                  action_name != "available" %>>
+          <%= link_to t("admin.menu.poll_booths"), admin_booths_path %>
+        </li>
+
+        <li <%= "class=is-active" if (controller_name == "polls" && action_name == "booth_assignments") ||
+                                  controller_name == "booth_assignments" %>>
+          <%= link_to t("admin.menu.poll_booth_assignments"), booth_assignments_admin_polls_path %>
+        </li>
+
+        <li <%= "class=is-active" if %w(shifts booths).include?(controller_name) &&
+                                  %w(available new).include?(action_name) %>>
+          <%= link_to t("admin.menu.poll_shifts"), available_admin_booths_path %>
+        </li>
+      </ul>
+    </li>
 
     <% if feature?(:legislation) %>
       <li class="section-title <%= "is-active" if controller.class.parent == Admin::Legislation %>">
@@ -50,7 +57,7 @@
 
     <% if feature?(:budgets) %>
       <li class="section-title <%= "is-active" if controller_name == "budgets" ||
-                                                                     "budget_investment_statuses" %>">
+                                                  controller_name == "budget_investment_statuses" %>">
         <%= link_to admin_budgets_path do %>
           <span class="icon-budget"></span>
           <strong><%= t("admin.menu.budgets") %></strong>
@@ -72,16 +79,22 @@
       </li>
     <% end %>
 
-    <% messages_sections = %w(newsletters emails_download) %>
+    <% messages_sections = %w(newsletters emails_download admin_notifications system_emails) %>
     <% messages_menu_active = messages_sections.include?(controller_name) %>
     <li class="section-title" <%= "class=is-active" if messages_menu_active %>>
       <a href="#">
         <span class="icon-zip"></span>
-        <strong><%= t("admin.menu.emails") %></strong>
+        <strong><%= t("admin.menu.messaging_users") %></strong>
       </a>
-      <ul <%= "class=is-active" if messages_menu_active %>>
+      <ul id="messaging_users_menu" <%= "class=is-active" if messages_menu_active %>>
         <li <%= "class=is-active" if controller_name == "newsletters" %>>
           <%= link_to t("admin.menu.newsletters"), admin_newsletters_path %>
+        </li>
+        <li <%= "class=is-active" if controller_name == "admin_notifications" %>>
+          <%= link_to t("admin.menu.admin_notifications"), admin_admin_notifications_path %>
+        </li>
+        <li <%= "class=is-active" if controller_name == "system_emails" %>>
+          <%= link_to t("admin.menu.system_emails"), admin_system_emails_path %>
         </li>
         <li <%= "class=is-active" if controller_name == "emails_download" %>>
           <%= link_to t("admin.menu.emails_download"), admin_emails_download_index_path %>
@@ -97,7 +110,7 @@
       <ul <%= "class=is-active" if menu_customization? &&
                                    controller.class.parent != Admin::Poll::Questions::Answers %>>
 
-        <li <%= "class=active" if menu_homepage? %>>
+        <li <%= "class=is-active" if menu_homepage? %>>
           <%= link_to t("admin.menu.site_customization.homepage"), admin_homepage_path %>
         </li>
 
@@ -107,6 +120,10 @@
 
         <li <%= "class=is-active" if controller_name == "banners" %>>
           <%= link_to t("admin.menu.banner"), admin_banners_path %>
+        </li>
+
+        <li <%= "class=is-active" if controller_name == "information_texts" %>>
+          <%= link_to t("admin.menu.site_customization.information_texts"), admin_site_customization_information_texts_path %>
         </li>
       </ul>
     </li>
@@ -138,8 +155,18 @@
           </li>
         <% end %>
 
+        <% if feature?(:budgets) %>
+          <li <%= "class=is-active" if controller_name == "hidden_budget_investments" %>>
+            <%= link_to t("admin.menu.hidden_budget_investments"), admin_hidden_budget_investments_path %>
+          </li>
+        <% end %>
+
         <li <%= "class=is-active" if controller_name == "comments" %>>
           <%= link_to t("admin.menu.hidden_comments"), admin_comments_path %>
+        </li>
+
+        <li <%= "class=is-active" if controller_name == "proposal_notifications" %>>
+          <%= link_to t("admin.menu.hidden_proposal_notifications"), admin_proposal_notifications_path %>
         </li>
 
         <li <%= "class=is-active" if controller_name == "hidden_users" %>>
@@ -220,7 +247,6 @@
         <li <%= "class=is-active" if controller_name == "content_blocks" %>>
           <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path%>
         </li>
-
       </ul>
     </li>
   </ul>

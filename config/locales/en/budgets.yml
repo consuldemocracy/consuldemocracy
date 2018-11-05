@@ -56,11 +56,7 @@ en:
       see_results: See results
       section_footer:
         title: Help with participatory budgets
-        description: With the participatory budgets the citizens decide to which projects presented by the neighbors is destined a part of the municipal budget.
-        help_text_1: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. Any registered person over 16 years old can propose an investment project that is preselected in a phase of citizen supports."
-        help_text_2: "The most voted projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council once the municipal budgets of the next year are approved."
-        help_text_3: "The presentation of participatory budgeting projects takes place from January and over a period of one and a half months. To participate and propose proposals for the entire city and / or districts, you must sign up on %{org} and verify your account."
-        help_text_4: "To get as many supports and votes as possible, choose a descriptive and understandable headline for your project. Then you have a space to develop the approach of your proposal. Provide all the data and explanations, and even documents and images, to help other participants to better understand what you are proposing."
+        description: With the participatory budgets the citizens decide to which projects is destined a part of the budget.
     investments:
       form:
         tag_category_label: "Categories"
@@ -127,6 +123,8 @@ en:
         milestone_status_changed: Investment status changed to
         author: Author
         project_unfeasible_html: 'This investment project <strong>has been marked as not feasible</strong> and will not go to balloting phase.'
+        project_selected_html: 'This investment project <strong>has been selected</strong> for balloting phase.'
+        project_winner: 'Winning investment project'
         project_not_selected_html: 'This investment project <strong>has not been selected</strong> for balloting phase.'
       wrong_price_format: Only integer numbers
       investment:

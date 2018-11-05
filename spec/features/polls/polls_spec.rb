@@ -67,6 +67,43 @@ feature 'Polls' do
       expect(page).not_to have_link('Expired')
     end
 
+    scenario "Displays icon correctly", :js do
+      polls = create_list(:poll, 3)
+
+      visit polls_path
+
+      expect(page).to have_css(".not-logged-in", count: 3)
+      expect(page).to have_content("You must sign in or sign up to participate")
+
+      user = create(:user)
+      login_as(user)
+
+      visit polls_path
+
+      expect(page).to have_css(".unverified", count: 3)
+      expect(page).to have_content("You must verify your account to participate")
+
+      poll_district = create(:poll, geozone_restricted: true)
+      verified = create(:user, :level_two)
+      login_as(verified)
+
+      visit polls_path
+
+      expect(page).to have_css(".cant-answer", count: 1)
+      expect(page).to have_content("This poll is not available on your geozone")
+
+      poll_with_question = create(:poll)
+      question = create(:poll_question, poll: poll_with_question)
+      answer1 = create(:poll_question_answer, question: question, title: 'Yes')
+      answer2 = create(:poll_question_answer, question: question, title: 'No')
+      vote_for_poll_via_web(poll_with_question, question, 'Yes')
+
+      visit polls_path
+
+      expect(page).to have_css(".already-answer", count: 1)
+      expect(page).to have_content("You already have participated in this poll")
+    end
+
     scenario "Poll title link to stats if enabled" do
       poll = create(:poll, name: "Poll with stats", stats_enabled: true)
 
@@ -350,7 +387,7 @@ feature 'Polls' do
     end
   end
 
-  context 'Booth & Website' do
+  context 'Booth & Website', :with_frozen_time do
 
     let(:poll) { create(:poll, summary: "Summary", description: "Description") }
     let(:booth) { create(:poll_booth) }
@@ -360,7 +397,7 @@ feature 'Polls' do
 
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+      create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment, date: Date.current)
       question = create(:poll_question, poll: poll)
       create(:poll_question_answer, question: question, title: 'Han Solo')
       create(:poll_question_answer, question: question, title: 'Chewbacca')

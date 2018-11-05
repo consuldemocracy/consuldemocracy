@@ -11,7 +11,7 @@ feature 'DocumentVerifications' do
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: user.document_number
-    click_button 'Check'
+    click_button 'Check document'
 
     expect(page).to have_content "already verified"
   end
@@ -22,7 +22,7 @@ feature 'DocumentVerifications' do
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: user.document_number
-    click_button 'Check'
+    click_button 'Check document'
 
     expect(page).to have_content "Vote proposals"
 
@@ -39,7 +39,7 @@ feature 'DocumentVerifications' do
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: "inexisting"
-    click_button 'Check'
+    click_button 'Check document'
 
     expect(page).to have_content "This document is not registered"
   end
@@ -48,7 +48,7 @@ feature 'DocumentVerifications' do
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '12345678Z'
-    click_button 'Check'
+    click_button 'Check document'
 
     expect(page).to have_content "Please introduce the email used on the account"
   end
@@ -57,7 +57,7 @@ feature 'DocumentVerifications' do
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '12345 - h'
-    click_button 'Check'
+    click_button 'Check document'
 
     expect(page).to have_content "Document number: 12345H"
   end
@@ -67,7 +67,7 @@ feature 'DocumentVerifications' do
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '12345678Z'
-    click_button 'Check'
+    click_button 'Check document'
 
     expect(page).to have_content "You don't have the required age to verify your account."
   end

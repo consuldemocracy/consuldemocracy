@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Residence' do
+feature 'Residence', :with_frozen_time do
   let(:officer) { create(:poll_officer) }
 
   feature "Officers without assignments" do
@@ -9,10 +9,7 @@ feature 'Residence' do
       login_as(officer.user)
       visit officing_root_path
 
-      within("#side_menu") do
-        click_link "Validate document"
-      end
-
+      expect(page).not_to have_link("Validate document")
       expect(page).to have_content("You don't have officing shifts today")
 
       create(:poll_officer_assignment, officer: officer, date: 1.day.from_now)

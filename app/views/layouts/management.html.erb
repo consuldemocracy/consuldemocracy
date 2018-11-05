@@ -2,16 +2,9 @@
 <html lang="es">
 
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><%= content_for?(:title) ? yield(:title) : "Management" %></title>
-    <%= stylesheet_link_tag  "application", media: "all" %>
+    <%= render "layouts/common_head", default_title: "Management" %>
     <%= stylesheet_link_tag  "print", media: "print" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= content_for :head %>
-    <%= csrf_meta_tags %>
-    <%= favicon_link_tag "favicon.ico" %>
   </head>
 
   <body class="admin">
@@ -36,6 +29,19 @@
               </li>
             </ul>
           </div>
+          <% if show_admin_menu?(manager_logged_in) %>
+            <div id="responsive_menu">
+
+              <div class="top-bar-right">
+                <ul class="menu" data-responsive-menu="medium-dropdown">
+                  <%= render "admin/shared/admin_shortcuts", current_user: manager_logged_in %>
+                  <%= render "shared/admin_login_items", current_user: manager_logged_in %>
+                  <%= render "devise/menu/login_items", current_user: manager_logged_in %>
+                </ul>
+              </div>
+
+            </div>
+          <% end %>
         </div>
       </div>
     </header>

@@ -11,6 +11,13 @@
           <%= t("moderation.menu.proposals") %>
         <% end %>
       </li>
+
+      <li <%= "class=is-active" if controller_name == "proposal_notifications" %>>
+        <%= link_to moderation_proposal_notifications_path do %>
+          <span class="icon-proposals"></span>
+          <%= t("moderation.menu.proposal_notifications") %>
+        <% end %>
+      </li>
     <% end %>
 
     <% if feature?(:debates) %>
@@ -18,6 +25,15 @@
         <%= link_to moderation_debates_path do %>
           <span class="icon-debates"></span>
           <%= t('moderation.menu.flagged_debates') %>
+        <% end %>
+      </li>
+    <% end %>
+
+    <% if feature?(:budgets) %>
+      <li <%= "class=is-active" if controller_name == "investments" %>>
+        <%= link_to moderation_budget_investments_path do %>
+          <span class="icon-budget"></span>
+          <%= t("moderation.menu.flagged_investments") %>
         <% end %>
       </li>
     <% end %>

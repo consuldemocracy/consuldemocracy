@@ -1,0 +1,127 @@
+nl:
+  valuation:
+    header:
+      title: Beoordeling
+    menu:
+      title: Beoordeling
+      budgets: Burgerbegroting
+      spending_proposals: Begrotingsvoorstel
+    budgets:
+      index:
+        title: Burgerbegroting
+        filters:
+          current: Open
+          finished: Afgerond
+        table_name: Naam
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Investeringsprojecten met open beoordeling
+        table_actions: Acties
+        evaluate: Evalueer
+    budget_investments:
+      index:
+        headings_filter_all: Alle rubrieken
+        filters:
+          valuation_open: Open
+          valuating: In beoordeling
+          valuation_finished: Beoordeling afgerond
+        assigned_to: "Toegewezen aan %{valuator}"
+        title: Investeringsprojecten
+        edit: Wijzig dossier
+        valuators_assigned:
+          one: Toegewezen beoordelaar
+          other: "%{count} beoordelaars toegewezen"
+        no_valuators_assigned: Geen beoordelaars toegewezen
+        table_id: ID
+        table_title: Titel
+        table_heading_name: Naam van de rubriek
+        table_actions: Acties
+        no_investments: "Er zijn geen investeringsprojecten."
+      show:
+        back: Terug
+        title: Investeringsproject
+        info: Over de auteur
+        by: Verzonden door
+        sent: Verzonden naar
+        heading: Rubriek
+        dossier: Dossier
+        edit_dossier: Wijzig dossier
+        price: Prijs
+        price_first_year: Kosten tijdens het eerste jaar
+        currency: "€"
+        feasibility: Haalbaarheid
+        feasible: Haalbaar
+        unfeasible: Niet haalbaar
+        undefined: Ongedefinieerd
+        valuation_finished: Beoordeling afgerond
+        duration: Tijdsspanne
+        responsibles: Verantwoordelijken
+        assigned_admin: Toegewezen beheerder
+        assigned_valuators: Toegewezen beoordelaars
+      edit:
+        dossier: Dossier
+        price_html: "Prijs (%{currency})"
+        price_first_year_html: "Kosten tijdens het eerste jaar (%{currency}) <small>(optioneel, gegevens niet openbaar)</small>"
+        price_explanation_html: Toelichting op de kosten
+        feasibility: Haalbaarheid
+        feasible: Haalbaar
+        unfeasible: Niet haalbaar
+        undefined_feasible: In afwachting
+        feasible_explanation_html: Toelichting op de haalbaarheid
+        valuation_finished: Beoordeling afgerond
+        valuation_finished_alert: "Dit rapport als voltooid markeren? Daarna kan het niet meer worden gewijzigd."
+        not_feasible_alert: "Een email met de beoordeling van de haalbaarheid wordt verstuurd aan de auteur van het project."
+        duration_html: Tijdsspanne
+        save: Bewaar wijzigingen
+      notice:
+        valuate: "Dossier bijgewerkt"
+      valuation_comments: Reacties op beoordelingen
+      not_in_valuating_phase: Inversteringen kunnen alleen worden beoordeeld wanneer de beoordelingsfase is gestart.
+    spending_proposals:
+      index:
+        geozone_filter_all: Alle gebieden
+        filters:
+          valuation_open: Open
+          valuating: In beoordeling
+          valuation_finished: Beoordeling afgesloten
+        title: Investeringsprojecten voor burgerbegrotingen
+        edit: Pas aan
+      show:
+        back: Terug
+        heading: Investeringsprojecten
+        info: Over de auteur
+        association_name: Vereniging
+        by: Verzonden door
+        sent: Verzonden naar
+        geozone: Toepassingsgebied
+        dossier: Dossier
+        edit_dossier: Wijzig dossier
+        price: Prijs
+        price_first_year: Kosten tijdens het eerste jaar
+        currency: "€"
+        feasibility: Haalbaarheid
+        feasible: Haalbaar
+        not_feasible: Niet haalbaar
+        undefined: Ongedefinieerd
+        valuation_finished: Beoordeling afgerond
+        time_scope: Tijdsspanne
+        internal_comments: Interne reacties
+        responsibles: Verantwoordelijken
+        assigned_admin: Toegewezen beheerder
+        assigned_valuators: Toegewezen beoordelaars
+      edit:
+        dossier: Dossier
+        price_html: "Prijs (%{currency})"
+        price_first_year_html: "Kosten tijdens het eerste jaar (%{currency})"
+        currency: "€"
+        price_explanation_html: Toelichting op de kosten
+        feasibility: Haalbaarheid
+        feasible: Haalbaar
+        not_feasible: Niet haalbaar
+        undefined_feasible: In afwachting
+        feasible_explanation_html: Toelichting op de haalbaarheid
+        valuation_finished: Beoordeling afgerond
+        time_scope_html: Tijdsspanning
+        internal_comments_html: Interne reacties
+        save: Bewaar wijzigingen
+      notice:
+        valuate: "Dossier bijgewerkt"

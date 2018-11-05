@@ -34,20 +34,11 @@ If you want to contribute code to solve an issue:
 * Fork the project.
 * Create a topic branch based on master.
 * Commit there your code to solve the issue.
-* Make sure all test are passing (and add specs to test any new feature if needed).
+* Make sure all test are passing (and add specs to test any new feature you've added).
 * Follow these [best practices](https://github.com/styleguide/ruby)
 * Open a *pull request* to the main repository describing what issue you are addressing. 
 
 **Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
-
-## Cleaning up
-
-In the rush of time sometimes things get messy, you can help us cleaning things up:
-
-* implement [pending specs](https://travis-ci.org/consul/consul)
-* increase [code coverage](https://coveralls.io/github/consul/consul?branch=master)
-* improve [code quality](https://codeclimate.com/github/consul/consul)
-* make [code consistent](https://github.com/bbatsov/rubocop)
 
 ## Other ways of contributing without coding
 

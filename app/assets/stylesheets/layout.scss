@@ -18,7 +18,7 @@
 // 16. Flags
 // 17. Activity
 // 18. Banners
-// 19. Recommended Section Home
+// 19. Recommendations
 // 20. Documents
 // 21. Related content
 // 22. Images
@@ -32,6 +32,12 @@
 ::selection {
   color: #fff;
   background-color: $brand;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
 
 body {
@@ -413,11 +419,6 @@ a {
   text-transform: uppercase;
 }
 
-figure img {
-  height: 100%;
-  width: 100%;
-}
-
 // 02. Header
 // ----------
 
@@ -544,6 +545,20 @@ header {
 
       a {
         color: $text;
+      }
+    }
+  }
+
+  .top-bar-title {
+    line-height: $line-height;
+
+    a img {
+      height: rem-calc(48);
+      margin: 0;
+      width: auto;
+
+      @include breakpoint(medium up) {
+        height: auto;
       }
     }
   }
@@ -785,8 +800,7 @@ footer {
 }
 
 .footer {
-  background: $border;
-  border-top: 6px solid $brand;
+  background: #f1f1f1;
   margin-top: $line-height * 2;
   padding-top: $line-height;
 }
@@ -864,15 +878,9 @@ footer {
   h1 {
     margin-top: $line-height;
 
-    img {
-      height: rem-calc(80);
-      width: rem-calc(80);
-    }
-
     a {
       color: #fff;
       display: block;
-      line-height: rem-calc(80); // Same as logo image height
       text-align: center;
 
       @include breakpoint(medium) {
@@ -1963,7 +1971,8 @@ table {
   }
 }
 
-.comment-body {
+.comment-body,
+.notification-body {
 
   img {
     margin-right: $line-height / 2;
@@ -2230,7 +2239,8 @@ table {
 
 .banner-style-one,
 .banner-style-two,
-.banner-style-three {
+.banner-style-three,
+.banner {
   margin: 0;
   margin-bottom: $line-height;
 
@@ -2264,8 +2274,8 @@ table {
   }
 }
 
-// 19. Recommended Section Home
-// ----------------------------
+// 19. Recommendations
+// -------------------
 
 .section-recommended {
   background: #fafafa;
@@ -2399,11 +2409,60 @@ table {
 
   .carousel-image .orbit-wrapper img {
     display: block;
+    height: rem-calc(120);
 
     @include breakpoint(small) {
       margin: 0 auto;
     }
   }
+}
+
+.recommended-index {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  margin-bottom: $line-height;
+  margin-top: rem-calc(-25);
+  padding: $line-height 0 $line-height / 2;
+
+  @include breakpoint(medium) {
+    padding-top: 0;
+  }
+
+  h2 {
+    font-size: $small-font-size;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: $base-font-size;
+    margin-bottom: 0;
+  }
+
+  a {
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .recommendation {
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    display: block;
+    margin-bottom: $line-height / 4;
+    padding: $line-height / 2;
+
+    &:hover {
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.hide-recommendations {
+  color: $text-light;
+  position: absolute;
+  right: 12px;
+  top: -18px;
 }
 
 // 20. Documents
@@ -2437,10 +2496,6 @@ table {
     padding: 0 $line-height / 2;
     position: relative;
 
-    a {
-      word-wrap: break-word;
-    }
-
     .icon-document {
       color: #007bb7;
       display: inline-block;
@@ -2453,6 +2508,10 @@ table {
       margin-bottom: 0;
     }
   }
+}
+
+.document-link a {
+  word-wrap: break-word;
 }
 
 .additional-document-link {
@@ -2703,6 +2762,11 @@ table {
       width: 100%;
       z-index: 2;
     }
+  }
+
+  figure img {
+    height: 100%;
+    width: 100%;
   }
 }
 

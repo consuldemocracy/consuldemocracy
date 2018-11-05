@@ -4,6 +4,12 @@ ca:
       activity:
         one: "activitat"
         other: "activitats"
+      budget:
+        one: "Pressupost participatiu"
+        other: "Pressupostos participatius"
+      budget/investment:
+        one: "Proposta d'inversió"
+        other: "Propostes d'inversió"
       budget/investment/milestone:
         one: "fita"
         other: "fites"
@@ -43,6 +49,156 @@ ca:
       spending_proposal:
         one: "Proposta d'inversió"
         other: "Propostes d'inversió"
+      site_customization/page:
+        one: pàgina
+        other: pàgines
+      site_customization/image:
+        one: imatge
+        other: imatges
+      site_customization/content_block:
+        one: bloc
+        other: blocs
+      legislation/process:
+        one: "procés"
+        other: "processos"
+      legislation/draft_versions:
+        one: "versió esborrany"
+        other: "versions esborrany"
+      legislation/draft_texts:
+        one: "Esborrany"
+        other: "esborranys"
+      legislation/questions:
+        one: "pregunta"
+        other: "Preguntes"
+      legislation/question_options:
+        one: "Opció de resposta tancada"
+        other: "Opcions de resposta tancada"
+      legislation/answers:
+        one: "Resposta"
+        other: "respostes"
     attributes:
+      budget:
+        name: "Nom"
+        description_accepting: "Descripció durant la fase d'aceptació"
+        description_reviewing: "Descripció durant la fase de revisió"
+        description_selecting: "Descripció durant la fase de selecció"
+        description_valuating: "Descripció durant la fase de evaluació"
+        description_balloting: "Descripció durant la fase de votació"
+        description_reviewing_ballots: "Descripció durant la fase de revisió de vots"
+        description_finished: "Descripció quan el pressupost ha finalitzat"
+        phase: "Fase"
+        currency_symbol: "Divisa"
+      budget/investment:
+        heading_id: "Partida pressupostària"
+        title: "Títol"
+        description: "Descripció"
+        external_url: "Enllaç a documentació addicional"
+        administrator_id: "Administrador"
+      comment:
+        user: "Usuari"
+      debate:
+        author: "Autor"
+        description: "Opinió"
+        terms_of_service: "Termes de servei"
+      proposal:
+        question: "Pregunta"
+      user:
+        password_confirmation: "Confirmació de contrasenya"
+        official_position: "Càrrec públic"
+        official_level: "Nivell del càrrec"
+        redeemable_code: "Codi de verificació per carta (opcional)"
+      organization:
+        responsible_name: "Persona responsable de l'associació"
       spending_proposal:
         administrator_id: "Administrador"
+        association_name: "Nom de l'associació"
+        geozone_id: "Àmbit d'actuació"
+      poll:
+        starts_at: "Fecha de apertura"
+        ends_at: "Fecha de cierre"
+        geozone_restricted: "Restringida por zonas"
+      poll/question:
+        summary: "Resumen"
+      signature_sheet:
+        signable_type: "Tipus de fulla de signatures"
+        signable_id: "ID Proposta ciutadana/Proposada inversió"
+        document_numbers: "Nombres de documents"
+      site_customization/page:
+        content: Contingut
+        created_at: Creada
+        subtitle: Subtítol
+        slug: URL
+        status: Estat
+        updated_at: última actualització
+        print_content_flag: Botó d'imprimir contingut
+        locale: Llengua
+      site_customization/image:
+        image: imatge
+      site_customization/content_block:
+        locale: idioma
+        body: contingut
+      legislation/process:
+        title: Títol del procés
+        additional_info: informació addicional
+        start_date: Data d'inici del procés
+        end_date: Data de fi del procés
+        debate_start_date: Data d'inici del debat
+        debate_end_date: Data de fi del debat
+        draft_publication_date: Data de publicació de l'esborrany
+        allegations_start_date: Data d'inici d'al·legacions
+        allegations_end_date: Data de fi d'al·legacions
+        result_publication_date: Data de publicació del resultat final
+      legislation/draft_version:
+        title: Títol de la versió
+        body: text
+        changelog: canvis
+        final_version: versió final
+      legislation/question:
+        question_options: respostes
+      legislation/question_option:
+        value: valor
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Aquest usuari ja té una clau associada"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "els temes han de ser menor o igual que %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Has arribat al nombre màxim de missatges privats per dia"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Este documento no aparece en el censo"
+              has_voted: "Este usuario ya ha votado"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: ha de ser igual o posterior a la data d'inici
+            debate_end_date:
+              invalid_date_range: ha de ser igual o posterior a la data d'inici del debat
+            allegations_end_date:
+              invalid_date_range: ha de ser igual o posterior a la data d'inici de les al·legacions
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Has d'esperar un mínim de %{interval} dies entre notificacions"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'No verificat per Padró'
+              already_voted: 'Ja ha votat aquesta proposta'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "ha de ser lletres, números, _ i -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Ha de tenir %{required_width}px d'ample"
+              image_height: "Ha de tenir %{required_height}px d'alt"

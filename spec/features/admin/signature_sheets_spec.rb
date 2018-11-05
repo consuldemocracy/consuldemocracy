@@ -7,15 +7,28 @@ feature 'Signature sheets' do
     login_as(admin.user)
   end
 
-  scenario "Index" do
-    3.times { create(:signature_sheet) }
+  context "Index" do
+    scenario 'Lists all signature_sheets' do
+      3.times { create(:signature_sheet) }
 
-    visit admin_signature_sheets_path
+      visit admin_signature_sheets_path
 
-    expect(page).to have_css(".signature_sheet", count: 3)
+      expect(page).to have_css(".signature_sheet", count: 3)
 
-    SignatureSheet.all.each do |signature_sheet|
-      expect(page).to have_content signature_sheet.name
+      SignatureSheet.find_each do |signature_sheet|
+        expect(page).to have_content signature_sheet.name
+      end
+    end
+
+    scenario 'Orders signature_sheets by created_at DESC' do
+      signature_sheet1 = create(:signature_sheet)
+      signature_sheet2 = create(:signature_sheet)
+      signature_sheet3 = create(:signature_sheet)
+
+      visit admin_signature_sheets_path
+
+      expect(signature_sheet3.name).to appear_before(signature_sheet2.name)
+      expect(signature_sheet2.name).to appear_before(signature_sheet1.name)
     end
   end
 
@@ -78,7 +91,7 @@ feature 'Signature sheets' do
 
     expect(page).to have_content "Citizen proposal #{proposal.id}"
     expect(page).to have_content "12345678Z, 123A, 123B"
-    expect(page).to have_content signature_sheet.created_at.strftime("%d %b %H:%M")
+    expect(page).to have_content signature_sheet.created_at.strftime("%B %d, %Y %H:%M")
     expect(page).to have_content user.name
 
     within("#document_count") do

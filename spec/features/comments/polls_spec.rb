@@ -485,6 +485,11 @@ feature 'Commenting polls' do
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
+
+        within('.in_favor') do
+          expect(page).to have_content "1"
+        end
+
         find('.against a').click
 
         within('.in_favor') do

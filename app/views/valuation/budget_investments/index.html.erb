@@ -1,9 +1,9 @@
 <h2>
   <%= @budget.name %> - <%= t("valuation.budget_investments.index.title") %>
-  <small><%= t('valuation.budget_investments.index.assigned_to', valuator: current_user.name) %></small>
+  <small><%= t("valuation.budget_investments.index.assigned_to", valuator: current_user.name) %></small>
 </h2>
 
-<div class="row collapse">
+<div class="row expanded collapse margin-bottom">
   <% @heading_filters.each_slice(8) do |slice| %>
     <div class="small-12 medium-4 column select-heading">
       <% slice.each do |filter| %>
@@ -18,37 +18,43 @@
 
 <%= render 'shared/filter_subnav', i18n_namespace: "valuation.budget_investments.index" %>
 
-<h3><%= page_entries_info @investments %></h3>
+<% if @investments.any? %>
+  <h3><%= page_entries_info @investments %></h3>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t("valuation.budget_investments.index.table_id") %></th>
-      <th><%= t("valuation.budget_investments.index.table_title") %></th>
-      <th><%= t("valuation.budget_investments.index.table_heading_name") %></th>
-      <th><%= t("valuation.budget_investments.index.table_actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @investments.each do |investment| %>
-      <tr id="<%= dom_id(investment) %>" class="budget_investment">
-        <td>
-          <strong><%= investment.id %></strong>
-        </td>
-        <td>
-          <%= link_to investment.title, valuation_budget_budget_investment_path(@budget, investment) %>
-        </td>
-        <td class="small">
-          <%= investment.heading.name %>
-        </td>
-        <td class="small">
-          <%= link_to t("valuation.budget_investments.index.edit"),
-                      edit_valuation_budget_budget_investment_path(@budget, investment),
-                      class: "button hollow expanded" %>
-        </td>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("valuation.budget_investments.index.table_id") %></th>
+        <th><%= t("valuation.budget_investments.index.table_title") %></th>
+        <th><%= t("valuation.budget_investments.index.table_heading_name") %></th>
+        <th><%= t("valuation.budget_investments.index.table_actions") %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @investments.each do |investment| %>
+        <tr id="<%= dom_id(investment) %>" class="budget_investment">
+          <td>
+            <strong><%= investment.id %></strong>
+          </td>
+          <td>
+            <%= link_to investment.title, valuation_budget_budget_investment_path(@budget, investment) %>
+          </td>
+          <td class="small">
+            <%= investment.heading.name %>
+          </td>
+          <td class="small">
+            <%= link_to t("valuation.budget_investments.index.edit"),
+                        edit_valuation_budget_budget_investment_path(@budget, investment),
+                        class: "button hollow expanded" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= paginate @investments %>
+  <%= paginate @investments %>
+<% else %>
+  <div class="callout primary">
+    <%= t("valuation.budget_investments.index.no_investments") %>
+  </div>
+<% end %>

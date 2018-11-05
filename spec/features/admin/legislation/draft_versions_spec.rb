@@ -7,6 +7,12 @@ feature 'Admin legislation draft versions' do
     login_as(admin.user)
   end
 
+  it_behaves_like "translatable",
+                  "legislation_draft_version",
+                  "edit_admin_legislation_process_draft_version_path",
+                  %w[title changelog],
+                  { "body" => :markdownit }
+
   context "Feature flag" do
 
     scenario 'Disabled with a feature flag' do
@@ -53,11 +59,11 @@ feature 'Admin legislation draft versions' do
 
       click_link 'Create version'
 
-      fill_in 'legislation_draft_version_title', with: 'Version 3'
-      fill_in 'legislation_draft_version_changelog', with: 'Version 3 changes'
-      fill_in 'legislation_draft_version_body', with: 'Version 3 body'
+      fill_in 'Version title', with: 'Version 3'
+      fill_in 'Changes', with: 'Version 3 changes'
+      fill_in 'Text', with: 'Version 3 body'
 
-      within('.primary-buttons') do
+      within('.end') do
         click_button 'Create version'
       end
 
@@ -79,18 +85,18 @@ feature 'Admin legislation draft versions' do
 
       click_link "All"
 
-      expect(page).to have_content 'An example legislation process'
+      expect(page).not_to have_link "All"
 
       click_link 'An example legislation process'
       click_link 'Drafting'
 
       click_link 'Version 1'
 
-      fill_in 'legislation_draft_version_title', with: 'Version 1b'
+      fill_in 'Version title', with: 'Version 1b'
 
       click_link 'Launch text editor'
 
-      fill_in 'legislation_draft_version_body', with: '# Version 1 body\r\n\r\nParagraph\r\n\r\n>Quote'
+      fill_in 'Text', with: '# Version 1 body\r\n\r\nParagraph\r\n\r\n>Quote'
 
       within('.fullscreen') do
         click_link 'Close text editor'

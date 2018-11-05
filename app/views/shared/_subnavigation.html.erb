@@ -1,5 +1,7 @@
 <div class="small-12 medium-9 column">
   <ul>
+    <%= raw content_block("subnavigation_left", I18n.locale) %>
+
     <% if feature?(:debates) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.debates"),
@@ -13,7 +15,7 @@
       <li>
         <%= layout_menu_link_to t("layouts.header.proposals"),
                                 proposals_path,
-                                controller_name == 'proposals',
+                                controller.class == ProposalsController,
                                 accesskey: "2",
                                 title: t("shared.go_to_page") + t("layouts.header.proposals") %>
       </li>
@@ -52,12 +54,16 @@
                                   title: t("shared.go_to_page") + t("layouts.header.budgets") %>
       </li>
     <% end %>
-    <li>
-      <%= link_to t("layouts.header.help"),
-                    help_path,
-                    accesskey: "6",
-                    class: ("is-active" if current_page?(help_path)),
-                    title: t("shared.go_to_page") + t("layouts.header.help") %>
-    </li>
+    <% if feature?(:help_page) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.help"),
+                                help_path,
+                                current_page?(help_path),
+                                accesskey: "6",
+                                title: t("shared.go_to_page") + t("layouts.header.help") %>
+      </li>
+    <% end %>
+
+    <%= raw content_block("subnavigation_right", I18n.locale) %>
   </ul>
 </div>

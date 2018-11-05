@@ -35,6 +35,7 @@ val:
         table_title: Títol
         table_heading_name: Nom de la partida
         table_actions: Accions
+        no_investments: "No hi ha projectes d'inversió."
       show:
         back: Tornar
         title: Proposta d'inversió
@@ -73,6 +74,8 @@ val:
         save: Guardar canvis
       notice:
         valuate: "Dossier actualitzat"
+      valuation_comments: Comentaris d'avaluació
+      not_in_valuating_phase: Els projectes sols poden ser avaluats quant el Pressupost està en fase d'avaluació
     spending_proposals:
       index:
         geozone_filter_all: Tots els àmbits d'actuació

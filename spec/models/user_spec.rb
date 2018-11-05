@@ -667,6 +667,15 @@ describe User do
       expect(user.interests).to eq ["Sport"]
     end
 
+    it "deals gracefully with hidden proposals" do
+      proposal = create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal, user: user)
+
+      proposal.hide
+
+      expect(user.interests).to eq []
+    end
+
     it "discards followed objects duplicated tags" do
       proposal1 = create(:proposal, tag_list: "Sport")
       proposal2 = create(:proposal, tag_list: "Sport")
@@ -679,6 +688,19 @@ describe User do
       expect(user.interests).to eq ["Sport"]
     end
 
+  end
+
+  describe ".find_by_manager_login" do
+    it "works with a low ID" do
+      user = create(:user)
+      expect(User.find_by_manager_login("admin_user_#{user.id}")).to eq user
+    end
+
+    it "works with a high ID" do
+      10.times { create(:user) }
+      user = User.last
+      expect(User.find_by_manager_login("admin_user_#{user.id}")).to eq user
+    end
   end
 
 end

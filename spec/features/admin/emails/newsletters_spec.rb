@@ -41,7 +41,7 @@ feature "Admin newsletter emails" do
 
       expect(page).to have_css(".newsletter", count: 3)
 
-      Newsletter.all.each do |newsletter|
+      Newsletter.find_each do |newsletter|
         segment_recipient = I18n.t("admin.segment_recipient.#{newsletter.segment_recipient}")
         within("#newsletter_#{newsletter.id}") do
           expect(page).to have_content newsletter.subject
@@ -143,6 +143,20 @@ feature "Admin newsletter emails" do
       visit admin_newsletter_path(invalid_newsletter)
 
       expect(page).not_to have_link("Send")
+    end
+  end
+
+  context "Counter of emails sent", :js do
+    scenario "Display counter" do
+      newsletter = create(:newsletter, segment_recipient: "administrators")
+      visit admin_newsletter_path(newsletter)
+
+      accept_confirm { click_link "Send" }
+
+      expect(page).to have_content "Newsletter sent successfully"
+
+      expect(page).to have_content "1 affected users"
+      expect(page).to have_content "1 email sent"
     end
   end
 

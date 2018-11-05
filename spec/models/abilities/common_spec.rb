@@ -299,4 +299,10 @@ describe Abilities::Common do
       it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
     end
   end
+
+  describe "#disable_recommendations" do
+    it { should be_able_to(:disable_recommendations, Debate) }
+    it { should be_able_to(:disable_recommendations, Proposal) }
+  end
+
 end

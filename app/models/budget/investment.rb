@@ -23,6 +23,7 @@ class Budget
     include Relationable
     include Notifiable
     include Filterable
+    include Flaggable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -57,6 +58,10 @@ class Budget
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
     scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f.nonzero? ? seed.to_f : 1}, budget_investments.id") }
 
+    scope :sort_by_id, -> { order("id DESC") }
+    scope :sort_by_title, -> { order("title ASC") }
+    scope :sort_by_supports, -> { order("cached_votes_up DESC") }
+
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
     scope :without_valuator,            -> { valuation_open.where(valuator_assignments_count: 0) }
@@ -77,6 +82,8 @@ class Budget
     scope :winners,                     -> { selected.compatible.where(winner: true) }
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
+    scope :sort_by_flags,               -> { order(flags_count: :desc, updated_at: :desc) }
+    scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
 
     scope :by_budget,         ->(budget)      { where(budget: budget) }
     scope :by_group,          ->(group_id)    { where(group_id: group_id) }
@@ -109,14 +116,16 @@ class Budget
       budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       results = Investment.by_budget(budget)
 
-      results = limit_results(budget, params, results)                if params[:max_per_heading].present?
-      results = results.where(group_id: params[:group_id])            if params[:group_id].present?
-      results = results.by_tag(params[:tag_name])                     if params[:tag_name].present?
-      results = results.by_heading(params[:heading_id])               if params[:heading_id].present?
-      results = results.by_valuator(params[:valuator_id])             if params[:valuator_id].present?
-      results = results.by_valuator_group(params[:valuator_group_id]) if params[:valuator_group_id].present?
-      results = results.by_admin(params[:administrator_id])           if params[:administrator_id].present?
-      results = advanced_filters(params, results)                     if params[:advanced_filters].present?
+      results = results.where("cached_votes_up + physical_votes >= ?",
+                              params[:min_total_supports])                    if params[:min_total_supports].present?
+      results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
+      results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
+      results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?
+      results = results.by_valuator(params[:valuator_id])                  if params[:valuator_id].present?
+      results = results.by_valuator_group(params[:valuator_group_id])      if params[:valuator_group_id].present?
+      results = results.by_admin(params[:administrator_id])                if params[:administrator_id].present?
+      results = advanced_filters(params, results)                          if params[:advanced_filters].present?
+      results = search_by_title_or_id(params[:title_or_id].strip, results) if params[:title_or_id]
 
       results = results.send(current_filter)                        if current_filter.present?
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
@@ -131,6 +140,12 @@ class Budget
       results.where("budget_investments.id IN (?)", ids)
     end
 
+    def self.order_filter(sorting_param)
+      if sorting_param.present? && SORTING_OPTIONS.include?(sorting_param)
+        send("sort_by_#{sorting_param}")
+      end
+    end
+
     def self.limit_results(budget, params, results)
       max_per_heading = params[:max_per_heading].to_i
       return results if max_per_heading <= 0
@@ -143,11 +158,12 @@ class Budget
       results.where("budget_investments.id IN (?)", ids)
     end
 
-    def self.search_by_title_or_id(params)
-      results = Investment.where(budget_id: params[:budget_id])
-
-      return results.where(id: params[:title_or_id]) if params[:title_or_id] =~ /\A[0-9]+\z/
-      results.where("title ILIKE ?", "%#{params[:title_or_id].strip}%")
+    def self.search_by_title_or_id(title_or_id, results)
+      if title_or_id =~ /^[0-9]+$/
+        results.where(id: title_or_id)
+      else
+        results.where("title ILIKE ?", "%#{title_or_id}%")
+      end
     end
 
     def searchable_values

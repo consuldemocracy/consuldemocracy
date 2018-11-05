@@ -428,7 +428,7 @@ feature 'Users' do
       @user = create(:user)
     end
 
-    scenario 'Not display following tab when user is not following any followable' do
+    scenario "Do not display follows' tab when user is not following any followables" do
       visit user_path(@user)
 
       expect(page).not_to have_content('0 Following')
@@ -441,6 +441,19 @@ feature 'Users' do
       visit user_path(@user, filter: "follows")
 
       expect(page).to have_selector(".activity li.is-active", text: "1 Following")
+    end
+
+    scenario "Gracefully handle followables that have been hidden" do
+      active_proposal = create(:proposal)
+      hidden_proposal = create(:proposal)
+
+      create(:follow, followable: active_proposal, user: @user)
+      create(:follow, followable: hidden_proposal, user: @user)
+
+      hidden_proposal.hide
+      visit user_path(@user)
+
+      expect(page).to have_content('1 Following')
     end
 
     describe 'Proposals' do
@@ -463,7 +476,7 @@ feature 'Users' do
         expect(page).to have_link('Citizen proposals', href: "#citizen_proposals")
       end
 
-      scenario 'Not display proposal tab when user is not following any proposal' do
+      scenario "Do not display proposals' tab when user is not following any proposal" do
         visit user_path(@user, filter: "follows")
 
         expect(page).not_to have_link('Citizen proposals', href: "#citizen_proposals")

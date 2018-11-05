@@ -1,0 +1,76 @@
+it:
+  pages:
+    general_terms: Termini e condizioni d'uso
+    help:
+      title: "%{org} è una piattaforma di partecipazione cittadina"
+      guide: "Questa guida spiega a cosa serve e come funziona ciascuna sezione di %{org}."
+      menu:
+        debates: "Dibattiti"
+        proposals: "Proposte"
+        budgets: "Bilanci partecipativi"
+        polls: "Sondaggi"
+        other: "Altre informazioni interessanti"
+        processes: "Processi"
+      debates:
+        title: "Dibattiti"
+        description: "Nella sezione %{link} è possibile presentare e condividere con altre persone le proprie opinioni rispetto a questioni di interesse relative alla città. È anche un luogo in cui generare idee che, attraverso le altre sezioni di %{org}, possano condurre ad azioni concrete del Consiglio Comunale."
+        link: "dibattiti cittadini"
+        feature_html: "Puoi dare inizio a dibattiti, commentare e valutarli con <strong>Sono d’accordo</strong> o <strong>Non sono d’accordo</strong>. Per farlo occorre %{link}."
+        feature_link: "registratevi su %{org}"
+        image_alt: "Pulsanti per valutare i dibattiti"
+        figcaption: 'Pulsanti "Sono d''accordo" e "Non sono d''accordo" per valutare i dibattiti.'
+      proposals:
+        title: "Proposte"
+        description: "Nella sezione %{link} è possibile avanzare proposte da far realizzare dal Consiglio Comunale. Le proposte necessitano di sostegno e, se viene raggiunto un sostegno sufficiente, vengono ammesse al voto pubblico. Le proposte così approvate dal voto dei cittadini sono accettate dal Consiglio Comunale e realizzate."
+        link: "proposte dei cittadini"
+        image_alt: "Pulsante per sostenere una proposta"
+      budgets:
+        title: "Bilancio partecipativo"
+        description: "La sezione %{link} aiuta le persone a contribuire in maniera diretta alle decisioni relative a parte della spesa del bilancio comunale."
+        link: "bilanci partecipativi"
+        image_alt: "Diverse fasi del bilancio partecipativo"
+        figcaption_html: 'Fasi di “Sostegno” e “Voto” dei bilanci partecipativi.'
+      polls:
+        title: "Sondaggi"
+        description: "La sezione %{link} si attiva ogni volta che una proposta raggiunge l’1% del sostegno e va al voto o quando il Consiglio Comunale pone una questione sulla quale i cittadini debbano decidere."
+        link: "sondaggi"
+        feature_1: "Per partecipare al voto occorre %{link} e verificare l’account."
+        feature_1_link: "registrarsi su %{org_name}"
+      processes:
+        title: "Processi"
+        description: "Nella sezione %{link} i cittadini partecipano alla realizzazione e all’emendamento dei regolamenti comunali e possono fornire la propria opinione sulle politiche locali in dibattiti preventivi."
+        link: "processi"
+      faq:
+        title: "Problemi tecnici?"
+        description: "Leggi le FAQ per trovare risposta alle tue domande."
+        button: "Visualizzare le domande frequenti (FAQ)"
+        page:
+          title: "Domande frequenti (FAQ)"
+          description: "Usate questa pagina per risolvere le domande frequenti (FAQ) degli utenti del sito."
+          faq_1_title: "Domanda 1"
+          faq_1_description: "Questo è un esempio di descrizione della domanda 1."
+      other:
+        title: "Altre informazioni di interesse"
+        how_to_use: "Usa %{org_name} nella tua città"
+      how_to_use:
+        text: |-
+          Usalo nella tua amministrazione locale o aiutaci a migliorarlo, è un software gratuito.
+          
+          Questo Portale per l’Amministrazione Aperta usa la [app CONSUL](https://github.com/consul/consul 'consul github') che è un software gratuito, con [licenza AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), il che significa in parole povere che chiunque può utilizzare il codice liberamente, copiarlo, esaminarlo nei particolari, modificarlo e ridistribuirlo nel mondo con le modifiche che desidera (consentendo ad altri di fare lo stesso). Perché crediamo che la cultura sia migliore e più ricca quando è libera.
+          
+          Se sei un programmatore, puoi vedere il codice e aiutarci a migliorarlo sulla [app CONSUL](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Usalo nella tua amministrazione locale
+    titles:
+      accessibility: Accessibilità
+      conditions: Termini di utilizzo
+      help: "Cos’é %{org}? - Partecipazione cittadina"
+      privacy: Informativa sulla privacy
+    verify:
+      code: Codice che hai ricevuto nella lettera
+      email: E-mail
+      info: 'Per verificare il tuo account inserisci i dati di accesso:'
+      info_code: 'Ora introduci il codice che hai ricevuto nella lettera:'
+      password: Password
+      submit: Verificare la mia utenza
+      title: Verifica il tuo account

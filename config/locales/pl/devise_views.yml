@@ -1,0 +1,129 @@
+pl:
+  devise_views:
+    confirmations:
+      new:
+        email_label: E-mail
+        submit: Ponownie wyślij intrukcje
+        title: Prześlij ponownie instrukcje potwierdzenia
+      show:
+        instructions_html: Potwierdzanie konta za pomocą poczty e-mail %{email}
+        new_password_confirmation_label: Powtórz hasło dostępu
+        new_password_label: Nowe hasło dostępu
+        please_set_password: Proszę wybrać nowe hasło (pozwoli to zalogować się za pomocą powyższego e-maila)
+        submit: Potwierdź
+        title: Potwierdź moje konto
+    mailer:
+      confirmation_instructions:
+        confirm_link: Potwierdź moje konto
+        text: 'Możesz potwierdzić Twoje konto emailowe pod następującym linkiem:'
+        title: Witaj
+        welcome: Witaj
+      reset_password_instructions:
+        change_link: Zmień moje hasło
+        hello: Witaj
+        ignore_text: Jeżeli nie zażądałeś zmiany hasła, możesz zignorować ten e-mail.
+        info_text: Twoje hasło nie zostanie zmienione dopóki nie wejdziesz w link i nie dokonasz jego edycji.
+        text: 'Otrzymaliśmy prośbę o zmianę Twojego hasła. Możesz jej dokonać pod następującym linkiem:'
+        title: Zmień hasło
+      unlock_instructions:
+        hello: Witaj
+        info_text: Twoje konto zostało zablokowane z powodu nadmiernej liczby nieudanych prób zalogowania.
+        instructions_text: 'Kliknij w ten link, aby odblokować swoje konto:'
+        title: Twoje konto zostało zablokowane
+        unlock_link: Odblokuj moje konto
+    menu:
+      login_items:
+        login: Zaloguj się
+        logout: Wyloguj się
+        signup: Zarejestruj się
+    organizations:
+      registrations:
+        new:
+          email_label: E-mail
+          organization_name_label: Nazwa organizacji
+          password_confirmation_label: Potwierdź hasło
+          password_label: Hasło
+          phone_number_label: Numer telefonu
+          responsible_name_label: Imię i nazwisko osoby odpowiedzialnej za kolektyw
+          responsible_name_note: Byłaby to osoba reprezentująca stowarzyszenie/kolektyw, w której imieniu przedstawiane są propozycje
+          submit: Zarejestruj się
+          title: Zarejestruj się jako organizacja lub kolektyw
+        success:
+          back_to_index: Rozumiem; wróć do strony głównej
+          instructions_1_html: "<b>Wkrótce skontaktujemy się z Tobą</b>, aby zweryfikować, czy rzeczywiście reprezentujesz ten kolektyw."
+          instructions_2_html: Podczas gdy Twój <b>e-mail jest przeglądany</b>, wysłaliśmy Ci <b>link do potwierdzenia Twojego konta</b>.
+          instructions_3_html: Po potwierdzeniu możesz zacząć uczestniczyć jako niezweryfikowany kolektyw.
+          thank_you_html: Dziękujemy za zarejestrowanie Twojego kolektywu na stronie. W tym momencie <b>oczekuje weryfikacji</b>.
+          title: Rejestracja organizacji / kolektywu
+    passwords:
+      edit:
+        change_submit: Zmień hasło
+        password_confirmation_label: Potwierdź nowe hasło
+        password_label: Nowe hasło
+        title: Zmień hasło
+      new:
+        email_label: E-mail
+        send_submit: Wyślij instrukcje
+        title: Zapomniałeś hasło?
+    sessions:
+      new:
+        login_label: E-mail lub nazwa użytkownika
+        password_label: Hasło
+        remember_me: Zapamiętaj mnie
+        submit: Enter
+        title: Zaloguj się
+    shared:
+      links:
+        login: Enter
+        new_confirmation: Nie zostałeś poinstruowany aby aktywować swoje konto?
+        new_password: Zapomniałeś hasła?
+        new_unlock: Nie otrzymałeś instrukcji odblokowania?
+        signin_with_provider: Zaloguj się za pomocą %{provider}
+        signup: Nie masz konta? %{signup_link}
+        signup_link: Zarejestruj się
+    unlocks:
+      new:
+        email_label: E-mail
+        submit: Prześlij ponownie instrukcje odblokowania
+        title: Prześlij ponownie instrukcje odblokowania
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Powód
+          info: Tego działania nie można cofnąć. Upewnij się, że to jest to, czego chcesz.
+          info_reason: Jeśli chcesz, podaj nam powód (opcjonalne)
+          submit: Usuń moje konto
+          title: Usuń konto
+        edit:
+          current_password_label: Obecne hasło
+          edit: Edytuj
+          email_label: E-mail
+          leave_blank: Należy pozostawić puste, jeśli nie chcesz zmodyfikować
+          need_current: Potrzebujemy Twojego obecnego hasła, aby potwierdzić zmiany
+          password_confirmation_label: Potwierdź nowe hasło
+          password_label: Nowe hasło
+          update_submit: Zaktualizuj
+          waiting_for: 'Oczekiwanie na potwierdzenie:'
+        new:
+          cancel: Anuluj logowanie
+          email_label: E-mail
+          organization_signup: Czy reprezentujesz organizację lub kolektyw? %{signup_link}
+          organization_signup_link: Zarejestruj się tutaj
+          password_confirmation_label: Potwierdź hasło
+          password_label: Hasło
+          redeemable_code: Kod weryfikacyjny otrzymany za pośrednictwem poczty e-mail (opcjonalnie)
+          submit: Zarejestruj się
+          terms: Rejestrując się, akceptujesz %{terms}
+          terms_link: warunki użytkowania
+          terms_title: Rejestrując się, akceptujesz regulamin i warunki użytkowania
+          title: Zarejestruj się
+          username_is_available: Nazwa użytkownika dostępna
+          username_is_not_available: Nazwa użytkownika jest już w użyciu
+          username_label: Nazwa użytkownika
+          username_note: Nazwa, która pojawia się obok Twoich postów
+        success:
+          back_to_index: Rozumiem; wróć do strony głównej
+          instructions_1_html: <b>Sprawdź swoją skrzynkę e-mail</b> - wysłaliśmy Ci <b>link do potwierdzenia Twojego konta</b>.
+          instructions_2_html: Po potwierdzeniu możesz rozpocząć udział.
+          thank_you_html: Dziękujemy za rejestrację na stronie. Teraz musisz <b>potwierdzić swój adres e-mail</b>.
+          title: Zmień swój adres e-mail

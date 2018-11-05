@@ -1,0 +1,129 @@
+zh-CN:
+  devise_views:
+    confirmations:
+      new:
+        email_label: 电子邮件
+        submit: 重新发送说明
+        title: 重新发送确认说明
+      show:
+        instructions_html: 通过电子邮件%{email} 确认账号
+        new_password_confirmation_label: 重复访问密码
+        new_password_label: 新访问密码
+        please_set_password: 请选择您的新密码（它将允许您使用上面的电子邮件登录）
+        submit: 确认
+        title: 确认我的账号
+    mailer:
+      confirmation_instructions:
+        confirm_link: 确认我的账号
+        text: '您可以通过以下链接确认您的电子邮件账号：'
+        title: 欢迎
+        welcome: 欢迎
+      reset_password_instructions:
+        change_link: 更改我的密码
+        hello: 您好
+        ignore_text: 如果您没有请求更改密码，您可以忽略此电子邮件。
+        info_text: 除非您访问此链接并编辑它，您的密码将不会更改。
+        text: '我们已经收到更改密码的请求。您可以通过以下链接来执行此操作：'
+        title: 更改密码
+      unlock_instructions:
+        hello: 您好
+        info_text: 由于多次登录尝试失败，您的账号已被禁用。
+        instructions_text: '请点击此链接来解锁您的账号：'
+        title: 您的账号被锁了
+        unlock_link: 解锁我的账号
+    menu:
+      login_items:
+        login: 登录
+        logout: 登出
+        signup: 注册
+    organizations:
+      registrations:
+        new:
+          email_label: 电子邮件
+          organization_name_label: 组织名称
+          password_confirmation_label: 确认密码
+          password_label: 密码
+          phone_number_label: 电话号码
+          responsible_name_label: 集体负责人的全名
+          responsible_name_note: 这将是代表协会/集体的人，所有提议都会以他的名字提出
+          submit: 注册
+          title: 注册为组织或集体
+        success:
+          back_to_index: 我明白；回到主页
+          instructions_1_html: "<b>我们将尽快联系您</b>以核实您确实是代表此集体。"
+          instructions_2_html: 在<b>审核您的电子邮件</b>的同时，我们已经向您发送<b>一个链接来确认您的账号</b>。
+          instructions_3_html: 一旦确认，您将以未经核实的集体开始参与。
+          thank_you_html: 感谢您在网站上注册您的集体。它现在<b>等待核实中</b>。
+          title: 组织/集体注册
+    passwords:
+      edit:
+        change_submit: 更改我的密码
+        password_confirmation_label: 确认新密码
+        password_label: 新密码
+        title: 更改您的密码
+      new:
+        email_label: 电子邮件
+        send_submit: 发送说明
+        title: 忘记密码？
+    sessions:
+      new:
+        login_label: 电子邮件或用户名
+        password_label: 密码
+        remember_me: 记住我
+        submit: 进入
+        title: 登录
+    shared:
+      links:
+        login: 进入
+        new_confirmation: 尚未收到激活账号的说明吗？
+        new_password: 忘记密码？
+        new_unlock: 尚未收到解锁说明吗？
+        signin_with_provider: 用%{provider} 登录
+        signup: 没有账号？%{signup_link}
+        signup_link: 注册
+    unlocks:
+      new:
+        email_label: 电子邮件
+        submit: 重新发送解锁说明
+        title: 重新发送解锁说明
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: 原因
+          info: 此操作将无法撤销。请确保这是您想要的。
+          info_reason: 如果您愿意，请给我们留下原因（可选填）
+          submit: 删除我的账号
+          title: 删除账号
+        edit:
+          current_password_label: 当前密码
+          edit: 编辑
+          email_label: 电子邮件
+          leave_blank: 如果您不希望修改请留空
+          need_current: 我们需要您的当前密码来确认更改
+          password_confirmation_label: 确认新密码
+          password_label: 新密码
+          update_submit: 更新
+          waiting_for: '等待确认：'
+        new:
+          cancel: 取消登录
+          email_label: 电子邮件
+          organization_signup: 您代表一个组织或集体吗？%{signup_link}
+          organization_signup_link: 在此注册
+          password_confirmation_label: 确认密码
+          password_label: 密码
+          redeemable_code: 通过电子邮件接收到的验证码（可选）
+          submit: 注册
+          terms: 通过注册即表示您接受%{terms}
+          terms_link: 使用条款和条件
+          terms_title: 通过注册即表示您接受此使用条款和条件
+          title: 注册
+          username_is_available: 可用用户名
+          username_is_not_available: 用户名已被使用
+          username_label: 用户名
+          username_note: 显示在您帖子边的名称
+        success:
+          back_to_index: 我明白；回到主页
+          instructions_1_html: 请<b>检查您的电子邮件</b>- 我们已经发送一个<b>链接来确认您的账号</b>。
+          instructions_2_html: 一旦确认，您可以开始参与。
+          thank_you_html: 感谢您在此网站注册。现在您必须<b>确认您的电子邮件地址</b>。
+          title: 修改您的电子邮件

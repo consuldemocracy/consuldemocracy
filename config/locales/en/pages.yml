@@ -1,11 +1,12 @@
 en:
   pages:
-    census_terms: To confirm the account, you must be 16 or older and be registered, having provided the information requested previously, will verify. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed in a file mentioned previously in the terms and conditions of use for the Portal.
-    conditions: Terms and conditions of use
+    conditions:
+      title: Terms and conditions of use
+      subtitle: LEGAL NOTICE ON THE CONDITIONS OF USE, PRIVACY AND PROTECTION OF PERSONAL DATA OF THE OPEN GOVERNMENT PORTAL
+      description: Information page on the conditions of use, privacy and protection of personal data.
     general_terms: Terms and Conditions
     help:
       title: "%{org} is a platform for citizen participation"
-      subtitle: "In %{org} you can make proposals, vote in citizen consultations, propose participatory budget projects, decide on municipal regulations and open debates to exchange opinions with others."
       guide: "This guide explains what each of the %{org} sections are for and how they work."
       menu:
         debates: "Debates"
@@ -26,19 +27,12 @@ en:
         title: "Proposals"
         description: "In the %{link} section you can make proposals for the City Council to carry them out. The proposals require support, and if they reach sufficient support, they are put to a public vote. The proposals approved in these citizens' votes are accepted by the City Council and carried out."
         link: "citizen proposals"
-        feature_html: "To create a proposal you must register in %{org}. The proposals that get the support on the website of 1% of people with the right to vote (%{supports} supports of people over 16 years old registered) go to vote. To support proposals it is necessary to verify your account."
         image_alt: "Button to support a proposal"
-        figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
+        figcaption_html: 'Button to "Support" a proposal.'
       budgets:
         title: "Participatory Budgeting"
         description: "The %{link} section helps people make a direct decision on what part of the municipal budget is spent on."
         link: "participative budgets"
-        feature: "In this process, every year people raise, support and vote on projects. The most voted votes are financed by the municipal budget."
-        phase_1_html: "Between January and early March, people registered in %{org} can <strong>present</strong>."
-        phase_2_html: "In March, proposers have to gather support, in the form of <strong>preselection</strong>."
-        phase_3_html: "Between April and the beginning of May, the experts from the <strong>City Council rate</strong> projects on an order of more or less supported and check that they are viable."
-        phase_4_html: "Finally, between May and June, all citizens can <strong>vote</strong> projects that interest them the most."
-        phase_5_html: "From the approval of the budgets the following year the City Council begins to carry out the winning projects."
         image_alt: "Different phases of a participatory budget"
         figcaption_html: '"Support" and "Voting" phases of participatory budgets.'
       polls:
@@ -47,14 +41,10 @@ en:
         link: "polls"
         feature_1: "To participate in the voting you have to %{link} and verify your account."
         feature_1_link: "register in %{org_name}"
-        feature_2: "All registered voters over the age of 16 can vote."
-        feature_3: "The results of all votes are binding on the municipal government."
       processes:
         title: "Processes"
         description: "In the %{link} section, citizens participate in the drafting and modification of regulations affecting the city and can give their opinion on municipal policies in previous debates."
         link: "processes"
-        feature: "To participate in a process you have to %{sign_up} and check the %{link} page periodically to see which regulations and policies are being discussed and consulted."
-        sign_up: "sign up on %{org}"
       faq:
         title: "Technical problems?"
         description: "Read the FAQs and solve your questions."
@@ -76,7 +66,97 @@ en:
           If you are a programmer, you can see the code and help us to improve it at [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Use it in your local government
-    privacy: Privacy Policy
+    privacy:
+      title: Privacy Policy
+      subtitle: INFORMATION REGARDING DATA PRIVACY
+      info_items:
+        - text: The navigation through the information available in the Open Government Portal is anonymous.
+        - text: To use the services contained in the Open Government Portal, the user must register and previously provide personal data according to the specific information included in each type of registration.
+        - text: 'The data provided will be incorporated and processed by the City Council in accordance with the description of the following file:'
+        - subitems:
+          - field: 'File name:'
+            description: NAME OF THE FILE
+          - field: 'Purpose of the file:'
+            description: Managing participatory processes to control the qualification of the people participating in them and merely numerical and statistical recount of the results derived from citizen participation processes.
+          - field: 'Institution in charge of the file:'
+            description: INSTITUTION IN CHARGE OF THE FILE
+        - text: The interested party may exercise the rights of access, rectification, cancellation and opposition, before the responsible body indicated, all of which is reported in compliance with article 5 of the Organic Law 15/1999, of December 13, on the Protection of Data of Character Personal.
+        - text: As a general principle, this website does not share or disclose information obtained, except when it has been authorized by the user, or the information is required by the judicial authority, prosecutor's office or the judicial police, or any of the cases regulated in the Article 11 of the Organic Law 15/1999, of December 13, on the Protection of Personal Data.
+    accessibility:
+      title: Accessibility
+      description: |-
+        Web accessibility refers to the possibility of access to the web and its contents by all people, regardless of the disabilities (physical, intellectual or technical) that may arise or from those that derive from the context of use (technological or environmental) .
+
+        When websites are designed with accessibility in mind, all users can access content in equal conditions, for example:
+      examples:
+        - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información.Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
+        - When videos have subtitles, users with hearing difficulties can fully understand them.
+        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
+        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
+      keyboard_shortcuts:
+        title: Keyboard shortcuts
+        navigation_table:
+          description: To be able to navigate through this website in an accessible way, a group of quick access keys has been programmed that gather the main sections of general interest in which the site is organized.
+          caption: Keyboard shortcuts for the navigation menu
+          key_header: Key
+          page_header: Page
+          rows:
+            - key_column: 0
+              page_column: Home
+            - key_column: 1
+              page_column: Debates
+            - key_column: 2
+              page_column: Proposals
+            - key_column: 3
+              page_column: Votes
+            - key_column: 4
+              page_column: Participatory budgets
+            - key_column: 5
+              page_column: Legislative processes
+        browser_table:
+          description: 'Depending on the operating system and the browser used, the key combination will be as follows:'
+          caption: Key combination depending on the operating system and browser
+          browser_header: Browser
+          key_header: Key combination
+          rows:
+            - browser_column: Explorer
+              key_column: ALT + shortcut then ENTER
+            - browser_column: Firefox
+              key_column: ALT + CAPS + shortcut
+            - browser_column: Chrome
+              key_column: ALT + shortcut (CTRL + ALT + shortcuts for MAC)
+            - browser_column: Safari
+              key_column: ALT + shortcut (CMD + shortcut for MAC)
+            - browser_column: Opera
+              key_column: CAPS + ESC + shortcut
+      textsize:
+        title: Text size
+        browser_settings_table:
+          description: The accessible design of this website allows the user to choose the size of the text that suits him. This action can be carried out in different ways depending on the browser used.
+          browser_header: Browser
+          action_header: Action to be taken
+          rows:
+            - browser_column: Explorer
+              action_column: View > Text size
+            - browser_column: Firefox
+              action_column: View > Size
+            - browser_column: Chrome
+              action_column: Settings (icon) > Options > Advanced > Web Content > Text size
+            - browser_column: Safari
+              action_column: View > Zoom In/Zoom out
+            - browser_column: Opera
+              action_column: View > scale
+        browser_shortcuts_table:
+          description: 'Another way to modify the text size is to use the keyboard shortcuts defined in browsers, in particular the key combination:'
+          rows:
+            - shortcut_column: CTRL and + (CMD and + on MAC)
+              description_column: Increases text size
+            - shortcut_column: CTRL and - (CMD  and - on MAC)
+              description_column: Descreases text size
+      compatibility:
+        title: Compatibility with standards and visual design
+        description_html: 'All pages of this website comply with the <strong> Accessibility Guidelines </strong> or General Principles of Accessible Design established by the Working Group <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> belonging to W3C.'
+
     titles:
       accessibility: Accessibility
       conditions: Terms of use

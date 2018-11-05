@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Officing Results' do
+feature 'Officing Results', :with_frozen_time do
 
   background do
     @poll_officer = create(:poll_officer)

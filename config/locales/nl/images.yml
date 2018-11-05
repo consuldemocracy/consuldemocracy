@@ -1,0 +1,21 @@
+nl:
+  images:
+    remove_image: Verwijder afbeelding
+    form:
+      title: Titel afbeelding
+      title_placeholder: Voeg een beschrijving toe voor de afbeelding
+      attachment_label: Kies afbeelding
+      delete_button: Verwijder afbeelding
+      note: "Je kunt een afbeelding van een van de volgende bestandstypen uploaden: %{accepted_content_types}, tot een maximum van %{max_file_size} MB."
+      add_new_image: Voeg afbeelding toe
+      admin_title: "Afbeelding"
+      admin_alt_text: "Alternatieve tekst voor de afbeelding"
+    actions:
+      destroy:
+        notice: Afbeelding is succesvol verwijderd.
+        alert: Kan de afbeelding niet verwijderen.
+        confirm: Weet je zeker dat je de afbeelding wilt verwijderen? Deze actie kan niet ongedaan gemaakt worden.
+    errors:
+      messages:
+        in_between: moet tussen %{min} en %{max} zijn
+        wrong_content_type: type bestand afbeelding %{content_type} komt niet overeen met een van de toegestane type bestanden %{accepted_content_types}

@@ -1,9 +1,12 @@
 class AddTranslateMilestones < ActiveRecord::Migration
   def self.up
-    Budget::Investment::Milestone.create_translation_table!({
-      title: :string,
-      description: :text
-    })
+    Budget::Investment::Milestone.create_translation_table!(
+      {
+        title:       :string,
+        description: :text
+      },
+      { migrate_data: true }
+    )
   end
 
   def self.down

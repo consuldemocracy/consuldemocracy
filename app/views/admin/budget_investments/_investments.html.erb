@@ -35,21 +35,21 @@
   <table class="table-for-mobile">
     <thead>
       <tr>
-        <th><%= t("admin.budget_investments.index.table_id") %></th>
-        <th class="small-3"><%= t("admin.budget_investments.index.table_title") %></th>
-        <th><%= t("admin.budget_investments.index.table_supports") %></th>
-        <th><%= t("admin.budget_investments.index.table_admin") %></th>
+        <th><%= t("admin.budget_investments.index.list.id") %></th>
+        <th class="small-3"><%= t("admin.budget_investments.index.list.title") %></th>
+        <th><%= t("admin.budget_investments.index.list.supports") %></th>
+        <th><%= t("admin.budget_investments.index.list.admin") %></th>
         <th>
-          <%= t("admin.budget_investments.index.table_valuation_group") %>
-          <%= t("admin.budget_investments.index.table_valuator") %>
+          <%= t("admin.budget_investments.index.list.valuation_group") %>
+          <%= t("admin.budget_investments.index.list.valuator") %>
         </th>
-        <th><%= t("admin.budget_investments.index.table_geozone") %></th>
-        <th><%= t("admin.budget_investments.index.table_feasibility") %></th>
-        <th class="text-center"><%= t("admin.budget_investments.index.table_valuation_finished") %></th>
-        <th class="text-center"><%= t("admin.budget_investments.index.table_evaluation") %></th>
-        <th class="text-center"><%= t("admin.budget_investments.index.table_selection") %></th>
+        <th><%= t("admin.budget_investments.index.list.geozone") %></th>
+        <th><%= t("admin.budget_investments.index.list.feasibility") %></th>
+        <th class="text-center"><%= t("admin.budget_investments.index.list.valuation_finished") %></th>
+        <th class="text-center"><%= t("admin.budget_investments.index.list.visible_to_valuators") %></th>
+        <th class="text-center"><%= t("admin.budget_investments.index.list.selected") %></th>
         <% if params[:filter]  == "selected" %>
-          <th class="text-center"><%= t("admin.budget_investments.index.table_incompatible") %></th>
+          <th class="text-center"><%= t("admin.budget_investments.index.list.incompatible") %></th>
         <% end %>
       </tr>
     </thead>
@@ -112,7 +112,7 @@
                                                                                       investment,
                                                                                       filter: params[:filter],
                                                                                       sort_by: params[:sort_by],
-                                                                                      max_per_heading: params[:max_per_heading],
+                                                                                      min_total_supports: params[:min_total_supports],
                                                                                       advanced_filters: params[:advanced_filters],
                                                                                       page: params[:page]),
                                  method: :patch,
@@ -125,7 +125,7 @@
                                                                                       investment,
                                                                                       filter: params[:filter],
                                                                                       sort_by: params[:sort_by],
-                                                                                      max_per_heading: params[:max_per_heading],
+                                                                                      min_total_supports: params[:min_total_supports],
                                                                                       advanced_filters: params[:advanced_filters],
                                                                                       page: params[:page]),
                                  method: :patch,

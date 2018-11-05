@@ -9,9 +9,9 @@ describe Budget::Investment::Milestone do
       expect(milestone).to be_valid
     end
 
-    it "is not valid without a title" do
+    it "is valid without a title" do
       milestone.title = nil
-      expect(milestone).not_to be_valid
+      expect(milestone).to be_valid
     end
 
     it "is not valid without a description if status is empty" do

@@ -1,48 +1,14 @@
-<div class="float-right">
-  <%= link_to t("admin.budget_investments.index.see_results"),
-              budget_results_path(current_budget, heading_id: current_budget.headings.first),
-              class: "button hollow medium", target: "_blank" %>
-</div>
+<% if @budget.has_winning_investments? %>
+  <div class="float-right">
+    <%= link_to t("admin.budget_investments.index.see_results"),
+                budget_results_path(@budget, heading_id: @budget.headings.first),
+                class: "button hollow medium", target: "_blank" %>
+  </div>
+<% end %>
 
 <h2 class="inline-block"><%= @budget.name %> - <%= t("admin.budget_investments.index.title") %></h2>
 
 <%= render "search_form" %>
-
-<%= form_tag(admin_budget_budget_investments_path(budget: @budget), method: :get, enforce_utf8: false) do %>
-  <div class="small-12 medium-3 column">
-    <%= select_tag :administrator_id,
-                   options_for_select(admin_select_options, params[:administrator_id]),
-                   { prompt: t("admin.budget_investments.index.administrator_filter_all"),
-                     label: false,
-                     class: "js-submit-on-change" } %>
-  </div>
-
-  <div class="small-12 medium-3 column">
-    <%= select_tag :valuator_or_group_id,
-                   options_for_select(valuator_or_group_select_options, params[:valuator_or_group_id]),
-                   { prompt: t("admin.budget_investments.index.valuator_filter_all"),
-                     label: false,
-                     class: "js-submit-on-change" } %>
-  </div>
-
-  <div class="small-12 medium-3 column">
-    <%= select_tag :heading_id,
-                   options_for_select(budget_heading_select_options(@budget), params[:heading_id]),
-                   { prompt: t("admin.budget_investments.index.heading_filter_all"),
-                     label: false,
-                     class: "js-submit-on-change" } %>
-  </div>
-
-  <div class="small-12 medium-3 column">
-    <%= select_tag :tag_name,
-                   options_for_select(investment_tags_select_options(@budget), params[:tag_name]),
-                   { prompt: t("admin.budget_investments.index.tags_filter_all"),
-                     label: false,
-                     class: "js-submit-on-change" } %>
-  </div>
-<% end %>
-
-<%= render "advanced_filters", i18n_namespace: "admin.budget_investments.index" %>
 
 <%= render "/shared/filter_subnav", i18n_namespace: "admin.budget_investments.index" %>
 

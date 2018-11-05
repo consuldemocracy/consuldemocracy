@@ -9,6 +9,12 @@ class Legislation::Process < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs
 
+  translates :title,           touch: true
+  translates :summary,         touch: true
+  translates :description,     touch: true
+  translates :additional_info, touch: true
+  include Globalizable
+
   PHASES_AND_PUBLICATIONS = %i(debate_phase allegations_phase proposals_phase draft_publication result_publication).freeze
 
   has_many :draft_versions, -> { order(:id) }, class_name: 'Legislation::DraftVersion',
@@ -18,7 +24,7 @@ class Legislation::Process < ActiveRecord::Base
   has_many :questions, -> { order(:id) }, class_name: 'Legislation::Question', foreign_key: 'legislation_process_id', dependent: :destroy
   has_many :proposals, -> { order(:id) }, class_name: 'Legislation::Proposal', foreign_key: 'legislation_process_id', dependent: :destroy
 
-  validates :title, presence: true
+  validates_translation :title, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :debate_start_date, presence: true, if: :debate_end_date?

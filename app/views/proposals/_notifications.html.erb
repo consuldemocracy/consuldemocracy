@@ -1,6 +1,6 @@
-<div class="tabs-panel" id="tab-notifications" role="tab">
+<div class="tabs-panel" id="tab-notifications">
   <div class="row">
-    <div class="small-12 column">
+    <div id="proposal_notifications" class="small-12 column notification-body">
       <% if @notifications.blank? %>
         <div class="callout primary text-center">
           <%= t('proposals.show.no_notifications') %>
@@ -8,9 +8,15 @@
       <% end %>
 
       <% @notifications.each do |notification| %>
-        <h3><%= notification.title %></h3>
-        <p class="more-info"><%= notification.created_at.to_date %></p>
-        <p><%= notification.body %></p>
+        <div id="<%= dom_id(notification) %>">
+          <h3><%= notification.title %></h3>
+          <p class="more-info"><%= notification.created_at.to_date %></p>
+          <%= simple_format text_with_links(notification.body), {}, sanitize: false %>
+
+          <span class="js-flag-actions">
+            <%= render 'proposal_notifications/actions', notification: notification %>
+          </span>
+        </div>
       <% end %>
     </div>
   </div>

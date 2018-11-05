@@ -1,0 +1,12 @@
+tr:
+  admin:
+    header:
+      title: Yönetim
+    actions:
+      actions: Aksiyon
+      confirm: Emin misiniz?
+      edit: Düzenleme
+    budgets:
+      index:
+        filters:
+          open: Açık

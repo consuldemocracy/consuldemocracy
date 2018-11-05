@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   if Rails.env.development? || Rails.env.staging?
     get '/sandbox' => 'sandbox#index'
     get '/sandbox/*template' => 'sandbox#show'
@@ -18,7 +20,6 @@ Rails.application.routes.draw do
   draw :direct_upload
   draw :document
   draw :graphql
-  draw :guide
   draw :legislation
   draw :management
   draw :moderation

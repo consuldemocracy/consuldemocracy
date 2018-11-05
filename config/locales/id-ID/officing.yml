@@ -1,0 +1,66 @@
+id:
+  officing:
+    header:
+      title: Polling
+    dashboard:
+      index:
+        title: Jajak pendapat officing
+        info: Di sini anda dapat memvalidasi pengguna, dan menyimpan dokumen hasil pemungutan suara
+    menu:
+      voters: Mengesahkan dokumen
+      total_recounts: Total menceritakan dan hasil
+    polls:
+      final:
+        title: Jajak siap untuk final menceritakan
+        no_polls: Anda tidak officing final menceritakan aktif dalam setiap jajak pendapat
+        select_poll: Pilih jajak pendapat
+        add_results: Tambahkan hasil
+    results:
+      flash:
+        create: "Hasil disimpan"
+        error_create: "Hasil yang TIDAK diselamatkan. Kesalahan dalam data."
+        error_wrong_booth: "Salah booth. Hasil yang TIDAK diselamatkan."
+      new:
+        title: "%{poll} - Tambahkan hasil"
+        not_allowed: "Anda diperbolehkan untuk menambah hasil jajak pendapat ini"
+        booth: "Booth"
+        date: "Tanggal"
+        select_booth: "Pilih booth"
+        ballots_white: "Benar-benar kosong surat suara"
+        ballots_null: "Surat suara yang tidak sah"
+        ballots_total: "Total surat suara"
+        submit: "Simpan"
+        results_list: "Hasil anda"
+        see_results: "Lihat hasil"
+      index:
+        no_results: "Tidak ada hasil"
+        results: Hasil
+        table_answer: Jawaban
+        table_votes: Suara
+        table_whites: "Benar-benar kosong surat suara"
+        table_nulls: "Surat suara yang tidak sah"
+        table_total: "Total surat suara"
+    residence:
+      flash:
+        create: "Dokumen yang diverifikasi dengan Sensus"
+        not_allowed: "Anda tidak memiliki officing pergeseran hari ini"
+      new:
+        title: Memvalidasi dokumen
+        document_number: "Nomor dokumen (termasuk surat-surat)"
+        submit: Memvalidasi dokumen
+        error_verifying_census: "Sensus itu dapat memverifikasi dokumen ini."
+        form_errors: mencegah verifikasi dari dokumen ini
+        no_assignments: "Anda tidak memiliki officing pergeseran hari ini"
+    voters:
+      new:
+        title: Jajak pendapat
+        table_poll: Jajak pendapat
+        table_status: Jajak status
+        table_actions: Tindakan
+      show:
+        can_vote: Dapat memilih
+        error_already_voted: Telah berpartisipasi dalam jajak pendapat ini
+        submit: Konfirmasi suara
+        success: "Suara diperkenalkan!"
+      can_vote:
+        submit_disable_with: "Tunggu, membenarkan suara..."

@@ -501,7 +501,7 @@ feature 'Budget Investments' do
     end
   end
 
-  context("Orders") do
+  context "Orders" do
     before { budget.update(phase: 'selecting') }
 
     scenario "Default order is random" do
@@ -533,7 +533,7 @@ feature 'Budget Investments' do
       expect(order).not_to eq(new_order)
     end
 
-    scenario 'Random order maintained with pagination', :js do
+    scenario 'Random order maintained with pagination' do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:budget_investment, heading: heading) }
 
@@ -551,7 +551,21 @@ feature 'Budget Investments' do
       expect(order).to eq(new_order)
     end
 
-    scenario "Investments are not repeated with random order", :js do
+    scenario 'Random order maintained when going back from show' do
+      10.times { |i| create(:budget_investment, heading: heading) }
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      order = all(".budget-investment h3").collect {|i| i.text }
+
+      click_link Budget::Investment.first.title
+      click_link "Go back"
+
+      new_order = all(".budget-investment h3").collect {|i| i.text }
+      expect(order).to eq(new_order)
+    end
+
+    scenario "Investments are not repeated with random order" do
       12.times { create(:budget_investment, heading: heading) }
       # 12 instead of per_page + 2 because in each page there are 10 (in this case), not 25
 
@@ -570,7 +584,7 @@ feature 'Budget Investments' do
 
     end
 
-    scenario 'Proposals are ordered by confidence_score', :js do
+    scenario 'Proposals are ordered by confidence_score' do
       best_proposal = create(:budget_investment, heading: heading, title: 'Best proposal')
       best_proposal.update_column(:confidence_score, 10)
       worst_proposal = create(:budget_investment, heading: heading, title: 'Worst proposal')
@@ -591,7 +605,7 @@ feature 'Budget Investments' do
       expect(current_url).to include('page=1')
     end
 
-    scenario 'Each user has a different and consistent random budget investment order when random_seed is disctint', :js do
+    scenario 'Each user has a different and consistent random budget investment order when random_seed is disctint' do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
@@ -627,7 +641,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario 'Each user has a equal and consistent budget investment order when the random_seed is equal', :js do
+    scenario 'Each user has a equal and consistent budget investment order when the random_seed is equal' do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
@@ -641,7 +655,44 @@ feature 'Budget Investments' do
       end
 
       expect(@first_user_investments_order).to eq(@second_user_investments_order)
+    end
 
+    scenario "Set votes for investments randomized with a seed" do
+      voter = create(:user, :level_two)
+      login_as(voter)
+
+      10.times { create(:budget_investment, heading: heading) }
+
+      voted_investments = []
+      10.times do
+        investment = create(:budget_investment, heading: heading)
+        create(:vote, votable: investment, voter: voter)
+        voted_investments << investment
+      end
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      voted_investments.each do |investment|
+        if page.has_link?(investment.title)
+          within("#budget_investment_#{investment.id}") do
+            expect(page).to have_content "You have already supported this investment"
+          end
+        end
+      end
+    end
+
+    scenario 'Order is random if budget is finished' do
+      10.times { create(:budget_investment) }
+
+      budget.update(phase: 'finished')
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+      order = all(".budget-investment h3").collect {|i| i.text }
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+      new_order = eq(all(".budget-investment h3").collect {|i| i.text })
+
+      expect(order).not_to eq(new_order)
     end
 
     def investments_order
@@ -832,6 +883,10 @@ feature 'Budget Investments' do
           expect(page).to have_content(investment.formatted_price)
           expect(page).to have_content(investment.price_explanation)
 
+          if budget.finished?
+            investment.update(winner: true)
+          end
+
           visit budget_investments_path(budget)
 
           expect(page).to have_content(investment.formatted_price)
@@ -956,6 +1011,41 @@ feature 'Budget Investments' do
     expect(page).to have_content("This investment project has been marked as not feasible and will not go to balloting phase")
   end
 
+  scenario "Show (selected budget investment)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        :selected,
+                        budget: budget,
+                        group: group,
+                        heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).to have_content("This investment project has been selected for balloting phase")
+  end
+
+  scenario "Show (winner budget investment)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        :selected,
+                        :winner,
+                        budget: budget,
+                        group: group,
+                        heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).to have_content("Winning investment project")
+  end
+
   scenario "Show (not selected budget investment)" do
     user = create(:user)
     login_as(user)
@@ -971,6 +1061,24 @@ feature 'Budget Investments' do
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
     expect(page).to have_content("This investment project has not been selected for balloting phase")
+  end
+
+  scenario "Show (unfeasible budget investment with valuation not finished)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :unfeasible,
+                        valuation_finished: false,
+                        budget: budget,
+                        group: group,
+                        heading: heading,
+                        unfeasibility_explanation: 'Local government is not competent in this matter')
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).not_to have_content("Unfeasibility explanation")
+    expect(page).not_to have_content("Local government is not competent in this matter")
   end
 
   scenario "Show (unfeasible budget investment with valuation not finished)" do
@@ -1042,6 +1150,20 @@ feature 'Budget Investments' do
     within("#tab-milestones") do
       expect(page).to have_content("Don't have defined milestones")
     end
+  end
+
+  scenario "Only winner investments are show when budget is finished" do
+    3.times { create(:budget_investment, heading: heading) }
+
+    Budget::Investment.first.update(feasibility: 'feasible', selected: true, winner: true)
+    Budget::Investment.second.update(feasibility: 'feasible', selected: true, winner: true)
+    budget.update(phase: 'finished')
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    expect(page).to have_content("#{Budget::Investment.first.title}")
+    expect(page).to have_content("#{Budget::Investment.second.title}")
+    expect(page).not_to have_content("#{Budget::Investment.third.title}")
   end
 
   it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
@@ -1495,4 +1617,69 @@ feature 'Budget Investments' do
 
     end
   end
+
+  scenario 'Flagging an investment as innapropriate', :js do
+    user       = create(:user)
+    investment = create(:budget_investment, heading: heading)
+
+    login_as(user)
+
+    visit budget_investment_path(budget, investment)
+
+    within "#budget_investment_#{investment.id}" do
+      find("#flag-expand-investment-#{investment.id}").click
+      find("#flag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#unflag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).to be
+  end
+
+  scenario 'Unflagging an investment', :js do
+    user       = create(:user)
+    investment = create(:budget_investment, heading: heading)
+    Flag.flag(user, investment)
+
+    login_as(user)
+
+    visit budget_investment_path(budget, investment)
+
+    within "#budget_investment_#{investment.id}" do
+      find("#unflag-expand-investment-#{investment.id}").click
+      find("#unflag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#flag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).not_to be
+  end
+
+  scenario 'Flagging an investment updates the DOM properly', :js do
+    user       = create(:user)
+    investment = create(:budget_investment, heading: heading)
+
+    login_as(user)
+
+    visit budget_investment_path(budget, investment)
+
+    within "#budget_investment_#{investment.id}" do
+      find("#flag-expand-investment-#{investment.id}").click
+      find("#flag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#unflag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).to be
+
+    within "#budget_investment_#{investment.id}" do
+      find("#unflag-expand-investment-#{investment.id}").click
+      find("#unflag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#flag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).not_to be
+  end
+
 end

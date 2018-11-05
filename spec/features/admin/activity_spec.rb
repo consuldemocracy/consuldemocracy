@@ -331,4 +331,22 @@ feature 'Admin activity' do
     end
   end
 
+  context "System emails" do
+    scenario "Shows moderation activity on system emails" do
+      proposal = create(:proposal, title: 'Proposal A')
+      proposal_notification = create(:proposal_notification, proposal: proposal,
+                                                               title: 'Proposal A Title',
+                                                               body: 'Proposal A Notification Body')
+      proposal_notification.moderate_system_email(@admin.user)
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(proposal_notification.title)
+        expect(page).to have_content("Hidden")
+        expect(page).to have_content(@admin.user.username)
+      end
+    end
+  end
+
 end

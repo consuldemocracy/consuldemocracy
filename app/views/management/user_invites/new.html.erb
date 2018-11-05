@@ -1,14 +1,12 @@
-<div class="small-12 medium-8 column">
-  <h1><%= t('management.user_invites.new.title') %></h1>
+<h2><%= t("management.user_invites.new.title") %></h2>
 
-  <%= form_tag management_user_invites_path do %>
-    <label><%= t('management.user_invites.new.label') %></label>
-    <p class="help-text" id="emails-help-text"><%= t('management.user_invites.new.info') %></p>
-    <%= text_area_tag "emails", nil, rows: 5,
-                      placeholder: t('management.user_invites.new.info'),
-                      aria: {describedby: "emails-help-text"} %>
-    <div class="small-12 medium-6">
-      <input type="submit" name="" value="<%= t('management.user_invites.new.submit') %>", class="button hollow expanded">
-    </div>
-  <% end %>
-</div>
+<%= form_tag management_user_invites_path do %>
+  <label><%= t('management.user_invites.new.label') %></label>
+  <p class="help-text" id="emails-help-text"><%= t('management.user_invites.new.info') %></p>
+  <%= text_area_tag "emails", nil, rows: 5,
+                    placeholder: t('management.user_invites.new.info'),
+                    aria: {describedby: "emails-help-text"} %>
+  <div class="small-12 medium-6 large-3">
+    <input type="submit" name="" value="<%= t('management.user_invites.new.submit') %>", class="button expanded">
+  </div>
+<% end %>

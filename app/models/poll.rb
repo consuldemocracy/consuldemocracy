@@ -4,6 +4,11 @@ class Poll < ActiveRecord::Base
   include ActsAsParanoidAliases
   include Notifiable
 
+  translates :name,        touch: true
+  translates :summary,     touch: true
+  translates :description, touch: true
+  include Globalizable
+
   RECOUNT_DURATION = 1.week
 
   has_many :booth_assignments, class_name: "Poll::BoothAssignment"
@@ -19,8 +24,7 @@ class Poll < ActiveRecord::Base
   has_and_belongs_to_many :geozones
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
-  validates :name, presence: true
-
+  validates_translation :name, presence: true
   validate :date_range
 
   scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Date.current.beginning_of_day, Date.current.beginning_of_day) }

@@ -1,19 +1,31 @@
 module AdminHelper
 
   def side_menu
-    render "/#{namespace}/menu"
+    if namespace == 'moderation/budgets'
+      render "/moderation/menu"
+    else
+      render "/#{namespace}/menu"
+    end
   end
 
   def namespaced_root_path
-    "/#{namespace}"
+    if namespace == 'moderation/budgets'
+      "/moderation"
+    else
+      "/#{namespace}"
+    end
   end
 
   def namespaced_header_title
-    t("#{namespace}.header.title")
+    if namespace == 'moderation/budgets'
+      t("moderation.header.title")
+    else
+      t("#{namespace}.header.title")
+    end
   end
 
   def menu_moderated_content?
-    ["proposals", "debates", "comments", "hidden_users", "activity"].include?(controller_name) && controller.class.parent != Admin::Legislation
+    ["proposals", "debates", "comments", "hidden_users", "activity", "hidden_budget_investments"].include?(controller_name) && controller.class.parent != Admin::Legislation
   end
 
   def menu_budget?
@@ -21,7 +33,11 @@ module AdminHelper
   end
 
   def menu_polls?
-    %w[polls questions officers booths officer_assignments booth_assignments recounts results shifts questions answers].include?(controller_name)
+    %w[polls questions answers recounts results].include?(controller_name)
+  end
+
+  def menu_booths?
+    %w[officers booths shifts booth_assignments officer_assignments].include?(controller_name)
   end
 
   def menu_profiles?
@@ -33,7 +49,7 @@ module AdminHelper
   end
 
   def menu_customization?
-    ["pages", "banners"].include?(controller_name) || menu_homepage?
+    ["pages", "banners", "information_texts"].include?(controller_name) || menu_homepage?
   end
 
   def menu_homepage?

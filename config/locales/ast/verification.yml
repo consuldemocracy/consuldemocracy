@@ -1,0 +1,10 @@
+ast:
+  verification:
+    letter:
+      new:
+        user_permission_info: Cola to cuenta yá pues...
+    residence:
+      new:
+        document_number: DNI/Pasaporte/Tarjeta de residencia
+    user_permission_debates: Participar n'alderiques
+    user_permission_proposal: Crear nueves propuestes

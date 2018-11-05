@@ -1,0 +1,6 @@
+ast:
+  legislation:
+    processes:
+      index:
+        filters:
+          past: Pasáu

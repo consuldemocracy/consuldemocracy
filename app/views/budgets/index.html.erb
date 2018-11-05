@@ -1,4 +1,9 @@
-<% provide :title do %><%= t("budgets.index.title") %><% end %>
+<% if has_banners? %>
+  <%= render "shared/banner" %>
+<% end %>
+
+<% provide :title do %><%= t('budgets.index.title') %><% end %>
+
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
 <% end %>
@@ -28,7 +33,7 @@
             <% if current_user %>
               <% if current_user.level_two_or_three_verified? %>
                 <%= link_to t("budgets.investments.index.sidebar.create"),
-                            new_budget_investment_guide,
+                            new_budget_investment_path(@budget),
                             class: "button margin-top expanded" %>
               <% else %>
                 <div class="callout warning margin-top">
@@ -72,7 +77,7 @@
                       <%= heading_name_and_price_html(heading, current_budget) %>
                     <% end %>
                   <% else %>
-                    <div>
+                    <div class="heading-name">
                       <%= heading_name_and_price_html(heading, current_budget) %>
                     </div>
                   <% end %>
@@ -178,11 +183,6 @@
         <strong><%= t("budgets.index.section_footer.title") %></strong>
       </p>
       <p><%= t("budgets.index.section_footer.description") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_1") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_2") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_3",
-                org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
-      <p><%= t("budgets.index.section_footer.help_text_4") %></p>
     </div>
   </div>
 </div>

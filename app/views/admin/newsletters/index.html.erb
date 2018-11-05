@@ -6,10 +6,10 @@
   <table id="newsletters">
     <thead>
       <tr>
-        <th><%= t("admin.newsletters.index.subject") %></th>
+        <th class="small-2"><%= t("admin.newsletters.index.subject") %></th>
         <th><%= t("admin.newsletters.index.segment_recipient") %></th>
         <th><%= t("admin.newsletters.index.sent") %></th>
-        <th class="small-5 text-right"><%= t("admin.newsletters.index.actions") %></th>
+        <th class="small-4"><%= t("admin.newsletters.index.actions") %></th>
       </tr>
     </thead>
     <tbody>
@@ -28,13 +28,19 @@
             <%= l newsletter.sent_at.to_date %>
           <% end %>
         </td>
-        <td class="text-right">
+        <td>
+          <div class="small-4 column">
           <%= link_to t("admin.newsletters.index.edit"), edit_admin_newsletter_path(newsletter),
-                                                         method: :get, class: "button hollow" %>
+                                                         method: :get, class: "button hollow expanded" %>
+          </div>
+          <div class="small-4 column">
           <%= link_to t("admin.newsletters.index.delete"), admin_newsletter_path(newsletter),
-                                                           method: :delete, class: "button hollow alert" %>
+                                                           method: :delete, class: "button hollow alert expanded" %>
+          </div>
+          <div class="small-4 column">
           <%= link_to t("admin.newsletters.index.preview"), admin_newsletter_path(newsletter),
-                                                            class: "button" %>
+                                                            class: "button expanded" %>
+          </div>
         </td>
       </tr>
     <% end %>

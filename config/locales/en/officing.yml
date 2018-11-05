@@ -6,6 +6,7 @@ en:
       index:
         title: Poll officing
         info: Here you can validate user documents and store voting results
+        no_shifts: You don't have officing shifts today.
     menu:
       voters: Validate document
       total_recounts: Total recounts and results
@@ -57,6 +58,7 @@ en:
         table_poll: Poll
         table_status: Polls status
         table_actions: Actions
+        not_to_vote: The person has decided not to vote at this time
       show:
         can_vote: Can vote
         error_already_voted: Has already participated in this poll

@@ -1,0 +1,36 @@
+<%= back_link_to admin_system_emails_path %>
+
+<h2><%= t("admin.system_emails.#{@system_email}.title") %></h2>
+
+<div class="small-12 column">
+  <div class="callout highlight">
+    <div class="row">
+      <div class="small-12 medium-4 column">
+        <strong><%= t("admin.newsletters.show.from") %></strong><br>
+        <%= Setting['mailer_from_address'] %>
+      </div>
+      <div class="small-12 medium-8 column">
+        <strong><%= t("admin.newsletters.show.subject") %></strong><br>
+        <%= @subject %>
+      </div>
+    </div>
+  </div>
+
+  <strong><%= t("admin.newsletters.show.body") %></strong>
+  <p class="help-text" id="phase-description-help-text">
+    <%= t("admin.newsletters.show.body_help_text") %>
+  </p>
+  <div class="newsletter-body-content">
+    <%= render file: "app/views/layouts/_mailer_header.html.erb" %>
+
+    <table cellpadding="0" cellspacing="0" border="0" style="background: #fff; margin: 0 auto; max-width: 700px; width:100%;">
+      <tbody>
+        <tr>
+          <%= render file: "app/views/mailer/#{@system_email}.html.erb" %>
+        </tr>
+      </tbody>
+    </table>
+
+    <%= render file: "app/views/layouts/_mailer_footer.html.erb" %>
+  </div>
+</div>

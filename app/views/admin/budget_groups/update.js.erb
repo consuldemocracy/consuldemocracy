@@ -2,5 +2,6 @@
   $("#group-form-<%= @group.id %>").html('<%= j render("admin/budgets/group_form", group: @group, budget: @group.budget, button_title: t("admin.budgets.form.submit"), id: "group-form-#{@group.id}", css_class: "group-toggle-#{@group.id}" ) %>');
 <% else %>
   $("#group-name-<%= @group.id %>").html('<%= @group.name %>')
+  $("#max-heading-label-<%=@group.id%>").html('<%= j render("admin/budgets/max_headings_label", current: @group.max_votable_headings, max: @group.headings.count, group: @group) %>')
   $(".group-toggle-<%= @group.id %>").toggle()
 <% end %>

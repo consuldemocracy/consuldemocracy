@@ -1,4 +1,5 @@
 class Admin::Poll::PollsController < Admin::Poll::BaseController
+  include Translatable
   load_and_authorize_resource
 
   before_action :load_search, only: [:search_booths, :search_officers]
@@ -60,10 +61,10 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
 
     def poll_params
       image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
-      attributes = [:name, :starts_at, :ends_at, :geozone_restricted, :summary, :description,
-                    :results_enabled, :stats_enabled, geozone_ids: [],
+      attributes = [:name, :starts_at, :ends_at, :geozone_restricted, :results_enabled,
+                    :stats_enabled, geozone_ids: [],
                     image_attributes: image_attributes]
-      params.require(:poll).permit(*attributes)
+      params.require(:poll).permit(*attributes, translation_params(Poll))
     end
 
     def search_params
@@ -74,4 +75,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
       @search = search_params[:search]
     end
 
+    def resource
+      @poll ||= Poll.find(params[:id])
+    end
 end

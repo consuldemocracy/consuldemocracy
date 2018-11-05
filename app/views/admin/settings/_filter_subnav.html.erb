@@ -1,4 +1,10 @@
-<ul class="tabs" data-tabs id="settings-tabs">
+<ul class="tabs"
+    id="settings-tabs"
+    data-deep-link="true"
+    data-update-history="true"
+    data-deep-link-smudge="true"
+    data-deep-link-smudge-delay="500"
+    data-tabs>
   <li class="tabs-title is-active">
     <%= link_to "#tab-configuration" do %>
       <%= t("admin.settings.index.title") %>

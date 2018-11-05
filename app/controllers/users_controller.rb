@@ -17,7 +17,7 @@ class UsersController < ApplicationController
                           debates: (Setting['feature.debates'] ? Debate.where(author_id: @user.id).count : 0),
                           budget_investments: (Setting['feature.budgets'] ? Budget::Investment.where(author_id: @user.id).count : 0),
                           comments: only_active_commentables.count,
-                          follows: @user.follows.count)
+                          follows: @user.follows.map(&:followable).compact.count)
     end
 
     def load_filtered_activity

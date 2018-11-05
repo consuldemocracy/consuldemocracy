@@ -1,0 +1,77 @@
+sv:
+  pages:
+    general_terms: Regler och villkor
+    help:
+      title: "%{org} är en plattform för medborgardeltagande"
+      guide: "Den här guiden förklarar de olika delarna av %{org} och hur de fungerar."
+      menu:
+        debates: "Debatter"
+        proposals: "Förslag"
+        budgets: "Medborgarbudgetar"
+        polls: "Omröstningar"
+        other: "Annan information av intresse"
+        processes: "Processer"
+      debates:
+        title: "Debatter"
+        description: "I %{link}-delen kan du presentera dina åsikter och diskutera frågor som rör staden. Det är också en plats för att utveckla idéer som kan tas vidare till andra delar av %{org} och leda till konkreta åtgärder från kommunen."
+        link: "debatter"
+        feature_html: "Du kan skriva debattinlägg och kommentera och betygsätta andras inlägg med <strong>Jag håller med</strong> eller <strong>Jag håller inte med</strong>. För att göra det behöver du %{link}."
+        feature_link: "registrera dig på %{org}"
+        image_alt: "Knappar för att betygsätta debatter"
+        figcaption: '"Jag håller med"- och "Jag håller inte med"-knappar för att betygsätta debatter.'
+      proposals:
+        title: "Förslag"
+        description: "I %{link}-delen kan du skriva förslag som du vill att kommunen ska genomföra. Förslagen behöver få tillräckligt med stöd för att gå vidare till omröstning. De förslag som vinner en omröstning kommer att genomföras av kommunen."
+        link: "medborgarförslag"
+        image_alt: "Knapp för att stödja förslag"
+        figcaption_html: 'Knapp för att "stödja" ett förslag.'
+      budgets:
+        title: "Medborgarbudget"
+        description: "I %{link}-delen beslutar invånarna om hur en del av stadens budget ska användas."
+        link: "medborgarbudgetar"
+        image_alt: "Olika faser av en medborgarbudget"
+        figcaption_html: '"Stöd"- och "Omröstnings"-faser av en medborgarbudget.'
+      polls:
+        title: "Omröstningar"
+        description: "%{link}-delen aktiveras varje gång ett förslag får 1% stöd och går vidare till omröstning, eller när kommunfullmäktige lämnar ett förslag till omröstning."
+        link: "omröstningar"
+        feature_1: "För att delta i omröstningen måste du %{link} och verifiera ditt konto."
+        feature_1_link: "registrera dig på %{org_name}"
+      processes:
+        title: "Processer"
+        description: "I %{link}-delen är medborgare med i processen för att skriva och kommentera nya dokument och handlingar som rör staden."
+        link: "processer"
+      faq:
+        title: "Har du tekniska problem?"
+        description: "Läs de vanligaste frågorna och svaren."
+        button: "Visa vanliga frågor"
+        page:
+          title: "Vanliga frågor"
+          description: "Använd den här sidan för att hjälpa dina användare med deras vanligaste frågor."
+          faq_1_title: "Fråga 1"
+          faq_1_description: "Det här är ett exempel på beskrivning till fråga ett."
+      other:
+        title: "Annan information av intresse"
+        how_to_use: "Använd %{org_name} i din stad"
+      how_to_use:
+        text: |-
+          Använd plattformen i din stad eller hjälp oss att förbättra den, den är fri programvara.
+          
+          Den här plattformen för Open Government använder [CONSUL](https://github.com/consul/consul 'CONSUL på GitHub'), som är fri programvara licensierad under [AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), vilket kortfattat betyder att vem som helst kan använda, kopiera, granska eller ändra i koden och dela den vidare under samma licens. Vi tycker att bra tjänster ska vara tillgängliga för fler.
+          
+          Om du är programmerare får du gärna hjälpa oss att förbättra koden på [CONSUL](https://github.com/consul/consul 'CONSUL på GitHub'), eller den svenska implementeringen på [Digidem Lab/CONSUL](https://github.com/digidemlab/consul 'CONSUL Sweden på GitHub').
+      titles:
+        how_to_use: Använd det i din kommun
+    titles:
+      accessibility: Tillgänglighet
+      conditions: Användarvillkor
+      help: "Vad är %{org}? - Medborgardeltagande"
+      privacy: Sekretesspolicy
+    verify:
+      code: Koden du fick i ett brev
+      email: E-post
+      info: 'För att verifiera ditt konto måste du fylla i dina uppgifter:'
+      info_code: 'Nu kan du skriva in koden du fick i ett brev:'
+      password: Lösenord
+      submit: Verifiera mitt konto
+      title: Verifiera ditt konto

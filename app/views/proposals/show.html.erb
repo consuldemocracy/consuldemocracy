@@ -171,8 +171,7 @@
 
           <% if @proposal.successful? %>
             <p>
-              <%= t("proposals.proposal.successful",
-                  voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+              <%= t("proposals.proposal.successful") %>
             </p>
             <% if can? :create, Poll::Question %>
               <p class="text-center">
@@ -193,12 +192,8 @@
                       { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
           <% end %>
         </div>
-        <%= render partial: 'shared/social_share', locals: {
-          share_title: t("proposals.show.share"),
-          title: @proposal.title,
-          url: proposal_url(@proposal),
-          description: @proposal.summary
-        } %>
+
+        <%= render 'proposals/social_share', proposal: @proposal, share_title: t("proposals.show.share") %>
 
         <% if current_user %>
           <div class="sidebar-divider"></div>
@@ -224,8 +219,8 @@
   </div>
 </div>
 
-<div class="tabs-content" data-tabs-content="proposals_tabs" role="tablist">
-  <div class="tabs-panel is-active" id="tab-comments" role="tab">
+<div class="tabs-content" data-tabs-content="proposals_tabs">
+  <div class="tabs-panel is-active" id="tab-comments">
     <%= render "proposals/comments" %>
   </div>
 
