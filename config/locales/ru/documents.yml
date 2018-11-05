@@ -8,7 +8,7 @@ ru:
       attachment_label: Выберите документ
       delete_button: Убрать документ
       cancel_button: Отменить
-      note: "Вы можете загрузить максимум %{max_documents_allowed} документы следующих типов контента: %{accepted_content_types}, до %{max_file_size} Мб на файл."
+      note: "Вы можете загрузить максимум %{max_documents_allowed} документа(ов) следующих типов контента: %{accepted_content_types}, до %{max_file_size} Мб на файл."
       add_new_document: Добавить новый документ
     actions:
       destroy:
