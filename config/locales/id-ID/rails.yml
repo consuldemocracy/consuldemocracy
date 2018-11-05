@@ -49,9 +49,9 @@ id:
       - November
       - Desember
     order:
-      - :tahun
-      - :bulan
-      - :hari
+      - :day
+      - :month
+      - :year
   datetime:
     distance_in_words:
       about_x_hours:
