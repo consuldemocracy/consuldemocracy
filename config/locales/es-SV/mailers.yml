@@ -11,6 +11,7 @@ es-SV:
     email_verification:
       click_here_to_verify: en este enlace
       instructions_2_html: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
+      instructions_html: Para terminar de verificar tu cuenta de usuario pulsa %{verification_link}.
       subject: Verifica tu email
       thanks: Muchas gracias.
       title: Verifica tu cuenta con el siguiente enlace
@@ -43,6 +44,7 @@ es-SV:
       title_html: "Has enviado un nuevo mensaje privado a <strong>%{receiver}</strong> con el siguiente contenido:"
     user_invite:
       ignore: "Si no has solicitado esta invitación no te preocupes, puedes ignorar este correo."
+      text: "¡Gracias por solicitar unirte a %{org}! En unos segundos podrás empezar a participar, sólo tienes que rellenar el siguiente formulario:"
       thanks: "Muchas gracias."
       title: "Bienvenido a %{org}"
       button: Completar registro
