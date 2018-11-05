@@ -49,9 +49,9 @@ fr:
       - Novembre
       - Décembre
     order:
-      - ':année'
-      - :mois
-      - :jour
+      - :day
+      - :month
+      - :year
   datetime:
     distance_in_words:
       about_x_hours:
