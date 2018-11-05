@@ -263,7 +263,7 @@ GEM
     mixlib-cli (1.7.0)
     mixlib-config (2.2.13)
       tomlrb
-    multi_json (1.12.2)
+    multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     net-scp (1.2.1)
@@ -363,7 +363,7 @@ GEM
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     rinku (2.0.4)
-    rollbar (2.15.5)
+    rollbar (2.18.0)
       multi_json
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
@@ -554,7 +554,7 @@ DEPENDENCIES
   redcarpet (~> 3.4.0)
   responders (~> 2.4.0)
   rinku (~> 2.0.2)
-  rollbar (~> 2.15.5)
+  rollbar (~> 2.18.0)
   rspec-rails (~> 3.6)
   rubocop (~> 0.54.0)
   rubocop-rspec (~> 1.26.0)
