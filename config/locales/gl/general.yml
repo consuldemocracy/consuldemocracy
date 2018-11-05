@@ -450,6 +450,9 @@ gl:
     update:
       form:
         submit_button: Gardar cambios
+    share:
+      message: "Veño de apoiar a proposta %{summary} en %{org}. Se che interesa, apoia ti tamén!"
+      message_mobile: "Veño de apoiar a proposta %{summary} en %{handle}. Se che interesa, apoia ti tamén!"
   polls:
     all: "Todas"
     no_dates: "sen data asignada"
