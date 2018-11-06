@@ -1,0 +1,395 @@
+fa:
+  account:
+    show:
+      change_credentials_link: اعتبار من را تغییر دهید
+      email_on_comment_label: وقتی کسی در مورد پیشنهادها یا بحث های من نظر می دهد، از طریق ایمیل به من اطلاع دهید
+      email_on_comment_reply_label: وقتی کسی به نظرات من پاسخ می دهد، از طریق ایمیل به من اطلاع دهید
+      erase_account_link: پاک کردن حساب
+      finish_verification: تایید کامل
+      notifications: اطلاعیه ها
+      organization_name_label: نام سازمان
+      organization_responsible_name_placeholder: نماینده سازمان/جمعی
+      personal: اطلاعات شخصی
+      phone_number_label: شماره تلفن
+      public_activity_label: نگه داشتن لیست فعالیت های عمومی  من
+      title: حساب من
+      user_permission_support_proposal: '* پشتیبانی از طرح های پیشنهادی'
+      user_permission_title: "مشارکت\n"
+      user_permission_verify: برای انجام همه اقدامات حساب خود را بررسی کنید.
+      user_permission_verify_info: "* تنها برای کاربران در سرشماری."
+      user_permission_votes: شرکت در رای گیری نهایی *
+      username_label: نام کاربری
+      verified_account: حساب تایید شده
+      verify_my_account: تأیید حساب کاربری
+  application:
+    close: بستن
+    menu: منو
+  comments:
+    comments_closed: نظرات بسته شده اند
+    verified_only: شرکت %{verify_account}
+    verify_account: "حساب کاربری خودراتایید کنید\n"
+    comment:
+      admin: مدیران
+      author: نویسنده
+      deleted: این نظر حذف شده است
+      moderator: سردبیر
+      responses:
+        zero: بدون پاسخ
+        one: 1 نظر
+        other: "%{count} نظر"
+      user_deleted: کاربر حذف شد
+      votes:
+        zero: بدون رای
+        one: 1 رای
+        other: "%{count} رای"
+    form:
+      comment_as_admin: نظر به عنوان مدیر
+      comment_as_moderator: نظر به عنوان ناظر
+    select_order: مرتب سازی بر اساس
+    show:
+      return_to_commentable: 'بازگشت به '
+  comments_helper:
+    comment_button: نشر نظر
+    comment_link: توضیح
+    comments_title: توضیحات
+    reply_button: نشر پاسخ
+    reply_link: پاسخ
+  debates:
+    create:
+      form:
+        submit_button: شروع بحث
+    debate:
+      comments:
+        zero: بدون نظر
+        one: 1 نظر
+        other: "%{count} نظرات"
+      votes:
+        zero: بدون رای
+        one: 1 رای
+        other: "%{count} رای"
+    edit:
+      editing: ویرایش بحث
+      form:
+        submit_button: ذخیره تغییرات
+      show_link: مشاهده بحث
+    form:
+      debate_text: متن اولیه بحث
+      debate_title: عنوان بحث
+      tags_instructions: برچسب این بحث.
+      tags_label: موضوع ها
+      tags_placeholder: "برچسبهایی را که میخواهید از آن استفاده کنید، با کاما ('،') جدا کنید"
+    index:
+      featured_debates: "ویژه\n"
+      filter_topic:
+        one: " با موضوع '%{topic} '"
+        other: " با موضوع '%{topic} '"
+      orders:
+        confidence_score: بالاترین امتیاز
+        created_at: جدیدترین
+        hot_score: فعال ترین
+        most_commented: بیشترین نظرات
+        relevance: ارتباط
+        recommendations: توصیه ها
+      search_form:
+        button: جستجو
+        placeholder: جستجوبحث ها ...
+        title: جستجو
+      select_order: "سفارش توسط\n"
+      start_debate: شروع بحث
+      title: مباحثه
+      section_header:
+        title: مباحثه
+    new:
+      form:
+        submit_button: شروع بحث
+      info_link: ایجاد طرح های جدید
+      more_info: اطلاعات بیشتر
+      start_new: شروع بحث
+    show:
+      author_deleted: کاربر حذف شد
+      comments:
+        zero: بدون نظر
+        one: 1 نظر
+        other: "%{count} نظرات"
+      comments_title: توضیحات
+      edit_debate_link: ویرایش
+      login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
+      share: "اشتراک گذاری\n"
+      author: نویسنده
+    update:
+      form:
+        submit_button: ذخیره تغییرات
+  errors:
+    messages:
+      user_not_found: کاربری یافت نشد
+  form:
+    debate: بحث
+    error: خطا
+    errors: خطاها
+    proposal: طرح های پیشنهادی
+    proposal_notification: "اطلاعیه ها"
+    spending_proposal: هزینه های طرح
+    budget/investment: سرمایه گذاری
+    poll/shift: تغییر 
+    poll/question/answer: پاسخ
+    user: "حساب\n"
+    verification/sms: تلفن
+    signature_sheet: ورق امضا
+    document: سند
+    topic: موضوع
+    image: تصویر
+  geozones:
+    none: تمام شهر
+    all: تمام مناطق
+  proposals:
+    show:
+      title_video_url: "ویدیوهای خارجی"
+      author: نویسنده
+    update:
+      form:
+        submit_button: ذخیره تغییرات
+  polls:
+    all: "همه"
+    index:
+      filters:
+        current: "بازکردن"
+      no_geozone_restricted: "تمام شهر"
+      geozone_restricted: "نواحی"
+    show:
+      signin: ورود به برنامه
+      signup: ثبت نام
+      verify_link: "حساب کاربری خودراتایید کنید\n"
+      more_info_title: "اطلاعات بیشتر"
+      documents: اسناد
+      videos: "ویدیوهای خارجی"
+      info_menu: "اطلاعات"
+      results_menu: "نتایج شما"
+      stats:
+        title: "مشارکت در بحث"
+        total_participation: "کل شرکت کنندگان"
+      results:
+        title: "سوالات"
+  poll_questions:
+    create_question: "ایجاد سوال"
+  proposal_notifications:
+    new:
+      title_label: "عنوان"
+  shared:
+    edit: 'ویرایش'
+    save: 'ذخیره کردن'
+    delete: حذف
+    "yes": "بله"
+    "no": "نه"
+    search_results: "جستجو نتایج "
+    advanced_search:
+      from: "از \n"
+      search: 'فیلتر'
+    back: برگرد
+    check: انتخاب
+    check_all: همه
+    hide: پنهان کردن
+    print:
+      print_button: این اطلاعات را چاپ کنید
+    search: جستجو
+    show: نمایش
+    suggest:
+      debate:
+        see_all: "همه را ببین\n"
+      budget_investment:
+        see_all: "همه را ببین\n"
+      proposal:
+        see_all: "همه را ببین\n"
+    share: "اشتراک گذاری\n"
+  spending_proposals:
+    form:
+      geozone: حوزه عملیات
+      submit_buttons:
+        create: ایجاد شده
+        new: ایجاد شده
+      title: عنوان هزینه های پیشنهادی 
+    index:
+      title: بودجه مشارکتی
+      unfeasible: سرمایه گذاری غیر قابل پیش بینی
+      by_geozone: "پروژه های سرمایه گذاری با دامنه:%{geozone}"
+      search_form:
+        button: جستجو
+        placeholder: پروژه سرمایه گذاری
+        title: جستجو
+      search_results:
+        one: "حاوی اصطلاح%{search_term}"
+        other: "حاوی اصطلاح%{search_term}"
+      sidebar:
+        geozones: حوزه عملیات
+        feasibility: "امکان پذیری\n"
+        unfeasible: غیر قابل پیش بینی
+      start_spending_proposal: هیچ پروژه سرمایه گذاری وجود ندارد.
+    new:
+      more_info: چگونه بودجه مشارکتی کار می کند؟
+      start_new: ایجاد  هزینه پیشنهاد
+    show:
+      author_deleted: کاربر حذف شد
+      code: 'کد طرح:'
+      share: "اشتراک گذاری\n"
+    wrong_price_format: فقط اعداد صحیح 
+    spending_proposal:
+      spending_proposal: پروژه سرمایه گذاری
+      support: پشتیبانی
+      support_title: پشتیبانی از این پروژه
+      supports:
+        zero: بدون پشتیبانی 
+        one: 1 پشتیبانی
+        other: "%{count}پشتیبانی"
+  stats:
+    index:
+      visits: بازديد
+      debates: مباحثه
+      proposals: طرح های پیشنهادی
+      comments: توضیحات
+      proposal_votes: پیشنهادات رای دهی
+      debate_votes: رای در مناظره
+      comment_votes: رای در نظر
+      votes: کل رای
+      verified_users: کاربران تایید شده
+      unverified_users: کاربران تایید نشده
+  unauthorized:
+    default: شما مجوز دسترسی به این صفحه را ندارید.
+    manage:
+      all: "شما اجازه انجام عمل '%{action}' در %{subject} را نداشته باشند."
+  users:
+    direct_messages:
+      new:
+        body_label: پیام
+        submit_button: ارسال پیام
+        title: ارسال پیام خصوصی به %{receiver}
+        title_label: عنوان
+        verify_account: "حساب کاربری خودراتایید کنید\n"
+        authenticate: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
+        signin: ورود به برنامه
+        signup: ثبت نام
+      show:
+        receiver: ارسال پیام به %{receiver}
+    show:
+      deleted: حذف
+      deleted_debate: این مناظره حذف شده است
+      deleted_proposal: این پیشنهاد حذف شده است
+      deleted_budget_investment: این پروژه سرمایه گذاری حذف شده است
+      proposals: طرح های پیشنهادی
+      debates: مباحثه
+      budget_investments: بودجه سرمایه گذاری ها 
+      comments: توضیحات
+      actions: اقدامات
+      filters:
+        comments:
+          one: 1 نظر
+          other: "%{count} نظرات"
+        debates:
+          one: ۱ بحث
+          other: "%{count} بحث"
+        proposals:
+          one: ۱ طرح  پیشنهادی
+          other: "%{count} طرح  پیشنهادی"
+        budget_investments:
+          one: 1 سرمایه گذاری
+          other: "%{count} سرمایه گذاری"
+        follows:
+          one: 1 دنبال کننده
+          other: "%{count} دنبال کننده"
+      no_activity: کاربر هیچ فعالیت عمومی ندارد
+      no_private_messages: "این کاربر پیام های خصوصی را قبول نمی کند."
+      private_activity: این کاربر تصمیم گرفت لیست فعالیت را خصوصی نگه دارد.
+      send_private_message: "ارسال پیام خصوصی"
+      delete_alert: "آیا مطمئن هستید که می خواهید  پروژه سرمایه گذاری را حذف کنید؟ این دستور قابل بازگشت نیست"
+    proposals:
+      send_notification: "ارسال اعلان"
+      retire: "بازنشسته"
+      retired: "پیشنهاد بازنشسته"
+      see: "دیدن پیشنهاد"
+  votes:
+    agree: موافقم
+    disagree: مخالفم
+    organizations: سازمان ها مجاز به رای دادن نیستند
+    signin: ورود به برنامه
+    signup: ثبت نام
+    supports: پشتیبانی ها
+    unauthenticated: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
+    verified_only: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
+    verify_account: "حساب کاربری خودراتایید کنید\n"
+    spending_proposals:
+      not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
+      not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
+      organization: سازمان ها مجاز به رای دادن نیستند
+      unfeasible: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
+      not_voting_allowed: فازانتخاب  بسته است
+    budget_investments:
+      not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
+      not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
+      organization: سازمان ها مجاز به رای دادن نیستند
+      unfeasible: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
+      not_voting_allowed: فازانتخاب  بسته است
+      different_heading_assigned:
+        one: "شما فقط می توانید از پروژه های سرمایه گذاری در%{count} منطقه حمایت کنید"
+        other: "شما فقط می توانید از پروژه های سرمایه گذاری در%{count} منطقه حمایت کنید"
+  welcome:
+    feed:
+      most_active:
+        debates: "فعال ترین موضوعات"
+        proposals: " پیشنهادات فعال"
+        processes: "فرآیندهای باز"
+      see_all_debates: مشاهده تمام بحث ها
+      see_all_proposals: دیدن همه طرحهای پیشنهادی
+      see_all_processes: دیدن تمام فرآیندها
+      process_label: "فرآیند\n"
+      see_process: مشاهده فرآیند
+    cards:
+      title: "ویژه\n"
+    recommended:
+      title: توصیه های که ممکن است مورد علاقه شما باشد
+      help: "این توصیه ها توسط برچسب های بحث و پیشنهادات شما دنبال می شوند."
+      debates:
+        title: بحث های توصیه شده
+        btn_text_link: همه بحث های توصیه شده
+      proposals:
+        title: توصیه های پیشنهادی
+        btn_text_link: همه توصیه های پیشنهادی
+      budget_investments:
+        title: سرمایه گذاری های توصیه شده
+      slide: "ببینید %{title}"
+    verification:
+      i_dont_have_an_account: من حسابی ندارم
+      i_have_an_account: "من یک اکانت از قبل دارم\n"
+      question: در حال حاضر یک حساب در %{org_name} دارید؟
+      title: حساب تایید شده
+    welcome:
+      go_to_index: پیشنهادات و بحث ها را ببینید
+      title: "مشارکت\n"
+      user_permission_debates: مشارکت در بحث
+      user_permission_info: با حساب کاربریتان می توانید...
+      user_permission_proposal: ایجاد طرح های جدید
+      user_permission_support_proposal: '* پشتیبانی از طرح های پیشنهادی'
+      user_permission_verify: برای انجام تمام اقدامات حساب کاربری را تایید کنید.
+      user_permission_verify_info: "* تنها برای کاربران در سرشماری."
+      user_permission_verify_my_account: تأیید حساب کاربری
+      user_permission_votes: شرکت در رای گیری نهایی *
+  invisible_captcha:
+    sentence_for_humans: "اگر شما انسان هستند، این زمینه را نادیده بگیرید"
+    timestamp_error_message: "با عرض پوزش،خیلی سریع بود! لطفا دوباره بفرستید."
+  related_content:
+    title: "مطالب مرتبط"
+    add: "اضافه کردن مطالب مرتبط"
+    label: "لینک به مطالب مرتبط"
+    placeholder: "%{url}"
+    help: "شما می توانید لینک %{models} داخل %{org} اضافه کنید."
+    submit: "اضافه کردن"
+    error: "لینک معتبر نیست. به یاد داشته باشید برای شروع با %{url}."
+    error_itself: "لینک معتبر نیست شما نمیتوانید محتوا را به خود اختصاص دهید"
+    success: "مطالب مرتبط جدید اضافه شد"
+    is_related: "¿Is مربوط به محتوای?"
+    score_positive: "بله"
+    score_negative: "نه"
+    content_title:
+      proposal: "طرح های پیشنهادی"
+      debate: "بحث"
+      budget_investment: "بودجه سرمایه گذاری"
+  admin/widget:
+    header:
+      title: مدیر
