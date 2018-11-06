@@ -227,3 +227,47 @@ ar:
           attributes:
             document_number:
               not_in_census: "الوثيقة ليست في التعداد"
+              has_voted: "هذا المستخدم قد صوت بالفعل"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: يجب أن يكون في أو بعد تاريخ البدء
+            debate_end_date:
+              invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء المناقشة
+            allegations_end_date:
+              invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء الادعاءات
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو تساوي %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو تساوي %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "يجب الانتظار لمدة لا تقل عن %{interval} من الأيام بين الإشعارات"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'لم يتم التحقق من التعداد'
+              already_voted: 'بالفعل صوت هذا الاقتراح'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "يجب ان يكون أحرف, أرقام, _و -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "يجب ان يكون العرض %{required_width}بكسل"
+              image_height: "يجب ان يكون الارتفاع %{required_height}بكسل"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'لا يمكنك التعليق على التقييم'
+      messages:
+        record_invalid: "فشل التحقق من صحة: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "لا يمكن حذف السجل لأن هناك تابع %{record} موجود"
+          has_many: "لا يمكن حذف السجل لأن هناك تابع %{record} موجود"
