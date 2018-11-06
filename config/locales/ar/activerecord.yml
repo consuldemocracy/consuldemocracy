@@ -67,6 +67,14 @@ ar:
     attributes:
       budget:
         name: "الاسم"
+        description_accepting: "وصف خلال مرحلة القبول"
+        description_reviewing: "وصف خلال مرحلة المراجعة"
+        description_selecting: "وصف خلال مرحلة التحديد"
+        description_valuating: "وصف خلال مرحلة التقييم"
+        description_balloting: "وصف خلال مرحلة الإقتراع"
+        description_reviewing_ballots: "الوصف خلال مرحلة مراجعة الإقتراع"
+        description_finished: "الوصف عند الإنتهاء من الميزانية"
+        phase: "مرحلة"
         currency_symbol: "العملة"
       budget/investment:
         title: "العنوان"
