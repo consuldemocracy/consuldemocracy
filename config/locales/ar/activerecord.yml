@@ -192,3 +192,38 @@ ar:
         link_text: نص الرابط
       widget/feed:
         limit: عدد العناصر
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "هذا المستخدم لديه بالفعل كلمة مرور"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو يساوي %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "لقد وصلت إلى الحد الأقصى لعدد الرسائل الخاصة في اليوم"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "يجب أن يكون عرض الصورة على الأقل %{required_min_width}بكسل"
+              min_image_height: "يجب ان يكون طول الصورة على الأقل %{required_min_height}بكسل"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "شريحة مستلم المستخدم غير صالحة"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "شريحة مستلم المستخدم غير صالحة"
+        map_location:
+          attributes:
+            map:
+              invalid: لا يمكن ان يكون موقع الخريطة فارغًا. حدد علامة أو حدد مربع الإختيار اذا لم تكن هناك حاجة لتحديد الموقع
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "الوثيقة ليست في التعداد"
