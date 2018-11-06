@@ -1,0 +1,129 @@
+de:
+  devise_views:
+    confirmations:
+      new:
+        email_label: E-Mail
+        submit: Erneut Anweisungen zusenden
+        title: Erneut Anweisungen zur Bestätigung zusenden
+      show:
+        instructions_html: Das Benutzerkonto per E-Mail %{email} bestätigen
+        new_password_confirmation_label: Zugangspasswort wiederholen
+        new_password_label: Neues Zugangspasswort
+        please_set_password: Bitte wählen Sie Ihr neues Passwort (dieses ermöglicht Ihnen die Anmeldung mit der oben genannten E-mail-Adresse)
+        submit: Bestätigen
+        title: Mein Benutzerkonto bestätigen
+    mailer:
+      confirmation_instructions:
+        confirm_link: Mein Benutzerkonto bestätigen
+        text: 'Sie können Ihre E-Mail unter folgenden Link bestätigen:'
+        title: Willkommen
+        welcome: Willkommen
+      reset_password_instructions:
+        change_link: Mein Passwort ändern
+        hello: Hallo
+        ignore_text: Wenn Sie keine Anforderung zum Ändern Ihres Passworts gestellt haben, können Sie diese E-Mail ignorieren.
+        info_text: Ihr Passwort wird nicht geändert, außer Sie rufen den Link ab und ändern es.
+        text: 'Wir haben eine Anfrage erhalten Ihr Passwort zu ändern. Sie können dies über folgenden Link tun:'
+        title: Ändern Sie Ihr Passwort
+      unlock_instructions:
+        hello: Hallo
+        info_text: Ihr Benutzerkonto wurde, wegen einer übermäßigen Anzahl an fehlgeschlagenen Anmeldeversuchen blockiert.
+        instructions_text: 'Bitte klicken Sie auf folgenden Link, um Ihr Benutzerkonto zu entsperren:'
+        title: Ihr Benutzerkonto wurde gesperrt
+        unlock_link: Mein Benutzerkonto entsperren
+    menu:
+      login_items:
+        login: Anmelden
+        logout: Abmelden
+        signup: Registrieren
+    organizations:
+      registrations:
+        new:
+          email_label: E-Mail
+          organization_name_label: Name der Organisation
+          password_confirmation_label: Passwort bestätigen
+          password_label: Passwort
+          phone_number_label: Telefonnummer
+          responsible_name_label: Vollständiger Name der Person, verantwortlich für das Kollektiv
+          responsible_name_note: Dies wäre die Person, die den Verein oder das Kollektiv repräsentiert und in dessen Namen die Anträge präsentiert werden
+          submit: Registrieren
+          title: Als Organisation oder Kollektiv registrieren
+        success:
+          back_to_index: Verstanden, zurück zur Startseite
+          instructions_1_html: "<b>Wir werden Sie bald kontaktieren,</b> um zu bestätigen, dass Sie tatsächlich das Kollektiv repräsentieren."
+          instructions_2_html: Während Ihre <b>E-Mail überprüft wird</b>, haben wir Ihnen einen <b>Link zum bestätigen Ihres Benutzerkontos</b> geschickt.
+          instructions_3_html: Nach der Bestätigung können Sie anfangen, sich als ein ungeprüftes Kollektiv zu beteiligen.
+          thank_you_html: Vielen Dank für die Registrierung Ihres Kollektivs auf der Webseite. Sie müssen jetzt <b>verifiziert</b> werden.
+          title: Eine Organisation oder Kollektiv registrieren
+    passwords:
+      edit:
+        change_submit: Mein Passwort ändern
+        password_confirmation_label: Neues Passwort bestätigen
+        password_label: Neues Passwort
+        title: Ändern Sie Ihr Passwort
+      new:
+        email_label: E-Mail
+        send_submit: Anweisungen zusenden
+        title: Passwort vergessen?
+    sessions:
+      new:
+        login_label: E-Mail oder Benutzername
+        password_label: Passwort
+        remember_me: Erinner mich
+        submit: Eingabe
+        title: Anmelden
+    shared:
+      links:
+        login: Eingabe
+        new_confirmation: Haben Sie keine Anweisungen zur Aktivierung Ihres Kontos erhalten?
+        new_password: Haben Sie Ihr Passwort vergessen?
+        new_unlock: Haben Sie keine Anweisung zur Entsperrung erhalten?
+        signin_with_provider: Melden Sie sich mit %{provider} an
+        signup: Sie haben noch kein Benutzerkonto? %{signup_link}
+        signup_link: Registrieren
+    unlocks:
+      new:
+        email_label: E-Mail
+        submit: Senden Sie erneut Anweisungen zur Entsperrung
+        title: Senden Sie erneut Anweisungen zur Entsperrung
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Grund
+          info: Diese Handlung kann nicht rückgängig gemacht werden. Bitte stellen Sie sicher, dass dies ist, was Sie wollen.
+          info_reason: Wenn Sie möchten, hinterlassen Sie uns einen Grund (optional)
+          submit: Mein Benutzerkonto löschen
+          title: Mein Benutzerkonto löschen
+        edit:
+          current_password_label: Aktuelles Passwort
+          edit: Bearbeiten
+          email_label: E-Mail
+          leave_blank: Freilassen, wenn Sie nichts verändern möchten
+          need_current: Wir brauchen Ihr aktuelles Passwort, um die Änderungen zu bestätigen
+          password_confirmation_label: Neues Passwort bestätigen
+          password_label: Neues Passwort
+          update_submit: Update
+          waiting_for: 'Warten auf Bestätigung von:'
+        new:
+          cancel: Anmeldung abbrechen
+          email_label: E-Mail
+          organization_signup: Vertreten Sie eine Organisation oder ein Kollektiv? %{signup_link}
+          organization_signup_link: Registrieren Sie sich hier
+          password_confirmation_label: Passwort bestätigen
+          password_label: Passwort
+          redeemable_code: Bestätigungscode per E-Mail erhalten (optional)
+          submit: Registrieren Sie sich
+          terms: Mit der Registrierung akzeptieren Sie die %{terms}
+          terms_link: allgemeine Nutzungsbedingungen
+          terms_title: Mit Ihrer Registrierung akzeptieren Sie die allgemeinen Nutzungsbedingungen
+          title: Registrieren Sie sich
+          username_is_available: Benutzername verfügbar
+          username_is_not_available: Benutzername bereits vergeben
+          username_label: Benutzername
+          username_note: Namen, der neben Ihren Beiträgen angezeigt wird
+        success:
+          back_to_index: Verstanden; zurück zur Hauptseite
+          instructions_1_html: Bitte <b>überprüfen Sie Ihren E-Maileingang</b> - wir haben Ihnen einen <b>Link zur Bestätigung Ihres Benutzerkontos</b> geschickt.
+          instructions_2_html: Nach der Bestätigung können Sie mit der Teilnahme beginnen.
+          thank_you_html: Danke für Ihre Registrierung für diese Website. Sie müssen nun <b>Ihre E-Mail-Adresse bestätigen</b>.
+          title: Ihre E-Mail-Adresse ändern
