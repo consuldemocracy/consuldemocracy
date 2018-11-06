@@ -77,14 +77,35 @@ ar:
         phase: "مرحلة"
         currency_symbol: "العملة"
       budget/investment:
+        heading_id: "عنوان"
         title: "العنوان"
         description: "الوصف"
+        external_url: "رابط لوثائق إضافية"
+        administrator_id: "مدير"
         location: "الموقع (اختياري)"
+        organization_name: "إذا كنت تقترح بإسم جماعي/منظمة, أو نيابة عن أشخاص آخرين, اكتب إسمها"
+        image: "اقتراح صورة وصفية"
+        image_title: "عنوان الصورة"
       budget/investment/milestone:
+        status_id: "حالة الإستثمار الحالية (إختياري)"
         title: "العنوان"
+        description: "الوصف (إختياري ان كان هناك حالة معينة)"
         publication_date: "تاريخ النشر"
+      budget/investment/status:
+        name: "الاسم"
+        description: "الوصف (إختياري)"
       budget/heading:
+        name: "اسم العنوان"
         price: "السعر"
+        population: "عدد السكان"
+      comment:
+        body: "تعليق"
+        user: "مستخدم"
+      debate:
+        author: "مؤلف"
+        description: "رأي"
+        terms_of_service: "شروط الخدمة"
+        title: "عنوان"
       proposal:
         author: "كاتب"
         title: "العنوان"
@@ -104,6 +125,7 @@ ar:
         redeemable_code: "رمز التحقق الواردة عبر البريد الإلكتروني"
       organization:
         name: "اسم المنظمة"
+        responsible_name: "الشخص المسؤول عن المجموعة"
       spending_proposal:
         association_name: "اسم الرابطة"
         description: "الوصف"
