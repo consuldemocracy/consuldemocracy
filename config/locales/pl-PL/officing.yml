@@ -1,0 +1,68 @@
+pl:
+  officing:
+    header:
+      title: Ankieta
+    dashboard:
+      index:
+        title: Uoficialnianie głosowania
+        info: Tutaj możesz uprawomocniać dokumenty użytkownika i przechowaywać wyniki głosowania
+        no_shifts: Nie masz dziś uoficjalniajacych zmian.
+    menu:
+      voters: Uprawomocnij dokument
+      total_recounts: Łączne przeliczenia i wyniki
+    polls:
+      final:
+        title: Ankiety gotowe do ostatecznego przeliczenia
+        no_polls: Nie uoficjalniasz ostatecznych rozliczeń w żadnej aktywnej ankiecie
+        select_poll: Wybierz ankietę
+        add_results: Dodaj wyniki
+    results:
+      flash:
+        create: "Wyniki zapisane"
+        error_create: "Wyniki NIE zapisane. Błąd w danych."
+        error_wrong_booth: "Zła kabina wyborcza. Wyniki NIE zapisane."
+      new:
+        title: "%{poll} - Dodaj wyniki"
+        not_allowed: "Możesz dodać wyniki dla tej ankiety"
+        booth: "Kabina wyborcza"
+        date: "Data"
+        select_booth: "Wybierz kabinę wyborczą"
+        ballots_white: "Całkowicie puste karty do głosowania"
+        ballots_null: "Nieprawidłowe karty do głosowania"
+        ballots_total: "Całkowita liczba kart do głosowania"
+        submit: "Zapisz"
+        results_list: "Twoje wyniki"
+        see_results: "Zobacz wyniki"
+      index:
+        no_results: "Brak wyników"
+        results: Wyniki
+        table_answer: Odpowiedź
+        table_votes: Głosy
+        table_whites: "Całkowicie puste karty do głosowania"
+        table_nulls: "Nieprawidłowe karty do głosowania"
+        table_total: "Całkowita liczba kart do głosowania"
+    residence:
+      flash:
+        create: "Dokument zweryfikowany ze Spisem Powszechnym"
+        not_allowed: "Nie masz dziś uoficjalniających zmian"
+      new:
+        title: Uprawomocnij dokument
+        document_number: "Numer dokumentu (w tym litery)"
+        submit: Uprawomocnij dokument
+        error_verifying_census: "Spis powszechny nie był w stanie zweryfikować tego dokumentu."
+        form_errors: uniemożliwił weryfikację tego dokumentu
+        no_assignments: "Nie masz dziś uoficjalniających zmian"
+    voters:
+      new:
+        title: Ankiety
+        table_poll: Ankieta
+        table_status: Stan ankiet
+        table_actions: Akcje
+        not_to_vote: Osoba ta postanowiła nie głosować w tej chwili
+      show:
+        can_vote: Można głosować
+        error_already_voted: Brał już udział w tej ankiecie
+        submit: Potwierdź głos
+        success: "Głosowanie wprowadzone!"
+      can_vote:
+        submit_disable_with: "Czekaj, potwierdzam głosowanie..."
