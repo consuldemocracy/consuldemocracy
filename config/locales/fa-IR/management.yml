@@ -1,0 +1,128 @@
+fa:
+  management:
+    account:
+      menu:
+        reset_password_email: رمز عبور را از طریق ایمیل بازنشانی کنید
+        reset_password_manually: رمز عبور را به صورت دستی بازنشانی کنید
+      alert:
+        unverified_user: هیچ کاربر تایید شده هنوز وارد نشده است
+      show:
+        title: "حساب کاربری\n"
+      edit:
+        title: 'ویرایش حساب کاربر: تنظیم مجدد رمز عبور'
+        back: برگشت
+        password:
+          password: رمز عبور
+          send_email: ارسال مجدد رمز عبور ایمیل
+          reset_email_send: ایمیل به درستی ارسال شد
+          reseted: گذرواژه با موفقیت رست شد
+          random: رمز عبور تصادفی ایجاد کنید
+          print: چاپ رمز ورود
+          print_help: شما می توانید رمز عبور را پس از ذخیره شدن چاپ کنید.
+    account_info:
+      change_user: تغییر کاربر
+      document_number_label: 'شماره سند:'
+      document_type_label: 'نوع سند:'
+      email_label: 'پست الکترونیکی:'
+      identified_label: 'شناخته شده به عنوان:'
+      username_label: 'نام کاربری:'
+    dashboard:
+      index:
+        title: مدیریت
+        info: "در اینجا شما می توانید  کاربران را از طریق تمام اقدامات ذکر شده در منوی سمت چپ مدیریت کنید.\n"
+    document_number: شماره سند
+    document_type_label: نوع سند
+    document_verifications:
+      already_verified: این حساب کاربری قبلا تأیید شده است
+      has_no_account_html: برای ایجاد یک حساب، به%{link} بروید و در قسمت <b> «ثبت نام» </ b> در قسمت بالا سمت چپ صفحه کلیک کنید.
+      link: کنسول
+      in_census_has_following_permissions: 'این کاربر می تواند در وب سایت با مجوزهای زیر شرکت کند:'
+      not_in_census: این سند ثبت نشده است.
+      not_in_census_info: 'شهروندان که در سرشماری نیستند می توانند در وب سایت با مجوزهای زیر شرکت کنند:'
+      please_check_account_data: لطفا بررسی کنید که داده های حساب کاربری بالا صحیح است.
+      title: مدیریت کاربر
+      under_age: "شما سن قانونی برای تأیید حساب کاربری خود ندارید"
+      verify: تأیید
+    email_label: پست الکترونیکی
+    date_of_birth: تاریخ تولد
+    email_verifications:
+      already_verified: حساب شما قبلا تایید شده است.
+      choose_options: 'لطفا یکی از گزینه های زیر را انتخاب کنید:'
+      document_found_in_census: این سند در سرشماری یافت شد، اما هیچ حساب کاربری مربوط به آن نیست.
+      document_mismatch: 'این ایمیل متعلق به کاربر است که در حال حاضر دارای شناسه: %{document_number}(%{document_type})'
+      email_placeholder: نامه ای را که این فرد برای ایجاد حساب کاربری خود استفاده کرده است بنویسید
+      email_sent_instructions: به منظور تکمیل کامل این کاربر، ضروری است که کاربر بر روی یک لینک کلیک کند که ما به آدرس ایمیل در بالا فرستاده ایم. این مرحله برای تأیید اینکه آدرس به او تعلق دارد مورد نیاز است.
+      if_existing_account: اگر فرد قبلا یک حساب کاربری ایجاد شده در وب سایت داشته باشد،
+      if_no_existing_account: اگر این فرد هنوز حساب کاربری ایجاد نکرده است
+      introduce_email: 'لطفا ایمیل مورد استفاده در حساب را وارد کنید:'
+      send_email: ارسال ایمیل تایید
+    menu:
+      create_proposal: ایجاد طرح 
+      print_proposals: چاپ طرح
+      support_proposals: پشتیبانی از طرح های پیشنهادی
+      create_spending_proposal: ایجاد  هزینه پیشنهاد
+      print_spending_proposals: چاپ پیشنهادات هزینه
+      support_spending_proposals: پشتیبانی از پیشنهادات هزینه
+      create_budget_investment: "ایجاد بودجه سرمایه گذاری \n"
+    permissions:
+      create_proposals: ایجاد طرح های جدید
+      debates: مشارکت در بحث
+      support_proposals: '* پشتیبانی از طرح های پیشنهادی'
+      vote_proposals: پیشنهادات رای دهی
+    print:
+      proposals_info: ایجاد پیشنهاد  در http://url.consul
+      proposals_title: 'طرح های پیشنهادی:'
+      spending_proposals_info: شرکت درhttp://url.consul
+      budget_investments_info: شرکت درhttp://url.consul
+    print_info: این اطلاعات را چاپ کنید
+    proposals:
+      alert:
+        unverified_user: کاربر تأیید نشده است
+      create_proposal: ایجاد طرح های جدید
+      print:
+        print_button: چاپ
+    budget_investments:
+      alert:
+        unverified_user: کاربر تأیید نشده است
+      create: "ایجاد بودجه سرمایه گذاری \n"
+      filters:
+        unfeasible: سرمایه گذاری غیر قابل پیش بینی
+      print:
+        print_button: چاپ
+      search_results:
+        one: "حاوی اصطلاح%{search_term}"
+        other: "حاوی اصطلاح%{search_term}"
+    spending_proposals:
+      alert:
+        unverified_user: کاربر تأیید نشده است
+      create: ایجاد  هزینه پیشنهاد
+      filters:
+        unfeasible: سرمایه گذاری غیر قابل پیش بینی
+        by_geozone: "پروژه های سرمایه گذاری با دامنه:%{geozone}"
+      print:
+        print_button: چاپ
+      search_results:
+        one: "حاوی اصطلاح%{search_term}"
+        other: "حاوی اصطلاح%{search_term}"
+    sessions:
+      signed_out: با موفقیت خارج شد
+      signed_out_managed_user: شما با موفقیت خارج شده اید
+    username_label: نام کاربری
+    users:
+      create_user: ایجاد حساب جدید
+      create_user_submit: ایجاد کاربر
+      create_user_success_html: ما یک ایمیل به آدرس ایمیل <b>%{email} </ b>برای تأیید اینکه آن متعلق به این کاربر است، ارسال کرده ایم . این شامل یک لینک است که باید کلیک کنید. پس از آن باید قبل از اینکه بتوانید به وب سایت وارد شوید، رمز عبور دسترسی خود را تنظیم کنید
+      autogenerated_password_html: "رمز عبور خودکار <b>%{password}</ b>، شما می توانید آن را در بخش «حساب من» وب تغییر دهید"
+      email_optional_label: ایمیل (اختیاری)
+      erased_notice: حذف حساب کاربری.
+      erased_by_manager: "حذف شده توسط مدیر: %{manager}"
+      erase_account_link: حذف کاربر 
+      erase_account_confirm: آیا مطمئن هستید که می خواهید حسابتان را  حذف کنید؟ این دستور قابل بازگشت نیست!
+      erase_warning: این عمل قابل لغو نیست لطفا مطمئن شوید که می خواهید این حساب را پاک کنید.
+      erase_submit: حذف حساب
+    user_invites:
+      new:
+        label: پست الکترونیکی
+        info: "ایمیل های جدا شده توسط کاما ('،') را وارد کنید"
+      create:
+        success_html: <strong>%{count}دعوت نامه</strong>ارسال شده
