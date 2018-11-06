@@ -193,7 +193,33 @@ ar:
       legislation/process/translation:
         title: عنوان العملية
         summary: ملخص
+        description: وصف
+        additional_info: معلومات إضافية
+      legislation/draft_version:
+        title: عنوان الإصدار
+        body: نص
+        changelog: تغييرات
+        status: حالة
+        final_version: نهاية الإصدار
+      legislation/draft_version/translation:
+        title: عنوان الإصدار
+        body: نص
+        changelog: تغييرات
+      legislation/question:
+        title: عنوان
+        question_options: خيارات
+      legislation/question_option:
+        value: القيمة
+      legislation/annotation:
+        text: التعليق
+      document:
+        title: العنوان
+        attachment: مرفق
+      image:
+        title: عنوان
+        attachment: مرفق
       poll/question/answer:
+        title: إجابة
         description: الوصف
       poll/question/answer/translation:
         title: الإجابة
