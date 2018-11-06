@@ -1,0 +1,150 @@
+sq:
+  management:
+    account:
+      menu:
+        reset_password_email: Rivendos fjalëkalimin përmes emailit
+        reset_password_manually: Rivendosni fjalëkalimin manualisht
+      alert:
+        unverified_user: Ende nuk ka përdorues të verifikuar të kycur
+      show:
+        title: Llogaria e përdoruesit
+      edit:
+        title: 'Ndrysho llogarinë e përdoruesit: Rivendos fjalëkalimin'
+        back: Pas
+        password:
+          password: Fjalëkalim
+          send_email: Dërgo një email të riaktivizimit të fjalëkalimit
+          reset_email_send: Email-i u dërgua me sukses.
+          reseted: Fjalëkalimi u rivendos me sukses
+          random: Gjeneroni një fjalëkalim të rastësishëm
+          save: Ruaj fjalëkalimin
+          print: Printoni fjalëkalimin
+          print_help: Ju do të jeni në gjendje të printoni fjalëkalimin kur të jetë ruajtur.
+    account_info:
+      change_user: Ndrysho përdoruesin
+      document_number_label: 'Numri i dokumentit'
+      document_type_label: 'Tipi i dokumentit'
+      email_label: 'Email:'
+      identified_label: 'Identifikuar si:'
+      username_label: 'Emer përdoruesi:'
+    check: Kontrrollo dokumentin
+    dashboard:
+      index:
+        title: Menaxhimi
+        info: Këtu ju mund të menaxhoni përdoruesit përmes të gjitha veprimeve të renditura në menunë e majtë.
+    document_number: Numri i dokumentit
+    document_type_label: Tipi i dokumentit
+    document_verifications:
+      already_verified: Kjo llogari përdoruesi është verifikuar tashmë
+      has_no_account_html: Për të krijuar një llogari, shkoni te %{link} dhe klikoni në <b> 'Regjistrohu' </ b> në pjesën e sipërme të majtë të ekranit.
+      link: KONSUL
+      in_census_has_following_permissions: 'Ky përdorues mund të marrë pjesë në faqe me lejet e mëposhtme:'
+      not_in_census: Ky dokument nuk është i regjistruar.
+      not_in_census_info: 'Qytetarët që nuk janë rregjistruar mund të marrin pjesë në faqen me lejet e mëposhtme:'
+      please_check_account_data: Kontrollo nëse të dhënat e llogarisë më sipër janë  të sakta.
+      title: Menaxhimi i përdoruesve
+      under_age: "Ju nuk keni moshën e kërkuar për të verifikuar llogarinë tuaj."
+      verify: Verifiko
+    email_label: Email
+    date_of_birth: Data e lindjes
+    email_verifications:
+      already_verified: Kjo llogari përdoruesi është verifikuar tashmë
+      choose_options: 'Zgjidh një nga opsionet e mëposhtme:'
+      document_found_in_census: Ky dokument është gjetur i rregjistruar, por nuk ka ndonjë llogari përdoruesi të lidhur me të.
+      document_mismatch: 'Kjo email i takon një përdoruesi i cili tashmë ka një id të lidhur:%{document_number}%{document_type}'
+      email_placeholder: Shkruani emailin që ky person ka përdorur për të krijuar llogarinë e tij ose të saj
+      email_sent_instructions: Për të verifikuar tërësisht këtë përdorues, është e nevojshme që përdoruesi të klikojë në një lidhje që i kemi dërguar në adresën e emailit të mësipërm. Ky hap është i nevojshëm për të konfirmuar se adresa i takon atij.
+      if_existing_account: Nëse personi ka tashmë një llogari përdoruesi të krijuar në faqe,
+      if_no_existing_account: Nëse ky person ende nuk ka krijuar një llogari
+      introduce_email: 'Ju lutemi vendosni email-in e përdorur në llogari:'
+      send_email: Dërgo mesazhin e verifikimit
+    menu:
+      create_proposal: Krijo propozim
+      print_proposals: Printo propozimin
+      support_proposals: Përkrahni propozimet
+      create_spending_proposal: Krijo propozimin e shpenzimeve
+      print_spending_proposals: Printo propozimin e shpenzimeve
+      support_spending_proposals: Mbështet propozimin e shpenzimeve
+      create_budget_investment: Krijo  investimin buxhetor
+      print_budget_investments: Printo investimin buxhetor
+      support_budget_investments: Mbështet investimin buxhetor
+      users: Menaxhimi i përdoruesve
+      user_invites: Dërgo ftesat
+      select_user: Zgjidh përdoruesin
+    permissions:
+      create_proposals: Krijo propozimin
+      debates: Angazhohu në debate
+      support_proposals: Përkrahni propozimet
+      vote_proposals: Voto propozimet
+    print:
+      proposals_info: 'Krijo propozimin tuaj në http: //url.consul'
+      proposals_title: 'Propozime'
+      spending_proposals_info: 'Merrni pjesë në http: //url.consul'
+      budget_investments_info: 'Merrni pjesë në http: //url.consul'
+    print_info: Printoni këtë informacion
+    proposals:
+      alert:
+        unverified_user: Përdoruesi nuk verifikohet
+      create_proposal: Krijo propozim
+      print:
+        print_button: Printo
+      index:
+        title: Përkrahni propozimet
+    budgets:
+      create_new_investment: Krijo  investimin buxhetor
+      print_investments: Printo investimin buxhetor
+      support_investments: Mbështet investimin buxhetor
+      table_name: Emri
+      table_phase: Fazë
+      table_actions: Veprimet
+      no_budgets: Nuk ka buxhet pjesmarrës aktiv.
+    budget_investments:
+      alert:
+        unverified_user: Përdoruesi nuk është verifikuar
+      create: Krijo një investim buxhetor
+      filters:
+        heading: Koncept
+        unfeasible: Investim i papërshtatshëm
+      print:
+        print_button: Printo
+      search_results:
+        one: "që përmbajnë termin %{search_term}"
+        other: "që përmbajnë termin %{search_term}"
+    spending_proposals:
+      alert:
+        unverified_user: Përdoruesi nuk është verifikuar
+      create: Krijo propozimin e shpenzimeve
+      filters:
+        unfeasible: Projektet investuese të papërshtatshme 
+        by_geozone: "Projektet e investimeve me qëllim: %{geozone}"
+      print:
+        print_button: Printo
+      search_results:
+        one: "që përmbajnë termin %{search_term}"
+        other: "që përmbajnë termin %{search_term}"
+    sessions:
+      signed_out: U c'kycët me sukses.
+      signed_out_managed_user: Sesioni i përdoruesit u  c'kyc me sukses.
+    username_label: Emer përdoruesi
+    users:
+      create_user: Krijo nje llogari te re
+      create_user_info: Ne do të krijojmë një llogari me të dhënat e mëposhtme
+      create_user_submit: Krijo përdorues
+      create_user_success_html: Ne kemi dërguar një email tek adresa e postës <b>%{email}</b>  për të verifikuar që i përket këtij përdoruesi. Ajo përmban një lidhje që duhet të klikoni. Pastaj do të duhet të vendosin fjalëkalimin e aksesimit para se të jeni në gjendje të hyni në faqe.
+      autogenerated_password_html: "Fjalëkalimi i autogjeneruar është <b>%{password}</b>, mund ta ndryshoni në seksionin \"Llogaria ime\" "
+      email_optional_label: Email (opsionale)
+      erased_notice: Llogaria e përdoruesit u fshi.
+      erased_by_manager: "E fshirë nga menaxheri: %{manager}"
+      erase_account_link: Fshi përdoruesin
+      erase_account_confirm: Je i sigurt që dëshiron ta fshish llogarinë? Ky veprim nuk mund të zhbëhet
+      erase_warning: Ky veprim nuk mund të zhbëhet. Ju lutemi sigurohuni që dëshironi ta fshini këtë llogari.
+      erase_submit: Fshij llogarine
+    user_invites:
+      new:
+        label: Emailet
+        info: "Shkruani emailet të ndara me presje (',')"
+        submit: Dërgo ftesa
+        title: Dërgo ftesa
+      create:
+        success_html: <strong>%{count}ftesat</strong>janë dërguar.
+        title: Dërgo ftesat
