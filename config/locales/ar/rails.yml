@@ -45,9 +45,9 @@ ar:
       - نوفمبر
       - ديسمبر
     order:
-      - ':السنة'
-      - ':الشهر'
-      - ':اليوم'
+      - :day
+      - :month
+      - :year
   datetime:
     prompts:
       day: اليوم
