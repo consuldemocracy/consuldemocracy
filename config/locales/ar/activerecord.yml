@@ -151,13 +151,48 @@ ar:
         external_url: "رابط لوثائق إضافية"
       poll/question/translation:
         title: "سؤال"
+      signature_sheet:
+        signable_type: "نوع القابلة"
+        signable_id: "معرف القابلة"
+        document_numbers: "أرقام المستندات"
       site_customization/page:
+        content: المحتوى
+        created_at: أنشئت في
+        subtitle: عنوان فرعي
+        slug: سبيكة
+        status: حالة
         title: العنوان
+        updated_at: تم التحديث في
+        more_info_flag: ظهر في صفحة المساعدة
+        print_content_flag: زر طباعة المحتوى
+        locale: لغة
+      site_customization/page/translation:
+        title: عنوان
+        subtitle: عنوان فرعي
+        content: المحتوى
       site_customization/image:
+        name: الاسم
         image: صورة
       site_customization/content_block:
         name: الاسم
         locale: الإعدادات المحلية
+        body: الهيئة
+      legislation/process:
+        title: عنوان العملية
+        summary: ملخص
+        description: وصف
+        additional_info: معلومات إضافية
+        start_date: تاريخ البدء
+        end_date: تاريخ الإنتهاء
+        debate_start_date: تاريخ بدء المناقشة
+        debate_end_date: تاريخ انتهاء المناقشة
+        draft_publication_date: مسودة تاريخ النشر
+        allegations_start_date: تاريخ بداية الإدعاءات
+        allegations_end_date: تاريخ انتهاء الإدعاءات
+        result_publication_date: تاريخ نشر النتيجة النهائية
+      legislation/process/translation:
+        title: عنوان العملية
+        summary: ملخص
       poll/question/answer:
         description: الوصف
       poll/question/answer/translation:
