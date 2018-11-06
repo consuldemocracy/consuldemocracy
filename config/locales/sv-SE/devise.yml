@@ -1,0 +1,65 @@
+sv:
+  devise:
+    password_expired:
+      expire_password: "Lösenordet har gått ut"
+      change_required: "Ditt lösenord har gått ut"
+      change_password: "Uppdatera ditt lösenord"
+      new_password: "Nytt lösenord"
+      updated: "Lösenordet har uppdaterats"
+    confirmations:
+      confirmed: "Ditt konto har verifierats."
+      send_instructions: "Du kommer strax att få ett e-postmeddelande med instruktioner för att återställa ditt lösenord."
+      send_paranoid_instructions: "Om din e-postadress finns i vår databas kommer du strax att få ett e-postmeddelande med instruktioner för att återställa ditt lösenord."
+    failure:
+      already_authenticated: "Du är redan inloggad."
+      inactive: "Ditt konto har inte aktiverats ännu."
+      invalid: "Ogiltig %{authentication_keys} eller lösenord."
+      locked: "Ditt konto har blivit låst."
+      last_attempt: "Du har ett försök kvar innan ditt konto spärras."
+      not_found_in_database: "Ogiltig %{authentication_keys} eller lösenord."
+      timeout: "Din session har gått ut. Vänligen logga in igen för att fortsätta."
+      unauthenticated: "Du behöver logga in eller registrera dig för att fortsätta."
+      unconfirmed: "Klicka på bekräftelselänken i ditt e-postmeddelande för att fortsätta"
+    mailer:
+      confirmation_instructions:
+        subject: "Instruktioner för att bekräfta kontot"
+      reset_password_instructions:
+        subject: "Instruktioner för att återställa ditt lösenord"
+      unlock_instructions:
+        subject: "Instruktioner för att låsa upp kontot"
+    omniauth_callbacks:
+      failure: "Du godkändes inte som %{kind} eftersom ”%{reason}”."
+      success: "Identifierad som %{kind}."
+    passwords:
+      no_token: "Du kan inte komma åt denna sida utom genom en länk för återställning av lösenord. Om du har kommit hit genom en länk för återställning av lösenord, kontrollera att webbadressen är komplett."
+      send_instructions: "Du kommer strax att få ett e-postmeddelande med instruktioner för att återställa ditt lösenord."
+      send_paranoid_instructions: "Om din e-postadress finns i vår databas kommer du strax få en länk för att återställa ditt lösenord."
+      updated: "Ditt lösenord har ändrats."
+      updated_not_active: "Ditt lösenord har ändrats."
+    registrations:
+      destroyed: "Hejdå! Ditt konto har avslutats. Vi hoppas på att snart få se dig igen."
+      signed_up: "Välkommen! Du har autentiserats."
+      signed_up_but_inactive: "Din registrering lyckades, men du behöver aktivera ditt konto innan du kan logga in."
+      signed_up_but_locked: "Din registrering lyckades, men du behöver aktivera ditt konto innan du kan logga in."
+      signed_up_but_unconfirmed: "Vi har skickat ett meddelande med en bekräftelselänk. Vänligen klicka på länken för att aktivera ditt konto."
+      update_needs_confirmation: "Ditt konto har uppdaterats, men vi behöver verifiera din nya e-postadress. Kontrollera din e-post och klicka på länken för att slutföra verifieringen av dina nya e-postadress."
+      updated: "Ditt konto har uppdaterats."
+    sessions:
+      signed_in: "Du är inloggad."
+      signed_out: "Du är utloggad."
+      already_signed_out: "Du är utloggad."
+    unlocks:
+      send_instructions: "Du kommer strax att få ett e-postmeddelande med instruktioner för att låsa upp ditt konto."
+      send_paranoid_instructions: "Om du har ett konto kommer du strax att få ett e-postmeddelande med instruktioner för att låsa upp ditt konto."
+      unlocked: "Ditt konto har låsts upp. Logga in för att fortsätta."
+  errors:
+    messages:
+      already_confirmed: "Du har redan verifierats; försök att logga in."
+      confirmation_period_expired: "Du behöver verifiera ditt konto inom %{period}, var vänlig skicka en ny förfrågan."
+      expired: "är inte längre giltig, var vänlig gör en ny förfrågan."
+      not_found: "hittades inte."
+      not_locked: "var inte låst."
+      not_saved:
+        one: "Ett fel gjorde att %{resource} inte kunde sparas. Kontrollera det markerade fältet för att rätta till felet:"
+        other: "%{count} fel gjorde att %{resource} inte kunde sparas. Kontrollera de markerade fälten för att rätta till felen:"
+      equal_to_current_password: "måste vara annorlunda än det nuvarande lösenordet."
