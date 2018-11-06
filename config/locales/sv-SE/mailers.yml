@@ -1,0 +1,79 @@
+sv:
+  mailers:
+    no_reply: "Det går inte att svara till den här e-postadressen."
+    comment:
+      hi: Hej
+      new_comment_by_html: Det finns en ny kommentar från <b>%{commenter}</b>
+      subject: Någon har kommenterat på ditt %{commentable}
+      title: Ny kommentar
+    config:
+      manage_email_subscriptions: För att sluta få e-postmeddelanden kan du ändra dina inställningar med
+    email_verification:
+      click_here_to_verify: den här länken
+      instructions_2_html: Det här e-postmeddelandet är för att verifiera ditt konto med <b>%{document_type} %{document_number}</b>. Klicka inte på länken ovan om de inte tillhör dig.
+      instructions_html: Du måste klicka på %{verification_link} för att slutföra verifieringen av ditt användarkonto.
+      subject: Bekräfta din e-postadress
+      thanks: Tack så mycket.
+      title: Bekräfta kontot via länken nedan
+    reply:
+      hi: Hej
+      new_reply_by_html: Det finns ett nytt svar från <b>%{commenter}</b> till din kommentar på
+      subject: Någon har svarat på din kommentar
+      title: Nytt svar på din kommentar
+    unfeasible_spending_proposal:
+      hi: "Kära användare,"
+      new_html: "Med anledning av det ber vi dig att skapa ett <strong>nytt förslag</strong> som uppfyller kraven för den här processen. Du kan göra det med följande länk: %{url}."
+      new_href: "nytt budgetförslag"
+      sincerely: "Vänliga hälsningar"
+      sorry: "Ledsen för besväret och tack för din ovärderliga medverkan."
+      subject: "Ditt budgetförslag '%{code}' har markerats som ej genomförbart"
+    proposal_notification_digest:
+      info: "Här är de senaste aviseringarna från förslagslämnarna till de förslag som du stöder på %{org_name}."
+      title: "Aviseringar om förslag på %{org_name}"
+      share: Dela förslaget
+      comment: Kommentera förslaget
+      unsubscribe: "Gå till %{account} och avmarkera 'Få sammanfattningar av aviseringar om förslag', om du inte längre vill få aviseringar om förslag."
+      unsubscribe_account: Mitt konto
+    direct_message_for_receiver:
+      subject: "Du har fått ett nytt meddelande"
+      reply: Svara till %{sender}
+      unsubscribe: "Om du inte vill ha notifikationer om meddelanden, besök %{account} och klicka ur 'Skicka e-postmeddelanden om notifikationer för meddelanden'."
+      unsubscribe_account: Mitt konto
+    direct_message_for_sender:
+      subject: "Du har skickat ett meddelande"
+      title_html: "Du har skickat ett meddelande till <strong>%{receiver}</strong> med innehållet:"
+    user_invite:
+      ignore: "Om du inte har begärt denna inbjudan oroa inte dig, du kan ignorera detta mail."
+      text: "Tack för att du registrerat dig på %{org}! Nu kan du snart vara med och delta, fyll bara i det här formuläret:"
+      thanks: "Tack så mycket."
+      title: "Välkommen till %{org}"
+      button: Slutför registrering
+      subject: "Inbjudan till %{org_name}"
+    budget_investment_created:
+      subject: "Tack för att du skapat ett budgetförslag!"
+      title: "Tack för att du skapat ett budgetförslag!"
+      intro_html: "Hej <strong>%{author}</strong>,"
+      text_html: "Tack för att du skapat budgetförslaget <strong>%{investment}</strong> för medborgarbudgeten <strong>%{budget}</strong>."
+      follow_html: "Du kommer att få löpande information om hur processen går, och du kan också följa den på <strong>%{link}</strong>."
+      follow_link: "Medborgarbudgetar"
+      sincerely: "Vänliga hälsningar,"
+      share: "Dela ditt projekt"
+    budget_investment_unfeasible:
+      hi: "Kära användare,"
+      new_html: "Med anledning av det ber vi dig att skapa ett <strong>nytt budgetförslag</strong> som uppfyller kraven för den här processen. Du kan göra det med följande länk: %{url}."
+      new_href: "nytt budgetförslag"
+      sincerely: "Vänliga hälsningar"
+      sorry: "Ledsen för besväret och vi återigen tack för din ovärderliga medverkan."
+      subject: "Ditt budgetförslag '%{code}' har markerats som ej genomförbart"
+    budget_investment_selected:
+      subject: "Ditt budgetförslag '%{code}' har valts"
+      hi: "Kära användare,"
+      share: "Börja samla röster och dela i sociala medier för att ditt förslag ska kunna bli verklighet."
+      share_button: "Dela ditt budgetförslag"
+      thanks: "Tack återigen för att du deltar."
+      sincerely: "Vänliga hälsningar"
+    budget_investment_unselected:
+      subject: "Ditt budgetförslag '%{code}' har inte valts"
+      hi: "Kära användare,"
+      thanks: "Tack igen för att du deltar."
+      sincerely: "Vänliga hälsningar"
