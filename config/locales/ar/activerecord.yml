@@ -127,18 +127,30 @@ ar:
         name: "اسم المنظمة"
         responsible_name: "الشخص المسؤول عن المجموعة"
       spending_proposal:
+        administrator_id: "المدير"
         association_name: "اسم الرابطة"
         description: "الوصف"
+        external_url: "رابط لوثائق إضافية"
+        geozone_id: "نطاق العملية"
         title: "العنوان"
       poll:
         name: "الاسم"
         starts_at: "تاريخ البدء"
         ends_at: "تاريخ الإغلاق"
+        geozone_restricted: "مقيد حسب المناطق"
         summary: "ملخص"
+        description: "الوصف"
+      poll/translation:
+        name: "الاسم"
+        summary: "ملخص"
+        description: "الوصف"
       poll/question:
         title: "سؤال"
         summary: "ملخص"
         description: "الوصف"
+        external_url: "رابط لوثائق إضافية"
+      poll/question/translation:
+        title: "سؤال"
       site_customization/page:
         title: العنوان
       site_customization/image:
@@ -146,3 +158,37 @@ ar:
       site_customization/content_block:
         name: الاسم
         locale: الإعدادات المحلية
+      poll/question/answer:
+        description: الوصف
+      poll/question/answer/translation:
+        title: الإجابة
+        description: الوصف
+      poll/question/answer/video:
+        title: العنوان
+        url: فيديو خارجي
+      newsletter:
+        segment_recipient: المستفيدين
+        subject: الموضوع
+        from: من
+        body: محتوى البريد الإلكتروني
+      admin_notification:
+        segment_recipient: المستفيدين
+        title: عنوان
+        link: رابط
+        body: نص
+      admin_notification/translation:
+        title: عنوان
+        body: نص
+      widget/card:
+        label: التسمية (إختياري)
+        title: عنوان
+        description: وصف
+        link_text: نص الرابط
+        link_url: رابط URL
+      widget/card/translation:
+        label: التسمية (إختياري)
+        title: العنوان
+        description: الوصف
+        link_text: نص الرابط
+      widget/feed:
+        limit: عدد العناصر
