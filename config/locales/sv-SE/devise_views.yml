@@ -1,0 +1,129 @@
+sv:
+  devise_views:
+    confirmations:
+      new:
+        email_label: E-post
+        submit: Skicka instruktioner igen
+        title: Skicka bekräftelseinstruktioner igen
+      show:
+        instructions_html: Bekräftar kontot med e-postadressen %{email}
+        new_password_confirmation_label: Upprepa ditt lösenord
+        new_password_label: Nytt lösenord
+        please_set_password: Ställ in ditt nya lösenord (för e-postadressen ovan)
+        submit: Bekräfta
+        title: Bekräfta mitt konto
+    mailer:
+      confirmation_instructions:
+        confirm_link: Bekräfta mitt konto
+        text: 'Bekräfta din e-postadress med följande länk:'
+        title: Välkommen
+        welcome: Välkommen
+      reset_password_instructions:
+        change_link: Ändra mitt lösenord
+        hello: Hej
+        ignore_text: Ignorera det här meddelandet om du inte begärt ett nytt lösenord.
+        info_text: Du behöver använda länken för att ändra ditt lösenord.
+        text: 'Vi har mottagit en begäran om att ändra ditt lösenord. Du kan göra det med följande länk:'
+        title: Ändra ditt lösenord
+      unlock_instructions:
+        hello: Hej
+        info_text: Ditt konto har blockerats på grund av ett alltför stort antal misslyckade inloggningsförsök.
+        instructions_text: 'Klicka på länken för att låsa upp ditt konto:'
+        title: Ditt konto har låsts
+        unlock_link: Lås upp mitt konto
+    menu:
+      login_items:
+        login: Logga in
+        logout: Logga ut
+        signup: Registrera dig
+    organizations:
+      registrations:
+        new:
+          email_label: E-post
+          organization_name_label: Organisationsnamn
+          password_confirmation_label: Bekräfta lösenord
+          password_label: Lösenord
+          phone_number_label: Telefonnummer
+          responsible_name_label: Fullständigt namn på personen som representerar gruppen
+          responsible_name_note: Det här är en person som representerar organisationen/gruppen som står bakom förslagen
+          submit: Registrera dig
+          title: Registrera er som organisation eller grupp
+        success:
+          back_to_index: Jag förstår; gå tillbaka till startsidan
+          instructions_1_html: "<b>Vi kommer snart att kontakta dig</b> för att bekräfta att du representerar den här gruppen."
+          instructions_2_html: Medan din <b>e-postadress granskas</b>, har vi skickat en <b>länk för att bekräfta ditt konto</b>.
+          instructions_3_html: När bekräftelsen är klar kan du börja delta som en overifierad grupp.
+          thank_you_html: Tack för att du har registrerat en grupp på webbplatsen. Den <b>inväntar nu granskning</b>.
+          title: Registrering av organisation/grupp
+    passwords:
+      edit:
+        change_submit: Ändra mitt lösenord
+        password_confirmation_label: Bekräfta nytt lösenord
+        password_label: Nytt lösenord
+        title: Ändra ditt lösenord
+      new:
+        email_label: E-post
+        send_submit: Skicka instruktioner
+        title: Har du glömt ditt lösenord?
+    sessions:
+      new:
+        login_label: E-postadress eller användarnamn
+        password_label: Lösenord
+        remember_me: Kom ihåg mig
+        submit: Logga in
+        title: Logga in
+    shared:
+      links:
+        login: Logga in
+        new_confirmation: Har du inte fått instruktioner för att aktivera ditt konto?
+        new_password: Har du glömt ditt lösenord?
+        new_unlock: Har du inte fått instruktioner för att låsa upp ditt konto?
+        signin_with_provider: Logga in med %{provider}
+        signup: Har du inte ett konto? %{signup_link}
+        signup_link: Registrera dig
+    unlocks:
+      new:
+        email_label: E-post
+        submit: Skicka instruktioner för att låsa upp konto igen
+        title: Har skickat instruktioner för att låsa upp konto
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Anledning
+          info: Åtgärden kan inte ångras. Kontrollera att detta är vad du vill.
+          info_reason: Om du vill kan du skriva en anledning (frivilligt fält)
+          submit: Radera mitt konto
+          title: Radera konto
+        edit:
+          current_password_label: Nuvarande lösenord
+          edit: Redigera
+          email_label: E-post
+          leave_blank: Lämna tomt om du inte vill ändra det
+          need_current: Vi behöver ditt nuvarande lösenord för att bekräfta ändringarna
+          password_confirmation_label: Bekräfta ditt nya lösenord
+          password_label: Nytt lösenord
+          update_submit: Uppdatera
+          waiting_for: 'Väntar på bekräftelse av:'
+        new:
+          cancel: Avbryt inloggning
+          email_label: E-post
+          organization_signup: Representerar du en organisation eller grupp? %{signup_link}
+          organization_signup_link: Registrera dig här
+          password_confirmation_label: Bekräfta lösenord
+          password_label: Lösenord
+          redeemable_code: Bekräftelsekod via e-post (frivilligt fält)
+          submit: Registrera dig
+          terms: Genom att registrera dig godkänner du %{terms}
+          terms_link: användarvillkoren
+          terms_title: Genom att registrera dig godkänner du användarvillkoren
+          title: Registrera dig
+          username_is_available: Användarnamnet är tillgängligt
+          username_is_not_available: Användarnamnet är upptaget
+          username_label: Användarnamn
+          username_note: Namn som visas vid dina inlägg
+        success:
+          back_to_index: Jag förstår; gå tillbaka till startsidan
+          instructions_1_html: <b>Kontrollera din e-postadress</b> - vi har skickat en <b>länk för att bekräfta ditt konto</b>.
+          instructions_2_html: När ditt konto är bekräftat kan du börja delta.
+          thank_you_html: Tack för att du har registrerat dig. Nu behöver du <b>bekräfta din e-postadress</b>.
+          title: Bekräfta din e-postadress
