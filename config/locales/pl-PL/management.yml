@@ -1,0 +1,144 @@
+pl:
+  management:
+    account:
+      menu:
+        reset_password_email: Zresetuj hasło przez email
+        reset_password_manually: Zresetuj hasło ręcznie
+      alert:
+        unverified_user: Nie zweryfikowano jeszcze żadnego zalogowanego użytkownika
+      show:
+        title: Konto użytkownika
+      edit:
+        title: 'Edytuj konto użytkownika: Zresetuj hasło'
+        back: Wstecz
+        password:
+          password: Hasło
+          send_email: Wyślij wiadomość e-mail dotyczącą resetowania hasła
+          reset_email_send: Wiadomość e-mail wysłana prawidłowo.
+          reseted: Hasło pomyślnie zresetowano
+          random: Wygeneruj losowe hasło
+          save: Zapisz hasło
+          print: Wydrukuj hasło
+          print_help: Będziesz mógł wydrukować hasło po zapisaniu.
+    account_info:
+      change_user: Zmień użytkownika
+      document_number_label: 'Numer dokumentu:'
+      document_type_label: 'Rodzaj dokumentu:'
+      email_label: 'Email:'
+      identified_label: 'Zidentyfikowany jako:'
+      username_label: 'Nazwa użytkownika:'
+    check: Sprawdź dokument
+    dashboard:
+      index:
+        title: Zarządzanie
+        info: Tutaj możesz zarządzać użytkownikami poprzez wszystkie czynności wymienione w lewym menu.
+    document_number: Numer dokumentu
+    document_type_label: Rodzaj dokumentu
+    document_verifications:
+      already_verified: To konto użytkownika jest już zweryfikowane.
+      has_no_account_html: Aby założyć konto, przejdź do %{link} i kliknij <b>"Zarejestruj się"</b> w lewej górnej części ekranu.
+      link: KONSUL
+      in_census_has_following_permissions: 'Ten użytkownik może uczestniczyć w witrynie z następującymi uprawnieniami:'
+      not_in_census: Ten dokument nie jest zarejestrowany.
+      not_in_census_info: 'Obywatele spoza Census mogą w nim uczestniczyć z następującymi uprawnieniami:'
+      please_check_account_data: Sprawdź, czy powyższe dane konta są poprawne.
+      title: Zarządzanie użytkownikami
+      under_age: "Nie masz wymaganego wieku, aby zweryfikować swoje konto."
+      verify: Weryfikuj
+    email_label: E-mail
+    date_of_birth: Data urodzenia
+    email_verifications:
+      already_verified: To konto użytkownika jest już zweryfikowane.
+      choose_options: 'Wybierz jedną z następujących opcji:'
+      document_found_in_census: Ten dokument został znaleziony w census, ale nie ma powiązania z nim konta użytkownika.
+      document_mismatch: 'Ten adres e-mail należy do użytkownika, który ma już powiązany identyfikator: %{document_number}(%{document_type})'
+      email_placeholder: Napisz wiadomość e-mail, której ta osoba użyła do utworzenia swojego konta
+      email_sent_instructions: Aby całkowicie zweryfikować tego użytkownika, konieczne jest, aby użytkownik kliknął link, który wysłaliśmy na powyższy adres e-mail. Ten krok jest potrzebny, aby potwierdzić, że adres należy do niego.
+      if_existing_account: Jeśli dana osoba ma już konto użytkownika utworzone na stronie internetowej,
+      if_no_existing_account: Jeśli dana osoba jeszcze nie utworzyła konta
+      introduce_email: 'Wprowadź adres e-mail użyty dla konta:'
+      send_email: Wyślij email weryfikacyjny
+    menu:
+      create_proposal: Stwórz wniosek
+      print_proposals: Drukuj wnioski
+      support_proposals: Poprzyj wnioski
+      create_spending_proposal: Utwórz wniosek wydatkowy
+      print_spending_proposals: Drukuj wniosek wydatkowy
+      support_spending_proposals: Poprzyj wniosek wydatkowy
+      create_budget_investment: Utwórz inwestycję budżetową
+      print_budget_investments: Wydrukuj inwestycje budżetowe
+      support_budget_investments: Wspieraj inwestycje budżetowe
+      users: Zarządzanie użytkownikami
+      user_invites: Wysyłać zaproszenia
+      select_user: Wybierz użytkownika
+    permissions:
+      create_proposals: Stwórz wnioski
+      debates: Angażuj się w debaty
+      support_proposals: Popieraj wnioski
+      vote_proposals: Oceń wnioski
+    print:
+      proposals_info: Utwórz Twój wniosek na http://url.consul
+      proposals_title: 'Wnioski:'
+      spending_proposals_info: Weź udział w http://url.consul
+      budget_investments_info: Weź udział w http://url.consul
+    print_info: Wydrukuj tę informację
+    proposals:
+      alert:
+        unverified_user: Użytkownik nie jest zweryfikowany
+      create_proposal: Stwórz wniosek
+      print:
+        print_button: Drukuj
+      index:
+        title: Popieraj wnioski
+    budgets:
+      create_new_investment: Utwórz inwestycję budżetową
+      print_investments: Wydrukuj inwestycje budżetowe
+      support_investments: Wspieraj inwestycje budżetowe
+      table_name: Nazwa
+      table_phase: Etap
+      table_actions: Akcje
+      no_budgets: Brak aktywnych budżetów partycypacyjnych.
+    budget_investments:
+      alert:
+        unverified_user: Użytkownik nie jest zweryfikowany
+      create: Utwórz inwestycję budżetową
+      filters:
+        heading: Koncepcja
+        unfeasible: Niewykonalna inwestycja
+      print:
+        print_button: Drukuj
+    spending_proposals:
+      alert:
+        unverified_user: Użytkownik nie jest zweryfikowany
+      create: Utwórz propozycję wydatków
+      filters:
+        unfeasible: Niewykonalne projekty inwestycyjne
+        by_geozone: "Projekty inwestycyjne o zakresie: %{geozone}"
+      print:
+        print_button: Drukuj
+    sessions:
+      signed_out: Wylogowano pomyślnie.
+      signed_out_managed_user: Sesja użytkownika została pomyślnie wylogowana.
+    username_label: Nazwa użytkownika
+    users:
+      create_user: Utwórz nowe konto
+      create_user_info: Stworzymy konto z następującymi danymi
+      create_user_submit: Utwórz użytkownika
+      create_user_success_html: Wysłaliśmy wiadomość e-mail na adres e-mail <b>%{email}</b>, aby sprawdzić, czy należy on do tego użytkownika. Zawiera link, który trzeba kliknąć. Następnie trzeba ustawić swoje hasło dostępu, zanim będą mogli zalogować się na stronie internetowej
+      autogenerated_password_html: "Automatycznie wygenerowane hasło to <b>%{password}</b>, możesz je zmienić w sekcji \"Moje konto\" na stronie"
+      email_optional_label: Email (opcjonalnie)
+      erased_notice: Konto użytkownika zostało usunięte.
+      erased_by_manager: "Usunięty przez menedżera: %{manager}"
+      erase_account_link: Usuń użytkownika
+      erase_account_confirm: Czy na pewno chcesz usunąć konto? Tego działania nie można cofnąć
+      erase_warning: Tego działania nie można cofnąć. Upewnij się, że chcesz usunąć to konto.
+      erase_submit: Usuń konto
+    user_invites:
+      new:
+        label: E-maile
+        info: "Wprowadź adrey e-mailowe oddzielone przecinkami (',')"
+        submit: Wyślij zaproszenia
+        title: Wyślij zaproszenia
+      create:
+        success_html: <strong>%{count} zaproszenia </strong> zostały wysłane.
+        title: Wysyłać zaproszenia
