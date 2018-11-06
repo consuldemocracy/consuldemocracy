@@ -89,6 +89,7 @@ en:
         edit_groups: Edit headings groups
         edit_budget: Edit budget
         admin_ballots: Admin ballots
+        no_budgets: "There are no open budgets."
       create:
         notice: New participatory budget created successfully!
       update:
