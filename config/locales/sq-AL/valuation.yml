@@ -1,0 +1,127 @@
+sq:
+  valuation:
+    header:
+      title: Vlerësim
+    menu:
+      title: Vlerësim
+      budgets: Buxhetet  pjesëmarrës
+      spending_proposals: Propozimet e shpenzimeve
+    budgets:
+      index:
+        title: Buxhetet  pjesëmarrës
+        filters:
+          current: Hapur
+          finished: Përfunduar
+        table_name: Emri
+        table_phase: Fazë
+        table_assigned_investments_valuation_open: Projektet e investimeve të caktuara me vlerësim të hapur
+        table_actions: Veprimet
+        evaluate: Vlerëso
+    budget_investments:
+      index:
+        headings_filter_all: Të gjitha krerët
+        filters:
+          valuation_open: Hapur
+          valuating: Nën vlerësimin
+          valuation_finished: Vlerësimi përfundoi
+        assigned_to: "Caktuar për %{valuator}"
+        title: Projekte investimi
+        edit: Ndrysho dosjen
+        valuators_assigned:
+          one: Vlerësuesi i caktuar
+          other: "%{count}Vlerësues të caktuar"
+        no_valuators_assigned: Asnjë vlerësues nuk është caktuar
+        table_id: ID
+        table_title: Titull
+        table_heading_name: Emri i titullit
+        table_actions: Veprimet
+        no_investments: "Nuk ka projekte investimi."
+      show:
+        back: Pas
+        title: Projekt investimi
+        info: Informacioni i autorit
+        by: Dërguar nga
+        sent: Dërguar tek
+        heading: Kreu
+        dossier: Dosje
+        edit_dossier: Ndrysho dosjen
+        price: Çmim
+        price_first_year: Kostoja gjatë vitit të parë
+        currency: "€"
+        feasibility: fizibiliteti
+        feasible: I mundshëm
+        unfeasible: Parealizueshme
+        undefined: E papërcaktuar
+        valuation_finished: Vlerësimi përfundoi
+        duration: Shtrirja e kohës
+        responsibles: Përgjegjës
+        assigned_admin: Administrator i caktuar
+        assigned_valuators: Vlerësuesit e caktuar
+      edit:
+        dossier: Dosje
+        price_html: "Cmimi %{currency}"
+        price_first_year_html: "Kostoja gjatë vitit të parë %{currency}<small> (opsionale, të dhënat jo publike) </ small>"
+        price_explanation_html: Shpjegimi i çmimit
+        feasibility: Fizibiliteti
+        feasible: I mundshëm
+        unfeasible: Nuk është e realizueshme
+        undefined_feasible: Në pritje
+        feasible_explanation_html: Shpjegim i realizuar
+        valuation_finished: Vlerësimi përfundoi
+        valuation_finished_alert: "Jeni i sigurt se doni ta shënoni këtë raport si të përfunduar? Nëse e bëni këtë, nuk mund të modifikohet më."
+        not_feasible_alert: "Një email do të dërgohet menjëherë tek autori i projektit me raportin e parealizuar."
+        duration_html: Shtrirja e kohës
+        save: Ruaj ndryshimet
+      notice:
+        valuate: "Dosja u përditësua"
+      valuation_comments: Komente të vlefshme
+      not_in_valuating_phase: Investimet mund të vlerësohen vetëm kur Buxheti është në fazën e vlerësimit
+    spending_proposals:
+      index:
+        geozone_filter_all: Të gjitha zonat
+        filters:
+          valuation_open: Hapur
+          valuating: Nën vlerësimin
+          valuation_finished: Vlerësimi përfundoi
+        title: Projektet e investimeve për buxhetin pjesëmarrës
+        edit: Ndrysho
+      show:
+        back: Pas
+        heading: Projekt investimi
+        info: Informacioni i autorit
+        association_name: Shoqatë
+        by: Dërguar nga
+        sent: Dërguar tek
+        geozone: Qëllim
+        dossier: Dosje
+        edit_dossier: Ndrysho dosjen
+        price: Çmim
+        price_first_year: Kostoja gjatë vitit të parë
+        currency: "€"
+        feasibility: Fizibiliteti
+        feasible: I mundshëm
+        not_feasible: Nuk është e realizueshme
+        undefined: E papërcaktuar
+        valuation_finished: Vlerësimi përfundoi
+        time_scope: Shtrirja e kohës
+        internal_comments: Komentet e brendshme
+        responsibles: Përgjegjës
+        assigned_admin: Administrator i caktuar
+        assigned_valuators: Vlerësuesit e caktuar
+      edit:
+        dossier: Dosje
+        price_html: "Cmimi %{currency}"
+        price_first_year_html: "Kostoja gjatë vitit të parë %{currency}"
+        currency: "€"
+        price_explanation_html: Shpjegimi i çmimit
+        feasibility: Fizibiliteti
+        feasible: I parealizueshëm
+        not_feasible: Nuk është e realizueshme
+        undefined_feasible: Në pritje
+        feasible_explanation_html: Shpjegim i realizuar
+        valuation_finished: Vlerësimi përfundoi
+        time_scope_html: Shtrirja e kohës
+        internal_comments_html: Komentet e brendshme
+        save: Ruaj ndryshimet
+      notice:
+        valuate: "Dosja u përditësua"
