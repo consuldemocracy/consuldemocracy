@@ -2,7 +2,7 @@ section "Creating header and cards for the homepage" do
 
   def create_image_attachment(type)
     {
-      cached_attachment: Rails.root.join("db/dev_seeds/images/#{type}_background.jpg"),
+      cached_attachment: Rails.root.join("../db/dev_seeds/images/#{type}_background.jpg"),
       title: "#{type}_background.jpg",
       user: User.first
     }
