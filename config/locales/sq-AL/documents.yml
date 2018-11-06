@@ -1,0 +1,24 @@
+sq:
+  documents:
+    title: Dokumentet
+    max_documents_allowed_reached_html: Ju keni arritur numrin maksimal të dokumenteve të lejuara! <strong> Duhet të fshish një para se të ngarkosh një tjetër. </ strong
+    form:
+      title: Dokumentet
+      title_placeholder: Shto një titull përshkrues për dokumentin
+      attachment_label: Zgjidh dokumentin
+      delete_button: Hiq dokumentin
+      cancel_button: Anullo
+      note: "Mund të ngarkoni deri në një maksimum prej %{max_documents_allowed} dokumenta të llojeve të mëposhtme të përmbajtjes: %{accepted_content_types}, deri%{max_file_size} MB pë dokument"
+      add_new_document: Shto dokument të ri
+    actions:
+      destroy:
+        notice: Dokumenti u fshi me sukses
+        alert: Nuk mund të fshihet dokumenti
+        confirm: Jeni i sigurt se doni ta fshini dokumentin? Ky veprim nuk mund të zhbëhet!
+    buttons:
+      download_document: Shkarko skedarin
+      destroy_document: Fshi dokumentin
+    errors:
+      messages:
+        in_between: duhet të jetë në mes %{min} dhe %{max}
+        wrong_content_type: lloji i përmbajtjes %{content_type} nuk përputhet me asnjë lloj të përmbajtjes së pranuar %{accepted_content_types}
