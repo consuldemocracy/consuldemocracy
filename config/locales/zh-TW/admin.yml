@@ -556,7 +556,6 @@ zh-TW:
           layouts: "佈局"
           mailers: "電郵"
           management: "管理"
-          guides: "指南"
           welcome: "歡迎"
         buttons:
           save: "儲存"

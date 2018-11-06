@@ -556,7 +556,6 @@ it:
           layouts: "Impaginazione"
           mailers: "Email"
           management: "Gestione"
-          guides: "Guide"
           welcome: "Benvenuto"
         buttons:
           save: "Salva"

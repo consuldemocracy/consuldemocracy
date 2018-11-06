@@ -1,35 +1,92 @@
 ar:
   date:
+    abbr_day_names:
+      - الأحد
+      - الاثنين
+      - الثلاثاء
+      - الأربعاء
+      - الخميس
+      - الجمعة
+      - السبت
     abbr_month_names:
       - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      - يناير
+      - فبراير
+      - مارس
+      - أبريل
+      - مايو
+      - يونيو
+      - يوليو
+      - أغسطس
+      - سبتمبر
+      - أكتوبر
+      - نوفمبر
+      - ديسمبر
+    day_names:
+      - الأحد
+      - الاثنين
+      - الثلاثاء
+      - الأربعاء
+      - الخميس
+      - الجمعة
+      - السبت
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - يناير
+      - فبراير
+      - مارس
+      - أبريل
+      - مايو
+      - يونيو
+      - يوليو
+      - أغسطس
+      - سبتمبر
+      - أكتوبر
+      - نوفمبر
+      - ديسمبر
+    order:
+      - :day
+      - :month
+      - :year
+  datetime:
+    prompts:
+      day: اليوم
+      hour: الساعة
+      minute: دقيقة
+      month: شهر
+      second: ثواني
+      year: السنة
+  errors:
+    messages:
+      accepted: يجب أن يكون مقبول
+      blank: لا يمكن أن يكون فارغا
+      present: يجب أن يكون فارغا
+      confirmation: لا يتطابق مع %{attribute}
+      empty: لا يمكن أن يكون فارغا
+  helpers:
+    select:
+      prompt: الرجاء الإختيار
+    submit:
+      create: إنشاء %{model}
+      submit: حفظ %{model}
   number:
     human:
+      decimal_units:
+        units:
+          billion: مليار
+          million: مليون
+          quadrillion: كوادريليون
+          thousand: ألف
+          trillion: تريليون
       format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        units:
+          gb: غيغا بايت
+          kb: كيلو بايت
+          tb: تيرابايت
+  support:
+    array:
+      two_words_connector: " و "

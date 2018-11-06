@@ -76,6 +76,9 @@ de:
       legislation/process:
         one: "Verfahren"
         other: "Beteiligungsverfahren"
+      legislation/proposal:
+        one: "Vorschlag"
+        other: "Vorschläge"
       legislation/draft_versions:
         one: "Entwurfsfassung"
         other: "Entwurfsfassungen"

@@ -60,7 +60,7 @@ es:
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
       hi: "Estimado usuario,"
-      new_html: 'Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}.'
+      new_html: "Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
       new_href: "nuevo proyecto de gasto"
       sincerely: "Atentamente"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
@@ -73,7 +73,7 @@ es:
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"
     budget_investment_unselected:
-      subject: "Tu propuesta de inversión '%{code}' no ha sido seleccionada"
+      subject: "Tu proyecto de gasto '%{code}' no ha sido seleccionado"
       hi: "Estimado/a usuario/a"
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"

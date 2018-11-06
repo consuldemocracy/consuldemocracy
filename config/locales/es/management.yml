@@ -80,7 +80,7 @@ es:
       proposals_info: Haz tu propuesta en http://url.consul
       proposals_title: 'Propuestas:'
       spending_proposals_info: Participa en http://url.consul
-      budget_investments_info: 'Participa en http://url.consul'
+      budget_investments_info: Participa en http://url.consul
     print_info: Imprimir esta información
     proposals:
       alert:
@@ -103,6 +103,7 @@ es:
         unverified_user: Usuario no verificado
       create: Crear nuevo proyecto
       filters:
+        heading: Concepto
         unfeasible: Proyectos no factibles
       print:
         print_button: Imprimir

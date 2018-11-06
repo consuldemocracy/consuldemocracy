@@ -383,7 +383,7 @@ sv:
         index:
           create: Ny process
           delete: Ta bort
-          title: Planeringsprocesser
+          title: Dialoger
           filters:
             open: Pågående
             next: Kommande
@@ -391,7 +391,7 @@ sv:
             all: Alla
         new:
           back: Tillbaka
-          title: Skapa en ny kollaborativ planeringsprocess
+          title: Skapa en ny medborgardialog
           submit_button: Skapa process
         process:
           title: Process
@@ -556,7 +556,6 @@ sv:
           layouts: "Layouter"
           mailers: "E-post"
           management: "Användarhantering"
-          guides: "Guider"
           welcome: "Välkommen"
         buttons:
           save: "Spara"
@@ -567,7 +566,7 @@ sv:
       title_settings: Inställningar
       title_site_customization: Webbplatsens innehåll
       title_booths: Röststationer
-      legislation: Planeringsprocesser
+      legislation: Medborgardialoger
       users: Användare
     administrators:
       index:
@@ -1029,7 +1028,7 @@ sv:
         no_hidden_proposals: Det finns inga dolda aviseringar.
     settings:
       flash:
-        updated: Uppdaterad kostnadsberäkning
+        updated: Uppdaterat
       index:
         banners: Bannerformat
         banner_imgs: Banner
