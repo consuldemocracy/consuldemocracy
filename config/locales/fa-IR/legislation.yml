@@ -1,0 +1,121 @@
+fa:
+  legislation:
+    annotations:
+      comments:
+        see_all: "همه را ببین\n"
+        see_complete: مشاهده کامل
+        comments_count:
+          one: "%{count} نظر"
+          other: "%{count} نظرات"
+        replies_count:
+          one: "%{count} پاسخ"
+          other: "%{count} پاسخ ها"
+        cancel: لغو
+        publish_comment: نشر نظر
+      form:
+        phase_not_open: این فاز  باز نمی شود.
+        login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
+        signin: ورود به برنامه
+        signup: ثبت نام
+      index:
+        title: توضیحات
+        comments_about: تعداد نظرات
+        see_in_context: در چهار چوب ببینید
+        comments_count:
+          one: "%{count} نظر"
+          other: "%{count} نظرات"
+      show:
+        title: توضیح
+      version_chooser:
+        seeing_version: نظرات برای نسخه
+        see_text: متن پیش نویس را ببینید
+    draft_versions:
+      changes:
+        title: تغییرات
+        seeing_changelog_version: تغییرات نسخه خلاصه
+        see_text: متن پیش نویس را ببینید
+      show:
+        loading_comments: بارگذاری نظرات
+        seeing_version: شما در حال دیدن نسخه پیش نویس هستید
+        select_draft_version: پیش نویس را انتخاب کنید
+        select_version_submit: مشاهده کنید
+        updated_at: به روز شده در %{date}
+        see_changes: خلاصه تغییرات را ببینید
+        see_comments: مشاهده همه نظرات
+        text_toc: جدول محتویات
+        text_body: متن
+        text_comments: توضیحات
+    processes:
+      header:
+        additional_info: اطلاعات اضافی
+        description: توضیحات
+        more_info: کسب اطلاعات بیشتر و زمینه
+      proposals:
+        empty_proposals: پیشنهادی وجود ندارد
+      debate:
+        empty_questions: هیچ سوالی وجود ندارد
+        participate: مشارکت در بحث
+      index:
+        filter: فیلتر
+        filters:
+          open: فرآیندهای باز
+          next: بعدی
+          past: گذشته
+        no_open_processes: فرایندهای باز وجود ندارد
+        no_next_processes: فرایندها برنامه ریزی نشده است
+        no_past_processes: فرآیندهای گذشته وجود ندارد
+        section_header:
+          icon_alt: آیکون قوانین پردازش 
+          title: فرآیندهای قانونی
+          help: کمک در مورد فرآیندهای قانونی
+        section_footer:
+          title: کمک در مورد فرآیندهای قانونی
+          description: قبل از تصویب یک حکم یا اقدام شهری، در بحث ها و پروسه ها شرکت کنید. نظر شما توسط شورای شهر در نظر گرفته می شود.
+      phase_not_open:
+        not_open: این مرحله هنوز باز نشده است
+      phase_empty:
+        empty: هنوز منتشر نشده است
+      process:
+        see_latest_comments: مشاهده آخرین نظرات
+        see_latest_comments_title: اظهار نظر در مورد این روند
+      shared:
+        key_dates: تاريخهاي مهم
+        debate_dates: بحث
+        draft_publication_date: انتشار پیش نویس
+        result_publication_date: انتشار نتیجه نهایی
+        proposals_dates: طرح های پیشنهادی
+    questions:
+      comments:
+        comment_button: نشر پاسخ
+        comments_title: پاسخ های باز
+        comments_closed: فاز بسته
+        form:
+          leave_comment: ' پاسخ شما'
+      question:
+        comments:
+          zero: بدون نظر
+          one: "%{count} نظر"
+          other: "%{count} نظرات"
+        debate: بحث
+      show:
+        answer_question: ارسال پاسخ
+        next_question: سوال بعدی
+        first_question: سوال اول
+        share: "اشتراک گذاری\n"
+        title: روند قانونی همکاری
+      participation:
+        phase_not_open: این مرحله هنوز باز نشده است
+        organizations: سازمانها مجاز به شرکت در بحث نیستند
+        signin: ورود به برنامه
+        signup: ثبت نام
+        unauthenticated: شما باید %{signin} یا %{signup} کنید برای نظر دادن.
+        verified_only: فقط کاربران تأیید شده میتوانند شرکت کنند%{verify_account}
+        verify_account: "حساب کاربری خودراتایید کنید\n"
+        debate_phase_not_open: مرحله مذاکره به پایان رسیده است و پاسخ هنوز پذیرفته نشده است
+    shared:
+      share: "اشتراک گذاری\n"
+      share_comment: نظر در%{version_name}از پیش نویس پروسه %{process_name}
+    proposals:
+      form:
+        tags_label: "دسته بندی ها\n"
+      not_verified: "برای  رای به پیشنهادات%{verify_account}"
