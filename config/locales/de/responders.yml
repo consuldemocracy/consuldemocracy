@@ -29,6 +29,7 @@ de:
         budget_investment: "Investitionsprojekt wurde erfolgreich aktualisiert."
         topic: "Thema erfolgreich aktualisiert."
         valuator_group: "Gutachtergruppe wurde erfolgreich aktualisiert"
+        translation: "Übersetzung erfolgreich hochgeladen"
       destroy:
         spending_proposal: "Ausgabenvorschlag erfolgreich gelöscht."
         budget_investment: "Investitionsprojekt erfolgreich gelöscht."

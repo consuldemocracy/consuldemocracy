@@ -171,6 +171,8 @@ es-CL:
           min_total_supports: Soportes minimos
           winners: Ganadoras
           one_filter_html: "Filtros en uso: <b><em>%{filter}</em></b>"
+        buttons:
+          filter: Filtro
         download_current_selection: "Descargar selección actual"
         no_budget_investments: "No hay proyectos de inversión."
         title: Propuestas de inversión
@@ -183,6 +185,9 @@ es-CL:
           undecided: "Sin decidir"
         selected: "Seleccionada"
         select: "Seleccionar"
+        list:
+          id: ID
+          title: Título
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
@@ -209,6 +214,8 @@ es-CL:
         winner:
           title: Ganadora
           "true": "Si"
+          "false": "No"
+        documents: "Documentos"
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
@@ -222,12 +229,15 @@ es-CL:
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
+        user_groups: "Grupos"
       search_unfeasible: Buscar inviables
     milestones:
       index:
+        table_id: "ID"
         table_title: "Título"
         table_description: "Descripción"
         table_publication_date: "Fecha de publicación"
+        table_status: Estado
         table_actions: "Acciones"
         delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
@@ -237,6 +247,7 @@ es-CL:
       new:
         creating: Crear hito
         date: Fecha
+        description: Descripción
       edit:
         title: Editar hito
       create:
@@ -245,6 +256,11 @@ es-CL:
         notice: Hito actualizado
       delete:
         notice: Hito borrado correctamente
+    statuses:
+      index:
+        table_name: Nombre
+        delete: Eliminar
+        edit: Editar
     comments:
       index:
         filter: Filtro
@@ -499,7 +515,6 @@ es-CL:
           layouts: "Diseños"
           mailers: "Correos electrónicos"
           management: "Gestión"
-          guides: "Guías"
           welcome: "Bienvenido/a"
         buttons:
           save: "Guardar"

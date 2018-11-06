@@ -555,7 +555,6 @@ zh-CN:
           layouts: "布局"
           mailers: "电子邮件"
           management: "管理"
-          guides: "指南"
           welcome: "欢迎"
         buttons:
           save: "保存"

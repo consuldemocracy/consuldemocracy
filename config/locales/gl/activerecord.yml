@@ -185,11 +185,17 @@ gl:
         geozone_restricted: "Restrinxida por zonas"
         summary: "Resumo"
         description: "Descrición"
+      poll/translation:
+        name: "Nome"
+        summary: "Resumo"
+        description: "Descrición"
       poll/question:
         title: "Pregunta"
         summary: "Resumo"
         description: "Descrición"
         external_url: "Ligazón á documentación adicional"
+      poll/question/translation:
+        title: "Pregunta"
       signature_sheet:
         signable_type: "Tipo de sinaturas"
         signable_id: "ID de proposta cidadá/proposta de investimento"
@@ -205,6 +211,10 @@ gl:
         more_info_flag: Amosar na páxina de axuda
         print_content_flag: Botón de imprimir o contido
         locale: Idioma
+      site_customization/page/translation:
+        title: Título
+        subtitle: Subtítulo
+        content: Contido
       site_customization/image:
         name: Nome
         image: Imaxe
@@ -225,12 +235,21 @@ gl:
         allegations_start_date: Data en que comezan as alegacións
         allegations_end_date: Data en que rematan as alegacións
         result_publication_date: Data de publicación do resultado final
+      legislation/process/translation:
+        title: Título do proceso
+        summary: Resumo
+        description: Descrición
+        additional_info: Información adicional
       legislation/draft_version:
         title: Título da versión
         body: Texto
         changelog: Cambios
         status: Estado
         final_version: Versión final
+      legislation/draft_version/translation:
+        title: Título da versión
+        body: Texto
+        changelog: Cambios
       legislation/question:
         title: Título
         question_options: Opcións
@@ -247,6 +266,9 @@ gl:
       poll/question/answer:
         title: Resposta
         description: Descrición
+      poll/question/answer/translation:
+        title: Resposta
+        description: Descrición
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
@@ -255,12 +277,25 @@ gl:
         subject: Asunto
         from: De
         body: Contido da mensaxe
+      admin_notification:
+        segment_recipient: Destinatarios
+        title: Título
+        link: Ligazón
+        body: Texto
+      admin_notification/translation:
+        title: Título
+        body: Texto
       widget/card:
         label: Etiqueta (opcional)
         title: Título
         description: Descrición
         link_text: Texto da ligazón
         link_url: URL da ligazón
+      widget/card/translation:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descrición
+        link_text: Texto da ligazón
       widget/feed:
         limit: Número de elementos
     errors:

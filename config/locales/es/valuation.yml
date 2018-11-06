@@ -25,7 +25,7 @@ es:
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
         assigned_to: "Asignadas a %{valuator}"
-        title: Propuestas de inversión
+        title: Proyectos de gasto
         edit: Editar informe
         valuators_assigned:
           one: Evaluador asignado
@@ -38,7 +38,7 @@ es:
         no_investments: "No hay proyectos de gasto."
       show:
         back: Volver
-        title: Propuesta de inversión
+        title: Proyecto de gasto
         info: Datos de envío
         by: Enviada por
         sent: Fecha de creación
@@ -75,7 +75,7 @@ es:
       notice:
         valuate: "Dossier actualizado"
       valuation_comments: Comentarios de evaluación
-      not_in_valuating_phase: Los proyectos sólo pueden ser evaluados cuando el Presupuesto este en fase de evaluación
+      not_in_valuating_phase: Los proyectos sólo pueden ser evaluados cuando el Presupuesto esté en fase de evaluación
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
