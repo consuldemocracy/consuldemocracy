@@ -50,7 +50,7 @@ es-CL:
       - Diciembre
     order:
       - :day
-      - :mes
+      - :month
       - :year
   datetime:
     distance_in_words:
