@@ -1,0 +1,150 @@
+val:
+  management:
+    account:
+      menu:
+        reset_password_email: Restablir contrasenya via email
+        reset_password_manually: Restablir contrasenya manualment
+      alert:
+        unverified_user: Sols es poden editar comptes d'usuaris verificats
+      show:
+        title: Compte d'usuari
+      edit:
+        title: 'Editar compte d''usuari: Restablir contrasenya'
+        back: Arrere
+        password:
+          password: Contrasenya
+          send_email: Enviar email per a restablir contrasenya
+          reset_email_send: Email enviat correctament.
+          reseted: Contrasenya restablida correctament
+          random: Generar contrasenya aleatoria
+          save: Guardar contrasenya
+          print: Imprimir contrasenya
+          print_help: Podràs imprimir la contrasenya quant s'haja guardat.
+    account_info:
+      change_user: Canviar usuari
+      document_number_label: 'Número de document:'
+      document_type_label: 'Tipus de document:'
+      email_label: 'Correu electrònic:'
+      identified_label: 'Identificat com:'
+      username_label: 'Nom d''usuari:'
+    check: Revisa document
+    dashboard:
+      index:
+        title: Gestió
+        info: Des d'ací pots gestionar usuaris a través de les accions llistades en el menú de l'esquerra.
+    document_number: Número de document
+    document_type_label: Tipus de document
+    document_verifications:
+      already_verified: Aquest usuari ja està verificat.
+      has_no_account_html: Per a crear un usuari entra %{link} i fes clic en la opció <strong>'Registrar-se'</strong> en la part superior dreta de la pantalla.
+      link: CONSUL
+      in_census_has_following_permissions: 'Este usuari pot participar en el Portal de Govern Obert amb les següents posibilitats:'
+      not_in_census: Este document no està registrat.
+      not_in_census_info: 'Les persones no empadronades poden participaren el Portal de Govern Obert amb les següents posibilitats:'
+      please_check_account_data: Comprove que les dades anteriors con correctes per a procedir a verificar el compte completament.
+      title: Gestió d'usuaris
+      under_age: "No tens edat suficient per a verificar el teu compte."
+      verify: Verificar
+    email_label: Correu electrònic
+    date_of_birth: Data de naixement
+    email_verifications:
+      already_verified: Este compte d'usuari ja està verificat.
+      choose_options: 'Eligeix una de les opcions següents:'
+      document_found_in_census: Este document està en el registre del padró municipal, però encara no te un compte d'usuari associat.
+      document_mismatch: 'Este correu electrònic correspon a un usuari que ya te associat el document %{document_number}(%{document_type})'
+      email_placeholder: Introdueix el correu electrònic de registre
+      email_sent_instructions: Per acabar de verificar este compte es necessari que faça clic en l'enllaç que li hem enviat a la direcció de correu que figura dalt. Este pas es necessari per a confirmar que eixe compte d'usuari es seua.
+      if_existing_account: Si la persona ja ha creat un compte d'usuari en la web
+      if_no_existing_account: Si la persona encara no ha creat un compte d'usuari en la web
+      introduce_email: 'Introdueix el correu electrònic amb el que va crear el compte:'
+      send_email: Enviar email de verificació
+    menu:
+      create_proposal: Crear proposta
+      print_proposals: Imprimir Propostes
+      support_proposals: Avalar propostes
+      create_spending_proposal: Crear proposta d'inversió
+      print_spending_proposals: Imprimir propostes d'inversió
+      support_spending_proposals: Avalar propostes d'inversió
+      create_budget_investment: Crear projectes d'inversió
+      print_budget_investments: Imprimir projectes d'inversió
+      support_budget_investments: Avalar projectes d'inversió
+      users: Gestió d'usuaris
+      user_invites: Invitacions per a usuaris
+      select_user: Seleccionar usuari
+    permissions:
+      create_proposals: Crear noves propostes
+      debates: Participar en debats
+      support_proposals: Avalar propostes
+      vote_proposals: Participar en les votacions finals
+    print:
+      proposals_info: Fes la teua proposta en http://url.consul
+      proposals_title: 'Propostes:'
+      spending_proposals_info: Participa en http://url.consul
+      budget_investments_info: Participa en http://url.consul
+    print_info: Imprimir esta informació
+    proposals:
+      alert:
+        unverified_user: Este usuari no està verificat
+      create_proposal: Crear una proposta
+      print:
+        print_button: Imprimir
+      index:
+        title: Avalar propostes
+    budgets:
+      create_new_investment: Crear projecte d'inversió
+      print_investments: Imprimir projectes d'inversió
+      support_investments: Avalar projectes d'inversió
+      table_name: Nom
+      table_phase: Fase
+      table_actions: Accions
+      no_budgets: No hi ha pressupostos participatius actius.
+    budget_investments:
+      alert:
+        unverified_user: Usuari no verificat
+      create: Crear nou projecte
+      filters:
+        heading: Concepte
+        unfeasible: Projectes no factibles
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " que conté '%{search_term}'"
+        other: " que contenen '%{search_term}'"
+    spending_proposals:
+      alert:
+        unverified_user: Usuari no verificat
+      create: Crear proposta d'inversió
+      filters:
+        unfeasible: Propostes d'inversió no viables
+        by_geozone: "Propostes d'inversió amb àmbit: %{geozone}"
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " que conté '%{search_term}'"
+        other: " que contenen '%{search_term}'"
+    sessions:
+      signed_out: Has tancat la sessió correctament.
+      signed_out_managed_user: S'ha tancat correctament la sessió de l'usuari.
+    username_label: Nom d'usuari
+    users:
+      create_user: Crear nou compte d'usuari
+      create_user_info: Procedim a crear un compte amb la següent informació
+      create_user_submit: Crear usuari
+      create_user_success_html: Hem enviat un correu electrònic a <strong>%{email}</strong> per a verificar que es seua. El correu enviat conté un enllaç que l'usuari haurà de polsar. Entonces podrà seleccionar una contrasenya, i entrar en la web de participació
+      autogenerated_password_html: "S'ha asignat la contrasenya <strong>%{password}</strong> a este usuari. Pots modificarla desde l'apartat 'El meu compte' de la web"
+      email_optional_label: Correu electrònic (recomanat pero opcional)
+      erased_notice: Compte d'usuari eliminat.
+      erased_by_manager: "Borrada per el manager: %{manager}"
+      erase_account_link: Eliminar compte
+      erase_account_confirm: Segur que vols eliminar este usuari? Esta acció no es pot desfer
+      erase_warning: Esta acció no es pot desfer. Si us plau asegurat de que vol eliminar este compte.
+      erase_submit: Eliminar compte
+    user_invites:
+      new:
+        label: Correus electrònics
+        info: "Introdueix els correus electrònics separats per comes (',')"
+        submit: Enviar invitacions
+        title: Invitacions per a usuaris
+      create:
+        success_html: S'han enviat <strong>%{count} invitacions</strong>.
+        title: Invitacions per a usuaris

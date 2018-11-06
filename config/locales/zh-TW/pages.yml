@@ -1,0 +1,198 @@
+zh-TW:
+  pages:
+    conditions:
+      title: 使用條款及條件
+      subtitle: 關於開放政府門戶網站個人數據使用，隱私和保護條件的法律聲明
+      description: 使用條件，隱私和個人數據保護的資訊頁面。
+    general_terms: 條款及條件
+    help:
+      title: "%{org} 是公民參與的平台"
+      guide: "本指南解釋了每個%{org} 部分的用途以及它們的操作原理。"
+      menu:
+        debates: "辯論"
+        proposals: "建議"
+        budgets: "參與性預算"
+        polls: "投票"
+        other: "其他感興趣的資訊"
+        processes: "過程"
+      debates:
+        title: "辯論"
+        description: "在%{link} 部分，您可以向別人展示並分享您對與城市相關的問題之意見。 它並且是一個產生想法的地方，通過%{org} 的其他部分，能導致市議會的具體行動。"
+        link: "公民辯論"
+        feature_html: "您可以打開辯論，評論和評估，使用<strong>我同意</strong>或<strong>我不同意</strong>。 為此您必須%{link}。"
+        feature_link: "在%{org} 註冊"
+        image_alt: "為辯論評分的按鈕"
+        figcaption: '為辯論評分的“我同意”和“我不同意”按鈕。'
+      proposals:
+        title: "建議"
+        description: "在%{link} 部分，您可以向市議會提出建議，以便將其付諸實行。 這些建議需要得到支持，如果得到足夠的支持，就會受到公眾投票。 這些公民投票中通過的建議將會被市議會接受並實行。"
+        link: "公民建議"
+        image_alt: "支持建議的按鈕"
+        figcaption_html: '用於"支持"建議的按鈕'
+      budgets:
+        title: "參與性預算編制"
+        description: "%{link} 部分可幫助人們直接決定如何使用市政預算的部分開支。"
+        link: "參與性預算"
+        image_alt: "參與式預算的不同階段"
+        figcaption_html: '參與式預算的“支持”和“投票”階段。'
+      polls:
+        title: "投票"
+        description: "每當提案達到1%支持並進入投票，或市議會提出問題供人們決定時，%{link} 部分就會啟動。"
+        link: "投票"
+        feature_1: "要參與投票，您必須%{link} 並核實您的帳戶。"
+        feature_1_link: "在%{org_name} 中註冊"
+      processes:
+        title: "過程"
+        description: "在%{link} 部分，公民參與起草和修改影響城市的法規，並可以在已有的辯論中就市政政策發表意見。"
+        link: "過程"
+      faq:
+        title: "技術問題？"
+        description: "請閱讀常見問題解答來解決您的問題。"
+        button: "查看常見問題解答"
+        page:
+          title: "常見問題解答"
+          description: "站點用戶可以使用此頁面解決一般常見問題。"
+          faq_1_title: "問題1"
+          faq_1_description: "這個例子是描述問題1的。"
+      other:
+        title: "其他感興趣的資訊"
+        how_to_use: "在您的城市中使用%{org_name}"
+      how_to_use:
+        text: |-
+          在您本地政府中使用它，或幫助我們改進它，這是免費軟件。
+          
+          這個開放政府門戶網站使用 [CONSUL app](https://github.com/consul/consul 'consul github') ，這是一個免費軟件，使用 [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' )。簡單來說，就是說任何人都可以自由地使用原始碼，複製它，詳細查看，修改它，並將他想要的修改重新發送到全球 (並允許其他人也可同樣做) 。 因為我們認為文化在發佈後會更好，更豐富。
+          
+          如果您是程序員，您可以在 [CONSUL app](https://github.com/consul/consul 'consul github')查看原始碼，並幫助我們改進它。
+      titles:
+        how_to_use: 在您本地政府中使用它
+    privacy:
+      title: 隱私政策
+      subtitle: 有關數據隱私的資訊
+      info_items:
+        - 
+          text: 通過開放政府門戶網站提供的資訊進行導航是匿名的。
+        - 
+          text: 要使用開放政府門戶網站中包含的服務，用戶必須根據每種登記類型中的特定資訊登記並預先提供個人數據。
+        - 
+          text: '所提供的數據將由市議會根據以下文件的描述進行整合和處理：'
+        - 
+          subitems:
+            - 
+              field: '文件名稱：'
+              description: 該文件的名稱
+            - 
+              field: '該文件的目的：'
+              description: 管理參與過程是為了控制參與其中的人員的資格，並對公民參與過程產生的結果只進行數據和統計重新計算。
+            - 
+              field: '負責該文件的機構：'
+              description: 負責該文件的機構
+        - 
+          text: 有關方可以在負責機構指示之前行使獲取、糾正、取消和反對的權利，所有這些權利都是根據12月13日第15/1999號組織法第5條關於個人數據保護的條款。
+        - 
+          text: 作為一般原則，本網站不會共享或披露所獲得的信息，除非經用戶授權，或根據司法機關、檢察官辦公室或司法警察要求提供信息，或受 12月13日第15/1999號組織法第11條關於個人數據保護的管制。
+    accessibility:
+      title: 無障礙功能
+      description: |-
+        網絡無障礙功能是指所有人都可以訪問網絡及其內容，以克服可能出現的殘疾障礙 (物理，智力或技術)，還是來自使用環境 (技術或環境) 的障礙。
+        
+        當網站設計時已考慮了無障礙功能，所有用戶都可以在相同條件下訪問內容，例如：
+      examples:
+        - 為圖像提供替代文本，盲人或視障用戶可以使用特殊閱讀器來取得資訊。
+        - 當視頻有字幕時，聽力障礙的用戶可以完全理解它們。
+        - 如果內容是用簡單的插圖語言編寫的，那麼有學習障礙的用戶也能更好地理解它們。
+        - 如果用戶有行動障礙並且難以使用鼠標，使用鍵盤的替代方案則有助於導航。
+      keyboard_shortcuts:
+        title: 鍵盤快捷鍵
+        navigation_table:
+          description: 為了能以可訪問性的方式瀏覽該網站，已經編寫了一組快捷鍵，以進入該網站組織的一般感興趣的主要部分。
+          caption: 導航菜單的鍵盤快捷鍵
+          key_header: 鍵
+          page_header: 頁
+          rows:
+            - 
+              key_column: 0
+              page_column: 主頁
+            - 
+              key_column: 1
+              page_column: 辯論
+            - 
+              key_column: 2
+              page_column: 建議
+            - 
+              key_column: 3
+              page_column: 投票
+            - 
+              key_column: 4
+              page_column: 參與性預算
+            - 
+              key_column: 5
+              page_column: 立法進程
+        browser_table:
+          description: '根據所使用的操作系統和瀏覽器，組合鍵如下所示：'
+          caption: 組合鍵是基於所使用的操作系統和瀏覽器
+          browser_header: 瀏覽器
+          key_header: 組合鍵
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + 快捷鍵，然後輸入鍵
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + 快捷鍵
+            - 
+              browser_column: Chrome
+              key_column: ALT + 快捷鍵 (MAC機上的 CTRL + ALT + 快捷鍵)
+            - 
+              browser_column: Safari
+              key_column: ALT + 快捷鍵 (MAC機上的 CMD + 快捷鍵)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + 快捷鍵
+      textsize:
+        title: 字體大小
+        browser_settings_table:
+          description: 該網站的可訪問性設計允許用戶選擇適合他的字體大小。 可以根據所使用的瀏覽器以不同方式執行此操作。
+          browser_header: 瀏覽器
+          action_header: 要採取的操作
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: 查看 > 字體大小
+            - 
+              browser_column: Firefox
+              action_column: 查看 > 大小
+            - 
+              browser_column: Chrome
+              action_column: 設置 (圖標) > 選項 > 高級 > 網頁內容 > 字體大小
+            - 
+              browser_column: Safari
+              action_column: 查看 > 放大/縮小
+            - 
+              browser_column: Opera
+              action_column: 查看 > 比例
+        browser_shortcuts_table:
+          description: '另一種修改字體大小的方法是使用瀏覽器中定義的鍵盤快捷鍵，尤其是組合鍵：'
+          rows:
+            - 
+              shortcut_column: CTRL 和 + (MAC機上的 CMD 和 +)
+              description_column: 增加字體大小
+            - 
+              shortcut_column: CTRL 和 - (MAC機上的 CMD 和 -)
+              description_column: 減少字體大小
+      compatibility:
+        title: 兼容標準和視覺設計
+        description_html: '本網站的所有頁面均符合<strong>輔助功能指南</strong>或由屬於W3C的<abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr>工作組建立的無障礙設計的一般原則。'
+    titles:
+      accessibility: 無障礙功能
+      conditions: 使用條款
+      help: "什麼是%{org}？ - 公民參與"
+      privacy: 隱私政策
+    verify:
+      code: 您在信中收到的代碼
+      email: 電郵
+      info: '為核實您的帳戶，請輸入您的訪問數據：'
+      info_code: '現在輸入您在信中收到的代碼：'
+      password: 密碼
+      submit: 核實我的帳戶
+      title: 核實您的帳戶

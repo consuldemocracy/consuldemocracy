@@ -7,6 +7,12 @@ feature 'Answers' do
     login_as admin.user
   end
 
+  it_behaves_like "translatable",
+                  "poll_question_answer",
+                  "edit_admin_answer_path",
+                  %w[title],
+                  { "description" => :ckeditor }
+
   scenario 'Create' do
     question = create(:poll_question)
     title = 'Whatever the question may be, the answer is always 42'
@@ -15,8 +21,8 @@ feature 'Answers' do
     visit admin_question_path(question)
     click_link 'Add answer'
 
-    fill_in 'poll_question_answer_title', with: title
-    fill_in 'poll_question_answer_description', with: description
+    fill_in 'Answer', with: title
+    fill_in 'Description', with: description
 
     click_button 'Save'
 
@@ -33,8 +39,8 @@ feature 'Answers' do
     visit admin_question_path(question)
     click_link 'Add answer'
 
-    fill_in 'poll_question_answer_title', with: title
-    fill_in 'poll_question_answer_description', with: description
+    fill_in 'Answer', with: title
+    fill_in 'Description', with: description
 
     click_button 'Save'
 
@@ -53,7 +59,7 @@ feature 'Answers' do
     old_title = answer.title
     new_title = 'Ex Machina'
 
-    fill_in 'poll_question_answer_title', with: new_title
+    fill_in 'Answer', with: new_title
 
     click_button 'Save'
 
@@ -63,7 +69,7 @@ feature 'Answers' do
     visit admin_question_path(question)
 
     expect(page).to have_content(new_title)
-    expect(page).to_not have_content(old_title)
+    expect(page).not_to have_content(old_title)
 
     expect(page.body.index(new_title)).to be < page.body.index(answer2.title)
   end

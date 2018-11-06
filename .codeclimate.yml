@@ -32,3 +32,4 @@ exclude_paths:
 - files/
 - public/
 - tmp/
+- vendor/

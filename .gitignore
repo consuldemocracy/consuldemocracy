@@ -20,6 +20,7 @@
 /config/database.yml
 #/config/secrets.yml
 /config/deploy-secrets.yml
+/config/maintenance.yml
 
 /coverage
 
@@ -32,3 +33,4 @@
 
 public/sitemap.xml
 public/system/
+/public/ckeditor_assets/

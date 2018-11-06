@@ -8,7 +8,7 @@ describe Mailer do
       comment = create(:comment, commentable: proposal)
 
       email = I18n.with_locale :en do
-        Mailer.comment(comment)
+        described_class.comment(comment)
       end
 
       expect(email.subject).to include("comentado")

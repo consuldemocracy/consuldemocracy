@@ -1,0 +1,108 @@
+es-DO:
+  verification:
+    alert:
+      lock: Has llegado al máximo número de intentos. Por favor intentalo de nuevo más tarde.
+    back: Volver a mi cuenta
+    email:
+      create:
+        alert:
+          failure: Hubo un problema enviándote un email a tu cuenta
+        flash:
+          success: 'Te hemos enviado un email de confirmación a tu cuenta: %{email}'
+      show:
+        alert:
+          failure: Código de verificación incorrecto
+        flash:
+          success: Eres un usuario verificado
+    letter:
+      alert:
+        unconfirmed_code: Todavía no has introducido el código de confirmación
+      create:
+        flash:
+          offices: Oficinas de Atención al Ciudadano
+          success_html: Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las %{offices}.
+      edit:
+        see_all: Ver propuestas
+        title: Carta solicitada
+      errors:
+        incorrect_code: Código de verificación incorrecto
+      new:
+        explanation: 'Para participar en las votaciones finales puedes:'
+        go_to_index: Ver propuestas
+        office: Verificarte presencialmente en cualquier %{office}
+        offices: Oficina de Atención al Ciudadano
+        send_letter: Solicitar una carta por correo postal
+        title: '¡Felicidades!'
+        user_permission_info: Con tu cuenta ya puedes...
+      update:
+        flash:
+          success: Tu cuenta ya está verificada
+    redirect_notices:
+      already_verified: Tu cuenta ya está verificada
+      email_already_sent: Ya te enviamos un email con un enlace de confirmación, si no lo encuentras puedes solicitar aquí que te lo reenviemos
+    residence:
+      alert:
+        unconfirmed_residency: Aún no has verificado tu residencia
+      create:
+        flash:
+          success: Residencia verificada
+      new:
+        accept_terms_text: Acepto %{terms_url} al Padrón
+        accept_terms_text_title: Acepto los términos de acceso al Padrón
+        date_of_birth: Fecha de nacimiento
+        document_number: DNI/Pasaporte/Tarjeta de residencia
+        document_number_help_title: Ayuda
+        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarjeta de residencia</strong>: X1234567P'
+        document_type:
+          passport: Pasaporte
+          residence_card: Tarjeta de residencia
+        document_type_label: Tipo de documento
+        error_not_allowed_age: No tienes la edad mínima para participar
+        error_not_allowed_postal_code: Para verificarte debes estar empadronado.
+        error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una %{offices}.
+        error_verifying_census_offices: oficina de Atención al ciudadano
+        form_errors: evitaron verificar tu residencia
+        postal_code: Código postal
+        postal_code_note: Para verificar tus datos debes estar empadronado
+        terms: los términos de acceso
+        title: Verificar residencia
+        verify_residence: Verificar residencia
+    sms:
+      create:
+        flash:
+          success: Introduce el código de confirmación que te hemos enviado por mensaje de texto
+      edit:
+        confirmation_code: Introduce el código que has recibido en tu móvil
+        resend_sms_link: Solicitar un nuevo código
+        resend_sms_text: '¿No has recibido un mensaje de texto con tu código de confirmación?'
+        submit_button: Enviar
+        title: SMS de confirmación
+      new:
+        phone: Introduce tu teléfono móvil para recibir el código
+        phone_format_html: "<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>"
+        phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
+        submit_button: Enviar
+        title: SMS de confirmación
+      update:
+        error: Código de confirmación incorrecto
+        flash:
+          level_three:
+            success: Código correcto. Tu cuenta ya está verificada
+          level_two:
+            success: Código correcto
+    step_1: Residencia
+    step_2: SMS de confirmación
+    step_3: Verificación final
+    user_permission_debates: Participar en debates
+    user_permission_info: Al verificar tus datos podrás...
+    user_permission_proposal: Crear nuevas propuestas
+    user_permission_support_proposal: Apoyar propuestas
+    user_permission_votes: Participar en las votaciones finales*
+    verified_user:
+      form:
+        submit_button: Enviar código
+      show:
+        explanation: Actualmente disponemos de los siguientes datos en el Padrón, selecciona donde quieres que enviemos el código de confirmación.
+        phone_title: Teléfonos
+        title: Información disponible
+        use_another_phone: Utilizar otro teléfono

@@ -1,23 +1,22 @@
----
 es:
   helpers:
     page_entries_info:
       entry:
+        zero: Entradas
         one: entrada
         other: entradas
-        zero: entradas
       more_pages:
         display_entries: Mostrando <strong>%{first}&nbsp;-&nbsp;%{last}</strong> de un total de <strong>%{total} %{entry_name}</strong>
       one_page:
         display_entries:
+          zero: "No se han encontrado %{entry_name}"
           one: Hay <strong>1 %{entry_name}</strong>
           other: Hay <strong>%{count} %{entry_name}</strong>
-          zero: No se han encontrado %{entry_name}
   views:
     pagination:
+      current: Estás en la página
       first: Primera
       last: Última
       next: Siguiente
       previous: Anterior
       truncate: "&hellip;"
-      current: Estás en la página

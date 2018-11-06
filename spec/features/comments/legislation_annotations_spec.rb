@@ -55,21 +55,21 @@ feature 'Commenting legislation questions' do
 
     expect(page).to have_css('.comment', count: 3)
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 2)
-    expect(page).to_not have_content grandchild_comment.body
+    expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 3)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").trigger('click')
+    find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css('.comment', count: 1)
-    expect(page).to_not have_content child_comment.body
-    expect(page).to_not have_content grandchild_comment.body
+    expect(page).not_to have_content child_comment.body
+    expect(page).not_to have_content grandchild_comment.body
   end
 
   scenario 'Comment order' do
@@ -137,7 +137,8 @@ feature 'Commenting legislation questions' do
   end
 
   scenario 'Turns links into html links' do
-    create :comment, commentable: legislation_annotation, body: 'Built with http://rubyonrails.org/'
+    legislation_annotation = create :legislation_annotation, author: user
+    legislation_annotation.comments << create(:comment, body: 'Built with http://rubyonrails.org/')
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                             legislation_annotation.draft_version,
@@ -178,7 +179,7 @@ feature 'Commenting legislation questions' do
     within("ul.pagination") do
       expect(page).to have_content("1")
       expect(page).to have_content("2")
-      expect(page).to_not have_content("3")
+      expect(page).not_to have_content("3")
       click_link "Next", exact: false
     end
 
@@ -194,8 +195,8 @@ feature 'Commenting legislation questions' do
 
       expect(page).to have_content 'You must Sign in or Sign up to leave a comment'
       within('#comments') do
-        expect(page).to_not have_content 'Write a comment'
-        expect(page).to_not have_content 'Reply'
+        expect(page).not_to have_content 'Write a comment'
+        expect(page).not_to have_content 'Reply'
       end
     end
   end
@@ -248,7 +249,7 @@ feature 'Commenting legislation questions' do
       expect(page).to have_content 'It will be done next week.'
     end
 
-    expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
   scenario 'Errors on reply', :js do
@@ -317,7 +318,7 @@ feature 'Commenting legislation questions' do
       expect(page).to have_css("#flag-expand-comment-#{comment.id}")
     end
 
-    expect(Flag.flagged?(user, comment)).to_not be
+    expect(Flag.flagged?(user, comment)).not_to be
   end
 
   scenario "Flagging turbolinks sanity check", :js do
@@ -363,7 +364,7 @@ feature 'Commenting legislation questions' do
 
     # The button's text should now be "..."
     # This should be checked before the Ajax request is finished
-    expect(page).to_not have_button 'Publish comment'
+    expect(page).not_to have_button 'Publish comment'
 
     expect(page).to have_content('Testing submit button!')
   end
@@ -416,7 +417,7 @@ feature 'Commenting legislation questions' do
         expect(page).to have_css "img.moderator-avatar"
       end
 
-      expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
     scenario "can not comment as an administrator" do
@@ -427,7 +428,7 @@ feature 'Commenting legislation questions' do
                                                               legislation_annotation.draft_version,
                                                               legislation_annotation)
 
-      expect(page).to_not have_content "Comment as administrator"
+      expect(page).not_to have_content "Comment as administrator"
     end
   end
 
@@ -479,7 +480,7 @@ feature 'Commenting legislation questions' do
         expect(page).to have_css "img.admin-avatar"
       end
 
-      expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
     scenario "can not comment as a moderator" do
@@ -490,7 +491,7 @@ feature 'Commenting legislation questions' do
                                                               legislation_annotation.draft_version,
                                                               legislation_annotation)
 
-      expect(page).to_not have_content "Comment as moderator"
+      expect(page).not_to have_content "Comment as moderator"
     end
   end
 
@@ -552,6 +553,11 @@ feature 'Commenting legislation questions' do
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
+
+        within('.in_favor') do
+          expect(page).to have_content "1"
+        end
+
         find('.against a').click
 
         within('.in_favor') do
@@ -566,7 +572,7 @@ feature 'Commenting legislation questions' do
       end
     end
 
-    xscenario 'Trying to vote multiple times', :js do
+    scenario 'Trying to vote multiple times', :js do
       visit legislation_process_draft_version_annotation_path(@legislation_annotation.draft_version.process,
                                                               @legislation_annotation.draft_version,
                                                               @legislation_annotation)
@@ -579,7 +585,7 @@ feature 'Commenting legislation questions' do
 
         find('.in_favor a').click
         within('.in_favor') do
-          expect(page).to_not have_content "2"
+          expect(page).not_to have_content "2"
           expect(page).to have_content "1"
         end
 
@@ -619,7 +625,7 @@ feature 'Commenting legislation questions' do
 
     scenario 'View comments of annotations in an included range' do
       within("#annotation-link") do
-        first(:css, "a").trigger('click')
+        find('.icon-expand').click
       end
 
       expect(page).to have_css(".comment", count: 2)
@@ -655,7 +661,7 @@ feature 'Commenting legislation questions' do
       end
 
       within("#annotation-link") do
-        first(:css, "a").trigger('click')
+        find('.icon-expand').click
       end
 
       expect(page).to have_css(".comment", count: 3)
@@ -666,7 +672,7 @@ feature 'Commenting legislation questions' do
 
     scenario "Reply on a multiple annotation thread and display it in the single annotation thread" do
       within("#annotation-link") do
-        first(:css, "a").trigger('click')
+        find('.icon-expand').click
       end
 
       comment = annotation2.comments.first

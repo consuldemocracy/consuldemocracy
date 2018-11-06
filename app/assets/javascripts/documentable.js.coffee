@@ -11,10 +11,9 @@ App.Documentable =
 
     $('#nested-documents').on 'cocoon:after-insert', (e, nested_document) ->
       input = $(nested_document).find('.js-document-attachment')
+      input["lockUpload"] = $(nested_document).closest('#nested-documents').find('.document:visible').length >= $('#nested-documents').data('max-documents-allowed')
       App.Documentable.initializeDirectUploadInput(input)
-
-      if $(nested_document).closest('#nested-documents').find('.document:visible').length >= $('#nested-documents').data('max-documents-allowed')
-        App.Documentable.lockUploads()
+      App.Documentable.lockUploads() if input["lockUpload"]
 
   initializeDirectUploadInput: (input) ->
 
@@ -65,6 +64,9 @@ App.Documentable =
           e.stopPropagation()
           App.Documentable.doDeleteCachedAttachmentRequest(this.href, data)
 
+        App.Documentable.showNotice() if input["lockUpload"]
+
+
       progress: (e, data) ->
         progress = parseInt(data.loaded / data.total * 100, 10)
         $(data.progressBar).find('.loading-bar').css 'width', progress + '%'
@@ -114,12 +116,14 @@ App.Documentable =
     $(data.errorContainer).append(errors)
 
   lockUploads: ->
-    $('#max-documents-notice').removeClass('hide')
     $('#new_document_link').addClass('hide')
 
   unlockUploads: ->
     $('#max-documents-notice').addClass('hide')
     $('#new_document_link').removeClass('hide')
+
+  showNotice: ->
+    $('#max-documents-notice').removeClass('hide')
 
   doDeleteCachedAttachmentRequest: (url, data) ->
     $.ajax

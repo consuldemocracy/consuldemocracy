@@ -3,10 +3,18 @@ require 'rails_helper'
 feature 'Localization' do
 
   scenario 'Wrong locale' do
+    Globalize.with_locale(:es) do
+      create(:widget_card, title: 'Bienvenido a CONSUL',
+                           description: 'Software libre para la participación ciudadana.',
+                           link_text: 'Más información',
+                           link_url: 'http://consulproject.org/',
+                           header: true)
+    end
+
     visit root_path(locale: :es)
     visit root_path(locale: :klingon)
 
-    expect(page).to have_text('La ciudad que quieres será la ciudad que quieras')
+    expect(page).to have_text('Bienvenido a CONSUL')
   end
 
   scenario 'Available locales appear in the locale switcher' do
@@ -29,15 +37,42 @@ feature 'Localization' do
 
     select('Español', from: 'locale-switcher')
     expect(page).to have_content('Idioma')
-    expect(page).to_not have_content('Language')
+    expect(page).not_to have_content('Language')
     expect(page).to have_select('locale-switcher', selected: 'Español')
   end
 
   scenario 'Locale switcher not present if only one locale' do
-    expect(I18n).to receive(:available_locales).and_return([:en])
+    allow(I18n).to receive(:available_locales).and_return([:en])
 
     visit '/'
-    expect(page).to_not have_content('Language')
-    expect(page).to_not have_css('div.locale')
+    expect(page).not_to have_content('Language')
+    expect(page).not_to have_css('div.locale')
+  end
+
+  context "Missing language names" do
+
+    let!(:default_enforce) { I18n.enforce_available_locales }
+    let!(:default_locales) { I18n.available_locales.dup }
+
+    before do
+      I18n.enforce_available_locales = false
+      I18n.available_locales = default_locales + [:wl]
+      I18n.locale = :wl
+    end
+
+    after do
+      I18n.enforce_available_locales = default_enforce
+      I18n.available_locales = default_locales
+      I18n.locale = I18n.default_locale
+    end
+
+    scenario 'Available locales without language translation display locale key' do
+      visit '/'
+
+      within('.locale-form .js-location-changer') do
+        expect(page).to have_content 'wl'
+      end
+    end
+
   end
 end

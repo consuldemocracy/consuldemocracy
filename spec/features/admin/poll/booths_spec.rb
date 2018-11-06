@@ -14,7 +14,7 @@ feature 'Admin booths' do
       click_link "Booths location"
     end
 
-    expect(page).to have_content "There are no booths"
+    expect(page).to have_content "There are no active booths for any upcoming poll."
   end
 
   scenario 'Index' do
@@ -33,7 +33,7 @@ feature 'Admin booths' do
         expect(page).to have_content booth.location
       end
     end
-    expect(page).to_not have_content "There are no booths"
+    expect(page).not_to have_content "There are no booths"
   end
 
   scenario "Available" do
@@ -59,8 +59,8 @@ feature 'Admin booths' do
 
     expect(page).to have_content booth_for_current_poll.name
     expect(page).to have_content booth_for_incoming_poll.name
-    expect(page).to_not have_content booth_for_expired_poll.name
-    expect(page).to_not have_link "Edit booth"
+    expect(page).not_to have_content booth_for_expired_poll.name
+    expect(page).not_to have_link "Edit booth"
   end
 
   scenario 'Show' do
@@ -95,7 +95,7 @@ feature 'Admin booths' do
     visit admin_booths_path
 
     within("#booth_#{booth.id}") do
-      expect(page).to_not have_link "Manage shifts"
+      expect(page).not_to have_link "Manage shifts"
       click_link "Edit booth"
     end
 
@@ -125,6 +125,6 @@ feature 'Admin booths' do
     end
 
     click_link "Go back"
-    expect(current_path).to eq(available_admin_booths_path)
+    expect(page).to have_current_path(available_admin_booths_path)
   end
 end

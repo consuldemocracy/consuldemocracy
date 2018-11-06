@@ -1,0 +1,60 @@
+it:
+  community:
+    sidebar:
+      title: Comunità
+      description:
+        proposal: Partecipa alla comunità di utenti per questa proposta.
+        investment: Partecipa alla comunità di utenti per questo investimento.
+      button_to_access: Accedi alla comunità
+    show:
+      title:
+        proposal: Comunità della Proposta
+        investment: Comunità dell’Investimento di Bilancio
+      description:
+        proposal: Partecipa alla comunità di questa proposta. Una comunità attiva può aiutare a migliorare il contenuto della proposta e incrementare la sua diffusione per ottenere maggior supporto.
+        investment: Partecipa alla comunità di questo investimento di bilancio. Una comunità attiva può aiutare a migliorare il contenuto dell’investimento e incrementare la sua diffusione per ottenere maggior supporto.
+      create_first_community_topic:
+        first_theme_not_logged_in: Nessun argomento disponibile, partecipa creando il primo.
+        first_theme: Crea il primo argomento della comunità
+        sub_first_theme: "Per creare un tema è necessario %{sign_in} o %{sign_up}."
+        sign_in: "accedere"
+        sign_up: "registrarsi"
+      tab:
+        participants: Partecipanti
+      sidebar:
+        participate: Partecipa
+        new_topic: Crea argomento
+      topic:
+        edit: Modifica argomento
+        destroy: Distruggi argomento
+        comments:
+          zero: Nessun commento
+          one: 1 commento
+          other: "%{count} commenti"
+      author: Autore
+      back: Torna a %{community} %{proposal}
+    topic:
+      create: Crea un argomento
+      edit: Modifica argomento
+      form:
+        topic_title: Titolo
+        topic_text: Testo iniziale
+        new:
+          submit_button: Crea argomento
+        edit:
+          submit_button: Modifica argomento
+        create:
+          submit_button: Crea argomento
+        update:
+          submit_button: Aggiorna argomento
+      show:
+        tab:
+          comments_tab: Commenti
+      sidebar:
+        recommendations_title: Consigli per la creazione di un argomento
+        recommendation_one: Non scrivere il titolo dell’argomento o intere frasi in maiuscolo. Su internet equivale a urlare. E a nessuno piace che qualcuno gli urli contro.
+        recommendation_two: Qualsiasi argomento o commento che suggerisca o implichi attività illecite verrà eliminato, così come quelli intesi a sabotare lo spazio dedicato al tema. Tutto il resto è permesso.
+        recommendation_three: Goditi questo spazio e le voci che lo riempiono, appartiene anche a te.
+  topics:
+    show:
+      login_to_comment: È necessario %{signin} o %{signup} per lasciare un commento.

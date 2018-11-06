@@ -53,24 +53,7 @@ feature 'Tracking' do
       expect(page.html).to include "data-track-event-action=start_census"
     end
 
-    scenario 'Verification: success census' do
-      create(:geozone)
-      user = create(:user)
-      login_as(user)
-
-      visit account_path
-      click_link 'Verify my account'
-
-      verify_residence
-
-      fill_in 'sms_phone', with: "611111111"
-      click_button 'Send'
-
-      expect(page.html).to include "data-track-event-category=verification"
-      expect(page.html).to include "data-track-event-action=start_sms"
-    end
-
-    scenario 'Verification: start sms' do
+    scenario 'Verification: success census & start sms' do
       create(:geozone)
       user = create(:user)
       login_as(user)

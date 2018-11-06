@@ -1,5 +1,6 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
   include Flaggable
   include Taggable
   include Conflictable
@@ -9,6 +10,8 @@ class Debate < ActiveRecord::Base
   include Filterable
   include HasPublicAuthor
   include Graphqlable
+  include Relationable
+  include Notifiable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -46,6 +49,10 @@ class Debate < ActiveRecord::Base
   visitable # Ahoy will automatically assign visit_id on create
 
   attr_accessor :link_required
+
+  def url
+    debate_path(self)
+  end
 
   def self.recommendations(user)
     tagged_with(user.interests, any: true)
@@ -144,7 +151,7 @@ class Debate < ActiveRecord::Base
 
   def self.debates_orders(user)
     orders = %w{hot_score confidence_score created_at relevance}
-    orders << "recommendations" if user.present?
-    orders
+    orders << "recommendations" if Setting['feature.user.recommendations_on_debates'] && user&.recommended_debates
+    return orders
   end
 end

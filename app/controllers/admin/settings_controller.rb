@@ -11,7 +11,7 @@ class Admin::SettingsController < Admin::BaseController
   def update
     @setting = Setting.find(params[:id])
     @setting.update(settings_params)
-    redirect_to admin_settings_path, notice: t("admin.settings.flash.updated")
+    redirect_to request.referer, notice: t("admin.settings.flash.updated")
   end
 
   def update_map

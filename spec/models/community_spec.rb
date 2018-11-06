@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Community, type: :model do
 
-  it "should be valid when create proposal" do
+  it "is valid when create proposal" do
     proposal = create(:proposal)
 
     expect(proposal.community).to be_valid
@@ -10,7 +10,7 @@ RSpec.describe Community, type: :model do
 
   describe "#participants" do
 
-    it "should return participants without duplicates" do
+    it "returns participants without duplicates" do
       proposal = create(:proposal)
       community = proposal.community
       user1 = create(:user)

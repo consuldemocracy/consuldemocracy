@@ -5,7 +5,7 @@
 // 03. Show participation
 // 04. List participation
 // 05. Featured
-// 06. Budget
+// 06. Budgets
 // 07. Proposals successful
 // 08. Polls
 // 09. Polls results and stats
@@ -217,7 +217,7 @@
   left: 0;
   line-height: $line-height;
   min-height: 100%;
-  padding: $line-height $line-height / 2;
+  padding: $line-height / 2;
   position: absolute;
   text-align: center;
   top: 0;
@@ -250,6 +250,7 @@
 .proposal-form,
 .budget-investment-form,
 .spending-proposal-form,
+.document-form,
 .topic-new,
 .topic-form {
 
@@ -300,6 +301,7 @@
 }
 
 .proposal-form,
+.document-form,
 .topic-form,
 .topic-new {
 
@@ -312,7 +314,12 @@
 .proposal-form,
 .proposal-edit,
 .polls-form,
-.poll-question-form {
+.poll-question-form,
+.legislation-process-new,
+.legislation-process-edit,
+.milestone-new,
+.milestone-edit,
+.image-form {
   @include direct-uploads;
 }
 
@@ -330,8 +337,10 @@
 .draft-panels,
 .debate-questions,
 .communities-show,
-.topic-show {
+.topic-show,
+.milestone-content {
 
+  h1,
   p {
     word-wrap: break-word;
   }
@@ -448,7 +457,6 @@
     line-height: rem-calc(30);
   }
 
-  .document-link,
   .video-link {
     background: $highlight-soft;
     border: 1px solid $highlight;
@@ -461,19 +469,16 @@
       word-wrap: break-word;
     }
 
-    [class^="icon-"] {
+    .icon-video {
+      color: #cc181e;
       display: inline-block;
       font-size: rem-calc(24);
       line-height: $line-height;
       vertical-align: middle;
     }
 
-    .icon-document {
-      color: #007bb7;
-    }
-
-    .icon-video {
-      color: #cc181e;
+    p {
+      margin-bottom: 0;
     }
   }
 
@@ -621,11 +626,39 @@
   }
 }
 
+.milestone-status {
+  background: $budget;
+  border-radius: rem-calc(4);
+  color: #fff;
+  display: inline-block;
+  margin-top: $line-height / 6;
+  padding: $line-height / 4 $line-height / 2;
+}
+
 .show-actions-menu {
 
   [class^="icon-"] {
     display: inline-block;
     vertical-align: middle;
+  }
+}
+
+.additional-content {
+
+  .tabs {
+    background: none;
+    border: 0;
+    margin-bottom: 0;
+
+    a {
+      background: none;
+    }
+  }
+
+  .filter-subnav {
+    background: $highlight;
+    margin-bottom: $line-height;
+    padding-top: $line-height / 4;
   }
 }
 
@@ -651,30 +684,8 @@
 }
 
 .budget-investments-list .budget-investment,
-.proposals-list .proposal {
-
-  .no-image {
-    background: $brand;
-  }
-}
-
-.budget-investments-list .budget-investment,
-.proposals-list .proposal {
-
-  @include breakpoint(small) {
-
-    .no-image {
-      width: 100%;
-      max-width: rem-calc(300);
-      margin: 0 auto;
-
-      &::before {
-        content: '';
-        display: block;
-        padding-top: 100%;
-      }
-    }
-  }
+.proposals-list .proposal,
+.legislation-proposals .proposal {
 
   @include breakpoint(medium) {
 
@@ -682,12 +693,6 @@
 
       &.with-image {
         padding: 0 $line-height / 2 0 0;
-      }
-
-      .no-image {
-        height: 100%;
-        min-height: rem-calc(245);
-        width: rem-calc(140);
       }
     }
 
@@ -752,6 +757,10 @@
         color: $text;
       }
     }
+
+    &.past-budgets {
+      min-height: 0;
+    }
   }
 
   .debate-content,
@@ -765,6 +774,11 @@
 
   .tags {
     display: block;
+    margin-bottom: 0;
+
+    a {
+      font-size: $tiny-font-size;
+    }
   }
 
   .icon-debates,
@@ -872,6 +886,13 @@
   }
 }
 
+.legislation-proposals {
+
+  .votes {
+    min-height: $line-height * 8;
+  }
+}
+
 .proposal-show .votes,
 .debate-show .votes {
   border: 0;
@@ -956,10 +977,10 @@
   }
 }
 
-.investment-project .supports .total-supports.no-button,
-.investment-project-show .supports .total-supports.no-button,
-.budget-investment .supports .total-supports.no-button,
-.budget-investment-show .supports .total-supports.no-button {
+.investment-project .no-button,
+.investment-project-show .no-button,
+.budget-investment .no-button,
+.budget-investment-show .no-button {
   display: block;
   margin-top: $line-height * 1.5;
 }
@@ -998,6 +1019,112 @@
   h1 {
     font-size: rem-calc(24);
     text-transform: uppercase;
+  }
+}
+
+.view-mode {
+
+  ul {
+    margin-bottom: 0;
+
+    li {
+      padding: $line-height / 4 0;
+      padding-left: $line-height;
+    }
+  }
+
+  .dropdown-pane {
+    width: auto;
+  }
+
+  .button {
+    background: #eee;
+    height: rem-calc(36);
+    margin-bottom: 0;
+    padding: $line-height / 4;
+    width: rem-calc(36);
+
+    &::before {
+      color: $text;
+      font-family: 'icons';
+    }
+  }
+
+  &.default {
+
+    .button {
+
+      &::before {
+        content: '\51';
+      }
+    }
+  }
+
+  &.minimal {
+
+    .button {
+
+      &::before {
+        content: '\22';
+      }
+    }
+  }
+
+  .view-list {
+    position: relative;
+
+    &::before {
+      content: '\22';
+      font-family: 'icons';
+      left: 0;
+      position: absolute;
+      top: 6px;
+    }
+  }
+
+  .view-card {
+    position: relative;
+
+    &::before {
+      content: '\51';
+      font-family: 'icons';
+      left: 0;
+      position: absolute;
+      top: 6px;
+    }
+  }
+
+  .is-active {
+    color: $brand;
+
+    &::after {
+      content: '\6c';
+      font-family: 'icons';
+      font-size: $tiny-font-size;
+    }
+  }
+}
+
+.debate,
+.proposal,
+.budget-investment {
+
+  &.minimal {
+
+    .panel,
+    .debate-content,
+    .proposal-content,
+    .budget-investment-content {
+      min-height: 0;
+    }
+
+    .panel h3 {
+      margin: 0 0 $line-height / 2;
+
+      @include breakpoint(medium) {
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -1113,31 +1240,48 @@
   }
 }
 
-// 06. Budget
-// ----------
+// 06. Budgets
+// -----------
 
-.expanded.budget {
-  background: $budget;
+.expanded {
 
-  h1,
-  h2,
-  p,
-  .back,
-  .icon-angle-left {
-    color: #fff;
-  }
+  &.budget {
+    background: $budget;
 
-  .button {
-    background: #fff;
-    color: $budget;
-  }
+    h1,
+    h2,
+    p,
+    a,
+    .back,
+    .icon-angle-left,
+    .description {
+      color: #fff;
+    }
 
-  .info {
-    background: #6a2a72;
+    a {
+      text-decoration: underline;
+    }
 
-    p {
-      margin-bottom: 0;
-      text-transform: uppercase;
+    .callout {
+
+      &.primary a {
+        color: $link;
+      }
+    }
+
+    .button {
+      background: #fff;
+      color: $budget;
+      text-decoration: none;
+    }
+
+    .info {
+      background: #6a2a72;
+
+      p {
+        margin-bottom: 0;
+        text-transform: uppercase;
+      }
     }
   }
 }
@@ -1150,17 +1294,23 @@
     min-height: $line-height * 10;
   }
 
-  h1 {
+  h2 {
     margin-bottom: 0;
   }
 
-  h1,
   h2,
+  h3,
   .back,
   .icon-angle-left,
   p,
   a {
     color: #fff;
+  }
+
+  .tagline {
+    display: block;
+    font-size: $small-font-size;
+    font-weight: normal;
   }
 
   .callout.warning {
@@ -1171,29 +1321,9 @@
     }
   }
 
-  &.welcome {
-    background: $budget image-url('spending_proposals_bg.jpg');
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    .spending-proposal-timeline {
-      padding-top: $line-height;
-    }
-
-    ul li {
-      margin-right: $line-height;
-      padding-top: $line-height / 2;
-
-      .icon-calendar {
-        display: none;
-      }
-    }
-  }
-
   a {
     text-decoration: underline;
- }
+  }
 
   .button {
     background: #fff;
@@ -1219,6 +1349,40 @@
 
     &.social-share-button-telegram:hover {
       color: #ce3e26;
+    }
+  }
+}
+
+.groups-and-headings {
+
+  .heading {
+    border: 1px solid $border;
+    border-radius: rem-calc(3);
+    display: inline-block;
+    margin-bottom: $line-height / 2;
+
+    &:hover {
+      background: $highlight;
+      text-decoration: none;
+    }
+
+    a {
+      display: block;
+      padding: $line-height / 2;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .heading-name {
+      padding: $line-height / 2;
+    }
+
+    span {
+      color: $text;
+      display: block;
+      font-size: $small-font-size;
     }
   }
 }
@@ -1391,7 +1555,7 @@
   padding: $line-height / 4;
 }
 
-.select-district .active a {
+.select-district .is-active a {
   background: #f9f9f9;
   border-radius: rem-calc(3);
   color: $budget;
@@ -1421,12 +1585,9 @@
     background-color: $budget;
     transition: height 0.3s;
 
-    h1 {
-      transition: font-size 0.3s;
-    }
-
     h2 {
-      margin-bottom: 0;
+      margin-bottom: $line-height / 2;
+      transition: font-size 0.3s;
     }
 
     &.is-fixed {
@@ -1437,10 +1598,84 @@
       top: 0;
       width: 100%;
 
-      h1 {
+      h2 {
         font-size: rem-calc(24);
         transition: font-size 0.3s;
       }
+    }
+  }
+}
+
+.budget-timeline {
+  border-left: 3px solid $budget;
+  margin-left: $line-height / 2;
+  padding: $line-height $line-height / 2;
+
+  h3,
+  span,
+  p {
+    padding: 0 $line-height / 4;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  span {
+    color: $text-medium;
+    display: block;
+    font-size: $small-font-size;
+    margin-bottom: $line-height / 2;
+  }
+
+  .phase {
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: $line-height * 1.5;
+    }
+
+    &::before {
+      background-color: #fff;
+      border: 4px solid $budget;
+      border-radius: 100%;
+      content: '';
+      height: 16px;
+      left: -22px;
+      position: absolute;
+      top: 6px;
+      width: 16px;
+      z-index: 99;
+    }
+
+    &.is-active {
+
+      h3 {
+        background: $budget;
+        color: #fff;
+        display: inline-block;
+      }
+
+      &::before {
+        background-color: $budget;
+      }
+    }
+  }
+}
+
+.budgets-stats {
+
+  .header {
+    background: $highlight;
+  }
+
+  .big-number-stat {
+    font-size: rem-calc(60);
+    font-weight: bold;
+    line-height: rem-calc(60);
+
+    &.budget {
+      color: $budget;
     }
   }
 }
@@ -1596,10 +1831,6 @@
 
 .orbit-slide {
   max-height: none !important;
-
-  img {
-    image-rendering: pixelated;
-  }
 }
 
 .orbit-caption {

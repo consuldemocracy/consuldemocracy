@@ -1,0 +1,111 @@
+sv:
+  verification:
+    alert:
+      lock: Du har nått det maximala antalet försök. Vänligen försök igen senare.
+    back: Gå tillbaka till mitt konto
+    email:
+      create:
+        alert:
+          failure: Det gick inte att skicka e-postmeddelandet till ditt konto
+        flash:
+          success: 'Vi har skickat ett bekräftelsemeddelande till ditt konto: %{email}'
+      show:
+        alert:
+          failure: Verifieringskoden är felaktig
+        flash:
+          success: Du är en verifierad användare
+    letter:
+      alert:
+        unconfirmed_code: Du har inte angett bekräftelsekoden ännu
+      create:
+        flash:
+          offices: Medborgarkontor
+          success_html: Tack för att du begärt din <b>säkerhetskod (krävs endast för slutomröstningar) </b>. Vi skickar koden inom några dagar till den adress som du registrerat. Kom ihåg att du även kan få din kod från något av %{offices}.
+      edit:
+        see_all: Visa förslag
+        title: Brev begärt
+      errors:
+        incorrect_code: Verifieringskoden är felaktig
+      new:
+        explanation: 'För att delta i slutomröstningen kan du:'
+        go_to_index: Visa förslag
+        office: Verifiera dig personligen på något %{office}
+        offices: Medborgarkontor
+        send_letter: Skicka ett brev till mig med koden
+        title: Grattis!
+        user_permission_info: Med ditt konto kan du...
+      update:
+        flash:
+          success: Koden är giltig. Ditt konto har verifierats
+    redirect_notices:
+      already_verified: Ditt konto är redan verifierat
+      email_already_sent: Vi har redan skickat ett e-postmeddelande med en bekräftelselänk. Om du inte hittar e-postmeddelandet, kan du begära ett nytt här
+    residence:
+      alert:
+        unconfirmed_residency: Du har inte bekräftat din adress
+      create:
+        flash:
+          success: Din adress är bekräftad
+      new:
+        accept_terms_text: Jag accepterar %{terms_url} för adressregistret
+        accept_terms_text_title: Jag accepterar villkoren för tillgång till adressregistret
+        date_of_birth: Födelsedatum
+        document_number: Identitetshandlingens nummer
+        document_number_help_title: Hjälp
+        document_number_help_text_html: '<strong>Legitimation</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Övrig identitetshandling</strong>: X1234567P'
+        document_type:
+          passport: Pass
+          residence_card: Övrig identitetshandling
+          spanish_id: Legitimation
+        document_type_label: Identitetshandling
+        error_not_allowed_age: Du är för ung för att delta
+        error_not_allowed_postal_code: Du måste vara en invånare i staden för att kunna verifieras.
+        error_verifying_census: Den adress du angett stämmer inte överens med adressregistret. Var vänlig kontrollera dina adressuppgifter genom att ringa kommunen eller besöka ett %{offices}.
+        error_verifying_census_offices: medborgarkontor
+        form_errors: gjorde att din adress inte kunde bekräftas
+        postal_code: Postnummer
+        postal_code_note: För att verifiera ditt konto måste du vara registrerad
+        terms: användarvillkoren
+        title: Bekräfta din adress
+        verify_residence: Bekräfta din adress
+    sms:
+      create:
+        flash:
+          success: Fyll i bekräftelsekoden som du fått med SMS
+      edit:
+        confirmation_code: Fyll i koden som skickats till din mobiltelefon
+        resend_sms_link: Klicka här för att skicka det igen
+        resend_sms_text: Fick du inte en text med din bekräftelsekod?
+        submit_button: Skicka
+        title: Bekräfta säkerhetskod
+      new:
+        phone: Ange ditt mobilnummer för att ta emot koden
+        phone_format_html: "<strong><em>(Till exempel: 0712345678 eller +46712345678)</em></strong>"
+        phone_note: Vi använder bara ditt telefonnummer till att skicka bekräftelsekoden, aldrig för att kontakta dig.
+        phone_placeholder: "Till exempel: 0712345678 eller +46712345678"
+        submit_button: Skicka
+        title: Skicka bekräftelsekod
+      update:
+        error: Ogiltig bekräftelsekod
+        flash:
+          level_three:
+            success: Giltig kod. Ditt konto har verifierats
+          level_two:
+            success: Giltig kod
+    step_1: Adress
+    step_2: Bekräftelsekod
+    step_3: Slutgiltig verifiering
+    user_permission_debates: Delta i debatter
+    user_permission_info: Genom att verifiera din information kommer du kunna...
+    user_permission_proposal: Skapa nya förslag
+    user_permission_support_proposal: Stödja förslag
+    user_permission_votes: Delta i slutomröstningar*
+    verified_user:
+      form:
+        submit_button: Skicka koden
+      show:
+        email_title: E-post
+        explanation: Vi har för närvarande följande information registrerad; var vänlig välj hur du vill få bekräftelsekoden.
+        phone_title: Telefonnummer
+        title: Aktuell information
+        use_another_phone: Ändra telefonnummer

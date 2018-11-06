@@ -1,5 +1,7 @@
 class Valuator < ActiveRecord::Base
   belongs_to :user, touch: true
+  belongs_to :valuator_group
+
   delegate :name, :email, :name_and_email, to: :user
 
   has_many :valuation_assignments, dependent: :destroy
@@ -16,4 +18,9 @@ class Valuator < ActiveRecord::Base
   def description_or_name
     description.present? ? description : name
   end
+
+  def assigned_investment_ids
+    investment_ids + [valuator_group.try(:investment_ids)].flatten
+  end
+
 end

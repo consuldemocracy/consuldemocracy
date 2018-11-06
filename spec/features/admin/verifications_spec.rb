@@ -17,8 +17,8 @@ feature 'Incomplete verifications' do
 
     expect(page).to have_content(incompletely_verified_user1.username)
     expect(page).to have_content(incompletely_verified_user2.username)
-    expect(page).to_not have_content(never_tried_to_verify_user.username)
-    expect(page).to_not have_content(verified_user.username)
+    expect(page).not_to have_content(never_tried_to_verify_user.username)
+    expect(page).not_to have_content(verified_user.username)
   end
 
   scenario 'Search' do
@@ -32,8 +32,8 @@ feature 'Incomplete verifications' do
     click_button "Search"
 
     expect(page).to have_content("Juan_anonymous")
-    expect(page).to_not have_content("Juan Carlos")
-    expect(page).to_not have_content("Isabel_anonymous")
+    expect(page).not_to have_content("Juan Carlos")
+    expect(page).not_to have_content("Isabel_anonymous")
   end
 
   scenario "Residence unverified" do

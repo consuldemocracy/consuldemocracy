@@ -10,12 +10,12 @@ module Ahoy
     # chart
     def add(name, collection)
       collections.push data:  collection, name: name
-      collection.each{ |k, v| add_key k }
+      collection.each_key{ |key| add_key key }
     end
 
     def build
       data = { x: [] }
-      keys.each do |k|
+      shared_keys.each do |k|
         # Add the key with a valid date format
         data[:x].push k.strftime("%Y-%m-%d")
 
@@ -36,12 +36,12 @@ module Ahoy
       @collections ||= []
     end
 
-    def keys
-      @keys ||= []
+    def shared_keys
+      @shared_keys ||= []
     end
 
     def add_key(key)
-      keys.push(key) unless keys.include? key
+      shared_keys.push(key) unless shared_keys.include? key
     end
 
   end

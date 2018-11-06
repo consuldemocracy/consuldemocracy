@@ -1,0 +1,49 @@
+<h2><%= t("admin.proposal_notifications.index.title") %></h2>
+<p><%= t("admin.shared.moderated_content") %></p>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.proposal_notifications.index" %>
+
+<% if @proposal_notifications.any? %>
+  <h3 class="margin"><%= page_entries_info @proposal_notifications %></h3>
+
+  <table>
+    <thead>
+      <th scope="col"><%= t("admin.shared.title") %></th>
+      <th scope="col" class="small-6"><%= t("admin.shared.description") %></th>
+      <th scope="col" class="small-4"><%= t("admin.shared.actions") %></th>
+    </thead>
+    <tbody>
+    <% @proposal_notifications.each do |proposal_notification| %>
+      <tr id="<%= dom_id(proposal_notification) %>">
+        <td class="align-top">
+          <strong><%= proposal_notification.title %></strong>
+        </td>
+        <td>
+          <div class="moderation-description">
+            <%= proposal_notification.body %>
+          </div>
+        </td>
+        <td class="align-top">
+          <%= link_to t("admin.actions.restore"),
+                restore_admin_proposal_notification_path(proposal_notification, request.query_parameters),
+                method: :put,
+                data: { confirm: t("admin.actions.confirm") },
+                class: "button hollow warning" %>
+          <% unless proposal_notification.confirmed_hide? %>
+            <%= link_to t("admin.actions.confirm_hide"),
+                  confirm_hide_admin_proposal_notification_path(proposal_notification, request.query_parameters),
+                  method: :put,
+                  class: "button" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @proposal_notifications %>
+<% else %>
+  <div class="callout primary margin">
+    <%= t("admin.proposal_notifications.index.no_hidden_proposals") %>
+  </div>
+<% end %>

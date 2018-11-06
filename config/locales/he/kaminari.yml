@@ -1,0 +1,18 @@
+he:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: אין כניסות
+      more_pages:
+        display_entries: מציג <b>%{first}&nbsp;-&nbsp;%{last}</b> מתוך<b>%{total}</b> %{entry_name}
+      one_page:
+        display_entries:
+          zero: "%{entry_name} לא נמצא"
+  views:
+    pagination:
+      current: את/ה נמצא/ת בדף
+      first: לראשון
+      last: לאחרון
+      next: הבא
+      previous: הקודם
+      truncate: "&hellip;"

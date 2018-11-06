@@ -149,15 +149,15 @@ feature 'Ballots' do
         end
 
         within("#budget_investment_#{investment.id}") do
-          find('.remove a').trigger('click')
+          find('.remove a').click
         end
 
         expect(page).to have_css("#amount-spent", text: "€0")
         expect(page).to have_css("#amount-available", text: "€1,000,000")
 
         within("#sidebar") do
-          expect(page).to_not have_content investment.title
-          expect(page).to_not have_content "€10,000"
+          expect(page).not_to have_content investment.title
+          expect(page).not_to have_content "€10,000"
         end
       end
 
@@ -204,8 +204,8 @@ feature 'Ballots' do
           expect(page).to have_content investment2.title
           expect(page).to have_content "€20,000"
 
-          expect(page).to_not have_content investment1.title
-          expect(page).to_not have_content "€10,000"
+          expect(page).not_to have_content investment1.title
+          expect(page).not_to have_content "€10,000"
         end
 
         visit budget_path(budget)
@@ -218,15 +218,15 @@ feature 'Ballots' do
           expect(page).to have_content investment1.title
           expect(page).to have_content "€10,000"
 
-          expect(page).to_not have_content investment2.title
-          expect(page).to_not have_content "€20,000"
+          expect(page).not_to have_content investment2.title
+          expect(page).not_to have_content "€20,000"
         end
 
         visit budget_path(budget)
         click_link "Districts"
         click_link "District 2"
 
-        expect(page).to have_content("You have active votes in another heading")
+        expect(page).to have_content("You have active votes in another heading: District 1")
       end
     end
 
@@ -261,7 +261,7 @@ feature 'Ballots' do
       click_link "States"
 
       expect(page).to have_content "California"
-      expect(page).to have_css("#budget_heading_#{california.id}.active")
+      expect(page).to have_css("#budget_heading_#{california.id}.is-active")
     end
 
     scenario 'Change my heading', :js do
@@ -274,7 +274,7 @@ feature 'Ballots' do
       visit budget_investments_path(budget, heading_id: california.id)
 
       within("#budget_investment_#{investment1.id}") do
-        find('.remove a').trigger('click')
+        find('.remove a').click
       end
 
       visit budget_investments_path(budget, heading_id: new_york.id)
@@ -283,8 +283,8 @@ feature 'Ballots' do
 
       visit budget_path(budget)
       click_link "States"
-      expect(page).to have_css("#budget_heading_#{new_york.id}.active")
-      expect(page).to_not have_css("#budget_heading_#{california.id}.active")
+      expect(page).to have_css("#budget_heading_#{new_york.id}.is-active")
+      expect(page).not_to have_css("#budget_heading_#{california.id}.is-active")
     end
 
     scenario 'View another heading' do
@@ -295,8 +295,8 @@ feature 'Ballots' do
 
       visit budget_investments_path(budget, heading_id: new_york.id)
 
-      expect(page).to_not have_css "#progressbar"
-      expect(page).to have_content "You have active votes in another heading:"
+      expect(page).not_to have_css "#progressbar"
+      expect(page).to have_content "You have active votes in another heading: California"
       expect(page).to have_link california.name, href: budget_investments_path(budget, heading_id: california.id)
     end
 
@@ -310,7 +310,7 @@ feature 'Ballots' do
       click_link group.name
       # No need to click on the heading name
       expect(page).to have_content("Investment projects with scope: #{heading.name}")
-      expect(current_path).to eq(budget_investments_path(budget))
+      expect(page).to have_current_path(budget_investments_path(budget), ignore_query: true)
     end
 
     scenario 'Displaying the correct group, heading, count & amount' do
@@ -375,10 +375,10 @@ feature 'Ballots' do
     expect(page).to have_content("You have voted one investment")
 
     within("#budget_investment_#{investment.id}") do
-      find(".remove-investment-project").trigger('click')
+      find('.icon-x').click
     end
 
-    expect(current_path).to eq(budget_ballot_path(budget))
+    expect(page).to have_current_path(budget_ballot_path(budget))
     expect(page).to have_content("You have voted 0 investments")
   end
 
@@ -404,15 +404,15 @@ feature 'Ballots' do
     end
 
     within("#sidebar #budget_investment_#{investment1.id}_sidebar") do
-      find(".remove-investment-project").trigger('click')
+      find('.icon-x').click
     end
 
     expect(page).to have_css("#amount-spent", text: "€20,000")
     expect(page).to have_css("#amount-available", text: "€980,000")
 
     within("#sidebar") do
-      expect(page).to_not have_content investment1.title
-      expect(page).to_not have_content "€10,000"
+      expect(page).not_to have_content investment1.title
+      expect(page).not_to have_content "€10,000"
 
       expect(page).to have_content investment2.title
       expect(page).to have_content "€20,000"
@@ -431,7 +431,7 @@ feature 'Ballots' do
     expect(page).to have_content("You have voted one investment")
 
     within("#budget_investment_#{investment.id}") do
-      find(".remove-investment-project").trigger('click')
+      find('.icon-x').click
     end
 
     expect(page).to have_content("You have voted 0 investments")
@@ -490,7 +490,7 @@ feature 'Ballots' do
       click_link states.name
       click_link new_york.name
 
-      expect(page).to_not have_css("#budget_investment_#{investment.id}")
+      expect(page).not_to have_css("#budget_investment_#{investment.id}")
     end
 
     scenario 'Investments with feasibility undecided are not shown' do
@@ -502,8 +502,8 @@ feature 'Ballots' do
       click_link new_york.name
 
       within("#budget-investments") do
-        expect(page).to_not have_css("div.ballot")
-        expect(page).to_not have_css("#budget_investment_#{investment.id}")
+        expect(page).not_to have_css("div.ballot")
+        expect(page).not_to have_css("#budget_investment_#{investment.id}")
       end
     end
 
@@ -550,14 +550,14 @@ feature 'Ballots' do
 
       within("#budget_investment_#{bi1.id}") do
         find("div.ballot").hover
-        expect(page).to_not have_content('You have already assigned the available budget')
+        expect(page).not_to have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: true)
       end
 
       add_to_ballot(bi1)
 
       within("#budget_investment_#{bi2.id}") do
-        find("div.ballot").trigger("mouseover")
+        find("div.ballot").hover
         expect(page).to have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: false)
       end
@@ -581,13 +581,13 @@ feature 'Ballots' do
       end
 
       within("#budget_investment_#{bi1.id}") do
-        find('.remove a').trigger('click')
+        find('.remove a').click
         expect(page).to have_css ".add a"
       end
 
       within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to_not have_content('You have already assigned the available budget')
+        expect(page).not_to have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: true)
       end
     end
@@ -609,14 +609,14 @@ feature 'Ballots' do
       end
 
       within("#budget_investment_#{bi1.id}_sidebar") do
-        find('.remove-investment-project').trigger('click')
+        find('.icon-x').click
       end
 
-      expect(page).to_not have_css "#budget_investment_#{bi1.id}_sidebar"
+      expect(page).not_to have_css "#budget_investment_#{bi1.id}_sidebar"
 
       within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to_not have_content('You have already assigned the available budget')
+        expect(page).not_to have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: true)
       end
     end
@@ -633,10 +633,8 @@ feature 'Ballots' do
 
       within("#budget_investment_#{investment1.id}") do
         expect(page).to have_selector('.in-favor a', visible: true)
-        find('.add a').trigger('click')
-
-        expect(page.status_code).to eq(200)
-        expect(page).to_not have_content "Remove"
+        find('.add a').click
+        expect(page).not_to have_content "Remove"
         expect(page).to have_selector('.participation-not-allowed', visible: false)
         find("div.ballot").hover
         expect(page).to have_selector('.participation-not-allowed', visible: true)
@@ -653,7 +651,7 @@ feature 'Ballots' do
 
       visit budget_investments_path(budget, heading_id: california.id)
       within("#budget_investment_#{bi1.id}") do
-        expect(page).to_not have_css("div.ballot")
+        expect(page).not_to have_css("div.ballot")
       end
     end
   end

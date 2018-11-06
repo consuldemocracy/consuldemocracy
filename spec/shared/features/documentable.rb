@@ -1,10 +1,13 @@
-shared_examples "documentable" do |documentable_factory_name, documentable_path, documentable_path_arguments|
+shared_examples "documentable" do |documentable_factory_name,
+                                   documentable_path,
+                                   documentable_path_arguments|
   include ActionView::Helpers
 
-  let!(:administrator)          { create(:user) }
-  let!(:user)                   { create(:user) }
-  let!(:arguments)              { {} }
-  let!(:documentable)           { create(documentable_factory_name, author: user) }
+  let(:administrator) { create(:user) }
+  let(:user)          { create(:user) }
+  let(:arguments)     { {} }
+  let(:documentable)  { create(documentable_factory_name, author: user) }
+  let!(:document)     { create(:document, documentable: documentable, user: documentable.author) }
 
   before do
     create(:administrator, user: administrator)
@@ -14,51 +17,24 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     end
   end
 
-  context "Show documents tab" do
-
-    let!(:document) { create(:document, documentable: documentable, user: documentable.author)}
-
-    scenario "Should not display maximum number of documents alert when reached for users without document creation permission" do
-      create_list(:document, 2, documentable: documentable)
-      visit send(documentable_path, arguments)
-
-      within "#tab-documents" do
-        expect(page).not_to have_content "You have reached the maximum number of documents allowed! You have to delete one before you can upload another."
-      end
-    end
-
-    scenario "Should display maximum number of documents alert when reached and when current user has document creation permission" do
-      login_as documentable.author
-      create_list(:document, 2, documentable: documentable)
-      visit send(documentable_path, arguments)
-
-      within "#tab-documents" do
-        expect(page).to have_content "You have reached the maximum number of documents allowed! You have to delete one before you can upload another."
-      end
-    end
+  context "Show documents" do
 
     scenario "Download action should be able to anyone" do
       visit send(documentable_path, arguments)
 
-      within "#tab-documents" do
-        expect(page).to have_link("Dowload file")
-      end
+      expect(page).to have_link("Download file")
     end
 
     scenario "Download file link should have blank target attribute" do
       visit send(documentable_path, arguments)
 
-      within "#tab-documents" do
-        expect(page).to have_selector("a[target=_blank]", text: "Dowload file")
-      end
+      expect(page).to have_selector("a[target=_blank]", text: "Download file")
     end
 
     scenario "Download file links should have rel attribute setted to no follow" do
       visit send(documentable_path, arguments)
 
-      within "#tab-documents" do
-        expect(page).to have_selector("a[rel=nofollow]", text: "Dowload file")
-      end
+      expect(page).to have_selector("a[rel=nofollow]", text: "Download file")
     end
 
     describe "Destroy action" do
@@ -66,45 +42,60 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       scenario "Should not be able when no user logged in" do
         visit send(documentable_path, arguments)
 
-        within "#tab-documents" do
-          expect(page).not_to have_link("Destroy")
-        end
+        expect(page).not_to have_link("Destroy document")
       end
 
       scenario "Should be able when documentable author is logged in" do
         login_as documentable.author
         visit send(documentable_path, arguments)
 
-        within "#tab-documents" do
-          expect(page).to have_link("Destroy")
-        end
+        expect(page).to have_link("Destroy document")
       end
 
-      scenario "Should be able when any administrator logged in" do
-        login_as administrator
+      scenario "Administrators cannot destroy documentables they have not authored" do
+        login_as(administrator)
         visit send(documentable_path, arguments)
 
-        within "#tab-documents" do
-          expect(page).to have_link("Destroy")
-        end
+        expect(page).not_to have_link("Destroy document")
       end
 
+      scenario "Users cannot destroy documentables they have not authored" do
+        login_as(create(:user))
+        visit send(documentable_path, arguments)
+
+        expect(page).not_to have_link("Destroy document")
+      end
+
+    end
+
+    describe "When allow attached documents setting is disabled" do
+      before do
+        Setting['feature.allow_attached_documents'] = false
+      end
+
+      after do
+        Setting['feature.allow_attached_documents'] = true
+      end
+
+      scenario "Documents list should not be available" do
+        login_as(create(:user))
+        visit send(documentable_path, arguments)
+
+        expect(page).not_to have_css("#documents")
+      end
     end
 
   end
 
   context "Destroy" do
 
-    let!(:document) { create(:document, documentable: documentable, user: documentable.author) }
-
-    scenario "Should show success notice after successfull document upload" do
+    scenario "Should show success notice after successful document upload" do
       login_as documentable.author
 
       visit send(documentable_path, arguments)
-      within "#tab-documents" do
-        within "#document_#{document.id}" do
-          click_on "Destroy"
-        end
+
+      within "#document_#{document.id}" do
+        click_on "Destroy document"
       end
 
       expect(page).to have_content "Document was deleted successfully."
@@ -114,23 +105,21 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       login_as documentable.author
 
       visit send(documentable_path, arguments)
-      within "#tab-documents" do
-        within "#document_#{document.id}" do
-          click_on "Destroy"
-        end
+
+      within "#document_#{document.id}" do
+        click_on "Destroy document"
       end
 
-      expect(page).to have_link "Documents (0)"
+      expect(page).to have_content "Documents (0)"
     end
 
     scenario "Should redirect to documentable path after successful deletion" do
       login_as documentable.author
 
       visit send(documentable_path, arguments)
-      within "#tab-documents" do
-        within "#document_#{document.id}" do
-          click_on "Destroy"
-        end
+
+      within "#document_#{document.id}" do
+        click_on "Destroy document"
       end
 
       within "##{dom_id(documentable)}" do

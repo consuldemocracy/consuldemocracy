@@ -1,0 +1,171 @@
+val:
+  pages:
+    conditions:
+      title: Termes i condicions d'us
+      subtitle: AVIS LEGAL SOBRE LES CONDICIONS D'US, PRIVACITAT I PROTECCIÓ DE LES DADES PERSONALS DEL PORTAL DE GOVERN OBERT
+      description: Pàgina d'informació sobre les condicions d'us, privacitat i protecció de dades personals.
+    general_terms: Condicions d'us
+    help:
+      title: "%{org} es una plataforma de participació ciutadana"
+      guide: "Esta guia explica per a qué serveixen i com funcionen cadascuna de les seccions de %{org}."
+      menu:
+        debates: "Debats"
+        proposals: "Propostes"
+        budgets: "Pressupostos participatius"
+        polls: "Votacions"
+        other: "Altra informació d'interés"
+        processes: "Processos legislatius"
+      debates:
+        title: "Debats"
+        description: "En la secció de %{link} pots exposar i compartir la teua opinió amb altres persones sobre temes que et preocupen relacionats en la teua ciutat. També es un espai on generar idees que a través de les altres seccions de %{org} duguen a actuacions concretes per part de l'Ajuntament."
+        link: "debats ciutadans"
+        feature_html: "Pots obrir debats, comentaris i avaluar-los amb els botons de <strong>Estic d'acord</strong> o <strong>No estic d'acord</strong>. Per a això has de %{link}."
+        feature_link: "registrarte en %{org}"
+        image_alt: "Botons per a valorar els debats"
+        figcaption: 'Botons "Estic d''acord" i "No estic d''acord" per a valorar els debats.'
+      proposals:
+        title: "Propostes"
+        description: "En la secció %{link} pots plantejar propostes per a que l'Ajuntament les duga a terme. Les propostes recaben avals, i si arriben als avals suficients es sotmeten a votació ciutadana. Les propostes aprovades en aquestes votacions ciutadanes son asumides per l'Ajuntament i es duen a terme."
+        link: "propostes ciutadanes"
+        image_alt: "Botó per a avalar una proposta"
+        figcaption_html: 'Botó per a "Avalar" una proposta.'
+      budgets:
+        title: "Pressupostos Participatius"
+        description: "La secció de %{link} serveix per a que la gent decidisca de manera directa a qué es estina una part del pressupost municipal."
+        link: "pressupostos participatius"
+        image_alt: "Diferents fases d'un pressupost participatiu"
+        figcaption_html: 'Fase d''"Avals" i fase de "Votació" dels pressupostos participatius.'
+      polls:
+        title: "Votacions"
+        description: "La secció de %{link} s'activa cada vegada que una proposta arriba a l'1% d'avals i passa a votació o quant l'Ajuntament proposa un tema per a que la gent decidisca sobre ell."
+        link: "votacions"
+        feature_1: "Per a participar en les votacions has de %{link} i verificar el teu compte."
+        feature_1_link: "registrar-te en %{org_name}"
+      processes:
+        title: "Processos legislatius"
+        description: "En la secció de %{link} la ciutadania participa en l'elaboració i modificació de normativa que afecta a la ciutat i pot donar la seua opinió sobre les polítiques municipals en debats previs."
+        link: "processos legislatius"
+      faq:
+        title: "Problemes tècnics?"
+        description: "Llig les preguntes freqüents i resol els teus dubtes."
+        button: "Veure les preguntes freqüents"
+        page:
+          title: "Preguntes Freqüents"
+          description: "Utilitza esta pàgina per a resoldre les Preguntes freqüents als usuaris del lloc."
+          faq_1_title: "Pregunta 1"
+          faq_1_description: "Aquest es un exemple per a la descripció de la pregunta u."
+      other:
+        title: "Altra informació d'interés"
+        how_to_use: "Utilitza %{org_name} en el teu municipi"
+      how_to_use:
+        text: |-
+          Utilíza-ho en el teu municipi lliurement o ajuda'ns a millorar-lo, es software lliure.
+          
+          Aquest Portal de Govern Obert usa la [aplicació CONSUL] (https://github.com/consul/consul 'github consul') que és software lliure, amb [llicencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), açò significa en paraules senzilles, que quansevol pot lliurement gastar el codi, copiar-lo, vorel en detall, modificar-lo, i redistribuirlo al mon amb les modificacions que vullga (mantenint el que altres puguen a la vegada fer el mateix). Perque creiem que la cultura es millor i més rica quant es libera.
+          
+          Si eres programador, pots vore el codi i ajudar-nos a millorar-lo en [aplicació CONSUL](https://github.com/consul/consul 'github consul').
+      titles:
+        how_to_use: Utilitza-ho en el teu municipi
+    privacy:
+      title: Política de privacitat
+      subtitle: INFORMACIÓ RELACIONADA AMB LA PRIVACITAT DE LES DADES
+      info_items:
+        - 
+          text: La navegació per la informació disponible en el Portal de Govern Obert es anònima.
+        - 
+          text: Per tal de poder utilitzar els serveis del Portal de Govern Obert, l'usuari ha de registrarse i proporcionar dades de caràcter personal d'acord amb les especificacions incloses en cada tipus de registre.
+        - 
+          text: 'Les dades oferides seran incorporades i processades per l''entitat local d''acord a les condicions establides en el següent arxiu:'
+        - 
+          subitems:
+            - 
+              field: 'Nom d''arxiu:'
+              description: NOM DE L'ARXIU
+            - 
+              field: 'Propòsit de l''arxiu:'
+            - 
+              field: 'Organització responsable de l''arxiu:'
+              description: ORGANITZACIÓ RESPONSABLE DE L'ARXIU
+        - 
+        - 
+    accessibility:
+      title: Accessibilitat
+      keyboard_shortcuts:
+        title: Atalls de teclat
+        navigation_table:
+          key_header: Clau
+          page_header: Pàgina
+          rows:
+            - 
+              key_column: 0
+              page_column: Inici
+            - 
+              key_column: 1
+              page_column: Debats
+            - 
+              key_column: 2
+              page_column: Propostes
+            - 
+              key_column: 3
+              page_column: Vots
+            - 
+              key_column: 4
+              page_column: Pressupostos participatius
+            - 
+              key_column: 5
+              page_column: Processos legislatius
+        browser_table:
+          browser_header: Navegador
+          key_header: Combinació de tecles
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + Atall i ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + Mayús + Atall
+            - 
+              browser_column: Chrome
+              key_column: ALT + atall (CTRL + ALT + atalls per a MAC)
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+      textsize:
+        title: Tamany del text
+        browser_settings_table:
+          browser_header: Navegador
+          action_header: Acció a realitzar
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Veure > Tamany del text
+            - 
+              browser_column: Firefox
+              action_column: Veure > Tamany
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+              action_column: Veure > escala
+        browser_shortcuts_table:
+          rows:
+            - 
+              description_column: Incrementa el tamany del text
+            - 
+              description_column: Reduïx el tamany del text
+    titles:
+      accessibility: Accessibilitat
+      conditions: Condicions d'us
+      help: "Qué es %{org}? - Participació ciutadana"
+      privacy: Política de privacitat
+    verify:
+      code: Codi que has rebut en la teua carta
+      email: Correu electrònic
+      info: 'Per a verificar el teu compte introdueix les dades amb les que et vas registrar:'
+      info_code: 'Ara introdueix el codi que has rebut en la teua carta:'
+      password: Contrasenya
+      submit: Verificar el meu compte
+      title: Verifica el teu compte

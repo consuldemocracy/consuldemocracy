@@ -1,0 +1,127 @@
+pt-BR:
+  valuation:
+    header:
+      title: Avaliação
+    menu:
+      title: Avaliação
+      budgets: Orçamentos participativos
+      spending_proposals: Propostas de gastos
+    budgets:
+      index:
+        title: Orçamentos participativos
+        filters:
+          current: Aberto
+          finished: Finalizado
+        table_name: Nome
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Projetos de investimento atribuídos com avaliação aberta
+        table_actions: Ações
+        evaluate: Avaliar
+    budget_investments:
+      index:
+        headings_filter_all: Todos os títulos
+        filters:
+          valuation_open: Aberto
+          valuating: Em avaliação
+          valuation_finished: Avaliação terminada
+        assigned_to: "Atribuído a %{valuator}"
+        title: Projetos de investimento
+        edit: Editar dossiê
+        valuators_assigned:
+          one: Avaliador designado
+          other: "%{count} Avaliador designado"
+        no_valuators_assigned: Não há avaliadores designados
+        table_id: ID
+        table_title: Título
+        table_heading_name: Nome do título
+        table_actions: Ações
+        no_investments: "Não há projetos de investimento."
+      show:
+        back: Voltar
+        title: Projeto de investimento
+        info: Informação do autor
+        by: Enviado por
+        sent: Enviado em
+        heading: Título
+        dossier: Dossiê
+        edit_dossier: Editar dossiê
+        price: Preço
+        price_first_year: Custo durante o primeiro ano
+        currency: "€"
+        feasibility: Viabilidade
+        feasible: Viável
+        unfeasible: Inviável
+        undefined: Indefinido
+        valuation_finished: Avaliação terminada
+        duration: Prazo
+        responsibles: Responsáveis
+        assigned_admin: Administrador designado
+        assigned_valuators: Avaliadores designados
+      edit:
+        dossier: Dossiê
+        price_html: "Preço (%{currency})"
+        price_first_year_html: "Custo durante o primeiro ano (%{currency})<small>(opcional, dados não públicos)</small>"
+        price_explanation_html: Explicação do preço
+        feasibility: Viabilidade
+        feasible: Viável
+        unfeasible: Não viável
+        undefined_feasible: Pendente
+        feasible_explanation_html: Explicação de viabilidade
+        valuation_finished: Avaliação terminada
+        valuation_finished_alert: "Tem certeza que deseja marcar este relatório como concluído? Se você fizer isso, o relatório não poderá mais ser modificado."
+        not_feasible_alert: "Um e-mail será enviado imediatamente para o autor do projeto com o relatório de inviabilidade."
+        duration_html: Prazo
+        save: Salvar alterações
+      notice:
+        valuate: "Dossiê atualizado"
+      valuation_comments: Comentários de avaliação
+      not_in_valuating_phase: Investimentos só podem ser avaliados quando o Orçamento estiver na fase de avaliação
+    spending_proposals:
+      index:
+        geozone_filter_all: Todas as zonas
+        filters:
+          valuation_open: Aberto
+          valuating: Em avaliação
+          valuation_finished: Avaliação terminada
+        title: Projetos de investimento para orçamento participativo
+        edit: Editar
+      show:
+        back: Voltar
+        heading: Projeto de investimento
+        info: Informação do autor
+        association_name: Associação
+        by: Enviado por
+        sent: Enviado em
+        geozone: Âmbito
+        dossier: Dossiê
+        edit_dossier: Editar dossiê
+        price: Preço
+        price_first_year: Custo durante o primeiro ano
+        currency: "€"
+        feasibility: Viabilidade
+        feasible: Viável
+        not_feasible: Não viável
+        undefined: Indefinido
+        valuation_finished: Avaliação terminada
+        time_scope: Prazo
+        internal_comments: Comentários internos
+        responsibles: Responsáveis
+        assigned_admin: Administrador designado
+        assigned_valuators: Avaliadores designados
+      edit:
+        dossier: Dossiê
+        price_html: "Preço (%{currency})"
+        price_first_year_html: "Custo durante o primeiro ano (%{currency})"
+        currency: "€"
+        price_explanation_html: Explicação do preço
+        feasibility: Viabilidade
+        feasible: Viável
+        not_feasible: Não viável
+        undefined_feasible: Pendente
+        feasible_explanation_html: Informe de viabilidade
+        valuation_finished: Avaliação terminada
+        time_scope_html: Prazo
+        internal_comments_html: Comentários internos
+        save: Salvar alterações
+      notice:
+        valuate: "Dossiê atualizado"

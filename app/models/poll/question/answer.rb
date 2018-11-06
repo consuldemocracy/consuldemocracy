@@ -1,6 +1,11 @@
 class Poll::Question::Answer < ActiveRecord::Base
   include Galleryable
   include Documentable
+
+  translates :title,       touch: true
+  translates :description, touch: true
+  include Globalizable
+
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
                accepted_content_types: [ "application/pdf" ]
@@ -9,13 +14,13 @@ class Poll::Question::Answer < ActiveRecord::Base
   belongs_to :question, class_name: 'Poll::Question', foreign_key: 'question_id'
   has_many :videos, class_name: 'Poll::Question::Answer::Video'
 
-  validates :title, presence: true
+  validates_translation :title, presence: true
   validates :given_order, presence: true, uniqueness: { scope: :question_id }
 
   before_validation :set_order, on: :create
 
   def description
-    super.try :html_safe
+    self[:description].try :html_safe
   end
 
   def self.order_answers(ordered_array)
@@ -37,18 +42,18 @@ class Poll::Question::Answer < ActiveRecord::Base
   end
 
   def most_voted?
-    self.most_voted
+    most_voted
   end
 
   def total_votes_percentage
-    question.answers_total_votes == 0 ? 0 : (total_votes * 100) / question.answers_total_votes
+    question.answers_total_votes.zero? ? 0 : (total_votes * 100) / question.answers_total_votes
   end
 
   def set_most_voted
     answers = question.question_answers
-                  .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
-    is_most_voted = !answers.any?{ |a| a > self.total_votes }
+                      .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
+    is_most_voted = answers.none?{ |a| a > total_votes }
 
-    self.update(most_voted: is_most_voted)
+    update(most_voted: is_most_voted)
   end
 end

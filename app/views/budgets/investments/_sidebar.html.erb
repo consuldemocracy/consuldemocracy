@@ -43,9 +43,7 @@
   <% elsif @assigned_heading.present? %>
     <p>
       <%= t("budgets.investments.index.sidebar.different_heading_assigned_html",
-              heading_link: link_to(
-                @assigned_heading.name,
-                budget_investments_path(@budget, heading_id: @assigned_heading.try(:id)))
+              heading_link: heading_link(@assigned_heading, @budget)
             ) %>
       <br>
       <small>

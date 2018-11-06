@@ -1,0 +1,111 @@
+id:
+  legislation:
+    annotations:
+      comments:
+        see_all: Lihat semua
+        see_complete: Lihat lengkap
+        comments_count:
+          other: "%{count} komentar"
+        replies_count:
+          other: "%{count} balas"
+        cancel: Batal
+        publish_comment: Mempublikasikan Komentar
+      form:
+        phase_not_open: Fase ini tidak terbuka
+        login_to_comment: Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar.
+        signin: Masuk
+        signup: Daftar
+      index:
+        title: Komentar
+        comments_about: Komentar tentang
+        see_in_context: Lihat dalam konteks
+        comments_count:
+          other: "%{count} komentar"
+      show:
+        title: Komentar
+      version_chooser:
+        seeing_version: Komentar untuk versi
+        see_text: Lihat teks konsep
+    draft_versions:
+      changes:
+        title: Perubahan
+        seeing_changelog_version: Ringkasan revisi perubahan
+        see_text: Lihat teks konsep
+      show:
+        loading_comments: Memuat komentar
+        seeing_version: Anda melihat versi konsep
+        select_draft_version: Pilih konsep
+        select_version_submit: lihat
+        updated_at: diperbarui pada %{date}
+        see_changes: lihat ringkasan perubahan
+        see_comments: Lihat semua komentar
+        text_toc: Daftar isi
+        text_body: Teks
+        text_comments: Komentar
+    processes:
+      proposals:
+        empty_proposals: Tidak ada proposal
+      debate:
+        empty_questions: Tidak ada pertanyaan
+        participate: Berpartisipasi dalam perdebatan
+      index:
+        filters:
+          open: Proses yang terbuka
+          next: Selanjutnya
+          past: Sebelumnya
+        no_open_processes: Tidak ada proses yang terbuka
+        no_next_processes: Tidak ada proses yang direncanakan
+        no_past_processes: Tidak ada masa lalu proses
+        section_header:
+          icon_alt: Undang-undang proses ikon
+          title: Undang-undang proses
+          help: Bantuan tentang undang-undang proses
+        section_footer:
+          title: Bantuan tentang undang-undang proses
+      phase_not_open:
+        not_open: Help about the legislation process
+      phase_empty:
+        empty: Ada yang belum diterbitkan
+      process:
+        see_latest_comments: Lihat komentar terbaru
+        see_latest_comments_title: Komentar pada proses ini
+      shared:
+        key_dates: Tanggal kunci
+        debate_dates: Perdebatan
+        draft_publication_date: Konsep publikasi
+        result_publication_date: Hasil akhir publikasi
+        proposals_dates: Proposal
+    questions:
+      comments:
+        comment_button: Mempublikasikan jawaban
+        comments_title: Buka jawaban
+        comments_closed: Fase tertutup
+        form:
+          leave_comment: Meninggalkan jawaban anda
+      question:
+        comments:
+          zero: Tidak ada komentar
+          other: "%{count} komentar"
+        debate: Debat
+      show:
+        answer_question: Kirim jawaban
+        next_question: Pertanyaan selanjutnya
+        first_question: Pertanyaan pertama
+        share: Berbagi
+        title: Kolaboratif dalam proses legislasi
+      participation:
+        phase_not_open: Fase ini tidak terbuka
+        organizations: Organisasi tidak diizinkan untuk berpartisipasi dalam perdebatan
+        signin: Masuk
+        signup: Daftar
+        unauthenticated: Anda harus %{signin} atau %{signup} untuk berpartisipasi.
+        verified_only: Hanya pengguna terverifikasi dapat berpartisipasi, %{verify_account}.
+        verify_account: memverifikasi akun anda
+        debate_phase_not_open: Debat tahap telah selesai dan jawaban tidak diterima lagi
+    shared:
+      share: Berbagi
+      share_comment: Komentar pada %{version_name} dari proses draft %{process_name}
+    proposals:
+      form:
+        tags_label: "Kategori"
+      not_verified: "Untuk memilih proposal %{verify_account}."

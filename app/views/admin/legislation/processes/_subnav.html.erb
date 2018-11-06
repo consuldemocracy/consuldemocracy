@@ -1,6 +1,6 @@
 <ul class="menu simple clear">
   <% if active == 'info' %>
-    <li class="active">
+    <li class="is-active">
       <h2><%= t("admin.legislation.processes.subnav.info") %></h2>
     </li>
   <% else %>
@@ -10,7 +10,7 @@
   <% end %>
 
   <% if active == 'questions' %>
-    <li class="active">
+    <li class="is-active">
       <h2><%= t("admin.legislation.processes.subnav.questions") %></h2>
     </li>
   <% else %>
@@ -20,7 +20,7 @@
   <% end %>
 
   <% if active == 'proposals' %>
-    <li class="active">
+    <li class="is-active">
       <h2><%= t("admin.legislation.processes.subnav.proposals") %></h2>
     </li>
   <% else %>
@@ -30,7 +30,7 @@
   <% end %>
 
   <% if active == 'draft_versions' %>
-    <li class="active">
+    <li class="is-active">
       <h2><%= t("admin.legislation.processes.subnav.draft_texts") %></h2>
     </li>
   <% else %>

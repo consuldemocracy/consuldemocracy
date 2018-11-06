@@ -1,0 +1,39 @@
+val:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} creat correctament."
+        debate: "Debat creat correctament."
+        direct_message: "Missatge enviat correctament."
+        poll: "Votació creada correctament."
+        poll_booth: "Urna creada correctament."
+        poll_question_answer: "Resposta creada correctament"
+        poll_question_answer_video: "Vídeo creat correctament"
+        poll_question_answer_image: "Imatge pujada correctament"
+        proposal: "Proposta creada correctament."
+        proposal_notification: "Missatge enviat correctament."
+        spending_proposal: "Proposta d'inversió creada correctament. Pots accedir a ella desde %{activity}"
+        budget_investment: "Proposta d'inversió creada correctament."
+        signature_sheet: "Full de firmes creat correctament"
+        topic: "Tema creat correctament."
+        valuator_group: "Grup d'avaluadors creat correctament"
+      save_changes:
+        notice: Canvis guardats
+      update:
+        notice: "%{resource_name} actualitzat correctament."
+        debate: "Debat actualitzat correctament."
+        poll: "Votació actualitzada correctament."
+        poll_booth: "Urna actualitzada correctament."
+        proposal: "Proposta actualitzada correctament."
+        spending_proposal: "Proposta d'inversió actualitzada correctament."
+        budget_investment: "Proposta d'inversió actualitzada correctament."
+        topic: "Tema actualitzat correctament."
+        valuator_group: "Grup d'avaluadors actualitzat correctament"
+        translation: "Traducció actualitzada amb èxit"
+      destroy:
+        spending_proposal: "Proposta d'inversió eliminada."
+        budget_investment: "Proposta d'inversió eliminada correctament."
+        error: "No es va poder eliminar"
+        topic: "Tema eliminat."
+        poll_question_answer_video: "Vídeo de resposta eliminat."
+        valuator_group: "Grup d'avaluadors esborrat correctament"

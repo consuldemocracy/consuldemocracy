@@ -5,32 +5,57 @@
         <th><%= t("admin.milestones.index.table_id") %></th>
         <th><%= t("admin.milestones.index.table_title") %></th>
         <th><%= t("admin.milestones.index.table_description") %></th>
+        <th><%= t("admin.milestones.index.table_publication_date") %></th>
+        <th><%= t("admin.milestones.index.table_status") %></th>
+        <th><%= t("admin.milestones.index.image") %></th>
+        <th><%= t("admin.milestones.index.documents") %></th>
         <th><%= t("admin.milestones.index.table_actions") %></th>
       </tr>
     </thead>
     <tbody>
-      <% @investment.milestones.each do |milestone| %>
+      <% @investment.milestones.order_by_publication_date.each do |milestone| %>
         <tr id="<%= dom_id(milestone) %>" class="milestone">
+          <td class="text-center"><%= milestone.id %></td>
           <td>
-            <%= milestone.id %>
+            <%= link_to milestone.title,
+                        edit_admin_budget_budget_investment_budget_investment_milestone_path(@investment.budget,
+                                                                                             @investment,
+                                                                                             milestone) %>
           </td>
-          <td>
-            <%= link_to milestone.title, edit_admin_budget_budget_investment_budget_investment_milestone_path(@investment.budget, @investment, milestone) %>
+          <td class="small small-5"><%= milestone.description %></td>
+          <td class="small">
+            <%= l(milestone.publication_date.to_date) if milestone.publication_date.present? %>
           </td>
           <td class="small">
-            <%= milestone.description %>
+            <%= milestone.status.present? ? milestone.status.name : '' %>
           </td>
-          <td>
-            <%= link_to t("admin.milestones.index.delete"), admin_budget_budget_investment_budget_investment_milestone_path(@investment.budget, @investment, milestone),
+          <td class="small">
+            <%= link_to t("admin.milestones.index.show_image"),
+                        milestone.image_url(:large),
+                        target: :_blank if milestone.image.present? %>
+          </td>
+          <td class="small">
+            <% if milestone.documents.present? %>
+              <% milestone.documents.each do |document| %>
+                <%= link_to document.title,
+                              document.attachment.url,
+                              target: "_blank",
+                              rel: "nofollow" %><br>
+              <% end %>
+            <% end %>
+          </td>
+          <td class="small-2">
+            <%= link_to t("admin.milestones.index.delete"),
+                        admin_budget_budget_investment_budget_investment_milestone_path(@investment.budget,
+                                                                                        @investment,
+                                                                                        milestone),
                         method: :delete,
-                        class: 'button hollow alert expanded' %>
+                        class: "button hollow alert expanded" %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% else %>
-  <p>
-    <%= t('admin.milestones.index.no_milestones') %>
-  </p>
+  <p><%= t("admin.milestones.index.no_milestones") %></p>
 <% end %>

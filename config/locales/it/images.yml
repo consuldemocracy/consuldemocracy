@@ -1,0 +1,21 @@
+it:
+  images:
+    remove_image: Rimuovere immagine
+    form:
+      title: Immagine descrittiva
+      title_placeholder: Aggiungi un titolo descrittivo per l'immagine
+      attachment_label: Scegli immagine
+      delete_button: Rimuovi immagine
+      note: "È possibile caricare una singola immagine delle seguenti tipologie: %{accepted_content_types}, fino a %{max_file_size} MB."
+      add_new_image: Aggiungi immagine
+      admin_title: "Immagine"
+      admin_alt_text: "Testo alternativo per l'immagine"
+    actions:
+      destroy:
+        notice: Immagine cancellata con successo.
+        alert: Non è possibile distruggere l’immagine.
+        confirm: Sei sicuro di voler cancellare l’immagine? Questa azione non può essere annullata!
+    errors:
+      messages:
+        in_between: deve essere tra %{min} e %{max}
+        wrong_content_type: il contenuto %{content_type} non corrisponde ad alcuna delle tipologie accettate %{accepted_content_types}

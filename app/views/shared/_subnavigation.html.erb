@@ -1,5 +1,7 @@
 <div class="small-12 medium-9 column">
   <ul>
+    <%= raw content_block("subnavigation_left", I18n.locale) %>
+
     <% if feature?(:debates) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.debates"),
@@ -9,13 +11,15 @@
                                 title: t("shared.go_to_page") + t("layouts.header.debates") %>
       </li>
     <% end %>
-    <li>
-      <%= layout_menu_link_to t("layouts.header.proposals"),
+    <% if feature?(:proposals) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.proposals"),
                                 proposals_path,
-                                controller_name == 'proposals' && !controller.class.parent == Legislation,
+                                controller.class == ProposalsController,
                                 accesskey: "2",
                                 title: t("shared.go_to_page") + t("layouts.header.proposals") %>
-    </li>
+      </li>
+    <% end %>
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
@@ -30,7 +34,7 @@
         <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
                                 legislation_processes_path,
                                 controller.class.parent == Legislation,
-                                accesskey: "l" %>
+                                accesskey: "4" %>
       </li>
     <% end %>
     <% if feature?(:spending_proposals) %>
@@ -46,16 +50,20 @@
         <%= layout_menu_link_to t("layouts.header.budgets"),
                                   budgets_path,
                                   controller_name == "budgets" || controller_name == "investments",
-                                  accesskey: "4",
+                                  accesskey: "5",
                                   title: t("shared.go_to_page") + t("layouts.header.budgets") %>
       </li>
     <% end %>
-    <li>
-      <%= link_to t("layouts.header.more_info"),
-                    more_info_path,
-                    accesskey: "5",
-                    class: ("active" if current_page?(more_info_path)),
-                    title: t("shared.go_to_page") + t("layouts.header.more_info") %>
-    </li>
+    <% if feature?(:help_page) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.help"),
+                                help_path,
+                                current_page?(help_path),
+                                accesskey: "6",
+                                title: t("shared.go_to_page") + t("layouts.header.help") %>
+      </li>
+    <% end %>
+
+    <%= raw content_block("subnavigation_right", I18n.locale) %>
   </ul>
 </div>

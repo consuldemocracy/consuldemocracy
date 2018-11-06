@@ -8,4 +8,21 @@ namespace :settings do
     per_page_code_setting.destroy if per_page_code_setting.present?
   end
 
+  desc "Create new Attached Documents feature setting"
+  task create_attached_documents_setting: :environment do
+    Setting['feature.allow_attached_documents'] = true
+  end
+
+  desc "Enable recommendations settings"
+  task enable_recommendations: :environment do
+    Setting['feature.user.recommendations'] = true
+    Setting['feature.user.recommendations_on_debates'] = true
+    Setting['feature.user.recommendations_on_proposals'] = true
+  end
+
+  desc "Enable Help page"
+  task enable_help_page: :environment do
+    Setting['feature.help_page'] = true
+  end
+
 end

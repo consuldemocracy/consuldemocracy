@@ -40,6 +40,7 @@ class Management::DocumentVerificationsController < Management::BaseController
     def set_document
       session[:document_type] = params[:document_verification][:document_type]
       session[:document_number] = params[:document_verification][:document_number]
+      clear_password
     end
 
     def clean_document_number

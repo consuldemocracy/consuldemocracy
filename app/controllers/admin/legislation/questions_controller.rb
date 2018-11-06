@@ -1,4 +1,6 @@
 class Admin::Legislation::QuestionsController < Admin::Legislation::BaseController
+  include Translatable
+
   load_and_authorize_resource :process, class: "Legislation::Process"
   load_and_authorize_resource :question, class: "Legislation::Question", through: :process
 
@@ -7,13 +9,12 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
   end
 
   def new
-    @question.question_options.build
   end
 
   def create
     @question.author = current_user
     if @question.save
-      notice = t('admin.legislation.questions.create.notice', link: legislation_process_question_path(@process, @question).html_safe)
+      notice = t('admin.legislation.questions.create.notice', link: question_path)
       redirect_to admin_legislation_process_questions_path, notice: notice
     else
       flash.now[:error] = t('admin.legislation.questions.create.error')
@@ -23,7 +24,7 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
 
   def update
     if @question.update(question_params)
-      notice = t('admin.legislation.questions.update.notice', link: legislation_process_question_path(@process, @question).html_safe)
+      notice = t('admin.legislation.questions.update.notice', link: question_path)
       redirect_to edit_admin_legislation_process_question_path(@process, @question), notice: notice
     else
       flash.now[:error] = t('admin.legislation.questions.update.error')
@@ -33,15 +34,25 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
 
   def destroy
     @question.destroy
-    redirect_to admin_legislation_process_questions_path, notice: t('admin.legislation.questions.destroy.notice')
+    notice = t('admin.legislation.questions.destroy.notice')
+    redirect_to admin_legislation_process_questions_path, notice: notice
   end
 
   private
 
+    def question_path
+      legislation_process_question_path(@process, @question).html_safe
+    end
+
     def question_params
       params.require(:legislation_question).permit(
-        :title,
-        question_options_attributes: [:id, :value, :_destroy]
+        translation_params(::Legislation::Question),
+        question_options_attributes: [:id, :_destroy,
+                                      translation_params(::Legislation::QuestionOption)]
       )
+    end
+
+    def resource
+      @question || ::Legislation::Question.find(params[:id])
     end
 end

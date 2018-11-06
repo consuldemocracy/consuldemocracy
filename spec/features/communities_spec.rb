@@ -24,16 +24,6 @@ feature 'Communities' do
       expect(page).to have_content proposal.title
       expect(page).to have_content "Participate in the community of this proposal"
       expect(page).to have_link("Create topic", href: new_community_topic_path(community))
-      expect(page).not_to have_selector(".button.disabled", text: "Create topic")
-    end
-
-    scenario 'Should display disabled create topic button when user is not logged' do
-      proposal = create(:proposal)
-      community = proposal.community
-
-      visit community_path(community)
-
-      expect(page).to have_selector(".button.disabled", text: "Create topic")
     end
 
     scenario 'Should display without_topics_text and participants when there are not topics' do
@@ -100,7 +90,7 @@ feature 'Communities' do
       expect(topic2.title).to appear_before(topic1.title)
     end
 
-    scenario 'Should display topic edit button when author is logged' do
+    scenario 'Should display topic edit button on topic show when author is logged' do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -108,15 +98,11 @@ feature 'Communities' do
       topic2 = create(:topic, community: community)
       login_as(user)
 
-      visit community_path(community)
+      visit community_topic_path(community, topic1)
+      expect(page).to have_link("Edit topic", href: edit_community_topic_path(community, topic1))
 
-      within "#topic_#{topic1.id}" do
-        expect(page).to have_link("Edit", href: edit_community_topic_path(community, topic1))
-      end
-
-      within "#topic_#{topic2.id}" do
-        expect(page).not_to have_link("Edit", href: edit_community_topic_path(community, topic2))
-      end
+      visit community_topic_path(community, topic2)
+      expect(page).not_to have_link("Edit topic", href: edit_community_topic_path(community, topic2))
     end
 
     scenario 'Should display participant when there is topics' do
@@ -156,9 +142,17 @@ feature 'Communities' do
 
       visit community_path(community)
 
-      expect(current_path).to eq(root_path)
+      expect(page).to have_current_path(root_path)
     end
 
+    scenario "Accesing a community without associated communitable" do
+      proposal = create(:proposal)
+      community = proposal.community
+      proposal.really_destroy!
+      community.reload
+
+      expect { visit community_path(community) }.to raise_error(ActionController::RoutingError)
+    end
   end
 
 end

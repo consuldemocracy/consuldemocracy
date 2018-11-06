@@ -51,19 +51,25 @@ class User < ActiveRecord::Base
   attr_accessor :use_redeemable_code
   attr_accessor :login
 
-  scope :administrators, -> { joins(:administrators) }
+  scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :officials,      -> { where("official_level > 0") }
   scope :newsletter,     -> { where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
-  scope :by_document,    ->(document_type, document_number) { where(document_type: document_type, document_number: document_number) }
+  scope :by_document,    ->(document_type, document_number) do
+    where(document_type: document_type, document_number: document_number)
+  end
   scope :email_digest,   -> { where(email_digest: true) }
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :public_for_api, -> { all }
   scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).uniq }
   scope :by_authors,     ->(author_ids) { where("users.id IN (?)", author_ids) }
+  scope :by_username_email_or_document_number, ->(search_string) do
+    string = "%#{search_string}%"
+    where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", string, string, string)
+  end
 
   before_validation :clean_document_number
 
@@ -101,7 +107,6 @@ class User < ActiveRecord::Base
     voted = votes.for_legislation_proposals(proposals)
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
-
 
   def spending_proposal_votes(spending_proposals)
     voted = votes.for_spending_proposals(spending_proposals)
@@ -177,12 +182,16 @@ class User < ActiveRecord::Base
     debates_ids = Debate.where(author_id: id).pluck(:id)
     comments_ids = Comment.where(user_id: id).pluck(:id)
     proposal_ids = Proposal.where(author_id: id).pluck(:id)
+    investment_ids = Budget::Investment.where(author_id: id).pluck(:id)
+    proposal_notification_ids = ProposalNotification.where(author_id: id).pluck(:id)
 
     hide
 
     Debate.hide_all debates_ids
     Comment.hide_all comments_ids
     Proposal.hide_all proposal_ids
+    Budget::Investment.hide_all investment_ids
+    ProposalNotification.hide_all proposal_notification_ids
   end
 
   def erase(erase_reason = nil)
@@ -208,7 +217,8 @@ class User < ActiveRecord::Base
   end
 
   def take_votes_if_erased_document(document_number, document_type)
-    erased_user = User.erased.where(document_number: document_number).where(document_type: document_type).first
+    erased_user = User.erased.where(document_number: document_number)
+                             .where(document_type: document_type).first
     if erased_user.present?
       take_votes_from(erased_user)
       erased_user.update(document_number: nil, document_type: nil)
@@ -220,7 +230,8 @@ class User < ActiveRecord::Base
     Poll::Voter.where(user_id: other_user.id).update_all(user_id: id)
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
     Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
-    update(former_users_data_log: "#{former_users_data_log} | id: #{other_user.id} - #{Time.current.strftime('%Y-%m-%d %H:%M:%S')}")
+    data_log = "id: #{other_user.id} - #{Time.current.strftime('%Y-%m-%d %H:%M:%S')}"
+    update(former_users_data_log: "#{former_users_data_log} | #{data_log}")
   end
 
   def locked?
@@ -240,7 +251,8 @@ class User < ActiveRecord::Base
   end
 
   def show_welcome_screen?
-    sign_in_count == 1 && unverified? && !organization && !administrator?
+    verification = Setting["feature.user.skip_verification"].present? ? true : unverified?
+    sign_in_count == 1 && verification && !organization && !administrator?
   end
 
   def password_required?
@@ -317,14 +329,20 @@ class User < ActiveRecord::Base
     where(conditions.to_hash).where(["username = ?", login]).first
   end
 
+  def self.find_by_manager_login(manager_login)
+    find_by(id: manager_login.split("_").last)
+  end
+
   def interests
-    follows.map{|follow| follow.followable.tags.map(&:name)}.flatten.compact.uniq
+    followables = follows.map(&:followable)
+    followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
   end
 
   private
 
     def clean_document_number
-      self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase if document_number.present?
+      return unless document_number.present?
+      self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
     end
 
     def validate_username_length

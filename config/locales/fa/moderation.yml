@@ -1,0 +1,77 @@
+fa:
+  moderation:
+    comments:
+      index:
+        block_authors: بلوک نویسنده
+        confirm: آیا مطمئن هستید؟
+        filter: فیلتر
+        filters:
+          all: همه
+          pending_flag_review: انتظار
+          with_ignored_flag: علامتگذاری به عنوان مشاهده شده
+        headers:
+          comment: توضیح
+          moderate: سردبیر
+        hide_comments: پنهان کردن نظرات
+        ignore_flags: علامتگذاری به عنوان مشاهده شده
+        order: سفارش
+        orders:
+          flags: بیشتر پرچم گذاری شده 
+          newest: جدیدترین
+        title: توضیحات
+    dashboard:
+      index:
+        title: سردبیر
+    debates:
+      index:
+        block_authors: انسداد  نویسنده
+        confirm: آیا مطمئن هستید؟
+        filter: فیلتر
+        filters:
+          all: همه
+          pending_flag_review: انتظار
+          with_ignored_flag: علامتگذاری به عنوان مشاهده شده
+        headers:
+          debate: بحث
+          moderate: سردبیر
+        hide_debates: پنهان کردن بحث
+        ignore_flags: علامتگذاری به عنوان مشاهده شده
+        order: سفارش
+        orders:
+          created_at: جدیدترین
+          flags: بیشتر پرچم گذاری شده 
+        title: مباحثه
+    header:
+      title: سردبیر
+    menu:
+      flagged_comments: توضیحات
+      flagged_debates: مباحثه
+      proposals: طرح های پیشنهادی
+      users: انسداد کاربران
+    proposals:
+      index:
+        block_authors: انسداد  نویسنده
+        confirm: آیا مطمئن هستید؟
+        filter: فیلتر
+        filters:
+          all: همه
+          pending_flag_review: بررسی انتظار
+          with_ignored_flag: علامتگذاری به عنوان مشاهده شده
+        headers:
+          moderate: سردبیر
+          proposal: طرح های پیشنهادی
+        hide_proposals: پنهان کردن پیشنهادات
+        ignore_flags: علامتگذاری به عنوان مشاهده شده
+        order: "سفارش توسط\n"
+        orders:
+          created_at: جدید ترین
+          flags: بیشتر پرچم گذاری شده 
+        title: طرح های پیشنهادی
+    users:
+      index:
+        hidden: مسدود شده
+        hide: مسدود کردن
+        search: جستجو
+        search_placeholder: ایمیل یا نام کاربر
+        title: انسداد کاربران
+      notice_hide: کاربر مسدود شده. همه بحث و نظرات این کاربر  پنهان شده اند.

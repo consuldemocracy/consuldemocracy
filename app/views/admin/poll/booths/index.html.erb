@@ -1,7 +1,7 @@
 <h2 class="inline-block"><%= t("admin.booths.index.title") %></h2>
 
 <% if controller_name == "booths" && action_name != "available" %>
-  <%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path, class: "button success float-right" %>
+  <%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path, class: "button float-right" %>
 <% end %>
 
 <% if @booths.empty? %>

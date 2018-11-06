@@ -1,0 +1,111 @@
+zh-TW:
+  verification:
+    alert:
+      lock: 您已達到最大的嘗試次數。 請稍後再試。
+    back: 返回我的帳戶
+    email:
+      create:
+        alert:
+          failure: 向您的帳戶發送電郵時出現了問題
+        flash:
+          success: '我們已向您的帳戶發送了一封確認電郵：%{email}'
+      show:
+        alert:
+          failure: 驗證代碼不正確
+        flash:
+          success: 您是已核實的用戶
+    letter:
+      alert:
+        unconfirmed_code: 您尚未輸入確認代碼
+      create:
+        flash:
+          offices: 公民支援辦公室
+          success_html: 感謝您申請<b>最高安全代碼(僅用於最終投票)</b>。 過幾天，我們會將它發送到我們數據存檔中的地址。 請記住，如果您願意，可以到任何%{offices} 領取您的代碼。
+      edit:
+        see_all: 查看建議
+        title: 要求的信函
+      errors:
+        incorrect_code: 驗證代碼不正確
+      new:
+        explanation: '要參與最終投票，您可以：'
+        go_to_index: 查看建議
+        office: 在任何%{office} 中核實
+        offices: 公民支援辦公室
+        send_letter: 給我發一封帶代碼的信
+        title: 恭喜！
+        user_permission_info: 您可以用您的帳戶來...
+      update:
+        flash:
+          success: 代碼正確。 您的帳戶現已被核實
+    redirect_notices:
+      already_verified: 您的帳戶已被核實
+      email_already_sent: 我們已經發送了一封包含確認鏈接的電郵。 如果您找不到該電郵，可以在這裡申請重新發送
+    residence:
+      alert:
+        unconfirmed_residency: 您尚未確認您的居住地
+      create:
+        flash:
+          success: 居住地已核實
+      new:
+        accept_terms_text: 我接受人口普查的%{terms_url}
+        accept_terms_text_title: 我接受訪問人口普查的條款和條件
+        date_of_birth: 出生日期
+        document_number: 文檔編號
+        document_number_help_title: 說明
+        document_number_help_text_html: '<strong>DNI</strong>：12345678A <br> <strong>護照</strong>：AAA000001 <br> <strong>居留證</strong>：X1234567P'
+        document_type:
+          passport: 護照
+          residence_card: 居留證
+          spanish_id: DNI
+        document_type_label: 文檔類型
+        error_not_allowed_age: 您未到參與所需的年齡
+        error_not_allowed_postal_code: 為了要被核實，您必須註冊。
+        error_verifying_census: 人口普查不能核實您的信息。 請致電市議會或訪問%{offices}，確認您的人口普查詳細資料是正確的。
+        error_verifying_census_offices: 公民支援辦公室
+        form_errors: 阻止了您居住地的核實
+        postal_code: 郵政編碼
+        postal_code_note: 要核實您的帳戶，您必須註冊
+        terms: 訪問的條款和條件
+        title: 核實居住地
+        verify_residence: 核實居住地
+    sms:
+      create:
+        flash:
+          success: 輸入通過短信發送給您的確認代碼
+      edit:
+        confirmation_code: 輸入您在手機上收到的代碼
+        resend_sms_link: 點擊這裡再次發送
+        resend_sms_text: 沒有收到包含確認代碼的短信？
+        submit_button: 發送
+        title: 安全代碼確認
+      new:
+        phone: 輸入您的手機號碼以接收代碼
+        phone_format_html: "<strong><em>(例如：612345678 或 +34612345678)</em></strong>"
+        phone_note: 我們只使用您的手機向您發送代碼，絕不與您聯繫。
+        phone_placeholder: "例如：612345678 或 +34612345678"
+        submit_button: 發送
+        title: 發送確認代碼
+      update:
+        error: 確認代碼不正確
+        flash:
+          level_three:
+            success: 代碼正確。 您的帳戶現已被核實
+          level_two:
+            success: 代碼正確
+    step_1: 居住地
+    step_2: 確認代碼
+    step_3: 最終核實
+    user_permission_debates: 參與辯論
+    user_permission_info: 您的信息一經核實，您便能夠...
+    user_permission_proposal: 創建新建議
+    user_permission_support_proposal: 支持建議*
+    user_permission_votes: 參與最終投票*
+    verified_user:
+      form:
+        submit_button: 發送代碼
+      show:
+        email_title: 電郵
+        explanation: 我們目前在登記冊中有以下詳細信息；請選擇要發送確認代碼的方法。
+        phone_title: 電話號碼
+        title: 可用資訊
+        use_another_phone: 使用其他電話

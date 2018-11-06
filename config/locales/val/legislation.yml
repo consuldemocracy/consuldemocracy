@@ -1,0 +1,121 @@
+val:
+  legislation:
+    annotations:
+      comments:
+        see_all: Vore tots
+        see_complete: Vore complet
+        comments_count:
+          one: "%{count} comentari"
+          other: "%{count} comentaris"
+        replies_count:
+          one: "%{count} resposta"
+          other: "%{count} respostes"
+        cancel: Cancel·lar
+        publish_comment: Publicar Comentari
+      form:
+        phase_not_open: Esta fase del procés no esta oberta
+        login_to_comment: Necessites %{signin} o %{signup} per a comentar.
+        signin: Iniciar sessió
+        signup: Registrar-te
+      index:
+        title: Comentaris
+        comments_about: Comentaris sobre
+        see_in_context: Vore en context
+        comments_count:
+          one: "%{count} comentari"
+          other: "%{count} comentaris"
+      show:
+        title: Comentari
+      version_chooser:
+        seeing_version: Comentaris per a la versió
+        see_text: Vore esborrany del text
+    draft_versions:
+      changes:
+        title: Canvis
+        seeing_changelog_version: Resum de canvis de la revisió
+        see_text: Vore esborrany del text
+      show:
+        loading_comments: Carregant comentaris
+        seeing_version: Estas veient l'esborrany
+        select_draft_version: Seleccionar esborrany
+        select_version_submit: vore
+        updated_at: actualitzada el %{date}
+        see_changes: vore resumen de canvis
+        see_comments: Vore tots els comentaris
+        text_toc: Index
+        text_body: Text
+        text_comments: Comentaris
+    processes:
+      header:
+        additional_info: Informació adicional
+        description: Descripció
+        more_info: Més informació i context
+      proposals:
+        empty_proposals: No hi ha propostes
+      debate:
+        empty_questions: No hi ha preguntes
+        participate: Realitza les teues aportacions al debat previ participant en els seguents temes
+      index:
+        filter: Filtre
+        filters:
+          open: Processos actius
+          next: Pròximament
+          past: Finalitzats
+        no_open_processes: No hi ha processos actius
+        no_next_processes: No hi ha processos planejats
+        no_past_processes: No hi ha processos finalitzats
+        section_header:
+          icon_alt: Icona de Processos legislatius
+          title: Processos legislatius
+          help: Ajuda sobre processos legislatius
+        section_footer:
+          title: Ajuda sobre processos legislatius
+          description: Participa en els debats y processos previs a la aprovació d'una norma o d'una actuació municipal. La teua opinió serà tinguda en compte per l'Ajuntament.
+      phase_not_open:
+        not_open: Esta fase del procés encara no esta oberta
+      phase_empty:
+        empty: No hi ha res publicat encara
+      process:
+        see_latest_comments: Vore les últimes aportacions
+        see_latest_comments_title: Aportar a aquest procés
+      shared:
+        key_dates: Dates clau
+        debate_dates: Debat
+        draft_publication_date: Data de publicació de l'esborrany
+        result_publication_date: Publicació de resultats
+        proposals_dates: Propostes
+    questions:
+      comments:
+        comment_button: Publicar resposta
+        comments_title: Respostes obertes
+        comments_closed: Fase tancada
+        form:
+          leave_comment: Deixa la teua resposta
+      question:
+        comments:
+          zero: Sense comentaris
+          one: "%{count} comentari"
+          other: "%{count} comentaris"
+        debate: Debat
+      show:
+        answer_question: Publicar resposta
+        next_question: Següent pregunta
+        first_question: Primera pregunta
+        share: Compartir
+        title: Proces de legislació col·laborativa
+      participation:
+        phase_not_open: Esta fase del procés no esta oberta
+        organizations: Les organitzacions no poden participar en el debat
+        signin: Iniciar sessió
+        signup: Registrar-te
+        unauthenticated: Necessites %{signin} o %{signup} per a participar.
+        verified_only: Sols els usuaris verificats poden participar en el debat, %{verify_account}.
+        verify_account: verifica el teu compte
+        debate_phase_not_open: La fase de debat previ ja ha finalitzat i en aquest moment no s'accepten respostes
+    shared:
+      share: Compartir
+      share_comment: Comentari sobre la %{version_name} de l'esborrany del procés %{process_name}
+    proposals:
+      form:
+        tags_label: "Categoríes"
+      not_verified: "Per a votar propostes %{verify_account}."

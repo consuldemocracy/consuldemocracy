@@ -6,11 +6,11 @@ describe SignatureSheet do
 
   describe "validations" do
 
-    it "should be valid" do
+    it "is valid" do
       expect(signature_sheet).to be_valid
     end
 
-    it "should be valid with a valid signable" do
+    it "is valid with a valid signable" do
       signature_sheet.signable = create(:proposal)
       expect(signature_sheet).to be_valid
 
@@ -18,24 +18,24 @@ describe SignatureSheet do
       expect(signature_sheet).to be_valid
     end
 
-    it "should not be valid without signable" do
+    it "is not valid without signable" do
       signature_sheet.signable = nil
-      expect(signature_sheet).to_not be_valid
+      expect(signature_sheet).not_to be_valid
     end
 
-    it "should not be valid without a valid signable" do
+    it "is not valid without a valid signable" do
       signature_sheet.signable = create(:comment)
-      expect(signature_sheet).to_not be_valid
+      expect(signature_sheet).not_to be_valid
     end
 
-    it "should not be valid without document numbers" do
+    it "is not valid without document numbers" do
       signature_sheet.document_numbers = nil
-      expect(signature_sheet).to_not be_valid
+      expect(signature_sheet).not_to be_valid
     end
 
-    it "should not be valid without an author" do
+    it "is not valid without an author" do
       signature_sheet.author = nil
-      expect(signature_sheet).to_not be_valid
+      expect(signature_sheet).not_to be_valid
     end
   end
 
@@ -51,7 +51,7 @@ describe SignatureSheet do
       spending_proposal = create(:spending_proposal)
       signature_sheet.signable = spending_proposal
 
-      expect(signature_sheet.name).to eq("Spending proposal #{spending_proposal.id}")
+      expect(signature_sheet.name).to eq("Investment project #{spending_proposal.id}")
     end
 
     it "returns name for budget investment signature sheets" do

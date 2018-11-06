@@ -1,13 +1,10 @@
----
 es:
   moderation:
-    header:
-      title: Moderación
     comments:
       index:
         block_authors: Bloquear autores
-        confirm: "¿Estás seguro?"
-        filter: Filtrar
+        confirm: '¿Estás seguro?'
+        filter: Filtro
         filters:
           all: Todos
           pending_flag_review: Pendientes
@@ -24,11 +21,11 @@ es:
         title: Comentarios
     dashboard:
       index:
-        title: Moderación
+        title: Moderar
     debates:
       index:
         block_authors: Bloquear autores
-        confirm: "¿Estás seguro?"
+        confirm: '¿Estás seguro?'
         filter: Filtrar
         filters:
           all: Todos
@@ -44,15 +41,19 @@ es:
           created_at: Más nuevos
           flags: Más denunciados
         title: Debates
+    header:
+      title: Moderación
     menu:
       flagged_comments: Comentarios
       flagged_debates: Debates
+      flagged_investments: Proyectos de gasto
       proposals: Propuestas
+      proposal_notifications: Notificaciones de propuestas
       users: Bloquear usuarios
     proposals:
       index:
         block_authors: Bloquear autores
-        confirm: "¿Estás seguro?"
+        confirm: '¿Estás seguro?'
         filter: Filtro
         filters:
           all: Todas
@@ -68,6 +69,44 @@ es:
           created_at: Más recientes
           flags: Más denunciadas
         title: Propuestas
+    budget_investments:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtro
+        filters:
+          all: Todos
+          pending_flag_review: Pendientes de revisión
+          with_ignored_flag: Marcadas como revisadas
+        headers:
+          moderate: Moderar
+          budget_investment: Proyecto de gasto
+        hide_budget_investments: Ocultar proyectos de gasto
+        ignore_flags: Marcar como revisadas
+        order: Ordenar por
+        orders:
+          created_at: Más recientes
+          flags: Más denunciadas
+        title: Proyectos de gasto
+    proposal_notifications:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtro
+        filters:
+          all: Todas
+          pending_review: Pendientes de revisión
+          ignored: Marcadas como revisadas
+        headers:
+          moderate: Moderar
+          proposal_notification: Notificación de propuesta
+        hide_proposal_notifications: Ocultar notificaciones
+        ignore_flags: Marcar como revisadas
+        order: Ordenar por
+        orders:
+          created_at: Más recientes
+          moderated: Moderadas
+        title: Notificaciones de propuestas
     users:
       index:
         hidden: Bloqueado

@@ -1,0 +1,16 @@
+<div class="row section-content">
+  <div class="small-12 column">
+    <h3 id="proposals" data-magellan-target="proposals">
+      <%= t("pages.help.proposals.title") %>
+    </h3>
+    <p>
+      <%= t("pages.help.proposals.description",
+              link: link_to(t("pages.help.proposals.link"), proposals_path)).html_safe %>
+    </p>
+
+    <figure>
+      <%= image_tag "help/proposals_#{I18n.locale}.png", alt: t("pages.help.proposals.image_alt") %>
+      <figcaption><%= t("pages.help.proposals.figcaption_html") %></figcaption>
+    </figure>
+  </div>
+</div>

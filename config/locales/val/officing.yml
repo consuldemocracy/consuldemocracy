@@ -1,0 +1,68 @@
+val:
+  officing:
+    header:
+      title: Votacions
+    dashboard:
+      index:
+        title: Presidir taula de votacions
+        info: Ací pots validar documents de ciutadans i guardar els resultats de les urnes
+        no_shifts: Hui no tens torn de president de taula.
+    menu:
+      voters: Validar document i votar
+      total_recounts: Recompte total i escrutini
+    polls:
+      final:
+        title: Llistat de votacions finalitzades
+        no_polls: No tens permís per al recompte final en cap votació recent
+        select_poll: Selecciona votació
+        add_results: Afegir resultats
+    results:
+      flash:
+        create: "Resultats guardats"
+        error_create: "Resultats NO afegits. Error en les dades."
+        error_wrong_booth: "Urna incorrecta. Resultats NO guardats."
+      new:
+        title: "%{poll} - Afegir resultats"
+        not_allowed: "No tens permís per a introduir resultats"
+        booth: "Urna"
+        date: "Data"
+        select_booth: "Eligeix urna"
+        ballots_white: "Vots en blanc"
+        ballots_null: "Paperetes nules"
+        ballots_total: "Paperetes totals"
+        submit: "Guardar"
+        results_list: "Els teus resultats"
+        see_results: "Vore resultats"
+      index:
+        no_results: "No hi ha resultats"
+        results: Resultats
+        table_answer: Resposta
+        table_votes: Vots
+        table_whites: "Vots en blanc"
+        table_nulls: "Paperetes nules"
+        table_total: "Paperetes totals"
+    residence:
+      flash:
+        create: "Document verificat per el Padró"
+        not_allowed: "Hui no tens torn de president de taula"
+      new:
+        title: Validar document
+        document_number: "Número de document (inclosa lletra)"
+        submit: Validar document
+        error_verifying_census: "El Padró no ha pogut verificar aquest document."
+        form_errors: evitaren verificar aquest document
+        no_assignments: "Hui no tens torn de president de taula"
+    voters:
+      new:
+        title: Votacions
+        table_poll: Votació
+        table_status: Estat de les votacions
+        table_actions: Accions
+        not_to_vote: Aquesta persona ha decidit no votar en aquest moment
+      show:
+        can_vote: Pot votar
+        error_already_voted: Ya has participat en esta votació
+        submit: Confirmar vot
+        success: "Vot introduit!"
+      can_vote:
+        submit_disable_with: "Espera, confirmant vot..."

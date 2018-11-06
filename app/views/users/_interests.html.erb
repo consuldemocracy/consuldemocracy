@@ -2,18 +2,10 @@
   <h4><%= interests_title_text(user) %></h4>
 
   <% if user.interests.any? %>
-
     <ul class="no-bullet tags">
       <% user.interests.each do |interest| %>
         <li class="inline-block"><span><%= interest %></span></li>
       <% end %>
     </ul>
-
-  <% else %>
-
-    <div class="callout primary">
-      <%= empty_interests_message_text(user) %>
-    </div>
-
   <% end %>
 </div>

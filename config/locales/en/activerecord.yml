@@ -5,14 +5,17 @@ en:
         one: "activity"
         other: "activities"
       budget:
-        one: "Participatory budget"
-        other: "Participatory budgets"
+        one: "Budget"
+        other: "Budgets"
       budget/investment:
         one: "Investment"
         other: "Investments"
       budget/investment/milestone:
         one: "milestone"
         other: "milestones"
+      budget/investment/status:
+        one: "Investment status"
+        other: "Investment statuses"
       comment:
         one: "Comment"
         other: "Comments"
@@ -32,11 +35,17 @@ en:
         one: "Administrator"
         other: "Administrators"
       valuator:
-        one: "Evaluador"
-        other: "Evaluadores"
+        one: "Valuator"
+        other: "Valuators"
+      valuator_group:
+        one: "Valuator group"
+        other: "Valuator groups"
       manager:
         one: "Manager"
         other: "Managers"
+      newsletter:
+        one: "Newsletter"
+        other: "Newsletters"
       vote:
         one: "Vote"
         other: "Votes"
@@ -53,8 +62,8 @@ en:
         one: "Citizen proposal"
         other: "Citizen proposals"
       spending_proposal:
-        one: "Spending proposal"
-        other: "Spending proposals"
+        one: "Investment project"
+        other: "Investment projects"
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -67,6 +76,9 @@ en:
       legislation/process:
         one: "Process"
         other: "Processes"
+      legislation/proposal:
+        one: "Proposal"
+        other: "Proposals"
       legislation/draft_versions:
         one: "Draft version"
         other: "Draft versions"
@@ -88,6 +100,15 @@ en:
       images:
         one: "Image"
         other: "Images"
+      topic:
+        one: "Topic"
+        other: "Topics"
+      poll:
+        one: "Poll"
+        other: "Polls"
+      proposal_notification:
+        one: "Proposal notification"
+        other: "Proposal notifications"
     attributes:
       budget:
         name: "Name"
@@ -101,23 +122,27 @@ en:
         phase: "Phase"
         currency_symbol: "Currency"
       budget/investment:
-        heading_id: "Sección de presupuesto"
-        title: "Title"
-        description: "Description"
-        external_url: "External url"
-        location: "Location"
-        administrator_id: "Administrator"
-        description: "Description"
-        external_url: "Link to additional documentation"
         heading_id: "Heading"
         title: "Title"
-        location: "Location"
-        organization_name: "If you are proposing in the name of a collective/organization, write its name"
+        description: "Description"
+        external_url: "Link to additional documentation"
+        administrator_id: "Administrator"
+        location: "Location (optional)"
+        organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
       budget/investment/milestone:
+        status_id: "Current investment status (optional)"
         title: "Title"
-        description: "Description"
+        description: "Description (optional if there's an status assigned)"
+        publication_date: "Publication date"
+      budget/investment/status:
+        name: "Name"
+        description: "Description (optional)"
+      budget/heading:
+        name: "Heading name"
+        price: "Price"
+        population: "Population"
       comment:
         body: "Comment"
         user: "User"
@@ -147,7 +172,7 @@ en:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"
       spending_proposal:
-        administrator_id: "Administrador"
+        administrator_id: "Administrator"
         association_name: "Association name"
         description: "Description"
         external_url: "Link to additional documentation"
@@ -160,11 +185,17 @@ en:
         geozone_restricted: "Restricted by geozone"
         summary: "Summary"
         description: "Description"
+      poll/translation:
+        name: "Name"
+        summary: "Summary"
+        description: "Description"
       poll/question:
         title: "Question"
         summary: "Summary"
         description: "Description"
         external_url: "Link to additional documentation"
+      poll/question/translation:
+        title: "Question"
       signature_sheet:
         signable_type: "Signable type"
         signable_id: "Signable ID"
@@ -177,9 +208,13 @@ en:
         status: Status
         title: Title
         updated_at: Updated at
-        more_info_flag: Show in more information page
+        more_info_flag: Show in help page
         print_content_flag: Print content button
         locale: Language
+      site_customization/page/translation:
+        title: Title
+        subtitle: Subtitle
+        content: Content
       site_customization/image:
         name: Name
         image: Image
@@ -189,6 +224,7 @@ en:
         body: Body
       legislation/process:
         title: Process Title
+        summary: Summary
         description: Description
         additional_info: Additional info
         start_date: Start date
@@ -199,12 +235,21 @@ en:
         allegations_start_date: Allegations start date
         allegations_end_date: Allegations end date
         result_publication_date: Final result publication date
+      legislation/process/translation:
+        title: Process Title
+        summary: Summary
+        description: Description
+        additional_info: Additional info
       legislation/draft_version:
         title: Version title
         body: Text
         changelog: Changes
         status: Status
         final_version: Final version
+      legislation/draft_version/translation:
+        title: Version title
+        body: Text
+        changelog: Changes
       legislation/question:
         title: Title
         question_options: Options
@@ -221,9 +266,38 @@ en:
       poll/question/answer:
         title: Answer
         description: Description
+      poll/question/answer/translation:
+        title: Answer
+        description: Description
       poll/question/answer/video:
         title: Title
         url: External video
+      newsletter:
+        segment_recipient: Recipients
+        subject: Subject
+        from: From
+        body: Email content
+      admin_notification:
+        segment_recipient: Recipients
+        title: Title
+        link: Link
+        body: Text
+      admin_notification/translation:
+        title: Title
+        body: Text
+      widget/card:
+        label: Label (optional)
+        title: Title
+        description: Description
+        link_text: Link text
+        link_url: Link URL
+      widget/card/translation:
+        label: Label (optional)
+        title: Title
+        description: Description
+        link_text: Link text
+      widget/feed:
+        limit: Number of items
     errors:
       models:
         user:
@@ -243,6 +317,18 @@ en:
             attachment:
               min_image_width: "Image Width must be at least %{required_min_width}px"
               min_image_height: "Image Height must be at least %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "The user recipients segment is invalid"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "The user recipients segment is invalid"
+        map_location:
+          attributes:
+            map:
+              invalid: Map location can't be blank. Place a marker or select the checkbox if geolocalization is not needed
         poll/voter:
           attributes:
             document_number:
@@ -282,3 +368,12 @@ en:
             image:
               image_width: "Width must be %{required_width}px"
               image_height: "Height must be %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'You cannot comment a valuation'
+      messages:
+        record_invalid: "Validation failed: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Cannot delete record because a dependent %{record} exists"
+          has_many: "Cannot delete record because dependent %{record} exist"

@@ -1,0 +1,24 @@
+it:
+  documents:
+    title: Documenti
+    max_documents_allowed_reached_html: Hai raggiunto il numero massimo di documenti ammessi! <strong>Devi eliminarne uno prima di poterne caricare un altro.</strong>
+    form:
+      title: Documenti
+      title_placeholder: Aggiungi un titolo descrittivo per il documento
+      attachment_label: Scegli documento
+      delete_button: Rimuovi documento
+      cancel_button: Cancella
+      note: "È possibile caricare fino ad un massimo di %{max_documents_allowed} documenti con i seguenti tipi di contenuto: %{accepted_content_types}, fino a %{max_file_size} MB per ogni file."
+      add_new_document: Aggiungi nuovo documento
+    actions:
+      destroy:
+        notice: Il documento è stato cancellato con successo.
+        alert: Non è possibile distruggere il documento.
+        confirm: Sei sicuro di voler cancellare il documento? Questa azione non può essere annullata!
+    buttons:
+      download_document: Scarica file
+      destroy_document: Distruggi documento
+    errors:
+      messages:
+        in_between: deve essere tra %{min} e %{max}
+        wrong_content_type: il contenuto %{content_type} non corrisponde ad alcuna delle tipologie accettate %{accepted_content_types}

@@ -1,0 +1,12 @@
+---
+app_root: '.'
+allowed_ips:
+  - 127.0.0.1
+  - x.x.x.x
+
+allowed_paths:
+  - your/custom/route
+
+reason: 'Website down for maintenance'
+response_code: 503
+retry_after: 3600

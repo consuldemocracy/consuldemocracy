@@ -1,4 +1,5 @@
 <h2><%= t("admin.proposals.index.title") %></h2>
+<p><%= t("admin.shared.moderated_content") %></p>
 
 <%= render 'shared/filter_subnav', i18n_namespace: "admin.proposals.index" %>
 
@@ -9,7 +10,7 @@
     <thead>
       <th scope="col"><%= t("admin.shared.title") %></th>
       <th scope="col" class="small-6"><%= t("admin.shared.description") %></th>
-      <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      <th scope="col" class="small-4"><%= t("admin.shared.actions") %></th>
     </thead>
     <tbody>
     <% @proposals.each do |proposal| %>

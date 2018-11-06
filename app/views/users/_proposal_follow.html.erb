@@ -1,0 +1,6 @@
+<li id="proposal_<%= proposal.id %>">
+  <%= link_to proposal.title, proposal, proposal.retired? ? { class: 'retired' } : {} %>
+  <% if proposal.retired? %>
+    <span class="label alert"><%= t('users.proposals.retired') %></span>
+  <% end %>
+</li>

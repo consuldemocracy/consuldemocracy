@@ -1,0 +1,13 @@
+he:
+  valuation:
+    budget_investments:
+      edit:
+        unfeasible: אינו בר ביצוע
+        save: שמור שינויים
+    spending_proposals:
+      index:
+        geozone_filter_all: כל האזורים
+        title: פרויקטים להשקעה בתקצוב השתתפותי
+      show:
+        association_name: שם הארגון/עמותה
+        geozone: הקף הפרוייקט

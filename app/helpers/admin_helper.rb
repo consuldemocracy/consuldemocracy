@@ -1,43 +1,59 @@
 module AdminHelper
 
   def side_menu
-    render "/#{namespace}/menu"
+    if namespace == 'moderation/budgets'
+      render "/moderation/menu"
+    else
+      render "/#{namespace}/menu"
+    end
   end
 
   def namespaced_root_path
-    "/#{namespace}"
+    if namespace == 'moderation/budgets'
+      "/moderation"
+    else
+      "/#{namespace}"
+    end
   end
 
   def namespaced_header_title
-    t("#{namespace}.header.title")
-  end
-
-  def menu_tags?
-    ["tags"].include? controller_name
+    if namespace == 'moderation/budgets'
+      t("moderation.header.title")
+    else
+      t("#{namespace}.header.title")
+    end
   end
 
   def menu_moderated_content?
-    ["proposals", "debates", "comments", "hidden_users"].include? controller_name && controller.class.parent != Admin::Legislation
+    ["proposals", "debates", "comments", "hidden_users", "activity", "hidden_budget_investments"].include?(controller_name) && controller.class.parent != Admin::Legislation
   end
 
   def menu_budget?
-    ["spending_proposals"].include? controller_name
+    ["spending_proposals"].include?(controller_name)
   end
 
   def menu_polls?
-    %w[polls questions officers booths officer_assignments booth_assignments recounts results shifts questions answers].include? controller_name
+    %w[polls questions answers recounts results].include?(controller_name)
+  end
+
+  def menu_booths?
+    %w[officers booths shifts booth_assignments officer_assignments].include?(controller_name)
   end
 
   def menu_profiles?
-    ["administrators", "organizations", "officials", "moderators", "valuators", "managers", "users", "activity"].include? controller_name
+    %w[administrators organizations officials moderators valuators managers users].include?(controller_name)
   end
 
-  def menu_banners?
-    ["banners"].include? controller_name
+  def menu_settings?
+    ["settings", "tags", "geozones", "images", "content_blocks"].include?(controller_name)
   end
 
   def menu_customization?
-    ["pages", "images", "content_blocks"].include? controller_name
+    ["pages", "banners", "information_texts"].include?(controller_name) || menu_homepage?
+  end
+
+  def menu_homepage?
+    ["homepage", "cards"].include?(controller_name)
   end
 
   def official_level_options
@@ -70,6 +86,10 @@ module AdminHelper
 
   def display_user_roles(user)
     user_roles(user).join(", ")
+  end
+
+  def display_budget_goup_form(group)
+    group.errors.messages.size > 0 ? "" : "display:none"
   end
 
   private

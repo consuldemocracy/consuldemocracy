@@ -1,39 +1,50 @@
 class Notification < ActiveRecord::Base
+
   belongs_to :user, counter_cache: true
   belongs_to :notifiable, polymorphic: true
 
-  scope :unread,      -> { all }
-  scope :recent,      -> { order(id: :desc) }
+  validates :user, presence: true
+
+  scope :read,        -> { where.not(read_at: nil).recent.for_render }
+  scope :unread,      -> { where(read_at: nil).recent.for_render }
   scope :not_emailed, -> { where(emailed_at: nil) }
+  scope :recent,      -> { order(id: :desc) }
   scope :for_render,  -> { includes(:notifiable) }
+
+  delegate :notifiable_title, :notifiable_available?, :check_availability,
+           :linkable_resource, to: :notifiable, allow_nil: true
+
+  def mark_as_read
+    update(read_at: Time.current)
+  end
+
+  def mark_as_unread
+    update(read_at: nil)
+  end
+
+  def read?
+    read_at.present?
+  end
+
+  def unread?
+    read_at.nil?
+  end
 
   def timestamp
     notifiable.created_at
   end
 
-  def mark_as_read
-    destroy
-  end
-
-  def self.add(user_id, notifiable)
-    notification = Notification.find_by(user_id: user_id, notifiable: notifiable)
-
+  def self.add(user, notifiable)
+    notification = Notification.existent(user, notifiable)
     if notification.present?
-      Notification.increment_counter(:counter, notification.id)
+      increment_counter(:counter, notification.id)
     else
-      Notification.create!(user_id: user_id, notifiable: notifiable)
+      create!(user: user, notifiable: notifiable)
     end
   end
 
-  def notifiable_title
-    case notifiable.class.name
-    when "ProposalNotification"
-      notifiable.proposal.title
-    when "Comment"
-      notifiable.commentable.title
-    else
-      notifiable.title
-    end
+  def self.existent(user, notifiable)
+    unread.where(user: user, notifiable: notifiable).first
   end
 
   def notifiable_action
@@ -42,13 +53,44 @@ class Notification < ActiveRecord::Base
       "proposal_notification"
     when "Comment"
       "replies_to"
+    when "AdminNotification"
+      nil
     else
       "comments_on"
     end
   end
 
-  def linkable_resource
-    notifiable.is_a?(ProposalNotification) ? notifiable.proposal : notifiable
+  def link
+    if notifiable.is_a?(AdminNotification) && notifiable.link.blank?
+      nil
+    else
+      self
+    end
+  end
+
+  def self.send_pending
+    run_at = first_batch_run_at
+    User.email_digest.find_in_batches(batch_size: batch_size) do |users|
+      users.each do |user|
+        email_digest = EmailDigest.new(user)
+        email_digest.deliver(run_at)
+      end
+      run_at += batch_interval
+    end
+  end
+
+  private
+
+  def self.batch_size
+    10000
+  end
+
+  def self.batch_interval
+    20.minutes
+  end
+
+  def self.first_batch_run_at
+    Time.current
   end
 
 end

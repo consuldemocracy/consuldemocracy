@@ -57,7 +57,7 @@ module ApplicationHelper
     SiteCustomization::ContentBlock.block_for(name, locale)
   end
 
-  def format_price(number)
-    number_to_currency(number, precision: 0, locale: I18n.default_locale)
+  def kaminari_path(url)
+    "#{root_url.chomp("\/")}#{url}"
   end
 end

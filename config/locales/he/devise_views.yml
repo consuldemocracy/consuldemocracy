@@ -1,0 +1,126 @@
+he:
+  devise_views:
+    confirmations:
+      new:
+        email_label: דואר אלקטרוני
+        submit: שליחת הוראות שוב
+        title: שליחה חוזרת של אישור הוראות
+      show:
+        instructions_html: מאשרים את החשבון בדואר אלקטרוני %{email}
+        new_password_label: הכנסת סיסמה חדשה
+        please_set_password: לבחור בבקשה סיסמה חדשה (זה יאפשר לך להתחבר עם הדואר האלקטרוני שלמעלה)
+        submit: אישור
+        title: נא לאשר את חשבוני
+    mailer:
+      confirmation_instructions:
+        confirm_link: מאשר/ת את חשבוני
+        text: 'ניתן לאשר את חשבון הדואר האלקטרוני שלך בקישור  הבא:'
+        welcome: ברוכים/ות הבאים/ות
+      reset_password_instructions:
+        change_link: שנה את הסיסמה שלי
+        hello: שלום
+        ignore_text: אם לא ביקשת לשנות סיסמה, בבקשה להתעלם מההודעה
+        info_text: סיסמתך לא תשונה אלא אם תיכנס/י לקישור ותערוך/י אותו
+        text: 'קיבלנו בקשה לשנות את הסיסמה. הנך יכול/ה לעשות זאת בקישור הבא:'
+        title: שנה  את הסיסמה
+      unlock_instructions:
+        hello: שלום
+        info_text: חשבונך נחסם בגלל מספר כשלונות גדול בניסינות כניסה לחשבון
+        instructions_text: 'נא להקיש על הקישור הזה לביטול נעילת החשבון:'
+        title: חשבונך נחסם
+        unlock_link: שחררו את נעילת חשבוני
+    menu:
+      login_items:
+        login: התחברות
+        logout: יציאה
+        signup: הרשמה
+    organizations:
+      registrations:
+        new:
+          email_label: דואר אלקטרוני
+          organization_name_label: שם הארגון
+          password_confirmation_label: אישור הסיסמה
+          password_label: סיסמה
+          phone_number_label: מספר טלפון
+          responsible_name_label: שם מלא של אחראי/ת הקבוצה
+          responsible_name_note: זה יהיה האיש/ה המייצג את הקבוצה/ארגון ובשמו/ה יוצגו ההצעות
+          submit: הרשמה
+          title: הרשמה כארגון או כקבוצה
+        success:
+          back_to_index: חזרה לדף הראשי
+          instructions_1_html: "<b>ניצור איתך קשר בקרוב</b>כדי לוודא שאת/ה מייצג/ת את הקבוצה"
+          instructions_2_html: אנו בודקים  <b>את הדואר האלקטרוני שלך</b>, שלחנו לך <b>קישור לאימות חשבונך</b>.
+          instructions_3_html: לאחר האישור, ניתן להתחיל להשתתף כקבוצה לא מאושרת
+          thank_you_html: תודה על הרשמת קבוצתך באתר. הקבוצה <b>ממתינה לאישור</b>.
+          title: הרשמה של ארגונים וקבוצות
+    passwords:
+      edit:
+        change_submit: שנו את הסיסמה שלי
+        password_confirmation_label: נא לאשר את הסיסמה החדשה
+        password_label: סיסמה חדשה
+        title: שנה את הסיסמה
+      new:
+        email_label: דואר אלקטרוני
+        send_submit: שלח הנחיות
+        title: שכחת את הסיסמה?
+    sessions:
+      new:
+        password_label: סיסמה
+        remember_me: זכור אותי
+        submit: הקש/י לאישור
+        title: התחברות
+    shared:
+      links:
+        login: הקש/י לאישור
+        new_confirmation: לא קיבלת הוראות להפעלת החשבון שלך?
+        new_password: שכחת את הסיסמה?
+        new_unlock: לא קיבלת הוראות לביטול נעילה?
+        signin_with_provider: הרשמה עם %{provider}
+        signup: אין לך חשבון? %{signup_link}
+        signup_link: הרשמה
+    unlocks:
+      new:
+        email_label: דואר אלקטרוני
+        submit: שלחו אלי בבקשה מחדש הוראות לביטול נעילה
+        title: נשלחו מחדש הוראות שחרור נעילה
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: סיבה
+          info: פעולה זו  ל א  ניתנת לביטול. נא לוודא שזה מה שברצונך לעשות.
+          info_reason: (אם ברצונך, הסבר/י את הסיבה (אופציה
+          submit: מחקו את החשבון שלי
+          title: החשבון נמחק
+        edit:
+          current_password_label: הסיסמה הנוכחית
+          edit: ערוך
+          email_label: דואר אלקטרוני
+          leave_blank: השאר/י ריק אם אינך רוצה לשנות
+          need_current: אנו זקוקים לסיסמה שלך כדי לאשר את השינויים
+          password_confirmation_label: הסיסמה החדשה שלך  אושרה
+          password_label: סיסמה חדשה
+          update_submit: עודכן
+          waiting_for: '‘הסיבה ממתין לאישור של:’'
+        new:
+          cancel: הכניסה בוטלה
+          email_label: דואר אלקטרוני
+          organization_signup: האם את/ה מייצג קבוצה או ארגון? %{signup_link}
+          organization_signup_link: הרשם/י כאן
+          password_confirmation_label: אשר/י סיסמה
+          password_label: סיסמה
+          redeemable_code: (קבלת קוד אימות בדואר אלקטרוני (אופציה
+          submit: הרשמה
+          terms: בהרשמה הנך מסכים/ה ל %{terms}
+          terms_link: תנאים והתניות לשימוש באתר
+          terms_title: בהרשמה את/ה מסכים/ה לתנאים והתניות השימוש באתר
+          title: הרשמה
+          username_is_available: שם משתמש זמין
+          username_is_not_available: שם משתמש לא זמין
+          username_label: שם משתמש/ת
+          username_note: השם שיופיע ליד הפוסטים שלך
+        success:
+          back_to_index: הבנתי ; חזור לדף הבית
+          instructions_1_html: בבקשה <b>בדוק/י את הדואר האלקטרוני</b> - שלחנו לך <b>קישור לאישור חשבונך</b>.
+          instructions_2_html: לאחר האישור, יהיה אפשרי להתחיל להשתתף.
+          thank_you_html: תודה על הרשמתך לאתר. בבקשה <b>לאשר את כתובת הדואר האלקטרוני שלך</b>.
+          title: נא לבדוק את הדואר האלקטרוני שלך

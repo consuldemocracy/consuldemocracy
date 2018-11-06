@@ -1,56 +1,55 @@
----
 nl:
   devise_views:
     confirmations:
       new:
         email_label: Email
         submit: Stuur instructies opnieuw
-        title: Stuur bevestiging instructies opnieuw
+        title: Stuur bevestigingsinstructies opnieuw
       show:
-        instructions_html: Bevestig het account via %{email}
+        instructions_html: Bevestig de account via %{email}
         new_password_confirmation_label: Herhaal wachtwoord
         new_password_label: Nieuw wachtwoord
-        please_set_password: Kies een nieuw wachtwoord (voor login met email hierboven)
+        please_set_password: Kies een nieuw wachtwoord (voor login met de email hierboven)
         submit: Bevestig
         title: Bevestig mijn account
     mailer:
       confirmation_instructions:
         confirm_link: Bevestig mijn account
-        text: 'U kunt uw email adres bevestigen via de volgende link:'
-        title: Welkom bij het Open Government Portal
+        text: 'Je kunt je emailaccount via de volgende link bevestigen.'
+        title: Welkom
         welcome: Welkom
       reset_password_instructions:
-        change_link: Pas mijn wachtwoord aan
+        change_link: Wijzig mijn wachtwoord
         hello: Hallo
-        ignore_text: Negeer deze mail als u geen wachtwoord aanpassing heeft aangevraagd.
-        info_text: Uw wachtwoord zal niet worden aangepast tot u dit via de link edit.
-        text: 'We hebben een verzoek tot wijziging van uw wachtwoord ontvangen. U kunt dit doen via de volgende link:'
-        title: Verander uw wachtwoord
+        ignore_text: Negeer deze email als u geen wachtwoord reset heeft aangevraagd.
+        info_text: Je wachtwoord wordt niet aangepast tenzij je dit via de link aanpast.
+        text: 'We hebben een verzoek tot wijziging van je wachtwoord ontvangen. Je kunt dit doen via de volgende link:'
+        title: Wijzig je wachtwoord
       unlock_instructions:
         hello: Hallo
-        info_text: Uw account is geblokkeerd vanwege een te groot aantal mislukte inlogpogingen.
-        instructions_text: 'Klik deze link om uw account te de-blokkeren:'
-        title: Uw account is geblokkeerd
-        unlock_link: De-blokkeer mijn account
+        info_text: Je account is geblokkeerd vanwege een teveel aan mislukte inlogpogingen.
+        instructions_text: 'Klik op deze link om je account te deblokkeren :'
+        title: Je account is geblokkeerd.
+        unlock_link: Deblokkeer mijn account.
     menu:
       login_items:
         login: Log in
-        logout: Log out
-        signup: Aanmelden
+        logout: Log uit
+        signup: Registreer
     organizations:
       registrations:
         new:
           email_label: Email
-          organization_name_label: Naam van organisatie
+          organization_name_label: Organisatienaam
           password_confirmation_label: Bevestig wachtwoord
           password_label: Wachtwoord
           phone_number_label: Telefoonnummer
-          responsible_name_label: Volledige naam van de vertegenwoordiger van het collectief
-          responsible_name_note: Dit is de persoon die namens de vereniging of het collectief voorstellen indient
-          submit: Aanmelden
-          title: Als organisatie of collectief aanmelden
+          responsible_name_label: Volledige naam van de vertegenwoordiger van deze organisatie/vereniging.
+          responsible_name_note: Dit is de persoon die namens de vereniging/organisatie voorstellen indient.
+          submit: Registreer
+          title: Registreer als vereniging of organisatie
         success:
-          back_to_index: Begrepen; terug naar hoofdpagina
+          back_to_index: Ik begrijp het, ga terug naar de hoofdpagina
           instructions_1_html: "<b>We nemen snel contact op</b> om te verifiëren dat u dit collectief inderdaad vertegenwoordigd."
           instructions_2_html: Terwijl uw <b>email wordt geverifiëerd</b>, hebben we u een link gestuurd <b>ter bevestiging van uw account</b>.
           instructions_3_html: Na bevestiging kunt us deelnemen als niet-geverifiëerd collectief.
@@ -68,7 +67,7 @@ nl:
         title: Wachtwoord vergeten?
     sessions:
       new:
-        email_label: Email
+        login_label: Email of gebruikersnaam
         password_label: Wachtwoord
         remember_me: Onthoud mij
         submit: Ok
@@ -106,7 +105,7 @@ nl:
           update_submit: Pas aan
           waiting_for: 'In afwachting van bevestiging:'
         new:
-          cancel: Cancel login
+          cancel: Annuleer inloggen
           email_label: Email
           organization_signup: Vertegenwoordigd u een organisatie of collectief? %{signup_link}
           organization_signup_link: Hier aanmelden
@@ -118,8 +117,8 @@ nl:
           terms_link: voorwaarden van gebruik
           terms_title: Met aanmelding accepteerd u de voorwaarden van gebruik
           title: Aanmelden
-          username_is_available: "Gebruikersnaam is beschikbaar"
-          username_is_not_available: "Gebruikersnaam is bezet"
+          username_is_available: Gebruikersnaam is beschikbaar
+          username_is_not_available: Gebruikersnaam is bezet
           username_label: Gebruikersnaam
           username_note: De naam bij uw bijdragen
         success:

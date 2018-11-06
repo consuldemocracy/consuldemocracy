@@ -23,9 +23,9 @@ feature 'Admin debates' do
 
     click_link 'Restore'
 
-    expect(page).to_not have_content(debate.title)
+    expect(page).not_to have_content(debate.title)
 
-    expect(debate.reload).to_not be_hidden
+    expect(debate.reload).not_to be_hidden
     expect(debate).to be_ignored_flag
   end
 
@@ -33,9 +33,9 @@ feature 'Admin debates' do
     debate = create(:debate, :hidden)
     visit admin_debates_path
 
-    click_link 'Confirm'
+    click_link 'Confirm moderation'
 
-    expect(page).to_not have_content(debate.title)
+    expect(page).not_to have_content(debate.title)
     click_link('Confirmed')
     expect(page).to have_content(debate.title)
 
@@ -44,24 +44,24 @@ feature 'Admin debates' do
 
   scenario "Current filter is properly highlighted" do
     visit admin_debates_path
-    expect(page).to_not have_link('Pending')
+    expect(page).not_to have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_debates_path(filter: 'Pending')
-    expect(page).to_not have_link('Pending')
+    expect(page).not_to have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_debates_path(filter: 'all')
     expect(page).to have_link('Pending')
-    expect(page).to_not have_link('All')
+    expect(page).not_to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_debates_path(filter: 'with_confirmed_hide')
     expect(page).to have_link('All')
     expect(page).to have_link('Pending')
-    expect(page).to_not have_link('Confirmed')
+    expect(page).not_to have_link('Confirmed')
   end
 
   scenario "Filtering debates" do
@@ -70,14 +70,14 @@ feature 'Admin debates' do
 
     visit admin_debates_path(filter: 'pending')
     expect(page).to have_content('Unconfirmed debate')
-    expect(page).to_not have_content('Confirmed debate')
+    expect(page).not_to have_content('Confirmed debate')
 
     visit admin_debates_path(filter: 'all')
     expect(page).to have_content('Unconfirmed debate')
     expect(page).to have_content('Confirmed debate')
 
     visit admin_debates_path(filter: 'with_confirmed_hide')
-    expect(page).to_not have_content('Unconfirmed debate')
+    expect(page).not_to have_content('Unconfirmed debate')
     expect(page).to have_content('Confirmed debate')
   end
 

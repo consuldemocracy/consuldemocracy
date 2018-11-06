@@ -8,6 +8,8 @@
   <div class="draft-panels small-12 column row">
     <%= render 'version_chooser', process: @process, draft_version: @draft_version %>
 
+    <%= render 'legislation/processes/help_gif' %>
+
     <div class="legislation-comment">
       <div class="annotation-comment">
         <div class="row annotation-share-comment">
@@ -20,7 +22,7 @@
                   <%= @annotation.context.try(:html_safe).presence || @annotation.quote %>
                 </div>
                 <div class="small-12 medium-3 column legislation-comment">
-                  <span class="pull-right">
+                  <span class="float-right">
                     <%= link_to legislation_process_draft_version_path(@process, @draft_version, anchor: "annotation-id-#{@annotation.id}") do %>
                       <span><%= t('legislation.annotations.index.see_in_context') %></span> <span class="icon-expand" aria-hidden="true"></span>
                     <% end %>

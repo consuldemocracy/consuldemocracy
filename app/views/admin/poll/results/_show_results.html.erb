@@ -1,0 +1,14 @@
+<%= form_for [:admin, @poll], action: "update" do |f| %>
+  <fieldset class="fieldset">
+    <legend><%= t("admin.polls.new.show_results_and_stats") %></legend>
+    <%= f.check_box :results_enabled, checked: @poll.results_enabled?, label: t("admin.polls.new.show_results") %>
+    <%= f.check_box :stats_enabled, checked: @poll.stats_enabled?, label: t("admin.polls.new.show_stats") %>
+    <p class="small"><%= t("admin.polls.new.results_and_stats_reminder") %></p>
+  </fieldset>
+
+
+  <div class="small-12 medium-4 large-2">
+    <%= f.submit t("admin.polls.#{admin_submit_action(@poll)}.submit_button"),
+                 class: "button success expanded" %>
+  </div>
+<% end %>

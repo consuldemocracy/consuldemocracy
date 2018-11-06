@@ -1,0 +1,16 @@
+<div class="row section-content">
+  <div class="small-12 column">
+    <h3 id="polls" data-magellan-target="polls"><%= t("pages.help.polls.title") %></h3>
+    <p>
+      <%= t("pages.help.polls.description",
+            link: link_to(t("pages.help.polls.link"), polls_path)).html_safe %>
+    </p>
+    <ul class="features">
+      <li>
+        <%= t("pages.help.polls.feature_1",
+              link: link_to(t("pages.help.polls.feature_1_link", org_name: setting['org_name']),
+                               new_user_registration_path)).html_safe %>
+      </li>
+    </ul>
+  </div>
+</div>

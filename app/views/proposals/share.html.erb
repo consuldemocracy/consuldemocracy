@@ -23,7 +23,8 @@
 
         <%= render partial: 'shared/social_share', locals: {
           title: @proposal.title,
-          url: proposal_url(@proposal)
+          url: proposal_url(@proposal),
+          description: @proposal.summary
         } %>
 
         <% if @proposal_improvement_path.present? %>

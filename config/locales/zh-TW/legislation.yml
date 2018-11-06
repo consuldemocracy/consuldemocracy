@@ -1,0 +1,118 @@
+zh-TW:
+  legislation:
+    annotations:
+      comments:
+        see_all: 查看所有
+        see_complete: 查看完成
+        comments_count:
+          other: "%{count} 個評論"
+        replies_count:
+          other: "%{count} 個回覆"
+        cancel: 取消
+        publish_comment: 發佈評論
+      form:
+        phase_not_open: 此階段未開啟
+        login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
+        signin: 登錄
+        signup: 登記
+      index:
+        title: 評論
+        comments_about: 評論關於
+        see_in_context: 在上下文中查看
+        comments_count:
+          other: "%{count} 個評論"
+      show:
+        title: 評論
+      version_chooser:
+        seeing_version: 版本的評論
+        see_text: 查看文字草稿
+    draft_versions:
+      changes:
+        title: 更改
+        seeing_changelog_version: 修訂更改摘要
+        see_text: 查看文字草稿
+      show:
+        loading_comments: 載入評論
+        seeing_version: 你正在查看草稿版本
+        select_draft_version: 選擇草稿
+        select_version_submit: 查看
+        updated_at: 已更新於%{date}
+        see_changes: 查看更改摘要
+        see_comments: 查看所有評論
+        text_toc: 目錄
+        text_body: 文本
+        text_comments: 評論
+    processes:
+      header:
+        additional_info: 額外資訊
+        description: 描述
+        more_info: 更多資訊和上下文
+      proposals:
+        empty_proposals: 沒有建議
+      debate:
+        empty_questions: 沒有任何問題
+        participate: 參與辯論
+      index:
+        filter: 篩選器
+        filters:
+          open: 開啟進程
+          next: 下一個
+          past: 過去的
+        no_open_processes: 沒有已開啟的進程
+        no_next_processes: 沒有已計劃的進程
+        no_past_processes: 沒有過去的進程
+        section_header:
+          icon_alt: 立法進程圖標
+          title: 立法進程
+          help: 立法進程說明
+        section_footer:
+          title: 立法進程說明
+          description: 在批准法令或市政行動之前，請參與辯論和進程。 您的意見會被市議會考慮。
+      phase_not_open:
+        not_open: 此階段尚未開啟
+      phase_empty:
+        empty: 還沒有發表任何內容
+      process:
+        see_latest_comments: 查看最新評論
+        see_latest_comments_title: 對此進程的評論
+      shared:
+        key_dates: 關鍵日期
+        debate_dates: 辯論
+        draft_publication_date: 發佈草稿
+        allegations_dates: 評論
+        result_publication_date: 最終結果發佈
+        proposals_dates: 建議
+    questions:
+      comments:
+        comment_button: 發佈答案
+        comments_title: 開啟答案
+        comments_closed: 已結束的階段
+        form:
+          leave_comment: 留下您的答案
+      question:
+        comments:
+          zero: 沒有評論
+          other: "%{count} 個評論"
+        debate: 辯論
+      show:
+        answer_question: 提交答案
+        next_question: 下一個問題
+        first_question: 第一個問題
+        share: 分享
+        title: 合作立法進程
+      participation:
+        phase_not_open: 此階段未開啟
+        organizations: 不允許組織參與辯論
+        signin: 登錄
+        signup: 登記
+        unauthenticated: 您必須%{signin} 或%{signup} 才能參與。
+        verified_only: 只有已核實的用戶才能參與，%{verify_account}。
+        verify_account: 核實您的帳戶
+        debate_phase_not_open: 辯論階段已經結束，不再接受答案
+    shared:
+      share: 分享
+      share_comment: 從進程草稿%{process_name} 中對%{version_name} 的評論
+    proposals:
+      form:
+        tags_label: "類別"
+      not_verified: "為投票建議%{verify_account}。"

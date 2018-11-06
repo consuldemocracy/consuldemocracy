@@ -1,0 +1,83 @@
+he:
+  activerecord:
+    attributes:
+      budget:
+        name: "Name"
+        description_accepting: "תיאור בשלב הקבלה"
+        description_reviewing: "תיאור בשלב ההערות"
+        description_selecting: "תיאור בשלב הבחירה"
+        description_valuating: "תיאור בשלב ההערכה"
+        description_balloting: "תיאור במהלך שלב ההצבעה"
+        description_reviewing_ballots: "תיאור בשלב ההצבעה"
+        description_finished: "תיאור כאשר התקציב נגמר"
+        phase: "שלב"
+        currency_symbol: "מטבע"
+      budget/investment:
+        heading_id: "כותרת"
+        title: "כותרת"
+        description: "תאור"
+        external_url: "קישור למסמכים נוספים"
+        administrator_id: "מנהל/ת המערכת"
+      comment:
+        body: "הערה"
+        user: "משתמש/ת"
+      proposal:
+        author: "מחבר/ת"
+        title: "כותרת"
+        question: "שאלה"
+        description: "תיאור"
+        terms_of_service: "תנאי השימוש"
+      user:
+        email: "דואר אלקטרוני"
+        username: "שם משתמש/ת"
+        password_confirmation: "אימות סיסמה"
+        password: "סיסמה"
+        current_password: "סיסמה נוכחית"
+        phone_number: "מספר טלפון"
+        official_position: "תפקיד"
+        official_level: "רמת התפקיד"
+        redeemable_code: "אימות סיסמה התקבל בדואר אלקטרוני"
+      organization:
+        name: "שם הארגון"
+        responsible_name: "האחראי/ת לקבוצה"
+      spending_proposal:
+        association_name: "שם האגודה"
+        description: "תיאור"
+        external_url: "קישור למסמכים נוספים"
+        geozone_id: "היקף הפרויקט"
+        title: "כותרת"
+      signature_sheet:
+        signable_type: "סוג חתימה"
+        signable_id: "מזהה רשום"
+        document_numbers: "מספרי המסמכים"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "למשתמש/ת יש כבר סיסמה"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "תגיות צריכות להיות קטנות או שוות ל %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "הגעת למקסימום ההודעות הפרטיות ליום"
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "תגיות צריכות להיות קטנות או שוות ל %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "תגיות צריכות להיות קטנות או שוות ל %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "עליך לחכות לפחות %{interval} ימים בין הודעות"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'לא זוהה במאגר הנתונים'
+              already_voted: 'כבר הצביע/ה על הצעה זו'

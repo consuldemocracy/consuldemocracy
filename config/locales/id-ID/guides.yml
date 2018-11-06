@@ -1,0 +1,18 @@
+id:
+  guides:
+    title: "Apakah anda punya ide untuk %{org}?"
+    subtitle: "Pilih apa yang ingin anda ciptakan"
+    budget_investment:
+      title: "Sebuah proyek investasi"
+      feature_1_html: "Gagasan bagaimana menghabiskan sebagian dari <strong>anggaran kota</strong>"
+      feature_2_html: "Proyek-proyek investasi yang diterima <strong>antara Januari dan Maret</strong>"
+      feature_3_html: "Jika menerima dukungan, itu layak dan kompetensi kota, ia masuk ke tahap pemungutan suara"
+      feature_4_html: "Jika warga menyetujui proyek, mereka menjadi kenyataan"
+      new_button: Saya ingin membuat investasi anggaran
+    proposal:
+      title: "Proposal warga"
+      feature_1_html: "Gagasan tentang tindakan apa pun yang bisa diambil Dewan Kota"
+      feature_2_html: "Perlu <strong>%{votes} mendukung</strong> di %{org} untuk mendapatkan pemungutan suara"
+      feature_3_html: "Aktifkan kapan saja, anda memiliki <strong> setahun </strong> untuk mendapatkan dukungan"
+      feature_4_html: "Jika disetujui dalam pemungutan suara, Dewan Kota menerima usulan tersebut"
+      new_button: Saya ingin membuat proposal

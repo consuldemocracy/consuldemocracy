@@ -23,11 +23,12 @@ feature "Admin custom content blocks" do
         click_link "Custom content blocks"
       end
 
-      expect(page).to_not have_content "footer (es)"
+      expect(page).not_to have_content "footer (es)"
 
       click_link "Create new content block"
 
-      select "footer", from: "site_customization_content_block_name"
+      select I18n.t("admin.site_customization.content_blocks.content_block.names.footer"),
+                   from: "site_customization_content_block_name"
       select "es", from: "site_customization_content_block_locale"
       fill_in "site_customization_content_block_body", with: "Some custom content"
 
@@ -50,7 +51,8 @@ feature "Admin custom content blocks" do
 
       click_link "Create new content block"
 
-      select "top_links", from: "site_customization_content_block_name"
+      select I18n.t("admin.site_customization.content_blocks.content_block.names.top_links"),
+                   from: "site_customization_content_block_name"
       select "en", from: "site_customization_content_block_locale"
       fill_in "site_customization_content_block_body", with: "Some custom content"
 
@@ -88,20 +90,20 @@ feature "Admin custom content blocks" do
       expect(page).to have_content("#{block.name} (#{block.locale})")
       expect(page).to have_content(block.body)
 
-      click_button "Delete block"
+      click_link "Delete block"
 
-      expect(page).to_not have_content("#{block.name} (#{block.locale})")
-      expect(page).to_not have_content(block.body)
+      expect(page).not_to have_content("#{block.name} (#{block.locale})")
+      expect(page).not_to have_content(block.body)
     end
 
     scenario "From edit page" do
       block = create(:site_customization_content_block)
       visit edit_admin_site_customization_content_block_path(block)
 
-      click_button "Delete block"
+      click_link "Delete block"
 
-      expect(page).to_not have_content("#{block.name} (#{block.locale})")
-      expect(page).to_not have_content(block.body)
+      expect(page).not_to have_content("#{block.name} (#{block.locale})")
+      expect(page).not_to have_content(block.body)
     end
   end
 end

@@ -6,26 +6,26 @@ describe Poll::Answer do
 
     let(:answer) { build(:poll_answer) }
 
-    it "should be valid" do
+    it "is valid" do
       expect(answer).to be_valid
     end
 
-    it "should not be valid wihout a question" do
+    it "is not valid wihout a question" do
       answer.question = nil
-      expect(answer).to_not be_valid
+      expect(answer).not_to be_valid
     end
 
-    it "should not be valid without an author" do
+    it "is not valid without an author" do
       answer.author = nil
-      expect(answer).to_not be_valid
+      expect(answer).not_to be_valid
     end
 
-    it "should not be valid without an answer" do
+    it "is not valid without an answer" do
       answer.answer = nil
-      expect(answer).to_not be_valid
+      expect(answer).not_to be_valid
     end
 
-    it "should be valid for answers included in the Poll::Question's question_answers list" do
+    it "is valid for answers included in the Poll::Question's question_answers list" do
       question = create(:poll_question)
       create(:poll_question_answer, title: 'One', question: question)
       create(:poll_question_answer, title: 'Two', question: question)
@@ -35,7 +35,7 @@ describe Poll::Answer do
       expect(build(:poll_answer, question: question, answer: 'Two')).to be_valid
       expect(build(:poll_answer, question: question, answer: 'Three')).to be_valid
 
-      expect(build(:poll_answer, question: question, answer: 'Four')).to_not be_valid
+      expect(build(:poll_answer, question: question, answer: 'Four')).not_to be_valid
     end
   end
 

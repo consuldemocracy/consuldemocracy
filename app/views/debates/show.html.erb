@@ -34,6 +34,8 @@
 
         <%= render 'shared/tags', taggable: @debate %>
 
+        <%= render 'relationable/related_content', relationable: @debate %>
+
         <div class="js-moderator-debate-actions margin">
           <%= render 'actions', debate: @debate %>
         </div>
@@ -57,7 +59,8 @@
         <%= render partial: 'shared/social_share', locals: {
           share_title: t("debates.show.share"),
           title: @debate.title,
-          url: debate_url(@debate)
+          url: debate_url(@debate),
+          description: @debate.title
         } %>
       </aside>
     </div>

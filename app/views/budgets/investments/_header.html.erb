@@ -4,13 +4,8 @@
 
       <div class="row">
         <div class="small-12 column">
-          <% if @heading.group.headings.count == 1 %>
-            <%= back_link_to budget_path(@budget, unfeasible: params[:unfeasible]) %>
-          <% else %>
-            <%= back_link_to budget_group_path(@budget,
-                    @heading.group,
-                    unfeasible: params[:unfeasible]) %>
-          <% end %>
+          <%= back_link_to budgets_path %>
+
           <% if can? :show, @ballot %>
             <%= link_to t("budgets.investments.header.check_ballot"),
                         budget_ballot_path(@budget),
@@ -28,20 +23,21 @@
             </div>
             <% if @ballot.valid_heading?(@heading) %>
               <div class="progress-bar-nav" data-fixed-bar>
-                <h1><%= @heading.name %></h1>
+                <h2>
+                  <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                </h2>
                 <div id="progress_bar" class="no-margin-top">
                   <%= render 'budgets/ballot/progress_bar' %>
                 </div>
               </div>
             <% else %>
-              <h1><%= @heading.name %></h1>
+              <h2>
+                <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+              </h2>
               <div class="small-12 medium-9">
-                <div class="callout warning">
+                <div class="callout warning margin-top">
                   <%= t("budgets.investments.header.different_heading_assigned_html",
-                        heading_link: link_to(
-                          @assigned_heading.name,
-                          budget_investments_path(@budget, heading_id: @assigned_heading.try(:id)))
-                       ) %>
+                        heading_link: heading_link(@assigned_heading, @budget)) %>
                   <br>
                   <small>
                     <%= t("budgets.investments.header.change_ballot",
@@ -52,8 +48,13 @@
               </div>
             <% end %>
           <% else %>
-            <h1 class="margin-top"><%= @heading.name %></h1>
-            <h2><%= @budget.formatted_heading_price(@heading) %></h2>
+            <h2 class="margin-top">
+              <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+            </h2>
+            <h3>
+              <span class="tagline"><%= t("budgets.investments.header.price") %></span>
+              <%= @budget.formatted_heading_price(@heading) %>
+            </h3>
           <% end %>
         </div>
       </div>
@@ -65,7 +66,9 @@
       <div class="small-12 column">
         <%= back_link_to budget_path(@budget) %>
 
-        <h1><%= t('budgets.investments.index.title') %></h1>
+        <h2 class="margin-top">
+          <%= t("budgets.investments.index.title") %>
+        </h2>
       </div>
     </div>
   </div>

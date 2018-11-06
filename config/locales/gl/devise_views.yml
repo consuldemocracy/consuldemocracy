@@ -1,0 +1,129 @@
+gl:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Correo electrónico
+        submit: Reenviar instrucións
+        title: Reenviar instrucións de confirmación
+      show:
+        instructions_html: Imos confirmar a conta co correo electrónico %{email}
+        new_password_confirmation_label: Repite a clave de novo
+        new_password_label: Nova clave de acceso
+        please_set_password: Por favor, escribe unha nova clave de acceso para a túa conta (permitirache identificarte co correo electrónico anterior)
+        submit: Confirmar
+        title: Confirmar a miña conta
+    mailer:
+      confirmation_instructions:
+        confirm_link: Confirmar a miña conta
+        text: 'Podes confirmar a túa conta de correo electrónico na ligazón seguinte:'
+        title: Benvido
+        welcome: Benvida
+      reset_password_instructions:
+        change_link: Cambiar o meu contrasinal
+        hello: Ola
+        ignore_text: Se ti non o solicitaches, podes ignorar este correo electrónico.
+        info_text: O teu contrasinal non cambiará ata que non accedas á ligazón e o modificares.
+        text: 'Solicitouse cambiares o contrasinal. Podes facelo na ligazón seguinte:'
+        title: Cambia o teu contrasinal
+      unlock_instructions:
+        hello: Ola
+        info_text: A túa conta foi bloqueada debido a un excesivo número de intentos fallidos de alta.
+        instructions_text: 'Sigue a seguinte ligazón para desbloqueares a túa conta:'
+        title: A túa conta foi bloqueada
+        unlock_link: Desbloquear a miña conta
+    menu:
+      login_items:
+        login: Entrar
+        logout: Saír
+        signup: Rexistrarse
+    organizations:
+      registrations:
+        new:
+          email_label: Correo electrónico
+          organization_name_label: Nome da organización
+          password_confirmation_label: Repite o contrasinal anterior
+          password_label: Contrasinal
+          phone_number_label: Teléfono
+          responsible_name_label: Nome e apelidos da persoa responsable do colectivo
+          responsible_name_note: Será a persoa que represente a asociación/colectivo e en cuxo nome presentará as propostas
+          submit: Rexistrarse
+          title: Rexistrarse unha organización ou colectivo
+        success:
+          back_to_index: Enténdoo; regresar á páxina principal
+          instructions_1_html: "Axiña <b>contactaremos contigo</b> para verificarmos que representas a este colectivo."
+          instructions_2_html: Mentres <b>o teu correo é revisado</b>, enviámosche <b>unha ligazón para confirmares a túa conta</b>.
+          instructions_3_html: Logo de o confirmares, podes comezar a participar como colectivo non verificado.
+          thank_you_html: Grazas por rexistrares o teu colectivo na web. Agora está <b>pendente de verificación</b>.
+          title: Rexistro de organización / colectivo
+    passwords:
+      edit:
+        change_submit: Cambiar o meu contrasinal
+        password_confirmation_label: Confirmar o novo contrasinal
+        password_label: Contrasinal novo
+        title: Cambia o teu contrasinal
+      new:
+        email_label: Correo electrónico
+        send_submit: Recibir instrucións
+        title: Esqueciches o teu contrasinal?
+    sessions:
+      new:
+        login_label: Correo electrónico ou nome de usuaria
+        password_label: Contrasinal
+        remember_me: Lembrarme
+        submit: Entrar
+        title: Iniciar sesión
+    shared:
+      links:
+        login: Entrar
+        new_confirmation: Non recibiches instrucións para confirmares a túa conta?
+        new_password: Esqueciches o teu contrasinal?
+        new_unlock: Non recibiches instrucións para desbloqueares?
+        signin_with_provider: Iniciar sesión con %{provider}
+        signup: Non tes unha conta? %{signup_link}
+        signup_link: Rexístrate
+    unlocks:
+      new:
+        email_label: Correo electrónico
+        submit: Reenviar instrucións para desbloquear
+        title: Reenviar instrucións para desbloquear
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Razón da baixa
+          info: Esta acción non se pode desfacer. Unha vez que deas de baixa a túa conta, non poderás volver acceder con ela.
+          info_reason: Se queres, podes escribirnos o motivo polo que te dás de baixa (opcional)
+          submit: Darme de baixa
+          title: Darme de baixa
+        edit:
+          current_password_label: Contrasinal actual
+          edit: Editar
+          email_label: Correo electrónico
+          leave_blank: Déixao en branco se non o queres cambiar
+          need_current: Precisamos o teu contrasinal actual para confirmarmos os cambios
+          password_confirmation_label: Confirmar o novo contrasinal
+          password_label: Contrasinal novo
+          update_submit: Actualizar
+          waiting_for: 'A agardar a confirmación de:'
+        new:
+          cancel: Cancelar o inicio de sesión
+          email_label: Correo electrónico
+          organization_signup: Representas unha organización / colectivo? %{signup_link}
+          organization_signup_link: Rexístrate aquí
+          password_confirmation_label: Repite o contrasinal anterior
+          password_label: Contrasinal
+          redeemable_code: O teu código de verificación vía correo electrónico (opcional)
+          submit: Rexistrarse
+          terms: Ao rexistráreste, aceptas os %{terms}
+          terms_link: termos e condicións de uso
+          terms_title: Ao rexistráreste, aceptas os termos e as condicións de uso
+          title: Rexistrarse
+          username_is_available: O nome de usuario/a está dispoñible
+          username_is_not_available: O nome de usuario/a xa existe
+          username_label: Nome de usuario
+          username_note: Nome público que aparecerá nas túas publicacións
+        success:
+          back_to_index: Enténdoo; regresar á páxina principal
+          instructions_1_html: Por favor, <b>comproba o teu correo electrónico</b> - enviámosche unha <b>ligazón para confirmares a túa conta</b>.
+          instructions_2_html: Logo de a confirmares, poderás comezar a participar.
+          thank_you_html: Grazas por te rexistrares na web. Agora debes <b>confirmar o teu correo</b>.
+          title: Modifica o teu correo

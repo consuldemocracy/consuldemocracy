@@ -12,8 +12,10 @@ module FollowablesHelper
   end
 
   def render_follow(follow)
+    return unless follow.followable.present?
+
     followable = follow.followable
-    partial = followable_class_name(followable)
+    partial = followable_class_name(followable) + "_follow"
     locals = {followable_class_name(followable).to_sym => followable}
 
     render partial, locals

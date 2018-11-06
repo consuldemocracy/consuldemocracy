@@ -2,6 +2,12 @@ class Poll < ActiveRecord::Base
   include Imageable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
+  include Notifiable
+
+  translates :name,        touch: true
+  translates :summary,     touch: true
+  translates :description, touch: true
+  include Globalizable
 
   RECOUNT_DURATION = 1.week
 
@@ -18,8 +24,7 @@ class Poll < ActiveRecord::Base
   has_and_belongs_to_many :geozones
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
-  validates :name, presence: true
-
+  validates_translation :name, presence: true
   validate :date_range
 
   scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Date.current.beginning_of_day, Date.current.beginning_of_day) }
@@ -28,6 +33,7 @@ class Poll < ActiveRecord::Base
   scope :recounting, -> { Poll.where(ends_at: (Date.current.beginning_of_day - RECOUNT_DURATION)..Date.current.beginning_of_day) }
   scope :published, -> { where('published = ?', true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
+  scope :public_for_api, -> { all }
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 

@@ -5,8 +5,9 @@
 * Raimond García [github](https://github.com/voodoorai2000) | [twitter](https://twitter.com/voodoorai2000)
 * Juanjo Bazán [github](https://github.com/xuanxu) | [twitter](https://twitter.com/xuanxu)
 * Enrique García Cota [github](https://github.com/kikito) | [twitter](https://twitter.com/otikik)
-* Alberto García Cabeza [github](https://github.com/decabeza) | [twitter](https://twitter.com/decabeza)
+* Alberto García Cabeza [github](https://github.com/decabeza)
 * Alberto Calderón [github](https://github.com/bertocq) | [twitter](https://twitter.com/bertocq)
+* Maria Checa [github](https://github.com/MariaCheca)
 
 ## Código de conducta
 
@@ -47,7 +48,6 @@ En la urgencia del momento, las cosas a veces se ensucian, puedes ayudarnos a li
 * implementando [tests pendientes](https://travis-ci.org/consul/consul)
 * incrementando la [cobertura de tests](https://coveralls.io/github/consul/consul?branch=master)
 * mejorando la [calidad del código](https://codeclimate.com/github/consul/consul)
-* actualizando [dependecias](https://gemnasium.com/consul/consul)
 * haciendo el [código consistente](https://github.com/bbatsov/rubocop)
 
 ## Otras formas de contribuir sin código

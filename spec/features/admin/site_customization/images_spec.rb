@@ -11,7 +11,7 @@ feature "Admin custom images" do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Custom Images"
+      click_link "Custom images"
     end
 
     within("tr.logo_header") do
@@ -27,7 +27,7 @@ feature "Admin custom images" do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Custom Images"
+      click_link "Custom images"
     end
 
     within("tr.icon_home") do
@@ -43,7 +43,7 @@ feature "Admin custom images" do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Custom Images"
+      click_link "Custom images"
     end
 
     within("tr.social_media_icon") do
@@ -57,6 +57,6 @@ feature "Admin custom images" do
       click_link "Delete"
     end
 
-    expect(page).to_not have_css("img[src*='social_media_icon.png']")
+    expect(page).not_to have_css("img[src*='social_media_icon.png']")
   end
 end

@@ -3,15 +3,15 @@ require 'rails_helper'
 describe DebatesController do
 
   describe 'POST create' do
-    before(:each) do
+    before do
       InvisibleCaptcha.timestamp_enabled = false
     end
 
-    after(:each) do
+    after do
       InvisibleCaptcha.timestamp_enabled = true
     end
 
-    it 'should create an ahoy event' do
+    it 'creates an ahoy event' do
 
       sign_in create(:user)
 
@@ -26,7 +26,7 @@ describe DebatesController do
       Setting['max_ratio_anon_votes_on_debates'] = 50
     end
 
-    it 'should allow vote if user is allowed' do
+    it 'allows vote if user is allowed' do
       Setting["max_ratio_anon_votes_on_debates"] = 100
       debate = create(:debate)
       sign_in create(:user)
@@ -36,14 +36,14 @@ describe DebatesController do
       end.to change { debate.reload.votes_for.size }.by(1)
     end
 
-    it 'should not allow vote if user is not allowed' do
+    it 'does not allow vote if user is not allowed' do
       Setting["max_ratio_anon_votes_on_debates"] = 0
       debate = create(:debate, cached_votes_total: 1000)
       sign_in create(:user)
 
       expect do
         xhr :post, :vote, id: debate.id, value: 'yes'
-      end.to_not change { debate.reload.votes_for.size }
+      end.not_to change { debate.reload.votes_for.size }
     end
   end
 end

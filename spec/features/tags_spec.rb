@@ -30,8 +30,8 @@ feature 'Tags' do
       expect(page).to have_css('.debate', count: 2)
       expect(page).to have_content(debate1.title)
       expect(page).to have_content(debate2.title)
-      expect(page).to_not have_content(debate3.title)
-      expect(page).to_not have_content(debate4.title)
+      expect(page).not_to have_content(debate3.title)
+      expect(page).not_to have_content(debate4.title)
     end
 
     visit debates_path(search: 'salud')
@@ -40,8 +40,8 @@ feature 'Tags' do
       expect(page).to have_css('.debate', count: 2)
       expect(page).to have_content(debate1.title)
       expect(page).to have_content(debate2.title)
-      expect(page).to_not have_content(debate3.title)
-      expect(page).to_not have_content(debate4.title)
+      expect(page).not_to have_content(debate3.title)
+      expect(page).not_to have_content(debate4.title)
     end
   end
 
@@ -118,7 +118,7 @@ feature 'Tags' do
     click_button 'Save changes'
 
     expect(page).to have_content 'Debate updated successfully.'
-    expect(page).to_not have_content 'Economía'
+    expect(page).not_to have_content 'Economía'
   end
 
   context 'Tag cloud' do
@@ -159,7 +159,7 @@ feature 'Tags' do
       within "#tag-cloud" do
         expect(page).to have_css(".tag", count: 1)
         expect(page).to have_content "Corrupción"
-        expect(page).to_not have_content "Economía"
+        expect(page).not_to have_content "Economía"
       end
     end
 
@@ -175,7 +175,7 @@ feature 'Tags' do
       within "#tag-cloud" do
         expect(page).to have_css(".tag", count: 1)
         expect(page).to have_content "Playa"
-        expect(page).to_not have_content "Agua"
+        expect(page).not_to have_content "Agua"
       end
     end
 
@@ -193,7 +193,7 @@ feature 'Tags' do
       expect(page).to have_css ".proposal", count: 2
       expect(page).to have_content proposal1.title
       expect(page).to have_content proposal2.title
-      expect(page).to_not have_content proposal3.title
+      expect(page).not_to have_content proposal3.title
     end
 
   end

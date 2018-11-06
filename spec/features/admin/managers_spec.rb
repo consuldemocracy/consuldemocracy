@@ -12,7 +12,7 @@ feature 'Admin managers' do
   scenario 'Index' do
     expect(page).to have_content @manager.name
     expect(page).to have_content @manager.email
-    expect(page).to_not have_content @user.name
+    expect(page).not_to have_content @user.name
   end
 
   scenario 'Create Manager', :js do
@@ -30,7 +30,7 @@ feature 'Admin managers' do
     click_link 'Delete'
 
     within("#managers") do
-      expect(page).to_not have_content @manager.name
+      expect(page).not_to have_content @manager.name
     end
   end
 
@@ -53,8 +53,8 @@ feature 'Admin managers' do
 
       expect(page).to have_content('Managers: User search')
       expect(page).to have_content('No results found')
-      expect(page).to_not have_content(@manager1.name)
-      expect(page).to_not have_content(@manager2.name)
+      expect(page).not_to have_content(@manager1.name)
+      expect(page).not_to have_content(@manager2.name)
     end
 
     scenario 'search by name' do
@@ -66,7 +66,7 @@ feature 'Admin managers' do
 
       expect(page).to have_content('Managers: User search')
       expect(page).to have_content(@manager1.name)
-      expect(page).to_not have_content(@manager2.name)
+      expect(page).not_to have_content(@manager2.name)
     end
 
     scenario 'search by email' do
@@ -78,7 +78,7 @@ feature 'Admin managers' do
 
       expect(page).to have_content('Managers: User search')
       expect(page).to have_content(@manager2.email)
-      expect(page).to_not have_content(@manager1.email)
+      expect(page).not_to have_content(@manager1.email)
     end
   end
 

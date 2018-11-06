@@ -1,6 +1,8 @@
-require 'coveralls'
-Coveralls.wear!('rails')
 ENV['RAILS_ENV'] ||= 'test'
+if ENV['TRAVIS']
+  require 'coveralls'
+  Coveralls.wear!('rails')
+end
 require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 
@@ -8,7 +10,7 @@ require 'rspec/rails'
 require 'spec_helper'
 require 'capybara/rails'
 require 'capybara/rspec'
-require 'capybara/poltergeist'
+require 'selenium/webdriver'
 
 I18n.default_locale = :en
 
@@ -19,22 +21,28 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
-  config.after :each do
+  config.after do
     Warden.test_reset!
   end
 end
 
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app,
-    timeout: 1.minute,
-    inspector: true, # allows remote debugging by executing page.driver.debug
-    phantomjs_logger: File.open(File::NULL, "w"), # don't print console.log calls in console
-    phantomjs_options: ['--load-images=no', '--disk-cache=false'],
-    extensions: [File.expand_path("../support/phantomjs_ext/disable_js_fx.js", __FILE__)] # disable js effects
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.register_driver :headless_chrome do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+    chromeOptions: { args: %w(headless no-sandbox window-size=1200,600) }
+  )
+
+  Capybara::Selenium::Driver.new(
+    app,
+    browser: :chrome,
+    desired_capabilities: capabilities
   )
 end
 
-Capybara.javascript_driver = :poltergeist
+Capybara.javascript_driver = :headless_chrome
 
 Capybara.exact = true
 

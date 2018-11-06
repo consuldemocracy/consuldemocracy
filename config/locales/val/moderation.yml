@@ -1,0 +1,113 @@
+val:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloquejar autors
+        confirm: Estàs segur?
+        filter: Filtre
+        filters:
+          all: Tots
+          pending_flag_review: Pendents
+          with_ignored_flag: Marcats com revisats
+        headers:
+          comment: Comentari
+          moderate: Moderar
+        hide_comments: Ocultar comentaris
+        ignore_flags: Marcar com revisats
+        order: Ordre
+        orders:
+          flags: Més denunciats
+          newest: Més nous
+        title: Comentaris
+    dashboard:
+      index:
+        title: Moderar
+    debates:
+      index:
+        block_authors: Bloquejar autors
+        confirm: Estàs segur?
+        filter: Filtrar
+        filters:
+          all: Tots
+          pending_flag_review: Pendents
+          with_ignored_flag: Marcats com revisats
+        headers:
+          debate: Debat
+          moderate: Moderar
+        hide_debates: Ocultar debats
+        ignore_flags: Marcar com revisats
+        order: Ordre
+        orders:
+          created_at: Més nous
+          flags: Més denunciats
+        title: Debats
+    header:
+      title: Moderació
+    menu:
+      flagged_comments: Comentaris
+      flagged_debates: Debats
+      proposals: Propostes
+      proposal_notifications: Notificacions de propostes
+      users: Bloquejar usuaris
+    proposals:
+      index:
+        block_authors: Bloquejar autors
+        confirm: Estàs segur?
+        filter: Filtre
+        filters:
+          all: Totes
+          pending_flag_review: Pendents de revisió
+          with_ignored_flag: Marcades com revisades
+        headers:
+          moderate: Moderar
+          proposal: Proposta
+        hide_proposals: Ocultar Propostes
+        ignore_flags: Marcar com revisades
+        order: Ordenar per
+        orders:
+          created_at: Más recents
+          flags: Més denunciades
+        title: Propostes
+    budget_investments:
+      index:
+        filters:
+          all: Totes
+          pending_flag_review: Pendents
+          with_ignored_flag: Marcats com revisats
+        headers:
+          moderate: Moderar
+          budget_investment: Pressupost participatiu
+        hide_budget_investments: Ocultar propostes d'inversió
+        ignore_flags: Marcar com revisades
+        order: Ordenar per
+        orders:
+          created_at: Més recents
+          flags: Més denunciades
+        title: Pressupostos participatius
+    proposal_notifications:
+      index:
+        block_authors: Bloquejar autors
+        confirm: Estàs segur?
+        filter: Filtrar
+        filters:
+          all: Totes
+          pending_review: Pendents de revisió
+          ignored: Marcar com a vistes
+        headers:
+          moderate: Moderar
+          proposal_notification: Notificacio de proposta
+        hide_proposal_notifications: Ocultar propostes
+        ignore_flags: Marcar com a vistes
+        order: Ordenar per
+        orders:
+          created_at: Més recents
+          moderated: Moderades
+        title: Notificacions de propostes
+    users:
+      index:
+        hidden: Bloquejat
+        hide: Bloquejar
+        search: Cercar
+        search_placeholder: email o nom d'usuari
+        title: Bloquejar usuaris
+      notice_hide: Usuari bloquejat. S'han ocultat tots els seus debats i comentaris.

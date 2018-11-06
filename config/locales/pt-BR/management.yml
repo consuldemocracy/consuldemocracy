@@ -1,0 +1,150 @@
+pt-BR:
+  management:
+    account:
+      menu:
+        reset_password_email: Redefinir senha via e-mail
+        reset_password_manually: Redefinir senha manualmente
+      alert:
+        unverified_user: Nenhum usuário verificado logado ainda
+      show:
+        title: Conta do usuário
+      edit:
+        title: 'Editar a conta de usuário: Redefinir a senha'
+        back: Voltar
+        password:
+          password: Senha
+          send_email: Enviar e-mail para redefinir senha
+          reset_email_send: E-mail enviado corretamente.
+          reseted: Senha redefinida com sucesso
+          random: Gerar senha aleatória
+          save: Salvar senha
+          print: Gravar senha
+          print_help: Você pode gravar a senha quando ela está salva.
+    account_info:
+      change_user: Alterar usuário
+      document_number_label: 'Número do documento:'
+      document_type_label: 'Tipo do documento:'
+      email_label: 'Email:'
+      identified_label: 'Identificado como:'
+      username_label: 'Nome de usuário:'
+    check: Conferir o documento
+    dashboard:
+      index:
+        title: Gestão
+        info: Aqui você pode gerenciar os usuários através de todas as ações listadas no menu à esquerda.
+    document_number: Número do documento
+    document_type_label: Tipo do documento
+    document_verifications:
+      already_verified: Esta conta de usuário já está verificada.
+      has_no_account_html: A fim de criar uma conta, vá para %{link} e clique em <b>'Registar'</b> na parte superior esquerda da tela.
+      link: CÔNSUL
+      in_census_has_following_permissions: 'Este usuário pode participar do site com as seguintes permissões:'
+      not_in_census: Este documento não está registrado.
+      not_in_census_info: 'Cidadãos que não estão no censo podem participar no site com as seguintes permissões:'
+      please_check_account_data: Por favor, verifique se as informações da conta acima estão corretas.
+      title: Gestão de usuários
+      under_age: "Você não tem a idade requerida para verificar sua conta."
+      verify: Verificar
+    email_label: Email
+    date_of_birth: Data de nascimento
+    email_verifications:
+      already_verified: Esta conta de usuário já está verificada.
+      choose_options: 'Por favor, escolha uma das seguintes opções:'
+      document_found_in_census: Este documento foi encontrado no censo, mas não há nenhuma conta de usuário associada a ele.
+      document_mismatch: 'Esse email corresponde a um usuário que já tem uma identidade associadade: %{document_number}(%{document_type})'
+      email_placeholder: Escreva o email que essa pessoa usou para criar sua conta
+      email_sent_instructions: Para verificar completamente esse usuário, é necessário que o usuário clique em um link que enviamos para o endereço de e-mail acima. Essa etapa é necessária para confirmar se o endereço pertence a ele ou ela.
+      if_existing_account: Se a pessoa já criou uma conta no site
+      if_no_existing_account: Se a pessoa ainda não criou uma conta
+      introduce_email: 'Por favor introduza o email usado na conta:'
+      send_email: Enviar email de verificação
+    menu:
+      create_proposal: Criar proposta
+      print_proposals: Imprimir propostas
+      support_proposals: Apoiar propostas
+      create_spending_proposal: Criar uma proposta de despesa
+      print_spending_proposals: Imprimir proposta de despesa
+      support_spending_proposals: Apoiar proposta de despesa
+      create_budget_investment: Criar um investimento orçamentário
+      print_budget_investments: Gravar investimentos do orçamento
+      support_budget_investments: Apoiar investimentos orçamentários
+      users: Gerenciamento de usuários
+      user_invites: Enviar convites
+      select_user: Selecione usuário
+    permissions:
+      create_proposals: Criar propostas
+      debates: Participar em debates
+      support_proposals: Apoiar propostas
+      vote_proposals: Votar propostas
+    print:
+      proposals_info: Crie sua proposta em http://url.consul
+      proposals_title: 'Propostas:'
+      spending_proposals_info: Participar em http://url.consul
+      budget_investments_info: Participar em http://url.consul
+    print_info: Imprimir esta informação
+    proposals:
+      alert:
+        unverified_user: Usuário não está verificado
+      create_proposal: Criar proposta
+      print:
+        print_button: Imprimir
+      index:
+        title: Apoiar propostas
+    budgets:
+      create_new_investment: Propor um investimento orçamentário
+      print_investments: Gravar investimentos do orçamento
+      support_investments: Apoiar investimentos orçamentários
+      table_name: Nome
+      table_phase: Estágio
+      table_actions: Ações
+      no_budgets: Não há orçamento participativo em atividade.
+    budget_investments:
+      alert:
+        unverified_user: Usuário não está verificado
+      create: Criar um investimento orçamentário
+      filters:
+        heading: Conceito
+        unfeasible: Investimentos inviáveis
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " contendo o termo '%{search_term}'"
+        other: " contendo o termo '%{search_term}'"
+    spending_proposals:
+      alert:
+        unverified_user: Usuário não está verificado
+      create: Criar uma proposta de despesa
+      filters:
+        unfeasible: Projetos de investimento inviáveis
+        by_geozone: "Projectos de investimento com escopo: %{geozone}"
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " contendo o termo '%{search_term}'"
+        other: " contendo o termo '%{search_term}'"
+    sessions:
+      signed_out: Sessão encerrada com êxito.
+      signed_out_managed_user: Você saiu da sua conta com sucesso.
+    username_label: Nome de usuário
+    users:
+      create_user: Criar uma nova conta
+      create_user_info: Vamos criar uma conta com os seguintes dados
+      create_user_submit: Criar usuário
+      create_user_success_html: Enviamos um e-mail para o endereço de e-mail <b>%{email}</b> para verificar que pertence a este usuário. Ele contém um link que o usuário deve clicar. Então poderá selecionar uma senha de acesso e fazer login no site
+      autogenerated_password_html: "Senha gerada automaticamente é <b>%{password}</b>, você pode alterá-la na seção 'Minha conta' da web"
+      email_optional_label: E-mail (opcional)
+      erased_notice: Conta de usuário excluída.
+      erased_by_manager: "Eliminado pelo gerente: %{manager}"
+      erase_account_link: Excluir usuário
+      erase_account_confirm: Tem certeza que deseja excluir o documento? Esta ação não pode ser desfeita
+      erase_warning: Esta ação não pode ser desfeita. Por favor, certifique-se que isto é o que você quer.
+      erase_submit: Excluir conta
+    user_invites:
+      new:
+        label: E-mails
+        info: "Escreva os emails separados por vírgulas (',')"
+        submit: Enviar convites
+        title: Enviar convites
+      create:
+        success_html: <strong>%{count} de convites</strong> foram enviados.
+        title: Enviar convites

@@ -1,0 +1,24 @@
+<% if @banner_imgs.present?%>
+  <h2><%= t("admin.settings.index.banner_imgs") %></h2>
+
+  <table>
+    <tbody>
+      <% @banner_imgs.each do |setting| %>
+        <tr>
+          <td>
+            <strong><%= t("settings.#{setting.key}") %></strong>
+          </td>
+
+          <td>
+            <%= form_for(setting, url: admin_setting_path(setting), html: { id: "edit_#{dom_id(setting)}"}) do |f| %>
+              <%= f.text_area :value, label: false, id: dom_id(setting), lines: 1 %>
+              <%= f.submit(t('admin.settings.index.update_setting'), class: "button small success") %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h3><%= t("admin.settings.index.no_banners_images") %></h3>
+<% end %>

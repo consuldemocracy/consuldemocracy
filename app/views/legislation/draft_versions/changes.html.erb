@@ -2,6 +2,8 @@
 
 <%= render 'legislation/processes/header', process: @process, header: :small %>
 
+<%= render 'documents/additional_documents', documents: @process.documents %>
+
 <%= render 'legislation/processes/key_dates', process: @process, phase: :allegations_phase %>
 
 <div class="column row">
@@ -24,6 +26,8 @@
         <% end %>
       </div>
     </div>
+
+    <%= render 'legislation/processes/help_gif' %>
 
     <div class="row">
       <div class="small-12 medium-8 column legislation-changes">

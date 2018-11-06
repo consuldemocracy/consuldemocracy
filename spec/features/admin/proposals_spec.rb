@@ -7,6 +7,16 @@ feature 'Admin proposals' do
     login_as(admin.user)
   end
 
+  scenario 'Disabled with a feature flag' do
+    Setting['feature.proposals'] = nil
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    expect{ visit admin_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+
+    Setting['feature.proposals'] = true
+  end
+
   scenario 'List shows all relevant info' do
     proposal = create(:proposal, :hidden)
     visit admin_proposals_path
@@ -25,9 +35,9 @@ feature 'Admin proposals' do
 
     click_link 'Restore'
 
-    expect(page).to_not have_content(proposal.title)
+    expect(page).not_to have_content(proposal.title)
 
-    expect(proposal.reload).to_not be_hidden
+    expect(proposal.reload).not_to be_hidden
     expect(proposal).to be_ignored_flag
   end
 
@@ -35,9 +45,9 @@ feature 'Admin proposals' do
     proposal = create(:proposal, :hidden)
     visit admin_proposals_path
 
-    click_link 'Confirm'
+    click_link 'Confirm moderation'
 
-    expect(page).to_not have_content(proposal.title)
+    expect(page).not_to have_content(proposal.title)
     click_link('Confirmed')
     expect(page).to have_content(proposal.title)
 
@@ -46,24 +56,24 @@ feature 'Admin proposals' do
 
   scenario "Current filter is properly highlighted" do
     visit admin_proposals_path
-    expect(page).to_not have_link('Pending')
+    expect(page).not_to have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_proposals_path(filter: 'Pending')
-    expect(page).to_not have_link('Pending')
+    expect(page).not_to have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_proposals_path(filter: 'all')
     expect(page).to have_link('Pending')
-    expect(page).to_not have_link('All')
+    expect(page).not_to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_proposals_path(filter: 'with_confirmed_hide')
     expect(page).to have_link('All')
     expect(page).to have_link('Pending')
-    expect(page).to_not have_link('Confirmed')
+    expect(page).not_to have_link('Confirmed')
   end
 
   scenario "Filtering proposals" do
@@ -72,14 +82,14 @@ feature 'Admin proposals' do
 
     visit admin_proposals_path(filter: 'pending')
     expect(page).to have_content('Unconfirmed proposal')
-    expect(page).to_not have_content('Confirmed proposal')
+    expect(page).not_to have_content('Confirmed proposal')
 
     visit admin_proposals_path(filter: 'all')
     expect(page).to have_content('Unconfirmed proposal')
     expect(page).to have_content('Confirmed proposal')
 
     visit admin_proposals_path(filter: 'with_confirmed_hide')
-    expect(page).to_not have_content('Unconfirmed proposal')
+    expect(page).not_to have_content('Unconfirmed proposal')
     expect(page).to have_content('Confirmed proposal')
   end
 

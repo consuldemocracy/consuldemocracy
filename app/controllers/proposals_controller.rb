@@ -1,4 +1,5 @@
 class ProposalsController < ApplicationController
+  include FeatureFlags
   include CommentableActions
   include FlagActions
 
@@ -6,6 +7,11 @@ class ProposalsController < ApplicationController
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
+  before_action :destroy_map_location_association, only: :update
+  before_action :set_view, only: :index
+  before_action :proposals_recommendations, only: :index, if: :current_user
+
+  feature_flag :proposals
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
@@ -19,6 +25,9 @@ class ProposalsController < ApplicationController
   def show
     super
     @notifications = @proposal.notifications
+    @notifications = @proposal.notifications.not_moderated
+    @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
+
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
   end
 
@@ -71,11 +80,19 @@ class ProposalsController < ApplicationController
     @tag_cloud = tag_cloud
   end
 
+  def disable_recommendations
+    if current_user.update(recommended_proposals: false)
+      redirect_to proposals_path, notice: t('proposals.index.recommendations.actions.success')
+    else
+      redirect_to proposals_path, error: t('proposals.index.recommendations.actions.error')
+    end
+  end
+
   private
 
     def proposal_params
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
-                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id,
+                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id, :skip_map,
                                        image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                                        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                                        map_location_attributes: [:latitude, :longitude, :zoom])
@@ -121,8 +138,25 @@ class ProposalsController < ApplicationController
       end
     end
 
+    def set_view
+      @view = (params[:view] == "minimal") ? "minimal" : "default"
+    end
+
     def load_successful_proposals
       @proposal_successful_exists = Proposal.successful.exists?
+    end
+
+    def destroy_map_location_association
+      map_location = params[:proposal][:map_location_attributes]
+      if map_location && (map_location[:longitude] && map_location[:latitude]).blank? && !map_location[:id].blank?
+        MapLocation.destroy(map_location[:id])
+      end
+    end
+
+    def proposals_recommendations
+      if Setting['feature.user.recommendations_on_proposals'] && current_user.recommended_proposals
+        @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
+      end
     end
 
 end

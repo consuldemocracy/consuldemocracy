@@ -36,8 +36,8 @@ feature 'Tags' do
 
     visit proposals_path(tag: "123")
 
-    expect(page).to_not have_selector('#proposals .proposal-featured')
-    expect(page).to_not have_selector('#featured-proposals')
+    expect(page).not_to have_selector('#proposals .proposal-featured')
+    expect(page).not_to have_selector('#featured-proposals')
   end
 
   scenario 'Index shows 3 tags with no plus link' do
@@ -114,7 +114,7 @@ feature 'Tags' do
 
     within "#tags_proposal_#{Proposal.last.id}" do
       expect(page).to have_content 'Education'
-      expect(page).to_not have_content 'Health'
+      expect(page).not_to have_content 'Health'
     end
   end
 
@@ -160,7 +160,7 @@ feature 'Tags' do
     expect(page).to have_content 'user_id1'
     expect(page).to have_content 'a3'
     expect(page).to have_content 'scriptalert("hey");script'
-    expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
+    expect(page.html).not_to include 'user_id=1, &a=3, <script>alert("hey");</script>'
   end
 
   scenario 'Update' do
@@ -191,7 +191,7 @@ feature 'Tags' do
     click_button 'Save changes'
 
     expect(page).to have_content 'Proposal updated successfully.'
-    expect(page).to_not have_content 'Economía'
+    expect(page).not_to have_content 'Economía'
   end
 
   context "Filter" do
@@ -257,7 +257,7 @@ feature 'Tags' do
       expect(page).to have_css ".proposal", count: 2
       expect(page).to have_content proposal1.title
       expect(page).to have_content proposal2.title
-      expect(page).to_not have_content proposal3.title
+      expect(page).not_to have_content proposal3.title
     end
 
   end
@@ -296,7 +296,7 @@ feature 'Tags' do
       expect(page).to have_css ".proposal", count: 2
       expect(page).to have_content proposal1.title
       expect(page).to have_content proposal2.title
-      expect(page).to_not have_content proposal3.title
+      expect(page).not_to have_content proposal3.title
     end
   end
 end

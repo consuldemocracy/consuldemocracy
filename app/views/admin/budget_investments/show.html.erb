@@ -1,12 +1,13 @@
-<%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params)), data: {no_turbolink: true} do %>
-  <span class="icon-angle-left"></span> <%= t("shared.back") %>
+<%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params)),
+            class: "back", data: {no_turbolink: true} do %>
+  <span class="icon-angle-left"></span><%= t("shared.back") %>
 <% end %>
 
 <%= render 'written_by_author' %>
 
 <%= link_to t("admin.budget_investments.show.edit"),
             edit_admin_budget_budget_investment_path(@budget, @investment,
-                                                Budget::Investment.filter_params(params)) %>
+                                                Budget::Investment.filter_params(params)) unless @budget.finished? %>
 
 <hr>
 
@@ -19,7 +20,16 @@
 <p id="tags">
   <strong><%= t("admin.budget_investments.show.tags") %>:</strong>
 
-  <%= @investment.tags_on(:valuation).pluck(:name).join(', ') %>
+  <%= @investment.tags_on(:valuation).pluck(:name).sort.join(', ') %>
+</p>
+
+<p id="assigned_valuator_groups">
+  <strong><%= t("admin.budget_investments.show.valuator_groups") %>:</strong>
+  <% if @investment.valuator_groups.any? %>
+    <%= @investment.valuator_groups.collect(&:name).join(', ') %>
+  <% else %>
+    <%= t("admin.budget_investments.show.undefined") %>
+  <% end %>
 </p>
 
 <p id="assigned_valuators">
@@ -34,25 +44,25 @@
 <p>
   <%= link_to t("admin.budget_investments.show.edit_classification"),
                 edit_admin_budget_budget_investment_path(@budget, @investment,
-                                                  {anchor: 'classification'}.merge(Budget::Investment.filter_params(params))) %>
+                                                  {anchor: 'classification'}.merge(Budget::Investment.filter_params(params))) unless @budget.finished? %>
 </p>
 
 <hr>
 
 <h2><%= t("admin.budget_investments.show.dossier") %></h2>
-
-<%= render 'valuation/budget_investments/written_by_valuators' %>
-
+<%= render 'valuation/budget_investments/dossier' %>
 <p>
-  <%= link_to t("admin.budget_investments.show.edit_dossier"), edit_valuation_budget_budget_investment_path(@budget, @investment) %>
+  <%= link_to t("admin.budget_investments.show.edit_dossier"), edit_valuation_budget_budget_investment_path(@budget, @investment) unless @budget.finished? %>
 </p>
 
-<hr>
+<%= render 'valuation/budget_investments/valuation_comments' %>
 
 <h2><%= t("admin.budget_investments.show.milestone") %></h2>
 
 <%= render 'admin/budget_investments/milestones' %>
 
 <p>
-  <%= link_to t("admin.budget_investments.show.new_milestone"), new_admin_budget_budget_investment_budget_investment_milestone_path(@budget, @investment) %>
+  <%= link_to t("admin.budget_investments.show.new_milestone"),
+              new_admin_budget_budget_investment_budget_investment_milestone_path(@budget, @investment),
+              class: "button hollow" %>
 </p>

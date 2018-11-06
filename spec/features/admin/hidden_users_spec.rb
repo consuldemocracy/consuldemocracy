@@ -29,18 +29,18 @@ feature 'Admin hidden users' do
 
     click_link 'Restore'
 
-    expect(page).to_not have_content(user.username)
+    expect(page).not_to have_content(user.username)
 
-    expect(user.reload).to_not be_hidden
+    expect(user.reload).not_to be_hidden
   end
 
   scenario 'Confirm hide' do
     user = create(:user, :hidden)
     visit admin_hidden_users_path
 
-    click_link 'Confirm'
+    click_link 'Confirm moderation'
 
-    expect(page).to_not have_content(user.username)
+    expect(page).not_to have_content(user.username)
     click_link('Confirmed')
     expect(page).to have_content(user.username)
 
@@ -49,24 +49,24 @@ feature 'Admin hidden users' do
 
   scenario "Current filter is properly highlighted" do
     visit admin_hidden_users_path
-    expect(page).to_not have_link('Pending')
+    expect(page).not_to have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_hidden_users_path(filter: 'Pending')
-    expect(page).to_not have_link('Pending')
+    expect(page).not_to have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_hidden_users_path(filter: 'all')
     expect(page).to have_link('Pending')
-    expect(page).to_not have_link('All')
+    expect(page).not_to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_hidden_users_path(filter: 'with_confirmed_hide')
     expect(page).to have_link('All')
     expect(page).to have_link('Pending')
-    expect(page).to_not have_link('Confirmed')
+    expect(page).not_to have_link('Confirmed')
   end
 
   scenario "Filtering users" do
@@ -78,7 +78,7 @@ feature 'Admin hidden users' do
     expect(page).to have_content('Confirmed user')
 
     visit admin_hidden_users_path(filter: 'with_confirmed_hide')
-    expect(page).to_not have_content('Unconfirmed')
+    expect(page).not_to have_content('Unconfirmed')
     expect(page).to have_content('Confirmed user')
   end
 

@@ -1,0 +1,22 @@
+id:
+  activemodel:
+    models:
+      verification:
+        residence: "Tempat tinggal"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Tipe dokumen"
+          document_number: "Nomor dokumen (termasuk huruf)"
+          date_of_birth: "Tanggal lahir"
+          postal_code: "Kode Pos"
+        sms:
+          phone: "Telepon"
+          confirmation_code: "Kode konfirmasi"
+        email:
+          recipient: "Email"
+      officing/residence:
+        document_type: "Tipe dokumen"
+        document_number: "Nomor dokumen (termasuk huruf)"
+        year_of_birth: "Tahun lahir"

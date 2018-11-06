@@ -7,7 +7,8 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
 
   def create
     if @content_block.save
-      redirect_to admin_site_customization_content_blocks_path, notice: t('admin.site_customization.content_blocks.create.notice')
+      notice = t('admin.site_customization.content_blocks.create.notice')
+      redirect_to admin_site_customization_content_blocks_path, notice: notice
     else
       flash.now[:error] = t('admin.site_customization.content_blocks.create.error')
       render :new
@@ -16,7 +17,8 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
 
   def update
     if @content_block.update(content_block_params)
-      redirect_to admin_site_customization_content_blocks_path, notice: t('admin.site_customization.content_blocks.update.notice')
+      notice = t('admin.site_customization.content_blocks.update.notice')
+      redirect_to admin_site_customization_content_blocks_path, notice: notice
     else
       flash.now[:error] = t('admin.site_customization.content_blocks.update.error')
       render :edit
@@ -25,7 +27,8 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
 
   def destroy
     @content_block.destroy
-    redirect_to admin_site_customization_content_blocks_path, notice: t('admin.site_customization.content_blocks.destroy.notice')
+    notice = t('admin.site_customization.content_blocks.destroy.notice')
+    redirect_to admin_site_customization_content_blocks_path, notice: notice
   end
 
   private

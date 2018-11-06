@@ -2,7 +2,7 @@ module Sluggable
   extend ActiveSupport::Concern
 
   included do
-    before_validation :generate_slug
+    before_validation :generate_slug, if: :generate_slug?
   end
 
   def generate_slug

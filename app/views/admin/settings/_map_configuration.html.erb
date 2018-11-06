@@ -1,0 +1,8 @@
+<% if feature?(:map) %>
+  <h2><%= t("admin.settings.index.map.title") %></h2>
+  <p><%= t("admin.settings.index.map.help") %></p>
+
+  <%= render "map_form" %>
+<% else %>
+  <h3>No map to show.</h3>
+<% end %>

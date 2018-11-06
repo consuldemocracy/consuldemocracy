@@ -1,6 +1,6 @@
 <ul class="menu simple clear" id="assigned-resources-tabs">
   <% if controller_name == "polls" %>
-    <li class="active">
+    <li class="is-active">
       <h2>
         <%= t("admin.polls.show.questions_tab") %>
         (<%= @poll.questions.count %>)
@@ -16,7 +16,7 @@
   <% end %>
 
   <% if controller_name == "booth_assignments" %>
-    <li class="active">
+    <li class="is-active">
       <h2>
         <%= t("admin.polls.show.booths_tab") %>
         (<%= @poll.booth_assignments.select(:booth_id).distinct.count %>)
@@ -32,7 +32,7 @@
   <% end %>
 
   <% if controller_name == "officer_assignments" %>
-    <li class="active">
+    <li class="is-active">
       <h2>
         <%= t("admin.polls.show.officers_tab") %>
         (<%= @poll.officer_assignments.select(:officer_id).distinct.count %>)
@@ -48,7 +48,7 @@
   <% end %>
 
   <% if controller_name == "recounts" %>
-    <li class="active">
+    <li class="is-active">
       <h2>
         <%= t("admin.polls.show.recounts_tab") %>
       </h2>
@@ -60,7 +60,7 @@
   <% end %>
 
   <% if controller_name == "results" %>
-    <li class="active">
+    <li class="is-active">
       <h2>
         <%= t("admin.polls.show.results_tab") %>
       </h2>

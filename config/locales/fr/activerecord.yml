@@ -10,6 +10,12 @@ fr:
       budget/investment:
         one: "Projet d'investissement"
         other: "Projets d'investissement"
+      budget/investment/milestone:
+        one: "jalon"
+        other: "jalons"
+      budget/investment/status:
+        one: "Statut d’investissement"
+        other: "Statuts d’investissement"
       comment:
         one: "Commentaire"
         other: "Commentaires"
@@ -28,6 +34,18 @@ fr:
       administrator:
         one: "Administrateur"
         other: "Administrateurs"
+      valuator:
+        one: "Évaluateur"
+        other: "Évaluateurs"
+      valuator_group:
+        one: "Groupe d’évaluateurs"
+        other: "Groupes d’évaluateurs"
+      manager:
+        one: "Responsable"
+        other: "Responsables"
+      newsletter:
+        one: "Bulletin d’information"
+        other: "Bulletins d’information"
       vote:
         one: "Vote"
         other: "Votes"
@@ -38,7 +56,7 @@ fr:
         one: "bureau de vote"
         other: "bureaux de vote"
       poll/officer:
-        one: "président"
+        one: "assesseur"
         other: "présidents"
       proposal:
         one: "Proposition citoyenne"
@@ -55,37 +73,79 @@ fr:
       site_customization/content_block:
         one: Bloc de contenu personnalisé
         other: Blocs de contenu personnalisés
+      legislation/process:
+        one: "Processus"
+        other: "Processus"
+      legislation/draft_versions:
+        one: "Ébauche"
+        other: "Ébauches"
+      legislation/draft_texts:
+        one: "Brouillon"
+        other: "Brouillons"
+      legislation/questions:
+        one: "Question"
+        other: "Questions"
+      legislation/question_options:
+        one: "Paramètres de la question"
+        other: "Paramètres de la question"
+      legislation/answers:
+        one: "Réponse"
+        other: "Réponses"
+      documents:
+        one: "Document"
+        other: "Documents"
+      images:
+        one: "Image"
+        other: "Images"
+      topic:
+        one: "Sujet"
+        other: "Sujets"
+      poll:
+        one: "Sondage"
+        other: "Sondages"
+      proposal_notification:
+        one: "Notification de proposition"
+        other: "Notifications des propositions"
     attributes:
       budget:
         name: "Nom"
         description_accepting: "Description durant la phase d'acceptation"
-        description_reviewing: "Description durant la phase de revue"
+        description_reviewing: "Description durant la phase d'examen"
         description_selecting: "Description durant la phase de sélection"
         description_valuating: "Description durant la phase d'évaluation"
         description_balloting: "Description durant la phase de vote"
-        description_reviewing_ballots: "Description durant la phase de revue des votes"
+        description_reviewing_ballots: "Description durant la phase d'examen des votes"
         description_finished: "Description quand le budget est finalisé"
         phase: "Phase"
-        currency_symbol: "Devise"
+        currency_symbol: "Monnaie"
       budget/investment:
         heading_id: "Rubrique du budget"
         title: "Titre"
         description: "Description"
-        external_url: "Lien externe"
-        location: "Lieu"
-        administrator_id: "Administrateur"
-        description: "Description"
         external_url: "Lien vers la documentation complémentaire"
-        heading_id: "Rubrique du budget"
+        administrator_id: "Administrateur"
+        location: "Lieu (optionnel)"
+        organization_name: "Si votre proposition se fait au nom d'un collectif ou d'une organisation, renseignez leur nom"
+        image: "Image descriptive de la proposition"
+        image_title: "Titre de l'image"
+      budget/investment/milestone:
+        status_id: "Statut actuel de l'investissement (facultatif)"
         title: "Titre"
-        location: "Lieu"
-        organization_name: "Si votre proposition concerne un collectif ou une organisation, renseignez leur nom"
+        description: "Description (facultative si un statut est affecté)"
+        publication_date: "Date de publication"
+      budget/investment/status:
+        name: "Nom"
+        description: "Description (facultative)"
+      budget/heading:
+        name: "Nom de la rubrique"
+        price: "Coût"
+        population: "Population"
       comment:
         body: "Commentaire"
         user: "Utilisateur"
       debate:
         author: "Auteur"
-        description: "Opinion"
+        description: "Avis"
         terms_of_service: "Conditions d'utilisation"
         title: "Titre"
       proposal:
@@ -95,6 +155,7 @@ fr:
         description: "Description"
         terms_of_service: "Conditions d'utilisation"
       user:
+        login: "Email ou nom d’utilisateur"
         email: "Courriel"
         username: "Nom d'utilisateur"
         password_confirmation: "Confirmation du mot de passe"
@@ -119,9 +180,10 @@ fr:
         starts_at: "Date de début"
         ends_at: "Date de fin"
         geozone_restricted: "Restreint selon la zone géographique"
+        summary: "Résumé"
+        description: "Description"
       poll/question:
         title: "Question"
-        valid_answers: "Réponses possibles"
         summary: "Résumé"
         description: "Description"
         external_url: "Lien vers la documentation complémentaire"
@@ -147,12 +209,57 @@ fr:
         name: Nom
         locale: Langue
         body: Contenu
+      legislation/process:
+        title: Titre du processus
+        summary: Résumé
+        description: Description
+        additional_info: Plus d'infos
+        start_date: Date de début
+        end_date: Date de fin
+        debate_start_date: Date de début du débat
+        debate_end_date: Date de fin du débat
+        draft_publication_date: Date de publication de l'ébauche
+        allegations_start_date: Date de début des allégations
+        allegations_end_date: Date de fin des allégations
+        result_publication_date: Date de publication du résultat final
+      legislation/draft_version:
+        title: Titre de la version
+        body: Texte
+        changelog: Changements
+        status: Statut
+        final_version: Version finale
+      legislation/question:
+        title: Titre
+        question_options: Options
+      legislation/question_option:
+        value: Valeur
+      legislation/annotation:
+        text: Commentaire
+      document:
+        title: Titre
+        attachment: Pièce jointe
+      image:
+        title: Titre
+        attachment: Pièce jointe
       poll/question/answer:
         title: Réponse
         description: Description
       poll/question/answer/video:
         title: Titre
         url: Vidéo externe
+      newsletter:
+        segment_recipient: Destinataires
+        subject: Objet
+        from: De
+        body: Contenu du courriel
+      widget/card:
+        label: Label (facultatif)
+        title: Titre
+        description: Description
+        link_text: Texte du lien
+        link_url: Url du lien
+      widget/feed:
+        limit: Nombre d’éléments
     errors:
       models:
         user:
@@ -167,11 +274,36 @@ fr:
           attributes:
             max_per_day:
               invalid: "Vous avez atteint le nombre maximum de message privés par jour"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "La largeur de l'image doit être d'au moins %{required_min_width}px"
+              min_image_height: "La hauteur de l'image doit être d'au moins %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Le segment des utilisateurs destinataires est invalide"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Le segment des utilisateurs destinataires n’est pas valide"
+        map_location:
+          attributes:
+            map:
+              invalid: Un emplacement doit être défini sur la carte. Placez un marqueur ou désélectionnez la position si elle n'est pas nécessaire
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Ce document n'est pas dans le recensement"
               has_voted: "L'utilisateur a déjà voté"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: doit être la date de début ou postérieur
+            debate_end_date:
+              invalid_date_range: doit être la date de début du débat ou postérieur
+            allegations_end_date:
+              invalid_date_range: doit être égal ou postérieur à la date de début des allégations
         proposal:
           attributes:
             tag_list:
@@ -198,3 +330,12 @@ fr:
             image:
               image_width: "La largeur doit être de %{required_width}px"
               image_height: "La hauteur doit être de %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Vous ne pouvez pas commenter une évaluation'
+      messages:
+        record_invalid: "Échec de la validation : %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Les données ne peuvent être supprimées car les données suivantes sont liées : %{record}"
+          has_many: "Les données ne peuvent être supprimées car les données suivantes sont liées : %{record}"

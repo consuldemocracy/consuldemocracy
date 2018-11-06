@@ -1,0 +1,20 @@
+id:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Masuk
+        other: Entri
+      more_pages:
+        display_entries: Menampilkan <strong>%{first}&nbsp;-&nbsp;%{last}</strong> pada <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} tidak dapat ditemukan"
+          other: Disana ada <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Anda sedang di halaman
+      first: Pertama
+      last: Terakhir
+      next: Selanjutnya
+      previous: Sebelumnya
+      truncate: "&hellip;"

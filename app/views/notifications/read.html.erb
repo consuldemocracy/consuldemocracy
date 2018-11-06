@@ -1,0 +1,19 @@
+<div class="row margin-bottom">
+  <div class="small-12 column">
+
+    <h1><%= t("notifications.index.title") %></h1>
+
+    <ul class="menu simple clear">
+      <li>
+        <%= link_to t("notifications.index.unread"), notifications_path %>
+      </li>
+      <li class="is-active">
+        <h2><%= link_to t("notifications.index.read"), read_notifications_path %></h2>
+      </li>
+    </ul>
+
+    <ul class="no-bullet clear notifications-list">
+      <%= render @notifications %>
+    </ul>
+  </div>
+</div>

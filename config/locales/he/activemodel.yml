@@ -1,0 +1,18 @@
+he:
+  activemodel:
+    models:
+      verification:
+        residence: "מקום מגורים"
+        sms: "מסרון"
+    attributes:
+      verification:
+        residence:
+          document_type: "סוג מסמך"
+          document_number: "מספר מסמך (כולל אותיות)"
+          date_of_birth: "תאריך לידה"
+          postal_code: "מיקוד"
+        sms:
+          phone: "מספר טלפון"
+          confirmation_code: "אישור הקוד"
+        email:
+          recipient: "קבלת דואר אלקטרוני"

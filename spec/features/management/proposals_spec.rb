@@ -42,7 +42,7 @@ feature 'Proposals' do
       expect(page).to have_content user.name
       expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
 
-      expect(current_path).to eq(management_proposal_path(Proposal.last))
+      expect(page).to have_current_path(management_proposal_path(Proposal.last))
     end
 
     scenario "Should not allow unverified users to create proposals" do
@@ -65,7 +65,7 @@ feature 'Proposals' do
       right_path = management_proposal_path(proposal)
       visit right_path
 
-      expect(current_path).to eq(right_path)
+      expect(page).to have_current_path(right_path)
     end
 
     scenario 'When path does not match the friendly url' do
@@ -78,8 +78,8 @@ feature 'Proposals' do
       old_path = "#{management_proposals_path}/#{proposal.id}-something-else"
       visit old_path
 
-      expect(current_path).to_not eq(old_path)
-      expect(current_path).to eq(right_path)
+      expect(page).not_to have_current_path(old_path)
+      expect(page).to have_current_path(right_path)
     end
   end
 
@@ -95,13 +95,13 @@ feature 'Proposals' do
     fill_in "search", with: "what you got"
     click_button "Search"
 
-    expect(current_path).to eq(management_proposals_path)
+    expect(page).to have_current_path(management_proposals_path, ignore_query: true)
 
     within(".proposals-list") do
       expect(page).to have_css('.proposal', count: 1)
       expect(page).to have_content(proposal1.title)
       expect(page).to have_content(proposal1.summary)
-      expect(page).to_not have_content(proposal2.title)
+      expect(page).not_to have_content(proposal2.title)
       expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.title)
     end
   end
@@ -115,7 +115,7 @@ feature 'Proposals' do
 
     click_link "Support proposals"
 
-    expect(current_path).to eq(management_proposals_path)
+    expect(page).to have_current_path(management_proposals_path)
 
     within(".account-info") do
       expect(page).to have_content "Identified as"
@@ -135,44 +135,39 @@ feature 'Proposals' do
 
   context "Voting" do
 
-    scenario 'Voting proposals on behalf of someone in index view', :js do
-      proposal = create(:proposal)
+    let!(:proposal) { create(:proposal) }
 
+    scenario 'Voting proposals on behalf of someone in index view', :js do
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Support proposals"
 
       within(".proposals-list") do
-        find('.in-favor a').click
-
+        click_link('Support')
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this proposal. Share it!"
       end
-      expect(current_path).to eq(management_proposals_path)
+
+      expect(page).to have_current_path(management_proposals_path)
     end
 
     scenario 'Voting proposals on behalf of someone in show view', :js do
-      proposal = create(:proposal)
-
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Support proposals"
 
-      within(".proposals-list") do
-        click_link proposal.title
-      end
+      within(".proposals-list") { click_link proposal.title }
+      expect(page).to have_content proposal.code
+      within("#proposal_#{proposal.id}_votes") { click_link('Support') }
 
-      find('.in-favor a').click
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this proposal. Share it!"
-      expect(current_path).to eq(management_proposal_path(proposal))
+      expect(page).to have_current_path(management_proposal_path(proposal))
     end
 
     scenario "Should not allow unverified users to vote proposals" do
-      proposal = create(:proposal)
-
       user = create(:user)
       login_managed_user(user)
 
@@ -194,9 +189,12 @@ feature 'Proposals' do
     end
 
     scenario "Filtering proposals to be printed", :js do
-      create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
-      create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
-      create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
+      worst_proposal = create(:proposal, title: 'Worst proposal')
+      worst_proposal.update_column(:confidence_score, 2)
+      best_proposal = create(:proposal, title: 'Best proposal')
+      best_proposal.update_column(:confidence_score, 10)
+      medium_proposal = create(:proposal, title: 'Medium proposal')
+      medium_proposal.update_column(:confidence_score, 5)
 
       user = create(:user, :level_two)
       login_managed_user(user)
@@ -206,8 +204,8 @@ feature 'Proposals' do
       expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
 
       within(".proposals-list") do
-        expect('Best proposal').to appear_before('Medium proposal')
-        expect('Medium proposal').to appear_before('Worst proposal')
+        expect(best_proposal.title).to appear_before(medium_proposal.title)
+        expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
       select 'newest', from: 'order-selector'
@@ -218,8 +216,8 @@ feature 'Proposals' do
       expect(current_url).to include('page=1')
 
       within(".proposals-list") do
-        expect('Medium proposal').to appear_before('Best proposal')
-        expect('Best proposal').to appear_before('Worst proposal')
+        expect(medium_proposal.title).to appear_before(best_proposal.title)
+        expect(best_proposal.title).to appear_before(worst_proposal.title)
       end
     end
 

@@ -1,0 +1,21 @@
+val:
+  images:
+    remove_image: Eliminar imatge
+    form:
+      title: Imatge descriptiva
+      title_placeholder: Afegeix un títol descriptiu per a l'imatge
+      attachment_label: Selecciona una imatge
+      delete_button: Eliminar imatge
+      note: "Pots pujar una imatge en els formats: %{accepted_content_types}, i de fins %{max_file_size} MB per fitxer."
+      add_new_image: Afegir imatge
+      admin_title: "Imatge"
+      admin_alt_text: "Texte alternatiu per a l'imatge"
+    actions:
+      destroy:
+        notice: Imatge eliminada correctament.
+        alert: La imatge no s'ha pogut eliminar.
+        confirm: Està segur que desitja eliminar aquesta imatge? Aquesta acció no es pot desfer!
+    errors:
+      messages:
+        in_between: ha d'estar entre %{min} i %{max}
+        wrong_content_type: el tipus de contingut %{content_type} del fitxer no coincideix en cap dels tipus de contingut acceptats %{accepted_content_types}

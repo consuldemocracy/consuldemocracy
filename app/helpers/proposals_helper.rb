@@ -48,4 +48,20 @@ module ProposalsHelper
     current_user && proposal.editable_by?(current_user)
   end
 
+  def proposals_minimal_view_path
+    proposals_path(view: proposals_secondary_view)
+  end
+
+  def proposals_default_view?
+    @view == "default"
+  end
+
+  def proposals_current_view
+    @view
+  end
+
+  def proposals_secondary_view
+    proposals_current_view == "default" ? "minimal" : "default"
+  end
+
 end

@@ -1,0 +1,76 @@
+he:
+  budgets:
+    ballots:
+      show:
+        title: בחר/י אפשרות
+        amount_spent: סכום ההוצאה
+      reasons_for_not_balloting:
+        not_logged_in: חובה שיהיו %{signin} או %{signup} בכדי להמשיך
+        not_verified: רק משתמשים שרישומם אומת יכולים להצביע על ההצעות; %{verify_account}.
+        organization: מעלי ההצעה אינם רשאים להצביע
+        not_selected: לא ניתן לתמוך/להשקיע בפרויקטים שלא נבחרו
+        no_ballots_allowed: שלב הבחירה נסגר
+    phase:
+      accepting: קבלת ההצעות
+      reviewing: reviewing proposals  צפייה בהצעות
+      selecting: בחירת ההצעות
+      valuating: הערכת ההצעות
+      finished: תקציב סגור
+    index:
+      title: Participatory budgets תקציבים השתתפותים
+    investments:
+      form:
+        tag_category_label: "קטגוריות"
+        tags_instructions: "תיוג הצעה זו. ניתן לבחור קטגוריה קיימת או להוסיף חדשה"
+        tags_label: תגיות
+        tags_placeholder: "\nהזנת תגיות, ניתן להוסיף מספר תגיות מופרדות באמצעות פסיקים\n (',')"
+      index:
+        title: תקצוב השתתפותי
+        unfeasible: השקעה בפרויקט שאינו בר ביצוע
+        by_heading: "הקפי השקעה בפרויקטים:%{heading}"
+        search_form:
+          button: Search
+          placeholder: חיפוש פרויקטים להשקעה...
+          title: Search
+        sidebar:
+          my_ballot: ההצבעה שלי
+          voted_info: ניתן לשנות את ההצבעה בכל זמן עד סגירת השלב
+          zero: לא נעשתה הצבעה עבור פרויקט השקעה.
+          verified_only: "ליצירת פרויקט השקעה חדש %{verify}."
+          verify_account: "אמתו את חשבונכם"
+          not_logged_in: "חובה נדרשת ליצירת תקציב, השקעה של%{sign_in} או%{sign_up}."
+          sign_in: "כניסה לחשבון"
+          sign_up: "יצירת חשבון"
+          by_feasibility: על פי ההיתכנות
+          feasible: פרויקטים ברי ביצוע
+          unfeasible: פרויקטים שאינם ברי ביצוע
+        orders:
+          random: אקראי
+          confidence_score: דרוג גבוה ביותר
+          price: לפי מחיר
+      show:
+        author_deleted: משתמש/ת נמחק/ה
+        price_explanation: פירוט למחיר
+        unfeasibility_explanation: אין סבירות שניתן לביצוע
+        code_html: 'קוד פרויקט ההשקעה: <strong>%{code}</strong>'
+        location_html: 'מיקום: <strong>%{location}</strong>'
+        share: שתף
+        title: פרויקט השקעה
+        supports: תמיכה
+        votes: הצבעות
+      wrong_price_format: רק בסכומים שלמים
+      investment:
+        add: Add
+        already_added: כבר הוספת את פרויקט ההשקעות הזה
+        support_title: תמיכה בפרויקט הזה
+        supports:
+          zero: אין תומכים
+        give_support: תמיכה
+      header:
+        check_ballot: בדוק את מצב ההצבעות
+        different_heading_assigned_html: "ישנן הצבעות פתוחות בנושאים אחרים: %{heading_link}"
+    show:
+      group: קבוצה
+      phase: שלב נוכחי
+      unfeasible_title: השקעות שאינן ברות ביצוע
+      unfeasible: צפיה בהשקעות שאינן ברות ביצוע

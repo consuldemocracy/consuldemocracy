@@ -1,0 +1,75 @@
+he:
+  moderation:
+    comments:
+      index:
+        block_authors: משתמש/ת חסום/ה
+        confirm: האם את/ה בטוח/ה?
+        filter: מסנן
+        filters:
+          all: כולם
+          pending_flag_review: ממתין לאישור
+          with_ignored_flag: סמנו כנראה
+        headers:
+          comment: הערות
+          moderate: הנחה דיון
+        hide_comments: הסתר הערות
+        ignore_flags: סמנו כנראה
+        order: הזמינו
+        orders:
+          flags: הנצפה ביותר
+          newest: החדש ביותר
+        title: הערות
+    dashboard:
+      index:
+        title: הנחייה
+    debates:
+      index:
+        block_authors: חסום משתמש
+        confirm: האם את/ה בטוח/ה?
+        filter: מסנן
+        filters:
+          all: כולם
+          pending_flag_review: ממתין לאישור
+          with_ignored_flag: סומנו שנראו
+        headers:
+          debate: דיון
+          moderate: הנחה דיון
+        hide_debates: הסתירו את הדיון
+        ignore_flags: סמן שהחומר נראה
+        order: הזמן
+        orders:
+          created_at: החדש ביותר
+          flags: הנצפה ביותר
+        title: דיונים
+    menu:
+      flagged_comments: הערות
+      flagged_debates: דיונים
+      proposals: הצעות
+      users: חסימת משתמשים/ות
+    proposals:
+      index:
+        block_authors: חסימת הכותב/ת
+        confirm: האם את/ה בטוח/ה?
+        filter: מסנן
+        filters:
+          all: הכל
+          pending_flag_review: צפיות בהמתנה
+          with_ignored_flag: סמנו כמסמך שנצפה
+        headers:
+          moderate: מנחה
+          proposal: הצעה
+        hide_proposals: הסתרת הצעות
+        ignore_flags: סימון כמסמך שנצפה
+        order: הזמנה באמצעות
+        orders:
+          created_at: האחרון
+          flags: הנצפה ביותר
+        title: הצעות
+    users:
+      index:
+        hidden: מוסתרים
+        hide: הסתרה
+        search: חיפוש
+        search_placeholder: חיפוש דואר אלקטרוני או שם המשתמש
+        title: חסימת משתמשים
+      notice_hide: המשתמש/ת נחסם/ה. כל הדיונים וההערות של המשתמש/ת הוסתרו.

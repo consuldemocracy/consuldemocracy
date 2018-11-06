@@ -28,7 +28,7 @@ feature 'Officer Assignments' do
     within('#officer_assignments') do
       expect(page).to have_content officer1.name
       expect(page).to have_content officer2.name
-      expect(page).to_not have_content officer3.name
+      expect(page).not_to have_content officer3.name
     end
   end
 
@@ -60,7 +60,7 @@ feature 'Officer Assignments' do
     within('#search-officers-results') do
       expect(page).to have_content officer1.name
       expect(page).to have_content officer2.name
-      expect(page).to_not have_content officer3.name
+      expect(page).not_to have_content officer3.name
     end
   end
 

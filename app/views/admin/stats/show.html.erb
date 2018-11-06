@@ -7,6 +7,8 @@
       <h1 class="inline-block"><%= t "admin.stats.show.stats_title" %></h1>
 
       <div class="float-right clear">
+        <%= link_to t("admin.stats.show.polls"),
+                    polls_admin_stats_path, class: "button hollow" %>
         <%= link_to t("admin.stats.show.direct_messages"),
                     direct_messages_admin_stats_path, class: "button hollow" %>
         <%= link_to t("admin.stats.show.proposal_notifications"),

@@ -13,6 +13,9 @@ es:
       budget/investment/milestone:
         one: "hito"
         other: "hitos"
+      budget/investment/status:
+        one: "Estado de proyecto"
+        other: "Estados de proyecto"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -34,27 +37,33 @@ es:
       valuator:
         one: "Evaluador"
         other: "Evaluadores"
+      valuator_group:
+        one: "Grupo de evaluadores"
+        other: "Grupos de evaluadores"
       manager:
         one: "Gestor"
         other: "Gestores"
+      newsletter:
+        one: "Newsletter"
+        other: "Newsletter"
       vote:
         one: "Voto"
         other: "Votos"
       organization:
         one: "Organización"
         other: "Organizaciones"
-      proposal:
-        one: "Propuesta ciudadana"
-        other: "Propuestas ciudadanas"
       poll/booth:
         one: "urna"
         other: "urnas"
       poll/officer:
         one: "presidente de mesa"
         other: "presidentes de mesa"
+      proposal:
+        one: "Propuesta ciudadana"
+        other: "Propuestas ciudadanas"
       spending_proposal:
-        one: "Propuesta de inversión"
-        other: "Propuestas de inversión"
+        one: "Proyecto de inversión"
+        other: "Proyectos de inversión"
       site_customization/page:
         one: Página
         other: Páginas
@@ -65,11 +74,14 @@ es:
         one: Bloque
         other: Bloques
       legislation/process:
-          one: "Proceso"
-          other: "Procesos"
+        one: "Proceso"
+        other: "Procesos"
+      legislation/proposal:
+        one: "Propuesta"
+        other: "Propuestas"
       legislation/draft_versions:
-          one: "Versión borrador"
-          other: "Versiones borrador"
+        one: "Versión borrador"
+        other: "Versiones borrador"
       legislation/draft_texts:
         one: "Borrador"
         other: "Borradores"
@@ -88,6 +100,15 @@ es:
       images:
         one: "Imagen"
         other: "Imágenes"
+      topic:
+        one: "Tema"
+        other: "Temas"
+      poll:
+        one: "Votación"
+        other: "Votaciones"
+      proposal_notification:
+        one: "Notificación de propuesta"
+        other: "Notificaciones de propuestas"
     attributes:
       budget:
         name: "Nombre"
@@ -101,20 +122,30 @@ es:
         phase: "Fase"
         currency_symbol: "Divisa"
       budget/investment:
-        administrator_id: "Administrador"
-        description: "Descripción"
-        external_url: "Enlace a documentación adicional"
         heading_id: "Partida presupuestaria"
         title: "Título"
-        location: "Ubicación"
-        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+        administrator_id: "Administrador"
+        location: "Ubicación (opcional)"
+        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva de la propuesta de inversión"
+        image_title: "Título de la imagen"
+      budget/investment/milestone:
+        status_id: "Estado actual del proyecto (opcional)"
+        title: "Título"
+        description: "Descripción (opcional si se ha asignado un estado de proyecto)"
+        publication_date: "Fecha de publicación"
+      budget/investment/status:
+        name: "Nombre"
+        description: "Descripción (opcional)"
+      budget/heading:
+        name: "Nombre de la partida"
+        price: "Cantidad"
+        population: "Población"
       comment:
         body: "Comentario"
         user: "Usuario"
-      budget/investment/milestone:
-        title: "Título"
-        description: "Descripción"
       debate:
         author: "Autor"
         description: "Opinión"
@@ -127,7 +158,7 @@ es:
         description: "Descripción"
         terms_of_service: "Términos de servicio"
       user:
-        login: Email o nombre de usuario
+        login: "Email o nombre de usuario"
         email: "Correo electrónico"
         username: "Nombre de usuario"
         password_confirmation: "Confirmación de contraseña"
@@ -154,11 +185,17 @@ es:
         geozone_restricted: "Restringida por zonas"
         summary: "Resumen"
         description: "Descripción"
+      poll/translation:
+        name: "Nombre"
+        summary: "Resumen"
+        description: "Descripción"
       poll/question:
         title: "Pregunta"
         summary: "Resumen"
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
+      poll/question/translation:
+        title: "Pregunta"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Propuesta inversión"
@@ -171,9 +208,13 @@ es:
         status: Estado
         title: Título
         updated_at: última actualización
-        more_info_flag: Mostrar en la página de más información
+        more_info_flag: Mostrar en la página de ayuda
         print_content_flag: Botón de imprimir contenido
         locale: Idioma
+      site_customization/page/translation:
+        title: Título
+        subtitle: Subtítulo
+        content: Contenido
       site_customization/image:
         name: Nombre
         image: Imagen
@@ -183,6 +224,7 @@ es:
         body: Contenido
       legislation/process:
         title: Título del proceso
+        summary: Resumen
         description: En qué consiste
         additional_info: Información adicional
         start_date: Fecha de inicio del proceso
@@ -193,12 +235,21 @@ es:
         allegations_start_date: Fecha de inicio de alegaciones
         allegations_end_date: Fecha de fin de alegaciones
         result_publication_date: Fecha de publicación del resultado final
+      legislation/process/translation:
+        title: Título del proceso
+        summary: Resumen
+        description: En qué consiste
+        additional_info: Información adicional
       legislation/draft_version:
         title: Título de la version
         body: Texto
         changelog: Cambios
         status: Estado
         final_version: Versión final
+      legislation/draft_version/translation:
+        title: Título de la version
+        body: Texto
+        changelog: Cambios
       legislation/question:
         title: Título
         question_options: Respuestas
@@ -215,9 +266,38 @@ es:
       poll/question/answer:
         title: Respuesta
         description: Descripción
+      poll/question/answer/translation:
+        title: Respuesta
+        description: Descripción
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
+      newsletter:
+        segment_recipient: Destinatarios
+        subject: Asunto
+        from: Enviado por
+        body: Contenido del email
+      admin_notification:
+        segment_recipient: Destinatarios
+        title: Título
+        link: Enlace
+        body: Texto
+      admin_notification/translation:
+        title: Título
+        body: Texto
+      widget/card:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
+        link_url: URL del enlace
+      widget/card/translation:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
+      widget/feed:
+        limit: Número de elementos
     errors:
       models:
         user:
@@ -237,6 +317,18 @@ es:
             attachment:
               min_image_width: "La imagen debe tener al menos %{required_min_width}px de largo"
               min_image_height: "La imagen debe tener al menos %{required_min_height}px de alto"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "El segmento de usuarios es inválido"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "El segmento de usuarios es inválido"
+        map_location:
+          attributes:
+            map:
+              invalid: El mapa no puede estar en blanco. Añade un punto al mapa o marca la casilla si no hace falta un mapa.
         poll/voter:
           attributes:
             document_number:
@@ -276,3 +368,12 @@ es:
             image:
               image_width: "Debe tener %{required_width}px de ancho"
               image_height: "Debe tener %{required_height}px de alto"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'No puedes comentar una evaluación'
+      messages:
+        record_invalid: "Error de validación: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "No se puede eliminar el registro porque existe una %{record} dependiente"
+          has_many: "No se puede eliminar el registro porque existe %{record} dependientes"

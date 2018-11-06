@@ -4,16 +4,24 @@ class CommentTree
 
   attr_accessor :root_comments, :comments, :commentable, :page, :order
 
-  def initialize(commentable, page, order = 'confidence_score')
+  def initialize(commentable, page, order = 'confidence_score', valuations: false)
     @commentable = commentable
     @page = page
     @order = order
-
+    @valuations = valuations
     @comments = root_comments + root_descendants
   end
 
   def root_comments
-    commentable.comments.roots.send("sort_by_#{order}").page(page).per(ROOT_COMMENTS_PER_PAGE).for_render
+    base_comments.roots.send("sort_by_#{order}").page(page).per(ROOT_COMMENTS_PER_PAGE).for_render
+  end
+
+  def base_comments
+    if @valuations && commentable.respond_to?('valuations')
+      commentable.valuations
+    else
+      commentable.comments
+    end
   end
 
   def root_descendants

@@ -1,0 +1,32 @@
+<%= render "admin/shared/globalize_locales", resource: @card %>
+
+<%= translatable_form_for [:admin, @card] do |f| %>
+
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-6">
+      <%= translations_form.text_field :label %>
+    </div>
+
+    <%= translations_form.text_field :title %>
+
+    <%= translations_form.text_area :description, rows: 5 %>
+
+    <div class="small-12 medium-6">
+      <%= translations_form.text_field :link_text %>
+    </div>
+  <% end %>
+
+  <div class="small-12 medium-6">
+    <%= f.text_field :link_url %>
+  </div>
+
+  <%= f.hidden_field :header, value: @card.header? %>
+
+  <div class="image-form">
+    <div class="image small-12 column">
+      <%= render 'images/nested_image', imageable: @card, f: f %>
+    </div>
+  </div>
+
+  <%= f.submit(t("admin.homepage.#{action_name}.#{@card.header? ? 'submit_header' : 'submit_card'}"), class: "button success") %>
+<% end %>

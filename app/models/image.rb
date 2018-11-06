@@ -2,7 +2,7 @@ class Image < ActiveRecord::Base
   include ImagesHelper
   include ImageablesHelper
 
-  TITLE_LEGHT_RANGE = 4..80
+  TITLE_LENGTH_RANGE = 4..80
   MIN_SIZE = 475
   MAX_IMAGE_SIZE = 1.megabyte
   ACCEPTED_CONTENT_TYPE = %w(image/jpeg image/jpg).freeze
@@ -23,7 +23,7 @@ class Image < ActiveRecord::Base
   validate :attachment_presence
   validate :validate_attachment_content_type,         if: -> { attachment.present? }
   validate :validate_attachment_size,                 if: -> { attachment.present? }
-  validates :title, presence: true, length: { in: TITLE_LEGHT_RANGE }
+  validates :title, presence: true, length: { in: TITLE_LENGTH_RANGE }
   validates :user_id, presence: true
   validates :imageable_id, presence: true,         if: -> { persisted? }
   validates :imageable_type, presence: true,       if: -> { persisted? }
@@ -68,6 +68,8 @@ class Image < ActiveRecord::Base
 
     def validate_image_dimensions
       if attachment_of_valid_content_type?
+        return true if imageable_class == Widget::Card
+
         dimensions = Paperclip::Geometry.from_file(attachment.queued_for_write[:original].path)
         errors.add(:attachment, :min_image_width, required_min_width: MIN_SIZE) if dimensions.width < MIN_SIZE
         errors.add(:attachment, :min_image_height, required_min_height: MIN_SIZE) if dimensions.height < MIN_SIZE

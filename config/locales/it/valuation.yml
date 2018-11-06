@@ -1,0 +1,61 @@
+it:
+  valuation:
+    header:
+      title: Valutazione
+    menu:
+      spending_proposals: Proposte di spesa
+    budgets:
+      index:
+        filters:
+          current: Apri
+          finished: Finito
+        table_assigned_investments_valuation_open: Proposte di investimento assegnate in valutazione
+        table_actions: Azioni
+        evaluate: Valutare
+    budget_investments:
+      index:
+        headings_filter_all: Tutte le intestazioni
+        filters:
+          valuating: Valutazione in corso
+          valuation_finished: Valutazione terminata
+        assigned_to: "Assegnate a %{valuator}"
+        title: Progetti di investimento
+        edit: Modifica fascicolo
+        valuators_assigned:
+          one: Valutatore assegnato
+          other: "%{count} valutatori assegnati"
+        no_valuators_assigned: Nessun valutatore assegnato
+        table_id: ID
+        table_heading_name: Intestazione
+      show:
+        back: Indietro
+        info: Info sull'autore
+        by: Inviato da
+        sent: Inviato alle
+        dossier: Fascicolo
+        price_first_year: Costo del primo anno
+        currency: "€"
+        feasibility: Fattibilità
+        feasible: Fattibile
+        unfeasible: Non realizzabile
+        undefined: Non definito
+        duration: Tempo massimo di esecuzione
+        responsibles: Responsabili
+        assigned_admin: Admin assegnato
+        assigned_valuators: Valutatori assegnati
+      edit:
+        price_html: "Prezzo (%{currency})"
+        price_first_year_html: "Costo durante il primo anno (%{currency}) <small>(dati facoltativi, non pubblici)</small>"
+        unfeasible: Non è fattibile
+        feasible_explanation_html: Informazioni sulla fattibilità
+        save: Salva le modifiche
+      notice:
+        valuate: "Dossier aggiornato"
+    spending_proposals:
+      index:
+        title: Progetti di investimento per bilancio partecipativo
+      show:
+        association_name: Associazione
+        geozone: Ambito
+      edit:
+        price_first_year_html: "Costo del primo anno (%{currency})"

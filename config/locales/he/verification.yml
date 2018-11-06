@@ -1,0 +1,111 @@
+he:
+  verification:
+    alert:
+      lock: מספר נסיונות מקסימלי, נסה/י שוב
+    back: חזרה לחשבון שלי
+    email:
+      create:
+        alert:
+          failure: שליחת הודעה לדואר האלקטרוני שלך נכשלה
+        flash:
+          success: 'שלחנו הודעת אישור לדואר האלקטרוני הרשום בחשבונך: %{email}'
+      show:
+        alert:
+          failure: קוד אימות שגוי
+        flash:
+          success: הנך משתמש/ת מאומת/ת
+    letter:
+      alert:
+        unconfirmed_code: טרם הכנסת קוד אישור
+      create:
+        flash:
+          offices: משרד סיוע לאזרחים
+          success_html: תודה על בקשתך <b> לקוד אבטחה מרביתי (הקוד נדרש רק עבור ההצבעה הסופית)</b> בעוד מספר ימים נשלח את הקוד לכתובת המופיעה בנתונים שיש לנו בקובץ. נא לזכור כי, אם את/ה מעדיף/ה, ניתן לאסוף את הקוד שלך מכל אחד מהמשרדים %{offices}.
+      edit:
+        see_all: לצפייה בכל ההצעות
+        title: המכתב בוקש
+      errors:
+        incorrect_code: קוד אימות שגוי
+      new:
+        explanation: 'כדי להשתתף בהצבעות הסופיות עליך:'
+        go_to_index: ראה/י הצעות
+        office: אשר/י בכל %{office}
+        offices: משרד סיוע לאזרחים
+        send_letter: שלח לי הודעת דואר אלקטרוני עם הקוד
+        title: מזל טוב!
+        user_permission_info: עם חשבונך תוכל/י ...
+      update:
+        flash:
+          success: קוד נכון, עכשיו תוכל/י
+    redirect_notices:
+      already_verified: חשבונך כבר אומת
+      email_already_sent: נשלחה כבר הודעת דואר אלקטרוני עם קישור לאימות חשבונך. אם אינך מצליח/ה לאתר את ההודעה, ניתן לבקש שוב הנפקת בהודעה חוזרת כאן
+    residence:
+      alert:
+        unconfirmed_residency: טרם אומת אזור מגוריך
+      create:
+        flash:
+          success: אזור מגוריך אומת
+      new:
+        accept_terms_text: אני מסכים/ה על %{terms_url} תנאי מפקד האוכלוסין
+        accept_terms_text_title: אני מסכים/ה על התנאים וכללי השימוש במפקד האוכלוסין
+        date_of_birth: תאריך לידה
+        document_number: מספר תעודה מזהה
+        document_number_help_title: עזרה
+        document_number_help_text_html: '<strong>תעודת זהות</strong>: 12345678A<br> <strong>דרכון</strong>: AAA000001<br> <strong>כרטיס תושב</strong>: X1234567P'
+        document_type:
+          passport: דרכון
+          residence_card: כרטיס תושב
+          spanish_id: תעודת זהות
+        document_type_label: סוג תעודה מזהה
+        error_not_allowed_age: אינך בגיל הנדרש כדי להשתתף
+        error_not_allowed_postal_code: מיקוד לא מאושר
+        error_verifying_census: מפקד האוכלוסין לא הצליח לאמת את המידע שלך נא לוודא שמלאת את פרטיך נכון על ידי התקשרות עם משרד הסיוע לאזרחים, מועצת העיר או כניסה לאחד מהמשרדים %{offices}.
+        error_verifying_census_offices: משרד סיוע לאזרחים
+        form_errors: נתון זה מונע את אימות מגוריך
+        postal_code: מיקוד
+        postal_code_note: כדי לאמת את חשבונך עליך קודם להרשם
+        terms: תנאים וכללי הגישה
+        title: נא לאמת את כתובת המגורים
+        verify_residence: אמת את כתובת המגורים
+    sms:
+      create:
+        flash:
+          success: נא להזין כאן את קוד אישור האבטחה שנשלח אליך בהודעת טקסט
+      edit:
+        confirmation_code: נא להזין כאן את קוד אישור האבטחה שנשלח אליך בסמרטפון
+        resend_sms_link: נא ללחוץ כאן כדי לשליחה חוזרת
+        resend_sms_text: לא קיבלת הודעה עם קוד אישור האבטחה שלך?
+        submit_button: נא להקיש לשליחה
+        title: אישור קוד אבטחה
+      new:
+        phone: נא להזין את מספר הטלפון הנייד שלך כדי לקבל את הקוד
+        phone_format_html: "<strong><em>(לדוגמא: 612345678 או +34612345678)</em></strong>"
+        phone_note: הזנת מספר הנייד תשמש אך ורק לשליחת הקוד
+        phone_placeholder: "לדוגמא: 612345678 או +34612345678"
+        submit_button: הקש/י לשליחה
+        title: שלח לי קוד אישור אבטחה
+      update:
+        error: קוד אישור האבטחה שגוי
+        flash:
+          level_three:
+            success: קוד אישור האבטחה מתאים. החשבון שלך מאומת
+          level_two:
+            success: בוצע בהצלחה, הקוד מתאים
+    step_1: כתובת מגורים
+    step_2: אישור קוד האבטחה
+    step_3: אימות נתונים סופית
+    user_permission_debates: להשתתף בדיונים
+    user_permission_info: אנו מאמתים את הפרטים שלך כדי שתוכל/י ...
+    user_permission_proposal: ליצור הצעות חדשות
+    user_permission_support_proposal: לתמוך בהצעות
+    user_permission_votes: להשתתף בהצבעות (למתפקדים בלבד).
+    verified_user:
+      form:
+        submit_button: שליחת הקוד
+      show:
+        email_title: הודעה בדואר אלקטרוני
+        explanation: כרגע ברשותנו הפרטים הבאים שאיתם נרשמת; נא לבחור את הדרך בה ישלח אליך קוד אישור האבטחה שלך
+        phone_title: למספר הנייד
+        title: זמינות מידע
+        use_another_phone: השתמש במספר נייד אחר

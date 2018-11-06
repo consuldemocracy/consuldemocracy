@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "welcome/index" do
+RSpec.describe "welcome#index" do
 
   it 'Display images on orbit carrousel when we have defined image_default' do
     debate = create(:debate)

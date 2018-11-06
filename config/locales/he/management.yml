@@ -1,0 +1,108 @@
+he:
+  management:
+    account:
+      alert:
+        unverified_user: אף משתתף/ת לא הצטרף/ה עדין
+      show:
+        title: חשבון משתמש/ת
+    account_info:
+      change_user: שינוי חשבון משתמש/ת
+      document_number_label: 'מספר תעודה מזהה'
+      document_type_label: 'סוג תעודה מזהה'
+      email_label: 'דואר אלקטרוני'
+      identified_label: 'זוהה כ'
+      username_label: 'שם משתמש/ת'
+    dashboard:
+      index:
+        title: הנהלה
+        info: כאן ניתן לנהל משתמשים לפי כל הנושאים המופיעים בתפריט משמאל
+    document_number: מספר תעודה מזהה
+    document_type_label: סוג תעודה מזהה
+    document_verifications:
+      already_verified: חשבון משתמש זה אושר
+      has_no_account_html: ' כדי ליצור חשבון  %{link} נא ללחוץ על<b>''Register''</b> בחלק השמאלי העליון של המסך'
+      link: מנהל מערכת
+      in_census_has_following_permissions: 'משתמשים/ות אלו יכולים/ות להשתתף במערכת עם ההרשאות הבאות'
+      not_in_census: תעודה מזהה זו לא רשומה
+      not_in_census_info: ' אזרחים/ות שאינם/ן מתפקדים/ות יכולים/ות להשתתף באתר עם ההרשאות הבאות :'
+      please_check_account_data: נא לבדוק בבקשה שהנתונים מעל מדויקים
+      title: ' ניהול חשבון'
+      under_age: "אינך בגיל המאפשר רישומך באתר"
+      verify: נא לאשר
+    email_label: דואר אלקטרוני
+    email_verifications:
+      already_verified: חשבון משתמש/ת זה אושר בעבר
+      choose_options: 'נא לבחור באחת מהאפשרויות הבאות:'
+      document_found_in_census: מסמך זה נמצא בארכיון אבל הוא לא מקושר לחשבון של אף אחד/ת
+      document_mismatch: 'דואר אלקטרוני זה שייך למשתמש/ת מזוהה: %{document_number}(%{document_type})'
+      email_placeholder: נא להכניס את כתובת הדואר אלקטרוני בו השתמשת ליצירת החשבון 
+      email_sent_instructions: כדי לזהותך בוודאות, עליך ללחוץ על קישור שנשלח לכתובת הדואר אלקטרוני שהכנסת למערכת. צעד זה נחוץ כדי לוודא שכתובת הדואר אלקטרוני שייכת לך
+      if_existing_account: אם יש לך כבר חשבון באתר זה
+      if_no_existing_account: אם לא יצרת עדין חשבון
+      introduce_email: 'נא להכניס את הדואר אלקטרוני בו השתמשת בפתיחת החשבון'
+      send_email: שליחת דואר אלקטרוני לאימות
+    menu:
+      create_proposal: יצירת הצעה חדשה
+      print_proposals: הדפסת הצעות
+      support_proposals: תמיכה בהצעות
+      create_spending_proposal: יצירת הצעת תקציב
+      print_spending_proposals: הדפסת הצעות תקציב
+      support_spending_proposals: תמיכה בהצעות תקציב
+      create_budget_investment: יצירת תקציב להשקעה
+      user_invites: הזמנות של המשתמש/ת
+    permissions:
+      create_proposals: יצירת הצעות
+      debates: השתתפות בדיונים
+      support_proposals: תמיכה בהצעות
+      vote_proposals: הצבעה על הצעות
+    print:
+      proposals_info: יצירת http://url.consul אישי
+      proposals_title: 'הצעות:'
+      spending_proposals_info: משתתף ב http://url.consul
+      budget_investments_info: משתתף ב http://url.consul
+    print_info: הדפסת מידע זה
+    proposals:
+      alert:
+        unverified_user: המשתמש אינו מאומת
+      create_proposal: יצירת הצעה חדשה
+      print:
+        print_button: הדפסה
+    budget_investments:
+      alert:
+        unverified_user: המשתמש אינו מאומת
+      filters:
+        unfeasible: השקעה אינה ברת ביצוע
+      print:
+        print_button: הדפסה
+    spending_proposals:
+      alert:
+        unverified_user: המשתמש אינו מאומת
+      create: יצירת הצעה תקציב
+      filters:
+        unfeasible: פרויקטים להשקעה אינם ברי ביצוע
+        by_geozone: "פרויקטים להשקעה בהיקפים של:: %{geozone}"
+      print:
+        print_button: הדפסה
+    sessions:
+      signed_out: יצאת בהצלחה
+      signed_out_managed_user: יצאת בהצלחה משם המשתמש/ת
+    username_label: שם המשתמש/ת
+    users:
+      create_user: יצירת חשבון חדש
+      create_user_submit: יצירת משתמש/ת
+      create_user_success_html: שלחנו הודעה לכתובת הדואר אלקטרוני <b>%{email}</b> כדי לוודא שהוא שייך למשתמש/ת. ההודעה מכילה קישור שעליך ללחוץ עליו. לאחר מכן יש צורך להגדיר את סיסמת הגישה שלך לפני שיתאפשר להיכנס לאתר
+      erased_notice: חשבון המשתמש/ת נמחק
+      erased_by_manager: "נמחק על ידי מנהל: %{manager}"
+      erase_account_link: מחיקת משתמש
+      erase_account_confirm: בטוח שברצונך למחוק את החשבון? לא ניתן לבטל פעולה זו
+      erase_warning: לא ניתן לבטל פעולה זו. נא לוודא שכוונתך למחוק את החשבון הזה
+      erase_submit: מחיקת החשבון
+    user_invites:
+      new:
+        label: הודעות דואר אלקטרוני
+        info: "הזנת כתובות דואר אלקטרוני מופרדות בפסיקים (',')"
+        submit: שליחת הזמנות
+        title: הזמנות של המשתמש/ת
+      create:
+        success_html: <strong>%{count} ההזמנות</strong> נשלחו
+        title: הזמנות של המשתמש/ת

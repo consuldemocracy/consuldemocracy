@@ -7,11 +7,11 @@ end
 
 # Names for the moderation console, as a hint for moderators
 # to know better how to assign users with official positions
-Setting["official_level_1_name"] = "Empleados públicos"
-Setting["official_level_2_name"] = "Organización Municipal"
-Setting["official_level_3_name"] = "Directores generales"
-Setting["official_level_4_name"] = "Concejales"
-Setting["official_level_5_name"] = "Alcaldesa"
+Setting["official_level_1_name"] = "Cargo oficial 1"
+Setting["official_level_2_name"] = "Cargo oficial 2"
+Setting["official_level_3_name"] = "Cargo oficial 3"
+Setting["official_level_4_name"] = "Cargo oficial 4"
+Setting["official_level_5_name"] = "Cargo oficial 5"
 
 # Max percentage of allowed anonymous votes on a debate
 Setting["max_ratio_anon_votes_on_debates"] = 50
@@ -26,7 +26,7 @@ Setting["max_votes_for_proposal_edit"] = 1000
 Setting['comments_body_max_length'] = 1000
 
 # Prefix for the Proposal codes
-Setting["proposal_code_prefix"] = 'MAD'
+Setting["proposal_code_prefix"] = 'CONSUL'
 
 # Number of votes needed for proposal success
 Setting["votes_for_proposal_success"] = 53726
@@ -65,11 +65,13 @@ Setting["org_name"] = "CONSUL"
 Setting["place_name"] = "CONSUL-land"
 
 # Meta tags for SEO
+Setting["meta_title"] = nil
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
 # Feature flags
 Setting['feature.debates'] = true
+Setting['feature.proposals'] = true
 Setting['feature.spending_proposals'] = nil
 Setting['feature.polls'] = true
 Setting['feature.twitter_login'] = true
@@ -80,8 +82,13 @@ Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 Setting['feature.legislation'] = true
 Setting['feature.user.recommendations'] = true
+Setting['feature.user.recommendations_on_debates'] = true
+Setting['feature.user.recommendations_on_proposals'] = true
 Setting['feature.community'] = true
 Setting['feature.map'] = nil
+Setting['feature.allow_images'] = true
+Setting['feature.allow_attached_documents'] = true
+Setting['feature.help_page'] = true
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
@@ -108,10 +115,20 @@ Setting['mailer_from_address'] = 'noreply@consul.dev'
 Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
 Setting['min_age_to_participate'] = 16
 
-# Proposal improvement url path ('/more-information/proposal-improvement')
+# Proposal improvement url path ('/help/proposal-improvement')
 Setting['proposal_improvement_path'] = nil
 
 # City map feature default configuration (Greenwich)
 Setting['map_latitude'] = 51.48
 Setting['map_longitude'] = 0.0
 Setting['map_zoom'] = 10
+
+# Related content
+Setting['related_content_score_threshold'] = -0.3
+
+Setting["feature.user.skip_verification"] = 'true'
+
+Setting['feature.homepage.widgets.feeds.proposals'] = true
+Setting['feature.homepage.widgets.feeds.debates'] = true
+Setting['feature.homepage.widgets.feeds.processes'] = true
+
