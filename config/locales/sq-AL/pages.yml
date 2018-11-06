@@ -1,0 +1,193 @@
+sq:
+  pages:
+    conditions:
+      title: Termat dhe kushtet e përdorimit
+      subtitle: NJOFTIM LIGJOR PËR KUSHTET E PËRDORIMIT, PRIVATIZIMIT DHE MBROJTJEN E TË DHËNAVE PERSONALE TË PORTALIT TË QEVERISË SË HAPUR
+      description: Faqe informuese mbi kushtet e përdorimit, privatësinë dhe mbrojtjen e të dhënave personale.
+    general_terms: Termat dhe kushtet 
+    help:
+      title: "%{org}është një platformë për pjesëmarrjen e qytetarëve"
+      guide: "Ky udhëzues shpjegon se çfarë janë secila nga seksionet e %{org} dhe se si funksionojnë."
+      menu:
+        debates: "Debate"
+        proposals: "Propozime"
+        budgets: "Buxhetet  pjesëmarrës"
+        polls: "Sondazhet"
+        other: "Informacione të tjera me interes"
+        processes: "Proçese"
+      debates:
+        title: "Debate"
+        description: "Në seksionin %{link} ju mund të paraqisni dhe të ndani mendimin tuaj me njerëzit e tjerë për çështjet që kanë lidhje me ju në lidhje me qytetin. Është gjithashtu një vend për të krijuar ide që përmes seksioneve të tjera të %{org} të çojnë në veprime konkrete nga Këshilli i Qytetit."
+        link: "debate qytetare"
+        feature_html: "Ju mund të hapni debate, komentoni dhe vlerësoni ato me<strong>Pranoj</strong>ose<strong>Nuk pranoj</strong>.Për këtë ju duhet të %{link}"
+        feature_link: "regjistrohuni në %{org}"
+        image_alt: "Butonat për të vlerësuar debatet"
+        figcaption: 'Butonat "Unë pajtohem" dhe "Unë nuk pajtohem"  për të vlerësuar debatet.'
+      proposals:
+        title: "Propozime"
+        description: "Në seksionin %{link} ju mund të bëni propozime për Këshillin Bashkiak për t'i kryer ato. Propozimet kërkojnë mbështetje, dhe nëse arrijnë mbështetje të mjaftueshme, ato bëhen në një votim publik. Propozimet e miratuara në votat e këtyre qytetarëve pranohen nga Këshilli i Qytetit dhe kryhen."
+        link: "propozimet e qytetarëve"
+        image_alt: "Butoni për të mbështetur një propozim"
+        figcaption_html: 'Butoni për të mbështetur një propozim'
+      budgets:
+        title: "Buxheti  pjesëmarrës"
+        description: "Seksioni %{link} ndihmon njerëzit të marrin një vendim të drejtpërdrejtë mbi atë pjesë të buxhetit komunal ku shpenzohen."
+        link: "buxhetet pjesëmarrëse"
+        image_alt: "Faza të ndryshme të një buxheti pjesëmarrjës"
+        figcaption_html: '"Mbështet" dhe "Voto" fazat e buxheteve pjesëmarrëse.'
+      polls:
+        title: "Sondazhet"
+        description: "Seksioni %{link} aktivizohet çdo herë që një propozim arrin 1% mbështetje dhe shkon në votim ose kur Këshilli i Qytetit propozon një çështje për njerëzit që të vendosin."
+        link: "Sondazhet"
+        feature_1: "Për të marrë pjesë në votim duhet të %{link} dhe të verifikoni llogarinë tuaj."
+        feature_1_link: "regjistrohuni në  %{org_name}"
+      processes:
+        title: "Proçese"
+        description: "Në seksionin %{link}, qytetarët marrin pjesë në hartimin dhe modifikimin e rregulloreve që ndikojnë në qytet dhe mund të japin mendimin e tyre mbi politikat komunale në debatet e mëparshme."
+        link: "Proçese"
+      faq:
+        title: "Probleme teknike?"
+        description: "Lexoni FAQ dhe zgjidhni pyetjet tuaja."
+        button: "Shiko pyetjet e bëra shpesh"
+        page:
+          title: "Pyetjet e bëra shpesh"
+          description: "Përdorni këtë faqe për të zgjidhur FAQ e përbashkët tek përdoruesit e faqes."
+          faq_1_title: "Pyetja 1"
+          faq_1_description: "Ky është një shembull për përshkrimin e pyetjes së parë."
+      other:
+        title: "Informacione të tjera me interes"
+        how_to_use: "Përdorni %{org_name} në qytetin tuaj"
+      how_to_use:
+        text: |-
+          Ky Portal i hapur i  Qeverisë  përdor [aplikacionin CONSUL] (https://github.com/consul/consul 'consul github') që është softuer i lirë, me [licencë AGPLv3] (http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), që do të thotë me fjalë të thjeshta se kushdo mund ta përdorë kodin lirisht, ta kopjojë atë, ta shohë atë në detaje, ta modifikojë atë dhe ta rishpërndajë atë  me modifikimet që dëshiron (duke lejuar të tjerët të bëjnë të njëjtën gjë). Sepse ne mendojmë se kultura është më e mirë dhe më e pasur kur lirohet.
+          Nëse jeni programues, mund të shihni kodin dhe të na ndihmoni për ta përmirësuar atë në [aplikacionin CONSUL] (https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Përdoreni atë në qeverinë tuaj lokale
+    privacy:
+      title: Politika e privatësisë
+      subtitle: INFORMACIONE NË LIDHJE ME PRIVATËSIN E TË DHËNAVE
+      info_items:
+        - 
+          text: Navigimi përmes informacionit që gjendet në Portalin e hapur të Qeverisë  është anonime.
+        - 
+          text: Për të përdorur shërbimet e përmbajtura në Portalin e hapur të Qeverisë përdoruesi duhet të regjistrohet më parë dhe të ofrojë të dhëna personale sipas informatave specifike të përfshira në çdo lloj regjistrimi.
+        - 
+          text: 'Të dhënat e siguruara do të përfshihen dhe përpunohen nga Këshilli i Qytetit në përputhje me përshkrimin e dokumentit të mëposhtëm:'
+        - 
+          subitems:
+            - 
+              field: 'Emri i skedarit:'
+              description: EMRI I DOKUMENTAVE
+            - 
+              field: 'Qëllimi i dokumentit:'
+              description: Menaxhimi i proceseve pjesëmarrëse për të kontrolluar kualifikimin e njerëzve që marrin pjesë në to dhe thjesht numërimin numerik dhe statistikor të rezultateve të nxjerra nga proceset e pjesëmarrjes qytetare.
+            - 
+              field: 'Institucioni përgjegjës për dokumentin:'
+              description: 'Institucioni përgjegjës për dosjen:'
+        - 
+          text: Pala e interesuar mund të ushtrojë të drejtat e qasjes, korrigjimit, anulimit dhe kundërshtimit, përpara se të tregohet organi përgjegjës, i cili raportohet në përputhje me nenin 5 të Ligjit Organik 15/1999, të datës 13 dhjetor, për Mbrojtjen e të Dhënave të Karakterit personal.
+        - 
+          text: Si parim i përgjithshëm, kjo uebfaqe nuk ndan ose zbulon informacionin e marrë, përveç kur është autorizuar nga përdoruesi ose informacioni kërkohet nga autoriteti gjyqësor, prokuroria ose policia gjyqësore, ose në ndonjë nga rastet e rregulluara në Neni 11 i Ligjit Organik 15/1999, datë 13 dhjetor, mbi Mbrojtjen e të Dhënave Personale.
+    accessibility:
+      title: Aksesueshmëria
+      description: |-
+        Aksesi në ueb ka të bëjë me mundësinë e qasjes në ueb dhe përmbajtjen e tij nga të gjithë njerëzit, pavarësisht nga aftësitë e kufizuara (fizike, intelektuale ose teknike) që mund të lindin ose nga ato që rrjedhin nga konteksti i përdorimit (teknologjik ose mjedisor).
+      examples:
+        - Sigurimi i tekstit alternativë për imazhet, përdoruesit e verbër ose të dëmtuar nga shikimet mund të përdorin lexues të veçantë për të hyrë në informacion.
+        - Kur videot kanë titra, përdoruesit me vështirësi dëgjimi mund t'i kuptojnë plotësisht ato.
+        - Nëse përmbajtja është e shkruar në një gjuhë të thjeshtë dhe të ilustruar, përdoruesit me probleme të të mësuarit janë më të aftë t'i kuptojnë ato.
+        - Nëse përdoruesi ka probleme të lëvizshmërisë dhe është e vështirë të përdorësh mausin, alternativat me ndihmën e tastierës ndihmojnë në navigacion.
+      keyboard_shortcuts:
+        title: Shkurtoret e tastierës
+        navigation_table:
+          description: Për të qenë në gjendje për të lundruar nëpër këtë faqe në një mënyrë të arritshme, është programuar një grup çelësash të shpejtë për të mbledhur pjesët kryesore të interesit të përgjithshëm në të cilin është organizuar faqja.
+          caption: Shkurtoret e tastierës për menunë e lundrimit
+          key_header: Celës
+          page_header: Faqja
+          rows:
+            - 
+              key_column: 0
+              page_column: Faqja kryesore
+            - 
+              key_column: 1
+              page_column: Debate
+            - 
+              key_column: 2
+              page_column: Propozime
+            - 
+              key_column: 3
+              page_column: Vota
+            - 
+              key_column: 4
+              page_column: Buxhetet  pjesëmarrës
+            - 
+              key_column: 5
+              page_column: Proceset legjislative
+        browser_table:
+          description: 'Në varësi të sistemit operativ dhe shfletuesit të përdorur, kombinimi kyç do të jetë si vijon:'
+          caption: Kombinimi kyç në varësi të sistemit operativ dhe shfletuesit
+          browser_header: Shfletues
+          key_header: Kombinim i celsave
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + shkurtore pastaj ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + shkurtore
+            - 
+              browser_column: Chrome
+              key_column: ALT + shkurtore (CTRL + ALT + shkurtore për MAC
+            - 
+              browser_column: Safari
+              key_column: ALT + shkurtore (CTRL + shkurtore për MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + shkurtore
+      textsize:
+        title: Madhësia e tekstit
+        browser_settings_table:
+          description: Dizajni i aksesueshëm i kësaj faqeje lejon përdoruesin të zgjedhë madhësinë e tekstit që i përshtatet atij. Ky veprim mund të kryhet në mënyra të ndryshme në varësi të shfletuesit të përdorur.
+          browser_header: Shfletues
+          action_header: Veprimi që duhet marrë
+          rows:
+            - 
+              browser_column: Eksploro
+              action_column: Shiko> Madhësia e tekstit
+            - 
+              browser_column: Firefox
+              action_column: Shiko> Madhësia
+            - 
+              browser_column: Chrome
+              action_column: Opsionet (ikona)> Opsionet> Të avancuara> Përmbajtja e uebit> Madhësia e tekstit
+            - 
+              browser_column: Safari
+              action_column: Pamja> Zmadho / Zvogëlo
+            - 
+              browser_column: Opera
+              action_column: Shiko> masë
+        browser_shortcuts_table:
+          description: 'Një mënyrë tjetër për të ndryshuar madhësinë e tekstit është të përdorni shkurtoret e tastierës të përcaktuara në shfletues, në veçanti kombinimin kyç:'
+          rows:
+            - 
+              shortcut_column: CTRL dhe + (CMD dhe + në MAC)
+              description_column: Rrit madhësinë e tekstit
+            - 
+              shortcut_column: CTRL dhe - (CMD dhe - në MAC)
+              description_column: Zvogëlo madhësinë e tekstit
+      compatibility:
+        title: Pajtueshmëria me standardet dhe dizajni vizual
+        description_html: 'Të gjitha faqet nê këtë website përputhen me <strong>Udhëzimet e aksesueshmërisë</strong>ose Parimet e Përgjithshme të Dizajnit të Aksesueshëm të krijuara nga Grupi i Punës <abbr title = "Iniciativa e Web Accessibility" lang = "en"> WAI </ abbr> W3C.'
+    titles:
+      accessibility: Dispnueshmësia
+      conditions: Kushtet e përdorimit
+      help: "Çfarë është %{org} ? - Pjesëmarrja e qytetarëve"
+      privacy: Politika e privatësisë
+    verify:
+      code: Kodi që keni marrë në letër
+      email: Email
+      info: 'Për të verifikuar llogarinë tënde, futni të dhënat e aksesit tuaj:'
+      info_code: 'Tani futni kodin që keni marrë në letër:'
+      password: Fjalëkalim
+      submit: Verifikoni llogarinë time
+      title: verifikoni llogarinë tuaj
