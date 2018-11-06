@@ -1,0 +1,68 @@
+sq:
+  officing:
+    header:
+      title: Votim
+    dashboard:
+      index:
+        title: Vlerësimi i sondazhit
+        info: "\nKëtu mund të verifikoni dokumentet e përdoruesit dhe të ruani rezultatet e votimit"
+        no_shifts: Ju nuk keni ndërrime zyrtare sot.
+    menu:
+      voters: Validoni dokumentin
+      total_recounts: Rinumerime dhe rezultate totale
+    polls:
+      final:
+        title: "\nSondazhet janë gati për rinumërim përfundimtar"
+        no_polls: Ju nuk po ofroni  rinumërim përfundimtar në çdo sondazh aktiv
+        select_poll: Zgjidh sondazhin
+        add_results: Shto rezultatet
+    results:
+      flash:
+        create: "\nRezultatet u ruajtën"
+        error_create: "\nRezultatet nuk u ruajtën. Gabim në të dhënat."
+        error_wrong_booth: "\nKabinë e gabuar. Rezultatet nuk u ruajtën."
+      new:
+        title: "%{poll}Shto rezultate"
+        not_allowed: "\nJu keni të drejtë të shtoni rezultate për këtë sondazh"
+        booth: "Kabinë"
+        date: "Data"
+        select_booth: "Zgjidh stendën"
+        ballots_white: "Vota të plota"
+        ballots_null: "Votat e pavlefshme"
+        ballots_total: "Totali i fletëvotimeve"
+        submit: "Ruaj"
+        results_list: "Rezultatet tuaja"
+        see_results: "Shiko rezultatet"
+      index:
+        no_results: "Nuk ka rezultate"
+        results: Rezultatet
+        table_answer: Përgjigje
+        table_votes: Vota
+        table_whites: "Vota të plota"
+        table_nulls: "Votat e pavlefshme"
+        table_total: "Totali i fletëvotimeve"
+    residence:
+      flash:
+        create: "\nDokumenti i verifikuar me regjistrimin"
+        not_allowed: "Ju nuk keni ndërrime zyrtare sot."
+      new:
+        title: Validoni dokumentin
+        document_number: "Numri i dokumentit ( përfshirë gërma)"
+        submit: Validoni dokumentin
+        error_verifying_census: "\nRegjistri nuk ishte në gjendje të verifikonte këtë dokument."
+        form_errors: pengoi verifikimin e ketij dokumenti
+        no_assignments: "Ju nuk keni ndërrime zyrtare sot."
+    voters:
+      new:
+        title: Sondazhet
+        table_poll: Sondazh
+        table_status: Statusi i sondazhit
+        table_actions: Veprimet
+        not_to_vote: Personi ka vendosur të mos votojë në këtë kohë
+      show:
+        can_vote: "\nMund të votojë"
+        error_already_voted: "\nKa marrë pjesë tashmë në këtë sondazh"
+        submit: Konfirmo votimin
+        success: "Vota u paraqit"
+      can_vote:
+        submit_disable_with: "Prisni, duke u konfirmuar vota ..."
