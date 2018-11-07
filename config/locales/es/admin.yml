@@ -87,7 +87,6 @@ es:
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
-        no_budgets: "No hay presupuestos abiertos."
       create:
         notice: '¡Presupuestos participativos creados con éxito!'
       update:
@@ -372,7 +371,7 @@ es:
         form:
           enabled: Habilitado
           process: Proceso
-          debate_phase: Fase previa
+          debate_phase: Fase de debate
           allegations_phase: Fase de comentarios
           proposals_phase: Fase de propuestas
           start: Inicio
