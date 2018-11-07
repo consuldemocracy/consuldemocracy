@@ -1,0 +1,65 @@
+de:
+  devise:
+    password_expired:
+      expire_password: "Passwort ist abgelaufen"
+      change_required: "Ihr Passwort ist abgelaufen"
+      change_password: "Ändern Sie Ihr Passwort"
+      new_password: "Neues Passwort"
+      updated: "Passwort erfolgreich aktualisiert"
+    confirmations:
+      confirmed: "Ihr Benutzerkonto wurde bestätigt."
+      send_instructions: "In wenigen Minuten erhalten Sie eine E-Mail mit einer Anleitung zum Zurücksetzen Ihres Passworts."
+      send_paranoid_instructions: "Wenn sich Ihre E-Mail-Adresse in unserer Datenbank befindet, erhalten Sie in wenigen Minuten eine E-Mail mit einer Anleitung zum Zurücksetzen Ihres Passworts."
+    failure:
+      already_authenticated: "Sie sind bereits angemeldet."
+      inactive: "Ihr Benutzerkonto wurde noch nicht aktiviert."
+      invalid: "Ungültiger %{authentication_keys} oder Passwort."
+      locked: "Ihr Benutzerkonto wurde gesperrt."
+      last_attempt: "Sie haben noch einen weiteren Versuch bevor Ihr Benutzerkonto gesperrt wird."
+      not_found_in_database: "Ungültiger %{authentication_keys} oder Passwort."
+      timeout: "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an, um fortzufahren."
+      unauthenticated: "Sie müssen sich anmelden oder registrieren, um fortzufahren."
+      unconfirmed: "Um fortzufahren, bestätigen Sie bitte den Verifizierungslink, den wir Ihnen per E-Mail zugesendet haben"
+    mailer:
+      confirmation_instructions:
+        subject: "Anweisungen zur Bestätigung"
+      reset_password_instructions:
+        subject: "Anleitung zum Zurücksetzen Ihres Passworts"
+      unlock_instructions:
+        subject: "Anweisung zur Entsperrung"
+    omniauth_callbacks:
+      failure: "Es ist nicht gelungen, Sie als %{kind} zu autorisieren, weil \"%{reason}\"."
+      success: "Erfolgreich identifiziert als %{kind}."
+    passwords:
+      no_token: "Nur über einen Link zum Zurücksetzen Ihres Passworts können Sie auf diese Seite zugreifen. Falls Sie diesen Link verwendet haben, überprüfen Sie bitte, ob die URL vollständig ist."
+      send_instructions: "In wenigen Minuten erhalten Sie eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts."
+      send_paranoid_instructions: "Wenn sich Ihre E-Mail-Adresse in unserer Datenbank befindet, erhalten Sie in wenigen Minuten eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts."
+      updated: "Ihr Passwort wurde erfolgreich geändert. Authentifizierung erfolgreich."
+      updated_not_active: "Ihr Passwort wurde erfolgreich geändert."
+    registrations:
+      destroyed: "Auf Wiedersehen! Ihr Konto wurde gelöscht. Wir hoffen, Sie bald wieder zu sehen."
+      signed_up: "Willkommen! Sie wurden authentifiziert."
+      signed_up_but_inactive: "Ihre Registrierung war erfolgreich, aber Sie konnten nicht angemeldet werden, da Ihr Benutzerkonto nicht aktiviert wurde."
+      signed_up_but_locked: "Ihre Registrierung war erfolgreich, aber Sie konnten nicht angemeldet werden, weil Ihr Benutzerkonto gesperrt ist."
+      signed_up_but_unconfirmed: "Sie haben eine Nachricht mit einem Bestätigungslink erhalten. Klicken Sie bitte auf diesen Link, um Ihr Benutzerkonto zu aktivieren."
+      update_needs_confirmation: "Ihr Benutzerkonto wurde erfolgreich aktualisiert. Allerdings müssen wir Ihre neue E-Mail Adresse verifizieren. Bitte überprüfen Sie Ihre E-Mails und klicken Sie auf den Link zur Bestätigung Ihrer neuen E-Mail Adresse."
+      updated: "Ihr Benutzerkonto wurde erfolgreich aktualisiert."
+    sessions:
+      signed_in: "Sie haben sich erfolgreich angemeldet."
+      signed_out: "Sie haben sich erfolgreich abgemeldet."
+      already_signed_out: "Sie haben sich erfolgreich abgemeldet."
+    unlocks:
+      send_instructions: "In wenigen Minuten erhalten Sie eine E-Mail mit Anweisungen zum entsperren Ihres Benutzerkontos."
+      send_paranoid_instructions: "Wenn Sie bereits ein Benutzerkonto haben, erhalten Sie in wenigen Minuten eine E-Mail mit weiteren Anweisungen zur Freischaltung Ihres Benutzerkontos."
+      unlocked: "Ihr Benutzerkonto wurde entsperrt. Bitte melden Sie sich an, um fortzufahren."
+  errors:
+    messages:
+      already_confirmed: "Sie wurden bereits verifziert. Bitte melden Sie sich nun an."
+      confirmation_period_expired: "Sie müssen innerhalb von %{period} bestätigt werden: Bitte stellen Sie eine neue Anfrage."
+      expired: "ist abgelaufen; bitte stellen Sie eine neue Anfrage."
+      not_found: "nicht gefunden."
+      not_locked: "wurde nicht gesperrt."
+      not_saved:
+        one: "Ein Fehler verhinderte das Speichern dieser %{resource}. Bitte markieren Sie die gekennzeichneten Felder, um zu erfahren wie dieser behoben werden kann:"
+        other: "%{count} Fehler verhinderten das Speichern dieser %{resource}. Bitte markieren Sie die gekennzeichneten Felder, um zu erfahren wie diese behoben werden können:"
+      equal_to_current_password: "muss sich vom aktuellen Passwort unterscheiden."

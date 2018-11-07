@@ -1,0 +1,117 @@
+de:
+  moderation:
+    comments:
+      index:
+        block_authors: Autoren blockieren
+        confirm: Sind Sie sich sicher?
+        filter: Filter
+        filters:
+          all: Alle
+          pending_flag_review: Ausstehend
+          with_ignored_flag: Als gelesen markieren
+        headers:
+          comment: Kommentar
+          moderate: Moderieren
+        hide_comments: Kommentare ausblenden
+        ignore_flags: Als gelesen markieren
+        order: Bestellung
+        orders:
+          flags: Am meisten markiert
+          newest: Neueste
+        title: Kommentare
+    dashboard:
+      index:
+        title: Moderation
+    debates:
+      index:
+        block_authors: Autoren blockieren
+        confirm: Sind Sie sich sicher?
+        filter: Filter
+        filters:
+          all: Alle
+          pending_flag_review: Ausstehend
+          with_ignored_flag: Als gelesen markieren
+        headers:
+          debate: Diskussion
+          moderate: Moderieren
+        hide_debates: Diskussionen ausblenden
+        ignore_flags: Als gelesen markieren
+        order: Bestellung
+        orders:
+          created_at: Neueste
+          flags: Am meisten markiert
+        title: Diskussionen
+    header:
+      title: Moderation
+    menu:
+      flagged_comments: Kommentare
+      flagged_debates: Diskussionen
+      flagged_investments: Budgetinvestitionen
+      proposals: Vorschläge
+      proposal_notifications: Antrags-Benachrichtigungen
+      users: Benutzer blockieren
+    proposals:
+      index:
+        block_authors: Autor blockieren
+        confirm: Sind Sie sich sicher?
+        filter: Filter
+        filters:
+          all: Alle
+          pending_flag_review: Ausstehende Bewertung
+          with_ignored_flag: Als gesehen markieren
+        headers:
+          moderate: Moderieren
+          proposal: Vorschlag
+        hide_proposals: Vorschläge ausblenden
+        ignore_flags: als gesehen markieren
+        order: sortieren nach
+        orders:
+          created_at: neuestes
+          flags: am meisten markiert
+        title: Vorschläge
+    budget_investments:
+      index:
+        block_authors: Autoren blockieren
+        confirm: Sind Sie sicher?
+        filter: Filter
+        filters:
+          all: Alle
+          pending_flag_review: Ausstehend
+          with_ignored_flag: Als gelesen markieren
+        headers:
+          moderate: Moderieren
+          budget_investment: Budgetinvestitionen
+        hide_budget_investments: Budgetinvestitionen verbergen
+        ignore_flags: Als gesehen markieren
+        order: Sortieren nach
+        orders:
+          created_at: Neuste
+          flags: Am meisten markiert
+        title: Budgetinvestitionen
+    proposal_notifications:
+      index:
+        block_authors: Autoren blockieren
+        confirm: Sind Sie sich sicher?
+        filter: Filter
+        filters:
+          all: Alle
+          pending_review: Ausstehende Bewertung
+          ignored: Als gesehen markieren
+        headers:
+          moderate: Moderieren
+          proposal_notification: Antrags-Benachrichtigung
+        hide_proposal_notifications: Anträge ausblenden
+        ignore_flags: Als gesehen markieren
+        order: Sortieren nach
+        orders:
+          created_at: Neuste
+          moderated: Moderiert
+        title: Antrags-Benachrichtigungen
+    users:
+      index:
+        hidden: Blockiert
+        hide: Block
+        search: Suche
+        search_placeholder: E-Mail oder Benutzername
+        title: Benutzer blockieren
+      notice_hide: Benutzer gesperrt. Alle Diskussionen und Kommentare dieses Benutzers wurden ausgeblendet.

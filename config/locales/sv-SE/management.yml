@@ -1,0 +1,150 @@
+sv:
+  management:
+    account:
+      menu:
+        reset_password_email: Återställ lösenordet med e-post
+        reset_password_manually: Återställa lösenordet manuellt
+      alert:
+        unverified_user: Inga verifierad användare har loggat
+      show:
+        title: Användarkonto
+      edit:
+        title: 'Redigera användarkonto: Återställ lösenord'
+        back: Tillbaka
+        password:
+          password: Lösenord
+          send_email: Skicka e-post för lösenordsåterställning
+          reset_email_send: E-post har skickats.
+          reseted: Lösenordet har återställts
+          random: Skapa ett slumpmässigt lösenord
+          save: Spara lösenord
+          print: Visa lösenord
+          print_help: Du kommer kunna skriva ut lösenordet när det har sparats.
+    account_info:
+      change_user: Byt användare
+      document_number_label: 'Dokumentnummer:'
+      document_type_label: 'Identitetshandling:'
+      email_label: 'E-post:'
+      identified_label: 'Identifierad som:'
+      username_label: 'Användarnamn:'
+    check: Kontrollera dokument
+    dashboard:
+      index:
+        title: Användarhantering
+        info: Här kan du hantera användare med åtgärderna som listas i menyn till vänster.
+    document_number: Dokumentnummer
+    document_type_label: Identitetshandling
+    document_verifications:
+      already_verified: Användarkontot är redan verifierat.
+      has_no_account_html: För att skapa ett konto, gå till %{link} och klicka <b>'Registrera'</b> i övre vänstra hörnet.
+      link: CONSUL
+      in_census_has_following_permissions: 'Den här användaren har följande rättigheter på webbplatsen:'
+      not_in_census: Identitetshandlingen är inte registrerad.
+      not_in_census_info: 'De som inte är invånare i staden kan ändå göra det här på webbplatsen:'
+      please_check_account_data: Var vänlig kontrollera att uppgifterna ovan stämmer.
+      title: Användarhantering
+      under_age: "Du är inte tillräckligt gammal för att kunna verifiera ditt konto."
+      verify: Kontrollera
+    email_label: E-post
+    date_of_birth: Födelsedatum
+    email_verifications:
+      already_verified: Användarkontot är redan verifierat.
+      choose_options: 'Välj ett av följande alternativ:'
+      document_found_in_census: Identitetshandlingen är registrerad, men är inte kopplad till något användarkonto.
+      document_mismatch: 'Den här e-postadressen tillhör en användare som redan har ett id-nummer: %{document_number} (%{document_type})'
+      email_placeholder: Fyll i e-postadressen för personen som skapade kontot
+      email_sent_instructions: För att kunna verifiera användaren och bekräfta att det är rätt e-postadress, behöver användaren klicka på länken som skickats till e-postadressen som angavs ovan.
+      if_existing_account: Om personen redan har ett användarkonto på webbplatsen,
+      if_no_existing_account: Om personen ännu inte skapat ett användarkonto
+      introduce_email: 'Fyll i e-postadressen för användarkontot:'
+      send_email: Skicka e-postmeddelande för verifiering
+    menu:
+      create_proposal: Skapa förslag
+      print_proposals: Skriv ut förslag
+      support_proposals: Stöd förslag
+      create_spending_proposal: Skapa budgetförslag
+      print_spending_proposals: Skriv ut budgetförslag
+      support_spending_proposals: Stöd budgetförslag
+      create_budget_investment: Skapa budgetförslag
+      print_budget_investments: Skriv ut budgetförslag
+      support_budget_investments: Stöd budgetförslag
+      users: Användarhantering
+      user_invites: Skicka inbjudningar
+      select_user: Välj användare
+    permissions:
+      create_proposals: Skapa förslag
+      debates: Delta i debatter
+      support_proposals: Stöd förslag
+      vote_proposals: Rösta på förslag
+    print:
+      proposals_info: Skapa ditt förslag på http://url.consul
+      proposals_title: 'Förslag:'
+      spending_proposals_info: Delta på http://url.consul
+      budget_investments_info: Delta på http://url.consul
+    print_info: Skriv ut informationen
+    proposals:
+      alert:
+        unverified_user: Användare är inte verifierad
+      create_proposal: Skapa förslag
+      print:
+        print_button: Skriv ut
+      index:
+        title: Stöd förslag
+    budgets:
+      create_new_investment: Skapa budgetförslag
+      print_investments: Skriv ut budgetförslag
+      support_investments: Stöd budgetförslag
+      table_name: Namn
+      table_phase: Fas
+      table_actions: Åtgärder
+      no_budgets: Det finns ingen aktiv medborgarbudget.
+    budget_investments:
+      alert:
+        unverified_user: Användaren är inte verifierad
+      create: Skapa budgetförslag
+      filters:
+        heading: Koncept
+        unfeasible: Ej genomförbara budgetförslag
+      print:
+        print_button: Skriv ut
+      search_results:
+        one: " innehåller '%{search_term}'"
+        other: " innehåller '%{search_term}'"
+    spending_proposals:
+      alert:
+        unverified_user: Användaren är inte verifierad
+      create: Skapa budgetförslag
+      filters:
+        unfeasible: Ej genomförbara budgetförslag
+        by_geozone: "Budgetförslag för område: %{geozone}"
+      print:
+        print_button: Skriv ut
+      search_results:
+        one: " innehåller '%{search_term}'"
+        other: " innehåller '%{search_term}'"
+    sessions:
+      signed_out: Du har loggat ut.
+      signed_out_managed_user: Användaren är utloggad.
+    username_label: Användarnamn
+    users:
+      create_user: Skapa nytt konto
+      create_user_info: Vi kommer att skapa ett konto med följande uppgifter
+      create_user_submit: Skapa användare
+      create_user_success_html: Vi har skickat ett e-postmeddelande till <b>%{email}</b>, för att bekräfta e-postadressen. Användaren behöver klicka på bekräftelselänken i meddelandet och sedan skapa ett lösenord för att kunna logga in på webbplatsen
+      autogenerated_password_html: "Det automatiskt skapade lösenordet är <b>%{password}</b>. Du kan ändra det under 'Mitt konto' på webbplatsen"
+      email_optional_label: E-postadress (frivilligt fält)
+      erased_notice: Användarkontot har raderats.
+      erased_by_manager: "Borttagen av medborgarguide: %{manager}"
+      erase_account_link: Ta bort användare
+      erase_account_confirm: Är du säker på att du vill radera kontot? Åtgärden kan inte ångras
+      erase_warning: Åtgärden kan inte ångras. Bekräfta att du vill radera kontot.
+      erase_submit: Radera konto
+    user_invites:
+      new:
+        label: E-post
+        info: "Fyll i e-postadresserna separerade med komma (',')"
+        submit: Skicka inbjudningar
+        title: Skicka inbjudningar
+      create:
+        success_html: <strong>%{count} inbjudningar</strong> har skickats.
+        title: Skicka inbjudningar

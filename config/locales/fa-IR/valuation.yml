@@ -1,0 +1,126 @@
+fa:
+  valuation:
+    header:
+      title: ارزیابی
+    menu:
+      title: ارزیابی
+      budgets: بودجه مشارکتی
+      spending_proposals: هزینه های طرح
+    budgets:
+      index:
+        title: بودجه مشارکتی
+        filters:
+          current: بازکردن
+          finished: به پایان رسید
+        table_name: نام
+        table_phase: فاز
+        table_assigned_investments_valuation_open: پروژه های سرمایه گذاری اختصاص داده با ارزیابی باز
+        table_actions: اقدامات
+        evaluate: ارزیابی
+    budget_investments:
+      index:
+        headings_filter_all: همه سرفصلها
+        filters:
+          valuation_open: بازکردن
+          valuating: تحت ارزیابی
+          valuation_finished: ' اتمام ارزیابی '
+        assigned_to: "اختصاص یافته به %{valuator}"
+        title: پروژه سرمایه گذاری
+        edit: ویرایش پرونده
+        valuators_assigned:
+          one: اختصاص ارزیاب 
+          other: "اختصاص ارزیاب ها%{count}"
+        no_valuators_assigned: بدون  تعیین ارزیاب
+        table_id: شناسه
+        table_title: عنوان
+        table_heading_name: عنوان سرفصل
+        table_actions: اقدامات
+      show:
+        back: برگشت
+        title: پروژه سرمایه گذاری
+        info: اطلاعات نویسنده
+        by: ارسال شده توسط
+        sent: ارسال شده توسط
+        heading: سرفصل
+        dossier: پرونده
+        edit_dossier: ویرایش پرونده
+        price: قیمت
+        price_first_year: هزینه در طول سال اول
+        currency: "€"
+        feasibility: "امکان پذیری\n"
+        feasible: امکان پذیر
+        unfeasible: غیر قابل پیش بینی
+        undefined: تعریف نشده
+        valuation_finished: ' اتمام ارزیابی '
+        duration: دامنه زمانی
+        responsibles: مسئولین
+        assigned_admin: مدیر اختصاصی
+        assigned_valuators: اختصاص ارزیاب ها
+      edit:
+        dossier: پرونده
+        price_html: "قیمت%{currency}"
+        price_first_year_html: "هزینه در طول سال اول%{currency}<small>(اختیاری، داده ها عمومی نیستند)</small>"
+        price_explanation_html: توضیح قیمت
+        feasibility: "امکان پذیری\n"
+        feasible: امکان پذیر
+        unfeasible: امکان پذیر نیست
+        undefined_feasible: انتظار
+        feasible_explanation_html: توضیح امکان سنجی 
+        valuation_finished: ' اتمام ارزیابی '
+        valuation_finished_alert: "آیا مطمئن هستید که میخواهید این گزارش را به عنوان تکمیل علامتگذاری کنید؟ اگر شما آن را انجام دهید، دیگر نمی تواند تغییر کند."
+        not_feasible_alert: "بلافاصله ایمیل به نویسنده این پروژه با گزارش غیرقابل پیش بینی ارسال خواهد شد."
+        duration_html: دامنه زمانی
+        save: ذخیره تغییرات
+      notice:
+        valuate: "پرونده به روز شد"
+      valuation_comments: ارزیابی نظرات
+      not_in_valuating_phase: سرمایه گذاری تنها زمانی می تواند ارزیابی شود که بودجه در مرحله ارزیابی است، 
+    spending_proposals:
+      index:
+        geozone_filter_all: تمام مناطق
+        filters:
+          valuation_open: بازکردن
+          valuating: تحت ارزیابی
+          valuation_finished: ' اتمام ارزیابی '
+        title: پروژه های سرمایه گذاری برای بودجه مشارکتی
+        edit: ویرایش
+      show:
+        back: برگشت
+        heading: پروژه سرمایه گذاری
+        info: اطلاعات نویسنده
+        association_name: انجمن
+        by: ارسال شده توسط
+        sent: ارسال شده در
+        geozone: دامنه
+        dossier: پرونده
+        edit_dossier: ویرایش پرونده
+        price: قیمت
+        price_first_year: هزینه در طول سال اول
+        currency: "€"
+        feasibility: "امکان پذیری\n"
+        feasible: امکان پذیر
+        not_feasible: امکان پذیر نیست
+        undefined: تعریف نشده
+        valuation_finished: ' اتمام ارزیابی '
+        time_scope: دامنه زمانی
+        internal_comments: نظر داخلی
+        responsibles: مسئولین
+        assigned_admin: مدیر اختصاصی
+        assigned_valuators: اختصاص ارزیاب ها
+      edit:
+        dossier: پرونده
+        price_html: "قیمت%{currency}"
+        price_first_year_html: "هزینه در طول سال اول (%{currency})"
+        currency: "€"
+        price_explanation_html: توضیح قیمت
+        feasibility: "امکان پذیری\n"
+        feasible: امکان پذیر
+        not_feasible: امکان پذیر نیست
+        undefined_feasible: انتظار
+        feasible_explanation_html: توضیح امکان سنجی 
+        valuation_finished: ' اتمام ارزیابی '
+        time_scope_html: دامنه زمانی
+        internal_comments_html: نظر داخلی
+        save: ذخیره تغییرات
+      notice:
+        valuate: "پرونده به روز شد"
