@@ -48,10 +48,6 @@ fa:
       - اکتبر
       - نوامبر
       - دسامبر
-    order:
-      - 'day:'
-      - 'month:'
-      - 'year:'
   datetime:
     distance_in_words:
       about_x_hours:
