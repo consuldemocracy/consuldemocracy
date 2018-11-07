@@ -129,8 +129,8 @@ feature 'Executions' do
 
   context 'Filters' do
 
-    let!(:status1) { create(:milestone_status, name: I18n.t('seeds.budgets.statuses.studying_project')) }
-    let!(:status2) { create(:milestone_status, name: I18n.t('seeds.budgets.statuses.bidding')) }
+    let!(:status1) { create(:milestone_status, name: "Studying the project") }
+    let!(:status2) { create(:milestone_status, name: "Bidding") }
 
     scenario 'Filters select with counter are shown' do
       create(:milestone, milestoneable: investment1,
