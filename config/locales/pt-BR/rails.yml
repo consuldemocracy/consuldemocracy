@@ -48,10 +48,6 @@ pt-BR:
       - Outubro
       - Novembro
       - Dezembro
-    order:
-      - :day
-      - :month
-      - :year
   datetime:
     distance_in_words:
       about_x_hours:
