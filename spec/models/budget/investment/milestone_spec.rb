@@ -69,4 +69,16 @@ describe Budget::Investment::Milestone do
     end
   end
 
+  describe ".published" do
+    it "uses the application's time zone date", :with_different_time_zone do
+      published_in_local_time_zone = create(:budget_investment_milestone,
+                                            publication_date: Date.today)
+
+      published_in_application_time_zone = create(:budget_investment_milestone,
+                                                  publication_date: Date.current)
+
+      expect(Budget::Investment::Milestone.published).to include(published_in_application_time_zone)
+      expect(Budget::Investment::Milestone.published).not_to include(published_in_local_time_zone)
+    end
+  end
 end
