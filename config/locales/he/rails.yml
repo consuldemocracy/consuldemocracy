@@ -48,10 +48,6 @@ he:
       - אוקטובר
       - נובמבר
       - דצמבר
-    order:
-      - :day
-      - :month
-      - :year
   datetime:
     distance_in_words:
       half_a_minute: חצי דקה
