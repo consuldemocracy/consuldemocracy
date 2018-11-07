@@ -80,10 +80,15 @@ namespace :milestones do
                                'description' => 'description'}
 
       puts "Verifying that all rows were copied..."
-      unless count_rows('milestones') == count_rows('budget_investment_milestones') &&
-             count_rows('milestone_statuses') == count_rows('budget_investment_statuses') &&
-             count_rows('milestone_translations') == count_rows('budget_investment_milestone_translations')
-        raise "Number of rows of old and new tables do not match! Rolling back transaction..."
+
+      {
+        "budget_investment_milestones"             => "milestones",
+        "budget_investment_statuses"               => "milestone_statuses",
+        "budget_investment_milestone_translations" => "milestone_translations"
+      }.each do |original_table, migrated_table|
+        unless count_rows(original_table) == count_rows(migrated_table)
+          raise "Number of rows of old and new tables do not match! Rolling back transaction..."
+        end
       end
     end
 
