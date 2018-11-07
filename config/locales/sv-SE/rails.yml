@@ -48,10 +48,6 @@ sv:
       - oktober
       - november
       - december
-    order:
-      - :year
-      - :month
-      - :day
   datetime:
     distance_in_words:
       about_x_hours:
