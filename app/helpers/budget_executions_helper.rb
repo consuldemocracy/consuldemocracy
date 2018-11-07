@@ -7,8 +7,8 @@ module BudgetExecutionsHelper
   end
 
   def first_milestone_with_image(investment)
-    investment.milestones.order(publication_date: :asc, created_at: :asc)
-                         .select{ |milestone| milestone.image.present? }.first
+    investment.milestones.order_by_publication_date
+                         .select{ |milestone| milestone.image.present? }.last
   end
 
 end
