@@ -87,6 +87,7 @@ gl:
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
         edit_budget: Editar orzamento
+        no_budgets: "Non hai orzamentos abertas."
       create:
         notice: Nova campaña de orzamentos participativos creada con éxito!
       update:
