@@ -87,6 +87,7 @@ en:
         table_edit_budget: Edit
         edit_groups: Edit headings groups
         edit_budget: Edit budget
+        no_budgets: "There are no open budgets."
       create:
         notice: New participatory budget created successfully!
       update:
