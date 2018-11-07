@@ -55,7 +55,7 @@
   <div class="small-12 medium-9 large-10 column">
     <%= form_tag(budget_executions_path(@budget), method: :get) do %>
       <div class="small-12 medium-3 column">
-        <%= label_tag t("budgets.executions.filters.label") %>
+        <%= label_tag :status, t("budgets.executions.filters.label") %>
         <%= select_tag :status,
                       options_from_collection_for_select(@statuses,
                       :id, lambda { |s| "#{s.name} (#{filters_select_counts(s.id)})" },
