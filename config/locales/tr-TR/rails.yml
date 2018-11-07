@@ -36,10 +36,6 @@ tr:
       - Ekim
       - Kasım
       - December
-    order:
-      - :day
-      - :month
-      - :year
   datetime:
     prompts:
       day: Gün
