@@ -468,6 +468,7 @@ fr:
       geozone_restricted: "Quartiers"
       geozone_info: "Peuvent participer les personnes issues du recensement de : "
       already_answer: "Vous avez déjà participé à ce vote"
+      not_logged_in: "Vous devez vous connecter ou vous inscrire pour participer"
       section_header:
         icon_alt: Icône de vote
         title: Vote
