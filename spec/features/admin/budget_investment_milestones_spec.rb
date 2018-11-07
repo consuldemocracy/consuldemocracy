@@ -5,9 +5,9 @@ feature 'Admin budget investment milestones' do
   background do
     admin = create(:administrator)
     login_as(admin.user)
-
-    @investment = create(:budget_investment)
   end
+
+  let!(:investment) { create(:budget_investment) }
 
   it_behaves_like "translatable",
                   "milestone",
@@ -16,11 +16,11 @@ feature 'Admin budget investment milestones' do
 
   context "Index" do
     scenario 'Displaying milestones' do
-      milestone = create(:milestone, milestoneable: @investment)
+      milestone = create(:milestone, milestoneable: investment)
       create(:image, imageable: milestone)
       document = create(:document, documentable: milestone)
 
-      visit admin_budget_budget_investment_path(@investment.budget, @investment)
+      visit admin_budget_budget_investment_path(investment.budget, investment)
 
       expect(page).to have_content("Milestone")
       expect(page).to have_content(milestone.title)
@@ -32,7 +32,7 @@ feature 'Admin budget investment milestones' do
     end
 
     scenario 'Displaying no_milestones text' do
-      visit admin_budget_budget_investment_path(@investment.budget, @investment)
+      visit admin_budget_budget_investment_path(investment.budget, investment)
 
       expect(page).to have_content("Milestone")
       expect(page).to have_content("Don't have defined milestones")
@@ -42,7 +42,7 @@ feature 'Admin budget investment milestones' do
   context "New" do
     scenario "Add milestone" do
       status = create(:milestone_status)
-      visit admin_budget_budget_investment_path(@investment.budget, @investment)
+      visit admin_budget_budget_investment_path(investment.budget, investment)
 
       click_link 'Create new milestone'
 
@@ -58,14 +58,14 @@ feature 'Admin budget investment milestones' do
     end
 
     scenario "Status select is disabled if there are no statuses available" do
-      visit admin_budget_budget_investment_path(@investment.budget, @investment)
+      visit admin_budget_budget_investment_path(investment.budget, investment)
 
       click_link 'Create new milestone'
       expect(find("#milestone_status_id").disabled?).to be true
     end
 
     scenario "Show validation errors on milestone form" do
-      visit admin_budget_budget_investment_path(@investment.budget, @investment)
+      visit admin_budget_budget_investment_path(investment.budget, investment)
 
       click_link 'Create new milestone'
 
@@ -82,11 +82,11 @@ feature 'Admin budget investment milestones' do
 
   context "Edit" do
     scenario "Change title, description and document names" do
-      milestone = create(:milestone, milestoneable: @investment)
+      milestone = create(:milestone, milestoneable: investment)
       create(:image, imageable: milestone)
       document = create(:document, documentable: milestone)
 
-      visit admin_budget_budget_investment_path(@investment.budget, @investment)
+      visit admin_budget_budget_investment_path(investment.budget, investment)
       expect(page).to have_link document.title
 
       click_link milestone.title
@@ -108,9 +108,9 @@ feature 'Admin budget investment milestones' do
 
   context "Delete" do
     scenario "Remove milestone" do
-      milestone = create(:milestone, milestoneable: @investment, title: "Title will it remove")
+      milestone = create(:milestone, milestoneable: investment, title: "Title will it remove")
 
-      visit admin_budget_budget_investment_path(@investment.budget, @investment)
+      visit admin_budget_budget_investment_path(investment.budget, investment)
 
       click_link "Delete milestone"
 
