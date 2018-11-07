@@ -61,7 +61,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-markdown-it', '~> 8.2.1'
 end
 
-gem 'database_cleaner', '~> 1.6.1'
+gem 'database_cleaner', '~> 1.7.0'
 gem 'faker', '~> 1.8.7'
 gem 'aws-sdk', '~> 2.3.0'
 
