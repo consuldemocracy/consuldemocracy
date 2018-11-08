@@ -11,6 +11,10 @@ class Budget
     validates :price, presence: true
     validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
     validates :population, numericality: { greater_than: 0 }, allow_nil: true
+    validates :latitude, length: { maximum: 22, minimum: 1 }, presence: true, \
+              format: /\A(-|\+)?([1-8]?\d(?:\.\d{1,})?|90(?:\.0{1,6})?)\z/
+    validates :longitude, length: { maximum: 22, minimum: 1}, presence: true, \
+              format: /\A(-|\+)?((?:1[0-7]|[1-9])?\d(?:\.\d{1,})?|180(?:\.0{1,})?)\z/
 
     delegate :budget, :budget_id, to: :group, allow_nil: true
 
