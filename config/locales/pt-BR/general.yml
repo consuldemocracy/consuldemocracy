@@ -111,12 +111,10 @@ pt-BR:
         relevance: relevância
         recommendations: recomendações
       recommendations:
-        without_results: Não há debates relacionados a seus interesses
         without_interests: Siga propostas para que possamos lhe dar recomendações
         disable: "As recomendações de debates vão parar de ser mostradas se você descartá-las. Você pode habilitá-los novamente na página 'Minha conta'"
         actions:
           success: "Recomendações para os debates agora estão desativadas para esta conta"
-          error: "Ocorreu um erro. Por favor, vá à página 'Sua conta' para desativar manualmente recomendações para debates"
       search_form:
         button: Buscar
         placeholder: Buscar debates...
@@ -204,7 +202,6 @@ pt-BR:
       conditions: Termos e condições de uso
       consul: Aplicativo Consul
       consul_url: https://github.com/consul/consul
-      contact_us: Para suporte técnico entre em
       copyright: Consul, %{year}
       description: Este portal usa o %{consul} que é %{open_source}. De Madrid para o mundo.
       open_source: programa de código aberto
@@ -357,7 +354,6 @@ pt-BR:
         disable: "As recomendações de propostas vão parar de ser mostradas se você descartá-las. Você pode habilitá-las novamente na página 'Minha conta'"
         actions:
           success: "Recomendações de propostas agora estão desativadas para esta conta"
-          error: "Ocorreu um erro. Por favor, vá à página 'Sua conta' para desativar manualmente recomendações de propostas"
       retired_proposals: Propostas retiradas
       retired_proposals_link: "Propostas retiradas pelo autor"
       retired_links:
@@ -442,7 +438,6 @@ pt-BR:
       retired: Proposta retirada pelo autor
       share: Compartilhar
       send_notification: Enviar notificação
-      no_notifications: "Esta proposta não tem notificações."
       embed_video_title: "Vídeo em %{proposal}"
       title_external_url: "Documentação adicional"
       title_video_url: "Vídeo externo"
@@ -528,7 +523,6 @@ pt-BR:
       title_label: "Título"
       body_label: "Mensagem"
       submit_button: "Enviar mensagem"
-      info_about_receivers_html: "Esta mensagem será enviada para <strong>%{count} pessoas</strong> e ficará visível em %{proposal_page}.<br> As mensagens não são enviadas imediatamente, os usuários receberão periodicamente um email com todas as notificações da proposta."
       proposal_page: "a página da proposta"
     show:
       back: "Voltar para minha atividade"
@@ -832,7 +826,6 @@ pt-BR:
     error: "Link inválido. Lembre-se de iniciar com %{url}."
     error_itself: "Link inválido. Você não pode relacionar um conteúdo com ele mesmo."
     success: "Você adicionou um novo conteúdo relacionado"
-    is_related: "É um conteúdo relacionado?"
     score_positive: "Sim"
     score_negative: "Não"
     content_title:
