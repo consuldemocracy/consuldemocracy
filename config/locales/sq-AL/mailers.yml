@@ -22,7 +22,6 @@ sq:
       title: Përgjigje e re tek komentit tuaj
     unfeasible_spending_proposal:
       hi: "I dashur përdorues,"
-      new_html: "Për të gjitha këto, ne ju ftojmë të përpunoni një <strong>propozim të ri </ strong> që i nënshtrohet kushteve të këtij procesi. Ju mund ta bëni këtë duke ndjekur këtë lidhje: %{url}"
       new_href: "projekt i ri investimi"
       sincerely: "Sinqerisht"
       sorry: "Ju kërkojmë ndjesë për shqetësimin dhe përsëri ju falënderojmë për pjesëmarrjen tuaj të paçmuar."
@@ -32,16 +31,11 @@ sq:
       title: "Njoftimet e propozimeve në %{org_name}"
       share: Ndani propozimin
       comment: Propozimi i komentit
-      unsubscribe: "Nëse nuk doni të merrni njoftimin e propozimit, vizitoni %{account} dhe hiqni 'Merr një përmbledhje të njoftimeve të propozimit'."
       unsubscribe_account: Llogaria ime
     direct_message_for_receiver:
       subject: "Ju keni marrë një mesazh të ri privat"
       reply: Përgjigjuni te %{sender}
-      unsubscribe: "Nëse nuk doni të merrni mesazhe të drejtpërdrejta, vizitoni %{account} dhe hiqni 'Marrja e postës elektronike në lidhje me mesazhet direkte'."
       unsubscribe_account: Llogaria ime
-    direct_message_for_sender:
-      subject: "Ju keni dërguar një mesazh të ri privat"
-      title_html: "Ju keni dërguar një mesazh të ri privat tek <strong>%{receiver}</strong> me përmbajtje:"
     user_invite:
       ignore: "Nëse nuk e keni kërkuar këtë ftesë, mos u shqetësoni, mund ta injoroni këtë email."
       text: "Faleminderit që po aplikon për t'u bashkuar me %{org}! Në pak sekonda ju mund të filloni të merrni pjesë, vetëm plotësoni formularin e mëposhtëm:"
@@ -60,7 +54,6 @@ sq:
       share: "Ndani projektin tuaj"
     budget_investment_unfeasible:
       hi: "I dashur përdorues,"
-      new_html: "Për të gjitha këto, ne ju ftojmë të përpunoni një <strong> investim të ri </ strong> që i nënshtrohet kushteve të këtij procesi. Ju mund ta bëni këtë duke ndjekur këtë lidhje:%{url}"
       new_href: "projekt i ri investimi"
       sincerely: "Sinqerisht"
       sorry: "Ju kërkojmë ndjesë për shqetësimin dhe përsëri ju falënderojmë për pjesëmarrjen tuaj të paçmuar."
