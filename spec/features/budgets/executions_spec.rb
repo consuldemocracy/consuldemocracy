@@ -61,6 +61,7 @@ feature 'Executions' do
   end
 
   context 'Images' do
+
     scenario 'renders milestone image if available' do
       milestone1 = create(:budget_investment_milestone, investment: investment1)
       create(:image, imageable: milestone1)
@@ -101,13 +102,19 @@ feature 'Executions' do
 
     scenario "renders last milestone's image if investment has multiple milestones with images associated" do
       milestone1 = create(:budget_investment_milestone, investment: investment1,
-                                                        publication_date: 2.weeks.ago)
+                                                        publication_date: Date.yesterday)
 
       milestone2 = create(:budget_investment_milestone, investment: investment1,
                                                         publication_date: Date.yesterday)
 
-      create(:image, imageable: milestone1, title: 'First milestone image')
-      create(:image, imageable: milestone2, title: 'Second milestone image')
+      milestone3 = create(:budget_investment_milestone, investment: investment1,
+                                                        publication_date: Date.yesterday)
+
+      milestone4 = create(:budget_investment_milestone, investment: investment1,
+                                                        publication_date: Date.yesterday)
+
+      create(:image, imageable: milestone2, title: 'Image for first milestone with image')
+      create(:image, imageable: milestone3, title: 'Image for second milestone with image')
 
       visit budget_path(budget)
 
@@ -115,9 +122,9 @@ feature 'Executions' do
       click_link 'Milestones'
 
       expect(page).to have_content(investment1.title)
-      expect(page).to have_css("img[alt='#{milestone2.image.title}']")
-      expect(page).not_to have_css("img[alt='#{milestone1.image.title}']")
+      expect(page).to have_css("img[alt='#{milestone3.image.title}']")
     end
+
   end
 
   context 'Filters' do
@@ -248,5 +255,19 @@ feature 'Executions' do
       expect(a_heading.name).to appear_before(m_heading.name)
       expect(m_heading.name).to appear_before(z_heading.name)
     end
+  end
+
+  context 'No milestones' do
+
+    scenario 'Milestone not yet published' do
+      status = create(:budget_investment_status)
+      unpublished_milestone = create(:budget_investment_milestone, investment: investment1,
+                                     status: status, publication_date: Date.tomorrow)
+
+      visit budget_executions_path(budget, status: status.id)
+
+      expect(page).to have_content('No winner investments in this state')
+    end
+
   end
 end
