@@ -337,7 +337,6 @@ pt-BR:
           without_confirmed_hide: Pendente
         title: Usuários ocultos
         user: Usuário
-        no_hidden_users: Não há usuários ocultos.
       show:
         email: 'Email:'
         hidden_at: 'Oculto em:'
@@ -384,7 +383,6 @@ pt-BR:
         index:
           create: Novo processo
           delete: Excluir
-          title: Processos legislativos
           filters:
             open: Abertos
             next: Próximo
@@ -971,7 +969,6 @@ pt-BR:
       index:
         title: Cargos públicos
         no_officials: Não há cargos públicos.
-        name: Nome
         official_position: Cargo público
         official_level: Nível
       level_0: Não é cargo público
@@ -1355,11 +1352,9 @@ pt-BR:
       title: Página inicial
       description: Os módulos ativos aparecem na página inical na mesma ordem que aqui.
       header_title: Cabeçalho
-      no_header: Não há cabeçalho.
       create_header: Criar cabeçalho
       cards_title: Cartões
       create_card: Criar cartão
-      no_cards: Não há cartões.
       cards:
         title: Título
         description: Descrição
