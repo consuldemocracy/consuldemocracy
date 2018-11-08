@@ -12,6 +12,7 @@ require 'capybara/rails'
 require 'capybara/rspec'
 require 'selenium/webdriver'
 
+Rails.application.load_tasks
 I18n.default_locale = :en
 
 include Warden::Test::Helpers
