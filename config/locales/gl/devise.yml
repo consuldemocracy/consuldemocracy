@@ -28,7 +28,6 @@ gl:
       unlock_instructions:
         subject: "Instrucións de desbloqueo"
     omniauth_callbacks:
-      failure: "Non puideches ser identificado vía %{kind} polo seguinte motivo: \"%{reason}\"."
       success: "Identificado correctamente vía %{kind}."
     passwords:
       no_token: "Non podes acceder a esta páxina se non é a través dun enlace para restablecer o contrasinal. Se accediches dende o enlace para restablecer o contrasinal, asegúrate de que a URL estea completa."
