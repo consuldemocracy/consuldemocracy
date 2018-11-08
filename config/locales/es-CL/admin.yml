@@ -295,7 +295,6 @@ es-CL:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
         user: Usuario
-        no_hidden_users: No hay uusarios bloqueados.
       show:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
@@ -341,7 +340,6 @@ es-CL:
         index:
           create: Nuevo proceso
           delete: Borrar
-          title: Procesos de legislación colaborativa
           filters:
             open: Abiertos
             next: Próximamente
