@@ -50,10 +50,7 @@ zh-CN:
           title: 注册为组织或集体
         success:
           back_to_index: 我明白；回到主页
-          instructions_1_html: "<b>我们将尽快联系您</b>以核实您确实是代表此集体。"
-          instructions_2_html: 在<b>审核您的电子邮件</b>的同时，我们已经向您发送<b>一个链接来确认您的账号</b>。
           instructions_3_html: 一旦确认，您将以未经核实的集体开始参与。
-          thank_you_html: 感谢您在网站上注册您的集体。它现在<b>等待核实中</b>。
           title: 组织/集体注册
     passwords:
       edit:
