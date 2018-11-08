@@ -101,7 +101,6 @@ ca:
       page_title: "%{budget} - Resultats"
       heading: "Resultats pressupostos participatius"
       spending_proposal: Títol
-      ballot_lines_count: vots
       hide_discarded_link: Amaga descartades
       show_all_link: Mostra totes
       amount_available: pressupost disponible
