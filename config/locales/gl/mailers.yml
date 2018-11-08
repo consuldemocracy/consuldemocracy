@@ -22,7 +22,6 @@ gl:
       title: Nova resposta ao teu comentario
     unfeasible_spending_proposal:
       hi: "Estimado usuario,"
-      new_html: "Por todo iso, invitámoste a que elabores unha <strong>nova proposta</strong> que se axuste ás condicións deste proceso. Isto pódelo facer neste enlace: %{url}."
       new_href: "novo proxecto de investimento"
       sincerely: "Un cordial saúdo"
       sorry: "Sentimos as molestias ocasionadas e volvémosche dar as grazas pola túa inestimable participación."
@@ -32,16 +31,11 @@ gl:
       title: "Notificacións de propostas en %{org_name}"
       share: Compartir proposta
       comment: Comentar proposta
-      unsubscribe: "Se non queres recibir notificacións de propostas, podes entrar en %{account} e desmarcar a opción 'Recibir resumo de notificacións sobre propostas'."
       unsubscribe_account: A miña conta
     direct_message_for_receiver:
       subject: "Recibiches unha nova mensaxe privada"
       reply: Responder a %{sender}
-      unsubscribe: "Se non queres recibir mensaxes privadas, podes entrar en %{account} e desmarcar a opción 'Recibir correos con mensaxes privadas'."
       unsubscribe_account: A miña conta
-    direct_message_for_sender:
-      subject: "Enviaches unha nova mensaxe privada"
-      title_html: "Enviaches unha nova mensaxe privada a <strong>%{receiver}</strong> co seguinte contido:"
     user_invite:
       ignore: "Se non solicitaches este convite non te preocupes, podes ignorar este correo."
       text: "Grazas por solicitar unirte a %{org}! Nuns segundos poderás empezar a decidir a cidade que queres, só tes que cubrir o seguinte formulario:"
@@ -60,7 +54,6 @@ gl:
       share: "Comparte o teu proxecto"
     budget_investment_unfeasible:
       hi: "Estimado usuario,"
-      new_html: "Por todo isto, convidámoste a que elabores un <strong>novo proxecto de investimento</strong> que se axuste ás condicións deste proceso. Pódelo facer desde esta ligazón: %{url}."
       new_href: "nova proposta de investimento"
       sincerely: "Un cordial saúdo"
       sorry: "Sentimos as molestias ocasionadas e volvemos darche as grazas pola túa inestimable participación."
