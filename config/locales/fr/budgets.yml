@@ -163,7 +163,6 @@ fr:
       heading: "Résultats du budget participatif"
       heading_selection_title: "Par quartier"
       spending_proposal: Titre de la proposition
-      ballot_lines_count: Nombre de fois sélectionné
       hide_discarded_link: Cacher les résultats rejetés
       show_all_link: Tout afficher
       price: Coût
