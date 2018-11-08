@@ -124,7 +124,6 @@ ca:
           additional_info_placeholder: Afegeix qualsevol informació addicional que pugui ser d'interès
         index:
           create: nou procés
-          title: Processos de legislació col·laborativa
         new:
           title: Crear nou procés de legislació col·laborativa
           submit_button: crear procés
