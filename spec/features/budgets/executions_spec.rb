@@ -264,7 +264,7 @@ feature 'Executions' do
       unpublished_milestone = create(:budget_investment_milestone, investment: investment1,
                                      status: status, publication_date: Date.tomorrow)
 
-      visit custom_budget_executions_path(budget, status: status.id)
+      visit budget_executions_path(budget, status: status.id)
 
       expect(page).to have_content('No winner investments in this state')
     end
