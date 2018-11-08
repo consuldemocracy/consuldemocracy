@@ -151,7 +151,6 @@ he:
       conditions: כללים ותנאי שימוש
       consul: מערכת ההצבעות של קול העם
       consul_url: https://github.com/consul/consul
-      contact_us: לתמיכה טכנית עברו אל
       copyright: Consul, %{year}
       description: פורטל זה משתמש בפלטפורמת %{consul} שהיא %{open_source}.
       open_source: תוכנת קוד פתוח
@@ -309,7 +308,6 @@ he:
       retired: ההצעה הוסרה על-ידי המחבר/ת
       share: שיתוף
       send_notification: שלח/י התראה
-      no_notifications: "להצעה זו אין התראות."
     update:
       form:
         submit_button: שמירת השינויים
@@ -350,7 +348,6 @@ he:
       title_label: "כותרת"
       body_label: "הודעה"
       submit_button: "שליחה"
-      info_about_receivers_html: "“הודעה זו תישלח אל <strong> %{count} אנשים</strong> ותוצג ב %{proposal_page} <br> ההודעות אינן מתקבלות מיד, אלא נשלחות למשתמשים בדואר אלקטרוני תקופתי ובו סיכום כל ההתרעות על ההצעות שהם עוקבים אחריהן\""
       proposal_page: "דף ההצעה"
     show:
       back: "חזרה לפעילות שלי"
