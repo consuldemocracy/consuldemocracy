@@ -28,7 +28,6 @@ de:
       unlock_instructions:
         subject: "Anweisung zur Entsperrung"
     omniauth_callbacks:
-      failure: "Es ist nicht gelungen, Sie als %{kind} zu autorisieren, weil \"%{reason}\"."
       success: "Erfolgreich identifiziert als %{kind}."
     passwords:
       no_token: "Nur über einen Link zum Zurücksetzen Ihres Passworts können Sie auf diese Seite zugreifen. Falls Sie diesen Link verwendet haben, überprüfen Sie bitte, ob die URL vollständig ist."
