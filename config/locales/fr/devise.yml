@@ -28,7 +28,6 @@ fr:
       unlock_instructions:
         subject: "Instructions de déblocage"
     omniauth_callbacks:
-      failure: "Il n'a pas été possible de vous identifier en tant que %{kind} à cause de \"%{reason}\"."
       success: "Identifié avec succès en tant que %{kind}."
     passwords:
       no_token: "Vous ne pouvez accéder à cette page, sauf par le biais d'un lien de réinitialisation de mot de passe. Si vous y avez accédé via un lien de réinitialisation de mot de passe, veuillez vérifier que l'URL est complète."
