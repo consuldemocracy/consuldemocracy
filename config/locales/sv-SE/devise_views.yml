@@ -50,10 +50,7 @@ sv:
           title: Registrera er som organisation eller grupp
         success:
           back_to_index: Jag förstår; gå tillbaka till startsidan
-          instructions_1_html: "<b>Vi kommer snart att kontakta dig</b> för att bekräfta att du representerar den här gruppen."
-          instructions_2_html: Medan din <b>e-postadress granskas</b>, har vi skickat en <b>länk för att bekräfta ditt konto</b>.
           instructions_3_html: När bekräftelsen är klar kan du börja delta som en overifierad grupp.
-          thank_you_html: Tack för att du har registrerat en grupp på webbplatsen. Den <b>inväntar nu granskning</b>.
           title: Registrering av organisation/grupp
     passwords:
       edit:
