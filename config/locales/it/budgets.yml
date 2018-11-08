@@ -163,7 +163,6 @@ it:
       heading: "Risultati per il bilancio partecipativo"
       heading_selection_title: "Per distretto"
       spending_proposal: Titolo della proposta
-      ballot_lines_count: Tempi selezionati
       hide_discarded_link: Nascondi scartati
       show_all_link: Visualizza tutti
       price: Costo
