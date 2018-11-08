@@ -77,7 +77,6 @@ fr:
       support_proposals: Supporter des propositions
       vote_proposals: Voter sur des propositions
     print:
-      proposals_info: Faites votre proposition sur http://url.consul
       proposals_title: 'Propositions :'
       spending_proposals_info: Participer sur http://url.consul
       budget_investments_info: Participer sur http://url.consul
