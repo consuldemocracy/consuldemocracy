@@ -282,7 +282,6 @@ fa:
           without_confirmed_hide: انتظار
         title: کاربران پنهان
         user: کاربر
-        no_hidden_users: هیچ کاربر پنهانی وجود ندارد
       show:
         email: 'پست الکترونیکی'
         hidden_at: 'پنهان در:'
@@ -319,7 +318,6 @@ fa:
         index:
           create: فرآیند جدید
           delete: حذف
-          title: فرآیندهای قانونی
           filters:
             open: بازکردن
             next: بعدی
@@ -821,7 +819,6 @@ fa:
       index:
         title: مقامات
         no_officials: هیچ مقام رسمی وجود ندارد
-        name: نام
         official_position: موضع رسمی
         official_level: سطح 
       level_0: رسمی نیست
@@ -1173,11 +1170,9 @@ fa:
       title: صفحه اصلی
       description: ماژول های فعال در صفحه اصلی به ترتیب در اینجا نمایش داده می شوند.
       header_title: سربرگ
-      no_header: بدون سربرگ
       create_header: ایجاد سربرگ
       cards_title: کارتها
       create_card: ایجاد کارت
-      no_cards: بدون کارت
       cards:
         title: عنوان
         description: توضیحات
