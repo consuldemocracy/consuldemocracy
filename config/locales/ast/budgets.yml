@@ -104,7 +104,6 @@ ast:
       page_title: "%{budget} - Resultancies"
       heading: "Presupuestes participativos, resultancies"
       spending_proposal: Títulu
-      ballot_lines_count: Votos
       hide_discarded_link: Despintar refugaes
       show_all_link: Amosar toes
       amount_available: Presupuestu disponible
