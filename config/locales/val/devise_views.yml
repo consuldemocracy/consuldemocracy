@@ -49,10 +49,7 @@ val:
           title: Registrar-se com organització / col·lectiu
         success:
           back_to_index: Entes, tornar a la pàgina principal
-          instructions_1_html: "En breu <b>ens ficarem en contacte amb tu</b> per a verificar que realment representes a aquest col·lectiu."
-          instructions_2_html: Mentres <b>revisa el teu correu electrònic</b>, t'hem enviat un <b>enllaç per a confirmar el teu compte</b>.
           instructions_3_html: Una vegada confirmat, podràs començar a participar com a col·lectiu no verificat.
-          thank_you_html: Gracies per registrar el teu col·lectiu en la web. Ara està <b>pendent de verificació</b>.
           title: Registre d'organització / col·lectiu
     passwords:
       edit:
