@@ -337,7 +337,6 @@ sq:
           without_confirmed_hide: Në pritje
         title: Përdoruesit e fshehur
         user: Përdorues
-        no_hidden_users: Nuk ka përdorues të fshehura.
       show:
         email: 'Email:'
         hidden_at: 'Fshehur në:'
@@ -384,7 +383,6 @@ sq:
         index:
           create: Proces i ri
           delete: Fshi
-          title: Proceset legjislative
           filters:
             open: Hapur
             next: Tjetër
@@ -971,7 +969,6 @@ sq:
       index:
         title: Zyrtarët
         no_officials: Nuk ka zyrtarë.
-        name: Emër
         official_position: Pozicioni zyrtar
         official_level: Nivel
       level_0: Jo zyrtare
@@ -1355,11 +1352,9 @@ sq:
       title: Kryefaqja
       description: Modulet aktive shfaqen në faqen kryesore në të njëjtën mënyrë si këtu.
       header_title: Header
-      no_header: Nuk ka header.
       create_header: Krijo header
       cards_title: Kartat
       create_card: Krijo kartë
-      no_cards: Nuk ka karta.
       cards:
         title: Titull
         description: Përshkrimi
