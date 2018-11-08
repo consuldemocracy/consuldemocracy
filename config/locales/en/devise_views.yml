@@ -50,10 +50,10 @@ en:
           title: Register as an organisation or collective
         success:
           back_to_index: I understand; go back to main page
-          instructions_1_html: "<b>We will contact you soon</b> to verify that you do in fact represent this collective."
-          instructions_2_html: While your <b>email is reviewed</b>, we have sent you a <b>link to confirm your account</b>.
+          instructions_1_html: "<strong>We will contact you soon</strong> to verify that you do in fact represent this collective."
+          instructions_2_html: While your <strong>email is reviewed</strong>, we have sent you a <strong>link to confirm your account</strong>.
           instructions_3_html: Once confirmed, you may begin to participate as an unverified collective.
-          thank_you_html: Thank you for registering your collective on the website. It is now <b>pending verification</b>.
+          thank_you_html: Thank you for registering your collective on the website. It is now <strong>pending verification</strong>.
           title: Registration of organisation / collective
     passwords:
       edit:

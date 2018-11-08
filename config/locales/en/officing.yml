@@ -23,7 +23,7 @@ en:
         error_wrong_booth: "Wrong booth. Results NOT saved."
       new:
         title: "%{poll} - Add results"
-        not_allowed: "You are allowed to add results for this poll"
+        not_allowed: "You are not allowed to add results for this poll"
         booth: "Booth"
         date: "Date"
         select_booth: "Select booth"
