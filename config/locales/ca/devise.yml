@@ -27,7 +27,6 @@ ca:
       unlock_instructions:
         subject: "Instruccions de desbloqueig"
     omniauth_callbacks:
-      failure: "No se t'ha pogut identificar via %{kind} pel següent motiu: \"%{reason}\"."
       success: "Identificat correctament via %{kind}."
     passwords:
       no_token: "No pots accedir a aquesta pàgina si no és a través d'un enllaç per a restablir la contrasenya. Si has accedit des de l'enllaç per a restablir la contrasenya, assegura't que la URL estiga completa."
