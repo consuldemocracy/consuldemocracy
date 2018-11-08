@@ -1,7 +1,4 @@
-require 'rake'
 require 'rails_helper'
-Rake::Task.define_task(:environment)
-Rake.application.rake_require('tasks/db')
 
 describe 'rake db:dev_seed' do
   let :run_rake_task do

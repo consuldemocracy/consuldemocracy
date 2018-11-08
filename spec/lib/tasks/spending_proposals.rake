@@ -1,6 +1,4 @@
-require 'rake'
 require 'rails_helper'
-Rails.application.load_tasks
 
 describe 'rake spending_proposals:migrate_winner_spending_proposals' do
   let(:forum) { create(:forum) }

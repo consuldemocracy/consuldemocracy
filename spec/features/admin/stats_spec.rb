@@ -1,7 +1,4 @@
 require 'rails_helper'
-require 'rake'
-
-Rails.application.load_tasks
 
 feature 'Stats' do
 
