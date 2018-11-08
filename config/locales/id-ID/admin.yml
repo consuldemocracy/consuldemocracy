@@ -266,7 +266,6 @@ id:
           without_confirmed_hide: Tertunda
         title: Pengguna tersembunyi
         user: Pengguna
-        no_hidden_users: Disana tidak ada pengguna yang disembunyikan.
       show:
         email: 'Email:'
         hidden_at: 'Tersembunyi di:'
@@ -303,7 +302,6 @@ id:
         index:
           create: Proses baru
           delete: Hapus
-          title: Proses undang-undang
           filters:
             open: Buka
             next: Lanjut
