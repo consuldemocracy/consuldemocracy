@@ -23,7 +23,6 @@ sq:
         error_wrong_booth: "\nKabinë e gabuar. Rezultatet nuk u ruajtën."
       new:
         title: "%{poll}Shto rezultate"
-        not_allowed: "\nJu keni të drejtë të shtoni rezultate për këtë sondazh"
         booth: "Kabinë"
         date: "Data"
         select_booth: "Zgjidh stendën"
