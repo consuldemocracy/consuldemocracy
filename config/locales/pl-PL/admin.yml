@@ -341,7 +341,6 @@ pl:
           without_confirmed_hide: Oczekujące
         title: Ukryci użytkownicy
         user: Użytkownik
-        no_hidden_users: Nie ma żadnych ukrytych użytkowników.
       show:
         email: 'E-mail:'
         hidden_at: 'Ukryte w:'
@@ -388,7 +387,6 @@ pl:
         index:
           create: Nowy proces
           delete: Usuń
-          title: Procesy legislacyjne
           filters:
             open: Otwórz
             next: Następny
@@ -975,7 +973,6 @@ pl:
       index:
         title: Urzędnicy
         no_officials: Brak urzędników.
-        name: Nombre
         official_position: Oficjalne stanowisko
         official_level: Poziom
       level_0: Nieurzędowe
@@ -1352,11 +1349,9 @@ pl:
       title: Strona główna
       description: Aktywne moduły pojawiają się na stronie głównej w tej samej kolejności co tutaj.
       header_title: Nagłówek
-      no_header: Nie ma nagłówka.
       create_header: Utwórz nagłówek
       cards_title: Karty
       create_card: Utwórz kartę
-      no_cards: Nie ma kart.
       cards:
         title: Tytuł
         description: Opis
