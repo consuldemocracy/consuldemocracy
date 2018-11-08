@@ -145,7 +145,6 @@ ast:
           additional_info_placeholder: Añede cualquier información adicional que pueda ser d'interés
         index:
           create: Nuevu procesu
-          title: Procesos de lexislación collaborativa
         new:
           title: Crear nuevu procesu de lexislación collaborativa
           submit_button: Crear procesu
