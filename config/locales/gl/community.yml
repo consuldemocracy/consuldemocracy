@@ -16,7 +16,6 @@ gl:
       create_first_community_topic:
         first_theme_not_logged_in: Non hai ningún tempa dispoñible. Participa creando o primeiro.
         first_theme: Crea o primeiro tema da comunidade
-        sub_first_theme: "Para creares un tema debes %{sign_in} ou %{sign_up}."
         sign_in: "iniciar sesión"
         sign_up: "rexistrarte"
       tab:
