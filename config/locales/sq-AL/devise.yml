@@ -28,7 +28,6 @@ sq:
       unlock_instructions:
         subject: "Udhëzimet e Zhbllokimit"
     omniauth_callbacks:
-      failure: "Nuk ka qenë e mundur të ju  autorizojmë si %{kind} sepse \"%{reason}\"."
       success: "Identifikuar me sukses si %{kind}."
     passwords:
       no_token: "Ju nuk mund të hyni në këtë faqe përveçse përmes një lidhje të rivendosjes së fjalëkalimit. Nëse e keni vizituar atë përmes një lidhje të rivendosjes së fjalëkalimit, kontrolloni nëse URL është e plotë."
