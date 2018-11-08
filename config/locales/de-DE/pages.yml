@@ -57,13 +57,6 @@ de:
       other:
         title: "Weitere interessante Informationen"
         how_to_use: "Verwenden Sie %{org_name} in Ihrer Stadt"
-      how_to_use:
-        text: |-
-          Verwenden Sie diese Anwendung in Ihrer lokalen Regierung, oder helfen Sie uns sie zu verbessern, die Software ist kostenlos.
-          
-          Dieses offene Regierungs-Portal benutzt die [CONSUL-App](https://github.com/consul/consul 'consul github'), die eine freie Software, mit der Lizens [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ) ist. Einfach gesagt, bedeutet das, dass jeder diesen Code frei benutzen, kopieren, detailiert betrachten, modifizieren und Versionen, mit gewünschten Modifikationen neu an die Welt verteilen kann (wobei anderen gestattet wird, dasselbe zu tun). Denn wir glauben, dass Kultur besser und ergiebiger ist, wenn sie öffentlich wird.
-          
-          Wenn Sie ein Programmierer sind, können Sie den Code betrachten und uns helfen diesen auf [CONSUL app](https://github.com/consul/consul 'consul github') zu verbessern.
       titles:
         how_to_use: Verwenden Sie diese in Ihrer lokalen Regierung
     privacy:
@@ -98,7 +91,7 @@ de:
         
         Wenn Websites unter dem Gesichtspunkt der Barrierefreiheit gestaltet werden, können alle Nutzer beispielsweise unter gleichen Bedingungen auf Inhalte zugreifen:
       examples:
-        - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información.Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
+        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
         - Wenn Videos Untertitel haben, können Nutzer mit Hörproblemen diese voll und ganz verstehen.
         - Wenn die Inhalte in einer einfachen und anschaulichen Sprache geschrieben sind, können Nutzer mit Lernproblemen diese besser verstehen.
         - Wenn der Nutzer Mobilitätsprobleme hat und es schwierig ist die Maus zu bedienen, helfen Tastatur-Alternativen mit der Navigation.
