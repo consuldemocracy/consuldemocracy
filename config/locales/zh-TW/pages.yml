@@ -57,13 +57,6 @@ zh-TW:
       other:
         title: "其他感興趣的資訊"
         how_to_use: "在您的城市中使用%{org_name}"
-      how_to_use:
-        text: |-
-          在您本地政府中使用它，或幫助我們改進它，這是免費軟件。
-          
-          這個開放政府門戶網站使用 [CONSUL app](https://github.com/consul/consul 'consul github') ，這是一個免費軟件，使用 [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' )。簡單來說，就是說任何人都可以自由地使用原始碼，複製它，詳細查看，修改它，並將他想要的修改重新發送到全球 (並允許其他人也可同樣做) 。 因為我們認為文化在發佈後會更好，更豐富。
-          
-          如果您是程序員，您可以在 [CONSUL app](https://github.com/consul/consul 'consul github')查看原始碼，並幫助我們改進它。
       titles:
         how_to_use: 在您本地政府中使用它
     privacy:
@@ -98,7 +91,7 @@ zh-TW:
         
         當網站設計時已考慮了無障礙功能，所有用戶都可以在相同條件下訪問內容，例如：
       examples:
-        - 為圖像提供替代文本，盲人或視障用戶可以使用特殊閱讀器來取得資訊。
+        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
         - 當視頻有字幕時，聽力障礙的用戶可以完全理解它們。
         - 如果內容是用簡單的插圖語言編寫的，那麼有學習障礙的用戶也能更好地理解它們。
         - 如果用戶有行動障礙並且難以使用鼠標，使用鍵盤的替代方案則有助於導航。
@@ -179,7 +172,6 @@ zh-TW:
               description_column: 增加字體大小
             - 
               shortcut_column: CTRL 和 - (MAC機上的 CMD 和 -)
-              description_column: 減少字體大小
       compatibility:
         title: 兼容標準和視覺設計
         description_html: '本網站的所有頁面均符合<strong>輔助功能指南</strong>或由屬於W3C的<abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr>工作組建立的無障礙設計的一般原則。'
