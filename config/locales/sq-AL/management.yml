@@ -77,7 +77,6 @@ sq:
       support_proposals: Përkrahni propozimet
       vote_proposals: Voto propozimet
     print:
-      proposals_info: 'Krijo propozimin tuaj në http: //url.consul'
       proposals_title: 'Propozime'
       spending_proposals_info: 'Merrni pjesë në http: //url.consul'
       budget_investments_info: 'Merrni pjesë në http: //url.consul'
