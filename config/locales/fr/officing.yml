@@ -23,7 +23,6 @@ fr:
         error_wrong_booth: "Mauvaise urne. Résultats NON sauvegardés."
       new:
         title: "%{poll} - Ajouter des résultats"
-        not_allowed: "Vous n'êtes pas autorisé à ajouter des résultats pour ce vote"
         booth: "Bureau de vote"
         date: "Date"
         select_booth: "Sélectionner une bureau de vote"
