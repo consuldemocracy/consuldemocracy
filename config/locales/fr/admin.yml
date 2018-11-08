@@ -336,7 +336,6 @@ fr:
           without_confirmed_hide: En attente
         title: Utilisateurs masqués
         user: Utilisateur
-        no_hidden_users: Il n’y a aucun utilisateur masqué.
       show:
         email: 'Email :'
         hidden_at: 'Masqué le :'
@@ -382,7 +381,6 @@ fr:
         index:
           create: Nouveau processus
           delete: Supprimer
-          title: Processus législatifs
           filters:
             open: Ouvert
             next: Suivant
@@ -965,7 +963,6 @@ fr:
       index:
         title: Fonctionnaires
         no_officials: Il n’y a aucun fonctionnaire.
-        name: Nom
         official_position: Position officielle
         official_level: Niveau
       level_0: Non officiel
@@ -1350,11 +1347,9 @@ fr:
       title: Page d’accueil
       description: Les modules actifs apparaissent dans la page d’accueil dans le même ordre, comme en l’espèce.
       header_title: Entête
-      no_header: Il n'y a pas d'entête.
       create_header: Créer un entête
       cards_title: Encarts
       create_card: Créer un encart
-      no_cards: Il n'y a pas d'encarts.
       cards:
         title: Titre
         description: Description
