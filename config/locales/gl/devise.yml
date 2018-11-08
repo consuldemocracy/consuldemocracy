@@ -55,7 +55,7 @@ gl:
   errors:
     messages:
       already_confirmed: "xa se confirmou a túa conta. Se queres, podes iniciar sesión."
-      confirmation_period_expired: "precisas que se confirme a conta en %{period}; por favor, podes volver a solicitala."
+      confirmation_period_expired: "Precisas que se confirme a conta en %{period}; por favor, podes volver a solicitala."
       expired: "expirou; por favor, volve solicitalo."
       not_found: "non se atopou."
       not_locked: "non está bloqueado."
