@@ -1,14 +1,8 @@
 require 'rails_helper'
-require 'rake'
 
 describe 'Settings Rake' do
 
   describe '#per_page_code_migration' do
-
-    before do
-      Rake.application.rake_require "tasks/settings"
-      Rake::Task.define_task(:environment)
-    end
 
     let :run_rake_task do
       Rake::Task['settings:per_page_code_migration'].reenable

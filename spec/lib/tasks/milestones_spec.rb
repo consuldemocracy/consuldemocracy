@@ -1,12 +1,6 @@
 require "rails_helper"
-require "rake"
 
 describe "Milestones tasks" do
-  before do
-    Rake.application.rake_require "tasks/migrate_milestones_and_statuses"
-    Rake::Task.define_task(:environment)
-  end
-
   describe "#migrate" do
     let :run_rake_task do
       Rake::Task["milestones:migrate"].reenable

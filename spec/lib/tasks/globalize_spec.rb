@@ -1,14 +1,8 @@
 require "rails_helper"
-require "rake"
 
 describe "Globalize tasks" do
 
   describe "#migrate_data" do
-
-    before do
-      Rake.application.rake_require "tasks/globalize"
-      Rake::Task.define_task(:environment)
-    end
 
     let :run_rake_task do
       Rake::Task["globalize:migrate_data"].reenable
