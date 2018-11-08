@@ -77,7 +77,6 @@ sv:
       support_proposals: Stöd förslag
       vote_proposals: Rösta på förslag
     print:
-      proposals_info: Skapa ditt förslag på http://url.consul
       proposals_title: 'Förslag:'
       spending_proposals_info: Delta på http://url.consul
       budget_investments_info: Delta på http://url.consul
