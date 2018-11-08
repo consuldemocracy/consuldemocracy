@@ -337,7 +337,6 @@ de:
           without_confirmed_hide: Ausstehend
         title: Verborgene Benutzer*innen
         user: Benutzer*in
-        no_hidden_users: Es gibt keine verborgenen Benutzer*innen.
       show:
         email: 'E-Mail:'
         hidden_at: 'Verborgen am:'
@@ -383,7 +382,6 @@ de:
         index:
           create: Neues Verfahren
           delete: Löschen
-          title: Kollaborative Gesetzgebungsprozesse
           filters:
             open: Offen
             next: Nächste/r
@@ -962,7 +960,6 @@ de:
       index:
         title: Beamte
         no_officials: Keine Beamten vorhanden.
-        name: Name
         official_position: Beamte*r
         official_level: Stufe
       level_0: Kein/e Beamte*r
@@ -1339,11 +1336,9 @@ de:
       title: Homepage
       description: Die aktiven Module erscheinen auf der Startseite in derselben Reihenfolge wie hier.
       header_title: Kopfzeile
-      no_header: Keine Kopfzeile vorhanden.
       create_header: Kopfzeile erstellen
       cards_title: Karten
       create_card: Karte erstellen
-      no_cards: Keine Karten vorhanden.
       cards:
         title: Titel
         description: Beschreibung
