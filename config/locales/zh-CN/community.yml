@@ -16,7 +16,6 @@ zh-CN:
       create_first_community_topic:
         first_theme_not_logged_in: 没有收到问题，请参与创建第一个问题。
         first_theme: 创建第一个社群主题
-        sub_first_theme: "要创建主题，您必须%{sign_in} 或者%{sign_up}。"
         sign_in: "登录"
         sign_up: "注册"
       tab:
