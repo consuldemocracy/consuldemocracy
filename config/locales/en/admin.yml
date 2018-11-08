@@ -134,6 +134,8 @@ en:
         max_supportable_headings: "Maximum number of headings in which a user can support"
         max_votable_headings: "Maximum number of headings in which a user can vote"
         current_of_max_headings: "%{current} of %{max}"
+        latitude: Latitude
+        longitude: Longitude
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.

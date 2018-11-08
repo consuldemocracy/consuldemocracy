@@ -190,6 +190,8 @@ ActiveRecord::Schema.define(version: 20181128175808) do
     t.integer "price",      limit: 8
     t.string  "slug"
     t.integer "population"
+    t.text    "latitude"
+    t.text    "longitude"
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree

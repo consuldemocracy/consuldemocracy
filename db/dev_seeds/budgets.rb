@@ -37,21 +37,35 @@ section "Creating Budgets" do
     phase: 'accepting'
   )
 
-  (1..([1, 2, 3].sample)).each do |i|
-    finished_group  = finished_budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
-    accepting_group = accepting_budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
+  Budget.all.each do |budget|
+    city_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.all_city'))
+    city_group.headings.create!(name: I18n.t('seeds.budgets.groups.all_city'),
+                                price: 1000000,
+                                population: 1000000,
+                                latitude: '-40.123241',
+                                longitude: '25.123249')
 
-    geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
-    geozones.each do |geozone|
-      finished_group.headings << finished_group.headings.create!(name: "#{geozone.name} #{i}",
-                                                                 price: rand(1..100) * 100000,
-                                                                 population: rand(1..50) * 10000)
-
-      accepting_group.headings << accepting_group.headings.create!(name: "#{geozone.name} #{i}",
-                                                                   price: rand(1..100) * 100000,
-                                                                   population: rand(1..50) * 10000)
-
-    end
+    districts_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.districts'))
+    districts_group.headings.create!(name: I18n.t('seeds.geozones.north_district'),
+                                     price: rand(5..10) * 100000,
+                                     population: 350000,
+                                     latitude: '15.234521',
+                                     longitude: '-15.234234')
+    districts_group.headings.create!(name: I18n.t('seeds.geozones.west_district'),
+                                     price: rand(5..10) * 100000,
+                                     population: 300000,
+                                     latitude: '14.125125',
+                                     longitude: '65.123124')
+    districts_group.headings.create!(name: I18n.t('seeds.geozones.east_district'),
+                                     price: rand(5..10) * 100000,
+                                     population: 200000,
+                                     latitude: '23.234234',
+                                     longitude: '-47.134124')
+    districts_group.headings.create!(name: I18n.t('seeds.geozones.central_district'),
+                                     price: rand(5..10) * 100000,
+                                     population: 150000,
+                                     latitude: '-26.133213',
+                                     longitude: '-10.123231')
   end
 end
 

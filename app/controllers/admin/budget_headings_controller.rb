@@ -27,7 +27,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
   private
 
     def budget_heading_params
-      params.require(:budget_heading).permit(:name, :price, :population)
+      params.require(:budget_heading).permit(:name, :price, :population, :latitude, :longitude)
     end
 
     def load_budget
