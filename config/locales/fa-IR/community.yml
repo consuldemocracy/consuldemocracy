@@ -16,7 +16,6 @@ fa:
       create_first_community_topic:
         first_theme_not_logged_in: هیچ موضوعی در دسترس نیست، مشارکت در ایجاد اولین.
         first_theme: ایجاد اولین موضوع جامعه
-        sub_first_theme: "برای ایجاد تم شما باید %{sign_in} درجه %{sign_up}."
         sign_in: "ورود به برنامه"
         sign_up: "ثبت نام"
       tab:
