@@ -57,13 +57,6 @@ pl:
       other:
         title: "Inne przydatne informacje"
         how_to_use: "Użyj %{org_name} w Twoim mieście"
-      how_to_use:
-        text: |-
-          Użyj tego w swoim lokalnym rządzie lub pomóż nam się rozwijać, to darmowe oprogramowanie.
-          
-          Ten Open Government Portal używa [CONSUL app](https://github.com/consul/consul 'consul github') będącego darmowym oprogramowaniem, z [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), co w prostych słowach oznacza, że ktokolwiek może za darmo używać kodu swobodnie, kopiować go, oglądać w szczegółach, modyfikować i ponownie udostępniać światu wraz z dowolnymi modyfikacjami, których sobie życzy (pozwalając innym robić to samo). Ponieważ uważamy, że kultura jest lepsza i bogatsza, gdy jest wolna.
-          
-          Jeśli jesteś programistą, możesz przejrzeć kod i pomóc nam go poprawiać na [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Użyj go w swoim lokalnym rządzie
     privacy:
@@ -96,7 +89,7 @@ pl:
       description: |-
         Dostęp do sieci oznacza możliwość dostępu do sieci i jej zawartości przez wszystkie osoby, bez względu na niepełnosprawność (fizyczną, intelektualną lub techniczną), która może powstać lub od tych, które wynikają z kontekstu użytkowania (technologiczny lub środowiskowy). Podczas projektowania stron internetowych z myślą o dostępności, wszyscy użytkownicy mogą uzyskać dostęp do treści na równych warunkach, na przykład:
       examples:
-        - Dostarczając alternatywny tekst zamiast obrazów, pozwala użytkownikom niewidomym lub niedowidzącym na korzystanie ze specjalnych czytników, aby uzyskać dostęp do informacji.
+        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
         - Gdy filmy mają napisy, użytkownicy z problemami ze słuchem mogą je w pełni zrozumieć.
         - Jeśli treść jest napisana prostym i ilustrującym językiem, użytkownicy mający problem z uczeniem się są w stanie lepiej ją zrozumieć.
         - Jeśli użytkownik ma problemy z poruszaniem się i trudności z używaniem myszy, alternatywą pomocną w nawigacji jest klawiatura.
@@ -177,7 +170,6 @@ pl:
               description_column: Zwiększa rozmiar tekstu
             - 
               shortcut_column: CTRL i - (CMD - i na komputerze MAC)
-              description_column: Zmniejsza rozmiar tekstu
       compatibility:
         title: Zgodność z normami i projektowaniem wizualnym
         description_html: 'Wszystkie strony witryny są zgodne z <strong> Wskazówki dotyczące dostępności </strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> należącą do W3C.'
