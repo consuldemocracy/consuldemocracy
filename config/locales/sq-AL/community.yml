@@ -16,7 +16,6 @@ sq:
       create_first_community_topic:
         first_theme_not_logged_in: Asnje çështje e disponueshme, mer pjesë duke krijuar të parën.
         first_theme: Krijo temën e parë të komunitetit
-        sub_first_theme: "Për të krijuar një temë që ju duhet të %{sign_in} ose %{sign_up}."
         sign_in: "Kycu"
         sign_up: "Rregjistrohu"
       tab:
