@@ -111,12 +111,10 @@ gl:
         relevance: Máis relevantes
         recommendations: recomendacións
       recommendations:
-        without_results: Non hai ningún debate relacionado cos teus intereses
         without_interests: Sigue propostas para que poidamos ofrecerche recomendacións
         disable: "As recomendacións dos debates deixarán de amosarse se as desactiva. Pode volver a activalas desde a páxina «A miña conta»"
         actions:
           success: "As recomendacións para debates foron deshabilitadas para esta conta"
-          error: "Produciuse un erro. Por favor, vaia a «A miña conta» e deshabilite as recomendacións para debates"
       search_form:
         button: Buscar
         placeholder: Buscar debates...
@@ -204,7 +202,6 @@ gl:
       conditions: Condicións de uso
       consul: aplicación CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Para asistencia técnica entra en
       copyright: CONSUL, %{year}
       description: Este portal usa a %{consul} que é %{open_source}.
       open_source: software libre
@@ -357,7 +354,6 @@ gl:
         disable: "As recomendacións de propostas deixarán de amosarse se as desactivas. Podes volver a activalas desde a páxina «A miña conta»"
         actions:
           success: "As recomendacións para propostas foron deshabilitadas para esta conta"
-          error: "Produciuse un erro. Por favor, vai a «A miña conta» e deshabilita as recomendacións para propostas"
       retired_proposals: Propostas retiradas
       retired_proposals_link: "Propostas retiradas polos seus autores"
       retired_links:
@@ -442,7 +438,6 @@ gl:
       retired: Proposta retirada polo autor
       share: Compartir
       send_notification: Enviar notificación
-      no_notifications: "Esta proposta non ten ningunha notificación."
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentación adicional"
       title_video_url: "Vídeo externo"
@@ -531,7 +526,6 @@ gl:
       title_label: "Título"
       body_label: "Mensaxe"
       submit_button: "Enviar mensaxe"
-      info_about_receivers_html: "Esta mensaxe enviaráselles a <strong>%{count} persoas</strong> e publicarase en %{proposal_page}.<br> A mensaxe non se envía inmediatamente, pois os usuarios recibirán periodicamente un correo electrónico con todas as notificacións de propostas."
       proposal_page: "a páxina da proposta"
     show:
       back: "Volver á miña actividade"
@@ -835,7 +829,6 @@ gl:
     error: "Ligazón non válida. Lembra que debe comezar por %{url}."
     error_itself: "Ligazón non válida. Non se pode relacionar un contido consigo mesmo."
     success: "Engadiches un novo contido relacionado"
-    is_related: "É contido relacionado?"
     score_positive: "Si"
     score_negative: "Non"
     content_title:
