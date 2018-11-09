@@ -57,6 +57,7 @@ gl:
       section_footer:
         title: Axuda sobre os orzamentos participativos
         description: Con estes orzamentos participativos, a cidadanía decide a que proxectos presentados pola veciñanza vai destinada unha parte do orzamento municipal.
+      milestones: Fitos
     investments:
       form:
         tag_category_label: "Categorías"
@@ -163,6 +164,7 @@ gl:
       heading: "Resultados dos orzamentos participativos"
       heading_selection_title: "Por ámbito de actuación"
       spending_proposal: Título
+      ballot_lines_count: Votos
       hide_discarded_link: Agochar as rexeitadas
       show_all_link: Amosar todas
       price: Prezo
