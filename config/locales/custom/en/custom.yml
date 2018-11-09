@@ -93,31 +93,34 @@ en:
       description_reviewing: "El 30 de junio se cerró la votación final. Los proyectos ganadores se darán a conocer el próximo 13 de julio."
       title_finished: "Resultados de los Presupuestos participativos de Madrid"
       description_finished: "Mira qué proyectos ciudadanos se ejecutarán a partir de 2018 con los 100 millones de los presupuestos participativos."
-    budget_2018:
+    budget_2019:
+      informing:
+        title: "Presupuestos participativos 2019 - Ayuntamiento de Madrid"
+        description: "Presenta tus proyectos a los presupuestos participativos 2019 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
       accepting:
-        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
-        description: "Presenta tus proyectos a los presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+        title: "Presupuestos participativos 2019 - Ayuntamiento de Madrid"
+        description: "Presenta tus proyectos a los presupuestos participativos 2019 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
       selecting:
         title: "Apoya proyectos de los presupuestos participativos de Madrid"
         description: "Entra en Decide Madrid y apoya las ideas para mejorar Madrid. Los proyectos más apoyados de presupuestos participativos pueden pasar a la votación final."
       valuating:
         title: "Evaluación de proyectos de los presupuestos participativos"
-        description: "La votación final de proyectos de los presupuestos participativos de Madrid empieza el 15 de mayo. ¡Prepárate para decidir el destino de 100 millones!"
+        description: "La votación final de proyectos de los presupuestos participativos de Madrid empieza el 3 de junio. ¡Prepárate para decidir el destino de 100 millones!"
       balloting:
         title: "Vota los proyectos finalistas de presupuestos participativos"
-        description: "¿Has pensado qué hacer con 100 millones de #PresupuestosParticipativos? Vota en https://decide.madrid.es/ #VotaParticipativos18"
+        description: "¿Has pensado qué hacer con 100 millones de #PresupuestosParticipativos? Vota en https://decide.madrid.es/ #VotaParticipativos19"
       finished:
-        title: "Resultados de los presupuestos participativos 2018"
+        title: "Resultados de los presupuestos participativos 2019"
         description: "La ciudadanía ha decidido qué hará el Ayuntamiento con 100 millones de euros reservados a proyectos ciudadanos. Entérate de los proyectos ganadores."
       reviewing:
-        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
-        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+        title: "Presupuestos participativos 2019 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2019 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
       publishing_prices:
-        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
-        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+        title: "Presupuestos participativos 2019 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2019 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
       reviewing_ballots:
-        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
-        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+        title: "Presupuestos participativos 2019 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2019 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
   social_share:
     polls_show:
       title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"
