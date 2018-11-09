@@ -7,6 +7,7 @@ gl:
       title_placeholder: Engade un título descritivo para o documento
       attachment_label: Escoller documento
       delete_button: Borrar documento
+      cancel_button: Cancelar
       note: "Podes subir até un máximo de %{max_documents_allowed} documentos nos formatos seguintes: %{accepted_content_types}, e de ata %{max_file_size} MB por ficheiro."
       add_new_document: Engadir novo documento
     actions:
