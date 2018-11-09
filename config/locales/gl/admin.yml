@@ -338,6 +338,7 @@ gl:
           without_confirmed_hide: Pendentes
         title: Usuarios agochados
         user: Usuario
+        no_hidden_users: Non hai usuarios agochados.
       show:
         email: 'Enderezo electrónico:'
         hidden_at: 'Bloqueado:'
@@ -384,6 +385,7 @@ gl:
         index:
           create: Novo proceso
           delete: Borrar
+          title: Procesos lexislativos
           filters:
             open: Abertos
             next: Proximamente
@@ -984,6 +986,7 @@ gl:
       index:
         title: Cargos
         no_officials: Non hai ningún cargo público.
+        name: Nome
         official_position: Cargo público
         official_level: Nivel
       level_0: Non é cargo público
@@ -1368,9 +1371,11 @@ gl:
       title: Páxina principal
       description: Os módulos activos aparecerán na páxina principal na mesma orde que aquí.
       header_title: Cabeceira
+      no_header: Non hai cabeceiras.
       create_header: Crear cabeceira
       cards_title: Tarxetas
       create_card: Crear tarxeta
+      no_cards: Non hai tarxetas.
       cards:
         title: Título
         description: Descrición
