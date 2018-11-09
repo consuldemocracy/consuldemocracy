@@ -829,6 +829,7 @@ gl:
     error: "Ligazón non válida. Lembra que debe comezar por %{url}."
     error_itself: "Ligazón non válida. Non se pode relacionar un contido consigo mesmo."
     success: "Engadiches un novo contido relacionado"
+    is_related: "É contido relacionado?"
     score_positive: "Si"
     score_negative: "Non"
     content_title:
