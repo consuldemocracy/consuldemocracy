@@ -77,6 +77,7 @@ gl:
       support_proposals: Apoiar propostas
       vote_proposals: Votar propostas
     print:
+      proposals_info: Crea a túa proposta en http://url.consul
       proposals_title: 'Propostas:'
       spending_proposals_info: Participa en http://url.consul
       budget_investments_info: Participa en http://url.consul
