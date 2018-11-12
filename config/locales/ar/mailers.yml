@@ -2,3 +2,5 @@ ar:
   mailers:
     comment:
       title: تعليق جديد
+    budget_investment_unfeasible:
+      hi: "عزيزي المستخدم،"
