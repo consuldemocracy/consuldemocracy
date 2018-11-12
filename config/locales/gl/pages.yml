@@ -184,15 +184,11 @@ gl:
         title: Compatibilidade cos estándares e o deseño visual
         description_html: 'Todas as páxinas deste sitio web cumpren coa <strong> Guía de Accesibilidade </strong> ou os Principios Xerais do Deseño Accesible que son recomendados polo Grupo de Traballo <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> pertencente ao W3C.'
     titles:
-      accessibility: Accesibilidade
       conditions: Condicións de uso
       help: "Que é %{org}? - Participación cidadá"
       privacy: Política de privacidade
     verify:
       code: Código que recibiches na túa carta
-      email: Correo electrónico
       info: 'Para verificares a túa conta, introduce os datos de acceso:'
       info_code: 'Agora escribe o código que recibiches na carta:'
-      password: Contrasinal
-      submit: Verificar a miña conta
       title: Verifica a túa conta
