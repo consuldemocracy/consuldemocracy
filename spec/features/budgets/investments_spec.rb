@@ -1047,6 +1047,7 @@ feature 'Budget Investments' do
   end
 
   scenario "Show (not selected budget investment)" do
+    budget.update(phase: 'balloting')
     user = create(:user)
     login_as(user)
 
@@ -1055,8 +1056,7 @@ feature 'Budget Investments' do
                         :finished,
                         budget: budget,
                         group: group,
-                        heading: heading,
-                        unfeasibility_explanation: 'Local government is not competent in this matter')
+                        heading: heading)
 
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
