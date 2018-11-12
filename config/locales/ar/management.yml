@@ -1,5 +1,7 @@
 ar:
   management:
+    email_verifications:
+      send_email: إرسال البريد الإلكتروني للتحقق
     menu:
       users: إدارة المستخدمين
       user_invites: إرسال الدعوات
