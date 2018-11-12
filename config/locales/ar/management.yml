@@ -14,11 +14,15 @@ ar:
       if_no_existing_account: إذا لم يقم هذا الشخص بفتح حساب بعد
       send_email: إرسال البريد الإلكتروني للتحقق
     menu:
+      create_proposal: إنشاء مقترح
+      print_proposals: طباعة المقترحات
       users: إدارة المستخدمين
       user_invites: إرسال الدعوات
       select_user: حدد المستخدم
     permissions:
       create_proposals: إنشاء مقترحات
+    print:
+      proposals_title: 'المقترحات:'
     budgets:
       table_name: الاسم
     spending_proposals:
