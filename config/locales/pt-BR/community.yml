@@ -21,15 +21,12 @@ pt-BR:
       tab:
         participants: Participantes
       sidebar:
-        participate: Participar
         new_topic: Criar tópico
       topic:
         edit: Editar tópico
         destroy: Deletar tópico
         comments:
           zero: Nenhum comentário
-          one: 1 comentário
-          other: "%{count} comentários"
       author: Autor
       back: Voltar para %{community} %{proposal}
     topic:
@@ -54,6 +51,3 @@ pt-BR:
         recommendation_one: Não escreva o título do tópico ou frases inteiras em letras maiúsculas. Na internet isso é considerado como grito. E ninguém gosta de gritos.
         recommendation_two: Qualquer tópico ou comentário que implique uma ação ilegal será removido, assim como aqueles que pretenderem perturbar os espaços de discussão, todo o resto é permitido.
         recommendation_three: Aproveite este espaço, ele é seu também.
-  topics:
-    show:
-      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário.
