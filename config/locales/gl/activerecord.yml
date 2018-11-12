@@ -1,9 +1,6 @@
 gl:
   activerecord:
     models:
-      activity:
-        one: "actividade"
-        other: "actividades"
       budget:
         one: "Orzamento participativo"
         other: "Orzamentos participativos"
@@ -16,24 +13,12 @@ gl:
       budget/investment/status:
         one: "Estado do investimento"
         other: "Estado dos investimentos"
-      comment:
-        one: "Comentario"
-        other: "Comentarios"
       debate:
         one: "Debate"
         other: "Debates"
-      tag:
-        one: "Tema"
-        other: "Temas"
       user:
         one: "Usuario"
         other: "Usuarios/as"
-      moderator:
-        one: "Moderador"
-        other: "Moderadores"
-      administrator:
-        one: "Administrador"
-        other: "Administradores"
       valuator:
         one: "Avaliador"
         other: "Avaliadores"
@@ -46,21 +31,12 @@ gl:
       newsletter:
         one: "Boletín informativo"
         other: "Boletíns informativos"
-      vote:
-        one: "Voto"
-        other: "Votos"
-      organization:
-        one: "Organización"
-        other: "Organizacións"
       poll/booth:
         one: "urna"
         other: "urnas"
       poll/officer:
         one: "presidente de mesa"
         other: "presidentes de mesa"
-      proposal:
-        one: "Proposta cidadá"
-        other: "Propostas cidadás"
       spending_proposal:
         one: "Proxecto de investimento"
         other: "Proxectos de investimento"
@@ -145,38 +121,27 @@ gl:
         population: "Poboación"
       comment:
         body: "Comentario"
-        user: "Usuario"
       debate:
-        author: "Autor"
-        description: "Opinión"
-        terms_of_service: "Termos de servizo"
         title: "Título"
       proposal:
         author: "Autoría"
         title: "Título"
-        question: "Pregunta"
         description: "Descrición"
         terms_of_service: "Termos de servizo"
       user:
         login: "Enderezo de correo electrónico ou nome de usuario"
         email: "Correo electrónico"
         username: "Nome de usuario"
-        password_confirmation: "Confirmación de contrasinal"
         password: "Contrasinal"
         current_password: "Contrasinal actual"
         phone_number: "Teléfono"
-        official_position: "Cargo público"
-        official_level: "Nivel do cargo"
         redeemable_code: "Código de verificación recibido por correo electrónico"
       organization:
         name: "Nome da organización"
-        responsible_name: "Persoa responsable do colectivo"
       spending_proposal:
         administrator_id: "Administrador"
-        association_name: "Nome da asociación"
         description: "Descrición"
         external_url: "Ligazón á documentación adicional"
-        geozone_id: "Ámbito de actuación"
         title: "Título"
       poll:
         name: "Nome"
@@ -304,10 +269,6 @@ gl:
           attributes:
             email:
               password_already_set: "Esta conta xa ten unha chave asociada"
-        debate:
-          attributes:
-            tag_list:
-              less_than_or_equal_to: "os temas deben ser menor ou igual que %{count}"
         direct_message:
           attributes:
             max_per_day:
