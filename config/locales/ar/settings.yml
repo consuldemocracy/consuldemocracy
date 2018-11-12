@@ -1,1 +1,7 @@
 ar:
+  settings:
+    feature:
+      proposals: "مقترحات"
+      allow_images: "السماح بتحميل وعرض الصور"
+      allow_attached_documents: "السماح بتحميل وعرض الوثائق المرفقة"
+      help_page: "صفحة المساعدة"
