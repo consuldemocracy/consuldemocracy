@@ -31,7 +31,6 @@ pt-BR:
       title: "Notificações de proposta em %{org_name}"
       share: Compartilhar proposta
       comment: Comentar proposta
-      unsubscribe_account: Minha conta
     direct_message_for_receiver:
       subject: "Você recebeu uma nova mensagem privada"
       reply: Responder para %{sender}
