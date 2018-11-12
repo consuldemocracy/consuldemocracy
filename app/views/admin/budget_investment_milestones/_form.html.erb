@@ -1,6 +1,6 @@
 <%= render "admin/shared/globalize_locales", resource: @milestone %>
 
-<%= translatable_form_for [:admin, @investment.budget, @investment, @milestone] do |f| %>
+<%= translatable_form_for [:admin, *resource_hierarchy_for(@milestone)] do |f| %>
 
   <div class="small-12 medium-6 margin-bottom">
     <%= f.select :status_id,

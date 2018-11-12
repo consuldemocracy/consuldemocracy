@@ -8,7 +8,7 @@ module ActionDispatch::Routing::UrlFor
     when "Budget::Investment"
       [resource.budget, resource]
     when "Milestone"
-      [resource.milestoneable.budget, resource.milestoneable, resource]
+      [*resource_hierarchy_for(resource.milestoneable), resource]
     when "Legislation::Annotation"
       [resource.draft_version.process, resource.draft_version, resource]
     when "Legislation::Proposal", "Legislation::Question", "Legislation::DraftVersion"
