@@ -111,10 +111,12 @@ gl:
         relevance: Máis relevantes
         recommendations: recomendacións
       recommendations:
+        without_results: Non hai debates relacionados cos teus intereses
         without_interests: Sigue propostas para que poidamos ofrecerche recomendacións
         disable: "As recomendacións dos debates deixarán de amosarse se as desactiva. Pode volver a activalas desde a páxina «A miña conta»"
         actions:
           success: "As recomendacións para debates foron deshabilitadas para esta conta"
+          error: "Produciuse un erro. Por favor, accede á páxina 'A miña conta' para deshabilitar de xeito manual as recomendacións para os debates"
       search_form:
         button: Buscar
         placeholder: Buscar debates...
@@ -202,6 +204,7 @@ gl:
       conditions: Condicións de uso
       consul: aplicación CONSUL
       consul_url: https://github.com/consul/consul
+      contact_us: Se precisas asistencia técnica
       copyright: CONSUL, %{year}
       description: Este portal usa a %{consul} que é %{open_source}.
       open_source: software libre
@@ -354,6 +357,7 @@ gl:
         disable: "As recomendacións de propostas deixarán de amosarse se as desactivas. Podes volver a activalas desde a páxina «A miña conta»"
         actions:
           success: "As recomendacións para propostas foron deshabilitadas para esta conta"
+          error: "Produciuse un erro. Por favor, accede á páxina 'A miña conta' para deshabilitar de xeito manual as recomendacións para as propostas"
       retired_proposals: Propostas retiradas
       retired_proposals_link: "Propostas retiradas polos seus autores"
       retired_links:
