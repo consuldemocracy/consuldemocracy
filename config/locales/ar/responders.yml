@@ -1,1 +1,13 @@
 ar:
+  flash:
+    actions:
+      create:
+        proposal_notification: "تم إرسال رسالتك بكل صحيح."
+        spending_proposal: "تم إنشاء مقترح الإنفاق بنجاح. يمكنك الوصول إليه من %{activity}"
+        budget_investment: "تم إنشاء ميزانية الإستثمار بنجاح."
+      save_changes:
+        notice: تم حفظ التغييرات
+      update:
+        proposal: "تم تحديث الاقتراح بنجاح."
+      destroy:
+        topic: "تم حذف الموضوع بنجاح."
