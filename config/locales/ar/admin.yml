@@ -61,6 +61,7 @@ ar:
         filters:
           open: فتح
           finished: انتهى
+        budget_investments: إدارة المشاريع
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
@@ -147,6 +148,29 @@ ar:
         form:
           custom_categories: فئات
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
+    menu:
+      hidden_comments: التعليقات المخفية
+      settings: الاعدادات العامة
+    moderators:
+      index:
+        title: المشرفون
+    questions:
+      answers:
+        images:
+          save_image: "حفظ الصورة"
+      show:
+        add_answer: إضافة إجابة
+        answers:
+          images_list: قائمة الصور
+    answers:
+      videos:
+        edit:
+          title: تعديل الفيديو
+    organizations:
+      search:
+        no_results: لم يتم العثور على منظمات.
+    shared:
+      description: الوصف
     homepage:
       cards:
         title: العنوان
