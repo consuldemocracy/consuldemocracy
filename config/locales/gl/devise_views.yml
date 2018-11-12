@@ -50,6 +50,8 @@ gl:
           title: Rexistrarse unha organización ou colectivo
         success:
           back_to_index: Enténdoo; regresar á páxina principal
+          instructions_1_html: "<strong>Contactaremos contigo en breve</strong> para comprobar que tes a capacidade de representar a este colectivo."
+          instructions_2_html: Mentres que o teu<strong>enderezo de correo é revisado</strong>, enviámosche <strong>unha ligazón para confirmares o teu enderezo</strong>.
           instructions_3_html: Logo de o confirmares, podes comezar a participar como colectivo non verificado.
           title: Rexistro de organización / colectivo
     passwords:
