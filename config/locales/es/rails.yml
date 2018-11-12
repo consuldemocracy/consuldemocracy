@@ -81,9 +81,6 @@ es:
       x_months:
         one: 1 mes
         other: "%{count} meses"
-      x_years:
-        one: '%{count} año'
-        other: "%{count} años"
       x_seconds:
         one: 1 segundo
         other: "%{count} segundos"
@@ -95,7 +92,6 @@ es:
       second: Segundos
       year: Año
   errors:
-    format: "%{attribute} %{message}"
     messages:
       accepted: debe ser aceptado
       blank: no puede estar en blanco
@@ -111,21 +107,10 @@ es:
       invalid: no es válido
       less_than: debe ser menor que %{count}
       less_than_or_equal_to: debe ser menor que o igual a %{count}
-      model_invalid: "Error de validación: %{errors}"
       not_a_number: no es un número
       not_an_integer: debe ser un entero
       odd: debe ser impar
-      required: debe existir
       taken: ya está en uso
-      too_long:
-        one: es demasiado largo (máximo %{count} caracteres)
-        other: es demasiado largo (máximo %{count} caracteres)
-      too_short:
-        one: es demasiado corto (mínimo %{count} caracteres)
-        other: es demasiado corto (mínimo %{count} caracteres)
-      wrong_length:
-        one: longitud inválida (debería tener %{count} caracteres)
-        other: longitud inválida (debería tener %{count} caracteres)
       other_than: debe ser distinto de %{count}
     template:
       body: 'Se encontraron problemas con los siguientes campos:'
@@ -144,20 +129,12 @@ es:
       format:
         delimiter: "."
         format: "%n %u"
-        precision: 2
         separator: ","
         significant: false
         strip_insignificant_zeros: false
         unit: "€"
-    format:
-      delimiter: "."
-      precision: 3
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: "%n %u"
         units:
           billion: mil millones
           million: millón
@@ -165,33 +142,16 @@ es:
           thousand: mil
           trillion: billón
       format:
-        precision: 3
         significant: true
         strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: Byte
-            other: Byte
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
-    percentage:
-      format:
-        format: "%n%"
   support:
     array:
       last_word_connector: " y "
       two_words_connector: " y "
-      words_connector: ", "
   time:
-    am: am
     formats:
       datetime: "%d/%m/%Y %H:%M:%S"
       default: "%A, %d de %B de %Y %H:%M:%S %z"
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
-      api: "%d/%m/%Y %H"
-    pm: pm
+      api: "%d-%m-%Y %H"
