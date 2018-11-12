@@ -1,6 +1,6 @@
 <% if current_budget.present? %>
-  <% provide :title, t("meta_tags.budget_2018.#{current_budget.phase}.title") %>
-  <% provide :meta_description, t("meta_tags.budget_2018.#{current_budget.phase}.description") %>
+  <% provide :title, t("meta_tags.budget_2019.#{current_budget.phase}.title") %>
+  <% provide :meta_description, t("meta_tags.budget_2019.#{current_budget.phase}.description") %>
 
   <% content_for :canonical do %>
     <%= render "shared/canonical", href: budgets_url %>
@@ -9,10 +9,10 @@
   <% provide :social_media_meta_tags do %>
     <%= render "shared/social_media_meta_tags",
                 social_url: budgets_url,
-                social_title: t("meta_tags.budget_2018.#{current_budget.phase}.title"),
-                social_description: t("meta_tags.budget_2018.#{current_budget.phase}.description"),
-                twitter_image_url: "social_media_budgets_2018_#{current_budget.phase}_twitter.png",
-                og_image_url: "social_media_budgets_2018_#{current_budget.phase}.png" %>
+                social_title: t("meta_tags.budget_2019.#{current_budget.phase}.title"),
+                social_description: t("meta_tags.budget_2019.#{current_budget.phase}.description"),
+                twitter_image_url: "social_media_budgets_2019_twitter.png",
+                og_image_url: "social_media_budgets_2019.png" %>
   <% end %>
 
   <% provide :tracking_page_number, "33" %>
@@ -40,9 +40,15 @@
           <% if current_budget.accepting? %>
             <% if current_user %>
               <% if current_user.level_two_or_three_verified? %>
-                <%= link_to t("budgets.investments.index.sidebar.create"),
-                            new_budget_investment_guide,
-                            class: "button margin-top expanded" %>
+                <% if Setting['feature.guides'].present? %>
+                  <%= link_to t("budgets.investments.index.sidebar.create"),
+                              new_budget_investment_guide,
+                              class: "button margin-top expanded" %>
+                <% else %>
+                  <%= link_to t("budgets.investments.index.sidebar.create"),
+                              new_budget_investment_path(current_budget),
+                              class: "button margin-top expanded" %>
+                <% end %>
               <% else %>
                 <div class="callout warning margin-top">
                   <%= t("budgets.investments.index.sidebar.verified_only",

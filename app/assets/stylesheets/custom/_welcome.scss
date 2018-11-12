@@ -170,24 +170,18 @@ $budget-2018-yellow:   #fef384;
   }
 
   .jumbo {
-    background: #ededed image-url('welcome/background_header_mobile.jpg');
+    background: #d8e9d8 image-url('welcome/background_header_mobile.jpg');
     background-position: bottom;
     background-repeat: no-repeat;
-    padding-bottom: rem-calc(100);
+    padding-bottom: rem-calc(72);
 
     @include breakpoint(medium) {
-      background: #ededed image-url('welcome/background_header.jpg');
+      background: #d8e9d8 image-url('welcome/background_header.jpg');
       background-size: cover;
     }
 
-    h1,
-    span,
-    .lead {
-      font-family: 'Souvenir' !important;
-    }
-
     h1 {
-      color: #1d4cd6;
+      color: #4a5e4c;
       font-size: rem-calc(20);
       font-weight: 300;
       line-height: rem-calc(20);
@@ -200,7 +194,7 @@ $budget-2018-yellow:   #fef384;
     }
 
     .lead {
-      color: #00245e;
+      color: #4a5e4c;
       font-size: rem-calc(30);
       font-weight: 700;
       line-height: rem-calc(30);
@@ -224,7 +218,7 @@ $budget-2018-yellow:   #fef384;
     }
 
     .button {
-      background: #1d4cd6;
+      background: #425257;
       color: #fff;
     }
   }
