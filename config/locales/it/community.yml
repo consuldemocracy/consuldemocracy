@@ -1,6 +1,7 @@
 it:
   community:
     sidebar:
+      title: Community
       description:
         proposal: Partecipa alla comunità di utenti per questa proposta.
         investment: Partecipa alla comunità di utenti per questo investimento.
@@ -15,6 +16,7 @@ it:
       create_first_community_topic:
         first_theme_not_logged_in: Nessun argomento disponibile, partecipa creando il primo.
         first_theme: Crea il primo argomento della comunità
+        sub_first_theme: "Per creare un tema è necessario %{sign_in} o %{sign_up}."
         sign_in: "accedere"
         sign_up: "registrarsi"
       tab:
