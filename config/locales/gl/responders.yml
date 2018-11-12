@@ -2,7 +2,6 @@ gl:
   flash:
     actions:
       create:
-        notice: "%{resource_name} creado correctamente."
         debate: "O debate creouse correctamente."
         direct_message: "A mensaxe enviouse correctamente."
         poll: "A votación creouse correctamente."
@@ -12,7 +11,6 @@ gl:
         poll_question_answer_image: "A imaxe subiuse correctamente"
         proposal: "A proposta creouse correctamente."
         proposal_notification: "A mensaxe enviouse correctamente."
-        spending_proposal: "Proposta de investimento creada correctamente. Podes acceder a ela dende %{activity}"
         budget_investment: "A proposta de investimento creouse correctamente."
         signature_sheet: "A folla de sinaturas creouse correctamente"
         topic: "O tema creouse correctamente."
@@ -20,7 +18,6 @@ gl:
       save_changes:
         notice: Gardaronse os cambios
       update:
-        notice: "%{resource_name} actualizado correctamente."
         debate: "O debate actualizouse correctamente."
         poll: "A votación actualizouse correctamente."
         poll_booth: "A urna actualizouse correctamente."
