@@ -442,6 +442,7 @@ gl:
       retired: Proposta retirada polo autor
       share: Compartir
       send_notification: Enviar notificación
+      no_notifications: "A proposta non ten notificacións."
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentación adicional"
       title_video_url: "Vídeo externo"
@@ -530,6 +531,7 @@ gl:
       title_label: "Título"
       body_label: "Mensaxe"
       submit_button: "Enviar mensaxe"
+      info_about_receivers_html: "Esta mensaxe será enviada a <strong>%{count} persoas</strong> e será visíbel en %{proposal_page}.<br> As mensaxes non serán enviadas de xeito inmediato, os usuarios recibirán periodicamente unha mensaxe de correo con todas as notificacións das propostas."
       proposal_page: "a páxina da proposta"
     show:
       back: "Volver á miña actividade"
