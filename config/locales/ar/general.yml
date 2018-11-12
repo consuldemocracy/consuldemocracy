@@ -32,3 +32,8 @@ ar:
         button: بحث
         title: بحث
       select_order: ترتيب حسب
+  shared:
+    followable:
+      budget_investment:
+        create:
+          notice_html: "أنت الآن تتابع في هذا المشروع الإستثماري! </br> سنقوم بإعلامك بإعلامك بكل التغييرات التي ستحدث لكي تبقى على إطلاع دائم."
