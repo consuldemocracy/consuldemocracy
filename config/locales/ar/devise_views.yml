@@ -4,6 +4,9 @@ ar:
       new:
         email_label: البريد الإلكتروني
         submit: إعادة إرسال التعليمات
+    mailer:
+      reset_password_instructions:
+        text: 'لقد تلقينا طلبك من أجل تغيير كلمة المرور. يمكنك القيام بذلك عبر الرابط التالي:'
     menu:
       login_items:
         login: تسجيل الدخول
