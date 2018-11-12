@@ -53,6 +53,7 @@ gl:
           instructions_1_html: "<strong>Contactaremos contigo en breve</strong> para comprobar que tes a capacidade de representar a este colectivo."
           instructions_2_html: Mentres que o teu<strong>enderezo de correo é revisado</strong>, enviámosche <strong>unha ligazón para confirmares o teu enderezo</strong>.
           instructions_3_html: Logo de o confirmares, podes comezar a participar como colectivo non verificado.
+          thank_you_html: Grazas por rexistrares o teu colectivo no sitio web. Neste momento está <strong>pendente da comprobación</strong>.
           title: Rexistro de organización / colectivo
     passwords:
       edit:
