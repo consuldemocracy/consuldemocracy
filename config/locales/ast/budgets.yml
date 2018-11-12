@@ -32,8 +32,6 @@ ast:
       selecting: Fase de sofitos
       valuating: Evaluación de proyeutos
       finished: Resultancies
-    index:
-      title: Presupuestos participativos
     investments:
       form:
         tag_category_label: "Categoríes"
@@ -41,7 +39,6 @@ ast:
         tags_label: Etiquetes
         tags_placeholder: "Escribe les etiquetes que deseyes separaes por una coma (',')"
       index:
-        title: Presupuestos participativos
         unfeasible: Propuestes d'inversión invidables
         by_heading: "Propuestes d'inversión con ámbitu: %{heading}"
         search_form:
@@ -80,7 +77,6 @@ ast:
         share: Compartir
         title: Propuesta d'inversión
         supports: Sofitos
-        votes: Votos
         price: Costu
         milestones_tab: Siguimientu
         no_milestones: Nun hai finxos definíos
