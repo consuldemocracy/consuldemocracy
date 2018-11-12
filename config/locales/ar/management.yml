@@ -1,7 +1,25 @@
 ar:
   management:
+    menu:
+      users: إدارة المستخدمين
+      user_invites: إرسال الدعوات
+      select_user: حدد المستخدم
+    permissions:
+      create_proposals: إنشاء مقترحات
+    budgets:
+      table_name: الاسم
+    spending_proposals:
+      print:
+        print_button: طباعة
+    username_label: اسم المستخدم
+    users:
+      create_user: إنشاء حساب جديد
+      create_user_submit: إنشاء مستخدم
+      email_optional_label: البريد الإلكتروني (اختياري)
+      erase_account_link: حذف المستخدم
     user_invites:
       new:
+        info: "أدخل عناوين البريد الإلكتروني مفصولة بفواصل ('،')"
         submit: إرسال الدعوات
         title: إرسال الدعوات
       create:
