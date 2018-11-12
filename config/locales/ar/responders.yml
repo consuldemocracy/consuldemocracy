@@ -2,6 +2,9 @@ ar:
   flash:
     actions:
       create:
+        poll_question_answer_video: "تم إنشاء الفيديو بنجاح"
+        poll_question_answer_image: "تم رفع الصورة بنجاح"
+        proposal: "تم إنشاء الإقتراح بنجاح."
         proposal_notification: "تم إرسال رسالتك بكل صحيح."
         spending_proposal: "تم إنشاء مقترح الإنفاق بنجاح. يمكنك الوصول إليه من %{activity}"
         budget_investment: "تم إنشاء ميزانية الإستثمار بنجاح."
