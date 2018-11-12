@@ -22,15 +22,12 @@ gl:
       tab:
         participants: Participantes
       sidebar:
-        participate: Comeza a participar
         new_topic: Crea un tema
       topic:
         edit: Editar tema
         destroy: Borrar tema
         comments:
           zero: Sen comentarios
-          one: 1 comentario
-          other: "%{count} comentarios"
       author: Autoría
       back: Regresar á %{proposal} %{community}
     topic:
@@ -55,6 +52,3 @@ gl:
         recommendation_one: Non escribas o título do tema ou frases enteiras en maiúsculas. Na rede iso interprétase como berrar, e a ninguén lle gusta que lle berren. 
         recommendation_two: Calquera tema ou comentario que implique unha acción ilegar borrarase, igual que os que tiveren a intención de sabotar os espazos do tema. Todo o demais está permitido.
         recommendation_three: Goza deste espazo e das voces que o enchen, pois tamén é teu.
-  topics:
-    show:
-      login_to_comment: Necesitas %{signin} ou %{signup} para comentar.
