@@ -4,21 +4,20 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
   before_action :load_budget_investment, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :load_milestone, only: [:edit, :update, :destroy]
   before_action :load_statuses, only: [:index, :new, :create, :edit, :update]
+  helper_method :milestoneable_path
 
   def index
   end
 
   def new
-    @milestone = Milestone.new
+    @milestone = @investment.milestones.new
   end
 
   def create
     @milestone = Milestone.new(milestone_params)
     @milestone.milestoneable = @investment
     if @milestone.save
-      investment_id = @investment.original_spending_proposal_id || @investment.id
-      redirect_to admin_budget_budget_investment_path(budget_id: @investment.budget, id: investment_id),
-                  notice: t('admin.milestones.create.notice')
+      redirect_to milestoneable_path, notice: t('admin.milestones.create.notice')
     else
       render :new
     end
@@ -29,8 +28,7 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
 
   def update
     if @milestone.update(milestone_params)
-      redirect_to admin_budget_budget_investment_path(@investment.budget, @investment),
-                  notice: t('admin.milestones.update.notice')
+      redirect_to milestoneable_path, notice: t('admin.milestones.update.notice')
     else
       render :edit
     end
@@ -38,8 +36,7 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
 
   def destroy
     @milestone.destroy
-    redirect_to admin_budget_budget_investment_path(@investment.budget, @investment),
-                notice: t('admin.milestones.delete.notice')
+    redirect_to milestoneable_path, notice: t('admin.milestones.delete.notice')
   end
 
   private
@@ -72,5 +69,9 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
 
   def resource
     get_milestone
+  end
+
+  def milestoneable_path
+    polymorphic_path([:admin, *resource_hierarchy_for(@milestone.milestoneable)])
   end
 end
