@@ -1,1 +1,4 @@
 ar:
+  mailers:
+    comment:
+      title: تعليق جديد
