@@ -7,21 +7,9 @@ gl:
         filter: Filtro
         filters:
           all: Todo
-          pending_flag_review: Pendentes
           with_ignored_flag: Marcado como revisado
-        headers:
-          comment: Comentario
-          moderate: Moderar
         hide_comments: Agochar comentarios
         ignore_flags: Marcar como revisado
-        order: Orde
-        orders:
-          flags: Máis denunciados
-          newest: Máis novos
-        title: Comentarios
-    dashboard:
-      index:
-        title: Moderar
     debates:
       index:
         block_authors: Bloquear autores
@@ -47,9 +35,7 @@ gl:
       flagged_comments: Comentarios
       flagged_debates: Debates
       flagged_investments: Investimentos orzamentarios
-      proposals: Propostas
       proposal_notifications: Notificacións de propostas
-      users: Bloquear usuarios
     proposals:
       index:
         block_authors: Bloquear autores/as
@@ -57,16 +43,13 @@ gl:
         filter: Filtro
         filters:
           all: Todo
-          pending_flag_review: Pendentes de revisión
           with_ignored_flag: Marcar como revisado
         headers:
           moderate: Moderar
           proposal: Proposta
         hide_proposals: Agochar propostas
         ignore_flags: Marcar como revisado
-        order: Ordenar por
         orders:
-          created_at: Máis recentes
           flags: Máis denunciadas
         title: Propostas
     budget_investments:
@@ -109,9 +92,5 @@ gl:
         title: Notificacións de proposta
     users:
       index:
-        hidden: Bloqueado
-        hide: Bloquear
         search: Buscar
-        search_placeholder: correo electrónico ou nome de usuario
         title: Bloquear usuarios
-      notice_hide: Usuario bloqueado. Ocultáronse todos os seus debates e comentarios.
