@@ -8,3 +8,6 @@ ar:
         no_results: "لا توجد نتائج"
         results: النتائج
         table_answer: الإجابة
+    voters:
+      show:
+        submit: تأكيد التصويت
