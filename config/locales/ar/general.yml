@@ -32,6 +32,14 @@ ar:
         button: بحث
         title: بحث
       select_order: ترتيب حسب
+  form:
+    policy: سياسة الخصوصية
+  layouts:
+    footer:
+      privacy: سياسة الخصوصية
+  polls:
+    show:
+      info_menu: "المعلومات"
   shared:
     followable:
       budget_investment:
@@ -39,3 +47,9 @@ ar:
           notice_html: "أنت الآن تتابع في هذا المشروع الإستثماري! </br> سنقوم بإعلامك بإعلامك بكل التغييرات التي ستحدث لكي تبقى على إطلاع دائم."
         destroy:
           notice_html: "لقد توقفت من متابعة هذا المشروع الإستثماري! </br> لن تتلقى وصاعدا أي إشعار جديد حول هذا المشروع."
+  spending_proposals:
+    form:
+      description: الوصف
+  stats:
+    index:
+      votes: مجموع الأصوات
