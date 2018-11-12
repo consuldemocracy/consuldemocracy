@@ -6,6 +6,8 @@ ar:
       change_password: "تغيير كلمة المرور"
       new_password: "كلمة مرور جديدة"
       updated: "كلمة السر تغيرت بنجاح"
+    confirmations:
+      send_paranoid_instructions: "إذا كان لديك بريد إلكتروني موجود على قاعدة بياناتنا، سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية تأكيد حسابك في بضع دقائق."
     failure:
       last_attempt: "امامك محاولة اخرى واحدة قبل حظر حسابك."
     passwords:
