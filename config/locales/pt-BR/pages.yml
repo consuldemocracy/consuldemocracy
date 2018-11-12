@@ -176,7 +176,6 @@ pt-BR:
         title: Compatibilidade com padrões e design visual
         description_html: 'Todas as páginas deste site estão de acordo com <strong> Diretrizes de Acessibilidade </strong> ou com os Princípios gerais de Design Acessível estabelecidos pelo grupo de trabalho <abbr title = "Web Accessibility Initiative" lang = "en"> WAI < / abbr > pertencentes a W3C.'
     titles:
-      accessibility: Acessibilidade
       conditions: Termos de uso
       help: "O que é %{org}? -Participação cidadã"
       privacy: Política de privacidade
@@ -186,5 +185,4 @@ pt-BR:
       info: 'Para verificar sua conta introduza seus dados de acesso:'
       info_code: 'Agora introduza o código recebido na carta:'
       password: Senha
-      submit: Verificar minha conta
       title: Verifique sua conta
