@@ -35,21 +35,35 @@ ar:
   form:
     policy: سياسة الخصوصية
   layouts:
+    application:
+      ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول علىأفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
     footer:
       privacy: سياسة الخصوصية
+    header:
+      my_account_link: حسابي
   polls:
     show:
       info_menu: "المعلومات"
   shared:
+    advanced_search:
+      date_3: 'الشهر الماضي'
     followable:
       budget_investment:
         create:
           notice_html: "أنت الآن تتابع في هذا المشروع الإستثماري! </br> سنقوم بإعلامك بإعلامك بكل التغييرات التي ستحدث لكي تبقى على إطلاع دائم."
         destroy:
           notice_html: "لقد توقفت من متابعة هذا المشروع الإستثماري! </br> لن تتلقى وصاعدا أي إشعار جديد حول هذا المشروع."
+      proposal:
+        create:
+          notice_html: "أنت الآن تتابع في إقتراح هذا المواطن! </br> سنقوم بإعلامك بإعلامك بكل التغييرات التي ستحدث لكي تبقى على إطلاع دائم."
+    tags_cloud:
+      categories: "فئات"
+    you_are_in: "أنت في"
   spending_proposals:
     form:
       description: الوصف
   stats:
     index:
       votes: مجموع الأصوات
+  votes:
+    disagree: أنا لا أوافق
