@@ -2,7 +2,6 @@ gl:
   legislation:
     annotations:
       comments:
-        see_all: Ver todos
         see_complete: Ver completo
         comments_count:
           one: "%{count} comentario"
