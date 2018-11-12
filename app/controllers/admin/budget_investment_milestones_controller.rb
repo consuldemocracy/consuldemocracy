@@ -1,7 +1,7 @@
 class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
   include Translatable
 
-  before_action :load_budget_investment, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :load_milestoneable, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :load_milestone, only: [:edit, :update, :destroy]
   before_action :load_statuses, only: [:index, :new, :create, :edit, :update]
   helper_method :milestoneable_path
@@ -10,12 +10,12 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
   end
 
   def new
-    @milestone = @investment.milestones.new
+    @milestone = @milestoneable.milestones.new
   end
 
   def create
     @milestone = Milestone.new(milestone_params)
-    @milestone.milestoneable = @investment
+    @milestone.milestoneable = @milestoneable
     if @milestone.save
       redirect_to milestoneable_path, notice: t('admin.milestones.create.notice')
     else
@@ -51,8 +51,8 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
     params.require(:milestone).permit(*attributes)
   end
 
-  def load_budget_investment
-    @investment = Budget::Investment.find(params[:budget_investment_id])
+  def load_milestoneable
+    @milestoneable = Budget::Investment.find(params[:budget_investment_id])
   end
 
   def load_milestone
