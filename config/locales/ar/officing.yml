@@ -1,6 +1,9 @@
 ar:
   officing:
     results:
+      new:
+        submit: "حفظ"
       index:
+        no_results: "لا توجد نتائج"
         results: النتائج
         table_answer: الإجابة
