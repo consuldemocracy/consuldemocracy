@@ -1,1 +1,8 @@
 ar:
+  management:
+    user_invites:
+      new:
+        submit: إرسال الدعوات
+        title: إرسال الدعوات
+      create:
+        title: إرسال الدعوات
