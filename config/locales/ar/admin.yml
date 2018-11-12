@@ -147,3 +147,8 @@ ar:
         form:
           custom_categories: فئات
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
+    homepage:
+      cards:
+        title: العنوان
+    translations:
+      add_language: إضافة لغة
