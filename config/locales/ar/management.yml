@@ -1,6 +1,7 @@
 ar:
   management:
     email_verifications:
+      if_no_existing_account: إذا لم يقم هذا الشخص بفتح حساب بعد
       send_email: إرسال البريد الإلكتروني للتحقق
     menu:
       users: إدارة المستخدمين
