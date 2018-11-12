@@ -37,7 +37,7 @@ gl:
     direct_message_for_receiver:
       subject: "Recibiches unha nova mensaxe privada"
       reply: Responder a %{sender}
-      unsubscribe: "Se non desexas recibir mensaxes directas, visita %{account} e desmarca 'Recibir mensaxes de correo sobre as mensaxes directas'."
+      unsubscribe: "Se non desexas recibir mensaxes directas, visita %{account} e desmarca 'Recibir correos coas mensaxes privadas'."
       unsubscribe_account: A miña conta
     direct_message_for_sender:
       subject: "Acabas de enviar unha nova mensaxe privada"
