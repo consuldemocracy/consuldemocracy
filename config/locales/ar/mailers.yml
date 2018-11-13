@@ -4,5 +4,7 @@ ar:
       title: تعليق جديد
     email_verification:
       instructions_html: لإكمال عملية التحقق من حساب المستخدم الخاص بك يجب عليك النقر على %{verification_link}.
+    user_invite:
+      ignore: "إذا لم تقم بطلب هذه الدعوة لا تقلق، يمكنك تجاهل هذه الرسالة."
     budget_investment_unfeasible:
       hi: "عزيزي المستخدم،"
