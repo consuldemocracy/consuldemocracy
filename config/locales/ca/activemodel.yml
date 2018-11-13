@@ -2,13 +2,21 @@ ca:
   activemodel:
     models:
       verification:
+        residence: "Domicili"
         sms: "SMS"
     attributes:
       verification:
         residence:
           document_type: "Tipus de document"
           document_number: "Número de document (incloent-hi lletres)"
+          date_of_birth: "Data de naixement"
+          postal_code: "Codi postal"
         sms:
           phone: "Telèfon"
+          confirmation_code: "Codi de confirmació"
+        email:
+          recipient: "E-mail"
       officing/residence:
+        document_type: "Tipus de document"
+        document_number: "Número de document (incloent-hi lletres)"
         year_of_birth: "Any de naixement"
