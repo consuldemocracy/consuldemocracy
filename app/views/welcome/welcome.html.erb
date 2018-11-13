@@ -40,7 +40,11 @@
     <%= link_to(t("welcome.welcome.user_permission_verify_my_account"), verification_path, class: "button success radius expand") %>
   <% end %>
 
-  <p class="text-center">
-    <%= link_to t("welcome.welcome.go_to_index"), proposals_path %>
+  <p>
+    <% if feature?(:help_page) %>
+      <%= link_to t("welcome.welcome.go_to_index"), help_path %>
+    <% else %>
+      <%= link_to t("welcome.welcome.go_to_index"), root_path %>
+    <% end  %>
   </p>
 </div>
