@@ -1,5 +1,7 @@
 fr:
   pages:
+    conditions:
+      title: Conditions d'utilisation
     general_terms: Conditions générales
     help:
       title: "%{org} est une plate-forme pour la participation citoyenne"
@@ -55,34 +57,92 @@ fr:
         how_to_use: "Utiliser %{org_name} dans votre ville"
       titles:
         how_to_use: Utilisez-le pour votre administration locale
+    privacy:
+      title: Politique de confidentialité
+      info_items:
+        - 
+        - 
+        - 
+        - 
+          subitems:
+            - 
+              field: 'Nom du fichier :'
+              description: NOM DU FICHIER
+            - 
+            - 
+        - 
+        - 
+          text: En règle générale, ce site Web ne partage ni ne divulgue d'informations obtenues, sauf lorsque cela a été autorisé par l’utilisateur, ou lorsque l’information est exigée par l’autorité judiciaire, un procureur ou la police judiciaire ou les cas régis par la loi en vigueur.
     accessibility:
       title: Accessibilité
       keyboard_shortcuts:
+        title: Raccourcis clavier
         navigation_table:
+          key_header: Touche
+          page_header: Page
           rows:
             - 
+              key_column: 0
+              page_column: Accueil
             - 
               key_column: 1
+              page_column: Débats
             - 
               key_column: 2
+              page_column: Propositions
             - 
               key_column: 3
             - 
               key_column: 4
+              page_column: Budgets participatifs
             - 
               key_column: 5
         browser_table:
+          caption: Combinaison de touches selon le système d’exploitation et le navigateur
+          browser_header: Navigateur
+          key_header: Combinaison de touches
           rows:
             - 
+              browser_column: IE
+              key_column: ALT + raccourci puis Entrée
             - 
+              browser_column: Firefox
               key_column: ALT + MAJ + raccourci
             - 
+              browser_column: Chrome
+              key_column: ALT + raccourci (CTRL + ALT + raccourci pour Mac)
             - 
+              browser_column: Safari
+              key_column: ALT + raccourci (CMD + raccourci sur Mac)
             - 
+              browser_column: Opera
+              key_column: MAJ + ESC + raccourci
       textsize:
+        title: Taille du texte
         browser_settings_table:
+          browser_header: Navigateur
           action_header: Action à réaliser
+          rows:
+            - 
+              browser_column: IE
+            - 
+              browser_column: Firefox
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+        browser_shortcuts_table:
+          description: 'Une autre manière de modifier la taille du texte est d''utiliser les raccourcis clavier définis dans le navigateur, en particulier la combinaison de touches :'
+          rows:
+            - 
+              shortcut_column: CTRL et + (CMD et + sur Mac)
+            - 
+              shortcut_column: CTRL et - (CMD et - sur Mac)
+              description_column: Diminue la taille du texte
       compatibility:
+        title: Compatibilité avec les normes et la conception visuelle
         description_html: 'Toutes les pages de ce site web sont conformes aux <strong> lignes directrices en matière d''accessibilité </strong> ou aux principes généraux de désign accessible établis par le groupe de travail <abbr title = "Web Accessibility Initiative" lang = "en"> WAI < / abbr > appartenant au W3C.'
     titles:
       accessibility: Accessibilité
