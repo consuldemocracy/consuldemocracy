@@ -1,0 +1,37 @@
+<%= form_for [:admin, @geography] do |f| %>
+  <% if @geography.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@geography.errors.count, "error") %> prohibited this geography from being saved:</h2>
+
+      <ul>
+      <% @geography.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 medium-6 large-4 column">
+      <%= f.label :name, t("admin.geographies.geography.name") %>
+      <%= f.text_field :name, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 large-4 column">
+      <%= f.label :heading_id, t("admin.geographies.geography.related_heading") %>
+      <%= f.collection_select :heading_id, @headings,:id,:name, include_blank: true, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="documents small-12 column">
+      <%= render 'documents/nested_documents', documentable: @geography, f: f %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,38 @@
+<%= link_to t("admin.geographies.index.create"),
+              new_admin_geography_path, class: "button float-right" %>
+
+<h2 class="inline-block"><%= t("admin.geographies.index.title") %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("admin.geographies.geography.name") %></th>
+      <th><%= t("admin.geographies.geography.related_heading") %></th>
+      <th><%= t("admin.geographies.geography.geojson_file") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+ </thead>
+
+  <tbody>
+    <% @geographies.each do |geography| %>
+      <tr id="<%= dom_id(geography) %>">
+        <td><%= geography.name %></td>
+        <td><%= geography.heading_id ? related_heading_name(geography.heading_id) : t("admin.geographies.no_related_heading") %></td>
+        <td><%= (geography.documents.any?) ? link_to_document(geography.documents.first) : t("admin.geographies.no_geojson_file") %></td>
+        <td>
+          <div class="small-6 column">
+            <%= link_to t("admin.geographies.index.edit"),
+                        edit_admin_geography_path(geography),
+                        class: "button hollow expanded" %>
+          </div>
+          <div class="small-6 column">
+            <%= link_to t("admin.geographies.index.delete"),
+                        admin_geography_path(geography),
+                        method: :delete,
+                        class: "button hollow alert expanded" %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
