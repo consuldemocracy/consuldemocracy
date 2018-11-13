@@ -4,6 +4,8 @@ ar:
     org_name: "المنظمة"
     feature:
       proposals: "مقترحات"
+      user:
+        skip_verification_description: "سيؤدي هذا إلى تعطيل عملية التحقق وسيتمكن جميع المستخدمين المسجلين من المشاركة في جميع العمليات"
       allow_images: "السماح بتحميل وعرض الصور"
       allow_attached_documents: "السماح بتحميل وعرض الوثائق المرفقة"
       help_page: "صفحة المساعدة"
