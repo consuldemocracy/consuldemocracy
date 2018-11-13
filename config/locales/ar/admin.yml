@@ -154,6 +154,9 @@ ar:
     moderators:
       index:
         title: المشرفون
+    system_emails:
+      proposal_notification_digest:
+        preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
     questions:
       answers:
         images:
