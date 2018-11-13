@@ -1,5 +1,6 @@
 ar:
   mailers:
+    no_reply: "تم إرسال هذه الرسالة من عنوان بريد إلكتروني لا يقبل الردود."
     comment:
       title: تعليق جديد
     email_verification:
