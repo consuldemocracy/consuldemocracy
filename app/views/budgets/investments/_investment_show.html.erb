@@ -156,7 +156,7 @@
           <div class="callout success">
             <%= t("budgets.investments.show.project_selected_html") %>
           </div>
-        <% elsif !investment.selected? && @budget.balloting_or_later? %>
+        <% elsif @budget.balloting_or_later? %>
           <div class="callout warning">
             <%= t("budgets.investments.show.project_not_selected_html") %>
           </div>
