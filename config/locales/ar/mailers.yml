@@ -11,5 +11,7 @@ ar:
       title: أكد حسابك باستخدام الرابط التالي
     user_invite:
       ignore: "إذا لم تقم بطلب هذه الدعوة لا تقلق، يمكنك تجاهل هذه الرسالة."
+    budget_investment_created:
+      follow_html: "سوف نبلغك عن كيفية تقدم العملية، والتي يمكنك متابعتها على <strong>%{link}</strong>."
     budget_investment_unfeasible:
       hi: "عزيزي المستخدم،"
