@@ -44,6 +44,21 @@ feature 'Legislation' do
       end
     end
 
+    scenario 'Key dates are displayed on current locale' do
+      process = create(:legislation_process, proposals_phase_start_date: Date.new(2018, 01, 01),
+                                             proposals_phase_end_date: Date.new(2018, 12, 01))
+
+      visit legislation_process_path(process)
+
+      expect(page).to have_content("Proposals")
+      expect(page).to have_content("01 Jan 2018 - 01 Dec 2018")
+
+      visit legislation_process_path(process, locale: "es")
+
+      expect(page).to have_content("Propuestas")
+      expect(page).to have_content("01 ene 2018 - 01 dic 2018")
+    end
+
     scenario 'Filtering processes' do
       create(:legislation_process, title: "Process open")
       create(:legislation_process, :next, title: "Process next")
