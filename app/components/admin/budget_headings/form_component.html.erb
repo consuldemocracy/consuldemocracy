@@ -18,6 +18,13 @@
       <%= f.hidden_field :price, value: 0 %>
     <% end %>
 
+    <% if feature?(:map) %>
+      <%= f.select :geozone_id,
+                    geozone_options,
+                    include_blank: t("geozones.none"),
+                    hint: t("admin.budget_headings.form.geozone_info") %>
+    <% end %>
+
     <% if heading.budget.approval_voting? %>
       <%= f.number_field :max_ballot_lines,
                            hint: t("admin.budget_headings.form.max_ballot_lines_info") %>

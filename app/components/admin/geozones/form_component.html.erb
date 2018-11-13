@@ -20,6 +20,25 @@
     <%= f.text_field :html_map_coordinates, hint: t("admin.geozones.geozone.coordinates_help") %>
   </div>
 
+  <div class="column">
+    <%= f.text_area :geojson, rows: "10", hint: t("admin.geozones.geozone.geojson_help") %>
+  </div>
+
+  <div class="small-12 large-3 column">
+    <%= f.label :color, nil, for: "color_input", id: "color_input_label" %>
+    <p class="help-text">
+      <%= t("admin.geozones.geozone.color_help", format_help: t("admin.shared.color_help")) %>
+    </p>
+    <div class="row collapse">
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :color, label: false, type: :color %>
+      </div>
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :color, label: false, id: "color_input" %>
+      </div>
+    </div>
+  </div>
+
   <div class="small-12 column">
     <%= f.submit(value: t("admin.geozones.edit.form.submit_button"),
                 class: "button success") %>
