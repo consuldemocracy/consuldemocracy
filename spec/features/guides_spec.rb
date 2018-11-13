@@ -40,7 +40,6 @@ feature 'Guide the user to create the correct resource' do
     visit budgets_path
 
     click_link "Create a budget investment"
-    click_link "I want to create a budget investment"
 
     expect(page).to have_current_path(new_budget_investment_path(budget))
   end
