@@ -7,32 +7,32 @@ module Budgets
     def show
       authorize! :read_executions, @budget
       @statuses = Milestone::Status.all
-
-      if params[:status].present?
-        @investments_by_heading = @budget.investments.winners
-                      .joins(:milestones).includes(:milestones)
-                      .select { |i| i.milestones.published.with_status
-                                                .order_by_publication_date.last
-                                                .try(:status_id) == params[:status].to_i }
-                      .uniq
-                      .group_by(&:heading)
-      else
-        @investments_by_heading = @budget.investments.winners
-                                         .joins(:milestones).includes(:milestones)
-                                         .distinct.group_by(&:heading)
-      end
-
-      @investments_by_heading = reorder_alphabetically_with_city_heading_first.to_h
+      @investments_by_heading = investments_by_heading_ordered_alphabetically_with_city_heading_first.to_h
     end
 
     private
+      def investments_by_heading
+        if params[:status].present?
+          @budget.investments.winners
+                  .joins(:milestones).includes(:milestones)
+                  .select { |i| i.milestones.published.with_status
+                                            .order_by_publication_date.last
+                                            .try(:status_id) == params[:status].to_i }
+                  .uniq
+                  .group_by(&:heading)
+        else
+          @budget.investments.winners
+                  .joins(:milestones).includes(:milestones)
+                  .distinct.group_by(&:heading)
+        end
+      end
 
       def load_budget
         @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:id])
       end
 
-      def reorder_alphabetically_with_city_heading_first
-        @investments_by_heading.sort do |a, b|
+      def investments_by_heading_ordered_alphabetically_with_city_heading_first
+        investments_by_heading.sort do |a, b|
           if a[0].name == 'Toda la ciudad'
             -1
           elsif b[0].name == 'Toda la ciudad'
