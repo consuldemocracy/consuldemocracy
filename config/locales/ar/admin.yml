@@ -157,6 +157,9 @@ ar:
     system_emails:
       proposal_notification_digest:
         preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
+    emails_download:
+      index:
+        download_segment: تحميل عناوين البريد الإلكتروني
     questions:
       answers:
         images:
