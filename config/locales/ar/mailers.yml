@@ -2,5 +2,7 @@ ar:
   mailers:
     comment:
       title: تعليق جديد
+    email_verification:
+      instructions_html: لإكمال عملية التحقق من حساب المستخدم الخاص بك يجب عليك النقر على %{verification_link}.
     budget_investment_unfeasible:
       hi: "عزيزي المستخدم،"
