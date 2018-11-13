@@ -14,8 +14,7 @@ class Admin::MilestonesController < Admin::BaseController
   end
 
   def create
-    @milestone = Milestone.new(milestone_params)
-    @milestone.milestoneable = @milestoneable
+    @milestone = @milestoneable.milestones.new(milestone_params)
     if @milestone.save
       redirect_to milestoneable_path, notice: t('admin.milestones.create.notice')
     else
@@ -64,7 +63,7 @@ class Admin::MilestonesController < Admin::BaseController
   end
 
   def get_milestone
-    Milestone.find(params[:id])
+    @milestoneable.milestones.find(params[:id])
   end
 
   def load_statuses
