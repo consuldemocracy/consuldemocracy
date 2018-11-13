@@ -15,9 +15,7 @@ module Budgets
         if params[:status].present?
           @budget.investments.winners
                   .joins(:milestones).includes(:milestones)
-                  .select { |i| i.milestones.published.with_status
-                                            .order_by_publication_date.last
-                                            .try(:status_id) == params[:status].to_i }
+                  .select { |i| i.milestone_status_id == params[:status].to_i }
                   .uniq
                   .group_by(&:heading)
         else
