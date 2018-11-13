@@ -67,5 +67,8 @@ ar:
   stats:
     index:
       votes: مجموع الأصوات
+  users:
+    show:
+      delete_alert: "هل أنت متأكد من أنك تريد حذف مشروعك الإستثماري؟ لا يمكن التراجع هن هذه الخطوة"
   votes:
     disagree: أنا لا أوافق
