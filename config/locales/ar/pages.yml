@@ -19,3 +19,8 @@ ar:
         يشير مفهوم (سهولة التصفح) إلى إمكانية الوصول إلى شبكة الإنترنت ومحتوياتها من قبل جميع الناس، بغض النظر عن الإعاقة (المادية أو الفكرية أو الفنية) التي قد تحدث، أو من تلك التي تحدث في السياق (التكنولوجي أو البيئي).
         
         عندما يتم تصميم المواقع الإلكترونية وفقا لمهوم (سهولة التصفح)،سيتمكن كافة المستخدمين من الوصول إلى المحتوى في ظروف متساوية، على سبيل المثال:
+      examples:
+        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
+        - When videos have subtitles, users with hearing difficulties can fully understand them.
+        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
+        - إذا كان المستخدم لديه مشاكل في التنقل ومن الصعب عليه استخدام الفأرة، فهناك بدائل في لوحة المفاتيحح ستساعد في عملية التصفح.
