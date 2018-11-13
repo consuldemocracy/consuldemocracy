@@ -47,6 +47,6 @@ class Admin::GeozonesController < Admin::BaseController
     end
 
     def allowed_params
-      [:name, :external_code, :census_code, :html_map_coordinates]
+      [:name, :external_code, :census_code, :html_map_coordinates, :geojson, :color]
     end
 end

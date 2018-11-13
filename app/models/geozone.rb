@@ -4,7 +4,9 @@ class Geozone < ApplicationRecord
   has_many :proposals
   has_many :debates
   has_many :users
+  has_many :headings, class_name: "Budget::Heading", dependent: :nullify
   validates :name, presence: true
+  validates :geojson, geojson_format: true
 
   scope :public_for_api, -> { all }
 
@@ -17,4 +19,28 @@ class Geozone < ApplicationRecord
       association.klass.where(geozone: self).empty?
     end
   end
+
+  def outline_points
+    normalized_coordinates.map { |longlat| [longlat.last, longlat.first] }
+  end
+
+  private
+
+    def normalized_coordinates
+      if geojson.present?
+        if geojson.match(/"coordinates"\s*:\s*\[{4}/)
+          coordinates.reduce([], :concat).reduce([], :concat)
+        elsif geojson.match(/"coordinates"\s*:\s*\[{3}/)
+          coordinates.reduce([], :concat)
+        else
+          coordinates
+        end
+      else
+        []
+      end
+    end
+
+    def coordinates
+      JSON.parse(geojson)["geometry"]["coordinates"]
+    end
 end
