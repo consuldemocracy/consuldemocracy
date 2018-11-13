@@ -154,12 +154,16 @@ ar:
     moderators:
       index:
         title: المشرفون
+    newsletters:
+      show:
+        body: محتوى البريد الإلكتروني
     system_emails:
       proposal_notification_digest:
         preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
     emails_download:
       index:
         download_segment: تحميل عناوين البريد الإلكتروني
+        download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
     questions:
       answers:
         images:
@@ -173,6 +177,8 @@ ar:
         edit:
           title: تعديل الفيديو
     organizations:
+      index:
+        search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
       search:
         no_results: لم يتم العثور على منظمات.
     shared:
