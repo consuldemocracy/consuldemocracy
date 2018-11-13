@@ -165,6 +165,8 @@ ar:
         download_segment: تحميل عناوين البريد الإلكتروني
         download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
     questions:
+      index:
+        no_questions: "لا توجد هناك أسئلة."
       answers:
         images:
           save_image: "حفظ الصورة"
