@@ -342,6 +342,10 @@ class Budget
       self.valuator_groups.collect(&:name).compact.join(', ').presence
     end
 
+    def milestone_status_id
+      milestones.published.with_status.order_by_publication_date.last&.status_id
+    end
+
     private
 
       def set_denormalized_ids
