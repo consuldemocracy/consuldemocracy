@@ -3,6 +3,9 @@ ar:
     account:
       menu:
         reset_password_email: إعادة تعيين كلمة المرور عبر البريد الإلكتروني
+      edit:
+        password:
+          reset_email_send: تم إرسال البريد الإلكتروني بشكل صحيح.
     document_verifications:
       please_check_account_data: الرجاء تحقق من صحة بيانات الحساب المذكور أعلاه.
     email_label: البريد الإلكتروني
