@@ -41,6 +41,9 @@ ar:
       privacy: سياسة الخصوصية
     header:
       my_account_link: حسابي
+  omniauth:
+    facebook:
+      sign_in: تسجيل الدخول باستخدام حساب فايسبوك
   polls:
     show:
       info_menu: "المعلومات"
@@ -72,3 +75,6 @@ ar:
       delete_alert: "هل أنت متأكد من أنك تريد حذف مشروعك الإستثماري؟ لا يمكن التراجع هن هذه الخطوة"
   votes:
     disagree: أنا لا أوافق
+  welcome:
+    verification:
+      i_dont_have_an_account: لا يوجد لدي حساب
