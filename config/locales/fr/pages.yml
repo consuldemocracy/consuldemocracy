@@ -55,6 +55,35 @@ fr:
         how_to_use: "Utiliser %{org_name} dans votre ville"
       titles:
         how_to_use: Utilisez-le pour votre administration locale
+    accessibility:
+      title: Accessibilité
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              key_column: 1
+            - 
+              key_column: 2
+            - 
+              key_column: 3
+            - 
+              key_column: 4
+            - 
+              key_column: 5
+        browser_table:
+          rows:
+            - 
+            - 
+              key_column: ALT + MAJ + raccourci
+            - 
+            - 
+            - 
+      textsize:
+        browser_settings_table:
+          action_header: Action à réaliser
+      compatibility:
+        description_html: 'Toutes les pages de ce site web sont conformes aux <strong> lignes directrices en matière d''accessibilité </strong> ou aux principes généraux de désign accessible établis par le groupe de travail <abbr title = "Web Accessibility Initiative" lang = "en"> WAI < / abbr > appartenant au W3C.'
     titles:
       accessibility: Accessibilité
       conditions: Conditions d'utilisations
