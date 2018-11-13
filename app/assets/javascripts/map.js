@@ -78,6 +78,7 @@
       }
 
       App.Map.addInvestmentsMarkers(investmentsMarkers, createMarker);
+      App.Map.addGeozones(map);
     },
     leafletMap: function(element) {
       var centerData, mapCenterLatLng;
@@ -193,6 +194,27 @@
 
       map.attributionControl.setPrefix(App.Map.attributionPrefix());
       L.tileLayer(mapTilesProvider, { attribution: mapAttribution }).addTo(map);
+    },
+    addGeozones: function(map) {
+      var geozones = $(map._container).data("geozones");
+
+      if (geozones) {
+        geozones.forEach(function(geozone) {
+          App.Map.addGeozone(geozone, map);
+        });
+      }
+    },
+    addGeozone: function(geozone, map) {
+      var polygon = L.polygon(geozone.outline_points, { color: geozone.color });
+
+      if (geozone.headings.length > 0) {
+        polygon.bindPopup(geozone.headings.join("<br>"));
+        polygon.options.fillOpacity = 0.3;
+      } else {
+        polygon.options.fillOpacity = 0;
+      }
+
+      polygon.addTo(map);
     },
     openMarkerPopup: function(e) {
       var marker = e.target;

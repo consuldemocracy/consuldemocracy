@@ -11,4 +11,12 @@ class Admin::Geozones::IndexComponent < ApplicationComponent
     def title
       t("admin.geozones.index.title")
     end
+
+    def yes_no_text(condition)
+      if condition
+        t("shared.yes")
+      else
+        t("shared.no")
+      end
+    end
 end

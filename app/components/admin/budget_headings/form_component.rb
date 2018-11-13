@@ -18,4 +18,8 @@ class Admin::BudgetHeadings::FormComponent < ApplicationComponent
     def single_heading?
       helpers.respond_to?(:single_heading?) && helpers.single_heading?
     end
+
+    def geozone_options
+      Geozone.all.map { |geozone| [geozone.name, geozone.id] }
+    end
 end

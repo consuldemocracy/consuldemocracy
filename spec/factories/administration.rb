@@ -8,6 +8,7 @@ FactoryBot.define do
     sequence(:name) { |n| "District #{n}" }
     sequence(:external_code, &:to_s)
     sequence(:census_code, &:to_s)
+    color { "#0081aa" }
 
     trait :in_census do
       census_code { "01" }

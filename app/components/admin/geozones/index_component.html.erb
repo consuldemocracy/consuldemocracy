@@ -9,6 +9,7 @@
       <th><%= t("admin.geozones.geozone.external_code") %></th>
       <th><%= t("admin.geozones.geozone.census_code") %></th>
       <th><%= t("admin.geozones.geozone.coordinates") %></th>
+      <th><%= t("admin.geozones.geozone.geojson") %></th>
       <th><%= t("admin.actions.actions") %></th>
     </tr>
   </thead>
@@ -19,7 +20,8 @@
         <td><%= geozone.name %></td>
         <td><%= geozone.external_code %></td>
         <td><%= geozone.census_code %></td>
-        <td class="break"><%= geozone.html_map_coordinates %></td>
+        <td><%= yes_no_text(geozone.html_map_coordinates.present?) %></td>
+        <td><%= yes_no_text(geozone.geojson.present?) %></td>
         <td>
           <%= render Admin::TableActionsComponent.new(geozone) %>
         </td>

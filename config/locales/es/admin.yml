@@ -198,6 +198,7 @@ es:
         success_notice: "Partida presupuestaria eliminada correctamente"
         unable_notice: "No se puede eliminar una partida presupuestaria con proyectos asociados"
       form:
+        geozone_info: "Cuando se asocia una partida a una zona, la zona aparecerá en el mapa de este presupuesto si la zona incluye datos de GeoJSON."
         max_ballot_lines_info: 'Máximo número de proyectos que un usuario puede votar en esta partida durante la fase "Votación final". Solamente se aplica a presupuestos con votación por aprobación.'
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
         coordinates_info: "Si se añaden los campos latitud y longitud, en la página de proyectos de esta partida aparecerá un mapa, que estará centrado en esas coordenadas."
@@ -1391,8 +1392,11 @@ es:
         external_code: Código externo
         census_code: Código del censo
         code_help: Código de respuesta para esta zona en la API del censo
-        coordinates: Coordenadas
+        color_help: "Color con el que aparecerá esta zona en el mapa de un presupuesto. %{format_help}"
+        coordinates: Coordenadas disponibles
         coordinates_help: Coordenadas que generarán una zona clicable en un mapa de imagen HTML
+        geojson: GeoJSON disponible
+        geojson_help: "Deben tener un tipo del formato \"Polygon\" o \"MultiPolygon\"; en el mapa de un presupuesto aparecerá un polígono basado en estos datos si una partida se asocia a esta geozona"
       edit:
         form:
           submit_button: Guardar cambios
