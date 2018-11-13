@@ -21,7 +21,7 @@ section "Creating header and cards for the homepage" do
     label_en: 'Welcome to',
     label_es: 'Bienvenido a',
 
-    link_url: 'help_path',
+    link_url: 'http://consulproject.org/',
     header: TRUE,
     image_attributes: create_image_attachment('header')
   )
