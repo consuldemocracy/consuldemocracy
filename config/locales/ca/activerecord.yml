@@ -1,15 +1,54 @@
 ca:
   activerecord:
     models:
+      activity:
+        one: "activitat"
+        other: "activitats"
       budget:
         one: "Pressupost participatiu"
         other: "Pressupostos participatius"
+      budget/investment:
+        one: "Proposta d'inversió"
+        other: "Propostes d'inversió"
       budget/investment/milestone:
         one: "fita"
         other: "fites"
+      budget/investment/status:
+        one: "Estat de la proposta"
+        other: "Estats de les propostes"
+      comment:
+        one: "Comentari"
+        other: "Comentaris"
+      debate:
+        one: "Debat"
+        other: "Debats"
       tag:
         one: "Eriqueta"
         other: "Etiquetes"
+      user:
+        one: "Usuari"
+        other: "Usuaris"
+      moderator:
+        one: "Moderador"
+        other: "Moderadors"
+      administrator:
+        one: "Administrador"
+        other: "Administradors"
+      valuator:
+        one: "Avaluador"
+        other: "Avaluadors"
+      valuator_group:
+        one: "Grup avaluador"
+        other: "Grup d'avaluadors"
+      manager:
+        one: "Gestor"
+        other: "Gestors"
+      newsletter:
+        one: "Newsletter"
+        other: "Newsletters"
+      vote:
+        one: "Votació"
+        other: "Votacions"
       organization:
         one: "Organització"
         other: "Organitzacions"
