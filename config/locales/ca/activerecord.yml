@@ -52,9 +52,21 @@ ca:
       organization:
         one: "Organització"
         other: "Organitzacions"
+      poll/officer:
+        one: "president de taula"
+        other: "presidents de taula"
+      proposal:
+        one: "Proposta ciutadana"
+        other: "Propostes ciutadanes"
       spending_proposal:
         one: "Proposta d'inversió"
         other: "Propostes d'inversió"
+      site_customization/page:
+        one: Pàgina
+        other: Pàgines
+      site_customization/image:
+        one: Imatge
+        other: Imatges
     attributes:
       spending_proposal:
         administrator_id: "Administrador"
