@@ -342,6 +342,12 @@ class Budget
       self.valuator_groups.collect(&:name).compact.join(', ').presence
     end
 
+    def self.with_milestone_status_id(status_id)
+      joins(:milestones).includes(:milestones).select do |investment|
+        investment.milestone_status_id == status_id.to_i
+      end
+    end
+
     def milestone_status_id
       milestones.published.with_status.order_by_publication_date.last&.status_id
     end
