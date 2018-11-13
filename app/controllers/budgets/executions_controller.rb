@@ -7,7 +7,7 @@ module Budgets
     def show
       authorize! :read_executions, @budget
       @statuses = Milestone::Status.all
-      @investments_by_heading = investments_by_heading_ordered_alphabetically_with_city_heading_first.to_h
+      @investments_by_heading = investments_by_heading_ordered_alphabetically.to_h
     end
 
     private
@@ -31,16 +31,8 @@ module Budgets
         @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:id])
       end
 
-      def investments_by_heading_ordered_alphabetically_with_city_heading_first
-        investments_by_heading.sort do |a, b|
-          if a[0].name == 'Toda la ciudad'
-            -1
-          elsif b[0].name == 'Toda la ciudad'
-            1
-          else
-            a[0].name <=> b[0].name
-          end
-        end
+      def investments_by_heading_ordered_alphabetically
+        investments_by_heading.sort { |a, b| a[0].name <=> b[0].name }
       end
   end
 end
