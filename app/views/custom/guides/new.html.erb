@@ -1,5 +1,5 @@
 <div class="guides">
-  <div class="row margin">
+  <div class="row">
     <div class="small-12 column text-center">
       <h1><%= t("guides.title", org: setting['org_name']) %></h1>
       <p class="lead"><%= t("guides.subtitle") %></p>
@@ -8,51 +8,51 @@
 
   <div class="row" data-equalizer data-equalize-on="medium">
 
-    <div class="small-12 medium-5 medium-offset-1 column">
-      <div class="guide-budget" data-equalizer-watch>
-        <h2 class="text-center">
-          <%= t("guides.budget_investment.title") %>
-        </h2>
+    <div class="small-12 medium-6 column">
+      <%= link_to new_budget_investment_path(current_budget) do %>
+        <div class="guide-budget" data-equalizer-watch>
+          <h2><%= t("guides.budget_investment.title") %></h2>
 
-        <ul class="no-bullet">
-          <li><%= t("guides.budget_investment.feature_1_html") %></li>
-          <li><%= t("guides.budget_investment.feature_2_html") %></li>
-          <li><%= t("guides.budget_investment.feature_3_html") %></li>
-          <li><%= t("guides.budget_investment.feature_4_html") %></li>
-        </ul>
-        <% if current_budget %>
-          <div class="small-12 medium-9 small-centered">
-            <%= link_to t("guides.budget_investment.new_button"),
-                        new_budget_investment_path(current_budget),
-                        class: "button expanded" %>
-          </div>
-        <% end %>
-      </div>
+          <ul class="no-bullet">
+            <li><%= t("guides.budget_investment.feature_1_html") %></li>
+            <li><%= t("guides.budget_investment.feature_2_html") %></li>
+            <li><%= t("guides.budget_investment.feature_3_html") %></li>
+            <li><%= t("guides.budget_investment.feature_4_html") %></li>
+          </ul>
+
+          <% if current_budget %>
+            <div class="small-12 medium-9 small-centered">
+              <span class= "button expanded">
+                <%= t("guides.budget_investment.new_button") %>
+              </span>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
-    <div class="small-12 medium-5 column end">
-      <div class="guide-proposal" data-equalizer-watch>
-        <h2 class="text-center">
-          <%= t("guides.proposal.title") %>
-        </h2>
+    <div class="small-12 medium-6 column">
+      <%= link_to new_proposal_path, class: "guide-proposal-link" do %>
+        <div class="guide-proposal" data-equalizer-watch>
+          <h2><%= t("guides.proposal.title") %></h2>
 
-        <ul class="no-bullet">
-          <li><%= t("guides.proposal.feature_1_html") %></li>
-          <li>
-            <%= t("guides.proposal.feature_2_html",
-                  votes: setting["votes_for_proposal_success"],
-                  org: setting['org_name']) %>
-          </li>
-          <li><%= t("guides.proposal.feature_3_html") %></li>
-          <li><%= t("guides.proposal.feature_4_html") %></li>
-        </ul>
-
-        <div class="small-12 medium-9 small-centered">
-          <%= link_to t("guides.proposal.new_button"),
-                      new_proposal_path,
-                      class: "button expanded" %>
+          <ul class="no-bullet">
+            <li><%= t("guides.proposal.feature_1_html") %></li>
+            <li>
+              <%= t("guides.proposal.feature_2_html",
+                    votes: setting["votes_for_proposal_success"],
+                    org: setting['org_name']) %>
+            </li>
+            <li><%= t("guides.proposal.feature_3_html") %></li>
+            <li><%= t("guides.proposal.feature_4_html") %></li>
+          </ul>
+          <div class="small-12 medium-9 small-centered">
+            <span class= "button expanded">
+              <%= t("guides.proposal.new_button") %>
+            </span>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

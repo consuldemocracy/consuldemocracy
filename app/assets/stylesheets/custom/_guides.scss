@@ -4,72 +4,16 @@
 .guides {
 
   h2 {
-    margin: $line-height 0 $line-height * 2;
+    margin-bottom: $line-height;
+    text-align: center;
   }
 
-  .guide-budget,
-  .guide-proposal {
-    border-radius: rem-calc(3);
-    margin: $line-height 0;
-    padding: $line-height;
-    position: relative;
-
-    .button {
-      color: $text;
-      font-weight: bold;
-    }
-
-    &::before {
-      border-radius: 100%;
-      color: #fff;
-      font-family: "icons" !important;
-      height: rem-calc(80);
-      left: 50%;
-      line-height: rem-calc(80);
-      margin-left: rem-calc(-40);
-      position: absolute;
-      text-align: center;
-      top: -40px;
-      width: rem-calc(80);
-      z-index: 99;
-    }
-  }
-
-  .guide-budget {
-    border: 1px solid $budget;
-
-    &::before {
-      background: $budget;
-      content: '\53';
-      font-size: rem-calc(40);
-    }
-
-    .button {
-      background: #f8f5f9;
-      border: 1px solid $budget;
-    }
-  }
-
-  .guide-proposal {
-    border: 1px solid $proposals;
-
-    &::before {
-      background: $proposals;
-      content: '\68';
-      font-size: rem-calc(40);
-    }
-
-    .button {
-      background: #fffaf4;
-      border: 1px solid $proposals;
-    }
+  a {
+    text-decoration: none;
   }
 
   ul {
-
-    @include breakpoint(medium) {
-      min-height: $line-height * 14;
-    }
+    min-height: $line-height * 9;
 
     li {
       margin-bottom: $line-height;
@@ -86,5 +30,88 @@
         top: 1px;
       }
     }
+  }
+
+  .guide-budget,
+  .guide-proposal {
+    border-radius: rem-calc(6);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+    margin: $line-height 0;
+    padding: $line-height;
+    position: relative;
+
+    .button {
+      font-weight: bold;
+    }
+
+    &::before {
+      border-radius: 100%;
+      color: #fff;
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      height: rem-calc(40);
+      left: 50%;
+      line-height: rem-calc(40);
+      margin-left: rem-calc(-20);
+      position: absolute;
+      text-align: center;
+      top: -20px;
+      width: rem-calc(40);
+      z-index: 99;
+    }
+  }
+
+  .guide-budget {
+    background: $budget-2019-green;
+    color: $budget-2019-green-dark;
+
+    &::before {
+      background: $budget-2019-green-dark;
+      color: $budget-2019-green;
+      content: '\53';
+    }
+
+    li {
+
+      &::before {
+        color: $budget-2019-green-dark;
+      }
+    }
+
+    .button {
+      background: $budget-2019-green-dark;
+      color: $budget-2019-green;
+    }
+  }
+
+  .guide-proposal {
+    background: $budget-2019-orange;
+    color: $budget-2019-orange-dark;
+
+    &::before {
+      background: $budget-2019-orange-dark;
+      color: $budget-2019-orange;
+      content: '\68';
+    }
+
+    li {
+
+      &::before {
+        color: $budget-2019-orange-dark;
+      }
+    }
+
+    .button {
+      background: $budget-2019-orange-dark;
+      color: $budget-2019-orange;
+    }
+  }
+
+  a:hover .guide-budget h2 {
+    color: $budget-2019-green-dark;
+  }
+
+  a:hover .guide-proposal h2 {
+    color: $budget-2019-orange-dark;
   }
 }
