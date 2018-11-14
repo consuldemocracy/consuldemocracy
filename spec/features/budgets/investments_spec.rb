@@ -1063,6 +1063,25 @@ feature 'Budget Investments' do
     expect(page).to have_content("This investment project has not been selected for balloting phase")
   end
 
+  scenario "Show title (no message)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        budget: budget,
+                        group: group,
+                        heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    within("aside") do
+      expect(page).to have_content("Investment project")
+      expect(page).to have_css(".label-budget-investment")
+    end
+  end
+
   scenario "Show (unfeasible budget investment with valuation not finished)" do
     user = create(:user)
     login_as(user)
