@@ -105,6 +105,9 @@ es:
           random: Aleatorios
           confidence_score: Mejor valorados
           price: Por coste
+      share:
+        message: "He presentado el proyecto %{title} en %{org}. ¡Presenta un proyecto tú también!"
+        message_mobile: "He presentado el proyecto %{title} en %{handle}. ¡Presenta un proyecto tú también!"
       show:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
