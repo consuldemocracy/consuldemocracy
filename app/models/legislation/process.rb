@@ -2,7 +2,7 @@ class Legislation::Process < ActiveRecord::Base
   include ActsAsParanoidAliases
   include Taggable
   include Documentable
-  documentable max_documents_allowed: 3,
+  documentable max_documents_allowed: 4,
                max_file_size: 3.megabytes,
                accepted_content_types: [ "application/pdf" ]
 
