@@ -41,6 +41,10 @@
   <% end %>
 
   <p>
-    <%= link_to t("welcome.welcome.go_to_index"), help_path %>
+    <% if feature?(:help_page) %>
+      <%= link_to t("welcome.welcome.go_to_index"), help_path %>
+    <% else %>
+      <%= link_to t("welcome.welcome.go_to_index"), root_path %>
+    <% end  %>
   </p>
 </div>
