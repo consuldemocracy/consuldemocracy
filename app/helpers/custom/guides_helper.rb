@@ -1,4 +1,4 @@
-module GuidesHelper
+module Custom::GuidesHelper
 
   def new_proposal_guide
     if feature?('guides') && Budget.current&.accepting?

@@ -91,6 +91,9 @@ resources :annotations do
   get :search, on: :collection
 end
 
+### Guides
+resources :guides, only: :new
+
 ### Officing
 namespace :officing do
  resources :polls, only: [:index] do

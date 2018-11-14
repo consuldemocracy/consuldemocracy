@@ -19,7 +19,7 @@ feature 'Guide the user to create the correct resource' do
       visit proposals_path
 
       click_link "Create a proposal"
-      click_link "I want to create a proposal"
+      find('.guide-proposal-link').click
 
       expect(page).to have_current_path(new_proposal_path)
     end
@@ -35,12 +35,11 @@ feature 'Guide the user to create the correct resource' do
     end
   end
 
-  scenario "Budget Investment" do
+  scenario "Budget Investment not show guides" do
     login_as(user)
     visit budgets_path
 
     click_link "Create a budget investment"
-    click_link "I want to create a budget investment"
 
     expect(page).to have_current_path(new_budget_investment_path(budget))
   end

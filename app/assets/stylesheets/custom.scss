@@ -3104,44 +3104,6 @@ h2 {
   }
 }
 
-.guides {
-
-  .guide-budget {
-    background: #000;
-    border: 1px solid #000;
-    color: #fff;
-
-    h2 {
-      color: $budget-2018-yellow;
-    }
-
-    &::before {
-      background: $budget-2018-yellow;
-      color: #000;
-    }
-
-    li {
-
-      &::before {
-        color: $budget-2018-blue;
-      }
-    }
-
-    .button {
-      background: $budget-2018-yellow;
-      color: #000;
-    }
-  }
-
-  .button {
-    border: 0 !important;
-  }
-
-  .guide-proposal {
-    border: 1px solid $border;
-  }
-}
-
 .groups-and-headings {
 
   .heading {

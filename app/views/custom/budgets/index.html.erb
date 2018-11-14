@@ -40,15 +40,9 @@
           <% if current_budget.accepting? %>
             <% if current_user %>
               <% if current_user.level_two_or_three_verified? %>
-                <% if Setting['feature.guides'].present? %>
-                  <%= link_to t("budgets.investments.index.sidebar.create"),
-                              new_budget_investment_path(current_budget),
-                              class: "button margin-top expanded" %>
-                <% else %>
-                  <%= link_to t("budgets.investments.index.sidebar.create"),
-                              new_budget_investment_path(current_budget),
-                              class: "button margin-top expanded" %>
-                <% end %>
+                <%= link_to t("budgets.investments.index.sidebar.create"),
+                            new_budget_investment_path(current_budget),
+                            class: "button margin-top expanded" %>
               <% else %>
                 <div class="callout warning margin-top">
                   <%= t("budgets.investments.index.sidebar.verified_only",

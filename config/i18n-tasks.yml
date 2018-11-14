@@ -41,7 +41,6 @@ data:
     - config/locales/%{locale}/community.yml
     - config/locales/%{locale}/documents.yml
     - config/locales/%{locale}/images.yml
-    - config/locales/%{locale}/guides.yml
     - config/locales/%{locale}/user_groups.yml
     - config/locales/%{locale}/i18n.yml
 
