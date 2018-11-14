@@ -317,7 +317,7 @@ end
 # even share the same colour.
 def update_button_text
   case translatable_class.name
-  when "Budget::Investment::Milestone"
+  when "Milestone"
     "Update milestone"
   when "AdminNotification"
     "Update notification"

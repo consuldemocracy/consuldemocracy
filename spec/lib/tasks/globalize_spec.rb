@@ -1,14 +1,8 @@
 require "rails_helper"
-require "rake"
 
 describe "Globalize tasks" do
 
   describe "#migrate_data" do
-
-    before do
-      Rake.application.rake_require "tasks/globalize"
-      Rake::Task.define_task(:environment)
-    end
 
     let :run_rake_task do
       Rake::Task["globalize:migrate_data"].reenable
@@ -151,7 +145,7 @@ describe "Globalize tasks" do
       before { I18n.locale = :"pt-BR" }
 
       let!(:milestone) do
-        create(:budget_investment_milestone).tap do |milestone|
+        create(:milestone).tap do |milestone|
           milestone.translations.delete_all
           milestone.update_column(:title, "Português")
           milestone.reload

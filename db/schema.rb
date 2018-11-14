@@ -843,6 +843,41 @@ ActiveRecord::Schema.define(version: 20181024160733) do
   add_index "map_locations", ["investment_id"], name: "index_map_locations_on_investment_id", using: :btree
   add_index "map_locations", ["proposal_id"], name: "index_map_locations_on_proposal_id", using: :btree
 
+  create_table "milestone_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "hidden_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "milestone_statuses", ["hidden_at"], name: "index_milestone_statuses_on_hidden_at", using: :btree
+
+  create_table "milestone_translations", force: :cascade do |t|
+    t.integer  "milestone_id", null: false
+    t.string   "locale",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "title"
+    t.text     "description"
+  end
+
+  add_index "milestone_translations", ["locale"], name: "index_milestone_translations_on_locale", using: :btree
+  add_index "milestone_translations", ["milestone_id"], name: "index_milestone_translations_on_milestone_id", using: :btree
+
+  create_table "milestones", force: :cascade do |t|
+    t.integer  "milestoneable_id"
+    t.string   "milestoneable_type"
+    t.string   "title",              limit: 80
+    t.text     "description"
+    t.datetime "publication_date"
+    t.integer  "status_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "milestones", ["status_id"], name: "index_milestones_on_status_id", using: :btree
+
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
   end

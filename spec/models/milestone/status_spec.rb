@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe Budget::Investment::Status do
+describe Milestone::Status do
 
   describe "Validations" do
-    let(:status) { build(:budget_investment_status) }
+    let(:status) { build(:milestone_status) }
 
     it "is valid" do
       expect(status).to be_valid
