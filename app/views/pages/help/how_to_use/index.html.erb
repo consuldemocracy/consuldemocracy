@@ -4,7 +4,9 @@
 
 <div class="row margin-top">
   <div class="text small-12 column">
-    <%= back_link_to help_path %>
+    <% if feature?(:help_page) %>
+      <%= back_link_to help_path %>
+    <% end %>
 
     <h1><%= t('pages.help.titles.how_to_use') %></h1>
 
