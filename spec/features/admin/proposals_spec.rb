@@ -5,6 +5,10 @@ feature "Admin proposals" do
     login_as create(:administrator).user
   end
 
+  it_behaves_like "admin_milestoneable",
+                  :proposal,
+                  "admin_proposal_path"
+
   context "Index" do
     scenario "Search" do
       create(:proposal, title: "Make Pluto a planet again")
