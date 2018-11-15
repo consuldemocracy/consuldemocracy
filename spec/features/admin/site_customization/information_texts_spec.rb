@@ -21,7 +21,7 @@ feature "Admin custom information texts" do
     click_link 'Community'
     expect(page).to have_content 'Access the community'
 
-    click_link 'Proposals'
+    within("#information-texts-tabs") { click_link "Proposals" }
     expect(page).to have_content 'Create proposal'
 
     within "#information-texts-tabs" do
@@ -49,7 +49,7 @@ feature "Admin custom information texts" do
   scenario 'check that tabs are highlight when click it' do
     visit admin_site_customization_information_texts_path
 
-    click_link 'Proposals'
+    within("#information-texts-tabs") { click_link "Proposals" }
     expect(find("a[href=\"/admin/site_customization/information_texts?tab=proposals\"].is-active"))
           .to have_content "Proposals"
   end
