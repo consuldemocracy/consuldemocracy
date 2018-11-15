@@ -1092,7 +1092,7 @@ feature 'Admin budget investments' do
     end
 
     scenario "Pagination after unselecting an investment", :js do
-      budget_investments = create_list(:budget_investment, 30, budget: budget)
+      create_list(:budget_investment, 30, budget: budget)
 
       visit admin_budget_budget_investments_path(budget)
 
