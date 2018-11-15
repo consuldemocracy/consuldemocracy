@@ -1,0 +1,9 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.proposals") %> - <%= @proposal.title %>
+<% end %>
+
+<div class="proposal-show">
+  <h2><%= @proposal.title %></h2>
+
+  <%= render "proposals/info", proposal: @proposal %>
+</div>
