@@ -7,15 +7,17 @@ end
 
 section "Creating investment milestones" do
   Budget::Investment.find_each do |investment|
-    milestone = investment.milestones.build(
-      publication_date: rand(Date.tomorrow..(Date.current + 3.weeks)),
-      status_id: Milestone::Status.all.sample
-    )
-    I18n.available_locales.map do |locale|
-      Globalize.with_locale(locale) do
-        milestone.description = "Description for locale #{locale}"
-        milestone.title = I18n.l(Time.current, format: :datetime)
-        milestone.save!
+    rand(1..5).times do
+      milestone = investment.milestones.build(
+        publication_date: rand(Date.tomorrow..(Date.current + 3.weeks)),
+        status_id: Milestone::Status.all.sample
+      )
+      I18n.available_locales.map do |locale|
+        Globalize.with_locale(locale) do
+          milestone.description = "Description for locale #{locale}"
+          milestone.title = I18n.l(Time.current, format: :datetime)
+          milestone.save!
+        end
       end
     end
   end
