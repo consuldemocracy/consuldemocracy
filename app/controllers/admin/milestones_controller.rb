@@ -59,19 +59,11 @@ class Admin::MilestonesController < Admin::BaseController
   end
 
   def load_milestone
-    @milestone = get_milestone
-  end
-
-  def get_milestone
-    @milestoneable.milestones.find(params[:id])
+    @milestone = @milestoneable.milestones.find(params[:id])
   end
 
   def load_statuses
     @statuses = Milestone::Status.all
-  end
-
-  def resource
-    get_milestone
   end
 
   def milestoneable_path
