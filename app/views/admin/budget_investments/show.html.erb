@@ -70,6 +70,7 @@
 
 <p>
   <%= link_to t("admin.budget_investments.show.new_milestone"),
-              new_admin_budget_budget_investment_milestone_path(@budget, @investment),
+              polymorphic_path([:admin, *resource_hierarchy_for(@investment.milestones.new)],
+                               action: :new),
               class: "button hollow" %>
 </p>
