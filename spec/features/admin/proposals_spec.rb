@@ -23,4 +23,13 @@ feature "Admin proposals" do
       expect(page).not_to have_content "Build a monument"
     end
   end
+
+  scenario "Show" do
+    create(:proposal, title: "Create a chaotic future", summary: "Chaos isn't controlled")
+
+    visit admin_proposals_path
+    click_link "Create a chaotic future"
+
+    expect(page).to have_content "Chaos isn't controlled"
+  end
 end
