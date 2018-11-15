@@ -4,7 +4,6 @@ en:
       title: Terms and conditions of use
       subtitle: LEGAL NOTICE ON THE CONDITIONS OF USE, PRIVACY AND PROTECTION OF PERSONAL DATA OF THE OPEN GOVERNMENT PORTAL
       description: Information page on the conditions of use, privacy and protection of personal data.
-    general_terms: Terms and Conditions
     help:
       title: "%{org} is a platform for citizen participation"
       guide: "This guide explains what each of the %{org} sections are for and how they work."
