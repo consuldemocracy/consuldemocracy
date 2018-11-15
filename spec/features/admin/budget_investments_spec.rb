@@ -7,6 +7,10 @@ feature 'Admin budget investments' do
     create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
   end
 
+  it_behaves_like "admin_milestoneable",
+                  :budget_investment,
+                  "admin_budget_budget_investment_path"
+
   background do
     @admin = create(:administrator)
     login_as(@admin.user)
