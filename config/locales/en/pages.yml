@@ -79,8 +79,6 @@ en:
             description: Managing participatory processes to control the qualification of the people participating in them and merely numerical and statistical recount of the results derived from citizen participation processes.
           - field: 'Institution in charge of the file:'
             description: INSTITUTION IN CHARGE OF THE FILE
-        - text: The interested party may exercise the rights of access, rectification, cancellation and opposition, before the responsible body indicated, all of which is reported in compliance with article 5 of the Organic Law 15/1999, of December 13, on the Protection of Data of Character Personal.
-        - text: As a general principle, this website does not share or disclose information obtained, except when it has been authorized by the user, or the information is required by the judicial authority, prosecutor's office or the judicial police, or any of the cases regulated in the Article 11 of the Organic Law 15/1999, of December 13, on the Protection of Personal Data.
     accessibility:
       title: Accessibility
       description: |-
