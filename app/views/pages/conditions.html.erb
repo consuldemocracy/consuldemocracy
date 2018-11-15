@@ -1,4 +1,4 @@
-<% provide :title do %><%= t('pages.titles.conditions') %><% end %>
+<% provide :title do %><%= t("pages.titles.conditions") %><% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: page_url("conditions") %>
 <% end %>
@@ -6,9 +6,9 @@
 <div class="row margin-top">
 
   <div class="small-12 medium-9 column">
-    <h1><%= t('.title') %></h1>
-    <h2><%= t('.subtitle') %></h2>
-    <p><%= t('.description') %></p>
+    <h1><%= t("pages.conditions.title") %></h1>
+    <h2><%= t("pages.conditions.subtitle") %></h2>
+    <p><%= t("pages.conditions.description") %></p>
   </div>
 
   <div class="small-12 medium-3 column">
