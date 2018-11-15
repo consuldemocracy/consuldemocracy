@@ -437,6 +437,7 @@ en:
       flag: This proposal has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
       notifications_tab: Notifications
+      milestones_tab: Milestones
       retired_warning: "The author considers this proposal should not receive more supports."
       retired_warning_link_to_explanation: Read the explanation before voting for it.
       retired: Proposal retired by the author

@@ -3,6 +3,10 @@ require 'rails_helper'
 
 feature 'Proposals' do
 
+  it_behaves_like "milestoneable",
+                  :proposal,
+                  "proposal_path"
+
   scenario 'Disabled with a feature flag' do
     Setting['feature.proposals'] = nil
     expect{ visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
