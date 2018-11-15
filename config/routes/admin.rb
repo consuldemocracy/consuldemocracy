@@ -29,6 +29,8 @@ namespace :admin do
     end
   end
 
+  resources :proposals, only: [:index, :show]
+
   resources :hidden_proposals, only: :index do
     member do
       put :restore

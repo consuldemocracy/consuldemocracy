@@ -532,6 +532,7 @@ es:
       admin: Menú de administración
       banner: Gestionar banners
       poll_questions: Preguntas
+      proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
       geozones: Gestionar distritos
@@ -1036,6 +1037,13 @@ es:
       search:
         title: Buscar Organizaciones
         no_results: No se han encontrado organizaciones.
+    proposals:
+      index:
+        title: Propuestas
+        id: ID
+        author: Autor
+        milestones: Hitos
+        no_proposals: No hay propuestas.
     hidden_proposals:
       index:
         filter: Filtro
