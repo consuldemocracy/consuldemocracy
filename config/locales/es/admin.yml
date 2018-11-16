@@ -42,7 +42,7 @@ es:
           restore: Restaurado
         by: Moderado por
         filters:
-          all: Todos
+          all: Todo
           on_users: Usuarios
           on_system_emails: Emails del sistema
         title: Actividad de Moderadores
@@ -983,7 +983,7 @@ es:
         page:
           slug: Slug
     homepage:
-      title: Título
+      title: Homepage
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.
       header_title: Encabezado
       create_header: Crear encabezado
