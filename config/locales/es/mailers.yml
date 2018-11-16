@@ -52,7 +52,7 @@ es:
       new_href: "nuevo proyecto de gasto"
       subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"
     budget_investment_selected:
-      subject: "Tu propuesta de inversión '%{code}' ha sido seleccionada"
+      subject: "Tu proyecto de gasto '%{code}' ha sido seleccionado"
       share: "Empieza ya a conseguir votos, comparte tu proyecto de gasto en redes sociales. La difusión es fundamental para conseguir que se haga realidad."
       share_button: "Comparte tu proyecto"
       thanks: "Gracias de nuevo por tu participación."
