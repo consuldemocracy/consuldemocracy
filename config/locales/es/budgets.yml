@@ -24,7 +24,7 @@ es:
     groups:
       show:
         title: Selecciona una opción
-        unfeasible_title: Propuestas inviables
+        unfeasible_title: Proyectos de gasto inviables
         unfeasible: Ver propuestas inviables
         unselected_title: Proyectos no seleccionados para la votación final
         unselected: Ver los proyectos no seleccionados para la votación final
@@ -65,7 +65,7 @@ es:
         title: Presupuestos participativos
         unfeasible: Propuestas de inversión no viables
         unfeasible_text: "Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto) para ser declarados viables y llegar hasta la fase de votación final. Todos los proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad."
-        by_heading: "Propuestas de inversión con ámbito: %{heading}"
+        by_heading: "Proyectos de gasto con ámbito: %{heading}"
         search_form:
           placeholder: Buscar proyectos de gasto...
         search_results_html:
@@ -102,7 +102,7 @@ es:
         code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
         location_html: 'Ubicación: <strong>%{location}</strong>'
         share: Compartir
-        title: Propuesta de inversión
+        title: Proyecto de gasto
         supports: Apoyos
         votes: Votos
         price: Coste
