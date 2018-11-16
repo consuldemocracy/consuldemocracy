@@ -26,8 +26,8 @@ es:
         title: Selecciona una opción
         unfeasible_title: Propuestas inviables
         unfeasible: Ver propuestas inviables
-        unselected_title: Propuestas no seleccionadas para la votación final
-        unselected: Ver las propuestas no seleccionadas para la votación final
+        unselected_title: Proyectos no seleccionados para la votación final
+        unselected: Ver los proyectos no seleccionados para la votación final
     phase:
       informing: Información
       accepting: Presentación de proyectos
