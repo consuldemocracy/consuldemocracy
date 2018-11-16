@@ -1,15 +1,12 @@
 class AddTranslateMilestones < ActiveRecord::Migration
-  def self.up
-    Budget::Investment::Milestone.create_translation_table!(
-      {
-        title:       :string,
-        description: :text
-      },
-      { migrate_data: true }
-    )
-  end
+  def change
+    create_table :budget_investment_milestone_translations do |t|
+      t.integer :budget_investment_milestone_id, null: false
+      t.string  :locale,                         null: false
+      t.string  :title
+      t.text    :description
 
-  def self.down
-    Budget::Investment::Milestone.drop_translation_table!
+      t.timestamps null: false
+    end
   end
 end
