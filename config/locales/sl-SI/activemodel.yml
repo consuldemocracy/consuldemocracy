@@ -1,1 +1,6 @@
 sl:
+  activemodel:
+    models:
+      verification:
+        residence: "Prebivališče"
+        sms: "SMS"
