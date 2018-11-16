@@ -1,0 +1,39 @@
+gl:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} creado correctamente."
+        debate: "O debate creouse correctamente."
+        direct_message: "A mensaxe enviouse correctamente."
+        poll: "A votación creouse correctamente."
+        poll_booth: "A urna creouse correctamente."
+        poll_question_answer: "A resposta creouse correctamente"
+        poll_question_answer_video: "O vídeo creouse correctamente"
+        poll_question_answer_image: "A imaxe subiuse correctamente"
+        proposal: "A proposta creouse correctamente."
+        proposal_notification: "A mensaxe enviouse correctamente."
+        spending_proposal: "Proposta de investimento creada correctamente. Podes acceder a ela dende %{activity}"
+        budget_investment: "A proposta de investimento creouse correctamente."
+        signature_sheet: "A folla de sinaturas creouse correctamente"
+        topic: "O tema creouse correctamente."
+        valuator_group: "O grupo de avaliadores creouse correctamente"
+      save_changes:
+        notice: Gardaronse os cambios
+      update:
+        notice: "%{resource_name} actualizado correctamente."
+        debate: "O debate actualizouse correctamente."
+        poll: "A votación actualizouse correctamente."
+        poll_booth: "A urna actualizouse correctamente."
+        proposal: "A proposta actualizouse correctamente."
+        spending_proposal: "A proposta de investimento actualizouse correctamente."
+        budget_investment: "A proposta de investimento actualizouse correctamente."
+        topic: "O tema actualizouse correctamente."
+        valuator_group: "O grupo de avaliadores actualizouse correctamente"
+        translation: "A traducción actualizouse correctamente"
+      destroy:
+        spending_proposal: "A proposta de investimento eliminouse correctamente."
+        budget_investment: "O proxecto de investimento actualizouse correctamente."
+        error: "Non se puido eliminar"
+        topic: "O tema borrouse correctamente."
+        poll_question_answer_video: "O vídeo borrouse correctamente."
+        valuator_group: "O grupo de avaliadores eliminouse correctamente"

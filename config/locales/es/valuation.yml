@@ -76,7 +76,7 @@ es:
       notice:
         valuate: "Dossier actualizado"
       valuation_comments: Comentarios de evaluación
-      not_in_valuating_phase: Los proyectos sólo pueden ser evaluados cuando el Presupuesto este en fase de evaluación
+      not_in_valuating_phase: Los proyectos sólo pueden ser evaluados cuando el Presupuesto esté en fase de evaluación
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación

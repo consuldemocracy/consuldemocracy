@@ -42,9 +42,6 @@ feature "Admin custom information texts" do
 
     expect(page).to have_content 'This user account is already verified.'
 
-    click_link 'Guides'
-    expect(page).to have_content 'Choose what you want to create'
-
     click_link 'Welcome'
     expect(page).to have_content 'See all recommended debates'
   end

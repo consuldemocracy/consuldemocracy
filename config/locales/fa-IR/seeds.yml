@@ -1,0 +1,39 @@
+fa:
+  seeds:
+    geozones:
+      north_district: منطقه شمال
+      west_district: منطقه غرب
+      east_district: منطقه شرق
+      central_district: "بخش مرکزی\n"
+    organizations:
+      human_rights: "حقوق بشر\n"
+      neighborhood_association: انجمن محله
+    categories:
+      associations: انجمن ها
+      culture: فرهنگ
+      sports: "ورزش ها\n"
+      social_rights: حقوق اجتماعی
+      economy: اقتصاد
+      employment: "استخدام\n"
+      equity: تساوی حقوق
+      sustainability: پایداری
+      participation: "مشارکت\n"
+      mobility: پویایی
+      media: "رسانه \n"
+      health: بهداشت و درمان
+      transparency: شفافیت
+      security_emergencies: امنیت و شرایط اضطراری
+      environment: محیط زیست
+    budgets:
+      budget: بودجه مشارکتی
+      currency: '€'
+      groups:
+        all_city: تمام شهر
+        districts: نواحی
+    polls:
+      current_poll: "نظرسنجی کنونی"
+      current_poll_geozone_restricted: "نظرسنجی کنونی Geozone محصور"
+      incoming_poll: "نظرسنجی ورودی"
+      recounting_poll: "بازپرداخت نظرسنجی"
+      expired_poll_without_stats: "نظرسنجی منقضی شده بدون آمار & نتیجه "
+      expired_poll_with_stats: "نظرسنجی منقضی شده با آمار & نتیجه "

@@ -1384,5 +1384,4 @@ feature 'Admin budget investments' do
       expect(page).to have_content("Budget Investment child")
     end
   end
-
 end

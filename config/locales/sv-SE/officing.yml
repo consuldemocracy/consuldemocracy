@@ -1,0 +1,68 @@
+sv:
+  officing:
+    header:
+      title: Omröstning
+    dashboard:
+      index:
+        title: Röststationer
+        info: Här kan du granska identitetshandlingar och spara resultat från omröstningar
+        no_shifts: Du har inga arbetspass idag.
+    menu:
+      voters: Godkänn identitetshandling
+      total_recounts: Resultat av omröstning
+    polls:
+      final:
+        title: Omröstningar redo för rösträkning
+        no_polls: Du har inga omröstningar redo för rösträkning
+        select_poll: Välj omröstning
+        add_results: Lägg till resultat
+    results:
+      flash:
+        create: "Resultatet har sparats"
+        error_create: "Resultatet har INTE sparats. Felaktig data."
+        error_wrong_booth: "Fel röststation. Resultatet sparades INTE."
+      new:
+        title: "%{poll} - Lägg till resultat"
+        not_allowed: "Du kan lägga till resultat för den här omröstning"
+        booth: "Röststation"
+        date: "Datum"
+        select_booth: "Välj röststation"
+        ballots_white: "Blankröster"
+        ballots_null: "Ogiltiga röster"
+        ballots_total: "Totalt antal röster"
+        submit: "Spara"
+        results_list: "Ditt resultat"
+        see_results: "Visa resultat"
+      index:
+        no_results: "Inget resultat"
+        results: Resultat
+        table_answer: Svar
+        table_votes: Röster
+        table_whites: "Blankröster"
+        table_nulls: "Ogiltiga röster"
+        table_total: "Totalt antal röster"
+    residence:
+      flash:
+        create: "Verifierad identitetshandling"
+        not_allowed: "Du har inga arbetspass idag"
+      new:
+        title: Godkänn identitetshandling
+        document_number: "Identitetshandlingens nummer (inklusive bokstäver)"
+        submit: Godkänn identitetshandling
+        error_verifying_census: "Din identitetshandling kunde inte verifieras."
+        form_errors: förhindrade godkännandet av det här dokumentet
+        no_assignments: "Du har inga arbetspass idag"
+    voters:
+      new:
+        title: Omröstningar
+        table_poll: Omröstning
+        table_status: Omröstningsstatus
+        table_actions: Åtgärder
+        not_to_vote: Personen har bestämt sig för att inte rösta den här gången
+      show:
+        can_vote: Kan rösta
+        error_already_voted: Du har redan deltagit i den här omröstningen
+        submit: Bekräfta röst
+        success: "Du har röstat!"
+      can_vote:
+        submit_disable_with: "Vänta, din röst bekräftas..."

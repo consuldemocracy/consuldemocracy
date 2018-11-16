@@ -1,12 +1,14 @@
 fr:
   settings:
     comments_body_max_length: "Longueur maximum des commentaires"
+    comments_body_max_length_description: "Nombre de caractères"
     official_level_1_name: "Personne officielle de niveau 1"
     official_level_2_name: "Personne officielle de niveau 2"
     official_level_3_name: "Personne officielle de niveau 3"
     official_level_4_name: "Personne officielle de niveau 4"
     official_level_5_name: "Personne officielle de niveau 5"
     max_ratio_anon_votes_on_debates: "Pourcentage maximum de votes anonymes par débat"
+    max_ratio_anon_votes_on_debates_description: "Les votes anonymes ont été effectués par des utilisateurs enregistrés mais qui n'ont pas vérifié leur compte"
     max_votes_for_proposal_edit: "Nombre de votes maximum à partir duquel une proposition ne peut plus être éditée"
     max_votes_for_debate_edit: "Nombre de votes à partir duquel un débat ne peut plus être édité"
     proposal_code_prefix: "Préfixe pour les codes des propositions"
@@ -21,27 +23,44 @@ fr:
     youtube_handle: "Nom d'utilisateur Youtube"
     telegram_handle: "Nom d'utilisateur Telegram"
     instagram_handle: "Nom d'utilisateur Instagram"
-    blog_url: "URL du blog"
-    transparency_url: "URL de transparence"
-    opendata_url: "URL d'Open Data"
     url: "URL principale"
     org_name: "Nom de l'organisation"
     place_name: "Nom du lieu"
-    feature:
-      budgets: Budgets participatifs
-      twitter_login: Se connecter avec Twitter
-      facebook_login: Se connecter avec Facebook
-      google_login: Se connecter avec Google
-      proposals: Propositions
-      debates: Débats
-      polls: Votes
-      signature_sheets: Feuilles de signature
-      spending_proposals: Propositions d'investissement
-      spending_proposal_features:
-        voting_allowed: Vote sur les propositions d'investissement
-    mailer_from_name: Nom de l'expéditeur
-    mailer_from_address: Courriel de l'expéditeur
+    related_content_score_threshold: "Seuil de score pour le contenu associé"
+    map_latitude: "Latitude"
+    map_longitude: "Longitude"
+    map_zoom: "Zoom"
+    meta_title: "Titre du site (SEO)"
     meta_description: "Description du site (SEO)"
     meta_keywords: "Mots-clés (SEO)"
-    verification_offices_url: URL des bureaux de vérification
     min_age_to_participate: Âge minimum de participation
+    blog_url: "URL du blog"
+    transparency_url: "URL de transparence"
+    opendata_url: "URL d'Open Data"
+    verification_offices_url: URL des bureaux de vérification
+    proposal_improvement_path: Lien interne vers les suggestions d'amélioration de la proposition
+    feature:
+      budgets: "Budget participatif"
+      twitter_login: "Se connecter avec Twitter"
+      twitter_login_description: "Autoriser les utilisateurs à s’inscrire avec leur compte Twitter"
+      facebook_login: "Se connecter avec Facebook"
+      facebook_login_description: "Autoriser les utilisateurs à s'inscrire avec leur compte Facebook"
+      google_login: "Se connecter avec Google"
+      google_login_description: "Autoriser les utilisateurs à s’inscrire avec leur compte Google"
+      proposals: "Propositions"
+      debates: "Débats"
+      polls: "Votes"
+      signature_sheets: "Feuilles de signature"
+      legislation: "Législation"
+      spending_proposals: "Propositions de dépense"
+      user:
+        recommendations: "Recommandations"
+        skip_verification: "Passer la vérification de l'utilisateur"
+        recommendations_on_debates: "Recommandations sur les discussions"
+        recommendations_on_proposals: "Recommandations sur les propositions"
+      community: "Communauté sur les propositions et les investissements"
+      map: "Localisation des propositions et des projets d'investissement"
+      allow_images: "Permettre d'importer et d'afficher des images"
+      allow_attached_documents: "Permettre le téléchargement et le visionnage de pièces jointes"
+      guides: "Guides pour créer des propositions ou projets d’investissement"
+      public_stats: "Stats publiques"

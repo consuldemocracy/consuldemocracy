@@ -12,7 +12,6 @@ he:
       email_label: 'דואר אלקטרוני'
       identified_label: 'זוהה כ'
       username_label: 'שם משתמש/ת'
-    check: בדוק
     dashboard:
       index:
         title: הנהלה
@@ -50,10 +49,6 @@ he:
       print_spending_proposals: הדפסת הצעות תקציב
       support_spending_proposals: תמיכה בהצעות תקציב
       create_budget_investment: יצירת תקציב להשקעה
-      print_budget_investments: הדפסת תקציבים להשקעה
-      support_budget_investments: תמיכה בתקציבים להשקעה
-      users: משתמשים
-      edit_user_accounts: עריכת חשבונך
       user_invites: הזמנות של המשתמש/ת
     permissions:
       create_proposals: יצירת הצעות
@@ -62,12 +57,9 @@ he:
       vote_proposals: הצבעה על הצעות
     print:
       proposals_info: יצירת http://url.consul אישי
-      proposals_note: ההצעות הנתמכות ביותר יעברו להצבעה. אם יתקבלו ברוב הצבעות, יעברו לשלב  הביצוע
       proposals_title: 'הצעות:'
       spending_proposals_info: משתתף ב http://url.consul
-      spending_proposals_note: תקציב השתתפותי יוקצה להצבעה עם רוב קולות
       budget_investments_info: משתתף ב http://url.consul
-      budget_investments_note: תקציב השתתפותי יוקצה להצבעה עם רוב קולות
     print_info: הדפסת מידע זה
     proposals:
       alert:
@@ -75,15 +67,10 @@ he:
       create_proposal: יצירת הצעה חדשה
       print:
         print_button: הדפסה
-    budgets:
-      create_new_investment: יצירת השקעה חדשה
-      print_investments: הדפסת תקציב השקעות
-      support_investments: תמיכה בתקציב השקעות
     budget_investments:
       alert:
         unverified_user: המשתמש אינו מאומת
       filters:
-        heading: קונספט/רעיון כללי
         unfeasible: השקעה אינה ברת ביצוע
       print:
         print_button: הדפסה
@@ -93,7 +80,7 @@ he:
       create: יצירת הצעה תקציב
       filters:
         unfeasible: פרויקטים להשקעה אינם ברי ביצוע
-        by_geozone: 'פרויקטים להשקעה בהיקפים של:: %{geozone}'
+        by_geozone: "פרויקטים להשקעה בהיקפים של:: %{geozone}"
       print:
         print_button: הדפסה
     sessions:
@@ -102,11 +89,10 @@ he:
     username_label: שם המשתמש/ת
     users:
       create_user: יצירת חשבון חדש
-      create_user_info: 'אנו ניצור חשבון עם הנתונים הבאים:'
       create_user_submit: יצירת משתמש/ת
       create_user_success_html: שלחנו הודעה לכתובת הדואר אלקטרוני <b>%{email}</b> כדי לוודא שהוא שייך למשתמש/ת. ההודעה מכילה קישור שעליך ללחוץ עליו. לאחר מכן יש צורך להגדיר את סיסמת הגישה שלך לפני שיתאפשר להיכנס לאתר
       erased_notice: חשבון המשתמש/ת נמחק
-      erased_by_manager: 'נמחק על ידי מנהל: %{manager}'
+      erased_by_manager: "נמחק על ידי מנהל: %{manager}"
       erase_account_link: מחיקת משתמש
       erase_account_confirm: בטוח שברצונך למחוק את החשבון? לא ניתן לבטל פעולה זו
       erase_warning: לא ניתן לבטל פעולה זו. נא לוודא שכוונתך למחוק את החשבון הזה

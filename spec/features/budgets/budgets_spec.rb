@@ -87,6 +87,15 @@ feature 'Budgets' do
 
       expect(page).to have_content "There are no budgets"
     end
+
+    scenario "Accepting" do
+      budget.update(phase: "accepting")
+      login_as(create(:user, :level_two))
+
+      visit budgets_path
+
+      expect(page).to have_link "Create a budget investment"
+    end
   end
 
   scenario 'Index shows only published phases' do

@@ -1,0 +1,22 @@
+sq:
+  activemodel:
+    models:
+      verification:
+        residence: "Rezident"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Tipi i dokumentit"
+          document_number: "Numri i dokumentit ( përfshirë letër)"
+          date_of_birth: "Data e lindjes"
+          postal_code: "Kodi Postar"
+        sms:
+          phone: "Telefoni"
+          confirmation_code: "Kodi i konfirmimit"
+        email:
+          recipient: "Email"
+      officing/residence:
+        document_type: "Tipi i dokumentit"
+        document_number: "Numri i dokumentit ( përfshirë letër)"
+        year_of_birth: "Viti i lindjes"

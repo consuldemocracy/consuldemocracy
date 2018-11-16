@@ -1,0 +1,50 @@
+es-CL:
+  pages:
+    conditions:
+      title: Términos y condiciones de uso
+      subtitle: AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE DATOS DE CARÁCTER PERSONAL DEL PORTAL DE GOBIERNO ABIERTO
+    general_terms: Términos y Condiciones
+    help:
+      menu:
+        budgets: "Presupuestos participativos"
+        polls: "Votaciones"
+        other: "Otra información de interés"
+      proposals:
+        title: "Propuestas"
+        link: "propuestas ciudadanas"
+      budgets:
+        link: "presupuestos participativos"
+      polls:
+        title: "Votaciones"
+      faq:
+        title: "¿Problemas técnicos?"
+        page:
+          title: "Preguntas Frecuentes"
+          faq_1_title: "Pregunta 1"
+      other:
+        title: "Otra información de interés"
+    privacy:
+      title: Política de Privacidad
+    accessibility:
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+            - 
+            - 
+            - 
+              page_column: Presupuestos participativos
+            - 
+              page_column: Procesos legislativos
+    titles:
+      accessibility: Accesibilidad
+      conditions: Condiciones de uso
+      privacy: Política de Privacidad
+    verify:
+      code: Código que has recibido en tu carta
+      email: Correo electrónico
+      info_code: 'Ahora introduce el código que has recibido en tu carta:'
+      password: Contraseña
+      submit: Verificar mi cuenta
+      title: Verifica tu cuenta

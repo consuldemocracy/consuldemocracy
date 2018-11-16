@@ -1,0 +1,24 @@
+es-MX:
+  pages:
+    conditions:
+      title: Términos y Condiciones de uso
+      subtitle: AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE DATOS DE CARÁCTER PERSONAL DEL PORTAL DE GOBIERNO ABIERTO
+      description: Página de información sobre las condiciones de uso, privacidad y protección de datos de carácter personal.
+    general_terms: Términos y Condiciones
+    help:
+      title: "%{org} es una plataforma de participación ciudadana"
+      guide: "Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}."
+      menu:
+        debates: "Debates"
+        proposals: "Propuestas"
+        processes: "Procesos"
+    titles:
+      accessibility: Accesibilidad
+      conditions: Condiciones de uso
+      privacy: Política de Privacidad
+    verify:
+      code: Código que has recibido en tu carta
+      info_code: 'Ahora introduce el código que has recibido en tu carta:'
+      password: Contraseña
+      submit: Verificar mi cuenta
+      title: Verifica tu cuenta

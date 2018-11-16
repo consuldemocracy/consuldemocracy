@@ -1,0 +1,127 @@
+de:
+  valuation:
+    header:
+      title: Bewertung
+    menu:
+      title: Bewertung
+      budgets: Bürgerhaushalte
+      spending_proposals: Ausgabenvorschläge
+    budgets:
+      index:
+        title: Bürgerhaushalte
+        filters:
+          current: Offen
+          finished: Fertig
+        table_name: Name
+        table_phase: Phase
+        table_assigned_investments_valuation_open: Zugeordnete Investmentprojekte mit offener Bewertung
+        table_actions: Aktionen
+        evaluate: Bewerten
+    budget_investments:
+      index:
+        headings_filter_all: Alle Überschriften
+        filters:
+          valuation_open: Offen
+          valuating: In der Bewertungsphase
+          valuation_finished: Bewertung beendet
+        assigned_to: "%{valuator} zugewiesen"
+        title: Investitionsprojekte
+        edit: Bericht bearbeiten
+        valuators_assigned:
+          one: '%{valuator} zugewiesen'
+          other: "%{count} zugewiesene Gutachter"
+        no_valuators_assigned: Keine Gutacher zugewiesen
+        table_id: Ausweis
+        table_title: Titel
+        table_heading_name: Name der Rubrik
+        table_actions: Aktionen
+        no_investments: "Keine Investitionsprojekte vorhanden."
+      show:
+        back: Zurück
+        title: Investitionsprojekt
+        info: Autor Informationen
+        by: Gesendet von
+        sent: Gesendet um
+        heading: Rubrik
+        dossier: Bericht
+        edit_dossier: Bericht bearbeiten
+        price: Preis
+        price_first_year: Kosten im ersten Jahr
+        currency: "€"
+        feasibility: Durchführbarkeit
+        feasible: Durchführbar
+        unfeasible: Undurchführbar
+        undefined: Undefiniert
+        valuation_finished: Bewertung beendet
+        duration: Zeitrahmen
+        responsibles: Verantwortliche
+        assigned_admin: Zugewiesener Admin
+        assigned_valuators: Zugewiesene Gutachter
+      edit:
+        dossier: Bericht
+        price_html: "Preis (%{currency})"
+        price_first_year_html: "Kosten im ersten Jahr (%{currency}) <small>(optional, nicht öffentliche Daten)</small>"
+        price_explanation_html: Preiserklärung
+        feasibility: Durchführbarkeit
+        feasible: Durchführbar
+        unfeasible: Undurchführbar
+        undefined_feasible: Ausstehend
+        feasible_explanation_html: Erläuterung der Durchführbarkeit
+        valuation_finished: Bewertung beendet
+        valuation_finished_alert: "Sind Sie sicher, dass Sie diesen Bericht als erledigt markieren möchten? Hiernach können Sie keine Änderungen mehr vornehmen."
+        not_feasible_alert: "Der Autor des Projekts erhält sofort eine E-Mail mit einem Bericht zur Undurchführbarkeit."
+        duration_html: Zeitrahmen
+        save: Änderungen speichern
+      notice:
+        valuate: "Dossier aktualisiert"
+      valuation_comments: Bewertungskommentare
+      not_in_valuating_phase: Investitionen können nur bewertet werden, wenn das Budget in der Bewertungsphase ist
+    spending_proposals:
+      index:
+        geozone_filter_all: Alle Bereiche
+        filters:
+          valuation_open: Offen
+          valuating: In der Bewertungsphase
+          valuation_finished: Bewertung beendet
+        title: Investitionsprojekte für den Bürgerhaushalt
+        edit: Bearbeiten
+      show:
+        back: Zurück
+        heading: Investitionsprojekte
+        info: Autor info
+        association_name: Verein
+        by: Gesendet von
+        sent: Gesendet um
+        geozone: Rahmen
+        dossier: Bericht
+        edit_dossier: Bericht bearbeiten
+        price: Preis
+        price_first_year: Kosten im ersten Jahr
+        currency: "€"
+        feasibility: Durchführbarkeit
+        feasible: Durchführbar
+        not_feasible: Undurchführbar
+        undefined: Undefiniert
+        valuation_finished: Bewertung beendet
+        time_scope: Zeitrahmen
+        internal_comments: Interne Bemerkungen
+        responsibles: Verantwortliche
+        assigned_admin: Zugewiesener Admin
+        assigned_valuators: Zugewiesene Gutachter
+      edit:
+        dossier: Dossier
+        price_html: "Preis (%{currency})"
+        price_first_year_html: "Kosten im ersten Jahr (%{currency})"
+        currency: "€"
+        price_explanation_html: Preiserklärung
+        feasibility: Durchführbarkeit
+        feasible: Durchführbar
+        not_feasible: Nicht durchführbar
+        undefined_feasible: Ausstehend
+        feasible_explanation_html: Erläuterung der Durchführbarkeit
+        valuation_finished: Bewertung beendet
+        time_scope_html: Zeitrahmen
+        internal_comments_html: Interne Bemerkungen
+        save: Änderungen speichern
+      notice:
+        valuate: "Dossier aktualisiert"

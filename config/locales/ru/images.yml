@@ -1,0 +1,21 @@
+ru:
+  images:
+    remove_image: Убрать изображение
+    form:
+      title: Описательное изображение
+      title_placeholder: Добавить описательное название для изображения
+      attachment_label: Выбрать изображение
+      delete_button: Убрать изображение
+      note: "Вы можете загрузить одно изображение следующих типов контента: %{accepted_content_types}, до %{max_file_size} Мб."
+      add_new_image: Добавить изображение
+      admin_title: "Изображение"
+      admin_alt_text: "Альтернативный текст для изображения"
+    actions:
+      destroy:
+        notice: Изображение было успешно удалено.
+        alert: Невозможно уничтожить изображение.
+        confirm: Вы уверены, что хотите удалить изображение? Это действие невозможно отменить!
+    errors:
+      messages:
+        in_between: должно быть между %{min} и %{max}
+        wrong_content_type: тип содержимого %{content_type} не соответствует ни одному из принятых типов содержимого %{accepted_content_types}

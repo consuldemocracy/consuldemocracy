@@ -113,8 +113,10 @@ feature 'Proposal Notifications' do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be send to 7 people and it will be visible in the proposal's page"
-    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
+    expect(page).to have_content "This message will be sent to 7 people and it will "\
+                                 "be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
+                                                     anchor: 'comments'))
   end
 
   scenario "Message about receivers (Followers)" do
@@ -126,8 +128,10 @@ feature 'Proposal Notifications' do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be send to 7 people and it will be visible in the proposal's page"
-    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
+    expect(page).to have_content "This message will be sent to 7 people and it will "\
+                                 "be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
+                                                     anchor: 'comments'))
   end
 
   scenario "Message about receivers (Disctinct Followers and Voters)" do
@@ -140,8 +144,10 @@ feature 'Proposal Notifications' do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be send to 14 people and it will be visible in the proposal's page"
-    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
+    expect(page).to have_content "This message will be sent to 14 people and it will "\
+                                 "be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
+                                                     anchor: 'comments'))
   end
 
   scenario "Message about receivers (Same Followers and Voters)" do
@@ -155,8 +161,10 @@ feature 'Proposal Notifications' do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be send to 1 people and it will be visible in the proposal's page"
-    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
+    expect(page).to have_content "This message will be sent to 1 people and it will "\
+                                 "be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
+                                                     anchor: 'comments'))
   end
 
   context "Permissions" do

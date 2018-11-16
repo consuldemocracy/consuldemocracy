@@ -48,7 +48,7 @@ es:
         form:
           error:
             one: "error impidió guardar el banner"
-            other: "errores impidieron guardar el banner"
+            other: "errores impidieron guardar el banner."
       new:
         creating: Crear banner
     activity:
@@ -68,7 +68,7 @@ es:
           on_proposals: Propuestas
           on_users: Usuarios
           on_system_emails: Emails del sistema
-        title: Actividad de los Moderadores
+        title: Actividad de Moderadores
         type: Tipo
         no_activity: No hay actividad de moderadores.
     budgets:
@@ -91,7 +91,7 @@ es:
         admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos abiertos."
       create:
-        notice: "¡Presupuestos participativos creados con éxito!"
+        notice: '¡Presupuestos participativos creados con éxito!'
       update:
         notice: Presupuestos participativos actualizados
       edit:
@@ -135,8 +135,8 @@ es:
         max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
         current_of_max_headings: "%{current} de %{max}"
       winners:
-        calculate: Calcular propuestas ganadoras
-        calculated: Calculando ganadoras, puede tardar un minuto.
+        calculate: Calcular proyectos ganadores
+        calculated: Calculando ganadores, puede tardar un minuto.
         recalculate: Recalcular propuestas ganadoras
     budget_phases:
       edit:
@@ -213,7 +213,7 @@ es:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         classification: Clasificación
-        info: '%{budget_name} - Grupo: %{group_name} - Proyecto de gasto %{id}'
+        info: "%{budget_name} - Grupo: %{group_name} - Proyecto de gasto %{id}"
         edit: Editar
         edit_classification: Editar clasificación
         by: Autor
@@ -278,8 +278,6 @@ es:
       form:
         admin_statuses: Gestionar estados de proyectos
         no_statuses_defined: No hay estados definidos
-        admin_statuses: Gestionar estados de proyectos
-        no_statuses_defined: No hay estados definidos
       new:
         creating: Crear hito
         date: Fecha
@@ -287,7 +285,7 @@ es:
       edit:
         title: Editar hito
       create:
-        notice: ¡Nuevo hito creado con éxito!
+        notice: '¡Nuevo hito creado con éxito!'
       update:
         notice: Hito actualizado
       delete:
@@ -424,13 +422,12 @@ es:
           proposals: Propuestas
       proposals:
         index:
-          title: Propuestas
+          title: Título
           back: Volver
           id: Id
-          title: Título
           supports: Apoyos
           select: Seleccionar
-          selected: Seleccionado
+          selected: Seleccionada
         form:
           custom_categories: Categorías
           custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta.
@@ -579,7 +576,6 @@ es:
           layouts: "Plantillas"
           mailers: "Correos"
           management: "Gestión"
-          guides: "Guías"
           welcome: "Bienvenido/a"
         buttons:
           save: "Guardar cambios"
@@ -603,7 +599,7 @@ es:
         delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
-        title: 'Administradores: Búsqueda de usuarios'
+        title: "Administradores: Búsqueda de usuarios"
     moderators:
       index:
         title: Moderadores
@@ -681,7 +677,7 @@ es:
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
         body: Contenido del email
         body_help_text: Así es como verán el email los usuarios
-        send_alert: ¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?
+        send_alert: '¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?'
     admin_notifications:
       create_success: Notificación creada correctamente
       update_success: Notificación actualizada correctamente
@@ -718,14 +714,14 @@ es:
         segment_recipient: Destinatarios
         preview_guide: "Así es como los usuarios verán la notificación:"
         sent_guide: "Así es como los usuarios ven la notificación:"
-        send_alert: ¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?
+        send_alert: '¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?'
     system_emails:
       preview_pending:
-        action: Previsualizar Pendientes
+        action: Previsualizar pendientes
         preview_of: Vista previa de %{name}
         pending_to_be_sent: Este es todo el contenido pendiente de enviar
         moderate_pending: Moderar envío de notificación
-        send_pending : Enviar pendientes
+        send_pending: Enviar pendientes
         send_pending_notification: Notificaciones pendientes enviadas correctamente
       proposal_notification_digest:
         title: Resumen de Notificationes de Propuestas
@@ -826,7 +822,7 @@ es:
         search_officer_placeholder: Buscar presidentes de mesa
         search_officer_text: Busca al presidente de mesa para asignar un turno
         select_date: "Seleccionar día"
-        no_voting_days: "Los dias de votación terminaron"
+        no_voting_days: "Los días de votación han terminado"
         select_task: "Seleccionar tarea"
         table_shift: "Turno"
         table_email: "Email"
@@ -1107,7 +1103,7 @@ es:
       setting_name: Configuración
       setting_status: Estado
       setting_value: Valor
-      no_description: Sin descripción
+      no_description: "Sin descripción"
     shared:
       booths_search:
         button: Buscar
@@ -1297,7 +1293,7 @@ es:
         all: Votaciones
         web_participants: Participantes en Web
         total_participants: Participantes totales
-        poll_questions: 'Preguntas de votación: %{poll}'
+        poll_questions: "Preguntas de votación: %{poll}"
         table:
           poll_name: Votación
           question_name: Pregunta
@@ -1412,8 +1408,8 @@ es:
       title: Homepage
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.
       header_title: Encabezado
-      create_header: Crear encabezado
       no_header: No hay encabezado.
+      create_header: Crear encabezado
       cards_title: Tarjetas
       create_card: Crear tarjeta
       no_cards: No hay tarjetas.
@@ -1437,5 +1433,5 @@ es:
         card_title: Editar tarjeta
         submit_card: Guardar tarjeta
     translations:
-      add_language: Añadir idioma
       remove_language: Eliminar idioma
+      add_language: Añadir idioma

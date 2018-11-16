@@ -1,0 +1,34 @@
+es-MX:
+  seeds:
+    geozones:
+      north_district: Distrito Norte
+      west_district: Distrito Oeste
+      east_district: Distrito Este
+      central_district: Distrito Central
+    organizations:
+      human_rights: Derechos Humanos
+      neighborhood_association: Asociación de vecinos
+    categories:
+      associations: Asociaciones
+      culture: Cultura
+      sports: Deportes
+      social_rights: Derechos Sociales
+      economy: Economía
+      employment: Empleo
+      equity: Equidad
+      sustainability: Sustentabilidad
+      participation: Participación
+      mobility: Movilidad
+      media: Medios de Comunicación
+      health: Salud
+      transparency: Transparencia
+      security_emergencies: Seguridad y Emergencias
+      environment: Medio Ambiente
+    budgets:
+      budget: Presupuestos participativos
+      currency: '$'
+      groups:
+        all_city: Toda la ciudad
+        districts: Distritos
+      valuator_groups:
+        culture_and_sports: Cultura y deportes

@@ -111,12 +111,12 @@ en:
         relevance: relevance
         recommendations: recommendations
       recommendations:
-        without_results: There are not debates related to your interests
+        without_results: There are no debates related to your interests
         without_interests: Follow proposals so we can give you recommendations
         disable: "Debates recommendations will stop showing if you dismiss them. You can enable them again in 'My account' page"
         actions:
           success: "Recommendations for debates are now disabled for this account"
-          error: "An error has occured. Please go to 'Your account' page to manually disable recommendations for debates"
+          error: "An error has occured. Please go to 'My account' page to manually disable recommendations for debates"
       search_form:
         button: Search
         placeholder: Search debates...
@@ -203,7 +203,7 @@ en:
       conditions: Terms and conditions of use
       consul: CONSUL application
       consul_url: https://github.com/consul/consul
-      contact_us: For technical assistance enters
+      contact_us: For technical assistance visit
       copyright: CONSUL, %{year}
       description: This portal uses the %{consul} which is %{open_source}.
       open_source: open-source software
@@ -353,7 +353,7 @@ en:
         disable: "Proposals recommendations will stop showing if you dismiss them. You can enable them again in 'My account' page"
         actions:
           success: "Recommendations for proposals are now disabled for this account"
-          error: "An error has occured. Please go to 'Your account' page to manually disable recommendations for proposals"
+          error: "An error has occured. Please go to 'My account' page to manually disable recommendations for proposals"
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
       retired_links:
@@ -439,7 +439,7 @@ en:
       retired: Proposal retired by the author
       share: Share
       send_notification: Send notification
-      no_notifications: "This proposal has any notifications."
+      no_notifications: "This proposal has no notifications."
       embed_video_title: "Video on %{proposal}"
       title_external_url: "Additional documentation"
       title_video_url: "External video"
@@ -528,7 +528,7 @@ en:
       title_label: "Title"
       body_label: "Message"
       submit_button: "Send message"
-      info_about_receivers_html: "This message will be send to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Message are not sent immediately, users will receive periodically an email with all proposal notifications."
+      info_about_receivers_html: "This message will be sent to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Messages are not sent immediately, users will receive periodically an email with all proposal notifications."
       proposal_page: "the proposal's page"
     show:
       back: "Go back to my activity"
@@ -827,7 +827,7 @@ en:
     error: "Link not valid. Remember to start with %{url}."
     error_itself: "Link not valid. You cannot relate a content to itself."
     success: "You added a new related content"
-    is_related: "¿Is it related content?"
+    is_related: "Is it related content?"
     score_positive: "Yes"
     score_negative: "No"
     content_title:

@@ -1,0 +1,60 @@
+nl:
+  community:
+    sidebar:
+      title: Community
+      description:
+        proposal: Participeer in de gebruikerscommunity van dit voorstel.
+        investment: Participeer in de gebruikerscommunity van deze investering.
+      button_to_access: Naar de community
+    show:
+      title:
+        proposal: Voorstellen community
+        investment: Inversteringsbudget community
+      description:
+        proposal: Participeer in de community van dit voorstel. Een actieve community helpt de inhoud van het voorstel te verbeteren en draagt bij aan het verkrijgen van meer steun voor dit voorstel.
+        investment: Participeer in de community van dit investeringsbudget. Een actieve community helpt de inhoud van het investeringsbudget te verbeteren en draagt bij aan het verkrijgen van meer steun voor deze investering.
+      create_first_community_topic:
+        first_theme_not_logged_in: Er is nog niets geplaatst, wees de eerste die een onderwerp plaatst!
+        first_theme: Creeer het eerste community onderwerp.
+        sub_first_theme: "Om een thema of onderwerp te creeeren moet je %{sign_in} of %{sign_up}."
+        sign_in: "inloggen"
+        sign_up: "registreren"
+      tab:
+        participants: deelnemers
+      sidebar:
+        participate: Neem deel
+        new_topic: Creeer onderwerp
+      topic:
+        edit: Pas onderwerp aan
+        destroy: Verwijder onderwerp
+        comments:
+          zero: Geen reacties
+          one: 1 reactie
+          other: "%{count} reacties"
+      author: Auteur
+      back: Terug naar %{community} %{proposal}
+    topic:
+      create: Creeer onderwerp
+      edit: Pas onderwerp aan
+      form:
+        topic_title: Titel
+        topic_text: Tekst
+        new:
+          submit_button: Creeer onderwerp
+        edit:
+          submit_button: Pas onderwerp aan
+        create:
+          submit_button: Creeer onderwerp
+        update:
+          submit_button: Werk onderwerp bij
+      show:
+        tab:
+          comments_tab: Opmerkingen
+      sidebar:
+        recommendations_title: Advies bij het beginnen van een discussie.
+        recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
+        recommendation_two: Iedere discussie of opmerking waarin een illegale activiteit wordt aangemoedigd zal worden verwijderd, en ook die opmerkingen die de discussie saboteren. Verder is alles toegestaan.
+        recommendation_three: Geniet van deze ruimte, en van de stemmen die 'm vullen.
+  topics:
+    show:
+      login_to_comment: Je moet %{signin} of %{signup} om een opmerking te plaatsen.
