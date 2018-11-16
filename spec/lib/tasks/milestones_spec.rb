@@ -66,6 +66,33 @@ describe "Milestones tasks" do
       expect(milestone.updated_at.to_date).to eq Date.today
     end
 
+    context "Milestone has images and documents" do
+      let(:milestone_id) do
+        ActiveRecord::Base.connection.execute(
+          "SELECT MAX(id) FROM budget_investment_milestones;"
+        ).to_a.first["max"]
+      end
+
+      let!(:image) do
+        create(:image, imageable_id: milestone_id).tap do |image|
+          image.update_column(:imageable_type, "Budget::Investment::Milestone")
+        end
+      end
+
+      let!(:document) do
+        create(:document, documentable_id: milestone_id).tap do |document|
+          document.update_column(:documentable_type, "Budget::Investment::Milestone")
+        end
+      end
+
+      it "migrates images and documents" do
+        run_rake_task
+
+        expect(Milestone.last.image).to eq image
+        expect(Milestone.last.documents).to eq [document]
+      end
+    end
+
     context "Statuses had been deleted" do
       before do
         ActiveRecord::Base.connection.execute(

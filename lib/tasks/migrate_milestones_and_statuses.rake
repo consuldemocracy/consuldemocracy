@@ -79,6 +79,11 @@ namespace :milestones do
                                'title'       => 'title',
                                'description' => 'description'}
 
+      Image.where(imageable_type: "Budget::Investment::Milestone").
+            update_all(imageable_type: "Milestone")
+      Document.where(documentable_type: "Budget::Investment::Milestone").
+            update_all(documentable_type: "Milestone")
+
       puts "Verifying that all rows were copied..."
 
       {
