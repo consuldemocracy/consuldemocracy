@@ -2380,7 +2380,7 @@ table {
       height: rem-calc(480);
 
       .orbit-wrapper {
-        max-height: rem-calc(450);
+        min-height: rem-calc(450);
       }
     }
 
