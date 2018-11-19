@@ -1,1 +1,14 @@
 so:
+  activemodel:
+    models:
+      verification:
+        residence: "Degaan"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Qaybaha dukumentiga"
+          document_number: "Lambarka dukumentiga (oo lugu daray warqadaha)"
+          date_of_birth: "Tarikhda Dhalashada"
+        sms:
+          phone: "Talefoon"
