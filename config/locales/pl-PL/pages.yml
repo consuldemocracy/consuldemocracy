@@ -4,7 +4,6 @@ pl:
       title: Regulamin
       subtitle: INFORMACJA PRAWNA DOTYCZĄCA WARUNKÓW UŻYTKOWANIA, PRYWATNOŚCI I OCHRONY DANYCH OSOBOWYCH OTWARTEGO PORTALU RZĄDOWEGO
       description: Strona informacyjna na temat warunków korzystania, prywatności i ochrony danych osobowych.
-    general_terms: Regulamin
     help:
       title: "%{org} jest platformą do udziału mieszkańców w miejskich politykach publicznych"
       guide: "Ten przewodnik objaśnia, do czego służy każda z sekcji %{org} i jak funkcjonuje."
@@ -80,10 +79,6 @@ pl:
             - 
               field: 'Instytucja odpowiedzialna za plik:'
               description: INSTYTUCJA ODPOWIEDZIALNA ZA PLIK
-        - 
-          text: Zainteresowana strona może skorzystać z prawa dostępu, sprostowania, anulowania i sprzeciwu, zanim organ odpowiedzialny wskazał, z których wszystkie są zgłaszane zgodnie z art. 5 Ustawy Ekologicznej 15/1999 z 13 grudnia o Ochronie Danych Osobowych.
-        - 
-          text: Zgodnie z ogólną zasadą niniejsza strona internetowa nie udostępnia ani nie ujawnia uzyskanych informacji, z wyjątkiem sytuacji, gdy zostało to zatwierdzone przez użytkownika lub informacje są wymagane przez organ sądowy, prokuraturę lub policję sądową, lub dowolny z przypadków uregulowanych w Artykule 11 Ustawy Ekologicznej 15/1999 z 13 Grudnia O Ochronie Danych Osobowych.
     accessibility:
       title: Dostępność
       description: |-
@@ -172,7 +167,6 @@ pl:
               shortcut_column: CTRL i - (CMD - i na komputerze MAC)
       compatibility:
         title: Zgodność z normami i projektowaniem wizualnym
-        description_html: 'Wszystkie strony witryny są zgodne z <strong> Wskazówki dotyczące dostępności </strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> należącą do W3C.'
     titles:
       accessibility: Ułatwienia dostępu
       conditions: Warunki użytkowania
