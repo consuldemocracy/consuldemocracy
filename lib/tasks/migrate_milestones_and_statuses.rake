@@ -91,6 +91,10 @@ namespace :milestones do
         "budget_investment_statuses"               => "milestone_statuses",
         "budget_investment_milestone_translations" => "milestone_translations"
       }.each do |original_table, migrated_table|
+        ActiveRecord::Base.connection.execute(
+          "select setval('#{migrated_table}_id_seq', (select max(id) from #{migrated_table}));"
+        )
+
         unless count_rows(original_table) == count_rows(migrated_table)
           raise "Number of rows of old and new tables do not match! Rolling back transaction..."
         end
