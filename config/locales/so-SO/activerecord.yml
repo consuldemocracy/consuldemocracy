@@ -1,1 +1,6 @@
 so:
+  activerecord:
+    models:
+      activity:
+        one: "halqabasho"
+        other: "halqabasho"
