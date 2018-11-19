@@ -4,7 +4,6 @@ pt-BR:
       title: Termos e condições de uso
       subtitle: AVISO LEGAL SOBRE AS CONDIÇÕES DE USO, PRIVACIDADE E PROTEÇÃO DE DADOS PESSOAIS DO PORTAL DO GOVERNO ABERTO
       description: Página de informações sobre as condições de uso, privacidade e proteção de dados pessoais.
-    general_terms: Termos e condições de uso
     help:
       title: "%{org} é uma plataforma de participação cidadã"
       guide: "Este guia explica para que servem e como funcionam cada uma das seções de %{org}."
@@ -80,10 +79,6 @@ pt-BR:
             - 
               field: 'Instituição responsável pelo arquivo:'
               description: INSTITUIÇÃO RESPONSÁVEL PELO ARQUIVO
-        - 
-          text: A parte interessada pode exercer os direitos de acesso, rectificação, cancelamento e oposição, antes que o organismo responsável indicado, sendo que tudo o que é relatado está em conformidade com o artigo 5º da Lei Orgânica 15/1999, de 13 de dezembro, sobre protecção de dados de Caráter pessoal.
-        - 
-          text: Como princípio geral, este site não compartilha ou divulgar as informações obtidas, exceto quando tiver sido autorizado pelo usuário, ou quando as informações são exigidas pela autoridade judiciária, pelo escritório da promotoria, pela polícia, ou por qualquer dos casos regulados no artigo 11 da Lei Orgânica 15/1999, de 13 de dezembro, relativa à protecção dos dados pessoais.
     accessibility:
       title: Acessibilidade
       description: |-
@@ -174,7 +169,6 @@ pt-BR:
               shortcut_column: CTRL e - (CMD e - no MAC)
       compatibility:
         title: Compatibilidade com padrões e design visual
-        description_html: 'Todas as páginas deste site estão de acordo com <strong> Diretrizes de Acessibilidade </strong> ou com os Princípios gerais de Design Acessível estabelecidos pelo grupo de trabalho <abbr title = "Web Accessibility Initiative" lang = "en"> WAI < / abbr > pertencentes a W3C.'
     titles:
       conditions: Termos de uso
       help: "O que é %{org}? -Participação cidadã"
