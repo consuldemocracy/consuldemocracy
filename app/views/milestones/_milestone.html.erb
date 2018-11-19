@@ -4,7 +4,7 @@
     <% if milestone.publication_date.present? %>
       <span class="milestone-date">
         <strong>
-          <%= t("budgets.investments.show.milestone_publication_date",
+          <%= t("milestones.show.publication_date",
                 publication_date: l(milestone.publication_date.to_date)) %>
         </strong>
       </span>
@@ -13,7 +13,7 @@
     <% if milestone.status.present? %>
       <p>
         <strong>
-          <%= t("budgets.investments.show.milestone_status_changed") %>
+          <%= t("milestones.show.status_changed") %>
         </strong>
         <br>
         <span class="milestone-status">

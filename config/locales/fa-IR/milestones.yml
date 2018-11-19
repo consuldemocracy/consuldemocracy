@@ -1,0 +1,6 @@
+fa:
+  milestones:
+    index:
+      no_milestones: نقاط قوت را مشخص نکرده اید
+    show:
+      publication_date: "منتشر شده\n%{publication_date}"

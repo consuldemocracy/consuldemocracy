@@ -107,8 +107,6 @@ es-CO:
         price: Coste
         comments_tab: Comentarios
         milestones_tab: Seguimiento
-        no_milestones: No hay hitos definidos
-        milestone_publication_date: "Publicado el %{publication_date}"
         author: Autor
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:

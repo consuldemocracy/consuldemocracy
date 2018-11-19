@@ -118,9 +118,6 @@ sv:
         price: Kostnad
         comments_tab: Kommentarer
         milestones_tab: Milstolpar
-        no_milestones: Har inga definierade milstolpar
-        milestone_publication_date: "Publicerad %{publication_date}"
-        milestone_status_changed: Förslagets status har ändrats till
         author: Förslagslämnare
         project_unfeasible_html: 'Det här budgetförslaget <strong>har markerats som ej genomförbart</strong> och kommer inte gå vidare till omröstning.'
         project_selected_html: 'Det här budgetförslaget <strong>har gått vidare</strong> till omröstning.'

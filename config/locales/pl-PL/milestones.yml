@@ -1,0 +1,7 @@
+pl:
+  milestones:
+    index:
+      no_milestones: Nie ma zdefiniowanych kamieni milowych
+    show:
+      publication_date: "Opublikowane %{publication_date}"
+      status_changed: Zmieniono stan inwestycji na

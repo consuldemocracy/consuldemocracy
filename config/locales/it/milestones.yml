@@ -1,0 +1,7 @@
+it:
+  milestones:
+    index:
+      no_milestones: Non ci sono traguardi definiti
+    show:
+      publication_date: "Pubblicato il %{publication_date}"
+      status_changed: Status dell’investimento cambiato in

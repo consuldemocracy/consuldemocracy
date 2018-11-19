@@ -118,9 +118,6 @@ sq:
         price: Çmim
         comments_tab: Komentet
         milestones_tab: Pikëarritje
-        no_milestones: Nuk  keni pikëarritje të përcaktuara
-        milestone_publication_date: "Publikuar %{publication_date}"
-        milestone_status_changed: Statusi i investimeve u ndryshua
         author: Autori
         project_unfeasible_html: 'Ky projekt investimi <strong> është shënuar si jo e realizueshme </strong> dhe nuk do të shkojë në fazën e votimit.'
         project_selected_html: 'Ky projekt investimi <strong> është përzgjedhur</strong>  për fazën e votimit.'

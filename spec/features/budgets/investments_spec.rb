@@ -10,6 +10,10 @@ feature 'Budget Investments' do
   let(:group) { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", price: 666666, group: group) }
 
+  it_behaves_like "milestoneable",
+                  :budget_investment,
+                  "budget_investment_path"
+
   before do
     Setting['feature.allow_images'] = true
   end
@@ -1116,59 +1120,6 @@ feature 'Budget Investments' do
 
     expect(page).not_to have_content("Unfeasibility explanation")
     expect(page).not_to have_content("Local government is not competent in this matter")
-  end
-
-  scenario "Show milestones", :js do
-    user = create(:user)
-    investment = create(:budget_investment)
-    create(:milestone, milestoneable: investment,
-                       description_en: "Last milestone with a link to https://consul.dev",
-                       description_es: "Último hito con el link https://consul.dev",
-                       publication_date: Date.tomorrow)
-    first_milestone = create(:milestone, milestoneable: investment,
-                                         description: "First milestone",
-                                         publication_date: Date.yesterday)
-    image = create(:image, imageable: first_milestone)
-    document = create(:document, documentable: first_milestone)
-
-    login_as(user)
-    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
-
-    find("#tab-milestones-label").click
-
-    within("#tab-milestones") do
-      expect(first_milestone.description).to appear_before('Last milestone with a link to https://consul.dev')
-      expect(page).to have_content(Date.tomorrow)
-      expect(page).to have_content(Date.yesterday)
-      expect(page).not_to have_content(Date.current)
-      expect(page.find("#image_#{first_milestone.id}")['alt']).to have_content(image.title)
-      expect(page).to have_link(document.title)
-      expect(page).to have_link("https://consul.dev")
-      expect(page).to have_content(first_milestone.status.name)
-    end
-
-    select('Español', from: 'locale-switcher')
-
-    find("#tab-milestones-label").click
-
-    within("#tab-milestones") do
-      expect(page).to have_content('Último hito con el link https://consul.dev')
-      expect(page).to have_link("https://consul.dev")
-    end
-  end
-
-  scenario "Show no_milestones text", :js do
-    user = create(:user)
-    investment = create(:budget_investment)
-
-    login_as(user)
-    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
-
-    find("#tab-milestones-label").click
-
-    within("#tab-milestones") do
-      expect(page).to have_content("Don't have defined milestones")
-    end
   end
 
   scenario "Only winner investments are show when budget is finished" do

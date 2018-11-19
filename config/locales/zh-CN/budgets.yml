@@ -115,9 +115,6 @@ zh-CN:
         price: 价格
         comments_tab: 评论
         milestones_tab: 里程碑
-        no_milestones: 没有已定义的里程碑
-        milestone_publication_date: "发布于%{publication_date}"
-        milestone_status_changed: 投资状态更改为
         author: 作者
         project_unfeasible_html: '此投资项目<strong>已经被标记为不可行</strong>，并将不会进入投票阶段。'
         project_selected_html: '此投资项目<strong>已经被选择</strong>进入投票阶段。'

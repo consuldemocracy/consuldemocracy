@@ -1,0 +1,7 @@
+nl:
+  milestones:
+    index:
+      no_milestones: Zonder gedefinieerde mijlpalen
+    show:
+      publication_date: "Gepubliceerd %{publication_date}"
+      status_changed: Investeringsstatus gewijzigd in
