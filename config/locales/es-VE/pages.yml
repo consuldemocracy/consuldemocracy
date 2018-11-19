@@ -1,6 +1,5 @@
 es-VE:
   pages:
-    general_terms: Términos y Condiciones
     help:
       title: "%{org} es una plataforma para la participación ciudadana"
       guide: "Esta guía explica para qué son cada una de las secciones %{org} y cómo funcionan."
