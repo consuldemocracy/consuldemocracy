@@ -13,3 +13,9 @@ so:
       site_customization/page:
         one: Bog gaara
         other: Bog gaara
+    attributes:
+      budget:
+        name: "Magac"
+        description_accepting: "Sharaxada mudada lugu jiro aqbalaada"
+        description_reviewing: "Sharaxada xiliga Dib u eegida"
+        description_selecting: "Sharaxada mudada lugu jiro aqbalaada"
