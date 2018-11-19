@@ -64,13 +64,4 @@
 
 <%= render 'valuation/budget_investments/valuation_comments' %>
 
-<h2><%= t("admin.budget_investments.show.milestone") %></h2>
-
-<%= render 'admin/budget_investments/milestones' %>
-
-<p>
-  <%= link_to t("admin.budget_investments.show.new_milestone"),
-              polymorphic_path([:admin, *resource_hierarchy_for(@investment.milestones.new)],
-                               action: :new),
-              class: "button hollow" %>
-</p>
+<%= render "admin/milestones/milestones", milestoneable: @investment %>

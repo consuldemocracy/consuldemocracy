@@ -217,8 +217,6 @@ zh-CN:
         tags: 标签
         user_tags: 用户标签
         undefined: 未定义
-        milestone: 里程碑
-        new_milestone: 创建新的里程碑
         compatibility:
           title: 兼容性
           "true": 不兼容
@@ -266,6 +264,8 @@ zh-CN:
         image: "图像"
         show_image: "显示图像"
         documents: "文件"
+        milestone: 里程碑
+        new_milestone: 创建新的里程碑
       form:
         admin_statuses: 管理投资状态
         no_statuses_defined: 尚未有已定义的投资状态

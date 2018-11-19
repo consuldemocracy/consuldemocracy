@@ -188,8 +188,6 @@ fa:
         tags: برچسب ها
         user_tags: برچسب های کاربر
         undefined: تعریف نشده
-        milestone: نقطه عطف
-        new_milestone: ایجاد نقطه عطف جدید
         compatibility:
           title: سازگاری
           "true": ناسازگار
@@ -236,6 +234,8 @@ fa:
         image: "تصویر"
         show_image: "نمایش تصویر"
         documents: "اسناد"
+        milestone: نقطه عطف
+        new_milestone: ایجاد نقطه عطف جدید
       new:
         creating: ایجاد نقطه عطف جدید
         date: تاریخ

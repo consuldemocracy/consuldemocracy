@@ -219,8 +219,6 @@ val:
         tags: Etiquetes
         user_tags: Etiquetes de l'usuari
         undefined: Sense definir
-        milestone: Seguiment
-        new_milestone: Crear nova fita
         compatibility:
           title: Compatibilitat
           "true": Incomptatible
@@ -1046,6 +1044,8 @@ val:
       image: Imatge
       show_image: Mostrar imatge
       moderated_content: "Revisa el contigut moderat pels moderadors, i confirma si la moderació s'ha realitzat correctament."
+      milestone: Seguiment
+      new_milestone: Crear nova fita
       view: Vista
       proposal: Proposta
       author: Autor
