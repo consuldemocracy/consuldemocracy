@@ -87,6 +87,10 @@ class Legislation::ProcessesController < Legislation::BaseController
     end
   end
 
+  def milestones
+    @phase = :milestones
+  end
+
   def proposals
     set_process
     @phase = :proposals_phase

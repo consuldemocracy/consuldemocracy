@@ -1,0 +1,9 @@
+<% provide(:title) { @process.title } %>
+
+<%= render "legislation/processes/header", process: @process, header: :full %>
+
+<%= render "key_dates", process: @process, phase: @phase %>
+
+<div class="tab-milestones">
+  <%= render "milestones/milestones_content", milestoneable: @process %>
+</div>
