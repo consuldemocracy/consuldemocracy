@@ -4,7 +4,6 @@ gl:
       title: Termos e condicións de uso
       subtitle: AVISO LEGAL DAS CONDICIÓNS DE USO, PRIVACIDADE E PROTECCIÓN DOS DATOS DE CARÁCTER PERSOAL DO PORTAL DE GOBERNO ABERTO
       description: Páxina de información sobre as condicións de uso, privacidade e protección de datos de carácter persoal.
-    general_terms: Termos e condicións
     help:
       title: "%{org} é unha plataforma de participación cidadá"
       guide: "Esta guía explica para que serven e como funcionan cada unha das seccións de %{org}."
@@ -87,10 +86,6 @@ gl:
             - 
               field: 'Organismo responsable do ficheiro:'
               description: ORGANISMO RESPONSABLE DO FICHEIRO
-        - 
-          text: O interesado poderá exercer os dereitos de acceso, rectificación, cancelación e oposición ante o órgano responsable indicado, todo iso informado de conformidade co artigo 5 da Lei Orgánica 15/1999, de 13 de decembro, de protección de datos de carácter persoal.
-        - 
-          text: Como principio xeral, este sitio web non comparte nin divulga a información obtida, agás cando sexa autorizada polo usuario, ou a información fose requirida pola autoridade xudicial, fiscal, policía xudicial, ou calquera dos casos regulados no Artigo 11 da Lei Orgánica 15/1999, do 13 de decembro, de protección de datos de carácter persoal.
     accessibility:
       title: Accesibilidade
       description: |-
@@ -182,7 +177,6 @@ gl:
               description_column: Reduce o tamaño do texto
       compatibility:
         title: Compatibilidade cos estándares e o deseño visual
-        description_html: 'Todas as páxinas deste sitio web cumpren coa <strong> Guía de Accesibilidade </strong> ou os Principios Xerais do Deseño Accesible que son recomendados polo Grupo de Traballo <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> pertencente ao W3C.'
     titles:
       conditions: Condicións de uso
       help: "Que é %{org}? - Participación cidadá"
