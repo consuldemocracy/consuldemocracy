@@ -2,7 +2,6 @@ fr:
   pages:
     conditions:
       title: Conditions d'utilisation
-    general_terms: Conditions générales
     help:
       title: "%{org} est une plate-forme pour la participation citoyenne"
       guide: "Ce guide détaille chacune des sections de la %{org} et comment elles fonctionnent."
@@ -70,9 +69,6 @@ fr:
               description: NOM DU FICHIER
             - 
             - 
-        - 
-        - 
-          text: En règle générale, ce site Web ne partage ni ne divulgue d'informations obtenues, sauf lorsque cela a été autorisé par l’utilisateur, ou lorsque l’information est exigée par l’autorité judiciaire, un procureur ou la police judiciaire ou les cas régis par la loi en vigueur.
     accessibility:
       title: Accessibilité
       keyboard_shortcuts:
@@ -143,7 +139,6 @@ fr:
               description_column: Diminue la taille du texte
       compatibility:
         title: Compatibilité avec les normes et la conception visuelle
-        description_html: 'Toutes les pages de ce site web sont conformes aux <strong> lignes directrices en matière d''accessibilité </strong> ou aux principes généraux de désign accessible établis par le groupe de travail <abbr title = "Web Accessibility Initiative" lang = "en"> WAI < / abbr > appartenant au W3C.'
     titles:
       accessibility: Accessibilité
       conditions: Conditions d'utilisations
