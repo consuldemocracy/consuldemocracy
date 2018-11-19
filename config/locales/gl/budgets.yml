@@ -118,9 +118,6 @@ gl:
         price: Custo
         comments_tab: Comentarios
         milestones_tab: Seguimento
-        no_milestones: Non hai datos definidos
-        milestone_publication_date: "Publicouse o %{publication_date}"
-        milestone_status_changed: O investimento mudou de estado a
         author: Autoría
         project_unfeasible_html: 'O proxecto de investimento <strong>foi marcado como inviable</strong> e non chegará á fase de votación.'
         project_selected_html: 'Este proxecto de investimento <strong>foi seleccionado</strong> para a fase de votación.'

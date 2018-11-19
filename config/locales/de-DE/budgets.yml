@@ -118,9 +118,6 @@ de:
         price: Preis
         comments_tab: Kommentare
         milestones_tab: Meilensteine
-        no_milestones: Keine Meilensteine definiert
-        milestone_publication_date: "Veröffentlicht %{publication_date}"
-        milestone_status_changed: Investitionsstatus geändert zu
         author: Autor
         project_unfeasible_html: 'Dieses Investitionsprojekt <strong>wurde als nicht durchführbar markiert</strong> und wird nicht in die Abstimmungsphase übergehen.'
         project_selected_html: 'Dieses Investitionsprojekt wurde für die Abstimmungsphase <strong>ausgewählt</strong>.'

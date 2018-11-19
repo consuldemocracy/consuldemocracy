@@ -43,6 +43,7 @@ data:
     - config/locales/%{locale}/images.yml
     - config/locales/%{locale}/user_groups.yml
     - config/locales/%{locale}/i18n.yml
+    - config/locales/%{locale}/milestones.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
