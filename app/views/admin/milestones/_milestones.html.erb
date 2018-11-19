@@ -1,4 +1,6 @@
-<% if @investment.milestones.any? %>
+<h2><%= t("admin.milestones.index.milestone") %></h2>
+
+<% if milestoneable.milestones.any? %>
   <table>
     <thead>
       <tr>
@@ -13,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @investment.milestones.order_by_publication_date.each do |milestone| %>
+      <% milestoneable.milestones.order_by_publication_date.each do |milestone| %>
         <tr id="<%= dom_id(milestone) %>" class="milestone">
           <td class="text-center"><%= milestone.id %></td>
           <td>
@@ -56,3 +58,10 @@
 <% else %>
   <p><%= t("admin.milestones.index.no_milestones") %></p>
 <% end %>
+
+<p>
+  <%= link_to t("admin.milestones.index.new_milestone"),
+              polymorphic_path([:admin, *resource_hierarchy_for(milestoneable.milestones.new)],
+                               action: :new),
+              class: "button hollow" %>
+</p>

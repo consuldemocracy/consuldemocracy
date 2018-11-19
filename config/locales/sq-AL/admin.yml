@@ -219,8 +219,6 @@ sq:
         tags: Etiketimet
         user_tags: Përdorues të etiketuar
         undefined: E padefinuar
-        milestone: Moment historik
-        new_milestone: Krijo momentet historik të ri
         compatibility:
           title: Pajtueshmëri
           "true": I papajtueshëm
@@ -268,6 +266,8 @@ sq:
         image: "Imazh"
         show_image: "Trego imazhin"
         documents: "Dokumentet"
+        milestone: Moment historik
+        new_milestone: Krijo momentet historik të ri
       form:
         admin_statuses: Statusi i investimeve të administratorit
         no_statuses_defined: Ende nuk ka statuse të përcaktuara për investime

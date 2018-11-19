@@ -219,8 +219,6 @@ sv:
         tags: Taggar
         user_tags: Användartaggar
         undefined: Odefinierat
-        milestone: Milstolpe
-        new_milestone: Skapa ny milstolpe
         compatibility:
           title: Kompatibilitet
           "true": Oförenlig
@@ -268,6 +266,8 @@ sv:
         image: "Bild"
         show_image: "Visa bild"
         documents: "Dokument"
+        milestone: Milstolpe
+        new_milestone: Skapa ny milstolpe
       form:
         admin_statuses: Administrativ status för budgetförslag
         no_statuses_defined: Det finns ingen definierad status för budgetförslag än

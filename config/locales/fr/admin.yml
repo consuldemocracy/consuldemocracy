@@ -218,8 +218,6 @@ fr:
         tags: Étiquettes
         user_tags: Tags de l’utilisateur
         undefined: Indéterminé
-        milestone: Jalon
-        new_milestone: Créer nouveau jalon
         compatibility:
           title: Compatibilité
           "true": Incompatibles
@@ -267,6 +265,8 @@ fr:
         image: "Image"
         show_image: "Afficher l'image"
         documents: "Documents"
+        milestone: Jalon
+        new_milestone: Créer nouveau jalon
       form:
         admin_statuses: Administrer les statuts d'investissement
         no_statuses_defined: Il n'y a pas encore de statuts d'investissement définis

@@ -217,8 +217,6 @@ zh-TW:
         tags: 標籤
         user_tags: 用戶標籤
         undefined: 未定義
-        milestone: 里程碑
-        new_milestone: 創建新的里程碑
         compatibility:
           title: 相容性
           "true": 不相容
@@ -266,6 +264,8 @@ zh-TW:
         image: "圖像"
         show_image: "顯示圖像"
         documents: "文檔"
+        milestone: 里程碑
+        new_milestone: 創建新的里程碑
       form:
         admin_statuses: 管理投資狀態
         no_statuses_defined: 尚未有定義投資狀態

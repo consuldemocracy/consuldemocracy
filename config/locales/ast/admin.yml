@@ -79,8 +79,6 @@ ast:
         edit_classification: Editar clasificación
         by: Autor
         sent: Fecha
-        milestone: Siguimientu
-        new_milestone: Crear nuevu finxu
         winner:
           title: Ganadora
       edit:
@@ -91,6 +89,8 @@ ast:
     milestones:
       index:
         delete: "Esaniciar finxu"
+        milestone: Siguimientu
+        new_milestone: Crear nuevu finxu
       new:
         creating: Crear finxu
       edit:

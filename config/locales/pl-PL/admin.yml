@@ -223,8 +223,6 @@ pl:
         tags: Tagi
         user_tags: Tagi użytkownika
         undefined: Niezdefiniowany
-        milestone: Wydarzenie
-        new_milestone: Utwórz wydarzenie
         compatibility:
           title: Zgodność
           "true": Niezgodne
@@ -272,6 +270,8 @@ pl:
         image: "Obraz"
         show_image: "Pokaż obraz"
         documents: "Dokumenty"
+        milestone: Wydarzenie
+        new_milestone: Utwórz wydarzenie
       form:
         admin_statuses: Zarządzaj statusami inwestycyjnymi
         no_statuses_defined: Nie ma jeszcze zdefiniowanych statusów inwestycyjnych
