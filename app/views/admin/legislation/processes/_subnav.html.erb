@@ -31,11 +31,11 @@
 
   <% if active == 'draft_versions' %>
     <li class="is-active">
-      <h2><%= t("admin.legislation.processes.subnav.draft_texts") %></h2>
+      <h2><%= t("admin.legislation.processes.subnav.draft_versions") %></h2>
     </li>
   <% else %>
     <li>
-      <%= link_to t("admin.legislation.processes.subnav.draft_texts"), admin_legislation_process_draft_versions_path(process) %>
+      <%= link_to t("admin.legislation.processes.subnav.draft_versions"), admin_legislation_process_draft_versions_path(process) %>
     </li>
   <% end %>
 </ul>

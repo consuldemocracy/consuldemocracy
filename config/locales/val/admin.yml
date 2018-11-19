@@ -401,7 +401,7 @@ val:
           status_planned: Pròximament
         subnav:
           info: Informació
-          draft_texts: Text
+          draft_versions: Text
           questions: Debat
           proposals: Propostes
       proposals:

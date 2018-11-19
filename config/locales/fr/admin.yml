@@ -402,7 +402,7 @@ fr:
           status_planned: Planifié
         subnav:
           info: Information
-          draft_texts: Brouillon
+          draft_versions: Brouillon
           questions: Débat
           proposals: Propositions
       proposals:

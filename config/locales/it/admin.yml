@@ -402,7 +402,7 @@ it:
           status_planned: Programmato
         subnav:
           info: Informazione
-          draft_texts: Redazione
+          draft_versions: Redazione
           questions: Dibattito
           proposals: Proposte
       proposals:

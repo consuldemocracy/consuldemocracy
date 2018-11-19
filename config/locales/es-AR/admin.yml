@@ -367,7 +367,7 @@ es-AR:
           status_planned: Próximamente
         subnav:
           info: Información
-          draft_texts: Redacción
+          draft_versions: Redacción
           questions: Debate
           proposals: Propuestas
       proposals:
