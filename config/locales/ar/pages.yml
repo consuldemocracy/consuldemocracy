@@ -89,3 +89,6 @@ ar:
     titles:
       accessibility: إمكانية الوصول
       conditions: شروط الاستخدام
+      privacy: سياسة الخصوصية
+    verify:
+      email: البريد الإلكتروني
