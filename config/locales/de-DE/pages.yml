@@ -4,7 +4,6 @@ de:
       title: Allgemeine Nutzungsbedingungen
       subtitle: RECHTLICHE HINWEISE BEZÜGLICH DER NUTZUNG, SCHUTZ DER PRIVATSPHÄRE UND PERSONENBEZOGENER DATEN DES OPEN GOVERNMENT-PORTALS
       description: Informationsseite über die Nutzungsbedingungen, Privatsphäre und Schutz personenbezogener Daten.
-    general_terms: Allgemeine Nutzungsbedingungen
     help:
       title: "%{org} ist eine Plattform zur Bürgerbeteiligung"
       guide: "Diese Anleitung erklärt Ihnen, was die einzelnen %{org}-Abschnitte sind und wie diese funktionieren."
@@ -80,10 +79,6 @@ de:
             - 
               field: 'Für die Datei verantwortliche Institution:'
               description: FÜR DIE DATEI VERANTWORTLICHE INSTITUTION
-        - 
-          text: Die interessierte Partei kann die Rechte auf Zugang, Berichtigung, Löschung und Widerspruch vor der zuständigen Stelle ausüben, die alle gemäß Artikel 5 des Gesetzes 15/1999 vom 13. Dezember über den Schutz persönlicher Daten mitgeteilt wurden.
-        - 
-          text: Als allgemeiner Grundsatz, teilt oder veröffentlicht diese Webseite keine erhaltenen Informationen, außer dies wird vom Nutzer autorisiert, oder die Information wird von der Justizbehörde, der Staatsanwaltschaft, der Gerichtspolizei, oder anderen Fällen, die in Artikel 11 des Organic Law 15/1999 vom 13ten Dezember bezüglich des Schutzes persönlicher Daten festgelegt sind, benötigt.
     accessibility:
       title: Zugänglichkeit
       description: |-
