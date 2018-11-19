@@ -4,7 +4,6 @@ it:
       title: Termini e condizioni d'uso
       subtitle: AVVISO LEGALE SULLE CONDIZIONI D'USO, PRIVACY E PROTEZIONE DEI DATI PERSONALI DEL PORTALE GOVERNO APERTO
       description: Pagina di informazioni sulle condizioni di utilizzo, privacy e protezione dei dati personali.
-    general_terms: Termini e condizioni d'uso
     help:
       title: "%{org} è una piattaforma di partecipazione cittadina"
       guide: "Questa guida spiega a cosa serve e come funziona ciascuna sezione di %{org}."
@@ -80,10 +79,6 @@ it:
             - 
               field: 'Ente responsabile del documento:'
               description: ENTE RESPONSABILE DEL DOCUMENTO
-        - 
-          text: L'interessato potrà esercitare i diritti di accesso, rettifica, cancellazione e opposizione, innanzi all'organismo responsabile indicato, secondo quanto previsto dall'articolo 5 della legge organica 15/1999, del 13 dicembre, sulla protezione dei Dati di Carattere Personale.
-        - 
-          text: Come principio generale, questo sito non condivide o divulga le informazioni raccolte, a meno che non venga a ciò autorizzato dall’utente o le informazioni siano richieste dall'Autorità Giudiziaria, compreso l’ufficio del Pubblico Ministero, o dalla polizia giudiziaria, ovvero in qualsiasi altro caso regolamentato dall'articolo 11 della legge organica 15/1999, del 13 dicembre, sulla Protezione dei Dati Personali.
     accessibility:
       title: Accessibilità
       description: |-
