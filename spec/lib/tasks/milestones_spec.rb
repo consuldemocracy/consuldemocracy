@@ -66,6 +66,11 @@ describe "Milestones tasks" do
       expect(milestone.updated_at.to_date).to eq Date.today
     end
 
+    it "Updates the primary key sequence correctly" do
+      run_rake_task
+      expect { create(:milestone) }.not_to raise_exception
+    end
+
     context "Milestone has images and documents" do
       let(:milestone_id) do
         ActiveRecord::Base.connection.execute(
