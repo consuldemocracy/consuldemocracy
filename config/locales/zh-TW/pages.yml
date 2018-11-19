@@ -4,7 +4,6 @@ zh-TW:
       title: 使用條款及條件
       subtitle: 關於開放政府門戶網站個人數據使用，隱私和保護條件的法律聲明
       description: 使用條件，隱私和個人數據保護的資訊頁面。
-    general_terms: 條款及條件
     help:
       title: "%{org} 是公民參與的平台"
       guide: "本指南解釋了每個%{org} 部分的用途以及它們的操作原理。"
@@ -80,10 +79,6 @@ zh-TW:
             - 
               field: '負責該文件的機構：'
               description: 負責該文件的機構
-        - 
-          text: 有關方可以在負責機構指示之前行使獲取、糾正、取消和反對的權利，所有這些權利都是根據12月13日第15/1999號組織法第5條關於個人數據保護的條款。
-        - 
-          text: 作為一般原則，本網站不會共享或披露所獲得的信息，除非經用戶授權，或根據司法機關、檢察官辦公室或司法警察要求提供信息，或受 12月13日第15/1999號組織法第11條關於個人數據保護的管制。
     accessibility:
       title: 無障礙功能
       description: |-
@@ -174,7 +169,6 @@ zh-TW:
               shortcut_column: CTRL 和 - (MAC機上的 CMD 和 -)
       compatibility:
         title: 兼容標準和視覺設計
-        description_html: '本網站的所有頁面均符合<strong>輔助功能指南</strong>或由屬於W3C的<abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr>工作組建立的無障礙設計的一般原則。'
     titles:
       accessibility: 無障礙功能
       conditions: 使用條款
