@@ -403,7 +403,7 @@ nl:
           status_planned: Gepland
         subnav:
           info: Informatie
-          draft_texts: Tekst
+          draft_versions: Tekst
           questions: Debat
           proposals: Voorstellen
       proposals:
