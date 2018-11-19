@@ -4,7 +4,6 @@ nl:
       title: Gebruikersvoorwaarden
       subtitle: JURIDISCHE KENNISGEVING OP DE GEBRUIKSVOORWAARDEN, PRIVACY EN BESCHERMING VAN PERSOONSGEGEVENS VAN DE OPEN OVERHEID PORTAL
       description: Informatiepagina over de gebruiksvoorwaarden, privacy en bescherming van persoonsgegevens.
-    general_terms: Algemene voorwaarden
     help:
       title: "%{org} is een platform voor burgerparticipatie"
       guide: "Deze handleiding behandelt ieder onderdeel van %{org}. Meer informatie vind je door te klikken op onderstaande links."
@@ -80,10 +79,6 @@ nl:
             - 
               field: 'Instelling die belast is met het bestand:'
               description: INSTELLING DIE BELAST IS MET HET BESTAND
-        - 
-          text: De betrokkene mag de rechten van toegang, rectificatie, annulering en oppositie bij de verantwoordelijke instantie aangeven, welke allemaal worden gerapporteerd in overeenstemming met artikel 5 van de Organische wet 15/1999 van 13 December, op de bescherming van persoonsgegevens.
-        - 
-          text: Algemeen uitgangspunt is dat deze website geen informatie deelt of ontsluit, enkel als hier door de betrokken deelnemer toestemming voor is gegeven. Of wanneer de informatie is vereist door de rechterlijke instantie, ministerie of de gerechtelijke politie of een van de gevallen geregeld in het artikel 11 van de organieke wet 15/1999 van 13 December betreffende de bescherming van persoonsgegevens.
     accessibility:
       title: Toegankelijkheid
       description: |-
@@ -174,7 +169,6 @@ nl:
               shortcut_column: CTRL en - (CMD  en - bij MAC)
       compatibility:
         title: Compatibiliteit met standaarden en visuele vormgeving
-        description_html: 'Alle pagina''s van deze website voldoen aan <strong> Toegankelijkheidsrichtlijnen </strong> of generieke principes van toegankelijk ontwerp zoals opgesteld door de werkgroep <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> behorend bij W3C.'
     titles:
       accessibility: Toegankelijkheid
       conditions: Gebruikersvoorwaarden
