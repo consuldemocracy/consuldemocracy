@@ -115,9 +115,6 @@ zh-TW:
         price: 價格
         comments_tab: 評論
         milestones_tab: 里程碑
-        no_milestones: 沒有已定義的里程碑
-        milestone_publication_date: "發佈於 %{publication_date}"
-        milestone_status_changed: 投資狀態改為
         author: 作者
         project_unfeasible_html: '此投資項目 <strong>已被標記為不可行</strong>，不會進入投票階段。'
         project_selected_html: '此投資項目 <strong>已被選入</strong>投票階段。'

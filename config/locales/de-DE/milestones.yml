@@ -1,0 +1,7 @@
+de:
+  milestones:
+    index:
+      no_milestones: Keine Meilensteine definiert
+    show:
+      publication_date: "Veröffentlicht %{publication_date}"
+      status_changed: Investitionsstatus geändert zu
