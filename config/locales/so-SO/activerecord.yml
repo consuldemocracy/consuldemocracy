@@ -18,4 +18,12 @@ so:
         name: "Magac"
         description_accepting: "Sharaxada mudada lugu jiro aqbalaada"
         description_reviewing: "Sharaxada xiliga Dib u eegida"
-        description_selecting: "Sharaxada mudada lugu jiro aqbalaada"
+        description_selecting: "Sharaxaada inta lugu jiro dorashada"
+        description_valuating: "Sharaxada inta lugu jiro Qimeeynta"
+        description_balloting: "Sharaxada mudada lugu jiro balanka"
+        description_reviewing_ballots: "Sharaxaadda inta lagu jiro dib u fiirinta xaashida codadka"
+        description_finished: "Sharaxaada Marka ay Misaaniyadu dhamatoo"
+        phase: "Weeji"
+        currency_symbol: "Lacagta"
+      budget/investment:
+        heading_id: "Madaxa"
