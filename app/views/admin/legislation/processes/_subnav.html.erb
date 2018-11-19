@@ -1,41 +1,13 @@
 <ul class="menu simple clear">
-  <% if active == 'info' %>
-    <li class="is-active">
-      <h2><%= t("admin.legislation.processes.subnav.info") %></h2>
-    </li>
-  <% else %>
-    <li>
-      <%= link_to t("admin.legislation.processes.subnav.info"), edit_admin_legislation_process_path(process) %>
-    </li>
-  <% end %>
-
-  <% if active == 'questions' %>
-    <li class="is-active">
-      <h2><%= t("admin.legislation.processes.subnav.questions") %></h2>
-    </li>
-  <% else %>
-    <li>
-      <%= link_to t("admin.legislation.processes.subnav.questions"), admin_legislation_process_questions_path(process) %>
-    </li>
-  <% end %>
-
-  <% if active == 'proposals' %>
-    <li class="is-active">
-      <h2><%= t("admin.legislation.processes.subnav.proposals") %></h2>
-    </li>
-  <% else %>
-    <li>
-      <%= link_to t("admin.legislation.processes.subnav.proposals"), admin_legislation_process_proposals_path(process) %>
-    </li>
-  <% end %>
-
-  <% if active == 'draft_versions' %>
-    <li class="is-active">
-      <h2><%= t("admin.legislation.processes.subnav.draft_versions") %></h2>
-    </li>
-  <% else %>
-    <li>
-      <%= link_to t("admin.legislation.processes.subnav.draft_versions"), admin_legislation_process_draft_versions_path(process) %>
-    </li>
+  <% legislation_process_tabs(process).each do |tab_name, path| %>
+    <% if active == tab_name %>
+      <li class="is-active">
+        <h2><%= t("admin.legislation.processes.subnav.#{tab_name}") %></h2>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to t("admin.legislation.processes.subnav.#{tab_name}"), path %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
