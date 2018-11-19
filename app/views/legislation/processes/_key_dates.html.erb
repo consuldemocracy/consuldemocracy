@@ -49,6 +49,15 @@
               <% end %>
             </li>
           <% end %>
+
+          <% if process.milestones.any? %>
+            <li class="milestones <%= "is-active" if phase == :milestones %>">
+              <%= link_to milestones_legislation_process_path(process) do %>
+                <h4><%= t("legislation.processes.shared.milestones_date") %></h4>
+                <p><%= format_date(process.milestones.order_by_publication_date.last.publication_date) %></p>
+              <% end %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

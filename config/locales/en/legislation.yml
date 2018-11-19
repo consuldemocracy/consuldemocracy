@@ -87,6 +87,7 @@ en:
         draft_publication_date: Draft publication
         allegations_dates: Comments
         result_publication_date: Final result publication
+        milestones_date: Following
         proposals_dates: Proposals
     questions:
       comments:
