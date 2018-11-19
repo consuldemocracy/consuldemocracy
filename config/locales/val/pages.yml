@@ -4,7 +4,6 @@ val:
       title: Termes i condicions d'us
       subtitle: AVIS LEGAL SOBRE LES CONDICIONS D'US, PRIVACITAT I PROTECCIÓ DE LES DADES PERSONALS DEL PORTAL DE GOVERN OBERT
       description: Pàgina d'informació sobre les condicions d'us, privacitat i protecció de dades personals.
-    general_terms: Condicions d'us
     help:
       title: "%{org} es una plataforma de participació ciutadana"
       guide: "Esta guia explica per a qué serveixen i com funcionen cadascuna de les seccions de %{org}."
@@ -79,8 +78,6 @@ val:
             - 
               field: 'Organització responsable de l''arxiu:'
               description: ORGANITZACIÓ RESPONSABLE DE L'ARXIU
-        - 
-        - 
     accessibility:
       title: Accessibilitat
       keyboard_shortcuts:
