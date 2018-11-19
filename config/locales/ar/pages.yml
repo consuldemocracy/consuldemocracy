@@ -2,6 +2,16 @@ ar:
   pages:
     help:
       guide: "هذا الدليل يوضح ما الهدف من الأقسام %{org} وكيفية عملها."
+      debates:
+        feature_html: "يمكنك فتح حوار أو التعليق والتقييم على حوار موجود <strong>أنا اتفق مع</strong> أو <strong>لا أوافق على</strong>. من خلال %{link}."
+        feature_link: "سجل في %{org}"
+        image_alt: "أزرار تقييم الحوارات"
+        figcaption: '"اوافق" و "لا اوافق" لتقييم الحوارات.'
+      proposals:
+        title: "مقترحات"
+        link: "مقترحات المواطنين"
+        image_alt: "زر لدعم اقتراح"
+        figcaption_html: 'الزر "دعم" اقتراح.'
       faq:
         title: "مشاكل فنية؟"
     accessibility:
@@ -14,3 +24,14 @@ ar:
         - When videos have subtitles, users with hearing difficulties can fully understand them.
         - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
         - إذا كان المستخدم لديه مشاكل في التنقل ومن الصعب عليه استخدام الفأرة، فهناك بدائل في لوحة المفاتيحح ستساعد في عملية التصفح.
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+            - 
+            - 
+              key_column: 3
+              page_column: الأصوات
+            - 
+            - 
