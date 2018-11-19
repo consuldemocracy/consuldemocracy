@@ -12,6 +12,10 @@ feature 'Admin legislation processes' do
                   "edit_admin_legislation_process_path",
                   %w[title summary description additional_info]
 
+  it_behaves_like "admin_milestoneable",
+                  :legislation_process,
+                  "admin_legislation_process_milestones_path"
+
   context "Feature flag" do
 
     scenario 'Disabled with a feature flag' do

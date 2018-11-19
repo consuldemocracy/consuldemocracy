@@ -198,6 +198,7 @@ namespace :admin do
         member { patch :toggle_selection }
       end
       resources :draft_versions
+      resources :milestones
     end
   end
 
