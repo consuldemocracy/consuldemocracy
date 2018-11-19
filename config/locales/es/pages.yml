@@ -4,7 +4,6 @@ es:
       title: Condiciones de uso
       subtitle: AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE DATOS PERSONALES DEL PORTAL DE GOBIERNO ABIERTO
       description: Página de información sobre las condiciones de uso, privacidad y protección de datos personales.
-    general_terms: Términos y Condiciones
     help:
       menu:
         polls: "Votaciones"
@@ -36,10 +35,6 @@ es:
             - 
               field: 'Órgano responsable:'
               description: ÓRGANO RESPONSABLE
-        - 
-          text: El interesado podrá ejercer los derechos de acceso, rectificación, cancelación y oposición, ante el órgano responsable indicado todo lo cual se informa en el cumplimiento del artículo 5 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
-        - 
-          text: Como principio general, este sitio web no comparte ni revela información obtenida, excepto cuando haya sido autorizada por el usuario, o la informacion sea requerida por la autoridad judicial, ministerio fiscal o la policia judicial, o se de alguno de los supuestos regulados en el artículo 11 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
     accessibility:
       title: Accesibilidad
       description: |-
@@ -130,7 +125,6 @@ es:
               shortcut_column: CTRL y - (CMD y - en MAC)
       compatibility:
         title: Compatibilidad con estándares y diseño visual
-        description_html: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
