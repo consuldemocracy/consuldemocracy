@@ -4,7 +4,6 @@ zh-CN:
       title: 使用条款和条件
       subtitle: 关于开放政府门户网站个人数据的使用条件，隐私和保护的法律声明
       description: 有关个人数据的使用条件，隐私和保护的资讯页面。
-    general_terms: 条款和条件
     help:
       title: "%{org} 是公民参与的平台"
       guide: "此指南解释了每个%{org} 部分的用途以及它们的作业原理。"
@@ -80,10 +79,6 @@ zh-CN:
             - 
               field: '负责此文件的机构：'
               description: 负责此文件的机构
-        - 
-          text: 有关方可以在负责机构指示前行使获取，纠正，取消和反对的权利。所有这些权利都是根据12月13日第15/1999号组织法第5条关于个人数据保护的条款。
-        - 
-          text: 作为一般原则，本网站不会分享或者披露所获得的资讯，除非是得到用户的授权，或者被司法机关，检察办公室，或者司法警察要求提供资讯，或者受12月13日第15/1999 组织法第11 条关于个人数据保护的管制。
     accessibility:
       title: 无障碍功能
       description: |-
@@ -174,7 +169,6 @@ zh-CN:
               shortcut_column: CTRL 和 - (在MAC上用CMD 和 -)
       compatibility:
         title: 与标准和视觉设计兼容
-        description_html: '本网站的所有页面均符合<strong>辅助功能指南</strong>或者由属于W3C的<abbr title = "Web Accessibility Initiative" lang = "en">WAI </ abbr>工作组建立的无障碍设计的一般原则。'
     titles:
       accessibility: 无障碍功能
       conditions: 使用条款
