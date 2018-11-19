@@ -219,8 +219,6 @@ nl:
         tags: Labels
         user_tags: Deelnemerslabels
         undefined: Niet gedefinieerd
-        milestone: Mijlpaal
-        new_milestone: Nieuwe mijlpaal
         compatibility:
           title: Compatibiliteit
           "true": Niet compatibel
@@ -268,6 +266,8 @@ nl:
         image: "Afbeelding"
         show_image: "Toon afbeelding"
         documents: "Documenten"
+        milestone: Mijlpaal
+        new_milestone: Nieuwe mijlpaal
       form:
         admin_statuses: Beheerderstatussen
         no_statuses_defined: Er zijn nog geen gedefinieerde investeringsstatussen

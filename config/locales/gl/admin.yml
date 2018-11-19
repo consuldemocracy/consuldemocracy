@@ -220,8 +220,6 @@ gl:
         tags: Etiquetas
         user_tags: Etiquetas do usuario
         undefined: Sen definir
-        milestone: Seguimento
-        new_milestone: Crear novo seguimento
         compatibility:
           title: Compatibilidade
           "true": Incompatible
@@ -269,6 +267,8 @@ gl:
         image: "Imaxe"
         show_image: "Amosar imaxe"
         documents: "Documentos"
+        milestone: Seguimento
+        new_milestone: Crear novo seguimento
       form:
         admin_statuses: Administrar estados de investimento
         no_statuses_defined: Aínda non se definirion os estados dos investimentos

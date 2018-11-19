@@ -223,8 +223,6 @@ es:
         tags: Etiquetas
         user_tags: Etiquetas del usuario
         undefined: Sin definir
-        milestone: Seguimiento
-        new_milestone: Crear nuevo hito
         compatibility:
           title: Compatibilidad
           "true": Incompatible
@@ -272,6 +270,8 @@ es:
         image: "Imagen"
         show_image: "Mostrar imagen"
         documents: "Documentos"
+        milestone: Seguimiento
+        new_milestone: Crear nuevo hito
       form:
         admin_statuses: Gestionar estados de proyectos
         no_statuses_defined: No hay estados definidos
