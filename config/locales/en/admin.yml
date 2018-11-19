@@ -420,6 +420,7 @@ en:
           draft_versions: Drafting
           questions: Debate
           proposals: Proposals
+          milestones: Following
       proposals:
         index:
           title: Proposals
@@ -518,6 +519,9 @@ en:
           comments_count: Comments count
         question_option_fields:
           remove_option: Remove option
+      milestones:
+        index:
+          title: Following
     managers:
       index:
         title: Managers
