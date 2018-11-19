@@ -7,3 +7,9 @@ so:
       valuator:
         one: "Qimeeye"
         other: "Qimeeye"
+      manager:
+        one: "Mamule"
+        other: "Mamule"
+      site_customization/page:
+        one: Bog gaara
+        other: Bog gaara
