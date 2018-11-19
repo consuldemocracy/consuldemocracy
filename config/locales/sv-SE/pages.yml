@@ -1,6 +1,5 @@
 sv:
   pages:
-    general_terms: Regler och villkor
     help:
       title: "%{org} är en plattform för medborgardeltagande"
       guide: "Den här guiden förklarar de olika delarna av %{org} och hur de fungerar."
