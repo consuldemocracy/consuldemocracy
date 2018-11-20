@@ -30,6 +30,8 @@ ar:
       - الخميس
       - الجمعة
       - السبت
+    formats:
+      default: "%Y-%m-%d"
     month_names:
       - 
       - يناير
