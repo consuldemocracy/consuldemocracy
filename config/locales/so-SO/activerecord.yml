@@ -93,3 +93,23 @@ so:
         changelog: Isbedel
         status: Xaladda
         final_version: Koobiga kama dabeysta ah
+      legislation/draft_version/translation:
+        title: Ciwaanka Sawirka
+        body: Qoraal
+        changelog: Isbedeladda
+      legislation/question:
+        title: Ciwaan
+        question_options: Fursadaha
+      legislation/question_option:
+        value: Qimaha
+      legislation/annotation:
+        text: Faalo
+      document:
+        title: Ciwaan
+        attachment: Kulifaaq
+      image:
+        title: Ciwaan
+        attachment: Kulifaaq
+      poll/question/answer:
+        title: Jawaab
+        description: Sharaxaad
