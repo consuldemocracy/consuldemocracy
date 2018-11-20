@@ -149,7 +149,6 @@ ar:
       heading: "نتائج الميزانيات المشاركة"
       heading_selection_title: "جسب المنطقة"
       spending_proposal: عنوان الاقتراح
-      ballot_lines_count: الاوقات المحددة
       hide_discarded_link: اخفاء المهملة
       show_all_link: اظهار الكل
       price: السعر
@@ -160,6 +159,9 @@ ar:
       investment_proyects: قائمة بجميع المشاريع الاستثمارية
       unfeasible_investment_proyects: قائمة بجميع المشاريع الاستثمارية الغير مجدية
       not_selected_investment_proyects: قائمة بالمشاريع الاستثمارية الغير محددة للاقرتاح
+    executions:
+      filters:
+        label: "حالة المشروع الحالية"
     phases:
       errors:
         dates_range_invalid: "تاريخ البدأ لا يمكن ان يكون مساو او يتجاوز تاريخ الانتهاء"
