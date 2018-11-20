@@ -80,3 +80,16 @@ so:
         association_name: "Magaca ururka"
         description: "Sharaxaad"
         external_url: "Isku xirka dukumentiyada dheeraadka ah"
+        geozone_id: "Baxada Hawlgalka"
+        title: "Ciwaan"
+      poll:
+        name: "Magac"
+        starts_at: "Tariikhda biloowga"
+      legislation/process/translation:
+        additional_info: Xogdheeriya
+      legislation/draft_version:
+        title: Ciwaanka Sawirka
+        body: Qoraal
+        changelog: Isbedel
+        status: Xaladda
+        final_version: Koobiga kama dabeysta ah
