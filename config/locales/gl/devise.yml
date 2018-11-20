@@ -6,7 +6,13 @@ gl:
       change_password: "Cambia o contrasinal"
       new_password: "Novo contrasinal"
       updated: "O contrasinal actualizouse con éxito"
+    confirmations:
+      confirmed: "A túa conta foi confirmada."
+      send_instructions: "Nun intre, recibirás unha mensaxe de correo con instrucións sobre como restabelecer o teu contrasinal."
+      send_paranoid_instructions: "Se o teu correo electrónico existe na nosa base de datos recibirás un correo nun intre con instrucións sobre como restabelecer o teu contrasinal."
     failure:
+      already_authenticated: "Xa iniciaches sesión."
+      inactive: "A túa conta aínda non foi activada."
       not_found_in_database: "%{authentication_keys} ou o contrasinal non son correctos."
     mailer:
       confirmation_instructions:
