@@ -1,15 +1,15 @@
 <div class="tabs-panel tab-milestones" id="tab-milestones">
   <div class="row">
     <div class="small-12 column">
-      <% if @investment.milestones.blank? %>
+      <% if milestoneable.milestones.blank? %>
         <div class="callout primary text-center">
-          <%= t('budgets.investments.show.no_milestones') %>
+          <%= t("milestones.index.no_milestones") %>
         </div>
       <% end %>
       <section class="timeline">
         <ul class="no-bullet">
-          <% @investment.milestones.order_by_publication_date.each do |milestone| %>
-            <%= render 'budgets/investments/milestones/milestone', milestone: milestone %>
+          <% milestoneable.milestones.order_by_publication_date.each do |milestone| %>
+            <%= render "milestones/milestone", milestone: milestone %>
           <% end %>
         </ul>
       </section>

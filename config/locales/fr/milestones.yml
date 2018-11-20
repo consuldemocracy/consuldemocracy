@@ -1,0 +1,7 @@
+fr:
+  milestones:
+    index:
+      no_milestones: Aucun jalon défini
+    show:
+      publication_date: "Publié le %{publication_date}"
+      status_changed: Statut d'investissement changé à

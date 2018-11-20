@@ -83,7 +83,6 @@ ast:
         votes: Votos
         price: Costu
         milestones_tab: Siguimientu
-        no_milestones: Nun hai finxos definíos
       wrong_price_format: Solo pue incluyir calteres numbéricos
       investment:
         add: Votar

@@ -118,9 +118,6 @@ fr:
         price: Coût
         comments_tab: Commentaires
         milestones_tab: Jalons
-        no_milestones: Aucun jalon défini
-        milestone_publication_date: "Publié le %{publication_date}"
-        milestone_status_changed: Statut d'investissement changé à
         author: Auteur
         project_unfeasible_html: 'Ce projet d''investissement <strong>a été marqué comme irréalisable</strong> et n''ira pas en phase de vote.'
         project_selected_html: 'Ce projet d''investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote.'

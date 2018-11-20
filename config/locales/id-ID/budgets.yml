@@ -105,8 +105,6 @@ id:
         price: Harga
         comments_tab: Komentar
         milestones_tab: Tonggak
-        no_milestones: Jangan telah ditetapkan tonggak
-        milestone_publication_date: "Diterbitkan %{publication_date}"
         author: Penulis
       wrong_price_format: Hanya angka bilangan bulat
       investment:

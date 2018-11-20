@@ -203,8 +203,6 @@ es-CL:
         tags: Etiquetas
         user_tags: Etiquetas del usuario
         undefined: Sin definir
-        milestone: Seguimiento
-        new_milestone: Crear nuevo hito
         compatibility:
           title: Compatibilidad
         selection:
@@ -244,6 +242,8 @@ es-CL:
         image: "Imagen"
         show_image: "Mostrar imagen"
         documents: "Documentos"
+        milestone: Seguimiento
+        new_milestone: Crear nuevo hito
       new:
         creating: Crear hito
         date: Fecha
