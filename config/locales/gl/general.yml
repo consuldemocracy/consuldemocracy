@@ -323,6 +323,7 @@ gl:
       start_proposal: Crea unha proposta
       title: Propostas
       top: Top semanal
+      top_link_proposals: Propostas máis apoiadas por categoría
       section_header:
         icon_alt: Icona das propostas
         title: Propostas
@@ -333,8 +334,14 @@ gl:
     new:
       form:
         submit_button: Crear proposta
+      more_info: Como funcionan as propostas cidadás?
       recommendation_one: Non escribas o título da proposta ou frases enteiras en maiúsculas. En Internet iso considérase berrar. E a ninguén lle gusta que lle berren.
       recommendation_three: Goza deste espazo, das voces que o enchen. Tamén é teu.
+      recommendation_two: Calquera proposta ou comentario que implique unha acción ilegal será eliminada, tamén as que teñan a intención de sabotar os espazos de proposta. Todo o demais está permitido.
+      recommendations_title: Recomendacións para crear unha proposta
+      start_new: Crear unha proposta
+    notice:
+      retired: Proposta eliminada
     proposal:
       created: "Creaches unha proposta!"
       share:
@@ -343,11 +350,13 @@ gl:
         view_proposal: Agora non, ir á miña proposta
       improve_info: "Mellora a túa campaña e consegue máis apoios"
       improve_info_link: "Ver máis información"
+      already_supported: Xa apoiaches esta proposta, compártea!
       comments:
         zero: Sen comentarios
         one: 1 comentario
         other: "%{count} comentarios"
       support: Apoiar
+      support_title: Apoiar esta proposta
       supports:
         zero: Sen apoio
         one: 1 apoio
@@ -356,19 +365,25 @@ gl:
         zero: Sen votos
         one: 1 voto
         other: "%{count} votos"
+      supports_necessary: "%{number} apoios necesarios"
       total_percent: 100%
       archived: "Esta proposta foi arquivada e xa non pode recoller apoios."
       successful: "Esta proposta acadou os apoios necesarios."
     show:
       author_deleted: Usuario eliminado
+      code: 'Código da proposta:'
       comments:
         zero: Sen comentarios
         one: 1 comentario
         other: "%{count} comentarios"
       comments_tab: Comentarios
       edit_proposal_link: Editar
+      flag: Esta proposta foi marcada como inapropiada por varios usuarios.
       login_to_comment: Debes %{signin} ou %{signup} para comentares.
       notifications_tab: Notificacións
+      retired_warning: "O autor desta proposta considera que xa non debe seguir recollendo apoios."
+      retired_warning_link_to_explanation: Revisa a súa explicación antes de apoiala.
+      retired: Proposta eliminada polo autor
       share: Compartir
       send_notification: Enviar notificación
       no_notifications: "A proposta non ten notificacións."
@@ -472,6 +487,14 @@ gl:
     "no": "Non"
     search_results: "Resultados da procura"
     advanced_search:
+      author_type: 'Por categoría de autor'
+      author_type_blank: 'Elixe unha categoría'
+      date: 'Por data'
+      date_placeholder: 'DD/MM/AAAA'
+      date_range_blank: 'Elixe unha data'
+      date_1: 'Últimas 24 horas'
+      date_2: 'Última semana'
+      date_3: 'Último mes'
       search: 'Filtrar'
     author_info:
       author_deleted: Usuario eliminado
@@ -613,6 +636,8 @@ gl:
       retired: "Proposta retirada"
       see: "Ver proposta"
   votes:
+    comment_unauthenticated: Necesitas %{signin} ou %{signup} para poder votar.
+    disagree: Non estou de acordo
     organizations: As organizacións non poden votar
     signin: iniciar a sesión
     signup: rexistrarse
@@ -625,6 +650,7 @@ gl:
       not_verified: As propostas só poden ser votadas por usuarios con contas verificadas, %{verify_account}.
       organization: As organizacións non poden votar
       unfeasible: Non se poden votar proxectos de investimento inviables
+      not_voting_allowed: A fase de votación está pechada
     budget_investments:
       not_logged_in: Precisas %{signin} ou %{signup} para continuares.
       not_verified: Os proxectos de investimento só poden ser votados por usuarios con contas verificadas, polo que %{verify_account}.
@@ -659,6 +685,11 @@ gl:
       budget_investments:
         title: Orzamentos recomendados
       slide: "Ver %{title}"
+    verification:
+      i_dont_have_an_account: Non teño unha conta
+      i_have_an_account: Xa teño unha conta
+      question: Tes xa unha conta en %{org_name}?
+      title: Verificación de conta
     welcome:
       go_to_index: Ver propostas e debates
       title: Participa
