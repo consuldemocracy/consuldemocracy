@@ -21,7 +21,12 @@ module AdminHelper
   end
 
   def menu_moderated_content?
-    ["hidden_proposals", "debates", "comments", "hidden_users", "activity", "hidden_budget_investments"].include?(controller_name) && controller.class.parent != Admin::Legislation
+    moderated_sections.include?(controller_name) && controller.class.parent != Admin::Legislation
+  end
+
+  def moderated_sections
+    ["hidden_proposals", "debates", "comments", "hidden_users", "activity",
+     "hidden_budget_investments"]
   end
 
   def menu_budget?
