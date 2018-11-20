@@ -37,12 +37,30 @@ ar:
     budget_investments:
       index:
         confirm: هل أنت متأكد؟
+        ignore_flags: شوهد
+        order: ترتيب حسب
+        orders:
+          created_at: الأحدث
+          flags: علامات أكثر
+        title: استثمارات الميزانية
     proposal_notifications:
       index:
+        block_authors: حظر الكاتبين
         confirm: هل أنت متأكد؟
+        filter: إنتقاء \ فلترة
         filters:
           all: الكل
+          pending_review: بانتظار المراجعة
+          ignored: شوهد
+        headers:
+          proposal_notification: التنبيه لاقتراح
+        hide_proposal_notifications: الإقتراحات المخفية
+        ignore_flags: شوهد
         order: الطلب من طرف
+        orders:
+          created_at: الأحدث
+          moderated: تمت المراجعة
+        title: التنبيه لاقتراح
     users:
       index:
         hidden: محظور
