@@ -123,3 +123,8 @@ so:
           undecided: "An go aasan"
         selected: "Ladoortay"
         select: "Dorasho"
+      show:
+        no_documents: "Dukumenti La an"
+        valuator_groups: "Kooxdaha Qimeeynta"
+      edit:
+        classification: Qeybinta
