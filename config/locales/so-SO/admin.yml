@@ -31,3 +31,29 @@ so:
         target_url: Isku xirka
         post_started_at: Bostada laga bilaabo
         post_ended_at: Boostada kudhamaatay
+        sections_label: Qaybaha ayka muqan doonan
+        sections:
+          homepage: Bogga
+          debates: Doodo
+          proposals: Sojeedino
+          budgets: Misaaniyada kaqayb qadashada
+          help_page: Bogga Caawinta
+        background_color: Midaabka hore
+      edit:
+        editing: Bedel baneer
+        form:
+          submit_button: Badbaadi beddelka
+      errors:
+        form:
+          error:
+            one: "qalad ayaa ka hortagay banner tan ka badbaaday"
+            other: "qalad ayaa ka hortagay banner tan ka badbaaday"
+      new:
+        creating: Same banner
+    activity:
+      show:
+        action: Tilaabo
+        actions:
+          block: Xanibay
+          hide: Qarsoon
+          restore: Socelin
