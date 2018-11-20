@@ -259,10 +259,17 @@ gl:
       duplicated: Duplicadas
       started: En execución
       unfeasible: Inviable
+      done: Realizadas
+      other: Outras
     form:
       geozone: Ámbito de actuación
       proposal_external_url: Ligazón a documentación adicional
+      proposal_question: Pregunta da proposta
       proposal_question_example_html: "Debe resumirse nunha pregunta cunha resposta tipo «Si ou Non»"
+      proposal_responsible_name: Nome e apelidos da persoa que fai esta proposta
+      proposal_responsible_name_note: "(individualmente ou como representante dun colectivo; non se amosará publicamente)"
+      proposal_summary: Resumo da proposta
+      proposal_summary_note: "(máximo 200 caracteres)"
       proposal_text: Descrición ampliada da proposta
       proposal_title: Título da proposta
       proposal_video_url: Ligazón a vídeo externo
@@ -295,14 +302,18 @@ gl:
         actions:
           success: "As recomendacións para propostas foron deshabilitadas para esta conta"
           error: "Produciuse un erro. Por favor, accede á páxina 'A miña conta' para deshabilitar de xeito manual as recomendacións para as propostas"
+      retired_proposals: Propostas eliminadas
+      retired_proposals_link: "Propostas eliminadas polos seus autores"
       retired_links:
         all: Todas
         duplicated: Duplicadas
+        started: En execución
         unfeasible: Invíables
         done: Realizadas
         other: Outras
       search_form:
         button: Buscar
+        placeholder: Buscar propostas...
         title: Buscar
       search_results_html:
         one: " que contén o termo <strong>%{search_term}</strong>"
@@ -311,6 +322,7 @@ gl:
       select_order_long: 'Estás vendo as propostas de acordo con:'
       start_proposal: Crea unha proposta
       title: Propostas
+      top: Top semanal
       section_header:
         icon_alt: Icona das propostas
         title: Propostas
