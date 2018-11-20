@@ -1010,7 +1010,7 @@ zh-TW:
       search:
         title: 搜尋組織
         no_results: 未找到任何組織。
-    proposals:
+    hidden_proposals:
       index:
         filter: 篩選器
         filters:
