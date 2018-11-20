@@ -1,1 +1,12 @@
 so:
+  admin:
+    header:
+      title: Mamul
+    actions:
+      actions: Tilaabooyin
+      confirm: Mahubtaa adigu?
+      confirm_hide: Xaqiijinta dhexdhexaadinta
+      hide: Qarin
+      hide_author: Qoore Qarson
+      restore: Socelin
+      mark_featured: Soobandhigiid/ Muqaal
