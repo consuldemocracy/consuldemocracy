@@ -8,12 +8,16 @@
 
     <table>
       <thead>
+        <th scope="col" class="text-center"><%= t("admin.administrators.index.id") %></th>
         <th scope="col"><%= t("admin.administrators.index.name") %></th>
         <th scope="col"><%= t("admin.administrators.index.email") %></th>
         <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
       </thead>
       <% @administrators.each do |administrator| %>
         <tr>
+          <td class="text-center">
+            <%= administrator.id %>
+          </td>
           <td>
             <%= administrator.name %>
           </td>

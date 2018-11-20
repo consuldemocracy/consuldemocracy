@@ -10,6 +10,7 @@ feature 'Admin administrators' do
   end
 
   scenario 'Index' do
+    expect(page).to have_content @administrator.id
     expect(page).to have_content @administrator.name
     expect(page).to have_content @administrator.email
     expect(page).not_to have_content @user.name
