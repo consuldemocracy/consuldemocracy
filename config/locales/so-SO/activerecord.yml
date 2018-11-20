@@ -27,3 +27,21 @@ so:
         currency_symbol: "Lacagta"
       budget/investment:
         heading_id: "Madaxa"
+        title: "Ciwaan"
+        description: "Sharaxaad"
+        external_url: "Isku xirka dukumentiyada dheeraadka ah"
+        administrator_id: "Mamulaha"
+        organization_name: "Haddii aad soo jeedineyso magaca wadajir / urur, ama wakiil ka socda dad badan, qor magacisa"
+        image: "Sawir muuqaal ah oo soo jeedinaya"
+        image_title: "Sawirka Ciwaanka"
+      budget/investment/milestone:
+        status_id: "Xaaladda maalgashiga hadda (ikhtiyaar)"
+        title: "Ciwaan"
+        description: "Sharaxaad (ikhtiyaari haddii ay jirto xaalad loo xilsaaray)"
+        publication_date: "Taariikhda daabacaadda"
+      budget/investment/status:
+        name: "Magac"
+        description: "Sharaxaad (Ikhyaari ah)"
+      budget/heading:
+        name: "Magaca Ciwaanka"
+        price: "Qime"
