@@ -82,9 +82,6 @@ en:
       legislation/draft_versions:
         one: "Draft version"
         other: "Draft versions"
-      legislation/draft_texts:
-          one: "Draft"
-          other: "Drafts"
       legislation/questions:
         one: "Question"
         other: "Questions"
