@@ -57,3 +57,47 @@ so:
           block: Xanibay
           hide: Qarsoon
           restore: Socelin
+        by: Dhexdhexaad ah
+        content: Mowduuc
+        filter: Muuji/ Tusiid
+        filters:
+          all: Dhamaan
+          on_comments: Faalo
+          on_debates: Doodo
+          on_proposals: Sojeedino
+          on_users: Isticmaalayaal
+          on_system_emails: Emaylka nidaamka
+    budgets:
+      form:
+        max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
+      winners:
+        calculate: Xisaabi kugulestayasha Malgelinta
+        calculated: Xisaabinta kugulestayashu waxay qadaneysaa daqiiqado.
+        recalculate: Dib uxisaabinta ku guleystaha malgelinta
+    budget_phases:
+      edit:
+        start_date: Tariikhda biloowga
+        end_date: Tariikhada dhamadka
+        summary: Sookobiid
+        summary_help_text: Qoraalkan ayaa usheegaya isticmaalaha ku saabsan wajiga. Si aad u muujiso xitaa haddii wajiga uusan firfircooneyn, dooro sanduuqa saxda ee hoose
+        description: Sharaxaad
+        description_help_text: Qoraalkan ayaa ka muuqan doona madaxa marka wajiga uu firfircoon yahay
+        enabled: Marxaladda la awoodo
+        enabled_help_text: Marxaladani waxay noqon doontaa mid guud oo ku saabsan marxaladaha miisaaniyadda, iyo sidoo kale firfircoon ujeedooyinka kale
+        save_changes: Badbaadi beddelka
+    budget_investments:
+      index:
+        heading_filter_all: Dhamaan Ciwaanada
+        administrator_filter_all: Dhamaan Mamulayasha
+        valuator_filter_all: Dhamaan qimeeyayasha
+        tags_filter_all: Dhamaan Taagyada
+        placeholder: Mashariic raadin
+        sort_by:
+          placeholder: Kala saar
+          id: Aqoonsi
+          title: Ciwaan
+          supports: Tageerayaal
+        filters:
+          all: Dhamaan
+          without_admin: Anlahayn maamul
+          without_valuator: An lahayn Qimeeyayaal
