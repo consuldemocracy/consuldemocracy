@@ -1,9 +1,6 @@
 gl:
   activerecord:
     models:
-      activity:
-        one: "actividade"
-        other: "actividades"
       budget:
         one: "Orzamento participativo"
         other: "Orzamentos participativos"
@@ -16,24 +13,12 @@ gl:
       budget/investment/status:
         one: "Estado do investimento"
         other: "Estado dos investimentos"
-      comment:
-        one: "Comentario"
-        other: "Comentarios"
       debate:
         one: "Debate"
         other: "Debates"
-      tag:
-        one: "Tema"
-        other: "Temas"
       user:
         one: "Usuario"
         other: "Usuarios/as"
-      moderator:
-        one: "Moderador"
-        other: "Moderadores"
-      administrator:
-        one: "Administrador"
-        other: "Administradores"
       valuator:
         one: "Avaliador"
         other: "Avaliadores"
@@ -176,7 +161,7 @@ gl:
         association_name: "Nome da asociación"
         description: "Descrición"
         external_url: "Ligazón á documentación adicional"
-        geozone_id: "Ámbito de actuación"
+        geozone_id: "Ámbitos de actuación"
         title: "Título"
       poll:
         name: "Nome"
@@ -307,7 +292,7 @@ gl:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "os temas deben ser menor ou igual que %{count}"
+              less_than_or_equal_to: "o número de etiquetas debe ser igual ou menor que %{count}"
         direct_message:
           attributes:
             max_per_day:
