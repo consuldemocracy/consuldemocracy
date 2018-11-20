@@ -85,6 +85,28 @@ so:
       poll:
         name: "Magac"
         starts_at: "Tariikhda biloowga"
+        ends_at: "Tarikhada xiritaanka"
+        geozone_restricted: "Waxaa xakameynaya qulqulka"
+        summary: "Sookobiid"
+        description: "Sharaxaad"
+      poll/translation:
+        name: "Magac"
+        summary: "Sookobiid"
+        description: "Sharaxaad"
+      poll/question:
+        title: "Sual"
+        summary: "Sookobiid"
+        description: "Sharaxaad"
+        external_url: "Isku xirka dukumentiyada dheeraadka ah"
+      poll/question/translation:
+        title: "Sual"
+      signature_sheet:
+        signable_type: "Nooca muuqda"
+        signable_id: "Aqonsiga la aqoonsan yahay"
+        document_numbers: "Tirada Dukumentiyada"
+      site_customization/page:
+        content: Mawduuc
+        created_at: Abuuray
       legislation/process/translation:
         additional_info: Xogdheeriya
       legislation/draft_version:
@@ -151,3 +173,15 @@ so:
           attributes:
             email:
               password_already_set: "Isticmaalkan horeba wuxuu leeyahay password"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Waxad gaadhay fariimaha ugu badan ee gaarka looleyahay malinlaha ah"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Qeybta dadka qaata ee dadka isticmaala waa mid aan shaqeynin"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Qeybta dadka qaata ee dadka isticmaala waa mid aan shaqeynin"
