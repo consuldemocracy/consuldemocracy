@@ -6,10 +6,14 @@ gl:
       new_comment_by_html: Hai un novo comentario de <b>%{commenter}</b>
       subject: Alguén comentou no teu %{commentable}
       title: Novo comentario
+    config:
+      manage_email_subscriptions: Podes deixar de recibir estas mensaxes de correo cambiando a túa configuración en
     email_verification:
       click_here_to_verify: nesta ligazón
       instructions_2_html: Este correo electrónico é para verificar a túa conta con <b>%{document_type} %{document_number}</b>. Se eses non son os teus datos, por favor non premas a ligazón anterior e ignora este correo.
       instructions_html: Para completar o proceso de verificación da túa conta, tes que premer en %{verification_link}
+      subject: Verifica o teu enderezo de correo
+      thanks: Moitas grazas.
       title: Verifica a túa conta coa seguinte ligazón
     reply:
       hi: Ola
