@@ -48,10 +48,6 @@ gl:
       - Outubro
       - Novembro
       - Decembro
-    order:
-      - :day
-      - :month
-      - :year
   datetime:
     distance_in_words:
       about_x_hours:

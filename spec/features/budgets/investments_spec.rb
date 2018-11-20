@@ -1047,6 +1047,7 @@ feature 'Budget Investments' do
   end
 
   scenario "Show (not selected budget investment)" do
+    budget.update(phase: 'balloting')
     user = create(:user)
     login_as(user)
 
@@ -1055,12 +1056,30 @@ feature 'Budget Investments' do
                         :finished,
                         budget: budget,
                         group: group,
-                        heading: heading,
-                        unfeasibility_explanation: 'Local government is not competent in this matter')
+                        heading: heading)
 
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
     expect(page).to have_content("This investment project has not been selected for balloting phase")
+  end
+
+  scenario "Show title (no message)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        budget: budget,
+                        group: group,
+                        heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    within("aside") do
+      expect(page).to have_content("Investment project")
+      expect(page).to have_css(".label-budget-investment")
+    end
   end
 
   scenario "Show (unfeasible budget investment with valuation not finished)" do

@@ -44,10 +44,6 @@ ar:
       - أكتوبر
       - نوفمبر
       - ديسمبر
-    order:
-      - :day
-      - :month
-      - :year
   datetime:
     prompts:
       day: اليوم

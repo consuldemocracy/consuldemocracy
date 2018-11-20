@@ -48,10 +48,6 @@ it:
       - Ottobre
       - Novembre
       - Dicembre
-    order:
-      - :day
-      - :month
-      - :year
   datetime:
     distance_in_words:
       about_x_hours:

@@ -19,7 +19,16 @@ feature 'Homepage' do
   let(:user_recommendations) { Setting.where(key: 'feature.user.recommendations').first }
   let(:user)                 { create(:user) }
 
-  scenario "Header" do
+  context "Header" do
+
+    scenario "Admin menu links to homepage path" do
+
+      visit new_admin_widget_card_path(header_card: true)
+
+      click_link Setting['org_name'] + " Administration"
+
+      expect(page).to have_current_path(admin_root_path)
+    end
   end
 
   context "Feeds" do

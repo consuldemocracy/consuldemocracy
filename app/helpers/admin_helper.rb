@@ -9,11 +9,7 @@ module AdminHelper
   end
 
   def namespaced_root_path
-    if namespace == 'moderation/budgets'
-      "/moderation"
-    else
-      "/#{namespace}"
-    end
+    "/#{namespace}"
   end
 
   def namespaced_header_title
@@ -95,7 +91,7 @@ module AdminHelper
   private
 
     def namespace
-      controller.class.parent.name.downcase.gsub("::", "/")
+      controller.class.name.downcase.split("::").first
     end
 
 end

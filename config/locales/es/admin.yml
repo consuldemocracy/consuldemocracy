@@ -87,6 +87,7 @@ es:
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
+        no_budgets: "No hay presupuestos abiertos."
       create:
         notice: '¡Presupuestos participativos creados con éxito!'
       update:
@@ -566,6 +567,7 @@ es:
           community: "Comunidad"
           proposals: "Propuestas"
           polls: "Votaciones"
+          layouts: "Plantillas"
           mailers: "Correos"
           management: "Gestión"
           welcome: "Bienvenido/a"

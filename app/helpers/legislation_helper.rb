@@ -1,6 +1,6 @@
 module LegislationHelper
   def format_date(date)
-    l(date, format: "%d %h %Y") if date
+    l(date, format: "%d %b %Y") if date
   end
 
   def format_date_for_calendar_form(date)

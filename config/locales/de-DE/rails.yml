@@ -48,10 +48,6 @@ de:
       - Oktober
       - November
       - Dezember
-    order:
-      - :Jahr
-      - :Monat
-      - :Tag
   datetime:
     distance_in_words:
       about_x_hours:
