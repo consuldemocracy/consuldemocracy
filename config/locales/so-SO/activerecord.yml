@@ -64,3 +64,16 @@ so:
         login: "Email ama magaca isticmalaha"
         email: "Email"
         username: "Magaca Isticmaalaha"
+        password_confirmation: "Aqoonsiga furaha sirta ah"
+        password: "Furaha sirta ah"
+        current_password: "Magaca Sirta ah hada"
+        phone_number: "Talafoon lambar"
+        official_position: "Goob rasmi ah"
+        official_level: "Heerka Rasmiga ah"
+        redeemable_code: "Koodhka xaqiijinta ee la helay email ahaan"
+      organization:
+        name: "Magaca ururka"
+        responsible_name: "Qofka masuulka ka ah kooxda"
+      spending_proposal:
+        administrator_id: "Mamulaha"
+        association_name: "Magaca ururka"
