@@ -109,3 +109,17 @@ so:
           unfeasible: An surtgak ahayn
           min_total_supports: Tageerayasha ugu yar
           winners: Guleystayasha
+        buttons:
+          filter: Sifeeyee
+        download_current_selection: "Laso deg dorashada had"
+        no_budget_investments: "Majiraan Mashariic malgashi."
+        title: Mashariicda malgashiga
+        assigned_admin: Mamulaha lamagcaabay
+        no_admin_assigned: Mamule lama magcabin
+        no_valuators_assigned: Majiraan Qimeeyayaal loo qondeyey
+        no_valuation_groups: Majiraan koox qimeyayala o loo qondeyey
+        feasibility:
+          unfeasible: "An surtgak ahayn"
+          undecided: "An go aasan"
+        selected: "Ladoortay"
+        select: "Dorasho"
