@@ -31,7 +31,8 @@ so:
         description: "Sharaxaad"
         external_url: "Isku xirka dukumentiyada dheeraadka ah"
         administrator_id: "Mamulaha"
-        organization_name: "Haddii aad soo jeedineyso magaca wadajir / urur, ama wakiil ka socda dad badan, qor magacisa"
+        location: "Xulashada gobta"
+        organization_name: "Haddii aad soo jeedineyso magaca wadajir /urur, ama wakiil ka socda dad badan, qor magacisa"
         image: "Sawir muuqaal ah oo soo jeedinaya"
         image_title: "Sawirka Ciwaanka"
       budget/investment/milestone:
@@ -77,3 +78,5 @@ so:
       spending_proposal:
         administrator_id: "Mamulaha"
         association_name: "Magaca ururka"
+        description: "Sharaxaad"
+        external_url: "Isku xirka dukumentiyada dheeraadka ah"
