@@ -19,6 +19,9 @@ gl:
       user:
         one: "Usuario"
         other: "Usuarios/as"
+      administrator:
+        one: "Administrador"
+        other: "Administradores"
       valuator:
         one: "Avaliador"
         other: "Avaliadores"
