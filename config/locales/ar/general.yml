@@ -36,7 +36,7 @@ ar:
     policy: سياسة الخصوصية
   layouts:
     application:
-      ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول علىأفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
+      ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
     footer:
       privacy: سياسة الخصوصية
     header:
