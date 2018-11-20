@@ -30,6 +30,10 @@ gl:
       - xoves
       - venres
       - sábado
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %b"
     month_names:
       - 
       - Xaneiro
@@ -46,13 +50,69 @@ gl:
       - Decembro
   datetime:
     distance_in_words:
+      about_x_hours:
+        one: arredor de 1 hora
+        other: arredor de %{count} horas
+      about_x_months:
+        one: arredor de 1 mes
+        other: arredor de %{count} meses
+      about_x_years:
+        one: arredor de 1 ano
+        other: arredor de %{count} anos
+      almost_x_years:
+        one: case 1 ano
+        other: case %{count} anos
+      half_a_minute: medio minuto
+      less_than_x_minutes:
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: máis de 1 ano
+        other: máis de %{count} anos
+      x_days:
+        one: 1 día
+        other: "%{count} días"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_months:
+        one: 1 mes
+        other: "%{count} meses"
       x_years:
         one: 1 ano
         other: "%{count} anos"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+    prompts:
+      day: Día
+      hour: Hora
+      minute: Minuto
+      month: Mes
+      second: Segundos
+      year: Ano
   errors:
     format: "%{attribute} %{message}"
     messages:
+      accepted: debe ser aceptado
+      blank: non pode estar en branco
+      present: debe estar en branco
+      confirmation: non coincide %{attribute}
+      empty: non pode estar baleiro
+      equal_to: debe ser igual a %{count}
+      even: debe ser par
+      exclusion: está reservado
+      greater_than: debe ser maior que %{count}
+      greater_than_or_equal_to: debe ser maior ou igual que %{count}
+      inclusion: non está incluído na lista
+      invalid: non é válido
+      less_than: debe ser menor que %{count}
+      less_than_or_equal_to: debe ser menor ou igual que %{count}
       model_invalid: "Erro de validación: %{errors}"
+      not_a_number: non é un número
       required: debe existir
       too_long:
         one: demasiado longo (o máximo é 1 carácter)
