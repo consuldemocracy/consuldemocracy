@@ -124,3 +124,30 @@ so:
         subject: Mawduuc
         from: Ka
         body: Macluumadka Emailka
+      admin_notification:
+        segment_recipient: Sooqataha
+        title: Ciwaan
+        link: Isku xirka
+        body: Qoraal
+      admin_notification/translation:
+        title: Ciwaan
+        body: Qoraal
+      widget/card:
+        label: Calaamadda (ikhtiyaar)
+        title: Ciwaan
+        description: Sharaxaad
+        link_text: Qoraalka Xirirka
+        link_url: Isku xirka URL
+      widget/card/translation:
+        label: Calaamadda (ikhtiyaar)
+        title: Ciwaan
+        description: Sharaxaad
+        link_text: Qoraalka Xirirka
+      widget/feed:
+        limit: Tirada Lambarada
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Isticmaalkan horeba wuxuu leeyahay password"
