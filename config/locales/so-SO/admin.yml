@@ -10,3 +10,22 @@ so:
       hide_author: Qoore Qarson
       restore: Socelin
       mark_featured: Soobandhigiid/ Muqaal
+      unmark_featured: Muqaal an Calamad lahayn
+      edit: Isbedel
+      configure: Isku Hagaajin
+      delete: Titiriid
+    banners:
+      index:
+        title: Xayiraad
+        create: Same banner
+        edit: Bedel baneer
+        delete: Tirir banner
+        filters:
+          all: Dhamaan
+          with_active: Firfircoon
+          with_inactive: Anfirfirconeeyn
+        preview: Hor udhaac
+      banner:
+        title: Ciwaan
+        description: Sharaxaad
+        target_url: Isku xirka
