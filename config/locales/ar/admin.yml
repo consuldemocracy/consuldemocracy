@@ -150,7 +150,7 @@ ar:
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
     menu:
       hidden_comments: التعليقات المخفية
-      settings: الإعدادات العمومية
+      settings: الإعدادات العامة
     moderators:
       index:
         title: المشرفون
