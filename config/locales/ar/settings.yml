@@ -6,6 +6,6 @@ ar:
       proposals: "مقترحات"
       user:
         skip_verification_description: "سيؤدي هذا إلى تعطيل عملية التحقق وسيتمكن جميع المستخدمين المسجلين من المشاركة في جميع العمليات"
-      allow_images: "السماح بتحميل وعرض الصور"
-      allow_attached_documents: "السماح بتحميل وعرض الوثائق المرفقة"
+      allow_images: "السماح برفع وعرض الصور"
+      allow_attached_documents: "السماح برفع وعرض المستندات المرفقة"
       help_page: "صفحة المساعدة"
