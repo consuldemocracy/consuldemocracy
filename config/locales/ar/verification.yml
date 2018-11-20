@@ -7,6 +7,8 @@ ar:
       create:
         alert:
           failure: هناك مشكلة في إرسال بريد إلكتروني إلى الحساب الخاص بك
+        flash:
+          success: 'لقد أرسلنا رسالة تأكيد إلكترونية إلى حسابك:%{email}'
       show:
         alert:
           failure: رمز التحقق غير صحيح
@@ -15,6 +17,8 @@ ar:
         unconfirmed_code: لم تقم بادخال رمز التحقق
       errors:
         incorrect_code: رمز التحقق غير صحيح
+    redirect_notices:
+      email_already_sent: لقد أرسلنا بالفعل رسالة إلكترونية تحتوي على رابط التأكيد. إذا لم تتمكن من إيجاد الرسالة الإلكترونية، يمكنك طلب إرسال رسالة أخرى
     residence:
       new:
         date_of_birth: تاريخ الميلاد
