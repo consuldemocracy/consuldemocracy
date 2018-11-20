@@ -107,7 +107,42 @@ so:
       site_customization/page:
         content: Mawduuc
         created_at: Abuuray
+        subtitle: Ciwaan hoosaad
+        slug: Laqabso
+        status: Xaladda
+        title: Ciwaan
+        updated_at: La casriyeeyay
+        more_info_flag: Muuji bogga gargarka
+        print_content_flag: Dabiciida batoonka
+        locale: Luqad
+      site_customization/page/translation:
+        title: Ciwaan
+        subtitle: Ciwaan hoosaad
+        content: Mawduuc
+      site_customization/image:
+        name: Magac
+        image: Sawiir
+      site_customization/content_block:
+        name: Magac
+        locale: degaanka
+        body: Jirka
+      legislation/process:
+        title: Hirgelinta Mowduuca
+        summary: Sookobiid
+        description: Sharaxaad
+        additional_info: Xogdheeriya
+        start_date: Tariikhda biloowga
+        end_date: Tariikhada dhamadka
+        debate_start_date: Taariikhda bilaabashada doodda
+        debate_end_date: Taariikhda dhamaadka doodda
+        draft_publication_date: Tariikhada Dabacaada
+        allegations_start_date: Taageerida taariikhda bilawga
+        allegations_end_date: Taageerida taariikhda dhamaadka
+        result_publication_date: Taariikhda daabacaadda natiijada kama dambaysta ah
       legislation/process/translation:
+        title: Hirgelinta Mowduuca
+        summary: Sookobiid
+        description: Sharaxaad
         additional_info: Xogdheeriya
       legislation/draft_version:
         title: Ciwaanka Sawirka
