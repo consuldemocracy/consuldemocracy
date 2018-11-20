@@ -68,15 +68,46 @@ ar:
       even: يجب أن يكون عدد زوجي
       exclusion: محجوز
       greater_than: يجب أن يكون أكبر من %{count}
+      greater_than_or_equal_to: يجب أن يكون أكبر أو يساوي %{count}
+      inclusion: غير موجود في القائمة
+      invalid: غير صالح
+      less_than: يجب أن يكون أقل من %{count}
+      less_than_or_equal_to: يجب أن يكون أصغر أو يساوي %{count}
+      model_invalid: "فشل التحقق: %{errors}"
+      not_a_number: ليس رقماً
+      not_an_integer: يجب أن يكون عدد صحيح
+      odd: يجب أن يكون عدد فردي
+      required: مطلوب
+      taken: محجوز مسبقاً
+      other_than: يجب أن يكون خلاف %{count}
+    template:
+      body: 'هناك مشاكل مع الحقول التالية:'
   helpers:
     select:
       prompt: الرجاء تحديد
     submit:
       create: إنشاء %{model}
       submit: حفظ %{model}
+      update: تحديث %{model}
   number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
     human:
       decimal_units:
+        format: "%n %u"
         units:
           billion: مليار
           million: مليون
@@ -88,6 +119,7 @@ ar:
         significant: true
         strip_insignificant_zeros: true
       storage_units:
+        format: "%n %u"
         units:
           gb: غيغا بايت
           kb: كيلو بايت
