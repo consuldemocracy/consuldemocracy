@@ -7,8 +7,8 @@ gl:
       confirm: Queres continuar?
       confirm_hide: Confirmar moderación
       hide: Agochar
-      hide_author: Bloquear o autor
-      restore: Volver mostrar
+      hide_author: Agochar o autor
+      restore: Restaurar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
       edit: Editar
@@ -56,7 +56,7 @@ gl:
         action: Acción
         actions:
           block: Bloqueado
-          hide: Ocultado
+          hide: Agochado
           restore: Restaurado
         by: Moderado por
         content: Contido
@@ -68,7 +68,7 @@ gl:
           on_proposals: Propostas
           on_users: Usuarios
           on_system_emails: Correos electrónicos do sistema
-        title: Actividade dos moderadores
+        title: Actividade de moderador
         type: Tipo
         no_activity: Non hai actividade dos moderadores.
     budgets:
@@ -311,8 +311,8 @@ gl:
           all: Todos
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendentes
-        hidden_debate: Debate oculto
-        hidden_proposal: Proposta oculta
+        hidden_debate: Debate agochado
+        hidden_proposal: Proposta agochada
         title: Comentarios agochados
         no_hidden_comments: Non hai comentarios agochados.
     dashboard:
@@ -338,7 +338,7 @@ gl:
           without_confirmed_hide: Pendentes
         title: Usuarios agochados
         user: Usuario
-        no_hidden_users: No hay usarios bloqueados.
+        no_hidden_users: Non hai usuarios agochados.
       show:
         email: 'Enderezo electrónico:'
         hidden_at: 'Bloqueado:'
@@ -385,7 +385,7 @@ gl:
         index:
           create: Novo proceso
           delete: Borrar
-          title: Proceso de lexislación colaborativa
+          title: Procesos lexislativos
           filters:
             open: Abertos
             next: Proximamente
@@ -538,7 +538,6 @@ gl:
       hidden_users: Usuarios agochados
       administrators: Administradores
       managers: Xestores
-      moderators: Moderadores
       messaging_users: Mensaxes aos usuarios
       newsletters: Boletíns informativos
       admin_notifications: Notificacións
@@ -550,11 +549,8 @@ gl:
       poll_booths: Localización das urnas
       poll_booth_assignments: Asignación de urnas
       poll_shifts: Asignar quendas
-      officials: Cargos públicos
-      organizations: Organizacións
       settings: Configuración global
       spending_proposals: Propostas de investimento
-      stats: Estatísticas
       signature_sheets: Follas de sinaturas
       site_customization:
         homepage: Páxina principal
@@ -718,7 +714,6 @@ gl:
         group: "Grupo"
         no_group: "Sen grupo"
       valuator:
-        add: Engadir como avaliador
         delete: Borrar
       search:
         title: 'Avaliadores: busca de usuarios'
@@ -977,28 +972,13 @@ gl:
         shifts: "Xestionar quendas"
         edit: "Editar urna"
     officials:
-      edit:
-        destroy: Eliminar condición de 'Cargo público'
-        title: 'Cargos públicos: editar usuario'
-      flash:
-        official_destroyed: 'Datos gardados: o usuario xa non é cargo público'
-        official_updated: Datos do cargo público gardados
       index:
         title: Cargos
         no_officials: Non hai ningún cargo público.
         name: Nome
         official_position: Cargo público
         official_level: Nivel
-      level_0: Non é cargo público
-      level_1: Nivel 1
-      level_2: Nivel 2
-      level_3: Nivel 3
-      level_4: Nivel 4
-      level_5: Nivel 5
       search:
-        edit_official: Editar cargo público
-        make_official: Converter en cargo público
-        title: 'Cargos públicos: busca de usuarios'
         no_results: Non se atopou ningún cargo público.
     organizations:
       index:
@@ -1006,8 +986,6 @@ gl:
         filters:
           all: Todas
           pending: Pendente
-          rejected: Rexeitadas
-          verified: Verificadas
         hidden_count_html:
           one: Hai ademais <strong>unha organización</strong> sen usuario ou co usuario bloqueado.
           other: Hai ademais <strong>%{count} organizacións</strong> sen usuario ou co usuario bloqueado.
@@ -1017,16 +995,12 @@ gl:
         responsible_name: Responsable
         status: Estado
         no_organizations: Non hai organizacións.
-        reject: Rexeitar
         rejected: Rexeitada
         search: Buscar
-        search_placeholder: Nome, correo electrónico ou teléfono
         title: Organización
         verified: Verificada
-        verify: Verificar
         pending: Pendente
       search:
-        title: Buscar organizacións
         no_results: Non se atoparon organizacións.
     proposals:
       index:
@@ -1047,8 +1021,6 @@ gl:
         title: Notificacións agochadas
         no_hidden_proposals: Non hai notificacións agochadas.
     settings:
-      flash:
-        updated: Valor actualizado
       index:
         banners: Estilos de anuncio
         banner_imgs: Imaxes do anuncio
@@ -1056,12 +1028,6 @@ gl:
         no_banners_styles: Non hai estilo de anuncio
         title: Configuración global
         update_setting: Actualizar
-        feature_flags: Funcionalidades
-        features:
-          enabled: "Funcionalidade activada"
-          disabled: "Funcionalidade desactivada"
-          enable: "Activar"
-          disable: "Desactivar"
         map:
           title: Configuración do mapa
           help: Aquí podes personalizar o xeito en que os e as usuarias ven o mapa. Arrastra o marcador ou preme en calquera parte do mapa, axusta o zoom e preme o botón 'Actualizar'.
@@ -1087,13 +1053,10 @@ gl:
         placeholder: Buscar preguntas
       proposal_search:
         button: Buscar
-        placeholder: Buscar propostas por título, código, descrición ou pregunta
       spending_proposal_search:
         button: Buscar
-        placeholder: Buscar propostas por título ou descrición
       user_search:
         button: Buscar
-        placeholder: Buscar usuario por nome ou correo electrónico
       search_results: "Resultados da busca"
       no_search_results: "Non se atoparon resultados."
       actions: Accións
@@ -1135,7 +1098,6 @@ gl:
         assigned_valuators: Avaliadores asignados
         back: Volver
         classification: Clasificación
-        heading: "Proposta de investimento %{id}"
         edit: Editar
         edit_classification: Editar a clasificación
         association_name: Asociación
@@ -1154,8 +1116,6 @@ gl:
         tags_placeholder: "Escribe as etiquetas que desexes separadas por comas (,)"
         undefined: Sen definir
       summary:
-        title: Resumo de propostas de investimento
-        title_proposals_with_supports: Resumo para propostas que superaron a fase de apoios
         geozone_name: Zona
         finished_and_feasible_count: Rematadas e viables
         finished_and_unfeasible_count: Rematadas e inviables
@@ -1217,20 +1177,14 @@ gl:
         loading: "Aínda hai sinaturas que o padrón está verificando. Actualiza a páxina dentro dun anaco"
     stats:
       show:
-        stats_title: Estatísticas
         summary:
-          comment_votes: Votos en comentarios
           comments: Comentarios
-          debate_votes: Votos en debates
           debates: Debates
-          proposal_votes: Votos en propostas
           proposals: Propostas
           budgets: Orzamentos abertos
           budget_investments: Propostas de investimento
           spending_proposals: Propostas de investimento
           unverified_users: Usuarios con contas sen verificar
-          user_level_three: Usuarios de nivel tres
-          user_level_two: Usuarios de nivel dous
           users: Usuarios totais
           verified_users: Usuarios con contas verificadas
           verified_users_who_didnt_vote_proposals: Usuarios confirmados que non votaron propostas
@@ -1270,8 +1224,6 @@ gl:
         title: Temas das propostas
         topic: Tema
         help: "Cando un usuario crea unha proposta, amosanse os seguintes temas como etiquetas predeterminadas."
-      name:
-        placeholder: Escribe o nome do tema
     users:
       columns:
         name: Nome
@@ -1287,8 +1239,6 @@ gl:
         search: Buscar
     verifications:
       index:
-        phone_not_given: Non deu o seu teléfono
-        sms_code_not_confirmed: Non introduciu o seu código de seguridade
         title: Confirmacións incompletas
     site_customization:
       content_blocks:
@@ -1371,7 +1321,7 @@ gl:
       title: Páxina principal
       description: Os módulos activos aparecerán na páxina principal na mesma orde que aquí.
       header_title: Cabeceira
-      no_header: Non hai cabeceira.
+      no_header: Non hai cabeceiras.
       create_header: Crear cabeceira
       cards_title: Tarxetas
       create_card: Crear tarxeta
