@@ -45,3 +45,22 @@ so:
       budget/heading:
         name: "Magaca Ciwaanka"
         price: "Qime"
+        population: "Dadka"
+      comment:
+        body: "Faalo"
+        user: "Istimaale"
+      debate:
+        author: "Qoraa"
+        description: "Fikraad"
+        terms_of_service: "Shuruudaha adeega"
+        title: "Ciwaan"
+      proposal:
+        author: "Qoraa"
+        title: "Ciwaan"
+        question: "Sual"
+        description: "Sharaxaad"
+        terms_of_service: "Shuruudaha adeega"
+      user:
+        login: "Email ama magaca isticmalaha"
+        email: "Email"
+        username: "Magaca Isticmaalaha"
