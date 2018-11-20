@@ -13,7 +13,13 @@ gl:
     failure:
       already_authenticated: "Xa iniciaches sesión."
       inactive: "A túa conta aínda non foi activada."
+      invalid: "Contrasinal ou %{authentication_keys} inválidos."
+      locked: "A túa conta foi bloqueada."
+      last_attempt: "Tes un último intento antes de que a túa conta sexa bloqueada."
       not_found_in_database: "%{authentication_keys} ou o contrasinal non son correctos."
+      timeout: "A túa sesión caducou. Por favor, inicia sesión de novo para continuar."
+      unauthenticated: "Precisas iniciar sesión ou rexistrarte para continuar."
+      unconfirmed: "Para continuar, por favor, preme na ligazón de confirmación que che enviamos á túa conta de correo"
     mailer:
       confirmation_instructions:
         subject: "Instrucións de confirmación"
