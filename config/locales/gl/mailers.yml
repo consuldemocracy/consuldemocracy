@@ -17,6 +17,7 @@ gl:
       title: Verifica a túa conta coa seguinte ligazón
     reply:
       hi: Ola
+      new_reply_by_html: Hai unha nova resposta de <b>%{commenter}</b> ao tu comentario en
     unfeasible_spending_proposal:
       new_html: "Para todos eles, convidámoste a redactar unha <strong>nova proposta</strong> que se axuste ás condicións deste proceso. Podes facelo a través desta ligazón: %{url}."
       new_href: "novo proxecto de investimento"
