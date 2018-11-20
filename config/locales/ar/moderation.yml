@@ -39,6 +39,9 @@ ar:
         confirm: هل أنت متأكد؟
     proposal_notifications:
       index:
+        confirm: هل أنت متأكد؟
+        filters:
+          all: الكل
         order: الطلب من طرف
     users:
       index:
