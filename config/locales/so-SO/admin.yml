@@ -101,3 +101,11 @@ so:
           all: Dhamaan
           without_admin: Anlahayn maamul
           without_valuator: An lahayn Qimeeyayaal
+          under_valuation: Qimeeyni kusocoto
+          valuation_finished: Qimeeyn ayaa dhamatay
+          feasible: Surtagal
+          selected: Ladoortay
+          undecided: An go aasan
+          unfeasible: An surtgak ahayn
+          min_total_supports: Tageerayasha ugu yar
+          winners: Guleystayasha
