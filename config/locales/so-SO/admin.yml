@@ -128,3 +128,7 @@ so:
         valuator_groups: "Kooxdaha Qimeeynta"
       edit:
         classification: Qeybinta
+        mark_as_incompatible: U calaamadee sida aan ula dhaqmi Karin
+        selection: Xulasho
+        mark_as_selected: Calamadee sida loodortay
+        assigned_valuators: Qimeeyayal
