@@ -47,6 +47,8 @@ ar:
       - نوفمبر
       - ديسمبر
   datetime:
+    distance_in_words:
+      half_a_minute: نصف دقيقة
     prompts:
       day: اليوم
       hour: الساعة
@@ -55,12 +57,17 @@ ar:
       second: ثواني
       year: السنة
   errors:
+    format: "%{attribute} %{message}"
     messages:
       accepted: يجب أن يكون مقبول
       blank: لا يمكن أن يكون فارغا
       present: يجب أن يكون فارغا
       confirmation: لا يتطابق مع %{attribute}
       empty: لا يمكن أن يكون فارغا
+      equal_to: يجب أن تكون القيمة تساوي %{count}
+      even: يجب أن يكون عدد زوجي
+      exclusion: محجوز
+      greater_than: يجب أن يكون أكبر من %{count}
   helpers:
     select:
       prompt: الرجاء تحديد
