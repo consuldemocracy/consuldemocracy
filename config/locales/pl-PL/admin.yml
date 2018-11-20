@@ -408,7 +408,7 @@ pl:
           status_planned: Zaplanowany
         subnav:
           info: Informacje
-          draft_texts: Opracowanie
+          draft_versions: Opracowanie
           questions: Debata
           proposals: Wnioski
       proposals:

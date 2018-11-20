@@ -403,7 +403,7 @@ de:
           status_planned: Geplant
         subnav:
           info: Information
-          draft_texts: Ausarbeitung
+          draft_versions: Ausarbeitung
           questions: Diskussion
           proposals: Vorschläge
       proposals:

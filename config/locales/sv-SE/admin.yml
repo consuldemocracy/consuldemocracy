@@ -403,7 +403,7 @@ sv:
           status_planned: Planerad
         subnav:
           info: Information
-          draft_texts: Utkast
+          draft_versions: Utkast
           questions: Diskussion
           proposals: Förslag
       proposals:
