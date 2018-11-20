@@ -1087,10 +1087,13 @@ gl:
         placeholder: Buscar preguntas
       proposal_search:
         button: Buscar
+        placeholder: Buscar propostas por título, código, descrición ou pregunta
       spending_proposal_search:
         button: Buscar
+        placeholder: Buscar propostas por título ou descrición
       user_search:
         button: Buscar
+        placeholder: Buscar usuario por nome ou correo electrónico
       search_results: "Resultados da busca"
       no_search_results: "Non se atoparon resultados."
       actions: Accións
@@ -1132,6 +1135,7 @@ gl:
         assigned_valuators: Avaliadores asignados
         back: Volver
         classification: Clasificación
+        heading: "Proposta de investimento %{id}"
         edit: Editar
         edit_classification: Editar a clasificación
         association_name: Asociación
@@ -1150,6 +1154,8 @@ gl:
         tags_placeholder: "Escribe as etiquetas que desexes separadas por comas (,)"
         undefined: Sen definir
       summary:
+        title: Resumo de propostas de investimento
+        title_proposals_with_supports: Resumo para propostas que superaron a fase de apoios
         geozone_name: Zona
         finished_and_feasible_count: Rematadas e viables
         finished_and_unfeasible_count: Rematadas e inviables
@@ -1211,14 +1217,20 @@ gl:
         loading: "Aínda hai sinaturas que o padrón está verificando. Actualiza a páxina dentro dun anaco"
     stats:
       show:
+        stats_title: Estatísticas
         summary:
+          comment_votes: Votos en comentarios
           comments: Comentarios
+          debate_votes: Votos en debates
           debates: Debates
+          proposal_votes: Votos en propostas
           proposals: Propostas
           budgets: Orzamentos abertos
           budget_investments: Propostas de investimento
           spending_proposals: Propostas de investimento
           unverified_users: Usuarios con contas sen verificar
+          user_level_three: Usuarios de nivel tres
+          user_level_two: Usuarios de nivel dous
           users: Usuarios totais
           verified_users: Usuarios con contas verificadas
           verified_users_who_didnt_vote_proposals: Usuarios confirmados que non votaron propostas
@@ -1258,6 +1270,8 @@ gl:
         title: Temas das propostas
         topic: Tema
         help: "Cando un usuario crea unha proposta, amosanse os seguintes temas como etiquetas predeterminadas."
+      name:
+        placeholder: Escribe o nome do tema
     users:
       columns:
         name: Nome
@@ -1273,6 +1287,8 @@ gl:
         search: Buscar
     verifications:
       index:
+        phone_not_given: Non deu o seu teléfono
+        sms_code_not_confirmed: Non introduciu o seu código de seguridade
         title: Confirmacións incompletas
     site_customization:
       content_blocks:
