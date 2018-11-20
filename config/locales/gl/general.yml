@@ -63,11 +63,21 @@ gl:
     orders:
       most_voted: Máis votados
       newest: Máis recentes primeiro
+      oldest: Máis antigos primeiro
       most_commented: Máis comentados
+    select_order: Ordenar por
+    show:
+      return_to_commentable: 'Volver a '
   comments_helper:
+    comment_button: Publicar comentario
     comment_link: Comentar
     comments_title: Comentarios
+    reply_button: Publicar resposta
+    reply_link: Responder
   debates:
+    create:
+      form:
+        submit_button: Comezar un debate
     debate:
       comments:
         zero: Ningún comentario
@@ -78,15 +88,27 @@ gl:
         one: 1 voto
         other: "%{count} votos"
     edit:
+      editing: Editar debate
       form:
         submit_button: Gardar cambios
+      show_link: Ver debate
     form:
+      debate_text: Texto inicial do debate
+      debate_title: Título do debate
+      tags_instructions: Etiqueta este debate.
+      tags_label: Temas
       tags_placeholder: "Escribe as etiquetas que desexes separadas por unha coma (',')"
     index:
+      featured_debates: Destacados
+      filter_topic:
+        one: " co tema '%{topic}'"
+        other: " cos temas '%{topic}'"
       orders:
         confidence_score: Máis apoiados
         created_at: Novos
         hot_score: Máis activos
+        most_commented: máis comentados
+        relevance: importancia
         recommendations: recomendacións
       recommendations:
         without_results: Non hai debates relacionados cos teus intereses
@@ -97,6 +119,7 @@ gl:
           error: "Produciuse un erro. Por favor, accede á páxina 'A miña conta' para deshabilitar de xeito manual as recomendacións para os debates"
       search_form:
         button: Buscar
+        placeholder: Buscar debates...
         title: Buscar
       search_results_html:
         one: " que contén o termo <strong>%{search_term}</strong>"
@@ -116,7 +139,14 @@ gl:
     new:
       form:
         submit_button: Comezar un debate
+      info: Se o que queres é facer unha proposta, esta non é a sección correcta, entra en %{info_link}.
+      info_link: crear nova proposta
+      more_info: Máis información
+      recommendation_four: Goza deste espazo e das voces que o enchen. Tamén é teu.
       recommendation_one: Non escribas o título do debate ou frases enteiras en maiúsculas. En Internet iso considérase berrar. E a ninguén lle gusta que lle berren.
+      recommendation_three: As críticas desapiadadas son moi benvidas. Este é un espazo de pensamento. Pero recomendámosche conservar a elegancia e a intelixencia. O mundo é mellor con elas presentes.
+      recommendation_two: Calquera debate ou comentario que implique unha acción ilegal será eliminado, tamén os que teñan a intención de sabotar os espazos de debate. Todo o demais está permitido.
+      recommendations_title: Recomendacións para crear un debate
       start_new: Comezar un debate
     show:
       author_deleted: Usuario eliminado
@@ -126,6 +156,7 @@ gl:
         other: "%{count} comentarios"
       comments_title: Comentarios
       edit_debate_link: Editar
+      flag: Este debate foi marcado como impropio por varios usuarios.
       login_to_comment: Precisas %{signin} ou %{signup} para comentares.
       share: Compartir
       author: Autoría
@@ -137,25 +168,37 @@ gl:
       user_not_found: Non se atopou o usuario
       invalid_date_range: "O rango de datas non é correcto"
   form:
+    accept_terms: Acepto a %{policy} e as %{conditions}
+    accept_terms_title: Acepto a política de privacidade e os Termos e condicións de uso
     conditions: Condicións de uso
     debate: o debate
     direct_message: a mensaxe privada
+    error: erro
+    errors: erros
     not_saved_html: "impediron gardar %{resource}. <br>Revisa os campos marcados para saber como corrixilos:"
     policy: Política de privacidade
     proposal: a proposta
     proposal_notification: "a notificación"
+    spending_proposal: Proposta de investimento
     budget/investment: a proposta de investimento
     budget/heading: a partida orzamentaria
     poll/shift: a quenda
     poll/question/answer: a resposta
+    user: A conta
+    verification/sms: teléfono
     signature_sheet: a folla de sinaturas
     document: o documento
     topic: Tema
     image: Imaxe
+  geozones:
+    none: Toda a cidade
+    all: Todas as zonas
   layouts:
     application:
       chrome: Google Chrome
       firefox: Firefox
+      ie: Detectamos que estás navegando dende Internet Explorer. Para unha mellor experiencia recomendámosche empregar %{chrome} ou %{firefox}.
+      ie_title: Esta web non está optimizada para o teu navegador
     footer:
       accessibility: Accesibilidade
       conditions: Condicións de uso
@@ -164,6 +207,7 @@ gl:
       contact_us: Se precisas asistencia técnica
       copyright: CONSUL, %{year}
       description: Este portal usa a %{consul} que é %{open_source}.
+      open_source: software libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decide como debe ser a cidade que queres.
       participation_title: Participación
@@ -175,6 +219,7 @@ gl:
       collaborative_legislation: Procesos lexislativos
       debates: Debates
       external_link_blog: Blog
+      locale: 'Idioma:'
       logo: Logo de CONSUL
       management: Xestión
       moderation: Moderar
