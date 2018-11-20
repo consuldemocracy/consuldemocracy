@@ -136,3 +136,26 @@ so:
         submit_button: Cusboneysiin
         user_tags: Cusbooneysii qoraalka isticmaalaha ee loo yaqaan
         tags: Tagyada
+        undefined: Aan la garanayn
+        user_groups: "Kooxo"
+      search_unfeasible: Raadinta aan macquul ahayn
+    milestones:
+      index:
+        table_id: "Aqoonsi"
+        table_title: "Ciwaan"
+        table_description: "Sharaxaad"
+        table_publication_date: "Taariikhda daabacaadda"
+        table_status: Xaladda
+        table_actions: "Tilaabooyin"
+        delete: "Tirtir hiigsiga/guleeysiga"
+        no_milestones: "An lahayn yool qeexaan"
+        image: "Sawiir"
+        show_image: "Muuji sawir"
+        documents: "Dukumentiyo"
+      form:
+        admin_statuses: Xaladaha mamulka Malgelinta
+        no_statuses_defined: Weli ma jiraan xaalado maalgashi oo la qeexay
+      new:
+        creating: Abuurida hiigsiga/guleeysiga
+        date: Tariikh
+        description: Sharaxaad
