@@ -13,6 +13,9 @@ val:
       budget/investment/milestone:
         one: "fita"
         other: "fites"
+      budget/investment/status:
+        one: "Estat de la proposta"
+        other: "Estat de les propostes"
       comment:
         one: "Comentari"
         other: "Comentaris"
@@ -34,9 +37,15 @@ val:
       valuator:
         one: "Avaluador"
         other: "Avaluadors"
+      valuator_group:
+        one: "Grup d'Avaluadors"
+        other: "Grups d'Avaluadors"
       manager:
         one: "Gestor"
         other: "Gestors"
+      newsletter:
+        one: "Butlletí informatiu"
+        other: "Butlletins informatius"
       vote:
         one: "Vot"
         other: "Vots"
@@ -67,6 +76,9 @@ val:
       legislation/process:
         one: "Proces"
         other: "Processos"
+      legislation/proposal:
+        one: "Proposta"
+        other: "Propostes"
       legislation/draft_versions:
         one: "Versió esborrany"
         other: "Versions esborrany"
@@ -94,6 +106,9 @@ val:
       poll:
         one: "Votació"
         other: "Votacions"
+      proposal_notification:
+        one: "Notificació de proposta"
+        other: "Notificacions de propostes"
     attributes:
       budget:
         name: "Nom"
@@ -117,9 +132,13 @@ val:
         image: "Imatge descriptiva de la proposta d'inversió"
         image_title: "Títol de la imatge"
       budget/investment/milestone:
+        status_id: "Estat actual de la proposta (opcional)"
         title: "Títol"
-        description: "Descripció"
+        description: "Descripció (opcional si hi ha un estat asignat)"
         publication_date: "Data de publicació"
+      budget/investment/status:
+        name: "Nom"
+        description: "Descripció (opcional)"
       budget/heading:
         name: "Nom de la partida"
         price: "Cost"
@@ -183,6 +202,7 @@ val:
         status: Estat
         title: Títol
         updated_at: Actualitzada el
+        more_info_flag: Mostra a la pàgina de més informació
         print_content_flag: Botó d'imprimir contingut
         locale: Llengua
       site_customization/image:
@@ -194,6 +214,7 @@ val:
         body: Contingut
       legislation/process:
         title: Títol del procés
+        summary: Resum
         description: Descripció
         additional_info: Informació addicional
         start_date: Data d'inici del procés
@@ -229,6 +250,19 @@ val:
       poll/question/answer/video:
         title: Títol
         url: Vídeo extern
+      newsletter:
+        segment_recipient: Destinataris
+        subject: Asumpte
+        from: De
+        body: Contingut del email
+      widget/card:
+        label: Etiqueta (opcional)
+        title: Títol
+        description: Descripció
+        link_text: Text de l'enllaç
+        link_url: URL de l'enllaç
+      widget/feed:
+        limit: Número d'elements
     errors:
       models:
         user:
@@ -248,6 +282,14 @@ val:
             attachment:
               min_image_width: "La imatge ha de tindre al menys %{required_min_width}px de llarg"
               min_image_height: "La imatge ha de tindre al menys %{required_min_height}px d'alt"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "El segment d'usuaris es invàlid"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "L'usuari del destinatari es invàlid"
         map_location:
           attributes:
             map:
@@ -291,6 +333,10 @@ val:
             image:
               image_width: "Ha de tenir %{required_width}px d'ample"
               image_height: "Ha de tenir %{required_height}px d'alt"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'No pots comentar una valoració'
       messages:
         record_invalid: "Error de validació: %{errors}"
         restrict_dependent_destroy:

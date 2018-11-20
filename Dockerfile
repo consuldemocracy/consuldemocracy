@@ -43,7 +43,7 @@ RUN bundle install --full-index
 
 # Install Chromium and ChromeDriver for E2E integration tests
 RUN apt-get update -qq && apt-get install -y chromium
-RUN wget -N http://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip
+RUN wget -N http://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
 RUN unzip chromedriver_linux64.zip
 RUN chmod +x chromedriver
 RUN mv -f chromedriver /usr/local/share/chromedriver

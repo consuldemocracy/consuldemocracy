@@ -49,6 +49,8 @@ es:
         detail: "Preguntas frecuentes sobre procesos"
         description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad de Madrid y puede dar su opinión sobre las políticas municipales en debates previos."
         link: "procesos"
+        feature: "Para participar en un proceso tienes que %{sign_up} y revisar la página de %{link} periódicamente para ver qué reglamentos y políticas se están discutiendo y consultando."
+        sign_up: "registrarte en %{org}"
       other:
         world: "Participación ciudadana directa en el mundo"
         facts: "Hechos sobre participación ciudadana y democracia directa"

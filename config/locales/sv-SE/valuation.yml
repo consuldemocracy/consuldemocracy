@@ -1,0 +1,127 @@
+sv:
+  valuation:
+    header:
+      title: Kostnadsberäkning
+    menu:
+      title: Kostnadsberäkning
+      budgets: Medborgarbudgetar
+      spending_proposals: Budgetförslag
+    budgets:
+      index:
+        title: Medborgarbudgetar
+        filters:
+          current: Pågående
+          finished: Avslutade
+        table_name: Namn
+        table_phase: Fas
+        table_assigned_investments_valuation_open: Tilldelade budgetförslag öppna för bedömning
+        table_actions: Åtgärder
+        evaluate: Utvärdera
+    budget_investments:
+      index:
+        headings_filter_all: Alla områden
+        filters:
+          valuation_open: Pågående
+          valuating: Under kostnadsberäkning
+          valuation_finished: Kostnadsberäkning avslutad
+        assigned_to: "Tilldelad %{valuator}"
+        title: Budgetförslag
+        edit: Redigera rapport
+        valuators_assigned:
+          one: Ansvarig bedömare
+          other: "%{count} ansvariga bedömare"
+        no_valuators_assigned: Inga ansvariga bedömare
+        table_id: Legitimation
+        table_title: Titel
+        table_heading_name: Område
+        table_actions: Åtgärder
+        no_investments: "Det finns inga budgetförslag."
+      show:
+        back: Tillbaka
+        title: Budgetförslag
+        info: Om förslagslämnaren
+        by: Inskickat av
+        sent: Registrerat
+        heading: Område
+        dossier: Rapport
+        edit_dossier: Redigera rapport
+        price: Kostnad
+        price_first_year: Kostnad för första året
+        currency: "kr"
+        feasibility: Genomförbarhet
+        feasible: Genomförbart
+        unfeasible: Ej genomförbart
+        undefined: Odefinierat
+        valuation_finished: Bedömning avslutad
+        duration: Tidsram
+        responsibles: Ansvariga
+        assigned_admin: Ansvarig administratör
+        assigned_valuators: Ansvariga bedömare
+      edit:
+        dossier: Rapport
+        price_html: "Kostnad (%{currency})"
+        price_first_year_html: "Kostnad under första året (%{currency}) <small>(ej obligatoriskt, ej publikt)</small>"
+        price_explanation_html: Kostnadsförklaring
+        feasibility: Genomförbarhet
+        feasible: Genomförbart
+        unfeasible: Ej genomförbart
+        undefined_feasible: Väntande
+        feasible_explanation_html: Förklaring av genomförbarhet
+        valuation_finished: Bedömning avslutad
+        valuation_finished_alert: "Är du säker på att du vill markera rapporten som färdig? Efter det kan du inte längre göra ändringar."
+        not_feasible_alert: "Förslagslämnaren får ett e-postmeddelande om varför projektet inte är genomförbart."
+        duration_html: Tidsram
+        save: Spara ändringar
+      notice:
+        valuate: "Uppdaterad rapport"
+      valuation_comments: Kommentarer från bedömning
+      not_in_valuating_phase: Budgetförslag kan endast kostnadsberäknas när budgeten är i kostnadsberäkningsfasen
+    spending_proposals:
+      index:
+        geozone_filter_all: Alla stadsdelar
+        filters:
+          valuation_open: Pågående
+          valuating: Under kostnadsberäkning
+          valuation_finished: Kostnadsberäkning avslutad
+        title: Budgetförslag för medborgarbudget
+        edit: Redigera
+      show:
+        back: Tillbaka
+        heading: Budgetförslag
+        info: Om förslagslämnaren
+        association_name: Förening
+        by: Skickat av
+        sent: Registrerat
+        geozone: Område
+        dossier: Rapport
+        edit_dossier: Redigera rapport
+        price: Kostnad
+        price_first_year: Kostnad för första året
+        currency: "kr"
+        feasibility: Genomförbarhet
+        feasible: Genomförbart
+        not_feasible: Ej genomförbart
+        undefined: Odefinierat
+        valuation_finished: Kostnadsberäkning avslutad
+        time_scope: Tidsram
+        internal_comments: Interna kommentarer
+        responsibles: Ansvariga
+        assigned_admin: Ansvarig administratör
+        assigned_valuators: Ansvarig bedömare
+      edit:
+        dossier: Rapport
+        price_html: "Kostnad (%{currency})"
+        price_first_year_html: "Kostnad under första året (%{currency})"
+        currency: "kr"
+        price_explanation_html: Kostnadsförklaring
+        feasibility: Genomförbarhet
+        feasible: Genomförbart
+        not_feasible: Ej genomförbart
+        undefined_feasible: Väntande
+        feasible_explanation_html: Förklaring av genomförbarhet
+        valuation_finished: Bedömning avslutad
+        time_scope_html: Tidsram
+        internal_comments_html: Interna kommentarer
+        save: Spara ändringar
+      notice:
+        valuate: "Uppdaterad rapport"

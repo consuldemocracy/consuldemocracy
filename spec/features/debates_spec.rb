@@ -505,7 +505,7 @@ feature 'Debates' do
 
         click_link 'recommendations'
 
-        expect(page).to have_content 'There are not debates related to your interests'
+        expect(page).to have_content 'There are no debates related to your interests'
       end
 
       scenario 'should display text when user has no related interests' do

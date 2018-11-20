@@ -42,7 +42,7 @@ feature 'Officing Results', :with_frozen_time do
     expect(page).to have_content(poll.name)
 
     visit new_officing_poll_result_path(not_allowed_poll_1)
-    expect(page).to have_content('You are allowed to add results for this poll')
+    expect(page).to have_content('You are not allowed to add results for this poll')
   end
 
   scenario 'Add results' do

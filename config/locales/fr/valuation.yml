@@ -35,6 +35,7 @@ fr:
         table_title: Titre
         table_heading_name: Nom du titre
         table_actions: Statut des votes
+        no_investments: "Il n’y a pas de projet d’investissement."
       show:
         back: Retour
         title: Propositions d'investissement
@@ -67,10 +68,14 @@ fr:
         undefined_feasible: Indécis
         feasible_explanation_html: Informations sur la non-viabilité <small>(le cas échéant, données publiques)</small>
         valuation_finished: Évaluation terminée
+        valuation_finished_alert: "Êtes-vous sûr de vouloir marquer ce rapport comme étant achevé ? Si vous le faites, il nne pourra plus être modifié."
+        not_feasible_alert: "Un courriel sera envoyé immédiatement à l’auteur du projet avec le rapport de non-faisabilité."
         duration_html: Délai d'exécution <small>(optionnel, données non publiques)</small>
         save: Enregistrer les changements
       notice:
         valuate: "Rapport mis-à-jour"
+      valuation_comments: Commentaires de l’évaluation
+      not_in_valuating_phase: Les investissements ne peuvent être évalués que lorsque le Budget est en phase de valorisation
     spending_proposals:
       index:
         geozone_filter_all: Tous les districts

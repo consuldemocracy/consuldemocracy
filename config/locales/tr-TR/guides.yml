@@ -1,0 +1,18 @@
+tr:
+  guides:
+    title: "%{org} için bir fikriniz var mı?"
+    subtitle: "Oluşturmak istediğiniz şeyi seçin"
+    budget_investment:
+      title: "Bir yatırım projesi"
+      feature_1_html: "<strong>Belediye bütçelerini</strong> nasıl harcayacağınız ile ilgili fikirler"
+      feature_2_html: "Yatırım projeleri, <strong>Ocak ve Mart ayları arasında</strong> kabul edilir"
+      feature_3_html: "Eğer desteklenirse, uygulanabilir ve belediyenin yeterliliği varsa, oylamaya kısmına geçer"
+      feature_4_html: "Eğer vatandaşlar projeleri onaylarsa, gerçek olurlar"
+      new_button: Bir bütçe yatırımı oluşturmak istiyorum
+    proposal:
+      title: "Bir vatandaşın önerisi"
+      feature_1_html: "Belediye Meclisinin onaylayabileceği herhangi bir eylem hakkında fikirler"
+      feature_2_html: "Oylama kısmına geçmek için %{org}'da <strong>%{votes} desteğe</strong> ihtiyaç var"
+      feature_3_html: "İstediğiniz zaman başlatın, destek almak için <strong>bir yılınız</strong> var"
+      feature_4_html: "Eğer bir oylamada onaylandıysa, Belediye Meclisi öneriyi kabul eder"
+      new_button: Bir öneride bulunmak istiyorum

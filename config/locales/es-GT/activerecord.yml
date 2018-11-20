@@ -1,0 +1,283 @@
+es-GT:
+  activerecord:
+    models:
+      activity:
+        one: "actividad"
+        other: "actividades"
+      budget/investment:
+        one: "Proyecto de inversión"
+        other: "Proyectos de inversión"
+      budget/investment/milestone:
+        one: "hito"
+        other: "hitos"
+      comment:
+        one: "Comentario"
+        other: "Comentarios"
+      tag:
+        one: "Tema"
+        other: "Temas"
+      user:
+        one: "Usuario"
+        other: "Usuarios"
+      moderator:
+        one: "Moderador"
+        other: "Moderadores"
+      administrator:
+        one: "Administrador"
+        other: "Administradores"
+      manager:
+        one: "Gestor"
+        other: "Gestores"
+      vote:
+        one: "Voto"
+        other: "Votos"
+      organization:
+        one: "Organización"
+        other: "Organizaciones"
+      poll/booth:
+        one: "urna"
+        other: "urnas"
+      poll/officer:
+        one: "presidente de mesa"
+        other: "presidentes de mesa"
+      proposal:
+        one: "Propuesta ciudadana"
+        other: "Propuestas ciudadanas"
+      site_customization/page:
+        one: Página
+        other: Páginas
+      site_customization/image:
+        one: Imagen
+        other: Imágenes
+      site_customization/content_block:
+        one: Bloque
+        other: Bloques
+      legislation/process:
+        one: "Proceso"
+        other: "Procesos"
+      legislation/draft_versions:
+        one: "Versión borrador"
+        other: "Versiones borrador"
+      legislation/draft_texts:
+        one: "Borrador"
+        other: "Borradores"
+      legislation/questions:
+        one: "Pregunta"
+        other: "Preguntas"
+      legislation/question_options:
+        one: "Opción de respuesta cerrada"
+        other: "Opciones de respuesta cerrada"
+      legislation/answers:
+        one: "Respuesta"
+        other: "Respuestas"
+      documents:
+        one: "Documento"
+        other: "Documentos"
+      images:
+        one: "Imagen"
+        other: "Imágenes"
+      topic:
+        one: "Tema"
+        other: "Temas"
+      poll:
+        one: "Votación"
+        other: "Votaciones"
+    attributes:
+      budget:
+        name: "Nombre"
+        description_accepting: "Descripción durante la fase de presentación de proyectos"
+        description_reviewing: "Descripción durante la fase de revisión interna"
+        description_selecting: "Descripción durante la fase de apoyos"
+        description_valuating: "Descripción durante la fase de evaluación"
+        description_balloting: "Descripción durante la fase de votación"
+        description_reviewing_ballots: "Descripción durante la fase de revisión de votos"
+        description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
+        phase: "Fase"
+        currency_symbol: "Divisa"
+      budget/investment:
+        heading_id: "Partida presupuestaria"
+        title: "Título"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+        administrator_id: "Administrador"
+        location: "Ubicación (opcional)"
+        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
+        image: "Imagen descriptiva de la propuesta de inversión"
+        image_title: "Título de la imagen"
+      budget/investment/milestone:
+        title: "Título"
+        publication_date: "Fecha de publicación"
+      budget/heading:
+        name: "Nombre de la partida"
+        price: "Cantidad"
+        population: "Población"
+      comment:
+        body: "Comentario"
+        user: "Usuario"
+      debate:
+        author: "Autor"
+        description: "Opinión"
+        terms_of_service: "Términos de servicio"
+        title: "Título"
+      proposal:
+        author: "Autor"
+        title: "Título"
+        question: "Pregunta"
+        description: "Descripción"
+        terms_of_service: "Términos de servicio"
+      user:
+        login: "Email o nombre de usuario"
+        email: "Correo electrónico"
+        username: "Nombre de usuario"
+        password_confirmation: "Confirmación de contraseña"
+        password: "Contraseña"
+        current_password: "Contraseña actual"
+        phone_number: "Teléfono"
+        official_position: "Cargo público"
+        official_level: "Nivel del cargo"
+        redeemable_code: "Código de verificación por carta (opcional)"
+      organization:
+        name: "Nombre de organización"
+        responsible_name: "Persona responsable del colectivo"
+      spending_proposal:
+        association_name: "Nombre de la asociación"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+        geozone_id: "Ámbito de actuación"
+        title: "Título"
+      poll:
+        name: "Nombre"
+        starts_at: "Fecha de apertura"
+        ends_at: "Fecha de cierre"
+        geozone_restricted: "Restringida por zonas"
+        summary: "Resumen"
+        description: "Descripción"
+      poll/question:
+        title: "Pregunta"
+        summary: "Resumen"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+      signature_sheet:
+        signable_type: "Tipo de hoja de firmas"
+        signable_id: "ID Propuesta ciudadana/Propuesta inversión"
+        document_numbers: "Números de documentos"
+      site_customization/page:
+        content: Contenido
+        created_at: Creada
+        subtitle: Subtítulo
+        status: Estado
+        title: Título
+        updated_at: última actualización
+        print_content_flag: Botón de imprimir contenido
+        locale: Idioma
+      site_customization/image:
+        name: Nombre
+        image: Imagen
+      site_customization/content_block:
+        name: Nombre
+        locale: Idioma
+        body: Contenido
+      legislation/process:
+        title: Título del proceso
+        description: En qué consiste
+        additional_info: Información adicional
+        start_date: Fecha de inicio del proceso
+        end_date: Fecha de fin del proceso
+        debate_start_date: Fecha de inicio del debate
+        debate_end_date: Fecha de fin del debate
+        draft_publication_date: Fecha de publicación del borrador
+        allegations_start_date: Fecha de inicio de alegaciones
+        allegations_end_date: Fecha de fin de alegaciones
+        result_publication_date: Fecha de publicación del resultado final
+      legislation/draft_version:
+        title: Título de la version
+        body: Texto
+        changelog: Cambios
+        status: Estado
+        final_version: Versión final
+      legislation/question:
+        title: Título
+        question_options: Respuestas
+      legislation/question_option:
+        value: Valor
+      legislation/annotation:
+        text: Comentario
+      document:
+        title: Título
+        attachment: Archivo adjunto
+      image:
+        title: Título
+        attachment: Archivo adjunto
+      poll/question/answer:
+        title: Respuesta
+        description: Descripción
+      poll/question/answer/video:
+        title: Título
+        url: Vídeo externo
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Este usuario ya tiene una clave asociada"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Has llegado al número máximo de mensajes privados por día"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "La imagen debe tener al menos %{required_min_width}px de largo"
+              min_image_height: "La imagen debe tener al menos %{required_min_height}px de alto"
+        map_location:
+          attributes:
+            map:
+              invalid: El mapa no puede estar en blanco. Añade un punto al mapa o marca la casilla si no hace falta un mapa.
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Este documento no aparece en el censo"
+              has_voted: "Este usuario ya ha votado"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio
+            debate_end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del debate
+            allegations_end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de las alegaciones
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Debes esperar un mínimo de %{interval} días entre notificaciones"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'No verificado por Padrón'
+              already_voted: 'Ya ha votado esta propuesta'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "deber ser letras, números, _ y -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Debe tener %{required_width}px de ancho"
+              image_height: "Debe tener %{required_height}px de alto"
+      messages:
+        record_invalid: "Error de validación: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "No se puede eliminar el registro porque existe una %{record} dependiente"
+          has_many: "No se puede eliminar el registro porque existe %{record} dependientes"

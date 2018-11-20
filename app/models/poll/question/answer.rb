@@ -53,7 +53,7 @@ class Poll::Question::Answer < ActiveRecord::Base
   end
 
   def total_votes_percentage
-    calculate_percentage(total_votes, question.answers_total_votes)
+    question.answers_total_votes.zero? ? 0 : (total_votes * 100.0) / question.answers_total_votes
   end
 
 end

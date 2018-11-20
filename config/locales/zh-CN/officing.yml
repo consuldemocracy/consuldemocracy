@@ -1,0 +1,68 @@
+zh-CN:
+  officing:
+    header:
+      title: 投票
+    dashboard:
+      index:
+        title: 投票办公室当值
+        info: 您可以在此验证用户文档和存储投票结果
+        no_shifts: 您今天没有当值轮班。
+    menu:
+      voters: 验证文档
+      total_recounts: 总重新计票数和结果
+    polls:
+      final:
+        title: 投票已备好以进行最终的重新计票
+        no_polls: 您不要在任何活跃投票的最终重新计票中当值
+        select_poll: 选择投票项
+        add_results: 添加结果
+    results:
+      flash:
+        create: "结果已保存"
+        error_create: "结果未保存。数据出错。"
+        error_wrong_booth: "投票亭错误。结果未保存。"
+      new:
+        title: "%{poll}－ 添加结果"
+        not_allowed: "您被允许为此投票添加结果"
+        booth: "投票亭"
+        date: "日期"
+        select_booth: "选择投票亭"
+        ballots_white: "完全空白的选票"
+        ballots_null: "无效选票"
+        ballots_total: "总选票数"
+        submit: "保存"
+        results_list: "您的结果"
+        see_results: "查看结果"
+      index:
+        no_results: "没有结果"
+        results: 结果
+        table_answer: 回答
+        table_votes: 投票
+        table_whites: "完全空白的选票"
+        table_nulls: "无效选票"
+        table_total: "总选票数"
+    residence:
+      flash:
+        create: "通过人口普查核实的文档"
+        not_allowed: "您今天没有当值轮班"
+      new:
+        title: 验证文档
+        document_number: "文档编码（包含字母）"
+        submit: 验证文档
+        error_verifying_census: "人口普查无法核实此文档。"
+        form_errors: 阻止了此文档的核实
+        no_assignments: "您今天没有当值轮班"
+    voters:
+      new:
+        title: 投票
+        table_poll: 投票
+        table_status: 投票状态
+        table_actions: 行动
+        not_to_vote: 此人已经决定此时不投票。
+      show:
+        can_vote: 可以投票
+        error_already_voted: 已经参与此次投票
+        submit: 确认投票
+        success: "投票介绍！"
+      can_vote:
+        submit_disable_with: "等等，投票确认中..."

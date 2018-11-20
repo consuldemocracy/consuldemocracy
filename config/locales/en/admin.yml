@@ -278,8 +278,6 @@ en:
       form:
         admin_statuses: Admin investment statuses
         no_statuses_defined: There are no defined investment statuses yet
-        admin_statuses: Admin investment statuses
-        no_statuses_defined: There are no defined investment statuses yet
       new:
         creating: Create milestone
         date: Date
@@ -346,7 +344,7 @@ en:
           without_confirmed_hide: Pending
         title: Hidden users
         user: User
-        no_hidden_users: There is no hidden users.
+        no_hidden_users: There are no hidden users.
       show:
         email: 'Email:'
         hidden_at: 'Hidden at:'
@@ -393,7 +391,7 @@ en:
         index:
           create: New process
           delete: Delete
-          title: Legislation processess
+          title: Legislation processes
           filters:
             open: Open
             next: Next
@@ -579,7 +577,6 @@ en:
           layouts: "Layouts"
           mailers: "Emails"
           management: "Management"
-          guides: "Guides"
           welcome: "Welcome"
         buttons:
           save: "Save"
@@ -1019,7 +1016,7 @@ en:
       index:
         title: Officials
         no_officials: There are no officials.
-        name: Nombre
+        name: Name
         official_position: Official position
         official_level: Level
       level_0: Not official
@@ -1411,11 +1408,11 @@ en:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.
       header_title: Header
-      no_header: There is no header.
+      no_header: There are no headers.
       create_header: Create header
       cards_title: Cards
       create_card: Create card
-      no_cards: There is no cards.
+      no_cards: There are no cards.
       cards:
         title: Title
         description: Description

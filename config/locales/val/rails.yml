@@ -1,57 +1,53 @@
 val:
   date:
     abbr_day_names:
-    - Dg
-    - Dl
-    - Dm
-    - Dc
-    - Dj
-    - Dv
-    - Ds
+      - Dg
+      - Dl
+      - Dm
+      - Dc
+      - Dj
+      - Dv
+      - Ds
     abbr_month_names:
-    -
-    - Gen
-    - Feb
-    - Mar
-    - Abr
-    - Mai
-    - Jun
-    - Jul
-    - Ago
-    - Set
-    - Oct
-    - Nov
-    - Des
+      - 
+      - Gen
+      - Feb
+      - Mar
+      - Abr
+      - Mai
+      - Jun
+      - Jul
+      - Ago
+      - Set
+      - Oct
+      - Nov
+      - Des
     day_names:
-    - Diumenge
-    - Dilluns
-    - Dimarts
-    - Dimecres
-    - Dijous
-    - Divendres
-    - Dissabte
+      - Diumenge
+      - Dilluns
+      - Dimarts
+      - Dimecres
+      - Dijous
+      - Divendres
+      - Dissabte
     formats:
       default: "%d-%m-%Y"
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-    -
-    - Gener
-    - Febrer
-    - Març
-    - Abril
-    - Maig
-    - Juny
-    - Juliol
-    - Agost
-    - Setembre
-    - Octubre
-    - Novembre
-    - Desembre
-    order:
-    - :day
-    - :month
-    - :year
+      - 
+      - Gener
+      - Febrer
+      - Març
+      - Abril
+      - Maig
+      - Juny
+      - Juliol
+      - Agost
+      - Setembre
+      - Octubre
+      - Novembre
+      - Desembre
   datetime:
     distance_in_words:
       about_x_hours:
@@ -115,7 +111,7 @@ val:
       invalid: no és vàlid
       less_than: ha de ser menor que %{count}
       less_than_or_equal_to: ha de ser menor o igual a %{count}
-      model_invalid: 'Error de validació: %{errors}'
+      model_invalid: "Error de validació: %{errors}"
       not_a_number: no és un número
       not_an_integer: ha de ser un enter
       odd: ha de ser senar

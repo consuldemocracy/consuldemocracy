@@ -7,7 +7,7 @@ es:
     general_terms: Términos y Condiciones
     help:
       title: "%{org} es una plataforma de participación ciudadana"
-      guide: 'Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}.'
+      guide: "Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}."
       menu:
         debates: "Debates"
         proposals: "Propuestas"
@@ -45,8 +45,6 @@ es:
         title: "Procesos legislativos"
         description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad y puede dar su opinión sobre las políticas municipales en debates previos."
         link: "procesos legislativos"
-        feature: "Para participar en un proceso hay que %{sign_up} y consultar la página de %{link} periódicamente para saber qué normativas y políticas se están debatiendo y consultando."
-        sign_up: "registrarse en %{org}"
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."
@@ -72,18 +70,27 @@ es:
       title: Política de privacidad
       subtitle: AVISO DE PROTECCIÓN DE DATOS
       info_items:
-        - text: La navegación por la informacion disponible en el Portal de Gobierno Abierto es anónima.
-        - text: Para utilizar los servicios contenidos en el Portal de Gobierno Abierto el usuario deberá darse de alta y proporcionar previamente los datos de carácter personal segun la informacion especifica que consta en cada tipo de alta.
-        - text: 'Los datos aportados serán incorporados y tratados por el Ayuntamiento de acuerdo con la descripción del fichero siguiente:'
-        - subitems:
-          - field: 'Nombre del fichero/tratamiento:'
-            description: NOMBRE DEL FICHERO
-          - field: 'Finalidad del fichero/tratamiento:'
-            description: Gestionar los procesos participativos para el control de la habilitación de las personas que participan en los mismos y recuento meramente numérico y estadístico de los resultados derivados de los procesos de participación ciudadana
-          - field: 'Órgano responsable:'
-            description: ÓRGANO RESPONSABLE
-        - text: El interesado podrá ejercer los derechos de acceso, rectificación, cancelación y oposición, ante el órgano responsable indicado todo lo cual se informa en el cumplimiento del artículo 5 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
-        - text: Como principio general, este sitio web no comparte ni revela información obtenida, excepto cuando haya sido autorizada por el usuario, o la informacion sea requerida por la autoridad judicial, ministerio fiscal o la policia judicial, o se de alguno de los supuestos regulados en el artículo 11 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
+        -
+          text: La navegación por la informacion disponible en el Portal de Gobierno Abierto es anónima.
+        -
+          text: Para utilizar los servicios contenidos en el Portal de Gobierno Abierto el usuario deberá darse de alta y proporcionar previamente los datos de carácter personal segun la informacion especifica que consta en cada tipo de alta.
+        -
+          text: 'Los datos aportados serán incorporados y tratados por el Ayuntamiento de acuerdo con la descripción del fichero siguiente:'
+        -
+          subitems:
+            -
+              field: 'Nombre del fichero/tratamiento:'
+              description: NOMBRE DEL FICHERO
+            -
+              field: 'Finalidad del fichero/tratamiento:'
+              description: Gestionar los procesos participativos para el control de la habilitación de las personas que participan en los mismos y recuento meramente numérico y estadístico de los resultados derivados de los procesos de participación ciudadana.
+            -
+              field: 'Órgano responsable:'
+              description: ÓRGANO RESPONSABLE
+        -
+          text: El interesado podrá ejercer los derechos de acceso, rectificación, cancelación y oposición, ante el órgano responsable indicado todo lo cual se informa en el cumplimiento del artículo 5 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
+        -
+          text: Como principio general, este sitio web no comparte ni revela información obtenida, excepto cuando haya sido autorizada por el usuario, o la informacion sea requerida por la autoridad judicial, ministerio fiscal o la policia judicial, o se de alguno de los supuestos regulados en el artículo 11 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
     accessibility:
       title: Accesibilidad
       description: |-
@@ -103,17 +110,23 @@ es:
           key_header: Tecla
           page_header: Página
           rows:
-            - key_column: 0
+            -
+              key_column: 0
               page_column: Inicio
-            - key_column: 1
+            -
+              key_column: 1
               page_column: Debates
-            - key_column: 2
+            -
+              key_column: 2
               page_column: Propuestas
-            - key_column: 3
+            -
+              key_column: 3
               page_column: Votaciones
-            - key_column: 4
+            -
+              key_column: 4
               page_column: Presupuestos participativos
-            - key_column: 5
+            -
+              key_column: 5
               page_column: Procesos legislativos
         browser_table:
           description: 'Dependiendo del sistema operativo y del navegador que se utilice, la combinación de teclas será la siguiente:'
@@ -121,15 +134,20 @@ es:
           browser_header: Navegador
           key_header: Combinación de teclas
           rows:
-            - browser_column: Explorer
+            -
+              browser_column: Explorer
               key_column: ALT + atajo y luego ENTER
-            - browser_column: Firefox
+            -
+              browser_column: Firefox
               key_column: ALT + MAYÚSCULAS + atajo
-            - browser_column: Chrome
+            -
+              browser_column: Chrome
               key_column: ALT + atajo (si es un MAC, CTRL + ALT + atajo)
-            - browser_column: Safari
+            -
+              browser_column: Safari
               key_column: ALT + atajo (si es un MAC, CMD + atajo)
-            - browser_column: Opera
+            -
+              browser_column: Opera
               key_column: MAYÚSCULAS + ESC + atajo
       textsize:
         title: Tamaño del texto
@@ -138,27 +156,33 @@ es:
           browser_header: Navegador
           action_header: Acción a realizar
           rows:
-            - browser_column: Explorer
+            -
+              browser_column: Explorer
               action_column: Ver > Tamaño del texto
-            - browser_column: Firefox
+            -
+              browser_column: Firefox
               action_column: Ver > Tamaño
-            - browser_column: Chrome
+            -
+              browser_column: Chrome
               action_column: Ajustes (icono) > Opciones > Avanzada > Contenido web > Tamaño fuente
-            - browser_column: Safari
+            -
+              browser_column: Safari
               action_column: Visualización > ampliar/reducir
-            - browser_column: Opera
+            -
+              browser_column: Opera
               action_column: Ver > escala
         browser_shortcuts_table:
           description: 'Otra forma de modificar el tamaño de texto es utilizar los atajos de teclado definidos en los navegadores, en particular la combinación de teclas:'
           rows:
-            - shortcut_column: CTRL y + (CMD y + en MAC)
+            -
+              shortcut_column: CTRL y + (CMD y + en MAC)
               description_column: para aumentar el tamaño del texto
-            - shortcut_column: CTRL y - (CMD y - en MAC)
+            -
+              shortcut_column: CTRL y - (CMD y - en MAC)
               description_column: para reducir el tamaño del texto
       compatibility:
         title: Compatibilidad con estándares y diseño visual
         description_html: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
-
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso

@@ -8,7 +8,7 @@ es:
       attachment_label: Selecciona un documento
       delete_button: Eliminar documento
       cancel_button: Cancelar
-      note: 'Puedes subir hasta un máximo de %{max_documents_allowed} documentos en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo.'
+      note: "Puedes subir hasta un máximo de %{max_documents_allowed} documentos en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo."
       add_new_document: Añadir nuevo documento
     actions:
       destroy:

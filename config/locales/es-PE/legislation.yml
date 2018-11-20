@@ -1,0 +1,114 @@
+es-PE:
+  legislation:
+    annotations:
+      comments:
+        see_all: Ver todos
+        see_complete: Ver completo
+        comments_count:
+          one: "%{count} comentario"
+          other: "%{count} comentarios"
+        replies_count:
+          one: "%{count} respuesta"
+          other: "%{count} respuestas"
+        cancel: Cancelar
+        publish_comment: Publicar Comentario
+      form:
+        phase_not_open: Esta fase del proceso no está abierta
+        login_to_comment: Necesitas %{signin} o %{signup} para comentar.
+        signin: iniciar sesión
+        signup: registrarte
+      index:
+        title: Comentarios
+        comments_about: Comentarios sobre
+        see_in_context: Ver en contexto
+        comments_count:
+          one: "%{count} comentario"
+          other: "%{count} comentarios"
+      show:
+        title: Comentario
+      version_chooser:
+        seeing_version: Comentarios para la versión
+        see_text: Ver borrador del texto
+    draft_versions:
+      changes:
+        title: Cambios
+        seeing_changelog_version: Resumen de cambios de la revisión
+        see_text: Ver borrador del texto
+      show:
+        loading_comments: Cargando comentarios
+        seeing_version: Estás viendo la revisión
+        select_draft_version: Seleccionar borrador
+        select_version_submit: ver
+        updated_at: actualizada el %{date}
+        see_changes: ver resumen de cambios
+        see_comments: Ver todos los comentarios
+        text_toc: Índice
+        text_body: Texto
+        text_comments: Comentarios
+    processes:
+      proposals:
+        empty_proposals: No hay propuestas
+      debate:
+        empty_questions: No hay preguntas
+        participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
+      index:
+        filters:
+          open: Procesos activos
+          next: Próximamente
+          past: Terminados
+        no_open_processes: No hay procesos activos
+        no_next_processes: No hay procesos planeados
+        no_past_processes: No hay procesos terminados
+        section_header:
+          icon_alt: Icono de Procesos legislativos
+          title: Procesos legislativos
+          help: Ayuda sobre procesos legislativos
+        section_footer:
+          title: Ayuda sobre procesos legislativos
+      phase_not_open:
+        not_open: Esta fase del proceso todavía no está abierta
+      phase_empty:
+        empty: No hay nada publicado todavía
+      process:
+        see_latest_comments: Ver últimas aportaciones
+        see_latest_comments_title: Aportar a este proceso
+      shared:
+        key_dates: Fechas clave
+        debate_dates: Debate previo
+        draft_publication_date: Publicación borrador
+        result_publication_date: Publicación resultados
+        proposals_dates: Propuestas
+    questions:
+      comments:
+        comment_button: Publicar respuesta
+        comments_title: Respuestas abiertas
+        comments_closed: Fase cerrada
+        form:
+          leave_comment: Deja tu respuesta
+      question:
+        comments:
+          zero: Sin comentarios
+          one: "%{count} comentario"
+          other: "%{count} comentarios"
+      show:
+        answer_question: Enviar respuesta
+        next_question: Siguiente pregunta
+        first_question: Primera pregunta
+        share: Compartir
+        title: Proceso de legislación colaborativa
+      participation:
+        phase_not_open: Esta fase no está abierta
+        organizations: Las organizaciones no pueden participar en el debate
+        signin: iniciar sesión
+        signup: registrarte
+        unauthenticated: Necesitas %{signin} o %{signup} para participar en el debate.
+        verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
+        verify_account: verifica tu cuenta
+        debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas
+    shared:
+      share: Compartir
+      share_comment: Comentario sobre la %{version_name} del borrador del proceso %{process_name}
+    proposals:
+      form:
+        tags_label: "Categorías"
+      not_verified: "Para votar propuestas %{verify_account}."

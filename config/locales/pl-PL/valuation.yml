@@ -1,0 +1,129 @@
+pl:
+  valuation:
+    header:
+      title: Wycena
+    menu:
+      title: Wycena
+      budgets: Budżety partycypacyjne
+      spending_proposals: Wnioski wydatkowe
+    budgets:
+      index:
+        title: Budżety partycypacyjne
+        filters:
+          current: Otwarte
+          finished: Zakończone
+        table_name: Nazwa
+        table_phase: Etap
+        table_assigned_investments_valuation_open: Projekty inwestycyjne powiązane z wyceną otwarte
+        table_actions: Akcje
+        evaluate: Oceń
+    budget_investments:
+      index:
+        headings_filter_all: Wszystkie nagłówki
+        filters:
+          valuation_open: Otwarte
+          valuating: W trakcie wyceny
+          valuation_finished: Wycena zakończona
+        assigned_to: "Przypisane do %{valuator}"
+        title: Projekty inwestycyjne
+        edit: Edytuj dokumentację
+        valuators_assigned:
+          one: Przypisany wyceniający
+          few: "%{count} przypisani wyceniający"
+          many: "%{count} przypisani wyceniający"
+          other: "%{count} przypisani wyceniający"
+        no_valuators_assigned: Brak przypisanych wyceniających
+        table_id: IDENTYFIKATOR
+        table_title: Tytuł
+        table_heading_name: Nazwa nagłówka
+        table_actions: Akcje
+        no_investments: "Brak projektów inwestycyjnych."
+      show:
+        back: Wstecz
+        title: Projekt inwestycyjny
+        info: Informacje o autorze
+        by: Wysłane przez
+        sent: Wysłane na
+        heading: Nagłówek
+        dossier: Dokumentacja
+        edit_dossier: Edytuj dokumentację
+        price: Koszt
+        price_first_year: Koszt w pierwszym roku
+        currency: "€"
+        feasibility: Wykonalność
+        feasible: Wykonalne
+        unfeasible: Niewykonalne
+        undefined: Niezdefiniowany
+        valuation_finished: Wycena zakończona
+        duration: Zakres czasu
+        responsibles: Odpowiedzialni
+        assigned_admin: Przypisany administrator
+        assigned_valuators: Przypisani wyceniający
+      edit:
+        dossier: Dokumentacja
+        price_html: "Koszt (%{currency})"
+        price_first_year_html: "Koszt w pierwszym roku (%{currency}) <small>(opcjonalnie, dane nie są publiczne)</small>"
+        price_explanation_html: Wyjaśnienie ceny
+        feasibility: Wykonalność
+        feasible: Wykonalne
+        unfeasible: Niewykonalne
+        undefined_feasible: Oczekujące
+        feasible_explanation_html: Wyjaśnienie wykonalności
+        valuation_finished: Wycena zakończona
+        valuation_finished_alert: "Czy na pewno chcesz oznaczyć ten raport jako ukończony? Jeśli to zrobisz, nie może on być dalej modyfikowany."
+        not_feasible_alert: "E-mail zostanie wysłany niezwłocznie do autora projektu wraz z raportem niewykonalności."
+        duration_html: Zakres czasu
+        save: Zapisz zmiany
+      notice:
+        valuate: "Dokumentacja zaktualizowana"
+      valuation_comments: Komentarze wyceny
+      not_in_valuating_phase: Inwestycje mogą być wyceniane tylko wtedy, gdy Budżet jest w fazie wyceny
+    spending_proposals:
+      index:
+        geozone_filter_all: Wszystkie strefy
+        filters:
+          valuation_open: Otwarte
+          valuating: W trakcie wyceny
+          valuation_finished: Wycena zakończona
+        title: Projekty inwestycyjne dla budżetu partycypacyjnego
+        edit: Edytuj
+      show:
+        back: Wstecz
+        heading: Projekt inwestycyjny
+        info: Informacje o autorze
+        association_name: Stowarzyszenie
+        by: Wysłane przez
+        sent: Wysłane na
+        geozone: Zakres
+        dossier: Dokumentacja
+        edit_dossier: Edytuj dokumentację
+        price: Koszt
+        price_first_year: Kosztów w pierwszym roku
+        currency: "€"
+        feasibility: Wykonalność
+        feasible: Wykonalne
+        not_feasible: Niewykonalne
+        undefined: Niezdefiniowany
+        valuation_finished: Wycena zakończona
+        time_scope: Zakres czasu
+        internal_comments: Wewnętrzne Komentarze
+        responsibles: Odpowiedzialni
+        assigned_admin: Przypisany administrator
+        assigned_valuators: Przypisani wyceniający
+      edit:
+        dossier: Dokumentacja
+        price_html: "Koszt (%{currency})"
+        price_first_year_html: "Koszt w pierwszym roku (%{currency})"
+        currency: "€"
+        price_explanation_html: Wyjaśnienie ceny
+        feasibility: Wykonalność
+        feasible: Wykonalne
+        not_feasible: Niewykonalne
+        undefined_feasible: Oczekujące
+        feasible_explanation_html: Wyjaśnienie wykonalności
+        valuation_finished: Wycena zakończona
+        time_scope_html: Zakres czasu
+        internal_comments_html: Komentarze Wewnętrzne
+        save: Zapisz zmiany
+      notice:
+        valuate: "Dokumentacja zaktualizowana"

@@ -1,0 +1,24 @@
+ru:
+  documents:
+    title: Документы
+    max_documents_allowed_reached_html: Вы достигли максимально допустимого количества документов! <strong>Вы должны удалить один, прежде чем вы сможете загрузить другой.</strong>
+    form:
+      title: Документы
+      title_placeholder: Добавить описательное название для документа
+      attachment_label: Выберите документ
+      delete_button: Убрать документ
+      cancel_button: Отменить
+      note: "Вы можете загрузить максимум %{max_documents_allowed} документа(ов) следующих типов контента: %{accepted_content_types}, до %{max_file_size} Мб на файл."
+      add_new_document: Добавить новый документ
+    actions:
+      destroy:
+        notice: Документ был успешно удален.
+        alert: Невозможно уничтожить документ.
+        confirm: Вы уверены, что хотите удалить документ? Это действие невозможно отменить!
+    buttons:
+      download_document: Скачать файл
+      destroy_document: Уничтожить документ
+    errors:
+      messages:
+        in_between: должно быть между %{min} и %{max}
+        wrong_content_type: тип содержимого %{content_type} не соответствует ни одному из принятых типов содержимого %{accepted_content_types}

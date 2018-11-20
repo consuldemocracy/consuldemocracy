@@ -19,6 +19,7 @@ val:
         not_selected: No es poden votar propostes inviables
         not_enough_money_html: "Ja has assignat el pressupost disponible. <br> <small>Recorda que pots %{change_ballot} en qualsevol moment</small>"
         no_ballots_allowed: El període de votació està tancat
+        different_heading_assigned_html: "Ja has votat en una secció diferent del pressupost: %{heading_link}"
         change_ballot: canviar els teus vots
     groups:
       show:
@@ -29,6 +30,7 @@ val:
         unselected: Veure les propostes no seleccionades per a la votació final
     phase:
       drafting: Esborrany (No visible per al públic)
+      informing: Informació
       accepting: Acceptant propostes
       reviewing: Revisant propostes
       selecting: Selecció de propostes
@@ -39,6 +41,7 @@ val:
       finished: Resultats
     index:
       title: Pressupostos participatius
+      empty_budgets: No hi ha pressupostos.
       section_header:
         icon_alt: Icona de pressupostos participatius
         title: Pressupostos participatius
@@ -53,11 +56,6 @@ val:
       see_results: Vore resultats
       section_footer:
         title: Ajuda amb els pressupostos participatius
-        description: Amb els pressupostos participatius la ciutadanía decideix a quins projectes presentats per els veins i veines va destinada una part del pressupost municipal.
-        help_text_1: "Els pressupostos participatius son un processos en els que la ciutadania decideix de forma directa en qué es gasten una part del pressupost municipal. Quansevol persona empadronada major de 16 anys pot proposar un projecte de despesa que es preselecciona en una fase d'avals ciutadans."
-        help_text_2: "Els projectes més votats s'avaluen i pasen a una votació final en la que es decideixen les actuacions que durà a terme l'Ajuntament una vegada s'aproven els pressupostos municipals de l'any següent."
-        help_text_3: "La presentació de projectes de pressupostos participatius es du a terme desde gener i al llarc d'un periode de mes i mig, aproximadament. Per tal de participar i plantejar propostes per a tota la ciutat i/ els distictes hi ha que registrarse en %{org} i verificar el compte."
-        help_text_4: "Per tal d'aconseguir el major número d'avals i vots possible, eligeix un titular descriptiu i comprensible del teu projecte. Després tens un espai per a desenvolupar el plantejament de la teua proposta. Aporta totes les dades i explicacions, i inclus documents i imatges, per a ajudar a altres persones participants a entendre millor el que plantejes."
     investments:
       form:
         tag_category_label: "Categoríes"
@@ -68,11 +66,11 @@ val:
         map_location_instructions: "Navega per el mapa fins la ubicació i deixa el marcador."
         map_remove_marker: "Eliminar el marcador"
         location: "Informació adicional de localització"
+        map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la conec."
       index:
         title: Pressupostos participatius
         unfeasible: Propostes d'inversió no viables
-        unfeasible_text: "Les propostes presentades han de complir una sèrie de criteris (legalitat, concreció, ser competència de l'Ajuntament, no superar el límit del pressupost; %{definitions}) per a ser declarades viables i arribar fins a la fase de votació final. Totes les propostes que no compleixen aquests criteris són marcades com a inviables i publicades en la següent llista, juntament amb el seu informe d'inviabilitat."
-        unfeasible_text_definitions: veure definicions ací
+        unfeasible_text: "Les propostes presentades han de complir una sèrie de criteris (legalitat, concreció, ser competència de l'Ajuntament, no superar el límit del pressupost; %{definitions}) per a ser declarades viables i arribar fins la fase de votació final. Totes les propostes que no compleixen aquests criteris són marcades com a inviables i publicades en la següent llista, juntament amb el seu informe d'inviabilitat."
         by_heading: "Propostes d'inversió amb àmbit: %{heading}"
         search_form:
           button: Cercar
@@ -121,13 +119,21 @@ val:
         milestones_tab: Seguiments
         no_milestones: No hi ha fites definides
         milestone_publication_date: "Publicat el %{publication_date}"
+        milestone_status_changed: Estat de la proposta canviat a
         author: Autor
+        project_unfeasible_html: 'Esta proposta <strong>ha sigut marcada com inviable</strong> i no passarà a la fase de votació.'
+        project_selected_html: 'Este projecte d''inversió <strong>ha sigut seleccionat</strong> per a la fase de votació.'
+        project_winner: 'Proposta d''inversió guanyadora'
+        project_not_selected_html: 'Esta proposta <strong>no ha sigut seleccionada</strong> per a la fase de votació.'
       wrong_price_format: Solament pot incloure caràcters numèrics
       investment:
         add: Votar
         already_added: Ja has afegit aquesta proposta d'inversió
         already_supported: Ja has avalat aquest projecte d'inversió. Comparteixlo!
         support_title: Avalar aquesta proposta
+        confirm_group:
+          one: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
+          other: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
         supports:
           zero: Sense avals
           one: 1 aval
